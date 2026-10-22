@@ -1,7 +1,5 @@
 # dsh-tts-flash
 
-> 为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[a23020b](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)
@@ -10,43 +8,42 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2021Heei/dsh-tts-flash)
 <!-- END META -->
 
-**使用建议**：需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。
+> **实现功能**：为 DSH 流式回复提供语音朗读、字幕浮条及等待短语，支持 Edge 与 OpenAI 兼容语音服务。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者强调边生成边朗读与多引擎；README 和 speak-queue.ts 明示分句及队列改编自 MIT 的 dsh-voice，因此不把继承的流式朗读认作原创。本项增量在统一 TtsProvider、引擎声明与缓存等待音频的衔接：等待反馈和正文共享播放通道，正文入队后停止等待循环，减少维护多套语音状态的负担。
+
+> **风险与缺陷**：最关键的问题是追赶速度是否牺牲用户必须听到的内容。SpeakQueue 的 MAX_PENDING=12，积压时 pending.shift() 丢弃最旧句；这保护内存、贴近当前输出，却意味着 README 的“无损”只能理解为不阻断模型流，不能理解为全文朗读无遗漏。相反，短回复或快引擎可能从不触发丢句，因此不能据此否定日常可用性。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-  - [源码索引](#detail-section-7)
-- [未来设计假设（未验证）](#detail-section-8)
-- [辅助信息](#detail-section-9)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+  - [1.7 源码索引](#detail-section-8)
+- [2 未来设计假设（未验证）](#detail-section-9)
+- [3 辅助信息](#detail-section-10)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-源码支持流式分句、队列取消和可替换语音引擎的集成贡献；朗读完整性和实时延迟尚无本次运行证据，下面的积压策略假设未实现、未验证。
-
-[重点创新推演与最小验证](#innovation)
-
-- **用途**：适合希望边听边看长回复的桌面用户；交付物是与当前会话对应的可中止音频及字幕，而非离线音频档案。
-
-采用建议：需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。
+> **用途**：适合希望边听边看长回复的桌面用户；交付物是与当前会话对应的可中止音频及字幕，而非离线音频档案。
 
 参照手动复制回复到 TTS 和项目声明的 dsh-voice：省去复制及固定引擎限制，但继承的分句和串行队列不是新算法。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **事件监听**：llm/stream旁路分句与正文入队
 - **后台**：按会话串行合成、epoch取消及等待短语音频缓存
@@ -64,13 +61,13 @@
 
 把生成和收听重叠可能缩短开始收听的等待；上游合成慢时会转移为内容遗漏，收益取决于回复速度、音色合成速度和用户是否需要全文，尚无同条件节时数据。
 
-- **思考**：最关键的问题是追赶速度是否牺牲用户必须听到的内容。SpeakQueue 的 MAX_PENDING=12，积压时 pending.shift() 丢弃最旧句；这保护内存、贴近当前输出，却意味着 README 的“无损”只能理解为不阻断模型流，不能理解为全文朗读无遗漏。相反，短回复或快引擎可能从不触发丢句，因此不能据此否定日常可用性。
+> **思考**：最关键的问题是追赶速度是否牺牲用户必须听到的内容。SpeakQueue 的 MAX_PENDING=12，积压时 pending.shift() 丢弃最旧句；这保护内存、贴近当前输出，却意味着 README 的“无损”只能理解为不阻断模型流，不能理解为全文朗读无遗漏。相反，短回复或快引擎可能从不触发丢句，因此不能据此否定日常可用性。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：作者强调边生成边朗读与多引擎；README 和 speak-queue.ts 明示分句及队列改编自 MIT 的 dsh-voice，因此不把继承的流式朗读认作原创。本项增量在统一 TtsProvider、引擎声明与缓存等待音频的衔接：等待反馈和正文共享播放通道，正文入队后停止等待循环，减少维护多套语音状态的负担。
+> **亮点**：作者强调边生成边朗读与多引擎；README 和 speak-queue.ts 明示分句及队列改编自 MIT 的 dsh-voice，因此不把继承的流式朗读认作原创。本项增量在统一 TtsProvider、引擎声明与缓存等待音频的衔接：等待反馈和正文共享播放通道，正文入队后停止等待循环，减少维护多套语音状态的负担。
 
 作者强调边生成边朗读与多引擎；README 和 speak-queue.ts 明示分句及队列改编自 MIT 的 dsh-voice，因此不把继承的流式朗读认作原创。本项增量在统一 TtsProvider、引擎声明与缓存等待音频的衔接：等待反馈和正文共享播放通道，正文入队后停止等待循环，减少维护多套语音状态的负担。
 
@@ -78,13 +75,23 @@
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 最关键的问题是追赶速度是否牺牲用户必须听到的内容。SpeakQueue 的 MAX_PENDING=12，积压时 pending.shift() 丢弃最旧句；这保护内存、贴近当前输出，却意味着 README 的“无损”只能理解为不阻断模型流，不能理解为全文朗读无遗漏。相反，短回复或快引擎可能从不触发丢句，因此不能据此否定日常可用性。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+需要听当前回复的用户可先用非敏感短文试用，确认窗口切换、停止和自动播放正常；长回复必须对照文字检查是否跳句，不适合直接当完整有声文稿导出器。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+源码支持流式分句、队列取消和可替换语音引擎的集成贡献；朗读完整性和实时延迟尚无本次运行证据，下面的积压策略假设未实现、未验证。
 
 - 已检查：作者 README、包清单、源码路径 src/index.ts、src/speak-queue.ts、src/segmenter.ts、src/providers/edge-tts.provider.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
@@ -97,18 +104,18 @@
 - **版本号**：0.1.0（[固定提交 a23020b7](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)）
 - **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-### 源码索引
+### 1.7 源码索引
 
 - [src/index.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/index.ts)
 - [src/speak-queue.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/speak-queue.ts)
 - [src/segmenter.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/segmenter.ts)
 - [src/providers/edge-tts.provider.ts](https://github.com/2021Heei/dsh-tts-flash/blob/a23020b72a5c403e3dc50527b3ef43c6e55c739a/src/providers/edge-tts.provider.ts)
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
@@ -116,9 +123,9 @@
 
 用同一100句文本固定生成速度，对比快/慢合成器和12句以上积压，记录句序、缺失数、首音延迟及停止后残留时长；完整模式若不减少遗漏或显著增加人工整理，则否定其增量。
 
-<a id="detail-section-9"></a>
+<a id="detail-section-10"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

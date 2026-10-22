@@ -1,7 +1,5 @@
 # dsh-wsl-distro
 
-> 识别当前WSL发行版、Windows默认发行版与系统信息，并提示跨发行版路径差异。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro)
 <!-- END META -->
 
-**使用建议**：适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。
+> **实现功能**：识别当前WSL发行版、Windows默认发行版与系统信息，并提示跨发行版路径差异。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/distro.js读取WSL_DISTRO_NAME和os-release，执行wsl.exe -l -v并解析表格，比较当前与默认发行版。
 
-## 使用建议
+> **风险与缺陷**：提醒默认发行版不等于当前会话能避免路径误用；发行版名字本身不能证明用户、挂载和权限一致。
 
-- **用途**：安装多个发行版的用户容易把Windows默认WSL与当前会话混淆，希望先确认目录属于哪一个系统。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：安装多个发行版的用户容易把Windows默认WSL与当前会话混淆，希望先确认目录属于哪一个系统。
 
 此前未入档；手工echo环境变量及wsl -l -v已足够，本项把分散结果整理成路径提示。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：distro_info。
 
@@ -38,15 +44,27 @@
 
 无模型外额外服务，主要是进程探测和人工确认；不直接修改系统，错误路径判断的后续恢复成本仍需考虑。
 
-- **思考**：提醒默认发行版不等于当前会话能避免路径误用；发行版名字本身不能证明用户、挂载和权限一致。
+> **思考**：提醒默认发行版不等于当前会话能避免路径误用；发行版名字本身不能证明用户、挂载和权限一致。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/distro.js读取WSL_DISTRO_NAME和os-release，执行wsl.exe -l -v并解析表格，比较当前与默认发行版。
+## 3 工程分析
+
+> **亮点**：lib/distro.js读取WSL_DISTRO_NAME和os-release，执行wsl.exe -l -v并解析表格，比较当前与默认发行版。
 
 os-release读取与表格解析分离，解析失败保留raw输出方便核对；状态字段的英文Running检测有本地化边界。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+适合多发行版开发者，先核对current/default与UNC路径，再在目标发行版确认文件存在。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

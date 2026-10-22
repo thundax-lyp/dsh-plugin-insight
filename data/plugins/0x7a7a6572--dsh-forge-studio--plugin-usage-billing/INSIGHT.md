@@ -1,7 +1,5 @@
 # Forge 用量计费
 
-> 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing)
@@ -10,17 +8,25 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
 <!-- END META -->
 
-**使用建议**：先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。
+> **实现功能**：从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：服务聚合账本分片并锁定价格快照，联网价表与汇率有缓存和降级；未知项目不静默记零。
 
-## 使用建议
+> **风险与缺陷**：锁定历史价格能避免改价反写旧账；价格来源或使用日志不准时，账本仍可能精确记录错误值。
 
-- **用途**：需要了解模型使用支出的开发者希望把日志用量与预算放在同一视图。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：需要了解模型使用支出的开发者希望把日志用量与预算放在同一视图。
 
 供应商账单是对照来源，不能拿插件自算金额自证；本轮不提供任何费率正确性背书。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **界面**：预算、趋势和明细用量视图。
 - **后台**：用量账本聚合与价格快照刷新。
@@ -39,15 +45,27 @@
 
 主要成本是价表维护、历史估算和账单对账；收益需按可发现的计费差异评估，未实测。
 
-- **思考**：锁定历史价格能避免改价反写旧账；价格来源或使用日志不准时，账本仍可能精确记录错误值。
+> **思考**：锁定历史价格能避免改价反写旧账；价格来源或使用日志不准时，账本仍可能精确记录错误值。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：服务聚合账本分片并锁定价格快照，联网价表与汇率有缓存和降级；未知项目不静默记零。
+## 3 工程分析
+
+> **亮点**：服务聚合账本分片并锁定价格快照，联网价表与汇率有缓存和降级；未知项目不静默记零。
 
 价格快照与用量账本分离、未知金额保留空值值得借鉴；默认价格假设必须独立核实。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先选择一个模型和一天真实账单，逐项核对 token、缓存计价、币种和未计价行。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

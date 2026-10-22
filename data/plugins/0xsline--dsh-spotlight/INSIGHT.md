@@ -1,7 +1,5 @@
 # dsh-spotlight
 
-> 以键盘命令面板统一查找原生命令、近期会话和插件入口。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[b3565e8](https://github.com/0xsline/dsh-spotlight/tree/b3565e8629d9a393d764681e96f4c41100cc12fa)
@@ -10,17 +8,25 @@
 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/0xsline/dsh-spotlight) [![npm 30d 634](https://img.shields.io/static/v1?label=npm+30d&message=634&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@0xsline/dsh-spotlight) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@0xsline/dsh-spotlight)
 <!-- END META -->
 
-**使用建议**：先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。
+> **实现功能**：以键盘命令面板统一查找原生命令、近期会话和插件入口。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。
 
-## 使用建议
+> **风险与缺陷**：复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。
 
-- **用途**：大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：大量使用快捷键的 DSH Web 用户需要减少在会话与设置之间寻找入口的操作。
 
 原生斜杠菜单无需额外插件；只有跨入口搜索更顺手时才有迁移价值。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **界面**：键盘面板与会话导航。
 - **用户命令**：/spotlight 打开面板。
@@ -39,15 +45,27 @@
 
 不必额外调用模型，但需要学习快捷键与排查入口兼容，未测节省点击次数。
 
-- **思考**：复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。
+> **思考**：复用原生命令注册表可降低双份清单漂移；命令数量增加并不自动提升检索体验。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。
+## 3 工程分析
+
+> **亮点**：客户端注入 sessions、commands 和 pluginInventory，挂载面板并通过原生 commandUi 注册 /spotlight。
 
 挂载与释放在 effect 中配对，生命周期清晰；跨版本复用需核对所有注入服务。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先用常用的十条命令与十个会话检查搜索命中和导航，再决定是否替代原生入口。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

@@ -1,7 +1,5 @@
 # prompt-optimizer
 
-> 用当前 Harness 模型或 Codex 澄清、改写提示词，预览后填回草稿。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[0f6d8d4](https://github.com/ALIve114514awa/dsh-prompt-optimizer/tree/0f6d8d42bc3418c78153ad56968117f9c38c3d42)
@@ -10,42 +8,41 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) [![npm 30d 1,554](https://img.shields.io/static/v1?label=npm+30d&message=1%2C554&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer)
 <!-- END META -->
 
-**使用建议**：需要先整理需求且愿意审阅改写者可列为候选；直接明确的小任务收益有限，TUI应用回执不能当作已落地保证。
+> **实现功能**：用当前 Harness 模型或 Codex 澄清、改写提示词，预览后填回草稿。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相较直接让执行Agent边澄清边修改，把需求改写放在独立可编辑阶段，并在Web草稿回填时用版本校验避免覆盖新输入。增量在于人确认的交接协议与并发保护，而不是新的提示优化算法；模型能力复用宿主和外部provider。
+
+> **风险与缺陷**：优化后的文本是否更忠实而非擅自补需求？结构化解析与预览不能保证目标不漂移，也缺同条件下游任务实验。Web有draftRev保护，但TUI公开追加无回执，README承认已有原稿保留未完成实测；“已写出”不能认定草稿已落地。Codex取消仍依赖provider的实际清理语义。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：用户需求尚模糊，需要在发给执行Agent前澄清目标、扩写或精简；交付物是用户可编辑的提示草稿，不自动执行任务。
-
-- **建议**：在预览中逐条标注“用户已给事实/澄清答案/模型新增假设”，可能比单纯润色降低需求偷换。对相同模糊需求盲测原稿和标注稿，统计未授权新增约束与下游返工；若只是更长却没有降低新增假设错误，则否定收益。
-
-需要先整理需求且愿意审阅改写者可列为候选；直接明确的小任务收益有限，TUI应用回执不能当作已落地保证。
-
-核查状态：澄清/预览/应用保护与取消机制源码支持；提示质量、下游成功率及真实TUI追加效果未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+> **用途**：用户需求尚模糊，需要在发给执行Agent前澄清目标、扩写或精简；交付物是用户可编辑的提示草稿，不自动执行任务。
 
 在普通会话让模型改写再手动复制即可；本项增加独立预览、上下文选择与版本化回填。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **Host 路由**：status/optimize/cancel三项connection RPC。
 - **用户命令**：TUI /prompt-optimize打开优化scene。
@@ -67,13 +64,13 @@ Web/桌面与TUI为不同发行包、同profile只选一个；兼容固定DSH/TU
 
 把改写结果留给人确认并避免Web旧结果覆盖新草稿；尚无证据证明提高下游质量或降低总token。
 
-- **思考**：优化后的文本是否更忠实而非擅自补需求？结构化解析与预览不能保证目标不漂移，也缺同条件下游任务实验。Web有draftRev保护，但TUI公开追加无回执，README承认已有原稿保留未完成实测；“已写出”不能认定草稿已落地。Codex取消仍依赖provider的实际清理语义。
+> **思考**：优化后的文本是否更忠实而非擅自补需求？结构化解析与预览不能保证目标不漂移，也缺同条件下游任务实验。Web有draftRev保护，但TUI公开追加无回执，README承认已有原稿保留未完成实测；“已写出”不能认定草稿已落地。Codex取消仍依赖provider的实际清理语义。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相较直接让执行Agent边澄清边修改，把需求改写放在独立可编辑阶段，并在Web草稿回填时用版本校验避免覆盖新输入。增量在于人确认的交接协议与并发保护，而不是新的提示优化算法；模型能力复用宿主和外部provider。
+> **亮点**：相较直接让执行Agent边澄清边修改，把需求改写放在独立可编辑阶段，并在Web草稿回填时用版本校验避免覆盖新输入。增量在于人确认的交接协议与并发保护，而不是新的提示优化算法；模型能力复用宿主和外部provider。
 
 相较直接让执行Agent边澄清边修改，把需求改写放在独立可编辑阶段，并在Web草稿回填时用版本校验避免覆盖新输入。增量在于人确认的交接协议与并发保护，而不是新的提示优化算法；模型能力复用宿主和外部provider。
 
@@ -83,13 +80,23 @@ RequestRegistry对取消先于开始保留有界墓碑，finally清理超时和�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 优化后的文本是否更忠实而非擅自补需求？结构化解析与预览不能保证目标不漂移，也缺同条件下游任务实验。Web有draftRev保护，但TUI公开追加无回执，README承认已有原稿保留未完成实测；“已写出”不能认定草稿已落地。Codex取消仍依赖provider的实际清理语义。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+需要先整理需求且愿意审阅改写者可列为候选；直接明确的小任务收益有限，TUI应用回执不能当作已落地保证。
+
+核查状态：澄清/预览/应用保护与取消机制源码支持；提示质量、下游成功率及真实TUI追加效果未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.1.3；版本日期：2026-10-04（固定提交日期，北京时间，非包发布日期）。
 - 固定提交：[0f6d8d42](https://github.com/ALIve114514awa/dsh-prompt-optimizer/tree/0f6d8d42bc3418c78153ad56968117f9c38c3d42)；本轮基准：2026-10-21T05:26:52Z。
@@ -97,17 +104,17 @@ RequestRegistry对取消先于开始保留有界墓碑，finally清理超时和�
 - 范围：根组件Host请求、Codex适配、浏览器状态/草稿应用、TUI注册与README；不执行构建、模型调用或目标测试。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 在预览中逐条标注“用户已给事实/澄清答案/模型新增假设”，可能比单纯润色降低需求偷换。对相同模糊需求盲测原稿和标注稿，统计未授权新增约束与下游返工；若只是更长却没有降低新增假设错误，则否定收益。
 
 未执行；拟用草稿修改、切会话、引用附件变化、取消先到达和TUI追加无回执案例验证交接，再盲评目标保真与下游返工。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

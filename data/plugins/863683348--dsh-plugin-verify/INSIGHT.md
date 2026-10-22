@@ -1,7 +1,5 @@
 # dsh-plugin-verify
 
-> 提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[5a70cbd](https://github.com/863683348/dsh-plugin-verify/tree/5a70cbdc230ee19bb4578e52440e18cc93153ee8)
@@ -10,44 +8,41 @@
 [![npm 30d 839](https://img.shields.io/static/v1?label=npm+30d&message=839&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify)
 <!-- END META -->
 
-**使用建议**：适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。
+> **实现功能**：提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。
+
+> **风险与缺陷**：verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：Agent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。
-
-- **建议**：由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。
-
-适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：Agent研究或插件提交前需要把主张定位到文件与外部元数据；合格交付应是证据与主张逻辑关系清楚，访问成功并不等于主张成立。
 
 rg与HTTP请求可完成底层工作；插件价值在聚合与行级输出，语义判断仍须另做。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：verify聚合claim/config/url/npm/repo/batch只读检查。
 
@@ -63,13 +58,13 @@ rg与HTTP请求可完成底层工作；插件价值在聚合与行级输出，�
 
 减少人工找行号与重复探测工作；收益依赖研究者继续判断，未提供事实准确率对照。
 
-- **思考**：verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。
+> **思考**：verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。
+> **亮点**：相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。
 
 相对模型无依据口述，增量是统一文件行号引用和常见只读探测，把原始线索带回研究过程。它实现的是证据发现与结构体检，不是语义事实验证引擎。
 
@@ -77,13 +72,25 @@ rg与HTTP请求可完成底层工作；插件价值在聚合与行级输出，�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 verified与high confidence标签是否过强？scoreClaim仅60%关键词命中即verified，batch的high可由至少两条命中触发；否定、主体归属与相反陈述都可能共享关键词。YAML又只是结构烟检。因此引用可追溯是支持，但不能从覆盖率推出事实正确性或置信概率。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合把它当检索和体检辅助。先看实际命中行与上下文，再给结论；不要依据verified或high自动放行，也不要把unsupported写成证伪。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[863683348/dsh-plugin-verify](https://github.com/863683348/dsh-plugin-verify)
 - **版本号**：1.1.2（[固定提交 5a70cbdc](https://github.com/863683348/dsh-plugin-verify/tree/5a70cbdc230ee19bb4578e52440e18cc93153ee8)）
@@ -94,9 +101,9 @@ verified与high confidence标签是否过强？scoreClaim仅60%关键词命中�
 - 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。
 - 下一步：以真假相反、主体替换与数字边界命题检验命中标签，复杂合法/非法YAML与正式解析器对照，记录误放行与复核工时。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由行级证据与过强判定推导，可将verdict改为“检索覆盖”并附待验证关系，增加相反证据和数字条件核对，再由人或独立验证器形成结论。未验证假设是减少引用正确但结论错误。用相同关键词正反命题盲测，若误verified不降则否定。
 
@@ -118,9 +125,9 @@ verified与high confidence标签是否过强？scoreClaim仅60%关键词命中�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

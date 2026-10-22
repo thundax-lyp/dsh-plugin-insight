@@ -1,7 +1,5 @@
 # dsh-lsp-pyright
 
-> 为DSH配置Pyright的Python与存根文件导航路由。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-pyright)
@@ -10,42 +8,41 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-**使用建议**：先在小Python项目试，再核venv和.pyi优先关系；单文档hover通过不等于全项目类型信息正确。
+> **实现功能**：为DSH配置Pyright的Python与存根文件导航路由。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：新增Python及存根扩展的标准配置接线，减少重复注册；Pyright类型分析来自外部server，官方底座提供协议和工具，非本项新推理能力。
+
+> **风险与缺陷**：README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入及多根工程。npm/pip/pipx安装途径的PATH和实际解释器并不由本包选择；有.py路由不表示解释器环境正确。fallback用默认表会丢新增扩展，加载错误也可能不是没装server。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合已有Python项目、希望在DSH查询源码和.pyi存根的开发者。
-
-- **建议**：未验证假设：把所选Python环境与Pyright导入解析配置一同显示，可减少错环境导致的空定义。对两个venv同名包、.pyi与源码冲突样本比较定位和排障时间。
-
-先在小Python项目试，再核venv和.pyi优先关系；单文档hover通过不等于全项目类型信息正确。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合已有Python项目、希望在DSH查询源码和.pyi存根的开发者。
 
 替代是编辑器Pyright或自配DSH server；插件不安装Python包、不提供类型推断实现。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：pyright provider与.py/.pyi映射
 
@@ -63,13 +60,13 @@ fs/lsp/subprocess、官方LSP底座与外部pyright-langserver；README列npm/pi
 
 减少Python服务配置，无真实多环境工程效果数据。
 
-- **思考**：README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入及多根工程。npm/pip/pipx安装途径的PATH和实际解释器并不由本包选择；有.py路由不表示解释器环境正确。fallback用默认表会丢新增扩展，加载错误也可能不是没装server。
+> **思考**：README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入及多根工程。npm/pip/pipx安装途径的PATH和实际解释器并不由本包选择；有.py路由不表示解释器环境正确。fallback用默认表会丢新增扩展，加载错误也可能不是没装server。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：新增Python及存根扩展的标准配置接线，减少重复注册；Pyright类型分析来自外部server，官方底座提供协议和工具，非本项新推理能力。
+> **亮点**：新增Python及存根扩展的标准配置接线，减少重复注册；Pyright类型分析来自外部server，官方底座提供协议和工具，非本项新推理能力。
 
 新增Python及存根扩展的标准配置接线，减少重复注册；Pyright类型分析来自外部server，官方底座提供协议和工具，非本项新推理能力。
 
@@ -79,13 +76,23 @@ Pyright配置包本身小且透传initializationOptions/configuration，避免�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入及多根工程。npm/pip/pipx安装途径的PATH和实际解释器并不由本包选择；有.py路由不表示解释器环境正确。fallback用默认表会丢新增扩展，加载错误也可能不是没装server。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先在小Python项目试，再核venv和.pyi优先关系；单文档hover通过不等于全项目类型信息正确。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 - **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）
@@ -96,9 +103,9 @@ README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：核venv导入、.pyi符号、缺PATH、覆盖扩展和真实四操作；本轮未运行Pyright。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：把所选Python环境与Pyright导入解析配置一同显示，可减少错环境导致的空定义。对两个venv同名包、.pyi与源码冲突样本比较定位和排障时间。
 
@@ -119,9 +126,9 @@ README单文档smoke和docstring hover不能覆盖虚拟环境、第三方导入
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

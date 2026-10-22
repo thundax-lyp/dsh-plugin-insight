@@ -1,7 +1,5 @@
 # dsh-lsp-swift
 
-> 为DSH配置SourceKit-LSP的Swift代码导航路由。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-swift)
@@ -10,42 +8,41 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-**使用建议**：先确认所选工具链并构建测试工程，再分别检查四操作；尤其看引用/实现是否被跳过。
+> **实现功能**：为DSH配置SourceKit-LSP的Swift代码导航路由。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：本项提供Swift工具链服务的DSH接线与默认映射，不实现SourceKit索引；相对手配更简洁，但可用性仍取决于构建产生的索引。
+
+> **风险与缺陷**：README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测试显式skip，定义/hover通过不能当四操作全通过。默认PATH选择的SourceKit可能与项目工具链不同。配置层catch不能区分无可执行与索引缺失，错误应按阶段解释。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合已有Xcode或Swift工具链、需要DSH访问SwiftPM符号的开发者。
-
-- **建议**：未验证假设：把编译索引就绪与可启动服务拆开显示，可减少Swift四操作半可用被当全面可用。用成功build、失败build和不同工具链比较引用/实现结果及skip提示。
-
-先确认所选工具链并构建测试工程，再分别检查四操作；尤其看引用/实现是否被跳过。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合已有Xcode或Swift工具链、需要DSH访问SwiftPM符号的开发者。
 
 替代是Xcode/SourceKit编辑器或手配stdio；插件不提供Swift编译器或IndexStore。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：swift provider与.swift映射
 
@@ -63,13 +60,13 @@ fs/lsp/subprocess/stdio/tool-lsp；README指定Xcode或Swift.org中的sourcekit-
 
 减少SourceKit接线，无Swift工程整体任务收益数据。
 
-- **思考**：README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测试显式skip，定义/hover通过不能当四操作全通过。默认PATH选择的SourceKit可能与项目工具链不同。配置层catch不能区分无可执行与索引缺失，错误应按阶段解释。
+> **思考**：README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测试显式skip，定义/hover通过不能当四操作全通过。默认PATH选择的SourceKit可能与项目工具链不同。配置层catch不能区分无可执行与索引缺失，错误应按阶段解释。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：本项提供Swift工具链服务的DSH接线与默认映射，不实现SourceKit索引；相对手配更简洁，但可用性仍取决于构建产生的索引。
+> **亮点**：本项提供Swift工具链服务的DSH接线与默认映射，不实现SourceKit索引；相对手配更简洁，但可用性仍取决于构建产生的索引。
 
 本项提供Swift工具链服务的DSH接线与默认映射，不实现SourceKit索引；相对手配更简洁，但可用性仍取决于构建产生的索引。
 
@@ -79,13 +76,23 @@ fs/lsp/subprocess/stdio/tool-lsp；README指定Xcode或Swift.org中的sourcekit-
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测试显式skip，定义/hover通过不能当四操作全通过。默认PATH选择的SourceKit可能与项目工具链不同。配置层catch不能区分无可执行与索引缺失，错误应按阶段解释。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先确认所选工具链并构建测试工程，再分别检查四操作；尤其看引用/实现是否被跳过。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 - **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）
@@ -96,9 +103,9 @@ README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：固定宿主比较有/无构建索引及工具链切换，记录refs/implementation的skip；本轮未运行swift build。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：把编译索引就绪与可启动服务拆开显示，可减少Swift四操作半可用被当全面可用。用成功build、失败build和不同工具链比较引用/实现结果及skip提示。
 
@@ -119,9 +126,9 @@ README与测试说明引用/实现依赖SwiftPM构建；构建失败时相关测
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

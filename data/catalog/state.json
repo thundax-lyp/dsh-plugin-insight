@@ -1,7 +1,7 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "dd0bc0b82c67b770cfc760450b071eaa100df706f88c75b66fc246065444fad3",
-    "index_sha256": "4ea93b0ad5a7edf5afad751eff9c14abd3ad844b44084c6b7f383822b373509e",
+    "snapshot_digest": "043cf8bd700e079cfeae3d5f715f080962e1578694da2137ed4a0614943d1e77",
+    "index_sha256": "040d9384a2c908898b7b015d54aea38be280015c38548fbaf538388cb7d1d567",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-22T03:06:13.445Z",
@@ -53,7 +53,7 @@
         ],
         "transaction": {
             "id": "2026-10-22-insight-comparison",
-            "work_digest": "9b40ab76d876a317c812a9fca1dad5117de02d3b703a26857e66f82b51c07b72"
+            "work_digest": "d2a5e89543af9dcf22581e29605c78db2c01a8f31c47d6ad4510bf01e1fff6c9"
         },
         "research_blocks": {}
     },

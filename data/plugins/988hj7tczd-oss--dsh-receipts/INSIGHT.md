@@ -1,7 +1,5 @@
 # dsh-receipts
 
-> 从本地DSH会话日志汇总使用记录，结合Git信息生成Markdown和离线HTML报告。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[ebc1ae1](https://github.com/988hj7tczd-oss/dsh-receipts/tree/ebc1ae1cc2a24da9ce8407bb02606db0438e83a7)
@@ -10,42 +8,41 @@
 [![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-receipts) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-receipts)
 <!-- END META -->
 
-**使用建议**：当前先在复制日志和Git关闭模式审阅。修复越界目标及时间窗传递后再启用交叉核对；分享HTML前检查路径与会话内容，活动时长不当收益。
+> **实现功能**：从本地DSH会话日志汇总使用记录，结合Git信息生成Markdown和离线HTML报告。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：实际增量是将本地会话、工具调用和Git痕迹组织成可离线审阅的个人报告，支持压缩日志与失败跳过材料。相对手工翻日志更便于自省；这不是工时计费系统，Git提交与模型工作不能建立因果归属。
+
+> **风险与缺陷**：根约束接线有缺口：工具把越界project标unavailable却保留cwd，随后attachGitCrossCheck不检查状态，对所有非空cwd执行git -C log，可能仍读越界Git信息。工具调用也未传since/until，函数默认since=0/until=now，Git计数可能覆盖全历史。活动时长用首尾事件跨度，不等于连续劳动；redactPaths默认关且只去路径，不等于会话文本脱敏。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合个人回顾会话和工具活动；会话痕迹不能直接作为生产率、节省工时或业务影响证明。
-
-- **建议**：未验证假设：把日志时间窗和允许Git目标明确传给纯交叉核对接口，并区分活动跨度与可归因产出，可减少报告误导。用窗外提交、越界cwd、长空闲及并发会话夹具比较是否误读和重复计时；不推断节省工时。
-
-当前先在复制日志和Git关闭模式审阅。修复越界目标及时间窗传递后再启用交叉核对；分享HTML前检查路径与会话内容，活动时长不当收益。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合个人回顾会话和工具活动；会话痕迹不能直接作为生产率、节省工时或业务影响证明。
 
 替代是手工日志和git log或专门时间追踪器；本项目聚合使用痕迹，不测真实工时和产出因果。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：receipts日志汇总与MD/HTML报告生成
 
@@ -63,13 +60,13 @@ receipts工具经ctx.fs适配mineSessions解析JSONL/zstd、周期与项目过�
 
 可降低个人日志整理成本，但存在Git边界和统计口径缺口，无生产率或业务价值独立验证。
 
-- **思考**：根约束接线有缺口：工具把越界project标unavailable却保留cwd，随后attachGitCrossCheck不检查状态，对所有非空cwd执行git -C log，可能仍读越界Git信息。工具调用也未传since/until，函数默认since=0/until=now，Git计数可能覆盖全历史。活动时长用首尾事件跨度，不等于连续劳动；redactPaths默认关且只去路径，不等于会话文本脱敏。
+> **思考**：根约束接线有缺口：工具把越界project标unavailable却保留cwd，随后attachGitCrossCheck不检查状态，对所有非空cwd执行git -C log，可能仍读越界Git信息。工具调用也未传since/until，函数默认since=0/until=now，Git计数可能覆盖全历史。活动时长用首尾事件跨度，不等于连续劳动；redactPaths默认关且只去路径，不等于会话文本脱敏。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：实际增量是将本地会话、工具调用和Git痕迹组织成可离线审阅的个人报告，支持压缩日志与失败跳过材料。相对手工翻日志更便于自省；这不是工时计费系统，Git提交与模型工作不能建立因果归属。
+> **亮点**：实际增量是将本地会话、工具调用和Git痕迹组织成可离线审阅的个人报告，支持压缩日志与失败跳过材料。相对手工翻日志更便于自省；这不是工时计费系统，Git提交与模型工作不能建立因果归属。
 
 实际增量是将本地会话、工具调用和Git痕迹组织成可离线审阅的个人报告，支持压缩日志与失败跳过材料。相对手工翻日志更便于自省；这不是工时计费系统，Git提交与模型工作不能建立因果归属。
 
@@ -79,13 +76,23 @@ receipts工具经ctx.fs适配mineSessions解析JSONL/zstd、周期与项目过�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 根约束接线有缺口：工具把越界project标unavailable却保留cwd，随后attachGitCrossCheck不检查状态，对所有非空cwd执行git -C log，可能仍读越界Git信息。工具调用也未传since/until，函数默认since=0/until=now，Git计数可能覆盖全历史。活动时长用首尾事件跨度，不等于连续劳动；redactPaths默认关且只去路径，不等于会话文本脱敏。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+当前先在复制日志和Git关闭模式审阅。修复越界目标及时间窗传递后再启用交叉核对；分享HTML前检查路径与会话内容，活动时长不当收益。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-receipts](https://github.com/988hj7tczd-oss/dsh-receipts)
 - **版本号**：0.1.1（[固定提交 ebc1ae1c](https://github.com/988hj7tczd-oss/dsh-receipts/tree/ebc1ae1cc2a24da9ce8407bb02606db0438e83a7)）
@@ -96,9 +103,9 @@ receipts工具经ctx.fs适配mineSessions解析JSONL/zstd、周期与项目过�
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：用越界cwd、窗外提交、压缩损坏、长空闲与脱敏样本核输出；本轮未读用户真实日志、未跑目标脚本。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：把日志时间窗和允许Git目标明确传给纯交叉核对接口，并区分活动跨度与可归因产出，可减少报告误导。用窗外提交、越界cwd、长空闲及并发会话夹具比较是否误读和重复计时；不推断节省工时。
 
@@ -120,9 +127,9 @@ receipts工具经ctx.fs适配mineSessions解析JSONL/zstd、周期与项目过�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

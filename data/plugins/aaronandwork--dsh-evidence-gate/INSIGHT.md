@@ -1,7 +1,5 @@
 # dsh-evidence-gate
 
-> 按工具活动索引检查结论自报依据，提供判定卡、会话开关与账本。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[845ddf4](https://github.com/AaronandWork/dsh-evidence-gate/tree/845ddf415e045eb6b2a014bca97a9c63aee1befa)
@@ -10,42 +8,41 @@
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AaronandWork/dsh-evidence-gate) [![npm 30d 888](https://img.shields.io/static/v1?label=npm+30d&message=888&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate) [![最新发布 2026-09-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-12&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate)
 <!-- END META -->
 
-**使用建议**：需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。
+> **实现功能**：按工具活动索引检查结论自报依据，提供判定卡、会话开关与账本。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。
+
+> **风险与缺陷**：VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：用户希望区分Agent亲查、引用和假设，尤其审查“读过文件/测试通过”的承重结论；交付物是可查的声明与匹配记录，非事实真值。
-
-- **建议**：把活动回执绑定成功状态、内容摘要、当前版本与会话委派谱系，并将weak保持UNVERIFIED，可能降低假验证。用同basename异文件、失败read、旧版本测试及无关会话同路径反例，比较误VERIFIED率和真实证据召回；若误报下降代价是大量真实证据被拒，应展示置信分层而非二值真值。
-
-需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。
-
-核查状态：声明分类、活动关联和账本机制源码支持；无法据此证明结论正确或模型一定过门。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+> **用途**：用户希望区分Agent亲查、引用和假设，尤其审查“读过文件/测试通过”的承重结论；交付物是可查的声明与匹配记录，非事实真值。
 
 提示要求引用加人工检查工具日志；本项自动检索部分锚点，不能替代语义审查或真实复现。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：evidence_gate判定声明、evidence_gate_switch会话开关。
 - **用户命令**：/evidence-gate on/off/status/report。
@@ -69,13 +66,13 @@ DSH bundle与Web client，依赖Host工具结果事件和session上下文；同D
 
 帮助发现空证据和明显不匹配声明；只有启发式关联，计数提高不证明研究质量提升。
 
-- **思考**：VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。
+> **思考**：VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。
+> **亮点**：比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。
 
 比纯“不要猜测”的提示多了可追踪活动索引和显式声明判定，区分已引用/未核验以及弱采信计数。贡献是声明纪律与审查线索，而非独立证据验证器；工具日志来自宿主，事实正确性仍需人工或专门验证。
 
@@ -85,13 +82,23 @@ DSH bundle与Web client，依赖Host工具结果事件和session上下文；同D
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包含关系命中，且跨任意其他会话无父子关系限制；某路径存在就能weak却仍verdict=verified。它关联的是活动与文本而非claim语义，也不核工具是否成功或版本一致；模型可跳过工具直接回答，未见输出拦截器。因此“结构强制/实证”应降格为协作约束和启发式匹配。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+需要声明可追溯性的团队可评估其账本；不能将绿色VERIFIED作为测试通过、真实阅读或事实正确的唯一证据。
+
+核查状态：声明分类、活动关联和账本机制源码支持；无法据此证明结论正确或模型一定过门。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.2.1；版本日期：2026-09-12（固定提交日期，北京时间，非包发布日期）。
 - 固定提交：[845ddf41](https://github.com/AaronandWork/dsh-evidence-gate/tree/845ddf415e045eb6b2a014bca97a9c63aee1befa)；本轮基准：2026-10-21T05:26:52Z。
@@ -99,17 +106,17 @@ VERIFIED是否超过机制能证明的范围？entryMatches可用basename与包�
 - 范围：根Host活动索引、路径/URL匹配、判定、持久化及注册，client槽位与README；未执行目标，不对全部政策和匹配分支做完整审计。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 把活动回执绑定成功状态、内容摘要、当前版本与会话委派谱系，并将weak保持UNVERIFIED，可能降低假验证。用同basename异文件、失败read、旧版本测试及无关会话同路径反例，比较误VERIFIED率和真实证据召回；若误报下降代价是大量真实证据被拒，应展示置信分层而非二值真值。
 
 未运行；最小反例集合包括失败工具结果、同名异路径、无关会话、旧版本与仅存在路径，并检查Agent不调用gate时是否仍能输出。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

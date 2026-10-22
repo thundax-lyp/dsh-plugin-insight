@@ -1,13 +1,13 @@
 {{title}}
 
-> {{summary}}
-
 分析版本：[{{version}}]({{version_url}})
 
 <!-- BEGIN META -->
 {{meta}}
 <!-- END META -->
 
-**使用建议**：{{advice}}
+> **实现功能**：{{summary}}
 
-{{validation}}
+> **核心亮点**：{{highlight}}
+
+> **风险与缺陷**：{{risk}}

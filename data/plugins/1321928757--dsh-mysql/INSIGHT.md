@@ -1,7 +1,5 @@
 # dsh-mysql
 
-> 管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[7848bba](https://github.com/1321928757/dsh-mysql/tree/7848bba53cccfe9e365a8fd46baa6d6883a29b78)
@@ -10,17 +8,25 @@
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql) [![npm 30d 35](https://img.shields.io/static/v1?label=npm+30d&message=35&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mysql) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mysql)
 <!-- END META -->
 
-**使用建议**：先连接脱敏测试库和数据库端只读账号，核对选库与结果；确需写入时分别启用行写和DDL，并准备备份与人工复核。
+> **实现功能**：管理多套MySQL连接，为会话提供选库入口及查询、表结构、数据写入和DDL工具。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：Host 注册四个全局工具；会话选择连接后逐调用确定目标，shared.js 分类SQL并检查表范围，写入与DDL分别开关。
 
-## 使用建议
+> **风险与缺陷**：显式选库和拆分读写权限能减少误路由；应用层检查不能替代数据库授权，模型也会看到查询结果。
 
-- **用途**：开发者在数据库排障与分析时需要先看结构再查数据，交付应是可复核SQL和正确结果，而非仅返回成功。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：开发者在数据库排障与分析时需要先看结构再查数据，交付应是可复核SQL和正确结果，而非仅返回成功。
 
 此前本工程未研究此项；原生数据库客户端更适合权限管理与事务检查，插件减少在聊天与数据库间搬运结构的步骤。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：mysql_query、mysql_tables、mysql_execute、mysql_ddl。
 - **界面**：连接配置及会话多选数据源。
@@ -39,15 +45,27 @@
 
 首次创建低权限账号和连接白名单有运维成本；日常查询消耗数据库及模型额度，误写恢复另计。未测单位合格任务费用。
 
-- **思考**：显式选库和拆分读写权限能减少误路由；应用层检查不能替代数据库授权，模型也会看到查询结果。
+> **思考**：显式选库和拆分读写权限能减少误路由；应用层检查不能替代数据库授权，模型也会看到查询结果。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：Host 注册四个全局工具；会话选择连接后逐调用确定目标，shared.js 分类SQL并检查表范围，写入与DDL分别开关。
+## 3 工程分析
+
+> **亮点**：Host 注册四个全局工具；会话选择连接后逐调用确定目标，shared.js 分类SQL并检查表范围，写入与DDL分别开关。
 
 safeConnection 隐藏密码，session-selection 独立管理运行期选择；SQL分类与DDL目标提取可读，但白名单正则需复杂查询反例验证。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先连接脱敏测试库和数据库端只读账号，核对选库与结果；确需写入时分别启用行写和DDL，并准备备份与人工复核。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

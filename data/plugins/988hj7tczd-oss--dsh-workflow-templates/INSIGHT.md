@@ -1,7 +1,5 @@
 # dsh-workflow-templates
 
-> 为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[26755f7](https://github.com/988hj7tczd-oss/dsh-workflow-templates/tree/26755f75a043418eeb3f59fa0a57a60542740abc)
@@ -10,42 +8,41 @@
 [![npm 30d 404](https://img.shields.io/static/v1?label=npm+30d&message=404&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates)
 <!-- END META -->
 
-**使用建议**：只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。
+> **实现功能**：为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。
+
+> **风险与缺陷**：模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：明确需要多Agent编排的人选择高频模板并填参数，交付meta/script/args起点；不是自动执行工作流。
-
-- **建议**：待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。
-
-只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。
-
-核查状态：源码支持模板与起点装配；未执行官方workflow，静态有效不等于运行成功或合格交付。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+> **用途**：明确需要多Agent编排的人选择高频模板并填参数，交付meta/script/args起点；不是自动执行工作流。
 
 参照手写workflow与通用模板库；无端到端收益对照。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：wf_template_list/search/run/validate。
 
@@ -65,13 +62,13 @@ TS构建与相邻dsh-src link前置；生产裸包名入口，源码相对入口
 
 减少编排样板，不能替代任务分解、审批、运行错误处理或业务验收。
 
-- **思考**：模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。
+> **思考**：模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。
+> **亮点**：相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。
 
 相对每次从零写编排脚本，增量是可检索的自写模板、参数提示与格式检查，并坚持由官方工具执行；引擎/子代理能力归DSH，参考结构不算插件原创引擎。
 
@@ -81,13 +78,23 @@ catalog/render/validator分离、按调用Agent探测工具、扩展字段缺失
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 模板校验通过是否保证官方合法和安全？轻量语法/return检查不执行真实schema或运行时序列化，未知顶层调用仅警告；run名称不代表执行。模板也会依赖工具和任务输入，不能把12个样例概括为通用流程保证。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+只有明确要workflow时再选模板；先看完整脚本和参数，检查官方工具可见与阶段输出，再在隔离任务试。
+
+核查状态：源码支持模板与起点装配；未执行官方workflow，静态有效不等于运行成功或合格交付。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.1.1；版本日期：2026-08-24（固定提交日期，北京时间，非包发布日期）。
 - 固定提交：[26755f75](https://github.com/988hj7tczd-oss/dsh-workflow-templates/tree/26755f75a043418eeb3f59fa0a57a60542740abc)；本轮基准：2026-10-21T04:06:46Z。
@@ -95,17 +102,17 @@ catalog/render/validator分离、按调用Agent探测工具、扩展字段缺失
 - 范围：抽读index/catalog/validate/render/run及一个PR模板；未跑模板或官方引擎。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：模板绑定宿主契约版本并用官方parser做兼容检查，再附每阶段输出断言，可减少静态通过但运行失败。由自写轻量校验与不加载官方schema推导，未实现。对计算return、未序列化对象、工具改名和失败阶段对照误接受/误拒绝及维护成本；新版本未知则标未验证。
 
 用官方parser和隔离引擎检查合法/非法return、工具改名、参数缺失与阶段失败；本轮不执行。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

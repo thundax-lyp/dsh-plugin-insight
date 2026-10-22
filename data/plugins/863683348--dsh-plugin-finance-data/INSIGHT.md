@@ -1,7 +1,5 @@
 # dsh-plugin-finance-data
 
-> 对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。
-
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
 分析版本：[0a10267](https://github.com/863683348/dsh-plugin-finance-data/tree/0a10267fa6f8f75da68005406b899894b60dd796)
@@ -10,37 +8,40 @@
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-finance-data) [![npm 30d 1,049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data)
 <!-- END META -->
 
-**使用建议**：当前仅作源码和计算接口参考。先修复百分数二次放大与长期计划截断，并用手算样本核对；工具不抓取或验证数据来源。
+> **实现功能**：对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者希望把财务算术从模型自由生成中分离；实际增量是提供确定函数与结构返回，便于检查输入输出。相比让模型心算，方向合理；但当前工具壳与计算函数单位契约和长期投影存在明确源码问题，不能承诺算术正确。
+
+> **风险与缺陷**：computeRatio的roe/roa/利润率已乘100，index再以percent=true调用formatNumber乘100；例如10/100应表达10%，这条路径会显示1000%。projectPlan默认steps=12并令total=min(periods,steps)，years>1的月度计划仍只累计12期却标完整年数；index未暴露steps覆盖。portfolio targets/values声明additionalProperties:false却无已声明资产键，也需宿主schema验收。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、依赖与流程](#detail-section-3)
-  - [成本与效果](#detail-section-4)
-  - [工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、依赖与流程](#detail-section-3)
+  - [1.3 成本与效果](#detail-section-4)
+  - [1.4 工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 替代是受审阅电子表格或成熟金融计算库；项目新增DSH工具封装而非新财务方法或数据源。
 
 <a id="detail-section-3"></a>
 
-### 能力、依赖与流程
+### 1.2 能力、依赖与流程
 
 lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumber处理小数/百分比，computeRatio算比率，projectPlan生成分期表，riskMetrics基于输入收益序列算样本指标。
 
@@ -52,7 +53,7 @@ lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumb
 
 <a id="detail-section-4"></a>
 
-### 成本与效果
+### 1.3 成本与效果
 
 首次需整理可信数据和每个指标单位；无模块网络成本，模型token另计。错误百分数及投影会带来高人工复核与返工成本，现金收益没有证据，不用于真实资金决策。
 
@@ -60,7 +61,7 @@ lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumb
 
 <a id="detail-section-5"></a>
 
-### 工程亮点
+### 1.4 工程亮点
 
 纯finance函数与薄工具壳本应便于测试，实际显示函数单测不能替代端到端单位检查；函数显式抛部分无效输入是可借鉴点，尚需统一所有指标的量纲及时间口径。
 
@@ -68,33 +69,39 @@ lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumb
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：适合需要可检查的财务算术草稿，不提供行情抓取、实际交易或投资判断。
+> **用途**：适合需要可检查的财务算术草稿，不提供行情抓取、实际交易或投资判断。
 
-- **建议**：待验证假设：把量纲、小数/百分数和投影期数写进可校验类型契约，可比增加更多指标更有效地减少财务工具错误。用10/100比率和五年月度零收益定投等可手算样本，先验证各层单位及60期累计一致，再评估实际数据任务。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **模型工具**：finance_data格式化、财务比率、风险、投影与组合计算
+
+> **思考**：computeRatio的roe/roa/利润率已乘100，index再以percent=true调用formatNumber乘100；例如10/100应表达10%，这条路径会显示1000%。projectPlan默认steps=12并令total=min(periods,steps)，years>1的月度计划仍只累计12期却标完整年数；index未暴露steps覆盖。portfolio targets/values声明additionalProperties:false却无已声明资产键，也需宿主schema验收。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：作者希望把财务算术从模型自由生成中分离；实际增量是提供确定函数与结构返回，便于检查输入输出。相比让模型心算，方向合理；但当前工具壳与计算函数单位契约和长期投影存在明确源码问题，不能承诺算术正确。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 当前仅作源码和计算接口参考。先修复百分数二次放大与长期计划截断，并用手算样本核对；工具不抓取或验证数据来源。
 
 **核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。已有贡献由固定版本源码支持，实际运行与宿主效果未验证；未来设计假设均未验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **模型工具**：finance_data格式化、财务比率、风险、投影与组合计算
-
-- **思考**：computeRatio的roe/roa/利润率已乘100，index再以percent=true调用formatNumber乘100；例如10/100应表达10%，这条路径会显示1000%。projectPlan默认steps=12并令total=min(periods,steps)，years>1的月度计划仍只累计12期却标完整年数；index未暴露steps覆盖。portfolio targets/values声明additionalProperties:false却无已声明资产键，也需宿主schema验收。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：作者希望把财务算术从模型自由生成中分离；实际增量是提供确定函数与结构返回，便于检查输入输出。相比让模型心算，方向合理；但当前工具壳与计算函数单位契约和长期投影存在明确源码问题，不能承诺算术正确。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - **仓库**：[863683348/dsh-plugin-finance-data](https://github.com/863683348/dsh-plugin-finance-data)
 - **版本号**：0.3.2（[固定提交 0a10267f](https://github.com/863683348/dsh-plugin-finance-data/tree/0a10267fa6f8f75da68005406b899894b60dd796)）
@@ -105,9 +112,9 @@ lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumb
 - 证据限制：固定提交内列明源码和作者材料的有界抽读，静态inventory为组件范围；没有安装、执行目标代码或测试、发起插件服务请求、真实宿主验收或独立采用核实。
 - 下一步：在固定宿主对比10/100比率、零利率五年60期定投、负数/零分母和多资产schema；本轮仅源码推导，未运行目标代码。
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：把量纲、小数/百分数和投影期数写进可校验类型契约，可比增加更多指标更有效地减少财务工具错误。用10/100比率和五年月度零收益定投等可手算样本，先验证各层单位及60期累计一致，再评估实际数据任务。
 
@@ -128,9 +135,9 @@ lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumb
 
 </details>
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

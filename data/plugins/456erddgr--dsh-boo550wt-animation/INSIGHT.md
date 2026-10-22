@@ -1,7 +1,5 @@
 # dsh-boo550wt-animation
 
-> 在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[aeac4c9](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)
@@ -10,31 +8,34 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
 <!-- END META -->
 
-**使用建议**：只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。
+> **实现功能**：在 DSH 启动时覆盖播放视频，提供跳过、淡出和同源媒体读取。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。
+
+> **风险与缺陷**：maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、流程与依赖](#detail-section-3)
-  - [效果、成本与限制](#detail-section-4)
-  - [核心贡献与工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、流程与依赖](#detail-section-3)
+  - [1.3 效果、成本与限制](#detail-section-4)
+  - [1.4 核心贡献与工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。
 
@@ -42,7 +43,7 @@
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与依赖
+### 1.2 能力、流程与依赖
 
 lib/index.js通过webserver/index-inject发布样式/脚本，lib/inject.js在body挂视频遮罩并处理Esc/播放降级，lib/media.js通过GET/HEAD与Range服务固定视频。
 
@@ -57,7 +58,7 @@ host-only bundle，无client构建；依赖webServer注入行与媒体路由，�
 
 <a id="detail-section-4"></a>
 
-### 效果、成本与限制
+### 1.3 效果、成本与限制
 
 价值在个人化视觉体验，不能改善模型能力或证明启动提速；遮罩延迟也可能增加等待感。
 
@@ -67,7 +68,7 @@ maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始
 
 <a id="detail-section-5"></a>
 
-### 核心贡献与工程亮点
+### 1.4 核心贡献与工程亮点
 
 相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。
 
@@ -77,34 +78,40 @@ maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。
+> **用途**：希望定制DSH启动视觉的人在应用加载时播放本地视频；交付启动体验，不改变模型任务或业务成果。
 
-- **建议**：待验证假设：保留独立且不重置的绝对启动deadline，再用较短的媒体时长计时辅助退出，可使失败视频不延迟交接。由onMetadata覆盖guard的缺口推导，尚未实现。用无元数据、无效时长、超长视频与正常视频四组对照检查遮罩关闭时间、Esc和监听清理；要求任何状态不超过固定deadline，代价是长片被截断。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **Host 路由**：固定视频与状态读取，Range/HEAD处理。
+- **界面**：启动覆盖、Esc跳过、播放降级和淡出。
+
+> **思考**：maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 只想个性化启动画面的人可在可恢复profile试用；先验证Esc和坏视频退出，尤其检查超长或无效时长素材，别把maxSeconds当已验证硬限。
 
 **核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。固定源码支持注入时序、媒体字节服务与跳过设计；作者截图和浏览器自检未在本轮复现，硬上限存在源码疑点。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **Host 路由**：固定视频与状态读取，Range/HEAD处理。
-- **界面**：启动覆盖、Esc跳过、播放降级和淡出。
-
-- **思考**：maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始guard，再用video.duration+graceMs重设；时长超过maxSeconds会延长等待，非有限或无效时长直接return且没有新guard，违背README对硬上限的强表述。Esc仍提供人工退出，但不能拿它替代自动上限；首帧也取决于宿主消费注入行的实际时序。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：相对客户端加载后再显示动画，本插件使用更早的webserver注入行，尝试在宿主启动就绪之前覆盖首帧，并把视频Range服务与DOM清理集中为host-only组件。时机与接线是DSH适配增量，媒体解码由浏览器完成，不是新视频技术。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - 版本号：1.0.0；版本日期：2026-10-19（固定提交日期，北京时间；不是包发布日期）。
 - 固定版本：[aeac4c96](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)；本次截止 2026-10-21T03:00:27Z。
@@ -128,17 +135,17 @@ maxSeconds是否真是永远不会锁窗的硬上限？onMetadata先清除初始
 
 </details>
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：保留独立且不重置的绝对启动deadline，再用较短的媒体时长计时辅助退出，可使失败视频不延迟交接。由onMetadata覆盖guard的缺口推导，尚未实现。用无元数据、无效时长、超长视频与正常视频四组对照检查遮罩关闭时间、Esc和监听清理；要求任何状态不超过固定deadline，代价是长片被截断。
 
 隔离宿主测试注入首帧、Range/HEAD/416、无效时长与超过maxSeconds素材、播放拒绝和Esc；核对截止与清理，不执行本轮目标脚本。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

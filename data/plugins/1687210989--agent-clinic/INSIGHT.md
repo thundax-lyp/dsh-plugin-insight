@@ -1,7 +1,5 @@
 # agent-clinic
 
-> 读取本地Agent会话与配置，生成带证据定位的诊断报告，并匹配可复核的改进处方。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[e88d6ec](https://github.com/1687210989/agent-clinic/tree/e88d6ec63d7a67277bf3c6c86f38a43ee97527c4)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/1687210989/agent-clinic) [![npm 30d 95](https://img.shields.io/static/v1?label=npm+30d&message=95&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/agent-clinic) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/agent-clinic)
 <!-- END META -->
 
-**使用建议**：先离线扫描少量会话并回读证据行，确认隐私与指纹保存策略；处方涉及配置修改时先备份并单独验证。
+> **实现功能**：读取本地Agent会话与配置，生成带证据定位的诊断报告，并匹配可复核的改进处方。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：adapters/dsh.mjs解析事件并保留行定位，report和prescriber生成诊断与配置建议，跨会话比较用本地加盐指纹；插件与CLI共用分析核心。
 
-## 使用建议
+> **风险与缺陷**：证据定位与撤回不适用处方比只报数字更利于行动；插件目录匹配依据不能证明被推荐插件安全或有效。
 
-- **用途**：用户感觉Agent循环、上下文浪费或失忆，希望从实际日志定位问题，合格结果是能回查的证据和适用建议。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：用户感觉Agent循环、上下文浪费或失忆，希望从实际日志定位问题，合格结果是能回查的证据和适用建议。
 
 此前未入档；人工日志排查更可控但费时。本项把定位和建议串联，尚无独立证据说明诊断准确率或任务收益。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **Skill**：仓库提供agent-clinic Skill入口。
 - **界面**：体检侧栏与报告面板。
@@ -40,15 +46,27 @@
 
 扫描大日志耗时与IO，指纹快照占磁盘；逐条复核、尝试处方并对照结果占人工，未测改善幅度。
 
-- **思考**：证据定位与撤回不适用处方比只报数字更利于行动；插件目录匹配依据不能证明被推荐插件安全或有效。
+> **思考**：证据定位与撤回不适用处方比只报数字更利于行动；插件目录匹配依据不能证明被推荐插件安全或有效。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：adapters/dsh.mjs解析事件并保留行定位，report和prescriber生成诊断与配置建议，跨会话比较用本地加盐指纹；插件与CLI共用分析核心。
+## 3 工程分析
+
+> **亮点**：adapters/dsh.mjs解析事件并保留行定位，report和prescriber生成诊断与配置建议，跨会话比较用本地加盐指纹；插件与CLI共用分析核心。
 
 适配、证据、诊断和处方分层，写指纹失败显式标不可用；动态插件目录与第三方中继的来源信任需保留。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先离线扫描少量会话并回读证据行，确认隐私与指纹保存策略；处方涉及配置修改时先备份并单独验证。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

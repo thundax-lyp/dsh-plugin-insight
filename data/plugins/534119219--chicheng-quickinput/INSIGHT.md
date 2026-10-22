@@ -1,7 +1,5 @@
 # chicheng-quickinput（vault）
 
-> 在 DSH 输入区管理常用信息与私密记录，支持自动识别建议和 WebDAV 备份。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[ac7c50b](https://github.com/534119219/chicheng-quickinput/tree/ac7c50b364bec5899a96628c5cbefb19b8dc6bea)
@@ -10,31 +8,34 @@
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-quickinput)
 <!-- END META -->
 
-**使用建议**：先只存非敏感常用片段；在建议明文写盘问题修正并验证前，关闭自动识别且不要把它当安全凭据库。私密片段进入草稿或发送前应检查会话与模型接收范围。
+> **实现功能**：在 DSH 输入区管理常用信息与私密记录，支持自动识别建议和 WebDAV 备份。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对通用剪贴板或手工复制，增量是直接接DSH会话识别和输入动作，把待收录建议、常用字段与私密库整合；密码派生与AES-GCM来自WebCrypto。随机K分别由主密码/安全词包裹使重置不必重加密每条记录，是成熟信封加密在此流程的应用。
+
+> **风险与缺陷**：私密明文是否只存在解锁后的浏览器内存？queueSuggestions把item.value保存在pending，flushSuggestions将pending写入suggestions.json，覆盖密钥/JWT等识别候选；hash用于去重并未去掉value。这与README明确承诺冲突，库记录加密不能补偿前置建议明文副本。点击私密记录填入/直接发送后还会进入会话和模型请求，库锁定也不能撤回这些副本。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、流程与依赖](#detail-section-3)
-  - [效果、成本与限制](#detail-section-4)
-  - [核心贡献与工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、流程与依赖](#detail-section-3)
+  - [1.3 效果、成本与限制](#detail-section-4)
+  - [1.4 核心贡献与工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 频繁在DSH输入地址、服务器或凭据的人保存常用片段并填入草稿；含私密内容时需要同时核对加密库、建议缓存与会话记录。
 
@@ -42,7 +43,7 @@
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与依赖
+### 1.2 能力、流程与依赖
 
 host监听session/event提取模式并排队建议、持久化store与suggestions、代理WebDAV；client用PBKDF2和AES-GCM包裹随机库密钥、解锁私密记录，并调用inputActions.setDraft/submit。
 
@@ -58,7 +59,7 @@ host监听session/event提取模式并排队建议、持久化store与suggestion
 
 <a id="detail-section-4"></a>
 
-### 效果、成本与限制
+### 1.3 效果、成本与限制
 
 可减少重复查找输入，但当前无法支持“自动识别不落明文”的安全价值承诺；敏感场景采用价值受该路径直接限制。
 
@@ -68,7 +69,7 @@ host监听session/event提取模式并排队建议、持久化store与suggestion
 
 <a id="detail-section-5"></a>
 
-### 核心贡献与工程亮点
+### 1.4 核心贡献与工程亮点
 
 相对通用剪贴板或手工复制，增量是直接接DSH会话识别和输入动作，把待收录建议、常用字段与私密库整合；密码派生与AES-GCM来自WebCrypto。随机K分别由主密码/安全词包裹使重置不必重加密每条记录，是成熟信封加密在此流程的应用。
 
@@ -78,35 +79,41 @@ host识别与client WebCrypto分离、随机K多重包裹及原子JSON写入有�
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：频繁在DSH输入地址、服务器或凭据的人保存常用片段并填入草稿；含私密内容时需要同时核对加密库、建议缓存与会话记录。
-
-- **建议**：待验证假设：自动识别只在内存保留短时候选，用户明确收录后立即经浏览器加密，再持久化密文与hash，可消除建议文件的敏感旁路。依据是现有识别与加密路径分离，当前未实现。以已知测试密钥触发建议、重启、收录、拒绝和锁定，扫描所有插件文件及备份确认无明文；同时测重启后丢建议的可接受性，不能把丢失提示作为无损设计。
-
-先只存非敏感常用片段；在建议明文写盘问题修正并验证前，关闭自动识别且不要把它当安全凭据库。私密片段进入草稿或发送前应检查会话与模型接收范围。
-
-**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认加密记录与快捷输入，但作者“自动识别只存hash、不落明文”被当前pending写盘路径反驳；未验证真实加密迁移或备份恢复。未来缓存改造是假设。
+> **用途**：频繁在DSH输入地址、服务器或凭据的人保存常用片段并填入草稿；含私密内容时需要同时核对加密库、建议缓存与会话记录。
 
 <a id="detail-section-7"></a>
 
-### 能力、流程与成本
+### 1.6 能力、流程与成本
+
+**能力**
 
 - **事件监听**：会话模式识别与待收录建议。
 - **Host 路由**：库/建议管理及WebDAV代理。
 - **界面**：记录搜索、解锁、填入与发送。
 
-- **思考**：私密明文是否只存在解锁后的浏览器内存？queueSuggestions把item.value保存在pending，flushSuggestions将pending写入suggestions.json，覆盖密钥/JWT等识别候选；hash用于去重并未去掉value。这与README明确承诺冲突，库记录加密不能补偿前置建议明文副本。点击私密记录填入/直接发送后还会进入会话和模型请求，库锁定也不能撤回这些副本。
+> **思考**：私密明文是否只存在解锁后的浏览器内存？queueSuggestions把item.value保存在pending，flushSuggestions将pending写入suggestions.json，覆盖密钥/JWT等识别候选；hash用于去重并未去掉value。这与README明确承诺冲突，库记录加密不能补偿前置建议明文副本。点击私密记录填入/直接发送后还会进入会话和模型请求，库锁定也不能撤回这些副本。
 
 <a id="detail-section-8"></a>
 
-### 工程贡献
+### 1.7 工程贡献
 
-- **亮点**：相对通用剪贴板或手工复制，增量是直接接DSH会话识别和输入动作，把待收录建议、常用字段与私密库整合；密码派生与AES-GCM来自WebCrypto。随机K分别由主密码/安全词包裹使重置不必重加密每条记录，是成熟信封加密在此流程的应用。
+> **亮点**：相对通用剪贴板或手工复制，增量是直接接DSH会话识别和输入动作，把待收录建议、常用字段与私密库整合；密码派生与AES-GCM来自WebCrypto。随机K分别由主密码/安全词包裹使重置不必重加密每条记录，是成熟信封加密在此流程的应用。
 
 <a id="detail-section-9"></a>
 
-### 核查说明与分析版本
+### 1.8 使用建议
+
+先只存非敏感常用片段；在建议明文写盘问题修正并验证前，关闭自动识别且不要把它当安全凭据库。私密片段进入草稿或发送前应检查会话与模型接收范围。
+
+**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认加密记录与快捷输入，但作者“自动识别只存hash、不落明文”被当前pending写盘路径反驳；未验证真实加密迁移或备份恢复。未来缓存改造是假设。
+
+<a id="detail-section-10"></a>
+
+### 1.9 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.1.0；版本日期：2026-08-26（固定提交日期，北京时间；不是包发布日期）。
 - 固定版本：[ac7c50b3](https://github.com/534119219/chicheng-quickinput/tree/ac7c50b364bec5899a96628c5cbefb19b8dc6bea)；本次截止 2026-10-21T03:00:27Z。
@@ -130,17 +137,17 @@ host识别与client WebCrypto分离、随机K多重包裹及原子JSON写入有�
 
 </details>
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：自动识别只在内存保留短时候选，用户明确收录后立即经浏览器加密，再持久化密文与hash，可消除建议文件的敏感旁路。依据是现有识别与加密路径分离，当前未实现。以已知测试密钥触发建议、重启、收录、拒绝和锁定，扫描所有插件文件及备份确认无明文；同时测重启后丢建议的可接受性，不能把丢失提示作为无损设计。
 
 用合成凭据在隔离目录追踪suggestions/store/备份/会话各副本，覆盖锁定、迁移、恢复和重启；当前只做源码对照，不接触真实秘密。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

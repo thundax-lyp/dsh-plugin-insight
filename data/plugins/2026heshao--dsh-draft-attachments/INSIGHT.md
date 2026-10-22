@@ -1,7 +1,5 @@
 # dsh-draft-attachments
 
-> 将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[f285e67](https://github.com/2026heshao/dsh-draft-attachments/tree/f285e67bab926ee3083ee7b3858aa28a6092ec8a)
@@ -10,43 +8,42 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-draft-attachments) [![npm 30d 23](https://img.shields.io/static/v1?label=npm+30d&message=23&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-draft-attachments) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-draft-attachments)
 <!-- END META -->
 
-**使用建议**：可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。
+> **实现功能**：将 DSH 输入框未发送的附件保存到 IndexedDB，并在会话输入区重挂载时恢复。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对宿主仅内存附件和用户手动重新上传，插件把字节与元数据按 sessionId 保存，在重新挂载时通过官方入口重建草稿而不是 patch 核心函数。这是有针对性的流程修补，价值在减少中断后的准备重做，不是新的数据库或上传协议。
+
+> **风险与缺陷**：决定贡献成立的是“恢复”和“空集合清除”是否有一致的顺序。源码中恢复 effect 异步 loadDraft，另一个 effect 同时观察当前空 attachmentIds 并安排删除；恢复仅看 liveInputRef 和 restored 标记，未发现跨两个操作的持久化代次协议。常规快速读盘可能正常，浏览器慢存储和快速切换应作为证伪场景，当前不能直接断言必丢。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-  - [源码索引](#detail-section-7)
-- [未来设计假设（未验证）](#detail-section-8)
-- [辅助信息](#detail-section-9)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+  - [1.7 源码索引](#detail-section-8)
+- [2 未来设计假设（未验证）](#detail-section-9)
+- [3 辅助信息](#detail-section-10)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-已核查浏览器持久化与恢复通道，贡献是补齐附件草稿生命周期；恢复/清空竞态及浏览器额度未实测，代次提交假设未验证。
-
-[重点创新推演与最小验证](#innovation)
-
-- **用途**：适合经常带图片或文件准备问题、期间切换会话的用户；合格结果是未发送附件按原顺序恢复且发送后不再出现。
-
-采用建议：可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。
+> **用途**：适合经常带图片或文件准备问题、期间切换会话的用户；合格结果是未发送附件按原顺序恢复且发送后不再出现。
 
 参照官方文字localStorage草稿与仅内存附件、用户手工重传；插件复用宿主intake，不替代上传后端或改变文件权限。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：conversation.input.dock不可见哨兵保存与恢复附件草稿
 
@@ -62,13 +59,13 @@
 
 高频切换用户有望少重复选择附件；遇到存储失败仅静默退化并不自动满足“不会丢”的目标，实际收益应按成功恢复率而非注册成功判断。
 
-- **思考**：决定贡献成立的是“恢复”和“空集合清除”是否有一致的顺序。源码中恢复 effect 异步 loadDraft，另一个 effect 同时观察当前空 attachmentIds 并安排删除；恢复仅看 liveInputRef 和 restored 标记，未发现跨两个操作的持久化代次协议。常规快速读盘可能正常，浏览器慢存储和快速切换应作为证伪场景，当前不能直接断言必丢。
+> **思考**：决定贡献成立的是“恢复”和“空集合清除”是否有一致的顺序。源码中恢复 effect 异步 loadDraft，另一个 effect 同时观察当前空 attachmentIds 并安排删除；恢复仅看 liveInputRef 和 restored 标记，未发现跨两个操作的持久化代次协议。常规快速读盘可能正常，浏览器慢存储和快速切换应作为证伪场景，当前不能直接断言必丢。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对宿主仅内存附件和用户手动重新上传，插件把字节与元数据按 sessionId 保存，在重新挂载时通过官方入口重建草稿而不是 patch 核心函数。这是有针对性的流程修补，价值在减少中断后的准备重做，不是新的数据库或上传协议。
+> **亮点**：相对宿主仅内存附件和用户手动重新上传，插件把字节与元数据按 sessionId 保存，在重新挂载时通过官方入口重建草稿而不是 patch 核心函数。这是有针对性的流程修补，价值在减少中断后的准备重做，不是新的数据库或上传协议。
 
 相对宿主仅内存附件和用户手动重新上传，插件把字节与元数据按 sessionId 保存，在重新挂载时通过官方入口重建草稿而不是 patch 核心函数。这是有针对性的流程修补，价值在减少中断后的准备重做，不是新的数据库或上传协议。
 
@@ -76,13 +73,23 @@ lib/client.js 通过官方slot和createDrafts降低侵入性，回填拒绝时re
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 决定贡献成立的是“恢复”和“空集合清除”是否有一致的顺序。源码中恢复 effect 异步 loadDraft，另一个 effect 同时观察当前空 attachmentIds 并安排删除；恢复仅看 liveInputRef 和 restored 标记，未发现跨两个操作的持久化代次协议。常规快速读盘可能正常，浏览器慢存储和快速切换应作为证伪场景，当前不能直接断言必丢。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+可先用可丢弃附件验证切换、重启、发送后不复活及超限行为，再用于常用流程；敏感附件要把浏览器持久保存纳入清理习惯，不能把它当跨设备草稿同步。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+已核查浏览器持久化与恢复通道，贡献是补齐附件草稿生命周期；恢复/清空竞态及浏览器额度未实测，代次提交假设未验证。
 
 - 已检查：作者 README、包清单、源码路径 lib/client.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
@@ -95,16 +102,16 @@ lib/client.js 通过官方slot和createDrafts降低侵入性，回填拒绝时re
 - **版本号**：1.0.1（[固定提交 f285e67b](https://github.com/2026heshao/dsh-draft-attachments/tree/f285e67bab926ee3083ee7b3858aa28a6092ec8a)）
 - **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-### 源码索引
+### 1.7 源码索引
 
 - [lib/client.js](https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/lib/client.js)
 - [lib/index.js](https://github.com/2026heshao/dsh-draft-attachments/blob/f285e67bab926ee3083ee7b3858aa28a6092ec8a/lib/index.js)
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
@@ -112,9 +119,9 @@ lib/client.js 通过官方slot和createDrafts降低侵入性，回填拒绝时re
 
 固定同组图片与文件，延迟IndexedDB读写并快速切换/发送/删除，逐次核对字节哈希、顺序、发送后零复活及内存；与禁用插件手动重传比较。若代次机制仍出现旧写覆盖删除或显著拖慢发送，否定假设。
 
-<a id="detail-section-9"></a>
+<a id="detail-section-10"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

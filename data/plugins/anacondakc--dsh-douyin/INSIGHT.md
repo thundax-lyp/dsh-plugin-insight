@@ -1,7 +1,5 @@
 # dsh-douyin
 
-> 在DSH内提供短视频浮动播放器，支持内置随机源解析、直链历史回放和自定义视频/网页源。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[2f28338](https://github.com/AnacondaKC/dsh-douyin/tree/2f28338b29503f20d159b1f0123a985530134b6a)
@@ -10,44 +8,41 @@
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin)
 <!-- END META -->
 
-**使用建议**：有嵌入媒体需求时先核对来源与网络流量，测试关闭停止及直链过期；不据内置源数量判断内容稳定或适用。
+> **实现功能**：在DSH内提供短视频浮动播放器，支持内置随机源解析、直链历史回放和自定义视频/网页源。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对iframe随机流，增量是host解决重定向不可见与客户端同URL回放、按需挂载；视频供给和内容来自第三方，不是抖音官方账号集成。
+
+> **风险与缺陷**：同URL是否保证可持续回放？签名/过期链接、内容替换与浏览器解码会影响重播；解析器检查首跳和DNS不能保证浏览器后续跳转链/内容安全。自定义web源允许嵌入还受对方CSP约束。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：用户在聊天界面内观看视频；合格体验是可控播放、回放同一内容且关闭后停止下载。
-
-- **建议**：由直链历史推导，可给历史记录添加解析时间、到期/内容标识并在失效时明确提示，不用重新随机内容冒充重播。未验证；过期URL与同URL换内容时应识别失败，比较回放一致率和额外请求数。
-
-有嵌入媒体需求时先核对来源与网络流量，测试关闭停止及直链过期；不据内置源数量判断内容稳定或适用。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：用户在聊天界面内观看视频；合格体验是可控播放、回放同一内容且关闭后停止下载。
 
 外部浏览器播放器更少宿主耦合；插件补同页入口和直链历史。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **Host 路由**：内置feed重定向解析。
 - **界面**：视频浮窗、源管理与播放历史。
@@ -64,13 +59,13 @@ DSH webServer/client、第三方feed、浏览器媒体/iframe策略；optional�
 
 提供界面内媒体便利，未形成重要业务流程改变或效率收益。
 
-- **思考**：同URL是否保证可持续回放？签名/过期链接、内容替换与浏览器解码会影响重播；解析器检查首跳和DNS不能保证浏览器后续跳转链/内容安全。自定义web源允许嵌入还受对方CSP约束。
+> **思考**：同URL是否保证可持续回放？签名/过期链接、内容替换与浏览器解码会影响重播；解析器检查首跳和DNS不能保证浏览器后续跳转链/内容安全。自定义web源允许嵌入还受对方CSP约束。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对iframe随机流，增量是host解决重定向不可见与客户端同URL回放、按需挂载；视频供给和内容来自第三方，不是抖音官方账号集成。
+> **亮点**：相对iframe随机流，增量是host解决重定向不可见与客户端同URL回放、按需挂载；视频供给和内容来自第三方，不是抖音官方账号集成。
 
 相对iframe随机流，增量是host解决重定向不可见与客户端同URL回放、按需挂载；视频供给和内容来自第三方，不是抖音官方账号集成。
 
@@ -78,13 +73,25 @@ DSH webServer/client、第三方feed、浏览器媒体/iframe策略；optional�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 同URL是否保证可持续回放？签名/过期链接、内容替换与浏览器解码会影响重播；解析器检查首跳和DNS不能保证浏览器后续跳转链/内容安全。自定义web源允许嵌入还受对方CSP约束。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+有嵌入媒体需求时先核对来源与网络流量，测试关闭停止及直链过期；不据内置源数量判断内容稳定或适用。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AnacondaKC/dsh-douyin](https://github.com/AnacondaKC/dsh-douyin)
 - **版本号**：0.2.0（[固定提交 2f28338b](https://github.com/AnacondaKC/dsh-douyin/tree/2f28338b29503f20d159b1f0123a985530134b6a)）
@@ -95,9 +102,9 @@ DSH webServer/client、第三方feed、浏览器媒体/iframe策略；optional�
 - 边界：抽读src/index.ts、src/feed-sources.ts、src/client/index.ts、src/client/MediaPlayer.ts、src/client/player-policy.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：模拟过期/多跳/私网重定向和连续失败，核对关闭无请求、历史确实指向同URL及快捷键不干扰聊天。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由直链历史推导，可给历史记录添加解析时间、到期/内容标识并在失效时明确提示，不用重新随机内容冒充重播。未验证；过期URL与同URL换内容时应识别失败，比较回放一致率和额外请求数。
 
@@ -120,9 +127,9 @@ DSH webServer/client、第三方feed、浏览器媒体/iframe策略；optional�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

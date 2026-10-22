@@ -1,7 +1,5 @@
 # dsh-permissions
 
-> 为DSH工具调用配置hard、deny、ask、allow权限规则，提供工作区作用域和可视化编辑。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[ad84f1d](https://github.com/940842546/dsh-permissions/tree/ad84f1d0928396a9597e557b6540f1f6feca2052)
@@ -10,44 +8,41 @@
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/940842546/dsh-permissions) [![npm 30d 606](https://img.shields.io/static/v1?label=npm+30d&message=606&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-permissions) [![最新发布 2026-09-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-permissions)
 <!-- END META -->
 
-**使用建议**：适合将它作为宿主沙箱之上的附加规则层先试用。先测hard在never与异常时的行为，核对shell别名/等价操作，保留真正文件沙箱和最小权限。
+> **实现功能**：为DSH工具调用配置hard、deny、ask、allow权限规则，提供工作区作用域和可视化编辑。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对只靠系统提示，增量是在真正工具执行链上增加可视规则判定，并将hard与会话never策略分开；这是可执行接线，不仅是提示承诺。但规则覆盖不是OS级隔离。
+
+> **风险与缺陷**：hard是否在所有异常下仍有效？index.js最外catch记录engine-error后return next，工作区解析失败还会只用global；match按工具名称/原参数字符串，不能解析shell等价写法、符号链接或未枚举工具。因此正常匹配可阻断，不等于不可绕过的安全边界，异常放行是核心限制。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：团队需要在宿主既有沙箱上增加工具级规则，合格结果是匹配的敏感操作确实被拒绝，规则修改与审批有可审计边界。
-
-- **建议**：由异常放行与硬规则承诺张力推导，可将hard判定做成最小fail-closed核，加载失败时拒绝相关写工具；ask/便利规则可单独降级。未验证假设是减少策略错误时漏放而不使无关读取不可用。注入设置/解析/审批异常并测敏感写是否被阻止，若仍放行则不成立。
-
-适合将它作为宿主沙箱之上的附加规则层先试用。先测hard在never与异常时的行为，核对shell别名/等价操作，保留真正文件沙箱和最小权限。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：团队需要在宿主既有沙箱上增加工具级规则，合格结果是匹配的敏感操作确实被拒绝，规则修改与审批有可审计边界。
 
 系统提示缺少执行阻断，OS/宿主沙箱边界更强；此插件补可视规则便利，不能替代后者。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **事件监听**：tools/pre-execute规则判定与自定义审批。
 - **界面**：规则编辑、匹配试算和决策日志。
@@ -65,13 +60,13 @@
 
 可降低常见误操作并让规则透明，未证明对恶意输入或全部敏感路径的防护能力。
 
-- **思考**：hard是否在所有异常下仍有效？index.js最外catch记录engine-error后return next，工作区解析失败还会只用global；match按工具名称/原参数字符串，不能解析shell等价写法、符号链接或未枚举工具。因此正常匹配可阻断，不等于不可绕过的安全边界，异常放行是核心限制。
+> **思考**：hard是否在所有异常下仍有效？index.js最外catch记录engine-error后return next，工作区解析失败还会只用global；match按工具名称/原参数字符串，不能解析shell等价写法、符号链接或未枚举工具。因此正常匹配可阻断，不等于不可绕过的安全边界，异常放行是核心限制。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对只靠系统提示，增量是在真正工具执行链上增加可视规则判定，并将hard与会话never策略分开；这是可执行接线，不仅是提示承诺。但规则覆盖不是OS级隔离。
+> **亮点**：相对只靠系统提示，增量是在真正工具执行链上增加可视规则判定，并将hard与会话never策略分开；这是可执行接线，不仅是提示承诺。但规则覆盖不是OS级隔离。
 
 相对只靠系统提示，增量是在真正工具执行链上增加可视规则判定，并将hard与会话never策略分开；这是可执行接线，不仅是提示承诺。但规则覆盖不是OS级隔离。
 
@@ -79,13 +74,25 @@
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 hard是否在所有异常下仍有效？index.js最外catch记录engine-error后return next，工作区解析失败还会只用global；match按工具名称/原参数字符串，不能解析shell等价写法、符号链接或未枚举工具。因此正常匹配可阻断，不等于不可绕过的安全边界，异常放行是核心限制。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合将它作为宿主沙箱之上的附加规则层先试用。先测hard在never与异常时的行为，核对shell别名/等价操作，保留真正文件沙箱和最小权限。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[940842546/dsh-permissions](https://github.com/940842546/dsh-permissions)
 - **版本号**：2.0.2（[固定提交 ad84f1d0](https://github.com/940842546/dsh-permissions/tree/ad84f1d0928396a9597e557b6540f1f6feca2052)）
@@ -96,9 +103,9 @@ hard是否在所有异常下仍有效？index.js最外catch记录engine-error后
 - 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。
 - 下一步：隔离profile对照hard/deny/ask/allow优先级、never、引擎异常、工作区解析失败、路径变体和shell等价命令，统计漏放与误拦。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由异常放行与硬规则承诺张力推导，可将hard判定做成最小fail-closed核，加载失败时拒绝相关写工具；ask/便利规则可单独降级。未验证假设是减少策略错误时漏放而不使无关读取不可用。注入设置/解析/审批异常并测敏感写是否被阻止，若仍放行则不成立。
 
@@ -119,9 +126,9 @@ hard是否在所有异常下仍有效？index.js最外catch记录engine-error后
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

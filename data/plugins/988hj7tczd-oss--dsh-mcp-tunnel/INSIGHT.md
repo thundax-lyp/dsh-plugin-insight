@@ -1,7 +1,5 @@
 # dsh-mcp-tunnel
 
-> 生成并管理MCP代理与Cloudflare隧道容器栈，输出待确认的客户端配置片段。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[ecd7d8e](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/tree/ecd7d8e555423123960009f9f8ab878246f0132f)
@@ -10,42 +8,41 @@
 [![npm 30d 778](https://img.shields.io/static/v1?label=npm+30d&message=778&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mcp-tunnel) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mcp-tunnel)
 <!-- END META -->
 
-**使用建议**：只在隔离示例端点试。确认HTTP而非stdio上游、实际鉴权和镜像版本，再手动审阅pending配置；生成URL不代表远端授权完成。
+> **实现功能**：生成并管理MCP代理与Cloudflare隧道容器栈，输出待确认的客户端配置片段。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：增量是把容器栈、证书、token文件、状态和待确认客户端片段组织为DSH生命周期工具，相对手动Compose降低重复操作。隧道传输来自cloudflared、MCP转发来自外部mcp-proxy；本项目不实现MCP协议，也不自动提供应用级授权。
+
+> **风险与缺陷**：虽然文字称本地MCP，resolveFromMcpJson遇stdio会拒绝并要求先转HTTP，不能宣称任意本地server即用。Compose引用latest镜像，代理API_KEY是否真正强制鉴权需固定镜像实测；pending片段包含Bearer且writePendingFragment无显式0600，与.env明确0600不同。provider anthropic模板的命名隧道启动仍是注释，不是可直接运行的第二方案。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合明确要远程访问本机HTTP MCP端点的维护者；公网URL、鉴权及客户端接入须分别验收。
-
-- **建议**：未验证假设：固定镜像摘要并在生成客户端片段前运行未授权拒绝/授权成功探针，可降低有URL就当安全可用。对空token、错token、健康上游及stdio输入验证结果；缺鉴权时不生成可用声明。
-
-只在隔离示例端点试。确认HTTP而非stdio上游、实际鉴权和镜像版本，再手动审阅pending配置；生成URL不代表远端授权完成。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合明确要远程访问本机HTTP MCP端点的维护者；公网URL、鉴权及客户端接入须分别验收。
 
 替代是手写Compose/cloudflared和MCP客户端配置；项目做编排，不替代端点认证、授权或stdio网关。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：MCP隧道创建、状态及停止工具
 - **后台**：Compose栈、状态和待确认mcp-client配置
@@ -64,13 +61,13 @@ src/index.ts注册隧道工具并spawn Docker/Podman Compose；tunnel-stack.ts�
 
 可减少容器接线与配置抄写，无真实远端稳定性和维护成本数据。
 
-- **思考**：虽然文字称本地MCP，resolveFromMcpJson遇stdio会拒绝并要求先转HTTP，不能宣称任意本地server即用。Compose引用latest镜像，代理API_KEY是否真正强制鉴权需固定镜像实测；pending片段包含Bearer且writePendingFragment无显式0600，与.env明确0600不同。provider anthropic模板的命名隧道启动仍是注释，不是可直接运行的第二方案。
+> **思考**：虽然文字称本地MCP，resolveFromMcpJson遇stdio会拒绝并要求先转HTTP，不能宣称任意本地server即用。Compose引用latest镜像，代理API_KEY是否真正强制鉴权需固定镜像实测；pending片段包含Bearer且writePendingFragment无显式0600，与.env明确0600不同。provider anthropic模板的命名隧道启动仍是注释，不是可直接运行的第二方案。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：增量是把容器栈、证书、token文件、状态和待确认客户端片段组织为DSH生命周期工具，相对手动Compose降低重复操作。隧道传输来自cloudflared、MCP转发来自外部mcp-proxy；本项目不实现MCP协议，也不自动提供应用级授权。
+> **亮点**：增量是把容器栈、证书、token文件、状态和待确认客户端片段组织为DSH生命周期工具，相对手动Compose降低重复操作。隧道传输来自cloudflared、MCP转发来自外部mcp-proxy；本项目不实现MCP协议，也不自动提供应用级授权。
 
 增量是把容器栈、证书、token文件、状态和待确认客户端片段组织为DSH生命周期工具，相对手动Compose降低重复操作。隧道传输来自cloudflared、MCP转发来自外部mcp-proxy；本项目不实现MCP协议，也不自动提供应用级授权。
 
@@ -80,13 +77,23 @@ src/index.ts注册隧道工具并spawn Docker/Podman Compose；tunnel-stack.ts�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 虽然文字称本地MCP，resolveFromMcpJson遇stdio会拒绝并要求先转HTTP，不能宣称任意本地server即用。Compose引用latest镜像，代理API_KEY是否真正强制鉴权需固定镜像实测；pending片段包含Bearer且writePendingFragment无显式0600，与.env明确0600不同。provider anthropic模板的命名隧道启动仍是注释，不是可直接运行的第二方案。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+只在隔离示例端点试。确认HTTP而非stdio上游、实际鉴权和镜像版本，再手动审阅pending配置；生成URL不代表远端授权完成。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-mcp-tunnel](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel)
 - **版本号**：0.1.0（[固定提交 ecd7d8e5](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/tree/ecd7d8e555423123960009f9f8ab878246f0132f)）
@@ -97,9 +104,9 @@ src/index.ts注册隧道工具并spawn Docker/Podman Compose；tunnel-stack.ts�
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：固定镜像在隔离端点核鉴权拒绝、token权限、重启/stop、取消及非Quick配置；本轮未建容器或公网隧道。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：固定镜像摘要并在生成客户端片段前运行未授权拒绝/授权成功探针，可降低有URL就当安全可用。对空token、错token、健康上游及stdio输入验证结果；缺鉴权时不生成可用声明。
 
@@ -120,9 +127,9 @@ src/index.ts注册隧道工具并spawn Docker/Podman Compose；tunnel-stack.ts�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

@@ -45,6 +45,49 @@ function statistics(body) {
         )
         .join('\n\n');
 }
+// Table groups retain one real subheading; quoted source remains untouched.
+export function tableSections(body, fallback) {
+    const titles = new Map([
+        ['能力|主要用途|使用条件与边界', '能力'],
+        ['依赖或条件|是否必需|用途|缺失或不满足时', '启动与依赖'],
+        ['步骤|执行者与动作|成功判据或失败处理', '启动步骤'],
+        ['阶段|现金与资源成本|人工与时间投入|已知条件与未知项', '成本'],
+        ['效果项|当前证据支持|尚不能确定', '效果']
+    ]);
+    let fence = null,
+        found = false;
+    const lines = [];
+    for (const line of body.split('\n')) {
+        const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+        if (marker) {
+            if (!fence) fence = marker[1];
+            else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim()) fence = null;
+        }
+        const key =
+            !fence && line.trim().startsWith('|')
+                ? line
+                      .trim()
+                      .replace(/^\||\|$/g, '')
+                      .split('|')
+                      .map((cell) => cell.trim())
+                      .join('|')
+                : '';
+        const title = titles.get(key);
+        if (title) {
+            found = true;
+            let previous = lines.length - 1;
+            while (previous >= 0 && !lines[previous].trim()) previous -= 1;
+            if (
+                previous >= 0 &&
+                (lines[previous].trim() === `**${title}**` || lines[previous].trim() === `#### ${title}`)
+            ) {
+                lines[previous] = `#### ${title}`;
+            } else lines.push(`#### ${title}`, '');
+        }
+        lines.push(line);
+    }
+    return found ? lines.join('\n') : fragment(fallback, body);
+}
 export function renderDetailLayout(report, item, { meta, issues, advice, capabilities, evidence, longRead }) {
     const parts = splitSections(report.replace(/\n<!-- BEGIN META -->\n[\s\S]*?\n<!-- END META -->\n*/g, '\n'));
     const intro = parts.shift().body;
@@ -66,9 +109,12 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
     const review = label('思考') || label('关键质疑');
     const suggestion = label('建议');
     const version = take(/^(版本|研究范围|分析版本)$/);
-    const status = take(/^结论状态$/);
+    const status = take(/^结论状态$/)
+        .split(/\n\s*\n/)
+        .filter((p) => p.trim() !== '[重点创新推演与最小验证](#innovation)')
+        .join('\n\n');
     const scene = take(/场景与替代办法|它试图解决什么问题|用途与适用场景/);
-    const canonicalCurrent = take(/^当前插件分析$/);
+    const canonicalCurrent = take(/^(当前插件分析|插件分析)$/);
     const canonicalAbilities = take(/^能力与限制$/);
     const canonicalTechnical = take(/^工程分析$/);
     const flow = take(/依赖与流程|依赖、流程与成本|能力与流程/);
@@ -93,7 +139,7 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
     const fullCapabilities =
         capabilityBody ||
         Object.entries(capabilities.items)
-            .map(([name, text]) => template('SHORT-ITEM', { label: name, text }))
+            .map(([name, text]) => template('CAPABILITY-ITEM', { name, value: text }))
             .join('\n');
     const knownEvidence = evidence.filter((e) => e.revision === item.revision);
     const verified = knownEvidence.some((e) => e.kind === 'host_acceptance');
@@ -103,8 +149,8 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
         title,
         summary,
         meta,
-        advice,
-        validation,
+        highlight: label('亮点'),
+        risk: review,
         version: item.revision.slice(0, 7),
         version_url: `https://github.com/${item.repository}/tree/${item.revision}${item.path ? `/${item.path}` : ''}`
     });
@@ -112,20 +158,26 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
         .split('\n')
         .filter((line) => !/^- \*\*(用途|亮点|思考|关键质疑|建议)(?:：\*\*|\*\*：)/.test(line))
         .join('\n')
-        .trim();
+        .trim()
+        .split(/\n\s*\n/)
+        .filter((p) => ![advice, `采用建议：${advice}`].includes(p.trim()))
+        .join('\n\n');
     const use = join([
         preface,
         label('用途') ? template('SHORT-ITEM', { label: '用途', text: label('用途') }) : '',
-        suggestion && suggestion !== advice ? template('SHORT-ITEM', { label: '建议', text: suggestion }) : '',
-        extraShort,
         scene
+    ]);
+    const adoption = join([
+        advice,
+        extraShort,
+        suggestion && suggestion !== advice && !hypothesis.includes(suggestion) ? fragment('补充建议', suggestion) : ''
     ]);
     const abilities = join([
         canonicalAbilities,
-        fullCapabilities,
-        fragment('流程与依赖', flow),
+        tableSections(fullCapabilities, '能力'),
+        tableSections(flow, '流程与依赖'),
         fragment('兼容条件', compatibility),
-        fragment('效果与成本', cost),
+        tableSections(cost, '效果与成本'),
         review ? template('SHORT-ITEM', { label: '思考', text: review }) : ''
     ]);
     const technical = join([
@@ -135,7 +187,7 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
         engineering,
         materialEngineering
     ]);
-    const checks = join([verification, materialIntro, fragment('分析版本', version)]);
+    const checks = join([validation, status, verification, materialIntro, fragment('分析版本', version)]);
     const supplemental = join([
         stats || materialStats ? template('DETAIL-STATISTICS', { body: join([statistics(stats), materialStats]) }) : '',
         fragment('活跃度', issues)
@@ -147,10 +199,11 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
               opening,
               current: join([
                   canonicalCurrent,
-                  section('### 使用判断', join([status, use])),
+                  section('### 用途与适用场景', use),
                   section('### 能力、流程与成本', abilities),
                   section('### 工程贡献', technical.replace(/^### /gm, '#### ')),
                   section('### 主要限制', questions.replace(/^### /gm, '#### ')),
+                  section('### 使用建议', adoption),
                   section('### 核查说明与分析版本', checks),
                   remainder
               ]),
@@ -159,7 +212,8 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
           })
         : template('DETAIL-SHORT', {
               opening,
-              use: join([use, status]),
+              use,
+              adoption,
               abilities,
               technical: join([technical, questions, remainder]),
               checks: join([checks, supplemental])

@@ -1,7 +1,5 @@
 # dsh-wsl-dns
 
-> 比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[04d6ff1](https://github.com/173787247/dsh-wsl-dns/tree/04d6ff1aff856dd22b78c53013a9286efa0ddc35)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-dns)
 <!-- END META -->
 
-**使用建议**：只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。
+> **实现功能**：比较WSL与Windows的IPv4解析结果，读取nameserver并提供DNS、VPN与网络排查提示。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。
 
-## 使用建议
+> **风险与缺陷**：同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。
 
-- **用途**：WSL联网异常而Windows正常时，用户需要两端同域名解析证据，以缩小故障范围。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：WSL联网异常而Windows正常时，用户需要两端同域名解析证据，以缩小故障范围。
 
 此前未入档；nslookup/Resolve-DnsName等原生命令为对照，本项减少手动整理但未扩展到完整网络诊断。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：dns_doctor。
 
@@ -38,15 +44,27 @@
 
 每个域名需两端解析和PowerShell调用，批量时可能累积延迟；人工确认VPN策略与误报占时间，无实测排障收益。
 
-- **思考**：同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。
+> **思考**：同屏比较便于发现单侧解析失败；地址不同只支持差异事实，不支持唯一故障原因。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。
+## 3 工程分析
+
+> **亮点**：lib/dns.js读取resolv.conf，分别调用Node resolve4和Windows GetHostAddresses，去重排序后标记地址集合不一致。
 
 结果注释与建议生成是纯函数，错误解析退空数组；失败原因细节丢失，需要原生DNS输出补证。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+只作为差异线索，先用稳定测试域名核对，再结合HTTPS与代理探针；企业分流DNS环境不要仅因不一致改配置。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

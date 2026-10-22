@@ -1,7 +1,5 @@
 # dsh-tokenrhythm-bill
 
-> 集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[df72615](https://github.com/162568316/dsh-tokenrhythm-bill/tree/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f)
@@ -10,17 +8,25 @@
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
 <!-- END META -->
 
-**使用建议**：先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
+> **实现功能**：集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。
 
-## 使用建议
+> **风险与缺陷**：同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。
 
-- **用途**：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：多个中转或套餐用户需要对齐账户额度与模型清单，验收是当前账号的真实数据和明确的有效期。
 
 此前未入档；平台控制台是对账依据，插件改善聚合入口，不替代账务真相或统一模型计费。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **Host 路由**：账户、余额、模型、探测与平台会话代理。
 - **界面**：五页签费用中心及账号/平台切换。
@@ -39,15 +45,27 @@
 
 模型探测是实际调用，即使输出1token也不代表免费；Cookie续期、账号维护和平台接口漂移占人工，未测总对账成本。
 
-- **思考**：同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。
+> **思考**：同屏对齐到期额度和用量减少切换；平台金额聚合只有在身份、币种和冻结/限时口径一致时才有意义。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。
+## 3 工程分析
+
+> **亮点**：Host读取配置/凭据并代理平台账户接口，状态文件保存会话Cookie和账号信息；模型探测会发真实小请求，Client展示分平台面板。
 
 Host侧限制秘密返回并为状态文件设置权限，账号缓存有身份守卫；读取凭据文件与多平台登录流程增加长期兼容负担。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先只接入常用平台，对照控制台核验当前账号和限时额度，按需启用模型探测；敏感凭据留在受控宿主。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

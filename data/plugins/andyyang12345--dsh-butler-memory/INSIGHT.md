@@ -1,7 +1,5 @@
 # dsh-butler-memory
 
-> 通过MCP向DSH模型和用户面板接入Butler长期记忆、修订历史与候选接受/拒绝。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[0f64e0c](https://github.com/AndyYang12345/dsh-butler-memory/tree/0f64e0cf0420d0461fef2d49c2d6752faebc0562)
@@ -10,44 +8,41 @@
 [![npm 30d 773](https://img.shields.io/static/v1?label=npm+30d&message=773&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-butler-memory) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-butler-memory)
 <!-- END META -->
 
-**使用建议**：当前不建议直接用于重要记忆。作为历史接线参考，先核对目标DSH与上游MCP契约，再以隔离数据库验证权限和恢复。
+> **实现功能**：通过MCP向DSH模型和用户面板接入Butler长期记忆、修订历史与候选接受/拒绝。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：贡献是模型与可视管理两条通道接同一记忆体系、离线健康提示；真正记忆检索/权限/审计归独立butler-memory-mcp与数据库，本接入不重实现。
+
+> **风险与缺陷**：双通道是否共享一致权限与状态？独立进程各有生命周期，候选接受只传candidate_id，owner/revision校验依赖上游不能凭面板宣称确认；10秒超时不取消已提交MCP动作。作者已明确此DSH接入停止维护，旧兼容不能外推当前版本。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：用户与Agent共同管理长期记忆，合格写入需正确owner/revision/audit且用户知道候选与已存记忆区别。
-
-- **建议**：由双进程及未知结果推导，可统一共享桥接并返回写入收据/版本冲突，超时仅查候选最终状态而不重放。未验证；并发accept/reject、丢响应、进程重启后双方视图应一致且不重复写。
-
-当前不建议直接用于重要记忆。作为历史接线参考，先核对目标DSH与上游MCP契约，再以隔离数据库验证权限和恢复。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：用户与Agent共同管理长期记忆，合格写入需正确owner/revision/audit且用户知道候选与已存记忆区别。
 
 直接MCP只有模型入口，独立框架已有面板；插件补DSH可见管理但引入两条进程链。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **Skill**：运行时复制的Butler记忆使用说明。
 - **模型工具**：通过宿主MCP客户端提供memory工具。
@@ -66,13 +61,13 @@ DSH MCP/connection/客户端、ai-butler-memory-mcp、数据库与桥设备授�
 
 双通道透明管理的设计有参考价值，当前维护状态增加长期采用负担。
 
-- **思考**：双通道是否共享一致权限与状态？独立进程各有生命周期，候选接受只传candidate_id，owner/revision校验依赖上游不能凭面板宣称确认；10秒超时不取消已提交MCP动作。作者已明确此DSH接入停止维护，旧兼容不能外推当前版本。
+> **思考**：双通道是否共享一致权限与状态？独立进程各有生命周期，候选接受只传candidate_id，owner/revision校验依赖上游不能凭面板宣称确认；10秒超时不取消已提交MCP动作。作者已明确此DSH接入停止维护，旧兼容不能外推当前版本。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：贡献是模型与可视管理两条通道接同一记忆体系、离线健康提示；真正记忆检索/权限/审计归独立butler-memory-mcp与数据库，本接入不重实现。
+> **亮点**：贡献是模型与可视管理两条通道接同一记忆体系、离线健康提示；真正记忆检索/权限/审计归独立butler-memory-mcp与数据库，本接入不重实现。
 
 贡献是模型与可视管理两条通道接同一记忆体系、离线健康提示；真正记忆检索/权限/审计归独立butler-memory-mcp与数据库，本接入不重实现。
 
@@ -80,13 +75,25 @@ RPC端点白名单、显式字段映射与懒加载降级清楚；错误详情�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 双通道是否共享一致权限与状态？独立进程各有生命周期，候选接受只传candidate_id，owner/revision校验依赖上游不能凭面板宣称确认；10秒超时不取消已提交MCP动作。作者已明确此DSH接入停止维护，旧兼容不能外推当前版本。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+当前不建议直接用于重要记忆。作为历史接线参考，先核对目标DSH与上游MCP契约，再以隔离数据库验证权限和恢复。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AndyYang12345/dsh-butler-memory](https://github.com/AndyYang12345/dsh-butler-memory)
 - **版本号**：0.1.5（[固定提交 0f64e0cf](https://github.com/AndyYang12345/dsh-butler-memory/tree/0f64e0cf0420d0461fef2d49c2d6752faebc0562)）
@@ -97,9 +104,9 @@ RPC端点白名单、显式字段映射与懒加载降级清楚；错误详情�
 - 边界：抽读host/index.js、cordis.patch.yml、client/src/hostClient.ts、README.md；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：隔离数据集核对并发候选决策、超时后最终状态、owner/revision冲突及卸载副本；先验证最新宿主API不沿用旧测试结论。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由双进程及未知结果推导，可统一共享桥接并返回写入收据/版本冲突，超时仅查候选最终状态而不重放。未验证；并发accept/reject、丢响应、进程重启后双方视图应一致且不重复写。
 
@@ -122,9 +129,9 @@ RPC端点白名单、显式字段映射与懒加载降级清楚；错误详情�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

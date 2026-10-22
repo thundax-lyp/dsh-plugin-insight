@@ -1,7 +1,5 @@
 # dsh-vision
 
-> 给纯文本模型路由添加图片附件转译旁路，使用智谱视觉模型生成文字证据。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[10b0cbe](https://github.com/314857493/dsh-vision/tree/10b0cbe8c6f06a175eaa985df28d276575539b6e/packages/vision-route)
@@ -10,42 +8,41 @@
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/314857493/dsh-vision) [![npm 30d 1,264](https://img.shields.io/static/v1?label=npm+30d&message=1%2C264&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route)
 <!-- END META -->
 
-**使用建议**：需要保留纯文本主模型时可隔离试用；要求原始像素高保真或禁止上传智谱的场景先选其他办法，勿把文字描述当图像原件。
+> **实现功能**：给纯文本模型路由添加图片附件转译旁路，使用智谱视觉模型生成文字证据。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对切换整个会话到原生视觉模型，增量在视觉前处理与主模型解耦，以及基于本轮追问重新解析近期历史图；依赖现成视觉API，非新视觉算法。只研究vision-route，磁盘vision工具是另一组件。
+
+> **风险与缺陷**：转译文字是否保存足够细节？代码按问题生成并可复看旧图，这是强支持；但JSON结果默认只展平value而不保留key，表格关系和细节可能丢失。追问选择最多近期8轮/6张图，是有限范围的指代启发式，不能承诺任意历史理解。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-已实现机制由固定源码支持；效果未独立实测，未来假设未验证。
-
-[重点创新推演与最小验证](#innovation)
-
-- **用途**：希望继续使用已有纯文本provider、偶尔询问GUI图片的DSH用户，交付为可供下游推理的视觉描述。
-
-采用建议：需要保留纯文本主模型时可隔离试用；要求原始像素高保真或禁止上传智谱的场景先选其他办法，勿把文字描述当图像原件。
+> **用途**：希望继续使用已有纯文本provider、偶尔询问GUI图片的DSH用户，交付为可供下游推理的视觉描述。
 
 参照作者承认的DSH原生Vision及单独上传视觉模型；旁路牺牲部分保真换取主模型不变。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：图片块转译、问题相关缓存与历史图追问路由
 
@@ -61,13 +58,13 @@
 
 把视觉调用从主模型计费与能力中分离有机制依据，但准确率、实际价格与端到端时延未实测。
 
-- **思考**：转译文字是否保存足够细节？代码按问题生成并可复看旧图，这是强支持；但JSON结果默认只展平value而不保留key，表格关系和细节可能丢失。追问选择最多近期8轮/6张图，是有限范围的指代启发式，不能承诺任意历史理解。
+> **思考**：转译文字是否保存足够细节？代码按问题生成并可复看旧图，这是强支持；但JSON结果默认只展平value而不保留key，表格关系和细节可能丢失。追问选择最多近期8轮/6张图，是有限范围的指代启发式，不能承诺任意历史理解。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对切换整个会话到原生视觉模型，增量在视觉前处理与主模型解耦，以及基于本轮追问重新解析近期历史图；依赖现成视觉API，非新视觉算法。只研究vision-route，磁盘vision工具是另一组件。
+> **亮点**：相对切换整个会话到原生视觉模型，增量在视觉前处理与主模型解耦，以及基于本轮追问重新解析近期历史图；依赖现成视觉API，非新视觉算法。只研究vision-route，磁盘vision工具是另一组件。
 
 相对切换整个会话到原生视觉模型，增量在视觉前处理与主模型解耦，以及基于本轮追问重新解析近期历史图；依赖现成视觉API，非新视觉算法。只研究vision-route，磁盘vision工具是另一组件。
 
@@ -75,13 +72,23 @@
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 转译文字是否保存足够细节？代码按问题生成并可复看旧图，这是强支持；但JSON结果默认只展平value而不保留key，表格关系和细节可能丢失。追问选择最多近期8轮/6张图，是有限范围的指代启发式，不能承诺任意历史理解。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+需要保留纯文本主模型时可隔离试用；要求原始像素高保真或禁止上传智谱的场景先选其他办法，勿把文字描述当图像原件。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+已实现机制由固定源码支持；效果未独立实测，未来假设未验证。
 
 - 已检查：作者 README、包清单、源码路径 packages/vision-route/index.js、packages/vision-route/package.json 及固定范围 inventory；组件：packages/vision-route。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
@@ -94,9 +101,9 @@
 - **版本号**：0.1.4（[固定提交 10b0cbe8](https://github.com/314857493/dsh-vision/tree/10b0cbe8c6f06a175eaa985df28d276575539b6e)）
 - **版本日期**：2026-09-05（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
@@ -104,9 +111,9 @@
 
 用含重复数字、跨列标题的图片及超过回看窗口的追问对照原生视觉、当前旁路与结构证据版本；若信息保真无改善或成本超过价值则否定假设。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

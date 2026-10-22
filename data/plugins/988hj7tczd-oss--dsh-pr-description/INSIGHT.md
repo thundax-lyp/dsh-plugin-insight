@@ -1,7 +1,5 @@
 # dsh-pr-description
 
-> 分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[7608cb9](https://github.com/988hj7tczd-oss/dsh-pr-description/tree/7608cb9b7b61447a3aff14491537ba7ee8caad6b)
@@ -10,42 +8,41 @@
 [![npm 30d 385](https://img.shields.io/static/v1?label=npm+30d&message=385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pr-description) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pr-description)
 <!-- END META -->
 
-**使用建议**：适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。
+> **实现功能**：分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。
+
+> **风险与缺陷**：正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合已有分支提交、想快速整理可复核PR草稿的开发者；动机和测试事实仍需作者补齐。
-
-- **建议**：未验证假设：将每段描述绑定diff证据并把未知动机/未执行测试保留空项，可降低模板看似完整却陈述失真的情况。用仅重命名、多语言与未跑测试分支比较事实错误和人工改写时间；语义润色不得补造测试结果。
-
-适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合已有分支提交、想快速整理可复核PR草稿的开发者；动机和测试事实仍需作者补齐。
 
 替代是Git统计加PR模板或模型读diff；本项目提供确定工具流程，未实现语义撰写或代码评审。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：pr_describe分支差异草稿、可选确认与创建PR
 
@@ -63,13 +60,13 @@ pr-describe.ts以宿主subprocess固定argv读取Git事实，diff-analysis.ts轻
 
 可省统计与排版，未有PR审阅质量或编辑时间的独立对照。
 
-- **思考**：正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。
+> **思考**：正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。
+> **亮点**：作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。
 
 作者主张PR描述自动生成；实际增量是将基线选择、差异统计、模板和可选gh动作连成DSH工具。相对手抄git diff可减少格式操作；README明确不调用LLM，确定模板不能理解业务动机，也不能凭文件变更证明测试通过。
 
@@ -79,13 +76,23 @@ Git命令走固定argv、禁用部分副作用环境、输出有界且对lossy�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 正则提取最多16个符号，不能完整理解多语言、重命名和语义破坏；自动base选择可能和实际目标分支不同。输出路径resolve(workdir,outputFile)后直接Node mkdir/writeFile，无本工具ctx.fs containment，应核调用者允许写范围。confirm可选且只预览标题与路径，openPr是实际外部动作，不能把仅生成草稿和创建PR混同。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合先生成本地草稿。明确base和输出路径，逐段核业务动机、breaking与已跑测试；只有确实要创建PR时才用openPr。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-pr-description](https://github.com/988hj7tczd-oss/dsh-pr-description)
 - **版本号**：0.1.1（[固定提交 7608cb9b](https://github.com/988hj7tczd-oss/dsh-pr-description/tree/7608cb9b7b61447a3aff14491537ba7ee8caad6b)）
@@ -96,9 +103,9 @@ Git命令走固定argv、禁用部分副作用环境、输出有界且对lossy�
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：核错误base、rename/二进制、大diff、取消、越界输出和gh失败，逐段比对事实；本轮不写目标PR或调用gh。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：将每段描述绑定diff证据并把未知动机/未执行测试保留空项，可降低模板看似完整却陈述失真的情况。用仅重命名、多语言与未跑测试分支比较事实错误和人工改写时间；语义润色不得补造测试结果。
 
@@ -121,9 +128,9 @@ Git命令走固定argv、禁用部分副作用环境、输出有界且对lossy�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

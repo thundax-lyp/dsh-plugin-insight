@@ -1,7 +1,5 @@
 # dsh-lsp-java
 
-> 为DSH配置Eclipse JDT语言服务的Java导航路由。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-java)
@@ -10,42 +8,41 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-**使用建议**：已有Java开发环境可先试。确认JDK、jdtls启动参数和每项目工作区，再测真实项目；等待索引完成后才判断导航结果。
+> **实现功能**：为DSH配置Eclipse JDT语言服务的Java导航路由。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：本项把Eclipse JDT启动形式包装成独立语言配置包，降低手工组合成本；其增量是Java进程和扩展参数的宿主接线，不是Java索引器或新的导航协议。作者称即插即用须以JDK和项目布局满足为条件。
+
+> **风险与缺陷**：README明确JDK17+、jdtls启动器与独立Eclipse工作区，首次初始化可慢；有命令并不代表项目已索引。用户自定义-data目录是否隔离不同项目要自己核实。catch所有加载错误统一missing-server类解释可能遮住jar路径、JVM与配置错误，且fallback丢自定义扩展。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合已有JDK与Java项目、需要在DSH使用jdtls导航的开发者；启动与工作区初始化需单独核对。
-
-- **建议**：待验证假设：把JVM可用、启动器参数、工作区锁及索引就绪分开报告，可降低Java初次查询失败的盲重试。以错误jar、复用data目录及正常项目做故障矩阵，测归因与恢复时间；不将加载成功当索引完成。
-
-已有Java开发环境可先试。确认JDK、jdtls启动参数和每项目工作区，再测真实项目；等待索引完成后才判断导航结果。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合已有JDK与Java项目、需要在DSH使用jdtls导航的开发者；启动与工作区初始化需单独核对。
 
 替代为IDE的JDT导航或手写stdio配置；插件减少宿主接线，不能替代Java构建与索引。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：java provider配置：jdtls、.java映射及不可用占位
 
@@ -63,13 +60,13 @@ fs/lsp/subprocess及官方stdio/tool-lsp底座；README声明JDK17+及Eclipse jd
 
 可减少JDT接线重复，无真实Java工程迁移或导航效果验证。
 
-- **思考**：README明确JDK17+、jdtls启动器与独立Eclipse工作区，首次初始化可慢；有命令并不代表项目已索引。用户自定义-data目录是否隔离不同项目要自己核实。catch所有加载错误统一missing-server类解释可能遮住jar路径、JVM与配置错误，且fallback丢自定义扩展。
+> **思考**：README明确JDK17+、jdtls启动器与独立Eclipse工作区，首次初始化可慢；有命令并不代表项目已索引。用户自定义-data目录是否隔离不同项目要自己核实。catch所有加载错误统一missing-server类解释可能遮住jar路径、JVM与配置错误，且fallback丢自定义扩展。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：本项把Eclipse JDT启动形式包装成独立语言配置包，降低手工组合成本；其增量是Java进程和扩展参数的宿主接线，不是Java索引器或新的导航协议。作者称即插即用须以JDK和项目布局满足为条件。
+> **亮点**：本项把Eclipse JDT启动形式包装成独立语言配置包，降低手工组合成本；其增量是Java进程和扩展参数的宿主接线，不是Java索引器或新的导航协议。作者称即插即用须以JDK和项目布局满足为条件。
 
 本项把Eclipse JDT启动形式包装成独立语言配置包，降低手工组合成本；其增量是Java进程和扩展参数的宿主接线，不是Java索引器或新的导航协议。作者称即插即用须以JDK和项目布局满足为条件。
 
@@ -79,13 +76,23 @@ java/src入口仅配置LspStdio，控制参数和故障provider可检查；官�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 README明确JDK17+、jdtls启动器与独立Eclipse工作区，首次初始化可慢；有命令并不代表项目已索引。用户自定义-data目录是否隔离不同项目要自己核实。catch所有加载错误统一missing-server类解释可能遮住jar路径、JVM与配置错误，且fallback丢自定义扩展。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+已有Java开发环境可先试。确认JDK、jdtls启动参数和每项目工作区，再测真实项目；等待索引完成后才判断导航结果。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-lsp-packs](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 - **版本号**：0.1.0（[固定提交 258bb640](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce)）
@@ -96,9 +103,9 @@ README明确JDK17+、jdtls启动器与独立Eclipse工作区，首次初始化�
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：验证JDK/启动器缺失、错误-data与冷索引、多模块项目四操作；本轮未启动JVM或jdtls。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：把JVM可用、启动器参数、工作区锁及索引就绪分开报告，可降低Java初次查询失败的盲重试。以错误jar、复用data目录及正常项目做故障矩阵，测归因与恢复时间；不将加载成功当索引完成。
 
@@ -119,9 +126,9 @@ README明确JDK17+、jdtls启动器与独立Eclipse工作区，首次初始化�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

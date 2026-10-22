@@ -1,7 +1,5 @@
 # dsh-plugin-console
 
-> 在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[224e539](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)
@@ -10,42 +8,41 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AlexYin-Tongji/dsh-plugin-console) [![npm 30d 1,126](https://img.shields.io/static/v1?label=npm+30d&message=1%2C126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-console) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-console)
 <!-- END META -->
 
-**使用建议**：适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。
+> **实现功能**：在设置页浏览目录与已装插件，规划变更并执行官方CLI和隔离profile启动检查。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。
+
+> **风险与缺陷**：canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：维护DSH Web profile插件，安装更新前确认目标和回退路径。
-
-- **建议**：未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。
-
-适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+> **用途**：维护DSH Web profile插件，安装更新前确认目标和回退路径。
 
 参照手工目录浏览、dsh plugin CLI和复制profile测试；增量是artifact校验、短期plan、锁/备份和canary组合。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：插件目录和已装管理
 - **Host 路由**：插件计划、执行和状态
@@ -65,13 +62,13 @@
 
 变更前后状态和回滚机制有源码支持，无真实安装失败率或恢复时间对照。
 
-- **思考**：canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。
+> **思考**：canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。
+> **亮点**：把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。
 
 把来源确认、目标冻结和失败恢复带入插件管理流程，而非只是包装安装按钮。初始化/客户端资源探针扩大了检查范围，但不能把代码验证描述为安全认证。
 
@@ -81,13 +78,23 @@
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不等于OS沙箱，任意插件仍可读绝对路径和联网，其他API密钥也未全部清除。其价值是兼容冲突检测，不能证明恶意或高权限代码安全；回滚profile不自动回滚插件外部副作用。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合维护测试profile；先核备份空间、canary与回滚，生产环境重启后的UI必须另验。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AlexYin-Tongji/dsh-plugin-console](https://github.com/AlexYin-Tongji/dsh-plugin-console)
 - **版本号**：0.3.2（[固定提交 224e5395](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)）
@@ -98,9 +105,9 @@ canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不�
 - 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：未来隔离测试环境核变更漂移、回滚失败、子进程清理及副作用边界；本轮未安装或启动目标插件。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：将canary明确分为兼容探针与可选OS级最小权限运行，并记录外部副作用，可降低对“隔离试运行”的误解。用写绝对路径、读环境、网络请求和初始化冲突样例分别核边界；若无法隔离就只声明兼容验证。
 
@@ -124,9 +131,9 @@ canaryEnvironment先展开process.env再删除少数变量，HOME/TMP隔离不�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

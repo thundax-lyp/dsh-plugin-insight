@@ -1,7 +1,5 @@
 # dsh-router-loomy
 
-> 将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[ccabca3](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)
@@ -10,43 +8,42 @@
 [![npm 30d 1,685](https://img.shields.io/static/v1?label=npm+30d&message=1%2C685&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
 <!-- END META -->
 
-**使用建议**：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。
+> **实现功能**：将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。
+
+> **风险与缺陷**：缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-  - [源码索引](#detail-section-7)
-- [未来设计假设（未验证）](#detail-section-8)
-- [辅助信息](#detail-section-9)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+  - [1.7 源码索引](#detail-section-8)
+- [2 未来设计假设（未验证）](#detail-section-9)
+- [3 辅助信息](#detail-section-10)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-已确认本地登录态适配与SSE完整性守卫，作者自称OpenAI兼容不等于官方通道稳定承诺；未打开客户端、未读用户凭证或调用Loomy，截断判据迁移未验证。
-
-[重点创新推演与最小验证](#innovation)
-
-- **用途**：面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。
-
-采用建议：已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。
+> **用途**：面向已登录Loomy且使用dsh-router的用户，想在DSH中使用同一模型通道；成功标准是请求用预期账号完成、异常流可被识别且凭证不误暴露。
 
 参照手工OpenAI兼容端点和traework适配器；本项是供应商差异适配，核心路由贡献不重复归属，也不把客户端账号可读当官方授权稳定性证据。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：router.suppliers的Loomy工厂、本机登录态读取及SSE收尾守卫
 - **Host 路由**：Loomy客户端状态与登录操作页面路由
@@ -63,13 +60,13 @@
 
 减少手动粘贴会话与通道差异维护，把共同路由逻辑留给核心；可靠性收益取决于非公开客户端存储和上游SSE稳定，未有同条件合格率对照。
 
-- **思考**：缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。
+> **思考**：缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。
+> **亮点**：作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。
 
 作者明确参照dsh-router-traework同构范式，不能把核心选号、冷却和换号算插件原创。本项增量是Loomy本地会话发现、追踪头与“有[DONE]却无finish_reason”流的区分，处理常规兼容转发容易把半回答当成功的边界。
 
@@ -77,13 +74,23 @@ api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 缺finish_reason是否总能判断坏流并安全重试？sse.ts用completion_tokens>=maxTokens区分撞上限，否则判截断，只有推理无正文也判失败；这匹配作者观测，但合法上游格式变化或usage漏报可能误判。强制核心重试还会增加费用，已产生工具副作用的流需格外核对，不能把重试等同无损补齐。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+已有Loomy账号和router环境时先用非敏感只读问题验证当前模型、账号与完整收尾，再测会话刷新和中断；频繁断流时核对是否重复调用，勿直接用于要求一次副作用的任务。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+已确认本地登录态适配与SSE完整性守卫，作者自称OpenAI兼容不等于官方通道稳定承诺；未打开客户端、未读用户凭证或调用Loomy，截断判据迁移未验证。
 
 - 已检查：作者 README、包清单、源码路径 src/index.ts、src/accounts.ts、src/provider.ts、src/api/sse.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
@@ -96,18 +103,18 @@ api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节�
 - **版本号**：0.2.0（[固定提交 ccabca34](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)）
 - **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-### 源码索引
+### 1.7 源码索引
 
 - [src/index.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/index.ts)
 - [src/accounts.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/accounts.ts)
 - [src/provider.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/provider.ts)
 - [src/api/sse.ts](https://github.com/2404723600/dsh-router-loomy/blob/ccabca348ca2194287f0770ce348283fdb8bf3d8/src/api/sse.ts)
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
@@ -115,9 +122,9 @@ api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节�
 
 保留脱敏正常/截断/撞上限/纯推理/迟到错误SSE样本，固定核心版本比较误判率、重复请求与最终完整回答；再换客户端版本验证会话更新。兼容档若不能降低误重试或增加过多未知结果，则否定假设。
 
-<a id="detail-section-9"></a>
+<a id="detail-section-10"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

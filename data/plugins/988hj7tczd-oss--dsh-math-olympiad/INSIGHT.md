@@ -1,7 +1,5 @@
 # dsh-math-olympiad
 
-> 提供竞赛数学求解、独立验证及信心/弃权输出的技能流程，可选编译PDF。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[b04fadf](https://github.com/988hj7tczd-oss/dsh-math-olympiad/tree/b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0)
@@ -10,42 +8,41 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-math-olympiad) [![npm 30d 108](https://img.shields.io/static/v1?label=npm+30d&message=108&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-math-olympiad)
 <!-- END META -->
 
-**使用建议**：适合学习和初步证明检查。先确认验证者实际只收到证明与攻击清单，重要结论请独立复核；high不是形式化证明或正确率承诺。
+> **实现功能**：提供竞赛数学求解、独立验证及信心/弃权输出的技能流程，可选编译PDF。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。
+
+> **风险与缺陷**：high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：适合希望把竞赛题求解与证明质疑分开的学习者；输出是证明、验证结论和有边界的信心。
-
-- **建议**：未验证假设：将求解者/验证者输入和具体缺口保存为可审阅记录，并用已知真伪题评估high标签，可减少错而自信。对正确证明、隐含条件错误和无解题比较错误接受率、弃权率及额外模型费用；若高信心未改善，取消校准表述。
-
-适合学习和初步证明检查。先确认验证者实际只收到证明与攻击清单，重要结论请独立复核；high不是形式化证明或正确率承诺。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+> **用途**：适合希望把竞赛题求解与证明质疑分开的学习者；输出是证明、验证结论和有边界的信心。
 
 替代为人工互审、普通模型自检或形式化证明系统；本项目增强提示纪律，不提供形式化可靠性。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **Skill**：dsh-math-olympiad竞赛数学求解与验证流程
 - **后台**：mathOlympiadSkills路径服务及独立技能provider配置
@@ -64,13 +61,13 @@ src/locator.ts仅提供技能路径服务；cordis.patch.yml以独立filesystem 
 
 流程有促使暴露缺口的可能性，无题集评测、独立引用或正确率提升证据。
 
-- **思考**：high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。
+> **思考**：high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。
+> **亮点**：作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。
 
 作者强调对抗验证与诚实弃权；本项贡献是将Pólya启发、具体失败模式、最多两轮修正和弃权写成可执行提示流程，另有可靠路径挂载。不是形式化证明器，也没有代码强制保证验证器隔离或验证结果正确；数学方法归公开参照，非本项目新定理。
 
@@ -80,13 +77,23 @@ src/locator.ts仅提供技能路径服务；cordis.patch.yml以独立filesystem 
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 high由模型验证器零缺口决定，并没有校准数据，故不能把标签称统计校准的正确概率。隔离与只传证明是Skill纪律，locator没有调度器 enforcing；smoke的stub传参结构不证明真实宿主不共享历史。用开放问题特化作红旗有启发价值，不能替代逐步证明检查。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合学习和初步证明检查。先确认验证者实际只收到证明与攻击清单，重要结论请独立复核；high不是形式化证明或正确率承诺。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，外部语言服务或技能流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[988hj7tczd-oss/dsh-math-olympiad](https://github.com/988hj7tczd-oss/dsh-math-olympiad)
 - **版本号**：0.1.0（[固定提交 b04fadfe](https://github.com/988hj7tczd-oss/dsh-math-olympiad/tree/b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0)）
@@ -97,9 +104,9 @@ high由模型验证器零缺口决定，并没有校准数据，故不能把标�
 - 证据限制：固定SHA内本组件列明文件及配置/作者资料的有界源码检查；组件inventory不包含外部官方底座原创量。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：固定模型/宿主用真伪证明标注集核输入隔离、错误接受与弃权；另独立核TeX缺失回退，本轮未解题或编译。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：将求解者/验证者输入和具体缺口保存为可审阅记录，并用已知真伪题评估high标签，可减少错而自信。对正确证明、隐含条件错误和无解题比较错误接受率、弃权率及额外模型费用；若高信心未改善，取消校准表述。
 
@@ -120,9 +127,9 @@ high由模型验证器零缺口决定，并没有校准数据，故不能把标�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

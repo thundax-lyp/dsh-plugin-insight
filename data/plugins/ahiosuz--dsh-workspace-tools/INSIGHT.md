@@ -1,7 +1,5 @@
 # dsh-workspace-tools
 
-> 为工作区保存Agent和权限默认预设，并在新根会话创建时自动应用。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[d370852](https://github.com/AHIOSUZ/dsh-workspace-tools/tree/d370852671425f09909862a7d220f7b0538f2f3c)
@@ -10,44 +8,41 @@
 
 <!-- END META -->
 
-**使用建议**：适合工作区信任稳定的用户先用保守权限测试。新建立即运行和手动改选时核对持久会话最终值，不把自动默认当授权审核。
+> **实现功能**：为工作区保存Agent和权限默认预设，并在新根会话创建时自动应用。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对全局同一默认值，增量是项目上下文默认化，采用官方服务并保留后续手动选择。不是新权限引擎，权限实际语义归宿主。
+
+> **风险与缺陷**：创建后异步切换是否必定先于第一轮和手选？监听void applyRule，Agent切换await后再改权限；源码检查已有turn发生在应用前，执行期间的首轮/用户选择存在时序待验。normalizePath还统一大小写，非Windows大小写敏感路径需检查，不能由ID主路径推断所有fallback正确。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：在不同项目间重复切换预设的用户，希望减少每次设置；合格结果是只影响正确新会话，人工选择优先且权限默认符合项目信任。
-
-- **建议**：由异步双预设应用推导，可让宿主创建时携带原子默认计划，应用前后版本检查并在人手选后取消自动任务。未验证；注入慢select与立即首轮/手选，若自动值仍覆盖选择则否定。
-
-适合工作区信任稳定的用户先用保守权限测试。新建立即运行和手动改选时核对持久会话最终值，不把自动默认当授权审核。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：在不同项目间重复切换预设的用户，希望减少每次设置；合格结果是只影响正确新会话，人工选择优先且权限默认符合项目信任。
 
 手工选预设最直接；插件是便利默认，而非安全策略替代。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **事件监听**：agent/created匹配并应用工作区默认。
 - **界面**：工作区默认预设设置页。
@@ -64,13 +59,13 @@ workspaceRegistry、agentPresets、permissionPresets、turnBoundary与settings�
 
 减少重复选择，不能保证项目代码可信或防止权限扩大。
 
-- **思考**：创建后异步切换是否必定先于第一轮和手选？监听void applyRule，Agent切换await后再改权限；源码检查已有turn发生在应用前，执行期间的首轮/用户选择存在时序待验。normalizePath还统一大小写，非Windows大小写敏感路径需检查，不能由ID主路径推断所有fallback正确。
+> **思考**：创建后异步切换是否必定先于第一轮和手选？监听void applyRule，Agent切换await后再改权限；源码检查已有turn发生在应用前，执行期间的首轮/用户选择存在时序待验。normalizePath还统一大小写，非Windows大小写敏感路径需检查，不能由ID主路径推断所有fallback正确。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对全局同一默认值，增量是项目上下文默认化，采用官方服务并保留后续手动选择。不是新权限引擎，权限实际语义归宿主。
+> **亮点**：相对全局同一默认值，增量是项目上下文默认化，采用官方服务并保留后续手动选择。不是新权限引擎，权限实际语义归宿主。
 
 相对全局同一默认值，增量是项目上下文默认化，采用官方服务并保留后续手动选择。不是新权限引擎，权限实际语义归宿主。
 
@@ -78,13 +73,25 @@ workspaceRegistry、agentPresets、permissionPresets、turnBoundary与settings�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 创建后异步切换是否必定先于第一轮和手选？监听void applyRule，Agent切换await后再改权限；源码检查已有turn发生在应用前，执行期间的首轮/用户选择存在时序待验。normalizePath还统一大小写，非Windows大小写敏感路径需检查，不能由ID主路径推断所有fallback正确。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+适合工作区信任稳定的用户先用保守权限测试。新建立即运行和手动改选时核对持久会话最终值，不把自动默认当授权审核。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AHIOSUZ/dsh-workspace-tools](https://github.com/AHIOSUZ/dsh-workspace-tools)
 - **版本号**：0.4.6（[固定提交 d3708526](https://github.com/AHIOSUZ/dsh-workspace-tools/tree/d370852671425f09909862a7d220f7b0538f2f3c)）
@@ -95,9 +102,9 @@ workspaceRegistry、agentPresets、permissionPresets、turnBoundary与settings�
 - 边界：抽读src/index.js；未覆盖全部参考/界面分支与真实并发宿主行为，未运行目标代码、外部工具或安装验收。
 - 下一步：隔离会话验证子目录/移除工作区、大小写路径、慢切换、第一轮竞态与人工改选，核对日志和持久最终值。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由异步双预设应用推导，可让宿主创建时携带原子默认计划，应用前后版本检查并在人手选后取消自动任务。未验证；注入慢select与立即首轮/手选，若自动值仍覆盖选择则否定。
 
@@ -118,9 +125,9 @@ workspaceRegistry、agentPresets、permissionPresets、turnBoundary与settings�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

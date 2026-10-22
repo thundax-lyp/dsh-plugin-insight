@@ -1,7 +1,5 @@
 # dsh-wsl-defender
 
-> 从WSL读取Windows Defender、防火墙、近期检测和排除项，形成安全状态摘要。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[3463d75](https://github.com/173787247/dsh-wsl-defender/tree/3463d756faa7318bb8c1597db9a1bc0b1072d413)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-defender)
 <!-- END META -->
 
-**使用建议**：作为状态收集工具使用，对关键异常回到Windows安全中心核对；遇到unavailable先查权限和安全产品。
+> **实现功能**：从WSL读取Windows Defender、防火墙、近期检测和排除项，形成安全状态摘要。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：defender-exec.js经PowerShell调用Get-MpComputerStatus等只读命令，defender.js规范化结果并将杀毒数据缺失显示为不可用。
 
-## 使用建议
+> **风险与缺陷**：合并多个状态命令方便排障；快照不能代替持续防护，也不把没有返回数据当作已确认无威胁。
 
-- **用途**：开发者排查Windows环境状态时需要把系统安全配置带入会话，合格结果是可核对的当前状态而非安全认证。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：开发者排查Windows环境状态时需要把系统安全配置带入会话，合格结果是可核对的当前状态而非安全认证。
 
 此前未入档；手工Windows安全中心和PowerShell查询为对照，本项主要减少证据收集步骤。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：win_defender。
 
@@ -38,15 +44,27 @@
 
 无新增外部API费用，主要是PowerShell启动和人工核对；敏感排除路径与检测记录进入模型也有数据管理负担。
 
-- **思考**：合并多个状态命令方便排障；快照不能代替持续防护，也不把没有返回数据当作已确认无威胁。
+> **思考**：合并多个状态命令方便排障；快照不能代替持续防护，也不把没有返回数据当作已确认无威胁。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：defender-exec.js经PowerShell调用Get-MpComputerStatus等只读命令，defender.js规范化结果并将杀毒数据缺失显示为不可用。
+## 3 工程分析
+
+> **亮点**：defender-exec.js经PowerShell调用Get-MpComputerStatus等只读命令，defender.js规范化结果并将杀毒数据缺失显示为不可用。
 
 执行脚本与纯规范化/格式化分开利于跨平台静态验证；子查询catch吞错后缺少逐维度可用性，解释结果时需保留边界。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+作为状态收集工具使用，对关键异常回到Windows安全中心核对；遇到unavailable先查权限和安全产品。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

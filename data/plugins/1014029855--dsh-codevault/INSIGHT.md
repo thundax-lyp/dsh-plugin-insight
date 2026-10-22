@@ -1,7 +1,5 @@
 # dsh-codevault
 
-> 把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。
-
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
 分析版本：[14dcb88](https://github.com/1014029855/dsh-codevault/tree/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9)
@@ -10,17 +8,25 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault)
 <!-- END META -->
 
-**使用建议**：先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。
+> **实现功能**：把源码阅读整理成可检索的仓库、文件和符号卡片，并关联本地知识库。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。
 
-## 使用建议
+> **风险与缺陷**：对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。
 
-- **用途**：反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：反复阅读相同代码的人需要保留带对象身份的笔记，减少重复整理。
 
 Markdown 阅读笔记最易迁移；插件额外价值在结构化工具和检索，不是自动保证理解。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：源码卡片和 vault 查询维护。
 - **Skill**：code-reading 阅读框架。
@@ -40,15 +46,27 @@ Markdown 阅读笔记最易迁移；插件额外价值在结构化工具和检�
 
 生成和维护卡片需要模型与人工审阅；只有重复使用时才可能抵消整理成本。
 
-- **思考**：对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。
+> **思考**：对象卡片比聊天时间线容易复用；写得整齐不等于理解准确或跟上代码变更。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。
+## 3 工程分析
+
+> **亮点**：入口注册 code-reading Skill、read/vault 工具及 /codevault，配置档案目录与可选只读 vault。
 
 档案根与只读 vault 分开配置有利于职责清晰；跨工具迁移需核对链接与对象身份。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先给一个常读模块建卡，代码更新后核对引用和过期结论，不把历史笔记直接当现状。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

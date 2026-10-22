@@ -1,7 +1,5 @@
 # DSH Harness Switch
 
-> 在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[678b5a2](https://github.com/AlyceStocking/dsh-harness-switch/tree/678b5a218f750c61c055bb113a4ff003948aa774)
@@ -10,42 +8,41 @@
 [![npm 30d 39](https://img.shields.io/static/v1?label=npm+30d&message=39&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-harness-switch)
 <!-- END META -->
 
-**使用建议**：明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。
+> **实现功能**：在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。
+
+> **风险与缺陷**：切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：希望相同模型下比较/使用不同harness工具、Skills和压缩的开发者；合格交付是一次真实执行、正确审批和可恢复会话关联。
-
-- **建议**：给每harness显示可比较的权限能力清单，并为未知pending提供只读恢复/回执核查而非重新prompt，可能减少策略误判和重复工具副作用。固定同任务比较原生/embedded审批触发，再在工具完成后断写completed恢复，要求不自动重放；若不能核定原结果，应保持unknown并交人。
-
-明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。
-
-核查状态：传输/引擎分工、审批桥与持久关联源码支持；上游内核全部行为和跨harness恢复未运行验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+> **用途**：希望相同模型下比较/使用不同harness工具、Skills和压缩的开发者；合格交付是一次真实执行、正确审批和可恢复会话关联。
 
 DSH原生工具循环、Kimi CLI独立运行或简单模型API适配；本项保留嵌入执行语义，不只是换系统提示。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：kimi_harness_turn为本地嵌入式执行传输入口。
 - **Host 路由**：connection /harness-switch提供设置/模型/执行视图RPC。
@@ -68,13 +65,13 @@ DSH bundle，README声明Node24.15/特定Desktop；vendor固定MIT来源与来�
 
 在同原生UI使用另一执行体系，适合研究harness差异；未有同模型任务质量/成本实验。
 
-- **思考**：切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。
+> **思考**：切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。
+> **亮点**：避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。
 
 避免把外部harness降格成模型文本：嵌入Kimi核心拥有提示/工具/权限/压缩，DSH保留会话UI与审批，外层不再执行同一真实工具第二次。贡献是执行所有权桥接；vendor Kimi内核明确上游固定提交，不将其能力或代码量算插件原创。
 
@@ -84,13 +81,23 @@ settings活跃turn时拒变更，session链接绑定home/cwd/engine commit防错
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 切换后权限和历史是否仍具一致含义？Kimi判免审批动作不再经过DSH逐工具allowlist，审批桥仅覆盖Kimi提出的请求；同原生权限名称不意味着同策略。pending链接在调用前落盘能标未知，但副作用已发生而completed写失败仍需恢复协议，不能只因有messageId就认定exactly-once；跨模型历史导入是参考而非状态等价。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+明确需要Kimi内核且能核权限差异的开发者可评估；不能把DSH allowlist当对全部内部工具的第二道检查。
+
+核查状态：传输/引擎分工、审批桥与持久关联源码支持；上游内核全部行为和跨harness恢复未运行验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.3.3；版本日期：2026-10-14（固定提交日期，北京时间，非包发布日期）。
 - 固定提交：[678b5a21](https://github.com/AlyceStocking/dsh-harness-switch/tree/678b5a218f750c61c055bb113a4ff003948aa774)；本轮基准：2026-10-21T07:52:12Z。
@@ -98,17 +105,17 @@ settings活跃turn时拒变更，session链接绑定home/cwd/engine commit防错
 - 范围：根index与src/engine.js核心映射/审批/取消/持久化及patch；vendor核心未全审，src与构建产物不自动等价，未操作真实Kimi会话。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 给每harness显示可比较的权限能力清单，并为未知pending提供只读恢复/回执核查而非重新prompt，可能减少策略误判和重复工具副作用。固定同任务比较原生/embedded审批触发，再在工具完成后断写completed恢复，要求不自动重放；若不能核定原结果，应保持unknown并交人。
 
 未运行目标；拟测审批拒绝/取消、切harness历史、工具副作用后落盘失败与重入，区分消息回执和业务完成。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

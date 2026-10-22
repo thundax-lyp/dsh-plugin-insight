@@ -1,7 +1,5 @@
 # Quota 用量仪表
 
-> 累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[a705c9d](https://github.com/121212165/dsh-plugin-quota/tree/a705c9d0cb5f025ce6eebd3e8c17a37d161a8628)
@@ -10,17 +8,25 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) [![npm 30d 126](https://img.shields.io/static/v1?label=npm+30d&message=126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
 <!-- END META -->
 
-**使用建议**：先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。
+> **实现功能**：累计会话用量并注入实时仪表，按价格与历史增量估计预算和上下文余量。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。
 
-## 使用建议
+> **风险与缺陷**：及时可见的消耗有助于做继续决策；金额和下步预测不能替代账单与强制限额。
 
-- **用途**：长任务开发者希望在继续调用前看到消耗趋势和可能的预算边界。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：长任务开发者希望在继续调用前看到消耗趋势和可能的预算边界。
 
 提供商账单更权威且有延迟；本插件提供近实时提示，不能认定是结算系统。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **模型工具**：quota_meter 提供会话仪表。
 - **用户命令**：/qm 查看用量与预测。
@@ -39,15 +45,27 @@
 
 注入有上下文开销，价表和用量去重需维护；没有测量预算预警的准确率和净节省。
 
-- **思考**：及时可见的消耗有助于做继续决策；金额和下步预测不能替代账单与强制限额。
+> **思考**：及时可见的消耗有助于做继续决策；金额和下步预测不能替代账单与强制限额。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。
+## 3 工程分析
+
+> **亮点**：监听 assistant/message usage 累加本地账本，通过 systemPrompt 注入一行仪表，/qm 与工具展示统计。
 
 展示与原始累计分层、微单位金额存储可借鉴；重放事件和跨进程写入要专项验收。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先与一天供应商用量对账，检查缺失 usage、重复事件和价格单位，再启用预算提醒。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

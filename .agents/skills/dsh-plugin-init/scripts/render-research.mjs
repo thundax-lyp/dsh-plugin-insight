@@ -54,7 +54,7 @@ function normalizeLegacyTrial(text) {
                 if (!fence) fence = marker[1];
                 else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
                     fence = null;
-            } else if (!fence && /^## /.test(line)) questions = line === '## 研究问题与完整回答';
+            } else if (!fence && /^## /.test(line)) questions = /^## (?:[0-9]+ )?研究问题与完整回答$/.test(line);
             return questions ? line : line.replaceAll('条件试用', '试用');
         })
         .join('\n');
@@ -96,39 +96,47 @@ export function latestManifestItems(manifests) {
         for (const item of manifest.items) latest.set(item.id, { item, checked_at: manifest.checked_at });
     return [...latest.values()];
 }
-function renderReadingNavigation(detail, navigation, longRead) {
-    let content = detail;
+export function renderReadingNavigation(detail, navigation, longRead) {
+    const entries = [];
+    let fence = null,
+        chapter = 0,
+        subsection = 0;
+    let content = detail
+        .split('\n')
+        .map((line) => {
+            const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+            if (marker) {
+                if (!fence) fence = marker[1];
+                else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
+                    fence = null;
+                return line;
+            }
+            const heading = !fence && line.match(/^(#{2,3}) (.+)$/);
+            if (!heading) return line;
+            const level = heading[1].length;
+            let title = heading[2];
+            if (level === 2) {
+                chapter += 1;
+                subsection = 0;
+            }
+            if (!/^Q[0-9]+(?:\b|[ ·：:])/.test(title)) {
+                if (level === 3) subsection += 1;
+                title = `${level === 2 ? chapter : `${chapter}.${subsection}`} ${title}`;
+            }
+            const anchor = `detail-section-${entries.length + 1}`;
+            entries.push(
+                template('DETAIL-CONTENTS-ITEM', { title: clean(title), anchor, indent: level === 3 ? '  ' : '' })
+            );
+            return `<a id="${anchor}"></a>\n\n${heading[1]} ${title}`;
+        })
+        .join('\n');
     if (longRead) {
-        const entries = [];
-        let fence = null;
-        content = content
-            .split('\n')
-            .map((line) => {
-                const marker = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
-                if (marker) {
-                    if (!fence) fence = marker[1];
-                    else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
-                        fence = null;
-                    return line;
-                }
-                const heading = !fence && line.match(/^(#{2,3}) (.+)$/);
-                if (!heading) return line;
-                const anchor = `detail-section-${entries.length + 1}`;
-                entries.push(
-                    template('DETAIL-CONTENTS-ITEM', {
-                        title: clean(heading[2]),
-                        anchor,
-                        indent: heading[1].length === 3 ? '  ' : ''
-                    })
-                );
-                return `<a id="${anchor}"></a>\n\n${line}`;
-            })
-            .join('\n');
         const contents = template('DETAIL-CONTENTS', { items: entries.join('\n') });
-        content = content.replace(/(\*\*核查状态\*\*：[^\n]+\n)/, `$1\n${contents}\n`);
+        content = content.replace('<a id="detail-section-1"></a>', `${contents}\n\n<a id="detail-section-1"></a>`);
     }
-    return content.replace(/^(# [^\n]+\n\n> [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
+    return content.replace(/^(# [^\n]+\n)/, `$1\n${navigation}\n`) + `\n${navigation}\n`;
 }
+
 export function renderPublication(input, root = ROOT, context = null) {
     if (!check(input)) throw Error(ajv.errorsText(check.errors));
     const text = (path) => readFileSync(local(root, path), 'utf8');
@@ -174,7 +182,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 if (matches.length !== 1) throw Error(`detail needs one ${label}: ${i.id}`);
                 return template('SHORT-ITEM', { label, text: matches[0][1] });
             });
-            const short = shortItems.join('\n');
+            const short = shortItems.join('\n\n');
             const title = report.match(/^# [^\n]+/)?.[0];
             if (!title) throw Error('detail needs a title');
             const capabilities = input.capabilities?.[i.id];

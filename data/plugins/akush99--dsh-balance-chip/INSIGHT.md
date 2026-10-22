@@ -1,7 +1,5 @@
 # dsh-balance-chip
 
-> 从凭据服务查询DeepSeek余额并显示页脚状态。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[a2080e0](https://github.com/AKUSH99/dsh-balance-chip/tree/a2080e0f5024f95d35439988107183f024ba034d)
@@ -10,42 +8,41 @@
 
 <!-- END META -->
 
-**使用建议**：先修核轮询释放、货币与外层授权；不能作为预算闸门。
+> **实现功能**：从凭据服务查询DeepSeek余额并显示页脚状态。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：把凭据留在主机、仅返回余额状态给前端，减少手工打开控制台；没有新的预算控制或计费机制。
+
+> **风险与缺陷**：主机setInterval未保存到disposer且没有clearInterval、超时或重叠锁，卸载/热重载可能留下轮询；路由仅限GET而无本项来源检查，依赖宿主外层授权。只取首币种但前端总加$且固定5阈值，货币语义不稳。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：使用单个DeepSeek API账户时快速看到余额线索。
-
-- **建议**：未验证假设：生命周期清理、带超时串行轮询及币种感知显示可使余额提示可信。用卸载重载、慢请求、多币种及过期key核请求数、资源释放和显示一致性。
-
-先修核轮询释放、货币与外层授权；不能作为预算闸门。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+> **用途**：使用单个DeepSeek API账户时快速看到余额线索。
 
 参照官方余额接口与控制台；增量只是本地缓存路由与小型UI。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：DeepSeek余额轮询缓存
 - **Host 路由**：/dsh-balance GET
@@ -65,13 +62,13 @@ credentials/webServer、全局fetch和DeepSeek网络；客户端slots/React。
 
 轻量可见性，无节约或消费阻断能力证据。
 
-- **思考**：主机setInterval未保存到disposer且没有clearInterval、超时或重叠锁，卸载/热重载可能留下轮询；路由仅限GET而无本项来源检查，依赖宿主外层授权。只取首币种但前端总加$且固定5阈值，货币语义不稳。
+> **思考**：主机setInterval未保存到disposer且没有clearInterval、超时或重叠锁，卸载/热重载可能留下轮询；路由仅限GET而无本项来源检查，依赖宿主外层授权。只取首币种但前端总加$且固定5阈值，货币语义不稳。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：把凭据留在主机、仅返回余额状态给前端，减少手工打开控制台；没有新的预算控制或计费机制。
+> **亮点**：把凭据留在主机、仅返回余额状态给前端，减少手工打开控制台；没有新的预算控制或计费机制。
 
 把凭据留在主机、仅返回余额状态给前端，减少手工打开控制台；没有新的预算控制或计费机制。
 
@@ -81,13 +78,23 @@ credentials/webServer、全局fetch和DeepSeek网络；客户端slots/React。
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 主机setInterval未保存到disposer且没有clearInterval、超时或重叠锁，卸载/热重载可能留下轮询；路由仅限GET而无本项来源检查，依赖宿主外层授权。只取首币种但前端总加$且固定5阈值，货币语义不稳。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先修核轮询释放、货币与外层授权；不能作为预算闸门。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AKUSH99/dsh-balance-chip](https://github.com/AKUSH99/dsh-balance-chip)
 - **版本号**：1.0.2（[固定提交 a2080e0f](https://github.com/AKUSH99/dsh-balance-chip/tree/a2080e0f5024f95d35439988107183f024ba034d)）
@@ -98,9 +105,9 @@ credentials/webServer、全局fetch和DeepSeek网络；客户端slots/React。
 - 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：用模拟接口核超时/重叠/卸载与币种，另核宿主路由鉴权；本轮不读取真实key或查账户。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：生命周期清理、带超时串行轮询及币种感知显示可使余额提示可信。用卸载重载、慢请求、多币种及过期key核请求数、资源释放和显示一致性。
 
@@ -120,9 +127,9 @@ credentials/webServer、全局fetch和DeepSeek网络；客户端slots/React。
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

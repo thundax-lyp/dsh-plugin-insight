@@ -1,7 +1,5 @@
 # dsh-better-sidebar-N23
 
-> 提供文件编辑预览、Git、终端和可扩展页签的会话工作台。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[ca9694b](https://github.com/All3nCN/dsh-better-sidebar-N23/tree/ca9694b4d232ff47eefec07e395b23eef0766831)
@@ -10,42 +8,41 @@
 [![npm 30d 1,164](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23)
 <!-- END META -->
 
-**使用建议**：先在匹配宿主和隔离项目核实际lib、文件写权限与PTY清理；别仅用较新的src安全修复判断运行版本。
+> **实现功能**：提供文件编辑预览、Git、终端和可扩展页签的会话工作台。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：fork在成熟工作台上将拖动中对中心布局的重排推迟至释放，并补新模块服务兼容，属于局部性能/兼容增量；不把继承工具数量当作新机制。
+
+> **风险与缺陷**：UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实际lib fs.write只校验绝对路径并写临时rename，没有工作区containment；sessionCwd还接受clientCwd后备，因此“按会话布局/终端归属”不能推导文件能力隔离。信任fence也声明非身份认证。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：开发者在DSH旁操作项目文件和持续终端，扩展作者挂自定义Tab/viewer。
-
-- **建议**：未验证假设：重建可追溯src/lib单一产物，并把所有文件副作用绑定规范会话根和显式外部读写能力，可减少版本错认与越范围操作。对源/产物注册、跨工作区/软链和两会话PTY做矩阵；无法一致重建时限制发布承诺。
-
-先在匹配宿主和隔离项目核实际lib、文件写权限与PTY清理；别仅用较新的src安全修复判断运行版本。
-
-**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+> **用途**：开发者在DSH旁操作项目文件和持续终端，扩展作者挂自定义Tab/viewer。
 
 明确fork自omdsh-dev dsh-better-sidebar0.12.3；整体工作台、PTY和注册服务归上游，fork重点为拖动重排/外壳及模块加载兼容。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：可选terminal_create/send/read/wait等持续终端工具
 - **Host 路由**：/sidebar文件/Git/任务及终端WebSocket
@@ -66,13 +63,13 @@
 
 完整工作台能力有运行bundle源码支持；作者验收不转为本轮验证，没有重排性能或任务工时对照。
 
-- **思考**：UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实际lib fs.write只校验绝对路径并写临时rename，没有工作区containment；sessionCwd还接受clientCwd后备，因此“按会话布局/终端归属”不能推导文件能力隔离。信任fence也声明非身份认证。
+> **思考**：UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实际lib fs.write只校验绝对路径并写临时rename，没有工作区containment；sessionCwd还接受clientCwd后备，因此“按会话布局/终端归属”不能推导文件能力隔离。信任fence也声明非身份认证。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：fork在成熟工作台上将拖动中对中心布局的重排推迟至释放，并补新模块服务兼容，属于局部性能/兼容增量；不把继承工具数量当作新机制。
+> **亮点**：fork在成熟工作台上将拖动中对中心布局的重排推迟至释放，并补新模块服务兼容，属于局部性能/兼容增量；不把继承工具数量当作新机制。
 
 fork在成熟工作台上将拖动中对中心布局的重排推迟至释放，并补新模块服务兼容，属于局部性能/兼容增量；不把继承工具数量当作新机制。
 
@@ -82,13 +79,23 @@ fork在成熟工作台上将拖动中对中心布局的重排推迟至释放，�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实际lib fs.write只校验绝对路径并写临时rename，没有工作区containment；sessionCwd还接受clientCwd后备，因此“按会话布局/终端归属”不能推导文件能力隔离。信任fence也声明非身份认证。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先在匹配宿主和隔离项目核实际lib、文件写权限与PTY清理；别仅用较新的src安全修复判断运行版本。
+
+**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[All3nCN/dsh-better-sidebar-N23](https://github.com/All3nCN/dsh-better-sidebar-N23)
 - **版本号**：0.1.0（[固定提交 ca9694b4](https://github.com/All3nCN/dsh-better-sidebar-N23/tree/ca9694b4d232ff47eefec07e395b23eef0766831)）
@@ -99,9 +106,9 @@ UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实�
 - 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。
 - 下一步：未来隔离宿主核lib实际行为、拖动帧成本、文件范围与PTY重连/关闭；本轮未运行构建、终端或操作文件。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 未验证假设：重建可追溯src/lib单一产物，并把所有文件副作用绑定规范会话根和显式外部读写能力，可减少版本错认与越范围操作。对源/产物注册、跨工作区/软链和两会话PTY做矩阵；无法一致重建时限制发布承诺。
 
@@ -125,9 +132,9 @@ UPSTREAM明确src领先健壮性、lib领先外壳，runtime以lib为准。实�
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

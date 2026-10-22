@@ -1,7 +1,5 @@
 # dsh-jev-guard
 
-> 在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[89eb699](https://github.com/7starsseeker/dsh-jev-guard/tree/89eb6995cc2ccd3f49b7c12ae74ad2464354c312)
@@ -10,31 +8,34 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) [![npm 30d 2,072](https://img.shields.io/static/v1?label=npm+30d&message=2%2C072&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-guard)
 <!-- END META -->
 
-**使用建议**：作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。
+> **实现功能**：在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。
+
+> **风险与缺陷**：事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、流程与依赖](#detail-section-3)
-  - [效果、成本与限制](#detail-section-4)
-  - [核心贡献与工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、流程与依赖](#detail-section-3)
+  - [1.3 效果、成本与限制](#detail-section-4)
+  - [1.4 核心贡献与工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。
 
@@ -42,7 +43,7 @@
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与依赖
+### 1.2 能力、流程与依赖
 
 adapters/dsh/index.js挂tools/pre-execute提取command，gate先L0再只读/可重建预筛，再调用Jev按阈值判定；额度/认证故障进入持久降级，按宿主ask/never映射typed决策，token提供一次授权路径。
 
@@ -57,7 +58,7 @@ DSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由
 
 <a id="detail-section-4"></a>
 
-### 效果、成本与限制
+### 1.3 效果、成本与限制
 
 有机会拦下明显破坏命令并让灰区交人；默认可用性优先的fail-open意味着它不承担不可绕过的安全边界。
 
@@ -67,7 +68,7 @@ DSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由
 
 <a id="detail-section-5"></a>
 
-### 核心贡献与工程亮点
+### 1.4 核心贡献与工程亮点
 
 相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。
 
@@ -77,34 +78,40 @@ DSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。
+> **用途**：开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。
 
-- **建议**：待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **事件监听**：tools/pre-execute命令审查及会话降级告知。
+- **后台**：规则/Jev判断、缓存和持久降级状态。
+
+> **思考**：事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。
 
 **核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认执行前挂钩、分层规则和显式降级；作者校准/真实宿主记录未复现，外部模型效果与新命令覆盖未知。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **事件监听**：tools/pre-execute命令审查及会话降级告知。
-- **后台**：规则/Jev判断、缓存和持久降级状态。
-
-- **思考**：事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - 版本号：0.5.6；版本日期：2026-10-17（固定提交日期，北京时间；不是包发布日期）。
 - 固定版本：[89eb6995](https://github.com/7starsseeker/dsh-jev-guard/tree/89eb6995cc2ccd3f49b7c12ae74ad2464354c312)；本次截止 2026-10-21T03:36:14Z。
@@ -128,17 +135,17 @@ DSH执行管线适配与独立CLI，零运行依赖、Node>=20；支持平台由
 
 </details>
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。
 
 隔离合成命令验证工具绕过、缓存内容变更、网络fail-open、额度粘性和ask/never映射，再独立盲评；本轮无执行。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

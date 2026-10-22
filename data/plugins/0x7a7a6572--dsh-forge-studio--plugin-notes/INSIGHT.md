@@ -1,7 +1,5 @@
 # Forge 便签
 
-> 提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes)
@@ -10,17 +8,25 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,413](https://img.shields.io/static/v1?label=npm+30d&message=2%2C413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
 <!-- END META -->
 
-**使用建议**：先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。
+> **实现功能**：提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。
 
-## 使用建议
+> **风险与缺陷**：把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。
 
-- **用途**：需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：需要从临时想法转为任务的用户，希望在聊天旁管理笔记及执行状态。
 
 Markdown 任务清单更易迁移；本组件的额外价值是界面和 agent 交接，代价是宿主耦合。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **界面**：便签板和任务泳道。
 - **后台**：任务便签日程调度。
@@ -39,15 +45,27 @@ Markdown 任务清单更易迁移；本组件的额外价值是界面和 agent �
 
 手工笔记成本较低，自动任务另有模型、调度运维和验收负担；未测量总体收益。
 
-- **思考**：把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。
+> **思考**：把输入、任务和状态放在同一处可减少转录；自动执行却会引入授权和重复副作用风险。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。
+## 3 工程分析
+
+> **亮点**：便签 CRUD 通过 storage-domain 持久化；日程与任务泳道状态关联，工具就绪后再挂 agent 桥。
 
 日程仅随任务状态落位、存储写入后可见的边界清晰；复用调度要独立核查重启恢复。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

@@ -1,7 +1,5 @@
 # dsh-question-nav
 
-> 以会话提问索引与圆点导航跳转历史用户提问。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[29e7e48](https://github.com/AbelKeithsun/dsh-question-nav/tree/29e7e487235bdbcba13768f1a009ecd2089d6faa)
@@ -10,42 +8,41 @@
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) [![npm 30d 1,247](https://img.shields.io/static/v1?label=npm+30d&message=1%2C247&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav)
 <!-- END META -->
 
-**使用建议**：经常回看长会话者可列为导航候选；多模态/多文本块提问需核对索引完整性，不把圆点缺失理解为没有历史问题。
+> **实现功能**：以会话提问索引与圆点导航跳转历史用户提问。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相比扫描当前DOM找问题，先建立独立于渲染窗口的事件投影，保持完整问题导航而不预先扩展聊天窗口；纯数据变换与注入式jump ports方便迁移。宿主缓存/分页能力归上游，圆点导航本身不是新业务流程。
+
+> **风险与缺陷**：“完整历史/全文”是否等于所有提问完整可达？projection的messageText只取content第一个块，后续文本块或首块为图片会丢提问；索引questions数组无上限，长会话每次追加复制。jump的deadline在await loadOlder之外检查，单次挂住仍可能超预算；isViewActive仅检查任意chat flow，不确认仍是原session。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：长会话用户回看先前问题、定位对应轮次；交付物是问题导航和定位结果，不进行内容总结或问答。
-
-- **建议**：为索引保留全部文本块但分页传输，并将跳转绑定session与绝对deadline，可能同时保持完整性和长会话响应。用首块图片+后续文本、多文本块、万轮历史、加载挂住和中途切会话案例，要求文本完整且不跨会话滚动；如内存或延迟未改善，应区分数据完整性与性能收益。
-
-经常回看长会话者可列为导航候选；多模态/多文本块提问需核对索引完整性，不把圆点缺失理解为没有历史问题。
-
-核查状态：投影、合并与分页跳转源码支持；超长会话性能、跨版本及实际跳转准确性未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+> **用途**：长会话用户回看先前问题、定位对应轮次；交付物是问题导航和定位结果，不进行内容总结或问答。
 
 宿主历史滚动、浏览器查找或摘要目录；插件提供完整事件驱动索引及按需跳转，不改变回答内容。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：shell.overlay问题圆点导航、悬停卡与设置tab。
 - **事件监听**：questionIndex会话投影折叠用户事件，client订阅projection/live内容更新。
@@ -66,13 +63,13 @@ DSH Web bundle，投影/settings服务可选；缺投影时退live窗口，完�
 
 减少手工滚动和打开全部历史的需求；未证明阅读效率提升，也不是语义搜索替代。
 
-- **思考**：“完整历史/全文”是否等于所有提问完整可达？projection的messageText只取content第一个块，后续文本块或首块为图片会丢提问；索引questions数组无上限，长会话每次追加复制。jump的deadline在await loadOlder之外检查，单次挂住仍可能超预算；isViewActive仅检查任意chat flow，不确认仍是原session。
+> **思考**：“完整历史/全文”是否等于所有提问完整可达？projection的messageText只取content第一个块，后续文本块或首块为图片会丢提问；索引questions数组无上限，长会话每次追加复制。jump的deadline在await loadOlder之外检查，单次挂住仍可能超预算；isViewActive仅检查任意chat flow，不确认仍是原session。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相比扫描当前DOM找问题，先建立独立于渲染窗口的事件投影，保持完整问题导航而不预先扩展聊天窗口；纯数据变换与注入式jump ports方便迁移。宿主缓存/分页能力归上游，圆点导航本身不是新业务流程。
+> **亮点**：相比扫描当前DOM找问题，先建立独立于渲染窗口的事件投影，保持完整问题导航而不预先扩展聊天窗口；纯数据变换与注入式jump ports方便迁移。宿主缓存/分页能力归上游，圆点导航本身不是新业务流程。
 
 相比扫描当前DOM找问题，先建立独立于渲染窗口的事件投影，保持完整问题导航而不预先扩展聊天窗口；纯数据变换与注入式jump ports方便迁移。宿主缓存/分页能力归上游，圆点导航本身不是新业务流程。
 
@@ -82,13 +79,23 @@ DSH Web bundle，投影/settings服务可选；缺投影时退live窗口，完�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 “完整历史/全文”是否等于所有提问完整可达？projection的messageText只取content第一个块，后续文本块或首块为图片会丢提问；索引questions数组无上限，长会话每次追加复制。jump的deadline在await loadOlder之外检查，单次挂住仍可能超预算；isViewActive仅检查任意chat flow，不确认仍是原session。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+经常回看长会话者可列为导航候选；多模态/多文本块提问需核对索引完整性，不把圆点缺失理解为没有历史问题。
+
+核查状态：投影、合并与分页跳转源码支持；超长会话性能、跨版本及实际跳转准确性未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - 版本号：0.7.8；版本日期：2026-09-06（固定提交日期，北京时间，非包发布日期）。
 - 固定提交：[29e7e487](https://github.com/AbelKeithsun/dsh-question-nav/tree/29e7e487235bdbcba13768f1a009ecd2089d6faa)；本轮基准：2026-10-21T05:26:52Z。
@@ -96,17 +103,17 @@ DSH Web bundle，投影/settings服务可选；缺投影时退live窗口，完�
 - 范围：根组件Host投影注册、projection fold、turn dots、jump orchestration及client接线；未逐行检查全部动画/CSS与真实宿主，不执行构建测试。
 - 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 为索引保留全部文本块但分页传输，并将跳转绑定session与绝对deadline，可能同时保持完整性和长会话响应。用首块图片+后续文本、多文本块、万轮历史、加载挂住和中途切会话案例，要求文本完整且不跨会话滚动；如内存或延迟未改善，应区分数据完整性与性能收益。
 
 未执行；提出多块文本/多模态、长历史、无投影降级、loadOlder挂起与切session反例，分开测准确率、峰值内存和等待。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

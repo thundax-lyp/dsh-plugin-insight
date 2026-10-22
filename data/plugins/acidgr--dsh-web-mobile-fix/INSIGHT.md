@@ -1,7 +1,5 @@
 # dsh-web-mobile-fix
 
-> 调整DSH窄屏布局，并为悬浮窗模式提供会话导航、桥接按钮与软键盘滚动适配。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[bba4d83](https://github.com/AcidGr/dsh-web-mobile-fix/tree/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7)
@@ -10,44 +8,41 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-mobile-fix) [![npm 30d 1,787](https://img.shields.io/static/v1?label=npm+30d&message=1%2C787&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix)
 <!-- END META -->
 
-**使用建议**：先用代表性手机和临时网页profile验证输入与导航。按实际源码评估悬浮窗副作用，禁用后整页重载核查恢复。
+> **实现功能**：调整DSH窄屏布局，并为悬浮窗模式提供会话导航、桥接按钮与软键盘滚动适配。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：增量是将窄屏、悬浮窗控制和软键盘处理接到现有界面；未改变模型任务流程。固定源码功能已超出包描述“纯CSS”。
+
+> **风险与缺陷**：禁用能否完整恢复？cleanup移除样式、部分按钮和监听，但未移除onSidebarItemClick监听，也未见撤销全局切换入口和全部延迟任务。DOM class片段匹配可能在宿主升级后误中。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：手机窄屏与嵌入式悬浮窗操作，合格体验需输入、返回和会话切换不误触。
-
-- **建议**：由悬浮窗桥接与清理缺口推导，可把所有事件/全局入口纳入统一disposer，并以宿主语义动作替代DOM点击。未验证；反复启停后监听数与单击动作应保持一次，窄屏键盘切换无误退。
-
-先用代表性手机和临时网页profile验证输入与导航。按实际源码评估悬浮窗副作用，禁用后整页重载核查恢复。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：手机窄屏与嵌入式悬浮窗操作，合格体验需输入、返回和会话切换不误触。
 
 响应式宿主原生布局更稳；插件以覆盖和桥接快速补齐但维护耦合。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **界面**：窄屏/悬浮窗布局与导航按钮。
 - **事件监听**：点击、focusin、viewport resize及会话导航。
@@ -64,13 +59,13 @@ DSH客户端layout/uiWorkspace及DOM结构，可选DSHOverlayBridge、visualView
 
 可能降低手机布局操作阻碍；README兼容声明不是本轮宿主验收。
 
-- **思考**：禁用能否完整恢复？cleanup移除样式、部分按钮和监听，但未移除onSidebarItemClick监听，也未见撤销全局切换入口和全部延迟任务。DOM class片段匹配可能在宿主升级后误中。
+> **思考**：禁用能否完整恢复？cleanup移除样式、部分按钮和监听，但未移除onSidebarItemClick监听，也未见撤销全局切换入口和全部延迟任务。DOM class片段匹配可能在宿主升级后误中。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：增量是将窄屏、悬浮窗控制和软键盘处理接到现有界面；未改变模型任务流程。固定源码功能已超出包描述“纯CSS”。
+> **亮点**：增量是将窄屏、悬浮窗控制和软键盘处理接到现有界面；未改变模型任务流程。固定源码功能已超出包描述“纯CSS”。
 
 增量是将窄屏、悬浮窗控制和软键盘处理接到现有界面；未改变模型任务流程。固定源码功能已超出包描述“纯CSS”。
 
@@ -78,13 +73,25 @@ DSH客户端layout/uiWorkspace及DOM结构，可选DSHOverlayBridge、visualView
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 禁用能否完整恢复？cleanup移除样式、部分按钮和监听，但未移除onSidebarItemClick监听，也未见撤销全局切换入口和全部延迟任务。DOM class片段匹配可能在宿主升级后误中。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+先用代表性手机和临时网页profile验证输入与导航。按实际源码评估悬浮窗副作用，禁用后整页重载核查恢复。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AcidGr/dsh-web-mobile-fix](https://github.com/AcidGr/dsh-web-mobile-fix)
 - **版本号**：1.0.8（[固定提交 bba4d83b](https://github.com/AcidGr/dsh-web-mobile-fix/tree/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7)）
@@ -95,9 +102,9 @@ DSH客户端layout/uiWorkspace及DOM结构，可选DSHOverlayBridge、visualView
 - 边界：抽读lib/index.js、lib/client.js、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：验证700px边界、键盘弹出、连续新会话/返回、实际点击组件与空白区别，启停三次查重复行为。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由悬浮窗桥接与清理缺口推导，可把所有事件/全局入口纳入统一disposer，并以宿主语义动作替代DOM点击。未验证；反复启停后监听数与单击动作应保持一次，窄屏键盘切换无误退。
 
@@ -117,9 +124,9 @@ DSH客户端layout/uiWorkspace及DOM结构，可选DSHOverlayBridge、visualView
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

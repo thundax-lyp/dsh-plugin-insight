@@ -1,7 +1,5 @@
 # dsh-plugin-adapter
 
-> 把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。
-
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
 分析版本：[db7f273](https://github.com/1624318455/dsh-plugin-adapter/tree/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c)
@@ -10,17 +8,25 @@
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
 <!-- END META -->
 
-**使用建议**：适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。
+> **实现功能**：把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。
 
-## 使用建议
+> **风险与缺陷**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。
 
-- **用途**：希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。
+<a id="detail-section-1"></a>
+
+## 1 用途与适用场景
+
+> **用途**：希望在DSH尝试Zen模型的用户需要原生会话和工具调用接口，验收需包括流式文本、工具结果与失败恢复。
 
 此前未入档；原生付费供应商与OpenCode CLI为替代，本轮只支持机制判断，不排名模型质量或稳定性。
 
-## 能力与限制
+<a id="detail-section-2"></a>
+
+## 2 能力与限制
+
+**能力**
 
 - **后台**：原生Zen LlmAdapter、模型目录预热及legacy入口。
 - **界面**：可选IP池设置界面。
@@ -39,15 +45,27 @@
 
 无key是作者描述的接入方式，不等于无流量或运维成本；重试、上游限流及可选代理池有额外负担，未测可用性或单位任务成本。
 
-- **思考**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。
+> **思考**：原生适配减少单独进程与UI切换；上游匿名接口变化可能让全部便利失效，需与直接使用原CLI比较维护负担。
 
-## 工程分析
+<a id="detail-section-3"></a>
 
-- **亮点**：packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。
+## 3 工程分析
+
+> **亮点**：packages/plugin/src/index.ts默认注册zen-free及旧别名LlmAdapter，后台预热模型目录；另保留sidecar和可选IP池/代理配置。
 
 默认adapter与legacy sidecar分开，缺llm时显式报错；网络池、安装器与代理管理扩大接入面的维护复杂度。
 
-## 核查说明
+<a id="detail-section-4"></a>
+
+## 4 使用建议
+
+适合非关键试验，先用原生adapter模式验证小任务，保留可用供应商回退；不要把免费通道当生产容量保证。
+
+<a id="detail-section-5"></a>
+
+## 5 核查说明
+
+**核查状态**：已检查源码。
 
 - 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。

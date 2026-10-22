@@ -1,7 +1,5 @@
 # dsh-slipway
 
-> 将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[b28316b](https://github.com/7gzgn/dsh-slipway/tree/b28316be0beca1f05126c8ef1d3166e14a9bb784)
@@ -10,31 +8,34 @@
 
 <!-- END META -->
 
-**使用建议**：插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。
+> **实现功能**：将本地 DSH 插件文件发布到 GitHub，建立市场收录 PR 并回拉校验字节。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。
+
+> **风险与缺陷**：逐文件成功是否保证一个完整发布版本？每个PUT独立提交，没有同一树原子切换；中断会暴露混合内容，旧文件也不因本地删除自动移除。verify默认分支逐项读未固定最终commit，且verify:false允许跳过；preflight对exports值以startsWith点时跳过检查，常见./lib路径可能没有被真正校验。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [场景与替代办法](#detail-section-2)
-  - [能力、流程与依赖](#detail-section-3)
-  - [效果、成本与限制](#detail-section-4)
-  - [核心贡献与工程亮点](#detail-section-5)
-  - [使用判断](#detail-section-6)
-  - [能力、流程与成本](#detail-section-7)
-  - [工程贡献](#detail-section-8)
-  - [核查说明与分析版本](#detail-section-9)
-- [未来设计假设（未验证）](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 场景与替代办法](#detail-section-2)
+  - [1.2 能力、流程与依赖](#detail-section-3)
+  - [1.3 效果、成本与限制](#detail-section-4)
+  - [1.4 核心贡献与工程亮点](#detail-section-5)
+  - [1.5 用途与适用场景](#detail-section-6)
+  - [1.6 能力、流程与成本](#detail-section-7)
+  - [1.7 工程贡献](#detail-section-8)
+  - [1.8 使用建议](#detail-section-9)
+  - [1.9 核查说明与分析版本](#detail-section-10)
+- [2 未来设计假设（未验证）](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 场景与替代办法
+### 1.1 场景与替代办法
 
 DSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收录，交付上传记录、PR与逐文件回验；不替代测试或安装验收。
 
@@ -42,7 +43,7 @@ DSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收�
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与依赖
+### 1.2 能力、流程与依赖
 
 core按manifest files收集并检查入口/秘密，publish默认dryRun，核对token owner后逐文件Contents API PUT，设置topics、创建市场条目PR，verifyPublished按sha256和长度回拉比对。
 
@@ -56,7 +57,7 @@ Node文件API、GitHub认证Contents/PR等接口与市场YAML约定；真实发�
 
 <a id="detail-section-4"></a>
 
-### 效果、成本与限制
+### 1.3 效果、成本与限制
 
 减少手工发布步骤与漏文件定位；仓库内容一致和收录PR存在不代表宿主兼容或插件质量。
 
@@ -66,7 +67,7 @@ Node文件API、GitHub认证Contents/PR等接口与市场YAML约定；真实发�
 
 <a id="detail-section-5"></a>
 
-### 核心贡献与工程亮点
+### 1.4 核心贡献与工程亮点
 
 相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。
 
@@ -76,33 +77,39 @@ Node文件API、GitHub认证Contents/PR等接口与市场YAML约定；真实发�
 
 <a id="detail-section-6"></a>
 
-### 使用判断
+### 1.5 用途与适用场景
 
-- **用途**：DSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收录，交付上传记录、PR与逐文件回验；不替代测试或安装验收。
+> **用途**：DSH插件作者把已核查工程发布到自己GitHub仓库并提交市场收录，交付上传记录、PR与逐文件回验；不替代测试或安装验收。
 
-- **建议**：待验证假设：先构建带清单摘要的完整Git tree，统一提交到独立分支并固定commit回验，再更新发布入口，可减少部分上传与并发分支变化造成的混合版本。由逐文件PUT/浮动回读推导，未实现。对照中途第N文件失败、远端并发改动和本地删文件，验证最终树精确一致或保持旧版；代价是Git Data API与迁移复杂度。
+<a id="detail-section-7"></a>
+
+### 1.6 能力、流程与成本
+
+**能力**
+
+- **模型工具**：slipway_publish与slipway_verify。
+
+> **思考**：逐文件成功是否保证一个完整发布版本？每个PUT独立提交，没有同一树原子切换；中断会暴露混合内容，旧文件也不因本地删除自动移除。verify默认分支逐项读未固定最终commit，且verify:false允许跳过；preflight对exports值以startsWith点时跳过检查，常见./lib路径可能没有被真正校验。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程贡献
+
+> **亮点**：相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。
+
+<a id="detail-section-9"></a>
+
+### 1.8 使用建议
 
 插件作者先在工程副本演算并人工看完整文件清单；确认目标账号和发布范围，再在临时仓库验收部分失败恢复，正式发布后仍要测试安装。
 
 **核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认计划、上传和回验流程；本轮未读token、未联网发布或建立PR，未来原子快照发布假设未验证。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-10"></a>
 
-### 能力、流程与成本
+### 1.9 核查说明与分析版本
 
-- **模型工具**：slipway_publish与slipway_verify。
-
-- **思考**：逐文件成功是否保证一个完整发布版本？每个PUT独立提交，没有同一树原子切换；中断会暴露混合内容，旧文件也不因本地删除自动移除。verify默认分支逐项读未固定最终commit，且verify:false允许跳过；preflight对exports值以startsWith点时跳过检查，常见./lib路径可能没有被真正校验。
-
-<a id="detail-section-8"></a>
-
-### 工程贡献
-
-- **亮点**：相对手写建仓库/上传/市场PR脚本，增量是显式目标与自检、默认演算和阶段证据，并把线上字节回验纳入同一调用。GitHub API与哈希是既有能力，插件贡献在DSH作者发布流程组合；字节一致不证明可用。
-
-<a id="detail-section-9"></a>
-
-### 核查说明与分析版本
+**核查状态**：已检查源码。
 
 - 版本号：0.1.3；版本日期：2026-10-18（固定提交日期，北京时间；不是包发布日期）。
 - 固定版本：[b28316be](https://github.com/7gzgn/dsh-slipway/tree/b28316be0beca1f05126c8ef1d3166e14a9bb784)；本次截止 2026-10-21T03:36:14Z。
@@ -126,17 +133,17 @@ Node文件API、GitHub认证Contents/PR等接口与市场YAML约定；真实发�
 
 </details>
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 待验证假设：先构建带清单摘要的完整Git tree，统一提交到独立分支并固定commit回验，再更新发布入口，可减少部分上传与并发分支变化造成的混合版本。由逐文件PUT/浮动回读推导，未实现。对照中途第N文件失败、远端并发改动和本地删文件，验证最终树精确一致或保持旧版；代价是Git Data API与迁移复杂度。
 
 假GitHub/隔离仓库检查中断、并发head、删除文件、exports缺失、verify关闭与已有PR复用；本轮未执行。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 

@@ -1,7 +1,5 @@
 # dsh-wsl-launch
 
-> 从WSL启动允许列表中的Windows应用，并传递启动参数。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[2090dc0](https://github.com/173787247/dsh-wsl-launch/tree/2090dc095654c22ccf93b26d0a2ff0050bc4e380)
@@ -10,46 +8,41 @@
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-launch)
 <!-- END META -->
 
-**使用建议**：使用明确的应用路径和小范围允许列表，先验证含空格的文件参数。
+> **实现功能**：从WSL启动允许列表中的Windows应用，并传递启动参数。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
+
+> **风险与缺陷**：允许列表支持后缀与通配前缀，匹配程序名不等于固定可信可执行文件；Start-Process成功也不证明窗口打开了正确文件。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-已有贡献：把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
-
-结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。
-
-[重点创新推演与最小验证](#innovation)
-
-- **用途**：Agent需要把文件或任务转交给Windows编辑器、浏览器等桌面应用。
-
-- **建议**：本次未形成新的创新假设；先固定可执行文件身份并验证参数往返，比扩大可启动程序范围更有价值。
-
-采用建议：使用明确的应用路径和小范围允许列表，先验证含空格的文件参数。
+> **用途**：Agent需要把文件或任务转交给Windows编辑器、浏览器等桌面应用。
 
 Windows快捷方式、explorer或手工Start-Process；插件提供Agent入口但不增加应用内控制能力。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：win_launch：启动允许的Windows应用。
 
@@ -65,13 +58,13 @@ Windows快捷方式、explorer或手工Start-Process；插件提供Agent入口�
 
 把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。 允许列表支持后缀与通配前缀，匹配程序名不等于固定可信可执行文件；Start-Process成功也不证明窗口打开了正确文件。
 
-- **思考**：允许列表支持后缀与通配前缀，匹配程序名不等于固定可信可执行文件；Start-Process成功也不证明窗口打开了正确文件。
+> **思考**：允许列表支持后缀与通配前缀，匹配程序名不等于固定可信可执行文件；Start-Process成功也不证明窗口打开了正确文件。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
+> **亮点**：把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
 
 把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
 
@@ -79,13 +72,25 @@ Windows快捷方式、explorer或手工Start-Process；插件提供Agent入口�
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 允许列表支持后缀与通配前缀，匹配程序名不等于固定可信可执行文件；Start-Process成功也不证明窗口打开了正确文件。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+使用明确的应用路径和小范围允许列表，先验证含空格的文件参数。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+已有贡献：把跨系统启动收敛到允许目标，减少手工切换终端；这是桌面桥接而非应用操作或任务验收机制。
+
+结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。
 
 - 已检查：作者 README、包清单、源码路径 index.js、lib/launch.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
@@ -98,9 +103,9 @@ Windows快捷方式、explorer或手工Start-Process；插件提供Agent入口�
 - **版本号**：0.1.0（[固定提交 2090dc0](https://github.com/173787247/dsh-wsl-launch/tree/2090dc095654c22ccf93b26d0a2ff0050bc4e380)）
 - **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
@@ -108,9 +113,9 @@ Windows快捷方式、explorer或手工Start-Process；插件提供Agent入口�
 
 用同名程序、空格和中文参数核查匹配目标与启动内容；拒绝列表外目标，人工确认实际窗口。
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

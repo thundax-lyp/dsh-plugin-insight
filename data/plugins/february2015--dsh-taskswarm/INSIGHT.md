@@ -1,7 +1,5 @@
 # TaskSwarm：把多 Agent 变成任务生产线之后，谁来证明交付成立？
 
-> 按依赖分波，在 Git worktree 中执行任务包，并提供评审、集成、状态观察与恢复。
-
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 分析版本：[032e2c9](https://github.com/february2015/dsh-taskswarm/tree/032e2c9d228c20cab65fe0ea061d78a7c753ab8c)
@@ -10,38 +8,38 @@
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm)
 <!-- END META -->
 
-**使用建议**：优先检验“与版本绑定的验收凭据能否同时约束集成、依赖放行和恢复”。先与简单 required checks／人工验收对照；若复杂协议没有额外收益，就采用简单方案。
+> **实现功能**：按依赖分波，在 Git worktree 中执行任务包，并提供评审、集成、状态观察与恢复。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：源码支持 DSH 原生 Agent 的创建、工具接线、任务进度持久化、隔离工作区与恢复编排。贡献主要是宿主适配和流程整合，waves、worktree、Reviewer 等方法明确来自 TaskPlane；尚无独立效果对照。
+
+> **风险与缺陷**：最关键的缺口是“完成”的证据约束：worker 自报完成、Reviewer 文本和 Git 合并能推进流程，但并未共同构成绑定最终代码版本的验收证明。因此协调能力成立，可靠交付增益仍待验证。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-  - [H1：让验收凭据成为交付单元，模型负责提出结论，执行层负责核验结论](#detail-section-8)
-  - [H2：将依赖边从“前置任务 ID”升级为“可验证产物条件”，同时用于调度和恢复](#detail-section-9)
-  - [H3：把“多 Agent 执行工具”转化为“可转交的验收任务包”](#detail-section-10)
-- [辅助信息](#detail-section-11)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+  - [2.1 H1：让验收凭据成为交付单元，模型负责提出结论，执行层负责核验结论](#detail-section-9)
+  - [2.2 H2：将依赖边从“前置任务 ID”升级为“可验证产物条件”，同时用于调度和恢复](#detail-section-10)
+  - [2.3 H3：把“多 Agent 执行工具”转化为“可转交的验收任务包”](#detail-section-11)
+- [3 辅助信息](#detail-section-12)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
-
-- **已有贡献**：DSH 内的编排适配与流程整合有源码支持；独创算法和业务增效尚未证实。
-- **重点创新推演**：[**H1 验收凭据、H2 产物条件依赖**](#innovation)是有依据但未验证的设计假设；**H3 可转交验收任务包**是证据更弱的业务探索。三者均不属于 TaskSwarm 已实现贡献。
+### 1.1 用途与适用场景
 
 核心贡献在于将 TaskPlane 的任务包与隔离编排移植到 DSH；值得继续研究的是，让验收证据成为调度、集成与恢复的共同依据。
 
-- **用途**：面向能拆分依赖、能定义验收的仓库开发任务，把多个执行者的工作组织为任务包、并行 lane 和串行集成流程。
+> **用途**：面向能拆分依赖、能定义验收的仓库开发任务，把多个执行者的工作组织为任务包、并行 lane 和串行集成流程。
 
 适用场景是有多项可拆分开发任务的项目：例如多个相对独立的功能模块、测试补齐或边界明确的修复。开发者仍需明确任务、依赖与验收标准；系统接手分波执行、工作区分配、进度观察和集成。合格交付是集成后的代码符合需求并通过共同验收，不能用启动的 Agent 数、勾选数、merged lane 数代替。
 
@@ -59,7 +57,9 @@
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **模型工具**：源码定义 task_runner、review_step、notify_supervisor 与 escalate_to_supervisor 等任务执行和协作工具。
 - **用户命令**：源码注册 tswarm-plan、tswarm-check、tswarm-status、tswarm-pause、tswarm-resume 与 tswarm-integrate 等命令。
@@ -81,13 +81,13 @@
 
 后续比较应固定验收标准，以总现金支出÷合格交付数计现金单位成本，同时报告总尝试数、合格率、端到端耗时和人工时间；零合格交付时无有限单位成本。模型、总预算或人工投入不一致时单列，不能把增加资源的收益算作编排机制胜出。
 
-- **思考**：最关键的缺口是“完成”的证据约束：worker 自报完成、Reviewer 文本和 Git 合并能推进流程，但并未共同构成绑定最终代码版本的验收证明。因此协调能力成立，可靠交付增益仍待验证。
+> **思考**：最关键的缺口是“完成”的证据约束：worker 自报完成、Reviewer 文本和 Git 合并能推进流程，但并未共同构成绑定最终代码版本的验收证明。因此协调能力成立，可靠交付增益仍待验证。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：源码支持 DSH 原生 Agent 的创建、工具接线、任务进度持久化、隔离工作区与恢复编排。贡献主要是宿主适配和流程整合，waves、worktree、Reviewer 等方法明确来自 TaskPlane；尚无独立效果对照。
+> **亮点**：源码支持 DSH 原生 Agent 的创建、工具接线、任务进度持久化、隔离工作区与恢复编排。贡献主要是宿主适配和流程整合，waves、worktree、Reviewer 等方法明确来自 TaskPlane；尚无独立效果对照。
 
 #### C1：把跨进程编排方法接入 DSH 原生 Agent 生命周期
 
@@ -115,7 +115,7 @@ WorkerHost 将宿主接线与调度分开，便于固定边界后做确定性编
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 #### Q1：评审与合并之间，缺少绑定产物的验收约束
 
@@ -148,7 +148,18 @@ engine 在 wave 内使用 Promise.all 启动任务，并串行合并；File Scop
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+优先检验“与版本绑定的验收凭据能否同时约束集成、依赖放行和恢复”。先与简单 required checks／人工验收对照；若复杂协议没有额外收益，就采用简单方案。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+- **已有贡献**：DSH 内的编排适配与流程整合有源码支持；独创算法和业务增效尚未证实。
+- **重点创新推演**：[**H1 验收凭据、H2 产物条件依赖**](#innovation)是有依据但未验证的设计假设；**H3 可转交验收任务包**是证据更弱的业务探索。三者均不属于 TaskSwarm 已实现贡献。
 
 本稿核查 README、package、调度与恢复、worktree、任务包、worker/reviewer/merger 接线、supervisor、持久化及相关测试的源码。没有安装插件、执行目标代码或测试，没有启动 DSH 或调用模型；研究深度为 source，不作全生态排名。
 
@@ -160,9 +171,9 @@ engine 在 wave 内使用 Promise.all 启动任务，并串行合并；File Scop
 - **版本号**：`0.2.38`（[固定提交 032e2c9](https://github.com/february2015/dsh-taskswarm/tree/032e2c9d228c20cab65fe0ea061d78a7c753ab8c)）
 - **版本日期**：2026-08-17（固定提交日期，北京时间；不是 npm 发布日期）
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
@@ -174,9 +185,9 @@ engine 在 wave 内使用 Promise.all 启动任务，并串行合并；File Scop
 | **H2：产物条件依赖** | 顺序、merged 状态不足以证明依赖兑现或结果可复用 | 让调度与恢复依据实际交付条件，减少错误启动和返工 | H1 最小验证后再扩展；组合假设 |
 | **H3：可转交验收任务包** | 任务、产物与证据可以外置 | 减少接手者重建上下文和重复验收的负担 | 先核实需求；业务探索 |
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-### H1：让验收凭据成为交付单元，模型负责提出结论，执行层负责核验结论
+### 2.1 H1：让验收凭据成为交付单元，模型负责提出结论，执行层负责核验结论
 
 **状态：有源码依据的待验证设计假设，优先级最高。**
 
@@ -190,9 +201,9 @@ engine 在 wave 内使用 Promise.all 启动任务，并串行合并；File Scop
 
 **否定条件：** 简单 required checks 已同样挡住问题，凭据方案仅增加维护；或凭据能齐全通过但独立验收仍频繁失败。此时收缩为常规工程修复，不包装成创新。
 
-<a id="detail-section-9"></a>
+<a id="detail-section-10"></a>
 
-### H2：将依赖边从“前置任务 ID”升级为“可验证产物条件”，同时用于调度和恢复
+### 2.2 H2：将依赖边从“前置任务 ID”升级为“可验证产物条件”，同时用于调度和恢复
 
 **状态：有机制依据的待验证组合假设。**
 
@@ -206,9 +217,9 @@ engine 在 wave 内使用 Promise.all 启动任务，并串行合并；File Scop
 
 **否定条件：** 增加依赖表达后仍不能预测多数返工，或串行／人工管理以更小总负担完成同样任务。若仅“未知依赖报错”就解决主要问题，应停在这一层。
 
-<a id="detail-section-10"></a>
+<a id="detail-section-11"></a>
 
-### H3：把“多 Agent 执行工具”转化为“可转交的验收任务包”
+### 2.3 H3：把“多 Agent 执行工具”转化为“可转交的验收任务包”
 
 **状态：探索性业务设想，证据弱于 H1/H2。**
 
@@ -218,9 +229,9 @@ TaskSwarm 已把任务、进度和代码现场外置；若再有可核验的产�
 
 **最小验证：** 先访谈并观察三个实际交接团队，再用同类真实任务对照“现有 PR＋CI＋说明”与“验收任务包”。记录接手准备时间、遗漏、重复检查、返工和实际复用意愿。若现有流程已足够，或必须投入大量人工补包才可用，应撤回业务机会判断。
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 <details>
 <summary>工程统计与口径</summary>

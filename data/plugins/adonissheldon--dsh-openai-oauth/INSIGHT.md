@@ -1,7 +1,5 @@
 # dsh-openai-oauth
 
-> 通过浏览器或设备码登录ChatGPT，将Codex模型作为DSH原生LLM适配器提供。
-
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
 分析版本：[ba29660](https://github.com/AdonisSheldon/dsh-openai-oauth/tree/ba29660530fe05779b06f129a0c0ed5c2237b73f)
@@ -10,44 +8,41 @@
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AdonisSheldon/dsh-openai-oauth) [![npm 30d 814](https://img.shields.io/static/v1?label=npm+30d&message=814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openai-oauth) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openai-oauth)
 <!-- END META -->
 
-**使用建议**：仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。
+> **实现功能**：通过浏览器或设备码登录ChatGPT，将Codex模型作为DSH原生LLM适配器提供。
 
-**核查状态**：已检查源码，未进行真实宿主验证。
+> **核心亮点**：相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。
+
+> **风险与缺陷**：原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。
 
 **本文目录**
 
-- [当前插件分析](#detail-section-1)
-  - [使用判断](#detail-section-2)
-  - [能力、流程与成本](#detail-section-3)
-  - [工程贡献](#detail-section-4)
-  - [主要限制](#detail-section-5)
-  - [核查说明与分析版本](#detail-section-6)
-- [未来设计假设（未验证）](#detail-section-7)
-- [辅助信息](#detail-section-8)
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
 
 <a id="detail-section-1"></a>
 
-## 当前插件分析
+## 1 插件分析
 
 <a id="detail-section-2"></a>
 
-### 使用判断
+### 1.1 用途与适用场景
 
-- **用途**：有Codex访问资格的本机用户希望沿用DSH会话、工具和模型选择器。
-
-- **建议**：由显式选项拒绝与replay转换推导，可提供模型能力协商及事件保真度收据，提前暴露不支持特性。未验证；同一含工具、图片、中断续聊任务对照事件序列和结果，静默降级应为0。
-
-仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。
-
-核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
-
-源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+> **用途**：有Codex访问资格的本机用户希望沿用DSH会话、工具和模型选择器。
 
 原生API key或独立Codex客户端各有成熟路径；此插件减少外部代理层但承担协议适配。
 
 <a id="detail-section-3"></a>
 
-### 能力、流程与成本
+### 1.2 能力、流程与成本
+
+**能力**
 
 - **后台**：OAuth会话、凭据刷新与LLM适配器。
 - **Host 路由**：本机OAuth管理接口。
@@ -65,13 +60,13 @@ DSH llm与可选attachments/webServer，上游Codex OAuth和模型接口；CLI b
 
 减少跨应用上下文搬运，未证明稳定配额或任务质量提升。
 
-- **思考**：原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。
+> **思考**：原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。
 
 <a id="detail-section-4"></a>
 
-### 工程贡献
+### 1.3 工程贡献
 
-- **亮点**：相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。
+> **亮点**：相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。
 
 相对启动独立Codex代理，增量是直接模型路由和DSH事件/工具语义适配。模型能力与账户配额归上游，OAuth标准不算原创。
 
@@ -79,13 +74,25 @@ DSH llm与可选attachments/webServer，上游Codex OAuth和模型接口；CLI b
 
 <a id="detail-section-5"></a>
 
-### 主要限制
+### 1.4 主要限制
 
 原生外观能否保证协议等价？适配器明确拒绝不支持的maxTokens等选项，重放、工具结果和流式停止原因仍需真实任务验收。凭据虽权限收紧仍明文，卸载保留，不能当作密钥保险库。
 
 <a id="detail-section-6"></a>
 
-### 核查说明与分析版本
+### 1.5 使用建议
+
+仅在本机临时profile核对工具和中断续聊语义；先确认账户授权条件和凭据清理方式，再替代现有模型连接。
+
+核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。
+
+源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
 
 - **仓库**：[AdonisSheldon/dsh-openai-oauth](https://github.com/AdonisSheldon/dsh-openai-oauth)
 - **版本号**：0.1.0（[固定提交 ba296605](https://github.com/AdonisSheldon/dsh-openai-oauth/tree/ba29660530fe05779b06f129a0c0ed5c2237b73f)）
@@ -96,9 +103,9 @@ DSH llm与可选attachments/webServer，上游Codex OAuth和模型接口；CLI b
 - 边界：抽读src/index.ts、src/adapter.ts、src/credential-store.ts、src/auth-controller.ts、src/stream.ts、package.json；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。
 - 下一步：核对工具调用/图片/上下文重放、取消、刷新竞态与凭据损坏；日志不得含token，远程Web绑定应拒绝。
 
-<a id="detail-section-7"></a>
+<a id="detail-section-8"></a>
 
-## 未来设计假设（未验证）
+## 2 未来设计假设（未验证）
 
 由显式选项拒绝与replay转换推导，可提供模型能力协商及事件保真度收据，提前暴露不支持特性。未验证；同一含工具、图片、中断续聊任务对照事件序列和结果，静默降级应为0。
 
@@ -120,9 +127,9 @@ DSH llm与可选attachments/webServer，上游Codex OAuth和模型接口；CLI b
 
 </details>
 
-<a id="detail-section-8"></a>
+<a id="detail-section-9"></a>
 
-## 辅助信息
+## 3 辅助信息
 
 **活跃度**
 
