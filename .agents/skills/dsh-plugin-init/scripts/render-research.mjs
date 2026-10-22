@@ -23,6 +23,7 @@ import {
     renderLatest,
     renderHot,
     renderRecommended,
+    renderColumn,
     renderCategories,
     renderSources
 } from './publication/blocks.mjs';
@@ -280,19 +281,13 @@ export function renderPublication(input, root = ROOT, context = null) {
     const columnPages = ['LATEST', 'HOT', 'RECOMMENDED'].map((key) => {
         const path = `data/views/columns/${key}.md`;
         const entries = items.map((e) => ({ ...e, href: link(path, e.detailPath) }));
-        const entriesById = new Map(entries.map((e) => [e.i.id, e]));
-        const content =
-            key === 'LATEST'
-                ? renderLatest(entries, updated, Infinity)
-                : key === 'HOT'
-                  ? renderHot(entries, Infinity)
-                  : renderRecommended(recommendations, entriesById, 50);
+        const content = renderColumn(key, entries, updated, recommendations);
         return {
             path,
             content:
                 template('COLUMN-PAGE', {
                     home: link(path, 'README.md'),
-                    content: content.replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1'),
+                    content,
                     updated: renderUpdated(updated)
                 }) + '\n'
         };
