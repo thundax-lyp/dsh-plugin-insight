@@ -5,7 +5,7 @@
 分析版本：[2d880f8](https://github.com/863683348/dsh-plugin-education/tree/2d880f86c9160652e27c1f4702265822e0e726e9)
 
 <!-- BEGIN META -->
-[![npm 30d 955](https://img.shields.io/static/v1?label=npm+30d&message=955&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-education) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-education)
+[![npm 30d 940](https://img.shields.io/static/v1?label=npm+30d&message=940&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-education) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-education)
 <!-- END META -->
 
 > **实现功能**：提供教案、测验结构校验、量规、学习卡片、可读性及成绩统计辅助。
@@ -141,6 +141,6 @@ education纯函数与宿主壳分离，TSV去制表符换行利于导入；重�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-education/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-education/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

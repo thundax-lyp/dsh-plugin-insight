@@ -285,10 +285,10 @@
         "metadata": {
             "repository": "1624318455/dsh-plugin-tavily",
             "repository_id": 1334654243,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 5,
-            "pushed_at": "2026-09-12T06:52:31Z",
+            "pushed_at": "2026-10-21T17:29:11Z",
             "issues": {
                 "open": null,
                 "closed": null,
@@ -299,36 +299,36 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:23DB53:1546AE:22CD03:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3422:201BC2:E46742:2E9ACB0:6AD99BD3 and timestamp 2026-10-22 05:14:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:14744C:21FAF7:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:E36D4:1B5C44E:58B641C:6AD99BD3 and timestamp 2026-10-22 05:15:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:142E6F:21B656:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:2E82A7:1A50246:55557CE:6AD99BD4 and timestamp 2026-10-22 05:15:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14EC8F:226F57:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:2E0AAA:1AE8978:57341F2:6AD99BD4 and timestamp 2026-10-22 05:15:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:146A02:21F7FE:6AD8494C and timestamp 2026-10-21 05:10:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tavily%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3423:131353:1BF8571:5AAB8C0:6AD99BD4 and timestamp 2026-10-22 05:15:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "@dsh-external/dsh-plugin-tavily",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-external%2Fdsh-plugin-tavily",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40dsh-external%2Fdsh-plugin-tavily",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-plugin-tavily",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -337,11 +337,24 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
-                "current_revision": "b759f328e21c7dbc24da5f2266e84c2da4d227f8",
-                "script_changed": false,
-                "changed_files": [],
+                "current_revision": "d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3",
+                "script_changed": true,
+                "changed_files": [
+                    "lib/client.cjs",
+                    "lib/index.mjs",
+                    "scripts/patch-apiproxy.mjs",
+                    "src/client/PluginCard.tsx",
+                    "src/client/card-form.ts",
+                    "src/client/index.ts",
+                    "src/client/tavily-card-controller.ts",
+                    "src/index.ts",
+                    "tests/browser-e2e.mjs",
+                    "tests/profile-boot-smoke.mjs",
+                    "tests/slot-contract-compat.mjs",
+                    "tsdown.config.ts"
+                ],
                 "error": null
             }
         },

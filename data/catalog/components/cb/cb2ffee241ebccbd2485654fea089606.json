@@ -388,8 +388,8 @@
         "metadata": {
             "repository": "609476965/dsh-LorebookMD",
             "repository_id": 1334395883,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 23,
             "pushed_at": "2026-08-14T18:34:21Z",
             "issues": {
@@ -402,36 +402,36 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:1450B7:21F4D9:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:324C5:1ED5650:644FA4D:6AD99D59 and timestamp 2026-10-22 05:21:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:145143:21E9ED:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:209B6B8:68CA0A4:6AD99D5A and timestamp 2026-10-22 05:21:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14DA7E:227FC1:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:20EFD39:6A8ED02:6AD99D5A and timestamp 2026-10-22 05:21:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:142043:21CBCA:6AD84A56 and timestamp 2026-10-21 05:15:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:20F681F:6A0DC1B:6AD99D5A and timestamp 2026-10-22 05:21:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:14A758:2238D2:6AD84A57 and timestamp 2026-10-21 05:15:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A609476965%2Fdsh-LorebookMD%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3424:240A46:209BAAC:68CAD7D:6AD99D5A and timestamp 2026-10-22 05:21:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-lorebookmd",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 705,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-lorebookmd",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 631,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-lorebookmd",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T18:33:31.417Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-lorebookmd",
                     "error": null,
                     "latest_version": "1.0.0",
@@ -440,7 +440,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
                 "current_revision": "4bc4110efbfb4888286b81aaf53191705dade9dd",
                 "script_changed": false,

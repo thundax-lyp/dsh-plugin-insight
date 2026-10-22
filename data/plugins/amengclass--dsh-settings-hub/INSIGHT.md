@@ -5,7 +5,7 @@
 分析版本：[2c89559](https://github.com/Amengclass/dsh-settings-hub/tree/2c89559685a14375dcc6cc318ffc1c7c728a14c6)
 
 <!-- BEGIN META -->
-[![npm 30d 952](https://img.shields.io/static/v1?label=npm+30d&message=952&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-settings-hub)
+[![npm 30d 939](https://img.shields.io/static/v1?label=npm+30d&message=939&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-settings-hub)
 <!-- END META -->
 
 > **实现功能**：把第三方插件设置按依赖归属分组，支持本地拖拽排序。
@@ -133,10 +133,6 @@ renderer数据面和子slot能力校验比直接复制DOM更有依据；profile�
 
 **活跃度**
 
-[![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A01%3A40.671Z..2026-10-21T08%3A01%3A40.671Z)
-
-暂未获取：Issue 未关闭、近30天新建。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Amengclass/dsh-settings-hub/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

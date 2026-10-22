@@ -380,8 +380,8 @@
         "metadata": {
             "repository": "AhYi8/dsh-gotify-notify",
             "repository_id": 1412623357,
-            "captured_at": "2026-10-21T05:34:47.676Z",
-            "window_start": "2026-09-21T05:34:47.676Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-10-13T12:36:52Z",
             "issues": {
@@ -394,42 +394,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A03C:3FE178:AFC2F1:FC2443:6AD84EF9 and timestamp 2026-10-21 05:34:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3417:9A516:216E817:6C1D994:6AD99E84 and timestamp 2026-10-22 05:26:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3132:26516E:51C108:57CF02:6AD84EFA and timestamp 2026-10-21 05:34:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:110312:218099C:6CD0380:6AD99E84 and timestamp 2026-10-22 05:26:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A47.676Z..2026-10-21T05%3A34%3A47.676Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 322E:AA00D:558857:5B996F:6AD84EFB and timestamp 2026-10-21 05:34:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:2A78E8:2297F31:7023F0D:6AD99E85 and timestamp 2026-10-22 05:26:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A47.676Z..2026-10-21T05%3A34%3A47.676Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3324:258D23:574959:5D56A8:6AD84EFC and timestamp 2026-10-21 05:34:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:364E84:2280071:6F9761B:6AD99E85 and timestamp 2026-10-22 05:26:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A47.676Z..2026-10-21T05%3A34%3A47.676Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3444:4B9BC:540A87:5A17C7:6AD84EFC and timestamp 2026-10-21 05:34:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAhYi8%2Fdsh-gotify-notify%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3423:11A4A9:22EBB33:70DB6EE:6AD99E85 and timestamp 2026-10-22 05:26:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-gotify-notify",
-                "captured_at": "2026-10-21T05:34:53.215Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 398,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-gotify-notify",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-gotify-notify",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-10T02:59:41.388Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-gotify-notify",
                     "error": null,
                     "latest_version": "2.4.0",
                     "latest_published_at": "2026-10-13T12:36:13.111Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "current_revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

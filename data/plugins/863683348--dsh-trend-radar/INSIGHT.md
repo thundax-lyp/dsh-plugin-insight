@@ -5,7 +5,7 @@
 分析版本：[238ccd9](https://github.com/863683348/dsh-trend-radar/tree/238ccd97948617fe8dd92f9ee5c5c05360592026)
 
 <!-- BEGIN META -->
-[![npm 30d 117](https://img.shields.io/static/v1?label=npm+30d&message=117&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-trend-radar) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-trend-radar)
+[![npm 30d 111](https://img.shields.io/static/v1?label=npm+30d&message=111&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-trend-radar) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-trend-radar)
 <!-- END META -->
 
 > **实现功能**：采集插件目录与GitHub主题快照，分析新增、Star变化和分类分布，并输出趋势面板。
@@ -132,6 +132,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-trend-radar/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-trend-radar/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

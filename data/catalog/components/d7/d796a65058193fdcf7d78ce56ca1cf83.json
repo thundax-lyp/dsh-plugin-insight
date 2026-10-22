@@ -298,29 +298,50 @@
         "metadata": {
             "repository": "030611/dsh-verification-receipt",
             "repository_id": 1333370288,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 4,
             "pushed_at": "2026-09-03T16:29:04Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:1F173:213CA16:6AD57C4:6AD99B9F and timestamp 2026-10-22 05:14:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:204FC0E:67F0D93:6AD99B9F and timestamp 2026-10-22 05:14:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:2FD4A4:20E60A7:69C240E:6AD99B9F and timestamp 2026-10-22 05:14:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:2C86D:1FC562A:662EFD3:6AD99BA0 and timestamp 2026-10-22 05:14:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A030611%2Fdsh-verification-receipt%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:324C5:1E3ED3E:626401A:6AD99BA0 and timestamp 2026-10-22 05:14:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-verification-receipt",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 862,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-verification-receipt",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 851,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-verification-receipt",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T05:17:58.624Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-verification-receipt",
                     "error": null,
                     "latest_version": "0.1.0",
@@ -329,7 +350,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "87f3fb0198090f0f26a37a52840db150609db748",
                 "current_revision": "87f3fb0198090f0f26a37a52840db150609db748",
                 "script_changed": false,

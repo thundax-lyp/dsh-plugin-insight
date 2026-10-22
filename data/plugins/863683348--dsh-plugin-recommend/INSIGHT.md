@@ -5,7 +5,7 @@
 分析版本：[e553b1a](https://github.com/863683348/dsh-plugin-recommend/tree/e553b1a6b6da777694bf6094e5c9b5ba5f51cd8b)
 
 <!-- BEGIN META -->
-[![npm 30d 739](https://img.shields.io/static/v1?label=npm+30d&message=739&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend)
+[![npm 30d 733](https://img.shields.io/static/v1?label=npm+30d&message=733&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend)
 <!-- END META -->
 
 > **实现功能**：按需求、分类和标签搜索插件目录，提供相似项及在线目录刷新。
@@ -142,6 +142,6 @@ lib/index.js注册recommend；recommend.js做中英文token、名称/标签/描�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-recommend/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-recommend/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

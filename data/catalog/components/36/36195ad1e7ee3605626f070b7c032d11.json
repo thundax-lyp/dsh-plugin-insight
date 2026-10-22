@@ -381,8 +381,8 @@
         "metadata": {
             "repository": "Aeroscis/dsh-temptask",
             "repository_id": 1390600932,
-            "captured_at": "2026-10-21T05:34:38.567Z",
-            "window_start": "2026-09-21T05:34:38.567Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
             "pushed_at": "2026-10-20T13:55:02Z",
             "issues": {
@@ -395,42 +395,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 95AC:383860:AF201A:FB8D24:6AD84EF0 and timestamp 2026-10-21 05:34:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:1F173:2252314:6E5C8CF:6AD99E7B and timestamp 2026-10-22 05:26:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 96E8:39E13C:A96575:F43356:6AD84EF1 and timestamp 2026-10-21 05:34:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:2A1932:207F52B:6871610:6AD99E7B and timestamp 2026-10-22 05:26:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A38.567Z..2026-10-21T05%3A34%3A38.567Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 981C:3BA9DC:AA5EB4:F47134:6AD84EF2 and timestamp 2026-10-21 05:34:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:BF4E0:1F68DAC:654F362:6AD99E7B and timestamp 2026-10-22 05:26:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A38.567Z..2026-10-21T05%3A34%3A38.567Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9922:360622:A9B004:F48969:6AD84EF3 and timestamp 2026-10-21 05:34:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:2FD4A4:21F815C:6D3EE2F:6AD99E7C and timestamp 2026-10-22 05:26:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A38.567Z..2026-10-21T05%3A34%3A38.567Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A28:39E13C:A9695F:F4394E:6AD84EF3 and timestamp 2026-10-21 05:34:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:21069CF:6A2759E:6AD99E7C and timestamp 2026-10-22 05:26:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "@aeroscis/dsh-temptask",
-                "captured_at": "2026-10-21T05:34:44.325Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 1309,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40aeroscis%2Fdsh-temptask",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40aeroscis%2Fdsh-temptask",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-27T10:21:38.001Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40aeroscis%2Fdsh-temptask",
                     "error": null,
                     "latest_version": "0.5.0",
                     "latest_published_at": "2026-10-20T14:18:09.733Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                "current_revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

@@ -380,35 +380,64 @@
         "metadata": {
             "repository": "AbcdefgXW/dsh-toolbox-web",
             "repository_id": 1335244607,
-            "captured_at": "2026-10-21T05:34:17.359Z",
-            "window_start": "2026-09-21T05:34:17.359Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 5,
             "pushed_at": "2026-09-15T18:44:10Z",
             "issues": {
-                "open": 0,
-                "closed": 1,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:324C5:1F4BBDF:65D1715:6AD99EB5 and timestamp 2026-10-22 05:27:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:211B5A4:6A6B81F:6AD99EB5 and timestamp 2026-10-22 05:27:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:3DE3E8:2035DF4:679D2C0:6AD99EB5 and timestamp 2026-10-22 05:27:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3424:240A46:211B859:6A6C178:6AD99EB6 and timestamp 2026-10-22 05:27:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:303154:2174CD4:6BD8BA0:6AD99EB6 and timestamp 2026-10-22 05:27:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-toolbox-web",
-                "captured_at": "2026-10-21T05:34:24.043Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1058,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-toolbox-web",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1004,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-toolbox-web",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-16T06:40:23.890Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-toolbox-web",
                     "error": null,
                     "latest_version": "0.1.29",
                     "latest_published_at": "2026-09-15T19:46:39.471Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                "current_revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

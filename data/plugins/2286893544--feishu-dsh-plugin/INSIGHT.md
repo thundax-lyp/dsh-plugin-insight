@@ -148,6 +148,6 @@ autoGrantOwner把授权失败与创建结果区分，避免掩盖已成功副作
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/2286893544/feishu-dsh-plugin/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/2286893544/feishu-dsh-plugin/issues) 查看。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

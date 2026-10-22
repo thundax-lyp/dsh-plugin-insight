@@ -379,29 +379,50 @@
         "metadata": {
             "repository": "AI-Galaxy-GPU/dsh-sound",
             "repository_id": 1335332435,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 14,
             "pushed_at": "2026-09-15T16:35:44Z",
             "issues": {
-                "open": 1,
-                "closed": 2,
-                "created_30d": 1,
-                "closed_30d": 0,
-                "updated_30d": 1
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAI-Galaxy-GPU%2Fdsh-sound%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:32C1CF:21CDD4B:6D4D8AE:6AD99E42 and timestamp 2026-10-22 05:25:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAI-Galaxy-GPU%2Fdsh-sound%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:303154:2148C42:6B49C05:6AD99E42 and timestamp 2026-10-22 05:25:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAI-Galaxy-GPU%2Fdsh-sound%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:3866FF:21B4672:6C991AC:6AD99E43 and timestamp 2026-10-22 05:25:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAI-Galaxy-GPU%2Fdsh-sound%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:214DCB3:6B2714B:6AD99E43 and timestamp 2026-10-22 05:25:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAI-Galaxy-GPU%2Fdsh-sound%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3423:11C129:2378E4B:7235F66:6AD99E43 and timestamp 2026-10-22 05:25:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "@ai-galaxy/dsh-sound",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 948,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40ai-galaxy%2Fdsh-sound",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 920,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40ai-galaxy%2Fdsh-sound",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-13T04:12:06.937Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40ai-galaxy%2Fdsh-sound",
                     "error": null,
                     "latest_version": "0.4.1",
@@ -410,7 +431,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
                 "current_revision": "aa7be415ee34570bd1c834da9d8a500e85401583",
                 "script_changed": false,

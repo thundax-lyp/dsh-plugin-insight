@@ -5,7 +5,7 @@
 分析版本：[ecd7d8e](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/tree/ecd7d8e555423123960009f9f8ab878246f0132f)
 
 <!-- BEGIN META -->
-[![npm 30d 778](https://img.shields.io/static/v1?label=npm+30d&message=778&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mcp-tunnel) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mcp-tunnel)
+[![npm 30d 771](https://img.shields.io/static/v1?label=npm+30d&message=771&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mcp-tunnel) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mcp-tunnel)
 <!-- END META -->
 
 > **实现功能**：生成并管理MCP代理与Cloudflare隧道容器栈，输出待确认的客户端配置片段。
@@ -133,6 +133,10 @@ src/index.ts注册隧道工具并spawn Docker/Podman Compose；tunnel-stack.ts�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
+
+
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -5,7 +5,7 @@
 分析版本：[086bd05](https://github.com/Aik358/dsh-anchored-monitor/tree/086bd05e1e3035ddf23133f3a0ee479291a4b237)
 
 <!-- BEGIN META -->
-[![GitHub ★ 13](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor) [![npm 30d 987](https://img.shields.io/static/v1?label=npm+30d&message=987&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor)
+[![GitHub ★ 13](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor) [![npm 30d 973](https://img.shields.io/static/v1?label=npm+30d&message=973&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor)
 <!-- END META -->
 
 > **实现功能**：统计DSH推理文本的词汇指纹并展示波段，可选分级提示、取消当前回合与重设persona/工具。
@@ -134,6 +134,10 @@ DSH agents/systemPrompt/webServer、推理字段可见性、监控进程和版�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/Aik358/dsh-anchored-monitor/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-anchored-monitor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
+
+
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

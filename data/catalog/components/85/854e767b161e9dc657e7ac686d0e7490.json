@@ -388,8 +388,8 @@
         "metadata": {
             "repository": "AKUSH99/dsh-balance-chip",
             "repository_id": 1347136944,
-            "captured_at": "2026-10-21T05:33:58.077Z",
-            "window_start": "2026-09-21T05:33:58.077Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-08-26T14:38:15Z",
             "issues": {
@@ -402,42 +402,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F0C6:2705E0:5459DB:5A64A0:6AD84EC7 and timestamp 2026-10-21 05:33:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:110312:21853D1:6CDF839:6AD99E91 and timestamp 2026-10-22 05:26:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F1CE:4F777:52C177:58CCD3:6AD84EC8 and timestamp 2026-10-21 05:34:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:2A78E8:229CC80:7033B40:6AD99E91 and timestamp 2026-10-22 05:26:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A58.077Z..2026-10-21T05%3A33%3A58.077Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F446:273DF7:54D170:5ADDC0:6AD84ECA and timestamp 2026-10-21 05:34:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:2A78E8:229CDFC:703401B:6AD99E92 and timestamp 2026-10-22 05:26:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A58.077Z..2026-10-21T05%3A33%3A58.077Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F544:26A83F:51125E:571E39:6AD84ECB and timestamp 2026-10-21 05:34:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:364E84:228505A:6FA7DA6:6AD99E92 and timestamp 2026-10-22 05:26:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A58.077Z..2026-10-21T05%3A33%3A58.077Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F644:32D9F:51830D:578D76:6AD84ECB and timestamp 2026-10-21 05:34:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKUSH99%2Fdsh-balance-chip%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3426:123D2A:23B762E:7320914:6AD99E92 and timestamp 2026-10-22 05:26:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-balance-chip",
-                "captured_at": "2026-10-21T05:34:04.230Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-balance-chip",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-balance-chip",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-balance-chip",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "a2080e0f5024f95d35439988107183f024ba034d",
+                "current_revision": "a2080e0f5024f95d35439988107183f024ba034d",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

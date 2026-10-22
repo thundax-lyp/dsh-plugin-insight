@@ -459,35 +459,64 @@
         "metadata": {
             "repository": "Alnita-M/dsh-Almost_Full_Access",
             "repository_id": 1336031182,
-            "captured_at": "2026-10-21T08:01:03.040Z",
-            "window_start": "2026-09-21T08:01:03.040Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
             "pushed_at": "2026-10-14T04:09:34Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlnita-M%2Fdsh-Almost_Full_Access%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:2E0AAA:1BE6A1C:5A74479:6AD99F06 and timestamp 2026-10-22 05:28:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlnita-M%2Fdsh-Almost_Full_Access%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:25B21C:1B249D6:581A661:6AD99F06 and timestamp 2026-10-22 05:28:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlnita-M%2Fdsh-Almost_Full_Access%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3424:5F941:1BDD6FF:5A615AB:6AD99F07 and timestamp 2026-10-22 05:28:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlnita-M%2Fdsh-Almost_Full_Access%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3416:201BC2:F32DC7:31A3C14:6AD99F07 and timestamp 2026-10-22 05:28:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlnita-M%2Fdsh-Almost_Full_Access%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:3F0314:F9E11A:32F2CC9:6AD99F07 and timestamp 2026-10-22 05:28:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-almost-full-access",
-                "captured_at": "2026-10-21T08:01:19.203Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 820,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-almost-full-access",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 816,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-almost-full-access",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-16T14:56:05.078Z",
-                    "captured_at": "2026-10-21T08:01:19.203Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-almost-full-access",
                     "error": null,
                     "latest_version": "1.2.0",
                     "latest_published_at": "2026-10-14T04:11:05.459Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                "current_revision": "269ab865fd02a4dded171eaecc40b1255f5df227",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

@@ -284,8 +284,8 @@
         "metadata": {
             "repository": "1624318455/dsh-plugin-proxy",
             "repository_id": 1374274543,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-09-17T14:39:25Z",
             "issues": {
@@ -298,36 +298,36 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:265AC:147440:21D795:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:25B21C:1A346F5:5503AD5:6AD99BD1 and timestamp 2026-10-22 05:14:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:9F47E:14B9F3:223E32:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:A81E7:E1DDD3:2DF63C5:6AD99BD1 and timestamp 2026-10-22 05:14:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13D0ED:214AA9:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:E36D4:1B5BA06:58B4197:6AD99BD1 and timestamp 2026-10-22 05:14:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:3FDBB6:150290:2283C8:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:156F7:1BD7E1A:5AF4E1E:6AD99BD1 and timestamp 2026-10-22 05:14:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C0:0BD3:9E751:106B1E:6AD8494A and timestamp 2026-10-21 05:10:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-proxy%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:3F0314:EA3236:2FBC50F:6AD99BD2 and timestamp 2026-10-22 05:14:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "@memef1f1y/dsh-plugin-proxy",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 85,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40memef1f1y%2Fdsh-plugin-proxy",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 80,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40memef1f1y%2Fdsh-plugin-proxy",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-17T14:45:53.084Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40memef1f1y%2Fdsh-plugin-proxy",
                     "error": null,
                     "latest_version": "0.1.4",
@@ -336,7 +336,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
                 "current_revision": "b5b5af209e7bd36a6a7008db703a4a9d6d67c1df",
                 "script_changed": false,

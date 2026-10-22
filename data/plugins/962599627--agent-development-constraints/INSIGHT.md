@@ -134,6 +134,6 @@ DSH tools与pre-step decision契约、本地项目规则库；hook依赖Git/bash
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/962599627/agent-development-constraints/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/962599627/agent-development-constraints/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

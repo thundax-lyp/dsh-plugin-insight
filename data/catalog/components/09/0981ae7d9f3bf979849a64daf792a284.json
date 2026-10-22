@@ -379,35 +379,64 @@
         "metadata": {
             "repository": "AloneFu/dsh-calendar-plugin",
             "repository_id": 1376880747,
-            "captured_at": "2026-10-21T08:01:06.527Z",
-            "window_start": "2026-09-21T08:01:06.527Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-10-04T07:34:43Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAloneFu%2Fdsh-calendar-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3417:6C823:214438A:6A61975:6AD99F09 and timestamp 2026-10-22 05:28:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAloneFu%2Fdsh-calendar-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:3F0314:F9E929:32F4773:6AD99F09 and timestamp 2026-10-22 05:28:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAloneFu%2Fdsh-calendar-plugin%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:156F7:1CDC0ED:5E5487C:6AD99F09 and timestamp 2026-10-22 05:28:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAloneFu%2Fdsh-calendar-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:E36D4:1C5F6C9:5C0A722:6AD99F09 and timestamp 2026-10-22 05:28:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAloneFu%2Fdsh-calendar-plugin%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:2E82A7:1B49047:588998A:6AD99F09 and timestamp 2026-10-22 05:28:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-calendar",
-                "captured_at": "2026-10-21T08:01:24.843Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 6032,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-calendar",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 5884,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-calendar",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-13T22:51:45.184Z",
-                    "captured_at": "2026-10-21T08:01:24.843Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-calendar",
                     "error": null,
                     "latest_version": "0.11.2",
                     "latest_published_at": "2026-10-19T17:01:56.581Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "6ce4095ef800838f91abc162aa6d6646435f7605",
+                "current_revision": "6ce4095ef800838f91abc162aa6d6646435f7605",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

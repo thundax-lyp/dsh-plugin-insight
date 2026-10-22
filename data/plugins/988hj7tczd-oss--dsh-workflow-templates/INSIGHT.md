@@ -5,7 +5,7 @@
 分析版本：[26755f7](https://github.com/988hj7tczd-oss/dsh-workflow-templates/tree/26755f75a043418eeb3f59fa0a57a60542740abc)
 
 <!-- BEGIN META -->
-[![npm 30d 404](https://img.shields.io/static/v1?label=npm+30d&message=404&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates)
+[![npm 30d 385](https://img.shields.io/static/v1?label=npm+30d&message=385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates)
 <!-- END META -->
 
 > **实现功能**：为 DSH 提供 Workflow 模板检索、静态校验和官方工具调用起点。
@@ -128,6 +128,6 @@ catalog/render/validator分离、按调用Agent探测工具、扩展字段缺失
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-workflow-templates/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-workflow-templates/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

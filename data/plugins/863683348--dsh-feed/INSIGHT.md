@@ -5,7 +5,7 @@
 分析版本：[bc59214](https://github.com/863683348/dsh-feed/tree/bc592147401c7697749390eb6a2a6cddd42af747)
 
 <!-- BEGIN META -->
-[![npm 30d 97](https://img.shields.io/static/v1?label=npm+30d&message=97&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feed) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feed)
+[![npm 30d 92](https://img.shields.io/static/v1?label=npm+30d&message=92&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feed) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feed)
 <!-- END META -->
 
 > **实现功能**：聚合GitHub topic与npm插件条目为本地JSON索引，提供搜索、统计、CLI和实验性MCP。
@@ -143,6 +143,6 @@ DSH tools/systemPrompt、Schemastery；显式sync访问GitHub搜索及npm regist
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-feed/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-feed/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

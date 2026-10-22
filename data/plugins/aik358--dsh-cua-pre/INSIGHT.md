@@ -5,7 +5,7 @@
 分析版本：[6b64708](https://github.com/Aik358/dsh-cua-pre/tree/6b64708e2514ef4a1b9cb6004adb4838d4b114bb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre) [![npm 30d 381](https://img.shields.io/static/v1?label=npm+30d&message=381&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre) [![最新发布 2026-09-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-06&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre) [![npm 30d 363](https://img.shields.io/static/v1?label=npm+30d&message=363&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre) [![最新发布 2026-09-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-06&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre)
 <!-- END META -->
 
 > **实现功能**：以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。
@@ -133,6 +133,6 @@ DSH tools/attachments/llm/webServer、Windows UIA/SendInput、Python worker，�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/Aik358/dsh-cua-pre/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Aik358/dsh-cua-pre/issues) 查看。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

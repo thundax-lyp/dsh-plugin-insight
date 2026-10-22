@@ -5,7 +5,7 @@
 分析版本：[e08111d](https://github.com/AKS1st/dsh-cyber-particle/tree/e08111d59df009454d9de6b8384907f697e038f6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-cyber-particle)
+[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-cyber-particle)
 <!-- END META -->
 
 > **实现功能**：给DSH界面增加可配置Canvas粒子背景。
@@ -131,6 +131,6 @@ pointer-events:none及aria-hidden避免背景抢交互，隐藏停绘与配置�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/AKS1st/dsh-cyber-particle/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AKS1st/dsh-cyber-particle/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

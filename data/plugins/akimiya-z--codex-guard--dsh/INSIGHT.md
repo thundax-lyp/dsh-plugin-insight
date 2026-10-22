@@ -5,7 +5,7 @@
 分析版本：[87e138c](https://github.com/Akimiya-z/codex-guard/tree/87e138cdcca2e2929073bb913212dc06769087fc/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 136](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=136&color=yellow&logo=github&style=flat)](https://github.com/Akimiya-z/codex-guard)
+[![GitHub ★ 133](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=133&color=yellow&logo=github&style=flat)](https://github.com/Akimiya-z/codex-guard)
 <!-- END META -->
 
 > **实现功能**：在DSH中调用codex-guard CLI，返回提交前卫生检查报告。
@@ -130,6 +130,6 @@ ref不经shell、Windows原生Node调用npx脚本是具体接线；同步子进�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/Akimiya-z/codex-guard/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Akimiya-z/codex-guard/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

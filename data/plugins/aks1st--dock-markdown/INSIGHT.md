@@ -5,7 +5,7 @@
 分析版本：[64cbfd8](https://github.com/AKS1st/dock-markdown/tree/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown) [![npm 30d 900](https://img.shields.io/static/v1?label=npm+30d&message=900&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-markdown) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-markdown)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown) [![npm 30d 878](https://img.shields.io/static/v1?label=npm+30d&message=878&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-markdown) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-markdown)
 <!-- END META -->
 
 > **实现功能**：将Markdown净化渲染、目录与本地资源解析接入Dock。
@@ -135,6 +135,6 @@ Dock/files、额外dock-editor读路由、宿主webServer/sessions/webRuntime和
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/AKS1st/dock-markdown/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AKS1st/dock-markdown/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

@@ -116,6 +116,6 @@ runner将BlockAssembler失败与空输出显式处理可借鉴；scheduler当前
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/439436269-ctrl/dsh-peak-runner/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/439436269-ctrl/dsh-peak-runner/issues) 查看。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

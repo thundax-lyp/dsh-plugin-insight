@@ -5,7 +5,7 @@
 分析版本：[b5b5af2](https://github.com/1624318455/dsh-plugin-proxy/tree/b5b5af209e7bd36a6a7008db703a4a9d6d67c1df)
 
 <!-- BEGIN META -->
-[![npm 30d 85](https://img.shields.io/static/v1?label=npm+30d&message=85&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
+[![npm 30d 80](https://img.shields.io/static/v1?label=npm+30d&message=80&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
 <!-- END META -->
 
 > **实现功能**：通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。
@@ -91,6 +91,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-proxy/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-proxy/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

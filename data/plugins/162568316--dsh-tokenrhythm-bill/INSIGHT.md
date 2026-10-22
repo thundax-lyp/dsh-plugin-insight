@@ -5,7 +5,7 @@
 分析版本：[df72615](https://github.com/162568316/dsh-tokenrhythm-bill/tree/df72615bc5c8f6ccfe287b8a3cfef627923b2f1f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,667](https://img.shields.io/static/v1?label=npm+30d&message=1%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/162568316/dsh-tokenrhythm-bill) [![npm 30d 1,642](https://img.shields.io/static/v1?label=npm+30d&message=1%2C642&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tokenrhythm-bill)
 <!-- END META -->
 
 > **实现功能**：集中展示基元律动等平台的余额、用量、模型与密钥，并提供账号切换和连通探测。
@@ -89,6 +89,6 @@ Host侧限制秘密返回并为状态文件设置权限，账号缓存有身份�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/162568316/dsh-tokenrhythm-bill/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/162568316/dsh-tokenrhythm-bill/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

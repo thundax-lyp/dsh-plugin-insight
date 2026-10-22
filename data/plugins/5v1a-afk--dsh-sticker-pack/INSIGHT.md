@@ -148,6 +148,6 @@ remote限制清单2MiB、图片16MiB、16源及每源2000项，文件名从校�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/5V1A-afk/dsh-sticker-pack/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/5V1A-afk/dsh-sticker-pack/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

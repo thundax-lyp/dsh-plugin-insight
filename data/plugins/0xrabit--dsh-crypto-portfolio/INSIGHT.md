@@ -5,7 +5,7 @@
 分析版本：[c615eeb](https://github.com/0xRabit/dsh-crypto-portfolio/tree/c615eeb9e76d9a91bffb0171ef349532e794eb3c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。
@@ -88,6 +88,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/0xRabit/dsh-crypto-portfolio/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/0xRabit/dsh-crypto-portfolio/issues) 查看。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

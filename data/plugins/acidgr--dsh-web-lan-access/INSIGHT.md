@@ -5,7 +5,7 @@
 分析版本：[dd1bb47](https://github.com/AcidGr/dsh-web-lan-access/tree/dd1bb4766725b985330da906154adcf435e2c439)
 
 <!-- BEGIN META -->
-[![GitHub ★ 39](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=39&color=yellow&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-lan-access) [![npm 30d 1,548](https://img.shields.io/static/v1?label=npm+30d&message=1%2C548&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-lan-access) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-web-lan-access)
+[![GitHub ★ 39](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=39&color=yellow&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-lan-access) [![npm 30d 1,470](https://img.shields.io/static/v1?label=npm+30d&message=1%2C470&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-lan-access) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-web-lan-access)
 <!-- END META -->
 
 > **实现功能**：让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。
@@ -131,10 +131,6 @@ DSH webServer/webStartup/connection与os.networkInterfaces；认证和TLS需部�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-lan-access/issues?q=is%3Aissue+is%3Aopen)
-
-暂未获取：近30天新建、近30天关闭。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AcidGr/dsh-web-lan-access/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

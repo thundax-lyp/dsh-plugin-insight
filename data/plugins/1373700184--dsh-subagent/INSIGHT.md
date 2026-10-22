@@ -5,7 +5,7 @@
 分析版本：[679dd4f](https://github.com/1373700184/dsh-subagent/tree/679dd4fb7838fcb473c8b368e20aa24a43af99aa)
 
 <!-- BEGIN META -->
-[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
+[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：把 Qoder、OpenCode、Pi、CodeBuddy 等 CLI 接到 DSH 子代理。
@@ -132,10 +132,6 @@ bundle默认五委派工具并带自由子代理preset；README安装段仍说�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+created%3A2026-09-21T07%3A58%3A46.629Z..2026-10-21T07%3A58%3A46.629Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1373700184/dsh-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T07%3A58%3A46.629Z..2026-10-21T07%3A58%3A46.629Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/1373700184/dsh-subagent/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

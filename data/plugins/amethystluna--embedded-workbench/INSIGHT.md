@@ -5,7 +5,7 @@
 分析版本：[1bb1bcf](https://github.com/AmethystLuna/embedded-workbench/tree/1bb1bcfc45ca6efab327967a252d4d9203a323a7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 2,906](https://img.shields.io/static/v1?label=npm+30d&message=2%2C906&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench)
+[![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 2,857](https://img.shields.io/static/v1?label=npm+30d&message=2%2C857&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench)
 <!-- END META -->
 
 > **实现功能**：提供嵌入式C/C++开发技能库，并在DSH首个模型步骤注入计划核查与上下文预算提示。
@@ -134,10 +134,6 @@ DSH skills/agent pre-step和会话日志；效果依赖仓库源码、编译器�
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench/issues?q=is%3Aissue+created%3A2026-09-21T08%3A01%3A47.868Z..2026-10-21T08%3A01%3A47.868Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A01%3A47.868Z..2026-10-21T08%3A01%3A47.868Z)
-
-暂未获取：Issue 未关闭。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AmethystLuna/embedded-workbench/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

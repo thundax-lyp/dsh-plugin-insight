@@ -5,7 +5,7 @@
 分析版本：[b976645](https://github.com/99galaxy/dsh-plugin-market/tree/b97664510aafd55a74f17e304e271956f1c07659)
 
 <!-- BEGIN META -->
-[![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
+[![npm 30d 1,435](https://img.shields.io/static/v1?label=npm+30d&message=1%2C435&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
 <!-- END META -->
 
 > **实现功能**：在 DSH 设置页浏览社区插件目录、查看安装版本并执行安装。
@@ -129,6 +129,6 @@ host/client现成产物，固定web profile；更新版本来自目录，不是�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/99galaxy/dsh-plugin-market/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/99galaxy/dsh-plugin-market/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

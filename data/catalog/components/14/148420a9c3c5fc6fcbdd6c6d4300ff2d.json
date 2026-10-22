@@ -378,9 +378,9 @@
         "metadata": {
             "repository": "Akimiya-z/codex-guard",
             "repository_id": 1340906871,
-            "captured_at": "2026-10-21T07:59:36.171Z",
-            "window_start": "2026-09-21T07:59:36.171Z",
-            "stars": 136,
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 133,
             "pushed_at": "2026-10-15T20:24:45Z",
             "issues": {
                 "open": null,
@@ -392,42 +392,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E28E:273FF5:6AB7AA:72A0AD:6AD870EB and timestamp 2026-10-21 07:59:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:2E0AAA:1BCF869:5A28F77:6AD99EBC and timestamp 2026-10-22 05:27:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E43E:50F71:698C3E:7174C6:6AD870EC and timestamp 2026-10-21 07:59:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:25B21C:1B0F759:57D4739:6AD99EBC and timestamp 2026-10-22 05:27:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E85C:272681:67BA5A:6FA4CE:6AD870EF and timestamp 2026-10-21 07:59:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:3F0314:F88194:32AA9A0:6AD99EBC and timestamp 2026-10-22 05:27:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EC1A:4DAEE:67ED5A:6FDA45:6AD870F2 and timestamp 2026-10-21 07:59:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:13401A:189D802:4FF7BB6:6AD99EBD and timestamp 2026-10-22 05:27:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A36.171Z..2026-10-21T07%3A59%3A36.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDC6:1FE8E6:73291D:7B15DE:6AD870F3 and timestamp 2026-10-21 07:59:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAkimiya-z%2Fcodex-guard%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:A81E7:EF2721:30B3493:6AD99EBD and timestamp 2026-10-22 05:27:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-codex-guard",
-                "captured_at": "2026-10-21T07:59:47.899Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-codex-guard",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-codex-guard",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:59:47.899Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-codex-guard",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "current_revision": "87e138cdcca2e2929073bb913212dc06769087fc",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

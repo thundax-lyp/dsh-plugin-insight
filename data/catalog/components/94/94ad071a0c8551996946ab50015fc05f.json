@@ -381,40 +381,43 @@
         "metadata": {
             "repository": "AlexPeng07/dsh-custom-plugin",
             "repository_id": 1342948215,
-            "captured_at": "2026-10-21T07:59:50.702Z",
-            "window_start": "2026-09-21T07:59:50.702Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 8,
             "pushed_at": "2026-10-17T12:30:45Z",
             "issues": {
                 "open": 1,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": null
+                "closed": 8,
+                "created_30d": 3,
+                "closed_30d": 7,
+                "updated_30d": 8
             },
-            "errors": [
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlexPeng07%2Fdsh-custom-plugin%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A50.702Z..2026-10-21T07%3A59%3A50.702Z&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3AAlexPeng07%2Fdsh-custom-plugin%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A50.702Z..2026-10-21T07%3A59%3A50.702Z&per_page=1\": net/http: TLS handshake timeout"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@alexpeng/dsh-custom-plugin",
-                "captured_at": "2026-10-21T08:00:12.469Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 2238,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40alexpeng%2Fdsh-custom-plugin",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2207,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40alexpeng%2Fdsh-custom-plugin",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-22T14:45:34.391Z",
-                    "captured_at": "2026-10-21T08:00:12.469Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40alexpeng%2Fdsh-custom-plugin",
                     "error": null,
                     "latest_version": "0.8.0",
                     "latest_published_at": "2026-10-17T13:21:44.077Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                "current_revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

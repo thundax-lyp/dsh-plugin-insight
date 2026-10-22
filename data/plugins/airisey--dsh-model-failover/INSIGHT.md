@@ -5,7 +5,7 @@
 分析版本：[3221de6](https://github.com/Airisey/dsh-model-failover/tree/3221de6a1c9a02333f78e48449fcc272e1b430c0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：把已接入 DSH 的模型组成候选队列，失败时重试、轮换并记录会话隔离。
@@ -129,6 +129,6 @@ DSH adapter/bundle加Web设置，复用已经配置的providers；不提供新�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/Airisey/dsh-model-failover/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Airisey/dsh-model-failover/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

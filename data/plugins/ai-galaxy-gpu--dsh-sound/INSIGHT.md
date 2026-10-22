@@ -5,7 +5,7 @@
 分析版本：[aa7be41](https://github.com/AI-Galaxy-GPU/dsh-sound/tree/aa7be415ee34570bd1c834da9d8a500e85401583)
 
 <!-- BEGIN META -->
-[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound) [![npm 30d 948](https://img.shields.io/static/v1?label=npm+30d&message=948&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound)
+[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound) [![npm 30d 920](https://img.shields.io/static/v1?label=npm+30d&message=920&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound)
 <!-- END META -->
 
 > **实现功能**：在DSH网页中按任务完成、审批、提问、阻塞和失败事件播放可定制提示音。
@@ -131,10 +131,6 @@ DSH事件接口、Web Audio/IndexedDB与可选BroadcastChannel；音频设备、
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AI-Galaxy-GPU/dsh-sound/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

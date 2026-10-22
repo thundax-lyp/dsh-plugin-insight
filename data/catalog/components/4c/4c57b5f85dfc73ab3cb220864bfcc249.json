@@ -381,39 +381,26 @@
         "metadata": {
             "repository": "AlyceStocking/dsh-yukimi-theme",
             "repository_id": 1335281982,
-            "captured_at": "2026-10-21T08:01:25.625Z",
-            "window_start": "2026-09-21T08:01:25.625Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-10-13T11:52:58Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7DC8:4E142:67469F:6F39B3:6AD87159 and timestamp 2026-10-21 08:01:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8186:4F21B:6B711D:736542:6AD8715C and timestamp 2026-10-21 08:01:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A25.625Z..2026-10-21T08%3A01%3A25.625Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 853E:26CA49:6D76AF:7566A9:6AD8715F and timestamp 2026-10-21 08:01:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A01%3A25.625Z..2026-10-21T08%3A01%3A25.625Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 894C:502CD:6AD82D:72CBD8:6AD87162 and timestamp 2026-10-21 08:01:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-yukimi-theme%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A25.625Z..2026-10-21T08%3A01%3A25.625Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A8E:264749:6DC821:75BBC7:6AD87163 and timestamp 2026-10-21 08:01:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ]
+            "errors": [],
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "current_revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
         },
         "discovery.plugins": {
             "id": "github:1335281982:root",

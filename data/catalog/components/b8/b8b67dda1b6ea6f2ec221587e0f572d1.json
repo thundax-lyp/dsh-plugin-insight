@@ -383,8 +383,8 @@
         "metadata": {
             "repository": "Ame-Choo/dsh-study-coach",
             "repository_id": 1400498179,
-            "captured_at": "2026-10-21T08:01:29.433Z",
-            "window_start": "2026-09-21T08:01:29.433Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 3,
             "pushed_at": "2026-10-14T14:00:18Z",
             "issues": {
@@ -397,42 +397,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84A0:4C3CE:6A19E0:720F89:6AD8715E and timestamp 2026-10-21 08:01:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:BF4E0:1FA5332:6614B86:6AD99F2B and timestamp 2026-10-22 05:29:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85E0:272FB3:6B6422:735748:6AD8715F and timestamp 2026-10-21 08:01:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:324C5:1F74201:6655534:6AD99F2B and timestamp 2026-10-22 05:29:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A29.433Z..2026-10-21T08%3A01%3A29.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8728:E6488:81733F:8968D3:6AD87160 and timestamp 2026-10-21 08:01:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:303154:21A1CC7:6C6B29B:6AD99F2B and timestamp 2026-10-22 05:29:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A01%3A29.433Z..2026-10-21T08%3A01%3A29.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A26:10F8F5:6E20C1:761294:6AD87163 and timestamp 2026-10-21 08:01:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:1F173:2293E3D:6F3256C:6AD99F2C and timestamp 2026-10-22 05:29:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A29.433Z..2026-10-21T08%3A01%3A29.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B90:103C86:6B25A8:731B64:6AD87164 and timestamp 2026-10-21 08:01:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:2147AAF:6AFE078:6AD99F2C and timestamp 2026-10-22 05:29:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-study-coach",
-                "captured_at": "2026-10-21T08:01:40.555Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 353,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-study-coach",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-study-coach",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-01T18:57:54.050Z",
-                    "captured_at": "2026-10-21T08:01:40.555Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-study-coach",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-10-01T18:57:54.488Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                "current_revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

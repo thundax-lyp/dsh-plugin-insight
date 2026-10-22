@@ -5,7 +5,7 @@
 分析版本：[bb68082](https://github.com/A3Boy/dsh-web-tools/tree/bb68082d1274dc0d28ed5921bb08c7b5070fae7f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=yellow&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools)
+[![GitHub ★ 40](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40&color=yellow&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools)
 <!-- END META -->
 
 > **实现功能**：将多个Web搜索和提取服务以及社交平台接到DSH标准搜索接口，提供路由和故障切换。
@@ -135,6 +135,10 @@ hint、路由、安全与provider分离值得借鉴，公共fetch有IP/协议/DN
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/A3Boy/dsh-web-tools/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=grey&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z) [![近30天关闭 5](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=grey&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
+
+
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

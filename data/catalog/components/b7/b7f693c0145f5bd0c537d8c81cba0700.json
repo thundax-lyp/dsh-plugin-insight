@@ -324,8 +324,8 @@
         "metadata": {
             "repository": "2002XiaoYu/dsh-session-diff",
             "repository_id": 1372976273,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
             "pushed_at": "2026-09-18T03:05:30Z",
             "issues": {
@@ -338,15 +338,15 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-session-diff",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-session-diff",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-session-diff",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-session-diff",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -355,7 +355,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
                 "current_revision": "f5b20d0001bb9955c4eebe0f2037507769e55197",
                 "script_changed": false,

@@ -130,6 +130,6 @@ README所谓client-side guard是否严格拦截git commit？实际src/invariant.
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

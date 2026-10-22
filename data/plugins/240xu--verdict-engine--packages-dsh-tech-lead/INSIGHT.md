@@ -5,7 +5,7 @@
 分析版本：[c7e23f9](https://github.com/240xu/verdict-engine/tree/c7e23f9e131694af6dbd9f3ed11301602a514864/packages/dsh-tech-lead)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/240xu/verdict-engine) [![npm 30d 67](https://img.shields.io/static/v1?label=npm+30d&message=67&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/240xu/verdict-engine) [![npm 30d 58](https://img.shields.io/static/v1?label=npm+30d&message=58&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-tech-lead)
 <!-- END META -->
 
 > **实现功能**：为 DSH 提供只读工程治理工具，检查任务分级、计划、证据、门禁、上下文及变更预览。
@@ -138,6 +138,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/240xu/verdict-engine/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/240xu/verdict-engine/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

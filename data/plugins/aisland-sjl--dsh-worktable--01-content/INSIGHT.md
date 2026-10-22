@@ -5,7 +5,7 @@
 分析版本：[6cb86b6](https://github.com/Aisland-SJL/dsh-worktable/tree/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content)
 
 <!-- BEGIN META -->
-[![GitHub ★ 772](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=772&color=yellow&logo=github&style=flat)](https://github.com/Aisland-SJL/dsh-worktable)
+[![GitHub ★ 778](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=778&color=yellow&logo=github&style=flat)](https://github.com/Aisland-SJL/dsh-worktable)
 <!-- END META -->
 
 > **实现功能**：在侧栏提供项目抽屉、分栏窗格、会话绑定与项目产物挂载。
@@ -137,6 +137,10 @@ manifest隔离不等于文件沙箱：主机file/write直接pathResolve用户路
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/Aisland-SJL/dsh-worktable/issues) 查看。
+[![Issue 未关闭 7](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=grey&logo=github&style=flat)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
+
+
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

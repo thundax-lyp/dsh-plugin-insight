@@ -5,7 +5,7 @@
 分析版本：[7608cb9](https://github.com/988hj7tczd-oss/dsh-pr-description/tree/7608cb9b7b61447a3aff14491537ba7ee8caad6b)
 
 <!-- BEGIN META -->
-[![npm 30d 385](https://img.shields.io/static/v1?label=npm+30d&message=385&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pr-description) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pr-description)
+[![npm 30d 368](https://img.shields.io/static/v1?label=npm+30d&message=368&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pr-description) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pr-description)
 <!-- END META -->
 
 > **实现功能**：分析分支差异并生成PR标题和Markdown描述，可选确认及调用gh创建PR。
@@ -134,6 +134,6 @@ Git命令走固定argv、禁用部分副作用环境、输出有界且对lossy�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-pr-description/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-pr-description/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

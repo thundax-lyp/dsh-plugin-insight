@@ -5,7 +5,7 @@
 分析版本：[bba4d83](https://github.com/AcidGr/dsh-web-mobile-fix/tree/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-mobile-fix) [![npm 30d 1,787](https://img.shields.io/static/v1?label=npm+30d&message=1%2C787&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-mobile-fix) [![npm 30d 1,753](https://img.shields.io/static/v1?label=npm+30d&message=1%2C753&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix)
 <!-- END META -->
 
 > **实现功能**：调整DSH窄屏布局，并为悬浮窗模式提供会话导航、桥接按钮与软键盘滚动适配。
@@ -130,10 +130,6 @@ DSH客户端layout/uiWorkspace及DOM结构，可选DSHOverlayBridge、visualView
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AcidGr/dsh-web-mobile-fix/issues?q=is%3Aissue+is%3Aopen)
-
-暂未获取：近30天新建、近30天关闭。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AcidGr/dsh-web-mobile-fix/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

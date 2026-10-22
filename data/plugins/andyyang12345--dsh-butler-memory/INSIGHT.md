@@ -5,7 +5,7 @@
 分析版本：[0f64e0c](https://github.com/AndyYang12345/dsh-butler-memory/tree/0f64e0cf0420d0461fef2d49c2d6752faebc0562)
 
 <!-- BEGIN META -->
-[![npm 30d 773](https://img.shields.io/static/v1?label=npm+30d&message=773&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-butler-memory) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-butler-memory)
+[![npm 30d 771](https://img.shields.io/static/v1?label=npm+30d&message=771&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-butler-memory) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-butler-memory)
 <!-- END META -->
 
 > **实现功能**：通过MCP向DSH模型和用户面板接入Butler长期记忆、修订历史与候选接受/拒绝。
@@ -135,6 +135,6 @@ RPC端点白名单、显式字段映射与懒加载降级清楚；错误详情�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/AndyYang12345/dsh-butler-memory/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AndyYang12345/dsh-butler-memory/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

@@ -5,7 +5,7 @@
 分析版本：[061e9a8](https://github.com/1985899182/dsh-harness-chat-control/tree/061e9a8563ffec3b2353d785e268b88984bd4890)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：为 DSH 会话提供引用、侧聊、会话编辑及侧聊模型与历史控制。
@@ -129,6 +129,6 @@ lib/index.js 的 createIdentifiedUserMessage 保证 fallback 也有 UUID，避�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1985899182/dsh-harness-chat-control/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/1985899182/dsh-harness-chat-control/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

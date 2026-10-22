@@ -5,7 +5,7 @@
 分析版本：[8fcce84](https://github.com/985451842/dsh-snapshot-manager/tree/8fcce843ca288b8cc4639d15e1c9f1abfdd467dd)
 
 <!-- BEGIN META -->
-[![npm 30d 816](https://img.shields.io/static/v1?label=npm+30d&message=816&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager)
+[![npm 30d 816](https://img.shields.io/static/v1?label=npm+30d&message=816&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-snapshot-manager) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：在DSH轮次边界保存增量文件快照，支持恢复文件并分叉到对应对话切点重新开始。
@@ -132,6 +132,6 @@ Git提交可稳定固定版本但不含会话，单独fork不恢复文件；此�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/985451842/dsh-snapshot-manager/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/985451842/dsh-snapshot-manager/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -380,35 +380,66 @@
         "metadata": {
             "repository": "58fly/dsh-language-guard",
             "repository_id": 1424475406,
-            "captured_at": "2026-10-21T07:58:47.740Z",
-            "window_start": "2026-09-21T07:58:47.740Z",
-            "stars": 1,
-            "pushed_at": "2026-10-21T07:31:20Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 2,
+            "pushed_at": "2026-10-21T14:58:22Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58fly%2Fdsh-language-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:32C1CF:2172B17:6C23568:6AD99D52 and timestamp 2026-10-22 05:21:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58fly%2Fdsh-language-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:BF4E0:1F000B0:63F9879:6AD99D52 and timestamp 2026-10-22 05:21:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58fly%2Fdsh-language-guard%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:324C5:1ED2F2E:6447B74:6AD99D53 and timestamp 2026-10-22 05:21:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58fly%2Fdsh-language-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:20ED23E:6A860AA:6AD99D53 and timestamp 2026-10-22 05:21:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A58fly%2Fdsh-language-guard%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:2098E7B:68C1F29:6AD99D53 and timestamp 2026-10-22 05:21:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-language-guard",
-                "captured_at": "2026-10-21T07:59:03.861Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-language-guard",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-language-guard",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": "2026-10-20T14:49:43.940Z",
-                    "captured_at": "2026-10-21T07:59:03.861Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-language-guard",
                     "error": null,
                     "latest_version": "0.3.4",
                     "latest_published_at": "2026-10-21T07:05:58.806Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "9351078c5d264033c49d221742840aee673c0cdf",
+                "current_revision": "c2460ebb2d208e8e70f5a2c59c35e2ea2eb85763",
+                "script_changed": true,
+                "changed_files": [
+                    "scripts/grepcode.mjs"
+                ],
+                "error": null
             }
         },
         "discovery.plugins": {

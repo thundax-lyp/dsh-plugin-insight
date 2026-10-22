@@ -379,40 +379,64 @@
         "metadata": {
             "repository": "Aliww2468/dsh-client-ui-aqua-patched",
             "repository_id": 1378742722,
-            "captured_at": "2026-10-21T08:00:34.965Z",
-            "window_start": "2026-09-21T08:00:34.965Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 2,
             "pushed_at": "2026-09-20T20:37:19Z",
             "issues": {
-                "open": 0,
+                "open": null,
                 "closed": null,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
             "errors": [
                 {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:3F0314:F9A33E:32E6047:6AD99EFB and timestamp 2026-10-22 05:28:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 49CC:4C3CE:69F9E5:71ED3C:6AD8712F and timestamp 2026-10-21 08:00:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:E36D4:1C5AF30:5BFBAA9:6AD99EFB and timestamp 2026-10-22 05:28:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:2E82A7:1B44CC7:587BC35:6AD99EFB and timestamp 2026-10-22 05:28:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:FEB8C:1C4370F:5B85D2B:6AD99EFC and timestamp 2026-10-22 05:28:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3422:201BC2:F2FC27:319984B:6AD99EFC and timestamp 2026-10-22 05:28:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-client-ui-aqua",
-                "captured_at": "2026-10-21T08:01:01.514Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1116,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-client-ui-aqua",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1065,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-client-ui-aqua",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-17T10:18:50.583Z",
-                    "captured_at": "2026-10-21T08:01:01.514Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-client-ui-aqua",
                     "error": null,
                     "latest_version": "1.3.1",
                     "latest_published_at": "2026-08-17T10:37:20.515Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                "current_revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

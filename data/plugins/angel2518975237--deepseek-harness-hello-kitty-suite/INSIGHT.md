@@ -5,7 +5,7 @@
 分析版本：[1b8cd7e](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/tree/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)
+[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=yellow&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)
 <!-- END META -->
 
 > **实现功能**：为DSH提供粉色Hello Kitty皮肤资源，并在轮次结束时显示卡片、声音或系统提醒。
@@ -132,10 +132,6 @@ DSH webServer/turn事件、客户端slots/timer、Skin Center v2、浏览器Noti
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+created%3A2026-09-21T08%3A02%3A48.133Z..2026-10-21T08%3A02%3A48.133Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A02%3A48.133Z..2026-10-21T08%3A02%3A48.133Z)
-
-暂未获取：Issue 未关闭。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

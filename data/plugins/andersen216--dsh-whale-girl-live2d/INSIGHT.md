@@ -5,7 +5,7 @@
 分析版本：[f977bef](https://github.com/Andersen216/dsh-whale-girl-live2d/tree/f977bef508690e75ba6535cd8f4ce18e7f6ba9b0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 44](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44&color=yellow&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d)
+[![GitHub ★ 47](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=47&color=yellow&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d)
 <!-- END META -->
 
 > **实现功能**：将DSH会话事件映射为Live2D桌宠动作与状态，并提供输入、钱包和可选桌面外壳。
@@ -132,10 +132,10 @@ DSH0.2.x connection/webServer/sessionController、浏览器WebGL/Live2D；余额
 
 **活跃度**
 
-[![Issue 未关闭 7](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=grey&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 9](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=9&color=grey&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d/issues?q=is%3Aissue+created%3A2026-09-21T08%3A02%3A08.574Z..2026-10-21T08%3A02%3A08.574Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A02%3A08.574Z..2026-10-21T08%3A02%3A08.574Z)
+[![Issue 未关闭 3](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=grey&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/Andersen216/dsh-whale-girl-live2d/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
 
 
 
-统计日期：2026-10-21。
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

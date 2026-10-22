@@ -5,7 +5,7 @@
 分析版本：[f9ff567](https://github.com/988hj7tczd-oss/dsh-skill-creator/tree/f9ff56714decd8d604d97dced494206937c8f907)
 
 <!-- BEGIN META -->
-[![npm 30d 790](https://img.shields.io/static/v1?label=npm+30d&message=790&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-skill-creator) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-skill-creator)
+[![npm 30d 762](https://img.shields.io/static/v1?label=npm+30d&message=762&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-skill-creator) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-skill-creator)
 <!-- END META -->
 
 > **实现功能**：为 DSH 创建、校验、打包 Skill，并提出或写入 description 改写。
@@ -128,6 +128,6 @@ Skill作者先生成草稿和包；保留原description，以真实正负用例�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

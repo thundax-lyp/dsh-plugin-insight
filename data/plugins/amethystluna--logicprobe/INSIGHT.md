@@ -5,7 +5,7 @@
 分析版本：[a264c40](https://github.com/AmethystLuna/logicprobe/tree/a264c4018b02d24e2b2103c772ca431e21c16e65)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/logicprobe) [![npm 30d 2,967](https://img.shields.io/static/v1?label=npm+30d&message=2%2C967&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-logicprobe) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-logicprobe)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/logicprobe) [![npm 30d 2,926](https://img.shields.io/static/v1?label=npm+30d&message=2%2C926&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-logicprobe) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-logicprobe)
 <!-- END META -->
 
 > **实现功能**：以工具和技能检查设计声称、状态机、数据模型与依赖图，生成可比较的结构化核验报告。
@@ -136,10 +136,6 @@ DSH tools/skills、Node引擎，非DSH路径有Python实现；外部导出验证
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/logicprobe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/logicprobe/issues?q=is%3Aissue+created%3A2026-09-21T08%3A02%3A07.380Z..2026-10-21T08%3A02%3A07.380Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/logicprobe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A02%3A07.380Z..2026-10-21T08%3A02%3A07.380Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AmethystLuna/logicprobe/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

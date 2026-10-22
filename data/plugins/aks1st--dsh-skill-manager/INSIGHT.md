@@ -5,7 +5,7 @@
 分析版本：[fb45203](https://github.com/AKS1st/dsh-skill-manager/tree/fb452031031ea50a3287292d22b54e765d1039dc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-skill-manager) [![npm 30d 1,061](https://img.shields.io/static/v1?label=npm+30d&message=1%2C061&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-skill-manager) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-skill-manager)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-skill-manager) [![npm 30d 1,034](https://img.shields.io/static/v1?label=npm+30d&message=1%2C034&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-skill-manager) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-skill-manager)
 <!-- END META -->
 
 > **实现功能**：在设置界面分层浏览、编辑和导入导出技能目录。
@@ -137,6 +137,6 @@ ZIP规范化时skillNameByEntry只记录SKILL.md或顶层md，提取循环对其
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/AKS1st/dsh-skill-manager/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AKS1st/dsh-skill-manager/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

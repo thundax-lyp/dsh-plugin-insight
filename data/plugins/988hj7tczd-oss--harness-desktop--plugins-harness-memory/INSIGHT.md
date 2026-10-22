@@ -5,7 +5,7 @@
 分析版本：[9808ab7](https://github.com/988hj7tczd-oss/harness-desktop/tree/9808ab77392c7cd285f87de094daff1fcd322109/plugins/harness-memory)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/harness-desktop) [![npm 30d 224](https://img.shields.io/static/v1?label=npm+30d&message=224&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/harness-memory) [![最新发布 2026-04-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-04-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/harness-memory)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/harness-desktop) [![npm 30d 202](https://img.shields.io/static/v1?label=npm+30d&message=202&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/harness-memory) [![最新发布 2026-04-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-04-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/harness-memory)
 <!-- END META -->
 
 > **实现功能**：为 DSH 保存长期记忆，并在后续会话的系统提示中分类注入。
@@ -126,6 +126,6 @@ plugins/harness-memory子包，依赖storageDomain/systemPrompt/tools及zod/sche
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/harness-desktop/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/harness-desktop/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

@@ -5,7 +5,7 @@
 分析版本：[bf980a6](https://github.com/01Virex/dsh-status-rotator/tree/bf980a6d6c9dd1fce87cb9b1611cf5d42f5c10e1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=190&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 11,337](https://img.shields.io/static/v1?label=npm+30d&message=11%2C337&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
+[![GitHub ★ 195](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=195&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 10,930](https://img.shields.io/static/v1?label=npm+30d&message=10%2C930&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：为 DSH Web 状态区提供阶段化文案、主题词库、动画与可编辑设置。
@@ -90,6 +90,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/01Virex/dsh-status-rotator/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/01Virex/dsh-status-rotator/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

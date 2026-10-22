@@ -381,35 +381,64 @@
         "metadata": {
             "repository": "All3nCN/dsh-qa-suite-N23",
             "repository_id": 1353726715,
-            "captured_at": "2026-10-21T08:00:53.394Z",
-            "window_start": "2026-09-21T08:00:53.394Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-09-01T16:41:43Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAll3nCN%2Fdsh-qa-suite-N23%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:683E:1BC0C18:59D0D66:6AD99EC7 and timestamp 2026-10-22 05:27:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAll3nCN%2Fdsh-qa-suite-N23%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:683E:1BC0D3C:59D1153:6AD99EC7 and timestamp 2026-10-22 05:27:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAll3nCN%2Fdsh-qa-suite-N23%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:FEB8C:1C3385D:5B515FA:6AD99EC8 and timestamp 2026-10-22 05:27:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAll3nCN%2Fdsh-qa-suite-N23%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:E36D4:1C4AF73:5BC7DD6:6AD99EC8 and timestamp 2026-10-22 05:27:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAll3nCN%2Fdsh-qa-suite-N23%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3420:A81E7:EF5640:30BCF85:6AD99EC8 and timestamp 2026-10-22 05:27:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "@all3cn/dsh-qa-suite-n23",
-                "captured_at": "2026-10-21T08:01:03.201Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 22,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40all3cn%2Fdsh-qa-suite-n23",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 21,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40all3cn%2Fdsh-qa-suite-n23",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-01T16:42:36.029Z",
-                    "captured_at": "2026-10-21T08:01:03.201Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40all3cn%2Fdsh-qa-suite-n23",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-09-01T16:42:36.336Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "8f473567166944bf9ea94afaad294ced49034691",
+                "current_revision": "8f473567166944bf9ea94afaad294ced49034691",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

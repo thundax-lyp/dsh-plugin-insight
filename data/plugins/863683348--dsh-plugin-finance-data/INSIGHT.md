@@ -5,7 +5,7 @@
 分析版本：[0a10267](https://github.com/863683348/dsh-plugin-finance-data/tree/0a10267fa6f8f75da68005406b899894b60dd796)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-finance-data) [![npm 30d 1,049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-finance-data) [![npm 30d 1,023](https://img.shields.io/static/v1?label=npm+30d&message=1%2C023&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-finance-data)
 <!-- END META -->
 
 > **实现功能**：对调用者提供的财务数字执行格式化、收益、比率、风险和组合计算。
@@ -141,6 +141,6 @@ lib/index.js注册finance_data并把参数交给finance.js纯计算；formatNumb
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-finance-data/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-finance-data/issues) 查看。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

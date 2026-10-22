@@ -378,40 +378,64 @@
         "metadata": {
             "repository": "AK-blank/dsh-plugin-offpeak-badge",
             "repository_id": 1402828137,
-            "captured_at": "2026-10-21T05:33:23.262Z",
-            "window_start": "2026-09-21T05:33:23.262Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
             "pushed_at": "2026-10-03T08:08:12Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
                 "updated_30d": null
             },
             "errors": [
                 {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-offpeak-badge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:2C86D:20BF5E8:695C298:6AD99E50 and timestamp 2026-10-22 05:25:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-offpeak-badge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:324C5:1F29AD4:6561D08:6AD99E51 and timestamp 2026-10-22 05:25:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-offpeak-badge%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:2A1932:2070379:6840352:6AD99E51 and timestamp 2026-10-22 05:25:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-offpeak-badge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:2FD4A4:21E8BFC:6D0CDD5:6AD99E51 and timestamp 2026-10-22 05:25:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-offpeak-badge%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A23.262Z..2026-10-21T05%3A33%3A23.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC4E:10A7AB:50C1E7:56CB3E:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-offpeak-badge%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3416:2DC0F9:2083F7C:69703F2:6AD99E51 and timestamp 2026-10-22 05:25:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-plugin-offpeak-badge",
-                "captured_at": "2026-10-21T05:33:29.626Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-offpeak-badge",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-offpeak-badge",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-plugin-offpeak-badge",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "7baac218a3ac9a7a31964bda164284c4647cf308",
+                "current_revision": "7baac218a3ac9a7a31964bda164284c4647cf308",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

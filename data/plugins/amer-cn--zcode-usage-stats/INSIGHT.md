@@ -5,7 +5,7 @@
 分析版本：[9a43816](https://github.com/Amer-CN/zcode-usage-stats/tree/9a4381658e754515dac50611da461970462032ec)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Amer-CN/zcode-usage-stats) [![npm 30d 157](https://img.shields.io/static/v1?label=npm+30d&message=157&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/zcode-usage-stats) [![最新发布 2026-09-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/zcode-usage-stats)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Amer-CN/zcode-usage-stats) [![npm 30d 148](https://img.shields.io/static/v1?label=npm+30d&message=148&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/zcode-usage-stats) [![最新发布 2026-09-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/zcode-usage-stats)
 <!-- END META -->
 
 > **实现功能**：扫描历史会话用量并在设置页展示趋势、模型分布与活跃热力图。
@@ -135,10 +135,6 @@ sessionPersistence全量枚举/逐日志读事件，assistant/message usage按tu
 
 **活跃度**
 
-[![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Amer-CN/zcode-usage-stats/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A01%3A43.721Z..2026-10-21T08%3A01%3A43.721Z)
-
-暂未获取：Issue 未关闭、近30天新建。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Amer-CN/zcode-usage-stats/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

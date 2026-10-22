@@ -5,7 +5,7 @@
 分析版本：[b75c3a1](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)
 
 <!-- BEGIN META -->
-[![npm 30d 1,535](https://img.shields.io/static/v1?label=npm+30d&message=1%2C535&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate)
+[![npm 30d 1,494](https://img.shields.io/static/v1?label=npm+30d&message=1%2C494&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-gate)
 <!-- END META -->
 
 > **实现功能**：对插件目录或npm包做静态风险扫描，并提供危险命令、路径及扫描差异检查。
@@ -142,6 +142,10 @@ lib/index.js注册gate_scan/guard/diff/report和提示section；scan.js只读遍
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-gate/issues) 查看。
+[![Issue 未关闭 4](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-gate/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-gate/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-gate/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
+
+
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

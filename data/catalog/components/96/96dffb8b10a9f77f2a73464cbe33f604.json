@@ -380,12 +380,12 @@
         "metadata": {
             "repository": "AKIRACOD/dsh-drag-and-drop",
             "repository_id": 1333975935,
-            "captured_at": "2026-10-21T05:33:25.853Z",
-            "window_start": "2026-09-21T05:33:25.853Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 5,
             "pushed_at": "2026-08-14T08:44:04Z",
             "issues": {
-                "open": 0,
+                "open": null,
                 "closed": null,
                 "created_30d": null,
                 "closed_30d": null,
@@ -393,39 +393,51 @@
             },
             "errors": [
                 {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341B:324C5:1F2A598:6564104:6AD99E53 and timestamp 2026-10-22 05:25:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB28:27305C:528A0B:5892C3:6AD84EA8 and timestamp 2026-10-21 05:33:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:20F78BC:69F5D61:6AD99E53 and timestamp 2026-10-22 05:25:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC60:103F14:504BE2:5655CB:6AD84EA9 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:3DE3E8:201386E:672BA23:6AD99E53 and timestamp 2026-10-22 05:25:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD48:27069F:52FB5E:590640:6AD84EAA and timestamp 2026-10-21 05:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:214E014:6BC29BB:6AD99E54 and timestamp 2026-10-22 05:25:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A25.853Z..2026-10-21T05%3A33%3A25.853Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CE60:44870:53CB0D:59D2BF:6AD84EAB and timestamp 2026-10-21 05:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKIRACOD%2Fdsh-drag-and-drop%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3417:28B172:23873DC:731C296:6AD99E54 and timestamp 2026-10-22 05:25:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "@omdsh-dev/dsh-drag-and-drop",
-                "captured_at": "2026-10-21T05:33:31.316Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40omdsh-dev%2Fdsh-drag-and-drop",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40omdsh-dev%2Fdsh-drag-and-drop",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40omdsh-dev%2Fdsh-drag-and-drop",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "current_revision": "c20646ad6d4ee4c4a0ef12163a074716e17a7ba5",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

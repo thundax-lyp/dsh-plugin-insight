@@ -5,7 +5,7 @@
 分析版本：[8515929](https://github.com/988hj7tczd-oss/dsh-a11y-scan/tree/8515929d9e914cc0cadd60416676608ea1da03ae)
 
 <!-- BEGIN META -->
-[![npm 30d 86](https://img.shields.io/static/v1?label=npm+30d&message=86&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan)
+[![npm 30d 83](https://img.shields.io/static/v1?label=npm+30d&message=83&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan)
 <!-- END META -->
 
 > **实现功能**：调用axe扫描本地HTML、构建页面或显式确认的URL，输出无障碍问题与多格式报告。
@@ -130,6 +130,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-a11y-scan/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-a11y-scan/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

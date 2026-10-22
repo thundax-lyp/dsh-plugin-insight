@@ -387,29 +387,50 @@
         "metadata": {
             "repository": "dsh-wsl-workspace-maintainers/dsh-wsl-workspace",
             "repository_id": 1334205011,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
-            "stars": 94,
-            "pushed_at": "2026-10-21T01:50:52Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 96,
+            "pushed_at": "2026-10-22T04:59:30Z",
             "issues": {
-                "open": 1,
-                "closed": 74,
-                "created_30d": 58,
-                "closed_30d": 54,
-                "updated_30d": 65
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:2C86D:2068E8B:6843A70:6AD99D62 and timestamp 2026-10-22 05:21:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:2A1932:20180EA:6723676:6AD99D63 and timestamp 2026-10-22 05:21:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:2FD4A4:21919A2:6BF3694:6AD99D63 and timestamp 2026-10-22 05:21:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:1F173:21E60B2:6CFD16D:6AD99D63 and timestamp 2026-10-22 05:21:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:1F173:21E61EA:6CFD51F:6AD99D63 and timestamp 2026-10-22 05:21:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-wsl-workspace",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 3340,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-workspace",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2975,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-workspace",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T14:26:11.920Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-workspace",
                     "error": null,
                     "latest_version": "0.7.9",
@@ -418,11 +439,52 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "00106d9575d8d087daec0596dd51f283f78dcdbb",
-                "current_revision": "00106d9575d8d087daec0596dd51f283f78dcdbb",
-                "script_changed": false,
-                "changed_files": [],
+                "current_revision": "1ce935e1ef93f2b0d7939986e3668a297c7fd4ea",
+                "script_changed": true,
+                "changed_files": [
+                    "lib/index.js",
+                    "lib/wsl-image-tool.js",
+                    "lib/wsl-jobs.js",
+                    "lib/wsl-sandbox.js",
+                    "lib/wsl-search.js",
+                    "scripts/check-apparatus-size.mjs",
+                    "scripts/check-host-contract.mjs",
+                    "scripts/mutation-engine.mjs",
+                    "scripts/mutation-sweep.mjs",
+                    "scripts/release-readings.mjs",
+                    "scripts/run-seams.mjs",
+                    "scripts/smoke-shapes.mjs",
+                    "scripts/typecheck-gate.mjs",
+                    "src/fs.ts",
+                    "src/host/variants.ts",
+                    "src/host/wsl-image-tool.ts",
+                    "src/host/wsl-jobs.ts",
+                    "src/host/wsl-sandbox.ts",
+                    "src/host/wsl-search.ts",
+                    "src/host/wsl-skills.ts",
+                    "tests/client-dom.test.mjs",
+                    "tests/consumer-coverage.test.mjs",
+                    "tests/fs-execution-context.test.ts",
+                    "tests/host-materialize.mjs",
+                    "tests/parity/derive.mjs",
+                    "tests/probe-hygiene.test.mjs",
+                    "tests/replay/defects.mjs",
+                    "tests/replay/run.mjs",
+                    "tests/replay/shapes.mjs",
+                    "tests/smoke.ts",
+                    "tests/support/command-census.mjs",
+                    "tests/support/confine-probe.mjs",
+                    "tests/support/fake-context.ts",
+                    "tests/support/host-probe.mjs",
+                    "tests/support/rc2-consumers.mjs",
+                    "tests/support/realm-probe.mjs",
+                    "tests/world-consistency.test.mjs",
+                    "tests/wsl-jobs.test.ts",
+                    "tests/wsl-search.test.ts",
+                    "tests/wsl-skills.test.ts"
+                ],
                 "error": null
             }
         },

@@ -5,7 +5,7 @@
 分析版本：[9fd81e6](https://github.com/Aik358/dsh-draw-gacha/tree/9fd81e6db10944b6fa339aeb731e2850e1627b9a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-draw-gacha) [![npm 30d 857](https://img.shields.io/static/v1?label=npm+30d&message=857&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-draw-gacha) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-draw-gacha)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-draw-gacha) [![npm 30d 846](https://img.shields.io/static/v1?label=npm+30d&message=846&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-draw-gacha) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-draw-gacha)
 <!-- END META -->
 
 > **实现功能**：在发送区加入抽卡拉杆，按模型流中的文本信号播放娱乐演出。
@@ -129,10 +129,6 @@ generation防止旧轮询结果混入新演出，流消费先await next再迭代
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-draw-gacha/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-draw-gacha/issues?q=is%3Aissue+created%3A2026-09-21T07%3A59%3A06.578Z..2026-10-21T07%3A59%3A06.578Z)
-
-暂未获取：近30天关闭。
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/Aik358/dsh-draw-gacha/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

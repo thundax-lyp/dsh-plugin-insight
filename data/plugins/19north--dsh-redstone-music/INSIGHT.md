@@ -130,6 +130,6 @@ src/music/rcon.ts 用串行队列防止在途命令争抢，tool-build.ts 以 mc
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/19north/dsh-redstone-music/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/19north/dsh-redstone-music/issues) 查看。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

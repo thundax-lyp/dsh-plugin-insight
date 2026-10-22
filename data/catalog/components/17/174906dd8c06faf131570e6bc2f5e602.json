@@ -388,40 +388,64 @@
         "metadata": {
             "repository": "Angel2518975237/deepseek-harness-hello-kitty-suite",
             "repository_id": 1343679449,
-            "captured_at": "2026-10-21T08:02:48.133Z",
-            "window_start": "2026-09-21T08:02:48.133Z",
-            "stars": 19,
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 20,
             "pushed_at": "2026-09-10T11:05:12Z",
             "issues": {
                 "open": null,
-                "closed": 1,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B0E:3FE178:E26013:145DBB8:6AD871AC and timestamp 2026-10-21 08:02:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:683E:1BD3B75:5A0EB94:6AD99F04 and timestamp 2026-10-22 05:28:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:E36D4:1C5DC7C:5C050B3:6AD99F04 and timestamp 2026-10-22 05:28:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3420:A81E7:F05E1C:30F3477:6AD99F04 and timestamp 2026-10-22 05:28:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:E36D4:1C5DEE7:5C0586D:6AD99F05 and timestamp 2026-10-22 05:28:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAngel2518975237%2Fdeepseek-harness-hello-kitty-suite%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:FEB8C:1C46391:5B8EFAA:6AD99F05 and timestamp 2026-10-22 05:28:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "deepseek-harness-hello-kitty-suite",
-                "captured_at": "2026-10-21T08:03:05.355Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/deepseek-harness-hello-kitty-suite",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/deepseek-harness-hello-kitty-suite",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T08:03:05.355Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/deepseek-harness-hello-kitty-suite",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                "current_revision": "1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

@@ -148,6 +148,6 @@ host串行读改写队列、颜色规范化、原子rename和portal覆盖有借�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

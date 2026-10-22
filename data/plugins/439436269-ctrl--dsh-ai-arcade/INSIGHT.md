@@ -132,6 +132,6 @@ resolveTarget先核实配置再发现可用provider；streamBrain区分finish错
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/439436269-ctrl/dsh-ai-arcade/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/439436269-ctrl/dsh-ai-arcade/issues) 查看。
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)

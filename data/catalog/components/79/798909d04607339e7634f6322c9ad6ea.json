@@ -379,8 +379,8 @@
         "metadata": {
             "repository": "AmeKrance/anan-thermal-monitor",
             "repository_id": 1335381015,
-            "captured_at": "2026-10-21T08:01:29.536Z",
-            "window_start": "2026-09-21T08:01:29.536Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 2,
             "pushed_at": "2026-08-16T06:32:13Z",
             "issues": {
@@ -393,42 +393,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82AE:1054F6:6998DA:718E12:6AD8715D and timestamp 2026-10-21 08:01:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:3DE3E8:205F797:68263BA:6AD99F2D and timestamp 2026-10-22 05:29:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85F6:264749:6DC5D1:75B93F:6AD8715F and timestamp 2026-10-21 08:01:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:2FD4A4:22399E6:6E15958:6AD99F2D and timestamp 2026-10-22 05:29:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A29.536Z..2026-10-21T08%3A01%3A29.536Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 87A4:4E2C1:6C16AE:740678:6AD87161 and timestamp 2026-10-21 08:01:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3416:2DC0F9:20D47AF:6A79970:6AD99F2E and timestamp 2026-10-22 05:29:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A01%3A29.536Z..2026-10-21T08%3A01%3A29.536Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88E0:26516E:6ADBD6:72CCFB:6AD87161 and timestamp 2026-10-21 08:01:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:3866FF:220BF1B:6DB72ED:6AD99F2E and timestamp 2026-10-22 05:29:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A29.536Z..2026-10-21T08%3A01%3A29.536Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A0A:16071B:6BA388:73951F:6AD87162 and timestamp 2026-10-21 08:01:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:21A32FA:6C3EEF2:6AD99F2E and timestamp 2026-10-22 05:29:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "anan-thermal-monitor",
-                "captured_at": "2026-10-21T08:01:39.147Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 167,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/anan-thermal-monitor",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 159,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/anan-thermal-monitor",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-15T20:48:33.482Z",
-                    "captured_at": "2026-10-21T08:01:39.147Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/anan-thermal-monitor",
                     "error": null,
                     "latest_version": "1.0.4",
                     "latest_published_at": "2026-08-16T06:10:47.111Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                "current_revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

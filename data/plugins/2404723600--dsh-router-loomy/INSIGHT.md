@@ -5,7 +5,7 @@
 分析版本：[ccabca3](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)
 
 <!-- BEGIN META -->
-[![npm 30d 1,685](https://img.shields.io/static/v1?label=npm+30d&message=1%2C685&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
+[![npm 30d 1,480](https://img.shields.io/static/v1?label=npm+30d&message=1%2C480&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-router-loomy) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-router-loomy)
 <!-- END META -->
 
 > **实现功能**：将本机 Loomy 登录态与云端模型通道接入 dsh-router，提供模型目录和客户端状态页。
@@ -140,6 +140,6 @@ api/sse.ts在原始流透传旁嗅探错误并扣住不完整[DONE]，将字节�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/2404723600/dsh-router-loomy/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/2404723600/dsh-router-loomy/issues) 查看。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

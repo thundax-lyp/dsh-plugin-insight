@@ -379,18 +379,47 @@
         "metadata": {
             "repository": "AnacondaKC/dsh-douyin",
             "repository_id": 1332642596,
-            "captured_at": "2026-10-21T08:02:05.978Z",
-            "window_start": "2026-09-21T08:02:05.978Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 5,
             "pushed_at": "2026-08-13T06:26:44Z",
             "issues": {
-                "open": 0,
-                "closed": 1,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": []
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAnacondaKC%2Fdsh-douyin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3424:5F941:1BCE2CC:5A2F359:6AD99ED3 and timestamp 2026-10-22 05:27:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAnacondaKC%2Fdsh-douyin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:FEB8C:1C370DE:5B5CFAA:6AD99ED3 and timestamp 2026-10-22 05:27:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAnacondaKC%2Fdsh-douyin%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:3F0314:F8E992:32BFFBF:6AD99ED3 and timestamp 2026-10-22 05:27:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAnacondaKC%2Fdsh-douyin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:E36D4:1C4E962:5BD3A49:6AD99ED4 and timestamp 2026-10-22 05:27:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAnacondaKC%2Fdsh-douyin%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:683E:1BC4A2F:59DD936:6AD99ED4 and timestamp 2026-10-22 05:27:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "2f28338b29503f20d159b1f0123a985530134b6a",
+                "current_revision": "2f28338b29503f20d159b1f0123a985530134b6a",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
+            }
         },
         "discovery.plugins": {
             "id": "github:1332642596:root",

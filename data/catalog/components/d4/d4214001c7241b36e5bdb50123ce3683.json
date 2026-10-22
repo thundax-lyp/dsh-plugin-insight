@@ -383,35 +383,69 @@
         "metadata": {
             "repository": "1373700184/dsh-subagent",
             "repository_id": 1425006726,
-            "captured_at": "2026-10-21T07:58:46.629Z",
-            "window_start": "2026-09-21T07:58:46.629Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
-            "pushed_at": "2026-10-21T07:24:47Z",
+            "pushed_at": "2026-10-22T04:10:58Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1373700184%2Fdsh-subagent%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:110312:20F2127:6AFA212:6AD99D0B and timestamp 2026-10-22 05:20:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1373700184%2Fdsh-subagent%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3417:9A516:20E0E07:6A4D26A:6AD99D0B and timestamp 2026-10-22 05:20:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1373700184%2Fdsh-subagent%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:2078F7:2169EA7:6C1D84E:6AD99D0B and timestamp 2026-10-22 05:20:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1373700184%2Fdsh-subagent%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:2A78E8:220C86B:6E5B3B9:6AD99D0B and timestamp 2026-10-22 05:20:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1373700184%2Fdsh-subagent%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:2A78E8:220CA2B:6E5B967:6AD99D0C and timestamp 2026-10-22 05:20:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-subagent",
-                "captured_at": "2026-10-21T07:58:59.976Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 22,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-subagent",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-subagent",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-20T02:03:50.907Z",
-                    "captured_at": "2026-10-21T07:58:59.976Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-subagent",
                     "error": null,
                     "latest_version": "0.0.1",
                     "latest_published_at": "2026-08-20T02:03:51.153Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "679dd4fb7838fcb473c8b368e20aa24a43af99aa",
+                "current_revision": "8fc1589021cfa2949e2924148b701efbeb4b34fb",
+                "script_changed": true,
+                "changed_files": [
+                    "lib/client.js",
+                    "lib/index.js",
+                    "scripts/build-client.mjs",
+                    "src/client.js"
+                ],
+                "error": null
             }
         },
         "discovery.plugins": {

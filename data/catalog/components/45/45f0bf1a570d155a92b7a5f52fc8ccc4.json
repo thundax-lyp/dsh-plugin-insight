@@ -324,10 +324,10 @@
         "metadata": {
             "repository": "240xu/dsh-websearch",
             "repository_id": 1340340493,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
-            "stars": 7,
-            "pushed_at": "2026-10-18T14:09:15Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 6,
+            "pushed_at": "2026-10-21T14:08:30Z",
             "issues": {
                 "open": null,
                 "closed": null,
@@ -338,47 +338,47 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:128E3:14C90D:225DF0:6AD849F1 and timestamp 2026-10-21 05:13:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:20BA68E:69DECEE:6AD99CCD and timestamp 2026-10-22 05:19:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:1494D7:2217B4:6AD849F1 and timestamp 2026-10-21 05:13:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:2C86D:2033CD5:67969CC:6AD99CCD and timestamp 2026-10-22 05:19:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13B5E1:214C28:6AD849F1 and timestamp 2026-10-21 05:13:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3420:8084B:1EC27F8:635CA09:6AD99CCD and timestamp 2026-10-22 05:19:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:146F17:21EFE4:6AD849F1 and timestamp 2026-10-21 05:13:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3422:133F18:226AA34:6EDA907:6AD99CCE and timestamp 2026-10-22 05:19:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13F640:21945E:6AD849F1 and timestamp 2026-10-21 05:13:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-websearch%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3423:11C129:22DD2E0:703B90C:6AD99CCE and timestamp 2026-10-22 05:19:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "@240xu/dsh-websearch",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 4802,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40240xu%2Fdsh-websearch",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 4731,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40240xu%2Fdsh-websearch",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-22T15:18:47.784Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40240xu%2Fdsh-websearch",
                     "error": null,
-                    "latest_version": "2.8.7",
-                    "latest_published_at": "2026-10-20T12:53:52.217Z",
+                    "latest_version": "2.8.8",
+                    "latest_published_at": "2026-10-21T14:10:40.457Z",
                     "latest_error": null
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
-                "current_revision": "72cbba8e3c19c77fea2396c7ac00c40b08df52a9",
+                "current_revision": "da42e44a0f54913e132c5219174a3b6f267188fc",
                 "script_changed": false,
                 "changed_files": [],
                 "error": null

@@ -380,8 +380,8 @@
         "metadata": {
             "repository": "AKS1st/dsh-sysmon",
             "repository_id": 1334434271,
-            "captured_at": "2026-10-21T05:33:51.379Z",
-            "window_start": "2026-09-21T05:33:51.379Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 2,
             "pushed_at": "2026-09-08T03:19:35Z",
             "issues": {
@@ -394,42 +394,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E82A:275C9A:549FEB:5AACD2:6AD84EC1 and timestamp 2026-10-21 05:33:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:21046D5:6A2013B:6AD99E76 and timestamp 2026-10-22 05:26:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E998:110ECF:503CA4:5643A5:6AD84EC2 and timestamp 2026-10-21 05:33:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:215B94B:6BEEFED:6AD99E76 and timestamp 2026-10-22 05:26:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A51.379Z..2026-10-21T05%3A33%3A51.379Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EA98:4F1F4:51124E:571BDF:6AD84EC2 and timestamp 2026-10-21 05:33:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:216170D:6B66E81:6AD99E76 and timestamp 2026-10-22 05:26:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A51.379Z..2026-10-21T05%3A33%3A51.379Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EC32:4C3CE:516EC0:577CF4:6AD84EC3 and timestamp 2026-10-21 05:33:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3422:133F18:2315266:7104DA8:6AD99E77 and timestamp 2026-10-22 05:26:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A51.379Z..2026-10-21T05%3A33%3A51.379Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED3C:271D3E:53DF8C:59EA1D:6AD84EC4 and timestamp 2026-10-21 05:33:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-sysmon%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3423:11C129:238EE0F:727DBE1:6AD99E77 and timestamp 2026-10-22 05:26:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-sysmon",
-                "captured_at": "2026-10-21T05:33:56.915Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 117,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-sysmon",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 114,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-sysmon",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-28T02:53:07.563Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-sysmon",
                     "error": null,
                     "latest_version": "0.1.1",
                     "latest_published_at": "2026-08-28T02:56:00.534Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "current_revision": "4cb7a241f0228329d12010b4846c1bd508271ec0",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

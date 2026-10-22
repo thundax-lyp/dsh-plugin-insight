@@ -5,7 +5,7 @@
 分析版本：[21c6e9d](https://github.com/58catmiao/dsh-sciwork/tree/21c6e9d5f8f48cd03363305d9fa3c641f8d0f808)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：提供科研模式预设、本地科研库面板、文献和数据管理及投稿前检查流程。
@@ -147,6 +147,6 @@ lib/index.js注册research/call精确Fetch路由；actions.js分派快照、导�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/58catmiao/dsh-sciwork/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/58catmiao/dsh-sciwork/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

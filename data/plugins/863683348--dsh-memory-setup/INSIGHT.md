@@ -5,7 +5,7 @@
 分析版本：[989e8a5](https://github.com/863683348/dsh-memory-setup/tree/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup) [![npm 30d 158](https://img.shields.io/static/v1?label=npm+30d&message=158&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-memory-setup) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-memory-setup)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup) [![npm 30d 155](https://img.shields.io/static/v1?label=npm+30d&message=155&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-memory-setup) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-memory-setup)
 <!-- END META -->
 
 > **实现功能**：保存工作区偏好、约定与纠错教训，支持知识检索、快照和上下文注入。
@@ -146,6 +146,6 @@ lib/index.js通过ctx.fs读取工作区JSON，保存时做revision比较、备�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-memory-setup/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-memory-setup/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

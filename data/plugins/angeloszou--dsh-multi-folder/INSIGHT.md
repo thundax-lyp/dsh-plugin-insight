@@ -5,7 +5,7 @@
 分析版本：[5921c0e](https://github.com/AngelosZou/dsh-multi-folder/tree/5921c0e2fd2623bc0757b8f13feaf73cee3648ca)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) [![npm 30d 2,077](https://img.shields.io/static/v1?label=npm+30d&message=2%2C077&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-multi-folder)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) [![npm 30d 2,036](https://img.shields.io/static/v1?label=npm+30d&message=2%2C036&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-multi-folder)
 <!-- END META -->
 
 > **实现功能**：为DSH工作区配置次级目录，在原工具和会话权限模式下读写执行，并补充目录提示与文件菜单。
@@ -133,10 +133,6 @@ DSH fs/shell/sandboxPolicy/tools/jobs/commands/systemPrompt与可选Typert客户
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+created%3A2026-09-21T08%3A02%3A58.604Z..2026-10-21T08%3A02%3A58.604Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A02%3A58.604Z..2026-10-21T08%3A02%3A58.604Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AngelosZou/dsh-multi-folder/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

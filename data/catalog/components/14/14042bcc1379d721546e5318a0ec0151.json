@@ -324,50 +324,29 @@
         "metadata": {
             "repository": "173787247/dsh-wsl-tray",
             "repository_id": 1351853903,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 2,
             "pushed_at": "2026-10-09T09:00:56Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tray%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:E4386:151129:229826:6AD849B9 and timestamp 2026-10-21 05:12:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tray%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:D1FDD:14947B:2234AC:6AD849B9 and timestamp 2026-10-21 05:12:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tray%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13D544:2164DD:6AD849B9 and timestamp 2026-10-21 05:12:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tray%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:1406A7:219E88:6AD849B9 and timestamp 2026-10-21 05:12:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-tray%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:1402DE:21976F:6AD849BA and timestamp 2026-10-21 05:12:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-wsl-tray-launcher",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-tray-launcher",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-tray-launcher",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-tray-launcher",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -376,7 +355,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "7ad45d3db6672fb07ab909135c3c479ee5dee72a",
                 "current_revision": "7ad45d3db6672fb07ab909135c3c479ee5dee72a",
                 "script_changed": false,

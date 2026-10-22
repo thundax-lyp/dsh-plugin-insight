@@ -5,7 +5,7 @@
 分析版本：[b35aa1e](https://github.com/AlienGene/dsh-llm-balance-siderbar/tree/b35aa1e8501051ab3541cea2f43f0609b214f9a1)
 
 <!-- BEGIN META -->
-[![npm 30d 859](https://img.shields.io/static/v1?label=npm+30d&message=859&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-llm-balance) [![最新发布 2026-09-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-12&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-llm-balance)
+[![npm 30d 847](https://img.shields.io/static/v1?label=npm+30d&message=847&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-llm-balance) [![最新发布 2026-09-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-12&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-llm-balance)
 <!-- END META -->
 
 > **实现功能**：按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。
@@ -137,10 +137,6 @@ cache按probe.id而非route/credential身份，hostFor只选首个匹配route；
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlienGene/dsh-llm-balance-siderbar/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AlienGene/dsh-llm-balance-siderbar/issues?q=is%3Aissue+created%3A2026-09-21T08%3A00%3A19.627Z..2026-10-21T08%3A00%3A19.627Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlienGene/dsh-llm-balance-siderbar/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A00%3A19.627Z..2026-10-21T08%3A00%3A19.627Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AlienGene/dsh-llm-balance-siderbar/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

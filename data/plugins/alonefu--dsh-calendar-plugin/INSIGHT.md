@@ -5,7 +5,7 @@
 分析版本：[6ce4095](https://github.com/AloneFu/dsh-calendar-plugin/tree/6ce4095ef800838f91abc162aa6d6646435f7605)
 
 <!-- BEGIN META -->
-[![npm 30d 6,032](https://img.shields.io/static/v1?label=npm+30d&message=6%2C032&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-calendar) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-calendar)
+[![npm 30d 5,884](https://img.shields.io/static/v1?label=npm+30d&message=5%2C884&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-calendar) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-calendar)
 <!-- END META -->
 
 > **实现功能**：在 DSH 右侧栏读 Obsidian 日记与待办，并受控写回 Markdown。
@@ -129,10 +129,6 @@ DSH webServer/right tabs/slots、Node文件权限、指定Markdown目录；Obsid
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AloneFu/dsh-calendar-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AloneFu/dsh-calendar-plugin/issues?q=is%3Aissue+created%3A2026-09-21T08%3A01%3A06.527Z..2026-10-21T08%3A01%3A06.527Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AloneFu/dsh-calendar-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A01%3A06.527Z..2026-10-21T08%3A01%3A06.527Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AloneFu/dsh-calendar-plugin/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

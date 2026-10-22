@@ -380,8 +380,8 @@
         "metadata": {
             "repository": "940842546/dsh-permissions",
             "repository_id": 1335349535,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 4,
             "pushed_at": "2026-09-22T08:52:49Z",
             "issues": {
@@ -394,15 +394,15 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-permissions",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 606,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-permissions",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 588,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-permissions",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-15T19:28:49.998Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-permissions",
                     "error": null,
                     "latest_version": "2.0.2",
@@ -411,7 +411,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
                 "current_revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
                 "script_changed": false,

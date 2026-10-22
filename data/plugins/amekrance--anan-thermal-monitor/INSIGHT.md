@@ -5,7 +5,7 @@
 分析版本：[13ed26d](https://github.com/AmeKrance/anan-thermal-monitor/tree/13ed26da20da08eecc300fb9963bea3dd4634205)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AmeKrance/anan-thermal-monitor) [![npm 30d 167](https://img.shields.io/static/v1?label=npm+30d&message=167&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/anan-thermal-monitor) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/anan-thermal-monitor)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AmeKrance/anan-thermal-monitor) [![npm 30d 159](https://img.shields.io/static/v1?label=npm+30d&message=159&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/anan-thermal-monitor) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/anan-thermal-monitor)
 <!-- END META -->
 
 > **实现功能**：在Windows启动独立WPF桌宠，显示LibreHardwareMonitor提供的硬件温度。
@@ -127,6 +127,6 @@ GUI与采样工作分离、nullable读数处理、卸载停止标记是实用接
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/AmeKrance/anan-thermal-monitor/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AmeKrance/anan-thermal-monitor/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

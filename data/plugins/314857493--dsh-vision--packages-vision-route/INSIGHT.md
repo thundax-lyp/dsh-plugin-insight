@@ -5,7 +5,7 @@
 分析版本：[10b0cbe](https://github.com/314857493/dsh-vision/tree/10b0cbe8c6f06a175eaa985df28d276575539b6e/packages/vision-route)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/314857493/dsh-vision) [![npm 30d 1,264](https://img.shields.io/static/v1?label=npm+30d&message=1%2C264&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/314857493/dsh-vision) [![npm 30d 1,252](https://img.shields.io/static/v1?label=npm+30d&message=1%2C252&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route)
 <!-- END META -->
 
 > **实现功能**：给纯文本模型路由添加图片附件转译旁路，使用智谱视觉模型生成文字证据。
@@ -129,6 +129,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/314857493/dsh-vision/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/314857493/dsh-vision/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

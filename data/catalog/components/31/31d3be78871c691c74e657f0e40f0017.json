@@ -379,8 +379,8 @@
         "metadata": {
             "repository": "AKS1st/dock-spreadsheet",
             "repository_id": 1400109121,
-            "captured_at": "2026-10-21T05:33:41.059Z",
-            "window_start": "2026-09-21T05:33:41.059Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-10-01T15:01:50Z",
             "issues": {
@@ -393,42 +393,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DC74:273235:5065D2:566DF7:6AD84EB6 and timestamp 2026-10-21 05:33:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:2158BDB:6BE5B79:6AD99E6F and timestamp 2026-10-22 05:26:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD66:1A0B93:4FE150:55EAE2:6AD84EB7 and timestamp 2026-10-21 05:33:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:215EDF9:6B5E7FB:6AD99E70 and timestamp 2026-10-22 05:26:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A41.059Z..2026-10-21T05%3A33%3A41.059Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE68:2707DA:573927:5D433F:6AD84EB8 and timestamp 2026-10-21 05:33:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:240A46:210227A:6A18999:6AD99E70 and timestamp 2026-10-22 05:26:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A41.059Z..2026-10-21T05%3A33%3A41.059Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF5C:272FB3:527E81:58894D:6AD84EB9 and timestamp 2026-10-21 05:33:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3422:133F18:23126A4:70FBF25:6AD99E70 and timestamp 2026-10-22 05:26:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A41.059Z..2026-10-21T05%3A33%3A41.059Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E062:1054F6:51A8DE:57B5B5:6AD84EBA and timestamp 2026-10-21 05:33:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-spreadsheet%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3423:11C129:238C096:7274625:6AD99E70 and timestamp 2026-10-22 05:26:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dock-spreadsheet",
-                "captured_at": "2026-10-21T05:33:46.583Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 413,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-spreadsheet",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dock-spreadsheet",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-01T14:23:10.721Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dock-spreadsheet",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-10-01T14:26:25.659Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7",
+                "current_revision": "8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

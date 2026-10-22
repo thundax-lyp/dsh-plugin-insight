@@ -387,44 +387,64 @@
         "metadata": {
             "repository": "AbnerAI/dsh-monitor",
             "repository_id": 1333440937,
-            "captured_at": "2026-10-21T05:34:26.816Z",
-            "window_start": "2026-09-21T05:34:26.816Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 3,
             "pushed_at": "2026-08-13T19:03:50Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
+                "open": null,
+                "closed": null,
+                "created_30d": null,
                 "closed_30d": null,
                 "updated_30d": null
             },
             "errors": [
                 {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:32C1CF:21F90AD:6DDBFCC:6AD99EBA and timestamp 2026-10-22 05:27:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3415:2FD4A4:220EFE4:6D89F86:6AD99EBA and timestamp 2026-10-22 05:27:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3417:28B172:23AE3DC:739B434:6AD99EBA and timestamp 2026-10-22 05:27:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A26.816Z..2026-10-21T05%3A34%3A26.816Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C48:360622:A9A1A5:F47452:6AD84EE7 and timestamp 2026-10-21 05:34:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:BF4E0:1F7F13E:6597D75:6AD99EBA and timestamp 2026-10-22 05:27:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A26.816Z..2026-10-21T05%3A34%3A26.816Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8D82:360622:A9A2CD:F47614:6AD84EE8 and timestamp 2026-10-21 05:34:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3422:133F18:23302E0:715CCFB:6AD99EBB and timestamp 2026-10-22 05:27:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-monitor",
-                "captured_at": "2026-10-21T05:34:33.283Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 831,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-monitor",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 823,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-monitor",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-13T19:00:50.711Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-monitor",
                     "error": null,
                     "latest_version": "0.1.1",
                     "latest_published_at": "2026-08-13T19:00:57.261Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                "current_revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

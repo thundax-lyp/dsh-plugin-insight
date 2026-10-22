@@ -291,10 +291,10 @@
         "metadata": {
             "repository": "00080000/dsh-project-memory",
             "repository_id": 1339316901,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 23,
-            "pushed_at": "2026-10-19T16:17:22Z",
+            "pushed_at": "2026-10-21T16:50:30Z",
             "issues": {
                 "open": null,
                 "closed": null,
@@ -305,36 +305,36 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:1489C3:2205A9:6AD8491F and timestamp 2026-10-21 05:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:BF4E0:1E5E923:61E92A2:6AD99B91 and timestamp 2026-10-22 05:13:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:146083:21E7F7:6AD8491F and timestamp 2026-10-21 05:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:3866FF:20B202C:694B7A1:6AD99B91 and timestamp 2026-10-22 05:13:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:154FC6:22B819:6AD8491F and timestamp 2026-10-21 05:09:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:DC3C6:204A572:67DFB89:6AD99B91 and timestamp 2026-10-22 05:13:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6405:2EA514:14A28B:221B81:6AD8491F and timestamp 2026-10-21 05:09:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3411:1F173:2137833:6AC4CAF:6AD99B91 and timestamp 2026-10-22 05:13:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14ECF9:225DDA:6AD84920 and timestamp 2026-10-21 05:09:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A00080000%2Fdsh-project-memory%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:20452E4:685D2CA:6AD99B92 and timestamp 2026-10-22 05:13:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "@yolk_vat-y/dsh-project-memory",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 4533,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40yolk_vat-y%2Fdsh-project-memory",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 4399,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40yolk_vat-y%2Fdsh-project-memory",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-24T03:59:38.973Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40yolk_vat-y%2Fdsh-project-memory",
                     "error": null,
                     "latest_version": "0.6.3",
@@ -343,11 +343,37 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
-                "current_revision": "21fc69e3e98f3864677e091477b7d543a0e54939",
-                "script_changed": false,
-                "changed_files": [],
+                "current_revision": "d8c270e6531858da3110467e8d482e5b1d9bfbdf",
+                "script_changed": true,
+                "changed_files": [
+                    "src/audit.js",
+                    "src/auto-inject.js",
+                    "src/index.js",
+                    "src/insight-store.js",
+                    "src/ops.js",
+                    "src/readiness.js",
+                    "src/recall.js",
+                    "src/store.js",
+                    "src/tools/forget.js",
+                    "src/tools/query-memory.js",
+                    "src/tools/stats.js",
+                    "src/util/search.js",
+                    "src/vector-index.js",
+                    "test/auto-inject.test.mjs",
+                    "test/bugfix-0.5.7.test.mjs",
+                    "test/injection-audit.test.mjs",
+                    "test/injection-budget.test.mjs",
+                    "test/injection-scenarios.test.mjs",
+                    "test/insight-store.test.mjs",
+                    "test/ops.test.mjs",
+                    "test/recall-vector-fusion.test.mjs",
+                    "test/recall.test.mjs",
+                    "test/run-test.mjs",
+                    "test/vector-index.test.mjs",
+                    "tsdown.config.ts"
+                ],
                 "error": null
             }
         },

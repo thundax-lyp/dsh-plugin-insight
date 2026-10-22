@@ -381,40 +381,64 @@
         "metadata": {
             "repository": "AlyceStocking/dsh-harness-switch",
             "repository_id": 1414577411,
-            "captured_at": "2026-10-21T08:01:10.745Z",
-            "window_start": "2026-09-21T08:01:10.745Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-10-14T02:01:41Z",
             "issues": {
-                "open": 0,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
                 "updated_30d": null
             },
             "errors": [
                 {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:683E:1BD5D7D:5A15C85:6AD99F0B and timestamp 2026-10-22 05:28:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:E36D4:1C5FF26:5C0C2E2:6AD99F0B and timestamp 2026-10-22 05:28:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3420:A81E7:F07B9D:30F95DE:6AD99F0B and timestamp 2026-10-22 05:28:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:E36D4:1C60195:5C0CA4F:6AD99F0B and timestamp 2026-10-22 05:28:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A10.745Z..2026-10-21T08%3A01%3A10.745Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 78A6:4C3CE:6A1409:720903:6AD87155 and timestamp 2026-10-21 08:01:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAlyceStocking%2Fdsh-harness-switch%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3410:FEB8C:1C48330:5B957AD:6AD99F0C and timestamp 2026-10-22 05:28:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-harness-switch",
-                "captured_at": "2026-10-21T08:01:26.258Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 39,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-harness-switch",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-harness-switch",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-14T01:58:59.347Z",
-                    "captured_at": "2026-10-21T08:01:26.258Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-harness-switch",
                     "error": null,
                     "latest_version": "0.3.3",
                     "latest_published_at": "2026-10-14T02:01:07.736Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "current_revision": "678b5a218f750c61c055bb113a4ff003948aa774",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

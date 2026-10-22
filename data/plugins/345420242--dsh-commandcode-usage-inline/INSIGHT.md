@@ -110,6 +110,6 @@ report边界解析容忍缺段，Host为显式no-op；客户端保留Remote错�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/345420242/dsh-commandcode-usage-inline/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/345420242/dsh-commandcode-usage-inline/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

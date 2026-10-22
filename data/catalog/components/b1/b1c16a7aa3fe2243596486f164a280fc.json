@@ -380,10 +380,10 @@
         "metadata": {
             "repository": "Airisey/dsh-model-failover",
             "repository_id": 1415863200,
-            "captured_at": "2026-10-21T07:59:27.389Z",
-            "window_start": "2026-09-21T07:59:27.389Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
-            "pushed_at": "2026-10-20T18:08:19Z",
+            "pushed_at": "2026-10-22T04:27:34Z",
             "issues": {
                 "open": null,
                 "closed": null,
@@ -394,25 +394,43 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D47A:103C86:6ACEDC:72BD47:6AD870E2 and timestamp 2026-10-21 07:59:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341A:E36D4:1C5574C:5BE9CA6:6AD99EEA and timestamp 2026-10-22 05:28:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D62E:4F1F4:67C116:6FA973:6AD870E3 and timestamp 2026-10-21 07:59:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341D:683E:1BCB655:59F38B5:6AD99EEA and timestamp 2026-10-22 05:28:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20created%3A2026-09-21T07%3A59%3A27.389Z..2026-10-21T07%3A59%3A27.389Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DA06:51118:66AA69:6E96C3:6AD870E6 and timestamp 2026-10-21 07:59:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3420:A81E7:EFEAAD:30DB772:6AD99EEA and timestamp 2026-10-22 05:28:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T07%3A59%3A27.389Z..2026-10-21T07%3A59%3A27.389Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB70:109A61:65EC6A:6DD712:6AD870E7 and timestamp 2026-10-21 07:59:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341C:FEB8C:1C3E29B:5B745E9:6AD99EEB and timestamp 2026-10-22 05:28:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A27.389Z..2026-10-21T07%3A59%3A27.389Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF36:E6488:8124DF:8913EA:6AD870E9 and timestamp 2026-10-21 07:59:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAirisey%2Fdsh-model-failover%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3421:E36D4:1C55C27:5BEAC58:6AD99EEB and timestamp 2026-10-22 05:28:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
-            ]
+            ],
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "3221de6a1c9a02333f78e48449fcc272e1b430c0",
+                "current_revision": "20ed700e79dca02f1e54352de7bc763f59ec0191",
+                "script_changed": true,
+                "changed_files": [
+                    "client.js",
+                    "index.js",
+                    "lib/adapter.js",
+                    "lib/constants.js",
+                    "lib/health.js",
+                    "test/autocontinue.mjs",
+                    "test/client.mjs",
+                    "test/real-host.mjs",
+                    "test/smoke.mjs"
+                ],
+                "error": null
+            }
         },
         "discovery.plugins": {
             "id": "github:1415863200:root",

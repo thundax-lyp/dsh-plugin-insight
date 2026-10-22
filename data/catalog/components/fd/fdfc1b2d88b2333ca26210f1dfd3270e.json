@@ -385,35 +385,48 @@
         "metadata": {
             "repository": "1264459640/dsh-trellis",
             "repository_id": 1335559646,
-            "captured_at": "2026-10-21T07:58:49.419Z",
-            "window_start": "2026-09-21T07:58:49.419Z",
-            "stars": 9,
-            "pushed_at": "2026-10-21T06:22:10Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 10,
+            "pushed_at": "2026-10-21T09:45:05Z",
             "issues": {
-                "open": 1,
-                "closed": 2,
-                "created_30d": 1,
-                "closed_30d": 1,
-                "updated_30d": 2
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
             "errors": [],
             "npm": {
                 "package_name": "@banana-peeljj12/dsh-trellis",
-                "captured_at": "2026-10-21T07:59:03.358Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1538,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40banana-peeljj12%2Fdsh-trellis",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1515,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40banana-peeljj12%2Fdsh-trellis",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-18T03:29:35.618Z",
-                    "captured_at": "2026-10-21T07:59:03.358Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40banana-peeljj12%2Fdsh-trellis",
                     "error": null,
-                    "latest_version": "0.4.1",
-                    "latest_published_at": "2026-10-21T04:59:29.418Z",
+                    "latest_version": "0.4.2",
+                    "latest_published_at": "2026-10-21T08:38:19.446Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f",
+                "current_revision": "c305b8a648428242ed239e3ee33a443d5a2fcfcd",
+                "script_changed": true,
+                "changed_files": [
+                    "lib/client.js",
+                    "test/client-theme.test.js",
+                    "test/client.test.js",
+                    "test/helpers/client-theme.js"
+                ],
+                "error": null
             }
         },
         "discovery.plugins": {

@@ -288,50 +288,29 @@
         "metadata": {
             "repository": "1225Sakura/oh-my-deepseekharness",
             "repository_id": 1379204512,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 11,
             "pushed_at": "2026-10-16T02:48:01Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14B1C0:222D4E:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C887:224B78:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:143129:219D61:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:12F9BB:13AB3F:212370:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:136D2F:20D506:6AD84916 and timestamp 2026-10-21 05:09:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@sakura12/oh-my-deepseekharness",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 2379,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40sakura12%2Foh-my-deepseekharness",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2166,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40sakura12%2Foh-my-deepseekharness",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-21T08:34:33.011Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/%40sakura12%2Foh-my-deepseekharness",
                     "error": null,
                     "latest_version": "0.4.9",
@@ -340,7 +319,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
                 "current_revision": "f38d8a6cffca4d2beb97e3cdd53208794163b92f",
                 "script_changed": false,

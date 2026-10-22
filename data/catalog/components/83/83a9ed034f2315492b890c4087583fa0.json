@@ -379,48 +379,64 @@
         "metadata": {
             "repository": "AcidGr/dsh-web-mobile-fix",
             "repository_id": 1334255250,
-            "captured_at": "2026-10-21T05:34:26.982Z",
-            "window_start": "2026-09-21T05:34:26.982Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 9,
             "pushed_at": "2026-09-24T14:25:57Z",
             "issues": {
-                "open": 0,
-                "closed": 3,
+                "open": null,
+                "closed": null,
                 "created_30d": null,
                 "closed_30d": null,
                 "updated_30d": null
             },
             "errors": [
                 {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3416:2DC0F9:208633F:697796E:6AD99E58 and timestamp 2026-10-22 05:25:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:324C5:1F2C00E:656977F:6AD99E58 and timestamp 2026-10-22 05:25:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A26.982Z..2026-10-21T05%3A34%3A26.982Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B66:24642:B01F18:FC96BF:6AD84EE7 and timestamp 2026-10-21 05:34:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:2A1932:2072A7F:6848328:6AD99E58 and timestamp 2026-10-22 05:25:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A26.982Z..2026-10-21T05%3A34%3A26.982Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C4C:1B0790:ABCF1E:F7CC95:6AD84EE7 and timestamp 2026-10-21 05:34:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:32C1CF:21D6043:6D6856E:6AD99E58 and timestamp 2026-10-22 05:25:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A26.982Z..2026-10-21T05%3A34%3A26.982Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8D84:208D3:B0FCC6:FD37AC:6AD84EE8 and timestamp 2026-10-21 05:34:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:1F173:224540D:6E3234B:6AD99E58 and timestamp 2026-10-22 05:25:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-web-mobile-fix",
-                "captured_at": "2026-10-21T05:34:33.337Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1787,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-web-mobile-fix",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1753,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-web-mobile-fix",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-14T14:57:27.766Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-web-mobile-fix",
                     "error": null,
                     "latest_version": "1.0.6",
                     "latest_published_at": "2026-09-11T08:30:23.557Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "current_revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

@@ -381,8 +381,8 @@
         "metadata": {
             "repository": "AndyYang12345/dsh-butler-memory",
             "repository_id": 1335928912,
-            "captured_at": "2026-10-21T08:02:39.788Z",
-            "window_start": "2026-09-21T08:02:39.788Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-10-05T12:28:00Z",
             "issues": {
@@ -390,43 +390,55 @@
                 "closed": null,
                 "created_30d": null,
                 "closed_30d": null,
-                "updated_30d": 0
+                "updated_30d": null
             },
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 50EC:1B0790:DEE36C:141E69E:6AD871A3 and timestamp 2026-10-21 08:02:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:25B21C:1B22C00:581438E:6AD99F00 and timestamp 2026-10-22 05:28:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5480:28E3E1:E38345:146A16B:6AD871A6 and timestamp 2026-10-21 08:02:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:13401A:18AFEBC:5034149:6AD99F00 and timestamp 2026-10-22 05:28:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20created%3A2026-09-21T08%3A02%3A39.788Z..2026-10-21T08%3A02%3A39.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 56A0:208D3:E3816C:146E143:6AD871A8 and timestamp 2026-10-21 08:02:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:3F0314:F9BCE7:32EB4AA:6AD99F00 and timestamp 2026-10-22 05:28:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A02%3A39.788Z..2026-10-21T08%3A02%3A39.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5A34:24642:E49552:1484403:6AD871AB and timestamp 2026-10-21 08:02:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3424:5F941:1BDB8AE:5A5B431:6AD99F00 and timestamp 2026-10-22 05:28:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-butler-memory%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3417:6C823:2141563:6A584C0:6AD99F00 and timestamp 2026-10-22 05:28:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-butler-memory",
-                "captured_at": "2026-10-21T08:02:55.297Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 773,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-butler-memory",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 771,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-butler-memory",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-16T15:18:49.178Z",
-                    "captured_at": "2026-10-21T08:02:55.297Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-butler-memory",
                     "error": null,
                     "latest_version": "0.1.5",
                     "latest_published_at": "2026-08-20T01:57:12.055Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "0f64e0cf0420d0461fef2d49c2d6752faebc0562",
+                "current_revision": "0f64e0cf0420d0461fef2d49c2d6752faebc0562",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

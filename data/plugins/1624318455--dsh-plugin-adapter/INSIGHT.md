@@ -5,7 +5,7 @@
 分析版本：[db7f273](https://github.com/1624318455/dsh-plugin-adapter/tree/db7f273bd7caf2bb87c2428dcb8bd883eb338d1c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：把OpenCode Zen模型接入DSH模型目录，提供原生流式适配与可选网络路由管理。
@@ -93,6 +93,10 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/1624318455/dsh-plugin-adapter/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aopen)
+
+暂未获取：近30天新建、近30天关闭。
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -283,8 +283,8 @@
         "metadata": {
             "repository": "173787247/dsh-wsl-editor",
             "repository_id": 1351854212,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
             "pushed_at": "2026-09-29T15:04:38Z",
             "issues": {
@@ -297,15 +297,15 @@
             "errors": [],
             "npm": {
                 "package_name": "dsh-wsl-editor",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-editor",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-editor",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-wsl-editor",
                     "error": "HTTP 404",
                     "latest_version": null,
@@ -314,7 +314,7 @@
                 }
             },
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "0bc7619da7b473a622ae9e498d19fd0360162261",
                 "current_revision": "0bc7619da7b473a622ae9e498d19fd0360162261",
                 "script_changed": false,

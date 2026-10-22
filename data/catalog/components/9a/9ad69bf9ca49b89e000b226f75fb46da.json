@@ -379,41 +379,29 @@
         "metadata": {
             "repository": "514006234/dsh-weekly-check",
             "repository_id": 1400385991,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
-            "stars": 0,
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
+            "stars": 1,
             "pushed_at": "2026-10-19T05:46:42Z",
             "issues": {
                 "open": null,
                 "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640E:1DEEF7:14BAFE:225E64:6AD84A32 and timestamp 2026-10-21 05:14:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:13401A:182E0D4:4E8BAEB:6AD99D29 and timestamp 2026-10-22 05:20:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:154B6F:23018E:6AD84A32 and timestamp 2026-10-21 05:14:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:12AB5A:13C1E5:21614C:6AD84A32 and timestamp 2026-10-21 05:14:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C4:5FB64:14BAB5:225714:6AD84A32 and timestamp 2026-10-21 05:14:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:64196:AAE91:6AD84A32 and timestamp 2026-10-21 05:14:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A514006234%2Fdsh-weekly-check%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:25B21C:1A99845:56514F6:6AD99D29 and timestamp 2026-10-22 05:20:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
+                "checked_at": "2026-10-22T05:12:30.672Z",
                 "baseline_revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
                 "current_revision": "5ee6b1d8aa90a1dab83c30db96838482331db304",
                 "script_changed": false,

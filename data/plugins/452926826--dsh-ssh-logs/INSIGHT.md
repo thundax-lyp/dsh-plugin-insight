@@ -115,6 +115,6 @@ dsh-ssh-logs 0.1.0，通过bundle挂载内置MCP bridge；不执行远端写命�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/452926826/dsh-ssh-logs/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/452926826/dsh-ssh-logs/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

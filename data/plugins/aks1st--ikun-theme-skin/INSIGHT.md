@@ -5,7 +5,7 @@
 分析版本：[c0e59e6](https://github.com/AKS1st/ikun-theme-skin/tree/c0e59e61332a5e3317365848f73240308d9d9345)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/ikun-theme-skin)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/ikun-theme-skin)
 <!-- END META -->
 
 > **实现功能**：通过主题、远程照片壁纸与音效提供娱乐化界面皮肤。
@@ -132,6 +132,6 @@ unmount清空audio引用、音量同步与切回主题壁纸释放有细节；�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/AKS1st/ikun-theme-skin/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/AKS1st/ikun-theme-skin/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

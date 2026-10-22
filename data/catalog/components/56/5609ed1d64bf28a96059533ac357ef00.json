@@ -379,8 +379,8 @@
         "metadata": {
             "repository": "AKS1st/dsh-archived-conversations",
             "repository_id": 1335060115,
-            "captured_at": "2026-10-21T05:33:43.013Z",
-            "window_start": "2026-09-21T05:33:43.013Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
             "pushed_at": "2026-09-11T03:49:57Z",
             "issues": {
@@ -393,42 +393,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE4A:F9E9B:52A7F7:58B3E4:6AD84EB8 and timestamp 2026-10-21 05:33:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:324C5:1F34AF8:6585EC1:6AD99E72 and timestamp 2026-10-22 05:26:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF44:268135:55DC7E:5BE7A8:6AD84EB9 and timestamp 2026-10-21 05:33:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3416:2DC0F9:208FFA3:6997858:6AD99E72 and timestamp 2026-10-22 05:26:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A43.013Z..2026-10-21T05%3A33%3A43.013Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E03E:26E19B:51062C:570F05:6AD84EBA and timestamp 2026-10-21 05:33:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3412:2C86D:20CB8E3:6983C96:6AD99E72 and timestamp 2026-10-22 05:26:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A43.013Z..2026-10-21T05%3A33%3A43.013Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E144:27973:506D42:56769F:6AD84EBA and timestamp 2026-10-21 05:33:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:3866FF:21C66D1:6CD3C9A:6AD99E72 and timestamp 2026-10-22 05:26:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A43.013Z..2026-10-21T05%3A33%3A43.013Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E236:110ECF:5038DD:563F8C:6AD84EBB and timestamp 2026-10-21 05:33:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-archived-conversations%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3424:240A46:21032CB:6A1BF53:6AD99E73 and timestamp 2026-10-22 05:26:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-archived-conversations",
-                "captured_at": "2026-10-21T05:33:48.047Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 814,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-archived-conversations",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 804,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-archived-conversations",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-08T02:52:59.039Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-archived-conversations",
                     "error": null,
                     "latest_version": "0.3.2",
                     "latest_published_at": "2026-09-11T03:51:32.615Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+                "current_revision": "cb1afc38e44c58da2d3e50954b83430cac6e1c12",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

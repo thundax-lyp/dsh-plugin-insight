@@ -151,6 +151,10 @@ host识别与client WebCrypto分离、随机K多重包裹及原子JSON写入有�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/534119219/chicheng-quickinput/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-quickinput/issues?q=is%3Aissue+is%3Aopen)
+
+暂未获取：近30天新建、近30天关闭。
+
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

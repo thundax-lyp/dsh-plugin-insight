@@ -115,6 +115,6 @@ DSH llm/settings和客户端模型目录服务、pi-ai映射及兼容端点；RE
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/2768651338/dsh-effort-slider/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/2768651338/dsh-effort-slider/issues) 查看。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

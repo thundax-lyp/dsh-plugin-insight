@@ -380,40 +380,109 @@
         "metadata": {
             "repository": "AmethystLuna/dsh-model-everything",
             "repository_id": 1423488109,
-            "captured_at": "2026-10-21T08:01:48.841Z",
-            "window_start": "2026-09-21T08:01:48.841Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 0,
-            "pushed_at": "2026-10-20T17:54:04Z",
+            "pushed_at": "2026-10-21T17:13:58Z",
             "issues": {
                 "open": null,
-                "closed": 0,
-                "created_30d": 0,
-                "closed_30d": 0,
-                "updated_30d": 0
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Fdsh-model-everything%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9BFE:2704E0:662A38:6E1FCF:6AD87171 and timestamp 2026-10-21 08:01:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Fdsh-model-everything%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341E:3866FF:2209C11:6DB00F2:6AD99F28 and timestamp 2026-10-22 05:29:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Fdsh-model-everything%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 341F:29CA23:219EE45:6CCBA3D:6AD99F28 and timestamp 2026-10-22 05:29:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Fdsh-model-everything%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:2A1932:20BBA26:6936673:6AD99F28 and timestamp 2026-10-22 05:29:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Fdsh-model-everything%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:1F173:2292A13:6F2E51A:6AD99F28 and timestamp 2026-10-22 05:29:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Fdsh-model-everything%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3420:8084B:1F95BD4:66115D5:6AD99F29 and timestamp 2026-10-22 05:29:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-model-everything",
-                "captured_at": "2026-10-21T08:02:02.684Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 415,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-model-everything",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-model-everything",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-18T04:28:37.147Z",
-                    "captured_at": "2026-10-21T08:02:02.684Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-model-everything",
                     "error": null,
                     "latest_version": "0.2.0",
                     "latest_published_at": "2026-10-20T17:51:04.042Z",
                     "latest_error": null
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "f5ba2d38641fe79ffbdfbbc391b05735f3ca2694",
+                "current_revision": "03e0f49b988d1892422dab9604de33c074578738",
+                "script_changed": true,
+                "changed_files": [
+                    "docs/tools/generate-routing-map.mjs",
+                    "docs/toolset/generate-mindmap.mjs",
+                    "docs/usage/generate-mindmap.mjs",
+                    "evals/corpus/fixtures/inventory/src/stock.js",
+                    "evals/corpus/fixtures/inventory/test/stock.test.js",
+                    "evals/corpus/fixtures/job-runner-split/src/retry.js",
+                    "evals/corpus/fixtures/job-runner-split/src/store.js",
+                    "evals/corpus/fixtures/job-runner-split/src/worker.js",
+                    "evals/corpus/fixtures/job-runner-split/test/retry.test.js",
+                    "evals/corpus/fixtures/job-runner/src/errors.js",
+                    "evals/corpus/fixtures/job-runner/src/retry.js",
+                    "evals/corpus/fixtures/job-runner/src/store.js",
+                    "evals/corpus/fixtures/job-runner/src/worker.js",
+                    "evals/corpus/fixtures/job-runner/test/retry.test.js",
+                    "evals/corpus/fixtures/legacy-order-pipeline/order.js",
+                    "evals/corpus/fixtures/legacy-order-pipeline/pricing.js",
+                    "evals/corpus/fixtures/legacy-order-pipeline/stock.js",
+                    "evals/corpus/fixtures/order-lifecycle/src/lifecycle.js",
+                    "evals/corpus/fixtures/order-lifecycle/src/orders.js",
+                    "evals/corpus/fixtures/order-lifecycle/test/lifecycle.test.js",
+                    "lib/edit-tool.js",
+                    "lib/editor.js",
+                    "lib/engine.js",
+                    "lib/index.js",
+                    "lib/report-view.js",
+                    "lib/scan.js",
+                    "lib/structure-tool.js",
+                    "lib/structure.js",
+                    "lib/types/edit-tool.d.ts",
+                    "lib/types/editor.d.ts",
+                    "lib/types/engine.d.ts",
+                    "lib/types/scan.d.ts",
+                    "lib/types/structure.d.ts",
+                    "src/edit-tool.ts",
+                    "src/editor.ts",
+                    "src/engine.ts",
+                    "src/index.ts",
+                    "src/report-view.ts",
+                    "src/scan.ts",
+                    "src/structure-tool.ts",
+                    "src/structure.ts",
+                    "tests/apply-smoke.mjs",
+                    "tests/structure/run.mjs",
+                    "tests/tool-boundary/run.mjs"
+                ],
+                "error": null
             }
         },
         "discovery.plugins": {

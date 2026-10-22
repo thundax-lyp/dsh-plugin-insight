@@ -379,8 +379,8 @@
         "metadata": {
             "repository": "Aicksion/dsh-clean-desktop-shell-pro",
             "repository_id": 1389469406,
-            "captured_at": "2026-10-21T05:34:55.746Z",
-            "window_start": "2026-09-21T05:34:55.746Z",
+            "captured_at": "2026-10-22T05:12:30.672Z",
+            "window_start": "2026-09-22T05:12:30.672Z",
             "stars": 1,
             "pushed_at": "2026-09-26T15:59:11Z",
             "issues": {
@@ -393,42 +393,50 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3922:110389:55757E:5B829A:6AD84F01 and timestamp 2026-10-21 05:34:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3416:1EC7F:22756D9:6EECE13:6AD99E86 and timestamp 2026-10-22 05:26:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3A46:2707DA:5772CA:5D80E0:6AD84F01 and timestamp 2026-10-21 05:34:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3413:1FD09F:20C1029:69D4418:6AD99E87 and timestamp 2026-10-22 05:26:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A55.746Z..2026-10-21T05%3A34%3A55.746Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3B4A:26A83F:513A86:574999:6AD84F02 and timestamp 2026-10-21 05:34:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3414:85FAC:222F422:6E44D28:6AD99E87 and timestamp 2026-10-22 05:26:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A55.746Z..2026-10-21T05%3A34%3A55.746Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3C46:275C9A:54CFE4:5AE086:6AD84F03 and timestamp 2026-10-21 05:34:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3418:2078F7:21F9A80:6DF4BF7:6AD99E87 and timestamp 2026-10-22 05:26:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A55.746Z..2026-10-21T05%3A34%3A55.746Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3D4E:1054F6:51DA34:57EB22:6AD84F04 and timestamp 2026-10-21 05:35:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3AAicksion%2Fdsh-clean-desktop-shell-pro%20is%3Aissue%20updated%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3419:2A78E8:2298F3A:70272AE:6AD99E87 and timestamp 2026-10-22 05:26:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-clean-desktop-shell-pro",
-                "captured_at": "2026-10-21T05:35:00.562Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:12:30.672Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-clean-desktop-shell-pro",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-clean-desktop-shell-pro",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:12:30.672Z",
                     "source_url": "https://registry.npmjs.org/dsh-clean-desktop-shell-pro",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
+            },
+            "code_update": {
+                "checked_at": "2026-10-22T05:12:30.672Z",
+                "baseline_revision": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+                "current_revision": "03fdf5d8b0959c3738cdb3d887baa6d017443fe6",
+                "script_changed": false,
+                "changed_files": [],
+                "error": null
             }
         },
         "discovery.plugins": {

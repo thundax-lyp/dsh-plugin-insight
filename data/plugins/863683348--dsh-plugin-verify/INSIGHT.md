@@ -5,7 +5,7 @@
 分析版本：[5a70cbd](https://github.com/863683348/dsh-plugin-verify/tree/5a70cbdc230ee19bb4578e52440e18cc93153ee8)
 
 <!-- BEGIN META -->
-[![npm 30d 839](https://img.shields.io/static/v1?label=npm+30d&message=839&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify)
+[![npm 30d 831](https://img.shields.io/static/v1?label=npm+30d&message=831&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify)
 <!-- END META -->
 
 > **实现功能**：提供工作区关键词证据检索、配置检查及URL、npm和GitHub只读探测。
@@ -131,6 +131,6 @@ verified与high confidence标签是否过强？scoreClaim仅60%关键词命中�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-verify/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/863683348/dsh-plugin-verify/issues) 查看。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

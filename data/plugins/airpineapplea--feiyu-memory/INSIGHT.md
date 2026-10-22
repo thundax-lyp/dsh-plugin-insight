@@ -5,7 +5,7 @@
 分析版本：[37a81b9](https://github.com/AirPineApplea/feiyu-memory/tree/37a81b92947b10d7376ed764d8ff6392e8969e93)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory) · **脚本有更新，待重新洞察**
 <!-- END META -->
 
 > **实现功能**：以分层日记、印象与检索记忆延续 DSH 对话中的角色体验。
@@ -131,10 +131,10 @@ writeChain串行并先合并磁盘手改再写，文件权限0600、按轮缓存
 
 **活跃度**
 
-[![Issue 未关闭 5](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=grey&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory/issues?q=is%3Aissue+created%3A2026-09-22T05%3A12%3A30.672Z..2026-10-22T05%3A12%3A30.672Z)
 
-暂未获取：近30天新建、近30天关闭。
+暂未获取：近30天关闭。
 
-统计日期：2026-10-21。
+统计日期：2026-10-22。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

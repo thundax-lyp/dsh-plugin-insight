@@ -5,7 +5,7 @@
 分析版本：[c478634](https://github.com/988hj7tczd-oss/dsh-asciinema/tree/c47863413886ffac9b66ee13a9ab276ab195d5d9)
 
 <!-- BEGIN META -->
-[![npm 30d 401](https://img.shields.io/static/v1?label=npm+30d&message=401&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-asciinema) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-asciinema)
+[![npm 30d 384](https://img.shields.io/static/v1?label=npm+30d&message=384&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-asciinema) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-asciinema)
 <!-- END META -->
 
 > **实现功能**：录制DSH工具输出为带时间轴的数据文件，提供文本提取和自包含离线HTML回放。
@@ -131,6 +131,6 @@ asciinema命名是否暗示超过实现的保真？来源是完成后的tool/res
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-asciinema/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/988hj7tczd-oss/dsh-asciinema/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

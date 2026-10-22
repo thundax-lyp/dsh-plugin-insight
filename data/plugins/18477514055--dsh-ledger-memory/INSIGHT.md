@@ -129,6 +129,6 @@ lib/part4.js 的合规修复只补已有结构缺项，lib/part5.js 把分流与
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/18477514055/dsh-ledger-memory/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/18477514055/dsh-ledger-memory/issues) 查看。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -5,7 +5,7 @@
 分析版本：[a64e811](https://github.com/01NGVI-QINGYI/no-ai-style/tree/a64e811bf0aa255189a0df2011a6a392c5d59966)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 <!-- END META -->
 
 > **实现功能**：以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。
@@ -93,6 +93,6 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/01NGVI-QINGYI/no-ai-style/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/01NGVI-QINGYI/no-ai-style/issues) 查看。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
