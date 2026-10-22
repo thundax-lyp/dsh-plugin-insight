@@ -7,14 +7,14 @@
             "id": "github:1331636953:packages-dsh-git-graph",
             "repository": "zhu1090093659/dsh-web",
             "path": "packages/dsh-git-graph",
-            "revision": "c178d5a3772fcee0a622819aa240d4c7298f88c3",
+            "revision": "764089c1b64990880095cea1d0eee9bd8486315a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "014e8b740dc48d1cf635a53828fda82b42ffba3301914161dd1c64368c8023f7",
-                "code": "c178d5a3772fcee0a622819aa240d4c7298f88c3",
-                "maintenance": "5141442bf8fd2a2eec4cda54a73ede7f7ae2a4b7ce2fa7ad806601c82542cf42"
+                "code": "764089c1b64990880095cea1d0eee9bd8486315a",
+                "maintenance": "7536269133520e053df118c30105fdad98b7af6a7715dda230b6e0dc534209e2"
             }
         }
     }

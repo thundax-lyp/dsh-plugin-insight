@@ -7,14 +7,14 @@
             "id": "github:1209966933:root",
             "repository": "morluto/rea",
             "path": "",
-            "revision": "3d472bde23b70f9aa7bcf0d28a0cd10e469545e9",
+            "revision": "5375ff0f9aadb4fd0d46333815aa0431e3df1010",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "e848d5bb9a5c0f64822e53ff3b4112e764393787f86d1b07d3ddd5c72e6cd939",
-                "code": "3d472bde23b70f9aa7bcf0d28a0cd10e469545e9",
-                "maintenance": "c0ebc0b21d41ec05c02e72faf84eed50966a30547692be0f35cdf397b10504c0"
+                "code": "5375ff0f9aadb4fd0d46333815aa0431e3df1010",
+                "maintenance": "5d45f5b7b57de9737e08b8a69c3b50c8a2ae80bfe452a8c3d9473c3f941e4963"
             }
         }
     }

@@ -43,9 +43,44 @@ function local(root, path) {
     if (isAbsolute(path) || relative(root, full).startsWith('..')) throw Error('path must be inside project');
     return full;
 }
-function normalizeLegacyTrial(text) {
+function normalizeLegacyLabel(line) {
+    const normalize = (value) => value.replace(/\*\*([^*\n]+)：\*\*/g, '**$1**：');
+    let result = '',
+        plainStart = 0,
+        cursor = 0;
+    while (cursor < line.length) {
+        if (line[cursor] !== '`') {
+            cursor += 1;
+            continue;
+        }
+        const opener = cursor;
+        let openerEnd = cursor + 1;
+        while (line[openerEnd] === '`') openerEnd += 1;
+        const delimiter = line.slice(opener, openerEnd);
+        let closer = openerEnd,
+            matched = false;
+        while (closer < line.length) {
+            const next = line.indexOf('`', closer);
+            if (next === -1) break;
+            let nextEnd = next + 1;
+            while (line[nextEnd] === '`') nextEnd += 1;
+            if (nextEnd - next === delimiter.length) {
+                result += normalize(line.slice(plainStart, opener)) + line.slice(opener, nextEnd);
+                plainStart = nextEnd;
+                cursor = nextEnd;
+                matched = true;
+                break;
+            }
+            closer = nextEnd;
+        }
+        if (!matched) cursor = openerEnd;
+    }
+    return result + normalize(line.slice(plainStart));
+}
+export function normalizeLegacyTrial(text) {
     let questions = false,
-        fence = null;
+        fence = null,
+        pre = false;
     return text
         .split('\n')
         .map((line) => {
@@ -55,8 +90,14 @@ function normalizeLegacyTrial(text) {
                 else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
                     fence = null;
             } else if (!fence && /^## /.test(line)) questions = /^## (?:[0-9]+ )?研究问题与完整回答$/.test(line);
-            if (fence) return line;
-            const normalized = line.replace(/\*\*([^*\n]+)：\*\*/g, '**$1**：');
+            const opensPre = /<pre(?:\s|>)/i.test(line);
+            const closesPre = /<\/pre\s*>/i.test(line);
+            if (pre || opensPre) {
+                pre = !closesPre;
+                return line;
+            }
+            if (fence || /^(?: {4}|\t)/.test(line)) return line;
+            const normalized = normalizeLegacyLabel(line);
             return questions ? normalized : normalized.replaceAll('条件试用', '试用');
         })
         .join('\n');

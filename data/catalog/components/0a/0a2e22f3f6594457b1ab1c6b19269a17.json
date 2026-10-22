@@ -7,14 +7,14 @@
             "id": "github:1385903666:root",
             "repository": "xbzbing/dsh-git-panel",
             "path": "",
-            "revision": "f9ae6077a11f0ce9bf3c0154343e7447fa531af0",
+            "revision": "b7c8a207712a8f0774b5dac350bf16492d721ffc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b291ffab7bcf1f0659575a1f7ce54f0766b0f44466819e31f9968c740064d7e0",
-                "code": "f9ae6077a11f0ce9bf3c0154343e7447fa531af0",
-                "maintenance": "407fffefd0a482bdf782403aa6915bc364f4a67a89f7eeabe7f18747afdfa454"
+                "code": "b7c8a207712a8f0774b5dac350bf16492d721ffc",
+                "maintenance": "41288a12def87d2b9928dfb36f1299f95a4ba5cea6be57ed7f3e555e1fda342a"
             }
         }
     }

@@ -7,15 +7,15 @@
             "id": "github:1333152408:packages-plugins-plugin-notify",
             "repository": "whyihaveyou/dsh-suite",
             "path": "packages/plugins/plugin-notify",
-            "revision": "b8a34aa6a3e94596621628dc740ea62585cd7d54",
+            "revision": "248a7f8a806d0149dc2e8da5fddc8ea1fd16ec09",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "8646413306d60502704ffb84948aa02b8bce884125ae99c55a288b479fd42b06",
-                "code": "b8a34aa6a3e94596621628dc740ea62585cd7d54",
-                "maintenance": "965677af56d5366732a19a5bc3717b3eb8fd598265910c709c91666bedffde1d"
+                "code": "248a7f8a806d0149dc2e8da5fddc8ea1fd16ec09",
+                "maintenance": "fbf3a6036add7eda60ce35e557a9e3d91c75d986a1f4865057e048486b54b47b"
             }
         }
     }

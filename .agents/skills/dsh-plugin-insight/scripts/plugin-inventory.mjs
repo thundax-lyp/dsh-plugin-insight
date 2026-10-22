@@ -99,14 +99,11 @@ export function analyzeFiles(files, metadata) {
             const ext = extname(path).toLowerCase();
             if (ext !== '.md' && !CODE.has(ext)) continue;
             if (typeof text !== 'string' || text.includes('\0')) throw Error(`not UTF-8 text: ${path}`);
-            const staged =
-                ext === '.md'
-                    ? path + '.html'
-                    : ['.cjs'].includes(ext)
-                      ? path + '.js'
-                      : ['.mts', '.cts'].includes(ext)
-                        ? path + '.ts'
-                        : path;
+            const stagedExtension =
+                ext === '.md' ? '.html' : ext === '.cjs' ? '.js' : ['.mts', '.cts'].includes(ext) ? '.ts' : ext;
+            // sloc ignores dot-prefixed files and directories. The temporary tree is only a transport for
+            // per-file counts, so use visible synthetic names and retain the real path in `selected`.
+            const staged = `file-${selected.length}${stagedExtension}`;
             const target = resolve(temporary, staged);
             mkdirSync(dirname(target), { recursive: true });
             writeFileSync(target, text);
@@ -130,7 +127,9 @@ export function analyzeFiles(files, metadata) {
                     capabilities[key].push(...found.candidates[key].map((c) => ({ ...c, role: role(path) })));
             }
         }
-        // sloc 0.3.2 CLI aliases are broken with its Commander dependency. Stage md as html for total lines only; cjs/mts/cts as js/ts, preserving original extension in output.
+        // sloc 0.3.2 CLI aliases are broken with its Commander dependency and it ignores dot-prefixed paths.
+        // Stage visible synthetic names; map md to html for total lines only and cjs/mts/cts to js/ts,
+        // while preserving the original path and extension in output.
         const args = [resolve(ROOT, 'node_modules/sloc/bin/sloc'), '--format', 'json', '--details', temporary];
         const raw = selected.length
             ? JSON.parse(
@@ -209,7 +208,7 @@ export function analyzeFiles(files, metadata) {
             capability_summary: summary,
             parse_errors: parseErrors,
             limitations: [
-                'LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.',
+                'LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.',
                 'Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.',
                 'Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.',
                 'Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.',

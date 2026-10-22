@@ -7,14 +7,14 @@
             "id": "github:1403139007:root",
             "repository": "Hobartoakes/dsh-model-shelf",
             "path": "",
-            "revision": "a60b1838bd613161dd49c045c1c9a7ff67a6445b",
+            "revision": "ed58827941bbcb6bdbd2674bbe9aaa540b8a964d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d5bbf418370c2e396e8e9559422ac869d6da07e5a49f14b2807c19413ca1d009",
-                "code": "a60b1838bd613161dd49c045c1c9a7ff67a6445b",
-                "maintenance": "c5fc9cab1a78e003debf0b368be188a50a3b7cf5d4b9e83bf6be66c1d8411d1a"
+                "code": "ed58827941bbcb6bdbd2674bbe9aaa540b8a964d",
+                "maintenance": "c5bc22ebf782a527180e2776e96662b083f5fb64619fcc195e9ecc2bacd213b3"
             }
         }
     }

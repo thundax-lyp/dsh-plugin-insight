@@ -7,14 +7,14 @@
             "id": "github:1424444258:root",
             "repository": "In-clude/dsh-approval-reminder",
             "path": "",
-            "revision": "793074be52b764771970bc3710580897214cfdae",
+            "revision": "26efb00df21c13cba7f49bbe7513c81359e39d53",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "96074043f71cb6888f951c92b83affef853b32a30572eb5465eae33db2e95fdc",
-                "code": "793074be52b764771970bc3710580897214cfdae",
-                "maintenance": "49cdf483c44dfd1aa7a24d18bb8314e88bb727442755f0f9f2dcaa712b2d6de9"
+                "code": "26efb00df21c13cba7f49bbe7513c81359e39d53",
+                "maintenance": "96942b338b02c779d506f6a833654fce804a56e82b4cdb70e986ae1a71ca3c45"
             }
         }
     }

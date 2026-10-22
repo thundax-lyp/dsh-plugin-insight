@@ -3,6 +3,477 @@
     "id": "e1ee97bc7dcb98cfdd9b3d30897feb4f",
     "identity": "github:1401037852:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1401037852:root",
+            "repository_id": 1401037852,
+            "component_id": "root",
+            "repository": "19north/dsh-redstone-music",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-redstone-music",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "content-creation",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "bbd83103cdc70d5de1619fa853e2c2b71aa08a66eed23b81ecc661313821e200",
+                "code": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                "maintenance": "45a7653848fdf1a9f494354bd3e6c14bda53602b62962a046b0c8a98180418db"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1401037852-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:30:12.012Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1401037852-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "README.md",
+                            "content_sha256": "fa4ea8c13e373977a57f46865210ffcb4608b7153a609403a088f24a0e51932b"
+                        }
+                    ],
+                    "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                    "captured_at": "2026-10-22T16:30:12.012Z",
+                    "summary": "把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1401037852-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "README.md",
+                            "content_sha256": "fa4ea8c13e373977a57f46865210ffcb4608b7153a609403a088f24a0e51932b"
+                        },
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "package.json",
+                            "content_sha256": "43ace30fff1f8ec310aafba41d62cdc1a3bd0ac36e5341489fdfa5b2c156cbb1"
+                        },
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "src/index.ts",
+                            "content_sha256": "789e0ed88a37843e82da6fbc26a87ad2f1fb1db449935a06d39fa9a929742fc9"
+                        },
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "src/tool-build.ts",
+                            "content_sha256": "d03b2721b056f2ef0053c1d2e978e6b016d6da14fdd7684614fc54495718e0d2"
+                        },
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "src/tool-render.ts",
+                            "content_sha256": "5ae04846fc4a8200382e50985ab18c271536151c8fb126995ad0a6a955cb0cf2"
+                        },
+                        {
+                            "repository_url": "https://github.com/19north/dsh-redstone-music",
+                            "commit": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                            "path": "src/music/rcon.ts",
+                            "content_sha256": "022f84d18af56f6a9e295152e6bffe777dd4db5da4ddcf3e73fc8a19257f120b"
+                        }
+                    ],
+                    "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                    "captured_at": "2026-10-22T16:30:12.012Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/tool-build.ts、src/tool-render.ts、src/music/rcon.ts；入口注册两个知识型模型工具和 rm_build/rm_render 用户命令。render 生成 onset 对齐样本；build 解析 MIDI、量化 game tick、分配 lane 并写 datapack/mcfunction；可选 RCON reload 和触发。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查 README、入口、build/render 与 RCON 关键源码；不渲染或进游戏。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向把 MIDI/SoundFont 音乐移植进 Minecraft 的创作者。输入是 MIDI、SF2、速度、采样和世界参数；合格结果是 WAV、事件/车道计划与 mcfunction 数据包在 tick 和声部预算内完整播放。替代是手写命令或分别使用 DAW、脚本和 RCON。\n\n参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口注册两个知识型模型工具和 rm_build/rm_render 用户命令。render 生成 onset 对齐样本；build 解析 MIDI、量化 game tick、分配 lane 并写 datapack/mcfunction；可选 RCON reload 和触发。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查 README、入口、build/render 与 RCON 关键源码；不渲染或进游戏。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "v0.1.0，MIT，含 MIDI/音频依赖和可选 RCON。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 素材许可和磁盘 | 选曲映射 | 工时未知 |\n| 持续 | CPU、缓存和服务器负载 | 试听调参 | 单位成本未知 |\n| 恢复 | 半部署代价 | 定位并恢复旧包 | 时长未知 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议试用，但只限本地世界和测试服。先短曲 render、审计划、build、离线试听，备份后再开 RCON；丢音、TPS 异常、凭据暴露或无法恢复旧包即停止。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 流水线 | 四入口覆盖知识、渲染和构建 | 节时未测 |\n| 中间工件 | WAV 和计划可审 | 听感相关性未知 |\n| RCON | 减少复制 | 原子性未测 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "render/build 分开并输出计划，有利于写服务器前审阅；注册 disposer 与 RCON error/close 处理限制资源泄漏。仍需验证输出原子发布、同名覆盖及 reload 失败补偿。 参见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。 参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "增加听感预算门，计算 onset 偏差、丢弃音符、同 tick 峰值和声部覆盖，超阈值拒绝部署。若指标不能预测盲听缺陷则否定。 参见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1401037852:root",
+                            "area": "code",
+                            "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:12.012Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:30:12.012Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                "reviewed_at": "2026-10-22T16:30:12.012Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1401037852:root",
+                        "area": "code",
+                        "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "领域组合与中间工件有实质，依赖仍宽。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "改变专业制作流程，经济性未测。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1401037852-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "本地工件可控，但远程前必须证明听感和回滚。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "任务明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "完整管线。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码可追踪未运行。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "本地可控，服务器成本明显。"
+                    }
+                },
+                "score": 65,
+                "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                "reviewed_at": "2026-10-22T16:30:12.012Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1401037852-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1401037852:root",
+                        "area": "code",
+                        "fingerprint": "7ab206d8b7befe321603cd8b046bdae5be5f66ef"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1401037852:root",
+            "repository": "19north/dsh-redstone-music",
+            "path": "",
+            "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+            "fingerprints": {
+                "directory": "bbd83103cdc70d5de1619fa853e2c2b71aa08a66eed23b81ecc661313821e200",
+                "code": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+                "maintenance": "45a7653848fdf1a9f494354bd3e6c14bda53602b62962a046b0c8a98180418db"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "6230d0a35c99d89b164c19645b8249fd199a85ac5df2cf9233e8aa9202b08f5d"
+        },
+        "publication.metadata": "data/plugins/19north--dsh-redstone-music/META.json",
+        "publication.summaries": {
+            "text": "把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。",
+            "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+            "source_url": "https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+            "items": {
+                "模型工具": "redstone_music_pipeline 与 redstone_music_pitfalls",
+                "用户命令": "rm_render 生成样本，rm_build 生成数据包"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 流程知识 | 说明管线与陷阱 | 不替代听测 |\n| 样本渲染 | 生成 onset 素材 | 依赖 SF2 |\n| 数据包构建 | 量化并写命令 | 密集曲可能超限 |\n| RCON | reload 和触发 | 有服务器副作用 |"
+        },
+        "publication.advice": {
+            "revision": "7ab206d8b7befe321603cd8b046bdae5be5f66ef",
+            "text": "建议试用，但只限本地世界和测试服。先短曲 render、审计划、build、离线试听，备份后再开 RCON；丢音、TPS 异常、凭据暴露或无法恢复旧包即停止。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/19north--dsh-redstone-music",
+        "reports": "# dsh-redstone-music\n\n> 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。\n\n## 研究范围\n\n- **仓库**：[19north/dsh-redstone-music](https://github.com/19north/dsh-redstone-music)\n- **版本号**：0.1.0（[固定提交 7ab206d8b7befe321603cd8b046bdae5be5f66ef](https://github.com/19north/dsh-redstone-music/tree/7ab206d8b7befe321603cd8b046bdae5be5f66ef)）\n- **版本日期**：2026-10-02（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认 MIDI/SoundFont 渲染、tick/lane 计划、数据包生成与可选 RCON 路径；实际听感、命令峰值、TPS 与回滚没有 Minecraft 证据，听感预算门仍待盲听实验，见[Q08](#research-q08)。\n\n## 洞察短评\n\n- **用途**：面向把 MIDI/SoundFont 音乐移植进 Minecraft 的创作者。输入是 MIDI、SF2、速度、采样和世界参数；合格结果是 WAV、事件/车道计划与 mcfunction 数据包在 tick 和声部预算内完整播放。替代是手写命令或分别使用 DAW、脚本和 RCON。\n\n参见[Q01](#research-q01)。\n- **亮点**：它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。\n- **思考**：生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。 参见[Q04](#research-q04)。\n- **建议**：增加听感预算门，计算 onset 偏差、丢弃音符、同 tick 峰值和声部覆盖，超阈值拒绝部署。若指标不能预测盲听缺陷则否定。 参见[Q08](#research-q08)。\n\n采用建议：建议试用，但只限本地世界和测试服。先短曲 render、审计划、build、离线试听，备份后再开 RCON；丢音、TPS 异常、凭据暴露或无法恢复旧包即停止。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。\n\n## 核心贡献\n\n它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。\n\n## 关键质疑\n\n生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。 参见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n增加听感预算门，计算 onset 偏差、丢弃音符、同 tick 峰值和声部覆盖，超阈值拒绝部署。若指标不能预测盲听缺陷则否定。 参见[Q08](#research-q08)。\n\n短曲和密集曲做离线门禁再测试服录音；未报告丢音、TPS 异常或无法恢复即停。\n\n## 场景与替代办法\n\n面向把 MIDI/SoundFont 音乐移植进 Minecraft 的创作者。输入是 MIDI、SF2、速度、采样和世界参数；合格结果是 WAV、事件/车道计划与 mcfunction 数据包在 tick 和声部预算内完整播放。替代是手写命令或分别使用 DAW、脚本和 RCON。\n\n参见[Q01](#research-q01)。\n\n基线是 DAW/脚本后手写命令与手工部署；透明但转换和回滚靠人。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| MIDI/合法 SF2 | 必需 | 谱面与采样 | 缺失不能交付 |\n| 渲染链/磁盘 | render 必需 | 生成样本 | 错误停在本地 |\n| 世界/资源包/RCON | 播放/远程必需 | 部署播放 | 失败需恢复旧包 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 固定短曲和预算 | 许可明确 |\n| 渲染/构建 | 试听并审计划 | 无丢音超限 |\n| 部署/恢复 | 备份后 reload | 失败恢复旧包 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 素材许可和磁盘 | 选曲映射 | 工时未知 |\n| 持续 | CPU、缓存和服务器负载 | 试听调参 | 单位成本未知 |\n| 恢复 | 半部署代价 | 定位并恢复旧包 | 时长未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 流水线 | 四入口覆盖知识、渲染和构建 | 节时未测 |\n| 中间工件 | WAV 和计划可审 | 听感相关性未知 |\n| RCON | 减少复制 | 原子性未测 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 7ab206d8b7befe321603cd8b046bdae5be5f66ef 上判断 dsh-redstone-music 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 红石音乐流水线服务什么创作任务？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向把 MIDI/SoundFont 音乐移植进 Minecraft 的创作者。输入是 MIDI、SF2、速度、采样和世界参数；合格结果是 WAV、事件/车道计划与 mcfunction 数据包在 tick 和声部预算内完整播放。替代是手写命令或分别使用 DAW、脚本和 RCON。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:14-17](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md#L14-L17)\n\n作者列出完整流程。\n\n```text\n## What it does\n\nTurns \"make a Minecraft redstone music strip\" into four tools, so any session can run the\nwhole pipeline instead of re-learning it:\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 解析、渲染、量化、车道、数据包与 RCON 如何串联？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n入口注册两个知识型模型工具和 rm_build/rm_render 用户命令。render 生成 onset 对齐样本；build 解析 MIDI、量化 game tick、分配 lane 并写 datapack/mcfunction；可选 RCON reload 和触发。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:25-28](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/index.ts#L25-L28)\n\n入口组合工具注册。\n\n```text\nexport function apply(ctx: Context, config: ConfigShape): void {\n  if (config.enabled === false) return\n  applyTools(ctx, config)\n}\n```\n\n**依据 2 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · dsh-redstone-music 相对简单替代的独立增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:25-28](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/index.ts#L25-L28)\n\n入口组合工具注册。\n\n```text\nexport function apply(ctx: Context, config: ConfigShape): void {\n  if (config.enabled === false) return\n  applyTools(ctx, config)\n}\n```\n\n**依据 2 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 节拍和音色映射何时失真？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n**依据 2 · 作者声明**：[README.md:14-17](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md#L14-L17)\n\n作者列出完整流程。\n\n```text\n## What it does\n\nTurns \"make a Minecraft redstone music strip\" into four tools, so any session can run the\nwhole pipeline instead of re-learning it:\n```\n\n#### 缺口\n\n- 密集 MIDI 的丢音与听感偏差\n  **影响**：文件成功仍可能不可听或拖慢服务器\n  **进一步探讨**：对稀疏/密集/变速曲录音，统计 onset、丢音、tick 峰值和 TPS\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-redstone-music 启动、持续使用与失败恢复依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n启动依赖 DSH、MIDI、合法 SF2、本机渲染链和磁盘；播放依赖资源包/世界，远程部署另需 RCON 凭据。失败恢复要保留旧包并区分渲染、构建、reload 与播放阶段。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:25-28](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/index.ts#L25-L28)\n\n入口组合工具注册。\n\n```text\nexport function apply(ctx: Context, config: ConfigShape): void {\n  if (config.enabled === false) return\n  applyTools(ctx, config)\n}\n```\n\n**依据 2 · 作者声明**：[README.md:14-17](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md#L14-L17)\n\n作者列出完整流程。\n\n```text\n## What it does\n\nTurns \"make a Minecraft redstone music strip\" into four tools, so any session can run the\nwhole pipeline instead of re-learning it:\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 每首合格曲目的成本怎样计量？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n计量单位是一首在目标服务器完整播放且无可闻错位的曲目。首次要准备素材与映射；持续成本含 CPU、磁盘、试听和调参；恢复需定位丢音或部署阶段。源码无每分钟构建时长、包体、命令峰值或返工轮次。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:14-17](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md#L14-L17)\n\n作者列出完整流程。\n\n```text\n## What it does\n\nTurns \"make a Minecraft redstone music strip\" into four tools, so any session can run the\nwhole pipeline instead of re-learning it:\n```\n\n**依据 2 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n#### 缺口\n\n- 每分钟音乐的 CPU 秒、缓存 MB、返工轮次和恢复分钟\n  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI\n  **进一步探讨**：三首曲对比手工与插件，记录资源、命令数和人工时间\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 分阶段工件和诊断是否可靠？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\nrender/build 分开并输出计划，有利于写服务器前审阅；注册 disposer 与 RCON error/close 处理限制资源泄漏。仍需验证输出原子发布、同名覆盖及 reload 失败补偿。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:25-28](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/index.ts#L25-L28)\n\n入口组合工具注册。\n\n```text\nexport function apply(ctx: Context, config: ConfigShape): void {\n  if (config.enabled === false) return\n  applyTools(ctx, config)\n}\n```\n\n**依据 2 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 能否用可听误差预算阻止坏部署？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n增加听感预算门，计算 onset 偏差、丢弃音符、同 tick 峰值和声部覆盖，超阈值拒绝部署。若指标不能预测盲听缺陷则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n**依据 2 · 作者声明**：[README.md:14-17](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md#L14-L17)\n\n作者列出完整流程。\n\n```text\n## What it does\n\nTurns \"make a Minecraft redstone music strip\" into four tools, so any session can run the\nwhole pipeline instead of re-learning it:\n```\n\n#### 缺口\n\n- 静态误差指标能否预测听感\n  **影响**：新方向仍是推演，不能计入插件当前贡献或效果\n  **进一步探讨**：十段盲听；通过门的缺陷率不低于基线则否定\n\n<a id=\"research-q09\"></a>\n\n### Q09 · dsh-redstone-music 适合观察、试用还是安装，停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议试用，但只限本地世界和测试服。先短曲 render、审计划、build、离线试听，备份后再开 RCON；丢音、TPS 异常、凭据暴露或无法恢复旧包即停止。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:14-17](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/README.md#L14-L17)\n\n作者列出完整流程。\n\n```text\n## What it does\n\nTurns \"make a Minecraft redstone music strip\" into four tools, so any session can run the\nwhole pipeline instead of re-learning it:\n```\n\n**依据 2 · 源码核查**：[src/tool-build.ts:148-151](https://github.com/19north/dsh-redstone-music/blob/7ab206d8b7befe321603cd8b046bdae5be5f66ef/src/tool-build.ts#L148-L151)\n\n构建命令进入数据包路径。\n\n```text\n  ctx.tools.register(\n    defineTool({\n      name: 'rm_build',\n      description:\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7115be76eeb91760131440e0d86f85914ca9d845e342686560c3959f9e451837。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 11 | 1414 | — | — | 12580 |\n| .mjs | source | 4 | 470 | 367 | 75 | — |\n| .ts | source | 15 | 2853 | 2242 | 464 | — |\n| .ts | test | 6 | 583 | 505 | 18 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 流程知识 | 说明管线与陷阱 | 不替代听测 |\n| 样本渲染 | 生成 onset 素材 | 依赖 SF2 |\n| 数据包构建 | 量化并写命令 | 密集曲可能超限 |\n| RCON | reload 和触发 | 有服务器副作用 |\n\n## 工程亮点\n\nrender/build 分开并输出计划，有利于写服务器前审阅；注册 disposer 与 RCON error/close 处理限制资源泄漏。仍需验证输出原子发布、同名覆盖及 reload 失败补偿。 参见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/tool-build.ts、src/tool-render.ts、src/music/rcon.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查 README、入口、build/render 与 RCON 关键源码；不渲染或进游戏。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。\n- 下一步：短曲和密集曲做离线门禁再测试服录音；未报告丢音、TPS 异常或无法恢复即停。\n",
+        "metadata": {
+            "repository": "19north/dsh-redstone-music",
+            "repository_id": 1401037852,
+            "captured_at": "2026-10-22T16:02:22.220Z",
+            "window_start": "2026-09-22T16:02:22.220Z",
+            "stars": 0,
+            "pushed_at": "2026-10-02T04:06:46Z",
+            "issues": {
+                "open": 0,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4B5C:F03E0:167CDEC:20AD2EA:6ADA3392 and timestamp 2026-10-22 16:02:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A22.220Z..2026-10-22T16%3A02%3A22.220Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4C28:15D91B:16DBE8E:20FB141:6ADA3393 and timestamp 2026-10-22 16:02:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A22.220Z..2026-10-22T16%3A02%3A22.220Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D24:7E6BD:162A9A4:20283DA:6ADA3394 and timestamp 2026-10-22 16:02:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A22.220Z..2026-10-22T16%3A02%3A22.220Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E2A:11916F:16FD6AF:212B671:6ADA3395 and timestamp 2026-10-22 16:02:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-redstone-music",
+                "captured_at": "2026-10-22T16:02:30.318Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-redstone-music",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-22T16:02:30.318Z",
+                    "source_url": "https://registry.npmjs.org/dsh-redstone-music",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1401037852:root",
             "repository": "19north/dsh-redstone-music",

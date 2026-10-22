@@ -7,14 +7,14 @@
             "id": "github:1411553473:root",
             "repository": "bloodarea/dsh-agent-team-presets",
             "path": "",
-            "revision": "df748b4e135c5b9f0fdab66789c4b089a5174225",
+            "revision": "2a1ec4670f48aa23d8188095d77b10ecaf337dad",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ec4ae4963d1492576257a2c41e2542bc9ff80b7fa5d0389bf1c0d64547dcfffc",
-                "code": "df748b4e135c5b9f0fdab66789c4b089a5174225",
-                "maintenance": "ea62470ad35d9eaece0882e1285f96ede253e748ae3268aa728c3ba9719ea9ce"
+                "code": "2a1ec4670f48aa23d8188095d77b10ecaf337dad",
+                "maintenance": "3b2c75e8988486f40fa3ad723ada71726353416613cdb83fed427e9d9977144b"
             }
         }
     }

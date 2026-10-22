@@ -3,6 +3,475 @@
     "id": "c0e52cf30bbdb8e9acd422c887af9e0d",
     "identity": "github:1381221232:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1381221232:root",
+            "repository_id": 1381221232,
+            "component_id": "root",
+            "repository": "1jiegejiayouxuewangan1/dsh-desktop-uia",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-desktop-uia",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4dc5ef6281c30dc1c0976a0cd4440d843fe8199347eb0de576c3d1a46d6096ff",
+                "code": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                "maintenance": "8de2e6fc28fc13be7879f3e5f55831369ee6facc29c21ecf2177aec69f63042f"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1381221232-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:30:17.881Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1381221232-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia",
+                            "commit": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                            "path": "README.md",
+                            "content_sha256": "60c3611e746706eea393a8ac5a31fca937feadaba0095c5ad2c66d8fd1dd6e57"
+                        }
+                    ],
+                    "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                    "captured_at": "2026-10-22T16:30:17.881Z",
+                    "summary": "通过 Windows UI Automation 暴露桌面观察、动作与审批。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1jiegejiayouxuewangan1--dsh-desktop-uia/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1381221232-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia",
+                            "commit": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                            "path": "README.md",
+                            "content_sha256": "60c3611e746706eea393a8ac5a31fca937feadaba0095c5ad2c66d8fd1dd6e57"
+                        },
+                        {
+                            "repository_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia",
+                            "commit": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                            "path": "package.json",
+                            "content_sha256": "52fc5e5e8ab5d099b4cc551b4ca7bcc27d33bc506f43c3a56662aff0e64248c7"
+                        },
+                        {
+                            "repository_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia",
+                            "commit": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                            "path": "lib/index.js",
+                            "content_sha256": "071f0c851c4b0caa989b0bddc6f28bafc25859e118c26599dc320ce2f7dbbdd6"
+                        },
+                        {
+                            "repository_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia",
+                            "commit": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                            "path": "lib/tools.js",
+                            "content_sha256": "f7bb49f9b0c8ebf6ee261c021093fd928f36b62db66b444777ec725c7e2429f1"
+                        },
+                        {
+                            "repository_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia",
+                            "commit": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                            "path": "lib/approval.js",
+                            "content_sha256": "31196e1794b5a87b23d0ea9a84a594bc86984298bb08bbf7638f87da068d5cfa"
+                        }
+                    ],
+                    "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                    "captured_at": "2026-10-22T16:30:17.881Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/tools.js、lib/approval.js；Host 注册工具组，PowerShell/.NET UIA 获取树并执行动作；snapshot 观察，authorize 按风险批准，动作后反馈和记录；设置页管理模式与日志。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1jiegejiayouxuewangan1--dsh-desktop-uia/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查 README、入口、工具、审批源码；不运行 Windows。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向操作无 API Windows 应用的用户。输入是窗口/元素、动作和文本；合格结果是身份明确、写动作获批、后置快照证明变化且日志可追。替代是人工、PowerShell 或专用 API。\n\n参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host 注册工具组，PowerShell/.NET UIA 获取树并执行动作；snapshot 观察，authorize 按风险批准，动作后反馈和记录；设置页管理模式与日志。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查 README、入口、工具、审批源码；不运行 Windows。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "v1.1.3，MIT，Windows 专用。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 隔离环境 | 建策略 | 适配未知 |\n| 持续 | token/日志 | 审批等待 | 时延未知 |\n| 恢复 | 错误动作代价 | 撤销审计 | 可能不可逆 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 无 API 覆盖 | UIA 工具接线 | 成功率未测 |\n| 安全反馈 | 审批日志后置观察 | TOCTOU 未测 |\n| 设置 | 可调策略 | 误配放大风险 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "authorize 集中绑定工具、动作、窗口、理由和执行，后置观察比直接点击可审计。仍需验证 fail closed、批准绑定与日志脱敏。 参见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "自绘控件、焦点、DPI、多屏、UIPI 和选择器漂移会错目标。审批后目标仍可变化；剪贴板/发送/删除有不可逆副作用，后置快照不能撤销。 参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "写动作绑定窗口句柄、元素指纹、前置哈希和撤销策略；条件变化即拒绝并显示差分。若动态 UI 假拒绝过高则否定。 参见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381221232:root",
+                            "area": "code",
+                            "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:17.881Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:30:17.881Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                "reviewed_at": "2026-10-22T16:30:17.881Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381221232:root",
+                        "area": "code",
+                        "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "审批反馈闭环可迁移，环境脆弱。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "改变无 API 操作，节时未测。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381221232-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "桌面写副作用需隔离环境验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "需求明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "结构快照和审批。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "未运行 Windows。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "恢复昂贵。"
+                    }
+                },
+                "score": 60,
+                "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                "reviewed_at": "2026-10-22T16:30:17.881Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1381221232-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381221232:root",
+                        "area": "code",
+                        "fingerprint": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1381221232:root",
+            "repository": "1jiegejiayouxuewangan1/dsh-desktop-uia",
+            "path": "",
+            "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+            "fingerprints": {
+                "directory": "4dc5ef6281c30dc1c0976a0cd4440d843fe8199347eb0de576c3d1a46d6096ff",
+                "code": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+                "maintenance": "8de2e6fc28fc13be7879f3e5f55831369ee6facc29c21ecf2177aec69f63042f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "4692992d28a6c69071f0a073d8e74b767008dc1359bdc7f5d5d406fbf1e69970"
+        },
+        "publication.metadata": "data/plugins/1jiegejiayouxuewangan1--dsh-desktop-uia/META.json",
+        "publication.summaries": {
+            "text": "通过 Windows UI Automation 暴露桌面观察、动作与审批。",
+            "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+            "source_url": "https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+            "items": {
+                "模型工具": "Windows 桌面快照、动作、等待、启动与剪贴板工具组",
+                "界面": "设置页配置审批、安全和日志"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 快照 | 窗口/UIA 树 | 自绘可能不可见 |\n| 动作 | 输入/键鼠/窗口 | 需审批 |\n| 等待启动 | 同步状态/进程 | 焦点需核对 |\n| 审计 | 策略和日志 | 需脱敏 |"
+        },
+        "publication.advice": {
+            "revision": "8237631e1dc7d1aaf37466e9682bf3299ad53cd0",
+            "text": "建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/1jiegejiayouxuewangan1--dsh-desktop-uia",
+        "reports": "# dsh-desktop-uia\n\n> 通过 Windows UI Automation 暴露桌面观察、动作与审批。\n\n## 研究范围\n\n- **仓库**：[1jiegejiayouxuewangan1/dsh-desktop-uia](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia)\n- **版本号**：1.1.3（[固定提交 8237631e1dc7d1aaf37466e9682bf3299ad53cd0](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/tree/8237631e1dc7d1aaf37466e9682bf3299ad53cd0)）\n- **版本日期**：2026-10-06（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持 Windows UIA 快照、动作、审批和日志闭环的判断；DPI、多屏、UIPI、自绘控件与批准后切窗未在 Windows 验证，状态绑定意图仍待随机漂移实验，见[Q08](#research-q08)。\n\n## 洞察短评\n\n- **用途**：面向操作无 API Windows 应用的用户。输入是窗口/元素、动作和文本；合格结果是身份明确、写动作获批、后置快照证明变化且日志可追。替代是人工、PowerShell 或专用 API。\n\n参见[Q01](#research-q01)。\n- **亮点**：把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。\n- **思考**：自绘控件、焦点、DPI、多屏、UIPI 和选择器漂移会错目标。审批后目标仍可变化；剪贴板/发送/删除有不可逆副作用，后置快照不能撤销。 参见[Q04](#research-q04)。\n- **建议**：写动作绑定窗口句柄、元素指纹、前置哈希和撤销策略；条件变化即拒绝并显示差分。若动态 UI 假拒绝过高则否定。 参见[Q08](#research-q08)。\n\n采用建议：建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。\n\n## 核心贡献\n\n把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。\n\n## 关键质疑\n\n自绘控件、焦点、DPI、多屏、UIPI 和选择器漂移会错目标。审批后目标仍可变化；剪贴板/发送/删除有不可逆副作用，后置快照不能撤销。 参见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n写动作绑定窗口句柄、元素指纹、前置哈希和撤销策略；条件变化即拒绝并显示差分。若动态 UI 假拒绝过高则否定。 参见[Q08](#research-q08)。\n\n只读后故障注入批准切窗；未批准写、错窗或泄密即停。\n\n## 场景与替代办法\n\n面向操作无 API Windows 应用的用户。输入是窗口/元素、动作和文本；合格结果是身份明确、写动作获批、后置快照证明变化且日志可追。替代是人工、PowerShell 或专用 API。\n\n参见[Q01](#research-q01)。\n\n人工、PowerShell 或应用 API；API 更稳，UIA 只在缺 API 时占优。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Windows UIA | 必需 | 观察操作 | 自绘控件受限 |\n| DSH slot | 必需 | 工具设置 | 漂移丢入口 |\n| 选择器/审批 | 效果必需 | 约束目标 | 漂移仍危险 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 观察 | 快照身份 | 状态明确 |\n| 计划/批准 | 说明预期变化 | 目标未变 |\n| 执行/恢复 | 复查差分，错则撤销 | 无跨应用副作用 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 隔离环境 | 建策略 | 适配未知 |\n| 持续 | token/日志 | 审批等待 | 时延未知 |\n| 恢复 | 错误动作代价 | 撤销审计 | 可能不可逆 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 无 API 覆盖 | UIA 工具接线 | 成功率未测 |\n| 安全反馈 | 审批日志后置观察 | TOCTOU 未测 |\n| 设置 | 可调策略 | 误配放大风险 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 8237631e1dc7d1aaf37466e9682bf3299ad53cd0 上判断 dsh-desktop-uia 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 桌面控制适合哪些 Windows 任务？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向操作无 API Windows 应用的用户。输入是窗口/元素、动作和文本；合格结果是身份明确、写动作获批、后置快照证明变化且日志可追。替代是人工、PowerShell 或专用 API。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:117-120](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md#L117-L120)\n\n作者说明审批安全。\n\n```text\n## Approval and safety\n\nA write action passes two layers:\n\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 快照、审批、执行与反馈如何闭环？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nHost 注册工具组，PowerShell/.NET UIA 获取树并执行动作；snapshot 观察，authorize 按风险批准，动作后反馈和记录；设置页管理模式与日志。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:71-74](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/index.js#L71-L74)\n\n注册服务工具设置。\n\n```text\nexport function apply(ctx, config = {}) {\n  const logger = ctx.logger\n  const store = new Store({\n    dir: typeof config.storageDir === 'string' && config.storageDir !== '' ? config.storageDir : resolveStorageDir(process.env),\n```\n\n**依据 2 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · dsh-desktop-uia 相对简单替代的独立增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:71-74](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/index.js#L71-L74)\n\n注册服务工具设置。\n\n```text\nexport function apply(ctx, config = {}) {\n  const logger = ctx.logger\n  const store = new Store({\n    dir: typeof config.storageDir === 'string' && config.storageDir !== '' ? config.storageDir : resolveStorageDir(process.env),\n```\n\n**依据 2 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 焦点和 UI 漂移如何误操作？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n自绘控件、焦点、DPI、多屏、UIPI 和选择器漂移会错目标。审批后目标仍可变化；剪贴板/发送/删除有不可逆副作用，后置快照不能撤销。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n**依据 2 · 作者声明**：[README.md:117-120](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md#L117-L120)\n\n作者说明审批安全。\n\n```text\n## Approval and safety\n\nA write action passes two layers:\n\n```\n\n#### 缺口\n\n- 批准到执行间目标变化是否拒绝\n  **影响**：可能错应用输入或不可逆操作\n  **进一步探讨**：批准后切窗、重排、改 DPI/权限，检查 fail closed\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-desktop-uia 启动、持续使用与失败恢复依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n依赖 Windows、PowerShell/.NET UIA、DSH 工具/设置 slot 和同级权限。持续依赖稳定选择器；失败须停止后续、核对应用、人工撤销并保护日志敏感内容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:71-74](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/index.js#L71-L74)\n\n注册服务工具设置。\n\n```text\nexport function apply(ctx, config = {}) {\n  const logger = ctx.logger\n  const store = new Store({\n    dir: typeof config.storageDir === 'string' && config.storageDir !== '' ? config.storageDir : resolveStorageDir(process.env),\n```\n\n**依据 2 · 作者声明**：[README.md:117-120](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md#L117-L120)\n\n作者说明审批安全。\n\n```text\n## Approval and safety\n\nA write action passes two layers:\n\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 每个合格桌面任务成本多少？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n单位是一段流程在正确窗口完成且无未授权副作用。首次建选择器；持续含快照 token、审批和等待；恢复可能重建文档。缺各应用成功率、误点率与恢复分钟。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:117-120](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md#L117-L120)\n\n作者说明审批安全。\n\n```text\n## Approval and safety\n\nA write action passes two layers:\n\n```\n\n**依据 2 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n#### 缺口\n\n- 任务成功率、动作 P95、误点率、审批数、恢复分钟\n  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI\n  **进一步探讨**：三类应用各二十任务对比人工\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 审批和日志是否可信？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\nauthorize 集中绑定工具、动作、窗口、理由和执行，后置观察比直接点击可审计。仍需验证 fail closed、批准绑定与日志脱敏。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:71-74](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/index.js#L71-L74)\n\n注册服务工具设置。\n\n```text\nexport function apply(ctx, config = {}) {\n  const logger = ctx.logger\n  const store = new Store({\n    dir: typeof config.storageDir === 'string' && config.storageDir !== '' ? config.storageDir : resolveStorageDir(process.env),\n```\n\n**依据 2 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 可撤销意图能否降低误操作？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n写动作绑定窗口句柄、元素指纹、前置哈希和撤销策略；条件变化即拒绝并显示差分。若动态 UI 假拒绝过高则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n**依据 2 · 作者声明**：[README.md:117-120](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md#L117-L120)\n\n作者说明审批安全。\n\n```text\n## Approval and safety\n\nA write action passes two layers:\n\n```\n\n#### 缺口\n\n- 状态绑定能否降错且假拒绝低\n  **影响**：新方向仍是推演，不能计入插件当前贡献或效果\n  **进一步探讨**：百次随机窗口变化，错目标零且假拒绝<10%\n\n<a id=\"research-q09\"></a>\n\n### Q09 · dsh-desktop-uia 适合观察、试用还是安装，停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:117-120](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/README.md#L117-L120)\n\n作者说明审批安全。\n\n```text\n## Approval and safety\n\nA write action passes two layers:\n\n```\n\n**依据 2 · 源码核查**：[lib/approval.js:47-50](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/blob/8237631e1dc7d1aaf37466e9682bf3299ad53cd0/lib/approval.js#L47-L50)\n\n集中审批执行。\n\n```text\nexport async function authorize({ ctx, store, toolName, action, window, reason, exec }) {\n  const settings = store.settings\n  const policy = settings.approval\n  const processName = typeof window?.process === 'string' ? window.process : ''\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：055943033e176962ef42daa987afc14bad76603940c575fd9d868e3691649fe6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 858 | — | — | 11088 |\n| .js | source | 9 | 3224 | 2603 | 438 | — |\n| .mjs | source | 1 | 302 | 241 | 31 | — |\n| .mjs | test | 13 | 2284 | 1994 | 109 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 快照 | 窗口/UIA 树 | 自绘可能不可见 |\n| 动作 | 输入/键鼠/窗口 | 需审批 |\n| 等待启动 | 同步状态/进程 | 焦点需核对 |\n| 审计 | 策略和日志 | 需脱敏 |\n\n## 工程亮点\n\nauthorize 集中绑定工具、动作、窗口、理由和执行，后置观察比直接点击可审计。仍需验证 fail closed、批准绑定与日志脱敏。 参见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/tools.js、lib/approval.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查 README、入口、工具、审批源码；不运行 Windows。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。\n- 下一步：只读后故障注入批准切窗；未批准写、错窗或泄密即停。\n",
+        "metadata": {
+            "repository": "1jiegejiayouxuewangan1/dsh-desktop-uia",
+            "repository_id": 1381221232,
+            "captured_at": "2026-10-22T16:02:32.321Z",
+            "window_start": "2026-09-22T16:02:32.321Z",
+            "stars": 0,
+            "pushed_at": "2026-10-06T13:14:28Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1jiegejiayouxuewangan1%2Fdsh-desktop-uia%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD02:1C143C:ADB791:BAA955:6ADA339A and timestamp 2026-10-22 16:02:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1jiegejiayouxuewangan1%2Fdsh-desktop-uia%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DDDC:102206:A4FD71:B1F06D:6ADA339B and timestamp 2026-10-22 16:02:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1jiegejiayouxuewangan1%2Fdsh-desktop-uia%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A32.321Z..2026-10-22T16%3A02%3A32.321Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DEAE:1B7905:A882CD:B578E2:6ADA339C and timestamp 2026-10-22 16:02:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1jiegejiayouxuewangan1%2Fdsh-desktop-uia%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A32.321Z..2026-10-22T16%3A02%3A32.321Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF72:31990B:B60C0E:C304F6:6ADA339E and timestamp 2026-10-22 16:02:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1jiegejiayouxuewangan1%2Fdsh-desktop-uia%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A32.321Z..2026-10-22T16%3A02%3A32.321Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E024:3273ED:A3EB4F:B0DACC:6ADA339F and timestamp 2026-10-22 16:02:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-desktop-uia",
+                "captured_at": "2026-10-22T16:02:39.646Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 516,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-desktop-uia",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-06T12:46:27.057Z",
+                    "captured_at": "2026-10-22T16:02:39.646Z",
+                    "source_url": "https://registry.npmjs.org/dsh-desktop-uia",
+                    "error": null,
+                    "latest_version": "1.1.3",
+                    "latest_published_at": "2026-10-06T13:13:52.060Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1381221232:root",
             "repository": "1jiegejiayouxuewangan1/dsh-desktop-uia",

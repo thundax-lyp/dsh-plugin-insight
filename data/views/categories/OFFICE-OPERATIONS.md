@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](#research-q03)。 |
-| [dsh-anet](#plugin-1302597978-deploy-plugins-dist-dsh) | 通过本地AgentNetwork节点发现远端Agent、发送加密任务、跟踪执行并处理有价格的技能。 | 已部署anet节点者值得观察；试用前应固定节点版本并验证身份、预算、失败重试和未知执行效果。 |
+| [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
@@ -22,6 +22,7 @@
 | [dsh-plugin-education](#plugin-1336663611-root) | 用edu_kit提供教案与题目骨架、测验结构检查、格式转换和成绩/计划统计，不替代教学内容审阅。 | 教师审阅下试用模板/转换，数值与答案复核后使用。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
+| [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。 | 不按默认设置暴露真实 bot。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
@@ -53,19 +54,19 @@
 
 > **建议**：以稳定会话复合键和持久去重索引提升准确度，并将 token 导入限定到明确授权流程且不向浏览器返回原值；待验证，详见[Q02](#research-q02)、[Q03](#research-q03)。
 
-<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
+<a id="plugin-1418842530-root"></a>
 
-## [dsh-anet](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
+## [dsh-feishu](../../plugins/2048lr--dsh-feishu/INSIGHT.md)
 
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
+[![npm 30d 71](https://img.shields.io/static/v1?label=npm+30d&message=71&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feishu) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feishu)
 
-> **用途**：已运行 AgentNetwork 节点并需要跨 Agent 委派的开发者或运营者可用它把 DSH 接到本地 anet 节点，支持发现 Agent、委派和跟踪加密任务、价格限制与入站任务处理；合格结果是任务发给明确身份的 Agent，端到端状态、费用边界和最终结果可核对，失败不被误记为完成。详见[Q01](#research-q01)。
+> **用途**：面向查询/更新飞书消息、文档、云盘、表格、多维表格和知识库的用户。输入是应用凭据或用户 OAuth、资源和动作；合格结果是预期身份访问正确租户，写可追踪且不泄露令牌。替代是 UI、SDK 或脚本。
 
-> **亮点**：把本地节点环境配置、A2A 操作与 DSH Skill 入口打包，减少跨工具委派接线。它相对“通过外部 A2A 客户端或 MCP 手工发现 Agent、发送任务并轮询结果”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+> **亮点**：提供 DSH 原生身份、授权 UI、十领域工具和两代 Bitable 兼容；相对通用 MCP，token 留在 Host。飞书平台能力非插件贡献。 参见[Q03](#research-q03)。
 
-> **思考**：组件主要是分发与接线层，端到端加密、结算和远端执行可靠性归属于外部 anet 节点与网络。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+> **思考**：宽 scopes 和身份差异会越权/空结果；两代 API、分页、限流和 token 类型分叉。消息、文档、表格和上传都有协作可见副作用。 参见[Q04](#research-q04)。
 
-> **建议**：未来可探索：可为每次委派保存身份、预算、状态转换与结果摘要的不可变回执，并对未知效果实施显式人工接管。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。
+> **建议**：任务前生成身份、租户、scope、目标、预计 API 次数和写 diff；高风险写预览并幂等提交。若错身份/重复写不降则否定。 参见[Q08](#research-q08)。
 
 <a id="plugin-1346023250-root"></a>
 
@@ -193,6 +194,20 @@
 
 > **建议**：现版声明 JSONL 真相源却不重建/去重，未知价零与路径前缀错归；若按 sid+seq 重建、缺价标 unknown、身份/路径段归因，或可降漏计/误拦，但增启动/管理成本。故障、重复、相邻路径和未知模型对照事件/账单；若误差不降或成本超阈值即证伪。详见[Q05](#research-q05)。
 
+<a id="plugin-1333954586-root"></a>
+
+## [dsh-usage-billing](../../plugins/940842546--dsh-usage-billing/INSIGHT.md)
+
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/940842546/dsh-usage-billing) [![npm 30d 1,051](https://img.shields.io/static/v1?label=npm+30d&message=1%2C051&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-billing) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-usage-billing)
+
+> **用途**：频繁使用 DeepSeek 模型的个人或团队希望按会话、模型、日期追踪 token 和估算费用，基线是手工导出日志乘官方单价。合格结果是每次调用只计一次、时区/节假日/模型档位正确、共享文件不丢写，估算与官方账单在定义误差内可对账。 详见[Q01](#research-q01)。
+
+> **亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
+
+> **思考**：核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](#research-q04)。
+
+> **建议**：未验证假设是从官方账单抽取每日总额做只读校准，并显示“覆盖率/差额”而非单一费用，可防止估算被误当账单。最小实验连续30天比较插件日汇总、官方账单和原始调用样本，按模型/时段定位差额；95%日期超出预设误差即否定当前计价可用性。 详见[Q08](#research-q08)。
+
 <a id="plugin-1370460115-root"></a>
 
 ## [dsh-wsl-im](../../plugins/173787247--dsh-wsl-im/INSIGHT.md)
@@ -223,4 +238,4 @@
 
 ## 更新时间
 
-2026-10-22
+2026-10-23

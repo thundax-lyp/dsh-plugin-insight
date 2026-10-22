@@ -7,14 +7,14 @@
             "id": "github:1100971867:root",
             "repository": "tingly-dev/tingly-box",
             "path": "",
-            "revision": "e983a203c584c76d45fb8265e6be9da63925b522",
+            "revision": "fa1b6da941309de6ada3c58ddd16a6b44dfe21fa",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "35c3ed55e67b0fc542dc536b8d9f38f956f55890aa72b9991f401e3fddcfcd75",
-                "code": "e983a203c584c76d45fb8265e6be9da63925b522",
-                "maintenance": "69726654b52bc6a5c1fd3d53e8a16d4f1640d94f5750c8b894dfe171626175fe"
+                "code": "fa1b6da941309de6ada3c58ddd16a6b44dfe21fa",
+                "maintenance": "52cc7da2f21d485913f52f0ac6410b5a9ae3558be602c51a28c0d001c22813a5"
             }
         }
     }

@@ -390,7 +390,7 @@ export async function renderBlock(
 
 ### Q02 · 相对原始代码或外部渲染有什么增量，关键边界是什么？
 
-**研究主题**：贡献与相对优势、缺陷与关键质疑
+**研究主题：**贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
@@ -529,8 +529,8 @@ export async function sendToAI(report: string): Promise<boolean> {
 #### 缺口
 
 - 真实浏览器病态图耗时及SVG安全未独立实测。
-  **影响**：不能承诺15秒内恢复响应或对所有不可信图无风险。
-  **进一步探讨**：可用受控大图/异常语法与安全夹具，记录主线程阻塞和SVG行为，并绑定Mermaid实际版本。
+  **影响：**不能承诺15秒内恢复响应或对所有不可信图无风险。
+  **进一步探讨：**可用受控大图/异常语法与安全夹具，记录主线程阻塞和SVG行为，并绑定Mermaid实际版本。
 
 <a id="research-q03"></a>
 
@@ -538,7 +538,7 @@ export async function sendToAI(report: string): Promise<boolean> {
 
 ### Q03 · 启动依赖与退出、错误恢复流程是什么？
 
-**研究主题**：依赖、兼容与流程
+**研究主题：**依赖、兼容与流程
 
 #### 完整回答
 
@@ -710,7 +710,7 @@ export async function serveDistFile(distRoot: string, pathname: string, res: Ser
 
 ### Q04 · 首次、持续及失败恢复成本和效果如何判断？
 
-**研究主题**：效果与总成本
+**研究主题：**效果与总成本
 
 #### 完整回答
 
@@ -816,8 +816,8 @@ export function buildErrorReport(source: string, message: string): string {
 #### 缺口
 
 - 没有同图集与外部渲染/原文阅读的理解正确率、耗时和资源对照。
-  **影响**：无法量化净收益或默认限制是否足够。
-  **进一步探讨**：可按简单/复杂/错误图分别记录阅读任务准确率、长任务时间、内存和修复人时。
+  **影响：**无法量化净收益或默认限制是否足够。
+  **进一步探讨：**可按简单/复杂/错误图分别记录阅读任务准确率、长任务时间、内存和修复人时。
 
 <a id="research-q05"></a>
 
@@ -825,7 +825,7 @@ export function buildErrorReport(source: string, message: string): string {
 
 ### Q05 · 哪些设计可复用，真正可取消渲染假设怎样检验？
 
-**研究主题**：工程质量与复用、新假设与验证
+**研究主题：**工程质量与复用、新假设与验证
 
 #### 完整回答
 
@@ -969,7 +969,7 @@ export async function sendToAI(report: string): Promise<boolean> {
 
 ### Q06 · 谁适合受控试用，什么情况应停止？
 
-**研究主题**：采用判断
+**研究主题：**采用判断
 
 #### 完整回答
 

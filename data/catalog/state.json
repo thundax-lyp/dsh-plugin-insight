@@ -1,10 +1,10 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "9eb941596dc65b372a244cde3b91d2b37f495329e57e15dd894f9fb18ceeaf82",
-    "index_sha256": "8b8c6ad4a77846926939ffbc08b2117eadc7210cbfeeac5c5217a875e3cf61cc",
+    "snapshot_digest": "6a937c4b9551eb5f66cef5528c0a59dfb391cc1c4618ed232879552688499d45",
+    "index_sha256": "aeecaed26298b5a337ac6296e09d959879dd15bed448ca9c13bd1c3f308f897c",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-10-22T15:06:59Z",
+        "checked_at": "2026-10-22T15:49:47Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 40，完成 40，受阻 0；已知同版本受阻跳过 4；当前发布 353",
+            "scope": "本轮所选 40，完成 40，受阻 0；已知同版本受阻跳过 4；当前发布 389",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-10-22T15:06:59Z"
+            "checked_at": "2026-10-22T15:49:47Z"
         },
         "registry": {},
         "discovery": {
@@ -52,8 +52,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-10-22-01",
-            "work_digest": "fabd53779bef00d48d153fead544126a2573a5be52b4ed1a4dc95f400b5cebdb"
+            "id": "2026-10-22-02",
+            "work_digest": "82c180cb04c8b0de60025c5c5018e84dfb50cf7aca0c87348b02f8d28f930a13"
         },
         "research_blocks": {}
     },
@@ -74,6 +74,7 @@
             "github:1333370288:root",
             "github:1333440937:root",
             "github:1333800488:root",
+            "github:1333954586:root",
             "github:1333975935:root",
             "github:1333993743:root",
             "github:1334023305:root",
@@ -98,11 +99,13 @@
             "github:1334773156:root",
             "github:1334836615:root",
             "github:1334850903:root",
+            "github:1334862230:root",
             "github:1334899834:root",
             "github:1335045545:root",
             "github:1335047324:root",
             "github:1335060007:root",
             "github:1335060115:root",
+            "github:1335070045:packages-vision-route",
             "github:1335070045:packages-vision-tool",
             "github:1335098475:root",
             "github:1335139860:root",
@@ -112,13 +115,16 @@
             "github:1335281982:root",
             "github:1335286261:root",
             "github:1335332435:root",
+            "github:1335349535:root",
             "github:1335381015:root",
             "github:1335382133:root",
             "github:1335387524:root",
             "github:1335557891:root",
             "github:1335558973:root",
             "github:1335559646:root",
+            "github:1335594781:root",
             "github:1335661970:root",
+            "github:1335664137:root",
             "github:1335704653:root",
             "github:1335725068:root",
             "github:1335766616:root",
@@ -142,6 +148,7 @@
             "github:1336583700:root",
             "github:1336585522:root",
             "github:1336647931:root",
+            "github:1336649545:root",
             "github:1336658798:root",
             "github:1336663456:root",
             "github:1336663504:root",
@@ -152,7 +159,9 @@
             "github:1336684054:root",
             "github:1336684098:root",
             "github:1336720864:root",
+            "github:1336870027:root",
             "github:1336994666:root",
+            "github:1337038478:root",
             "github:1337350700:root",
             "github:1337467566:root",
             "github:1337487779:root",
@@ -186,6 +195,7 @@
             "github:1343679449:root",
             "github:1343702731:root",
             "github:1343882273:root",
+            "github:1344713526:dsh-lsp-cpp",
             "github:1344713526:dsh-lsp-csharp",
             "github:1344713526:dsh-lsp-go",
             "github:1344713526:dsh-lsp-java",
@@ -230,6 +240,7 @@
             "github:1350544211:root",
             "github:1351375738:root",
             "github:1351594249:root",
+            "github:1351853812:root",
             "github:1351853863:root",
             "github:1351853903:root",
             "github:1351853956:root",
@@ -250,10 +261,12 @@
             "github:1354283280:root",
             "github:1355639507:root",
             "github:1356219122:root",
+            "github:1356896576:dsh-capmap-viz",
             "github:1356960582:root",
             "github:1357066651:root",
             "github:1358313559:root",
             "github:1358816037:root",
+            "github:1358821276:root",
             "github:1359145352:root",
             "github:1359145374:root",
             "github:1359423472:root",
@@ -291,9 +304,11 @@
             "github:1378097401:dsh-live2d-pet",
             "github:1378138611:root",
             "github:1378742722:root",
+            "github:1378933589:adapters-dsh",
             "github:1379204512:root",
             "github:1380181057:root",
             "github:1380817560:root",
+            "github:1381221232:root",
             "github:1381389698:root",
             "github:1381724774:root",
             "github:1381725238:root",
@@ -335,6 +350,7 @@
             "github:1391140767:root",
             "github:1391141174:root",
             "github:1391141792:root",
+            "github:1391142149:root",
             "github:1391142601:root",
             "github:1391142974:root",
             "github:1391143266:root",
@@ -352,6 +368,7 @@
             "github:1400385991:packages-dsh-weekly-panel",
             "github:1400498179:root",
             "github:1400927706:root",
+            "github:1401037852:root",
             "github:1401255267:root",
             "github:1401618027:root",
             "github:1402771540:root",
@@ -360,6 +377,8 @@
             "github:1403959948:root",
             "github:1404700411:root",
             "github:1404720276:root",
+            "github:1406156934:dsh-task-monitor",
+            "github:1406500233:root",
             "github:1406611614:root",
             "github:1407166868:root",
             "github:1407379611:root",
@@ -369,9 +388,13 @@
             "github:1410794267:root",
             "github:1412141303:root",
             "github:1412161923:root",
+            "github:1412162067:root",
             "github:1412623357:root",
             "github:1412857520:root",
+            "github:1412896722:root",
             "github:1412897932:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
             "github:1413897334:root",
             "github:1414017637:root",
             "github:1414238544:root",
@@ -379,6 +402,7 @@
             "github:1414492607:root",
             "github:1414936636:root",
             "github:1415116420:root",
+            "github:1415767842:root",
             "github:1415822787:root",
             "github:1416699252:root",
             "github:1416950630:root",
@@ -387,12 +411,17 @@
             "github:1418493685:root",
             "github:1418691015:root",
             "github:1418769012:root",
+            "github:1418842530:root",
+            "github:1421306160:root",
             "github:1421741516:root",
             "github:1421963463:root",
             "github:1422091204:root",
             "github:1422121370:root",
+            "github:1422176522:root",
+            "github:1422216012:root",
             "github:1422240642:root",
             "github:1422328385:root",
+            "github:1422359117:root",
             "github:1422364992:root",
             "github:1422380986:root",
             "github:1422396858:root",
@@ -403,15 +432,22 @@
             "github:1423215373:root",
             "github:1423215448:root",
             "github:1423215529:root",
+            "github:1423253220:root",
             "github:1423966960:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
             "github:1424219088:root",
+            "github:1424433303:root",
+            "github:1424475406:root",
             "github:1425006726:root",
             "github:1425044910:root",
             "github:1425045401:root",
             "github:1425073734:root",
             "github:1425159954:root",
+            "github:1426070939:root",
+            "github:1426477683:root",
             "github:1426892789:root",
             "github:1427300390:root",
+            "github:1429103083:root",
             "github:841979943:root"
         ],
         "publication.records": [
@@ -767,7 +803,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "publication.metadata": [
             "github:1335557891:root",
@@ -1122,7 +1194,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "publication.summaries": [
             "github:1335557891:root",
@@ -1477,7 +1585,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "publication.capabilities": [
             "github:1335557891:root",
@@ -1832,7 +1976,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "publication.advice": [
             "github:1335557891:root",
@@ -2187,7 +2367,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "registry": [
             "github:1170373459:dsh-invoice-downloader",
@@ -2543,7 +2759,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "research_blocks": [
             "github:1335034901:root",
@@ -2905,7 +3157,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "metadata": [
             "github:1335557891:root",
@@ -3260,7 +3548,43 @@
             "github:1416699252:root",
             "github:1333357514:root",
             "github:1336994666:root",
-            "github:1427300390:root"
+            "github:1427300390:root",
+            "github:1391142149:root",
+            "github:1351853812:root",
+            "github:1356896576:dsh-capmap-viz",
+            "github:1401037852:root",
+            "github:1424063534:plugins-dsh-domain-bridge",
+            "github:1381221232:root",
+            "github:1413052822:root",
+            "github:1413882487:root",
+            "github:1418842530:root",
+            "github:1429103083:root",
+            "github:1415767842:root",
+            "github:1335070045:packages-vision-route",
+            "github:1406156934:dsh-task-monitor",
+            "github:1358821276:root",
+            "github:1412162067:root",
+            "github:1423253220:root",
+            "github:1406500233:root",
+            "github:1378933589:adapters-dsh",
+            "github:1334862230:root",
+            "github:1337038478:root",
+            "github:1422216012:root",
+            "github:1335664137:root",
+            "github:1424475406:root",
+            "github:1421306160:root",
+            "github:1335594781:root",
+            "github:1336870027:root",
+            "github:1424433303:root",
+            "github:1422176522:root",
+            "github:1422359117:root",
+            "github:1426070939:root",
+            "github:1336649545:root",
+            "github:1335349535:root",
+            "github:1333954586:root",
+            "github:1426477683:root",
+            "github:1412896722:root",
+            "github:1344713526:dsh-lsp-cpp"
         ],
         "discovery.plugins": [
             "github:1339316901:root",
@@ -12135,10 +12459,6 @@
             "path": "evidence/4b/4bae428e5b5a951f06510a2bafc058d8f0e901feb328aebadda7ecdabd8fdf55.json",
             "sha256": "4bae428e5b5a951f06510a2bafc058d8f0e901feb328aebadda7ecdabd8fdf55"
         },
-        "data/runs/2026-10-22-01/snapshots/1985899182--dsh-harness-chat-control/REVIEWED-SOURCE.json": {
-            "path": "evidence/97/978779123ac9aa4022f0e8589944af33a7407c333c0c634c14115170aa1d601d.json",
-            "sha256": "978779123ac9aa4022f0e8589944af33a7407c333c0c634c14115170aa1d601d"
-        },
         "data/runs/2026-10-22-01/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json": {
             "path": "evidence/ea/ead14a6b2f3beb02035a3cc74b3051dd0d2bc3098cd6d5d2a5af219dcbc34616.json",
             "sha256": "ead14a6b2f3beb02035a3cc74b3051dd0d2bc3098cd6d5d2a5af219dcbc34616"
@@ -12150,10 +12470,6 @@
         "data/runs/2026-10-22-01/snapshots/2jumpsina--dsh-context-guard/REVIEWED-SOURCE.json": {
             "path": "evidence/95/952c0d7c58ed45b5d9716af3f243a1e58b76964f6841d79847a6f928ad1aa3a2.json",
             "sha256": "952c0d7c58ed45b5d9716af3f243a1e58b76964f6841d79847a6f928ad1aa3a2"
-        },
-        "data/runs/2026-10-22-01/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json": {
-            "path": "evidence/00/001eb888edd40572bd904f97eb61f280b30b9ab072bc9ed6d21fb12fe2ade04d.json",
-            "sha256": "001eb888edd40572bd904f97eb61f280b30b9ab072bc9ed6d21fb12fe2ade04d"
         },
         "data/runs/2026-10-22-01/snapshots/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json": {
             "path": "evidence/df/df9278c1f19c2df69295a03ab37388f72e34a200f606fe92c2c40fc875d067ea.json",
@@ -12187,17 +12503,9 @@
             "path": "evidence/54/5411714da8a22eb1b25641604a7b4ae49a7440311b371c7f82a9936b34fc4625.json",
             "sha256": "5411714da8a22eb1b25641604a7b4ae49a7440311b371c7f82a9936b34fc4625"
         },
-        "data/runs/2026-10-22-01/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json": {
-            "path": "evidence/bf/bfa76e231241a4715ce9204f37e52461a4856657787c527e31a1099041501742.json",
-            "sha256": "bfa76e231241a4715ce9204f37e52461a4856657787c527e31a1099041501742"
-        },
         "data/runs/2026-10-22-01/snapshots/agentconnect--dsh-awiki/REVIEWED-SOURCE.json": {
             "path": "evidence/4a/4aa7533ffd2d24d1d1e3234263cc5f8ca69ecbe340887773cb6f409929619cee.json",
             "sha256": "4aa7533ffd2d24d1d1e3234263cc5f8ca69ecbe340887773cb6f409929619cee"
-        },
-        "data/runs/2026-10-22-01/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json": {
-            "path": "evidence/0e/0e3fdd1033777dd044d1776fe95f16bb77779933b6a0123b658081ac246fdd9a.json",
-            "sha256": "0e3fdd1033777dd044d1776fe95f16bb77779933b6a0123b658081ac246fdd9a"
         },
         "data/runs/2026-10-22-01/snapshots/aliuyanfeng--dsh-soul/REVIEWED-SOURCE.json": {
             "path": "evidence/29/299568096663d44da0e86f953dc9709c07528d32fe5ab9fb45f2e9337c944c1f.json",
@@ -12218,6 +12526,166 @@
         "data/runs/2026-10-22-01/snapshots/1186258278--dsh-zh-ui/REVIEWED-SOURCE.json": {
             "path": "evidence/f3/f3e3658931ee0098192003b89549ad90240a8352e7995b00df971b60e94e93e6.json",
             "sha256": "f3e3658931ee0098192003b89549ad90240a8352e7995b00df971b60e94e93e6"
+        },
+        "data/runs/2026-10-22-02/snapshots/1985899182--dsh-harness-chat-control/REVIEWED-SOURCE.json": {
+            "path": "evidence/3e/3ec3e4e349226bc82bc63fb0ad5885351c675873e450210fdfd0ed61e7448fb8.json",
+            "sha256": "3ec3e4e349226bc82bc63fb0ad5885351c675873e450210fdfd0ed61e7448fb8"
+        },
+        "data/runs/2026-10-22-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json": {
+            "path": "evidence/58/5898d8df23e0cbb904f51874518ff87a21866c102f0f87378c0670294bb4d338.json",
+            "sha256": "5898d8df23e0cbb904f51874518ff87a21866c102f0f87378c0670294bb4d338"
+        },
+        "data/runs/2026-10-22-02/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json": {
+            "path": "evidence/26/26b5a1bad547b3f0b1495d88616298976c4d4094562d6562e2a76f037231e163.json",
+            "sha256": "26b5a1bad547b3f0b1495d88616298976c4d4094562d6562e2a76f037231e163"
+        },
+        "data/runs/2026-10-22-02/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json": {
+            "path": "evidence/a6/a66abf5b836b561da35866fb845b7a9af8c0f4ed41efe21d079ec5dd957d04e1.json",
+            "sha256": "a66abf5b836b561da35866fb845b7a9af8c0f4ed41efe21d079ec5dd957d04e1"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-wininput/REVIEWED-SOURCE.json": {
+            "path": "evidence/12/125887f88252d0374fc552a27d1a8f39d6f1a7469d20ffbfea4d4118384a98d1.json",
+            "sha256": "125887f88252d0374fc552a27d1a8f39d6f1a7469d20ffbfea4d4118384a98d1"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-workspace/REVIEWED-SOURCE.json": {
+            "path": "evidence/92/920b7415fdd52b0f631f7bdcd1085ea79bd173fa9048919b7ee9614403312d73.json",
+            "sha256": "920b7415fdd52b0f631f7bdcd1085ea79bd173fa9048919b7ee9614403312d73"
+        },
+        "data/runs/2026-10-22-02/snapshots/1741505640--capmap-skills--dsh-capmap-viz/REVIEWED-SOURCE.json": {
+            "path": "evidence/59/595231c837445657f870256a0f849cd274be2d7128ca250530a4d45feb87aae9.json",
+            "sha256": "595231c837445657f870256a0f849cd274be2d7128ca250530a4d45feb87aae9"
+        },
+        "data/runs/2026-10-22-02/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json": {
+            "path": "evidence/63/63c9a33dee227de83b0b3b3adf4c60e7e1705f635918d479fc77c49c7f98cb0a.json",
+            "sha256": "63c9a33dee227de83b0b3b3adf4c60e7e1705f635918d479fc77c49c7f98cb0a"
+        },
+        "data/runs/2026-10-22-02/snapshots/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/REVIEWED-SOURCE.json": {
+            "path": "evidence/9a/9a72936ca4d6ae98f3e335b0375004d8429aae0b65e10c88752ed2fed7a02b1b.json",
+            "sha256": "9a72936ca4d6ae98f3e335b0375004d8429aae0b65e10c88752ed2fed7a02b1b"
+        },
+        "data/runs/2026-10-22-02/snapshots/1jiegejiayouxuewangan1--dsh-desktop-uia/REVIEWED-SOURCE.json": {
+            "path": "evidence/b5/b5a8b25b3c798d992322fc2502e5953910b06fbd75b7b2120451ff7b2a33851a.json",
+            "sha256": "b5a8b25b3c798d992322fc2502e5953910b06fbd75b7b2120451ff7b2a33851a"
+        },
+        "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-armory/REVIEWED-SOURCE.json": {
+            "path": "evidence/53/53c1aefd0766531e2fcf4873631e759bdb9dea5400a322d90cd17280fbbb7ecb.json",
+            "sha256": "53c1aefd0766531e2fcf4873631e759bdb9dea5400a322d90cd17280fbbb7ecb"
+        },
+        "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-forget-session/REVIEWED-SOURCE.json": {
+            "path": "evidence/b2/b2b9dfce8aa2c5402333e1d218e20e44017c9ac352b0ce6d73041dc3b0a22729.json",
+            "sha256": "b2b9dfce8aa2c5402333e1d218e20e44017c9ac352b0ce6d73041dc3b0a22729"
+        },
+        "data/runs/2026-10-22-02/snapshots/2048lr--dsh-feishu/REVIEWED-SOURCE.json": {
+            "path": "evidence/87/87252dce8114bab57fca88527d718e2192b2b07e0399d454fa87169a82ea6dac.json",
+            "sha256": "87252dce8114bab57fca88527d718e2192b2b07e0399d454fa87169a82ea6dac"
+        },
+        "data/runs/2026-10-22-02/snapshots/2384418321--dsh-integration-settings/REVIEWED-SOURCE.json": {
+            "path": "evidence/5f/5f3c8543634f6f204f820bc47ca6693e7f246284a42144f61a0979bb04524c1e.json",
+            "sha256": "5f3c8543634f6f204f820bc47ca6693e7f246284a42144f61a0979bb04524c1e"
+        },
+        "data/runs/2026-10-22-02/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json": {
+            "path": "evidence/d3/d31ef0c160cbf4c04a6b7e84b5b9f13aca48a9320d11cb0ce2d5d2db39136471.json",
+            "sha256": "d31ef0c160cbf4c04a6b7e84b5b9f13aca48a9320d11cb0ce2d5d2db39136471"
+        },
+        "data/runs/2026-10-22-02/snapshots/314857493--dsh-vision--packages-vision-route/REVIEWED-SOURCE.json": {
+            "path": "evidence/02/020f23d6b6cb8864164b10d23a3aebc5820625f9414ba03aa4419bc35e703804.json",
+            "sha256": "020f23d6b6cb8864164b10d23a3aebc5820625f9414ba03aa4419bc35e703804"
+        },
+        "data/runs/2026-10-22-02/snapshots/3450892121--dsh-task-monitor--dsh-task-monitor/REVIEWED-SOURCE.json": {
+            "path": "evidence/46/46a30b1f358cb43c8f6e9acd85cad5c805ff757f3804561200cca82fde25810a.json",
+            "sha256": "46a30b1f358cb43c8f6e9acd85cad5c805ff757f3804561200cca82fde25810a"
+        },
+        "data/runs/2026-10-22-02/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json": {
+            "path": "evidence/8d/8df9ab627a83c76c5de66d80c18d32cdd09979266b17679f3ebab1c81fc3a7ce.json",
+            "sha256": "8df9ab627a83c76c5de66d80c18d32cdd09979266b17679f3ebab1c81fc3a7ce"
+        },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-scroll-piano/REVIEWED-SOURCE.json": {
+            "path": "evidence/72/72ccee0f108da61036a2b0ff6f62e1db4ae19e653594ba0b50c6c929c92379f5.json",
+            "sha256": "72ccee0f108da61036a2b0ff6f62e1db4ae19e653594ba0b50c6c929c92379f5"
+        },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json": {
+            "path": "evidence/1e/1e47bc62d858ade6306e76f84486492d4f33d510fd7c714d82cc945dfa7bc90d.json",
+            "sha256": "1e47bc62d858ade6306e76f84486492d4f33d510fd7c714d82cc945dfa7bc90d"
+        },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json": {
+            "path": "evidence/47/476eb743c24489989b87c1ec6ae9e66f916cb9f0fa56d929d497cd6bc3a9e8f8.json",
+            "sha256": "476eb743c24489989b87c1ec6ae9e66f916cb9f0fa56d929d497cd6bc3a9e8f8"
+        },
+        "data/runs/2026-10-22-02/snapshots/5101good--amoji--adapters-dsh/REVIEWED-SOURCE.json": {
+            "path": "evidence/94/94855d738dbdbb8cd4391b817b12daaa7b636772cbfeaa1721227d931fe01796.json",
+            "sha256": "94855d738dbdbb8cd4391b817b12daaa7b636772cbfeaa1721227d931fe01796"
+        },
+        "data/runs/2026-10-22-02/snapshots/534119219--chicheng-gate/REVIEWED-SOURCE.json": {
+            "path": "evidence/6f/6fe4f6d12fc83e8ac6b4aac67c5134b9558cc3602d37d97db7389edaa0fe8d36.json",
+            "sha256": "6fe4f6d12fc83e8ac6b4aac67c5134b9558cc3602d37d97db7389edaa0fe8d36"
+        },
+        "data/runs/2026-10-22-02/snapshots/534119219--chicheng-quickinput/REVIEWED-SOURCE.json": {
+            "path": "evidence/f4/f469587ddb622a74a0202f66537fd0a1d077abe1edac0a8e511f60a9d8201c1b.json",
+            "sha256": "f469587ddb622a74a0202f66537fd0a1d077abe1edac0a8e511f60a9d8201c1b"
+        },
+        "data/runs/2026-10-22-02/snapshots/544244857--dsh-image2-plugin/REVIEWED-SOURCE.json": {
+            "path": "evidence/66/668c54e18ea36354e1d7f2c3a197ecd4826bcd97f685ce1deabc961b9f777c07.json",
+            "sha256": "668c54e18ea36354e1d7f2c3a197ecd4826bcd97f685ce1deabc961b9f777c07"
+        },
+        "data/runs/2026-10-22-02/snapshots/54xkeee--dsh-vision/REVIEWED-SOURCE.json": {
+            "path": "evidence/90/90ccac068cd19d42eb99c0dce3d000425afba2220fdd7b74ee439c35627b4ea5.json",
+            "sha256": "90ccac068cd19d42eb99c0dce3d000425afba2220fdd7b74ee439c35627b4ea5"
+        },
+        "data/runs/2026-10-22-02/snapshots/58fly--dsh-language-guard/REVIEWED-SOURCE.json": {
+            "path": "evidence/71/71720b63d1aa2c4e4966f654b8d2b3b991e4f36a199658b9e90022febe0ef1fd.json",
+            "sha256": "71720b63d1aa2c4e4966f654b8d2b3b991e4f36a199658b9e90022febe0ef1fd"
+        },
+        "data/runs/2026-10-22-02/snapshots/643048695--dsh-subagent-role-router/REVIEWED-SOURCE.json": {
+            "path": "evidence/f5/f58cf5cc14495bd789d3845391a3feb78028058a12760ce9343fc44c650230ff.json",
+            "sha256": "f58cf5cc14495bd789d3845391a3feb78028058a12760ce9343fc44c650230ff"
+        },
+        "data/runs/2026-10-22-02/snapshots/777-zen--dsh-capability-index/REVIEWED-SOURCE.json": {
+            "path": "evidence/12/125062af6003932aac7a217c00e258b3b2dd66e1276d95585a4280ddd741690c.json",
+            "sha256": "125062af6003932aac7a217c00e258b3b2dd66e1276d95585a4280ddd741690c"
+        },
+        "data/runs/2026-10-22-02/snapshots/7dgroup-ai--dsh-skill-7d-git-commit/REVIEWED-SOURCE.json": {
+            "path": "evidence/e6/e6c445b512229146ad812e487b26d776ece173e13c352db6364248f8013336cb.json",
+            "sha256": "e6c445b512229146ad812e487b26d776ece173e13c352db6364248f8013336cb"
+        },
+        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-restart-dock/REVIEWED-SOURCE.json": {
+            "path": "evidence/e9/e90a0d874221a7494cae5f63f7629eb6644f1e37dce121d1e92691d814ee71af.json",
+            "sha256": "e90a0d874221a7494cae5f63f7629eb6644f1e37dce121d1e92691d814ee71af"
+        },
+        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-restart-planner/REVIEWED-SOURCE.json": {
+            "path": "evidence/a4/a4b8cd3c50bdcc24f550e01fceabef2b65075aeb1d81bed3ebb53252da4e5d7e.json",
+            "sha256": "a4b8cd3c50bdcc24f550e01fceabef2b65075aeb1d81bed3ebb53252da4e5d7e"
+        },
+        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-slipway/REVIEWED-SOURCE.json": {
+            "path": "evidence/5f/5f77273d92d5bebd99322ed9578ec3053a9b671b4355dbd83767ddbfc5275ab3.json",
+            "sha256": "5f77273d92d5bebd99322ed9578ec3053a9b671b4355dbd83767ddbfc5275ab3"
+        },
+        "data/runs/2026-10-22-02/snapshots/7starsseeker--mcmodsdevbridge/REVIEWED-SOURCE.json": {
+            "path": "evidence/2d/2d8f7038371c31f9e36dca7e91ae8f1561eaec2e6647c4280d394ce2ed67e25a.json",
+            "sha256": "2d8f7038371c31f9e36dca7e91ae8f1561eaec2e6647c4280d394ce2ed67e25a"
+        },
+        "data/runs/2026-10-22-02/snapshots/863683348--dsh-insight/REVIEWED-SOURCE.json": {
+            "path": "evidence/fd/fdae345f149cb9b5a4abfa44b4ecae9958ee0c1dafe0bc713fb00cfeb66678c1.json",
+            "sha256": "fdae345f149cb9b5a4abfa44b4ecae9958ee0c1dafe0bc713fb00cfeb66678c1"
+        },
+        "data/runs/2026-10-22-02/snapshots/940842546--dsh-permissions/REVIEWED-SOURCE.json": {
+            "path": "evidence/7d/7df5580a67e8da5952d99a53ee926f1670b61b951f0d02c5b3a384adfc36cf6a.json",
+            "sha256": "7df5580a67e8da5952d99a53ee926f1670b61b951f0d02c5b3a384adfc36cf6a"
+        },
+        "data/runs/2026-10-22-02/snapshots/940842546--dsh-usage-billing/REVIEWED-SOURCE.json": {
+            "path": "evidence/be/be4127e2cbb44bd92c4d98315de9f6b31786b55074ac01b783835c6bea6a15ee.json",
+            "sha256": "be4127e2cbb44bd92c4d98315de9f6b31786b55074ac01b783835c6bea6a15ee"
+        },
+        "data/runs/2026-10-22-02/snapshots/9426haruka--dsh-markdown-live/REVIEWED-SOURCE.json": {
+            "path": "evidence/c6/c6d0723c90f3f16fb7f3353fd81550ae2e18221efaa34748d8d999a2b043fb4e.json",
+            "sha256": "c6d0723c90f3f16fb7f3353fd81550ae2e18221efaa34748d8d999a2b043fb4e"
+        },
+        "data/runs/2026-10-22-02/snapshots/985451842--dsh-snapshot-manager/REVIEWED-SOURCE.json": {
+            "path": "evidence/67/6746314a4fabada5154707e403b6a90aa8b2b9a968c1a1efd6bcc5939c81cf51.json",
+            "sha256": "6746314a4fabada5154707e403b6a90aa8b2b9a968c1a1efd6bcc5939c81cf51"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp/REVIEWED-SOURCE.json": {
+            "path": "evidence/88/88b903abc8541bbf12cbd1dc77e38aca7c00c23a9d51197edd83371a83e893f4.json",
+            "sha256": "88b903abc8541bbf12cbd1dc77e38aca7c00c23a9d51197edd83371a83e893f4"
         }
     }
 }

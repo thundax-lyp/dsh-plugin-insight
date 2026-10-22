@@ -7,14 +7,14 @@
             "id": "github:1425291372:plugins-system-fonts",
             "repository": "HwFee/HwFee-dsh",
             "path": "plugins/system-fonts",
-            "revision": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
+            "revision": "1e44efc4b1b07fe681f5b20fe88e4bb69729482f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "40acaf02607930dd29a58b4f7b9e8ddd938f89e14287cc6a2676da991f5f0cb1",
-                "code": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
-                "maintenance": "14d48da1a00d0360203f6302bf1187a0270ae5af62b767cd7059fe0958c8f9b0"
+                "code": "1e44efc4b1b07fe681f5b20fe88e4bb69729482f",
+                "maintenance": "9752fbf34e976be393be62d222f702b5643f412dd7a13723cb563421ce7c3e5b"
             }
         }
     }

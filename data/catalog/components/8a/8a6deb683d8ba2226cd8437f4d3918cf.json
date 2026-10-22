@@ -3,6 +3,454 @@
     "id": "8a6deb683d8ba2226cd8437f4d3918cf",
     "identity": "github:1422176522:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1422176522:root",
+            "repository_id": 1422176522,
+            "component_id": "root",
+            "repository": "7gzgn/dsh-restart-planner",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-restart-planner",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "709d91813df18267cd1154eafdd8bf7acbc44d908e8057c8c6e25cb773ffa7d3",
+                "code": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                "maintenance": "c74ea1aa7f772c596d76279021273ef5f1f08237bad41e3e84531a1fab95da0b"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1422176522-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:16:36.678Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1422176522-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-restart-planner",
+                            "commit": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                            "path": "README.md",
+                            "content_sha256": "78599cf4ceb38e8a0d8334143b4f50b2debb1a31167b6c0f99814cd8d82e8b00"
+                        }
+                    ],
+                    "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                    "captured_at": "2026-10-22T16:16:36.678Z",
+                    "summary": "让代理排程宿主自重启，等待会话落盘后由外部 helper 停拉进程并向原会话投递继续提示。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-restart-planner/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1422176522-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-restart-planner",
+                            "commit": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                            "path": "README.md",
+                            "content_sha256": "78599cf4ceb38e8a0d8334143b4f50b2debb1a31167b6c0f99814cd8d82e8b00"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-restart-planner",
+                            "commit": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                            "path": "lib/index.js",
+                            "content_sha256": "2afde384547dcc77fddd69a6be5d7a5a97622a56081a0b56d0cf08816f3e384a"
+                        }
+                    ],
+                    "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                    "captured_at": "2026-10-22T16:16:36.678Z",
+                    "summary": "核查 README.md、lib/index.js；self_restart 工具提供 schedule/status/cancel/resume；schedule 固定目标、写授权与恢复标记，把任务交给进程树外 helper。helper 等 delay 和会话静默后停止并拉起，写 last.json；新 Host 延迟读取 resume.json，以 sessionController.prompt queue 投递，成功才删除，失败保留重试。 详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-restart-planner/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只读检查固定提交 31562ec5555d6e93a81c251b39d173b5d80c03c6 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "代理安装或修改 Host 插件后需要重启才能继续，但当前进程不能杀死自己；基线是让用户手工重开并再次提示继续。合格结果是本轮回复先送达、会话落盘、明确目标被重拉、状态可审计，且自动继续只在新进程接受 prompt 后清标记。 详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "self_restart 工具提供 schedule/status/cancel/resume；schedule 固定目标、写授权与恢复标记，把任务交给进程树外 helper。helper 等 delay 和会话静默后停止并拉起，写 last.json；新 Host 延迟读取 resume.json，以 sessionController.prompt queue 投递，成功才删除，失败保留重试。 详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只读检查固定提交 31562ec5555d6e93a81c251b39d173b5d80c03c6 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "仅记录固定 checkout 中的 package/README 分发声明；本轮未查询实时包可用性，也未安装或执行。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无外部费；占状态/日志文件 | 核 target/命令、dry-run、建立救援路径 | 跨平台耗时未知 |\n| 每次重启 | 数秒停机及中断中的计算损失 | 等待回复、静默和健康检查 | 应按成功重启+继续任务计量 |\n| 失败恢复 | 可能需人工重开应用 | 读 last/helper/resume，判定是否补投 | 重复 resume 可能重复业务动作 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "仅建议具备救援入口的插件开发环境观察；先 dryRun，随后在空闲会话做一次 confirm=true、resume=false 的真实重启，再单独验证恢复投递。生产工作站、长事务或不可重复外部写入期间不应让 agent 自主 schedule；last.json 不为 ok 或 resume 标记滞留时停止自动继续。 详见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 回复后重启 | 源码先排程再由 helper 延迟执行 | 最后写入是否完全落盘 |\n| 宿主重拉 | 授权和明确 target 后停拉 | 各启动器/平台成功率 |\n| 自动继续 | accepted 后才删恢复标记 | 业务步骤幂等和重复风险 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "排程、计划解析、helper 和 resume 投递拆分，授权标记与临时目录闸防测试误杀，恢复标记采用“成功才删”。可复用的是跨重启交接协议；迁移到别的宿主必须重新证明进程树、写盘安静信号和 prompt 幂等。 详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对人工重启，它把进程死亡点放到回复与写盘之后，并用外部 helper 与持久恢复标记跨越宿主生命周期；比按钮插件更适合 agent 自主流程。优势依赖目标解析和会话静默确实可靠，且“继续”提示不等于原任务状态自动恢复。 详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "最关键质疑是强制停止前的“静默”只能近似落盘完整，最后写入仍可能丢失；自动继续可能在环境尚未完全恢复时重复动作。默认 confirm=false 与 resume=true 对无人值守有利，却扩大误排程后果；重复 schedule 覆盖旧排程而不排队。 详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设是给恢复标记增加原任务幂等键与上一步完成摘要，可把“继续一句话”升级为可判重的恢复协议。最小实验让 20 个含外部写入的任务在四个阶段重启，比较当前 prompt 与幂等恢复的重复副作用、丢步骤率和人工接管次数；任一重复写远端即否定自动恢复。 详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1422176522:root",
+                            "area": "code",
+                            "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:36.678Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:16:36.678Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                "reviewed_at": "2026-10-22T16:16:36.678Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422176522:root",
+                        "area": "code",
+                        "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 23,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "dsh-restart-planner 的实现增量按明确基线评估，未把运行效果或研究者假设计入。",
+                    "basis": "interpretation",
+                    "score": 64,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 26,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "dsh-restart-planner 的流程与交付增量有源码支持，但经济收益没有实测。",
+                    "basis": "interpretation",
+                    "score": 55,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1422176522-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "跨重启交接设计有价值，但强制停树和自动继续可能丢写或重复副作用，需先隔离演练。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "代理安装或修改 Host 插件后需要重启才能继续，但当前进程不能杀死自己；基线是让用户手工重开并再次提示继续。合格结果是本轮回复先送达、会话落盘、明确目标被重拉、状态可审计，且自动继续只在新进程接受 prompt 后清标记。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "相对人工重启，它把进程死亡点放到回复与写盘之后，并用外部 helper 与持久恢复标记跨越宿主生命周期；比按钮插件更适合 agent 自主流程。优势依赖目标解析和会话静默确实可靠，且“继续”提示不等于原任务状态自动恢复。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定版本 README 与源码已检查；未运行插件或真实 Host。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "首次要执行 status/resolve 与 dryRun，确认 targetPid、killList、拉起命令和手工救援；每次真实重启付出 delay+quiet+停机时间，正在运行的工具被终止；失败时需读 last/resume/helper 日志，手工拉起并决定是否调用 resume，避免未确认状态重复任务。"
+                    }
+                },
+                "score": 60,
+                "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                "reviewed_at": "2026-10-22T16:16:36.678Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1422176522-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1422176522:root",
+                        "area": "code",
+                        "fingerprint": "31562ec5555d6e93a81c251b39d173b5d80c03c6"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1422176522:root",
+            "repository": "7gzgn/dsh-restart-planner",
+            "path": "",
+            "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+            "fingerprints": {
+                "directory": "709d91813df18267cd1154eafdd8bf7acbc44d908e8057c8c6e25cb773ffa7d3",
+                "code": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+                "maintenance": "c74ea1aa7f772c596d76279021273ef5f1f08237bad41e3e84531a1fab95da0b"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "5b6e6127b550e5ddd15ec6c2882ffd1cd8d59236e3beac3d6ff99b95fa17d1b1"
+        },
+        "publication.metadata": "data/plugins/7gzgn--dsh-restart-planner/META.json",
+        "publication.summaries": {
+            "text": "让代理排程宿主自重启，等待会话落盘后由外部 helper 停拉进程并向原会话投递继续提示。",
+            "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+            "source_url": "https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+            "items": {
+                "模型工具": "self_restart 排程、状态、取消与恢复投递",
+                "用户命令": "dsh-restart-planner CLI 可 resolve、dry-run、schedule、status、cancel",
+                "后台": "外部 helper 等写盘静默后停拉宿主并记录报告"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| self_restart | 让 agent 排程/取消/查询重启 | schedule 是破坏动作；先 dry-run |\n| 跨重启 helper | 宿主退出后仍能重拉 | 平台/启动器差异可能失败 |\n| 恢复 prompt | 重启后向原会话排队继续 | 只恢复提示，不证明任务状态幂等 |"
+        },
+        "publication.advice": {
+            "revision": "31562ec5555d6e93a81c251b39d173b5d80c03c6",
+            "text": "仅建议具备救援入口的插件开发环境观察；先 dryRun，随后在空闲会话做一次 confirm=true、resume=false 的真实重启，再单独验证恢复投递。生产工作站、长事务或不可重复外部写入期间不应让 agent 自主 schedule；last.json 不为 ok 或 resume 标记滞留时停止自动继续。 详见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/7gzgn--dsh-restart-planner",
+        "reports": "# dsh-restart-planner\n\n> 让代理排程宿主自重启，等待会话落盘后由外部 helper 停拉进程并向原会话投递继续提示。\n\n## 研究范围\n\n- **仓库**：[7gzgn/dsh-restart-planner](https://github.com/7gzgn/dsh-restart-planner)\n- **版本号**：0.4.6（[固定提交 31562ec5555d6e93a81c251b39d173b5d80c03c6](https://github.com/7gzgn/dsh-restart-planner/tree/31562ec5555d6e93a81c251b39d173b5d80c03c6)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码确认了 self_restart 的排程/取消/状态入口、明确目标与授权闸、会话静默等待、外部 helper 以及成功才清除的 resume 标记；本轮未真实停止 Host，也未注入 prompt 拒绝或外部副作用任务，故不能证明最后写入不丢失或自动继续不会重复业务动作。\n\n## 洞察短评\n\n- **用途**：代理安装或修改 Host 插件后需要重启才能继续，但当前进程不能杀死自己；基线是让用户手工重开并再次提示继续。合格结果是本轮回复先送达、会话落盘、明确目标被重拉、状态可审计，且自动继续只在新进程接受 prompt 后清标记。 详见[Q01](#research-q01)。\n- **亮点**：相对人工重启，它把进程死亡点放到回复与写盘之后，并用外部 helper 与持久恢复标记跨越宿主生命周期；比按钮插件更适合 agent 自主流程。优势依赖目标解析和会话静默确实可靠，且“继续”提示不等于原任务状态自动恢复。 详见[Q03](#research-q03)。\n- **思考**：最关键质疑是强制停止前的“静默”只能近似落盘完整，最后写入仍可能丢失；自动继续可能在环境尚未完全恢复时重复动作。默认 confirm=false 与 resume=true 对无人值守有利，却扩大误排程后果；重复 schedule 覆盖旧排程而不排队。 详见[Q04](#research-q04)。\n- **建议**：未验证假设是给恢复标记增加原任务幂等键与上一步完成摘要，可把“继续一句话”升级为可判重的恢复协议。最小实验让 20 个含外部写入的任务在四个阶段重启，比较当前 prompt 与幂等恢复的重复副作用、丢步骤率和人工接管次数；任一重复写远端即否定自动恢复。 详见[Q08](#research-q08)。\n\n采用建议：仅建议具备救援入口的插件开发环境观察；先 dryRun，随后在空闲会话做一次 confirm=true、resume=false 的真实重启，再单独验证恢复投递。生产工作站、长事务或不可重复外部写入期间不应让 agent 自主 schedule；last.json 不为 ok 或 resume 标记滞留时停止自动继续。 详见[Q09](#research-q09)。\n\n## 核心贡献\n\n相对人工重启，它把进程死亡点放到回复与写盘之后，并用外部 helper 与持久恢复标记跨越宿主生命周期；比按钮插件更适合 agent 自主流程。优势依赖目标解析和会话静默确实可靠，且“继续”提示不等于原任务状态自动恢复。 详见[Q03](#research-q03)。\n\n## 关键质疑\n\n最关键质疑是强制停止前的“静默”只能近似落盘完整，最后写入仍可能丢失；自动继续可能在环境尚未完全恢复时重复动作。默认 confirm=false 与 resume=true 对无人值守有利，却扩大误排程后果；重复 schedule 覆盖旧排程而不排队。 详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是给恢复标记增加原任务幂等键与上一步完成摘要，可把“继续一句话”升级为可判重的恢复协议。最小实验让 20 个含外部写入的任务在四个阶段重启，比较当前 prompt 与幂等恢复的重复副作用、丢步骤率和人工接管次数；任一重复写远端即否定自动恢复。 详见[Q08](#research-q08)。\n\n先用 dryRun 固定 target/killList/command，再在隔离 Host 注入写盘未静默、helper 中断、健康检查失败和 prompt 拒绝；分别核 last 状态、resume 标记保留、手工救援与任务副作用是否只发生一次。\n\n## 场景与替代办法\n\n代理安装或修改 Host 插件后需要重启才能继续，但当前进程不能杀死自己；基线是让用户手工重开并再次提示继续。合格结果是本轮回复先送达、会话落盘、明确目标被重拉、状态可审计，且自动继续只在新进程接受 prompt 后清标记。 详见[Q01](#research-q01)。\n\n代理安装或修改 Host 插件后需要重启才能继续，但当前进程不能杀死自己；基线是让用户手工重开并再次提示继续。合格结果是本轮回复先送达、会话落盘、明确目标被重拉、状态可审计，且自动继续只在新进程接受 prompt 后清标记。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools/sessionController | 必需 | 注册工具并恢复会话 prompt | 缺失则无法排程或继续 |\n| 状态与会话目录 | 必需 | 授权、报告、静默检测和恢复标记 | 不可写时应拒绝 |\n| Explorer/PowerShell | Windows 路径必需 | 让 helper 活过桌面 job | 拿不到 Explorer 时降级，风险上升 |\n| userQuestions | confirm 才需要 | 让用户选择时机 | 缺失按 fallback 并明示 no-asker |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 体检 | 代理调用 status/resolve 或 dryRun | 目标 pid、killList、拉起命令明确 |\n| 排程 | schedule 可先 confirm | 立即返回，本轮继续完成 |\n| 交接 | helper 等 delay 与日志静默 | 到 maxWait 后执行或取消 |\n| 恢复 | 新 Host 投递 queue prompt | accepted 后删标记；失败保留 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无外部费；占状态/日志文件 | 核 target/命令、dry-run、建立救援路径 | 跨平台耗时未知 |\n| 每次重启 | 数秒停机及中断中的计算损失 | 等待回复、静默和健康检查 | 应按成功重启+继续任务计量 |\n| 失败恢复 | 可能需人工重开应用 | 读 last/helper/resume，判定是否补投 | 重复 resume 可能重复业务动作 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 回复后重启 | 源码先排程再由 helper 延迟执行 | 最后写入是否完全落盘 |\n| 宿主重拉 | 授权和明确 target 后停拉 | 各启动器/平台成功率 |\n| 自动继续 | accepted 后才删恢复标记 | 业务步骤幂等和重复风险 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：dsh-restart-planner 在固定版本下是否以可控依赖和总成本交付其核心能力，并值得目标用户采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种重复场景需要 dsh-restart-planner，合格交付与简单替代是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n代理安装或修改 Host 插件后需要重启才能继续，但当前进程不能杀死自己；基线是让用户手工重开并再次提示继续。合格结果是本轮回复先送达、会话落盘、明确目标被重拉、状态可审计，且自动继续只在新进程接受 prompt 后清标记。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:28-49](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md#L28-L49)\n\n固定版本作者材料支持 Q01 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n## 它是怎么破的\n\n三段式，把「一次自杀」拆成**三个互不相干的进程**：\n\n| 阶段 | 谁在做 | 做什么 |\n|---|---|---|\n| **1. 排程** | 你（agent / 用户） | 调用 `self_restart` → 立刻返回。**这一轮还没结束，什么都还没发生。** |\n| **2. 交接** | 插件（宿主里） | 算好\"要杀谁、用什么命令拉回来\"，把任务交给一个**在宿主进程树之外**的 helper，并等它回来报到 |\n| **3. 动手** | helper（独立进程） | 先等 `delaySeconds`（让这一轮回复送达）→ 再等会话日志**落盘安静** → 停 → 拉 → 体检 → 写报告 |\n\n关键在第 2 步：**helper 必须活过它自己杀掉的那棵进程树。**\n\n### Windows 上为什么必须绕道 Explorer\n\n这不是\"保险起见\"，是**实测出来的硬约束**：\n\n- 桌面端的宿主是 Chromium 起的，**进程在一个 job object 里**。被杀时 job 一关，里面的成员**一起没** —— helper 如果也在里面，就没人把 DSH 拉回来了。\n- 直接 `spawn(..., { detached: true })` 在 Windows 上还有第二个坑：**PowerShell 被 detached 起来后什么都不做**（进程秒退、退出码 0、脚本一行都没跑）。这是实测结论，不是猜的。\n\n所以 Windows 上走的是：**生成一个 `.lnk`，让 `explorer.exe` 去启动 helper**。\nExplorer 在 job 之外、在交互会话里，由它起的进程才能**活过这次重启**，也才能把窗口放回用户桌面上。\n（拿不到 Explorer 时退化成普通子进程，并在报告里写明这是降级路径。）\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · dsh-restart-planner 的入口、调用链、状态变化与副作用如何实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nself_restart 工具提供 schedule/status/cancel/resume；schedule 固定目标、写授权与恢复标记，把任务交给进程树外 helper。helper 等 delay 和会话静默后停止并拉起，写 last.json；新 Host 延迟读取 resume.json，以 sessionController.prompt queue 投递，成功才删除，失败保留重试。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:372-460](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/lib/index.js#L372-L460)\n\n固定版本源码用于核对 Q02 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（89行）</summary>\n\n```text\n/**\n * 重启后把「继续」投递进那个会话。\n *\n * 用 `sessionController.prompt`（0.2.x 的现成入口）而不是 dsh-restart 的\n * `agent.followup`（那个 API 在 0.2.x 已经不存在）。**投递成功才删标记**，\n * 失败保留，下次启动还能再试。\n *\n * @param {object} ctx 宿主上下文\n * @param {string} stateDir 状态目录\n * @param {object} cfg 插件配置\n * @returns {() => void} 取消函数\n */\nfunction startResumeDelivery(ctx, stateDir, cfg) {\n  if (cfg.resumeAfterRestart === false) return () => {};\n  if (readResume(stateDir) === null) return () => {};\n  const pauseMs = Number.isFinite(cfg.resumeDelayMs) ? Math.max(0, cfg.resumeDelayMs) : 8000;\n  const timer = setTimeout(() => {\n    logResume(stateDir, 'startup: 发现恢复标记，开始投递');\n    const promptFor = async (sessionId, prompt) => {\n      const svc = typeof ctx?.get === 'function' ? ctx.get('sessionController') : undefined;\n      if (svc === null || svc === undefined || typeof svc.prompt !== 'function') {\n        throw new Error(`sessionController 不可用（typeof prompt=${typeof svc?.prompt}）`);\n      }\n      // 第二个参数是**必需的 AbortSignal**：不传就会在服务内部 `signal.throwIfAborted()` 上炸\n      // （2026-10-17 实测错误：Cannot read properties of undefined (reading 'throwIfAborted')）。\n      const controller = new AbortController();\n      const kill = setTimeout(() => controller.abort(), 30000);\n      kill.unref?.();\n      try {\n        const result = await svc.prompt({\n          requestId: `resume-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,\n          sessionId,\n          mode: 'queue',\n          content: [{ type: 'text', text: prompt }],\n        }, controller.signal);\n        if (result !== null && typeof result === 'object' && result.accepted === false) {\n          throw new Error(`prompt 未被接受：${JSON.stringify(result).slice(0, 160)}`);\n        }\n      } finally {\n        clearTimeout(kill);\n      }\n    };\n    const log = (line) => {\n      logResume(stateDir, line);\n      if (cfg.quiet !== true) console.error(`[dsh-restart-planner] ${line}`);\n    };\n    deliverResume({\n      stateDir,\n      promptFor,\n      retries: Number.isFinite(cfg.resumeRetries) ? cfg.resumeRetries : 6,\n      retryDelayMs: Number.isFinite(cfg.resumeRetryDelayMs) ? cfg.resumeRetryDelayMs : 3000,\n      log,\n    }).catch((err) => log(`resume: 投递过程出错：${err instanceof Error ? err.message : String(err)}`));\n  }, pauseMs);\n  timer.unref?.();\n  return () => clearTimeout(timer);\n}\n\n/**\n * 挂载插件。\n * @param {import('@deepseek-ai/cordis').Context} ctx 宿主上下文\n * @param {object} [config] 插件配置\n */\nexport function apply(ctx, config) {\n  const cfg = config ?? {};\n  if (cfg.enabled === false) return;\n  const { stateDir, sessionRoot } = paths(cfg);\n  const disposers = [];\n\n  // 重启后自动继续：本进程起来时如果还有恢复标记，等宿主安顿一下就把「继续」投进去。\n  try {\n    disposers.push(startResumeDelivery(ctx, stateDir, cfg));\n  } catch {\n    /* 投递只该是加分项，绝不该拖垮插件加载 */\n  }\n\n  if (ctx.tools !== undefined && typeof ctx.tools.register === 'function') {\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'self_restart',\n      description: [\n        '让 agent 自己安排一次宿主（DSH）重启：装/改插件、改了 .js、需要重载宿主时用，不必再让用户手动关开。',\n        \"action='schedule'：排程重启。**调用后立刻返回**，真正的「停 + 拉」发生在你这一轮回复送达、且会话日志落盘安静之后（默认 T+20s 起、静默 4s、最长等 180s）。之后把这一轮正常说完即可。\",\n        \"  可选参数：reason（写进报告的动机）、delaySeconds（至少等多久）、quietSeconds、maxWaitSeconds、dryRun（只演算不动手）、relaunchCommand（特殊启动器/包装脚本才需要）。\",\n        \"action='status'：体检 + 报告 —— 当前 pid 与运行时长、现在重启会结束哪些进程、用什么命令拉回来、上一次重启的结果（重启回来后的第一条消息应该先看它）。\",\n        \"action='cancel'：撤掉还没执行的那次排程。\",\n        '典型用法：装完插件/改完代码 → schedule(reason) → 说完这一轮 → 重启后 status 汇报结果。',\n        '它平时完全静默：不常驻、不轮询、不占资源，只在你真的调用时才动。',\n      ].join('\\n'),\n      timeoutMs: 60000,\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对宿主原生能力或简单替代，dsh-restart-planner 的具体增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对人工重启，它把进程死亡点放到回复与写盘之后，并用外部 helper 与持久恢复标记跨越宿主生命周期；比按钮插件更适合 agent 自主流程。优势依赖目标解析和会话静默确实可靠，且“继续”提示不等于原任务状态自动恢复。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:28-49](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md#L28-L49)\n\n固定版本作者材料支持 Q03 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n## 它是怎么破的\n\n三段式，把「一次自杀」拆成**三个互不相干的进程**：\n\n| 阶段 | 谁在做 | 做什么 |\n|---|---|---|\n| **1. 排程** | 你（agent / 用户） | 调用 `self_restart` → 立刻返回。**这一轮还没结束，什么都还没发生。** |\n| **2. 交接** | 插件（宿主里） | 算好\"要杀谁、用什么命令拉回来\"，把任务交给一个**在宿主进程树之外**的 helper，并等它回来报到 |\n| **3. 动手** | helper（独立进程） | 先等 `delaySeconds`（让这一轮回复送达）→ 再等会话日志**落盘安静** → 停 → 拉 → 体检 → 写报告 |\n\n关键在第 2 步：**helper 必须活过它自己杀掉的那棵进程树。**\n\n### Windows 上为什么必须绕道 Explorer\n\n这不是\"保险起见\"，是**实测出来的硬约束**：\n\n- 桌面端的宿主是 Chromium 起的，**进程在一个 job object 里**。被杀时 job 一关，里面的成员**一起没** —— helper 如果也在里面，就没人把 DSH 拉回来了。\n- 直接 `spawn(..., { detached: true })` 在 Windows 上还有第二个坑：**PowerShell 被 detached 起来后什么都不做**（进程秒退、退出码 0、脚本一行都没跑）。这是实测结论，不是猜的。\n\n所以 Windows 上走的是：**生成一个 `.lnk`，让 `explorer.exe` 去启动 helper**。\nExplorer 在 job 之外、在交互会话里，由它起的进程才能**活过这次重启**，也才能把窗口放回用户桌面上。\n（拿不到 Explorer 时退化成普通子进程，并在报告里写明这是降级路径。）\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使 dsh-restart-planner 的核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最关键质疑是强制停止前的“静默”只能近似落盘完整，最后写入仍可能丢失；自动继续可能在环境尚未完全恢复时重复动作。默认 confirm=false 与 resume=true 对无人值守有利，却扩大误排程后果；重复 schedule 覆盖旧排程而不排队。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:372-460](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/lib/index.js#L372-L460)\n\n固定版本源码用于核对 Q04 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（89行）</summary>\n\n```text\n/**\n * 重启后把「继续」投递进那个会话。\n *\n * 用 `sessionController.prompt`（0.2.x 的现成入口）而不是 dsh-restart 的\n * `agent.followup`（那个 API 在 0.2.x 已经不存在）。**投递成功才删标记**，\n * 失败保留，下次启动还能再试。\n *\n * @param {object} ctx 宿主上下文\n * @param {string} stateDir 状态目录\n * @param {object} cfg 插件配置\n * @returns {() => void} 取消函数\n */\nfunction startResumeDelivery(ctx, stateDir, cfg) {\n  if (cfg.resumeAfterRestart === false) return () => {};\n  if (readResume(stateDir) === null) return () => {};\n  const pauseMs = Number.isFinite(cfg.resumeDelayMs) ? Math.max(0, cfg.resumeDelayMs) : 8000;\n  const timer = setTimeout(() => {\n    logResume(stateDir, 'startup: 发现恢复标记，开始投递');\n    const promptFor = async (sessionId, prompt) => {\n      const svc = typeof ctx?.get === 'function' ? ctx.get('sessionController') : undefined;\n      if (svc === null || svc === undefined || typeof svc.prompt !== 'function') {\n        throw new Error(`sessionController 不可用（typeof prompt=${typeof svc?.prompt}）`);\n      }\n      // 第二个参数是**必需的 AbortSignal**：不传就会在服务内部 `signal.throwIfAborted()` 上炸\n      // （2026-10-17 实测错误：Cannot read properties of undefined (reading 'throwIfAborted')）。\n      const controller = new AbortController();\n      const kill = setTimeout(() => controller.abort(), 30000);\n      kill.unref?.();\n      try {\n        const result = await svc.prompt({\n          requestId: `resume-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,\n          sessionId,\n          mode: 'queue',\n          content: [{ type: 'text', text: prompt }],\n        }, controller.signal);\n        if (result !== null && typeof result === 'object' && result.accepted === false) {\n          throw new Error(`prompt 未被接受：${JSON.stringify(result).slice(0, 160)}`);\n        }\n      } finally {\n        clearTimeout(kill);\n      }\n    };\n    const log = (line) => {\n      logResume(stateDir, line);\n      if (cfg.quiet !== true) console.error(`[dsh-restart-planner] ${line}`);\n    };\n    deliverResume({\n      stateDir,\n      promptFor,\n      retries: Number.isFinite(cfg.resumeRetries) ? cfg.resumeRetries : 6,\n      retryDelayMs: Number.isFinite(cfg.resumeRetryDelayMs) ? cfg.resumeRetryDelayMs : 3000,\n      log,\n    }).catch((err) => log(`resume: 投递过程出错：${err instanceof Error ? err.message : String(err)}`));\n  }, pauseMs);\n  timer.unref?.();\n  return () => clearTimeout(timer);\n}\n\n/**\n * 挂载插件。\n * @param {import('@deepseek-ai/cordis').Context} ctx 宿主上下文\n * @param {object} [config] 插件配置\n */\nexport function apply(ctx, config) {\n  const cfg = config ?? {};\n  if (cfg.enabled === false) return;\n  const { stateDir, sessionRoot } = paths(cfg);\n  const disposers = [];\n\n  // 重启后自动继续：本进程起来时如果还有恢复标记，等宿主安顿一下就把「继续」投进去。\n  try {\n    disposers.push(startResumeDelivery(ctx, stateDir, cfg));\n  } catch {\n    /* 投递只该是加分项，绝不该拖垮插件加载 */\n  }\n\n  if (ctx.tools !== undefined && typeof ctx.tools.register === 'function') {\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'self_restart',\n      description: [\n        '让 agent 自己安排一次宿主（DSH）重启：装/改插件、改了 .js、需要重载宿主时用，不必再让用户手动关开。',\n        \"action='schedule'：排程重启。**调用后立刻返回**，真正的「停 + 拉」发生在你这一轮回复送达、且会话日志落盘安静之后（默认 T+20s 起、静默 4s、最长等 180s）。之后把这一轮正常说完即可。\",\n        \"  可选参数：reason（写进报告的动机）、delaySeconds（至少等多久）、quietSeconds、maxWaitSeconds、dryRun（只演算不动手）、relaunchCommand（特殊启动器/包装脚本才需要）。\",\n        \"action='status'：体检 + 报告 —— 当前 pid 与运行时长、现在重启会结束哪些进程、用什么命令拉回来、上一次重启的结果（重启回来后的第一条消息应该先看它）。\",\n        \"action='cancel'：撤掉还没执行的那次排程。\",\n        '典型用法：装完插件/改完代码 → schedule(reason) → 说完这一轮 → 重启后 status 汇报结果。',\n        '它平时完全静默：不常驻、不轮询、不占资源，只在你真的调用时才动。',\n      ].join('\\n'),\n      timeoutMs: 60000,\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-restart-planner 启动、持续生效与失败降级依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n需要兼容 DSH tools、sessionController、会话目录和可写状态目录；Windows 真机链依赖 Explorer/PowerShell，其他平台代码未真机验证。confirm 可选依赖 userQuestions；缺失时按明确 fallback。特殊启动器需 relaunchCommand，否则目标/命令解析失败应拒绝。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:28-49](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md#L28-L49)\n\n固定版本作者材料支持 Q05 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n## 它是怎么破的\n\n三段式，把「一次自杀」拆成**三个互不相干的进程**：\n\n| 阶段 | 谁在做 | 做什么 |\n|---|---|---|\n| **1. 排程** | 你（agent / 用户） | 调用 `self_restart` → 立刻返回。**这一轮还没结束，什么都还没发生。** |\n| **2. 交接** | 插件（宿主里） | 算好\"要杀谁、用什么命令拉回来\"，把任务交给一个**在宿主进程树之外**的 helper，并等它回来报到 |\n| **3. 动手** | helper（独立进程） | 先等 `delaySeconds`（让这一轮回复送达）→ 再等会话日志**落盘安静** → 停 → 拉 → 体检 → 写报告 |\n\n关键在第 2 步：**helper 必须活过它自己杀掉的那棵进程树。**\n\n### Windows 上为什么必须绕道 Explorer\n\n这不是\"保险起见\"，是**实测出来的硬约束**：\n\n- 桌面端的宿主是 Chromium 起的，**进程在一个 job object 里**。被杀时 job 一关，里面的成员**一起没** —— helper 如果也在里面，就没人把 DSH 拉回来了。\n- 直接 `spawn(..., { detached: true })` 在 Windows 上还有第二个坑：**PowerShell 被 detached 起来后什么都不做**（进程秒退、退出码 0、脚本一行都没跑）。这是实测结论，不是猜的。\n\n所以 Windows 上走的是：**生成一个 `.lnk`，让 `explorer.exe` 去启动 helper**。\nExplorer 在 job 之外、在交互会话里，由它起的进程才能**活过这次重启**，也才能把窗口放回用户桌面上。\n（拿不到 Explorer 时退化成普通子进程，并在报告里写明这是降级路径。）\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · dsh-restart-planner 完成一个合格任务的首次、持续与失败恢复成本是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次要执行 status/resolve 与 dryRun，确认 targetPid、killList、拉起命令和手工救援；每次真实重启付出 delay+quiet+停机时间，正在运行的工具被终止；失败时需读 last/resume/helper 日志，手工拉起并决定是否调用 resume，避免未确认状态重复任务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:372-460](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/lib/index.js#L372-L460)\n\n固定版本源码用于核对 Q06 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（89行）</summary>\n\n```text\n/**\n * 重启后把「继续」投递进那个会话。\n *\n * 用 `sessionController.prompt`（0.2.x 的现成入口）而不是 dsh-restart 的\n * `agent.followup`（那个 API 在 0.2.x 已经不存在）。**投递成功才删标记**，\n * 失败保留，下次启动还能再试。\n *\n * @param {object} ctx 宿主上下文\n * @param {string} stateDir 状态目录\n * @param {object} cfg 插件配置\n * @returns {() => void} 取消函数\n */\nfunction startResumeDelivery(ctx, stateDir, cfg) {\n  if (cfg.resumeAfterRestart === false) return () => {};\n  if (readResume(stateDir) === null) return () => {};\n  const pauseMs = Number.isFinite(cfg.resumeDelayMs) ? Math.max(0, cfg.resumeDelayMs) : 8000;\n  const timer = setTimeout(() => {\n    logResume(stateDir, 'startup: 发现恢复标记，开始投递');\n    const promptFor = async (sessionId, prompt) => {\n      const svc = typeof ctx?.get === 'function' ? ctx.get('sessionController') : undefined;\n      if (svc === null || svc === undefined || typeof svc.prompt !== 'function') {\n        throw new Error(`sessionController 不可用（typeof prompt=${typeof svc?.prompt}）`);\n      }\n      // 第二个参数是**必需的 AbortSignal**：不传就会在服务内部 `signal.throwIfAborted()` 上炸\n      // （2026-10-17 实测错误：Cannot read properties of undefined (reading 'throwIfAborted')）。\n      const controller = new AbortController();\n      const kill = setTimeout(() => controller.abort(), 30000);\n      kill.unref?.();\n      try {\n        const result = await svc.prompt({\n          requestId: `resume-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,\n          sessionId,\n          mode: 'queue',\n          content: [{ type: 'text', text: prompt }],\n        }, controller.signal);\n        if (result !== null && typeof result === 'object' && result.accepted === false) {\n          throw new Error(`prompt 未被接受：${JSON.stringify(result).slice(0, 160)}`);\n        }\n      } finally {\n        clearTimeout(kill);\n      }\n    };\n    const log = (line) => {\n      logResume(stateDir, line);\n      if (cfg.quiet !== true) console.error(`[dsh-restart-planner] ${line}`);\n    };\n    deliverResume({\n      stateDir,\n      promptFor,\n      retries: Number.isFinite(cfg.resumeRetries) ? cfg.resumeRetries : 6,\n      retryDelayMs: Number.isFinite(cfg.resumeRetryDelayMs) ? cfg.resumeRetryDelayMs : 3000,\n      log,\n    }).catch((err) => log(`resume: 投递过程出错：${err instanceof Error ? err.message : String(err)}`));\n  }, pauseMs);\n  timer.unref?.();\n  return () => clearTimeout(timer);\n}\n\n/**\n * 挂载插件。\n * @param {import('@deepseek-ai/cordis').Context} ctx 宿主上下文\n * @param {object} [config] 插件配置\n */\nexport function apply(ctx, config) {\n  const cfg = config ?? {};\n  if (cfg.enabled === false) return;\n  const { stateDir, sessionRoot } = paths(cfg);\n  const disposers = [];\n\n  // 重启后自动继续：本进程起来时如果还有恢复标记，等宿主安顿一下就把「继续」投进去。\n  try {\n    disposers.push(startResumeDelivery(ctx, stateDir, cfg));\n  } catch {\n    /* 投递只该是加分项，绝不该拖垮插件加载 */\n  }\n\n  if (ctx.tools !== undefined && typeof ctx.tools.register === 'function') {\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'self_restart',\n      description: [\n        '让 agent 自己安排一次宿主（DSH）重启：装/改插件、改了 .js、需要重载宿主时用，不必再让用户手动关开。',\n        \"action='schedule'：排程重启。**调用后立刻返回**，真正的「停 + 拉」发生在你这一轮回复送达、且会话日志落盘安静之后（默认 T+20s 起、静默 4s、最长等 180s）。之后把这一轮正常说完即可。\",\n        \"  可选参数：reason（写进报告的动机）、delaySeconds（至少等多久）、quietSeconds、maxWaitSeconds、dryRun（只演算不动手）、relaunchCommand（特殊启动器/包装脚本才需要）。\",\n        \"action='status'：体检 + 报告 —— 当前 pid 与运行时长、现在重启会结束哪些进程、用什么命令拉回来、上一次重启的结果（重启回来后的第一条消息应该先看它）。\",\n        \"action='cancel'：撤掉还没执行的那次排程。\",\n        '典型用法：装完插件/改完代码 → schedule(reason) → 说完这一轮 → 重启后 status 汇报结果。',\n        '它平时完全静默：不常驻、不轮询、不占资源，只在你真的调用时才动。',\n      ].join('\\n'),\n      timeoutMs: 60000,\n```\n\n</details>\n\n#### 缺口\n\n- 自动继续对有外部副作用任务的判重能力未知\n  **影响**：可能在重启后重复发布、写文件或调用服务\n  **进一步探讨**：用含幂等/非幂等步骤的故障注入任务验证每个重启阶段，统计重复副作用与丢步骤\n\n<a id=\"research-q07\"></a>\n\n### Q07 · dsh-restart-planner 的工程可靠性和可迁移设计如何？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n排程、计划解析、helper 和 resume 投递拆分，授权标记与临时目录闸防测试误杀，恢复标记采用“成功才删”。可复用的是跨重启交接协议；迁移到别的宿主必须重新证明进程树、写盘安静信号和 prompt 幂等。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:372-460](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/lib/index.js#L372-L460)\n\n固定版本源码用于核对 Q07 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（89行）</summary>\n\n```text\n/**\n * 重启后把「继续」投递进那个会话。\n *\n * 用 `sessionController.prompt`（0.2.x 的现成入口）而不是 dsh-restart 的\n * `agent.followup`（那个 API 在 0.2.x 已经不存在）。**投递成功才删标记**，\n * 失败保留，下次启动还能再试。\n *\n * @param {object} ctx 宿主上下文\n * @param {string} stateDir 状态目录\n * @param {object} cfg 插件配置\n * @returns {() => void} 取消函数\n */\nfunction startResumeDelivery(ctx, stateDir, cfg) {\n  if (cfg.resumeAfterRestart === false) return () => {};\n  if (readResume(stateDir) === null) return () => {};\n  const pauseMs = Number.isFinite(cfg.resumeDelayMs) ? Math.max(0, cfg.resumeDelayMs) : 8000;\n  const timer = setTimeout(() => {\n    logResume(stateDir, 'startup: 发现恢复标记，开始投递');\n    const promptFor = async (sessionId, prompt) => {\n      const svc = typeof ctx?.get === 'function' ? ctx.get('sessionController') : undefined;\n      if (svc === null || svc === undefined || typeof svc.prompt !== 'function') {\n        throw new Error(`sessionController 不可用（typeof prompt=${typeof svc?.prompt}）`);\n      }\n      // 第二个参数是**必需的 AbortSignal**：不传就会在服务内部 `signal.throwIfAborted()` 上炸\n      // （2026-10-17 实测错误：Cannot read properties of undefined (reading 'throwIfAborted')）。\n      const controller = new AbortController();\n      const kill = setTimeout(() => controller.abort(), 30000);\n      kill.unref?.();\n      try {\n        const result = await svc.prompt({\n          requestId: `resume-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,\n          sessionId,\n          mode: 'queue',\n          content: [{ type: 'text', text: prompt }],\n        }, controller.signal);\n        if (result !== null && typeof result === 'object' && result.accepted === false) {\n          throw new Error(`prompt 未被接受：${JSON.stringify(result).slice(0, 160)}`);\n        }\n      } finally {\n        clearTimeout(kill);\n      }\n    };\n    const log = (line) => {\n      logResume(stateDir, line);\n      if (cfg.quiet !== true) console.error(`[dsh-restart-planner] ${line}`);\n    };\n    deliverResume({\n      stateDir,\n      promptFor,\n      retries: Number.isFinite(cfg.resumeRetries) ? cfg.resumeRetries : 6,\n      retryDelayMs: Number.isFinite(cfg.resumeRetryDelayMs) ? cfg.resumeRetryDelayMs : 3000,\n      log,\n    }).catch((err) => log(`resume: 投递过程出错：${err instanceof Error ? err.message : String(err)}`));\n  }, pauseMs);\n  timer.unref?.();\n  return () => clearTimeout(timer);\n}\n\n/**\n * 挂载插件。\n * @param {import('@deepseek-ai/cordis').Context} ctx 宿主上下文\n * @param {object} [config] 插件配置\n */\nexport function apply(ctx, config) {\n  const cfg = config ?? {};\n  if (cfg.enabled === false) return;\n  const { stateDir, sessionRoot } = paths(cfg);\n  const disposers = [];\n\n  // 重启后自动继续：本进程起来时如果还有恢复标记，等宿主安顿一下就把「继续」投进去。\n  try {\n    disposers.push(startResumeDelivery(ctx, stateDir, cfg));\n  } catch {\n    /* 投递只该是加分项，绝不该拖垮插件加载 */\n  }\n\n  if (ctx.tools !== undefined && typeof ctx.tools.register === 'function') {\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'self_restart',\n      description: [\n        '让 agent 自己安排一次宿主（DSH）重启：装/改插件、改了 .js、需要重载宿主时用，不必再让用户手动关开。',\n        \"action='schedule'：排程重启。**调用后立刻返回**，真正的「停 + 拉」发生在你这一轮回复送达、且会话日志落盘安静之后（默认 T+20s 起、静默 4s、最长等 180s）。之后把这一轮正常说完即可。\",\n        \"  可选参数：reason（写进报告的动机）、delaySeconds（至少等多久）、quietSeconds、maxWaitSeconds、dryRun（只演算不动手）、relaunchCommand（特殊启动器/包装脚本才需要）。\",\n        \"action='status'：体检 + 报告 —— 当前 pid 与运行时长、现在重启会结束哪些进程、用什么命令拉回来、上一次重启的结果（重启回来后的第一条消息应该先看它）。\",\n        \"action='cancel'：撤掉还没执行的那次排程。\",\n        '典型用法：装完插件/改完代码 → schedule(reason) → 说完这一轮 → 重启后 status 汇报结果。',\n        '它平时完全静默：不常驻、不轮询、不占资源，只在你真的调用时才动。',\n      ].join('\\n'),\n      timeoutMs: 60000,\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献与限制可推导什么可证伪的新设计假设？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设是给恢复标记增加原任务幂等键与上一步完成摘要，可把“继续一句话”升级为可判重的恢复协议。最小实验让 20 个含外部写入的任务在四个阶段重启，比较当前 prompt 与幂等恢复的重复副作用、丢步骤率和人工接管次数；任一重复写远端即否定自动恢复。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:372-460](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/lib/index.js#L372-L460)\n\n固定版本源码用于核对 Q08 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（89行）</summary>\n\n```text\n/**\n * 重启后把「继续」投递进那个会话。\n *\n * 用 `sessionController.prompt`（0.2.x 的现成入口）而不是 dsh-restart 的\n * `agent.followup`（那个 API 在 0.2.x 已经不存在）。**投递成功才删标记**，\n * 失败保留，下次启动还能再试。\n *\n * @param {object} ctx 宿主上下文\n * @param {string} stateDir 状态目录\n * @param {object} cfg 插件配置\n * @returns {() => void} 取消函数\n */\nfunction startResumeDelivery(ctx, stateDir, cfg) {\n  if (cfg.resumeAfterRestart === false) return () => {};\n  if (readResume(stateDir) === null) return () => {};\n  const pauseMs = Number.isFinite(cfg.resumeDelayMs) ? Math.max(0, cfg.resumeDelayMs) : 8000;\n  const timer = setTimeout(() => {\n    logResume(stateDir, 'startup: 发现恢复标记，开始投递');\n    const promptFor = async (sessionId, prompt) => {\n      const svc = typeof ctx?.get === 'function' ? ctx.get('sessionController') : undefined;\n      if (svc === null || svc === undefined || typeof svc.prompt !== 'function') {\n        throw new Error(`sessionController 不可用（typeof prompt=${typeof svc?.prompt}）`);\n      }\n      // 第二个参数是**必需的 AbortSignal**：不传就会在服务内部 `signal.throwIfAborted()` 上炸\n      // （2026-10-17 实测错误：Cannot read properties of undefined (reading 'throwIfAborted')）。\n      const controller = new AbortController();\n      const kill = setTimeout(() => controller.abort(), 30000);\n      kill.unref?.();\n      try {\n        const result = await svc.prompt({\n          requestId: `resume-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,\n          sessionId,\n          mode: 'queue',\n          content: [{ type: 'text', text: prompt }],\n        }, controller.signal);\n        if (result !== null && typeof result === 'object' && result.accepted === false) {\n          throw new Error(`prompt 未被接受：${JSON.stringify(result).slice(0, 160)}`);\n        }\n      } finally {\n        clearTimeout(kill);\n      }\n    };\n    const log = (line) => {\n      logResume(stateDir, line);\n      if (cfg.quiet !== true) console.error(`[dsh-restart-planner] ${line}`);\n    };\n    deliverResume({\n      stateDir,\n      promptFor,\n      retries: Number.isFinite(cfg.resumeRetries) ? cfg.resumeRetries : 6,\n      retryDelayMs: Number.isFinite(cfg.resumeRetryDelayMs) ? cfg.resumeRetryDelayMs : 3000,\n      log,\n    }).catch((err) => log(`resume: 投递过程出错：${err instanceof Error ? err.message : String(err)}`));\n  }, pauseMs);\n  timer.unref?.();\n  return () => clearTimeout(timer);\n}\n\n/**\n * 挂载插件。\n * @param {import('@deepseek-ai/cordis').Context} ctx 宿主上下文\n * @param {object} [config] 插件配置\n */\nexport function apply(ctx, config) {\n  const cfg = config ?? {};\n  if (cfg.enabled === false) return;\n  const { stateDir, sessionRoot } = paths(cfg);\n  const disposers = [];\n\n  // 重启后自动继续：本进程起来时如果还有恢复标记，等宿主安顿一下就把「继续」投进去。\n  try {\n    disposers.push(startResumeDelivery(ctx, stateDir, cfg));\n  } catch {\n    /* 投递只该是加分项，绝不该拖垮插件加载 */\n  }\n\n  if (ctx.tools !== undefined && typeof ctx.tools.register === 'function') {\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'self_restart',\n      description: [\n        '让 agent 自己安排一次宿主（DSH）重启：装/改插件、改了 .js、需要重载宿主时用，不必再让用户手动关开。',\n        \"action='schedule'：排程重启。**调用后立刻返回**，真正的「停 + 拉」发生在你这一轮回复送达、且会话日志落盘安静之后（默认 T+20s 起、静默 4s、最长等 180s）。之后把这一轮正常说完即可。\",\n        \"  可选参数：reason（写进报告的动机）、delaySeconds（至少等多久）、quietSeconds、maxWaitSeconds、dryRun（只演算不动手）、relaunchCommand（特殊启动器/包装脚本才需要）。\",\n        \"action='status'：体检 + 报告 —— 当前 pid 与运行时长、现在重启会结束哪些进程、用什么命令拉回来、上一次重启的结果（重启回来后的第一条消息应该先看它）。\",\n        \"action='cancel'：撤掉还没执行的那次排程。\",\n        '典型用法：装完插件/改完代码 → schedule(reason) → 说完这一轮 → 重启后 status 汇报结果。',\n        '它平时完全静默：不常驻、不轮询、不占资源，只在你真的调用时才动。',\n      ].join('\\n'),\n      timeoutMs: 60000,\n```\n\n</details>\n\n#### 缺口\n\n- 自动继续对有外部副作用任务的判重能力未知\n  **影响**：可能在重启后重复发布、写文件或调用服务\n  **进一步探讨**：用含幂等/非幂等步骤的故障注入任务验证每个重启阶段，统计重复副作用与丢步骤\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 哪些人应观察、试用或拒绝采用 dsh-restart-planner？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n仅建议具备救援入口的插件开发环境观察；先 dryRun，随后在空闲会话做一次 confirm=true、resume=false 的真实重启，再单独验证恢复投递。生产工作站、长事务或不可重复外部写入期间不应让 agent 自主 schedule；last.json 不为 ok 或 resume 标记滞留时停止自动继续。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:28-49](https://github.com/7gzgn/dsh-restart-planner/blob/31562ec5555d6e93a81c251b39d173b5d80c03c6/README.md#L28-L49)\n\n固定版本作者材料支持 Q09 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n## 它是怎么破的\n\n三段式，把「一次自杀」拆成**三个互不相干的进程**：\n\n| 阶段 | 谁在做 | 做什么 |\n|---|---|---|\n| **1. 排程** | 你（agent / 用户） | 调用 `self_restart` → 立刻返回。**这一轮还没结束，什么都还没发生。** |\n| **2. 交接** | 插件（宿主里） | 算好\"要杀谁、用什么命令拉回来\"，把任务交给一个**在宿主进程树之外**的 helper，并等它回来报到 |\n| **3. 动手** | helper（独立进程） | 先等 `delaySeconds`（让这一轮回复送达）→ 再等会话日志**落盘安静** → 停 → 拉 → 体检 → 写报告 |\n\n关键在第 2 步：**helper 必须活过它自己杀掉的那棵进程树。**\n\n### Windows 上为什么必须绕道 Explorer\n\n这不是\"保险起见\"，是**实测出来的硬约束**：\n\n- 桌面端的宿主是 Chromium 起的，**进程在一个 job object 里**。被杀时 job 一关，里面的成员**一起没** —— helper 如果也在里面，就没人把 DSH 拉回来了。\n- 直接 `spawn(..., { detached: true })` 在 Windows 上还有第二个坑：**PowerShell 被 detached 起来后什么都不做**（进程秒退、退出码 0、脚本一行都没跑）。这是实测结论，不是猜的。\n\n所以 Windows 上走的是：**生成一个 `.lnk`，让 `explorer.exe` 去启动 helper**。\nExplorer 在 job 之外、在交互会话里，由它起的进程才能**活过这次重启**，也才能把窗口放回用户桌面上。\n（拿不到 Explorer 时退化成普通子进程，并在报告里写明这是降级路径。）\n```\n\n</details>\n\n#### 缺口\n\n- 自动继续对有外部副作用任务的判重能力未知\n  **影响**：可能在重启后重复发布、写文件或调用服务\n  **进一步探讨**：用含幂等/非幂等步骤的故障注入任务验证每个重启阶段，统计重复副作用与丢步骤\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1e082ebdbe5400f70c8c739848a12cccba0d5b522f1e85dd2cd3240c6fc3e3a5。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 3 | 722 | 597 | 76 | — |\n| .js | source | 4 | 1672 | 1122 | 457 | — |\n| .md | source | 1 | 220 | — | — | 2908 |\n| .mjs | example | 2 | 93 | 60 | 22 | — |\n| .mjs | test | 1 | 694 | 560 | 85 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| self_restart | 让 agent 排程/取消/查询重启 | schedule 是破坏动作；先 dry-run |\n| 跨重启 helper | 宿主退出后仍能重拉 | 平台/启动器差异可能失败 |\n| 恢复 prompt | 重启后向原会话排队继续 | 只恢复提示，不证明任务状态幂等 |\n\n## 工程亮点\n\n排程、计划解析、helper 和 resume 投递拆分，授权标记与临时目录闸防测试误杀，恢复标记采用“成功才删”。可复用的是跨重启交接协议；迁移到别的宿主必须重新证明进程树、写盘安静信号和 prompt 幂等。 详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读检查固定提交 31562ec5555d6e93a81c251b39d173b5d80c03c6 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。\n- 下一步：先用 dryRun 固定 target/killList/command，再在隔离 Host 注入写盘未静默、helper 中断、健康检查失败和 prompt 拒绝；分别核 last 状态、resume 标记保留、手工救援与任务副作用是否只发生一次。\n",
+        "metadata": {
+            "repository": "7gzgn/dsh-restart-planner",
+            "repository_id": 1422176522,
+            "captured_at": "2026-10-22T16:03:28.181Z",
+            "window_start": "2026-09-22T16:03:28.181Z",
+            "stars": 0,
+            "pushed_at": "2026-10-18T04:00:47Z",
+            "issues": {
+                "open": 0,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0DB2:F66E0:9FB483:ACA4CA:6ADA33D3 and timestamp 2026-10-22 16:03:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A28.181Z..2026-10-22T16%3A03%3A28.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0EEE:15C753:A01AD8:AD1418:6ADA33D5 and timestamp 2026-10-22 16:03:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A28.181Z..2026-10-22T16%3A03%3A28.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 102E:F66E0:9FB651:ACA69C:6ADA33D6 and timestamp 2026-10-22 16:03:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A28.181Z..2026-10-22T16%3A03%3A28.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1146:1BCF5F:AA34B4:B72D32:6ADA33D7 and timestamp 2026-10-22 16:03:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-restart-planner",
+                "captured_at": "2026-10-22T16:03:35.622Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-restart-planner",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": "2026-10-22T13:27:00.291Z",
+                    "captured_at": "2026-10-22T16:03:35.622Z",
+                    "source_url": "https://registry.npmjs.org/dsh-restart-planner",
+                    "error": null,
+                    "latest_version": "0.4.6",
+                    "latest_published_at": "2026-10-22T13:28:18.060Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1422176522:root",
             "repository": "7gzgn/dsh-restart-planner",

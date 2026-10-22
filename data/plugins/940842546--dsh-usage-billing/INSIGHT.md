@@ -1,0 +1,1570 @@
+# dsh-usage-billing
+
+[返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
+
+分析版本：[d16e244](https://github.com/940842546/dsh-usage-billing/tree/d16e2445a8021814765fec14912507da6cafecae)
+
+<!-- BEGIN META -->
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/940842546/dsh-usage-billing) [![npm 30d 1,051](https://img.shields.io/static/v1?label=npm+30d&message=1%2C051&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-billing) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-usage-billing)
+<!-- END META -->
+
+> **实现功能**：监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。
+
+> **核心亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
+
+> **风险与缺陷**：核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](#research-q04)。
+
+**本文目录**
+
+- [1 插件分析](#detail-section-1)
+  - [1.1 用途与适用场景](#detail-section-2)
+  - [1.2 能力、流程与成本](#detail-section-3)
+  - [1.3 工程贡献](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
+- [4 研究问题与完整回答](#detail-section-10)
+  - [Q01 · 谁在何种重复场景需要 dsh-usage-billing，合格交付与简单替代是什么？](#detail-section-11)
+  - [Q02 · dsh-usage-billing 的入口、调用链、状态变化与副作用如何实现？](#detail-section-12)
+  - [Q03 · 相对宿主原生能力或简单替代，dsh-usage-billing 的具体增量是什么？](#detail-section-13)
+  - [Q04 · 什么前提最可能使 dsh-usage-billing 的核心价值不成立？](#detail-section-14)
+  - [Q05 · dsh-usage-billing 启动、持续生效与失败降级依赖什么？](#detail-section-15)
+  - [Q06 · dsh-usage-billing 完成一个合格任务的首次、持续与失败恢复成本是什么？](#detail-section-16)
+  - [Q07 · dsh-usage-billing 的工程可靠性和可迁移设计如何？](#detail-section-17)
+  - [Q08 · 由贡献与限制可推导什么可证伪的新设计假设？](#detail-section-18)
+  - [Q09 · 哪些人应观察、试用或拒绝采用 dsh-usage-billing？](#detail-section-19)
+
+<a id="detail-section-1"></a>
+
+## 1 插件分析
+
+<a id="detail-section-2"></a>
+
+### 1.1 用途与适用场景
+
+> **用途**：频繁使用 DeepSeek 模型的个人或团队希望按会话、模型、日期追踪 token 和估算费用，基线是手工导出日志乘官方单价。合格结果是每次调用只计一次、时区/节假日/模型档位正确、共享文件不丢写，估算与官方账单在定义误差内可对账。 详见[Q01](#research-q01)。
+
+频繁使用 DeepSeek 模型的个人或团队希望按会话、模型、日期追踪 token 和估算费用，基线是手工导出日志乘官方单价。合格结果是每次调用只计一次、时区/节假日/模型档位正确、共享文件不丢写，估算与官方账单在定义误差内可对账。
+
+<a id="detail-section-3"></a>
+
+### 1.2 能力、流程与成本
+
+#### 能力
+
+| 能力 | 主要用途 | 使用条件与边界 |
+| --- | --- | --- |
+| 实时记账 | 按流事件累计token和估算费用 | 仅覆盖可见llm/stream，非官方账单 |
+| 历史回填 | 扫描本机会话重建统计 | 去重/旧日志兼容决定准确性 |
+| 预算与图表 | 按日/会话/模型展示并告警 | 价格、时区和假日表需维护 |
+| 余额查询 | 读取DeepSeek账户余额 | 需要API Key和网络；余额不等于分项账单 |
+| 导出 | CSV/JSON用于外部对账 | 导出继承估算偏差 |
+
+#### 启动与依赖
+
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| DSH llm/stream/sessionQuery | 必需 | 实时采集与历史回填 | 缺事件会漏计 |
+| 价格/模型/假日配置 | 必需 | 将token换算为金额 | 过期会系统性偏差 |
+| 单实例本地JSON | 必需 | 持久化所有统计 | 多实例可能覆盖 |
+| DeepSeek API Key/网络 | 余额才需要 | 查询官方总余额 | 失败不影响本地token统计 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| --- | --- | --- |
+| 配置 | 用户核价格、假日、汇率和预算 | 保存后只影响后续调用 |
+| 采集 | 后台监听stream并可首次回填 | 每条调用形成token/费用记录 |
+| 查看 | UI或usage_billing按范围查询 | 区分估算与官方余额 |
+| 对账/恢复 | 导出并比官方账单；必要时重建 | 差额超阈值停用告警，不盲目清空 |
+
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次使用 | 无独立订阅；可选余额API网络 | 校准价格、模型名、假日和回填范围 | 对账工时未知 |
+| 持续使用 | 本地存储、事件聚合、可选10分钟请求 | 查看告警并维护价格 | 按一天/会话的可对账记录计量 |
+| 失败恢复 | 重复回填或覆盖会增加核算成本 | 从temp恢复、备份后重建并对账 | 清空不可逆，多实例冲突未解决 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
+| --- | --- | --- |
+| token可见性 | 源码监听流并分项持久化 | 漏计/重复率 |
+| 费用估算 | 实现多日期/峰谷/模型价格 | 与官方账单误差 |
+| 预算行为 | 阈值toast和进度可见 | 是否减少超支、是否误报 |
+
+> **思考**：核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](#research-q04)。
+
+<a id="detail-section-4"></a>
+
+### 1.3 工程贡献
+
+> **亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
+
+相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
+
+Host 与 client 分面，temp 副本恢复、schema迁移和双实例心跳说明维护者关注持久化；但共享单文件没有多写者事务。可借鉴价格版本化与缓存命中拆分，复用时应把价格源/生效时间作为外部可审计数据。 详见[Q07](#research-q07)。
+
+<a id="detail-section-5"></a>
+
+### 1.4 主要限制
+
+核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](#research-q04)。
+
+<a id="detail-section-6"></a>
+
+### 1.5 使用建议
+
+只建议把它当预算观察工具，不用于报销或财务结算。单实例、主要使用已映射 DeepSeek 模型且愿意定期更新价格的人可观察；先用一周只读统计与官方账单对账，差额、重复回填或 unknown 模型超过门槛就停用告警和续航预测。 详见[Q09](#research-q09)。
+
+<a id="detail-section-7"></a>
+
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+源码确认了 llm/stream 采集、分段价格换算、历史回填、临时副本持久化、余额接口及多个统计界面；本轮没有产生真实模型流量或读取官方账单，故只能确认估算链路，不能确认漏计/重复率、价格表时效或日级金额准确性。
+
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：只读检查固定提交 d16e2445a8021814765fec14912507da6cafecae 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。
+- 下一步：在单实例 profile 记录一周已知模型调用，保存原始token样本并执行一次回填；比较实时前后是否翻倍、价格时段和假日边界，再与官方日账单核差额，余额接口单独验证失败显示未知。
+
+**分析版本**
+
+- **仓库**：[940842546/dsh-usage-billing](https://github.com/940842546/dsh-usage-billing)
+- **版本号**：0.9.5（[固定提交 d16e244](https://github.com/940842546/dsh-usage-billing/tree/d16e2445a8021814765fec14912507da6cafecae)）
+- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+
+<a id="detail-section-8"></a>
+
+## 2 未来设计假设（未验证）
+
+<a id="innovation"></a>
+
+未验证假设是从官方账单抽取每日总额做只读校准，并显示“覆盖率/差额”而非单一费用，可防止估算被误当账单。最小实验连续30天比较插件日汇总、官方账单和原始调用样本，按模型/时段定位差额；95%日期超出预设误差即否定当前计价可用性。 详见[Q08](#research-q08)。
+
+在单实例 profile 记录一周已知模型调用，保存原始token样本并执行一次回填；比较实时前后是否翻倍、价格时段和假日边界，再与官方日账单核差额，余额接口单独验证失败显示未知。
+
+<a id="detail-section-9"></a>
+
+## 3 辅助信息
+
+<details>
+<summary>工程统计与口径</summary>
+
+| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
+|---|---|---:|---:|---:|---:|---:|
+| .js | source | 2 | 3195 | 2918 | 133 | — |
+| .md | source | 3 | 351 | — | — | 3912 |
+| .mjs | test | 3 | 368 | 312 | 31 | — |
+
+</details>
+
+**活跃度**
+
+Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/940842546/dsh-usage-billing/issues) 查看。
+
+<a id="detail-section-10"></a>
+
+## 4 研究问题与完整回答
+
+**插件研究总目标**：dsh-usage-billing 在固定版本下是否以可控依赖和总成本交付其核心能力，并值得目标用户采用？
+
+<a id="research-q01"></a>
+
+<a id="detail-section-11"></a>
+
+### Q01 · 谁在何种重复场景需要 dsh-usage-billing，合格交付与简单替代是什么？
+
+**研究主题**：场景与需求
+
+#### 完整回答
+
+频繁使用 DeepSeek 模型的个人或团队希望按会话、模型、日期追踪 token 和估算费用，基线是手工导出日志乘官方单价。合格结果是每次调用只计一次、时区/节假日/模型档位正确、共享文件不丢写，估算与官方账单在定义误差内可对账。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:7-30](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/README.md#L7-L30)
+
+固定版本作者材料支持 Q01 的功能范围或边界；本轮未把声明当运行结果。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+针对 DeepSeek Harness 的**免构建**双面插件：自动统计本机所有会话的 DeepSeek 模型调用，按官方定价分段计费，并在主界面与设置页提供图表化的用量面板。
+
+> 计费口径：2026-08-17 00:00（北京时间）前旧价；之后峰谷定价（高峰为**工作日** 9:00–12:00、14:00–18:00（2026-08-23 起生效，此前周末同样计高峰），空闲价为高峰价的一半；9/10 12:00 起 flash 系列再次调价（空闲 hit 0.02 / miss 1 / out 4，高峰 ×2，pro 不变；V4 Pro 官方已确认 9/14 后继续提供服务、计费方式不变（仍按 pro 价；插件保留路由开关供将来官方恢复路由时开启，当前关闭）））。**法定节假日与调休上班的周末全天空闲计费**（内置 2026 年国务院放假安排，可在设置中自行增补）。价格表见文末。
+
+## 功能
+
+- **全自动统计**：监听 `llm/stream`，所有会话的每次模型调用都会被记录（输入/输出/缓存命中/未命中 tokens）
+- **历史回填**：首次启动自动扫描本机会话日志，重建历史用量与消费，并附会话标题
+- **分段计费**：按北京时间自动归入「调价前旧价 / 调价后高峰 / 调价后空闲」三段（2026-08-23 起高峰仅限工作日，周末全天空闲；此前周末同样计高峰；**法定节假日与调休上班日全天空闲**，节假日名单可在设置页编辑，2027 年安排公布后可自行增补）
+- **预算告警通知**：跨 80%/100% 阈值时桌面 toast 主动提醒（每日每档一次），进度条临近变橙、超支变红
+- **定价可配置**：价格表、高峰时段、调价边界日期、美元汇率均可编辑（改动只对后续调用生效），一键恢复默认
+- **数据导出**：一键导出 CSV（按日 / 按会话，文件名含日期范围）或 JSON，便于对账
+- **官方余额拉取**：自动检测已配置的 DeepSeek API Key，拉取官方账户余额（总余额 / 充值 / 赠金），每 10 分钟自动刷新，未配置 Key 时静默跳过
+- **余额续航预估**：按近 7 天日均花费估算余额可用天数与预计耗尽日期
+- **告警历史**：设置页展示最近预算告警记录
+- **日趋势图**：设置页近 30 天每日费用柱状图
+- **统计更稳健**：写入带 temp 副本，主文件损坏时自动恢复；双实例心跳检测告警
+- **主界面**：
+  - 侧边栏底部「Token 用量」卡片（当前模型 + 本会话 tokens/费用，千分位显示）→ 点击弹出居中「Token 用量与费用统计」弹窗（¥/USD 币种切换、总览卡片、按模型/按会话表格、预算进度、官方余额、分段占比、用量热力图）
+  - 输入框下方常驻一行**当前会话**的用量：环形进度（今日预算，≥80% 变橙、≥100% 变红）+ 花费/调用/tokens，**点击弹出详情面板**（本会话花费与今日合计、按计费时段着色的占比条、调用/输入/缓存命中率/输出明细、时段花费、模型分布、今日预算进度；Esc 或点击面板外关闭）——交互与样式对齐官方 ContextMeter
+- **设置页 → 用量统计**：完整明细（统计卡片、预算进度、分段占比、日/周/月/年/累计热力图（悬停即时显示 token 与金额）、按会话 Top 8（可点击打开对应会话）、按模型、最近调用、回填/清空/导出、计费与预算设置）
+- **动态工具 `usage_billing`**：模型可直接查询统计（“现在用了多少钱？”“今天呢？”——支持 today/month/all 范围）
+- **持久化**：数据写入写策略根目录 `.dsh-usage-billing.json`，重启不丢（v0.5.4 前为 `.dsh-usage-stats.json`，升级后自动迁移）
+- **中英双语**：所有界面文案跟随应用语言设置即时切换（中文 / English）
+```
+
+</details>
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · dsh-usage-billing 的入口、调用链、状态变化与副作用如何实现？
+
+**研究主题**：功能与机制
+
+#### 完整回答
+
+Host 监听 llm/stream 采集输入、缓存命中/未命中和输出 token，按北京时间、调价边界、工作日/非高峰日与模型名映射价格，原子式 temp 保存到策略根；首次可扫描 sessionQuery 回填。web 路由提供查询/配置/回填/导出/余额，usage_billing 工具和四个 UI slot 展示统计，余额每10分钟可访问 DeepSeek API。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:833-1041](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js#L833-L1041)
+
+固定版本源码用于核对 Q02 的接线、状态或失败路径；这是静态检查。
+
+<details>
+<summary>查看原文（209行）</summary>
+
+```text
+    ctx.on('llm/stream', (options, next) => {
+      const modelName = pickModel(options);
+      const stream = next();
+      const acc = { input: 0, cacheHit: 0, cacheMiss: 0, output: 0, seen: false };
+      return (async function* () {
+        try {
+          for await (const chunk of stream) {
+            const u = extractUsage(chunk);
+            if (u) {
+              acc.seen = true;
+              if (u.input > acc.input) acc.input = u.input;
+              if (u.cacheHit > acc.cacheHit) acc.cacheHit = u.cacheHit;
+              if (u.cacheMiss > acc.cacheMiss) acc.cacheMiss = u.cacheMiss;
+              if (u.output > acc.output) acc.output = u.output;
+            }
+            yield chunk;
+          }
+        } finally {
+          if (acc.seen && (acc.input > 0 || acc.output > 0)) {
+            let sid = undefined;
+            try {
+              const initiator = agentsSvc && typeof agentsSvc.currentInitiator === 'function' ? agentsSvc.currentInitiator() : undefined;
+              sid = initiator && initiator.session && typeof initiator.session.id === 'string' ? initiator.session.id : undefined;
+            } catch {
+              sid = undefined;
+            }
+            recordUsage(modelName, acc, Date.now(), sid);
+          }
+        }
+      })();
+    });
+
+    ctx.on('dispose', () => { saveNow(); });
+
+    // ---------- 双实例检测：心跳文件（60s 内有其他实例心跳则告警一次） ----------
+    if (diag.writeRoot) {
+      try {
+        const hb = await fs.resolve(diag.writeRoot + '/.dsh-usage-billing.heartbeat');
+        // 过渡期同时读旧名心跳（旧版本实例写旧名），新心跳只写新名
+        const hbOld = await fs.resolve(diag.writeRoot + '/.dsh-usage-stats.heartbeat');
+        try {
+          let prev = Number(await fs.readText(hb));
+          if (!Number.isFinite(prev) || prev <= 0) prev = Number(await fs.readText(hbOld));
+          if (Number.isFinite(prev) && Date.now() - prev < 60000 && prev > 0) {
+            console.warn('[usage-billing] another instance heartbeat detected ('
+              + Math.round((Date.now() - prev) / 1000) + 's ago); concurrent writes will overwrite each other');
+            diag.multiInstance = true;
+          }
+        } catch {
+          // 无心跳文件，正常
+        }
+        ctx.effect(() => ctx.interval(() => {
+          fs.writeText(hb, String(Date.now()), undefined, undefined, policyForRoot(diag.writeRoot)).catch(() => {});
+        }, 20000), 'usage-billing: heartbeat');
+      } catch {
+        // 心跳路径解析失败则跳过检测
+      }
+    }
+
+    function json(res, status, value) {
+      res.statusCode = status;
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify(value));
+    }
+
+    const statsRouteHandler = async (req, res) => {
+        try {
+          const url = new URL(req.url, 'http://localhost');
+          const action = url.searchParams.get('action');
+
+          if (req.method === 'POST') {
+            if (action === 'backfill') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              const result = await backfillStats();
+              json(res, 200, result);
+              return;
+            }
+            if (action === 'clear') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              saveNow();
+              json(res, 200, { ok: true });
+              return;
+            }
+            if (action === 'config') {
+              const oldCfg = stats.config || defaultConfig();
+              if (url.searchParams.get('reset') === '1') {
+                stats.config = defaultConfig();
+              } else {
+                const raw = await readJsonBody(req);
+                stats.config = sanitizeConfig(raw);
+              }
+              // 预算额度变化时重置该档去重，让新额度重新计算（否则旧额度已触发过同档就不弹了）
+              if (oldCfg.budgetDaily !== stats.config.budgetDaily) budgetFired.daily.level = 0;
+              if (oldCfg.budgetMonthly !== stats.config.budgetMonthly) budgetFired.monthly.level = 0;
+              await saveNow();
+              fetchBalance().catch(() => {});
+              checkBudgetAlerts();
+              json(res, 200, { ok: true, config: stats.config });
+              return;
+            }
+            if (action === 'balance') {
+              await fetchBalance();
+              json(res, 200, { ok: true, balance: balanceState });
+              return;
+            }
+          }
+
+          if (req.method === 'GET' && action === 'export') {
+            const format = url.searchParams.get('format') || 'csv';
+            const scope = url.searchParams.get('scope') || 'day';
+            await exportStats(res, format, scope);
+            return;
+          }
+
+          const cfg = stats.config || defaultConfig();
+          json(res, 200, {
+            stats,
+            config: cfg,
+            budget: computeBudget(stats, cfg),
+            balance: balanceState,
+            runway: balanceState && balanceState.status === 'ok' && balanceState.data ? computeRunway(stats, balanceState.data.total) : null,
+            alerts: budgetEvents.slice(), // 不清理：多个轮询器共享同一 GET，清空会导致事件被非 toaster 消费；客户端按 id 持久去重，缓冲区有界(≤8)
+            saved: Boolean(statsFile),
+            diag,
+          });
+        } catch (e) {
+          json(res, 500, { error: String(e && e.message ? e.message : e) });
+        }
+      };
+
+    // 主路由 /usage-billing（插件宿主端与客户端同包同版本分发，无需旧路径兼容）
+    ctx.effect(() => webServer.register({
+      kind: 'exact',
+      path: '/usage-billing',
+      handler: statsRouteHandler,
+    }), 'usage-billing: stats route');
+
+    const usageToolDesc = '查询本机 DeepSeek API 用量与消费统计：按调价前旧价、调价后峰/谷时段分别计费（价格与峰谷时段可在设置中配置），含按会话明细与预算进度。scope 可选：today=今日、month=本月、all=累计（默认 all）。';
+    const usageToolOutput = {
+      schema: {
+        type: 'object',
+        properties: {
+          ok: { type: 'boolean' },
+          scope: { type: 'string' },
+          summary: { type: 'string' },
+          total: { type: 'object', additionalProperties: true },
+          byBand: { type: 'object', additionalProperties: true },
+          byModel: { type: 'object', additionalProperties: true },
+          bySession: { type: 'object', additionalProperties: true },
+          byDay: { type: 'object', additionalProperties: true },
+          byHour: { type: 'object', additionalProperties: true },
+          meta: { type: 'object', additionalProperties: true },
+          config: { type: 'object', additionalProperties: true },
+          budget: { type: 'object', additionalProperties: true },
+          balance: { type: 'object', additionalProperties: true },
+          diag: { type: 'object', additionalProperties: true },
+          updatedAt: { type: 'number' },
+        },
+        additionalProperties: true,
+      },
+      render(args, value) {
+        const text = value && typeof value.summary === 'string' ? value.summary : String(JSON.stringify(value));
+        return [{ type: 'text', text }];
+      },
+    };
+    const usageToolExecute = async (args) => {
+      const scope = args && (args.scope === 'today' || args.scope === 'month') ? args.scope : 'all';
+      const cfg = stats.config || defaultConfig();
+      const budget = computeBudget(stats, cfg);
+      const scopeTotals = scopeAggregate(stats, scope);
+      const scopeLabel = scope === 'today' ? '今日' : scope === 'month' ? '本月' : '';
+      return {
+        ok: true,
+        scope,
+        summary: formatSummary(stats, cfg, budget, balanceState, scopeLabel, scopeTotals),
+        total: scopeTotals || stats.total,
+        byBand: stats.byBand,
+        byModel: stats.byModel,
+        bySession: stats.bySession,
+        byDay: stats.byDay,
+        byHour: stats.byHour,
+        meta: stats.meta,
+        config: cfg,
+        budget,
+        balance: balanceState,
+        diag,
+        updatedAt: stats.updatedAt,
+      };
+    };
+    ctx.effect(() => tools.register(defineTool({
+      name: 'usage_billing',
+      description: usageToolDesc,
+      parameters: {
+        scope: { type: 'string', enum: ['today', 'month', 'all'], description: '统计范围：today=今日，month=本月，all=累计（默认）' },
+      },
+      output: usageToolOutput,
+      execute: usageToolExecute,
+    })), 'usage-billing: usage_billing tool');
+
+    // 官方余额：启动即拉取一次，之后每 10 分钟自动刷新（检测到 API Key 才真正发请求）
+    ctx.effect(() => {
+      fetchBalance().catch(() => {});
+      return ctx.interval(() => { fetchBalance().catch(() => {}); }, 10 * 60 * 1000);
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 相对宿主原生能力或简单替代，dsh-usage-billing 的具体增量是什么？
+
+**研究主题**：贡献与相对优势
+
+#### 完整回答
+
+相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:7-30](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/README.md#L7-L30)
+
+固定版本作者材料支持 Q03 的功能范围或边界；本轮未把声明当运行结果。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+针对 DeepSeek Harness 的**免构建**双面插件：自动统计本机所有会话的 DeepSeek 模型调用，按官方定价分段计费，并在主界面与设置页提供图表化的用量面板。
+
+> 计费口径：2026-08-17 00:00（北京时间）前旧价；之后峰谷定价（高峰为**工作日** 9:00–12:00、14:00–18:00（2026-08-23 起生效，此前周末同样计高峰），空闲价为高峰价的一半；9/10 12:00 起 flash 系列再次调价（空闲 hit 0.02 / miss 1 / out 4，高峰 ×2，pro 不变；V4 Pro 官方已确认 9/14 后继续提供服务、计费方式不变（仍按 pro 价；插件保留路由开关供将来官方恢复路由时开启，当前关闭）））。**法定节假日与调休上班的周末全天空闲计费**（内置 2026 年国务院放假安排，可在设置中自行增补）。价格表见文末。
+
+## 功能
+
+- **全自动统计**：监听 `llm/stream`，所有会话的每次模型调用都会被记录（输入/输出/缓存命中/未命中 tokens）
+- **历史回填**：首次启动自动扫描本机会话日志，重建历史用量与消费，并附会话标题
+- **分段计费**：按北京时间自动归入「调价前旧价 / 调价后高峰 / 调价后空闲」三段（2026-08-23 起高峰仅限工作日，周末全天空闲；此前周末同样计高峰；**法定节假日与调休上班日全天空闲**，节假日名单可在设置页编辑，2027 年安排公布后可自行增补）
+- **预算告警通知**：跨 80%/100% 阈值时桌面 toast 主动提醒（每日每档一次），进度条临近变橙、超支变红
+- **定价可配置**：价格表、高峰时段、调价边界日期、美元汇率均可编辑（改动只对后续调用生效），一键恢复默认
+- **数据导出**：一键导出 CSV（按日 / 按会话，文件名含日期范围）或 JSON，便于对账
+- **官方余额拉取**：自动检测已配置的 DeepSeek API Key，拉取官方账户余额（总余额 / 充值 / 赠金），每 10 分钟自动刷新，未配置 Key 时静默跳过
+- **余额续航预估**：按近 7 天日均花费估算余额可用天数与预计耗尽日期
+- **告警历史**：设置页展示最近预算告警记录
+- **日趋势图**：设置页近 30 天每日费用柱状图
+- **统计更稳健**：写入带 temp 副本，主文件损坏时自动恢复；双实例心跳检测告警
+- **主界面**：
+  - 侧边栏底部「Token 用量」卡片（当前模型 + 本会话 tokens/费用，千分位显示）→ 点击弹出居中「Token 用量与费用统计」弹窗（¥/USD 币种切换、总览卡片、按模型/按会话表格、预算进度、官方余额、分段占比、用量热力图）
+  - 输入框下方常驻一行**当前会话**的用量：环形进度（今日预算，≥80% 变橙、≥100% 变红）+ 花费/调用/tokens，**点击弹出详情面板**（本会话花费与今日合计、按计费时段着色的占比条、调用/输入/缓存命中率/输出明细、时段花费、模型分布、今日预算进度；Esc 或点击面板外关闭）——交互与样式对齐官方 ContextMeter
+- **设置页 → 用量统计**：完整明细（统计卡片、预算进度、分段占比、日/周/月/年/累计热力图（悬停即时显示 token 与金额）、按会话 Top 8（可点击打开对应会话）、按模型、最近调用、回填/清空/导出、计费与预算设置）
+- **动态工具 `usage_billing`**：模型可直接查询统计（“现在用了多少钱？”“今天呢？”——支持 today/month/all 范围）
+- **持久化**：数据写入写策略根目录 `.dsh-usage-billing.json`，重启不丢（v0.5.4 前为 `.dsh-usage-stats.json`，升级后自动迁移）
+- **中英双语**：所有界面文案跟随应用语言设置即时切换（中文 / English）
+```
+
+</details>
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 什么前提最可能使 dsh-usage-billing 的核心价值不成立？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:833-1041](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js#L833-L1041)
+
+固定版本源码用于核对 Q04 的接线、状态或失败路径；这是静态检查。
+
+<details>
+<summary>查看原文（209行）</summary>
+
+```text
+    ctx.on('llm/stream', (options, next) => {
+      const modelName = pickModel(options);
+      const stream = next();
+      const acc = { input: 0, cacheHit: 0, cacheMiss: 0, output: 0, seen: false };
+      return (async function* () {
+        try {
+          for await (const chunk of stream) {
+            const u = extractUsage(chunk);
+            if (u) {
+              acc.seen = true;
+              if (u.input > acc.input) acc.input = u.input;
+              if (u.cacheHit > acc.cacheHit) acc.cacheHit = u.cacheHit;
+              if (u.cacheMiss > acc.cacheMiss) acc.cacheMiss = u.cacheMiss;
+              if (u.output > acc.output) acc.output = u.output;
+            }
+            yield chunk;
+          }
+        } finally {
+          if (acc.seen && (acc.input > 0 || acc.output > 0)) {
+            let sid = undefined;
+            try {
+              const initiator = agentsSvc && typeof agentsSvc.currentInitiator === 'function' ? agentsSvc.currentInitiator() : undefined;
+              sid = initiator && initiator.session && typeof initiator.session.id === 'string' ? initiator.session.id : undefined;
+            } catch {
+              sid = undefined;
+            }
+            recordUsage(modelName, acc, Date.now(), sid);
+          }
+        }
+      })();
+    });
+
+    ctx.on('dispose', () => { saveNow(); });
+
+    // ---------- 双实例检测：心跳文件（60s 内有其他实例心跳则告警一次） ----------
+    if (diag.writeRoot) {
+      try {
+        const hb = await fs.resolve(diag.writeRoot + '/.dsh-usage-billing.heartbeat');
+        // 过渡期同时读旧名心跳（旧版本实例写旧名），新心跳只写新名
+        const hbOld = await fs.resolve(diag.writeRoot + '/.dsh-usage-stats.heartbeat');
+        try {
+          let prev = Number(await fs.readText(hb));
+          if (!Number.isFinite(prev) || prev <= 0) prev = Number(await fs.readText(hbOld));
+          if (Number.isFinite(prev) && Date.now() - prev < 60000 && prev > 0) {
+            console.warn('[usage-billing] another instance heartbeat detected ('
+              + Math.round((Date.now() - prev) / 1000) + 's ago); concurrent writes will overwrite each other');
+            diag.multiInstance = true;
+          }
+        } catch {
+          // 无心跳文件，正常
+        }
+        ctx.effect(() => ctx.interval(() => {
+          fs.writeText(hb, String(Date.now()), undefined, undefined, policyForRoot(diag.writeRoot)).catch(() => {});
+        }, 20000), 'usage-billing: heartbeat');
+      } catch {
+        // 心跳路径解析失败则跳过检测
+      }
+    }
+
+    function json(res, status, value) {
+      res.statusCode = status;
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify(value));
+    }
+
+    const statsRouteHandler = async (req, res) => {
+        try {
+          const url = new URL(req.url, 'http://localhost');
+          const action = url.searchParams.get('action');
+
+          if (req.method === 'POST') {
+            if (action === 'backfill') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              const result = await backfillStats();
+              json(res, 200, result);
+              return;
+            }
+            if (action === 'clear') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              saveNow();
+              json(res, 200, { ok: true });
+              return;
+            }
+            if (action === 'config') {
+              const oldCfg = stats.config || defaultConfig();
+              if (url.searchParams.get('reset') === '1') {
+                stats.config = defaultConfig();
+              } else {
+                const raw = await readJsonBody(req);
+                stats.config = sanitizeConfig(raw);
+              }
+              // 预算额度变化时重置该档去重，让新额度重新计算（否则旧额度已触发过同档就不弹了）
+              if (oldCfg.budgetDaily !== stats.config.budgetDaily) budgetFired.daily.level = 0;
+              if (oldCfg.budgetMonthly !== stats.config.budgetMonthly) budgetFired.monthly.level = 0;
+              await saveNow();
+              fetchBalance().catch(() => {});
+              checkBudgetAlerts();
+              json(res, 200, { ok: true, config: stats.config });
+              return;
+            }
+            if (action === 'balance') {
+              await fetchBalance();
+              json(res, 200, { ok: true, balance: balanceState });
+              return;
+            }
+          }
+
+          if (req.method === 'GET' && action === 'export') {
+            const format = url.searchParams.get('format') || 'csv';
+            const scope = url.searchParams.get('scope') || 'day';
+            await exportStats(res, format, scope);
+            return;
+          }
+
+          const cfg = stats.config || defaultConfig();
+          json(res, 200, {
+            stats,
+            config: cfg,
+            budget: computeBudget(stats, cfg),
+            balance: balanceState,
+            runway: balanceState && balanceState.status === 'ok' && balanceState.data ? computeRunway(stats, balanceState.data.total) : null,
+            alerts: budgetEvents.slice(), // 不清理：多个轮询器共享同一 GET，清空会导致事件被非 toaster 消费；客户端按 id 持久去重，缓冲区有界(≤8)
+            saved: Boolean(statsFile),
+            diag,
+          });
+        } catch (e) {
+          json(res, 500, { error: String(e && e.message ? e.message : e) });
+        }
+      };
+
+    // 主路由 /usage-billing（插件宿主端与客户端同包同版本分发，无需旧路径兼容）
+    ctx.effect(() => webServer.register({
+      kind: 'exact',
+      path: '/usage-billing',
+      handler: statsRouteHandler,
+    }), 'usage-billing: stats route');
+
+    const usageToolDesc = '查询本机 DeepSeek API 用量与消费统计：按调价前旧价、调价后峰/谷时段分别计费（价格与峰谷时段可在设置中配置），含按会话明细与预算进度。scope 可选：today=今日、month=本月、all=累计（默认 all）。';
+    const usageToolOutput = {
+      schema: {
+        type: 'object',
+        properties: {
+          ok: { type: 'boolean' },
+          scope: { type: 'string' },
+          summary: { type: 'string' },
+          total: { type: 'object', additionalProperties: true },
+          byBand: { type: 'object', additionalProperties: true },
+          byModel: { type: 'object', additionalProperties: true },
+          bySession: { type: 'object', additionalProperties: true },
+          byDay: { type: 'object', additionalProperties: true },
+          byHour: { type: 'object', additionalProperties: true },
+          meta: { type: 'object', additionalProperties: true },
+          config: { type: 'object', additionalProperties: true },
+          budget: { type: 'object', additionalProperties: true },
+          balance: { type: 'object', additionalProperties: true },
+          diag: { type: 'object', additionalProperties: true },
+          updatedAt: { type: 'number' },
+        },
+        additionalProperties: true,
+      },
+      render(args, value) {
+        const text = value && typeof value.summary === 'string' ? value.summary : String(JSON.stringify(value));
+        return [{ type: 'text', text }];
+      },
+    };
+    const usageToolExecute = async (args) => {
+      const scope = args && (args.scope === 'today' || args.scope === 'month') ? args.scope : 'all';
+      const cfg = stats.config || defaultConfig();
+      const budget = computeBudget(stats, cfg);
+      const scopeTotals = scopeAggregate(stats, scope);
+      const scopeLabel = scope === 'today' ? '今日' : scope === 'month' ? '本月' : '';
+      return {
+        ok: true,
+        scope,
+        summary: formatSummary(stats, cfg, budget, balanceState, scopeLabel, scopeTotals),
+        total: scopeTotals || stats.total,
+        byBand: stats.byBand,
+        byModel: stats.byModel,
+        bySession: stats.bySession,
+        byDay: stats.byDay,
+        byHour: stats.byHour,
+        meta: stats.meta,
+        config: cfg,
+        budget,
+        balance: balanceState,
+        diag,
+        updatedAt: stats.updatedAt,
+      };
+    };
+    ctx.effect(() => tools.register(defineTool({
+      name: 'usage_billing',
+      description: usageToolDesc,
+      parameters: {
+        scope: { type: 'string', enum: ['today', 'month', 'all'], description: '统计范围：today=今日，month=本月，all=累计（默认）' },
+      },
+      output: usageToolOutput,
+      execute: usageToolExecute,
+    })), 'usage-billing: usage_billing tool');
+
+    // 官方余额：启动即拉取一次，之后每 10 分钟自动刷新（检测到 API Key 才真正发请求）
+    ctx.effect(() => {
+      fetchBalance().catch(() => {});
+      return ctx.interval(() => { fetchBalance().catch(() => {}); }, 10 * 60 * 1000);
+```
+
+</details>
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · dsh-usage-billing 启动、持续生效与失败降级依赖什么？
+
+**研究主题**：依赖、兼容与流程
+
+#### 完整回答
+
+需要 DSH fs/sandboxPolicy/sessionQuery/timer/webServer/tools 与 client slots；可选 DeepSeek API Key 只用于余额。持续效果依赖官方价格和假日表维护、单实例写文件以及所有调用走 llm/stream。离线时本地统计仍可用，余额刷新失败应保持未知而非0。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:7-30](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/README.md#L7-L30)
+
+固定版本作者材料支持 Q05 的功能范围或边界；本轮未把声明当运行结果。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+针对 DeepSeek Harness 的**免构建**双面插件：自动统计本机所有会话的 DeepSeek 模型调用，按官方定价分段计费，并在主界面与设置页提供图表化的用量面板。
+
+> 计费口径：2026-08-17 00:00（北京时间）前旧价；之后峰谷定价（高峰为**工作日** 9:00–12:00、14:00–18:00（2026-08-23 起生效，此前周末同样计高峰），空闲价为高峰价的一半；9/10 12:00 起 flash 系列再次调价（空闲 hit 0.02 / miss 1 / out 4，高峰 ×2，pro 不变；V4 Pro 官方已确认 9/14 后继续提供服务、计费方式不变（仍按 pro 价；插件保留路由开关供将来官方恢复路由时开启，当前关闭）））。**法定节假日与调休上班的周末全天空闲计费**（内置 2026 年国务院放假安排，可在设置中自行增补）。价格表见文末。
+
+## 功能
+
+- **全自动统计**：监听 `llm/stream`，所有会话的每次模型调用都会被记录（输入/输出/缓存命中/未命中 tokens）
+- **历史回填**：首次启动自动扫描本机会话日志，重建历史用量与消费，并附会话标题
+- **分段计费**：按北京时间自动归入「调价前旧价 / 调价后高峰 / 调价后空闲」三段（2026-08-23 起高峰仅限工作日，周末全天空闲；此前周末同样计高峰；**法定节假日与调休上班日全天空闲**，节假日名单可在设置页编辑，2027 年安排公布后可自行增补）
+- **预算告警通知**：跨 80%/100% 阈值时桌面 toast 主动提醒（每日每档一次），进度条临近变橙、超支变红
+- **定价可配置**：价格表、高峰时段、调价边界日期、美元汇率均可编辑（改动只对后续调用生效），一键恢复默认
+- **数据导出**：一键导出 CSV（按日 / 按会话，文件名含日期范围）或 JSON，便于对账
+- **官方余额拉取**：自动检测已配置的 DeepSeek API Key，拉取官方账户余额（总余额 / 充值 / 赠金），每 10 分钟自动刷新，未配置 Key 时静默跳过
+- **余额续航预估**：按近 7 天日均花费估算余额可用天数与预计耗尽日期
+- **告警历史**：设置页展示最近预算告警记录
+- **日趋势图**：设置页近 30 天每日费用柱状图
+- **统计更稳健**：写入带 temp 副本，主文件损坏时自动恢复；双实例心跳检测告警
+- **主界面**：
+  - 侧边栏底部「Token 用量」卡片（当前模型 + 本会话 tokens/费用，千分位显示）→ 点击弹出居中「Token 用量与费用统计」弹窗（¥/USD 币种切换、总览卡片、按模型/按会话表格、预算进度、官方余额、分段占比、用量热力图）
+  - 输入框下方常驻一行**当前会话**的用量：环形进度（今日预算，≥80% 变橙、≥100% 变红）+ 花费/调用/tokens，**点击弹出详情面板**（本会话花费与今日合计、按计费时段着色的占比条、调用/输入/缓存命中率/输出明细、时段花费、模型分布、今日预算进度；Esc 或点击面板外关闭）——交互与样式对齐官方 ContextMeter
+- **设置页 → 用量统计**：完整明细（统计卡片、预算进度、分段占比、日/周/月/年/累计热力图（悬停即时显示 token 与金额）、按会话 Top 8（可点击打开对应会话）、按模型、最近调用、回填/清空/导出、计费与预算设置）
+- **动态工具 `usage_billing`**：模型可直接查询统计（“现在用了多少钱？”“今天呢？”——支持 today/month/all 范围）
+- **持久化**：数据写入写策略根目录 `.dsh-usage-billing.json`，重启不丢（v0.5.4 前为 `.dsh-usage-stats.json`，升级后自动迁移）
+- **中英双语**：所有界面文案跟随应用语言设置即时切换（中文 / English）
+```
+
+</details>
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · dsh-usage-billing 完成一个合格任务的首次、持续与失败恢复成本是什么？
+
+**研究主题**：效果与总成本
+
+#### 完整回答
+
+首次需核价格生效日、模型别名、币种汇率、预算和历史回填范围；持续占本地 JSON、每次流事件写入/面板聚合与可选10分钟余额网络请求；失败恢复包括 temp 主文件恢复、单次重建回填和人工对账，清空数据是不可逆动作需另行备份。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:833-1041](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js#L833-L1041)
+
+固定版本源码用于核对 Q06 的接线、状态或失败路径；这是静态检查。
+
+<details>
+<summary>查看原文（209行）</summary>
+
+```text
+    ctx.on('llm/stream', (options, next) => {
+      const modelName = pickModel(options);
+      const stream = next();
+      const acc = { input: 0, cacheHit: 0, cacheMiss: 0, output: 0, seen: false };
+      return (async function* () {
+        try {
+          for await (const chunk of stream) {
+            const u = extractUsage(chunk);
+            if (u) {
+              acc.seen = true;
+              if (u.input > acc.input) acc.input = u.input;
+              if (u.cacheHit > acc.cacheHit) acc.cacheHit = u.cacheHit;
+              if (u.cacheMiss > acc.cacheMiss) acc.cacheMiss = u.cacheMiss;
+              if (u.output > acc.output) acc.output = u.output;
+            }
+            yield chunk;
+          }
+        } finally {
+          if (acc.seen && (acc.input > 0 || acc.output > 0)) {
+            let sid = undefined;
+            try {
+              const initiator = agentsSvc && typeof agentsSvc.currentInitiator === 'function' ? agentsSvc.currentInitiator() : undefined;
+              sid = initiator && initiator.session && typeof initiator.session.id === 'string' ? initiator.session.id : undefined;
+            } catch {
+              sid = undefined;
+            }
+            recordUsage(modelName, acc, Date.now(), sid);
+          }
+        }
+      })();
+    });
+
+    ctx.on('dispose', () => { saveNow(); });
+
+    // ---------- 双实例检测：心跳文件（60s 内有其他实例心跳则告警一次） ----------
+    if (diag.writeRoot) {
+      try {
+        const hb = await fs.resolve(diag.writeRoot + '/.dsh-usage-billing.heartbeat');
+        // 过渡期同时读旧名心跳（旧版本实例写旧名），新心跳只写新名
+        const hbOld = await fs.resolve(diag.writeRoot + '/.dsh-usage-stats.heartbeat');
+        try {
+          let prev = Number(await fs.readText(hb));
+          if (!Number.isFinite(prev) || prev <= 0) prev = Number(await fs.readText(hbOld));
+          if (Number.isFinite(prev) && Date.now() - prev < 60000 && prev > 0) {
+            console.warn('[usage-billing] another instance heartbeat detected ('
+              + Math.round((Date.now() - prev) / 1000) + 's ago); concurrent writes will overwrite each other');
+            diag.multiInstance = true;
+          }
+        } catch {
+          // 无心跳文件，正常
+        }
+        ctx.effect(() => ctx.interval(() => {
+          fs.writeText(hb, String(Date.now()), undefined, undefined, policyForRoot(diag.writeRoot)).catch(() => {});
+        }, 20000), 'usage-billing: heartbeat');
+      } catch {
+        // 心跳路径解析失败则跳过检测
+      }
+    }
+
+    function json(res, status, value) {
+      res.statusCode = status;
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify(value));
+    }
+
+    const statsRouteHandler = async (req, res) => {
+        try {
+          const url = new URL(req.url, 'http://localhost');
+          const action = url.searchParams.get('action');
+
+          if (req.method === 'POST') {
+            if (action === 'backfill') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              const result = await backfillStats();
+              json(res, 200, result);
+              return;
+            }
+            if (action === 'clear') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              saveNow();
+              json(res, 200, { ok: true });
+              return;
+            }
+            if (action === 'config') {
+              const oldCfg = stats.config || defaultConfig();
+              if (url.searchParams.get('reset') === '1') {
+                stats.config = defaultConfig();
+              } else {
+                const raw = await readJsonBody(req);
+                stats.config = sanitizeConfig(raw);
+              }
+              // 预算额度变化时重置该档去重，让新额度重新计算（否则旧额度已触发过同档就不弹了）
+              if (oldCfg.budgetDaily !== stats.config.budgetDaily) budgetFired.daily.level = 0;
+              if (oldCfg.budgetMonthly !== stats.config.budgetMonthly) budgetFired.monthly.level = 0;
+              await saveNow();
+              fetchBalance().catch(() => {});
+              checkBudgetAlerts();
+              json(res, 200, { ok: true, config: stats.config });
+              return;
+            }
+            if (action === 'balance') {
+              await fetchBalance();
+              json(res, 200, { ok: true, balance: balanceState });
+              return;
+            }
+          }
+
+          if (req.method === 'GET' && action === 'export') {
+            const format = url.searchParams.get('format') || 'csv';
+            const scope = url.searchParams.get('scope') || 'day';
+            await exportStats(res, format, scope);
+            return;
+          }
+
+          const cfg = stats.config || defaultConfig();
+          json(res, 200, {
+            stats,
+            config: cfg,
+            budget: computeBudget(stats, cfg),
+            balance: balanceState,
+            runway: balanceState && balanceState.status === 'ok' && balanceState.data ? computeRunway(stats, balanceState.data.total) : null,
+            alerts: budgetEvents.slice(), // 不清理：多个轮询器共享同一 GET，清空会导致事件被非 toaster 消费；客户端按 id 持久去重，缓冲区有界(≤8)
+            saved: Boolean(statsFile),
+            diag,
+          });
+        } catch (e) {
+          json(res, 500, { error: String(e && e.message ? e.message : e) });
+        }
+      };
+
+    // 主路由 /usage-billing（插件宿主端与客户端同包同版本分发，无需旧路径兼容）
+    ctx.effect(() => webServer.register({
+      kind: 'exact',
+      path: '/usage-billing',
+      handler: statsRouteHandler,
+    }), 'usage-billing: stats route');
+
+    const usageToolDesc = '查询本机 DeepSeek API 用量与消费统计：按调价前旧价、调价后峰/谷时段分别计费（价格与峰谷时段可在设置中配置），含按会话明细与预算进度。scope 可选：today=今日、month=本月、all=累计（默认 all）。';
+    const usageToolOutput = {
+      schema: {
+        type: 'object',
+        properties: {
+          ok: { type: 'boolean' },
+          scope: { type: 'string' },
+          summary: { type: 'string' },
+          total: { type: 'object', additionalProperties: true },
+          byBand: { type: 'object', additionalProperties: true },
+          byModel: { type: 'object', additionalProperties: true },
+          bySession: { type: 'object', additionalProperties: true },
+          byDay: { type: 'object', additionalProperties: true },
+          byHour: { type: 'object', additionalProperties: true },
+          meta: { type: 'object', additionalProperties: true },
+          config: { type: 'object', additionalProperties: true },
+          budget: { type: 'object', additionalProperties: true },
+          balance: { type: 'object', additionalProperties: true },
+          diag: { type: 'object', additionalProperties: true },
+          updatedAt: { type: 'number' },
+        },
+        additionalProperties: true,
+      },
+      render(args, value) {
+        const text = value && typeof value.summary === 'string' ? value.summary : String(JSON.stringify(value));
+        return [{ type: 'text', text }];
+      },
+    };
+    const usageToolExecute = async (args) => {
+      const scope = args && (args.scope === 'today' || args.scope === 'month') ? args.scope : 'all';
+      const cfg = stats.config || defaultConfig();
+      const budget = computeBudget(stats, cfg);
+      const scopeTotals = scopeAggregate(stats, scope);
+      const scopeLabel = scope === 'today' ? '今日' : scope === 'month' ? '本月' : '';
+      return {
+        ok: true,
+        scope,
+        summary: formatSummary(stats, cfg, budget, balanceState, scopeLabel, scopeTotals),
+        total: scopeTotals || stats.total,
+        byBand: stats.byBand,
+        byModel: stats.byModel,
+        bySession: stats.bySession,
+        byDay: stats.byDay,
+        byHour: stats.byHour,
+        meta: stats.meta,
+        config: cfg,
+        budget,
+        balance: balanceState,
+        diag,
+        updatedAt: stats.updatedAt,
+      };
+    };
+    ctx.effect(() => tools.register(defineTool({
+      name: 'usage_billing',
+      description: usageToolDesc,
+      parameters: {
+        scope: { type: 'string', enum: ['today', 'month', 'all'], description: '统计范围：today=今日，month=本月，all=累计（默认）' },
+      },
+      output: usageToolOutput,
+      execute: usageToolExecute,
+    })), 'usage-billing: usage_billing tool');
+
+    // 官方余额：启动即拉取一次，之后每 10 分钟自动刷新（检测到 API Key 才真正发请求）
+    ctx.effect(() => {
+      fetchBalance().catch(() => {});
+      return ctx.interval(() => { fetchBalance().catch(() => {}); }, 10 * 60 * 1000);
+```
+
+</details>
+
+#### 缺口
+
+- 插件估算与同账户官方账单的日级差额未知
+  **影响**：无法把金额用于严肃预算或财务用途
+  **进一步探讨**：连续30天导出日汇总，与官方账单按模型/时段对账并标记unknown模型和重复回填
+
+<a id="research-q07"></a>
+
+<a id="detail-section-17"></a>
+
+### Q07 · dsh-usage-billing 的工程可靠性和可迁移设计如何？
+
+**研究主题**：工程质量与复用
+
+#### 完整回答
+
+Host 与 client 分面，temp 副本恢复、schema迁移和双实例心跳说明维护者关注持久化；但共享单文件没有多写者事务。可借鉴价格版本化与缓存命中拆分，复用时应把价格源/生效时间作为外部可审计数据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:833-1041](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js#L833-L1041)
+
+固定版本源码用于核对 Q07 的接线、状态或失败路径；这是静态检查。
+
+<details>
+<summary>查看原文（209行）</summary>
+
+```text
+    ctx.on('llm/stream', (options, next) => {
+      const modelName = pickModel(options);
+      const stream = next();
+      const acc = { input: 0, cacheHit: 0, cacheMiss: 0, output: 0, seen: false };
+      return (async function* () {
+        try {
+          for await (const chunk of stream) {
+            const u = extractUsage(chunk);
+            if (u) {
+              acc.seen = true;
+              if (u.input > acc.input) acc.input = u.input;
+              if (u.cacheHit > acc.cacheHit) acc.cacheHit = u.cacheHit;
+              if (u.cacheMiss > acc.cacheMiss) acc.cacheMiss = u.cacheMiss;
+              if (u.output > acc.output) acc.output = u.output;
+            }
+            yield chunk;
+          }
+        } finally {
+          if (acc.seen && (acc.input > 0 || acc.output > 0)) {
+            let sid = undefined;
+            try {
+              const initiator = agentsSvc && typeof agentsSvc.currentInitiator === 'function' ? agentsSvc.currentInitiator() : undefined;
+              sid = initiator && initiator.session && typeof initiator.session.id === 'string' ? initiator.session.id : undefined;
+            } catch {
+              sid = undefined;
+            }
+            recordUsage(modelName, acc, Date.now(), sid);
+          }
+        }
+      })();
+    });
+
+    ctx.on('dispose', () => { saveNow(); });
+
+    // ---------- 双实例检测：心跳文件（60s 内有其他实例心跳则告警一次） ----------
+    if (diag.writeRoot) {
+      try {
+        const hb = await fs.resolve(diag.writeRoot + '/.dsh-usage-billing.heartbeat');
+        // 过渡期同时读旧名心跳（旧版本实例写旧名），新心跳只写新名
+        const hbOld = await fs.resolve(diag.writeRoot + '/.dsh-usage-stats.heartbeat');
+        try {
+          let prev = Number(await fs.readText(hb));
+          if (!Number.isFinite(prev) || prev <= 0) prev = Number(await fs.readText(hbOld));
+          if (Number.isFinite(prev) && Date.now() - prev < 60000 && prev > 0) {
+            console.warn('[usage-billing] another instance heartbeat detected ('
+              + Math.round((Date.now() - prev) / 1000) + 's ago); concurrent writes will overwrite each other');
+            diag.multiInstance = true;
+          }
+        } catch {
+          // 无心跳文件，正常
+        }
+        ctx.effect(() => ctx.interval(() => {
+          fs.writeText(hb, String(Date.now()), undefined, undefined, policyForRoot(diag.writeRoot)).catch(() => {});
+        }, 20000), 'usage-billing: heartbeat');
+      } catch {
+        // 心跳路径解析失败则跳过检测
+      }
+    }
+
+    function json(res, status, value) {
+      res.statusCode = status;
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify(value));
+    }
+
+    const statsRouteHandler = async (req, res) => {
+        try {
+          const url = new URL(req.url, 'http://localhost');
+          const action = url.searchParams.get('action');
+
+          if (req.method === 'POST') {
+            if (action === 'backfill') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              const result = await backfillStats();
+              json(res, 200, result);
+              return;
+            }
+            if (action === 'clear') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              saveNow();
+              json(res, 200, { ok: true });
+              return;
+            }
+            if (action === 'config') {
+              const oldCfg = stats.config || defaultConfig();
+              if (url.searchParams.get('reset') === '1') {
+                stats.config = defaultConfig();
+              } else {
+                const raw = await readJsonBody(req);
+                stats.config = sanitizeConfig(raw);
+              }
+              // 预算额度变化时重置该档去重，让新额度重新计算（否则旧额度已触发过同档就不弹了）
+              if (oldCfg.budgetDaily !== stats.config.budgetDaily) budgetFired.daily.level = 0;
+              if (oldCfg.budgetMonthly !== stats.config.budgetMonthly) budgetFired.monthly.level = 0;
+              await saveNow();
+              fetchBalance().catch(() => {});
+              checkBudgetAlerts();
+              json(res, 200, { ok: true, config: stats.config });
+              return;
+            }
+            if (action === 'balance') {
+              await fetchBalance();
+              json(res, 200, { ok: true, balance: balanceState });
+              return;
+            }
+          }
+
+          if (req.method === 'GET' && action === 'export') {
+            const format = url.searchParams.get('format') || 'csv';
+            const scope = url.searchParams.get('scope') || 'day';
+            await exportStats(res, format, scope);
+            return;
+          }
+
+          const cfg = stats.config || defaultConfig();
+          json(res, 200, {
+            stats,
+            config: cfg,
+            budget: computeBudget(stats, cfg),
+            balance: balanceState,
+            runway: balanceState && balanceState.status === 'ok' && balanceState.data ? computeRunway(stats, balanceState.data.total) : null,
+            alerts: budgetEvents.slice(), // 不清理：多个轮询器共享同一 GET，清空会导致事件被非 toaster 消费；客户端按 id 持久去重，缓冲区有界(≤8)
+            saved: Boolean(statsFile),
+            diag,
+          });
+        } catch (e) {
+          json(res, 500, { error: String(e && e.message ? e.message : e) });
+        }
+      };
+
+    // 主路由 /usage-billing（插件宿主端与客户端同包同版本分发，无需旧路径兼容）
+    ctx.effect(() => webServer.register({
+      kind: 'exact',
+      path: '/usage-billing',
+      handler: statsRouteHandler,
+    }), 'usage-billing: stats route');
+
+    const usageToolDesc = '查询本机 DeepSeek API 用量与消费统计：按调价前旧价、调价后峰/谷时段分别计费（价格与峰谷时段可在设置中配置），含按会话明细与预算进度。scope 可选：today=今日、month=本月、all=累计（默认 all）。';
+    const usageToolOutput = {
+      schema: {
+        type: 'object',
+        properties: {
+          ok: { type: 'boolean' },
+          scope: { type: 'string' },
+          summary: { type: 'string' },
+          total: { type: 'object', additionalProperties: true },
+          byBand: { type: 'object', additionalProperties: true },
+          byModel: { type: 'object', additionalProperties: true },
+          bySession: { type: 'object', additionalProperties: true },
+          byDay: { type: 'object', additionalProperties: true },
+          byHour: { type: 'object', additionalProperties: true },
+          meta: { type: 'object', additionalProperties: true },
+          config: { type: 'object', additionalProperties: true },
+          budget: { type: 'object', additionalProperties: true },
+          balance: { type: 'object', additionalProperties: true },
+          diag: { type: 'object', additionalProperties: true },
+          updatedAt: { type: 'number' },
+        },
+        additionalProperties: true,
+      },
+      render(args, value) {
+        const text = value && typeof value.summary === 'string' ? value.summary : String(JSON.stringify(value));
+        return [{ type: 'text', text }];
+      },
+    };
+    const usageToolExecute = async (args) => {
+      const scope = args && (args.scope === 'today' || args.scope === 'month') ? args.scope : 'all';
+      const cfg = stats.config || defaultConfig();
+      const budget = computeBudget(stats, cfg);
+      const scopeTotals = scopeAggregate(stats, scope);
+      const scopeLabel = scope === 'today' ? '今日' : scope === 'month' ? '本月' : '';
+      return {
+        ok: true,
+        scope,
+        summary: formatSummary(stats, cfg, budget, balanceState, scopeLabel, scopeTotals),
+        total: scopeTotals || stats.total,
+        byBand: stats.byBand,
+        byModel: stats.byModel,
+        bySession: stats.bySession,
+        byDay: stats.byDay,
+        byHour: stats.byHour,
+        meta: stats.meta,
+        config: cfg,
+        budget,
+        balance: balanceState,
+        diag,
+        updatedAt: stats.updatedAt,
+      };
+    };
+    ctx.effect(() => tools.register(defineTool({
+      name: 'usage_billing',
+      description: usageToolDesc,
+      parameters: {
+        scope: { type: 'string', enum: ['today', 'month', 'all'], description: '统计范围：today=今日，month=本月，all=累计（默认）' },
+      },
+      output: usageToolOutput,
+      execute: usageToolExecute,
+    })), 'usage-billing: usage_billing tool');
+
+    // 官方余额：启动即拉取一次，之后每 10 分钟自动刷新（检测到 API Key 才真正发请求）
+    ctx.effect(() => {
+      fetchBalance().catch(() => {});
+      return ctx.interval(() => { fetchBalance().catch(() => {}); }, 10 * 60 * 1000);
+```
+
+</details>
+
+<a id="research-q08"></a>
+
+<a id="detail-section-18"></a>
+
+### Q08 · 由贡献与限制可推导什么可证伪的新设计假设？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是从官方账单抽取每日总额做只读校准，并显示“覆盖率/差额”而非单一费用，可防止估算被误当账单。最小实验连续30天比较插件日汇总、官方账单和原始调用样本，按模型/时段定位差额；95%日期超出预设误差即否定当前计价可用性。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:833-1041](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/lib/index.js#L833-L1041)
+
+固定版本源码用于核对 Q08 的接线、状态或失败路径；这是静态检查。
+
+<details>
+<summary>查看原文（209行）</summary>
+
+```text
+    ctx.on('llm/stream', (options, next) => {
+      const modelName = pickModel(options);
+      const stream = next();
+      const acc = { input: 0, cacheHit: 0, cacheMiss: 0, output: 0, seen: false };
+      return (async function* () {
+        try {
+          for await (const chunk of stream) {
+            const u = extractUsage(chunk);
+            if (u) {
+              acc.seen = true;
+              if (u.input > acc.input) acc.input = u.input;
+              if (u.cacheHit > acc.cacheHit) acc.cacheHit = u.cacheHit;
+              if (u.cacheMiss > acc.cacheMiss) acc.cacheMiss = u.cacheMiss;
+              if (u.output > acc.output) acc.output = u.output;
+            }
+            yield chunk;
+          }
+        } finally {
+          if (acc.seen && (acc.input > 0 || acc.output > 0)) {
+            let sid = undefined;
+            try {
+              const initiator = agentsSvc && typeof agentsSvc.currentInitiator === 'function' ? agentsSvc.currentInitiator() : undefined;
+              sid = initiator && initiator.session && typeof initiator.session.id === 'string' ? initiator.session.id : undefined;
+            } catch {
+              sid = undefined;
+            }
+            recordUsage(modelName, acc, Date.now(), sid);
+          }
+        }
+      })();
+    });
+
+    ctx.on('dispose', () => { saveNow(); });
+
+    // ---------- 双实例检测：心跳文件（60s 内有其他实例心跳则告警一次） ----------
+    if (diag.writeRoot) {
+      try {
+        const hb = await fs.resolve(diag.writeRoot + '/.dsh-usage-billing.heartbeat');
+        // 过渡期同时读旧名心跳（旧版本实例写旧名），新心跳只写新名
+        const hbOld = await fs.resolve(diag.writeRoot + '/.dsh-usage-stats.heartbeat');
+        try {
+          let prev = Number(await fs.readText(hb));
+          if (!Number.isFinite(prev) || prev <= 0) prev = Number(await fs.readText(hbOld));
+          if (Number.isFinite(prev) && Date.now() - prev < 60000 && prev > 0) {
+            console.warn('[usage-billing] another instance heartbeat detected ('
+              + Math.round((Date.now() - prev) / 1000) + 's ago); concurrent writes will overwrite each other');
+            diag.multiInstance = true;
+          }
+        } catch {
+          // 无心跳文件，正常
+        }
+        ctx.effect(() => ctx.interval(() => {
+          fs.writeText(hb, String(Date.now()), undefined, undefined, policyForRoot(diag.writeRoot)).catch(() => {});
+        }, 20000), 'usage-billing: heartbeat');
+      } catch {
+        // 心跳路径解析失败则跳过检测
+      }
+    }
+
+    function json(res, status, value) {
+      res.statusCode = status;
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
+      res.end(JSON.stringify(value));
+    }
+
+    const statsRouteHandler = async (req, res) => {
+        try {
+          const url = new URL(req.url, 'http://localhost');
+          const action = url.searchParams.get('action');
+
+          if (req.method === 'POST') {
+            if (action === 'backfill') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              const result = await backfillStats();
+              json(res, 200, result);
+              return;
+            }
+            if (action === 'clear') {
+              const savedConfig = stats.config || defaultConfig();
+              stats = emptyStats();
+              stats.meta.liveSince = Date.now();
+              stats.config = savedConfig;
+              saveNow();
+              json(res, 200, { ok: true });
+              return;
+            }
+            if (action === 'config') {
+              const oldCfg = stats.config || defaultConfig();
+              if (url.searchParams.get('reset') === '1') {
+                stats.config = defaultConfig();
+              } else {
+                const raw = await readJsonBody(req);
+                stats.config = sanitizeConfig(raw);
+              }
+              // 预算额度变化时重置该档去重，让新额度重新计算（否则旧额度已触发过同档就不弹了）
+              if (oldCfg.budgetDaily !== stats.config.budgetDaily) budgetFired.daily.level = 0;
+              if (oldCfg.budgetMonthly !== stats.config.budgetMonthly) budgetFired.monthly.level = 0;
+              await saveNow();
+              fetchBalance().catch(() => {});
+              checkBudgetAlerts();
+              json(res, 200, { ok: true, config: stats.config });
+              return;
+            }
+            if (action === 'balance') {
+              await fetchBalance();
+              json(res, 200, { ok: true, balance: balanceState });
+              return;
+            }
+          }
+
+          if (req.method === 'GET' && action === 'export') {
+            const format = url.searchParams.get('format') || 'csv';
+            const scope = url.searchParams.get('scope') || 'day';
+            await exportStats(res, format, scope);
+            return;
+          }
+
+          const cfg = stats.config || defaultConfig();
+          json(res, 200, {
+            stats,
+            config: cfg,
+            budget: computeBudget(stats, cfg),
+            balance: balanceState,
+            runway: balanceState && balanceState.status === 'ok' && balanceState.data ? computeRunway(stats, balanceState.data.total) : null,
+            alerts: budgetEvents.slice(), // 不清理：多个轮询器共享同一 GET，清空会导致事件被非 toaster 消费；客户端按 id 持久去重，缓冲区有界(≤8)
+            saved: Boolean(statsFile),
+            diag,
+          });
+        } catch (e) {
+          json(res, 500, { error: String(e && e.message ? e.message : e) });
+        }
+      };
+
+    // 主路由 /usage-billing（插件宿主端与客户端同包同版本分发，无需旧路径兼容）
+    ctx.effect(() => webServer.register({
+      kind: 'exact',
+      path: '/usage-billing',
+      handler: statsRouteHandler,
+    }), 'usage-billing: stats route');
+
+    const usageToolDesc = '查询本机 DeepSeek API 用量与消费统计：按调价前旧价、调价后峰/谷时段分别计费（价格与峰谷时段可在设置中配置），含按会话明细与预算进度。scope 可选：today=今日、month=本月、all=累计（默认 all）。';
+    const usageToolOutput = {
+      schema: {
+        type: 'object',
+        properties: {
+          ok: { type: 'boolean' },
+          scope: { type: 'string' },
+          summary: { type: 'string' },
+          total: { type: 'object', additionalProperties: true },
+          byBand: { type: 'object', additionalProperties: true },
+          byModel: { type: 'object', additionalProperties: true },
+          bySession: { type: 'object', additionalProperties: true },
+          byDay: { type: 'object', additionalProperties: true },
+          byHour: { type: 'object', additionalProperties: true },
+          meta: { type: 'object', additionalProperties: true },
+          config: { type: 'object', additionalProperties: true },
+          budget: { type: 'object', additionalProperties: true },
+          balance: { type: 'object', additionalProperties: true },
+          diag: { type: 'object', additionalProperties: true },
+          updatedAt: { type: 'number' },
+        },
+        additionalProperties: true,
+      },
+      render(args, value) {
+        const text = value && typeof value.summary === 'string' ? value.summary : String(JSON.stringify(value));
+        return [{ type: 'text', text }];
+      },
+    };
+    const usageToolExecute = async (args) => {
+      const scope = args && (args.scope === 'today' || args.scope === 'month') ? args.scope : 'all';
+      const cfg = stats.config || defaultConfig();
+      const budget = computeBudget(stats, cfg);
+      const scopeTotals = scopeAggregate(stats, scope);
+      const scopeLabel = scope === 'today' ? '今日' : scope === 'month' ? '本月' : '';
+      return {
+        ok: true,
+        scope,
+        summary: formatSummary(stats, cfg, budget, balanceState, scopeLabel, scopeTotals),
+        total: scopeTotals || stats.total,
+        byBand: stats.byBand,
+        byModel: stats.byModel,
+        bySession: stats.bySession,
+        byDay: stats.byDay,
+        byHour: stats.byHour,
+        meta: stats.meta,
+        config: cfg,
+        budget,
+        balance: balanceState,
+        diag,
+        updatedAt: stats.updatedAt,
+      };
+    };
+    ctx.effect(() => tools.register(defineTool({
+      name: 'usage_billing',
+      description: usageToolDesc,
+      parameters: {
+        scope: { type: 'string', enum: ['today', 'month', 'all'], description: '统计范围：today=今日，month=本月，all=累计（默认）' },
+      },
+      output: usageToolOutput,
+      execute: usageToolExecute,
+    })), 'usage-billing: usage_billing tool');
+
+    // 官方余额：启动即拉取一次，之后每 10 分钟自动刷新（检测到 API Key 才真正发请求）
+    ctx.effect(() => {
+      fetchBalance().catch(() => {});
+      return ctx.interval(() => { fetchBalance().catch(() => {}); }, 10 * 60 * 1000);
+```
+
+</details>
+
+#### 缺口
+
+- 插件估算与同账户官方账单的日级差额未知
+  **影响**：无法把金额用于严肃预算或财务用途
+  **进一步探讨**：连续30天导出日汇总，与官方账单按模型/时段对账并标记unknown模型和重复回填
+
+<a id="research-q09"></a>
+
+<a id="detail-section-19"></a>
+
+### Q09 · 哪些人应观察、试用或拒绝采用 dsh-usage-billing？
+
+**研究主题**：采用判断
+
+#### 完整回答
+
+只建议把它当预算观察工具，不用于报销或财务结算。单实例、主要使用已映射 DeepSeek 模型且愿意定期更新价格的人可观察；先用一周只读统计与官方账单对账，差额、重复回填或 unknown 模型超过门槛就停用告警和续航预测。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:7-30](https://github.com/940842546/dsh-usage-billing/blob/d16e2445a8021814765fec14912507da6cafecae/README.md#L7-L30)
+
+固定版本作者材料支持 Q09 的功能范围或边界；本轮未把声明当运行结果。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+针对 DeepSeek Harness 的**免构建**双面插件：自动统计本机所有会话的 DeepSeek 模型调用，按官方定价分段计费，并在主界面与设置页提供图表化的用量面板。
+
+> 计费口径：2026-08-17 00:00（北京时间）前旧价；之后峰谷定价（高峰为**工作日** 9:00–12:00、14:00–18:00（2026-08-23 起生效，此前周末同样计高峰），空闲价为高峰价的一半；9/10 12:00 起 flash 系列再次调价（空闲 hit 0.02 / miss 1 / out 4，高峰 ×2，pro 不变；V4 Pro 官方已确认 9/14 后继续提供服务、计费方式不变（仍按 pro 价；插件保留路由开关供将来官方恢复路由时开启，当前关闭）））。**法定节假日与调休上班的周末全天空闲计费**（内置 2026 年国务院放假安排，可在设置中自行增补）。价格表见文末。
+
+## 功能
+
+- **全自动统计**：监听 `llm/stream`，所有会话的每次模型调用都会被记录（输入/输出/缓存命中/未命中 tokens）
+- **历史回填**：首次启动自动扫描本机会话日志，重建历史用量与消费，并附会话标题
+- **分段计费**：按北京时间自动归入「调价前旧价 / 调价后高峰 / 调价后空闲」三段（2026-08-23 起高峰仅限工作日，周末全天空闲；此前周末同样计高峰；**法定节假日与调休上班日全天空闲**，节假日名单可在设置页编辑，2027 年安排公布后可自行增补）
+- **预算告警通知**：跨 80%/100% 阈值时桌面 toast 主动提醒（每日每档一次），进度条临近变橙、超支变红
+- **定价可配置**：价格表、高峰时段、调价边界日期、美元汇率均可编辑（改动只对后续调用生效），一键恢复默认
+- **数据导出**：一键导出 CSV（按日 / 按会话，文件名含日期范围）或 JSON，便于对账
+- **官方余额拉取**：自动检测已配置的 DeepSeek API Key，拉取官方账户余额（总余额 / 充值 / 赠金），每 10 分钟自动刷新，未配置 Key 时静默跳过
+- **余额续航预估**：按近 7 天日均花费估算余额可用天数与预计耗尽日期
+- **告警历史**：设置页展示最近预算告警记录
+- **日趋势图**：设置页近 30 天每日费用柱状图
+- **统计更稳健**：写入带 temp 副本，主文件损坏时自动恢复；双实例心跳检测告警
+- **主界面**：
+  - 侧边栏底部「Token 用量」卡片（当前模型 + 本会话 tokens/费用，千分位显示）→ 点击弹出居中「Token 用量与费用统计」弹窗（¥/USD 币种切换、总览卡片、按模型/按会话表格、预算进度、官方余额、分段占比、用量热力图）
+  - 输入框下方常驻一行**当前会话**的用量：环形进度（今日预算，≥80% 变橙、≥100% 变红）+ 花费/调用/tokens，**点击弹出详情面板**（本会话花费与今日合计、按计费时段着色的占比条、调用/输入/缓存命中率/输出明细、时段花费、模型分布、今日预算进度；Esc 或点击面板外关闭）——交互与样式对齐官方 ContextMeter
+- **设置页 → 用量统计**：完整明细（统计卡片、预算进度、分段占比、日/周/月/年/累计热力图（悬停即时显示 token 与金额）、按会话 Top 8（可点击打开对应会话）、按模型、最近调用、回填/清空/导出、计费与预算设置）
+- **动态工具 `usage_billing`**：模型可直接查询统计（“现在用了多少钱？”“今天呢？”——支持 today/month/all 范围）
+- **持久化**：数据写入写策略根目录 `.dsh-usage-billing.json`，重启不丢（v0.5.4 前为 `.dsh-usage-stats.json`，升级后自动迁移）
+- **中英双语**：所有界面文案跟随应用语言设置即时切换（中文 / English）
+```
+
+</details>
+
+#### 缺口
+
+- 插件估算与同账户官方账单的日级差额未知
+  **影响**：无法把金额用于严肃预算或财务用途
+  **进一步探讨**：连续30天导出日汇总，与官方账单按模型/时段对账并标记unknown模型和重复回填
+
+[返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

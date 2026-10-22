@@ -130,8 +130,11 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         item.revision,
         item.path ? `${item.path}/package.json` : 'package.json'
     );
-    if (manifest !== null && JSON.parse(manifest).private) delete metadata.npm;
-    const version = manifest === null ? '未声明' : (JSON.parse(manifest).version ?? '未声明');
+    // JSON permits surrounding whitespace, but JSON.parse rejects a UTF-8 BOM decoded as U+FEFF.
+    // Parse the pinned manifest once after removing only that leading marker; preserve all other bytes.
+    const manifestData = manifest === null ? null : JSON.parse(manifest.replace(/^\uFEFF/u, ''));
+    if (manifestData?.private) delete metadata.npm;
+    const version = manifestData?.version ?? '未声明';
     const committedAt = execFileSync('git', ['-C', checkout, 'show', '-s', '--format=%cI', item.revision], {
         encoding: 'utf8'
     }).trim();

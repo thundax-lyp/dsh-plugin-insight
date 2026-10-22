@@ -7,14 +7,14 @@
             "id": "github:1147866277:root",
             "repository": "GCWing/OpenBitFun",
             "path": "",
-            "revision": "a7d3ccb96d97148526fcf255f1ae7b3ee3e78f79",
+            "revision": "f6e0238808de899b8d4c0b7f6a9d99f999ae1e28",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "a1969a5e13f03b5f315520a64d0d535c630a40274ec4475b1b6404060549ebd1",
-                "code": "a7d3ccb96d97148526fcf255f1ae7b3ee3e78f79",
-                "maintenance": "d23815556c725149c2e195e281ff14d401b0ea8bd1d21b7f0c79803946a84e88"
+                "code": "f6e0238808de899b8d4c0b7f6a9d99f999ae1e28",
+                "maintenance": "ff737fdf195a495d91471f07459478954c61bc10dc6bfa70796da7c238035386"
             }
         }
     }

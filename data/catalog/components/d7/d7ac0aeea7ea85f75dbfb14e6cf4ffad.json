@@ -3,6 +3,471 @@
     "id": "d7ac0aeea7ea85f75dbfb14e6cf4ffad",
     "identity": "github:1413052822:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1413052822:root",
+            "repository_id": 1413052822,
+            "component_id": "root",
+            "repository": "2026heshao/dsh-armory",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-armory",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "33bae3478ea95a31feddf1e4b7597c7ee8af25021a50eed1d2bd08473eeda5a2",
+                "code": "122670a78a15c0df803094dbd0db2fa65d336435",
+                "maintenance": "ed0faf22f52ebe9cc8a1065e6275fb7f5567a1f49353df3c8ca3ee5951f664bf"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1413052822-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:30:20.911Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1413052822-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-armory",
+                            "commit": "122670a78a15c0df803094dbd0db2fa65d336435",
+                            "path": "README.md",
+                            "content_sha256": "4f028a7a0932c22f4601249b1c0945b735811715656f28f372173fd5fa33e638"
+                        }
+                    ],
+                    "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+                    "captured_at": "2026-10-22T16:30:20.911Z",
+                    "summary": "统一管理 MCP、工具账本、专家、Skill 与插件市场入口。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-armory/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1413052822-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-armory",
+                            "commit": "122670a78a15c0df803094dbd0db2fa65d336435",
+                            "path": "README.md",
+                            "content_sha256": "4f028a7a0932c22f4601249b1c0945b735811715656f28f372173fd5fa33e638"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-armory",
+                            "commit": "122670a78a15c0df803094dbd0db2fa65d336435",
+                            "path": "package.json",
+                            "content_sha256": "b83d1e5e69bb77af4bc7e1a615b58acbf5330e70e91a689f9c594cdcc20728fb"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-armory",
+                            "commit": "122670a78a15c0df803094dbd0db2fa65d336435",
+                            "path": "lib/index.js",
+                            "content_sha256": "9087c3589d8e684412f6257144e52afed475dcf322b65781ce6156d19cda9c56"
+                        },
+                        {
+                            "repository_url": "https://github.com/2026heshao/dsh-armory",
+                            "commit": "122670a78a15c0df803094dbd0db2fa65d336435",
+                            "path": "lib/client.js",
+                            "content_sha256": "93df9ace145425d2dd15ac328eb29017bbe6f117771f19749d85fab79e0be60b"
+                        }
+                    ],
+                    "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+                    "captured_at": "2026-10-22T16:30:20.911Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/client.js；Host Remote 网关暴露 MCP/工具裁缝，监听 tools/change 和 agent/created 汇总账本；客户端挂载多面板，缓存/轮询刷新连接和市场，并区分全局/项目。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-armory/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查 README、网关、事件和客户端入口；不访问市场。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向同时管理多个 MCP、工具、专家、Skill 和插件来源的高级用户。输入是全局/项目配置和市场条目；合格结果是来源、作用域、敏感值和生效时机清楚，变更可恢复。替代是配置文件、CLI 和市场分别管理。\n\n参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host Remote 网关暴露 MCP/工具裁缝，监听 tools/change 和 agent/created 汇总账本；客户端挂载多面板，缓存/轮询刷新连接和市场，并区分全局/项目。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查 README、网关、事件和客户端入口；不访问市场。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "v2.1.0，MIT，大型综合面板。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 账号成本未知 | 盘点审查 | 工时未知 |\n| 持续 | 网络/存储 | 审更新 | 陈旧度未知 |\n| 恢复 | 凭据/扩展影响 | 停用吊销 | 复杂 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议观察。先只读盘点，不从市场安装/改凭据；仅在 diff 与回滚通过后试一个低风险 MCP。错作用域、明文密钥、假健康或无法恢复即停。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 统一盘点 | 多类面板 | 完整性未证 |\n| 作用域 | 区分全局项目 | 错误率未知 |\n| 账本 | 监听工具事件 | 非安全审计 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Remote 分离 Host/Client，事件账本补充静态配置，作用域标注必要。仍需验证 dispose、缓存失效、敏感遮蔽与原子写。 参见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把分散配置、连接详情、工具使用、专家和市场聚合为控制面，显式呈现作用域。贡献是治理视图与接线，不是第三方扩展能力。 参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "集中入口也集中命令、网络和凭据风险。缓存状态不等于进程健康，热生效范围不一；大型 bundle、私有 slot 和市场 API 增加审计难度。 参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "操作先生成来源、权限、作用域、diff、健康检查和回滚指令的变更集，批准后原子应用。若错作用域不降则否定。 参见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1413052822:root",
+                            "area": "code",
+                            "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:20.911Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:30:20.911Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+                "reviewed_at": "2026-10-22T16:30:20.911Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1413052822:root",
+                        "area": "code",
+                        "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "聚合和账本实质但控制面扩大。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "集中治理，节时未测。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1413052822-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "供应链、状态新鲜度和回滚未运行验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "治理明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "聚合账本。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码可见。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "高权限风险。"
+                    }
+                },
+                "score": 60,
+                "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+                "reviewed_at": "2026-10-22T16:30:20.911Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1413052822-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1413052822:root",
+                        "area": "code",
+                        "fingerprint": "122670a78a15c0df803094dbd0db2fa65d336435"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1413052822:root",
+            "repository": "2026heshao/dsh-armory",
+            "path": "",
+            "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+            "fingerprints": {
+                "directory": "33bae3478ea95a31feddf1e4b7597c7ee8af25021a50eed1d2bd08473eeda5a2",
+                "code": "122670a78a15c0df803094dbd0db2fa65d336435",
+                "maintenance": "ed0faf22f52ebe9cc8a1065e6275fb7f5567a1f49353df3c8ca3ee5951f664bf"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "43989cbc6ffa1f524d2083e31a1a218537f7766aed1160045708d50a59fd07c6"
+        },
+        "publication.metadata": "data/plugins/2026heshao--dsh-armory/META.json",
+        "publication.summaries": {
+            "text": "统一管理 MCP、工具账本、专家、Skill 与插件市场入口。",
+            "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+            "source_url": "https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+            "items": {
+                "Host 路由": "MCP 管理与工具裁缝 Remote",
+                "界面": "MCP、工具、专家和市场面板",
+                "事件监听": "tools/change 与 agent/created",
+                "后台": "缓存、市场请求和状态刷新"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| MCP | 连接配置启停 | 健康需实证 |\n| 工具账本 | 记录使用 | 不证明正确 |\n| 市场 | 聚合来源 | 需供应链审查 |\n| 作用域 | 全局/项目 | 误配跨项目 |"
+        },
+        "publication.advice": {
+            "revision": "122670a78a15c0df803094dbd0db2fa65d336435",
+            "text": "建议观察。先只读盘点，不从市场安装/改凭据；仅在 diff 与回滚通过后试一个低风险 MCP。错作用域、明文密钥、假健康或无法恢复即停。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/2026heshao--dsh-armory",
+        "reports": "# dsh-armory\n\n> 统一管理 MCP、工具账本、专家、Skill 与插件市场入口。\n\n## 研究范围\n\n- **仓库**：[2026heshao/dsh-armory](https://github.com/2026heshao/dsh-armory)\n- **版本号**：2.1.0（[固定提交 122670a78a15c0df803094dbd0db2fa65d336435](https://github.com/2026heshao/dsh-armory/tree/122670a78a15c0df803094dbd0db2fa65d336435)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认 MCP Remote、工具账本、专家/市场面板与全局/项目入口；缓存新鲜度、凭据遮蔽、市场供应链和配置回滚尚未接真实 Host，审计变更集仍待试验，见[Q08](#research-q08)。\n\n## 洞察短评\n\n- **用途**：面向同时管理多个 MCP、工具、专家、Skill 和插件来源的高级用户。输入是全局/项目配置和市场条目；合格结果是来源、作用域、敏感值和生效时机清楚，变更可恢复。替代是配置文件、CLI 和市场分别管理。\n\n参见[Q01](#research-q01)。\n- **亮点**：把分散配置、连接详情、工具使用、专家和市场聚合为控制面，显式呈现作用域。贡献是治理视图与接线，不是第三方扩展能力。 参见[Q03](#research-q03)。\n- **思考**：集中入口也集中命令、网络和凭据风险。缓存状态不等于进程健康，热生效范围不一；大型 bundle、私有 slot 和市场 API 增加审计难度。 参见[Q04](#research-q04)。\n- **建议**：操作先生成来源、权限、作用域、diff、健康检查和回滚指令的变更集，批准后原子应用。若错作用域不降则否定。 参见[Q08](#research-q08)。\n\n采用建议：建议观察。先只读盘点，不从市场安装/改凭据；仅在 diff 与回滚通过后试一个低风险 MCP。错作用域、明文密钥、假健康或无法恢复即停。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。\n\n## 核心贡献\n\n把分散配置、连接详情、工具使用、专家和市场聚合为控制面，显式呈现作用域。贡献是治理视图与接线，不是第三方扩展能力。 参见[Q03](#research-q03)。\n\n## 关键质疑\n\n集中入口也集中命令、网络和凭据风险。缓存状态不等于进程健康，热生效范围不一；大型 bundle、私有 slot 和市场 API 增加审计难度。 参见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n操作先生成来源、权限、作用域、diff、健康检查和回滚指令的变更集，批准后原子应用。若错作用域不降则否定。 参见[Q08](#research-q08)。\n\n只读对照原配置和进程；泄密、假状态、错作用域或恢复不全即停。\n\n## 场景与替代办法\n\n面向同时管理多个 MCP、工具、专家、Skill 和插件来源的高级用户。输入是全局/项目配置和市场条目；合格结果是来源、作用域、敏感值和生效时机清楚，变更可恢复。替代是配置文件、CLI 和市场分别管理。\n\n参见[Q01](#research-q01)。\n\nCLI、配置和市场分别管理；分散但可版本控制审 diff。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Remote/Client/UI slot | 必需 | 网关和面板 | 漂移丢功能 |\n| MCP/市场/网络 | 按功能 | 发现管理 | 离线状态陈旧 |\n| 凭据/作用域纪律 | 效果必需 | 访问与隔离 | 误配跨项目 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 盘点 | 只读来源作用域 | 带时间戳且遮蔽 |\n| 计划/应用 | 审 diff 后单变更 | 健康与实际一致 |\n| 恢复 | 撤销、吊销、重启 | 回到原状态 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 账号成本未知 | 盘点审查 | 工时未知 |\n| 持续 | 网络/存储 | 审更新 | 陈旧度未知 |\n| 恢复 | 凭据/扩展影响 | 停用吊销 | 复杂 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 统一盘点 | 多类面板 | 完整性未证 |\n| 作用域 | 区分全局项目 | 错误率未知 |\n| 账本 | 监听工具事件 | 非安全审计 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 122670a78a15c0df803094dbd0db2fa65d336435 上判断 dsh-armory 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 统一入口服务什么治理？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向同时管理多个 MCP、工具、专家、Skill 和插件来源的高级用户。输入是全局/项目配置和市场条目；合格结果是来源、作用域、敏感值和生效时机清楚，变更可恢复。替代是配置文件、CLI 和市场分别管理。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:87-90](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md#L87-L90)\n\n作者列出管理面。\n\n```text\n## 功能\n\n- 查看每个 MCP 的状态、传输方式、连接参数与工具列表；展开工具可看完整输入 JSON Schema（必填/可选、类型、枚举、默认值与原始 JSON）\n- 按传输方式（HTTP/stdio）与状态筛选，按名称/命令/URL 搜索\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 网关、面板、事件和缓存如何汇总？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nHost Remote 网关暴露 MCP/工具裁缝，监听 tools/change 和 agent/created 汇总账本；客户端挂载多面板，缓存/轮询刷新连接和市场，并区分全局/项目。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:993-996](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L993-L996)\n\n定义 MCP 网关。\n\n```text\n\treturn class McpManagerGateway extends _classSuper {\n\t\tstatic {\n\t\t\tconst _metadata = typeof Symbol === \"function\" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;\n\t\t\t_list_decorators = [Remote(\"list\")];\n```\n\n**依据 2 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · dsh-armory 相对简单替代的独立增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n把分散配置、连接详情、工具使用、专家和市场聚合为控制面，显式呈现作用域。贡献是治理视图与接线，不是第三方扩展能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:993-996](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L993-L996)\n\n定义 MCP 网关。\n\n```text\n\treturn class McpManagerGateway extends _classSuper {\n\t\tstatic {\n\t\t\tconst _metadata = typeof Symbol === \"function\" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;\n\t\t\t_list_decorators = [Remote(\"list\")];\n```\n\n**依据 2 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 集中供应链放大什么风险？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n集中入口也集中命令、网络和凭据风险。缓存状态不等于进程健康，热生效范围不一；大型 bundle、私有 slot 和市场 API 增加审计难度。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n**依据 2 · 作者声明**：[README.md:87-90](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md#L87-L90)\n\n作者列出管理面。\n\n```text\n## 功能\n\n- 查看每个 MCP 的状态、传输方式、连接参数与工具列表；展开工具可看完整输入 JSON Schema（必填/可选、类型、枚举、默认值与原始 JSON）\n- 按传输方式（HTTP/stdio）与状态筛选，按名称/命令/URL 搜索\n```\n\n#### 缺口\n\n- 缓存与进程不一致时是否标旧\n  **影响**：可能基于假健康修改高权限扩展\n  **进一步探讨**：外停 MCP、改配置、断网和切项目，测新鲜度与遮蔽\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-armory 启动、持续使用与失败恢复依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n依赖 DSH Remote/Client、多 UI slot、MCP/市场服务；部分需网络、OAuth 和项目配置。持续维护信任、凭据、缓存和优先级；恢复须备份、停新连接、吊销并重启。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:993-996](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L993-L996)\n\n定义 MCP 网关。\n\n```text\n\treturn class McpManagerGateway extends _classSuper {\n\t\tstatic {\n\t\t\tconst _metadata = typeof Symbol === \"function\" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;\n\t\t\t_list_decorators = [Remote(\"list\")];\n```\n\n**依据 2 · 作者声明**：[README.md:87-90](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md#L87-L90)\n\n作者列出管理面。\n\n```text\n## 功能\n\n- 查看每个 MCP 的状态、传输方式、连接参数与工具列表；展开工具可看完整输入 JSON Schema（必填/可选、类型、枚举、默认值与原始 JSON）\n- 按传输方式（HTTP/stdio）与状态筛选，按名称/命令/URL 搜索\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 治理成本如何计量？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n单位是一次扩展变更在正确作用域生效且可回滚。首次盘点配置凭据；持续含轮询、账本和审查；恢复定位作用域和吊销。缺治理分钟、错作用域率和陈旧秒数。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:87-90](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md#L87-L90)\n\n作者列出管理面。\n\n```text\n## 功能\n\n- 查看每个 MCP 的状态、传输方式、连接参数与工具列表；展开工具可看完整输入 JSON Schema（必填/可选、类型、枚举、默认值与原始 JSON）\n- 按传输方式（HTTP/stdio）与状态筛选，按名称/命令/URL 搜索\n```\n\n**依据 2 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n#### 缺口\n\n- 每次变更分钟、错作用域率、陈旧秒数、回滚率\n  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI\n  **进一步探讨**：十次配置任务对比手工和面板\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 作用域、遮蔽和刷新是否可靠？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\nRemote 分离 Host/Client，事件账本补充静态配置，作用域标注必要。仍需验证 dispose、缓存失效、敏感遮蔽与原子写。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:993-996](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L993-L996)\n\n定义 MCP 网关。\n\n```text\n\treturn class McpManagerGateway extends _classSuper {\n\t\tstatic {\n\t\t\tconst _metadata = typeof Symbol === \"function\" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;\n\t\t\t_list_decorators = [Remote(\"list\")];\n```\n\n**依据 2 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 可审计变更集能否改善安全？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n操作先生成来源、权限、作用域、diff、健康检查和回滚指令的变更集，批准后原子应用。若错作用域不降则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n**依据 2 · 作者声明**：[README.md:87-90](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md#L87-L90)\n\n作者列出管理面。\n\n```text\n## 功能\n\n- 查看每个 MCP 的状态、传输方式、连接参数与工具列表；展开工具可看完整输入 JSON Schema（必填/可选、类型、枚举、默认值与原始 JSON）\n- 按传输方式（HTTP/stdio）与状态筛选，按名称/命令/URL 搜索\n```\n\n#### 缺口\n\n- 变更集能否降低供应链配置错误\n  **影响**：新方向仍是推演，不能计入插件当前贡献或效果\n  **进一步探讨**：二十次诱饵任务，错误下降且回滚100%\n\n<a id=\"research-q09\"></a>\n\n### Q09 · dsh-armory 适合观察、试用还是安装，停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察。先只读盘点，不从市场安装/改凭据；仅在 diff 与回滚通过后试一个低风险 MCP。错作用域、明文密钥、假健康或无法恢复即停。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:87-90](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/README.md#L87-L90)\n\n作者列出管理面。\n\n```text\n## 功能\n\n- 查看每个 MCP 的状态、传输方式、连接参数与工具列表；展开工具可看完整输入 JSON Schema（必填/可选、类型、枚举、默认值与原始 JSON）\n- 按传输方式（HTTP/stdio）与状态筛选，按名称/命令/URL 搜索\n```\n\n**依据 2 · 源码核查**：[lib/index.js:1058-1061](https://github.com/2026heshao/dsh-armory/blob/122670a78a15c0df803094dbd0db2fa65d336435/lib/index.js#L1058-L1061)\n\n暴露工具裁缝。\n\n```text\n\t\t\t_toolTailor_decorators = [Remote(\"toolTailor\")];\n\t\t\t__esDecorate(this, null, _toolTailor_decorators, { kind: \"method\", name: \"toolTailor\", static: false, private: false, access: { has: (obj) => \"toolTailor\" in obj, get: (obj) => obj.toolTailor }, metadata: _metadata }, null, _instanceExtraInitializers);\n\t\t\t_wbConnectorCatalog_decorators = [Remote(\"wbConnectorCatalog\")];\n\t\t\t__esDecorate(this, null, _wbConnectorCatalog_decorators, { kind: \"method\", name: \"wbConnectorCatalog\", static: false, private: false, access: { has: (obj) => \"wbConnectorCatalog\" in obj, get: (obj) => obj.wbConnectorCatalog }, metadata: _metadata }, null, _instanceExtraInitializers);\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：22acc439c51da6972e9ae4043238f88ca6660836f9d426f67925fce4e944f6c6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 15 | 2457 | — | — | 48307 |\n| .mjs | source | 1 | 123 | 97 | 23 | — |\n| .js | source | 24 | 20754 | 16468 | 3857 | — |\n| .mjs | test | 42 | 8758 | 6571 | 1600 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| MCP | 连接配置启停 | 健康需实证 |\n| 工具账本 | 记录使用 | 不证明正确 |\n| 市场 | 聚合来源 | 需供应链审查 |\n| 作用域 | 全局/项目 | 误配跨项目 |\n\n## 工程亮点\n\nRemote 分离 Host/Client，事件账本补充静态配置，作用域标注必要。仍需验证 dispose、缓存失效、敏感遮蔽与原子写。 参见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查 README、网关、事件和客户端入口；不访问市场。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。\n- 下一步：只读对照原配置和进程；泄密、假状态、错作用域或恢复不全即停。\n",
+        "metadata": {
+            "repository": "2026heshao/dsh-armory",
+            "repository_id": 1413052822,
+            "captured_at": "2026-10-22T16:02:34.023Z",
+            "window_start": "2026-09-22T16:02:34.023Z",
+            "stars": 21,
+            "pushed_at": "2026-10-22T08:07:08Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE1A:D9DE2:A1948F:AE8278:6ADA339C and timestamp 2026-10-22 16:02:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DEE0:32FE7A:A985C4:B676B8:6ADA339D and timestamp 2026-10-22 16:02:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A34.023Z..2026-10-22T16%3A02%3A34.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF9C:2155BB:A29472:AF87AD:6ADA339E and timestamp 2026-10-22 16:02:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A34.023Z..2026-10-22T16%3A02%3A34.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E05E:1002A1:A2A0B6:AF95CC:6ADA339F and timestamp 2026-10-22 16:02:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A34.023Z..2026-10-22T16%3A02%3A34.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E15A:1035EF:9FEAA2:ACDE62:6ADA33A0 and timestamp 2026-10-22 16:02:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-armory",
+                "captured_at": "2026-10-22T16:02:40.903Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 261,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-armory",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-13T02:37:33.593Z",
+                    "captured_at": "2026-10-22T16:02:40.903Z",
+                    "source_url": "https://registry.npmjs.org/dsh-armory",
+                    "error": null,
+                    "latest_version": "2.1.0",
+                    "latest_published_at": "2026-10-21T12:12:46.537Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1413052822:root",
             "repository": "2026heshao/dsh-armory",

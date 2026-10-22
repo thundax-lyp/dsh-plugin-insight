@@ -7,14 +7,14 @@
             "id": "github:1324949198:root",
             "repository": "ranxianglei/billion-context",
             "path": "",
-            "revision": "c1d7eab70fc8d87bf7d9cd31e431cc222f30449a",
+            "revision": "aa198fe613b4ff5252ddfccdf6704290ad37d9ab",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1a3a95ba82a4fa37129f15a4353315266d9f256b81183b2e91bdbdeb0db8e3f7",
-                "code": "c1d7eab70fc8d87bf7d9cd31e431cc222f30449a",
-                "maintenance": "1b99691860c540ef50346792395dea19fce18d07160c7505aa7109fe85f9c51d"
+                "code": "aa198fe613b4ff5252ddfccdf6704290ad37d9ab",
+                "maintenance": "cebb02aa150cf45d8307c2f93b7e6455fa3c4227d354d417dde5f969d86917ff"
             }
         }
     }
