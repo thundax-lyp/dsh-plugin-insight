@@ -90,6 +90,16 @@ export function validateResearchQuestions(value, { sourcePaths, readSource, repo
     if (missing.length) throw Error(`research question coverage missing: ${missing.join(', ')}`);
     return value;
 }
+// Validate durable answers using embedded source bytes, without depending on local runs or checkouts.
+export function validateResearchQuestionArtifact(material) {
+    if (!Object.hasOwn(material, 'research_questions')) return;
+    return validateResearchQuestions(material.research_questions, {
+        repository: material.repository,
+        revision: material.revision,
+        sourcePaths: material.inspected_paths,
+        readSource: (name) => material.files.find((file) => file.path === name)?.content
+    });
+}
 function quoteSource(text) {
     const runs = [...text.matchAll(/`+/g)].map((m) => m[0].length);
     const fence = '`'.repeat(Math.max(3, ...runs.map((n) => n + 1)));

@@ -180,7 +180,7 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 
 ## 逐题研究材料与正式报告
 
-新单插件装配输入的 research_questions 由[问题交付 Schema](../schemas/research-questions.schema.json)约束，研究执行以[逐题流程](../../dsh-plugin-insight/references/QUESTION-WORKFLOW.md)为准。它是研究输入与过程结构，不新增 catalog 字段，不改既有分析摘要或身份。逐题完整回答、状态、固定版本证据定位与原文、未知项必须写入正式 reports；源材料仍通过 artifacts 保存。主题覆盖、文本、ID和源码位置可机械校验，论证充分性与结论真实性须逐题审阅。
+新单插件装配输入的 research_questions 由[问题交付 Schema](../schemas/research-questions.schema.json)约束，研究执行以[逐题流程](../../dsh-plugin-insight/references/QUESTION-WORKFLOW.md)为准。它是研究输入与过程结构，不新增 catalog 字段，不改既有分析摘要或身份。逐题完整回答、固定版本证据定位与原文写入正式 reports；完整 research_questions（含 status 和全部 unknowns）随 REVIEWED-SOURCE.json 材料包进入正式 artifacts，读者展示过滤不改变持久化内容。源材料仍通过 artifacts 保存。主题覆盖、文本、ID和源码位置可机械校验，论证充分性与结论真实性须逐题审阅。
 
 已合并的当前研究不能依赖 PLAN、逐题本地文件或 ANALYSIS 存在；清理过程副本前验证正式报告和必要证据足以独立回读。历史报告缺少逐题结构时保持原状态，不从旧摘要补造研究，不因展示重生成升级研究深度或验收状态。
 

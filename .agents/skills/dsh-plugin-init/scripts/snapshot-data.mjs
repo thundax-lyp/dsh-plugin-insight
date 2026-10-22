@@ -35,6 +35,7 @@ import {
 } from './research-session.mjs';
 import { renderPublication } from './render-research.mjs';
 import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
+import { validateResearchQuestionArtifact } from '../../dsh-plugin-insight/scripts/research-questions.mjs';
 export const SNAPSHOT = 'data/catalog/index.jsonl';
 const hash = (text) => createHash('sha256').update(text).digest('hex');
 const ajv = new Ajv({ strict: true, allErrors: true });
@@ -115,6 +116,7 @@ export function validateSnapshot(value, root = ROOT) {
     for (const [name, artifact] of Object.entries(value.artifacts)) {
         local(root, name);
         if (hash(artifact.content) !== artifact.sha256) throw Error(`embedded evidence digest differs: ${name}`);
+        if (name.endsWith('/REVIEWED-SOURCE.json')) validateResearchQuestionArtifact(JSON.parse(artifact.content));
     }
     for (const record of records) {
         if (!value.reports[record.id] || !value.metadata[record.id])

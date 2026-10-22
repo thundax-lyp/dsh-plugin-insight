@@ -175,6 +175,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         revision: item.revision,
         component: item.path,
         inspected_paths: analysis.source_paths,
+        research_questions: analysis.research_questions,
         files: pack,
         inventory: { ...inventory, files: undefined },
         metadata
