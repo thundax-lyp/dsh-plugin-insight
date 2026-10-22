@@ -530,7 +530,7 @@ export function apply(ctx) {
         const prefix = t(`prompt.${selected}`);
         const insertion = `${prefix}${draft.length > 0 ? '\n\n' : ''}`;
         const actions = inputActions || {};
-
+    
         // Newer DSH releases expose a revision-guarded splice. It inserts at [0, 0]
         // and leaves the rest of the draft, including reference chips, intact.
         if (typeof actions.insertText === 'function') {
@@ -556,7 +556,7 @@ export function apply(ctx) {
           dismiss(false);
           return;
         }
-
+    
         // Older DSH exposes only setDraft, which flattens rich references. Keep
         // ordinary text intact, but refuse that fallback when references are present.
         const occurrences = input && Array.isArray(input.occurrences) ? input.occurrences : [];
@@ -576,7 +576,7 @@ export function apply(ctx) {
         }
         dismiss(false);
       };
-
+    
       const options = MODES.map((mode) => h('button', {
         key: mode,
 ```

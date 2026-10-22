@@ -387,7 +387,7 @@ mux逐帧授权和投影设计说明。
 ```text
   //   **上行**：记录 `open` 的 streamId → endpoint，并先 `policy.authorize(...)`；未授权不转发（宿主是单用户语义，
   //            会照单服务任何 sessionId，只过滤下行不够）。上游未连上时上行帧排队，不丢首帧。
-  //   **下行**：逐帧 `policy.frame()`（丢弃/裁剪/投影，未知流 fail-closed），并记录已投递的 waterfall eventId ——
+  //   **下行**：逐帧 `policy.frame()`（丢弃/裁剪/投影，未知流 fail-closed），并记录已投递的 waterfall eventId —— 
   //            让 `$events/result` 保持严格属主绑定（Issue #2 的正解）。
   // 之所以用代理而不自己实现 mux：旧实现要重放 mux 语义，与 0.2.0 客户端协议不兼容（界面会无限「重新连接中」）；
   // 代理**不碰语义**，只按 JSON 里的归属字段与策略层裁决，协议无关。

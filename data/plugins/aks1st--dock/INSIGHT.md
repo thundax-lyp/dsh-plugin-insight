@@ -675,7 +675,7 @@ export function createLayoutStore(storage?: LayoutStorage): LayoutStore {
       if (definition === undefined) throw new Error(`[dock] unknown setting "${id}"`)
       const safeValue = cloneJsonSafe(value)
        const valid = definition.validate(safeValue)
-
+      
       const next = valid ? safeValue : cloneJsonSafe(definition.defaultValue)
       if (Object.is(values.get(id), next)) {
         if (!valid) {
@@ -868,7 +868,7 @@ export function createLayoutStore(storage?: LayoutStorage): LayoutStore {
       if (definition === undefined) throw new Error(`[dock] unknown setting "${id}"`)
       const safeValue = cloneJsonSafe(value)
        const valid = definition.validate(safeValue)
-
+      
       const next = valid ? safeValue : cloneJsonSafe(definition.defaultValue)
       if (Object.is(values.get(id), next)) {
         if (!valid) {

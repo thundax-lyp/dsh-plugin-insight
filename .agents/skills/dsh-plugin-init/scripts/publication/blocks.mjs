@@ -353,7 +353,7 @@ export function renderHomeCategories(groups, href, limit = 5) {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
                     summary: clean(e.summary),
-                    meta: e.listMetrics,
+                    meta: e.listMetrics ? ` ${e.listMetrics}` : '',
                     review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     detail: href(e)
                 })

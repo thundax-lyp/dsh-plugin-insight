@@ -1043,12 +1043,12 @@ provider将解析、排序、过滤、缓存、历史、熔断和失败标签拆
 export function createLimiter(concurrency) {
   const queue = [];
   let running = 0;
-
+  
   return function limit(fn) {
     return new Promise((resolve, reject) => {
       queue.push({ fn, resolve, reject });
       process();
-
+      
       function process() {
         while (running < concurrency && queue.length > 0) {
           const { fn, resolve, reject } = queue.shift();

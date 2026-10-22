@@ -1248,12 +1248,12 @@ export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
 ```text
 ## 安全模型（摘要）
 
-1. 空 `allowPrefixes` → 全部拒绝
-2. pass 名必须匹配前缀（`dsh` → `dsh/...`）
-3. age 路径必须在列表里的目录根下
-4. 默认 `reveal: false`，结果不含完整密钥
-5. 优先 `secret_to_env`，避免把明文塞进模型上下文
-6. 永远不要把密钥贴进聊天
+1. 空 `allowPrefixes` → 全部拒绝  
+2. pass 名必须匹配前缀（`dsh` → `dsh/...`）  
+3. age 路径必须在列表里的目录根下  
+4. 默认 `reveal: false`，结果不含完整密钥  
+5. 优先 `secret_to_env`，避免把明文塞进模型上下文  
+6. 永远不要把密钥贴进聊天  
 
 ```
 

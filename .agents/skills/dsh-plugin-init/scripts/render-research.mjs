@@ -59,9 +59,6 @@ function normalizeLegacyTrial(text) {
         })
         .join('\n');
 }
-function normalizeGeneratedMarkdown(text) {
-    return text.replace(/[ \t\r]+$/gm, '');
-}
 export function renderDetailReport(report, item) {
     const sections = splitSections(report);
     const questions = sections.filter((part) => part.title === '研究问题与完整回答');
@@ -364,12 +361,9 @@ export function renderPublication(input, root = ROOT, context = null) {
           : {};
     for (const plugin of catalog.plugins) registry[plugin.id] ??= pluginDirectory(plugin, root);
     return {
-        readme: normalizeGeneratedMarkdown(readme),
-        catalog: normalizeGeneratedMarkdown(catalogPage),
-        categoryPages: [...categoryPages, ...columnPages].map((page) => ({
-            ...page,
-            content: normalizeGeneratedMarkdown(page.content)
-        })),
+        readme,
+        catalog: catalogPage,
+        categoryPages: [...categoryPages, ...columnPages],
         details: items.map((e) => {
             const group = groups.find((g) => g.key === e.plugin.business_category);
             if (!group) throw Error(`detail category missing: ${e.i.id}`);
@@ -379,9 +373,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             });
             return {
                 path: e.detailPath,
-                content: normalizeGeneratedMarkdown(
-                    normalizeLegacyTrial(renderReadingNavigation(e.detail, navigation, e.longRead))
-                )
+                content: normalizeLegacyTrial(renderReadingNavigation(e.detail, navigation, e.longRead))
             };
         }),
         registry

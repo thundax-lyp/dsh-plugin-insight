@@ -802,7 +802,7 @@ export async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFil
 2. 指定二进制路径（任选）：
    - cordis `config.binaryPath`
    - 环境变量 `OBSCURA_BIN` / `OBSCURA_PATH`
-   - 默认候选（本机脚手架路径）：
+   - 默认候选（本机脚手架路径）：  
      `<obscura-checkout>/target/release/obscura.exe`
 
 ## 安装
