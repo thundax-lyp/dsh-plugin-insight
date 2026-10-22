@@ -880,7 +880,7 @@ function buildDepMap(profileDir) {
 			try { localStorage.setItem(SECTION_ORDER_KEY, JSON.stringify(obj)); } catch {}
 		}
 
-		
+
 		let pluginCtx = null;
 
 // __DEP_MAP_START__

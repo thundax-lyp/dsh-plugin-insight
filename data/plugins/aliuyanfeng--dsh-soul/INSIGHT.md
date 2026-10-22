@@ -582,7 +582,7 @@ HTTP读取和保存handler。
           res.writeHead(status, { 'content-type': 'application/json' })
           res.end(JSON.stringify(body))
         }
-        
+
         try {
           if (req.method === 'GET') {
             const config = await loadConfig()

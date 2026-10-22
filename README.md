@@ -217,7 +217,7 @@
 
 <a id="plugin-1412161923-root"></a>
 
-- **[dsh-piano](data/plugins/439436269-ctrl--dsh-piano/INSIGHT.md)**：在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。 
+- **[dsh-piano](data/plugins/439436269-ctrl--dsh-piano/INSIGHT.md)**：在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。
 
 [更多 其他 →](data/views/categories/OTHER.md)
 

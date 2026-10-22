@@ -216,7 +216,7 @@ JDK、jdtls 与安装条件，限定即插即用的范围。
 ````text
 ## Installing the language server
 
-Download the Eclipse JDT Language Server (`jdtls`) bundle from the Eclipse Marketplace / 
+Download the Eclipse JDT Language Server (`jdtls`) bundle from the Eclipse Marketplace /
 [project downloads](https://www.eclipse.org/jdt/ls/), unzip it, and run its launcher. The bundle ships a
 `bin/jdtls` script (and a Windows batch) — put that directory on `PATH`. Requirements:
 
@@ -532,7 +532,7 @@ JDK 与 jdtls 获取及覆盖参数。
 ````text
 ## Installing the language server
 
-Download the Eclipse JDT Language Server (`jdtls`) bundle from the Eclipse Marketplace / 
+Download the Eclipse JDT Language Server (`jdtls`) bundle from the Eclipse Marketplace /
 [project downloads](https://www.eclipse.org/jdt/ls/), unzip it, and run its launcher. The bundle ships a
 `bin/jdtls` script (and a Windows batch) — put that directory on `PATH`. Requirements:
 

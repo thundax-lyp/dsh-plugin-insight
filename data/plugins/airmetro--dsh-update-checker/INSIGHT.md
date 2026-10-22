@@ -235,7 +235,7 @@ writeGate拒绝返回err=json(...)而json无返回值，if(g.err)无法退出；
         return () => clearInterval(timer);
       }, []);
 
-      
+
       react.useEffect(() => {
         const handler = () => setCoreDone(true);
         if (typeof window !== "undefined") window.addEventListener("dsh-update-core-done", handler);
@@ -351,8 +351,8 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
   npmLatestCache.delete(target.name);
   if (target.ghRepo) ghLatestCache.delete(target.ghRepo);
   await writeSuppressPluginBanner(false);
-  
-  
+
+
   const persisted = await persistPluginUpdate({
     name: target.name,
     newVersion,
@@ -371,10 +371,10 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
     lockfile: [],
     error: truncate(String((err && err.message) || err), 1000),
   }));
-  
-  
-  
-  
+
+
+
+
   let mount = null;
   try {
     mount = await ensurePluginMount();
@@ -481,7 +481,7 @@ function compareVersions(a, b) {
     const nx = /^\d+$/.test(x);
     const ny = /^\d+$/.test(y);
     if (nx && ny) return Number(x) > Number(y) ? 1 : -1;
-    if (nx) return -1; 
+    if (nx) return -1;
     if (ny) return 1;
     return x > y ? 1 : -1;
   }
@@ -556,7 +556,7 @@ async function scanInstalledPlugins() {
       if (e.name.startsWith(UC_TMP_PREFIX)) continue;
       if (!(await isDirectoryEntry(root, e))) continue;
       if (e.name.startsWith("@")) {
-        if (e.name === "@deepseek-ai") continue; 
+        if (e.name === "@deepseek-ai") continue;
         let subs;
         try {
           subs = await readdir(join(root, e.name), { withFileTypes: true });
@@ -591,7 +591,7 @@ function pickTargetSource(npmV, ghV, pref) {
     if (cmp > 0) return { target: ghV, src: "github", source: "both" };
     if (cmp < 0) return { target: npmV, src: "npm", source: "both" };
     if (pref === "npm") return { target: npmV, src: "npm", source: "both" };
-    return { target: ghV, src: "github", source: "both" }; 
+    return { target: ghV, src: "github", source: "both" };
   }
   if (ghV) return { target: ghV, src: "github", source: "github" };
   if (npmV) return { target: npmV, src: "npm", source: "npm" };
@@ -617,15 +617,15 @@ async function checkPlugin(p, force) {
     installed: p.installed,
     dir: p.dir || null,
     copies: Array.isArray(p.copies) ? p.copies : [],
-    latest: null,      
+    latest: null,
     npmLatest: null,
     ghLatest: null,
     ghTag: null,
     hasUpdate: false,
     onNpm: false,
     onGithub: false,
-    source: null,      
-    targetSource: null, 
+    source: null,
+    targetSource: null,
     error: null,
     ghError: null,
     ignored: false,
@@ -654,11 +654,11 @@ async function checkPlugin(p, force) {
       if (gh && gh.none) {
         item.onGithub = false;
       } else {
-        
-        
-        
-        
-        
+
+
+
+
+
         const ghNameRes = await fetchGhPkgName(p.ghRepo, gh.tag);
         const belongs = ghNameRes.hasRootPkg === false ? false : ghTagBelongsTo(ghNameRes.name, p.name);
         if (belongs) {
@@ -673,39 +673,39 @@ async function checkPlugin(p, force) {
         }
       }
     } catch (err) {
-      
+
       item.ghError = String(err && err.message ? err.message : err);
     }
   }
   const npmV = item.npmLatest;
   const ghV = item.ghLatest;
-  
-  
+
+
   const prefSource = (await readSettings()).downloadSource;
   const { target, src, source } = pickTargetSource(npmV, ghV, prefSource);
   item.source = source;
   item.latest = target;
   item.targetSource = src;
-  item.downloadSource = prefSource; 
-  item.tie = !!(npmV && ghV && compareVersions(ghV, npmV) === 0); 
+  item.downloadSource = prefSource;
+  item.tie = !!(npmV && ghV && compareVersions(ghV, npmV) === 0);
   if (item.installed && target) {
     item.hasUpdate = compareVersions(target, item.installed) > 0;
   }
-  
+
   item.status = deriveStatus(item.installed, target, !!(npmV || ghV));
-  
+
   if (!target) {
     const parts = [];
     if (item.error) parts.push("npm: " + item.error);
     if (item.ghError) parts.push("github: " + item.ghError);
     item.error = parts.length ? parts.join("; ") : "no update source";
-    
+
     if (!p.hasDsh) {
       item.ignored = true;
       item.ignoreReason = "no dsh field and not on npm/GitHub (local tool)";
     }
   }
-  
+
   if (item.installed && target) {
     const brief = {
       from: item.installed,
@@ -790,7 +790,7 @@ async function backupAndReplace(dst, src, filter, manifestSpec) {
     const st = await lstat(dst);
     if (st.isSymbolicLink()) await rm(dst, { recursive: false, force: true });
   } catch {
-    
+
   }
   let backupDir = null;
   if (await exists(dst)) {
@@ -802,7 +802,7 @@ async function backupAndReplace(dst, src, filter, manifestSpec) {
     try {
       pkgName = JSON.parse(await readFile(join(dst, "package.json"), "utf8")).name;
     } catch {
-      
+
     }
     await writeFile(
       join(backupDir, "backup-info.json"),
@@ -1045,8 +1045,8 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
   npmLatestCache.delete(target.name);
   if (target.ghRepo) ghLatestCache.delete(target.ghRepo);
   await writeSuppressPluginBanner(false);
-  
-  
+
+
   const persisted = await persistPluginUpdate({
     name: target.name,
     newVersion,
@@ -1065,10 +1065,10 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
     lockfile: [],
     error: truncate(String((err && err.message) || err), 1000),
   }));
-  
-  
-  
-  
+
+
+
+
   let mount = null;
   try {
     mount = await ensurePluginMount();
@@ -1125,8 +1125,8 @@ function ghRequest(url, opts = {}) {
           headers: {
             accept: "application/json",
             "user-agent": "dsh-update-checker",
-            
-            
+
+
             ...(host === "api.github.com" && GH_TOKEN
               ? { authorization: `Bearer ${GH_TOKEN}` }
               : {}),
@@ -1198,7 +1198,7 @@ function extractTarGzToDir(buf, destDir) {
   for (const e of entries) {
     const rel = e.name.split("/").slice(1).join("/");
     if (!rel) continue;
-    const target = resolve(destDir, e.name); 
+    const target = resolve(destDir, e.name);
     if (!target.startsWith(resolve(destDir))) continue;
     mkdirSync(dirname(target), { recursive: true });
     writeFileSync(target, e.data);
@@ -1220,17 +1220,17 @@ function extractTarGzToDir(buf, destDir) {
 export default {
   name: "dsh-update-checker",
   apply(ctx) {
-    
-    
-    
+
+
+
     ctx.inject(["webServer"], (webCtx) => {
       const webServer = webCtx.webServer;
 
       reconcileStaleUpdateState("dsh restarted while an update record was still marked running").catch(() => {});
       reconcileStaleUpdateLock().catch(() => {});
-      
-      
-      
+
+
+
       ensurePluginMount()
         .then((r) => {
           lastMountReport = r;
@@ -1322,10 +1322,10 @@ mount/suppress调用方式。
         },
       });
 
-      
-      
-      
-      
+
+
+
+
       webServer.register({
         kind: "exact",
         path: "/dsh-update-checker/mount",
@@ -1344,7 +1344,7 @@ mount/suppress调用方式。
         },
       });
 
-      
+
       webServer.register({
         kind: "exact",
         path: "/dsh-update-checker/suppress",
@@ -1393,7 +1393,7 @@ mount/suppress调用方式。
             );
             await clearProgress();
             await writeProgress({ phase: "check", label: "正在查询最新版本…", percent: 2 });
-            const latestInfo = await resolveMainTarget(true); 
+            const latestInfo = await resolveMainTarget(true);
             const setts = await readSettings();
             const installedForGate = await readInstalledVersion().catch(() => null);
             const gate = prereleaseGate(installedForGate, latestInfo.version, setts.allowPrerelease);
@@ -1412,8 +1412,8 @@ restart不依body。
         },
       });
 
-      
-      
+
+
       webServer.register({
         kind: "exact",
         path: "/dsh-update-checker/restart",
@@ -1532,8 +1532,8 @@ settings body访问。
         },
       });
 
-      
-      
+
+
       webServer.register({
         kind: "exact",
         path: "/dsh-update-checker/settings",
@@ -1597,7 +1597,7 @@ async function probeInstanceId(fetchOnce, base) {
       const data = JSON.parse(res.body);
       if (data && typeof data.instanceId === "string" && data.instanceId !== "") return data.instanceId;
     } catch {
-      
+
     }
   }
   return null;
@@ -1800,8 +1800,8 @@ async function rollbackMain() {
     );
   }
   const spec = `${PACKAGE}@${target.installed}`;
-  await dryRunGuard(root, spec, { allowRemove: true }); 
-  const safetyBackup = await backupForUpdate(root); 
+  await dryRunGuard(root, spec, { allowRemove: true });
+  const safetyBackup = await backupForUpdate(root);
   const { args, type } = buildNpmInstallArgs(root, spec);
   const { stdout, stderr } = await runNpm(args, { cwd: root, timeout: 600000 });
   const installed = await readInstalledVersion();
@@ -2177,8 +2177,8 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
   npmLatestCache.delete(target.name);
   if (target.ghRepo) ghLatestCache.delete(target.ghRepo);
   await writeSuppressPluginBanner(false);
-  
-  
+
+
   const persisted = await persistPluginUpdate({
     name: target.name,
     newVersion,
@@ -2197,10 +2197,10 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
     lockfile: [],
     error: truncate(String((err && err.message) || err), 1000),
   }));
-  
-  
-  
-  
+
+
+
+
   let mount = null;
   try {
     mount = await ensurePluginMount();
@@ -2394,8 +2394,8 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
   npmLatestCache.delete(target.name);
   if (target.ghRepo) ghLatestCache.delete(target.ghRepo);
   await writeSuppressPluginBanner(false);
-  
-  
+
+
   const persisted = await persistPluginUpdate({
     name: target.name,
     newVersion,
@@ -2414,10 +2414,10 @@ async function finalizePluginInstall(target, pkgRoot, depRoot, extra, copyFilter
     lockfile: [],
     error: truncate(String((err && err.message) || err), 1000),
   }));
-  
-  
-  
-  
+
+
+
+
   let mount = null;
   try {
     mount = await ensurePluginMount();

@@ -1606,8 +1606,8 @@ This experiment's 21 entries are **hand-picked probes covering all three risk ba
 
 样本 40 个 case / 114 个判断问题；三条臂各跑一遍，耗时 73s。
 
-- **A** 中文直连  
-- **B** 机器翻译（deepseek-flash 一次过）→ Jev  
+- **A** 中文直连
+- **B** 机器翻译（deepseek-flash 一次过）→ Jev
 - **C** 翻译 + 回译校验（不一致则带反馈重译一次）→ Jev
 
 ## 1. 总准确率
