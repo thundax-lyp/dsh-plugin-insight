@@ -11,10 +11,8 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
-| [chicheng-cron](#plugin-1335807482-root) | 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。 | 适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。 |
 | [chicheng-push](#plugin-1335382133-root) | 在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 | 有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。 |
 | [dock-spreadsheet](#plugin-1400109121-root) | 在Dock只读预览工作簿及UTF-8分隔文本，保持表格坐标。 | 用于小表快速阅读；需编辑、计算或完整报表时另用表格软件。 |
-| [dsh-awiki](#plugin-1334428397-root) | 把AWiki身份、设备加入/恢复、消息和邮件接入DSH，区分Host管理与模型可用操作。 | 适合已有AWiki体系者在测试身份验证设备撤销与发送审批。 |
 | [dsh-crypto-portfolio](#plugin-1342742812-root) | 以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。 | 先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。 |
 | [dsh-cua-pre](#plugin-1346533795-root) | 以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。 | 先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
@@ -53,20 +51,6 @@
 
 > **建议**：先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。
 
-<a id="plugin-1335807482-root"></a>
-
-## [chicheng-cron](../../plugins/534119219--chicheng-cron/INSIGHT.md)
-
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-cron)
-
-> **用途**：需要周期性本机脚本或Agent任务的人，在GUI配置时间、cwd、超时与通知，交付任务输出和运行记录；适用于允许错过时点且宿主持久在线的自动化。
-
-> **亮点**：相对系统cron加独立日志脚本，增量是把DSH Skill/Agent与普通脚本放进一个有历史、输出查看和通知的界面，并整理headless会话。cron语法、进程执行与推送服务为既有机制；贡献是统一任务生命周期和DSH交接，而非新调度算法。
-
-> **思考**：进程退出0能否代表Agent任务成功？executeRun以退出码和timeout状态结算并触发成功归档，缺少业务产物断言；attach/archive通过开始时间定位会话的路径还需并发验证。超时直接child.kill不能证明整棵后代进程停止，且Web停机错过时点不补跑，关键任务不能只靠绿色历史。
-
-> **建议**：待验证假设：每次调度生成显式runId并贯穿headless会话、产物与通知，增加任务定义中的输出断言，可减少误归档和“exit0但未交付”。由当前runId记录与基于时间找会话之间的缺口推导。对照并发两次同类Agent、exit0不写产物、超时生成子进程三类任务，验证归属准确率、漏交付率与残留；需要用户定义合格产物，不能自动猜验收。
-
 <a id="plugin-1335382133-root"></a>
 
 ## [chicheng-push](../../plugins/534119219--chicheng-push/INSIGHT.md)
@@ -94,20 +78,6 @@
 > **思考**：行列上限在工作簿解析之后才应用，20MiB压缩文件不代表展开内存有界；公式显示依赖缓存/格式化值，不能用预览判断计算正确。只读不意味着文件内容可当可靠业务报表。
 
 > **建议**：未验证假设：解析隔离到worker并提供取消/复杂度预算和公式缓存提示，可使大表失败可控。比较高压缩XLSX、大范围和陈旧公式缓存样例的峰值内存、可取消性及误判。
-
-<a id="plugin-1334428397-root"></a>
-
-## [dsh-awiki](../../plugins/agentconnect--dsh-awiki/INSIGHT.md)
-
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki) [![npm 30d 1,584](https://img.shields.io/static/v1?label=npm+30d&message=1%2C584&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin)
-
-> **用途**：Agent需以稳定身份参与通信，设备丢失/切换仍可明确账户和消息归属；必须将发送和身份控制区分。
-
-> **亮点**：增量是身份/设备/恢复和DSH Agent生命周期的边界整合，不只是消息转发。DID密钥与文档归独立ANP Identity，协议与数据库/恢复实现大量来自IM Core。
-
-> **思考**：界面确认是否覆盖所有身份与外部写入？工具层ask是可读证据，但真实宿主策略与Core的租约、设备撤销/恢复一致性未验证；大量本地状态和网络边界不能凭测试目录认定端到端成功。
-
-> **建议**：由Host lease与可见操作分离推导，可为恢复/发送提供跨层收据，绑定身份代次、设备和请求结果，遇未知结果只核查不重放。未验证；丢响应、撤设备、切身份时应不会由旧会话继续签发或重复发送。
 
 <a id="plugin-1342742812-root"></a>
 

@@ -14,7 +14,6 @@
 | [chicheng-gate](#plugin-1334862230-root) | 在 DSH Web 管理远程访问、frpc 隧道、面板密码门禁与移动端界面。 | 仅适合了解DSH远程控制范围、能维护网络的人在隔离环境先检查；先设置密码，验证HTTP和WebSocket都被挡住，再考虑外网，并单独确认加密传输及升级后的补丁恢复。 |
 | [chicheng-stats](#plugin-1335725068-root) | 在 DSH 汇总请求用量、展示趋势和模型明细，并支持历史会话扫描。 | 想查看DSH资源分布的人可先对一个已知会话核对请求数和token；Desktop先确认是否有历史回填，平台余额和本地统计分开看，不用它直接结算费用。 |
 | [DSH Telemetry Redactor](#plugin-1333368566-root) | 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。 | 先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。 |
-| [dsh-alive](#plugin-1335661970-root) | 在会话头部轮询本地 ping 接口，显示在线状态点。 | 仅需Host连接提示时可评估；已有宿主连接指示或需要模型可用性监控者，先确认它是否提供额外信息。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。 | 先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。 |
 | [dsh-armor-switch](#plugin-1409096911-root) | 提供运行时提示契约切换及可选的宿主、Profile文案维护和恢复操作。 | 只建议在可恢复的独立Profile中检查机制。 |
@@ -26,8 +25,6 @@
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 生成并管理MCP代理与Cloudflare隧道容器栈，输出待确认的客户端配置片段。 | 只在隔离示例端点试。 |
 | [dsh-model](#plugin-1410395082-root) | 聚合多种模型来源为统一鉴权端点，提供模型目录、来源登录、组合切换与DSH管理页。 | 适合能维护本地daemon的多来源用户在临时profile试用。 |
 | [dsh-model-auto-enricher](#plugin-1425159954-root) | 按模型名称规则补写Profile中的上下文、输出、模态与思考档位配置。 | 不宜直接让自动补齐改生产Profile。 |
-| [dsh-monitor](#plugin-1333440937-root) | 轮询文件或命令输出，将新增内容送入 DSH 会话并唤醒 Agent。 | 仅在已授权、可信本地消息源且能接受进程内监视语义时评估；不据“persistent”措辞当作跨重启队列或权限隔离。 |
-| [dsh-need-finder](#plugin-1336571882-root) | 按中英文需求匹配精选插件，并生成预设环境配方的有序安装计划。 | 适合找候选和列清单。 |
 | [DSH-Official-WorkBuddy-Credit-Proxy](#plugin-1387227102-root) | 将本机 WorkBuddy、CodeBuddy 账号接入 DSH 模型池，并提供多协议代理与积分面板。 | 仅在本人账号和明确上游使用条件下隔离试用，先验证真实客户端工具闭环与协议降级；不要只凭响应200扩大使用。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。 | 适合已有Console账号的用户先对固定模型验证文本、工具和usage。 |
 | [dsh-permissions](#plugin-1335349535-root) | 为DSH工具调用配置hard、deny、ask、allow权限规则，提供工作区作用域和可视化编辑。 | 适合将它作为宿主沙箱之上的附加规则层先试用。 |
@@ -37,7 +34,6 @@
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 适合维护多个插件的DSH环境；先在隔离profile验证冲突提示和回滚，再用于日常安装，重要环境保留独立备份。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。 | 需要批量辨认和启停时先在独立profile试用，核对系统保护、表达式拒绝、备份恢复及实际fiber状态后扩用。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。 | 先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。 |
-| [dsh-plugin-recommend](#plugin-1336684098-root) | 按需求、分类和标签搜索插件目录，提供相似项及在线目录刷新。 | 适合找候选和同类线索。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。 | 先备份 profile，对单个模型检查实际请求与撤销结果，再考虑批量补齐。 |
 | [dsh-recipe](#plugin-1336583700-root) | 按场景检索插件配方，展开有序插件列表与安装命令，并合并去重多套配方。 | 适合先找候选组合的用户。 |
 | [dsh-remote-ssh](#plugin-1384810201-root) | 通过SSH对配置主机执行允许命令，提供状态查询、固定探针与受限远程运行工具。 | 先使用远端低权限账号和固定只读探针，严格限定命令及参数，确认超时后的远端进程状态；不要把插件白名单当完整沙箱。 |
@@ -140,20 +136,6 @@
 > **思考**：在统一出口处理副本有清晰边界；它是遥测防护的一层，不能替代凭据权限和全链路审计。
 
 > **建议**：先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。
-
-<a id="plugin-1335661970-root"></a>
-
-## [dsh-alive](../../plugins/aikenfra--dsh-alive/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AikenFra/dsh-alive) [![npm 30d 848](https://img.shields.io/static/v1?label=npm+30d&message=848&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-alive) [![最新发布 2026-09-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-alive)
-
-> **用途**：Web用户想知道浏览器能否连到当前Host，不必发一条模型消息探活；交付是HTTP可达性提示。
-
-> **亮点**：以不调用LLM的本地探活替代发消息测服务，成本与提示语义简单；增量是宿主slot接入，不是端到端健康检查。只要明确信号范围，它可辅助区分页面到Host的连接。
-
-> **思考**：绿色是否被误解成DeepSeek模型在线？client只看r.ok，不核响应JSON或模型/API状态；Host存活而模型认证/限额/上游断网仍绿色。fetch无timeout/AbortController，连接挂住时旧online可长期保留，固定interval可能叠请求，所以README“挂了立刻变红”超过实现保证。
-
-> **建议**：把标签改为Host可达并附最近成功时间，给每次fetch明确截止且显示stale，可能减少错误健康判断。用Host正常但模型失败、HTTP挂起和代理返回200 HTML案例，要求不声称模型在线且超时进入未知；若仍保留旧绿色则假设失败。
 
 <a id="plugin-1366089972-workspace-plugins-dsh-anatomy-panel"></a>
 
@@ -309,34 +291,6 @@
 
 > **建议**：待验证假设：以保守未知值、端点能力来源和用户确认差异取代旗舰兜底，可减少配置后的请求失败。收集已知小窗口、纯文本和未知模型的脱敏配置，比较规则版与保守确认版的错误声明、编辑时间及回滚率；若无改善则否定。
 
-<a id="plugin-1333440937-root"></a>
-
-## [dsh-monitor](../../plugins/abnerai--dsh-monitor/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AbnerAI/dsh-monitor) [![npm 30d 831](https://img.shields.io/static/v1?label=npm+30d&message=831&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-monitor) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-monitor)
-
-> **用途**：Agent在等待追加式消息源时避免自行忙轮询；交付物是属于原Agent的插件notice，不是监控源事实已核验。
-
-> **亮点**：把Agent忙等改成后台timer，在宿主空闲与运行中使用不同消息入口，统一文件与命令差分；相较Agent循环调用shell减少上下文轮询。作者以Claude Monitor作类比，但本项并非同等耐久消息队列或完整跨会话授权。
-
-> **思考**：新增消息能否不丢不重且仅原会话可管理？文件按当前size推进游标，即使末行没换行也发送，下一段会成为另一条；setInterval的async tick无busy锁，慢命令可重叠并乱序更新cursor。list列全部watcher，stop仅按ID不校owner；计数在未await followup/inject后递增。maxNoticeBytes配置被读但未用于noticeFor，不能承诺配置的字节上限。
-
-> **建议**：把每watcher做串行状态机：完整行缓冲、owner校验、投递确认后推进游标，并显式定义重启恢复，可能改善可靠性。用半行分次追加、命令超poll时长、两个会话互停和投递失败案例，要求不拆消息、不重叠、不跨会话并可说明未知投递；没有回执时应标至少一次/可能丢失而非“已送达”。
-
-<a id="plugin-1336571882-root"></a>
-
-## [dsh-need-finder](../../plugins/863683348--dsh-need-finder/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-need-finder) [![npm 30d 850](https://img.shields.io/static/v1?label=npm+30d&message=850&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-need-finder) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-need-finder)
-
-> **用途**：适合不会记插件名、想先找少量候选的用户；安装计划仍需人工逐项确认。
-
-> **亮点**：作者称需求语义导购；可确认增量是把可解释词面匹配和配方清单接进模型工具，避免模型自行猜名称。相对浏览目录，返回命中理由与命令更直接；这里语义是词典/子串规则，没有向量或模型语义推理。
-
-> **思考**：84项精选属于有意子集，词面相关不能证明实际能力和兼容。中文category兜底的实际代码仅拿en词集合匹配，中文词典项不会凭空增加中文分类召回。recipe apply只返回计划，dependsOn校验存在性但installPlan按order排序，不做真实依赖求解或执行。
-
-> **建议**：待验证假设：在匹配结果中加入经过验证的场景条件与未满足条件，比单纯提高词权重更能缩短选型。对同义但无词面重合、中文分类和互斥配方需求比较人工合适率与误装率；没有宿主证据的条件保持未知。
-
 <a id="plugin-1387227102-root"></a>
 
 ## [DSH-Official-WorkBuddy-Credit-Proxy](../../plugins/2861292267--dsh-official-workbuddy-credit-proxy/INSIGHT.md)
@@ -462,20 +416,6 @@
 > **思考**：集中运行期设置简化多处代理配置；进程全局影响也可能改变其他插件的出站路径。
 
 > **建议**：先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。
-
-<a id="plugin-1336684098-root"></a>
-
-## [dsh-plugin-recommend](../../plugins/863683348--dsh-plugin-recommend/INSIGHT.md)
-
-[![npm 30d 739](https://img.shields.io/static/v1?label=npm+30d&message=739&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend)
-
-> **用途**：适合从广泛目录获取插件候选与替代项，之后还需检查源码与宿主条件。
-
-> **亮点**：作者主张按需推荐；实际增量是将大目录的可解释关键词检索、相似项、去重和分类多样化封成工具。相对模型凭记忆猜名，输出对应条目与命中理由；相似度仅是共享标签/描述词，不能证明可替代性或效果。
-
-> **思考**：在线解析依赖###标题和特定Markdown列表形式，来源改版可能少量成功却漏项。刷新得到的条目没有内嵌目录自动标签，排序条件与静态结果不完全相同；去重在排序前保留首个同仓项，可能丢掉更匹配组件。刷新在进程内生效不等于持久档案或固定版本研究。
-
-> **建议**：待验证假设：采用结构化目录源并对刷新前后覆盖及标签变化做显式审计，比只要parsed非空就成功更可靠。用README改版、部分解析和同仓多组件需求比较漏项与候选质量；无法确认完整时保留旧目录并标未知。
 
 <a id="plugin-1367305514-root"></a>
 

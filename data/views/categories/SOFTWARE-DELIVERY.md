@@ -68,7 +68,6 @@
 | [dsh-openai-oauth](#plugin-1335992154-root) | 为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。 | 可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。 |
 | [dsh-organism](#plugin-1366089972-workspace-plugins-dsh-organism) | 以器官模型聚合 DSH 工具，提供心跳体征、反射、代理调用和工具显影。 | 先隔离核 body_map/status 与宿主工具表，再分别启用门控和反射；保持最小权限与直接调用回退。 |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。 |
-| [dsh-plugin-focus](#plugin-1336084195-root) | 将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。 | 适合单任务工作区先试。 |
 | [dsh-plugin-gate](#plugin-1336663986-root) | 向 DSH Agent 提供插件源码静态扫描、风险差分/报告及破坏性操作建议工具，以 systemPrompt 提醒调用。 | 只在明确源码版本上扫描，逐项审阅 hits、notes 和 filesScanned；对高权限插件增加人工/沙箱审查。 |
 | [dsh-plugin-ide-hub](#plugin-1397817235-root) | 汇总多IDE本地会话与用量、手填额度建议和日程规则，生成共享提示词指针并导出Obsidian快照。 | 先观察，可信本地只读盘点优先，规则写入先dry-run和Git备份。 |
 | [dsh-plugin-market](#plugin-1367597810-root) | 在 DSH 设置页展示社区目录、已安装与可更新项，并触发插件安装。 | 建议观察；web profile 中可浏览目录，但点击安装/更新前须核来源、版本、目标，完成后重启检加载。 |
@@ -947,20 +946,6 @@
 > **思考**：canary改临时HOME但仍普通用户进程并继承多项环境变量，不是OS沙箱；真实profile变更与外部初始化副作用也非原子回滚。详见[Q02](#research-q02)。
 
 > **建议**：可探讨最小能力变更收据，列环境/目录/网络与恢复覆盖，再以白名单或OS约束缩小canary能力；兼容与隐私成本未验证。详见[Q05](#research-q05)。
-
-<a id="plugin-1336084195-root"></a>
-
-## [dsh-plugin-focus](../../plugins/863683348--dsh-plugin-focus/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-focus) [![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus)
-
-> **用途**：适合长任务与压缩后容易忘记约束的开发者；焦点板固定目标而非替代待办清单。
-
-> **亮点**：作者提出durable focus board；实际增量是把目标与硬约束变成工作区可读Markdown，并自动在回合/变更时补入模型上下文。相比纯todo，强调不该漂移的信息；持久化和注入有代码实现，附带制造Skill则仅指导模型使用外部命令，不是自动发布服务。
-
-> **思考**：同工作区会话共享同一个板文件，读改写缺少锁或版本冲突处理，并发会话可能互相覆盖。trimEntries只保留最近maxEntries，早期硬约束也会被裁掉，自动注入并不保证目标保留；set在board.js实际追加而非替换旧目标。附带dsh-factory含npm发布、topic和PR等高副作用流程，不能把加载Skill当发布已执行或授权。 固定npm files排除skills目录，因此附带Skill还存在源码可见与打包可见的差异。
-
-> **建议**：待验证假设：将有效目标与硬约束作为稳定集合、普通发现作为有界日志，并以revision保护写入，可在不增加太多token下减少目标丢失。用超过60条记录、目标更新和双会话并发比较有效约束召回与覆盖冲突；若稳定集合积累过期约束，加入显式撤销状态。
 
 <a id="plugin-1336663986-root"></a>
 

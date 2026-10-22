@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1335381015-root-directory-0",
+                    "id": "2026-10-22-02-github-1335381015-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:21:09.494Z",
+                    "retrieved_at": "2026-10-22T07:01:02.531Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1335381015-root-author",
+                    "id": "2026-10-22-02-github-1335381015-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AmeKrance/anan-thermal-monitor",
+                            "commit": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                            "path": "README.md",
+                            "content_sha256": "e1d86e06ef5cac56039532b7c392ae513629d63173685c896ca4c1d2118afb6c"
+                        }
+                    ],
                     "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
-                    "captured_at": "2026-10-21T08:21:09.494Z",
-                    "summary": "在Windows启动独立WPF桌宠，显示LibreHardwareMonitor提供的硬件温度。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:01:02.531Z",
+                    "summary": "Windows WPF 温度桌宠，利用 PowerShell 与随包 LibreHardwareMonitor 采集传感器，DSH Host 负责启动/停止。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1335381015-root-source",
+                    "id": "2026-10-22-02-github-1335381015-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/lib/index.js",
+                    "url": "https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AmeKrance/anan-thermal-monitor",
+                            "commit": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                            "path": "README.md",
+                            "content_sha256": "e1d86e06ef5cac56039532b7c392ae513629d63173685c896ca4c1d2118afb6c"
+                        },
+                        {
+                            "repository_url": "https://github.com/AmeKrance/anan-thermal-monitor",
+                            "commit": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                            "path": "package.json",
+                            "content_sha256": "44b4fd2cf883f40193b7f1828b0eb2b47f31be7ef286ba62bc1c387d6096dd60"
+                        },
+                        {
+                            "repository_url": "https://github.com/AmeKrance/anan-thermal-monitor",
+                            "commit": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                            "path": "lib/index.js",
+                            "content_sha256": "e124bb0a5c7ff753ee6636919d21b911fdfdfcd83ebd8f7009b5f9d703b38b48"
+                        },
+                        {
+                            "repository_url": "https://github.com/AmeKrance/anan-thermal-monitor",
+                            "commit": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                            "path": "assets/desktop-pet.ps1",
+                            "content_sha256": "3bffb7bc81996dc339c18d85563522d9c477e05f1b91d3bf546f5c25887d2c39"
+                        },
+                        {
+                            "repository_url": "https://github.com/AmeKrance/anan-thermal-monitor",
+                            "commit": "13ed26da20da08eecc300fb9963bea3dd4634205",
+                            "path": "install-autostart.bat",
+                            "content_sha256": "371ff21af1d0c9a6b2347c902f72ab30751cc5e7348861c69e10b1bbe200b76d"
+                        }
+                    ],
                     "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
-                    "captured_at": "2026-10-21T08:21:09.494Z",
-                    "summary": "核查 lib/index.js、assets/desktop-pet.ps1、package.json、cordis.patch.yml；DSH入口随生命周期启动PowerShell脚本；脚本请求管理员权限、加载LibreHardwareMonitor，后台约两秒轮询，WPF渲染读数与交互。PID文件、停止标记和临时JSON连接生命周期及状态读取；硬件访问来自上游组件。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:01:02.531Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、assets/desktop-pet.ps1、install-autostart.bat；Host spawn PowerShell，脚本自提权并借 LHM 采样；TEMP PID/JSON/flag 连接生命周期。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "lib/index.js、实际承担采样与WPF的assets/desktop-pet.ps1、包入口及patch；PowerShell不在JS/TS统计内，随包上游DLL/EXE未做二进制审计，不能按整包体积认定原创代码。",
+                        "静态审阅 README、Host、PowerShell、包清单与自启 bat；不运行 Windows 程序或审计 DLL。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "想在桌面持续查看CPU/GPU等可用传感器读数的个人用户；读数提示设备状态，不构成散热诊断或自动保护控制。",
+                    "text": "希望常驻桌面查看 CPU/内存/GPU/NVMe 温度的 Windows 用户。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "DSH入口随生命周期启动PowerShell脚本；脚本请求管理员权限、加载LibreHardwareMonitor，后台约两秒轮询，WPF渲染读数与交互。PID文件、停止标记和临时JSON连接生命周期及状态读取；硬件访问来自上游组件。",
+                    "text": "Host spawn PowerShell，脚本自提权并借 LHM 采样；TEMP PID/JSON/flag 连接生命周期。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "lib/index.js、实际承担采样与WPF的assets/desktop-pet.ps1、包入口及patch；PowerShell不在JS/TS统计内，随包上游DLL/EXE未做二进制审计，不能按整包体积认定原创代码。",
+                    "text": "静态审阅 README、Host、PowerShell、包清单与自启 bat；不运行 Windows 程序或审计 DLL。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "Windows专用插件，包内assets含脚本和LibreHardwareMonitor相关组件；启动powershell.exe使用ExecutionPolicy Bypass并可能触发UAC，需完整资源。",
+                    "text": "package 1.0.4、代码 MIT；LHM 与桌宠素材许可仅记录作者声明，未独立法律核查。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金无模型/API调用；人工涉及Windows权限、上游驱动/组件兼容、打包与温度解释；轮询和独立GUI消耗本机资源，未测占用。",
+                    "text": "#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 安装 | Windows/PowerShell/DSH | npm 与源码入口不同 |\n| 运行 | 管理员/LHM/CPU | 硬件支持未知 |\n| 自启 | 高权限计划任务 | 需显式卸载 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "希望观察本机温度且接受Windows脚本与权限要求时再评估；先验证UAC拒绝/缺传感器及退出状态，不以温度颜色作硬件安全保证。",
+                    "text": "在隔离 VM 核包内容、二进制来源和 UAC；测试传感器缺失、启动误报、停止/卸载及任务计划残留。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "本地常驻读数无需与模型交互，但能读取哪些硬件取决于传感器和权限，没有监控准确率或性能收益证据。",
+                    "text": "#### 效果\n\n| 项 | 代码支持 | 未知 |\n| --- | --- | --- |\n| 温度桌宠 | WPF/LHM | 传感器可用率 |\n| DSH 启停 | spawn/flag | 真正子进程状态 |\n| 独立自启 | 仓库 vbs/bat | npm 包缺入口 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "GUI与采样工作分离、nullable读数处理、卸载停止标记是实用接线；CPU Package/Core Max等选择来自明确规则，上游LibreHardwareMonitor承担硬件访问，NVMe显示实际取Storage传感器不保证仅NVMe。",
+                    "text": "Host 和提权后 PowerShell 经共享临时文件协调；无直接浏览器客户端。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "将既有硬件监控库接到可随DSH加载/卸载的桌面小部件，无需模型请求即可展示温度。价值是本地可见性与轻量入口，采样算法、驱动和WPF本身不是本插件原创。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "把硬件传感器以桌面悬浮卡片呈现，并可由 DSH 启停。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "插件返回running是否意味着桌宠已就绪？Node spawn后即返回成功，PID存在也未验证进程身份；旧PID复用可能阻止启动，stop返回也未等待窗口确认。更具体地，提权Start-Process的catch虽注释称低权限继续，随后无条件exit，拒绝UAC仍退出。采样JSON直接覆盖，读取失败返回null，状态还缺明确新鲜度判据。",
+                    "basis": "supported",
+                    "text": "管理员提权与二进制依赖较重；Host 启动立即回 running:true，GUI 卡片承诺缺直接实现，npm files 不含独立启动/自启入口。详见[Q01](#research-q01)至[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "以随机实例ID、就绪握手和采样时间界定“已启动/不可用/读数过期”，并将拒绝提权显式呈现，可能减少虚假运行状态。检查拒绝UAC、PID复用、helper启动失败、无传感器和停止超时五种故障；若Host仍显示running或旧温度无过期提示，则该生命周期方案未成立。",
+                    "text": "核实 PID/数据心跳后再报告运行、明确源码与 npm 安装差异，可减少误导；待 Windows 实测。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "13ed26da20da08eecc300fb9963bea3dd4634205"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:09.494Z",
+                    "reviewed_at": "2026-10-22T07:01:02.531Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:21:09.494Z",
+            "last_checked_at": "2026-10-22T07:01:02.531Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
-                "reviewed_at": "2026-10-21T08:21:09.494Z",
+                "reviewed_at": "2026-10-22T07:01:02.531Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -274,62 +314,62 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 0,
-                        "mechanism": 8,
-                        "transferability": 5,
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 0,
                         "simplification": 4
                     },
-                    "rationale": "新颖性0：桌宠温度监控和现成传感器库均为既有方案；机制8：Node生命周期与PowerShell/WPF采样衔接具体；迁移性5：Windows专属，但就绪状态问题可复用；简化4：入口省手工启动，二进制/提权维护仍在。",
+                    "rationale": "WPF/LHM/DSH 生命周期组合可用，但 Windows 管理员和二进制依赖强。",
                     "basis": "interpretation",
-                    "score": 17,
+                    "score": 28,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 0,
-                        "delivery": 0,
+                        "workflow": 9,
+                        "delivery": 8,
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "工作流0：观察温度未改变业务协作或责任；交付0：展示既有监控读数不构成新业务产物；覆盖5：Windows桌面硬件观察者；经济0：没有成本结构改变或收益实测。",
+                    "rationale": "硬件监控场景窄，发布入口和状态可靠性未证。",
                     "basis": "interpretation",
-                    "score": 5,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1335381015-root-source"
+                        "2026-10-22-02-github-1335381015-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "Windows温度观察者应先修拒绝UAC即退出却承诺降级、PID身份及状态新鲜度；running不能当窗口就绪或硬件保护。",
+                "reason": "仅在可回滚 Windows VM 核二进制、管理员权限、安装包和停止路径后再考虑。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "持续看本机温度的个人需求明确但已有系统工具可替代。"
+                        "rationale": "桌面温度监控场景明确。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "在DSH生命周期启动WPF读数提供入口便利。"
+                        "rationale": "桌宠形式与四类传感器，但 GUI 承诺缺代码。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核提权exit、PID及覆盖JSON，传感器真实性未验。"
+                        "rationale": "源码可核，硬件/Windows 未独立运行。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "管理员权限、组件驱动及错误状态排查负担超过当前集成便利。"
+                        "score": 0,
+                        "rationale": "管理员、二进制与自启维护成本较高。"
                     }
                 },
-                "score": 39,
+                "score": 34,
                 "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T07:01:02.531Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1335381015-root-source"
+                    "2026-10-22-02-github-1335381015-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,82 +394,44 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "b297b5324d8f4bc4eb4e0cdce9bcb949ab8be411d4b2fdaa8c359c44ec57b26b"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "5344b2f9773b3b5d83e9274571bb7535c1cac6508fab7851ad3bdc47fd5f4907"
         },
         "publication.metadata": "data/plugins/amekrance--anan-thermal-monitor/META.json",
         "publication.summaries": {
-            "text": "在Windows启动独立WPF桌宠，显示LibreHardwareMonitor提供的硬件温度。",
+            "text": "Windows WPF 温度桌宠，利用 PowerShell 与随包 LibreHardwareMonitor 采集传感器，DSH Host 负责启动/停止。",
             "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
             "source_url": "https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/README.md"
         },
         "publication.capabilities": {
             "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
             "items": {
-                "界面": "独立Windows WPF悬浮桌宠显示温度和硬件信息。",
-                "后台": "PowerShell辅助进程轮询LibreHardwareMonitor并随插件清理；条件式harness.handle分支不视为已确认的DSH工具注册。"
-            }
+                "界面": "Windows WPF 温度悬浮桌宠",
+                "后台": "PowerShell/LHM 采集、共享临时文件与停止旗标"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 传感器 | 温度提醒 | 管理员/硬件依赖 |\n| 启停 | 随 DSH | 状态可能误报 |\n| 自启 | 登录时启动 | npm files 未列脚本 |"
         },
         "publication.advice": {
             "revision": "13ed26da20da08eecc300fb9963bea3dd4634205",
-            "text": "希望观察本机温度且接受Windows脚本与权限要求时再评估；先验证UAC拒绝/缺传感器及退出状态，不以温度颜色作硬件安全保证。"
+            "text": "在隔离 VM 核包内容、二进制来源和 UAC；测试传感器缺失、启动误报、停止/卸载及任务计划残留。详见[Q02](#research-q02)、[Q03](#research-q03)。"
         },
         "registry": "data/plugins/amekrance--anan-thermal-monitor",
-        "reports": "# anan-thermal-monitor\n\n> 在Windows启动独立WPF桌宠，显示LibreHardwareMonitor提供的硬件温度。\n\n## 使用建议\n\n希望观察本机温度且接受Windows脚本与权限要求时再评估；先验证UAC拒绝/缺传感器及退出状态，不以温度颜色作硬件安全保证。\n\n核查状态：Windows启动与采样/界面路径源码可确认；未运行PowerShell、提权或传感器，实际温度准确性和启动成功未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：想在桌面持续查看CPU/GPU等可用传感器读数的个人用户；读数提示设备状态，不构成散热诊断或自动保护控制。\n- **亮点**：将既有硬件监控库接到可随DSH加载/卸载的桌面小部件，无需模型请求即可展示温度。价值是本地可见性与轻量入口，采样算法、驱动和WPF本身不是本插件原创。\n- **思考**：插件返回running是否意味着桌宠已就绪？Node spawn后即返回成功，PID存在也未验证进程身份；旧PID复用可能阻止启动，stop返回也未等待窗口确认。更具体地，提权Start-Process的catch虽注释称低权限继续，随后无条件exit，拒绝UAC仍退出。采样JSON直接覆盖，读取失败返回null，状态还缺明确新鲜度判据。\n- **建议**：以随机实例ID、就绪握手和采样时间界定“已启动/不可用/读数过期”，并将拒绝提权显式呈现，可能减少虚假运行状态。检查拒绝UAC、PID复用、helper启动失败、无传感器和停止超时五种故障；若Host仍显示running或旧温度无过期提示，则该生命周期方案未成立。\n\n## 场景与替代办法\n\n想在桌面持续查看CPU/GPU等可用传感器读数的个人用户；读数提示设备状态，不构成散热诊断或自动保护控制。\n\nLibreHardwareMonitor等独立监控软件；本项增加角色化桌面展示和DSH生命周期接线。\n\n## 能力清单\n\n- **界面**：独立Windows WPF悬浮桌宠显示温度和硬件信息。\n- **后台**：PowerShell辅助进程轮询LibreHardwareMonitor并随插件清理；条件式harness.handle分支不视为已确认的DSH工具注册。\n\n## 依赖与流程\n\nDSH入口随生命周期启动PowerShell脚本；脚本请求管理员权限、加载LibreHardwareMonitor，后台约两秒轮询，WPF渲染读数与交互。PID文件、停止标记和临时JSON连接生命周期及状态读取；硬件访问来自上游组件。\n\nWindows PowerShell、WPF/.NET及LibreHardwareMonitor资源和可用硬件传感器；部分数据需要管理员权限。\n\n加载插件→启动脚本→检查PID与提权→初始化硬件库→轮询并显示→写临时数据→卸载发停止标记并尝试kill；成功响应不含就绪/退出确认。\n\nWindows专用插件，包内assets含脚本和LibreHardwareMonitor相关组件；启动powershell.exe使用ExecutionPolicy Bypass并可能触发UAC，需完整资源。\n\n## 成本与效果\n\n现金无模型/API调用；人工涉及Windows权限、上游驱动/组件兼容、打包与温度解释；轮询和独立GUI消耗本机资源，未测占用。\n\n本地常驻读数无需与模型交互，但能读取哪些硬件取决于传感器和权限，没有监控准确率或性能收益证据。\n\n## 核心贡献\n\n将既有硬件监控库接到可随DSH加载/卸载的桌面小部件，无需模型请求即可展示温度。价值是本地可见性与轻量入口，采样算法、驱动和WPF本身不是本插件原创。\n\n## 关键质疑\n\n插件返回running是否意味着桌宠已就绪？Node spawn后即返回成功，PID存在也未验证进程身份；旧PID复用可能阻止启动，stop返回也未等待窗口确认。更具体地，提权Start-Process的catch虽注释称低权限继续，随后无条件exit，拒绝UAC仍退出。采样JSON直接覆盖，读取失败返回null，状态还缺明确新鲜度判据。\n\n## 工程亮点\n\nGUI与采样工作分离、nullable读数处理、卸载停止标记是实用接线；CPU Package/Core Max等选择来自明确规则，上游LibreHardwareMonitor承担硬件访问，NVMe显示实际取Storage传感器不保证仅NVMe。\n\n固定源码依据：[lib/index.js](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/lib/index.js)、[assets/desktop-pet.ps1](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/assets/desktop-pet.ps1)、[package.json](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/package.json)、[cordis.patch.yml](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n以随机实例ID、就绪握手和采样时间界定“已启动/不可用/读数过期”，并将拒绝提权显式呈现，可能减少虚假运行状态。检查拒绝UAC、PID复用、helper启动失败、无传感器和停止超时五种故障；若Host仍显示running或旧温度无过期提示，则该生命周期方案未成立。\n\n未执行；拟在隔离Windows环境检查UAC拒绝、旧PID/重复实例、无传感器、采样过期与卸载退出，另以可信监控读数交叉核对，不能由源码推断温度真实准确。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：27e02b45a2c1870bab31ecc363bd579548f067b3839fcf4c3c10103cc9e8c07c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 97 | 70 | 19 | — |\n| .md | source | 1 | 161 | — | — | 1705 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：1.0.4；版本日期：2026-08-16（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[13ed26da](https://github.com/AmeKrance/anan-thermal-monitor/tree/13ed26da20da08eecc300fb9963bea3dd4634205)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：lib/index.js、实际承担采样与WPF的assets/desktop-pet.ps1、包入口及patch；PowerShell不在JS/TS统计内，随包上游DLL/EXE未做二进制审计，不能按整包体积认定原创代码。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# anan-thermal-monitor\n\n> Windows WPF 温度桌宠，利用 PowerShell 与随包 LibreHardwareMonitor 采集传感器，DSH Host 负责启动/停止。\n\n## 研究范围\n\n- **仓库**：[AmeKrance/anan-thermal-monitor](https://github.com/AmeKrance/anan-thermal-monitor)\n- **版本号**：1.0.4（[固定提交 13ed26da20da08eecc300fb9963bea3dd4634205](https://github.com/AmeKrance/anan-thermal-monitor/tree/13ed26da20da08eecc300fb9963bea3dd4634205)）\n- **版本日期**：2026-08-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n桌宠采集和 Host 生命周期源码可核；DSH 对话卡片无直接 client 入口，发布包 files 不含独立自启脚本，真实 Windows/硬件效果未验。\n\n## 洞察短评\n\n- **用途**：希望常驻桌面查看 CPU/内存/GPU/NVMe 温度的 Windows 用户。\n- **亮点**：把硬件传感器以桌面悬浮卡片呈现，并可由 DSH 启停。详见[Q01](#research-q01)。\n- **思考**：管理员提权与二进制依赖较重；Host 启动立即回 running:true，GUI 卡片承诺缺直接实现，npm files 不含独立启动/自启入口。详见[Q01](#research-q01)至[Q03](#research-q03)。\n- **建议**：核实 PID/数据心跳后再报告运行、明确源码与 npm 安装差异，可减少误导；待 Windows 实测。详见[Q03](#research-q03)。\n\n采用建议：在隔离 VM 核包内容、二进制来源和 UAC；测试传感器缺失、启动误报、停止/卸载及任务计划残留。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n## 核心贡献\n\n把硬件传感器以桌面悬浮卡片呈现，并可由 DSH 启停。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n管理员提权与二进制依赖较重；Host 启动立即回 running:true，GUI 卡片承诺缺直接实现，npm files 不含独立启动/自启入口。详见[Q01](#research-q01)至[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n核实 PID/数据心跳后再报告运行、明确源码与 npm 安装差异，可减少误导；待 Windows 实测。详见[Q03](#research-q03)。\n\nWindows VM 实机传感器、UAC、异常/重启/卸载测试；核 npm tarball 和 DLL 来源。\n\n## 场景与替代办法\n\n希望常驻桌面查看 CPU/内存/GPU/NVMe 温度的 Windows 用户。\n\n独立硬件监控软件或 Windows 工具；此插件以桌宠形态展示。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| Windows/PowerShell 5.1 | WPF | 无法运行 |\n| 管理员 | CPU/内存传感器 | 部分缺失 |\n| LHM DLL/硬件 | 温度采集 | -- 或错误 |\n\n#### 隔离验证\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 包 | 看 npm tarball | 自启入口可知 |\n| 启动 | 允许/拒绝 UAC | 状态准确 |\n| 停止 | 停插件/卸载 | 无进程/任务残留 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 安装 | Windows/PowerShell/DSH | npm 与源码入口不同 |\n| 运行 | 管理员/LHM/CPU | 硬件支持未知 |\n| 自启 | 高权限计划任务 | 需显式卸载 |\n\n#### 效果\n\n| 项 | 代码支持 | 未知 |\n| --- | --- | --- |\n| 温度桌宠 | WPF/LHM | 传感器可用率 |\n| DSH 启停 | spawn/flag | 真正子进程状态 |\n| 独立自启 | 仓库 vbs/bat | npm 包缺入口 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 Windows 温度桌宠的硬件采集、权限/生命周期与包内承诺差异。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 它怎样提供温度桌宠？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n项目用 PowerShell 5.1/WPF 在 Windows 桌面显示贴边悬浮卡片，后台通过随包 LibreHardwareMonitor DLL 读取 CPU、内存、GPU、NVMe 温度，WMI/系统 API 取硬件信息。DSH Host apply 启动 powershell.exe 执行脚本并在 TEMP 目录读 JSON 数据/写停止旗标；脚本还可独立运行。这个方案让温度常驻桌面，不需要持续打开监控窗口，但实际传感器覆盖和视觉效果因设备不同未验。README 称 DSH 对话流有实时温度卡片/启停按钮；仓库没有浏览器 client 入口，Host 只有在全局 harness.handle 存在时注册四个 RPC，静态包缺失则跳过，因此该 GUI 承诺缺直接代码支持。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-25](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/README.md#L1-L25)\n\n作者描述 WPF 桌宠与四类温度。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n# 安安热能监控 · 桌面萌宠温度监控（DSH 插件包）\n\n一个悬浮在 Windows 桌面上的紫白主题萌宠卡片，实时监控 **CPU / 内存 / GPU / NVMe 固态** 四项温度，并展示笔记本型号与硬件信息。这是一个标准的 **DeepSeek Harness (DSH) 插件包**，可通过 `dsh plugin --profile <name> add <包名>` 一条命令安装；也支持脱离 harness 独立运行。基于 PowerShell 5.1 + WPF 原生实现，无第三方桌面组件依赖。\n\n---\n\n## ✨ 功能总览\n\n- **边缘停靠悬浮窗（360 悬浮球风格）**：透明、无边框、置顶的紫白渐变卡片（207×320）；平时贴边半藏露出 16px 边框（四边均可），鼠标靠近边缘自动滑出，移开鼠标 2 秒自动收回\n- **手动拖动 + 松手吸附**：滑出后可自由拖动到屏幕任意位置，松手自动吸附最近的屏幕边缘（右/左/上/下，400px 内）；甩出屏幕自动弹回；拖动不会覆盖任务栏，底部停靠时自动藏到任务栏后\n- **实时温度监控**：CPU / 内存 / GPU / NVMe 四项温度，每 2 秒刷新，数值按温度分级变色（紫 <65°C，橙 65–79°C，红 ≥80°C）\n- **页面自动轮换**：下方区域每 5 秒在「温度信息页」与「硬件信息页」之间切换，鼠标悬停时暂停轮换并固定显示温度\n- **硬件信息展示**：笔记本型号、CPU/显卡/内存摘要、屏幕分辨率、硬盘总容量、电池状态（电量 + 充电/电源/使用中）\n- **自定义素材**：`assets/素材1号.jpg` 作为萌宠形象，等比缩放填充图片区\n- **自动提权**：读取 CPU/内存温度需要管理员权限，启动时自动弹出 UAC 确认；启动后无控制台窗口残留\n- **优雅退出**：右键菜单退出；作为插件运行时，插件停止会通过停止信号文件让桌宠自动关闭并清理\n\n---\n\n## 📸 演示\n\n![桌宠截图 1](https://raw.githubusercontent.com/AmeKrance/anan-thermal-monitor/main/assets/screenshots/screenshot-1.png)\n\n![桌宠截图 2](https://raw.githubusercontent.com/AmeKrance/anan-thermal-monitor/main/assets/screenshots/screenshot-2.png)\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:25-72](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/lib/index.js#L25-L72)\n\nHost spawn、临时文件与停止旗标。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n\nexport const apply = (ctx) => {\n  try {\n    fs.mkdirSync(TEMP_DIR, { recursive: true })\n  } catch { /* 忽略 */ }\n\n  const PID_FILE = path.join(TEMP_DIR, 'desktop-pet.pid')\n  const DATA_FILE = path.join(TEMP_DIR, 'desktop-pet-data.json')\n  const STOP_FILE = path.join(TEMP_DIR, 'desktop-pet-stop.flag')\n\n  let proc = null\n\n  const startPet = () => {\n    if (proc && proc.exitCode === null) return { running: true, pid: proc.pid }\n    try {\n      proc = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', PET_SCRIPT], {\n        cwd: PKG_ROOT,\n        stdio: 'ignore',\n        windowsHide: true,\n      })\n      const h = proc\n      h.once('error', () => { if (proc === h) proc = null })\n      h.once('exit', () => { if (proc === h) proc = null })\n      return { running: true, pid: h.pid }\n    } catch (e) {\n      return { running: false, error: String((e && e.message) || e) }\n    }\n  }\n\n  const stopPet = () => {\n    if (proc) {\n      try { proc.kill() } catch { /* 已退出 */ }\n      proc = null\n    }\n    // 停止信号：提权的桌宠进程轮询到该文件后优雅退出\n    // （非提权进程无法强杀管理员桌宠，必须用信号文件）\n    try {\n      fs.writeFileSync(STOP_FILE, 'stop')\n    } catch { /* 忽略 */ }\n    return { stopped: true }\n  }\n\n  ctx.effect(() => {\n    const r = startPet()\n    if (!r.running) console.error(`[anan-thermal-monitor] 桌宠启动失败: ${JSON.stringify(r)}`)\n    return () => stopPet()\n  })\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:79-97](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/lib/index.js#L79-L97)\n\n仅可选 harness.handle 注册 RPC，无 client。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    try {\n      const n = parseInt(fs.readFileSync(PID_FILE, 'utf8').trim(), 10)\n      return Number.isFinite(n) && n > 0 ? n : null\n    } catch { return null }\n  }\n\n  // 若宿主环境提供 harness（动态插件式 RPC），注册状态查询；\n  // 静态包环境下缺失则跳过（桌宠本身是完整功能）。\n  const h = (typeof harness !== 'undefined') ? harness : undefined\n  if (h && typeof h.handle === 'function') {\n    h.handle('pet-status', async () => {\n      const pid = readPid()\n      return { running: !!proc || !!pid, pid: proc ? proc.pid : pid }\n    })\n    h.handle('pet-temps', async () => readJson())\n    h.handle('pet-stop', async () => stopPet())\n    h.handle('pet-start', async () => startPet())\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[assets/desktop-pet.ps1:80-148](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/assets/desktop-pet.ps1#L80-L148)\n\nLHM 初始化和传感器数据写出。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\nAdd-Type -Name ZOrd -Namespace Zz -MemberDefinition @'\n[DllImport(\"user32.dll\")] public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);\n[DllImport(\"user32.dll\")] public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);\n'@\n\n# ---------- 后台传感器采集(runspace) ----------\n$sensorScript = {\n  param($st)\n  try {\n    [Reflection.Assembly]::LoadFrom($st.lhmDll) | Out-Null\n  } catch {\n    $st.err = \"LHM加载失败: \" + $_.Exception.Message\n    try { [System.IO.File]::WriteAllText($st.errFile, (\"LHM加载失败: \" + $_.Exception.Message + \"`r`n\"), [System.Text.Encoding]::UTF8) } catch {}\n    return\n  }\n  $computer = [LibreHardwareMonitor.Hardware.Computer]::new()\n  $computer.IsCpuEnabled = $true\n  $computer.IsGpuEnabled = $true\n  $computer.IsMotherboardEnabled = $true\n  $computer.IsControllerEnabled = $true\n  $computer.IsStorageEnabled = $true\n  $computer.IsMemoryEnabled = $true\n  try { $computer.Open() } catch { $st.err = \"Open失败: \" + $_.Exception.Message; try { [System.IO.File]::WriteAllText($st.errFile, (\"Open失败: \" + $_.Exception.Message + \"`r`n\"), [System.Text.Encoding]::UTF8) } catch {}; return }\n  try { [System.IO.File]::AppendAllText($st.errFile, (\"采集线程已启动 \" + (Get-Date -Format 'HH:mm:ss') + \"`r`n\"), [System.Text.Encoding]::UTF8) } catch {}\n  Start-Sleep -Seconds 2\n  while ($st.running) {\n    try {\n      foreach ($hu in $computer.Hardware) {\n        try { $hu.Update() } catch {}\n        foreach ($shu in $hu.SubHardware) { try { $shu.Update() } catch {} }\n      }\n      $cpu = $null; $gpu = $null; $mem = $null; $nvme = $null\n      foreach ($h in $computer.Hardware) {\n        $type = [string]$h.HardwareType\n        $sensors = @($h.Sensors)\n        foreach ($sh in $h.SubHardware) { $sensors += @($sh.Sensors) }\n        if ($type -eq 'Cpu') {\n          $t = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Name -eq 'CPU Package' } | Select-Object -First 1\n          if (-not $t) { $t = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Name -eq 'Core Max' } | Select-Object -First 1 }\n          if (-not $t) { $t = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Value } | Sort-Object Value -Descending | Select-Object -First 1 }\n          if ($t -and $null -ne $t.Value) { $cpu = [double]$t.Value }\n        } elseif ($type -like 'Gpu*') {\n          $t = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Name -eq 'GPU Core' } | Select-Object -First 1\n          if (-not $t) { $t = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Value } | Select-Object -First 1 }\n          if ($t -and $null -ne $t.Value) { $gpu = [double]$t.Value }\n        } elseif ($type -eq 'Memory') {\n          # 内存温度: 优先 DIMM 传感器, 取所有 DIMM 最大值\n          $ts = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Name -match 'DIMM' -and $_.Value }\n          if (-not $ts) { $ts = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Value } }\n          foreach ($t in $ts) {\n            $v = [double]$t.Value\n            if ($null -eq $mem -or $v -gt $mem) { $mem = $v }\n          }\n        } elseif ($type -eq 'Storage') {\n          # NVMe 固态温度: 优先 Composite Temperature, 多块盘取最大值\n          $ts = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Name -match 'Composite' -and $_.Value }\n          if (-not $ts) { $ts = $sensors | Where-Object { [string]$_.SensorType -eq 'Temperature' -and $_.Value } | Select-Object -First 1 }\n          foreach ($t in $ts) {\n            $v = [double]$t.Value\n            if ($null -eq $nvme -or $v -gt $nvme) { $nvme = $v }\n          }\n        }\n      }\n      $st.cpu = $cpu; $st.gpu = $gpu; $st.mem = $mem; $st.nvme = $nvme\n      $st.ts = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()\n      try {\n        $json = @{ cpu = $cpu; mem = $mem; gpu = $gpu; nvme = $nvme; ts = $st.ts } | ConvertTo-Json -Compress\n        [System.IO.File]::WriteAllText($st.dataFile, $json)\n      } catch {}\n```\n\n</details>\n\n#### 缺口\n\n- 未在 Windows/DSH 运行，未查实际硬件传感器。\n  **影响：**可用温度项、桌面交互和所谓对话卡片未证实。\n  **进一步探讨：**在隔离 Windows 设备检查桌宠、温度准确度及 DSH UI 是否有入口。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 启动提权与停止是否可靠？\n\n**研究主题：**功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nHost 启动 PowerShell 时带 ExecutionPolicy Bypass；脚本在非管理员时用 Start-Process -Verb RunAs 自提权。提权后 Host 原始 child 可先退出，真正桌宠是另一个进程，Host 通过共享 TEMP 的 PID/data/stop.flag 协调。stopPet 会尝试 kill 当前 child、写 stop.flag，脚本 UI 定时器轮询 flag 后清理。startPet 在 spawn 返回后立刻声明 running:true，异步 error/exit 才清 proc；UAC 拒绝、PowerShell 不存在或 LHM 加载失败时接口可能短暂误报运行，实际错误日志需检查。自动启动脚本可注册最高权限登录任务，扩大常驻与权限范围，不能在本轮运行或预设同意。\n\n自提权 catch 注释称拒绝 UAC 后继续降权运行，但 catch 后无条件 exit，实际该分支会退出；不能把注释当可靠降权回退。PID 文件只查同 PID 进程是否存在，没有校验启动时间或可执行身份，旧 PID 复用也可误判已有实例。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:36-68](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/lib/index.js#L36-L68)\n\n异步 spawn、先返回 running:true、停止旗标。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\n  const startPet = () => {\n    if (proc && proc.exitCode === null) return { running: true, pid: proc.pid }\n    try {\n      proc = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', PET_SCRIPT], {\n        cwd: PKG_ROOT,\n        stdio: 'ignore',\n        windowsHide: true,\n      })\n      const h = proc\n      h.once('error', () => { if (proc === h) proc = null })\n      h.once('exit', () => { if (proc === h) proc = null })\n      return { running: true, pid: h.pid }\n    } catch (e) {\n      return { running: false, error: String((e && e.message) || e) }\n    }\n  }\n\n  const stopPet = () => {\n    if (proc) {\n      try { proc.kill() } catch { /* 已退出 */ }\n      proc = null\n    }\n    // 停止信号：提权的桌宠进程轮询到该文件后优雅退出\n    // （非提权进程无法强杀管理员桌宠，必须用信号文件）\n    try {\n      fs.writeFileSync(STOP_FILE, 'stop')\n    } catch { /* 忽略 */ }\n    return { stopped: true }\n  }\n\n  ctx.effect(() => {\n    const r = startPet()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[assets/desktop-pet.ps1:21-61](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/assets/desktop-pet.ps1#L21-L61)\n\n幂等 PID 与 RunAs 提权。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n# ---------- 幂等: 已有一个实例则退出(放在提权前, 避免重复实例弹两次 UAC) ----------\nif (Test-Path $pidFile) {\n  $oldPid = (Get-Content $pidFile -ErrorAction SilentlyContinue | Select-Object -First 1)\n  if ($oldPid) {\n    $oldProc = Get-Process -Id ([int]$oldPid) -ErrorAction SilentlyContinue\n    if ($oldProc) { exit }\n  }\n}\n\n# ---------- 确认要启动后才清理上次的停止信号(避免覆盖插件正在发送的停止指令) ----------\nRemove-Item -Path $stopFile -Force -ErrorAction SilentlyContinue\n\n# ---------- 自提权(读取 CPU 温度/内存温度需要管理员) ----------\n# 调试开关: $env:PET_NO_ELEVATE=1 时跳过提权(便于非管理员调试 UI)\nif ($env:PET_NO_ELEVATE -ne '1') {\n  $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)\n  if (-not $isAdmin) {\n    try {\n      Start-Process -FilePath 'powershell.exe' -Verb RunAs -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', \"`\"$PSCommandPath`\"\")\n    } catch {\n      # 用户拒绝提权: 仍以降权模式运行(GPU/NVMe温度可用)\n    }\n    exit\n  }\n}\n\n# ---------- 隐藏控制台窗口(桌宠是纯 GUI, 不需要挂着 PowerShell 控制台) ----------\ntry {\n  Add-Type -Name K -Namespace N -MemberDefinition '[DllImport(\"kernel32.dll\")] public static extern bool FreeConsole();' -ErrorAction Stop\n  $null = [N.K]::FreeConsole()\n} catch {\n  # FreeConsole 失败时退回: 隐藏控制台窗口\n  try {\n    Add-Type -Name U -Namespace N2 -MemberDefinition '[DllImport(\"kernel32.dll\")] public static extern IntPtr GetConsoleWindow(); [DllImport(\"user32.dll\")] public static extern bool ShowWindow(IntPtr h, int c);' -ErrorAction Stop\n    $hw = [N2.U]::GetConsoleWindow()\n    if ($hw -ne [IntPtr]::Zero) { $null = [N2.U]::ShowWindow($hw, 0) }\n  } catch {}\n}\n\nSet-Content -Path $pidFile -Value ([string]$PID) -Encoding ASCII\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[assets/desktop-pet.ps1:465-482](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/assets/desktop-pet.ps1#L465-L482)\n\n脚本轮询停止旗标并清理。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n      Toggle-Page\n    }\n  }\n  # 停止信号: 插件停止时写入该文件, 宠物优雅退出\n  if (Test-Path $stopFile) {\n    $state.running = $false\n    try { $window.Close() } catch {}\n  }\n})\n$timer.Start()\n\n$window.Add_Closed({\n  $state.running = $false\n  try { Remove-Item -Path $pidFile -Force -ErrorAction SilentlyContinue } catch {}\n  try { Remove-Item -Path $stopFile -Force -ErrorAction SilentlyContinue } catch {}\n  $timer.Stop()\n  try { $mouseTimer.Stop() } catch {}\n  try { $window.Dispatcher.InvokeShutdown() } catch {}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[install-autostart.bat:1-7](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/install-autostart.bat#L1-L7)\n\nschtasks 注册最高权限登录任务。\n\n```text\n@echo off\nREM AnAn Thermal Monitor - install auto-start at login (admin rights, no UAC popup)\nschtasks /create /tn \"AnAnThermalMonitor\" /tr \"wscript.exe \\\"%~dp0start-pet.vbs\\\"\" /sc onlogon /rl highest /f\necho.\necho Done! The pet will start automatically at login with admin rights (no UAC prompt).\necho To remove: run uninstall-autostart.bat\npause\n```\n\n**依据 5 · 源码核查**：[assets/desktop-pet.ps1:21-44](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/assets/desktop-pet.ps1#L21-L44)\n\nPID 存活判定及拒绝 UAC 后仍 exit\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n# ---------- 幂等: 已有一个实例则退出(放在提权前, 避免重复实例弹两次 UAC) ----------\nif (Test-Path $pidFile) {\n  $oldPid = (Get-Content $pidFile -ErrorAction SilentlyContinue | Select-Object -First 1)\n  if ($oldPid) {\n    $oldProc = Get-Process -Id ([int]$oldPid) -ErrorAction SilentlyContinue\n    if ($oldProc) { exit }\n  }\n}\n\n# ---------- 确认要启动后才清理上次的停止信号(避免覆盖插件正在发送的停止指令) ----------\nRemove-Item -Path $stopFile -Force -ErrorAction SilentlyContinue\n\n# ---------- 自提权(读取 CPU 温度/内存温度需要管理员) ----------\n# 调试开关: $env:PET_NO_ELEVATE=1 时跳过提权(便于非管理员调试 UI)\nif ($env:PET_NO_ELEVATE -ne '1') {\n  $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)\n  if (-not $isAdmin) {\n    try {\n      Start-Process -FilePath 'powershell.exe' -Verb RunAs -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', \"`\"$PSCommandPath`\"\")\n    } catch {\n      # 用户拒绝提权: 仍以降权模式运行(GPU/NVMe温度可用)\n    }\n    exit\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未在 Windows 模拟 UAC 拒绝、传感器故障及重启竞态。\n  **影响：**实际残留进程/状态误报频率未知。\n  **进一步探讨：**在可回滚 VM 拒绝 UAC、杀 Host、重启和卸载，核 PID/flag/任务计划状态。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 安装包和自启承诺有什么边界？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\npackage.json 的 npm files 仅列 lib、assets、cordis.patch.yml、README.md，未包含 start-pet.vbs、install-autostart.bat 与卸载 bat；README 独立运行/自启的“双击”路径在源码仓库可见，但发布 npm 包未必包含这些入口。随包带多个二进制 DLL/EXE，LHM 版本与素材许可由作者声明，本轮仅检查文件存在，不做二进制行为/签名或版权结论。采用前需核目标包实际内容、来源和管理员权限需求；仅在可回滚 Windows VM 试用，先确认传感器缺失显示、停止和任务卸载。建议将安装方式分清源码与发布包，并使 Host 返回经 PID/数据心跳核实的状态。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:24-34](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/package.json#L24-L34)\n\nfiles 白名单不含 vbs/bat。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    \".\": \"./lib/index.js\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"assets\",\n    \"cordis.patch.yml\",\n    \"README.md\"\n  ]\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:64-96](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/README.md#L64-L96)\n\n作者说明独立双击与自启。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n````text\n\n### 启动\n\n**双击 `start-pet.vbs`**（隐藏窗口启动，无控制台闪烁），或命令行：\n\n```powershell\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File assets\\desktop-pet.ps1\n```\n\n- 首次运行弹 **UAC 提权**（读取 CPU/内存温度需要管理员权限），点\"是\"\n- 启动后无控制台窗口残留；右键桌宠卡片 → \"退出安安热能监控\" 关闭\n\n### 开机自启（免 UAC 弹窗）\n\n双击 **`install-autostart.bat`**——通过 Windows 任务计划程序注册\"登录时以最高权限运行\"（管理员权限、**不再弹 UAC**）。卸载自启：双击 `uninstall-autostart.bat`。\n\n### 独立运行 vs DSH 插件\n\n| 方式 | 启动 | 特点 |\n|---|---|---|\n| **独立（vbs/自启）** | 双击 `start-pet.vbs` / 开机自动 | 不依赖 DSH/Bigfish；无 GUI 控制卡片 |\n| **DSH 插件** | `dsh plugin add` + 重启 | 随 DSH 启停；对话流内有实时温度卡片 + 启停按钮 |\n\n两种方式可共存（脚本有幂等检查，不会双开桌宠）。\n\n---\n\n## 🖥️ 对电脑各种信息的调用\n\n| 信息 | 调用方式 | 权限 | 说明 |\n|---|---|---|---|\n| CPU 温度 | LibreHardwareMonitorLib (Ring0 / Intel MSR) | 管理员 | CPU Package / Core Max 温度 |\n| 内存温度 | LibreHardwareMonitorLib (SMBus / SPD) | 管理员 | DDR DIMM 温度传感器，无传感器显示 \"--\" |\n````\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:114-161](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/README.md#L114-L161)\n\n作者说明二进制依赖、临时文件及许可。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n````text\n```\nanan-thermal-monitor/\n├── package.json                # npm 包清单：声明 dsh.bundle.patch（使插件可被 dsh plugin add 识别）\n├── cordis.patch.yml            # 组合层 patch：把插件插入 profile 的层栈\n├── lib/index.js                # 插件 Host（ESM，完整 Node API）：spawn/停止桌宠进程\n├── assets/\n│   ├── desktop-pet.ps1         # 桌宠主脚本（WPF + LHM 采集 + 自提权，路径全相对，可移植）\n│   ├── 素材1号.jpg              # 桌宠素材（可替换）\n│   └── LibreHardwareMonitor/   # 硬件监控库（运行时依赖）\n├── install.ps1                 # 备选手动安装脚本\n├── README.md\n└── backups/                    # 历史版本备份\n```\n\n### 安装原理\n\n`dsh plugin --profile <name> add <包>` 是一个 pnpm 转发器：安装依赖后，会读取每个新依赖的 `package.json`，凡声明 `dsh.bundle.patch` 的包会自动加入 profile 的 `dsh.profile.bundles` 层栈；下次启动时，该 patch（`cordis.patch.yml`）把插件作为一行 `- id: anan-thermal-monitor / name: anan-thermal-monitor` 插入组合，插件 `apply()` 随即执行并拉起桌宠进程。\n\n---\n\n## ⚙️ 配置与运行时文件\n\n- 所有资源路径基于脚本自身目录相对定位（`$PSScriptRoot`），任意位置部署无需改路径\n- 运行时临时文件写入 `%TEMP%\\anan-thermal-monitor\\`：\n\n| 文件 | 作用 |\n|---|---|\n| `desktop-pet.pid` | 桌宠进程 PID（插件判定运行状态） |\n| `desktop-pet-data.json` | 最新传感器数据 `{cpu, mem, gpu, nvme, ts}` |\n| `desktop-pet-stop.flag` | 停止信号（插件停止时写入，桌宠优雅退出） |\n| `desktop-pet-pos.txt` | 窗口位置记忆 |\n| `desktop-pet-error.log` | 运行诊断日志 |\n\n---\n\n## 🐛 常见问题\n\n- **硬件显示 \"--\"**：对应传感器未暴露（如笔记本主板无板载温度传感器），非故障\n- **每次启动弹 UAC**：Ring0/SMBus 读取需要管理员权限，属正常现象\n- **重复启动双开**：脚本内置幂等检查，已运行实例存在时新实例直接退出\n\n---\n\n## 📄 许可\n\n- 代码：MIT License\n- `assets/LibreHardwareMonitor/`：[LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) (MIT License, v0.9.6)\n- 桌宠素材（`assets/素材1号.jpg`）作者：**X (Twitter) [@yua_6ukkr](https://x.com/yua_6ukkr)**，版权归原作者所有\n````\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:79-97](https://github.com/AmeKrance/anan-thermal-monitor/blob/13ed26da20da08eecc300fb9963bea3dd4634205/lib/index.js#L79-L97)\n\n当前状态读 PID/文件，RPC 可选。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    try {\n      const n = parseInt(fs.readFileSync(PID_FILE, 'utf8').trim(), 10)\n      return Number.isFinite(n) && n > 0 ? n : null\n    } catch { return null }\n  }\n\n  // 若宿主环境提供 harness（动态插件式 RPC），注册状态查询；\n  // 静态包环境下缺失则跳过（桌宠本身是完整功能）。\n  const h = (typeof harness !== 'undefined') ? harness : undefined\n  if (h && typeof h.handle === 'function') {\n    h.handle('pet-status', async () => {\n      const pid = readPid()\n      return { running: !!proc || !!pid, pid: proc ? proc.pid : pid }\n    })\n    h.handle('pet-temps', async () => readJson())\n    h.handle('pet-stop', async () => stopPet())\n    h.handle('pet-start', async () => startPet())\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未检查实际 npm tarball 与 bundled binary 安全/授权。\n  **影响：**无法确认发布包入口、二进制可靠性和可部署合规性。\n  **进一步探讨：**核 npm tarball 内容与 DLL 哈希/许可，在 VM 完整安装卸载及心跳校验。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：27e02b45a2c1870bab31ecc363bd579548f067b3839fcf4c3c10103cc9e8c07c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 97 | 70 | 19 | — |\n| .md | source | 1 | 161 | — | — | 1705 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 传感器 | 温度提醒 | 管理员/硬件依赖 |\n| 启停 | 随 DSH | 状态可能误报 |\n| 自启 | 登录时启动 | npm files 未列脚本 |\n\n## 工程亮点\n\nHost 和提权后 PowerShell 经共享临时文件协调；无直接浏览器客户端。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、assets/desktop-pet.ps1、install-autostart.bat 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅 README、Host、PowerShell、包清单与自启 bat；不运行 Windows 程序或审计 DLL。\n- 下一步：Windows VM 实机传感器、UAC、异常/重启/卸载测试；核 npm tarball 和 DLL 来源。\n",
         "metadata": {
             "repository": "AmeKrance/anan-thermal-monitor",
             "repository_id": 1335381015,
-            "captured_at": "2026-10-21T08:01:29.536Z",
-            "window_start": "2026-09-21T08:01:29.536Z",
+            "captured_at": "2026-10-22T06:17:54.624Z",
+            "window_start": "2026-09-22T06:17:54.624Z",
             "stars": 2,
             "pushed_at": "2026-08-16T06:32:13Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 1,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82AE:1054F6:6998DA:718E12:6AD8715D and timestamp 2026-10-21 08:01:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85F6:264749:6DC5D1:75B93F:6AD8715F and timestamp 2026-10-21 08:01:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A29.536Z..2026-10-21T08%3A01%3A29.536Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 87A4:4E2C1:6C16AE:740678:6AD87161 and timestamp 2026-10-21 08:01:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A01%3A29.536Z..2026-10-21T08%3A01%3A29.536Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88E0:26516E:6ADBD6:72CCFB:6AD87161 and timestamp 2026-10-21 08:01:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAmeKrance%2Fanan-thermal-monitor%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A29.536Z..2026-10-21T08%3A01%3A29.536Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A0A:16071B:6BA388:73951F:6AD87162 and timestamp 2026-10-21 08:01:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "anan-thermal-monitor",
-                "captured_at": "2026-10-21T08:01:39.147Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 167,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/anan-thermal-monitor",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-08-15T20:48:33.482Z",
-                    "captured_at": "2026-10-21T08:01:39.147Z",
-                    "source_url": "https://registry.npmjs.org/anan-thermal-monitor",
-                    "error": null,
-                    "latest_version": "1.0.4",
-                    "latest_published_at": "2026-08-16T06:10:47.111Z",
-                    "latest_error": null
-                }
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1335381015:root",

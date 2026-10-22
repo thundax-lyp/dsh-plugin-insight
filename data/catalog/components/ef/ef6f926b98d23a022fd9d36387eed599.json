@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-monitor",
             "entry_type": "plugin",
-            "technical_category": "agent-workflow",
-            "business_category": "infrastructure",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,43 +24,83 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1333440937-root-directory-0",
+                    "id": "2026-10-22-02-github-1333440937-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:47:09.396Z",
+                    "retrieved_at": "2026-10-22T10:06:47.059Z",
                     "membership": "present"
                 },
                 {
-                    "id": "2026-10-21-06-github-1333440937-root-directory-1",
+                    "id": "2026-10-22-02-github-1333440937-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-21T05:47:09.396Z",
+                    "retrieved_at": "2026-10-22T10:06:47.059Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1333440937-root-author",
+                    "id": "2026-10-22-02-github-1333440937-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AbnerAI/dsh-monitor",
+                            "commit": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                            "path": "README.md",
+                            "content_sha256": "23b6d15096eebc6ae8dce0181d873fbf267cf7ec7f75a4bbb6293dffae61569d"
+                        }
+                    ],
                     "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
-                    "captured_at": "2026-10-21T05:47:09.396Z",
-                    "summary": "轮询文件或命令输出，将新增内容送入 DSH 会话并唤醒 Agent。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/abnerai--dsh-monitor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:06:47.059Z",
+                    "summary": "通过文件或命令轮询监听新内容，空闲时唤醒所属Agent，并提供查看和停止工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/abnerai--dsh-monitor/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1333440937-root-source",
+                    "id": "2026-10-22-02-github-1333440937-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js",
+                    "url": "https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AbnerAI/dsh-monitor",
+                            "commit": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                            "path": "README.md",
+                            "content_sha256": "23b6d15096eebc6ae8dce0181d873fbf267cf7ec7f75a4bbb6293dffae61569d"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbnerAI/dsh-monitor",
+                            "commit": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                            "path": "package.json",
+                            "content_sha256": "82ab91dd30951ec8ee4ced577997300f2feaeb8228a80f05e50b202c8a0851e2"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbnerAI/dsh-monitor",
+                            "commit": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "5c8715c224474297b4bb8672ef61d6a1df9458749ab55a930207e77561cff948"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbnerAI/dsh-monitor",
+                            "commit": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                            "path": "lib/index.js",
+                            "content_sha256": "54eda2ef4e14168de58f57a01f20e8354e65970e522996a7afe74a4e2a1656f6"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbnerAI/dsh-monitor",
+                            "commit": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
+                            "path": "lib/types/index.d.ts",
+                            "content_sha256": "0b36217131d5e74c6c22205aed282a01f2f40e02e1d17b0ad53c38f7cf035015"
+                        }
+                    ],
                     "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
-                    "captured_at": "2026-10-21T05:47:09.396Z",
-                    "summary": "核查 lib/index.js、package.json、cordis.patch.yml；monitor创建内存watcher，文件从当前尾部记录字节游标，命令定时/bin/sh -c并对stdout作前缀差分；新增内容封成plugin notice，idle用followup、busy用inject。monitor_list与monitor_stop管理同插件Map，卸载清timer。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/abnerai--dsh-monitor/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T10:06:47.059Z",
+                    "summary": "核查 README.md、package.json、cordis.patch.yml、lib/index.js、lib/types/index.d.ts；三模型工具管理内存Map与timer，file byte游标或command前缀delta，plugin notice交followup/inject。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/abnerai--dsh-monitor/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根lib/index.js完整监听生命周期、文件差分、命令执行与三工具注册，README及package；未运行目标或命令，不验证Claude工具等价性。",
+                        "完整383行发布代码、README、package/patch/类型声明；无目标/宿主运行或测试。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -71,9 +111,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Agent在等待追加式消息源时避免自行忙轮询；交付物是属于原Agent的插件notice，不是监控源事实已核验。",
+                    "text": "已有本地消息源，希望Agent空闲仍响应的场景。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -82,16 +122,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "monitor创建内存watcher，文件从当前尾部记录字节游标，命令定时/bin/sh -c并对stdout作前缀差分；新增内容封成plugin notice，idle用followup、busy用inject。monitor_list与monitor_stop管理同插件Map，卸载清timer。",
+                    "text": "三模型工具管理内存Map与timer，file byte游标或command前缀delta，plugin notice交followup/inject。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -100,16 +140,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根lib/index.js完整监听生命周期、文件差分、命令执行与三工具注册，README及package；未运行目标或命令，不验证Claude工具等价性。",
+                    "text": "完整383行发布代码、README、package/patch/类型声明；无目标/宿主运行或测试。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -118,16 +158,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT DSH bundle，依赖宿主schemastery/llm/tools/systemPrompt；命令硬编码/bin/sh，README跨工具类比不证明跨平台运行。",
+                    "text": "0.1.1 MIT，Node ESM/宿主peers，命令源另需/bin/sh。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -136,16 +176,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金为唤醒Agent产生的模型调用，命令可自行触发外部费用；人工选择可信只读命令、管理watcher和处理失败。文件每次变化readFileSync全文件，增长日志有IO与内存开销。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH工具/LLM/Agent运行时；文件源或POSIX /bin/sh命令环境 | 配可信消息源、明确监听和停止责任、排除敏感内容，工时未知 | 不含消息broker；本插件不提供持久注册/游标存储 |\n| 持续使用 | timer轮询、全文件同步读取或每轮shell；通知引发宿主模型turn | 处理通知/重复/错误、维护source和interval，实际耗时未知 | 最低100ms，命令timeout10秒/maxBuffer16MiB是单次限制，非总预算；模型费用沿宿主未知 |\n| 失败恢复 | 重启后重新arm、源日志/外部游标和模型重处理资源 | 核漏送/重送、停旧命令并人工补读，工时未知 | 新arm从当前文件末尾开始，不能自动补停机积压；没有投递ack/重试事务 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -154,16 +194,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅在已授权、可信本地消息源且能接受进程内监视语义时评估；不据“persistent”措辞当作跨重启队列或权限隔离。",
+                    "text": "观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -172,16 +212,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把重复轮询从模型上下文移到后台，有条件节省等待开销；未量化token/延迟，重叠命令和重复唤醒可能抵消。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 空闲唤醒 | followup/inject接线 | Agent受理与最终处理 |\n| 增量消息 | file byte/command前缀比较 | 拆行/轮换/并发下漏重送 |\n| 省模型轮询 | timer检查未变不投递 | 实际费用/通知风暴净收益 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -190,16 +230,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "消息有plugin/notice来源，空闲与忙态走宿主不同入口、卸载有清理；但游标与投递非事务，Map共享且stop未核owner，不能由有timer清理推断可靠消息系统。",
+                    "text": "byte offset、plugin来源和unload timer清理有用；完整行缓冲、互斥、owner管理与确认重试均未闭合。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -208,16 +248,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "把Agent忙等改成后台timer，在宿主空闲与运行中使用不同消息入口，统一文件与命令差分；相较Agent循环调用shell减少上下文轮询。作者以Claude Monitor作类比，但本项并非同等耐久消息队列或完整跨会话授权。",
+                    "text": "用宿主Agent状态选择followup/inject，把无需模型忙轮询的源监听与显式解除接在工具中。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -226,16 +266,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
-                    "topic": "limitations",
+                    "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "新增消息能否不丢不重且仅原会话可管理？文件按当前size推进游标，即使末行没换行也发送，下一段会成为另一条；setInterval的async tick无busy锁，慢命令可重叠并乱序更新cursor。list列全部watcher，stop仅按ID不校owner；计数在未await followup/inject后递增。maxNoticeBytes配置被读但未用于noticeFor，不能承诺配置的字节上限。",
+                    "text": "半行/轮换与命令重叠会误判增量，list/stop不核owner、shell直接用宿主权限，前移cursor与delivered不能证明收妥。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -244,16 +284,16 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "把每watcher做串行状态机：完整行缓冲、owner校验、投递确认后推进游标，并显式定义重启恢复，可能改善可靠性。用半行分次追加、命令超poll时长、两个会话互停和投递失败案例，要求不拆消息、不重叠、不跨会话并可说明未知投递；没有回执时应标至少一次/可能丢失而非“已送达”。",
+                    "text": "owner能力+完整行世代+单flight/ack游标/outbox的watcher，以拆行/乱序/跨会话/拒收/重启反例检验，未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ],
                     "dependencies": [
                         {
@@ -262,15 +302,15 @@
                             "fingerprint": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:47:09.396Z",
+                    "reviewed_at": "2026-10-22T10:06:47.059Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:47:09.396Z",
+            "last_checked_at": "2026-10-22T10:06:47.059Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
-                "reviewed_at": "2026-10-21T05:47:09.396Z",
+                "reviewed_at": "2026-10-22T10:06:47.059Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -286,57 +326,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "新颖性9：后台文件/命令监视是已有模式；机制8：idle/busy唤醒适配具体但可靠状态机不足；迁移性10：统一消息源到notice可复用；简化8：减少模型忙轮询但仍执行固定频率IO。",
+                    "rationale": "novelty9，参照常规tail/poll与已有Monitor定位，非新监控协议；mechanism8，idle/busy唤醒接线有实用整合但缺完整行/互斥/ack可靠机制；transferability10，source→notice模式可移植，Agent API和POSIX shell限平台；simplification8，三个工具避免手拼timer，补偿/权限仍需外部。",
                     "basis": "interpretation",
                     "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 8,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "工作流9：把等待移后台未改变业务验收；交付8：送入会话但无确认与完整行保证；覆盖5：本地POSIX命令/文件源范围有限；经济4：可能省模型轮询token，频繁命令及唤醒成本未测。",
+                    "rationale": "workflow18，相比Agent忙轮询可空闲被动唤醒，改变事件到工作回合触发；delivery8，交付仍是源消息提示及监听ID/计数，未增加确认处理或业务完成验收单元；reach5，模型可arm但需要本地消息源和命令知识；economics4，无变化timer可少模型回合，但逐行风暴/重复与持续shell使净收益未知。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1333440937-root-source"
+                        "2026-10-22-02-github-1333440937-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "需后台等待消息者可关注notice机制；慢命令重叠、owner管理和字节上限接线需先修，勿把内存watcher当跨重启队列。",
+                "reason": "异步唤醒用途明确，但消息delta、owner管理、宿主shell和未确认游标影响可靠响应，不宜承担唯一通道。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "避免Agent忙轮询的等待任务明确。"
+                        "rationale": "本地消息唤醒明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "后台增量notice替代模型重复轮询，有具体成本路径。"
+                        "score": 13,
+                        "rationale": "省忙轮询接线有增量，可靠性条件较窄。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核游标、定时器和管理Map，存在乱序及owner缺口。"
+                        "rationale": "完整383行发布链可核，计数/字节上限保证被收窄。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "命令副作用、全文件读取和重复唤醒成本尚难控制。"
+                        "score": 10,
+                        "rationale": "依消息源/轮询/宿主模型及人工补读，无总量预算。"
                     }
                 },
-                "score": 60,
+                "score": 59,
                 "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T10:06:47.059Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1333440937-root-source"
+                    "2026-10-22-02-github-1333440937-root-source"
                 ],
                 "dependencies": [
                     {
@@ -362,63 +402,55 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "d3ab00e09de77b9517f64470b2650158bb398af212445f16a0eb339794a33ce9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "d963fe529b52ff0dbb5fd38ad7a5636279a96c6ec80186ba5476b1dd4db70220"
         },
         "publication.metadata": "data/plugins/abnerai--dsh-monitor/META.json",
         "publication.summaries": {
-            "text": "轮询文件或命令输出，将新增内容送入 DSH 会话并唤醒 Agent。",
+            "text": "通过文件或命令轮询监听新内容，空闲时唤醒所属Agent，并提供查看和停止工具。",
             "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
             "source_url": "https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/README.md"
         },
         "publication.capabilities": {
             "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
             "items": {
-                "模型工具": "monitor、monitor_list、monitor_stop管理后台watcher。",
-                "后台": "定时读文件或执行shell，按Agent idle/busy送followup/inject。"
-            }
+                "模型工具": "monitor、monitor_list、monitor_stop",
+                "后台": "进程内file/command timer与Agent通知"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| monitor | arm文件或命令源 | 非空校验，无路径/权限收敛 |\n| monitor_list/stop | 查看与解除 | 全实例Map不按owner限制 |\n| 后台timer | 检查变化并唤醒 | 无磁盘恢复，命令可重叠 |\n| plugin notice | followup或inject | 未ack，delivered非收妥 |\n"
         },
         "publication.advice": {
             "revision": "4ef3cc6f3e4332a85d913a13ae929f5eb587818a",
-            "text": "仅在已授权、可信本地消息源且能接受进程内监视语义时评估；不据“persistent”措辞当作跨重启队列或权限隔离。"
+            "text": "观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/abnerai--dsh-monitor",
-        "reports": "# dsh-monitor\n\n> 轮询文件或命令输出，将新增内容送入 DSH 会话并唤醒 Agent。\n\n## 使用建议\n\n仅在已授权、可信本地消息源且能接受进程内监视语义时评估；不据“persistent”措辞当作跨重启队列或权限隔离。\n\n核查状态：文件/命令轮询与唤醒接线可确认；可靠投递、会话隔离和跨重启持久未获验证，源码watcher仅内存。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：Agent在等待追加式消息源时避免自行忙轮询；交付物是属于原Agent的插件notice，不是监控源事实已核验。\n- **亮点**：把Agent忙等改成后台timer，在宿主空闲与运行中使用不同消息入口，统一文件与命令差分；相较Agent循环调用shell减少上下文轮询。作者以Claude Monitor作类比，但本项并非同等耐久消息队列或完整跨会话授权。\n- **思考**：新增消息能否不丢不重且仅原会话可管理？文件按当前size推进游标，即使末行没换行也发送，下一段会成为另一条；setInterval的async tick无busy锁，慢命令可重叠并乱序更新cursor。list列全部watcher，stop仅按ID不校owner；计数在未await followup/inject后递增。maxNoticeBytes配置被读但未用于noticeFor，不能承诺配置的字节上限。\n- **建议**：把每watcher做串行状态机：完整行缓冲、owner校验、投递确认后推进游标，并显式定义重启恢复，可能改善可靠性。用半行分次追加、命令超poll时长、两个会话互停和投递失败案例，要求不拆消息、不重叠、不跨会话并可说明未知投递；没有回执时应标至少一次/可能丢失而非“已送达”。\n\n## 场景与替代办法\n\nAgent在等待追加式消息源时避免自行忙轮询；交付物是属于原Agent的插件notice，不是监控源事实已核验。\n\n模型自己轮询shell、宿主调度或外部消息队列；本项轻量适合单进程观察，不替代带ack/持久化/授权的队列。\n\n## 能力清单\n\n- **模型工具**：monitor、monitor_list、monitor_stop管理后台watcher。\n- **后台**：定时读文件或执行shell，按Agent idle/busy送followup/inject。\n\n## 依赖与流程\n\nmonitor创建内存watcher，文件从当前尾部记录字节游标，命令定时/bin/sh -c并对stdout作前缀差分；新增内容封成plugin notice，idle用followup、busy用inject。monitor_list与monitor_stop管理同插件Map，卸载清timer。\n\nDSH tools/systemPrompt和Agent followup/inject、Node文件读取与POSIX shell，命令10秒timeout/maxBuffer16MiB；文件/命令权限由进程继承。\n\nAgent显式arm→从文件当前尾开始或执行命令→定时差分→notice唤醒→list/stop；进程重启丢watcher，文件截断从头读，命令输出变更非追加时整体重发。\n\nMIT DSH bundle，依赖宿主schemastery/llm/tools/systemPrompt；命令硬编码/bin/sh，README跨工具类比不证明跨平台运行。\n\n## 成本与效果\n\n现金为唤醒Agent产生的模型调用，命令可自行触发外部费用；人工选择可信只读命令、管理watcher和处理失败。文件每次变化readFileSync全文件，增长日志有IO与内存开销。\n\n把重复轮询从模型上下文移到后台，有条件节省等待开销；未量化token/延迟，重叠命令和重复唤醒可能抵消。\n\n## 核心贡献\n\n把Agent忙等改成后台timer，在宿主空闲与运行中使用不同消息入口，统一文件与命令差分；相较Agent循环调用shell减少上下文轮询。作者以Claude Monitor作类比，但本项并非同等耐久消息队列或完整跨会话授权。\n\n## 关键质疑\n\n新增消息能否不丢不重且仅原会话可管理？文件按当前size推进游标，即使末行没换行也发送，下一段会成为另一条；setInterval的async tick无busy锁，慢命令可重叠并乱序更新cursor。list列全部watcher，stop仅按ID不校owner；计数在未await followup/inject后递增。maxNoticeBytes配置被读但未用于noticeFor，不能承诺配置的字节上限。\n\n## 工程亮点\n\n消息有plugin/notice来源，空闲与忙态走宿主不同入口、卸载有清理；但游标与投递非事务，Map共享且stop未核owner，不能由有timer清理推断可靠消息系统。\n\n固定源码依据：[lib/index.js](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js)、[package.json](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/package.json)、[cordis.patch.yml](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n把每watcher做串行状态机：完整行缓冲、owner校验、投递确认后推进游标，并显式定义重启恢复，可能改善可靠性。用半行分次追加、命令超poll时长、两个会话互停和投递失败案例，要求不拆消息、不重叠、不跨会话并可说明未知投递；没有回执时应标至少一次/可能丢失而非“已送达”。\n\n未执行；最小验证覆盖分块半行、轮询重叠、输出回退、投递拒绝、跨会话list/stop及重启，并分别记录读取与送达状态。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：be9ad675a031c105ae704fc00e4479a7d835a4a20f0f7d89abd6f5164eb1617f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 383 | 324 | 41 | — |\n| .md | source | 1 | 130 | — | — | 714 |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-08-14（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[4ef3cc6f](https://github.com/AbnerAI/dsh-monitor/tree/4ef3cc6f3e4332a85d913a13ae929f5eb587818a)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根lib/index.js完整监听生命周期、文件差分、命令执行与三工具注册，README及package；未运行目标或命令，不验证Claude工具等价性。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-monitor\n\n> 通过文件或命令轮询监听新内容，空闲时唤醒所属Agent，并提供查看和停止工具。\n\n## 研究范围\n\n- **仓库**：[AbnerAI/dsh-monitor](https://github.com/AbnerAI/dsh-monitor)\n- **版本号**：0.1.1（[固定提交 4ef3cc6f3e4332a85d913a13ae929f5eb587818a](https://github.com/AbnerAI/dsh-monitor/tree/4ef3cc6f3e4332a85d913a13ae929f5eb587818a)）\n- **版本日期**：2026-08-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n后台唤醒接线可核；仅进程内持久，delta/管理隔离与确认边界受限；确认游标假设未验证。\n\n## 洞察短评\n\n- **用途**：已有本地消息源，希望Agent空闲仍响应的场景。详见[Q01](#research-q01)。\n- **亮点**：用宿主Agent状态选择followup/inject，把无需模型忙轮询的源监听与显式解除接在工具中。详见[Q01](#research-q01)。\n- **思考**：半行/轮换与命令重叠会误判增量，list/stop不核owner、shell直接用宿主权限，前移cursor与delivered不能证明收妥。详见[Q02](#research-q02)。\n- **建议**：owner能力+完整行世代+单flight/ack游标/outbox的watcher，以拆行/乱序/跨会话/拒收/重启反例检验，未验证。详见[Q05](#research-q05)。\n\n采用建议：观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n用宿主Agent状态选择followup/inject，把无需模型忙轮询的源监听与显式解除接在工具中。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n半行/轮换与命令重叠会误判增量，list/stop不核owner、shell直接用宿主权限，前移cursor与delivered不能证明收妥。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\nowner能力+完整行世代+单flight/ack游标/outbox的watcher，以拆行/乱序/跨会话/拒收/重启反例检验，未验证。详见[Q05](#research-q05)。\n\n以拆行/多字节/同大小替换/慢命令乱序/失败恢复/跨owner/Agent拒收和重启构成可复现对照，比较有效受理及总成本。\n\n## 场景与替代办法\n\n已有本地消息源，希望Agent空闲仍响应的场景。详见[Q01](#research-q01)。\n\n人工读收件箱或Agent反复运行查询；本项接后台timer和Agent唤醒，不提供消息中间件耐久性。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| DSH tools/systemPrompt/Agent peers | 注册及唤醒 | followup/inject ABI依宿主 |\n| 本地完整行NDJSON源 | file监听 | 无范围/绝对路径强校验 |\n| POSIX /bin/sh（命令源） | 重跑命令 | 宿主权限/环境，非沙箱 |\n| 宿主模型预算 | 通知后处理 | 本插件无费用/数量总限 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 核受权可信消息源 | 用户 | 无敏感/破坏性命令 |\n| monitor arm | Agent | 返回ID，从当前文件末尾开始 |\n| timer检查并唤醒 | 插件/Agent | 计数仅请求投递，不是业务收据 |\n| list/stop及补读 | 用户/Agent | 共享Map需额外隔离，重启需重建 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH工具/LLM/Agent运行时；文件源或POSIX /bin/sh命令环境 | 配可信消息源、明确监听和停止责任、排除敏感内容，工时未知 | 不含消息broker；本插件不提供持久注册/游标存储 |\n| 持续使用 | timer轮询、全文件同步读取或每轮shell；通知引发宿主模型turn | 处理通知/重复/错误、维护source和interval，实际耗时未知 | 最低100ms，命令timeout10秒/maxBuffer16MiB是单次限制，非总预算；模型费用沿宿主未知 |\n| 失败恢复 | 重启后重新arm、源日志/外部游标和模型重处理资源 | 核漏送/重送、停旧命令并人工补读，工时未知 | 新arm从当前文件末尾开始，不能自动补停机积压；没有投递ack/重试事务 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 空闲唤醒 | followup/inject接线 | Agent受理与最终处理 |\n| 增量消息 | file byte/command前缀比较 | 拆行/轮换/并发下漏重送 |\n| 省模型轮询 | timer检查未变不投递 | 实际费用/通知风暴净收益 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版后台watcher能否可靠且有权限边界地唤醒所属Agent？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 它怎样让闲置Agent响应消息，“persistent”是什么范围？\n\n**研究主题：**场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n适合已有本地NDJSON收件箱或可信命令状态源、希望Agent空闲时也处理新消息的人。原方案是让Agent反复查询/人工重开对话；本项monitor创建内存watcher并定时检查，idle用followup打开新turn，其余状态用inject，源标成plugin/notice而非隐去来源。monitor_list和monitor_stop提供查看和解除。这是宿主唤醒适配与后台轮询的组合贡献，不是新增消息中间件或可靠投递协议。\n\npersistent仅指插件实例存活期间timer继续。watchers/cursor/delivered都在Map内，无磁盘恢复、重启恢复、session关闭订阅清理或跨机器服务。file arm从当时size跳过既有backlog，缺失文件从0等创建；command没有初始基线预读，首次非空stdout会通知。unload effect标stopped/clearInterval/delete，stop也清timer；已开始的命令不会因此被取消。README所谓durable within session不应外推成离线持久服务或重启不漏消息。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.md:9-24](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/README.md#L9-L24)\n\n作者机制与耐久范围。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## How it works\n\nThe model calls the `monitor` tool to arm a watcher on a source:\n\n- **`source: file`** — an append-only NDJSON inbox. New lines are delivered as they land.\n- **`source: command`** — a shell command re-run on an interval. Its output delta since the last run is delivered.\n\nOn each new message the plugin wakes the agent:\n\n| Agent state | Behavior |\n|---|---|\n| **idle** | `agent.followup()` — opens a new turn (harness analog of Claude Code's `<task-notification>`) |\n| **busy** | `agent.inject()` — queues the message into the next step |\n\nWatchers are durable within the session, disarmable on demand, and torn down automatically when the plugin is unloaded.\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:54-63](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L54-L63)\n\nwatcher仅内存。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n\n/** One armed watcher. */\nfunction makeWatcher(spec) {\n  return {\n    ...spec,\n    cursor: null,          // file: byte offset; command: last output\n    stopped: false,\n    timer: null,           // disposer returned by ctx.setInterval\n    delivered: 0\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:128-151](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L128-L151)\n\nMap和文件起点。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n\n  ctx.systemPrompt.section({\n    name: \"tool:monitor\",\n    order: 120,\n    text: \"You can arm persistent watchers with the monitor tool. A watcher delivers a message into this session whenever new content appears in its source — you are woken even while idle. Do not busy-poll a source you already watch; monitor_list shows what is armed, and monitor_stop disarms a watcher you no longer need.\"\n  });\n\n  function armWatcher(spec, owner) {\n    const id = `monitor-${++seq}`;\n    const watcher = makeWatcher({ ...spec, id, owner });\n    watchers.set(id, watcher);\n\n    // File sources start watching from the current end of the file: only new\n    // lines are delivered, never the pre-existing backlog.\n    if (watcher.source === \"file\") {\n      watcher.path = expandHome(watcher.path);\n      try {\n        watcher.cursor = statSync(watcher.path).size;\n      } catch {\n        watcher.cursor = 0; // file may not exist yet; will be created later\n      }\n    }\n\n    const tick = async () => {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:181-217](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L181-L217)\n\nAgent投递与unload。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n      if (w.stopped) return;\n      const { text, summary } = noticeFor(w, content);\n      const message = createUserMessage({\n        content: [{ type: \"text\", text }],\n        source: {\n          kind: \"plugin\",\n          plugin: \"dsh-monitor\",\n          form: \"notice\",\n          summary\n        }\n      });\n      const agent = w.owner;\n      if (agent) {\n        if (agent.status === \"idle\") {\n          agent.followup(message);\n        } else {\n          agent.inject(message);\n        }\n      }\n      w.delivered += 1;\n    };\n\n    const interval = Math.max(watcher.pollIntervalMs ?? defaultPollMs, 100);\n    // Global setInterval (harness convention). Cleanup is registered through\n    // ctx.effect so every armed timer is torn down with the plugin fiber.\n    const timer = setInterval(() => {\n      void tick();\n    }, interval);\n    watcher.timer = () => clearInterval(timer);\n    ctx.effect(() => () => {\n      if (!watcher.stopped) {\n        watcher.stopped = true;\n        clearInterval(timer);\n        watchers.delete(watcher.id);\n      }\n    });\n\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:221-229](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L221-L229)\n\nstop清timer。\n\n```text\n  function stopWatcher(id) {\n    const w = watchers.get(id);\n    if (!w) return false;\n    w.stopped = true;\n    if (w.timer) w.timer();\n    watchers.delete(id);\n    return true;\n  }\n\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 文件和命令delta能可靠识别一条新消息吗？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n文件每轮先stat size，再readFileSync整个文件再按byte cursor切片，正确使用byte offset可避免简单多字节字符偏移，但全文件读取与历史大小一起增长，并非只读新增字节。text.split换行把没有最终换行的半条JSON也当raw消息，立即cursor=size；下一轮只读后半条，不能重组原记录，跨块UTF8字符还可能成为替换符。stat与读取之间若继续append，读取buffer含更多字节而offset仍旧size，后轮会重读部分；替换同大小文件size相等直接跳过，没有inode/内容世代；变小才重置0并可能重新投递旧内容。安全前提须严格单writer原子完整行append且无竞争/轮换，源码并未落实这些假设。\n\n命令delta只是stdout字符串前缀比较，若新结果不以前结果开头就重发全结果，不是集合差分；tail滚动窗口的旧行可重复。runCommand失败返回ok=false/stderr，但tick只取stdout，等于把失败设成空换行基线，恢复后把全部内容当新消息；失败通常无可见诊断。setInterval直接void tick无inFlight锁，慢命令可以重叠，后启动先完成/旧结果后到可逆转cursor与重复通知。单次命令10秒预算与最小100ms允许许多并发；没有per-watcher排队/重入保护或全局数量上限。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:66-99](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L66-L99)\n\n文件读增量。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Read new lines from an append-only NDJSON file after `fromOffset`. */\nfunction readFileDelta(path, fromOffset) {\n  let size = 0;\n  try {\n    size = statSync(path).size;\n  } catch {\n    return { lines: [], offset: fromOffset };\n  }\n  if (size === fromOffset) return { lines: [], offset: size };\n  // Reset on truncation.\n  const start = fromOffset === null || size < fromOffset ? 0 : fromOffset;\n  // Read as a Buffer and slice by exact bytes (readFileSync `start` is\n  // unreliable with string encodings across Node versions).\n  const buf = readFileSync(path);\n  const text = buf.subarray(start).toString(\"utf8\");\n  const offset = size;\n  const lines = [];\n  for (const raw of text.split(\"\\n\")) {\n    const line = raw.trim();\n    if (!line) continue;\n    // NDJSON records: prefer the `content` field, fall back to the raw line.\n    try {\n      const rec = JSON.parse(line);\n      const content = typeof rec?.content === \"string\" ? rec.content : line;\n      lines.push({ raw: line, content, meta: rec });\n    } catch {\n      lines.push({ raw: line, content: line, meta: null });\n    }\n  }\n  return { lines, offset };\n}\n\n/** Run a command and return { stdout, stderr, ok }. */\nasync function runCommand(cmd, cwd) {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:102-113](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L102-L113)\n\n命令失败结构。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      cwd: cwd ?? process.cwd(),\n      timeout: 10000,\n      maxBuffer: 16 * 1024 * 1024\n    });\n    return { stdout: stdout ?? \"\", stderr: stderr ?? \"\", ok: true };\n  } catch (error) {\n    return { stdout: \"\", stderr: String(error?.message ?? error), ok: false };\n  }\n}\n\n/** Format a wake-up message body with a bounded summary. */\nfunction noticeFor(watcher, content) {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:153-178](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L153-L178)\n\ncursor及忽略ok。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n      try {\n        if (watcher.source === \"file\") {\n          const { lines, offset } = readFileDelta(watcher.path, watcher.cursor);\n          watcher.cursor = offset;\n          if (lines.length > 0) {\n            for (const line of lines) await deliver(watcher, line.content);\n          }\n        } else if (watcher.source === \"command\") {\n          const { stdout } = await runCommand(watcher.command, watcher.cwd);\n          const current = stdout.endsWith(\"\\n\") ? stdout : `${stdout}\\n`;\n          const prev = watcher.cursor ?? \"\";\n          if (prev !== current) {\n            const delta = current.startsWith(prev)\n              ? current.slice(prev.length)\n              : current;\n            watcher.cursor = current;\n            const trimmed = delta.trim();\n            if (trimmed) await deliver(watcher, trimmed);\n          } else {\n            watcher.cursor = current;\n          }\n        }\n      } catch (error) {\n        ctx.logger.warn(`dsh-monitor ${watcher.id}: ${String(error?.message ?? error)}`);\n      }\n    };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:202-208](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L202-L208)\n\n无互斥interval。\n\n```text\n\n    const interval = Math.max(watcher.pollIntervalMs ?? defaultPollMs, 100);\n    // Global setInterval (harness convention). Cleanup is registered through\n    // ctx.effect so every armed timer is torn down with the plugin fiber.\n    const timer = setInterval(() => {\n      void tick();\n    }, interval);\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 所属会话隔离、命令权限和投递确认实际怎样？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nwatcher保留exec.agent作为投递owner，但list遍历全实例Map不按exec.agent过滤，stop只按可枚举monitor-N ID查Map、不核owner；共享插件实例服务多会话时可看其他会话的文件/命令描述并停止其监听。“送给owner”并不等“只有owner能管理”。初始monitor仅检查文件/命令非空，未强制绝对路径、允许根、沙箱策略或命令审批；expandHome仅支持~和~/，relative path实际按宿主cwd读，~user及Windows反斜杠不在支持中。command直接/bin/sh -c执行模型提供字符串并继承默认宿主环境，cwd非空也不校验项目范围，不能当普通只读监控权限。\n\nnoticeFor调用外部boundContextSummary，但本地Config的maxNoticeBytes虽然读出却未参与任何截断，不能声称配置4096就是实际UTF8通知上限；具体boundContextSummary语义依peer。deliver先构造消息，followup/inject未await或核返回/ack，随即delivered++，且文件cursor在deliver前已前移。同步throw导致后续本批行可能漏；异步拒绝不在await链里，计数也不证明Agent已接收/处理。源文本虽plugin标识，仍送进user role上下文，没有内容指令隔离，外部不可信消息可能诱导后续操作。没有可靠重试、去重键、会话活跃检查或exactly-once保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:47-52](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L47-L52)\n\n配置声明。\n\n```text\n\nconst Config = z.object({\n  // Cap on the model-facing wake-up message (UTF-8 bytes).\n  maxNoticeBytes: z.number().min(64).default(4096),\n  // Default poll interval for command sources (ms).\n  defaultPollIntervalMs: z.number().min(100).default(2000)\n```\n\n**依据 2 · 源码核查**：[lib/index.js:112-124](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L112-L124)\n\n摘要不使用maxNoticeBytes。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n/** Format a wake-up message body with a bounded summary. */\nfunction noticeFor(watcher, content) {\n  const head = `[monitor ${watcher.name ?? watcher.id}] ${content}`;\n  const summary = boundContextSummary(head);\n  return {\n    text: summary,\n    summary\n  };\n}\n\nfunction apply(ctx, config) {\n  const maxNoticeBytes = config.maxNoticeBytes ?? 4096;\n  const defaultPollMs = config.defaultPollIntervalMs ?? 2000;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:181-200](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L181-L200)\n\n不等ack的投递计数。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n      if (w.stopped) return;\n      const { text, summary } = noticeFor(w, content);\n      const message = createUserMessage({\n        content: [{ type: \"text\", text }],\n        source: {\n          kind: \"plugin\",\n          plugin: \"dsh-monitor\",\n          form: \"notice\",\n          summary\n        }\n      });\n      const agent = w.owner;\n      if (agent) {\n        if (agent.status === \"idle\") {\n          agent.followup(message);\n        } else {\n          agent.inject(message);\n        }\n      }\n      w.delivered += 1;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:276-299](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L276-L299)\n\n只验非空的arm。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n    async execute(args, exec) {\n      if (args.source === \"file\" && !args.path) {\n        throw new Error(\"monitor: source 'file' requires a non-empty path\");\n      }\n      if (args.source === \"command\" && !args.command) {\n        throw new Error(\"monitor: source 'command' requires a non-empty command\");\n      }\n      const spec = {\n        source: args.source,\n        path: args.path,\n        command: args.command,\n        cwd: args.cwd,\n        pollIntervalMs: args.poll_interval_ms,\n        name: args.name\n      };\n      const watcher = armWatcher(spec, exec.agent);\n      const description =\n        args.source === \"file\" ? args.path : args.command;\n      return {\n        id: watcher.id,\n        source: args.source,\n        description\n      };\n    },\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:331-343](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L331-L343)\n\n全局list无owner过滤。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n          : watchersList.map((w) => `${w.id} [${w.source}] ${w.description} (delivered ${w.delivered})`).join(\"\\n\")\n      }]\n    },\n    execute(_args, exec) {\n      const visible = [];\n      for (const w of watchers.values()) {\n        visible.push({\n          id: w.id,\n          source: w.source,\n          description: w.source === \"file\" ? w.path : w.command,\n          delivered: w.delivered\n        });\n      }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/index.js:371-376](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L371-L376)\n\nstop无owner。\n\n```text\n          ? `Monitor ${value.id} disarmed.`\n          : `No armed watcher ${value.id}.`\n      }]\n    },\n    execute(args) {\n      const stopped = stopWatcher(args.id);\n```\n\n**依据 7 · 源码核查**：[lib/index.js:102-109](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L102-L109)\n\n宿主shell权限。\n\n```text\n      cwd: cwd ?? process.cwd(),\n      timeout: 10000,\n      maxBuffer: 16 * 1024 * 1024\n    });\n    return { stdout: stdout ?? \"\", stderr: stderr ?? \"\", ok: true };\n  } catch (error) {\n    return { stdout: \"\", stderr: String(error?.message ?? error), ok: false };\n  }\n```\n\n#### 缺口\n\n- peer boundContextSummary的实际截断语义和Agent followup/inject受理/会话生命周期契约\n  **影响：**不能把本地delivered当确认收据，也不能把未使用配置当通知字节上限\n  **进一步探讨：**核对应固定宿主API与通知去重/ack边界，区分已请求、已受理和已处理\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动条件和三阶段代价是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n依赖tools/systemPrompt服务，schemastery/zod与dsh-agent/dsh-llm/dsh-tools/cordis peers。没有Skill注册或用户命令，systemPrompt段只是向模型说明可用工具。file方式Node原生fs可用，command硬编码/bin/sh所以普通原生Windows不满足，需要POSIX兼容环境，不能因Node跨平台就声称命令跨平台。README安装的latest只是作者示例，本分析固定0.1.1提交。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH工具/LLM/Agent运行时；文件源或POSIX /bin/sh命令环境 | 配可信消息源、明确监听和停止责任、排除敏感内容，工时未知 | 不含消息broker；本插件不提供持久注册/游标存储 |\n| 持续使用 | timer轮询、全文件同步读取或每轮shell；通知引发宿主模型turn | 处理通知/重复/错误、维护source和interval，实际耗时未知 | 最低100ms，命令timeout10秒/maxBuffer16MiB是单次限制，非总预算；模型费用沿宿主未知 |\n| 失败恢复 | 重启后重新arm、源日志/外部游标和模型重处理资源 | 核漏送/重送、停旧命令并人工补读，工时未知 | 新arm从当前文件末尾开始，不能自动补停机积压；没有投递ack/重试事务 |\n\n与模型忙轮询相比，空闲timer可能减少无变化时的模型回合，但每条file行各触发通知，burst无合并/限速；command前缀重发、错误恢复和重叠会额外消耗。应以有效消息被正确处理的总开销计成本，不能用timer固定频率推出节省。代码树无可读测试文件，作者“等效Monitor”是功能定位，未给同负载漏重送/CPU/模型费对照；本轮只检查源码。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:44-54](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/package.json#L44-L54)\n\n依赖和peers。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  \"dependencies\": {\n    \"@deepseek-ai/schemastery\": \"^3.18.1\",\n    \"zod\": \"^4.4.3\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-agent\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-llm\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-tools\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:41-52](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L41-L52)\n\n服务和配置。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nconst name = \"dsh-monitor\";\n// Timers are NOT injected: the harness convention is plain global\n// setTimeout/setInterval with cleanup registered through ctx.effect\n// (the timer service mixin is only resolvable from the host context,\n// not from tool-execution contexts). See dsh-schedule for the pattern.\nconst inject = [\"tools\", \"systemPrompt\"];\n\nconst Config = z.object({\n  // Cap on the model-facing wake-up message (UTF-8 bytes).\n  maxNoticeBytes: z.number().min(64).default(4096),\n  // Default poll interval for command sources (ms).\n  defaultPollIntervalMs: z.number().min(100).default(2000)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:129-133](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L129-L133)\n\n提示段不是Skill。\n\n```text\n  ctx.systemPrompt.section({\n    name: \"tool:monitor\",\n    order: 120,\n    text: \"You can arm persistent watchers with the monitor tool. A watcher delivers a message into this session whenever new content appears in its source — you are woken even while idle. Do not busy-poll a source you already watch; monitor_list shows what is armed, and monitor_stop disarms a watcher you no longer need.\"\n  });\n```\n\n**依据 4 · 源码核查**：[lib/index.js:102-109](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L102-L109)\n\n平台/单次预算。\n\n```text\n      cwd: cwd ?? process.cwd(),\n      timeout: 10000,\n      maxBuffer: 16 * 1024 * 1024\n    });\n    return { stdout: stdout ?? \"\", stderr: stderr ?? \"\", ok: true };\n  } catch (error) {\n    return { stdout: \"\", stderr: String(error?.message ?? error), ok: false };\n  }\n```\n\n**依据 5 · 源码核查**：[lib/index.js:153-161](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L153-L161)\n\n逐行通知。\n\n```text\n      try {\n        if (watcher.source === \"file\") {\n          const { lines, offset } = readFileDelta(watcher.path, watcher.cursor);\n          watcher.cursor = offset;\n          if (lines.length > 0) {\n            for (const line of lines) await deliver(watcher, line.content);\n          }\n        } else if (watcher.source === \"command\") {\n          const { stdout } = await runCommand(watcher.command, watcher.cwd);\n```\n\n#### 缺口\n\n- 真实消息负载下漏重送、通知风暴、模型费用和人工补偿工时\n  **影响：**不能确认相对忙轮询的净收益，也不能确认消息达到即处理的时延上界\n  **进一步探讨：**固定输入/到达率/慢命令与失败样本，以成功受理消息计资源及人工核对成本\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样判断采用与推导改进？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n建议观察。异步唤醒有清楚用途，但半行/轮换/重叠造成delta失真，跨会话管理无owner限制，命令直用宿主shell及未ack前移cursor会影响核心可靠响应。不是因为没有冒烟而降级。可继续从可信单用户完整行append场景、只用file且有外部可补读原日志入手，不应承接唯一通知渠道或不可信命令源。普通用户把工具描述当绝对路径检查或把delivered当收妥会误判。\n\n由这些机制可推“owner绑定的确认游标watcher”。参照现有byte offset/String cursor和每tick无锁，增加session能力、只允许受权source/执行器、文件世代+完整行缓冲、单flight及退避、消息稳定ID/outbox和受理ack后推进游标；持久化注册须明确重启追赶与保留边界，通知按预算合并且保原记录定位。最小反例覆盖拆行/UTF8、同大小替换、读期间追加、慢命令乱序、失败恢复、跨owner stop、Agent拒绝及重启。若仍丢完整消息/重复触发业务或owner可越权，否定可靠性；若节省模型费被outbox/人工开销抵消则否定经济收益。未验证，不计现有插件贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:66-99](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L66-L99)\n\n文件游标参照。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/** Read new lines from an append-only NDJSON file after `fromOffset`. */\nfunction readFileDelta(path, fromOffset) {\n  let size = 0;\n  try {\n    size = statSync(path).size;\n  } catch {\n    return { lines: [], offset: fromOffset };\n  }\n  if (size === fromOffset) return { lines: [], offset: size };\n  // Reset on truncation.\n  const start = fromOffset === null || size < fromOffset ? 0 : fromOffset;\n  // Read as a Buffer and slice by exact bytes (readFileSync `start` is\n  // unreliable with string encodings across Node versions).\n  const buf = readFileSync(path);\n  const text = buf.subarray(start).toString(\"utf8\");\n  const offset = size;\n  const lines = [];\n  for (const raw of text.split(\"\\n\")) {\n    const line = raw.trim();\n    if (!line) continue;\n    // NDJSON records: prefer the `content` field, fall back to the raw line.\n    try {\n      const rec = JSON.parse(line);\n      const content = typeof rec?.content === \"string\" ? rec.content : line;\n      lines.push({ raw: line, content, meta: rec });\n    } catch {\n      lines.push({ raw: line, content: line, meta: null });\n    }\n  }\n  return { lines, offset };\n}\n\n/** Run a command and return { stdout, stderr, ok }. */\nasync function runCommand(cmd, cwd) {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:153-208](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L153-L208)\n\n无互斥/ack参照。\n\n<details>\n<summary>查看原文（56行）</summary>\n\n```text\n      try {\n        if (watcher.source === \"file\") {\n          const { lines, offset } = readFileDelta(watcher.path, watcher.cursor);\n          watcher.cursor = offset;\n          if (lines.length > 0) {\n            for (const line of lines) await deliver(watcher, line.content);\n          }\n        } else if (watcher.source === \"command\") {\n          const { stdout } = await runCommand(watcher.command, watcher.cwd);\n          const current = stdout.endsWith(\"\\n\") ? stdout : `${stdout}\\n`;\n          const prev = watcher.cursor ?? \"\";\n          if (prev !== current) {\n            const delta = current.startsWith(prev)\n              ? current.slice(prev.length)\n              : current;\n            watcher.cursor = current;\n            const trimmed = delta.trim();\n            if (trimmed) await deliver(watcher, trimmed);\n          } else {\n            watcher.cursor = current;\n          }\n        }\n      } catch (error) {\n        ctx.logger.warn(`dsh-monitor ${watcher.id}: ${String(error?.message ?? error)}`);\n      }\n    };\n\n    const deliver = async (w, content) => {\n      if (w.stopped) return;\n      const { text, summary } = noticeFor(w, content);\n      const message = createUserMessage({\n        content: [{ type: \"text\", text }],\n        source: {\n          kind: \"plugin\",\n          plugin: \"dsh-monitor\",\n          form: \"notice\",\n          summary\n        }\n      });\n      const agent = w.owner;\n      if (agent) {\n        if (agent.status === \"idle\") {\n          agent.followup(message);\n        } else {\n          agent.inject(message);\n        }\n      }\n      w.delivered += 1;\n    };\n\n    const interval = Math.max(watcher.pollIntervalMs ?? defaultPollMs, 100);\n    // Global setInterval (harness convention). Cleanup is registered through\n    // ctx.effect so every armed timer is torn down with the plugin fiber.\n    const timer = setInterval(() => {\n      void tick();\n    }, interval);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:331-343](https://github.com/AbnerAI/dsh-monitor/blob/4ef3cc6f3e4332a85d913a13ae929f5eb587818a/lib/index.js#L331-L343)\n\nowner隔离参照。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n          : watchersList.map((w) => `${w.id} [${w.source}] ${w.description} (delivered ${w.delivered})`).join(\"\\n\")\n      }]\n    },\n    execute(_args, exec) {\n      const visible = [];\n      for (const w of watchers.values()) {\n        visible.push({\n          id: w.id,\n          source: w.source,\n          description: w.source === \"file\" ? w.path : w.command,\n          delivered: w.delivered\n        });\n      }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：be9ad675a031c105ae704fc00e4479a7d835a4a20f0f7d89abd6f5164eb1617f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 383 | 324 | 41 | — |\n| .md | source | 1 | 130 | — | — | 714 |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| monitor | arm文件或命令源 | 非空校验，无路径/权限收敛 |\n| monitor_list/stop | 查看与解除 | 全实例Map不按owner限制 |\n| 后台timer | 检查变化并唤醒 | 无磁盘恢复，命令可重叠 |\n| plugin notice | followup或inject | 未ack，delivered非收妥 |\n\n\n## 工程亮点\n\nbyte offset、plugin来源和unload timer清理有用；完整行缓冲、互斥、owner管理与确认重试均未闭合。详见[Q03](#research-q03)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/index.js、lib/types/index.d.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整383行发布代码、README、package/patch/类型声明；无目标/宿主运行或测试。\n- 下一步：以拆行/多字节/同大小替换/慢命令乱序/失败恢复/跨owner/Agent拒收和重启构成可复现对照，比较有效受理及总成本。\n",
         "metadata": {
             "repository": "AbnerAI/dsh-monitor",
             "repository_id": 1333440937,
-            "captured_at": "2026-10-21T05:34:26.816Z",
-            "window_start": "2026-09-21T05:34:26.816Z",
+            "captured_at": "2026-10-22T09:47:27.535Z",
+            "window_start": "2026-09-22T09:47:27.535Z",
             "stars": 3,
             "pushed_at": "2026-08-13T19:03:50Z",
             "issues": {
                 "open": 0,
                 "closed": 0,
                 "created_30d": 0,
-                "closed_30d": null,
-                "updated_30d": null
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A26.816Z..2026-10-21T05%3A34%3A26.816Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C48:360622:A9A1A5:F47452:6AD84EE7 and timestamp 2026-10-21 05:34:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAbnerAI%2Fdsh-monitor%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A26.816Z..2026-10-21T05%3A34%3A26.816Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8D82:360622:A9A2CD:F47614:6AD84EE8 and timestamp 2026-10-21 05:34:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-monitor",
-                "captured_at": "2026-10-21T05:34:33.283Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 831,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-monitor",
+                "captured_at": "2026-10-22T09:47:35.943Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 823,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-monitor",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-13T19:00:50.711Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T09:47:35.943Z",
                     "source_url": "https://registry.npmjs.org/dsh-monitor",
                     "error": null,
                     "latest_version": "0.1.1",

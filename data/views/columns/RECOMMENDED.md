@@ -28,22 +28,16 @@
 | [dsh-anet](#plugin-1302597978-deploy-plugins-dist-dsh) | 将DSH接入本地anet节点，装配stdio MCP和委派、设置、状态三Skill，以统一执行路径/身份发现和跟踪跨智能体任务。 | 统一节点/MCP/Skill接线实用，适合能管理身份/daemon/支出的技术用户，先核真实节点和安装信任，不把指南当隔离。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
 | [dsh-verification-receipt](#plugin-1333370288-root) | 被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。 | 被动最小字段与边界文档清楚，适合精确宿主私有单进程路径观察；词法/可重算hash与无界queue不适合验证门禁或强审计。 |
-| [dsh-vision-fallback](#plugin-1333993743-root) | 将 DSH 图片交给独立视觉模型，并把观察结果返回当前主模型。 | 必须保留纯文本主模型的用户可试用图像旁路；先检查外发上下文范围与难图误读，关键文字回看原图。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 给 DSH 插件提供中文目录说明、启停、备注编辑及配置备份管理界面。 | 维护多插件者可在独立profile试用中文目录与启停；先验系统保护、表达式拒绝、备份恢复和真实fiber状态。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 管理提示词预设并导入酒馆角色卡、世界书及正则资料，按需注入对话上下文。 | 已有酒馆角色资料的作者可导入副本试用；核对占位符丢语义和世界书命中，外部卡注入前审内容。 |
-| [dsh-voice](#plugin-1334554745-root) | 通过麦克风或快捷键把语音识别为 DSH 普通聊天输入。 | 不便键盘输入者可用非敏感口述试用；确认生效引擎与Web Speech回退，重要指令提交前核对文字。 |
-| [dsh-youreyes](#plugin-1335045545-root) | 为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。 | 已有多视觉端点或本地Ollama者可显式通道试用；先设允许目录并核对auto云端回退，关键内容回看原图。 |
+| [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信群聊与邮件接入DSH，提供Web界面和十个通信工具，支持用户摘要及可选白名单来信到Agent。 | 已有AWiki通信需求可固定依赖试用，保持listener关闭、明确发送与模型数据边界；生产身份恢复需另核SDK。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | 维护多插件环境可在隔离profile试用冲突预检与恢复；先注入加载失败并核对备份，不把进程稳定视作功能验收。 |
 | [dsh-web-tools](#plugin-1335219884-root) | 为DSH统一搜索与抓取接口适配多Provider、自定义JSON源及X/小红书原生浏览器检索。 | 适合可信本机公开资料检索的小范围试用，需核原来源/全文和实际支出；不可把off、required或false截断标记当全局保证。 |
 | [Markdown 批注器](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，把批注整理为会话草稿。 | 审阅中等Markdown者可按次试用定位批注；重生成后核对重复段落锚点并及时导出，不用于跨日未保存档案。 |
-| [messaging-core](#plugin-1335798113-packages-messaging-core) | 将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。 | 已有机器人经验者可先以单平台私人聊天试用；收紧白名单，验证重连长消息及群共享上下文，不能凭渠道数量认定可靠。 |
-| [chicheng-cron](#plugin-1335807482-root) | 在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。 | 可重复可撤销的个人任务可先用只读日程试用；核对cwd、时区、超时和输出，关键产物另加完成检查。 |
 | [dsh-verify](#plugin-1335843750-root) | 执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。 | 适合可信本地应用的有限浏览器验收试用；独立审读spec和批准基线，不把新基线或runner错误当交付通过。 |
 | [dsh-openai-oauth](#plugin-1335992154-root) | 为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。 | 本机认证/凭据/provider适配完整，可保留替代路由试用；注意协议、明文凭据和消息/退出边界，不拓展远程多用户。 |
-| [dsh-plugin-focus](#plugin-1336084195-root) | 将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。 | 可明确单任务板所有权的工作区可试焦点注入；早期硬约束会被裁、set实际追加，需核保留范围；npm不含附带发布Skill。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。 | 持续技术翻译者可试分段术语记忆与数字检查；以否定和主客体样例验规则，高分仍需语义校译，词表先审后存。 |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](#research-q06)。 |
-| [dsh-ui-enhancer](#plugin-1339034478-root) | 组合工作区文件引用、壁纸和可自定义形象的桌面宠物。 | 需@文件引用者可先核工作区realpath和宿主输入接口；娱乐层另验隐私与去背景，不把宠物星星当交付指标。 |
 | [dsh-project-memory](#plugin-1339316901-root) | 为DSH索引项目文档和代码符号，分层召回带来源的内容，保存任务与经验，并按动作和查询门控注入相关记忆。 | 分层召回、项目根护栏与注入审计有明确试用价值；先单项目非敏感语料、审核引用和global，反思默认关闭，不能依近邻/曝光认定知识正确。 |
 | [dsh-workspace-menu](#plugin-1339803365-root) | 在 DSH 工作区与会话行增加右键操作、置顶、归档及文件管理器入口。 | 多工作区用户可先试置顶和复制路径，删除功能待测试目录确认路径与确认流程后启用。 |
 | [gzhflow](#plugin-1339888505-root) | 为公众号内容提供素材、写作、风格质检、配图、排版和推草稿箱的技能及工具流程。 | 已有公众号编辑流程者可先试本地质检和排版；分数非事实质量，推草稿需逐次授权核远端结果，未知响应不要直接重试。 |
@@ -62,6 +56,12 @@
 | [dsh-llm-balance-siderbar](#plugin-1366370702-root) | 按已挂载模型路由查询余额或套餐额度，并在侧栏保留独立错误和陈旧状态。 | 多provider用户可在每类仅一个账户路由时试额度面板；同provider多key会共用首路由缓存，不能当当前各账户余额。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。 | 自定义模型用户可备份profile后试单模型档位修补，先核对真实请求和撤销结果。 |
 | [dsh-eteams](#plugin-1372993989-root) | 为DSH提供领队主导的多会话团队、任务执行链、成员对话与SQLite持久状态。 | 可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。 |
+| [3Chat 私域客户运营](#plugin-1374055714-root) | 连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。 | 已有3Chat渠道团队可先在测试客户试用查询和确认单发；批量前核对收件人，未知发送结果须人工查证。 |
+| [dsh-plugin-proxy](#plugin-1374274543-root) | 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。 | 频繁换网络者可用测试端点试热切换，先确认错误配置直连回退可接受并验卸载恢复。 |
+| [dsh-wsl-media](#plugin-1381725238-root) | 在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。 | 媒体资料处理者可设小范围目录逐工具试样本，核原件和输出，禁止复用同名路径避免ffmpeg -y覆盖。 |
+| [dsh-wsl-struct](#plugin-1381832935-root) | 在 DSH 中调用 jq、yq 和只读 SQLite 查询本地结构化数据。 | 固定配置查询者可在副本限根试结构化工具，先核yq方言与表达式权限，复杂SQL结果人工复核。 |
+| [dsh-wsl-terraform](#plugin-1381843937-root) | 在 DSH 中查看 Terraform/OpenTofu 校验、计划摘要与状态资源列表。 | 已有Terraform审批者可限沙盒试计划摘要，显式根目录和凭据，部署前必须回看完整计划。 |
+| [dsh-cache-bricks](#plugin-1386463441-root) | 用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。 | 适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。 |
 
 <a id="plugin-1350325873-root"></a>
 
@@ -287,20 +287,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1333993743-root"></a>
-
-## [dsh-vision-fallback](../../plugins/1helloman1--dsh-vision-fallback/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/1HelloMan1/dsh-vision-fallback) [![npm 30d 919](https://img.shields.io/static/v1?label=npm+30d&message=919&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback)
-
-**主要用途：**将 DSH 图片交给独立视觉模型，并把观察结果返回当前主模型。
-
-**推荐理由：**必须保留纯文本主模型的用户可试用图像旁路；先检查外发上下文范围与难图误读，关键文字回看原图。
-
-**使用条件：**适合确需保留纯文本主模型的图片任务；先核对视觉服务的数据范围和难图准确率，重要文字回看原图。
-
-[返回表格](#column-index)
-
 <a id="plugin-1334267268-root"></a>
 
 ## [dsh-plugin-manager](../../plugins/2768651338--dsh-plugin-manager/INSIGHT.md)
@@ -329,31 +315,17 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1334554745-root"></a>
+<a id="plugin-1334428397-root"></a>
 
-## [dsh-voice](../../plugins/3274375092--dsh-voice/INSIGHT.md)
+## [@awiki/dsh-plugin](../../plugins/agentconnect--dsh-awiki/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/3274375092/dsh-voice) [![npm 30d 607](https://img.shields.io/static/v1?label=npm+30d&message=607&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@nn12138/dsh-voice) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@nn12138/dsh-voice)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin)
 
-**主要用途：**通过麦克风或快捷键把语音识别为 DSH 普通聊天输入。
+**主要用途：**将AWiki身份、私信群聊与邮件接入DSH，提供Web界面和十个通信工具，支持用户摘要及可选白名单来信到Agent。
 
-**推荐理由：**不便键盘输入者可用非敏感口述试用；确认生效引擎与Web Speech回退，重要指令提交前核对文字。
+**推荐理由：**已有AWiki通信需求可固定依赖试用，保持listener关闭、明确发送与模型数据边界；生产身份恢复需另核SDK。
 
-**使用条件：**先用非敏感内容核对生效引擎及识别质量；有严格本地要求时需核查回退行为，重要指令提交前复核文字。
-
-[返回表格](#column-index)
-
-<a id="plugin-1335045545-root"></a>
-
-## [dsh-youreyes](../../plugins/54xkeee--dsh-youreyes/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/54xkeee/dsh-youreyes) [![npm 30d 1,126](https://img.shields.io/static/v1?label=npm+30d&message=1%2C126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-youreyes) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-youreyes)
-
-**主要用途：**为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。
-
-**推荐理由：**已有多视觉端点或本地Ollama者可显式通道试用；先设允许目录并核对auto云端回退，关键内容回看原图。
-
-**使用条件：**需要多端点或本地视觉的用户可先在隔离会话试用；显式设置通道与允许目录，别只凭图片输入开关判断模型已经支持原图推理。
+**使用条件：**有条件试用，已有AWiki需求者先固定依赖与身份/发送审批，listener保持关闭直到独立评估效果重试。详见Q07(#research-q07)。
 
 [返回表格](#column-index)
 
@@ -399,34 +371,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1335798113-packages-messaging-core"></a>
-
-## [messaging-core](../../plugins/534119219--dsh-messaging--packages-messaging-core/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/534119219/dsh-messaging)
-
-**主要用途：**将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。
-
-**推荐理由：**已有机器人经验者可先以单平台私人聊天试用；收紧白名单，验证重连长消息及群共享上下文，不能凭渠道数量认定可靠。
-
-**使用条件：**已有机器人接入经验的人可先用一个平台的私人聊天测试；固定版本、收紧白名单，核对重连和长消息，再开放群聊，群成员的共享上下文要提前明确。
-
-[返回表格](#column-index)
-
-<a id="plugin-1335807482-root"></a>
-
-## [chicheng-cron](../../plugins/534119219--chicheng-cron/INSIGHT.md)
-
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-cron)
-
-**主要用途：**在 DSH Web 配置 cron 定时脚本、Skill 与 Agent 任务，查看历史并发送完成通知。
-
-**推荐理由：**可重复可撤销的个人任务可先用只读日程试用；核对cwd、时区、超时和输出，关键产物另加完成检查。
-
-**使用条件：**适合可重复、可撤销的个人定时任务；先用不改文件的任务检查时间、工作目录、超时、输出与通知，再尝试写操作，关键任务另配完成检查。
-
-[返回表格](#column-index)
-
 <a id="plugin-1335843750-root"></a>
 
 ## [dsh-verify](../../plugins/263311487-ux--dsh-verify/INSIGHT.md)
@@ -455,20 +399,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1336084195-root"></a>
-
-## [dsh-plugin-focus](../../plugins/863683348--dsh-plugin-focus/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-focus) [![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus)
-
-**主要用途：**将任务目标、约束与决策保存为工作区焦点板，并注入会话及展示面板。
-
-**推荐理由：**可明确单任务板所有权的工作区可试焦点注入；早期硬约束会被裁、set实际追加，需核保留范围；npm不含附带发布Skill。
-
-**使用条件：**适合单任务工作区先试。重要约束保持简短并检查是否被条目上限裁掉，多会话共用目录时先明确所有权；不要自动执行附带发布Skill。
-
-[返回表格](#column-index)
-
 <a id="plugin-1336663562-root"></a>
 
 ## [dsh-plugin-translation](../../plugins/863683348--dsh-plugin-translation/INSIGHT.md)
@@ -494,20 +424,6 @@
 **推荐理由：**维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见Q06(#research-q06)。
 
 **使用条件：**本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见Q06(#research-q06)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1339034478-root"></a>
-
-## [dsh-ui-enhancer](../../plugins/alexyin-tongji--dsh-ui-enhancer/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AlexYin-Tongji/dsh-ui-enhancer) [![npm 30d 1,235](https://img.shields.io/static/v1?label=npm+30d&message=1%2C235&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ui-enhancer)
-
-**主要用途：**组合工作区文件引用、壁纸和可自定义形象的桌面宠物。
-
-**推荐理由：**需@文件引用者可先核工作区realpath和宿主输入接口；娱乐层另验隐私与去背景，不把宠物星星当交付指标。
-
-**使用条件：**先核自己宿主的@引用、工作区范围和宠物隐私片段；不需要娱乐层时单独评估依赖面板。
 
 [返回表格](#column-index)
 
@@ -760,6 +676,90 @@
 **推荐理由：**可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。
 
 **使用条件：**试用，备份/可信管理面/明确人工验收，completed按成员报告解读，不能当全自动业务验收。详见Q08(#research-q08)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1374055714-root"></a>
+
+## [3Chat 私域客户运营](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)
+
+**主要用途：**连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。
+
+**推荐理由：**已有3Chat渠道团队可先在测试客户试用查询和确认单发；批量前核对收件人，未知发送结果须人工查证。
+
+**使用条件：**已有3Chat渠道的团队先用测试客户验证查询和确认发送，再启用批量；保留人工处理未知结果和业务回复的流程。
+
+[返回表格](#column-index)
+
+<a id="plugin-1374274543-root"></a>
+
+## [dsh-plugin-proxy](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md)
+
+[![npm 30d 85](https://img.shields.io/static/v1?label=npm+30d&message=85&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy)
+
+**主要用途：**通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。
+
+**推荐理由：**频繁换网络者可用测试端点试热切换，先确认错误配置直连回退可接受并验卸载恢复。
+
+**使用条件：**先用可观察测试端点核验fetch与目标客户端，确认无代理或配置错误时的直连回退可接受，再切换真实任务。
+
+[返回表格](#column-index)
+
+<a id="plugin-1381725238-root"></a>
+
+## [dsh-wsl-media](../../plugins/173787247--dsh-wsl-media/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media)
+
+**主要用途：**在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。
+
+**推荐理由：**媒体资料处理者可设小范围目录逐工具试样本，核原件和输出，禁止复用同名路径避免ffmpeg -y覆盖。
+
+**使用条件：**先配置小范围目录，逐项确认依赖；把OCR和ASR文本与原件抽查，避免复用同名输出。
+
+[返回表格](#column-index)
+
+<a id="plugin-1381832935-root"></a>
+
+## [dsh-wsl-struct](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-struct)
+
+**主要用途：**在 DSH 中调用 jq、yq 和只读 SQLite 查询本地结构化数据。
+
+**推荐理由：**固定配置查询者可在副本限根试结构化工具，先核yq方言与表达式权限，复杂SQL结果人工复核。
+
+**使用条件：**适合有固定配置查询的开发者先在副本中试用；显式缩小 allowRoots，核实 yq 版本及表达式权限，不把它当不可信查询隔离器。
+
+[返回表格](#column-index)
+
+<a id="plugin-1381843937-root"></a>
+
+## [dsh-wsl-terraform](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform)
+
+**主要用途：**在 DSH 中查看 Terraform/OpenTofu 校验、计划摘要与状态资源列表。
+
+**推荐理由：**已有Terraform审批者可限沙盒试计划摘要，显式根目录和凭据，部署前必须回看完整计划。
+
+**使用条件：**适合已有 Terraform 审批流程的人先审阅沙盒计划；显式配置 allowRoots 和凭据，任何摘要都要回看完整计划后决定部署。
+
+[返回表格](#column-index)
+
+<a id="plugin-1386463441-root"></a>
+
+## [dsh-cache-bricks](../../plugins/3289192-bot--dsh-cache-bricks/INSIGHT.md)
+
+
+
+**主要用途：**用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。
+
+**推荐理由：**适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。
+
+**使用条件：**建议本地单用户维护者用不敏感会话试用，先核对attempt、usage和访问边界；主链延迟、字段错位、UI干扰或权限不清时停止，回到宿主日志。详见Q07(#research-q07)。
 
 [返回表格](#column-index)
 

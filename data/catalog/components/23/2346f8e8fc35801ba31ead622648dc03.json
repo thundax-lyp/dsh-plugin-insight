@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-youreyes",
             "entry_type": "plugin",
-            "technical_category": "model-provider",
-            "business_category": "research-knowledge",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1335045545-root-directory-0",
+                    "id": "2026-10-22-02-github-1335045545-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:16:20.159Z",
+                    "retrieved_at": "2026-10-22T09:35:49.062Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1335045545-root-author",
+                    "id": "2026-10-22-02-github-1335045545-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/54xkeee/dsh-youreyes",
+                            "commit": "86f02fa124cd158438e4d9290625d2f8dd610967",
+                            "path": "README.md",
+                            "content_sha256": "4e408bd290bada517e1bc5e47babdb3dfb26d682a0a16bdf82424f84976d3852"
+                        }
+                    ],
                     "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-                    "captured_at": "2026-10-21T03:16:20.159Z",
-                    "summary": "为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:49.062Z",
+                    "summary": "将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1335045545-root-source",
+                    "id": "2026-10-22-02-github-1335045545-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts",
+                    "url": "https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/54xkeee/dsh-youreyes",
+                            "commit": "86f02fa124cd158438e4d9290625d2f8dd610967",
+                            "path": "README.md",
+                            "content_sha256": "4e408bd290bada517e1bc5e47babdb3dfb26d682a0a16bdf82424f84976d3852"
+                        },
+                        {
+                            "repository_url": "https://github.com/54xkeee/dsh-youreyes",
+                            "commit": "86f02fa124cd158438e4d9290625d2f8dd610967",
+                            "path": "package.json",
+                            "content_sha256": "0e6d316570f4e29de693ce320bfce16055716e8ba51c3d24f72e2b3d9b5efaa7"
+                        },
+                        {
+                            "repository_url": "https://github.com/54xkeee/dsh-youreyes",
+                            "commit": "86f02fa124cd158438e4d9290625d2f8dd610967",
+                            "path": "src/index.ts",
+                            "content_sha256": "d12789d1f22710ed600c1bb62140ca84a258daf211021b2c8b110b46d75d7153"
+                        },
+                        {
+                            "repository_url": "https://github.com/54xkeee/dsh-youreyes",
+                            "commit": "86f02fa124cd158438e4d9290625d2f8dd610967",
+                            "path": "src/channels.ts",
+                            "content_sha256": "24d280e641490ed44221b64a28bf1cc39b8fab9fb7fac6bafdd7b126b6b3e5ff"
+                        },
+                        {
+                            "repository_url": "https://github.com/54xkeee/dsh-youreyes",
+                            "commit": "86f02fa124cd158438e4d9290625d2f8dd610967",
+                            "path": "tests/core.test.mjs",
+                            "content_sha256": "800c95a2a4f485d5125509fa3fa625fea382517da0cb324ded472b5a8fcdd184"
+                        }
+                    ],
                     "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-                    "captured_at": "2026-10-21T03:16:20.159Z",
-                    "summary": "核查 src/index.ts、src/channels.ts、src/vision-core.ts；src/index.ts注册包装provider及vision工具，channels.ts分发Antigravity/OpenAI/Gemini/Ollama；vision-core组织证据和缓存。allowedImageDirs空数组保留旧版任意路径行为。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:49.062Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/channels.ts、tests/core.test.mjs；图片附件/路径转base64与digest，vision通道生成结构化描述；auto按complexity再deep，结果缓存并写会话，压缩后恢复近期视觉记录。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "固定提交关键源码及纯函数测试阅读，未运行模型/构建，不获取私密图片；Git树缺lib是本次实际清单核查，不推断npm包同样缺失。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合已有多种视觉端点、希望保留文本主模型的截图分析；本地Ollama适合需要控制图片外传的任务。",
+                    "text": "文本模型用户需要解释图片和截图，合格结果是可追图的观察而非把VLM生成文字当已证事实。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "src/index.ts注册包装provider及vision工具，channels.ts分发Antigravity/OpenAI/Gemini/Ollama；vision-core组织证据和缓存。allowedImageDirs空数组保留旧版任意路径行为。",
+                    "text": "图片附件/路径转base64与digest，vision通道生成结构化描述；auto按complexity再deep，结果缓存并写会话，压缩后恢复近期视觉记录。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "text": "固定提交关键源码及纯函数测试阅读，未运行模型/构建，不获取私密图片；Git树缺lib是本次实际清单核查，不推断npm包同样缺失。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "text": "0.1.0、MIT、Node>=20；Git固定树无lib，manifest仍指向lib/index.js，npm实际tarball未核验。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次配置API或Ollama视觉模型，IDE通道另需可用工作区；现金按远端识图，Ollama消耗本机资源，人工承担OCR与摘要遗漏复核。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | VLM服务或本地模型、可能构建 | 端点/Key和发布物核查 | VLM端点或本地模型/构建需核；初始金额和工时未知 |\n| 持续使用 | 单/双遍调用、重试、base64和记忆 | 原图校核，金额/收益未知 | 单/双遍、重试/base64和记忆资源；金额与净收益未知 |\n| 失败恢复 | 可能重复调用与旧记录复用 | 纠错、失效缓存和检查临时文件 | 重复调用可能再收费；纠错/缓存失效/临时文件排查工时未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "需要多端点或本地视觉的用户可先在隔离会话试用；显式设置通道与允许目录，别只凭图片输入开关判断模型已经支持原图推理。",
+                    "text": "建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "统一入口与缓存能减少重复配置与调用，但无同条件准确率、吞吐或独立采用证据。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 文本模型利用图片 | VLM文字记录 | 不是原生像素视觉 |\n| 复杂度升级 | 模型自判再deep | 多一遍不保证更正确 |\n| 同图复用 | digest和问题key | 错误可被持续复用 |",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "渠道模块与证据纯函数分离利于替换供应商；真实路径目录校验是可借鉴边界。宽松默认目录和legacy stream修复增加兼容复杂度，应复核宿主版本。",
+                    "text": "内容指纹、失败缓存清除、结构归一和compaction接线可借鉴；需同时设计纠错失效、隐私和发布入口，纯函数测试不测视觉质量。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "作者主张给纯文本模型看图；可确认的贡献是将通用兼容端点及本地Ollama纳入同一视觉证据流程，而非限定单一视觉供应商。README明确继承vision-toolkit机制；缓存、分层证据和压缩恢复属集成实现，不是新视觉算法。",
+                    "text": "把VLM、图片占位、模型工具和会话记忆接成多轮流程；架构明确继承vision-toolkit，不能将模型识别能力或已有架构算新增原创。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "插件声明图片输入只表示能转交外部识图，不会改变主模型固有能力。空的allowedImageDirs不限制本地图片目录；auto通道选择和云端回退须核对，否则本地识图的预期可能与实际数据路径不符。文字证据可能遗漏原图细节。",
+                    "basis": "supported",
+                    "text": "生成性描述可能被缓存/压缩恢复持续复用，结构化不等正确；默认本地路径无目录限制，curl回退会临时落盘，固定Git树还缺main所指lib。详见[Q03](#research-q03)和[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "待验证假设：给每条视觉证据附加不可变通道与外传策略，并在回退前检查策略，可减少本地隐私预期错配。以本地失效和云端可用的组合验证是否阻止未授权回退，同时测可用性损失。",
+                    "text": "可研究原图/区域定位与纠错失效绑定的视觉记录，用固定错误跨轮样例比较纠正效果、调用量和上下文代价。当前未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "86f02fa124cd158438e4d9290625d2f8dd610967"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:20.159Z",
+                    "reviewed_at": "2026-10-22T09:35:49.062Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:16:20.159Z",
+            "last_checked_at": "2026-10-22T09:35:49.062Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-                "reviewed_at": "2026-10-21T03:16:20.159Z",
+                "reviewed_at": "2026-10-22T09:35:49.062Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 15,
+                        "mechanism": 8,
+                        "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty=9：继承vision-toolkit的适配而非新视觉算法。 mechanism=15：通道抽象、缓存与证据复用有实现。 transferability=15：兼容API与Ollama增加可迁移性。 simplification=8：统一入口减少重复配置但需通道核对。",
+                    "rationale": "novelty小幅，明确继承视觉工具架构；mechanism小幅，缓存/两遍/记忆组合未证明准确率突破；transferability实质，记录和指纹可迁移但需模型/宿主；simplification实质，减少手工VLM文字交接，发布与数据责任仍在。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
+                        "delivery": 8,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow=18：保留文本模型的识图流程可行于源码。 delivery=15：会话证据可复用但不是原图无损表示。 reach=10：多端点扩大覆盖，仍需视觉模型可用。 economics=4：无同条件费用数据，本地也有资源开销。",
+                    "rationale": "workflow实质，图片到文本模型多轮流程；delivery小幅，视觉记录增加材料而非保证任务结果；reach实质，让文本模型用户可利用视觉服务；economics小幅，缓存减少同问调用机制未测净收益。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335045545-root-source"
+                        "2026-10-22-02-github-1335045545-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有多视觉端点或本地Ollama者可显式通道试用；先设允许目录并核对auto云端回退，关键内容回看原图。",
+                "decision": "observe",
+                "reason": "适合视觉桥维护者观察；先核查发布构建、缩窄本地目录并明确VLM/临时文件数据边界，再用不敏感标签图片比较。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "保留文本主模型并选择本地视觉的截图用户具体。"
+                        "rationale": "文本模型识图需求明确，复杂任务效果未知。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "多端点共证据缓存比单供应商包装更灵活。"
+                        "score": 13,
+                        "rationale": "多轮视觉记录便利，直接多模态模型和手工VLM已有替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "channels分发与内容缓存源码支持，空allowedImageDirs仍允许任意路径。"
+                        "rationale": "固定源码可查，但发布物和模型效果未验。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需API或本地模型计算，出网路径和OCR遗漏需人工复核。"
+                        "score": 5,
+                        "rationale": "端点/模型/Key、两遍与重试、敏感图片及错误记忆恢复负担高。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:49.062Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1335045545-root-source"
+                    "2026-10-22-02-github-1335045545-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +394,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "3ab590bc75c562d7bcd155409dbce79a327c9e2c13d16790d5d0e9ed87d6805c"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "343e3023e401738134f8a7ae179105f48cbb65ac695f195296c0eceea49afbd8"
         },
         "publication.metadata": "data/plugins/54xkeee--dsh-youreyes/META.json",
         "publication.summaries": {
-            "text": "为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。",
+            "text": "将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。",
             "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
             "source_url": "https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/README.md"
         },
         "publication.capabilities": {
             "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
             "items": {
-                "模型工具": "vision识图/OCR/区域/比较",
-                "事件监听": "会话视觉证据及压缩恢复"
-            }
+                "模型工具": "vision支持附件/本地图片、OCR/区域/compare和detail档位",
+                "界面": "图片粘贴/多图和通道面板",
+                "Host 路由": "/api/youreyes/vision自定义HTTP入口",
+                "后台": "包装provider、视觉缓存/会话记录及compaction恢复"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| vision桥 | 将图变文字观察 | 依赖VLM，准确度未测 |\n| auto升级 | 复杂图再调用 | 自判可能漏判、费用增加 |\n| 视觉记忆 | 跨轮复用 | 错误需要失效和纠正 |\n| 多通道 | 适配服务/本地/IDE | 隐私、安装和费用各异 |"
         },
         "publication.advice": {
             "revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-            "text": "需要多端点或本地视觉的用户可先在隔离会话试用；显式设置通道与允许目录，别只凭图片输入开关判断模型已经支持原图推理。"
+            "text": "建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/54xkeee--dsh-youreyes",
-        "reports": "# dsh-youreyes\n\n> 为文本模型接入OpenAI兼容、Gemini、Ollama及IDE视觉通道并保存视觉证据。\n\n## 使用建议\n\n需要多端点或本地视觉的用户可先在隔离会话试用；显式设置通道与允许目录，别只凭图片输入开关判断模型已经支持原图推理。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合已有多种视觉端点、希望保留文本主模型的截图分析；本地Ollama适合需要控制图片外传的任务。\n- **亮点**：作者主张给纯文本模型看图；可确认的贡献是将通用兼容端点及本地Ollama纳入同一视觉证据流程，而非限定单一视觉供应商。README明确继承vision-toolkit机制；缓存、分层证据和压缩恢复属集成实现，不是新视觉算法。\n- **思考**：插件声明图片输入只表示能转交外部识图，不会改变主模型固有能力。空的allowedImageDirs不限制本地图片目录；auto通道选择和云端回退须核对，否则本地识图的预期可能与实际数据路径不符。文字证据可能遗漏原图细节。\n- **建议**：待验证假设：给每条视觉证据附加不可变通道与外传策略，并在回退前检查策略，可减少本地隐私预期错配。以本地失效和云端可用的组合验证是否阻止未授权回退，同时测可用性损失。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代为原生多模态模型或手动向视觉服务提问；此方案保留文本模型但引入一层有损视觉描述。\n\n### 能力、依赖与流程\n\nsrc/index.ts注册包装provider及vision工具，channels.ts分发Antigravity/OpenAI/Gemini/Ollama；vision-core组织证据和缓存。allowedImageDirs空数组保留旧版任意路径行为。\n\n- **模型工具**：vision识图/OCR/区域/比较\n- **事件监听**：会话视觉证据及压缩恢复\n\n依赖宿主webServer/llm/tools/sessions/attachments及Schemastery；各通道需对应API、IDE订阅或本地Ollama视觉模型。\n\n附件占位→vision读取图片→选通道→标准识图/复杂升级→保存结构化证据→后续问题复用；失败需查端点能力及本地路径权限。\n\n### 成本与效果\n\n首次配置API或Ollama视觉模型，IDE通道另需可用工作区；现金按远端识图，Ollama消耗本机资源，人工承担OCR与摘要遗漏复核。\n\n统一入口与缓存能减少重复配置与调用，但无同条件准确率、吞吐或独立采用证据。\n\n### 工程亮点\n\n渠道模块与证据纯函数分离利于替换供应商；真实路径目录校验是可借鉴边界。宽松默认目录和legacy stream修复增加兼容复杂度，应复核宿主版本。\n\n源码依据：[src/index.ts](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts)、[src/channels.ts](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/channels.ts)、[src/vision-core.ts](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/vision-core.ts)。\n\n## 未来设计假设（未验证）\n\n待验证假设：给每条视觉证据附加不可变通道与外传策略，并在回退前检查策略，可减少本地隐私预期错配。以本地失效和云端可用的组合验证是否阻止未授权回退，同时测可用性损失。\n\n固定通道测试本地路径限制、图片发送目标、OCR细节及压缩恢复；本轮只核源码，作者样例不作准确率依据。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：60f3fca4be2b7496bd8e36704fc18d2c58792847e1bb62a3347275042de1d0a8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 49 | 43 | 2 | — |\n| .md | source | 2 | 580 | — | — | 4871 |\n| .ts | source | 4 | 1607 | 1426 | 107 | — |\n| .tsx | source | 1 | 350 | 334 | 2 | — |\n| .mjs | test | 1 | 244 | 212 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[54xkeee/dsh-youreyes](https://github.com/54xkeee/dsh-youreyes)\n- **版本号**：0.1.0（[固定提交 86f02fa1](https://github.com/54xkeee/dsh-youreyes/tree/86f02fa124cd158438e4d9290625d2f8dd610967)）\n- **版本日期**：2026-08-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/channels.ts、src/vision-core.ts、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：固定通道测试本地路径限制、图片发送目标、OCR细节及压缩恢复；本轮只核源码，作者样例不作准确率依据。\n",
+        "reports": "# dsh-youreyes\n\n> 将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。\n\n## 研究范围\n\n- **仓库**：[54xkeee/dsh-youreyes](https://github.com/54xkeee/dsh-youreyes)\n- **版本号**：0.1.0（[固定提交 86f02fa124cd158438e4d9290625d2f8dd610967](https://github.com/54xkeee/dsh-youreyes/tree/86f02fa124cd158438e4d9290625d2f8dd610967)）\n- **版本日期**：2026-08-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n视觉桥、两遍和记录接线有源码支持；生成性正确性与发布物入口未核验。可校核纠错记录为未验证方向。\n\n## 洞察短评\n\n- **用途**：文本模型用户需要解释图片和截图，合格结果是可追图的观察而非把VLM生成文字当已证事实。详见[Q01](#research-q01)。\n- **亮点**：把VLM、图片占位、模型工具和会话记忆接成多轮流程；架构明确继承vision-toolkit，不能将模型识别能力或已有架构算新增原创。详见[Q01](#research-q01)。\n- **思考**：生成性描述可能被缓存/压缩恢复持续复用，结构化不等正确；默认本地路径无目录限制，curl回退会临时落盘，固定Git树还缺main所指lib。详见[Q03](#research-q03)和[Q04](#research-q04)。\n- **建议**：可研究原图/区域定位与纠错失效绑定的视觉记录，用固定错误跨轮样例比较纠正效果、调用量和上下文代价。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把VLM、图片占位、模型工具和会话记忆接成多轮流程；架构明确继承vision-toolkit，不能将模型识别能力或已有架构算新增原创。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n生成性描述可能被缓存/压缩恢复持续复用，结构化不等正确；默认本地路径无目录限制，curl回退会临时落盘，固定Git树还缺main所指lib。详见[Q03](#research-q03)和[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可研究原图/区域定位与纠错失效绑定的视觉记录，用固定错误跨轮样例比较纠正效果、调用量和上下文代价。当前未验证。详见[Q05](#research-q05)。\n\n进一步探讨从构建发布物、默认目录、curl临时文件和视觉错误跨轮四条线入手，再比较单遍/auto/直接多模态的正确任务与总成本。\n\n## 场景与替代办法\n\n文本模型用户需要解释图片和截图，合格结果是可追图的观察而非把VLM生成文字当已证事实。详见[Q01](#research-q01)。\n\n手工调用VLM复制描述或直接使用多模态主模型；桥减少交接但多一层生成性解释和持久记录。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| 已构建lib与宿主API | 实际加载 | Git源码不能直接视为可启动 |\n| VLM端点/本地Ollama/IDE | 识别 | 成本和数据路线不同 |\n| attachments/sessions/tools | 图片与证据 | 接口变更影响流程 |\n| 明确allowedImageDirs | 本地读取限制 | 默认空不限制工作区 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 核查发布物或构建 | 维护者 | main/client入口存在 |\n| 设通道和目录 | 用户 | 数据发送和本地读范围清楚 |\n| 非敏感图片识别 | 用户/Agent | 原图标签支持观察 |\n| 检查多轮记录 | 用户 | 错误不被当事实延续 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | VLM服务或本地模型、可能构建 | 端点/Key和发布物核查 | VLM端点或本地模型/构建需核；初始金额和工时未知 |\n| 持续使用 | 单/双遍调用、重试、base64和记忆 | 原图校核，金额/收益未知 | 单/双遍、重试/base64和记忆资源；金额与净收益未知 |\n| 失败恢复 | 可能重复调用与旧记录复用 | 纠错、失效缓存和检查临时文件 | 重复调用可能再收费；纠错/缓存失效/临时文件排查工时未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 文本模型利用图片 | VLM文字记录 | 不是原生像素视觉 |\n| 复杂度升级 | 模型自判再deep | 多一遍不保证更正确 |\n| 同图复用 | digest和问题key | 错误可被持续复用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本如何桥接VLM为文本模型提供视觉记录，生成性证据、缓存和数据/安装边界怎样限制采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 纯文本模型看图增加了什么，贡献归谁？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向使用文本模型却需要解释截图、OCR、区域细节或多图差异的DSH用户。合格结果应是视觉模型对指定图片/问题的观察被准确交给主模型，并且不确定项、通道和图片身份可追溯，不能把文字描述当主模型直接获得像素视觉。简单替代是手工调用VLM再复制描述，或直接选择支持图片的主模型。\n\n增量在包装provider接受图片占位、模型vision工具、结构化视觉记录与跨轮恢复的接线。README和源码明确架构继承vision-toolkit，通道约定参考其它社区项目；本轮不把既有架构和VLM能力计作原创。OCR/compare等是提示任务模式，不是经过测量的独立算法优势。自动深度调用增加预算，效果需要和直接一次VLM或多模态主模型对照，而不是从功能多推导识别准确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:29-44](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L29-L44)\n\n源码明确文字视觉桥及继承架构。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/**\n * dsh-youreyes — server half.\n *\n * 给纯文本 DSH 模型一双眼睛。图片经视觉通道（反重力 / OpenAI 兼容 / Gemini /\n * 本地 Ollama）理解后，把文字证据送回对话流，DeepSeek 仍然是大脑。\n *\n * 通道（auto 优先 antigravity）：\n *   - antigravity : Antigravity IDE agentapi（默认；flash/pro 双档，走 IDE 订阅额度）\n *   - openai      : 任意 OpenAI 兼容 /chat/completions（智谱、通义、OpenRouter、vLLM…）\n *   - gemini      : Google Gemini Developer API（AIza… 或 AQ. 新格式 key）\n *   - ollama      : 本地 Ollama（零配置自动检测，图片不出本机）\n *\n * 特色（继承自 vision-toolkit）：\n *   1) 包装适配器：每个上游 LLM 注册一个带识图能力的 provider，图片块→文本占位\n *   2) vision 工具：模型看到占位符后主动调用（单图/多图/OCR/区域/对比 + 档位分流）\n *   3) 视觉证据：结果写入会话时间线，跨轮复用、compaction 后自动恢复\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:20-29](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/README.md#L20-L29)\n\n作者列举痛点、缓存和auto策略。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n| 痛点 | dsh-youreyes 的解法 |\n|---|---|\n| DeepSeek 纯文本，粘贴图片直接被拒 | 包装适配器声明图片输入，图片自动转文本占位，不再报错 |\n| 别的识图插件只认自家 API | **反重力（默认）+ 任意 OpenAI 兼容端点** + Gemini + 本地 Ollama，你的 key 都能用 |\n| 配置麻烦、要注册一堆东西 | **本地 Ollama 零配置自动检测**；有 Gemini 免费 key 一行配置即可 |\n| 模型看到图但\"忘了\" | **视觉证据记忆**：识图结果写入会话，后续轮次可复用，压缩后自动恢复 |\n| 同一张图反复花钱识别 | **内容哈希缓存**：同图同问进程内只识别一次 |\n| 复杂画面识别不准 | **auto 档位分流**：先标准检查，画面复杂自动升级深度检查 |\n| WSL / 被墙环境连不上 API | **winCurl 自动降级**：fetch 失败自动走 Windows curl 重试 |\n\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 图片、通道、升级和记忆怎样流动？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n入口注入webServer/llm/tools/sessions/attachments，vision工具从附件或本地路径收集图片，限制数量，读字节后哈希并转base64。cache key绑定图片digest、问题、detail/mode/region、模型和通道；内存Promise缓存共用在途结果，失败删除，已持久视觉记录也可复用。文本模型通过占位知道附件，调用vision后文字记录deferContext写入会话，后续manifest和compaction逻辑恢复近期视觉记录。\n\nauto先以standard和triage提示调用视觉通道，由模型回答complexity；仅complex时再deep，第二次失败回第一遍并附escalationError。OpenAI/Gemini/Ollama和Antigravity通道各自依端点或本地进程；网络异常可回退Windows curl，把请求payload写临时文件，finally清理。自动升级是模型自判驱动的路由，不是独立检测器，也不能保证复杂图总被识别或第二遍更正确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:217-249](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L217-L249)\n\nauto两遍与失败保留首遍。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nasync function runAdaptiveVision(cfg: any, channel: string, requestedModel: string, detail: string, visionMode: string, userPrompt: string, region: string, images: { b64: string; mime: string }[], signal?: AbortSignal) {\n\tconst selectedDetail = normalizeDetail(detail);\n\tconst selectedMode = normalizeVisionMode(visionMode);\n\tconst model = requestedModel || cfg.defaultModel || VISION_MODEL;\n\tconst runOne = async (oneDetail: string, triage: boolean) => {\n\t\tconst prompt = buildVisionPrompt({\n\t\t\tdetail: oneDetail,\n\t\t\tmode: selectedMode,\n\t\t\tuserPrompt,\n\t\t\tregion,\n\t\t\timageCount: images.length,\n\t\t\ttriage\n\t\t});\n\t\tconst raw = await runVisionChannel(cfg, channel, model, prompt, images, signal);\n\t\tif (raw.error) return raw;\n\t\tconst normalized = normalizeVisionResponse(raw.text);\n\t\treturn { text: normalized.answer, evidence: normalized.evidence, complexity: normalized.complexity, structured: normalized.structured, truncatedBytes: normalized.truncatedBytes };\n\t};\n\n\tif (selectedDetail !== \"auto\") {\n\t\tconst result = await runOne(selectedDetail, false);\n\t\treturn { ...result, detail: selectedDetail, mode: selectedMode, model, escalated: false };\n\t}\n\tconst first = await runOne(\"standard\", true);\n\tif (first.error) return { ...first, detail: \"auto\", mode: selectedMode, model, escalated: false };\n\tif (first.complexity !== \"complex\") {\n\t\treturn { ...first, detail: \"auto\", mode: selectedMode, model, escalated: false };\n\t}\n\tconst deep = await runOne(\"deep\", false);\n\tif (deep.error) {\n\t\treturn { ...first, detail: \"auto\", mode: selectedMode, model, escalated: false, escalationError: deep.error };\n\t}\n\treturn { ...deep, detail: \"auto\", mode: selectedMode, model, escalated: true };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:393-416](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L393-L416)\n\n本地读取、hash和缓存绑定。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n\t\tfor (const imagePath of imagePaths) {\n\t\t\ttry {\n\t\t\t\tif (!pathIsAllowed(cfg, imagePath)) return { error: `图片路径超出 allowedImageDirs: ${imagePath}` };\n\t\t\t\tconst bytes = readFileSync(imagePath);\n\t\t\t\tif (bytes.length > cfg.maxImageBytes) return { error: `图片超过 ${cfg.maxImageBytes} 字节限制` };\n\t\t\t\timages.push({ id: `path:${resolve(imagePath)}`, b64: bytes.toString(\"base64\"), mime: mimeForPath(imagePath), digest: sha256(bytes) });\n\t\t\t} catch (error) {\n\t\t\t\treturn { error: `读取图片失败: ${String(error?.message || error).slice(0, 500)}` };\n\t\t\t}\n\t\t}\n\n\t\tconst channel = args.channel || cfg.defaultChannel || \"auto\";\n\t\tconst resolvedChannel = channel === \"auto\" ? resolveAutoChannel(cfg) : channel;\n\t\tconst model = args.model || cfg.defaultModel || VISION_MODEL;\n\t\tconst key = visionCacheKey({\n\t\t\tattachmentIds: images.map((image) => image.id),\n\t\t\timageDigests: images.map((image) => image.digest),\n\t\t\tprompt,\n\t\t\tdetail,\n\t\t\tmode,\n\t\t\tregion,\n\t\t\tmodel,\n\t\t\tchannel: resolvedChannel\n\t\t});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:450-471](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L450-L471)\n\n视觉记录与deferContext。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n\t\t\tkey,\n\t\t\tattachmentIds: images.map((image) => image.id),\n\t\t\tattachmentRefs: images.map((image) => image.ref).filter(Boolean),\n\t\t\timageDigests: images.map((image) => image.digest),\n\t\t\tprompt: prompt.slice(0, 12000),\n\t\t\tpromptHash: sha256(prompt),\n\t\t\tmodel: result.model || model,\n\t\t\tdetail,\n\t\t\tmode,\n\t\t\tregion,\n\t\t\tchannel: result.channel,\n\t\t\tescalated: Boolean(result.escalated),\n\t\t\tevidence: result.evidence || { summary: result.text },\n\t\t\tanswer: String(result.text || \"\").slice(0, 20000)\n\t\t});\n\t\texec.deferContext(createUserMessage({\n\t\t\tcontent: [{ type: \"text\", text: visionRecordText(record) }],\n\t\t\tsource: {\n\t\t\t\tkind: \"plugin\",\n\t\t\t\tplugin: \"dsh-youreyes\",\n\t\t\t\tform: \"notice\",\n\t\t\t\tsummary: `视觉证据已记录：${record.attachmentIds.join(\", \")}`.slice(0, 120)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/channels.ts:56-87](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/channels.ts#L56-L87)\n\nfetch失败、临时文件和curl清理。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nasync function postJson(url: string, headers: Record<string, string>, payload: unknown, call: ChannelCall): Promise<{ status: number; body: string }> {\n\tconst doFetch = call.fetchImpl ?? fetch;\n\tconst bodyText = JSON.stringify(payload);\n\ttry {\n\t\tconst response = await doFetch(url, {\n\t\t\tmethod: \"POST\",\n\t\t\theaders,\n\t\t\tbody: bodyText,\n\t\t\tsignal: call.signal\n\t\t});\n\t\treturn { status: response.status, body: await response.text() };\n\t} catch (error) {\n\t\tif (!isNetworkError(error) || !call.winCurl) throw error;\n\t\t// WSL → Windows curl 降级\n\t\tconst { wsl, win } = winTempPaths();\n\t\tconst { writeFileSync, unlinkSync } = await import(\"node:fs\");\n\t\twriteFileSync(wsl, bodyText);\n\t\ttry {\n\t\t\tconst { execFile } = await import(\"node:child_process\");\n\t\t\tconst args = [call.winCurl, \"-s\", \"-S\", \"--max-time\", String(Math.ceil((call.timeoutMs || 60000) / 1000)), \"-X\", \"POST\", \"--data-binary\", `@${win}`];\n\t\t\tfor (const [key, value] of Object.entries(headers)) args.push(\"-H\", `${key}: ${value}`);\n\t\t\targs.push(url);\n\t\t\tconst stdout = await new Promise<string>((resolve, reject) => {\n\t\t\t\texecFile(args[0], args.slice(1), { timeout: (call.timeoutMs || 60000) + 10000, maxBuffer: 64 * 1024 * 1024, windowsHide: true }, (err, out) => {\n\t\t\t\t\tif (err) reject(err);\n\t\t\t\t\telse resolve(String(out));\n\t\t\t\t});\n\t\t\t});\n\t\t\treturn { status: 200, body: stdout };\n\t\t} finally {\n\t\t\ttry { unlinkSync(wsl); } catch { /* ignore */ }\n\t\t}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “证据”与路径/网络边界是否可信？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n视觉记录是另一模型的生成性解释，JSON字段和uncertainty提示不能使其自动成为已确认事实。把错误识别写入会话并在compaction后恢复，可能延长错误影响；缓存还会让同一错误稳定复用。需要保留原图/区域和人工可核对关系，不以结构化、置信度或同问缓存代替独立正确性依据。auto的complexity同样由被评估视觉模型产生，有漏判和预算增加的取舍。\n\nallowedImageDirs默认空数组直接允许全部image_path，读取发生在host fs而非每次工具沙箱，局部没有默认工作区限制；配置非空后才realpath检查范围。图片限制在readFileSync之后检查，不能阻止大文件先占内存。网络回退会将图片payload落到Windows可见临时文件，尽管finally删除，故“图片仅发送”不能被理解为完全不落盘。API Key还可出现在curl参数头中，需要用户了解本机进程和临时目录信任；本轮没有读取凭据或发送图片。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:320-328](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L320-L328)\n\n空根列表允许所有路径，非空才物理检查。\n\n```text\nfunction pathIsAllowed(cfg: any, imagePath: string) {\n\tconst roots = Array.isArray(cfg.allowedImageDirs) ? cfg.allowedImageDirs.filter(Boolean) : [];\n\tif (!roots.length) return true;\n\tconst candidate = realpathSync(imagePath);\n\treturn roots.some((root: string) => {\n\t\tlet resolvedRoot: string;\n\t\ttry { resolvedRoot = realpathSync(root); } catch { resolvedRoot = resolve(root); }\n\t\treturn candidate === resolvedRoot || candidate.startsWith(resolvedRoot.endsWith(sep) ? resolvedRoot : resolvedRoot + sep);\n\t});\n```\n\n**依据 2 · 源码核查**：[src/index.ts:393-398](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L393-L398)\n\n先整文件读入后检查大小。\n\n```text\n\t\tfor (const imagePath of imagePaths) {\n\t\t\ttry {\n\t\t\t\tif (!pathIsAllowed(cfg, imagePath)) return { error: `图片路径超出 allowedImageDirs: ${imagePath}` };\n\t\t\t\tconst bytes = readFileSync(imagePath);\n\t\t\t\tif (bytes.length > cfg.maxImageBytes) return { error: `图片超过 ${cfg.maxImageBytes} 字节限制` };\n\t\t\t\timages.push({ id: `path:${resolve(imagePath)}`, b64: bytes.toString(\"base64\"), mime: mimeForPath(imagePath), digest: sha256(bytes) });\n```\n\n**依据 3 · 源码核查**：[src/index.ts:450-466](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L450-L466)\n\n生成性视觉描述写入会话。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\t\t\tkey,\n\t\t\tattachmentIds: images.map((image) => image.id),\n\t\t\tattachmentRefs: images.map((image) => image.ref).filter(Boolean),\n\t\t\timageDigests: images.map((image) => image.digest),\n\t\t\tprompt: prompt.slice(0, 12000),\n\t\t\tpromptHash: sha256(prompt),\n\t\t\tmodel: result.model || model,\n\t\t\tdetail,\n\t\t\tmode,\n\t\t\tregion,\n\t\t\tchannel: result.channel,\n\t\t\tescalated: Boolean(result.escalated),\n\t\t\tevidence: result.evidence || { summary: result.text },\n\t\t\tanswer: String(result.text || \"\").slice(0, 20000)\n\t\t});\n\t\texec.deferContext(createUserMessage({\n\t\t\tcontent: [{ type: \"text\", text: visionRecordText(record) }],\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/channels.ts:69-86](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/channels.ts#L69-L86)\n\npayload临时落盘、header参数和清理。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n\t\t// WSL → Windows curl 降级\n\t\tconst { wsl, win } = winTempPaths();\n\t\tconst { writeFileSync, unlinkSync } = await import(\"node:fs\");\n\t\twriteFileSync(wsl, bodyText);\n\t\ttry {\n\t\t\tconst { execFile } = await import(\"node:child_process\");\n\t\t\tconst args = [call.winCurl, \"-s\", \"-S\", \"--max-time\", String(Math.ceil((call.timeoutMs || 60000) / 1000)), \"-X\", \"POST\", \"--data-binary\", `@${win}`];\n\t\t\tfor (const [key, value] of Object.entries(headers)) args.push(\"-H\", `${key}: ${value}`);\n\t\t\targs.push(url);\n\t\t\tconst stdout = await new Promise<string>((resolve, reject) => {\n\t\t\t\texecFile(args[0], args.slice(1), { timeout: (call.timeoutMs || 60000) + 10000, maxBuffer: 64 * 1024 * 1024, windowsHide: true }, (err, out) => {\n\t\t\t\t\tif (err) reject(err);\n\t\t\t\t\telse resolve(String(out));\n\t\t\t\t});\n\t\t\t});\n\t\t\treturn { status: 200, body: stdout };\n\t\t} finally {\n\t\t\ttry { unlinkSync(wsl); } catch { /* ignore */ }\n```\n\n</details>\n\n#### 缺口\n\n- 视觉记录错误率、压缩后错误放大和HTTP入口权限未完成独立核查。\n  **影响：**不能给出图像事实可靠性或远程服务安全保证。\n  **进一步探讨：**固定原图与正确标签，追踪跨轮/压缩复用；另检查部署宿主对自定义路由的认证并缩窄允许目录。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动、构建、成本和工程条件是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、工程质量与复用\n\n#### 完整回答\n\n清单main指向lib/index.js，但固定Git树没有lib目录，仓库有build脚本和prepublishOnly而没有prepare；因此此checkout本身不能视为可直接Git安装的完整入口。npm发布物是否包含构建产物需实际包材料验证，本轮不把Git缺lib推断为npm也缺。宿主API包在devDependencies，构建可能打包或由宿主提供，需核对实际发布物。Node>=20和DSH>=0.1.0是声明而非跨版本验收。\n\n首次需选视觉端点/模型/Key或本地Ollama，Antigravity还需IDE环境与额外路径配置；不能沿用README的免费档、价格或无限流宣传作为当前费用事实。本轮不查询实时价格。持续成本按实际VLM调用计，auto最多两遍并可能有网络重试，base64、哈希缓存和会话证据占内存/上下文；失败恢复要区分首遍保留、已写证据和可能重复账单。工程可借鉴内容指纹与错误缓存清除、归一化响应，但core测试依赖构建lib并主要针对纯函数，不等模型效果验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-18](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/package.json#L1-L18)\n\n运行入口指向lib。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n{\n  \"name\": \"dsh-youreyes\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Eyes for text-only DeepSeek on DeepSeek Harness: image understanding via Antigravity IDE quota (default, flash/pro), OpenAI-compatible VLM endpoints, Gemini API, or local Ollama — model-invokable vision tool, wrapper adapters for deepseek/opencode-go, evidence memory, and a polished client panel.\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./client\": {\n      \"types\": \"./lib/types/client.d.ts\",\n      \"default\": \"./lib/client.js\"\n    },\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[tests/core.test.mjs:1-16](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/tests/core.test.mjs#L1-L16)\n\n测试从lib导入并只列核心函数。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n// dsh-youreyes core tests: channels, vision-core, cache, prompt building.\n// Run: npm test  (node --test tests/*.test.mjs)\n\nimport { test } from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { __testing } from \"../lib/index.js\";\n\nconst {\n\topenaiChat,\n\tgeminiGenerate,\n\tollamaChat,\n\tdetectOllama,\n\tnormalizeDetail,\n\tnormalizeVisionMode,\n\tnormalizeVisionResponse,\n\tbuildVisionPrompt,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:217-249](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L217-L249)\n\nauto增量调用与保留结果。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nasync function runAdaptiveVision(cfg: any, channel: string, requestedModel: string, detail: string, visionMode: string, userPrompt: string, region: string, images: { b64: string; mime: string }[], signal?: AbortSignal) {\n\tconst selectedDetail = normalizeDetail(detail);\n\tconst selectedMode = normalizeVisionMode(visionMode);\n\tconst model = requestedModel || cfg.defaultModel || VISION_MODEL;\n\tconst runOne = async (oneDetail: string, triage: boolean) => {\n\t\tconst prompt = buildVisionPrompt({\n\t\t\tdetail: oneDetail,\n\t\t\tmode: selectedMode,\n\t\t\tuserPrompt,\n\t\t\tregion,\n\t\t\timageCount: images.length,\n\t\t\ttriage\n\t\t});\n\t\tconst raw = await runVisionChannel(cfg, channel, model, prompt, images, signal);\n\t\tif (raw.error) return raw;\n\t\tconst normalized = normalizeVisionResponse(raw.text);\n\t\treturn { text: normalized.answer, evidence: normalized.evidence, complexity: normalized.complexity, structured: normalized.structured, truncatedBytes: normalized.truncatedBytes };\n\t};\n\n\tif (selectedDetail !== \"auto\") {\n\t\tconst result = await runOne(selectedDetail, false);\n\t\treturn { ...result, detail: selectedDetail, mode: selectedMode, model, escalated: false };\n\t}\n\tconst first = await runOne(\"standard\", true);\n\tif (first.error) return { ...first, detail: \"auto\", mode: selectedMode, model, escalated: false };\n\tif (first.complexity !== \"complex\") {\n\t\treturn { ...first, detail: \"auto\", mode: selectedMode, model, escalated: false };\n\t}\n\tconst deep = await runOne(\"deep\", false);\n\tif (deep.error) {\n\t\treturn { ...first, detail: \"auto\", mode: selectedMode, model, escalated: false, escalationError: deep.error };\n\t}\n\treturn { ...deep, detail: \"auto\", mode: selectedMode, model, escalated: true };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/channels.ts:56-87](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/channels.ts#L56-L87)\n\n重试与本地payload开销。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nasync function postJson(url: string, headers: Record<string, string>, payload: unknown, call: ChannelCall): Promise<{ status: number; body: string }> {\n\tconst doFetch = call.fetchImpl ?? fetch;\n\tconst bodyText = JSON.stringify(payload);\n\ttry {\n\t\tconst response = await doFetch(url, {\n\t\t\tmethod: \"POST\",\n\t\t\theaders,\n\t\t\tbody: bodyText,\n\t\t\tsignal: call.signal\n\t\t});\n\t\treturn { status: response.status, body: await response.text() };\n\t} catch (error) {\n\t\tif (!isNetworkError(error) || !call.winCurl) throw error;\n\t\t// WSL → Windows curl 降级\n\t\tconst { wsl, win } = winTempPaths();\n\t\tconst { writeFileSync, unlinkSync } = await import(\"node:fs\");\n\t\twriteFileSync(wsl, bodyText);\n\t\ttry {\n\t\t\tconst { execFile } = await import(\"node:child_process\");\n\t\t\tconst args = [call.winCurl, \"-s\", \"-S\", \"--max-time\", String(Math.ceil((call.timeoutMs || 60000) / 1000)), \"-X\", \"POST\", \"--data-binary\", `@${win}`];\n\t\t\tfor (const [key, value] of Object.entries(headers)) args.push(\"-H\", `${key}: ${value}`);\n\t\t\targs.push(url);\n\t\t\tconst stdout = await new Promise<string>((resolve, reject) => {\n\t\t\t\texecFile(args[0], args.slice(1), { timeout: (call.timeoutMs || 60000) + 10000, maxBuffer: 64 * 1024 * 1024, windowsHide: true }, (err, out) => {\n\t\t\t\t\tif (err) reject(err);\n\t\t\t\t\telse resolve(String(out));\n\t\t\t\t});\n\t\t\t});\n\t\t\treturn { status: 200, body: stdout };\n\t\t} finally {\n\t\t\ttry { unlinkSync(wsl); } catch { /* ignore */ }\n\t\t}\n```\n\n</details>\n\n#### 缺口\n\n- 固定版本npm tarball及构建产物与源码一致性未取得。\n  **影响：**不能宣称当前Git或npm安装路线已经核验可启动。\n  **进一步探讨：**检查对应发布包文件清单、入口及构建摘要，Git使用者需自行构建后再由维护者决定验收。\n- 缺少OCR/compare等任务正确率与总调用成本。\n  **影响：**不能判断auto优于一次VLM或多模态主模型。\n  **进一步探讨：**固定问题/图片对照单遍、auto和直接多模态，计入失败重试和人工校核。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可形成何种假设与采用决定？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证方向是把视觉记忆改成可校核记录，保留原图指纹、查询区域、每项观察的原图定位以及后续纠错的失效关系，错误被用户指出后不再自动复用旧记录。推导来自生成性证据会被缓存和压缩恢复，而不是假设JSON本身可靠。最小验证用有文字/区域标签的固定图，注入一次错误后观察当前流程与候选流程跨轮纠错、调用量和主模型答案，若结构更重仍不改善错误持久化，应否定方向。\n\n当前建议观察。先核查可启动发布物、缩窄allowedImageDirs、明确图片发送/临时落盘端点，并以不敏感图片完成有标签对照后再定义试用。需要保密图片的用户只能在核实本地路线和日志/临时文件条件后考虑，不因autoOllama配置推断所有请求本地。没有同版本安装、核心功能与卸载验收，不给值得安装，也不以作者单张猫照片示例证明复杂OCR能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:450-471](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L450-L471)\n\n会话长期记录为纠错/失效关系推导起点。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n\t\t\tkey,\n\t\t\tattachmentIds: images.map((image) => image.id),\n\t\t\tattachmentRefs: images.map((image) => image.ref).filter(Boolean),\n\t\t\timageDigests: images.map((image) => image.digest),\n\t\t\tprompt: prompt.slice(0, 12000),\n\t\t\tpromptHash: sha256(prompt),\n\t\t\tmodel: result.model || model,\n\t\t\tdetail,\n\t\t\tmode,\n\t\t\tregion,\n\t\t\tchannel: result.channel,\n\t\t\tescalated: Boolean(result.escalated),\n\t\t\tevidence: result.evidence || { summary: result.text },\n\t\t\tanswer: String(result.text || \"\").slice(0, 20000)\n\t\t});\n\t\texec.deferContext(createUserMessage({\n\t\t\tcontent: [{ type: \"text\", text: visionRecordText(record) }],\n\t\t\tsource: {\n\t\t\t\tkind: \"plugin\",\n\t\t\t\tplugin: \"dsh-youreyes\",\n\t\t\t\tform: \"notice\",\n\t\t\t\tsummary: `视觉证据已记录：${record.attachmentIds.join(\", \")}`.slice(0, 120)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:320-328](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/index.ts#L320-L328)\n\n采用需显式目录根。\n\n```text\nfunction pathIsAllowed(cfg: any, imagePath: string) {\n\tconst roots = Array.isArray(cfg.allowedImageDirs) ? cfg.allowedImageDirs.filter(Boolean) : [];\n\tif (!roots.length) return true;\n\tconst candidate = realpathSync(imagePath);\n\treturn roots.some((root: string) => {\n\t\tlet resolvedRoot: string;\n\t\ttry { resolvedRoot = realpathSync(root); } catch { resolvedRoot = resolve(root); }\n\t\treturn candidate === resolvedRoot || candidate.startsWith(resolvedRoot.endsWith(sep) ? resolvedRoot : resolvedRoot + sep);\n\t});\n```\n\n**依据 3 · 源码核查**：[src/channels.ts:69-86](https://github.com/54xkeee/dsh-youreyes/blob/86f02fa124cd158438e4d9290625d2f8dd610967/src/channels.ts#L69-L86)\n\n网络fallback的数据边界。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n\t\t// WSL → Windows curl 降级\n\t\tconst { wsl, win } = winTempPaths();\n\t\tconst { writeFileSync, unlinkSync } = await import(\"node:fs\");\n\t\twriteFileSync(wsl, bodyText);\n\t\ttry {\n\t\t\tconst { execFile } = await import(\"node:child_process\");\n\t\t\tconst args = [call.winCurl, \"-s\", \"-S\", \"--max-time\", String(Math.ceil((call.timeoutMs || 60000) / 1000)), \"-X\", \"POST\", \"--data-binary\", `@${win}`];\n\t\t\tfor (const [key, value] of Object.entries(headers)) args.push(\"-H\", `${key}: ${value}`);\n\t\t\targs.push(url);\n\t\t\tconst stdout = await new Promise<string>((resolve, reject) => {\n\t\t\t\texecFile(args[0], args.slice(1), { timeout: (call.timeoutMs || 60000) + 10000, maxBuffer: 64 * 1024 * 1024, windowsHide: true }, (err, out) => {\n\t\t\t\t\tif (err) reject(err);\n\t\t\t\t\telse resolve(String(out));\n\t\t\t\t});\n\t\t\t});\n\t\t\treturn { status: 200, body: stdout };\n\t\t} finally {\n\t\t\ttry { unlinkSync(wsl); } catch { /* ignore */ }\n```\n\n</details>\n\n#### 缺口\n\n- 记录纠错失效方案与固定发布物尚未完成验证。\n  **影响：**阻碍当前一般试用和可靠性判断。\n  **进一步探讨：**先补发布物及数据边界，再以固定错误样例比较纠错与跨轮复用。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：60f3fca4be2b7496bd8e36704fc18d2c58792847e1bb62a3347275042de1d0a8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 49 | 43 | 2 | — |\n| .md | source | 2 | 580 | — | — | 4871 |\n| .ts | source | 4 | 1607 | 1426 | 107 | — |\n| .tsx | source | 1 | 350 | 334 | 2 | — |\n| .mjs | test | 1 | 244 | 212 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| vision桥 | 将图变文字观察 | 依赖VLM，准确度未测 |\n| auto升级 | 复杂图再调用 | 自判可能漏判、费用增加 |\n| 视觉记忆 | 跨轮复用 | 错误需要失效和纠正 |\n| 多通道 | 适配服务/本地/IDE | 隐私、安装和费用各异 |\n\n## 工程亮点\n\n内容指纹、失败缓存清除、结构归一和compaction接线可借鉴；需同时设计纠错失效、隐私和发布入口，纯函数测试不测视觉质量。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/channels.ts、tests/core.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交关键源码及纯函数测试阅读，未运行模型/构建，不获取私密图片；Git树缺lib是本次实际清单核查，不推断npm包同样缺失。\n- 下一步：进一步探讨从构建发布物、默认目录、curl临时文件和视觉错误跨轮四条线入手，再比较单遍/auto/直接多模态的正确任务与总成本。\n",
         "metadata": {
             "repository": "54xkeee/dsh-youreyes",
             "repository_id": 1335045545,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:08:46.667Z",
+            "window_start": "2026-09-22T05:08:46.667Z",
             "stars": 2,
             "pushed_at": "2026-08-18T07:10:30Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A54xkeee%2Fdsh-youreyes%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:141DA3:21C769:6AD84A4A and timestamp 2026-10-21 05:14:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A54xkeee%2Fdsh-youreyes%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:1481D5:221C5C:6AD84A4B and timestamp 2026-10-21 05:14:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A54xkeee%2Fdsh-youreyes%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13C020:215F11:6AD84A4B and timestamp 2026-10-21 05:14:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A54xkeee%2Fdsh-youreyes%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:0C5F:6464F:AB707:6AD84A4B and timestamp 2026-10-21 05:14:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A54xkeee%2Fdsh-youreyes%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:A4F3B:142F24:21DDD1:6AD84A4B and timestamp 2026-10-21 05:14:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-youreyes",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1126,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-youreyes",
+                "captured_at": "2026-10-22T05:08:54.400Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 1096,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-youreyes",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-15T17:48:45.438Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:08:54.400Z",
                     "source_url": "https://registry.npmjs.org/dsh-youreyes",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-08-15T17:48:45.654Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-                "current_revision": "86f02fa124cd158438e4d9290625d2f8dd610967",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

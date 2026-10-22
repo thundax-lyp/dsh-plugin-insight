@@ -24,36 +24,106 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-1335798113-packages-messaging-core-directory-0",
+                    "id": "2026-10-22-02-github-1335798113-packages-messaging-core-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:18:36.578Z",
+                    "retrieved_at": "2026-10-22T05:15:26.608Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-1335798113-packages-messaging-core-author",
+                    "id": "2026-10-22-02-github-1335798113-packages-messaging-core-author",
                     "kind": "author_claim",
                     "url": "https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "README.md",
+                            "content_sha256": "9a63ef8e48211c6e580c5b9b2f5a28737aac219224091c6b311aa86b4d289e5a"
+                        }
+                    ],
                     "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-                    "captured_at": "2026-10-21T03:18:36.578Z",
-                    "summary": "将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--dsh-messaging--packages-messaging-core/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:15:26.608Z",
+                    "summary": "把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/534119219--dsh-messaging--packages-messaging-core/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-1335798113-packages-messaging-core-source",
+                    "id": "2026-10-22-02-github-1335798113-packages-messaging-core-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js",
+                    "url": "https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "README.md",
+                            "content_sha256": "9a63ef8e48211c6e580c5b9b2f5a28737aac219224091c6b311aa86b4d289e5a"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/package.json",
+                            "content_sha256": "928d9a75d0f0909516199b35e27215f6d5f5e7dfff2888221eda8463888dab85"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/index.js",
+                            "content_sha256": "9315369c3ae5a0162f24c7cac68da10ddbc0f70442c042d2a40bd72aa9761288"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/tools.js",
+                            "content_sha256": "60bb84611bf699aa65fdfd27c9501c3a5af172d8c145b1c6e123444b9ad164d4"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/session-map.js",
+                            "content_sha256": "c22f7a3fa74aeab78a21400281d16dcd6a0858eea6623eb2fbb99e095a2dc0db"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/agents.js",
+                            "content_sha256": "e585e1a0e0d6180b55ae31cf5ea99716939affa81ecd646b33be5c51b2e93de9"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/outbound.js",
+                            "content_sha256": "ab7fad67957b260ebee3d2b5b9aa0b0dd1311b896ce7fbb7382d5cb421fe099f"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/workspaces.js",
+                            "content_sha256": "fb9049f1dd3e488a46ba594881a5e096d45e11b6ec1547163b499ad8c4292e93"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/http.js",
+                            "content_sha256": "8640ca6d5a562afe22eb90a42cf948b73236cd81be62f14ac22a7210bc7eadba"
+                        },
+                        {
+                            "repository_url": "https://github.com/534119219/dsh-messaging",
+                            "commit": "f1c3399ef40e3f419161d153e997d6f30576a627",
+                            "path": "packages/messaging-core/lib/platforms/telegram.js",
+                            "content_sha256": "92f5aaca8ac87d8e24924b71c45a47df9b0865481ec752ee87ee7ffa2dc8619d"
+                        }
+                    ],
                     "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-                    "captured_at": "2026-10-21T03:18:36.578Z",
-                    "summary": "核查 packages/messaging-core/lib/index.js、packages/messaging-core/lib/session-map.js、packages/messaging-core/lib/agents.js、packages/messaging-core/lib/outbound.js、packages/messaging-core/lib/tools.js、packages/messaging-core/lib/platforms/telegram.js、packages/messaging-core/package.json、NOTICE；packages/messaging-core/lib/index.js注册适配器并在handleInbound核对allowAll/allowedUsers，再处理命令和Agent followup/steer；session-map持久化chat/session历史，outbound订阅事件按能力流式编辑或分段发送。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/534119219--dsh-messaging--packages-messaging-core/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:15:26.608Z",
+                    "summary": "核查 README.md、packages/messaging-core/package.json、packages/messaging-core/lib/index.js、packages/messaging-core/lib/tools.js、packages/messaging-core/lib/session-map.js、packages/messaging-core/lib/agents.js、packages/messaging-core/lib/outbound.js、packages/messaging-core/lib/workspaces.js、packages/messaging-core/lib/http.js、packages/messaging-core/lib/platforms/telegram.js；adapter规范化入站并经白名单分派agent，chat映射持久化JSONL，session/event聚合为平台格式和分段回复，另有主动发送工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/534119219--dsh-messaging--packages-messaging-core/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读核心授权、会话映射、Agent接线、出站路由、工具及Telegram代表适配器；未实连任何平台，其他平台只核对注册/配置范围。",
+                        "核查固定packages/messaging-core核心、会话映射/agent/outbound/tools、HTTP与Telegram代表适配器及根作者说明；未逐一审查27平台，不连接账号或发送消息。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +134,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望从已有即时通讯客户端访问自用DSH的人，将平台聊天映射到会话并接收模型回复；接入人须设置用户白名单与本机工作区权限。",
+                    "text": "给需从消息渠道访问DSH的人统一会话入口，合格回复需身份、目标聊天及投递状态正确。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +145,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "packages/messaging-core/lib/index.js注册适配器并在handleInbound核对allowAll/allowedUsers，再处理命令和Agent followup/steer；session-map持久化chat/session历史，outbound订阅事件按能力流式编辑或分段发送。",
+                    "text": "adapter规范化入站并经白名单分派agent，chat映射持久化JSONL，session/event聚合为平台格式和分段回复，另有主动发送工具。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +163,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读核心授权、会话映射、Agent接线、出站路由、工具及Telegram代表适配器；未实连任何平台，其他平台只核对注册/配置范围。",
+                    "text": "核查固定packages/messaging-core核心、会话映射/agent/outbound/tools、HTTP与Telegram代表适配器及根作者说明；未逐一审查27平台，不连接账号或发送消息。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +181,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "packages/messaging-core子包，依赖多个平台SDK与DSH rc接口；root README给出file:子包安装，不能视为根仓库bundle直接可装。",
+                    "text": "组件messaging-core 0.1.0，Node>=20及DSH peer，直接依赖多个平台SDK；包目录未见README，根README是作者材料。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +199,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次逐平台申请机器人/凭据、白名单与网络；持续承担SDK更新、重连、日志、模型调用和重复消息复核。现金按模型/平台，人工移植维护未测，单插件不等于低维护。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 多SDK依赖、账号和模型环境，金额未知 | 认证、白名单、回调与聊天/工作区策略 | 单渠道配置量和故障率未测 |\n| 持续使用 | 模型、平台请求、连接与文件写入 | 观察错路由/限流/权限，维护凭据 | 流式350ms节流与typing仍有API成本 |\n| 失败恢复 | 重连、重发、映射/会话恢复 | 判断平台收到了没有，避免重复发送 | 缺完整投递确认与幂等恢复证据 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +217,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有机器人接入经验的人可先用一个平台的私人聊天测试；固定版本、收紧白名单，核对重连和长消息，再开放群聊，群成员的共享上下文要提前明确。",
+                    "text": "先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +235,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少换客户端和逐平台配置Agent的工作，但聊天可达不等于任务获授权或交付可靠；收益受平台协议与故障恢复约束。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 多入口复用 | adapter到统一DSH agent链存在 | 各平台实际质量/可用性 |\n| 连续会话 | JSONL映射与历史切换存在 | 崩溃、多进程和群聊隔离表现 |\n| 回复体验 | 流式编辑与最终分段存在 | 重复、遗漏、顺序和任务完成率 |\n\n共同任务比较应含平台故障重做、人工核对和凭据运维，不按接入平台数推断净效益。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +253,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "平台配置目录共用、核心授权在命令前执行、按capability路由回复且长文最终分段而非简单截断值得借鉴；映射直写和内存出站状态是提升恢复可靠性前的重点。",
+                    "text": "可复用的是adapter注册和统一capabilities输出、会话创建single-flight、使用持久session/event驱动发送以及按chat保留历史generation，减少多个入口并发创建同一agent。每平台workspace清楚标明工作产物归属，但不是安全隔离。发送工具和状态工具是全局面，需在移植时明确谁可查看/发送；日志/映射也应有留存治理。\n\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +271,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相对逐平台各部署Agent机器人，贡献是把授权、会话生命周期、工作区和流式回复做成DSH共享核心，并将平台差异放入适配器。README明确归属hermes-agent消息体系移植，协议与交互语义不应算作原创；增量是DSH agents/sessions/settings接线及单插件配置。",
+                    "text": "统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +289,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "统一核心是否意味着所有渠道都有相同可靠性与隔离？白名单主要核对平台userId，平台适配器负责身份真实性；群聊仍按chatKey映射会话，授权用户间上下文可能共享。session-map直接writeFileSync且写失败只warn，外发buffer/消息ID在内存，进程故障可能丢映射或重复/漏回复；27个导入不能替代每平台的签名、重连与送达验证。",
+                    "text": "入站白名单不等出站授权，send_message可直接指定已连接平台/chat，status列全部聊天；平台workspace共享且map非原子写，不能承诺多用户隔离与恰好一次投递。为静态核查未真实发送。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +307,16 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：以平台事件ID建立持久收件箱/发件箱，并将映射更新与待回复状态做可恢复提交，可让跨渠道重连后按同一任务身份去重。依据是当前共享sessionMap与内存出站状态之间的缺口，当前未实现。用重复Webhook、外发成功后断线和会话映射写失败三类对照，量化重复执行/回复与恢复时间；无平台幂等键时保留未知结果，不能无条件重放。",
+                    "text": "可探讨授权目标投递收据，绑定主体/会话/允许chat及操作ID，按调用者过滤状态并保存ACK/未知结果；平台差异和策略维护增加成本，未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +325,15 @@
                             "fingerprint": "f1c3399ef40e3f419161d153e997d6f30576a627"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:18:36.578Z",
+                    "reviewed_at": "2026-10-22T05:15:26.608Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:18:36.578Z",
+            "last_checked_at": "2026-10-22T05:15:26.608Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-                "reviewed_at": "2026-10-21T03:18:36.578Z",
+                "reviewed_at": "2026-10-22T05:15:26.608Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +349,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty 小幅：hermes移植与DSH适配；mechanism 实质：共享会话/授权/出站能力层；transferability 实质：适配器模式可迁移但平台保证不统一；simplification 实质：单核心统一设置与命令。",
+                    "rationale": "novelty成熟消息网关移植取小幅；mechanism统一agent/session路由取实质；transferabilityadapter接口与single-flight可迁移取实质；simplification集中平台管理取实质，出站隔离未完成不计。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 18,
-                        "delivery": 15,
+                        "delivery": 8,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow 实质：通讯端直接接入DSH任务；delivery 实质：持续会话与渠道流式回复；reach 实质：已有通讯用户可进入，未核实真实采用；economics 小幅：少重复部署，依赖维护成本未知。",
+                    "rationale": "workflow多渠道复用会话取实质；delivery仍是聊天回复取小幅；reach让不在DSH界面用户进入取实质；economics共享接线潜在节省无对照取小幅。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                        "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有机器人经验者可先以单平台私人聊天试用；收紧白名单，验证重连长消息及群共享上下文，不能凭渠道数量认定可靠。",
+                "decision": "observe",
+                "reason": "统一入口有用，但主动发送/status的调用者目标边界、平台共享状态和未核27平台认证阻碍默认远程采用。详见[Q06](#research-q06)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "从常用聊天访问DSH任务明确。"
+                        "rationale": "远程消息访问DSH任务明确，独立需求与完成率未知。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "共享授权会话与流式核心比每平台部署少重复接线。"
+                        "score": 13,
+                        "rationale": "统一会话/出站集成有增量，单平台机器人也可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "handleInbound白名单和会话映射已查，写失败只warn与内存buffer限制可见。"
+                        "rationale": "固定core及Telegram抽读支持机制，未连接账号。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "多平台SDK凭据维护及模型费用不低，先单平台控制复杂度。"
+                        "score": 5,
+                        "rationale": "多SDK、凭据/公网、跨chat权限与失败投递维护负担高。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:15:26.608Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-1335798113-packages-messaging-core-source"
+                    "2026-10-22-02-github-1335798113-packages-messaging-core-source"
                 ],
                 "dependencies": [
                     {
@@ -354,93 +424,63 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "49caf8602d9b8e5340ae803442eba89674fb0a6e5c569a0be8d86ee186d97402"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "30ed17ded83f7a5ebd9e046195a711738eb17f08b313564c71112c427bbde288"
         },
         "publication.metadata": "data/plugins/534119219--dsh-messaging--packages-messaging-core/META.json",
         "publication.summaries": {
-            "text": "将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。",
+            "text": "把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。",
             "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
             "source_url": "https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/README.md"
         },
         "publication.capabilities": {
             "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
             "items": {
-                "模型工具": "send_message与messaging_status定义。",
-                "用户命令": "渠道内new/resume/title/status/stop/compress。",
-                "事件监听": "session/event到平台出站路由。",
-                "Host 路由": "消息配置/状态与共享Webhook监听。",
-                "界面": "平台配置与连接入口。",
-                "后台": "适配器注册、授权和聊天会话管理。"
-            }
+                "模型工具": "send_message与messaging_status",
+                "Host 路由": "状态/配置/扫码与共享webhook",
+                "事件监听": "session/event出站路由",
+                "界面": "消息平台配置侧栏/弹窗"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| adapter网关 | 多平台事件接入DSH | 注册不等各平台运行可用 |\n| 聊天会话映射 | 命令/历史与agent恢复 | chat共享，JSONL非原子持久化 |\n| 流式回复 | 平台格式/编辑/分段 | ACK、重复和恢复未完整验证 |\n| 主动send/status | 指定目标发送及概览 | core未绑定调用者与允许chat |"
         },
         "publication.advice": {
             "revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-            "text": "已有机器人接入经验的人可先用一个平台的私人聊天测试；固定版本、收紧白名单，核对重连和长消息，再开放群聊，群成员的共享上下文要提前明确。"
+            "text": "先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/534119219--dsh-messaging--packages-messaging-core",
-        "reports": "# messaging-core\n\n> 将多种消息渠道接入 DSH，统一授权、聊天会话映射、命令与回复路由。\n\n## 使用建议\n\n已有机器人接入经验的人可先用一个平台的私人聊天测试；固定版本、收紧白名单，核对重连和长消息，再开放群聊，群成员的共享上下文要提前明确。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认统一适配器、授权和双向会话路由；作者27渠道是实现目录范围，不等于本轮验证27平台连通。未来投递账本为未验证假设。\n\n- **用途**：希望从已有即时通讯客户端访问自用DSH的人，将平台聊天映射到会话并接收模型回复；接入人须设置用户白名单与本机工作区权限。\n- **亮点**：相对逐平台各部署Agent机器人，贡献是把授权、会话生命周期、工作区和流式回复做成DSH共享核心，并将平台差异放入适配器。README明确归属hermes-agent消息体系移植，协议与交互语义不应算作原创；增量是DSH agents/sessions/settings接线及单插件配置。\n- **思考**：统一核心是否意味着所有渠道都有相同可靠性与隔离？白名单主要核对平台userId，平台适配器负责身份真实性；群聊仍按chatKey映射会话，授权用户间上下文可能共享。session-map直接writeFileSync且写失败只warn，外发buffer/消息ID在内存，进程故障可能丢映射或重复/漏回复；27个导入不能替代每平台的签名、重连与送达验证。\n- **建议**：待验证假设：以平台事件ID建立持久收件箱/发件箱，并将映射更新与待回复状态做可恢复提交，可让跨渠道重连后按同一任务身份去重。依据是当前共享sessionMap与内存出站状态之间的缺口，当前未实现。用重复Webhook、外发成功后断线和会话映射写失败三类对照，量化重复执行/回复与恢复时间；无平台幂等键时保留未知结果，不能无条件重放。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n希望从已有即时通讯客户端访问自用DSH的人，将平台聊天映射到会话并接收模型回复；接入人须设置用户白名单与本机工作区权限。\n\n参照hermes-agent消息体系与逐平台机器人；本次仅检查移植归属与DSH增量，不对上游现版本做比较实验。\n\n### 能力、流程与依赖\n\npackages/messaging-core/lib/index.js注册适配器并在handleInbound核对allowAll/allowedUsers，再处理命令和Agent followup/steer；session-map持久化chat/session历史，outbound订阅事件按能力流式编辑或分段发送。\n\n- **模型工具**：send_message与messaging_status定义。\n- **用户命令**：渠道内new/resume/title/status/stop/compress。\n- **事件监听**：session/event到平台出站路由。\n- **Host 路由**：消息配置/状态与共享Webhook监听。\n- **界面**：平台配置与连接入口。\n- **后台**：适配器注册、授权和聊天会话管理。\n\nDSH agents/sessions/settings/tools与各平台SDK/凭据，部分平台Webhook需可达监听；每平台工作区目录只组织任务，不构成完整权限沙箱。\n\n平台适配器归一事件→核心白名单→命令或chat/session映射→创建恢复Agent→运行中steer否则followup→session/event收集→流式预览/最终分段回渠道；故障结果需逐平台追踪。\n\npackages/messaging-core子包，依赖多个平台SDK与DSH rc接口；root README给出file:子包安装，不能视为根仓库bundle直接可装。\n\n### 效果、成本与限制\n\n减少换客户端和逐平台配置Agent的工作，但聊天可达不等于任务获授权或交付可靠；收益受平台协议与故障恢复约束。\n\n首次逐平台申请机器人/凭据、白名单与网络；持续承担SDK更新、重连、日志、模型调用和重复消息复核。现金按模型/平台，人工移植维护未测，单插件不等于低维护。\n\n统一核心是否意味着所有渠道都有相同可靠性与隔离？白名单主要核对平台userId，平台适配器负责身份真实性；群聊仍按chatKey映射会话，授权用户间上下文可能共享。session-map直接writeFileSync且写失败只warn，外发buffer/消息ID在内存，进程故障可能丢映射或重复/漏回复；27个导入不能替代每平台的签名、重连与送达验证。\n\n### 核心贡献与工程亮点\n\n相对逐平台各部署Agent机器人，贡献是把授权、会话生命周期、工作区和流式回复做成DSH共享核心，并将平台差异放入适配器。README明确归属hermes-agent消息体系移植，协议与交互语义不应算作原创；增量是DSH agents/sessions/settings接线及单插件配置。\n\n平台配置目录共用、核心授权在命令前执行、按capability路由回复且长文最终分段而非简单截断值得借鉴；映射直写和内存出站状态是提升恢复可靠性前的重点。\n\n源码依据：[packages/messaging-core/lib/index.js](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js)、[packages/messaging-core/lib/session-map.js](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/session-map.js)、[packages/messaging-core/lib/agents.js](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/agents.js)、[packages/messaging-core/lib/outbound.js](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/outbound.js)、[packages/messaging-core/lib/tools.js](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/tools.js)、[packages/messaging-core/lib/platforms/telegram.js](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/platforms/telegram.js)、[packages/messaging-core/package.json](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/package.json)、[NOTICE](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/NOTICE)。\n\n## 未来设计假设（未验证）\n\n待验证假设：以平台事件ID建立持久收件箱/发件箱，并将映射更新与待回复状态做可恢复提交，可让跨渠道重连后按同一任务身份去重。依据是当前共享sessionMap与内存出站状态之间的缺口，当前未实现。用重复Webhook、外发成功后断线和会话映射写失败三类对照，量化重复执行/回复与恢复时间；无平台幂等键时保留未知结果，不能无条件重放。\n\n隔离单平台验证未授权/群聊共享、重复事件、重连、长消息格式、映射写失败和跨重启；其他平台需分别验收，本轮未发送消息。\n\n## 核查说明\n\n- 版本号：0.1.0；版本日期：2026-08-17（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[f1c3399e](https://github.com/534119219/dsh-messaging/tree/f1c3399ef40e3f419161d153e997d6f30576a627)；本次截止 2026-10-21T03:00:27Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读核心授权、会话映射、Agent接线、出站路由、工具及Telegram代表适配器；未实连任何平台，其他平台只核对注册/配置范围。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/messaging-core；内容摘要：39b69573102d44f9bc29c5c7525ebbc7e3fade4c2b8cd31145f620c8216e0583。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 39 | 9547 | 7882 | 1047 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# messaging-core\n\n> 把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。\n\n## 研究范围\n\n- **仓库**：[534119219/dsh-messaging](https://github.com/534119219/dsh-messaging)\n- **版本号**：0.1.0（[固定提交 f1c3399ef40e3f419161d153e997d6f30576a627](https://github.com/534119219/dsh-messaging/tree/f1c3399ef40e3f419161d153e997d6f30576a627)）\n- **版本日期**：2026-08-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持多渠道核心集成贡献，仅抽查Telegram链不证明27平台可用；出站授权与投递收据假设尚未验证。\n\n## 洞察短评\n\n- **用途**：给需从消息渠道访问DSH的人统一会话入口，合格回复需身份、目标聊天及投递状态正确。\n- **亮点**：统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。\n- **思考**：入站白名单不等出站授权，send_message可直接指定已连接平台/chat，status列全部聊天；平台workspace共享且map非原子写，不能承诺多用户隔离与恰好一次投递。为静态核查未真实发送。详见[Q02](#research-q02)。\n- **建议**：可探讨授权目标投递收据，绑定主体/会话/允许chat及操作ID，按调用者过滤状态并保存ACK/未知结果；平台差异和策略维护增加成本，未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n入站白名单不等出站授权，send_message可直接指定已连接平台/chat，status列全部聊天；平台workspace共享且map非原子写，不能承诺多用户隔离与恰好一次投递。为静态核查未真实发送。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨授权目标投递收据，绑定主体/会话/允许chat及操作ID，按调用者过滤状态并保存ACK/未知结果；平台差异和策略维护增加成本，未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从两agent/两chat、重复事件、丢ACK和断连的无账号夹具入手，核对越界、重复、恢复与状态过滤。\n\n## 场景与替代办法\n\n给需从消息渠道访问DSH的人统一会话入口，合格回复需身份、目标聊天及投递状态正确。\n\n可为单渠道写独立机器人或使用原生DSH界面。core统一会话便利，但扩大消息、凭据和目标权限面，需逐平台核验。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=20及DSH agents/sessions/settings/tools | 启动必需 | 会话与工具服务 | peer失配可能无法接线 |\n| 默认模型/preset与凭据 | 对话必需 | 真正执行agent任务 | connected不等模型任务可完成 |\n| 所选平台账号/token/SDK | 该渠道必需 | 接收/发送 | 未配置不连接，凭据权限由维护者管理 |\n| 回调listener与平台签名 | webhook渠道必需 | 接收外部事件 | 默认loopback，公开暴露需单独核对认证 |\n| 本地mapping/平台workspace | 持久运行必需 | 恢复与工作产物 | 禁用不自动删除敏感数据 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者只选一渠道/最小权限测试账号 | 明确白名单、群聊共享与出站范围 |\n| 加载 | 固定包和profile，按settings配置 | 能区分connected、映射、agent、发送各状态 |\n| 对话 | 已授权测试用户发已知问题 | 正确聊天回复，不向其他目标发信息 |\n| 恢复/退出 | 停适配器、移除包，撤销平台凭据并处理本地数据 | 检查轮询/连接关闭和workspace/map留存 |\n\n本轮不连接账号、开公网回调或发送消息。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 多SDK依赖、账号和模型环境，金额未知 | 认证、白名单、回调与聊天/工作区策略 | 单渠道配置量和故障率未测 |\n| 持续使用 | 模型、平台请求、连接与文件写入 | 观察错路由/限流/权限，维护凭据 | 流式350ms节流与typing仍有API成本 |\n| 失败恢复 | 重连、重发、映射/会话恢复 | 判断平台收到了没有，避免重复发送 | 缺完整投递确认与幂等恢复证据 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 多入口复用 | adapter到统一DSH agent链存在 | 各平台实际质量/可用性 |\n| 连续会话 | JSONL映射与历史切换存在 | 崩溃、多进程和群聊隔离表现 |\n| 回复体验 | 流式编辑与最终分段存在 | 重复、遗漏、顺序和任务完成率 |\n\n共同任务比较应含平台故障重做、人工核对和凭据运维，不按接入平台数推断净效益。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查多渠道DSH会话网关的收发、身份与持久化边界及采用成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要多渠道入口，收发主链怎样运行？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n适合希望从自有消息账号或机器人渠道进入DSH的个人/小团队维护者。输入是平台适配器规范化的聊天事件，输出是对应DSH会话的模型回复，另有主动发送工具。合格交付不仅是平台connected，还需发送者有权操作、聊天映射正确、回复不串会话、失败/取消可追踪。作者列27平台，本轮核查核心与Telegram代表链，不将全部注册视为全部可用。\n\nhandleInbound按adapter配置检查allowedUsers/allowAll，非空文本再处理命令或touch chat映射，经agentManager创建/恢复会话，并steer运行中agent或followup空闲agent。agent按平台工作目录挂默认preset与模型。outbound订阅session/event，把文本chunks与assistant/message/turn结束聚合，按能力转换HTML/纯文/Markdown，节流编辑并在结束时分段投递。session-map JSONL提供重启映射，当前不是跨平台业务工单系统。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-13](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/README.md#L3-L13)\n\n作者总目标、平台覆盖与授权声明。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n将 [hermes-agent](https://github.com/NousResearch/hermes-agent) 的消息平台体系移植为 DSH 插件，**整合为单一插件 `messaging-core`**：27 个消息渠道的适配器全部内聚在插件内部，一个插件完成注册、会话映射、出站路由、授权、命令与配置界面。\n\n## 功能特性\n\n- **27 个消息平台**：Telegram、Discord、Slack、IRC、ntfy、Email、Matrix、Home Assistant、Signal、WhatsApp、飞书/Lark、Mattermost、QQ、LINE、SMS、WhatsApp Cloud、企业微信、Teams、钉钉、Google Chat、通用 Webhook、A2A、微信个人号（iLink）、BlueBubbles iMessage、OpenAI 兼容 API Server、腾讯元宝、SimpleX\n- **统一会话体系**：每个聊天映射到独立的 DSH 会话（`msg-<平台>-<hash>[-vN]`），支持 `/new`、`/resume`（按标题切换历史会话）、`/title`、`/status`、`/stop`、`/compress`\n- **每平台独立工作区**：`$DSH_HOME/messaging/workspace/<平台>/`，注册进 host 工作区注册表，侧栏按平台分组\n- **出站流式路由**：订阅 `session/event`，按平台能力渲染（HTML/纯文本/原生 Markdown），支持流式编辑与 typing 指示\n- **授权白名单**：每平台 `allowedUsers` / `allowAll`\n- **配置界面**：侧栏「消息平台」入口（与「新建会话」同款按钮），hermes 式两栏弹窗（左侧平台列表，右侧配置表单），配置走 `/messaging/config` 端点持久化\n- **共享 Webhook 监听器**：webhook 型平台共用 HTTP listener（默认 `127.0.0.1:8765`）\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/messaging-core/lib/index.js:294-328](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js#L294-L328)\n\n核心入站白名单。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n    /** Authorize, interpret slash commands, and dispatch one inbound message. */\n    async handleInbound(platform, event) {\n      const adapter = adapters.get(platform)\n      if (!adapter) {\n        logger.warn(`inbound from unregistered platform: ${platform}`)\n        return\n      }\n      const target = { chatId: event.chatId, threadId: event.threadId }\n      const rec = (outcome, extra) => {\n        inboundLog.unshift({\n          platform,\n          at: Date.now(),\n          userId: String(event.userId || ''),\n          chatId: String(event.chatId || ''),\n          text: String(event.text || '').slice(0, 40),\n          outcome,\n          ...(extra || {}),\n        })\n        if (inboundLog.length > 5) inboundLog.pop()\n      }\n      rec('received')\n      try {\n        const cfg = adapter.resolveConfig ? adapter.resolveConfig() : {}\n        const allowAll = Boolean(cfg.allowAll)\n        const allowed = allowAll || (Array.isArray(cfg.allowedUsers) && cfg.allowedUsers.some((u) => String(u) === String(event.userId)))\n        if (!allowed) {\n          logger.warn(`unauthorized ${platform} message from user ${event.userId} in chat ${event.chatId}`)\n          rec('unauthorized')\n          try {\n            await adapter.send(target, '⚠️ 未授权：你的账号不在允许列表中，无法使用本机器人。')\n          } catch (error) {\n            rec('unauthorized-send-failed', { error: error.message })\n          }\n          return\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/messaging-core/lib/index.js:377-393](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js#L377-L393)\n\n会话agent分派及来源记录。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n        const platformMeta = PLATFORM_CATALOG[platform]\n        const agent = await agentManager.ensureAgent(entry.sessionId, {\n          platform,\n          label: platformMeta ? platformMeta.label : platform,\n          cwd: agentManager.workspaceFor(platform),\n        })\n        rec('agent-ready', { sessionId: entry.sessionId })\n        const message = createUserMessage({\n          content: [{ type: 'text', text }],\n          // kind 'user' renders as a normal user bubble in the web UI; the\n          // platform/chat/user fields keep provenance for the outbound router.\n          source: { kind: 'user', platform, chatKey: event.chatKey, userId: event.userId },\n        })\n        if (agent.status === 'running') agent.steer(message)\n        else agent.followup(message)\n        rec('dispatched', { sessionId: entry.sessionId })\n        logger.info(`inbound ${platform} user=${event.userId} -> ${entry.sessionId}: ${text.slice(0, 80)}`)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/messaging-core/lib/agents.js:61-90](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/agents.js#L61-L90)\n\n单会话创建/恢复路径。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n  /** Resolve the live agent for a session id, creating/resuming it once. */\n  async function ensureAgent(sessionId, opts = {}) {\n    const live = ctx.agents.get(sessionId)\n    if (live) return live\n    let creation = creations.get(sessionId)\n    if (!creation) {\n      creation = (async () => {\n        const persistence = ctx.get('sessionPersistence')\n        let stored = false\n        if (persistence) {\n          try {\n            stored = (await persistence.list()).some((header) => header.id === sessionId)\n          } catch (error) {\n            logger.warn(`sessionPersistence.list failed: ${error.message}`)\n          }\n        }\n        const composition = await composeSetup()\n        const agentOptions = modelOptions()\n        const cwd = opts && opts.cwd ? opts.cwd : process.cwd()\n        const handle = stored\n          ? await ctx.agents.resume({ resumeSessionId: sessionId, agentOptions, setup: composition.setup })\n          : await ctx.agents.create({\n              sessionId,\n              agentOptions,\n              meta: {\n                cwd,\n                ...(composition.agentPreset ? { agentPreset: composition.agentPreset } : {}),\n              },\n              setup: composition.setup,\n            })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/messaging-core/lib/outbound.js:1-14](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/outbound.js#L1-L14)\n\n出站事件组织设计。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/**\n * Outbound router: subscribes to durable `session/event` facts and pushes\n * them to the platform adapter owning each messaging chat.\n *\n * Streaming model (per session):\n *   - turn/start resets the buffer and starts the typing indicator;\n *   - assistant/chunk text deltas accumulate into the buffer; streaming\n *     platforms get throttled edit-message updates while the buffer stays\n *     under the platform's message cap (no truncation is ever sent — when the\n *     cap is hit, streaming preview stops and the final delivery chunks);\n *   - assistant/message (one per step) flushes immediately; if the provider\n *     emitted no chunks for that step the assembled text is appended;\n *   - turn/end finalizes: chunked delivery of the full text, then a short\n *     status line for aborted/error/blocked endings.\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相对独立机器人有什么增量，最关键授权限制是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是让多平台共享DSH agent、会话命令、持久映射、平台工作区和输出格式，减少每平台独立复制机器人状态机。移植目标来自hermes-agent消息体系，实际渠道SDK和DSH agent/preset来自上游；注册数量不能计为原创算法或已验证覆盖。\n\n最关键限制是入站白名单不构成出站授权。send_message接受任意已注册平台和chat，直接adapter.send，未核对调用agent关联聊天、allowedUsers或逐次审批；messaging_status也列出所有平台/聊天与用户/会话信息。因此一个拥有工具的agent可能取得并向其他已连接聊天发送，实际可达还依赖平台凭据权限，本轮不发送验证。\n\n会话按chat而非逐用户隔离，群聊中的授权用户可共享历史，平台workspace也共享目录而非每聊天沙箱。映射文件同步整体重写、无原子rename和跨进程锁，损坏行被跳过，不能保证崩溃/多实例一致。日志保留入站文本前段，配置端点与settings持久化涉及账号数据。以上为静态边界，不能宣称多租户隔离或恰好一次投递。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/messaging-core/lib/tools.js:26-36](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/tools.js#L26-L36)\n\n主动发送直接调用adapter，无调用者/目标授权核查。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    async execute(args) {\n      const adapter = adapters.get(args.platform)\n      if (!adapter) {\n        return { ok: false, platform: args.platform, chat: args.chat, reason: `未知平台 ${args.platform}` }\n      }\n      try {\n        const rendered = renderForCapability(String(args.text), adapter.capabilities)\n        const result = await adapter.send({ chatId: String(args.chat) }, rendered)\n        return { ok: true, platform: args.platform, chat: String(args.chat), messageId: result && result.messageId ? result.messageId : null }\n      } catch (error) {\n        return { ok: false, platform: args.platform, chat: String(args.chat), reason: String(error && error.message ? error.message : error) }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/messaging-core/lib/tools.js:49-61](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/tools.js#L49-L61)\n\n状态工具返回全部聊天信息。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    execute() {\n      const platforms = [...adapters.values()].map((adapter) => ({\n        id: adapter.id,\n        connected: Boolean(adapter.connected),\n      }))\n      const chats = sessionMap.entries().map((entry) => ({\n        platform: entry.chatKey.split(':')[0],\n        chatId: entry.chatId,\n        userName: entry.userName,\n        sessionId: entry.sessionId,\n        updatedAt: entry.updatedAt,\n      }))\n      return { platforms, chats }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/messaging-core/lib/workspaces.js:19-31](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/workspaces.js#L19-L31)\n\n每平台目录不是每聊天隔离。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function workspaceRoot() {\n  return join(dshHome(), 'messaging', 'workspace')\n}\n\nexport function workspaceDirFor(platform) {\n  return join(workspaceRoot(), String(platform))\n}\n\n/** Create the platform workspace directory (idempotent) and return its path. */\nexport function ensureWorkspaceDir(platform) {\n  const dir = workspaceDirFor(platform)\n  mkdirSync(dir, { recursive: true })\n  return dir\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/messaging-core/lib/session-map.js:28-59](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/session-map.js#L28-L59)\n\n坏行跳过、整体直接写入。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  function load() {\n    if (loaded) return\n    loaded = true\n    try {\n      if (!existsSync(file)) return\n      for (const line of readFileSync(file, 'utf8').split(/\\r?\\n/)) {\n        if (!line.trim()) continue\n        try {\n          const entry = JSON.parse(line)\n          if (entry && entry.chatKey && entry.sessionId) {\n            // Backfill history for entries written before /resume existed.\n            if (!Array.isArray(entry.history) || entry.history.length === 0) {\n              entry.history = [{ sessionId: entry.sessionId, generation: entry.generation || 0, updatedAt: entry.updatedAt || 0 }]\n            }\n            byChat.set(entry.chatKey, entry)\n            bySession.set(entry.sessionId, entry.chatKey)\n          }\n        } catch { /* skip malformed line */ }\n      }\n    } catch (error) {\n      logger.warn(`session map load failed (${file}): ${error.message}`)\n    }\n  }\n\n  function persist() {\n    try {\n      const dir = join(file, '..')\n      mkdirSync(dir, { recursive: true })\n      const lines = [...byChat.values()].map((entry) => JSON.stringify(entry))\n      writeFileSync(file, lines.length ? lines.join('\\n') + '\\n' : '')\n    } catch (error) {\n      logger.warn(`session map save failed (${file}): ${error.message}`)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/messaging-core/lib/index.js:302-312](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js#L302-L312)\n\n状态记录包含用户与文本预览。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      const rec = (outcome, extra) => {\n        inboundLog.unshift({\n          platform,\n          at: Date.now(),\n          userId: String(event.userId || ''),\n          chatId: String(event.chatId || ''),\n          text: String(event.text || '').slice(0, 40),\n          outcome,\n          ...(extra || {}),\n        })\n        if (inboundLog.length > 5) inboundLog.pop()\n```\n\n</details>\n\n#### 缺口\n\n- 未验证实际宿主工具暴露范围和跨聊天调用的可达性。\n  **影响：**静态缺少core出站校验不能等价为已发生外泄，但阻止默认隔离承诺。\n  **进一步探讨：**可用无真实账号的adapter桩，按不同agent/目标聊天调用，检查是否能拦截越界并回读记录。\n- 27平台的认证、签名与投递失败处理未逐项核查。\n  **影响：**不能把Telegram与core结果推广到全部渠道安全。\n  **进一步探讨：**可按拟启用平台逐一检查事件签名、sender身份来源及API错误/重试策略。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 账号、宿主、配置和退出依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\ncore需agents/sessions/settings/tools，默认preset、模型选择和持久化服务决定会话真实能力。包把多个平台SDK列为直接依赖，单平台使用也可能承担整包安装面。账号/token及webhook入口按平台分别必需，Telegram默认空白名单和allowAll=false，未配置token不连接；不能因这些默认值推断其他适配器同样安全。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=20及DSH agents/sessions/settings/tools | 启动必需 | 会话与工具服务 | peer失配可能无法接线 |\n| 默认模型/preset与凭据 | 对话必需 | 真正执行agent任务 | connected不等模型任务可完成 |\n| 所选平台账号/token/SDK | 该渠道必需 | 接收/发送 | 未配置不连接，凭据权限由维护者管理 |\n| 回调listener与平台签名 | webhook渠道必需 | 接收外部事件 | 默认loopback，公开暴露需单独核对认证 |\n| 本地mapping/平台workspace | 持久运行必需 | 恢复与工作产物 | 禁用不自动删除敏感数据 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者只选一渠道/最小权限测试账号 | 明确白名单、群聊共享与出站范围 |\n| 加载 | 固定包和profile，按settings配置 | 能区分connected、映射、agent、发送各状态 |\n| 对话 | 已授权测试用户发已知问题 | 正确聊天回复，不向其他目标发信息 |\n| 恢复/退出 | 停适配器、移除包，撤销平台凭据并处理本地数据 | 检查轮询/连接关闭和workspace/map留存 |\n\n本轮不连接账号、开公网回调或发送消息。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/messaging-core/package.json:28-60](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/package.json#L28-L60)\n\npeer、众多SDK与Node声明。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n    \"@deepseek-ai/dsh-agent\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-llm\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-session\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-settings\": \"^0.1.0-rc.6\",\n    \"@deepseek-ai/dsh-tools\": \"^0.1.0-rc.6\"\n  },\n  \"dependencies\": {\n    \"@larksuiteoapi/node-sdk\": \"^1.73.0\",\n    \"@line/bot-sdk\": \"^11.0.0\",\n    \"@slack/socket-mode\": \"^1.3.6\",\n    \"@slack/web-api\": \"^7.8.0\",\n    \"@whiskeysockets/baileys\": \"^6.7.24\",\n    \"botbuilder\": \"^4.23.0\",\n    \"dingtalk-stream\": \"https://registry.npmjs.org/dingtalk-stream/-/dingtalk-stream-2.1.6-beta.1.tgz\",\n    \"discord.js\": \"^14.16.0\",\n    \"google-auth-library\": \"^11.0.0\",\n    \"grammy\": \"^1.35.0\",\n    \"home-assistant-js-websocket\": \"^9.0.0\",\n    \"imapflow\": \"^1.0.0\",\n    \"irc-framework\": \"^4.14.0\",\n    \"jose\": \"^6.0.0\",\n    \"matrix-js-sdk\": \"^41.9.0\",\n    \"nodemailer\": \"^9.0.0\",\n    \"pino\": \"^10.0.0\",\n    \"qrcode\": \"^1.5.4\",\n    \"schemastery\": \"^3.18.0\",\n    \"ws\": \"^8.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"license\": \"MIT\"\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/messaging-core/lib/platforms/telegram.js:28-41](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/platforms/telegram.js#L28-L41)\n\nTelegram token和授权默认值。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    cfgScope = ctx.settings.register(settingsNamespace('messaging-telegram'), z.object({\n      token: z.string().role('secret').default(''),\n      allowedUsers: z.array(z.union([z.number(), z.string()])).default([]),\n      allowAll: z.boolean().default(false),\n      homeChannel: z.string().default(''),\n    }))\n  } catch (error) {\n    logger.warn(`settings namespace 'messaging-telegram' unavailable: ${error.message}`)\n  }\n\n  function resolveConfig() {\n    const resolved = cfgScope ? cfgScope.get() : { token: '', allowedUsers: [], allowAll: false, homeChannel: '' }\n    const token = (resolved.token && resolved.token.trim()) || process.env.TELEGRAM_BOT_TOKEN || ''\n    return { ...resolved, token }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/messaging-core/lib/platforms/telegram.js:61-90](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/platforms/telegram.js#L61-L90)\n\n连接/失败处理。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    async connect() {\n      if (bot) return\n      const cfg = resolveConfig()\n      if (!cfg.token) {\n        logger.warn('telegram: token 未配置（settings messaging-telegram.token 或 TELEGRAM_BOT_TOKEN）')\n        return\n      }\n      const b = new Bot(cfg.token)\n      bot = b\n      try {\n        b.on('message', (msgCtx) => {\n          handleUpdate(msgCtx).catch((error) => logger.error(`telegram update failed: ${error.stack || error.message}`))\n        })\n        await b.init()\n        me = b.botInfo\n        await b.api.deleteWebhook().catch(() => { /* not configured as webhook */ })\n        running = b.start({\n          onStart: () => {\n            adapter.connected = true\n            logger.info(`telegram connected as @${me.username} (${me.id})`)\n          },\n        }).catch((error) => {\n          logger.error(`telegram polling stopped: ${error.message}`)\n        })\n      } catch (error) {\n        // A failed connect must not leave the instance behind, or a later\n        // settings change can never trigger a reconnect.\n        bot = null\n        me = null\n        throw error\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/messaging-core/lib/platforms/telegram.js:94-103](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/platforms/telegram.js#L94-L103)\n\n断开轮询连接。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    async disconnect() {\n      const b = bot\n      bot = null\n      me = null\n      adapter.connected = false\n      if (b) {\n        try {\n          await b.stop()\n        } catch { /* ignore */ }\n      }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/messaging-core/lib/http.js:13-15](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/http.js#L13-L15)\n\n共享回调默认loopback与body上限。\n\n```text\nconst MAX_BODY_BYTES = 10 * 1024 * 1024\n\nexport function createWebhookServer(ctx, { logger, port = 8765, host = '127.0.0.1' }) {\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续及失败恢复成本和效果怎样判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n合格任务是一条授权消息进入正确会话并产生正确且只投递一次的回复。多平台SDK、账号配置、模型服务和回调运维属于首次负担；持续使用除模型tokens，还包括平台API、流式编辑/typing和映射重写。平台免费额度或价格不在本次固定源码材料中，不能填免费或0。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 多SDK依赖、账号和模型环境，金额未知 | 认证、白名单、回调与聊天/工作区策略 | 单渠道配置量和故障率未测 |\n| 持续使用 | 模型、平台请求、连接与文件写入 | 观察错路由/限流/权限，维护凭据 | 流式350ms节流与typing仍有API成本 |\n| 失败恢复 | 重连、重发、映射/会话恢复 | 判断平台收到了没有，避免重复发送 | 缺完整投递确认与幂等恢复证据 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 多入口复用 | adapter到统一DSH agent链存在 | 各平台实际质量/可用性 |\n| 连续会话 | JSONL映射与历史切换存在 | 崩溃、多进程和群聊隔离表现 |\n| 回复体验 | 流式编辑与最终分段存在 | 重复、遗漏、顺序和任务完成率 |\n\n共同任务比较应含平台故障重做、人工核对和凭据运维，不按接入平台数推断净效益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/messaging-core/lib/outbound.js:19-20](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/outbound.js#L19-L20)\n\n编辑和typing间隔。\n\n```text\nconst EDIT_THROTTLE_MS = 350\nconst TYPING_INTERVAL_MS = 4500\n```\n\n**依据 2 · 源码核查**：[packages/messaging-core/lib/outbound.js:93-125](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/outbound.js#L93-L125)\n\n流式编辑与最终分段有请求负担。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  /** Throttled streaming edit (never truncates; stops preview above the cap). */\n  function scheduleEdit(sessionId, info, s) {\n    if (!info.adapter.capabilities.streaming || s.editTimer || s.editStopped) return\n    s.editTimer = setTimeout(() => {\n      s.editTimer = null\n      performEdit(sessionId, info, s).catch((error) => logger.warn(`streaming edit failed: ${error.message}`))\n    }, EDIT_THROTTLE_MS)\n  }\n\n  async function performEdit(sessionId, info, s) {\n    const cap = info.adapter.capabilities.maxMessageLength || 4000\n    const raw = s.buffer.trim()\n    if (!raw) return\n    if (raw.length > cap) {\n      // Never send truncated markup: stop the streaming preview, the final\n      // delivery will chunk the full text.\n      s.editStopped = true\n      return\n    }\n    const text = renderForCapability(raw, info.adapter.capabilities)\n    if (s.messageId === null) {\n      const result = await info.adapter.send(info.target, text)\n      s.messageId = result && result.messageId ? result.messageId : null\n    } else {\n      await info.adapter.editMessage(info.target, s.messageId, text)\n    }\n    void sessionId\n  }\n\n  async function sendChunked(info, raw) {\n    const cap = info.adapter.capabilities.maxMessageLength || 4000\n    const text = renderForCapability(raw, info.adapter.capabilities)\n    const parts = splitText(text, cap)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/messaging-core/lib/session-map.js:52-59](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/session-map.js#L52-L59)\n\n映射持久化会重写整份文件。\n\n```text\n  function persist() {\n    try {\n      const dir = join(file, '..')\n      mkdirSync(dir, { recursive: true })\n      const lines = [...byChat.values()].map((entry) => JSON.stringify(entry))\n      writeFileSync(file, lines.length ? lines.join('\\n') + '\\n' : '')\n    } catch (error) {\n      logger.warn(`session map save failed (${file}): ${error.message}`)\n```\n\n#### 缺口\n\n- 缺少同平台、同模型下完整消息任务的成本、重复/遗漏率和恢复时间。\n  **影响：**不能给出可靠性或单位成本承诺。\n  **进一步探讨：**可先用受控adapter消息集记录接收、agent执行、平台ACK、重试和最终送达，分别统计人时/资源。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可复用设计和投递收据假设怎样检验？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是adapter注册和统一capabilities输出、会话创建single-flight、使用持久session/event驱动发送以及按chat保留历史generation，减少多个入口并发创建同一agent。每平台workspace清楚标明工作产物归属，但不是安全隔离。发送工具和状态工具是全局面，需在移植时明确谁可查看/发送；日志/映射也应有留存治理。\n\n由Q02/Q04推导未验证的“授权目标投递收据”。把入站主体、会话、允许出站chat和操作ID绑定，发送前校验目标，状态查询按调用者过滤；每次平台ACK/未知结果形成持久收据，未知不盲目重发。相对当前直接send，它增加权限及副作用所有权，而不是再接一个平台。代价是目标策略、凭据和ACK差异，需要各平台适配。最小对照可用两个聊天/agent、丢ACK、重复入站和断连夹具，比较越界发送、重复回复及恢复人时；若策略阻断正常流程或仍重复，就应修正或否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/messaging-core/lib/agents.js:61-90](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/agents.js#L61-L90)\n\nsingle-flight创建和恢复。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n  /** Resolve the live agent for a session id, creating/resuming it once. */\n  async function ensureAgent(sessionId, opts = {}) {\n    const live = ctx.agents.get(sessionId)\n    if (live) return live\n    let creation = creations.get(sessionId)\n    if (!creation) {\n      creation = (async () => {\n        const persistence = ctx.get('sessionPersistence')\n        let stored = false\n        if (persistence) {\n          try {\n            stored = (await persistence.list()).some((header) => header.id === sessionId)\n          } catch (error) {\n            logger.warn(`sessionPersistence.list failed: ${error.message}`)\n          }\n        }\n        const composition = await composeSetup()\n        const agentOptions = modelOptions()\n        const cwd = opts && opts.cwd ? opts.cwd : process.cwd()\n        const handle = stored\n          ? await ctx.agents.resume({ resumeSessionId: sessionId, agentOptions, setup: composition.setup })\n          : await ctx.agents.create({\n              sessionId,\n              agentOptions,\n              meta: {\n                cwd,\n                ...(composition.agentPreset ? { agentPreset: composition.agentPreset } : {}),\n              },\n              setup: composition.setup,\n            })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/messaging-core/lib/session-map.js:100-119](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/session-map.js#L100-L119)\n\ngeneration及历史管理。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  /** Start a fresh conversation: bump generation past every historical one. */\n  function reset(chatKey) {\n    load()\n    const prev = byChat.get(chatKey)\n    if (prev) bySession.delete(prev.sessionId)\n    const history = prev && Array.isArray(prev.history) && prev.history.length ? prev.history : []\n    const generation = history.reduce((max, h) => Math.max(max, Number(h.generation) || 0), 0) + 1\n    const entry = {\n      ...(prev ? { platform: prev.platform, chatId: prev.chatId, threadId: prev.threadId, userId: prev.userId, userName: prev.userName } : {}),\n      chatKey,\n      sessionId: defaultId(chatKey, generation),\n      generation,\n      history,\n      updatedAt: Date.now(),\n    }\n    entry.history.push({ sessionId: entry.sessionId, generation, updatedAt: entry.updatedAt })\n    if (entry.history.length > 20) entry.history = entry.history.slice(-20)\n    byChat.set(chatKey, entry)\n    bySession.set(entry.sessionId, chatKey)\n    persist()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/messaging-core/lib/tools.js:26-36](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/tools.js#L26-L36)\n\n缺调用者/目标绑定给出假设起点。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    async execute(args) {\n      const adapter = adapters.get(args.platform)\n      if (!adapter) {\n        return { ok: false, platform: args.platform, chat: args.chat, reason: `未知平台 ${args.platform}` }\n      }\n      try {\n        const rendered = renderForCapability(String(args.text), adapter.capabilities)\n        const result = await adapter.send({ chatId: String(args.chat) }, rendered)\n        return { ok: true, platform: args.platform, chat: String(args.chat), messageId: result && result.messageId ? result.messageId : null }\n      } catch (error) {\n        return { ok: false, platform: args.platform, chat: String(args.chat), reason: String(error && error.message ? error.message : error) }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/messaging-core/lib/outbound.js:43-57](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/outbound.js#L43-L57)\n\nsession映射到adapter目标。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport function createOutboundRouter(ctx, { adapters, sessionMap, logger }) {\n  /** sessionId -> { turn, buffer, chunkedSteps, messageId, typingTimer, editTimer, editStopped } */\n  const state = new Map()\n\n  function chatInfoFor(sessionId) {\n    const chatKey = sessionMap.chatKeyFor(sessionId)\n    if (!chatKey) return undefined\n    const platform = chatKey.split(':')[0]\n    const adapter = adapters.get(platform)\n    if (!adapter) return undefined\n    const entry = sessionMap.entryFor(chatKey)\n    return {\n      adapter,\n      target: { chatId: entry && entry.chatId ? entry.chatId : chatKey.split(':').slice(1).join(':'), threadId: entry && entry.threadId },\n    }\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 谁适合当前采用，停止标准是什么？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐observe。统一渠道到DSH会话有明显集成价值，但当前core主动发送工具没有调用者/目标约束，入站白名单不能替代出站治理；多渠道SDK、群聊共享、平台工作区和持久数据进一步增加维护责任。不宜把整套作为默认多用户远程入口。\n\n继续研究可用无真实账号的adapter桩验证core，再针对真正需要的一平台、单用户和隔离workspace作明确授权的后续评估。出现跨聊天信息可见/发送、重复回复、坏映射静默跳过、未知投递被重复重发或不清楚哪些凭据仍有效时，应停止相关渠道。需补出站目标边界和所选平台同版本结果后再评估trial；本轮未发送任何消息。依据Q02、Q03和Q04。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/messaging-core/lib/tools.js:26-61](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/tools.js#L26-L61)\n\n发送与状态工具的全局面影响建议。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    async execute(args) {\n      const adapter = adapters.get(args.platform)\n      if (!adapter) {\n        return { ok: false, platform: args.platform, chat: args.chat, reason: `未知平台 ${args.platform}` }\n      }\n      try {\n        const rendered = renderForCapability(String(args.text), adapter.capabilities)\n        const result = await adapter.send({ chatId: String(args.chat) }, rendered)\n        return { ok: true, platform: args.platform, chat: String(args.chat), messageId: result && result.messageId ? result.messageId : null }\n      } catch (error) {\n        return { ok: false, platform: args.platform, chat: String(args.chat), reason: String(error && error.message ? error.message : error) }\n      }\n    },\n  }))\n\n  ctx.tools.register(defineTool({\n    name: 'messaging_status',\n    description: '列出已连接的消息平台、各平台聊天会话与最近活跃时间。',\n    parameters: {},\n    output: {\n      schema: { type: 'object', additionalProperties: true },\n      render: (_args, value) => [{ type: 'text', text: JSON.stringify(value, null, 2) }],\n    },\n    execute() {\n      const platforms = [...adapters.values()].map((adapter) => ({\n        id: adapter.id,\n        connected: Boolean(adapter.connected),\n      }))\n      const chats = sessionMap.entries().map((entry) => ({\n        platform: entry.chatKey.split(':')[0],\n        chatId: entry.chatId,\n        userName: entry.userName,\n        sessionId: entry.sessionId,\n        updatedAt: entry.updatedAt,\n      }))\n      return { platforms, chats }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/messaging-core/lib/index.js:316-328](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/index.js#L316-L328)\n\n入站白名单仅约束这一条接收链。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n        const cfg = adapter.resolveConfig ? adapter.resolveConfig() : {}\n        const allowAll = Boolean(cfg.allowAll)\n        const allowed = allowAll || (Array.isArray(cfg.allowedUsers) && cfg.allowedUsers.some((u) => String(u) === String(event.userId)))\n        if (!allowed) {\n          logger.warn(`unauthorized ${platform} message from user ${event.userId} in chat ${event.chatId}`)\n          rec('unauthorized')\n          try {\n            await adapter.send(target, '⚠️ 未授权：你的账号不在允许列表中，无法使用本机器人。')\n          } catch (error) {\n            rec('unauthorized-send-failed', { error: error.message })\n          }\n          return\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/messaging-core/lib/workspaces.js:19-31](https://github.com/534119219/dsh-messaging/blob/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core/lib/workspaces.js#L19-L31)\n\n平台级共享工作目录影响多人采用。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport function workspaceRoot() {\n  return join(dshHome(), 'messaging', 'workspace')\n}\n\nexport function workspaceDirFor(platform) {\n  return join(workspaceRoot(), String(platform))\n}\n\n/** Create the platform workspace directory (idempotent) and return its path. */\nexport function ensureWorkspaceDir(platform) {\n  const dir = workspaceDirFor(platform)\n  mkdirSync(dir, { recursive: true })\n  return dir\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/messaging-core；内容摘要：39b69573102d44f9bc29c5c7525ebbc7e3fade4c2b8cd31145f620c8216e0583。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 39 | 9547 | 7882 | 1047 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| adapter网关 | 多平台事件接入DSH | 注册不等各平台运行可用 |\n| 聊天会话映射 | 命令/历史与agent恢复 | chat共享，JSONL非原子持久化 |\n| 流式回复 | 平台格式/编辑/分段 | ACK、重复和恢复未完整验证 |\n| 主动send/status | 指定目标发送及概览 | core未绑定调用者与允许chat |\n\n## 工程亮点\n\n可复用的是adapter注册和统一capabilities输出、会话创建single-flight、使用持久session/event驱动发送以及按chat保留历史generation，减少多个入口并发创建同一agent。每平台workspace清楚标明工作产物归属，但不是安全隔离。发送工具和状态工具是全局面，需在移植时明确谁可查看/发送；日志/映射也应有留存治理。\n\n\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、packages/messaging-core/package.json、packages/messaging-core/lib/index.js、packages/messaging-core/lib/tools.js、packages/messaging-core/lib/session-map.js、packages/messaging-core/lib/agents.js、packages/messaging-core/lib/outbound.js、packages/messaging-core/lib/workspaces.js、packages/messaging-core/lib/http.js、packages/messaging-core/lib/platforms/telegram.js 及固定范围 inventory；组件：packages/messaging-core。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定packages/messaging-core核心、会话映射/agent/outbound/tools、HTTP与Telegram代表适配器及根作者说明；未逐一审查27平台，不连接账号或发送消息。\n- 下一步：进一步探讨可从两agent/两chat、重复事件、丢ACK和断连的无账号夹具入手，核对越界、重复、恢复与状态过滤。\n",
         "metadata": {
             "repository": "534119219/dsh-messaging",
             "repository_id": 1335798113,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:13:37.571Z",
+            "window_start": "2026-09-22T05:13:37.571Z",
             "stars": 3,
             "pushed_at": "2026-08-16T19:08:22Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fdsh-messaging%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:1ADA16:A39F94:EB0F73:6AD84A42 and timestamp 2026-10-21 05:14:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fdsh-messaging%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:39E13C:A2B24E:EA7982:6AD84A43 and timestamp 2026-10-21 05:14:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fdsh-messaging%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641D:383860:A8792B:F1D05B:6AD84A43 and timestamp 2026-10-21 05:14:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fdsh-messaging%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:360622:A34C55:EB2071:6AD84A43 and timestamp 2026-10-21 05:14:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fdsh-messaging%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:F5D0E:A9DF19:F2F2CA:6AD84A43 and timestamp 2026-10-21 05:14:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "messaging-core",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:13:48.076Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/messaging-core",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/messaging-core",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:13:48.076Z",
                     "source_url": "https://registry.npmjs.org/messaging-core",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-                "current_revision": "f1c3399ef40e3f419161d153e997d6f30576a627",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {
