@@ -14,11 +14,9 @@
 | [chicheng-gate](#plugin-1334862230-root) | 在 DSH Web 管理远程访问、frpc 隧道、面板密码门禁与移动端界面。 | 仅适合了解DSH远程控制范围、能维护网络的人在隔离环境先检查；先设置密码，验证HTTP和WebSocket都被挡住，再考虑外网，并单独确认加密传输及升级后的补丁恢复。 |
 | [chicheng-stats](#plugin-1335725068-root) | 在 DSH 汇总请求用量、展示趋势和模型明细，并支持历史会话扫描。 | 想查看DSH资源分布的人可先对一个已知会话核对请求数和token；Desktop先确认是否有历史回填，平台余额和本地统计分开看，不用它直接结算费用。 |
 | [DSH Telemetry Redactor](#plugin-1333368566-root) | 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。 | 先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。 |
-| [dsh-agent-recycle-guard](#plugin-1414323673-root) | 检查DSH的Shell工具调用，将识别到的删除改写为回收站操作，无法安全处理时拒绝。 | 在可丢弃目录验证平台真实回收和恢复后采用。 |
 | [dsh-alive](#plugin-1335661970-root) | 在会话头部轮询本地 ping 接口，显示在线状态点。 | 仅需Host连接提示时可评估；已有宿主连接指示或需要模型可用性监控者，先确认它是否提供额外信息。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 读取Agent-Body运行时文件，在宿主HTTP路由展示器官体征、心跳、愈合账本与脉冲。 | 先限制在本地受控宿主使用，检查缺失数据能否报503，并核对脉冲文本的展示边界后再接入多人环境。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH输入框旁展示多平台API余额、会话与子代理估算消耗，并提供配置看板。 | 先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。 |
-| [dsh-ark-coding-provider](#plugin-1421741516-root) | 将方舟Coding Plan聊天、模型目录、账户轮换与额度管理接入DSH。 | 适合已有方舟订阅者先做隔离模型/工具链测试；作者容量实测不等于本轮验证，也不代表服务今后不变。 |
 | [dsh-armor-switch](#plugin-1409096911-root) | 提供运行时提示契约切换及可选的宿主、Profile文案维护和恢复操作。 | 只建议在可恢复的独立Profile中检查机制。 |
 | [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。 | 已有多个MCP时在独立项目试用导入和作用域隔离，核对实际工具与来源登记；OAuth与市场安装新增路径需单独验收，不依据零调用账本批量停用工具。 |
 | [dsh-capability-index](#plugin-1335594781-root) | 扫描已启用工具，结合规则与语义召回向Agent上下文提示可能适用的插件能力。 | 更适合作为工具发现设计样本阅读。 |
@@ -145,20 +143,6 @@
 
 > **建议**：先在测试遥测里放入假密钥、普通文本和 token 计量字段，核对脱敏与保真后再接后端。
 
-<a id="plugin-1414323673-root"></a>
-
-## [dsh-agent-recycle-guard](../../plugins/ahyi8--dsh-agent-recycle-guard/INSIGHT.md)
-
-[![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard)
-
-> **用途**：Agent清理文件时减少误删损失，合格行为须保留原权限/沙箱且回收失败不永久删除。
-
-> **亮点**：相比提示“别rm”，增量是工具执行前实质检查、语义保留改写与失败关闭；Shell AST和系统回收机制来自现有组件，不构成通用程序安全证明。
-
-> **思考**：命中常见删除是否覆盖任意破坏？只处理command/cmd参数，脚本深度/大小/编码及动态加载有限，干净脚本可能仍间接删文件；同用户竞态、模块和外部程序内部操作不受全量保护。
-
-> **建议**：由静态改写与执行时展开分工推导，可返回覆盖范围收据，明确已检查语言/脚本及未检查加载边界，并配文件系统变更预览或沙箱作第二层。未验证；隐藏/动态删除样本应清楚标未覆盖而非安全承诺。
-
 <a id="plugin-1335661970-root"></a>
 
 ## [dsh-alive](../../plugins/aikenfra--dsh-alive/INSIGHT.md)
@@ -200,20 +184,6 @@
 > **思考**：集中显示和明确未知值有实用价值；估算若被当成收费真相，会把价格漂移和缓存差异隐藏起来。
 
 > **建议**：先选择实际可查询的平台，对照控制台账单和混合币种；把看板作为预警与估算入口，自更新前保留配置和回退。
-
-<a id="plugin-1421741516-root"></a>
-
-## [dsh-ark-coding-provider](../../plugins/akiyuki1130--dsh-ark-coding-provider/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
-
-> **用途**：有方舟订阅的DSH用户使用其兼容端点与多账户管理。
-
-> **亮点**：把协议细节、账户冷却与凭据/官方quota入口组合，避免简单兼容URL配置遗漏系统指令和多轮工具语义；不是新LLM协议或模型能力。
-
-> **思考**：轮换以“任何chunk已发出”为保守界限，可避免重复输出，但不保证所有传输失败恢复；模型能力来自固定表与作者探测，不是每次discovery都重测容量。可配置apiBase会把key发往所填端点，CLI/账号生命周期仍是额外信任依赖。
-
-> **建议**：未验证假设：将模型能力记录绑定探测日期/端点，并在兼容性漂移时显式降级，能减少静态目录误承诺。用系统指令、工具回灌、图片、半流中断及额度失败矩阵核语义与重放边界；无安全重放证据时不做输出后自动重试。
 
 <a id="plugin-1409096911-root"></a>
 

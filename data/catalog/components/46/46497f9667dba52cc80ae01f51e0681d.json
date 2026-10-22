@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-02-github-841979943-root-directory-0",
+                    "id": "2026-10-22-02-github-841979943-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:16:21.032Z",
+                    "retrieved_at": "2026-10-22T05:26:39.746Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-02-github-841979943-root-author",
+                    "id": "2026-10-22-02-github-841979943-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/566001/dsh-wrapup-guard",
+                            "commit": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+                            "path": "README.md",
+                            "content_sha256": "c9d3cfc9050e06a16b5bc211e770a17a935343d528beb4422e1fd2e3da8ee320"
+                        }
+                    ],
                     "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-                    "captured_at": "2026-10-21T03:16:21.032Z",
-                    "summary": "提供任务收尾工具，运行项目检查并记录连续三轮无问题的检查状态。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/566001--dsh-wrapup-guard/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:26:39.746Z",
+                    "summary": "用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/566001--dsh-wrapup-guard/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-02-github-841979943-root-source",
+                    "id": "2026-10-22-02-github-841979943-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js",
+                    "url": "https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/566001/dsh-wrapup-guard",
+                            "commit": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+                            "path": "README.md",
+                            "content_sha256": "c9d3cfc9050e06a16b5bc211e770a17a935343d528beb4422e1fd2e3da8ee320"
+                        },
+                        {
+                            "repository_url": "https://github.com/566001/dsh-wrapup-guard",
+                            "commit": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+                            "path": "package.json",
+                            "content_sha256": "e93a0c0b691d341eb9186fa13f321b2c13de04125fdb1b897771a886c86268cc"
+                        },
+                        {
+                            "repository_url": "https://github.com/566001/dsh-wrapup-guard",
+                            "commit": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+                            "path": "lib/index.js",
+                            "content_sha256": "1635379a50c21893ae908f45ee681e4cf82969a7b2c53cd91b42fb6aa8ff1732"
+                        },
+                        {
+                            "repository_url": "https://github.com/566001/dsh-wrapup-guard",
+                            "commit": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+                            "path": "client/client.js",
+                            "content_sha256": "99644fe29b2f462b44cf100b1c63185531af3f910b62df5d6889ec81a774d0cf"
+                        },
+                        {
+                            "repository_url": "https://github.com/566001/dsh-wrapup-guard",
+                            "commit": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "7eb4bc2caa589941d50a1a66090b696bb792269606df64ad7c3bae6a89741350"
+                        }
+                    ],
                     "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-                    "captured_at": "2026-10-21T03:16:21.032Z",
-                    "summary": "核查 lib/index.js；lib/index.js注册wrapup_check，支持start/check/report/status/abort；自动探测npm test/lint/typecheck/check及已知脚本，按会话保存dryStreak与历史。",
-                    "artifact": "data/runs/2026-10-21-02/snapshots/566001--dsh-wrapup-guard/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:26:39.746Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、client/client.js、cordis.patch.yml；模型工具执行有限名称的项目检查脚本、收集结果并按 report 的问题数组维护连续零问题计数，Web 客户端轮询完成状态。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/566001--dsh-wrapup-guard/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                        "固定提交静态检查 README、package、宿主源码和客户端；未执行目标包、目标检查脚本或 DSH 宿主。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合容易在收尾遗漏测试与文档核对的软件任务；合格交付仍要由实际检查记录和人工审阅确认。",
+                    "text": "DSH 开发任务交付前的测试、审查、构建和一致性核对。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js注册wrapup_check，支持start/check/report/status/abort；自动探测npm test/lint/typecheck/check及已知脚本，按会话保存dryStreak与历史。",
+                    "text": "模型工具执行有限名称的项目检查脚本、收集结果并按 report 的问题数组维护连续零问题计数，Web 客户端轮询完成状态。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。",
+                    "text": "固定提交静态检查 README、package、宿主源码和客户端；未执行目标包、目标检查脚本或 DSH 宿主。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "发布与依赖以本项固定package.json、README和本轮META为界；npm或仓库统计不是采用证据。",
+                    "text": "package.json 声明 0.1.0、Node >=22、DSH/Cordis peer 依赖与 Web 客户端；npm 元数据另行采集，不证明实际兼容或采用。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次确认允许执行的项目脚本，之后至少三轮检查可能重复耗时；现金取决于脚本或模型，人工需审查误报和通知，不能将轮数当质量收益。",
+                    "text": "#### 成本\n\n| 阶段 | 资源/时间 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 首次使用 | 安装 profile 包并重启 DSH | 核项目检查脚本、副作用与权限 | 宿主未验 |\n| 每轮收尾 | 每条脚本最多180秒，理论需三轮以上 | 做审查、构建、一致性并核输出 | 总耗时和质量收益未测 |\n| 故障恢复 | 重跑失败脚本、排查状态文件/路由 | 人工核证是否真完成 | 写盘失败静默 |\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "可把它当收尾提醒与日志工具。先确认项目检查脚本没有额外写入，并验证失败时report能否误放行；三轮计数不能替代独立审阅。",
+                    "text": "仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "状态可见性可能减少漏项，但没有缺陷逃逸率与时间对照支持三轮阈值最优。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 检查提醒 | 系统提示及工具说明 | 模型必然调用 |\n| 三轮状态 | 空问题报告累计到三 | 每轮真的全面检查 |\n| 完成通知 | 路由和客户端轮询 | 跨用户隔离与重启恢复 |\n",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "命令探测有明示白名单、超时和输出上限；状态采用临时文件rename。可借鉴可读状态机，但静默持久化失败必须单独暴露。",
+                    "text": "脚本名称白名单只限制发现集合，不限制脚本自身副作用。输出在完成时裁剪，收集中无界；saveState 吞错，每次调用仍读盘；report 不核同轮 check 结果。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "作者提出三轮干净才完成；可确认增量是将检查命令执行、修复后计数清零和通知做成显式状态机。相对提示词清单，确有进度与原始输出，但不是独立代码审查器，review/build/consistency依赖模型汇报。",
+                    "text": "把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "连续三轮同一自报并不构成三个独立验证。check结果未作为不可绕过的report凭据；saveState吞写盘错误，后续每次execute又loadState，故不能承诺重启或写盘故障时计数可靠。反复执行项目脚本也有副作用和成本。",
+                    "basis": "supported",
+                    "text": "check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 problems 可绕开所谓全面检查；状态落盘失败也被吞掉。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：将report绑定本轮命令摘要及变更摘要，仅在代码变化后重跑必要检查，可减少重复执行又防止未跑即报。用失败后误报、无变化和修复三种轨迹比较漏放行与命令次数；未验证。",
+                    "text": "同轮证据绑定、失败阻断和按会话隔离通知，若在漏查/失败/多会话测试中降低误放行且耗时可接受，再考虑作为质量门；本版未实现。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:16:21.032Z",
+                    "reviewed_at": "2026-10-22T05:26:39.746Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:16:21.032Z",
+            "last_checked_at": "2026-10-22T05:26:39.746Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-                "reviewed_at": "2026-10-21T03:16:21.032Z",
+                "reviewed_at": "2026-10-22T05:26:39.746Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
+                        "mechanism": 8,
+                        "transferability": 5,
                         "simplification": 4
                     },
-                    "rationale": "novelty=9：多轮收尾属于已有检查清单自动化。 mechanism=15：显式状态与命令输出比纯提示多一层约束。 transferability=10：状态机可移用，命令白名单依项目。 simplification=4：三轮重复执行可能增加而非减少工作。",
+                    "rationale": "novelty 是常见收尾清单/状态机；mechanism有命令探测、轮次和通知，但缺真正强制门槛；transferability 是流程模式可移植，宿主 API 未验；simplification 把检查提示集中，仍需人工确认。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
+                        "workflow": 9,
                         "delivery": 8,
-                        "reach": 10,
-                        "economics": 4
+                        "reach": 5,
+                        "economics": 0
                     },
-                    "rationale": "workflow=18：把测试审阅和通知集中到收尾过程。 delivery=8：交付轮次记录，但模型自报缺独立凭据。 reach=10：项目检查脚本约定较常见但覆盖有限。 economics=4：无缺陷与耗时对照，重复检查有成本。",
+                    "rationale": "workflow 提醒开发者复核；delivery 只生成自报完成消息，不构成独立验收；reach 限 DSH 用户及项目脚本；economics 没有现金节省或质量收益数据。",
                     "basis": "interpretation",
-                    "score": 40,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-02-github-841979943-root-source"
+                        "2026-10-22-02-github-841979943-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "收尾日志与提醒有潜力，但report不绑定check结果且写盘错误被吞；先验证失败不可误放行及持久恢复再依赖三轮状态。",
+                "reason": "可作收尾提示试用，但不能作为强制质量门；先隔离验证漏 check、失败报告和多会话通知。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "代码收尾测试文档漏项需求具体。"
+                        "rationale": "开发任务收尾遗漏是明确痛点。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "显式状态与原始输出优于纯提醒，三次自报并非独立审查。"
+                        "score": 6,
+                        "rationale": "相对手工清单有工具化与记录，但关键放行门槛可被空报告绕过。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "start/check/report及load/save路径可查，写盘吞错削弱计数可信度。"
+                        "rationale": "固定源码支持控制流结论，未做宿主/用户行为测试。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "反复跑脚本有副作用和耗时，需审脚本并承担误放行复核。"
+                        "rationale": "至少三轮重复项目命令，可能慢且项目脚本有副作用；状态与通知需要维护。"
                     }
                 },
-                "score": 54,
+                "score": 47,
                 "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:26:39.746Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-02-github-841979943-root-source"
+                    "2026-10-22-02-github-841979943-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +394,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:00:27Z",
-            "analysis_sha256": "4797de2831da6aa55066b9f8706bfc68162d6114d13f481e89349e7eed609119"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "11e00e9b0fd3a86b357575f8d041dfdfb6838753d5485dd6d1a0cccbccf96533"
         },
         "publication.metadata": "data/plugins/566001--dsh-wrapup-guard/META.json",
         "publication.summaries": {
-            "text": "提供任务收尾工具，运行项目检查并记录连续三轮无问题的检查状态。",
+            "text": "用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。",
             "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
             "source_url": "https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/README.md"
         },
         "publication.capabilities": {
             "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
             "items": {
-                "模型工具": "wrapup_check收尾检查与状态",
-                "后台": "按会话存储收尾轮次"
-            }
+                "模型工具": "wrapup_check(start/check/report/status/abort)",
+                "界面": "完成通知卡片与轮询路由"
+            },
+            "table": "| 能力 | 用途 | 限制 |\n| --- | --- | --- |\n| wrapup_check | 命令检查与三轮记账 | 不绑定同轮检查证据 |\n| status route/client | 显示最近完成报告 | 宿主内存 latest、未按会话筛选 |\n"
         },
         "publication.advice": {
             "revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-            "text": "可把它当收尾提醒与日志工具。先确认项目检查脚本没有额外写入，并验证失败时report能否误放行；三轮计数不能替代独立审阅。"
+            "text": "仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见[Q03](#research-q03)、[Q04](#research-q04)。"
         },
         "registry": "data/plugins/566001--dsh-wrapup-guard",
-        "reports": "# dsh-wrapup-guard\n\n> 提供任务收尾工具，运行项目检查并记录连续三轮无问题的检查状态。\n\n## 使用建议\n\n可把它当收尾提醒与日志工具。先确认项目检查脚本没有额外写入，并验证失败时report能否误放行；三轮计数不能替代独立审阅。\n\n**核查状态**：已检查固定版本源码，未安装、执行目标插件或完成真实宿主验收。已有贡献仅由固定版本源码支持，实际宿主和任务效果尚未验证；未来设计假设保持未验证。\n\n## 洞察短评\n\n- **用途**：适合容易在收尾遗漏测试与文档核对的软件任务；合格交付仍要由实际检查记录和人工审阅确认。\n- **亮点**：作者提出三轮干净才完成；可确认增量是将检查命令执行、修复后计数清零和通知做成显式状态机。相对提示词清单，确有进度与原始输出，但不是独立代码审查器，review/build/consistency依赖模型汇报。\n- **思考**：连续三轮同一自报并不构成三个独立验证。check结果未作为不可绕过的report凭据；saveState吞写盘错误，后续每次execute又loadState，故不能承诺重启或写盘故障时计数可靠。反复执行项目脚本也有副作用和成本。\n- **建议**：待验证假设：将report绑定本轮命令摘要及变更摘要，仅在代码变化后重跑必要检查，可减少重复执行又防止未跑即报。用失败后误报、无变化和修复三种轨迹比较漏放行与命令次数；未验证。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n替代是手工checklist或CI；此插件把人机收尾过程放在会话内，覆盖范围仍取决于项目脚本与审阅者。\n\n### 能力、依赖与流程\n\nlib/index.js注册wrapup_check，支持start/check/report/status/abort；自动探测npm test/lint/typecheck/check及已知脚本，按会话保存dryStreak与历史。\n\n- **模型工具**：wrapup_check收尾检查与状态\n- **后台**：按会话存储收尾轮次\n\n依赖宿主tools及可选通知/客户端能力；执行项目npm与Node检查脚本，状态写入DSH_HOME/wrapup-guard。\n\nstart→自动check→模型完成其他检查→report问题→有问题归零→无问题累计三次→通知；abort可终止。\n\n### 成本与效果\n\n首次确认允许执行的项目脚本，之后至少三轮检查可能重复耗时；现金取决于脚本或模型，人工需审查误报和通知，不能将轮数当质量收益。\n\n状态可见性可能减少漏项，但没有缺陷逃逸率与时间对照支持三轮阈值最优。\n\n### 工程亮点\n\n命令探测有明示白名单、超时和输出上限；状态采用临时文件rename。可借鉴可读状态机，但静默持久化失败必须单独暴露。\n\n源码依据：[lib/index.js](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将report绑定本轮命令摘要及变更摘要，仅在代码变化后重跑必要检查，可减少重复执行又防止未跑即报。用失败后误报、无变化和修复三种轨迹比较漏放行与命令次数；未验证。\n\n在临时项目验证失败check后空report、写盘失败、重启、超时与修复归零；本轮不执行目标脚本。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cb1229f056e066dea44d90cb5ed4c57f2394a11b454fd6f274b0d4aba349b4cd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 947 | 761 | 105 | — |\n| .md | source | 1 | 165 | — | — | 1501 |\n| .mjs | source | 2 | 187 | 131 | 28 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[566001/dsh-wrapup-guard](https://github.com/566001/dsh-wrapup-guard)\n- **版本号**：0.1.0（[固定提交 99734eba](https://github.com/566001/dsh-wrapup-guard/tree/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2)）\n- **版本日期**：2026-10-14（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、作者README与固定范围inventory；源码抽读不等于完整审计。\n- 未完成：目标插件执行、测试、安装、模型调用和真实宿主验收。\n- 证据限制：核查固定提交内列明入口、核心实现及相关配置/作者材料的源码子集；未执行插件、其测试、安装、付费请求或真实宿主验收，未核实独立用户采用。\n- 下一步：在临时项目验证失败check后空report、写盘失败、重启、超时与修复归零；本轮不执行目标脚本。\n",
+        "reports": "# dsh-wrapup-guard\n\n> 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。\n\n## 研究范围\n\n- **仓库**：[566001/dsh-wrapup-guard](https://github.com/566001/dsh-wrapup-guard)\n- **版本号**：0.1.0（[固定提交 99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2](https://github.com/566001/dsh-wrapup-guard/tree/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2)）\n- **版本日期**：2026-10-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n状态机与脚本执行可由固定源码核查；report 不要求同轮 check 或完整人工检查，三次空报告即可静态放行；宿主与用户行为未验证。\n\n## 洞察短评\n\n- **用途**：DSH 开发任务交付前的测试、审查、构建和一致性核对。\n- **亮点**：把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 problems 可绕开所谓全面检查；状态落盘失败也被吞掉。详见[Q03](#research-q03)。\n- **建议**：同轮证据绑定、失败阻断和按会话隔离通知，若在漏查/失败/多会话测试中降低误放行且耗时可接受，再考虑作为质量门；本版未实现。详见[Q04](#research-q04)。\n\n采用建议：仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n## 核心贡献\n\n把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\ncheck 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 problems 可绕开所谓全面检查；状态落盘失败也被吞掉。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n同轮证据绑定、失败阻断和按会话隔离通知，若在漏查/失败/多会话测试中降低误放行且耗时可接受，再考虑作为质量门；本版未实现。详见[Q04](#research-q04)。\n\n用临时项目做有失败脚本、漏 check、缺人工 checks、状态目录只读、长日志及双会话场景，观察误放行、资源与通知归属。\n\n## 场景与替代办法\n\nDSH 开发任务交付前的测试、审查、构建和一致性核对。\n\n模型自行宣布任务结束，或人工跑测试和对照清单；本插件加入提示、自动脚本和三轮自报状态。\n\n## 依赖与流程\n\n#### 启动依赖\n\n| 条件 | 用途 | 缺失/不满足 |\n| --- | --- | --- |\n| DSH tools/systemPrompt 注入 | 注册工具和提醒 | 无法使用或未被提醒 |\n| Node/npm 与项目脚本 | 自动检查 | 只能手动查或命令失败 |\n| DSH_HOME/用户目录可写 | 跨轮持久化 | 静默丢状态 |\n| Web Server/客户端 | 可视通知 | 工具报告仍可返回 |\n\n\n#### 流程\n\n| 步骤 | 实际动作 | 应核验 |\n| --- | --- | --- |\n| start | 初始化状态与探测命令 | 脚本副作用、会话目录 |\n| check | 顺序运行发现的脚本 | 失败与输出证据 |\n| 人工检查 | 模型审查/构建/一致性 | 实际执行记录 |\n| report | 依据问题数组计数 | 当前实现不核前两步 |\n| 通知 | 三次空数组后轮询卡片 | 报告归属与可见性 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源/时间 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 首次使用 | 安装 profile 包并重启 DSH | 核项目检查脚本、副作用与权限 | 宿主未验 |\n| 每轮收尾 | 每条脚本最多180秒，理论需三轮以上 | 做审查、构建、一致性并核输出 | 总耗时和质量收益未测 |\n| 故障恢复 | 重跑失败脚本、排查状态文件/路由 | 人工核证是否真完成 | 写盘失败静默 |\n\n\n#### 效果\n\n| 项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 检查提醒 | 系统提示及工具说明 | 模型必然调用 |\n| 三轮状态 | 空问题报告累计到三 | 每轮真的全面检查 |\n| 完成通知 | 路由和客户端轮询 | 跨用户隔离与重启恢复 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实固定版收尾门槛的状态机、检查与通知边界，判断能否作为可信的交付保证。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 目标用户、基线和交付是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向用 DSH 完成开发任务、容易在交付前遗漏测试、审查或文档核对的个人或团队。作者主张在任务完成时由模型调用 wrapup_check，按 start→check→人工审查/构建/一致性→report 循环，连续三轮零问题后出具完成报告并通知。相对原来由模型自行决定何时宣告完成，它提供命名的检查项、命令探测执行、轮次计数和可见报告；真正代码审查、修复与最终事实真实性仍由模型和用户负责。合格交付应至少看到所查命令及结果、人工审查证据、问题修复后复核、可追溯的三轮结果，而不仅是一个 fixed-point 字样。固定版本入口注册模型工具、提示段、Web 状态路由，客户端轮询显示卡片；这些是实现范围，不证明 DSH 宿主已经接受或所有用户都会按提示调用。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:16-40](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/README.md#L16-L40)\n\n作者提出收尾遗漏问题、四类分工与三轮零问题目标。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n````text\n## 它解决什么问题\n\nAI 干完活常说「改好了」，但没跑测试、没看有没有引入回归、没核对文档。\n这个插件把「收尾」变成一个有门槛的动作：\n\n```\n全面检查 → 发现问题 → 修复 → 再全面检查 → …\n        ↑__________________________|\n  直到连续 3 轮零问题 → 通知用户「收尾完成」\n```\n\n**只要有未修复的问题就必然被打回**；哪怕这轮只是修了个小 bug，也**不算干净**\n（计数归零）。这样才不会被「边查边修、修完就说好了」糊弄过去。\n\n---\n\n## 分工\n\n| 谁 | 负责什么 |\n|---|---|\n| **插件** | 轮次状态机、连续干净计数、**自动跑命令类检查**（测试 / lint / audit）、判定放行、通知用户 |\n| **AI** | 代码审查、构建 / 运行验证、一致性检查，以及**真正的修复动作** |\n\n插件是纯 JS，它没法「理解」代码审查发现的问题并动手修 —— 那是 AI 的活。\n插件做的是**纪律**：计数、拦截、放行、报告。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:491-518](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L491-L518)\n\n定义并注册 wrapup_check 模型工具，提示调用顺序。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n  ctx.inject(['tools'], (toolsCtx) => {\n    const tools = toolsCtx.get('tools')\n    if (tools === undefined || tools === null) return\n\n    const definition = {\n      name: TOOL_NAME,\n      description: [\n        '收尾自检哨兵：任务做得差不多时调用它，进入「全面检查 → 发现问题 → 修复 → 再全面检查」的循环，',\n        '直到连续 ' + DRY_ROUNDS + ' 轮全面检查都没有发现任何问题，才判定收尾完成并通知用户。',\n        '',\n        '用法（严格按顺序）：',\n        '1. action=\"start\" —— 开始收尾，重置计数。',\n        '2. action=\"check\" —— 插件自动跑项目里的测试 / lint / audit，把原始输出返回给你。',\n        '3. 你自己再完成另外三类：代码审查、构建/运行验证、一致性检查。',\n        '4. action=\"report\" —— 如实汇报本轮发现的问题（problems），并声明你做了哪几类检查（checks）。',\n        '   只要还有未修复的问题，插件会打回；有修复动作的轮次不计入「连续干净」，计数归零。',\n        '5. 重复 2~4。**只有连续 ' + DRY_ROUNDS + ' 轮 problems 为空数组**才放行，届时会通知用户。',\n        '',\n        '诚实是硬要求：不要把没跑的命令说成跑了，不要把没修的问题标成已修。',\n        '这个工具的全部价值，就是拦住「差不多可以了」。',\n      ].join('\\n'),\n      parameters: TOOL_PARAMETERS,\n      output: {\n        schema: TOOL_OUTPUT_SCHEMA,\n        render: (_args, value) => [{ type: 'text', text: value.message }],\n      },\n\n      async execute(args, exec) {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:751-768](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L751-L768)\n\n安装系统提示段以鼓励模型在交付前调用。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  /* ---------- 给模型的一段系统提示（让它知道该在什么时候用） ---------- */\n  ctx.inject(['systemPrompt'], (promptCtx) => {\n    const prompt = promptCtx.get('systemPrompt')\n    if (prompt === undefined || prompt === null) return\n    const text = [\n      '## 收尾自检（wrapup_check）',\n      '当你认为一件开发任务已经做完、准备交付时，**先调用 `' + TOOL_NAME + '` 跑收尾自检**，不要直接说「搞定了」。',\n      '流程：`action=\"start\"` → `action=\"check\"`（插件自动跑测试/lint/audit）→ 自己完成代码审查、构建验证、一致性检查 ' +\n        '→ `action=\"report\"` 如实汇报（有未修复的问题会被打回；有修复动作的轮次不计入「连续干净」）。',\n      '规则：**连续 ' + DRY_ROUNDS + ' 轮全面检查零问题**才算收尾完成，届时会通知用户。',\n      '不要在没跑的情况下宣称检查通过；不要为了尽快通过而漏报问题。',\n    ].join('\\n')\n    promptCtx.effect(\n      () => prompt.section({ name: 'wrapup-guard', order: 155, text }),\n      'dsh-wrapup-guard: prompt section',\n    )\n  })\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[client/client.js:132-145](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/client/client.js#L132-L145)\n\n浏览器端轮询路由并以完成时间和 sessionId 去重。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    async function poll() {\n      try {\n        const res = await fetch(ROUTE, { headers: { accept: 'application/json' }, cache: 'no-store' })\n        if (!res.ok) return\n        const data = await res.json()\n        const record = data !== null && typeof data === 'object' ? data.latest : null\n        if (record === null || record === undefined) return\n        const key = String(record.finishedAt || '') + '|' + String(record.sessionId || '')\n        if (key === lastSeen) return\n        lastSeen = key\n        showCard(record)\n      } catch {\n        /* 宿主还没就绪或页面正在卸载：下一轮再试 */\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 未在真实 DSH 会话内验证调用时机和用户是否遵循提示。\n  **影响：**不能把提示视为强制交付门槛。\n  **进一步探讨：**用隔离任务记录模型未调用工具时能否照常交付，以及用户看到的完整检查证据。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 自动命令和连续三轮怎样实现？\n\n**研究主题：**功能与机制、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\ndetectCommands 只识别 package.json 中 test/lint/typecheck/check 四种非空脚本，以及 tools/audit.js、tools/check.js、tools/selftest.mjs 存在的文件；依次通过 npm run 或 node 启动，不分析命令内容。因此“白名单”限制的是脚本名称，并不保证脚本无副作用，项目自己的 check 可以做任意事。每条命令顺序执行，180 秒超时；Windows 经 cmd.exe 启动并用 taskkill 杀树，非 Windows 只 kill 直接子进程。输出在完成时截到尾部 24000 字符，但收集期间 stdout/stderr 都无长度上限，长日志仍可积累内存。状态以 sessionId 文件持久化，start 清零，report 中未修复或本轮修复的问题清零，空 problems 则 dryStreak 加一，到三触发 fixed-point 和通知。这个状态机能记账，却没有把外部命令运行证据绑定到 report。state 保存失败被吞掉，注释声称内存更新，但每次 execute 都重新 loadState，没有持续会话内存状态作为退路。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:65-110](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L65-L110)\n\n固定脚本名和文件名探测及执行顺序。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n/**\n * 从项目根探测应该跑哪些命令。\n *\n * 只做「读文件 + 看存在性」，绝不猜：package.json 里有 script 才跑，有对应\n * 的检查脚本文件才跑。探测不到任何命令时返回空数组 —— 那是合法结果，说明\n * 这个项目的命令类检查要靠 AI 手动完成，不是错误。\n *\n * 注意「只认白名单」的取舍：本插件自己用的就是 `npm run check` +\n * `tools/selftest.mjs`，而旧白名单只认 test/lint/typecheck，导致它连自己的\n * 仓库都检查不了（恒报「没有可自动运行的检查」）。所以 `check` 与\n * `tools/selftest.mjs` 也纳入白名单 —— 它们同样是约定俗成的检查名，\n * 不是靠猜脚本内容。\n */\nconst NPM_CHECK_SCRIPTS = ['test', 'lint', 'typecheck', 'check']\nconst TOOL_CHECK_FILES = ['tools/audit.js', 'tools/check.js', 'tools/selftest.mjs']\n\nfunction detectCommands(cwd) {\n  const out = []\n  const pkgPath = join(cwd, 'package.json')\n\n  if (existsSync(pkgPath)) {\n    let pkg\n    try {\n      pkg = JSON.parse(readFileSync(pkgPath, 'utf8'))\n    } catch {\n      pkg = null\n    }\n    const scripts = pkg !== null && pkg !== undefined && typeof pkg.scripts === 'object' && pkg.scripts !== null\n      ? pkg.scripts\n      : {}\n    // 只认这些约定俗成的脚本名，顺序即优先级。\n    for (const key of NPM_CHECK_SCRIPTS) {\n      if (typeof scripts[key] === 'string' && scripts[key].trim() !== '') {\n        out.push({ id: 'npm:' + key, cmd: 'npm', args: ['run', key], source: 'package.json scripts.' + key })\n      }\n    }\n  }\n\n  // 项目自带的静态检查脚本（这个工作区的项目就是这么组织的）。\n  for (const rel of TOOL_CHECK_FILES) {\n    if (existsSync(join(cwd, rel))) {\n      out.push({ id: 'node:' + rel, cmd: 'node', args: [rel], source: rel })\n    }\n  }\n\n  return out\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:122-151](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L122-L151)\n\nWindows cmd.exe 与 taskkill、非 Windows 子进程 kill 分支。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nfunction buildSpawnSpec(spec) {\n  if (process.platform !== 'win32') {\n    return { cmd: spec.cmd, args: spec.args, shell: false }\n  }\n  // 只在**确实需要**时加引号：给每个 token 都套引号会让 cmd 把\n  // `\"\"npm\" \"run\"\"` 当成一个整体命令名，反而报「不是内部或外部命令」。\n  const quote = (s) => {\n    const text = String(s)\n    return /[\\s&|<>^()\"]/.test(text) ? '\"' + text.replace(/\"/g, '\"\"') + '\"' : text\n  }\n  const line = [spec.cmd, ...spec.args].map(quote).join(' ')\n  return { cmd: 'cmd.exe', args: ['/d', '/s', '/c', line], shell: false }\n}\n\n/**\n * 杀掉一整棵进程树。\n *\n * Windows 上没有进程组可以一次性收拾：npm → cmd.exe → node 是一条链，\n * `child.kill()` 只放倒第一环。必须用 `taskkill /T /F` 连子孙一起带走，\n * 否则孙进程会继续持有 stdout 管道，'close' 迟迟不触发。\n */\nfunction killTree(child) {\n  if (child === undefined || child === null || child.pid === undefined) return\n  if (process.platform === 'win32') {\n    try {\n      spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true })\n    } catch { /* 尽力而为 */ }\n    return\n  }\n  try { child.kill('SIGKILL') } catch { /* 进程可能已经退出 */ }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:193-255](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L193-L255)\n\n输出字符串持续累积、完成时裁剪、180秒超时与兜底。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n```text\n    let stdout = ''\n    let stderr = ''\n    let timedOut = false\n\n    // 结果构造器必须在**任何**定时器之前定义：超时兜底路径会调用它，\n    // 而定时器最早在下一轮宏任务才触发 —— 虽然实际上不会撞上 TDZ，\n    // 但把定义提到使用点之前，才是这段代码能自证正确的前提。\n    const buildResult = ({ code, timedOut: to, errorText }) => {\n      const tail = (text) => (text.length <= MAX_OUTPUT_CHARS ? text : '…(截断)\\n' + text.slice(-MAX_OUTPUT_CHARS))\n      if (errorText !== undefined) {\n        return {\n          id: spec.id,\n          command: spec.cmd + ' ' + spec.args.join(' '),\n          source: spec.source,\n          ok: false,\n          exitCode: typeof code === 'number' ? code : null,\n          timedOut: false,\n          ms: Date.now() - started,\n          output: errorText,\n        }\n      }\n      const body = stdout + (stderr ? (stdout ? '\\n' : '') + stderr : '')\n      return {\n        id: spec.id,\n        command: spec.cmd + ' ' + spec.args.join(' '),\n        source: spec.source,\n        ok: !to && code === 0,\n        exitCode: typeof code === 'number' ? code : null,\n        timedOut: to,\n        ms: Date.now() - started,\n        output: to\n          ? '命令超时（超过 ' + Math.round(CMD_TIMEOUT_MS / 1000) + ' 秒）被杀掉。\\n' + tail(body)\n          : tail(body),\n      }\n    }\n\n    // Windows 上我们跑的是 cmd.exe，npm 又是它的子进程：只 kill cmd.exe 会留下\n    // 孙进程继续持有 stdout 管道，'close' 得等孙进程自己结束才触发 —— 超时就形同\n    // 虚设（实测 2 秒超时拖到 60 秒才返回）。所以超时要连整棵进程树一起杀。\n    let killTimer = null\n    const timer = setTimeout(() => {\n      timedOut = true\n      killTree(child)\n      // 兜底：树杀之后管道若仍被别处持有，最多再等 5 秒就强制收尾。\n      killTimer = setTimeout(() => {\n        finish(buildResult({ code: null, timedOut: true }))\n      }, 5_000)\n    }, CMD_TIMEOUT_MS)\n\n    child.stdout?.on('data', (d) => { stdout += d.toString('utf8') })\n    child.stderr?.on('data', (d) => { stderr += d.toString('utf8') })\n\n    child.on('error', (err) => {\n      clearTimeout(timer)\n      if (killTimer !== null) clearTimeout(killTimer)\n      const text = '执行出错：' + String((err && err.message) || err)\n      finish(buildResult({ code: null, timedOut: false, errorText: text }))\n    })\n\n    child.on('close', (code) => {\n      clearTimeout(timer)\n      if (killTimer !== null) clearTimeout(killTimer)\n      finish(buildResult({ code, timedOut }))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:304-325](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L304-L325)\n\n状态每次读盘，写盘异常静默吞掉。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nfunction loadState(sessionId) {\n  try {\n    const raw = readFileSync(statePath(sessionId), 'utf8')\n    const data = JSON.parse(raw)\n    if (data === null || typeof data !== 'object' || Array.isArray(data)) return emptyState()\n    const base = emptyState()\n    return { ...base, ...data, history: Array.isArray(data.history) ? data.history : [] }\n  } catch {\n    return emptyState()\n  }\n}\n\nfunction saveState(sessionId, state) {\n  const file = statePath(sessionId)\n  try {\n    mkdirSync(dirname(file), { recursive: true })\n    const tmp = file + '.tmp-' + process.pid\n    writeFileSync(tmp, JSON.stringify(state, null, 2) + '\\n', 'utf8')\n    renameSync(tmp, file)\n  } catch {\n    /* 落盘失败不该让工具调用失败：状态在内存里也已经更新了 */\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:637-724](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L637-L724)\n\nreport 轮次、清零、三轮通过与通知。\n\n<details>\n<summary>查看原文（88行）</summary>\n\n```text\n          state.round += 1\n          const entry = {\n            round: state.round,\n            problemCount: problems.length,\n            fixedCount: problems.filter((p) => p !== null && typeof p === 'object' && p.fixed === true).length,\n            unfixedCount: unfixed.length,\n            summary: typeof input.summary === 'string' ? input.summary : '',\n            declaredChecks: [...declaredSet],\n            at: new Date().toISOString(),\n          }\n\n          // —— 拦住：有问题没修 ——\n          if (unfixed.length > 0) {\n            state.dryStreak = 0\n            entry.outcome = 'blocked-unfixed'\n            state.history.push(entry)\n            const detail = unfixed\n              .map((p, i) => {\n                const item = p !== null && typeof p === 'object' ? p : {}\n                const where = typeof item.where === 'string' && item.where !== '' ? item.where + '：' : ''\n                const what = typeof item.what === 'string' ? item.what : '（未描述）'\n                return '  ' + (i + 1) + '. ' + where + what\n              })\n              .join('\\n')\n            return snapshot(\n              'continue',\n              '打回：第 ' + state.round + ' 轮还有 ' + unfixed.length + ' 个问题没有修复，不能算干净（连续计数已归零）。' +\n                '\\n未修复的问题：\\n' + detail +\n                '\\n\\n请逐个修掉，然后**重新做一次全面检查**再 report。',\n              { missingKinds },\n            )\n          }\n\n          // —— 拦住：不干净（有已修问题）——\n          if (problems.length > 0) {\n            state.dryStreak = 0\n            entry.outcome = 'blocked-dirty'\n            state.history.push(entry)\n            return snapshot(\n              'continue',\n              '第 ' + state.round + ' 轮修复了 ' + entry.fixedCount + ' 个问题，所以这一轮不算干净（连续计数归零）。' +\n                '\\n继续：再做一次**全面检查**（check + 三类人工检查），确认没有新问题、旧问题也没复发，然后 report。',\n              { missingKinds },\n            )\n          }\n\n          // —— 干净的一轮 ——\n          state.dryStreak += 1\n          entry.outcome = 'clean'\n          entry.missingKinds = missingKinds\n          state.history.push(entry)\n\n          if (state.dryStreak >= DRY_ROUNDS) {\n            state.active = false\n            state.completedAt = new Date().toISOString()\n            const fixedTotal = state.history.reduce((n, h) => n + (h.fixedCount || 0), 0)\n            const problemsTotal = state.history.reduce((n, h) => n + (h.problemCount || 0), 0)\n            const okLines = state.history\n              .filter((h) => h.outcome === 'clean')\n              .map((h) => '  · 第 ' + h.round + ' 轮：零问题')\n              .join('\\n')\n            const fixLines = state.history\n              .filter((h) => (h.fixedCount || 0) > 0)\n              .map((h) => '  · 第 ' + h.round + ' 轮：修了 ' + h.fixedCount + ' 个 —— ' + clip(h.summary, 200))\n              .join('\\n')\n            const report =\n              '✅ 收尾自检通过：连续 ' + DRY_ROUNDS + ' 轮全面检查零问题。\\n' +\n              '（共 ' + state.round + ' 轮，累计发现 ' + problemsTotal + ' 个问题、修复 ' + fixedTotal + ' 个）' +\n              (fixLines !== '' ? '\\n\\n修复记录：\\n' + fixLines : '') +\n              (okLines !== '' ? '\\n\\n放行的三轮：\\n' + okLines : '')\n\n            if (!state.notified) {\n              state.notified = true\n              const record = {\n                sessionId,\n                cwd,\n                rounds: state.round,\n                problemsTotal,\n                fixedTotal,\n                report,\n                finishedAt: state.completedAt,\n              }\n              latest = record\n              notify(sessionId, record)\n            }\n\n            return snapshot('fixed-point', report + '\\n\\n可以把上面的报告转述给用户，任务收尾完成。', {\n              missingKinds: [],\n```\n\n</details>\n\n#### 缺口\n\n- 未在 Windows/Linux 下执行超时、多层子进程与长输出压力测试。\n  **影响：**无法量化进程清理、内存或超时真实边界。\n  **进一步探讨：**使用隔离假项目模拟长日志、孙进程和写盘错误，核系统资源及实际返回。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “强制全面检查”是否真能保证检查发生？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n不能。report 仅要求 problems 为数组；并未要求本轮先调用 check。check 的结果只随该次工具返回，不进入 state 或 report 的判定。report 对人工检查只计算 missingKinds，干净轮即使三类全缺仍加 dryStreak；第三轮达到阈值时直接返回 fixed-point 且 missingKinds 被写为 []，此前的缺项提示不构成拒绝。因此连续三次 report({problems:[]}) 从静态控制流即可放行，即便没有一次自动命令或人工检查。check 发现失败时仅给模型文字提醒，模型如漏报/误报会被计作干净。README 中“强制”“全面”“只有连续三轮全面检查”是作者意图而非程序保证；工具能约束如实上报的问题计数，却不能证实没有未上报的问题。还要区分：本轮没有执行目标代码，此处是固定源码的控制流结论。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-28](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/README.md#L3-L28)\n\n作者描述强制全面检查、三轮零问题后完成。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n> **EN** — A DeepSeek Harness plugin that turns \"task finished\" into a gate:\n> it enforces a **check → fix → re-check** loop, auto-runs your command-class\n> checks, **blocks any round that still has unfixed problems**, and only calls\n> the task done after **three consecutive clean full checks** — then notifies the user.\n> Built to stop the \"good enough\" hand-off.\n\n一个 DeepSeek Harness 插件：**在任务收尾时强制「检查 → 修复 → 再检查」的循环，\n直到连续三次全面检查都没有发现问题，才判定收尾完成并通知用户。**\n\n它的存在意义只有一个：**拦住「差不多可以了」。**\n\n---\n\n## 它解决什么问题\n\nAI 干完活常说「改好了」，但没跑测试、没看有没有引入回归、没核对文档。\n这个插件把「收尾」变成一个有门槛的动作：\n\n```\n全面检查 → 发现问题 → 修复 → 再全面检查 → …\n        ↑__________________________|\n  直到连续 3 轮零问题 → 通知用户「收尾完成」\n```\n\n**只要有未修复的问题就必然被打回**；哪怕这轮只是修了个小 bug，也**不算干净**\n（计数归零）。这样才不会被「边查边修、修完就说好了」糊弄过去。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:583-609](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L583-L609)\n\ncheck 结果作为工具响应返回，未记录在 state。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n        /* ---------- check：自动跑命令 ---------- */\n        if (action === 'check') {\n          if (!state.active) {\n            return snapshot('idle', '收尾自检还没开始。请先 action=\"start\"。')\n          }\n          const { specs, results } = await runAllCommands(cwd)\n          if (specs.length === 0) {\n            return snapshot(\n              'continue',\n              '没有可自动运行的命令类检查（未发现 package.json 的 test/lint/typecheck，也没有 tools/audit.js、tools/check.js）。' +\n                '\\n请你自己手动完成这一类检查，再和其它三类一起 report。',\n            )\n          }\n          const failed = results.filter((r) => !r.ok)\n          const lines = results.map((r) => {\n            const head = (r.ok ? '✓' : r.timedOut ? '⏱ 超时' : '✗ 失败') + '  ' + r.command + '  (' + r.ms + 'ms' + (r.exitCode !== null ? ', exit ' + r.exitCode : '') + ')'\n            const body = r.ok ? clip(r.output, 400) : clip(r.output, 3000)\n            return head + '\\n' + (body === '' ? '（无输出）' : body.replace(/\\n/g, '\\n  '))\n          })\n          const tail = failed.length === 0\n            ? '\\n\\n命令类检查全部通过。请继续完成代码审查 / 构建验证 / 一致性检查，然后 action=\"report\"。'\n            : '\\n\\n有 ' + failed.length + ' 条命令失败——这些都算「本轮发现的问题」，修好之前不要 report 成干净。'\n          return snapshot(\n            'continue',\n            '自动检查结果（' + results.length + ' 条）：\\n' + lines.join('\\n\\n') + tail,\n            { commands: results },\n          )\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:612-630](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L612-L630)\n\nreport 只要求 problems 数组；manual checks 缺项仅生成 missingKinds。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n        /* ---------- report：汇报本轮结论 ---------- */\n        if (action === 'report') {\n          if (!state.active) {\n            return snapshot('idle', '收尾自检还没开始。请先 action=\"start\"。')\n          }\n\n          const problems = Array.isArray(input.problems) ? input.problems : null\n          if (problems === null) {\n            return snapshot(\n              'continue',\n              'report 必须带上 problems 数组（本轮全面检查发现的问题；完全干净就传空数组 []）。' +\n                '空数组才是唯一的「干净」信号——缺参数不等于干净。',\n            )\n          }\n\n          const declared = Array.isArray(input.checks) ? input.checks : []\n          const declaredSet = new Set(declared.filter((k) => typeof k === 'string'))\n          // 「命令类」只要跑过 check 就算做了；这里只校验三类人工检查有没有声明。\n          const missingKinds = ['review', 'build', 'consistency'].filter((k) => !declaredSet.has(k))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:683-741](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L683-L741)\n\n缺人工检查的干净轮仍累加，到第三轮照常 fixed-point。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n          // —— 干净的一轮 ——\n          state.dryStreak += 1\n          entry.outcome = 'clean'\n          entry.missingKinds = missingKinds\n          state.history.push(entry)\n\n          if (state.dryStreak >= DRY_ROUNDS) {\n            state.active = false\n            state.completedAt = new Date().toISOString()\n            const fixedTotal = state.history.reduce((n, h) => n + (h.fixedCount || 0), 0)\n            const problemsTotal = state.history.reduce((n, h) => n + (h.problemCount || 0), 0)\n            const okLines = state.history\n              .filter((h) => h.outcome === 'clean')\n              .map((h) => '  · 第 ' + h.round + ' 轮：零问题')\n              .join('\\n')\n            const fixLines = state.history\n              .filter((h) => (h.fixedCount || 0) > 0)\n              .map((h) => '  · 第 ' + h.round + ' 轮：修了 ' + h.fixedCount + ' 个 —— ' + clip(h.summary, 200))\n              .join('\\n')\n            const report =\n              '✅ 收尾自检通过：连续 ' + DRY_ROUNDS + ' 轮全面检查零问题。\\n' +\n              '（共 ' + state.round + ' 轮，累计发现 ' + problemsTotal + ' 个问题、修复 ' + fixedTotal + ' 个）' +\n              (fixLines !== '' ? '\\n\\n修复记录：\\n' + fixLines : '') +\n              (okLines !== '' ? '\\n\\n放行的三轮：\\n' + okLines : '')\n\n            if (!state.notified) {\n              state.notified = true\n              const record = {\n                sessionId,\n                cwd,\n                rounds: state.round,\n                problemsTotal,\n                fixedTotal,\n                report,\n                finishedAt: state.completedAt,\n              }\n              latest = record\n              notify(sessionId, record)\n            }\n\n            return snapshot('fixed-point', report + '\\n\\n可以把上面的报告转述给用户，任务收尾完成。', {\n              missingKinds: [],\n            })\n          }\n\n          const remaining = DRY_ROUNDS - state.dryStreak\n          const warn =\n            missingKinds.length > 0\n              ? '\\n\\n注意：你声明的手动检查里缺少 ' + missingKinds.map((k) => CHECK_KINDS.find((c) => c.id === k).label).join('、') +\n                '。空 problems 只有在**四类检查都做了**的前提下才算数——下次请补齐（或明确说明为什么这一类不适用）。'\n              : ''\n          return snapshot(\n            'continue',\n            '第 ' + state.round + ' 轮零问题，连续干净 ' + state.dryStreak + ' / ' + DRY_ROUNDS + '（还差 ' + remaining + ' 轮）。' +\n              warn +\n              '\\n\\n下一轮：再完整跑一遍全部四类检查（不要只看刚才改的地方），确认没有新的问题，然后 report。' +\n              (warn !== '' ? '' : ''),\n            { missingKinds },\n          )\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 通知、多会话和采用成本边界是什么？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n客户端每四秒轮询统一 status 路由；宿主内存仅存最近一次 latest，无用户/会话筛选，路由返回这个记录。页面拿到新 finishedAt|sessionId 即显示报告卡片。若同宿主多个会话或用户并行，静态设计上会把最近完成报告给能访问这条路由的浏览器；报告包含 sessionId、cwd 和任务汇总，是否形成跨用户可见性要看 DSH Web 路由的认证和隔离，本轮未验。latest 不持久化，宿主重启后浏览器不能通过路由恢复旧通知，README 的“刷新页面自愈”只在宿主仍保有 latest 时成立。采用需安装 profile 包、重启、接受插件自动运行项目内脚本的副作用和最长每条180秒×每轮命令数×至少三轮的时间成本；命令通过本身不等于业务验收。当前建议仅在隔离项目试用，不能将固定版本当审计级质量门。可改进但本版未实现：每轮生成不可伪造的 check 记录和检查项完成记录，report 需引用同轮结果且失败阻断；对会话/用户隔离通知、显式展示未通过证据。最小验证用有失败脚本与两个会话的临时项目，对比漏 check、漏手工类别、失败后空 report 和路由可见性。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:445-489](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L445-L489)\n\n全局 latest 和不带会话筛选的 GET 路由。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\nexport function apply(ctx) {\n  /** 最近一次完成的收尾记录，供浏览器端轮询展示。 */\n  let latest = null\n\n  const notify = (sessionId, payload) => {\n    try {\n      ctx.emit('wrapup-guard/completed', { sessionId, ...payload })\n    } catch {\n      /* 没有监听者（例如非 Web 前端）时静默即可；工具返回值里也有完整报告 */\n    }\n  }\n\n  /* ---------- 浏览器端轮询用的只读路由 ---------- */\n  //\n  // 一次收尾完成就写一次 `latest`；客户端 `fetch` 它并弹出通知。这样刷新页面\n  // 也能看到最近一次结果，不需要持久订阅。\n  ctx.inject(['webServer'], (hostCtx) => {\n    const server = hostCtx.webServer\n    if (server === undefined || server === null || typeof server.register !== 'function') return\n    hostCtx.effect(\n      () =>\n        server.register({\n          kind: 'exact',\n          path: '/dsh-wrapup-guard/status',\n          handler: (request, response) => {\n            if (request !== undefined && request !== null && request.method !== 'GET' &&\n                request.method !== undefined && request.method !== null) {\n              try { response.writeHead(405, { allow: 'GET' }); response.end() } catch { /* ignore */ }\n              return\n            }\n            const body = JSON.stringify({ latest })\n            try {\n              response.writeHead(200, {\n                'content-type': 'application/json; charset=utf-8',\n                'cache-control': 'no-store',\n              })\n              response.end(body)\n            } catch {\n              /* 路由失败不该影响工具本身 */\n            }\n          },\n        }),\n      'dsh-wrapup-guard: status route',\n    )\n  })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[client/client.js:132-145](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/client/client.js#L132-L145)\n\n轮询与显示去重的实际键。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    async function poll() {\n      try {\n        const res = await fetch(ROUTE, { headers: { accept: 'application/json' }, cache: 'no-store' })\n        if (!res.ok) return\n        const data = await res.json()\n        const record = data !== null && typeof data === 'object' ? data.latest : null\n        if (record === null || record === undefined) return\n        const key = String(record.finishedAt || '') + '|' + String(record.sessionId || '')\n        if (key === lastSeen) return\n        lastSeen = key\n        showCard(record)\n      } catch {\n        /* 宿主还没就绪或页面正在卸载：下一轮再试 */\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:24-29](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/lib/index.js#L24-L29)\n\n三轮阈值、单命令180秒超时。\n\n```text\n/** 连续这么多轮「全面检查无问题」才算收尾完成。用户要求的是三次。 */\nconst DRY_ROUNDS = 3\n/** 单条检查命令的超时（毫秒）。足够跑完一次测试，又不至于挂死。 */\nconst CMD_TIMEOUT_MS = 180_000\n/** 捕获输出上限，避免一条刷屏的日志把内存吃光。 */\nconst MAX_OUTPUT_CHARS = 24_000\n```\n\n**依据 4 · 作者声明**：[README.md:100-139](https://github.com/566001/dsh-wrapup-guard/blob/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2/README.md#L100-L139)\n\n作者通知、安装和重启说明。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n````text\n## 通知\n\n达到「连续 3 轮零问题」时：\n\n- 宿主端写一份完成记录，并通过 `/dsh-wrapup-guard/status` 暴露给浏览器端；\n- 浏览器端轮询这个路由，右下角弹出**完成卡片**（含汇总：共几轮、修了几个问题、\n  完整报告），12 秒后自动收成小徽章，点开可再看；\n- 工具返回值里同时带完整报告，AI 会把它转述给用户。\n\n---\n\n## 安装\n\n```jsonc\n// profiles/<profile>/package.json\n{\n  \"dependencies\": {\n    \"dsh-wrapup-guard\": \"^0.1.0\"\n  },\n  \"dsh\": {\n    \"profile\": {\n      \"bundles\": [\"…\", \"dsh-wrapup-guard\"]\n    }\n  }\n}\n```\n\n> 本地开发时依赖可写 `file:/absolute/path/to/dsh-wrapup-guard`；\n> 从 npm 安装则直接写版本号。\n\n然后在该 profile 目录用 DSH 自带的 pnpm 安装：\n\n```bash\nnode <DSH>/resources/runtime/pnpm/bin/pnpm.cjs install --no-frozen-lockfile\n```\n\n> `file:` 依赖会被**复制**进 profile 的 `node_modules`，所以改了源码之后要重跑\n> install 才能在 DSH 里生效。\n\n**改完需要重启 DSH**（插件行的加载在启动时完成）。\n````\n\n</details>\n\n#### 缺口\n\n- 真实 DSH Web 路由的认证、profile/会话隔离未验证。\n  **影响：**不能断言跨用户泄露或通知一定可见。\n  **进一步探讨：**在两个隔离会话和不同用户访问同一路由，记录响应与卡片归属。\n- 强制同轮检查记录与路由会话隔离尚未实现。\n  **影响：**属于改进方案，不可算现有能力。\n  **进一步探讨：**实现原型后以漏 check、失败、长日志、重启矩阵对照误放行与额外耗时。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cb1229f056e066dea44d90cb5ed4c57f2394a11b454fd6f274b0d4aba349b4cd。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 947 | 761 | 105 | — |\n| .md | source | 1 | 165 | — | — | 1501 |\n| .mjs | source | 2 | 187 | 131 | 28 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 限制 |\n| --- | --- | --- |\n| wrapup_check | 命令检查与三轮记账 | 不绑定同轮检查证据 |\n| status route/client | 显示最近完成报告 | 宿主内存 latest、未按会话筛选 |\n\n\n## 工程亮点\n\n脚本名称白名单只限制发现集合，不限制脚本自身副作用。输出在完成时裁剪，收集中无界；saveState 吞错，每次调用仍读盘；report 不核同轮 check 结果。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、client/client.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态检查 README、package、宿主源码和客户端；未执行目标包、目标检查脚本或 DSH 宿主。\n- 下一步：用临时项目做有失败脚本、漏 check、缺人工 checks、状态目录只读、长日志及双会话场景，观察误放行、资源与通知归属。\n",
         "metadata": {
             "repository": "566001/dsh-wrapup-guard",
             "repository_id": 841979943,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:24:59.181Z",
+            "window_start": "2026-09-22T05:24:59.181Z",
             "stars": 1,
             "pushed_at": "2026-10-14T15:38:33Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A566001%2Fdsh-wrapup-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13F095:219504:6AD84A4C and timestamp 2026-10-21 05:14:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A566001%2Fdsh-wrapup-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:0BD3:A1FF4:10C88D:6AD84A4C and timestamp 2026-10-21 05:14:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A566001%2Fdsh-wrapup-guard%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:90BBC:14BF7D:2261AD:6AD84A4C and timestamp 2026-10-21 05:14:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A566001%2Fdsh-wrapup-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:14A15E:223921:6AD84A4D and timestamp 2026-10-21 05:14:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A566001%2Fdsh-wrapup-guard%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:144E40:21F0F1:6AD84A4D and timestamp 2026-10-21 05:14:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-wrapup-guard",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T05:25:07.604Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 74,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wrapup-guard",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wrapup-guard",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-15T08:19:36.730Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T05:25:07.604Z",
                     "source_url": "https://registry.npmjs.org/dsh-wrapup-guard",
                     "error": null,
                     "latest_version": "0.1.0",
                     "latest_published_at": "2026-10-15T08:20:33.862Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-                "current_revision": "99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

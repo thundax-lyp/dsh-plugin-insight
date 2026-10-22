@@ -28,36 +28,82 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1423215373-root-directory-0",
+                    "id": "2026-10-22-02-github-1423215373-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:13:08.878Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T08:58:25.794Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1423215373-root-author",
+                    "id": "2026-10-22-02-github-1423215373-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "README.md",
+                            "content_sha256": "60a7d3e39b30c093913ab7ac43920c3e56e803e0b579054bcd39efb997182044"
+                        }
+                    ],
                     "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-                    "captured_at": "2026-10-20T03:13:08.878Z",
-                    "summary": "盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:25.794Z",
+                    "summary": "扫描监听端点并给进程归属分级，预览后代终止计划，经confirm后结束进程并检查端口。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1423215373-root-source",
+                    "id": "2026-10-22-02-github-1423215373-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js",
+                    "url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/scan.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "lib/scan.js",
+                            "content_sha256": "32944aadcd3a6fe6bf40cb210bf0736be0e081e15d2fb665c0df9869e9d2d1a9"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "lib/attribute.js",
+                            "content_sha256": "93e7ac424fc1acfc70f97e373dd540dc1e352e2d27e699e72b62d1ffc32aa973"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "lib/index.js",
+                            "content_sha256": "1508a335d8ac909f093de829b419b29c6881e3e69111ffa5b622dafbe084baa2"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "lib/kill.js",
+                            "content_sha256": "74b8538cc0135c7a7b9b8b9c7690711abbc036bb7afbc1b11d11256879fdc700"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "lib/probe.js",
+                            "content_sha256": "a22b99c32c7992682b84493cd0416df671a2923b6f82b636af94c5b3cb9309df"
+                        },
+                        {
+                            "repository_url": "https://github.com/11111353535/dsh-reaper",
+                            "commit": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                            "path": "package.json",
+                            "content_sha256": "6d537eb0c4dbd0452f00d0be8bb31f083492b7fe87c74afdf3a88538257eb780"
+                        }
+                    ],
                     "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-                    "captured_at": "2026-10-20T03:13:08.878Z",
-                    "summary": "核查 lib/index.js、lib/kill.js；按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T08:58:25.794Z",
+                    "summary": "核查 lib/scan.js、lib/attribute.js、lib/index.js、lib/kill.js、lib/probe.js、package.json；跨平台系统枚举、父链/命令行启发式、后代闭包、默认预览、TERM/可选KILL与TCP回查。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/11111353535--dsh-reaper/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。",
+                        "固定扫描平台命令、分级/后代计划、工具/命令与信号/端口探测；未运行扫描、目标测试或终止进程，未证明平台运行语义。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -68,9 +114,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。",
+                    "text": "维护者诊断遗留dev服务器占端口，需核完整影响和可恢复服务。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -79,16 +125,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。",
+                    "text": "跨平台系统枚举、父链/命令行启发式、后代闭包、默认预览、TERM/可选KILL与TCP回查。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -97,16 +143,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 盘点归属 | 父链/命令行分级和degraded | 是当前会话遗留且获准结束 |\n| 清理树 | 后代闭包/TERM与可选KILL | 执行时身份不变、全后代受保护 |\n| 端口恢复 | IPv4 loopback TCP连接探测 | IPv6/特定地址/UDP真实释放和服务可用 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -115,16 +161,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "减少人工找进程的潜在收益需与误判、终止恢复和跨平台维护成本一起评估。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主/系统命令及权限，金额未知 | 确定禁止结束范围/恢复步骤 | 提权扩大影响，不能补身份绑定 |\n| 持续使用 | 整机扫描、第二次枚举、逐PID等待 | 审后代树、命令行和真实端点 | 每PID默认等3秒，总目标数影响时长 |\n| 失败恢复 | 重启被停服务/恢复未保存状态 | 区分误归属、存活、重启和端口他人接管 | 进程结束不是可回滚事务 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -133,16 +179,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "深度优先终止子进程、结束后确认端口释放可借鉴；预览与真实执行之间仍有时间差。",
+                    "text": "分层scan/attribute/plan/kill/probe、结构化降级与拒绝、纯分级/闭包、默认预览和显式force值得复用。二次进程读取有价值，但未消除身份竞态；后代depth以BFS序号而非真实层深，倒序仍通常把子孙排前，不能直接当精确深度字段。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -151,16 +197,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。",
+                    "text": "先观察，以只读诊断为限；身份/后代保护/取消与精确端点协议补齐后再评估受控试用。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -169,16 +215,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。",
+                    "text": "固定扫描平台命令、分级/后代计划、工具/命令与信号/端口探测；未运行扫描、目标测试或终止进程，未证明平台运行语义。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -187,16 +233,16 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "版本 0.1.0，需要系统进程与端口枚举能力，权限和工具可用性影响结果。",
+                    "text": "npm0.1.0/DSH，Node^22.19或>=24，系统命令和宿主服务需匹配。",
                     "evidence_ids": [
-                        "20261020-research40-github-1423215373-root-source"
+                        "2026-10-22-02-github-1423215373-root-source"
                     ],
                     "dependencies": [
                         {
@@ -205,40 +251,135 @@
                             "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:13:08.878Z",
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "将归属理由、后代影响预览和端口回查集中，优于仅按端口kill，但非进程身份或会话授权保证。详见[Q01](#research-q01)与[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "后代漏保护端口、信号前无身份重核，free_port不强制归属，取消和IPv4 TCP探测不足以证明安全回收。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨身份/计划hash绑定和精确端点回收收据，逐信号重核保护/取消并保留unknown，跨OS成本未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215373-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423215373:root",
+                            "area": "code",
+                            "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T08:58:25.794Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:13:08.878Z",
+            "last_checked_at": "2026-10-22T08:58:25.794Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
+                "reviewed_at": "2026-10-22T08:58:25.794Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1423215373:root",
+                        "area": "code",
+                        "fingerprint": "b0412244e623d54fbf0bded66cba5203de8c85c4"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 11
+                    },
+                    "rationale": "novelty成熟OS命令整合取小幅；mechanism分级/闭包/回读取实质；transferability预览与拒绝方式取实质；simplification集中诊断取较强，安全未验证不加分。",
+                    "basis": "interpretation",
+                    "score": 45,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215373-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow端口冲突恢复取实质；delivery理由/计划取实质；reach跨平台声明取实质；economics无旁损/恢复成本数据取小幅。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423215373-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "端口排障者可只试扫描预览，对照系统工具确认归属，终止仅限可丢弃开发进程。",
+                "decision": "observe",
+                "reason": "诊断和预览有价值，但后代保护、身份/取消与端点回查缺口使自动终止保证不足。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "遗留开发服务占端口的清理任务具体。"
+                        "rationale": "遗留进程/端口问题明确。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "祖先链、工作区保护和执行前复查胜过裸kill。"
+                        "score": 13,
+                        "rationale": "分级/闭包整合有增量，手工可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "计划确认与保护路径可查，PID复用及归属准确率未验。"
+                        "rationale": "固定执行分支可核，仅源码核查。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "系统权限和平台枚举需维护，误终止恢复成本不能忽略。"
+                        "score": 5,
+                        "rationale": "误归属/旁损恢复及跨OS维护负担。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T08:58:25.794Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1423215373-root-source"
+                    "2026-10-22-02-github-1423215373-root-source"
                 ],
                 "dependencies": [
                     {
@@ -263,89 +404,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "694146a2938d987de54fe704b13cc49ecdd7eb937e45e72644ba840c5259a06d"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "d02dc55e16dd421f6299481197bbade7462cd70c93e6021894e31c4e46e94f4e"
         },
         "publication.metadata": "data/plugins/11111353535--dsh-reaper/META.json",
         "publication.summaries": {
-            "text": "盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。",
+            "text": "扫描监听端点并给进程归属分级，预览后代终止计划，经confirm后结束进程并检查端口。",
             "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
             "source_url": "https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/README.md"
         },
         "publication.capabilities": {
             "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
             "items": {
-                "模型工具": "端口扫描与可确认的进程清理。",
-                "用户命令": "/reap 查看进程归属。"
-            }
+                "模型工具": "reaper_scan/reap/free_port",
+                "用户命令": "/reap"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 盘点/分级 | 整机监听与归属提示 | 父链/子串非当前会话授权 |\n| 后代计划 | 展示影响/拒绝 | 子孙保护端口缺口需核 |\n| 终止 | confirm后TERM/可选KILL | 无身份收据，取消缺口 |\n| 端口回查 | IPv4 TCP连接 | 非所有协议/地址释放证明 |"
         },
         "publication.advice": {
             "revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-            "text": "先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。"
+            "text": "先观察，以只读诊断为限；身份/后代保护/取消与精确端点协议补齐后再评估受控试用。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/11111353535--dsh-reaper",
-        "reports": "# dsh-reaper\n\n> 盘点端口占用与进程归属，先预览再按显式参数清理可归属的进程树。\n\n## 固定范围与依据\n\n固定提交 [b0412244e623d54fbf0bded66cba5203de8c85c4](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:13:08.878Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：lib/index.js、lib/kill.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。\n- **亮点**：按宿主祖先链、工作区和保护规则评级，默认返回计划，confirm:true 才执行，发信号前再次检查保护。\n- **思考**：归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。\n- **建议**：先仅用扫描与预览，对照系统工具确认归属；实际清理只在可丢弃开发进程上验收。\n\n## 场景与替代办法\n\n智能体遗留开发服务占用端口时，开发者需要区分可清理进程与宿主及系统服务。\n\n系统端口与进程工具透明但需手工关联；高风险环境宜保留人工判断。\n\n## 依赖与流程\n\n需要本机系统命令、进程权限及正确工作区；容器和远程映射会改变观察范围。\n\n扫描、核对计划、显式确认后清理，再核查释放结果；误归属时保护并重新确认。\n\n## 成本与效果\n\n减少人工找进程的潜在收益需与误判、终止恢复和跨平台维护成本一起评估。\n\n归属和不可覆盖的保护规则比裸 kill 端口更有约束，但启发式归属仍不是授权证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7bd33fe6818e62474866b7fbe1eab28b166b0a311ae8b9993d73af7c668a74a3。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 1944 | 1203 | 605 | — |\n| .md | source | 2 | 336 | — | — | 2870 |\n| .mjs | source | 1 | 77 | 42 | 26 | — |\n| .mjs | test | 3 | 690 | 540 | 74 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：端口扫描与可确认的进程清理。\n- **用户命令**：/reap 查看进程归属。\n\n## 工程亮点\n\n深度优先终止子进程、结束后确认端口释放可借鉴；预览与真实执行之间仍有时间差。\n\n## 分发与兼容\n\n版本 0.1.0，需要系统进程与端口枚举能力，权限和工具可用性影响结果。\n\n## 历史对照\n\n前次代码指纹为 b0412244e623d54fbf0bded66cba5203de8c85c4；本轮固定为 b0412244e623d54fbf0bded66cba5203de8c85c4。系统端口与进程工具透明但需手工关联；高风险环境宜保留人工判断。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证 PID 复用、系统枚举与跨平台归属准确率；confirm 参数不等同于总会弹出人工审批。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：在测试进程树中覆盖宿主保护、同名服务、PID 变化、拒绝权限和 TERM 后仍存活。\n",
+        "reports": "# dsh-reaper\n\n> 扫描监听端点并给进程归属分级，预览后代终止计划，经confirm后结束进程并检查端口。\n\n## 研究范围\n\n- **仓库**：[11111353535/dsh-reaper](https://github.com/11111353535/dsh-reaper)\n- **版本号**：0.1.0（[固定提交 b0412244e623d54fbf0bded66cba5203de8c85c4](https://github.com/11111353535/dsh-reaper/tree/b0412244e623d54fbf0bded66cba5203de8c85c4)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持进程分级、后代影响预览和显式终止流程；后代保护端口、信号前身份/取消及精确端点释放仍有缺口，安全回收保证不足。身份与计划版本绑定收据尚未验证。\n\n## 洞察短评\n\n- **用途**：维护者诊断遗留dev服务器占端口，需核完整影响和可恢复服务。\n- **亮点**：将归属理由、后代影响预览和端口回查集中，优于仅按端口kill，但非进程身份或会话授权保证。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：后代漏保护端口、信号前无身份重核，free_port不强制归属，取消和IPv4 TCP探测不足以证明安全回收。详见[Q02](#research-q02)。\n- **建议**：可探讨身份/计划hash绑定和精确端点回收收据，逐信号重核保护/取消并保留unknown，跨OS成本未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，以只读诊断为限；身份/后代保护/取消与精确端点协议补齐后再评估受控试用。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将归属理由、后代影响预览和端口回查集中，优于仅按端口kill，但非进程身份或会话授权保证。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n后代漏保护端口、信号前无身份重核，free_port不强制归属，取消和IPv4 TCP探测不足以证明安全回收。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨身份/计划hash绑定和精确端点回收收据，逐信号重核保护/取消并保留unknown，跨OS成本未验证。详见[Q05](#research-q05)。\n\n进一步探讨先用保护后代/PID复用/取消/地址协议夹具核规则，再测可丢弃服务及恢复，不用生产进程验证。\n\n## 场景与替代办法\n\n维护者诊断遗留dev服务器占端口，需核完整影响和可恢复服务。\n\n手工ss/lsof/netstat+进程树可替代，插件集中理由/计划也增加启发式误判和自动终止恢复风险。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 匹配DSH tools/commands及宿主Schema | 必需 | 三工具和/reap | 包未声明peer不等无宿主依赖 |\n| Node声明版本及系统枚举命令 | 必需 | CIM/PowerShell或ss/ps/lsof | 失败退化信息，非完整无进程 |\n| 进程命令行/父链可读权限 | 归属必需 | 判定workspace/host后代 | 权限不足会削弱归属，不能猜 |\n| workspaceRegistry | 可选 | 会话根归属 | 会回退current/default，非强会话绑定 |\n| signal权限及恢复服务能力 | 真实结束必需 | TERM/可选KILL | EPERM报告；终止不可由预览撤回 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定宿主/包，明确目标/不可停服务及恢复步骤 | 补neverKill/protectPorts，隔离测试进程 |\n| 盘点 | /reap或scan，只读核命令/父链/端点 | degraded时不推断全量归属 |\n| 预览 | 明确PID/port，confirmfalse看完整后代 | 不把all归属当当前会话授权 |\n| 实施/恢复 | 确认仍同进程和目标，再依真实协议查端口 | 当前版本保护存在缺口，观察为先；未知不重杀 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主/系统命令及权限，金额未知 | 确定禁止结束范围/恢复步骤 | 提权扩大影响，不能补身份绑定 |\n| 持续使用 | 整机扫描、第二次枚举、逐PID等待 | 审后代树、命令行和真实端点 | 每PID默认等3秒，总目标数影响时长 |\n| 失败恢复 | 重启被停服务/恢复未保存状态 | 区分误归属、存活、重启和端口他人接管 | 进程结束不是可回滚事务 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 盘点归属 | 父链/命令行分级和degraded | 是当前会话遗留且获准结束 |\n| 清理树 | 后代闭包/TERM与可选KILL | 执行时身份不变、全后代受保护 |\n| 端口恢复 | IPv4 loopback TCP连接探测 | IPv6/特定地址/UDP真实释放和服务可用 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核遗留进程归属/后代计划/确认信号与端点恢复，区分提示安全声明和实际执行谓词。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 面向谁，盘点到释放如何工作？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向开发时遇到遗留dev server/watcher占端口、需要先识别影响再收回的人。输入当前工作区或指定PID/端口/all及confirm/force，输出整机端点分级、后代计划、拒绝项与信号/端口结果。成功应是授权目标被结束、无旁损且精确协议/地址端口可重新使用，不是单纯pid消失。\n\n系统扫描分平台用Windows CIM再fallback netstat/tasklist，Linux ss/ps，macOS lsof/ps，异常给degraded。分级依据宿主父链/后代、命令行工作区子串、服务标记/端口；all仅选agent-spawned/workspace。reap先扫描选root、再枚举进程建闭包，confirm不true只预览；true按depth倒序TERM，force才KILL，最后以端口号探测。三模型工具和/reap共用链。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/scan.js:392-408](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/scan.js#L392-L408)\n\nWindowsfallback。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  degraded.push('CIM scan unavailable; fell back to netstat + tasklist')\n  const [netstatOut, tasklistOut] = await Promise.all([\n    tryRun('netstat', ['-ano'], { timeoutMs, signal }),\n    tryRun('tasklist', ['/FO', 'CSV', '/NH'], { timeoutMs, signal }),\n  ])\n  const listeners = netstatOut === undefined ? [] : parseNetstat(netstatOut, { includeUdp })\n  const names = tasklistOut === undefined ? new Map() : parseTasklist(tasklistOut)\n  const processes = [...names].map(([pid, name]) => ({\n    pid,\n    ppid: 0,\n    name,\n    commandLine: '',\n    startedAt: null,\n    ageSeconds: null,\n    rssBytes: null,\n  }))\n  return { listeners, processes }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/scan.js:417-456](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/scan.js#L417-L456)\n\nLinux/macOS命令。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nasync function scanLinux({ includeUdp, timeoutMs, signal, degraded }) {\n  const ssArgs = includeUdp ? ['-H', '-ltnup'] : ['-H', '-ltnp']\n  const [ssOut, psOut] = await Promise.all([\n    tryRun('ss', ssArgs, { timeoutMs, signal }),\n    tryRun('ps', ['-eo', 'pid=,ppid=,comm=,etimes=,args='], { timeoutMs, signal }),\n  ])\n  if (ssOut === undefined) degraded.push('ss unavailable; listening sockets could not be enumerated')\n  const listeners = ssOut === undefined ? [] : parseSs(ssOut, includeUdp ? 'tcp/udp' : 'tcp')\n  if (psOut === undefined) degraded.push('ps unavailable; process details are missing')\n  const processes = (psOut === undefined ? [] : parsePs(psOut)).map((row) => ({\n    ...row,\n    startedAt: null,\n    rssBytes: null,\n  }))\n  return { listeners, processes }\n}\n\n/**\n * macOS scan via `lsof` and `ps`.\n *\n * @param {{ includeUdp: boolean, timeoutMs: number, signal?: AbortSignal, degraded: string[] }} options\n * @returns {Promise<{ listeners: unknown[], processes: unknown[] }>}\n */\nasync function scanDarwin({ includeUdp, timeoutMs, signal, degraded }) {\n  const [tcpOut, udpOut, psOut] = await Promise.all([\n    tryRun('lsof', ['-nP', '-iTCP', '-sTCP:LISTEN', '-Fpcn'], { timeoutMs, signal }),\n    includeUdp ? tryRun('lsof', ['-nP', '-iUDP', '-Fpcn'], { timeoutMs, signal }) : Promise.resolve(undefined),\n    tryRun('ps', ['-eo', 'pid=,ppid=,comm=,etimes=,args='], { timeoutMs, signal }),\n  ])\n  if (tcpOut === undefined) degraded.push('lsof unavailable; listening sockets could not be enumerated')\n  const listeners = [\n    ...(tcpOut === undefined ? [] : parseLsof(tcpOut, 'tcp')),\n    ...(udpOut === undefined ? [] : parseLsof(udpOut, 'udp')),\n  ]\n  const processes = (psOut === undefined ? [] : parsePs(psOut)).map((row) => ({\n    ...row,\n    startedAt: null,\n    rssBytes: null,\n  }))\n  return { listeners, processes }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/attribute.js:255-296](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L255-L296)\n\n分级与输出。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nexport function classify(input) {\n  const byPid = indexByPid(input.processes)\n  const protectPorts = new Set(input.protectPorts ?? [])\n  const neverKill = (input.neverKill ?? []).map((value) => value.toLowerCase()).filter((value) => value !== '')\n\n  /* Which pids descend from the harness host? Computed once, not per endpoint. */\n  const hostDescendants = new Set()\n  for (const row of input.processes) {\n    if (row.pid === input.hostPid) continue\n    const chain = ancestorsOf(byPid, row.pid)\n    if (chain.includes(input.hostPid)) hostDescendants.add(row.pid)\n  }\n\n  const endpoints = []\n  for (const listener of input.listeners) {\n    const row = listener.pid === null ? undefined : byPid.get(listener.pid)\n    const grade = verdictFor({ listener, row, ...input, hostDescendants, protectPorts, neverKill })\n    endpoints.push({\n      ...listener,\n      process:\n        row === undefined\n          ? null\n          : {\n              pid: row.pid,\n              ppid: row.ppid,\n              name: row.name,\n              commandLine: row.commandLine,\n              ageSeconds: row.ageSeconds,\n            },\n      verdict: grade.verdict,\n      reasons: grade.reasons,\n      ...(grade.marker === undefined ? {} : { marker: grade.marker }),\n    })\n  }\n\n  const protectedPids = new Set()\n  for (const row of input.processes) {\n    const verdict = verdictForProcess({ row, ...input, hostDescendants, protectPorts, neverKill })\n    if (verdict.verdict === 'protected') protectedPids.add(row.pid)\n  }\n\n  return { endpoints, processes: input.processes, protectedPids }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/attribute.js:406-407](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L406-L407)\n\nall可选判据。\n\n```text\nexport function isAutoSelectable(verdict) {\n  return verdict === 'agent-spawned' || verdict === 'workspace'\n```\n\n**依据 5 · 源码核查**：[lib/index.js:278-328](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L278-L328)\n\n预览/执行/回执。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\nasync function reap(ctx, config, exec, args) {\n  const scan = await runScan(ctx, config, exec, {})\n  const { roots, notes } = selectRoots(scan, args)\n\n  if (roots.length === 0) {\n    return {\n      confirmed: args.confirm === true,\n      force: args.force === true,\n      targets: [],\n      refused: [],\n      freedPorts: [],\n      untouched: [],\n      notes,\n      scan,\n    }\n  }\n\n  const processes = await loadProcesses(exec, config)\n  const selfChain = selfChainFor(processes)\n  const plan = buildKillPlan({\n    processes,\n    listeners: scan.endpoints,\n    roots,\n    selfChain,\n    protectPorts: scan.protectedPorts,\n    neverKill: config.neverKill,\n  })\n\n  if (args.confirm !== true) {\n    return { ...plan, confirmed: false, force: args.force === true, notes, scan }\n  }\n\n  const ports = plan.freedPorts.map((row) => row.port)\n  const outcome = await terminate({\n    targets: plan.targets,\n    force: args.force === true,\n    graceMs: config.graceMs,\n    signal: exec?.signal,\n  })\n\n  const release = ports.length > 0 ? await waitForPortsReleased(ports, { signal: exec?.signal }) : { released: [], stillHeld: [] }\n\n  return {\n    ...plan,\n    confirmed: true,\n    force: args.force === true,\n    outcome,\n    portsReleased: release.released,\n    portsStillHeld: release.stillHeld,\n    notes,\n    scan,\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/kill.js:98-144](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/kill.js#L98-L144)\n\n信号顺序。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  for (const target of ordered) {\n    if (input.signal?.aborted === true) break\n    if (!isAlive(target.pid)) {\n      emit({ pid: target.pid, name: target.name, action: 'gone' })\n      continue\n    }\n\n    const graceful = signalPid(target.pid, 'SIGTERM')\n    if (!graceful.ok && graceful.reason !== 'already exited') {\n      failed.push({ pid: target.pid, reason: graceful.reason ?? 'signal failed' })\n      continue\n    }\n    emit({ pid: target.pid, name: target.name, action: 'sigterm' })\n\n    const deadline = Date.now() + (force ? graceMs : graceMs)\n    let alive = true\n    while (Date.now() < deadline && alive) {\n      await delay(100, input.signal)\n      alive = isAlive(target.pid)\n    }\n    if (!alive) {\n      terminated.push(target.pid)\n      continue\n    }\n\n    if (!force) {\n      survived.push(target.pid)\n      emit({ pid: target.pid, name: target.name, action: 'survived', detail: 'needs force' })\n      continue\n    }\n\n    const forced = signalPid(target.pid, 'SIGKILL')\n    if (!forced.ok && forced.reason !== 'already exited') {\n      failed.push({ pid: target.pid, reason: forced.reason ?? 'force signal failed' })\n      continue\n    }\n    emit({ pid: target.pid, name: target.name, action: 'sigkill' })\n    await delay(200, input.signal)\n    if (isAlive(target.pid)) {\n      survived.push(target.pid)\n      emit({ pid: target.pid, name: target.name, action: 'survived', detail: 'unresponsive to SIGKILL' })\n    } else {\n      terminated.push(target.pid)\n    }\n  }\n\n  return { terminated, survived, failed }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/index.js:355-424](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L355-L424)\n\n三工具与命令。\n\n<details>\n<summary>查看原文（70行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  ctx.tools.register(\n    defineTool({\n      name: 'reaper_scan',\n      description:\n        'Inventory every listening TCP endpoint on this machine and grade its holder as agent-spawned, workspace, dev-server, unattributed, system, or protected. Read-only: signals nothing. Use this before reaping, and to answer \"what is holding that port\".',\n      parameters: {\n        includeUdp: { type: 'boolean', description: 'Also enumerate UDP endpoints. Defaults to the plugin config.' },\n        workspace: { type: 'string', description: 'Workspace root used to attribute processes by command line. Defaults to the current session workspace.' },\n      },\n      output: { schema: { type: 'json' }, render: (_args, value) => [{ type: 'text', text: renderScan(value) }] },\n      timeoutMs: 60_000,\n      async execute(args, exec) {\n        return await runScan(ctx, config, exec, { includeUdp: args.includeUdp, workspace: args.workspace })\n      },\n    }),\n  )\n\n  ctx.tools.register(\n    defineTool({\n      name: 'reaper_reap',\n      description:\n        'Reclaim processes left behind by this session. Computes the full descendant closure of each target (so a dev-server shim does not orphan its child) and, unless confirm is true, only PREVIEWS the plan. Nothing is signalled without confirm: true. Processes in the harness process tree, pid 0-4, neverKill matches and protectPorts holders are refused unconditionally.',\n      parameters: {\n        pids: { type: 'array', items: { type: 'integer' }, description: 'Explicit root pids to reap. Their descendants are included automatically.' },\n        ports: { type: 'array', items: { type: 'integer' }, description: 'Reap whatever holds these ports.' },\n        all: { type: 'boolean', description: 'Also select every endpoint confidently attributable to this session (agent-spawned and workspace verdicts only).' },\n        force: { type: 'boolean', description: 'Escalate to SIGKILL for processes that ignore SIGTERM. Defaults to false.' },\n        confirm: { type: 'boolean', description: 'Actually signal the planned processes. Defaults to false, which previews only.' },\n      },\n      output: { schema: { type: 'json' }, render: (_args, value) => [{ type: 'text', text: renderPlan(value) }] },\n      timeoutMs: 120_000,\n      async execute(args, exec) {\n        return await reap(ctx, config, exec, args)\n      },\n    }),\n  )\n\n  ctx.tools.register(\n    defineTool({\n      name: 'reaper_free_port',\n      description:\n        'Reclaim one specific port. Refuses when the holder cannot be attributed, when the port is protected, or when the holder is part of the harness itself — in those cases it reports why instead of guessing. Previews by default; pass confirm: true to signal.',\n      parameters: {\n        port: { type: 'integer', required: true, description: 'The TCP port to reclaim.' },\n        force: { type: 'boolean', description: 'Escalate to SIGKILL if SIGTERM is ignored. Defaults to false.' },\n        confirm: { type: 'boolean', description: 'Actually signal the holder. Defaults to false, which previews only.' },\n      },\n      output: { schema: { type: 'json' }, render: (_args, value) => [{ type: 'text', text: renderPlan(value) }] },\n      timeoutMs: 120_000,\n      async execute(args, exec) {\n        const probe = await probePorts([args.port], { signal: exec?.signal })\n        if (probe.free.includes(args.port)) {\n          return {\n            confirmed: false,\n            force: false,\n            targets: [],\n            refused: [],\n            freedPorts: [],\n            untouched: [],\n            notes: [`port ${args.port} is already free (connection refused)`],\n          }\n        }\n        return await reap(ctx, config, exec, { ports: [args.port], force: args.force, confirm: args.confirm })\n      },\n    }),\n  )\n\n  ctx.commands.register({\n    name: 'reap',\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 贡献与最关键保护/确认缺口是什么？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n贡献是把端口盘点、归属理由、后代影响预览、默认不发信号和端口回查接成流程，优于只按端口直接kill。明确拒绝宿主祖先/低PID/neverKill和root持有protectPorts是正向约束，但注释/README声称的绝对保护比代码更强。\n\n第一，buildKillPlan对root检查protectPorts，后代循环只查selfChain/低PID/neverKill，没查后代所持保护端口；根被接受后持受保护端口的子进程仍可能在targets。terminate也未逐信号重读规则/身份，只isAlive后kill，与文件注释“immediately before each signal重查”不同。第二次枚举改善新鲜度但仍用旧scan.endpoints端口/PID选择，没有startTime身份绑定，预览与confirm也不绑定同一计划，PID复用/父链变化仍是条件性风险。\n\n第二，workspace是大小写折叠/盘符规整后子串，不是边界目录身份；同宿主所有后代不等当前会话专属，all不是会话授权证据。well-known端口在host/workspace/dev标记返回之后才system，可被前者优先，不等绝不自动选基础设施。free_port按port选择也未拒绝unattributed，描述“拒绝不能归属”没有对应过滤。\n\n第三，端口验证只用IPv4 loopback TCP且只保留端口号，不能证明扫描中的IPv6/特定地址/UDP释放。取消probe返回false，可能报告free；terminate取消发生在grace等待中，循环不查abort、delay立即返回，force分支仍可发KILL。以上是静态分支核查，未实际发送信号/复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/attribute.js:439-466](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L439-L466)\n\nroot保护端口。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n  for (const pid of input.roots) {\n    const row = byPid.get(pid)\n    if (row === undefined) {\n      refused.push({ pid, reason: 'no such process' })\n      continue\n    }\n    if (input.selfChain.has(pid)) {\n      refused.push({ pid, reason: 'part of the harness process tree' })\n      continue\n    }\n    if (row.pid <= 4) {\n      refused.push({ pid, reason: 'operating-system process' })\n      continue\n    }\n    const loweredName = row.name.toLowerCase()\n    const loweredLine = row.commandLine.toLowerCase()\n    const hit = neverKill.find((pattern) => loweredName.includes(pattern) || loweredLine.includes(pattern))\n    if (hit !== undefined) {\n      refused.push({ pid, reason: `matches neverKill pattern \"${hit}\"` })\n      continue\n    }\n    const held = input.listeners.filter((listener) => listener.pid === pid)\n    const protectedPort = held.find((listener) => protectPorts.has(listener.port))\n    if (protectedPort !== undefined) {\n      refused.push({ pid, reason: `holds protected port ${protectedPort.port}` })\n      continue\n    }\n    accepted.push(pid)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/attribute.js:483-503](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L483-L503)\n\n后代未检查保护端口。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  for (const pid of closure) {\n    const row = byPid.get(pid)\n    if (row === undefined) continue\n    if (input.selfChain.has(pid) || row.pid <= 4) {\n      untouched.push(pid)\n      continue\n    }\n    const loweredName = row.name.toLowerCase()\n    const loweredLine = row.commandLine.toLowerCase()\n    if (neverKill.some((pattern) => loweredName.includes(pattern) || loweredLine.includes(pattern))) {\n      untouched.push(pid)\n      continue\n    }\n    targets.push({\n      pid: row.pid,\n      ppid: row.ppid,\n      name: row.name,\n      commandLine: row.commandLine,\n      root: rootOf.get(pid) ?? row.pid,\n      depth: depthOf.get(pid) ?? 0,\n    })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/kill.js:98-129](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/kill.js#L98-L129)\n\n信号前仅存活及取消缺口。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  for (const target of ordered) {\n    if (input.signal?.aborted === true) break\n    if (!isAlive(target.pid)) {\n      emit({ pid: target.pid, name: target.name, action: 'gone' })\n      continue\n    }\n\n    const graceful = signalPid(target.pid, 'SIGTERM')\n    if (!graceful.ok && graceful.reason !== 'already exited') {\n      failed.push({ pid: target.pid, reason: graceful.reason ?? 'signal failed' })\n      continue\n    }\n    emit({ pid: target.pid, name: target.name, action: 'sigterm' })\n\n    const deadline = Date.now() + (force ? graceMs : graceMs)\n    let alive = true\n    while (Date.now() < deadline && alive) {\n      await delay(100, input.signal)\n      alive = isAlive(target.pid)\n    }\n    if (!alive) {\n      terminated.push(target.pid)\n      continue\n    }\n\n    if (!force) {\n      survived.push(target.pid)\n      emit({ pid: target.pid, name: target.name, action: 'survived', detail: 'needs force' })\n      continue\n    }\n\n    const forced = signalPid(target.pid, 'SIGKILL')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:295-315](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L295-L315)\n\n旧端点/新进程混合。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  const processes = await loadProcesses(exec, config)\n  const selfChain = selfChainFor(processes)\n  const plan = buildKillPlan({\n    processes,\n    listeners: scan.endpoints,\n    roots,\n    selfChain,\n    protectPorts: scan.protectedPorts,\n    neverKill: config.neverKill,\n  })\n\n  if (args.confirm !== true) {\n    return { ...plan, confirmed: false, force: args.force === true, notes, scan }\n  }\n\n  const ports = plan.freedPorts.map((row) => row.port)\n  const outcome = await terminate({\n    targets: plan.targets,\n    force: args.force === true,\n    graceMs: config.graceMs,\n    signal: exec?.signal,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/attribute.js:222-225](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L222-L225)\n\n工作区子串。\n\n```text\nexport function mentionsPath(commandLine, needle) {\n  if (needle === undefined || needle === '') return false\n  const normalize = (value) => value.replaceAll('\\\\', '/').replace(/^[a-z]:\\//iu, '/').toLowerCase()\n  return normalize(commandLine).includes(normalize(needle))\n```\n\n**依据 6 · 源码核查**：[lib/attribute.js:346-370](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L346-L370)\n\n分级优先序。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  if (row.pid <= 4 || SYSTEM_NAMES.has(loweredName)) {\n    return { verdict: 'system', reasons: [`\"${row.name}\" is an operating-system process`] }\n  }\n  if (port !== undefined && WELL_KNOWN_PORTS.has(port)) {\n    reasons.push(`port ${port} is a well-known service port`)\n  }\n\n  if (hostDescendants.has(row.pid)) reasons.push('descends from the harness process')\n  if (workspaceRoot !== undefined && mentionsPath(row.commandLine, workspaceRoot)) {\n    reasons.push('command line names this workspace')\n  }\n  const marker = devServerMarker(row.commandLine)\n  if (marker !== undefined) reasons.push(`looks like a dev server (\"${marker}\")`)\n  if (port !== undefined && isDevPort(port)) reasons.push(`port ${port} is in a dev range`)\n\n  if (hostDescendants.has(row.pid)) return { verdict: 'agent-spawned', reasons, marker }\n  if (workspaceRoot !== undefined && mentionsPath(row.commandLine, workspaceRoot)) {\n    return { verdict: 'workspace', reasons, marker }\n  }\n  if (marker !== undefined) return { verdict: 'dev-server', reasons, marker }\n\n  /* Nothing ties it to this session. A holder of a well-known service port is\n   * the machine's own infrastructure — same \"hands off\" grade as an OS process,\n   * and the reasons say which port made it so. */\n  if (port !== undefined && WELL_KNOWN_PORTS.has(port)) return { verdict: 'system', reasons }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/index.js:232-244](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L232-L244)\n\n按port不做归属拒绝。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  for (const port of args.ports ?? []) {\n    const matches = scan.endpoints.filter((row) => row.port === port)\n    if (matches.length === 0) {\n      notes.push(`port ${port}: nothing is listening`)\n      continue\n    }\n    for (const row of matches) {\n      if (row.pid === null) {\n        notes.push(`port ${port}: holder pid unknown, refusing`)\n        continue\n      }\n      roots.add(row.pid)\n    }\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/index.js:405-418](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L405-L418)\n\nfreeport路径。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      async execute(args, exec) {\n        const probe = await probePorts([args.port], { signal: exec?.signal })\n        if (probe.free.includes(args.port)) {\n          return {\n            confirmed: false,\n            force: false,\n            targets: [],\n            refused: [],\n            freedPorts: [],\n            untouched: [],\n            notes: [`port ${args.port} is already free (connection refused)`],\n          }\n        }\n        return await reap(ctx, config, exec, { ports: [args.port], force: args.force, confirm: args.confirm })\n```\n\n</details>\n\n**依据 9 · 源码核查**：[lib/probe.js:29-57](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/probe.js#L29-L57)\n\n地址/协议与取消假空闲。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nexport function isPortHeld(port, signal, options = {}) {\n  const host = options.host ?? '127.0.0.1'\n  const timeoutMs = options.timeoutMs ?? PROBE_TIMEOUT_MS\n  if (signal?.aborted === true) return Promise.resolve(false)\n\n  return new Promise((resolve) => {\n    let settled = false\n    const socket = createConnection({ port, host })\n\n    const finish = (held) => {\n      if (settled) return\n      settled = true\n      clearTimeout(timer)\n      signal?.removeEventListener('abort', onAbort)\n      socket.destroy()\n      resolve(held)\n    }\n\n    const timer = setTimeout(() => finish(true), timeoutMs)\n    function onAbort() {\n      finish(false)\n    }\n\n    socket.once('connect', () => finish(true))\n    socket.once('error', (error) => {\n      const code = /** @type {NodeJS.ErrnoException} */ (error).code\n      /* ECONNREFUSED is the one answer that proves the port is free. */\n      if (code === 'ECONNREFUSED') finish(false)\n      else if (code === 'EADDRNOTAVAIL' || code === 'ENETUNREACH') finish(false)\n```\n\n</details>\n\n**依据 10 · 源码核查**：[lib/kill.js:154-169](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/kill.js#L154-L169)\n\n只按端口号探测。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport async function waitForPortsReleased(ports, options = {}) {\n  const timeoutMs = options.timeoutMs ?? 2000\n  const { isPortHeld } = await import('./probe.js')\n  const deadline = Date.now() + timeoutMs\n  let held = new Set(ports)\n\n  while (held.size > 0 && Date.now() < deadline && options.signal?.aborted !== true) {\n    const next = new Set()\n    for (const port of held) {\n      if (await isPortHeld(port, options.signal)) next.add(port)\n    }\n    held = next\n    if (held.size > 0) await delay(120, options.signal)\n  }\n\n  const released = ports.filter((port) => !held.has(port))\n```\n\n</details>\n\n#### 缺口\n\n- 真实进程生命周期/身份复用与取消时刻的副作用未由静态快照保证。\n  **影响：**不能承诺不会误终止或取消后绝不发信号。\n  **进一步探讨：**可从受控夹具核身份token、逐目标拒绝、abort优先与绑定计划版本入手，再研究隔离进程。\n- 跨平台端点可释放性与服务恢复没有协议/地址精确验证。\n  **影响：**TCP loopback失败不等UDP或IPv6可重新绑定。\n  **进一步探讨：**可按原端点保留协议/地址并核实际重新bind，而非把所有port统一探测。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、权限和读者使用流程是什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包0.1.0声明Node^22.19.0或>=24，入口实际导入dsh-tools及schemastery并注册commands；不声明peer不表示无宿主版本依赖。整机命令行可能包含敏感参数，scan结果进入模型时属于额外暴露面；无需为了让归属更完整直接提权。workspaceRegistry可缺失并回退current/default，不能把显示工作区当调用者唯一身份。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 匹配DSH tools/commands及宿主Schema | 必需 | 三工具和/reap | 包未声明peer不等无宿主依赖 |\n| Node声明版本及系统枚举命令 | 必需 | CIM/PowerShell或ss/ps/lsof | 失败退化信息，非完整无进程 |\n| 进程命令行/父链可读权限 | 归属必需 | 判定workspace/host后代 | 权限不足会削弱归属，不能猜 |\n| workspaceRegistry | 可选 | 会话根归属 | 会回退current/default，非强会话绑定 |\n| signal权限及恢复服务能力 | 真实结束必需 | TERM/可选KILL | EPERM报告；终止不可由预览撤回 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 固定宿主/包，明确目标/不可停服务及恢复步骤 | 补neverKill/protectPorts，隔离测试进程 |\n| 盘点 | /reap或scan，只读核命令/父链/端点 | degraded时不推断全量归属 |\n| 预览 | 明确PID/port，confirmfalse看完整后代 | 不把all归属当当前会话授权 |\n| 实施/恢复 | 确认仍同进程和目标，再依真实协议查端口 | 当前版本保护存在缺口，观察为先；未知不重杀 |\n\nconfirmtrue是参数开关，没有独立用户授权持久收据；人工核计划需包含全部后代及保护服务，不能只看root或端口空闲。当前缺陷下优先只读盘点。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:45-52](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L45-L52)\n\n实际宿主导入。\n\n```text\nimport { setTimeout as sleep } from 'node:timers/promises'\n\nimport { defineTool } from '@deepseek-ai/dsh-tools'\nimport Schema from '@deepseek-ai/schemastery'\n\nimport { buildKillPlan, classify, isAutoSelectable, verdictRank } from './attribute.js'\nimport { renderPlan, renderScan } from './format.js'\nimport { terminate, waitForPortsReleased } from './kill.js'\n```\n\n**依据 2 · 源码核查**：[lib/index.js:134-154](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L134-L154)\n\n工作区回退。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction workspaceRootFor(ctx, exec) {\n  try {\n    const registry = typeof ctx.get === 'function' ? ctx.get('workspaceRegistry') : undefined\n    if (registry === undefined) return undefined\n    const session = exec?.agent?.session\n    if (session !== undefined && typeof registry.forSession === 'function') {\n      const root = registry.forSession(session)\n      if (typeof root === 'string' && root !== '') return root\n    }\n    if (typeof registry.current === 'function') {\n      const root = registry.current()\n      if (typeof root === 'string' && root !== '') return root\n    }\n    if (typeof registry.defaultRoot === 'function') {\n      const root = registry.defaultRoot()\n      if (typeof root === 'string' && root !== '') return root\n    }\n  } catch {\n    /* Attribution is best-effort; a broken registry must not break the scan. */\n  }\n  return undefined\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:166-188](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L166-L188)\n\n扫描/命令行分级。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nasync function runScan(ctx, config, exec, options = {}) {\n  const includeUdp = options.includeUdp ?? config.includeUdp\n  const raw = await scanSystem({\n    includeUdp,\n    timeoutMs: config.scanTimeoutMs,\n    signal: exec?.signal,\n  })\n\n  const selfChain = selfChainFor(raw.processes)\n  const protectPorts = [\n    ...new Set([...config.protectPorts, ...defaultProtectedPorts(process.env.DSH_WEB_URL)]),\n  ]\n  const workspaceRoot = options.workspace ?? workspaceRootFor(ctx, exec)\n\n  const graded = classify({\n    listeners: raw.listeners,\n    processes: raw.processes,\n    hostPid: process.pid,\n    selfChain,\n    workspaceRoot,\n    protectPorts,\n    neverKill: config.neverKill,\n  })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:306-315](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L306-L315)\n\n确认开关。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  if (args.confirm !== true) {\n    return { ...plan, confirmed: false, force: args.force === true, notes, scan }\n  }\n\n  const ports = plan.freedPorts.map((row) => row.port)\n  const outcome = await terminate({\n    targets: plan.targets,\n    force: args.force === true,\n    graceMs: config.graceMs,\n    signal: exec?.signal,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:1-4](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/package.json#L1-L4)\n\n版本。\n\n```text\n{\n  \"name\": \"dsh-reaper\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Orphan process and port reaper for DeepSeek Harness: find the dev servers, watchers and background processes an agent left behind, attribute them to a workspace, preview the blast radius, and reclaim the ports.\",\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 三阶段成本效果和失败恢复如何判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n扫描命令带timeout和8MiB缓冲上限，跨平台fallback提高可读性，但缺命令/权限不是没有监听者。一次reap会两次scanSystem，随后每个目标默认grace3秒，目标多时可超过外部工具timeout；端口验证逐个尝试也增加等待。结束服务可能丢未保存状态/任务，不能用释放端口数量代表净收益。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主/系统命令及权限，金额未知 | 确定禁止结束范围/恢复步骤 | 提权扩大影响，不能补身份绑定 |\n| 持续使用 | 整机扫描、第二次枚举、逐PID等待 | 审后代树、命令行和真实端点 | 每PID默认等3秒，总目标数影响时长 |\n| 失败恢复 | 重启被停服务/恢复未保存状态 | 区分误归属、存活、重启和端口他人接管 | 进程结束不是可回滚事务 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 盘点归属 | 父链/命令行分级和degraded | 是当前会话遗留且获准结束 |\n| 清理树 | 后代闭包/TERM与可选KILL | 执行时身份不变、全后代受保护 |\n| 端口恢复 | IPv4 loopback TCP连接探测 | IPv6/特定地址/UDP真实释放和服务可用 |\n\nTERM与KILL语义依平台而异；终止已发生后取消不能回滚，服务监督器也可能重新启动进程。恢复应核真实服务/任务状态和新持有者，不能对同PID/port自动再次结束。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/scan.js:18-45](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/scan.js#L18-L45)\n\n命令上限/失败降级。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n/** Hard cap so a runaway `netstat`/`ps` cannot blow up the tool result. */\nconst MAX_BUFFER = 8 * 1024 * 1024\n\n/** Default per-command timeout, in milliseconds. */\nconst DEFAULT_TIMEOUT_MS = 20_000\n\n/**\n * Run a command and return stdout, or `undefined` when the binary is missing\n * or the command fails. Enumeration is best-effort: one broken probe must not\n * take down the whole scan.\n *\n * @param {string} file - executable to run.\n * @param {string[]} args - argument vector.\n * @param {{ timeoutMs?: number, signal?: AbortSignal }} [options]\n * @returns {Promise<string | undefined>} stdout, trimmed of a trailing newline.\n */\nasync function tryRun(file, args, options = {}) {\n  try {\n    const { stdout } = await run(file, args, {\n      timeout: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,\n      maxBuffer: MAX_BUFFER,\n      windowsHide: true,\n      signal: options.signal,\n      encoding: 'utf8',\n    })\n    return stdout\n  } catch {\n    return undefined\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:278-295](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L278-L295)\n\n两次枚举入口。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nasync function reap(ctx, config, exec, args) {\n  const scan = await runScan(ctx, config, exec, {})\n  const { roots, notes } = selectRoots(scan, args)\n\n  if (roots.length === 0) {\n    return {\n      confirmed: args.confirm === true,\n      force: args.force === true,\n      targets: [],\n      refused: [],\n      freedPorts: [],\n      untouched: [],\n      notes,\n      scan,\n    }\n  }\n\n  const processes = await loadProcesses(exec, config)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:343-345](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L343-L345)\n\n第二次系统扫描。\n\n```text\nasync function loadProcesses(exec, config) {\n  const raw = await scanSystem({ includeUdp: false, timeoutMs: config.scanTimeoutMs, signal: exec?.signal })\n  return raw.processes\n```\n\n**依据 4 · 源码核查**：[lib/kill.js:86-117](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/kill.js#L86-L117)\n\n逐目标等待。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nexport async function terminate(input) {\n  const force = input.force === true\n  const graceMs = Number.isFinite(input.graceMs) ? Number(input.graceMs) : 3000\n  const emit = input.onEvent ?? (() => {})\n\n  /* Deepest first: a supervisor re-spawns what it is watching, not what it is. */\n  const ordered = [...input.targets].sort((a, b) => b.depth - a.depth)\n\n  const terminated = []\n  const survived = []\n  const failed = []\n\n  for (const target of ordered) {\n    if (input.signal?.aborted === true) break\n    if (!isAlive(target.pid)) {\n      emit({ pid: target.pid, name: target.name, action: 'gone' })\n      continue\n    }\n\n    const graceful = signalPid(target.pid, 'SIGTERM')\n    if (!graceful.ok && graceful.reason !== 'already exited') {\n      failed.push({ pid: target.pid, reason: graceful.reason ?? 'signal failed' })\n      continue\n    }\n    emit({ pid: target.pid, name: target.name, action: 'sigterm' })\n\n    const deadline = Date.now() + (force ? graceMs : graceMs)\n    let alive = true\n    while (Date.now() < deadline && alive) {\n      await delay(100, input.signal)\n      alive = isAlive(target.pid)\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/kill.js:154-169](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/kill.js#L154-L169)\n\n逐端口回查。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport async function waitForPortsReleased(ports, options = {}) {\n  const timeoutMs = options.timeoutMs ?? 2000\n  const { isPortHeld } = await import('./probe.js')\n  const deadline = Date.now() + timeoutMs\n  let held = new Set(ports)\n\n  while (held.size > 0 && Date.now() < deadline && options.signal?.aborted !== true) {\n    const next = new Set()\n    for (const port of held) {\n      if (await isPortHeld(port, options.signal)) next.add(port)\n    }\n    held = next\n    if (held.size > 0) await delay(120, options.signal)\n  }\n\n  const released = ports.filter((port) => !held.has(port))\n```\n\n</details>\n\n#### 缺口\n\n- 无多平台/负载下误归属率、旁损、总时延和完整恢复人时数据。\n  **影响：**不能承诺all安全或固定清理效率。\n  **进一步探讨：**可用合成树/端点先测拒绝和收据，再用可丢弃服务比较手工诊断/终止的误伤与总恢复时间。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程复用、身份收据假设与当前采用结论？\n\n**研究主题：**工程质量与复用、新假设与验证、采用判断\n\n#### 完整回答\n\n分层scan/attribute/plan/kill/probe、结构化降级与拒绝、纯分级/闭包、默认预览和显式force值得复用。二次进程读取有价值，但未消除身份竞态；后代depth以BFS序号而非真实层深，倒序仍通常把子孙排前，不能直接当精确深度字段。\n\n可探讨未验证的“身份绑定与精确端点回收收据”。扫描记录PID+启动时间/可核句柄、原协议/地址，预览给计划hash/过期时间；确认重核相同身份/完整后代及所有保护端口，变化必须重新预览。每次TERM/KILL前以同规则和abort检查，取消/探测不可达保留unknown，不映射free。回查原端点及获准服务健康，保存结果仅用于恢复核对。代价是跨OS句柄/权限、PID复用协议和受控状态存储。用保护端口后代、路径前缀碰撞、基础设施host后代、PID复用、grace中取消及IPv6/UDP夹具检验；任一可绕保护就先改执行契约。\n\n推荐observe，当前只读盘点可供有经验维护者辅助，但不要把all或free_port的描述当安全终止保证。继续研究可先完成逐后代保护/身份/取消和精确探测，再评估受控dev进程试用。遇归属不清、degraded、计划变化、保护子孙、取消已发、端点核验不明即停，保留日志并由维护者确认恢复；本轮未操作本机进程。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/scan.js:34-45](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/scan.js#L34-L45)\n\n结构化失败边界。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nasync function tryRun(file, args, options = {}) {\n  try {\n    const { stdout } = await run(file, args, {\n      timeout: options.timeoutMs ?? DEFAULT_TIMEOUT_MS,\n      maxBuffer: MAX_BUFFER,\n      windowsHide: true,\n      signal: options.signal,\n      encoding: 'utf8',\n    })\n    return stdout\n  } catch {\n    return undefined\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/attribute.js:469-503](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/attribute.js#L469-L503)\n\n闭包/BFS序号。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  const closure = descendantClosure(byPid, accepted)\n  const rootOf = new Map()\n  const depthOf = new Map()\n  for (const root of accepted) {\n    const members = descendantClosure(byPid, [root])\n    members.forEach((pid, index) => {\n      if (rootOf.has(pid)) return\n      rootOf.set(pid, root)\n      depthOf.set(pid, index)\n    })\n  }\n\n  const targets = []\n  const untouched = []\n  for (const pid of closure) {\n    const row = byPid.get(pid)\n    if (row === undefined) continue\n    if (input.selfChain.has(pid) || row.pid <= 4) {\n      untouched.push(pid)\n      continue\n    }\n    const loweredName = row.name.toLowerCase()\n    const loweredLine = row.commandLine.toLowerCase()\n    if (neverKill.some((pattern) => loweredName.includes(pattern) || loweredLine.includes(pattern))) {\n      untouched.push(pid)\n      continue\n    }\n    targets.push({\n      pid: row.pid,\n      ppid: row.ppid,\n      name: row.name,\n      commandLine: row.commandLine,\n      root: rootOf.get(pid) ?? row.pid,\n      depth: depthOf.get(pid) ?? 0,\n    })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:306-328](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/index.js#L306-L328)\n\n预览与结果。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  if (args.confirm !== true) {\n    return { ...plan, confirmed: false, force: args.force === true, notes, scan }\n  }\n\n  const ports = plan.freedPorts.map((row) => row.port)\n  const outcome = await terminate({\n    targets: plan.targets,\n    force: args.force === true,\n    graceMs: config.graceMs,\n    signal: exec?.signal,\n  })\n\n  const release = ports.length > 0 ? await waitForPortsReleased(ports, { signal: exec?.signal }) : { released: [], stillHeld: [] }\n\n  return {\n    ...plan,\n    confirmed: true,\n    force: args.force === true,\n    outcome,\n    portsReleased: release.released,\n    portsStillHeld: release.stillHeld,\n    notes,\n    scan,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/kill.js:98-144](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/kill.js#L98-L144)\n\n身份/abort假设起点。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  for (const target of ordered) {\n    if (input.signal?.aborted === true) break\n    if (!isAlive(target.pid)) {\n      emit({ pid: target.pid, name: target.name, action: 'gone' })\n      continue\n    }\n\n    const graceful = signalPid(target.pid, 'SIGTERM')\n    if (!graceful.ok && graceful.reason !== 'already exited') {\n      failed.push({ pid: target.pid, reason: graceful.reason ?? 'signal failed' })\n      continue\n    }\n    emit({ pid: target.pid, name: target.name, action: 'sigterm' })\n\n    const deadline = Date.now() + (force ? graceMs : graceMs)\n    let alive = true\n    while (Date.now() < deadline && alive) {\n      await delay(100, input.signal)\n      alive = isAlive(target.pid)\n    }\n    if (!alive) {\n      terminated.push(target.pid)\n      continue\n    }\n\n    if (!force) {\n      survived.push(target.pid)\n      emit({ pid: target.pid, name: target.name, action: 'survived', detail: 'needs force' })\n      continue\n    }\n\n    const forced = signalPid(target.pid, 'SIGKILL')\n    if (!forced.ok && forced.reason !== 'already exited') {\n      failed.push({ pid: target.pid, reason: forced.reason ?? 'force signal failed' })\n      continue\n    }\n    emit({ pid: target.pid, name: target.name, action: 'sigkill' })\n    await delay(200, input.signal)\n    if (isAlive(target.pid)) {\n      survived.push(target.pid)\n      emit({ pid: target.pid, name: target.name, action: 'survived', detail: 'unresponsive to SIGKILL' })\n    } else {\n      terminated.push(target.pid)\n    }\n  }\n\n  return { terminated, survived, failed }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/probe.js:29-57](https://github.com/11111353535/dsh-reaper/blob/b0412244e623d54fbf0bded66cba5203de8c85c4/lib/probe.js#L29-L57)\n\n精确端点/unknown假设。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nexport function isPortHeld(port, signal, options = {}) {\n  const host = options.host ?? '127.0.0.1'\n  const timeoutMs = options.timeoutMs ?? PROBE_TIMEOUT_MS\n  if (signal?.aborted === true) return Promise.resolve(false)\n\n  return new Promise((resolve) => {\n    let settled = false\n    const socket = createConnection({ port, host })\n\n    const finish = (held) => {\n      if (settled) return\n      settled = true\n      clearTimeout(timer)\n      signal?.removeEventListener('abort', onAbort)\n      socket.destroy()\n      resolve(held)\n    }\n\n    const timer = setTimeout(() => finish(true), timeoutMs)\n    function onAbort() {\n      finish(false)\n    }\n\n    socket.once('connect', () => finish(true))\n    socket.once('error', (error) => {\n      const code = /** @type {NodeJS.ErrnoException} */ (error).code\n      /* ECONNREFUSED is the one answer that proves the port is free. */\n      if (code === 'ECONNREFUSED') finish(false)\n      else if (code === 'EADDRNOTAVAIL' || code === 'ENETUNREACH') finish(false)\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：7bd33fe6818e62474866b7fbe1eab28b166b0a311ae8b9993d73af7c668a74a3。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 1944 | 1203 | 605 | — |\n| .md | source | 2 | 336 | — | — | 2870 |\n| .mjs | source | 1 | 77 | 42 | 26 | — |\n| .mjs | test | 3 | 690 | 540 | 74 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 盘点/分级 | 整机监听与归属提示 | 父链/子串非当前会话授权 |\n| 后代计划 | 展示影响/拒绝 | 子孙保护端口缺口需核 |\n| 终止 | confirm后TERM/可选KILL | 无身份收据，取消缺口 |\n| 端口回查 | IPv4 TCP连接 | 非所有协议/地址释放证明 |\n\n## 工程亮点\n\n分层scan/attribute/plan/kill/probe、结构化降级与拒绝、纯分级/闭包、默认预览和显式force值得复用。二次进程读取有价值，但未消除身份竞态；后代depth以BFS序号而非真实层深，倒序仍通常把子孙排前，不能直接当精确深度字段。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/scan.js、lib/attribute.js、lib/index.js、lib/kill.js、lib/probe.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定扫描平台命令、分级/后代计划、工具/命令与信号/端口探测；未运行扫描、目标测试或终止进程，未证明平台运行语义。\n- 下一步：进一步探讨先用保护后代/PID复用/取消/地址协议夹具核规则，再测可丢弃服务及恢复，不用生产进程验证。\n",
         "metadata": {
             "repository": "11111353535/dsh-reaper",
             "repository_id": 1423215373,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:48:25.890Z",
+            "window_start": "2026-09-22T06:48:25.890Z",
             "stars": 0,
             "pushed_at": "2026-10-17T11:00:28Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:10742:13F5DE:216B07:6AD84909 and timestamp 2026-10-21 05:09:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6407:1CA5E4:14C680:2247D7:6AD84909 and timestamp 2026-10-21 05:09:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:1446EB:21ACEF:6AD84909 and timestamp 2026-10-21 05:09:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:149E73:220C52:6AD8490A and timestamp 2026-10-21 05:09:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A11111353535%2Fdsh-reaper%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:145C3C:21E080:6AD8490A and timestamp 2026-10-21 05:09:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-reaper",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:48:33.832Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-reaper",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-reaper",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:48:33.832Z",
                     "source_url": "https://registry.npmjs.org/dsh-reaper",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-                "current_revision": "b0412244e623d54fbf0bded66cba5203de8c85c4",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

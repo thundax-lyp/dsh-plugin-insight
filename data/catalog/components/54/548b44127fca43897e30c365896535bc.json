@@ -24,36 +24,106 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1386463441-root-directory-0",
+                    "id": "2026-10-22-02-github-1386463441-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:09:36.436Z",
+                    "retrieved_at": "2026-10-22T09:35:37.577Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1386463441-root-author",
+                    "id": "2026-10-22-02-github-1386463441-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "README.md",
+                            "content_sha256": "1bb64a1352da90528f7a444ef300be8835384e201407777fe9c45852a381de6b"
+                        }
+                    ],
                     "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-                    "captured_at": "2026-10-21T02:09:36.436Z",
-                    "summary": "可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:37.577Z",
+                    "summary": "用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1386463441-root-source",
+                    "id": "2026-10-22-02-github-1386463441-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/observe.ts",
+                    "url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "README.md",
+                            "content_sha256": "1bb64a1352da90528f7a444ef300be8835384e201407777fe9c45852a381de6b"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "package.json",
+                            "content_sha256": "3ce18c45e2562816d31cc876e17fb3f94f27c849aa7e44fc0720295c07759b45"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/index.ts",
+                            "content_sha256": "a2499dd8418e3670fa24089bd9e6ab8b22ea3e84727e23abdeb815ade776711d"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/host/collect.ts",
+                            "content_sha256": "d1f55c685f79be8305bc62bbf8c0869a0fde333738c246e44e853943dc847514"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/host/routes.ts",
+                            "content_sha256": "c900b3e0ebaacea7f8f274a43f8d4d85761c00e492d126251bb27e94db0a470b"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/core/blob-store.ts",
+                            "content_sha256": "3456aa2ef0f114b8069a518765f3a4e6c2f2e9d17eea5d67c35d702fc4330742"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/shared/metrics.ts",
+                            "content_sha256": "4d8081acbd0a63920240bbddd76b94b1f7ad69e25552d53dd2baf669dc55d9c9"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/client/index.tsx",
+                            "content_sha256": "af0e8ce1a666744ea43b2eabaa1f60561d75b00992b98a0802275cbf1f92312e"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "src/client/navigation.ts",
+                            "content_sha256": "089eb8ce753eb7b8abdd0f557ef6895d7b613caa8ef659ff64f088a536b8b696"
+                        },
+                        {
+                            "repository_url": "https://github.com/3289192-bot/dsh-cache-bricks",
+                            "commit": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+                            "path": "tests/metrics.spec.ts",
+                            "content_sha256": "fdeabfb8dde36391ddab892669fe0fee8f76c103450d91f8ccd4237c4e03374e"
+                        }
+                    ],
                     "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-                    "captured_at": "2026-10-21T02:09:36.436Z",
-                    "summary": "核查 src/core/observe.ts、src/shared/metrics.ts、src/host/routes.ts；observe.ts将宿主事件归一为ledger观察，按工具名去重并去掉deferLoading元标志；metrics.ts从未缓存、缓存读写三个桶计算比例，缺缓存桶保持未知。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:37.577Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/host/collect.ts、src/host/routes.ts、src/core/blob-store.ts、src/shared/metrics.ts、src/client/index.tsx、src/client/navigation.ts、tests/metrics.spec.ts；host捕获请求派发/流/日志形成attempt ledger，内容寻址存payload，HTTP/SSE给web棋盘和面板；纯指标模块计算缓存比例，历史窗口辅助回看。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "固定提交读取host采集/路由、内容存储、指标、客户端接线/导航与测试；未逐行审计全部布局和回放模块，不把作者开发记录当本轮独立执行。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +134,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "调试长会话上下文与缓存波动的本机DSH Web用户，需要把某次真实请求与对话位置对应。",
+                    "text": "维护者排查长会话的缓存变化与重试，需要把usage和请求证据关联到对话位置；目标是正确诊断，不是只追求绿色。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +145,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "observe.ts将宿主事件归一为ledger观察，按工具名去重并去掉deferLoading元标志；metrics.ts从未缓存、缓存读写三个桶计算比例，缺缓存桶保持未知。",
+                    "text": "host捕获请求派发/流/日志形成attempt ledger，内容寻址存payload，HTTP/SSE给web棋盘和面板；纯指标模块计算缓存比例，历史窗口辅助回看。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +163,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "text": "固定提交读取host采集/路由、内容存储、指标、客户端接线/导航与测试；未逐行审计全部布局和回放模块，不把作者开发记录当本轮独立执行。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +181,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "text": "0.1.5、MIT，发布lib构建产物；Node ^22.19.0或>=24，作者基线DSH 0.1.7-rc.2，peer放宽不表示跨版本验证。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +199,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次安装并匹配宿主请求事件；持续有内容内存、历史扫描和排查人力成本，无额外模型调用；采集内容可能含对话与工具参数。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主与web运行时，无新增模型请求机制 | 安装、版本和usage口径核对 | 无新增模型请求机制；版本/usage核查工时未知 |\n| 持续使用 | 请求摘要/哈希、默认48MiB blob预算、SSE与渲染 | 解读对比及复核原因，耗时未知 | 48MiB是默认blob预算非总内存；摘要/哈希/SSE用量未知 |\n| 失败恢复 | 重启丢内存，重新采集或会重复模型费用 | 区分淘汰、日志缺失与导航失败 | 重启丢内存，重采可重复模型费；人工辨因时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +217,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。",
+                    "text": "建议本地单用户维护者用不敏感会话试用，先核对attempt、usage和访问边界；主链延迟、字段错位、UI干扰或权限不清时停止，回到宿主日志。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +235,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可把排查从总体猜测缩到具体attempt；是否缩短诊断时间及降低账单仍需对照。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 解释边界 |\n| --- | --- | --- |\n| 观察缓存比例 | 集中公式、缺字段不当零 | 不独立解释缓存下降原因 |\n| 查看请求证据 | 内容寻址ref与面板接口 | 淘汰及重启会缺失 |\n| 定位历史 | 加载窗口后检查覆盖 | 加载不等于目标渲染 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +253,16 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "effectiveToolsOf按名去重避免宿主toolHistory重复计数；指标分开缺失和零，并从dispatch起算首token时间，避免把step启动时间混入。 [固定源码](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/observe.ts#L1)。",
+                    "text": "纯指标、内容寻址去重和失败隔离可借鉴，导航检查真实窗口而非仅await；迁移需核对attempt身份、usage和宿主DOM契约。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +271,69 @@
                             "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:09:36.436Z",
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "缓存颜色不能独立解释原因，公式依赖宿主分桶口径；记录会淘汰且敏感blob需要明确访问边界，历史重建也不等于原始请求完整恢复。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "business_innovation",
+                    "basis": "unverified",
+                    "text": "可探讨在颜色旁显式表达attempt/估算及证据完整性，并要求归因回指可比请求；先用缺字段和淘汰样例比较误归因与操作时间，当前未验证。详见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1386463441-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1386463441:root",
+                            "area": "code",
+                            "fingerprint": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:37.577Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:09:36.436Z",
+            "last_checked_at": "2026-10-22T09:35:37.577Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-                "reviewed_at": "2026-10-21T02:09:36.436Z",
+                "reviewed_at": "2026-10-22T09:35:37.577Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -220,16 +344,16 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
+                        "novelty": 18,
                         "mechanism": 15,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty：请求砖视觉适配小幅；mechanism：attempt归一和口径共享实质；transferability：纯数据计算实质可复用；simplification：统一诊断视图实质。",
+                    "rationale": "novelty实质，attempt采集与导航整合而非新缓存技术；mechanism实质，身份、缺失和保留约束支撑可追查观测；transferability实质，指标和内容寻址可复用但强依赖宿主；simplification实质，统一事实对象与面板减少拼接，性能效果未测。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 51,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ]
                 },
                 "business": {
@@ -239,43 +363,43 @@
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow：从总量到请求定位实质；delivery：仍是遥测记录小幅；reach：可视化降低查日志门槛小幅；economics：诊断节省有机制但未测，小幅。",
+                    "rationale": "workflow实质，日志usage到对话的关联可视化；delivery小幅，新增诊断报告入口而非新的业务成果；reach小幅，降低维护者定位门槛但仍需口径知识；economics小幅，有节省排查步骤机制，无账单或时间实测。",
                     "basis": "interpretation",
                     "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1386463441-root-source"
+                        "2026-10-22-02-github-1386463441-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "有缓存波动排查问题者可试用请求砖图；先核对三桶usage与采集范围，颜色变化只作定位线索。",
+                "reason": "适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "将真实请求与对话位置关联是具体诊断任务。"
+                        "rationale": "缓存/重试诊断人群与任务清楚，实际收益待测。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "attempt对照和未知桶显示比总量数字更便于排查。"
+                        "rationale": "attempt、对比和对话定位减少材料拼接，但非自动归因。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "事件归一与metrics公式已查，不支持因果归责或节费证明。"
+                        "rationale": "固定源码和作者契约可核查，本轮没有执行证据。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无额外模型调用，但采集对话工具参数与历史扫描需管控。"
+                        "score": 10,
+                        "rationale": "无独立服务订阅，存在payload内存、主链观测、UI及隐私负担。"
                     }
                 },
-                "score": 70,
+                "score": 65,
                 "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:37.577Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1386463441-root-source"
+                    "2026-10-22-02-github-1386463441-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +424,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "f399ff7593e448917b1a8a303b37a6643739daf3d67d8fe7e6232b5fc1e5b0ca"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "888e3a63ac1c7be3658cc850878f7ff1cbf93f4cd25b9178e86267c4d3a67d5b"
         },
         "publication.metadata": "data/plugins/3289192-bot--dsh-cache-bricks/META.json",
         "publication.summaries": {
-            "text": "可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。",
+            "text": "用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。",
             "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
             "source_url": "https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md"
         },
         "publication.capabilities": {
             "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
             "items": {
-                "后台": "请求事件归一与usage指标计算",
-                "界面": "缓存砖、请求详情、比较与会话定位"
-            }
+                "Host 路由": "/cache-bricks提供sessions、attempts、blob与SSE",
+                "界面": "缓存棋盘、请求详情、对比、活动翻面及对话/历史定位",
+                "事件监听": "llm/stream、agent/assistant-stream及session/event采集请求事实"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| attempt观测 | 分开真实请求与重试 | 降级/历史仅有日志可恢复字段 |\n| 缓存棋盘和详情 | 可视检查usage与请求 | 不是优化器或因果判定 |\n| 对比/导航/历史 | 关联请求与对话 | 宿主加载、渲染及保留限制 |\n| 本地数据接口 | 前后端共享采集材料 | 包含敏感payload，需认证边界 |"
         },
         "publication.advice": {
             "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-            "text": "适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。"
+            "text": "建议本地单用户维护者用不敏感会话试用，先核对attempt、usage和访问边界；主链延迟、字段错位、UI干扰或权限不清时停止，回到宿主日志。详见[Q07](#research-q07)。"
         },
         "registry": "data/plugins/3289192-bot--dsh-cache-bricks",
-        "reports": "# dsh-cache-bricks\n\n> 可视化 DSH 模型请求、缓存命中率、活动与历史请求对比。\n\n## 研究范围\n\n- **仓库**：[3289192-bot/dsh-cache-bricks](https://github.com/3289192-bot/dsh-cache-bricks)\n- **版本号**：0.1.5（[固定提交 2e52b914](https://github.com/3289192-bot/dsh-cache-bricks/tree/2e52b914eaea5a02e5937c323160cf2fd2b8de1b)）\n- **版本日期**：2026-09-28（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：调试长会话上下文与缓存波动的本机DSH Web用户，需要把某次真实请求与对话位置对应。\n- **亮点**：相对只看总token数字，attempt粒度观测、请求对比及会话定位把排查对象具体化；独立纯数据指标模块让视图共享同一口径。缓存本身由provider提供，插件不产生缓存优化。\n- **思考**：红色砖是否能定位缓存下降原因？比例来源于宿主报告且默认三桶互斥，不同provider口径错误会传播；缺字段用未知是强支持，但比较两次请求不能建立改动导致命中率下降的因果。历史日志也未必恢复内存中全部细节。\n- **建议**：适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。\n\n采用建议：适合有明确缓存排查问题的用户试用，先核对provider usage口径与采集完整度，不据颜色直接删工具或归责某个提示改动。\n\n## 核心贡献\n\n相对只看总token数字，attempt粒度观测、请求对比及会话定位把排查对象具体化；独立纯数据指标模块让视图共享同一口径。缓存本身由provider提供，插件不产生缓存优化。\n\n## 关键质疑\n\n[核查分支](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/shared/metrics.ts#L49)。\n\n红色砖是否能定位缓存下降原因？比例来源于宿主报告且默认三桶互斥，不同provider口径错误会传播；缺字段用未知是强支持，但比较两次请求不能建立改动导致命中率下降的因果。历史日志也未必恢复内存中全部细节。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：在请求对比中显示字段来源、采集完整度和唯一变化集，可帮助排除口径变化造成的假异常；新增负担是provider归一映射与完整度传播。\n\n注入缺失缓存字段、重复工具声明和同内容不同元标志三类观察，并以固定provider原始usage对账；若仍把未知转零或相同工具哈希变化则否定假设。\n\n## 场景与替代办法\n\n调试长会话上下文与缓存波动的本机DSH Web用户，需要把某次真实请求与对话位置对应。\n\n参照宿主token汇总与人工读日志；此工具提供诊断可见性，不改写请求。\n\n## 依赖与流程\n\n依赖DSH请求观测事件、会话日志与匹配Web接口；作者公开基线0.1.7-rc.2，其他版本未由本轮验证。\n\n请求事件→观察归一→ledger结算→指标展示→定位与比较；重启清空内存，历史字段按宿主实际日志恢复。\n\n## 成本与效果\n\n首次安装并匹配宿主请求事件；持续有内容内存、历史扫描和排查人力成本，无额外模型调用；采集内容可能含对话与工具参数。\n\n可把排查从总体猜测缩到具体attempt；是否缩短诊断时间及降低账单仍需对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4afb06c080945b46ac7a6f42216d807bd1bcef7d184c0554fce333ac9d4d22f4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 9 | 2180 | — | — | 25526 |\n| .js | source | 3 | 2095 | 1607 | 503 | — |\n| .mjs | source | 9 | 4051 | 3233 | 632 | — |\n| .ts | source | 25 | 12674 | 7403 | 4595 | — |\n| .tsx | source | 2 | 1636 | 1225 | 336 | — |\n| .ts | test | 26 | 7581 | 6110 | 855 | — |\n| .js | test | 1 | 52 | 51 | 1 | — |\n\n排除 25 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **后台**：请求事件归一与usage指标计算\n- **界面**：缓存砖、请求详情、比较与会话定位\n\n## 工程亮点\n\neffectiveToolsOf按名去重避免宿主toolHistory重复计数；指标分开缺失和零，并从dispatch起算首token时间，避免把step启动时间混入。 [固定源码](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/observe.ts#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/core/observe.ts、src/shared/metrics.ts、src/host/routes.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：注入缺失缓存字段、重复工具声明和同内容不同元标志三类观察，并以固定provider原始usage对账；若仍把未知转零或相同工具哈希变化则否定假设。\n",
+        "reports": "# dsh-cache-bricks\n\n> 用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。\n\n## 研究范围\n\n- **仓库**：[3289192-bot/dsh-cache-bricks](https://github.com/3289192-bot/dsh-cache-bricks)\n- **版本号**：0.1.5（[固定提交 2e52b914eaea5a02e5937c323160cf2fd2b8de1b](https://github.com/3289192-bot/dsh-cache-bricks/tree/2e52b914eaea5a02e5937c323160cf2fd2b8de1b)）\n- **版本日期**：2026-09-28（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n逐请求采集、缺失值处理与可视化接线有源码支持；效果归因和跨版本兼容有限。证据完整性提示是未验证方向。\n\n## 洞察短评\n\n- **用途**：维护者排查长会话的缓存变化与重试，需要把usage和请求证据关联到对话位置；目标是正确诊断，不是只追求绿色。详见[Q01](#research-q01)。\n- **亮点**：把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。\n- **思考**：缓存颜色不能独立解释原因，公式依赖宿主分桶口径；记录会淘汰且敏感blob需要明确访问边界，历史重建也不等于原始请求完整恢复。详见[Q03](#research-q03)。\n- **建议**：可探讨在颜色旁显式表达attempt/估算及证据完整性，并要求归因回指可比请求；先用缺字段和淘汰样例比较误归因与操作时间，当前未验证。详见[Q06](#research-q06)。\n\n采用建议：建议本地单用户维护者用不敏感会话试用，先核对attempt、usage和访问边界；主链延迟、字段错位、UI干扰或权限不清时停止，回到宿主日志。详见[Q07](#research-q07)。\n\n## 核心贡献\n\n把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n缓存颜色不能独立解释原因，公式依赖宿主分桶口径；记录会淘汰且敏感blob需要明确访问边界，历史重建也不等于原始请求完整恢复。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨在颜色旁显式表达attempt/估算及证据完整性，并要求归因回指可比请求；先用缺字段和淘汰样例比较误归因与操作时间，当前未验证。详见[Q06](#research-q06)。\n\n进一步探讨可从token桶映射、重试身份、blob淘汰与历史渲染四类样例入手，再用启用/停用对照比较主调用开销和正确诊断时间。\n\n## 场景与替代办法\n\n维护者排查长会话的缓存变化与重试，需要把usage和请求证据关联到对话位置；目标是正确诊断，不是只追求绿色。详见[Q01](#research-q01)。\n\n宿主usage与日志配合人工检索和对话定位是简单对照；插件减少关联步骤，不替代provider账单和业务验收。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途和必要性 | 失效影响 |\n| --- | --- | --- |\n| DSH事件、usage和日志契约 | attempt与指标 | 错位或缺字段降低诊断 |\n| Cordis/React及客户端模块 | web棋盘和面板 | peer可安装不等于兼容 |\n| webServer/connection | 发布本地数据 | 无web则只观察；认证须核对 |\n| sessions loader与DOM目标 | 历史定位 | 缺失应报告而非假成功 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 安装到web并重启刷新 | 维护者 | host和客户端加载 |\n| 核对不敏感样例 | 维护者 | attempt与usage口径一致 |\n| 查看颜色、详情与对比 | 用户 | 原始材料支持解释 |\n| 失败区分采集/淘汰/渲染 | 用户 | 不把缺失写成零或成功 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主与web运行时，无新增模型请求机制 | 安装、版本和usage口径核对 | 无新增模型请求机制；版本/usage核查工时未知 |\n| 持续使用 | 请求摘要/哈希、默认48MiB blob预算、SSE与渲染 | 解读对比及复核原因，耗时未知 | 48MiB是默认blob预算非总内存；摘要/哈希/SSE用量未知 |\n| 失败恢复 | 重启丢内存，重新采集或会重复模型费用 | 区分淘汰、日志缺失与导航失败 | 重启丢内存，重采可重复模型费；人工辨因时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 解释边界 |\n| --- | --- | --- |\n| 观察缓存比例 | 集中公式、缺字段不当零 | 不独立解释缓存下降原因 |\n| 查看请求证据 | 内容寻址ref与面板接口 | 淘汰及重启会缺失 |\n| 定位历史 | 加载窗口后检查覆盖 | 加载不等于目标渲染 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本Cache Bricks如何为模型attempt提供缓存诊断，其口径、完整性、隐私和采用成本边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要逐请求缓存诊断，增加了什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向在DSH Web调试长对话、重试和提示上下文的开发者，希望定位某次模型请求的缓存变化，并回到对应对话材料。合格产出是指标口径清楚、attempt与重试不混淆、缺失不假装零、可查到支持解释的请求内容。单看棋盘绿色不是合格业务任务，也不证明提示设计已经优化。\n\n简单替代是阅读宿主usage、日志和请求详情，再人工关联会话步骤。插件把逐attempt观测、缓存比例、对比、历史和导航组织成可视化流程，贡献在观测证据与会话位置的结合。它观察现有请求而不修改提示或模型调用，因此不应宣传为自动提升缓存命中率。分辨attempt与step有价值，但历史或降级路径只有step级时要保留估算标记。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:26-38](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md#L26-L38)\n\n作者定义缓存、详情、定位、对比和attempt/step边界。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## 能做什么\n\n| 功能 | 用途 |\n| --- | --- |\n| 缓存棋盘 | 按轮次堆叠请求砖，看到每次请求的缓存命中率变化 |\n| 请求详情 | 单击砖块，查看可用的对话、缓存与 token 用量、耗时、工具调用、重试及错误 |\n| 对话定位 | 双击砖块或点击面板定位按钮，跳到对应对话行 |\n| 请求对比 | 对比两次请求的记录，帮助排查变化 |\n| 活动翻面 | 在同一棋盘查看模型输出、思考和工具调用等活动 |\n| 历史回看 | 横向、纵向滚动棋盘，按当前视图加载历史，一键回到最新 |\n\n一块砖对应一次模型请求 attempt，重试产生另一块砖。宿主采集不可用时，降级记录按 step 折叠，并标为估算。插件观察已有请求，不修改模型请求或提示词。\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:4-15](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/index.ts#L4-L15)\n\n入口说明只读观察、不增加工具或请求改写。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n * The cache badge is a browser-facing plugin, but its data cannot be gathered in\n * the browser: the outgoing request, the attempt identity, the retry records and\n * the token-meter snapshot only exist on the host. This half therefore installs a\n * **read-only** collector (see `./host/collect`) and serves what it gathered over\n * its own HTTP namespace.\n *\n * It adds no tool, no prompt section and no request rewrite: the plugin's only\n * interaction with the model-call path is an `llm/stream` observer that returns\n * `next()` untouched. The two server-side facts that make this safe are the\n * waterfall contract (returning anything else would replace the model's stream)\n * and the deep-frozen loop request (writing to it throws), both verified against\n * the installed runtime.\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 请求观察、存储、计算和展示怎么连接？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\nhost入口安装collector，监听llm/stream捕获派发请求，监听assistant stream和durable session事件补齐attempt与结果，再由ledger组织记录。采集失败在safely中捕获，llm waterfall会调用next继续模型链；辅助调用可能包裹流以观察，属于可见的执行路径参与，不能把“只读”误解为完全没有运行开销。\n\n大型payload放入内容寻址BlobStore，规范化JSON后哈希去重，砖记录保留ref；按单blob、总字节和数量限制淘汰。metrics将未缓存input、缓存读与缓存写相加作分母，缺缓存字段时返回undefined而不是零；时间指标从dispatch/first token/finish推导。HTTP前缀提供sessions、attempts、blob和SSE，先宿主requestRejection再loopback与Host/Origin比较。客户端把实时feed与宿主历史窗口组合，面板和对话导航共享记录，但历史不保证恢复当时完整请求。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/host/collect.ts:268-295](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/collect.ts#L268-L295)\n\n派发采集、next和辅助流观察。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n  ctx.on('llm/stream', ((...args: unknown[]) => {\n    const options = args[0] as RequestLike\n    const next = args[1] as () => unknown\n    // Every read of the payload is guarded: a hostile or exotic request object\n    // must not be able to turn into a throw inside the model-call path.\n    let sessionId = 'unknown'\n    try {\n      if (typeof options.sessionId === 'string') sessionId = options.sessionId\n    } catch {\n      sessionId = 'unknown'\n    }\n    safely(() => {\n      snapshotContext(sessionId)\n      collect(sessionId, { kind: 'dispatch', at: Date.now(), options: stateFor(sessionId).summarizer.summarize(options) })\n    })\n    const stream = next()\n    // Reading the payload is itself guarded: this code sits inside the model-call\n    // path, so even a hostile or exotic request object must not turn into a throw\n    // here. Anything unreadable is treated as a normal request.\n    let purpose: unknown\n    try {\n      purpose = options.purpose\n    } catch {\n      purpose = undefined\n    }\n    // An auxiliary call has no Turn attempt to pair with and produces no\n    // `agent/assistant-stream` frames, so its chunks can only be observed by\n    // wrapping the stream. The wrapper yields exactly what it receives: the\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/core/blob-store.ts:96-132](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/blob-store.ts#L96-L132)\n\n内容哈希、去重、读取及淘汰后缺失。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n  put(value: unknown): StoredBlob | undefined {\n    const text = canonicalize({ [ENVELOPE]: value })\n    const bytes = utf8Length(text)\n    if (bytes > this.maxBlobBytes) {\n      this.skipped += 1\n      return undefined\n    }\n    const hash = contentRef(text)\n    const existing = this.blobs.get(hash)\n    if (existing !== undefined) {\n      // Re-insert to mark it as recently used.\n      this.blobs.delete(hash)\n      this.blobs.set(hash, existing)\n      return { hash, bytes: existing.bytes, added: false }\n    }\n    this.blobs.set(hash, { text, bytes })\n    this.bytes += bytes\n    this.evict()\n    return { hash, bytes, added: true }\n  }\n\n  /**\n   * Read a payload back.\n   * @param hash - the ref returned by {@link put}.\n   * @returns the payload, or undefined when it was never stored or has been evicted.\n   */\n  get(hash: string): unknown {\n    const entry = this.blobs.get(hash)\n    if (entry === undefined) {\n      this.misses += 1\n      return undefined\n    }\n    this.hits += 1\n    this.blobs.delete(hash)\n    this.blobs.set(hash, entry)\n    const parsed = JSON.parse(entry.text) as Record<string, unknown>\n    return parsed[ENVELOPE]\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/shared/metrics.ts:23-62](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/shared/metrics.ts#L23-L62)\n\n输入分母与缓存缺失语义。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport function promptTokensOf(usage: BrickUsage | undefined): number | undefined {\n  if (usage === undefined) return undefined\n  const total = usage.inputTokens + (usage.cacheReadTokens ?? 0) + (usage.cacheWriteTokens ?? 0)\n  return total > 0 ? total : undefined\n}\n\n/** The three prompt buckets as ratios of the prompt. */\nexport interface PromptRatios {\n  readonly promptTokens: number\n  readonly cacheHitRatio: number\n  readonly uncachedRatio: number\n  readonly cacheWriteRatio: number\n}\n\n/**\n * Split the prompt into its three disjoint parts.\n *\n * Returns nothing when the provider reported **no** cache buckets at all: a\n * missing field means \"not reported\", not \"zero cached\", and printing `0.00%`\n * for a provider that never mentions caching is the same lie as printing `n/a`\n * for one that does.\n *\n * @param usage - provider usage for the attempt.\n * @returns the ratios, or undefined when there is no usable prompt size or no\n *   cache accounting to split.\n */\nexport function promptRatiosOf(usage: BrickUsage | undefined): PromptRatios | undefined {\n  if (usage !== undefined && usage.cacheReadTokens === undefined && usage.cacheWriteTokens === undefined) {\n    return undefined\n  }\n  const promptTokens = promptTokensOf(usage)\n  if (promptTokens === undefined || usage === undefined) return undefined\n  const cacheRead = usage.cacheReadTokens ?? 0\n  const cacheWrite = usage.cacheWriteTokens ?? 0\n  return {\n    promptTokens,\n    cacheHitRatio: cacheRead / promptTokens,\n    uncachedRatio: usage.inputTokens / promptTokens,\n    cacheWriteRatio: cacheWrite / promptTokens,\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/routes.ts:107-158](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/routes.ts#L107-L158)\n\n认证栅栏及数据读取端点。\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\nexport function createCacheBricksRouter(deps: RouterDeps, options: RouterOptions = {}): {\n  readonly path: string\n  readonly handler: (request: RouteRequestLike, response: RouteResponseLike) => void\n} {\n  const path = options.basePath ?? '/cache-bricks'\n  const handler = (request: RouteRequestLike, response: RouteResponseLike): void => {\n    // The harness's policy first: it is the same one /api uses, so this route is\n    // exactly as reachable as the rest of the GUI and no more.\n    const rejection = options.guard?.(request)\n    if (rejection !== undefined) {\n      json(response, rejection, { error: rejection === 401 ? 'unauthenticated' : 'forbidden' })\n      return\n    }\n    if (!isLoopback(request) || !isSameOrigin(request)) {\n      json(response, 403, { error: 'forbidden' })\n      return\n    }\n    const url = new URL(request.url ?? '/', 'http://localhost')\n    const route = url.pathname.slice(path.length)\n    if (request.method !== 'GET' && request.method !== 'HEAD') {\n      json(response, 405, { error: 'method not allowed' })\n      return\n    }\n\n    if (route === '/sessions') {\n      json(response, 200, { sessions: deps.sessions() })\n      return\n    }\n\n    if (route === '/attempts') {\n      const sessionId = url.searchParams.get('sessionId')\n      if (sessionId === null) {\n        json(response, 400, { error: 'sessionId is required' })\n        return\n      }\n      const feed = deps.feed(sessionId)\n      json(response, feed === undefined ? 404 : 200, feed ?? { error: 'no observations for this session yet' })\n      return\n    }\n\n    if (route === '/blob') {\n      const ref = url.searchParams.get('ref')\n      if (ref === null) {\n        json(response, 400, { error: 'ref is required' })\n        return\n      }\n      const value = deps.blob(ref)\n      if (value === undefined) {\n        json(response, 404, { error: 'unknown or evicted ref' })\n        return\n      }\n      json(response, 200, { ref, value })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/index.tsx:99-105](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/client/index.tsx#L99-L105)\n\n历史来源与原始请求捕获的差异。\n\n```text\n/**\n * The session's own log, read a **scene** at a time — the board's historical source.\n *\n * The collector only ever sees this process, so a brick older than it used to lose its type, its\n * lifecycle and its target. The log has held all of that all along; `./history-scene` reads it\n * with the same observations the collector uses, so a replayed brick means what a live one means,\n * minus the request capture the log never had.\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 命中率能否解释原因，记录是否完整可安全访问？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n命中率只是读token占提示token的比例，不能单独确定下降来自提示变化、路由、模型缓存策略或任务内容；低prompt被灰色处理也不是异常判断。公式假设宿主将input、read、write桶分离，若适配器传入的是另一口径，视觉颜色可能精确表达了错误输入语义。需要结合完整请求和版本解释，而不是见红就归因插件或用户。\n\n记录有明确保留上限。默认最多八个会话、BlobStore总48MiB、单项4MiB及4096对象；内容会被淘汰，重启清内存，历史只恢复宿主实际日志字段。/blob可能提供原始请求、工具参数和流，敏感性高于一般计数看板。代码优先宿主认证，后备loopback和同Host来源，不等同于多用户数据隔离；在反向代理或共享本地环境下必须核对部署边界。导航也将日志加载和渲染分开，no-loader或timeout不能当成功。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/shared/metrics.ts:49-62](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/shared/metrics.ts#L49-L62)\n\n比例仅表达usage字段关系。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function promptRatiosOf(usage: BrickUsage | undefined): PromptRatios | undefined {\n  if (usage !== undefined && usage.cacheReadTokens === undefined && usage.cacheWriteTokens === undefined) {\n    return undefined\n  }\n  const promptTokens = promptTokensOf(usage)\n  if (promptTokens === undefined || usage === undefined) return undefined\n  const cacheRead = usage.cacheReadTokens ?? 0\n  const cacheWrite = usage.cacheWriteTokens ?? 0\n  return {\n    promptTokens,\n    cacheHitRatio: cacheRead / promptTokens,\n    uncachedRatio: usage.inputTokens / promptTokens,\n    cacheWriteRatio: cacheWrite / promptTokens,\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/collect.ts:108-145](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/collect.ts#L108-L145)\n\n默认内存和会话限制。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nexport function installCollector(ctx: HostContextLike, options: CollectorOptions = {}): Collector {\n  const store = new BlobStore({ maxTotalBytes: options.maxStoreBytes ?? 48 * 1024 * 1024 })\n  const sessions = new Map<string, SessionState>()\n  let disposed = false\n\n  /** Run an observation without ever letting it reach the caller. */\n  const safely = (action: () => void): void => {\n    try {\n      action()\n    } catch (error) {\n      // Never rethrow: this code sits inside the model-call path.\n      console.warn('[dsh-cache-bricks] observation failed:', error instanceof Error ? error.message : error)\n    }\n  }\n\n  /**\n   * Session states, capped. A long-running host sees many sessions, and each one\n   * holds a ledger and (through the shared store) raw payloads; the oldest is\n   * dropped rather than kept until the plugin is disposed.\n   */\n  const MAX_SESSIONS = options.maxSessions ?? 8\n\n  const stateFor = (sessionId: string): SessionState => {\n    const existing = sessions.get(sessionId)\n    if (existing !== undefined) {\n      // Re-insert to mark it as most recently used.\n      sessions.delete(sessionId)\n      sessions.set(sessionId, existing)\n      return existing\n    }\n    if (sessions.size >= MAX_SESSIONS) {\n      const oldest = sessions.keys().next()\n      if (oldest.done !== true) sessions.delete(oldest.value)\n    }\n    const state: SessionState = {\n      ledger: new BrickLedger(sessionId, {\n        store,\n        ...(options.maxBricks === undefined ? {} : { maxBricks: options.maxBricks }),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/core/blob-store.ts:38-50](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/blob-store.ts#L38-L50)\n\n单对象与数量上限。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n/** Limits that keep a long session from growing without bound. */\nexport interface BlobStoreOptions {\n  /** Largest single payload kept; bigger ones are refused and reported. */\n  readonly maxBlobBytes?: number\n  /** Total bytes kept across all payloads; the least recently used go first. */\n  readonly maxTotalBytes?: number\n  /** Hard cap on payload count, independent of their size. */\n  readonly maxBlobs?: number\n}\n\nconst DEFAULT_MAX_BLOB_BYTES = 4 * 1024 * 1024\nconst DEFAULT_MAX_TOTAL_BYTES = 48 * 1024 * 1024\nconst DEFAULT_MAX_BLOBS = 4096\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host/routes.ts:60-90](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/routes.ts#L60-L90)\n\nloopback、Origin/Host后备栅栏。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nconst LOOPBACK = new Set(['127.0.0.1', '::1', '::ffff:127.0.0.1'])\n\n/**\n * True when the peer is the local machine.\n *\n * An absent `remoteAddress` is **not** treated as local: this route serves whole\n * requests, tool arguments and model streams, so an unidentifiable peer is\n * refused rather than admitted. (With the harness fence in place this is only a\n * backstop — the official policy runs first.)\n */\nfunction isLoopback(request: RouteRequestLike): boolean {\n  const address = request.socket?.remoteAddress\n  return address !== undefined && LOOPBACK.has(address)\n}\n\n/**\n * True when the request either carries no `Origin` (same-origin fetches from the\n * page, and non-browser clients) or carries one matching the `Host` it was sent\n * to. A cross-origin page cannot read the response either way without CORS, but\n * refusing outright keeps the data out of reach of a stray `<img>`/`<script>`.\n */\nfunction isSameOrigin(request: RouteRequestLike): boolean {\n  const origin = request.headers.origin\n  if (typeof origin !== 'string' || origin === '') return true\n  const host = request.headers.host\n  if (typeof host !== 'string' || host === '') return false\n  try {\n    return new URL(origin).host === host\n  } catch {\n    return false\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/navigation.ts:421-440](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/client/navigation.ts#L421-L440)\n\n加载依据实际窗口覆盖而非调用完成。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  if (request.unreachable !== undefined) return { status: request.unreachable }\n  const seq = request.seq\n  if (seq === undefined || !Number.isSafeInteger(seq) || seq < 1) return { status: 'no-seq' }\n  if (face === undefined) return { status: 'no-loader', seq }\n  if (covers(face, seq)) return { status: 'already-loaded', seq }\n\n  const wait = options.wait ?? defaultWait\n  try {\n    await face.loadThrough(seq)\n  } catch {\n    // A soft failure is the session's own to publish (`snapshot.loadingOlder`, `openError`);\n    // the coverage check below still answers the only question asked here.\n  }\n  const budget = options.timeoutMs ?? 4000\n  const poll = options.pollMs ?? 100\n  for (let spent = 0; spent < budget; spent += poll) {\n    if (covers(face, seq)) return { status: 'loaded', seq }\n    await wait(poll)\n  }\n  return covers(face, seq) ? { status: 'loaded', seq } : { status: 'timeout', seq }\n```\n\n</details>\n\n#### 缺口\n\n- 部署适配器token桶语义与共享/代理环境的访问边界未固定。\n  **影响：**影响指标可比性和敏感请求内容的可见范围。\n  **进一步探讨：**在所用宿主及provider固定版本核对usage映射和路由认证，限定单用户本地环境后再解释颜色。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 加载、兼容与失败恢复依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n安装提供已构建lib入口和web客户端，运行时需要Cordis、React以及宿主chat/conversation/renderer/slots相关表面。package放宽部分peer依赖为*且可选，并不证明任意DSH版本兼容；作者公开基线是0.1.7-rc.2。本轮固定读取插件源码和作者契约，不把其开发机验证当独立复现。\n\nhost没有webServer时仍可观察，但不发布HTTP；客户端延迟取得sessions服务，导航依赖loadThrough和窗口事件、对话DOM目标。失败恢复先区分没有观测、blob已淘汰、历史未覆盖、加载器缺失和目标未渲染。重启会丢进程内原始记录，不可能靠reload恢复从未写进宿主日志的payload；旧cache-badge包还需按作者说明移除避免两套UI。退出走宿主移除和重启，不需要迁移插件自己的磁盘数据库。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:22-33](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/index.ts#L22-L33)\n\nhost可无HTTP环境安装collector。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/**\n * Install the collector.\n *\n * `webServer` is requested through `ctx.inject` rather than a module-level\n * `inject`, so the collector still observes on a composition that serves no HTTP\n * (headless, TUI) — it simply has no routes to publish to.\n *\n * @param ctx - the plugin context.\n * @param config - optional capacity and serving options from the plugin row.\n */\nexport function apply(ctx: unknown, config?: CollectorOptions): void {\n  installCollector(ctx as HostContextLike, config ?? {})\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/collect.ts:461-483](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/collect.ts#L461-L483)\n\n延迟注入webServer及宿主认证接线。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  if (options.serve !== false) {\n    const router = createCacheBricksRouter({\n      feed: (sessionId) => collector.feed(sessionId),\n      sessions: () => collector.sessions(),\n      blob: (ref) => collector.blob(ref),\n      subscribe: (sessionId, sink) => collector.subscribe(sessionId, sink),\n    }, {\n      ...(options.basePath === undefined ? {} : { basePath: options.basePath }),\n      // Prefer the harness's own request policy: it applies the same host, origin\n      // and browser-authentication checks as /api, which matters because /blob\n      // serves whole requests, tool arguments and streams.\n      guard: (request) => {\n        const connection = ctx.get('connection') as\n          | { requestRejection?: (request: unknown) => number | undefined }\n          | undefined\n        return connection?.requestRejection?.(request)\n      },\n    })\n    ctx.inject(['webServer'], (webCtx) => {\n      const server = webCtx.get('webServer') as { register(route: { kind: string; path: string; handler: unknown }): () => void } | undefined\n      if (server === undefined || disposed) return\n      webCtx.effect(() => server.register({ kind: 'prefix', path: options.basePath ?? router.path, handler: router.handler }))\n    })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.tsx:57-85](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/client/index.tsx#L57-L85)\n\n延迟服务与不同加载结果的可读说明。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n/**\n * The client context, kept only so the official services can be resolved **at use time**.\n *\n * They cannot be resolved once at startup: the sessions service is provided *after* this\n * plugin's client half applies (measured on 0.1.7-rc.1: `ctx.get('sessions')` is undefined\n * inside `apply` and present two seconds later), so anything captured early would be a\n * permanent `undefined` — a jump feature that never loads and never says why.\n */\nconst ctxRef: { current: Context | undefined } = { current: undefined }\n\n/** How one load ended, in one short sentence for the panel. */\nexport function loadText(report: LoadReport): string {\n  switch (report.status) {\n    case 'not-needed':\n      return 'the row was already on screen'\n    case 'already-loaded':\n      return `history already covered seq ${String(report.seq)}`\n    case 'loaded':\n      return `loaded history through seq ${String(report.seq)}`\n        + (report.rendered === false ? ' (the transcript has not rendered it)' : '')\n    case 'nothing-to-load':\n      return 'this brick has no row in the transcript to load for'\n    case 'no-seq':\n      return 'the record carries no log position for this attempt, so there is nothing to load'\n    case 'no-loader':\n      return 'this core did not give the plugin a session face, so nothing could be loaded'\n    case 'timeout':\n      return `history was requested but the window still does not cover seq ${String(report.seq)}`\n      + (report.rendered === false ? ' — and the transcript shows no new rows either' : '')\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:86-91](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md#L86-L91)\n\n作者明确内存、重启及日志恢复边界。\n\n```text\n## 数据与使用边界\n\n- 插件读取本机 DSH 的请求观测记录和会话日志，完整版可能展示其中的请求、对话与工具内容。\n- 插件采集内容保存在进程内存中，通过受保护的本机接口提供给界面；插件自身不将这些内容写入磁盘，没有第三方上传或分析端点。DSH 原有会话日志由宿主管理。\n- 重启会清空内存中的采集内容；历史回看能恢复的字段以会话日志实际记录为准。\n- 定位依赖宿主加载并渲染目标行；对话旁空白不足时棋盘会隐藏。\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 观测会增加哪些阶段成本，效果如何判断？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n首次成本是加载与核对宿主版本/布局、正确读取一组usage和重试记录；没有新增模型请求不表示不用CPU、内存或人工。持续路径会摘要请求、规范化JSON和哈希、保留大payload，并将feed通过本地HTTP/SSE传给浏览器。去重只复用完全相同对象内容，不能等同于跨不同请求前缀自动压缩。最多100ms发布一次且无人订阅不物化feed可减轻代价，但实际长上下文计算和UI成本仍需测量。\n\n失败恢复需要辨别采集遗漏、过期ref和历史窗口不足，再决定是否重现任务。为了重新采集payload而重跑模型会产生额外费用，不能从插件本身只读推断总成本零。效果标准应是同一缓存异常的正确诊断率与定位时间，连同模型总账单、请求合格结果和人工复核比较；本轮没有证据量化节省或性能改善。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/core/blob-store.ts:62-114](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/core/blob-store.ts#L62-L114)\n\n每个完整payload规范化、字节计量与哈希。\n\n<details>\n<summary>查看原文（53行）</summary>\n\n```text\n/** Canonical JSON: key order fixed, so equal values always hash equally. */\nfunction canonicalize(value: unknown): string {\n  return JSON.stringify(value, (_key, item: unknown) => {\n    if (item === null || typeof item !== 'object' || Array.isArray(item)) return item\n    const source = item as Record<string, unknown>\n    const sorted: Record<string, unknown> = {}\n    for (const key of Object.keys(source).sort()) sorted[key] = source[key]\n    return sorted\n  }) ?? 'null'\n}\n\n/** Content-addressed store with LRU eviction. */\nexport class BlobStore {\n  private readonly blobs = new Map<string, { text: string; bytes: number }>()\n  private readonly maxBlobBytes: number\n  private readonly maxTotalBytes: number\n  private readonly maxBlobs: number\n  private bytes = 0\n  private hits = 0\n  private misses = 0\n  private skipped = 0\n  private evicted = 0\n\n  constructor(options: BlobStoreOptions = {}) {\n    this.maxBlobBytes = options.maxBlobBytes ?? DEFAULT_MAX_BLOB_BYTES\n    this.maxTotalBytes = options.maxTotalBytes ?? DEFAULT_MAX_TOTAL_BYTES\n    this.maxBlobs = options.maxBlobs ?? DEFAULT_MAX_BLOBS\n  }\n\n  /**\n   * Store a payload and return its ref.\n   * @param value - any JSON-serializable payload.\n   * @returns the ref and size, or undefined when the payload is too large to keep.\n   */\n  put(value: unknown): StoredBlob | undefined {\n    const text = canonicalize({ [ENVELOPE]: value })\n    const bytes = utf8Length(text)\n    if (bytes > this.maxBlobBytes) {\n      this.skipped += 1\n      return undefined\n    }\n    const hash = contentRef(text)\n    const existing = this.blobs.get(hash)\n    if (existing !== undefined) {\n      // Re-insert to mark it as recently used.\n      this.blobs.delete(hash)\n      this.blobs.set(hash, existing)\n      return { hash, bytes: existing.bytes, added: false }\n    }\n    this.blobs.set(hash, { text, bytes })\n    this.bytes += bytes\n    this.evict()\n    return { hash, bytes, added: true }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/collect.ts:155-169](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/collect.ts#L155-L169)\n\n100ms发布及无订阅时跳过feed物化。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  const PUBLISH_INTERVAL_MS = 100\n  let lastPublish = 0\n  let trailing: ReturnType<typeof setTimeout> | undefined\n\n  const publishNow = (state: SessionState): void => {\n    lastPublish = Date.now()\n    // Materializing every brick is the expensive part; skip it when the tab that\n    // asked for the stream has gone.\n    if (state.listeners.size === 0) return\n    const feed = state.ledger.feed()\n    for (const listener of state.listeners) {\n      try {\n        listener(feed)\n      } catch {\n        // A dead SSE client is not the collector's problem.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/collect.ts:279-283](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/collect.ts#L279-L283)\n\n派发链上先做同步观测再next。\n\n```text\n    safely(() => {\n      snapshotContext(sessionId)\n      collect(sessionId, { kind: 'dispatch', at: Date.now(), options: stateFor(sessionId).summarizer.summarize(options) })\n    })\n    const stream = next()\n```\n\n#### 缺口\n\n- 缺少真实长上下文下采集开销和诊断收益对照。\n  **影响：**不能判断内存/CPU代价是否被排查效率抵销。\n  **进一步探讨：**同宿主同任务对照启用和停用，记录模型链延迟、峰值内存、UI响应与正确诊断时间。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 工程哪些可复用，可推导何种未验证改进？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用设计包括指标纯函数集中口径、缺失值与零分离、内容寻址存储、观察失败不抛入主模型链，以及历史加载后再次检查实际覆盖而非把await完成当成功。测试源码给出手算usage fixture，明确input/read/write分离假设，便于做反例。移植需重核宿主事件身份、usage适配和DOM导航，不把结构类型兼容当语义兼容。\n\n未验证方向是让颜色旁同时呈现证据完整性与口径来源，区分真实attempt、step估算、payload淘汰和历史重建，并要求缓存归因假设引用一次可比请求对照。推导来自指标看似清楚却仍依赖桶语义与保留范围。最小验证向维护者提供同一组cache变化、缺字段和淘汰样例，对比仅颜色与带完整性提示的误归因率及操作时间；若增加信息没有降低误判，或妨碍主要任务阅读，应否定扩展。该方向未实现，不计入现有评分。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/shared/metrics.ts:37-62](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/shared/metrics.ts#L37-L62)\n\n缺字段不显示零的明确语义。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n/**\n * Split the prompt into its three disjoint parts.\n *\n * Returns nothing when the provider reported **no** cache buckets at all: a\n * missing field means \"not reported\", not \"zero cached\", and printing `0.00%`\n * for a provider that never mentions caching is the same lie as printing `n/a`\n * for one that does.\n *\n * @param usage - provider usage for the attempt.\n * @returns the ratios, or undefined when there is no usable prompt size or no\n *   cache accounting to split.\n */\nexport function promptRatiosOf(usage: BrickUsage | undefined): PromptRatios | undefined {\n  if (usage !== undefined && usage.cacheReadTokens === undefined && usage.cacheWriteTokens === undefined) {\n    return undefined\n  }\n  const promptTokens = promptTokensOf(usage)\n  if (promptTokens === undefined || usage === undefined) return undefined\n  const cacheRead = usage.cacheReadTokens ?? 0\n  const cacheWrite = usage.cacheWriteTokens ?? 0\n  return {\n    promptTokens,\n    cacheHitRatio: cacheRead / promptTokens,\n    uncachedRatio: usage.inputTokens / promptTokens,\n    cacheWriteRatio: cacheWrite / promptTokens,\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[tests/metrics.spec.ts:16-39](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/tests/metrics.spec.ts#L16-L39)\n\n手算fixture和桶求和断言。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** The example the design notes use: a healthy step with a big cached prefix. */\nconst HEALTHY: BrickUsage = {\n  inputTokens: 2461,\n  outputTokens: 2986,\n  cacheReadTokens: 317_992,\n  cacheWriteTokens: 0,\n  reasoningTokens: 1421,\n}\n\n/** The same shape after the prefix was invalidated: nothing cached. */\nconst REBUILD: BrickUsage = { inputTokens: 321_844, outputTokens: 118, cacheReadTokens: 0 }\n\ndescribe('promptTokensOf', () => {\n  it('sums the three disjoint prompt buckets', () => {\n    expect(promptTokensOf(HEALTHY)).toBe(320_453)\n    expect(promptTokensOf(REBUILD)).toBe(321_844)\n  })\n\n  it('treats missing cache buckets as zero', () => {\n    expect(promptTokensOf({ inputTokens: 900, outputTokens: 10 })).toBe(900)\n  })\n\n  it('returns nothing for an empty or absent prompt, rather than dividing by zero later', () => {\n    expect(promptTokensOf(undefined)).toBeUndefined()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host/collect.ts:113-120](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/collect.ts#L113-L120)\n\n观察异常隔离。\n\n```text\n  /** Run an observation without ever letting it reach the caller. */\n  const safely = (action: () => void): void => {\n    try {\n      action()\n    } catch (error) {\n      // Never rethrow: this code sits inside the model-call path.\n      console.warn('[dsh-cache-bricks] observation failed:', error instanceof Error ? error.message : error)\n    }\n```\n\n**依据 4 · 源码核查**：[src/client/navigation.ts:421-440](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/client/navigation.ts#L421-L440)\n\n实际覆盖检查。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  if (request.unreachable !== undefined) return { status: request.unreachable }\n  const seq = request.seq\n  if (seq === undefined || !Number.isSafeInteger(seq) || seq < 1) return { status: 'no-seq' }\n  if (face === undefined) return { status: 'no-loader', seq }\n  if (covers(face, seq)) return { status: 'already-loaded', seq }\n\n  const wait = options.wait ?? defaultWait\n  try {\n    await face.loadThrough(seq)\n  } catch {\n    // A soft failure is the session's own to publish (`snapshot.loadingOlder`, `openError`);\n    // the coverage check below still answers the only question asked here.\n  }\n  const budget = options.timeoutMs ?? 4000\n  const poll = options.pollMs ?? 100\n  for (let spent = 0; spent < budget; spent += poll) {\n    if (covers(face, seq)) return { status: 'loaded', seq }\n    await wait(poll)\n  }\n  return covers(face, seq) ? { status: 'loaded', seq } : { status: 'timeout', seq }\n```\n\n</details>\n\n#### 缺口\n\n- 完整性提示对用户误归因的影响没有对照。\n  **影响：**设计推演不能宣称改进诊断效果。\n  **进一步探讨：**固定混合样例并盲评正确归因与耗时，再决定最小提示。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 对什么人值得试用，停止标准是什么？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n建议熟悉usage口径、需要排查长会话或重试的本地单用户维护者试用；先使用不含敏感材料的会话，确认实际attempt数量、缺字段、重启与淘汰行为，再看缓存变化。它适合辅助诊断而非自动优化，读者应能分清颜色、原始证据和原因假设。\n\n成功标准是已知重试样例不被合并成一个真实attempt、指标与适配器原始usage一致、导航准确报告结果、敏感blob只在预期边界可见。若升级后字段错位、主调用延迟明显、页面遮挡或访问边界不清，应停止该范围使用并回到宿主日志。当前已读源码及作者说明支撑可控试用，不满足本轮同版本安装/核心功能/卸载验收，不能评为值得安装。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/shared/metrics.ts:23-62](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/shared/metrics.ts#L23-L62)\n\n采用前需核对usage语义。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport function promptTokensOf(usage: BrickUsage | undefined): number | undefined {\n  if (usage === undefined) return undefined\n  const total = usage.inputTokens + (usage.cacheReadTokens ?? 0) + (usage.cacheWriteTokens ?? 0)\n  return total > 0 ? total : undefined\n}\n\n/** The three prompt buckets as ratios of the prompt. */\nexport interface PromptRatios {\n  readonly promptTokens: number\n  readonly cacheHitRatio: number\n  readonly uncachedRatio: number\n  readonly cacheWriteRatio: number\n}\n\n/**\n * Split the prompt into its three disjoint parts.\n *\n * Returns nothing when the provider reported **no** cache buckets at all: a\n * missing field means \"not reported\", not \"zero cached\", and printing `0.00%`\n * for a provider that never mentions caching is the same lie as printing `n/a`\n * for one that does.\n *\n * @param usage - provider usage for the attempt.\n * @returns the ratios, or undefined when there is no usable prompt size or no\n *   cache accounting to split.\n */\nexport function promptRatiosOf(usage: BrickUsage | undefined): PromptRatios | undefined {\n  if (usage !== undefined && usage.cacheReadTokens === undefined && usage.cacheWriteTokens === undefined) {\n    return undefined\n  }\n  const promptTokens = promptTokensOf(usage)\n  if (promptTokens === undefined || usage === undefined) return undefined\n  const cacheRead = usage.cacheReadTokens ?? 0\n  const cacheWrite = usage.cacheWriteTokens ?? 0\n  return {\n    promptTokens,\n    cacheHitRatio: cacheRead / promptTokens,\n    uncachedRatio: usage.inputTokens / promptTokens,\n    cacheWriteRatio: cacheWrite / promptTokens,\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host/routes.ts:115-158](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/src/host/routes.ts#L115-L158)\n\n访问边界与敏感blob端点。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n    const rejection = options.guard?.(request)\n    if (rejection !== undefined) {\n      json(response, rejection, { error: rejection === 401 ? 'unauthenticated' : 'forbidden' })\n      return\n    }\n    if (!isLoopback(request) || !isSameOrigin(request)) {\n      json(response, 403, { error: 'forbidden' })\n      return\n    }\n    const url = new URL(request.url ?? '/', 'http://localhost')\n    const route = url.pathname.slice(path.length)\n    if (request.method !== 'GET' && request.method !== 'HEAD') {\n      json(response, 405, { error: 'method not allowed' })\n      return\n    }\n\n    if (route === '/sessions') {\n      json(response, 200, { sessions: deps.sessions() })\n      return\n    }\n\n    if (route === '/attempts') {\n      const sessionId = url.searchParams.get('sessionId')\n      if (sessionId === null) {\n        json(response, 400, { error: 'sessionId is required' })\n        return\n      }\n      const feed = deps.feed(sessionId)\n      json(response, feed === undefined ? 404 : 200, feed ?? { error: 'no observations for this session yet' })\n      return\n    }\n\n    if (route === '/blob') {\n      const ref = url.searchParams.get('ref')\n      if (ref === null) {\n        json(response, 400, { error: 'ref is required' })\n        return\n      }\n      const value = deps.blob(ref)\n      if (value === undefined) {\n        json(response, 404, { error: 'unknown or evicted ref' })\n        return\n      }\n      json(response, 200, { ref, value })\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:86-91](https://github.com/3289192-bot/dsh-cache-bricks/blob/2e52b914eaea5a02e5937c323160cf2fd2b8de1b/README.md#L86-L91)\n\n作者数据和UI边界。\n\n```text\n## 数据与使用边界\n\n- 插件读取本机 DSH 的请求观测记录和会话日志，完整版可能展示其中的请求、对话与工具内容。\n- 插件采集内容保存在进程内存中，通过受保护的本机接口提供给界面；插件自身不将这些内容写入磁盘，没有第三方上传或分析端点。DSH 原有会话日志由宿主管理。\n- 重启会清空内存中的采集内容；历史回看能恢复的字段以会话日志实际记录为准。\n- 定位依赖宿主加载并渲染目标行；对话旁空白不足时棋盘会隐藏。\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4afb06c080945b46ac7a6f42216d807bd1bcef7d184c0554fce333ac9d4d22f4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 9 | 2180 | — | — | 25526 |\n| .js | source | 3 | 2095 | 1607 | 503 | — |\n| .mjs | source | 9 | 4051 | 3233 | 632 | — |\n| .ts | source | 25 | 12674 | 7403 | 4595 | — |\n| .tsx | source | 2 | 1636 | 1225 | 336 | — |\n| .ts | test | 26 | 7581 | 6110 | 855 | — |\n| .js | test | 1 | 52 | 51 | 1 | — |\n\n排除 25 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| attempt观测 | 分开真实请求与重试 | 降级/历史仅有日志可恢复字段 |\n| 缓存棋盘和详情 | 可视检查usage与请求 | 不是优化器或因果判定 |\n| 对比/导航/历史 | 关联请求与对话 | 宿主加载、渲染及保留限制 |\n| 本地数据接口 | 前后端共享采集材料 | 包含敏感payload，需认证边界 |\n\n## 工程亮点\n\n纯指标、内容寻址去重和失败隔离可借鉴，导航检查真实窗口而非仅await；迁移需核对attempt身份、usage和宿主DOM契约。详见[Q06](#research-q06)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/host/collect.ts、src/host/routes.ts、src/core/blob-store.ts、src/shared/metrics.ts、src/client/index.tsx、src/client/navigation.ts、tests/metrics.spec.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交读取host采集/路由、内容存储、指标、客户端接线/导航与测试；未逐行审计全部布局和回放模块，不把作者开发记录当本轮独立执行。\n- 下一步：进一步探讨可从token桶映射、重试身份、blob淘汰与历史渲染四类样例入手，再用启用/停用对照比较主调用开销和正确诊断时间。\n",
         "metadata": {
             "repository": "3289192-bot/dsh-cache-bricks",
             "repository_id": 1386463441,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T04:50:05.404Z",
+            "window_start": "2026-09-22T04:50:05.404Z",
             "stars": 0,
             "pushed_at": "2026-09-27T19:42:21Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6404:0BD8:1D95:365A:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641E:37D83B:14748E:2206CC:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:17E195:13FBEF:219E55:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:142DC7:21CD47:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A3289192-bot%2Fdsh-cache-bricks%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641F:287071:13B4E9:214BB6:6AD84A10 and timestamp 2026-10-21 05:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-cache-bricks",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T04:50:14.244Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-cache-bricks",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-cache-bricks",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T04:50:14.244Z",
                     "source_url": "https://registry.npmjs.org/dsh-cache-bricks",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-                "current_revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

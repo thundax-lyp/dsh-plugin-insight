@@ -110,20 +110,6 @@
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
-                },
-                {
-                    "id": "2026-10-21-01-github-1335843750-root-source",
-                    "kind": "source_inspection",
-                    "url": "https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs",
-                    "revision": "d969899808e51dcccd261588f667b18633020fca",
-                    "captured_at": "2026-10-21T02:02:15.762Z",
-                    "summary": "核查 bin/verify.mjs、mcp/server.mjs、dsh/plugin.mjs；bin/verify.mjs 将 JSON action 映射为 Playwright 操作、计算样式与像素比较，再汇总逐步结果；MCP 和 DSH 入口调用同一执行路径。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/263311487-ux--dsh-verify/REVIEWED-SOURCE.json",
-                    "limitations": [
-                        "固定提交的核心入口与说明抽读；未执行目标代码、测试、插件安装或真实宿主验收，未核实独立采用与同条件收益。",
-                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
-                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
-                    ]
                 }
             ],
             "findings": [
