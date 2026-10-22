@@ -489,9 +489,36 @@ export function stageRecord(workPath, id, observationPath, reportPath, displayPa
         unlinkSync(lock);
     }
 }
-function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayPath, root = ROOT) {
-    const base = readSnapshot(root),
-        work = validateWork(readWork(workPath), root);
+// Validate a batch against one fixed baseline and persist only after every entry passes.
+export function stageRecords(workPath, entries, root = ROOT) {
+    if (!Array.isArray(entries) || !entries.length) throw Error('stage batch must be nonempty');
+    const lock = workPath + '.lock',
+        fd = openSync(lock, 'wx', 0o600);
+    try {
+        writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(resolve(dirname(workPath), 'SESSION.json.lock'))) throw Error('active session lock');
+        const base = readSnapshot(root),
+            work = validateWork(readWork(workPath), root);
+        const context = { base, work, catalog: structuredClone(base.catalog) };
+        for (const entry of Object.values(work.records))
+            context.catalog = planCatalog(context.catalog, entry.observations, 'update').result;
+        for (const entry of entries) {
+            if (!entry.id || !entry.observations || !entry.report || !entry.display)
+                throw Error('batch entry requires id, observations, report and display');
+            stageRecordUnlocked(workPath, entry.id, entry.observations, entry.report, entry.display, root, context);
+        }
+        assemble(base, work, root);
+        if (digest(readSnapshot(root)) !== work.base_digest) throw Error('snapshot baseline changed');
+        saveWork(workPath, work);
+        return work;
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
+function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayPath, root = ROOT, context = null) {
+    const base = context?.base ?? readSnapshot(root),
+        work = context?.work ?? validateWork(readWork(workPath), root);
     if (work.base_digest !== digest(base)) throw Error('snapshot baseline changed');
     if (work.records[id]) throw Error('record already staged; do not overwrite checkpoint');
     const observations = read(observationPath),
@@ -522,9 +549,10 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     )
         throw Error('new research stage requires a current scored recommendation and reason');
     // Reconstruct only the candidate catalog; formal catalog is untouched.
-    let catalog = structuredClone(base.catalog);
-    for (const entry of Object.values(work.records))
-        catalog = planCatalog(catalog, entry.observations, 'update').result;
+    let catalog = context?.catalog ?? structuredClone(base.catalog);
+    if (!context)
+        for (const entry of Object.values(work.records))
+            catalog = planCatalog(catalog, entry.observations, 'update').result;
     catalog = planCatalog(catalog, observations, 'update').result;
     delete work.session.items.find((item) => item.id === id).block;
     completeItem(
@@ -548,12 +576,19 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
         artifacts,
         files: [observationPath, reportPath, displayPath].map((p) => relative(root, resolve(p)))
     };
-    assemble(base, work, root);
-    saveWork(workPath, work);
+    if (context) context.catalog = catalog;
+    else {
+        assemble(base, work, root);
+        saveWork(workPath, work);
+    }
     return work;
 }
 // null input is an explicit retry of an already selected blocked item.
 export function changeBlockRecord(workPath, id, input, root = ROOT) {
+    return changeBlockRecords(workPath, [{ id, input }], root);
+}
+export function changeBlockRecords(workPath, entries, root = ROOT) {
+    if (!Array.isArray(entries) || !entries.length) throw Error('block batch must be nonempty');
     const lock = workPath + '.lock',
         fd = openSync(lock, 'wx', 0o600);
     try {
@@ -561,30 +596,32 @@ export function changeBlockRecord(workPath, id, input, root = ROOT) {
         if (existsSync(resolve(dirname(workPath), 'SESSION.json.lock'))) throw Error('active session lock');
         const work = validateWork(readWork(workPath), root);
         if (work.base_digest !== digest(readSnapshot(root))) throw Error('snapshot baseline changed');
-        const item = selectedItems(work.session).find((p) => p.id === id);
-        if (input === null) {
-            if (!item || item.status !== 'blocked') throw Error('only blocked selected item can be retried');
-            item.status = 'pending';
-            delete item.reason;
-            delete item.block;
-        } else {
-            if (!item || item.status !== 'pending') throw Error('only pending selected item can be blocked');
-            if (
-                (input.plugin_id !== undefined && input.plugin_id !== item.id) ||
-                (input.revision !== undefined && input.revision !== item.revision)
-            )
-                throw Error('block input identity or revision differs');
-            item.status = 'blocked';
-            item.reason = input.reason;
-            item.block = {
-                plugin_id: item.id,
-                revision: item.revision,
-                reason_code: input.reason_code,
-                reason: input.reason,
-                details: input,
-                blocked_at: new Date().toISOString(),
-                run_id: work.session.id
-            };
+        for (const { id, input } of entries) {
+            const item = selectedItems(work.session).find((p) => p.id === id);
+            if (input === null) {
+                if (!item || item.status !== 'blocked') throw Error('only blocked selected item can be retried');
+                item.status = 'pending';
+                delete item.reason;
+                delete item.block;
+            } else {
+                if (!item || item.status !== 'pending') throw Error('only pending selected item can be blocked');
+                if (
+                    (input.plugin_id !== undefined && input.plugin_id !== item.id) ||
+                    (input.revision !== undefined && input.revision !== item.revision)
+                )
+                    throw Error('block input identity or revision differs');
+                item.status = 'blocked';
+                item.reason = input.reason;
+                item.block = {
+                    plugin_id: item.id,
+                    revision: item.revision,
+                    reason_code: input.reason_code,
+                    reason: input.reason,
+                    details: input,
+                    blocked_at: new Date().toISOString(),
+                    run_id: work.session.id
+                };
+            }
         }
         validateWork(work, root);
         saveWork(workPath, work);
@@ -833,10 +870,16 @@ export async function main(args = process.argv.slice(2)) {
         const w = validateWork(readWork(need('work')));
         validateSession(w.session);
         console.log(JSON.stringify(selectedItems(w.session).find((p) => p.status === 'pending') ?? null));
+    } else if (command === 'stage-batch') {
+        stageRecords(need('work'), read(need('input')));
+        console.log('Batch staged; formal snapshot unchanged');
     } else if (command === 'stage') {
         if (!v.plugin) throw Error('--plugin required');
         stageRecord(need('work'), v.plugin, need('observations'), need('report'), need('display'));
         console.log('Record staged; formal snapshot unchanged');
+    } else if (command === 'block-batch') {
+        changeBlockRecords(need('work'), read(need('input')));
+        console.log('Block batch saved; formal snapshot unchanged');
     } else if (command === 'block' || command === 'retry') {
         if (!v.plugin) throw Error('--plugin required');
         changeBlockRecord(need('work'), v.plugin, command === 'block' ? read(need('input')) : null);
@@ -857,7 +900,7 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
     else
         throw Error(
-            'Usage: snapshot bootstrap|start|next|stage|block|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
+            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
         );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
