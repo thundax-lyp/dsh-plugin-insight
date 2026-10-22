@@ -10,7 +10,7 @@
             "repository": "01NGVI-QINGYI/no-ai-style",
             "path": "",
             "aliases": [],
-            "name": "No AI Style",
+            "name": "no-ai-style",
             "entry_type": "plugin",
             "technical_category": "agent-workflow",
             "business_category": "content-creation",
@@ -24,36 +24,130 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1418493685-root-directory-0",
+                    "id": "2026-10-22-02-github-1418493685-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:01:47.849Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:36:53.680Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1418493685-root-author",
+                    "id": "2026-10-22-02-github-1418493685-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "README.md",
+                            "content_sha256": "b25263ec9c186d7ed0d1b31c04b68c4cf50200a88a9df772c30b8d93db0b0bd3"
+                        }
+                    ],
                     "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-                    "captured_at": "2026-10-20T03:01:47.849Z",
-                    "summary": "以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:53.680Z",
+                    "summary": "提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1418493685-root-source",
+                    "id": "2026-10-22-02-github-1418493685-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js",
+                    "url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "README.md",
+                            "content_sha256": "b25263ec9c186d7ed0d1b31c04b68c4cf50200a88a9df772c30b8d93db0b0bd3"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "package.json",
+                            "content_sha256": "98ddb66db116849ae3d04aeb3522627b6194ba0c9e1282b6d9f0b7c2f831ed7d"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "index.js",
+                            "content_sha256": "85b299768b2345a3af214e20dc92a96dc4a3ca13dfd9fa22b6afe3d90ffa3cc9"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "src/client.cjs",
+                            "content_sha256": "4607ac26a50a64c542e30bb1c113f2935c70810119f0b85d50af5c774f883066"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "lib/client.js",
+                            "content_sha256": "0da1a1355227f02cf31541e14eaff6aa81649ebcf61868aec8ea82ea60fbd478"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/SKILL.md",
+                            "content_sha256": "a5b0734c46643692c03ecb6e6908f1627a798906fe7d2258cb11212d2c3a2398"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/references/evidence-boundary.md",
+                            "content_sha256": "7093f4d771e25c3acfc14015adaf9f23eff568f6f9ab91e4fbd60e215894913a"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/references/voice-contract.md",
+                            "content_sha256": "59edfae0361644870328581bcf6439198d2cd89f65633dd9fb0eec7fea112d9b"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/references/release-check.md",
+                            "content_sha256": "8e2adc121b30c65339e66f1396df6a29abad4bebb91ded19d94f310abe8c40a3"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/references/language-notes.md",
+                            "content_sha256": "690c9bf33d986c3b43905e4358f2e895e09dfd32f00139494770be3e68b30e29"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/scripts/audit_prose.py",
+                            "content_sha256": "5ccbce9e622463c444b566263b338f1292db5e1157fa6afe2f9b02b13f8a7692"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/scripts/compare_anchors.py",
+                            "content_sha256": "b7083ffb20cf16ab1ca6315be1a611da3e2a8fe0dd62e15c16a90deaf0729f71"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "skills/no-ai-style/tests/test_no_ai_style.py",
+                            "content_sha256": "24e421355d74f4da6834ed26a366a28f8ac94cb8573ec6e7268f6526bedbfb8d"
+                        },
+                        {
+                            "repository_url": "https://github.com/01NGVI-QINGYI/no-ai-style",
+                            "commit": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                            "path": "tests/client-smoke.cjs",
+                            "content_sha256": "32915bc39fc1f3afadf4ca6aef5900b08cf4dd22b1c26481144ba6a22d53b57a"
+                        }
+                    ],
                     "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-                    "captured_at": "2026-10-20T03:01:47.849Z",
-                    "summary": "核查 index.js、skills/no-ai-style/SKILL.md；filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:53.680Z",
+                    "summary": "核查 README.md、package.json、index.js、src/client.cjs、lib/client.js、skills/no-ai-style/SKILL.md、skills/no-ai-style/references/evidence-boundary.md、skills/no-ai-style/references/voice-contract.md、skills/no-ai-style/references/release-check.md、skills/no-ai-style/references/language-notes.md、skills/no-ai-style/scripts/audit_prose.py、skills/no-ai-style/scripts/compare_anchors.py、skills/no-ai-style/tests/test_no_ai_style.py、tests/client-smoke.cjs；包内filesystem Skill provider供Agent读取，GUI只插模式指令，可选Python检查patterns和数值锚点。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。",
+                        "完整Skill248行、provider16行、两Python脚本、证据/声音/提交参考及CJK指引；完整client源和发布插入关键链，Python测试及client smoke代表分支，不运行。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +158,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。",
+                    "text": "需要保持事实与证据强度的学术/职业文本编辑。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +169,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。",
+                    "text": "包内filesystem Skill provider供Agent读取，GUI只插模式指令，可选Python检查patterns和数值锚点。",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +187,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。",
+                    "text": "完整Skill248行、provider16行、两Python脚本、证据/声音/提交参考及CJK指引；完整client源和发布插入关键链，Python测试及client smoke代表分支，不运行。",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +205,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "清单为 no-ai-style 1.2.1，声明 DSH 版本区间与 skill-filesystem peer 依赖。",
+                    "text": "1.2.1 MIT，DSH>=0.1.5rc3<0.3、filesystem provider peer；可选React18 UI，Python3.9+仅离线脚本。",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +223,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "不需额外写作服务，但仍消耗所用模型调用和逐句复核时间；没有成本实测。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Skill provider/可选Web UI，脚本另需Python3.9+；金额未知 | 明确体裁/授权段落、语言、不可改锚点与原文备份，工时未知 | 插件不自带写作模型或论文来源 |\n| 持续使用 | 宿主模型读取Skill/材料并生成；可选本地正则/计数扫描 | 审阅flags与前后命题/证据对应，实际耗时未知 | Python不联网不等整体模型处理不外发；token/价格依宿主，净节时未知 |\n| 失败恢复 | 保留原文、重生成/复查与宿主上下文，金额未知 | 回退无据改写、恢复丢锚点/引用并请作者澄清 | 相同锚点不保证同义；已采用的错误文稿需另行纠正，恢复工时未知 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +241,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。",
+                    "text": "作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +259,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 事实优先写作 | gate/模式/回查指令 | 真实模型遵循与语义忠实率 |\n| 机械检查 | pattern/数字Counter | 不保证没有问题/等义 |\n| GUI指令插入 | 新旧宿主保护分支 | 具体宿主引用/最新草稿契约 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +277,16 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "短入口复用宿主 Skill provider，规则正文与客户端入口分离，迁移需验证加载路径。",
+                    "text": "生产函数测试和引用拒绝/throw防护可借鉴，指令token存在性与模型效果必须分开。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1418493685-root-source"
+                        "2026-10-22-02-github-1418493685-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +295,135 @@
                             "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:01:47.849Z",
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将阅读契约、事实边界、最小编辑和回查门槛与三模式交付接合，比单句润色提示更有审阅结构。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "词法flags和数字multiset不能证明语义等价；按钮只是提示插入，自动执行与宿主引用保护有具体契约条件。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418493685-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1418493685:root",
+                            "area": "code",
+                            "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:36:53.680Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:01:47.849Z",
+            "last_checked_at": "2026-10-22T09:36:53.680Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
+                "reviewed_at": "2026-10-22T09:36:53.680Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1418493685:root",
+                        "area": "code",
+                        "fingerprint": "a64e811bf0aa255189a0df2011a6a392c5d59966"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty取9，参照编辑回查/数值diff为常见方法整合，未宣称新写作理论；mechanism取15，事实门优先与模式/回查/标记组合改变禁词替换的取舍，但语义靠人；transferability取10，纯Markdown/标准库脚本可跨宿主，UI另依ABI；simplification取8，统一三模式与辅助脚本减少提示拼装，完整审核责任未消失。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418493685-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow取18，相比直接润色明确审阅/授权编辑/证据待定的责任交接；delivery取15，交付可用修稿或带影响/建议与ready边界的审阅报告，且缺证据可阻交，较只给改稿有实质验收形式增量；reach取10，三语言指引和模式按钮降低组织提示门槛；economics取4，本地检查可少机械复核但新增模型/人工审核，净节时无对照。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1418493685-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "专业文本作者可先对旧稿做仅审阅试用，逐项核对数字、引用及限定词。",
+                "reason": "适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "反复润色专业文本且保留事实承诺的人群明确。"
+                        "rationale": "忠实润色/稿件审阅任务明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "可携带的保真与授权规则胜过反复写提示，但直接提示也能完成。"
+                        "score": 19,
+                        "rationale": "事实优先/三模式/回查相比普通提示有明确结构，效果待对照。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "Skill正文与provider接线可查，事实保真率尚未测量。"
+                        "rationale": "完整Skill/脚本/UI与生产测试可核，真实写作效果未知。"
                     },
                     "cost": {
                         "score": 15,
-                        "rationale": "无额外写作服务，主要负担为模型调用及逐句校对。"
+                        "rationale": "无独立平台/脚本外部依赖，仍需模型和作者工时。"
                     }
                 },
-                "score": 64,
+                "score": 70,
                 "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:36:53.680Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1418493685-root-source"
+                    "2026-10-22-02-github-1418493685-root-source"
                 ],
                 "dependencies": [
                     {
@@ -259,89 +448,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "9844080a66b3f9587fa15b5f107d6182c47fd224d455825a2d9fd1571209d220"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "cfc23547a16b3fd31bb17ba13b31da9bef768d47a256250a9f370711d10b9eee"
         },
         "publication.metadata": "data/plugins/01ngvi-qingyi--no-ai-style/META.json",
         "publication.summaries": {
-            "text": "以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。",
+            "text": "提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。",
             "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
             "source_url": "https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/README.md"
         },
         "publication.capabilities": {
             "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
             "items": {
-                "Skill": "内嵌 no-ai-style 写作审阅与润色 Skill。",
-                "界面": "包清单声明 Web 客户端写作入口。"
-            }
+                "Skill": "no-ai-style写作三模式与事实优先门槛",
+                "界面": "composer三模式指令插入按钮"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `no-ai-style` Skill | audit/revise/compose | Agent遵循，不能自动认证忠实 |\n| 模式按钮 | 前插本地化指令 | 不直接改稿/调用模型；旧版有引用拒插 |\n| 可选audit脚本 | 词法/缺口候选 | 非检测器，不自动删除 |\n| 可选anchor脚本 | 数值/引用锚点变化 | Counter不保语义关系 |\n"
         },
         "publication.advice": {
             "revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-            "text": "先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。"
+            "text": "作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/01ngvi-qingyi--no-ai-style",
-        "reports": "# No AI Style\n\n> 以写作 Skill 和输入框入口帮助润色中英日专业文本，保留事实、引文与不确定性。\n\n## 固定范围与依据\n\n固定提交 [a64e811bf0aa255189a0df2011a6a392c5d59966](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js)；组件路径：仓库根。核查时间 2026-10-20T03:01:47.849Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：index.js、skills/no-ai-style/SKILL.md。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。\n- **亮点**：filesystem provider 暴露内嵌 Skill；审阅与改写模式区分权限，真相边界优先于文风。\n- **思考**：权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。\n- **建议**：先用带数字和引用的旧稿试改，逐项对照事实与限定词，不把文风自然当作内容可靠。\n\n## 场景与替代办法\n\n论文与专业文档作者需要减少机械表达，同时保留事实承诺和引用。\n\n直接提示模型也能润色；该项目把反复使用的保真与授权规则固定为可携带 Skill。\n\n## 依赖与流程\n\n需兼容 DSH 的 skills、agents 与 filesystem provider；效果依赖写作模型和原稿依据。\n\n选择仅审阅或改写模式，提供段落及依据；人工检查变化后才写回正式稿。\n\n## 成本与效果\n\n不需额外写作服务，但仍消耗所用模型调用和逐句复核时间；没有成本实测。\n\n权限模式与事实优先级值得采用；提示词约束不是保真保证，仍由作者承担复核。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f53722d244977f223c5fa4961fde0ecae04b36a362bdb7befe3c7369b00591e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 375 | 335 | 15 | — |\n| .md | source | 10 | 876 | — | — | 6066 |\n| .mjs | source | 1 | 11 | 9 | 0 | — |\n| .md | example | 2 | 61 | — | — | 375 |\n| .cjs | source | 1 | 349 | 313 | 15 | — |\n| .cjs | test | 1 | 274 | 239 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Skill**：内嵌 no-ai-style 写作审阅与润色 Skill。\n- **界面**：包清单声明 Web 客户端写作入口。\n\n## 工程亮点\n\n短入口复用宿主 Skill provider，规则正文与客户端入口分离，迁移需验证加载路径。\n\n## 分发与兼容\n\n清单为 no-ai-style 1.2.1，声明 DSH 版本区间与 skill-filesystem peer 依赖。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。直接提示模型也能润色；该项目把反复使用的保真与授权规则固定为可携带 Skill。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查 Skill 正文与 provider 接线，未测量事实保真率或评审一致性。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用十段带统计和限制条件的文本，比较普通润色提示与本 Skill 的事实改动及复核时间。\n",
+        "reports": "# no-ai-style\n\n> 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。\n\n## 研究范围\n\n- **仓库**：[01NGVI-QINGYI/no-ai-style](https://github.com/01NGVI-QINGYI/no-ai-style)\n- **版本号**：1.2.1（[固定提交 a64e811bf0aa255189a0df2011a6a392c5d59966](https://github.com/01NGVI-QINGYI/no-ai-style/tree/a64e811bf0aa255189a0df2011a6a392c5d59966)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n模式/事实优先和插入保护设计可核；语义忠实仍需模型/作者，离线脚本仅提示，命题收据假设未验证。\n\n## 洞察短评\n\n- **用途**：需要保持事实与证据强度的学术/职业文本编辑。详见[Q01](#research-q01)。\n- **亮点**：将阅读契约、事实边界、最小编辑和回查门槛与三模式交付接合，比单句润色提示更有审阅结构。详见[Q01](#research-q01)。\n- **思考**：词法flags和数字multiset不能证明语义等价；按钮只是提示插入，自动执行与宿主引用保护有具体契约条件。详见[Q03](#research-q03)。\n- **建议**：从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](#research-q05)。\n\n采用建议：作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将阅读契约、事实边界、最小编辑和回查门槛与三模式交付接合，比单句润色提示更有审阅结构。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n词法flags和数字multiset不能证明语义等价；按钮只是提示插入，自动执行与宿主引用保护有具体契约条件。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](#research-q05)。\n\n固定跨语言稿件对照通用提示，用数值换位/因果/人群/缺证据反例核命题收据。\n\n## 场景与替代办法\n\n需要保持事实与证据强度的学术/职业文本编辑。详见[Q01](#research-q01)。\n\n通用润色提示、禁词替换与人工编辑校对；本项将事实回查组织成可复用流程。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| skills/agents/filesystem provider | 包内Skill可用 | 不写其他根，watch=false |\n| 原宿主模型/材料 | 审阅与改稿 | 费用与隐私沿宿主 |\n| React/slots/locale/inputActions | 三模式按钮 | 缺UI不等Skill消失；引用分支依版本 |\n| Python3.9+（可选） | 离线检查 | 标准库，只读文本，非语义验证 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 备份原文/定阅读契约 | 作者 | 范围/证据可改性明确 |\n| 选audit/revise/compose | 用户/按钮 | 指令只插入不直接发文 |\n| 模型按Skill交付 | Agent | 保事实与未知标记 |\n| 核锚点及命题证据 | 作者 | 不靠零flags判ready |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Skill provider/可选Web UI，脚本另需Python3.9+；金额未知 | 明确体裁/授权段落、语言、不可改锚点与原文备份，工时未知 | 插件不自带写作模型或论文来源 |\n| 持续使用 | 宿主模型读取Skill/材料并生成；可选本地正则/计数扫描 | 审阅flags与前后命题/证据对应，实际耗时未知 | Python不联网不等整体模型处理不外发；token/价格依宿主，净节时未知 |\n| 失败恢复 | 保留原文、重生成/复查与宿主上下文，金额未知 | 回退无据改写、恢复丢锚点/引用并请作者澄清 | 相同锚点不保证同义；已采用的错误文稿需另行纠正，恢复工时未知 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 事实优先写作 | gate/模式/回查指令 | 真实模型遵循与语义忠实率 |\n| 机械检查 | pattern/数字Counter | 不保证没有问题/等义 |\n| GUI指令插入 | 新旧宿主保护分支 | 具体宿主引用/最新草稿契约 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**写作Skill怎样在改善阅读时守事实边界，UI插入与离线检查各自能够提供什么保证？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · “去AI味”在这里具体指什么，交付标准如何限定？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n目标是英/中/日学术与职业文稿更可读且不改变事实承诺，不是AI检测器规避或把他人文字伪装原创。audit只列问题、revise仅授权范围、compose依据已有材料起草；默认轻改、好段不凑改量，ready只在请求提交检查时结合现有材料给出。合格交付需读者路径改善、引用/数字/方法/不利结果/不确定性保留，未证据项仍标gap，而非句式更自信或脚本零告警。\n\n相对一句“润色”或通用词表替换，已有贡献是把reading contract→truth boundary→读者路径→语言调整→backcheck的有序门槛，以及[EVIDENCE GAP]/[INTERPRETATION FLAG]、三种交付模式接合。主张强度保护优先于风格是可借鉴方法设计；它仍是给模型/人的指令，不是语义忠实验证器。作者声音参照只用于已有样本，不推断身份/经历。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/no-ai-style/SKILL.md:28-53](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L28-L53)\n\n优先级与三模式。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n- Gates are ordered priorities, not a checklist. When gates conflict,\n  **Gate 2 (truth boundary) always wins**. Gate 3 and Gate 4 defer to\n  Gate 1 (reading contract). Gate 5 overrides any earlier change that\n  cannot be verified.\n- Prefer the smallest edit that satisfies the reading contract. Do not\n  fix problems the user did not ask about.\n- Open only the reference file needed for the current task.\n- Identify a specific reading problem before changing a passage. If no\n  relevant problem is present, keep it; editing does not need a quota.\n\n## Decide the operating mode\n\nInfer the mode from the request; do not ask when intent is clear.\n\n| Mode | Trigger | Allowed work | Deliver |\n| --- | --- | --- | --- |\n| `audit` | inspect, critique, identify problems; ready to submit, final check, publish | Read and report; do not edit source files | Prioritized findings; when readiness is requested, add a verdict and unresolved risks |\n| `revise` | polish, humanize, tighten, rewrite, no-ai-style | Edit the authorized passage only | Revised text and a brief change summary |\n| `compose` | draft from notes, tables, findings | Write from given material, marking unknowns | Draft with unresolved-evidence notes if needed |\n\nIf the user requests only a translation, preserve source meaning,\nregister, qualifiers, and citations before attempting stylistic\nchanges. If only a response is needed, do not create or modify files.\n\n## Five gates\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/no-ai-style/SKILL.md:71-98](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L71-L98)\n\n事实/证据保护。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n\n- Measurements, counts, units, percentages, uncertainty intervals,\n  p-values, model names, dates, population definitions, outcome\n  definitions, and citation locators.\n- Research design, sampling, procedures, registered hypotheses,\n  exclusions, ethics information, and the distinction between planned\n  and completed work.\n- Negative, null, conflicting, and inconclusive observations, when\n  relevant to the inquiry.\n- Scope and strength of inference: association is not causation; lack\n  of detected significance is not proof of equivalence.\n\nNever invent a citation, DOI, author, quotation, test result, method,\napproval, participant, or source verification. If a necessary item is\nunknown, label it unresolved rather than hiding the gap with\npersuasive language. See `references/evidence-boundary.md`.\n\n### Gate 3 — Rebuild the reader's path\n\nFor each paragraph, state its job in a few words: define, motivate,\nclaim, support, interpret, qualify, compare, or transition. If two\nparagraphs perform the same job, combine or differentiate them. Put\nthe necessary point where readers can find it; give it support\nnearby; end with the consequence for the argument.\n\nClassify passages for revision:\n\n- `KEEP` — essential claim, evidence, limitation, or purposeful voice.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/no-ai-style/SKILL.md:155-194](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L155-L194)\n\n回查门槛。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nRun these checks **in order of priority**. If 5.1 (anchors) or 5.2\n(claim strength) fails, do not continue stylistic polishing or deliver\nthe affected revision. Revert or narrow the unsupported change, or\nreport the failure and the required author input.\n\n**5.1 Anchors unchanged.** Compare before/after with\n`scripts/compare_anchors.py` or by reading. Every number, unit,\ncitation locator, model name, and date must match or have a documented\nreason to change.\n\n**5.2 Claim strength preserved or narrowed.** For every substantive\nclaim, check: did the revision make the claim *stronger*? If the\noriginal said \"associated with,\" the revision must not say \"causes.\"\nIf the original reported a null result, the revision must not delete\nit. Use the `Claim-Equilibrium` procedure in\n`references/evidence-boundary.md`.\n\n**5.3 Caveats still accessible.** Relevant limitations and contrary\nevidence must remain at a location a reader can find. Relocate a caveat only when readers can still interpret the claim correctly\nwhere it appears; keep essential scope in the abstract itself.\n\n**5.4 Coherence after edits.** Terminology, scope, tense, paragraph\nlinks, and genre-specific register are consistent from opening to\nclose. Compare changed passages with the source in both directions:\nidentify reading problems still present, and information or intentional\nexpression the edit damaged. Restore a useful construction when its\nreplacement is less precise or less recognizably the author’s. Stop\nwhen the requested problems are resolved; do not manufacture another pass.\n\n**5.5 Delivery surface clean.** The final artifact must not reference\ndiscarded conversations or options that were never implemented.\nRequired historical records (changelogs, migration notes, audit\ntrails) are retained. Apply the check separately to each surface:\ntitle, abstract, commit message, PR description, body, captions, tags.\n\n**5.6 Original authorship.** The output is not a mechanical\nparaphrase of another author's prose. Attribution is maintained where\nneeded.\n\nTreat script findings as review flags; check the text and underlying evidence before accepting edits.\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skills/no-ai-style/SKILL.md:220-236](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L220-L236)\n\n交付与检测器边界。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  `考えられる` or `示唆される`.\n\n## Response contract\n\n- `audit`: compact finding table with impact, evidence from the text,\n  and a suggested action; do not output a secretly edited manuscript. If\n  asked whether an artifact is ready, add `ready`, `ready with reservations`,\n  or `not ready`, followed by unresolved material issues.\n- `revise`: usable revised prose first, then explain only material\n  changes; flag any unverifiable claim or fact requiring approval.\n- `compose`: requested draft, followed by explicit open questions.\n  Use two markers:\n  - `[EVIDENCE GAP]` — missing data; blocks release until the\n    author supplies it.\n  - `[INTERPRETATION FLAG]` — data present but ambiguous; author\n    confirmation is enough to proceed.\nFor requests to 'remove AI traces' or 'avoid plagiarism', improve clarity and\n```\n\n</details>\n\n**依据 5 · 源码核查**：[skills/no-ai-style/references/voice-contract.md:1-25](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/voice-contract.md#L1-L25)\n\n作者样本边界。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n# Using the author’s samples\n\nRead this reference when the user supplies their own prose or requests\nconsistency across a document. A sample helps settle an editing choice;\nit does not authorize collecting more material or inventing a biography.\n\nFor a disputed change, compare the draft with a relevant sample. Is the\nsame construction used intentionally there? Does it serve the same\npurpose here? Repeated terminology, an unusual sentence opening, or a\nlong explanation may be useful to this author and audience. Preserve it\nunless the requested edit calls for a change or it obscures the meaning.\n\nExplain a material choice with a short observation from the supplied\ntext: for example, “The methods sections use impersonal constructions,\nso this revision keeps that register.” Do not turn a single occurrence\ninto a rule for the writer’s entire body of work. A venue requirement\napplies to that venue; a preference in an email need not govern a paper.\n\nWithout a relevant sample, follow the draft’s established register and\nthe user’s requested intensity. Offer an alternative when either choice\nwould be reasonable. Do not generate a voice profile or separate style\nfiles unless requested.\n\nPersonal experiences, institutional roles, and positions must come from\nthe author’s material. Quoted or borrowed language retains attribution.\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · Skill与按钮分别做什么，引用草稿怎样保护？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nhost用dsh-skill-filesystem注册独立provider，includeDefaultRoots=false、bundledSkillDir包内skills、watch=false，不写用户项目Skill根。client按钮仅把本地化自然语言模式指令前插草稿，Cancel不改；没有调用模型或确定性执行Skill的专用host action，真正Skill选择/遵循仍依宿主Agent。GUI入口可缺席而Skill provider仍可用。\n\n新inputActions.insertText分支可captureInsertion并强制[0,0]，宿主返回true才关闭，throw/false显示错误，依宿主revision语义保留富引用。capture不存在或抛错会以空span额外字段继续尝试，故不能从本插件独立保证CAS总存在。旧setDraft分支在occurrences非空时明确拒绝以免flatten；普通文本用渲染时draft拼前缀，没有该分支revision参数，宿主状态/渲染时序影响最新草稿。busy判断、Escape composing保护和事件清理有实际代码。\n\n包声明DSH>=0.1.5rc3<0.3、filesystem provider rc6到<0.3、React18/ReactDOM；可选UI需locale/slot/输入actions。Python3.9+仅给可选脚本，Skill本身依原宿主模型和文件读取权限。watch=false意味着包内容更新需按宿主reload策略，不是热监测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-16](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js#L1-L16)\n\nprovider范围和watch。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nimport { fileURLToPath } from \"node:url\";\nimport { apply as applyFilesystemProvider } from \"@deepseek-ai/dsh-skill-filesystem\";\n\nconst skillsRoot = fileURLToPath(new URL(\"./skills/\", import.meta.url));\n\nexport const name = \"no-ai-style\";\nexport const inject = [\"skills\", \"agents\"];\n\nexport function apply(ctx) {\n  applyFilesystemProvider(ctx, {\n    providerName: name,\n    includeDefaultRoots: false,\n    bundledSkillDir: skillsRoot,\n    watch: false,\n  });\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.cjs:186-247](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/src/client.cjs#L186-L247)\n\n新旧插入动作。\n\n<details>\n<summary>查看原文（62行）</summary>\n\n```text\n      window.removeEventListener('scroll', place, true);\n    };\n  }, [open]);\n\n  const insert = () => {\n    if (!selected) return;\n    if (input && input.phase && input.phase !== 'plain') {\n      setFeedback(t('error.busy'));\n      return;\n    }\n    const draft = input && typeof input.draft === 'string' ? input.draft : '';\n    const prefix = t(`prompt.${selected}`);\n    const insertion = `${prefix}${draft.length > 0 ? '\\n\\n' : ''}`;\n    const actions = inputActions || {};\n\n    // Newer DSH releases expose a revision-guarded splice. It inserts at [0, 0]\n    // and leaves the rest of the draft, including reference chips, intact.\n    if (typeof actions.insertText === 'function') {\n      let captured = {};\n      if (typeof actions.captureInsertion === 'function') {\n        try { captured = actions.captureInsertion() || {}; } catch { captured = {}; }\n      }\n      const span = { ...captured, start: 0, end: 0 };\n      // A host action is not this plugin's contract to trust: a throw here would\n      // escape the click handler, and React answers that by unmounting the slot\n      // entry, taking the composer button with it. A refusal is recoverable.\n      let applied = false;\n      try {\n        applied = actions.insertText(insertion, span) === true;\n      } catch {\n        setFeedback(t('error.unavailable'));\n        return;\n      }\n      if (!applied) {\n        setFeedback(t('error.changed'));\n        return;\n      }\n      dismiss(false);\n      return;\n    }\n\n    // Older DSH exposes only setDraft, which flattens rich references. Keep\n    // ordinary text intact, but refuse that fallback when references are present.\n    const occurrences = input && Array.isArray(input.occurrences) ? input.occurrences : [];\n    if (occurrences.length > 0) {\n      setFeedback(t('error.references'));\n      return;\n    }\n    if (typeof actions.setDraft !== 'function') {\n      setFeedback(t('error.unavailable'));\n      return;\n    }\n    try {\n      actions.setDraft(`${insertion}${draft}`);\n    } catch {\n      setFeedback(t('error.unavailable'));\n      return;\n    }\n    dismiss(false);\n  };\n\n  const options = MODES.map((mode) => h('button', {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:196-254](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/lib/client.js#L196-L254)\n\n发布bundle同链。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n      const insert = () => {\n        if (!selected) return;\n        if (input && input.phase && input.phase !== 'plain') {\n          setFeedback(t('error.busy'));\n          return;\n        }\n        const draft = input && typeof input.draft === 'string' ? input.draft : '';\n        const prefix = t(`prompt.${selected}`);\n        const insertion = `${prefix}${draft.length > 0 ? '\\n\\n' : ''}`;\n        const actions = inputActions || {};\n    \n        // Newer DSH releases expose a revision-guarded splice. It inserts at [0, 0]\n        // and leaves the rest of the draft, including reference chips, intact.\n        if (typeof actions.insertText === 'function') {\n          let captured = {};\n          if (typeof actions.captureInsertion === 'function') {\n            try { captured = actions.captureInsertion() || {}; } catch { captured = {}; }\n          }\n          const span = { ...captured, start: 0, end: 0 };\n          // A host action is not this plugin's contract to trust: a throw here would\n          // escape the click handler, and React answers that by unmounting the slot\n          // entry, taking the composer button with it. A refusal is recoverable.\n          let applied = false;\n          try {\n            applied = actions.insertText(insertion, span) === true;\n          } catch {\n            setFeedback(t('error.unavailable'));\n            return;\n          }\n          if (!applied) {\n            setFeedback(t('error.changed'));\n            return;\n          }\n          dismiss(false);\n          return;\n        }\n    \n        // Older DSH exposes only setDraft, which flattens rich references. Keep\n        // ordinary text intact, but refuse that fallback when references are present.\n        const occurrences = input && Array.isArray(input.occurrences) ? input.occurrences : [];\n        if (occurrences.length > 0) {\n          setFeedback(t('error.references'));\n          return;\n        }\n        if (typeof actions.setDraft !== 'function') {\n          setFeedback(t('error.unavailable'));\n          return;\n        }\n        try {\n          actions.setDraft(`${insertion}${draft}`);\n        } catch {\n          setFeedback(t('error.unavailable'));\n          return;\n        }\n        dismiss(false);\n      };\n    \n      const options = MODES.map((mode) => h('button', {\n        key: mode,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client.cjs:296-349](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/src/client.cjs#L296-L349)\n\nUI服务/样式生命周期。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  // therefore caught: a missing surface costs the button, never the GUI.\n  ctx.effect(() => {\n    try {\n      const style = document.createElement('style');\n      style.id = STYLE_ID;\n      style.textContent = CSS;\n      document.head.appendChild(style);\n      return () => style.remove();\n    } catch {\n      return () => {};\n    }\n  }, 'no-ai-style: composer styles');\n\n  ctx.inject(['locale'], (localeCtx) => {\n    // One effect per dictionary, each guarded on its own, so a single rejection\n    // cannot cost the others. A profile with no locale service renders\n    // dictionary keys instead of copy: degraded, not broken.\n    const registerCopy = (...args) => {\n      const label = typeof args[1] === 'string' ? args[1] : 'zh/en';\n      ctx.effect(() => {\n        try {\n          return localeCtx.locale.register(...args);\n        } catch {\n          return () => {};\n        }\n      }, `no-ai-style: ${label} copy`);\n    };\n    registerCopy(NS, { zh, en });\n    // DSH language packs can add Japanese. Registering this dictionary lets\n    // the UI follow that locale without changing the user's global language list.\n    registerCopy(NS, 'ja', ja);\n    registerCopy(NS, 'ja-JP', ja);\n  });\n\n  ctx.inject(['slots'], (slotsCtx) => {\n    const slots = slotsCtx.slots;\n    return slots.inject('conversation.input.right', () => {\n      try {\n        return slots.register({\n          name: 'conversation.input.right',\n          id: 'no-ai-style-mode-picker',\n          order: 65,\n          locale: NS,\n        }, ModePicker);\n      } catch {\n        return () => {};\n      }\n    });\n  });\n}\n\nexports.name = 'no-ai-style';\nexports.inject = [];\nexports.apply = apply;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:26-45](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/package.json#L26-L45)\n\nDSH/UI范围。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    \"engines\": {\n      \"dsh\": \">=0.1.5-rc.3 <0.3.0\"\n    },\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"immediately\": true,\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-conversation\",\n        \"@deepseek-ai/dsh-client-ui-slots\",\n        \"react\",\n        \"react-dom\"\n      ]\n    }\n  },\n  \"keywords\": [\n    \"dsh-plugin\",\n```\n\n</details>\n\n#### 缺口\n\n- 部署宿主insertText/captureInsertion与setDraft的最新草稿/引用契约\n  **影响：**按钮拒绝分支可查，但跨版本插入是否总保留最新引用和正文需对应ABI支持\n  **进一步探讨：**对照固定宿主输入动作契约，用草稿变更/带引用和拒绝动作记录核边界\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 两个离线脚本能够证明哪些结论？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\naudit_prose逐行用短正则找空前言、泛背景、叠加不确定和会话残留，按语言或auto扫描，屏蔽URL/HTML注释/代码围栏并报告未闭合位置；flags是审阅候选，不自动删改。strict只因high告警非零，常见风格low/medium不阻断；INTERPRETATION FLAG是medium，意为仍需作者判断，不是机器通过即ready。未命中词表不证明没有问题、文本由人写或未抄袭。\n\ncompare_anchors按正则抽数字/若干单位、年份日期、数值引用和DOI的Counter差集，忽略三反引号代码。可发现某些数字/引文值变化，却不绑定数值到对象/位置，交换两组结果仍可能同一multiset；不捕捉因果/否定/人群变化，模型名或作者年引用也不因Skill要求就全部被算法抽出。相同anchors和strict退出0不能证明命题等价。脚本自己caution和evidence-boundary明确人工逐命题比对，故缺口在自动保证范围有限，不能把它误写为作者承诺自动验证语义。\n\nSkill的“没证据不ready”可改善审阅纪律，但执行由模型/人负责；未提供真实文稿盲评/跨语言忠实率或对抗幻觉数据，不能把规则/样例和测试token存在当已实现质量提升。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:15-42](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/audit_prose.py#L15-L42)\n\n短模式与marker。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n# Severity reflects review priority, not a probability of AI authorship.\nPATTERNS = {\n    \"en\": [\n        (\"empty-preface\", \"low\", r\"\\b(?:it is worth noting that|needless to say|it goes without saying)\\b\", \"Consider whether the sentence can begin with the actual claim.\"),\n        (\"generic-scene-setting\", \"low\", r\"\\b(?:in today's (?:fast[- ]paced|rapidly changing) world|in the modern era)\\b\", \"Replace generic scene-setting with relevant context.\"),\n        (\"stacked-uncertainty\", \"medium\", r\"\\b(?:may potentially|might possibly|could perhaps)\\b\", \"Choose the level of uncertainty supported by the evidence.\"),\n        (\"empty-evaluation\", \"low\", r\"\\b(?:a groundbreaking breakthrough|a highly significant and important)\\b\", \"Supply concrete evidence or remove the evaluation.\"),\n        (\"conversation-residue\", \"medium\", r\"\\b(?:as you requested,? (?:i|we) (?:did not|removed|avoided)|per your instructions,? without)\\b\", \"Describe the final work, unless the history is part of the deliverable.\"),\n    ],\n    \"zh\": [\n        (\"empty-preface\", \"low\", r\"(?:众所周知|不难发现|值得一提的是)\", \"检查是否可以直接写出实质内容。\"),\n        (\"generic-scene-setting\", \"low\", r\"(?:随着时代的不断发展|在当今快速发展的时代)\", \"用与研究问题直接相关的背景代替。\"),\n        (\"stacked-uncertainty\", \"medium\", r\"(?:可能或许|也许可能|可能有可能)\", \"保留证据要求的单一限定。\"),\n        (\"conversation-residue\", \"medium\", r\"(?:按照你的要求[，,]?我们(?:删除|没有使用|避免)|根据之前的要求[，,]?已(?:去掉|删去))\", \"区分真实变更记录和不必要的对话回声。\"),\n    ],\n    \"ja\": [\n        (\"empty-preface\", \"low\", r\"(?:言うまでもなく|周知のとおり)\", \"必要な根拠や主張を先に示せるか確認してください。\"),\n        (\"stacked-uncertainty\", \"medium\", r\"(?:可能性があるかもしれない|示唆される可能性があるかもしれない)\", \"根拠に合う不確実性の表現を選んでください。\"),\n        (\"conversation-residue\", \"medium\", r\"(?:ご指示どおり[、,]?(?:削除|使用せず)|先ほどのご要望に従い)\", \"必要な変更履歴か、単なる会話の残りか判定してください。\"),\n    ],\n}\n\nPLACEHOLDER = re.compile(r\"\\[(?:VERIFY|TODO|REF\\?|CITATION NEEDED|EVIDENCE GAP|INTERPRETATION FLAG)(?::[^\\]]*)?\\]\", re.IGNORECASE)\nFENCE = re.compile(r\"^ {0,3}(`{3,}|~{3,})(.*)$\")\n\n\ndef scan(content: str, lang: str = \"auto\") -> list[dict]:\n    \"\"\"Return inspectable issues; leave source text unchanged.\"\"\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:45-108](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/audit_prose.py#L45-L108)\n\n扫描屏蔽/定位。\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\n    fence_token = None\n    comment_open = None\n    for line_no, line in enumerate(content.splitlines(), start=1):\n        # Strip blockquote markers without shifting reported source columns.\n        prefix = re.match(r\"^(?: {0,3}>[ \\t]?)+\", line)\n        offset = prefix.end() if prefix else 0\n        body = line[offset:]\n        if fence_token is not None:\n            char, length, opening_line, opening_column = fence_token\n            if re.fullmatch(r\" {0,3}\" + re.escape(char) + \"{\" + str(length) + r\",}[ \\t]*\", body):\n                fence_token = None\n            continue\n        # Mask complete and multiline HTML comments, retaining visible text.\n        visible = list(body)\n        cursor = 0\n        while cursor < len(body):\n            if comment_open is not None:\n                end = body.find(\"-->\", cursor)\n                stop = len(body) if end < 0 else end + 3\n                visible[cursor:stop] = \" \" * (stop - cursor)\n                cursor = stop\n                if end < 0:\n                    break\n                comment_open = None\n            else:\n                start = body.find(\"<!--\", cursor)\n                if start < 0:\n                    break\n                comment_open = (line_no, offset + start + 1)\n                cursor = start\n        visible_body = \"\".join(visible)\n        match = FENCE.match(visible_body)\n        if match:\n            token, info = match.groups()\n            if token[0] != \"`\" or \"`\" not in info:\n                fence_token = (token[0], len(token), line_no, offset + match.start(1) + 1)\n                continue\n        inspected = \" \" * offset + visible_body\n        # Mask URLs in place so reported columns still locate the source text.\n        inspected = re.sub(r\"https?://\\S+\", lambda m: \" \" * len(m.group(0)), inspected)\n        for m in PLACEHOLDER.finditer(inspected):\n            result.append({\"line\": line_no, \"start\": m.start() + 1,\n                           \"rule\": \"unresolved-placeholder\",\n                           \"severity\": \"medium\" if m.group(0).upper().startswith(\"[INTERPRETATION FLAG\") else \"high\",\n                           \"match\": m.group(0),\n                           \"advice\": \"Request author clarification for this interpretation.\" if m.group(0).upper().startswith(\"[INTERPRETATION FLAG\") else \"Resolve or explicitly disclose this missing item before publication.\"})\n        for region in active:\n            for rule, severity, pattern, advice in PATTERNS[region]:\n                for m in re.finditer(pattern, inspected, re.IGNORECASE):\n                    result.append({\"line\": line_no, \"start\": m.start() + 1, \"rule\": rule,\n                                   \"severity\": severity, \"match\": m.group(0), \"advice\": advice})\n    if fence_token is not None:\n        char, length, line_no, column = fence_token\n        result.append({\"line\": line_no, \"start\": column,\n                       \"rule\": \"unclosed-code-fence\", \"severity\": \"high\",\n                       \"match\": char * length,\n                       \"advice\": \"Close this fence and scan again; the remaining fenced content was excluded.\"})\n    if comment_open is not None:\n        line_no, column = comment_open\n        result.append({\"line\": line_no, \"start\": column,\n                       \"rule\": \"unclosed-html-comment\", \"severity\": \"high\",\n                       \"match\": \"<!--\",\n                       \"advice\": \"Close this comment and scan again; its contents were excluded.\"})\n    return sorted(result, key=lambda item: (item[\"line\"], item[\"start\"], item[\"rule\"]))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:111-136](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/audit_prose.py#L111-L136)\n\nstrict语义。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\ndef main() -> int:\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"file\", type=Path)\n    parser.add_argument(\"--lang\", choices=[\"auto\", \"en\", \"zh\", \"ja\"], default=\"auto\")\n    parser.add_argument(\"--format\", choices=[\"text\", \"json\"], default=\"text\")\n    parser.add_argument(\"--strict\", action=\"store_true\", help=\"Exit 1 for unresolved evidence markers or unclosed markup\")\n    args = parser.parse_args()\n    try:\n        content = args.file.read_text(encoding=\"utf-8\")\n    except (OSError, UnicodeError) as exc:\n        parser.error(f\"cannot read input: {exc}\")\n    findings = scan(content, args.lang)\n    if args.format == \"json\":\n        print(json.dumps({\"file\": str(args.file), \"findings\": findings,\n                          \"note\": \"Heuristic review flags, not a plagiarism/AI detector.\"}, ensure_ascii=False, indent=2))\n    else:\n        print(f\"{args.file}: {len(findings)} review flag(s)\")\n        for f in findings:\n            print(f\"  {f['line']}:{f['start']} [{f['severity']}/{f['rule']}] {f['match']!r}: {f['advice']}\")\n        if not findings:\n            print(\"  No listed patterns found. Factual and ethical checks remain necessary.\")\n    return int(args.strict and any(f[\"severity\"] == \"high\" for f in findings))\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skills/no-ai-style/scripts/compare_anchors.py:15-40](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/compare_anchors.py#L15-L40)\n\n正则/Counter。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n# Preserve common result-bearing symbols and identifiers; exclude bare prose.\nANCHOR = re.compile(\n    r\"(?<!\\w)(?:10\\.\\d{4,9}/[-._;()/:A-Za-z0-9]+|\"\n    r\"(?:p\\s*[<=>]\\s*)?\\d+(?:\\.\\d+)?\\s*(?:%|％|ms|s|kg|mg|mm|cm|km|Hz|GB|MB|CI|SD|SE)|\"\n    r\"(?:19|20)\\d{2}(?:[-/]\\d{1,2}(?:[-/]\\d{1,2})?)?|\"\n    r\"\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?|\"\n    r\"\\[(?:\\d+(?:\\s*[,–-]\\s*\\d+)*)\\])(?!\\w)\",\n    flags=re.IGNORECASE,\n)\n# A deliberately straightforward extractor that makes no assumptions about meaning.\n# See README: read changes manually, especially if numeric values move between sections.\n\n\ndef anchors(text: str) -> Counter[str]:\n    # Ignore fenced code, which may contain dozens of irrelevant literal numbers.\n    clean = re.sub(r\"(?ms)^\\s*```.*?^\\s*```\\s*$\", \"\", text)\n    found = [x.group(0).strip() for x in ANCHOR.finditer(clean)]\n    return Counter(found)\n\n\ndef compare(before: str, after: str) -> dict:\n    b, a = anchors(before), anchors(after)\n    missing, added = b - a, a - b\n    return {\"removed_anchors\": dict(sorted(missing.items())),\n            \"added_anchors\": dict(sorted(added.items())),\n            \"caution\": \"Differences require human review; equal anchors do not ensure equal meaning.\"}\n````\n\n</details>\n\n**依据 5 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:18-43](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/evidence-boundary.md#L18-L43)\n\n人工命题流程。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n\n1. **Inventory anchors.** Copy or record key numbers, units, sample sizes,\n   dates, model identifiers, citations, outcomes, and uncertainty markers\n   before revising. Run `scripts/compare_anchors.py` when files are present,\n   then manually inspect items the script cannot recognize.\n2. **Express the proposition.** For each key sentence, record who or what\n   is involved, what is asserted, on which population, over which time,\n   according to which data or reference.\n3. **Map evidence.** Point to a supplied table, figure, analysis output,\n   method section, or checked source. If evidence is missing, label\n   `[EVIDENCE GAP]` and block release until it is supplied.\n4. **Compare inference force.** Ask if the revised version strengthens a\n   modal, changes an association into a causal relationship, generalizes\n   beyond the sample, turns a plan into a result, or adds a recommendation.\n   When present evidence allows multiple readings, label\n   `[INTERPRETATION FLAG]` pending author choice.\n5. **Account for inconvenient facts.** Track negative or null outcomes,\n   contradictory evidence, confounds, imprecision, and scope restrictions.\n   A moved limitation must still be accessible; an omitted necessary\n   limitation is a failed check.\n6. **Decide.** Accept edits only when the revised proposition is entailed\n   by or no stronger than the evidence-supported original, or a specific\n   justified factual change is explicitly documented. Otherwise revert,\n   narrow the language, or report `VERIFY`.\n\n## High-risk changes\n```\n\n</details>\n\n**依据 6 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:61-63](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/evidence-boundary.md#L61-L63)\n\n数值相同不等命题等价。\n\n```text\nChecking numeric anchors alone never establishes claim equivalence.\nThe human reviewer must still inspect scope, attribution, causal language,\nmodality, and missing qualifiers.\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程证据与阶段成本如何判断？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\n可选脚本纯标准库、只读文本；Python测试直接导入生产函数，覆盖语言patterns、真实hedge不误标、代码/注释/URL定位和部分anchors变化。另一些测试只检查Skill含特定规则，文件已有说明不是模型行为测试。client-smoke加载生产bundle并用mock React/host检查三语言、legacy、新revision span、引用拒绝/取消和宿主throw；能守接线设计，不是浏览器交互或写作效果对照。本次只读测试不执行。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Skill provider/可选Web UI，脚本另需Python3.9+；金额未知 | 明确体裁/授权段落、语言、不可改锚点与原文备份，工时未知 | 插件不自带写作模型或论文来源 |\n| 持续使用 | 宿主模型读取Skill/材料并生成；可选本地正则/计数扫描 | 审阅flags与前后命题/证据对应，实际耗时未知 | Python不联网不等整体模型处理不外发；token/价格依宿主，净节时未知 |\n| 失败恢复 | 保留原文、重生成/复查与宿主上下文，金额未知 | 回退无据改写、恢复丢锚点/引用并请作者澄清 | 相同锚点不保证同义；已采用的错误文稿需另行纠正，恢复工时未知 |\n\n成本以一份授权范围内可读且事实忠实的稿为单位，需计入模型重写和人工逐命题/引用复查，而不只运行脚本的CPU。检查模式不改文件，revise/compose由Agent在授权范围写作，原文回退与不确定性审阅仍是使用者责任；没有金额/工时/合格率数据，不给免费或固定节省承诺。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/no-ai-style/tests/test_no_ai_style.py:1-113](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/tests/test_no_ai_style.py#L1-L113)\n\n生产scanner/anchor测试。\n\n<details>\n<summary>查看原文（113行）</summary>\n\n`````text\n\"\"\"Offline behavior checks for No AI Style's optional utilities.\"\"\"\nimport importlib.util\nimport unittest\nfrom pathlib import Path\n\nROOT = Path(__file__).resolve().parents[1]\n\n\ndef load(name):\n    spec = importlib.util.spec_from_file_location(name, ROOT / 'scripts' / f'{name}.py')\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    return module\n\n\naudit = load('audit_prose')\ncompare = load('compare_anchors')\n\n\nclass TestAuditor(unittest.TestCase):\n    def test_empty_intro(self):\n        self.assertIn('empty-preface', {r['rule'] for r in audit.scan('It is worth noting that 18 users participated.', 'en')})\n\n    def test_protect_real_hedge(self):\n        self.assertEqual(audit.scan('The findings may suggest an association.', 'en'), [])\n\n    def test_redundant_modal_english(self):\n        self.assertIn('stacked-uncertainty', [r['rule'] for r in audit.scan('This may potentially be useful.', 'en')])\n\n    def test_chinese(self):\n        self.assertTrue(audit.scan('众所周知，这个问题可能或许存在。', 'zh'))\n\n    def test_japanese(self):\n        self.assertTrue(audit.scan('可能性があるかもしれない。', 'ja'))\n\n    def test_skip_code_block(self):\n        self.assertEqual(audit.scan('```\\nIt is worth noting that\\n```', 'en'), [])\n\n    def test_flag_placeholder(self):\n        x = audit.scan('The result was meaningful [VERIFY: numerical estimate].')\n        self.assertEqual(x[0]['severity'], 'high')\n\n    def test_evidence_gap_is_high_severity(self):\n        flagged = audit.scan('There were [EVIDENCE GAP: missing sample counts].')\n        self.assertEqual(flagged[0]['severity'], 'high')\n\n    def test_interpretation_flag_is_medium_severity(self):\n        flagged = audit.scan('This effect has [INTERPRETATION FLAG: unclear direction].')\n        self.assertEqual(flagged[0]['severity'], 'medium')\n\n    def test_no_banlist(self):\n        self.assertEqual(audit.scan('We found no statistically significant difference.', 'en'), [])\n\n\nclass TestMarkup(unittest.TestCase):\n    def test_multiline_comments_and_visible_suffix(self):\n        rows = audit.scan('<!--\\nIt is worth noting that hidden.\\n--> It is worth noting that visible.', 'en')\n        self.assertEqual([(r['line'], r['start'], r['rule']) for r in rows], [(3, 5, 'empty-preface')])\n\n    def test_inline_comment_preserves_columns(self):\n        line = '<!-- hidden --> It is worth noting that visible.'\n        rows = audit.scan(line, 'en')\n        self.assertEqual(rows[0]['start'], line.index('It is') + 1)\n\n    def test_multiple_comments(self):\n        self.assertEqual(audit.scan('<!-- needless to say --> clean <!-- might possibly -->', 'en'), [])\n\n    def test_unclosed_fence_is_reported(self):\n        rows = audit.scan('```python\\nIt is worth noting that hidden.', 'en')\n        self.assertEqual([(r['line'], r['rule'], r['severity']) for r in rows], [(1, 'unclosed-code-fence', 'high')])\n\n    def test_shorter_fence_does_not_close(self):\n        rows = audit.scan('````\\n```\\nIt is worth noting that hidden.\\n````\\nIt is worth noting that visible.', 'en')\n        self.assertEqual([r['line'] for r in rows], [5])\n\n    def test_quoted_tilde_fence_and_crlf(self):\n        rows = audit.scan('> ~~~\\r\\n> It is worth noting that hidden.\\r\\n> ~~~\\r\\nIt is worth noting that visible.', 'en')\n        self.assertEqual([r['line'] for r in rows], [4])\n\n    def test_unclosed_comment_is_reported(self):\n        rows = audit.scan('<!--\\nIt is worth noting that hidden.', 'en')\n        self.assertEqual([(r['rule'], r['severity']) for r in rows], [('unclosed-html-comment', 'high')])\n\n    def test_url_mask_preserves_columns(self):\n        line = 'https://example.org/path It is worth noting that visible.'\n        self.assertEqual(audit.scan(line, 'en')[0]['start'], line.index('It is') + 1)\n\n    def test_markup_in_code_does_not_start_comment(self):\n        self.assertEqual(audit.scan('```html\\n<!--\\n```\\nPlain text.', 'en'), [])\n\n\nclass TestAnchors(unittest.TestCase):\n    def test_detect_numeric_change(self):\n        r = compare.compare('Accuracy was 81%.', 'Accuracy was 88%.')\n        self.assertIn('81%', r['removed_anchors'])\n        self.assertIn('88%', r['added_anchors'])\n\n    def test_no_change(self):\n        r = compare.compare('In 2025 we tested 30 participants.', 'We tested 30 participants in 2025.')\n        self.assertEqual(r['removed_anchors'], {})\n        self.assertEqual(r['added_anchors'], {})\n\n    def test_citations(self):\n        r = compare.compare('see [12]', 'see [13]')\n        self.assertTrue(r['removed_anchors'] or r['added_anchors'])\n\n    def test_ignores_code(self):\n        r = compare.compare('```\\n500\\n```\\nResult 20%', '```\\n900\\n```\\nResult 20%')\n        self.assertEqual(r['removed_anchors'], {})\n\n\nclass TestSkillInstructions(unittest.TestCase):\n    \"\"\"Instruction checks; not a model behavior test.\"\"\"\n`````\n\n</details>\n\n**依据 2 · 源码核查**：[skills/no-ai-style/tests/test_no_ai_style.py:116-174](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/tests/test_no_ai_style.py#L116-L174)\n\n指令存在性测试。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n    def setUpClass(cls):\n        cls.skill = (ROOT / 'SKILL.md').read_text(encoding='utf-8')\n        cls.lang = (ROOT / 'references' / 'language-notes.md').read_text(encoding='utf-8')\n\n    def test_chinese_academic_rules_present(self):\n        for token in ('**Chinese academic:**', '笔者认为', '研究表明',\n                      '相关', '导致', '倾向于'):\n            self.assertIn(token, self.skill)\n\n    def test_multilingual_evidential_hedges(self):\n        for token in ('`may`', '`suggest`', '`可能`', '`或许`',\n                      '`示唆する`', '`と考えられる`'):\n            self.assertIn(token, self.skill)\n\n    def test_backcheck_failure_behavior(self):\n        self.assertIn('If 5.1 (anchors) or 5.2', self.skill)\n        self.assertIn('report the failure and the required author input', self.skill)\n        self.assertNotIn('Stop at the first failure', self.skill)\n\n    def test_delivery_surface_wording(self):\n        self.assertIn('must not reference\\ndiscarded conversations', self.skill)\n        self.assertNotIn('must not advertise', self.skill)\n\n    def test_language_notes_chinese_distinctions(self):\n        for token in ('笔者认为', '研究表明', '相关', '导致', '可能', '或许'):\n            self.assertIn(token, self.lang)\n\n\nclass TestCompactGuidance(unittest.TestCase):\n    \"\"\"Keep boundaries actionable and avoid repeated disclaimer paragraphs.\"\"\"\n\n    @classmethod\n    def setUpClass(cls):\n        cls.skill = (ROOT / 'SKILL.md').read_text(encoding='utf-8')\n        cls.readme = (ROOT.parents[1] / 'README.md').read_text(encoding='utf-8')\n\n    def test_single_readme_detector_boundary(self):\n        self.assertEqual(self.readme.lower().count('ai-detector'), 1)\n        self.assertNotIn('plagiarism or AI-authorship certificates', self.readme)\n\n    def test_backcheck_remains_operational(self):\n        for phrase in ('Gate 2 (truth boundary) always wins',\n                       'If 5.1 (anchors) or 5.2',\n                       'report the failure and the required author input',\n                       'Treat script findings as review flags'):\n            self.assertIn(phrase, self.skill)\n\n    def test_attribution_and_unknown_markers_remain(self):\n        for phrase in ('retain attribution', '[EVIDENCE GAP]', '[INTERPRETATION FLAG]'):\n            self.assertIn(phrase, self.skill)\n        self.assertIn('blocks `ready`', self.readme)\n\n    def test_no_repeated_defensive_script_language(self):\n        self.assertNotIn('A clean report is not proof', self.skill)\n        self.assertNotIn('never certify plagiarism freedom', self.skill)\n\n\nif __name__ == '__main__':\n    unittest.main()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[tests/client-smoke.cjs:125-176](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/tests/client-smoke.cjs#L125-L176)\n\n新旧插入与取消mock。\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\n};\nhookState.length = 0;\nconst legacyWrites = [];\nconst legacyProps = {\n  t: (key) => translated[key] || key,\n  useInput: (select) => select({ draft: 'keep this suffix', phase: 'plain', occurrences: [] }),\n  inputActions: { setDraft: (text) => legacyWrites.push(text) },\n};\nlet tree = chooseMode(legacyProps, 'audit');\nfindButton(tree, (item) => item.children.includes(translated['button.insert'])).props.onClick();\nassert.deepEqual(legacyWrites, [\n  `${translated['prompt.audit']}\\n\\nkeep this suffix`,\n]);\n\nhookState.length = 0;\nlet insertedText;\nlet insertedSpan;\nconst modernProps = {\n  t: (key) => key,\n  useInput: (select) => select({ draft: 'existing text', phase: 'plain', occurrences: [{ source: 'file' }] }),\n  inputActions: {\n    captureInsertion: () => ({ draftRev: 17, start: 4, end: 8 }),\n    insertText: (text, span) => { insertedText = text; insertedSpan = span; return true; },\n  },\n};\ntree = chooseMode(modernProps, 'revise');\nfindButton(tree, (item) => item.children.includes('button.insert')).props.onClick();\nassert.equal(insertedText, 'prompt.revise\\n\\n');\nassert.deepEqual({ ...insertedSpan }, { draftRev: 17, start: 0, end: 0 });\n\nhookState.length = 0;\nlet flattenedReference = false;\nconst referencedProps = {\n  t: (key) => key,\n  useInput: (select) => select({ draft: 'text', phase: 'plain', occurrences: [{ source: 'file' }] }),\n  inputActions: { setDraft() { flattenedReference = true; } },\n};\ntree = chooseMode(referencedProps, 'compose');\nfindButton(tree, (item) => item.children.includes('button.insert')).props.onClick();\nassert.equal(flattenedReference, false);\nassert.ok(flatten(render(referencedProps)).some((node) => node.props && node.props.role === 'alert'));\n\nhookState.length = 0;\nlet cancelledWrite = false;\nconst cancelProps = {\n  t: (key) => key,\n  useInput: (select) => select({ draft: 'leave this alone', phase: 'plain', occurrences: [] }),\n  inputActions: { setDraft() { cancelledWrite = true; } },\n};\ntree = chooseMode(cancelProps, 'compose');\nfindButton(tree, (item) => item.children.includes('button.cancel')).props.onClick();\nassert.equal(cancelledWrite, false);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[tests/client-smoke.cjs:247-274](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/tests/client-smoke.cjs#L247-L274)\n\n宿主拒绝防throw。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n// --- a host whose setDraft throws -------------------------------------------\nhookState.length = 0;\nassert.doesNotThrow(() => {\n  const hostile = chooseMode({\n    t: (key) => english[key] || key,\n    useInput: (select) => select({ draft: 'text', phase: 'plain', occurrences: [] }),\n    inputActions: { setDraft() { throw new Error('host refused'); } },\n  }, 'audit');\n  findButton(hostile, (item) => item.children.includes(english['button.insert'])).props.onClick();\n}, 'a throwing setDraft must not reach the error boundary');\n\n// --- apply() against a profile whose optional services misbehave -------------\n// The web shell treats a throwing apply as a boot failure, so a broken optional\n// service must cost the button, never the GUI.\nassert.doesNotThrow(() => {\n  plugin.apply({\n    effect(fn) { fn(); return () => {}; },\n    inject(names, callback) {\n      if (names[0] === 'locale') {\n        callback({ locale: { register() { throw new Error('no locale'); } } });\n      } else {\n        callback({ slots: { inject(name, setup) { return setup(); }, register() { throw new Error('slot taken'); } } });\n      }\n    },\n  });\n}, 'apply() must survive every optional service failing');\n\nconsole.log('client smoke passed: slot and locale wiring, prepend without replacement, rich-reference safety, cancel, trigger label, zh/en/ja x 3 modes, empty draft, absent draft, hostile host, hostile apply');\n```\n\n</details>\n\n**依据 5 · 源码核查**：[skills/no-ai-style/SKILL.md:43-53](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L43-L53)\n\n文件授权/三模式。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n| --- | --- | --- | --- |\n| `audit` | inspect, critique, identify problems; ready to submit, final check, publish | Read and report; do not edit source files | Prioritized findings; when readiness is requested, add a verdict and unresolved risks |\n| `revise` | polish, humanize, tighten, rewrite, no-ai-style | Edit the authorized passage only | Revised text and a brief change summary |\n| `compose` | draft from notes, tables, findings | Write from given material, marking unknowns | Draft with unresolved-evidence notes if needed |\n\nIf the user requests only a translation, preserve source meaning,\nregister, qualifiers, and citations before attempting stylistic\nchanges. If only a response is needed, do not create or modify files.\n\n## Five gates\n\n```\n\n</details>\n\n#### 缺口\n\n- 真实跨语言文稿在同条件模型/读者下的可读性收益、事实忠实与人工复核工时\n  **影响：**不能把有门槛的提示流程排名为比通用润色已验证更优\n  **进一步探讨：**固定文稿/模型与盲评标准，对照通用润色和原稿，计语义越界/未改问题/工时\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样采用，可推导什么可证伪方向？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n可作为有人工作者复核的写作流程试用，先audit列出问题再决定revise范围，留原文并核原始证据；严禁将锚点相同、零flags或更自然文风作事实/原创认证。需要自动交付无需作者复核、或目标是检测器规避的人群不适用。旧DSH带引用时拒插是保护，可直接在保留引用的宿主流程明确输入指令，不能为过按钮删掉必要证据。\n\n由Counter不保关系和模式提示可推“命题级变更收据”方向——在已有锚点旁记录对象/关系/模态/来源/段落，逐项说明改写依据和作者批准状态，保留小改优先而非再堆禁词。基线为数字multiset+人工Claim-Equilibrium。最小反例包括A/B结果互换、相关改因果、删除null结果、同数不同人群、模型名改写、CJK证据语气与代码中的重要值。若新增收据仍漏这些越界或人工工时显著增加却不减少误改，则否定收益假设；比较盲评忠实、阅读问题解决和复核时间，方向未验证不计已有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/no-ai-style/scripts/compare_anchors.py:25-40](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/compare_anchors.py#L25-L40)\n\n锚点基线。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n````text\n# See README: read changes manually, especially if numeric values move between sections.\n\n\ndef anchors(text: str) -> Counter[str]:\n    # Ignore fenced code, which may contain dozens of irrelevant literal numbers.\n    clean = re.sub(r\"(?ms)^\\s*```.*?^\\s*```\\s*$\", \"\", text)\n    found = [x.group(0).strip() for x in ANCHOR.finditer(clean)]\n    return Counter(found)\n\n\ndef compare(before: str, after: str) -> dict:\n    b, a = anchors(before), anchors(after)\n    missing, added = b - a, a - b\n    return {\"removed_anchors\": dict(sorted(missing.items())),\n            \"added_anchors\": dict(sorted(added.items())),\n            \"caution\": \"Differences require human review; equal anchors do not ensure equal meaning.\"}\n````\n\n</details>\n\n**依据 2 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:18-43](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/evidence-boundary.md#L18-L43)\n\n人工关系审查基线。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n\n1. **Inventory anchors.** Copy or record key numbers, units, sample sizes,\n   dates, model identifiers, citations, outcomes, and uncertainty markers\n   before revising. Run `scripts/compare_anchors.py` when files are present,\n   then manually inspect items the script cannot recognize.\n2. **Express the proposition.** For each key sentence, record who or what\n   is involved, what is asserted, on which population, over which time,\n   according to which data or reference.\n3. **Map evidence.** Point to a supplied table, figure, analysis output,\n   method section, or checked source. If evidence is missing, label\n   `[EVIDENCE GAP]` and block release until it is supplied.\n4. **Compare inference force.** Ask if the revised version strengthens a\n   modal, changes an association into a causal relationship, generalizes\n   beyond the sample, turns a plan into a result, or adds a recommendation.\n   When present evidence allows multiple readings, label\n   `[INTERPRETATION FLAG]` pending author choice.\n5. **Account for inconvenient facts.** Track negative or null outcomes,\n   contradictory evidence, confounds, imprecision, and scope restrictions.\n   A moved limitation must still be accessible; an omitted necessary\n   limitation is a failed check.\n6. **Decide.** Accept edits only when the revised proposition is entailed\n   by or no stronger than the evidence-supported original, or a specific\n   justified factual change is explicitly documented. Otherwise revert,\n   narrow the language, or report `VERIFY`.\n\n## High-risk changes\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/no-ai-style/SKILL.md:155-194](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L155-L194)\n\n回查/最小修改。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nRun these checks **in order of priority**. If 5.1 (anchors) or 5.2\n(claim strength) fails, do not continue stylistic polishing or deliver\nthe affected revision. Revert or narrow the unsupported change, or\nreport the failure and the required author input.\n\n**5.1 Anchors unchanged.** Compare before/after with\n`scripts/compare_anchors.py` or by reading. Every number, unit,\ncitation locator, model name, and date must match or have a documented\nreason to change.\n\n**5.2 Claim strength preserved or narrowed.** For every substantive\nclaim, check: did the revision make the claim *stronger*? If the\noriginal said \"associated with,\" the revision must not say \"causes.\"\nIf the original reported a null result, the revision must not delete\nit. Use the `Claim-Equilibrium` procedure in\n`references/evidence-boundary.md`.\n\n**5.3 Caveats still accessible.** Relevant limitations and contrary\nevidence must remain at a location a reader can find. Relocate a caveat only when readers can still interpret the claim correctly\nwhere it appears; keep essential scope in the abstract itself.\n\n**5.4 Coherence after edits.** Terminology, scope, tense, paragraph\nlinks, and genre-specific register are consistent from opening to\nclose. Compare changed passages with the source in both directions:\nidentify reading problems still present, and information or intentional\nexpression the edit damaged. Restore a useful construction when its\nreplacement is less precise or less recognizably the author’s. Stop\nwhen the requested problems are resolved; do not manufacture another pass.\n\n**5.5 Delivery surface clean.** The final artifact must not reference\ndiscarded conversations or options that were never implemented.\nRequired historical records (changelogs, migration notes, audit\ntrails) are retained. Apply the check separately to each surface:\ntitle, abstract, commit message, PR description, body, captions, tags.\n\n**5.6 Original authorship.** The output is not a mechanical\nparaphrase of another author's prose. Attribution is maintained where\nneeded.\n\nTreat script findings as review flags; check the text and underlying evidence before accepting edits.\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f53722d244977f223c5fa4961fde0ecae04b36a362bdb7befe3c7369b00591e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 375 | 335 | 15 | — |\n| .md | source | 10 | 876 | — | — | 6066 |\n| .mjs | source | 1 | 11 | 9 | 0 | — |\n| .md | example | 2 | 61 | — | — | 375 |\n| .cjs | source | 1 | 349 | 313 | 15 | — |\n| .cjs | test | 1 | 274 | 239 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `no-ai-style` Skill | audit/revise/compose | Agent遵循，不能自动认证忠实 |\n| 模式按钮 | 前插本地化指令 | 不直接改稿/调用模型；旧版有引用拒插 |\n| 可选audit脚本 | 词法/缺口候选 | 非检测器，不自动删除 |\n| 可选anchor脚本 | 数值/引用锚点变化 | Counter不保语义关系 |\n\n\n## 工程亮点\n\n生产函数测试和引用拒绝/throw防护可借鉴，指令token存在性与模型效果必须分开。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、src/client.cjs、lib/client.js、skills/no-ai-style/SKILL.md、skills/no-ai-style/references/evidence-boundary.md、skills/no-ai-style/references/voice-contract.md、skills/no-ai-style/references/release-check.md、skills/no-ai-style/references/language-notes.md、skills/no-ai-style/scripts/audit_prose.py、skills/no-ai-style/scripts/compare_anchors.py、skills/no-ai-style/tests/test_no_ai_style.py、tests/client-smoke.cjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整Skill248行、provider16行、两Python脚本、证据/声音/提交参考及CJK指引；完整client源和发布插入关键链，Python测试及client smoke代表分支，不运行。\n- 下一步：固定跨语言稿件对照通用提示，用数值换位/因果/人群/缺证据反例核命题收据。\n",
         "metadata": {
             "repository": "01NGVI-QINGYI/no-ai-style",
             "repository_id": 1418493685,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
-            "stars": 2,
+            "captured_at": "2026-10-22T09:32:23.895Z",
+            "window_start": "2026-09-22T09:32:23.895Z",
+            "stars": 3,
             "pushed_at": "2026-10-19T08:23:27Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:1DEEF7:148A07:22061D:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:1541C9:13EA38:215924:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:142433:21A5BE:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:144A6E:21BCE6:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A01NGVI-QINGYI%2Fno-ai-style%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:1CA4C8:14928C:220F8F:6AD84921 and timestamp 2026-10-21 05:09:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "no-ai-style",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T09:32:32.398Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/no-ai-style",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/no-ai-style",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T09:32:32.398Z",
                     "source_url": "https://registry.npmjs.org/no-ai-style",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-                "current_revision": "a64e811bf0aa255189a0df2011a6a392c5d59966",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

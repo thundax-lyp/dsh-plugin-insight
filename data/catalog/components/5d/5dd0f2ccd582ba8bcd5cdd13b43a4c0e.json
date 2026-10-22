@@ -10,7 +10,7 @@
             "repository": "439436269-ctrl/dsh-video-pipeline",
             "path": "",
             "aliases": [],
-            "name": "短视频 Skill 流水线",
+            "name": "dsh-video-pipeline",
             "entry_type": "plugin",
             "technical_category": "agent-workflow",
             "business_category": "content-creation",
@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1414936636-root-directory-0",
+                    "id": "2026-10-22-02-github-1414936636-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:11:11.897Z",
+                    "retrieved_at": "2026-10-22T06:00:06.777Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1414936636-root-author",
+                    "id": "2026-10-22-02-github-1414936636-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "README.md",
+                            "content_sha256": "a7be0cbac80a799962d3eb0ced6197f04894251d0f2188ba28f1d10cad550a77"
+                        }
+                    ],
                     "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-                    "captured_at": "2026-10-21T02:11:11.897Z",
-                    "summary": "将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:00:06.777Z",
+                    "summary": "以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1414936636-root-source",
+                    "id": "2026-10-22-02-github-1414936636-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/index.js",
+                    "url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "README.md",
+                            "content_sha256": "a7be0cbac80a799962d3eb0ced6197f04894251d0f2188ba28f1d10cad550a77"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "VERIFY.md",
+                            "content_sha256": "90361e36d1b2086e31609cbee2bb53596ae0434561b672a9d2bf150a45d6d63c"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "package.json",
+                            "content_sha256": "cc2e03e5d7ec7c95cc74aa168d5e65302e6581ed7c8d071f2bc3b703a475e903"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "lib/index.js",
+                            "content_sha256": "4a23b7b89beb41aa23521806b419f5f63dc991feb3c61a990c7a91bea2849fe7"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "lib/provider.js",
+                            "content_sha256": "893902cd444e007587238e4f757134599bbe878081de1c623b60961868b0bf71"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "lib/placeholders.js",
+                            "content_sha256": "49893521e5179fce7e7ae1b89fbd9bc87a395de433f17ee777f158ef8c22ee2b"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "skills/video-pipeline/SKILL.md",
+                            "content_sha256": "871bb588ee940d3d9fc25cdc6ed174bd1cf6978058659ecad589d883ef507bfa"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-video-pipeline",
+                            "commit": "82a85d20b67d1d398d49009462d61a741f5a8d51",
+                            "path": "skills/quad-platform-publish/SKILL.md",
+                            "content_sha256": "fce0b28020568429063b0b1f6a48b06a14066ecefc48b88558f7e94cf2455114"
+                        }
+                    ],
                     "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-                    "captured_at": "2026-10-21T02:11:11.897Z",
-                    "summary": "核查 lib/index.js、lib/provider.js、lib/frontmatter.js、lib/placeholders.js、skills/video-pipeline/SKILL.md、skills/media-verify/SKILL.md、skills/quad-platform-publish/SKILL.md、package.json；插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:00:06.777Z",
+                    "summary": "核查 README.md、VERIFY.md、package.json、lib/index.js、lib/provider.js、lib/placeholders.js、skills/video-pipeline/SKILL.md、skills/quad-platform-publish/SKILL.md；插件注册 rank 600 的内置 skill provider，扫描 skills/、解析 frontmatter，加载时替换正文占位符；实际生成/发布由独立脚本、平台和 Agent 工作流承担。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-video-pipeline/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。",
+                        "静态阅读固定版 README、provider、占位符与代表性总入口/发布技能；未运行目标插件、脚本或平台账号。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。",
+                    "text": "已有短视频/AI 短剧素材生产需求，希望把多工具环节、质量门与发布回写串成可发现技能。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。",
+                    "text": "插件注册 rank 600 的内置 skill provider，扫描 skills/、解析 frontmatter，加载时替换正文占位符；实际生成/发布由独立脚本、平台和 Agent 工作流承担。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。",
+                    "text": "静态阅读固定版 README、provider、占位符与代表性总入口/发布技能；未运行目标插件、脚本或平台账号。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "无runtime npm依赖只描述provider，不覆盖19项Skill执行依赖；同名本地Skill优先。第三方许可及导入/脱敏报告是作者材料，未执行隐私门。",
+                    "text": "package 0.1.1、MIT、Node>=20；作者报告 0.1.0 的打包与 DSH 安装，当前版本安装未独立验证。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次迁移账号、路径、工具环境和脚本占位符成本高；持续为模型/API额度、媒体计算、上传失败和人工审片。原始运营数据被剔除，无法复现作者产能或收益倍率。",
+                    "text": "#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 初次 | ffmpeg/Python/浏览器/平台账号 | 包不装外部工具 |\n| 生产 | 图视频 API 与人工选片 | 费用/质量因任务变化 |\n| 发布 | 账号、审核、验证和回写 | 需明确用户确认 |\n| 安全 | key 存储和上下文检查 | 正文替换可能暴露密钥 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。",
+                    "text": "先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可复用的是生产知识、交接产物和失败经验；市场播放/成交收益没有独立验证，打包完整不代表端到端可迁移。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 目录 | 19 个内置 SKILL.md | 目标宿主兼容 |\n| 编排 | 阶段/质量/发布门说明 | 成片质量与效率 |\n| 脱敏 | 作者导入器与记录 | 新配置的凭据暴露 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "provider保留resourceBase并尊重本地Skill优先级，便于版本化分发；frontmatter自写子集需要持续对齐宿主。移植应把原作者历史账号指令改成用户自己的明确配置，不能当普遍规则。",
+                    "text": "provider 一层扫描技能目录、frontmatter 校验、rank 600 与 enabledSkills；get 替换正文/描述占位符，脚本资源原样返回。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +259,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "把多阶段短视频生产、核验和发布经验包装为可在 DSH 发现的技能目录。详见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +277,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "“核验后才发布”在入口主要是Skill规程，不是工具层强制门禁；另一批量编排路径文档承认没有确认门。包内quad-platform-publish同时留“四平台/三平台”和4个/3个Agent的历史环境指令，移植者可能继承原作者账号风控与时序假设。",
+                    "basis": "supported",
+                    "text": "环境变量 ARK_API_KEY 会替换到 Agent 可见技能正文；脚本占位符不替换、外部依赖和平台账号不随包提供。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +295,16 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "待验证假设：把成片哈希、核验状态、用户批准平台集合和实际上传结果整理成一份manifest，并令发布适配器校验，可能把文字质量门变成可审计约束。由现有产物流和素材一致性要求推导；各平台脚本必须统一状态所有权，增加迁移成本。",
+                    "text": "采用秘密引用/受控工具而非正文替换，并维护平台版本/费用/发布门端到端回归，可降低迁移风险；现版未实现。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +313,15 @@
                             "fingerprint": "82a85d20b67d1d398d49009462d61a741f5a8d51"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:11.897Z",
+                    "reviewed_at": "2026-10-22T06:00:06.777Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:11:11.897Z",
+            "last_checked_at": "2026-10-22T06:00:06.777Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-                "reviewed_at": "2026-10-21T02:11:11.897Z",
+                "reviewed_at": "2026-10-22T06:00:06.777Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +333,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty：可分发Skill集是工程集成，媒体算法归已有工具。 mechanism：资源基址和占位符解决迁移接线，发布约束仍为文字。 transferability：多工序产物约定可复用，但账号和脚本环境强依赖。 simplification：一包注册替代手工拷贝，未消除外部配置。",
+                    "rationale": "skill provider 与编排常见，但打包、优先级、规则导入较完整；迁移需外部工具/平台，目录减少查找成本。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
+                        "workflow": 26,
                         "delivery": 15,
-                        "reach": 5,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow：显式分工与确认门连接制作到发布，端到端未验。 delivery：从零散素材转为成片/链接/回写的流程交付，非新生成能力。 reach：帮助已有工具的创作者组织流程，新手环境门槛仍高。 economics：并行和素材复用可能节省时间，缺少原始运营数据对照。",
+                    "rationale": "覆盖完整短视频流程且有作者安装记录；真实账号、素材和成本控制仍复杂，净收益未验证。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1414936636-root-source"
+                        "2026-10-22-02-github-1414936636-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "已有视频工具账号者可借鉴工序知识，但发布确认主要靠文字且批量路径无门；先移植环境并建立独立发布验收再整链采用。",
+                "decision": "trial",
+                "reason": "只在隔离素材和非发布环节试用；先移除密钥正文替换并核前置，发布/付费动作仍须逐项确认。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "从选题到成片及平台链接交付明确，适用已有创作者。"
+                        "rationale": "短视频多环节协作场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "统一资源基址与工序交接优于散落Skill，核心能力由外部工具提供。"
+                        "rationale": "19 技能集中化，但执行仍依赖用户环境。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "bundled注册及占位符可查，平台数量矛盾和规程门禁未落实为强制控制。"
+                        "rationale": "固定源码和作者记录可读，完整独立执行未做。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "账号路径模型媒体工具迁移重，上传失败和人工审片成本高。"
+                        "rationale": "云生成/多平台账号/内容复核成本较高。"
                     }
                 },
                 "score": 54,
                 "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:00:06.777Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1414936636-root-source"
+                    "2026-10-22-02-github-1414936636-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +412,43 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "d18bdca4bf23220c74fd25b92ce4a4fd46886ff65cd3087b15cf15c7528f0de9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "a3cff9e4fcde57fb6f3bf7f19e711622ed2d3c44338f5206ed0030af1458f1da"
         },
         "publication.metadata": "data/plugins/439436269-ctrl--dsh-video-pipeline/META.json",
         "publication.summaries": {
-            "text": "将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。",
+            "text": "以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。",
             "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
             "source_url": "https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md"
         },
         "publication.capabilities": {
             "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
             "items": {
-                "Skill": "bundled provider提供包内技能目录，代表入口video-pipeline、media-verify、quad-platform-publish已核查。"
-            }
+                "Skill": "十九个随包视频生产、核验与发布技能目录"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| provider | DSH 技能目录 | 需宿主兼容 |\n| 流水线说明 | 交接与门槛 | 无自动环境配置 |\n| 占位符 | 适配用户路径/坐标 | API key 可进正文 |"
         },
         "publication.advice": {
             "revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-            "text": "适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。"
+            "text": "先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。详见[Q03](#research-q03)、[Q04](#research-q04)。"
         },
         "registry": "data/plugins/439436269-ctrl--dsh-video-pipeline",
-        "reports": "# 短视频 Skill 流水线\n\n> 将选题、配音、生图、合成、核验和多平台发布 Skill 打包接入 DSH。\n\n## 使用建议\n\n适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：已有短视频制作与平台账号的创作者，按工序组织一集从选题到发布的素材和结果；交付成片、核验记录及平台链接，不能把Skill注册成功当生产链跑通。\n- **亮点**：相对散落复制Skill，贡献是统一目录、资源基址和环境占位符，使一条制作流程可随包分发。核心生成、剪辑和平台上传依赖现有API/ffmpeg/脚本，第三方小红书代码有独立归属；不是新的媒体生成算法。\n- **思考**：“核验后才发布”在入口主要是Skill规程，不是工具层强制门禁；另一批量编排路径文档承认没有确认门。包内quad-platform-publish同时留“四平台/三平台”和4个/3个Agent的历史环境指令，移植者可能继承原作者账号风控与时序假设。\n- **建议**：适合已有视频生产工具和账号、愿意逐工序适配的创作者；先落地本地合成与核验，发布步骤单独确认且回读，不能依照总入口一句话跳过配置。\n\n## 能力与限制\n\n参照手工拷贝原子Skill和脚本串联；主张的真实生产链来自作者，当前只静态核查provider与代表Skill，不核实全部账号流程。\n\n插件在ctx.skills注册bundled provider，扫描SKILL.md/frontmatter，以rank600和resourceBase提供技能；加载正文替换占位符，enabledSkills限制暴露范围。业务编排通过文字规程指派原子Skill和确认门。\n\n\n插件入口只有Node内建模块和宿主skills接口；实际生产另需ffmpeg、Python/numpy/Pillow、API key和额度、平台登录/浏览器及飞书权限。正文占位符替换不改脚本文件中的占位符，首轮仍需手工配置。\n\n总入口选择编排→用户确认预算→生成配音/图片/视频→合成→媒体核验→确认平台和文案→分平台执行→回读链接/表格。作者生产记录是单环境报告，迁移时应重验每个外部环节。\n\n首次迁移账号、路径、工具环境和脚本占位符成本高；持续为模型/API额度、媒体计算、上传失败和人工审片。原始运营数据被剔除，无法复现作者产能或收益倍率。\n\n可复用的是生产知识、交接产物和失败经验；市场播放/成交收益没有独立验证，打包完整不代表端到端可迁移。\n\n## 能力清单\n\n- **Skill**：bundled provider提供包内技能目录，代表入口video-pipeline、media-verify、quad-platform-publish已核查。\n\n## 工程分析\n\nprovider保留resourceBase并尊重本地Skill优先级，便于版本化分发；frontmatter自写子集需要持续对齐宿主。移植应把原作者历史账号指令改成用户自己的明确配置，不能当普遍规则。\n\n无runtime npm依赖只描述provider，不覆盖19项Skill执行依赖；同名本地Skill优先。第三方许可及导入/脱敏报告是作者材料，未执行隐私门。\n\n固定源码依据：[lib/provider.js L120–192](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/provider.js#L120-L192)；[skills/video-pipeline/SKILL.md L41–60](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/video-pipeline/SKILL.md#L41-L60)；[skills/quad-platform-publish/SKILL.md L10–40](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/quad-platform-publish/SKILL.md#L10-L40)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 未来设计假设（未验证）\n\n待验证假设：把成片哈希、核验状态、用户批准平台集合和实际上传结果整理成一份manifest，并令发布适配器校验，可能把文字质量门变成可审计约束。由现有产物流和素材一致性要求推导；各平台脚本必须统一状态所有权，增加迁移成本。\n\n最小验证与否定条件：在自有素材/测试账号先只生成到本地成片，对照手工Skill复制；要求占位符已落地、每步输入输出可定位、核验失败时所有发布路径停止。随后仅经明确授权测试发布；若替代入口绕过门或上传旧副本，则不成立完整流水线质量保证。\n\n## 核查说明\n\n- 版本依据：仓库：[439436269-ctrl/dsh-video-pipeline](https://github.com/439436269-ctrl/dsh-video-pipeline)；固定提交：[82a85d20](https://github.com/439436269-ctrl/dsh-video-pipeline/tree/82a85d20b67d1d398d49009462d61a741f5a8d51)；版本号：0.1.1；版本日期：2026-10-16（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查provider与三个代表Skill，未完整审计19项生产脚本或执行隐私门；正文含作者特定环境历史指令。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：0.1.1；版本日期：2026-10-16（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：0eeb1daf6a693a6e0d0f6fa64d7dcc645cb56635527f92489fe0aac038d2a77f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 49 | 6103 | — | — | 100616 |\n| .js | source | 5 | 631 | 399 | 192 | — |\n| .mjs | source | 25 | 3975 | 3185 | 561 | — |\n| .mjs | test | 2 | 368 | 290 | 42 | — |\n\n排除 0 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "reports": "# dsh-video-pipeline\n\n> 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-video-pipeline](https://github.com/439436269-ctrl/dsh-video-pipeline)\n- **版本号**：0.1.1（[固定提交 82a85d20b67d1d398d49009462d61a741f5a8d51](https://github.com/439436269-ctrl/dsh-video-pipeline/tree/82a85d20b67d1d398d49009462d61a741f5a8d51)）\n- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可确认 19 技能与 provider；并非自动开箱生产。ARK_API_KEY 环境值可进入技能正文，作者实录未独立复现。\n\n## 洞察短评\n\n- **用途**：已有短视频/AI 短剧素材生产需求，希望把多工具环节、质量门与发布回写串成可发现技能。\n- **亮点**：把多阶段短视频生产、核验和发布经验包装为可在 DSH 发现的技能目录。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：环境变量 ARK_API_KEY 会替换到 Agent 可见技能正文；脚本占位符不替换、外部依赖和平台账号不随包提供。详见[Q03](#research-q03)。\n- **建议**：采用秘密引用/受控工具而非正文替换，并维护平台版本/费用/发布门端到端回归，可降低迁移风险；现版未实现。详见[Q04](#research-q04)。\n\n采用建议：先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n## 核心贡献\n\n把多阶段短视频生产、核验和发布经验包装为可在 DSH 发现的技能目录。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n环境变量 ARK_API_KEY 会替换到 Agent 可见技能正文；脚本占位符不替换、外部依赖和平台账号不随包提供。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n采用秘密引用/受控工具而非正文替换，并维护平台版本/费用/发布门端到端回归，可降低迁移风险；现版未实现。详见[Q04](#research-q04)。\n\n对打包产物加载 19 技能；哨兵 key 检查技能输出/模型上下文；测试素材跑制作、核验及各平台受控试发布并记录费用/耗时。\n\n## 场景与替代办法\n\n已有短视频/AI 短剧素材生产需求，希望把多工具环节、质量门与发布回写串成可发现技能。\n\n人工拼接 TTS、图视频生成、ffmpeg 合成和各平台发布脚本；技能包组织分工与交接。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH skills registry | 注册/加载技能 | 目录不可见 |\n| ffmpeg/Python/Node/Playwright | 制作与平台脚本 | 对应环节失败 |\n| 各平台账号/API | 生成和发布 | 无法运行 |\n| 安全凭据处理 | 避免 key 进上下文 | 可能泄露 |\n\n#### 受控试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 安装 | 加载目录与 resourceBase | 19 候选可见 |\n| 制作 | 用测试素材只跑少数技能 | 产物可复核 |\n| 核验 | 运行 media-verify 并人审 | 音画质量通过 |\n| 发布 | 单平台试点且用户确认 | 平台回读成功 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 初次 | ffmpeg/Python/浏览器/平台账号 | 包不装外部工具 |\n| 生产 | 图视频 API 与人工选片 | 费用/质量因任务变化 |\n| 发布 | 账号、审核、验证和回写 | 需明确用户确认 |\n| 安全 | key 存储和上下文检查 | 正文替换可能暴露密钥 |\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 目录 | 19 个内置 SKILL.md | 目标宿主兼容 |\n| 编排 | 阶段/质量/发布门说明 | 成片质量与效率 |\n| 脱敏 | 作者导入器与记录 | 新配置的凭据暴露 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 19 个视频生产/发布 skill 的提供机制、运行前置和占位符/凭据边界，区分作者实录与可复用能力。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 技能包给 DSH 视频工作流提供什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n固定仓库 skills/ 下有 19 个 SKILL.md，覆盖总入口、编排、TTS/图/视频/运镜/合成/核验/数据复盘与多平台发布；Host 插件通过 ctx.skills provider 报告候选，用户不必复制目录。它交付的是指令、脚本和资源路径，并不自动安装 ffmpeg、Python、浏览器、平台凭据或替用户完成发布。README/VERIFY 中的生产与安装实录属于作者报告，且部分平台能力取决于账号状态、登录和外部服务。对有既有视频生产链的用户，主要贡献是环节交接/质量门/发布门被组织进一个可发现目录。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-69](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/index.js#L1-L69)\n\n插件以 ctx.skills 注册内置 provider。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\n/**\n * dsh-video-pipeline — bundled video-production skills for the DeepSeek Harness.\n *\n * Mounting this plugin registers a skill provider on `ctx.skills` that serves\n * the `skills/` directory shipped inside the package. Every bundled skill then\n * shows up in the agent's skill catalog with no copy step, and the orchestration\n * skill can reach its atomic skills by name because they are all in one catalog.\n *\n * Nothing here depends on another package: the provider interface is a plain\n * object, so the plugin declares no runtime dependency and cannot hit a peer\n * range resolution failure on install.\n *\n * @module dsh-video-pipeline\n */\n\nimport { dirname, join } from 'node:path';\nimport { fileURLToPath } from 'node:url';\nimport { resolvePlaceholders } from './placeholders.js';\nimport { createBundledSkillProvider, PROVIDER_NAME } from './provider.js';\n\n/** Cordis plugin name. */\nexport const name = PROVIDER_NAME;\n\n/** Directory holding the bundled skills, relative to this module. */\nconst SKILLS_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'skills');\n\n/**\n * Emit a warning through whatever logging surface the host context exposes.\n * The context shape differs between host versions, so this never throws: a\n * missing logger must not take the provider down with it.\n * @param {object} ctx - cordis context.\n * @param {string} message - warning text.\n */\nfunction warn(ctx, message) {\n  try {\n    const logger = typeof ctx?.logger === 'function' ? ctx.logger(PROVIDER_NAME) : ctx?.logger;\n    if (logger && typeof logger.warn === 'function') {\n      logger.warn(message);\n      return;\n    }\n  } catch {\n    /* fall through to the console */\n  }\n  try {\n    console.warn(`[${PROVIDER_NAME}] ${message}`);\n  } catch {\n    /* nothing left to report to */\n  }\n}\n\n/**\n * Register the bundled skill provider.\n * @param {object} ctx - cordis context.\n * @param {object} [config] - loader row config.\n * @param {string[]} [config.enabledSkills] - when non-empty, only these bundled skills are served.\n * @param {Record<string, string>} [config.placeholders] - `{{TOKEN}}` overrides for the bundled bodies.\n */\nexport function apply(ctx, config = {}) {\n  const settings = config && typeof config === 'object' ? config : {};\n  const providerOptions = {\n    skillsDir: SKILLS_DIR,\n    enabledSkills: settings.enabledSkills,\n    placeholderMap: resolvePlaceholders(settings.placeholders),\n    onWarn: (message) => warn(ctx, message),\n  };\n\n  ctx.inject(['skills'], (skillCtx) => {\n    skillCtx.skills.registerProvider(() => createBundledSkillProvider(providerOptions));\n  });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/provider.js:52-169](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/provider.js#L52-L169)\n\n扫描技能目录、验证 frontmatter 并按 rank 600 提供候选。\n\n<details>\n<summary>查看原文（118行）</summary>\n\n```text\nfunction discover(skillsDir, warn) {\n  let dirents;\n  try {\n    dirents = readdirSync(skillsDir, { withFileTypes: true });\n  } catch (error) {\n    warn(`cannot read bundled skills directory ${skillsDir}: ${error.message}`);\n    return [];\n  }\n\n  const found = [];\n  for (const dirent of dirents) {\n    const full = join(skillsDir, dirent.name);\n    if (dirent.isDirectory()) {\n      const file = join(full, SKILL_FILE);\n      try {\n        if (statSync(file).isFile()) found.push({ dir: full, file });\n      } catch {\n        warn(`skipping ${dirent.name}: no ${SKILL_FILE}`);\n      }\n      continue;\n    }\n    if (dirent.isFile() && dirent.name.endsWith('.md') && dirent.name !== SKILL_FILE) {\n      found.push({ dir: skillsDir, file: full });\n    }\n  }\n  return found;\n}\n\n/**\n * Read and validate one skill file into a provider candidate.\n * @param {{ dir: string, file: string }} entry - discovered skill file.\n * @param {(message: string) => void} warn - warning sink.\n * @returns {object | undefined} a candidate, or `undefined` when the file is unusable.\n */\nfunction readCandidate(entry, warn) {\n  let parsed;\n  try {\n    parsed = parseFrontmatter(readFileSync(entry.file, 'utf8'));\n  } catch (error) {\n    warn(`skipping ${entry.file}: ${error.message}`);\n    return undefined;\n  }\n\n  const { attrs } = parsed;\n  const name = typeof attrs.name === 'string' ? attrs.name.trim() : '';\n  if (!isSkillName(name)) {\n    warn(`skipping ${entry.file}: name must be kebab-case, got ${JSON.stringify(attrs.name)}`);\n    return undefined;\n  }\n  const directoryName = basename(entry.dir);\n  if (entry.file === join(entry.dir, SKILL_FILE) && directoryName !== name) {\n    warn(`${name}: directory name ${directoryName} differs from frontmatter name (frontmatter wins)`);\n  }\n\n  const description = typeof attrs.description === 'string' ? attrs.description.trim() : '';\n  if (!description) {\n    warn(`skipping ${name}: description is required`);\n    return undefined;\n  }\n\n  const { policy, error } = invocationPolicy(attrs);\n  if (error) {\n    warn(`skipping ${name}: ${error}`);\n    return undefined;\n  }\n\n  const whenToUse = typeof attrs.whenToUse === 'string' ? attrs.whenToUse.trim() : undefined;\n  const metadata = attrs.metadata && typeof attrs.metadata === 'object' && !Array.isArray(attrs.metadata)\n    ? attrs.metadata\n    : undefined;\n\n  return {\n    name,\n    description,\n    whenToUse,\n    invocation: policy,\n    source: 'bundled',\n    provider: PROVIDER_NAME,\n    path: entry.file,\n    resourceBase: { kind: 'directory', path: entry.dir },\n    rank: BUNDLED_SKILL_RANK,\n    locator: entry.file,\n    metadata,\n  };\n}\n\n/**\n * Create the bundled skill provider registered on `ctx.skills`.\n * @param {object} options - provider options.\n * @param {string} options.skillsDir - absolute path to the bundled skills root.\n * @param {string[]} [options.enabledSkills] - when non-empty, only these skill names are served.\n * @param {Record<string, string>} [options.placeholderMap] - resolved `{{TOKEN}}` values.\n * @param {(message: string) => void} [options.onWarn] - warning sink.\n * @returns {{ name: string, list: Function, get: Function }} the provider.\n */\nexport function createBundledSkillProvider(options = {}) {\n  const {\n    skillsDir,\n    enabledSkills = [],\n    placeholderMap = {},\n    onWarn,\n  } = options;\n  const warn = typeof onWarn === 'function' ? onWarn : () => {};\n  const allowed = new Set((Array.isArray(enabledSkills) ? enabledSkills : []).map(String));\n  let catalog;\n\n  /**\n   * Build (once) the validated catalog of candidates.\n   * @returns {object[]} candidates sorted by name.\n   */\n  function candidates() {\n    if (catalog) return catalog;\n    catalog = discover(skillsDir, warn)\n      .map((entry) => readCandidate(entry, warn))\n      .filter(Boolean)\n      .filter((candidate) => allowed.size === 0 || allowed.has(candidate.name))\n      .sort((a, b) => a.name.localeCompare(b.name));\n    return catalog;\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:1-125](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md#L1-L125)\n\n作者列举 19 个 skill、外部前置与生产环节。\n\n<details>\n<summary>查看原文（125行）</summary>\n\n````text\n# dsh-video-pipeline\n\n把一条**跑通过的真实短视频生产流水线**作为内置 skill 装进 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)：共 19 个技能（1 个总入口 + 1 个编排 + 17 个原子），随插件一起出现在 agent 的技能目录里。\n\n![19 个 skill 的关系与数据流](https://raw.githubusercontent.com/439436269-ctrl/dsh-video-pipeline/main/docs/skill-flow.png)\n\n> 图：19 个 skill 按流水线阶段排列，以及它们之间的交接。实线＝产物数据流，虚线＝编排 skill 对原子 skill 的调度，橙色＝质量门，红色虚线＝数据复盘闭环。（源码 `docs/skill-flow.svg`，由 `node tools/make-flow-diagram.mjs` 生成——skill 集合变了改数据重跑即可。）\n\n列间空隙只有十几像素，图上不写字，所以交接关系列在这里：\n\n| 交接 | 传的是什么 |\n|---|---|\n| `chinese-tts` → `video-compose` | 配音 wav（先过读音校正，字幕仍写原字） |\n| `ark-agent-plan-image` / `ark-seedream-image` / `dreamina-canvas-cli` → `image-to-video` | 关键帧 → 运镜镜头（三条生图线三选一，也可按镜头混用） |\n| 三个生图 skill → `ark-seedance-video` | 关键帧当 i2v 首帧，用来锁人物形象 |\n| 三个生图 skill → `video-cover` | 关键帧 → 双平台封面（图中以卡片注释表示，避免长线穿图） |\n| `image-to-video` / `ark-seedance-video` → `video-compose` | 镜头 mp4（路线①图片运镜与路线②t2v 在这里汇合） |\n| `video-compose` → `media-verify` | 成片（先核验再交付） |\n| `media-verify` → `quad-platform-publish` | **核验通过才允许发布**（质量门） |\n| `quad-platform-publish` → `bilibili-upload` / `tencent-upload` / `douyin-publish` / `xiaohongshu-skills` | 一平台一个 agent 并行发布 |\n| `multi-platform-publish-orchestrator` | 与上一条并行的另一条路径：按 JSON 配置顺序批量发 |\n| 发布 → `feishu-bitable` | 链接与状态回写 |\n| `tangshi-data-review` → `tangshi-pipeline` | 三平台数据复盘修正选片权重与发布节奏（闭环） |\n| `video-pipeline` → 其余全部 | 总入口：说明这包是什么、每个环节该加载哪个 skill |\n\n被内置的 `tangshi-pipeline` 另自带一张更细的编排流程图（含两道确认门与并行发布的时序）：`skills/tangshi-pipeline/references/orchestration-flow.png`。\n\n装完不需要往 `~/.agents/skills` 或 `~/.dsh/skills` 复制任何文件——插件自己注册一个 skill provider，把包内的 `skills/` 目录提供给 `ctx.skills`。\n\n同一套 skill 还有一个**宿主中立版**，给 Claude Code / Codex 用（不带 DSH 的插件机制，占位符已落成可读值）：<https://github.com/439436269-ctrl/video-pipeline-skills>。\n\n## 这个插件做了什么\n\n- **提供 19 个 skill**（总入口 1 + 编排 1 + 原子 17），覆盖选题、配音、出图、出视频、运镜、合成、封面、核验、数据复盘、多平台发布、进度回写。\n- **自撰一个总入口 skill**（`video-pipeline`），说明这包是什么、每个环节该加载哪个原子 skill、占位符怎么填。安装者没有原作者本机那套同名 skill，所以入口 skill 是这里唯一的起点。\n- **不含任何运行时依赖**：只 import Node 内建模块，通过 `ctx.inject(['skills'])` 拿到注册表。没有 `dependencies`，也没有需要宿主解析的 `peerDependencies`，因此不存在 peer 范围解析失败（ERESOLVE）问题。\n- **不动别人的 skill**：provider 以 rank 600 报告候选（内置 rank），如果你自己的项目/用户 skill 同名（rank 100-500），**你的版本胜出**，本包不会遮蔽它。\n\n## 安装\n\n```sh\n# 从 npm\ndsh plugin --profile web add dsh-video-pipeline\n\n# 从 GitHub\ndsh plugin --profile web add github:439436269-ctrl/dsh-video-pipeline\n\n# 本地开发（软链到源码目录）\ndsh plugin --profile web add \"link:/path/to/dsh-video-pipeline\"\n\n# 卸载\ndsh plugin --profile web remove dsh-video-pipeline\n```\n\n装完重启 DSH Desktop，然后问 agent「有哪些视频流水线的 skill」即可看到目录。\n\n## 包内 skill\n\n| skill | 类型 | 作用 |\n|---|---|---|\n| `video-pipeline` | 总入口（本包自撰） | 流水线骨架、环节与原子 skill 对照、占位符与前置依赖 |\n| `tangshi-pipeline` | 编排 | 双版本（读诗版/故事版）批量生产与发布全流程：规格定稿、时序、成本基线、质量门 |\n| `chinese-tts` | 原子·生产 | 中文配音：多音字读音校正（朝zhāo/还huán/重chóng/骑jì/教jiào/载zǎi）、音色与 context 模板 |\n| `ark-agent-plan-image` | 原子·生产 | 火山 Agent Plan 通道文生图（扣 Plan 配额） |\n| `ark-seedream-image` | 原子·生产 | 火山标准通道文生图（按量后付费），含价格表与开通指引 |\n| `ark-seedance-video` | 原子·生产 | Seedance 文生视频 / 图生视频单条镜头，含 token 用量公式与任务管理 |\n| `image-to-video` | 原子·生产 | 单张关键帧 → ffmpeg zoompan 运镜镜头 |\n| `dreamina-canvas-cli` | 原子·生产 | 即梦画布 CLI（备用生成线） |\n| `video-compose` | 原子·合成 | 镜头列表 + 配音时间轴 + SRT → 竖屏成片（一条 manifest） |\n| `video-cover` | 原子·合成 | B 站 16:10 与竖屏双封面一次出图 |\n| `media-verify` | 原子·核验 | astats 音频对位、线上音频版本比对、抽帧白屏检测 |\n| `tangshi-data-review` | 原子·复盘 | 三平台播放数据采集、衰减分档与复盘报告 |\n| `quad-platform-publish` | 编排·发布 | 四平台发布总控（含发布前读音核查与确认门） |\n| `multi-platform-publish-orchestrator` | 编排·发布 | 按 JSON 配置顺序执行多平台发布 |\n| `bilibili-upload` | 原子·发布 | B 站投稿与合集管理（biliup） |\n| `tencent-upload` | 原子·发布 | 视频号上传与合集管理 |\n| `douyin-publish` | 原子·发布 | 抖音创作者中心上传发布与合集管理 |\n| `xiaohongshu-skills` | 原子·发布（第三方） | 小红书图文/视频发布、检索与互动，见 [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md) |\n| `feishu-bitable` | 协作 | 飞书多维表格读写（进度回写） |\n\n## 配置\n\n在 profile 的 `cordis.patch.yml` 里按 entry id 覆盖。**patch 对 `config` 是整块替换**，想保留的键要一并写出：\n\n```yaml\n- id: dsh-video-pipeline\n  config:\n    enabledSkills:            # 省略或空数组 = 放出全部 19 个\n      - video-pipeline\n      - video-compose\n      - media-verify\n    placeholders:             # 覆盖内置占位符；加载 skill 时替换正文里的 {{TOKEN}}\n      FEISHU_BASE_APP: your_base_app_token\n      FEISHU_TABLE: tblXXXXXXXXXX\n      FEISHU_RECORD: recXXXXXXXXXX\n      NAS_DELIVERABLE_DIR: /your/nas/deliverables\n      ARK_API_KEY_FILE: /your/path/ark_key.txt\n```\n\n| 键 | 默认值 | 作用 |\n|---|---|---|\n| `enabledSkills` | `[]`（全部） | 只放出指定 skill；用于把包装成只做某一段能力 |\n| `placeholders` | `{}` | 覆盖 `{{TOKEN}}` 的取值。取值优先级：本配置 → 环境变量 → 内置可读默认值 |\n\n### 占位符\n\n发布前把原作者环境相关的内容全换成了占位符。加载 skill 正文时按上表优先级替换成你的值：\n\n| 占位符 | 含义 | 可用的环境变量 |\n|---|---|---|\n| `USER_HOME` | 本机用户目录 | `USERPROFILE` / `HOME` |\n| `WORKSPACE` | 工作区根目录 | `DSH_WORKSPACE` / `WORKSPACE` |\n| `ARK_API_KEY` | 火山方舟 API key | `ARK_API_KEY` / `ARK_STD_KEY` |\n| `ARK_API_KEY_FILE` | 本地存放 key 的文件 | `ARK_API_KEY_FILE` |\n| `FEISHU_BASE_APP` / `FEISHU_TABLE` / `FEISHU_RECORD` | 飞书多维表格坐标 | 同名 |\n| `NAS_DELIVERABLE_DIR` / `NAS_DELIVERABLE_PARENT` / `NAS_HOST` | NAS 交付目录与主机 | 同名 |\n\n**只替换 skill 正文**。`skills/*/scripts/` 下是真实脚本文件，里面的占位符需要你自己改成实际值——skill 正文会说明每个值的含义。\n\n## 前置依赖\n\n本包只提供 skill（指令与脚本），**不安装任何工具**：\n\n- **ffmpeg**：合成、运镜、核验都依赖。`xfade`/`ass`/`loudnorm` 等滤镜需要较新版本。\n- **Python 3** + `Pillow`：`scripts/` 下的 py 脚本（封面、图处理、封面比对）。\n````\n\n</details>\n\n#### 缺口\n\n- 未在目标 DSH 环境执行完整短片制作/发布。\n  **影响：**无法把技能目录和作者实录当本轮成片质量或多平台成功证明。\n  **进一步探讨：**在隔离素材与测试账号下逐环节验证产物、核验门和发布结果。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · provider 怎样解析覆盖和资源，哪里会失配？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nprovider 只扫描 skills 根一层的目录 bundle/平铺 Markdown，读取 frontmatter 的 name、description、invocation，过滤 enabledSkills，按 rank 600 让较高优先级的用户/项目同名技能胜出。get 仅替换技能正文、描述和 whenToUse 中的占位符，resourceBase 指向原脚本目录，不改 scripts/ 内的占位符。于是“安装即见目录”可由源码理解，但“开箱即执行”不成立：脚本和本地路径、工具、账号还需使用者配置。固定树有另一个 authored 源文件，技能候选盘点数与实际 provider 可发现目录应分开；skills/ 目录下确有 19 个 SKILL.md。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/provider.js:52-169](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/provider.js#L52-L169)\n\n一层扫描、frontmatter 校验、rank 600 与过滤。\n\n<details>\n<summary>查看原文（118行）</summary>\n\n```text\nfunction discover(skillsDir, warn) {\n  let dirents;\n  try {\n    dirents = readdirSync(skillsDir, { withFileTypes: true });\n  } catch (error) {\n    warn(`cannot read bundled skills directory ${skillsDir}: ${error.message}`);\n    return [];\n  }\n\n  const found = [];\n  for (const dirent of dirents) {\n    const full = join(skillsDir, dirent.name);\n    if (dirent.isDirectory()) {\n      const file = join(full, SKILL_FILE);\n      try {\n        if (statSync(file).isFile()) found.push({ dir: full, file });\n      } catch {\n        warn(`skipping ${dirent.name}: no ${SKILL_FILE}`);\n      }\n      continue;\n    }\n    if (dirent.isFile() && dirent.name.endsWith('.md') && dirent.name !== SKILL_FILE) {\n      found.push({ dir: skillsDir, file: full });\n    }\n  }\n  return found;\n}\n\n/**\n * Read and validate one skill file into a provider candidate.\n * @param {{ dir: string, file: string }} entry - discovered skill file.\n * @param {(message: string) => void} warn - warning sink.\n * @returns {object | undefined} a candidate, or `undefined` when the file is unusable.\n */\nfunction readCandidate(entry, warn) {\n  let parsed;\n  try {\n    parsed = parseFrontmatter(readFileSync(entry.file, 'utf8'));\n  } catch (error) {\n    warn(`skipping ${entry.file}: ${error.message}`);\n    return undefined;\n  }\n\n  const { attrs } = parsed;\n  const name = typeof attrs.name === 'string' ? attrs.name.trim() : '';\n  if (!isSkillName(name)) {\n    warn(`skipping ${entry.file}: name must be kebab-case, got ${JSON.stringify(attrs.name)}`);\n    return undefined;\n  }\n  const directoryName = basename(entry.dir);\n  if (entry.file === join(entry.dir, SKILL_FILE) && directoryName !== name) {\n    warn(`${name}: directory name ${directoryName} differs from frontmatter name (frontmatter wins)`);\n  }\n\n  const description = typeof attrs.description === 'string' ? attrs.description.trim() : '';\n  if (!description) {\n    warn(`skipping ${name}: description is required`);\n    return undefined;\n  }\n\n  const { policy, error } = invocationPolicy(attrs);\n  if (error) {\n    warn(`skipping ${name}: ${error}`);\n    return undefined;\n  }\n\n  const whenToUse = typeof attrs.whenToUse === 'string' ? attrs.whenToUse.trim() : undefined;\n  const metadata = attrs.metadata && typeof attrs.metadata === 'object' && !Array.isArray(attrs.metadata)\n    ? attrs.metadata\n    : undefined;\n\n  return {\n    name,\n    description,\n    whenToUse,\n    invocation: policy,\n    source: 'bundled',\n    provider: PROVIDER_NAME,\n    path: entry.file,\n    resourceBase: { kind: 'directory', path: entry.dir },\n    rank: BUNDLED_SKILL_RANK,\n    locator: entry.file,\n    metadata,\n  };\n}\n\n/**\n * Create the bundled skill provider registered on `ctx.skills`.\n * @param {object} options - provider options.\n * @param {string} options.skillsDir - absolute path to the bundled skills root.\n * @param {string[]} [options.enabledSkills] - when non-empty, only these skill names are served.\n * @param {Record<string, string>} [options.placeholderMap] - resolved `{{TOKEN}}` values.\n * @param {(message: string) => void} [options.onWarn] - warning sink.\n * @returns {{ name: string, list: Function, get: Function }} the provider.\n */\nexport function createBundledSkillProvider(options = {}) {\n  const {\n    skillsDir,\n    enabledSkills = [],\n    placeholderMap = {},\n    onWarn,\n  } = options;\n  const warn = typeof onWarn === 'function' ? onWarn : () => {};\n  const allowed = new Set((Array.isArray(enabledSkills) ? enabledSkills : []).map(String));\n  let catalog;\n\n  /**\n   * Build (once) the validated catalog of candidates.\n   * @returns {object[]} candidates sorted by name.\n   */\n  function candidates() {\n    if (catalog) return catalog;\n    catalog = discover(skillsDir, warn)\n      .map((entry) => readCandidate(entry, warn))\n      .filter(Boolean)\n      .filter((candidate) => allowed.size === 0 || allowed.has(candidate.name))\n      .sort((a, b) => a.name.localeCompare(b.name));\n    return catalog;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/provider.js:172-213](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/provider.js#L172-L213)\n\nget 时只替换正文/描述并返回 resourceBase。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  return {\n    name: PROVIDER_NAME,\n\n    /**\n     * List every bundled skill for the current lookup.\n     * @param {{ signal?: AbortSignal }} [lookup] - lookup options.\n     * @returns {Promise<object[]>} provider candidates.\n     */\n    async list(lookup) {\n      if (lookup?.signal?.aborted) return [];\n      return candidates();\n    },\n\n    /**\n     * Load one bundled skill body, with placeholders resolved.\n     * @param {object} candidate - a candidate previously returned by `list`.\n     * @param {{ signal?: AbortSignal }} [lookup] - lookup options.\n     * @returns {Promise<object | undefined>} the full definition, or `undefined` when unreadable.\n     */\n    async get(candidate, lookup) {\n      if (lookup?.signal?.aborted) return undefined;\n      let parsed;\n      try {\n        parsed = parseFrontmatter(readFileSync(candidate.locator, 'utf8'));\n      } catch (error) {\n        warn(`cannot load ${candidate.name}: ${error.message}`);\n        return undefined;\n      }\n      const { policy } = invocationPolicy(parsed.attrs);\n      const content = applyPlaceholders(parsed.body.replace(/^\\s*\\n/, ''), placeholderMap);\n      return {\n        name: candidate.name,\n        description: applyPlaceholders(candidate.description, placeholderMap),\n        whenToUse: candidate.whenToUse ? applyPlaceholders(candidate.whenToUse, placeholderMap) : undefined,\n        invocation: policy ?? candidate.invocation,\n        source: 'bundled',\n        provider: PROVIDER_NAME,\n        path: candidate.path,\n        resourceBase: candidate.resourceBase,\n        metadata: candidate.metadata,\n        content,\n      };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/video-pipeline/SKILL.md:67-86](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/video-pipeline/SKILL.md#L67-L86)\n\n技能总入口明确脚本占位符需另行修改并列前置。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\n  config:\n    placeholders:\n      FEISHU_BASE_APP: your_base_app_token\n      NAS_DELIVERABLE_DIR: /your/nas/deliverables\n```\n\n**脚本里的占位符不会自动替换**：`scripts/` 下的 python/mjs 是真实脚本文件，里面的 `{{USER_HOME}}`、`<你的 …>` 需要你改成自己的值再跑。skill 正文里会说明每个值的含义。\n\n## 前置依赖\n\n- **ffmpeg**（合成、运镜、核验都依赖）——版本越新越好，`xfade`/`ass`/`loudnorm` 需要较新版。\n- **Python 3**（`scripts/` 下的 py 脚本），配 `Pillow`（封面/图处理）。\n- **Node.js**（`scripts/` 下的 mjs 脚本）+ 各平台需要时装 `playwright`。\n- **各平台自己的凭据**：B 站 `biliup` 凭据、视频号/抖音/小红书的登录态。这些必须你自己登录获取，本包不含任何凭据。\n\n## 打包说明与第三方代码\n\n- 本包的 skill 来自一条真实生产流水线，发布前已**剥离**：真实 API key、cookie/登录态、平台账号 ID（作品号/合集号/UID）、个人绝对路径、内网地址，以及**全部真实运营数据**——包括五份数据复盘文档，以及正文里对作者账号播放表现的绝对数字与实测倍率（已改写成定性规则）。保留下来的是可执行的方法论：产能上限、发布时段、采样制度、选片权重、质量门。要按同样口径复现，用 `tangshi-data-review` 的采集脚本对自己的账号重跑。\n- `xiaohongshu-skills` 是第三方 MIT 代码（`white0dew/XiaohongshuSkills`，LICENSE 署名 angiin），随包保留了其许可证与署名，详见 `THIRD-PARTY-NOTICES.md`。\n- 部分 `scripts/` 里引用的输入文件（`posts.json`、`*-stats.json`、`dy_works_all.json` 等）是**采集脚本自己写出来的产物**，首次运行前并不存在——按顺序先跑采集再跑分析即可。\n````\n\n</details>\n\n#### 缺口\n\n- 未在当前宿主版本验证冲突优先级和资源路径。\n  **影响：**真实安装中技能可见不等于脚本可跑。\n  **进一步探讨：**从打包产物加载 19 个候选，并对各原子脚本做依赖/路径试运行。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 占位符与公开素材有哪些实际安全边界？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nresolvePlaceholders 优先从环境变量读取 ARK_API_KEY/ARK_STD_KEY，再允许插件配置覆盖；get 将 `{{ARK_API_KEY}}` 直接替换进 video-pipeline 的可见正文表格。若 Host 进程带真实 key，加载该技能会把密钥放进 Agent 上下文/技能响应，可能被会话记录、提示回显或外部模型看到；这和“包里没有凭据”是不同边界。README 表明脚本里的占位符不改，用户还得处理 Python/Node 脚本。导入器的 0 残留、作者 E2E/打包试验是作者报告，不是我们对未来配置和第三方技能安全的证明。包内还集成第三方小红书技能，外部依赖与许可边界需独立核查。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/placeholders.js:21-95](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/placeholders.js#L21-L95)\n\nARK_API_KEY 从环境变量/覆盖读取并对正文做文本替换。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n  USER_HOME: '%USERPROFILE%',\n  WORKSPACE: '<你的工作区>',\n  FEISHU_BASE_APP: '<飞书多维表格 base app_token>',\n  FEISHU_TABLE: '<飞书数据表 table_id>',\n  FEISHU_RECORD: '<飞书记录 record_id>',\n  NAS_DELIVERABLE_DIR: '<NAS 交付目录，如 /sata1/public/公共分组/唐诗300首短剧>',\n  NAS_DELIVERABLE_PARENT: '<NAS 交付目录的父目录>',\n  NAS_HOST: '<NAS 主机>',\n  ARK_API_KEY: '<设置环境变量 ARK_API_KEY>',\n  ARK_API_KEY_FILE: '<本地保存 ARK key 的文件>',\n});\n\n/** Environment variables that fill a placeholder when the config does not. */\nconst ENV_SOURCES = Object.freeze({\n  USER_HOME: ['USERPROFILE', 'HOME'],\n  WORKSPACE: ['DSH_WORKSPACE', 'WORKSPACE'],\n  ARK_API_KEY: ['ARK_API_KEY', 'ARK_STD_KEY'],\n  NAS_DELIVERABLE_DIR: ['NAS_DELIVERABLE_DIR'],\n  NAS_DELIVERABLE_PARENT: ['NAS_DELIVERABLE_PARENT'],\n  NAS_HOST: ['NAS_HOST'],\n  ARK_API_KEY_FILE: ['ARK_API_KEY_FILE'],\n  FEISHU_BASE_APP: ['FEISHU_BASE_APP'],\n  FEISHU_TABLE: ['FEISHU_TABLE'],\n  FEISHU_RECORD: ['FEISHU_RECORD'],\n});\n\n/**\n * Build the effective placeholder map for one plugin instance.\n * Precedence: explicit config override, then environment, then built-in\n * default, then the local home directory as a last resort for `USER_HOME`.\n * @param {Record<string, unknown>} [overrides] - `config.placeholders` from the loader row.\n * @param {Record<string, string | undefined>} [env] - environment to read; defaults to `process.env`.\n * @returns {Record<string, string>} token to replacement text.\n */\nexport function resolvePlaceholders(overrides, env = process.env) {\n  const map = { ...PLACEHOLDER_DEFAULTS };\n  for (const [token, names] of Object.entries(ENV_SOURCES)) {\n    for (const name of names) {\n      const value = env?.[name];\n      if (typeof value === 'string' && value.trim()) {\n        map[token] = value;\n        break;\n      }\n    }\n  }\n  if (map.USER_HOME === PLACEHOLDER_DEFAULTS.USER_HOME) {\n    try {\n      const home = homedir();\n      if (home) map.USER_HOME = home;\n    } catch {\n      /* keep the readable default */\n    }\n  }\n  if (overrides && typeof overrides === 'object') {\n    for (const [token, value] of Object.entries(overrides)) {\n      if (value === undefined || value === null) continue;\n      map[token] = String(value);\n    }\n  }\n  return map;\n}\n\n/**\n * Replace `{{TOKEN}}` occurrences with their resolved text.\n * Unknown tokens are left untouched so a typo stays visible instead of turning\n * into an empty string inside an instruction.\n * @param {string} text - skill body or description.\n * @param {Record<string, string>} map - resolved placeholders.\n * @returns {string} substituted text.\n */\nexport function applyPlaceholders(text, map) {\n  if (typeof text !== 'string' || !text.includes('{{')) return text;\n  return text.replace(/\\{\\{\\s*([A-Za-z0-9_]+)\\s*\\}\\}/g, (match, token) =>\n    Object.prototype.hasOwnProperty.call(map, token) ? String(map[token]) : match);\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/provider.js:186-211](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/lib/provider.js#L186-L211)\n\nget 对技能正文和描述应用占位符。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n     * Load one bundled skill body, with placeholders resolved.\n     * @param {object} candidate - a candidate previously returned by `list`.\n     * @param {{ signal?: AbortSignal }} [lookup] - lookup options.\n     * @returns {Promise<object | undefined>} the full definition, or `undefined` when unreadable.\n     */\n    async get(candidate, lookup) {\n      if (lookup?.signal?.aborted) return undefined;\n      let parsed;\n      try {\n        parsed = parseFrontmatter(readFileSync(candidate.locator, 'utf8'));\n      } catch (error) {\n        warn(`cannot load ${candidate.name}: ${error.message}`);\n        return undefined;\n      }\n      const { policy } = invocationPolicy(parsed.attrs);\n      const content = applyPlaceholders(parsed.body.replace(/^\\s*\\n/, ''), placeholderMap);\n      return {\n        name: candidate.name,\n        description: applyPlaceholders(candidate.description, placeholderMap),\n        whenToUse: candidate.whenToUse ? applyPlaceholders(candidate.whenToUse, placeholderMap) : undefined,\n        invocation: policy ?? candidate.invocation,\n        source: 'bundled',\n        provider: PROVIDER_NAME,\n        path: candidate.path,\n        resourceBase: candidate.resourceBase,\n        metadata: candidate.metadata,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/video-pipeline/SKILL.md:55-62](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/video-pipeline/SKILL.md#L55-L62)\n\n总入口正文含 ARK_API_KEY 占位符。\n\n```text\n|---|---|---|\n| `{{USER_HOME}}` | 本机用户目录 | `USERPROFILE` / `HOME` |\n| `{{WORKSPACE}}` | 你的工作区根目录 | `DSH_WORKSPACE` / `WORKSPACE` |\n| `{{ARK_API_KEY}}` | 火山方舟 API key | `ARK_API_KEY` / `ARK_STD_KEY` |\n| `{{ARK_API_KEY_FILE}}` | 本地存放 key 的文件路径 | `ARK_API_KEY_FILE` |\n| `{{FEISHU_BASE_APP}}` / `{{FEISHU_TABLE}}` / `{{FEISHU_RECORD}}` | 飞书多维表格坐标 | 同名 |\n| `{{NAS_DELIVERABLE_DIR}}` / `{{NAS_DELIVERABLE_PARENT}}` / `{{NAS_HOST}}` | NAS 交付目录与主机 | 同名 |\n\n```\n\n**依据 4 · 作者声明**：[README.md:136-173](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md#L136-L173)\n\n作者描述发布前脱敏、第三方包和脚本引用边界。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n````text\n- **保留但清空为模板**：4 个「被剔除但脚本仍要读」的输入文件，以空结构随包（`heji-state.json`、`map-dushi.json`、`map-gushi.json`、`dy_t.example.json`）。\n\n复扫门检查 4 类东西：密钥/账号标识/本机路径/内网地址残留、33 个脚本的语法可解析性（防止脱敏改写坏代码）、被剔除文件仍被引用、以及 SKILL.md 是否可被 provider 正常解析。当前结果：**85 个文件、0 处残留、语法全通过**。\n\n### 已知边界\n\n- 部分脚本的**输入**是采集脚本自己写出的产物（`posts.json`、`*-stats.json`、`dy_works_all.json`），首次运行前并不存在——先跑采集再跑分析。`tools/import-report.txt` 列出了全部这类引用。\n- **不含真实运营数据**：`tangshi-pipeline` 的五份数据复盘文档（`references/data-review-*.md`）**已按作者要求剔除**，正文里对作者账号播放表现的绝对数字与实测倍率也一并改写成定性规则（改写与脱敏分开计数，见 `tools/import-report.txt`）。保留下的是提炼后的可执行规则——产能上限、发布时段、采样制度、选片权重；要复现同样的口径，用 `tangshi-data-review` 的采集脚本对自己的账号重跑。\n- `xiaohongshu-skills` 是第三方 MIT 代码；上游 README（含赞助位与作者联系方式）未随包。\n- **有一处正文提到本包未含的外部 skill**：`bilibili-upload` 的「论文视频投稿」路径依赖外部 skill `paper-bilibili-uploader`（来自第三方 `yhbcode000/paper-share-skills`）。本包不含它，相关章节已标明为外部；B 站投稿引擎 `biliup` 本身已包含。导入报告里会列出所有这类「提到但未打进包」的 skill（`tools/import-report.txt`）。\n\n## 结构\n\n```\ndsh-video-pipeline/\n├── package.json          # dsh.bundle.patch 是市场收录的硬性要求\n├── cordis.patch.yml      # 往 profile 插一行宿主插件行\n├── lib/\n│   ├── index.js          # 插件入口：apply() 里向 ctx.skills 注册 provider\n│   ├── provider.js       # 扫描 skills/、解析 frontmatter、rank 600、resourceBase\n│   ├── frontmatter.js    # 无依赖的 YAML frontmatter 子集解析（含块标量与嵌套 map）\n│   └── placeholders.js   # {{TOKEN}} 取值与替换\n├── skills/               # 19 个 skill（由 tools/import-skills.mjs 生成）\n├── authored/             # 本包自撰的 skill 源文件（导入时写入 skills/）\n├── docs/                 # skill-flow.svg + .png（由 tools/make-flow-diagram.mjs 生成；不进制品包，README 用 raw 地址取）\n├── tools/\n│   ├── import-skills.mjs # 可复现导入器：--audit / --write / --verify\n│   ├── scrub-rules.mjs   # 剔除、脱敏、文档准确性改写、残留扫描的唯一规则来源\n│   ├── verify-artifact.mjs # 打包 → 解包 → 真实加载解出来的入口\n│   ├── preflight.mjs     # 只读发布自检（远端占用 / git / 三道门 / 凭据）\n│   ├── setup-repo.mjs    # 建仓 + 设 topics + 推送 + 核对远端 SHA\n│   └── make-flow-diagram.mjs # 生成 docs/skill-flow.svg + .png\n└── test/\n    ├── provider.test.mjs # provider 行为 + 对真实 skills/ 的集成断言\n    └── rules.test.mjs    # 规则回归：每个用例对应一个真实踩过的坑\n```\n\n## 开发\n````\n\n</details>\n\n#### 缺口\n\n- 没有验证真实 key 是否进入宿主日志/模型请求或工具输出。\n  **影响：**泄露范围取决于 DSH 技能加载与会话保存方式。\n  **进一步探讨：**用假的哨兵 key 加载技能并检查模型请求/会话存储，移除密钥正文替换。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样安全试用并评估它的生产效率？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n先按需启用少数非发布技能，从生成→合成→media-verify 在无真实账号的测试素材上跑通，并确认外部工具/依赖版本；任何 API 花费、公开发布和飞书回写按各技能内门槛由操作者显式确认。发布前对标题、封面、可见性和账号状态人工核对，不能因为作者历史实录就视新账户可用。建议默认不把 ARK_API_KEY 直接注入技能正文，改为本地安全文件/受控工具读取；对各平台做版本化端到端测试。成本含云生成、ffmpeg、浏览器登录、平台审查和手工复核，不能从 19 个目录推断节省时间。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/video-pipeline/SKILL.md:42-51](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/skills/video-pipeline/SKILL.md#L42-L51)\n\n总入口列出花费确认、质量门与发布确认。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n1. **选题与门①**：定诗题/题材 → 出报价（图 + 视频张数/秒数 × 刊例）→ **等用户确认再动 API 花钱**。\n2. **生产**：TTS 配音 → 场景图 → 镜头（图片运镜 或 t2v）→ 合成 → 核验。生产段可以整段并行：图与视频先生成、统一 poll。\n3. **质量门**：`media-verify` 核音频对位与静默窗、抽帧查白屏与人物一致性；不合格回炉，不进入发布。\n4. **门②发布确认**：标题、封面、可见性给用户确认一次。**这一步不能省**——发布是外部可见动作。\n5. **发布与回写**：按平台并行发布 → 回读平台确认成功 → 把链接与状态回写飞书。\n\n顺序上两条硬经验：**生产与发布重叠**（发布 agent 跑起来后主线程就开始下一集），**同平台资源不共享浏览器 profile**（互相杀进程会让发布卡住）。\n\n## 配置：占位符怎么填\n\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:101-135](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/README.md#L101-L135)\n\n作者列出外部工具/凭据与占位符配置。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n|---|---|---|\n| `enabledSkills` | `[]`（全部） | 只放出指定 skill；用于把包装成只做某一段能力 |\n| `placeholders` | `{}` | 覆盖 `{{TOKEN}}` 的取值。取值优先级：本配置 → 环境变量 → 内置可读默认值 |\n\n### 占位符\n\n发布前把原作者环境相关的内容全换成了占位符。加载 skill 正文时按上表优先级替换成你的值：\n\n| 占位符 | 含义 | 可用的环境变量 |\n|---|---|---|\n| `USER_HOME` | 本机用户目录 | `USERPROFILE` / `HOME` |\n| `WORKSPACE` | 工作区根目录 | `DSH_WORKSPACE` / `WORKSPACE` |\n| `ARK_API_KEY` | 火山方舟 API key | `ARK_API_KEY` / `ARK_STD_KEY` |\n| `ARK_API_KEY_FILE` | 本地存放 key 的文件 | `ARK_API_KEY_FILE` |\n| `FEISHU_BASE_APP` / `FEISHU_TABLE` / `FEISHU_RECORD` | 飞书多维表格坐标 | 同名 |\n| `NAS_DELIVERABLE_DIR` / `NAS_DELIVERABLE_PARENT` / `NAS_HOST` | NAS 交付目录与主机 | 同名 |\n\n**只替换 skill 正文**。`skills/*/scripts/` 下是真实脚本文件，里面的占位符需要你自己改成实际值——skill 正文会说明每个值的含义。\n\n## 前置依赖\n\n本包只提供 skill（指令与脚本），**不安装任何工具**：\n\n- **ffmpeg**：合成、运镜、核验都依赖。`xfade`/`ass`/`loudnorm` 等滤镜需要较新版本。\n- **Python 3** + `Pillow`：`scripts/` 下的 py 脚本（封面、图处理、封面比对）。\n- **Node.js**：`scripts/` 下的 mjs 脚本。\n- **playwright**：发布类 skill 需要时自行安装。\n- **各平台凭据**：B 站 `biliup` 凭据、视频号/抖音/小红书登录态，必须你自己登录获取。**本包不含任何凭据、cookie 或真实账号 ID。**\n\n## 发布前的脱敏（重要）\n\n本包基于一条真实生产流水线，公开前做了逐文件的剔除与替换，并有独立的复扫门（`tools/import-skills.mjs --verify`）来证明结果：\n\n- **删除**：真实 API key 文件、登录态缓存、Python 字节码、以及 170 个只属于原作者项目历史的文件（真实播放数据快照、合集映射、逐集一次性脚本、当时操作截图）。\n- **替换为占位符**：飞书 base/table/record ID、NAS 路径与内网地址、本机绝对路径、以及真实账号/作品标识（视频号 FINDER_ID、抖音 aweme_id、B 站 UID 与 seasonId、小红书笔记与合集 ID、B 站稿件号）。\n```\n\n</details>\n\n**依据 3 · 作者声明**：[VERIFY.md:1-116](https://github.com/439436269-ctrl/dsh-video-pipeline/blob/82a85d20b67d1d398d49009462d61a741f5a8d51/VERIFY.md#L1-L116)\n\n作者的隐私门、目录和打包安装记录。\n\n<details>\n<summary>查看原文（116行）</summary>\n\n````text\n# VERIFY.md — 验证记录\n\n本文件记录 0.1.0 的验证过程与原始证据。按发布要求，路径已脱敏为 `%USERPROFILE%` / `<plugin dir>`。\n\n环境：Windows，Node v22.16.0，pnpm 11.7.0，`dsh` CLI 0.1.5-rc.3。\n\n## 1. 隐私门（P5）\n\n```\n$ node tools/import-skills.mjs --write\n合计：保留 45，脱敏 35，准确性改写 15，剔除 175，自撰 1，模板 4\n写入 85 个文件\n\n$ node tools/import-skills.mjs --verify\n校验 85 个文件（其中 33 个脚本做了语法解析）；残留 0 处\n未发现密钥、账号标识、本机路径、内网地址残留，脚本语法可解析，全部通过。\nexit 0\n```\n\n`--verify` 检查四类东西：密钥/账号标识/本机路径/内网地址残留、脚本语法可解析性、`SKILL.md` 可解析性、以及每个应存在的 skill 目录是否存在。\n\n导入过程中门禁抓出并修掉了 5 个真实问题（说明这道门不是形式）：\n\n| # | 问题 | 怎么发现的 | 处置 |\n|---|---|---|---|\n| 1 | `^map-.*\\.json$` 这类锚定文件名的剔除规则对 `scripts/heji/map-*.json` 不生效，真实合集映射被当成保留文件 | `--audit` 报告里该文件出现在「改」而不是「删」 | 规则改为任意深度匹配 |\n| 2 | `dropReason` 改为传 skill 前缀后，`^ARK_KEY\\.txt$` 失效，**真实 API key 文件被复制进包** | `--verify` 残留扫描命中 `ARK API key` | 规则改为 `(^|\\/)ARK_KEY\\.txt$` |\n| 3 | 脱敏把 `set_cover.mjs` 里的解析正则 `/encfilekey=([^&]*)/` 改成了 `/encfilekey=<签名>&]*)/` | 语法/残留扫描与逐行比对 | 删除该条过宽规则（真实签名值只存在于已剔除的数据文件里），残留判据改为匹配**签名的值**而不是参数名 |\n| 4 | `bili_api.mjs` 内嵌整张 EP→BV 真实映射表（只替换了已知的一个 BV） | 独立宽形态扫描 `BV1[0-9A-Za-z]{9}` | 改为按形态替换全部稿件号 |\n| 5 | `stage_writability_probe.py` 里飞书 table_id 被当作 **Python 变量名**，替换成 `{{TOKEN}}` 后语法错误 | `--verify` 的 Python 语法解析 | 增补「作标识符」形态规则，替换成合法标识符 |\n\n另有一次自撰内容导致的失败：`video-pipeline/SKILL.md` 正文里写了字面的 `{{TOKEN}}`，被单测判为未知占位符 → 改写措辞。\n\n还有一次是**门自身**的可移植性缺陷（加 CI 时暴露）：`.py` 的语法检查原本写死 `python`，在只有 `python3` 的机器（如 ubuntu CI runner）上会 `ENOENT`，被当成「语法失败」误报红灯。已改为先探测 `PYTHON` → `python3` → `python`，都不可用则如实报告「跳过」而不是失败。\n\n另一个同类盲点：**无扩展名的文本文件**（`LICENSE`、`.gitkeep`）原本被判成二进制原样复制，于是既逃过残留扫描，也逃过行尾检查——「包内文本行尾统一为 LF」这句话当时并不成立（`skills/xiaohongshu-skills/LICENSE` 仍是 CRLF）。已补 `TEXT_FILENAMES` 与 `isTextPath()`，两处检查共用同一判据。\n\n## 2. 单测（P3）\n\n```\n$ node --test test/provider.test.mjs\n# tests 12   # pass 12   # fail 0\n```\n\n覆盖：frontmatter 三种形态（内联/块标量/嵌套 map）、非法 frontmatter 与非法布尔值必须被丢弃并告警、kebab-case 校验、占位符优先级与未知占位符保留、目录 bundle 与平铺文件发现、`enabledSkills` 过滤、不可读目录不抛异常、以及**对真实 `skills/` 目录的集成断言**（19 个 skill 全部可解析、描述非空、正文非空、无未声明的占位符）。\n\n## 3. 临时 profile 装载（P1）\n\n```\n$ dsh --profile video-verify --from-default-profile web --dump-config    # 529 行，stderr 空\n$ dsh plugin --profile video-verify add \"link:<plugin dir>\"\n$ dsh --profile video-verify --dump-config\n...\n> # == dsh-video-pipeline\n> - id: dsh-video-pipeline\n>   name: dsh-video-pipeline\nstderr: 空   exit 0\n```\n\n插件行出现在合成配置里，stderr 为空 → `dsh.bundle.patch` 被自动应用。\n\n## 4. 真实挂载端到端（P3/P4）\n\n用 headless 模板另建 profile，装同一个包，跑真实 agent 任务。\n\n**4a. 内置 skill 进入了真实技能目录**\n\n```\n$ dsh --profile video-e2e \"把技能目录里所有 skill 的 name 逐行列出来…\"\n… video-pipeline …（列表中含 video-pipeline，此前该名字在本机不存在）\n```\n\n反证：`%USERPROFILE%\\.agents\\skills\\video-pipeline`、`%USERPROFILE%\\.dsh\\skills\\video-pipeline`、`<cwd>\\.dsh\\skills`、`<cwd>\\.agents\\skills` 全部不存在 → 该条目只可能来自插件包内置目录。\n\n**4b. 占位符在真实宿主里被替换**\n\n```\n$ dsh --profile video-e2e \"加载 video-pipeline，报出占位符表 USER_HOME 一行的实际取值\"\nC:\\Users\\<user>\n```\n\n文件里写的是 `{{USER_HOME}}`，agent 看到的是本机真实路径 → 取值链（配置 → 环境变量 → 内置默认 → 本机 home）在真实宿主里生效。\n\n**4c. rank 优先级：插件不遮蔽使用者自己的同名 skill**\n\n```\n$ dsh --profile video-e2e \"加载 tangshi-pipeline，报出 skill 文件所在目录\"\nC:\\Users\\<user>\\.agents\\skills\\tangshi-pipeline\n```\n\n解析到本机用户 skill（rank 500）而不是包内的内置副本（rank 600）→ 同名时使用者自己的版本胜出，符合设计。\n\n**改动后复跑**（行尾归一、files 改 glob、新增 CI 与发布物检查之后，同一 profile 重跑一次）：\n\n```\n$ dsh --profile video-e2e \"列出技能目录里 name 以 video- 开头的 skill\"\nvideo-compose\nvideo-cover\nvideo-pipeline\n```\n\n内置条目仍在目录里 → 上述改动没有破坏装载。\n\n## 4b. 从 tarball 安装（分发路径，非 link:）\n\n前面 3、4 节用的是 `link:` 指向源码目录，验证的是**开发路径**。真实安装（`dsh plugin add` 或从 npm/GitHub）走的是 tarball，于是另起一个 profile 装了打包产物：\n\n```\n$ npm pack --pack-destination <tmp>            # dsh-video-pipeline-0.1.0.tgz（564 KB）\n$ dsh --profile video-tgz --from-default-profile headless --dump-config\n$ dsh plugin --profile video-tgz add \"file:<tmp>/dsh-video-pipeline-0.1.0.tgz\"\n+ dsh-video-pipeline file:.../dsh-video-pipeline-0.1.0.tgz\n\n$ # 安装形态：确认是真的目录副本，不是软链\n$ (Get-Item ...\\profiles\\video-tgz\\node_modules\\dsh-video-pipeline).LinkType\n（空）→ 真实目录副本，等价于 npm 安装\n````\n\n</details>\n\n#### 缺口\n\n- 缺少独立成片质量、各平台发布与成本对照。\n  **影响：**无法判断 19 技能组合的实际生产收益。\n  **进一步探讨：**用相同素材/账号比较人工流程与技能包的耗时、返工、费用和成功率。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0eeb1daf6a693a6e0d0f6fa64d7dcc645cb56635527f92489fe0aac038d2a77f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 49 | 6103 | — | — | 100616 |\n| .js | source | 5 | 631 | 399 | 192 | — |\n| .mjs | source | 25 | 3975 | 3185 | 561 | — |\n| .mjs | test | 2 | 368 | 290 | 42 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| provider | DSH 技能目录 | 需宿主兼容 |\n| 流水线说明 | 交接与门槛 | 无自动环境配置 |\n| 占位符 | 适配用户路径/坐标 | API key 可进正文 |\n\n## 工程亮点\n\nprovider 一层扫描技能目录、frontmatter 校验、rank 600 与 enabledSkills；get 替换正文/描述占位符，脚本资源原样返回。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、VERIFY.md、package.json、lib/index.js、lib/provider.js、lib/placeholders.js、skills/video-pipeline/SKILL.md、skills/quad-platform-publish/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态阅读固定版 README、provider、占位符与代表性总入口/发布技能；未运行目标插件、脚本或平台账号。\n- 下一步：对打包产物加载 19 技能；哨兵 key 检查技能输出/模型上下文；测试素材跑制作、核验及各平台受控试发布并记录费用/耗时。\n",
         "metadata": {
             "repository": "439436269-ctrl/dsh-video-pipeline",
             "repository_id": 1414936636,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:57:13.473Z",
+            "window_start": "2026-09-22T05:57:13.473Z",
             "stars": 1,
             "pushed_at": "2026-10-16T00:51:40Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:151C6C:22BA12:6AD84A2D and timestamp 2026-10-21 05:14:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:33975D:147BC4:2204D6:6AD84A2D and timestamp 2026-10-21 05:14:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6418:EFE19:143439:21D7E5:6AD84A2E and timestamp 2026-10-21 05:14:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6419:1D2F69:141D85:21C5F4:6AD84A2E and timestamp 2026-10-21 05:14:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-video-pipeline%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1448C1:21DB58:6AD84A2E and timestamp 2026-10-21 05:14:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-video-pipeline",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 465,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-video-pipeline",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-10-12T01:12:12.899Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-video-pipeline",
-                    "error": null,
-                    "latest_version": "0.1.1",
-                    "latest_published_at": "2026-10-12T02:13:27.032Z",
-                    "latest_error": null
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-                "current_revision": "82a85d20b67d1d398d49009462d61a741f5a8d51",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1414936636:root",
