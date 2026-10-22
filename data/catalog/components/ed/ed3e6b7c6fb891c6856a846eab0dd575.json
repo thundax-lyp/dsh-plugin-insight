@@ -7,14 +7,14 @@
             "id": "github:1413084711:packages-dsh-memory",
             "repository": "RestRegular/dsh-memory",
             "path": "packages/dsh-memory",
-            "revision": "f159ea3e3ac13512e334bc298850c88fa3fd1430",
+            "revision": "3748170f224e582fa8af9ee535b81d81e3dfd28d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c9964c573ad9528621f34fa75f3a88a7b52e711e7f180afee90c474fa2c99693",
-                "code": "f159ea3e3ac13512e334bc298850c88fa3fd1430",
-                "maintenance": "26e903a645fbe5547606bd7a31c110330ebca8266a2e61aaf6ab656e2d595bee"
+                "code": "3748170f224e582fa8af9ee535b81d81e3dfd28d",
+                "maintenance": "639cd638a26766fde3f9bb3c22ae73cb0da3363a43f408467c2cdc6a0620024b"
             }
         }
     }

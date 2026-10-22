@@ -7,14 +7,14 @@
             "id": "github:1399742055:root",
             "repository": "zkforge/dsh-claude-desktop-theme",
             "path": "",
-            "revision": "6563a2d44aa5dbf70632e57457548c5b7b6a388e",
+            "revision": "1d831324cb0548e87d71e56af57ead2e9fe06e75",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e427fb839d2ccfd075e4ca7bd2e18218df423929cf8c07a90bd5d5789c20de57",
-                "code": "6563a2d44aa5dbf70632e57457548c5b7b6a388e",
-                "maintenance": "a57eabb0c789940ee0f169d2fb3403e2d80d19c64d1113fa822b20d83858a21f"
+                "code": "1d831324cb0548e87d71e56af57ead2e9fe06e75",
+                "maintenance": "760cb178cf4e5f6210c3b0d496300d4e7072159083021500f2c8c040784a3e12"
             }
         }
     }

@@ -7,15 +7,15 @@
             "id": "github:1355842222:root",
             "repository": "PerryLink/dsh-ticktick",
             "path": "",
-            "revision": "7e5ee6f47da0790f6173abe4149a43a53c490144",
+            "revision": "9d9556cef8c04111a6b5cff00ab1b31b99f10d80",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "907541a9acaf19c9440287bd0ac56ae72211bcf9f0f751f8bf44387dd2e482ff",
-                "code": "7e5ee6f47da0790f6173abe4149a43a53c490144",
-                "maintenance": "44ed11d7a80fcd40723ba20ad0c4665da83b225c0b55c7774ce6bcd07f5c3513"
+                "code": "9d9556cef8c04111a6b5cff00ab1b31b99f10d80",
+                "maintenance": "712d1ebaad0694166d4b9675d4b6e5d5465375d999abf3fedb7a91d44ae12211"
             }
         }
     }

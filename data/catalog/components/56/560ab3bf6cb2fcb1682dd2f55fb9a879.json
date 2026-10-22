@@ -7,14 +7,14 @@
             "id": "github:1424428920:root",
             "repository": "YSDLNGF/dsh-acrylic-light",
             "path": "",
-            "revision": "85bc24c5c3108a545d420a7107a5d5cce3a37126",
+            "revision": "472f9f2efadbf9800458026c9c875df5ff2192e2",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f51ae383bdcbd829c8c2b2c86668aba2958588a12b3236a8baf1cd1a8f0dbef1",
-                "code": "85bc24c5c3108a545d420a7107a5d5cce3a37126",
-                "maintenance": "8c0d668f7f9229ef4ec1cea67fdbb03d1577d23182d05302726d8990f9dd4e6d"
+                "code": "472f9f2efadbf9800458026c9c875df5ff2192e2",
+                "maintenance": "1e9c41445afa48d3120e2e1841198a1fd456f9ab0e7d773257728c1c7df60d75"
             }
         }
     }

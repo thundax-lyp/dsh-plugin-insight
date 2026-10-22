@@ -7,14 +7,14 @@
             "id": "github:1423488109:root",
             "repository": "AmethystLuna/dsh-model-everything",
             "path": "",
-            "revision": "80f12e368cfbe4da75661d34d99d9d618fa8f832",
+            "revision": "4b8a79a78844cf5f71f091ab7a61c9595dfae7ea",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0bc0856e6681b3d42e7e71339164d84b531bf34300e26ae82a78fb7593e9dd52",
-                "code": "80f12e368cfbe4da75661d34d99d9d618fa8f832",
-                "maintenance": "cfefbea102a39b28dc62038ff48669e7c5b79543b264ffce04acd9c651b3b297"
+                "code": "4b8a79a78844cf5f71f091ab7a61c9595dfae7ea",
+                "maintenance": "0d0b07cff1100b88451f2b166aa825e351609858c63eebcb4108cfb900d2b594"
             }
         }
     }

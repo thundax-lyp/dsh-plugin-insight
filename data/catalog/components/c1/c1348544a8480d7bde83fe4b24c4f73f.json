@@ -7,14 +7,14 @@
             "id": "github:1333844474:root",
             "repository": "imsai-sh/awesome-deepseek-harness-plugins",
             "path": "",
-            "revision": "ee9924a4e3eb92a272037ad6dc88d02f48a0fb1f",
+            "revision": "c9bd0b01768614424abe19ec37bf156686cd5648",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b58d01d7b333b399e1ebb32c80a6dabe1e5f0fe78c1e1d12a9a0301a120d90e2",
-                "code": "ee9924a4e3eb92a272037ad6dc88d02f48a0fb1f",
-                "maintenance": "14b948d1918a76993a1a1df535f5b51d4f45083f91fb1f49fef94d664bce74ef"
+                "code": "c9bd0b01768614424abe19ec37bf156686cd5648",
+                "maintenance": "7c637f5d42ed8eb639c6bc2474952ffeb1d7db1e3820d4c0b192ed378318c546"
             }
         }
     }

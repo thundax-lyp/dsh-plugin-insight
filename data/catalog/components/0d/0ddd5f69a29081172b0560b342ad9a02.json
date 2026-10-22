@@ -7,14 +7,14 @@
             "id": "github:1381430202:root",
             "repository": "AskTheWay/dsh-auto-memory",
             "path": "",
-            "revision": "df90538fe19f29081b1ab4737dfc286c07eb1972",
+            "revision": "30bd78bab06973aadcb689799bef3abb6c2c0075",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0683649da7d1aad202bfdfeba24e0298a6e598a768e12e5872c4eed50d0121b8",
-                "code": "df90538fe19f29081b1ab4737dfc286c07eb1972",
-                "maintenance": "97851a1e1105220e64dc05675c62c800397422dcade4d9af98f23a62d791bff4"
+                "code": "30bd78bab06973aadcb689799bef3abb6c2c0075",
+                "maintenance": "485c286cffe63c20f54c867c27eecd22790f5544e2437e8a920a454fe6dcff1b"
             }
         }
     }

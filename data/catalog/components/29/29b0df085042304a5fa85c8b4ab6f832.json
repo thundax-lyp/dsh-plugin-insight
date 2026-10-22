@@ -7,14 +7,14 @@
             "id": "github:1264148937:packages-service",
             "repository": "scottzx/1acp",
             "path": "packages/service",
-            "revision": "f10bb46566ac6e110414159c8014c34890de9ef4",
+            "revision": "6e3f0f277dd564b7cb8c5572bf348c5df24d22ea",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d3311d5e80d2f46827cbf70010fe967fb4db040e05fe560ec6cc4a906ff19a89",
-                "code": "f10bb46566ac6e110414159c8014c34890de9ef4",
-                "maintenance": "fca69cb7934ec5ac683a511deec843c67ebd78bbac2152e07ad892d3cbbfa56b"
+                "code": "6e3f0f277dd564b7cb8c5572bf348c5df24d22ea",
+                "maintenance": "b9a5933e90394ecb86e082f3768fdfe6249b483f25a559a3e0db012f77afdc5d"
             }
         }
     }

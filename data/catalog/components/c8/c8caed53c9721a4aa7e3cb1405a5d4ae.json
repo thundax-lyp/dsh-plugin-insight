@@ -7,14 +7,14 @@
             "id": "github:1369398336:packages-dsh-mail",
             "repository": "ECNU/EduWork",
             "path": "packages/dsh-mail",
-            "revision": "60b561de3afa6eeac929c729ce74c75e7c0fb26c",
+            "revision": "66c1169920b2bc759b10d005e8a372d63d53e5ba",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "542739f46a77875e89bcb364cbf5e6646f497a331891ad4a5f3c31100f8173dd",
-                "code": "60b561de3afa6eeac929c729ce74c75e7c0fb26c",
-                "maintenance": "b852ab45984b6e6f776533f70a7f379fadfb61676505f0235c267022d3ece46d"
+                "code": "66c1169920b2bc759b10d005e8a372d63d53e5ba",
+                "maintenance": "d3bf45b0e626070263688228dca0847a3fa114fec44fa0504cd3ab1a789d9cda"
             }
         }
     }

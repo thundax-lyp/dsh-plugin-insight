@@ -3,6 +3,458 @@
     "id": "647212df438a006a0d42b3b01c3380c6",
     "identity": "github:1335349535:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1335349535:root",
+            "repository_id": 1335349535,
+            "component_id": "root",
+            "repository": "940842546/dsh-permissions",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-permissions",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2b63332b1d7e94bebbbe6ac405da20dd69f6505ecf00acdd275766c1394e40a8",
+                "code": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                "maintenance": "467393b3cf757681676e1e3d271d91c870052e1fc166aab1e994a581c300ad89"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1335349535-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:16:42.560Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1335349535-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/940842546/dsh-permissions",
+                            "commit": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                            "path": "README.md",
+                            "content_sha256": "8e0a4390f859e62122870bbb3c966ffaef7c2f06eed200a108efd26e2e28d2e6"
+                        }
+                    ],
+                    "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                    "captured_at": "2026-10-22T16:16:42.560Z",
+                    "summary": "在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/940842546--dsh-permissions/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1335349535-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/940842546/dsh-permissions",
+                            "commit": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                            "path": "README.md",
+                            "content_sha256": "8e0a4390f859e62122870bbb3c966ffaef7c2f06eed200a108efd26e2e28d2e6"
+                        },
+                        {
+                            "repository_url": "https://github.com/940842546/dsh-permissions",
+                            "commit": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                            "path": "lib/index.js",
+                            "content_sha256": "53245658a28fc4781bac13bda9757c70cf9757758c0f88991c18092ad8bce7da"
+                        }
+                    ],
+                    "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                    "captured_at": "2026-10-22T16:16:42.560Z",
+                    "summary": "核查 README.md、lib/index.js；approval/request 与 tools/pre-execute 两处监听匹配规则；match 模块对工具首参/路径做前缀或通配模式，hard 高于会话 full access，ask 生成一次性/会话授权，allow 仅跳过插件自身询问。规则存自管 JSON，GET/POST /api/dperm/rules 服务客户端草稿编辑器。 详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/940842546--dsh-permissions/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只读检查固定提交 ad84f1d0928396a9597e557b6540f1f6feca2052 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。 详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "approval/request 与 tools/pre-execute 两处监听匹配规则；match 模块对工具首参/路径做前缀或通配模式，hard 高于会话 full access，ask 生成一次性/会话授权，allow 仅跳过插件自身询问。规则存自管 JSON，GET/POST /api/dperm/rules 服务客户端草稿编辑器。 详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只读检查固定提交 ad84f1d0928396a9597e557b6540f1f6feca2052 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "仅记录固定 checkout 中的 package/README 分发声明；本轮未查询实时包可用性，也未安装或执行。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无外部费；规则存储很小 | 威胁建模、工具schema盘点和100例旁路测试 | 维护者工时未知 |\n| 持续使用 | 每次匹配计算；ask带等待 | 审批ask并维护新工具规则 | 按合格且无越权任务计量 |\n| 失败恢复 | 误拦导致任务重试；漏拦后果可能高 | 定位规则、回滚JSON、审计副作用 | 无法自动撤销已执行危险命令 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 不可豁免保护 | 源码定义hard高于full access | 所有路径变体是否命中 |\n| 审批减负 | allow/deny减少重复询问 | 误拦率与ask次数变化 |\n| 配置安全 | 草稿保存前不生效 | 并发保存和路由鉴权 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "两事件面覆盖请求与执行，规则优先级和自管存储明确，草稿 UI 避免每次编辑立即改变策略。可复用的是“只收窄、hard 不可豁免、草稿原子应用”；移植需对每种工具规范化参数而非只复用字符串模式。 详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对宿主粗粒度审批，它加入不可豁免 hard 层、workspace/global 作用域和参数模式，并让草稿保存成为明确生效点。价值在额外收窄而非提升权限；它不替代 DSH sandbox/tools.guard，也不证明路径字符串与真实文件解析完全等价。 详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核心质疑是字符串匹配能否覆盖别名、转义、相对路径、shell 拼接和工具 schema 变化。规则漏匹配会给出虚假安全感，过宽 hard/deny 会阻断正常任务；自建同源设置路由若缺鉴权或写入竞争，会改变全局策略。默认规则也可能不适合非 Windows 路径。 详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。 详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335349535:root",
+                            "area": "code",
+                            "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:16:42.560Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:16:42.560Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                "reviewed_at": "2026-10-22T16:16:42.560Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335349535:root",
+                        "area": "code",
+                        "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 15,
+                        "simplification": 8
+                    },
+                    "rationale": "dsh-permissions 的实现增量按明确基线评估，未把运行效果或研究者假设计入。",
+                    "basis": "interpretation",
+                    "score": 56,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 8
+                    },
+                    "rationale": "dsh-permissions 的流程与交付增量有源码支持，但经济收益没有实测。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1335349535-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要细粒度工具门禁的团队可在保留宿主沙箱前提下试用，并先验证路径旁路与规则回滚。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "相对宿主粗粒度审批，它加入不可豁免 hard 层、workspace/global 作用域和参数模式，并让草稿保存成为明确生效点。价值在额外收窄而非提升权限；它不替代 DSH sandbox/tools.guard，也不证明路径字符串与真实文件解析完全等价。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定版本 README 与源码已检查；未运行插件或真实 Host。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "首次要盘点工具 schema、按平台建立 hard/deny/ask/allow 与 workspace 规则并做旁路测试；持续每次工具执行做匹配，ask 产生人工审批；失败恢复包括从拒绝错误定位命中规则、放弃未保存草稿或回滚 JSON，不能用 allow 绕过 hard。"
+                    }
+                },
+                "score": 65,
+                "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                "reviewed_at": "2026-10-22T16:16:42.560Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1335349535-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335349535:root",
+                        "area": "code",
+                        "fingerprint": "ad84f1d0928396a9597e557b6540f1f6feca2052"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335349535:root",
+            "repository": "940842546/dsh-permissions",
+            "path": "",
+            "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+            "fingerprints": {
+                "directory": "2b63332b1d7e94bebbbe6ac405da20dd69f6505ecf00acdd275766c1394e40a8",
+                "code": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+                "maintenance": "467393b3cf757681676e1e3d271d91c870052e1fc166aab1e994a581c300ad89"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "17d0701b1fc51d6433cf924f0a53e19942d0c3632d893ba98a2e5bab78bfc899"
+        },
+        "publication.metadata": "data/plugins/940842546--dsh-permissions/META.json",
+        "publication.summaries": {
+            "text": "在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。",
+            "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+            "source_url": "https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+            "items": {
+                "事件监听": "在 approval/request 与 tools/pre-execute 阶段执行四级规则",
+                "界面": "全局/workspace 权限草稿编辑、预设与规则构建器",
+                "Host 路由": "读写 /api/dperm/rules 及会话授权状态"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| hard/deny/ask/allow | 按工具参数决定拒绝、询问或放行 | allow 只跳过本插件，不绕宿主沙箱 |\n| workspace 作用域 | 为不同工作区维护差异规则 | cwd/路径规范化正确性需验证 |\n| 草稿设置页 | 编辑后显式保存应用 | 路由和存储权限是额外攻击面 |"
+        },
+        "publication.advice": {
+            "revision": "ad84f1d0928396a9597e557b6540f1f6feca2052",
+            "text": "有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/940842546--dsh-permissions",
+        "reports": "# dsh-permissions\n\n> 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。\n\n## 研究范围\n\n- **仓库**：[940842546/dsh-permissions](https://github.com/940842546/dsh-permissions)\n- **版本号**：2.0.2（[固定提交 ad84f1d0928396a9597e557b6540f1f6feca2052](https://github.com/940842546/dsh-permissions/tree/ad84f1d0928396a9597e557b6540f1f6feca2052)）\n- **版本日期**：2026-09-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码确认了 approval/request 与 tools/pre-execute 双入口、hard/deny/ask/allow 优先级、会话授权、规则 JSON 和草稿设置路由；本轮没有执行路径变体、符号链接或 shell 嵌套对抗，因此只确认额外收窄机制，不能证明不存在参数旁路或并发配置风险。\n\n## 洞察短评\n\n- **用途**：团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。 详见[Q01](#research-q01)。\n- **亮点**：相对宿主粗粒度审批，它加入不可豁免 hard 层、workspace/global 作用域和参数模式，并让草稿保存成为明确生效点。价值在额外收窄而非提升权限；它不替代 DSH sandbox/tools.guard，也不证明路径字符串与真实文件解析完全等价。 详见[Q03](#research-q03)。\n- **思考**：核心质疑是字符串匹配能否覆盖别名、转义、相对路径、shell 拼接和工具 schema 变化。规则漏匹配会给出虚假安全感，过宽 hard/deny 会阻断正常任务；自建同源设置路由若缺鉴权或写入竞争，会改变全局策略。默认规则也可能不适合非 Windows 路径。 详见[Q04](#research-q04)。\n- **建议**：未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。 详见[Q08](#research-q08)。\n\n采用建议：有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见[Q09](#research-q09)。\n\n## 核心贡献\n\n相对宿主粗粒度审批，它加入不可豁免 hard 层、workspace/global 作用域和参数模式，并让草稿保存成为明确生效点。价值在额外收窄而非提升权限；它不替代 DSH sandbox/tools.guard，也不证明路径字符串与真实文件解析完全等价。 详见[Q03](#research-q03)。\n\n## 关键质疑\n\n核心质疑是字符串匹配能否覆盖别名、转义、相对路径、shell 拼接和工具 schema 变化。规则漏匹配会给出虚假安全感，过宽 hard/deny 会阻断正常任务；自建同源设置路由若缺鉴权或写入竞争，会改变全局策略。默认规则也可能不适合非 Windows 路径。 详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。 详见[Q08](#research-q08)。\n\n构造无副作用工具镜像，覆盖绝对/相对/大小写/引号/通配/符号链接/PowerShell嵌套与未知schema；同时测试草稿并发保存、JSON损坏和宿主full access，要求hard永拒绝且allow不越过sandbox。\n\n## 场景与替代办法\n\n团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。 详见[Q01](#research-q01)。\n\n团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| approval/tools 事件 | 必需 | 在请求与执行前拦截 | 未经过这些事件的副作用不可见 |\n| 规则 JSON 存储 | 必需 | 持久化 global/workspace 规则 | 损坏/竞争可能回退或丢配置 |\n| 宿主 sandbox/tools.guard | 仍必需 | 提供底层执行隔离 | 插件不应成为唯一边界 |\n| 客户端设置服务 | 配置时必需 | 编辑和保存草稿 | 缺失可保留现有规则但难维护 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 建模 | 管理员列高风险工具/路径 | 形成平台与workspace规则 |\n| 演练 | 用无副作用调用验证命中 | hard/deny/ask/allow结果符合矩阵 |\n| 应用 | 设置页保存草稿 | Host JSON更新后新执行生效 |\n| 恢复 | 根据拒绝文本定位规则 | 放弃草稿或回滚JSON，不降低hard |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无外部费；规则存储很小 | 威胁建模、工具schema盘点和100例旁路测试 | 维护者工时未知 |\n| 持续使用 | 每次匹配计算；ask带等待 | 审批ask并维护新工具规则 | 按合格且无越权任务计量 |\n| 失败恢复 | 误拦导致任务重试；漏拦后果可能高 | 定位规则、回滚JSON、审计副作用 | 无法自动撤销已执行危险命令 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 不可豁免保护 | 源码定义hard高于full access | 所有路径变体是否命中 |\n| 审批减负 | allow/deny减少重复询问 | 误拦率与ask次数变化 |\n| 配置安全 | 草稿保存前不生效 | 并发保存和路由鉴权 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：dsh-permissions 在固定版本下是否以可控依赖和总成本交付其核心能力，并值得目标用户采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种重复场景需要 dsh-permissions，合格交付与简单替代是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:10-25](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md#L10-L25)\n\n固定版本作者材料支持 Q01 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 亮点\n\n- **四级规则、严格优先级**：`hard` > `deny` > `ask` > `allow`。\n- **`hard` 高于全访问**：即使会话处于全访问档（审批策略 `never`），hard 规则依然拦截、不可豁免；`ask` 规则跟随会话策略，全访问下自动放行。\n- **作用域**：`global` 规则全局生效；按 `workspace` 的规则叠加合并（冲突时 deny 永远胜出）。\n- **通配符匹配**（文件类工具 `read`/`write`/`edit`/`glob`/`grep`/`read_image`）：\n  - `write(*.pem)` —— 路径以 `.pem` 结尾\n  - `write(*secret*)` —— 路径包含 `secret`\n  - `write(.ssh)` —— 路径任意位置出现 `.ssh` 片段（大小写不敏感，`\\`/`/` 统一归一化）\n  - `write(C:\\users\\*)` —— 绝对路径前缀\n  - 裸 `write` —— 该工具全部调用\n- **持久化**：规则存于 `dsh-permissions` 设置命名空间，跨重启保留（`<harness home>/settings.yaml`）。\n- **模型透明**：生效规则注入系统提示（`[active-permission-rules]` 段）。\n- **可视化编辑器**：草稿式（staged）编辑——所有修改点「保存并应用」后才生效，附一键预设（保护敏感目录 / 密钥文件 / 拦截危险命令）。\n\n## 界面截图\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · dsh-permissions 的入口、调用链、状态变化与副作用如何实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\napproval/request 与 tools/pre-execute 两处监听匹配规则；match 模块对工具首参/路径做前缀或通配模式，hard 高于会话 full access，ask 生成一次性/会话授权，allow 仅跳过插件自身询问。规则存自管 JSON，GET/POST /api/dperm/rules 服务客户端草稿编辑器。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-366](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/lib/index.js#L143-L366)\n\n固定版本源码用于核对 Q02 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（224行）</summary>\n\n```text\n  function grantsOfSession(sid) {\n    const set = grants.get(sid)\n    if (set === undefined) return []\n    return [...set].map((key) => {\n      const sep1 = key.indexOf('|')\n      const sep2 = key.indexOf('|', sep1 + 1)\n      return { source: key.slice(0, sep1), action: key.slice(sep1 + 1, sep2), raw: key.slice(sep2 + 1) }\n    })\n  }\n\n  // 抢答器：拦截自家 ask 问询（reason 带 ASK_PREFIX），改走 /api/dperm/ask 的三选 UI\n  if (approval !== undefined) {\n    ctx.on('approval/request', (req, next) => {\n      if (req.signal && req.signal.aborted) return next()\n      if (typeof req.reason !== 'string' || !req.reason.startsWith(ASK_PREFIX)) return next()\n      const callId = String(req.callId !== undefined ? req.callId : Math.random().toString(36).slice(2))\n      return new Promise((resolve) => {\n        pendingAsks.set(callId, { resolve, toolName: req.toolName, agent: req.agent, rule: req.reason.slice(ASK_PREFIX.length) })\n        try { ctx.emit('dsh-permissions/ask-pending', callId) } catch (e) {}\n      })\n    }, { prepend: true })\n  }\n\n  function settleAsk(callId, choice) {\n    const p = pendingAsks.get(callId)\n    if (p === undefined) return false\n    pendingAsks.delete(callId)\n    if (choice === 'always') {\n      // rule 字符串就是 grantKey 格式（source|action|raw 由引擎拼装传入 reason）\n      const sid = p.agent && p.agent.session ? String(p.agent.session.id) : ''\n      if (sid !== '') {\n        let set = grants.get(sid)\n        if (set === undefined) { set = new Set(); grants.set(sid, set) }\n        set.add(p.rule)\n      }\n      p.resolve('allowed-once')\n    } else if (choice === 'once') {\n      p.resolve('allowed-once')\n    } else {\n      p.resolve('rejected')\n    }\n    return true\n  }\n\n  function getMerged(keys) {\n    const key = keys.join('|')\n    const hit = mergedCache.get(key)\n    if (hit !== undefined && hit.rev === rulesRev) return hit.rules\n    const ws = (current && current.workspaces) || {}\n    const rules = mergeRules(keys.map((k) => ({\n      source: k,\n      set: k === 'global'\n        ? { hard: current.hard || [], deny: current.deny || [], ask: current.ask || [], allow: current.allow || [] }\n        : (ws[k.slice(3)] || EMPTY),\n    })))\n    mergedCache.set(key, { rev: rulesRev, rules })\n    return rules\n  }\n\n  // ---------- 作用域解析（Workspace 实体字段是 id；SessionHeader.cwd 锚定） ----------\n  async function resolveWorkspaceId(agent) {\n    if (agent === undefined || agent === null) return undefined\n    const sess = agent.session\n    const cwd = sess && sess.header ? sess.header.cwd : undefined\n    if (cwd === undefined || cwd === null || cwd === '') return undefined\n    if (wsCache.has(cwd)) return wsCache.get(cwd)\n    let id\n    try {\n      const ws = workspaceRegistry ? await workspaceRegistry.resolveByPath(cwd) : undefined\n      id = ws && ws.id ? String(ws.id) : undefined\n    } catch (e) { id = undefined }\n    wsCache.set(cwd, id)\n    return id\n  }\n\n  // ---------- 会话审批策略（仅 ask 跟随；hard/deny 永不受影响） ----------\n  function effectivePolicy(agent) {\n    if (approval === undefined) return 'ask'\n    let policy\n    try {\n      const sess = agent && agent.session\n      policy = sess ? approval.overrideOf(sess) : undefined\n    } catch (e) { policy = undefined }\n    if (policy !== undefined && policy !== null) return policy\n    const cfg = approval.config\n    return cfg && cfg.policy ? cfg.policy : 'ask'\n  }\n\n  // ---------- 决策引擎（含审计环形缓冲 + 规则命中计数 + JSONL 持久化） ----------\n  const audit = []\n  let auditSeq = 0\n  const ruleHits = new Map() // key: source|action|raw → count\n  const historyFile = path.join(process.env.DSH_HOME || path.join(homedir(), '.dsh'), 'dsh-permissions-history.jsonl')\n  function countHit(rule) {\n    const key = rule.source + '|' + rule.action + '|' + rule.raw\n    ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n  }\n  function clipText(text) {\n    const s = String(text === undefined || text === null ? '' : text)\n    return s.length > 80 ? s.slice(0, 80) : s\n  }\n  // 启动时重放历史尾部：恢复日志环 + 命中计数（异步，不阻塞启动）\n  ;(async () => {\n    try {\n      const text = await readFile(historyFile, 'utf8')\n      const lines = text.split('\\n').filter((l) => l.trim() !== '')\n      const tail = lines.slice(-200)\n      for (const line of tail) {\n        try {\n          const e = JSON.parse(line)\n          if (e.seq > auditSeq) auditSeq = e.seq\n          audit.push(e)\n          if (e.ruleRaw && e.decision && e.decision !== 'fallback' && e.decision !== 'engine-error') {\n            // 重放命中计数：日志行带 ruleKey 时直接用；否则按 ruleRaw 反推（作用域不可知，归 global）\n            const key = e.ruleKey || ('global|' + (e.decision === 'allow' ? 'allow' : e.decision === 'ask' ? 'ask' : e.decision) + '|' + e.ruleRaw)\n            ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n          }\n        } catch (err) { /* 跳过坏行 */ }\n      }\n    } catch (e) { /* 文件不存在即首次启动 */ }\n  })()\n  let historyBytes = 0\n  let trimScheduled = false\n  function pushAudit(entry) {\n    const full = Object.assign({ seq: ++auditSeq }, entry)\n    audit.push(full)\n    if (audit.length > 200) audit.shift()\n    // 持久化：追加一行 JSON（含 ruleKey 供重放）；文件超 2MB 时截断为尾部 200 行\n    const key = entry.ruleRaw !== undefined && entry.decision !== 'fallback' && entry.decision !== 'engine-error'\n      ? ((entry.source !== 'none' && entry.source !== 'policy-never' && entry.source !== 'grant' ? entry.source : 'global') + '|' + (entry.decision === 'allow' ? 'allow' : entry.decision === 'ask' ? 'ask' : entry.decision) + '|' + entry.ruleRaw)\n      : undefined\n    const line = JSON.stringify(Object.assign({}, full, key !== undefined ? { ruleKey: key } : {})) + '\\n'\n    historyBytes += line.length\n    appendFile(historyFile, line, 'utf8').catch(() => {})\n    if (historyBytes > 2 * 1024 * 1024 && !trimScheduled) {\n      trimScheduled = true\n      ;(async () => {\n        try {\n          await mkdir(path.dirname(historyFile), { recursive: true })\n          const keep = audit.map((e) => JSON.stringify(e) + '\\n').join('')\n          await writeFile(historyFile, keep, 'utf8')\n          historyBytes = keep.length\n        } catch (e) { /* 截断失败下次再试 */ }\n        trimScheduled = false\n      })()\n    }\n  }\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    let tool = '?'\n    try {\n      tool = exec.name\n      if (!current || !current.enabled) return next()\n      if (exec.agent === undefined || exec.agent === null) return next()\n      const arg = clipText(primaryArgOf(tool, exec.arguments))\n      let wsId\n      try { wsId = await resolveWorkspaceId(exec.agent) } catch (e) { wsId = undefined }\n      const keys = wsId !== undefined ? ['global', 'ws:' + wsId] : ['global']\n      const rule = evaluate(getMerged(keys), tool, exec.arguments)\n      if (rule === undefined) {\n        pushAudit({ tool, arg, decision: 'fallback', source: 'none' })\n        return next()\n      }\n      countHit(rule)\n      if (rule.action === 'hard') {\n        pushAudit({ tool, arg, decision: 'hard', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] hard-deny (above full access, not exemptable) [' + sourceLabel(rule.source) + ' · hard]: ' + rule.raw }\n      }\n      if (rule.action === 'deny') {\n        pushAudit({ tool, arg, decision: 'deny', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] denied by rule [' + sourceLabel(rule.source) + ' · deny]: ' + rule.raw }\n      }\n      if (rule.action === 'allow') {\n        pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n        return next()\n      }\n      if (effectivePolicy(exec.agent) === 'never') {\n        pushAudit({ tool, arg, decision: 'allow', source: 'policy-never', ruleRaw: rule.raw })\n        return next()\n      }\n      // 会话授予：本会话已\"总是允许\"过这条规则 → 直接放行\n      if (hasGrant(exec.agent, rule)) {\n        pushAudit({ tool, arg, decision: 'allow', source: 'grant', ruleRaw: rule.raw })\n        return next()\n      }\n      // 走自定义三选审批（仅本次 / 本会话总是允许 / 拒绝）；approval 缺失则回退注册表 ask（fail closed）\n      if (approval !== undefined) {\n        pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n        const outcome = await approval.request({\n          agent: exec.agent,\n          toolName: tool,\n          callId: exec.callId,\n          reason: ASK_PREFIX + grantKeyOf(rule),\n          signal: exec.signal,\n        })\n        if (outcome === 'allowed-once') {\n          pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n          return next()\n        }\n        return { kind: 'deny', reason: '[dsh-permissions] user rejected ' + tool + ' (rule [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw + ')' }\n      }\n      pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n      return { kind: 'ask', reason: '[dsh-permissions] rule requires confirmation [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw }\n    } catch (err) {\n      pushAudit({ tool, arg: '', decision: 'engine-error', source: 'none' })\n      return next()\n    }\n  })\n\n  if (systemPrompt !== undefined) {\n    ctx.effect(() => systemPrompt.section({\n      name: 'active-permission-rules',\n      order: 108,\n      text: () => summaryText(current),\n    }))\n  }\n\n  // ---------- 设置页专用 HTTP 路由 ----------\n  // api-proxy 的 settings.describe 只暴露硬编码白名单命名空间，自定义命名空间\n  // 无法经官方 settings API 触达。引擎用自己持有的 SettingsScope 直读直写，\n  // 通过自建路由 /api/dperm/* 服务自己的设置页（同源 fetch，无 CORS）。\n  // 子路由：GET/POST /rules（读写规则）、GET /log（决策日志）、GET /match-test（试算器）。\n  const webServer = ctx.get('webServer')\n  if (webServer !== undefined) {\n    ctx.effect(() => webServer.register({\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对宿主原生能力或简单替代，dsh-permissions 的具体增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对宿主粗粒度审批，它加入不可豁免 hard 层、workspace/global 作用域和参数模式，并让草稿保存成为明确生效点。价值在额外收窄而非提升权限；它不替代 DSH sandbox/tools.guard，也不证明路径字符串与真实文件解析完全等价。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:10-25](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md#L10-L25)\n\n固定版本作者材料支持 Q03 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 亮点\n\n- **四级规则、严格优先级**：`hard` > `deny` > `ask` > `allow`。\n- **`hard` 高于全访问**：即使会话处于全访问档（审批策略 `never`），hard 规则依然拦截、不可豁免；`ask` 规则跟随会话策略，全访问下自动放行。\n- **作用域**：`global` 规则全局生效；按 `workspace` 的规则叠加合并（冲突时 deny 永远胜出）。\n- **通配符匹配**（文件类工具 `read`/`write`/`edit`/`glob`/`grep`/`read_image`）：\n  - `write(*.pem)` —— 路径以 `.pem` 结尾\n  - `write(*secret*)` —— 路径包含 `secret`\n  - `write(.ssh)` —— 路径任意位置出现 `.ssh` 片段（大小写不敏感，`\\`/`/` 统一归一化）\n  - `write(C:\\users\\*)` —— 绝对路径前缀\n  - 裸 `write` —— 该工具全部调用\n- **持久化**：规则存于 `dsh-permissions` 设置命名空间，跨重启保留（`<harness home>/settings.yaml`）。\n- **模型透明**：生效规则注入系统提示（`[active-permission-rules]` 段）。\n- **可视化编辑器**：草稿式（staged）编辑——所有修改点「保存并应用」后才生效，附一键预设（保护敏感目录 / 密钥文件 / 拦截危险命令）。\n\n## 界面截图\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使 dsh-permissions 的核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n核心质疑是字符串匹配能否覆盖别名、转义、相对路径、shell 拼接和工具 schema 变化。规则漏匹配会给出虚假安全感，过宽 hard/deny 会阻断正常任务；自建同源设置路由若缺鉴权或写入竞争，会改变全局策略。默认规则也可能不适合非 Windows 路径。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-366](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/lib/index.js#L143-L366)\n\n固定版本源码用于核对 Q04 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（224行）</summary>\n\n```text\n  function grantsOfSession(sid) {\n    const set = grants.get(sid)\n    if (set === undefined) return []\n    return [...set].map((key) => {\n      const sep1 = key.indexOf('|')\n      const sep2 = key.indexOf('|', sep1 + 1)\n      return { source: key.slice(0, sep1), action: key.slice(sep1 + 1, sep2), raw: key.slice(sep2 + 1) }\n    })\n  }\n\n  // 抢答器：拦截自家 ask 问询（reason 带 ASK_PREFIX），改走 /api/dperm/ask 的三选 UI\n  if (approval !== undefined) {\n    ctx.on('approval/request', (req, next) => {\n      if (req.signal && req.signal.aborted) return next()\n      if (typeof req.reason !== 'string' || !req.reason.startsWith(ASK_PREFIX)) return next()\n      const callId = String(req.callId !== undefined ? req.callId : Math.random().toString(36).slice(2))\n      return new Promise((resolve) => {\n        pendingAsks.set(callId, { resolve, toolName: req.toolName, agent: req.agent, rule: req.reason.slice(ASK_PREFIX.length) })\n        try { ctx.emit('dsh-permissions/ask-pending', callId) } catch (e) {}\n      })\n    }, { prepend: true })\n  }\n\n  function settleAsk(callId, choice) {\n    const p = pendingAsks.get(callId)\n    if (p === undefined) return false\n    pendingAsks.delete(callId)\n    if (choice === 'always') {\n      // rule 字符串就是 grantKey 格式（source|action|raw 由引擎拼装传入 reason）\n      const sid = p.agent && p.agent.session ? String(p.agent.session.id) : ''\n      if (sid !== '') {\n        let set = grants.get(sid)\n        if (set === undefined) { set = new Set(); grants.set(sid, set) }\n        set.add(p.rule)\n      }\n      p.resolve('allowed-once')\n    } else if (choice === 'once') {\n      p.resolve('allowed-once')\n    } else {\n      p.resolve('rejected')\n    }\n    return true\n  }\n\n  function getMerged(keys) {\n    const key = keys.join('|')\n    const hit = mergedCache.get(key)\n    if (hit !== undefined && hit.rev === rulesRev) return hit.rules\n    const ws = (current && current.workspaces) || {}\n    const rules = mergeRules(keys.map((k) => ({\n      source: k,\n      set: k === 'global'\n        ? { hard: current.hard || [], deny: current.deny || [], ask: current.ask || [], allow: current.allow || [] }\n        : (ws[k.slice(3)] || EMPTY),\n    })))\n    mergedCache.set(key, { rev: rulesRev, rules })\n    return rules\n  }\n\n  // ---------- 作用域解析（Workspace 实体字段是 id；SessionHeader.cwd 锚定） ----------\n  async function resolveWorkspaceId(agent) {\n    if (agent === undefined || agent === null) return undefined\n    const sess = agent.session\n    const cwd = sess && sess.header ? sess.header.cwd : undefined\n    if (cwd === undefined || cwd === null || cwd === '') return undefined\n    if (wsCache.has(cwd)) return wsCache.get(cwd)\n    let id\n    try {\n      const ws = workspaceRegistry ? await workspaceRegistry.resolveByPath(cwd) : undefined\n      id = ws && ws.id ? String(ws.id) : undefined\n    } catch (e) { id = undefined }\n    wsCache.set(cwd, id)\n    return id\n  }\n\n  // ---------- 会话审批策略（仅 ask 跟随；hard/deny 永不受影响） ----------\n  function effectivePolicy(agent) {\n    if (approval === undefined) return 'ask'\n    let policy\n    try {\n      const sess = agent && agent.session\n      policy = sess ? approval.overrideOf(sess) : undefined\n    } catch (e) { policy = undefined }\n    if (policy !== undefined && policy !== null) return policy\n    const cfg = approval.config\n    return cfg && cfg.policy ? cfg.policy : 'ask'\n  }\n\n  // ---------- 决策引擎（含审计环形缓冲 + 规则命中计数 + JSONL 持久化） ----------\n  const audit = []\n  let auditSeq = 0\n  const ruleHits = new Map() // key: source|action|raw → count\n  const historyFile = path.join(process.env.DSH_HOME || path.join(homedir(), '.dsh'), 'dsh-permissions-history.jsonl')\n  function countHit(rule) {\n    const key = rule.source + '|' + rule.action + '|' + rule.raw\n    ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n  }\n  function clipText(text) {\n    const s = String(text === undefined || text === null ? '' : text)\n    return s.length > 80 ? s.slice(0, 80) : s\n  }\n  // 启动时重放历史尾部：恢复日志环 + 命中计数（异步，不阻塞启动）\n  ;(async () => {\n    try {\n      const text = await readFile(historyFile, 'utf8')\n      const lines = text.split('\\n').filter((l) => l.trim() !== '')\n      const tail = lines.slice(-200)\n      for (const line of tail) {\n        try {\n          const e = JSON.parse(line)\n          if (e.seq > auditSeq) auditSeq = e.seq\n          audit.push(e)\n          if (e.ruleRaw && e.decision && e.decision !== 'fallback' && e.decision !== 'engine-error') {\n            // 重放命中计数：日志行带 ruleKey 时直接用；否则按 ruleRaw 反推（作用域不可知，归 global）\n            const key = e.ruleKey || ('global|' + (e.decision === 'allow' ? 'allow' : e.decision === 'ask' ? 'ask' : e.decision) + '|' + e.ruleRaw)\n            ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n          }\n        } catch (err) { /* 跳过坏行 */ }\n      }\n    } catch (e) { /* 文件不存在即首次启动 */ }\n  })()\n  let historyBytes = 0\n  let trimScheduled = false\n  function pushAudit(entry) {\n    const full = Object.assign({ seq: ++auditSeq }, entry)\n    audit.push(full)\n    if (audit.length > 200) audit.shift()\n    // 持久化：追加一行 JSON（含 ruleKey 供重放）；文件超 2MB 时截断为尾部 200 行\n    const key = entry.ruleRaw !== undefined && entry.decision !== 'fallback' && entry.decision !== 'engine-error'\n      ? ((entry.source !== 'none' && entry.source !== 'policy-never' && entry.source !== 'grant' ? entry.source : 'global') + '|' + (entry.decision === 'allow' ? 'allow' : entry.decision === 'ask' ? 'ask' : entry.decision) + '|' + entry.ruleRaw)\n      : undefined\n    const line = JSON.stringify(Object.assign({}, full, key !== undefined ? { ruleKey: key } : {})) + '\\n'\n    historyBytes += line.length\n    appendFile(historyFile, line, 'utf8').catch(() => {})\n    if (historyBytes > 2 * 1024 * 1024 && !trimScheduled) {\n      trimScheduled = true\n      ;(async () => {\n        try {\n          await mkdir(path.dirname(historyFile), { recursive: true })\n          const keep = audit.map((e) => JSON.stringify(e) + '\\n').join('')\n          await writeFile(historyFile, keep, 'utf8')\n          historyBytes = keep.length\n        } catch (e) { /* 截断失败下次再试 */ }\n        trimScheduled = false\n      })()\n    }\n  }\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    let tool = '?'\n    try {\n      tool = exec.name\n      if (!current || !current.enabled) return next()\n      if (exec.agent === undefined || exec.agent === null) return next()\n      const arg = clipText(primaryArgOf(tool, exec.arguments))\n      let wsId\n      try { wsId = await resolveWorkspaceId(exec.agent) } catch (e) { wsId = undefined }\n      const keys = wsId !== undefined ? ['global', 'ws:' + wsId] : ['global']\n      const rule = evaluate(getMerged(keys), tool, exec.arguments)\n      if (rule === undefined) {\n        pushAudit({ tool, arg, decision: 'fallback', source: 'none' })\n        return next()\n      }\n      countHit(rule)\n      if (rule.action === 'hard') {\n        pushAudit({ tool, arg, decision: 'hard', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] hard-deny (above full access, not exemptable) [' + sourceLabel(rule.source) + ' · hard]: ' + rule.raw }\n      }\n      if (rule.action === 'deny') {\n        pushAudit({ tool, arg, decision: 'deny', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] denied by rule [' + sourceLabel(rule.source) + ' · deny]: ' + rule.raw }\n      }\n      if (rule.action === 'allow') {\n        pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n        return next()\n      }\n      if (effectivePolicy(exec.agent) === 'never') {\n        pushAudit({ tool, arg, decision: 'allow', source: 'policy-never', ruleRaw: rule.raw })\n        return next()\n      }\n      // 会话授予：本会话已\"总是允许\"过这条规则 → 直接放行\n      if (hasGrant(exec.agent, rule)) {\n        pushAudit({ tool, arg, decision: 'allow', source: 'grant', ruleRaw: rule.raw })\n        return next()\n      }\n      // 走自定义三选审批（仅本次 / 本会话总是允许 / 拒绝）；approval 缺失则回退注册表 ask（fail closed）\n      if (approval !== undefined) {\n        pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n        const outcome = await approval.request({\n          agent: exec.agent,\n          toolName: tool,\n          callId: exec.callId,\n          reason: ASK_PREFIX + grantKeyOf(rule),\n          signal: exec.signal,\n        })\n        if (outcome === 'allowed-once') {\n          pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n          return next()\n        }\n        return { kind: 'deny', reason: '[dsh-permissions] user rejected ' + tool + ' (rule [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw + ')' }\n      }\n      pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n      return { kind: 'ask', reason: '[dsh-permissions] rule requires confirmation [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw }\n    } catch (err) {\n      pushAudit({ tool, arg: '', decision: 'engine-error', source: 'none' })\n      return next()\n    }\n  })\n\n  if (systemPrompt !== undefined) {\n    ctx.effect(() => systemPrompt.section({\n      name: 'active-permission-rules',\n      order: 108,\n      text: () => summaryText(current),\n    }))\n  }\n\n  // ---------- 设置页专用 HTTP 路由 ----------\n  // api-proxy 的 settings.describe 只暴露硬编码白名单命名空间，自定义命名空间\n  // 无法经官方 settings API 触达。引擎用自己持有的 SettingsScope 直读直写，\n  // 通过自建路由 /api/dperm/* 服务自己的设置页（同源 fetch，无 CORS）。\n  // 子路由：GET/POST /rules（读写规则）、GET /log（决策日志）、GET /match-test（试算器）。\n  const webServer = ctx.get('webServer')\n  if (webServer !== undefined) {\n    ctx.effect(() => webServer.register({\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-permissions 启动、持续生效与失败降级依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n需要 DSH approval/request、tools/pre-execute、systemPrompt、webServer 和客户端设置页；持久 JSON 目录必须可写。效果依赖所有高风险动作都经过可见工具调用，终端内部二次执行或未知工具参数可能绕过语义匹配；宿主沙箱仍是最后边界。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:10-25](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md#L10-L25)\n\n固定版本作者材料支持 Q05 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 亮点\n\n- **四级规则、严格优先级**：`hard` > `deny` > `ask` > `allow`。\n- **`hard` 高于全访问**：即使会话处于全访问档（审批策略 `never`），hard 规则依然拦截、不可豁免；`ask` 规则跟随会话策略，全访问下自动放行。\n- **作用域**：`global` 规则全局生效；按 `workspace` 的规则叠加合并（冲突时 deny 永远胜出）。\n- **通配符匹配**（文件类工具 `read`/`write`/`edit`/`glob`/`grep`/`read_image`）：\n  - `write(*.pem)` —— 路径以 `.pem` 结尾\n  - `write(*secret*)` —— 路径包含 `secret`\n  - `write(.ssh)` —— 路径任意位置出现 `.ssh` 片段（大小写不敏感，`\\`/`/` 统一归一化）\n  - `write(C:\\users\\*)` —— 绝对路径前缀\n  - 裸 `write` —— 该工具全部调用\n- **持久化**：规则存于 `dsh-permissions` 设置命名空间，跨重启保留（`<harness home>/settings.yaml`）。\n- **模型透明**：生效规则注入系统提示（`[active-permission-rules]` 段）。\n- **可视化编辑器**：草稿式（staged）编辑——所有修改点「保存并应用」后才生效，附一键预设（保护敏感目录 / 密钥文件 / 拦截危险命令）。\n\n## 界面截图\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · dsh-permissions 完成一个合格任务的首次、持续与失败恢复成本是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次要盘点工具 schema、按平台建立 hard/deny/ask/allow 与 workspace 规则并做旁路测试；持续每次工具执行做匹配，ask 产生人工审批；失败恢复包括从拒绝错误定位命中规则、放弃未保存草稿或回滚 JSON，不能用 allow 绕过 hard。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-366](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/lib/index.js#L143-L366)\n\n固定版本源码用于核对 Q06 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（224行）</summary>\n\n```text\n  function grantsOfSession(sid) {\n    const set = grants.get(sid)\n    if (set === undefined) return []\n    return [...set].map((key) => {\n      const sep1 = key.indexOf('|')\n      const sep2 = key.indexOf('|', sep1 + 1)\n      return { source: key.slice(0, sep1), action: key.slice(sep1 + 1, sep2), raw: key.slice(sep2 + 1) }\n    })\n  }\n\n  // 抢答器：拦截自家 ask 问询（reason 带 ASK_PREFIX），改走 /api/dperm/ask 的三选 UI\n  if (approval !== undefined) {\n    ctx.on('approval/request', (req, next) => {\n      if (req.signal && req.signal.aborted) return next()\n      if (typeof req.reason !== 'string' || !req.reason.startsWith(ASK_PREFIX)) return next()\n      const callId = String(req.callId !== undefined ? req.callId : Math.random().toString(36).slice(2))\n      return new Promise((resolve) => {\n        pendingAsks.set(callId, { resolve, toolName: req.toolName, agent: req.agent, rule: req.reason.slice(ASK_PREFIX.length) })\n        try { ctx.emit('dsh-permissions/ask-pending', callId) } catch (e) {}\n      })\n    }, { prepend: true })\n  }\n\n  function settleAsk(callId, choice) {\n    const p = pendingAsks.get(callId)\n    if (p === undefined) return false\n    pendingAsks.delete(callId)\n    if (choice === 'always') {\n      // rule 字符串就是 grantKey 格式（source|action|raw 由引擎拼装传入 reason）\n      const sid = p.agent && p.agent.session ? String(p.agent.session.id) : ''\n      if (sid !== '') {\n        let set = grants.get(sid)\n        if (set === undefined) { set = new Set(); grants.set(sid, set) }\n        set.add(p.rule)\n      }\n      p.resolve('allowed-once')\n    } else if (choice === 'once') {\n      p.resolve('allowed-once')\n    } else {\n      p.resolve('rejected')\n    }\n    return true\n  }\n\n  function getMerged(keys) {\n    const key = keys.join('|')\n    const hit = mergedCache.get(key)\n    if (hit !== undefined && hit.rev === rulesRev) return hit.rules\n    const ws = (current && current.workspaces) || {}\n    const rules = mergeRules(keys.map((k) => ({\n      source: k,\n      set: k === 'global'\n        ? { hard: current.hard || [], deny: current.deny || [], ask: current.ask || [], allow: current.allow || [] }\n        : (ws[k.slice(3)] || EMPTY),\n    })))\n    mergedCache.set(key, { rev: rulesRev, rules })\n    return rules\n  }\n\n  // ---------- 作用域解析（Workspace 实体字段是 id；SessionHeader.cwd 锚定） ----------\n  async function resolveWorkspaceId(agent) {\n    if (agent === undefined || agent === null) return undefined\n    const sess = agent.session\n    const cwd = sess && sess.header ? sess.header.cwd : undefined\n    if (cwd === undefined || cwd === null || cwd === '') return undefined\n    if (wsCache.has(cwd)) return wsCache.get(cwd)\n    let id\n    try {\n      const ws = workspaceRegistry ? await workspaceRegistry.resolveByPath(cwd) : undefined\n      id = ws && ws.id ? String(ws.id) : undefined\n    } catch (e) { id = undefined }\n    wsCache.set(cwd, id)\n    return id\n  }\n\n  // ---------- 会话审批策略（仅 ask 跟随；hard/deny 永不受影响） ----------\n  function effectivePolicy(agent) {\n    if (approval === undefined) return 'ask'\n    let policy\n    try {\n      const sess = agent && agent.session\n      policy = sess ? approval.overrideOf(sess) : undefined\n    } catch (e) { policy = undefined }\n    if (policy !== undefined && policy !== null) return policy\n    const cfg = approval.config\n    return cfg && cfg.policy ? cfg.policy : 'ask'\n  }\n\n  // ---------- 决策引擎（含审计环形缓冲 + 规则命中计数 + JSONL 持久化） ----------\n  const audit = []\n  let auditSeq = 0\n  const ruleHits = new Map() // key: source|action|raw → count\n  const historyFile = path.join(process.env.DSH_HOME || path.join(homedir(), '.dsh'), 'dsh-permissions-history.jsonl')\n  function countHit(rule) {\n    const key = rule.source + '|' + rule.action + '|' + rule.raw\n    ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n  }\n  function clipText(text) {\n    const s = String(text === undefined || text === null ? '' : text)\n    return s.length > 80 ? s.slice(0, 80) : s\n  }\n  // 启动时重放历史尾部：恢复日志环 + 命中计数（异步，不阻塞启动）\n  ;(async () => {\n    try {\n      const text = await readFile(historyFile, 'utf8')\n      const lines = text.split('\\n').filter((l) => l.trim() !== '')\n      const tail = lines.slice(-200)\n      for (const line of tail) {\n        try {\n          const e = JSON.parse(line)\n          if (e.seq > auditSeq) auditSeq = e.seq\n          audit.push(e)\n          if (e.ruleRaw && e.decision && e.decision !== 'fallback' && e.decision !== 'engine-error') {\n            // 重放命中计数：日志行带 ruleKey 时直接用；否则按 ruleRaw 反推（作用域不可知，归 global）\n            const key = e.ruleKey || ('global|' + (e.decision === 'allow' ? 'allow' : e.decision === 'ask' ? 'ask' : e.decision) + '|' + e.ruleRaw)\n            ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n          }\n        } catch (err) { /* 跳过坏行 */ }\n      }\n    } catch (e) { /* 文件不存在即首次启动 */ }\n  })()\n  let historyBytes = 0\n  let trimScheduled = false\n  function pushAudit(entry) {\n    const full = Object.assign({ seq: ++auditSeq }, entry)\n    audit.push(full)\n    if (audit.length > 200) audit.shift()\n    // 持久化：追加一行 JSON（含 ruleKey 供重放）；文件超 2MB 时截断为尾部 200 行\n    const key = entry.ruleRaw !== undefined && entry.decision !== 'fallback' && entry.decision !== 'engine-error'\n      ? ((entry.source !== 'none' && entry.source !== 'policy-never' && entry.source !== 'grant' ? entry.source : 'global') + '|' + (entry.decision === 'allow' ? 'allow' : entry.decision === 'ask' ? 'ask' : entry.decision) + '|' + entry.ruleRaw)\n      : undefined\n    const line = JSON.stringify(Object.assign({}, full, key !== undefined ? { ruleKey: key } : {})) + '\\n'\n    historyBytes += line.length\n    appendFile(historyFile, line, 'utf8').catch(() => {})\n    if (historyBytes > 2 * 1024 * 1024 && !trimScheduled) {\n      trimScheduled = true\n      ;(async () => {\n        try {\n          await mkdir(path.dirname(historyFile), { recursive: true })\n          const keep = audit.map((e) => JSON.stringify(e) + '\\n').join('')\n          await writeFile(historyFile, keep, 'utf8')\n          historyBytes = keep.length\n        } catch (e) { /* 截断失败下次再试 */ }\n        trimScheduled = false\n      })()\n    }\n  }\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    let tool = '?'\n    try {\n      tool = exec.name\n      if (!current || !current.enabled) return next()\n      if (exec.agent === undefined || exec.agent === null) return next()\n      const arg = clipText(primaryArgOf(tool, exec.arguments))\n      let wsId\n      try { wsId = await resolveWorkspaceId(exec.agent) } catch (e) { wsId = undefined }\n      const keys = wsId !== undefined ? ['global', 'ws:' + wsId] : ['global']\n      const rule = evaluate(getMerged(keys), tool, exec.arguments)\n      if (rule === undefined) {\n        pushAudit({ tool, arg, decision: 'fallback', source: 'none' })\n        return next()\n      }\n      countHit(rule)\n      if (rule.action === 'hard') {\n        pushAudit({ tool, arg, decision: 'hard', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] hard-deny (above full access, not exemptable) [' + sourceLabel(rule.source) + ' · hard]: ' + rule.raw }\n      }\n      if (rule.action === 'deny') {\n        pushAudit({ tool, arg, decision: 'deny', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] denied by rule [' + sourceLabel(rule.source) + ' · deny]: ' + rule.raw }\n      }\n      if (rule.action === 'allow') {\n        pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n        return next()\n      }\n      if (effectivePolicy(exec.agent) === 'never') {\n        pushAudit({ tool, arg, decision: 'allow', source: 'policy-never', ruleRaw: rule.raw })\n        return next()\n      }\n      // 会话授予：本会话已\"总是允许\"过这条规则 → 直接放行\n      if (hasGrant(exec.agent, rule)) {\n        pushAudit({ tool, arg, decision: 'allow', source: 'grant', ruleRaw: rule.raw })\n        return next()\n      }\n      // 走自定义三选审批（仅本次 / 本会话总是允许 / 拒绝）；approval 缺失则回退注册表 ask（fail closed）\n      if (approval !== undefined) {\n        pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n        const outcome = await approval.request({\n          agent: exec.agent,\n          toolName: tool,\n          callId: exec.callId,\n          reason: ASK_PREFIX + grantKeyOf(rule),\n          signal: exec.signal,\n        })\n        if (outcome === 'allowed-once') {\n          pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n          return next()\n        }\n        return { kind: 'deny', reason: '[dsh-permissions] user rejected ' + tool + ' (rule [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw + ')' }\n      }\n      pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n      return { kind: 'ask', reason: '[dsh-permissions] rule requires confirmation [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw }\n    } catch (err) {\n      pushAudit({ tool, arg: '', decision: 'engine-error', source: 'none' })\n      return next()\n    }\n  })\n\n  if (systemPrompt !== undefined) {\n    ctx.effect(() => systemPrompt.section({\n      name: 'active-permission-rules',\n      order: 108,\n      text: () => summaryText(current),\n    }))\n  }\n\n  // ---------- 设置页专用 HTTP 路由 ----------\n  // api-proxy 的 settings.describe 只暴露硬编码白名单命名空间，自定义命名空间\n  // 无法经官方 settings API 触达。引擎用自己持有的 SettingsScope 直读直写，\n  // 通过自建路由 /api/dperm/* 服务自己的设置页（同源 fetch，无 CORS）。\n  // 子路由：GET/POST /rules（读写规则）、GET /log（决策日志）、GET /match-test（试算器）。\n  const webServer = ctx.get('webServer')\n  if (webServer !== undefined) {\n    ctx.effect(() => webServer.register({\n```\n\n</details>\n\n#### 缺口\n\n- 路径与 shell 参数变体的真实旁路率未知\n  **影响**：决定插件能否作为可信的附加门禁\n  **进一步探讨**：用100个对抗参数和符号链接路径在无副作用假工具上跑命中矩阵，零秘密路径漏拦才进入真实试用\n\n<a id=\"research-q07\"></a>\n\n### Q07 · dsh-permissions 的工程可靠性和可迁移设计如何？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n两事件面覆盖请求与执行，规则优先级和自管存储明确，草稿 UI 避免每次编辑立即改变策略。可复用的是“只收窄、hard 不可豁免、草稿原子应用”；移植需对每种工具规范化参数而非只复用字符串模式。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-366](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/lib/index.js#L143-L366)\n\n固定版本源码用于核对 Q07 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（224行）</summary>\n\n```text\n  function grantsOfSession(sid) {\n    const set = grants.get(sid)\n    if (set === undefined) return []\n    return [...set].map((key) => {\n      const sep1 = key.indexOf('|')\n      const sep2 = key.indexOf('|', sep1 + 1)\n      return { source: key.slice(0, sep1), action: key.slice(sep1 + 1, sep2), raw: key.slice(sep2 + 1) }\n    })\n  }\n\n  // 抢答器：拦截自家 ask 问询（reason 带 ASK_PREFIX），改走 /api/dperm/ask 的三选 UI\n  if (approval !== undefined) {\n    ctx.on('approval/request', (req, next) => {\n      if (req.signal && req.signal.aborted) return next()\n      if (typeof req.reason !== 'string' || !req.reason.startsWith(ASK_PREFIX)) return next()\n      const callId = String(req.callId !== undefined ? req.callId : Math.random().toString(36).slice(2))\n      return new Promise((resolve) => {\n        pendingAsks.set(callId, { resolve, toolName: req.toolName, agent: req.agent, rule: req.reason.slice(ASK_PREFIX.length) })\n        try { ctx.emit('dsh-permissions/ask-pending', callId) } catch (e) {}\n      })\n    }, { prepend: true })\n  }\n\n  function settleAsk(callId, choice) {\n    const p = pendingAsks.get(callId)\n    if (p === undefined) return false\n    pendingAsks.delete(callId)\n    if (choice === 'always') {\n      // rule 字符串就是 grantKey 格式（source|action|raw 由引擎拼装传入 reason）\n      const sid = p.agent && p.agent.session ? String(p.agent.session.id) : ''\n      if (sid !== '') {\n        let set = grants.get(sid)\n        if (set === undefined) { set = new Set(); grants.set(sid, set) }\n        set.add(p.rule)\n      }\n      p.resolve('allowed-once')\n    } else if (choice === 'once') {\n      p.resolve('allowed-once')\n    } else {\n      p.resolve('rejected')\n    }\n    return true\n  }\n\n  function getMerged(keys) {\n    const key = keys.join('|')\n    const hit = mergedCache.get(key)\n    if (hit !== undefined && hit.rev === rulesRev) return hit.rules\n    const ws = (current && current.workspaces) || {}\n    const rules = mergeRules(keys.map((k) => ({\n      source: k,\n      set: k === 'global'\n        ? { hard: current.hard || [], deny: current.deny || [], ask: current.ask || [], allow: current.allow || [] }\n        : (ws[k.slice(3)] || EMPTY),\n    })))\n    mergedCache.set(key, { rev: rulesRev, rules })\n    return rules\n  }\n\n  // ---------- 作用域解析（Workspace 实体字段是 id；SessionHeader.cwd 锚定） ----------\n  async function resolveWorkspaceId(agent) {\n    if (agent === undefined || agent === null) return undefined\n    const sess = agent.session\n    const cwd = sess && sess.header ? sess.header.cwd : undefined\n    if (cwd === undefined || cwd === null || cwd === '') return undefined\n    if (wsCache.has(cwd)) return wsCache.get(cwd)\n    let id\n    try {\n      const ws = workspaceRegistry ? await workspaceRegistry.resolveByPath(cwd) : undefined\n      id = ws && ws.id ? String(ws.id) : undefined\n    } catch (e) { id = undefined }\n    wsCache.set(cwd, id)\n    return id\n  }\n\n  // ---------- 会话审批策略（仅 ask 跟随；hard/deny 永不受影响） ----------\n  function effectivePolicy(agent) {\n    if (approval === undefined) return 'ask'\n    let policy\n    try {\n      const sess = agent && agent.session\n      policy = sess ? approval.overrideOf(sess) : undefined\n    } catch (e) { policy = undefined }\n    if (policy !== undefined && policy !== null) return policy\n    const cfg = approval.config\n    return cfg && cfg.policy ? cfg.policy : 'ask'\n  }\n\n  // ---------- 决策引擎（含审计环形缓冲 + 规则命中计数 + JSONL 持久化） ----------\n  const audit = []\n  let auditSeq = 0\n  const ruleHits = new Map() // key: source|action|raw → count\n  const historyFile = path.join(process.env.DSH_HOME || path.join(homedir(), '.dsh'), 'dsh-permissions-history.jsonl')\n  function countHit(rule) {\n    const key = rule.source + '|' + rule.action + '|' + rule.raw\n    ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n  }\n  function clipText(text) {\n    const s = String(text === undefined || text === null ? '' : text)\n    return s.length > 80 ? s.slice(0, 80) : s\n  }\n  // 启动时重放历史尾部：恢复日志环 + 命中计数（异步，不阻塞启动）\n  ;(async () => {\n    try {\n      const text = await readFile(historyFile, 'utf8')\n      const lines = text.split('\\n').filter((l) => l.trim() !== '')\n      const tail = lines.slice(-200)\n      for (const line of tail) {\n        try {\n          const e = JSON.parse(line)\n          if (e.seq > auditSeq) auditSeq = e.seq\n          audit.push(e)\n          if (e.ruleRaw && e.decision && e.decision !== 'fallback' && e.decision !== 'engine-error') {\n            // 重放命中计数：日志行带 ruleKey 时直接用；否则按 ruleRaw 反推（作用域不可知，归 global）\n            const key = e.ruleKey || ('global|' + (e.decision === 'allow' ? 'allow' : e.decision === 'ask' ? 'ask' : e.decision) + '|' + e.ruleRaw)\n            ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n          }\n        } catch (err) { /* 跳过坏行 */ }\n      }\n    } catch (e) { /* 文件不存在即首次启动 */ }\n  })()\n  let historyBytes = 0\n  let trimScheduled = false\n  function pushAudit(entry) {\n    const full = Object.assign({ seq: ++auditSeq }, entry)\n    audit.push(full)\n    if (audit.length > 200) audit.shift()\n    // 持久化：追加一行 JSON（含 ruleKey 供重放）；文件超 2MB 时截断为尾部 200 行\n    const key = entry.ruleRaw !== undefined && entry.decision !== 'fallback' && entry.decision !== 'engine-error'\n      ? ((entry.source !== 'none' && entry.source !== 'policy-never' && entry.source !== 'grant' ? entry.source : 'global') + '|' + (entry.decision === 'allow' ? 'allow' : entry.decision === 'ask' ? 'ask' : entry.decision) + '|' + entry.ruleRaw)\n      : undefined\n    const line = JSON.stringify(Object.assign({}, full, key !== undefined ? { ruleKey: key } : {})) + '\\n'\n    historyBytes += line.length\n    appendFile(historyFile, line, 'utf8').catch(() => {})\n    if (historyBytes > 2 * 1024 * 1024 && !trimScheduled) {\n      trimScheduled = true\n      ;(async () => {\n        try {\n          await mkdir(path.dirname(historyFile), { recursive: true })\n          const keep = audit.map((e) => JSON.stringify(e) + '\\n').join('')\n          await writeFile(historyFile, keep, 'utf8')\n          historyBytes = keep.length\n        } catch (e) { /* 截断失败下次再试 */ }\n        trimScheduled = false\n      })()\n    }\n  }\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    let tool = '?'\n    try {\n      tool = exec.name\n      if (!current || !current.enabled) return next()\n      if (exec.agent === undefined || exec.agent === null) return next()\n      const arg = clipText(primaryArgOf(tool, exec.arguments))\n      let wsId\n      try { wsId = await resolveWorkspaceId(exec.agent) } catch (e) { wsId = undefined }\n      const keys = wsId !== undefined ? ['global', 'ws:' + wsId] : ['global']\n      const rule = evaluate(getMerged(keys), tool, exec.arguments)\n      if (rule === undefined) {\n        pushAudit({ tool, arg, decision: 'fallback', source: 'none' })\n        return next()\n      }\n      countHit(rule)\n      if (rule.action === 'hard') {\n        pushAudit({ tool, arg, decision: 'hard', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] hard-deny (above full access, not exemptable) [' + sourceLabel(rule.source) + ' · hard]: ' + rule.raw }\n      }\n      if (rule.action === 'deny') {\n        pushAudit({ tool, arg, decision: 'deny', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] denied by rule [' + sourceLabel(rule.source) + ' · deny]: ' + rule.raw }\n      }\n      if (rule.action === 'allow') {\n        pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n        return next()\n      }\n      if (effectivePolicy(exec.agent) === 'never') {\n        pushAudit({ tool, arg, decision: 'allow', source: 'policy-never', ruleRaw: rule.raw })\n        return next()\n      }\n      // 会话授予：本会话已\"总是允许\"过这条规则 → 直接放行\n      if (hasGrant(exec.agent, rule)) {\n        pushAudit({ tool, arg, decision: 'allow', source: 'grant', ruleRaw: rule.raw })\n        return next()\n      }\n      // 走自定义三选审批（仅本次 / 本会话总是允许 / 拒绝）；approval 缺失则回退注册表 ask（fail closed）\n      if (approval !== undefined) {\n        pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n        const outcome = await approval.request({\n          agent: exec.agent,\n          toolName: tool,\n          callId: exec.callId,\n          reason: ASK_PREFIX + grantKeyOf(rule),\n          signal: exec.signal,\n        })\n        if (outcome === 'allowed-once') {\n          pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n          return next()\n        }\n        return { kind: 'deny', reason: '[dsh-permissions] user rejected ' + tool + ' (rule [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw + ')' }\n      }\n      pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n      return { kind: 'ask', reason: '[dsh-permissions] rule requires confirmation [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw }\n    } catch (err) {\n      pushAudit({ tool, arg: '', decision: 'engine-error', source: 'none' })\n      return next()\n    }\n  })\n\n  if (systemPrompt !== undefined) {\n    ctx.effect(() => systemPrompt.section({\n      name: 'active-permission-rules',\n      order: 108,\n      text: () => summaryText(current),\n    }))\n  }\n\n  // ---------- 设置页专用 HTTP 路由 ----------\n  // api-proxy 的 settings.describe 只暴露硬编码白名单命名空间，自定义命名空间\n  // 无法经官方 settings API 触达。引擎用自己持有的 SettingsScope 直读直写，\n  // 通过自建路由 /api/dperm/* 服务自己的设置页（同源 fetch，无 CORS）。\n  // 子路由：GET/POST /rules（读写规则）、GET /log（决策日志）、GET /match-test（试算器）。\n  const webServer = ctx.get('webServer')\n  if (webServer !== undefined) {\n    ctx.effect(() => webServer.register({\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献与限制可推导什么可证伪的新设计假设？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:143-366](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/lib/index.js#L143-L366)\n\n固定版本源码用于核对 Q08 的接线、状态或失败路径；这是静态检查。\n\n<details>\n<summary>查看原文（224行）</summary>\n\n```text\n  function grantsOfSession(sid) {\n    const set = grants.get(sid)\n    if (set === undefined) return []\n    return [...set].map((key) => {\n      const sep1 = key.indexOf('|')\n      const sep2 = key.indexOf('|', sep1 + 1)\n      return { source: key.slice(0, sep1), action: key.slice(sep1 + 1, sep2), raw: key.slice(sep2 + 1) }\n    })\n  }\n\n  // 抢答器：拦截自家 ask 问询（reason 带 ASK_PREFIX），改走 /api/dperm/ask 的三选 UI\n  if (approval !== undefined) {\n    ctx.on('approval/request', (req, next) => {\n      if (req.signal && req.signal.aborted) return next()\n      if (typeof req.reason !== 'string' || !req.reason.startsWith(ASK_PREFIX)) return next()\n      const callId = String(req.callId !== undefined ? req.callId : Math.random().toString(36).slice(2))\n      return new Promise((resolve) => {\n        pendingAsks.set(callId, { resolve, toolName: req.toolName, agent: req.agent, rule: req.reason.slice(ASK_PREFIX.length) })\n        try { ctx.emit('dsh-permissions/ask-pending', callId) } catch (e) {}\n      })\n    }, { prepend: true })\n  }\n\n  function settleAsk(callId, choice) {\n    const p = pendingAsks.get(callId)\n    if (p === undefined) return false\n    pendingAsks.delete(callId)\n    if (choice === 'always') {\n      // rule 字符串就是 grantKey 格式（source|action|raw 由引擎拼装传入 reason）\n      const sid = p.agent && p.agent.session ? String(p.agent.session.id) : ''\n      if (sid !== '') {\n        let set = grants.get(sid)\n        if (set === undefined) { set = new Set(); grants.set(sid, set) }\n        set.add(p.rule)\n      }\n      p.resolve('allowed-once')\n    } else if (choice === 'once') {\n      p.resolve('allowed-once')\n    } else {\n      p.resolve('rejected')\n    }\n    return true\n  }\n\n  function getMerged(keys) {\n    const key = keys.join('|')\n    const hit = mergedCache.get(key)\n    if (hit !== undefined && hit.rev === rulesRev) return hit.rules\n    const ws = (current && current.workspaces) || {}\n    const rules = mergeRules(keys.map((k) => ({\n      source: k,\n      set: k === 'global'\n        ? { hard: current.hard || [], deny: current.deny || [], ask: current.ask || [], allow: current.allow || [] }\n        : (ws[k.slice(3)] || EMPTY),\n    })))\n    mergedCache.set(key, { rev: rulesRev, rules })\n    return rules\n  }\n\n  // ---------- 作用域解析（Workspace 实体字段是 id；SessionHeader.cwd 锚定） ----------\n  async function resolveWorkspaceId(agent) {\n    if (agent === undefined || agent === null) return undefined\n    const sess = agent.session\n    const cwd = sess && sess.header ? sess.header.cwd : undefined\n    if (cwd === undefined || cwd === null || cwd === '') return undefined\n    if (wsCache.has(cwd)) return wsCache.get(cwd)\n    let id\n    try {\n      const ws = workspaceRegistry ? await workspaceRegistry.resolveByPath(cwd) : undefined\n      id = ws && ws.id ? String(ws.id) : undefined\n    } catch (e) { id = undefined }\n    wsCache.set(cwd, id)\n    return id\n  }\n\n  // ---------- 会话审批策略（仅 ask 跟随；hard/deny 永不受影响） ----------\n  function effectivePolicy(agent) {\n    if (approval === undefined) return 'ask'\n    let policy\n    try {\n      const sess = agent && agent.session\n      policy = sess ? approval.overrideOf(sess) : undefined\n    } catch (e) { policy = undefined }\n    if (policy !== undefined && policy !== null) return policy\n    const cfg = approval.config\n    return cfg && cfg.policy ? cfg.policy : 'ask'\n  }\n\n  // ---------- 决策引擎（含审计环形缓冲 + 规则命中计数 + JSONL 持久化） ----------\n  const audit = []\n  let auditSeq = 0\n  const ruleHits = new Map() // key: source|action|raw → count\n  const historyFile = path.join(process.env.DSH_HOME || path.join(homedir(), '.dsh'), 'dsh-permissions-history.jsonl')\n  function countHit(rule) {\n    const key = rule.source + '|' + rule.action + '|' + rule.raw\n    ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n  }\n  function clipText(text) {\n    const s = String(text === undefined || text === null ? '' : text)\n    return s.length > 80 ? s.slice(0, 80) : s\n  }\n  // 启动时重放历史尾部：恢复日志环 + 命中计数（异步，不阻塞启动）\n  ;(async () => {\n    try {\n      const text = await readFile(historyFile, 'utf8')\n      const lines = text.split('\\n').filter((l) => l.trim() !== '')\n      const tail = lines.slice(-200)\n      for (const line of tail) {\n        try {\n          const e = JSON.parse(line)\n          if (e.seq > auditSeq) auditSeq = e.seq\n          audit.push(e)\n          if (e.ruleRaw && e.decision && e.decision !== 'fallback' && e.decision !== 'engine-error') {\n            // 重放命中计数：日志行带 ruleKey 时直接用；否则按 ruleRaw 反推（作用域不可知，归 global）\n            const key = e.ruleKey || ('global|' + (e.decision === 'allow' ? 'allow' : e.decision === 'ask' ? 'ask' : e.decision) + '|' + e.ruleRaw)\n            ruleHits.set(key, (ruleHits.get(key) || 0) + 1)\n          }\n        } catch (err) { /* 跳过坏行 */ }\n      }\n    } catch (e) { /* 文件不存在即首次启动 */ }\n  })()\n  let historyBytes = 0\n  let trimScheduled = false\n  function pushAudit(entry) {\n    const full = Object.assign({ seq: ++auditSeq }, entry)\n    audit.push(full)\n    if (audit.length > 200) audit.shift()\n    // 持久化：追加一行 JSON（含 ruleKey 供重放）；文件超 2MB 时截断为尾部 200 行\n    const key = entry.ruleRaw !== undefined && entry.decision !== 'fallback' && entry.decision !== 'engine-error'\n      ? ((entry.source !== 'none' && entry.source !== 'policy-never' && entry.source !== 'grant' ? entry.source : 'global') + '|' + (entry.decision === 'allow' ? 'allow' : entry.decision === 'ask' ? 'ask' : entry.decision) + '|' + entry.ruleRaw)\n      : undefined\n    const line = JSON.stringify(Object.assign({}, full, key !== undefined ? { ruleKey: key } : {})) + '\\n'\n    historyBytes += line.length\n    appendFile(historyFile, line, 'utf8').catch(() => {})\n    if (historyBytes > 2 * 1024 * 1024 && !trimScheduled) {\n      trimScheduled = true\n      ;(async () => {\n        try {\n          await mkdir(path.dirname(historyFile), { recursive: true })\n          const keep = audit.map((e) => JSON.stringify(e) + '\\n').join('')\n          await writeFile(historyFile, keep, 'utf8')\n          historyBytes = keep.length\n        } catch (e) { /* 截断失败下次再试 */ }\n        trimScheduled = false\n      })()\n    }\n  }\n  ctx.on('tools/pre-execute', async (exec, next) => {\n    let tool = '?'\n    try {\n      tool = exec.name\n      if (!current || !current.enabled) return next()\n      if (exec.agent === undefined || exec.agent === null) return next()\n      const arg = clipText(primaryArgOf(tool, exec.arguments))\n      let wsId\n      try { wsId = await resolveWorkspaceId(exec.agent) } catch (e) { wsId = undefined }\n      const keys = wsId !== undefined ? ['global', 'ws:' + wsId] : ['global']\n      const rule = evaluate(getMerged(keys), tool, exec.arguments)\n      if (rule === undefined) {\n        pushAudit({ tool, arg, decision: 'fallback', source: 'none' })\n        return next()\n      }\n      countHit(rule)\n      if (rule.action === 'hard') {\n        pushAudit({ tool, arg, decision: 'hard', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] hard-deny (above full access, not exemptable) [' + sourceLabel(rule.source) + ' · hard]: ' + rule.raw }\n      }\n      if (rule.action === 'deny') {\n        pushAudit({ tool, arg, decision: 'deny', source: rule.source, ruleRaw: rule.raw })\n        return { kind: 'deny', reason: '[dsh-permissions] denied by rule [' + sourceLabel(rule.source) + ' · deny]: ' + rule.raw }\n      }\n      if (rule.action === 'allow') {\n        pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n        return next()\n      }\n      if (effectivePolicy(exec.agent) === 'never') {\n        pushAudit({ tool, arg, decision: 'allow', source: 'policy-never', ruleRaw: rule.raw })\n        return next()\n      }\n      // 会话授予：本会话已\"总是允许\"过这条规则 → 直接放行\n      if (hasGrant(exec.agent, rule)) {\n        pushAudit({ tool, arg, decision: 'allow', source: 'grant', ruleRaw: rule.raw })\n        return next()\n      }\n      // 走自定义三选审批（仅本次 / 本会话总是允许 / 拒绝）；approval 缺失则回退注册表 ask（fail closed）\n      if (approval !== undefined) {\n        pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n        const outcome = await approval.request({\n          agent: exec.agent,\n          toolName: tool,\n          callId: exec.callId,\n          reason: ASK_PREFIX + grantKeyOf(rule),\n          signal: exec.signal,\n        })\n        if (outcome === 'allowed-once') {\n          pushAudit({ tool, arg, decision: 'allow', source: rule.source, ruleRaw: rule.raw })\n          return next()\n        }\n        return { kind: 'deny', reason: '[dsh-permissions] user rejected ' + tool + ' (rule [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw + ')' }\n      }\n      pushAudit({ tool, arg, decision: 'ask', source: rule.source, ruleRaw: rule.raw })\n      return { kind: 'ask', reason: '[dsh-permissions] rule requires confirmation [' + sourceLabel(rule.source) + ' · ask]: ' + rule.raw }\n    } catch (err) {\n      pushAudit({ tool, arg: '', decision: 'engine-error', source: 'none' })\n      return next()\n    }\n  })\n\n  if (systemPrompt !== undefined) {\n    ctx.effect(() => systemPrompt.section({\n      name: 'active-permission-rules',\n      order: 108,\n      text: () => summaryText(current),\n    }))\n  }\n\n  // ---------- 设置页专用 HTTP 路由 ----------\n  // api-proxy 的 settings.describe 只暴露硬编码白名单命名空间，自定义命名空间\n  // 无法经官方 settings API 触达。引擎用自己持有的 SettingsScope 直读直写，\n  // 通过自建路由 /api/dperm/* 服务自己的设置页（同源 fetch，无 CORS）。\n  // 子路由：GET/POST /rules（读写规则）、GET /log（决策日志）、GET /match-test（试算器）。\n  const webServer = ctx.get('webServer')\n  if (webServer !== undefined) {\n    ctx.effect(() => webServer.register({\n```\n\n</details>\n\n#### 缺口\n\n- 路径与 shell 参数变体的真实旁路率未知\n  **影响**：决定插件能否作为可信的附加门禁\n  **进一步探讨**：用100个对抗参数和符号链接路径在无副作用假工具上跑命中矩阵，零秘密路径漏拦才进入真实试用\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 哪些人应观察、试用或拒绝采用 dsh-permissions？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:10-25](https://github.com/940842546/dsh-permissions/blob/ad84f1d0928396a9597e557b6540f1f6feca2052/README.md#L10-L25)\n\n固定版本作者材料支持 Q09 的功能范围或边界；本轮未把声明当运行结果。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 亮点\n\n- **四级规则、严格优先级**：`hard` > `deny` > `ask` > `allow`。\n- **`hard` 高于全访问**：即使会话处于全访问档（审批策略 `never`），hard 规则依然拦截、不可豁免；`ask` 规则跟随会话策略，全访问下自动放行。\n- **作用域**：`global` 规则全局生效；按 `workspace` 的规则叠加合并（冲突时 deny 永远胜出）。\n- **通配符匹配**（文件类工具 `read`/`write`/`edit`/`glob`/`grep`/`read_image`）：\n  - `write(*.pem)` —— 路径以 `.pem` 结尾\n  - `write(*secret*)` —— 路径包含 `secret`\n  - `write(.ssh)` —— 路径任意位置出现 `.ssh` 片段（大小写不敏感，`\\`/`/` 统一归一化）\n  - `write(C:\\users\\*)` —— 绝对路径前缀\n  - 裸 `write` —— 该工具全部调用\n- **持久化**：规则存于 `dsh-permissions` 设置命名空间，跨重启保留（`<harness home>/settings.yaml`）。\n- **模型透明**：生效规则注入系统提示（`[active-permission-rules]` 段）。\n- **可视化编辑器**：草稿式（staged）编辑——所有修改点「保存并应用」后才生效，附一键预设（保护敏感目录 / 密钥文件 / 拦截危险命令）。\n\n## 界面截图\n```\n\n</details>\n\n#### 缺口\n\n- 路径与 shell 参数变体的真实旁路率未知\n  **影响**：决定插件能否作为可信的附加门禁\n  **进一步探讨**：用100个对抗参数和符号链接路径在无副作用假工具上跑命中矩阵，零秘密路径漏拦才进入真实试用\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9aa20c1f9faddc6e8a5d92e684e3f8687da7421d5e177850b1d0d722bbe8ef4d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 291 | — | — | 2798 |\n| .js | source | 3 | 1746 | 1645 | 58 | — |\n| .mjs | test | 1 | 160 | 137 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| hard/deny/ask/allow | 按工具参数决定拒绝、询问或放行 | allow 只跳过本插件，不绕宿主沙箱 |\n| workspace 作用域 | 为不同工作区维护差异规则 | cwd/路径规范化正确性需验证 |\n| 草稿设置页 | 编辑后显式保存应用 | 路由和存储权限是额外攻击面 |\n\n## 工程亮点\n\n两事件面覆盖请求与执行，规则优先级和自管存储明确，草稿 UI 避免每次编辑立即改变策略。可复用的是“只收窄、hard 不可豁免、草稿原子应用”；移植需对每种工具规范化参数而非只复用字符串模式。 详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读检查固定提交 ad84f1d0928396a9597e557b6540f1f6feca2052 的作者材料、入口与关键源码；不运行插件、测试、外部服务或真实 Host；检查时间不早于 2026-10-22T15:49:47Z。\n- 下一步：构造无副作用工具镜像，覆盖绝对/相对/大小写/引号/通配/符号链接/PowerShell嵌套与未知schema；同时测试草稿并发保存、JSON损坏和宿主full access，要求hard永拒绝且allow不越过sandbox。\n",
+        "metadata": {
+            "repository": "940842546/dsh-permissions",
+            "repository_id": 1335349535,
+            "captured_at": "2026-10-22T16:03:38.667Z",
+            "window_start": "2026-09-22T16:03:38.667Z",
+            "stars": 4,
+            "pushed_at": "2026-09-22T08:52:49Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A940842546%2Fdsh-permissions%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 157C:1BCCDA:A23BB7:AF336E:6ADA33DC and timestamp 2026-10-22 16:03:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A940842546%2Fdsh-permissions%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 164C:1C593F:A6511D:B34016:6ADA33DE and timestamp 2026-10-22 16:03:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A940842546%2Fdsh-permissions%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A38.667Z..2026-10-22T16%3A03%3A38.667Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1720:324936:A0D946:ADCAB2:6ADA33DF and timestamp 2026-10-22 16:03:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A940842546%2Fdsh-permissions%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A38.667Z..2026-10-22T16%3A03%3A38.667Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 17D2:10466D:A3C03A:B0B6C0:6ADA33E0 and timestamp 2026-10-22 16:03:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A940842546%2Fdsh-permissions%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A38.667Z..2026-10-22T16%3A03%3A38.667Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1888:FB30D:AF062B:BC013B:6ADA33E1 and timestamp 2026-10-22 16:03:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-permissions",
+                "captured_at": "2026-10-22T16:03:45.920Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 588,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-permissions",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-15T19:28:49.998Z",
+                    "captured_at": "2026-10-22T16:03:45.920Z",
+                    "source_url": "https://registry.npmjs.org/dsh-permissions",
+                    "error": null,
+                    "latest_version": "2.0.2",
+                    "latest_published_at": "2026-09-22T09:00:14.991Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1335349535:root",
             "repository": "940842546/dsh-permissions",

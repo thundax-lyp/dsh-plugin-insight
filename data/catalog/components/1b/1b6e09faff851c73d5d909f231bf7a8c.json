@@ -7,14 +7,14 @@
             "id": "github:1231135337:typescript-packages-dsh",
             "repository": "strukto-ai/mirage",
             "path": "typescript/packages/dsh",
-            "revision": "6bb632ec6e76abfa113a06344d744d882e814309",
+            "revision": "819c993378fb35ff1ebb88592b0ed40482bdf2bc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "6d793e1acfd4a158b1cd32b48db47484ce2b0256e5c3ccd8ae82b0166020a562",
-                "code": "6bb632ec6e76abfa113a06344d744d882e814309",
+                "code": "819c993378fb35ff1ebb88592b0ed40482bdf2bc",
                 "maintenance": "146dc12e827ee214d1e7c3278457a37ec4bf6a147ac6b86f2d84ec77d0bbc825"
             }
         }

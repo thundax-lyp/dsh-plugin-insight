@@ -7,14 +7,14 @@
             "id": "github:1423859673:root",
             "repository": "kgmkm/dsh-genspark",
             "path": "",
-            "revision": "44b31ecbeef2bcd0e63179823ed0a9a508c5eaab",
+            "revision": "55a5f79e44a879074baa5fbda4380e7ffaeca408",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ce4955d825da2c9ae8f36f06fc4e351d3025dba640d446dceda5da670b561cf2",
-                "code": "44b31ecbeef2bcd0e63179823ed0a9a508c5eaab",
-                "maintenance": "d84bdcab36faae92216a3bb3e4ebec2b86aab83f45cab1d4125acd4166aa2e4a"
+                "code": "55a5f79e44a879074baa5fbda4380e7ffaeca408",
+                "maintenance": "51f7b5eed6f8a47737b4b4153f5d44ee9d79603cae70248dc3d18a14a691c3da"
             }
         }
     }

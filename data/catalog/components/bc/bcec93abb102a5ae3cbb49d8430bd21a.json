@@ -7,14 +7,14 @@
             "id": "github:1384691694:root",
             "repository": "Jaylor-Wang/dsh-awesome-agent-preset",
             "path": "",
-            "revision": "6c67957f621014a5eaaf6fb93301ff857f2ce043",
+            "revision": "8e1e96267272a08921a5f1cd97048cdec49a8532",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "21721ef5182ea655b6258e0811c4c3abaf5d410841eb37f05b2f63d04d9bb85f",
-                "code": "6c67957f621014a5eaaf6fb93301ff857f2ce043",
-                "maintenance": "9751eaf8bb0f13f1b519a199aebf4b3f94d5d056d37d043b6731b2449ef69bf0"
+                "code": "8e1e96267272a08921a5f1cd97048cdec49a8532",
+                "maintenance": "99fb98b6ce408e798e3cfd75c89c0e5d91948b2f538ddaee03b0cebb13077135"
             }
         }
     }

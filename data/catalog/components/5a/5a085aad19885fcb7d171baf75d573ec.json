@@ -7,14 +7,14 @@
             "id": "github:1425476157:root",
             "repository": "yiyunet/dsh-kill-ai-slop",
             "path": "",
-            "revision": "05e011f840219c5736709cbb1a5d55167171bdb0",
+            "revision": "dfca5df66f92bf67cbdf1d53a13bdfed63adf928",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6db7c20664b908d6a981e9798c4cc0d41ed6f715d5a575ff0acfd260bc33d9ec",
-                "code": "05e011f840219c5736709cbb1a5d55167171bdb0",
-                "maintenance": "55ba71868ba8bc322c19e79737d87b7000816726f0f25ce1c2c1126aaa97a2f2"
+                "code": "dfca5df66f92bf67cbdf1d53a13bdfed63adf928",
+                "maintenance": "1ab3cc8c43b6dfc9bdefd6d54c1c211ca03bb11568e2213b51d691ac5b723af5"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1344168342:root",
             "repository": "LucienLL/dsh-peak-price-panel",
             "path": "",
-            "revision": "131b06bed5e97870714c01ad808746d038fd1da6",
+            "revision": "3ff78e19cc14958741094db24ea5c396b8fcf06d",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "2740d4ddb4d339c4b5524c2bbf03fc87c2f6f303ad6e546ada2179a695766a27",
-                "code": "131b06bed5e97870714c01ad808746d038fd1da6",
-                "maintenance": "a5b1dec3e26a6882eb11a131c4f9f67c9ebca595d34329e338ceca0b345bbd3c"
+                "code": "3ff78e19cc14958741094db24ea5c396b8fcf06d",
+                "maintenance": "d409bb7627728aff26881ab899dbf90a2a83ea6f898096d0c9e2fdcece0bdc62"
             }
         }
     }

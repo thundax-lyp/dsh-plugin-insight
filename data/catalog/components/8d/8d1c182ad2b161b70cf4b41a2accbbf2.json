@@ -7,14 +7,14 @@
             "id": "github:1407463524:root",
             "repository": "d0ublecl1ck/dsh-flow",
             "path": "",
-            "revision": "4633442067fa8ab48931f90f9e6561328ebcf181",
+            "revision": "cd2d3f26d608a86323d61dc8e4cb5f8b1469fa8d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b8c0009054c9a696bda21cd8354824b71a147de6602502ee05a85930c9b6a7c7",
-                "code": "4633442067fa8ab48931f90f9e6561328ebcf181",
-                "maintenance": "e962c421c599276c5f843aa1a8232ca1680281cd5d1d332ee379707891c07cac"
+                "code": "cd2d3f26d608a86323d61dc8e4cb5f8b1469fa8d",
+                "maintenance": "b137275e1d1c14d28e7caea99e8a65a294777520b5a1757a020ec1ea19519e65"
             }
         }
     }

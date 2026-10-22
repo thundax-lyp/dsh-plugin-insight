@@ -7,14 +7,14 @@
             "id": "github:1334620863:root",
             "repository": "Sal7one/DSH-Design-Studio",
             "path": "",
-            "revision": "f963e8f046e48549497e914c252e69e4deb7a7fe",
+            "revision": "4c24b937e62718133056c16975ca2bedb3e86407",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b13eeeaf11017e3f3b9d61c29924391684d2a89fa8387c04aeb1729d5d983820",
-                "code": "f963e8f046e48549497e914c252e69e4deb7a7fe",
-                "maintenance": "b93cda73f82bc0fe491f51da69e9e47c7efbb256f9df332b998577d35df660e1"
+                "code": "4c24b937e62718133056c16975ca2bedb3e86407",
+                "maintenance": "7059210586e9c82e117c540073dd6a854d3400167965a76135d754dc20e49b37"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1335080638:root",
             "repository": "Tlyer233/dsh-vscode-review",
             "path": "",
-            "revision": "18ed68705376feea97ffc76260948648efc2701d",
+            "revision": "b4c2df94b900e0ed742e72c0b508505ae87a6b6b",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "1802a0b16ea0b9580014880d1a73c8cb17a6c9332bbff62bb429223ce54b1ad9",
-                "code": "18ed68705376feea97ffc76260948648efc2701d",
-                "maintenance": "431ec4568ba61498445e23cc176a7d24b8f4ff0568654ce409cb1a046b17215f"
+                "code": "b4c2df94b900e0ed742e72c0b508505ae87a6b6b",
+                "maintenance": "f4e5b4f193fe7e438a1e3b2a873e52fe02e7d495c99d188bc15c1621d062da50"
             }
         }
     }

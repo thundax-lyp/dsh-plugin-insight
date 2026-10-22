@@ -7,15 +7,15 @@
             "id": "github:1333295863:root",
             "repository": "bradeGithub/DSH-Plugins-Marketplace",
             "path": "",
-            "revision": "b69fb7d28e3e35a3cd3934ef27bdbbc2bdf9d54e",
+            "revision": "7c028dedc217bfa694c64fc42bd6638849f34d18",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "87413ada46b22efe6e025a2b9461c6955cf7694a2d9771bd77b7796bc1447cc5",
-                "code": "b69fb7d28e3e35a3cd3934ef27bdbbc2bdf9d54e",
-                "maintenance": "f4ca82c51160b01c957bdb77130b1c20b55ecca8fd9f98f1ed7186e4464584f1"
+                "code": "7c028dedc217bfa694c64fc42bd6638849f34d18",
+                "maintenance": "c1e38a0d7a7be9f97e4a2ff241a1289f95fff0d7a6263f4a8ecef37f74964860"
             }
         }
     }

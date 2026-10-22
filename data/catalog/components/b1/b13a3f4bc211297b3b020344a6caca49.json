@@ -7,14 +7,14 @@
             "id": "github:1415802232:root",
             "repository": "XinzeQing/dsh-user-memory",
             "path": "",
-            "revision": "3f98b9ec171b2c9f8ebe44ea789eb9ac580059bf",
+            "revision": "93e720835ebe137525b981096f5fcf403dd80a09",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "76495976acdd679aab45fd7fb145f5b995f8be861463e175a3b6d95f88505186",
-                "code": "3f98b9ec171b2c9f8ebe44ea789eb9ac580059bf",
-                "maintenance": "5d16ed90a344db3119156e11aa9acb3959e28dab1f91f567a7ee9e70cb99f824"
+                "code": "93e720835ebe137525b981096f5fcf403dd80a09",
+                "maintenance": "3c617c44968a3b1a7ebc51e428b926dc411290cac1e87bb1cae404fad53f43c8"
             }
         }
     }

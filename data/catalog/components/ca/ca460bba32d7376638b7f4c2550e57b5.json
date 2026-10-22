@@ -7,15 +7,15 @@
             "id": "github:1224734286:root",
             "repository": "Ikalus1988/MisakaNet",
             "path": "",
-            "revision": "ba0c813692f758e8ffc370a623be9238df260b6a",
+            "revision": "66b053ace3146eeb2bd0b91133f7f348b0e75667",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "68aa83bdebc9303fda71cca4e0d71e795fd156c942c54c82f7555e41d9168cbd",
-                "code": "ba0c813692f758e8ffc370a623be9238df260b6a",
-                "maintenance": "dfaf14962089c137cd0892cf630e1e0633877705ba0dc9a0f91d34ba9d8bb319"
+                "code": "66b053ace3146eeb2bd0b91133f7f348b0e75667",
+                "maintenance": "92149e37da897c2825b84daa3337e966aca1ece5185a840642942d311ce167bc"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1411586224:root",
             "repository": "Mr54233/dsh-restart-now",
             "path": "",
-            "revision": "249ea26ce9c154380ba4b06b53e28abc1716dc1e",
+            "revision": "c43632ab5e38ab1d99df368a07b7bffebcaef20a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4aac8dfb3985619cd1ffc26817ce529c865d0ae5fa8787e36b9a78b23fe6f9d9",
-                "code": "249ea26ce9c154380ba4b06b53e28abc1716dc1e",
-                "maintenance": "fafc0041f19e79aa1d28b28a1ea3c870f232e3251f8534db2f3e771a823853bc"
+                "code": "c43632ab5e38ab1d99df368a07b7bffebcaef20a",
+                "maintenance": "83a7d2d0cd956f59d5b313c7ac535bf18cdd7f953c3a5f2aef827bff12118952"
             }
         }
     }
