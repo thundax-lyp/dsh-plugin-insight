@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1407166868-root-directory-0",
+                    "id": "2026-10-22-02-github-1407166868-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:42:24.653Z",
+                    "retrieved_at": "2026-10-22T09:36:15.853Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1407166868-root-author",
+                    "id": "2026-10-22-02-github-1407166868-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "README.md",
+                            "content_sha256": "6b51a2c3acf825ea8801a69900c9e9517156116be05b08306dae34a11d5fb969"
+                        }
+                    ],
                     "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
-                    "captured_at": "2026-10-21T05:42:24.653Z",
-                    "summary": "为同一会话草稿提供可拖动的大输入面板与明确发送手势。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:15.853Z",
+                    "summary": "为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1407166868-root-source",
+                    "id": "2026-10-22-02-github-1407166868-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/lib/index.js",
+                    "url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "README.md",
+                            "content_sha256": "6b51a2c3acf825ea8801a69900c9e9517156116be05b08306dae34a11d5fb969"
+                        },
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "package.json",
+                            "content_sha256": "bf197ae5db665916a85c1e896376b70258ff36b4742226dc4f37381943cfb484"
+                        },
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "lib/index.js",
+                            "content_sha256": "fc9e3c99fadbdaee3ae76d0ea9e4bcf53687637e77e4232807acd1304d2a3cf9"
+                        },
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "src/client.js",
+                            "content_sha256": "dd05671996f2c50a540d0e0d380e5704177bd19b3e4cad849c3df7e207ef6473"
+                        },
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "lib/client.js",
+                            "content_sha256": "2b60c4075dfe347eeb4423d02526c89b053c5041b282666dd589a25d309fabe8"
+                        },
+                        {
+                            "repository_url": "https://github.com/AL-Yichen/dsh-fullscreen-input",
+                            "commit": "0e211595f4f07289ba3b713b67d47b90498fa082",
+                            "path": "build-client.mjs",
+                            "content_sha256": "28e36f9647e25822395e750576db868bd2be2a5ec86dcf0382959ac8cf005387"
+                        }
+                    ],
                     "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
-                    "captured_at": "2026-10-21T05:42:24.653Z",
-                    "summary": "核查 lib/index.js、src/client.js；浏览器slots提供面板，useInput和inputActions读写同一草稿，session scope取得insertReference；setDraft扁平化后按draftRev逐步恢复引用，submit调用宿主原动作。主机apply为空。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:15.853Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、src/client.js、lib/client.js、build-client.mjs；会话slot读useInput并通过宿主setDraft/submit，逐revision重建引用，附件复用宿主解析与文件控件。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "固定host空入口、源客户端共享草稿/引用恢复/键位/DOM选择/偏好与注册、构建包装；不穷尽全部外观和拖拽分支。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "长文本、中文输入法和附件引用混合输入，希望Enter始终换行的用户。",
+                    "text": "长提示词和多行中文输入需要更大编辑空间。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "浏览器slots提供面板，useInput和inputActions读写同一草稿，session scope取得insertReference；setDraft扁平化后按draftRev逐步恢复引用，submit调用宿主原动作。主机apply为空。",
+                    "text": "会话slot读useInput并通过宿主setDraft/submit，逐revision重建引用，附件复用宿主解析与文件控件。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "固定host空入口、源客户端共享草稿/引用恢复/键位/DOM选择/偏好与注册、构建包装；不穷尽全部外观和拖拽分支。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "1.2.4 MIT，Node>=20/DSH 0.2候选范围，源和ModuleLoader产物随包。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无额外模型调用；复杂富文本兼容、快捷键及布局维护成本高于普通textarea，外观状态本地。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 匹配客户端宿主 | 学键位/核引用附件 | 需匹配客户端和键位/引用理解；准备工时未知 |\n| 持续使用 | 浏览器草稿更新/引用重建；发送沿用宿主模型 | 核草稿/引用及多tab偏好 | 无插件新增LLM请求但发送仍计宿主费用；长草稿重建延迟未知 |\n| 失败恢复 | 主输入框和宿主状态 | 核引用/异步失败，重要文另备份 | 无独立正文备份；引用/附件/异步发送核对与恢复时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先核自己的宿主版本、输入法与引用附件保留，再替代主要输入入口。",
+                    "text": "固定宿主长文编辑可试用，先小草稿检查引用附件。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "有减少误发送和输入空间限制的设计，无真实输入法/引用正确率数据。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 更大编辑区 | 可缩放移动面板 | 可见倍数未测 |\n| 少普通Enter误发 | 精确组合键 | IME事件差异 |\n| 共用正文引用 | setDraft和恢复 | 缺API/竞态可降级 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "调用宿主submit优于模拟Enter，版本化引用恢复和事件清理有实质细节；源码注释的“只读”不改变insertReference实际写草稿。",
+                    "text": "scope适配、revision坐标恢复和effect释放可借鉴，语法检查不证明交互完整。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +247,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "避免另存一份草稿的同步分叉，直接沿用宿主队列与提交；针对引用投影损失做带版本的恢复。不是新调度器或发送协议。",
+                    "text": "大编辑区与共享草稿接线，减少窄框滚动和普通Enter发送入口。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +265,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "textarea是富文本的较贫乏投影，恢复依赖insertReference、范围及draftRev；缺能力时静默降级可能保留文本却丢引用语义。submit无返回确认后便关闭面板，动作未抛异常不等于消息已接受。",
+                    "basis": "supported",
+                    "text": "引用恢复可无声放弃，文件选择依赖首个DOM input，submit未等待异步结果即关闭面板。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +283,16 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "未验证假设：提供宿主原生富草稿编辑事务与引用恢复状态，可减少长文本引用丢失。以多引用编辑、附件上传、会话切换、IME和锁定样例比较引用身份及队列实际结果。",
+                    "text": "研究语义原子草稿/文件API、revision事务和异步发送收据，比较误发与引用丢失。当前未验证。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +301,15 @@
                             "fingerprint": "0e211595f4f07289ba3b713b67d47b90498fa082"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:42:24.653Z",
+                    "reviewed_at": "2026-10-22T09:36:15.853Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:42:24.653Z",
+            "last_checked_at": "2026-10-22T09:36:15.853Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
-                "reviewed_at": "2026-10-21T05:42:24.653Z",
+                "reviewed_at": "2026-10-22T09:36:15.853Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +321,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 4
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：扩展输入面板已有先例。 mechanism=15：共享草稿及引用恢复有机制。 transferability=10：会话API可迁移但强耦合。 simplification=4：减少复制和误发送，维护较重。",
+                    "rationale": "novelty小幅，全屏编辑已有；mechanism小幅，宿主草稿适配；transferability小幅，富文本私有契约；simplification实质，减少窄框操作。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 30,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 18,
+                        "delivery": 0,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow=9：输入到宿主提交闭环。 delivery=8：富引用和接受状态待验。 reach=10：长文本/IME用户明确。 economics=4：无误发送与效率对照。 工作流仅取25%档：主要聚合既有个人操作，未证明改变任务组织、分工或交接责任。",
+                    "rationale": "workflow实质，长文输入改善；delivery无新方式；reach实质，按钮/键位与外观；economics小幅，节时未量化。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 32,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1407166868-root-source"
+                        "2026-10-22-02-github-1407166868-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "长文本与中文输入者可先用无重要附件草稿试全屏输入；富文本扁平化可能丢引用，替代主入口前核draftRev恢复和发送接受。",
+                "reason": "固定宿主长文输入可试用，先核多引用/附件/发送状态；不依赖其独立草稿归档或绝对IME安全保证。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "长文本换行、空间与附件混输需求具体。"
+                        "rationale": "长文多行编辑需求明确。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "使用原草稿动作和引用恢复降低误发送及空间限制。"
+                        "rationale": "共享草稿比外部复制省步骤。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核inputActions和恢复协议，缺能力静默降级未真实测试。"
+                        "rationale": "固定关键链可查，复杂富文本和IME效果需具体契约。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无新增模型费，但富文本及快捷键兼容维护高，需保留原稿。"
+                        "score": 15,
+                        "rationale": "纯客户端无新增后端，恢复需回主框核状态。"
                     }
                 },
-                "score": 65,
+                "score": 70,
                 "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:36:15.853Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1407166868-root-source"
+                    "2026-10-22-02-github-1407166868-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,74 +400,54 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "72dce34c8a5cf9f0d5aefc4ea1a4e3318f802108a92deef3a3d9cc94282a2038"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "cc5fcbd9c24444f291475560c6af74a112c8088e5dd79f27d1e9e5270719c668"
         },
         "publication.metadata": "data/plugins/al-yichen--dsh-fullscreen-input/META.json",
         "publication.summaries": {
-            "text": "为同一会话草稿提供可拖动的大输入面板与明确发送手势。",
+            "text": "为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。",
             "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
             "source_url": "https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/README.md"
         },
         "publication.capabilities": {
             "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
             "items": {
-                "界面": "共享会话草稿的大输入面板与外观设置"
-            }
+                "界面": "全屏共享草稿面板、外观与快捷键"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 全屏编辑 | 长文输入 | 共享宿主草稿无独立备份 |\n| 引用/附件 | 保持输入语义 | 恢复API与DOM适配 |\n| 明确发送键 | 普通Enter换行 | IME/异步回执 |"
         },
         "publication.advice": {
             "revision": "0e211595f4f07289ba3b713b67d47b90498fa082",
-            "text": "先核自己的宿主版本、输入法与引用附件保留，再替代主要输入入口。"
+            "text": "固定宿主长文编辑可试用，先小草稿检查引用附件。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/al-yichen--dsh-fullscreen-input",
-        "reports": "# dsh-fullscreen-input\n\n> 为同一会话草稿提供可拖动的大输入面板与明确发送手势。\n\n## 使用建议\n\n先核自己的宿主版本、输入法与引用附件保留，再替代主要输入入口。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：长文本、中文输入法和附件引用混合输入，希望Enter始终换行的用户。\n- **亮点**：避免另存一份草稿的同步分叉，直接沿用宿主队列与提交；针对引用投影损失做带版本的恢复。不是新调度器或发送协议。\n- **思考**：textarea是富文本的较贫乏投影，恢复依赖insertReference、范围及draftRev；缺能力时静默降级可能保留文本却丢引用语义。submit无返回确认后便关闭面板，动作未抛异常不等于消息已接受。\n- **建议**：未验证假设：提供宿主原生富草稿编辑事务与引用恢复状态，可减少长文本引用丢失。以多引用编辑、附件上传、会话切换、IME和锁定样例比较引用身份及队列实际结果。\n\n## 场景与替代办法\n\n参照宿主composer与普通独立textarea；增量是共用草稿/提交动作，并尝试保留富文本引用。\n\n## 能力清单\n\n- **界面**：共享会话草稿的大输入面板与外观设置\n\n## 依赖与流程\n\n浏览器slots提供面板，useInput和inputActions读写同一草稿，session scope取得insertReference；setDraft扁平化后按draftRev逐步恢复引用，submit调用宿主原动作。主机apply为空。\n\n宿主slots/locale、会话inputActions及per-session conversation能力；本地存储只存面板外观偏好。\n\n打开面板→编辑共享投影→恢复引用→附件调用宿主动作→按钮或Ctrl/CmdEnter提交→关闭；普通Enter/ShiftEnter换行，IME guard先行。\n\n## 成本与效果\n\n无额外模型调用；复杂富文本兼容、快捷键及布局维护成本高于普通textarea，外观状态本地。\n\n有减少误发送和输入空间限制的设计，无真实输入法/引用正确率数据。\n\n## 核心贡献\n\n避免另存一份草稿的同步分叉，直接沿用宿主队列与提交；针对引用投影损失做带版本的恢复。不是新调度器或发送协议。\n\n## 关键质疑\n\ntextarea是富文本的较贫乏投影，恢复依赖insertReference、范围及draftRev；缺能力时静默降级可能保留文本却丢引用语义。submit无返回确认后便关闭面板，动作未抛异常不等于消息已接受。\n\n## 工程亮点\n\n调用宿主submit优于模拟Enter，版本化引用恢复和事件清理有实质细节；源码注释的“只读”不改变insertReference实际写草稿。\n\n源码依据：[lib/index.js](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/lib/index.js)、[src/client.js](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js)。\n\n## 未来设计假设（未验证）\n\n未验证假设：提供宿主原生富草稿编辑事务与引用恢复状态，可减少长文本引用丢失。以多引用编辑、附件上传、会话切换、IME和锁定样例比较引用身份及队列实际结果。\n\n核共享草稿一致性、引用范围恢复失败提示、IME、忙状态与提交拒绝；本轮未输入或发消息。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：16fef7ce66f66900740e038a4e4dd9c0d8e7763a98b5b43e5b2806dcd60af59d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 715 | — | — | 17435 |\n| .mjs | source | 1 | 46 | 19 | 23 | — |\n| .js | source | 3 | 6178 | 3886 | 2025 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AL-Yichen/dsh-fullscreen-input](https://github.com/AL-Yichen/dsh-fullscreen-input)\n- **版本号**：1.2.4（[固定提交 0e211595](https://github.com/AL-Yichen/dsh-fullscreen-input/tree/0e211595f4f07289ba3b713b67d47b90498fa082)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：lib/index.js、src/client.js、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：核共享草稿一致性、引用范围恢复失败提示、IME、忙状态与提交拒绝；本轮未输入或发消息。\n",
+        "reports": "# dsh-fullscreen-input\n\n> 为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。\n\n## 研究范围\n\n- **仓库**：[AL-Yichen/dsh-fullscreen-input](https://github.com/AL-Yichen/dsh-fullscreen-input)\n- **版本号**：1.2.4（[固定提交 0e211595f4f07289ba3b713b67d47b90498fa082](https://github.com/AL-Yichen/dsh-fullscreen-input/tree/0e211595f4f07289ba3b713b67d47b90498fa082)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n纯客户端编辑与键位控制可查，引用恢复/DOM选择和异步发送回执存在具体适配边界。\n\n## 洞察短评\n\n- **用途**：长提示词和多行中文输入需要更大编辑空间。详见[Q01](#research-q01)。\n- **亮点**：大编辑区与共享草稿接线，减少窄框滚动和普通Enter发送入口。详见[Q01](#research-q01)。\n- **思考**：引用恢复可无声放弃，文件选择依赖首个DOM input，submit未等待异步结果即关闭面板。详见[Q03](#research-q03)。\n- **建议**：研究语义原子草稿/文件API、revision事务和异步发送收据，比较误发与引用丢失。当前未验证。详见[Q05](#research-q05)。\n\n采用建议：固定宿主长文编辑可试用，先小草稿检查引用附件。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n大编辑区与共享草稿接线，减少窄框滚动和普通Enter发送入口。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n引用恢复可无声放弃，文件选择依赖首个DOM input，submit未等待异步结果即关闭面板。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究语义原子草稿/文件API、revision事务和异步发送收据，比较误发与引用丢失。当前未验证。详见[Q05](#research-q05)。\n\n进一步从多引用/恢复中输入、DOM多控件和async拒绝探讨语义API。\n\n## 场景与替代办法\n\n长提示词和多行中文输入需要更大编辑空间。详见[Q01](#research-q01)。\n\n原输入框或外部编辑器复制，便利不等新增模型能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| 匹配DSH客户端slot/API | 共享输入 | 版本敏感 |\n| insertReference/draftRev | 富文本恢复 | 缺少则降纯文本 |\n| 宿主file input | 文件选择 | DOM顺序风险 |\n| localStorage | 外观记忆 | 禁用仅运行期 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| F2/按钮打开 | 用户 | 会话正确 |\n| 编辑小草稿 | 用户 | 主框/引用同步 |\n| 核附件再发送 | 用户 | 宿主收到/错误可见 |\n| 异常回主框 | 用户 | 保留正文与引用 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 匹配客户端宿主 | 学键位/核引用附件 | 需匹配客户端和键位/引用理解；准备工时未知 |\n| 持续使用 | 浏览器草稿更新/引用重建；发送沿用宿主模型 | 核草稿/引用及多tab偏好 | 无插件新增LLM请求但发送仍计宿主费用；长草稿重建延迟未知 |\n| 失败恢复 | 主输入框和宿主状态 | 核引用/异步失败，重要文另备份 | 无独立正文备份；引用/附件/异步发送核对与恢复时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 更大编辑区 | 可缩放移动面板 | 可见倍数未测 |\n| 少普通Enter误发 | 精确组合键 | IME事件差异 |\n| 共用正文引用 | setDraft和恢复 | 缺API/竞态可降级 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**全屏共享草稿如何保持发送/引用语义，客户端适配与成本如何影响采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 全屏输入解决什么问题？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向长提示词、多行中文输入和附件/引用较多的用户，提供可移动缩放的textarea面板，编辑同一宿主会话草稿，避免在窄输入框来回滚。Enter/Shift+Enter留给换行，明确Ctrl/Cmd+Enter或按钮发送，减少普通Enter误发入口。贡献是独立编辑视图与宿主草稿/引用/附件接线，不是新编辑协议或模型能力。\n\nREADME说一次可见十几倍文本和原输入法10毫秒问题是作者场景说明，本次没有测屏幕和输入法时序，不能作为量化效率或所有IME无误发保证。成功要同时满足正文、引用芯片、附件和发送目标与主输入框一致，而不是textarea内容看起来相同。替代为原输入框或外部编辑器复制。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-23](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/README.md#L7-L23)\n\n作者场景与效果主张。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n给 DSH 的输入框加一个**全屏输入面板**：点开它，在整屏空间里写多行文本，写完点按钮发送。`Enter` 只换行、只有 `Ctrl+Enter` 才发送；面板可以移动、可以拖边框改大小，引用与附件都与主输入框共用同一份草稿。\n\n## 为什么需要一个全屏输入框\n\nDSH 自带的输入框只有**窄窄一条**：写长提示词时只能在一个很扁的区域里翻来覆去，引用、附件、正文全挤在一起，想通读一遍自己写了什么几乎做不到。\n\n这个面板把输入区**放大到整屏**：一次能看到的文本量是原来的十几倍；写完之后还能拖标题栏把它挪到别处、拖边框改成想要的宽高，把背后的会话露出来对照着看。**它不是只读预览，而是替换掉那条窄输入框的编辑场所**——草稿是同一份，在面板里改完关掉，主输入框里就是新内容。\n\n![深色主题下的全屏输入面板：标题栏可拖动、四边可调整大小，正文上方是引用与附件栏](docs/shots/panel-dark.jpg)\n\n*深色主题。面板背后那份草稿就是主输入框里的同一份——面板里写得开，主输入框里会因高度受限被截断。*\n\n## 顺带解决的问题\n\nDSH 原有输入框的 `Shift+Enter` 换行判定依赖一个很短的宽容窗口——输入法组合结束后的 **10 毫秒**内仍算「正在组合」。中文输入法频繁使用 Shift / Enter（切换中英、确认候选词），很容易落进这个窗口，于是 `Shift+Enter` 被误判成发送，多行文本根本写不舒服。\n\n**面板里没有「Enter 发送」这条路径**，所以这个问题在这里不存在。但它是**顺带**解决的：即使没有这个毛病，一个全屏的输入场所本身也是需要的。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:2081-2113](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2081-L2113)\n\n共享草稿与附件计数。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  const input = typeof useInput === 'function' ? useInput((s) => s) : undefined\n  const draft = draftTextOf(input === undefined || input === null ? '' : input.draft)\n  const phase = input === undefined || input === null ? 'inert' : input.phase\n  const busy = phase === 'adjudicating' || phase === 'submitting'\n  const writable = inputActions !== undefined && inputActions !== null && typeof inputActions.setDraft === 'function'\n  const sendable = inputActions !== undefined && inputActions !== null && typeof inputActions.submit === 'function'\n  const attachmentIds = input !== undefined && input !== null && Array.isArray(input.attachmentIds) ? input.attachmentIds : EMPTY_IDS\n  const attachmentCount = attachmentIds.length\n  // The chip view of the editor document. Sorted by offset by the host; empty\n  // whenever the draft has no references -- or whenever a programmatic\n  // `setDraft` has just flattened them into plain text (see rebuildReferences).\n  const occurrences = input !== undefined && input !== null && Array.isArray(input.occurrences) ? input.occurrences : EMPTY_OCCURRENCES\n  /** Monotonic editor revision; `insertReference` compares the span against it. */\n  const draftRev = input !== undefined && input !== null && typeof input.draftRev === 'number' ? input.draftRev : 0\n\n  // The store keeps attachment **ids only** (\"browser objects stay in\n  // ConversationController\"), so the descriptors -- and with them an image's\n  // preview URL -- have to be asked for by id. That lookup is a read: nothing\n  // about the host's own behaviour changes.\n  const attachmentKey = attachmentIds.join('\\u0000')\n  const [attachments, setAttachments] = React.useState(EMPTY_ATTACHMENTS)\n  React.useEffect(() => {\n    if (typeof resolveAttachments !== 'function' || attachmentIds.length === 0) {\n      setAttachments(EMPTY_ATTACHMENTS)\n      return\n    }\n    setAttachments(resolveAttachments(attachmentIds))\n  }, [attachmentKey, resolveAttachments])\n\n  /** The image currently shown in the lightbox, if any. */\n  const [preview, setPreview] = React.useState(null)\n  const empty = draft.trim() === '' && attachmentCount === 0\n  const blocked = !writable || sessionId === undefined || phase === 'inert'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1-8](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/lib/index.js#L1-L8)\n\nhost为空。\n\n```text\n/**\n * dsh-fullscreen-input — host half.\n *\n * The whole feature lives in the browser: it reads and writes the composer's own\n * draft through the client plugin API. The host half exists because a bundle has\n * to mount a row, not because there is anything for Node to do.\n */\nexport function apply() {}\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 怎样共享草稿、引用和附件？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n客户端slot conversation.input.left按session注入props，用useInput读当前draft/phase/occurrences，inputActions.setDraft整份写回，submit走宿主action而不拼消息。附件通过conversation.resolveDraftAttachments按ID读描述符，预设没有新增模型工具或服务端网络。引用是富文本芯片而draft仅剪贴板投影，setDraft会扁平化，因此先拍occurrences，再按draftRev单个insertReference恢复，计算detect坐标漂移，尝试保持引用语义。\n\n此机制需sessions.scope、会话conversation.input.for和insertReference，版本适配面比单纯textarea大。缺少insertReference直接放弃待恢复，文本仍可见但引用语义不一定保留。package约束DSH 0.2候选范围及Node>=20，客户端依赖locale/conversation/primitives/slots与React；lib为source外包ModuleLoader，固定构建脚本不需bundler。实际宿主富文本坐标/修订行为需匹配，不能仅凭作者注释认定全部兼容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:1610-1650](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L1610-L1650)\n\n会话API解析。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nfunction sessionApiFor(conversation, sessions, sessionId) {\n  const api = {}\n\n  if (conversation !== null && conversation !== undefined\n    && typeof conversation.resolveDraftAttachments === 'function') {\n    api.resolveAttachments = (ids) => {\n      try {\n        const resolved = conversation.resolveDraftAttachments(ids)\n        return Array.isArray(resolved) ? resolved : EMPTY_ATTACHMENTS\n      } catch (error) {\n        return EMPTY_ATTACHMENTS\n      }\n    }\n  }\n\n  if (sessions === null || sessions === undefined || typeof sessions.scope !== 'function') return api\n  let actx\n  try {\n    actx = sessions.scope(sessionId)\n  } catch (error) {\n    return api\n  }\n  if (actx === null || actx === undefined || typeof actx.get !== 'function') return api\n  let scoped\n  try {\n    scoped = actx.get('conversation')\n  } catch (error) {\n    return api\n  }\n  const resolver = scoped === null || scoped === undefined ? undefined : scoped.input\n  if (resolver === null || resolver === undefined || typeof resolver.for !== 'function') return api\n  let target\n  try {\n    target = resolver.for(actx)\n  } catch (error) {\n    return api\n  }\n  if (target === null || target === undefined || typeof target.insertReference !== 'function') return api\n  api.insertReference = (reference, span) => {\n    try {\n      return target.insertReference(reference, span) === true\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:2520-2542](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2520-L2542)\n\n整份写与引用拍照。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  /**\n   * Write the whole draft through the composer's own action face.\n   *\n   * `setDraft` rebuilds the editor document out of plain-text lines and does no\n   * `@` parsing, so **every reference chip in the draft is destroyed by this\n   * write**. That is invisible in the textarea — the clipboard projection reads\n   * the same before and after — but it is real loss for the host: `occurrences`\n   * empties and the composer stops treating those paths as references. So\n   * photograph the chips first, and let the effect below put them back.\n   */\n  const writeDraft = React.useCallback(\n    (next) => {\n      if (!writable) return\n      if (occurrences.length > 0) {\n        pendingRestoreRef.current = { occurrences: occurrences.slice() }\n      }\n      try {\n        inputActions.setDraft(next)\n      } catch (error) {\n        console.warn('fullscreen-input: setDraft refused the write', error)\n      }\n    },\n    [inputActions, writable, occurrences],\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:2618-2672](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2618-L2672)\n\n逐修订恢复和失败放弃。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n   * `insertReference` is revision-guarded — the span carries the `draftRev` it\n   * was planned against — so each insertion invalidates the span of the next.\n   * Rather than guess how the host advances that counter, this inserts a single\n   * chip per pass and lets the next revision re-enter the effect.\n   *\n   * **The span is in the host's *detect* coordinates, not the clipboard ones the\n   * plan is built in.** A chip is one character (`U+FFFC`) in the detect\n   * projection but its whole `@path` in the clipboard projection\n   * (`$composerLayout` pushes exactly that pair), so every chip already put back\n   * has shortened detect space by `length - 1` relative to the offsets the plan\n   * holds. Carrying that drift is not an optimisation: without it the second\n   * insertion aims past its text, `selectSpan` refuses the range, and the pass\n   * ends — the first reference comes back and every later one stays plain text.\n   */\n  React.useEffect(() => {\n    const pending = pendingRestoreRef.current\n    if (pending === null) return\n    if (typeof insertReference !== 'function') {\n      pendingRestoreRef.current = null\n      return\n    }\n    if (pending.plan === undefined) {\n      pending.plan = planReferenceRebuild(draft, pending.occurrences)\n      pending.index = 0\n      pending.drift = 0\n    }\n    if (pending.index >= pending.plan.length) {\n      pendingRestoreRef.current = null\n      return\n    }\n    const step = pending.plan[pending.index]\n    let applied = false\n    try {\n      applied = insertReference(step.insert, {\n        start: step.start - pending.drift,\n        end: step.end - pending.drift,\n        draftRev,\n      }) === true\n    } catch (error) {\n      applied = false\n    }\n    if (!applied) {\n      pendingRestoreRef.current = null\n      return\n    }\n    // The host also appends a separating space when the span is not already\n    // followed by one, which lengthens the clipboard projection instead — so it\n    // cancels one unit of drift the other way. Read from the plan's own draft,\n    // which is the text the host saw when it made that decision.\n    const tail = draft.charAt(step.end)\n    const chip = step.insert.clipboardText\n    pending.drift += (chip.length - 1) - (tail === ' ' ? 0 : 1)\n    pending.index += 1\n    if (pending.index >= pending.plan.length) pendingRestoreRef.current = null\n  }, [draft, draftRev, insertReference])\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client.js:3047-3057](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L3047-L3057)\n\nslot会话注入。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    slots.inject('conversation.input.left', () =>\n      slots.register({\n        name: 'conversation.input.left',\n        id: DOCK_ID,\n        order: DOCK_ORDER,\n        locale: NS,\n        // Session-scoped props. This callback is the supported way for a slot\n        // component to reach its session's service scope, and it is how the\n        // panel gets the one verb `inputActions` does not carry.\n        inject: (sessionId) => sessionApiFor(conversation, sessions, sessionId),\n      }, FullscreenInputDock),\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:45-64](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/package.json#L45-L64)\n\n版本和客户端声明。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"dsh\": {\n    \"manifestVersion\": 1,\n    \"engines\": {\n      \"dsh\": \">=0.2.0-rc.1 <0.3.0-0\"\n    },\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-conversation\",\n        \"@deepseek-ai/dsh-client-ui-primitives\",\n        \"@deepseek-ai/dsh-client-ui-slots\"\n      ]\n    }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[build-client.mjs:1-20](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/build-client.mjs#L1-L20)\n\n构建包装契约。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/**\n * Rebuild lib/client.js from src/client.js.\n *\n * The browser artifact is the source wrapped in the shell's module-loader call.\n * Keeping the build here — rather than in a bundler — is deliberate: this half\n * imports nothing at build time (React arrives through the factory's `require`,\n * and the optional primitives lookup is guarded at runtime), so there is nothing\n * to resolve and nothing to tree-shake. The wrapper is the whole build.\n *\n *   node build-client.mjs\n *\n * The emitted shape is the one the shell's dynamic module table expects: the\n * factory body is source that assigns `module.exports`, and the wrapper returns\n * it. This is the same contract the shipped client bundles use.\n *\n *   window.__ModuleLoader__.load({ id: \"<package name>\", factory: (require) => {\n *   var module = { exports: {} }; var exports = module.exports;\n *   <src/client.js verbatim>\n *   return module.exports; } });\n */\n```\n\n</details>\n\n#### 缺口\n\n- 宿主对应版本insertReference坐标、同步返回值与draftRev更新时序\n  **影响：**普通文本一致不能证明多引用与并发编辑时语义完整\n  **进一步探讨：**按宿主契约核对多引用、快速输入/切会话与缺API降级\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 发送和文件选择有哪些具体边界？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nkeydown先检查native isComposing/keyCode229，再只允许Ctrl/Cmd+Enter且无Shift/Alt，不处理普通Enter，repeat拦截减少长按重复发送；但其IME判断依赖浏览器事件，组合结束后已清标的Enter不一定可由该分支识别，不能给绝对不误发结论。send检查blocked/busy/empty后调用submit，不等待返回promise就关面板，catch仅捕获同步throw；异步拒绝需宿主负责状态与提示，面板关闭不是发送成功收据。\n\n引用恢复失败或缺API会清pending，无显式降级提示；多芯片恢复逐render，与新的整份写相交需核对。添加文件不走稳定插件API，而查询document中第一个可用input[type=file][multiple]，多面板/其他插件文件控件时可能选错目标，DOM顺序变化也会失效。它复用宿主上传/引用语义，无自建上传后端，但不能声称完全不依赖宿主DOM。面板开时Ctrl/Cmd+0全document拦截，会覆盖浏览器/宿主原重置快捷键，是明确交互取舍。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:2720-2768](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2720-L2768)\n\nsubmit和键位分支。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n   * `inputActions.submit()` is the composer's shell action\n   * (`shell.actions.submit` -> `shell.submit(\"queue\")`), i.e. the same path the\n   * shipped Send button uses. Nothing is assembled here and no lower layer is\n   * touched, so queueing, steering, attachments and references keep their\n   * meaning. The panel closes after the attempt; the text is not cleared by the\n   * close, it is cleared by the submit itself.\n   */\n  const send = React.useCallback(() => {\n    if (!sendable || blocked || busy || empty) return\n    try {\n      inputActions.submit()\n    } catch (error) {\n      console.warn('fullscreen-input: submit threw', error)\n      return\n    }\n    setOpen(false)\n  }, [inputActions, sendable, blocked, busy, empty])\n\n  /**\n   * The panel's only key handling, and the only keyboard route to `send`.\n   *\n   * The accelerator is the EXACT chord Ctrl+Enter (Cmd+Enter on macOS) and\n   * nothing else:\n   *\n   *   - Plain Enter and Shift+Enter fall through to the textarea's native\n   *     newline, so Shift keeps meaning \"newline\" everywhere in the panel and\n   *     Ctrl+Shift+Enter cannot become a send by accident.\n   *   - Alt/AltGraph combinations are left alone (AltGraph is how many layouts\n   *     compose characters).\n   *   - The composition guard runs FIRST and returns before the chord test, so\n   *     an IME-confirming Enter can never reach the submit path even with Ctrl\n   *     held. That ordering is the entire safety argument for shipping a\n   *     keyboard route at all.\n   */\n  const onKeyDown = React.useCallback(\n    (event) => {\n      if (event.key !== 'Enter') return\n      const native = event.nativeEvent\n      const composing = native !== undefined && native !== null\n        && (native.isComposing === true || native.keyCode === 229)\n      if (composing) return\n      const cmdOrCtrl = event.ctrlKey === true || event.metaKey === true\n      if (!cmdOrCtrl) return\n      if (event.shiftKey === true || event.altKey === true) return\n      event.preventDefault()\n      if (event.repeat === true) return\n      send()\n    },\n    [send],\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:2632-2661](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2632-L2661)\n\n恢复放弃路径。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n  React.useEffect(() => {\n    const pending = pendingRestoreRef.current\n    if (pending === null) return\n    if (typeof insertReference !== 'function') {\n      pendingRestoreRef.current = null\n      return\n    }\n    if (pending.plan === undefined) {\n      pending.plan = planReferenceRebuild(draft, pending.occurrences)\n      pending.index = 0\n      pending.drift = 0\n    }\n    if (pending.index >= pending.plan.length) {\n      pendingRestoreRef.current = null\n      return\n    }\n    const step = pending.plan[pending.index]\n    let applied = false\n    try {\n      applied = insertReference(step.insert, {\n        start: step.start - pending.drift,\n        end: step.end - pending.drift,\n        draftRev,\n      }) === true\n    } catch (error) {\n      applied = false\n    }\n    if (!applied) {\n      pendingRestoreRef.current = null\n      return\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:1835-1858](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L1835-L1858)\n\n全document文件input。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nfunction findHostFilePicker() {\n  try {\n    const candidates = document.querySelectorAll('input[type=\"file\"][multiple]')\n    for (const node of candidates) {\n      if (node.disabled === true) continue\n      return node\n    }\n  } catch (error) {\n    // Fall through to null.\n  }\n  return null\n}\n\n/**\n * Open the host's own file dialog.\n *\n * There is no plugin-facing API for this. `pickFiles` lives on an input hub that\n * the slot props never expose, and the command menu entry that reaches it would\n * open *behind* this full-screen panel anyway — so driving the menu would mean\n * clicking an invisible item and hoping.\n *\n * What the host ultimately does is simpler than that: its own \"+\" flow ends in\n * `fileInputRef.current.click()` on a hidden `<input type=\"file\" multiple>` it\n * renders right beside the add button. Clicking that element runs exactly the\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client.js:2483-2487](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2483-L2487)\n\n全局reset拦截。\n\n```text\n      if ((event.ctrlKey || event.metaKey) && !event.altKey && event.key === '0') {\n        event.preventDefault()\n        event.stopPropagation()\n        resetPlacement()\n        return\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程实现与三阶段成本是什么？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\nhost apply空函数，所有功能在浏览器，不新增服务器/模型请求；样式/语言注册与键监听大多有effect清理，引用重建专门处理坐标和revision，比裸setDraft更细致。package check仅node --check源和产物语法，不是输入法、焦点、富文本/附件语义测试；仓库未见自动交互测试。本次只读代码/构建脚本，没有运行。\n\n首次需要匹配宿主版本并学F2/Esc/CtrlEnter，外观、尺寸/位置存localStorage而不另存正文；存储拒绝时偏好只留当前运行。持续每次编辑整份草稿可能触发引用重建，长文本/多引用的延迟未知，没有LLM费用由插件新增，但发送仍按宿主模型计费。恢复时先关闭面板查看主草稿和引用/附件是否仍在，再核宿主发送状态；本插件没有独立草稿备份，重要长文不应只依赖视图未丢失。偏好跨tab无storage事件合并，多个标签设置可能互相覆盖。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-8](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/lib/index.js#L1-L8)\n\n纯客户端。\n\n```text\n/**\n * dsh-fullscreen-input — host half.\n *\n * The whole feature lives in the browser: it reads and writes the composer's own\n * draft through the client plugin API. The host half exists because a bundle has\n * to mount a row, not because there is anything for Node to do.\n */\nexport function apply() {}\n```\n\n**依据 2 · 源码核查**：[src/client.js:709-768](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L709-L768)\n\n偏好存储。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\nfunction readSettings() {\n  try {\n    const raw = window.localStorage.getItem(SETTINGS_KEY)\n    if (raw === null) return { ...DEFAULT_SETTINGS }\n    const parsed = JSON.parse(raw)\n    if (parsed === null || typeof parsed !== 'object') return { ...DEFAULT_SETTINGS }\n    return {\n      glass: parsed.glass === true,\n      solid: parsed.solid === true,\n      mask: parsed.mask !== false,\n      maskOpacity: clampNumber(parsed.maskOpacity, 0, 100, DEFAULT_SETTINGS.maskOpacity),\n      maskFog: clampNumber(parsed.maskFog, 0, 100, DEFAULT_SETTINGS.maskFog),\n      glassOpacity: clampNumber(parsed.glassOpacity, 0, 100, DEFAULT_SETTINGS.glassOpacity),\n      solidOpacity: clampNumber(parsed.solidOpacity, 0, 100, DEFAULT_SETTINGS.solidOpacity),\n      // Accept any literal colour, not just the presets: the custom picker\n      // produces arbitrary `#rrggbb` values, and validating against\n      // `GLASS_COLORS` alone would silently discard them on the next read.\n      glassColor: parsed.glassColor === 'theme' || isGlassLiteral(parsed.glassColor)\n        ? parsed.glassColor\n        : DEFAULT_SETTINGS.glassColor,\n      glassFog: clampNumber(parsed.glassFog, 0, 100, DEFAULT_SETTINGS.glassFog),\n      panelWidth: clampNumber(parsed.panelWidth, 0, MAX_PANEL_SIDE, 0),\n      panelHeight: clampNumber(parsed.panelHeight, 0, MAX_PANEL_SIDE, 0),\n      rememberSize: parsed.rememberSize !== false,\n      rememberPosition: parsed.rememberPosition === true,\n      panelOffsetX: clampNumber(parsed.panelOffsetX, -MAX_PANEL_SIDE, MAX_PANEL_SIDE, 0),\n      panelOffsetY: clampNumber(parsed.panelOffsetY, -MAX_PANEL_SIDE, MAX_PANEL_SIDE, 0),\n      hotkey: isUsableHotkeyName(parsed.hotkey) ? parsed.hotkey : DEFAULT_SETTINGS.hotkey,\n      hintMuted: parsed.hintMuted === true,\n    }\n  } catch (error) {\n    return { ...DEFAULT_SETTINGS }\n  }\n}\n\n/** Current settings, kept as one immutable object so React can compare identity. */\nlet currentSettings = readSettings()\nconst settingsListeners = new Set()\n\nfunction getSettings() {\n  return currentSettings\n}\n\n/** Subscribe to settings changes; returns the unsubscribe. */\nfunction subscribeSettings(listener) {\n  settingsListeners.add(listener)\n  return () => {\n    settingsListeners.delete(listener)\n  }\n}\n\n/** Merge a patch, publish it, and persist it (a refused write is non-fatal). */\nfunction writeSettings(patch) {\n  currentSettings = { ...currentSettings, ...patch }\n  for (const listener of [...settingsListeners]) listener()\n  try {\n    window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(currentSettings))\n  } catch (error) {\n    /* the choice simply does not survive a reload */\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:2508-2511](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2508-L2511)\n\n键监听释放。\n\n```text\n    document.addEventListener('keydown', onKeyDownCapture, true)\n    return () => {\n      document.removeEventListener('keydown', onKeyDownCapture, true)\n    }\n```\n\n**依据 4 · 源码核查**：[src/client.js:3019-3044](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L3019-L3044)\n\n样式/语言释放。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction contribute(ctx) {\n  const removeSheet = installSheet()\n  if (removeSheet !== null) {\n    // No \"already installed\" flag is kept: `installSheet` decides that itself by\n    // looking for the tag, so a flag here would be written and never read.\n    ctx.effect(() => removeSheet, 'dsh-fullscreen-input: panel sheet teardown')\n  }\n\n  const register = (slots, locale, sessions, conversation) => {\n    if (slots === undefined || slots === null || typeof slots.inject !== 'function') {\n      console.warn('fullscreen-input: the slots service is unavailable; no toolbar button was added')\n      return\n    }\n    if (locale !== undefined && locale !== null && typeof locale.register === 'function') {\n      // The single-locale form is the one for a namespace outside the merge\n      // table: the built-in ids are exactly 'zh' and 'en'.\n      ctx.effect(\n        () => {\n          const offZh = locale.register(NS, 'zh', DICT.zh)\n          const offEn = locale.register(NS, 'en', DICT.en)\n          return () => {\n            offEn()\n            offZh()\n          }\n        },\n        'dsh-fullscreen-input: locale dictionaries',\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:66-69](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/package.json#L66-L69)\n\n语法检查。\n\n```text\n  \"scripts\": {\n    \"build\": \"node build-client.mjs\",\n    \"check\": \"node --check lib/client.js && node --check lib/index.js && node --check src/client.js\"\n  }\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用建议和继续探讨方向是什么？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n长文本编辑场景可试用，先用无敏感短草稿核对主框同步、多引用与附件，然后扩展日常使用；针对固定DSH版本，不把纯文本显示等同富文本完整。若引用变文本、选文件落错会话或面板关了但发送失败，回宿主输入框核实际草稿/状态。需要可靠离线草稿归档、多窗并发编辑或严格发送回执时，当前插件不能独自承担。\n\n进一步可研究宿主提供语义保留的原子草稿编辑/文件选择API、基于修订号的事务更新和异步submit完成回执；缺引用恢复API时明确提示并阻止无声语义降级。基线为当前全量setDraft后逐引用恢复/首DOM文件输入，反例包括多同名引用、快速连打、恢复中切会话、多file input、async拒绝和不同IME组合尾键。比较误发、引用丢失、错目标、编辑延迟与恢复工时，当前未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:2520-2542](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2520-L2542)\n\n编辑基线。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  /**\n   * Write the whole draft through the composer's own action face.\n   *\n   * `setDraft` rebuilds the editor document out of plain-text lines and does no\n   * `@` parsing, so **every reference chip in the draft is destroyed by this\n   * write**. That is invisible in the textarea — the clipboard projection reads\n   * the same before and after — but it is real loss for the host: `occurrences`\n   * empties and the composer stops treating those paths as references. So\n   * photograph the chips first, and let the effect below put them back.\n   */\n  const writeDraft = React.useCallback(\n    (next) => {\n      if (!writable) return\n      if (occurrences.length > 0) {\n        pendingRestoreRef.current = { occurrences: occurrences.slice() }\n      }\n      try {\n        inputActions.setDraft(next)\n      } catch (error) {\n        console.warn('fullscreen-input: setDraft refused the write', error)\n      }\n    },\n    [inputActions, writable, occurrences],\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:2632-2672](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2632-L2672)\n\n恢复基线。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n  React.useEffect(() => {\n    const pending = pendingRestoreRef.current\n    if (pending === null) return\n    if (typeof insertReference !== 'function') {\n      pendingRestoreRef.current = null\n      return\n    }\n    if (pending.plan === undefined) {\n      pending.plan = planReferenceRebuild(draft, pending.occurrences)\n      pending.index = 0\n      pending.drift = 0\n    }\n    if (pending.index >= pending.plan.length) {\n      pendingRestoreRef.current = null\n      return\n    }\n    const step = pending.plan[pending.index]\n    let applied = false\n    try {\n      applied = insertReference(step.insert, {\n        start: step.start - pending.drift,\n        end: step.end - pending.drift,\n        draftRev,\n      }) === true\n    } catch (error) {\n      applied = false\n    }\n    if (!applied) {\n      pendingRestoreRef.current = null\n      return\n    }\n    // The host also appends a separating space when the span is not already\n    // followed by one, which lengthens the clipboard projection instead — so it\n    // cancels one unit of drift the other way. Read from the plan's own draft,\n    // which is the text the host saw when it made that decision.\n    const tail = draft.charAt(step.end)\n    const chip = step.insert.clipboardText\n    pending.drift += (chip.length - 1) - (tail === ' ' ? 0 : 1)\n    pending.index += 1\n    if (pending.index >= pending.plan.length) pendingRestoreRef.current = null\n  }, [draft, draftRev, insertReference])\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.js:2727-2736](https://github.com/AL-Yichen/dsh-fullscreen-input/blob/0e211595f4f07289ba3b713b67d47b90498fa082/src/client.js#L2727-L2736)\n\n发送回执。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  const send = React.useCallback(() => {\n    if (!sendable || blocked || busy || empty) return\n    try {\n      inputActions.submit()\n    } catch (error) {\n      console.warn('fullscreen-input: submit threw', error)\n      return\n    }\n    setOpen(false)\n  }, [inputActions, sendable, blocked, busy, empty])\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：16fef7ce66f66900740e038a4e4dd9c0d8e7763a98b5b43e5b2806dcd60af59d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 715 | — | — | 17435 |\n| .mjs | source | 1 | 46 | 19 | 23 | — |\n| .js | source | 3 | 6178 | 3886 | 2025 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 全屏编辑 | 长文输入 | 共享宿主草稿无独立备份 |\n| 引用/附件 | 保持输入语义 | 恢复API与DOM适配 |\n| 明确发送键 | 普通Enter换行 | IME/异步回执 |\n\n## 工程亮点\n\nscope适配、revision坐标恢复和effect释放可借鉴，语法检查不证明交互完整。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、src/client.js、lib/client.js、build-client.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定host空入口、源客户端共享草稿/引用恢复/键位/DOM选择/偏好与注册、构建包装；不穷尽全部外观和拖拽分支。\n- 下一步：进一步从多引用/恢复中输入、DOM多控件和async拒绝探讨语义API。\n",
         "metadata": {
             "repository": "AL-Yichen/dsh-fullscreen-input",
             "repository_id": 1407166868,
-            "captured_at": "2026-10-21T05:33:59.909Z",
-            "window_start": "2026-09-21T05:33:59.909Z",
+            "captured_at": "2026-10-22T06:16:14.744Z",
+            "window_start": "2026-09-22T06:16:14.744Z",
             "stars": 4,
             "pushed_at": "2026-10-17T03:47:56Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F304:507C6:5569B4:5B77F0:6AD84EC9 and timestamp 2026-10-21 05:34:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F426:272FB3:5289C9:589551:6AD84ECA and timestamp 2026-10-21 05:34:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F53A:19A250:512DE0:5738CC:6AD84ECB and timestamp 2026-10-21 05:34:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F642:272FB3:528AAB:589673:6AD84ECB and timestamp 2026-10-21 05:34:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAL-Yichen%2Fdsh-fullscreen-input%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A59.909Z..2026-10-21T05%3A33%3A59.909Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F746:271056:53B90C:59C42D:6AD84ECC and timestamp 2026-10-21 05:34:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-fullscreen-input",
-                "captured_at": "2026-10-21T05:34:05.056Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:16:22.785Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 748,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-fullscreen-input",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-fullscreen-input",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-06T11:58:49.743Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:16:22.785Z",
                     "source_url": "https://registry.npmjs.org/dsh-fullscreen-input",
                     "error": null,
                     "latest_version": "1.2.4",

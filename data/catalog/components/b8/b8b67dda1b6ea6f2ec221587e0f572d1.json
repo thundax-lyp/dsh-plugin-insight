@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-study-coach",
             "entry_type": "plugin",
-            "technical_category": "memory-knowledge",
-            "business_category": "research-knowledge",
+            "technical_category": "agent-workflow",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,142 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1400498179-root-directory-0",
+                    "id": "2026-10-22-02-github-1400498179-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:21:08.135Z",
+                    "retrieved_at": "2026-10-22T09:36:22.889Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1400498179-root-author",
+                    "id": "2026-10-22-02-github-1400498179-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "README.md",
+                            "content_sha256": "6d6cf83168ac317ce723569d902f71e3ed830d69bf4e20141e8d07b25847587a"
+                        }
+                    ],
                     "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
-                    "captured_at": "2026-10-21T08:21:08.135Z",
-                    "summary": "用学习教练预设、知识图谱和证据账本组织个人学习，面板与专属工具共享学习档案。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/ame-choo--dsh-study-coach/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:22.889Z",
+                    "summary": "以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ame-choo--dsh-study-coach/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1400498179-root-source",
+                    "id": "2026-10-22-02-github-1400498179-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/index.js",
+                    "url": "https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "README.md",
+                            "content_sha256": "6d6cf83168ac317ce723569d902f71e3ed830d69bf4e20141e8d07b25847587a"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "package.json",
+                            "content_sha256": "47405cf95d854aa4964b3d31c3532bec1ab8278d61b39ed59a18cadc0ae9d361"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "index.js",
+                            "content_sha256": "6eb8ae5bd3351a25047daaa1d470f634c1485e20e4cc5b5e4b8366db3d1fba0d"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/preset.js",
+                            "content_sha256": "95dd8c886bfbe4cf0d3a790e0bf4d32095e316322947b93aead8765000d8f7c0"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/preset-tools.js",
+                            "content_sha256": "92203ed15d7257ab66e3909fc6ff9d1e8d3cbdfaa40926b485365846a929c0a2"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "skills/study-coach/SKILL.md",
+                            "content_sha256": "3978f0f03e220b9f1b92ce036fb30bec5f4a7403cbc0abd5f468a3417e44e7a7"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/tools.js",
+                            "content_sha256": "b914a887b3d179457264f22cace7205203472d5d0c3bd44915296d72f0da342d"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/map.js",
+                            "content_sha256": "7d92f49d18997b73024829f179aac6c1d54cb55ab0a58f0bbd2b003c751b6b5b"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/store.js",
+                            "content_sha256": "2676ccf8a0eb2ac556dd71d3f4ef63ec18c658af425c419e3bd0146ff7417cf3"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/library.js",
+                            "content_sha256": "ca05d53f5638f6d59dc0bcebc988997633ff7578c74639f97283d5ca7ccdea93"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/handler.js",
+                            "content_sha256": "8b173efcf81e7af1db4663376be4360f25be3360d39b395d7646be931c332135"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/routes.js",
+                            "content_sha256": "37fa229d326b1d56d50cc0165ba0954070b20d30fefebaff89970485f900256e"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/session-preset.js",
+                            "content_sha256": "abb84b14279aafd26506a920ccdeb10e916919191498b18f61ef7ae4be1c81d1"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/panel-server.js",
+                            "content_sha256": "35d9157c222e0f3de5e693d102110e6434c9d1cbdadae51ada1e5dbd8852267e"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "lib/pages.js",
+                            "content_sha256": "614dc0ab5a16be169978856ffc77119d472bf343c99ae6447df596674a6b618c"
+                        },
+                        {
+                            "repository_url": "https://github.com/Ame-Choo/dsh-study-coach",
+                            "commit": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+                            "path": "test/store.test.js",
+                            "content_sha256": "647c2471162999c853cdbd55a60f370be38415611e5e2a61e8d0712a1cbb4ca5"
+                        }
+                    ],
                     "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
-                    "captured_at": "2026-10-21T08:21:08.135Z",
-                    "summary": "核查 index.js、lib/preset.js、lib/preset-tools.js、lib/tools.js、lib/map.js、lib/store.js、lib/bridge.js、lib/panel-server.js、skills/study-coach/SKILL.md、package.json；Host提供文件档案、/study面板与会话桥；预设作用域加载21个study工具和学习Skill。掌握度以带类型的证据记录积累，gateStage限制一次升一档并按quiz/photo计数；撤销证据后可重新推导阶段，学生事实引用实际证据ID。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/ame-choo--dsh-study-coach/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:22.889Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/preset.js、lib/preset-tools.js、skills/study-coach/SKILL.md、lib/tools.js、lib/map.js、lib/store.js、lib/library.js、lib/handler.js、lib/routes.js、lib/session-preset.js、lib/panel-server.js、lib/pages.js、test/store.test.js；共享Library落JSON，预设作用域工具写数据，双HTTP面板查看/投递，证据门与重算管理掌握度。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ame-choo--dsh-study-coach/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根入口、预设与专属工具注册、掌握度闸门、文件存储、会话桥和学习Skill的重要路径；未逐一验收全部面板页面或21工具运行，不执行学习会话。",
+                        "固定host装配、预设/Skill与工具注册、掌握证据门、JSON/Library、handler/router分派、会话筛选和PDF关键链；不穷尽全部页面/21工具。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +170,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "需要长期追踪目标、材料版本、错题与复习的个人学习者；交付是可回看的学习证据和阶段判断，不能把教练给的档位当外部考试认证。",
+                    "text": "单人持续课程学习，目标/材料/证据需要跨会话回访。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +181,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "Host提供文件档案、/study面板与会话桥；预设作用域加载21个study工具和学习Skill。掌握度以带类型的证据记录积累，gateStage限制一次升一档并按quiz/photo计数；撤销证据后可重新推导阶段，学生事实引用实际证据ID。",
+                    "text": "共享Library落JSON，预设作用域工具写数据，双HTTP面板查看/投递，证据门与重算管理掌握度。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +199,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根入口、预设与专属工具注册、掌握度闸门、文件存储、会话桥和学习Skill的重要路径；未逐一验收全部面板页面或21工具运行，不执行学习会话。",
+                    "text": "固定host装配、预设/Skill与工具注册、掌握证据门、JSON/Library、handler/router分派、会话筛选和PDF关键链；不穷尽全部页面/21工具。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +217,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "DSH插件包提供学习预设及/study；预设注册依赖agentPresets服务，工具经预设模块加载；独立本地面板服务器用于浏览器入口。",
+                    "text": "0.1.0 MIT，Node>=22.13和DSH>=0.2候选版，PDF另需Python/PyMuPDF及预设官方插件。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +235,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金取决于学习会话所用模型，未见固定额外模型价格；人工要整理教材授权/版本、核验作答和维护档案；本地文件与面板也需备份，无学习增益测量。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 兼容宿主/材料/Python | 建图、页码、准入与备份 | 需材料/目标/知识图与Python页码绑定；准备费用工时未知 |\n| 持续使用 | 模型tokens/页图/JSON | 材料核实和练习记录，节时未知 | 宿主模型/视觉token和PNG/JSON存储随学习量增长；成绩收益未知 |\n| 失败恢复 | 原材料和档案备份 | 坏JSON/错归属与证据重算 | 原材料/档案备份与证据作废重算时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +253,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "有长期证据整理需求时可评估；先把档位用于复习安排，升学或资格判断仍需独立测评，不能用计数代替正确性核验。",
+                    "text": "先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +271,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "让目标、材料、进展和错题形成可追溯关系，减少遗忘上下文；材料事实和学生表现仍需可信输入。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 持续回访 | 目标/地图/任务档案 | 内容由模型学生生成 |\n| 证据掌握度 | 升级门/作废重算 | kind计数非客观测量 |\n| 面板与教练联动 | 双入口/会话投递 | 准入与preset降级 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +289,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "预设内注册工具避免全局目录扩张；证据撤销保留历史且重算状态，原子替换单个JSON，独立面板限回环地址。Skill中的证据/材料边界有助协作，但提示约定不等同硬校验。",
+                    "text": "共用gate、结构化证据及作用域工具可借鉴；默认回落和多文件恢复需更强契约。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +307,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把“教练说学会了”拆成可追溯证据、受限阶段提升与可撤销重算，并将学习工具限定在教练预设，避免污染所有会话。真正变化是学习进展的记录与修订责任，非工具数量或人格提示本身。",
+                    "text": "把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +325,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "quiz/photo标签怎样证明真实做题且做对？study_record直接接收调用方kind、note与stage；闸门确认类型和累计数量，不独立检查题目难度、重复提交、答案正确性或照片内容。证据ID存在能约束引用悬空，却不能证明掌握度；文件级临时写rename也不构成多个档案间的原子事务。",
+                    "basis": "supported",
+                    "text": "双HTTP入口本地无身份准入，坏JSON默认回落可被后写覆盖，无投影时学习会话筛选降级。详见[Q04](#research-q04)、[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +343,16 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "把“已提交作业”“已核验作答”“迁移题通过”分开，升档只消费可去重的核验证据，可能使阶段更接近真实掌握。以重复照片、自述伪装quiz、训练题通过但迁移题失败的固定案例盲评；若高档位仍不能预测独立迁移题表现，就否定该阶段设计的有效性。",
+                    "text": "研究证据去重与延迟测验、每会话profile绑定、统一准入及读错拒写/CAS恢复，比较效果和误归属。当前未验证。详见[Q07](#research-q07)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +361,15 @@
                             "fingerprint": "7c2c2d3f71cb49508e567674882eddb1b3a689ba"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:21:08.135Z",
+                    "reviewed_at": "2026-10-22T09:36:22.889Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:21:08.135Z",
+            "last_checked_at": "2026-10-22T09:36:22.889Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
-                "reviewed_at": "2026-10-21T08:21:08.135Z",
+                "reviewed_at": "2026-10-22T09:36:22.889Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +385,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "新颖性9：证据式学习档案和阶段闸门已有先例；机制15：预设作用域、计数闸门、撤销重算和引用约束具体结合；迁移性10：证据账本可用于其他成长评估；简化8：统一面板与工具存储减少手工对账，但档案维护仍复杂。",
+                    "rationale": "novelty小幅，学习档案已有；mechanism实质，作用域工具/证据门/面板结合；transferability实质，领域纯函数；simplification实质，材料与回访整合。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
+                        "workflow": 26,
+                        "delivery": 0,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "工作流18：进度提升必须留下类型化证据并可撤销，改变学习记录与修订流程；交付15：产出目标关联的证据、错题和复习账本而非一次回答；覆盖10：个人长期学习适用但缺多角色核验；经济4：可能少做手工整理，无学习收益或节省工时实测。",
+                    "rationale": "workflow显著，连续学习闭环；delivery无新商业方式；reach实质，学生面板与会话；economics小幅，整理便利无成效量化。",
                     "basis": "interpretation",
-                    "score": 47,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1400498179-root-source"
+                        "2026-10-22-02-github-1400498179-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "需长期学习档案者可试目标材料错题追踪；阶段只用于复习安排，quiz/photo标签计数不证明作答正确或真实掌握。",
+                "decision": "observe",
+                "reason": "先观察，学习记录有价值但双入口准入、旧宿主会话筛选及坏JSON覆写需处理；可信本地非唯一档案可对照。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "个人目标、材料版本和复习证据连续跟踪需求明确。"
+                        "rationale": "持续课程学习明确。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "带ID证据与可重推阶段改善跨会话追溯。"
+                        "rationale": "证据/材料链接和预设面板结合比散聊天便利。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核21工具与升档计数，答案正确性和学习增益未独立核验。"
+                        "rationale": "固定关键链可查，掌握与教学效果仍待具体测量。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "模型、教材授权、事实输入核查与档案备份仍有持续成本。"
+                        "score": 5,
+                        "rationale": "内容整理、权限和损坏恢复负担较高。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:36:22.889Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1400498179-root-source"
+                    "2026-10-22-02-github-1400498179-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,79 +460,59 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "3a0b1694c5837d8153612788c3239b0b6be2ab9d6ca7f8e3cc48af0216d65d78"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "4a2dbb5d809157d0654809bf7b3dd8cd13353d17a3522fe583f9ed458010e52f"
         },
         "publication.metadata": "data/plugins/ame-choo--dsh-study-coach/META.json",
         "publication.summaries": {
-            "text": "用学习教练预设、知识图谱和证据账本组织个人学习，面板与专属工具共享学习档案。",
+            "text": "以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。",
             "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
             "source_url": "https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/README.md"
         },
         "publication.capabilities": {
             "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
             "items": {
-                "Skill": "学习教练材料、证据与阶段约定，经预设customSkillDirs加载。",
-                "Agent/Preset": "study-coach学习预设及其专属工具模块。",
-                "模型工具": "预设作用域21个study工具管理学习档案和证据。",
-                "Host 路由": "/study面板与档案接口。",
-                "界面": "目标、图谱、掌握度、错题等学习面板。",
-                "后台": "本地独立面板服务器及会话事件桥。"
-            }
+                "Agent/Preset": "学习教练预设",
+                "Skill": "随包study-coach学习工作法",
+                "模型工具": "预设作用域21个study_*",
+                "界面": "八页学习面板与宿主入口",
+                "Host 路由": "/study及独立loopback端口同handler",
+                "后台": "SSE与面板服务生命周期"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 预设/Skill/工具 | 教练建图记录 | 内容和判断需核 |\n| 掌握证据门 | 渐进升级与重算 | 来源/独立性未知 |\n| 面板/桥接 | 学生回访和投话 | 本地单用户边界 |"
         },
         "publication.advice": {
             "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
-            "text": "有长期证据整理需求时可评估；先把档位用于复习安排，升学或资格判断仍需独立测评，不能用计数代替正确性核验。"
+            "text": "先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。详见[Q07](#research-q07)。"
         },
         "registry": "data/plugins/ame-choo--dsh-study-coach",
-        "reports": "# dsh-study-coach\n\n> 用学习教练预设、知识图谱和证据账本组织个人学习，面板与专属工具共享学习档案。\n\n## 使用建议\n\n有长期证据整理需求时可评估；先把档位用于复习安排，升学或资格判断仍需独立测评，不能用计数代替正确性核验。\n\n核查状态：预设隔离、证据计数闸门和档案读写源码可确认；实际教学效果、证据真实性与宿主端到端交互未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：需要长期追踪目标、材料版本、错题与复习的个人学习者；交付是可回看的学习证据和阶段判断，不能把教练给的档位当外部考试认证。\n- **亮点**：把“教练说学会了”拆成可追溯证据、受限阶段提升与可撤销重算，并将学习工具限定在教练预设，避免污染所有会话。真正变化是学习进展的记录与修订责任，非工具数量或人格提示本身。\n- **思考**：quiz/photo标签怎样证明真实做题且做对？study_record直接接收调用方kind、note与stage；闸门确认类型和累计数量，不独立检查题目难度、重复提交、答案正确性或照片内容。证据ID存在能约束引用悬空，却不能证明掌握度；文件级临时写rename也不构成多个档案间的原子事务。\n- **建议**：把“已提交作业”“已核验作答”“迁移题通过”分开，升档只消费可去重的核验证据，可能使阶段更接近真实掌握。以重复照片、自述伪装quiz、训练题通过但迁移题失败的固定案例盲评；若高档位仍不能预测独立迁移题表现，就否定该阶段设计的有效性。\n\n## 场景与替代办法\n\n需要长期追踪目标、材料版本、错题与复习的个人学习者；交付是可回看的学习证据和阶段判断，不能把教练给的档位当外部考试认证。\n\n普通聊天辅导加笔记/间隔复习工具；本项统一证据与阶段账本，教学正确性仍须外部参照。\n\n## 能力清单\n\n- **Skill**：学习教练材料、证据与阶段约定，经预设customSkillDirs加载。\n- **Agent/Preset**：study-coach学习预设及其专属工具模块。\n- **模型工具**：预设作用域21个study工具管理学习档案和证据。\n- **Host 路由**：/study面板与档案接口。\n- **界面**：目标、图谱、掌握度、错题等学习面板。\n- **后台**：本地独立面板服务器及会话事件桥。\n\n## 依赖与流程\n\nHost提供文件档案、/study面板与会话桥；预设作用域加载21个study工具和学习Skill。掌握度以带类型的证据记录积累，gateStage限制一次升一档并按quiz/photo计数；撤销证据后可重新推导阶段，学生事实引用实际证据ID。\n\nDSH webServer/tools、可选agentPresets/sessionController，浏览器与可写本地学习目录；教学模型和教材来源另由用户选择。\n\n建目标与材料→起草/确认知识图→学习和作答→工具记录证据→闸门推进阶段→错题/复习→必要时撤销并重算；面板和会话共享档案。\n\nDSH插件包提供学习预设及/study；预设注册依赖agentPresets服务，工具经预设模块加载；独立本地面板服务器用于浏览器入口。\n\n## 成本与效果\n\n现金取决于学习会话所用模型，未见固定额外模型价格；人工要整理教材授权/版本、核验作答和维护档案；本地文件与面板也需备份，无学习增益测量。\n\n让目标、材料、进展和错题形成可追溯关系，减少遗忘上下文；材料事实和学生表现仍需可信输入。\n\n## 核心贡献\n\n把“教练说学会了”拆成可追溯证据、受限阶段提升与可撤销重算，并将学习工具限定在教练预设，避免污染所有会话。真正变化是学习进展的记录与修订责任，非工具数量或人格提示本身。\n\n## 关键质疑\n\nquiz/photo标签怎样证明真实做题且做对？study_record直接接收调用方kind、note与stage；闸门确认类型和累计数量，不独立检查题目难度、重复提交、答案正确性或照片内容。证据ID存在能约束引用悬空，却不能证明掌握度；文件级临时写rename也不构成多个档案间的原子事务。\n\n## 工程亮点\n\n预设内注册工具避免全局目录扩张；证据撤销保留历史且重算状态，原子替换单个JSON，独立面板限回环地址。Skill中的证据/材料边界有助协作，但提示约定不等同硬校验。\n\n固定源码依据：[index.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/index.js)、[lib/preset.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/preset.js)、[lib/preset-tools.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/preset-tools.js)、[lib/tools.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/tools.js)、[lib/map.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/map.js)、[lib/store.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/store.js)、[lib/bridge.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/bridge.js)、[lib/panel-server.js](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/panel-server.js)、[skills/study-coach/SKILL.md](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/skills/study-coach/SKILL.md)、[package.json](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/package.json)。\n\n## 未来设计假设（未验证）\n\n把“已提交作业”“已核验作答”“迁移题通过”分开，升档只消费可去重的核验证据，可能使阶段更接近真实掌握。以重复照片、自述伪装quiz、训练题通过但迁移题失败的固定案例盲评；若高档位仍不能预测独立迁移题表现，就否定该阶段设计的有效性。\n\n未执行；拟逐项检查重复/伪标签证据能否升档、撤销能否重算及独立迁移题表现，另测缺预设服务与会话桥失败时降级。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：87e83aa1b4285ce7bc5e7c9a0ae06154ccc55f186b5dee544441f0703def725e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 3637 | — | — | 81434 |\n| .js | source | 39 | 18650 | 14578 | 2893 | — |\n| .mjs | source | 5 | 404 | 284 | 90 | — |\n| .js | test | 46 | 12456 | 10023 | 1143 | — |\n\n排除 25 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.0；版本日期：2026-10-14（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[7c2c2d3f](https://github.com/Ame-Choo/dsh-study-coach/tree/7c2c2d3f71cb49508e567674882eddb1b3a689ba)；本轮基准：2026-10-21T07:52:12Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根入口、预设与专属工具注册、掌握度闸门、文件存储、会话桥和学习Skill的重要路径；未逐一验收全部面板页面或21工具运行，不执行学习会话。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-study-coach\n\n> 以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。\n\n## 研究范围\n\n- **仓库**：[Ame-Choo/dsh-study-coach](https://github.com/Ame-Choo/dsh-study-coach)\n- **版本号**：0.1.0（[固定提交 7c2c2d3f71cb49508e567674882eddb1b3a689ba](https://github.com/Ame-Choo/dsh-study-coach/tree/7c2c2d3f71cb49508e567674882eddb1b3a689ba)）\n- **版本日期**：2026-10-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n学习闭环与证据记账可查，掌握测量仍由输入决定，访问/数据恢复及会话降级边界需闭合。\n\n## 洞察短评\n\n- **用途**：单人持续课程学习，目标/材料/证据需要跨会话回访。详见[Q01](#research-q01)。\n- **亮点**：把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。\n- **思考**：双HTTP入口本地无身份准入，坏JSON默认回落可被后写覆盖，无投影时学习会话筛选降级。详见[Q04](#research-q04)、[Q05](#research-q05)。\n- **建议**：研究证据去重与延迟测验、每会话profile绑定、统一准入及读错拒写/CAS恢复，比较效果和误归属。当前未验证。详见[Q07](#research-q07)。\n\n采用建议：先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。详见[Q07](#research-q07)。\n\n## 核心贡献\n\n把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n双HTTP入口本地无身份准入，坏JSON默认回落可被后写覆盖，无投影时学习会话筛选降级。详见[Q04](#research-q04)、[Q05](#research-q05)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究证据去重与延迟测验、每会话profile绑定、统一准入及读错拒写/CAS恢复，比较效果和误归属。当前未验证。详见[Q07](#research-q07)。\n\n进一步从重复证据、坏JSON、多进程、无preset投影和匿名请求研究隔离/恢复。\n\n## 场景与替代办法\n\n单人持续课程学习，目标/材料/证据需要跨会话回访。详见[Q01](#research-q01)。\n\n普通聊天配笔记、任务表与记忆卡，集中回访便利不等已证教学效果。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node/DSH/tools/webServer | host与面板 | ABI匹配 |\n| 官方预设插件与Skill加载 | 教练工具 | scope需匹配 |\n| controller/preset投影 | 聊天桥接 | 缺投影会降级筛选 |\n| Python/PyMuPDF | PDF页图 | 同步最长180秒 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 核本地边界/备份 | 用户 | 非唯一敏感档案 |\n| 教练问目标建图 | 模型与学生 | 材料/答案可核 |\n| 真实练习落证据 | 学生与模型 | 不只自评升级 |\n| 回访/延迟测试 | 学生 | 记录与能力区别 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 兼容宿主/材料/Python | 建图、页码、准入与备份 | 需材料/目标/知识图与Python页码绑定；准备费用工时未知 |\n| 持续使用 | 模型tokens/页图/JSON | 材料核实和练习记录，节时未知 | 宿主模型/视觉token和PNG/JSON存储随学习量增长；成绩收益未知 |\n| 失败恢复 | 原材料和档案备份 | 坏JSON/错归属与证据重算 | 原材料/档案备份与证据作废重算时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 持续回访 | 目标/地图/任务档案 | 内容由模型学生生成 |\n| 证据掌握度 | 升级门/作废重算 | kind计数非客观测量 |\n| 面板与教练联动 | 双入口/会话投递 | 准入与preset降级 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**学习预设/档案/面板如何构成可追溯学习流程，掌握度和数据/会话边界能支持怎样采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 学习教练提供什么闭环？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n学生将一门课的目标、材料、知识地图、做题/复习证据、错题和每日任务放入独立档案，通过学习教练会话写内容，网页面板查看进度并给教练留言。知识点到具体课/题/页的链接比单纯聊天更便于持续回访；目标完成应依据真实答题与延迟回忆，不是面板百分比变高。\n\n贡献是学习预设、随包Skill、结构化工具和本地档案/面板联动。不是自动可靠判断学生掌握的测量仪，也不是已验证教学算法。README的学习内容不随代码发布、本地多目标目录可查；模型生成地图/题目与判断仍可能出错，需学生核材料和答案。替代为普通聊天加笔记/任务表/间隔卡片，集中回访便利是当前可见价值。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-10](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/README.md#L9-L10)\n\n作者定位。\n\n```text\n**DSH 的学习教练插件。** 给 DSH 加一个「学习教练」模式的会话，外加一个挂在 `/study` 的网页面板：\n把一门课拆成知识地图，逐单元记掌握度、排每天的任务，学生看得见自己在往哪走、下一步动哪儿。\n```\n\n**依据 2 · 作者声明**：[README.md:33-57](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/README.md#L33-L57)\n\n预设/面板与本地档案。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n一个插件是两半：\n\n| | |\n| --- | --- |\n| **对话那半** | 一个叫「学习教练」的 agent 预设，加随包的工作法 `skills/study-coach/SKILL.md`，加 21 个 `study_*` 工具。**学习内容全在对话里写**：学习目标、知识地图、材料分析、掌握度证据、错题、每日任务。这 21 个工具只挂在「学习教练」这个模式的作用域里——别的会话、别的预设的工具目录里看不见它们（见 `lib/preset-tools.js`）。 |\n| **网页那半** | 挂在 DSH 自己 web 服务器上的面板（`/study`，八页）。学生只在面板上看和点：今天做什么、进度到哪、哪个单元薄弱、该复习什么，点一下就打开那一节网课 / 那份练习的那一页。 |\n\n**这个仓库里只有代码，一条学习内容都没有。** 目标、地图、掌握度、任务、材料清单全是数据，落在本机的数据根目录里\n（默认 `~/.dsh/study-coach/`）：卸载、升级、重装都不会动它，换地方就设环境变量 `DSH_STUDY_ROOT`。\n一个**学习目标**一份档案目录，所以同一台机器上可以同时学几门课，各有各的地图、掌握度和任务表。\n\n## 装完你会得到什么\n\n### 面板八页\n\n| 页 | 里面是什么 |\n| --- | --- |\n| 主页 | 教练的指引：现在该回对话里做什么 |\n| 今日任务 | 今天几条活儿——看哪一讲、做哪几题、复习哪条错题，每条带「打开」，能勾完成 / 改 / 删。下面是今日复盘图，可以单独下载成 SVG |\n| 知识地图 | 大类 → 模块 → 最小单元三层，逐层展开；画布能按住拖着挪，Ctrl／⌘ + 滚轮缩放。每个单元两颗按钮：**看课**（自动落到那一讲的文件上）、**做题**（把教练叫来，按你的档案挑材料页码与题号） |\n| 学习 | 资料图谱：一份材料按它自己的目录摊三层，每一层右边都是能直接打开对应那一段的链接 |\n| 档案 | 综合学生档案（总体评价、四层掌握度、七天节奏、学生画像、基本工具、错题）+ 学习目标 + 学生画像；每个大类 / 模块 / 单元后面一颗「档案」按钮看那一级的细账 |\n| 资料 | 材料登记表、导入（拖 PDF 进来或者粘本机路径）、AI 出题的入口 |\n| 工具 | 番茄钟、记忆卡（按艾宾浩斯那套间隔回来）、清单 |\n| 对话 | 整页一个聊天窗口，顶上能选 DSH 里哪个学习会话；右下角一颗悬浮窗，随时能把话塞给教练 |\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:17-28](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/index.js#L17-L28)\n\n预设工具设计。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n * 21 个模型面向的工具**不在这儿注册**：它们在「学习教练」预设的作用域里注册\n * （见 lib/preset-tools.js）。清单以 lib/tools.js 里 buildTools() 返回的那个数组为唯一依据：\n *   study_report / study_goal / study_map / study_record / study_mistakes / study_plan /\n *   study_material / study_analysis / study_book / study_archive / study_ability /\n *   study_student / study_library / study_files / study_pages / study_tool_level /\n *   study_focus / study_todo / study_card / study_guide / study_inbox，\n * 让教练在对话里就能读写档案、给面板留话、收面板上的留言。\n * 这一步只把这一行需要的家什用服务 `studyCoachHost` 递出去——挂在本插件自己的 ctx 上就是\n * 全局注册，普通会话的工具目录里也会多出这 21 个（2026-10-02 修掉的越界）。\n *\n * 再把「学习教练」agent 预设登记进 host 的 agentPresets 注册表（见 lib/preset.js），\n * 这样 Web 上新建会话的模式列表里会多一个「学习教练」。\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 预设、Skill和工具怎样装配？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nhost创建共享Library、bridge/chat、SSE与面板控制器，把同一handler挂宿主/study和独立127.0.0.1端口；studyCoachHost传store/defineTool等给预设子插件。preset加载persona、文件/命令工具、Skill文件系统及规划/压缩/委派组，21个study_*注册在预设子作用域，普通会话工具面不应全局增加；这依赖匹配宿主scope和agentPresets语义，源码注释不是独立宿主验证。随包Skill要求先问目标、核材料/地图，再记录与排任务，是真实文件Skill而非一段提示被误标。\n\n需要Node>=22.13、DSH>=0.2候选版、tools/webServer及预设所列官方插件；部分会话桥接缺sessionController可降级留言。PDF渲页另需Python/PyMuPDF，execFileSync最多180秒、限制页数/DPI，仍会同步占宿主线程。不能把npm无普通dependencies理解为运行无外部能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:68-92](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/index.js#L68-L92)\n\n共享实例与桥接。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport function apply(ctx) {\n  const store = new Library(DATA_ROOT)\n  store.ensure()\n\n  /**\n   * 面板 → 对话 的那条线。sessionController 不写进 inject：\n   * 是个可选增强，缺了面板照样能用（留言先存着，我下回开口时会看到），\n   * 写进 inject 反而会让整个插件在这台机器上装不上。\n   */\n  const bridge = createBridge({\n    resolve: () => (typeof ctx.get === 'function' ? ctx.get('sessionController') : null),\n  })\n\n  /**\n   * 反方向：把对话读回面板。和 bridge 共用同一个服务、同一套「缺了也能跑」的规矩。\n   */\n  const chat = createChat({\n    resolve: () => (typeof ctx.get === 'function' ? ctx.get('sessionController') : null),\n  })\n\n  /**\n   * 面板的广播通道。浏览器会把后台标签页里的定时器压慢甚至冻住，\n   * 「新消息得手动刷新」就是这么来的——改成服务端推给前端。\n   */\n  const events = createEvents()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:118-176](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/index.js#L118-L176)\n\n双入口。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n  const router = createRouter(store, {\n    bridge,\n    chat,\n    events,\n    memes,\n    pagesRoot: PAGES_ROOT,\n    /**\n     * 设置页与客户端那半边都打 /study/api/panel，落地就在这儿。\n     * save 是同步抛错的那种：值不合法要回 400 并说清哪一项，不能静默存下去。\n     */\n    panel: {\n      info: () => panelControl.info(),\n      start: (port) => panelControl.start(port),\n      stop: () => panelControl.stop(),\n      restart: (port) => panelControl.restart(port),\n      settings: () => panelSettings,\n      save: (patch) => {\n        panelSettings = patchSettings(DATA_ROOT, patch)\n        return panelSettings\n      },\n    },\n  })\n  const handler = createHandler(store, router, { assetsDir: ASSETS, pagesRoot: PAGES_ROOT, uploadRoot: UPLOAD_ROOT })\n  panelHandler = handler\n\n  /**\n   * 面板在哪儿的两条地址。工具拿它告诉用户该开哪个。\n   * path 是同源那份；url / port 是独立端口那份，用 getter 现问，因为随时可能被关掉或换端口。\n   */\n  const panel = {\n    path: '/study',\n    defaultPort: DEFAULT_PORT,\n    get url() {\n      return panelControl.info().url\n    },\n    get port() {\n      return panelControl.info().port\n    },\n    get running() {\n      return panelControl.info().running\n    },\n    get error() {\n      return panelControl.info().error\n    },\n  }\n\n  ctx.effect(() => ctx.webServer.register({\n    kind: 'prefix',\n    path: '/study',\n    handler,\n  }), 'dsh-study-coach: /study 面板与接口（同源）')\n\n  ctx.effect(() => {\n    /* 关掉自启就不起：内嵌浏览器要用的时候，人去设置页点「启动」。 */\n    if (panelSettings.panel.autoStart) void panelControl.start()\n    return () => {\n      void panelControl.stop()\n    }\n  }, 'dsh-study-coach: 面板独立端口')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/preset.js:73-135](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/preset.js#L73-L135)\n\n预设插件组。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n```text\nexport function buildPreset() {\n  const win = process.platform === 'win32';\n  return {\n    id: PRESET_ID,\n    name: '学习教练',\n    description: '对话里问清目标、解析教辅与网课目录、生成知识地图、排每日任务，配 /study 面板。',\n    order: 2,\n    plugins: [\n      {\n        id: 'persona',\n        name: '@deepseek-ai/dsh-persona',\n        config: { suffix: 'Your working directory is {{cwd}}.', prefix: PERSONA_PREFIX },\n      },\n      { id: 'agent-instructions', name: '@deepseek-ai/dsh-agent-instructions', config: { maxBytes: 65536 } },\n      { id: 'tool-bash', name: '@deepseek-ai/dsh-tool-bash', disabled: win },\n      { id: 'tool-pwsh', name: '@deepseek-ai/dsh-tool-pwsh', disabled: !win },\n      { id: 'tool-fs', name: '@deepseek-ai/dsh-tool-fs' },\n      { id: 'tool-fs-search', name: '@deepseek-ai/dsh-tool-fs-search', config: { sampleOverCapGlobResults: false } },\n      { id: 'tool-jobs', name: '@deepseek-ai/dsh-tool-jobs' },\n      { id: 'skill-filesystem', name: '@deepseek-ai/dsh-skill-filesystem', config: { customSkillDirs: [SKILLS_DIR] } },\n      { id: 'tool-skill', name: '@deepseek-ai/dsh-tool-skill' },\n      { id: 'command-goal', name: '@deepseek-ai/dsh-command-goal' },\n      { id: 'tool-goal', name: '@deepseek-ai/dsh-tool-goal' },\n      {\n        id: 'planning',\n        name: 'cordis:group',\n        group: true,\n        isolate: { planMode: true },\n        config: [\n          { id: 'plan-mode', name: '@deepseek-ai/dsh-plan-mode', config: { section: PLAN_MODE_SECTION } },\n        ],\n      },\n      {\n        id: 'compaction',\n        name: 'cordis:group',\n        group: true,\n        isolate: { compaction: true, toolResultPruner: true },\n        config: [\n          { id: 'compaction-basic', name: '@deepseek-ai/dsh-compaction-basic' },\n          { id: 'command-compact', name: '@deepseek-ai/dsh-command-compact' },\n          {\n            id: 'tool-result-pruner',\n            name: '@deepseek-ai/dsh-compaction-tool-result-pruner',\n            config: { thresholdChars: 8192, headChars: 4096, tailChars: 1024 },\n          },\n        ],\n      },\n      {\n        id: 'delegation',\n        name: 'cordis:group',\n        group: true,\n        isolate: { workflowEngine: true },\n        config: [\n          { id: 'tool-subagent-control', name: '@deepseek-ai/dsh-tool-subagent-control' },\n          { id: 'tool-subagent-list-agents', name: '@deepseek-ai/dsh-tool-subagent-control/list-agents' },\n          {\n            id: 'tool-subagent',\n            name: '@deepseek-ai/dsh-tool-subagent',\n            config: {\n              provider: 'spawn',\n              toolName: 'subagent',\n              modelSelectionSettings: true,\n              backgroundMode: 'continuable',\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/preset-tools.js:29-61](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/preset-tools.js#L29-L61)\n\n预设工具生命周期。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\n/**\n * 注册 21 个工具。注册用的就是这一行自己的 ctx ⇒ 落在预设作用域里。\n * @param {import('@deepseek-ai/cordis').Context} ctx\n */\nexport function apply(ctx) {\n  /*\n   * 非严格读：这一行的 ctx 在注册表那条分支上，跟提供服务的插件是兄弟分支，\n   * 严格模式会额外过一道「提供者 fiber 此刻是活的吗」，跨分支没必要卡这一道。\n   */\n  const host = ctx.get('studyCoachHost', false)\n  if (!host || typeof host.registerTools !== 'function') {\n    /* 不为难自己：说清楚是哪半边没到位，别安安静静地少掉 21 个工具。 */\n    console.error('[dsh-study-coach] 预设这一行拿不到 studyCoachHost，21 个 study_* 工具没注册上')\n    return\n  }\n\n  return ctx.effect(() => {\n    const disposers = host.registerTools(ctx, host.store, host.defineTool, {\n      panel: host.panel,\n      pagesRoot: host.pagesRoot,\n    })\n    return () => {\n      for (const dispose of disposers) {\n        try {\n          dispose()\n        } catch {\n          /* 单个工具注销失败不该拦住别的 */\n        }\n      }\n    }\n  }, 'dsh-study-coach: 学习档案工具（只在学习教练会话里）')\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[skills/study-coach/SKILL.md:1-65](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/skills/study-coach/SKILL.md#L1-L65)\n\n学习工作法。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n---\nname: study-coach\ndescription: 学习教练的工作法。讲清怎么问目标、怎么把教辅和网课目录变成知识地图、扫描版讲义怎么拆到页、六档掌握度怎么判、每日任务怎么排、什么时候出摸底题，以及怎么用面板、每级掌握档案、总体能力判词、学习目标库和文件工具，哪些事不许做。\nwhenToUse: 进入学习教练模式，或者准备用 study_* 这一组工具之前。\n---\n\n# 学习教练工作法\n\n## 0. 开场\n\n手上有了这份文档（加载一次就够，别每轮重读），每次会话第一件事就是：调 `study_report`。\n\n- 看 `inboxItems`，非空说明某个单元还没关联网课、他在做题页点了「请帮忙配置」——那是唯一的来源，不是留言板。处理完用 `study_inbox` 传 `action=read` 清掉（只想标其中几条，就把 id 放进 `ids`）。\n- 看 `goal` 四个字段空不空，有空的说明目标还没问全。（`complete` 那个标志只在 `study_goal` 的返回里，`study_report` 不返回它。）\n- 看 `mapStatus`，`draft` 说明地图还没定稿。\n- **看 `studentFacts`（学生画像）**：这是历次攒下来的结论（「换元之后容易忘记回代」「早读效率高」），每条底下挂着它当初依据的那几次。**读完这个再决定怎么教**，别每次从零总结一遍。只有 `id / kind / text / note / evidenceCount`，要细看调 `study_student`。\n- 看 `today` 和 `tasks`：今天几号、今天排没排活。\n- 看 `panelUrl`，把它连同「看进度、自评、勾任务都去这儿」一起告诉学生。这是面板给**他自己**看的那一份，不是你偷懒的替代品。\n- `dataRoot` 是这套档案在硬盘上的家，`profileId` 是当前在用的那份学习目标。学生问「东西存哪儿 / 会不会丢 / 能不能手改」，照这两个答：**插件本体只有代码，他的东西全在 `dataRoot` 里一个目标一份目录**。\n- 要 id（`pointId` / `taskId` / 材料 id）全从这个返回里拿，别自己编。\n\n## 1. 问目标\n\n四样都得有：学什么、要掌握到什么程度、最晚什么时候、每天能挤多少分钟。\n\n- 一次问一两个，别一口气盘问。\n- `outcome` 要用学生自己的话。他说不清就举例子让他挑，别替他总结。\n- `minutesPerDay` 定了就别随便改口——后面排计划全靠它。\n- 问清了调 `study_goal` 写进去。\n\n## 2. 收材料\n\n学生可能丢来这些东西，每种的记法不一样：\n\n- **一本教辅**：书名 + 目录。一条 `study_material`，`kind: book`，`note` 写章节范围。\n- **网课目录文件夹**：一串文件名。先用 `study_files`（或 pwsh）把目录列出来，**讲次得你自己从文件名里解出来**（`01_第一节.mp4` → 第 1 讲 第一节），解出来的结果写进 `note`；`path` 写绝对路径。\n- **讲义 / 真题**：同上，`kind: notes` / `past`。\n- **你自己出的卷子**：`kind: ai`。正文写成 `.md` 放进数据目录的 `ai/`，`path` 指向那个文件，`title` 写清「哪一天 · 哪一节 · 什么卷」。它在书架上跟教辅**平级**成一组，做题页也按单元列出来。**别写在对话里就完事**——不登记他在面板上找不到（细节见第 6 节）。\n\n`kind` 六选一：`book` / `video` / `notes` / `past` / `ai` / `other`，写错会被工具当场拒掉。一次丢一堆就一条条登记，别合成一条。\n\n### 书架上的文件夹\n\n材料多了要收纳，就用 `study_material` 的 **`folder`** 参数：写名字就行，**不存在会现建**。两个约定：\n\n- **`kind: ai` 默认进「教练产出」**（你出的卷子、复盘、计划都归那儿），不用每次手写 `folder`。\n- 一套书拆成好几册 / 好几章（一本主书 + 一本答案 + 六份分章答案）**放进同一个夹子**，学生在资料页看到的就是一组，不是三十几行。\n- 挪夹子用 `study_material action=move`（要带 `id`，`folder` 留空 = 挪回未分组）。**文件夹只管收纳，跟进度无关**：删掉一个夹子不删材料，里头的会退回「未分组」。\n- 学生自己在面板上也能建 / 改名 / 删夹子、把材料挪进去（那是收纳，不是学习数据）——他动了你别去覆盖，看他怎么分就知道他心里的结构。\n\n### 材料还没到手的时候\n\n学生常常只丢一个考试名或一个书名，材料要你去核。规矩是**宁可说「没找到」，也别编一个**。\n\n- **书名要核到版本**：版次、上下册、套装是三样东西，标题像不等于同一本。有 ISBN 就用 ISBN 查；**查不到不代表不存在**——换书名、去掉副标题、换作者、加版次再查一遍。\n- **分清三档**，并且跟他说清是哪一档：有这本书的书目记录 / 有样章 / 有全文。只查到书目就说只有书目。\n- **考纲和真题优先于教材**。大型考试先找主办方当年的通知、大纲、组别规则，再找公开的历年真题和解析；教材是拿来解释知识点的，不是拿来定范围的。\n- **查不到就直说**，把试过的线索列出来让他复核。别拿「搜索引擎没收录」当成「不存在」。\n- **授权边界**：不指引、不代为下载未经授权的教材副本，别把没核实的镜像站说成官方入口。\n- 找不到材料也能开工：用**已经确认**的考纲、真题、公开课和他手上有的东西先出一版，`study_material` 的 `note` 里写清哪些是核过的、哪些是待核的，`study_analysis` 的 `coverage` 老实标「只翻目录 / 部分通读」。\n\n### 材料到手别急着排任务，先通读一遍\n\n登记完一份材料，头一件事是把它读一遍、把结构摸出来，再用 `study_analysis` 写下来。\n\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/pages.js:74-106](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/pages.js#L74-L106)\n\nPDF执行依赖/限额。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nexport function renderPages(pdfPath, options = {}) {\n  const python = options.python || findPython(options.home)\n  if (!python) return { ok: false, error: '找不到 python，设 DSH_STUDY_PYTHON 指过去就行' }\n  if (!existsSync(pdfPath)) return { ok: false, error: `这份文件不在：${pdfPath}` }\n\n  const dir = options.outDir\n  if (!dir) return { ok: false, error: '没给 outDir' }\n  try {\n    mkdirSync(dir, { recursive: true })\n  } catch (error) {\n    return { ok: false, error: `建不出目录 ${dir}：${error.message}` }\n  }\n\n  const from = Math.max(1, Number(options.from) || 1)\n  const to = Math.max(from, Number(options.to) || from)\n  const dpi = Math.min(220, Math.max(60, Number(options.dpi) || DEFAULT_DPI))\n  if (to - from + 1 > MAX_PAGES_PER_CALL) {\n    return { ok: false, error: `一次最多 ${MAX_PAGES_PER_CALL} 页，收到 ${to - from + 1} 页。分了批来` }\n  }\n\n  let stdout = ''\n  try {\n    stdout = execFileSync(python, ['-X', 'utf8', '-c', SCRIPT, pdfPath, dir, String(from), String(to), String(dpi)], {\n      encoding: 'utf8',\n      timeout: 180000,\n      stdio: ['ignore', 'pipe', 'pipe'],\n    })\n  } catch (error) {\n    const tail = String(error.stderr || error.message || '').split('\\n').filter(Boolean).slice(-1)[0] || ''\n    if (/No module named|ModuleNotFoundError/.test(tail)) {\n      return { ok: false, error: `这份 python 里没有 pymupdf：${python}。装一下：${python} -m pip install pymupdf` }\n    }\n    return { ok: false, error: `渲染失败：${tail || error.message}` }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[package.json:40-49](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/package.json#L40-L49)\n\n运行约束。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.4\",\n    \"@deepseek-ai/dsh-tools\": \"^0.2.0-rc.1\"\n  },\n  \"engines\": {\n    \"node\": \">=22.13.0\",\n    \"dsh\": \">=0.2.0-rc.1\"\n  },\n  \"scripts\": {\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 掌握度证据比主观自评多了什么？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\nmap gateStage限制一次最多进一档，高阶要足够quiz/photo做题类证据，self/lesson/review不计真做过数量；模型study_record与面板mastery共用门，减少只管模型不管UI的漂移。recordEvidence保存ID、种类、时间、说明、stage、置信度和下次复习日期；作废不直接丢行，derivedStage可按有效流水重算并找漂移，这种可解释记账有实用价值。\n\n但证据kind/note由模型或用户填写，没有自动证明题目确实做过、答案正确、来源不可伪造；重复提交不同ID也可能增加计数。confidence是输入值夹0..1，非校准测量。nextReview由输入提供，工具文案给1/2/4/7天粗规则，不是个人化遗忘率估计。记录门只能约束升级节奏，不能证明学习效果，更不能把重复条目当独立能力证据。当前未做同条件学生学习成绩对照。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/map.js:19-49](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/map.js#L19-L49)\n\n升级门。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n * 教练调 `study_record` 和学生自己在面板上点那颗档位按钮，走的是同一条规则。\n *\n * 学生那条路以前是直通的——他点一下「能讲明白」，档位就真成了能讲明白，\n * 门只管得住教练。档位是同一份账，门就得分不出两条路。\n *\n * 两条规矩：①一次只前进一档（填跳了压回上一档）；②推到 `STAGE_NEEDS` 里那几档\n * 之前，这个单元下得有真做过的证据（`WORK_KINDS`），自评、上课、复习都不算。\n *\n * 回 `{ stage, before, clamped, blocked, need, made }`：`stage` 是允许落到的档，\n * `blocked` 为真时调用方**别写 stage**——落一条证据、档位不动，把 `need`/`made` 告诉他。\n */\nexport function gateStage(mastery, pointId, wanted, kind = '') {\n  const before = pointState(mastery, pointId).stage\n  let stage = before\n  let clamped = false\n  if (STAGES.includes(wanted)) {\n    const ceiling = Math.min(STAGES.indexOf(before) + 1, STAGES.length - 1)\n    if (STAGES.indexOf(wanted) > ceiling) {\n      stage = STAGES[ceiling]\n      clamped = true\n    } else {\n      stage = wanted\n    }\n  }\n  const need = STAGE_NEEDS[stage] || 0\n  let made = 0\n  if (need) {\n    // 作废的证据不算数：盖了章的那条不该还撑着档位。\n    made = workCountOf(pointState(mastery, pointId)) + (WORK_KINDS.includes(kind) ? 1 : 0)\n  }\n  return { stage, before, clamped, blocked: need > 0 && made < need, need, made }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/map.js:64-111](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/map.js#L64-L111)\n\n有效证据与重算。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport function isVoided(item) {\n  return Boolean(item && item.voidedAt)\n}\n\n/** 这笔账里真算数的证据（作废的不算）。错题、弱项、重算全走它。 */\nexport function liveEvidence(state) {\n  const list = Array.isArray(state && state.evidence) ? state.evidence : []\n  return list.filter((item) => !isVoided(item))\n}\n\n/** 「真做过」的证据有几条（做题 / 作业照片）。自评、上课、复习不算。 */\nexport function workCountOf(state) {\n  return liveEvidence(state).filter((e) => WORK_KINDS.includes(e.kind)).length\n}\n\n/**\n * 照着流水重算档位。\n *\n * 为什么要有它：档位是**写下来的**（`state.stage`），所以它只反映记的那一刻。\n * 一条证据后来作废了、或者旧版本绕过门直接写了档位，账面上都看不出破绽。重算就是\n * 把同一道门照着流水再走一遍，得到「凭这些证据最多能到哪一档」；跟账上写的对不上\n * 就叫漂移（`driftOf` 会挑出来）。\n *\n * 两条规矩跟 `gateStage` 完全一致，别在这儿另立一套：\n *   ①每条证据自己记着「我之后档位在哪」（`item.stage`），一次只前进一步；\n *   ②`STAGE_NEEDS` 里那几档要凑够「真做过」的证据，不够就停在原地。\n * 没有 `item.stage` 的老证据（加这个字段之前记的）只算进 `workCount`：它证得了\n * 「他做过」，证不了「当时判成了哪一档」，所以不让它推动档位。\n *\n * 返回 `{ stage, source, work }`：`source` 是最后一次推动档位的那条证据 id。\n */\nexport function derivedStage(state) {\n  const list = liveEvidence(state)\n  let stage = '没接触过'\n  let work = 0\n  let source = null\n  for (const item of list) {\n    if (WORK_KINDS.includes(item.kind)) work += 1\n    const want = STAGES.includes(item && item.stage) ? item.stage : null\n    if (!want) continue\n    const ceiling = Math.min(STAGES.indexOf(stage) + 1, STAGES.length - 1)\n    const next = STAGES.indexOf(want) > ceiling ? STAGES[ceiling] : want\n    if (next === stage) continue\n    if ((STAGE_NEEDS[next] || 0) > work) continue\n    stage = next\n    source = item.id ? String(item.id) : null\n  }\n  return { stage, source, work }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/map.js:324-345](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/map.js#L324-L345)\n\n证据实际保存字段。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function recordEvidence(mastery, { pointId, kind, note, stage, confidence, nextReview, mistake }) {\n  if (!pointId) throw new Error('pointId required')\n  if (!mastery.points || typeof mastery.points !== 'object') mastery.points = {}\n  const prev = pointState(mastery, pointId)\n  const evidence = prev.evidence.slice()\n  const item = { id: newEvidenceId(), kind: kind || 'self', at: nowIso(), note: note || '' }\n  if (mistake) item.mistake = normalizeMistake(mistake)\n  const nextStage = STAGES.includes(stage) ? stage : prev.stage\n  item.stage = nextStage\n  evidence.push(item)\n  const moved = STAGES.indexOf(nextStage) !== STAGES.indexOf(prev.stage)\n  const source = moved || !prev.source ? String(item.id) : prev.source\n  const next = {\n    stage: nextStage,\n    confidence: typeof confidence === 'number' ? clamp01(confidence) : prev.confidence,\n    evidence,\n    nextReview: nextReview ?? prev.nextReview,\n    updatedAt: nowIso(),\n    source,\n  }\n  mastery.points[pointId] = next\n  return next\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/tools.js:1018-1042](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/tools.js#L1018-L1042)\n\n模型门和写。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      // 一次只推进一档 + 硬闸门。规则本体在 lib/map.js 的 gateStage——\n      // 面板上他自己点的那颗档位按钮走的是同一条，不再是「门只管教练」。\n      const plan = gateStage(store.read('mastery'), pointId, args.stage, args.kind)\n      const wanted = plan.stage\n      const clamped = plan.clamped\n      if (plan.blocked) {\n        throw new Error(\n          `升到「${wanted}」得先有 ${plan.need} 条真做过的证据（kind 填 quiz 做题或 photo 作业照片），` +\n            `「${pointId}」现在只有 ${plan.made} 条——自评、上课、复习都不算。` +\n            `先让他做几道题，把题号写进 note，再记一次。`,\n        )\n      }\n\n      const next = store.update('mastery', (m) => {\n        recordEvidence(m, {\n          pointId,\n          kind: args.kind,\n          note: args.note,\n          stage: wanted,\n          confidence: args.confidence,\n          nextReview: args.nextReview,\n          mistake: args.mistake,\n        })\n        return m\n      })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/routes.js:917-938](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/routes.js#L917-L938)\n\n面板共用门。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  on('POST', /^\\/study\\/api\\/mastery$/, ({ body }) => {\n    const pointId = body && body.pointId\n    if (!pointId) return bad('pointId required')\n    const known = listPointIds(store.read('map'))\n    if (known.length && !known.includes(pointId)) return bad('unknown pointId: ' + pointId, 404)\n    if (body.stage && !STAGES.includes(body.stage)) return bad('stage must be one of ' + STAGES.join('/'))\n    // 面板上那颗档位按钮走这里——是学生自己点的，但档位只有一份账，\n    // 所以门也得是同一条（lib/map.js 的 gateStage，跟 study_record 共用一个规则）。\n    // 升不动的时候**记他说的话、不动档位**，并把差几条告诉他。\n    const plan = gateStage(store.read('mastery'), pointId, body.stage, body.kind)\n    const mastery = store.update('mastery', (m) => {\n      recordEvidence(m, {\n        pointId,\n        kind: body.kind,\n        note: body.note,\n        stage: plan.blocked ? undefined : plan.stage,\n        confidence: body.confidence,\n        nextReview: body.nextReview,\n        mistake: body.mistake,\n      })\n      return m\n    })\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/tools.js:918-918](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/tools.js#L918-L918)\n\n粗复习日期指引。\n\n```text\n      nextReview: str('下次该复习的日期，YYYY-MM-DD。粗定就行：见过隔 1 天、能跟做隔 2 天、能独立做隔 4 天、熟练稳定隔 7 天'),\n```\n\n#### 缺口\n\n- 证据来源、重复独立性与学习成效缺少可核对测量契约\n  **影响：**计数门和面板进度不能作为客观掌握或考试保证\n  **进一步探讨：**对齐题目/答案来源与去重ID，用延迟测验对照普通笔记流程\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 双HTTP入口和会话桥接的访问边界是什么？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n独立面板绑定127.0.0.1减少直接公网暴露，但复用handler/router自身没有身份、Origin或token准入；宿主/study能否远程访问由部署层负责。router直接按method/pattern分派写档案、面板启停和会话投递。CORS浏览器读取限制不等服务端授权，不能把loopback或独立origin视为认证。学习档案、学生画像、错题和聊天可能含敏感个人资料，应按可信本地单用户边界看待。\n\n文件读取限制已登记材料或pages根，采用resolve前缀而无realpath核对；目录中链接可让物理目标离开登记范围，注册材料本身也可指向广目录。不要据“已登记”推出OS沙箱。桥接/chat按学习preset筛会话，但没有preset投影时主动不过滤非子会话，老宿主可能暴露/选中普通会话，不是始终严格学习隔离。资料内容被模型阅读后受其提示/权限处理，学生文件本身仍是未可信输入。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/panel-server.js:1-34](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/panel-server.js#L1-L34)\n\nloopback绑定。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/**\n * 插件自己起的小 HTTP 服务器，只为绕开 DSH 内嵌浏览器的「不许开 DSH 自身」。\n *\n * 面板的接口全部相对 /study，所以这里复用同一个 handler，页面上不用改一行。\n * 只监听 127.0.0.1，不对外。\n */\nimport { createServer } from 'node:http'\n\nexport const DEFAULT_PORT = 19388\nexport const PORT_TRIES = 20\nexport const HOST = '127.0.0.1'\n\nfunction listen(handler, port, host) {\n  return new Promise((resolve, reject) => {\n    const server = createServer((req, res) => {\n      Promise.resolve(handler(req, res)).catch((error) => {\n        try {\n          const body = JSON.stringify({\n            ok: false,\n            error: { code: 'internal', message: String((error && error.message) ?? error) },\n          })\n          res.writeHead(500, { 'content-type': 'application/json; charset=utf-8' })\n          res.end(body)\n        } catch {\n          /* 客户端已经跑了，没法再回话 */\n        }\n      })\n    })\n    const onError = (error) => reject(error)\n    server.once('error', onError)\n    server.listen(port, host, () => {\n      server.removeListener('error', onError)\n      resolve(server)\n    })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/handler.js:124-141](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/handler.js#L124-L141)\n\n词法登记范围。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nfunction allowedTarget(store, raw) {\n  if (typeof raw !== 'string' || raw.trim() === '') return null\n  const target = resolve(raw)\n  const materials = store.read('profile').materials\n  const list = Array.isArray(materials) ? materials : []\n  for (const m of list) {\n    if (!m || !m.path) continue\n    const base = resolve(String(m.path))\n    if (target !== base && !target.startsWith(base + sep)) continue\n    if (!existsSync(target)) continue\n    try {\n      statSync(target)\n      return target\n    } catch {\n      /* 文件正好被挪走，当没有 */\n    }\n  }\n  return null\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/handler.js:329-369](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/handler.js#L329-L369)\n\npages/入口守卫。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nexport function createHandler(store, router, { assetsDir, uploadRoot, pagesRoot } = {}) {\n  /** 网页上传的原件落哪儿。默认档案库根下的 uploads/，不动用户自己的文件夹。 */\n  const uploads = uploadRootOf(store, uploadRoot)\n  /** 拆出来的页图落哪儿。这些图不在任何登记过的材料路径底下，所以单独开一条只读出口。 */\n  const pages = pagesRootOf(store, pagesRoot)\n\n  /**\n   * 只放行 pagesRoot 底下的文件——学生能点开的页图仅限这里。\n   * 和 allowedTarget 一个道理：不是「给了路径就发」，而是「先认它归不归我管」。\n   */\n  function allowedPage(raw) {\n    if (!pages || !raw) return null\n    const target = resolve(String(raw))\n    if (target !== pages && !target.startsWith(pages + sep)) return null\n    try {\n      if (!existsSync(target) || !statSync(target).isFile()) return null\n    } catch {\n      return null\n    }\n    return target\n  }\n\n  /** 面板和它的静态资源只从 assets 目录出，别的地方一律 404。 */\n  function resolveAsset(pathname) {\n    const rel = pathname.slice(ASSET_PREFIX.length)\n    if (rel === '') return null\n    const target = normalize(join(assetsDir, rel))\n    if (!target.startsWith(assetsDir)) return null\n    if (!existsSync(target) || !statSync(target).isFile()) return null\n    return target\n  }\n\n  /** `/study`、`/study/` 与 /study/<子页> 都归面板；practice / file / assets / api 各有自己的分支。 */\n  function isPanelPath(pathname) {\n    const clean = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname\n    if (clean === '/study') return true\n    if (!clean.startsWith('/study/')) return false\n    return PANEL_PAGES.includes(clean.slice('/study/'.length))\n  }\n\n  return async function handler(req, res) {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/handler.js:529-546](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/handler.js#L529-L546)\n\n直接送router。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n      const body = wantsBody ? await readBody(req) : {}\n      // 有几条路由是异步的（面板往对话里投话），这里必须等它落地，\n      // 否则拿到的是一张还没结果的白卷。\n      const result = await router({\n        method: req.method,\n        pathname: path,\n        query: Object.fromEntries(url.searchParams),\n        body,\n        req,\n        res,\n      })\n      // 广播通道那条自己接管了响应（SSE 长连接不结束），这儿别再去写 JSON。\n      if (result && result.handled) return\n      if (result && result.raw) {\n        sendRaw(res, result.raw)\n        return\n      }\n      sendJson(res, result.code, result.body)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/routes.js:1653-1676](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/routes.js#L1653-L1676)\n\n按模式分派。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  return function handle(request) {\n    const method = (request && request.method) || 'GET'\n    /* HEAD 按 GET 的路由找（HTTP 就这么定的「只要头不要体」），响应体由 Node 自己省掉。 */\n    const wanted = method === 'HEAD' ? 'GET' : method\n    const pathname = (request && request.pathname) || '/'\n    for (const route of routes) {\n      if (route.method !== wanted) continue\n      const match = route.pattern.exec(pathname)\n      if (!match) continue\n      const failure = (error) => ({\n        code: 500,\n        body: { ok: false, error: { code: 'internal', message: String((error && error.message) ?? error) } },\n      })\n      try {\n        const out = route.fn({\n          body: request.body,\n          query: request.query,\n          params: match.slice(1),\n          /* 广播通道那条要拿原始响应自己接管（SSE 长连接），别的路由不看这两个 */\n          req: (request && request.req) || null,\n          res: (request && request.res) || null,\n        })\n        // 同步路由照旧直接返回；异步的（投递、读对话那几条）把 rejection 也收成响应，别让它飘出去。\n        return out && typeof out.then === 'function' ? out.catch(failure) : out\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/session-preset.js:14-20](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/session-preset.js#L14-L20)\n\n兼容降级原因。\n\n```text\n * 但这个字段是可选的（老宿主可能整份清单都不带 projections）。那种时候**不能**按它\n * 过滤：清单会被筛成一片空白，面板的对话页直接废掉。所以拿不到投影就退回「不过滤」，\n * 由 hasPresetChannel() 说清楚这次到底筛没筛。\n *\n * 还有一处例外：面板自己按「新建」开出来的那个会话。投影是异步落下来的，create()\n * 回来的那一瞬间它在清单里可能还没有 preset 那一行——严格筛会把它自己筛掉，学生点了\n * 新建还是一片空白。所以这些 id 先记一笔（rememberFresh），等投影补上就自然走预设那条路。\n```\n\n**依据 7 · 源码核查**：[lib/session-preset.js:97-100](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/session-preset.js#L97-L100)\n\n无投影不过滤。\n\n```text\nexport function learningSessions(items) {\n  const rows = (Array.isArray(items) ? items : []).filter(visible)\n  if (!hasPresetChannel(rows)) return { items: rows, filtered: false }\n  return { items: rows.filter((item) => presetOf(item) === PRESET_ID || isFresh(item.sessionId)), filtered: true }\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 本地JSON会保住数据和档案隔离吗？\n\n**研究主题：**工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nStore每文件同步读改写，经固定.tmp+rename避免半截JSON，但没有跨进程锁/版本CAS，也不是多文件事务；同时多个DSH进程或外部手改同文件可互相覆盖。read遇损坏/缺失/非对象返回默认值，没有错误状态/备份，接下来的update会把默认新值覆写到原路径，用户可能直到之后才发现历史丢失。updatedAt只在缺失时补，不是每次都刷新，不能直接当最近修改审计。\n\nLibrary有多个profile目录和全局registry.active，初始化旧单目录迁移用逐文件rename，故障可留部分搬迁；registry坏内容返回空库重建，没有保留损坏证据。多个档案是数据组织，不自动等于每会话固定绑定档案。工程上纯map/schema、共用gate、注册作用域/路由唯一性检查与多种单测有价值，但不能从测试数量推数据恢复完整。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:78-110](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/store.js#L78-L110)\n\n默认回落、固定tmp和updatedAt。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  read(key) {\n    try {\n      const raw = readFileSync(this.path(key), 'utf8')\n      const parsed = JSON.parse(raw)\n      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return this.default(key)\n      return parsed\n    } catch {\n      return this.default(key)\n    }\n  }\n\n  /** 整份写下去，先落临时文件再改名，避免写一半断电留个半截 JSON。 */\n  write(key, value) {\n    const target = this.path(key)\n    const tmp = target + '.tmp'\n    writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8')\n    renameSync(tmp, target)\n    return value\n  }\n\n  /** 改一份：读出当前值，交给 fn，写回。fn 里就地改或者返回新对象都行。 */\n  update(key, fn) {\n    const current = this.read(key)\n    const next = fn(current) ?? current\n    if (next && typeof next === 'object' && !next.updatedAt && key !== 'map' && key !== 'mastery') {\n      next.updatedAt = nowIso()\n    }\n    return this.write(key, next)\n  }\n\n  /** 面板要一眼看全，这里一次把几份都端出去。 */\n  snapshot() {\n    const map = this.read('map')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/library.js:100-164](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/library.js#L100-L164)\n\n迁移/registry恢复。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n  /** 该有的目录和文件都补齐；顺手把老版本的单档案搬进 profiles/default。 */\n  ensure() {\n    if (!existsSync(this.root)) mkdirSync(this.root, { recursive: true })\n    this._migrateLegacy()\n    if (!existsSync(this.profilesDir())) mkdirSync(this.profilesDir(), { recursive: true })\n\n    const reg = this.readRegistry()\n    let dirty = false\n    if (!reg.items.length) {\n      const store = new Store(join(this.profilesDir(), DEFAULT_PROFILE_ID))\n      store.ensure()\n      reg.items.push(this._freshItem(DEFAULT_PROFILE_ID, store))\n      reg.active = DEFAULT_PROFILE_ID\n      dirty = true\n    }\n    if (!reg.items.some((item) => item.id === reg.active)) {\n      reg.active = reg.items[0].id\n      dirty = true\n    }\n    for (const item of reg.items) {\n      if (this.store(item.id).ensure()) dirty = true\n    }\n    if (dirty) this.writeRegistry(reg)\n    return reg\n  }\n\n  /** 老版本：profile.json 直接躺在 root 下。搬进子目录，原样不动内容。 */\n  _migrateLegacy() {\n    const legacyProfile = join(this.root, FILES.profile)\n    if (!existsSync(legacyProfile)) return\n    if (existsSync(this.profilesDir())) return\n    const target = join(this.profilesDir(), DEFAULT_PROFILE_ID)\n    mkdirSync(target, { recursive: true })\n    for (const name of Object.values(FILES)) {\n      const from = join(this.root, name)\n      if (!existsSync(from)) continue\n      renameSync(from, join(target, name))\n    }\n    const legacyMaterials = join(this.root, 'materials')\n    if (existsSync(legacyMaterials)) renameSync(legacyMaterials, join(target, 'materials'))\n    // 根下可能还留着 .bak / .tmp，留在原地，别跟着搬。\n  }\n\n  readRegistry() {\n    try {\n      const parsed = JSON.parse(readFileSync(this.registryPath(), 'utf8'))\n      if (parsed && Array.isArray(parsed.items)) {\n        return {\n          version: 1,\n          active: text(parsed.active),\n          items: parsed.items.filter((item) => item && item.id),\n        }\n      }\n    } catch {\n      /* 第一次跑，或者文件坏了——当空库重建 */\n    }\n    return { version: 1, active: '', items: [] }\n  }\n\n  writeRegistry(registry) {\n    const path = this.registryPath()\n    const tmp = path + '.tmp'\n    writeFileSync(tmp, JSON.stringify(registry, null, 2), 'utf8')\n    renameSync(tmp, path)\n    return registry\n```\n\n</details>\n\n**依据 3 · 源码核查**：[test/store.test.js:34-41](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/test/store.test.js#L34-L41)\n\n坏JSON默认被当预期。\n\n```text\ntest('坏掉的 JSON 当成默认值，不抛', () => {\n  const f = fresh()\n  try {\n    writeFileSync(f.store.path('profile'), '{ 这不是 json')\n    assert.equal(f.store.read('profile').goal.subject, '')\n  } finally {\n    f.done()\n  }\n```\n\n**依据 4 · 源码核查**：[lib/tools.js:2905-2926](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/tools.js#L2905-L2926)\n\nschema封闭和注册。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function sealSchema(node) {\n  if (node === null || typeof node !== 'object') return node\n  if (Array.isArray(node)) return node.map(sealSchema)\n  const out = { ...node }\n  if (out.type === 'object' && out.additionalProperties === undefined) out.additionalProperties = false\n  if (out.properties && typeof out.properties === 'object') {\n    const props = {}\n    for (const [key, value] of Object.entries(out.properties)) props[key] = sealSchema(value)\n    out.properties = props\n  }\n  if (out.items !== undefined) out.items = sealSchema(out.items)\n  return out\n}\n\nexport function registerTools(ctx, store, defineTool, opts = {}) {\n  return buildTools(store, opts).map((spec) => {\n    const sealed =\n      spec.output && spec.output.schema\n        ? { ...spec, output: { ...spec.output, schema: sealSchema(spec.output.schema) } }\n        : spec\n    return ctx.tools.register(defineTool(sealed))\n  })\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续及失败恢复有哪些成本？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n首次要确认宿主预设依赖、准备材料和学习目标，由模型/学生建知识地图与页码绑定，PDF路径/Python解释器需核对；这不是装插件就有课程内容。持续学习会话消耗宿主模型tokens，页图可能增加视觉调用量，具体价格依模型；插件本地JSON、原上传和PNG持续占盘，最大上传300MB、正文读512KB限制避免部分全量读取但不构成总库配额。同步JSON/渲页会影响宿主响应，大量档案/材料时需自行管理。\n\n恢复包括错题/掌握证据作废重算、材料路径迁移、损坏JSON备份恢复、预设投递错会话与Python渲页失败。SSE和面板控制器管理启动并发/释放是积极设计，但学习数据仍需独立备份。节省重复解释目标、坚持学习和成绩提升没有同任务基线量化，不能凭有复习按钮宣布有效间隔学习。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/handler.js:30-42](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/handler.js#L30-L42)\n\n上传与正文限额。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n * 网页上传原件走的地址。走裸 body 而不是 multipart：省掉一整个 multipart 解析器，\n * 文件名放 `x-file-name` 头里（URI 编码，中文名才不会被 header 的 latin-1 啃掉）。\n */\nexport const UPLOAD_PATH = '/study/api/material/upload'\n\n/** 一次上传最多多大。比这大的走「粘贴本机路径」——那种不搬原件，只登记。 */\nexport const MAX_UPLOAD_BYTES = 300 * 1024 * 1024\n\n/**\n * 读卷页一次最多读进来多少正文。超过就在这儿截断，页面里说清楚还有下文。\n * 别整个读进来：材料路径是从档案里来的，有人真会指着一段几百兆的网课视频。\n */\nexport const MAX_DOC_BYTES = 512 * 1024\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/pages.js:87-106](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/pages.js#L87-L106)\n\n渲页同步成本。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  const from = Math.max(1, Number(options.from) || 1)\n  const to = Math.max(from, Number(options.to) || from)\n  const dpi = Math.min(220, Math.max(60, Number(options.dpi) || DEFAULT_DPI))\n  if (to - from + 1 > MAX_PAGES_PER_CALL) {\n    return { ok: false, error: `一次最多 ${MAX_PAGES_PER_CALL} 页，收到 ${to - from + 1} 页。分了批来` }\n  }\n\n  let stdout = ''\n  try {\n    stdout = execFileSync(python, ['-X', 'utf8', '-c', SCRIPT, pdfPath, dir, String(from), String(to), String(dpi)], {\n      encoding: 'utf8',\n      timeout: 180000,\n      stdio: ['ignore', 'pipe', 'pipe'],\n    })\n  } catch (error) {\n    const tail = String(error.stderr || error.message || '').split('\\n').filter(Boolean).slice(-1)[0] || ''\n    if (/No module named|ModuleNotFoundError/.test(tail)) {\n      return { ok: false, error: `这份 python 里没有 pymupdf：${python}。装一下：${python} -m pip install pymupdf` }\n    }\n    return { ok: false, error: `渲染失败：${tail || error.message}` }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/store.js:92-110](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/store.js#L92-L110)\n\n恢复依赖。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    const tmp = target + '.tmp'\n    writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8')\n    renameSync(tmp, target)\n    return value\n  }\n\n  /** 改一份：读出当前值，交给 fn，写回。fn 里就地改或者返回新对象都行。 */\n  update(key, fn) {\n    const current = this.read(key)\n    const next = fn(current) ?? current\n    if (next && typeof next === 'object' && !next.updatedAt && key !== 'map' && key !== 'mastery') {\n      next.updatedAt = nowIso()\n    }\n    return this.write(key, next)\n  }\n\n  /** 面板要一眼看全，这里一次把几份都端出去。 */\n  snapshot() {\n    const map = this.read('map')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/panel-server.js:67-90](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/panel-server.js#L67-L90)\n\n控制器状态。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/**\n * 把「面板服务开着没有」收成一个可问、可开、可关的小控制器。\n *\n * 这段状态原来散在 index.js 的 effect 里（一个 state.stopped 布尔 + 一个直接\n * await 的 startPanelServer），够用是因为那时根本没打算让人事后动它。既然要给出\n * 「启动键」，就得能问状态、能停、能换端口重启，而且连着点几下不能起出两个\n * 服务器——所以挪到这里，带上幂等和并发的合流。\n *\n * 起不来不算失败：端口全被占这种事记进 info().error 就完事，让面板上看得见，\n * 不能让插件加载直接挂掉。\n */\nexport function createPanelControl({ handler, port = DEFAULT_PORT, tries = PORT_TRIES, host = HOST } = {}) {\n  const state = { server: null, port: null, url: null, error: null, preferred: port, starting: null }\n\n  function info() {\n    return {\n      running: Boolean(state.server),\n      port: state.server ? state.port : null,\n      url: state.server ? state.url : null,\n      preferred: state.preferred,\n      /* 没起来时也得给人一个能粘的地址：首选端口那个。 */\n      hintUrl: `http://${host}:${state.preferred}/study`,\n      error: state.error,\n    }\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:40-42](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/README.md#L40-L42)\n\n内容由用户生成。\n\n```text\n**这个仓库里只有代码，一条学习内容都没有。** 目标、地图、掌握度、任务、材料清单全是数据，落在本机的数据根目录里\n（默认 `~/.dsh/study-coach/`）：卸载、升级、重装都不会动它，换地方就设环境变量 `DSH_STUDY_ROOT`。\n一个**学习目标**一份档案目录，所以同一台机器上可以同时学几门课，各有各的地图、掌握度和任务表。\n```\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 推荐怎样采用，进一步探讨哪里？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察，主要是双入口未闭合身份/来源准入、旧宿主会话筛选降级与默认回落后覆写数据；不以缺少宿主冒烟本身作为缺点。可信单人本地、非唯一档案且独立备份可做学习流程对照，先核preset与档案归属，避免敏感学生资料和广目录注册。面板进度只作可检查的记录，关键掌握度用真实题目/延迟回忆核实；有坏文件、错档案/错会话或来源不清时先保留原数据再处理。\n\n继续可从证据去重/题目答案来源、每会话固定profile与严格preset筛选、双端口统一认证/Origin、读错拒写+备份及版本CAS入手。基线为当前kind计数门、全局registry、坏JSON默认回落，反例包括重复同题、造kind、无投影会话、多进程写/坏文件、登记目录外链及匿名写请求。比较错档案、数据恢复、延迟测验成绩与学生维护工时。方向尚未验证，只有流程/界面创新的当前判断。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/map.js:64-111](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/map.js#L64-L111)\n\n计数基线。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\nexport function isVoided(item) {\n  return Boolean(item && item.voidedAt)\n}\n\n/** 这笔账里真算数的证据（作废的不算）。错题、弱项、重算全走它。 */\nexport function liveEvidence(state) {\n  const list = Array.isArray(state && state.evidence) ? state.evidence : []\n  return list.filter((item) => !isVoided(item))\n}\n\n/** 「真做过」的证据有几条（做题 / 作业照片）。自评、上课、复习不算。 */\nexport function workCountOf(state) {\n  return liveEvidence(state).filter((e) => WORK_KINDS.includes(e.kind)).length\n}\n\n/**\n * 照着流水重算档位。\n *\n * 为什么要有它：档位是**写下来的**（`state.stage`），所以它只反映记的那一刻。\n * 一条证据后来作废了、或者旧版本绕过门直接写了档位，账面上都看不出破绽。重算就是\n * 把同一道门照着流水再走一遍，得到「凭这些证据最多能到哪一档」；跟账上写的对不上\n * 就叫漂移（`driftOf` 会挑出来）。\n *\n * 两条规矩跟 `gateStage` 完全一致，别在这儿另立一套：\n *   ①每条证据自己记着「我之后档位在哪」（`item.stage`），一次只前进一步；\n *   ②`STAGE_NEEDS` 里那几档要凑够「真做过」的证据，不够就停在原地。\n * 没有 `item.stage` 的老证据（加这个字段之前记的）只算进 `workCount`：它证得了\n * 「他做过」，证不了「当时判成了哪一档」，所以不让它推动档位。\n *\n * 返回 `{ stage, source, work }`：`source` 是最后一次推动档位的那条证据 id。\n */\nexport function derivedStage(state) {\n  const list = liveEvidence(state)\n  let stage = '没接触过'\n  let work = 0\n  let source = null\n  for (const item of list) {\n    if (WORK_KINDS.includes(item.kind)) work += 1\n    const want = STAGES.includes(item && item.stage) ? item.stage : null\n    if (!want) continue\n    const ceiling = Math.min(STAGES.indexOf(stage) + 1, STAGES.length - 1)\n    const next = STAGES.indexOf(want) > ceiling ? STAGES[ceiling] : want\n    if (next === stage) continue\n    if ((STAGE_NEEDS[next] || 0) > work) continue\n    stage = next\n    source = item.id ? String(item.id) : null\n  }\n  return { stage, source, work }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/store.js:78-110](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/store.js#L78-L110)\n\n数据恢复基线。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  read(key) {\n    try {\n      const raw = readFileSync(this.path(key), 'utf8')\n      const parsed = JSON.parse(raw)\n      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return this.default(key)\n      return parsed\n    } catch {\n      return this.default(key)\n    }\n  }\n\n  /** 整份写下去，先落临时文件再改名，避免写一半断电留个半截 JSON。 */\n  write(key, value) {\n    const target = this.path(key)\n    const tmp = target + '.tmp'\n    writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8')\n    renameSync(tmp, target)\n    return value\n  }\n\n  /** 改一份：读出当前值，交给 fn，写回。fn 里就地改或者返回新对象都行。 */\n  update(key, fn) {\n    const current = this.read(key)\n    const next = fn(current) ?? current\n    if (next && typeof next === 'object' && !next.updatedAt && key !== 'map' && key !== 'mastery') {\n      next.updatedAt = nowIso()\n    }\n    return this.write(key, next)\n  }\n\n  /** 面板要一眼看全，这里一次把几份都端出去。 */\n  snapshot() {\n    const map = this.read('map')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/session-preset.js:97-100](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/session-preset.js#L97-L100)\n\n筛选基线。\n\n```text\nexport function learningSessions(items) {\n  const rows = (Array.isArray(items) ? items : []).filter(visible)\n  if (!hasPresetChannel(rows)) return { items: rows, filtered: false }\n  return { items: rows.filter((item) => presetOf(item) === PRESET_ID || isFresh(item.sessionId)), filtered: true }\n```\n\n**依据 4 · 源码核查**：[lib/routes.js:1653-1676](https://github.com/Ame-Choo/dsh-study-coach/blob/7c2c2d3f71cb49508e567674882eddb1b3a689ba/lib/routes.js#L1653-L1676)\n\n请求分派基线。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  return function handle(request) {\n    const method = (request && request.method) || 'GET'\n    /* HEAD 按 GET 的路由找（HTTP 就这么定的「只要头不要体」），响应体由 Node 自己省掉。 */\n    const wanted = method === 'HEAD' ? 'GET' : method\n    const pathname = (request && request.pathname) || '/'\n    for (const route of routes) {\n      if (route.method !== wanted) continue\n      const match = route.pattern.exec(pathname)\n      if (!match) continue\n      const failure = (error) => ({\n        code: 500,\n        body: { ok: false, error: { code: 'internal', message: String((error && error.message) ?? error) } },\n      })\n      try {\n        const out = route.fn({\n          body: request.body,\n          query: request.query,\n          params: match.slice(1),\n          /* 广播通道那条要拿原始响应自己接管（SSE 长连接），别的路由不看这两个 */\n          req: (request && request.req) || null,\n          res: (request && request.res) || null,\n        })\n        // 同步路由照旧直接返回；异步的（投递、读对话那几条）把 rejection 也收成响应，别让它飘出去。\n        return out && typeof out.then === 'function' ? out.catch(failure) : out\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：87e83aa1b4285ce7bc5e7c9a0ae06154ccc55f186b5dee544441f0703def725e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 3637 | — | — | 81434 |\n| .js | source | 39 | 18650 | 14578 | 2893 | — |\n| .mjs | source | 5 | 404 | 284 | 90 | — |\n| .js | test | 46 | 12456 | 10023 | 1143 | — |\n\n排除 25 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 预设/Skill/工具 | 教练建图记录 | 内容和判断需核 |\n| 掌握证据门 | 渐进升级与重算 | 来源/独立性未知 |\n| 面板/桥接 | 学生回访和投话 | 本地单用户边界 |\n\n## 工程亮点\n\n共用gate、结构化证据及作用域工具可借鉴；默认回落和多文件恢复需更强契约。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/preset.js、lib/preset-tools.js、skills/study-coach/SKILL.md、lib/tools.js、lib/map.js、lib/store.js、lib/library.js、lib/handler.js、lib/routes.js、lib/session-preset.js、lib/panel-server.js、lib/pages.js、test/store.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定host装配、预设/Skill与工具注册、掌握证据门、JSON/Library、handler/router分派、会话筛选和PDF关键链；不穷尽全部页面/21工具。\n- 下一步：进一步从重复证据、坏JSON、多进程、无preset投影和匿名请求研究隔离/恢复。\n",
         "metadata": {
             "repository": "Ame-Choo/dsh-study-coach",
             "repository_id": 1400498179,
-            "captured_at": "2026-10-21T08:01:29.433Z",
-            "window_start": "2026-09-21T08:01:29.433Z",
+            "captured_at": "2026-10-22T06:09:56.527Z",
+            "window_start": "2026-09-22T06:09:56.527Z",
             "stars": 3,
             "pushed_at": "2026-10-14T14:00:18Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84A0:4C3CE:6A19E0:720F89:6AD8715E and timestamp 2026-10-21 08:01:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85E0:272FB3:6B6422:735748:6AD8715F and timestamp 2026-10-21 08:01:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A29.433Z..2026-10-21T08%3A01%3A29.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8728:E6488:81733F:8968D3:6AD87160 and timestamp 2026-10-21 08:01:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T08%3A01%3A29.433Z..2026-10-21T08%3A01%3A29.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A26:10F8F5:6E20C1:761294:6AD87163 and timestamp 2026-10-21 08:01:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAme-Choo%2Fdsh-study-coach%20is%3Aissue%20updated%3A2026-09-21T08%3A01%3A29.433Z..2026-10-21T08%3A01%3A29.433Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B90:103C86:6B25A8:731B64:6AD87164 and timestamp 2026-10-21 08:01:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-study-coach",
-                "captured_at": "2026-10-21T08:01:40.555Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:10:04.582Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 353,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-study-coach",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-study-coach",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-01T18:57:54.050Z",
-                    "captured_at": "2026-10-21T08:01:40.555Z",
+                    "captured_at": "2026-10-22T06:10:04.582Z",
                     "source_url": "https://registry.npmjs.org/dsh-study-coach",
                     "error": null,
                     "latest_version": "0.1.0",

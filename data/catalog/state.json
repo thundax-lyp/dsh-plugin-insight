@@ -1,7 +1,7 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "aa1e742a870efef6723a6e57cfc82df5ea04149b62af5ea01b606d5c63ee0099",
-    "index_sha256": "11e6c7c1c352cbade0797a7fe97d6c861243ee512ce93dbd9829d557cca2a858",
+    "snapshot_digest": "776c4dff85a3beb5ab429c8dcd751f81e79be209b614a7c78250b1dea3a21f45",
+    "index_sha256": "51924fb81e6bbcc3ae8b287cc933522b100f77075239c179c749547ab7149773",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-22T04:36:02.544Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本次逐题研究已更新 207/336，保留其余有效研究",
+            "scope": "本次逐题研究已更新 243/336，保留其余有效研究",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -11213,14 +11213,6 @@
             "path": "evidence/13/133e8ac7d6c8e1e4f73d847ab1d5dcf9031bf5449b88e06af0373ef9a604ca3a.json",
             "sha256": "133e8ac7d6c8e1e4f73d847ab1d5dcf9031bf5449b88e06af0373ef9a604ca3a"
         },
-        "data/runs/2026-10-20-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json": {
-            "path": "evidence/c0/c03244fabc38c619137fe4c649836007a7a6f625df3a0ffc96a4dd0019b64127.json",
-            "sha256": "c03244fabc38c619137fe4c649836007a7a6f625df3a0ffc96a4dd0019b64127"
-        },
-        "data/runs/2026-10-20-04/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json": {
-            "path": "evidence/ae/aed696c24195845e41261cb1777a418298811147549a761f79ee0e5ee36ad5ea.json",
-            "sha256": "aed696c24195845e41261cb1777a418298811147549a761f79ee0e5ee36ad5ea"
-        },
         "data/runs/2026-10-20-04/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json": {
             "path": "evidence/98/98fd0bf43144c8a12ccd8060f294f32a4ac2b579f59e66c0fe03f9a2ce12d3fd.json",
             "sha256": "98fd0bf43144c8a12ccd8060f294f32a4ac2b579f59e66c0fe03f9a2ce12d3fd"
@@ -11237,10 +11229,6 @@
             "path": "evidence/0c/0ca9f2d75cbf7902322277da02d9b6a5dafb31922ddff63792b3104424cbeb84.json",
             "sha256": "0ca9f2d75cbf7902322277da02d9b6a5dafb31922ddff63792b3104424cbeb84"
         },
-        "data/runs/2026-10-20-04/snapshots/137--dsh-chatgpt-style/REVIEWED-SOURCE.json": {
-            "path": "evidence/69/693741bee0427fe3767513e41a48d6595eb744258d23e0c7c53a24eb0417e2e9.json",
-            "sha256": "693741bee0427fe3767513e41a48d6595eb744258d23e0c7c53a24eb0417e2e9"
-        },
         "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/REVIEWED-SOURCE.json": {
             "path": "evidence/39/39f90ccb8d2d5be3af097ef8dfbc8d29a9c35f171326abe859a1ee16f1653db6.json",
             "sha256": "39f90ccb8d2d5be3af097ef8dfbc8d29a9c35f171326abe859a1ee16f1653db6"
@@ -11248,10 +11236,6 @@
         "data/runs/2026-10-20-04/snapshots/1497105876--dsh-mimotts/REVIEWED-SOURCE.json": {
             "path": "evidence/33/334d9653ba066976fd202d8107b24f9eeeda6c71eaec2a4f55c673bf4c64eb1b.json",
             "sha256": "334d9653ba066976fd202d8107b24f9eeeda6c71eaec2a4f55c673bf4c64eb1b"
-        },
-        "data/runs/2026-10-20-04/snapshots/1497105876--dsh-text-inject/REVIEWED-SOURCE.json": {
-            "path": "evidence/bb/bb63f7b921e554f76fedab9c9fff741d6432eab208ff8cf970b5fb8a77c749cf.json",
-            "sha256": "bb63f7b921e554f76fedab9c9fff741d6432eab208ff8cf970b5fb8a77c749cf"
         },
         "data/runs/2026-10-20-04/snapshots/1569126506-sudo--dsh-team-cost/REVIEWED-SOURCE.json": {
             "path": "evidence/34/348e2c6ac1bc8b8cbb93dc753778c6daca3cc5eb00e02900defca081a3e5fc1a.json",
@@ -11268,10 +11252,6 @@
         "data/runs/2026-10-20-04/snapshots/1624318455--dsh-plugin-tts/REVIEWED-SOURCE.json": {
             "path": "evidence/9b/9b026253756d1bb2028a3ad98fb27a85e2f88ec21b688e0fd51a42ad21e64df3.json",
             "sha256": "9b026253756d1bb2028a3ad98fb27a85e2f88ec21b688e0fd51a42ad21e64df3"
-        },
-        "data/runs/2026-10-20-04/snapshots/1687210989--agent-clinic/REVIEWED-SOURCE.json": {
-            "path": "evidence/20/208e4fb97082aa1300e38a3666eb261dedf5cd41e808b50b674aa88b84370c8c.json",
-            "sha256": "208e4fb97082aa1300e38a3666eb261dedf5cd41e808b50b674aa88b84370c8c"
         },
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-device-bridge/REVIEWED-SOURCE.json": {
             "path": "evidence/0f/0ff4b37e497188776f4006b99920a795f89849981110ce5ae0c6f757042c236e.json",
@@ -11417,10 +11397,6 @@
             "path": "evidence/5b/5b3cbd661141e7d3430c61a26a6382118081edd62a92f9893c83ee8d2464a9ed.json",
             "sha256": "5b3cbd661141e7d3430c61a26a6382118081edd62a92f9893c83ee8d2464a9ed"
         },
-        "data/runs/2026-10-20-08/snapshots/173787247--dsh-wsl-uia/REVIEWED-SOURCE.json": {
-            "path": "evidence/9f/9f23f01a76d0ffba0d43676dbf344b7dfc9cd41b016f541697183343f0e01195.json",
-            "sha256": "9f23f01a76d0ffba0d43676dbf344b7dfc9cd41b016f541697183343f0e01195"
-        },
         "data/runs/2026-10-20-08/snapshots/173787247--dsh-wsl-vecmem/REVIEWED-SOURCE.json": {
             "path": "evidence/57/57c55622c760a96cde50ff02660158e784b35b96a5069dd7a61bce4a1244b02f.json",
             "sha256": "57c55622c760a96cde50ff02660158e784b35b96a5069dd7a61bce4a1244b02f"
@@ -11457,17 +11433,9 @@
             "path": "evidence/af/af766fd5a8feb7a7a12796cf7a1646850f956f4cc23eea71785ceddaa5f5e62d.json",
             "sha256": "af766fd5a8feb7a7a12796cf7a1646850f956f4cc23eea71785ceddaa5f5e62d"
         },
-        "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-draft-attachments/REVIEWED-SOURCE.json": {
-            "path": "evidence/0e/0e422eaedc139a3e434959a689d0e5df82a4ec0cf4bdec33d42e5367ca436036.json",
-            "sha256": "0e422eaedc139a3e434959a689d0e5df82a4ec0cf4bdec33d42e5367ca436036"
-        },
         "data/runs/2026-10-20-08/snapshots/2026heshao--dsh-forget-session/REVIEWED-SOURCE.json": {
             "path": "evidence/c3/c36805a1a3b6f6b0eedf1604b69aafd0ed942b2130930605a8b54d815d427f2f.json",
             "sha256": "c36805a1a3b6f6b0eedf1604b69aafd0ed942b2130930605a8b54d815d427f2f"
-        },
-        "data/runs/2026-10-20-08/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json": {
-            "path": "evidence/df/dfa9f29656ea871fe6b80762951c1e3609c19bc4b3b924c154f65f2635fee2e5.json",
-            "sha256": "dfa9f29656ea871fe6b80762951c1e3609c19bc4b3b924c154f65f2635fee2e5"
         },
         "data/runs/2026-10-20-08/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json": {
             "path": "evidence/fe/fe10ef7fe6ad59213dac57ae76ea95a69642b36bc55c460f0bcf3dee670fc834.json",
@@ -11505,21 +11473,9 @@
             "path": "evidence/af/af723a4f8b4086b72b9ed75f6b1885c34197328c32b8ef1a8a01dfc1b3f6f86b.json",
             "sha256": "af723a4f8b4086b72b9ed75f6b1885c34197328c32b8ef1a8a01dfc1b3f6f86b"
         },
-        "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json": {
-            "path": "evidence/20/20bd61f1f5e1853fb4137f519348e22bbfc6f1ab945f9596966f98f457eca15e.json",
-            "sha256": "20bd61f1f5e1853fb4137f519348e22bbfc6f1ab945f9596966f98f457eca15e"
-        },
-        "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json": {
-            "path": "evidence/19/193405d165f1c67f78ded64f80424bd213315ecc638de473f5c32a585a055183.json",
-            "sha256": "193405d165f1c67f78ded64f80424bd213315ecc638de473f5c32a585a055183"
-        },
         "data/runs/2026-10-21-01/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json": {
             "path": "evidence/e3/e3ef02c5377d949b6215cfe8c77a01b6ab47485bd6d250b9cbe9dc1ea19c5fe0.json",
             "sha256": "e3ef02c5377d949b6215cfe8c77a01b6ab47485bd6d250b9cbe9dc1ea19c5fe0"
-        },
-        "data/runs/2026-10-21-01/snapshots/3tiga3--dsh-plugin-namecards/REVIEWED-SOURCE.json": {
-            "path": "evidence/b7/b777733c53c6931c2a287a95003a65e5f8909196cda93473b84c3222ad8af99a.json",
-            "sha256": "b777733c53c6931c2a287a95003a65e5f8909196cda93473b84c3222ad8af99a"
         },
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-piano/REVIEWED-SOURCE.json": {
             "path": "evidence/77/77244fa76438d53c069d32c1017aca6d69626b97053318ec7c937a596d7cfe2e.json",
@@ -11545,14 +11501,6 @@
             "path": "evidence/cf/cfdfdc155f0c10fa2fc28a458aeb464829a8df6e839f19f50f31ecb686fe6cbc.json",
             "sha256": "cfdfdc155f0c10fa2fc28a458aeb464829a8df6e839f19f50f31ecb686fe6cbc"
         },
-        "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json": {
-            "path": "evidence/06/06050f590ae53a70264581529a846859b86eade7180ee12c84e10286cdbda902.json",
-            "sha256": "06050f590ae53a70264581529a846859b86eade7180ee12c84e10286cdbda902"
-        },
-        "data/runs/2026-10-21-01/snapshots/4444hao--dsh-codefall/REVIEWED-SOURCE.json": {
-            "path": "evidence/99/990b98cacf462f5b102ac3fa71bb221a5355f02ca912488885097cf0d6896c0d.json",
-            "sha256": "990b98cacf462f5b102ac3fa71bb221a5355f02ca912488885097cf0d6896c0d"
-        },
         "data/runs/2026-10-21-01/snapshots/452926826--dsh-feishu-bot/REVIEWED-SOURCE.json": {
             "path": "evidence/d9/d9aaee52d9b27d27a09cfef02db504bb3147181e0174507f839a9c32d484e7b0.json",
             "sha256": "d9aaee52d9b27d27a09cfef02db504bb3147181e0174507f839a9c32d484e7b0"
@@ -11560,10 +11508,6 @@
         "data/runs/2026-10-21-01/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json": {
             "path": "evidence/9a/9a4701c5465e12ca298efaaf7d80679df1e5116f79bafa31ca4eb1b770160d66.json",
             "sha256": "9a4701c5465e12ca298efaaf7d80679df1e5116f79bafa31ca4eb1b770160d66"
-        },
-        "data/runs/2026-10-21-01/snapshots/2jumpsina--dsh-context-guard/REVIEWED-SOURCE.json": {
-            "path": "evidence/3c/3cb539ada2b0fd088155d5c0e80fe9fb602934113c3c98b27452099920c3b20e.json",
-            "sha256": "3cb539ada2b0fd088155d5c0e80fe9fb602934113c3c98b27452099920c3b20e"
         },
         "data/runs/2026-10-21-01/snapshots/3361805598-gif--dsh-md-annotator/REVIEWED-SOURCE.json": {
             "path": "evidence/94/944336e9ffc26a44e2dde7454d129f047b72225945e34ed917a14f1495f4c04c.json",
@@ -11576,10 +11520,6 @@
         "data/runs/2026-10-21-01/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json": {
             "path": "evidence/50/5010196d145c22056f5ec048f9497733a49ee0c7c3e511042512cfa234b2fffd.json",
             "sha256": "5010196d145c22056f5ec048f9497733a49ee0c7c3e511042512cfa234b2fffd"
-        },
-        "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json": {
-            "path": "evidence/4a/4a2ef20c1560b50e6355ff07ca111b02d62ce7639a9935305a14e523a190735e.json",
-            "sha256": "4a2ef20c1560b50e6355ff07ca111b02d62ce7639a9935305a14e523a190735e"
         },
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-scroll-piano/REVIEWED-SOURCE.json": {
             "path": "evidence/2a/2a4451f74837257619d6339ca92827cce1d17117c20464676d934c1ec9182ab2.json",
@@ -11597,10 +11537,6 @@
             "path": "evidence/8d/8da1b892940c6b2f3d430804757b23cf2154d05e8fc206e6722aa641fba69786.json",
             "sha256": "8da1b892940c6b2f3d430804757b23cf2154d05e8fc206e6722aa641fba69786"
         },
-        "data/runs/2026-10-21-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json": {
-            "path": "evidence/1f/1f7e64c801df44db9005ab73c01a211d45cad2a406c829abe2e8c5a2f53317f7.json",
-            "sha256": "1f7e64c801df44db9005ab73c01a211d45cad2a406c829abe2e8c5a2f53317f7"
-        },
         "data/runs/2026-10-21-02/snapshots/534119219--chicheng-quickinput/REVIEWED-SOURCE.json": {
             "path": "evidence/31/31e87a8b76bcd217b4c4d5362a6a711f42e331fb7eb287dae111feeb6a809f51.json",
             "sha256": "31e87a8b76bcd217b4c4d5362a6a711f42e331fb7eb287dae111feeb6a809f51"
@@ -11608,10 +11544,6 @@
         "data/runs/2026-10-21-02/snapshots/534119219--chicheng-stats/REVIEWED-SOURCE.json": {
             "path": "evidence/29/290c8995d1bf1704116dcf0f7d72d192eae9e6c0203e64bd64563927732d3c79.json",
             "sha256": "290c8995d1bf1704116dcf0f7d72d192eae9e6c0203e64bd64563927732d3c79"
-        },
-        "data/runs/2026-10-21-02/snapshots/535408248-oss--dsh-douyin-webview/REVIEWED-SOURCE.json": {
-            "path": "evidence/3d/3d4e2293cb4d2d440b23f71c1cc699026d393cb1ac7a62421f08dd8477366989.json",
-            "sha256": "3d4e2293cb4d2d440b23f71c1cc699026d393cb1ac7a62421f08dd8477366989"
         },
         "data/runs/2026-10-21-02/snapshots/544244857--dsh-image2-plugin/REVIEWED-SOURCE.json": {
             "path": "evidence/2d/2dfa9ebc89d5f00120952042f1cc2aeebcd201493fda64283abef88a5c691cb1.json",
@@ -11665,14 +11597,6 @@
             "path": "evidence/be/be0fc92ba7909920c558974b98e454f6704d49982883e4403f73405cad4cff04.json",
             "sha256": "be0fc92ba7909920c558974b98e454f6704d49982883e4403f73405cad4cff04"
         },
-        "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-gui-guard/REVIEWED-SOURCE.json": {
-            "path": "evidence/71/7155cfe8a62ac3a12179db00611fd334e39f8ae461f3d176dd9ac3d6d12bda10.json",
-            "sha256": "7155cfe8a62ac3a12179db00611fd334e39f8ae461f3d176dd9ac3d6d12bda10"
-        },
-        "data/runs/2026-10-21-02/snapshots/7gzgn--dsh-inpage-translator/REVIEWED-SOURCE.json": {
-            "path": "evidence/46/4662dcd26455f53533170bcfa1358df702eee57ae1d6b948d24f27f3d5ff06d9.json",
-            "sha256": "4662dcd26455f53533170bcfa1358df702eee57ae1d6b948d24f27f3d5ff06d9"
-        },
         "data/runs/2026-10-21-02/snapshots/5101good--amoji--adapters-dsh/REVIEWED-SOURCE.json": {
             "path": "evidence/2f/2f77ba57bc71a6be9dc6411db36ce4c70cf0f750f1e0a6babd59c7c0613a0fd5.json",
             "sha256": "2f77ba57bc71a6be9dc6411db36ce4c70cf0f750f1e0a6babd59c7c0613a0fd5"
@@ -11681,10 +11605,6 @@
             "path": "evidence/f3/f385e2be7580074a0bf0422b8cb2f470921c24ddc79190d6e47ec954b2f16612.json",
             "sha256": "f385e2be7580074a0bf0422b8cb2f470921c24ddc79190d6e47ec954b2f16612"
         },
-        "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-profile-stylist/REVIEWED-SOURCE.json": {
-            "path": "evidence/61/614969a87ad91fcb7498ba1ab501e3cddd7947ad96ec6ef63d6592bbbba961a0.json",
-            "sha256": "614969a87ad91fcb7498ba1ab501e3cddd7947ad96ec6ef63d6592bbbba961a0"
-        },
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-plugin-translation/REVIEWED-SOURCE.json": {
             "path": "evidence/94/9448228bf28ac4884bd866885e713790f1807ba531dd4faff05421647ed73b29.json",
             "sha256": "9448228bf28ac4884bd866885e713790f1807ba531dd4faff05421647ed73b29"
@@ -11692,10 +11612,6 @@
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-recipe/REVIEWED-SOURCE.json": {
             "path": "evidence/29/2996b164e55c65875cb5eb3b6713f3d2cc419870f2e50ca092cddc2c8e4c201c.json",
             "sha256": "2996b164e55c65875cb5eb3b6713f3d2cc419870f2e50ca092cddc2c8e4c201c"
-        },
-        "data/runs/2026-10-21-03/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json": {
-            "path": "evidence/d9/d9bfd20bb28470ae7bd9a6d7a744d44ae1f7c4524f924c0b2ae1fb8b8a5313e7.json",
-            "sha256": "d9bfd20bb28470ae7bd9a6d7a744d44ae1f7c4524f924c0b2ae1fb8b8a5313e7"
         },
         "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-restart-dock/REVIEWED-SOURCE.json": {
             "path": "evidence/30/30dbdc593cb92f52074c2a495780ad38f155ad7ebda7a319ad86086e7871c9d3.json",
@@ -11728,10 +11644,6 @@
         "data/runs/2026-10-21-03/snapshots/7starsseeker--dsh-jev-guard/REVIEWED-SOURCE.json": {
             "path": "evidence/a6/a61065455c05ad8c2d479e245349edbbe0c9b4a0452c139fd1561016e0b4ae9f.json",
             "sha256": "a61065455c05ad8c2d479e245349edbbe0c9b4a0452c139fd1561016e0b4ae9f"
-        },
-        "data/runs/2026-10-21-03/snapshots/7vw58n3ftvq7cn89v--dsh-plugin-session-colors/REVIEWED-SOURCE.json": {
-            "path": "evidence/21/21a3e27d99c656a55759b54db3f4ff6ce106de5bdc423f985d71a53f7b826ea8.json",
-            "sha256": "21a3e27d99c656a55759b54db3f4ff6ce106de5bdc423f985d71a53f7b826ea8"
         },
         "data/runs/2026-10-21-03/snapshots/863683348--dsh-insight/REVIEWED-SOURCE.json": {
             "path": "evidence/7b/7bae85c33fb953b57a9be88f5be69eef529bfb76397a6a40970aaadb269fa903.json",
@@ -11789,10 +11701,6 @@
             "path": "evidence/0a/0ad1d9581c5f91a981e79d0a7892831a6e7cdc647d8714768575e20a28793239.json",
             "sha256": "0ad1d9581c5f91a981e79d0a7892831a6e7cdc647d8714768575e20a28793239"
         },
-        "data/runs/2026-10-21-04/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json": {
-            "path": "evidence/8c/8ced7c2ea6ebebef27d4d093ecf8b22689e49ba64662409544777a00513cc8ce.json",
-            "sha256": "8ced7c2ea6ebebef27d4d093ecf8b22689e49ba64662409544777a00513cc8ce"
-        },
         "data/runs/2026-10-21-04/snapshots/aicivilization--dsh-model/REVIEWED-SOURCE.json": {
             "path": "evidence/fd/fdb5423426174f8eea93f3107121e228d4e20221f538b09fa3591e150b4c2a7f.json",
             "sha256": "fdb5423426174f8eea93f3107121e228d4e20221f538b09fa3591e150b4c2a7f"
@@ -11800,18 +11708,6 @@
         "data/runs/2026-10-21-04/snapshots/aicivilization--dsh-vps/REVIEWED-SOURCE.json": {
             "path": "evidence/7b/7b888f1c5338db98af0fea528048f4dcaa9f2135c25c5c61d13163a284d2d215.json",
             "sha256": "7b888f1c5338db98af0fea528048f4dcaa9f2135c25c5c61d13163a284d2d215"
-        },
-        "data/runs/2026-10-21-04/snapshots/ak-blank--dsh-plugin-auto-answer/REVIEWED-SOURCE.json": {
-            "path": "evidence/4d/4d6face028fee9d03d0fb9fed23bff8a83eb67b8add812d4570b864729d6c523.json",
-            "sha256": "4d6face028fee9d03d0fb9fed23bff8a83eb67b8add812d4570b864729d6c523"
-        },
-        "data/runs/2026-10-21-06/snapshots/ak-blank--dsh-plugin-mac-notify/REVIEWED-SOURCE.json": {
-            "path": "evidence/a6/a67f3fc03b5a7acf79ddf40f2914667083d1517679913d0c37b63041318db0e3.json",
-            "sha256": "a67f3fc03b5a7acf79ddf40f2914667083d1517679913d0c37b63041318db0e3"
-        },
-        "data/runs/2026-10-21-06/snapshots/ak-blank--dsh-plugin-offpeak-badge/REVIEWED-SOURCE.json": {
-            "path": "evidence/e7/e7f3f53655e34ff74fa337992bf61ad0ad302cab2a4d63be3dc50d828143f242.json",
-            "sha256": "e7f3f53655e34ff74fa337992bf61ad0ad302cab2a4d63be3dc50d828143f242"
         },
         "data/runs/2026-10-21-06/snapshots/acidgr--dsh-web-lan-access/REVIEWED-SOURCE.json": {
             "path": "evidence/f1/f138162238f10a9d8455100d8bd0b834e3a9b38e775b5323f6d586a75cf815e5.json",
@@ -11821,29 +11717,13 @@
             "path": "evidence/62/62da27c4dcfbdebf0cc4a404ee9849be9cb7f1127714bd3ca9b0e63bdb33239b.json",
             "sha256": "62da27c4dcfbdebf0cc4a404ee9849be9cb7f1127714bd3ca9b0e63bdb33239b"
         },
-        "data/runs/2026-10-21-06/snapshots/adilalmahmoud--dsh-rtl-chat/REVIEWED-SOURCE.json": {
-            "path": "evidence/6f/6f2e008da85ba5beef211404c17f89eae81a47bae6d22cc886bc6d769cadfd1b.json",
-            "sha256": "6f2e008da85ba5beef211404c17f89eae81a47bae6d22cc886bc6d769cadfd1b"
-        },
         "data/runs/2026-10-21-06/snapshots/aks1st--dock-files/REVIEWED-SOURCE.json": {
             "path": "evidence/ed/ed358bd308dd72c4397842a05b79162ba85cb477b3d66c1235cf0ebb7f0c3102.json",
             "sha256": "ed358bd308dd72c4397842a05b79162ba85cb477b3d66c1235cf0ebb7f0c3102"
         },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock-spreadsheet/REVIEWED-SOURCE.json": {
-            "path": "evidence/96/96194ce540654c58d4de4ff8d7fe53aaddf04474fffd6ab88f0f8d3e52ee3e74.json",
-            "sha256": "96194ce540654c58d4de4ff8d7fe53aaddf04474fffd6ab88f0f8d3e52ee3e74"
-        },
         "data/runs/2026-10-21-06/snapshots/aks1st--dsh-sysmon/REVIEWED-SOURCE.json": {
             "path": "evidence/f9/f99fb34f5ac25fed118d71fc94270413388e8b86e16d5c2477821dd88591a896.json",
             "sha256": "f99fb34f5ac25fed118d71fc94270413388e8b86e16d5c2477821dd88591a896"
-        },
-        "data/runs/2026-10-21-06/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json": {
-            "path": "evidence/da/da314edcdec991ae87d1eb5885078d4456f3ef8e847769d0b859cbf89a89f8c4.json",
-            "sha256": "da314edcdec991ae87d1eb5885078d4456f3ef8e847769d0b859cbf89a89f8c4"
-        },
-        "data/runs/2026-10-21-06/snapshots/ahyi8--dsh-gotify-notify/REVIEWED-SOURCE.json": {
-            "path": "evidence/28/2804d7836f56b1e147e7b65ca4d6cf4eab9e6936155559252bdfd8adde2ca189.json",
-            "sha256": "2804d7836f56b1e147e7b65ca4d6cf4eab9e6936155559252bdfd8adde2ca189"
         },
         "data/runs/2026-10-21-06/snapshots/aicksion--dsh-clean-desktop-shell-pro/REVIEWED-SOURCE.json": {
             "path": "evidence/a3/a3f4f69066245f130d5a566b31cacb0185336442b6cba335885dd714a18ce00a.json",
@@ -11852,18 +11732,6 @@
         "data/runs/2026-10-21-06/snapshots/aks1st--dsh-skill-manager/REVIEWED-SOURCE.json": {
             "path": "evidence/b2/b2b3ccde20ac9b9e573f7f92a54f9444e994a70db8da66c1e8fdbe658efa5385.json",
             "sha256": "b2b3ccde20ac9b9e573f7f92a54f9444e994a70db8da66c1e8fdbe658efa5385"
-        },
-        "data/runs/2026-10-21-06/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json": {
-            "path": "evidence/13/13b68301eab901bbb751daa2a3414e93b8553fad8fc8f9ab72e1dac13af1d2c4.json",
-            "sha256": "13b68301eab901bbb751daa2a3414e93b8553fad8fc8f9ab72e1dac13af1d2c4"
-        },
-        "data/runs/2026-10-21-06/snapshots/al1ghtm3ter--dsh-right-click-menu/REVIEWED-SOURCE.json": {
-            "path": "evidence/29/2917cd7f328f35e0e8a3febde0d6798a0d5f879a2da1acbab4609d678bb7da21.json",
-            "sha256": "2917cd7f328f35e0e8a3febde0d6798a0d5f879a2da1acbab4609d678bb7da21"
-        },
-        "data/runs/2026-10-21-06/snapshots/alive114514awa--dsh-prompt-optimizer/REVIEWED-SOURCE.json": {
-            "path": "evidence/4d/4d4cc9a382f65507af5848ddb6bb4f367f3413e2b4eb282bc34d2ea840282b91.json",
-            "sha256": "4d4cc9a382f65507af5848ddb6bb4f367f3413e2b4eb282bc34d2ea840282b91"
         },
         "data/runs/2026-10-21-06/snapshots/aik358--dsh-ark9canvas/REVIEWED-SOURCE.json": {
             "path": "evidence/41/41032ef3006c68803f68a55df0d74ec11fce3922f9ce075b9efd49eb1d6c0d36.json",
@@ -11905,10 +11773,6 @@
             "path": "evidence/06/06741407a8dd8e9f81fe00f053363e12d645adf3396da3042f4317367934f6ae.json",
             "sha256": "06741407a8dd8e9f81fe00f053363e12d645adf3396da3042f4317367934f6ae"
         },
-        "data/runs/2026-10-21-07/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json": {
-            "path": "evidence/87/8706e08adaa59a8582595261accb6f22558dcc548defadeeeee44075d1d8d516.json",
-            "sha256": "8706e08adaa59a8582595261accb6f22558dcc548defadeeeee44075d1d8d516"
-        },
         "data/runs/2026-10-21-07/snapshots/airisey--dsh-model-failover/REVIEWED-SOURCE.json": {
             "path": "evidence/ad/adf10422cf252eb84b67b0adedab3ff333d49678578e08980ade026486a54df3.json",
             "sha256": "adf10422cf252eb84b67b0adedab3ff333d49678578e08980ade026486a54df3"
@@ -11924,10 +11788,6 @@
         "data/runs/2026-10-21-07/snapshots/andrew111888--dsh-plugin-balance/REVIEWED-SOURCE.json": {
             "path": "evidence/1f/1f6400af5ab68207076c2a7330ff22d8e02587427be41c60d2b75d2a08e90204.json",
             "sha256": "1f6400af5ab68207076c2a7330ff22d8e02587427be41c60d2b75d2a08e90204"
-        },
-        "data/runs/2026-10-21-07/snapshots/andyyang12345--dsh-dictation-hotkey/REVIEWED-SOURCE.json": {
-            "path": "evidence/0a/0ae376f7e31883ea2b76a4abe12f5cd5678cb8fe85c7b1cd1098d518d708352e.json",
-            "sha256": "0ae376f7e31883ea2b76a4abe12f5cd5678cb8fe85c7b1cd1098d518d708352e"
         },
         "data/runs/2026-10-21-07/snapshots/alnita-m--dsh-almost_full_access/REVIEWED-SOURCE.json": {
             "path": "evidence/b4/b4d6d900d20cf3d2a44b418e9ffc651e9b7721f9551588ce54b21d4aeeb9345a.json",
@@ -11957,10 +11817,6 @@
             "path": "evidence/ba/ba47b1c572e2cca39c05c3ce937e5965a7b91214d2b7a1a1ba5b219ba42d2ea2.json",
             "sha256": "ba47b1c572e2cca39c05c3ce937e5965a7b91214d2b7a1a1ba5b219ba42d2ea2"
         },
-        "data/runs/2026-10-21-07/snapshots/ame-choo--dsh-study-coach/REVIEWED-SOURCE.json": {
-            "path": "evidence/90/9073c6cde635320c6bd339f48d60b21ad24a9b4e5214393e062a70e7dd1628d1.json",
-            "sha256": "9073c6cde635320c6bd339f48d60b21ad24a9b4e5214393e062a70e7dd1628d1"
-        },
         "data/runs/2026-10-22-insight-comparison/snapshots/angeloszou--dsh-python-env/REVIEWED-SOURCE.json": {
             "path": "evidence/64/649f652834e5b61a0681a719269dd74f9456d241155fa3b053898ae6a8cd790a.json",
             "sha256": "649f652834e5b61a0681a719269dd74f9456d241155fa3b053898ae6a8cd790a"
@@ -11985,9 +11841,25 @@
             "path": "evidence/ba/baa7035dee564094fd2e1721751ab94402dde82a2d3ea66d90ebbfb0cf7d6c04.json",
             "sha256": "baa7035dee564094fd2e1721751ab94402dde82a2d3ea66d90ebbfb0cf7d6c04"
         },
+        "data/runs/2026-10-22-02/snapshots/2jumpsina--dsh-context-guard/REVIEWED-SOURCE.json": {
+            "path": "evidence/bf/bf4c1bb86287b6218520668907ec6c16f576e1c7f4f26ccafde10c15836ffd19.json",
+            "sha256": "bf4c1bb86287b6218520668907ec6c16f576e1c7f4f26ccafde10c15836ffd19"
+        },
+        "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-draft-attachments/REVIEWED-SOURCE.json": {
+            "path": "evidence/05/05badea05acd76813de696fc316c724e9f1d4cf3295eefbb471dd97fc1f329c6.json",
+            "sha256": "05badea05acd76813de696fc316c724e9f1d4cf3295eefbb471dd97fc1f329c6"
+        },
+        "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-mac-notify/REVIEWED-SOURCE.json": {
+            "path": "evidence/15/157f1a37e2593a0c6fc8d29204330d23af08998fa246faba298c53da4b792cf2.json",
+            "sha256": "157f1a37e2593a0c6fc8d29204330d23af08998fa246faba298c53da4b792cf2"
+        },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json": {
             "path": "evidence/ba/bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7.json",
             "sha256": "bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7"
+        },
+        "data/runs/2026-10-22-02/snapshots/1687210989--agent-clinic/REVIEWED-SOURCE.json": {
+            "path": "evidence/b5/b56b96694bd185357b7001031a1a8959bcd9481724c4dd99b369f058d22db604.json",
+            "sha256": "b56b96694bd185357b7001031a1a8959bcd9481724c4dd99b369f058d22db604"
         },
         "data/runs/2026-10-22-02/snapshots/5aaee9--pi-agent-extensions--dsh-autocompact/REVIEWED-SOURCE.json": {
             "path": "evidence/c0/c0380fb60b5e281ad5435f6cd58f25cf32009cdee65f722c791cf16265194316.json",
@@ -12028,6 +11900,10 @@
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ruby/REVIEWED-SOURCE.json": {
             "path": "evidence/54/54974e66605bc9d66391c6354f3b58bb8481cc3e5532b66b92769bc9008aa626.json",
             "sha256": "54974e66605bc9d66391c6354f3b58bb8481cc3e5532b66b92769bc9008aa626"
+        },
+        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-gui-guard/REVIEWED-SOURCE.json": {
+            "path": "evidence/6d/6dc7cc9fad90d9b496ee8f674af4be28306d202151b853cab4ffa35d2084cfbb.json",
+            "sha256": "6dc7cc9fad90d9b496ee8f674af4be28306d202151b853cab4ffa35d2084cfbb"
         },
         "data/runs/2026-10-22-02/snapshots/akush99--dsh-balance-chip/REVIEWED-SOURCE.json": {
             "path": "evidence/ad/add7d1583cf772858df0bce2512a6fe2ddd97b49dc11114b1ea0bfb515949467.json",
@@ -12109,6 +11985,10 @@
             "path": "evidence/d3/d3f26c9410b5261c14950c0d456b3f296864aa99e6cab32df9b3c4f95db97c1c.json",
             "sha256": "d3f26c9410b5261c14950c0d456b3f296864aa99e6cab32df9b3c4f95db97c1c"
         },
+        "data/runs/2026-10-22-02/snapshots/al1ghtm3ter--dsh-right-click-menu/REVIEWED-SOURCE.json": {
+            "path": "evidence/50/508b15657edd01e84e5ce775358e593f76872be24e309743831e57add5dc2ced.json",
+            "sha256": "508b15657edd01e84e5ce775358e593f76872be24e309743831e57add5dc2ced"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-playwright/REVIEWED-SOURCE.json": {
             "path": "evidence/f2/f2be5ccdcbf6d0a2dca9018f5cbd8a067c92547ba543ea46448133c6c1133d00.json",
             "sha256": "f2be5ccdcbf6d0a2dca9018f5cbd8a067c92547ba543ea46448133c6c1133d00"
@@ -12117,13 +11997,33 @@
             "path": "evidence/ca/caf201c70f568e3c349e838be3bc7a0ff984408aabc2f9b20bf6b46b153fbdc2.json",
             "sha256": "caf201c70f568e3c349e838be3bc7a0ff984408aabc2f9b20bf6b46b153fbdc2"
         },
+        "data/runs/2026-10-22-02/snapshots/andyyang12345--dsh-dictation-hotkey/REVIEWED-SOURCE.json": {
+            "path": "evidence/34/34d653012d6ae14a752b83e3e105f6734a88d6105da22daca754d9641eea9868.json",
+            "sha256": "34d653012d6ae14a752b83e3e105f6734a88d6105da22daca754d9641eea9868"
+        },
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-focus/REVIEWED-SOURCE.json": {
             "path": "evidence/c9/c9918eda7e6180e045f14182b08a825539cbb51e3c791b07dbc6e0f49b43fa98.json",
             "sha256": "c9918eda7e6180e045f14182b08a825539cbb51e3c791b07dbc6e0f49b43fa98"
         },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json": {
+            "path": "evidence/d4/d4ea7cbe423c67d8002268d4b2199d01b4f3a8d27c9a64ef183d2f077240df94.json",
+            "sha256": "d4ea7cbe423c67d8002268d4b2199d01b4f3a8d27c9a64ef183d2f077240df94"
+        },
+        "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-offpeak-badge/REVIEWED-SOURCE.json": {
+            "path": "evidence/19/19aab44ce51a650f66b83a0adb30616164c043a3f02c29642deec4c98c7582d5.json",
+            "sha256": "19aab44ce51a650f66b83a0adb30616164c043a3f02c29642deec4c98c7582d5"
+        },
+        "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-offpeak-badge/OFFICIAL-PRICING.json": {
+            "path": "evidence/ab/ab03c45485b055a1a32f43c9bef53242fccda439a252fbe580ac97c5b39027b5.json",
+            "sha256": "ab03c45485b055a1a32f43c9bef53242fccda439a252fbe580ac97c5b39027b5"
+        },
         "data/runs/2026-10-22-02/snapshots/1321928757--dsh-mysql/REVIEWED-SOURCE.json": {
             "path": "evidence/66/66196cc46b3d55461b06415b1f4c2ff63ec1a4433a875e9fd00f0f627310433f.json",
             "sha256": "66196cc46b3d55461b06415b1f4c2ff63ec1a4433a875e9fd00f0f627310433f"
+        },
+        "data/runs/2026-10-22-02/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json": {
+            "path": "evidence/3f/3f9515ecd5956ae4a885513cd056535e3a12e1dfe9f9313f62993cc464f2bc02.json",
+            "sha256": "3f9515ecd5956ae4a885513cd056535e3a12e1dfe9f9313f62993cc464f2bc02"
         },
         "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-weknora-archive/REVIEWED-SOURCE.json": {
             "path": "evidence/9b/9b9cdc9ab4897f0d2de6218c96e6c0e89220fee8cde568b5478cc8b307d9acd3.json",
@@ -12141,6 +12041,14 @@
             "path": "evidence/e0/e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237.json",
             "sha256": "e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237"
         },
+        "data/runs/2026-10-22-02/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json": {
+            "path": "evidence/e2/e22b641de8afe0213adf4c2796201f2cf0a53b0902be185c664397a9a831684d.json",
+            "sha256": "e22b641de8afe0213adf4c2796201f2cf0a53b0902be185c664397a9a831684d"
+        },
+        "data/runs/2026-10-22-02/snapshots/137--dsh-chatgpt-style/REVIEWED-SOURCE.json": {
+            "path": "evidence/c2/c25439d7619cb01aabff3389e35c7fb86eb9e40f78c98e6a480cc5f48d42c05f.json",
+            "sha256": "c25439d7619cb01aabff3389e35c7fb86eb9e40f78c98e6a480cc5f48d42c05f"
+        },
         "data/runs/2026-10-22-02/snapshots/aafff623--dsh-keyboard-manager/REVIEWED-SOURCE.json": {
             "path": "evidence/19/192c0d3787111838e8a9e0e465e683427af483a54193bfb0e33bb76f576af67d.json",
             "sha256": "192c0d3787111838e8a9e0e465e683427af483a54193bfb0e33bb76f576af67d"
@@ -12148,6 +12056,10 @@
         "data/runs/2026-10-22-02/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json": {
             "path": "evidence/d6/d690bdf22d32075395a0eb558be6576306c79fe1314d924bf0a434537dba98a6.json",
             "sha256": "d690bdf22d32075395a0eb558be6576306c79fe1314d924bf0a434537dba98a6"
+        },
+        "data/runs/2026-10-22-02/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json": {
+            "path": "evidence/3c/3cbe023beb2ed75fd232ea5da459bc20ff67ffd06cf508ead8fa221eff63c38b.json",
+            "sha256": "3cbe023beb2ed75fd232ea5da459bc20ff67ffd06cf508ead8fa221eff63c38b"
         },
         "data/runs/2026-10-22-02/snapshots/aaalenwow--dsh-ai-armor/REVIEWED-SOURCE.json": {
             "path": "evidence/3d/3d14da406a0e560225e16f9ed2119606919b1cb9212587fcb3b40e871d07028e.json",
@@ -12185,9 +12097,17 @@
             "path": "evidence/69/69db9225913bd218484dd084c684f33ea8e7ca3ddc3f508113a968833efb520e.json",
             "sha256": "69db9225913bd218484dd084c684f33ea8e7ca3ddc3f508113a968833efb520e"
         },
+        "data/runs/2026-10-22-02/snapshots/4444hao--dsh-codefall/REVIEWED-SOURCE.json": {
+            "path": "evidence/cc/cce4e76025be0d723be6c564b1a2f6b93481c9b1730379112e570914ad8b5aed.json",
+            "sha256": "cce4e76025be0d723be6c564b1a2f6b93481c9b1730379112e570914ad8b5aed"
+        },
         "data/runs/2026-10-22-02/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json": {
             "path": "evidence/fa/fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182.json",
             "sha256": "fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182"
+        },
+        "data/runs/2026-10-22-02/snapshots/535408248-oss--dsh-douyin-webview/REVIEWED-SOURCE.json": {
+            "path": "evidence/77/776389eeaf2373ef8d2ae50f90f16f4aca023517f74496b892c4e43f8fcd23c8.json",
+            "sha256": "776389eeaf2373ef8d2ae50f90f16f4aca023517f74496b892c4e43f8fcd23c8"
         },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-mac-companion/REVIEWED-SOURCE.json": {
             "path": "evidence/81/81d5b6c99479170ee7de8d4b38e5d26c533b0d8efc8b61a48a0903566cf4b7d2.json",
@@ -12225,6 +12145,14 @@
             "path": "evidence/0d/0d524d978b7460efb5ae7efe6186242e3e688e23792b645698bad70f45e24502.json",
             "sha256": "0d524d978b7460efb5ae7efe6186242e3e688e23792b645698bad70f45e24502"
         },
+        "data/runs/2026-10-22-02/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json": {
+            "path": "evidence/eb/eb01dbd792f12ccffc31549ebb18056b0b6f848470a3231d595ed28fa40cb7ef.json",
+            "sha256": "eb01dbd792f12ccffc31549ebb18056b0b6f848470a3231d595ed28fa40cb7ef"
+        },
+        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-profile-stylist/REVIEWED-SOURCE.json": {
+            "path": "evidence/a7/a79c063bc7cfd93463e6fa587e81d7131f72d0aee3768e00bde0a18d63bf237d.json",
+            "sha256": "a79c063bc7cfd93463e6fa587e81d7131f72d0aee3768e00bde0a18d63bf237d"
+        },
         "data/runs/2026-10-22-02/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json": {
             "path": "evidence/1c/1cf52db32ea0740272c984684ebff0f5e31a4c2ced4f9106ee61775a419cad83.json",
             "sha256": "1cf52db32ea0740272c984684ebff0f5e31a4c2ced4f9106ee61775a419cad83"
@@ -12236,6 +12164,10 @@
         "data/runs/2026-10-22-02/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json": {
             "path": "evidence/c4/c41db7e34ad6727f7e129a6fdc444cff1d2329fe7c72b1db36ebaa639ccecee4.json",
             "sha256": "c41db7e34ad6727f7e129a6fdc444cff1d2329fe7c72b1db36ebaa639ccecee4"
+        },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-ai-arcade/REVIEWED-SOURCE.json": {
+            "path": "evidence/78/78899663918ff014bf2731b4865890a754341bb0193ddbe6fa4248e1195640c8.json",
+            "sha256": "78899663918ff014bf2731b4865890a754341bb0193ddbe6fa4248e1195640c8"
         },
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json": {
             "path": "evidence/65/650208903a60df507a8747363e13b7eab7ecb22d16be01d8a6bf049e16ce0c78.json",
@@ -12257,6 +12189,14 @@
             "path": "evidence/f7/f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da.json",
             "sha256": "f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da"
         },
+        "data/runs/2026-10-22-02/snapshots/1015677515--dsh-prompt-errornotes-desk/REVIEWED-SOURCE.json": {
+            "path": "evidence/79/79dd9d8bc260d744930e585f34f3d065ff10722f8b2e72b306903f84390f2c22.json",
+            "sha256": "79dd9d8bc260d744930e585f34f3d065ff10722f8b2e72b306903f84390f2c22"
+        },
+        "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-auto-answer/REVIEWED-SOURCE.json": {
+            "path": "evidence/74/743239038f209af440e91077df4a3296c4a1dfc69894db4ee0649d0d6917cb7e.json",
+            "sha256": "743239038f209af440e91077df4a3296c4a1dfc69894db4ee0649d0d6917cb7e"
+        },
         "data/runs/2026-10-22-02/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json": {
             "path": "evidence/12/12f42ca0e6fa7b83ecb397df78d4a7cfc1b0b163df996b189b3d343f0d29e003.json",
             "sha256": "12f42ca0e6fa7b83ecb397df78d4a7cfc1b0b163df996b189b3d343f0d29e003"
@@ -12264,6 +12204,10 @@
         "data/runs/2026-10-22-02/snapshots/0nt-one--dsh-neo-skin/REVIEWED-SOURCE.json": {
             "path": "evidence/bd/bd0b5abcf5f2ad537595b7c962049f5f2e85234f9bb63ff4d3b82ca30a19afd9.json",
             "sha256": "bd0b5abcf5f2ad537595b7c962049f5f2e85234f9bb63ff4d3b82ca30a19afd9"
+        },
+        "data/runs/2026-10-22-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json": {
+            "path": "evidence/b0/b0431383444b5a0c51b279be6c8c09c47dc39758860c84c87763d8822a1fad6d.json",
+            "sha256": "b0431383444b5a0c51b279be6c8c09c47dc39758860c84c87763d8822a1fad6d"
         },
         "data/runs/2026-10-22-02/snapshots/0qwq0--dsh-discord-richpresence/REVIEWED-SOURCE.json": {
             "path": "evidence/2b/2b2e44d7843e973676f14145b0410ee39b4bf780bdec12c2b89dadcf070dd58c.json",
@@ -12276,6 +12220,14 @@
         "data/runs/2026-10-22-02/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json": {
             "path": "evidence/42/424ca5daa4d814b69e64c28553e8cdc3086a69df237e17ca84952940a50a5acf.json",
             "sha256": "424ca5daa4d814b69e64c28553e8cdc3086a69df237e17ca84952940a50a5acf"
+        },
+        "data/runs/2026-10-22-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json": {
+            "path": "evidence/aa/aab687a2a4c65be84bea0cd1c84146579e8143d0e91aa448b7b0619ba26cabfd.json",
+            "sha256": "aab687a2a4c65be84bea0cd1c84146579e8143d0e91aa448b7b0619ba26cabfd"
+        },
+        "data/runs/2026-10-22-02/snapshots/1497105876--dsh-text-inject/REVIEWED-SOURCE.json": {
+            "path": "evidence/0c/0c674f8c11c5a3c7d5245f2f954375d373539226a5d906289760b2efa8cfc574.json",
+            "sha256": "0c674f8c11c5a3c7d5245f2f954375d373539226a5d906289760b2efa8cfc574"
         },
         "data/runs/2026-10-22-02/snapshots/1321928757--dsh-prompt-polish/REVIEWED-SOURCE.json": {
             "path": "evidence/6a/6ab87e5cf441db4bc4cd16b00e67a303c5e2f8187766ffe1c148f224fd4970c3.json",
@@ -12321,6 +12273,10 @@
             "path": "evidence/76/76e3019c7dec373fa143799275edee121743172eb2b52d7d7f61271531aa98a7.json",
             "sha256": "76e3019c7dec373fa143799275edee121743172eb2b52d7d7f61271531aa98a7"
         },
+        "data/runs/2026-10-22-02/snapshots/alive114514awa--dsh-prompt-optimizer/REVIEWED-SOURCE.json": {
+            "path": "evidence/e9/e97c2a46f1456b87ddb6ce6cb4486f89d208eaecc55658c696a0041552704762.json",
+            "sha256": "e97c2a46f1456b87ddb6ce6cb4486f89d208eaecc55658c696a0041552704762"
+        },
         "data/runs/2026-10-22-02/snapshots/1985899182--dsh-harness-chat-control/REVIEWED-SOURCE.json": {
             "path": "evidence/53/539f9c53788558af2514a175b19bb06f2a53b57fc36e92f7a3efafe3919ca84f.json",
             "sha256": "539f9c53788558af2514a175b19bb06f2a53b57fc36e92f7a3efafe3919ca84f"
@@ -12332,6 +12288,14 @@
         "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-zero-residence/REVIEWED-SOURCE.json": {
             "path": "evidence/fe/fede494a091650e09ec83db1d6c24657db74f01f0531cde6d55c7cfeea4d22b5.json",
             "sha256": "fede494a091650e09ec83db1d6c24657db74f01f0531cde6d55c7cfeea4d22b5"
+        },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json": {
+            "path": "evidence/0d/0db048888d665b133373f8db66c3272314e2141679d8d717541bb47510a985cc.json",
+            "sha256": "0db048888d665b133373f8db66c3272314e2141679d8d717541bb47510a985cc"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-uia/REVIEWED-SOURCE.json": {
+            "path": "evidence/73/7373d10aff7162c45b456ab8510e35edd8842270121f0c619af0f1ec45fd416c.json",
+            "sha256": "7373d10aff7162c45b456ab8510e35edd8842270121f0c619af0f1ec45fd416c"
         },
         "data/runs/2026-10-22-02/snapshots/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json": {
             "path": "evidence/09/093f3cd4fe1ffb42c0fd3ae47eeae97ba2e1984f1bccf9879d7a755d6020b0bb.json",
@@ -12405,9 +12369,21 @@
             "path": "evidence/2c/2cb8c96c4d9c7712dfb9da4c5898b75ecdb3b22e8f330609e42ca126e5053633.json",
             "sha256": "2cb8c96c4d9c7712dfb9da4c5898b75ecdb3b22e8f330609e42ca126e5053633"
         },
+        "data/runs/2026-10-22-02/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json": {
+            "path": "evidence/09/092122895b7bb9962db92765b343c76ed680d33b6db13d64c41d0bd8d08cafb5.json",
+            "sha256": "092122895b7bb9962db92765b343c76ed680d33b6db13d64c41d0bd8d08cafb5"
+        },
         "data/runs/2026-10-22-02/snapshots/121212165--dsh-plugin-ide-hub/REVIEWED-SOURCE.json": {
             "path": "evidence/4e/4e653cfc4894a71e8b04c04dd7227d9eb59fe3a7585b59ae5b4988894ae93342.json",
             "sha256": "4e653cfc4894a71e8b04c04dd7227d9eb59fe3a7585b59ae5b4988894ae93342"
+        },
+        "data/runs/2026-10-22-02/snapshots/ame-choo--dsh-study-coach/REVIEWED-SOURCE.json": {
+            "path": "evidence/3f/3f944507f78de4d744dd57495868534041f7df419fc0afd3ddac3284196411dd.json",
+            "sha256": "3f944507f78de4d744dd57495868534041f7df419fc0afd3ddac3284196411dd"
+        },
+        "data/runs/2026-10-22-02/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json": {
+            "path": "evidence/9a/9a1cf21d0a1bb24d05c93f6ba94ed4fa7930deecd8d6990ea8cfba5ddda854c3.json",
+            "sha256": "9a1cf21d0a1bb24d05c93f6ba94ed4fa7930deecd8d6990ea8cfba5ddda854c3"
         },
         "data/runs/2026-10-22-02/snapshots/2026heshao--dsh-obsidian-board/REVIEWED-SOURCE.json": {
             "path": "evidence/85/85c7a1f2230342296d558466bfcaee405a39e9a60bc5d51320fd7f5fe472d66d.json",
@@ -12521,6 +12497,10 @@
             "path": "evidence/91/910665f9cea262662142c731465967027ccbd23d2028fbf41f6bcd57233675be.json",
             "sha256": "910665f9cea262662142c731465967027ccbd23d2028fbf41f6bcd57233675be"
         },
+        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-inpage-translator/REVIEWED-SOURCE.json": {
+            "path": "evidence/5b/5b072af2302683bd2a9a328deeba7ec24222c7c07999273be225a573faa3fcdd.json",
+            "sha256": "5b072af2302683bd2a9a328deeba7ec24222c7c07999273be225a573faa3fcdd"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json": {
             "path": "evidence/e4/e495d0831157bcc4ca7ab29dde28eebd5a591ecef3bf4f1e13048bbc20ed8a4c.json",
             "sha256": "e495d0831157bcc4ca7ab29dde28eebd5a591ecef3bf4f1e13048bbc20ed8a4c"
@@ -12528,6 +12508,10 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json": {
             "path": "evidence/fc/fc6f28cc7e1392ab09d38b5eca9f7bc9243c6fd1176f367696632e3b3c2c3158.json",
             "sha256": "fc6f28cc7e1392ab09d38b5eca9f7bc9243c6fd1176f367696632e3b3c2c3158"
+        },
+        "data/runs/2026-10-22-02/snapshots/adilalmahmoud--dsh-rtl-chat/REVIEWED-SOURCE.json": {
+            "path": "evidence/2a/2ab3f160f216b9a0301c4ff58295400e571d237fe7e0ea9706e131896f487022.json",
+            "sha256": "2ab3f160f216b9a0301c4ff58295400e571d237fe7e0ea9706e131896f487022"
         },
         "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-lighthouse/REVIEWED-SOURCE.json": {
             "path": "evidence/b7/b732473e1e312fa8d9d1175783dea6e0ec970569486d3b15df624bb9899f6aeb.json",
@@ -12577,6 +12561,10 @@
             "path": "evidence/33/3373203f32d2223e9a5bf9c77163d6896a0246dbe59619228478b7c7180f352e.json",
             "sha256": "3373203f32d2223e9a5bf9c77163d6896a0246dbe59619228478b7c7180f352e"
         },
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json": {
+            "path": "evidence/30/30b65892efd691b587b55231aaf1fb2b11524d58f472916269a2dd6c6a6cd7b8.json",
+            "sha256": "30b65892efd691b587b55231aaf1fb2b11524d58f472916269a2dd6c6a6cd7b8"
+        },
         "data/runs/2026-10-22-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json": {
             "path": "evidence/0c/0c24bf4ec9a60812b79fbdb3e08cb769044cd96581d565331289e65de678083b.json",
             "sha256": "0c24bf4ec9a60812b79fbdb3e08cb769044cd96581d565331289e65de678083b"
@@ -12601,6 +12589,10 @@
             "path": "evidence/12/1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818.json",
             "sha256": "1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818"
         },
+        "data/runs/2026-10-22-02/snapshots/7vw58n3ftvq7cn89v--dsh-plugin-session-colors/REVIEWED-SOURCE.json": {
+            "path": "evidence/e9/e9d944f01ceeb845eece1b1d1770156bb5efb6e8fddc9d2099c9794f0a04cb59.json",
+            "sha256": "e9d944f01ceeb845eece1b1d1770156bb5efb6e8fddc9d2099c9794f0a04cb59"
+        },
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-academic-writing/REVIEWED-SOURCE.json": {
             "path": "evidence/8e/8ef100c74b5549099c5336d1aa957896036efc27dc48e126304a9a5f9dd75b1f.json",
             "sha256": "8ef100c74b5549099c5336d1aa957896036efc27dc48e126304a9a5f9dd75b1f"
@@ -12616,6 +12608,10 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json": {
             "path": "evidence/8f/8fb7b2d914b58b9b78a97f0f8c8dad1f61a4f2eb1aecea3d6c175df512ecae9a.json",
             "sha256": "8fb7b2d914b58b9b78a97f0f8c8dad1f61a4f2eb1aecea3d6c175df512ecae9a"
+        },
+        "data/runs/2026-10-22-02/snapshots/ahyi8--dsh-gotify-notify/REVIEWED-SOURCE.json": {
+            "path": "evidence/74/74345b149d1b614101328838e58bc7bf2b80749be5217b377cd45accf3c116a3.json",
+            "sha256": "74345b149d1b614101328838e58bc7bf2b80749be5217b377cd45accf3c116a3"
         },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obscura/REVIEWED-SOURCE.json": {
             "path": "evidence/05/05aa66eeecaad29099c20c13447b0b7d6dfc7c8264296b0ca4901613da0f4bfc.json",
@@ -12645,6 +12641,10 @@
             "path": "evidence/3b/3b5327567575b8376149fa521035f117094a9b66e197163b8a4a49f38741d5cd.json",
             "sha256": "3b5327567575b8376149fa521035f117094a9b66e197163b8a4a49f38741d5cd"
         },
+        "data/runs/2026-10-22-02/snapshots/3tiga3--dsh-plugin-namecards/REVIEWED-SOURCE.json": {
+            "path": "evidence/0d/0d6b34e47e07d9318f8f1b18e33d538656937c60231e961666e6b4509c0c6b45.json",
+            "sha256": "0d6b34e47e07d9318f8f1b18e33d538656937c60231e961666e6b4509c0c6b45"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-ssh-agent/REVIEWED-SOURCE.json": {
             "path": "evidence/a7/a749f6905eb3c68ef361dca6bf302a2cb5152dc73305d79fadd286e8d9629dcd.json",
             "sha256": "a749f6905eb3c68ef361dca6bf302a2cb5152dc73305d79fadd286e8d9629dcd"
@@ -12660,6 +12660,10 @@
         "data/runs/2026-10-22-02/snapshots/13071301808--dsh-composer-expand/REVIEWED-SOURCE.json": {
             "path": "evidence/b0/b0af979cdd8251954811142fab9359574722f71913e347bc1442a4f9452327dc.json",
             "sha256": "b0af979cdd8251954811142fab9359574722f71913e347bc1442a4f9452327dc"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--dock-spreadsheet/REVIEWED-SOURCE.json": {
+            "path": "evidence/11/11877483be202b31e4204cf0acbb581067050ff971c7c1367f7d154863c43a7e.json",
+            "sha256": "11877483be202b31e4204cf0acbb581067050ff971c7c1367f7d154863c43a7e"
         },
         "data/runs/2026-10-22-02/snapshots/angeloszou--dsh-multi-folder/REVIEWED-SOURCE.json": {
             "path": "evidence/f0/f090bf7fd46a0140ae75901097f0cb27165cdaf757eb0b04fd23d598e510c763.json",

@@ -24,36 +24,142 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1390600932-root-directory-0",
+                    "id": "2026-10-22-02-github-1390600932-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:37:57.481Z",
+                    "retrieved_at": "2026-10-22T09:36:06.648Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1390600932-root-author",
+                    "id": "2026-10-22-02-github-1390600932-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "README.md",
+                            "content_sha256": "0f6e551a3fdf79a0c43f6a70112a28d8485ffef99e5e3e47622f09dff6a37f02"
+                        }
+                    ],
                     "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
-                    "captured_at": "2026-10-21T05:37:57.481Z",
-                    "summary": "为临时任务创建独立目录和DSH工作区，提供清理、转正搬迁与会话历史重建。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:06.648Z",
+                    "summary": "一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1390600932-root-source",
+                    "id": "2026-10-22-02-github-1390600932-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/index.ts",
+                    "url": "https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "README.md",
+                            "content_sha256": "0f6e551a3fdf79a0c43f6a70112a28d8485ffef99e5e3e47622f09dff6a37f02"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "package.json",
+                            "content_sha256": "cb39688ca4983ac845fdb66c0b15144e18ed12e6f90533eb5cdd5e1606e87249"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/index.js",
+                            "content_sha256": "84293e314cacc05244ceb74069afe02252ec8d837c82e61ce4f5894c3c0961b8"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/host.js",
+                            "content_sha256": "da9f352d0aedda43f45fc22e020bf5e2a531ccd3aee9cd8aa63f1f0fef3cb6dc"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/paths.js",
+                            "content_sha256": "73254056cb7ce86962bfa843388f5f143178ca7feb30b1c8dcfd26cbefc49e0a"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/store.js",
+                            "content_sha256": "d8b72eafcd0aaade74a68b858ec0f63f04fb58839eccac6efc1afdda63ff438a"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/config.js",
+                            "content_sha256": "1bfd69b2c7d884f2ed87eaf116ae154d72f4384a8c9ac05b88f334e4989dbb29"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/tasks.js",
+                            "content_sha256": "7043a6e0e1a0f226169a394f37cb1e7445a9f6b1dfe45b16b56833fadd256b73"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/promote.js",
+                            "content_sha256": "53ca7d50b66bfa7e98feb35b28d953963c53e91643bc3e695bcf92667a80cd89"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/seed.js",
+                            "content_sha256": "c91ce8f97c49c546df8fa48459e3adb3db9b4843809100757fd328ce613ee661"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/workspaces.js",
+                            "content_sha256": "edee65da2c0f6d8d02091efe470992139a2980eb7bd906420ea55ba8c6107557"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/routes.js",
+                            "content_sha256": "82ab1c4269bee7345f86fe319dac07c7e122c4fb3da52b10b5a1d0343c8b091e"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/hooks.js",
+                            "content_sha256": "30ed19998940fe152cc701dc88126c18b0316f5bde8b3f0891607b91e5e6936a"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "lib/commands.js",
+                            "content_sha256": "38839b468062f0f8bb2350ba8c27d66abd2f31052a07defac694a1e592cc81db"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "src/client.tsx",
+                            "content_sha256": "fd3a94d5c2eec72fe83f4e27336807020204c7ce3e15448777aa900550dfa819"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aeroscis/dsh-temptask",
+                            "commit": "1116ec7ff1af2dcf104dc34d883548c413064e25",
+                            "path": "scripts/smoke.mjs",
+                            "content_sha256": "97e93fd6edf71bbc59b3a652d8816d0226a4511a11faeb5a4d297366067f90ce"
+                        }
+                    ],
                     "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
-                    "captured_at": "2026-10-21T05:37:57.481Z",
-                    "summary": "核查 src/index.ts、src/host.ts、src/tasks.ts、src/promote.ts、src/seed.ts、src/commands.ts；TaskManager建时间戳目录/工作区/会话；路径与根目录多重核对后递归删除；promote先取消活跃回合，再rename或跨卷复制删除，用seed已完成前缀在新cwd建会话。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:36:06.648Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/host.js、lib/paths.js、lib/store.js、lib/config.js、lib/tasks.js、lib/promote.js、lib/seed.js、lib/workspaces.js、lib/routes.js、lib/hooks.js、lib/commands.js、src/client.tsx、scripts/smoke.mjs；manager编排目录/工作区/会话/JSON清单，经GUI API和命令操作，转正搬目录并seed新会话，事件追踪与可选清理。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aeroscis--dsh-temptask/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读src/index.ts、src/host.ts、src/tasks.ts、src/promote.ts、src/seed.ts、src/commands.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "固定lib入口、host配置、paths/store、创建/清理/转正及seed完整关键链，routes/命令/钩子、README与smoke定向检查，客户端仅交互契约。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +170,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "一次性试验需快速开始，成果保留时目录和对话可追溯；隔离目录不是进程或权限沙箱。",
+                    "text": "一次性探索不污染长期工作区，有价值成果再转正。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +181,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "TaskManager建时间戳目录/工作区/会话；路径与根目录多重核对后递归删除；promote先取消活跃回合，再rename或跨卷复制删除，用seed已完成前缀在新cwd建会话。",
+                    "text": "manager编排目录/工作区/会话/JSON清单，经GUI API和命令操作，转正搬目录并seed新会话，事件追踪与可选清理。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +199,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读src/index.ts、src/host.ts、src/tasks.ts、src/promote.ts、src/seed.ts、src/commands.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "固定lib入口、host配置、paths/store、创建/清理/转正及seed完整关键链，routes/命令/钩子、README与smoke定向检查，客户端仅交互契约。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +217,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT、明确宿主版本档；本地文件管理和会话接线，不提供模型或远端算力。",
+                    "text": "0.5.0 MIT，Node ^22.19或>=24，DSH候选版本与结构服务需匹配。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +235,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次设置根目录/会话策略；持续临时磁盘、复制和迁移核对成本，无实测清理收益。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 兼容宿主/临时根与备份 | 核准入、单host策略 | 临时根/备份/远程准入和单host策略需核；准备工时未知 |\n| 持续使用 | 目录、日志、状态轮询及宿主模型会话 | 管理任务增长/备份与清理 | 会话按宿主计费；日志/目录增长与2.5秒轮询资源量未知 |\n| 失败恢复 | 跨卷双份空间/原会话 | 盘点目录节点seed清单后恢复 | 跨卷源目标双份空间；清单/seed/目录盘点恢复时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +253,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先在可丢弃目录验证清理和转正，保留重要文件备份。把历史结果卡当迁移验收依据，不能只看新目录出现。",
+                    "text": "先观察；单host可丢弃数据、独立备份、默认关自动清理可作对照。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +271,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可能减少试验目录杂乱并保留上下文，代价是删除/搬迁责任更集中。",
+                    "text": "#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 临时即开 | 目录/节点/会话编排 | 非权限沙箱 |\n| 成果转正 | 搬目录与seed新会话 | 只取一个完成前缀 |\n| 清理杂物 | rm并归档 | 日志仍留，非事务 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +289,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "删除路径一致性校验、原子任务记录、完整/部分迁移结果分开有价值；多阶段动作不是全事务。 源码依据：[src/index.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/index.ts)、[src/host.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/host.ts)、[src/tasks.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/tasks.ts)、[src/promote.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/promote.ts)、[src/seed.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/seed.ts)、[src/commands.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/commands.ts)。",
+                    "text": "模块分层、能力降级和阶段回执可借鉴，顺序mock不能证明并发安全。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +307,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把临时到正式的目录、工作区和对话生命周期串起来，增量超出单一新会话按钮；会话seed及归档由宿主提供，插件不改旧日志。",
+                    "text": "串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +325,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "转正是否原子保留全部工作？历史携带失败可继续完成搬迁；目录move失败前可能已取消会话，README“什么都没改”范围过宽。跨卷复制删除和工作区重建也存在部分失败/回滚失败分支。",
+                    "basis": "supported",
+                    "text": "目录未独占预留，实例队列不能防多进程覆盖，转正非事务且取消失败仍可删除。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +343,16 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "engineering",
                     "basis": "unverified",
-                    "text": "由多阶段转正推导，可预生成迁移计划与持久化阶段日志，把目录成功、会话重建和旧节点归档分开确认并可恢复。未验证；逐阶段注入故障，所有产物应可定位且不重复取消/搬迁。",
+                    "text": "研究独占目录租约、跨进程CAS与持久化阶段日志，把删除/转正做成可恢复状态机。当前未验证。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +361,15 @@
                             "fingerprint": "1116ec7ff1af2dcf104dc34d883548c413064e25"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:37:57.481Z",
+                    "reviewed_at": "2026-10-22T09:36:06.648Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:37:57.481Z",
+            "last_checked_at": "2026-10-22T09:36:06.648Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
-                "reviewed_at": "2026-10-21T05:37:57.481Z",
+                "reviewed_at": "2026-10-22T09:36:06.648Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +385,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty目录与会话组合为小幅增量；mechanism迁移、seed和回滚有实质组合；transferability生命周期模式在明确宿主条件下可迁移；simplification聚合创建/转正减少手动步骤为半档，但未证明解决替代方案关键限制，部分失败仍需人工恢复。",
+                    "rationale": "novelty小幅，临时目录与fork已有；mechanism实质，多资源生命周期接合；transferability实质，模块化；simplification实质，集中创建/转正。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 15,
-                        "reach": 5,
+                        "workflow": 26,
+                        "delivery": 0,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow试验转正式半档；delivery文件与历史协同半档；reach本地试验用户小档；economics清理磁盘可能节省但未测小档。",
+                    "rationale": "workflow显著，临时到保留全流程；delivery无新模式；reach实质，GUI和命令；economics小幅，省接线但迁移成本无量化。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 40,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1390600932-root-source"
+                        "2026-10-22-02-github-1390600932-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "一次性试验用户可在可丢弃目录试创建和转正；先备份重要文件，逐步核历史迁移与跨卷失败恢复，勿当权限沙箱。",
+                "decision": "observe",
+                "reason": "先观察，可破坏文件操作尚有目录/跨进程竞争和非事务恢复；单host可丢弃数据、独立备份可对照，暂不用于唯一成果。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "临时试验启动、清理与保留成果有明确需求。"
+                        "rationale": "短任务到正式成果需求明确。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "目录工作区会话联动与转正减少手工搬迁。"
+                        "rationale": "目录工作区会话转正一体化较手工方便。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核路径校验和部分失败路径，未验跨卷原子恢复。"
+                        "rationale": "固定关键链和mock检查可查，并发用例实为顺序。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "删除搬迁集中化增加恢复责任，小样本试用需保留备份。"
+                        "score": 5,
+                        "rationale": "迁移失败/错删与跨进程恢复负担高。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:36:06.648Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1390600932-root-source"
+                    "2026-10-22-02-github-1390600932-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,77 +460,58 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "6ceb3ccb93c88db9b7de7a2e250abc46e0274ce5108a9a80161b3a7625ad2a26"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "11538682f303fe767ecf3ae8d0fa22674d38422edaaf63d07df69ffbf50a2c8c"
         },
         "publication.metadata": "data/plugins/aeroscis--dsh-temptask/META.json",
         "publication.summaries": {
-            "text": "为临时任务创建独立目录和DSH工作区，提供清理、转正搬迁与会话历史重建。",
+            "text": "一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。",
             "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
             "source_url": "https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/README.md"
         },
         "publication.capabilities": {
             "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
             "items": {
-                "用户命令": "/temptask创建、清理、转正及修复。",
-                "界面": "侧栏临时任务与确认/结果面板。",
-                "Host 路由": "任务生命周期管理接口。",
-                "事件监听": "会话与工作区状态挂钩。"
-            }
+                "界面": "侧栏临时任务/设置/转正清理面板",
+                "用户命令": "/temptask 创建、打开、清理、转正与repair",
+                "Host 路由": "dsh-temptask/api生命周期操作",
+                "事件监听": "会话创建/处置/事件追踪",
+                "后台": "任务清单与可选启动自动清理"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 临时工作区 | 短任务 | 非沙箱 |\n| 转正/repair | 搬文件与复刻历史 | 单来源完成前缀 |\n| 清理/归档 | 管目录杂物 | 永久删文件且日志保留 |"
         },
         "publication.advice": {
             "revision": "1116ec7ff1af2dcf104dc34d883548c413064e25",
-            "text": "先在可丢弃目录验证清理和转正，保留重要文件备份。把历史结果卡当迁移验收依据，不能只看新目录出现。"
+            "text": "先观察；单host可丢弃数据、独立备份、默认关自动清理可作对照。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/aeroscis--dsh-temptask",
-        "reports": "# dsh-temptask\n\n> 为临时任务创建独立目录和DSH工作区，提供清理、转正搬迁与会话历史重建。\n\n## 使用建议\n\n先在可丢弃目录验证清理和转正，保留重要文件备份。把历史结果卡当迁移验收依据，不能只看新目录出现。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：一次性试验需快速开始，成果保留时目录和对话可追溯；隔离目录不是进程或权限沙箱。\n- **亮点**：把临时到正式的目录、工作区和对话生命周期串起来，增量超出单一新会话按钮；会话seed及归档由宿主提供，插件不改旧日志。\n- **思考**：转正是否原子保留全部工作？历史携带失败可继续完成搬迁；目录move失败前可能已取消会话，README“什么都没改”范围过宽。跨卷复制删除和工作区重建也存在部分失败/回滚失败分支。\n- **建议**：由多阶段转正推导，可预生成迁移计划与持久化阶段日志，把目录成功、会话重建和旧节点归档分开确认并可恢复。未验证；逐阶段注入故障，所有产物应可定位且不重复取消/搬迁。\n\n## 场景与替代办法\n\n一次性试验需快速开始，成果保留时目录和对话可追溯；隔离目录不是进程或权限沙箱。\n\n手动建目录与宿主新会话更透明但繁琐；插件聚合生命周期，也扩大一次操作副作用。\n\n## 能力清单\n\n- **用户命令**：/temptask创建、清理、转正及修复。\n- **界面**：侧栏临时任务与确认/结果面板。\n- **Host 路由**：任务生命周期管理接口。\n- **事件监听**：会话与工作区状态挂钩。\n\n## 依赖与流程\n\nDSH workspaces/agents/commands/webServer与本地文件系统；跨卷/占用文件和宿主seed语义决定边界。\n\n创建目录→工作区→会话，清理先取消会话再删目录处理节点；转正搬目录后建新工作区和历史会话，旧日志保留。\n\n## 成本与效果\n\n首次设置根目录/会话策略；持续临时磁盘、复制和迁移核对成本，无实测清理收益。\n\n可能减少试验目录杂乱并保留上下文，代价是删除/搬迁责任更集中。\n\n## 核心贡献\n\n把临时到正式的目录、工作区和对话生命周期串起来，增量超出单一新会话按钮；会话seed及归档由宿主提供，插件不改旧日志。\n\n## 关键质疑\n\n转正是否原子保留全部工作？历史携带失败可继续完成搬迁；目录move失败前可能已取消会话，README“什么都没改”范围过宽。跨卷复制删除和工作区重建也存在部分失败/回滚失败分支。\n\n\n## 工程亮点\n\n删除路径一致性校验、原子任务记录、完整/部分迁移结果分开有价值；多阶段动作不是全事务。 源码依据：[src/index.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/index.ts)、[src/host.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/host.ts)、[src/tasks.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/tasks.ts)、[src/promote.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/promote.ts)、[src/seed.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/seed.ts)、[src/commands.ts](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/src/commands.ts)。\n\n## 未来设计假设（未验证）\n\n由多阶段转正推导，可预生成迁移计划与持久化阶段日志，把目录成功、会话重建和旧节点归档分开确认并可恢复。未验证；逐阶段注入故障，所有产物应可定位且不重复取消/搬迁。\n\n临时副本验证跨卷、目录占用、seed无完成边界、建workspace失败和回滚失败；核对文件与完整历史而非只看成功提示。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0d42449d78b96f07cfc345a98e4fb6236e762724215cdd700bff1ac32ad4b71d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 1067 | — | — | 19636 |\n| .js | source | 16 | 5577 | 4322 | 1255 | — |\n| .mjs | source | 7 | 3881 | 3170 | 389 | — |\n| .tsx | source | 1 | 3157 | 2355 | 626 | — |\n| .ts | source | 15 | 4392 | 3032 | 974 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Aeroscis/dsh-temptask](https://github.com/Aeroscis/dsh-temptask)\n- **版本号**：0.5.0（[固定提交 1116ec7f](https://github.com/Aeroscis/dsh-temptask/tree/1116ec7ff1af2dcf104dc34d883548c413064e25)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/host.ts、src/tasks.ts、src/promote.ts、src/seed.ts、src/commands.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读src/index.ts、src/host.ts、src/tasks.ts、src/promote.ts、src/seed.ts、src/commands.ts；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：临时副本验证跨卷、目录占用、seed无完成边界、建workspace失败和回滚失败；核对文件与完整历史而非只看成功提示。\n",
+        "reports": "# dsh-temptask\n\n> 一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。\n\n## 研究范围\n\n- **仓库**：[Aeroscis/dsh-temptask](https://github.com/Aeroscis/dsh-temptask)\n- **版本号**：0.5.0（[固定提交 1116ec7ff1af2dcf104dc34d883548c413064e25](https://github.com/Aeroscis/dsh-temptask/tree/1116ec7ff1af2dcf104dc34d883548c413064e25)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n完整生命周期和降级源码可查；目录竞争、跨进程更新、非事务搬迁与外部准入限制安全采用。\n\n## 洞察短评\n\n- **用途**：一次性探索不污染长期工作区，有价值成果再转正。详见[Q01](#research-q01)。\n- **亮点**：串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。\n- **思考**：目录未独占预留，实例队列不能防多进程覆盖，转正非事务且取消失败仍可删除。详见[Q04](#research-q04)。\n- **建议**：研究独占目录租约、跨进程CAS与持久化阶段日志，把删除/转正做成可恢复状态机。当前未验证。详见[Q06](#research-q06)。\n\n采用建议：先观察；单host可丢弃数据、独立备份、默认关自动清理可作对照。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n目录未独占预留，实例队列不能防多进程覆盖，转正非事务且取消失败仍可删除。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究独占目录租约、跨进程CAS与持久化阶段日志，把删除/转正做成可恢复状态机。当前未验证。详见[Q06](#research-q06)。\n\n进一步从同秒并发、双进程写、跨卷双副本和cancel失败探讨租约/恢复状态机。\n\n## 场景与替代办法\n\n一次性探索不污染长期工作区，有价值成果再转正。详见[Q01](#research-q01)。\n\n手工mkdir、工作区/会话创建和搬迁复刻，统一入口便利不等原子迁移。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node/DSH匹配版本 | host/client契约 | 多旧新API维护面 |\n| workspaceRegistry/controller | 节点会话 | 创建降级或失败 |\n| sessionQuery/agents/preset | 历史seed | 可退空会话 |\n| 可写根/数据目录 | 文件与清单 | 并发/跨卷需策略 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 设独立临时根 | 用户 | 无唯一重要数据 |\n| 创建探索 | 用户 | 目录/会话归属正确 |\n| 备份后转正 | 用户 | 目标与历史分别核对 |\n| 确认清理 | 用户 | rm不可恢复，日志仍留 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 兼容宿主/临时根与备份 | 核准入、单host策略 | 临时根/备份/远程准入和单host策略需核；准备工时未知 |\n| 持续使用 | 目录、日志、状态轮询及宿主模型会话 | 管理任务增长/备份与清理 | 会话按宿主计费；日志/目录增长与2.5秒轮询资源量未知 |\n| 失败恢复 | 跨卷双份空间/原会话 | 盘点目录节点seed清单后恢复 | 跨卷源目标双份空间；清单/seed/目录盘点恢复时间未知 |\n\n\n#### 效果\n\n| 目标 | 源码支持 | 边界 |\n| --- | --- | --- |\n| 临时即开 | 目录/节点/会话编排 | 非权限沙箱 |\n| 成果转正 | 搬目录与seed新会话 | 只取一个完成前缀 |\n| 清理杂物 | rm并归档 | 日志仍留，非事务 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**临时目录到正式工作区的完整生命周期如何运作，删除/并发/历史迁移对采用有什么约束？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 临时任务改变什么工作流程？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n为一次性想法、临时文件处理和短探索创建时间戳目录、对应工作区与会话，成果值得保留时搬到正式父目录并复刻一段已完成对话。相对手工mkdir、添加工作区、开会话、搬目录/重建对话，它统一临时到保留的生命周期，侧栏及/temptask命令提供入口。成功需区分目录搬迁、工作区创建、历史复刻和旧会话归档，而不是只看转正ok。\n\n所谓隔离首先是不同cwd和目录组织，不是执行权限沙箱。默认根在DSH_HOME/dsh-temptask，清理删除任务文件，归档会话仍留日志；卸载不会自动删除目录/清单。核心价值是少污染长期工作区与减少转正接线，不是新会话存储或数据擦除。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-11](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/README.md#L3-L11)\n\n作者的临时到转正定位。\n\n```text\n给 DeepSeek Harness 加一个「**临时任务**」入口：一键开一个隔离的临时工作目录，在里面聊。\n实验、临时调试、一次性问题——即开即用、用完就清。\n\n- **一个任务 = 一个目录 = 一个工作区**（侧边栏里的那一项）：`<DSH_HOME>/dsh-temptask/<时间戳>/`。所以侧边栏长成\n  DSH 原生的样子：**任务工作区 → 它的会话**，展开、归档、搜索、拖拽都是官方能力。\n- **不用起名**：工作区名就是那个时间戳目录；会话标题由 DSH 按首条消息自动总结，显示在会话行上。\n- **聊出成果了就转正**：改名、搬到你要的正式目录、**连这段对话一起带过去**，从此不再被自动清理。\n- 侧边栏一行：**主区点击 = 新建**，右边五个按钮（清理 / 转正 / 打开根目录 / 说明 / 设置）；也有 `/temptask` 命令。\n- 清理有二次确认，**只删任务根目录下的子目录**，根目录里你自己放的东西不会被碰。\n```\n\n**依据 2 · 作者声明**：[README.md:32-39](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/README.md#L32-L39)\n\n卸载保留。\n\n```text\n主区整块可点 = **新建**；右边五个按钮依次是 **清理 / 转正 / 打开（或复制）任务根目录 / 说明 / 设置**。\n窄栏折叠时它就收成一个 ＋ 图标。\n\n> **`desktop` 是 Electron 保留的 profile 名**，终端里的 `dsh plugin` 会拒绝管理它。\n> 桌面版请在**应用内的插件管理界面**装卸；想在终端操作就换一个自建 profile。\n\n**卸载**：`dsh plugin --profile <profile> remove @aeroscis/dsh-temptask`。\n卸载**不会**删除任务目录与 `tasks.json`——要清就先用「清理临时任务」或手动删。\n```\n\n**依据 3 · 源码核查**：[lib/paths.js:11-24](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/paths.js#L11-L24)\n\n根与数据目录。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n * 平台默认任务根目录：**DSH 自己的目录** `<DSH_HOME>/dsh-temptask`\n * （Windows 即 `C:\\Users\\<你>\\.dsh\\dsh-temptask`）。\n */\nexport function defaultRootDir(home = homedir(), env = process.env) {\n    return join(dshHome(home, env), 'dsh-temptask');\n}\n/** DSH_HOME：环境变量优先，其次 `~/.dsh`。 */\nexport function dshHome(home = homedir(), env = process.env) {\n    const fromEnv = env.DSH_HOME?.trim();\n    return fromEnv !== undefined && fromEnv.length > 0 ? fromEnv : join(home, '.dsh');\n}\n/** 插件数据目录默认值：`<DSH_HOME>/plugin-data/dsh-temptask`。 */\nexport function defaultDataDir(home = homedir(), env = process.env) {\n    return join(dshHome(home, env), 'plugin-data', 'dsh-temptask');\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/workspaces.js:97-112](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/workspaces.js#L97-L112)\n\n删除节点不删除日志。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport async function removeTaskWorkspace(ctx, workspaceId) {\n    if (workspaceId === undefined || workspaceId.length === 0)\n        return { removed: false };\n    const registry = registryOf(ctx);\n    if (registry === undefined)\n        return { removed: false, reason: '宿主未提供 workspaceRegistry' };\n    try {\n        const removed = await registry.delete(workspaceId);\n        return { removed };\n    }\n    catch (error) {\n        return { removed: false, reason: messageOf(error) };\n    }\n}\n/**\n * 该任务工作区名下的**全部**会话（删除前必须用这个，而不是只记着的最后一条）。\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 创建、打开和生命周期由哪些宿主契约支撑？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n包main经index转host，按能力探测可选服务，配置新宿主走Config/configEditor，旧宿主settings或config.json。manager创建依次挑目录名、mkdir/resolveByPath/create工作区、以其回传realpath建会话并attach，再写任务清单；attach失败会告警但保留已建会话。会话事件收养根内会话、更新closed/打开状态，默认autoCleanDays=0，启用后只清理closed且上次打开早于阈值记录。\n\n依赖workspaceRegistry、sessionController/agents/sessionQuery等实际契约，缺服务有降级而非保证功能等价。package支持Node ^22.19或>=24及两个DSH候选版本区间；新宿主引用配置和旧注册表路径增加维护面。客户端同源API、slots/React入口与命令是交互通道，并非独立Agent预设或模型工具。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/host.js:94-202](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/host.js#L94-L202)\n\n配置与能力探测。\n\n<details>\n<summary>查看原文（109行）</summary>\n\n```text\nexport function apply(ctx, config) {\n    /** 行配置原样（0.2.0 上是引用对象）；每次要值时现读，见 `rowConfigNow`。 */\n    const rowInput = config;\n    /** 首帧的行配置快照：只用来定初始配置与初始来源，之后一律现读。 */\n    const initialRowConfig = rowConfigNow(rowInput);\n    const log = (level, message) => {\n        const logger = ctx.logger;\n        if (logger === undefined)\n            return;\n        const write = logger[level] ?? logger.info;\n        try {\n            write?.call(logger, `[dsh-temptask] ${message}`);\n        }\n        catch {\n            /* 日志失败绝不影响业务 */\n        }\n    };\n    /* ── 配置状态（0.2.0 起字段是活引用：值在「读」的那一刻才取） ── */\n    const initialConfig = normalizeConfigInput(initialRowConfig);\n    let currentConfig = initialConfig;\n    let currentSource = initialRowConfig === undefined ? 'defaults' : 'cordis-row';\n    /** 旧宿主：`ctx.settings.register` 命名空间作用域（新宿主没有这个 API）。 */\n    let settingsScope;\n    let settingsReady = false;\n    /** 旧宿主：config.json 里读到的补丁（settings 不可用时的降级通道）。 */\n    let fileConfig;\n    let dataDirNote;\n    /**\n     * 生效配置 = 「宿主配置层」叠在行配置上。\n     *\n     * 宿主配置层按宿主能力选择：新宿主用 `configEditor`（官方表单与齿轮面板都写进同一处\n     * profile 补丁，Config 引用会自动跟着变），旧宿主用 settings 命名空间或 config.json。\n     * 行配置每次**现读**：0.2.0 的 volatile 字段是活引用，官方表单改完值就在引用里，\n     * 缓存一份普通对象会让热更新看不见。\n     */\n    function computeConfig() {\n        const row = rowConfigNow(rowInput) ?? {};\n        const host = settingsScopeValue() ?? fileConfig;\n        return normalizeConfigInput(host === undefined ? row : { ...row, ...host });\n    }\n    /* ── 持久化与业务核心 ── */\n    /** 挂载状态：能力探测必须如实反映，UI 据此提示降级。 */\n    const mounted = { webServer: false, commands: false };\n    /**\n     * 运行期告警出口。\n     * TaskStoreFile 必须先于 TaskManager 构造（manager 依赖它），所以用一个可后置填充的\n     * 槽位把 store 的告警接到 manager 的告警列表上（面板顶部会显示）。\n     */\n    let storeWarningSink;\n    const store = new TaskStoreFile(storeFileIn(initialConfig.dataDir), initialConfig.rootDir, {\n        onWarning: (message) => storeWarningSink?.(message),\n    });\n    const manager = new TemptaskManager({\n        ctx,\n        store,\n        version,\n        config: () => currentConfig,\n        configSource: () => currentSource,\n        log,\n        sideSessionDetected: detectSideSession,\n        capabilities: () => ({\n            sessionController: ctx.get('sessionController') !== undefined,\n            agents: ctx.get('agents') !== undefined,\n            /**\n             * 宿主是否托管本插件配置：\n             * 0.1.x = settings 命名空间注册成功；0.2.0-rc.1 起 = 有 configEditor\n             * （插件自己的 Config schema 就是官方「设置 → 插件」表单）。\n             */\n            settings: settingsReady || ctx.get('configEditor') !== undefined,\n            webServer: mounted.webServer,\n            commands: mounted.commands,\n            workspaceRegistry: ctx.get('workspaceRegistry') !== undefined,\n            canOpenPath: canOpenPath(ctx),\n        }),\n        home: homedir,\n    });\n    storeWarningSink = (message) => manager.recordWarning(message);\n    /** 启动流程：先解析配置（宿主配置层 → 行配置），再载入清单。 */\n    const ready = (async () => {\n        try {\n            await loadSettings();\n        }\n        catch (error) {\n            log('warn', `settings 初始化失败，改用 config.json：${messageOf(error)}`);\n        }\n        if (!settingsReady) {\n            try {\n                await loadLocalConfig();\n            }\n            catch (error) {\n                log('warn', `读取 config.json 失败：${messageOf(error)}`);\n            }\n        }\n        currentConfig = computeConfig();\n        currentSource = resolveSource();\n        try {\n            await manager.initialize();\n            log('info', `v${version} 已就绪：根目录 ${manager.rootDir()}，共 ${store.list().length} 个任务，配置来源 ${currentSource}`);\n        }\n        catch (error) {\n            // 根目录不可建等致命问题：不阻塞加载，而是把原因显式暴露给 UI 与命令。\n            const message = `任务根目录不可用：${messageOf(error)}`;\n            manager.recordWarning(message);\n            log('error', message);\n        }\n    })();\n    /**\n     * 重新读一遍配置（新宿主上官方设置表单改了 Config 引用就会走这里）。\n     * 根目录变了要重新载入清单——这是「改完设置立刻生效」的关键一步。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/tasks.js:190-260](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/tasks.js#L190-L260)\n\n创建链。\n\n<details>\n<summary>查看原文（71行）</summary>\n\n```text\n    async create() {\n        const root = this.rootDir();\n        await this.ensureRoot().catch(() => undefined);\n        let dirName;\n        let dirPath;\n        try {\n            dirName = uniqueDirName(root, taskDirName());\n            dirPath = resolveTaskPath(root, dirName);\n        }\n        catch (error) {\n            return this.toFailure(error);\n        }\n        // 1) 目录 + 工作区（ensureTaskWorkspace 内部会 mkdir）\n        const ensured = await ensureTaskWorkspace(this.deps.ctx, dirPath);\n        if (!ensured.ok) {\n            await this.rollbackDirectory(dirPath);\n            return failure(ERROR_CODES.noWorkspace, ensured.message, ensured.hint);\n        }\n        const workspace = ensured.workspace;\n        // 2) 会话：cwd 用工作区回传的归一化路径（realpath），否则 attach 会因路径不等而失败\n        const session = await createSessionForDir(this.deps.ctx, workspace.path);\n        const sessionId = session.sessionId;\n        if (sessionId === undefined) {\n            await this.rollbackDirectory(workspace.path);\n            if (workspace.created)\n                await removeTaskWorkspace(this.deps.ctx, workspace.workspaceId);\n            return failure(ERROR_CODES.noSession, '任务目录已回滚：无法创建会话', session.reason ?? '当前 DSH 未提供可用于创建会话的服务');\n        }\n        // 3) 挂进工作区 —— 这一步决定它出现在侧边栏哪个节点下\n        const attached = await attachSessionToWorkspace(this.deps.ctx, workspace.workspaceId, sessionId);\n        if (!attached.attached) {\n            this.recordWarning(`会话已创建但未能挂进任务节点（${attached.reason ?? '未知原因'}），它可能出现在「未分组」下`);\n        }\n        // 4) 记录（按目录去重：另一个进程若刚为同一目录写过记录，复用它）\n        const now = Date.now();\n        const task = {\n            id: mintTaskId(),\n            dirName,\n            path: workspace.path,\n            workspaceId: workspace.workspaceId,\n            createdAt: now,\n            lastOpenedAt: now,\n            sessionId,\n            status: 'active',\n        };\n        const persisted = await this.deps.store.mutate((draft) => {\n            draft.rootDir = root;\n            const clash = draft.tasks.find((row) => normalizeRoot(row.path) === normalizeRoot(task.path));\n            if (clash !== undefined) {\n                clash.workspaceId = workspace.workspaceId;\n                clash.sessionId = sessionId;\n                clash.status = 'active';\n                clash.lastOpenedAt = now;\n                delete clash.closedAt;\n                return { ...clash };\n            }\n            draft.tasks.push(task);\n            return { ...task };\n        });\n        this.requestOpen(persisted.id, sessionId);\n        this.deps.log('info', `created task ${persisted.id} at ${workspace.path} (session ${sessionId})`);\n        return {\n            ok: true,\n            task: this.toView(persisted),\n            sessionId,\n            workspaceId: workspace.workspaceId,\n            workspaceCreated: workspace.created,\n        };\n    }\n    /**\n     * 打开任务：目录缺失报 MISSING_DIR；会话还活着就复用，否则在同一目录新建一条会话。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/workspaces.js:22-72](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/workspaces.js#L22-L72)\n\n工作区realpath。\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\nexport async function ensureTaskWorkspace(ctx, path) {\n    const registry = registryOf(ctx);\n    if (registry === undefined) {\n        return {\n            ok: false,\n            message: '当前宿主未提供 workspaceRegistry，无法把任务做成侧边栏节点',\n            hint: '任务目录仍会创建，但不会出现在侧边栏；请升级 DSH 或改用 /temptask list 查看。',\n        };\n    }\n    // create() 要求目标目录已经存在（内部 realpath 会对不存在的路径 ENOENT）。\n    try {\n        await mkdir(path, { recursive: true });\n    }\n    catch (error) {\n        return { ok: false, message: `无法创建任务目录：${path}`, hint: messageOf(error) };\n    }\n    try {\n        const existing = await registry.resolveByPath(path);\n        if (existing !== undefined) {\n            return {\n                ok: true,\n                workspace: {\n                    workspaceId: existing.id,\n                    path: existing.path,\n                    title: existing.title,\n                    created: false,\n                },\n            };\n        }\n    }\n    catch (error) {\n        return { ok: false, message: `查找已有工作区失败：${path}`, hint: messageOf(error) };\n    }\n    try {\n        // 不传 title：注册表会用目录 basename（也就是时间戳）当默认标题，\n        // 之后只有用户显式 rename 才会变——本插件不会去改写它。\n        const created = await registry.create(path);\n        return {\n            ok: true,\n            workspace: {\n                workspaceId: created.id,\n                path: created.path,\n                title: created.title,\n                created: true,\n            },\n        };\n    }\n    catch (error) {\n        return { ok: false, message: `无法为任务创建临时工作区：${path}`, hint: messageOf(error) };\n    }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/hooks.js:56-68](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/hooks.js#L56-L68)\n\n事件注册。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n                run('session/event(session/title)', () => manager.onSessionTitleChanged(session));\n            }\n        },\n    };\n}\n/** 把处理器挂到 ctx 上（返回 disposer 由调用方的 effect 统一回收）。 */\nexport function registerHooks(ctx, handlers) {\n    return [\n        ctx.on('session/created', handlers.onCreate),\n        ctx.on('session/disposed', handlers.onDisposed),\n        ctx.on('session/event', handlers.onEvent),\n    ];\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/tasks.js:779-795](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/tasks.js#L779-L795)\n\n自动清理。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    async runAutoClean() {\n        const days = this.deps.config().autoCleanDays;\n        if (!Number.isFinite(days) || days <= 0)\n            return;\n        const cutoff = Date.now() - days * 24 * 60 * 60 * 1000;\n        const stale = this.deps.store\n            .list()\n            .filter((task) => task.status === 'closed' && (task.lastOpenedAt ?? task.createdAt) < cutoff);\n        if (stale.length === 0)\n            return;\n        const result = await this.clean({ ids: stale.map((task) => task.id) });\n        if (result.ok && result.removed.length > 0) {\n            this.recordWarning(`自动清理：已删除 ${result.removed.length} 个超过 ${days} 天未使用的已关闭任务` +\n                `（归档了 ${result.sessionsArchived} 条会话）`);\n        }\n    }\n    /* ─────────────────────────── 内部工具 ─────────────────────────── */\n```\n\n</details>\n\n**依据 6 · 源码核查**：[package.json:49-91](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/package.json#L49-L91)\n\n运行版本和peer依赖。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n    \"dsh\": \"^0.1.5-rc.2 || ^0.2.0-rc.1\"\n  },\n  \"scripts\": {\n    \"build\": \"npm run build:host && npm run build:client\",\n    \"build:host\": \"tsc -p tsconfig.json\",\n    \"build:client\": \"tsc -p tsconfig.client.json && node scripts/build-client.mjs\",\n    \"typecheck\": \"tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit\",\n    \"prepare\": \"node scripts/prepare.mjs\",\n    \"prepack\": \"node scripts/check-pack.mjs\",\n    \"check:pack\": \"node scripts/check-pack.mjs\",\n    \"smoke\": \"npm run smoke:host && npm run smoke:client\",\n    \"smoke:host\": \"node scripts/smoke.mjs\",\n    \"smoke:client\": \"node scripts/smoke-client.mjs\",\n    \"check:registration\": \"node scripts/check-registration.mjs\",\n    \"check:seed-parity\": \"node scripts/check-seed-parity.mjs\",\n    \"check\": \"npm run typecheck && npm run build && npm run check:pack && npm run smoke && npm run check:registration && npm run check:seed-parity\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh\": \"^0.1.5-rc.2 || ^0.2.0-rc.1\",\n    \"@deepseek-ai/schemastery\": \"^3.18.1\",\n    \"@deepseek-ai/dsh-settings\": \"^0.1.5-rc.2 || ^0.2.0-rc.1\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/dsh-settings\": {\n      \"optional\": true\n    }\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^24.0.0\",\n    \"@types/react\": \"~18.3.1\",\n    \"react\": \"^18.3.1\",\n    \"react-dom\": \"^18.3.1\",\n    \"typescript\": \"^7.0.2\"\n  }\n}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 转正是否真的搬走全部对话？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\n转正检查名称/目标、阻止目标在任务根或原任务内、检查未占用，先读旧会话账目并尝试cancel，再搬目录。优先rename，跨卷cp后rm；新工作区创建失败尽力搬回，后续历史创建失败会降级新空会话并说明，不阻止转正。旧会话按archive策略归档，旧节点删除失败记warn，最后forget任务记录。整个序列跨文件系统、宿主节点、会话与清单，不是一个事务；后段失败可能目录已搬/会话已归档而任务记录还在，重试不可只看原请求失败。\n\n历史不是所有会话合并，只按候选找到第一条有完成前缀的来源。buildSeed要求事件seq连续，截取最后turn/end之后且未开启下一回合的前缀，补session/end-seed；新cwd建seeded会话并恢复可获取的preset/default model，未完成尾巴不带走。注释声称对齐官方fork是作者解释，本次查目标实现与自带parity脚本入口，没有引入宿主另一版本源码独立证明等价。跨卷复制成功旧源删除失败会明确返回双副本；目标占用检查与rename之间仍有竞争窗口。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/promote.js:119-165](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/promote.js#L119-L165)\n\n跨卷与回滚。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\nasync function moveDirectory(from, to) {\n    try {\n        await rename(from, to);\n        return 'rename';\n    }\n    catch (error) {\n        const code = error.code;\n        if (code === 'EXDEV') {\n            try {\n                // errorOnExist + force:false：目标已经被我们在上面查过不存在，这里再兜一层。\n                await cp(from, to, { recursive: true, errorOnExist: true, force: false });\n            }\n            catch (copyError) {\n                throw new PromoteError(ERROR_CODES.fs, `跨卷复制失败：${from} → ${to}`, messageOf(copyError));\n            }\n            try {\n                await rm(from, { recursive: true, force: true });\n            }\n            catch (removeError) {\n                // 新家已经就位，旧目录删不掉只是留个副本——不算失败，但必须说清楚。\n                throw new PromoteError(ERROR_CODES.fs, `已复制到 ${to}，但旧目录删不掉：${from}`, `${messageOf(removeError)}\\n新旧两份都在磁盘上；确认新家内容无误后手动删除旧目录即可。`);\n            }\n            return 'copy';\n        }\n        if (isBusyError(error)) {\n            throw new PromoteError(ERROR_CODES.dirBusy, `搬不动这个目录（被占用）：${from}`, 'Windows 上目录会被「正在使用它的进程」锁住：先关掉该任务的会话与终端（或先结束它正在跑的回合），再重试。');\n        }\n        throw new PromoteError(ERROR_CODES.fs, `搬目录失败：${from} → ${to}`, messageOf(error));\n    }\n}\n/** 第 4/5 步失败时的回滚：把目录搬回去（best-effort，失败只记日志）。 */\nasync function rollbackMove(from, to) {\n    try {\n        await rename(to, from);\n        return true;\n    }\n    catch {\n        try {\n            await cp(to, from, { recursive: true, errorOnExist: true, force: false });\n            await rm(to, { recursive: true, force: true });\n            return true;\n        }\n        catch {\n            return false;\n        }\n    }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/promote.js:180-309](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/promote.js#L180-L309)\n\n选第一条种子与降级。\n\n<details>\n<summary>查看原文（130行）</summary>\n\n```text\nasync function carryHistory(deps, candidates, targetCwd, targetWorkspaceId, withHistory) {\n    const { ctx } = deps;\n    const ids = [...new Set(candidates.filter((id) => typeof id === 'string' && id.length > 0))];\n    /** 降级：不带历史地在同一目录建一条会话（官方 sessionController 路径）。 */\n    const plain = async (reason) => {\n        const created = await createSessionForDir(ctx, targetCwd);\n        if (created.sessionId === undefined) {\n            return {\n                carried: false,\n                reason: `${reason === undefined ? '' : `${reason}；`}并且新会话也没建成：${created.reason ?? '未知原因'}`,\n            };\n        }\n        const attached = await attachSessionToWorkspace(ctx, targetWorkspaceId, created.sessionId);\n        if (!attached.attached) {\n            deps.log('warn', `转正：新会话 ${created.sessionId} 未能挂进新工作区（${attached.reason ?? ''}）`);\n        }\n        return reason === undefined\n            ? { sessionId: created.sessionId, carried: false }\n            : { sessionId: created.sessionId, carried: false, reason };\n    };\n    // 「不带历史」不是「不开会话」：新家总要有一条能立刻用的会话，否则节点是空的。\n    if (!withHistory)\n        return await plain('按你的选择：不继承旧对话');\n    if (ids.length === 0)\n        return await plain('原任务没有可继承的会话');\n    const query = ctx.get('sessionQuery');\n    if (query === undefined || typeof query.observeSession !== 'function') {\n        return await plain('当前宿主未提供 sessionQuery，读不到旧会话的事件流');\n    }\n    /* 逐条试：第一条能造出「已完成前缀」的就是来源（空会话自然被跳过）。 */\n    let observed;\n    let built;\n    let sourceSessionId;\n    const skipped = [];\n    for (const id of ids) {\n        try {\n            // 不传 projectionMode：默认投影才有 `agentPreset`（官方 fork 也是这么读来源会话的）。\n            const candidate = await query.observeSession(id);\n            const seed = buildSeed(candidate.events);\n            if (seed === undefined) {\n                skipped.push(id);\n                continue;\n            }\n            observed = candidate;\n            built = seed;\n            sourceSessionId = id;\n            break;\n        }\n        catch (error) {\n            skipped.push(`${id}（${messageOf(error)}）`);\n        }\n    }\n    if (observed === undefined || built === undefined || sourceSessionId === undefined) {\n        return await plain(`试了 ${ids.length} 条会话都没有「已完成的一轮对话」可继承` +\n            (skipped.length > 0 ? `（${skipped.length} 条为空或读不到）` : ''));\n    }\n    if (skipped.length > 0) {\n        deps.log('info', `转正：跳过 ${skipped.length} 条没有完整回合的会话，改用 ${sourceSessionId} 做种子来源`);\n    }\n    const agents = ctx.get('agents');\n    if (agents === undefined || typeof agents.create !== 'function') {\n        return await plain('当前宿主未提供 agents 服务，无法用种子重建会话');\n    }\n    const sessionId = mintSessionId();\n    try {\n        const presets = ctx.get('agentPresets');\n        const requested = observed.projections?.values.agentPreset;\n        let agentPreset;\n        let setup;\n        if (presets !== undefined && typeof presets.resolve === 'function') {\n            try {\n                const resolved = await presets.resolve(requested);\n                agentPreset = resolved.id;\n                if (typeof presets.mount === 'function') {\n                    const presetId = resolved.id;\n                    setup = async (agentCtx) => {\n                        await presets.mount(agentCtx, presetId);\n                    };\n                }\n            }\n            catch (error) {\n                deps.log('warn', `转正：解析 Agent 预设失败，按默认装配建会话（${messageOf(error)}）`);\n            }\n        }\n        const defaultModel = ctx.get('agentDefaultModel');\n        let agentOptions;\n        if (defaultModel !== undefined && typeof defaultModel.currentSelection === 'function') {\n            try {\n                const selection = defaultModel.currentSelection();\n                agentOptions = { provider: selection.provider, model: selection.model };\n            }\n            catch {\n                /* 拿不到就用宿主默认 */\n            }\n        }\n        await agents.create({\n            sessionId,\n            seed: built.seed,\n            inheritedEventCount: built.inheritedEventCount,\n            meta: {\n                cwd: targetCwd,\n                parentSession: sourceSessionId,\n                isSeeded: true,\n                ...(agentPreset === undefined ? {} : { agentPreset }),\n            },\n            ...(agentOptions === undefined ? {} : { agentOptions }),\n            ...(setup === undefined ? {} : { setup }),\n        });\n    }\n    catch (error) {\n        return await plain(`用种子重建会话失败：${messageOf(error)}`);\n    }\n    const attached = await attachSessionToWorkspace(ctx, targetWorkspaceId, sessionId);\n    if (!attached.attached) {\n        deps.log('warn', `转正：复刻的会话 ${sessionId} 未能挂进新工作区（${attached.reason ?? ''}）`);\n        return {\n            sessionId,\n            carried: true,\n            reason: `历史已复刻，但会话未能挂进新节点：${attached.reason ?? '未知原因'}`,\n        };\n    }\n    return {\n        sessionId,\n        carried: true,\n        sourceSessionId,\n        ...(observed.projections?.values.title === undefined ||\n            observed.projections.values.title === null\n            ? {}\n            : { sourceTitle: observed.projections.values.title }),\n    };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/promote.js:328-435](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/promote.js#L328-L435)\n\n跨资源编排。\n\n<details>\n<summary>查看原文（108行）</summary>\n\n```text\nexport async function promoteTask(deps, view, request) {\n    const task = view;\n    const { ctx } = deps;\n    const fail = (error) => {\n        if (error instanceof PromoteError) {\n            const payload = { ok: false, code: error.code, message: error.message };\n            if (error.hint !== undefined)\n                payload.hint = error.hint;\n            return payload;\n        }\n        return { ok: false, code: ERROR_CODES.fs, message: messageOf(error) };\n    };\n    try {\n        /* 1) 校验源：记录里的路径必须仍然等于「根目录 + 目录名」（与删除任务同一套三重校验）。 */\n        const from = sourcePath(task);\n        if (!existsSync(from)) {\n            return fail(new PromoteError(ERROR_CODES.missingDir, `任务目录不存在：${from}`, '目录已被手动删除；可在清理里移除这条记录。'));\n        }\n        /* 2) 校验落点。 */\n        const nameIssue = validateName(request.name);\n        if (nameIssue !== undefined)\n            return fail(new PromoteError(ERROR_CODES.badRequest, nameIssue));\n        const name = request.name.trim();\n        const parentDir = await resolveParentDir(request.parentDir);\n        if (parentDir.length === 0) {\n            return fail(new PromoteError(ERROR_CODES.badRequest, '请填写目标父目录', `例如 ${join(deps.home?.() ?? homedir(), 'projects')}`));\n        }\n        const to = resolve(parentDir, name);\n        if (normalizeRoot(to) === normalizeRoot(from)) {\n            return fail(new PromoteError(ERROR_CODES.badRequest, '新路径和原路径相同，不需要转正'));\n        }\n        // 落在任务根目录里是禁止的：adoptSession 会把「cwd 在根目录下的会话」自动登记成临时任务，\n        // 于是刚转正的正式工作区会在下一轮会话里被重新变回临时任务（自相矛盾）。\n        const taskRoot = taskRootOf(task);\n        if (isInsideRoot(taskRoot, to)) {\n            return fail(new PromoteError(ERROR_CODES.badRequest, `目标会落在任务根目录里：${to}`, `任务根目录（${taskRoot}）下的一切都会被本插件当成临时任务；请换一个目录，或先改「任务根目录」设置。`));\n        }\n        if (isInsideRoot(from, to)) {\n            return fail(new PromoteError(ERROR_CODES.badRequest, '目标不能放在原任务目录内部'));\n        }\n        if (occupied(to)) {\n            return fail(new PromoteError(ERROR_CODES.targetExists, `目标已存在：${to}`, '本插件绝不覆盖已有内容；换个名字或换个父目录。'));\n        }\n        /* 3) 会话账目（必须在删工作区记录之前读）+ 中止活着的回合。 */\n        const account = sessionAccountOf(ctx, task.workspaceId);\n        const sessionIds = account.length > 0 ? account : task.sessionId === undefined ? [] : [task.sessionId];\n        let sessionsCanceled = 0;\n        for (const sessionId of sessionIds) {\n            if (!isSessionLive(ctx, sessionId))\n                continue;\n            if (await cancelSession(ctx, sessionId))\n                sessionsCanceled += 1;\n        }\n        /* 4) 搬目录（唯一的破坏性动作，且最早：失败则什么都没变）。 */\n        const moved = await moveDirectory(from, to);\n        /* 5) 新家建工作区记录；失败把目录搬回去，不留半状态。 */\n        const ensured = await ensureTaskWorkspace(ctx, to);\n        if (!ensured.ok) {\n            const rolledBack = await rollbackMove(from, to);\n            return fail(new PromoteError(ERROR_CODES.noWorkspace, `${ensured.message}${rolledBack ? '（目录已搬回原位）' : ''}`, rolledBack\n                ? ensured.hint\n                : `目录现在在 ${to}，但没能建出节点；可在侧边栏手动把该目录添加为工作区。${ensured.hint ?? ''}`));\n        }\n        const workspace = ensured.workspace;\n        /* 6) 复刻对话（尽力而为，不影响转正本身）；不带历史时至少开一条空会话。 */\n        // 候选按\"新→旧\"逐条试：任务记录里最后一条常常是空会话（见 carryHistory 的说明）。\n        const carry = await carryHistory(deps, sessionIds.length > 0 ? sessionIds : task.sessionId === undefined ? [] : [task.sessionId], workspace.path, workspace.workspaceId, request.carry);\n        /* 7) 按策略处理旧会话。 */\n        let sessionsArchived = 0;\n        if (deps.policy() === 'archive') {\n            for (const sessionId of sessionIds) {\n                if (await archiveSessionQuietly(ctx, sessionId))\n                    sessionsArchived += 1;\n            }\n        }\n        /* 8) 删旧工作区记录（此时它的会话已经转移或归档）。 */\n        const removed = await removeTaskWorkspace(ctx, task.workspaceId);\n        if (task.workspaceId !== undefined && !removed.removed) {\n            deps.log('warn', `转正：旧工作区记录未能删除（${removed.reason ?? '未知原因'}）`);\n        }\n        /* 9) 删任务记录（此后它不再是临时任务，也不会被自动清理）。 */\n        await deps.forget(task.id);\n        deps.log('info', `promoted task ${task.id} → ${to} (history: ${String(carry.carried)}, source: ${carry.sourceSessionId ?? '-'}, archived: ${sessionsArchived}, moved: ${moved})`);\n        const result = {\n            task: { ...view, sessionIds },\n            from,\n            to: workspace.path,\n            workspaceId: workspace.workspaceId,\n            historyCarried: carry.carried,\n            sessionsArchived,\n            sessionsCanceled,\n            moved,\n        };\n        if (carry.sessionId !== undefined)\n            result.sessionId = carry.sessionId;\n        if (carry.reason !== undefined)\n            result.historyReason = carry.reason;\n        return { ok: true, ...result };\n    }\n    catch (error) {\n        return fail(error);\n    }\n}\n/** 源目录：记录里的 path 必须与「根目录 + dirName」解析结果一致（防记录被手改）。 */\nfunction sourcePath(task) {\n    const root = taskRootOf(task);\n    const expected = resolveTaskPath(root, task.dirName);\n    if (normalizeRoot(task.path) !== normalizeRoot(expected)) {\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/seed.js:38-86](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/seed.js#L38-L86)\n\n边界与seed。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n    let end = -1;\n    for (let index = 0; index < events.length; index += 1) {\n        if (events[index]?.type === 'turn/end')\n            end = index;\n    }\n    if (end < 0)\n        return undefined;\n    let boundary = end;\n    for (let index = end + 1; index < events.length; index += 1) {\n        const next = events[index];\n        if (next === undefined)\n            break;\n        if (next.type === 'turn/start' ||\n            (next.type === 'user/message' && next.surfaceOp === 'append') ||\n            next.type === 'agent/inbox/spliced') {\n            break;\n        }\n        boundary = index;\n    }\n    return boundary;\n}\n/**\n * 由来源会话的完整事件流造一份 fork 种子。\n *\n * @returns 可用的种子；`undefined` = 这段对话没有可继承的已完成前缀（调用方降级为「不带历史」）。\n */\nexport function buildSeed(events) {\n    // seq == 下标：官方 fork 也用 `events[boundary].seq !== boundary` 做前置校验，\n    // 不成立时那一层会直接抛错。我们这里退回 undefined，让调用方走降级链。\n    for (let index = 0; index < events.length; index += 1) {\n        if (events[index]?.seq !== index)\n            return undefined;\n    }\n    const boundary = completedPrefixBoundary(events);\n    if (boundary === undefined)\n        return undefined;\n    const last = events[boundary];\n    if (last === undefined)\n        return undefined;\n    const seed = events\n        .slice(0, boundary + 1)\n        .map((event) => ({ ...event }));\n    seed.push({\n        type: 'session/end-seed',\n        seq: boundary + 1,\n        time: last.time,\n        data: { inherited: true },\n    });\n    return { seed, inheritedEventCount: boundary + 1 };\n```\n\n</details>\n\n#### 缺口\n\n- 固定宿主的seed/预设装配语义与目标手写fork是否持续一致\n  **影响：**不能把历史已复刻等同全会话完整迁移或将来版本兼容\n  **进一步探讨：**逐事件对照对应宿主fork契约，明确来源会话与丢弃尾巴\n\n<a id=\"research-q04\"></a>\n\n### Q04 · HTTP、并发和清理保护的边界在哪里？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nAPI限制方法、16KB body、Host/Origin与Sec-Fetch-Site，删除/清理/转正还需confirm；这是浏览器来源防护，不是调用者认证。Host可以来自客户端，缺Origin直接放行且无remoteAddress/token校验，因此远程暴露需宿主/反代单独认证，不能凭loopback Host判远程用户可信。body流没有专用读取deadline，需宿主连接限额。\n\n清理先读会话账目、尝试cancel、删除目录，再归档/删节点；cancel失败不会阻止rm，活跃进程不一定已停止。删除路径检查root+dirName和记录词法一致、拒绝根本身，但无物理路径身份锁；不将其夸大为任意符号链接目标都会被rm，因为Node rm本身通常删链接，但根父级替换/挂载与并发目录复用仍需控制。uniqueDirName先exists再mkdir recursive，不是独占保留，同秒并发创建可复用目录；失败回滚未按created所有权判断目录，另一个操作写入时存在删其内容风险。\n\nTaskStoreFile排队仅实例内，写前重读减少顺序覆盖但没有跨进程锁/CAS。writeJsonAtomic用同名.tmp，不同进程同时写还会争用临时文件，不能从rename原子推出更新不丢失。损坏文件备份失败被吞，mutate仍可用内存覆盖，.bak固定名也不能保留多次历史。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/routes.js:5-28](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/routes.js#L5-L28)\n\nbody上限。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** 请求体上限（这些接口的载荷都很小）。 */\nconst MAX_BODY_BYTES = 16 * 1024;\n/* ─────────────────────────── HTTP 工具 ─────────────────────────── */\nfunction sendJson(res, status, payload) {\n    const body = JSON.stringify(payload);\n    res.writeHead(status, {\n        'cache-control': 'no-store',\n        'content-type': 'application/json; charset=utf-8',\n    });\n    res.end(body);\n}\nasync function readJsonBody(req) {\n    const chunks = [];\n    let size = 0;\n    for await (const chunk of req) {\n        const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk));\n        size += buffer.length;\n        if (size > MAX_BODY_BYTES)\n            throw new Error('请求体过大');\n        chunks.push(buffer);\n    }\n    if (size === 0)\n        return {};\n    return JSON.parse(Buffer.concat(chunks).toString('utf8'));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/routes.js:41-105](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/routes.js#L41-L105)\n\nHost/Origin guard。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n/** 判断 Host 是否是 loopback authority。 */\nfunction isLoopbackAuthority(host) {\n    const lower = host.toLowerCase();\n    const name = lower.startsWith('[')\n        ? lower.slice(0, lower.indexOf(']') + 1)\n        : (lower.split(':')[0] ?? '');\n    return name === '127.0.0.1' || name === 'localhost' || name === '[::1]';\n}\n/** 请求是否可信（同源 + 非跨站 + loopback/已声明 authority）。 */\nfunction isTrustedRequest(req, trustedHosts) {\n    const host = req.headers.host;\n    if (typeof host === 'string' && host.length > 0) {\n        const trusted = isLoopbackAuthority(host) ||\n            trustedHosts.some((entry) => entry.toLowerCase() === host.toLowerCase());\n        if (!trusted)\n            return false;\n    }\n    if (req.headers['sec-fetch-site'] === 'cross-site')\n        return false;\n    const origin = req.headers.origin;\n    // 浏览器一定会带 Origin；缺失说明请求不是页面发出的（中间层代理会剥离它）。\n    if (origin === undefined)\n        return true;\n    try {\n        return new URL(origin).host === host;\n    }\n    catch {\n        return false;\n    }\n}\n/** 统一异常 → ApiError，保证接口永远返回 JSON。 */\nfunction toApiError(error) {\n    return { ok: false, code: ERROR_CODES.badRequest, message: messageOf(error) };\n}\n/* ─────────────────────────── 路由构造 ─────────────────────────── */\nexport function createRoutes(host) {\n    const { manager } = host;\n    /** 统一的处理器包装：方法检查 + 同源检查 + 启动等待 + JSON 响应。 */\n    function route(path, method, impl) {\n        return {\n            path,\n            async handle(req, res) {\n                try {\n                    if ((req.method ?? 'GET').toUpperCase() !== method) {\n                        res.setHeader('allow', method);\n                        sendJson(res, 405, { ok: false, code: ERROR_CODES.badRequest, message: `本接口只接受 ${method}` });\n                        return;\n                    }\n                    if (!isTrustedRequest(req, host.trustedHosts())) {\n                        sendJson(res, 403, {\n                            ok: false,\n                            code: ERROR_CODES.badRequest,\n                            message: 'untrusted origin：请求来源不是本机回环或已声明的 authority',\n                        });\n                        return;\n                    }\n                    const body = method === 'POST' ? asObject(await readJsonBody(req)) : {};\n                    await host.ready;\n                    const result = await impl(body, req);\n                    sendJson(res, 200, result);\n                }\n                catch (error) {\n                    host.log('warn', `${path} 处理失败：${messageOf(error)}`);\n                    sendJson(res, 200, toApiError(error));\n                }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tasks.js:562-636](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/tasks.js#L562-L636)\n\ncancel、删除和回滚。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n    async disposeTask(task) {\n        // 1) 会话账目必须在删工作区之前读\n        const account = sessionAccountOf(this.deps.ctx, task.workspaceId);\n        const sessionIds = account.length > 0 ? account : task.sessionId === undefined ? [] : [task.sessionId];\n        // 2) 活着的会话先中止当轮\n        let sessionsCanceled = 0;\n        for (const sessionId of sessionIds) {\n            if (!isSessionLive(this.deps.ctx, sessionId))\n                continue;\n            if (await cancelSession(this.deps.ctx, sessionId))\n                sessionsCanceled += 1;\n        }\n        // 3) 删目录（失败则整体中止，不留半清理状态）\n        const dirRemoved = await this.removeDirectory(task);\n        if (dirRemoved instanceof TaskError)\n            return dirRemoved;\n        // 4) 按策略处理会话\n        let sessionsArchived = 0;\n        if (this.deps.config().onDeleteSessions === 'archive') {\n            for (const sessionId of sessionIds) {\n                if (await archiveSessionQuietly(this.deps.ctx, sessionId))\n                    sessionsArchived += 1;\n            }\n        }\n        // 5) 删节点记录\n        const workspace = await removeTaskWorkspace(this.deps.ctx, task.workspaceId);\n        if (task.workspaceId !== undefined && !workspace.removed) {\n            this.recordWarning(`任务目录已删除，但侧边栏节点未能移除${workspace.reason === undefined ? '' : `（${workspace.reason}）`}；可在侧边栏手动删除该节点`);\n        }\n        return { dirRemoved, workspaceRemoved: workspace.removed, sessionsArchived, sessionsCanceled };\n    }\n    /**\n     * 安全删除任务目录。\n     * @returns true 表示目录已删/本就不存在；TaskError 表示拒绝或失败。\n     */\n    async removeDirectory(task) {\n        const root = this.rootDir();\n        let target;\n        try {\n            // 三重校验：记录里的 path 必须在根目录内，且必须与「根目录 + dirName」解析一致。\n            const expected = resolveTaskPath(root, task.dirName);\n            if (normalizeRoot(task.path) !== normalizeRoot(expected)) {\n                throw new TaskError(ERROR_CODES.outsideRoot, `拒绝删除：任务路径与目录名不一致（${task.path} ≠ ${expected}）`);\n            }\n            if (!isInsideRoot(root, expected) || normalizeRoot(expected) === normalizeRoot(root)) {\n                throw new TaskError(ERROR_CODES.outsideRoot, `拒绝删除：${expected} 不在任务根目录内`);\n            }\n            target = expected;\n        }\n        catch (error) {\n            return error instanceof TaskError\n                ? error\n                : new TaskError(ERROR_CODES.outsideRoot, `拒绝删除：${messageOf(error)}`);\n        }\n        if (!existsSync(target))\n            return true;\n        try {\n            await rm(target, { recursive: true, force: true });\n            return true;\n        }\n        catch (error) {\n            return new TaskError(ERROR_CODES.fs, `删除任务目录失败：${target}`, messageOf(error));\n        }\n    }\n    /** 会话创建失败后的回滚：只用 rm 删掉刚刚创建的目录。 */\n    async rollbackDirectory(path) {\n        try {\n            if (existsSync(path))\n                await rm(path, { recursive: true, force: true });\n            this.deps.log('warn', `rolled back task directory ${path}`);\n        }\n        catch (error) {\n            this.deps.log('error', `回滚目录失败 ${path}: ${messageOf(error)}`);\n        }\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/paths.js:64-85](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/paths.js#L64-L85)\n\n词法检查与先探后建。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function resolveTaskPath(rootDir, dirName) {\n    if (dirName.length === 0 || basename(dirName) !== dirName || isAbsolute(dirName)) {\n        throw new Error(`非法的任务目录名：${JSON.stringify(dirName)}`);\n    }\n    const path = resolve(normalizeRoot(rootDir), dirName);\n    if (!isInsideRoot(rootDir, path)) {\n        throw new Error(`任务路径越界：${path} 不在任务根目录 ${rootDir} 内`);\n    }\n    return path;\n}\n/** 目录已存在时追加 `-1`、`-2`…（绝不覆盖已有目录）。 */\nexport function uniqueDirName(rootDir, base) {\n    const root = normalizeRoot(rootDir);\n    let candidate = base;\n    let index = 1;\n    while (existsSync(resolve(root, candidate))) {\n        candidate = `${base}-${index}`;\n        index += 1;\n        if (index > 1000)\n            throw new Error(`无法为 ${base} 找到可用目录名（尝试超过 1000 次）`);\n    }\n    return candidate;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/store.js:154-195](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/store.js#L154-L195)\n\n实例队列与重读。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    async mutate(mutate) {\n        return this.enqueue(async () => {\n            const read = await this.readFromDisk(this.store.rootDir);\n            let base;\n            if (read.kind === 'ok') {\n                base = read.store;\n            }\n            else if (read.kind === 'missing') {\n                base = { version: TASK_STORE_VERSION, rootDir: this.store.rootDir, tasks: [] };\n            }\n            else {\n                // 磁盘上是坏内容：先留下证据，再以本进程已知的记录为基准继续。\n                await this.backupCorrupt();\n                this.note(`${read.message}（已备份，本次以内存中的清单为基准）`);\n                base = {\n                    version: TASK_STORE_VERSION,\n                    rootDir: this.store.rootDir,\n                    tasks: this.store.tasks.map((task) => ({ ...task })),\n                };\n            }\n            const before = JSON.stringify(base);\n            const result = await mutate(base);\n            // 幂等写：内容没变就不落盘（例如 session/disposed 落在一个非任务会话上）。\n            if (JSON.stringify(base) !== before) {\n                await writeJsonAtomic(this.file, base);\n            }\n            this.store = base;\n            return result;\n        });\n    }\n    /** 立即把当前内存态落盘（启动修复路径用）。 */\n    async persist() {\n        await writeJsonAtomic(this.file, this.store);\n    }\n    /* ─────────────────────────── 内部 ─────────────────────────── */\n    /** 把一笔工作排进串行锁；锁本身不会因为某次失败而永久 reject。 */\n    enqueue(work) {\n        const run = this.tail.then(work);\n        this.tail = run.then(() => undefined, () => undefined);\n        return run;\n    }\n    /**\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/config.js:80-86](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/config.js#L80-L86)\n\n固定临时文件。\n\n```text\n}\n/** 读取降级配置文件；不存在或损坏都返回 undefined（调用方继续用默认值）。 */\nexport async function readConfigFile(file) {\n    try {\n        const text = await readFile(file, 'utf8');\n        const parsed = JSON.parse(text);\n        if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed))\n```\n\n**依据 7 · 源码核查**：[lib/store.js:242-250](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/store.js#L242-L250)\n\n备份失败吞掉。\n\n```text\n    async backupCorrupt() {\n        try {\n            await copyFile(this.file, `${this.file}.bak`);\n            return true;\n        }\n        catch {\n            return false;\n        }\n    }\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程检查和三阶段成本如何判断？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\nTypeScript源与lib发布产物并存，host/client版本注入、pack/registration/seed-parity和mock smoke脚本覆盖许多降级与回滚分支，源码模块按paths/store/tasks/promote分离，值得复用。smoke中“两个host并发写不会覆盖”实际先await A create再await B create，只证明顺序重读，不证明重叠read-modify-write安全；检查名称不能替代执行时序证据。本次只读脚本没有运行。\n\n首次需对齐Node/宿主版本，选择仅临时数据根与备份策略，确认远程API准入。持续插件不直接调用LLM，但会话仍按宿主计费，目录/清单/原会话日志持续占盘；GUI约2.5秒轮询，任务很多时状态构造和读盘增加。跨卷转正会完整复制，空间峰值至少含源与目标，量化耗时取决体积；失败恢复需辨认两副本、旧节点、seed来源和清单是否forget，不能当自动回滚已经恢复所有资源。清理为永久rm，归档不擦除日志，备份/敏感信息生命周期要额外管理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:56-74](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/package.json#L56-L74)\n\n检查链。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    \"prepare\": \"node scripts/prepare.mjs\",\n    \"prepack\": \"node scripts/check-pack.mjs\",\n    \"check:pack\": \"node scripts/check-pack.mjs\",\n    \"smoke\": \"npm run smoke:host && npm run smoke:client\",\n    \"smoke:host\": \"node scripts/smoke.mjs\",\n    \"smoke:client\": \"node scripts/smoke-client.mjs\",\n    \"check:registration\": \"node scripts/check-registration.mjs\",\n    \"check:seed-parity\": \"node scripts/check-seed-parity.mjs\",\n    \"check\": \"npm run typecheck && npm run build && npm run check:pack && npm run smoke && npm run check:registration && npm run check:seed-parity\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n    }\n  },\n  \"peerDependencies\": {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/smoke.mjs:790-810](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/scripts/smoke.mjs#L790-L810)\n\n实际顺序await双host。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  const peerA = createStubContext(newState());\n  const peerB = createStubContext(newState());\n  plugin.apply(peerA.ctx, { rootDir, dataDir: sharedData, autoCleanDays: 0 });\n  plugin.apply(peerB.ctx, { rootDir, dataDir: sharedData, autoCleanDays: 0 });\n\n  const peerATask = await call(peerA.routes, `${API}/create`, 'POST', {});\n  const peerBTask = await call(peerB.routes, `${API}/create`, 'POST', {});\n  const sharedStore = JSON.parse(await readFile(join(sharedData, 'tasks.json'), 'utf8'));\n  check('两个 host 并发写清单不会互相覆盖（写入前重读磁盘）', () => {\n    const paths = sharedStore.tasks.map((row) => row.path);\n    assert.ok(paths.includes(peerATask.task.path), 'B 的整份覆盖把 A 刚写的记录抹掉了');\n    assert.ok(paths.includes(peerBTask.task.path));\n    assert.equal(sharedStore.tasks.length, 2);\n  });\n\n  const peerAView = await call(peerA.routes, `${API}/state`);\n  check('GET /state 会先重读磁盘，看得到另一个 host 建的任务', () => {\n    assert.ok(peerAView.tasks.some((task) => task.id === peerBTask.task.id));\n  });\n\n  const beforeDisposed = await readFile(join(sharedData, 'tasks.json'), 'utf8');\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:185-202](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/README.md#L185-L202)\n\n作者限制与轮询。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n| 打开了任务但页面没跳 | 直接点侧边栏对应的工作区即可（自动跳转有约 2.5 秒的轮询延迟） |\n| 转正后新工作区里只有空会话 | 当时没勾「把对话带过去」，或那条会话没有已完成的一轮 → 用 `/temptask repair <新工作区路径>` 把历史接回来 |\n| 临时目录被删后对话打不开 | 同上：`/temptask repair <某个正常的工作区路径>` |\n| 转正报「目录被占用」 | 关掉那个任务的会话/终端（Windows 上只要还有程序待在那个目录里就搬不动）；此时不会有任何改动 |\n\n## 7. 已知限制\n\n- **不能真正删除会话**：DSH 没提供这个能力，只能归档（日志留在磁盘上）。\n- **转正只复刻\"已完成的一轮\"**：最后一个回合还没收尾的内容不会被带过去；一个已完成回合都没有时\n  会退化成空会话并如实说明。\n- **转正的目标不能落在任务根目录内部**：那会被自动登记成新的临时任务，等于原地打转。\n- **侧边栏那一行内部的按钮**屏幕阅读器读不到（这一行是官方按\"导航按钮\"渲染的，内部内容被标成\n  装饰性内容）；同样的动作在「设置 → 插件 → 临时任务」与 `/temptask` 命令里都能用键盘完成。\n- **多个 profile 同时运行**时共用一份 `tasks.json`：写入前会在锁内重读磁盘、按 id 合并，\n  极端情况下仍有亚毫秒级的覆盖窗口。\n\n## 8. 给维护者\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/promote.js:119-165](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/promote.js#L119-L165)\n\n跨卷和恢复成本。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\nasync function moveDirectory(from, to) {\n    try {\n        await rename(from, to);\n        return 'rename';\n    }\n    catch (error) {\n        const code = error.code;\n        if (code === 'EXDEV') {\n            try {\n                // errorOnExist + force:false：目标已经被我们在上面查过不存在，这里再兜一层。\n                await cp(from, to, { recursive: true, errorOnExist: true, force: false });\n            }\n            catch (copyError) {\n                throw new PromoteError(ERROR_CODES.fs, `跨卷复制失败：${from} → ${to}`, messageOf(copyError));\n            }\n            try {\n                await rm(from, { recursive: true, force: true });\n            }\n            catch (removeError) {\n                // 新家已经就位，旧目录删不掉只是留个副本——不算失败，但必须说清楚。\n                throw new PromoteError(ERROR_CODES.fs, `已复制到 ${to}，但旧目录删不掉：${from}`, `${messageOf(removeError)}\\n新旧两份都在磁盘上；确认新家内容无误后手动删除旧目录即可。`);\n            }\n            return 'copy';\n        }\n        if (isBusyError(error)) {\n            throw new PromoteError(ERROR_CODES.dirBusy, `搬不动这个目录（被占用）：${from}`, 'Windows 上目录会被「正在使用它的进程」锁住：先关掉该任务的会话与终端（或先结束它正在跑的回合），再重试。');\n        }\n        throw new PromoteError(ERROR_CODES.fs, `搬目录失败：${from} → ${to}`, messageOf(error));\n    }\n}\n/** 第 4/5 步失败时的回滚：把目录搬回去（best-effort，失败只记日志）。 */\nasync function rollbackMove(from, to) {\n    try {\n        await rename(to, from);\n        return true;\n    }\n    catch {\n        try {\n            await cp(to, from, { recursive: true, errorOnExist: true, force: false });\n            await rm(to, { recursive: true, force: true });\n            return true;\n        }\n        catch {\n            return false;\n        }\n    }\n}\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 什么情况下采用，进一步从何处入手？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察，具体限制来自可破坏文件操作与实例内锁/目录预留竞争、非事务转正和API依赖外部认证。可信单用户、单host、只放可丢弃数据并保留独立备份可作隔离对照；默认不启自动清理，不把临时目录组织当代码沙箱。重要成果先备份再转正，核对目标文件、historyCarried/source及旧记录，失败后先盘点再重试。共享多profile写同一数据目录、远程无认证暴露、唯一重要数据或跨卷大批迁移不宜直接采用。\n\n继续可研究mkdir独占目录租约、跨进程锁/版本CAS与唯一tmp文件，以及持久化阶段日志/幂等操作ID；取消未确认完成时拒绝删除，转正用可恢复状态机记录目录/节点/seed阶段，route接宿主身份准入。基线为当前exists+recursive mkdir、顺序重读/多资源try-catch，反例包括同步创建、两个进程读同版再写、复制后源删失败、建新节点后forget失败、cancel失败仍运行和伪造Host。比较错删、丢记录、重复seed/副本与恢复工时，当前为未验证方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tasks.js:190-247](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/tasks.js#L190-L247)\n\n目录创建和记录时序。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\n    async create() {\n        const root = this.rootDir();\n        await this.ensureRoot().catch(() => undefined);\n        let dirName;\n        let dirPath;\n        try {\n            dirName = uniqueDirName(root, taskDirName());\n            dirPath = resolveTaskPath(root, dirName);\n        }\n        catch (error) {\n            return this.toFailure(error);\n        }\n        // 1) 目录 + 工作区（ensureTaskWorkspace 内部会 mkdir）\n        const ensured = await ensureTaskWorkspace(this.deps.ctx, dirPath);\n        if (!ensured.ok) {\n            await this.rollbackDirectory(dirPath);\n            return failure(ERROR_CODES.noWorkspace, ensured.message, ensured.hint);\n        }\n        const workspace = ensured.workspace;\n        // 2) 会话：cwd 用工作区回传的归一化路径（realpath），否则 attach 会因路径不等而失败\n        const session = await createSessionForDir(this.deps.ctx, workspace.path);\n        const sessionId = session.sessionId;\n        if (sessionId === undefined) {\n            await this.rollbackDirectory(workspace.path);\n            if (workspace.created)\n                await removeTaskWorkspace(this.deps.ctx, workspace.workspaceId);\n            return failure(ERROR_CODES.noSession, '任务目录已回滚：无法创建会话', session.reason ?? '当前 DSH 未提供可用于创建会话的服务');\n        }\n        // 3) 挂进工作区 —— 这一步决定它出现在侧边栏哪个节点下\n        const attached = await attachSessionToWorkspace(this.deps.ctx, workspace.workspaceId, sessionId);\n        if (!attached.attached) {\n            this.recordWarning(`会话已创建但未能挂进任务节点（${attached.reason ?? '未知原因'}），它可能出现在「未分组」下`);\n        }\n        // 4) 记录（按目录去重：另一个进程若刚为同一目录写过记录，复用它）\n        const now = Date.now();\n        const task = {\n            id: mintTaskId(),\n            dirName,\n            path: workspace.path,\n            workspaceId: workspace.workspaceId,\n            createdAt: now,\n            lastOpenedAt: now,\n            sessionId,\n            status: 'active',\n        };\n        const persisted = await this.deps.store.mutate((draft) => {\n            draft.rootDir = root;\n            const clash = draft.tasks.find((row) => normalizeRoot(row.path) === normalizeRoot(task.path));\n            if (clash !== undefined) {\n                clash.workspaceId = workspace.workspaceId;\n                clash.sessionId = sessionId;\n                clash.status = 'active';\n                clash.lastOpenedAt = now;\n                delete clash.closedAt;\n                return { ...clash };\n            }\n            draft.tasks.push(task);\n            return { ...task };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/tasks.js:562-592](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/tasks.js#L562-L592)\n\n取消与删除。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n    async disposeTask(task) {\n        // 1) 会话账目必须在删工作区之前读\n        const account = sessionAccountOf(this.deps.ctx, task.workspaceId);\n        const sessionIds = account.length > 0 ? account : task.sessionId === undefined ? [] : [task.sessionId];\n        // 2) 活着的会话先中止当轮\n        let sessionsCanceled = 0;\n        for (const sessionId of sessionIds) {\n            if (!isSessionLive(this.deps.ctx, sessionId))\n                continue;\n            if (await cancelSession(this.deps.ctx, sessionId))\n                sessionsCanceled += 1;\n        }\n        // 3) 删目录（失败则整体中止，不留半清理状态）\n        const dirRemoved = await this.removeDirectory(task);\n        if (dirRemoved instanceof TaskError)\n            return dirRemoved;\n        // 4) 按策略处理会话\n        let sessionsArchived = 0;\n        if (this.deps.config().onDeleteSessions === 'archive') {\n            for (const sessionId of sessionIds) {\n                if (await archiveSessionQuietly(this.deps.ctx, sessionId))\n                    sessionsArchived += 1;\n            }\n        }\n        // 5) 删节点记录\n        const workspace = await removeTaskWorkspace(this.deps.ctx, task.workspaceId);\n        if (task.workspaceId !== undefined && !workspace.removed) {\n            this.recordWarning(`任务目录已删除，但侧边栏节点未能移除${workspace.reason === undefined ? '' : `（${workspace.reason}）`}；可在侧边栏手动删除该节点`);\n        }\n        return { dirRemoved, workspaceRemoved: workspace.removed, sessionsArchived, sessionsCanceled };\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/store.js:154-195](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/store.js#L154-L195)\n\n版本竞争。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    async mutate(mutate) {\n        return this.enqueue(async () => {\n            const read = await this.readFromDisk(this.store.rootDir);\n            let base;\n            if (read.kind === 'ok') {\n                base = read.store;\n            }\n            else if (read.kind === 'missing') {\n                base = { version: TASK_STORE_VERSION, rootDir: this.store.rootDir, tasks: [] };\n            }\n            else {\n                // 磁盘上是坏内容：先留下证据，再以本进程已知的记录为基准继续。\n                await this.backupCorrupt();\n                this.note(`${read.message}（已备份，本次以内存中的清单为基准）`);\n                base = {\n                    version: TASK_STORE_VERSION,\n                    rootDir: this.store.rootDir,\n                    tasks: this.store.tasks.map((task) => ({ ...task })),\n                };\n            }\n            const before = JSON.stringify(base);\n            const result = await mutate(base);\n            // 幂等写：内容没变就不落盘（例如 session/disposed 落在一个非任务会话上）。\n            if (JSON.stringify(base) !== before) {\n                await writeJsonAtomic(this.file, base);\n            }\n            this.store = base;\n            return result;\n        });\n    }\n    /** 立即把当前内存态落盘（启动修复路径用）。 */\n    async persist() {\n        await writeJsonAtomic(this.file, this.store);\n    }\n    /* ─────────────────────────── 内部 ─────────────────────────── */\n    /** 把一笔工作排进串行锁；锁本身不会因为某次失败而永久 reject。 */\n    enqueue(work) {\n        const run = this.tail.then(work);\n        this.tail = run.then(() => undefined, () => undefined);\n        return run;\n    }\n    /**\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/promote.js:378-417](https://github.com/Aeroscis/dsh-temptask/blob/1116ec7ff1af2dcf104dc34d883548c413064e25/lib/promote.js#L378-L417)\n\n转正阶段。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n            if (await cancelSession(ctx, sessionId))\n                sessionsCanceled += 1;\n        }\n        /* 4) 搬目录（唯一的破坏性动作，且最早：失败则什么都没变）。 */\n        const moved = await moveDirectory(from, to);\n        /* 5) 新家建工作区记录；失败把目录搬回去，不留半状态。 */\n        const ensured = await ensureTaskWorkspace(ctx, to);\n        if (!ensured.ok) {\n            const rolledBack = await rollbackMove(from, to);\n            return fail(new PromoteError(ERROR_CODES.noWorkspace, `${ensured.message}${rolledBack ? '（目录已搬回原位）' : ''}`, rolledBack\n                ? ensured.hint\n                : `目录现在在 ${to}，但没能建出节点；可在侧边栏手动把该目录添加为工作区。${ensured.hint ?? ''}`));\n        }\n        const workspace = ensured.workspace;\n        /* 6) 复刻对话（尽力而为，不影响转正本身）；不带历史时至少开一条空会话。 */\n        // 候选按\"新→旧\"逐条试：任务记录里最后一条常常是空会话（见 carryHistory 的说明）。\n        const carry = await carryHistory(deps, sessionIds.length > 0 ? sessionIds : task.sessionId === undefined ? [] : [task.sessionId], workspace.path, workspace.workspaceId, request.carry);\n        /* 7) 按策略处理旧会话。 */\n        let sessionsArchived = 0;\n        if (deps.policy() === 'archive') {\n            for (const sessionId of sessionIds) {\n                if (await archiveSessionQuietly(ctx, sessionId))\n                    sessionsArchived += 1;\n            }\n        }\n        /* 8) 删旧工作区记录（此时它的会话已经转移或归档）。 */\n        const removed = await removeTaskWorkspace(ctx, task.workspaceId);\n        if (task.workspaceId !== undefined && !removed.removed) {\n            deps.log('warn', `转正：旧工作区记录未能删除（${removed.reason ?? '未知原因'}）`);\n        }\n        /* 9) 删任务记录（此后它不再是临时任务，也不会被自动清理）。 */\n        await deps.forget(task.id);\n        deps.log('info', `promoted task ${task.id} → ${to} (history: ${String(carry.carried)}, source: ${carry.sourceSessionId ?? '-'}, archived: ${sessionsArchived}, moved: ${moved})`);\n        const result = {\n            task: { ...view, sessionIds },\n            from,\n            to: workspace.path,\n            workspaceId: workspace.workspaceId,\n            historyCarried: carry.carried,\n            sessionsArchived,\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0d42449d78b96f07cfc345a98e4fb6236e762724215cdd700bff1ac32ad4b71d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 1067 | — | — | 19636 |\n| .js | source | 16 | 5577 | 4322 | 1255 | — |\n| .mjs | source | 7 | 3881 | 3170 | 389 | — |\n| .tsx | source | 1 | 3157 | 2355 | 626 | — |\n| .ts | source | 15 | 4392 | 3032 | 974 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 临时工作区 | 短任务 | 非沙箱 |\n| 转正/repair | 搬文件与复刻历史 | 单来源完成前缀 |\n| 清理/归档 | 管目录杂物 | 永久删文件且日志保留 |\n\n## 工程亮点\n\n模块分层、能力降级和阶段回执可借鉴，顺序mock不能证明并发安全。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/host.js、lib/paths.js、lib/store.js、lib/config.js、lib/tasks.js、lib/promote.js、lib/seed.js、lib/workspaces.js、lib/routes.js、lib/hooks.js、lib/commands.js、src/client.tsx、scripts/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定lib入口、host配置、paths/store、创建/清理/转正及seed完整关键链，routes/命令/钩子、README与smoke定向检查，客户端仅交互契约。\n- 下一步：进一步从同秒并发、双进程写、跨卷双副本和cancel失败探讨租约/恢复状态机。\n",
         "metadata": {
             "repository": "Aeroscis/dsh-temptask",
             "repository_id": 1390600932,
-            "captured_at": "2026-10-21T05:34:38.567Z",
-            "window_start": "2026-09-21T05:34:38.567Z",
+            "captured_at": "2026-10-22T06:01:11.214Z",
+            "window_start": "2026-09-22T06:01:11.214Z",
             "stars": 1,
             "pushed_at": "2026-10-20T13:55:02Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 95AC:383860:AF201A:FB8D24:6AD84EF0 and timestamp 2026-10-21 05:34:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 96E8:39E13C:A96575:F43356:6AD84EF1 and timestamp 2026-10-21 05:34:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A38.567Z..2026-10-21T05%3A34%3A38.567Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 981C:3BA9DC:AA5EB4:F47134:6AD84EF2 and timestamp 2026-10-21 05:34:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A38.567Z..2026-10-21T05%3A34%3A38.567Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9922:360622:A9B004:F48969:6AD84EF3 and timestamp 2026-10-21 05:34:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAeroscis%2Fdsh-temptask%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A38.567Z..2026-10-21T05%3A34%3A38.567Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A28:39E13C:A9695F:F4394E:6AD84EF3 and timestamp 2026-10-21 05:34:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@aeroscis/dsh-temptask",
-                "captured_at": "2026-10-21T05:34:44.325Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T06:01:21.665Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 1309,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40aeroscis%2Fdsh-temptask",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40aeroscis%2Fdsh-temptask",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-09-27T10:21:38.001Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T06:01:21.665Z",
                     "source_url": "https://registry.npmjs.org/%40aeroscis%2Fdsh-temptask",
                     "error": null,
                     "latest_version": "0.5.0",

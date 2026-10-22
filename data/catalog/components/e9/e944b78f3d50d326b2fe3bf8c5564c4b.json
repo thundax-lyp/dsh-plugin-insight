@@ -10,10 +10,10 @@
             "repository": "439436269-ctrl/dsh-peak-runner",
             "path": "",
             "aliases": [],
-            "name": "峰谷价任务执行器",
+            "name": "dsh-peak-runner",
             "entry_type": "plugin",
             "technical_category": "agent-workflow",
-            "business_category": "office-operations",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1417227361-root-directory-0",
+                    "id": "2026-10-22-02-github-1417227361-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:11:09.678Z",
+                    "retrieved_at": "2026-10-22T05:32:36.060Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1417227361-root-author",
+                    "id": "2026-10-22-02-github-1417227361-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "README.md",
+                            "content_sha256": "79bd880ac21cab2da57da0de2ec953fd7ebb96a87ff381300c48e9f323afc9ee"
+                        }
+                    ],
                     "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
-                    "captured_at": "2026-10-21T02:11:09.678Z",
-                    "summary": "根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:32:36.060Z",
+                    "summary": "按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1417227361-root-source",
+                    "id": "2026-10-22-02-github-1417227361-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js",
+                    "url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "README.md",
+                            "content_sha256": "79bd880ac21cab2da57da0de2ec953fd7ebb96a87ff381300c48e9f323afc9ee"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "package.json",
+                            "content_sha256": "4cbe923add200b1a5d56bc271ee8761dbe2be1461081bc12d27d038882770656"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/index.js",
+                            "content_sha256": "0b88289bbc1d38df077495b78afd1ad2d14c0dcf145ea4cc598564e61ea386b0"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/config.js",
+                            "content_sha256": "8afde7e61ab717eedf0aae2c82dc65613365e673da8a299efa1c89ba51b8251a"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/tariff.js",
+                            "content_sha256": "7204fdc0b4ae1616e8c2a2ec545a1854d780d4b1be228f137587a3cf54e906aa"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/scheduler.js",
+                            "content_sha256": "fafbf3213d5353d0244223ec742ba6910474cc7738be0705f5192ae12331dc96"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/queue.js",
+                            "content_sha256": "eb9d337a6261be86902c8028338b06a33b03a0cb1ed6e69e98be0e73e07b9396"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/runner.js",
+                            "content_sha256": "013a030e05908f3ebd4bae26e66753281065373df58c5c0d106c4a2f406d9cc9"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-peak-runner",
+                            "commit": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
+                            "path": "lib/tools.js",
+                            "content_sha256": "ce794db747ddfd0e9bc4dd4d3b2d5fadd823f660a2f7ba291e8d49811adb0fb3"
+                        }
+                    ],
                     "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
-                    "captured_at": "2026-10-21T02:11:09.678Z",
-                    "summary": "核查 lib/index.js、lib/scheduler.js、lib/queue.js、lib/runner.js、lib/tariff.js、lib/config.js；持久化storage domain整批任务文档，scheduler按UTC峰段/周末选择立即或setTimeout触发；runner逐任务调用ctx.llm.stream并组装文本，默认reasoning off。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:32:36.060Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/config.js、lib/tariff.js、lib/scheduler.js、lib/queue.js、lib/runner.js、lib/tools.js；peak_run 入队并按当前时段决定即时 drain 或 armTimer；到点 callback 仅日志，实际 drain 只在非峰 peak_run 分支。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-peak-runner/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查调度/队列/runner和配置，未执行时钟模拟、真实模型任务或核实最新费率；仅指出静态分支与README的差异。",
+                        "只读核固定提交 README、package、scheduler/runner/queue/tools/index 源码；未执行目标测试/模型、核当前官方价格或真实宿主；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "可等待的摘要/翻译批任务，用户接受推迟执行换取预期低价；合格交付是指定模型完成的文本和可靠任务状态，而非仅到时触发。",
+                    "text": "供可等待的文本批任务试算峰谷调度；合格交付是任务按目标模型完成且费用可核。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "持久化storage domain整批任务文档，scheduler按UTC峰段/周末选择立即或setTimeout触发；runner逐任务调用ctx.llm.stream并组装文本，默认reasoning off。",
+                    "text": "peak_run 入队并按当前时段决定即时 drain 或 armTimer；到点 callback 仅日志，实际 drain 只在非峰 peak_run 分支。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查调度/队列/runner和配置，未执行时钟模拟、真实模型任务或核实最新费率；仅指出静态分支与README的差异。",
+                    "text": "只读核固定提交 README、package、scheduler/runner/queue/tools/index 源码；未执行目标测试/模型、核当前官方价格或真实宿主；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.1.0，声明DSH0.2.0-rc.2；三模型工具和system提示，未进行宿主验收。",
+                    "text": "包声明 0.1.0、MIT、Node>=22、DSH 0.2.0-rc.2 peer；实际发布/宿主兼容未本轮验证。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "等待时间是核心代价；首次需校准价格/时区/模型，持续维护规则并复核空输出和失败。现金收益取决于实际模型账单与重试，未核实作者“两倍”价格口径。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH/模型账号/存储；金额未知 | 配 UTC 时段、价格、目标模型；耗时未知 | 当前费率未核 |\n| 持续使用 | 模型 token、等待、可能重试；数值未知 | 监控 pending、人工再触发与核账单；频率未知 | 到点回调不执行 |\n| 失败恢复 | 误费/滞留/重跑；金额未知 | 查 running、空文本、错模型和版本冲突；耗时未知 | 无可确认自动恢复 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。",
+                    "text": "自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "时间可移的工作负载有调度价值；忙时延迟、路由回退和重试可能吞掉收益，未给实际节费比例。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 排队/查询/取消 | 工具与 storage domain 源码 | 并发/重启完整性 |\n| 定时执行 | 可 armTimer 到点写日志 | 自动 drain 未实现 |\n| 节费 | 时段规则和模型调用接线 | 当前费率、目标一致性与净节省 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "runner将BlockAssembler失败与空输出显式处理可借鉴；scheduler当前lead逻辑注释和代码不符。whole-document put简洁但扩展并发需序列化或版本冲突处理。",
+                    "text": "调度/队列/runner 分层有复用价值；当前关键定时器并未消费队列，时段判断/模型回退需要统一任务契约。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +265,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对用户手动等低价，贡献是价格日程与可查队列、取消、模型调用的组合。存储和LLM流来自宿主；插件按时间表改变执行时机，并未读取实时账单确认价格。",
+                    "text": "把时段判断、持久队列和模型工具接为一个可查询/取消的延时工作流，比手工等时更系统；但核心“自动低价执行”当前源码未闭环，不能将作者预期节费写成已实现效果。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +283,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "最影响节费主张的是日程是否真正约束所用模型和任务启动。scheduler.shouldRunNow在“当前非峰段”直接run=true，未检查即将进入峰段，因此README承诺的峰前leadMinutes不成立；runner指定模型失败会发现任意可用模型，其价格不一定对应同日程。",
+                    "text": "timer 到点只 log，schedule 仅读状态；leadMinutes 没有在非峰临峰时阻止启动，目标失效会回退任意模型。任务可能滞留或不按适用价格规则执行。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +301,16 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：队列任务绑定实际provider/model和价格规则版本，并以预估最长运行时间判断是否跨峰，可能比按当前时刻判断更可靠。推导自模型回退与lead窗口缺口；新增负担是维护价格规则及期限/任务时长估计。",
+                    "text": "未验证方向是持久调度器主动领取、单任务租约/版本提交，任务绑定模型与价格规则，峰前按预计运行时长判断；固定时钟和模型失败夹具测执行/费用正确性。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +319,15 @@
                             "fingerprint": "fe646bc931b3853815a760d7eb6943d96e6cad8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:11:09.678Z",
+                    "reviewed_at": "2026-10-22T05:32:36.060Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:11:09.678Z",
+            "last_checked_at": "2026-10-22T05:32:36.060Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
-                "reviewed_at": "2026-10-21T02:11:09.678Z",
+                "reviewed_at": "2026-10-22T05:32:36.060Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +343,57 @@
                         "transferability": 5,
                         "simplification": 4
                     },
-                    "rationale": "novelty：价格感知排程为既有办法的宿主适配。 mechanism：队列与时段约束仅部分实现，lead逻辑削弱增量。 transferability：队列/runner可复用，费率与路由强绑定。 simplification：一处组织提交/查询/取消，规则仍需人工校准。",
+                    "rationale": "novelty 是价格表与队列/LLM 组合；mechanism 有模块化但定时器未调用执行和路由回退；transferability 受账单口径与宿主约束；simplification 降手工排程却需人工重触发。",
                     "basis": "interpretation",
                     "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
+                        "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "workflow：将手动等时段转为可查队列，但可靠触发待验。 delivery：交付批任务文本和状态，质量无新保证。 reach：降低非技术用户预约任务门槛，仍受宿主在线条件约束。 economics：延期换低价机制存在，但路由和lead缺口使实际收益未知。",
+                    "rationale": "workflow 有排队/状态工具；delivery 不能自动交付峰段任务；reach 限可延期文本任务；economics 未核当前价格且可能错模型。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1417227361-root-source"
+                        "2026-10-22-02-github-1417227361-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "可延后文本批任务有避峰潜力，但峰前lead窗口与指定模型回退不约束价格；先修正路由绑定并验证日程再采用。",
+                "decision": "not_recommended",
+                "reason": "核心自动到点执行未闭环，峰前 lead 和模型价区也不稳定；仅可作隔离排程原型观察。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "可等待摘要翻译任务和价格日程目标清楚。"
+                        "rationale": "可延期文本任务场景具体。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "自动排队取消比手等方便，当前无法支撑承诺节费。"
+                        "score": 6,
+                        "rationale": "有队列/查询但自动执行缺失削弱主要优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "shouldRunNow和任意模型回退源码支持具体反例，无真实账单对照。"
+                        "rationale": "固定源码显示关键分支，未运行宿主或账单对照。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "等待、空输出复核和价表时区维护可能吞掉节省。"
+                        "score": 0,
+                        "rationale": "等待、滞留、回退模型与维护价格表可吞掉节费。"
                     }
                 },
-                "score": 54,
+                "score": 42,
                 "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:32:36.060Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1417227361-root-source"
+                    "2026-10-22-02-github-1417227361-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,28 +418,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "5dd3e6567814031d15b6705c91fb58e19224dfe96425e482a45ed5af10d5e445"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "15f466fd15c72842bf64df17188ddb2d3eee6c562d01ca61fbe251de441961a5"
         },
         "publication.metadata": "data/plugins/439436269-ctrl--dsh-peak-runner/META.json",
         "publication.summaries": {
-            "text": "根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。",
+            "text": "按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。",
             "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
             "source_url": "https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md"
         },
         "publication.capabilities": {
             "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
             "items": {
-                "模型工具": "peak_run、peak_schedule、peak_cancel。",
-                "后台": "持久任务队列与自持定时器。"
-            }
+                "模型工具": "peak_run/peak_schedule/peak_cancel",
+                "后台": "持久 batch 队列与自持 timer（到点仅日志）"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 时段判断 | 决定即时/排队 | lead 前窗口缺口，当前价格未核 |\n| 持久队列 | 保存状态、查询/取消 | 单文档整批写，重启/并发待测 |\n| 模型执行 | 逐条运行文本 prompt | 只在非峰工具调用时 drain，可回退别的模型 |"
         },
         "publication.advice": {
             "revision": "fe646bc931b3853815a760d7eb6943d96e6cad8f",
-            "text": "适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。"
+            "text": "自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/439436269-ctrl--dsh-peak-runner",
-        "reports": "# 峰谷价任务执行器\n\n> 根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。\n\n## 使用建议\n\n适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。\n\n核查状态：源码支持本文所述机制与有限集成贡献；效果、宿主兼容和独立采用未验证。未来设计假设仅为推演，未实现、未验证。 只执行研究工程的统计/装配与结构验证，未安装插件、运行目标代码/测试或做真实宿主验收。\n\n- **用途**：可等待的摘要/翻译批任务，用户接受推迟执行换取预期低价；合格交付是指定模型完成的文本和可靠任务状态，而非仅到时触发。\n- **亮点**：相对用户手动等低价，贡献是价格日程与可查队列、取消、模型调用的组合。存储和LLM流来自宿主；插件按时间表改变执行时机，并未读取实时账单确认价格。\n- **思考**：最影响节费主张的是日程是否真正约束所用模型和任务启动。scheduler.shouldRunNow在“当前非峰段”直接run=true，未检查即将进入峰段，因此README承诺的峰前leadMinutes不成立；runner指定模型失败会发现任意可用模型，其价格不一定对应同日程。\n- **建议**：适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。\n\n## 能力与限制\n\n参照手工预约/cron执行同模型与同任务；不对当前DeepSeek实际价格作核实性断言。\n\n持久化storage domain整批任务文档，scheduler按UTC峰段/周末选择立即或setTimeout触发；runner逐任务调用ctx.llm.stream并组装文本，默认reasoning off。\n\n\nNode>=22；DSH llm/storageDomain/systemPrompt/tools 0.2.0-rc.2系列；配置provider/model可用，价格时段必须适用于实际账户。宿主持续运行才能计时触发，法定节假日不能仅凭README假定已覆盖。\n\n提交prompts→当前时段判定→持久化队列→立即执行或挂定时器→逐项更新running/done/failed→用户查询/取消。重启、并发全量写和执行中断恢复未实测；单文档队列需关注状态丢更新。\n\n等待时间是核心代价；首次需校准价格/时区/模型，持续维护规则并复核空输出和失败。现金收益取决于实际模型账单与重试，未核实作者“两倍”价格口径。\n\n时间可移的工作负载有调度价值；忙时延迟、路由回退和重试可能吞掉收益，未给实际节费比例。\n\n## 能力清单\n\n- **模型工具**：peak_run、peak_schedule、peak_cancel。\n- **后台**：持久任务队列与自持定时器。\n\n## 工程分析\n\nrunner将BlockAssembler失败与空输出显式处理可借鉴；scheduler当前lead逻辑注释和代码不符。whole-document put简洁但扩展并发需序列化或版本冲突处理。\n\n0.1.0，声明DSH0.2.0-rc.2；三模型工具和system提示，未进行宿主验收。\n\n固定源码依据：[lib/scheduler.js L25–54](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/scheduler.js#L25-L54)；[lib/runner.js L22–47](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/runner.js#L22-L47)。上述贡献与关键质疑均限定于这些固定源码，不把测试文件存在当运行通过。\n\n## 未来设计假设（未验证）\n\n待验证假设：队列任务绑定实际provider/model和价格规则版本，并以预估最长运行时间判断是否跨峰，可能比按当前时刻判断更可靠。推导自模型回退与lead窗口缺口；新增负担是维护价格规则及期限/任务时长估计。\n\n最小验证与否定条件：不执行目标代码的本轮只静态发现边界；后续用固定时钟覆盖峰前10分钟、跨日、周末、假日与长任务，模拟目标不可用，要求实际路由与价格规则一致。对照手动排程统计合格文本/总费用/等待时间，若低价目标失配或任务跨峰成本上升则否定节费保证。\n\n## 核查说明\n\n- 版本依据：仓库：[439436269-ctrl/dsh-peak-runner](https://github.com/439436269-ctrl/dsh-peak-runner)；固定提交：[fe646bc9](https://github.com/439436269-ctrl/dsh-peak-runner/tree/fe646bc931b3853815a760d7eb6943d96e6cad8f)；版本号：0.1.0；版本日期：2026-10-13（固定提交日期，北京时间，非包发布日期）。\n- 已检查与未覆盖范围：核查调度/队列/runner和配置，未执行时钟模拟、真实模型任务或核实最新费率；仅指出静态分支与README的差异。\n- 证据限制：作者功能摘要来自固定版本README；未核实独立用户采用、同条件效果或端到端收益。版本、证据原文与inventory绑定保存在本项JSON；GitHub/npm统计仅作背景，不构成采用证明。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；版本号：0.1.0；版本日期：2026-10-13（固定提交日期，北京时间，非包发布日期）；组件：根；内容摘要：0bd11f2cdf24b20ef31eeaad917cee08b91d32005f356281b8d950786bee41f7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 98 | — | — | 800 |\n| .js | source | 8 | 880 | 528 | 286 | — |\n| .mjs | test | 3 | 318 | 250 | 32 | — |\n\n排除 0 项；解析错误 0 项。统计为固定Git范围，源码抽读不冒充全面审计；JS/TS与Markdown分别计量。默认排除为启发式，不能从LOC推算原创量或工时。\n\n",
+        "reports": "# dsh-peak-runner\n\n> 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-peak-runner](https://github.com/439436269-ctrl/dsh-peak-runner)\n- **版本号**：0.1.0（[固定提交 fe646bc931b3853815a760d7eb6943d96e6cad8f](https://github.com/439436269-ctrl/dsh-peak-runner/tree/fe646bc931b3853815a760d7eb6943d96e6cad8f)）\n- **版本日期**：2026-10-13（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码证实队列/工具链，但自动到点执行、峰前 lead 和指定模型价区保障不足；风险是源码推导，未做宿主/账单实测；改进假设未实现。\n\n## 洞察短评\n\n- **用途**：供可等待的文本批任务试算峰谷调度；合格交付是任务按目标模型完成且费用可核。详见[Q01](#research-q01)。\n- **亮点**：把时段判断、持久队列和模型工具接为一个可查询/取消的延时工作流，比手工等时更系统；但核心“自动低价执行”当前源码未闭环，不能将作者预期节费写成已实现效果。详见[Q01](#research-q01)。\n- **思考**：timer 到点只 log，schedule 仅读状态；leadMinutes 没有在非峰临峰时阻止启动，目标失效会回退任意模型。任务可能滞留或不按适用价格规则执行。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证方向是持久调度器主动领取、单任务租约/版本提交，任务绑定模型与价格规则，峰前按预计运行时长判断；固定时钟和模型失败夹具测执行/费用正确性。详见[Q05](#research-q05)。\n\n采用建议：自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把时段判断、持久队列和模型工具接为一个可查询/取消的延时工作流，比手工等时更系统；但核心“自动低价执行”当前源码未闭环，不能将作者预期节费写成已实现效果。详见[Q01](#research-q01)。\n\n## 关键质疑\n\ntimer 到点只 log，schedule 仅读状态；leadMinutes 没有在非峰临峰时阻止启动，目标失效会回退任意模型。任务可能滞留或不按适用价格规则执行。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是持久调度器主动领取、单任务租约/版本提交，任务绑定模型与价格规则，峰前按预计运行时长判断；固定时钟和模型失败夹具测执行/费用正确性。详见[Q05](#research-q05)。\n\n固定时钟覆盖峰前 10 分钟、到点无人调用、跨日/周末、重启与并发，模拟目标失效；核实际模型、执行次数、状态和账单。\n\n## 场景与替代办法\n\n供可等待的文本批任务试算峰谷调度；合格交付是任务按目标模型完成且费用可核。详见[Q01](#research-q01)。\n\n手动等待或 cron 在同一模型/价格条件下可排程；插件应证明自动完成与总费用优势，目前 timer 与 drain 断开。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH llm/storageDomain/tools/systemPrompt | 必需 | 队列、模型工具与提示 | 插件不能形成链路 |\n| 可用 provider/model 与账号 | 必需 | 执行文本任务 | 可能回退其他模型或报错 |\n| 准确时段/价格规则 | 节费判断必需 | 选择时机 | 当前账单未验证、可能误判 |\n| 持续调度和人工监控 | 当前完成需要 | 让 pending 最终被执行 | timer 只打印日志 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户核模型和当前官方价格，设无资金风险测试 | 规则/目标明确 |\n| 排队 | 调 peak_run 提交文本任务 | pending 可查，返回 ETA 仅提示 |\n| 触发 | 当前版本平价时人工再调 peak_run 并核队列 | 任务真正 done/有文本，不滞留 |\n| 复盘 | 对照真实账单、模型和状态 | 不因静态时间表宣称节费 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH/模型账号/存储；金额未知 | 配 UTC 时段、价格、目标模型；耗时未知 | 当前费率未核 |\n| 持续使用 | 模型 token、等待、可能重试；数值未知 | 监控 pending、人工再触发与核账单；频率未知 | 到点回调不执行 |\n| 失败恢复 | 误费/滞留/重跑；金额未知 | 查 running、空文本、错模型和版本冲突；耗时未知 | 无可确认自动恢复 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 排队/查询/取消 | 工具与 storage domain 源码 | 并发/重启完整性 |\n| 定时执行 | 可 armTimer 到点写日志 | 自动 drain 未实现 |\n| 节费 | 时段规则和模型调用接线 | 当前费率、目标一致性与净节省 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**dsh-peak-runner 是否真正于低价时自动完成指定模型批任务，节费承诺依赖哪些未满足条件？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 峰谷调度要交付什么，相比手工排程的真实增量是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n场景是可延迟的摘要、翻译、改写等文本批任务，用户愿以等待换取预期较低的模型价格。合格交付必须是每条任务最终由目标费率对应的实际 provider/model 产出文本，状态可查、失败/取消可恢复，并用真实账单而非时段表估算节费。相对手动等低价或用 cron 调同模型，插件的增量是价格日程判断、持久队列、模型调用和三个模型工具的组合；价格规则与模型调用能力并非新发明。作者 README 声称峰价队列会在下个平价自动执行，但固定源码定时器只打印日志，故当前只能确认“排队待下次工具调用处理”的机制，不能确认自动交付。作者时段/双倍价格与假日口径是旧文档主张，本轮未查当前价格。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:6-26](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md#L6-L26)\n\n作者的峰谷节费和到点自动执行承诺。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n````text\nDeepSeek **峰谷价感知**的任务执行器：平价时段直接跑 `deepseek-flash` 的任务批；峰价快到时把任务攒进队列、挂一条定时器，到下一个平价时段自动执行完。\n\n## 它解决什么问题\n\nDeepSeek 官方按 UTC 时段两档计价：**01:00–04:00、06:00–10:00 为峰时价（约两倍），其余时段平价**；周末与法定假日全天平价。你把一批摘要/翻译/改写任务丢给它，它只在便宜的时候花钱。\n\n与 [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) 用同一套时段口径，两边对「现在是平价还是峰价」的判断一致。\n\n## 装（正式安装）\n\n```sh\ndsh plugin --profile desktop add dsh-peak-runner\n```\n\n然后重启 DSH。它插一行进组合，注册三个工具 + 一段系统提示：\n\n| 工具 | 作用 |\n|---|---|\n| `peak_run({ prompts })` | 一批 prompt 交给 `deepseek-flash` 执行。平价时段立即跑；峰价时段（或距峰价不足 `leadMinutes` 分钟时）排队，等下一个平价时段自动执行 |\n| `peak_schedule()` | 查看当前档位、下一个切换点、队列状态与定时器排定情况 |\n| `peak_cancel({ id? })` | 取消队列中的待执行任务（不传 id 则取消全部） |\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:39-55](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js#L39-L55)\n\n定时器回调仅日志，不触发 drain。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\tconst queue = createQueue(ctx);\n\n\t// The scheduler handle is shared between `apply()` and the tool specs.\n\t// `armedAt` is the one piece of mutable state the tools read.\n\tconst timer = {\n\t\tarmedAt: null,\n\t\t_dispose: null,\n\t\tarm(atMs) {\n\t\t\tthis.disarm();\n\t\t\tthis.armedAt = atMs;\n\t\t\tthis._dispose = armTimer(atMs, () => {\n\t\t\t\tthis.armedAt = null;\n\t\t\t\t// The timer only wakes the queue; the actual drain happens on the\n\t\t\t\t// next `peak_run` call (or the next `peak_schedule` read), which\n\t\t\t\t// keeps model calls inside an explicit tool invocation.\n\t\t\t\tconsole.log(`[dsh-peak-runner] off-peak reached at ${new Date(atMs).toISOString()}; queue is ready to drain`);\n\t\t\t});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tools.js:98-171](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/tools.js#L98-L171)\n\n工具提供排队、执行与状态读取。\n\n<details>\n<summary>查看原文（74行）</summary>\n\n```text\n\treturn [\n\t\t{\n\t\t\tname: \"peak_run\",\n\t\t\tdescription:\n\t\t\t\t\"Run a batch of prompts through deepseek-flash. During off-peak hours the batch runs immediately; during peak hours (or within leadMinutes of a peak window) it is queued and executed at the next off-peak start. Returns one text block with the per-task outcome.\",\n\t\t\tparameters: {\n\t\t\t\tprompts: {\n\t\t\t\t\ttype: \"array\",\n\t\t\t\t\titems: { type: \"string\" },\n\t\t\t\t\trequired: true,\n\t\t\t\t\tdescription: \"The prompts to run; each entry is one independent model call.\",\n\t\t\t\t},\n\t\t\t},\n\t\t\toutput: OUTPUT,\n\t\t\tasync execute(args) {\n\t\t\t\tconst list = Array.isArray(args?.prompts) ? args.prompts : [];\n\t\t\t\tconst now = Date.now();\n\t\t\t\tconst added = [];\n\t\t\t\tconst tasks = await queue.tasks();\n\t\t\t\tfor (const prompt of list) {\n\t\t\t\t\tconst task = normalizeTask({ prompt }, now);\n\t\t\t\t\ttasks.push(task);\n\t\t\t\t\tadded.push(task);\n\t\t\t\t}\n\t\t\t\tawait queue.put(tasks);\n\n\t\t\t\tconst decision = shouldRunNow(now, settings);\n\t\t\t\tif (!decision.run) {\n\t\t\t\t\tconst armedAt = reschedule();\n\t\t\t\t\tconst eta = armedAt === null ? \"（无下一个平价点）\" : new Date(armedAt).toISOString();\n\t\t\t\t\treturn {\n\t\t\t\t\t\ttext: [\n\t\t\t\t\t\t\t`当前${decision.reason === \"lead-window\" ? \"接近峰价\" : \"峰价\"}，${added.length} 个任务已排队，等待平价时段（预计 ${eta}）自动执行。`,\n\t\t\t\t\t\t\t\"用 peak_schedule 查看详情，用 peak_cancel 取消。\",\n\t\t\t\t\t\t].join(\"\\n\"),\n\t\t\t\t\t};\n\t\t\t\t}\n\n\t\t\t\tconst finished = await drain();\n\t\t\t\tconst done = finished.filter((t) => t.status === \"done\").length;\n\t\t\t\tconst failed = finished.filter((t) => t.status === \"failed\");\n\t\t\t\tconst lines = [\n\t\t\t\t\t`平价时段执行完成：${done}/${added.length} 成功。`,\n\t\t\t\t\t...finished.slice(-added.length).map((t, i) => {\n\t\t\t\t\t\tconst body = t.status === \"done\" ? t.result ?? \"\" : t.error ?? \"\";\n\t\t\t\t\t\treturn `${i + 1}. [${t.status}] ${clip(body)}`;\n\t\t\t\t\t}),\n\t\t\t\t];\n\t\t\t\tif (failed.length > 0) lines.push(`${failed.length} 个任务失败，可用 peak_run 重试。`);\n\t\t\t\treturn { text: lines.join(\"\\n\") };\n\t\t\t},\n\t\t},\n\t\t{\n\t\t\tname: \"peak_schedule\",\n\t\t\tdescription:\n\t\t\t\t\"Show the current DeepSeek price tier (off-peak / peak), the next switch instant, and the state of the pending task queue.\",\n\t\t\tparameters: {},\n\t\t\toutput: OUTPUT,\n\t\t\tasync execute() {\n\t\t\t\tconst now = Date.now();\n\t\t\t\tconst tariff = describeTariff(now, settings.peakWindows);\n\t\t\t\tconst tasks = await queue.tasks();\n\t\t\t\tconst pending = tasks.filter((t) => t.status === \"pending\");\n\t\t\t\tconst done = tasks.filter((t) => t.status === \"done\");\n\t\t\t\tconst failed = tasks.filter((t) => t.status === \"failed\");\n\t\t\t\tconst armedAt = timer.armedAt;\n\t\t\t\treturn {\n\t\t\t\t\ttext: [\n\t\t\t\t\t\t`当前档位：${tariff.text}`,\n\t\t\t\t\t\t`队列：${pending.length} 待执行 / ${done.length} 已完成 / ${failed.length} 失败`,\n\t\t\t\t\t\tarmedAt === null ? \"定时器：未排定\" : `定时器：已排定 ${new Date(armedAt).toISOString()}`,\n\t\t\t\t\t].join(\"\\n\"),\n\t\t\t\t};\n\t\t\t},\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/queue.js:24-46](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/queue.js#L24-L46)\n\n队列存储一个 batch 文档。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport const peakRunnerDomain = defineDomain({\n\t// Domain names must match /^[a-z][a-z0-9_]*$/ — the hyphenated plugin name\n\t// is rejected by the host's schema, so the underscore spelling is used here.\n\tname: \"peak_runner\",\n\tversion: 1,\n\ttables: {\n\t\tbatches: domainTable(recordSchema()),\n\t},\n});\n\n/** The one and only batch document key. */\nexport const BATCH_KEY = \"current\";\n\n/** Task statuses this queue uses. */\nexport const TASK_STATUSES = Object.freeze([\"pending\", \"running\", \"done\", \"failed\", \"cancelled\"]);\n\n/**\n * Create an empty batch document.\n *\n * @returns a fresh batch with an empty task list.\n */\nexport function emptyBatch() {\n\treturn { tasks: [] };\n```\n\n</details>\n\n#### 缺口\n\n- 未核当前价格、真实账单和宿主模型任务\n  **影响：**不能量化节费或确认真实完成率\n  **进一步探讨：**固定价格表与同模型任务对照，记录状态/账单/等待和合格文本\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 排队、到点、模型调用与取消实际上如何流转？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\npeak_run 把 prompts 标准化为 pending 后整批写 storage domain；shouldRunNow 判当前时段，峰段则 armTimer 并返回“预计自动执行”，非峰段才调用 drain。timer 到点清 armedAt 并记录一条 console log，没有对队列调用 drain；peak_schedule 仅读 tasks 计数和 timer 状态，也不触发 drain，注释“下次 schedule 读取会 drain”与实现不一致。因此峰段排队的任务要等后续非峰段 peak_run 调用才可能被执行；若一直无人再调用，仍 pending。drain 逐条置 running、调用 ctx.llm.stream、记录 done/failed；取消工具只改 pending。任务都保存在单个 batches/current 文档且每次更新 whole-document put，重启对 running 的恢复也未见专门扫描。模型文本组装失败有错误结果，成功但空文本仍可能标 done。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:98-149](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/tools.js#L98-L149)\n\npeak_run 入队、峰段返回和非峰段 drain。\n\n<details>\n<summary>查看原文（52行）</summary>\n\n```text\n\treturn [\n\t\t{\n\t\t\tname: \"peak_run\",\n\t\t\tdescription:\n\t\t\t\t\"Run a batch of prompts through deepseek-flash. During off-peak hours the batch runs immediately; during peak hours (or within leadMinutes of a peak window) it is queued and executed at the next off-peak start. Returns one text block with the per-task outcome.\",\n\t\t\tparameters: {\n\t\t\t\tprompts: {\n\t\t\t\t\ttype: \"array\",\n\t\t\t\t\titems: { type: \"string\" },\n\t\t\t\t\trequired: true,\n\t\t\t\t\tdescription: \"The prompts to run; each entry is one independent model call.\",\n\t\t\t\t},\n\t\t\t},\n\t\t\toutput: OUTPUT,\n\t\t\tasync execute(args) {\n\t\t\t\tconst list = Array.isArray(args?.prompts) ? args.prompts : [];\n\t\t\t\tconst now = Date.now();\n\t\t\t\tconst added = [];\n\t\t\t\tconst tasks = await queue.tasks();\n\t\t\t\tfor (const prompt of list) {\n\t\t\t\t\tconst task = normalizeTask({ prompt }, now);\n\t\t\t\t\ttasks.push(task);\n\t\t\t\t\tadded.push(task);\n\t\t\t\t}\n\t\t\t\tawait queue.put(tasks);\n\n\t\t\t\tconst decision = shouldRunNow(now, settings);\n\t\t\t\tif (!decision.run) {\n\t\t\t\t\tconst armedAt = reschedule();\n\t\t\t\t\tconst eta = armedAt === null ? \"（无下一个平价点）\" : new Date(armedAt).toISOString();\n\t\t\t\t\treturn {\n\t\t\t\t\t\ttext: [\n\t\t\t\t\t\t\t`当前${decision.reason === \"lead-window\" ? \"接近峰价\" : \"峰价\"}，${added.length} 个任务已排队，等待平价时段（预计 ${eta}）自动执行。`,\n\t\t\t\t\t\t\t\"用 peak_schedule 查看详情，用 peak_cancel 取消。\",\n\t\t\t\t\t\t].join(\"\\n\"),\n\t\t\t\t\t};\n\t\t\t\t}\n\n\t\t\t\tconst finished = await drain();\n\t\t\t\tconst done = finished.filter((t) => t.status === \"done\").length;\n\t\t\t\tconst failed = finished.filter((t) => t.status === \"failed\");\n\t\t\t\tconst lines = [\n\t\t\t\t\t`平价时段执行完成：${done}/${added.length} 成功。`,\n\t\t\t\t\t...finished.slice(-added.length).map((t, i) => {\n\t\t\t\t\t\tconst body = t.status === \"done\" ? t.result ?? \"\" : t.error ?? \"\";\n\t\t\t\t\t\treturn `${i + 1}. [${t.status}] ${clip(body)}`;\n\t\t\t\t\t}),\n\t\t\t\t];\n\t\t\t\tif (failed.length > 0) lines.push(`${failed.length} 个任务失败，可用 peak_run 重试。`);\n\t\t\t\treturn { text: lines.join(\"\\n\") };\n\t\t\t},\n\t\t},\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:41-64](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js#L41-L64)\n\ntimer 回调只清时刻与写日志。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n\t// The scheduler handle is shared between `apply()` and the tool specs.\n\t// `armedAt` is the one piece of mutable state the tools read.\n\tconst timer = {\n\t\tarmedAt: null,\n\t\t_dispose: null,\n\t\tarm(atMs) {\n\t\t\tthis.disarm();\n\t\t\tthis.armedAt = atMs;\n\t\t\tthis._dispose = armTimer(atMs, () => {\n\t\t\t\tthis.armedAt = null;\n\t\t\t\t// The timer only wakes the queue; the actual drain happens on the\n\t\t\t\t// next `peak_run` call (or the next `peak_schedule` read), which\n\t\t\t\t// keeps model calls inside an explicit tool invocation.\n\t\t\t\tconsole.log(`[dsh-peak-runner] off-peak reached at ${new Date(atMs).toISOString()}; queue is ready to drain`);\n\t\t\t});\n\t\t},\n\t\tdisarm() {\n\t\t\tif (typeof this._dispose === \"function\") this._dispose();\n\t\t\tthis._dispose = null;\n\t\t\tthis.armedAt = null;\n\t\t},\n\t};\n\n\tctx.effect(() => () => timer.disarm(), \"dsh-peak-runner: scheduler timer\");\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tools.js:150-171](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/tools.js#L150-L171)\n\npeak_schedule 只读队列。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n\t\t{\n\t\t\tname: \"peak_schedule\",\n\t\t\tdescription:\n\t\t\t\t\"Show the current DeepSeek price tier (off-peak / peak), the next switch instant, and the state of the pending task queue.\",\n\t\t\tparameters: {},\n\t\t\toutput: OUTPUT,\n\t\t\tasync execute() {\n\t\t\t\tconst now = Date.now();\n\t\t\t\tconst tariff = describeTariff(now, settings.peakWindows);\n\t\t\t\tconst tasks = await queue.tasks();\n\t\t\t\tconst pending = tasks.filter((t) => t.status === \"pending\");\n\t\t\t\tconst done = tasks.filter((t) => t.status === \"done\");\n\t\t\t\tconst failed = tasks.filter((t) => t.status === \"failed\");\n\t\t\t\tconst armedAt = timer.armedAt;\n\t\t\t\treturn {\n\t\t\t\t\ttext: [\n\t\t\t\t\t\t`当前档位：${tariff.text}`,\n\t\t\t\t\t\t`队列：${pending.length} 待执行 / ${done.length} 已完成 / ${failed.length} 失败`,\n\t\t\t\t\t\tarmedAt === null ? \"定时器：未排定\" : `定时器：已排定 ${new Date(armedAt).toISOString()}`,\n\t\t\t\t\t].join(\"\\n\"),\n\t\t\t\t};\n\t\t\t},\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/tools.js:37-84](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/tools.js#L37-L84)\n\ndrain 逐条写状态和运行模型。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n\t/** Drain every pending task in order; each one is one model call. */\n\tasync function drain() {\n\t\tconst tasks = await queue.tasks();\n\t\tconst pending = tasks.filter((t) => t.status === \"pending\");\n\t\tif (pending.length === 0) return tasks;\n\n\t\tconst target = await resolveTarget(ctx, settings);\n\t\tif (target === null) {\n\t\t\tthrow new Error(\"no usable provider/model is registered in this harness\");\n\t\t}\n\n\t\tconst running = new Set();\n\t\tconst controller = new AbortController();\n\t\tconst timeout = setTimeout(() => controller.abort(), settings.timeoutMs);\n\t\tif (typeof timeout.unref === \"function\") timeout.unref();\n\n\t\ttry {\n\t\t\tfor (const task of pending) {\n\t\t\t\ttask.status = \"running\";\n\t\t\t\ttask.startedAt = Date.now();\n\t\t\t\trunning.add(task.id);\n\t\t\t\tawait queue.put(tasks);\n\n\t\t\t\tconst outcome = await runPrompt(ctx, {\n\t\t\t\t\tprompt: task.prompt,\n\t\t\t\t\tprovider: target.provider,\n\t\t\t\t\tmodel: target.model,\n\t\t\t\t\tmaxTokens: settings.maxTokens,\n\t\t\t\t\ttemperature: settings.temperature,\n\t\t\t\t\treasoningEffort: settings.reasoningEffort,\n\t\t\t\t\tsignal: controller.signal,\n\t\t\t\t});\n\n\t\t\t\ttask.finishedAt = Date.now();\n\t\t\t\trunning.delete(task.id);\n\t\t\t\tif (outcome.ok) {\n\t\t\t\t\ttask.status = \"done\";\n\t\t\t\t\ttask.result = outcome.text;\n\t\t\t\t} else {\n\t\t\t\t\ttask.status = \"failed\";\n\t\t\t\t\ttask.error = `${outcome.code}: ${outcome.detail}`;\n\t\t\t\t}\n\t\t\t\tawait queue.put(tasks);\n\t\t\t}\n\t\t} finally {\n\t\t\tclearTimeout(timeout);\n\t\t}\n\t\treturn tasks;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/queue.js:78-101](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/queue.js#L78-L101)\n\n单文档整批读写。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function createQueue(ctx) {\n\tconst ready = ctx.storageDomain.open(peakRunnerDomain);\n\n\t/** @returns {Promise<Array>} the current task list (fresh copy). */\n\tasync function tasks() {\n\t\tconst domain = await ready;\n\t\tconst table = domain.table(\"batches\");\n\t\tconst batch = table.get(BATCH_KEY);\n\t\tif (batch === undefined) return [];\n\t\treturn Array.isArray(batch.tasks) ? batch.tasks : [];\n\t}\n\n\t/**\n\t * Persist a whole task list.\n\t *\n\t * @param list - the task list to store.\n\t * @returns {Promise<void>} resolves once the write is durable.\n\t */\n\tasync function put(list) {\n\t\tconst domain = await ready;\n\t\tawait domain.table(\"batches\").put(BATCH_KEY, { tasks: list });\n\t}\n\n\treturn { ready, tasks, put };\n```\n\n</details>\n\n#### 缺口\n\n- 未用固定时钟/重启模拟确认宿主调用与持久化行为\n  **影响：**不能断言每种环境的实际滞留时长与丢更新频率\n  **进一步探讨：**用隔离时钟/存储/LLM 假服务覆盖到点、重启、并发和空输出\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 峰前 leadMinutes 和目标模型能否保证任务真的避开高价？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nshouldRunNow 在周末或当前不在峰段时立即 run=true，未先检查距离下一峰段是否不足 leadMinutes，所以 README 的“峰价快到前停止新任务”没有在非峰分支实现；lead 窗口判断放在已处峰段之后，实际仅把临近平段结束的峰段状态命名为 lead-window。runner 的 resolveTarget 在配置 provider/model 解析失败后遍历任意可用 provider 的首个模型，不要求其价格规则与配置相同；因此任务即使等到按 DeepSeek 时间表的平价，也可能由不适用该规则的模型执行。结合 Q02 到点不执行，作者“自动避峰节费”在三个环节都没有足够源码保证。以上为固定源码推导，尚未对真实模型/账单复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/scheduler.js:25-49](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/scheduler.js#L25-L49)\n\n非峰立即运行，lead 检查在峰段内。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport function shouldRunNow(at, settings) {\n\t// A weekend instant is always off-peak; `isPeak` already handles that.\n\t// For a weekday we need the *window* tier, not the calendar tier, because\n\t// the lead window extends the \"stop running\" zone past the window end.\n\tconst date = new Date(at);\n\tconst weekend = Number.isNaN(date.getTime()) || date.getUTCDay() === 0 || date.getUTCDay() === 6;\n\tif (weekend) return { run: true, reason: \"off-peak\", nextRunAt: null };\n\n\tif (!hourInPeak(date.getUTCHours(), settings.peakWindows)) {\n\t\treturn { run: true, reason: \"off-peak\", nextRunAt: null };\n\t}\n\n\t// Inside a peak window: look for the next switch and see whether the lead\n\t// window has already swallowed us.\n\tconst switchAt = nextSwitch(at, settings.peakWindows);\n\tif (switchAt === null) return { run: false, reason: \"peak-no-switch-found\", nextRunAt: null };\n\n\tconst leadMs = settings.leadMinutes * 60_000;\n\tif (at >= switchAt - leadMs) {\n\t\t// We are inside the lead window that precedes the switch into off-peak.\n\t\treturn { run: false, reason: \"lead-window\", nextRunAt: switchAt };\n\t}\n\t// Still early inside a peak window; the next off-peak start is the switch.\n\treturn { run: false, reason: \"peak\", nextRunAt: switchAt };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/runner.js:21-46](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/runner.js#L21-L46)\n\n配置目标失败时回退任意首个可用模型。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport async function resolveTarget(ctx, settings) {\n\tconst provider = settings.provider;\n\tconst model = settings.model;\n\tif (provider !== \"\" && model !== \"\") {\n\t\ttry {\n\t\t\tawait ctx.llm.resolveModelInfo(provider, model);\n\t\t\treturn { provider, model, source: \"config\" };\n\t\t} catch {\n\t\t\t// Fall through to discovery: a profile without this provider is not an error.\n\t\t}\n\t}\n\ttry {\n\t\tconst providers = ctx.llm.listProviders() ?? [];\n\t\tfor (const entry of providers) {\n\t\t\tconst id = typeof entry === \"string\" ? entry : entry?.id;\n\t\t\tif (typeof id !== \"string\" || id === \"\") continue;\n\t\t\tconst models = await ctx.llm.listModels(id);\n\t\t\tif (!Array.isArray(models)) continue;\n\t\t\tconst first = models.find((candidate) => typeof candidate === \"string\" && candidate !== \"\");\n\t\t\tif (first !== undefined) return { provider: id, model: first, source: \"auto\" };\n\t\t}\n\t} catch {\n\t\t// No discovery either — report the absence instead of guessing.\n\t}\n\treturn null;\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/tools.js:124-147](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/tools.js#L124-L147)\n\n按时段决定排队或即时 drain。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n\t\t\t\tconst decision = shouldRunNow(now, settings);\n\t\t\t\tif (!decision.run) {\n\t\t\t\t\tconst armedAt = reschedule();\n\t\t\t\t\tconst eta = armedAt === null ? \"（无下一个平价点）\" : new Date(armedAt).toISOString();\n\t\t\t\t\treturn {\n\t\t\t\t\t\ttext: [\n\t\t\t\t\t\t\t`当前${decision.reason === \"lead-window\" ? \"接近峰价\" : \"峰价\"}，${added.length} 个任务已排队，等待平价时段（预计 ${eta}）自动执行。`,\n\t\t\t\t\t\t\t\"用 peak_schedule 查看详情，用 peak_cancel 取消。\",\n\t\t\t\t\t\t].join(\"\\n\"),\n\t\t\t\t\t};\n\t\t\t\t}\n\n\t\t\t\tconst finished = await drain();\n\t\t\t\tconst done = finished.filter((t) => t.status === \"done\").length;\n\t\t\t\tconst failed = finished.filter((t) => t.status === \"failed\");\n\t\t\t\tconst lines = [\n\t\t\t\t\t`平价时段执行完成：${done}/${added.length} 成功。`,\n\t\t\t\t\t...finished.slice(-added.length).map((t, i) => {\n\t\t\t\t\t\tconst body = t.status === \"done\" ? t.result ?? \"\" : t.error ?? \"\";\n\t\t\t\t\t\treturn `${i + 1}. [${t.status}] ${clip(body)}`;\n\t\t\t\t\t}),\n\t\t\t\t];\n\t\t\t\tif (failed.length > 0) lines.push(`${failed.length} 个任务失败，可用 peak_run 重试。`);\n\t\t\t\treturn { text: lines.join(\"\\n\") };\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:20-45](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md#L20-L45)\n\n作者峰前 lead 与目标模型承诺。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n然后重启 DSH。它插一行进组合，注册三个工具 + 一段系统提示：\n\n| 工具 | 作用 |\n|---|---|\n| `peak_run({ prompts })` | 一批 prompt 交给 `deepseek-flash` 执行。平价时段立即跑；峰价时段（或距峰价不足 `leadMinutes` 分钟时）排队，等下一个平价时段自动执行 |\n| `peak_schedule()` | 查看当前档位、下一个切换点、队列状态与定时器排定情况 |\n| `peak_cancel({ id? })` | 取消队列中的待执行任务（不传 id 则取消全部） |\n\n## 配置（profile 补丁层覆盖）\n\n```yaml\n- id: dsh-peak-runner\n  config:\n    enabled: true\n    provider: deepseek-account\n    model: deepseek-flash\n    # 峰段窗口（UTC 小时，半开区间 [start, end)）；默认对齐 DeepSeek 官方口径\n    peakWindows:\n      - { start: 1, end: 4 }\n      - { start: 6, end: 10 }\n    # 峰价开始前多少分钟停止执行新任务、开始排队\n    leadMinutes: 10\n    # 推理档：off 是延迟/成本正确的档位（low 仍可能烧掉 2000+ 思考 token）\n    reasoningEffort: \"off\"\n    maxTokens: 2048\n    timeoutMs: 45000\n````\n\n</details>\n\n#### 缺口\n\n- 未核实际模型价格、假日和时钟边界\n  **影响：**不能量化费用偏差或证明任务会跨峰\n  **进一步探讨：**固定时钟覆盖峰前、跨日、周末和目标不可用，并核实际调用模型及账单\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续和失败恢复的成本分别是什么？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n首次需 DSH 的 llm/storageDomain/tools/systemPrompt、Node>=22、可用 provider/model 与正确的时区/价格窗口；包声明 DSH 0.2.0-rc.2 相关依赖。持续成本包括队列等待、宿主常驻、模型 token、价格表/节假日维护、手工观察 pending 与重触发；插件没有读取实时账单。模型可能推理 token 耗尽、超时或目标回退，多次重试会吞掉节费。失败恢复需识别到点未执行、running 重启滞留、空结果被 done、并发 whole-document put 失配；没有自动补偿/交易性恢复证据。作者“双倍价格”是时间敏感财务主张，本轮未做官方实时价格核对，因此不能用于费用建议。现金、等待、恢复及人工管理耗时均未知。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-35](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/package.json#L1-L35)\n\nNode 和 DSH peer 依赖。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n{\n\t\"name\": \"dsh-peak-runner\",\n\t\"version\": \"0.1.0\",\n\t\"description\": \"DeepSeek 峰谷价感知的任务执行器：平价时段跑 deepseek-flash 任务批，峰价前挂定时任务推迟到下一个平价时段执行。\",\n\t\"type\": \"module\",\n\t\"license\": \"MIT\",\n\t\"main\": \"lib/index.js\",\n\t\"files\": [\n\t\t\"lib/**/*.js\",\n\t\t\"cordis.patch.yml\",\n\t\t\"README.md\",\n\t\t\"LICENSE\"\n\t],\n\t\"engines\": {\n\t\t\"node\": \">=22\"\n\t},\n\t\"scripts\": {\n\t\t\"test\": \"node --test test/*.test.mjs\"\n\t},\n\t\"peerDependencies\": {\n\t\t\"@deepseek-ai/cordis\": \"^4.0.1\",\n\t\t\"@deepseek-ai/dsh-llm\": \"^0.2.0-rc.2\",\n\t\t\"@deepseek-ai/dsh-storage-domain\": \"^0.2.0-rc.2\",\n\t\t\"@deepseek-ai/dsh-system-prompt\": \"^0.2.0-rc.2\",\n\t\t\"@deepseek-ai/dsh-tools\": \"^0.2.0-rc.2\"\n\t},\n\t\"dsh\": {\n\t\t\"bundle\": {\n\t\t\t\"patch\": \"./cordis.patch.yml\"\n\t\t},\n\t\t\"compatibility\": {\n\t\t\t\"dshReleases\": {\n\t\t\t\t\"0.2.0-rc.2\": \"compatible\"\n\t\t\t}\n\t\t}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:6-12](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/README.md#L6-L12)\n\n作者价格时段与倍数声明。\n\n```text\nDeepSeek **峰谷价感知**的任务执行器：平价时段直接跑 `deepseek-flash` 的任务批；峰价快到时把任务攒进队列、挂一条定时器，到下一个平价时段自动执行完。\n\n## 它解决什么问题\n\nDeepSeek 官方按 UTC 时段两档计价：**01:00–04:00、06:00–10:00 为峰时价（约两倍），其余时段平价**；周末与法定假日全天平价。你把一批摘要/翻译/改写任务丢给它，它只在便宜的时候花钱。\n\n与 [dsh-cost-meter](https://github.com/Han-1413141/dsh-cost-meter) 用同一套时段口径，两边对「现在是平价还是峰价」的判断一致。\n```\n\n**依据 3 · 源码核查**：[lib/index.js:20-74](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js#L20-L74)\n\n宿主服务和定时器生命周期。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\nexport const name = \"peak-runner\";\n\nexport const inject = [\"llm\", \"storageDomain\", \"tools\", \"systemPrompt\"];\n\nexport { Config };\n\n/**\n * Mount the plugin.\n *\n * @param ctx - host plugin context.\n * @param config - loader config (defaults are re-resolved here).\n */\nexport function apply(ctx, config) {\n\tconst settings = resolveConfig(config);\n\tif (!settings.enabled) {\n\t\tconsole.log(\"[dsh-peak-runner] disabled by configuration\");\n\t\treturn;\n\t}\n\n\tconst queue = createQueue(ctx);\n\n\t// The scheduler handle is shared between `apply()` and the tool specs.\n\t// `armedAt` is the one piece of mutable state the tools read.\n\tconst timer = {\n\t\tarmedAt: null,\n\t\t_dispose: null,\n\t\tarm(atMs) {\n\t\t\tthis.disarm();\n\t\t\tthis.armedAt = atMs;\n\t\t\tthis._dispose = armTimer(atMs, () => {\n\t\t\t\tthis.armedAt = null;\n\t\t\t\t// The timer only wakes the queue; the actual drain happens on the\n\t\t\t\t// next `peak_run` call (or the next `peak_schedule` read), which\n\t\t\t\t// keeps model calls inside an explicit tool invocation.\n\t\t\t\tconsole.log(`[dsh-peak-runner] off-peak reached at ${new Date(atMs).toISOString()}; queue is ready to drain`);\n\t\t\t});\n\t\t},\n\t\tdisarm() {\n\t\t\tif (typeof this._dispose === \"function\") this._dispose();\n\t\t\tthis._dispose = null;\n\t\t\tthis.armedAt = null;\n\t\t},\n\t};\n\n\tctx.effect(() => () => timer.disarm(), \"dsh-peak-runner: scheduler timer\");\n\n\tctx.systemPrompt.section({\n\t\tname: \"peak-runner:guide\",\n\t\torder: 70,\n\t\ttext: () => guideText(settings),\n\t});\n\n\tfor (const spec of createToolSpecs({ ctx, settings, queue, timer })) {\n\t\tctx.tools.register(spec);\n\t}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/runner.js:68-127](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/runner.js#L68-L127)\n\n模型调用、推理档重试和文本组装。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\nexport async function runPrompt(ctx, options) {\n\tconst { system, prompt, provider, model, maxTokens, temperature, reasoningEffort, signal } = options;\n\n\tconst attempt = async (effort) => {\n\t\tconst assembler = new BlockAssembler();\n\t\tconst config = {\n\t\t\tprovider,\n\t\t\tmodel,\n\t\t\t...(system === undefined || system === \"\" ? {} : { system }),\n\t\t\tmessages: [\n\t\t\t\tcreateUserMessage({\n\t\t\t\t\tcontent: [{ type: \"text\", text: prompt }],\n\t\t\t\t\tsource: { kind: \"user\" },\n\t\t\t\t}),\n\t\t\t],\n\t\t\t...(temperature === undefined ? {} : { temperature }),\n\t\t\t...(maxTokens === undefined ? {} : { maxTokens }),\n\t\t\t...(signal === undefined ? {} : { signal }),\n\t\t};\n\t\tif (typeof effort === \"string\" && effort !== \"\") config.reasoningEffort = effort;\n\n\t\tconst stream = ctx.llm.stream(config);\n\t\tfor await (const chunk of stream) {\n\t\t\tassembler.push(chunk);\n\t\t}\n\t\tconst finish = assembler.finish;\n\t\tlet text = \"\";\n\t\ttry {\n\t\t\tfor (const block of assembler.blocks()) {\n\t\t\t\tif (block?.type === \"text\" && typeof block.text === \"string\") text += block.text;\n\t\t\t}\n\t\t} catch {\n\t\t\t// A malformed stream still yields whatever text was assembled above.\n\t\t}\n\t\tconst usage = typeof assembler.usage === \"object\" ? assembler.usage : undefined;\n\t\tif (finish !== undefined && finish !== null && (finish.kind === \"error\" || finish.kind === \"aborted\")) {\n\t\t\treturn { ok: false, code: finish.kind, detail: describeFailure(finish.failure) };\n\t\t}\n\t\treturn { ok: true, text, ...(usage === undefined ? {} : { usage }) };\n\t};\n\n\ttry {\n\t\treturn await attempt(reasoningEffort);\n\t} catch (error) {\n\t\tconst detail = error instanceof Error ? error.message : String(error);\n\t\t// A model that advertises no reasoning support rejects the knob outright;\n\t\t// the call itself is still fine, so retry once without it.\n\t\tif (typeof reasoningEffort === \"string\" && reasoningEffort !== \"\" && /reasoning/i.test(detail)) {\n\t\t\ttry {\n\t\t\t\treturn await attempt(\"\");\n\t\t\t} catch (retryError) {\n\t\t\t\treturn {\n\t\t\t\t\tok: false,\n\t\t\t\t\tcode: \"stream-failed\",\n\t\t\t\t\tdetail: retryError instanceof Error ? retryError.message : String(retryError),\n\t\t\t\t};\n\t\t\t}\n\t\t}\n\t\treturn { ok: false, code: \"stream-failed\", detail };\n\t}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/queue.js:78-101](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/queue.js#L78-L101)\n\n整批存储。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function createQueue(ctx) {\n\tconst ready = ctx.storageDomain.open(peakRunnerDomain);\n\n\t/** @returns {Promise<Array>} the current task list (fresh copy). */\n\tasync function tasks() {\n\t\tconst domain = await ready;\n\t\tconst table = domain.table(\"batches\");\n\t\tconst batch = table.get(BATCH_KEY);\n\t\tif (batch === undefined) return [];\n\t\treturn Array.isArray(batch.tasks) ? batch.tasks : [];\n\t}\n\n\t/**\n\t * Persist a whole task list.\n\t *\n\t * @param list - the task list to store.\n\t * @returns {Promise<void>} resolves once the write is durable.\n\t */\n\tasync function put(list) {\n\t\tconst domain = await ready;\n\t\tawait domain.table(\"batches\").put(BATCH_KEY, { tasks: list });\n\t}\n\n\treturn { ready, tasks, put };\n```\n\n</details>\n\n#### 缺口\n\n- 当前官方费率、模型账单与真实失败恢复时间未核\n  **影响：**不能计算净节费和总拥有成本\n  **进一步探讨：**查同日期官方费率，隔离对照任务记录等待、token、重试和人工处置\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何从未执行定时器、lead 判断和模型回退推导最小改进？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n队列、时段判断、模型调用分模块，BlockAssembler 的失败分支也可借鉴；但当前定时器与 drain 脱节，且时段/模型规则未绑定任务。未验证方向是为每个任务冻结实际 provider/model、价格规则版本、提交时间和最迟完成时间；由可恢复的持久调度器在到点主动领取 pending，采用单任务租约/版本提交保证重启和并发不重复或丢写。峰前判断要考虑预计最长运行时间与下一峰开始，目标模型不可用时停止或取得用户同意，而非自动换不相关模型。最小验证用固定时钟、模拟存储和 LLM 覆盖峰前 10 分钟、到点无人调用、重启、并发、目标缺失与长任务，核执行次数、目标、状态和模拟账单；若真实规则不稳定，不能承诺节费，只能呈现预计价格并让用户决定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:39-64](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js#L39-L64)\n\n到点回调无 drain。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n\tconst queue = createQueue(ctx);\n\n\t// The scheduler handle is shared between `apply()` and the tool specs.\n\t// `armedAt` is the one piece of mutable state the tools read.\n\tconst timer = {\n\t\tarmedAt: null,\n\t\t_dispose: null,\n\t\tarm(atMs) {\n\t\t\tthis.disarm();\n\t\t\tthis.armedAt = atMs;\n\t\t\tthis._dispose = armTimer(atMs, () => {\n\t\t\t\tthis.armedAt = null;\n\t\t\t\t// The timer only wakes the queue; the actual drain happens on the\n\t\t\t\t// next `peak_run` call (or the next `peak_schedule` read), which\n\t\t\t\t// keeps model calls inside an explicit tool invocation.\n\t\t\t\tconsole.log(`[dsh-peak-runner] off-peak reached at ${new Date(atMs).toISOString()}; queue is ready to drain`);\n\t\t\t});\n\t\t},\n\t\tdisarm() {\n\t\t\tif (typeof this._dispose === \"function\") this._dispose();\n\t\t\tthis._dispose = null;\n\t\t\tthis.armedAt = null;\n\t\t},\n\t};\n\n\tctx.effect(() => () => timer.disarm(), \"dsh-peak-runner: scheduler timer\");\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/scheduler.js:25-49](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/scheduler.js#L25-L49)\n\nlead 分支缺口。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport function shouldRunNow(at, settings) {\n\t// A weekend instant is always off-peak; `isPeak` already handles that.\n\t// For a weekday we need the *window* tier, not the calendar tier, because\n\t// the lead window extends the \"stop running\" zone past the window end.\n\tconst date = new Date(at);\n\tconst weekend = Number.isNaN(date.getTime()) || date.getUTCDay() === 0 || date.getUTCDay() === 6;\n\tif (weekend) return { run: true, reason: \"off-peak\", nextRunAt: null };\n\n\tif (!hourInPeak(date.getUTCHours(), settings.peakWindows)) {\n\t\treturn { run: true, reason: \"off-peak\", nextRunAt: null };\n\t}\n\n\t// Inside a peak window: look for the next switch and see whether the lead\n\t// window has already swallowed us.\n\tconst switchAt = nextSwitch(at, settings.peakWindows);\n\tif (switchAt === null) return { run: false, reason: \"peak-no-switch-found\", nextRunAt: null };\n\n\tconst leadMs = settings.leadMinutes * 60_000;\n\tif (at >= switchAt - leadMs) {\n\t\t// We are inside the lead window that precedes the switch into off-peak.\n\t\treturn { run: false, reason: \"lead-window\", nextRunAt: switchAt };\n\t}\n\t// Still early inside a peak window; the next off-peak start is the switch.\n\treturn { run: false, reason: \"peak\", nextRunAt: switchAt };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/runner.js:21-46](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/runner.js#L21-L46)\n\n目标回退。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport async function resolveTarget(ctx, settings) {\n\tconst provider = settings.provider;\n\tconst model = settings.model;\n\tif (provider !== \"\" && model !== \"\") {\n\t\ttry {\n\t\t\tawait ctx.llm.resolveModelInfo(provider, model);\n\t\t\treturn { provider, model, source: \"config\" };\n\t\t} catch {\n\t\t\t// Fall through to discovery: a profile without this provider is not an error.\n\t\t}\n\t}\n\ttry {\n\t\tconst providers = ctx.llm.listProviders() ?? [];\n\t\tfor (const entry of providers) {\n\t\t\tconst id = typeof entry === \"string\" ? entry : entry?.id;\n\t\t\tif (typeof id !== \"string\" || id === \"\") continue;\n\t\t\tconst models = await ctx.llm.listModels(id);\n\t\t\tif (!Array.isArray(models)) continue;\n\t\t\tconst first = models.find((candidate) => typeof candidate === \"string\" && candidate !== \"\");\n\t\t\tif (first !== undefined) return { provider: id, model: first, source: \"auto\" };\n\t\t}\n\t} catch {\n\t\t// No discovery either — report the absence instead of guessing.\n\t}\n\treturn null;\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/queue.js:78-101](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/queue.js#L78-L101)\n\n整批更新的并发边界。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function createQueue(ctx) {\n\tconst ready = ctx.storageDomain.open(peakRunnerDomain);\n\n\t/** @returns {Promise<Array>} the current task list (fresh copy). */\n\tasync function tasks() {\n\t\tconst domain = await ready;\n\t\tconst table = domain.table(\"batches\");\n\t\tconst batch = table.get(BATCH_KEY);\n\t\tif (batch === undefined) return [];\n\t\treturn Array.isArray(batch.tasks) ? batch.tasks : [];\n\t}\n\n\t/**\n\t * Persist a whole task list.\n\t *\n\t * @param list - the task list to store.\n\t * @returns {Promise<void>} resolves once the write is durable.\n\t */\n\tasync function put(list) {\n\t\tconst domain = await ready;\n\t\tawait domain.table(\"batches\").put(BATCH_KEY, { tasks: list });\n\t}\n\n\treturn { ready, tasks, put };\n```\n\n</details>\n\n#### 缺口\n\n- 持久调度/租约/规则绑定未实现或实测\n  **影响：**不能把到点完成或降低费用计作现有贡献\n  **进一步探讨：**原型对比丢任务、重复执行、错模型、等待和费用估算偏差\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前版本能在什么范围试用，哪些承诺不能依赖？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n可把它作为无硬期限文本任务的日程/队列原型，在隔离账户和测试额度下观察任务状态，且人为在平价时再次触发并核实际模型输出。不能依赖“到点自动执行”或“峰前 lead 停止”来保证完成时间/费用，也不能据作者静态价格表推断当前账单。若目标模型不可用，应先拒绝或人工确认替代模型。当前建议 not_recommended 用于自动节费/按时交付的主诉求；作为研究原型可以观察。必须修复到点调用与模型/时段绑定并完成固定时钟及真实账单对照后重新评估。本轮未执行插件、目标测试或宿主。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:39-55](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/index.js#L39-L55)\n\n定时器未执行队列。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\tconst queue = createQueue(ctx);\n\n\t// The scheduler handle is shared between `apply()` and the tool specs.\n\t// `armedAt` is the one piece of mutable state the tools read.\n\tconst timer = {\n\t\tarmedAt: null,\n\t\t_dispose: null,\n\t\tarm(atMs) {\n\t\t\tthis.disarm();\n\t\t\tthis.armedAt = atMs;\n\t\t\tthis._dispose = armTimer(atMs, () => {\n\t\t\t\tthis.armedAt = null;\n\t\t\t\t// The timer only wakes the queue; the actual drain happens on the\n\t\t\t\t// next `peak_run` call (or the next `peak_schedule` read), which\n\t\t\t\t// keeps model calls inside an explicit tool invocation.\n\t\t\t\tconsole.log(`[dsh-peak-runner] off-peak reached at ${new Date(atMs).toISOString()}; queue is ready to drain`);\n\t\t\t});\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/scheduler.js:25-49](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/scheduler.js#L25-L49)\n\nlead 未在非峰前检查。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport function shouldRunNow(at, settings) {\n\t// A weekend instant is always off-peak; `isPeak` already handles that.\n\t// For a weekday we need the *window* tier, not the calendar tier, because\n\t// the lead window extends the \"stop running\" zone past the window end.\n\tconst date = new Date(at);\n\tconst weekend = Number.isNaN(date.getTime()) || date.getUTCDay() === 0 || date.getUTCDay() === 6;\n\tif (weekend) return { run: true, reason: \"off-peak\", nextRunAt: null };\n\n\tif (!hourInPeak(date.getUTCHours(), settings.peakWindows)) {\n\t\treturn { run: true, reason: \"off-peak\", nextRunAt: null };\n\t}\n\n\t// Inside a peak window: look for the next switch and see whether the lead\n\t// window has already swallowed us.\n\tconst switchAt = nextSwitch(at, settings.peakWindows);\n\tif (switchAt === null) return { run: false, reason: \"peak-no-switch-found\", nextRunAt: null };\n\n\tconst leadMs = settings.leadMinutes * 60_000;\n\tif (at >= switchAt - leadMs) {\n\t\t// We are inside the lead window that precedes the switch into off-peak.\n\t\treturn { run: false, reason: \"lead-window\", nextRunAt: switchAt };\n\t}\n\t// Still early inside a peak window; the next off-peak start is the switch.\n\treturn { run: false, reason: \"peak\", nextRunAt: switchAt };\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/runner.js:21-46](https://github.com/439436269-ctrl/dsh-peak-runner/blob/fe646bc931b3853815a760d7eb6943d96e6cad8f/lib/runner.js#L21-L46)\n\n模型可回退。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport async function resolveTarget(ctx, settings) {\n\tconst provider = settings.provider;\n\tconst model = settings.model;\n\tif (provider !== \"\" && model !== \"\") {\n\t\ttry {\n\t\t\tawait ctx.llm.resolveModelInfo(provider, model);\n\t\t\treturn { provider, model, source: \"config\" };\n\t\t} catch {\n\t\t\t// Fall through to discovery: a profile without this provider is not an error.\n\t\t}\n\t}\n\ttry {\n\t\tconst providers = ctx.llm.listProviders() ?? [];\n\t\tfor (const entry of providers) {\n\t\t\tconst id = typeof entry === \"string\" ? entry : entry?.id;\n\t\t\tif (typeof id !== \"string\" || id === \"\") continue;\n\t\t\tconst models = await ctx.llm.listModels(id);\n\t\t\tif (!Array.isArray(models)) continue;\n\t\t\tconst first = models.find((candidate) => typeof candidate === \"string\" && candidate !== \"\");\n\t\t\tif (first !== undefined) return { provider: id, model: first, source: \"auto\" };\n\t\t}\n\t} catch {\n\t\t// No discovery either — report the absence instead of guessing.\n\t}\n\treturn null;\n}\n```\n\n</details>\n\n#### 缺口\n\n- 没有真实宿主、账单和修复版验收\n  **影响：**不能推荐生产排程或量化节费\n  **进一步探讨：**修复后先用无资金风险的模拟任务与官方价格来源核查\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：0bd11f2cdf24b20ef31eeaad917cee08b91d32005f356281b8d950786bee41f7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 98 | — | — | 800 |\n| .js | source | 8 | 880 | 528 | 286 | — |\n| .mjs | test | 3 | 318 | 250 | 32 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 时段判断 | 决定即时/排队 | lead 前窗口缺口，当前价格未核 |\n| 持久队列 | 保存状态、查询/取消 | 单文档整批写，重启/并发待测 |\n| 模型执行 | 逐条运行文本 prompt | 只在非峰工具调用时 drain，可回退别的模型 |\n\n## 工程亮点\n\n调度/队列/runner 分层有复用价值；当前关键定时器并未消费队列，时段判断/模型回退需要统一任务契约。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/config.js、lib/tariff.js、lib/scheduler.js、lib/queue.js、lib/runner.js、lib/tools.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、package、scheduler/runner/queue/tools/index 源码；未执行目标测试/模型、核当前官方价格或真实宿主；旧 META 仅复用。\n- 下一步：固定时钟覆盖峰前 10 分钟、到点无人调用、跨日/周末、重启与并发，模拟目标失效；核实际模型、执行次数、状态和账单。\n",
         "metadata": {
             "repository": "439436269-ctrl/dsh-peak-runner",
             "repository_id": 1417227361,

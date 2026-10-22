@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1423966960-root-directory-0",
+                    "id": "2026-10-22-02-github-1423966960-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:20:24.744Z",
+                    "retrieved_at": "2026-10-22T06:36:53.465Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1423966960-root-author",
+                    "id": "2026-10-22-02-github-1423966960-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-auto-answer",
+                            "commit": "0147e9b83cd100b4532024f8907799741ce87429",
+                            "path": "README.md",
+                            "content_sha256": "4f71ffe121badd5f0a30a27781561ee62c6deb284bea0915d9e08cd27a463f15"
+                        }
+                    ],
                     "revision": "0147e9b83cd100b4532024f8907799741ce87429",
-                    "captured_at": "2026-10-21T04:20:24.744Z",
-                    "summary": "在DSH用户问题超时后自动选择提问方标为推荐的选项，并允许配置回退与计划评审策略。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/ak-blank--dsh-plugin-auto-answer/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:36:53.465Z",
+                    "summary": "无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-auto-answer/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1423966960-root-source",
+                    "id": "2026-10-22-02-github-1423966960-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js",
+                    "url": "https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-auto-answer",
+                            "commit": "0147e9b83cd100b4532024f8907799741ce87429",
+                            "path": "README.md",
+                            "content_sha256": "4f71ffe121badd5f0a30a27781561ee62c6deb284bea0915d9e08cd27a463f15"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-auto-answer",
+                            "commit": "0147e9b83cd100b4532024f8907799741ce87429",
+                            "path": "README.zh-CN.md",
+                            "content_sha256": "2a9d772a004e4ea7da6d754c16f0ee86289d1f4e9334f51d8d22bcb422e6f49b"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-auto-answer",
+                            "commit": "0147e9b83cd100b4532024f8907799741ce87429",
+                            "path": "package.json",
+                            "content_sha256": "99ec94fc22fefcdef0e684698236d8901f7ae6d57b2b0491d41d52962fc8e838"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-auto-answer",
+                            "commit": "0147e9b83cd100b4532024f8907799741ce87429",
+                            "path": "lib/index.js",
+                            "content_sha256": "e8946fb482fef3732adae6d0695f36b4b3edc761880b6ad45461b19586fc8159"
+                        }
+                    ],
                     "revision": "0147e9b83cd100b4532024f8907799741ce87429",
-                    "captured_at": "2026-10-21T04:20:24.744Z",
-                    "summary": "核查 lib/index.js、README.md、LICENSE；lib/index.js在global prepend user-questions/request前代理next，与timer/abort/dispose竞速；按标签Recommended选项形成整批答案，默认无标记选首项、自由文本skip、plan-review忽略。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/ak-blank--dsh-plugin-auto-answer/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:36:53.465Z",
+                    "summary": "核查 README.md、README.zh-CN.md、package.json、lib/index.js；全局前置 waterfall 代理 UI，以人答、超时、取消竞速；超时提交标签推荐项或回退选择。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-auto-answer/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读lib/index.js、README.md、LICENSE；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "固定提交静态审阅 README.zh-CN、package 和 Host 源码；未执行 selftest 或 DSH。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "无人值守长任务不希望被低风险偏好问题卡住；合格行为要保留人工及时回答、取消与真实授权，不应把无回应变成所有决策同意。",
+                    "text": "长时 DSH 任务因 ask_user_question 无人回答而停住。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js在global prepend user-questions/request前代理next，与timer/abort/dispose竞速；按标签Recommended选项形成整批答案，默认无标记选首项、自由文本skip、plan-review忽略。",
+                    "text": "全局前置 waterfall 代理 UI，以人答、超时、取消竞速；超时提交标签推荐项或回退选择。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读lib/index.js、README.md、LICENSE；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "固定提交静态审阅 README.zh-CN、package 和 Host 源码；未执行 selftest 或 DSH。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT host-only无npm运行依赖，可选JSONL日志；默认全局enabled，需明确部署方对自动回答范围的选择。",
+                    "text": "GitHub Host bundle，无浏览器组件，包声明无运行时依赖。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无新增模型调用，初始需定义可自动决定范围；错误默认可能造成返工，长期审计与问题分类有人工成本，无任务收益实测。",
+                    "text": "| 项目 | 代价/边界 |\n| --- | --- |\n| 等待 | 默认120秒/题 |\n| 决策 | 无推荐取首项，自由文本跳过 |\n| 页面 | 问题卡残留需人工清理 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅在明确允许机器默认的低风险偏好任务先试用。先设fallback=none、freeText=block核对边界，保持plan-review忽略；自动选项不得作为人类授权证据。",
+                    "text": "隔离低影响任务试用，配置 fallback:none/freeText:block/planReview:ignore，核 timed 工具窗口。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可降低无人在场的等待，但任务继续不等于正确交付，必要信息缺失时可能更糟。",
+                    "text": "| 路径 | 源码状态 |\n| --- | --- |\n| 人答 | 原样透传 |\n| 超时 | 自动选择 |\n| 取消 | 不代答 |\n| Client | 卡片可能残留 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "可注入时钟/trace、abort与dispose清理、整批答案契约可借鉴。共享global实例防重复注册是接线保护；缺少客户端settled同步和机器来源标记是复用重点。 源码依据：[lib/index.js](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js)、[README.md](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.md)、[LICENSE](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/LICENSE)。",
+                    "text": "global/prepend 事件注册，Promise.race 处理下游/计时/abort/停机，Symbol 防重复监听。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对永远等待，增量是把超时与缺客户端情况转为明确可配置的答案流程，保留及时人答和取消。它不生成领域判断，推荐依据完全来自提问方标签。",
+                    "text": "在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "推荐标签是否足以代表用户偏好或授权？普通问题不一定低风险，默认first/skip可能丢失必要信息；模型自己给推荐标签不是独立批准。auto-answer还不能关闭已有浏览器问题卡，界面仍像待答，人工后续输入与真实已继续状态可能混淆。",
+                    "text": "默认首项/空选项自动回答可能跨越真实用户决策边界，plan-review 保护只覆盖显式 intent；卡片状态可能滞后。详见[Q02](#research-q02)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "由协议plan-review分流推导，可只对白名单偏好类型自动答，并附machine-default来源及可撤销收据；授权/缺必需信息一律留人。未验证；用标签诱导、授权伪装普通问题、批量部分不可答与临界人答竞态测试，若错误同意未降则否定。",
+                    "text": "按 intent allowlist 自动回答且向 Client 广播结算，可降低擅自选择和残留卡片；尚未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "0147e9b83cd100b4532024f8907799741ce87429"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:20:24.744Z",
+                    "reviewed_at": "2026-10-22T06:36:53.465Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:20:24.744Z",
+            "last_checked_at": "2026-10-22T06:36:53.465Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "0147e9b83cd100b4532024f8907799741ce87429",
-                "reviewed_at": "2026-10-21T04:20:24.744Z",
+                "reviewed_at": "2026-10-22T06:36:53.465Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,15 +309,15 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "novelty超时默认小档；mechanism竞速与协议分流小档；transferability可配置回答流程半档；simplification无人值守接线半档。",
+                    "rationale": "Host waterfall 竞速与清理具体，决策逻辑基于标签/首项较粗。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ]
                 },
                 "business": {
@@ -293,43 +327,43 @@
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow减少偏好等待半档；delivery自动答案小档；reach无人值守用户小档；economics返工与节时未测小档。",
+                    "rationale": "无人值守减少等待，但错误自动选择和页面残留增治理成本。",
                     "basis": "interpretation",
                     "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1423966960-root-source"
+                        "2026-10-22-02-github-1423966960-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "明确允许机器默认的低风险偏好任务可试自动答题；先设fallback=none、freeText=block并核plan-review忽略，不能当人类授权。",
+                "decision": "observe",
+                "reason": "只在隔离、低影响问题中验证；生产自动化需关闭首项与自由文本默认作答并核意图覆盖。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "无人值守任务被可默认偏好问题阻塞的需求明确。"
+                        "score": 15,
+                        "rationale": "无人值守卡问答问题明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "推荐选项和超时竞速减少等待，不提供缺失必要信息。"
+                        "rationale": "超时续跑与人答优先有用。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核推荐标签处理、abort与遗留问题卡限制，未测交付收益。"
+                        "rationale": "固定源码和作者自述测试，未本轮运行。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "无额外模型费但错误默认返工和审计需人工，须限定任务。"
+                        "score": 5,
+                        "rationale": "擅自选择和 UI 残留的操作风险。"
                     }
                 },
-                "score": 59,
+                "score": 46,
                 "revision": "0147e9b83cd100b4532024f8907799741ce87429",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:36:53.465Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1423966960-root-source"
+                    "2026-10-22-02-github-1423966960-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,32 +388,34 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "95a0e31ec9fd45dd11e87ad53a18a913258ea3d585aa56e68ea74897fe2f75da"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "22614216c5c74250c6c3d98790f2ad44566360edb49f6e88ac4f45d369bfd03d"
         },
         "publication.metadata": "data/plugins/ak-blank--dsh-plugin-auto-answer/META.json",
         "publication.summaries": {
-            "text": "在DSH用户问题超时后自动选择提问方标为推荐的选项，并允许配置回退与计划评审策略。",
+            "text": "无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。",
             "revision": "0147e9b83cd100b4532024f8907799741ce87429",
             "source_url": "https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.md"
         },
         "publication.capabilities": {
             "revision": "0147e9b83cd100b4532024f8907799741ce87429",
             "items": {
-                "事件监听": "全局代理用户问题并按超时策略返回自动答案。"
-            }
+                "事件监听": "全局代理 user-questions/request",
+                "后台": "倒计时自动回答"
+            },
+            "table": "| 能力 | 作用 | 边界 |\n| --- | --- | --- |\n| 事件监听 | 人答优先 | 宿主事件兼容 |\n| 后台 | 超时选择 | 不等于用户授权 |"
         },
         "publication.advice": {
             "revision": "0147e9b83cd100b4532024f8907799741ce87429",
-            "text": "仅在明确允许机器默认的低风险偏好任务先试用。先设fallback=none、freeText=block核对边界，保持plan-review忽略；自动选项不得作为人类授权证据。"
+            "text": "隔离低影响任务试用，配置 fallback:none/freeText:block/planReview:ignore，核 timed 工具窗口。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/ak-blank--dsh-plugin-auto-answer",
-        "reports": "# dsh-plugin-auto-answer\n\n> 在DSH用户问题超时后自动选择提问方标为推荐的选项，并允许配置回退与计划评审策略。\n\n## 使用建议\n\n仅在明确允许机器默认的低风险偏好任务先试用。先设fallback=none、freeText=block核对边界，保持plan-review忽略；自动选项不得作为人类授权证据。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：无人值守长任务不希望被低风险偏好问题卡住；合格行为要保留人工及时回答、取消与真实授权，不应把无回应变成所有决策同意。\n- **亮点**：相对永远等待，增量是把超时与缺客户端情况转为明确可配置的答案流程，保留及时人答和取消。它不生成领域判断，推荐依据完全来自提问方标签。\n- **思考**：推荐标签是否足以代表用户偏好或授权？普通问题不一定低风险，默认first/skip可能丢失必要信息；模型自己给推荐标签不是独立批准。auto-answer还不能关闭已有浏览器问题卡，界面仍像待答，人工后续输入与真实已继续状态可能混淆。\n- **建议**：由协议plan-review分流推导，可只对白名单偏好类型自动答，并附machine-default来源及可撤销收据；授权/缺必需信息一律留人。未验证；用标签诱导、授权伪装普通问题、批量部分不可答与临界人答竞态测试，若错误同意未降则否定。\n\n## 场景与替代办法\n\n无人值守长任务不希望被低风险偏好问题卡住；合格行为要保留人工及时回答、取消与真实授权，不应把无回应变成所有决策同意。\n\n阻塞等待保留全部人类判断；自动默认仅适合可逆偏好，不能替代审批系统。\n\n## 能力清单\n\n- **事件监听**：全局代理用户问题并按超时策略返回自动答案。\n\n## 依赖与流程\n\n宿主user-questions/request契约、可识别intent/选项，效果依赖提问方正确分类与用户预先限定范围。\n\n问题先交正常人答，超时或定时工具窗口结束时按配置自动返回，取消则传播；日志记自动原因，浏览器卡可能需用户手动清除。\n\n## 成本与效果\n\n无新增模型调用，初始需定义可自动决定范围；错误默认可能造成返工，长期审计与问题分类有人工成本，无任务收益实测。\n\n可降低无人在场的等待，但任务继续不等于正确交付，必要信息缺失时可能更糟。\n\n## 核心贡献\n\n相对永远等待，增量是把超时与缺客户端情况转为明确可配置的答案流程，保留及时人答和取消。它不生成领域判断，推荐依据完全来自提问方标签。\n\n## 关键质疑\n\n推荐标签是否足以代表用户偏好或授权？普通问题不一定低风险，默认first/skip可能丢失必要信息；模型自己给推荐标签不是独立批准。auto-answer还不能关闭已有浏览器问题卡，界面仍像待答，人工后续输入与真实已继续状态可能混淆。\n\n\n## 工程亮点\n\n可注入时钟/trace、abort与dispose清理、整批答案契约可借鉴。共享global实例防重复注册是接线保护；缺少客户端settled同步和机器来源标记是复用重点。 源码依据：[lib/index.js](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js)、[README.md](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.md)、[LICENSE](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/LICENSE)。\n\n## 未来设计假设（未验证）\n\n由协议plan-review分流推导，可只对白名单偏好类型自动答，并附machine-default来源及可撤销收据；授权/缺必需信息一律留人。未验证；用标签诱导、授权伪装普通问题、批量部分不可答与临界人答竞态测试，若错误同意未降则否定。\n\nmock测试人答/超时同tick、取消、dispose、无provider、多选/批量与plan-review；真实临时宿主核对日志、已继续状态与残留卡片。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f0b4f866b0c9821060a4122512c8c5797ff8e8aab563b573ee91e1d5ab3e8262。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 541 | 310 | 181 | — |\n| .md | source | 2 | 335 | — | — | 3001 |\n| .mjs | source | 1 | 743 | 591 | 79 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AK-blank/dsh-plugin-auto-answer](https://github.com/AK-blank/dsh-plugin-auto-answer)\n- **版本号**：1.0.0（[固定提交 0147e9b8](https://github.com/AK-blank/dsh-plugin-auto-answer/tree/0147e9b83cd100b4532024f8907799741ce87429)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、README.md、LICENSE 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读lib/index.js、README.md、LICENSE；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：mock测试人答/超时同tick、取消、dispose、无provider、多选/批量与plan-review；真实临时宿主核对日志、已继续状态与残留卡片。\n",
+        "reports": "# dsh-plugin-auto-answer\n\n> 无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。\n\n## 研究范围\n\n- **仓库**：[AK-blank/dsh-plugin-auto-answer](https://github.com/AK-blank/dsh-plugin-auto-answer)\n- **版本号**：1.0.0（[固定提交 0147e9b83cd100b4532024f8907799741ce87429](https://github.com/AK-blank/dsh-plugin-auto-answer/tree/0147e9b83cd100b4532024f8907799741ce87429)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持计时代理，但默认无标记取首项、无选项跳过；仅 plan-review 默认不答，且 Client 卡片可能残留。\n\n## 洞察短评\n\n- **用途**：长时 DSH 任务因 ask_user_question 无人回答而停住。\n- **亮点**：在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。\n- **思考**：默认首项/空选项自动回答可能跨越真实用户决策边界，plan-review 保护只覆盖显式 intent；卡片状态可能滞后。详见[Q02](#research-q02)、[Q04](#research-q04)。\n- **建议**：按 intent allowlist 自动回答且向 Client 广播结算，可降低擅自选择和残留卡片；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：隔离低影响任务试用，配置 fallback:none/freeText:block/planReview:ignore，核 timed 工具窗口。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。\n\n## 关键质疑\n\n默认首项/空选项自动回答可能跨越真实用户决策边界，plan-review 保护只覆盖显式 intent；卡片状态可能滞后。详见[Q02](#research-q02)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n按 intent allowlist 自动回答且向 Client 广播结算，可降低擅自选择和残留卡片；尚未实现。详见[Q05](#research-q05)。\n\n固定 SHA 隔离 profile 覆盖人答、无提供者、取消、计划审批、普通高影响问题和卡片状态。\n\n## 场景与替代办法\n\n长时 DSH 任务因 ask_user_question 无人回答而停住。\n\n原始 ask_user_question 会等待 UI 或返回 pending；插件加计时自动应答。\n\n## 依赖与流程\n\n| 条件 | 用途 | 边界 |\n| --- | --- | --- |\n| user-questions/request | 问答代理 | 版本兼容 |\n| 选项标签/intent | 自动选择 | 意图覆盖 |\n| Client | 人答和卡片 | 无结算广播 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 分级 | 只放低影响问题 | 无审批选择 |\n| 配置 | 禁首项/跳过默认 | 不擅自猜测 |\n| 验证 | 人答/超时/取消/页面 | 状态一致 |\n\n## 成本与效果\n\n| 项目 | 代价/边界 |\n| --- | --- |\n| 等待 | 默认120秒/题 |\n| 决策 | 无推荐取首项，自由文本跳过 |\n| 页面 | 问题卡残留需人工清理 |\n\n| 路径 | 源码状态 |\n| --- | --- |\n| 人答 | 原样透传 |\n| 超时 | 自动选择 |\n| 取消 | 不代答 |\n| Client | 卡片可能残留 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核自动回答的授权边界、竞态和浏览器状态。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 无人值守时插件怎样代理用户问答，人在窗口内回答会怎样？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n插件以 global/prepend 监听 user-questions/request waterfall，预先算整批答案，再让下游 UI 先处理；人的答案在120秒默认窗口内返回则原样透传。若无人回答、下游 NO_PROVIDER/传输失败或工具 ASK_TIMED_OUT，它在窗口截止时提交预先选项；取消轮次和 ASK_ABORTED 仍抛出，不自动回答。它不是读取用户偏好的自主决策器。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:31-48](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L31-L48)\n\n作者流程说明。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n## 它怎么工作\n\n`ask_user_question` 以 `user-questions/request` waterfall 分发：浏览器 UI 用一张问题卡片来回答，\nheadless 运行则根本没人应答。\n\n本插件**站在**这条链路**最前面**（`prepend`）并调用 `next()` —— 它是代理，不是否决：\n\n| 情况 | 结果 |\n|---|---|\n| 人在窗口内回答 | 用人的答案，原样透传 |\n| 到点没人回答 | 提交推荐选项 |\n| 下一环直接失败（没有页面导致 `NO_PROVIDER`、传输中断） | 窗口继续跑，到点提交推荐选项 |\n| 工具自己的 timed 窗口先到（`ASK_TIMED_OUT`） | 立刻提交推荐选项，而不是返回 `pending` |\n| 本轮被取消（`ASK_ABORTED`、signal abort） | 原样抛出 —— 被取消的轮次绝不去答 |\n\n监听用 `{ global: true, prepend: true }` 注册。`global` 不是可选项：Agent 事件按\"监听器注册时\n所在上下文的 scope\"过滤，而通过插件管理器安装的插件是在某个 Agent 的 scope 里被 apply 的 ——\n少了它，插件只会答安装它的那个会话。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:319-393](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L319-L393)\n\n竞速、错误与取消分支。\n\n<details>\n<summary>查看原文（75行）</summary>\n\n```text\n  async function wait(request, next, plan) {\n    const signal = request?.signal\n    const identity = describeRequest(request)\n\n    const entry = { stop: undefined }\n    const stopped = new Promise((resolve) => {\n      entry.stop = (reason) => resolve({ kind: 'stopped', reason })\n    })\n    pending.add(entry)\n\n    let timer\n    let removeAbort\n    const timeout = new Promise((resolve) => {\n      timer = setTimer(() => resolve({ kind: 'timeout' }), timeoutMs)\n      timer?.unref?.()\n    })\n    const aborted = new Promise((resolve) => {\n      if (signal === undefined) return\n      if (signal.aborted) {\n        resolve({ kind: 'aborted', reason: signal.reason })\n        return\n      }\n      const listener = () => resolve({ kind: 'aborted', reason: signal.reason })\n      signal.addEventListener('abort', listener, { once: true })\n      removeAbort = () => signal.removeEventListener('abort', listener)\n    })\n\n    const delegated = delegate(next).then(\n      (value) => ({ kind: 'answer', value }),\n      (error) => ({ kind: 'error', error }),\n    )\n\n    try {\n      let outcome = await Promise.race([delegated, timeout, aborted, stopped])\n\n      if (outcome.kind === 'error') {\n        const error = outcome.error\n        const code = error?.code\n        // A cancelled turn is not an unanswered question: never answer it.\n        if (signal?.aborted || code === 'ASK_ABORTED') throw error\n\n        emit({ event: 'delegate_error', ...identity, code, message: String(error?.message ?? error) })\n        if (code === 'ASK_TIMED_OUT') {\n          // The tool's own foreground window already elapsed (timed mode with a\n          // Client attached). Submitting an answer beats returning `pending`.\n          outcome = { kind: 'timeout', reason: 'tool-timeout' }\n        } else {\n          // `NO_PROVIDER` (no UI attached) or a transport failure: the question\n          // is still askable, so keep the window running and answer it here.\n          outcome = await Promise.race([timeout, aborted, stopped])\n        }\n      }\n\n      if (outcome.kind === 'stopped') {\n        throw outcome.reason ?? new Error('auto-answer: the plugin stopped while a question was pending')\n      }\n      if (outcome.kind === 'aborted') {\n        throw outcome.reason ?? new Error('auto-answer: the question request was aborted')\n      }\n      if (outcome.kind === 'answer') {\n        state.delegated += 1\n        emit({ event: 'delegated', ...identity, outcome: 'answered-by-ui' })\n        return outcome.value\n      }\n\n      state.answered += 1\n      emit({\n        event: 'answered',\n        ...identity,\n        reason: outcome.reason ?? 'window-elapsed',\n        timeoutMs,\n        picks: plan.answers.map((answer) => ({ id: answer.id, selected: answer.selected })),\n      })\n      logger?.debug?.(`[auto-answer] answered a pending question after ${config.timeoutSeconds}s`)\n      return plan\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:494-516](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L494-L516)\n\n全局前置事件注册。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  // A re-applied row (config edit, toggle) must not leave the previous listener\n  // counting down beside this one.\n  const previous = globalThis[ACTIVE]\n  if (previous !== undefined) {\n    try {\n      previous.dispose()\n    } catch {\n      /* ignore */\n    }\n    delete globalThis[ACTIVE]\n  }\n\n  const logger = safeLogger(ctx)\n  const runtime = createRuntime({ config, env: process.env, logger })\n  const disposers = []\n\n  if (runtime.config.enabled) {\n    try {\n      const dispose = ctx.on(QUESTION_EVENT, runtime.handler, { prepend: true, global: true })\n      if (typeof dispose === 'function') disposers.push(dispose)\n    } catch (error) {\n      logger.warn(`could not subscribe ${QUESTION_EVENT}: ${error?.message ?? error}`)\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 所谓“推荐答案”缺失时会自动作什么决定？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n标记只靠选项标签后缀匹配；多选时选所有标记。无标记时默认取第一项，无选项的自由文本问题默认提交空数组表示跳过；只对 intent.kind=plan-review 默认不自动答。这意味着其他高影响选择如果没有 plan-review 元数据，也可能被第一项自动提交；不能把“Recommended”或第一项视为用户授权。整批必须每题均可自动决定才提交。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:61-85](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L61-L85)\n\n默认值与标记正则。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** Defaults; a row's `config` overrides them through {@link normalizeConfig}. */\nexport const DEFAULTS = Object.freeze({\n  /** Master switch. `false` also skips the listener registration. */\n  enabled: true,\n  /** How long the question stays open before the recommended option is chosen. */\n  timeoutSeconds: 120,\n  /** Option chosen when no option is marked recommended: `first` | `last` | `none`. */\n  fallback: 'first',\n  /** Question with no options at all: `skip` (submits an empty answer) | `block`. */\n  freeText: 'skip',\n  /** `plan-review` intent questions: `ignore` | `approve` | `decline`. */\n  planReview: 'ignore',\n})\n\nconst TIMEOUT_MIN_SECONDS = 5\nconst TIMEOUT_MAX_SECONDS = 86_400\nconst FALLBACK_VALUES = new Set(['first', 'last', 'none'])\nconst FREE_TEXT_VALUES = new Set(['skip', 'block'])\nconst PLAN_REVIEW_VALUES = new Set(['ignore', 'approve', 'decline'])\n\n/**\n * The convention the tool description teaches the model: `Label (Recommended)`,\n * and the same marker in Chinese with either bracket width.\n */\nconst RECOMMENDED_SUFFIX = /\\s*(?:\\((?:recommended|推荐)\\)|（(?:recommended|推荐)）)\\s*$/i\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:144-176](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L144-L176)\n\n普通问题的推荐、首项与空选项分支。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nexport function decideQuestion(question, config) {\n  if (question === null || typeof question !== 'object') return undefined\n  const id = typeof question.id === 'string' ? question.id : undefined\n  if (id === undefined) return undefined\n\n  const options = Array.isArray(question.options)\n    ? question.options.filter(\n        (option) =>\n          option !== null &&\n          typeof option === 'object' &&\n          typeof option.label === 'string' &&\n          option.label !== '',\n      )\n    : []\n\n  if (question.intent?.kind === 'plan-review') return decidePlanReview(id, question, options, config)\n\n  if (options.length === 0) {\n    // Nothing to choose. An empty `selected` is the protocol's \"skipped\" answer,\n    // which is honest and unblocks the caller; `block` leaves it to a human.\n    return config.freeText === 'skip' ? { id, selected: [] } : undefined\n  }\n\n  const marked = options.filter((option) => isRecommendedLabel(option.label))\n  if (marked.length > 0) {\n    const labels = question.multiSelect === true ? marked.map((option) => option.label) : [marked[0].label]\n    return { id, selected: labels }\n  }\n\n  if (config.fallback === 'none') return undefined\n  const pick = config.fallback === 'last' ? options[options.length - 1] : options[0]\n  return { id, selected: [pick.label] }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:188-226](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L188-L226)\n\n计划审批与整批全有或全无。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\nfunction decidePlanReview(id, question, options, config) {\n  const mode = config.planReview\n  if (mode === 'ignore' || options.length === 0) return undefined\n  const approve = typeof question.intent?.approve === 'string' ? question.intent.approve : undefined\n\n  if (mode === 'approve') {\n    const match = options.find((option) => option.label === approve)\n    return match === undefined ? undefined : { id, selected: [match.label] }\n  }\n\n  // `decline`: the first option that is not the declared approval. Without a\n  // usable approve label every option could be the approval, so refuse.\n  if (approve === undefined) return undefined\n  const other = options.find((option) => option.label !== approve)\n  return other === undefined ? undefined : { id, selected: [other.label] }\n}\n\n/**\n * Decide whether a whole request can be answered automatically.\n *\n * All or nothing: a request is answered only when every one of its questions\n * has a defensible pick. A partial batch would violate the answer contract\n * (one item per question) and hide a decision the human must make.\n *\n * @param request - the `user-questions/request` payload.\n * @param config - a normalized config.\n * @returns `{ answers }` to claim the request, or undefined to delegate only.\n */\nexport function planRequest(request, config) {\n  const questions = Array.isArray(request?.questions) ? request.questions : []\n  if (questions.length === 0) return undefined\n\n  const answers = []\n  for (const question of questions) {\n    const answer = decideQuestion(question, config)\n    if (answer === undefined) return undefined\n    answers.push(answer)\n  }\n  return { answers }\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.zh-CN.md:50-62](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L50-L62)\n\n作者使用说明。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## 什么算\"推荐选项\"\n\n- 标签以 `(Recommended)`、`（推荐）`、`(推荐)`、`（Recommended）` 结尾，大小写不敏感；\n  **不要求在第一项**。\n- 标签原样提交：标记会留在答案里，因为它就是提问者给出的那个值。\n- 多选问题：所有带标记的选项一起选。\n- 没有任何标记时由 `fallback` 决定：`first`（默认）、`last`、`none`（永不自动回答，留给人）。\n- 没有选项的问题无从选择：`freeText: skip` 提交空选择（协议里本来就有的\"跳过\"语义），\n  `block` 则留给人类。\n- `plan-review`（计划审批）**默认 ignore**：批准一个计划是有后果的决定。\n  `planReview: approve` / `decline` 才是显式选择。\n- 一批问题只有在**每一题**都能自动回答时才整批作答；答案契约要求一题一条，部分作答\n  等于把真正需要人决定的题藏起来。\n```\n\n</details>\n\n#### 缺口\n\n- 未审所有宿主问题 intent 生产者。\n  **影响：**高影响提问是否带 plan-review 不明。\n  **进一步探讨：**抽样真实工具问题并核 intent/选项。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 计时、取消、插件热重载是否避免竞态与悬挂？\n\n**研究主题：**贡献与相对优势、工程质量与复用\n\n#### 完整回答\n\ndelegate(next) 只调用一次并吞掉迟到拒绝的 unhandled rejection；wait 在 delegated、timeout、abort、dispose 间竞速，finally 清定时器与 abort listener。新 apply 通过全局 Symbol 停旧实例，防双监听。源码结构支持这些防护，README 称自检39项及真实20秒/人工24秒端到端，但本轮没有运行或复核测试。旧实例停止时待处理工具会失败，属有意的可用性代价。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:298-309](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L298-L309)\n\n下游只调用一次并处理迟到拒绝。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  const delegate = (next) => {\n    let result\n    try {\n      result = next()\n    } catch (error) {\n      result = Promise.reject(error)\n    }\n    const promise = Promise.resolve(result)\n    // The request may already have been answered by the countdown; a late\n    // rejection from the UI chain must not become an unhandled rejection.\n    promise.catch(() => {})\n    return promise\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:319-403](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L319-L403)\n\n竞速及清理。\n\n<details>\n<summary>查看原文（85行）</summary>\n\n```text\n  async function wait(request, next, plan) {\n    const signal = request?.signal\n    const identity = describeRequest(request)\n\n    const entry = { stop: undefined }\n    const stopped = new Promise((resolve) => {\n      entry.stop = (reason) => resolve({ kind: 'stopped', reason })\n    })\n    pending.add(entry)\n\n    let timer\n    let removeAbort\n    const timeout = new Promise((resolve) => {\n      timer = setTimer(() => resolve({ kind: 'timeout' }), timeoutMs)\n      timer?.unref?.()\n    })\n    const aborted = new Promise((resolve) => {\n      if (signal === undefined) return\n      if (signal.aborted) {\n        resolve({ kind: 'aborted', reason: signal.reason })\n        return\n      }\n      const listener = () => resolve({ kind: 'aborted', reason: signal.reason })\n      signal.addEventListener('abort', listener, { once: true })\n      removeAbort = () => signal.removeEventListener('abort', listener)\n    })\n\n    const delegated = delegate(next).then(\n      (value) => ({ kind: 'answer', value }),\n      (error) => ({ kind: 'error', error }),\n    )\n\n    try {\n      let outcome = await Promise.race([delegated, timeout, aborted, stopped])\n\n      if (outcome.kind === 'error') {\n        const error = outcome.error\n        const code = error?.code\n        // A cancelled turn is not an unanswered question: never answer it.\n        if (signal?.aborted || code === 'ASK_ABORTED') throw error\n\n        emit({ event: 'delegate_error', ...identity, code, message: String(error?.message ?? error) })\n        if (code === 'ASK_TIMED_OUT') {\n          // The tool's own foreground window already elapsed (timed mode with a\n          // Client attached). Submitting an answer beats returning `pending`.\n          outcome = { kind: 'timeout', reason: 'tool-timeout' }\n        } else {\n          // `NO_PROVIDER` (no UI attached) or a transport failure: the question\n          // is still askable, so keep the window running and answer it here.\n          outcome = await Promise.race([timeout, aborted, stopped])\n        }\n      }\n\n      if (outcome.kind === 'stopped') {\n        throw outcome.reason ?? new Error('auto-answer: the plugin stopped while a question was pending')\n      }\n      if (outcome.kind === 'aborted') {\n        throw outcome.reason ?? new Error('auto-answer: the question request was aborted')\n      }\n      if (outcome.kind === 'answer') {\n        state.delegated += 1\n        emit({ event: 'delegated', ...identity, outcome: 'answered-by-ui' })\n        return outcome.value\n      }\n\n      state.answered += 1\n      emit({\n        event: 'answered',\n        ...identity,\n        reason: outcome.reason ?? 'window-elapsed',\n        timeoutMs,\n        picks: plan.answers.map((answer) => ({ id: answer.id, selected: answer.selected })),\n      })\n      logger?.debug?.(`[auto-answer] answered a pending question after ${config.timeoutSeconds}s`)\n      return plan\n    } catch (error) {\n      state.failed += 1\n      emit({ event: 'failed', ...identity, message: String(error?.message ?? error) })\n      throw error\n    } finally {\n      if (timer !== undefined) clearTimer(timer)\n      removeAbort?.()\n      pending.delete(entry)\n    }\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:440-455](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L440-L455)\n\ndispose 停待处理。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /** End every live wait; pending tool calls fail instead of hanging forever. */\n  function dispose() {\n    state.stopped = true\n    const reason = new Error('auto-answer: the plugin stopped while a question was pending')\n    for (const entry of [...pending]) {\n      try {\n        entry.stop?.(reason)\n      } catch {\n        /* ignore */\n      }\n    }\n    pending.clear()\n  }\n\n  return { handler, state, config, timeoutMs, dispose }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:494-516](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L494-L516)\n\n重启旧实例。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  // A re-applied row (config edit, toggle) must not leave the previous listener\n  // counting down beside this one.\n  const previous = globalThis[ACTIVE]\n  if (previous !== undefined) {\n    try {\n      previous.dispose()\n    } catch {\n      /* ignore */\n    }\n    delete globalThis[ACTIVE]\n  }\n\n  const logger = safeLogger(ctx)\n  const runtime = createRuntime({ config, env: process.env, logger })\n  const disposers = []\n\n  if (runtime.config.enabled) {\n    try {\n      const dispose = ctx.on(QUESTION_EVENT, runtime.handler, { prepend: true, global: true })\n      if (typeof dispose === 'function') disposers.push(dispose)\n    } catch (error) {\n      logger.warn(`could not subscribe ${QUESTION_EVENT}: ${error?.message ?? error}`)\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.zh-CN.md:104-117](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L104-L117)\n\n作者自述测试及端到端。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 已验证的行为\n\n离线自检（`node selftest.mjs`）—— 39 项：打包契约、配置归一化、推荐判定、注册参数、\n计时竞态，以及\"没有未处理拒绝 / 没有泄漏的定时器\"。\n\n真实安装路径：装进一个一次性 profile（`dsh plugin add`），在 `dsh --profile … --dump-config`\n里确认了 bundle 层与插件行，并在 GUI「插件」页的「已安装」里看到「无人值守自动应答」。\n\n真实端到端（默认阻塞式工具）：\n\n- **无人值守**：20 秒窗口，问题一直没人答 —— 轨迹是 `armed` → **20.003 秒后** `answered`，\n  选的是推荐项；整轮 22 秒结束，模型回复 *\"你最终选择了蓝色（Recommended）。\"*\n- **有人在**：60 秒窗口，第 24 秒人工选了**非**推荐项 —— 轨迹是 `armed` → `delegated\n  (answered-by-ui)`，整轮以 *\"你最终选了香蕉。\"* 结束，卡片正常收成 `1/1 已回答`。\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 自动应答后浏览器卡片状态会同步吗？\n\n**研究主题：**依赖、兼容与流程、缺陷与关键质疑\n\n#### 完整回答\n\n纯 Host 包无 Client 改动；作者明确说明宿主已返回答案、会话继续，但浏览器问题卡可能仍显示并占输入区、会话列表显示等待，需人工提交/跳过或刷新。源码注释也承认没有通知 Client 收卡的消息。对长期无人值守流程，后续人工回来可能看到误导 UI；真实状态应以会话/工具结果核实。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:9-13](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L9-L13)\n\n纯 Host 与已知 UI 残留。\n\n```text\n纯 Host bundle：页面里没有任何渲染，没有浏览器半边，零依赖。\n\n> **已知 UI 行为（设计如此，不是 bug）**：浏览器页面开着时，自动应答之后那张问题卡片会留在屏幕上，\n> 直到你点「提交」/「跳过」或刷新页面。答案早已落库、这一轮也早已继续；详见下方\n> *「自动答完后问题卡片还留在屏幕上 —— 这不是 bug」*。\n```\n\n**依据 2 · 作者声明**：[README.zh-CN.md:119-137](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L119-L137)\n\n作者对卡片残留的详细说明。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## 自动答完后问题卡片还留在屏幕上 —— 这不是 bug\n\n**这是设计内的预期行为，请不要为它开 issue。**\n\n`ask_user_question` 是通过 waterfall 被应答的：浏览器那边的 Client 渲染出问题卡片、等人类提交，\n宿主这边等的是\"谁来接这个请求\"。本插件是在**宿主侧**到点作答的，而宿主没有一条消息去通知 Client\n\"你的问题已经在别处被结掉了\"。于是那张卡片会停在原地：\n\n- 它留在对话记录里，仍然占着输入区；\n- 会话列表可能还显示「等待回答」。\n\n其余一切正常：`ask_user_question` 的结果里已经带着被选中的答案，这一轮照常继续、正常结束，\n落库的会话数据是准确的 —— 那张滞留的卡片是**浏览器端的状态，不是会话状态**。\n\n处理办法：点卡片上的「提交」或「跳过」，或者刷新页面。提交一张过期卡片是无害的：请求早就结掉了，\n不会补注入一条迟到的答案，也不会报错（已实测）。刷新页面同时会让会话列表那一行恢复正常。\n\n宿主侧插件没法自己收掉它：卡片属于 Client 自己的那次请求，只有 Client 能结算它。若要让它在\n未来自动关闭，需要 Client 侧的改动。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:32-38](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L32-L38)\n\n源码注释列出限制。\n\n```text\n * - Claiming the request here does NOT close a question card the Client is\n *   already showing: the card belongs to the Client's own request, and the Host\n *   has no message that settles it. The card therefore stays on screen (and\n *   keeps the composer) until the page submits, skips, or reloads. That is\n *   expected behaviour — documented in the README as \"not a bug\" — because the\n *   tool result and the session data are already correct; only the browser\n *   keeps a card it was never told to drop.\n```\n\n**依据 4 · 源码核查**：[package.json:1-55](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/package.json#L1-L55)\n\n包入口与依赖。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n{\n  \"name\": \"dsh-plugin-auto-answer\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Answers ask_user_question with the recommended option when nobody replies in time, so an unattended DSH session keeps working\",\n  \"icon\": \"./icon.svg\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"author\": \"AK-blank\",\n  \"homepage\": \"https://github.com/AK-blank/dsh-plugin-auto-answer#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/AK-blank/dsh-plugin-auto-answer.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/AK-blank/dsh-plugin-auto-answer/issues\"\n  },\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./package.json\": \"./package.json\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./locale/*.json\": \"./locale/*.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"locale/*.json\",\n    \"icon.svg\",\n    \"selftest.mjs\",\n    \"README.md\",\n    \"README.zh-CN.md\",\n    \"LICENSE\"\n  ],\n  \"keywords\": [\n    \"dsh\",\n    \"dsh-plugin\",\n    \"deepseek-harness\",\n    \"cordis-plugin\",\n    \"host-plugin\",\n    \"unattended\",\n    \"auto-answer\",\n    \"ask-user-question\"\n  ],\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"scripts\": {\n    \"test\": \"node selftest.mjs\",\n    \"selftest\": \"node selftest.mjs\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未复现具体 DSH 页面。\n  **影响：**卡片残留随 Client 版本可能变化。\n  **进一步探讨：**隔离 Web 客户端做问答超时后检查。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么配置可避免把无人值守便利变成擅自批准？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n默认 enabled:true、120秒、fallback:first、freeText:skip；用于有外部后果的自动化时应至少设 fallback:none 与 freeText:block、保留 planReview:ignore，并确保高影响提问由调用方标记需人工决策。更稳妥的设计是按问题 intent 明确 allowlist 而非仅按标签决定，并向 Client 广播已结算；这两项只是改进设想。还要让 timeoutSeconds 小于 timed 工具超时，否则插件可能来不及作答。\n\nfallback:none 只禁无标记首/末项，不会阻止带 Recommended 标签的普通问题被自动选择。若不能预先限定问题都是低影响，需禁用该插件或由调用方强制人工意图，不把这一组配置称为完全关闭自动批准。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:64-86](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L64-L86)\n\n配置默认及 timed 约束。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n````text\n## 配置\n\n所有键都可省略，行的 `config` 覆盖默认值。\n\n| 键 | 默认 | 含义 |\n|---|---|---|\n| `enabled` | `true` | 总开关；`false` 时连监听都不注册 |\n| `timeoutSeconds` | `120` | 自动作答前的等待窗口（5 – 86400） |\n| `fallback` | `first` | 没有标记时选 `first` \\| `last` \\| `none` |\n| `freeText` | `skip` | 无选项的问题：`skip` \\| `block` |\n| `planReview` | `ignore` | 计划审批：`ignore` \\| `approve` \\| `decline` |\n\n```yaml\n# profile 的 cordis.patch.yml，位于所有 bundle 层之后\n- id: auto-answer\n  name: 'dsh-plugin-auto-answer'\n  config:\n    timeoutSeconds: 90\n    fallback: first\n```\n\n**如果 `tool-ask-user` 跑在 timed 模式**：`timeoutSeconds` 必须小于工具的 `timeout`，\n否则工具先返回 `pending`，本插件的答案就没机会生效。默认的阻塞式工具没有这个约束。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:61-73](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L61-L73)\n\n实际默认值。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n/** Defaults; a row's `config` overrides them through {@link normalizeConfig}. */\nexport const DEFAULTS = Object.freeze({\n  /** Master switch. `false` also skips the listener registration. */\n  enabled: true,\n  /** How long the question stays open before the recommended option is chosen. */\n  timeoutSeconds: 120,\n  /** Option chosen when no option is marked recommended: `first` | `last` | `none`. */\n  fallback: 'first',\n  /** Question with no options at all: `skip` (submits an empty answer) | `block`. */\n  freeText: 'skip',\n  /** `plan-review` intent questions: `ignore` | `approve` | `decline`. */\n  planReview: 'ignore',\n})\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:159-175](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/lib/index.js#L159-L175)\n\n普通问题选择规则。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  if (question.intent?.kind === 'plan-review') return decidePlanReview(id, question, options, config)\n\n  if (options.length === 0) {\n    // Nothing to choose. An empty `selected` is the protocol's \"skipped\" answer,\n    // which is honest and unblocks the caller; `block` leaves it to a human.\n    return config.freeText === 'skip' ? { id, selected: [] } : undefined\n  }\n\n  const marked = options.filter((option) => isRecommendedLabel(option.label))\n  if (marked.length > 0) {\n    const labels = question.multiSelect === true ? marked.map((option) => option.label) : [marked[0].label]\n    return { id, selected: labels }\n  }\n\n  if (config.fallback === 'none') return undefined\n  const pick = config.fallback === 'last' ? options[options.length - 1] : options[0]\n  return { id, selected: [pick.label] }\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.zh-CN.md:119-137](https://github.com/AK-blank/dsh-plugin-auto-answer/blob/0147e9b83cd100b4532024f8907799741ce87429/README.zh-CN.md#L119-L137)\n\nClient 收卡缺口。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## 自动答完后问题卡片还留在屏幕上 —— 这不是 bug\n\n**这是设计内的预期行为，请不要为它开 issue。**\n\n`ask_user_question` 是通过 waterfall 被应答的：浏览器那边的 Client 渲染出问题卡片、等人类提交，\n宿主这边等的是\"谁来接这个请求\"。本插件是在**宿主侧**到点作答的，而宿主没有一条消息去通知 Client\n\"你的问题已经在别处被结掉了\"。于是那张卡片会停在原地：\n\n- 它留在对话记录里，仍然占着输入区；\n- 会话列表可能还显示「等待回答」。\n\n其余一切正常：`ask_user_question` 的结果里已经带着被选中的答案，这一轮照常继续、正常结束，\n落库的会话数据是准确的 —— 那张滞留的卡片是**浏览器端的状态，不是会话状态**。\n\n处理办法：点卡片上的「提交」或「跳过」，或者刷新页面。提交一张过期卡片是无害的：请求早就结掉了，\n不会补注入一条迟到的答案，也不会报错（已实测）。刷新页面同时会让会话列表那一行恢复正常。\n\n宿主侧插件没法自己收掉它：卡片属于 Client 自己的那次请求，只有 Client 能结算它。若要让它在\n未来自动关闭，需要 Client 侧的改动。\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f0b4f866b0c9821060a4122512c8c5797ff8e8aab563b573ee91e1d5ab3e8262。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 541 | 310 | 181 | — |\n| .md | source | 2 | 335 | — | — | 3001 |\n| .mjs | source | 1 | 743 | 591 | 79 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 作用 | 边界 |\n| --- | --- | --- |\n| 事件监听 | 人答优先 | 宿主事件兼容 |\n| 后台 | 超时选择 | 不等于用户授权 |\n\n## 工程亮点\n\nglobal/prepend 事件注册，Promise.race 处理下游/计时/abort/停机，Symbol 防重复监听。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、README.zh-CN.md、package.json、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态审阅 README.zh-CN、package 和 Host 源码；未执行 selftest 或 DSH。\n- 下一步：固定 SHA 隔离 profile 覆盖人答、无提供者、取消、计划审批、普通高影响问题和卡片状态。\n",
         "metadata": {
             "repository": "AK-blank/dsh-plugin-auto-answer",
             "repository_id": 1423966960,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:24:41.516Z",
+            "window_start": "2026-09-22T06:24:41.516Z",
             "stars": 0,
             "pushed_at": "2026-10-18T03:59:28Z",
             "issues": {
@@ -389,33 +425,7 @@
                 "closed_30d": 0,
                 "updated_30d": 0
             },
-            "errors": [],
-            "npm": {
-                "package_name": "dsh-plugin-auto-answer",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-auto-answer",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-plugin-auto-answer",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "0147e9b83cd100b4532024f8907799741ce87429",
-                "current_revision": "0147e9b83cd100b4532024f8907799741ce87429",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1423966960:root",

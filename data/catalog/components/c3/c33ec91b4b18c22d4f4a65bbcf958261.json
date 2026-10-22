@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1407379611-root-directory-0",
+                    "id": "2026-10-22-02-github-1407379611-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:05:43.940Z",
+                    "retrieved_at": "2026-10-22T09:35:41.829Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1407379611-root-author",
+                    "id": "2026-10-22-02-github-1407379611-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions",
+                            "commit": "20044d963ce5d0a780915be97491b9d330285bf3",
+                            "path": "README.md",
+                            "content_sha256": "32d500d48b64f16f5f274044701d53f2154bb870da30017ff26c073373cd96c1"
+                        }
+                    ],
                     "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-                    "captured_at": "2026-10-21T02:05:43.940Z",
-                    "summary": "在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:41.829Z",
+                    "summary": "为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1407379611-root-source",
+                    "id": "2026-10-22-02-github-1407379611-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js",
+                    "url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions",
+                            "commit": "20044d963ce5d0a780915be97491b9d330285bf3",
+                            "path": "README.md",
+                            "content_sha256": "32d500d48b64f16f5f274044701d53f2154bb870da30017ff26c073373cd96c1"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions",
+                            "commit": "20044d963ce5d0a780915be97491b9d330285bf3",
+                            "path": "package.json",
+                            "content_sha256": "9fd9ddf539316d2c3856801bc2219f6962939e2457d157ccc4012b06c54dba39"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions",
+                            "commit": "20044d963ce5d0a780915be97491b9d330285bf3",
+                            "path": "lib/index.js",
+                            "content_sha256": "4b40284d8379b9b78130d4e7eadffb670f6301035ae0a3ac41edc6af02116046"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions",
+                            "commit": "20044d963ce5d0a780915be97491b9d330285bf3",
+                            "path": "lib/client.js",
+                            "content_sha256": "a1d2f9902b4b7f9738d4f42a95feadedced11ce559e4e887b2d167e318c89466"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions",
+                            "commit": "20044d963ce5d0a780915be97491b9d330285bf3",
+                            "path": "test/bundle-check.mjs",
+                            "content_sha256": "a6f60672d84167139f980fe44dba56a12bf3f7a070e7a0c42313356eb1a63b34"
+                        }
+                    ],
                     "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-                    "captured_at": "2026-10-21T02:05:43.940Z",
-                    "summary": "核查 lib/client.js、lib/index.js；lib/client.js从原生sessions/workspaces与uiSession状态读取置顶集合，通过createPortal挂进侧栏滚动容器，取消置顶调用原生unpinSession。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:41.829Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/client.js、test/bundle-check.mjs；纯客户端订阅宿主sessions/workspaces/status，按pin顺序投影，调用原生open/unpin，通过overlay portal插入列表滚动容器并在设置提供开关。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-pinned-sessions/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                        "固定提交检查客户端逻辑、Host no-op、manifest与stub检查；不将作者浏览器验证记录当本轮独立验收。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "经常跨多个工作区切换会话的DSH用户，需从一个平面入口快速找到已置顶会话。",
+                    "text": "多工作区用户需要快速返回重点会话，聚合组以正确打开既有会话和同步原生pin为合格结果。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/client.js从原生sessions/workspaces与uiSession状态读取置顶集合，通过createPortal挂进侧栏滚动容器，取消置顶调用原生unpinSession。",
+                    "text": "纯客户端订阅宿主sessions/workspaces/status，按pin顺序投影，调用原生open/unpin，通过overlay portal插入列表滚动容器并在设置提供开关。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。",
+                    "text": "固定提交检查客户端逻辑、Host no-op、manifest与stub检查；不将作者浏览器验证记录当本轮独立验收。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定源码及包清单界定本次组件与分发；作者兼容和效果说明不等于本轮实际执行证据。",
+                    "text": "@vfvrpq/dsh-pinned-sessions 0.4.1、MIT；Node>=22、DSH>=0.2.0-rc.1为声明，实际依赖客户端服务与DOM。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次安装刷新界面；无新增模型调用费用，持续成本主要为宿主DOM适配与跨版本验证。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主web客户端，无新增模型调用 | 安装刷新并核对单一实例 | 无新增模型调用；安装与实例核查工时未知 |\n| 持续使用 | store重渲染、DOMreconcile及timer | 标题搜索和状态阅读，节省未测 | DOM/store/timer资源随列表变化；定位节时未测 |\n| 失败恢复 | 关闭或卸载刷新 | 回到原生pin，核对unpin结果 | 回原生pin/unpin与刷新所需时间未知 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。",
+                    "text": "建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "集中导航可减少展开工作区的步骤；实际定位时间与长列表性能尚未本轮测量。",
+                    "text": "#### 效果\n\n| 目标 | 机制支持 | 边界 |\n| --- | --- | --- |\n| 聚合pin | 宿主pin顺序与store | 隐藏归档/空白/subagent |\n| 状态一致 | uiSession状态与原生操作 | 需服务契约匹配 |\n| 少查找 | 组内标题搜索 | 无任务计时和规模实测 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "pinnedSessionIds过滤归档、空白与subagent，状态来自uiSession，取消置顶不直接改store；MutationObserver加定时重对齐降低重渲染丢挂载。 [固定源码](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L1)。",
+                    "text": "宿主pin唯一真相、useSyncExternalStore及清理observer值得借鉴；手写bundle与内部DOM选择器带来维护代价，stub检查不能代替真实布局。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +241,69 @@
                             "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:05:43.940Z",
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "复用宿主pin关系，增加跨工作区平面组与局部搜索，减少展开查找步骤；贡献是导航聚合，不是新增置顶存储或任务流程。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "最影响长期便利的是内部DOM耦合，class或层级变化会隐藏分组；取消置顶失败仅console提示，且浏览器偏好是新增本地状态。源码和README部分挂载叙述不同，以源码为准。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "可探讨宿主专用组slot来替代scoped DOM查找，用相同布局与升级样例比较挂载正确性和维护改动量；需宿主配合，当前未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1407379611-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1407379611:root",
+                            "area": "code",
+                            "fingerprint": "20044d963ce5d0a780915be97491b9d330285bf3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:41.829Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:05:43.940Z",
+            "last_checked_at": "2026-10-22T09:35:41.829Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-                "reviewed_at": "2026-10-21T02:05:43.940Z",
+                "reviewed_at": "2026-10-22T09:35:41.829Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -225,57 +319,57 @@
                         "transferability": 5,
                         "simplification": 8
                     },
-                    "rationale": "novelty：跨工作区聚合小幅；mechanism：portal与原生状态复用小幅；transferability：锚点依赖限制复用小幅；simplification：不复制后端状态实质。",
+                    "rationale": "novelty小幅，常规store投影与portal；mechanism小幅，复用宿主真相降低状态冲突；transferability小幅，依赖内部DOM；simplification实质，不重做pin持久化和完整工作区浏览器。",
                     "basis": "interpretation",
                     "score": 30,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
+                        "delivery": 0,
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow：导航步骤小幅；delivery：既有会话可达性小幅；reach：降低找会话门槛小幅；economics：避免重复状态维护小幅，收益未测。",
+                    "rationale": "workflow小幅，减少跨组查找而不改变任务组织；delivery未识别新交付单元；reach小幅，帮助多工作区用户发现pin；economics小幅，少查找的机制未测节省。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 18,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1407379611-root-source"
+                        "2026-10-22-02-github-1407379611-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合跨多个工作区找置顶会话，先验证搜索、归档过滤与取消置顶；宿主升级后核对侧栏入口，尚未进行真实宿主验证。",
+                "reason": "适合多工作区用户小范围试用置顶聚合；先核对宿主DOM、状态和unpin，保留原生导航退路。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多工作区用户有清楚的会话定位需求，单工作区用户的增益较小。"
+                        "rationale": "多工作区重点会话查找明确，单工作区收益有限。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "相对原生分工作区置顶，集中聚合且复用原生置顶状态，避免第二套真相。"
+                        "score": 13,
+                        "rationale": "聚合和标题搜索有额外便利，但原生已有pin和搜索。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持过滤、原生取消置顶和挂载机制，未执行真实侧栏或大列表验证。"
+                        "rationale": "固定bundle与测试材料已读，无本轮执行。"
                     },
                     "cost": {
                         "score": 15,
-                        "rationale": "无新增模型调用，主要负担是DOM耦合及升级核查，入口失配时功能可能隐藏。"
+                        "rationale": "纯客户端、无模型费且可关闭，主要负担是升级DOM适配和错误复核。"
                     }
                 },
-                "score": 70,
+                "score": 64,
                 "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-                "reviewed_at": "2026-10-21T09:16:52.633Z",
+                "reviewed_at": "2026-10-22T09:35:41.829Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1407379611-root-source"
+                    "2026-10-22-02-github-1407379611-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,88 +394,60 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "ea0f8c6fc28972adb73777d0291ed506400992ac92af435e4fab19c53ccf7e8f"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c7734b21fad3adaa7ff950829f8f8f9c764291e811c3af6dd48b22599beb51fc"
         },
         "publication.metadata": "data/plugins/439436269-ctrl--dsh-pinned-sessions/META.json",
         "publication.summaries": {
-            "text": "在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。",
+            "text": "为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。",
             "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
             "source_url": "https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/README.md"
         },
         "publication.capabilities": {
             "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
             "items": {
-                "界面": "跨工作区置顶分组、搜索、状态提示与取消置顶"
-            }
+                "界面": "跨工作区置顶组、标题搜索、状态、打开与取消置顶，设置可见开关"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 聚合置顶组 | 跨工作区返回重点会话 | 排除归档/空白/subagent |\n| 搜索和状态 | 快速找会话与待办注意 | 依赖原生store |\n| 原生操作 | 打开与取消pin | 失败仅console提示 |"
         },
         "publication.advice": {
             "revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-            "text": "已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。"
+            "text": "建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/439436269-ctrl--dsh-pinned-sessions",
-        "reports": "# dsh-pinned-sessions\n\n> 在侧栏集中展示跨工作区的置顶会话，提供搜索、状态与取消置顶操作。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-pinned-sessions](https://github.com/439436269-ctrl/dsh-pinned-sessions)\n- **版本号**：0.4.1（[固定提交 20044d96](https://github.com/439436269-ctrl/dsh-pinned-sessions/tree/20044d963ce5d0a780915be97491b9d330285bf3)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已实现机制由固定源码支持；效果未独立实测，未来假设未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：经常跨多个工作区切换会话的DSH用户，需从一个平面入口快速找到已置顶会话。\n- **亮点**：相对原生只在各工作区内部重排置顶，会话集合跨工作区聚合有明确导航价值；重用原生状态避免第二套置顶真相。DOM锚点portal是宿主缺少扩展槽位时的适配，不是新状态模型。\n- **思考**：原生样式一致是否等于长期兼容？代码依赖data-slot及具体侧栏列表结构，找不到时隐藏，降低破坏性但功能仍消失；README前后对挂载位置和是否共享滚动有不同叙述，应该以当前源码和宿主实测为准。\n- **建议**：已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。\n\n采用建议：已有跨工作区置顶需求时可试用；先验证搜索、归档过滤与取消置顶，宿主升级后检查入口是否仍在。\n\n## 核心贡献\n\n相对原生只在各工作区内部重排置顶，会话集合跨工作区聚合有明确导航价值；重用原生状态避免第二套置顶真相。DOM锚点portal是宿主缺少扩展槽位时的适配，不是新状态模型。\n\n## 关键质疑\n\n原生样式一致是否等于长期兼容？代码依赖data-slot及具体侧栏列表结构，找不到时隐藏，降低破坏性但功能仍消失；README前后对挂载位置和是否共享滚动有不同叙述，应该以当前源码和宿主实测为准。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：宿主增加只负责列表首部的扩展slot，可消除DOM探测并保留原生浏览器所有权；代价是需要宿主API设计与版本适配。\n\n比较现有锚点方式与slot原型在扁平/分组/搜索/折叠及DOM重排后的可见性；若slot同样需要内部DOM猜测则否定简化假设。\n\n## 场景与替代办法\n\n经常跨多个工作区切换会话的DSH用户，需从一个平面入口快速找到已置顶会话。\n\n参照DSH原生工作区内置顶与手工搜索；价值来自聚合入口，不增加后端会话能力。\n\n## 依赖与流程\n\n需要slots、sessions、workspaces、uiWorkspace、uiSession等客户端服务和匹配侧栏结构。\n\n原生置顶→读取集合→过滤隐藏项→挂载分组→搜索或打开→原生取消置顶；锚点消失则移除自身节点。\n\n## 成本与效果\n\n首次安装刷新界面；无新增模型调用费用，持续成本主要为宿主DOM适配与跨版本验证。\n\n集中导航可减少展开工作区的步骤；实际定位时间与长列表性能尚未本轮测量。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc182a0798d9ddbd812562073c28ecb41dc579236c2f6a0c10f84a99e256b25a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 917 | — | — | 11206 |\n| .js | source | 2 | 804 | 613 | 192 | — |\n| .mjs | test | 1 | 422 | 332 | 65 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：跨工作区置顶分组、搜索、状态提示与取消置顶\n\n## 工程亮点\n\npinnedSessionIds过滤归档、空白与subagent，状态来自uiSession，取消置顶不直接改store；MutationObserver加定时重对齐降低重渲染丢挂载。 [固定源码](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L1)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/client.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读指定核心源码与作者说明；未执行目标插件或测试、未安装或做真实宿主验收，未核实独立用户收益。\n- 下一步：比较现有锚点方式与slot原型在扁平/分组/搜索/折叠及DOM重排后的可见性；若slot同样需要内部DOM猜测则否定简化假设。\n",
+        "reports": "# dsh-pinned-sessions\n\n> 为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-pinned-sessions](https://github.com/439436269-ctrl/dsh-pinned-sessions)\n- **版本号**：0.4.1（[固定提交 20044d963ce5d0a780915be97491b9d330285bf3](https://github.com/439436269-ctrl/dsh-pinned-sessions/tree/20044d963ce5d0a780915be97491b9d330285bf3)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n聚合投影和原生状态复用有源码支持；挂载依赖内部DOM。专用slot替代是未验证方向。\n\n## 洞察短评\n\n- **用途**：多工作区用户需要快速返回重点会话，聚合组以正确打开既有会话和同步原生pin为合格结果。详见[Q01](#research-q01)。\n- **亮点**：复用宿主pin关系，增加跨工作区平面组与局部搜索，减少展开查找步骤；贡献是导航聚合，不是新增置顶存储或任务流程。详见[Q01](#research-q01)。\n- **思考**：最影响长期便利的是内部DOM耦合，class或层级变化会隐藏分组；取消置顶失败仅console提示，且浏览器偏好是新增本地状态。源码和README部分挂载叙述不同，以源码为准。详见[Q03](#research-q03)。\n- **建议**：可探讨宿主专用组slot来替代scoped DOM查找，用相同布局与升级样例比较挂载正确性和维护改动量；需宿主配合，当前未验证。详见[Q05](#research-q05)。\n\n采用建议：建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n复用宿主pin关系，增加跨工作区平面组与局部搜索，减少展开查找步骤；贡献是导航聚合，不是新增置顶存储或任务流程。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n最影响长期便利的是内部DOM耦合，class或层级变化会隐藏分组；取消置顶失败仅console提示，且浏览器偏好是新增本地状态。源码和README部分挂载叙述不同，以源码为准。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨宿主专用组slot来替代scoped DOM查找，用相同布局与升级样例比较挂载正确性和维护改动量；需宿主配合，当前未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从宿主搜索/rail/列表替换和取消置顶失败四组状态入手，再比较原生查找与聚合导航的正确打开时间和维护负担。\n\n## 场景与替代办法\n\n多工作区用户需要快速返回重点会话，聚合组以正确打开既有会话和同步原生pin为合格结果。详见[Q01](#research-q01)。\n\n宿主原生pin排序、工作区展开和全局搜索为简单替代，插件聚合阅读入口但不更改pin所有权。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| slots/sessions/workspaces等客户端服务 | 数据与操作 | 不匹配影响加载/状态 |\n| 内部侧栏DOM | portal挂载 | 未找到则隐藏 |\n| localStorage | 可选偏好保存 | 拒绝时回退内存 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 安装profile并刷新 | 用户 | 仅一组挂载 |\n| 检查已有pin与状态 | 用户 | 顺序/筛选与原生一致 |\n| 搜索打开或取消pin | 用户/宿主 | 正确会话及操作结果 |\n| 关闭设置或卸载 | 用户 | 原生pin仍可用 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 宿主web客户端，无新增模型调用 | 安装刷新并核对单一实例 | 无新增模型调用；安装与实例核查工时未知 |\n| 持续使用 | store重渲染、DOMreconcile及timer | 标题搜索和状态阅读，节省未测 | DOM/store/timer资源随列表变化；定位节时未测 |\n| 失败恢复 | 关闭或卸载刷新 | 回到原生pin，核对unpin结果 | 回原生pin/unpin与刷新所需时间未知 |\n\n\n#### 效果\n\n| 目标 | 机制支持 | 边界 |\n| --- | --- | --- |\n| 聚合pin | 宿主pin顺序与store | 隐藏归档/空白/subagent |\n| 状态一致 | uiSession状态与原生操作 | 需服务契约匹配 |\n| 少查找 | 组内标题搜索 | 无任务计时和规模实测 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本如何复用原生pin构成跨工作区入口，其UI耦合、成本和采用边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 原生已有置顶时独立分组增加什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向在多个工作区并行处理长任务、希望快速返回少量重点会话的DSH用户。原生已保存pin，只在各自工作区排序时用户仍要展开和查找；插件把已置顶会话投影为跨工作区平面组，显示所属工作区、原生状态和组内标题搜索。合格结果是找到并打开正确既有会话、取消置顶后原生与投影一致，而不是创建新的任务管理系统。\n\n简单替代是宿主工作区列表和全局搜索。新增价值在聚合阅读入口和保留原生状态所有权，不在pin能力本身。selector按宿主pinnedSessionIds顺序过滤已归档、空白和subagent会话，所以它并不是全部置顶对象的完整镜像。工作区少或只有一个长期会话时新增组可能占用空间而无足够收益；不将此类局部界面便利视为新业务交付模式。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:247-266](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L247-L266)\n\n实际pin顺序、空白/subagent及归档过滤。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n\t\tfunction pinnedSessionIds(sessions, workspaces) {\n\t\t\tconst archived = new Set(workspaces.archivedSessionIds ?? []);\n\t\t\tconst ids = [];\n\t\t\tfor (const id of workspaces.pinnedSessionIds ?? []) {\n\t\t\t\tconst summary = sessions.byId[id];\n\t\t\t\tif (summary === undefined || summary.origin === \"subagent\" || summary.blank || archived.has(id)) continue;\n\t\t\t\tids.push(id);\n\t\t\t}\n\t\t\treturn ids;\n\t\t}\n\t\t/** Pinned-but-archived sessions, which this section deliberately hides. */\n\t\tfunction archivedPinnedCount(sessions, workspaces) {\n\t\t\tconst archived = new Set(workspaces.archivedSessionIds ?? []);\n\t\t\tlet count = 0;\n\t\t\tfor (const id of workspaces.pinnedSessionIds ?? []) {\n\t\t\t\tconst summary = sessions.byId[id];\n\t\t\t\tif (summary === undefined || summary.origin === \"subagent\" || summary.blank) continue;\n\t\t\t\tif (archived.has(id)) count += 1;\n\t\t\t}\n\t\t\treturn count;\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:13-19](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/README.md#L13-L19)\n\n作者提出原生pin局部排序与跨工作区入口差异。\n\n```text\n\nDSH already pins sessions (hover a row → pin glyph, or right-click → 「置顶会话」),\nbut the result is only a re-order **inside that session's own workspace group**: a\npinned session still scrolls away when you switch workspaces, collapse groups, or\ndrown in a long list.\n\nThis plugin gives the pinned set its own group, above the Workspace browser:\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 列表、状态、搜索和取消置顶怎么实现？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nHost入口是no-op，功能由web客户端ModuleLoader包提供。apply注入slots、sessions、workspaces、uiWorkspace、uiSession和locale，用useSyncExternalStore订阅会话、工作区及状态，按pin顺序构成行。状态优先展示待审批、计划审查或提问，然后运行，最后完成未读；缺状态时才用summary.running回退。标题搜索trim并小写匹配，不重排pin顺序。点击通过uiWorkspace.openSession，取消置顶调用宿主workspaces.unpinSession而不直接写store。\n\n注册shell.overlay用于portal挂载，并注册settings.general.item开关；折叠和可见偏好写浏览器localStorage，pin关系仍由宿主保存。挂载按sidebar.workspaces锚点下的listArea及class结尾list寻找滚动容器，插入专属host节点为首项；搜索结果和rail状态不挂载。Node>=22、DSH>=0.2.0-rc.1是清单声明，实际还依赖这些客户端API与DOM形状。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:12-18](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/index.js#L12-L18)\n\nhost半边只满足加载发现。\n\n```text\n * The Host half still has to exist: a Loader row is a Node module, and the\n * client-modules node half resolves this package to find its browser bundle.\n */\n/** Host plugin body — pinned sessions is a browser-only surface. */\nfunction apply() {}\n\nexport { apply };\n```\n\n**依据 2 · 源码核查**：[lib/client.js:226-255](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L226-L255)\n\nstore订阅与pin投影。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n\t\tfunction useSnapshot(store) {\n\t\t\tconst subscribe = react.useCallback((listener) => store.subscribe(listener), [store]);\n\t\t\tconst getSnapshot = react.useCallback(() => store.getSnapshot(), [store]);\n\t\t\treturn react.useSyncExternalStore(subscribe, getSnapshot, getSnapshot);\n\t\t}\n\t\t/**\n\t\t * A status store for hosts that cannot supply `uiSession.sessionStatus`.\n\t\t * `useSyncExternalStore` needs one stable store identity, so the fallback is\n\t\t * module-level rather than a fresh object per render.\n\t\t */\n\t\tconst EMPTY_STATUSES = new Map();\n\t\tconst EMPTY_STATUS_STORE = { getSnapshot: () => EMPTY_STATUSES, subscribe: () => () => {} };\n\t\t/** Re-render once a minute so relative timestamps stay honest. */\n\t\tfunction useMinuteClock() {\n\t\t\tconst [, setTick] = react.useState(0);\n\t\t\treact.useEffect(() => {\n\t\t\t\tconst timer = window.setInterval(() => setTick((value) => value + 1), 60000);\n\t\t\t\treturn () => window.clearInterval(timer);\n\t\t\t}, []);\n\t\t}\n\t\t/** Session ids that are pinned, visible and not archived, in pin order. */\n\t\tfunction pinnedSessionIds(sessions, workspaces) {\n\t\t\tconst archived = new Set(workspaces.archivedSessionIds ?? []);\n\t\t\tconst ids = [];\n\t\t\tfor (const id of workspaces.pinnedSessionIds ?? []) {\n\t\t\t\tconst summary = sessions.byId[id];\n\t\t\t\tif (summary === undefined || summary.origin === \"subagent\" || summary.blank || archived.has(id)) continue;\n\t\t\t\tids.push(id);\n\t\t\t}\n\t\t\treturn ids;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:314-350](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L314-L350)\n\n状态优先级及标题搜索。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n\t\tfunction statusView(status, summary, t) {\n\t\t\tswitch (status?.pendingInteraction?.kind) {\n\t\t\t\tcase \"approval\":\n\t\t\t\t\treturn { state: \"warning\", label: t(\"row.waitingApproval\"), trailing: t(\"status.compact.approval\"), testid: \"pinned-sessions-warning\" };\n\t\t\t\tcase \"plan-review\":\n\t\t\t\t\treturn { state: \"warning\", label: t(\"row.planReview\"), trailing: t(\"status.compact.planReview\"), testid: \"pinned-sessions-warning\" };\n\t\t\t\tcase \"question\":\n\t\t\t\t\treturn { state: \"warning\", label: t(\"row.waitingAnswer\"), trailing: t(\"status.compact.answer\"), testid: \"pinned-sessions-warning\" };\n\t\t\t\tdefault:\n\t\t\t\t\tbreak;\n\t\t\t}\n\t\t\tconst running = status === undefined ? summary.running === true : status.running === true;\n\t\t\tif (running) return { state: \"ongoing\", label: t(\"row.running\"), trailing: undefined, testid: \"pinned-sessions-running\" };\n\t\t\t/** A finished-but-unopened session is the second attention state worth a dot. */\n\t\t\tif (status?.completionUnread === true) return { state: \"done\", label: t(\"row.unread\"), trailing: undefined, testid: \"pinned-sessions-unread\" };\n\t\t\treturn { state: \"idle\", label: \"\", trailing: undefined, testid: undefined };\n\t\t}\n\t\t/** Row label for one session summary. */\n\t\tfunction rowLabel(summary, t) {\n\t\t\tconst title = String(summary.title ?? \"\").trim();\n\t\t\tif (title !== \"\") return title;\n\t\t\tconst display = String(summary.displayTitle ?? \"\").trim();\n\t\t\tif (display !== \"\") return display;\n\t\t\treturn t(\"row.untitled\");\n\t\t}\n\t\t/**\n\t\t * Narrow pinned rows to those whose label contains `query`, case-insensitively.\n\t\t * A blank query is a no-op, so the unfiltered list rides the same code path.\n\t\t * @param rows - pinned session summaries, in pin order.\n\t\t * @param query - raw search text.\n\t\t * @param t - dictionary lookup.\n\t\t * @returns the matching subset, still in pin order.\n\t\t */\n\t\tfunction filterRows(rows, query, t) {\n\t\t\tconst needle = String(query ?? \"\").trim().toLowerCase();\n\t\t\tif (needle === \"\") return rows;\n\t\t\treturn rows.filter((summary) => rowLabel(summary, t).toLowerCase().includes(needle));\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:723-777](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L723-L777)\n\n服务、宿主操作和两个slot注册。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n\t\tconst inject = [\n\t\t\t\"slots\",\n\t\t\t\"sessions\",\n\t\t\t\"workspaces\",\n\t\t\t\"uiWorkspace\",\n\t\t\t\"uiSession\",\n\t\t\t\"locale\"\n\t\t];\n\t\t/**\n\t\t * Register the sidebar section.\n\t\t * @param ctx - Client root context.\n\t\t */\n\t\tfunction apply(ctx) {\n\t\t\tctx.effect(() => ctx.locale.register(NS, { zh, en }), \"@vfvrpq/dsh-pinned-sessions: dictionaries\");\n\t\t\tconst { sessions, workspaces, uiWorkspace, uiSession } = ctx;\n\t\t\tconst face = () => ({\n\t\t\t\tsessionsStore: sessions.list,\n\t\t\t\tworkspacesStore: workspaces.list,\n\t\t\t\t/**\n\t\t\t\t * Live Session status, shared with the native rows: `running`,\n\t\t\t\t * `pendingInteraction` and `completionUnread`. Reading the summary's\n\t\t\t\t * own `running` flag is not enough — that snapshot keeps the value it\n\t\t\t\t * loaded with, while later runs arrive as `api-session/status` events.\n\t\t\t\t */\n\t\t\t\tstatusStore: uiSession.sessionStatus,\n\t\t\t\topenSession: (sessionId) => {\n\t\t\t\t\tuiWorkspace.openSession(sessionId);\n\t\t\t\t},\n\t\t\t\tunpinSession: (sessionId) => {\n\t\t\t\t\tworkspaces.unpinSession(sessionId).catch((reason) => {\n\t\t\t\t\t\tconsole.warn(\"@vfvrpq/dsh-pinned-sessions: unpin rejected:\", reason);\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t});\n\t\t\t/*\n\t\t\t * `shell.overlay` is the always-mounted application surface seat; the\n\t\t\t * component contributes no overlay content of its own — it only portals\n\t\t\t * the section into the sidebar.\n\t\t\t */\n\t\t\tctx.slots.inject(\"shell.overlay\", () => ctx.slots.register({\n\t\t\t\tname: \"shell.overlay\",\n\t\t\t\tid: \"pinned-sessions-section\",\n\t\t\t\tlocale: NS,\n\t\t\t\tinject: face\n\t\t\t}, PinnedSectionMount));\n\t\t\t/*\n\t\t\t * Settings → General carries the on/off switch, so turning the group off\n\t\t\t * never means editing a config file by hand.\n\t\t\t */\n\t\t\tctx.slots.inject(\"settings.general.item\", () => ctx.slots.register({\n\t\t\t\tname: \"settings.general.item\",\n\t\t\t\tid: \"pinned-sessions\",\n\t\t\t\torder: 30,\n\t\t\t\tlocale: NS\n\t\t\t}, PinnedSettingsRow));\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:656-680](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L656-L680)\n\n实际插入原生滚动容器。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n\t\t\t\tconst ensure = () => {\n\t\t\t\t\tif (disposed) return;\n\t\t\t\t\tconst root = sidebarRoot();\n\t\t\t\t\tconst listArea = root === null || isRail(root) ? null : listAreaOf(root);\n\t\t\t\t\tconst scroller = listArea === null || searchShowing(listArea) ? null : scrollerOf(listArea);\n\t\t\t\t\tif (scroller === null) {\n\t\t\t\t\t\tdetach();\n\t\t\t\t\t\treturn;\n\t\t\t\t\t}\n\t\t\t\t\tif (node.parentNode !== scroller || node !== scroller.firstElementChild) {\n\t\t\t\t\t\tscroller.insertBefore(node, scroller.firstChild);\n\t\t\t\t\t}\n\t\t\t\t\tif (!attached) {\n\t\t\t\t\t\tattached = true;\n\t\t\t\t\t\tsetHost(node);\n\t\t\t\t\t}\n\t\t\t\t};\n\t\t\t\tensure();\n\t\t\t\tobserver = new MutationObserver(() => {\n\t\t\t\t\tensure();\n\t\t\t\t});\n\t\t\t\tconst observedRoot = sidebarRoot();\n\t\t\t\tif (observedRoot !== null) {\n\t\t\t\t\tobserver.observe(observedRoot, { childList: true, subtree: true, attributes: true, attributeFilter: [\"class\"] });\n\t\t\t\t}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 挂载与降级留下什么限制？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n主要限制是没有专用扩展位，依赖宿主内部DOM和scoped class模式。锚点、listArea、list class或searchResultRow改变都可能让分组消失或放错位置。找不到容器时detach保留原生列表，是合理失败收敛；但静默隐藏使用户可能不知道加载失败，不能说“消失不报错”等于兼容。README关于不进入原生子树、放在anchor之前且独立占高的描述与当前源码插入scroller首项不同，本轮以源码为准，不延续旧挂载叙述。\n\n取消置顶失败只写console.warn，缺少可见错误；用户需要核对宿主状态是否真的改变。偏好属于当前浏览器origin，源码只通知本bundle内listeners，没有storage事件同步，因此不同窗口/浏览器的开关和折叠可不同，不能笼统称“完全没有新增状态”。这些不一定阻碍单窗口使用，但升级与多窗口场景需保留边界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:588-624](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L588-L624)\n\n选择器依赖内部class和DOM层级。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n\t\tfunction sidebarRoot() {\n\t\t\tif (typeof document === \"undefined\") return null;\n\t\t\tconst region = document.querySelector(ANCHOR_SELECTOR);\n\t\t\treturn region === null ? null : region.firstElementChild;\n\t\t}\n\t\t/** The list area inside the browser root (header stays outside it). */\n\t\tfunction listAreaOf(root) {\n\t\t\tfor (const child of root.children) {\n\t\t\t\tif (typeof child.className === \"string\" && child.className.includes(\"listArea\")) return child;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\t\t/**\n\t\t * The rows' own scroll container: the element whose scoped class token ends\n\t\t * in `list`. The pinned section goes in at its top so the two share one\n\t\t * scroll region instead of the section squeezing the list's height.\n\t\t */\n\t\tfunction scrollerOf(listArea) {\n\t\t\tfor (const element of listArea.querySelectorAll(\"div\")) {\n\t\t\t\tconst className = element.className;\n\t\t\t\tif (typeof className !== \"string\") continue;\n\t\t\t\tfor (const token of className.split(/\\s+/u)) {\n\t\t\t\t\tif (/(^|_)list$/u.test(token)) return element;\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\t\t/** Whether the browser is collapsed to its rail (no list to mount into). */\n\t\tfunction isRail(root) {\n\t\t\treturn typeof root.className === \"string\" && /(^|\\s)[^\\s]*rail(\\s|$)/u.test(root.className);\n\t\t}\n\t\t/**\n\t\t * The native browser keeps the pinned section out of the way while it shows\n\t\t * search results, where a floating group on top would just cover them.\n\t\t */\n\t\tfunction searchShowing(listArea) {\n\t\t\treturn listArea.querySelector('[class*=\"searchResultRow\"]') !== null;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:656-686](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L656-L686)\n\n容器不可得时detach及生命周期。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n\t\t\t\tconst ensure = () => {\n\t\t\t\t\tif (disposed) return;\n\t\t\t\t\tconst root = sidebarRoot();\n\t\t\t\t\tconst listArea = root === null || isRail(root) ? null : listAreaOf(root);\n\t\t\t\t\tconst scroller = listArea === null || searchShowing(listArea) ? null : scrollerOf(listArea);\n\t\t\t\t\tif (scroller === null) {\n\t\t\t\t\t\tdetach();\n\t\t\t\t\t\treturn;\n\t\t\t\t\t}\n\t\t\t\t\tif (node.parentNode !== scroller || node !== scroller.firstElementChild) {\n\t\t\t\t\t\tscroller.insertBefore(node, scroller.firstChild);\n\t\t\t\t\t}\n\t\t\t\t\tif (!attached) {\n\t\t\t\t\t\tattached = true;\n\t\t\t\t\t\tsetHost(node);\n\t\t\t\t\t}\n\t\t\t\t};\n\t\t\t\tensure();\n\t\t\t\tobserver = new MutationObserver(() => {\n\t\t\t\t\tensure();\n\t\t\t\t});\n\t\t\t\tconst observedRoot = sidebarRoot();\n\t\t\t\tif (observedRoot !== null) {\n\t\t\t\t\tobserver.observe(observedRoot, { childList: true, subtree: true, attributes: true, attributeFilter: [\"class\"] });\n\t\t\t\t}\n\t\t\t\tconst timer = window.setInterval(ensure, RECONCILE_MS);\n\t\t\t\treturn () => {\n\t\t\t\t\tdisposed = true;\n\t\t\t\t\twindow.clearInterval(timer);\n\t\t\t\t\tif (observer !== null) observer.disconnect();\n\t\t\t\t\tdetach();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:751-754](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L751-L754)\n\n取消置顶失败仅控制台记录。\n\n```text\n\t\t\t\tunpinSession: (sessionId) => {\n\t\t\t\t\tworkspaces.unpinSession(sessionId).catch((reason) => {\n\t\t\t\t\t\tconsole.warn(\"@vfvrpq/dsh-pinned-sessions: unpin rejected:\", reason);\n\t\t\t\t\t});\n```\n\n**依据 4 · 源码核查**：[lib/client.js:171-218](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L171-L218)\n\n浏览器偏好和同bundle订阅。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n\t\t/** Collapse choice survives reloads; a denied storage keeps the section expanded. */\n\t\tconst COLLAPSED_KEY = \"@vfvrpq/dsh-pinned-sessions.collapsed\";\n\t\tfunction readCollapsed() {\n\t\t\ttry {\n\t\t\t\treturn window.localStorage?.getItem(COLLAPSED_KEY) === \"true\";\n\t\t\t} catch {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\tfunction writeCollapsed(value) {\n\t\t\ttry {\n\t\t\t\twindow.localStorage?.setItem(COLLAPSED_KEY, value ? \"true\" : \"false\");\n\t\t\t} catch {\n\t\t\t\t/* storage denied — the in-memory choice still applies */\n\t\t\t}\n\t\t}\n\t\t/** Visibility choice, owned by the Settings row and read by the mount. */\n\t\tconst ENABLED_KEY = \"@vfvrpq/dsh-pinned-sessions.enabled\";\n\t\tfunction readEnabled() {\n\t\t\ttry {\n\t\t\t\treturn window.localStorage?.getItem(ENABLED_KEY) !== \"false\";\n\t\t\t} catch {\n\t\t\t\treturn true;\n\t\t\t}\n\t\t}\n\t\t/**\n\t\t * One shared source for the visibility switch: the Settings row writes it,\n\t\t * the sidebar mount subscribes to it, and both live in this bundle instance,\n\t\t * so the two surfaces can never disagree.\n\t\t */\n\t\tconst enabledSource = (() => {\n\t\t\tlet value = readEnabled();\n\t\t\tconst listeners = new Set();\n\t\t\treturn {\n\t\t\t\tgetSnapshot: () => value,\n\t\t\t\tsubscribe: (listener) => {\n\t\t\t\t\tlisteners.add(listener);\n\t\t\t\t\treturn () => listeners.delete(listener);\n\t\t\t\t},\n\t\t\t\tset: (next) => {\n\t\t\t\t\tvalue = next === true;\n\t\t\t\t\ttry {\n\t\t\t\t\t\twindow.localStorage?.setItem(ENABLED_KEY, value ? \"true\" : \"false\");\n\t\t\t\t\t} catch {\n\t\t\t\t\t\t/* storage denied — the in-memory choice still applies */\n\t\t\t\t\t}\n\t\t\t\t\tfor (const listener of listeners) listener();\n\t\t\t\t}\n```\n\n</details>\n\n#### 缺口\n\n- 目标DSH客户端的DOM与服务语义尚未独立固定核对。\n  **影响：**影响新版宿主实际可见性和操作一致性。\n  **进一步探讨：**对部署宿主固定版本检查slot锚点、列表容器、uiSession状态与unpin契约，不以最低版本声明替代。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程和三阶段成本怎样，可借鉴什么？\n\n**研究主题：**工程质量与复用、效果与总成本\n\n#### 完整回答\n\n值得借鉴的是复用宿主pin真相源与原生服务写入，独立投影不复制持久关系；React store订阅保持数据流清楚，observer和周期reconcile在卸载时清理，localStorage拒绝时仍保留内存偏好。代价是手写单bundle和内部DOM查找，移植需维护选择器、交互状态与本地化。bundle-check用fake ModuleLoader/Client Context和hook shim检查元素树，能覆盖静态接线与selector逻辑，却不能证明真实浏览器布局；本轮仅阅读未执行。\n\n首次成本是安装profile和刷新，确认只安装一份；持续成本是store触发重渲染、pin列表过滤、DOM变更ensure与周期扫描、每分钟时间刷新，没有新增模型/API费用机制。失败恢复是关闭可见开关或宿主移除、刷新，检查pin关系仍在原生列表，不需迁移pin数据库。人工寻找会话的时间节省与大量pin时性能未测，不能从局部UI便利给出量化效率收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:239-244](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L239-L244)\n\n每分钟时间刷新并清理timer。\n\n```text\n\t\tfunction useMinuteClock() {\n\t\t\tconst [, setTick] = react.useState(0);\n\t\t\treact.useEffect(() => {\n\t\t\t\tconst timer = window.setInterval(() => setTick((value) => value + 1), 60000);\n\t\t\t\treturn () => window.clearInterval(timer);\n\t\t\t}, []);\n```\n\n**依据 2 · 源码核查**：[lib/client.js:674-686](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L674-L686)\n\nobserver与周期reconcile及释放。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\t\t\t\tobserver = new MutationObserver(() => {\n\t\t\t\t\tensure();\n\t\t\t\t});\n\t\t\t\tconst observedRoot = sidebarRoot();\n\t\t\t\tif (observedRoot !== null) {\n\t\t\t\t\tobserver.observe(observedRoot, { childList: true, subtree: true, attributes: true, attributeFilter: [\"class\"] });\n\t\t\t\t}\n\t\t\t\tconst timer = window.setInterval(ensure, RECONCILE_MS);\n\t\t\t\treturn () => {\n\t\t\t\t\tdisposed = true;\n\t\t\t\t\twindow.clearInterval(timer);\n\t\t\t\t\tif (observer !== null) observer.disconnect();\n\t\t\t\t\tdetach();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:171-218](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L171-L218)\n\n偏好异常的有限回退。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n\t\t/** Collapse choice survives reloads; a denied storage keeps the section expanded. */\n\t\tconst COLLAPSED_KEY = \"@vfvrpq/dsh-pinned-sessions.collapsed\";\n\t\tfunction readCollapsed() {\n\t\t\ttry {\n\t\t\t\treturn window.localStorage?.getItem(COLLAPSED_KEY) === \"true\";\n\t\t\t} catch {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\tfunction writeCollapsed(value) {\n\t\t\ttry {\n\t\t\t\twindow.localStorage?.setItem(COLLAPSED_KEY, value ? \"true\" : \"false\");\n\t\t\t} catch {\n\t\t\t\t/* storage denied — the in-memory choice still applies */\n\t\t\t}\n\t\t}\n\t\t/** Visibility choice, owned by the Settings row and read by the mount. */\n\t\tconst ENABLED_KEY = \"@vfvrpq/dsh-pinned-sessions.enabled\";\n\t\tfunction readEnabled() {\n\t\t\ttry {\n\t\t\t\treturn window.localStorage?.getItem(ENABLED_KEY) !== \"false\";\n\t\t\t} catch {\n\t\t\t\treturn true;\n\t\t\t}\n\t\t}\n\t\t/**\n\t\t * One shared source for the visibility switch: the Settings row writes it,\n\t\t * the sidebar mount subscribes to it, and both live in this bundle instance,\n\t\t * so the two surfaces can never disagree.\n\t\t */\n\t\tconst enabledSource = (() => {\n\t\t\tlet value = readEnabled();\n\t\t\tconst listeners = new Set();\n\t\t\treturn {\n\t\t\t\tgetSnapshot: () => value,\n\t\t\t\tsubscribe: (listener) => {\n\t\t\t\t\tlisteners.add(listener);\n\t\t\t\t\treturn () => listeners.delete(listener);\n\t\t\t\t},\n\t\t\t\tset: (next) => {\n\t\t\t\t\tvalue = next === true;\n\t\t\t\t\ttry {\n\t\t\t\t\t\twindow.localStorage?.setItem(ENABLED_KEY, value ? \"true\" : \"false\");\n\t\t\t\t\t} catch {\n\t\t\t\t\t\t/* storage denied — the in-memory choice still applies */\n\t\t\t\t\t}\n\t\t\t\t\tfor (const listener of listeners) listener();\n\t\t\t\t}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[test/bundle-check.mjs:1-12](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/test/bundle-check.mjs#L1-L12)\n\n作者明确fake环境及检查范围。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/**\n * Static + render smoke test for the @vfvrpq/dsh-pinned-sessions client bundle.\n *\n * It never touches the running DSH: it registers the bundle against a fake\n * `window.__ModuleLoader__`, materializes the factory with a stub `require`\n * (real React for `createElement`, a hook shim so the section can be called\n * outside a renderer, stub primitives for the icons), runs `apply()` against a\n * fake Client Context, and asserts the element tree the pure pieces return.\n *\n * The DOM-mounting half (`PinnedSectionMount`) needs a renderer and a real\n * sidebar, so it is covered by the Playwright pass described in VERIFY.md; here\n * only its anchor selector is pinned down.\n```\n\n</details>\n\n#### 缺口\n\n- 没有大量pin、工作区和长时间运行下的性能及寻找任务计时。\n  **影响：**无法量化额外UI占用与导航便利的平衡。\n  **进一步探讨：**同一组会话对照原生搜索与聚合组，记录正确打开时间、误点和列表渲染/扫描成本。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 还能探索什么，对谁值得试用？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证假设是由宿主提供明确的额外工作区组slot，并让插件只提交组数据和操作，从而用稳定协议代替scoped DOM查找。推导来自pin数据和操作已用公开服务，只有挂载仍靠内部结构。最小验证在固定宿主适配层对照当前portal与候选slot，覆盖展开/搜索/rail/升级变更，比较正确挂载和维护改动量；若增加协议责任却不能减少兼容修复，否定这个扩展。它需要宿主配合，不是当前插件已实现能力。\n\n当前建议多工作区、少量重点会话的用户试用，先确认pin顺序、状态、搜索和unpin与原生一致；保留宿主原生查找入口。成功标准是打开正确会话且无列表覆盖、双挂载或状态漂移。若升级后组不见、搜索遮挡或取消置顶失败不能辨别，应停用并回到原生列表。没有本轮安装和卸载验收，不能给值得安装；试用价值来自明确局部便利而不是创新分或包下载量。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:588-624](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L588-L624)\n\n宿主DOM协议缺口为推导起点。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n\t\tfunction sidebarRoot() {\n\t\t\tif (typeof document === \"undefined\") return null;\n\t\t\tconst region = document.querySelector(ANCHOR_SELECTOR);\n\t\t\treturn region === null ? null : region.firstElementChild;\n\t\t}\n\t\t/** The list area inside the browser root (header stays outside it). */\n\t\tfunction listAreaOf(root) {\n\t\t\tfor (const child of root.children) {\n\t\t\t\tif (typeof child.className === \"string\" && child.className.includes(\"listArea\")) return child;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\t\t/**\n\t\t * The rows' own scroll container: the element whose scoped class token ends\n\t\t * in `list`. The pinned section goes in at its top so the two share one\n\t\t * scroll region instead of the section squeezing the list's height.\n\t\t */\n\t\tfunction scrollerOf(listArea) {\n\t\t\tfor (const element of listArea.querySelectorAll(\"div\")) {\n\t\t\t\tconst className = element.className;\n\t\t\t\tif (typeof className !== \"string\") continue;\n\t\t\t\tfor (const token of className.split(/\\s+/u)) {\n\t\t\t\t\tif (/(^|_)list$/u.test(token)) return element;\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\t\t/** Whether the browser is collapsed to its rail (no list to mount into). */\n\t\tfunction isRail(root) {\n\t\t\treturn typeof root.className === \"string\" && /(^|\\s)[^\\s]*rail(\\s|$)/u.test(root.className);\n\t\t}\n\t\t/**\n\t\t * The native browser keeps the pinned section out of the way while it shows\n\t\t * search results, where a floating group on top would just cover them.\n\t\t */\n\t\tfunction searchShowing(listArea) {\n\t\t\treturn listArea.querySelector('[class*=\"searchResultRow\"]') !== null;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:723-777](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L723-L777)\n\n现有服务和slot组合显示替换边界。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n\t\tconst inject = [\n\t\t\t\"slots\",\n\t\t\t\"sessions\",\n\t\t\t\"workspaces\",\n\t\t\t\"uiWorkspace\",\n\t\t\t\"uiSession\",\n\t\t\t\"locale\"\n\t\t];\n\t\t/**\n\t\t * Register the sidebar section.\n\t\t * @param ctx - Client root context.\n\t\t */\n\t\tfunction apply(ctx) {\n\t\t\tctx.effect(() => ctx.locale.register(NS, { zh, en }), \"@vfvrpq/dsh-pinned-sessions: dictionaries\");\n\t\t\tconst { sessions, workspaces, uiWorkspace, uiSession } = ctx;\n\t\t\tconst face = () => ({\n\t\t\t\tsessionsStore: sessions.list,\n\t\t\t\tworkspacesStore: workspaces.list,\n\t\t\t\t/**\n\t\t\t\t * Live Session status, shared with the native rows: `running`,\n\t\t\t\t * `pendingInteraction` and `completionUnread`. Reading the summary's\n\t\t\t\t * own `running` flag is not enough — that snapshot keeps the value it\n\t\t\t\t * loaded with, while later runs arrive as `api-session/status` events.\n\t\t\t\t */\n\t\t\t\tstatusStore: uiSession.sessionStatus,\n\t\t\t\topenSession: (sessionId) => {\n\t\t\t\t\tuiWorkspace.openSession(sessionId);\n\t\t\t\t},\n\t\t\t\tunpinSession: (sessionId) => {\n\t\t\t\t\tworkspaces.unpinSession(sessionId).catch((reason) => {\n\t\t\t\t\t\tconsole.warn(\"@vfvrpq/dsh-pinned-sessions: unpin rejected:\", reason);\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t});\n\t\t\t/*\n\t\t\t * `shell.overlay` is the always-mounted application surface seat; the\n\t\t\t * component contributes no overlay content of its own — it only portals\n\t\t\t * the section into the sidebar.\n\t\t\t */\n\t\t\tctx.slots.inject(\"shell.overlay\", () => ctx.slots.register({\n\t\t\t\tname: \"shell.overlay\",\n\t\t\t\tid: \"pinned-sessions-section\",\n\t\t\t\tlocale: NS,\n\t\t\t\tinject: face\n\t\t\t}, PinnedSectionMount));\n\t\t\t/*\n\t\t\t * Settings → General carries the on/off switch, so turning the group off\n\t\t\t * never means editing a config file by hand.\n\t\t\t */\n\t\t\tctx.slots.inject(\"settings.general.item\", () => ctx.slots.register({\n\t\t\t\tname: \"settings.general.item\",\n\t\t\t\tid: \"pinned-sessions\",\n\t\t\t\torder: 30,\n\t\t\t\tlocale: NS\n\t\t\t}, PinnedSettingsRow));\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:247-266](https://github.com/439436269-ctrl/dsh-pinned-sessions/blob/20044d963ce5d0a780915be97491b9d330285bf3/lib/client.js#L247-L266)\n\npin筛选与顺序可作验收条件。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n\t\tfunction pinnedSessionIds(sessions, workspaces) {\n\t\t\tconst archived = new Set(workspaces.archivedSessionIds ?? []);\n\t\t\tconst ids = [];\n\t\t\tfor (const id of workspaces.pinnedSessionIds ?? []) {\n\t\t\t\tconst summary = sessions.byId[id];\n\t\t\t\tif (summary === undefined || summary.origin === \"subagent\" || summary.blank || archived.has(id)) continue;\n\t\t\t\tids.push(id);\n\t\t\t}\n\t\t\treturn ids;\n\t\t}\n\t\t/** Pinned-but-archived sessions, which this section deliberately hides. */\n\t\tfunction archivedPinnedCount(sessions, workspaces) {\n\t\t\tconst archived = new Set(workspaces.archivedSessionIds ?? []);\n\t\t\tlet count = 0;\n\t\t\tfor (const id of workspaces.pinnedSessionIds ?? []) {\n\t\t\t\tconst summary = sessions.byId[id];\n\t\t\t\tif (summary === undefined || summary.origin === \"subagent\" || summary.blank) continue;\n\t\t\t\tif (archived.has(id)) count += 1;\n\t\t\t}\n\t\t\treturn count;\n```\n\n</details>\n\n#### 缺口\n\n- 宿主专用slot方案及大量pin工作流对照尚未建立。\n  **影响：**假设价值未验证，采用只能针对现有小范围流程。\n  **进一步探讨：**先约定最小组数据与操作契约，对相同布局状态和升级样例比较。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc182a0798d9ddbd812562073c28ecb41dc579236c2f6a0c10f84a99e256b25a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 917 | — | — | 11206 |\n| .js | source | 2 | 804 | 613 | 192 | — |\n| .mjs | test | 1 | 422 | 332 | 65 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 聚合置顶组 | 跨工作区返回重点会话 | 排除归档/空白/subagent |\n| 搜索和状态 | 快速找会话与待办注意 | 依赖原生store |\n| 原生操作 | 打开与取消pin | 失败仅console提示 |\n\n## 工程亮点\n\n宿主pin唯一真相、useSyncExternalStore及清理observer值得借鉴；手写bundle与内部DOM选择器带来维护代价，stub检查不能代替真实布局。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、test/bundle-check.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交检查客户端逻辑、Host no-op、manifest与stub检查；不将作者浏览器验证记录当本轮独立验收。\n- 下一步：进一步探讨可从宿主搜索/rail/列表替换和取消置顶失败四组状态入手，再比较原生查找与聚合导航的正确打开时间和维护负担。\n",
         "metadata": {
             "repository": "439436269-ctrl/dsh-pinned-sessions",
             "repository_id": 1407379611,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T04:52:52.281Z",
+            "window_start": "2026-09-22T04:52:52.281Z",
             "stars": 0,
             "pushed_at": "2026-10-20T15:19:57Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:148F0D:221AD8:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:3B024B:143A03:21D103:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6414:D5CAC:14962E:221A36:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6402:1CA4C8:14B973:225562:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-pinned-sessions%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:136889:156EFD:2305CD:6AD849F9 and timestamp 2026-10-21 05:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@vfvrpq/dsh-pinned-sessions",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T04:53:00.241Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": 479,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40vfvrpq%2Fdsh-pinned-sessions",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40vfvrpq%2Fdsh-pinned-sessions",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-06T14:47:19.177Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T04:53:00.241Z",
                     "source_url": "https://registry.npmjs.org/%40vfvrpq%2Fdsh-pinned-sessions",
                     "error": null,
                     "latest_version": "0.4.1",
                     "latest_published_at": "2026-10-20T15:18:31.798Z",
                     "latest_error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-                "current_revision": "20044d963ce5d0a780915be97491b9d330285bf3",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

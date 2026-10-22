@@ -10,7 +10,7 @@
             "repository": "AK-blank/dsh-plugin-mac-notify",
             "path": "",
             "aliases": [],
-            "name": "mac-notify",
+            "name": "dsh-plugin-mac-notify",
             "entry_type": "plugin",
             "technical_category": "channels-remote",
             "business_category": "personal-productivity",
@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1402940561-root-directory-0",
+                    "id": "2026-10-22-02-github-1402940561-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:34:14.888Z",
+                    "retrieved_at": "2026-10-22T04:54:52.414Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1402940561-root-author",
+                    "id": "2026-10-22-02-github-1402940561-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "README.md",
+                            "content_sha256": "dd1afc4f911ad24a2bcf56fd2a2b2632604afc2b195bf8a0257017f31c439261"
+                        }
+                    ],
                     "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
-                    "captured_at": "2026-10-21T05:34:14.888Z",
-                    "summary": "把 DSH 完成、提问、审批与报错转为 macOS 原生通知。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/ak-blank--dsh-plugin-mac-notify/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T04:54:52.414Z",
+                    "summary": "在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-mac-notify/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1402940561-root-source",
+                    "id": "2026-10-22-02-github-1402940561-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js",
+                    "url": "https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "README.md",
+                            "content_sha256": "dd1afc4f911ad24a2bcf56fd2a2b2632604afc2b195bf8a0257017f31c439261"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "package.json",
+                            "content_sha256": "59054f9bbd6beb102d3a0556b95b1813e143c9a28ed239649cf44d0a88a6b8f9"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "lib/index.js",
+                            "content_sha256": "a486969ecf936a463cda4ca6e9f46da99bbe279481b8db5540fc6ce7ad6685b7"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "lib/click.mjs",
+                            "content_sha256": "88e095b43567ec6f242fa969896421af67f7ff6dcea244654b9868f6d3160d5a"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "selftest.mjs",
+                            "content_sha256": "f4480ba2b790b101d124e09c73b31c7b70b7669ab1c51a10520c94c7aa3035c3"
+                        },
+                        {
+                            "repository_url": "https://github.com/AK-blank/dsh-plugin-mac-notify",
+                            "commit": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "c35ff5569a7def5f4a912e37b2789cf896db741866c4eefef54e96a12ab78d54"
+                        }
+                    ],
                     "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
-                    "captured_at": "2026-10-21T05:34:14.888Z",
-                    "summary": "核查 lib/index.js、lib/click.mjs、cordis.patch.yml、package.json；Host 监听运行状态、会话消息、问题、审批及错误；running→idle 才产生完成通知，记录最近助手文本作为摘要。通知经串行队列发送，优先 terminal-notifier，缺失时退回 osascript；问题与审批绕过普通节流，但相同内容五秒内仍去重。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/ak-blank--dsh-plugin-mac-notify/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T04:54:52.414Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/click.mjs、selftest.mjs、cordis.patch.yml；全局宿主事件生成截断正文，经子Agent过滤、同内容去重和pacing后串行发送，优先terminal-notifier否则osascript，点击helper查运行浏览器并open降级。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/ak-blank--dsh-plugin-mac-notify/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "仅根组件 Host 通知实现、点击帮助器、注册清单和说明；读取自测设计但未执行，未核验作者所称宿主兼容。",
+                        "固定源码检查宿主事件、runtime、argv、点击helper及部分自测结构；未执行通知、声音、浏览器或安装，未复现静态风险。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "适合把长任务留在后台、需要被叫回处理问题或审批的 macOS 单人用户；交付物是可感知的提醒和返回 Web 的入口。",
+                    "text": "Mac个人用户让长会话自行运行后收到人工接手提醒，合格结果须能识别事件并返回处理，不把idle当业务成功。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "Host 监听运行状态、会话消息、问题、审批及错误；running→idle 才产生完成通知，记录最近助手文本作为摘要。通知经串行队列发送，优先 terminal-notifier，缺失时退回 osascript；问题与审批绕过普通节流，但相同内容五秒内仍去重。",
+                    "text": "全局宿主事件生成截断正文，经子Agent过滤、同内容去重和pacing后串行发送，优先terminal-notifier否则osascript，点击helper查运行浏览器并open降级。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "仅根组件 Host 通知实现、点击帮助器、注册清单和说明；读取自测设计但未执行，未核验作者所称宿主兼容。",
+                    "text": "固定源码检查宿主事件、runtime、argv、点击helper及部分自测结构；未执行通知、声音、浏览器或安装，未复现静态风险。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包以 Cordis bundle patch 装入，Host 依赖 sessions/webServer 等服务；可选 terminal-notifier 增强点击，内置 osascript 降级。",
+                    "text": "v1.0.0 MIT、Node>=18、ESM宿主bundle，无npm运行依赖或构建；真实系统功能依赖macOS与可选terminal-notifier。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金：无新增模型/API调用，系统工具可用性与可选通知器自行承担。人工：通知权限、浏览器 Automation 权限及声音策略配置；失败后仍需回 Web 检查。高并发摘要去重可能省打扰，也可能漏掉不同会话的相同提示。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主/notifier/浏览器资源，金额未知 | 安装、重启、通知及Automation授权、隐私判断 | 没有通用配置耗时 |\n| 持续使用 | 发送及声音子进程、点击时逐浏览器探测 | 处理横幅、辨别会话、复核正文 | 每通知开销和中断负担未测 |\n| 失败恢复 | 重新通知、open新标签、trace文件留存 | 诊断权限、核对URL、发现被去重通知 | 需要回DSH轨迹确认未处理事件 |\n\n",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "有后台任务提醒需求的 macOS 用户可将其列入候选；涉及敏感输出时先限制摘要与声音，是否适用取决于通知权限和多会话定位要求。",
+                    "text": "Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话和返回归属；通知漏掉关键事件时回DSH直接观察，不当作审批执行或业务完成证明。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "价值来自缩短人未察觉的阻塞时间；不提供审批决策、远端推送或可证明的送达回执。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 提醒人工接手 | 状态、问题、批准、错误处理器可查 | 真正被用户看到及处理的比例 |\n| 降低打扰 | 子Agent过滤、去重和节奏 | 降噪收益是否超过跨会话漏报风险 |\n| 返回入口 | 运行浏览器前缀聚焦及open回退 | 是否回到准确实例/会话及响应耗时 |\n\n串行pending避免同时起通知链，但积压会拖延后续紧急通知；urgent只跳过节奏，不插队。每个通知进程有超时，点击helper每个探测也有超时，不等于全流程固定上限。没有任务成功数、总人工时间和失败恢复次数，不能给净节时、低打扰或ROI数值。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "execFile 传 argv，AppleScript 从 argv 取用户文本；点击帮助器只探测已运行浏览器并有单调用超时。运行时可注入 exec/时钟便于隔离测试。通知排队与失败列表有处理，但送达账本仅内存，重启不会恢复等待事项。",
+                    "text": "最关键的可靠性限制在跨会话去重。key只由title与body构成，未包含sessionId或subtitle；5秒内不同会话发相同问题或批准内容可被当重复跳过。紧急类型绕过的是pacing，不绕过更早的duplicate检查，因此作者“问题或批准总能通过”不是无条件成立。lastSentAt在真正发送成功前更新，发送失败后的相同通知也可能暂时被去重。本次为源码推导，未执行漏报复现。\n\n点击只匹配URL字符串前缀，不按origin与端口边界解析，也不携带目标会话路由。目标http://127.0.0.1:3080可与30800前缀重叠，先找到的页签未必就是预期实例；即便实例正确，也只保证返回DSH页面而非本次发通知的会话。浏览器权限拒绝会降级新开标签，不提供已聚焦或用户已读确认。\n\n隐私上，默认最后回复与提问/批准文本进入通知中心，启用JSONL trace还把banner内容写文件。截断是长度限制，不是敏感信息脱敏。工程优点是纯构造函数、可注入exec/exists/clock、事件异常隔离和disposer清理；自测用stub支持逻辑核查，不证明系统通知授权或真实浏览器自动化。发送pending在dispose时未取消，只清内存状态，热停用后的排队通知还需具体生命周期研究。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +247,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "相较盯着 Web 页或给每个任务写通知脚本，贡献在于把“完成”和“等待人介入”统一映射到宿主事件，并让通知失败不阻塞原审批/提问流水线。它改善人机交接的可见性，未改变审批规则或任务执行结果。",
+                    "text": "把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +265,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "通知是否真正把人带回正确上下文？click.mjs 按 Web URL 前缀寻找浏览器标签，只指向站点而非具体 session；多会话同站点时仍需人工定位。成功启动通知进程也不能证明 Focus/通知权限下人已收到，摘要还会把助手文本展示到系统通知中心。",
+                    "basis": "supported",
+                    "text": "去重key不含会话，紧急事件也先受同正文去重；点击按URL前缀只保证尝试返回页面。默认正文及trace含任务内容，均需隐私和多会话判断，未做漏报或误聚焦复现。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +283,16 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "若在通知载荷中加入可验证的会话深链接，并对尚未解决的提问/审批进行状态合并，可能比站点级提醒缩短有效响应时间。以双会话并发和重复事件回放比较“点击后到正确问题”的操作数与误定位率；没有降低误定位则否定此增量。",
+                    "text": "可探索按会话/请求身份去重与分层发送收据，在双会话同问和失败重试中比较覆盖、重复噪声与敏感留存；未实现，不冒称用户已读。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +301,15 @@
                             "fingerprint": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:34:14.888Z",
+                    "reviewed_at": "2026-10-22T04:54:52.414Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:34:14.888Z",
+            "last_checked_at": "2026-10-22T04:54:52.414Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
-                "reviewed_at": "2026-10-21T05:34:14.888Z",
+                "reviewed_at": "2026-10-22T04:54:52.414Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -279,57 +325,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "新颖性9：事件通知是已有模式；机制8：四类事件与降级队列有具体衔接；迁移性10：非阻塞交接可迁移但浏览器唤起限macOS；简化8：统一后端和argv封装减少脚本拼接。",
+                    "rationale": "novelty为成熟系统通知的DSH适配小幅增量；mechanism为过滤/排队/后端选择的小幅机制组合，可靠性未验收；transferability为注入runtime及argv构造的实质复用；simplification为无浏览器半、无构建的一体接线实质简化，未计事件收据设想。",
                     "basis": "interpretation",
                     "score": 35,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "工作流9：减少盯屏但原审批路径不变；交付8：提供可点击提示而非任务结果；覆盖5：macOS本地用户范围窄；经济4：无额外模型调用，但节省时间未实测。",
+                    "rationale": "workflow把主动查看转成人工接手提醒，实质步骤调整；delivery只是既有状态信息的横幅小幅改变；reach为离开页面仍可获知事件的小幅覆盖；economics没有已证成本结构变化或测量，不给节省贡献。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 31,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1402940561-root-source"
+                        "2026-10-22-02-github-1402940561-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "macOS后台任务用户可试完成与问题提醒；先限制敏感摘要和声音，验通知权限，点击后仍手动定位具体会话。",
+                "reason": "适合Mac个人用户在非敏感任务受控试用提醒，保留DSH轨迹复核并核对跨会话去重、通知权限与正确返回，不作为可靠送达或完成证明。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "后台任务阻塞时叫回单人用户是清楚需求。"
+                        "rationale": "无人值守长会话人工接手需求明确，实际频率和到达改善未测。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "多事件串行通知及系统工具回退减少盯屏。"
+                        "score": 13,
+                        "rationale": "减少主动查看的集成路径可查，去重漏报和返回限制压低优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核节流、通知和URL前缀定位，未证Focus下送达。"
+                        "rationale": "固定入口和helper源码已读，自测只静态阅读，仅源码最高50%档。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无新增API，系统权限和同文去重为主要成本，试用可回退。"
+                        "score": 10,
+                        "rationale": "无npm运行依赖，但外部程序、权限、隐私留存和诊断负担仍存在。"
                     }
                 },
-                "score": 70,
+                "score": 59,
                 "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T04:54:52.414Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1402940561-root-source"
+                    "2026-10-22-02-github-1402940561-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,33 +400,34 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "da018cd5cf80f8b909423cbd636739b05b3a337cdbcbc890731b9e03d922b2e4"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "9c3286afcd8e755c1bd972d3da0018427716071fdd83d59cade2dd3c06fc573a"
         },
         "publication.metadata": "data/plugins/ak-blank--dsh-plugin-mac-notify/META.json",
         "publication.summaries": {
-            "text": "把 DSH 完成、提问、审批与报错转为 macOS 原生通知。",
+            "text": "在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。",
             "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
             "source_url": "https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/README.md"
         },
         "publication.capabilities": {
             "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
             "items": {
-                "事件监听": "监听 agent/status、session/event、提问、审批及错误等 Host 事件。",
-                "后台": "串行发送系统通知并选择 terminal-notifier/osascript 与声音后端。"
-            }
+                "事件监听": "全局监听agent状态/错误/销毁、session创建/事件/销毁、问题请求及批准请求",
+                "后台": "排队系统通知、去重与pacing；点击helper按运行浏览器尝试聚焦"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 回合及错误通知 | 告知idle或报错 | 不代表业务目标完成 |\n| 问题与批准提醒 | 呼叫人工回到DSH | urgent跳过pacing但仍受同内容去重 |\n| 通知过滤 | 开关、子Agent排除、节奏控制 | key不含会话，跨会话同正文可能抑制 |\n| 点击返回 | 聚焦运行浏览器或open | 需notifier和Automation；前缀匹配非精确会话 |\n| 调试trace | 区分发送、跳过和失败 | 包含banner正文，需控制敏感留存 |\n"
         },
         "publication.advice": {
             "revision": "a9ef9439a1e8f7957a402c742bc639919ab1d1c8",
-            "text": "有后台任务提醒需求的 macOS 用户可将其列入候选；涉及敏感输出时先限制摘要与声音，是否适用取决于通知权限和多会话定位要求。"
+            "text": "Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话和返回归属；通知漏掉关键事件时回DSH直接观察，不当作审批执行或业务完成证明。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/ak-blank--dsh-plugin-mac-notify",
-        "reports": "# mac-notify\n\n> 把 DSH 完成、提问、审批与报错转为 macOS 原生通知。\n\n## 使用建议\n\n有后台任务提醒需求的 macOS 用户可将其列入候选；涉及敏感输出时先限制摘要与声音，是否适用取决于通知权限和多会话定位要求。\n\n核查状态：事件到通知的机制已有源码支撑；减少等待与正确返回会话的效果尚未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：适合把长任务留在后台、需要被叫回处理问题或审批的 macOS 单人用户；交付物是可感知的提醒和返回 Web 的入口。\n- **亮点**：相较盯着 Web 页或给每个任务写通知脚本，贡献在于把“完成”和“等待人介入”统一映射到宿主事件，并让通知失败不阻塞原审批/提问流水线。它改善人机交接的可见性，未改变审批规则或任务执行结果。\n- **思考**：通知是否真正把人带回正确上下文？click.mjs 按 Web URL 前缀寻找浏览器标签，只指向站点而非具体 session；多会话同站点时仍需人工定位。成功启动通知进程也不能证明 Focus/通知权限下人已收到，摘要还会把助手文本展示到系统通知中心。\n- **建议**：若在通知载荷中加入可验证的会话深链接，并对尚未解决的提问/审批进行状态合并，可能比站点级提醒缩短有效响应时间。以双会话并发和重复事件回放比较“点击后到正确问题”的操作数与误定位率；没有降低误定位则否定此增量。\n\n## 场景与替代办法\n\n适合把长任务留在后台、需要被叫回处理问题或审批的 macOS 单人用户；交付物是可感知的提醒和返回 Web 的入口。\n\n原有办法是 Web 状态提示、轮询页面或外部脚本通知；本项把宿主语义纳入提醒，未新增远程协作流程。\n\n## 能力清单\n\n- **事件监听**：监听 agent/status、session/event、提问、审批及错误等 Host 事件。\n- **后台**：串行发送系统通知并选择 terminal-notifier/osascript 与声音后端。\n\n## 依赖与流程\n\nHost 监听运行状态、会话消息、问题、审批及错误；running→idle 才产生完成通知，记录最近助手文本作为摘要。通知经串行队列发送，优先 terminal-notifier，缺失时退回 osascript；问题与审批绕过普通节流，但相同内容五秒内仍去重。\n\n依赖 macOS、Node 与 DSH 事件/会话服务；terminal-notifier 为可选能力，其他平台不发送通知。\n\n用户启动任务后插件被动监听；提问/审批处理器通知后总是 next()，人仍回原界面处理；结束与错误根据配置触发，dispose 清理监听和缓存。\n\n包以 Cordis bundle patch 装入，Host 依赖 sessions/webServer 等服务；可选 terminal-notifier 增强点击，内置 osascript 降级。\n\n## 成本与效果\n\n现金：无新增模型/API调用，系统工具可用性与可选通知器自行承担。人工：通知权限、浏览器 Automation 权限及声音策略配置；失败后仍需回 Web 检查。高并发摘要去重可能省打扰，也可能漏掉不同会话的相同提示。\n\n价值来自缩短人未察觉的阻塞时间；不提供审批决策、远端推送或可证明的送达回执。\n\n## 核心贡献\n\n相较盯着 Web 页或给每个任务写通知脚本，贡献在于把“完成”和“等待人介入”统一映射到宿主事件，并让通知失败不阻塞原审批/提问流水线。它改善人机交接的可见性，未改变审批规则或任务执行结果。\n\n## 关键质疑\n\n通知是否真正把人带回正确上下文？click.mjs 按 Web URL 前缀寻找浏览器标签，只指向站点而非具体 session；多会话同站点时仍需人工定位。成功启动通知进程也不能证明 Focus/通知权限下人已收到，摘要还会把助手文本展示到系统通知中心。\n\n## 工程亮点\n\nexecFile 传 argv，AppleScript 从 argv 取用户文本；点击帮助器只探测已运行浏览器并有单调用超时。运行时可注入 exec/时钟便于隔离测试。通知排队与失败列表有处理，但送达账本仅内存，重启不会恢复等待事项。\n\n固定源码依据：[lib/index.js](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js)、[lib/click.mjs](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/click.mjs)、[cordis.patch.yml](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/cordis.patch.yml)、[package.json](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/package.json)。\n\n## 未来设计假设（未验证）\n\n若在通知载荷中加入可验证的会话深链接，并对尚未解决的提问/审批进行状态合并，可能比站点级提醒缩短有效响应时间。以双会话并发和重复事件回放比较“点击后到正确问题”的操作数与误定位率；没有降低误定位则否定此增量。\n\n最小验证只提出方案，未运行：同时打开同一站点两个会话，触发审批与相同完成文本，记录去重、通知展示和点击定位；单独检查拒绝 Automation 权限时的降级。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d426068aeaa55aadee392f5ff8b115cac57c89beca7cce8e9650c072b957cde1。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 3 | 1215 | 948 | 154 | — |\n| .js | source | 1 | 890 | 623 | 193 | — |\n| .md | source | 2 | 417 | — | — | 3621 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：1.0.0；版本日期：2026-10-03（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[a9ef9439](https://github.com/AK-blank/dsh-plugin-mac-notify/tree/a9ef9439a1e8f7957a402c742bc639919ab1d1c8)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：仅根组件 Host 通知实现、点击帮助器、注册清单和说明；读取自测设计但未执行，未核验作者所称宿主兼容。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-plugin-mac-notify\n\n> 在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。\n\n## 研究范围\n\n- **仓库**：[AK-blank/dsh-plugin-mac-notify](https://github.com/AK-blank/dsh-plugin-mac-notify)\n- **版本号**：1.0.0（[固定提交 a9ef9439a1e8f7957a402c742bc639919ab1d1c8](https://github.com/AK-blank/dsh-plugin-mac-notify/tree/a9ef9439a1e8f7957a402c742bc639919ab1d1c8)）\n- **版本日期**：2026-10-03（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持宿主事件到系统通知的集成贡献；用户响应收益未测，跨会话去重与前缀返回有静态限制；事件收据为未实现假设。\n\n## 洞察短评\n\n- **用途**：Mac个人用户让长会话自行运行后收到人工接手提醒，合格结果须能识别事件并返回处理，不把idle当业务成功。\n- **亮点**：把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。\n- **思考**：去重key不含会话，紧急事件也先受同正文去重；点击按URL前缀只保证尝试返回页面。默认正文及trace含任务内容，均需隐私和多会话判断，未做漏报或误聚焦复现。详见[Q03](#research-q03)。\n- **建议**：可探索按会话/请求身份去重与分层发送收据，在双会话同问和失败重试中比较覆盖、重复噪声与敏感留存；未实现，不冒称用户已读。详见[Q06](#research-q06)。\n\n采用建议：Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话和返回归属；通知漏掉关键事件时回DSH直接观察，不当作审批执行或业务完成证明。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。\n\n## 关键质疑\n\n去重key不含会话，紧急事件也先受同正文去重；点击按URL前缀只保证尝试返回页面。默认正文及trace含任务内容，均需隐私和多会话判断，未做漏报或误聚焦复现。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索按会话/请求身份去重与分层发送收据，在双会话同问和失败重试中比较覆盖、重复噪声与敏感留存；未实现，不冒称用户已读。详见[Q06](#research-q06)。\n\n进一步探讨可从双会话同问、发送失败重试和双端口浏览器页签入手，比较关键事件覆盖、误聚焦、重复打扰与正文留存。\n\n## 场景与替代办法\n\nMac个人用户让长会话自行运行后收到人工接手提醒，合格结果须能识别事件并返回处理，不把idle当业务成功。\n\n手工查看DSH或终端是直接替代；插件减少主动观察步骤，未证明人工响应时长下降。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| macOS与Node>=18 | 通知必需/包声明 | 宿主ESM与系统通知 | 非macOS返回无发送的runtime清理 |\n| DSH宿主事件与ctx.on | 接线必需 | 全局接收状态、问题和批准 | 单事件注册失败记warning，其余继续 |\n| osascript | 基础通知后端 | 系统内建横幅 | 失败记trace，不能保证可见 |\n| terminal-notifier与通知授权 | 点击返回分支需要 | 可点击横幅及系统声音 | 缺binary退osascript；存在但权限拒绝记失败 |\n| 浏览器Automation权限 | 聚焦分支需要 | 读标签并激活 | 拒绝后尝试open，可能新开标签 |\n| 正确URL或webServer端口 | 返回入口需要 | 确定实例目标 | 无目标时没有可用返回链接 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户确认正文可进入通知中心，检查系统通知策略 | 不把截断当脱敏 |\n| 加载 | 安装固定来源宿主bundle，升级后重启DSH | 宿主事件监听生效，不依赖刷新网页 |\n| 授权 | 如需点击，用户安装并允许notifier及浏览器Automation | 无权限时接受降级或关闭点击 |\n| 使用与排查 | 用轨迹和trace区分disabled/duplicate/paced/failure | trace也含正文，应控制留存 |\n| 退出 | 关闭事件或总开关，移除后重启 | 不假定已排队子进程被即时取消 |\n\n不要把“无npm运行依赖”理解成无外部程序或权限。后端选择只检测notifier路径，通知权限失败并不等价于binary不存在，因此不能保证自动改用osascript。宿主服务读取缺失会降级副标题和自动URL，但这也可能减少正确定位信息。\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主/notifier/浏览器资源，金额未知 | 安装、重启、通知及Automation授权、隐私判断 | 没有通用配置耗时 |\n| 持续使用 | 发送及声音子进程、点击时逐浏览器探测 | 处理横幅、辨别会话、复核正文 | 每通知开销和中断负担未测 |\n| 失败恢复 | 重新通知、open新标签、trace文件留存 | 诊断权限、核对URL、发现被去重通知 | 需要回DSH轨迹确认未处理事件 |\n\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 提醒人工接手 | 状态、问题、批准、错误处理器可查 | 真正被用户看到及处理的比例 |\n| 降低打扰 | 子Agent过滤、去重和节奏 | 降噪收益是否超过跨会话漏报风险 |\n| 返回入口 | 运行浏览器前缀聚焦及open回退 | 是否回到准确实例/会话及响应耗时 |\n\n串行pending避免同时起通知链，但积压会拖延后续紧急通知；urgent只跳过节奏，不插队。每个通知进程有超时，点击helper每个探测也有超时，不等于全流程固定上限。没有任务成功数、总人工时间和失败恢复次数，不能给净节时、低打扰或ROI数值。\n\n## 研究问题与完整回答\n\n**插件研究总目标：**判断固定版本Mac通知链的人工接手价值、隐私与可靠性边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要哪些事件通知，什么才算任务完成？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n面向在Mac上让DSH长任务自行运行、暂时离开浏览器或终端的个人用户。插件在running转idle、需要回答、需要批准和Agent报错时发系统横幅，帮助用户回来处理卡点。合格结果应是关键事件被及时提醒、能辨别所属任务并回到对应处理界面；横幅出现本身不能证明用户已经处理或任务交付合格。\n\n原有办法是频繁查看DSH、观察终端或手工加系统提醒。插件把宿主事件变成统一通知，减少主动轮询。默认不提醒子Agent，避免多Agent放大噪声；但idle只代表一轮结束，不代表业务成功。源码根据本轮是否观察到错误调整结束标题，仍不知道用户目标是否满足。\n\n通知正文会展示最后助手文本、问题选项或批准原因，因此适合能接受本机通知中心呈现任务摘要的人。对共享屏幕、锁屏隐私敏感场景或要求精确回到某个会话的人，默认行为和返回范围都需额外判断。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:19-30](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/README.md#L19-L30)\n\n作者列出事件、正文和降噪主张。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n## What it notifies\n\n| Host event | When | Banner |\n|---|---|---|\n| `agent/status` → `idle` | the turn ended (a `running` → `idle` transition) | `DSH · 任务完成`, body = the last assistant text |\n| `user-questions/request` | the agent called `ask_user_question` and is blocked | `DSH · 需要你的回答`, body = header · question · options |\n| `approval/request` | the agent is waiting on an approval decision | `DSH · 需要你的批准`, body = the reason or the tool name |\n| `agent/error` | a step or turn errored | `DSH · 执行出错`; the closing banner then reads `任务结束（有报错）` |\n\nSubagent children stay silent (`includeSubagents: false` by default), identical\nbanners inside 5 s collapse into one, and consecutive non-urgent banners respect\na pacing gap — while a question or approval always gets through.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:643-670](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L643-L670)\n\n仅running到idle触发完成，标题随错误状态变化，不校验业务交付。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n  /** `agent/status` — the only signal that says \"the turn is over\". */\n  const status = (payload) => {\n    try {\n      const agent = payload?.agent\n      const next = payload?.status\n      if (!agent || (next !== 'idle' && next !== 'running')) return\n      const previous = state.status.get(agent.id)\n      state.status.set(agent.id, next)\n      if (next === 'running') {\n        state.errored.set(agent.id, false)\n        return\n      }\n      if (previous !== 'running') return\n      const failed = state.errored.get(agent.id) === true\n      const text = state.lastText.get(agent.id)\n      const body = text\n        ? truncate(text, config.bodyMaxChars)\n        : failed\n          ? copy.errorFallback\n          : copy.finishFallback\n      void notify(\n        'finish',\n        {\n          title: title(failed ? copy.finishError : copy.finish),\n          subtitle: workspaceOf(agent.id),\n          body,\n        },\n        agent.id,\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 事件到通知与点击返回的链路及贡献是什么？\n\n**研究主题：**功能与机制、贡献与相对优势\n\n#### 完整回答\n\n宿主apply创建runtime并仅在darwin注册8类全局事件。session事件缓存最后文本和头信息，状态、错误、问题与批准处理器拼装标题、副标题和正文。问题/批准处理器始终继续调用next，通知失败也不阻塞原交互。notify先按开关和子Agent过滤，再进行同内容去重和非紧急节奏控制，最终经串行pending链发送。\n\n后端优先寻找terminal-notifier，不存在则用系统osascript。前者支持点击执行helper或打开URL，后者只提供文字和声音。通知文本作为execFile argv进入固定AppleScript；click命令中的Node路径、helper与URL逐个shell quote，避免把正文插入执行源码。点击目标优先配置URL，其次宿主webServer端口，最后环境变量。\n\nhelper先用pgrep寻找正在运行的候选浏览器，再通过AppleScript首个URL前缀匹配激活页签，找不到则用open。贡献是把DSH的关键人工接手点、降噪、系统声音和返回入口组合为可配置的本机通知链。系统通知、AppleScript和浏览器激活属于成熟机制，不能归为插件新发明；可借鉴的是事件失败隔离与数据/代码分离，而非已证明的用户响应速度提升。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:851-888](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L851-L888)\n\nmacOS范围、全局事件注册和disposer。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  const runtime = createRuntime({ ctx, config, env: process.env })\n  const { handlers } = runtime\n\n  if (!runtime.supported) {\n    ctx.logger?.debug?.('[mac-notify] macOS only: delivery is disabled on this platform')\n    return () => runtime.dispose()\n  }\n\n  const listeners = [\n    ['agent/status', handlers.status],\n    ['agent/error', handlers.error],\n    ['agent/disposed', handlers.agentDisposed],\n    ['session/created', handlers.sessionCreated],\n    ['session/event', handlers.sessionEvent],\n    ['session/disposed', handlers.sessionDisposed],\n    ['user-questions/request', handlers.question],\n    ['approval/request', handlers.approval],\n  ]\n\n  const disposers = []\n  for (const [name, listener] of listeners) {\n    try {\n      disposers.push(ctx.on(name, listener, { global: true }))\n    } catch (error) {\n      ctx.logger?.warn?.(`[mac-notify] could not subscribe ${name}: ${error?.message ?? error}`)\n    }\n  }\n\n  return () => {\n    for (const dispose of disposers) {\n      try {\n        dispose?.()\n      } catch {\n        /* ignore */\n      }\n    }\n    runtime.dispose()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:603-635](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L603-L635)\n\n过滤、去重、节奏和发送队列。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  const notify = (kind, notification, sessionId) => {\n    const refused = (() => {\n      if (!config[KIND_SWITCH[kind]] || !allows(sessionId)) return 'disabled'\n      const at = now()\n      const key = `${notification.title}\\u0000${notification.body}`\n      if (key === state.lastKey && at - state.lastSentAt < IDENTICAL_WINDOW_MS) return 'duplicate'\n      if (!URGENT_KINDS.has(kind) && config.minIntervalMs > 0 && at - state.lastSentAt < config.minIntervalMs) {\n        return 'paced'\n      }\n      state.lastKey = key\n      state.lastSentAt = at\n      return ''\n    })()\n\n    if (refused) {\n      state.skipped += 1\n      trace(env, { event: 'skip', kind, reason: refused, ...notification })\n      return Promise.resolve({ delivered: false, reason: refused })\n    }\n\n    const banner = {\n      title: notification.title,\n      subtitle: notification.subtitle ?? '',\n      body: notification.body,\n      sound: config.sound,\n    }\n    state.pending = state.pending.then(\n      () => post(banner),\n      () => post(banner),\n    )\n    return state.pending.then((result) => ({\n      delivered: result.ok === true,\n      reason: result.dryRun ? 'dry-run' : undefined,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:242-291](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L242-L291)\n\n文本argv与点击命令构造。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nexport function buildOsascriptArgs(notification) {\n  const { title, subtitle, body, sound } = notification\n  const lines = [\n    'on run argv',\n    'set theTitle to item 1 of argv',\n    'set theSubtitle to item 2 of argv',\n    'set theBody to item 3 of argv',\n    'set theSound to item 4 of argv',\n    'if theSubtitle is \"\" then',\n    'if theSound is \"\" then',\n    'display notification theBody with title theTitle',\n    'else',\n    'display notification theBody with title theTitle sound name theSound',\n    'end if',\n    'else',\n    'if theSound is \"\" then',\n    'display notification theBody with title theTitle subtitle theSubtitle',\n    'else',\n    'display notification theBody with title theTitle subtitle theSubtitle sound name theSound',\n    'end if',\n    'end if',\n    'end run',\n  ]\n  const args = []\n  for (const line of lines) args.push('-e', line)\n  args.push(String(title ?? ''), String(subtitle ?? ''), String(body ?? ''), String(sound ?? ''))\n  return args\n}\n\n/** Single-quote one shell word for the `sh -c` that runs a click command. */\nexport function shellQuote(value) {\n  return `'${String(value).replace(/'/g, `'\\\\''`)}'`\n}\n\n/**\n * Build the `terminal-notifier` argv for one banner.\n * @param notification - `{ title, subtitle, body, sound }` plus the click action.\n * @param click - `{ mode, url, command }`.\n * @returns argv for the notifier binary.\n */\nexport function buildTerminalNotifierArgs(notification, click) {\n  const args = [\n    '-title', String(notification.title ?? ''),\n    '-message', String(notification.body ?? ''),\n  ]\n  if (notification.subtitle) args.push('-subtitle', String(notification.subtitle))\n  if (notification.sound) args.push('-sound', String(notification.sound))\n  if (click?.mode === 'focus' && click.command) args.push('-execute', click.command)\n  else if (click?.mode === 'open' && click.url) args.push('-open', click.url)\n  return args\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/click.mjs:111-126](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/click.mjs#L111-L126)\n\n顺序查找运行浏览器，失败回退open。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nasync function main() {\n  target = String(process.argv[2] ?? '').trim()\n  if (!/^https?:\\/\\//.test(target)) return\n\n  const candidates = [\n    ...CHROMIUM.map((entry) => ({ ...entry, script: CHROMIUM_SCRIPT })),\n    ...WEBKIT.map((entry) => ({ ...entry, script: WEBKIT_SCRIPT })),\n  ]\n\n  for (const candidate of candidates) {\n    if (!(await isRunning(candidate.process))) continue\n    // The source reads the URL from argv, so no value is interpolated as code.\n    if (await focusIn(candidate.app, candidate.script)) return\n  }\n\n  await run('/usr/bin/open', [target])\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 哪些限制会影响隐私或返回正确性，工程可借鉴什么？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n最关键的可靠性限制在跨会话去重。key只由title与body构成，未包含sessionId或subtitle；5秒内不同会话发相同问题或批准内容可被当重复跳过。紧急类型绕过的是pacing，不绕过更早的duplicate检查，因此作者“问题或批准总能通过”不是无条件成立。lastSentAt在真正发送成功前更新，发送失败后的相同通知也可能暂时被去重。本次为源码推导，未执行漏报复现。\n\n点击只匹配URL字符串前缀，不按origin与端口边界解析，也不携带目标会话路由。目标http://127.0.0.1:3080可与30800前缀重叠，先找到的页签未必就是预期实例；即便实例正确，也只保证返回DSH页面而非本次发通知的会话。浏览器权限拒绝会降级新开标签，不提供已聚焦或用户已读确认。\n\n隐私上，默认最后回复与提问/批准文本进入通知中心，启用JSONL trace还把banner内容写文件。截断是长度限制，不是敏感信息脱敏。工程优点是纯构造函数、可注入exec/exists/clock、事件异常隔离和disposer清理；自测用stub支持逻辑核查，不证明系统通知授权或真实浏览器自动化。发送pending在dispose时未取消，只清内存状态，热停用后的排队通知还需具体生命周期研究。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:603-619](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L603-L619)\n\n去重先于urgent pacing，key不含会话及subtitle。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  const notify = (kind, notification, sessionId) => {\n    const refused = (() => {\n      if (!config[KIND_SWITCH[kind]] || !allows(sessionId)) return 'disabled'\n      const at = now()\n      const key = `${notification.title}\\u0000${notification.body}`\n      if (key === state.lastKey && at - state.lastSentAt < IDENTICAL_WINDOW_MS) return 'duplicate'\n      if (!URGENT_KINDS.has(kind) && config.minIntervalMs > 0 && at - state.lastSentAt < config.minIntervalMs) {\n        return 'paced'\n      }\n      state.lastKey = key\n      state.lastSentAt = at\n      return ''\n    })()\n\n    if (refused) {\n      state.skipped += 1\n      trace(env, { event: 'skip', kind, reason: refused, ...notification })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/click.mjs:37-65](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/click.mjs#L37-L65)\n\nAppleScript以URL starts with target首匹配，不做origin解析。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nconst CHROMIUM_SCRIPT = `on run argv\nset target to item 1 of argv\ntell application \"%APP%\"\nrepeat with w in windows\nset i to 0\nrepeat with t in tabs of w\nset i to i + 1\nif (URL of t) starts with target then\nset active tab index of w to i\nset index of w to 1\nactivate\nreturn \"focused\"\nend if\nend repeat\nend repeat\nend tell\nreturn \"absent\"\nend run`\n\nconst WEBKIT_SCRIPT = `on run argv\nset target to item 1 of argv\ntell application \"%APP%\"\nrepeat with w in windows\nrepeat with t in tabs of w\nif (URL of t) starts with target then\nset current tab of w to t\nset index of w to 1\nactivate\nreturn \"focused\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:550-583](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L550-L583)\n\ntrace写入banner/payload；长度限制不等于脱敏。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  const post = async (banner) => {\n    const chosen = backend()\n    const click = chosen.kind === 'terminal-notifier' ? clickFor() : { mode: 'none' }\n\n    // A dry run must observe the decision without spawning anything.\n    if (dryRun) {\n      trace(env, { event: 'deliver', backend: chosen.kind, dryRun, click: click.mode, ...banner })\n      return { ok: true, dryRun: true }\n    }\n\n    let soundName = ''\n    let soundFile = ''\n    if (config.sound === 'default') {\n      const resolved = await resolveAlertSound()\n      soundName = resolved.name\n      soundFile = resolved.name ? '' : resolved.path\n    } else if (config.sound !== 'off') {\n      soundName = config.sound\n    }\n    const payload = { ...banner, sound: soundName }\n\n    trace(env, { event: 'deliver', backend: chosen.kind, dryRun, click: click.mode, ...payload })\n\n    // The banner is the graded job; a fallback sound rides along and never gates it.\n    const sound = soundFile\n      ? runExec(exec, AFPLAY, [soundFile], { timeout: 10_000 }).then((outcome) => {\n          if (!outcome.ok) trace(env, { event: 'sound-failed', error: outcome.error })\n        })\n      : Promise.resolve()\n\n    const notice =\n      chosen.kind === 'terminal-notifier'\n        ? runExec(exec, chosen.path, buildTerminalNotifierArgs(payload, click), { timeout: 10_000 })\n        : runExec(exec, OSASCRIPT, buildOsascriptArgs(payload), { timeout: 10_000 })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:818-825](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L818-L825)\n\ndispose只清状态表，没有取消pending队列。\n\n```text\n    /** Await every queued delivery (tests and shutdown paths). */\n    flush: () => state.pending,\n    dispose: () => {\n      state.status.clear()\n      state.lastText.clear()\n      state.errored.clear()\n      state.headers.clear()\n    },\n```\n\n#### 缺口\n\n- 跨会话相同正文抑制、前缀误匹配及热停用队列行为未做复现。\n  **影响：**不能保证每个紧急请求都提醒，也不能保证点击返回正确实例或会话。\n  **进一步探讨：**继续探讨可从双会话同问、3080/30800双实例和发送中禁用的可控事件序列入手，观察丢失与归属。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动、生效与失败恢复依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| macOS与Node>=18 | 通知必需/包声明 | 宿主ESM与系统通知 | 非macOS返回无发送的runtime清理 |\n| DSH宿主事件与ctx.on | 接线必需 | 全局接收状态、问题和批准 | 单事件注册失败记warning，其余继续 |\n| osascript | 基础通知后端 | 系统内建横幅 | 失败记trace，不能保证可见 |\n| terminal-notifier与通知授权 | 点击返回分支需要 | 可点击横幅及系统声音 | 缺binary退osascript；存在但权限拒绝记失败 |\n| 浏览器Automation权限 | 聚焦分支需要 | 读标签并激活 | 拒绝后尝试open，可能新开标签 |\n| 正确URL或webServer端口 | 返回入口需要 | 确定实例目标 | 无目标时没有可用返回链接 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户确认正文可进入通知中心，检查系统通知策略 | 不把截断当脱敏 |\n| 加载 | 安装固定来源宿主bundle，升级后重启DSH | 宿主事件监听生效，不依赖刷新网页 |\n| 授权 | 如需点击，用户安装并允许notifier及浏览器Automation | 无权限时接受降级或关闭点击 |\n| 使用与排查 | 用轨迹和trace区分disabled/duplicate/paced/failure | trace也含正文，应控制留存 |\n| 退出 | 关闭事件或总开关，移除后重启 | 不假定已排队子进程被即时取消 |\n\n不要把“无npm运行依赖”理解成无外部程序或权限。后端选择只检测notifier路径，通知权限失败并不等价于binary不存在，因此不能保证自动改用osascript。宿主服务读取缺失会降级副标题和自动URL，但这也可能减少正确定位信息。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:32-44](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/README.md#L32-L44)\n\n作者说明平台、notifier与通知权限条件。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Requirements\n\n- macOS. On any other platform the plugin activates, logs a debug line, and\n  sends nothing.\n- Optional, for click-to-open: [`terminal-notifier`](https://github.com/julienXX/terminal-notifier)\n  (`brew install terminal-notifier`). Without it the plugin falls back to the\n  `osascript` banner every macOS ships — same text, same sound, no click action.\n\nOn recent macOS an ad-hoc signed notifier is refused until you allow it once:\n**System Settings → Notifications → terminal-notifier → Allow Notifications**\n(style *Banners*, *Play notification sound* on). Until then\n`terminal-notifier -diagnose` reports `authorization: not requested yet` and\nsending returns `Notifications are not allowed for this application`.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:479-490](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L479-L490)\n\n后端根据路径与缓存选择，不是根据权限失败切换。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  const backend = () => {\n    if (config.notifier === 'osascript') return { kind: 'osascript', path: '' }\n    if (config.notifier === 'terminal-notifier') {\n      const path = findNotifier(exists, env)\n      return path ? { kind: 'terminal-notifier', path } : { kind: 'osascript', path: '' }\n    }\n    const at = now()\n    if (state.backend && at - state.backendCheckedAt < BACKEND_TTL_MS) return state.backend\n    const path = findNotifier(exists, env)\n    state.backend = path ? { kind: 'terminal-notifier', path } : { kind: 'osascript', path: '' }\n    state.backendCheckedAt = at\n    return state.backend\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:465-470](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L465-L470)\n\n点击URL来源顺序。\n\n```text\n  const targetUrl = () => {\n    if (config.url) return config.url\n    const port = readService('webServer')?.port\n    if (typeof port === 'number' && Number.isFinite(port)) return `http://127.0.0.1:${port}`\n    const fromEnv = String(env.DSH_WEB_URL ?? '').trim()\n    return /^https?:\\/\\//.test(fromEnv) ? fromEnv : ''\n```\n\n**依据 4 · 作者声明**：[README.md:112-115](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/README.md#L112-L115)\n\n作者说明浏览器Automation权限与open降级。\n\n```text\nReading another app's tabs needs macOS Automation permission, which the system\ngrants per browser on first use (click *Allow* on the “terminal-notifier wants\nto control …” prompt). A denial is not fatal: the helper falls through to\n`open`, so you land on the DSH page in a new tab instead of the existing one.\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 通知收益和全程成本能确定到哪里？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n单位任务应是一次需要人工接手的会话事件被注意到并正确处理。只统计横幅发送数不能证明减少等待或减少人工轮询。源码给出节奏、去重和过滤，但没有用户到达时间、误报/漏报率或任务恢复数据。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 本地宿主/notifier/浏览器资源，金额未知 | 安装、重启、通知及Automation授权、隐私判断 | 没有通用配置耗时 |\n| 持续使用 | 发送及声音子进程、点击时逐浏览器探测 | 处理横幅、辨别会话、复核正文 | 每通知开销和中断负担未测 |\n| 失败恢复 | 重新通知、open新标签、trace文件留存 | 诊断权限、核对URL、发现被去重通知 | 需要回DSH轨迹确认未处理事件 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 提醒人工接手 | 状态、问题、批准、错误处理器可查 | 真正被用户看到及处理的比例 |\n| 降低打扰 | 子Agent过滤、去重和节奏 | 降噪收益是否超过跨会话漏报风险 |\n| 返回入口 | 运行浏览器前缀聚焦及open回退 | 是否回到准确实例/会话及响应耗时 |\n\n串行pending避免同时起通知链，但积压会拖延后续紧急通知；urgent只跳过节奏，不插队。每个通知进程有超时，点击helper每个探测也有超时，不等于全流程固定上限。没有任务成功数、总人工时间和失败恢复次数，不能给净节时、低打扰或ROI数值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:580-591](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L580-L591)\n\n通知/声音子进程与失败保留。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    const notice =\n      chosen.kind === 'terminal-notifier'\n        ? runExec(exec, chosen.path, buildTerminalNotifierArgs(payload, click), { timeout: 10_000 })\n        : runExec(exec, OSASCRIPT, buildOsascriptArgs(payload), { timeout: 10_000 })\n\n    const [result] = await Promise.all([notice, sound])\n    if (result?.ok) state.sent += 1\n    else {\n      state.failures.push(result?.error ?? 'unknown')\n      if (state.failures.length > 20) state.failures.shift()\n      trace(env, { event: 'failure', error: result?.error })\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:603-635](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L603-L635)\n\nurgent并不插队，所有发送进入串行pending。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  const notify = (kind, notification, sessionId) => {\n    const refused = (() => {\n      if (!config[KIND_SWITCH[kind]] || !allows(sessionId)) return 'disabled'\n      const at = now()\n      const key = `${notification.title}\\u0000${notification.body}`\n      if (key === state.lastKey && at - state.lastSentAt < IDENTICAL_WINDOW_MS) return 'duplicate'\n      if (!URGENT_KINDS.has(kind) && config.minIntervalMs > 0 && at - state.lastSentAt < config.minIntervalMs) {\n        return 'paced'\n      }\n      state.lastKey = key\n      state.lastSentAt = at\n      return ''\n    })()\n\n    if (refused) {\n      state.skipped += 1\n      trace(env, { event: 'skip', kind, reason: refused, ...notification })\n      return Promise.resolve({ delivered: false, reason: refused })\n    }\n\n    const banner = {\n      title: notification.title,\n      subtitle: notification.subtitle ?? '',\n      body: notification.body,\n      sound: config.sound,\n    }\n    state.pending = state.pending.then(\n      () => post(banner),\n      () => post(banner),\n    )\n    return state.pending.then((result) => ({\n      delivered: result.ok === true,\n      reason: result.dryRun ? 'dry-run' : undefined,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/click.mjs:74-105](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/click.mjs#L74-L105)\n\n每个探测有超时且按浏览器逐一查询。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nfunction run(file, args) {\n  return new Promise((resolve) => {\n    let settled = false\n    const done = (value) => {\n      if (settled) return\n      settled = true\n      resolve(value)\n    }\n    try {\n      execFile(file, args, { timeout: TIMEOUT_MS }, (error, stdout) => {\n        done({ ok: !error, stdout: String(stdout ?? '') })\n      })\n    } catch {\n      done({ ok: false, stdout: '' })\n    }\n  })\n}\n\n/** Whether a process with this exact name is running. */\nasync function isRunning(processName) {\n  const { ok } = await run('/usr/bin/pgrep', ['-x', processName])\n  return ok\n}\n\n/** Ask one running browser to surface its DSH tab. */\nasync function focusIn(app, script) {\n  const lines = script.replace('%APP%', app).split('\\n')\n  const args = []\n  for (const line of lines) args.push('-e', line)\n  args.push(target)\n  const { ok, stdout } = await run('/usr/bin/osascript', args)\n  return ok && stdout.includes('focused')\n```\n\n</details>\n\n#### 缺口\n\n- 没有真实提醒到达率、人工响应时间和跨会话漏报对照。\n  **影响：**只能确认发送机制，不能证明通知改善任务效率。\n  **进一步探讨：**可用相同长任务/等待事件比较主动轮询与通知模式，记录用户到达、误报漏报和中断时间。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 采用结论和后续设计假设如何落地？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n建议试用，适合Mac个人用户在非敏感任务中让长会话呼叫自己回来，同时愿意保留DSH轨迹为实际状态依据。不适合把通知当审批执行、可靠送达收据或业务完成证明。先明确通知中心正文暴露范围，只开启需要的事件，核对多会话相同问题、点击正确实例和权限拒绝的降级；漏掉关键请求或不能解释返回归属时，应回到DSH直接观察。\n\n可以推导按会话和事件身份的通知收据假设。当前去重仅看标题正文，会跨会话合并；若改为稳定会话/请求ID加事件类型去重，并将“尝试发送”“后端接受”“用户聚焦”分开记录，可能减少误抑制并让故障归因更清楚。系统仍未提供用户真正处理请求的证明，不能伪造已读状态。新增收据状态和保留策略也增加隐私与维护负担。\n\n最小对照是在两个会话中安排相同问题、相同批准、发送失败重试以及多浏览器返回，比较提醒覆盖、重复打扰、错误聚焦和日志敏感内容。若精确身份只增加重复噪声或敏感留存而未减少漏报，应否定收益。该方向未实现，不加入现有创新评分；没有本轮真实安装、通知核心功能和卸载验收，不能给值得安装结论。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:603-613](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L603-L613)\n\n身份不进入去重key，是按请求收据假设的起点。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  const notify = (kind, notification, sessionId) => {\n    const refused = (() => {\n      if (!config[KIND_SWITCH[kind]] || !allows(sessionId)) return 'disabled'\n      const at = now()\n      const key = `${notification.title}\\u0000${notification.body}`\n      if (key === state.lastKey && at - state.lastSentAt < IDENTICAL_WINDOW_MS) return 'duplicate'\n      if (!URGENT_KINDS.has(kind) && config.minIntervalMs > 0 && at - state.lastSentAt < config.minIntervalMs) {\n        return 'paced'\n      }\n      state.lastKey = key\n      state.lastSentAt = at\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:633-636](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/index.js#L633-L636)\n\ndelivered只是后端结果，未包含用户已读或处理确认。\n\n```text\n    return state.pending.then((result) => ({\n      delivered: result.ok === true,\n      reason: result.dryRun ? 'dry-run' : undefined,\n    }))\n```\n\n**依据 3 · 源码核查**：[lib/click.mjs:120-126](https://github.com/AK-blank/dsh-plugin-mac-notify/blob/a9ef9439a1e8f7957a402c742bc639919ab1d1c8/lib/click.mjs#L120-L126)\n\n点击仅尝试聚焦或open，不知道用户处理结果。\n\n```text\n  for (const candidate of candidates) {\n    if (!(await isRunning(candidate.process))) continue\n    // The source reads the URL from argv, so no value is interpolated as code.\n    if (await focusIn(candidate.app, candidate.script)) return\n  }\n\n  await run('/usr/bin/open', [target])\n```\n\n#### 缺口\n\n- 按事件身份的通知收据是否兼顾提醒覆盖、噪声与隐私尚无结果。\n  **影响：**仍是设计假设，不提升当前可靠性保证。\n  **进一步探讨：**可先用可控双会话事件与发送失败重试比较漏报和重复提醒，再评估收据保留边界。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d426068aeaa55aadee392f5ff8b115cac57c89beca7cce8e9650c072b957cde1。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 3 | 1215 | 948 | 154 | — |\n| .js | source | 1 | 890 | 623 | 193 | — |\n| .md | source | 2 | 417 | — | — | 3621 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 回合及错误通知 | 告知idle或报错 | 不代表业务目标完成 |\n| 问题与批准提醒 | 呼叫人工回到DSH | urgent跳过pacing但仍受同内容去重 |\n| 通知过滤 | 开关、子Agent排除、节奏控制 | key不含会话，跨会话同正文可能抑制 |\n| 点击返回 | 聚焦运行浏览器或open | 需notifier和Automation；前缀匹配非精确会话 |\n| 调试trace | 区分发送、跳过和失败 | 包含banner正文，需控制敏感留存 |\n\n\n## 工程亮点\n\n最关键的可靠性限制在跨会话去重。key只由title与body构成，未包含sessionId或subtitle；5秒内不同会话发相同问题或批准内容可被当重复跳过。紧急类型绕过的是pacing，不绕过更早的duplicate检查，因此作者“问题或批准总能通过”不是无条件成立。lastSentAt在真正发送成功前更新，发送失败后的相同通知也可能暂时被去重。本次为源码推导，未执行漏报复现。\n\n点击只匹配URL字符串前缀，不按origin与端口边界解析，也不携带目标会话路由。目标http://127.0.0.1:3080可与30800前缀重叠，先找到的页签未必就是预期实例；即便实例正确，也只保证返回DSH页面而非本次发通知的会话。浏览器权限拒绝会降级新开标签，不提供已聚焦或用户已读确认。\n\n隐私上，默认最后回复与提问/批准文本进入通知中心，启用JSONL trace还把banner内容写文件。截断是长度限制，不是敏感信息脱敏。工程优点是纯构造函数、可注入exec/exists/clock、事件异常隔离和disposer清理；自测用stub支持逻辑核查，不证明系统通知授权或真实浏览器自动化。发送pending在dispose时未取消，只清内存状态，热停用后的排队通知还需具体生命周期研究。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/click.mjs、selftest.mjs、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码检查宿主事件、runtime、argv、点击helper及部分自测结构；未执行通知、声音、浏览器或安装，未复现静态风险。\n- 下一步：进一步探讨可从双会话同问、发送失败重试和双端口浏览器页签入手，比较关键事件覆盖、误聚焦、重复打扰与正文留存。\n",
         "metadata": {
             "repository": "AK-blank/dsh-plugin-mac-notify",
             "repository_id": 1402940561,
-            "captured_at": "2026-10-21T05:33:22.657Z",
-            "window_start": "2026-09-21T05:33:22.657Z",
+            "captured_at": "2026-10-22T04:52:29.427Z",
+            "window_start": "2026-09-22T04:52:29.427Z",
             "stars": 1,
             "pushed_at": "2026-10-03T09:35:58Z",
             "issues": {
@@ -388,25 +435,20 @@
                 "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
-                "updated_30d": null
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-plugin-mac-notify%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A22.657Z..2026-10-21T05%3A33%3A22.657Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB84:27DDDF:536B5F:59746E:6AD84EA8 and timestamp 2026-10-21 05:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-plugin-mac-notify",
-                "captured_at": "2026-10-21T05:33:29.060Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T04:52:37.422Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-plugin-mac-notify",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-mac-notify",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T04:52:37.422Z",
                     "source_url": "https://registry.npmjs.org/dsh-plugin-mac-notify",
                     "error": "HTTP 404",
                     "latest_version": null,

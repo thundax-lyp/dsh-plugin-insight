@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-08-github-1389061748-root-directory-0",
+                    "id": "2026-10-22-02-github-1389061748-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:48:29.866Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:47:33.903Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-08-github-1389061748-root-author",
+                    "id": "2026-10-22-02-github-1389061748-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "README.md",
+                            "content_sha256": "32eb461518d7c2662ca7404e8fceb711f9d473b239e4abbbc4f1562505c5444c"
+                        }
+                    ],
                     "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
-                    "captured_at": "2026-10-20T10:48:29.866Z",
-                    "summary": "在 DSH 侧栏显示加密货币价格、涨跌与走势图，支持多来源降级。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:47:33.903Z",
+                    "summary": "在 DSH Web/Desktop 侧栏显示多源加密货币价格、24 小时涨跌与迷你走势。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-08-github-1389061748-root-source",
+                    "id": "2026-10-22-02-github-1389061748-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js",
+                    "url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "README.md",
+                            "content_sha256": "32eb461518d7c2662ca7404e8fceb711f9d473b239e4abbbc4f1562505c5444c"
+                        },
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "package.json",
+                            "content_sha256": "6653cc6118ff9cdf44c83e010bc3f77ce94e78cf9d19aef020bb5ec19aaa604e"
+                        },
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "index.js",
+                            "content_sha256": "9057b4ce4df56a04344d2cfdd72e1b9f15f46cdf2f1e4b7ad087ae3762caa543"
+                        },
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "client.js",
+                            "content_sha256": "d52dfacf0d64b6554357baf4910d887d00b3b0023b014c19895e53241ffedfeb"
+                        },
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "https.mjs",
+                            "content_sha256": "f155413ed336fd60e39e229155036cd931bcac727f5fc213385f3432aa2b388b"
+                        },
+                        {
+                            "repository_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker",
+                            "commit": "84f1be429c04c5d426e54d02b993d8972d4d841d",
+                            "path": "tests/smoke.mjs",
+                            "content_sha256": "f5a3d29c49b37cbba8f245d42a7f6140c7912122f96608a828520b923885361c"
+                        }
+                    ],
                     "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
-                    "captured_at": "2026-10-20T10:48:29.866Z",
-                    "summary": "核查 index.js、https.mjs；宿主 API 汇聚 OKX、Binance、CoinGecko，缓存报价和趋势，浏览器轮询；lastGood 保留失败时旧报价，逐币 stale 指示缺失。",
-                    "artifact": "data/runs/2026-10-20-08/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:47:33.903Z",
+                    "summary": "核查 README.md、package.json、index.js、client.js、https.mjs、tests/smoke.mjs；Host Connection 路由串行查询 OKX、Binance、CoinGecko，缓存与旧价兜底；浏览器组件轮询渲染。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/18569663yz-web--dsh-plugin-crypto-ticker/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                        "只读核固定提交 README、Host/Client、传输层与作者测试；未执行目标代码、核实时行情/网络或真实 GUI；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望在 DSH 工作时顺手看常用代币行情的个人用户；合格输出是标明来源、新旧状态的参考报价。",
+                    "text": "个人在 DSH 侧栏快速参考 USDT 现货行情；合格信息须含来源、逐币采集时间和陈旧标识。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "宿主 API 汇聚 OKX、Binance、CoinGecko，缓存报价和趋势，浏览器轮询；lastGood 保留失败时旧报价，逐币 stale 指示缺失。",
+                    "text": "Host Connection 路由串行查询 OKX、Binance、CoinGecko，缓存与旧价兜底；浏览器组件轮询渲染。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。",
+                    "text": "只读核固定提交 README、Host/Client、传输层与作者测试；未执行目标代码、核实时行情/网络或真实 GUI；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包清单与组件入口按固定提交核查；发布与宿主适配声明属于作者材料，不作为本次实际安装结果。",
+                    "text": "包声明 0.1.0、MIT、Node>=22.19、Web 客户端注入；当前安装可达性与兼容未本轮验证。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金未见强制行情订阅；人工成本包括网络/代理排障及核对旧报价。轮询与趋势请求消耗网络，公开源免费不代表无限额度。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH GUI 和可达行情网络/代理；金额未知 | 安装、重启、核来源；耗时未知 | 当前网络与安装兼容未核 |\n| 持续使用 | 轮询流量与缓存后上游请求；数量未知 | 对照交易所与旧价，维护代理；耗时未知 | 无 in-flight 合并 |\n| 失败恢复 | 旧价误读可能致资金损失；数额未知 | 查源、缓存和代理，核官方报价；耗时未知 | 部分币旧价年龄不显示 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。",
+                    "text": "只作为个人参考并核交易所官方报价；不用于下单、风控或自动策略的唯一价格。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少切换窗口的便利可以从集成解释，但没有衡量注意力收益；报价来源差异和过期数据限制使用。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 多源行情 | 三源顺序与旧价缓存源码 | 当前价格准确率和缺币情况 |\n| 走势 | 小时序列加会话实时点 | 与顶层报价来源是否一致 |\n| 请求节省 | 缓存窗口 | 并发标签在过期时无合并 |",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "index.js 用 lastGood 与逐币 stale 避免全空界面，值得复用降级可见性；https.mjs 自带 TLS/CONNECT/HTTP 解码增加维护面，需检验代理响应与截断；缓存不等同于请求合并。 源码：[index.js](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js)、[https.mjs](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/https.mjs)。",
+                    "text": "宿主层解决 CORS/代理并限响应体可借鉴；同一缓存需补并发合并和逐币新鲜度契约。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +247,69 @@
                             "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:48:29.866Z",
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1389061748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1389061748:root",
+                            "area": "code",
+                            "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "collect 只需一个币有价就选源，缺价币可沿用无逐币时间的 lastGood；updatedAt 却为当前，另 schedule 写 ref 不重建计时器，可能误示新鲜和实际刷新频率。详见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1389061748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1389061748:root",
+                            "area": "code",
+                            "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证方向是逐币 quoteAt/source/staleReason、并发 single-flight、按当前配置递归调度，模拟部分缺价/多标签与真实官方报价对照。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1389061748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1389061748:root",
+                            "area": "code",
+                            "fingerprint": "84f1be429c04c5d426e54d02b993d8972d4d841d"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:47:33.903Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:48:29.866Z",
+            "last_checked_at": "2026-10-22T05:47:33.903Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
-                "reviewed_at": "2026-10-20T10:48:29.866Z",
+                "reviewed_at": "2026-10-22T05:47:33.903Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,15 +321,15 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty：常规行情嵌入；mechanism：多源和旧值可见性小幅改善；transferability：缓存降级可复用；simplification：免独立服务但自带传输层。",
+                    "rationale": "novelty 为公开源在 DSH 组合；mechanism 有宿主代理/缓存/降级但新鲜度和定时器缺口；transferability 适用于其他信息卡；simplification 减少切换页面。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ]
                 },
                 "business": {
@@ -237,45 +337,45 @@
                         "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "workflow：少切一个行情窗口；delivery：报价而无新交付类型；reach：免密钥降低少量门槛；economics：缓存可能减请求但无实测。",
+                    "rationale": "workflow 只是行情参考；delivery 旧价标识不足；reach 限 DSH GUI 加密市场用户；无可靠交易收益证据。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 22,
                     "evidence_ids": [
-                        "2026-10-20-08-github-1389061748-root-source"
+                        "2026-10-22-02-github-1389061748-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "参考看盘用户可试侧栏行情，先核逐币stale和来源，来源切换到交易平台复核。",
+                "decision": "observe",
+                "reason": "可作个人非交易行情参考；逐币旧价年龄、轮询配置和并发请求需修正并独立验收。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "工作时顺手看代币价格的人群明确但价值有限。"
+                        "rationale": "GUI 行情速览清楚，但非所有 DSH 用户需要。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "lastGood和逐币新旧状态补独立行情页切换。"
+                        "rationale": "同页可看多源行情和走势，较切换网页便捷。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "多源缓存与自制HTTPS可查，跨所报价和代理截断未验。"
+                        "rationale": "固定源码与作者测试可查，未核当时真实价格或宿主。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "轮询网络限流与TLS/CONNECT自实现增加维护负担。"
+                        "score": 5,
+                        "rationale": "免 key 但有网络/代理、轮询和旧价误用成本。"
                     }
                 },
-                "score": 51,
+                "score": 46,
                 "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:47:33.903Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-08-github-1389061748-root-source"
+                    "2026-10-22-02-github-1389061748-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,29 +400,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T10:40:14Z",
-            "analysis_sha256": "0010111adeba2f0aa50e76db10d0fac1c9a5a9e09fea0268178792bea5a28aaf"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "76b556edc4e8eb8f4020702cf6358d7034b6523f194b0771173be3a324a6a2ab"
         },
         "publication.metadata": "data/plugins/18569663yz-web--dsh-plugin-crypto-ticker/META.json",
         "publication.summaries": {
-            "text": "在 DSH 侧栏显示加密货币价格、涨跌与走势图，支持多来源降级。",
+            "text": "在 DSH Web/Desktop 侧栏显示多源加密货币价格、24 小时涨跌与迷你走势。",
             "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
             "source_url": "https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md"
         },
         "publication.capabilities": {
             "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
             "items": {
-                "界面": "侧栏行情卡片",
-                "Host 路由": "/api/crypto.ticker",
-                "后台": "多来源报价与趋势缓存"
-            }
+                "界面": "侧栏多币价格、涨跌、走势与故障状态",
+                "Host 路由": "三行情源降级、缓存与代理传输"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 多源报价 | 获取 USDT 现货参考价 | 部分缺币沿旧价，逐币年龄未知 |\n| 走势图 | 展示小时线和会话读数 | 走势来源可与报价不同 |\n| 宿主缓存 | 多窗口共享已取快照 | 缓存失效时并发不去重 |\n| 代理访问 | 受限网络经 HTTP CONNECT | https:// 代理不支持 |"
         },
         "publication.advice": {
             "revision": "84f1be429c04c5d426e54d02b993d8972d4d841d",
-            "text": "适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。"
+            "text": "只作为个人参考并核交易所官方报价；不用于下单、风控或自动策略的唯一价格。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/18569663yz-web--dsh-plugin-crypto-ticker",
-        "reports": "# dsh-plugin-crypto-ticker\n\n> 在 DSH 侧栏显示加密货币价格、涨跌与走势图，支持多来源降级。\n\n## 研究范围\n\n- **仓库**：[18569663yz-web/dsh-plugin-crypto-ticker](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker)\n- **版本号**：0.1.0（[固定提交 84f1be4](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/tree/84f1be429c04c5d426e54d02b993d8972d4d841d)）\n- **版本日期**：2026-09-26（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献机制有固定源码支持；效果与采用收益为条件性解释，后续设计假设尚未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：希望在 DSH 工作时顺手看常用代币行情的个人用户；合格输出是标明来源、新旧状态的参考报价。\n- **亮点**：作者主张免密钥行情卡片。相对浏览器行情标签页，增量是宿主集中获取、侧栏呈现与来源降级，减少重复切页；index.js 明确把趋势缓存与头部报价分开，是实用集成而非行情算法创新。\n- **思考**：“多标签共享请求”只在缓存命中后成立：apply 的 fetch 路由在缓存过期时直接 await build，没有共享 in-flight Promise；同时到来的标签可能重复请求。collect 只需至少一个有效币就接受来源，因此不能把一次源成功理解为所有币均刷新；逐币 stale 才是边界。\n- **建议**：适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。\n\n采用建议：适合参考性看盘；先检查当前来源和逐币 stale 状态，遇到来源切换时到交易平台复核价格。\n\n## 核心贡献\n\n作者主张免密钥行情卡片。相对浏览器行情标签页，增量是宿主集中获取、侧栏呈现与来源降级，减少重复切页；index.js 明确把趋势缓存与头部报价分开，是实用集成而非行情算法创新。\n\n## 关键质疑\n\n“多标签共享请求”只在缓存命中后成立：apply 的 fetch 路由在缓存过期时直接 await build，没有共享 in-flight Promise；同时到来的标签可能重复请求。collect 只需至少一个有效币就接受来源，因此不能把一次源成功理解为所有币均刷新；逐币 stale 才是边界。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设：以规范化币种集为键合并在途请求，能在缓存冷启动时降低上游峰值且不增加等待；来自缓存窗口外并发路径的观察。需处理单请求取消不能取消全部订阅者的状态所有权。\n\n用可控行情服务同时发十个冷缓存读取，比较当前路由与合并在途请求的上游调用数、取消行为及逐币旧数据标记；若引用计数取消导致其他页面失败则否定方案。\n\n## 场景与替代办法\n\n希望在 DSH 工作时顺手看常用代币行情的个人用户；合格输出是标明来源、新旧状态的参考报价。\n\n参照独立行情网站或每标签直接请求 API；未核实价格与成交量的跨交易所一致性。\n\n## 依赖与流程\n\n需要 DSH connection 与客户端插槽、可访问公开行情 API；无密钥仍受网络、代理和上游限流影响，https.mjs 仅支持 http CONNECT 代理。\n\n安装并重启，侧栏轮询宿主；宿主顺序尝试来源并刷新趋势；缺币展示旧值，全部失败标降级，用户可强制刷新并查看来源。\n\n## 成本与效果\n\n现金未见强制行情订阅；人工成本包括网络/代理排障及核对旧报价。轮询与趋势请求消耗网络，公开源免费不代表无限额度。\n\n减少切换窗口的便利可以从集成解释，但没有衡量注意力收益；报价来源差异和过期数据限制使用。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5bbd1e41d2210fea900c034ea0095986f16298278a4142eed01c9e4ccf96287c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1124 | 726 | 335 | — |\n| .mjs | source | 1 | 205 | 135 | 58 | — |\n| .md | source | 1 | 202 | — | — | 2448 |\n| .mjs | test | 2 | 389 | 309 | 56 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **界面**：侧栏行情卡片\n- **Host 路由**：/api/crypto.ticker\n- **后台**：多来源报价与趋势缓存\n\n## 工程亮点\n\nindex.js 用 lastGood 与逐币 stale 避免全空界面，值得复用降级可见性；https.mjs 自带 TLS/CONNECT/HTTP 解码增加维护面，需检验代理响应与截断；缓存不等同于请求合并。 源码：[index.js](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js)、[https.mjs](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/https.mjs)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、https.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定提交的所列核心实现与作者材料；未运行插件、安装、测试或真实宿主验收，未确认独立用户效果。\n- 下一步：用可控行情服务同时发十个冷缓存读取，比较当前路由与合并在途请求的上游调用数、取消行为及逐币旧数据标记；若引用计数取消导致其他页面失败则否定方案。\n",
+        "reports": "# dsh-plugin-crypto-ticker\n\n> 在 DSH Web/Desktop 侧栏显示多源加密货币价格、24 小时涨跌与迷你走势。\n\n## 研究范围\n\n- **仓库**：[18569663yz-web/dsh-plugin-crypto-ticker](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker)\n- **版本号**：0.1.0（[固定提交 84f1be429c04c5d426e54d02b993d8972d4d841d](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/tree/84f1be429c04c5d426e54d02b993d8972d4d841d)）\n- **版本日期**：2026-09-26（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认行情链路和客户端卡片，但部分旧价新鲜度可能被顶层当前时间掩盖，动态轮询配置不会改变既有 interval；未核实时行情或目标 UI。改进是假设。\n\n## 洞察短评\n\n- **用途**：个人在 DSH 侧栏快速参考 USDT 现货行情；合格信息须含来源、逐币采集时间和陈旧标识。详见[Q01](#research-q01)。\n- **亮点**：将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。\n- **思考**：collect 只需一个币有价就选源，缺价币可沿用无逐币时间的 lastGood；updatedAt 却为当前，另 schedule 写 ref 不重建计时器，可能误示新鲜和实际刷新频率。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证方向是逐币 quoteAt/source/staleReason、并发 single-flight、按当前配置递归调度，模拟部分缺价/多标签与真实官方报价对照。详见[Q04](#research-q04)。\n\n采用建议：只作为个人参考并核交易所官方报价；不用于下单、风控或自动策略的唯一价格。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。\n\n## 关键质疑\n\ncollect 只需一个币有价就选源，缺价币可沿用无逐币时间的 lastGood；updatedAt 却为当前，另 schedule 写 ref 不重建计时器，可能误示新鲜和实际刷新频率。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是逐币 quoteAt/source/staleReason、并发 single-flight、按当前配置递归调度，模拟部分缺价/多标签与真实官方报价对照。详见[Q04](#research-q04)。\n\n以 mock 三源和固定时钟覆盖部分缺价、切源、全失败、并发标签与动态 schedule，再同时间点核官方报价和真实 GUI。\n\n## 场景与替代办法\n\n个人在 DSH 侧栏快速参考 USDT 现货行情；合格信息须含来源、逐币采集时间和陈旧标识。详见[Q01](#research-q01)。\n\n直接打开交易所官方行情页可得实时价格与交易条件；插件需证明同条件来源/新鲜度足够清楚且总查看成本下降。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web/Desktop 和 Connection | 必需 | 侧栏/宿主 API | headless 无卡片 |\n| OKX/Binance/CoinGecko 可达网络 | 行情必需 | 获取报价和部分走势 | 沿用旧价或断开 |\n| 代理配置 | 受限网络下需要 | HTTP CONNECT | 仅支持 http:// 代理 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 安装 | 在 GUI profile 安装并重启 | 卡片可见 |\n| 配置 | 设标的/代理/刷新参数 | API 回源且标的口径一致 |\n| 观察 | 看价格、源与 stale | 与官方行情同时间核对 |\n| 异常 | 全源失败/缺币时手动刷新或查代理 | 不把旧价作为交易依据 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH GUI 和可达行情网络/代理；金额未知 | 安装、重启、核来源；耗时未知 | 当前网络与安装兼容未核 |\n| 持续使用 | 轮询流量与缓存后上游请求；数量未知 | 对照交易所与旧价，维护代理；耗时未知 | 无 in-flight 合并 |\n| 失败恢复 | 旧价误读可能致资金损失；数额未知 | 查源、缓存和代理，核官方报价；耗时未知 | 部分币旧价年龄不显示 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 多源行情 | 三源顺序与旧价缓存源码 | 当前价格准确率和缺币情况 |\n| 走势 | 小时序列加会话实时点 | 与顶层报价来源是否一致 |\n| 请求节省 | 缓存窗口 | 并发标签在过期时无合并 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**加密行情卡片能否在多源故障下清楚标示价格新鲜度、控制请求成本，并兑现可配置刷新？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 用户要获得什么行情信息，相比交易所网页/普通行情卡片的增量是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\nDSH Web/Desktop 用户在侧栏扫看 BTC、ETH 等 USDT 现货报价、24h 涨跌与迷你走势；合格结果须说明币种/计价单位、信源、取样时间和数据是否过期，不能把卡片作为交易执行价格。作者承诺免密钥、OKX→Binance→CoinGecko 三级降级、宿主缓存、系统代理和红涨绿跌。源码确认宿主 Connection Fetch 路由加客户端 sidebar.footer.action 卡片，及多源读取、代理传输和本地走势拼接。增量是把行情接入 DSH GUI 与共享宿主传输层；公开交易所接口、行情本身和交易决策不属于插件贡献。作者截图/测试是作者材料，本轮未独立验收 UI 或实时行情。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-33](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md#L1-L33)\n\n作者的侧栏位置、信息与降级承诺。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n````text\n# dsh-plugin-crypto-ticker\n\n给 [DSH（DeepSeek Harness）](https://github.com/deepseek-ai) Web GUI 用的加密货币行情卡片：**侧边栏左下角、余额与设置上方**，实时显示 BTC / ETH / SOL / JUP 等主流代币的价格、24 小时涨跌和迷你走势图。\n\n**零依赖、免密钥、开箱即用**——不装任何其它插件也能正常显示（已在干净 profile 下用无头浏览器验证过）。\n\n![侧边栏左下角的行情卡片](screenshot.png)\n\n<sub>上图为真实页面截图（无头浏览器渲染，2× 像素密度）。完整界面见 [screenshot-full.png](screenshot-full.png)。</sub>\n\n```\n┌────────────────────────┐\n│  …会话列表…             │\n│                        │\n│  行情             OKX ⟳   │\n│  ● BTC   76,926  +1.72% ╱╲╱   │  ← 这张卡片\n│  ● ETH    2,472  +3.72% ╱╲╱   │\n│  ● SOL   102.00  +5.47% ╱╲╱   │\n│  ● JUP     0.263 +13.4% ╱╲╱   │\n│  ⚙ 设置                │\n└────────────────────────┘\n```\n\n## 特性\n\n- **红涨绿跌**（中文习惯），价格按量级自动选小数位，成交量按 K/M/B 缩写。\n- **真实的 24 小时小时线**，不是装饰——首屏从交易所取 24 根 1H 收盘价，之后把实时读数续上去，线会一直动。\n- 价格上跳标红、下跳标绿并短暂脉冲，扫一眼就知道刚在动。\n- 点任意一行或表头 ⟳ 立即刷新；悬停看 24h 高/低、成交量、当前信源与更新时间。\n- 侧边栏收成 56px 窄栏时自动变成「字标 + 价格」。\n- 数据源自动降级：**OKX → Binance → CoinGecko**。全部不可用时保留最后已知价格并置灰、表头显示「已断开」，而不是清空界面。\n- 宿主侧缓存，多个标签页共享同一份数据，不会因为开了三个窗口就把上游请求翻三倍。\n- 自动适配系统代理（见下文），国内网络不用额外配置。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:73-122](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L73-L122)\n\n信源顺序与默认标的。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n/** Upstream failure classes the browser half renders differently. */\nconst SOURCES = [\n  {\n    id: 'okx',\n    label: 'OKX',\n    quote: okxQuotes,\n    spark: okxSpark,\n  },\n  {\n    id: 'binance',\n    label: 'Binance',\n    quote: binanceQuotes,\n    spark: binanceSpark,\n  },\n  {\n    id: 'coingecko',\n    label: 'CoinGecko',\n    quote: coingeckoQuotes,\n    // CoinGecko's free tier has no keyless OHLC series, so this source is quote-only.\n    spark: undefined,\n  },\n]\n\n/**\n * The symbols shown when `config.symbols` is absent.\n *\n * JUP is Solana's Jupiter exchange token; it is quoted as a plain `JUPUSDT`\n * spot pair on OKX and Binance, so it needs no chain access — only the\n * CoinGecko id below for the last-resort source.\n */\nexport const DEFAULT_SYMBOLS = ['BTC', 'ETH', 'SOL', 'JUP']\n\n/** CoinGecko addresses assets by id, not by ticker; these cover the shipped defaults and common asks. */\nconst COINGECKO_IDS = {\n  BTC: 'bitcoin',\n  ETH: 'ethereum',\n  SOL: 'solana',\n  JUP: 'jupiter-exchange-solana',\n  BNB: 'binancecoin',\n  XRP: 'ripple',\n  DOGE: 'dogecoin',\n  ADA: 'cardano',\n  AVAX: 'avalanche-2',\n  TON: 'the-open-network',\n  LINK: 'chainlink',\n  SUI: 'sui',\n  LTC: 'litecoin',\n  DOT: 'polkadot',\n  TRX: 'tron',\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:651-675](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L651-L675)\n\n宿主共用 /api 路由。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  ctx.connection.fetch.register({\n    path: TICKER_PATH,\n    methods: ['GET', 'POST'],\n    requestBody: 'buffered',\n    fetch: async (request) => {\n      if (request.method === 'POST') {\n        return jsonResponse({ ok: true, clientSeenAt: recordClientSeen(heartbeatPath, log) })\n      }\n      const force = new URL(request.url).searchParams.get('refresh') === '1'\n      if (!force && cached !== undefined && Date.now() - cached.at < settings.cacheMs) {\n        return jsonResponse(cached.payload)\n      }\n      try {\n        const payload = await build(request.signal)\n        // Only a live reading is worth caching; a stale snapshot must be retried next poll.\n        if (!payload.degraded) cached = { at: Date.now(), payload }\n        return jsonResponse(payload)\n      } catch (error) {\n        if (request.signal.aborted) return new Response(null, { status: 499 })\n        log.warn(`${LOG_PREFIX} ticker query failed: ${String(error?.stack ?? error)}`)\n        if (cached !== undefined) return jsonResponse({ ...cached.payload, degraded: true })\n        return jsonResponse({ ok: false, error: 'internal', message: String(error?.message ?? error) })\n      }\n    },\n  })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[client.js:245-309](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/client.js#L245-L309)\n\n浏览器卡片拉取与展示状态。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n\t\t/**\n\t\t * 侧边栏左下角的行情卡片；`wide` 为 false 时收缩成只显示币种字标的栏位。\n\t\t * @param props 槽位 owner 传入的列状态（wide）。\n\t\t * @returns 行情卡片元素。\n\t\t */\n\t\tfunction CryptoTicker(props) {\n\t\t\tensureStyle();\n\t\t\tconst wide = !(props !== undefined && props.wide === false);\n\t\t\tconst [snapshot, setSnapshot] = React.useState({ phase: \"loading\" });\n\t\t\tconst [tick, setTick] = React.useState(0);\n\t\t\tconst [flash, setFlash] = React.useState({});\n\t\t\t/** 上一轮价格，用于判断价格上/下跳并给出对应的颜色脉冲。 */\n\t\t\tconst previous = React.useRef({});\n\t\t\t/** 卡片根节点，用来向上找到真正排布它的 flex 容器。 */\n\t\t\tconst rootRef = React.useRef(null);\n\t\t\t/**\n\t\t\t * 当前轮询间隔（ms）。宿主会在每份载荷里带上它配置的 schedule，\n\t\t\t * 所以这里不写死；用 ref 让取到新值后不必重启定时器。\n\t\t\t */\n\t\t\tconst intervalRef = React.useRef(POLL_MS);\n\n\t\t\tReact.useEffect(() => {\n\t\t\t\tlet alive = true;\n\t\t\t\tconst run = (force) => {\n\t\t\t\t\tconst url = force ? ENDPOINT + \"?refresh=1\" : ENDPOINT;\n\t\t\t\t\tfetch(url, { headers: { accept: \"application/json\" } })\n\t\t\t\t\t\t.then((response) => response.ok ? response.json() : Promise.reject(new Error(\"HTTP \" + response.status)))\n\t\t\t\t\t\t.then((body) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tif (body === null || typeof body !== \"object\" || body.ok !== true) {\n\t\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: (body && body.message) || \"行情不可用\" });\n\t\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tconst rows = Array.isArray(body.symbols) ? body.symbols : [];\n\t\t\t\t\t\t\tconst nextFlash = {};\n\t\t\t\t\t\t\tfor (const row of rows) {\n\t\t\t\t\t\t\t\tconst before = previous.current[row.symbol];\n\t\t\t\t\t\t\t\tif (typeof before === \"number\" && typeof row.price === \"number\" && before !== row.price) {\n\t\t\t\t\t\t\t\t\tnextFlash[row.symbol] = row.price > before ? \"up\" : \"down\";\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (typeof row.price === \"number\") previous.current[row.symbol] = row.price;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t// 宿主配置的刷新间隔（秒）优先于内置默认值。\n\t\t\t\t\t\t\tif (typeof body.schedule === \"number\" && body.schedule >= 5) {\n\t\t\t\t\t\t\t\tintervalRef.current = body.schedule * 1000;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tsetFlash(nextFlash);\n\t\t\t\t\t\t\tsetSnapshot({\n\t\t\t\t\t\t\t\tphase: \"ready\",\n\t\t\t\t\t\t\t\trows,\n\t\t\t\t\t\t\t\tsource: body.source,\n\t\t\t\t\t\t\t\tupdatedAt: body.updatedAt,\n\t\t\t\t\t\t\t\tdegraded: body.degraded === true,\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t})\n\t\t\t\t\t\t.catch((error) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: String((error && error.message) || error) });\n\t\t\t\t\t\t});\n\t\t\t\t};\n\t\t\t\trun(tick > 0);\n\t\t\t\t// 定时器读 ref，所以 schedule 变了也不必重建。\n\t\t\t\tconst timer = setInterval(() => { run(false) }, intervalRef.current);\n\t\t\t\treturn () => { alive = false; clearInterval(timer) };\n\t\t\t}, [tick]);\n```\n\n</details>\n\n#### 缺口\n\n- 未核当前交易所 API、价格与真实 GUI\n  **影响：**不能判断报价准确率、延迟和展示位置\n  **进一步探讨：**同一时间戳对照交易所官方页面/API，实测 Web/Desktop 卡片\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 多源降级、缓存、走势和新鲜度实际如何接线？\n\n**研究主题：**功能与机制、缺陷与关键质疑\n\n#### 完整回答\n\ncollect 顺序尝试三信源，只要某信源至少一个币有有效价就立即采用该信源，并不要求全部配置币完整。build 对每个币缺价时沿用 lastGood，标记 row.stale；但顶层 source 会写当前部分成功信源、updatedAt 总是当前 Date.now，缺失币的旧价格本身没有逐币采集时间，读者容易把陈旧价格误解为当前报价。全部失败时 degraded=true，既有 cached 的异常分支可返回旧数据；只有首次成功缓存，且没有 in-flight Promise 合并，同时打开多个标签页在缓存尚未建立/过期瞬间仍会并发请求上游，README 的“多个标签共享同一份数据”不能推导为请求数量恒定。走势每 5 分钟独立抓 OKX/Binance，可能与当前报价信源不同，CoinGecko 下仅有会话期实时点。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:539-571](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L539-L571)\n\n缓存、lastGood 和任一可用币即胜出。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  /** Last good quote per symbol, retained so a total outage still renders a stale price. */\n  const lastGood = new Map()\n  /** Live readings per symbol, appended on every successful poll. */\n  const ring = new Map(symbols.map((symbol) => [symbol, []]))\n  /** Hourly series per symbol, re-read on the slow cadence. */\n  const series = new Map()\n  let cached\n  let sparkReadAt = 0\n\n  log.info(`${LOG_PREFIX} watching ${symbols.join(', ')} (sources: ${SOURCES.map((s) => s.label).join(' -> ')})`)\n\n  /**\n   * Ask every source in order and return the first complete answer.\n   * @param signal - request cancellation.\n   * @returns the winning source plus its quotes.\n   */\n  async function collect(signal) {\n    const failures = []\n    for (const source of SOURCES) {\n      try {\n        const quotes = await source.quote(symbols, signal, settings.upstreamTimeoutMs, proxy, log)\n        const usable = quotes.filter((entry) => entry.price !== undefined)\n        if (usable.length === 0) {\n          failures.push(`${source.id}: no usable price`)\n          continue\n        }\n        return { source, quotes, failures }\n      } catch (error) {\n        if (signal.aborted) throw error\n        failures.push(`${source.id}: ${String(error?.message ?? error)}`)\n      }\n    }\n    return { source: undefined, quotes: [], failures }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:575-603](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L575-L603)\n\n走势独立按源刷新。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n   * Refresh the hourly trend series from whichever source is answering.\n   * @param signal - request cancellation.\n   */\n  async function refreshSeries(signal) {\n    if (Date.now() - sparkReadAt < settings.sparklineCacheMs) return\n    sparkReadAt = Date.now()\n    for (const source of SOURCES) {\n      if (source.spark === undefined) continue\n      try {\n        const next = new Map()\n        for (const symbol of symbols) {\n          next.set(symbol, await source.spark(symbol, signal, settings.upstreamTimeoutMs, proxy, log))\n        }\n        if ([...next.values()].some((points) => points.length > 1)) {\n          for (const [symbol, points] of next) {\n            if (points.length <= 1) continue\n            series.set(symbol, points)\n            // The series already carries the readings collected so far, so the live\n            // ring restarts here instead of appending them a second time.\n            ring.set(symbol, [])\n          }\n          return\n        }\n      } catch (error) {\n        if (signal.aborted) throw error\n        // A failed series only costs the sparkline, so the headline quote is kept either way.\n      }\n    }\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:610-648](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L610-L648)\n\n逐币旧价与顶层 source/updatedAt。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  async function build(signal) {\n    const { source, quotes, failures } = await collect(signal)\n    if (source !== undefined) {\n      for (const entry of quotes) {\n        if (entry.price === undefined) continue\n        lastGood.set(entry.symbol, entry)\n        ring.set(entry.symbol, pushReading(ring.get(entry.symbol) ?? [], entry.price))\n      }\n      await refreshSeries(signal)\n    }\n\n    const degraded = source === undefined\n    const rows = symbols.map((symbol) => {\n      const fresh = quotes.find((entry) => entry.symbol === symbol)\n      const entry = fresh?.price === undefined ? lastGood.get(symbol) : fresh\n      return {\n        symbol,\n        price: entry?.price ?? null,\n        changePercent: entry?.changePercent ?? null,\n        high: entry?.high ?? null,\n        low: entry?.low ?? null,\n        volume24h: entry?.volume24h ?? null,\n        volumeUnit: entry?.volumeUnit ?? null,\n        trend: trendOf(series.get(symbol) ?? [], ring.get(symbol) ?? []),\n        stale: fresh?.price === undefined,\n      }\n    })\n\n    return {\n      ok: true,\n      degraded,\n      source: source?.label ?? null,\n      updatedAt: Date.now(),\n      symbols: rows,\n      failures: failures.slice(-3),\n      // 浏览器半侧需要的展示配置：轮询间隔。放这里是为了让它跟着部署走，\n      // 不必在客户端 bundle 里再写死一份。\n      schedule: settings.schedule,\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:651-674](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L651-L674)\n\n缓存窗口但无并发去重。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  ctx.connection.fetch.register({\n    path: TICKER_PATH,\n    methods: ['GET', 'POST'],\n    requestBody: 'buffered',\n    fetch: async (request) => {\n      if (request.method === 'POST') {\n        return jsonResponse({ ok: true, clientSeenAt: recordClientSeen(heartbeatPath, log) })\n      }\n      const force = new URL(request.url).searchParams.get('refresh') === '1'\n      if (!force && cached !== undefined && Date.now() - cached.at < settings.cacheMs) {\n        return jsonResponse(cached.payload)\n      }\n      try {\n        const payload = await build(request.signal)\n        // Only a live reading is worth caching; a stale snapshot must be retried next poll.\n        if (!payload.degraded) cached = { at: Date.now(), payload }\n        return jsonResponse(payload)\n      } catch (error) {\n        if (request.signal.aborted) return new Response(null, { status: 499 })\n        log.warn(`${LOG_PREFIX} ticker query failed: ${String(error?.stack ?? error)}`)\n        if (cached !== undefined) return jsonResponse({ ...cached.payload, degraded: true })\n        return jsonResponse({ ok: false, error: 'internal', message: String(error?.message ?? error) })\n      }\n    },\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:26-33](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md#L26-L33)\n\n作者对共享缓存与降级 UI 的描述。\n\n```text\n- **红涨绿跌**（中文习惯），价格按量级自动选小数位，成交量按 K/M/B 缩写。\n- **真实的 24 小时小时线**，不是装饰——首屏从交易所取 24 根 1H 收盘价，之后把实时读数续上去，线会一直动。\n- 价格上跳标红、下跳标绿并短暂脉冲，扫一眼就知道刚在动。\n- 点任意一行或表头 ⟳ 立即刷新；悬停看 24h 高/低、成交量、当前信源与更新时间。\n- 侧边栏收成 56px 窄栏时自动变成「字标 + 价格」。\n- 数据源自动降级：**OKX → Binance → CoinGecko**。全部不可用时保留最后已知价格并置灰、表头显示「已断开」，而不是清空界面。\n- 宿主侧缓存，多个标签页共享同一份数据，不会因为开了三个窗口就把上游请求翻三倍。\n- 自动适配系统代理（见下文），国内网络不用额外配置。\n```\n\n#### 缺口\n\n- 真实交易所部分缺价和并发访问频率未测\n  **影响：**不能量化旧价误读与请求节省\n  **进一步探讨：**用隔离三源夹具覆盖部分币缺价、全部失败和多标签并发\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 客户端轮询频率是否遵循部署配置，网络与代理成本有何边界？\n\n**研究主题：**缺陷与关键质疑、效果与总成本、依赖、兼容与流程\n\n#### 完整回答\n\nHost 校验 schedule>=5 并在 payload 回传；Client 将 body.schedule 写入 intervalRef.current，但 setInterval 在 effect 建立时用一次 intervalRef.current，配置更新后并未重建 timer，故实际轮询仍按初始常量，除非手动刷新触发 effect 重建。每次缓存过期可能串行探测三信源，默认每源 8 秒超时；走势每币按顺序抓取，初次或慢网可能拖长响应。传输层用 Node http/tls 自建 HTTP CONNECT，仅支持 http:// 代理，响应头/体有上限；安装阶段的 GitHub/codeload 可达性属于作者当时环境报告，本轮不当作当前通用建议。首次成本是 DSH Web/Desktop 与可达行情网络，持续成本是轮询请求/流量和代理维护，失败恢复需查来源、陈旧价格、代理和缓存，金额/时间未知。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:519-536](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L519-L536)\n\nHost 读取和发布刷新配置。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const log = ctx.logger ?? console\n  const symbols = resolveSymbols(config.symbols)\n  const settings = {\n    upstreamTimeoutMs: config.upstreamTimeoutMs ?? DEFAULTS.upstreamTimeoutMs,\n    cacheMs: config.cacheMs ?? DEFAULTS.cacheMs,\n    sparklineCacheMs: config.sparklineCacheMs ?? DEFAULTS.sparklineCacheMs,\n    /**\n     * Seconds between browser polls. Clamped to a sane floor: the Host already\n     * serves a cache window, and a sub-second poll would only burn CPU in both\n     * halves without showing anything new.\n     */\n    schedule: Number.isFinite(config.schedule) && config.schedule >= 5\n      ? Math.floor(config.schedule)\n      : DEFAULTS.schedule,\n  }\n  /** `config.proxy`: a URL to force, `false` to force direct, unset to auto-detect. */\n  const proxy = config.proxy\n```\n\n</details>\n\n**依据 2 · 源码核查**：[client.js:260-309](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/client.js#L260-L309)\n\n更新 ref 不会修改既有 setInterval 周期。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n\t\t\t/**\n\t\t\t * 当前轮询间隔（ms）。宿主会在每份载荷里带上它配置的 schedule，\n\t\t\t * 所以这里不写死；用 ref 让取到新值后不必重启定时器。\n\t\t\t */\n\t\t\tconst intervalRef = React.useRef(POLL_MS);\n\n\t\t\tReact.useEffect(() => {\n\t\t\t\tlet alive = true;\n\t\t\t\tconst run = (force) => {\n\t\t\t\t\tconst url = force ? ENDPOINT + \"?refresh=1\" : ENDPOINT;\n\t\t\t\t\tfetch(url, { headers: { accept: \"application/json\" } })\n\t\t\t\t\t\t.then((response) => response.ok ? response.json() : Promise.reject(new Error(\"HTTP \" + response.status)))\n\t\t\t\t\t\t.then((body) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tif (body === null || typeof body !== \"object\" || body.ok !== true) {\n\t\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: (body && body.message) || \"行情不可用\" });\n\t\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tconst rows = Array.isArray(body.symbols) ? body.symbols : [];\n\t\t\t\t\t\t\tconst nextFlash = {};\n\t\t\t\t\t\t\tfor (const row of rows) {\n\t\t\t\t\t\t\t\tconst before = previous.current[row.symbol];\n\t\t\t\t\t\t\t\tif (typeof before === \"number\" && typeof row.price === \"number\" && before !== row.price) {\n\t\t\t\t\t\t\t\t\tnextFlash[row.symbol] = row.price > before ? \"up\" : \"down\";\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (typeof row.price === \"number\") previous.current[row.symbol] = row.price;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t// 宿主配置的刷新间隔（秒）优先于内置默认值。\n\t\t\t\t\t\t\tif (typeof body.schedule === \"number\" && body.schedule >= 5) {\n\t\t\t\t\t\t\t\tintervalRef.current = body.schedule * 1000;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tsetFlash(nextFlash);\n\t\t\t\t\t\t\tsetSnapshot({\n\t\t\t\t\t\t\t\tphase: \"ready\",\n\t\t\t\t\t\t\t\trows,\n\t\t\t\t\t\t\t\tsource: body.source,\n\t\t\t\t\t\t\t\tupdatedAt: body.updatedAt,\n\t\t\t\t\t\t\t\tdegraded: body.degraded === true,\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t})\n\t\t\t\t\t\t.catch((error) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: String((error && error.message) || error) });\n\t\t\t\t\t\t});\n\t\t\t\t};\n\t\t\t\trun(tick > 0);\n\t\t\t\t// 定时器读 ref，所以 schedule 变了也不必重建。\n\t\t\t\tconst timer = setInterval(() => { run(false) }, intervalRef.current);\n\t\t\t\treturn () => { alive = false; clearInterval(timer) };\n\t\t\t}, [tick]);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:555-603](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L555-L603)\n\n串行信源及走势刷新。\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\n  async function collect(signal) {\n    const failures = []\n    for (const source of SOURCES) {\n      try {\n        const quotes = await source.quote(symbols, signal, settings.upstreamTimeoutMs, proxy, log)\n        const usable = quotes.filter((entry) => entry.price !== undefined)\n        if (usable.length === 0) {\n          failures.push(`${source.id}: no usable price`)\n          continue\n        }\n        return { source, quotes, failures }\n      } catch (error) {\n        if (signal.aborted) throw error\n        failures.push(`${source.id}: ${String(error?.message ?? error)}`)\n      }\n    }\n    return { source: undefined, quotes: [], failures }\n  }\n\n  /**\n   * Refresh the hourly trend series from whichever source is answering.\n   * @param signal - request cancellation.\n   */\n  async function refreshSeries(signal) {\n    if (Date.now() - sparkReadAt < settings.sparklineCacheMs) return\n    sparkReadAt = Date.now()\n    for (const source of SOURCES) {\n      if (source.spark === undefined) continue\n      try {\n        const next = new Map()\n        for (const symbol of symbols) {\n          next.set(symbol, await source.spark(symbol, signal, settings.upstreamTimeoutMs, proxy, log))\n        }\n        if ([...next.values()].some((points) => points.length > 1)) {\n          for (const [symbol, points] of next) {\n            if (points.length <= 1) continue\n            series.set(symbol, points)\n            // The series already carries the readings collected so far, so the live\n            // ring restarts here instead of appending them a second time.\n            ring.set(symbol, [])\n          }\n          return\n        }\n      } catch (error) {\n        if (signal.aborted) throw error\n        // A failed series only costs the sparkline, so the headline quote is kept either way.\n      }\n    }\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[https.mjs:17-24](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/https.mjs#L17-L24)\n\n传输头体大小上限。\n\n```text\nimport { request as httpRequest } from 'node:http'\nimport { connect as netConnect } from 'node:net'\nimport { connect as tlsConnect } from 'node:tls'\n/** Cap on a response body; the largest ticker table this plugin reads is about 500 KiB. */\nconst MAX_BODY_BYTES = 8 * 1024 * 1024\n\n/** Cap on the response head; a legitimate one is a few hundred bytes. */\nconst MAX_HEAD_BYTES = 64 * 1024\n```\n\n**依据 5 · 作者声明**：[README.md:141-154](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md#L141-L154)\n\n作者代理环境说明。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 系统代理（国内网络必读）\n\n交易所接口在国内需要代理，而 **Node 的 `fetch` 不读 Windows 系统代理**（浏览器读，Node 不读）。如果什么都不做，插件会在每个信源上各超时 8 秒、界面显示「已断开」——而同一时刻用 PowerShell 测同一个 URL 却是通的，很容易误判成接口挂了。\n\n所以宿主半侧自己解析代理，优先级从高到低：\n\n1. `config.proxy`；\n2. `HTTPS_PROXY` / `https_proxy` / `HTTP_PROXY` / `http_proxy` 环境变量；\n3. Windows 注册表 `HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings`（即系统代理）；\n4. 都没有则直连——没有代理的机器上直连本来就是对的。\n\n本地（`127.0.0.1`）访问不受代理影响。只支持 `http://` 代理（CONNECT 隧道）；`https://` 代理会退回直连并在宿主日志告警。\n\n没用 `undici` 的 `ProxyAgent`：它不是本插件的依赖，而 profile 的 `plugins/` 目录没有自己的 `node_modules`，去猜 DSH 安装目录里的 `undici` 太脆。Node 自带的 `http`/`tls` 永远在，`https.mjs` 直接开 CONNECT 隧道。\n```\n\n</details>\n\n#### 缺口\n\n- 未执行浏览器定时器、真实上游和代理\n  **影响：**不能量化刷新偏差、流量、故障等待\n  **进一步探讨：**固定时钟/模拟请求计数验证 schedule、并发与三源超时\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何从价格新鲜度和请求竞争推导最小改进？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n工程可借鉴点是宿主处理 CORS/代理、source 字段透明化、体限与超时；但“一个共享缓存”不等于并发 single-flight。未验证方向是每币记录实际 quoteAt、quoteSource、staleReason，旧价 UI 直接标示年龄；缓存刷新持有单个 in-flight Promise，并设 per-symbol 完整性阈值或按币补源，同时明确走势图独立来源。客户端用递归 setTimeout 读当前 schedule 并取消未完成请求，避免 intervalRef 失效和重叠。最小验证用同一时钟下两窗口并发、部分币缺价、源切换、全部失败、慢趋势、动态 schedule，量请求数、UI 旧价年龄和延迟。设想尚未实现，不计入当前贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:555-571](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L555-L571)\n\n任一有效币即可选源。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  async function collect(signal) {\n    const failures = []\n    for (const source of SOURCES) {\n      try {\n        const quotes = await source.quote(symbols, signal, settings.upstreamTimeoutMs, proxy, log)\n        const usable = quotes.filter((entry) => entry.price !== undefined)\n        if (usable.length === 0) {\n          failures.push(`${source.id}: no usable price`)\n          continue\n        }\n        return { source, quotes, failures }\n      } catch (error) {\n        if (signal.aborted) throw error\n        failures.push(`${source.id}: ${String(error?.message ?? error)}`)\n      }\n    }\n    return { source: undefined, quotes: [], failures }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:610-674](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L610-L674)\n\n旧价缓存和路由刷新。\n\n<details>\n<summary>查看原文（65行）</summary>\n\n```text\n  async function build(signal) {\n    const { source, quotes, failures } = await collect(signal)\n    if (source !== undefined) {\n      for (const entry of quotes) {\n        if (entry.price === undefined) continue\n        lastGood.set(entry.symbol, entry)\n        ring.set(entry.symbol, pushReading(ring.get(entry.symbol) ?? [], entry.price))\n      }\n      await refreshSeries(signal)\n    }\n\n    const degraded = source === undefined\n    const rows = symbols.map((symbol) => {\n      const fresh = quotes.find((entry) => entry.symbol === symbol)\n      const entry = fresh?.price === undefined ? lastGood.get(symbol) : fresh\n      return {\n        symbol,\n        price: entry?.price ?? null,\n        changePercent: entry?.changePercent ?? null,\n        high: entry?.high ?? null,\n        low: entry?.low ?? null,\n        volume24h: entry?.volume24h ?? null,\n        volumeUnit: entry?.volumeUnit ?? null,\n        trend: trendOf(series.get(symbol) ?? [], ring.get(symbol) ?? []),\n        stale: fresh?.price === undefined,\n      }\n    })\n\n    return {\n      ok: true,\n      degraded,\n      source: source?.label ?? null,\n      updatedAt: Date.now(),\n      symbols: rows,\n      failures: failures.slice(-3),\n      // 浏览器半侧需要的展示配置：轮询间隔。放这里是为了让它跟着部署走，\n      // 不必在客户端 bundle 里再写死一份。\n      schedule: settings.schedule,\n    }\n  }\n\n  ctx.connection.fetch.register({\n    path: TICKER_PATH,\n    methods: ['GET', 'POST'],\n    requestBody: 'buffered',\n    fetch: async (request) => {\n      if (request.method === 'POST') {\n        return jsonResponse({ ok: true, clientSeenAt: recordClientSeen(heartbeatPath, log) })\n      }\n      const force = new URL(request.url).searchParams.get('refresh') === '1'\n      if (!force && cached !== undefined && Date.now() - cached.at < settings.cacheMs) {\n        return jsonResponse(cached.payload)\n      }\n      try {\n        const payload = await build(request.signal)\n        // Only a live reading is worth caching; a stale snapshot must be retried next poll.\n        if (!payload.degraded) cached = { at: Date.now(), payload }\n        return jsonResponse(payload)\n      } catch (error) {\n        if (request.signal.aborted) return new Response(null, { status: 499 })\n        log.warn(`${LOG_PREFIX} ticker query failed: ${String(error?.stack ?? error)}`)\n        if (cached !== undefined) return jsonResponse({ ...cached.payload, degraded: true })\n        return jsonResponse({ ok: false, error: 'internal', message: String(error?.message ?? error) })\n      }\n    },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[client.js:266-309](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/client.js#L266-L309)\n\n客户端轮询定时器。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n\t\t\tReact.useEffect(() => {\n\t\t\t\tlet alive = true;\n\t\t\t\tconst run = (force) => {\n\t\t\t\t\tconst url = force ? ENDPOINT + \"?refresh=1\" : ENDPOINT;\n\t\t\t\t\tfetch(url, { headers: { accept: \"application/json\" } })\n\t\t\t\t\t\t.then((response) => response.ok ? response.json() : Promise.reject(new Error(\"HTTP \" + response.status)))\n\t\t\t\t\t\t.then((body) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tif (body === null || typeof body !== \"object\" || body.ok !== true) {\n\t\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: (body && body.message) || \"行情不可用\" });\n\t\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tconst rows = Array.isArray(body.symbols) ? body.symbols : [];\n\t\t\t\t\t\t\tconst nextFlash = {};\n\t\t\t\t\t\t\tfor (const row of rows) {\n\t\t\t\t\t\t\t\tconst before = previous.current[row.symbol];\n\t\t\t\t\t\t\t\tif (typeof before === \"number\" && typeof row.price === \"number\" && before !== row.price) {\n\t\t\t\t\t\t\t\t\tnextFlash[row.symbol] = row.price > before ? \"up\" : \"down\";\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (typeof row.price === \"number\") previous.current[row.symbol] = row.price;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t// 宿主配置的刷新间隔（秒）优先于内置默认值。\n\t\t\t\t\t\t\tif (typeof body.schedule === \"number\" && body.schedule >= 5) {\n\t\t\t\t\t\t\t\tintervalRef.current = body.schedule * 1000;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tsetFlash(nextFlash);\n\t\t\t\t\t\t\tsetSnapshot({\n\t\t\t\t\t\t\t\tphase: \"ready\",\n\t\t\t\t\t\t\t\trows,\n\t\t\t\t\t\t\t\tsource: body.source,\n\t\t\t\t\t\t\t\tupdatedAt: body.updatedAt,\n\t\t\t\t\t\t\t\tdegraded: body.degraded === true,\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t})\n\t\t\t\t\t\t.catch((error) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: String((error && error.message) || error) });\n\t\t\t\t\t\t});\n\t\t\t\t};\n\t\t\t\trun(tick > 0);\n\t\t\t\t// 定时器读 ref，所以 schedule 变了也不必重建。\n\t\t\t\tconst timer = setInterval(() => { run(false) }, intervalRef.current);\n\t\t\t\treturn () => { alive = false; clearInterval(timer) };\n\t\t\t}, [tick]);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[https.mjs:114-129](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/https.mjs#L114-L129)\n\n请求超时和 socket 中断边界。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport async function httpsGet(url, options) {\n  const target = new URL(url)\n  const proxy = options.proxy === undefined ? undefined : new URL(options.proxy)\n  const timeout = AbortSignal.timeout(options.timeoutMs)\n  const signal = options.signal === undefined ? timeout : AbortSignal.any([options.signal, timeout])\n  // Only https upstreams are proxied: a plain-http target exists solely so a test can\n  // point an exchange at a local server, and that server needs no tunnel.\n  const socket = (proxy === undefined || target.protocol !== 'https:')\n    ? openDirect(target, signal)\n    : await openTunnel(proxy, target, signal)\n\n  return new Promise((resolve, reject) => {\n    /** Every exit path destroys the socket, so a failed read cannot leak a tunnel. */\n    const fail = (error) => { socket.destroy(); reject(error) }\n    signal.addEventListener('abort', () => { socket.destroy() }, { once: true })\n    socket.once('error', fail)\n```\n\n</details>\n\n#### 缺口\n\n- 逐币来源、single-flight 和动态定时器未实现\n  **影响：**不能把更准的新鲜度或更少请求算作现有效果\n  **进一步探讨：**先构造 mock exchanges 反例，再对照作者 smoke 和目标宿主\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 当前版本适合何种用途，不应据何种数字决策？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n可在行情仅供参考的个人 Web/Desktop 侧栏观察，开启后核每行是否 stale、顶层信源和实际交易所页面价格；不用它作交易下单、风险控制或自动套利的唯一数据源。尤其部分币种缺价时顶层更新时间不代表旧价年龄，用户应打开官方交易所确认。建议 observe，先修复逐币时间标识、动态 schedule 和并发请求控制，再用真实行情/宿主验证；README 的特定地区网络经验和“实时”字样均不替代当前实测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:621-648](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/index.js#L621-L648)\n\n旧价没有逐币时间。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n    const degraded = source === undefined\n    const rows = symbols.map((symbol) => {\n      const fresh = quotes.find((entry) => entry.symbol === symbol)\n      const entry = fresh?.price === undefined ? lastGood.get(symbol) : fresh\n      return {\n        symbol,\n        price: entry?.price ?? null,\n        changePercent: entry?.changePercent ?? null,\n        high: entry?.high ?? null,\n        low: entry?.low ?? null,\n        volume24h: entry?.volume24h ?? null,\n        volumeUnit: entry?.volumeUnit ?? null,\n        trend: trendOf(series.get(symbol) ?? [], ring.get(symbol) ?? []),\n        stale: fresh?.price === undefined,\n      }\n    })\n\n    return {\n      ok: true,\n      degraded,\n      source: source?.label ?? null,\n      updatedAt: Date.now(),\n      symbols: rows,\n      failures: failures.slice(-3),\n      // 浏览器半侧需要的展示配置：轮询间隔。放这里是为了让它跟着部署走，\n      // 不必在客户端 bundle 里再写死一份。\n      schedule: settings.schedule,\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[client.js:266-309](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/client.js#L266-L309)\n\n刷新配置不改变已建周期。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n\t\t\tReact.useEffect(() => {\n\t\t\t\tlet alive = true;\n\t\t\t\tconst run = (force) => {\n\t\t\t\t\tconst url = force ? ENDPOINT + \"?refresh=1\" : ENDPOINT;\n\t\t\t\t\tfetch(url, { headers: { accept: \"application/json\" } })\n\t\t\t\t\t\t.then((response) => response.ok ? response.json() : Promise.reject(new Error(\"HTTP \" + response.status)))\n\t\t\t\t\t\t.then((body) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tif (body === null || typeof body !== \"object\" || body.ok !== true) {\n\t\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: (body && body.message) || \"行情不可用\" });\n\t\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tconst rows = Array.isArray(body.symbols) ? body.symbols : [];\n\t\t\t\t\t\t\tconst nextFlash = {};\n\t\t\t\t\t\t\tfor (const row of rows) {\n\t\t\t\t\t\t\t\tconst before = previous.current[row.symbol];\n\t\t\t\t\t\t\t\tif (typeof before === \"number\" && typeof row.price === \"number\" && before !== row.price) {\n\t\t\t\t\t\t\t\t\tnextFlash[row.symbol] = row.price > before ? \"up\" : \"down\";\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (typeof row.price === \"number\") previous.current[row.symbol] = row.price;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t// 宿主配置的刷新间隔（秒）优先于内置默认值。\n\t\t\t\t\t\t\tif (typeof body.schedule === \"number\" && body.schedule >= 5) {\n\t\t\t\t\t\t\t\tintervalRef.current = body.schedule * 1000;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tsetFlash(nextFlash);\n\t\t\t\t\t\t\tsetSnapshot({\n\t\t\t\t\t\t\t\tphase: \"ready\",\n\t\t\t\t\t\t\t\trows,\n\t\t\t\t\t\t\t\tsource: body.source,\n\t\t\t\t\t\t\t\tupdatedAt: body.updatedAt,\n\t\t\t\t\t\t\t\tdegraded: body.degraded === true,\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t})\n\t\t\t\t\t\t.catch((error) => {\n\t\t\t\t\t\t\tif (!alive) return;\n\t\t\t\t\t\t\tsetSnapshot({ phase: \"error\", message: String((error && error.message) || error) });\n\t\t\t\t\t\t});\n\t\t\t\t};\n\t\t\t\trun(tick > 0);\n\t\t\t\t// 定时器读 ref，所以 schedule 变了也不必重建。\n\t\t\t\tconst timer = setInterval(() => { run(false) }, intervalRef.current);\n\t\t\t\treturn () => { alive = false; clearInterval(timer) };\n\t\t\t}, [tick]);\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:192-202](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/blob/84f1be429c04c5d426e54d02b993d8972d4d841d/README.md#L192-L202)\n\n作者局限和行情仅个人参考说明。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## 已知限制\n\n- 只在 **web / desktop 的 Web GUI** 显示；headless、sdk、acp 等没有侧边栏的 profile 装上也不可见。\n- 若只有 CoinGecko 可用（免费层无 K 线），走势图退化为「本次会话内的实时读数」曲线，冷启动时点数很少。\n- 界面文案是中文硬编码，未接入 DSH 的 locale 字典（树外插件不走 `verify-client-ui-i18n`）。\n- 只支持 `http://` 代理。\n- 桌面端重建 profile（应用资源变化或「重置 Desktop」）会清掉 `plugins` 目录与 patch 行；用方式一安装则表现为依赖丢失，重装即可。\n\n## 许可\n\nMIT。行情数据版权归各交易所所有，仅供个人参考，不构成投资建议。\n```\n\n</details>\n\n#### 缺口\n\n- 真实市场数据延迟、GUI stale 呈现与当前安装兼容未核\n  **影响：**不能推荐资金交易用途或量化可靠性\n  **进一步探讨：**用受控模拟与当前官方行情对照，再作小范围非交易试用\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：5bbd1e41d2210fea900c034ea0095986f16298278a4142eed01c9e4ccf96287c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1124 | 726 | 335 | — |\n| .mjs | source | 1 | 205 | 135 | 58 | — |\n| .md | source | 1 | 202 | — | — | 2448 |\n| .mjs | test | 2 | 389 | 309 | 56 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 多源报价 | 获取 USDT 现货参考价 | 部分缺币沿旧价，逐币年龄未知 |\n| 走势图 | 展示小时线和会话读数 | 走势来源可与报价不同 |\n| 宿主缓存 | 多窗口共享已取快照 | 缓存失效时并发不去重 |\n| 代理访问 | 受限网络经 HTTP CONNECT | https:// 代理不支持 |\n\n## 工程亮点\n\n宿主层解决 CORS/代理并限响应体可借鉴；同一缓存需补并发合并和逐币新鲜度契约。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、client.js、https.mjs、tests/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、Host/Client、传输层与作者测试；未执行目标代码、核实时行情/网络或真实 GUI；旧 META 仅复用。\n- 下一步：以 mock 三源和固定时钟覆盖部分缺价、切源、全失败、并发标签与动态 schedule，再同时间点核官方报价和真实 GUI。\n",
         "metadata": {
             "repository": "18569663yz-web/dsh-plugin-crypto-ticker",
             "repository_id": 1389061748,

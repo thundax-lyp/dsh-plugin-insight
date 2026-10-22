@@ -10,7 +10,7 @@
             "repository": "AIR-pixel/air-pixel-liquid-glass",
             "path": "",
             "aliases": [],
-            "name": "air-pixel-liquid-glass",
+            "name": "AIR-pixel Liquid Glass",
             "entry_type": "plugin",
             "technical_category": "interface-input",
             "business_category": "personal-productivity",
@@ -24,36 +24,76 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1414238544-root-directory-0",
+                    "id": "2026-10-22-02-github-1414238544-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:19:24.992Z",
+                    "retrieved_at": "2026-10-22T06:07:00.153Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1414238544-root-author",
+                    "id": "2026-10-22-02-github-1414238544-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass",
+                            "commit": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+                            "path": "README.md",
+                            "content_sha256": "32bf13761f19f3614227e1414da53d690098861514ca7de69808dd88f50db845"
+                        }
+                    ],
                     "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-                    "captured_at": "2026-10-21T04:19:24.992Z",
-                    "summary": "为DSH提供可配置半透明玻璃主题、壁纸、光标和点击效果，并可选适配桌面窗口透明。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:07:00.153Z",
+                    "summary": "为 DSH Web 提供磨砂玻璃主题、壁纸、光标、波纹和对话对比度设置；桌面透明/模糊需显式修改宿主 app.asar。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1414238544-root-source",
+                    "id": "2026-10-22-02-github-1414238544-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js",
+                    "url": "https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass",
+                            "commit": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+                            "path": "README.md",
+                            "content_sha256": "32bf13761f19f3614227e1414da53d690098861514ca7de69808dd88f50db845"
+                        },
+                        {
+                            "repository_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass",
+                            "commit": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+                            "path": "package.json",
+                            "content_sha256": "cab0002d67836820278c3d8218ca74c8db721ac6db4bc65a9acafb3d487e7895"
+                        },
+                        {
+                            "repository_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass",
+                            "commit": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+                            "path": "client.js",
+                            "content_sha256": "32dbd4a4fd22ef454485f8936260924b213b926dd52373ee5fc1bb3d4249bee2"
+                        },
+                        {
+                            "repository_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass",
+                            "commit": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+                            "path": "index.js",
+                            "content_sha256": "262192228da6900e0421761c2610189c0a041086510febe0809ad118e99b0457"
+                        },
+                        {
+                            "repository_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass",
+                            "commit": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
+                            "path": "tools/asarpatch.py",
+                            "content_sha256": "ef3e27c805d831a4a9e74872d9540e15ee5294f70b075d5b266b837e38611369"
+                        }
+                    ],
                     "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-                    "captured_at": "2026-10-21T04:19:24.992Z",
-                    "summary": "核查 index.js、client.js、tools/asarpatch.py；client.js注入设计token/CSS、光标与ripple，index.js持久配置并探测app.asar补丁；桌面模糊通过资源目录请求文件交给已打补丁主进程，asarpatch.py修改归档并备份。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:07:00.153Z",
+                    "summary": "核查 README.md、package.json、client.js、index.js、tools/asarpatch.py；客户端注入 CSS/设置入口，Host 暴露配置 API；可选 Python helper 修改 app.asar 并借文件通道向 Electron 主进程请求窗口材质。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读index.js、client.js、tools/asarpatch.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                        "静态审阅 README、client.js、index.js、asarpatch.py；未运行插件或修改宿主。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望定制界面且保持可读性的DSH用户，合格体验需对比度和性能可接受、禁用可恢复；桌面透明与网页CSS是不同能力。",
+                    "text": "个人用户希望改善 DSH 界面外观和长对话可读性。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +115,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "client.js注入设计token/CSS、光标与ripple，index.js持久配置并探测app.asar补丁；桌面模糊通过资源目录请求文件交给已打补丁主进程，asarpatch.py修改归档并备份。",
+                    "text": "客户端注入 CSS/设置入口，Host 暴露配置 API；可选 Python helper 修改 app.asar 并借文件通道向 Electron 主进程请求窗口材质。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +133,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读index.js、client.js、tools/asarpatch.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。",
+                    "text": "静态审阅 README、client.js、index.js、asarpatch.py；未运行插件或修改宿主。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +151,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT主题代码；常规视觉不需patch，桌面特性需Python归档工具、Windows/Electron版本与资源写权限，未执行。",
+                    "text": "package v0.2.0、MIT，peer DSH 0.2.1-rc.2；适配作者声明未独立验证。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +169,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次调对比度与可选patch备份，持续GPU模糊、升级回归和排错成本；无渲染性能或阅读效率实测。",
+                    "text": "#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 普通主题 | 安装、调色和可读性检查 | 低端设备性能未知 |\n| 桌面透明 | 备份并修改 app.asar | 升级/版本适配需维护 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +187,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先试CSS主题并保留足够消息对比度。需要桌面透明时另审补丁范围和恢复备份，升级后重新检查，勿将演示渲染当真机验收。",
+                    "text": "先试普通主题，再于可回滚副本核补丁、窗口材质和更新后恢复；详见[Q02](#research-q02)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +205,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "视觉个性与状态层次可能改善偏好，未证明效率，过透明可能损可读。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 界面皮肤 | CSS、光标、波纹 | 实机可读性 |\n| 透明窗 | 补丁/文件通道 | 目标系统效果 |\n| 配置 | JSON API | 外层访问控制 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +223,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "主题token和host持久配置分离、补丁可用性检测值得借鉴；资源文件通道和asar修改引入版本耦合，卸载插件不自动等于归档恢复。 源码依据：[index.js](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js)、[client.js](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/client.js)、[tools/asarpatch.py](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/tools/asarpatch.py)。",
+                    "text": "Host 配置路由和文件回执机制连接 Web CSS 与 Electron 材质；补丁为显式可选路径。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +241,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相对单一换色，增量是玻璃强度与双侧消息对比度一起可配，并显式区分窗口材质与CSS。Electron窗口效果归平台机制，插件实现主题和接线。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "主题涵盖表面、壁纸、光标、波纹和分侧对比度；详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +259,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "是否“装主题”就得到桌面透明？README明确需主进程patch，运行宿主本身不能直接调BrowserWindow；更新替换asar后需重新核对。截图是stand-in shell渲染而非真实透明截图，不能据示例认定当前目标机器效果或性能。",
+                    "basis": "supported",
+                    "text": "桌面透明需要用户修改安装归档，升级可能失效；配置写路由的跨源和失败处理仍有缺口。详见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +277,16 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "由patch外部通道推导，可通过宿主正式窗口材质API和可达性能力声明替代归档修改，同时按实测对比度限制强度。未验证；不同背景/主题/升级下测文本可读与恢复，若仍需不可追踪patch则不成立。",
+                    "text": "把补丁状态与效果验证暴露给用户并收紧配置写入，可降低主题试用风险；需目标宿主验证。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +295,15 @@
                             "fingerprint": "4b980fb2cbac292274a6b3136696ab27e3b1decc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:24.992Z",
+                    "reviewed_at": "2026-10-22T06:07:00.153Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:19:24.992Z",
+            "last_checked_at": "2026-10-22T06:07:00.153Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-                "reviewed_at": "2026-10-21T04:19:24.992Z",
+                "reviewed_at": "2026-10-22T06:07:00.153Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +315,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 10,
-                        "simplification": 8
+                        "mechanism": 23,
+                        "transferability": 5,
+                        "simplification": 4
                     },
-                    "rationale": "novelty主题适配小档；mechanism CSS与主进程通道小档；transferability token模式半档；simplification多项视觉配置半档。",
+                    "rationale": "CSS/渲染与 Electron 主进程补丁集成细致，但依赖固定宿主版本并增加维护。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 41,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
+                        "delivery": 15,
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow偏好调整小档；delivery视觉界面小档；reach桌面用户小档；economics未识别成本结构变化或收益验证，取0。",
+                    "rationale": "外观可自定义，实机体验和维护成本尚无独立数据。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 29,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1414238544-root-source"
+                        "2026-10-22-02-github-1414238544-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "视觉定制用户可先试CSS并核消息对比度；桌面透明另审asar补丁备份与恢复，演示截图不作真机效果。",
+                "reason": "仅建议普通主题隔离试用；透明补丁需可回滚安装副本和版本核对。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "个性化界面需求明确，阅读和性能收益未证。"
+                        "rationale": "桌面外观定制场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "主题token和可选桌面模糊满足不同视觉偏好。"
+                        "rationale": "分侧对比度和材质控制较完整，但图片非实机。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核补丁与CSS实现，stand-in渲染非真实透明验收。"
+                        "rationale": "源码和作者合成渲染可核，目标运行未验证。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "GPU、升级补丁和备份回归有成本，限定CSS试用较可控。"
+                        "score": 5,
+                        "rationale": "透明功能修改宿主归档且升级需维护。"
                     }
                 },
-                "score": 51,
+                "score": 46,
                 "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:07:00.153Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1414238544-root-source"
+                    "2026-10-22-02-github-1414238544-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,33 +394,34 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "c1f96724238b1734abd9bf11584b1dd8944c9300c20369de5bcf7d388d54ad39"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "8dc11aced581233c1e5a5b496d92a13e227cb891ece561c7898b57a7b71e1d90"
         },
         "publication.metadata": "data/plugins/air-pixel--air-pixel-liquid-glass/META.json",
         "publication.summaries": {
-            "text": "为DSH提供可配置半透明玻璃主题、壁纸、光标和点击效果，并可选适配桌面窗口透明。",
+            "text": "为 DSH Web 提供磨砂玻璃主题、壁纸、光标、波纹和对话对比度设置；桌面透明/模糊需显式修改宿主 app.asar。",
             "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
             "source_url": "https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/README.md"
         },
         "publication.capabilities": {
             "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
             "items": {
-                "界面": "玻璃主题、壁纸、光标、ripple与对比度设置。",
-                "Host 路由": "配置持久化与窗口材质状态接口。"
-            }
+                "界面": "磨砂主题、对比度、壁纸与指针交互设置",
+                "Host 路由": "共享外观配置与可选桌面材质请求"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| CSS 主题 | 外观自定义 | 视觉未实测 |\n| 透明补丁 | 桌面透出 | 修改 app.asar |\n| 配置 API | 保存选项 | 写路由需核安全 |"
         },
         "publication.advice": {
             "revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-            "text": "先试CSS主题并保留足够消息对比度。需要桌面透明时另审补丁范围和恢复备份，升级后重新检查，勿将演示渲染当真机验收。"
+            "text": "先试普通主题，再于可回滚副本核补丁、窗口材质和更新后恢复；详见[Q02](#research-q02)、[Q04](#research-q04)。"
         },
         "registry": "data/plugins/air-pixel--air-pixel-liquid-glass",
-        "reports": "# air-pixel-liquid-glass\n\n> 为DSH提供可配置半透明玻璃主题、壁纸、光标和点击效果，并可选适配桌面窗口透明。\n\n## 使用建议\n\n先试CSS主题并保留足够消息对比度。需要桌面透明时另审补丁范围和恢复备份，升级后重新检查，勿将演示渲染当真机验收。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：希望定制界面且保持可读性的DSH用户，合格体验需对比度和性能可接受、禁用可恢复；桌面透明与网页CSS是不同能力。\n- **亮点**：相对单一换色，增量是玻璃强度与双侧消息对比度一起可配，并显式区分窗口材质与CSS。Electron窗口效果归平台机制，插件实现主题和接线。\n- **思考**：是否“装主题”就得到桌面透明？README明确需主进程patch，运行宿主本身不能直接调BrowserWindow；更新替换asar后需重新核对。截图是stand-in shell渲染而非真实透明截图，不能据示例认定当前目标机器效果或性能。\n- **建议**：由patch外部通道推导，可通过宿主正式窗口材质API和可达性能力声明替代归档修改，同时按实测对比度限制强度。未验证；不同背景/主题/升级下测文本可读与恢复，若仍需不可追踪patch则不成立。\n\n## 场景与替代办法\n\n希望定制界面且保持可读性的DSH用户，合格体验需对比度和性能可接受、禁用可恢复；桌面透明与网页CSS是不同能力。\n\n普通CSS主题维护成本更低；窗口透明需主进程授权，不可用CSS代替。\n\n## 能力清单\n\n- **界面**：玻璃主题、壁纸、光标、ripple与对比度设置。\n- **Host 路由**：配置持久化与窗口材质状态接口。\n\n## 依赖与流程\n\nDSH客户端设计token/webServer，桌面效果还依赖patched主进程和系统窗口材质；权限/平台不足时应清楚降级。\n\n设置主题、保存host配置并应用CSS；可选工具备份/patch宿主，主进程读材质请求并反馈；禁用主题与恢复patch分开验收。\n\n## 成本与效果\n\n首次调对比度与可选patch备份，持续GPU模糊、升级回归和排错成本；无渲染性能或阅读效率实测。\n\n视觉个性与状态层次可能改善偏好，未证明效率，过透明可能损可读。\n\n## 核心贡献\n\n相对单一换色，增量是玻璃强度与双侧消息对比度一起可配，并显式区分窗口材质与CSS。Electron窗口效果归平台机制，插件实现主题和接线。\n\n## 关键质疑\n\n是否“装主题”就得到桌面透明？README明确需主进程patch，运行宿主本身不能直接调BrowserWindow；更新替换asar后需重新核对。截图是stand-in shell渲染而非真实透明截图，不能据示例认定当前目标机器效果或性能。\n\n\n## 工程亮点\n\n主题token和host持久配置分离、补丁可用性检测值得借鉴；资源文件通道和asar修改引入版本耦合，卸载插件不自动等于归档恢复。 源码依据：[index.js](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js)、[client.js](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/client.js)、[tools/asarpatch.py](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/tools/asarpatch.py)。\n\n## 未来设计假设（未验证）\n\n由patch外部通道推导，可通过宿主正式窗口材质API和可达性能力声明替代归档修改，同时按实测对比度限制强度。未验证；不同背景/主题/升级下测文本可读与恢复，若仍需不可追踪patch则不成立。\n\n测试明暗/复杂壁纸的对比度、光标/ripple清理、刷新配置一致与GPU开销；另在临时应用副本验证patch/check/revert及升级。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1382d780d6b95449742b368eabc1cb3a49502e4d3705664c2543191b0ebcfef5。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 4541 | 2367 | 1968 | — |\n| .md | source | 2 | 106 | — | — | 1050 |\n| .mjs | source | 19 | 10092 | 7057 | 2559 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AIR-pixel/air-pixel-liquid-glass](https://github.com/AIR-pixel/air-pixel-liquid-glass)\n- **版本号**：0.2.0（[固定提交 4b980fb2](https://github.com/AIR-pixel/air-pixel-liquid-glass/tree/4b980fb2cbac292274a6b3136696ab27e3b1decc)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 index.js、client.js、tools/asarpatch.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读index.js、client.js、tools/asarpatch.py；未覆盖全部协议/界面与操作系统分支，未执行安装、目标测试或真实宿主；独立采用与同条件收益未核实。\n- 下一步：测试明暗/复杂壁纸的对比度、光标/ripple清理、刷新配置一致与GPU开销；另在临时应用副本验证patch/check/revert及升级。\n",
+        "reports": "# AIR-pixel Liquid Glass\n\n> 为 DSH Web 提供磨砂玻璃主题、壁纸、光标、波纹和对话对比度设置；桌面透明/模糊需显式修改宿主 app.asar。\n\n## 研究范围\n\n- **仓库**：[AIR-pixel/air-pixel-liquid-glass](https://github.com/AIR-pixel/air-pixel-liquid-glass)\n- **版本号**：0.2.0（[固定提交 4b980fb2cbac292274a6b3136696ab27e3b1decc](https://github.com/AIR-pixel/air-pixel-liquid-glass/tree/4b980fb2cbac292274a6b3136696ab27e3b1decc)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n主题源代码与补丁路径可核，真实视觉未验；配置 API 通配 CORS 且持久化失败仍返回成功，有待核外层访问控制。\n\n## 洞察短评\n\n- **用途**：个人用户希望改善 DSH 界面外观和长对话可读性。\n- **亮点**：主题涵盖表面、壁纸、光标、波纹和分侧对比度；详见[Q01](#research-q01)。\n- **思考**：桌面透明需要用户修改安装归档，升级可能失效；配置写路由的跨源和失败处理仍有缺口。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：把补丁状态与效果验证暴露给用户并收紧配置写入，可降低主题试用风险；需目标宿主验证。详见[Q04](#research-q04)。\n\n采用建议：先试普通主题，再于可回滚副本核补丁、窗口材质和更新后恢复；详见[Q02](#research-q02)、[Q04](#research-q04)。\n\n## 核心贡献\n\n主题涵盖表面、壁纸、光标、波纹和分侧对比度；详见[Q01](#research-q01)。\n\n## 关键质疑\n\n桌面透明需要用户修改安装归档，升级可能失效；配置写路由的跨源和失败处理仍有缺口。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n把补丁状态与效果验证暴露给用户并收紧配置写入，可降低主题试用风险；需目标宿主验证。详见[Q04](#research-q04)。\n\n目标 Windows/Web 视觉和性能对照；核 webServer 外层访问控制、写入失败状态和宿主补丁更新/回滚。\n\n## 场景与替代办法\n\n个人用户希望改善 DSH 界面外观和长对话可读性。\n\nDSH 默认 UI；插件提供可配置玻璃质感和可选桌面透出。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH 0.2.1-rc.2 | 声明兼容 | 版本可能失效 |\n| Windows/Electron | 桌面材质 | 只用普通主题 |\n| app.asar 备份 | 补丁回滚 | 恢复困难 |\n\n#### 试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 普通主题 | 调对比度/光标 | 文字可读 |\n| 补丁副本 | check/备份/应用 | 材质状态准确 |\n| 恢复 | revert/更新 | 不影响宿主启动 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 普通主题 | 安装、调色和可读性检查 | 低端设备性能未知 |\n| 桌面透明 | 备份并修改 app.asar | 升级/版本适配需维护 |\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 界面皮肤 | CSS、光标、波纹 | 实机可读性 |\n| 透明窗 | 补丁/文件通道 | 目标系统效果 |\n| 配置 | JSON API | 外层访问控制 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实主题视觉能力、桌面透明所需宿主补丁及本地配置路由边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 插件改变了哪些界面体验？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件为 DSH Web 注入磨砂表面、壁纸、光标、点击波纹和人/助手分侧对比度设置，Host 持有 JSON 配置，客户端渲染 CSS 和设置页。它面向希望定制桌面外观与长会话可读性的个人用户。README 的图片是 stand-in shell 上渲染的合成图，不是实际 DSH 截屏；本轮没有在目标宿主目测最终效果。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-38](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/README.md#L1-L38)\n\n作者说明功能且披露截图为合成渲染。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n# AIR-pixel Liquid Glass\n\nA configurable Liquid Glass theme plugin for DeepSeek Harness. It adds translucent interface surfaces, an optional wallpaper, desktop transparency, window blur, custom cursors, click ripples, and per-side conversation contrast controls.\n\n## Screenshots\n\nFull transparency: strength 2.0 (效果强度) with desktop transparency on (透出桌面), so the desktop reaches the eye unfiltered. The per-side conversation plates are what keep the body copy readable this far up the slider.\n\n![Liquid Glass with desktop transparency](assets/preview-transparent.png)\n\nThe same screen with and without the theme:\n\n![The stock shell beside Liquid Glass](assets/preview-vs-stock.png)\n\nAt the default strength, over the theme's own wallpaper — sidebar, pane, dialog, menu and floating panel:\n\n![Frosted panels at the default strength](assets/preview-surfaces.png)\n\n| Custom cursors | Click ripple |\n| --- | --- |\n| ![The five shipped cursors](assets/preview-cursors.png) | ![A click ripple, held](assets/preview-ripple.png) |\n\nThe four tint presets, light and dark:\n\n![Tint presets in light and dark](assets/preview-tints.png)\n\nThese are renders, not photographs. `node tools/docshots.mjs` boots the real `client.js` in a stand-in shell over a drawn desktop. A screen capture cannot show this feature at all: `PrintWindow` drops the alpha channel, so a see-through window comes back as a black rectangle — measured in `tools/appshot.py`.\n\n## Features\n\n- Frosted surfaces with adjustable strength, blur, tint, and wallpaper.\n- Optional transparent desktop and Windows window material controls. Desktop transparency requires the included client patch helper; the setting reports when the patch is unavailable.\n- Custom cursors and click ripples, each independently configurable.\n- Separate contrast settings for human and assistant messages.\n- English and Chinese settings UI.\n\n## Install\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[client.js:1902-1906](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/client.js#L1902-L1906)\n\n按配置注入光标/波纹 CSS。\n\n```text\n      // ---- cursors ----------------------------------------------------------\n      if (config.cursor) parts.push(cursorDeclarations());\n\n      // ---- ripple -----------------------------------------------------------\n      if (config.ripple) parts.push(rippleCss(intensity, drop, config.rippleSize));\n```\n\n**依据 3 · 源码核查**：[client.js:3464-3508](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/client.js#L3464-L3508)\n\n注册语言字典与设置入口。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n      ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'liquid-glass: dictionaries');\n      const t = ctx.locale.bind(NS);\n\n      ctx.effect(() => {\n        applyTheme();\n        // The wallpaper is a single layer whose gradient is scheme-specific, so\n        // a light/dark flip has to repaint it. Watching the attribute is cheaper\n        // and far more reliable than listening for whatever toggles the theme.\n        const observer = new MutationObserver(() => {\n          const el = document.getElementById(WALLPAPER_ID);\n          if (el !== null) delete el.dataset.signature;\n          paintWallpaper();\n        });\n        observer.observe(document.body, {\n          attributes: true,\n          attributeFilter: ['data-ds-dark-theme']\n        });\n        return () => {\n          observer.disconnect();\n          const tag = document.getElementById(STYLE_ID);\n          if (tag !== null) tag.remove();\n          dropWallpaper();\n          dropLiquidDefs();\n        };\n      }, 'liquid-glass: theme sheet');\n\n      ctx.effect(() => installRipples(), 'liquid-glass: click ripples');\n\n      ctx.slots.inject(SECTION_SLOT, () =>\n        ctx.slots.register({\n          name: SECTION_SLOT,\n          id: 'liquid-glass',\n          order: 42,\n          label: () => t('nav'),\n          locale: NS,\n          children: { [ITEM_SLOT]: { kind: 'list', scope: 'root' } }\n        }, LiquidGlassSection)\n      );\n\n      ctx.slots.inject(ITEM_SLOT, () =>\n        ctx.slots.register({\n          name: ITEM_SLOT,\n          id: 'panel',\n          order: 0,\n          locale: NS\n```\n\n</details>\n\n#### 缺口\n\n- 未在 DSH 目标版本运行主题。\n  **影响：**真实视觉、性能与易读性未证实。\n  **进一步探讨：**在目标 Windows/Web 宿主比较默认/主题界面并采集对比度和帧率。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 桌面透明和窗口模糊如何启用？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n普通主题 CSS 可以由插件直接注入；真正透出桌面的透明窗口和 Windows 窗口材质则依赖用户显式运行 asarpatch.py 修改已安装的 app.asar。脚本会核查归档结构/完整性、先备份并支持 --check/--revert；补丁将主进程 watcher 加入归档，Host 通过文件请求/回执与主进程通信。DSH 更新后补丁可能消失，需要按目标版本重新核对，不宜把开关等同于已经生效。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:39-66](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/README.md#L39-L66)\n\n安装/兼容性说明透明与模糊需要补丁，支持 0.2.1-rc.2。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\nInstall `air-pixel-liquid-glass` as a DeepSeek Harness bundle, then enable **Liquid Glass** in Settings. The desktop transparency and window blur controls need their host-side patch; the theme and other visual options do not.\n\n## Development\n\nRequires Node.js. Run the syntax and behavior checks with:\n\n```powershell\nnode tools/preflight.mjs\nnode tools/verify.mjs\nnode tools/patcheck.mjs\nnode tools/mutationaudit.mjs\n```\n\nRegenerate the images above with `node tools/docshots.mjs` (writes `assets/`, which `screenshots.json` points the plugin market at). Some visual inspection scripts need Python with Pillow. See [DEVELOPMENT.md](DEVELOPMENT.md) for architecture, checks, and rename migration details.\n\n## Compatibility\n\nDesigned for DeepSeek Harness on Windows and the web GUI. Desktop transparency and window blur depend on the installed Harness build and supported Windows compositor APIs.\n\nVerified against Harness core `0.2.1-rc.2`; that is the only core this version declares support for. The slots seat moved into the core's client runner in the 0.2.x line, so `0.1.x` cores are out — stay on plugin `0.1.0` there.\n\n## Permissions and behavior\n\nThe plugin injects theme styles and custom cursors into the Harness web UI, reads and writes its own JSON settings through a local host API, and logs diagnostic status through the host logger. The optional `tools/asarpatch.py` helper modifies the installed Harness `app.asar` only when run explicitly by the user; it keeps a backup and supports checking or reverting the patch. The plugin does not make external network requests.\n\n## License\n\nMIT. See [LICENSE](LICENSE).\n````\n\n</details>\n\n**依据 2 · 源码核查**：[tools/asarpatch.py:663-685](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/tools/asarpatch.py#L663-L685)\n\n显式 check/revert/staging/apply 参数。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\ndef main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"--check\", action=\"store_true\", help=\"report state and exit\")\n    ap.add_argument(\"--revert\", action=\"store_true\", help=\"restore the backup\")\n    ap.add_argument(\n        \"--material\",\n        choices=MATERIALS,\n        default=\"none\",\n        help=\"what the window should show behind itself: none = the desktop \"\n        \"itself, sharp (default); acrylic = DWM's blurred copy of it\",\n    )\n    ap.add_argument(\"--staging\", metavar=\"PATH\", help=\"write here instead of installing\")\n    ap.add_argument(\n        \"--apply-staged\",\n        action=\"store_true\",\n        help=\"install an already-verified app.asar.new without repacking\",\n    )\n    ap.add_argument(\n        \"--print-watcher\",\n        action=\"store_true\",\n        help=\"write the window-material watcher to stdout and exit\",\n    )\n    args = ap.parse_args()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[tools/asarpatch.py:777-955](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/tools/asarpatch.py#L777-L955)\n\n验证归档、备份和替换安装文件。\n\n<details>\n<summary>查看原文（179行）</summary>\n\n```text\n    if args.check:\n        print(\"not patched\")\n        return 1\n\n    if not watcher_only:\n        hits = text.count(OLD)\n        if hits != 1:\n            print(f\"the win32 primary block matched {hits} times, expected exactly 1\")\n            print(\"the archive is from a different DSH build; the patch needs re-deriving\")\n            return 2\n\n    # Before mutating anything: confirm the integrity formula reproduces the\n    # hashes already in the archive. This has to happen against the untouched\n    # header, because it resolves each member through its stored offset.\n    #\n    # The gate is a MATCH RATE, not \"zero mismatches\". Measured on the shipped\n    # archive: 9 of 11470 records are already stale, so requiring a clean sheet\n    # would refuse a patch the app itself is perfectly happy to run. A wrong\n    # formula would fail nearly all of them, so 95% separates the two cases\n    # with a lot of room. The stale ones are reported rather than hidden — they\n    # are pre-existing, not introduced here.\n    #\n    # A raw byte-count check is deliberately NOT used as the structural test:\n    # re-serialising the header can legitimately change its length when an\n    # offset crosses a power of ten, and asserting otherwise would flag a\n    # correct repack. The read-back below is the real test.\n    checked, bad = verify_integrity_against(header, base, raw)\n    rate = (checked - len(bad)) / checked if checked else 0.0\n    if rate < 0.95:\n        print(\"REFUSING TO PATCH — the integrity formula does not describe this archive:\")\n        print(f\"  only {rate:.1%} of {checked} records reproduced ({len(bad)} mismatched)\")\n        print(f\"  first mismatch: {bad[0]}\")\n        return 3\n    print(f\"integrity formula confirmed on {checked} records ({rate:.2%} reproduced)\")\n    if bad:\n        print(f\"  {len(bad)} record(s) were already stale in the shipped archive:\")\n        for path in bad[:9]:\n            print(f\"    · {path}\")\n\n    if watcher_only:\n        new_text = text + build_watcher()\n    else:\n        new_text = text.replace(OLD, build_new(args.material)) + build_watcher()\n    new_bytes = new_text.encode(\"utf-8\")\n    old_off = int(target[\"offset\"])\n    delta = len(new_bytes) - len(before[MEMBER])\n\n    # Rebuild the body region as: everything before main.js, the patched\n    # main.js, everything after. Members before main.js keep their offsets;\n    # every member after it moves right by exactly the growth.\n    prefix_len = old_off\n    prefix = raw[base : base + prefix_len]\n    suffix = raw[base + prefix_len + len(before[MEMBER]) :]\n    body = prefix + new_bytes + suffix\n\n    for path, entry in members.items():\n        if not has_body(entry):\n            continue\n        raw_off = entry[\"offset\"]\n        off = int(raw_off)\n        if off > old_off:\n            moved = off + delta\n            # Offsets are stored as STRINGS in this archive. `off + delta`\n            # silently produced an int, which quietly cost two bytes per member\n            # (the quotes) — 26 members, 52 bytes, and the only reason it was\n            # noticed is the read-back verification. Preserve the original type\n            # rather than trusting that a reader will coerce it.\n            entry[\"offset\"] = str(moved) if isinstance(raw_off, str) else moved\n    target[\"size\"] = len(new_bytes)\n    # The patched member's own hash, recomputed. Its blocks are unchanged in\n    # count: main.js is 490 KB against a 4 MB blockSize, so one block.\n    if \"integrity\" in target:\n        block_size = int(target[\"integrity\"].get(\"blockSize\", 4194304))\n        target[\"integrity\"] = integrity_for(new_bytes, block_size)\n\n    out = emit(header, body)\n\n    # --- verification -----------------------------------------------------\n    # The only thing that makes a repack trustworthy is reading it back and\n    # comparing every untouched byte against the snapshot. A repacked archive\n    # that loads but silently truncates a module would be far worse than no\n    # patch at all, and nothing about it would be visible until something\n    # obscure broke weeks later.\n    problems = []\n\n    try:\n        o_header, o_base, _ = parse(out)\n    except SystemExit as error:\n        print(f\"REPACK FAILED — the result does not parse: {error}\")\n        return 3\n\n    o_members = dict(walk(o_header))\n    if set(o_members) != set(members):\n        problems.append(\"member set changed\")\n\n    for path, entry in o_members.items():\n        if not has_body(entry):\n            continue\n        off = int(entry[\"offset\"])\n        size = int(entry[\"size\"])\n        if o_base + off + size > len(out):\n            problems.append(f\"{path}: runs past the end of the archive\")\n            continue\n        got = out[o_base + off : o_base + off + size]\n        want = new_bytes if path == MEMBER else before.get(path)\n        if want is None:\n            problems.append(f\"{path}: has no original body to compare against\")\n        elif got != want:\n            problems.append(f\"{path}: body differs from the original\")\n        # Types matter: the shipped archive stores offsets as strings, and a\n        # reader that coerces is not a guarantee that every reader does.\n        if type(entry[\"offset\"]) is not type(members[path][\"offset\"]):\n            problems.append(f\"{path}: offset type changed to {type(entry['offset']).__name__}\")\n\n    # The patched member's hash must describe the bytes that are actually there.\n    main_rec = o_members[MEMBER].get(\"integrity\")\n    if main_rec is not None:\n        want_rec = integrity_for(new_bytes, int(main_rec.get(\"blockSize\", 4194304)))\n        if want_rec[\"hash\"] != main_rec.get(\"hash\"):\n            problems.append(\"lib/main.js: integrity hash does not match the patched bytes\")\n        if want_rec[\"blocks\"] != list(main_rec.get(\"blocks\", [])):\n            problems.append(\"lib/main.js: integrity blocks do not match the patched bytes\")\n\n    # Walk order must cover the body region exactly once: no gaps, no overlaps.\n    cursor = 0\n    for path, entry in walk(o_header):\n        if not has_body(entry):\n            continue\n        if int(entry[\"offset\"]) != cursor:\n            problems.append(\n                f\"gap or overlap before {path}: offset {entry['offset']} but cursor {cursor}\"\n            )\n            break\n        cursor = int(entry[\"offset\"]) + int(entry[\"size\"])\n    if cursor != len(out) - o_base:\n        problems.append(\n            f\"body region ends at {cursor}, archive has {len(out) - o_base} bytes of body\"\n        )\n\n    if problems:\n        print(\"REPACK FAILED — nothing written:\")\n        for p in problems[:20]:\n            print(\"  ·\", p)\n        return 3\n\n    print(f\"verified  {len(o_members)} members read back, every untouched body byte-identical\")\n    print(f\"          lib/main.js {len(before[MEMBER])} -> {len(new_bytes)} bytes ({delta:+d}), hash rewritten\")\n    print(f\"          archive     {len(raw)} -> {len(out)} bytes\")\n\n    if args.staging:\n        Path(args.staging).write_bytes(out)\n        print(f\"staged    -> {args.staging}\")\n        return 0\n\n    if not backup.exists():\n        shutil.copy2(ASAR, backup)\n        print(f\"backup    -> {backup.name}\")\n\n    tmp = ASAR.parent / (ASAR.name + \".new\")\n    try:\n        tmp.write_bytes(out)\n        tmp.replace(ASAR)\n        print(f\"patched   -> {ASAR.name}\")\n    except (PermissionError, OSError) as error:\n        # Keep the repacked archive on disk: it is already verified, so once\n        # DSH is closed the whole job is a rename rather than a re-run.\n        print(f\"could not replace the archive: {error}\")\n        print(f\"DSH is holding it open. Close it, then either run this again or\")\n        print(f\"rename {tmp} over {ASAR.name} yourself.\")\n        return 4\n\n    # The pointer is the host's only reliable route to this archive, and this\n    # run is the one that knows what is in it now. Leaving it alone keeps\n    # whatever the PREVIOUS run wrote — measured here: a `--revert` (which\n    # records `stock`) followed by a patch left the pointer saying `stock`\n    # while the archive carried `none`, which is the one file whose job is to\n    # describe the archive. The host rescanning the marker is what kept that\n    # survivable, not an argument for leaving a stale record behind.\n    write_pointer(ASAR, \"patched\", present if watcher_only else args.material)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:691-822](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js#L691-L822)\n\n文件通道等待主进程回执并处理超时/陈旧回执。\n\n<details>\n<summary>查看原文（132行）</summary>\n\n```text\n * `setBackgroundMaterial` exists only in the main process, and the one channel\n * to it this project owns is a patched `lib/main.js` (tools/asarpatch.py, which\n * appends a watcher alongside the transparency recipe). So the request travels\n * through a file:\n *\n *   this half writes  <resources>/liquid-glass-window-material.json\n *   the watcher applies it to the largest visible window and writes\n *                     <resources>/liquid-glass-window-report.json\n *   this half reads the report back\n *\n * Both halves name the directory the archive itself lives in — the host via\n * `resourcesDir()` below, the watcher via `process.resourcesPath` — so neither\n * has to guess where the other is.\n *\n * The materials are the same two `WINDOW_MATERIALS` already declares below:\n * `on` is the blurred one, `off` the sharp one.\n */\nconst WINDOW_BLUR_FILES = {\n  wanted: 'liquid-glass-window-material.json',\n  report: 'liquid-glass-window-report.json'\n};\n\n/**\n * How long one request will hold open waiting for the main process to answer.\n *\n * The watcher answers in single-digit milliseconds (a directory watch plus one\n * setter call), so the wait is what an UNPATCHED main process costs, not what\n * a patched one does. It is paid at most once per material change — see\n * `windowBlurState.gaveUp`.\n */\nconst WINDOW_BLUR_WAIT_MS = 900;\nconst WINDOW_BLUR_POLL_MS = 50;\n\n/** Where the archive — and therefore the watcher's two files — live. */\nfunction resourcesDir() {\n  const resolved = resolveAsarPathDetailed();\n  if (resolved.file === null) return null;\n  return path.dirname(resolved.file);\n}\n\n/**\n * One request's position in the file protocol.\n *\n * `seq` exists because a report that does not say WHICH request it answered is\n * indistinguishable from a stale one: the report file survives restarts, and a\n * host that trusted any report it found would show 已生效 for a window the new\n * session never touched. `writtenMaterial` is what makes the write lazy — this\n * runs on every config read, and rewriting the same request would make the\n * watcher work on every panel poll. `gaveUp` is the unpatched-main memo: after\n * one full wait with no receipt, later requests read once and answer instead\n * of paying the deadline again. It resets the moment the material changes,\n * because that is the moment a working watcher has something new to say.\n *\n * `seeded` closes a hole in that first sentence. Counting from 0 in every\n * process means a new session's first request is `1` — which is also the\n * number the previous session's report is carrying, because the report file\n * survives restarts and most sessions only ever issue one. So the guard\n * against a stale report was defeated by the one event that makes reports\n * stale. The first request of a session is numbered above whatever the report\n * on disk already answered.\n */\nconst windowBlurState = { seq: 0, writtenMaterial: null, gaveUp: false, seeded: false };\n\n/** Bounded synchronous-free pause between report polls. */\nconst windowBlurWait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));\n\n/**\n * Apply `windowBlur` through the file protocol and report what actually\n * happened.\n *\n * The report is a READBACK, not an echo — but the readback now happens in\n * another process, so \"what actually happened\" arrives as a report that must\n * name THIS request's `seq` before it is believed. Every failure path names\n * itself (`no-archive` / `write-failed` / `no-report` / and whatever the\n * watcher reported: `no-window` / `set-failed` / `no-getter` /\n * `material-not-applied`), so the renderer can show a reason instead of a\n * switch that is on and does nothing.\n *\n * @param {boolean} desired\n * @returns {Promise<{ active: boolean, why: string|null, material: string|null }>}\n */\nasync function applyWindowBlur(desired) {\n  const material = desired === true ? WINDOW_MATERIALS.on : WINDOW_MATERIALS.off;\n  const failed = (why) => ({ active: false, why, material: null });\n\n  const dir = resourcesDir();\n  if (dir === null) return failed('no-archive');\n\n  if (!windowBlurState.seeded) {\n    windowBlurState.seeded = true;\n    try {\n      const carried = JSON.parse(fs.readFileSync(path.join(dir, WINDOW_BLUR_FILES.report), 'utf8'));\n      if (typeof carried?.seq === 'number') windowBlurState.seq = carried.seq;\n    } catch {\n      // No report yet, or one that cannot be read: counting from 0 is right,\n      // and the watcher's first answer will be for seq 1.\n    }\n  }\n\n  if (windowBlurState.writtenMaterial !== material) {\n    windowBlurState.seq += 1;\n    try {\n      fs.writeFileSync(\n        path.join(dir, WINDOW_BLUR_FILES.wanted),\n        `${JSON.stringify({ seq: windowBlurState.seq, material })}\\n`\n      );\n    } catch {\n      return failed('write-failed');\n    }\n    windowBlurState.writtenMaterial = material;\n    windowBlurState.gaveUp = false;\n  }\n\n  const readReport = () => {\n    let parsed;\n    try {\n      parsed = JSON.parse(fs.readFileSync(path.join(dir, WINDOW_BLUR_FILES.report), 'utf8'));\n    } catch {\n      return null;\n    }\n    if (parsed === null || typeof parsed !== 'object') return null;\n    if (parsed.seq !== windowBlurState.seq) return null;\n    return {\n      active: parsed.active === true,\n      why: typeof parsed.why === 'string' ? parsed.why : null,\n      material: typeof parsed.material === 'string' ? parsed.material : null,\n      applied: parsed.applied === true,\n      verified: parsed.verified === true\n    };\n  };\n\n  // `no-window` is a transient answer — the watcher reports it for the requests\n```\n\n</details>\n\n#### 缺口\n\n- 未运行补丁或目标桌面。\n  **影响：**补丁在具体 DSH 版本和 Windows compositor 上的成功率未知。\n  **进一步探讨：**在可回滚副本上核对归档哈希、重启效果及升级后恢复。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 配置 API 有什么边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nHost 通过 webServer 注册 GET/POST 精确路径，POST 接受最大 64KiB JSON 对象，normalizeConfig 后写入 DSH_HOME 的 JSON 设置文件。响应设置 Access-Control-Allow-Origin: * 并允许跨源 POST；handler 内未检查 Origin、Host、CSRF token 或 Content-Type。具体能否从恶意网页跨站改写还取决于 DSH webServer 的监听/认证和浏览器本地网络限制，本轮不能宣称可被远程利用。另 writeConfigFile 失败仍返回 200 和 saved:false，当前进程的配置已变化，重启后可能回退。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:40-46](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js#L40-L46)\n\n服务依赖和 64KiB body 上限。\n\n```text\nexport const inject = ['webServer'];\n\nconst PLUGIN_ID = 'air-pixel-liquid-glass';\nconst ROUTE = '/api/theme-liquid-glass/config';\n\n/** Largest accepted request body. The payload is a handful of scalars. */\nconst MAX_BODY_BYTES = 64 * 1024;\n```\n\n**依据 2 · 源码核查**：[index.js:609-658](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js#L609-L658)\n\n通配 CORS 和 JSON body 校验。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nfunction prepareResponse(req, res) {\n  res.setHeader('Content-Type', 'application/json; charset=utf-8');\n  res.setHeader('Cache-Control', 'no-store');\n  res.setHeader('Access-Control-Allow-Origin', '*');\n  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');\n  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');\n  if (req.method === 'OPTIONS') {\n    res.statusCode = 204;\n    res.end();\n    return true;\n  }\n  return false;\n}\n\nfunction readJsonBody(req) {\n  return new Promise((resolve) => {\n    let size = 0;\n    let body = '';\n    let settled = false;\n    const done = (value) => {\n      if (settled) return;\n      settled = true;\n      resolve(value);\n    };\n    req.on('data', (chunk) => {\n      if (settled) return;\n      size += chunk.length;\n      if (size > MAX_BODY_BYTES) {\n        done({ error: 'request body too large', statusCode: 413 });\n        req.resume();\n        return;\n      }\n      body += chunk;\n    });\n    req.on('end', () => {\n      if (settled) return;\n      try {\n        const parsed = JSON.parse(body || '{}');\n        if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {\n          done({ error: 'request body must be a JSON object', statusCode: 400 });\n          return;\n        }\n        done({ value: parsed });\n      } catch {\n        done({ error: 'invalid JSON', statusCode: 400 });\n      }\n    });\n    req.on('error', () => done({ error: 'request body could not be read', statusCode: 400 }));\n  });\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:881-960](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js#L881-L960)\n\nGET/POST 处理、先更新内存再存盘并注册 route。\n\n<details>\n<summary>查看原文（80行）</summary>\n\n```text\nasync function handleConfig(req, res) {\n  if (prepareResponse(req, res)) return;\n\n  if (req.method === 'GET') {\n    res.statusCode = 200;\n    // `material` is not part of the config: it is not settable, and a client\n    // POSTing it back would be asserting a fact about its own process that it\n    // cannot observe. It rides on the same response only to save a round trip.\n    res.end(JSON.stringify({ ...currentConfig, ...(await materialFields()) }));\n    return;\n  }\n\n  if (req.method !== 'POST') {\n    res.statusCode = 405;\n    res.end(JSON.stringify({ error: 'method not allowed' }));\n    return;\n  }\n\n  const body = await readJsonBody(req);\n  if (body.error) {\n    res.statusCode = body.statusCode;\n    res.end(JSON.stringify({ error: body.error }));\n    return;\n  }\n  const payload = body.value;\n  currentConfig = normalizeConfig({ ...currentConfig, ...payload });\n  const saved = writeConfigFile();\n\n  res.statusCode = 200;\n  res.end(JSON.stringify({ ...currentConfig, saved, ...(await materialFields()) }));\n}\n\n/**\n * @param {object} ctx plugin context; needs the `webServer` service.\n */\nexport function apply(ctx) {\n  const detail = detectWindowMaterialDetailed();\n  ctx.logger?.info?.(`[liquid-glass] config file: ${CONFIG_FILE}`);\n  // Logged eagerly even though the route would probe it lazily: ~80 ms once, and\n  // \"why does 透出桌面 do nothing\" is otherwise a question with no visible\n  // answer anywhere — the renderer cannot see this at all.\n  ctx.logger?.info?.(\n    `[liquid-glass] window material: ${detail.material}` +\n      ` (${detail.materialWhy}` +\n      (detail.materialPath === null ? '' : `, ${detail.materialPath}`) +\n      (detail.materialScanVia === null ? '' : `, via ${detail.materialScanVia}`) +\n      ')'\n  );\n  if (detail.materialScanError !== null) {\n    // The one line that makes \"scan-failed\" actionable: which reader was tried,\n    // and the errno it came back with. Without it the report is \"the file is\n    // there and I cannot open it\", which is a dead end.\n    ctx.logger?.info?.(\n      `[liquid-glass] readers tried: ` +\n        detail.materialScanError\n          .map((entry) => `${entry.via} -> ${entry.code} (${entry.syscall})`)\n          .join(' | ')\n    );\n  }\n  if (detail.materialPath === null) {\n    // The failed candidates are the whole diagnosis, so they are logged rather\n    // than summarised — this line is the only place the real paths show up.\n    ctx.logger?.info?.(\n      `[liquid-glass] app.asar candidates tried: ` +\n        detail.materialTried.map((entry) => `${entry.why} ${entry.path}`).join(' | ')\n    );\n  }\n  if (detail.materialHost !== null) {\n    // The single most decisive fact when a scan fails, and the one that is\n    // unguessable without it: a plain Node host answers ENOTDIR for a `.asar`\n    // path because it is a file, while a host whose `fs` was rewritten hands\n    // back the archive's members because it is pretending it is a directory.\n    // Only logged when the scan failed, because that is the only time it is set.\n    ctx.logger?.info?.(\n      `[liquid-glass] host: electron=${detail.materialHost.electron ?? 'none'}` +\n        `, noAsar=${detail.materialHost.noAsar}` +\n        `, listsAsDirectory=${detail.materialHost.listsAsDirectory}`\n    );\n  }\n  ctx.webServer.register({ kind: 'exact', path: ROUTE, handler: handleConfig });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:183-204](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/index.js#L183-L204)\n\n设置写入暂存文件和 rename 的失败处理。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nfunction writeConfigFile() {\n  try {\n    fs.mkdirSync(STORE_DIR, { recursive: true });\n    const temp = `${CONFIG_FILE}.tmp-${process.pid}`;\n    fs.writeFileSync(temp, `${JSON.stringify(currentConfig, null, 2)}\\n`, 'utf-8');\n    fs.renameSync(temp, CONFIG_FILE);\n    return true;\n  } catch (error) {\n    console.warn('[liquid-glass] failed to write config:', error?.message ?? error);\n    return false;\n  }\n}\n\ncurrentConfig = readConfigFile();\n\n// ---------------------------------------------------------------------------\n// Window-material detection\n// ---------------------------------------------------------------------------\n//\n// The window's backdrop is a main-process option with no renderer-visible\n// counterpart: from inside the page there is no way to ask \"is the window base\n// actually open behind me, or am I painting onto Electron's default white\".\n```\n\n</details>\n\n#### 缺口\n\n- 未核 DSH webServer 对该路由的外层访问控制。\n  **影响：**无法给出真实跨站可达性或漏洞结论。\n  **进一步探讨：**在隔离浏览器和宿主检查监听地址、外层鉴权、Origin/Host 行为和写失败恢复。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 适合怎样试用与改进？\n\n**研究主题：**采用判断、效果与总成本、新假设与验证\n\n#### 完整回答\n\n普通外观设置可先在目标 0.2.1-rc.2 中试用并目测可读性、低性能设备的波纹开销；桌面透明则先备份 app.asar，在可回滚安装副本中做 check/patch/revert 和更新恢复。主题没有外部请求的作者声明可与源码网络调用静态核对，但未动态监测。建议写路由统一限制本机来源和请求类型，并在持久化失败时回滚内存/返回错误；对普通用户更应清楚区分无需补丁的视觉效果与需要修改宿主归档的效果。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:39-66](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/README.md#L39-L66)\n\n说明安装、适配范围、补丁和无外部网络请求。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\nInstall `air-pixel-liquid-glass` as a DeepSeek Harness bundle, then enable **Liquid Glass** in Settings. The desktop transparency and window blur controls need their host-side patch; the theme and other visual options do not.\n\n## Development\n\nRequires Node.js. Run the syntax and behavior checks with:\n\n```powershell\nnode tools/preflight.mjs\nnode tools/verify.mjs\nnode tools/patcheck.mjs\nnode tools/mutationaudit.mjs\n```\n\nRegenerate the images above with `node tools/docshots.mjs` (writes `assets/`, which `screenshots.json` points the plugin market at). Some visual inspection scripts need Python with Pillow. See [DEVELOPMENT.md](DEVELOPMENT.md) for architecture, checks, and rename migration details.\n\n## Compatibility\n\nDesigned for DeepSeek Harness on Windows and the web GUI. Desktop transparency and window blur depend on the installed Harness build and supported Windows compositor APIs.\n\nVerified against Harness core `0.2.1-rc.2`; that is the only core this version declares support for. The slots seat moved into the core's client runner in the 0.2.x line, so `0.1.x` cores are out — stay on plugin `0.1.0` there.\n\n## Permissions and behavior\n\nThe plugin injects theme styles and custom cursors into the Harness web UI, reads and writes its own JSON settings through a local host API, and logs diagnostic status through the host logger. The optional `tools/asarpatch.py` helper modifies the installed Harness `app.asar` only when run explicitly by the user; it keeps a backup and supports checking or reverting the patch. The plugin does not make external network requests.\n\n## License\n\nMIT. See [LICENSE](LICENSE).\n````\n\n</details>\n\n**依据 2 · 源码核查**：[client.js:2445-2571](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/client.js#L2445-L2571)\n\n波纹事件和本地镜像配置。\n\n<details>\n<summary>查看原文（127行）</summary>\n\n```text\n      document.addEventListener('pointerdown', onPointerDown, { capture: true, passive: true });\n      document.addEventListener('pointerup', onPointerUp, { capture: true, passive: true });\n      document.addEventListener('pointercancel', onPointerUp, { capture: true, passive: true });\n      window.addEventListener('blur', onPointerUp);\n      return () => {\n        document.removeEventListener('pointerdown', onPointerDown, { capture: true });\n        document.removeEventListener('pointerup', onPointerUp, { capture: true });\n        document.removeEventListener('pointercancel', onPointerUp, { capture: true });\n        window.removeEventListener('blur', onPointerUp);\n        heldGlint = null;\n        if (rippleRoot !== null) {\n          rippleRoot.remove();\n          rippleRoot = null;\n        }\n        liveRipples = 0;\n      };\n    }\n\n    // -----------------------------------------------------------------------\n    // Host persistence\n    // -----------------------------------------------------------------------\n\n    /** The config keys whose only legal values are `true` and `false`. */\n    const BOOLEAN_KEYS = ['enabled', 'surface', 'cursor', 'desktop', 'ripple', 'plate', 'windowBlur'];\n\n    /**\n     * Coerce a stored or received document onto the defaults.\n     *\n     * Used by BOTH the localStorage mirror and the host response, and that is\n     * the point. They were separate implementations until this round, and the\n     * two had already drifted: the mirror's version was a plain spread, so a\n     * hand-edited `intensity: 99` painted at 99 until the host answered and\n     * snapped it back to 2 — a visible flicker on every launch, from a value\n     * the host would never have written.\n     *\n     * (`coerceBooleans` is still separate because it is the one part both paths\n     * need verbatim, and an earlier attempt to make the mirror's version *only*\n     * that silently dropped `intensity` and `tint` — the spread it replaced was\n     * doing real work that was easy to miss.)\n     */\n    function normalizeDocument(raw) {\n      const next = { ...DEFAULT_CONFIG };\n      if (raw === null || typeof raw !== 'object') return next;\n      coerceBooleans(next, raw);\n      if (typeof raw.intensity === 'number' && Number.isFinite(raw.intensity)) {\n        // Same clamp and the same 1-decimal rounding the host applies, so the\n        // mirror and the host can never disagree about a value.\n        next.intensity = Math.min(2, Math.max(0.2, Math.round(raw.intensity * 10) / 10));\n      }\n      if (typeof raw.rippleSize === 'number' && Number.isFinite(raw.rippleSize)) {\n        next.rippleSize = Math.min(2, Math.max(0.5, Math.round(raw.rippleSize * 10) / 10));\n      }\n      // `null` is a legal value here, not a missing one: it is \"follow the\n      // curve\". So this branch is written as an explicit null test rather than\n      // as a typeof check — a document that says `frost: null` must keep the\n      // follow behaviour, and the `{ ...DEFAULT_CONFIG }` spread above only\n      // makes that true by accident. A junk value (a string, NaN) resolves to\n      // the default instead, which is also follow.\n      if (raw.frost === null) {\n        next.frost = null;\n      } else if (typeof raw.frost === 'number' && Number.isFinite(raw.frost)) {\n        next.frost = Math.min(FROST_MAX, Math.max(0, Math.round(raw.frost)));\n      }\n      if (typeof raw.plateLevel === 'number' && Number.isFinite(raw.plateLevel)) {\n        next.plateLevel = Math.min(PLATE_MAX, Math.max(0, Math.round(raw.plateLevel * 100) / 100));\n      }\n      // A closed set, so an unrecognised value resolves to the default rather\n      // than being carried through to `buildCss`. That matters more here than\n      // for a numeric field: a bad number still renders *something*, while a bad\n      // mode string renders nothing at all — see the note on `plateSide` there.\n      if (PLATE_SIDES.includes(raw.plateSide)) next.plateSide = raw.plateSide;\n      const tint = normalizeTint(raw.tint);\n      if (tint !== null) next.tint = tint;\n      return next;\n    }\n\n    /**\n     * Read the values a document does not spell out as booleans.\n     *\n     * @param {object} target\n     * @param {object} source\n     */\n    function coerceBooleans(target, source) {\n      if (source === null || typeof source !== 'object') return target;\n      for (const key of BOOLEAN_KEYS) {\n        if (typeof source[key] === 'boolean') target[key] = source[key];\n      }\n      return target;\n    }\n\n    function readCache() {\n      try {\n        const raw = window.localStorage.getItem(CACHE_KEY);\n        if (raw === null) return null;\n        const parsed = JSON.parse(raw);\n        if (parsed === null || typeof parsed !== 'object') return null;\n        // The cache is read at module scope, before the host answers, so a\n        // stale preset id would be live for the whole first paint. Folding it\n        // here as well as in normalizeFromHost is what `normalizeDocument`\n        // exists to make impossible to forget.\n        return normalizeDocument(parsed);\n      } catch {\n        return null;\n      }\n    }\n\n    function readMaterialCache() {\n      try {\n        return normalizeMaterial(JSON.parse(window.localStorage.getItem(MATERIAL_KEY)));\n      } catch {\n        return 'unknown';\n      }\n    }\n\n    function readWindowBlurCache() {\n      try {\n        return normalizeWindowBlur(JSON.parse(window.localStorage.getItem(WINDOW_BLUR_KEY)));\n      } catch {\n        return { active: false, why: null, material: null };\n      }\n    }\n\n    function writeCache() {\n      try {\n        window.localStorage.setItem(CACHE_KEY, JSON.stringify(config));\n        window.localStorage.setItem(MATERIAL_KEY, JSON.stringify(windowMaterial));\n        window.localStorage.setItem(WINDOW_BLUR_KEY, JSON.stringify(windowBlurReport));\n```\n\n</details>\n\n**依据 3 · 源码核查**：[tools/asarpatch.py:702-777](https://github.com/AIR-pixel/air-pixel-liquid-glass/blob/4b980fb2cbac292274a6b3136696ab27e3b1decc/tools/asarpatch.py#L702-L777)\n\n备份恢复与版本变化提示。\n\n<details>\n<summary>查看原文（76行）</summary>\n\n```text\n    backup = ASAR.with_name(\n        ASAR.name + \".bak-\" + datetime.date.today().strftime(\"%Y%m%d\")\n    )\n    staged = ASAR.parent / (ASAR.name + \".new\")\n\n    if args.revert:\n        if not backup.exists():\n            print(f\"nothing to revert: {backup.name} does not exist\")\n            return 2\n        shutil.copy2(backup, ASAR)\n        write_pointer(ASAR, \"stock\")\n        print(f\"reverted {backup.name} -> {ASAR.name}\")\n        return 0\n\n    if args.apply_staged:\n        return apply_staged(ASAR, staged, backup, args.material)\n\n    raw = ASAR.read_bytes()\n    header, base, _ = parse(raw)\n\n    members = dict(walk(header))\n    if MEMBER not in members:\n        print(f\"member {MEMBER} is not in the archive\")\n        return 2\n    target = members[MEMBER]\n\n    # Snapshot every body BEFORE the header is touched, so verification never\n    # has to reason about the offset arithmetic it is checking.\n    before = {}\n    for path, entry in members.items():\n        if has_body(entry):\n            off = int(entry[\"offset\"])\n            before[path] = raw[base + off : base + off + int(entry[\"size\"])]\n\n    text = before[MEMBER].decode(\"utf-8\")\n    present = installed_material(text)\n    has_watcher = WATCHER_MARKER in text\n    if present is not None:\n        # `--check` reports whichever material is installed, including one that\n        # is not the default: a command whose name promises a report must not\n        # depend on a flag it was not given.\n        if args.check:\n            print(f\"patched (material: {present}, watcher: {'yes' if has_watcher else 'NO'})\")\n            if not has_watcher:\n                print(\"  this archive predates the window-material watcher, so the\")\n                print(\"  窗口模糊 switch cannot take effect on it. Re-run this tool to add it.\")\n            asar_env_hint()\n            return 0\n        if present != args.material:\n            # Not done automatically. The patch is one substitution, so changing\n            # the material means undoing it first, and the honest way to undo it\n            # is the backup that `--revert` restores — a second in-place rewrite\n            # would have to find the previous marker and be right about it.\n            print(f\"already patched with material: {present}; asked for {args.material}\")\n            print(\"changing the material starts by undoing the current patch:\")\n            print(\"  python tools/asarpatch.py --revert\")\n            print(f\"  python tools/asarpatch.py --material {args.material}\")\n            return 2\n        if has_watcher:\n            print(f\"already patched (material: {present}, backup present: {backup.exists()})\")\n            # Re-establish the host's fallback path even though there is nothing to\n            # patch: this is the branch a user lands on after an auto-update wiped\n            # the marker from a fresh archive, and it is exactly when the host's\n            # fallback is worth re-asserting.\n            write_pointer(ASAR, \"patched\", present)\n            return 0\n        # Same material, but from a version of this tool that did not install\n        # the watcher. Falling through would leave 窗口模糊 reporting a request\n        # nothing answers, so the watcher is appended to the already-patched\n        # text and the archive is rebuilt. The win32 block is left untouched —\n        # its marker is how `installed_material` recognised it just now.\n        print(f\"already patched (material: {present}) but the watcher is missing; adding it\")\n        watcher_only = True\n    else:\n        watcher_only = False\n    if args.check:\n```\n\n</details>\n\n#### 缺口\n\n- 未做目标用户可读性/性能试验。\n  **影响：**采用收益与补丁维护成本没有实测数据。\n  **进一步探讨：**用实机记录可读性、性能、补丁成功/恢复步骤和更新时间成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1382d780d6b95449742b368eabc1cb3a49502e4d3705664c2543191b0ebcfef5。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 4541 | 2367 | 1968 | — |\n| .md | source | 2 | 106 | — | — | 1050 |\n| .mjs | source | 19 | 10092 | 7057 | 2559 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| CSS 主题 | 外观自定义 | 视觉未实测 |\n| 透明补丁 | 桌面透出 | 修改 app.asar |\n| 配置 API | 保存选项 | 写路由需核安全 |\n\n## 工程亮点\n\nHost 配置路由和文件回执机制连接 Web CSS 与 Electron 材质；补丁为显式可选路径。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、client.js、index.js、tools/asarpatch.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅 README、client.js、index.js、asarpatch.py；未运行插件或修改宿主。\n- 下一步：目标 Windows/Web 视觉和性能对照；核 webServer 外层访问控制、写入失败状态和宿主补丁更新/回滚。\n",
         "metadata": {
             "repository": "AIR-pixel/air-pixel-liquid-glass",
             "repository_id": 1414238544,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:03:32.763Z",
+            "window_start": "2026-09-22T06:03:32.763Z",
             "stars": 1,
             "pushed_at": "2026-10-18T05:16:07Z",
             "issues": {
@@ -390,33 +431,7 @@
                 "closed_30d": 0,
                 "updated_30d": 0
             },
-            "errors": [],
-            "npm": {
-                "package_name": "air-pixel-liquid-glass",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/air-pixel-liquid-glass",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/air-pixel-liquid-glass",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-                "current_revision": "4b980fb2cbac292274a6b3136696ab27e3b1decc",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1414238544:root",

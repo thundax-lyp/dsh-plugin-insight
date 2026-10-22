@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-profile-stylist",
             "entry_type": "plugin",
-            "technical_category": "tools-integration",
+            "technical_category": "agent-workflow",
             "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1422500224-root-directory-0",
+                    "id": "2026-10-22-02-github-1422500224-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:43:27.150Z",
+                    "retrieved_at": "2026-10-22T06:07:34.387Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1422500224-root-author",
+                    "id": "2026-10-22-02-github-1422500224-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "README.md",
+                            "content_sha256": "02bd106b50762f8498345a7c63e740f35f5eca79cf5532dec3941d6fbdda7cb7"
+                        }
+                    ],
                     "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
-                    "captured_at": "2026-10-21T03:43:27.150Z",
-                    "summary": "借助宿主模型生成资料草稿，并通过浏览器填写 GitHub 或 Gitee 个人资料。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-profile-stylist/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:07:34.387Z",
+                    "summary": "用宿主 LLM 起草 GitHub/Gitee 个人资料，默认 dry-run，确认后经浏览器填文本/头像并点击保存。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-profile-stylist/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1422500224-root-source",
+                    "id": "2026-10-22-02-github-1422500224-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js",
+                    "url": "https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "README.md",
+                            "content_sha256": "02bd106b50762f8498345a7c63e740f35f5eca79cf5532dec3941d6fbdda7cb7"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "package.json",
+                            "content_sha256": "6d25f2b172b15339a1ecd1c991026c23f01231f8b67715821ecdbf5b88b9af6d"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "lib/index.js",
+                            "content_sha256": "35bb4f4f16a634c5abdaed5b48ceff94e84120dcd0c3a511e254bcb654a4d7fd"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "lib/hosts.js",
+                            "content_sha256": "337eb4b9dac72ddb9fc75f26dd2f7000e7a8a8fb59272dfc83c710255fb75270"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "lib/author.js",
+                            "content_sha256": "38283877e961f4505bde19479dabd9f68984fe18504e457ddb01fd12a0972972"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "lib/constants.js",
+                            "content_sha256": "585039da862e01b96027a8647c72abe33a3e4ec8f3e730e9a666183c1454a06a"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-profile-stylist",
+                            "commit": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
+                            "path": "lib/compose.js",
+                            "content_sha256": "78bf0cad22cd766a00e42b05025cdf3151cf125470e80bae8e9cd18e92149ef4"
+                        }
+                    ],
                     "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
-                    "captured_at": "2026-10-21T03:43:27.150Z",
-                    "summary": "核查 lib/index.js、lib/author.js、lib/compose.js、lib/hosts.js、lib/constants.js、package.json；author调用宿主LLM，compose/hosts按站点白名单与长度收敛字段；profile_apply默认dry-run，confirm=true后browser.openUrl/evaluate填DOM、DataTransfer上传头像并点击保存。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/7gzgn--dsh-profile-stylist/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:07:34.387Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/hosts.js、lib/author.js、lib/constants.js、lib/compose.js；author 生成草稿；apply 独立接 JSON fields，confirm:true 后浏览器脚本设置字段/上传头像/点保存。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-profile-stylist/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读index、author、compose、hosts与字段/URL限制；未访问站点、调用模型或上传图片。",
+                        "只读核固定提交 README、manifest、author/hosts/compose/index；未运行目标代码、站点浏览器或作者测试；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户修改自己代码托管账号的昵称、简介、链接与头像，先审草稿再填表，交付站点保存结果需回读确认。",
+                    "text": "维护自己的 GitHub/Gitee 资料、文案和头像；需已登录浏览器及人工审阅。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "author调用宿主LLM，compose/hosts按站点白名单与长度收敛字段；profile_apply默认dry-run，confirm=true后browser.openUrl/evaluate填DOM、DataTransfer上传头像并点击保存。",
+                    "text": "author 生成草稿；apply 独立接 JSON fields，confirm:true 后浏览器脚本设置字段/上传头像/点保存。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读index、author、compose、hosts与字段/URL限制；未访问站点、调用模型或上传图片。",
+                    "text": "只读核固定提交 README、manifest、author/hosts/compose/index；未运行目标代码、站点浏览器或作者测试；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "host工具依赖DSH浏览器与LLM，支持GitHub/Gitee显式档案，其他站点拒绝；Gitee location不支持。",
+                    "text": "0.2.2 MIT，作者给 Windows 手装路径和 DSH 0.2.x 兼容声明；当前市场/站点状态未本轮核。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次检查登录账号与字段、准备头像；持续维护站点DOM和复核文案。LLM费用按宿主，人工审稿/保存核对未测。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH LLM/browser 与账号，金额未知 | 配插件、登录、选择头像 | 站点 DOM 可变 |\n| 写入 | LLM token/浏览器时间未知 | 审文案、dry-run、确认 | 直接 apply 校验缺口 |\n| 恢复 | 可能部分写入 | 回读资料/手工纠正 | Gitee 头像确认不匹配 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "要修改GitHub或Gitee自己资料的人先生成草稿并检查账号；小范围填一个字段后重新打开资料页确认，头像和批量字段待验证后再用。",
+                    "text": "先在测试账号观察；直接 apply 统一校验与 Gitee 头像确认修复、远端回读之后才扩大使用。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少文案与填表来回，但身份准确和持久保存仍需人确认；不适合安全设置或非白名单站点。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 草稿生成 | LLM 与字段归一化 | 文案真实性/成本 |\n| 默认体检 | confirm 非 true 为 dry-run | 用户一定先阅读草稿 |\n| 站点写入 | 两站档案和浏览器脚本 | Gitee 头像/保存持久结果 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "站点档案、字段收敛与LLM生成分层，默认dry-run和http(s)网址过滤有借鉴处；应把clicked与persisted区分，并绑定目标账号。",
+                    "text": "分 author/hosts/compose 层有利扩站；直接 apply 与生成层校验分叉，站点确认脚本未使用档案 selector。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +253,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对通用浏览器Agent临时猜选择器，增量是显式两站字段档案、先草稿后应用和头像素材/Canvas路径，把资料编辑组织成较窄操作。模型文案、浏览器登录与站点保存为上游能力，不能算插件独有保证。",
+                    "text": "把文案生成、头像模板和 GitHub/Gitee 浏览器写入接成资料编辑流程，并有默认体检视图。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +271,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "点击保存是否等于正确账号资料已保存？confirm仅工具布尔参数，不是用户批准事件；脚本btn.click后置saved=true，未独立回读站点持久字段。浏览器当前登录谁就写谁，缺少预期账号绑定；DOM选择器验证注释也不能保证站点改版后行为。",
+                    "text": "直接 apply 不执行作者宣称的 URL/长度收敛，且 Gitee 头像确认选择器与脚本 DOM 搜索类型不匹配。详见[Q03](#research-q03)与[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +289,16 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：应用计划绑定预期账号ID与字段/头像摘要，写后重新读取资料并逐字段核对，可减少错账号和点击成功但保存失败。由当前登录态依赖与saved点击标记推导，未实现。用切换账号、站点校验拒绝、部分字段成功三类对照，测误报成功和回滚负担；账号身份不可验证时应停在草稿。",
+                    "text": "未验证方向是统一归一化、一次性摘要确认、按档案 selector 处理头像并提交后回读。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +307,15 @@
                             "fingerprint": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:43:27.150Z",
+                    "reviewed_at": "2026-10-22T06:07:34.387Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:43:27.150Z",
+            "last_checked_at": "2026-10-22T06:07:34.387Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
-                "reviewed_at": "2026-10-21T03:43:27.150Z",
+                "reviewed_at": "2026-10-22T06:07:34.387Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +327,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
+                        "mechanism": 15,
+                        "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty 小幅：资料表单自动化专用适配；mechanism 小幅：字段白名单/DOM上传常规；transferability 小幅：每站需维护档案；simplification 实质：草稿、字段、头像与应用统一。",
+                    "rationale": "生成/站点适配/头像组合有实用性，直接写入校验分叉和 DOM 确认缺口限制可靠性。",
                     "basis": "interpretation",
-                    "score": 30,
+                    "score": 42,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
-                        "reach": 10,
-                        "economics": 4
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 0
                     },
-                    "rationale": "workflow 小幅：资料编辑步骤集中；delivery 小幅：资料草稿与填写回执；reach 实质：自然语言需求降低表单操作门槛；economics 小幅：潜在少重复操作，返工未测。",
+                    "rationale": "资料维护有流程节省潜力，但仅两站且实际写入未核，无成本收益实测。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 29,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1422500224-root-source"
+                        "2026-10-22-02-github-1422500224-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "自己账号资料编辑有便利，但confirm布尔和btn.click后saved不能证明批准或正确账号保存；先绑定预期账号并回读再采用。",
+                "reason": "体检有帮助；正式写入前需修直接字段校验、Gitee 头像确认并加回读。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "GitHub/Gitee个人资料修改目标清楚但低频。"
+                        "rationale": "维护 GitHub/Gitee 个人主页是明确任务。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "两站字段档案与草稿流程比临时猜选择器更窄。"
+                        "rationale": "草稿、头像和写入集成，但可靠性缺口仍在。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "白名单长度及DOM填写源码可查，缺预期账号绑定和独立保存回读。"
+                        "rationale": "固定源码可核，目标站点未本轮运行。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "LLM审稿与站点DOM维护，加身份误写恢复成本较高。"
+                        "rationale": "LLM、人工审核和错误恢复成本未知。"
                     }
                 },
                 "score": 46,
                 "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:07:34.387Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1422500224-root-source"
+                    "2026-10-22-02-github-1422500224-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,27 +406,28 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "b1c2168948b4ea56a24b1b63dc24d46ebe3b90d528c8cc9a49ca21a8eea6d565"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "71733949f42e2ccc5b8373e804ca27a518a299c9ccb2477d857997f71a7a4766"
         },
         "publication.metadata": "data/plugins/7gzgn--dsh-profile-stylist/META.json",
         "publication.summaries": {
-            "text": "借助宿主模型生成资料草稿，并通过浏览器填写 GitHub 或 Gitee 个人资料。",
+            "text": "用宿主 LLM 起草 GitHub/Gitee 个人资料，默认 dry-run，确认后经浏览器填文本/头像并点击保存。",
             "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
             "source_url": "https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md"
         },
         "publication.capabilities": {
             "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
             "items": {
-                "模型工具": "profile_assets、profile_author、profile_apply。"
-            }
+                "模型工具": "profile_assets、profile_author、profile_apply 三工具"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| profile_author | 生文案 | 需人工核事实 |\n| profile_apply dry-run | 体检 | 不绑定下一次确认 |\n| confirm:true | 自动填表/点击保存 | 直接字段绕过 URL/长度限制，无回读 |\n| Gitee 头像 | 上传/确认 | div 确认与脚本查 button 不匹配 |"
         },
         "publication.advice": {
             "revision": "05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4",
-            "text": "要修改GitHub或Gitee自己资料的人先生成草稿并检查账号；小范围填一个字段后重新打开资料页确认，头像和批量字段待验证后再用。"
+            "text": "先在测试账号观察；直接 apply 统一校验与 Gitee 头像确认修复、远端回读之后才扩大使用。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/7gzgn--dsh-profile-stylist",
-        "reports": "# dsh-profile-stylist\n\n> 借助宿主模型生成资料草稿，并通过浏览器填写 GitHub 或 Gitee 个人资料。\n\n## 使用建议\n\n要修改GitHub或Gitee自己资料的人先生成草稿并检查账号；小范围填一个字段后重新打开资料页确认，头像和批量字段待验证后再用。\n\n**核查状态**：已抽读固定版本源码，未安装、运行目标插件或真实宿主验收。源码确认草稿/白名单/dry-run和表单自动化；作者两站真机声明未复现，未打开浏览器或改资料。未来身份与回读契约是假设。\n\n- **用途**：用户修改自己代码托管账号的昵称、简介、链接与头像，先审草稿再填表，交付站点保存结果需回读确认。\n- **亮点**：相对通用浏览器Agent临时猜选择器，增量是显式两站字段档案、先草稿后应用和头像素材/Canvas路径，把资料编辑组织成较窄操作。模型文案、浏览器登录与站点保存为上游能力，不能算插件独有保证。\n- **思考**：点击保存是否等于正确账号资料已保存？confirm仅工具布尔参数，不是用户批准事件；脚本btn.click后置saved=true，未独立回读站点持久字段。浏览器当前登录谁就写谁，缺少预期账号绑定；DOM选择器验证注释也不能保证站点改版后行为。\n- **建议**：待验证假设：应用计划绑定预期账号ID与字段/头像摘要，写后重新读取资料并逐字段核对，可减少错账号和点击成功但保存失败。由当前登录态依赖与saved点击标记推导，未实现。用切换账号、站点校验拒绝、部分字段成功三类对照，测误报成功和回滚负担；账号身份不可验证时应停在草稿。\n\n## 当前插件分析\n\n### 场景与替代办法\n\n用户修改自己代码托管账号的昵称、简介、链接与头像，先审草稿再填表，交付站点保存结果需回读确认。\n\n参照手工填表与通用浏览器自动化；未对模型文案质量或账号操作可靠性做基准。\n\n### 能力、流程与依赖\n\nauthor调用宿主LLM，compose/hosts按站点白名单与长度收敛字段；profile_apply默认dry-run，confirm=true后browser.openUrl/evaluate填DOM、DataTransfer上传头像并点击保存。\n\n- **模型工具**：profile_assets、profile_author、profile_apply。\n\nDSH browser/session与LLM、浏览器站点登录态、本地头像或Canvas；插件不持API key但使用现有登录权限。\n\n描述愿望→模型草稿→字段/头像计划→dry-run预览→显式confirm参数→开资料页填表/上传/点保存→返回填写信息；当前持久保存需另查。\n\nhost工具依赖DSH浏览器与LLM，支持GitHub/Gitee显式档案，其他站点拒绝；Gitee location不支持。\n\n### 效果、成本与限制\n\n减少文案与填表来回，但身份准确和持久保存仍需人确认；不适合安全设置或非白名单站点。\n\n首次检查登录账号与字段、准备头像；持续维护站点DOM和复核文案。LLM费用按宿主，人工审稿/保存核对未测。\n\n点击保存是否等于正确账号资料已保存？confirm仅工具布尔参数，不是用户批准事件；脚本btn.click后置saved=true，未独立回读站点持久字段。浏览器当前登录谁就写谁，缺少预期账号绑定；DOM选择器验证注释也不能保证站点改版后行为。\n\n### 核心贡献与工程亮点\n\n相对通用浏览器Agent临时猜选择器，增量是显式两站字段档案、先草稿后应用和头像素材/Canvas路径，把资料编辑组织成较窄操作。模型文案、浏览器登录与站点保存为上游能力，不能算插件独有保证。\n\n站点档案、字段收敛与LLM生成分层，默认dry-run和http(s)网址过滤有借鉴处；应把clicked与persisted区分，并绑定目标账号。\n\n源码依据：[lib/index.js](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js)、[lib/author.js](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js)、[lib/compose.js](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/compose.js)、[lib/hosts.js](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js)、[lib/constants.js](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/constants.js)、[package.json](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：应用计划绑定预期账号ID与字段/头像摘要，写后重新读取资料并逐字段核对，可减少错账号和点击成功但保存失败。由当前登录态依赖与saved点击标记推导，未实现。用切换账号、站点校验拒绝、部分字段成功三类对照，测误报成功和回滚负担；账号身份不可验证时应停在草稿。\n\n隔离测试账号核对切换登录、选择器失效、服务器拒绝、部分保存和头像裁剪；本轮不对外写入。\n\n## 核查说明\n\n- 版本号：0.2.2；版本日期：2026-10-18（固定提交日期，北京时间；不是包发布日期）。\n- 固定版本：[05dfa3ed](https://github.com/7gzgn/dsh-profile-stylist/tree/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4)；本次截止 2026-10-21T03:36:14Z。\n- 已检查：README、package与以上源码路径及固定组件统计。\n- 未执行：目标代码、目标测试、安装、真实宿主或第三方服务验证。\n- 范围限制：抽读index、author、compose、hosts与字段/URL限制；未访问站点、调用模型或上传图片。\n- 证据边界：源码与作者说明不等于独立效果验证；GitHub/npm指标不证明采用或收益。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc296b46505fa79a2a0ffad90ea4dbbeef79b9b69fcc5b5f1a261b3a292c3aa7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 5 | 1360 | 972 | 307 | — |\n| .md | source | 1 | 103 | — | — | 1116 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n",
+        "reports": "# dsh-profile-stylist\n\n> 用宿主 LLM 起草 GitHub/Gitee 个人资料，默认 dry-run，确认后经浏览器填文本/头像并点击保存。\n\n## 研究范围\n\n- **仓库**：[7gzgn/dsh-profile-stylist](https://github.com/7gzgn/dsh-profile-stylist)\n- **版本号**：0.2.2（[固定提交 05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4](https://github.com/7gzgn/dsh-profile-stylist/tree/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持三工具和默认 dry-run，但直接 apply 绕过文案长度与 URL 归一化；Gitee 头像确认档案为 div 而脚本只找 button/input；未回读站点结果。\n\n## 洞察短评\n\n- **用途**：维护自己的 GitHub/Gitee 资料、文案和头像；需已登录浏览器及人工审阅。详见[Q01](#research-q01)。\n- **亮点**：把文案生成、头像模板和 GitHub/Gitee 浏览器写入接成资料编辑流程，并有默认体检视图。详见[Q01](#research-q01)。\n- **思考**：直接 apply 不执行作者宣称的 URL/长度收敛，且 Gitee 头像确认选择器与脚本 DOM 搜索类型不匹配。详见[Q03](#research-q03)与[Q04](#research-q04)。\n- **建议**：未验证方向是统一归一化、一次性摘要确认、按档案 selector 处理头像并提交后回读。详见[Q06](#research-q06)。\n\n采用建议：先在测试账号观察；直接 apply 统一校验与 Gitee 头像确认修复、远端回读之后才扩大使用。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把文案生成、头像模板和 GitHub/Gitee 浏览器写入接成资料编辑流程，并有默认体检视图。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n直接 apply 不执行作者宣称的 URL/长度收敛，且 Gitee 头像确认选择器与脚本 DOM 搜索类型不匹配。详见[Q03](#research-q03)与[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是统一归一化、一次性摘要确认、按档案 selector 处理头像并提交后回读。详见[Q06](#research-q06)。\n\n目标 GitHub/Gitee 测合法/非法 URL、超长、头像 div 确认、页面变化、提交回读、部分失败与测试账号恢复。\n\n## 场景与替代办法\n\n维护自己的 GitHub/Gitee 资料、文案和头像；需已登录浏览器及人工审阅。详见[Q01](#research-q01)。\n\n手工编辑个人资料可靠可回读；本项需证明生成/上传节省操作且减少误写。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH tools/systemPrompt、browser | 写入必需 | 工具与站点操作 | 无法写入 |\n| 宿主 LLM | 自动草稿必需 | 生文案 | author 失败 |\n| GitHub/Gitee 登录与 DOM | 写入必需 | 资料页面 | 选择器失效/未授权 |\n\n#### 启动步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 草稿 | 调 profile_author | 人工核真实性 |\n| 预览 | 调 profile_apply 默认 dry-run | 检字段/头像/站点 |\n| 确认 | 明确 confirm:true | 写后刷新资料页回读 |\n| 故障 | 查实际已写字段 | 避免盲重试覆盖 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH LLM/browser 与账号，金额未知 | 配插件、登录、选择头像 | 站点 DOM 可变 |\n| 写入 | LLM token/浏览器时间未知 | 审文案、dry-run、确认 | 直接 apply 校验缺口 |\n| 恢复 | 可能部分写入 | 回读资料/手工纠正 | Gitee 头像确认不匹配 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 草稿生成 | LLM 与字段归一化 | 文案真实性/成本 |\n| 默认体检 | confirm 非 true 为 dry-run | 用户一定先阅读草稿 |\n| 站点写入 | 两站档案和浏览器脚本 | Gitee 头像/保存持久结果 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**个人资料写入能否在统一字段约束和可验证确认下安全落地 GitHub/Gitee？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 自动写个人资料覆盖什么任务和站点？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件把“想要怎样的人设”分为 host LLM 生成草稿、资料字段/头像规划和浏览器写入三工具，目标是已登录 GitHub/Gitee 的个人资料页。它能读取本地头像或在页面 canvas 画 460px 模板图；默认 profile_apply dry-run，不自动打开页面。站点选择器“真机验证”是作者报告，本轮只核固定源码，没有重访当前网页，因此不保证今天仍有效。资料内容由模型生成后仍需用户审阅真实性。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-32](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L1-L32)\n\n作者描述目标流程和默认 dry-run\n\n<details>\n<summary>查看原文（32行）</summary>\n\n````text\n# dsh-profile-stylist（个人资料配置）\n\n**你说要什么样的人设，它写出来，并把资料页填好。**\n\n\"我想要个给主人打工的 AI 小助手，可爱但专业\" → 它生成昵称/简介/标语 → 从你的素材库里挑一张头像（或按名字画一张）→ 打开你自己的资料页填进去。\n\n> 它替用户写**关于他自己**的东西，所以默认值是三重的保守：\n> **默认 dry-run**（不传 `confirm: true` 只演算）、**只认资料字段**（档案里没有密码/邮箱/安全设置）、\n> **写前摊开**（要写什么、写到哪、用哪张图，提交前整份给人看）。\n\n---\n\n## 它做什么\n\n| 步 | 动作 | 细节 |\n| --- | --- | --- |\n| ① | 生成文案 | 按\"你的需求\"让**宿主模型服务**出昵称/简介/标语/所在地/链接；写不出来就不写，**不编** |\n| ② | 收敛草稿 | 字段白名单 + 按站点长度截断（GitHub bio 160 字符）+ **网址只收 http/https** |\n| ③ | 选头像 | 素材库 / 你给的本地图片路径（本机没有图像生成服务，所以只这三条路） |\n| ④ | 体检 | 目标站点能不能写这些字段、有哪些会超限、选择器是否验证过 |\n| ⑤ | 写入（要显式确认） | 打开资料页 → 填文本 → 头像走 `File → DataTransfer → input.files → change` 交给站点自己的 JS → 点保存/确认 |\n| ⑥ | 回报 | 填了哪些、缺哪些、头像是否确认、任何警告 |\n\n## 三个工具\n\n```\nprofile_assets  [target=github]                     # 看素材库里有哪些图\nprofile_author  wish=\"…\" [host=github] [current=…]   # 出草稿，不写站点\nprofile_apply   fields='{\"name\":\"…\",\"bio\":\"…\"}' [host=github] [avatarPath=…|avatarFromAssets=…] [confirm=true]\n```\n\n`profile_apply` **不传 `confirm: true` 就是 dry-run**：只做体检 + 展示，不打开页面、不点任何按钮。\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:49-72](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L49-L72)\n\nGitHub/Gitee 范围和选择器声明\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n## 支持的站点\n\n**一句话：只适合「git 系」的资料页 —— 目前就是 GitHub 和 Gitee，两家都是真机验证过的。**\n其他的（微博 / 知乎 / B站 / 小红书 / 掘金…）**没有适配**，传了会直接拒绝，不猜选择器。\n\n| 站点 | 状态 | 备注 |\n| --- | --- | --- |\n| **GitHub** | ✅ 选择器**真机验证过** | `#user_display_name` / `#user_profile_bio` / `#avatar_upload` + 「Set new profile picture」 |\n| **Gitee** | ✅ 选择器**真机验证过**（2026-10-17，gitee.com/profile） | `#user_name` / `#user_bio` / `#user_company` / `#user_blog`，保存按钮 `button[name=commit]`（「更新」），头像 `#avatar-input` + `#confirm-avatar`（「确定」） |\n\n**逐字段的支持差异**（同样是 git 站，字段并不完全一样）：\n\n| 字段 | GitHub | Gitee |\n| --- | --- | --- |\n| 昵称 / 显示名 | ✅ | ✅ |\n| 一句话简介 | ✅ | ✅ |\n| 公司 / 组织 | ✅ | ✅ |\n| 链接（主页） | ✅ | ✅ |\n| **所在地** | ✅ | ❌ 两级下拉（省+市），明确不支持 |\n\n**Gitee 的所在地写不了**：它是 `#user_province` + `#user_city` 两级下拉，不在字段表里 ——\n传 `location` 会出现在 `unsupported`（明确告诉你不支持），不会静默失败。\n\n不认识的站点**直接拒绝**，不猜选择器。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:222-364](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L222-L364)\n\nassets/author 工具注册\n\n<details>\n<summary>查看原文（143行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  const cfg = config ?? {};\n  if (cfg.enabled === false) return;\n  const assetDir = typeof cfg.assetDir === 'string' && cfg.assetDir !== '' ? cfg.assetDir : ASSET_DIR;\n  const disposers = [];\n\n  if (ctx.tools !== undefined && typeof ctx.tools.register === 'function') {\n    // ---------- ① 素材 ----------\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'profile_assets',\n      description: [\n        '看个人资料插件能用的头像素材：素材库目录、有哪些图（名字/体积）。',\n        '素材库目录固定为 `${USERPROFILE}\\\\.dsh\\\\dsh-profile-stylist\\\\assets\\\\avatars` —— 往里丢图就能用。',\n        '本机没有图像生成服务，所以头像四条来源：素材库 / 用户给的本地路径 / 页面内 canvas 合成（initials·gradient·tagline） / 不给就不换。',\n      ].join('\\n'),\n      timeoutMs: 30000,\n      parameters: {\n        target: { type: 'string', description: '可选：只查某个目标站点能用什么（github / gitee），用于回显字段能力' },\n      },\n      output: {\n        schema: {\n          type: 'object',\n          additionalProperties: false,\n          properties: {\n            ok: { type: 'boolean', required: true },\n            dir: { type: 'string' },\n            created: { type: 'boolean' },\n            count: { type: 'number' },\n            assets: { type: 'json' },\n            hosts: { type: 'json' },\n            hint: { type: 'string' },\n            error: { type: 'string' },\n          },\n        },\n        render: (_args, value) => {\n          if (value.ok === false) return [{ type: 'text', text: `profile_assets 失败：${String(value.error)}` }];\n          const rows = (value.assets ?? []).map((a) => `  · ${a.file}（${Math.round(a.bytes / 1024)}KB）`);\n          const hosts = (value.hosts ?? []).map((h) => `  · ${h.key} — ${h.name}${h.verified ? '' : '（选择器未实测）'}`);\n          const lines = [\n            `🖼️ 素材库：${value.dir}${value.created ? '（刚建好）' : ''}`,\n            rows.length > 0 ? rows.join('\\n') : '  （空的 —— 往里放 png/jpg 就能用）',\n            '可写站点：',\n            hosts.join('\\n'),\n          ];\n          if (value.hint) lines.push(`  ${value.hint}`);\n          return [{\n            type: 'text',\n            text: lines.join('\\n'),\n          }];\n        },\n      },\n      async execute(args) {\n        try {\n          const info = await ensureAssetDir(assetDir);\n          const assets = await listAvatarAssets(assetDir);\n          const hosts = listHosts();\n          const out = { ok: true, dir: info.dir, created: info.created, count: assets.length, assets, hosts };\n          if (typeof args?.target === 'string' && args.target !== '') out.hint = describeHost(args.target);\n          return out;\n        } catch (error) {\n          return { ok: false, error: error instanceof Error ? error.message : String(error) };\n        }\n      },\n    })));\n\n    // ---------- ② 生成草稿 ----------\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'profile_author',\n      description: [\n        '按\"你想要什么样的个人主页\"生成一份资料草稿：昵称 / 简介 / 标语 / 所在地 / 链接，**只出草稿，不写任何站点**。',\n        '文案由宿主的模型服务生成（插件不持有任何 API key）；写不出的字段它宁可不写，也不编。',\n        '头像另说：本机没有图像生成服务，头像要么从素材库挑（profile_assets 看清单），要么给一个本地图片路径。',\n      ].join('\\n'),\n      timeoutMs: TOOL_TIMEOUT_MS,\n      parameters: {\n        wish: { type: 'string', description: '必填：你想要什么样的资料（一句话，比如\"一个给主人打工的 AI 小助手，可爱但专业\"）' },\n        host: { type: 'string', description: '站点（github 默认 / gitee）—— 影响字数上限与可写字段' },\n        current: { type: 'string', description: '可选：当前资料的 JSON 字符串（可沿用可改写）' },\n        maxFields: { type: 'number', description: `可选：最多写几个字段（默认 ${DEFAULTS.maxFields}）` },\n        provider: { type: 'string', description: '可选：覆盖模型 provider' },\n        model: { type: 'string', description: '可选：覆盖模型' },\n      },\n      output: {\n        schema: {\n          type: 'object',\n          additionalProperties: false,\n          properties: {\n            ok: { type: 'boolean', required: true },\n            host: { type: 'string' },\n            fields: { type: 'json' },\n            notes: { type: 'json' },\n            preview: { type: 'string' },\n            error: { type: 'string' },\n          },\n        },\n        render: (_args, value) => {\n          if (value.ok === false) return [{ type: 'text', text: `profile_author 失败：${String(value.error)}` }];\n          return [{\n            type: 'text',\n            text: [\n              `✍️ 草稿（${value.host}）—— 还没写任何站点：`,\n              value.preview,\n              '下一步：确认文案后调 `profile_apply`（**默认 dry-run**，加 `confirm:true` 才真的写）。',\n            ].join('\\n'),\n          }];\n        },\n      },\n      async execute(args) {\n        const host = normalizeHost(args?.host) ?? 'github';\n        try {\n          const llm = llmOf(ctx);\n          let current = undefined;\n          if (typeof args?.current === 'string' && args.current.trim() !== '') {\n            try {\n              current = JSON.parse(args.current);\n            } catch {\n              current = { note: args.current };\n            }\n          }\n          const draft = await draftProfile(ctx, llm, {\n            wish: args?.wish,\n            host,\n            current,\n            maxFields: args?.maxFields,\n            provider: args?.provider,\n            model: args?.model,\n          });\n          return {\n            ok: true,\n            host,\n            fields: draft.fields,\n            notes: draft.notes,\n            preview: renderDraft(draft.fields, draft.notes),\n          };\n        } catch (error) {\n          return { ok: false, host, error: error instanceof Error ? error.message : String(error) };\n        }\n      },\n    })));\n\n    // ---------- ③ 写入（默认 dry-run） ----------\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'profile_apply',\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:363-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L363-L450)\n\napply 规划与 confirm 分支\n\n<details>\n<summary>查看原文（88行）</summary>\n\n```text\n    disposers.push(ctx.tools.register(defineTool({\n      name: 'profile_apply',\n      description: [\n        '把一份资料草稿写进你自己的账号（内置档案：GitHub / Gitee，两份选择器都已在真机核对过）。',\n        '**默认 dry-run**：不传 `confirm: true` 就只做体检 + 展示\"要写什么、写到哪\"，**不打开页面、不点任何按钮**。',\n        '`confirm: true` 才会真的打开资料页填字段、并把头像交给站点的上传控件（仍然由站点自己的 JS 完成入库）。',\n        `头像四选一：\\`avatarPath\\`（本地图片）/ \\`avatarFromAssets\\`（素材库里的文件名）/ \\`avatarTemplate\\`（**页面里 canvas 当场合成**：${Object.entries(AVATAR_TEMPLATES).map(([k, v]) => `${k}=${v.label}`).join('、')}）/ 都不给则不换头像。`,\n        '**红线**：只写资料字段，不碰密码/邮箱/安全设置/支付。',\n      ].join('\\n'),\n      timeoutMs: TOOL_TIMEOUT_MS,\n      parameters: {\n        fields: { type: 'string', description: '必填：要写的字段，JSON 字符串（如 {\"name\":\"大肥鱼\",\"bio\":\"…\"}）' },\n        host: { type: 'string', description: '站点（github 默认 / gitee）' },\n        avatarPath: { type: 'string', description: '可选：本地头像图片的绝对路径' },\n        avatarFromAssets: { type: 'string', description: '可选：素材库里的文件名（配合 profile_assets 使用）' },\n        avatarTemplate: { type: 'string', description: `可选：没有素材图时当场合成一张 —— ${Object.keys(AVATAR_TEMPLATES).join(' / ')}（initials 纯色底+首字 / gradient 渐变底+首字 / tagline 深色底+名字+标语）` },\n        avatarTagline: { type: 'string', description: '可选：tagline 模板里的那行标语（一句短话）' },\n        avatarText: { type: 'string', description: '可选：合成头像用的名字（默认取 fields.name）' },\n        confirm: { type: 'boolean', description: '**必须显式 true 才真的写入**；不传或 false = dry-run' },\n        session: { type: 'string', description: '可选：复用哪个浏览器会话键（默认用插件自己的）' },\n      },\n      output: {\n        schema: {\n          type: 'object',\n          additionalProperties: false,\n          properties: {\n            ok: { type: 'boolean', required: true },\n            mode: { type: 'string' },\n            host: { type: 'string' },\n            summary: { type: 'string' },\n            result: { type: 'json' },\n            hint: { type: 'string' },\n            error: { type: 'string' },\n          },\n        },\n        render: (_args, value) => [{ type: 'text', text: renderApplyText(value) }],\n      },\n      async execute(args) {\n        // ---- 解析字段 ----\n        let fields = {};\n        try {\n          fields = typeof args?.fields === 'string' ? JSON.parse(args.fields) : (args?.fields ?? {});\n        } catch {\n          return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: 'fields 不是合法 JSON' };\n        }\n        if (fields === null || typeof fields !== 'object' || Array.isArray(fields)) {\n          return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: 'fields 必须是对象' };\n        }\n\n        // ---- 头像（先只定位，不读内容） ----\n        let avatar = null;\n        let composeRequest = null;\n        if (typeof args?.avatarTemplate === 'string' && args.avatarTemplate !== '') {\n          const template = normalizeTemplate(args.avatarTemplate);\n          if (template === null) {\n            return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: `avatarTemplate 只能是 ${Object.keys(AVATAR_TEMPLATES).join(' / ')}` };\n          }\n          const nameText = String(fields.name ?? args?.avatarText ?? '').trim();\n          if (AVATAR_TEMPLATES[template].needTagline && nameText === '') {\n            return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: `${template} 模板需要名字（fields.name 或 avatarText）` };\n          }\n          composeRequest = {\n            template,\n            name: nameText === '' ? '?' : nameText,\n            initials: pickInitials(nameText),\n            tagline: typeof args?.avatarTagline === 'string' ? args.avatarTagline : '',\n            palette: paletteFor(nameText),\n            size: AVATAR_SIZE,\n          };\n          avatar = { kind: 'composed', template, label: `合成头像（${AVATAR_TEMPLATES[template].label}）` };\n        } else if (typeof args?.avatarPath === 'string' && args.avatarPath !== '') {\n          avatar = { kind: 'file', path: args.avatarPath, label: args.avatarPath };\n        } else if (typeof args?.avatarFromAssets === 'string' && args.avatarFromAssets !== '') {\n          avatar = { kind: 'asset', file: args.avatarFromAssets, label: `素材库：${args.avatarFromAssets}` };\n        }\n\n        const plan = planApply({ host: args?.host ?? 'github', fields, avatar });\n        const dryRun = args?.confirm !== true;\n\n        if (dryRun) {\n          return {\n            ok: true,\n            mode: 'dry-run',\n            host: plan.host,\n            summary: plan.summary,\n            hint: '这是 dry-run —— 什么都没动。确认无误后加 `confirm: true` 再调一次。',\n          };\n        }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/compose.js:17-24](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/compose.js#L17-L24)\n\n三类头像模板和尺寸\n\n```text\nexport const AVATAR_TEMPLATES = Object.freeze({\n  initials: { label: '纯色底 + 名字首字', needTagline: false },\n  gradient: { label: '渐变底 + 名字首字', needTagline: false },\n  tagline: { label: '深色底 + 名字 + 标语', needTagline: true },\n});\n\n/** 画布边长（px）。 */\nexport const AVATAR_SIZE = 460;\n```\n\n#### 缺口\n\n- 当前站点 DOM、真实浏览器和生成质量未测\n  **影响：**不能保证写入成功或文案真实\n  **进一步探讨：**目标测试账号逐字段做 dry-run、确认、回读\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 文案、图片和写入动作如何接线？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nprofile_author 调宿主 llm 服务与默认模型路线，解析 JSON、限字段并对生成的 blog 做 http/https 检查；profile_apply 可独立接收 JSON fields，不要求先调用 author。confirm===true 后打开浏览器会话，准备图片 data URL 或 canvas，打开预设 profileUrl，通过页面脚本设置字段、触发 input/change，再按首个匹配保存按钮点击。返回只表示脚本报告按钮已点/头像控件确认，缺乏远端保存后的回读核验；页面导航与网络失败可能造成部分写入。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/author.js:124-167](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js#L124-L167)\n\nLLM 草稿、归一化与 blog 检查\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport async function draftProfile(ctx, llm, request) {\n  const wish = oneLine(request?.wish ?? '');\n  if (wish === '') throw new Error('profile_author 需要一句\"你想要什么样的资料\"（wish）');\n  const host = request?.host ?? 'github';\n  const limits = hostSummary(host)?.limits ?? {};\n  const current = request?.current && typeof request.current === 'object' ? request.current : null;\n\n  const system = [\n    '你是个人主页文案助手。按用户描述，写一份**真实、克制、不浮夸**的资料。',\n    '规则：',\n    '1. 只输出一个 JSON 对象，键只能从这些里选：' + Object.keys(FIELDS).join('、') + '。',\n    '2. 写不出的键就别写，**不许编造**（没有公司就别编公司，没有博客就别编网址）。',\n    `3. 简介（bio）必须 ≤ ${limits.bio ?? 160} 字符，单行，不换行，不用引号包裹。`,\n    '4. 昵称（name）≤ 40 字符；标语（tagline）≤ 40 字符，风格与简介一致。',\n    '5. 语言跟用户描述的语言一致（中文描述就写中文）。',\n    '6. 不要 markdown、不要代码块、不要解释，只给 JSON。',\n  ].join('\\n');\n  const user = [\n    `站点：${host}`,\n    `用户需求：${wish}`,\n    current ? `当前资料（可沿用可改写）：${JSON.stringify(current)}` : '',\n  ].filter(Boolean).join('\\n');\n\n  const route = resolveRoute(ctx, { provider: request?.provider, model: request?.model });\n  const raw = await generateText(llm, {\n    system,\n    user,\n    route,\n    maxTokens: request?.maxTokens,\n    timeoutMs: request?.timeoutMs,\n  });\n  const parsed = extractJsonObject(raw);\n  const { fields, notes } = normalizeDraft(parsed ?? {}, { limits, maxFields: request?.maxFields });\n  if (Object.keys(fields).length === 0) notes.push('模型没给出可用字段（原文已附在 raw 里）');\n\n  // 网址字段做一次安全校验（只收 http/https）\n  if (fields.blog) {\n    const checked = safeUrl(fields.blog);\n    if (checked === '') {\n      delete fields.blog;\n      notes.push('模型给的博客地址不合法，已丢弃（不写进任何站点）');\n    } else fields.blog = checked;\n  }\n  return { fields, notes, raw, route };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:400-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L400-L450)\n\napply 独立接 fields/dry-run\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n      async execute(args) {\n        // ---- 解析字段 ----\n        let fields = {};\n        try {\n          fields = typeof args?.fields === 'string' ? JSON.parse(args.fields) : (args?.fields ?? {});\n        } catch {\n          return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: 'fields 不是合法 JSON' };\n        }\n        if (fields === null || typeof fields !== 'object' || Array.isArray(fields)) {\n          return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: 'fields 必须是对象' };\n        }\n\n        // ---- 头像（先只定位，不读内容） ----\n        let avatar = null;\n        let composeRequest = null;\n        if (typeof args?.avatarTemplate === 'string' && args.avatarTemplate !== '') {\n          const template = normalizeTemplate(args.avatarTemplate);\n          if (template === null) {\n            return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: `avatarTemplate 只能是 ${Object.keys(AVATAR_TEMPLATES).join(' / ')}` };\n          }\n          const nameText = String(fields.name ?? args?.avatarText ?? '').trim();\n          if (AVATAR_TEMPLATES[template].needTagline && nameText === '') {\n            return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: `${template} 模板需要名字（fields.name 或 avatarText）` };\n          }\n          composeRequest = {\n            template,\n            name: nameText === '' ? '?' : nameText,\n            initials: pickInitials(nameText),\n            tagline: typeof args?.avatarTagline === 'string' ? args.avatarTagline : '',\n            palette: paletteFor(nameText),\n            size: AVATAR_SIZE,\n          };\n          avatar = { kind: 'composed', template, label: `合成头像（${AVATAR_TEMPLATES[template].label}）` };\n        } else if (typeof args?.avatarPath === 'string' && args.avatarPath !== '') {\n          avatar = { kind: 'file', path: args.avatarPath, label: args.avatarPath };\n        } else if (typeof args?.avatarFromAssets === 'string' && args.avatarFromAssets !== '') {\n          avatar = { kind: 'asset', file: args.avatarFromAssets, label: `素材库：${args.avatarFromAssets}` };\n        }\n\n        const plan = planApply({ host: args?.host ?? 'github', fields, avatar });\n        const dryRun = args?.confirm !== true;\n\n        if (dryRun) {\n          return {\n            ok: true,\n            mode: 'dry-run',\n            host: plan.host,\n            summary: plan.summary,\n            hint: '这是 dry-run —— 什么都没动。确认无误后加 `confirm: true` 再调一次。',\n          };\n        }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:461-530](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L461-L530)\n\n浏览器准备、注入与结果\n\n<details>\n<summary>查看原文（70行）</summary>\n\n```text\n        try {\n          const sessionKey = typeof args?.session === 'string' && args.session !== '' ? args.session : PLUGIN_NAME;\n          const session = await browser.open(sessionKey);\n\n          // 头像：要么读成 data URL（页面侧靠它装配成 File），要么**当场画一张**。\n          let avatarDataUrl = null;\n          let avatarName = null;\n          if (composeRequest !== null) {\n            await browser.execute(session, {\n              script: `window.__dshComposeReq = ${JSON.stringify(composeRequest)}; true`,\n              timeoutMs: 10000,\n            });\n            const drawn = await browser.execute(session, { script: buildComposeScript(), timeoutMs: 20000 });\n            let payload = null;\n            try {\n              payload = typeof drawn?.value === 'string' ? JSON.parse(drawn.value) : drawn?.value ?? null;\n            } catch {\n              payload = null;\n            }\n            if (payload?.ok !== true || typeof payload.dataUrl !== 'string') {\n              throw new Error(`合成头像失败：${String(payload?.error ?? '页面没有返回图片')}`);\n            }\n            const decoded = decodePngDataUrl(payload.dataUrl);\n            if (decoded.ok !== true) throw new Error(`合成头像失败：${decoded.error}`);\n            avatarDataUrl = payload.dataUrl;\n            avatarName = `composed-${composeRequest.template}.png`;\n            avatar = { ...avatar, bytes: decoded.bytes, label: `${avatar.label}（${Math.round(decoded.bytes / 1024)}KB）` };\n          } else if (avatar !== null) {\n            const source = avatar.kind === 'file' ? avatar.path : join(assetDir, avatar.file);\n            const image = await readImageBase64(source);\n            avatarDataUrl = `data:${image.mime};base64,${image.base64}`;\n            avatarName = image.file;\n            avatar = { ...avatar, bytes: image.bytes, label: `${avatar.label}（${Math.round(image.bytes / 1024)}KB）` };\n          }\n          if (avatar !== null) {\n            plan.avatar = avatar;\n            plan.summary = planApply({ host: plan.host, fields: plan.check.supported, avatar }).summary;\n          }\n\n          await browser.openUrl(session, { url: plan.profile.profileUrl });\n\n          const script = buildWriterScript();\n          const request = {\n            host: {\n              fields: plan.profile.fields,\n              form: plan.profile.form,\n              avatar: plan.profile.avatar,\n            },\n            fields: plan.check.supported,\n            avatarDataUrl,\n            avatarName,\n          };\n          const executed = await browser.execute(session, {\n            script: `window.__dshStylistReq = ${JSON.stringify(request)}; true`,\n            timeoutMs: 20000,\n          });\n          if (executed && executed.ok === false) throw new Error('页面注入失败：' + String(executed.exception ?? ''));\n\n          const written = await browser.execute(session, { script, timeoutMs: 90000 });\n          if (written && written.ok === false) throw new Error('写入脚本失败：' + String(written.exception ?? ''));\n          let result = null;\n          try {\n            result = typeof written?.value === 'string' ? JSON.parse(written.value) : written?.value ?? null;\n          } catch {\n            result = { ok: false, error: '页面没有回报可解析的结果' };\n          }\n          if (result && result.ok === false) throw new Error('页面侧报错：' + String(result.error ?? 'unknown'));\n          return { ok: true, mode: 'apply', host: plan.host, summary: plan.summary, result };\n        } catch (error) {\n          return { ok: false, mode: 'apply', host: plan.host, summary: plan.summary, error: error instanceof Error ? error.message : String(error) };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:85-175](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L85-L175)\n\n页面填字段、头像、点击保存\n\n<details>\n<summary>查看原文（91行）</summary>\n\n```text\nexport function buildWriterScript() {\n  return `(async function () {\n  try {\n    var req = window.__dshStylistReq || {};\n    var host = req.host || {};\n    var fields = req.fields || {};\n    var out = { ok: true, filled: [], missing: [], warnings: [], avatar: null };\n    var F = host.fields || {};\n\n    // ---------- 1) 文本字段 ----------\n    for (var key in fields) {\n      if (!Object.prototype.hasOwnProperty.call(fields, key)) continue;\n      var sel = F[key];\n      if (!sel) { out.missing.push(key); continue; }\n      var el = null;\n      try { el = document.querySelector(sel); } catch (e) { el = null; }\n      if (!el) { out.missing.push(key); continue; }\n      var tag = el.tagName;\n      if (tag === 'INPUT' || tag === 'TEXTAREA') {\n        var proto = tag === 'TEXTAREA' ? window.HTMLTextAreaElement.prototype : window.HTMLInputElement.prototype;\n        var setter = Object.getOwnPropertyDescriptor(proto, 'value');\n        if (setter && setter.set) setter.set.call(el, fields[key]); else el.value = fields[key];\n        el.dispatchEvent(new Event('input', { bubbles: true }));\n        el.dispatchEvent(new Event('change', { bubbles: true }));\n        out.filled.push(key);\n      } else {\n        // contenteditable\n        el.textContent = fields[key];\n        el.dispatchEvent(new Event('input', { bubbles: true }));\n        out.filled.push(key);\n      }\n    }\n\n    // ---------- 2) 头像 ----------\n    var av = host.avatar || {};\n    if (req.avatarDataUrl && av.input) {\n      var menu = av.menu ? document.querySelector(av.menu) : null;\n      if (menu) { try { menu.click(); } catch (e) {} }\n      var box = av.container ? document.querySelector(av.container) : null;\n      var input = document.querySelector(av.input);\n      if (!input) {\n        out.avatar = { ok: false, reason: '页面里没有头像控件（' + av.input + '）' };\n      } else {\n        var blob = await fetch(req.avatarDataUrl).then(function (r) { return r.blob(); });\n        var file = new File([blob], req.avatarName || 'avatar.png', { type: blob.type || 'image/png' });\n        var dt = new DataTransfer();\n        dt.items.add(file);\n        input.files = dt.files;\n        input.dispatchEvent(new Event('change', { bubbles: true }));\n        // 等站点自己把图传上去（出现确认按钮即为就绪）\n        var ready = false;\n        for (var i = 0; i < 30; i++) {\n          await new Promise(function (r) { setTimeout(r, 1000); });\n          var texts = av.confirmText || [];\n          var buttons = [].slice.call(document.querySelectorAll('button, input[type=submit]'));\n          var hit = null;\n          for (var b = 0; b < buttons.length; b++) {\n            var t = (buttons[b].textContent || buttons[b].value || '').trim();\n            for (var c = 0; c < texts.length; c++) { if (t.indexOf(texts[c]) >= 0) { hit = buttons[b]; break; } }\n            if (hit) break;\n          }\n          if (!hit && box && /has-uploaded|is-uploaded/.test(box.className || '')) hit = 'state';\n          if (hit) {\n            if (hit !== 'state') { try { hit.click(); } catch (e) {} }\n            ready = true;\n            break;\n          }\n        }\n        out.avatar = { ok: ready, bytes: file.size, confirmed: ready };\n        if (!ready) out.warnings.push('头像传上去了但没等到确认按钮（可能站点改版或网络慢）');\n      }\n    }\n\n    // ---------- 3) 文本保存 ----------\n    if (req.save !== false && out.filled.length > 0) {\n      var savers = (host.form && host.form.save) || [];\n      for (var s = 0; s < savers.length; s++) {\n        var btn = null;\n        try { btn = document.querySelector(savers[s]); } catch (e) { btn = null; }\n        if (btn) { try { btn.click(); out.saved = true; break; } catch (e) {} }\n      }\n      if (!out.saved) out.warnings.push('没找到保存按钮 —— 字段已填好，请手动点保存');\n    }\n\n    delete window.__dshStylistReq;\n    return JSON.stringify(out);\n  } catch (error) {\n    return JSON.stringify({ ok: false, error: String((error && error.message) || error) });\n  }\n})()`;\n}\n```\n\n</details>\n\n#### 缺口\n\n- 目标站点真实提交/回读、超时后部分状态未核\n  **影响：**不能把 ok:true 等同站点持久保存\n  **进一步探讨：**测试账号提交后刷新页面回读并覆盖部分失败\n\n<a id=\"research-q03\"></a>\n\n### Q03 · “只收 http/https”和按站点长度截断是否覆盖直接写入？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n没有覆盖。author 草稿会对 blog 调 safeUrl，normalizeDraft 也做长度归一；但 profile_apply 直接接外部 JSON fields，经 planApply→checkAgainstHost 仅检查字段是否存在，超过上限只写 warning，supported 保留完整 String(value)，没有 safeUrl 检查。confirm:true 可把非 http(s) blog 或过长 bio 直接送入站点控件。站点自身可能拒绝，但插件不能宣称自身保证这两项收敛。默认 dry-run 只是参数分支；插件没有强制要求上一轮用户已看过草稿，调用者可直接 confirm:true。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-21](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L7-L21)\n\n作者宣称截断/URL 限制/写前展示\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n> 它替用户写**关于他自己**的东西，所以默认值是三重的保守：\n> **默认 dry-run**（不传 `confirm: true` 只演算）、**只认资料字段**（档案里没有密码/邮箱/安全设置）、\n> **写前摊开**（要写什么、写到哪、用哪张图，提交前整份给人看）。\n\n---\n\n## 它做什么\n\n| 步 | 动作 | 细节 |\n| --- | --- | --- |\n| ① | 生成文案 | 按\"你的需求\"让**宿主模型服务**出昵称/简介/标语/所在地/链接；写不出来就不写，**不编** |\n| ② | 收敛草稿 | 字段白名单 + 按站点长度截断（GitHub bio 160 字符）+ **网址只收 http/https** |\n| ③ | 选头像 | 素材库 / 你给的本地图片路径（本机没有图像生成服务，所以只这三条路） |\n| ④ | 体检 | 目标站点能不能写这些字段、有哪些会超限、选择器是否验证过 |\n| ⑤ | 写入（要显式确认） | 打开资料页 → 填文本 → 头像走 `File → DataTransfer → input.files → change` 交给站点自己的 JS → 点保存/确认 |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/author.js:155-167](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js#L155-L167)\n\n限制只在生成路径\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  const parsed = extractJsonObject(raw);\n  const { fields, notes } = normalizeDraft(parsed ?? {}, { limits, maxFields: request?.maxFields });\n  if (Object.keys(fields).length === 0) notes.push('模型没给出可用字段（原文已附在 raw 里）');\n\n  // 网址字段做一次安全校验（只收 http/https）\n  if (fields.blog) {\n    const checked = safeUrl(fields.blog);\n    if (checked === '') {\n      delete fields.blog;\n      notes.push('模型给的博客地址不合法，已丢弃（不写进任何站点）');\n    } else fields.blog = checked;\n  }\n  return { fields, notes, raw, route };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:400-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L400-L450)\n\napply 直接接 fields 且仅 confirm 布尔门\n\n<details>\n<summary>查看原文（51行）</summary>\n\n```text\n      async execute(args) {\n        // ---- 解析字段 ----\n        let fields = {};\n        try {\n          fields = typeof args?.fields === 'string' ? JSON.parse(args.fields) : (args?.fields ?? {});\n        } catch {\n          return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: 'fields 不是合法 JSON' };\n        }\n        if (fields === null || typeof fields !== 'object' || Array.isArray(fields)) {\n          return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: 'fields 必须是对象' };\n        }\n\n        // ---- 头像（先只定位，不读内容） ----\n        let avatar = null;\n        let composeRequest = null;\n        if (typeof args?.avatarTemplate === 'string' && args.avatarTemplate !== '') {\n          const template = normalizeTemplate(args.avatarTemplate);\n          if (template === null) {\n            return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: `avatarTemplate 只能是 ${Object.keys(AVATAR_TEMPLATES).join(' / ')}` };\n          }\n          const nameText = String(fields.name ?? args?.avatarText ?? '').trim();\n          if (AVATAR_TEMPLATES[template].needTagline && nameText === '') {\n            return { ok: false, mode: 'dry-run', host: 'github', summary: '', error: `${template} 模板需要名字（fields.name 或 avatarText）` };\n          }\n          composeRequest = {\n            template,\n            name: nameText === '' ? '?' : nameText,\n            initials: pickInitials(nameText),\n            tagline: typeof args?.avatarTagline === 'string' ? args.avatarTagline : '',\n            palette: paletteFor(nameText),\n            size: AVATAR_SIZE,\n          };\n          avatar = { kind: 'composed', template, label: `合成头像（${AVATAR_TEMPLATES[template].label}）` };\n        } else if (typeof args?.avatarPath === 'string' && args.avatarPath !== '') {\n          avatar = { kind: 'file', path: args.avatarPath, label: args.avatarPath };\n        } else if (typeof args?.avatarFromAssets === 'string' && args.avatarFromAssets !== '') {\n          avatar = { kind: 'asset', file: args.avatarFromAssets, label: `素材库：${args.avatarFromAssets}` };\n        }\n\n        const plan = planApply({ host: args?.host ?? 'github', fields, avatar });\n        const dryRun = args?.confirm !== true;\n\n        if (dryRun) {\n          return {\n            ok: true,\n            mode: 'dry-run',\n            host: plan.host,\n            summary: plan.summary,\n            hint: '这是 dry-run —— 什么都没动。确认无误后加 `confirm: true` 再调一次。',\n          };\n        }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/hosts.js:130-153](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js#L130-L153)\n\ncheckAgainstHost 超长只警告且原值保留\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n */\nexport function checkAgainstHost(host, fields) {\n  const profile = hostProfile(host);\n  const supported = {};\n  const unsupported = [];\n  const warnings = [];\n  if (profile === null) {\n    return { ok: false, supported, unsupported: Object.keys(fields ?? {}), warnings: ['不认识的站点：' + host] };\n  }\n  for (const [key, value] of Object.entries(fields ?? {})) {\n    const selector = profile.fields[key];\n    if (typeof selector !== 'string' || selector === '') {\n      unsupported.push(key);\n      continue;\n    }\n    const limit = profile.limits?.[key];\n    if (Number.isFinite(limit) && String(value).length > limit) {\n      warnings.push(`${key} 超过该站上限 ${limit} 字符，会被截断`);\n    }\n    supported[key] = String(value);\n  }\n  if (profile.verified !== true) warnings.push(`${profile.name} 的字段选择器尚未真机验证，可能要按现场调整`);\n  return { ok: unsupported.length === 0, supported, unsupported, warnings };\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:503-520](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L503-L520)\n\nsupported 原值送页面脚本\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n          const request = {\n            host: {\n              fields: plan.profile.fields,\n              form: plan.profile.form,\n              avatar: plan.profile.avatar,\n            },\n            fields: plan.check.supported,\n            avatarDataUrl,\n            avatarName,\n          };\n          const executed = await browser.execute(session, {\n            script: `window.__dshStylistReq = ${JSON.stringify(request)}; true`,\n            timeoutMs: 20000,\n          });\n          if (executed && executed.ok === false) throw new Error('页面注入失败：' + String(executed.exception ?? ''));\n\n          const written = await browser.execute(session, { script, timeoutMs: 90000 });\n          if (written && written.ok === false) throw new Error('写入脚本失败：' + String(written.exception ?? ''));\n```\n\n</details>\n\n#### 缺口\n\n- 目标站点如何处理无效链接/超长内容未测\n  **影响：**不能断言错误字段已持久化，但本地承诺不成立\n  **进一步探讨：**对直接 apply 增安全归一化并用负例测试\n\n<a id=\"research-q04\"></a>\n\n### Q04 · Gitee 头像确认路径和结果回报是否一致？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nGitee 档案把确认控件设为 div#confirm-avatar，文本“确定”；页面脚本却只遍历 button 和 input[type=submit] 按文字寻找确认，Gitee 又未配 container 状态回退，故该 div 不会被选中，ready 在最长约 30 秒轮询后为 false，报告“头像传上去了但没等到确认按钮”。即使头像 input change 触发站点上传，当前实现也无法按该档案确认；README 所称 Gitee 头像“真机验证”不能替代这一代码路径核对。GitHub 走 button 文本则另需目标页面核实。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/hosts.js:74-97](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js#L74-L97)\n\nGitee 头像确认是 div#confirm-avatar，container 空\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  gitee: {\n    name: 'Gitee',\n    aliases: ['gitee', 'gitee.com'],\n    profileUrl: 'https://gitee.com/profile',\n    fields: GITEE_FIELDS,\n    form: {\n      /** 真机：`<form id=\"edit_user_17709543\" class=\"edit_user\">` —— id 带用户号，所以按 class 找。 */\n      selector: 'form.edit_user',\n      save: ['button[name=commit]', 'input[name=commit]', 'button[type=submit]'],\n    },\n    avatar: {\n      /** 没有菜单，直接是隐藏 input（真机：`<input id=\"avatar-input\" type=\"file\" accept=\"image/jpg,...\">`）。 */\n      menu: '',\n      input: '#avatar-input',\n      container: '',\n      /** 传完要点「确定」（真机：`<div id=\"confirm-avatar\">确定</div>`，不是 button）。 */\n      confirm: ['#confirm-avatar'],\n      confirmText: ['确定', '保存'],\n    },\n    /** 真机核对到的上限：姓名的 maxlength=60；其余字段页面上没设 maxlength。 */\n    limits: { name: 60 },\n    /** 2026-10-17 在 gitee.com/profile 真机核对过字段 id 与头像控件。 */\n    verified: true,\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:118-155](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L118-L155)\n\n写入脚本只遍历 button/input submit，轮询 30 秒\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    // ---------- 2) 头像 ----------\n    var av = host.avatar || {};\n    if (req.avatarDataUrl && av.input) {\n      var menu = av.menu ? document.querySelector(av.menu) : null;\n      if (menu) { try { menu.click(); } catch (e) {} }\n      var box = av.container ? document.querySelector(av.container) : null;\n      var input = document.querySelector(av.input);\n      if (!input) {\n        out.avatar = { ok: false, reason: '页面里没有头像控件（' + av.input + '）' };\n      } else {\n        var blob = await fetch(req.avatarDataUrl).then(function (r) { return r.blob(); });\n        var file = new File([blob], req.avatarName || 'avatar.png', { type: blob.type || 'image/png' });\n        var dt = new DataTransfer();\n        dt.items.add(file);\n        input.files = dt.files;\n        input.dispatchEvent(new Event('change', { bubbles: true }));\n        // 等站点自己把图传上去（出现确认按钮即为就绪）\n        var ready = false;\n        for (var i = 0; i < 30; i++) {\n          await new Promise(function (r) { setTimeout(r, 1000); });\n          var texts = av.confirmText || [];\n          var buttons = [].slice.call(document.querySelectorAll('button, input[type=submit]'));\n          var hit = null;\n          for (var b = 0; b < buttons.length; b++) {\n            var t = (buttons[b].textContent || buttons[b].value || '').trim();\n            for (var c = 0; c < texts.length; c++) { if (t.indexOf(texts[c]) >= 0) { hit = buttons[b]; break; } }\n            if (hit) break;\n          }\n          if (!hit && box && /has-uploaded|is-uploaded/.test(box.className || '')) hit = 'state';\n          if (hit) {\n            if (hit !== 'state') { try { hit.click(); } catch (e) {} }\n            ready = true;\n            break;\n          }\n        }\n        out.avatar = { ok: ready, bytes: file.size, confirmed: ready };\n        if (!ready) out.warnings.push('头像传上去了但没等到确认按钮（可能站点改版或网络慢）');\n      }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:54-58](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L54-L58)\n\n作者称 Gitee 头像选择器验证\n\n```text\n| 站点 | 状态 | 备注 |\n| --- | --- | --- |\n| **GitHub** | ✅ 选择器**真机验证过** | `#user_display_name` / `#user_profile_bio` / `#avatar_upload` + 「Set new profile picture」 |\n| **Gitee** | ✅ 选择器**真机验证过**（2026-10-17，gitee.com/profile） | `#user_name` / `#user_bio` / `#user_company` / `#user_blog`，保存按钮 `button[name=commit]`（「更新」），头像 `#avatar-input` + `#confirm-avatar`（「确定」） |\n\n```\n\n#### 缺口\n\n- Gitee 当前 DOM 与脚本运行结果未测\n  **影响：**不能说所有 Gitee 头像更新失败，但确认实现不匹配\n  **进一步探讨：**在测试账号实测并按选择器查询可点击 div，回读头像\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 安装、权限和恢复需要哪些条件？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n运行依赖 DSH tools/systemPrompt、宿主 llm/browser 服务、已登录目标站点的浏览器会话；用户要能查看生成草稿和真实写入回执。包 0.2.2 MIT，README 给 Windows junction 手装并称市场尚待收录，分发状态本轮未核。图片只核文件大小/扩展名并整张 base64 注入浏览器；真实 MIME、图像规格化和站点上传成功需目标测试。错误后可能文本已填/按钮已点，重试前须打开资料页核当前值，避免覆盖。建议仅测试账号观察，修复直接 apply 校验和 Gitee 确认后再广泛采用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-79](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/package.json#L1-L79)\n\n包版本/兼容/依赖\n\n<details>\n<summary>查看原文（79行）</summary>\n\n```text\n{\n  \"name\": \"dsh-profile-stylist\",\n  \"version\": \"0.2.2\",\n  \"description\": \"Say what kind of profile you want; the agent writes it and puts it up. Generates nickname/bio/taglines with the host model, picks a local asset OR composes an avatar in-page with canvas (initials / gradient / tagline templates), then fills the profile page and uploads the picture - dry-run by default. GitHub and Gitee selectors are both verified on the live sites.\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./constants\": \"./lib/constants.js\",\n    \"./author\": \"./lib/author.js\",\n    \"./hosts\": \"./lib/hosts.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"profile\",\n    \"avatar\",\n    \"bio\",\n    \"nickname\",\n    \"persona\",\n    \"account\",\n    \"github\",\n    \"gitee\",\n    \"branding\",\n    \"个人资料\",\n    \"头像\",\n    \"简介\"\n  ],\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"scripts\": {\n    \"test\": \"node test/smoke.mjs\"\n  },\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/7gzgn/dsh-profile-stylist.git\"\n  },\n  \"homepage\": \"https://github.com/7gzgn/dsh-profile-stylist#readme\",\n  \"bugs\": {\n    \"url\": \"https://github.com/7gzgn/dsh-profile-stylist/issues\"\n  },\n  \"dsh\": {\n    \"compatibility\": {\n      \"dshReleases\": {\n        \"0.2.0-rc.2\": \"compatible\",\n        \"0.2.1-rc.2\": \"compatible\"\n      }\n    },\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \">=4.0.4 <5.0.0\",\n    \"@deepseek-ai/dsh-system-prompt\": \">=0.2.0-rc.2 <0.3.0-0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.2.0-rc.2 <0.3.0-0\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/dsh-system-prompt\": {\n      \"optional\": true\n    },\n    \"@deepseek-ai/dsh-tools\": {\n      \"optional\": true\n    }\n  }\n}\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:81-99](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L81-L99)\n\n作者安装与测试说明\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n## 安装\n\n市场收录后在 DSH 里搜 `dsh-profile-stylist` 安装。手动安装：\n\n```powershell\nNew-Item -ItemType Junction -Path \"$env:USERPROFILE\\.dsh\\profiles\\desktop\\node_modules\\dsh-profile-stylist\" -Target \"D:\\dsh\\projects\\dsh-profile-stylist\"\n# profile 的 package.json：dependencies 加 \"dsh-profile-stylist\": \"link:D:/dsh/projects/dsh-profile-stylist\"\n# 并把 \"dsh-profile-stylist\" 加进 dsh.profile.bundles（漏了不加载）→ 重启 DSH\n```\n\n**用之前先做两步**：① 装好内置浏览器插件；② 在浏览器窗口里登录目标站点。\n\n## 测试\n\n```powershell\nnode test/smoke.mjs      # 35 项：纯逻辑 / 站点档案 / 生成层（假 LLM）/ 写入层（假浏览器）/ 回执\n```\n\n测试**不联网、不碰真实浏览器、不读任何凭据**。在活代码树里跑会**直接退出**（先复制到 `D:\\dsh\\sandbox\\`）。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/author.js:222-242](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js#L222-L242)\n\n图片大小/扩展名读取\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n/**\n * 把一张本地图片读成 base64（供页面侧装配成 File）。\n * 只读、只在本机内存里过一道；调用方负责体积上限。\n * @param {string} path\n * @returns {Promise<{base64:string,mime:string,bytes:number,file:string}>}\n */\nexport async function readImageBase64(path) {\n  const info = await stat(path);\n  if (!info.isFile()) throw new Error('不是文件：' + path);\n  if (info.size > AVATAR_SPEC.maxSourceBytes) {\n    throw new Error(`图片太大（${info.size} 字节 > ${AVATAR_SPEC.maxSourceBytes}）—— 请先自己缩一下再放进素材库`);\n  }\n  const ext = extname(path).toLowerCase();\n  if (!IMAGE_EXT.has(ext)) throw new Error('不支持的图片格式：' + ext);\n  const buf = await readFile(path);\n  const mime = ext === '.png' ? 'image/png'\n    : ext === '.webp' ? 'image/webp'\n      : ext === '.gif' ? 'image/gif'\n        : 'image/jpeg';\n  return { base64: buf.toString('base64'), mime, bytes: buf.length, file: basename(path) };\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:461-530](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L461-L530)\n\n浏览器依赖与错误回报\n\n<details>\n<summary>查看原文（70行）</summary>\n\n```text\n        try {\n          const sessionKey = typeof args?.session === 'string' && args.session !== '' ? args.session : PLUGIN_NAME;\n          const session = await browser.open(sessionKey);\n\n          // 头像：要么读成 data URL（页面侧靠它装配成 File），要么**当场画一张**。\n          let avatarDataUrl = null;\n          let avatarName = null;\n          if (composeRequest !== null) {\n            await browser.execute(session, {\n              script: `window.__dshComposeReq = ${JSON.stringify(composeRequest)}; true`,\n              timeoutMs: 10000,\n            });\n            const drawn = await browser.execute(session, { script: buildComposeScript(), timeoutMs: 20000 });\n            let payload = null;\n            try {\n              payload = typeof drawn?.value === 'string' ? JSON.parse(drawn.value) : drawn?.value ?? null;\n            } catch {\n              payload = null;\n            }\n            if (payload?.ok !== true || typeof payload.dataUrl !== 'string') {\n              throw new Error(`合成头像失败：${String(payload?.error ?? '页面没有返回图片')}`);\n            }\n            const decoded = decodePngDataUrl(payload.dataUrl);\n            if (decoded.ok !== true) throw new Error(`合成头像失败：${decoded.error}`);\n            avatarDataUrl = payload.dataUrl;\n            avatarName = `composed-${composeRequest.template}.png`;\n            avatar = { ...avatar, bytes: decoded.bytes, label: `${avatar.label}（${Math.round(decoded.bytes / 1024)}KB）` };\n          } else if (avatar !== null) {\n            const source = avatar.kind === 'file' ? avatar.path : join(assetDir, avatar.file);\n            const image = await readImageBase64(source);\n            avatarDataUrl = `data:${image.mime};base64,${image.base64}`;\n            avatarName = image.file;\n            avatar = { ...avatar, bytes: image.bytes, label: `${avatar.label}（${Math.round(image.bytes / 1024)}KB）` };\n          }\n          if (avatar !== null) {\n            plan.avatar = avatar;\n            plan.summary = planApply({ host: plan.host, fields: plan.check.supported, avatar }).summary;\n          }\n\n          await browser.openUrl(session, { url: plan.profile.profileUrl });\n\n          const script = buildWriterScript();\n          const request = {\n            host: {\n              fields: plan.profile.fields,\n              form: plan.profile.form,\n              avatar: plan.profile.avatar,\n            },\n            fields: plan.check.supported,\n            avatarDataUrl,\n            avatarName,\n          };\n          const executed = await browser.execute(session, {\n            script: `window.__dshStylistReq = ${JSON.stringify(request)}; true`,\n            timeoutMs: 20000,\n          });\n          if (executed && executed.ok === false) throw new Error('页面注入失败：' + String(executed.exception ?? ''));\n\n          const written = await browser.execute(session, { script, timeoutMs: 90000 });\n          if (written && written.ok === false) throw new Error('写入脚本失败：' + String(written.exception ?? ''));\n          let result = null;\n          try {\n            result = typeof written?.value === 'string' ? JSON.parse(written.value) : written?.value ?? null;\n          } catch {\n            result = { ok: false, error: '页面没有回报可解析的结果' };\n          }\n          if (result && result.ok === false) throw new Error('页面侧报错：' + String(result.error ?? 'unknown'));\n          return { ok: true, mode: 'apply', host: plan.host, summary: plan.summary, result };\n        } catch (error) {\n          return { ok: false, mode: 'apply', host: plan.host, summary: plan.summary, error: error instanceof Error ? error.message : String(error) };\n```\n\n</details>\n\n#### 缺口\n\n- 当前市场安装、真实图像处理与恢复耗时未测\n  **影响：**不能给零风险自动写站结论\n  **进一步探讨：**目标站点测试、回读、修复后再复评\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 如何形成真正可审查的资料写入流程？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证方向是对 author 与直接 apply 统一调用字段长度和 URL 校验，超长提供明确截断差异；把 dry-run 结果与用户确认绑定为一次性摘要/版本，写入后重新读取页面值而非只记录按钮点击。Gitee 头像按 profile.avatar.confirm 的选择器而不是只按 button 文本，缺控件时停止或明确部分成功。验收包含两站单字段/头像/未知站点、URL 非法、超长、会话错误和提交后回读。当前建议 observe。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/hosts.js:130-153](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js#L130-L153)\n\n现有字段检查只警告\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n */\nexport function checkAgainstHost(host, fields) {\n  const profile = hostProfile(host);\n  const supported = {};\n  const unsupported = [];\n  const warnings = [];\n  if (profile === null) {\n    return { ok: false, supported, unsupported: Object.keys(fields ?? {}), warnings: ['不认识的站点：' + host] };\n  }\n  for (const [key, value] of Object.entries(fields ?? {})) {\n    const selector = profile.fields[key];\n    if (typeof selector !== 'string' || selector === '') {\n      unsupported.push(key);\n      continue;\n    }\n    const limit = profile.limits?.[key];\n    if (Number.isFinite(limit) && String(value).length > limit) {\n      warnings.push(`${key} 超过该站上限 ${limit} 字符，会被截断`);\n    }\n    supported[key] = String(value);\n  }\n  if (profile.verified !== true) warnings.push(`${profile.name} 的字段选择器尚未真机验证，可能要按现场调整`);\n  return { ok: unsupported.length === 0, supported, unsupported, warnings };\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:139-166](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L139-L166)\n\n头像与保存回报有限\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n          var buttons = [].slice.call(document.querySelectorAll('button, input[type=submit]'));\n          var hit = null;\n          for (var b = 0; b < buttons.length; b++) {\n            var t = (buttons[b].textContent || buttons[b].value || '').trim();\n            for (var c = 0; c < texts.length; c++) { if (t.indexOf(texts[c]) >= 0) { hit = buttons[b]; break; } }\n            if (hit) break;\n          }\n          if (!hit && box && /has-uploaded|is-uploaded/.test(box.className || '')) hit = 'state';\n          if (hit) {\n            if (hit !== 'state') { try { hit.click(); } catch (e) {} }\n            ready = true;\n            break;\n          }\n        }\n        out.avatar = { ok: ready, bytes: file.size, confirmed: ready };\n        if (!ready) out.warnings.push('头像传上去了但没等到确认按钮（可能站点改版或网络慢）');\n      }\n    }\n\n    // ---------- 3) 文本保存 ----------\n    if (req.save !== false && out.filled.length > 0) {\n      var savers = (host.form && host.form.save) || [];\n      for (var s = 0; s < savers.length; s++) {\n        var btn = null;\n        try { btn = document.querySelector(savers[s]); } catch (e) { btn = null; }\n        if (btn) { try { btn.click(); out.saved = true; break; } catch (e) {} }\n      }\n      if (!out.saved) out.warnings.push('没找到保存按钮 —— 字段已填好，请手动点保存');\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:439-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L439-L450)\n\n当前确认只是布尔分支\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n        const plan = planApply({ host: args?.host ?? 'github', fields, avatar });\n        const dryRun = args?.confirm !== true;\n\n        if (dryRun) {\n          return {\n            ok: true,\n            mode: 'dry-run',\n            host: plan.host,\n            summary: plan.summary,\n            hint: '这是 dry-run —— 什么都没动。确认无误后加 `confirm: true` 再调一次。',\n          };\n        }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:519-530](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L519-L530)\n\n结果无远端回读\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n          const written = await browser.execute(session, { script, timeoutMs: 90000 });\n          if (written && written.ok === false) throw new Error('写入脚本失败：' + String(written.exception ?? ''));\n          let result = null;\n          try {\n            result = typeof written?.value === 'string' ? JSON.parse(written.value) : written?.value ?? null;\n          } catch {\n            result = { ok: false, error: '页面没有回报可解析的结果' };\n          }\n          if (result && result.ok === false) throw new Error('页面侧报错：' + String(result.error ?? 'unknown'));\n          return { ok: true, mode: 'apply', host: plan.host, summary: plan.summary, result };\n        } catch (error) {\n          return { ok: false, mode: 'apply', host: plan.host, summary: plan.summary, error: error instanceof Error ? error.message : String(error) };\n```\n\n</details>\n\n#### 缺口\n\n- 改进尚未实现/验证\n  **影响：**不能计入当前功能\n  **进一步探讨：**隔离测试账号实现摘要确认与回读矩阵\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc296b46505fa79a2a0ffad90ea4dbbeef79b9b69fcc5b5f1a261b3a292c3aa7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 5 | 1360 | 972 | 307 | — |\n| .md | source | 1 | 103 | — | — | 1116 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| profile_author | 生文案 | 需人工核事实 |\n| profile_apply dry-run | 体检 | 不绑定下一次确认 |\n| confirm:true | 自动填表/点击保存 | 直接字段绕过 URL/长度限制，无回读 |\n| Gitee 头像 | 上传/确认 | div 确认与脚本查 button 不匹配 |\n\n## 工程亮点\n\n分 author/hosts/compose 层有利扩站；直接 apply 与生成层校验分叉，站点确认脚本未使用档案 selector。详见[Q03](#research-q03)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/hosts.js、lib/author.js、lib/constants.js、lib/compose.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、manifest、author/hosts/compose/index；未运行目标代码、站点浏览器或作者测试；旧 META 仅复用。\n- 下一步：目标 GitHub/Gitee 测合法/非法 URL、超长、头像 div 确认、页面变化、提交回读、部分失败与测试账号恢复。\n",
         "metadata": {
             "repository": "7gzgn/dsh-profile-stylist",
             "repository_id": 1422500224,

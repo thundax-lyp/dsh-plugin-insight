@@ -12,7 +12,6 @@
 | --- | --- | --- |
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
 | [chicheng-push](#plugin-1335382133-root) | 在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 | 有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。 |
-| [dock-spreadsheet](#plugin-1400109121-root) | 在Dock只读预览工作簿及UTF-8分隔文本，保持表格坐标。 | 用于小表快速阅读；需编辑、计算或完整报表时另用表格软件。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。 | 先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。 | 远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。 |
@@ -25,13 +24,11 @@
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。 | 先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。 |
 | [dsh-wsl-rclone](#plugin-1381859181-root) | 通过rclone列出远程存储配置、文件名及配额信息。 | 适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。 |
-| [dsh-wsl-uia](#plugin-1391141792-root) | 从 WSL 枚举 Windows 窗口并读取有深度限制的 UI Automation 元素树。 | 适合有可访问性控件的 Windows 应用观察；先以少量元素验证名称和覆盖，找不到不能直接判控件不存在，动作前重新定位。 |
 | [dsh-wsl-winctl](#plugin-1391143632-root) | 从 WSL 枚举 Windows 顶层窗口并调整窗口状态、位置和大小。 | 适合整理明确单窗口的桌面；先枚举并核对目标，多窗口和关闭操作保留人工确认，返回ok后重新读取实际状态。 |
 | [dsh-wsl-wininput](#plugin-1391142149-root) | 从 WSL 按名称调用 Windows 控件，或向指定窗口发送文本、按键与点击。 | 适合有人看护的Windows自动化；优先具备唯一名称的invoke，打字/点击会干扰焦点和鼠标，执行前暂停其他桌面操作并检查结果。 |
 | [dsh-wsl-winshot](#plugin-1391140767-root) | 把指定 Windows 窗口或控件区域截图保存为 WSL 文件。 | 适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。 |
 | [feishu-dsh-plugin（2286893544）](#plugin-1364766828-root) | 通过企业自建飞书应用为 DSH 提供消息、云文档、多维表格、表格与权限操作工具。 | 已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。 |
 | [Markdown 批注器](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，把批注整理为会话草稿。 | 适合短期人工审阅中等大小Markdown；接受批注不持久化且能按次导出时再试用，不用于未经保存的跨日批注存档。 |
-| [峰谷价任务执行器](#plugin-1417227361-root) | 根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。 | 适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。 |
 
 <a id="plugin-1406611614-root"></a>
 
@@ -60,20 +57,6 @@
 > **思考**：返回ok是否等于用户可靠收到？sender多以HTTP和渠道业务码判断接受，并无统一送达回执或持久重试；串行多渠道可能累积12秒超时。publicChannel返回完整config，令牌还明文存channels.json，fence信任边界必须与远程访问配置一起检查，不能因“只在本机”就省略敏感字段范围。
 
 > **建议**：待验证假设：为调用方提供幂等通知ID与持久发送账本，按“已提交/平台接受/确认收到”分层，允许失败渠道重试，可减少任务重试引发的重复提醒。由每渠道results但无持久投递状态推导，当前未实现。用成功后连接断开、部分渠道失败和调用方重放对照，测重复率、漏发与等待时间；不支持回执的平台必须保持unknown，不能伪造已读。
-
-<a id="plugin-1400109121-root"></a>
-
-## [dock-spreadsheet](../../plugins/aks1st--dock-spreadsheet/INSIGHT.md)
-
-[![npm 30d 413](https://img.shields.io/static/v1?label=npm+30d&message=413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-spreadsheet) [![最新发布 2026-10-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-spreadsheet)
-
-> **用途**：快速查看模型产出或工作区表格，不承担编辑和公式重新计算。
-
-> **亮点**：首行保留为数据而非猜标题、范围偏移保留为真实行列坐标，避免常见预览歧义；解析和虚拟表格来自上游。
-
-> **思考**：行列上限在工作簿解析之后才应用，20MiB压缩文件不代表展开内存有界；公式显示依赖缓存/格式化值，不能用预览判断计算正确。只读不意味着文件内容可当可靠业务报表。
-
-> **建议**：未验证假设：解析隔离到worker并提供取消/复杂度预算和公式缓存提示，可使大表失败可控。比较高压缩XLSX、大范围和陈旧公式缓存样例的峰值内存、可取消性及误判。
 
 <a id="plugin-1381221232-root"></a>
 
@@ -243,20 +226,6 @@
 
 > **建议**：待验证假设：将服务端遍历预算和结果条数分别限制，可降低大目录超时与费用；依赖各后端列举能力，尚未实现。
 
-<a id="plugin-1391141792-root"></a>
-
-## [dsh-wsl-uia](../../plugins/173787247--dsh-wsl-uia/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-uia)
-
-> **用途**：需要理解 Windows 应用控件而非只看像素的 WSL Agent，交付窗口、控件名称、类型、可用 pattern 和路径，供人工或输入工具决策。
-
-> **亮点**：相对截图 OCR，源码可见增量是提供语义控件属性和命名路径，同时把观察与输入分成插件；UIAutomation 遍历来自 Windows 平台，epoch 只是观察标签，不是稳定控件身份。
-
-> **思考**：关键质疑是有界观察是否真的限制工作量。treeScript 用输出条数限制循环，过滤不命中的节点仍可继续遍历，maxElements 不是访问节点上限；truncated 根据输出数推断。稀疏匹配树仍可能耗时，UIA 覆盖还取决于应用可访问性。
-
-> **建议**：适合有可访问性控件的 Windows 应用观察；先以少量元素验证名称和覆盖，找不到不能直接判控件不存在，动作前重新定位。
-
 <a id="plugin-1391143632-root"></a>
 
 ## [dsh-wsl-winctl](../../plugins/173787247--dsh-wsl-winctl/INSIGHT.md)
@@ -326,20 +295,6 @@
 > **思考**：核心问题是重生成后引用是否仍指向正确原文。重复段落、结构变化和非完整Markdown子集会削弱锚定；插件不持久化批注，刷新/重启可能丢审阅劳动。报告进入草稿也不等于修改已执行或被验收。
 
 > **建议**：适合短期人工审阅中等大小Markdown；接受批注不持久化且能按次导出时再试用，不用于未经保存的跨日批注存档。
-
-<a id="plugin-1417227361-root"></a>
-
-## [峰谷价任务执行器](../../plugins/439436269-ctrl--dsh-peak-runner/INSIGHT.md)
-
-[![npm 30d 24](https://img.shields.io/static/v1?label=npm+30d&message=24&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-peak-runner) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-peak-runner)
-
-> **用途**：可等待的摘要/翻译批任务，用户接受推迟执行换取预期低价；合格交付是指定模型完成的文本和可靠任务状态，而非仅到时触发。
-
-> **亮点**：相对用户手动等低价，贡献是价格日程与可查队列、取消、模型调用的组合。存储和LLM流来自宿主；插件按时间表改变执行时机，并未读取实时账单确认价格。
-
-> **思考**：最影响节费主张的是日程是否真正约束所用模型和任务启动。scheduler.shouldRunNow在“当前非峰段”直接run=true，未检查即将进入峰段，因此README承诺的峰前leadMinutes不成立；runner指定模型失败会发现任意可用模型，其价格不一定对应同日程。
-
-> **建议**：适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。
 
 ## 更新时间
 

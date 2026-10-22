@@ -12,7 +12,7 @@
             "aliases": [],
             "name": "dsh-auto-shutdown",
             "entry_type": "plugin",
-            "technical_category": "runtime-deployment",
+            "technical_category": "interface-input",
             "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
@@ -24,36 +24,88 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-03-github-1425073734-root-directory-0",
+                    "id": "2026-10-22-02-github-1425073734-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T03:44:26.207Z",
+                    "retrieved_at": "2026-10-22T05:40:21.625Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-03-github-1425073734-root-author",
+                    "id": "2026-10-22-02-github-1425073734-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "README.md",
+                            "content_sha256": "d5eee3dfc1afa349b19c9344fed9914c00990b518001e2b994a16f3141a1c9cb"
+                        }
+                    ],
                     "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-                    "captured_at": "2026-10-21T03:44:26.207Z",
-                    "summary": "在Windows设置中启用一次性触发，在根会话轮次结束后安排关机并提供取消倒计时。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:40:21.625Z",
+                    "summary": "Windows 专用设置开关，在根对话结束时安排一次性关机并弹出取消倒计时。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-03-github-1425073734-root-source",
+                    "id": "2026-10-22-02-github-1425073734-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js",
+                    "url": "https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "README.md",
+                            "content_sha256": "d5eee3dfc1afa349b19c9344fed9914c00990b518001e2b994a16f3141a1c9cb"
+                        },
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "package.json",
+                            "content_sha256": "f67c167f7e7fccb70cdc8d60d527476b48bdff3ba6aa5e3ec890cf76afc76c97"
+                        },
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "lib/index.js",
+                            "content_sha256": "bf0278954004b57a401791317949bf2817c9e62097f20a28d80926526192a12c"
+                        },
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "lib/client.js",
+                            "content_sha256": "f74c73b9d4febef9fc17f4c8c6191c15a47c7c6bedc9b2da35d9e4f6198ded82"
+                        },
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "lib/popup.js",
+                            "content_sha256": "586aff5426c9d941fdf71662a69f620d504a06ba913d023e75557b026f1fd7a2"
+                        },
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "assets/notify.ps1",
+                            "content_sha256": "3a1eabb2711ee5ba551671b6fb2b965c9875cd2c6a4cecf3a53dbda00fca0911"
+                        },
+                        {
+                            "repository_url": "https://github.com/873360545/dsh-auto-shutdown",
+                            "commit": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
+                            "path": "test-dry-run.mjs",
+                            "content_sha256": "76993f96609a45515171b0f3384744a053a5fe744a4692e61f4715e9427b4a25"
+                        }
+                    ],
                     "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-                    "captured_at": "2026-10-21T03:44:26.207Z",
-                    "summary": "核查 lib/index.js、lib/popup.js、assets/notify.ps1、lib/client.js；index.js监听agent/turn-stopping，仅根agent且无其它running时同步置fired，尝试settings.enabled=false，再spawn shutdown.exe；popup.js启动独立PowerShell取消窗口。",
-                    "artifact": "data/runs/2026-10-21-03/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:40:21.625Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/client.js、lib/popup.js、assets/notify.ps1、test-dry-run.mjs；客户端配置表单写 enabled；Host 在根 turn-stopping 过滤其他 running agent、复位并启动 shutdown.exe 和 PowerShell 弹窗。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/873360545--dsh-auto-shutdown/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只读核固定提交 README、Host/Client、弹窗脚本、package 与作者测试；未执行目标代码、Windows 命令或宿主验收；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +116,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "Windows用户让Agent运行任务后离开，希望结束时关机；合格行为是仅在授权会话真正到达合适终点、其它工作可保存时安排一次，并能可靠取消。",
+                    "text": "供 Windows 用户长对话结束后离开电脑时使用；合格结果是按根回合完成排关机、可撤销且不丢数据。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +127,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "index.js监听agent/turn-stopping，仅根agent且无其它running时同步置fired，尝试settings.enabled=false，再spawn shutdown.exe；popup.js启动独立PowerShell取消窗口。",
+                    "text": "客户端配置表单写 enabled；Host 在根 turn-stopping 过滤其他 running agent、复位并启动 shutdown.exe 和 PowerShell 弹窗。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +145,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "text": "只读核固定提交 README、Host/Client、弹窗脚本、package 与作者测试；未执行目标代码、Windows 命令或宿主验收；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +163,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "Windows专用，宿主settings/agents与client配置表单，PowerShell WinForms弹窗；默认enabled=false，dryrun仅记录计划。",
+                    "text": "包声明版本 0.3.0、MIT、Node>=20、Windows 专用；GitHub/tarball 安装与 DSH>=0.2.1 为作者说明，当前取得性和兼容性未本轮验证。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +181,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无模型额外调用；首次确定延迟与取消方式，关机会影响整机其它任务。真实节电和等待时间未测，错误触发的恢复成本可能超过便利。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Windows/DSH 机器，金额未知 | 安装、重启、设延时与 dry-run；耗时未知 | 宿主兼容未测 |\n| 持续使用 | 额外弹窗进程、延时等待；金额未知 | 保存工作、决定撤销；耗时未知 | 默认 60 秒 |\n| 失败恢复 | 未保存数据和重复关机风险；损失未知 | shutdown /a、检查状态与恢复工作；耗时未知 | 写入/进程失败无统一回滚 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +199,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先用作者提供的dryrun路径在临时环境检查事件和复位，不直接在有未保存任务的主机启用。确认取消命令与设置写入失败行为后再决定使用。",
+                    "text": "仅建议在隔离 Windows 测试机以 dry-run 和可保存任务观察；关键工作或无人值守场景待一致性故障修正和实测后再评估。详见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +217,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "可减少任务后人工守候，但只看到Agent轮次边界，不能保证业务办结与全机空闲。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 回合边界触发 | 根 agent 和 running 过滤源码 | 宿主实际事件时机与保存完成 |\n| 一次性开关 | 内存 fired 和 Settings 复位 | 写失败后重启是否重触发 |\n| 可取消关机 | WinForms 按钮调用 shutdown /a | 真实 OS 排程、弹窗启动与取消成功率 |",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +235,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "同步锁存避免同进程事件并发触发，绝对SystemRoot路径降低PATH歧义；弹窗只负责取消而不再次安排也清晰。关键维护点是持久复位必须成为外部动作前置条件，错误日志不能替代阻断。 源码依据：[lib/index.js](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js)、[lib/popup.js](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/popup.js)、[assets/notify.ps1](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/assets/notify.ps1)、[lib/client.js](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/client.js)。",
+                    "text": "宿主配置表单、同步 latch 与可隔离 dry-run 值得借鉴；复位写入和进程启动应有可核状态，再开放真实关机。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +253,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对人工守候后关机，增量是将root轮次边界、单次锁存和原生取消窗口组合为可配置交接；系统关机命令是既有能力，插件贡献在触发条件与用户干预入口。",
+                    "text": "将宿主对话边界、Settings 开关和 Windows 系统关机/撤销做成低操作负担的个人流程；增量在连接和一次性 UX，不在关机命令本身。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +271,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "“一次且重启不再触发”是否保证？disarm捕获settings写入错误后仍继续scheduleShutdown，持久开关可能仍为true；turn-stopping也不证明业务任务成功或待保存数据完成。fired只在当前进程防重复，不能把它当跨重启事务锁。",
+                    "text": "Settings disarm 写失败仍排关机，重启可能保留 enabled；shutdown 异步启动错误后仍可拉起取消弹窗。作者一次性与可取消承诺因此依赖未保证的路径。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +289,16 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "由持久复位与外部关机分离推导，可在复位失败时停止安排关机，并将触发限定为用户选定会话与显式完成标记，保留可观察的计划ID。未验证假设是减少错误时机关机；模拟设置写失败、失败轮、其它应用未保存和重启，若仍出现未经条件满足的计划则否定。",
+                    "text": "未验证方向是持久 request id/状态机，确认复位和 OS 排程结果后给出真实 UI 状态，故障注入验证重复触发、错误提示与取消一致性。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +307,15 @@
                             "fingerprint": "a2af408455e31a0acf4021e3383d1384dcb7aebc"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T03:44:26.207Z",
+                    "reviewed_at": "2026-10-22T05:40:21.625Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T03:44:26.207Z",
+            "last_checked_at": "2026-10-22T05:40:21.625Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-                "reviewed_at": "2026-10-21T03:44:26.207Z",
+                "reviewed_at": "2026-10-22T05:40:21.625Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +327,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 5,
                         "simplification": 8
                     },
-                    "rationale": "novelty事件到系统动作小档；mechanism锁存与取消组合小档；transferability Windows限定小档；simplification集中触发流程半档。",
+                    "rationale": "novelty 是事件、设置与 OS 命令组合；mechanism 有一次性 latch/弹窗分工但失败一致性不足；transferability 偏 Windows/DSH；simplification 把手动关机与撤销收在一个设置流程。",
                     "basis": "interpretation",
-                    "score": 30,
+                    "score": 37,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
+                        "workflow": 18,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "workflow减少守候小档；delivery关机计划小档；reach Windows无人值守用户小档；economics节电未测小档。",
+                    "rationale": "workflow 可减少守候；delivery 在失败路径无状态确认；reach 限 Windows 非关键个人任务；无收费/节省实测，经济项不推定。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 31,
                     "evidence_ids": [
-                        "2026-10-21-03-github-1425073734-root-source"
+                        "2026-10-22-02-github-1425073734-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "离席自动关机有便利，但disarm写设置失败仍关机、轮次停止不证办结；先验持久复位与取消，再于无未存工作主机评估。",
+                "reason": "功能场景清楚，但持久复位失败仍关机、spawn 结果与弹窗脱节；限测试机观察。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "Windows任务后免守候关机需求明确但影响整机。"
+                        "rationale": "Windows 长回合结束自动关机诉求具体。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "root事件加单次锁存和原生取消窗比人工守候方便。"
+                        "rationale": "较手动关机有会话边界与可见撤销入口。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "fired仅进程锁且settings失败仍schedule源码已确认。"
+                        "rationale": "固定源码和作者测试可查，未执行真实宿主。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "无额外模型费，误关机未保存与跨重启再触发恢复代价高。"
+                        "score": 0,
+                        "rationale": "潜在数据丢失和误触恢复成本未量化。"
                     }
                 },
-                "score": 54,
+                "score": 49,
                 "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:40:21.625Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-03-github-1425073734-root-source"
+                    "2026-10-22-02-github-1425073734-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,28 +406,30 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T03:36:14Z",
-            "analysis_sha256": "5c9897bb3dac9a8a1f8fe3ed8fa5cc69bd75d60fa237e6591624c6d6a360aedc"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "ed2a3c63cc8a7032c8c0f94abca519560bc35ddd03552897ff09ddd25749202a"
         },
         "publication.metadata": "data/plugins/873360545--dsh-auto-shutdown/META.json",
         "publication.summaries": {
-            "text": "在Windows设置中启用一次性触发，在根会话轮次结束后安排关机并提供取消倒计时。",
+            "text": "Windows 专用设置开关，在根对话结束时安排一次性关机并弹出取消倒计时。",
             "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
             "source_url": "https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md"
         },
         "publication.capabilities": {
             "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
             "items": {
-                "事件监听": "root agent/turn-stopping触发一次性计划。",
-                "界面": "通用设置开关和原生取消倒计时窗口。"
-            }
+                "界面": "Settings 一次性开关与 WinForms 倒计时撤销窗",
+                "事件监听": "根 agent/turn-stopping 触发筛选",
+                "后台": "Windows 计划关机与配置复位"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 一次性开关 | 关机意图配置 | Settings 写失败仍继续排程 |\n| 回合边界触发 | 根对话结束时排关机 | 仅按当时其他 agent running 状态判断 |\n| 倒计时撤销 | 点击运行 shutdown /a | 弹窗可失败，取消成功需核 OS |"
         },
         "publication.advice": {
             "revision": "a2af408455e31a0acf4021e3383d1384dcb7aebc",
-            "text": "先用作者提供的dryrun路径在临时环境检查事件和复位，不直接在有未保存任务的主机启用。确认取消命令与设置写入失败行为后再决定使用。"
+            "text": "仅建议在隔离 Windows 测试机以 dry-run 和可保存任务观察；关键工作或无人值守场景待一致性故障修正和实测后再评估。详见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/873360545--dsh-auto-shutdown",
-        "reports": "# dsh-auto-shutdown\n\n> 在Windows设置中启用一次性触发，在根会话轮次结束后安排关机并提供取消倒计时。\n\n## 使用建议\n\n先用作者提供的dryrun路径在临时环境检查事件和复位，不直接在有未保存任务的主机启用。确认取消命令与设置写入失败行为后再决定使用。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：Windows用户让Agent运行任务后离开，希望结束时关机；合格行为是仅在授权会话真正到达合适终点、其它工作可保存时安排一次，并能可靠取消。\n- **亮点**：相对人工守候后关机，增量是将root轮次边界、单次锁存和原生取消窗口组合为可配置交接；系统关机命令是既有能力，插件贡献在触发条件与用户干预入口。\n- **思考**：“一次且重启不再触发”是否保证？disarm捕获settings写入错误后仍继续scheduleShutdown，持久开关可能仍为true；turn-stopping也不证明业务任务成功或待保存数据完成。fired只在当前进程防重复，不能把它当跨重启事务锁。\n- **建议**：由持久复位与外部关机分离推导，可在复位失败时停止安排关机，并将触发限定为用户选定会话与显式完成标记，保留可观察的计划ID。未验证假设是减少错误时机关机；模拟设置写失败、失败轮、其它应用未保存和重启，若仍出现未经条件满足的计划则否定。\n\n## 场景与替代办法\n\nWindows用户让Agent运行任务后离开，希望结束时关机；合格行为是仅在授权会话真正到达合适终点、其它工作可保存时安排一次，并能可靠取消。\n\n手工shutdown计时简单但无法看任务状态；插件增加事件触发与取消入口，也引入事件语义和持久化失败风险。\n\n## 能力清单\n\n- **事件监听**：root agent/turn-stopping触发一次性计划。\n- **界面**：通用设置开关和原生取消倒计时窗口。\n\n## 依赖与流程\n\nWindows shutdown.exe、PowerShell、DSH>=0.2.1作者声明的agents/settings事件；取消弹窗依赖交互桌面，后台会话与权限仍需宿主验证。\n\n用户启用并选延迟，root轮次停下且其它Agent未running时尝试复位开关、安排关机并显示取消窗口；用户取消执行shutdown /a，关闭窗口则继续原计划。\n\n## 成本与效果\n\n无模型额外调用；首次确定延迟与取消方式，关机会影响整机其它任务。真实节电和等待时间未测，错误触发的恢复成本可能超过便利。\n\n可减少任务后人工守候，但只看到Agent轮次边界，不能保证业务办结与全机空闲。\n\n## 核心贡献\n\n相对人工守候后关机，增量是将root轮次边界、单次锁存和原生取消窗口组合为可配置交接；系统关机命令是既有能力，插件贡献在触发条件与用户干预入口。\n\n## 关键质疑\n\n“一次且重启不再触发”是否保证？disarm捕获settings写入错误后仍继续scheduleShutdown，持久开关可能仍为true；turn-stopping也不证明业务任务成功或待保存数据完成。fired只在当前进程防重复，不能把它当跨重启事务锁。\n\n\n## 工程亮点\n\n同步锁存避免同进程事件并发触发，绝对SystemRoot路径降低PATH歧义；弹窗只负责取消而不再次安排也清晰。关键维护点是持久复位必须成为外部动作前置条件，错误日志不能替代阻断。 源码依据：[lib/index.js](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js)、[lib/popup.js](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/popup.js)、[assets/notify.ps1](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/assets/notify.ps1)、[lib/client.js](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/client.js)。\n\n## 未来设计假设（未验证）\n\n由持久复位与外部关机分离推导，可在复位失败时停止安排关机，并将触发限定为用户选定会话与显式完成标记，保留可观察的计划ID。未验证假设是减少错误时机关机；模拟设置写失败、失败轮、其它应用未保存和重启，若仍出现未经条件满足的计划则否定。\n\n仅在隔离mock/dryrun验证root/子Agent、其它running、设置写失败、同进程重启和取消失败分支；真实关机测试需专用空闲机器另行安排。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：260b66a172055c98d892a35f2fa7a78990b0d7f78ddd189b854d304f2782d128。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 363 | 282 | 53 | — |\n| .md | source | 1 | 148 | — | — | 1020 |\n| .mjs | source | 1 | 130 | 111 | 7 | — |\n| .mjs | test | 1 | 78 | 68 | 7 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[873360545/dsh-auto-shutdown](https://github.com/873360545/dsh-auto-shutdown)\n- **版本号**：0.3.0（[固定提交 a2af4084](https://github.com/873360545/dsh-auto-shutdown/tree/a2af408455e31a0acf4021e3383d1384dcb7aebc)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/popup.js、assets/notify.ps1、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：仅在隔离mock/dryrun验证root/子Agent、其它running、设置写失败、同进程重启和取消失败分支；真实关机测试需专用空闲机器另行安排。\n",
+        "reports": "# dsh-auto-shutdown\n\n> Windows 专用设置开关，在根对话结束时安排一次性关机并弹出取消倒计时。\n\n## 研究范围\n\n- **仓库**：[873360545/dsh-auto-shutdown](https://github.com/873360545/dsh-auto-shutdown)\n- **版本号**：0.3.0（[固定提交 a2af408455e31a0acf4021e3383d1384dcb7aebc](https://github.com/873360545/dsh-auto-shutdown/tree/a2af408455e31a0acf4021e3383d1384dcb7aebc)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码可确认事件/配置/系统命令接线；一次性持久保证与错误反馈存在缺口，未实测 Windows 或目标宿主。改进状态机仍是假设。\n\n## 洞察短评\n\n- **用途**：供 Windows 用户长对话结束后离开电脑时使用；合格结果是按根回合完成排关机、可撤销且不丢数据。详见[Q01](#research-q01)。\n- **亮点**：将宿主对话边界、Settings 开关和 Windows 系统关机/撤销做成低操作负担的个人流程；增量在连接和一次性 UX，不在关机命令本身。详见[Q01](#research-q01)。\n- **思考**：Settings disarm 写失败仍排关机，重启可能保留 enabled；shutdown 异步启动错误后仍可拉起取消弹窗。作者一次性与可取消承诺因此依赖未保证的路径。详见[Q03](#research-q03)。\n- **建议**：未验证方向是持久 request id/状态机，确认复位和 OS 排程结果后给出真实 UI 状态，故障注入验证重复触发、错误提示与取消一致性。详见[Q05](#research-q05)。\n\n采用建议：仅建议在隔离 Windows 测试机以 dry-run 和可保存任务观察；关键工作或无人值守场景待一致性故障修正和实测后再评估。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将宿主对话边界、Settings 开关和 Windows 系统关机/撤销做成低操作负担的个人流程；增量在连接和一次性 UX，不在关机命令本身。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nSettings disarm 写失败仍排关机，重启可能保留 enabled；shutdown 异步启动错误后仍可拉起取消弹窗。作者一次性与可取消承诺因此依赖未保证的路径。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是持久 request id/状态机，确认复位和 OS 排程结果后给出真实 UI 状态，故障注入验证重复触发、错误提示与取消一致性。详见[Q05](#research-q05)。\n\n隔离 Windows/DSH 环境先 dry-run 后真实小样，覆盖 Settings 写失败、spawn 异步 error、弹窗故障、取消失败、重启及并发 agent；核 UI/持久状态/OS 排程一致性。\n\n## 场景与替代办法\n\n供 Windows 用户长对话结束后离开电脑时使用；合格结果是按根回合完成排关机、可撤销且不丢数据。详见[Q01](#research-q01)。\n\n手工 shutdown /s /t 加 shutdown /a 可完成同类 OS 操作；本插件的附加价值取决于宿主边界与一次性状态可靠性。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Windows shutdown.exe | 必需 | 排关机和撤销 | 无法执行系统命令 |\n| DSH agents/settings 与 client configForms/slots | 必需 | 事件和设置开关 | 无法构成触发链路 |\n| PowerShell 5.1/WinForms | 弹窗必需 | 倒计时取消 | 只能手动 shutdown /a |\n| 工作已保存 | 安全前提 | 避免关机丢数据 | 需延后启用 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 在 Windows 安装、重启 Host、设延时并先 dry-run | 配置可写且事件路径符合预期 |\n| 启用 | 用户保存工作后打开 Settings 通用页开关 | enabled 已保存 |\n| 结束 | 根对话结束后核关机计划和弹窗 | 若异常及时 shutdown /a |\n| 撤销/复盘 | 按取消或手工 shutdown /a，核状态 | 不以弹窗出现代替 OS 排程证据 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Windows/DSH 机器，金额未知 | 安装、重启、设延时与 dry-run；耗时未知 | 宿主兼容未测 |\n| 持续使用 | 额外弹窗进程、延时等待；金额未知 | 保存工作、决定撤销；耗时未知 | 默认 60 秒 |\n| 失败恢复 | 未保存数据和重复关机风险；损失未知 | shutdown /a、检查状态与恢复工作；耗时未知 | 写入/进程失败无统一回滚 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 回合边界触发 | 根 agent 和 running 过滤源码 | 宿主实际事件时机与保存完成 |\n| 一次性开关 | 内存 fired 和 Settings 复位 | 写失败后重启是否重触发 |\n| 可取消关机 | WinForms 按钮调用 shutdown /a | 真实 OS 排程、弹窗启动与取消成功率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**Windows 对话结束后一次性关机是否可靠且可取消，异常路径是否守住用户预期？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要对话结束自动关机，插件相比手动命令的真实增量是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n场景是 Windows 用户提交一项长对话后离开电脑，希望当前根会话结束才关机并在最后时刻可取消。合格交付需确认用户启用、根回合结束、其他 agent 不再运行、系统成功排定关机且有可见撤销入口。手动 shutdown /s /t 可定时，却不知 DSH 回合边界；本插件的可辨增量是把 Settings 开关、agent/turn-stopping、一次性配置复位及 WinForms 倒计时组合到宿主。它不是新的关机机制，Windows shutdown 命令和宿主事件由外部提供。作者宣称关机和单击取消；固定源码可确认接线，不能确认真实机器执行成功。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-40](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md#L5-L40)\n\n作者说明一次性开关、关机和取消流程。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n````text\nA DeepSeek Harness plugin that adds **one switch in Settings → General**: turn it on, and\nthe computer shuts itself down when the next conversation finishes — with a native\nWindows dialog that can cancel the pending shutdown with a single click.\n\n## Install\n\n```powershell\ndsh plugin add github:873360545/dsh-auto-shutdown\n```\n\nOr install a prebuilt tarball from a GitHub Release:\n\n```powershell\ndsh plugin add https://github.com/873360545/dsh-auto-shutdown/releases/latest/download/dsh-auto-shutdown.tgz\n```\n\nThen restart the Harness (Host restart is enough) and look for the plugin entry\n`auto-shutdown` in the profile.\n\n## Use\n\n1. Open **Settings → General** and find **“Power off after the conversation finishes”**.\n2. Turn it on.\n3. Finish a conversation: when that turn ends, the plugin\n   - resets the switch to off (it is a one-shot trigger, never re-armed by a reboot),\n   - schedules `shutdown.exe /s /t <delaySeconds>`,\n   - opens a desktop countdown dialog.\n\nThe dialog offers:\n\n| Button | Result |\n| --- | --- |\n| **Cancel shutdown** | runs `shutdown /a`; the machine stays up |\n| **Keep shutdown** / close / countdown reaching zero | the planned shutdown happens |\n\nYou can also cancel from any terminal with `shutdown /a`.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:70-110](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L70-L110)\n\n宿主事件、根 agent 筛选、配置复位及命令调用。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  const logger = ctx.logger\n  let fired = false\n\n  /** Only a user-facing root conversation may arm the shutdown, never a teammate. */\n  function isRootAgent(agent) {\n    return ctx.agents.roots().some((root) => root.id === agent.id)\n  }\n\n  /** Another live agent still running means this is not the last conversation. */\n  function anotherAgentRunning(self) {\n    return ctx.agents.list().some((agent) => agent.id !== self.id && agent.status === 'running')\n  }\n\n  /** Persist enabled=false so a reboot cannot re-arm the one-shot trigger. */\n  async function disarm() {\n    try {\n      await ctx.settings.mutate(name, [{ op: 'set', path: ['enabled'], value: false }])\n    } catch (error) {\n      logger.warn(`auto-shutdown: could not reset enabled: ${error.message}`)\n    }\n  }\n\n  // A listener that never objects, so it must not hold the turn boundary open:\n  // latch the fact synchronously, then do the write and the spawns off the event.\n  ctx.on('agent/turn-stopping', ({ agent }) => {\n    if (fired || !config.enabled.get()) return\n    if (!isRootAgent(agent)) return\n    if (anotherAgentRunning(agent)) return\n    fired = true\n    const delaySeconds = Math.max(5, Math.round(config.delaySeconds.get()))\n    const dryRun = isDryRun()\n    const popup = config.popup.get() === true\n    void (async () => {\n      await disarm()\n      scheduleShutdown(logger, delaySeconds, dryRun)\n      if (popup) schedulePopup(logger, delaySeconds, dryRun)\n    })().catch((error) => {\n      logger.error(`auto-shutdown: failed to arm the shutdown: ${error.message}`)\n    })\n  })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:126-155](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/client.js#L126-L155)\n\nSettings 通用页开关挂载。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    /** Services used by the browser companion. */\n    const inject = ['slots', 'locale', 'configForms']\n\n    /**\n     * Register the preference row while the Host serves its namespace.\n     * @param ctx - browser plugin context.\n     */\n    function apply(ctx) {\n      ctx.effect(() => ctx.locale.register(locale, { en, zh }))\n      const form = ctx.configForms.get(namespace)\n      const face = () => ({\n        hooks: { config: form },\n        setEnabled: (value) => form.set('enabled', value),\n      })\n      ctx.effect(() =>\n        ctx.configForms.whileServed([namespace], () =>\n          ctx.slots.inject('settings.general.item', () =>\n            ctx.slots.register(\n              {\n                name: 'settings.general.item',\n                id: namespace,\n                order: 18,\n                locale,\n                inject: face,\n              },\n              AutoShutdownRow,\n            ),\n          ),\n        ),\n      )\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 从开关到关机与取消的调用顺序及控制边界是什么？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n客户端通过宿主 configForms 的 auto-shutdown namespace 写 enabled。Host 读取 volatile Config，在 agent/turn-stopping 同步判断 enabled、root 身份和其他 running agent，再置内存 fired。随后异步 mutate enabled=false，调用 spawn(shutdown.exe,/s,/t,秒数)，若 popup 为 true 则另起 powershell.exe 加载 notify.ps1。脚本用 Windows Forms 倒计时；取消按钮通过 cmd /c shutdown /a 中止计划，继续/关闭则不执行取消。配置允许 5–86400 秒，默认 60 秒；弹窗可关闭。开关一次性只由内存 fired 与持久 enabled 复位共同保证，后者写失败时仍会继续排关机。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:69-86](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/client.js#L69-L86)\n\n开关保存回执与可写状态。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    function AutoShutdownRow({ useConfig, setEnabled, t }) {\n      const config = useConfig((value) => value)\n      const [busy, setBusy] = React.useState(false)\n      const [notice, setNotice] = React.useState(null)\n      const ready = config.status === 'ready'\n      const writable = config.writable === true\n      const enabled = ready && config.value?.enabled === true\n      const toggle = async (event) => {\n        event.preventDefault()\n        if (busy || !ready || !writable) return\n        setBusy(true)\n        setNotice(null)\n        let accepted = false\n        try {\n          accepted = await setEnabled(!enabled)\n        } catch (_error) {}\n        setBusy(false)\n        setNotice(accepted ? 'saved' : 'failed')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:133-155](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/client.js#L133-L155)\n\n配置表单向 Settings 写 enabled。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    function apply(ctx) {\n      ctx.effect(() => ctx.locale.register(locale, { en, zh }))\n      const form = ctx.configForms.get(namespace)\n      const face = () => ({\n        hooks: { config: form },\n        setEnabled: (value) => form.set('enabled', value),\n      })\n      ctx.effect(() =>\n        ctx.configForms.whileServed([namespace], () =>\n          ctx.slots.inject('settings.general.item', () =>\n            ctx.slots.register(\n              {\n                name: 'settings.general.item',\n                id: namespace,\n                order: 18,\n                locale,\n                inject: face,\n              },\n              AutoShutdownRow,\n            ),\n          ),\n        ),\n      )\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:17-21](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L17-L21)\n\n配置默认值和范围。\n\n```text\nexport const Config = z.object({\n  enabled: z.boolean().default(false).volatile(),\n  delaySeconds: z.number().step(1).min(5).max(86400).default(60).volatile(),\n  popup: z.boolean().default(true).volatile(),\n})\n```\n\n**依据 4 · 源码核查**：[lib/index.js:84-110](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L84-L110)\n\n先复位后排关机和弹窗。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n  /** Persist enabled=false so a reboot cannot re-arm the one-shot trigger. */\n  async function disarm() {\n    try {\n      await ctx.settings.mutate(name, [{ op: 'set', path: ['enabled'], value: false }])\n    } catch (error) {\n      logger.warn(`auto-shutdown: could not reset enabled: ${error.message}`)\n    }\n  }\n\n  // A listener that never objects, so it must not hold the turn boundary open:\n  // latch the fact synchronously, then do the write and the spawns off the event.\n  ctx.on('agent/turn-stopping', ({ agent }) => {\n    if (fired || !config.enabled.get()) return\n    if (!isRootAgent(agent)) return\n    if (anotherAgentRunning(agent)) return\n    fired = true\n    const delaySeconds = Math.max(5, Math.round(config.delaySeconds.get()))\n    const dryRun = isDryRun()\n    const popup = config.popup.get() === true\n    void (async () => {\n      await disarm()\n      scheduleShutdown(logger, delaySeconds, dryRun)\n      if (popup) schedulePopup(logger, delaySeconds, dryRun)\n    })().catch((error) => {\n      logger.error(`auto-shutdown: failed to arm the shutdown: ${error.message}`)\n    })\n  })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[assets/notify.ps1:114-201](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/assets/notify.ps1#L114-L201)\n\n倒计时、取消与保持路径。\n\n<details>\n<summary>查看原文（88行）</summary>\n\n```text\n$countdownTimer = New-Object System.Windows.Forms.Timer\n$countdownTimer.Interval = 1000\n$countdownTimer.add_Tick({\n    $script:remaining = [Math]::Max(0, $script:remaining - 1)\n    $headline.Text = ($HeadlineFormat -f $script:remaining)\n    if ($script:remaining -le 0) {\n      $countdownTimer.Stop()\n      $form.Close()\n    }\n  })\n\n$closeTimer = New-Object System.Windows.Forms.Timer\n$closeTimer.Interval = 1800\n$closeTimer.add_Tick({\n    $closeTimer.Stop()\n    $form.Close()\n  })\n\n$selfTestTimer = New-Object System.Windows.Forms.Timer\n$selfTestTimer.Interval = 2200\n$selfTestTimer.add_Tick({\n    $selfTestTimer.Stop()\n    Write-ProbeLog 'selftest closing'\n    $countdownTimer.Stop()\n    $form.Close()\n  })\n\nfunction Invoke-Cancel {\n  if ($script:cancelHandled) { return }\n  $script:cancelHandled = $true\n  Write-ProbeLog 'cancel clicked'\n  $command = $CancelCommand\n  if ($SimulateCancel -and $TestCancelCommand -ne '') {\n    $command = $TestCancelCommand\n  }\n  Write-ProbeLog ('running: ' + $command)\n  try {\n    $process = Start-Process -FilePath $env:ComSpec -ArgumentList @('/c', $command) -WindowStyle Hidden -PassThru -Wait\n    Write-ProbeLog ('exit code: ' + $process.ExitCode)\n    if ($process.ExitCode -eq 0) {\n      $status.Text = $CancelledText\n    } else {\n      $status.Text = ($CancelFailedFormat -f $process.ExitCode)\n    }\n  } catch {\n    Write-ProbeLog ('cancel failed: ' + $_.Exception.Message)\n    $status.Text = ($CancelFailedFormat -f $_.Exception.Message)\n  }\n  $countdownTimer.Stop()\n  $headline.Text = $TitleText\n  $closeTimer.Start()\n}\n\n$cancelButton.Add_Click({ Invoke-Cancel })\n\n$keepButton.Add_Click({\n    Write-ProbeLog 'keep clicked'\n    $countdownTimer.Stop()\n    $status.Text = $ClosedText\n    $closeTimer.Start()\n  })\n\n$form.Add_Shown({\n    Write-ProbeLog ('form shown; seconds=' + $script:remaining)\n    $form.Activate()\n    $countdownTimer.Start()\n    if ($SelfTest) {\n      $selfTestTimer.Start()\n    }\n    if ($SimulateCancel) {\n      $countdownTimer.Stop()\n      $headline.Text = ($HeadlineFormat -f $script:remaining)\n      $cancelButton.PerformClick()\n    }\n  })\n\n$form.Add_FormClosing({\n    Write-ProbeLog ('form closing; cancelHandled=' + $script:cancelHandled)\n  })\n\n$form.Add_FormClosed({\n    $countdownTimer.Stop()\n    $closeTimer.Stop()\n    $selfTestTimer.Stop()\n    Write-ProbeLog 'form closed'\n  })\n\n[void]$form.ShowDialog()\n```\n\n</details>\n\n#### 缺口\n\n- 真实宿主 volatile 配置回写及回合事件语义未验证\n  **影响：**不能保证 UI 状态与 Host 实际状态同步\n  **进一步探讨：**在目标宿主观察配置写入、事件时机和重启后开关状态\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 一次性安全承诺在写入失败或进程启动失败时成立吗？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n关键缺口是 disarm 捕获 Settings mutate 错误只记 warning，调用方仍排关机；如果持久 enabled 仍为 true，重启后可能重新触发，这与 README 的“重启不会重新启用”有条件冲突。scheduleShutdown 对 spawn 的异步 error 只日志，但同步返回 true；即便关机进程启动失败，仍会启动弹窗，用户可能看到虚假的可取消倒计时。若 popup 进程失败或用户设置 popup=false，撤销入口只剩手动 shutdown /a。另一个 agent 运行状态只在事件当下判断；未见等待所有写入完成或操作系统会话保存的证明。这些是源码路径风险，未在 Windows 复现频率和结果。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:24-60](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md#L24-L60)\n\n作者一次性和可取消安全承诺。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n## Use\n\n1. Open **Settings → General** and find **“Power off after the conversation finishes”**.\n2. Turn it on.\n3. Finish a conversation: when that turn ends, the plugin\n   - resets the switch to off (it is a one-shot trigger, never re-armed by a reboot),\n   - schedules `shutdown.exe /s /t <delaySeconds>`,\n   - opens a desktop countdown dialog.\n\nThe dialog offers:\n\n| Button | Result |\n| --- | --- |\n| **Cancel shutdown** | runs `shutdown /a`; the machine stays up |\n| **Keep shutdown** / close / countdown reaching zero | the planned shutdown happens |\n\nYou can also cancel from any terminal with `shutdown /a`.\n\n## Configuration\n\nAll three fields are editable live from the Settings page and the Plugins page — no restart.\n\n| Field | Default | Meaning |\n| --- | --- | --- |\n| `enabled` | `false` | The switch. It is set back to `false` right before a shutdown is scheduled, so the trigger fires exactly once. |\n| `delaySeconds` | `60` | Shutdown delay in seconds (5–86400). The dialog countdown mirrors it. |\n| `popup` | `true` | Whether to show the cancel dialog at all. |\n\n## Safety notes\n\n- No administrator rights are required; `shutdown /s /t` is available to the logged-in user.\n- Only a **root** conversation can trigger it: turns of subagents/teammates are ignored, and\n  if another agent is still running the trigger waits for the next turn boundary.\n- `DSH_AUTO_SHUTDOWN_DRYRUN=1` in the Host environment logs the two commands instead of\n  running them — useful for testing the wiring.\n- `DSH_AUTO_SHUTDOWN_POPUP_LOG=<file>` makes the dialog append its user actions to a file.\n- The dialog only ever runs `shutdown /a`; it never schedules anything.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:37-60](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L37-L60)\n\nspawn 异步 error 与同步成功记录分离。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Schedule the Windows shutdown, or only log it in dry-run mode. */\nfunction scheduleShutdown(logger, delaySeconds, dryRun) {\n  const args = ['/s', '/t', String(delaySeconds), '/c', COMMENT]\n  const command = `\"${shutdownExecutable()}\" ${args.join(' ')}`\n  if (dryRun) {\n    logger.warn(`auto-shutdown: dry run, would execute ${command}`)\n    return false\n  }\n  try {\n    const child = spawn(shutdownExecutable(), args, {\n      detached: true,\n      stdio: 'ignore',\n      windowsHide: true,\n    })\n    child.on('error', (error) => {\n      logger.error(`auto-shutdown: could not start shutdown: ${error.message}`)\n    })\n    child.unref()\n    logger.info(`auto-shutdown: executed ${command}`)\n    return true\n  } catch (error) {\n    logger.error(`auto-shutdown: could not start shutdown: ${error.message}`)\n    return false\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:84-109](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L84-L109)\n\n复位失败仍继续关机并启动弹窗。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  /** Persist enabled=false so a reboot cannot re-arm the one-shot trigger. */\n  async function disarm() {\n    try {\n      await ctx.settings.mutate(name, [{ op: 'set', path: ['enabled'], value: false }])\n    } catch (error) {\n      logger.warn(`auto-shutdown: could not reset enabled: ${error.message}`)\n    }\n  }\n\n  // A listener that never objects, so it must not hold the turn boundary open:\n  // latch the fact synchronously, then do the write and the spawns off the event.\n  ctx.on('agent/turn-stopping', ({ agent }) => {\n    if (fired || !config.enabled.get()) return\n    if (!isRootAgent(agent)) return\n    if (anotherAgentRunning(agent)) return\n    fired = true\n    const delaySeconds = Math.max(5, Math.round(config.delaySeconds.get()))\n    const dryRun = isDryRun()\n    const popup = config.popup.get() === true\n    void (async () => {\n      await disarm()\n      scheduleShutdown(logger, delaySeconds, dryRun)\n      if (popup) schedulePopup(logger, delaySeconds, dryRun)\n    })().catch((error) => {\n      logger.error(`auto-shutdown: failed to arm the shutdown: ${error.message}`)\n    })\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/popup.js:69-89](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/popup.js#L69-L89)\n\n弹窗启动错误只记录。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function schedulePopup(logger, delaySeconds, dryRun) {\n  const args = buildPopupArgs(delaySeconds, popupLogPath())\n  const command = `\"${popupExecutable()}\" ${args.join(' ')}`\n  if (dryRun) {\n    logger.warn(`auto-shutdown: dry run, would show the cancel dialog (${command})`)\n    return\n  }\n  try {\n    const child = spawn(popupExecutable(), args, {\n      detached: true,\n      stdio: 'ignore',\n      windowsHide: true,\n    })\n    child.on('error', (error) => {\n      logger.error(`auto-shutdown: could not show the cancel dialog: ${error.message}`)\n    })\n    child.unref()\n    logger.info('auto-shutdown: cancel dialog shown; clicking it runs shutdown /a')\n  } catch (error) {\n    logger.error(`auto-shutdown: could not show the cancel dialog: ${error.message}`)\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[test-dry-run.mjs:116-128](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/test-dry-run.mjs#L116-L128)\n\n作者测试还刻意断言 Settings 写失败仍排关机。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n// 6. A failing settings write must not stop the shutdown scheduling.\n{\n  const ctx = makeContext({\n    roots: [root],\n    mutate: async () => {\n      throw new Error('settings offline')\n    },\n  })\n  apply(ctx, makeConfig(true, 5))\n  await ctx.emit('agent/turn-stopping', { agent: root, turn: 7 })\n  assert.match(warns.join('\\n'), /could not reset enabled: settings offline/)\n  assert.match(warns.join('\\n'), /\\/s \\/t 5/)\n}\n```\n\n</details>\n\n#### 缺口\n\n- 真实 Settings 错误及 spawn 错误发生频率未测\n  **影响：**不能量化重复关机或误导弹窗概率\n  **进一步探讨：**隔离环境注入持久写失败与两种 spawn 失败，验证重启后状态和 UI 提示\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装依赖、持续使用与失败恢复分别要付出什么成本？\n\n**研究主题：**依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n需要 Windows、DSH 宿主 agent/settings 及客户端 slots/configForms、Node>=20、Windows shutdown.exe 和 PowerShell 5.1/WinForms。首次需安装、重启 Host、配置延时与测试 dry-run；维护用户应确认正在编辑的对话和其他进程不会丢数据。持续成本主要是延时等待、额外弹窗进程、用户决定是否撤销；金额可视为系统内置工具但时间/数据风险不可填零。失败恢复要识别 Settings 写失败、shutdown spawn/popup spawn 失败、取消命令非零退出、掉电前未保存，及时用 shutdown /a 或重新保存工作。仓库有 dry-run 与弹窗测试脚本，但本轮未执行；测试路径不等于目标系统验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-55](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/package.json#L1-L55)\n\n平台说明、Node 引擎和客户端注入。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n{\n  \"name\": \"@873360545/dsh-auto-shutdown\",\n  \"version\": \"0.3.0\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"description\": \"Windows-only DSH plugin: a switch in Settings \\u2192 General that shuts the computer down when the current conversation finishes, with a native countdown dialog that cancels the shutdown in one click.\",\n  \"keywords\": [\n    \"dsh\",\n    \"dsh-plugin\",\n    \"deepseek-harness\",\n    \"shutdown\",\n    \"windows\",\n    \"automation\"\n  ],\n  \"license\": \"MIT\",\n  \"author\": \"873360545\",\n  \"homepage\": \"https://github.com/873360545/dsh-auto-shutdown#readme\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/873360545/dsh-auto-shutdown.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/873360545/dsh-auto-shutdown/issues\"\n  },\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\",\n    \"./locale/*.json\": \"./locale/*.json\",\n    \"./icon\": \"./icon.svg\"\n  },\n  \"files\": [\n    \"lib/index.js\",\n    \"lib/popup.js\",\n    \"lib/client.js\",\n    \"assets/notify.ps1\",\n    \"cordis.patch.yml\",\n    \"locale/*.json\",\n    \"icon.svg\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"immediately\": true,\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-settings\"\n      ]\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:5-21](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L5-L21)\n\n宿主服务和配置。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/** Cordis plugin name (also the Settings namespace of this entry). */\nexport const name = 'auto-shutdown'\n\n/** Host services required by the one-shot shutdown trigger. */\nexport const inject = ['agents', 'settings']\n\n/**\n * Validated configuration. Every field is volatile: the Settings row and the\n * Plugins page can edit them while the Host keeps running, without a reload.\n * `enabled` is reset to false right before a shutdown is scheduled, so the\n * plugin fires exactly once and never re-arms itself after a reboot.\n */\nexport const Config = z.object({\n  enabled: z.boolean().default(false).volatile(),\n  delaySeconds: z.number().step(1).min(5).max(86400).default(60).volatile(),\n  popup: z.boolean().default(true).volatile(),\n})\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/popup.js:19-25](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/popup.js#L19-L25)\n\nWindows PowerShell 路径。\n\n```text\n/** Windows PowerShell 5.1 is the only host guaranteed to ship WinForms. */\nexport function popupExecutable() {\n  const root = process.env.SystemRoot || process.env.windir\n  return root\n    ? `${root}\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe`\n    : 'powershell.exe'\n}\n```\n\n**依据 4 · 源码核查**：[assets/notify.ps1:141-165](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/assets/notify.ps1#L141-L165)\n\n取消命令和失败提示。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nfunction Invoke-Cancel {\n  if ($script:cancelHandled) { return }\n  $script:cancelHandled = $true\n  Write-ProbeLog 'cancel clicked'\n  $command = $CancelCommand\n  if ($SimulateCancel -and $TestCancelCommand -ne '') {\n    $command = $TestCancelCommand\n  }\n  Write-ProbeLog ('running: ' + $command)\n  try {\n    $process = Start-Process -FilePath $env:ComSpec -ArgumentList @('/c', $command) -WindowStyle Hidden -PassThru -Wait\n    Write-ProbeLog ('exit code: ' + $process.ExitCode)\n    if ($process.ExitCode -eq 0) {\n      $status.Text = $CancelledText\n    } else {\n      $status.Text = ($CancelFailedFormat -f $process.ExitCode)\n    }\n  } catch {\n    Write-ProbeLog ('cancel failed: ' + $_.Exception.Message)\n    $status.Text = ($CancelFailedFormat -f $_.Exception.Message)\n  }\n  $countdownTimer.Stop()\n  $headline.Text = $TitleText\n  $closeTimer.Start()\n}\n```\n\n</details>\n\n**依据 5 · 作者声明**：[README.md:74-88](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md#L74-L88)\n\n作者说明 dry-run 与 popup 测试。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\n## Development\n\n```powershell\n# schemastery is only resolvable through a junction when testing outside the profile\nNew-Item -ItemType Junction -Path node_modules\\@deepseek-ai\\schemastery `\n  -Target \"C:\\Users\\<you>\\AppData\\Roaming\\DSH\\data\\versions\\<version>\\node_modules\\@deepseek-ai\\schemastery\"\n\n$env:DSH_AUTO_SHUTDOWN_DRYRUN = '1'\nnode test-dry-run.mjs        # host logic: filtering, disarm, argv, one-shot\nnode tests/popup-test.mjs    # real window: self-close, cancel path, failure path, shutdown /a\nRemove-Item -Recurse -Force node_modules\n```\n\n`tests/popup-test.mjs` uses `-SimulateCancel -TestCancelCommand 'cmd /c exit 0'` style test\nswitches, so it never touches a real pending shutdown.\n````\n\n</details>\n\n#### 缺口\n\n- 安装兼容性、关机耗时和数据恢复成本未测\n  **影响：**不能估算真实总成本与可靠性\n  **进一步探讨：**目标 Windows/DSH 版本测安装、撤销、保存边界并记录人工处置时间\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 哪些工程设计值得借鉴，如何最小化一次性状态与系统命令的不一致？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n把设置开关映射到真实宿主配置、同步 latch 防重复和 dry-run 模式是可借鉴设计；PowerShell 文案作为 argv 传入避开编码差异。未验证的改进是假设“关机意图”需要状态机：先持久写入带 request id 的 pending 状态，确认保存，再异步调 shutdown，等待子进程启动/退出结果后展示已排定与明确取消入口；失败恢复时以 OS 查询或明确复位使状态一致。另要在触发前核会话持久化或给用户可操作的保存提醒。最小验证以 Settings 写失败、shutdown 找不到、弹窗失败、取消失败、重启/重复事件和其他 agent 活跃为夹具，比对 UI、持久标志、真实 OS 计划。状态机并非现有功能。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:70-110](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L70-L110)\n\n内存 latch、配置复位和两个进程的当前顺序。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nexport function apply(ctx, config) {\n  const logger = ctx.logger\n  let fired = false\n\n  /** Only a user-facing root conversation may arm the shutdown, never a teammate. */\n  function isRootAgent(agent) {\n    return ctx.agents.roots().some((root) => root.id === agent.id)\n  }\n\n  /** Another live agent still running means this is not the last conversation. */\n  function anotherAgentRunning(self) {\n    return ctx.agents.list().some((agent) => agent.id !== self.id && agent.status === 'running')\n  }\n\n  /** Persist enabled=false so a reboot cannot re-arm the one-shot trigger. */\n  async function disarm() {\n    try {\n      await ctx.settings.mutate(name, [{ op: 'set', path: ['enabled'], value: false }])\n    } catch (error) {\n      logger.warn(`auto-shutdown: could not reset enabled: ${error.message}`)\n    }\n  }\n\n  // A listener that never objects, so it must not hold the turn boundary open:\n  // latch the fact synchronously, then do the write and the spawns off the event.\n  ctx.on('agent/turn-stopping', ({ agent }) => {\n    if (fired || !config.enabled.get()) return\n    if (!isRootAgent(agent)) return\n    if (anotherAgentRunning(agent)) return\n    fired = true\n    const delaySeconds = Math.max(5, Math.round(config.delaySeconds.get()))\n    const dryRun = isDryRun()\n    const popup = config.popup.get() === true\n    void (async () => {\n      await disarm()\n      scheduleShutdown(logger, delaySeconds, dryRun)\n      if (popup) schedulePopup(logger, delaySeconds, dryRun)\n    })().catch((error) => {\n      logger.error(`auto-shutdown: failed to arm the shutdown: ${error.message}`)\n    })\n  })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/popup.js:4-17](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/popup.js#L4-L17)\n\n弹窗文案通过参数传入。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n/** Desktop dialog copy; kept here so the PowerShell script stays ASCII-only. */\nexport const POPUP_COPY = {\n  TitleText: 'DSH 自动关机',\n  HeadlineFormat: '电脑将在 {0} 秒后自动关机',\n  BodyText: '对话已完成。点击「取消关机」可中止本次关机，点击「继续关机」保持计划。',\n  CancelLabel: '取消关机',\n  KeepLabel: '继续关机',\n  CancelledText: '已发送取消指令，电脑将保持开机。',\n  CancelFailedFormat: '取消失败（代码 {0}）。',\n  ClosedText: '保持计划，将按计划关机。',\n}\n\n/** Absolute path of the dialog script shipped next to this module. */\nexport const POPUP_SCRIPT = fileURLToPath(new URL('../assets/notify.ps1', import.meta.url))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[test-dry-run.mjs:83-128](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/test-dry-run.mjs#L83-L128)\n\n测试覆盖一次性和写失败继续执行，未覆盖真实 OS 一致性。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n// 4. Enabled, last conversation finished: disarm once, then dry-run both actions.\n{\n  const writes = []\n  const ctx = makeContext({\n    roots: [root],\n    mutate: async (ns, ops) => writes.push([ns, ops]),\n  })\n  apply(ctx, makeConfig(true, 30))\n  await ctx.emit('agent/turn-stopping', { agent: root, turn: 3 })\n  const lines = warns.join('\\n')\n  assert.deepEqual(writes, [\n    ['auto-shutdown', [{ op: 'set', path: ['enabled'], value: false }]],\n  ])\n  assert.match(lines, /dry run/)\n  assert.match(lines, /\\/s \\/t 30/)\n  assert.match(lines, /would show the cancel dialog/)\n  assert.match(lines, /-CancelLabel/)\n  assert.match(lines, /notify\\.ps1/)\n  await ctx.emit('agent/turn-stopping', { agent: root, turn: 4 })\n  assert.equal(writes.length, 1)\n}\n\n// 5. popup: false schedules the shutdown but never opens the dialog.\n{\n  warns.length = 0\n  live.length = 0\n  const ctx = makeContext({ roots: [root], mutate: async () => {} })\n  apply(ctx, makeConfig(true, 15, false))\n  await ctx.emit('agent/turn-stopping', { agent: root, turn: 5 })\n  assert.match(warns.join('\\n'), /\\/s \\/t 15/)\n  assert.doesNotMatch(warns.join('\\n'), /cancel dialog/)\n}\n\n// 6. A failing settings write must not stop the shutdown scheduling.\n{\n  const ctx = makeContext({\n    roots: [root],\n    mutate: async () => {\n      throw new Error('settings offline')\n    },\n  })\n  apply(ctx, makeConfig(true, 5))\n  await ctx.emit('agent/turn-stopping', { agent: root, turn: 7 })\n  assert.match(warns.join('\\n'), /could not reset enabled: settings offline/)\n  assert.match(warns.join('\\n'), /\\/s \\/t 5/)\n}\n```\n\n</details>\n\n#### 缺口\n\n- 提议的状态机和 OS 确认逻辑未实现\n  **影响：**不能把一致性提升计入当前贡献\n  **进一步探讨：**对比故障注入前后的重复关机、错误提示和恢复耗时\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前版本在何种范围可采用，哪类场景应避免？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n可在可丢失风险低且 Windows 工作已保存的个人非关键任务中，以 dry-run 先核事件过滤和设置写入，再在专门测试机试真实 60 秒倒计时及取消。若有未保存数据、其他后台工作、远程无人值守或依赖一次性持久保证，不宜直接用；Settings 写失败仍会排关机是明确的源码缺口。建议 observe，待复位写入故障和 spawn 错误显示得到修正并经真实 Windows/宿主验收后再评估安装。即使宿主 dry-run 脚本可运行，本轮未执行目标代码或真实系统命令。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:84-109](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/index.js#L84-L109)\n\n失败仍继续关机的主路径。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  /** Persist enabled=false so a reboot cannot re-arm the one-shot trigger. */\n  async function disarm() {\n    try {\n      await ctx.settings.mutate(name, [{ op: 'set', path: ['enabled'], value: false }])\n    } catch (error) {\n      logger.warn(`auto-shutdown: could not reset enabled: ${error.message}`)\n    }\n  }\n\n  // A listener that never objects, so it must not hold the turn boundary open:\n  // latch the fact synchronously, then do the write and the spawns off the event.\n  ctx.on('agent/turn-stopping', ({ agent }) => {\n    if (fired || !config.enabled.get()) return\n    if (!isRootAgent(agent)) return\n    if (anotherAgentRunning(agent)) return\n    fired = true\n    const delaySeconds = Math.max(5, Math.round(config.delaySeconds.get()))\n    const dryRun = isDryRun()\n    const popup = config.popup.get() === true\n    void (async () => {\n      await disarm()\n      scheduleShutdown(logger, delaySeconds, dryRun)\n      if (popup) schedulePopup(logger, delaySeconds, dryRun)\n    })().catch((error) => {\n      logger.error(`auto-shutdown: failed to arm the shutdown: ${error.message}`)\n    })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/popup.js:69-89](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/lib/popup.js#L69-L89)\n\n取消窗口为可失败的独立进程。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function schedulePopup(logger, delaySeconds, dryRun) {\n  const args = buildPopupArgs(delaySeconds, popupLogPath())\n  const command = `\"${popupExecutable()}\" ${args.join(' ')}`\n  if (dryRun) {\n    logger.warn(`auto-shutdown: dry run, would show the cancel dialog (${command})`)\n    return\n  }\n  try {\n    const child = spawn(popupExecutable(), args, {\n      detached: true,\n      stdio: 'ignore',\n      windowsHide: true,\n    })\n    child.on('error', (error) => {\n      logger.error(`auto-shutdown: could not show the cancel dialog: ${error.message}`)\n    })\n    child.unref()\n    logger.info('auto-shutdown: cancel dialog shown; clicking it runs shutdown /a')\n  } catch (error) {\n    logger.error(`auto-shutdown: could not show the cancel dialog: ${error.message}`)\n  }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:52-59](https://github.com/873360545/dsh-auto-shutdown/blob/a2af408455e31a0acf4021e3383d1384dcb7aebc/README.md#L52-L59)\n\n作者平台和 dry-run 安全说明。\n\n```text\n## Safety notes\n\n- No administrator rights are required; `shutdown /s /t` is available to the logged-in user.\n- Only a **root** conversation can trigger it: turns of subagents/teammates are ignored, and\n  if another agent is still running the trigger waits for the next turn boundary.\n- `DSH_AUTO_SHUTDOWN_DRYRUN=1` in the Host environment logs the two commands instead of\n  running them — useful for testing the wiring.\n- `DSH_AUTO_SHUTDOWN_POPUP_LOG=<file>` makes the dialog append its user actions to a file.\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：260b66a172055c98d892a35f2fa7a78990b0d7f78ddd189b854d304f2782d128。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 363 | 282 | 53 | — |\n| .md | source | 1 | 148 | — | — | 1020 |\n| .mjs | source | 1 | 130 | 111 | 7 | — |\n| .mjs | test | 1 | 78 | 68 | 7 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 一次性开关 | 关机意图配置 | Settings 写失败仍继续排程 |\n| 回合边界触发 | 根对话结束时排关机 | 仅按当时其他 agent running 状态判断 |\n| 倒计时撤销 | 点击运行 shutdown /a | 弹窗可失败，取消成功需核 OS |\n\n## 工程亮点\n\n宿主配置表单、同步 latch 与可隔离 dry-run 值得借鉴；复位写入和进程启动应有可核状态，再开放真实关机。详见[Q05](#research-q05)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、lib/popup.js、assets/notify.ps1、test-dry-run.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、Host/Client、弹窗脚本、package 与作者测试；未执行目标代码、Windows 命令或宿主验收；旧 META 仅复用。\n- 下一步：隔离 Windows/DSH 环境先 dry-run 后真实小样，覆盖 Settings 写失败、spawn 异步 error、弹窗故障、取消失败、重启及并发 agent；核 UI/持久状态/OS 排程一致性。\n",
         "metadata": {
             "repository": "873360545/dsh-auto-shutdown",
             "repository_id": 1425073734,
