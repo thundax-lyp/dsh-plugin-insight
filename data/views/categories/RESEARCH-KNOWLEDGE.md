@@ -22,7 +22,6 @@
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。 | 只读轮询与离线抓取先行，清零单独审批；在独立仪表/标准光源下复核后才上生产设备。 |
 | [dsh-math-olympiad](#plugin-1344714964-root) | 挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。 | 已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](#research-q03)。 |
 | [dsh-obsidian-board](#plugin-1415116420-root) | 在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。 | 先观察，非敏感可信个人库和限定模型通道对照。 |
-| [dsh-openviking-enhance](#plugin-1401255267-root) | 在DSH显示OpenViking Studio、会话记忆提交状态及按会话查询的召回内容。 | 适合已有OpenViking的本机用户先观察。 |
 | [dsh-pdf-reader](#plugin-1346064150-root) | 用PyMuPDF分析PDF页面内容，按文本、全页预览和高分辨率局部图像组合供视觉模型阅读。 | 适合含图表论文的只读研究，先用标注页面检查漏区与权限边界；关键信息对照原PDF并明确引用页/区域。 |
 | [dsh-plugin-academic-writing](#plugin-1336663456-root) | 为DSH提供论文骨架、题目摘要模板、引用和LaTeX片段，以及词法表达、Markdown结构、术语和投稿清单辅助。 | 观察，先修计数/无作者引用/TeX列等基础分支，只当草稿工具，不作学术或投稿验收。 |
 | [dsh-plugin-audit](#plugin-1336223158-root) | 同步 GitHub topic/npm 元数据并评分排行，按需对单插件做有限静态安全扫描。 | 只把分数作线索，确认扫描文件覆盖/错误状态后再读固定 SHA 源码、验证安装；详见[Q03](#research-q03)。 |
@@ -216,20 +215,6 @@
 > **思考**：索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 > **建议**：研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](#research-q06)。
-
-<a id="plugin-1401255267-root"></a>
-
-## [dsh-openviking-enhance](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/A2chitect/dsh-openviking-enhance) [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance)
-
-> **用途**：使用OpenViking记忆服务的用户需要知道会话何时入库和能检索什么；合格结果是提交/失败状态可追溯，不能把可检索内容当模型实际采用内容。
-
-> **亮点**：相比切到独立Studio，增量是在会话旁汇总记忆写入与查询状态，保留失败和具体viking路径；不实现OpenViking提取算法，也不负责记忆写入。
-
-> **思考**：Memory recall是否就是该轮真实用过的证据？代码基于最近消息重新search，结果受查询截断、缓存和服务当前状态影响，且加入resources来源；它是可重做的查询观察，不是历史召回收据。分数颜色也不代表事实可信度或模型采用。
-
-> **建议**：由重新查询与真实使用差异推导，可由原记忆插件输出不可变召回收据，绑定查询、结果版本及注入状态，面板分别展示历史实际召回与当前重新检索。未验证；以记忆更新前后同会话检查是否仍能还原原轮证据，若不能则否定。
 
 <a id="plugin-1346064150-root"></a>
 

@@ -39,8 +39,6 @@
 | [dsh-eteams](#plugin-1372993989-root) | 为DSH提供领队主导的多会话团队、任务执行链、成员对话与SQLite持久状态。 | 可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。 |
 | [3Chat 私域客户运营](#plugin-1374055714-root) | 连接 3Chat 客户和会话，准备跟进消息并经确认发送及查询批次结果。 | 已有3Chat渠道团队可先在测试客户试用查询和确认单发；批量前核对收件人，未知发送结果须人工查证。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 在DSH中调用本地媒体与文档CLI，进行探测、转写、OCR及格式处理。 | 媒体资料处理者可设小范围目录逐工具试样本，核原件和输出，禁止复用同名路径避免ffmpeg -y覆盖。 |
-| [dsh-wsl-struct](#plugin-1381832935-root) | 在 DSH 中调用 jq、yq 和只读 SQLite 查询本地结构化数据。 | 固定配置查询者可在副本限根试结构化工具，先核yq方言与表达式权限，复杂SQL结果人工复核。 |
-| [dsh-wsl-terraform](#plugin-1381843937-root) | 在 DSH 中查看 Terraform/OpenTofu 校验、计划摘要与状态资源列表。 | 已有Terraform审批者可限沙盒试计划摘要，显式根目录和凭据，部署前必须回看完整计划。 |
 | [dsh-cache-bricks](#plugin-1386463441-root) | 用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。 | 适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。 |
 | [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 把待核成果按维度交给只读工具受限的红队子agent，收集候选缺陷，由读者逐条认定或驳回，并保存定稿与旧缺陷复审历史。 | 逐条人工裁决/理由和只读专家接线实用；仅可信用户、真实connection认证和单进程状态条件下小规模试用，先核参数授权/坏行与实际成本。 |
 | [dock-spreadsheet](#plugin-1400109121-root) | 在DSH dock-files中只读预览XLSX、XLS、ODS、CSV与TSV，支持切表、搜索筛选、坐标检查和显式链接导航。 | 同屏五格式与坐标/文本细节实用，可信私有Host普通文件可试；先核授权/资源和缓存/排序边界。 |
@@ -62,6 +60,8 @@
 | [dsh-turn-outline](#plugin-1356219122-root) | 不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。 | 结构化轨迹和跳转有用，限宿主授权明确的本地回看，摘要/缓存与多用户边界需核对。详见[Q05](#research-q05)。 |
 | [dsh-callout](#plugin-1359145352-root) | 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。 | 重点卡片与保正文/精确卸载路径实用，兼容Web可控试用；先核来源/转义/主题和编辑，颜色不替代判断。 |
 | [dsh-session-turn-eta](#plugin-1368581082-root) | 按会话步长历史估计回合剩余时间，在输入框下显示时间型进度和中断状态。 | 适合改善等待可见性，ETA和即将完成仅为估计；任务/模型变化及长会话需留意偏差与历史排序成本。 |
+| [dsh-sidebar-git-graph](#plugin-1393980674-root) | 在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。 | 适合本地单用户DSH开发者受控试用会话内Git查阅，先核对访问控制、仓库选择和CLI结果，不把只读视图当授权或原子状态保证。 |
+| [dsh-pinned-sessions](#plugin-1407379611-root) | 为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。 | 适合多工作区用户小范围试用置顶聚合；先核对宿主DOM、状态和unpin，保留原生导航退路。 |
 
 <a id="plugin-1407166868-root"></a>
 
@@ -441,34 +441,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1381832935-root"></a>
-
-## [dsh-wsl-struct](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-struct)
-
-**主要用途：**在 DSH 中调用 jq、yq 和只读 SQLite 查询本地结构化数据。
-
-**推荐理由：**固定配置查询者可在副本限根试结构化工具，先核yq方言与表达式权限，复杂SQL结果人工复核。
-
-**使用条件：**适合有固定配置查询的开发者先在副本中试用；显式缩小 allowRoots，核实 yq 版本及表达式权限，不把它当不可信查询隔离器。
-
-[返回表格](#column-index)
-
-<a id="plugin-1381843937-root"></a>
-
-## [dsh-wsl-terraform](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform)
-
-**主要用途：**在 DSH 中查看 Terraform/OpenTofu 校验、计划摘要与状态资源列表。
-
-**推荐理由：**已有Terraform审批者可限沙盒试计划摘要，显式根目录和凭据，部署前必须回看完整计划。
-
-**使用条件：**适合已有 Terraform 审批流程的人先审阅沙盒计划；显式配置 allowRoots 和凭据，任何摘要都要回看完整计划后决定部署。
-
-[返回表格](#column-index)
-
 <a id="plugin-1386463441-root"></a>
 
 ## [dsh-cache-bricks](../../plugins/3289192-bot--dsh-cache-bricks/INSIGHT.md)
@@ -760,6 +732,34 @@
 **推荐理由：**适合改善等待可见性，ETA和即将完成仅为估计；任务/模型变化及长会话需留意偏差与历史排序成本。
 
 **使用条件：**作为等待提示试用，不据百分比承诺交付。详见Q05(#research-q05)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1393980674-root"></a>
+
+## [dsh-sidebar-git-graph](../../plugins/afundog--dsh-sidebar-git-graph/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AFunDog/dsh-sidebar-git-graph)
+
+**主要用途：**在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。
+
+**推荐理由：**适合本地单用户DSH开发者受控试用会话内Git查阅，先核对访问控制、仓库选择和CLI结果，不把只读视图当授权或原子状态保证。
+
+**使用条件：**本地单用户开发者可先用小仓库试用并与CLI核对；先审查webServer访问控制，出现静默换库、未说明截断或无法解释的差异即回到CLI。尚不足以推荐持续安装。详见Q09(#research-q09)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1407379611-root"></a>
+
+## [dsh-pinned-sessions](../../plugins/439436269-ctrl--dsh-pinned-sessions/INSIGHT.md)
+
+[![npm 30d 479](https://img.shields.io/static/v1?label=npm+30d&message=479&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@vfvrpq/dsh-pinned-sessions) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@vfvrpq/dsh-pinned-sessions)
+
+**主要用途：**为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。
+
+**推荐理由：**适合多工作区用户小范围试用置顶聚合；先核对宿主DOM、状态和unpin，保留原生导航退路。
+
+**使用条件：**建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 

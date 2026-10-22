@@ -43,7 +43,6 @@
 | [dsh-folderwatch](#plugin-1423215448-root) | 监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。 | 观察，先可信单profile窄目录queue核扫描/接收/恢复，不作为可靠生产触发或多用户隔离。 |
 | [dsh-github-router](#plugin-1339462797-root) | 提供PR、Issue、文件及API只读工具，通过API、gh、Git、HTML与可选镜像在宿主内降级取数。 | 先观察；公共仓库单用户隔离环境可对照，私有多身份/共享存储先解决缓存与授权边界。 |
 | [dsh-hdc-bridge](#plugin-1333258432-root) | 为 DSH 集成鸿蒙设备调试、截图/UI操作、官方知识查询及可选 DevEco 构建签名流程。 | 建议观察，先核对core作用域和面板权限；显式target与工程、使用无真实数据设备，确认状态绑定后再决定受控试用。 |
-| [dsh-jev-guard](#plugin-1378138611-root) | 在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。 | 作为已有沙箱和审批的补充先在隔离项目试；检查实际覆盖的工具、网络故障和降级提示，核对脚本变更后是否重新判断，不把allow当无风险。 |
 | [dsh-leak-guard](#plugin-1422091204-root) | 发布前本地遍历文本和敏感文件名，按凭据模式返回位置、级别与六字符预览，提供scan和rules工具动作。 | 先观察，仅额外线索，不自动发布；先修覆盖/错误/预算状态，保留独立扫描与人工审查。 |
 | [dsh-lighthouse](#plugin-1422364992-root) | 按显式名册汇总作品本地、GitHub、市场、npm和PR等待，提供面板/工具/CLI及落盘卡片。 | 先观察，公开本机使用也核PR/权限/失败状态。 |
 | [dsh-local-memory](#plugin-1390103795-root) | 聚合Hindsight项目记忆库，发现缺失记忆项目并调用上游引擎播种。 | 只在已隔离配置的Hindsight上试；先检查同名项目库归属和跨库结果授权，别把“本地daemon”当完全离线。 |
@@ -103,9 +102,7 @@
 | [dsh-workflow-templates](#plugin-1344715132-root) | 12 个预置 JS workflow 编排脚本目录，提供列出、搜索、渲染调用起点和静态校验四工具。 | 先 list/search，审模板代码及来源；补真实 args 和数据接入，只有明确需要多 Agent 时调用官方 workflow；详见[Q03](#research-q03)。 |
 | [dsh-worktable（01_content）](#plugin-1336092482-01-content) | 在侧栏提供项目抽屉、分栏窗格、会话绑定与项目产物挂载。 | 先用隔离项目验证绑定、结果归属、关闭撤销和终端；本地文件和完整Shell权限须与使用环境匹配。 |
 | [dsh-wrapup-guard](#plugin-841979943-root) | 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。 | 仅建议隔离项目观察试用。 |
-| [dsh-wsl-compose](#plugin-1381842592-root) | 封装Docker Compose状态、容器列表和日志，并可在配置允许及参数确认后执行up或down。 | 先仅开放ps/logs并配置明确根目录，在测试项目验证路径；需要up/down时先人工审阅Compose文件并保留运行状态。 |
 | [dsh-wsl-cred](#plugin-1350379113-root) | 汇总Git helper配置、Windows GCM候选路径与origin类型，但原样helper输出存在敏感配置外发边界。 | 先观察，补最小化输出/明确目标再评估。 |
-| [dsh-wsl-db](#plugin-1381859591-root) | 通过psql和redis-cli执行受限查询与连通探针，支持配置连接别名和Redis主机范围。 | 先使用数据库端只读角色和测试库，限制主机与别名，避免在大Redis执行KEYS；敏感查询结果谨慎进入模型上下文。 |
 | [dsh-wsl-distro](#plugin-1350379001-root) | 查询WSL宿主当前发行版与os-release，解析Windows默认/已安装发行版列表，并提示跨发行版路径身份差异。 | 有条件试用，可信本机WSL常规英文列表先看raw/ok并核路径身份；本地化/远端身份/严格治理先观察。 |
 | [dsh-wsl-dns](#plugin-1351854118-root) | 在WSL内比较指定域名的WSL与Windows IPv4解析集合，展示首个nameserver及差异/排查提示。 | 观察，先补两侧错误/来源/时间和总预算，mismatch仅现象不作自动修DNS依据。 |
 | [dsh-wsl-editor](#plugin-1351854212-root) | 将WSL路径转换后在Windows编辑器打开，支持Code/Cursor行列定位和命令存在查询。 | 显式绝对路径试用并人工确认文档，重试核现状。 |
@@ -113,7 +110,6 @@
 | [dsh-wsl-git](#plugin-1381833309-root) | 提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。 | 摘要入口试用，完整审查另读变更，确认根与截断。 |
 | [dsh-wsl-github](#plugin-1350544211-root) | WSL 场景下用 GitHub App 或 token 回退查询当前仓库的 open PR 与最近 Actions run，另提供配置提示。 | 先以单账号最小权限 App 试用，确认 repo 与 PR/Actions 两字段；多账号需隔离进程或修复缓存。 |
 | [dsh-wsl-glab](#plugin-1381859919-root) | 将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。 | 先观察，补输出和状态契约再重评。 |
-| [dsh-wsl-helm](#plugin-1381843528-root) | 在DSH内查询Helm发布列表、状态和历史，限制命令与输出范围。 | 先明确context，不依赖默认集群；只读查询也可能返回敏感配置，限制账号权限。 |
 | [dsh-wsl-jev](#plugin-1381389698-root) | 向 DSH 注册四个 Jev 工具，经 OpenRouter 或 TypeSafe System One 获取 typed 判断。 | 仅低敏任务试点并保存人工标签；check 仍须外部证据或人工确认。 |
 | [dsh-wsl-k8s](#plugin-1381726881-root) | 将 kubectl 状态、上下文、get、describe 与日志读取封装为 DSH 工具。 | 建议观察。 |
 | [dsh-wsl-net](#plugin-1338965593-root) | 诊断WSL与DSH代理环境、代理TCP端口及HTTP可达性，并生成修复提示和可选子进程代理注入。 | 个人维护环境先禁用注入，有凭据环境先清理报告；不自动执行fix，不把HTTP ok当业务成功。 |
@@ -594,20 +590,6 @@
 > **思考**：工具层和面板不是同一执行权限通道，preferred设备单值也需宿主实例作用域才能兑现会话隔离；多设备自动选择可能偏离意图。这些静态边界尚未运行复现。详见[Q03](#research-q03)。
 
 > **建议**：可研究显式会话/设备/工程/产物收据，以双设备双工程和连接切换序列比较误投目标及人工负担，当前未验证。详见[Q06](#research-q06)。
-
-<a id="plugin-1378138611-root"></a>
-
-## [dsh-jev-guard](../../plugins/7starsseeker--dsh-jev-guard/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) [![npm 30d 2,072](https://img.shields.io/static/v1?label=npm+30d&message=2%2C072&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-guard)
-
-> **用途**：开发Agent在bash/pwsh执行前补一道误删/覆盖事故检查，交付拦截或人工升级决定及审计；不是完整安全沙箱。
-
-> **亮点**：相对仅提示模型小心，贡献是执行管线前真实typed拦截，并将免费规则、语义灰区改写/人工升级和额度故障可见化组合。Jev是外部模型、宿主审批是上游能力；插件增量是命令状态构造、决策映射和降级生命周期。
-
-> **思考**：事故阀门能否当安全边界？默认只覆盖bash/pwsh，网络/超时错误fail-open，降级仅L0+预筛；绕过工具或未知语法不受全面保障。cache键为cwd+command，在buildState读取脚本前命中，脚本内容变了但命令没变可能复用旧判定。作者小样本校准也不能保证任意生产命令召回。
-
-> **建议**：待验证假设：判定缓存绑定实际被执行脚本/包脚本摘要与规则/模型版本，遇到无法固定输入时不用旧allow，可减少内容变化后的陈旧放行。由cache先于buildState及同命令复用推导，未实现。对照先安全后危险同名脚本、package.json脚本变更和模型故障，测陈旧命中、误拦与延迟；不能以缓存节省牺牲未检查内容。
 
 <a id="plugin-1422091204-root"></a>
 
@@ -1435,20 +1417,6 @@
 
 > **建议**：同轮证据绑定、失败阻断和按会话隔离通知，若在漏查/失败/多会话测试中降低误放行且耗时可接受，再考虑作为质量门；本版未实现。详见[Q04](#research-q04)。
 
-<a id="plugin-1381842592-root"></a>
-
-## [dsh-wsl-compose](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-compose)
-
-> **用途**：需要从DSH检查本地Compose服务的开发者希望少写诊断命令，验收包括目标项目正确及服务实际状态。
-
-> **亮点**：lib/compose.js规范化项目真实路径并检查allowRoots，spawn docker compose；变更入口同时要求allowMutate与confirm，日志限量返回。
-
-> **思考**：项目边界和只读优先能减少误操作，但便利工具不能替代Docker本身的权限隔离和变更审批。
-
-> **建议**：先仅开放ps/logs并配置明确根目录，在测试项目验证路径；需要up/down时先人工审阅Compose文件并保留运行状态。
-
 <a id="plugin-1350379113-root"></a>
 
 ## [dsh-wsl-cred](../../plugins/173787247--dsh-wsl-cred/INSIGHT.md)
@@ -1462,20 +1430,6 @@
 > **思考**：内联helper可能含敏感值却原样输出，错误吞成未配，宿主cwd不等会话仓库。详见[Q03](#research-q03)。
 
 > **建议**：研究只回类型/状态的最小化输出及明确cwd/错误层级，比较敏感片段和归属误判，尚未验证。详见[Q05](#research-q05)。
-
-<a id="plugin-1381859591-root"></a>
-
-## [dsh-wsl-db](../../plugins/173787247--dsh-wsl-db/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-db)
-
-> **用途**：开发者想在会话里查看PostgreSQL或Redis状态，合格结果是目标正确、查询低风险且输出可复核。
-
-> **亮点**：lib/db.js按前缀和关键字筛SQL、按命令白名单筛Redis，调用CLI并限制时间和输出；入口解析连接别名与host范围。
-
-> **思考**：把连通与小查询标准化有排障价值；应用层读命令白名单无法证明查询成本低或没有副作用。
-
-> **建议**：先使用数据库端只读角色和测试库，限制主机与别名，避免在大Redis执行KEYS；敏感查询结果谨慎进入模型上下文。
 
 <a id="plugin-1350379001-root"></a>
 
@@ -1574,20 +1528,6 @@
 > **思考**：auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误包装ok，项目和CLI版本隐式。详见[Q03](#research-q03)。
 
 > **建议**：研究白名单认证摘要/显式项目来源与parse-partial状态契约，对照假空和敏感外发，尚未验证。详见[Q05](#research-q05)。
-
-<a id="plugin-1381843528-root"></a>
-
-## [dsh-wsl-helm](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-helm)
-
-> **用途**：维护Kubernetes发布时，先取得Helm状态而不让Agent直接执行升级或卸载。
-
-> **亮点**：将Helm只读查询和输出限量接入工具层；增量是调用边界与结构化展示，底层部署语义仍来自Helm。
-
-> **思考**：guardContext对空context返回undefined，使用者可能落到本机默认集群；配置allowedContexts并不等于每次实际目标都已核实。
-
-> **建议**：待验证假设：调用前把省略context解析为明确集群并检查白名单，可减少默认上下文漂移；若增加的查询成本显著则缓存并绑定配置版本。
 
 <a id="plugin-1381389698-root"></a>
 

@@ -13,7 +13,6 @@
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
 | [chicheng-push](#plugin-1335382133-root) | 在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 | 有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
-| [dsh-device-bridge](#plugin-1384810806-root) | 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。 | 先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。 | 远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。 |
 | [dsh-feishu（2048lr）](#plugin-1418842530-root) | 为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。 | 先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 在本地解析电子发票字段，核对金额并汇总生成报销单资料。 | 先用脱敏且有XML/文本层的发票做汇总草稿；逐张核票号、买卖方与金额，确认缓存会话和.xlsx.b64解码后再交财务。 |
@@ -22,11 +21,7 @@
 | [dsh-team-cost](#plugin-1364961230-root) | 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。 | 先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。 |
 | [dsh-toolbox-web](#plugin-1335244607-root) | 在 Web 管理会话、回收站、搜索与配置，并提供后台定时心跳。 | 可按只读搜索和会话整理需求分功能评估；在线编辑/截断原会话需要先解决代际与并发一致性，不能仅因带回收站就视为全程可逆。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 通过本地khal读取日历列表、今日日程和未来指定天数的安排。 | 适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。 |
-| [dsh-wsl-mail](#plugin-1381860693-root) | 通过notmuch或himalaya读取邮件列表、未读统计与搜索结果。 | 先核对返回backend和note；使用himalaya时把结果理解为最近收件箱列表。 |
-| [dsh-wsl-rclone](#plugin-1381859181-root) | 通过rclone列出远程存储配置、文件名及配额信息。 | 适合已配rclone的只读盘点，先限定allowedRemotes和目录规模；需要传输、删除或完整清单验收时另选流程。 |
-| [dsh-wsl-winctl](#plugin-1391143632-root) | 从 WSL 枚举 Windows 顶层窗口并调整窗口状态、位置和大小。 | 适合整理明确单窗口的桌面；先枚举并核对目标，多窗口和关闭操作保留人工确认，返回ok后重新读取实际状态。 |
 | [dsh-wsl-wininput](#plugin-1391142149-root) | 从 WSL 按名称调用 Windows 控件，或向指定窗口发送文本、按键与点击。 | 适合有人看护的Windows自动化；优先具备唯一名称的invoke，打字/点击会干扰焦点和鼠标，执行前暂停其他桌面操作并检查结果。 |
-| [dsh-wsl-winshot](#plugin-1391140767-root) | 把指定 Windows 窗口或控件区域截图保存为 WSL 文件。 | 适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。 |
 | [Markdown 批注器](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，把批注整理为会话草稿。 | 适合短期人工审阅中等大小Markdown；接受批注不持久化且能按次导出时再试用，不用于未经保存的跨日批注存档。 |
 
 <a id="plugin-1406611614-root"></a>
@@ -70,20 +65,6 @@
 > **思考**：“每次写操作审批”须按模式解释。approval.js 的 ask 跟随宿主never政策，这是文档已声明的设计；此外在无approval服务、缺agent、request抛错或无明确回答时，ask也会放行，always则拒绝。属于具体配置边界，不据此断言全插件缺陷；UIA不存在的控件也不能靠语义保证。
 
 > **建议**：适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。
-
-<a id="plugin-1384810806-root"></a>
-
-## [dsh-device-bridge](../../plugins/173787247--dsh-device-bridge/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-device-bridge)
-
-> **用途**：用户希望从会话触发已知设备动作，合格交付是正确设备实际完成动作并能报告失败。
-
-> **亮点**：index.js注册三个工具，按配置选择设备和允许动作，再委托dsh-wsl-common的Companion客户端发送HTTP请求。
-
-> **思考**：统一轻量协议能降低多设备接入重复工作；动作名白名单并不证明动作本身无副作用。
-
-> **建议**：先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。
 
 <a id="plugin-1346023250-root"></a>
 
@@ -197,48 +178,6 @@
 
 > **建议**：适合已配置khal的人，先核对本地日期、时区与日历数量；空输出先确认同步与过滤，不直接判断没有安排。
 
-<a id="plugin-1381860693-root"></a>
-
-## [dsh-wsl-mail](../../plugins/173787247--dsh-wsl-mail/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-mail)
-
-> **用途**：Agent需要查看本地邮件索引或收件箱摘要，减少手工搬运主题与发件人。
-
-> **亮点**：把两个邮件CLI整合到DSH的只读接口，降低检索入口切换；不提供发送或完整邮件工作流。
-
-> **思考**：himalaya回退没有未读过滤，count来自最近收件箱样本；不能把mail_unread工具名当作未读总数语义。
-
-> **建议**：本次未形成新的创新假设；优先显式区分未读总量与最近邮件样本，避免错误摘要影响优先级。
-
-<a id="plugin-1381859181-root"></a>
-
-## [dsh-wsl-rclone](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-rclone)
-
-> **用途**：已配置云存储的用户让Agent确认文件位置或空间，避免给出任意同步命令。
-
-> **亮点**：以有限命令集合复用rclone多后端能力，缩小误触复制删除的工具面；存储协议与账户能力属于上游。
-
-> **思考**：maxEntries是在命令完成后裁剪，不限制远程扫描工作量；about不一定受后端支持，读取文件名也会出网且可能暴露业务结构，不能把只读等同无成本或全域隔离。
-
-> **建议**：待验证假设：将服务端遍历预算和结果条数分别限制，可降低大目录超时与费用；依赖各后端列举能力，尚未实现。
-
-<a id="plugin-1391143632-root"></a>
-
-## [dsh-wsl-winctl](../../plugins/173787247--dsh-wsl-winctl/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-winctl)
-
-> **用途**：WSL 内 Agent 需要先整理 Windows 应用窗口再观察/输入；交付是指定窗口的状态与布局，不是应用任务完成。
-
-> **亮点**：相对人工拖动和临时 PowerShell，贡献是统一窗口选择、完整移动参数和状态回读；窗口管理能力来自 user32/UIA，不是新的桌面控制算法。
-
-> **思考**：关键质疑是动作是否确实作用于唯一目标并得到验证。Dsh-Find 返回首个匹配，未拒绝多窗口歧义；原生调用返回值被忽略，activate仅ShowWindow而不调用SetForegroundWindow，报告ok不等于获得焦点。
-
-> **建议**：适合整理明确单窗口的桌面；先枚举并核对目标，多窗口和关闭操作保留人工确认，返回ok后重新读取实际状态。
-
 <a id="plugin-1391142149-root"></a>
 
 ## [dsh-wsl-wininput](../../plugins/173787247--dsh-wsl-wininput/INSIGHT.md)
@@ -252,20 +191,6 @@
 > **思考**：作者简介声称不抢焦点，实际type/key明确SetForegroundWindow+SendWait，click移动系统光标，且不校验前台切换是否成功；这直接限制“后台定向输入”。invoke遍历受限时也只能证明已访问范围唯一。
 
 > **建议**：适合有人看护的Windows自动化；优先具备唯一名称的invoke，打字/点击会干扰焦点和鼠标，执行前暂停其他桌面操作并检查结果。
-
-<a id="plugin-1391140767-root"></a>
-
-## [dsh-wsl-winshot](../../plugins/173787247--dsh-wsl-winshot/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-winshot)
-
-> **用途**：WSL Agent需要查看图像形式的Windows应用状态，以可读取PNG作为交付，再交由模型/人工分析。
-
-> **亮点**：相对手动截图再传文件，贡献是窗口选择、裁剪与跨系统文件交接；图像来自桌面屏幕区域采样，并非独立窗口渲染，截图算法属System.Drawing。
-
-> **思考**：最重要的限制是被遮挡窗口是否仍能正确截图。CopyFromScreen只读取屏幕像素，不保证目标窗口内容；还原最小化窗口也改变桌面。按名裁剪取第一个匹配而非拒绝歧义，因此PNG存在不等于正确目标。
-
-> **建议**：适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。
 
 <a id="plugin-1335286261-root"></a>
 

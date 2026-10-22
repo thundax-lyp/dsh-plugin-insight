@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1402771540-root-directory-0",
+                    "id": "2026-10-22-02-github-1402771540-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:13:23.414Z",
+                    "retrieved_at": "2026-10-22T07:16:02.021Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1402771540-root-author",
+                    "id": "2026-10-22-02-github-1402771540-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/A42Null/dsh-opencode-zen-plugin",
+                            "commit": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                            "path": "README.md",
+                            "content_sha256": "e97fefb461aac9c40846c0a2abff1da1d9f663fe8fb2b58db947b76188e6c091"
+                        }
+                    ],
                     "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-                    "captured_at": "2026-10-21T04:13:23.414Z",
-                    "summary": "把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:16:02.021Z",
+                    "summary": "把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1402771540-root-source",
+                    "id": "2026-10-22-02-github-1402771540-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js",
+                    "url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.zh-CN.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/A42Null/dsh-opencode-zen-plugin",
+                            "commit": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                            "path": "README.zh-CN.md",
+                            "content_sha256": "0a194ad4bb1af1441ebfcb70c0b96be1e02f8853c555384f72260e5acdf6ecec"
+                        },
+                        {
+                            "repository_url": "https://github.com/A42Null/dsh-opencode-zen-plugin",
+                            "commit": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                            "path": "lib/index.js",
+                            "content_sha256": "9521cfb3309cdecd84d091d1800e086257729c6fb0e357895cb8186cba37a88e"
+                        },
+                        {
+                            "repository_url": "https://github.com/A42Null/dsh-opencode-zen-plugin",
+                            "commit": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                            "path": "lib/client.js",
+                            "content_sha256": "050fd3d1915aebc7939d9a8946e828ce5842c3a2193cec3482b38a9148a3e8b1"
+                        },
+                        {
+                            "repository_url": "https://github.com/A42Null/dsh-opencode-zen-plugin",
+                            "commit": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
+                            "path": "package.json",
+                            "content_sha256": "fbcc2373c20872dc4e49e3f38d54b9e7d8d54aac13a3c499e1b7aba2628e6643"
+                        }
+                    ],
                     "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-                    "captured_at": "2026-10-21T04:13:23.414Z",
-                    "summary": "核查 lib/index.js；lib/index.js定时拉模型ID与models.dev元数据、用模型名前缀/例外表选四类协议，统一SSE事件与推理参数，并用watchdog中断无活动流。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:16:02.021Z",
+                    "summary": "核查 README.zh-CN.md、lib/index.js、lib/client.js、package.json；模型目录实时拉取加静态并集、models.dev 元数据缓存，按模型名路由四类流协议。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                        "只读核固定提交 README.zh-CN.md、lib/index.js、lib/client.js、package.json；未调用 Console/DSH 或运行插件。旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。",
+                    "text": "已有 Console 账户的 DSH 用户调用付费模型；需确认当前账号权限和模型端点。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "lib/index.js定时拉模型ID与models.dev元数据、用模型名前缀/例外表选四类协议，统一SSE事件与推理参数，并用watchdog中断无活动流。",
+                    "text": "模型目录实时拉取加静态并集、models.dev 元数据缓存，按模型名路由四类流协议。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。",
+                    "text": "只读核固定提交 README.zh-CN.md、lib/index.js、lib/client.js、package.json；未调用 Console/DSH 或运行插件。旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "MIT双面JS包，需付费Console账号与key；免费层默认隐藏，静态目录不是当前授权证明，未核实当前模型供给/价格。",
+                    "text": "作者提供 npm、release tarball、GitHub、CNB 路径；本轮未实时验证发布可得性。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "配置key与资金，实际调用按服务收费，自动刷新/失败重试有开销；跨协议适配维护持续，无费用节省实测。",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH 与 npm/tarball | 设置 Key | 安装兼容未测 |\n| 调用 | Console 账户计费、网络 | 维护模型权限 | 金额/时延未知 |\n| 运维 | 目录/元数据请求与本地日志 | 路由与机密复核 | 实时目录不保证可用 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。",
+                    "text": "先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "减少逐模型配置，但不提高模型本身能力或证明更低成本。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 多模型目录 | live+static 并集 | 每项可调用 |\n| 四协议 | 请求/流适配 | 目标兼容 |\n| 错误说明 | 正则分类/建议 | 准确率 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "协议builder/stream转换/watchdog分区、可操作错误分类可借鉴；单文件协议映射和模型命名例外是维护热点，静态元数据应标来源。 源码依据：[lib/index.js](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js)。",
+                    "text": "协议桥和客户端设置拆分清晰；静态列表与密钥前缀诊断需要收紧。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。",
+                    "text": "一个插件承接四类网关协议及 Web 配置入口，降低 DSH 多模型手工配置量。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。",
+                    "text": "模型选择器的静态并集不代表可用性；本地 plugin-load.json 保存密钥前10字符且错误响应片段入日志。详见[Q02](#research-q02)及[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。",
+                    "text": "未验证改进是仅失败时启用静态目录、移除密钥前缀、用结构化错误与持续测试路由表。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:13:23.414Z",
+                    "reviewed_at": "2026-10-22T07:16:02.021Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:13:23.414Z",
+            "last_checked_at": "2026-10-22T07:16:02.021Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-                "reviewed_at": "2026-10-21T04:13:23.414Z",
+                "reviewed_at": "2026-10-22T07:16:02.021Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +309,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 8
+                        "mechanism": 23,
+                        "transferability": 15,
+                        "simplification": 11
                     },
-                    "rationale": "novelty多协议provider适配小档；mechanism目录路由组合半档；transferability流转换半档；simplification自动目录半档。",
+                    "rationale": "多协议桥和配置卡组合有工程价值，目录与隐私边界限制可靠性。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 58,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 26,
+                        "delivery": 15,
                         "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "workflow配置便利小档；delivery现有模型接入小档；reach跨服务用户半档；economics未测小档。",
+                    "rationale": "已有 Console 用户减少配置，费用与访问权限未量化。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 55,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1402771540-root-source"
+                        "2026-10-22-02-github-1402771540-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "已有Console账号者可对固定模型试文本、工具和usage映射；保留原provider回退，目录可见不可当可调用。",
+                "decision": "observe",
+                "reason": "多协议方案值得隔离试用；目录误报及本地密钥片段需先验收。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "现有账号将模型接入DSH的目标明确。"
+                        "rationale": "已有 Console 付费账号的 DSH 需求明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "自动模型目录和四协议映射省逐模型配置。"
+                        "rationale": "统一模型目录、设置与四协议桥。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核路由例外和SSE/watchdog，未跑真实模型，健康状态有歧义。"
+                        "rationale": "固定源码可核，目标调用未验。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需key及服务资金，协议和元数据变化带来持续维护。"
+                        "score": 5,
+                        "rationale": "计费、路由维护与本地机密保护成本未知。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T07:16:02.021Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1402771540-root-source"
+                    "2026-10-22-02-github-1402771540-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,33 +388,34 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "c71cfaa7a6ff541badf8dc7562af21ae4e8d24e067ab0e22de72b3973c8aaca9"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "c09668cf951006e2cc035d4c5a9d65b363020a3c9d00ffa247dddbb4118e6981"
         },
         "publication.metadata": "data/plugins/a42null--dsh-opencode-zen-plugin/META.json",
         "publication.summaries": {
-            "text": "把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。",
+            "text": "把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。",
             "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
             "source_url": "https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.md"
         },
         "publication.capabilities": {
             "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
             "items": {
-                "后台": "周期同步模型目录和缓存元数据。",
-                "界面": "模型配置与选择接线。"
-            }
+                "后台": "OpenCode Console LLM adapter、四协议流转换与目录刷新",
+                "界面": "模型账户和配置卡"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 四协议适配 | 模型推理/工具流 | 命名规则可能漂移 |\n| 目录 | 自动列模型 | 静态并集不保可用 |\n| 诊断 | 分类错误 | 本地记录密钥前缀 |"
         },
         "publication.advice": {
             "revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-            "text": "适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。"
+            "text": "先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/a42null--dsh-opencode-zen-plugin",
-        "reports": "# dsh-opencode-zen-plugin\n\n> 把OpenCode Console模型目录与多种流式协议接入DSH模型选择和配置界面。\n\n## 使用建议\n\n适合已有Console账号的用户先对固定模型验证文本、工具和usage。目录出现不代表可用，保留原生provider回退。\n\n核查状态：已检查固定提交源码，未执行目标代码、安装或真实宿主验收。\n\n源码核查支持所述实现机制；用户效果未实测，未来设计假设尚未验证。\n\n## 洞察短评\n\n- **用途**：持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。\n- **亮点**：相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。\n- **思考**：模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。\n- **建议**：由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。\n\n## 场景与替代办法\n\n持有Console API key的用户希望在DSH使用目录中的聊天模型，合格结果需文本、工具调用、usage和错误都正确映射。\n\n手工配置OpenAI兼容地址更少代码但不能涵盖四协议；此插件承受目录与协议维护。\n\n## 能力清单\n\n- **后台**：周期同步模型目录和缓存元数据。\n- **界面**：模型配置与选择接线。\n\n## 依赖与流程\n\nDSH llm provider注册、Console网络与授权，models.dev可选缓存；不同模型图像/工具/推理能力需独立核查。\n\n保存key，拉目录与元数据，模型选择后按路由建请求，转换流并报告usage/错误；无事件时watchdog终止供用户处理。\n\n## 成本与效果\n\n配置key与资金，实际调用按服务收费，自动刷新/失败重试有开销；跨协议适配维护持续，无费用节省实测。\n\n减少逐模型配置，但不提高模型本身能力或证明更低成本。\n\n## 核心贡献\n\n相比手工逐模型配置，增量是动态目录、协议路由和错误分类一体化；模型能力与服务供给属于Console，上下文元数据来自外部目录。\n\n## 关键质疑\n\n模型可选是否等于已兼容？apiForModel用名字路由、未知默认chat，目录离线可用静态回落；新模型协议变更或元数据过期会显示却不可调用。状态ok可与lastError并存，不能用目录非空认定服务健康。\n\n\n## 工程亮点\n\n协议builder/stream转换/watchdog分区、可操作错误分类可借鉴；单文件协议映射和模型命名例外是维护热点，静态元数据应标来源。 源码依据：[lib/index.js](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js)。\n\n## 未来设计假设（未验证）\n\n由命名路由与回落推导，可为模型记录协议来源、元数据日期和最近能力探测状态，未知模型先标待确认。未验证；用新前缀/过期元数据/工具调用流测试，若仍把未验证项展示为完整支持则否定。\n\n固定模型分别验证四协议文本、工具增量、usage、错误和取消，模拟目录失败/未知ID/idle，检查不伪造支持状态。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bd216de8f156c6bae738d9a2a586b1a106b44ec47ef6ab3a03a82015bd36d854。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1716 | 1513 | 95 | — |\n| .md | source | 2 | 370 | — | — | 4465 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[A42Null/dsh-opencode-zen-plugin](https://github.com/A42Null/dsh-opencode-zen-plugin)\n- **版本号**：0.3.6（[固定提交 e1d00543](https://github.com/A42Null/dsh-opencode-zen-plugin/tree/e1d0054333d5f8185f3d6e55f563e5fe91e19b29)）\n- **版本日期**：2026-10-04（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交中所列入口和核心路径的人工抽读；未执行目标插件、测试或真实宿主，未核实独立采用与同条件收益。\n- 下一步：固定模型分别验证四协议文本、工具增量、usage、错误和取消，模拟目录失败/未知ID/idle，检查不伪造支持状态。\n",
+        "reports": "# dsh-opencode-zen-plugin\n\n> 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。\n\n## 研究范围\n\n- **仓库**：[A42Null/dsh-opencode-zen-plugin](https://github.com/A42Null/dsh-opencode-zen-plugin)\n- **版本号**：0.3.6（[固定提交 e1d0054333d5f8185f3d6e55f563e5fe91e19b29](https://github.com/A42Null/dsh-opencode-zen-plugin/tree/e1d0054333d5f8185f3d6e55f563e5fe91e19b29)）\n- **版本日期**：2026-10-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持适配机制；静态并集会使过期模型持续展示，加载标记写 key 前缀；目标 Console/DSH 未验证。\n\n## 洞察短评\n\n- **用途**：已有 Console 账户的 DSH 用户调用付费模型；需确认当前账号权限和模型端点。详见[Q01](#research-q01)。\n- **亮点**：一个插件承接四类网关协议及 Web 配置入口，降低 DSH 多模型手工配置量。详见[Q01](#research-q01)。\n- **思考**：模型选择器的静态并集不代表可用性；本地 plugin-load.json 保存密钥前10字符且错误响应片段入日志。详见[Q02](#research-q02)及[Q03](#research-q03)。\n- **建议**：未验证改进是仅失败时启用静态目录、移除密钥前缀、用结构化错误与持续测试路由表。详见[Q05](#research-q05)。\n\n采用建议：先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n一个插件承接四类网关协议及 Web 配置入口，降低 DSH 多模型手工配置量。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n模型选择器的静态并集不代表可用性；本地 plugin-load.json 保存密钥前10字符且错误响应片段入日志。详见[Q02](#research-q02)及[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进是仅失败时启用静态目录、移除密钥前缀、用结构化错误与持续测试路由表。详见[Q05](#research-q05)。\n\n目标 DSH/Console 账户测试 live/静态目录、四协议/图片/工具、无权限/欠费/超时和文件权限。\n\n## 场景与替代办法\n\n已有 Console 账户的 DSH 用户调用付费模型；需确认当前账号权限和模型端点。详见[Q01](#research-q01)。\n\n逐模型手动接网关可以精确维护协议与授权；插件提高便利但需要持续维护路由表。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH llm/客户端 | 必需 | adapter/设置卡 | 无模型或卡片 |\n| Console Key/余额 | 调用必需 | 网关鉴权 | AUTH/QUOTA |\n| models.dev | 可选 | 元数据 | 回退静态值 |\n| 网络访问 | 必需 | 目录/推理 | 列表回退/调用失败 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 安装 | npm/发行包 | adapter 注册 |\n| 配置 | 保存 Console Key | 无 AUTH |\n| 核验 | 单模型及四协议调用 | 与账单/目录对照 |\n| 维护 | 监测目录/错误日志 | 排除不可用静态项 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 安装 | DSH 与 npm/tarball | 设置 Key | 安装兼容未测 |\n| 调用 | Console 账户计费、网络 | 维护模型权限 | 金额/时延未知 |\n| 运维 | 目录/元数据请求与本地日志 | 路由与机密复核 | 实时目录不保证可用 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 多模型目录 | live+static 并集 | 每项可调用 |\n| 四协议 | 请求/流适配 | 目标兼容 |\n| 错误说明 | 正则分类/建议 | 准确率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**OpenCode Console 对话模型适配是否在目录、协议和密钥诊断上提供可信边界？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 该插件给 DSH 带来什么能力，适用什么边界？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n它注册 opencode-zen LLM adapter，读 OpenCode Console API Key，将 Console 对话模型按模型名路由到 Responses、Anthropic、Google 或 Chat Completions 端点，并以客户端配置卡管理 key、网关、免费模型开关及刷新间隔。作者称免费模型只供 OpenCode 客户端用，jev 系列不可对话；源码默认隐藏 free、排除 jev。这是外部付费网关适配，适合已有 Console 账户的 DSH 用户；不能推断所有静态列名均可用或有访问权限。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:5-29](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.zh-CN.md#L5-L29)\n\n作者场景/能力/限制\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nDeepSeek Harness 插件：自动适配 [OpenCode Console (Zen) 模型目录](https://opencode.ai/v2/docs/console/models)。\n\n- GitHub：<https://github.com/A42Null/dsh-opencode-zen-plugin>\n- CNB 制品库：<https://cnb.cool/A42Null/dsh-opencode-zen-plugin>\n- npm 包名：`@a42null/dsh-opencode-zen-plugin`（已发布到 npmjs；安装方式见下文）\n\n**只需在「设置 → 插件」粘贴 OpenCode Console 的 API Key，即可在 DSH 中选用 Console 提供的对话模型** —— 模型列表、上下文窗口、端点路由、推理参数自动完成。\n\n它不做的事：不能让 `*-free` 免费模型可用（只能在 OpenCode 客户端内运行）；会跳过 `jev-*` SystemOne 模型（不支持对话）；付费模型仍需 Console 账户有余额。\n\n## 功能特性\n\n- **零配置模型目录**：启动时及定时（默认 300 秒）拉取 `https://opencode.ai/zen/v1/models`（该接口无需鉴权），自动出现在 DSH 模型选择器中\n- **四协议自动路由**（依官方文档端点表）：\n  - `gpt-*` / `grok-*` / `muse-spark*` → OpenAI Responses API（`/zen/v1/responses`）\n  - `claude-*` 及 `qwen3.8-flash` / `qwen3.7-max` / `qwen3.7-plus` / `qwen3.6-plus` / `qwen3.5-plus` → Anthropic Messages（`/zen/v1/messages`）\n  - `gemini-*` → Google GenerateContent（`/zen/v1/models/<id>:streamGenerateContent?alt=sse`）\n  - `deepseek` / `glm` / `minimax` / `kimi` / `qwen3.8-max` / `big-pickle` / `*-free` → OpenAI 兼容（`/zen/v1/chat/completions`）\n- **元数据自动同步**：上下文窗口、输出预算、推理档位优先取 [models.dev](https://models.dev/api.json)（7 天磁盘缓存 `~/.opencode-zen/models.dev.json`），离线时回退插件内置静态目录，永远可用\n- **免费模型默认隐藏**：`*-free` 属于 OpenCode 客户端内部的免费层，经 Console API 调用会返回 `403 FreeTierError`（\"free tier can only be used from within OpenCode\"），因此默认不列入模型列表；需要时可在设置中开启\n- **账务/权限错误可读**：余额不足（402）、模型无访问权限（403 Model access is disabled）、免费层受限（403 FreeTierError）各自映射为独立错误码并附带处理建议，不再笼统显示为\"密钥无效\"\n- **推理参数透传**：`off` / `minimal` / `low` / `medium` / `high` / `xhigh` / `max` 阶梯，自动映射各协议原生字段（`reasoning_effort`、`thinking.budget_tokens`、`thinkingConfig.thinkingBudget`、`reasoning.effort`）\n- **完整 Harness 流协议**：文本 / 推理 / 工具调用分块流式输出、usage 计费、停止原因映射与错误分类（AUTH、QUOTA、FREE_TIER_BLOCKED、MODEL_ACCESS_DISABLED、RATE_LIMIT、INVALID_REQUEST、SERVER、TIMEOUT、TRANSPORT、CONTEXT_WINDOW_EXCEEDED、EMPTY_RESPONSE）\n- **工具调用与图片输入**：vision 模型（claude- / gemini- / deepseek-v4-flash-vision 等）支持图片附件\n- **流看门狗**：120 秒首包 / 300 秒空闲超时自动中止，避免挂死\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:127-139](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L127-L139)\n\n路由和排除规则\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nfunction apiForModel(id) {\n  const m = String(id ?? \"\").toLowerCase();\n  if (m.startsWith(\"jev\")) return \"excluded\";\n  if (m.startsWith(\"gemini\")) return \"google\";\n  if (m.startsWith(\"claude\")) return \"anthropic\";\n  if (RESPONSES_PREFIXES.some((p) => m.startsWith(p))) return \"responses\";\n  if (ANTHROPIC_EXACT.has(m)) return \"anthropic\";\n  return \"chat\";\n}\n\nfunction isFreeModel(id) {\n  return String(id ?? \"\").toLowerCase().includes(\"free\");\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1290-1334](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1290-L1334)\n\n注册 adapter\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\nconst name = PROVIDER_ID;\nconst inject = [\"llm\"];\n\nfunction apply(ctx, config = {}) {\n  const log = ctx.logger ?? { info: (...a) => console.info(\"[opencode-zen]\", ...a), warn: (...a) => console.warn(\"[opencode-zen]\", ...a), error: (...a) => console.error(\"[opencode-zen]\", ...a) };\n  if (!ctx.llm || typeof ctx.llm.registerAdapter !== \"function\") {\n    log.warn(\"opencode-zen: llm service unavailable; adapter not registered\");\n    return { ready: false };\n  }\n  const providerId = typeof config.providerId === \"string\" && config.providerId.length > 0 ? config.providerId : PROVIDER_ID;\n  const readSettings = () => {\n    const raw = readVolatile(config.console) ?? {};\n    return {\n      apiKey: typeof raw.apiKey === \"string\" ? raw.apiKey.trim() : \"\",\n      baseUrl: typeof raw.baseUrl === \"string\" && raw.baseUrl.length > 0 ? raw.baseUrl : ZEN_BASE_URL,\n      includeFreeModels: raw.includeFreeModels === true,\n      refreshSeconds: typeof raw.refreshSeconds === \"number\" ? raw.refreshSeconds : 300,\n    };\n  };\n  const dataDir = join(homedir(), \".opencode-zen\");\n  const errorsLog = join(dataDir, \"errors.log\");\n  /** 诊断通道：把每次失败的原始码/响应体追加到 ~/.opencode-zen/errors.log（上限 128 KB）。 */\n  const report = (line) => {\n    const text = `${new Date().toISOString()} ${line}`;\n    void mkdir(dataDir, { recursive: true })\n      .then(async () => {\n        const info = await stat(errorsLog).catch(() => null);\n        if (info && info.size > 128 * 1024) await writeFile(errorsLog, \"\", \"utf8\");\n        await appendFile(errorsLog, `${text}\\n`, \"utf8\");\n      })\n      .catch(() => {});\n  };\n  const catalog = new ModelCatalog({\n    readSettings,\n    cachePath: join(dataDir, \"models.dev.json\"),\n    onRefresh: (status) => {\n      log.info(`opencode-zen: catalog ${status.status}, ${status.total} models${status.lastError ? ` (${status.lastError})` : \"\"}`);\n      void mkdir(dataDir, { recursive: true })\n        .then(() => writeFile(join(dataDir, \"adapter-status.json\"), JSON.stringify({ ...status, writtenAt: Date.now() }, null, 2), \"utf8\"))\n        .catch(() => {});\n    },\n  });\n  const adapter = new ZenAdapter(catalog, readSettings, report);\n  const registration = ctx.llm.registerAdapter([providerId], adapter);\n  catalog.start();\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:20-34](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/client.js#L20-L34)\n\n客户端模块与配置默认\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nwindow.__ModuleLoader__.load({\n  // 必须等于本包在 package.json 里的 name：DSH 以「行名」为工厂注册键，\n  // 声明成别的名字会导致 duplicate factory registration / import failed（曾因改名漏改而挂掉整个页面）。\n  id: \"@a42null/dsh-opencode-zen-plugin\",\n  factory: (require) => {\n    const React = require(\"react\");\n    const primitives = require(\"@deepseek-ai/dsh-client-ui-primitives\");\n\n    const NS = \"opencode-zen\";\n    const NODE = \"console\";\n    const DEFAULTS = {\n      baseUrl: \"https://opencode.ai/zen\",\n      includeFreeModels: false,\n      refreshSeconds: 300,\n    };\n```\n\n</details>\n\n#### 缺口\n\n- Console 当前模型、地区及账户授权未核\n  **影响：**模型在选择器可见不等于可调用\n  **进一步探讨：**目标账户逐协议试用并对照 Console 官方目录\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 目录、元数据和离线回退怎样组合？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nModelCatalog 启动及定时刷新 baseUrl/v1/models，默认300秒；models.dev 元数据最多缓存7天，主要用于上下文、输出和推理档位。list() 取 liveIds 与内置 STATIC_MODELS 的并集，随后按 jev/free 规则过滤；所以即使直播列表成功，静态清单中的过期或未获授权模型仍可展示，不只是离线回退。请求流随后按名称前缀/精确名决定四协议，并进行 SSE 转换。可以作便利目录，但须区分“列出”和“可用”。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:945-984](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L945-L984)\n\n定时拉列表与状态\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  start() {\n    const tick = () => {\n      if (this.stopped) return;\n      const seconds = Number(this.readSettings().refreshSeconds);\n      const ms = (Number.isFinite(seconds) && seconds >= 30 ? seconds : 300) * 1000;\n      this.timer = setTimeout(() => { this.refreshOnce().finally(tick); }, ms);\n      this.timer.unref?.();\n    };\n    this.refreshOnce().finally(tick);\n  }\n\n  stop() {\n    this.stopped = true;\n    if (this.timer) { clearTimeout(this.timer); this.timer = null; }\n  }\n\n  async refreshOnce() {\n    const errors = [];\n    try {\n      const baseUrl = (this.readSettings().baseUrl ?? ZEN_BASE_URL).replace(/\\/+$/, \"\");\n      const response = await fetch(`${baseUrl}/v1/models`, { headers: { accept: \"application/json\" }, signal: AbortSignal.timeout(30_000) });\n      if (response.ok) {\n        const payload = await response.json();\n        const ids = Array.isArray(payload?.data) ? payload.data.map((m) => m?.id).filter((id) => typeof id === \"string\" && id.length > 0) : [];\n        this.liveIds = ids;\n      } else {\n        errors.push(`models list HTTP ${response.status}`);\n      }\n    } catch (err) {\n      errors.push(err instanceof Error ? err.message : String(err));\n    }\n    await this.loadMetadata();\n    const list = this.list();\n    this.status = {\n      status: errors.length > 0 && list.length === 0 ? \"error\" : \"ok\",\n      total: list.length,\n      updatedAt: Date.now(),\n      lastError: errors.join(\"; \"),\n    };\n    this.onRefresh?.(this.status);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:987-1055](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L987-L1055)\n\n元数据缓存及静态+实时并集\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\n  async loadMetadata() {\n    const fresh = await this.readCache();\n    if (fresh) { this.metadata = fresh; return; }\n    try {\n      const response = await fetch(METADATA_URL, { headers: { accept: \"application/json\" }, signal: AbortSignal.timeout(30_000) });\n      if (!response.ok) return;\n      const data = await response.json();\n      const decoded = decodeModelsDev(data);\n      if (decoded.size > 0) {\n        this.metadata = decoded;\n        await this.writeCache(data);\n      }\n    } catch { /* metadata is optional */ }\n  }\n\n  async readCache() {\n    if (!this.cachePath) return null;\n    try {\n      const raw = await readFile(this.cachePath, \"utf8\");\n      const parsed = JSON.parse(raw);\n      if (!parsed?.savedAt || typeof parsed.savedAt !== \"number\") return null;\n      if (Date.now() - parsed.savedAt > METADATA_MAX_AGE_MS) return null;\n      return decodeModelsDev(parsed.data);\n    } catch { return null; }\n  }\n\n  async writeCache(data) {\n    if (!this.cachePath) return;\n    try {\n      await mkdir(join(this.cachePath, \"..\"), { recursive: true });\n      const tmp = `${this.cachePath}.tmp`;\n      await writeFile(tmp, JSON.stringify({ savedAt: Date.now(), data }), \"utf8\");\n      await rename(tmp, this.cachePath);\n    } catch { /* cache write is best-effort */ }\n  }\n\n  list() {\n    const ids = new Set(this.liveIds);\n    for (const id of STATIC_MODELS) ids.add(id);\n    const result = [];\n    for (const id of ids) {\n      const entry = entryFor(id);\n      if (!entry) continue;\n      if (this.readSettings().includeFreeModels === false && entry.free) continue;\n      result.push(this.decorate(entry));\n    }\n    result.sort((a, b) => a.id.localeCompare(b.id));\n    return result;\n  }\n\n  resolve(id) {\n    const entry = entryFor(id);\n    if (!entry) return null;\n    return this.decorate(entry);\n  }\n\n  decorate(entry) {\n    const meta = this.metadata.get(entry.id);\n    const contextWindow = meta?.contextWindow ?? entry.contextWindow;\n    const maxTokens = meta?.maxTokens ?? entry.maxTokens;\n    const reasoning = meta?.reasoning ?? entry.reasoning;\n    return {\n      ...entry,\n      contextWindow: typeof contextWindow === \"number\" ? contextWindow : undefined,\n      maxTokens: typeof maxTokens === \"number\" ? maxTokens : undefined,\n      reasoning,\n      effortValues: meta?.effortValues ?? [],\n    };\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:127-139](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L127-L139)\n\n模型名路由\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nfunction apiForModel(id) {\n  const m = String(id ?? \"\").toLowerCase();\n  if (m.startsWith(\"jev\")) return \"excluded\";\n  if (m.startsWith(\"gemini\")) return \"google\";\n  if (m.startsWith(\"claude\")) return \"anthropic\";\n  if (RESPONSES_PREFIXES.some((p) => m.startsWith(p))) return \"responses\";\n  if (ANTHROPIC_EXACT.has(m)) return \"anthropic\";\n  return \"chat\";\n}\n\nfunction isFreeModel(id) {\n  return String(id ?? \"\").toLowerCase().includes(\"free\");\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1263-1266](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1263-L1266)\n\n协议流分派\n\n```text\n      if (api === \"responses\") yield* streamResponses(response, options, contextWindow, watchdog);\n      else if (api === \"anthropic\") yield* streamAnthropic(response, options, contextWindow, watchdog);\n      else if (api === \"google\") yield* streamGoogle(response, options, contextWindow, watchdog);\n      else yield* streamChatCompletions(response, options, contextWindow, watchdog);\n```\n\n#### 缺口\n\n- 当前 Console 目录/路由表变化未知\n  **影响：**静态虚假可见模型可能导致失败\n  **进一步探讨：**与当日官方 Console 模型端点表逐项比对\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 密钥与错误诊断保存了哪些敏感材料？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n配置 Schema 把 apiKey 标作 secret，客户端用 password 输入，保存时通过 form.mutate 写入。宿主加载时另写 ~/.opencode-zen/plugin-load.json，包含 apiKeyLength 和 apiKeyPrefix 前10字符；因此本地诊断文件持有可识别密钥片段，需作为敏感文件保护或取消前缀。HTTP 失败时 errors.log 还追加响应体前200字符，返回 Agent 的错误信息可含前500字符；上游若回显机密可能泄露，需评估日志权限/脱敏。源码未见明文全 key 写日志。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1278-1283](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1278-L1283)\n\nsecret 配置\n\n```text\nconst ConsoleConfigSchema = Schema.object({\n  apiKey: Schema.string().role(\"secret\").default(\"\").description(\"OpenCode Console API Key（https://opencode.ai/console 获取）\"),\n  baseUrl: Schema.string().default(ZEN_BASE_URL).description(\"OpenCode Zen 网关地址\"),\n  includeFreeModels: Schema.boolean().default(false).description(\"是否在模型列表中包含免费模型（*-free 只能在 OpenCode 客户端内使用，经 Console API 调用会返回 FreeTierError）\"),\n  refreshSeconds: Schema.number().step(1).min(30).max(86400).default(300).description(\"模型目录自动刷新间隔（秒）\"),\n});\n```\n\n**依据 2 · 源码核查**：[lib/client.js:179-205](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/client.js#L179-L205)\n\n表单写入\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n      const handleSave = async () => {\n        if (!writable || invalid) {\n          setSaved(false);\n          setFailed(true);\n          return;\n        }\n        const writes = key.length > 0 ? ops.concat([{ op: \"set\", path: [NODE, \"apiKey\"], value: key }]) : ops;\n        if (writes.length === 0) {\n          setSaved(true);\n          setFailed(false);\n          return;\n        }\n        setSaving(true);\n        setSaved(false);\n        setFailed(false);\n        try {\n          const ok = await form.mutate(writes, snapshot.revision);\n          if (ok) {\n            setSaved(true);\n            setApiKey(\"\");\n            setBaseUrl(null);\n            setIncludeFree(null);\n            setRefreshSeconds(null);\n          } else {\n            setFailed(true);\n          }\n        } catch {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1311-1321](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1311-L1321)\n\n错误日志追加\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  /** 诊断通道：把每次失败的原始码/响应体追加到 ~/.opencode-zen/errors.log（上限 128 KB）。 */\n  const report = (line) => {\n    const text = `${new Date().toISOString()} ${line}`;\n    void mkdir(dataDir, { recursive: true })\n      .then(async () => {\n        const info = await stat(errorsLog).catch(() => null);\n        if (info && info.size > 128 * 1024) await writeFile(errorsLog, \"\", \"utf8\");\n        await appendFile(errorsLog, `${text}\\n`, \"utf8\");\n      })\n      .catch(() => {});\n  };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1246-1254](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1246-L1254)\n\n上游响应片段\n\n```text\n      if (!response.ok) {\n        const text = await response.text().catch(() => \"\");\n        const snippet = text.length > 0 ? text.slice(0, 500) : \"\";\n        const code = classifyError(`${response.status} ${snippet}`);\n        const hint = errorHint(code);\n        this.report(`http-${response.status} api=${api} model=${modelId} code=${code} body=${snippet.slice(0, 200)}`);\n        yield { type: \"usage\", usage: { inputTokens: 0, outputTokens: 0 } };\n        yield errorChunk(`opencode-zen: HTTP ${response.status} ${response.statusText}${snippet ? ` — ${snippet}` : \"\"}${hint ? ` — ${hint}` : \"\"}`, code);\n        return;\n```\n\n**依据 5 · 源码核查**：[lib/index.js:1341-1363](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1341-L1363)\n\n加载标记保存 key 前缀\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  // 加载标记：用于确认运行中的 DSH 载入的是哪一版代码、以及配置是否真的读到。\n  const initial = readSettings();\n  void mkdir(dataDir, { recursive: true })\n    .then(() =>\n      writeFile(\n        join(dataDir, \"plugin-load.json\"),\n        JSON.stringify(\n          {\n            loadedAt: new Date().toISOString(),\n            pid: typeof process !== \"undefined\" ? process.pid : null,\n            providerId,\n            build: BUILD_TAG,\n            consoleIsVolatileRef: isVolatileRef(config.console),\n            apiKeyLength: initial.apiKey.length,\n            apiKeyPrefix: initial.apiKey.slice(0, 10),\n            baseUrl: initial.baseUrl,\n            includeFreeModels: initial.includeFreeModels,\n            refreshSeconds: initial.refreshSeconds,\n          },\n          null,\n          2,\n        ),\n        \"utf8\",\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主目录权限及网关响应内容未核\n  **影响：**密钥片段或敏感响应可能被本地其他读取者获取\n  **进一步探讨：**检查文件权限与模拟含机密错误响应并删前缀\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 四协议流与错误分类有哪些已知边界？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n插件按前缀选择协议并把响应 SSE 转为 Harness 文本、推理、工具及 usage 块；处理 402/403/429 等错误，调用前检查 key。映射依赖模型命名表和上游事件格式；未知模型默认 chat，若 Console 新模型实际走另一协议会错路由。stream 在请求/响应上依赖 fetch、AbortController 与 watchdog；分类是按文本正则，不能当成精确网关错误类型。目标协议实际兼容、vision/工具调用与停止原因未独立跑通。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:26-39](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L26-L39)\n\n文本正则错误分类\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nfunction classifyError(text) {\n  if (/\\bRegionError\\b|not available in your country/i.test(text)) return \"REGION_BLOCKED\";\n  if (/free.?tier|FreeTierError|only be used from within OpenCode/i.test(text)) return FREE_TIER_BLOCKED;\n  if (/model access is disabled|access is disabled/i.test(text)) return MODEL_ACCESS_DISABLED;\n  if (/insufficient|quota|billing|account funds/i.test(text)) return QUOTA_EXCEEDED;\n  if (/\\b(?:401|403)\\b/.test(text)) return \"AUTH\";\n  if (/\\b429\\b|rate.?limit/i.test(text)) return \"RATE_LIMIT\";\n  if (/\\b413\\b|payload too large|request body too large/i.test(text)) return \"INVALID_REQUEST\";\n  if (/\\b400\\b|invalid.?request/i.test(text)) return \"INVALID_REQUEST\";\n  if (/\\b5\\d\\d\\b/.test(text)) return \"SERVER\";\n  if (/\\btime(?:d)?\\s*out\\b|timeout/i.test(text)) return \"TIMEOUT\";\n  if (/\\b(?:network|connection|socket|fetch)\\b|\\bECONN[A-Z]+\\b|terminated|premature close/i.test(text)) return \"TRANSPORT\";\n  return \"UPSTREAM\";\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:127-135](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L127-L135)\n\n未知模型默认 chat\n\n```text\nfunction apiForModel(id) {\n  const m = String(id ?? \"\").toLowerCase();\n  if (m.startsWith(\"jev\")) return \"excluded\";\n  if (m.startsWith(\"gemini\")) return \"google\";\n  if (m.startsWith(\"claude\")) return \"anthropic\";\n  if (RESPONSES_PREFIXES.some((p) => m.startsWith(p))) return \"responses\";\n  if (ANTHROPIC_EXACT.has(m)) return \"anthropic\";\n  return \"chat\";\n}\n```\n\n**依据 3 · 源码核查**：[lib/index.js:1131-1167](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1131-L1167)\n\n密钥与取消\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n  async *stream(options) {\n    const settings = this.readSettings() ?? {};\n    const configured = typeof settings.apiKey === \"string\" ? settings.apiKey.trim() : \"\";\n    const envKey = typeof process !== \"undefined\" && process.env ? String(process.env.OPENCODE_ZEN_API_KEY ?? \"\").trim() : \"\";\n    const apiKey = configured.length > 0 ? configured : envKey;\n    if (!apiKey) {\n      this.report(`no-api-key configured=${configured.length > 0} env=${envKey.length > 0}`);\n      yield { type: \"usage\", usage: { inputTokens: 0, outputTokens: 0 } };\n      yield errorChunk(\"opencode-zen: OpenCode Console API Key not configured. Paste it in 设置 → 插件 → OpenCode Zen → 配置 (or provide OPENCODE_ZEN_API_KEY).\", \"AUTH\");\n      return;\n    }\n    const modelId = typeof options.model === \"string\" ? options.model : options.model?.id;\n    const entry = this.catalog.resolve(modelId) ?? entryFor(modelId);\n    const api = entry?.api ?? apiForModel(modelId);\n    if (api === \"excluded\") {\n      yield { type: \"usage\", usage: { inputTokens: 0, outputTokens: 0 } };\n      yield errorChunk(`opencode-zen: model ${modelId} uses the SystemOne endpoint and is not chat-capable`, \"INVALID_REQUEST\");\n      return;\n    }\n    const baseUrl = (typeof settings.baseUrl === \"string\" && settings.baseUrl.length > 0 ? settings.baseUrl : ZEN_BASE_URL).replace(/\\/+$/, \"\");\n    const contextWindow = contextWindowFor(entry);\n    const effort = typeof options.reasoningEffort === \"string\"\n      ? options.reasoningEffort\n      : (typeof options.reasoning === \"string\" ? options.reasoning : undefined);\n    const controller = new AbortController();\n    const watchdog = createWatchdog(controller);\n    const onAbort = () => controller.abort(options.signal?.reason ?? new Error(\"aborted\"));\n    if (options.signal) {\n      if (options.signal.aborted) controller.abort(options.signal.reason ?? new Error(\"aborted\"));\n      else options.signal.addEventListener(\"abort\", onAbort, { once: true });\n    }\n    try {\n      const headers = {\n        accept: \"application/json\",\n        authorization: `Bearer ${apiKey}`,\n        \"content-type\": \"application/json\",\n        \"user-agent\": `@a42null/dsh-opencode-zen-plugin/${BUILD_TAG}`,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1171-1225](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1171-L1225)\n\n各协议请求\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n      if (api === \"responses\") {\n        url = `${baseUrl}/v1/responses`;\n        body = {\n          model: modelId,\n          stream: true,\n          input: await buildResponsesInput(options),\n          ...(toolsPayload(options).length > 0 ? { tools: toolsPayload(options).map((t) => ({ type: \"function\", ...t })) } : {}),\n          ...(reasoningEffortWire(effort) ? { reasoning: { effort: reasoningEffortWire(effort) } } : {}),\n          ...(options.maxTokens ? { max_output_tokens: options.maxTokens } : {}),\n        };\n      } else if (api === \"anthropic\") {\n        url = `${baseUrl}/v1/messages`;\n        headers[\"anthropic-version\"] = \"2023-06-01\";\n        headers[\"x-api-key\"] = apiKey;\n        const budget = effort === \"off\" ? undefined : reasoningBudgetFor(effort);\n        const systemText = typeof options.system === \"string\" && options.system.length > 0\n          ? options.system\n          : (options.messages ?? []).filter((m) => m?.role === \"system\").map((m) => flattenText(m.content)).join(\"\\n\");\n        body = {\n          model: modelId,\n          stream: true,\n          max_tokens: Math.max(options.maxTokens ?? defaultMaxTokensFor(entry), budget ? budget + 1024 : 0),\n          ...(systemText.length > 0 ? { system: systemText } : {}),\n          messages: await buildAnthropicMessages(options),\n          ...(toolsPayload(options).length > 0 ? { tools: toolsPayload(options) } : {}),\n          ...budget ? { thinking: { type: \"enabled\", budget_tokens: budget } } : {},\n        };\n      } else if (api === \"google\") {\n        url = `${baseUrl}/v1/models/${encodeURIComponent(modelId)}:streamGenerateContent?alt=sse`;\n        headers[\"x-goog-api-key\"] = apiKey;\n        const budget = effort === \"off\" ? 0 : reasoningBudgetFor(effort);\n        const googleSystem = typeof options.system === \"string\" && options.system.length > 0\n          ? options.system\n          : (options.messages ?? []).filter((m) => m?.role === \"system\").map((m) => flattenText(m.content)).join(\"\\n\");\n        body = {\n          contents: await buildGoogleContents(options),\n          ...(googleSystem.length > 0 ? { systemInstruction: { parts: [{ text: googleSystem }] } } : {}),\n          ...(toolsPayload(options).length > 0 ? { tools: [{ functionDeclarations: toolsPayload(options) }] } : {}),\n          generationConfig: {\n            ...(options.maxTokens ? { maxOutputTokens: options.maxTokens } : {}),\n            ...budget !== undefined ? { thinkingConfig: { thinkingBudget: budget } } : {},\n          },\n        };\n      } else {\n        url = `${baseUrl}/v1/chat/completions`;\n        body = {\n          model: modelId,\n          stream: true,\n          stream_options: { include_usage: true },\n          messages: await buildChatMessages(options),\n          ...(toolsPayload(options).length > 0 ? { tools: toolsPayload(options).map((t) => ({ type: \"function\", function: t })) } : {}),\n          ...(reasoningEffortWire(effort) ? { reasoning_effort: reasoningEffortWire(effort) } : {}),\n          ...(options.maxTokens ? { max_tokens: options.maxTokens } : {}),\n          ...(options.temperature !== undefined ? { temperature: options.temperature } : {}),\n        };\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:1263-1266](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1263-L1266)\n\nSSE 流分派\n\n```text\n      if (api === \"responses\") yield* streamResponses(response, options, contextWindow, watchdog);\n      else if (api === \"anthropic\") yield* streamAnthropic(response, options, contextWindow, watchdog);\n      else if (api === \"google\") yield* streamGoogle(response, options, contextWindow, watchdog);\n      else yield* streamChatCompletions(response, options, contextWindow, watchdog);\n```\n\n#### 缺口\n\n- 不同模型/端点真实错误结构与流事件未知\n  **影响：**新模型或网关变更时可能请求失败/误分类\n  **进一步探讨：**四协议目标模型做文本/工具/图片/取消/错误矩阵\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样小范围接入并判断是否值得采用？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n已有付费 Console 账号时可按作者说明从 npm 安装，在 DSH 设置保存 Key，先只验证单个可用付费模型的文本、工具、图片/推理和 usage，再扩到各协议；记录计费、速率/地域错误以及静态目录误报。部署成本含账户余额、网关请求、每5分钟目录刷新及 models.dev 外部请求；金额/时延未在此证实。改进方向是使静态目录只在 live 失败时回退、别存 key 前缀、按网关结构化错误判别并维护可测试路由表，这些均未实现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:32-57](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.zh-CN.md#L32-L57)\n\n作者安装路径\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n## 安装\n\n**方式一推荐：零配置，既不需要 git，也不需要改任何 registry。** 只有方式三（GitHub 源码）需要本机已安装 git。\n\n### 方式一：从 npmjs 安装（推荐）\n\n```bash\ndsh plugin add @a42null/dsh-opencode-zen-plugin\n```\n\n包页面：<https://www.npmjs.com/package/@a42null/dsh-opencode-zen-plugin>\n\n### 方式二：预构建 tarball（无需 git）\n\n在 DSH「设置 → 插件 → 添加插件」里粘贴，或命令行执行：\n\n```bash\ndsh plugin add https://github.com/A42Null/dsh-opencode-zen-plugin/releases/latest/download/dsh-opencode-zen-plugin.tgz\n```\n\n该地址始终指向最新版本（Release 资产名不含版本号，因此不会随发版失效）。\n\n### 方式三：GitHub 源码（⚠️ 需要本机已安装 git 且在 PATH 中）\n\n```bash\ndsh plugin add github:A42Null/dsh-opencode-zen-plugin\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.zh-CN.md:97-123](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/README.zh-CN.md#L97-L123)\n\n设置/鉴权/状态\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n## 配置（设置 → 插件 → OpenCode Zen → 配置）\n\n> DSH 的设置界面由插件的**客户端半部**（`lib/client.js`）贡献：本插件注册到 `plugins.row.config` 插槽（key = `<包名>#<行 id>`），因此在「设置 → 插件」里 opencode-zen 一行会出现「配置」入口。仅安装 host 半部（`lib/index.js`）时模型可用，但**不会**有任何设置界面。\n\n| 字段 | 说明 | 默认值 |\n| --- | --- | --- |\n| `apiKey` | OpenCode Console API Key，**必填**。在 https://opencode.ai/console 登录后获取 | 空 |\n| `baseUrl` | OpenCode Zen 网关地址 | `https://opencode.ai/zen` |\n| `includeFreeModels` | 是否包含免费（`*-free`）模型；**默认关闭**，因为它们只能在 OpenCode 客户端内使用 | `false` |\n| `refreshSeconds` | 模型目录自动刷新间隔（秒，30–86400） | `300` |\n\n保存后立即生效，无需重启 DSH。作为兜底，也可用环境变量 `OPENCODE_ZEN_API_KEY` 提供 Key（配置项优先）。\n\n## 鉴权\n\n所有端点使用 `Authorization: Bearer <apiKey>`；Anthropic 端点同时附加 `x-api-key` 与 `anthropic-version: 2023-06-01`，Google 端点同时附加 `x-goog-api-key`。模型列表接口无需鉴权，未填 Key 时也能看到模型，但实际调用会返回 AUTH 错误提示。\n\n## 运行状态与缓存\n\n| 路径 | 内容 |\n| --- | --- |\n| `~/.opencode-zen/adapter-status.json` | 目录健康快照：`status` / `total` / `updatedAt` / `lastError` |\n| `~/.opencode-zen/models.dev.json` | models.dev 元数据缓存（7 天有效，tmp+rename 原子写入） |\n| `~/.opencode-zen/plugin-load.json` | 最近一次插件加载标记（`build` / `loadedAt` / `pid`），用于确认运行中的是哪一版代码 |\n| `~/.opencode-zen/errors.log` | 适配器失败原始记录：时间、HTTP 状态、协议、模型、错误码、响应体片段（上限 128 KB，超出自动清空） |\n\n> 错误码命名对齐 DSH 规范：余额不足用 `QUOTA`（命中客户端\"当前请求的额度已用尽\"文案与全局欠费提示），密钥问题用 `AUTH`，免费层门禁用 `FREE_TIER_BLOCKED`，模型无权限用 `MODEL_ACCESS_DISABLED`（后两者在界面直接展示插件给出的中文说明）。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:945-999](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L945-L999)\n\n刷新/元数据访问\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n  start() {\n    const tick = () => {\n      if (this.stopped) return;\n      const seconds = Number(this.readSettings().refreshSeconds);\n      const ms = (Number.isFinite(seconds) && seconds >= 30 ? seconds : 300) * 1000;\n      this.timer = setTimeout(() => { this.refreshOnce().finally(tick); }, ms);\n      this.timer.unref?.();\n    };\n    this.refreshOnce().finally(tick);\n  }\n\n  stop() {\n    this.stopped = true;\n    if (this.timer) { clearTimeout(this.timer); this.timer = null; }\n  }\n\n  async refreshOnce() {\n    const errors = [];\n    try {\n      const baseUrl = (this.readSettings().baseUrl ?? ZEN_BASE_URL).replace(/\\/+$/, \"\");\n      const response = await fetch(`${baseUrl}/v1/models`, { headers: { accept: \"application/json\" }, signal: AbortSignal.timeout(30_000) });\n      if (response.ok) {\n        const payload = await response.json();\n        const ids = Array.isArray(payload?.data) ? payload.data.map((m) => m?.id).filter((id) => typeof id === \"string\" && id.length > 0) : [];\n        this.liveIds = ids;\n      } else {\n        errors.push(`models list HTTP ${response.status}`);\n      }\n    } catch (err) {\n      errors.push(err instanceof Error ? err.message : String(err));\n    }\n    await this.loadMetadata();\n    const list = this.list();\n    this.status = {\n      status: errors.length > 0 && list.length === 0 ? \"error\" : \"ok\",\n      total: list.length,\n      updatedAt: Date.now(),\n      lastError: errors.join(\"; \"),\n    };\n    this.onRefresh?.(this.status);\n  }\n\n  async loadMetadata() {\n    const fresh = await this.readCache();\n    if (fresh) { this.metadata = fresh; return; }\n    try {\n      const response = await fetch(METADATA_URL, { headers: { accept: \"application/json\" }, signal: AbortSignal.timeout(30_000) });\n      if (!response.ok) return;\n      const data = await response.json();\n      const decoded = decodeModelsDev(data);\n      if (decoded.size > 0) {\n        this.metadata = decoded;\n        await this.writeCache(data);\n      }\n    } catch { /* metadata is optional */ }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1023-1055](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1023-L1055)\n\n可见目录边界\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n  list() {\n    const ids = new Set(this.liveIds);\n    for (const id of STATIC_MODELS) ids.add(id);\n    const result = [];\n    for (const id of ids) {\n      const entry = entryFor(id);\n      if (!entry) continue;\n      if (this.readSettings().includeFreeModels === false && entry.free) continue;\n      result.push(this.decorate(entry));\n    }\n    result.sort((a, b) => a.id.localeCompare(b.id));\n    return result;\n  }\n\n  resolve(id) {\n    const entry = entryFor(id);\n    if (!entry) return null;\n    return this.decorate(entry);\n  }\n\n  decorate(entry) {\n    const meta = this.metadata.get(entry.id);\n    const contextWindow = meta?.contextWindow ?? entry.contextWindow;\n    const maxTokens = meta?.maxTokens ?? entry.maxTokens;\n    const reasoning = meta?.reasoning ?? entry.reasoning;\n    return {\n      ...entry,\n      contextWindow: typeof contextWindow === \"number\" ? contextWindow : undefined,\n      maxTokens: typeof maxTokens === \"number\" ? maxTokens : undefined,\n      reasoning,\n      effortValues: meta?.effortValues ?? [],\n    };\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:1341-1363](https://github.com/A42Null/dsh-opencode-zen-plugin/blob/e1d0054333d5f8185f3d6e55f563e5fe91e19b29/lib/index.js#L1341-L1363)\n\n密钥片段日志\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  // 加载标记：用于确认运行中的 DSH 载入的是哪一版代码、以及配置是否真的读到。\n  const initial = readSettings();\n  void mkdir(dataDir, { recursive: true })\n    .then(() =>\n      writeFile(\n        join(dataDir, \"plugin-load.json\"),\n        JSON.stringify(\n          {\n            loadedAt: new Date().toISOString(),\n            pid: typeof process !== \"undefined\" ? process.pid : null,\n            providerId,\n            build: BUILD_TAG,\n            consoleIsVolatileRef: isVolatileRef(config.console),\n            apiKeyLength: initial.apiKey.length,\n            apiKeyPrefix: initial.apiKey.slice(0, 10),\n            baseUrl: initial.baseUrl,\n            includeFreeModels: initial.includeFreeModels,\n            refreshSeconds: initial.refreshSeconds,\n          },\n          null,\n          2,\n        ),\n        \"utf8\",\n```\n\n</details>\n\n#### 缺口\n\n- 目标费用、安装与多协议成功率未知\n  **影响：**无法给出生产采用或收益断言\n  **进一步探讨：**隔离配置分协议试用并对账账单/日志\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bd216de8f156c6bae738d9a2a586b1a106b44ec47ef6ab3a03a82015bd36d854。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1716 | 1513 | 95 | — |\n| .md | source | 2 | 370 | — | — | 4465 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 四协议适配 | 模型推理/工具流 | 命名规则可能漂移 |\n| 目录 | 自动列模型 | 静态并集不保可用 |\n| 诊断 | 分类错误 | 本地记录密钥前缀 |\n\n## 工程亮点\n\n协议桥和客户端设置拆分清晰；静态列表与密钥前缀诊断需要收紧。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh-CN.md、lib/index.js、lib/client.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.zh-CN.md、lib/index.js、lib/client.js、package.json；未调用 Console/DSH 或运行插件。旧 META 仅复用。\n- 下一步：目标 DSH/Console 账户测试 live/静态目录、四协议/图片/工具、无权限/欠费/超时和文件权限。\n",
         "metadata": {
             "repository": "A42Null/dsh-opencode-zen-plugin",
             "repository_id": 1402771540,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-21T04:11:32.944Z",
+            "window_start": "2026-09-21T04:11:32.944Z",
             "stars": 4,
             "pushed_at": "2026-10-04T07:52:01Z",
             "issues": {
@@ -388,12 +423,17 @@
                 "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
-                "updated_30d": 0
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AA42Null%2Fdsh-opencode-zen-plugin%20is%3Aissue%20updated%3A2026-09-21T04%3A11%3A32.944Z..2026-10-21T04%3A11%3A32.944Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D62C:10A7AB:435249:484973:6AD83B7D and timestamp 2026-10-21 04:11:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "@a42null/dsh-opencode-zen-plugin",
-                "captured_at": "2026-10-21T05:08:56.162Z",
+                "captured_at": "2026-10-21T04:11:41.318Z",
                 "window_start": "2026-09-21",
                 "window_end": "2026-10-20",
                 "downloads_30d": 400,
@@ -401,21 +441,10 @@
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-04T06:50:49.958Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-21T04:11:41.318Z",
                     "source_url": "https://registry.npmjs.org/%40a42null%2Fdsh-opencode-zen-plugin",
-                    "error": null,
-                    "latest_version": "0.3.6",
-                    "latest_published_at": "2026-10-04T07:04:18.435Z",
-                    "latest_error": null
+                    "error": null
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-                "current_revision": "e1d0054333d5f8185f3d6e55f563e5fe91e19b29",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

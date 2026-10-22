@@ -39,7 +39,6 @@
 | [dsh-callout](#plugin-1359145352-root) | 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。 | 有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。 |
 | [dsh-chat-width](#plugin-1339332869-root) | 为旧版 DSH web 扩大聊天内容列并提供拖拽调宽，检测到新版原生把手时让位。 | 当前组件推荐观察。 |
 | [dsh-chatgpt-style](#plugin-1421963463-root) | 调整 DSH 对话与侧栏样式、标注语义文字，并添加思考/快速模型档位切换。 | 限本机非关键 UI 观察，选档仍核宿主当前模型与计费；待可逆卸载和同名模型修正后再扩大使用。 |
-| [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 以Electron封装DSH网页，并增强本地后端自动启动、托盘退出选择与故障恢复。 | 适合偏好桌面入口者在单独profile验证启动与退出；先移除冲突原版，确认仅退出不会误停共享后端。 |
 | [dsh-client-ui-aqua-patched](#plugin-1378742722-root) | Aqua 玻璃主题的非官方修补分支，针对 DSH 0.1.2-rc.1 修三处加载/设置入口问题。 | 固定版本的隔离 profile 装入、核哈希、重跑 CDP 与人工视觉/开关测试，确认许可再部署。 |
 | [dsh-codefall](#plugin-1409889533-root) | DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。 | 非关键 profile 先试，实机核启动/窗口恢复/减少动态/卸载；卡顿时先关闭动画。 |
 | [dsh-commandcode-usage-inline](#plugin-1358821276-root) | 在 DSH 输入栏内联展示 Command Code 账户窗口用量和剩余 credits。 | 已用对应Command Code provider的用户可评估；多账户轮换时核对active标记，勿据首账户默认值作预算决定。 |
@@ -551,20 +550,6 @@
 > **思考**：标注会替换文本节点并移除标记/表情，但 dispose 不恢复；模型档位按 id 匹配未限制 provider，作者“关闭即原样”与快捷选择精度均有边界。详见[Q03](#research-q03)。
 
 > **建议**：未验证方向是可逆/宿主化标注、provider+model 定位和多档位真实状态提示；用卸载不刷新与同名多 provider 夹具核对。详见[Q05](#research-q05)。
-
-<a id="plugin-1389469406-root"></a>
-
-## [dsh-clean-desktop-shell-pro](../../plugins/aicksion--dsh-clean-desktop-shell-pro/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aicksion/dsh-clean-desktop-shell-pro)
-
-> **用途**：用户希望双击进入原生窗口并清楚区分窗口退出、本地服务停止与短暂网络不可达。
-
-> **亮点**：明确fork原版，增量集中在后端自动启动、退出生命周期和并行启动；Electron外壳与大量恢复机制来自原版，不能把整套桌面封装全计原创。
-
-> **思考**：端口响应能否认定目标后端可用？probeState把<500视alive、非401视authenticated，不能证明页面/版本/会话可用；外部既有进程的所有权与停止边界需实际验。README冷启动更快未有本轮测量。
-
-> **建议**：由cause分离推导，可增加宿主版本/实例ID的ready握手及后端所有权凭证，只允许停止自己启动的实例。未验证；错误服务占端口、外部后端、短断网和真实子进程退出应呈不同状态且不误停。
 
 <a id="plugin-1378742722-root"></a>
 

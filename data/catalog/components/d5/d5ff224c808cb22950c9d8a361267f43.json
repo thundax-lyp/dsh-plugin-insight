@@ -24,36 +24,82 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-20-07-github-1391140034-root-directory-0",
+                    "id": "2026-10-22-02-github-1391140034-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T10:01:58.389Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:41:21.640Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-20-07-github-1391140034-root-author",
+                    "id": "2026-10-22-02-github-1391140034-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "README.md",
+                            "content_sha256": "23fc163128583251675860c74a7c234dc6aa5fc10f4eb47ef63adefb079388dc"
+                        }
+                    ],
                     "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
-                    "captured_at": "2026-10-20T10:01:58.389Z",
-                    "summary": "从WSL查询Windows电源计划、电池与睡眠配置。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:21.640Z",
+                    "summary": "从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-20-07-github-1391140034-root-source",
+                    "id": "2026-10-22-02-github-1391140034-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/index.js",
+                    "url": "https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "README.zh.md",
+                            "content_sha256": "c8ba72a5dae5d1c00b75398117f76227868150b89e622df696b15a4a86330006"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "index.js",
+                            "content_sha256": "d957147a5e3878e8d7f9819980b8d5da299e0ce9f886b184e95716d5e2666ef7"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "lib/power.js",
+                            "content_sha256": "2cd50fbab8e376a8981bf94bb46be16d4c3d8560b4212270000198cc89155a2c"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "lib/power-exec.js",
+                            "content_sha256": "2cca74925923aa3042ff8262c474f66246eddf0e005ef3f4b5d73177d80628a0"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-power",
+                            "commit": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
+                            "path": "package.json",
+                            "content_sha256": "5c92efb6a2159337c6c9643ef258cb9123a7d56e96f0abb1a782763a2adb35db"
+                        }
+                    ],
                     "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
-                    "captured_at": "2026-10-20T10:01:58.389Z",
-                    "summary": "核查 index.js、lib/power-exec.js、lib/power.js；win_power经PowerShell运行powercfg和Win32_Battery查询，归一化计划、电池、交流睡眠秒数与休眠标记；all可列计划。",
-                    "artifact": "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:21.640Z",
+                    "summary": "核查 README.zh.md、index.js、lib/power.js、lib/power-exec.js、lib/wsl-host.js、package.json；固定 PowerShell 脚本组合 powercfg 与 Win32_Battery，JSON 归一化输出。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "检查查询脚本及归一化，未读取或修改电源设置。",
+                        "只读核固定提交 README.zh.md、index.js、lib/power.js、lib/power-exec.js、lib/wsl-host.js；未在 Windows/WSL 执行。旧 META 复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +110,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "运行长任务前，用户希望查看宿主电源策略和电池状态以评估中断可能。",
+                    "text": "WSL Agent 对本机 Windows 电源状态做初步诊断。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +121,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "win_power经PowerShell运行powercfg和Win32_Battery查询，归一化计划、电池、交流睡眠秒数与休眠标记；all可列计划。",
+                    "text": "固定 PowerShell 脚本组合 powercfg 与 Win32_Battery，JSON 归一化输出。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +139,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "检查查询脚本及归一化，未读取或修改电源设置。",
+                    "text": "只读核固定提交 README.zh.md、index.js、lib/power.js、lib/power-exec.js、lib/wsl-host.js；未在 Windows/WSL 执行。旧 META 复用。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +157,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "固定版本包清单与作者说明已核对；需要WSL互操作、Windows PowerShell、powercfg与CIM；系统策略和设备能力影响可查询项。",
+                    "text": "dsh-wsl-kit full 或单独安装，作者兼容声明未独立验证。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +175,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "跨进程查询和人工核对为主要成本；未测长任务失败减少量或电力收益。",
+                    "text": "#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 配 WSL interop/PowerShell 并核字段基准 | 现有 Windows/WSL 与测试设备资源；新增现金未知 | 对笔记本/台式机、中英语言核方案、电池、休眠字段，工时未知 | 不兼容设备需回退到原生工具 |\n| 持续 | 调 powercfg/CIM 读取并与系统值对照 | 本机子进程 CPU/内存与超时占用；无已证外部收费 | 排查 null、0、休眠文案与原始输出，工时未知 | ok:true 可能掩盖字段失败 |\n| 失败恢复 | 修复本地化误判或 interop/命令故障 | 重试与诊断设备资源；误判损失金额未知 | 复查原始命令、修报告/决策并验证语言版本，耗时未知 | 实际设备覆盖、故障率与恢复时间未测 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +193,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅作状态参考；中文系统和休眠可用性必须先对照原始结果，不据工具返回直接承诺任务不中断。",
+                    "text": "先与 Windows 原生命令逐字段对照，缺字段视未知；不要把休眠布尔和 sleep=0 直接用于决策。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +211,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。 计划与睡眠解析匹配英文输出，本地化Windows可能漏报；Hibernate子串判断不区分可用与不可用列表，不能把该布尔值当可靠能力验收。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 方案 | powercfg | 多语言解析 |\n| 电池 | CIM 查询 | 无电池与失败区分 |\n| 睡眠 | 英文文本解析 | 实际值准确 |",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +229,16 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "执行与归一化分离便于跨平台单测；静默catch保留null较好，但文本解析和英文状态词需要更强语义边界。",
+                    "text": "固定脚本降低参数风险，但本地化文本和吞错需改进。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +247,69 @@
                             "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T10:01:58.389Z",
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1391140034-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140034:root",
+                            "area": "code",
+                            "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "英语字符串解析、休眠关键词匹配与数值失败归零可能把未知当事实。详见[Q03](#research-q03)和[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1391140034-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140034:root",
+                            "area": "code",
+                            "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证改进是改用稳定结构化 API/GUID、保留每字段错误状态。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1391140034-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391140034:root",
+                            "area": "code",
+                            "fingerprint": "7a37a8c91d47bf69e630ca59db4740a5d7451d77"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:21.640Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T10:01:58.389Z",
+            "last_checked_at": "2026-10-22T09:41:21.640Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
-                "reviewed_at": "2026-10-20T10:01:58.389Z",
+                "reviewed_at": "2026-10-22T09:41:21.640Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -221,61 +321,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 0,
-                        "transferability": 5,
-                        "simplification": 4
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
                     },
-                    "rationale": "novelty=9：Windows电源查询适配DSH，增量是接线；mechanism=0：依赖powercfg与CIM，未识别新的电源控制或观测机制；transferability=5：查询/归一化分层可迁移到其他只读状态工具；simplification=4：合并电源计划、电池与睡眠摘要，属小幅组合。依据固定版本入口与核心源码，未执行目标代码；不将上游机制或未来假设计入。",
+                    "rationale": "novelty 9：相对原生 powercfg/CIM，增量是把只读电源状态聚为一个 Agent 工具，并非新电源管理能力（Q01）。mechanism 8：固定 PowerShell 脚本与 JSON 归一化常规，英语文本解析/吞错限制正确性（Q02/Q03）。transferability 10：聚合思路可移植，但本实现依 WSL interop、Windows powercfg 输出语言和硬件类型（Q02/Q04）。simplification 8：免手动查多处状态，仍需对照原始输出以区分 null/0 和读取故障（Q04/Q05）。",
                     "basis": "interpretation",
-                    "score": 18,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 0,
+                        "workflow": 18,
+                        "delivery": 8,
                         "reach": 5,
-                        "economics": null
+                        "economics": 4
                     },
-                    "rationale": "workflow=9：把设置页查阅转为Agent查询，改变局部状态交接；delivery=0：仍交付既有电源状态，不改变计划控制或任务验收方式；reach=5：为WSL内用户提供Windows电源入口，但本地化边界保留；economics=null：缺少同条件任务成本、失败重试与持续维护对照，无法判断成本结构增量，不能用零代表缺证据。无运行和独立采用验证，前三项仅解释源码可见流程。",
+                    "rationale": "workflow 18：相对人工查控制面板与 powercfg，一次 Agent 调用汇总状态；不能修改电源方案（Q01）。delivery以分别查看控制面板和powercfg/CIM结果为参照，将方案、电池与休眠信息交为单次聚合状态回执，新增小幅信息交接形式，取8（Q01/Q02）；并未引入新的能耗验收标准，读取缺字段和设备兼容不作为本分项扣分理由。\nreach 5：仅 WSL→Windows 本机场景，设备/语言覆盖未知（Q01/Q05）。economics 4：可能省手查时间，跨设备验证、错误复核与误判恢复的人力未计量，净收益不成立（Q04/Q05）。",
                     "basis": "interpretation",
-                    "score": null,
+                    "score": 35,
                     "evidence_ids": [
-                        "2026-10-20-07-github-1391140034-root-source"
+                        "2026-10-22-02-github-1391140034-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "长任务电源状态参考有潜力，但英文解析与Hibernate子串会误报可用性，先修本地化和三态语义再承担防中断判断。",
+                "reason": "先在目标语言/硬件上逐字段对照；缺失和休眠判断不可直接信。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "长任务前评估睡眠电池中断风险的需求明确。"
+                        "score": 15,
+                        "rationale": "电源诊断场景明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "会话内合并powercfg与电池信息省设置页切换。"
+                        "score": 6,
+                        "rationale": "原生 powercfg 可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已查英文匹配和可用不可用混判，非仅缺实测。"
+                        "rationale": "固定源码可核，硬件未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "只读不改电源，仍需原始结果人工复核和系统策略维护。"
+                        "score": 5,
+                        "rationale": "误判复核成本未知。"
                     }
                 },
-                "score": 59,
+                "score": 39,
                 "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:41:21.640Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-20-07-github-1391140034-root-source"
+                    "2026-10-22-02-github-1391140034-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,27 +400,28 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T09:36:48.824Z",
-            "analysis_sha256": "ab3263074f30b6cfd665cf1330e99feec9a0d3c23ac411d53d25685f61f3f492"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "3dd4f79444409cf9353c8a303454838912038668a96f12292a0b693f5bf549ec"
         },
         "publication.metadata": "data/plugins/173787247--dsh-wsl-power/META.json",
         "publication.summaries": {
-            "text": "从WSL查询Windows电源计划、电池与睡眠配置。",
+            "text": "从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。",
             "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
             "source_url": "https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.md"
         },
         "publication.capabilities": {
             "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
             "items": {
-                "模型工具": "win_power：查询计划、电池和睡眠状态。"
-            }
+                "模型工具": "win_power（方案、电池、睡眠是同工具字段）"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 方案 | 查看活动项 | 英语文本解析 |\n| 电池 | 充电状态 | null 二义 |\n| 睡眠 | AC 超时/休眠 | 关键词误判 |"
         },
         "publication.advice": {
             "revision": "7a37a8c91d47bf69e630ca59db4740a5d7451d77",
-            "text": "仅作状态参考；中文系统和休眠可用性必须先对照原始结果，不据工具返回直接承诺任务不中断。"
+            "text": "先与 Windows 原生命令逐字段对照，缺字段视未知；不要把休眠布尔和 sleep=0 直接用于决策。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-power",
-        "reports": "# dsh-wsl-power\n\n> 从WSL查询Windows电源计划、电池与睡眠配置。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-power](https://github.com/173787247/dsh-wsl-power)\n- **版本号**：0.1.0（[固定提交 7a37a8c91d47bf69e630ca59db4740a5d7451d77](https://github.com/173787247/dsh-wsl-power/tree/7a37a8c91d47bf69e630ca59db4740a5d7451d77)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献：将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。\n\n结论边界：本次为固定版本源码核查，未执行目标代码或真实宿主验收，未核实独立使用效果。下文设计假设均未验证。\n\n[重点创新推演与最小验证](#innovation)\n\n## 洞察短评\n\n- **用途**：运行长任务前，用户希望查看宿主电源策略和电池状态以评估中断可能。\n- **亮点**：将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。\n- **思考**：计划与睡眠解析匹配英文输出，本地化Windows可能漏报；Hibernate子串判断不区分可用与不可用列表，不能把该布尔值当可靠能力验收。\n- **建议**：本次未形成新创新假设；先验证语言无关查询与休眠可用性语义，避免据错误状态推演调度。\n\n采用建议：仅作状态参考；中文系统和休眠可用性必须先对照原始结果，不据工具返回直接承诺任务不中断。\n\n## 核心贡献\n\n将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。\n\n## 关键质疑\n\n计划与睡眠解析匹配英文输出，本地化Windows可能漏报；Hibernate子串判断不区分可用与不可用列表，不能把该布尔值当可靠能力验收。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本次未形成新创新假设；先验证语言无关查询与休眠可用性语义，避免据错误状态推演调度。\n\n在中英文系统对照powercfg原始输出与设置页，覆盖无电池、禁用休眠和睡眠从不；检查unknown是否被误判false。\n\n## 场景与替代办法\n\n运行长任务前，用户希望查看宿主电源策略和电池状态以评估中断可能。\n\nWindows设置、电池面板和直接powercfg查询。\n\n## 依赖与流程\n\n需要WSL互操作、Windows PowerShell、powercfg与CIM；系统策略和设备能力影响可查询项。\n\n查询后人工核对系统设置，必要时由用户另行调整；插件不切换计划、不阻止睡眠。\n\n## 成本与效果\n\n跨进程查询和人工核对为主要成本；未测长任务失败减少量或电力收益。\n\n将Windows电源只读查询放进Agent上下文，减少切换设置页；不修改计划，也未建立任务防中断机制。 计划与睡眠解析匹配英文输出，本地化Windows可能漏报；Hibernate子串判断不区分可用与不可用列表，不能把该布尔值当可靠能力验收。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6169baf4a20d039eaa64ddb9dde8bf9149d67e8cfcb8aed94ca10556801ba34a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 113 | — | — | 401 |\n| .js | source | 4 | 215 | 181 | 12 | — |\n| .js | test | 1 | 34 | 33 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：win_power：查询计划、电池和睡眠状态。\n\n## 工程亮点\n\n执行与归一化分离便于跨平台单测；静默catch保留null较好，但文本解析和英文状态词需要更强语义边界。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/power-exec.js、lib/power.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查查询脚本及归一化，未读取或修改电源设置。\n- 下一步：在中英文系统对照powercfg原始输出与设置页，覆盖无电池、禁用休眠和睡眠从不；检查unknown是否被误判false。\n",
+        "reports": "# dsh-wsl-power\n\n> 从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-power](https://github.com/173787247/dsh-wsl-power)\n- **版本号**：0.1.0（[固定提交 7a37a8c91d47bf69e630ca59db4740a5d7451d77](https://github.com/173787247/dsh-wsl-power/tree/7a37a8c91d47bf69e630ca59db4740a5d7451d77)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码证只读聚合；英文 powercfg 文本匹配和吞错使 ok:true 可能缺字段或误判休眠/睡眠。目标 Windows 未测。\n\n## 洞察短评\n\n- **用途**：WSL Agent 对本机 Windows 电源状态做初步诊断。详见[Q01](#research-q01)。\n- **亮点**：以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。\n- **思考**：英语字符串解析、休眠关键词匹配与数值失败归零可能把未知当事实。详见[Q03](#research-q03)和[Q04](#research-q04)。\n- **建议**：未验证改进是改用稳定结构化 API/GUID、保留每字段错误状态。详见[Q05](#research-q05)。\n\n采用建议：先与 Windows 原生命令逐字段对照，缺字段视未知；不要把休眠布尔和 sleep=0 直接用于决策。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n英语字符串解析、休眠关键词匹配与数值失败归零可能把未知当事实。详见[Q03](#research-q03)和[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证改进是改用稳定结构化 API/GUID、保留每字段错误状态。详见[Q05](#research-q05)。\n\n目标中英 Windows、笔记本/台式机、CIM 失败、休眠禁用与超时矩阵。\n\n## 场景与替代办法\n\nWSL Agent 对本机 Windows 电源状态做初步诊断。详见[Q01](#research-q01)。\n\nWindows 原生 powercfg 与控制面板可直接看到部分状态；插件做单工具聚合。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| WSL/Windows interop | 必需 | 执行 PowerShell | ok:false |\n| powercfg/CIM | 必需 | 读取状态 | 字段缺失 |\n| DSH tools | 必需 | Agent 入口 | 无工具 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 调用 | win_power/all | 看字段 |\n| 对照 | powercfg/CIM 原值 | 核单位/语言 |\n| 判读 | 缺失标未知 | 避免误调策略 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 配 WSL interop/PowerShell 并核字段基准 | 现有 Windows/WSL 与测试设备资源；新增现金未知 | 对笔记本/台式机、中英语言核方案、电池、休眠字段，工时未知 | 不兼容设备需回退到原生工具 |\n| 持续 | 调 powercfg/CIM 读取并与系统值对照 | 本机子进程 CPU/内存与超时占用；无已证外部收费 | 排查 null、0、休眠文案与原始输出，工时未知 | ok:true 可能掩盖字段失败 |\n| 失败恢复 | 修复本地化误判或 interop/命令故障 | 重试与诊断设备资源；误判损失金额未知 | 复查原始命令、修报告/决策并验证语言版本，耗时未知 | 实际设备覆盖、故障率与恢复时间未测 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 方案 | powercfg | 多语言解析 |\n| 电池 | CIM 查询 | 无电池与失败区分 |\n| 睡眠 | 英文文本解析 | 实际值准确 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**WSL 电源读取的字段、错误信号和本地化适配是否可信？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · win_power 真正能观察哪些状态？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n只注册一个无变更动作的 win_power，默认读当前 powercfg 方案、Win32_Battery、交流电睡眠超时及休眠可用性；all=true 时再解析方案列表。桌面无电池显示 null，睡眠 0 显示“永不”。这适合 WSL Agent 做本机电源诊断，不能调整方案/休眠。固定源码可核调用，不代表目标 Windows 结果正确。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:1-26](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.zh.md#L1-L26)\n\n作者用途和字段\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n# dsh-wsl-power\n\n> 从 WSL 读取 Windows 电源状态：当前电源方案、电池状态与睡眠设置。\n\nDeepSeek Harness 插件：Windows power state from WSL: active power plan, battery status and sleep settings.\n\n属于 **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)** 的一部分。\n\n[English → README.md](./README.md)\n\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-power\n```\n\n## 用法\n\n```\nwin_power             # active plan, battery, sleep setting\n```\n\n## 说明\n\nReads the active scheme with `powercfg`. `battery` is absent on desktops.\n`sleepAcSeconds` is the AC standby timeout; `0` means never.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:17-37](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/index.js#L17-L37)\n\n只注册 win_power\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"win_power\",\n    description: \"Windows power state from WSL: active power plan, battery status and sleep settings.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_power\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_power\", content: result?.content }),\n  });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/power-exec.js:22-44](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L22-L44)\n\nPowerShell 读取来源\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function script(a) {\n  return ((a) => `\n$plan = powercfg /getactivescheme 2>$null\n$plans = @()\n${a.all ? `$plans = @(powercfg /list 2>$null | ForEach-Object {\n  $line = \"$_\".Trim()\n  if ($line -match '^Power Scheme GUID:\\\\s*(\\\\S+)\\\\s*\\\\((.*)\\\\)\\\\s*(\\\\*)?$') {\n    @{ guid = $Matches[1]; name = $Matches[2]; active = ($Matches[3] -eq '*') }\n  }\n})` : \"\"}\n$bat = $null\ntry {\n  $b = Get-CimInstance Win32_Battery -ErrorAction Stop | Select-Object -First 1\n  if ($b) { $bat = @{ charge = [int]$b.EstimatedChargeRemaining; status = [int]$b.BatteryStatus } }\n} catch {}\n$sleep = $null\ntry {\n  $v = (powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 2>$null | Select-String 'Current AC Power Setting Index' | Select-Object -First 1)\n  if ($v) { $sleep = [Convert]::ToInt32(($v -split ':')[-1].Trim(), 16) }\n} catch {}\n$hib = $null\ntry { $hib = ((powercfg /a 2>$null) -join ' ') -match 'Hibernate' } catch {}\nConvertTo-Json -Compress -Depth 4 @{ plan = \"$plan\"; plans = @($plans); battery = $bat; sleepAcSeconds = $sleep; hibernateAvailable = $hib }`)(a);\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · Windows 到 WSL 的读取与解析路径是什么？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nWSL 判定在插件加载时执行，非 WSL 返回 ok:false；执行时构造固定 PowerShell 脚本，经 runPowerShell 调用后 JSON.parse；normalize 转成 plan/plans/battery/sleepAcSeconds/hibernateAvailable。all 仅影响是否列所有方案。脚本无用户 URL/命令插值，read-only powercfg/CIM 调用有较小命令注入面。超时配置被 clamp 为 1..120 秒，但工具层 timeoutMs 直接取正数配置，可与内部实际超时不一致。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:8-33](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/index.js#L8-L33)\n\nWSL 检查与外层 timeout\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_power\",\n    order: 219,\n    text: \"Use win_power for WSL/Windows interop: Windows power state from WSL: active power plan, battery status and sleep settings.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_power\",\n    description: \"Windows power state from WSL: active power plan, battery status and sleep settings.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/power-exec.js:22-44](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L22-L44)\n\n固定脚本\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function script(a) {\n  return ((a) => `\n$plan = powercfg /getactivescheme 2>$null\n$plans = @()\n${a.all ? `$plans = @(powercfg /list 2>$null | ForEach-Object {\n  $line = \"$_\".Trim()\n  if ($line -match '^Power Scheme GUID:\\\\s*(\\\\S+)\\\\s*\\\\((.*)\\\\)\\\\s*(\\\\*)?$') {\n    @{ guid = $Matches[1]; name = $Matches[2]; active = ($Matches[3] -eq '*') }\n  }\n})` : \"\"}\n$bat = $null\ntry {\n  $b = Get-CimInstance Win32_Battery -ErrorAction Stop | Select-Object -First 1\n  if ($b) { $bat = @{ charge = [int]$b.EstimatedChargeRemaining; status = [int]$b.BatteryStatus } }\n} catch {}\n$sleep = $null\ntry {\n  $v = (powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 2>$null | Select-String 'Current AC Power Setting Index' | Select-Object -First 1)\n  if ($v) { $sleep = [Convert]::ToInt32(($v -split ':')[-1].Trim(), 16) }\n} catch {}\n$hib = $null\ntry { $hib = ((powercfg /a 2>$null) -join ' ') -match 'Hibernate' } catch {}\nConvertTo-Json -Compress -Depth 4 @{ plan = \"$plan\"; plans = @($plans); battery = $bat; sleepAcSeconds = $sleep; hibernateAvailable = $hib }`)(a);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/power-exec.js:47-71](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L47-L71)\n\n内部超时与 JSON\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport async function execute(args, config = {}) {\n  const a = {\n    name: typeof args?.name === \"string\" ? args.name : \"\",\n    state: typeof args?.state === \"string\" ? args.state : \"\",\n    log: typeof args?.log === \"string\" ? args.log : \"System\",\n    path: typeof args?.path === \"string\" ? args.path : \"\",\n    provider: typeof args?.provider === \"string\" ? args.provider : \"\",\n    level: clamp(args?.level, 1, 5, 2),\n    count: clamp(args?.count, 1, 200, 20),\n    limit: clamp(args?.limit, 1, 400, 40),\n    top: clamp(args?.top, 1, 40, 8),\n    detail: Boolean(args?.detail),\n    subkeys: Boolean(args?.subkeys),\n    all: Boolean(args?.all),\n    full: Boolean(args?.full),\n    since: null,\n  };\n\n\n\n  const timeoutMs = clamp(config.timeoutMs, 1000, 120000, 30000);\n  const { stdout } = await runPowerShell(script(a), { timeoutMs });\n  const raw = JSON.parse(stdout.trim() || \"{}\");\n  if (raw.error) return { ok: false, error: String(raw.error) };\n  return { ok: true, ...normalize(raw) };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/power.js:4-12](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power.js#L4-L12)\n\n归一化\n\n```text\nexport function normalize(raw) {\n  return ((raw) => ({\n      plan: String(raw.plan ?? \"\").trim(),\n      plans: (raw.plans || []).map((p) => ({ guid: String(p.guid ?? \"\"), name: String(p.name ?? \"\"), active: Boolean(p.active) })),\n      battery: raw.battery ? { charge: num(raw.battery.charge), status: num(raw.battery.status) } : null,\n      sleepAcSeconds: raw.sleepAcSeconds === null || raw.sleepAcSeconds === undefined ? null : num(raw.sleepAcSeconds),\n      hibernateAvailable: raw.hibernateAvailable === null || raw.hibernateAvailable === undefined ? null : Boolean(raw.hibernateAvailable),\n    }))(raw ?? {});\n}\n```\n\n#### 缺口\n\n- 目标 PowerShell/WSL interop 未测\n  **影响：**超时信号可能不一致\n  **进一步探讨：**目标高延迟 interop 比较内外超时\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 不同 Windows 语言和版本是否可靠？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nall=true 的列表解析用英语前缀 Power Scheme GUID 的正则；交流电超时用英语 Current AC Power Setting Index 查 powercfg /query；休眠用字符串 Hibernate 在 powercfg /a 输出里做模糊匹配。非英语本地化会导致列表/超时/休眠解析缺失或误判；脚本多数错误用 2>$null 和 catch{} 吞掉，最终仍可返回 ok:true 且相关字段 null/空。作者只说明读取，未声明多语言兼容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/power-exec.js:24-44](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L24-L44)\n\n英语文本匹配与吞错\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n$plan = powercfg /getactivescheme 2>$null\n$plans = @()\n${a.all ? `$plans = @(powercfg /list 2>$null | ForEach-Object {\n  $line = \"$_\".Trim()\n  if ($line -match '^Power Scheme GUID:\\\\s*(\\\\S+)\\\\s*\\\\((.*)\\\\)\\\\s*(\\\\*)?$') {\n    @{ guid = $Matches[1]; name = $Matches[2]; active = ($Matches[3] -eq '*') }\n  }\n})` : \"\"}\n$bat = $null\ntry {\n  $b = Get-CimInstance Win32_Battery -ErrorAction Stop | Select-Object -First 1\n  if ($b) { $bat = @{ charge = [int]$b.EstimatedChargeRemaining; status = [int]$b.BatteryStatus } }\n} catch {}\n$sleep = $null\ntry {\n  $v = (powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 2>$null | Select-String 'Current AC Power Setting Index' | Select-Object -First 1)\n  if ($v) { $sleep = [Convert]::ToInt32(($v -split ':')[-1].Trim(), 16) }\n} catch {}\n$hib = $null\ntry { $hib = ((powercfg /a 2>$null) -join ' ') -match 'Hibernate' } catch {}\nConvertTo-Json -Compress -Depth 4 @{ plan = \"$plan\"; plans = @($plans); battery = $bat; sleepAcSeconds = $sleep; hibernateAvailable = $hib }`)(a);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/power-exec.js:67-71](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L67-L71)\n\n无字段完整性检查即 ok:true\n\n```text\n  const timeoutMs = clamp(config.timeoutMs, 1000, 120000, 30000);\n  const { stdout } = await runPowerShell(script(a), { timeoutMs });\n  const raw = JSON.parse(stdout.trim() || \"{}\");\n  if (raw.error) return { ok: false, error: String(raw.error) };\n  return { ok: true, ...normalize(raw) };\n```\n\n**依据 3 · 作者声明**：[README.zh.md:23-26](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.zh.md#L23-L26)\n\n作者字段说明\n\n```text\n## 说明\n\nReads the active scheme with `powercfg`. `battery` is absent on desktops.\n`sleepAcSeconds` is the AC standby timeout; `0` means never.\n```\n\n#### 缺口\n\n- 目标语言与 powercfg 输出未采样\n  **影响：**多语言机器可能出现看似成功但字段缺失\n  **进一步探讨：**目标中英 Windows 文本对照\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 休眠 available 和电池缺失如何解释？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\nhibernateAvailable 是把 powercfg /a 拼成一行后查是否出现单词 Hibernate，未区分“可用”与“因未启用而不可用”等上下文；可能误判。电池 Get-CimInstance 失败会被 catch 吞掉与桌面无电池同样显示 null，格式化文案把两者合成“none (desktop or unavailable)”。用户不能仅凭 null 判定硬件不存在。sleepAcSeconds 转数字失败落 0，还可能被格式化为“永不”，需与 powercfg 原始输出对照。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/power-exec.js:32-44](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L32-L44)\n\n电池/睡眠/休眠脚本\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n$bat = $null\ntry {\n  $b = Get-CimInstance Win32_Battery -ErrorAction Stop | Select-Object -First 1\n  if ($b) { $bat = @{ charge = [int]$b.EstimatedChargeRemaining; status = [int]$b.BatteryStatus } }\n} catch {}\n$sleep = $null\ntry {\n  $v = (powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 2>$null | Select-String 'Current AC Power Setting Index' | Select-Object -First 1)\n  if ($v) { $sleep = [Convert]::ToInt32(($v -split ':')[-1].Trim(), 16) }\n} catch {}\n$hib = $null\ntry { $hib = ((powercfg /a 2>$null) -join ' ') -match 'Hibernate' } catch {}\nConvertTo-Json -Compress -Depth 4 @{ plan = \"$plan\"; plans = @($plans); battery = $bat; sleepAcSeconds = $sleep; hibernateAvailable = $hib }`)(a);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/power.js:2-11](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power.js#L2-L11)\n\n无效数字回落 0\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nfunction num(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }\n\nexport function normalize(raw) {\n  return ((raw) => ({\n      plan: String(raw.plan ?? \"\").trim(),\n      plans: (raw.plans || []).map((p) => ({ guid: String(p.guid ?? \"\"), name: String(p.name ?? \"\"), active: Boolean(p.active) })),\n      battery: raw.battery ? { charge: num(raw.battery.charge), status: num(raw.battery.status) } : null,\n      sleepAcSeconds: raw.sleepAcSeconds === null || raw.sleepAcSeconds === undefined ? null : num(raw.sleepAcSeconds),\n      hibernateAvailable: raw.hibernateAvailable === null || raw.hibernateAvailable === undefined ? null : Boolean(raw.hibernateAvailable),\n    }))(raw ?? {});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/power.js:20-29](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power.js#L20-L29)\n\n格式化缺失为 none/never\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  return ((v) => {\n      const l = [`win_power ok=${v.ok}`];\n      if (v.plan) l.push(`  plan: ${v.plan.replace(/^Power Scheme GUID:\\s*/, \"\")}`);\n      for (const p of v.plans ?? []) l.push(`  ${p.active ? \"*\" : \" \"} ${p.name}  ${p.guid}`);\n      if (v.battery) l.push(`  battery: ${v.battery.charge}% (status code ${v.battery.status})`);\n      else l.push(\"  battery: none (desktop or unavailable)\");\n      if (v.sleepAcSeconds !== null) l.push(`  sleep after: ${v.sleepAcSeconds === 0 ? \"never (on AC)\" : v.sleepAcSeconds + \"s on AC\"}`);\n      if (v.hibernateAvailable !== null) l.push(`  hibernate: ${v.hibernateAvailable ? \"available\" : \"not available\"}`);\n      if (v.error) l.push(`error: ${v.error}`);\n      return l.join(\"\\n\");\n```\n\n</details>\n\n#### 缺口\n\n- 目标具体文案/异常输出未测\n  **影响：**可能把读取失败当真实节能设置\n  **进一步探讨：**目标故意失败 CIM/powercfg 对照\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样验证并使用电源诊断？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n只在 WSL→Windows 环境调用，对同一设备用 Windows 控制面板、powercfg 原始输出和 CIM 值逐字段比对，分别覆盖笔记本/台式机、中英语言与休眠禁用；缺字段需标未知而非当否定。插件的价值是把多个本机状态聚合给 Agent，部署无需额外服务但依赖 Windows interop。改进可改用稳定的 GUID/结构化 API 而非英文 powercfg 文本，目标兼容性未证。 假设推导：当前 all=true 的方案、交流电超时和休眠均依英语 powercfg 文本，异常被吞并可能在 ok:true 下产出 null/0；因此跨语言诊断可能把读取失败误说成无电池、永不休眠或无方案。若优先取语言无关的方案 GUID 与结构化电池/休眠状态，给每字段保留来源与错误码，预期同一设备在中英系统上的字段完整率提高且失败不再伪装为正常值。条件是目标 Windows/WSL interop 能提供稳定接口并允许调用；代价是 API 适配、版本兼容和更复杂的输出。最小对照在同一设备切换中英语言或等价系统镜像，覆盖笔记本/台式机、休眠启停及模拟 CIM/powercfg 失败，原版和原型均与控制面板、原始命令逐字段比对，记录正确率、未知率和错误显露率。若原型仍因语言产生错误值或把故障当正常，或不能覆盖原有状态，就证伪该改进。结构化读取与错误码是未实现设想。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:28-46](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/README.zh.md#L28-L46)\n\n作者依赖/兼容声明\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n## 依赖\n\n- Windows + WSL，DeepSeek Harness 跑在 WSL 里。\n\n## 测试\n\n```sh\nnpm test\n```\n\n单元测试在任何平台都能跑；实时测试在 WSL 之外自动跳过。\n\n## 兼容性\n\n| 字段 | 值 |\n|------|----|\n| **插件** | `dsh-wsl-power` **0.1.0** |\n| **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |\n| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.0-rc.2`**）— 套件唯一真源 |\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/power-exec.js:22-71](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power-exec.js#L22-L71)\n\n实际读取与返回\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nexport function script(a) {\n  return ((a) => `\n$plan = powercfg /getactivescheme 2>$null\n$plans = @()\n${a.all ? `$plans = @(powercfg /list 2>$null | ForEach-Object {\n  $line = \"$_\".Trim()\n  if ($line -match '^Power Scheme GUID:\\\\s*(\\\\S+)\\\\s*\\\\((.*)\\\\)\\\\s*(\\\\*)?$') {\n    @{ guid = $Matches[1]; name = $Matches[2]; active = ($Matches[3] -eq '*') }\n  }\n})` : \"\"}\n$bat = $null\ntry {\n  $b = Get-CimInstance Win32_Battery -ErrorAction Stop | Select-Object -First 1\n  if ($b) { $bat = @{ charge = [int]$b.EstimatedChargeRemaining; status = [int]$b.BatteryStatus } }\n} catch {}\n$sleep = $null\ntry {\n  $v = (powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 2>$null | Select-String 'Current AC Power Setting Index' | Select-Object -First 1)\n  if ($v) { $sleep = [Convert]::ToInt32(($v -split ':')[-1].Trim(), 16) }\n} catch {}\n$hib = $null\ntry { $hib = ((powercfg /a 2>$null) -join ' ') -match 'Hibernate' } catch {}\nConvertTo-Json -Compress -Depth 4 @{ plan = \"$plan\"; plans = @($plans); battery = $bat; sleepAcSeconds = $sleep; hibernateAvailable = $hib }`)(a);\n}\n\nexport async function execute(args, config = {}) {\n  const a = {\n    name: typeof args?.name === \"string\" ? args.name : \"\",\n    state: typeof args?.state === \"string\" ? args.state : \"\",\n    log: typeof args?.log === \"string\" ? args.log : \"System\",\n    path: typeof args?.path === \"string\" ? args.path : \"\",\n    provider: typeof args?.provider === \"string\" ? args.provider : \"\",\n    level: clamp(args?.level, 1, 5, 2),\n    count: clamp(args?.count, 1, 200, 20),\n    limit: clamp(args?.limit, 1, 400, 40),\n    top: clamp(args?.top, 1, 40, 8),\n    detail: Boolean(args?.detail),\n    subkeys: Boolean(args?.subkeys),\n    all: Boolean(args?.all),\n    full: Boolean(args?.full),\n    since: null,\n  };\n\n\n\n  const timeoutMs = clamp(config.timeoutMs, 1000, 120000, 30000);\n  const { stdout } = await runPowerShell(script(a), { timeoutMs });\n  const raw = JSON.parse(stdout.trim() || \"{}\");\n  if (raw.error) return { ok: false, error: String(raw.error) };\n  return { ok: true, ...normalize(raw) };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/power.js:4-29](https://github.com/173787247/dsh-wsl-power/blob/7a37a8c91d47bf69e630ca59db4740a5d7451d77/lib/power.js#L4-L29)\n\n字段解释\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function normalize(raw) {\n  return ((raw) => ({\n      plan: String(raw.plan ?? \"\").trim(),\n      plans: (raw.plans || []).map((p) => ({ guid: String(p.guid ?? \"\"), name: String(p.name ?? \"\"), active: Boolean(p.active) })),\n      battery: raw.battery ? { charge: num(raw.battery.charge), status: num(raw.battery.status) } : null,\n      sleepAcSeconds: raw.sleepAcSeconds === null || raw.sleepAcSeconds === undefined ? null : num(raw.sleepAcSeconds),\n      hibernateAvailable: raw.hibernateAvailable === null || raw.hibernateAvailable === undefined ? null : Boolean(raw.hibernateAvailable),\n    }))(raw ?? {});\n}\n\n// Dispatch on the shape of the result rather than making the caller say which\n// formatter to use: a result carries either `detail`, or `subkeys`, or neither.\nexport function format(v) {\n  const withOk = { ok: true, ...v };\n  if (withOk.detail && typeof formatDetail === \"function\") return formatDetail(withOk);\n  if (withOk.subkeys && typeof formatKeys === \"function\") return formatKeys(withOk);\n  return ((v) => {\n      const l = [`win_power ok=${v.ok}`];\n      if (v.plan) l.push(`  plan: ${v.plan.replace(/^Power Scheme GUID:\\s*/, \"\")}`);\n      for (const p of v.plans ?? []) l.push(`  ${p.active ? \"*\" : \" \"} ${p.name}  ${p.guid}`);\n      if (v.battery) l.push(`  battery: ${v.battery.charge}% (status code ${v.battery.status})`);\n      else l.push(\"  battery: none (desktop or unavailable)\");\n      if (v.sleepAcSeconds !== null) l.push(`  sleep after: ${v.sleepAcSeconds === 0 ? \"never (on AC)\" : v.sleepAcSeconds + \"s on AC\"}`);\n      if (v.hibernateAvailable !== null) l.push(`  hibernate: ${v.hibernateAvailable ? \"available\" : \"not available\"}`);\n      if (v.error) l.push(`error: ${v.error}`);\n      return l.join(\"\\n\");\n```\n\n</details>\n\n#### 缺口\n\n- 目标硬件/语言覆盖未知\n  **影响：**不宜直接据结果调电源策略\n  **进一步探讨：**多设备/语言对照测试\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6169baf4a20d039eaa64ddb9dde8bf9149d67e8cfcb8aed94ca10556801ba34a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 113 | — | — | 401 |\n| .js | source | 4 | 215 | 181 | 12 | — |\n| .js | test | 1 | 34 | 33 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 方案 | 查看活动项 | 英语文本解析 |\n| 电池 | 充电状态 | null 二义 |\n| 睡眠 | AC 超时/休眠 | 关键词误判 |\n\n## 工程亮点\n\n固定脚本降低参数风险，但本地化文本和吞错需改进。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、index.js、lib/power.js、lib/power-exec.js、lib/wsl-host.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.zh.md、index.js、lib/power.js、lib/power-exec.js、lib/wsl-host.js；未在 Windows/WSL 执行。旧 META 复用。\n- 下一步：目标中英 Windows、笔记本/台式机、CIM 失败、休眠禁用与超时矩阵。\n",
         "metadata": {
             "repository": "173787247/dsh-wsl-power",
             "repository_id": 1391140034,
