@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { gitReferenceSchema, validateGitReference } from './git-reference.mjs';
 import { validateRecommendation } from './recommendation.mjs';
 import { validateInnovationScores } from './innovation-score.mjs';
 import { CATALOG } from './data-paths.mjs';
@@ -74,6 +75,7 @@ const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
 const catalogSchema = read(resolve(ROOT, '.agents/skills/_shared/schemas/catalog.schema.json'));
 const observationsSchema = read(resolve(ROOT, '.agents/skills/_shared/schemas/observations.schema.json'));
+ajv.addSchema(gitReferenceSchema, 'git-reference.schema.json');
 ajv.addSchema(catalogSchema, 'catalog.schema.json');
 const catalogCheck = ajv.getSchema('catalog.schema.json');
 const observationsCheck = ajv.compile(observationsSchema);
@@ -108,6 +110,7 @@ export const validate = (catalog) => {
         indexed(plugin.sources, 'source');
         indexed(plugin.findings, 'finding');
         for (const item of plugin.evidence) {
+            for (const reference of item.git_refs ?? []) validateGitReference(reference);
             if (evidence.has(item.id)) throw new Error(`duplicate evidence id: ${item.id}`);
             evidence.set(item.id, item);
             if (['local_test', 'host_acceptance'].includes(item.kind) && !(item.artifact && item.environment)) {

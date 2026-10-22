@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "repository_url",
+        "commit",
+        "path"
+    ],
+    "properties": {
+        "repository_url": {
+            "type": "string",
+            "format": "uri"
+        },
+        "commit": {
+            "type": "string",
+            "pattern": "^(?:[a-f0-9]{40}|[a-f0-9]{64})$"
+        },
+        "path": {
+            "type": "string",
+            "minLength": 1
+        },
+        "line_start": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "line_end": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "symbol": {
+            "type": "string",
+            "minLength": 1
+        },
+        "content_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+        }
+    },
+    "dependentRequired": {
+        "line_start": [
+            "line_end"
+        ],
+        "line_end": [
+            "line_start"
+        ]
+    },
+    "$id": "https://dsh-plugin-insight.local/git-reference.schema.json"
+}

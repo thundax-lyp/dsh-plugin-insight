@@ -56,6 +56,16 @@
 - `research_depth` 的 catalog／source／tested／host_verified 表示已有证据层级；提高层级须有对应证据。
   历史执行证据不自动证明当前版本通过，源码与作者声明不等于运行效果。
 
+## Git 原始材料的可追溯定位
+
+Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema](../schemas/git-reference.schema.json)为准。每项必含原始 `repository_url`、完整 `commit`（40位SHA-1或64位Git SHA-256）及仓库内相对 `path`；分支、标签、短SHA或采集时间不能替代提交。可附成对的 `line_start`／`line_end`、符号名 `symbol` 和文件内容的 `content_sha256`。路径须规范化，不含绝对路径、反斜线、空段、`.`或`..`；URL不能含凭据、查询参数或片段。关键判断仍由 summary、finding 或逐题 observation 说明，定位不能代替论证。
+
+此定位足以表示文件可追溯，不要求将整个上游仓库复制进本仓库。固定版本URL是方便点击的展示形式，不能代替三个定位字段；摘录或已保存快照是补充保全材料。可追溯不等于永久可取得，上游删除、转私有或提交不可达时须说明访问缺口，不能默认为新核查成功。需要重新获取时核对提交、路径与已有内容摘要。
+
+这条规则仅适用于Git中的原文件。npm/API返回、网页、Issue页面快照、运行日志、测试与宿主验收结果须另存当时材料和采集／执行条件，不能用源码提交证明当时服务状态或执行结果。既有artifact及缺失原件清单保持原状态，不因存在源码定位就宣称非Git原件已恢复。
+
+新研究按此格式记录；旧记录暂兼容既有固定版本URL，不强行回填未知的仓库、提交或路径，不复用原证据ID伪装成新核查。执行证据仍须有artifact和environment。
+
 ## 结论与依赖
 
 - `findings` 保存主题、结论、判断性质、`evidence_ids`、`dependencies`、`reviewed_at` 与状态。

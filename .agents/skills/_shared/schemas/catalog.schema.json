@@ -146,6 +146,14 @@
         },
         "environment": {
           "$ref": "#/$defs/text"
+        },
+        "git_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "git-reference.schema.json"
+          }
         }
       }
     },

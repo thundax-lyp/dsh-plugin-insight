@@ -1,3 +1,4 @@
+import { createGitReference, gitReferenceUrl } from '../../_shared/scripts/git-reference.mjs';
 import Ajv from 'ajv/dist/2020.js';
 import { readFileSync } from 'node:fs';
 
@@ -31,7 +32,7 @@ function checkHeadings(text) {
     }
     if (fence) throw Error('question text has an unclosed code fence');
 }
-export function validateResearchQuestions(value, { sourcePaths, readSource }) {
+export function validateResearchQuestions(value, { sourcePaths, readSource, repository, revision }) {
     if (!check(value)) throw Error('invalid research questions: ' + ajv.errorsText(check.errors));
     const ids = new Set(),
         questions = new Set(),
@@ -69,6 +70,10 @@ export function validateResearchQuestions(value, { sourcePaths, readSource }) {
             if (!cache.has(e.source_path)) cache.set(e.source_path, readSource(e.source_path));
             const source = cache.get(e.source_path);
             if (typeof source !== 'string') throw Error(`question source missing: ${e.source_path}`);
+            createGitReference(`https://github.com/${repository}`, revision, e.source_path, {
+                line_start: e.line_start,
+                line_end: e.line_end
+            });
             const lines = source.replace(/\n$/, '').split('\n');
             if (
                 e.line_end < e.line_start ||
@@ -106,9 +111,13 @@ export function renderResearchQuestions(value, { repository, revision, readSourc
                         .split('\n')
                         .slice(e.line_start - 1, e.line_end)
                         .join('\n');
-                    const path = e.source_path.split('/').map(encodeURIComponent).join('/');
-                    const url = `https://github.com/${repository}/blob/${revision}/${path}#L${e.line_start}-L${e.line_end}`;
-                    return `**依据 ${i + 1} · ${e.kind === 'author_claim' ? '作者声明' : '源码核查'}**：[${e.source_path}:${e.line_start}-${e.line_end}](${url})\n\n${e.observation}\n\n${quoteSource(excerpt)}`;
+                    const ref = createGitReference(`https://github.com/${repository}`, revision, e.source_path, {
+                        content: readSource(e.source_path),
+                        line_start: e.line_start,
+                        line_end: e.line_end
+                    });
+                    const url = gitReferenceUrl(ref);
+                    return `**依据 ${i + 1} · ${e.kind === 'author_claim' ? '作者声明' : '源码核查'}**：[${e.source_path}:${e.line_start}-${e.line_end}](${url})\n\nGit 定位：仓库 \`${ref.repository_url}\` · 提交 \`${ref.commit}\` · 相对路径 \`${ref.path}\` · 行 ${ref.line_start}–${ref.line_end}。文件 SHA-256：\`${ref.content_sha256}\`。\n\n${e.observation}\n\n${quoteSource(excerpt)}`;
                 })
                 .join('\n\n') || '本题未列出证据；回答状态与未知项见本题说明。';
         const unknowns =

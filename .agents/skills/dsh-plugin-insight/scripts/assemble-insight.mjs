@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { createGitReference, gitReferenceUrl } from '../../_shared/scripts/git-reference.mjs';
 import { validateResearchQuestions, renderResearchQuestions } from './research-questions.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { assembleRecommendation } from '../../_shared/scripts/recommendation.mjs';
@@ -178,12 +179,17 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         pack.find((f) => f.path === (item.path ? `${item.path}/README.md` : 'README.md')) ??
         pack.find((f) => f.path === 'README.md');
     if (!readme) throw Error('author README required');
-    const url = (path) => `https://github.com/${item.repository}/blob/${item.revision}/${path}`;
+    const reference = (path) =>
+        createGitReference(`https://github.com/${item.repository}`, item.revision, path, {
+            content: questionContext.readSource(path)
+        });
+    const url = (path) => gitReferenceUrl(reference(path));
     const evidence = [
         {
             id: authorId,
             kind: 'author_claim',
             url: url(readme.path),
+            git_refs: [reference(readme.path)],
             revision: item.revision,
             captured_at: now,
             summary: analysis.summary,
@@ -194,6 +200,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
             id: evidenceId,
             kind: 'source_inspection',
             url: url(analysis.source_paths[0]),
+            git_refs: [...new Set(analysis.source_paths)].map(reference),
             revision: item.revision,
             captured_at: now,
             summary: `核查 ${analysis.source_paths.join('、')}；${analysis.mechanism}`,
