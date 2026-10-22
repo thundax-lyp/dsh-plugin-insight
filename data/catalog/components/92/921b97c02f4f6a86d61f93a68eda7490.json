@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "921b97c02f4f6a86d61f93a68eda7490",
+    "identity": "github:1426743620:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426743620:root",
+            "repository": "MonkeyGarry/dsh-life-decision-guide",
+            "path": "",
+            "revision": "71353a7b9edd9eb91e8abf06f89f9106e5f5a4cd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f88405cefeea3e1d4e44596a3e0b8528b141b7fe5731a6c3cfbf59ee9be52c8e",
+                "code": "71353a7b9edd9eb91e8abf06f89f9106e5f5a4cd",
+                "maintenance": "f0e80931bfe905cd0ecf237c7cf236056889698c6e40210c90e60e57efbcc782"
+            }
+        }
+    }
+}

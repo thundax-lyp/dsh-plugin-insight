@@ -7,14 +7,14 @@
             "id": "github:1413264040:root",
             "repository": "hairyf/dsh-tool-activator",
             "path": "",
-            "revision": "fce066c855e00ceff659541d8257dbe5a21a71cf",
+            "revision": "42e0ba752bece406d0f7d875596c10df940a1ac9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "81bf153659379bb54dbe8c8417ae3638ac71f774143f039ecb4452a5ac977970",
-                "code": "fce066c855e00ceff659541d8257dbe5a21a71cf",
-                "maintenance": "295466622a9a678a69d4bbb19e9ab8a009d6b2af4bfd0ff92aff35d629fef20d"
+                "code": "42e0ba752bece406d0f7d875596c10df940a1ac9",
+                "maintenance": "e50a5b4e081bd2d6cab7fc7bbd903d949c050ff0f20658c1daa832cd71d50946"
             }
         }
     }

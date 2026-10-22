@@ -7,14 +7,14 @@
             "id": "github:1333144072:root",
             "repository": "bruc3van/awesome-dsh-plugin",
             "path": "",
-            "revision": "1f06000e95b2f77016cad99167012a54e115ab2c",
+            "revision": "ea118a5e7d5358f893f43e662a78b0ef5b4482f9",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "3a44387b11b6d4022721ba5b9e24f729c123184a62639018233b0b586e783004",
-                "code": "1f06000e95b2f77016cad99167012a54e115ab2c",
-                "maintenance": "ad1e6d54a55b45d9db60e5e922aedc1b454307722775c86e7b90f606a5730895"
+                "code": "ea118a5e7d5358f893f43e662a78b0ef5b4482f9",
+                "maintenance": "c8c4838ee16dd13d7757ab4ce34ea51c8b09d177dd6130238fca14ba0651ea57"
             }
         }
     }

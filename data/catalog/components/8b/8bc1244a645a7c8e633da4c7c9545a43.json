@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8bc1244a645a7c8e633da4c7c9545a43",
+    "identity": "github:1424063534:plugins-dsh-domain-bridge",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424063534:plugins-dsh-domain-bridge",
+            "repository": "1Lany2a/dsh-domain-role",
+            "path": "plugins/dsh-domain-bridge",
+            "revision": "8ef0119937f5f9d18a0628a891dd086db6522834",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "6ba8337d6e8511604fcdb010861be486c29f966292d8321fb7acc45424f431aa",
+                "code": "8ef0119937f5f9d18a0628a891dd086db6522834",
+                "maintenance": "c242075cc105d25ad2f125912d4df7b9c4cb4b472d2a040ebfc8e8e2a3cc2cd7"
+            }
+        }
+    }
+}

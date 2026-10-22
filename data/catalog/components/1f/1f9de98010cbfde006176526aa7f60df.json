@@ -7,15 +7,15 @@
             "id": "github:1333111893:root",
             "repository": "ccch1mneyyy/dsh-TUI",
             "path": "",
-            "revision": "868eaa47e7495439bebc0d31844c662adfcb29d7",
+            "revision": "1056facc4e9bb572565a7e42fa5046e11d6eadb7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "83a8e0cabe32673da5b4d9bac448ff5aedb93add3d46b7aada95bb3fedb84c23",
-                "code": "868eaa47e7495439bebc0d31844c662adfcb29d7",
-                "maintenance": "a6885a4b4006df59b526eb21ff439497dd72cd730d8b4b3b6cafadcfe11c0b59"
+                "code": "1056facc4e9bb572565a7e42fa5046e11d6eadb7",
+                "maintenance": "aeb4c8f747e949e519f87f101138c1f486aaab0bd2fd1e6102da1d622ce2923d"
             }
         }
     }

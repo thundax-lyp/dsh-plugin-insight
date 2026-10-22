@@ -7,15 +7,15 @@
             "id": "github:1391049410:root",
             "repository": "luobosibing2/dsh-jev-plugin",
             "path": "",
-            "revision": "c54e071e99eb839749b3991d29ede9ca20e275f6",
+            "revision": "c673f79298a29e7bcd45c9f09db217da253bbf4f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "cabb5f65528a369047fb1b434de1c905cd2fc814f53d1e7d4335ccd5cbf8694a",
-                "code": "c54e071e99eb839749b3991d29ede9ca20e275f6",
-                "maintenance": "77294f8b87bd92674b9b25b3ce2f6e768979a81189a6861c96ee5afe5f3c5360"
+                "code": "c673f79298a29e7bcd45c9f09db217da253bbf4f",
+                "maintenance": "90e11925bd7b786b63c85fa9e78684f35ae6fb9358b3b7671761fd2234b4a2fb"
             }
         }
     }

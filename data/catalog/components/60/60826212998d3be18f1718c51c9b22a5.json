@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "60826212998d3be18f1718c51c9b22a5",
+    "identity": "github:1344116006:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1344116006:root",
+            "repository": "walkzzz/dsh-plugin-blender-3d",
+            "path": "",
+            "revision": "e63c730e3cc1bc2b76e2f03a08302edc580533ad",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d436edf11047fdf786ea9ecb5a9bf874fa201a7c6c74e3828b86e68d6aecc00c",
+                "code": "e63c730e3cc1bc2b76e2f03a08302edc580533ad",
+                "maintenance": "dc11408455dcf2bc1e23a48856d83d0de5364be56ed11a5d6d492591264b6256"
+            }
+        }
+    }
+}

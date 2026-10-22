@@ -7,14 +7,14 @@
             "id": "github:1397764962:root",
             "repository": "Longxiangjunlin/dsh-endfield-theme",
             "path": "",
-            "revision": "f92a1afed91aa4a085f747e9bcba3c9937c22f3d",
+            "revision": "12db450190ed4ca2cace13c45bd3de92df67722d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9cabd2798a2506db6ae80fb25f8bff98cd17da552f2b6e8cb39cbabb993b71f6",
-                "code": "f92a1afed91aa4a085f747e9bcba3c9937c22f3d",
-                "maintenance": "1e39527292e3a2a0cfd256be4cb013ae7b65c00d5146e4d918c486f323b677a4"
+                "code": "12db450190ed4ca2cace13c45bd3de92df67722d",
+                "maintenance": "03f0c440de836ba7f40bb5095d0510ee9570f2bc906d4580d25420dcd4100763"
             }
         }
     }

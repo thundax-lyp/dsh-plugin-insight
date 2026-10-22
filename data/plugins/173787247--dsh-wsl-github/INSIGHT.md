@@ -171,7 +171,7 @@ installation token 缓存未按仓库/owner 隔离，跨账号查询可复用错
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 GitHub App 凭据边界、只读 PR/Actions 查询与多 installation token 缓存行为。
+**插件研究总目标**：核实 GitHub App 凭据边界、只读 PR/Actions 查询与多 installation token 缓存行为。
 
 <a id="research-q01"></a>
 
@@ -179,7 +179,7 @@ installation token 缓存未按仓库/owner 隔离，跨账号查询可复用错
 
 ### Q01 · 两个模型工具提供何种 GitHub 状态？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -450,8 +450,8 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 #### 缺口
 
 - 未以真实 App 安装查询私有仓库。
-  **影响：**权限配置与实际响应正确性未知。
-  **进一步探讨：**隔离 App 最小权限安装后对照 GitHub 页面和部分权限失败。
+  **影响**：权限配置与实际响应正确性未知。
+  **进一步探讨**：隔离 App 最小权限安装后对照 GitHub 页面和部分权限失败。
 
 <a id="research-q02"></a>
 
@@ -459,7 +459,7 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 
 ### Q02 · 多 installation 下 token 缓存是否按仓库隔离？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -591,8 +591,8 @@ export function pickInstallation(installations, owner = "") {
 #### 缺口
 
 - 未在两个真实 GitHub App 安装中复现。
-  **影响：**表现取决于 App 安装覆盖范围。
-  **进一步探讨：**用两个 installation 的隔离 API stub/账号交替查询验证缓存误用。
+  **影响**：表现取决于 App 安装覆盖范围。
+  **进一步探讨**：用两个 installation 的隔离 API stub/账号交替查询验证缓存误用。
 
 <a id="research-q03"></a>
 
@@ -600,7 +600,7 @@ export function pickInstallation(installations, owner = "") {
 
 ### Q03 · 凭据、网络和采用条件是什么？
 
-**研究主题：**依赖、兼容与流程、采用判断
+**研究主题**：依赖、兼容与流程、采用判断
 
 #### 完整回答
 
@@ -850,8 +850,8 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 #### 缺口
 
 - 未做真实 API 调用，也未测速率限制。
-  **影响：**运营成本与私有仓库覆盖未知。
-  **进一步探讨：**隔离只读 App 和双仓库验证 token 作用域、部分权限故障。
+  **影响**：运营成本与私有仓库覆盖未知。
+  **进一步探讨**：隔离只读 App 和双仓库验证 token 作用域、部分权限故障。
 
 <a id="research-q04"></a>
 
@@ -859,7 +859,7 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 
 ### Q04 · 首次、持续及失败恢复怎样核算成本效果？
 
-**研究主题：**效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
@@ -1045,8 +1045,8 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 #### 缺口
 
 - 账号安装范围、调用频率、宿主signal时限及响应规模未知
-  **影响：**无法估算连续使用成本和故障恢复时长
-  **进一步探讨：**从固定目标的查询量、部分错误与凭据维护记录入手
+  **影响**：无法估算连续使用成本和故障恢复时长
+  **进一步探讨**：从固定目标的查询量、部分错误与凭据维护记录入手
 
 <a id="research-q05"></a>
 
@@ -1054,7 +1054,7 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 
 ### Q05 · 怎样证伪按安装作用域缓存能改善跨账号诊断？
 
-**研究主题：**新假设与验证、工程质量与复用、采用判断
+**研究主题**：新假设与验证、工程质量与复用、采用判断
 
 #### 完整回答
 
@@ -1212,7 +1212,7 @@ export async function fetchRepoStatus(full, token, { fetchFn = fetch, signal, ap
 #### 缺口
 
 - 实际多安装映射及凭据轮换/撤回时间语义未知
-  **影响：**缓存与目标绑定方案尚无对照证据
-  **进一步探讨：**从固定安装真值和假API失败矩阵入手
+  **影响**：缓存与目标绑定方案尚无对照证据
+  **进一步探讨**：从固定安装真值和假API失败矩阵入手
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

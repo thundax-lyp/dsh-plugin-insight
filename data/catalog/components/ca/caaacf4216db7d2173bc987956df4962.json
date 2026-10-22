@@ -7,14 +7,14 @@
             "id": "github:1341817495:root",
             "repository": "LucienLL/dsh-plugin-proxy",
             "path": "",
-            "revision": "0cc1554e614273e7a5ff36aba2a595bade50f5a3",
+            "revision": "76f5d89a21b8fa553d99a3675a7473b76b9ff224",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "52f8714d44eaa8f85d3e0035a5aaef630e70b47bca3d0a9495d69f359c96d7df",
-                "code": "0cc1554e614273e7a5ff36aba2a595bade50f5a3",
-                "maintenance": "89bb31b117e46a6a31e1ea1d663aaf37cce1c33ca13d954a10ff036372cea536"
+                "code": "76f5d89a21b8fa553d99a3675a7473b76b9ff224",
+                "maintenance": "b8351675beed4b2f544a424bb7fd8ccdc355c06e38ecd76e4b572f0cc192b86f"
             }
         }
     }

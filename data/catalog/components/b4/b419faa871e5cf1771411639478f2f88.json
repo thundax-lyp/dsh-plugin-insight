@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b419faa871e5cf1771411639478f2f88",
+    "identity": "github:1374478542:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1374478542:root",
+            "repository": "Jiangsubei/dsh-qqbot-bridge",
+            "path": "",
+            "revision": "a04ff0af512bb4e6764da7f659cca4f1bca42843",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8441699f76f1c08af25377ecacad964fe77b1cb0480cae08cecd7f114df5013c",
+                "code": "a04ff0af512bb4e6764da7f659cca4f1bca42843",
+                "maintenance": "ac1c4a34b24dac2b237351ee20c4fee58579673423a92fafe8d323437032a18b"
+            }
+        }
+    }
+}

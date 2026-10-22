@@ -447,17 +447,15 @@
             "repository": "0imzero/dsh-workspace-menu",
             "path": "",
             "revision": "afd55510f82821cde60a8364e42f752e244b5b31",
-            "fingerprints": {
-                "directory": "611b3762b49c4406e46ff936af4ad0b716dbd079b1376741d5c7d1b346a75d7b",
-                "code": "afd55510f82821cde60a8364e42f752e244b5b31",
-                "release": "59ad9ed9e49d3ce49234920984e1ff0ebabb421f424fcb65fcc4014ee97820ba",
-                "maintenance": "ab85ac1178518079ff6ec30099afb76fed1cc2ea38daa7fb9b12dab105927616",
-                "compatibility": "06aaa47118bd7fb32e3c72575726f552d67b02261798604cafddde87f0dc344d"
-            },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            ],
+            "fingerprints": {
+                "directory": "611b3762b49c4406e46ff936af4ad0b716dbd079b1376741d5c7d1b346a75d7b",
+                "code": "afd55510f82821cde60a8364e42f752e244b5b31",
+                "maintenance": "ab85ac1178518079ff6ec30099afb76fed1cc2ea38daa7fb9b12dab105927616"
+            }
         }
     }
 }

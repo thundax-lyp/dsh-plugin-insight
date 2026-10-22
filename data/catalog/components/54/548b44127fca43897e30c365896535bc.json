@@ -487,14 +487,14 @@
             "repository": "3289192-bot/dsh-cache-bricks",
             "path": "",
             "revision": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "be1a2e59fc4adbcc800e7fc396a0f892bbf820aabff67eba0deb472e35d5db4e",
                 "code": "2e52b914eaea5a02e5937c323160cf2fd2b8de1b",
                 "maintenance": "0d2c323e386b7e48f778a657f003b339cd4c6b8c105c67d047a0cef7cd6573a4"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

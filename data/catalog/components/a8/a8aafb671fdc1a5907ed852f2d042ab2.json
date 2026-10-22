@@ -1,0 +1,495 @@
+{
+    "schema_version": 3,
+    "id": "a8aafb671fdc1a5907ed852f2d042ab2",
+    "identity": "github:1334773156:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334773156:root",
+            "repository_id": 1334773156,
+            "component_id": "root",
+            "repository": "1624318455/dsh-plugin-tts",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-plugin-tts",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "501664f9856f9f75ae5e954c9c9bf44d0bc3a62925e6c0f845d012d4b8366474",
+                "code": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                "maintenance": "ec71209f2866ad0a1b5c5e5ed6f95b258a1dd7b4698ecf95656b000e9ef889b0"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1334773156-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:31:23.218Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-10-22-01-github-1334773156-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-22T15:31:23.218Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1334773156-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-tts",
+                            "commit": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                            "path": "README.md",
+                            "content_sha256": "97f2ee2cdf4c211b9f0e88547f1bff6e4072cf0c76e8179889a937f8194bcdf6"
+                        }
+                    ],
+                    "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                    "captured_at": "2026-10-22T15:31:23.218Z",
+                    "summary": "为DSH Web消息提供手动与自动朗读，支持Edge、Cloud及多种本地音色和长文本分块播放。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1624318455--dsh-plugin-tts/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1334773156-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-tts",
+                            "commit": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                            "path": "README.md",
+                            "content_sha256": "97f2ee2cdf4c211b9f0e88547f1bff6e4072cf0c76e8179889a937f8194bcdf6"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-tts",
+                            "commit": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                            "path": "package.json",
+                            "content_sha256": "badc49adef3313689c9339198acdca25077516a4167124104cecf1e009893d49"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-tts",
+                            "commit": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                            "path": "lib/index.mjs",
+                            "content_sha256": "bdec6ad60bf9401ef8ad58eed87a094cb67f45c531175cc2141a600f21efcda6"
+                        },
+                        {
+                            "repository_url": "https://github.com/1624318455/dsh-plugin-tts",
+                            "commit": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                            "path": "lib/client.js",
+                            "content_sha256": "0cfb0c77214c8a7647939f8a77b18575be95759219441dd6dac5b2df8560c349"
+                        }
+                    ],
+                    "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                    "captured_at": "2026-10-22T15:31:23.218Z",
+                    "summary": "核查 README.md、package.json、lib/index.mjs、lib/client.js；Host 注册合成、音频、分块任务、配置和本地服务代理路由；Client 从消息动作发起请求并调度短音频或渐进式分块播放。Edge 使用 Node WebSocket worker，其他提供者走本地服务或 Cloud。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1624318455--dsh-plugin-tts/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定源码检查 README、包清单、Host 路由/worker/分块、Client slot/播放路径；未穷尽所有设置字段、第三方服务协议或音频质量，不运行目标。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向需要在 DSH Web 中听取回答、无障碍访问或减少盯屏时间的用户，将消息、选中文本和可选审批事件转为可控音频；合格结果需完整、可停止且失败不阻塞会话。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host 注册合成、音频、分块任务、配置和本地服务代理路由；Client 从消息动作发起请求并调度短音频或渐进式分块播放。Edge 使用 Node WebSocket worker，其他提供者走本地服务或 Cloud。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定源码检查 README、包清单、Host 路由/worker/分块、Client slot/播放路径；未穷尽所有设置字段、第三方服务协议或音频质量，不运行目标。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "v0.6.7，Node>=22，MIT；面向 DSH web，Edge/Cloud联网，本地音色依赖各自服务和模型。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Edge联网；Cloud密钥；本地模型磁盘/CPU/GPU | 安装、选音色、按需启动服务 | 费用、耗时与设备基线未知 |\n| 持续使用 | 合成流量、Cloud调用、本地推理与缓存 | 监听失败、升级端点、核对数据流向 | 无单位合格朗读实测 |\n| 失败恢复 | 重试、回退、临时文件与模型服务重启 | 定位网络/端口/模型/宿主slot | 回退可能改变隐私边界 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 消息内朗读 | Client有按钮、自动开关和选中文本入口 | 真实宿主可见性与可访问性 |\n| 长文本 | 分块、预热、取消和进度机制存在 | 段间间隙、漏读与首音时间 |\n| 多后端 | Host有Edge/Cloud/三类本地服务路由 | 服务兼容、音质和稳定性 |\n| 故障处理 | 超时、重试、toast与显式回退路径 | 真实网络/模型故障恢复率 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Host/Client职责和显式job取消值得复用，设置敏感项与UI偏好分层也降低浏览器数据丢失影响。风险是两个主文件规模大、多提供者与路由集中、Edge私有协议常量和宿主slot均是维护热点；静态故障分支不等于运行可靠。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把宿主消息生命周期、可取消渐进式长读、多本地/云后端和分层设置组合为同一工作流；贡献在交互与恢复接线，不在语音模型本身。详见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "零配置 Edge 与自动回退会外发文本，本地音色又转移模型、端口和资源维护；端点、Host slot 或服务方言变化都可能破坏核心体验。详见[Q04](#research-q04)、[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探索逐任务“数据流向收据”，按敏感级别确认本地故障后的外部回退，并记录延迟、失败与取消；先做影子记录比较误路由和确认负担。未实现。详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334773156:root",
+                            "area": "code",
+                            "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:31:23.218Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:31:23.218Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                "reviewed_at": "2026-10-22T15:31:23.218Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334773156:root",
+                        "area": "code",
+                        "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为常见TTS能力的宿主适配小幅增量；mechanism在可取消分块、多后端与消息生命周期组合上有实质增量；transferability为Host/Client任务协议可迁移但耦合宿主；simplification只在Edge零配置有小幅改善，多后端总体复杂。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 15,
+                        "economics": 4
+                    },
+                    "rationale": "workflow把复制到外部朗读器改成消息内操作；delivery提供可下载、选择与连续播放但未测质量；reach改善无障碍与离屏场景；economics只有有限节省潜力，云费与本地维护未测。",
+                    "basis": "interpretation",
+                    "score": 52,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334773156-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "消息内朗读与可取消长读有明确试用价值；先用非敏感文本核对Edge外发、停止与错误恢复，再按需增加本地音色，源码级证据不足以持续安装。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "无障碍和离屏听取场景明确，频率与真实人群反馈未核。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "消息生命周期、分块播放与多后端比复制粘贴有实质额外价值。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持接线和故障分支，未运行，取源码级上限。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "Edge起步简单，但外发、端点维护和本地模型资源使持续成本中等。"
+                    }
+                },
+                "score": 65,
+                "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                "reviewed_at": "2026-10-22T15:31:23.218Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1334773156-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334773156:root",
+                        "area": "code",
+                        "fingerprint": "5b094011dfba35a1d30d44a18d2b411654e8fff8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334773156:root",
+            "repository": "1624318455/dsh-plugin-tts",
+            "path": "",
+            "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+            "fingerprints": {
+                "directory": "501664f9856f9f75ae5e954c9c9bf44d0bc3a62925e6c0f845d012d4b8366474",
+                "code": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                "maintenance": "ec71209f2866ad0a1b5c5e5ed6f95b258a1dd7b4698ecf95656b000e9ef889b0"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "e3cae301249592c4f204f874971724ac8bdd03ce61baf97428f430f62484769e"
+        },
+        "publication.metadata": "data/plugins/1624318455--dsh-plugin-tts/META.json",
+        "publication.summaries": {
+            "text": "为DSH Web消息提供手动与自动朗读，支持Edge、Cloud及多种本地音色和长文本分块播放。",
+            "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+            "source_url": "https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+            "items": {
+                "Host 路由": "语音合成与音频读取、分块续取/取消、各语音后端配置、音色包、用量测试和诊断接口",
+                "界面": "消息朗读/下载按钮、自动朗读开关、选中文本浮层、长文本播放进度及语音设置面板",
+                "事件监听": "监听 session/event 审批请求与决定，并观察新完成助手消息以触发可选自动朗读",
+                "后台": "Edge、Google Cloud、RVC、Index-TTS2、CosyVoice 适配、分块队列、会话缓存与取消清理"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 消息朗读 | 手动、自动或选中内容播放 | DSH web与浏览器音频可用 |\n| 长文本播放 | 渐进分块、暂停、调速和取消 | 听感与段间隙未实测 |\n| 多语音后端 | 在线或本地音色选择 | 各自网络、密钥、服务或模型 |\n| 下载与缓存 | 保存短音频并复用会话缓存 | 长分块读不导出单文件 |\n| 诊断与提醒 | 检查服务并播报审批事件 | 提醒默认关闭，任务完成未覆盖 |"
+        },
+        "publication.advice": {
+            "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+            "text": "建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/1624318455--dsh-plugin-tts",
+        "reports": "# dsh-plugin-tts\n\n> 为DSH Web消息提供手动与自动朗读，支持Edge、Cloud及多种本地音色和长文本分块播放。\n\n## 研究范围\n\n- **仓库**：[1624318455/dsh-plugin-tts](https://github.com/1624318455/dsh-plugin-tts)\n- **版本号**：0.6.7（[固定提交 5b094011dfba35a1d30d44a18d2b411654e8fff8](https://github.com/1624318455/dsh-plugin-tts/tree/5b094011dfba35a1d30d44a18d2b411654e8fff8)）\n- **版本日期**：2026-10-13（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持 Host/Client 接线、多提供者路由、长文本分块和取消；未运行插件、音频服务或真实宿主，听感、兼容、隐私边界和收益仍为待验证。\n\n## 洞察短评\n\n- **用途**：面向需要在 DSH Web 中听取回答、无障碍访问或减少盯屏时间的用户，将消息、选中文本和可选审批事件转为可控音频；合格结果需完整、可停止且失败不阻塞会话。详见[Q01](#research-q01)。\n- **亮点**：把宿主消息生命周期、可取消渐进式长读、多本地/云后端和分层设置组合为同一工作流；贡献在交互与恢复接线，不在语音模型本身。详见[Q02](#research-q02)、[Q03](#research-q03)。\n- **思考**：零配置 Edge 与自动回退会外发文本，本地音色又转移模型、端口和资源维护；端点、Host slot 或服务方言变化都可能破坏核心体验。详见[Q04](#research-q04)、[Q05](#research-q05)。\n- **建议**：可探索逐任务“数据流向收据”，按敏感级别确认本地故障后的外部回退，并记录延迟、失败与取消；先做影子记录比较误路由和确认负担。未实现。详见[Q08](#research-q08)。\n\n采用建议：建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见[Q09](#research-q09)。\n\n## 核心贡献\n\n把宿主消息生命周期、可取消渐进式长读、多本地/云后端和分层设置组合为同一工作流；贡献在交互与恢复接线，不在语音模型本身。详见[Q02](#research-q02)、[Q03](#research-q03)。\n\n## 关键质疑\n\n零配置 Edge 与自动回退会外发文本，本地音色又转移模型、端口和资源维护；端点、Host slot 或服务方言变化都可能破坏核心体验。详见[Q04](#research-q04)、[Q05](#research-q05)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探索逐任务“数据流向收据”，按敏感级别确认本地故障后的外部回退，并记录延迟、失败与取消；先做影子记录比较误路由和确认负担。未实现。详见[Q08](#research-q08)。\n\n最小验证固定宿主、设备和中英长短文本，测首音、完整率、段间隙、取消延迟、资源与人工恢复；制造本地服务故障并核对是否外发。\n\n## 场景与替代办法\n\n面向需要在 DSH Web 中听取回答、无障碍访问或减少盯屏时间的用户，将消息、选中文本和可选审批事件转为可控音频；合格结果需完整、可停止且失败不阻塞会话。详见[Q01](#research-q01)。\n\n比较基线为系统/浏览器朗读与复制到单一TTS服务。插件减少消息搬运并增加渐进播放，但引入Host路由和多服务维护；无同条件效果对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH web与Node>=22 | 必需 | Host路由、WebSocket与Client slots | 插件不加载或界面缺失 |\n| 网络与Edge端点 | Edge必需 | 默认在线合成 | 无法朗读，需选择其他提供者 |\n| Cloud密钥 | Cloud才必需 | Google Cloud TTS | 该提供者不可用 |\n| 本地服务/模型/参考音频 | 对应本地音色必需 | RVC、Index-TTS2、CosyVoice | 需回退或停止 |\n| 浏览器音频策略与设备 | 实际播放必需 | 解锁和输出音频 | 合成成功也可能无声 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户选择数据可外发范围和提供者 | 明确本地/外部路由 |\n| 加载 | 在web profile安装并重启 | 消息按钮和设置页可见 |\n| 验证 | 先短文本，再长文本与停止 | 完整播放、无重复漏段 |\n| 扩展 | 按需配置一个本地或Cloud后端 | 诊断成功且边界可接受 |\n| 恢复 | 停止任务、检查错误后显式回退 | 不静默改变数据流向 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Edge联网；Cloud密钥；本地模型磁盘/CPU/GPU | 安装、选音色、按需启动服务 | 费用、耗时与设备基线未知 |\n| 持续使用 | 合成流量、Cloud调用、本地推理与缓存 | 监听失败、升级端点、核对数据流向 | 无单位合格朗读实测 |\n| 失败恢复 | 重试、回退、临时文件与模型服务重启 | 定位网络/端口/模型/宿主slot | 回退可能改变隐私边界 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 消息内朗读 | Client有按钮、自动开关和选中文本入口 | 真实宿主可见性与可访问性 |\n| 长文本 | 分块、预热、取消和进度机制存在 | 段间间隙、漏读与首音时间 |\n| 多后端 | Host有Edge/Cloud/三类本地服务路由 | 服务兼容、音质和稳定性 |\n| 故障处理 | 超时、重试、toast与显式回退路径 | 真实网络/模型故障恢复率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：判断多提供者消息朗读集成的真实增量、数据流向与维护边界，并提出可证伪的安全路由方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 语音插件服务谁的什么任务，合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n它面向在 DSH Web 中需要听取回答、无障碍访问或减少盯屏时间的用户，把已完成的助手消息、选中文本和可选审批事件转换为可控音频。合格结果不是“接口返回成功”，而是目标文本被正确清洗、以所选音色完整播放，用户能暂停、停止、调速，并且失败不会阻塞会话。原有办法是浏览器或系统朗读、复制到独立 TTS 工具；插件的增量是把消息级操作、自动朗读和多提供者配置嵌入宿主界面。源码级研究不能证明任一语音服务在用户网络、模型与设备上稳定。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:29-58](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L29-L58)\n\n作者列出消息按钮、自动朗读、多提供者和设置面板。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-plugin-tts — Edge TTS + RVC / Index-TTS2 / CosyVoice / Cloud voices for DeepSeek Harness\n\nA dual-sided (Host + Web UI) DeepSeek Harness plugin that reads assistant replies\naloud — Microsoft Edge's free online TTS out of the box, **your own RVC voice\nmodels** for custom voices, **local Index-TTS2 reference-audio voices**,\n**local CosyVoice zero-shot prompt clones** (CosyVoice-2.0-0.5B), or\n**paid Google Cloud TTS voices** (Chinese Standard/Wavenet). Long replies stream\nwith **gapless adaptive chunked playback**; voices install **one-click from a\nvoice-pack registry**; a **portable RVC runtime** means no RVC WebUI install is needed.\n\n> 📖 **First time? See the [user guide (执行手册)](docs/USER-GUIDE.md)** — every step\n> covers \"what / how / how to tell it worked\": read-aloud, RVC voices and\n> voice-pack downloads.\n\n## Features\n\n1. **Read-aloud button** on every finalized assistant message (in the\n   copy / feedback / branch action row): click to speak that message (the\n   button shows an animated equalizer), click again to stop.\n2. **Auto-read toggle** in the composer tool row (between the command and the\n   access-mode buttons): when on, every newly completed assistant reply is\n   read aloud automatically (the toggle gets a circular highlight); when off,\n   nothing is auto-read.\n3. **Voice settings panel** under 设置 → 插件 → 语音:\n    - **TTS provider**: Edge TTS (free, no API key) / custom RVC voice /\n      local Index-TTS2 voice / local CosyVoice clone / Google Cloud TTS (paid, API key)\n    - **Voice**: 22 live-verified Edge TTS voices (default 晓萱 zh-CN-XiaoxuanNeural);\n      8 Cloud voices in the cmn-CN group (default cmn-CN-Wavenet-A, free-form id allowed)\n    - **Sound tuning**: rate / pitch / volume (0 = default, shared by Edge & Cloud)\n    - **RVC config**: service URL + model (.pth) / index (.index) picker, base voice,\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:3384-3438](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/client.js#L3384-L3438)\n\n客户端通过宿主 slots 注入覆盖层和交互入口。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n      slots.inject(\"shell.overlay\", () =>\n        slots.register(\n          { name: \"shell.overlay\", key: \"tts-audio-host\", id: \"tts-audio-host\", order: 1000 },\n          TtsAudioHost,\n        ),\n      );\n\n      // ---------- toast host (transient notifications in shell.overlay) ----------\n      function TtsToastHost() {\n        useI18n();\n        useSharedForce();\n        const toast = shared.toast;\n        if (!toast) return null;\n        const node = react.createElement(\n          \"div\",\n          { className: \"dsh-tts-toast dsh-tts-toast-\" + toast.kind, role: \"alert\" },\n          react.createElement(\"span\", { className: \"dsh-tts-toast-text\" }, toast.text),\n          toast.action\n            ? react.createElement(\n                \"button\",\n                {\n                  type: \"button\",\n                  className: \"dsh-tts-toast-action\",\n                  onClick: () => {\n                    const fn = toast.action.onClick;\n                    dismissToast();\n                    if (typeof fn === \"function\") fn();\n                  },\n                },\n                toast.action.label,\n              )\n            : null,\n          react.createElement(\n            \"button\",\n            {\n              type: \"button\",\n              className: \"dsh-tts-toast-close\",\n              \"aria-label\": t(\"toast.dismiss\"),\n              onClick: dismissToast,\n            },\n            \"✕\",\n          ),\n        );\n        return node;\n      }\n      slots.inject(\"shell.overlay\", () =>\n        slots.register(\n          { name: \"shell.overlay\", key: \"tts-toast-host\", id: \"tts-toast-host\", order: 1001 },\n          TtsToastHost,\n        ),\n      );\n\n      // ---------- approval alert poller (invisible, in shell.overlay) ----------\n      // Polls /dsh-tts-api/notify?s=N every few seconds for new approval events\n      // and announces them aloud. The first successful poll only syncs the\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 从消息到音频播放的主链路怎样实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nHost 注入 webServer 并注册 speak、音频、分块任务、配置、诊断和本地服务代理路由；客户端从消息动作读取清洗后的文本，经 fetch 请求合成。短文本返回单一音频 URL，长文本按提供者能力切块并由客户端逐块预取、通过 Web Audio 调度衔接；停止或切换会取消活动任务。Edge 路径由 Node 子进程执行内嵌 WebSocket 协议，其他提供者通过本地服务或 Cloud API。静态接线可见，但本轮未启动服务器或播放音频。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.mjs:1-25](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L1-L25)\n\nHost 文件声明主要路由并注入 webServer。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n// @memef1f1y/dsh-plugin-tts — Host half.\n// Registers webServer routes:\n//   POST /dsh-tts-api/speak            { text, voice } -> { url | jobId+chunks } | { error }\n//   GET  /dsh-tts-audio/<id>                              -> audio bytes\n//   GET  /dsh-tts-api/rvc-next?job=<id>                   -> { url, more } | { done }\n//   GET  /dsh-tts-api/rvc-files?baseUrl=&kind=            -> { files }\n//   POST /dsh-tts-api/rvc-compact-index                   -> compact .index\n//   GET  /dsh-tts-api/rvc-packs?registry=<url>            -> { packs } (voice-pack manifest)\n//   GET  /dsh-tts-api/rvc-packs-installed                 -> { installed }\n//   POST /dsh-tts-api/rvc-pack-install {registry, packId} -> download+sha256-verify+install\n// Synthesis runs a zero-dependency Edge TTS worker via `node -e`\n// (Sec-MS-GEC query-param protocol, mirroring node-edge-tts@1.2.10;\n// 2026-10 v1->v2 migration per rany2/edge-tts#490: WSS host is now\n// api.msedgeservices.com with Ocp-Apim-Subscription-Key, legacy token kept).\nimport { spawn } from 'node:child_process';\nimport { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync } from 'node:fs';\nimport { createHash } from 'node:crypto';\nimport { request as httpRequest } from 'node:http';\nimport { request as httpsRequest } from 'node:https';\nimport tls from 'node:tls';\nimport os from 'node:os';\nimport path from 'node:path';\n\nexport const name = 'tts';\nexport const inject = ['webServer'];\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:2203-2245](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L2203-L2245)\n\nspeak 路由接收并分派合成请求。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n  const speakDisposer = webServer.register({\n    kind: 'exact',\n    path: '/dsh-tts-api/speak',\n    async handler(req, res) {\n      const t0 = Date.now();\n      let dbg = null; // { provider, voice, textLen } for the error log below\n      try {\n        let body = '';\n        for await (const chunk of req) body += chunk;\n        let parsed = {};\n        try { parsed = JSON.parse(body); } catch (e) { /* fall through */ }\n        const text = String((parsed && parsed.text) || '').trim();\n        if (!text) {\n          writeJson(res, 400, { error: 'empty text' });\n          return;\n        }\n        const voice = String((parsed && parsed.voice) || 'zh-CN-XiaoxuanNeural');\n        const provider = String((parsed && parsed.provider) || 'edge-tts');\n        const custom = (parsed && parsed.custom) || null;\n        const prosody = (parsed && parsed.prosody) || null;\n        dbg = { provider, voice, textLen: text.length };\n        const cfg = provider === 'rvc' ? rvcConfig(custom) : null;\n        const indexCfg = provider === 'index-tts2' ? indexTts2Config(custom, voice) : null;\n        const cosyCfg = provider === 'cosyvoice' ? cosyConfig(custom, voice) : null;\n        {\n          // Model/reference identity for triage (basenames only — never full\n          // paths, never key material).\n          const base = (p) => String(p || '').split(/[\\\\/]/).pop().slice(0, 80);\n          if (provider === 'rvc' && cfg) {\n            if (cfg.model) dbg.model = base(cfg.model);\n            if (cfg.index) dbg.index = base(cfg.index);\n          } else if ((provider === 'index-tts2' || provider === 'cosyvoice') && custom && custom.voice) {\n            dbg.ref = base(custom.voice);\n          } else if (provider === 'local-piper' && custom && custom.piperModel) {\n            dbg.model = base(custom.piperModel);\n          }\n        }\n        const cloudVoice = provider === 'google-cloud-tts'\n          ? (String((custom && custom.voice) || voice || CLOUD_TTS_DEFAULTS.voice).trim() || CLOUD_TTS_DEFAULTS.voice)\n          : null;\n        const providerKey = provider === 'rvc'\n          ? 'rvc|' + rvcFingerprint(cfg)\n          : provider === 'index-tts2'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:2270-2310](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/client.js#L2270-L2310)\n\n客户端调用 speak 并处理播放请求。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\n        const edgeOnly = useProvider === \"edge-tts\";\n        const ctrl = edgeOnly ? new AbortController() : null;\n        const timer = edgeOnly\n          ? setTimeout(() => { try { ctrl.abort(); } catch (e) {} }, 55000)\n          : null;\n        const t0 = Date.now();\n        const logSpeak = (ok, error, extra) => logDiag(Object.assign({\n          kind: \"speak\",\n          provider: useProvider,\n          voice,\n          textLen: String(text).length,\n          ms: Date.now() - t0,\n          ok: !!ok,\n          error: String(error || \"\").slice(0, 200),\n        }, extra || {}));\n        try {\n          const response = await fetch(\"/dsh-tts-api/speak\", {\n            method: \"POST\",\n            headers: { \"Content-Type\": \"application/json\" },\n            body: JSON.stringify(payload),\n            ...(edgeOnly ? { signal: ctrl.signal } : {}),\n          });\n          const result = await response.json();\n          logSpeak(!(result && result.error), result && result.error, { cached: !!(result && result.cached) });\n          return result;\n        } catch (e) {\n          if (edgeOnly && e && e.name === \"AbortError\") {\n            logSpeak(false, \"abort-timeout-55s\");\n            throw new Error(t(\"err.synthTimeout\"));\n          }\n          logSpeak(false, (e && e.message) || e);\n          throw e;\n        } finally {\n          if (timer) clearTimeout(timer);\n        }\n      }\n\n      async function fetchNextChunk(jobId, token) {\n        const ctrl = new AbortController();\n        const timer = setTimeout(() => ctrl.abort(), 200000);\n        try {\n```\n\n</details>\n\n#### 缺口\n\n- 未在真实浏览器测量首包、断句和无缝衔接。\n  **影响**：不能确认不同文本和提供者的听感、延迟与中断一致性。\n  **进一步探讨**：用固定长短中英文本分别测首音时间、段间间隙、取消延迟和漏读。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对系统朗读或单一 TTS 接口，具体增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n研究者识别的贡献是把宿主消息生命周期、可取消的渐进式长文本播放、多个本地/云语音后端和分层设置组合成同一工作流。自适应切块、会话内缓存、消息级播放器与审批提醒解决的是交互接线和恢复问题，不是新的语音模型；Edge 协议和各模型能力归上游。相对复制粘贴到外部工具，集成减少上下文切换并保留消息归属，但也扩大 Host 路由、凭据、本地模型和网络服务的维护面。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:43-106](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L43-L106)\n\n作者说明长读、下载、选中朗读、审批提醒和多后端。\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\n## Features\n\n1. **Read-aloud button** on every finalized assistant message (in the\n   copy / feedback / branch action row): click to speak that message (the\n   button shows an animated equalizer), click again to stop.\n2. **Auto-read toggle** in the composer tool row (between the command and the\n   access-mode buttons): when on, every newly completed assistant reply is\n   read aloud automatically (the toggle gets a circular highlight); when off,\n   nothing is auto-read.\n3. **Voice settings panel** under 设置 → 插件 → 语音:\n    - **TTS provider**: Edge TTS (free, no API key) / custom RVC voice /\n      local Index-TTS2 voice / local CosyVoice clone / Google Cloud TTS (paid, API key)\n    - **Voice**: 22 live-verified Edge TTS voices (default 晓萱 zh-CN-XiaoxuanNeural);\n      8 Cloud voices in the cmn-CN group (default cmn-CN-Wavenet-A, free-form id allowed)\n    - **Sound tuning**: rate / pitch / volume (0 = default, shared by Edge & Cloud)\n    - **RVC config**: service URL + model (.pth) / index (.index) picker, base voice,\n      voice tuning and advanced params — see the [RVC Guide](docs/RVC-GUIDE.md)\n    - **Index-TTS2 config**: service URL (default 7880) + reference-voice\n      picker/refresh/upload + clean-text toggle + emotion control + sampling\n      params — see the [Index-TTS2 Guide](docs/INDEX-TTS2-GUIDE.md)\n    - **CosyVoice config**: service URL (default 7890) + prompt-audio picker/refresh/upload +\n      prompt transcript (required, in order and in full) + speed (0.5–2.0) + seed (0 = random) —\n      see the [CosyVoice Guide](docs/COSYVOICE-GUIDE.md)\n    - **Cloud config**: API Key (Host-file-only, write-only input) + Project ID (optional) +\n      test button + this month's local usage per tier (Standard 4M / Wavenet-Neural2-Chirp3 1M) —\n      see the [Cloud Guide](docs/CLOUD-GUIDE.md)\n   - **Voice packs**: one-click install of voices from a registry\n   - **Preview**: type text and press the play (triangle) button — a spinning\n     loader shows while it is synthesizing/playing (click again to stop),\n     failures show an inline message.\n4. **RVC custom voices**: read with your own trained RVC models, computed\n   locally (index-free mode, advanced params — see the\n   [RVC guide](docs/RVC-GUIDE.md)).\n5. **Gapless long reads**: adaptive chunked progressive playback — probe-calibrated\n   chunk size, play-while-converting, Web Audio sample-accurate joins, no gaps\n   between chunks (see the [design doc](docs/adaptive-chunked-playback.md)).\n6. **Mini player** while reading: pause / resume + playback speed (1x / 1.25x /\n   1.5x) on the message's action row; chunked long reads surface a visible\n   \"chunk x/y\" counter.\n7. **Themed tooltips & RVC onboarding**: hover tooltips use the app's theme\n   tokens (`--dsw-*`); the RVC panel opens with a first-time 3-step guide\n   (per-OS startup commands + one-click diagnostics).\n8. **Download audio**: a download button on each message saves the synthesized\n    audio — MP3 for Edge/Cloud reads, WAV for local (RVC/Index-TTS2/CosyVoice)\n    reads — reusing the in-session cache so a just-read message downloads\n    instantly. Long chunked reads have no single output file yet and report\n    \"not supported\" instead of starting a wasteful re-synthesis.\n9. **Read selected text**: selecting text in a message shows a floating\n   \"朗读选中\" chip — click it to read just that selection.\n10. **Streaming long reads (Edge too)**: long plain-Edge reads also stream\n    progressively (first chunk plays while the rest synthesize), reusing the\n    gapless chunked pipeline — no more waiting for full synthesis.\n11. **Approval voice alerts**: optional voice broadcast of Agent approval events.\n     When enabled, an approval request (`approval/asked`) is announced aloud and\n     **interrupts the current read** (the agent is waiting on the decision); an\n     approval result (`approval/decided`) is announced only when idle. Alerts\n     always use Edge TTS with their own alert voice (independent of the RVC\n     service), are deduplicated by approval id, and off by default. (Scope note:\n     task-completion announcements are deferred to a later phase — the jobs\n     subsystem has no session-event channel this plugin can observe yet.)\n12. **Clean reads, quiet RVC**: message Markdown (code blocks, tables, links,\n    quotes, task lists) is cleaned before reading — no symbol soup; an opt-in\n    \"read raw Markdown symbols\" toggle keeps verbatim reads for source code.\n    With the Edge provider the RVC panel stays fully hidden behind a single\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:1151-1325](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L1151-L1325)\n\nHost 实现分块、校准和提供者差异。\n\n<details>\n<summary>查看原文（175行）</summary>\n\n```text\n// Adaptive chunked progressive playback.\n// Long RVC reads are split into sentence-sized blocks and converted one by one\n// into a queue. A one-shot probe calibrates chunk size + prewarm count from the\n// local machine's convert/play speed ratio (convert_time / audio_seconds).\n// ---------------------------------------------------------------------------\n\nconst PROBE_TEXT = '你好，这是语音合成性能检测。';\n\n/** Heuristic speech duration in seconds (zh ~3.6 chars/s, latin ~12 chars/s). */\nfunction estimateSpeechSeconds(text) {\n  let cjk = 0, latin = 0, other = 0;\n  for (const ch of String(text || '')) {\n    const cp = ch.codePointAt(0);\n    if (cp >= 0x4e00 && cp <= 0x9fff) cjk++;\n    else if (/[A-Za-z0-9]/.test(ch)) latin++;\n    else other++;\n  }\n  return cjk / 3.6 + latin / 12 + other / 4;\n}\n\nfunction isLatinHeavy(text) {\n  let latin = 0, cjk = 0;\n  for (const ch of String(text || '')) {\n    const cp = ch.codePointAt(0);\n    if (cp >= 0x4e00 && cp <= 0x9fff) cjk++;\n    else if (/[A-Za-z]/.test(ch)) latin++;\n  }\n  return latin > 0 && latin > cjk * 2;\n}\n\n/**\n * Atomic tokens that must never be split: URLs, emails and decimals/versions.\n * They contain '.' which the sentence splitter would otherwise treat as a\n * sentence end (splitting \"3.14\" into \"3\"/\"14\"), and hard cuts could break\n * them mid-token. Each atom is swapped for a placeholder without sentence\n * punctuation before splitting, then restored on the final parts.\n */\nconst ATOM_RE = /https?:\\/\\/[^\\s，。！？；,!?;]+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}|\\d+(?:\\.\\d+)+/g;\n\n/**\n * Character spans of each part within the source text: [[start,end), …].\n * Walks the text once, tolerating whitespace differences (trimmed part edges,\n * collapsed newlines, Cloud's synthetic join gaps) — never message content\n * aware beyond ordering. Returns null when the parts cannot be walked in\n * order (then callers fall back to equal division). Pure, unit-tested.\n * Lets the client map \"chunk k\" to an exact text slice for scroll-follow\n * highlight (docs/scroll-follow-v2.md P1-3) instead of guessing by length.\n */\nfunction spanParts(text, parts) {\n  const src = String(text || '');\n  const spans = [];\n  let pos = 0;\n  for (const part of parts) {\n    while (pos < src.length && /\\s/.test(src[pos])) pos++;\n    const start = pos;\n    let ok = true;\n    for (const ch of String(part)) {\n      if (/\\s/.test(ch)) {\n        while (pos < src.length && /\\s/.test(src[pos])) pos++;\n      } else {\n        if (src[pos] !== ch) { ok = false; break; }\n        pos++;\n      }\n    }\n    if (!ok) return null;\n    spans.push([start, pos]);\n  }\n  return spans;\n}\n\n/** Split text into chunks of <= maxChars, preferring sentence/segment boundaries. */\nfunction splitText(text, maxChars) {\n  const atoms = [];\n  const guarded = String(text).replace(ATOM_RE, (tok) => {\n    atoms.push(tok);\n    return '\\u0001' + (atoms.length - 1) + '\\u0002';\n  });\n  const parts = [];\n  const sentences = [];\n  let m;\n  const sre = /[^。！？；.!?;]+[。！？；.!?;]?/g;\n  while ((m = sre.exec(guarded)) !== null) {\n    const s = m[0].trim();\n    if (s) sentences.push(s);\n  }\n  if (!sentences.length) sentences.push(guarded.trim());\n  const segRe = /[^，、,]+[，、,]?/g;\n  let cur = '';\n  const flush = () => {\n    if (cur.trim()) parts.push(cur.trim());\n    cur = '';\n  };\n  const CUT_MIN = Math.max(4, Math.floor(maxChars * 0.5));\n  // Boundary-aware hard cut: prefer the last whitespace / CJK punctuation in\n  // the window, and never split an atomic placeholder (its tail \\u0002 is a\n  // good boundary; if we're inside one, cut before its \\u0001 head).\n  function safeEnd(seg, from) {\n    const end = Math.min(seg.length, from + maxChars);\n    for (let p = end; p > from + CUT_MIN; p--) {\n      const ch = seg[p - 1];\n      if (/\\s/.test(ch) || '，、。！？；,!?;'.includes(ch) || ch === '\\u0002') return p;\n    }\n    for (let p = end - 1; p > from; p--) {\n      if (seg[p] === '\\u0002') return p + 1;\n      if (seg[p] === '\\u0001') return p;\n    }\n    return end;\n  }\n  for (const s of sentences) {\n    if (cur && cur.length + s.length > maxChars) flush();\n    if (s.length > maxChars) {\n      const segs = [];\n      while ((m = segRe.exec(s)) !== null) {\n        const g = m[0].trim();\n        if (g) segs.push(g);\n      }\n      for (const seg of segs) {\n        if (cur && cur.length + seg.length > maxChars) flush();\n        if (seg.length > maxChars) {\n          for (let i = 0; i < seg.length; ) {\n            flush();\n            const end = safeEnd(seg, i);\n            if (end <= i) break; // defensive: never loop forever on zero progress\n            cur = seg.slice(i, end);\n            flush();\n            i = end;\n          }\n        } else {\n          cur += seg;\n        }\n      }\n    } else {\n      cur += s;\n    }\n  }\n  flush();\n  const restored = parts.map((p) =>\n    p.replace(/\\u0001(\\d+)\\u0002/g, (_, idx) => atoms[Number(idx)] ?? ''),\n  );\n  // Orphan-tail fix: a tiny trailing chunk (\"好。\"/\"OK.\") reads like a stutter\n  // on top of the previous chunk; merge it back when it fits.\n  if (restored.length >= 2) {\n    const last = restored[restored.length - 1];\n    const prev = restored[restored.length - 2];\n    if (last.length < 8 && prev.length + last.length <= maxChars) {\n      const gap =\n        /[A-Za-z0-9]$/.test(prev) && /^[A-Za-z0-9]/.test(last) ? ' ' : '';\n      restored[restored.length - 2] = prev + gap + last;\n      restored.pop();\n    }\n  }\n  return restored.filter((p) => p.length > 0);\n}\n\nfunction chunkTier(ratio) {\n  if (ratio <= 0.4) return { chunkSec: 20, prewarm: 2 };\n  if (ratio <= 0.6) return { chunkSec: 15, prewarm: 2 };\n  if (ratio <= 0.9) return { chunkSec: 10, prewarm: 3 };\n  return { chunkSec: 6, prewarm: 4 };\n}\n\n// Chunk policy per provider (pure, unit-tested):\n// fastFirst (edge/cloud only, ratio ~0.1): TTFB = 1 block — chunk 1 returns\n// immediately, the rest warm in the background at their own indexes (served\n// strictly in order). Local synthesis (rvc/index/cosy, ratio 0.5-1.1) keeps\n// full prewarm so playback never starves.\nfunction chunkCal(provider) {\n  if (provider === 'index-tts2') return { chunkSec: 15, prewarm: 2, ratio: 0 };\n  if (provider === 'cosyvoice') return { chunkSec: 15, prewarm: 2, ratio: 0 };\n  if (provider === 'google-cloud-tts') return { chunkSec: 120, prewarm: 2, ratio: 0, fastFirst: true };\n  return { chunkSec: 20, prewarm: 2, ratio: 0, fastFirst: true };\n}\n\nconst FALLBACK_CAL = { ratio: null, chunkSec: 10, prewarm: 3, probeFailed: true, at: 0 };\nconst calibCache = new Map(); // rvcFingerprint -> { ratio, chunkSec, prewarm, at }\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最关键前提是“多后端集成仍能保持可预测、私密且低维护”。Edge 与 Cloud 会把文本发送到外部服务；RVC、Index-TTS2 和 CosyVoice 又要求用户维护本地进程、模型、端口与文件。插件还内嵌随上游变化的 Edge WebSocket 协议常量，端点或客户端版本变化可能使零配置路径失效。README 明示 RVC 自动回退默认关闭，因为回退会把原本本地文本发送到微软；这支持风险已被设计者识别，但不证明所有路由与凭据边界已经过安全审计。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.mjs:27-50](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L27-L50)\n\nEdge worker固定协议端点和客户端常量。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nconst WORKER_SRC = `// edge-tts-worker — zero-dependency Edge TTS synthesis (Node >= 22).\n// Transient failures are retried once with backoff; auth/voice errors fail fast.\nconst crypto = require('node:crypto');\nconst fs = require('node:fs');\nconst os = require('node:os');\nconst path = require('node:path');\nconst TRUSTED_CLIENT_TOKEN = '6A5AA1D4EAFF4E9FB37E23D68491D6F4';\nconst CHROMIUM_FULL_VERSION = '143.0.3650.75';\nconst WINDOWS_FILE_TIME_EPOCH = 11644473600n;\nconst WSS_BASE = 'wss://api.msedgeservices.com/tts/cognitiveservices/websocket/v1';\nconst CRLF = String.fromCharCode(13, 10);\nfunction generateSecMsGecToken() {\n  const ticks = BigInt(Math.floor(Date.now() / 1000) + Number(WINDOWS_FILE_TIME_EPOCH)) * 10000000n;\n  const roundedTicks = ticks - (ticks % 3000000000n);\n  const hash = crypto.createHash('sha256');\n  hash.update(String(roundedTicks) + TRUSTED_CLIENT_TOKEN, 'ascii');\n  return hash.digest('hex').toUpperCase();\n}\nfunction readStdin() {\n  return new Promise(function (resolve, reject) {\n    let data = '';\n    process.stdin.setEncoding('utf8');\n    process.stdin.on('data', function (c) { data += c; });\n    process.stdin.on('end', function () { resolve(data); });\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:170-203](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L170-L203)\n\n作者说明外发回退、端点变化和故障行为。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n## Edge cases handled\n\n- Clicking the read button of the message being auto-read stops it; another\n  message's button switches to manual reading.\n- Disabling auto-read never interrupts a manual read; it stops auto reads.\n- A newly completed message (auto on) interrupts the current read; text-less\n  messages are skipped; session switches only stop auto reads.\n- Stopping / switching messages **eagerly cancels** the active RVC chunked job on\n  the Host, so the local conversion service stops scheduling new chunks and\n  releases GPU/memory promptly (no waiting for the lazy GC).\n- Repeatedly reading the same text + voice **reuses the in-session audio cache**\n  (no re-synthesis); if the cached backing file was cleaned by the OS, it\n  transparently re-synthesizes instead of serving a stale 404 URL.\n- If an Edge voice was removed by the endpoint (`1007 Unsupported voice`), the\n  voice is pruned from the picker and the plugin auto-falls back to the default.\n- Audio is **autoplay-unlocked** on the first user gesture (Web Audio context\n  resumed + silent clip) so reads aren't silently blocked by browser policy.\n- `Esc` / `S` (outside an input) stops the current read-aloud.\n- Synthesis / playback failures **surface a themed toast** (message read-aloud and\n  auto-read no longer fail silently; the preview panel keeps its inline error).\n  In RVC mode the error toast carries a one-click **\"read with Edge TTS instead\"**\n  action; with the opt-in toggle **\"auto-switch to Edge TTS when RVC fails\"** in\n  the RVC settings (off by default — RVC is fully local, auto-fallback sends the\n  text to Microsoft's endpoint), a failed RVC read silently retries with the RVC\n  base voice via Edge TTS and shows a warn toast.\n- **Smart chunking** never splits URLs / emails / decimals / versions (\"3.14\")\n  mid-token — hard cuts slide to word/punctuation boundaries, and a tiny trailing\n  sentence merges into the previous chunk instead of reading like a stutter.\n- **Approval voice alerts** (opt-in): the Host subscribes to the session/event\n  firehose (`approval/asked` / `approval/decided`), dedupes by approval id, and\n  the client polls `/dsh-tts-api/notify?s=N` — the first poll baseline-syncs the\n  cursor so a page refresh never replays stale alerts; announcements are silent\n  on failure (no error toasts while the agent loops).\n\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n基础 Edge 路径要求 DSH web、Node 22、可用网络与宿主 slots/webServer；Cloud 另需 API key，三个本地音色路径分别依赖对应服务、模型或参考音频。浏览器自动播放策略、音频设备与宿主消息 DOM/slot 契约影响实际播放。失败时界面可停止、重试或回退 Edge，本地分块任务支持取消；但本地服务安装、模型兼容、端口冲突和外部端点升级仍由用户处理。Host 文件设置与 localStorage 分担敏感服务配置和 UI 偏好，清理或迁移时需同时核对两层。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:109-143](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L109-L143)\n\n作者列出宿主、Node和本地服务要求。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n````text\n## Requirements\n\n- DeepSeek Harness `web` profile (`dsh web`)\n- Node.js >= 22 (the worker uses the native `WebSocket`)\n- For **local-voice providers only** (nothing to install for Edge/Cloud):\n  - **RVC custom voices**: a local RVC inference environment (an RVC WebUI\n    or the portable runtime) and a running `rvc-server.py` — see the\n    [RVC Guide](docs/RVC-GUIDE.md) → \"启动本地 RVC 服务\" and the\n    [User Guide](docs/USER-GUIDE.md) §4.2. macOS users start there too.\n  - **Index-TTS2 voices**: the local `index-tts2-nvidia` bundle's API service\n    (`启动api服务.bat`, default port 7880) — see the\n    [Index-TTS2 Guide](docs/INDEX-TTS2-GUIDE.md).\n  - **CosyVoice clones**: the local CosyVoice-2.0-0.5B bundle's `cosy-server.py`\n    (`启动cosy服务.bat`, default port 7890) — see the\n    [CosyVoice Guide](docs/COSYVOICE-GUIDE.md).\n\n## Install\n\nFour equivalent ways (pick any one):\n\n```sh\n# dsh-market UI: search the market for the plugin name and install\n# npm package:\ndsh plugin --profile web add \"@memef1f1y/dsh-plugin-tts\"\n# GitHub source:\ndsh plugin --profile web add \"github:1624318455/dsh-plugin-tts#main\"\n# or local development:\ndsh plugin --profile web add \"file:/path/to/dsh-plugin-tts/plugin\"\n```\n\nRestart `dsh web`; the plugin then loads automatically as a profile bundle.\nUninstalling any one of the above first is required before installing another:\nthey all register the same loader entry id (`tts`), and the installer refuses\nduplicates (it rolls back instead of overwriting).\n\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:204-222](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L204-L222)\n\n作者说明Host文件与localStorage两层持久化。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## Settings persistence\n\nLayered storage:\n\n- **Host file** (`~/.dsh/tts-rvc/settings.json`,\n  `{ version: 1, rvc: …, index: …, cosy: …, cloud: … }`):\n  service-class config — RVC service URL/model/index paths, Index-TTS2 and\n  CosyVoice service URLs, Cloud API key (+ optional project ID). Shared across\n  browsers, survives browser-data clears and incognito. Served/updated through\n  `GET /dsh-tts-api/rvc-config` + `POST /dsh-tts-api/rvc-config-save`\n  (and the matching `index-config`, `cosy-config`, `cloud-config` routes;\n  legacy `localStorage` values migrate up once, then the file wins).\n- **localStorage** (`dsh-tts-settings`): UI prefs only — voice, auto-read\n  toggle, provider, sound tuning, the raw-Markdown toggle, approval-alert and\n  remaining RVC prefs. Never stores the service URL / model / index.\n\nA \"Reset to defaults\" button in the settings panel restores defaults and clears\nboth layers (best-effort on the Host file).\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.mjs:2000-2020](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L2000-L2020)\n\nHost检查webServer并监听审批事件。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  const webServer = ctx.get('webServer');\n  if (!webServer) return;\n\n  // Approval voice alerts: subscribe to the session/event firehose (the\n  // sandbox exposes ctx.on; feature-detect so the smoke fake-ctx still works).\n  if (typeof ctx.on === 'function') {\n    ctx.effect(\n      () =>\n        ctx.on('session/event', (_session, event) => {\n          try {\n            ingestSessionEvent(event);\n          } catch (e) { /* observer failures are logged-and-contained by design */ }\n        }),\n      'dsh-plugin-tts: session events (approval alerts)',\n    );\n  }\n\n  const files = new Map();   // id -> absolute mp3 path\n  const cache = new Map();   // voice|text -> url\n  let seq = 0;\n\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 一次合格朗读和持续使用的总成本如何判断？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\nEdge 路径没有插件声明的 API 费用，但需要联网并承担外发数据、端点维护和合成等待；不能把“免费”写成零成本。Cloud 按供应商计费并需管理配额。本地音色避免按次云费用，却把模型包、磁盘、CPU/GPU、服务启动和故障排查转给用户；README 给出便携 RVC 体积区间，但不是本轮测量。合格任务成本应包含成功完整播放的合成调用、失败重试、模型加载、人工确认和下载/缓存清理，本轮没有工作负载与实测数据，不能计算单位成本或 ROI。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:109-123](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L109-L123)\n\n本地提供者有独立服务依赖。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n## Requirements\n\n- DeepSeek Harness `web` profile (`dsh web`)\n- Node.js >= 22 (the worker uses the native `WebSocket`)\n- For **local-voice providers only** (nothing to install for Edge/Cloud):\n  - **RVC custom voices**: a local RVC inference environment (an RVC WebUI\n    or the portable runtime) and a running `rvc-server.py` — see the\n    [RVC Guide](docs/RVC-GUIDE.md) → \"启动本地 RVC 服务\" and the\n    [User Guide](docs/USER-GUIDE.md) §4.2. macOS users start there too.\n  - **Index-TTS2 voices**: the local `index-tts2-nvidia` bundle's API service\n    (`启动api服务.bat`, default port 7880) — see the\n    [Index-TTS2 Guide](docs/INDEX-TTS2-GUIDE.md).\n  - **CosyVoice clones**: the local CosyVoice-2.0-0.5B bundle's `cosy-server.py`\n    (`启动cosy服务.bat`, default port 7890) — see the\n    [CosyVoice Guide](docs/COSYVOICE-GUIDE.md).\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:247-260](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L247-L260)\n\n作者给出RVC包体积和维护背景。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\n> RVC-specific troubleshooting: [RVC Guide → Troubleshooting](docs/RVC-GUIDE.md#troubleshooting).\n\n## FAQ\n\n**Q: Is it big?**\n- Default experience (Edge TTS): the plugin itself is tiny (MB scale) — **no service or model to download**.\n- You only need a local RVC portable package if you want custom voices (RVC). Its size mostly comes from the **bundled offline Python runtime + inference deps + pretrained models**:\n  | Platform | Archive | Extracted |\n  |---|---:|---:|\n  | macOS (Apple Silicon) | ~660 MB | ~1.3 GB |\n  | Windows (CPU-minimal) | ~1–2 GB | ~2–3 GB |\n  | Windows (with NVIDIA GPU) | ~6 GB | ~7 GB |\n- These are self-contained runtimes; the **full RVC WebUI is 7.8 GB** — we don't ship the WebUI / training / realtime parts this plugin doesn't need.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.mjs:173-215](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L173-L215)\n\nEdge worker设定重试与超时边界。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n        reject('timeout after 20000ms without turn.end (endpoint slow or blocked)');\n      }\n    }, 20000);\n  });\n}\nfunction findVoiceArgs() {\n  const args = process.argv;\n  const out = [];\n  for (let i = 1; i < args.length; i++) {\n    const a = args[i];\n    if (a === '--' || a === '-e') continue;\n    if (a.indexOf('.cjs') >= 0 || a.indexOf('.mjs') >= 0 || a.indexOf('edge-tts-worker') >= 0) continue;\n    out.push(a);\n  }\n  return out;\n}\nasync function main() {\n  const args = findVoiceArgs();\n  const voice = args[0] || 'zh-CN-XiaoxuanNeural';\n  const rate = args[1] || 'default';\n  const pitch = args[2] || 'default';\n  const volume = args[3] || 'default';\n  const text = (await readStdin()).trim();\n  if (!text) return fail('empty text');\n  const vparts = String(voice).split('-');\n  const lang = (vparts.length >= 2 ? vparts[0] + '-' + vparts[1] : 'zh-CN');\n  const outPath = path.join(os.tmpdir(), 'dsh-tts-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.mp3');\n  let lastErr = null;\n  for (let attempt = 0; attempt < 2; attempt++) {\n    try {\n      const size = await synthesizeOnce(voice, text, outPath, lang, rate, pitch, volume);\n      console.log('OK ' + outPath);\n      console.log('SIZE ' + size);\n      process.exit(0);\n    } catch (e) {\n      lastErr = e;\n      if (isHardWorkerError(String((e && e.message) || e))) break;\n      if (attempt === 0) console.log('RETRY ' + String((e && e.message) || e).slice(0, 200));\n      if (attempt === 0) await new Promise(function (r) { setTimeout(r, 800); });\n    }\n  }\n  return fail(String(lastErr));\n}\n```\n\n</details>\n\n#### 缺口\n\n- 缺少固定文本集上的调用费用、资源、成功率和人工时间。\n  **影响**：无法比较Edge、Cloud与本地模型的单位合格朗读成本。\n  **进一步探讨**：固定文本长度、语言和设备，记录总尝试、成功播放、首音、资源、费用和人工恢复。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可复用设计与维护风险？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n可借鉴之处是 Host/Client 分层、长任务显式 jobId 与取消、短音频缓存失效后重合成、配置敏感项与 UI 偏好分层、错误提示和降级由用户控制。源码对超时、子进程退出、临时文件、自动播放和过期声音有专门分支。维护风险也明显：Host 和手写 Client 文件规模大，多个提供者、路由和设置都集中在少数文件；Edge 私有协议常量、宿主 slot/DOM 以及本地服务方言都是外部耦合。现有工具和 README 声称验证不等于本轮执行测试。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.mjs:160-215](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L160-L215)\n\nEdge子进程有重试、超时和错误分类。\n\n<details>\n<summary>查看原文（56行）</summary>\n\n```text\n    };\n    ws.onopen = function () {\n      const requestId = crypto.randomBytes(16).toString('hex');\n      const speechConfig = { context: { synthesis: { audio: { metadataoptions: { sentenceBoundaryEnabled: 'false', wordBoundaryEnabled: 'true' }, outputFormat: 'audio-24khz-48kbitrate-mono-mp3' } } } };\n      const ssml = '<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"' + lang + '\">' + '<voice name=\"' + xmlEscape(voice) + '\">' + '<prosody rate=\"' + xmlEscape(rate) + '\" pitch=\"' + xmlEscape(pitch) + '\" volume=\"' + xmlEscape(volume) + '\">' + xmlEscape(text) + '</prosody></voice></speak>';\n      ws.send('Content-Type:application/json; charset=utf-8' + CRLF + 'Path:speech.config' + CRLF + CRLF + JSON.stringify(speechConfig));\n      ws.send('X-RequestId:' + requestId + CRLF + 'Content-Type:application/ssml+xml' + CRLF + 'Path:ssml' + CRLF + CRLF + ssml);\n    };\n    setTimeout(function () {\n      if (!settled) {\n        settled = true;\n        if (errorTimer) { clearTimeout(errorTimer); errorTimer = null; }\n        try { ws.close(); } catch (e) {}\n        reject('timeout after 20000ms without turn.end (endpoint slow or blocked)');\n      }\n    }, 20000);\n  });\n}\nfunction findVoiceArgs() {\n  const args = process.argv;\n  const out = [];\n  for (let i = 1; i < args.length; i++) {\n    const a = args[i];\n    if (a === '--' || a === '-e') continue;\n    if (a.indexOf('.cjs') >= 0 || a.indexOf('.mjs') >= 0 || a.indexOf('edge-tts-worker') >= 0) continue;\n    out.push(a);\n  }\n  return out;\n}\nasync function main() {\n  const args = findVoiceArgs();\n  const voice = args[0] || 'zh-CN-XiaoxuanNeural';\n  const rate = args[1] || 'default';\n  const pitch = args[2] || 'default';\n  const volume = args[3] || 'default';\n  const text = (await readStdin()).trim();\n  if (!text) return fail('empty text');\n  const vparts = String(voice).split('-');\n  const lang = (vparts.length >= 2 ? vparts[0] + '-' + vparts[1] : 'zh-CN');\n  const outPath = path.join(os.tmpdir(), 'dsh-tts-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.mp3');\n  let lastErr = null;\n  for (let attempt = 0; attempt < 2; attempt++) {\n    try {\n      const size = await synthesizeOnce(voice, text, outPath, lang, rate, pitch, volume);\n      console.log('OK ' + outPath);\n      console.log('SIZE ' + size);\n      process.exit(0);\n    } catch (e) {\n      lastErr = e;\n      if (isHardWorkerError(String((e && e.message) || e))) break;\n      if (attempt === 0) console.log('RETRY ' + String((e && e.message) || e).slice(0, 200));\n      if (attempt === 0) await new Promise(function (r) { setTimeout(r, 800); });\n    }\n  }\n  return fail(String(lastErr));\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1-25](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/client.js#L1-L25)\n\n客户端是手写宿主模块加载器并声明slots依赖。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n// @memef1f1y/dsh-plugin-tts — Client half (browser bundle).\n// Hand-written in the harness module-loader format; `require` answers the\n// platform externals (react), everything else is inlined.\nwindow.__ModuleLoader__.load({\n  id: \"@memef1f1y/dsh-plugin-tts\",\n  factory: require => {\n    var module = { exports: {} };\n    var exports = module.exports;\n    Object.defineProperty(exports, Symbol.toStringTag, { value: \"Module\" });\n    let react = require(\"react\");\n\n    // Service dependencies (fiber inject waiting): the client runner creates\n    // the entry as ctx.plugin({ inject, apply }), so apply only runs after\n    // `slots` is available. Without this declaration, ctx.get(\"slots\") can be\n    // undefined at apply time and the whole UI silently no-ops (no read-aloud\n    // buttons, no auto-read toggle, no voice settings tab).\n    const inject = [\"slots\"];\n\n    // Bundle build tag: bump on every client fix so a console line proves\n    // WHICH code is actually running (rules out stale-bundle confusion).\n    const CLIENT_BUILD = \"2026-10-11.01-remove-dead-runtime-inject\";\n    const apply = ctx => {\n      const slots = ctx.slots ?? (typeof ctx.get === \"function\" ? ctx.get(\"slots\") : undefined);\n      if (!slots) throw new Error(\"[dsh-plugin-tts] slots service unavailable\");\n      try {\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:157-169](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L157-L169)\n\n作者概括Host/Client职责。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Architecture\n\n| Layer | Location | Role |\n|---|---|---|\n| Host | `lib/index.mjs` | Registers webServer routes: `/dsh-tts-api/speak` (synthesis / chunk queue, all providers), `/dsh-tts-audio/<id>` (audio bytes), `/dsh-tts-api/rvc-next` (next chunk / job cancel), `/dsh-tts-api/rvc-files` + `/rvc-compact-index` + `/rvc-packs*` (RVC service proxy / packs), `/dsh-tts-api/index-*` and `/dsh-tts-api/cosy-*` (local service proxy + config), `/dsh-tts-api/cloud-*` (Cloud key/usage/test), `/dsh-tts-api/notify` (approval-alert queue), `/dsh-tts-api/diagnose` (one-click diagnostics); runs a zero-dependency Edge worker via `node -e` |\n| Client | `lib/client.js` | Web Audio chunk player (sample-accurate joins, `<audio>` fallback) in `shell.overlay` + the UI entries (read-aloud button / auto-read toggle / settings panel); talks to the Host through `fetch` |\n\nThe TTS worker mirrors [node-edge-tts@1.2.10](https://github.com/SchneeHertz/node-edge-tts):\n`Sec-MS-GEC` query params (ticks rounded to the 5-minute boundary),\n`Sec-MS-GEC-Version=1-143.0.3650.75`, `Path:audio` binary framing, `xml:lang`\nderived from the voice locale, one retry on abnormal (1006) closures. Audio is\n`audio-24khz-48kbitrate-mono-mp3`.\n\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由当前贡献和限制可推导什么新方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可推导“数据流向收据驱动的语音路由”假设。插件可在每次朗读前显示或记录文本将留在本机、发往 Edge 还是发往 Cloud，本地服务不可用时要求按数据敏感级别确认回退，并把提供者、字符数、首音、取消与失败原因写入本地收据。相对当前全局开关，这可能让隐私和成本成为逐任务可核对条件，而不是设置页知识。最小验证用含敏感标记与普通文本的任务集，制造本地服务故障，比较误外发、恢复时间、用户确认负担和完成率；若提示负担显著且不减少误路由，则假设不成立。该方向未实现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:188-203](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L188-L203)\n\n当前回退会改变数据流向且默认关闭。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n- Synthesis / playback failures **surface a themed toast** (message read-aloud and\n  auto-read no longer fail silently; the preview panel keeps its inline error).\n  In RVC mode the error toast carries a one-click **\"read with Edge TTS instead\"**\n  action; with the opt-in toggle **\"auto-switch to Edge TTS when RVC fails\"** in\n  the RVC settings (off by default — RVC is fully local, auto-fallback sends the\n  text to Microsoft's endpoint), a failed RVC read silently retries with the RVC\n  base voice via Edge TTS and shows a warn toast.\n- **Smart chunking** never splits URLs / emails / decimals / versions (\"3.14\")\n  mid-token — hard cuts slide to word/punctuation boundaries, and a tiny trailing\n  sentence merges into the previous chunk instead of reading like a stutter.\n- **Approval voice alerts** (opt-in): the Host subscribes to the session/event\n  firehose (`approval/asked` / `approval/decided`), dedupes by approval id, and\n  the client polls `/dsh-tts-api/notify?s=N` — the first poll baseline-syncs the\n  cursor so a page refresh never replays stale alerts; announcements are silent\n  on failure (no error toasts while the agent loops).\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.mjs:802-825](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/index.mjs#L802-L825)\n\nHost按提供者分派短文本与分块任务。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n// edge/rvc/index: short text -> single URL, long text -> chunked job whose\n// sink is cloud synthesis per packet. No new playback chain.\n// Key lives in the Host file (~/.dsh/tts-rvc/settings.json, cloud.apiKey) and\n// NEVER touches localStorage; the client only sends provider + voice names.\n// Quota: local per-month char counting by voice tier (standard 4M,\n// wavenet/neural2/chirp3 1M). Official serviceusage/monitoring queries are\n// intentionally NOT enabled by default (needs SA JSON; 99% users won't have\n// it) — the usage endpoint reports local counts only.\n// ---------------------------------------------------------------------------\n\nconst CLOUD_TTS_DEFAULTS = {\n  voice: 'cmn-CN-Wavenet-A'\n};\nconst CLOUD_QUOTA_LIMITS = {\n  standard: 4000000,\n  wavenet: 1000000,\n  neural2: 1000000,\n  chirp3: 1000000\n};\n// Cloud synchronous synthesize hard limit is 5000 UTF-8 bytes; stay under it\n// with a safety margin. CJK packets are packed to ~1200 chars max\n// (≈3600 bytes), inside the required 800–1200 chars per packet.\nconst CLOUD_MAX_BYTES = 4500;\nconst CLOUD_PACK_CHARS = 1200;\n```\n\n</details>\n\n#### 缺口\n\n- 数据流向收据尚未实现或实验。\n  **影响**：不能把假设计入插件已有贡献。\n  **进一步探讨**：实现仅记录不拦截的影子收据，再测误路由、恢复和提示负担。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察后小范围试用，适合明确需要消息朗读、愿意核对文本流向并能维护所选提供者的 DSH Web 用户。先只启用 Edge，使用非敏感短文本验证按钮、停止、自动播放和错误提示；再按需求逐一加入本地音色或 Cloud，不要一次启用全部路径。需要纯本地隐私的人应关闭任何自动 Edge 回退并验证网络边界。成功标准是固定文本完整朗读、可及时取消、无重复/漏段且故障可解释；出现未经确认外发、持续断句/卡死、GPU任务取消不释放或宿主升级后入口失效，应停用并回到系统朗读或单一服务。源码级证据不足以推荐持续安装。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:61-108](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/README.md#L61-L108)\n\n作者给出交互能力及可选提供者。\n\n<details>\n<summary>查看原文（48行）</summary>\n\n```text\n      picker/refresh/upload + clean-text toggle + emotion control + sampling\n      params — see the [Index-TTS2 Guide](docs/INDEX-TTS2-GUIDE.md)\n    - **CosyVoice config**: service URL (default 7890) + prompt-audio picker/refresh/upload +\n      prompt transcript (required, in order and in full) + speed (0.5–2.0) + seed (0 = random) —\n      see the [CosyVoice Guide](docs/COSYVOICE-GUIDE.md)\n    - **Cloud config**: API Key (Host-file-only, write-only input) + Project ID (optional) +\n      test button + this month's local usage per tier (Standard 4M / Wavenet-Neural2-Chirp3 1M) —\n      see the [Cloud Guide](docs/CLOUD-GUIDE.md)\n   - **Voice packs**: one-click install of voices from a registry\n   - **Preview**: type text and press the play (triangle) button — a spinning\n     loader shows while it is synthesizing/playing (click again to stop),\n     failures show an inline message.\n4. **RVC custom voices**: read with your own trained RVC models, computed\n   locally (index-free mode, advanced params — see the\n   [RVC guide](docs/RVC-GUIDE.md)).\n5. **Gapless long reads**: adaptive chunked progressive playback — probe-calibrated\n   chunk size, play-while-converting, Web Audio sample-accurate joins, no gaps\n   between chunks (see the [design doc](docs/adaptive-chunked-playback.md)).\n6. **Mini player** while reading: pause / resume + playback speed (1x / 1.25x /\n   1.5x) on the message's action row; chunked long reads surface a visible\n   \"chunk x/y\" counter.\n7. **Themed tooltips & RVC onboarding**: hover tooltips use the app's theme\n   tokens (`--dsw-*`); the RVC panel opens with a first-time 3-step guide\n   (per-OS startup commands + one-click diagnostics).\n8. **Download audio**: a download button on each message saves the synthesized\n    audio — MP3 for Edge/Cloud reads, WAV for local (RVC/Index-TTS2/CosyVoice)\n    reads — reusing the in-session cache so a just-read message downloads\n    instantly. Long chunked reads have no single output file yet and report\n    \"not supported\" instead of starting a wasteful re-synthesis.\n9. **Read selected text**: selecting text in a message shows a floating\n   \"朗读选中\" chip — click it to read just that selection.\n10. **Streaming long reads (Edge too)**: long plain-Edge reads also stream\n    progressively (first chunk plays while the rest synthesize), reusing the\n    gapless chunked pipeline — no more waiting for full synthesis.\n11. **Approval voice alerts**: optional voice broadcast of Agent approval events.\n     When enabled, an approval request (`approval/asked`) is announced aloud and\n     **interrupts the current read** (the agent is waiting on the decision); an\n     approval result (`approval/decided`) is announced only when idle. Alerts\n     always use Edge TTS with their own alert voice (independent of the RVC\n     service), are deduplicated by approval id, and off by default. (Scope note:\n     task-completion announcements are deferred to a later phase — the jobs\n     subsystem has no session-event channel this plugin can observe yet.)\n12. **Clean reads, quiet RVC**: message Markdown (code blocks, tables, links,\n    quotes, task lists) is cleaned before reading — no symbol soup; an opt-in\n    \"read raw Markdown symbols\" toggle keeps verbatim reads for source code.\n    With the Edge provider the RVC panel stays fully hidden behind a single\n    \"need a cloned voice?\" entry, so casual reading is zero-config.\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:2280-2315](https://github.com/1624318455/dsh-plugin-tts/blob/5b094011dfba35a1d30d44a18d2b411654e8fff8/lib/client.js#L2280-L2315)\n\n客户端发起合成并处理请求失败。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n          textLen: String(text).length,\n          ms: Date.now() - t0,\n          ok: !!ok,\n          error: String(error || \"\").slice(0, 200),\n        }, extra || {}));\n        try {\n          const response = await fetch(\"/dsh-tts-api/speak\", {\n            method: \"POST\",\n            headers: { \"Content-Type\": \"application/json\" },\n            body: JSON.stringify(payload),\n            ...(edgeOnly ? { signal: ctrl.signal } : {}),\n          });\n          const result = await response.json();\n          logSpeak(!(result && result.error), result && result.error, { cached: !!(result && result.cached) });\n          return result;\n        } catch (e) {\n          if (edgeOnly && e && e.name === \"AbortError\") {\n            logSpeak(false, \"abort-timeout-55s\");\n            throw new Error(t(\"err.synthTimeout\"));\n          }\n          logSpeak(false, (e && e.message) || e);\n          throw e;\n        } finally {\n          if (timer) clearTimeout(timer);\n        }\n      }\n\n      async function fetchNextChunk(jobId, token) {\n        const ctrl = new AbortController();\n        const timer = setTimeout(() => ctrl.abort(), 200000);\n        try {\n          const r = await fetch(\n            \"/dsh-tts-api/rvc-next?job=\" + encodeURIComponent(jobId),\n            { signal: ctrl.signal },\n          );\n          return await r.json().catch(() => ({ done: true }));\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9520933e92e1ee480a695ceb40f4f22a3f393e9b59c2cd89f1f0aabf7de29454。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 18 | 3403 | — | — | 44199 |\n| .js | source | 1 | 7165 | 6548 | 659 | — |\n| .mjs | source | 3 | 3703 | 3154 | 479 | — |\n| .mjs | test | 9 | 2486 | 2043 | 360 | — |\n| .md | test | 1 | 45 | — | — | 626 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 消息朗读 | 手动、自动或选中内容播放 | DSH web与浏览器音频可用 |\n| 长文本播放 | 渐进分块、暂停、调速和取消 | 听感与段间隙未实测 |\n| 多语音后端 | 在线或本地音色选择 | 各自网络、密钥、服务或模型 |\n| 下载与缓存 | 保存短音频并复用会话缓存 | 长分块读不导出单文件 |\n| 诊断与提醒 | 检查服务并播报审批事件 | 提醒默认关闭，任务完成未覆盖 |\n\n## 工程亮点\n\nHost/Client职责和显式job取消值得复用，设置敏感项与UI偏好分层也降低浏览器数据丢失影响。风险是两个主文件规模大、多提供者与路由集中、Edge私有协议常量和宿主slot均是维护热点；静态故障分支不等于运行可靠。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.mjs、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码检查 README、包清单、Host 路由/worker/分块、Client slot/播放路径；未穷尽所有设置字段、第三方服务协议或音频质量，不运行目标。\n- 下一步：最小验证固定宿主、设备和中英长短文本，测首音、完整率、段间隙、取消延迟、资源与人工恢复；制造本地服务故障并核对是否外发。\n",
+        "metadata": {
+            "repository": "1624318455/dsh-plugin-tts",
+            "repository_id": 1334773156,
+            "captured_at": "2026-10-22T15:13:21.835Z",
+            "window_start": "2026-09-22T15:13:21.835Z",
+            "stars": 34,
+            "pushed_at": "2026-10-13T02:50:33Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tts%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5A0A:1B9EB5:A3A784:AFF5C4:6ADA2814 and timestamp 2026-10-22 15:13:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tts%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5B18:1B9EB5:A3A890:AFF6DE:6ADA2815 and timestamp 2026-10-22 15:13:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tts%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A21.835Z..2026-10-22T15%3A13%3A21.835Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5C44:324345:97077B:A355F4:6ADA2816 and timestamp 2026-10-22 15:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tts%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A21.835Z..2026-10-22T15%3A13%3A21.835Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5D48:1C3985:A71FD5:B370E2:6ADA2817 and timestamp 2026-10-22 15:13:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-tts%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A21.835Z..2026-10-22T15%3A13%3A21.835Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5E6C:2BA204:A21B7F:AE6871:6ADA2818 and timestamp 2026-10-22 15:13:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@memef1f1y/dsh-plugin-tts",
+                "captured_at": "2026-10-22T15:13:28.959Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2693,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40memef1f1y%2Fdsh-plugin-tts",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-25T02:28:38.713Z",
+                    "captured_at": "2026-10-22T15:13:28.959Z",
+                    "source_url": "https://registry.npmjs.org/%40memef1f1y%2Fdsh-plugin-tts",
+                    "error": null,
+                    "latest_version": "0.6.7",
+                    "latest_published_at": "2026-10-13T02:46:38.569Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1334773156:root",
+            "repository": "1624318455/dsh-plugin-tts",
+            "path": "",
+            "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "fingerprints": {
+                "directory": "501664f9856f9f75ae5e954c9c9bf44d0bc3a62925e6c0f845d012d4b8366474",
+                "code": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
+                "maintenance": "ec71209f2866ad0a1b5c5e5ed6f95b258a1dd7b4698ecf95656b000e9ef889b0"
+            }
+        }
+    }
+}

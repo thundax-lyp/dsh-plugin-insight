@@ -7,15 +7,15 @@
             "id": "github:1360150486:root",
             "repository": "PerryLink/dsh-plugin-doctor",
             "path": "",
-            "revision": "ba3f531d46158f3ab1f6170a951405637cac47ed",
+            "revision": "65d069a43b54b0766d6eae5d411c1d481a089847",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "74bc4e694e9f38a52bb6e31415765b618d57c00dd1ac0dc18c4584b795836f5c",
-                "code": "ba3f531d46158f3ab1f6170a951405637cac47ed",
-                "maintenance": "185c38f319528abf4dd0bd6077b7ebd5d05b78c5cff4c4ac88cc37091e04c124"
+                "code": "65d069a43b54b0766d6eae5d411c1d481a089847",
+                "maintenance": "4ca8495dbdc2c8493a65c2e9806cf053f32e59d2d71b3a8e9cccec2c964e7871"
             }
         }
     }

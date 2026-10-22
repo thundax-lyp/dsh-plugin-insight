@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "882c6f2eb76fca825556d40bc6a58eb0",
+    "identity": "github:1415767842:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1415767842:root",
+            "repository": "27painter/dsh-moli",
+            "path": "",
+            "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5bdc4ce6c9aba72a67c14dfbbbd479069807650643da0f41dbca33f188089b36",
+                "code": "16b5886d35827047e3e8736da356c8c55c9ae564",
+                "maintenance": "86cb627cc1bffc3a9518c5378ace631d6eb3c3397eda4c5f747cfe7a353797fa"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "74d3bc969cf62636b50d14d2d68c525a",
+    "identity": "github:1412896722:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412896722:root",
+            "repository": "985451842/dsh-snapshot-manager",
+            "path": "",
+            "revision": "61ac9bcfee6c9e991eb7655b6a4d3d7d84721bae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f2434435132b8b1704b019e07b20fd806267a57b0847d6ac419e136baa753a05",
+                "code": "61ac9bcfee6c9e991eb7655b6a4d3d7d84721bae",
+                "maintenance": "a006a1c845bbd05efeedd157d878629b7ec842c10877e588d96982f5c9053aa6"
+            }
+        }
+    }
+}

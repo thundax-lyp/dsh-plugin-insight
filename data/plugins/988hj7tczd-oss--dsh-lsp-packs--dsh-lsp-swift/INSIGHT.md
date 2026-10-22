@@ -167,7 +167,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**Swift LSP 配置包怎样接入 DSH 的 Swift 导航，构建索引和工具链选择怎样限制实际交付？
+**插件研究总目标**：Swift LSP 配置包怎样接入 DSH 的 Swift 导航，构建索引和工具链选择怎样限制实际交付？
 
 <a id="research-q01"></a>
 
@@ -175,7 +175,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ### Q01 · 对已有 Swift 工程的开发者，本包相对既有工具提供什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -275,8 +275,8 @@ export const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {
 #### 缺口
 
 - 没有目标 Swift 项目与 IDE/手工接线的同条件对照
-  **影响：**不能量化减少配置时间或导航收益
-  **进一步探讨：**在同一 SwiftPM 工程比较配置时长和四操作正确性
+  **影响**：不能量化减少配置时间或导航收益
+  **进一步探讨**：在同一 SwiftPM 工程比较配置时长和四操作正确性
 
 <a id="research-q02"></a>
 
@@ -284,7 +284,7 @@ export const DEFAULT_EXTENSION_TO_LANGUAGE: Readonly<Record<string, string>> = {
 
 ### Q02 · provider 怎样注册，异常时怎样影响 Swift 查询？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -413,8 +413,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 未核固定共享底座的真实启动、取消与错误传播
-  **影响：**不能确认目标宿主中的进程复用、故障隔离和限制效果
-  **进一步探讨：**固定共享底座版本，逐阶段注入缺命令、配置失败和 server 初始化错误
+  **影响**：不能确认目标宿主中的进程复用、故障隔离和限制效果
+  **进一步探讨**：固定共享底座版本，逐阶段注入缺命令、配置失败和 server 初始化错误
 
 <a id="research-q03"></a>
 
@@ -422,7 +422,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q03 · SourceKit 可启动为何仍不能证明四类导航都可用？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -557,8 +557,8 @@ describe.skipIf(!installed)('dsh-lsp-swift real server (sourcekit-lsp)', () => {
 #### 缺口
 
 - 没有固定工具链和真实 SwiftPM 项目的运行结果
-  **影响：**无法给出四操作命中率或索引准备时间
-  **进一步探讨：**分别在成功构建、构建失败和工具链不一致三组项目中记录四操作及 skip 原因
+  **影响**：无法给出四操作命中率或索引准备时间
+  **进一步探讨**：分别在成功构建、构建失败和工具链不一致三组项目中记录四操作及 skip 原因
 
 <a id="research-q04"></a>
 
@@ -566,7 +566,7 @@ describe.skipIf(!installed)('dsh-lsp-swift real server (sourcekit-lsp)', () => {
 
 ### Q04 · 首次使用、持续索引和失败恢复需要哪些外部条件？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -706,8 +706,8 @@ or compose the row directly (name resolved from the installed package):
 #### 缺口
 
 - 未验证当下包可取得性和目标项目的构建/索引成本
-  **影响：**不能承诺安装成功或估算单位查询负担
-  **进一步探讨：**先核实际 registry/本地包方式，再在固定机器记录构建、索引、查询及失败恢复时间和资源
+  **影响**：不能承诺安装成功或估算单位查询负担
+  **进一步探讨**：先核实际 registry/本地包方式，再在固定机器记录构建、索引、查询及失败恢复时间和资源
 
 <a id="research-q05"></a>
 
@@ -715,7 +715,7 @@ or compose the row directly (name resolved from the installed package):
 
 ### Q05 · 什么工程取舍可借鉴，并可推导怎样的未验证改进？
 
-**研究主题：**工程质量与复用、新假设与验证
+**研究主题**：工程质量与复用、新假设与验证
 
 #### 完整回答
 
@@ -804,8 +804,8 @@ export function resolveServerConfig(config: Config): ResolvedServerConfig {
 #### 缺口
 
 - 索引就绪信号与分层提示均未在此版本实现或验证
-  **影响：**不能声称新提示已经减少排障
-  **进一步探讨：**在固定 SwiftPM 环境原型化四级状态，测真实原因、提示误报及人工恢复时间
+  **影响**：不能声称新提示已经减少排障
+  **进一步探讨**：在固定 SwiftPM 环境原型化四级状态，测真实原因、提示误报及人工恢复时间
 
 <a id="research-q06"></a>
 
@@ -813,7 +813,7 @@ export function resolveServerConfig(config: Config): ResolvedServerConfig {
 
 ### Q06 · 现有证据支撑何种采用结论？
 
-**研究主题：**采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 

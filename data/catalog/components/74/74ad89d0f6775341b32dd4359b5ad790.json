@@ -7,14 +7,14 @@
             "id": "github:1411361485:root",
             "repository": "Wahwayhale/dsh-connect-doubao",
             "path": "",
-            "revision": "eee9251394dad9237850e6af8520399360d0be82",
+            "revision": "cc8405ae8e31b508cad09d06b1ba761645b1bc8a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "aebf0ead2c86ec91b0204c52aad59270916b79a3fbeadd3440cf3c54822ae884",
-                "code": "eee9251394dad9237850e6af8520399360d0be82",
-                "maintenance": "c638ffbed1c7a72f8563ff73d772b16e3a1319a7eddd117a0a84cab087b16407"
+                "code": "cc8405ae8e31b508cad09d06b1ba761645b1bc8a",
+                "maintenance": "be5350c7fd4435b067bb0b443c3fc5fa10386abfee0a2956aabcc252c963f3cf"
             }
         }
     }

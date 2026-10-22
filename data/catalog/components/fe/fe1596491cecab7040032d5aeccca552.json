@@ -469,14 +469,14 @@
             "repository": "9087/dsh-diff-approval",
             "path": "",
             "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "d97bec8270d292186d6c47291842b630e0008cc04e030d720158dc450b15c42d",
                 "code": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
                 "maintenance": "dee6ee876cc0afacacbccc2721fbfa8083d92ee3610b4bbf9aaef34769e700f0"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

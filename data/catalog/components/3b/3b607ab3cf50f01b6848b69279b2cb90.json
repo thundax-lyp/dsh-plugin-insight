@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3b607ab3cf50f01b6848b69279b2cb90",
+    "identity": "github:1336106328:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336106328:root",
+            "repository": "AKS1st/dsh-skill-manager",
+            "path": "",
+            "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ffa4313558ea1c8f0ed5b88853fd3b86a7adc159ecf57c547df6fe73b075c558",
+                "code": "fb452031031ea50a3287292d22b54e765d1039dc",
+                "maintenance": "d0cfaa29c13590ba616165b081b691119ca37962952928f656890cac96e32f64"
+            }
+        }
+    }
+}

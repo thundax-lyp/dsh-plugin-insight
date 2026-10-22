@@ -7,14 +7,14 @@
             "id": "github:1422349949:root",
             "repository": "SAXEM1997/dsh-cherry-bridge",
             "path": "",
-            "revision": "d7c875976d4cdf0f006720e198a238944601c251",
+            "revision": "68fd8a0afc43c02e5d542a307c1baa9082d4d610",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "80fe1c867d5bef2cc78bc905acbd1748013acda5f716d36103d6372e8a50ecf5",
-                "code": "d7c875976d4cdf0f006720e198a238944601c251",
-                "maintenance": "ec20ebe62b61c2986453c62034cbdf520f63c014a0b3212131375f3f5245cdb6"
+                "code": "68fd8a0afc43c02e5d542a307c1baa9082d4d610",
+                "maintenance": "36bc9f9543c0dc915dd399c9aea8ef8b3029a42452420a2727a1c291c949b948"
             }
         }
     }

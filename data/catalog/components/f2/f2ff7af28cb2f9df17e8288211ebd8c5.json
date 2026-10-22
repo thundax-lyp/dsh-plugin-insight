@@ -7,14 +7,14 @@
             "id": "github:1381753188:root",
             "repository": "Rice00/dsh-loupe",
             "path": "",
-            "revision": "308bb6da877fc2ce46f162f851cbfd29981da179",
+            "revision": "9c0003830d731749aca9b02d4ae7b36ba45d1241",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b3cdc8a1b4ac015f189a58714ab777a3a1f61043021b322b6282d39de0d312fb",
-                "code": "308bb6da877fc2ce46f162f851cbfd29981da179",
-                "maintenance": "3fb3fd5be55215690d7f57ab6963adc6fac84dd3607b39f85605ab4c3e73e79f"
+                "code": "9c0003830d731749aca9b02d4ae7b36ba45d1241",
+                "maintenance": "616c31a9321f9d9e55e918076d02787061a72939c96a3045b367199607bd03ff"
             }
         }
     }

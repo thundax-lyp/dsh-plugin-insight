@@ -7,15 +7,15 @@
             "id": "github:1333961389:root",
             "repository": "bowenliang123/dsh-context",
             "path": "",
-            "revision": "77749653063ab282287583c3de02fa7da092c335",
+            "revision": "ede472040b9fda6d36398ba3773bd47305650476",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "76d4915935bfe6d291de9aa9e7e2c43916b75ab1a93fcd069b065a45e0db2d1d",
-                "code": "77749653063ab282287583c3de02fa7da092c335",
-                "maintenance": "15715689d12145075f18f899ec5c619ee5eee42e5f123b24587e694124c87528"
+                "code": "ede472040b9fda6d36398ba3773bd47305650476",
+                "maintenance": "f215ae2dac1c4b3309e426273289769c1894074f8ab67f727e63abe8634d3f05"
             }
         }
     }

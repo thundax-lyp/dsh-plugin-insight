@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[b759f32](https://github.com/1624318455/dsh-plugin-tavily/tree/b759f328e21c7dbc24da5f2266e84c2da4d227f8)
+分析版本：[d15e6da](https://github.com/1624318455/dsh-plugin-tavily/tree/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tavily)
 <!-- END META -->
 
 > **实现功能**：接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。
@@ -40,7 +40,7 @@
 
 > **用途**：在 DSH 中用 Tavily 网页检索并可配置页面提取与费用控制。
 
-DSH 内建 DeepSeek web_search 或单独配置 Tavily 调用。
+bundle patch 将 web.searchProvider 设为 tavily；插件注册 Tavily 搜索、Tavily Extract、Firecrawl fetch provider，并安装配置 section、probe/status 路由。提供参数卡、引擎切换、重试、缓存和多密钥轮换。网页 GUI 还受宿主 apiproxy WEB_SETTINGS_NAMESPACES allowlist 限制，README 让用户补丁修改安装的宿主文件；因此当前提交的“安装即用 GUI”取决于该手工补丁和宿主版本。
 
 <a id="detail-section-3"></a>
 
@@ -119,18 +119,18 @@ DSH 内建 DeepSeek web_search 或单独配置 Tavily 调用。
 
 **核查状态**：已检查源码。
 
-静态源码显示无 key search 与说明不符；当缓存启用、非空 cacheFile 已配置、成功结果入缓存且写盘成功时，缓存 JSON 键含原始 API key。GUI 需宿主 allowlist 补丁；未做真实调用或观察到实际泄漏。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、src/index.ts、src/provider.ts、src/client/index.ts、src/client/TavilyCard.tsx、tests/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 cordis.patch.yml、src/index.ts、README.md、src/provider.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：静态审阅固定提交的源码和文档；未调用 Tavily/Firecrawl 或运行宿主。 普通安装、宿主加载及目标测试属本轮范围边界，具体机制/效果未知仍在逐题缺口保留。 父侧已接受上述条件性源码风险及 not_recommended 依据；未声称真实密钥泄漏。
-- 下一步：隔离无 key 搜索、cacheFile 凭据扫描、GUI allowlist、路由认证/CSRF、付费 probe 计费。
+- 下一步：进一步探讨应按本项缺口执行：隔离测试无 key 搜索及 cacheFile 内容；受控 Profile/测试凭据验证访问控制、消耗和回退
 
 **分析版本**
 
 - **仓库**：[1624318455/dsh-plugin-tavily](https://github.com/1624318455/dsh-plugin-tavily)
-- **版本号**：0.6.2（[固定提交 b759f32](https://github.com/1624318455/dsh-plugin-tavily/tree/b759f328e21c7dbc24da5f2266e84c2da4d227f8)）
-- **版本日期**：2026-09-12（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.7.1（[固定提交 d15e6da](https://github.com/1624318455/dsh-plugin-tavily/tree/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,7 +140,7 @@ DSH 内建 DeepSeek web_search 或单独配置 Tavily 调用。
 
 对缓存 key 使用不可逆标识、明确无 key 搜索路径并以正式扩展机制显示 GUI，可改善可用性和凭据边界；待验证，详见[Q02](#research-q02)。
 
-隔离无 key 搜索、cacheFile 凭据扫描、GUI allowlist、路由认证/CSRF、付费 probe 计费。
+进一步探讨应按本项缺口执行：隔离测试无 key 搜索及 cacheFile 内容；受控 Profile/测试凭据验证访问控制、消耗和回退
 
 <a id="detail-section-9"></a>
 
@@ -151,20 +151,20 @@ DSH 内建 DeepSeek web_search 或单独配置 Tavily 调用。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .cjs | source | 1 | 2690 | 2395 | 411 | — |
-| .mjs | source | 3 | 1734 | 1330 | 399 | — |
-| .md | source | 2 | 601 | — | — | 9088 |
-| .ts | source | 10 | 4299 | 2914 | 1152 | — |
+| .cjs | source | 1 | 2733 | 2410 | 440 | — |
+| .mjs | source | 2 | 1646 | 1240 | 410 | — |
+| .md | source | 2 | 602 | — | — | 9283 |
+| .ts | source | 10 | 4500 | 2970 | 1289 | — |
 | .tsx | source | 3 | 1002 | 852 | 131 | — |
-| .mjs | test | 5 | 812 | 556 | 200 | — |
+| .mjs | test | 5 | 930 | 637 | 239 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily/issues?q=is%3Aissue+created%3A2026-09-22T07%3A33%3A21.435Z..2026-10-22T07%3A33%3A21.435Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A33%3A21.435Z..2026-10-22T07%3A33%3A21.435Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily/issues?q=is%3Aissue+is%3Aopen)
 
-
+暂未获取：近30天新建、近30天关闭。
 
 统计日期：2026-10-22。
 
@@ -172,7 +172,7 @@ DSH 内建 DeepSeek web_search 或单独配置 Tavily 调用。
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 Tavily 搜索/提取接入、keyless 声明、持久缓存凭据及宿主 GUI 前提。
+**插件研究总目标**：核实 Tavily 搜索/提取接入、keyless 声明、持久缓存凭据及宿主 GUI 前提。
 
 <a id="research-q01"></a>
 
@@ -180,7 +180,7 @@ DSH 内建 DeepSeek web_search 或单独配置 Tavily 调用。
 
 ### Q01 · 搜索/提取和 GUI 实际接入路径是什么？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -188,9 +188,9 @@ bundle patch 将 web.searchProvider 设为 tavily；插件注册 Tavily 搜索�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[cordis.patch.yml:1-16](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/cordis.patch.yml#L1-L16)
+**依据 1 · 源码核查**：[cordis.patch.yml:1-16](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/cordis.patch.yml#L1-L16)
 
-选主搜索并插入插件。
+当前固定版本复核。选主搜索并插入插件。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -211,129 +211,129 @@ bundle patch 将 web.searchProvider 设为 tavily；插件注册 Tavily 搜索�
 
 - insert:
     - id: web-search-tavily
-      name: '@dsh-external/dsh-plugin-tavily'
+      name: '@memef1f1y/dsh-plugin-tavily'
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:364-438](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/index.ts#L364-L438)
+**依据 2 · 源码核查**：[src/index.ts:364-438](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/index.ts#L364-L438)
 
-三 provider、设置节与路由。
+当前固定版本复核。三 provider、设置节与路由。
 
 <details>
 <summary>查看原文（75行）</summary>
 
 ```text
-export function apply(ctx: Context, config: Config): void {
-  const entry = config
-  let current: () => Config = () => config
-  installSettingsSection(ctx, WEB_SEARCH_TAVILY_SETTINGS_NAMESPACE, Config, config, {
-    setSource: (source) => {
-      current = source
+function deepseekSearch(ctx: Context): DelegateSearch {
+  return async (request: WebSearchRequest, signal?: AbortSignal): Promise<WebSearchResult | undefined> => {
+    const web = ctx.web as unknown as { searchProviders?: Map<string, WebSearchProvider> }
+    const providers = web.searchProviders
+    if (providers === undefined) return undefined
+    const direct = providers.get('deepseek')
+    const secondary = direct ?? [...providers.values()].find(provider => (
+      provider.id !== TAVILY_PROVIDER_ID && provider.id.includes('deepseek') && provider.available()
+    ))
+    if (secondary === undefined || !secondary.available()) return undefined
+    return secondary.search(request, signal)
+  }
+}
+
+/**
+ * Resolve the web seam's configured search-provider id (`config.searchProvider`
+ * ?? `DSH_WEB_SEARCH_PROVIDER`), or `undefined` when selection is left to the
+ * seam's auto-selection rules.
+ *
+ * This is an informational read of a runtime-internal field; it never mutates
+ * anything and is only used to warn when the active provider is not Tavily.
+ */
+function configuredSearchProviderId(ctx: Context): string | undefined {
+  const web = ctx.web as unknown as { searchProviderId?: string }
+  return web.searchProviderId
+}
+
+/**
+ * Project the resolved section into options for the optional Firecrawl fetch
+ * provider. Same priority contract as {@link resolveOptions}: yaml/composition
+ * entry > WebUI section > code defaults. Firecrawl only answers URL retrieval
+ * (the fetch seam); search always stays on Tavily.
+ * @param ctx - plugin context supplying the credential plane.
+ * @param config - the currently authoritative settings-section value.
+ * @param entry - the plugin's composition entry.
+ * @returns options for one Firecrawl fetch.
+ */
+function resolveFirecrawlOptions(ctx: Context, config: Config, entry: Config): FirecrawlProviderOptions {
+  const effective = { ...config, ...definedConfig(entry) }
+  const apiKeyEnv = credentialRef(effective.firecrawlApiKeyEnv ?? FIRECRAWL_DEFAULT_API_KEY_ENV)
+  const literalKey = effective.firecrawlApiKey !== undefined && effective.firecrawlApiKey.length > 0
+    ? effective.firecrawlApiKey
+    : undefined
+  return {
+    ...literalKey === undefined ? {} : { apiKey: literalKey },
+    resolveApiKey: async () => {
+      const credentials = ctx.get('credentials')
+      if (credentials !== undefined) return (await credentials.resolve(apiKeyEnv))?.value
+      const ambient = process.env[apiKeyEnv]
+      return ambient !== undefined && ambient.length > 0 ? ambient : undefined
     },
-    // The registration carries no resolved value: the provider projects the
-    // section per search, so a committed change needs no re-registration.
-    onChange: () => {},
-  })
+    apiKeyEnv,
+    baseURL: effective.firecrawlBaseURL ?? FIRECRAWL_DEFAULT_BASE_URL,
+    timeout: effective.timeout ?? TAVILY_DEFAULT_TIMEOUT,
+    ...effective.debug !== undefined ? { debug: effective.debug } : {},
+    log: (message: string) => { ctx.logger('dsh-plugin-tavily').info(message) },
+  }
+}
+
+/** Register the Tavily search provider with `ctx.web`. */
+export function apply(ctx: Context, config: ParsedConfig): void {
+  // The composition entry as yaml declared it: read once, through the volatile
+  // wrappers, so the resolve step can let yaml win over a WebUI value for the
+  // fields the file actually set.
+  const entry = readConfig(config)
+  // Every provider below reads the section through this thunk, per operation.
+  // In dsh 0.2.x a settings edit mutates the live volatile references in place,
+  // so nothing needs re-registering when the user saves: the next search simply
+  // sees the new value.
+  const current = (): Config => readConfig(config)
   const provider = new TavilySearchProvider(
     () => resolveOptions(ctx, current(), entry),
     // When the card's engine switch is `deepseek`, answer through the official
     // DeepSeek provider (the one registered by dsh-web-search-deepseek).
     () => deepseekSearch(ctx),
-  )
-  ctx.web.registerSearchProvider(provider)
-  // Dual-half: also register a Tavily Extract-backed fetch provider. Selecting
-  // it is opt-in via `fetchProvider: tavily-extract` (or DSH_WEB_FETCH_PROVIDER).
-  ctx.web.registerFetchProvider(
-    new TavilyExtractProvider(() => resolveOptions(ctx, current(), entry)),
-  )
-  // Optional second fetch provider: Firecrawl-backed page retrieval, inert
-  // until `fetchProvider: firecrawl` is selected AND its own key resolves.
-  ctx.web.registerFetchProvider(
-    new FirecrawlFetchProvider(() => resolveFirecrawlOptions(ctx, current(), entry)),
-  )
-  // Server-side probe so the card can test a stored key (browsers cannot read
-  // stored secrets back). POST /api/tavily-probe { apiKey?, clearKey? }.
-  ctx.webServer.register({
-    kind: 'exact',
-    path: '/api/tavily-probe',
-    handler: async (req, res) => {
-      if (req.method !== 'POST') {
-        sendJson(res, 405, { ok: false, code: 'other', error: 'method not allowed' })
-        return
-      }
-      try {
-        const body = await readJsonBody(req)
-        const draft = typeof body.apiKey === 'string' ? body.apiKey : undefined
-        const clearKey = body.clearKey === true
-        res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-        res.end(JSON.stringify(await provider.probe(draft, clearKey)))
-      } catch (error) {
-        const detail = error instanceof Error ? error.message : String(error)
-        if (detail === 'invalid JSON body' || detail === 'body too large') {
-          sendJson(res, 400, { ok: false, code: 'other', error: detail })
-          return
-        }
-        sendJson(res, 200, { ok: false, code: 'other', error: detail })
-      }
-    },
-  })
-  // Server-side status for the card's indicator: GET /api/tavily-status reads
-  // the stored key (browsers cannot read it) and Tavily GET /usage — which
-  // costs no search credits — then reports ok/low/error in a structured payload.
-  ctx.webServer.register({
-    kind: 'exact',
-    path: '/api/tavily-status',
-    handler: async (req, res) => {
-      if (req.method !== 'GET') {
-        sendJson(res, 405, { ok: false, code: 'other', error: 'method not allowed' })
-        return
-      }
-      try {
-        res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-        res.end(JSON.stringify(await provider.status()))
-      } catch (error) {
-        const detail = error instanceof Error ? error.message : String(error)
-        sendJson(res, 200, { ok: false, code: 'other', error: detail, checkedAt: Date.now() })
-      }
-    },
-  })
-  warnIfNotActiveSearchProvider(ctx)
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:216-237](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/README.md#L216-L237)
+**依据 3 · 作者声明**：[README.md:216-237](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/README.md#L216-L237)
 
-GUI allowlist 手工补丁。
+当前固定版本复核。GUI allowlist 手工补丁。
 
 <details>
 <summary>查看原文（22行）</summary>
 
-````text
+```text
+| `includeFavicon` | `false` | include the favicon URL per result | ✓ |
+| `includeDomains` | `[]` | only include these domains (allow list) | ✓ |
+| `excludeDomains` | `[]` | exclude these domains (deny list) | ✓ |
+| `country` | unset | boost results from one country (general topic) | ✓ |
+| `numResults` | `5` | **deprecated alias** for `maxResults` | no (use `maxResults`) |
+
+`apiKeyEnv` stays config-only deliberately: it is an advanced wiring detail. Values saved from the GUI land in the profile's `web-search-tavily` entry (`~/.dsh/profiles/web/cordis.patch.yml`). Settings edits apply live — the provider re-reads the section for every operation, so no restart or re-registration is needed after changing a value from the card or the file.
+
+## Requirements
+
+- **dsh 0.2.0-rc.2 or newer.** The plugin targets the 0.2.x plugin API: the settings form is declared by marking the plugin's `Config` schema fields `.volatile()`, the card reads its section through `ctx.configForms`, and the card registers into the Plugins page's `plugins.item` slot. Older 0.1.x runtimes used a different settings contract and are not supported.
+- **Tavily API key** — paste it into the card, or store `TAVILY_API_KEY` in the credentials store.
+
 ## Platform note (web GUI card visibility)
 
-The web GUI serves a plugin's settings section to the browser only when its namespace is on the apiproxy allowlist (`WEB_SETTINGS_NAMESPACES` in `@deepseek-ai/dsh-host-apiproxy`). As of `0.1.0-rc.6` that list is hardcoded and the "let a plugin expose its own configuration" mechanism is deferred, so a freshly installed third-party card is filtered out even though the section is registered host-side. To make the **Web search (Tavily)** card render, add the namespace to the allowlist in your installed copy and restart dsh:
+**No patch is needed on dsh 0.2.x.** Earlier releases (0.1.x) served a plugin's settings section to the browser only when its namespace was on the apiproxy allowlist, so a third-party card had to be unblocked by hand. That mechanism is gone: the 0.2.x settings domain serves any plugin entry that declares a volatile config schema, and the card registers itself under the Plugins page.
 
-```js
-// ~/.dsh/profiles/node_modules/@deepseek-ai/dsh-host-apiproxy/lib/index.js
-// in the WEB_SETTINGS_NAMESPACES array:
-"web-search-deepseek",
-"web-search-tavily",   // ← add this line
-```
-
-The provider and all of its functionality work without this patch; only the GUI card is hidden. The patch is overwritten by `pnpm install --force` and by harness upgrades, so re-apply it after re-installing dependencies.
-
-**Apply it with the included script** (idempotent; `--check` only reports):
-
-```sh
-node scripts/patch-apiproxy.mjs --check    # report whether a patch is needed
-node scripts/patch-apiproxy.mjs            # patch every installed profile copy
-node scripts/patch-apiproxy.mjs --profile web   # patch one profile
-```
+The card appears in **设置 → 插件** as **网页搜索（Tavily）** once the plugin is installed and dsh is restarted. It is hidden while the host half is not loaded — the card's registration follows the host's own serving of the `web-search-tavily` namespace.
 
 > **Server-side test of a stored key.** This plugin registers a host probe `POST /api/tavily-probe` that can test Tavily with a **stored** key server-side (keyless when none is set); `TavilySearchProvider.connectivityTest()` / `probe()` / `usage()` / `status()` are the programmatic host-side paths, and `GET /api/tavily-status` backs the card's status indicator. The browser cannot read stored secrets back, so the card's `Test API connection` button still requires re-entering an already-configured key.
-````
+
+## Mapping
+```
 
 </details>
 
@@ -343,7 +343,7 @@ node scripts/patch-apiproxy.mjs --profile web   # patch one profile
 
 ### Q02 · 无密钥搜索和持久缓存凭据安全是否与说明一致？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -351,9 +351,9 @@ README 多处称未配置 key 时 Tavily 搜索可 keyless，probe 的确能无 
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:11-28](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/README.md#L11-L28)
+**依据 1 · 作者声明**：[README.md:11-28](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/README.md#L11-L28)
 
-keyless/凭据处理声明。
+当前固定版本复核。keyless/凭据处理声明。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -381,9 +381,9 @@ keyless/凭据处理声明。
 
 </details>
 
-**依据 2 · 源码核查**：[src/provider.ts:398-425](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L398-L425)
+**依据 2 · 源码核查**：[src/provider.ts:398-425](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L398-L425)
 
-search 首先取 key ring。
+当前固定版本复核。search 首先取 key ring。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -421,9 +421,9 @@ search 首先取 key ring。
 
 </details>
 
-**依据 3 · 源码核查**：[src/provider.ts:1230-1250](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L1230-L1250)
+**依据 3 · 源码核查**：[src/provider.ts:1230-1250](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L1230-L1250)
 
-空 ring 抛缺凭据。
+当前固定版本复核。空 ring 抛缺凭据。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -454,9 +454,9 @@ search 首先取 key ring。
 
 </details>
 
-**依据 4 · 源码核查**：[src/provider.ts:707-744](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L707-L744)
+**依据 4 · 源码核查**：[src/provider.ts:707-744](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L707-L744)
 
-probe 可无 key。
+当前固定版本复核。probe 可无 key。
 
 <details>
 <summary>查看原文（38行）</summary>
@@ -504,9 +504,9 @@ probe 可无 key。
 
 </details>
 
-**依据 5 · 源码核查**：[src/provider.ts:773-799](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L773-L799)
+**依据 5 · 源码核查**：[src/provider.ts:773-799](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L773-L799)
 
-指纹含 raw apiKey。
+当前固定版本复核。指纹含 raw apiKey。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -543,9 +543,9 @@ probe 可无 key。
 
 </details>
 
-**依据 6 · 源码核查**：[src/provider.ts:952-969](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L952-L969)
+**依据 6 · 源码核查**：[src/provider.ts:952-969](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L952-L969)
 
-缓存键写入 cacheFile。
+当前固定版本复核。缓存键写入 cacheFile。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -573,9 +573,9 @@ probe 可无 key。
 
 </details>
 
-**依据 7 · 源码核查**：[src/provider.ts:810-832](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L810-L832)
+**依据 7 · 源码核查**：[src/provider.ts:810-832](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L810-L832)
 
-启用条件与缓存命中在网络请求前返回。
+当前固定版本复核。启用条件与缓存命中在网络请求前返回。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -611,8 +611,8 @@ probe 可无 key。
 #### 缺口
 
 - 未运行无密钥调用或检查落盘文件
-  **影响：**宿主额外 keyless 处理/磁盘权限效果未知
-  **进一步探讨：**隔离测试无 key 搜索及 cacheFile 内容
+  **影响**：宿主额外 keyless 处理/磁盘权限效果未知
+  **进一步探讨**：隔离测试无 key 搜索及 cacheFile 内容
 
 <a id="research-q03"></a>
 
@@ -620,7 +620,7 @@ probe 可无 key。
 
 ### Q03 · 多键、回退、API 路由与成本如何界定？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -632,9 +632,9 @@ probe 可无 key。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/provider.ts:421-492](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L421-L492)
+**依据 1 · 源码核查**：[src/provider.ts:421-492](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L421-L492)
 
-轮换与有限回退。
+当前固定版本复核。轮换与有限回退。
 
 <details>
 <summary>查看原文（72行）</summary>
@@ -716,9 +716,9 @@ probe 可无 key。
 
 </details>
 
-**依据 2 · 源码核查**：[src/provider.ts:833-865](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L833-L865)
+**依据 2 · 源码核查**：[src/provider.ts:833-865](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L833-L865)
 
-429 重试。
+当前固定版本复核。429 重试。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -761,65 +761,65 @@ probe 可无 key。
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.ts:392-435](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/index.ts#L392-L435)
+**依据 3 · 源码核查**：[src/index.ts:392-435](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/index.ts#L392-L435)
 
-probe/status 路由。
+当前固定版本复核。probe/status 路由。
 
 <details>
 <summary>查看原文（44行）</summary>
 
 ```text
-  // Server-side probe so the card can test a stored key (browsers cannot read
-  // stored secrets back). POST /api/tavily-probe { apiKey?, clearKey? }.
-  ctx.webServer.register({
-    kind: 'exact',
-    path: '/api/tavily-probe',
-    handler: async (req, res) => {
-      if (req.method !== 'POST') {
-        sendJson(res, 405, { ok: false, code: 'other', error: 'method not allowed' })
-        return
-      }
-      try {
-        const body = await readJsonBody(req)
-        const draft = typeof body.apiKey === 'string' ? body.apiKey : undefined
-        const clearKey = body.clearKey === true
-        res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-        res.end(JSON.stringify(await provider.probe(draft, clearKey)))
-      } catch (error) {
-        const detail = error instanceof Error ? error.message : String(error)
-        if (detail === 'invalid JSON body' || detail === 'body too large') {
-          sendJson(res, 400, { ok: false, code: 'other', error: detail })
-          return
-        }
-        sendJson(res, 200, { ok: false, code: 'other', error: detail })
-      }
+ * Project the resolved section into options for the optional Firecrawl fetch
+ * provider. Same priority contract as {@link resolveOptions}: yaml/composition
+ * entry > WebUI section > code defaults. Firecrawl only answers URL retrieval
+ * (the fetch seam); search always stays on Tavily.
+ * @param ctx - plugin context supplying the credential plane.
+ * @param config - the currently authoritative settings-section value.
+ * @param entry - the plugin's composition entry.
+ * @returns options for one Firecrawl fetch.
+ */
+function resolveFirecrawlOptions(ctx: Context, config: Config, entry: Config): FirecrawlProviderOptions {
+  const effective = { ...config, ...definedConfig(entry) }
+  const apiKeyEnv = credentialRef(effective.firecrawlApiKeyEnv ?? FIRECRAWL_DEFAULT_API_KEY_ENV)
+  const literalKey = effective.firecrawlApiKey !== undefined && effective.firecrawlApiKey.length > 0
+    ? effective.firecrawlApiKey
+    : undefined
+  return {
+    ...literalKey === undefined ? {} : { apiKey: literalKey },
+    resolveApiKey: async () => {
+      const credentials = ctx.get('credentials')
+      if (credentials !== undefined) return (await credentials.resolve(apiKeyEnv))?.value
+      const ambient = process.env[apiKeyEnv]
+      return ambient !== undefined && ambient.length > 0 ? ambient : undefined
     },
-  })
-  // Server-side status for the card's indicator: GET /api/tavily-status reads
-  // the stored key (browsers cannot read it) and Tavily GET /usage — which
-  // costs no search credits — then reports ok/low/error in a structured payload.
-  ctx.webServer.register({
-    kind: 'exact',
-    path: '/api/tavily-status',
-    handler: async (req, res) => {
-      if (req.method !== 'GET') {
-        sendJson(res, 405, { ok: false, code: 'other', error: 'method not allowed' })
-        return
-      }
-      try {
-        res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-        res.end(JSON.stringify(await provider.status()))
-      } catch (error) {
-        const detail = error instanceof Error ? error.message : String(error)
-        sendJson(res, 200, { ok: false, code: 'other', error: detail, checkedAt: Date.now() })
-      }
+    apiKeyEnv,
+    baseURL: effective.firecrawlBaseURL ?? FIRECRAWL_DEFAULT_BASE_URL,
+    timeout: effective.timeout ?? TAVILY_DEFAULT_TIMEOUT,
+    ...effective.debug !== undefined ? { debug: effective.debug } : {},
+    log: (message: string) => { ctx.logger('dsh-plugin-tavily').info(message) },
+  }
+}
+
+/** Register the Tavily search provider with `ctx.web`. */
+export function apply(ctx: Context, config: ParsedConfig): void {
+  // The composition entry as yaml declared it: read once, through the volatile
+  // wrappers, so the resolve step can let yaml win over a WebUI value for the
+  // fields the file actually set.
+  const entry = readConfig(config)
+  // Every provider below reads the section through this thunk, per operation.
+  // In dsh 0.2.x a settings edit mutates the live volatile references in place,
+  // so nothing needs re-registering when the user saves: the next search simply
+  // sees the new value.
+  const current = (): Config => readConfig(config)
+  const provider = new TavilySearchProvider(
+    () => resolveOptions(ctx, current(), entry),
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/provider.ts:578-642](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/src/provider.ts#L578-L642)
+**依据 4 · 源码核查**：[src/provider.ts:578-642](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/src/provider.ts#L578-L642)
 
-status 读 usage。
+当前固定版本复核。status 读 usage。
 
 <details>
 <summary>查看原文（65行）</summary>
@@ -894,14 +894,22 @@ status 读 usage。
 
 </details>
 
-**依据 5 · 作者声明**：[README.md:115-140](https://github.com/1624318455/dsh-plugin-tavily/blob/b759f328e21c7dbc24da5f2266e84c2da4d227f8/README.md#L115-L140)
+**依据 5 · 作者声明**：[README.md:115-140](https://github.com/1624318455/dsh-plugin-tavily/blob/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3/README.md#L115-L140)
 
-费用/参数说明。
+当前固定版本复核。费用/参数说明。
 
 <details>
 <summary>查看原文（26行）</summary>
 
 ```text
+Open `设置 → 插件 → 网页搜索` and expand the **Web search (Tavily)** card.
+
+- **Basic area (always visible)**:
+  - **Status indicator** — a live badge (✅ normal / ⚠️ credits low / ✗ API error / no key) checked by the host with the **stored** key (`GET /api/tavily-status`, which reads Tavily `GET /usage` and costs no search credits); the **Refresh** button forces a re-check (auto-checks are throttled to once a minute).
+  - **Web search engine** — `Tavily` (default; keyless if no key) or `official DeepSeek`. This is the real provider switch; the plugin is already elected as the provider.
+  - **API key** — paste your Tavily key. It is stored through the credentials service, never in a settings file.
+  - **API Base URL** — leave blank for `https://api.tavily.com`, or set a proxy/endpoint base.
+  - **Parameter preset** — apply **Deep research**, **Quick summary**, or **Live news** in one click: several advanced fields are staged at once (yaml-pinned fields are skipped); press **Save** to apply.
   - **Test API connection** — verifies the key/base URL you just entered; failures are classified (invalid key / insufficient credits / rate limited / service down / timeout / network) with a targeted explanation. Testing consumes one Tavily search credit. If a key is already configured but you have not typed one, the card tells you to re-enter it once; the browser intentionally cannot read stored secrets back.
   - **Estimated cost** — a live line shows the estimated credits and rough token count for the current depth/result/chunk settings.
   - **Check usage** — reads Tavily `GET /usage` with the currently entered key and shows the remaining credits, search usage, and plan. Stored keys must be re-entered once, like the connectivity test.
@@ -920,14 +928,6 @@ status 读 usage。
   - **Rate-limit retries** — extra attempts (0–5) after a 429; waits honor `retry-after` with a bounded backoff.
   - **Cache TTL (seconds)** — cache identical searches to save credits; 0 disables (0–3600).
   - **Cache max entries** — LRU cap on cached searches (1–10000, default 200); the oldest entry evicts past it.
-  - **Skip cache for fresh queries** — when on (default), news/finance searches and searches with a time window bypass the cache entirely.
-  - **Debug logging** — one concise line per search/extract (query excerpt, credits, cache state, duration, errors); never the key or raw bodies.
-  - **Citation format** — `plain` (answer only, default) or `footnote` (appends `[1] title — url…` numbered sources the model can cite).
-  - **Fallback engine** — `none` (default) or `DeepSeek (automatic)`: on a Tavily-side failure (timeout/network/5xx) the search is answered by the official DeepSeek provider.
-  - **Request timeout (ms)** — default 30000.
-  - **Recency window (days)** — optional recency filter for news/finance topics.
-
-Every control has a short hint and a placeholder showing the default. Values are saved with the card's **Save** button and apply live; no service restart is needed.
 ```
 
 </details>
@@ -935,7 +935,7 @@ Every control has a short hint and a placeholder showing the default. Values are
 #### 缺口
 
 - 未调用 Tavily/Firecrawl、未测宿主路由认证
-  **影响：**额度、成本和网络面无法确认
-  **进一步探讨：**受控 Profile/测试凭据验证访问控制、消耗和回退
+  **影响**：额度、成本和网络面无法确认
+  **进一步探讨**：受控 Profile/测试凭据验证访问控制、消耗和回退
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

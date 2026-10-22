@@ -455,14 +455,14 @@
             "repository": "173787247/dsh-wsl-secret",
             "path": "",
             "revision": "be996ef420b165aebb759cda3957e65a966efe22",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "059e238229eedbfde9baafd086023260abb596fe16cfd04fade15a671571af97",
                 "code": "be996ef420b165aebb759cda3957e65a966efe22",
                 "maintenance": "5a8c2a70b58214fd45933702e7b35a1cf619f0824876edfabdf145fc7b1c45a6"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

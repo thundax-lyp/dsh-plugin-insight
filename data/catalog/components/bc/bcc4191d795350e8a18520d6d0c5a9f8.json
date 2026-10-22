@@ -7,14 +7,14 @@
             "id": "github:1268795053:dsh-copree",
             "repository": "Coprexist/Copree",
             "path": "dsh-copree",
-            "revision": "295a4cb666d8f122c993b6e306e4b43d2af21bd7",
+            "revision": "945a7889ad31127ff3164f22cd0ccb58cdcda3b4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "08816ba41cc73d5e89af67c19ab0e5c3c2f97e83feaf559e7b2662b45e735df5",
-                "code": "295a4cb666d8f122c993b6e306e4b43d2af21bd7",
-                "maintenance": "16e5c3e3555fb1ff6daae2300239ef87ea504d51c1a2494b9d901264817f6294"
+                "code": "945a7889ad31127ff3164f22cd0ccb58cdcda3b4",
+                "maintenance": "cef09654d1b29d62653e4522ab834f86d9066b75930623379be83ddde7123af3"
             }
         }
     }

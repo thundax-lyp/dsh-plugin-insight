@@ -7,14 +7,14 @@
             "id": "github:1424243247:root",
             "repository": "MoreanP2003/dsh-speed-gauge",
             "path": "",
-            "revision": "44b83c4f4a4e21ec13b70ef3448fcb21affce2b5",
+            "revision": "f24fbccb87355eb24b303abf715f27373ba5d48b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "63bd47fab6699b3267fc888393eaddeaa5403806211a71d4028fde47b028707e",
-                "code": "44b83c4f4a4e21ec13b70ef3448fcb21affce2b5",
-                "maintenance": "e919387d264df2d0a217f56740fe5d9facf6e806fc7461e968ff4f3368be5f9f"
+                "code": "f24fbccb87355eb24b303abf715f27373ba5d48b",
+                "maintenance": "3650d5f0ecb6fef24956af8ffc7c416460a7f6491a8f9fb7872787f32ad71cfa"
             }
         }
     }

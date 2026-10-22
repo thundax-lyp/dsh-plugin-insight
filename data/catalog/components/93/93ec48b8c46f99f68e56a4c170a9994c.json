@@ -1013,17 +1013,15 @@
             "repository": "february2015/dsh-taskswarm",
             "path": "",
             "revision": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
-            "fingerprints": {
-                "directory": "0dd727397fa423835bc82dd9bdb399b3c39b683305cba13db4ed9defa1164121",
-                "code": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
-                "release": "86f55d73051c800d59129a44c9472fa615350f01087a717f87794d52c8523971",
-                "compatibility": "b2d078ef4d5671ddd5343cb057a7d7771fda71e9829608e7e37f91e9dd4944ab",
-                "maintenance": "f67d79ec50b39b612cdd5cd634f555d0abb8c8aa0ae9e65843cfa7cc2e765cd4"
-            },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            ],
+            "fingerprints": {
+                "directory": "0dd727397fa423835bc82dd9bdb399b3c39b683305cba13db4ed9defa1164121",
+                "code": "032e2c9d228c20cab65fe0ea061d78a7c753ab8c",
+                "maintenance": "f67d79ec50b39b612cdd5cd634f555d0abb8c8aa0ae9e65843cfa7cc2e765cd4"
+            }
         }
     }
 }

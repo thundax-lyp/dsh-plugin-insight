@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ec519ef4aa9164935bc06634049e9027",
+    "identity": "github:1378933589:adapters-dsh",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1378933589:adapters-dsh",
+            "repository": "5101good/amoji",
+            "path": "adapters/dsh",
+            "revision": "833cfc8a332810ef195a1e0466259ef7687b3a65",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ff7d3e8c326ea6f547ab60e67e2aaaeefed7fcba9ae7ff93aa7338491a681c84",
+                "code": "833cfc8a332810ef195a1e0466259ef7687b3a65",
+                "maintenance": "a11e643f402e56f66a017e2bd5eb5421ae46cc2a1555220599de57bcab37042d"
+            }
+        }
+    }
+}

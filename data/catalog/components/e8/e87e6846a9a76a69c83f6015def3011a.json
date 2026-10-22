@@ -7,14 +7,14 @@
             "id": "github:1424807102:root",
             "repository": "lerwa2025-a11y/dsh-plugin-groups",
             "path": "",
-            "revision": "b007967318c76bd056b16ae8adb84f1795ac5bfb",
+            "revision": "a6fe1416bda7c68d3d52d73fe1ad7881afb491ce",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f769642d4cbe6d34a993d9a85724b659612a71103e77b7ae4cca9ec63c58ec46",
-                "code": "b007967318c76bd056b16ae8adb84f1795ac5bfb",
-                "maintenance": "a862897e253967bd61c6276870132d430e0d556d2b4675e5a20d0c0aac2f066e"
+                "code": "a6fe1416bda7c68d3d52d73fe1ad7881afb491ce",
+                "maintenance": "7a967b235b0124b98e3be82a61a4fb937e30dbc7752c04f54bdf4cdb4c8a4a2c"
             }
         }
     }

@@ -7,15 +7,15 @@
             "id": "github:1335238049:root",
             "repository": "Sutera-Diffusus/dsh-whale-musume",
             "path": "",
-            "revision": "7a3e51998cadb3d8a9f2183ad26d8ca8f650f8ab",
+            "revision": "cf3334a01efd06bc41233935360ff1a8739adace",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
-                "directory": "e39b1706cde489470d23fc58a697b309a6dbc0e336b6df38ce81c4652ad36054",
-                "code": "7a3e51998cadb3d8a9f2183ad26d8ca8f650f8ab",
-                "maintenance": "921eab325b8f338df069381f3ec304a826aefcd2a39626cfae0aed4b8f75b2b7"
+                "directory": "c0a2d95ee9bbace824c691d3988d71ae5b7277046102d7851828c7ba14d5097d",
+                "code": "cf3334a01efd06bc41233935360ff1a8739adace",
+                "maintenance": "68be9afeaffce2bb1e4fdba18c9286c86e5e0f32dc2e913b13ffb667a3e8ed53"
             }
         }
     }

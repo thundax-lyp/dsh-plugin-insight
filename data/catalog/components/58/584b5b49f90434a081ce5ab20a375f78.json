@@ -7,14 +7,14 @@
             "id": "github:1422961392:root",
             "repository": "kinggod899/dsh-reply-forge-v3",
             "path": "",
-            "revision": "20d091ce0fb2cc952262183add6b467d07a17ba3",
+            "revision": "0495f4a5f4809ea7f97b73f5941c932eca8a1ea9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "d3b260eaaaefb310b7154175621daf8aec2d06e8a4da637884886b29da4fa696",
-                "code": "20d091ce0fb2cc952262183add6b467d07a17ba3",
-                "maintenance": "4a9fd5bdd661f8a6a56b5a52ce5f3668a7c4f8b9084545e8168cbf2c93512cb5"
+                "directory": "d49b008cb3b2ff95fc25c792bccaae45b115d9ff754d8585ef4d9e073f44442a",
+                "code": "0495f4a5f4809ea7f97b73f5941c932eca8a1ea9",
+                "maintenance": "5b4cb05eae839a753e6e2e3056bbb1edeb3fdc23fc57f7d7c26d0d8d93880744"
             }
         }
     }

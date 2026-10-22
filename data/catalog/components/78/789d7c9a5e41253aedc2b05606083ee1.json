@@ -499,14 +499,14 @@
             "repository": "778672151/dsh-session-turn-eta",
             "path": "",
             "revision": "b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "d1d2e2019fe5f745e8dbccb30dd06005b1fe2a4754320a9999c712f1723250e1",
                 "code": "b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11",
                 "maintenance": "06f5f4567381db241e64e7bd10c7c68f83a0ef381fe66752b9f9f6a6876e4d4f"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1338166081:root",
             "repository": "GooDAnDReaDY/dsh-key-rotation",
             "path": "",
-            "revision": "6c271b5beef35ce3b1f4ccf42ef953f035be31a8",
+            "revision": "91271f526582bc5ea12b540ed2cebf52308b6d16",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c169f128db96f63cd87169c04d57291e93724f373576c343a4291f9b996c331b",
-                "code": "6c271b5beef35ce3b1f4ccf42ef953f035be31a8",
-                "maintenance": "7062a1b6fa83b09f54ad5868f2ff1b7a7b0fdf32d1e631e697baf6e269b65741"
+                "code": "91271f526582bc5ea12b540ed2cebf52308b6d16",
+                "maintenance": "858168c61ab4ffef405d2f3d2674c75af43c07df865cef0dca353b477a1232e7"
             }
         }
     }

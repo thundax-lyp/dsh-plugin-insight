@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ebf918d61f4f6b60eb36365018089f10",
+    "identity": "github:1425535349:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425535349:root",
+            "repository": "wsk114514/dsh-ark-wiki",
+            "path": "",
+            "revision": "750fdfe448e4247c9f68d613d2307822af07049f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ac564e78d2c5155020301ddab194a53030d45b0de788b5ca3ede4556411624fb",
+                "code": "750fdfe448e4247c9f68d613d2307822af07049f",
+                "maintenance": "3db9c216468ee2ea2c0c5ec09e518c8c31c6ad3d599674f0b699c72dfa760bbb"
+            }
+        }
+    }
+}

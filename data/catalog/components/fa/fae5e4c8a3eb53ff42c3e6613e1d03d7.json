@@ -7,14 +7,14 @@
             "id": "github:1358856799:root",
             "repository": "MichengAI/dsh-btw",
             "path": "",
-            "revision": "c0d0eadd6e1487b081f76e612e1231787c39cece",
+            "revision": "34db25011bb9c86c863b6b631f640e850e19ff44",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "bf7ae29decba025d62b3d1e3126d6157f609e075760cb814c492c03854aa70dd",
-                "code": "c0d0eadd6e1487b081f76e612e1231787c39cece",
-                "maintenance": "ba01ab2981901918bdd73c9f36c3357a7a2d7d6db77836858bbf9a8067ea1355"
+                "code": "34db25011bb9c86c863b6b631f640e850e19ff44",
+                "maintenance": "f552f418497e4aed5f03205c6a8ce5b95cfad92d570d216b9eb19a7d9d2bfe1d"
             }
         }
     }

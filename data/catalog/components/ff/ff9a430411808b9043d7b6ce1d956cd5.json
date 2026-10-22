@@ -7,14 +7,14 @@
             "id": "github:1340370351:root",
             "repository": "yuanbaoerer/dsh-decision-split",
             "path": "",
-            "revision": "2186127c4d601202f18cc518ce09b67770626b12",
+            "revision": "7def9bb80128ad7647d0c86ddae3d55934252ac4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "71d7d24a119f77a12dad94eef3a7bdd7730ece72d0ec429390c33d3a0f0bd058",
-                "code": "2186127c4d601202f18cc518ce09b67770626b12",
-                "maintenance": "6a8079dcd411f87ced8e4f637646c5ab98f9a6a13912c0503ea5bd4b225eea40"
+                "code": "7def9bb80128ad7647d0c86ddae3d55934252ac4",
+                "maintenance": "f290c13025fb9e0182984cf4ab6b937c0a38ef8b949a57b7e46fdd7e3ff1e9c2"
             }
         }
     }

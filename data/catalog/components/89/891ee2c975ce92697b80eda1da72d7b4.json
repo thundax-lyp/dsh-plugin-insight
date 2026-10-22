@@ -7,14 +7,14 @@
             "id": "github:1369612101:root",
             "repository": "xrn1997/dsh-novel",
             "path": "",
-            "revision": "ea026d398966066201daba8cbd8798c13b46efb2",
+            "revision": "1cb640ec004940a23d1b173399bfe5698581bda7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9173e0b49e6d62adab200762fa331366ee11e67e02bdca2536cb82870274a73f",
-                "code": "ea026d398966066201daba8cbd8798c13b46efb2",
-                "maintenance": "2ccd14fcfdeef5c3a7f53e831339072da89d64f59b17c2d67cb48d4cdcdd9620"
+                "code": "1cb640ec004940a23d1b173399bfe5698581bda7",
+                "maintenance": "8d4dd0eea5108fa15b7941d16fc147f6013d4a7853e713112a39ca1698090439"
             }
         }
     }

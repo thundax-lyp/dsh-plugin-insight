@@ -7,14 +7,14 @@
             "id": "github:1314502072:root",
             "repository": "huaweicloud/huaweicloud-devkit",
             "path": "",
-            "revision": "b0e9f02643110804fc8eef6377dcad99b39960cc",
+            "revision": "4ed07801cf62248049b62d4fd71f7bf347d57452",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "69df1c2429bf40762529121fc7888c412956678ad45906486ec31e18f665531f",
-                "code": "b0e9f02643110804fc8eef6377dcad99b39960cc",
-                "maintenance": "576b8312c6e7aea4e2bde2b5da3fdfde1801fda8c7e2729eba4d3e339c5252c9"
+                "code": "4ed07801cf62248049b62d4fd71f7bf347d57452",
+                "maintenance": "027a135537bfd78a891efd2cbad91ff9b4766f373de4afb3c35fdce0b46c21c3"
             }
         }
     }

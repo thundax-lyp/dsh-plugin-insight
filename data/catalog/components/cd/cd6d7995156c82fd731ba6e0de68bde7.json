@@ -7,14 +7,14 @@
             "id": "github:1417017846:root",
             "repository": "chengzhi-c/dsh-wtq-pool",
             "path": "",
-            "revision": "c904e3b771cfa13797211a36bda97e6fd85b7812",
+            "revision": "c32510de478b7eaa32e20b24245699244739f829",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5e9aa7b970f79da6a1b7f153f920f16e7193c45c1746a66279efd824cee0bef2",
-                "code": "c904e3b771cfa13797211a36bda97e6fd85b7812",
-                "maintenance": "c8b1202ab78f71c9bb5eadced27b49163b20e68c24a54cb7ec17618f2b101247"
+                "code": "c32510de478b7eaa32e20b24245699244739f829",
+                "maintenance": "ffefba5c3efb7ed95d9c21721c2acd0a0c5fa9122ee88717a17ed9311730b1c8"
             }
         }
     }

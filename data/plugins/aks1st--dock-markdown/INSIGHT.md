@@ -167,7 +167,7 @@ Host 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 Markdown 查看/相对资源解析的可用性与 /dock-markdown/resolve 任意文件读取边界。
+**插件研究总目标**：核实 Markdown 查看/相对资源解析的可用性与 /dock-markdown/resolve 任意文件读取边界。
 
 <a id="research-q01"></a>
 
@@ -175,7 +175,7 @@ Host 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 
 
 ### Q01 · 查看器提供何种阅读体验？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -425,7 +425,7 @@ async function resolveCandidates(cwd: string, baseFile: string, ref: string): Pr
 
 ### Q02 · 资源解析 API 能读取哪些主机文件？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -598,8 +598,8 @@ function sessionCwdOf(ctx: WbContext, sessionId: string | undefined): string {
 #### 缺口
 
 - 未向运行中 DSH 发送构造请求。
-  **影响：**实际部署的 Web 认证/同源脚本可达性未知。
-  **进一步探讨：**隔离测试非敏感测试文件的 ../ traversal，修服务端授权后回归。
+  **影响**：实际部署的 Web 认证/同源脚本可达性未知。
+  **进一步探讨**：隔离测试非敏感测试文件的 ../ traversal，修服务端授权后回归。
 
 <a id="research-q03"></a>
 
@@ -607,7 +607,7 @@ function sessionCwdOf(ctx: WbContext, sessionId: string | undefined): string {
 
 ### Q03 · 消毒后仍有哪些内容/资源边界？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -793,7 +793,7 @@ function mimeOfPath(path: string): string {
 #### 缺口
 
 - 未用恶意 Markdown 或大图在目标 UI 测试。
-  **影响：**浏览器加载外链/CSS 与内存表现未知。
-  **进一步探讨：**隔离构造外链、样式和大图检查网络/CSP/内存。
+  **影响**：浏览器加载外链/CSS 与内存表现未知。
+  **进一步探讨**：隔离构造外链、样式和大图检查网络/CSP/内存。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

@@ -7,14 +7,14 @@
             "id": "github:1423486178:root",
             "repository": "HERO476/dsh-conversation-recycle-bin",
             "path": "",
-            "revision": "a6fb8a5e0c7184252af60c6b2f5f5c383317022e",
+            "revision": "70377bd76062cc8687420a12c65e4bf382f92746",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "eef20074a4938f606b90be7eefad51af24f4c0791a19f929c57ca29345d5c39e",
-                "code": "a6fb8a5e0c7184252af60c6b2f5f5c383317022e",
-                "maintenance": "fe4bf27e1a2416dde7a9b6ece81b3483853f22cb55f9f17b99a4576308151821"
+                "code": "70377bd76062cc8687420a12c65e4bf382f92746",
+                "maintenance": "fb4c163d90a65a5083d3a871b4ceaf47ab59fa5a97d23c62e83889419022650c"
             }
         }
     }

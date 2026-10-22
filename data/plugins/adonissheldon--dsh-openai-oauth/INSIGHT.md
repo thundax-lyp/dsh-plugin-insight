@@ -191,7 +191,7 @@ run把winner设complete后才await modify；logout不走exclusive，winner已com
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核OAuth/本机控制面、凭据刷新退出、消息流/replay兼容、真实成本及世代栅栏假设。
+**插件研究总目标**：核OAuth/本机控制面、凭据刷新退出、消息流/replay兼容、真实成本及世代栅栏假设。
 
 <a id="research-q01"></a>
 
@@ -199,7 +199,7 @@ run把winner设complete后才await modify；logout不走exclusive，winner已com
 
 ### Q01 · 适合谁，和CLI/API Key方案相比交付什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -389,7 +389,7 @@ The Harness message and stream conversion and the OAuth callback and README word
 
 ### Q02 · 登录与本机控制面有哪些真正防护和限制？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -890,7 +890,7 @@ function waitForAbort(signal: AbortSignal): Promise<never> {
 
 ### Q03 · 凭据落盘、刷新、退出和消息转换的边界是什么？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -1412,8 +1412,8 @@ SSE缓冲/cancel。
 #### 缺口
 
 - logout与complete写入/在途请求的具体交错后果尚未独立验证。
-  **影响：**不把本地退出等同远端撤销或所有在途工作停止。
-  **进一步探讨：**用假凭据store的可控锁/延迟，枚举logout前后complete与持久化顺序并核最终磁盘/状态。
+  **影响**：不把本地退出等同远端撤销或所有在途工作停止。
+  **进一步探讨**：用假凭据store的可控锁/延迟，枚举logout前后complete与持久化顺序并核最终磁盘/状态。
 
 <a id="research-q04"></a>
 
@@ -1421,7 +1421,7 @@ SSE缓冲/cancel。
 
 ### Q04 · 接入、持续使用和失败恢复成本怎样算？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -1665,8 +1665,8 @@ export const OPENAI_CODEX_MODELS: readonly Model<'openai-codex-responses'>[] = [
 #### 缺口
 
 - 固定任务相对API Key/独立CLI的费用、额度、延时与工具恢复正确率未知。
-  **影响：**不能宣称更便宜或自动省成本。
-  **进一步探讨：**比较同任务/图片/工具链的完成率、额外上下文与人员恢复，不读取真实凭据作研究材料。
+  **影响**：不能宣称更便宜或自动省成本。
+  **进一步探讨**：比较同任务/图片/工具链的完成率、额外上下文与人员恢复，不读取真实凭据作研究材料。
 
 <a id="research-q05"></a>
 
@@ -1674,7 +1674,7 @@ export const OPENAI_CODEX_MODELS: readonly Model<'openai-codex-responses'>[] = [
 
 ### Q05 · 是否推荐，继续探讨哪里最有价值？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1815,7 +1815,7 @@ function parseObject(value: string): Record<string, unknown> {
 #### 缺口
 
 - 认证generation/总预算/严格工具参数原型未实现。
-  **影响：**不是当前已有退出撤销或恰好一次保证。
-  **进一步探讨：**先运行设计层假依赖交错矩阵，核最终状态/调用生成与正常误拒绝成本。
+  **影响**：不是当前已有退出撤销或恰好一次保证。
+  **进一步探讨**：先运行设计层假依赖交错矩阵，核最终状态/调用生成与正常误拒绝成本。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

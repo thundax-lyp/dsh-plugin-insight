@@ -1,0 +1,473 @@
+{
+    "schema_version": 3,
+    "id": "79ca03c54316c81d73b5b47631d97e10",
+    "identity": "github:1406611614:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1406611614:root",
+            "repository_id": 1406611614,
+            "component_id": "root",
+            "repository": "1344738825/ai-residue-cleaner",
+            "path": "",
+            "aliases": [],
+            "name": "AI 残渣清运",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "fefd41388d1811dc51c64a840417ed6adbe4ea67c94d22e71ef828969de19333",
+                "code": "997d95c16a802678b702ba3378ae83c881abeee6",
+                "maintenance": "3b5df61b3376c3c251f95b81b5c65771fad43ca1d719a400a702bef3ed91a615"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1406611614-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:30:03.077Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1406611614-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1344738825/ai-residue-cleaner",
+                            "commit": "997d95c16a802678b702ba3378ae83c881abeee6",
+                            "path": "README.md",
+                            "content_sha256": "4f6c35028632ffea4bad5b4c87da29478efb2ffc5162530ed42f8d5e28b3e110"
+                        }
+                    ],
+                    "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+                    "captured_at": "2026-10-22T15:30:03.077Z",
+                    "summary": "按规则把代理副产物移入可恢复回收站，并支持项目结项归档。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1344738825--ai-residue-cleaner/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1406611614-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1344738825/ai-residue-cleaner",
+                            "commit": "997d95c16a802678b702ba3378ae83c881abeee6",
+                            "path": "README.md",
+                            "content_sha256": "4f6c35028632ffea4bad5b4c87da29478efb2ffc5162530ed42f8d5e28b3e110"
+                        },
+                        {
+                            "repository_url": "https://github.com/1344738825/ai-residue-cleaner",
+                            "commit": "997d95c16a802678b702ba3378ae83c881abeee6",
+                            "path": "index.js",
+                            "content_sha256": "78b86edcc1d4f934322ee028785b1b237e15f71a5ed26a0f3676233c4eb21e17"
+                        }
+                    ],
+                    "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+                    "captured_at": "2026-10-22T15:30:03.077Z",
+                    "summary": "核查 README.md、index.js；会话事件在首条消息注入简洁守则，在回合结束派生 Python 清理进程；Python 引擎按忽略规则、项目状态与保留期移动文件并维护批次清单。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1344738825--ai-residue-cleaner/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向代理频繁生成探测脚本、备份、日志和缓存的项目，在不直接删除文件的前提下恢复整洁并保留结项清单。 [Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "会话事件在首条消息注入简洁守则，在回合结束派生 Python 清理进程；Python 引擎按忽略规则、项目状态与保留期移动文件并维护批次清单。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Python 与回收站磁盘 | 标注 ignore、归档规则并 dry-run | 配置分钟未知 |\n| 持续使用 | 每回合目录扫描、移动 I/O、14 天存储 | 阅读清单和抽查正式产物 | 每千文件扫描秒数与移动字节未知 |\n| 失败恢复 | 保留重复文件占磁盘 | restore、核对哈希与修复引用 | 误收率和恢复分钟未知 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合副产物命名规律稳定、能先维护 ignore 且使用版本控制的项目试用；高价值数据目录或命名混乱仓库只运行 dry-run。成功标准是目标残渣召回达到门槛、正式文件零误收、结项引用全部可打开且 restore latest 可恢复；出现一次无法恢复的误收或 detached 清理无清单即停止自动模式。 [Q09](#research-q09)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 可逆清理 | 回收站、批次清单和 restore 机制存在 | 真实仓库恢复成功率 |\n| 项目保护 | open 状态跳过，close 分类归档 | 引用改写对复杂 Markdown 的正确率 |\n| 安全范围 | 跳过 git、node_modules、嵌套仓库等 | 自定义命名下的误收/漏收率 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "解释器探测、失败提示、敏感目录排除和可逆移动体现防御性设计；后台启动后仍需要结果可观测性与针对真实仓库的误收测试。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对 `find` 加删除脚本，它把自动清理改成可逆移动，并用 open/close 项目状态保护进行中的产出、在结项时分类归档和改写引用。 [Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "规则匹配仍可能把有价值但命名像临时文件的材料移走，后台 detached 进程也无法让当前回合确认最终结果；可恢复降低损失但没有消除误分类。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可加入“来源感知清理”，要求候选文件同时满足命名规则和本回合创建记录，再用清单预览训练项目级白名单，降低误收。 [Q08](#research-q08)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406611614:root",
+                            "area": "code",
+                            "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:03.077Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:30:03.077Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+                "reviewed_at": "2026-10-22T15:30:03.077Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1406611614:root",
+                        "area": "code",
+                        "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "相对明确基线存在具体集成和机制增量；规则匹配仍可能把有价值但命名像临时文件的材料移走，后台 detached 进程也无法让当前回合确认最终结果；可恢复降低损失但没有消除误分类。 未运行，效果只作解释性判断。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向代理频繁生成探测脚本、备份、日志和缓存的项目，在不直接删除文件的前提下恢复整洁并保留结项清单。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1406611614-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "规则稳定且有版本控制的项目可先 dry-run 后试用；正式产物零误收和可恢复是硬门槛。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "代理副产物清理与结项归档场景具体。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "可逆回收、项目状态和引用改写优于直接删除脚本。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码确认探测与后台清理入口；未执行文件副作用实验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "磁盘、规则维护和误收恢复负担中等，关键指标未知。"
+                    }
+                },
+                "score": 65,
+                "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+                "reviewed_at": "2026-10-22T15:30:03.077Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1406611614-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1406611614:root",
+                        "area": "code",
+                        "fingerprint": "997d95c16a802678b702ba3378ae83c881abeee6"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1406611614:root",
+            "repository": "1344738825/ai-residue-cleaner",
+            "path": "",
+            "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+            "fingerprints": {
+                "directory": "fefd41388d1811dc51c64a840417ed6adbe4ea67c94d22e71ef828969de19333",
+                "code": "997d95c16a802678b702ba3378ae83c881abeee6",
+                "maintenance": "3b5df61b3376c3c251f95b81b5c65771fad43ca1d719a400a702bef3ed91a615"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "9cdcbccbcbfd0df7f81b15ed65e1000af622769e1b44a6bb5d8b1c0a1fa4d58b"
+        },
+        "publication.metadata": "data/plugins/1344738825--ai-residue-cleaner/META.json",
+        "publication.summaries": {
+            "text": "按规则把代理副产物移入可恢复回收站，并支持项目结项归档。",
+            "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+            "source_url": "https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+            "items": {
+                "用户命令": "提供 residue-open、residue-close 与 residue-trash 项目清理命令。",
+                "事件监听": "监听 agent 创建与会话 user/message、turn/end 事件，注入守则并触发清运。",
+                "后台": "在回合结束派生 Python 清理进程，维护可恢复回收站、批次清单和结项归档。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 回合清运 | 按规则把副产物移动到分批回收站。 | 仅由固定版本源码确认；运行效果未验证 |\n| 项目结项 | 保护开放项目并在关闭时分类归档。 | 仅由固定版本源码确认；运行效果未验证 |\n| 恢复与清单 | 记录移动明细并支持还原。 | 仅由固定版本源码确认；运行效果未验证 |"
+        },
+        "publication.advice": {
+            "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+            "text": "适合副产物命名规律稳定、能先维护 ignore 且使用版本控制的项目试用；高价值数据目录或命名混乱仓库只运行 dry-run。成功标准是目标残渣召回达到门槛、正式文件零误收、结项引用全部可打开且 restore latest 可恢复；出现一次无法恢复的误收或 detached 清理无清单即停止自动模式。 [Q09](#research-q09)"
+        },
+        "registry": "data/plugins/1344738825--ai-residue-cleaner",
+        "reports": "# AI 残渣清运\n\n> 按规则把代理副产物移入可恢复回收站，并支持项目结项归档。\n\n## 研究范围\n\n- **仓库**：[1344738825/ai-residue-cleaner](https://github.com/1344738825/ai-residue-cleaner)\n- **版本号**：0.1.2（[固定提交 997d95c16a802678b702ba3378ae83c881abeee6](https://github.com/1344738825/ai-residue-cleaner/tree/997d95c16a802678b702ba3378ae83c881abeee6)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向代理频繁生成探测脚本、备份、日志和缓存的项目，在不直接删除文件的前提下恢复整洁并保留结项清单。 [Q01](#research-q01)\n- **亮点**：相对 `find` 加删除脚本，它把自动清理改成可逆移动，并用 open/close 项目状态保护进行中的产出、在结项时分类归档和改写引用。 [Q03](#research-q03)\n- **思考**：规则匹配仍可能把有价值但命名像临时文件的材料移走，后台 detached 进程也无法让当前回合确认最终结果；可恢复降低损失但没有消除误分类。 [Q04](#research-q04)\n- **建议**：可加入“来源感知清理”，要求候选文件同时满足命名规则和本回合创建记录，再用清单预览训练项目级白名单，降低误收。 [Q08](#research-q08)\n\n采用建议：适合副产物命名规律稳定、能先维护 ignore 且使用版本控制的项目试用；高价值数据目录或命名混乱仓库只运行 dry-run。成功标准是目标残渣召回达到门槛、正式文件零误收、结项引用全部可打开且 restore latest 可恢复；出现一次无法恢复的误收或 detached 清理无清单即停止自动模式。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对 `find` 加删除脚本，它把自动清理改成可逆移动，并用 open/close 项目状态保护进行中的产出、在结项时分类归档和改写引用。 [Q03](#research-q03)\n\n## 关键质疑\n\n规则匹配仍可能把有价值但命名像临时文件的材料移走，后台 detached 进程也无法让当前回合确认最终结果；可恢复降低损失但没有消除误分类。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可加入“来源感知清理”，要求候选文件同时满足命名规则和本回合创建记录，再用清单预览训练项目级白名单，降低误收。 [Q08](#research-q08)\n\n在带金标准的可丢弃仓库副本中包含正式报告、引用图片、备份、缓存和嵌套仓库；运行 dry-run、普通清理、close、restore，逐文件比对哈希和 Markdown 链接，并记录每千文件扫描秒数、移动字节、误收/漏收和人工分钟。任何正式产物误收且不能完整恢复即否定自动启用。\n\n## 场景与替代办法\n\n面向代理频繁生成探测脚本、备份、日志和缓存的项目，在不直接删除文件的前提下恢复整洁并保留结项清单。 [Q01](#research-q01)\n\n基线是人工清理或一次性脚本；插件增加回收站、保留期和项目结项语义，但必须承担规则维护与恢复检查。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Python 3 与项目写权限 | 清运必需 | 运行 cleanup.py、移动和恢复文件 | JS 守则仍可用，清运明确提示失败 |\n| ignore/extra/archive 规则 | 安全采用必需 | 区分正式产物、归档与残渣 | 命名误判可能移动有价值文件 |\n| `.ai-residue-trash` 空间 | 必需 | 保留批次与清单 14 天 | 磁盘增长或无法恢复 |\n| 可回查版本控制/备份 | 强烈建议 | 独立核对误收和引用改写 | 回收站损坏时缺少第二恢复路径 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|---|\n| 建规则 | 用户维护 ignore、archive 和项目状态 | dry-run 中正式产物不出现 |\n| 回合清运 | turn/end 派生 Python 扫描并移动候选 | 生成批次清单且会话不被阻塞 |\n| 结项 | 用户执行 close 并核对分类与引用改写 | 成品、归档和报告链接完整 |\n| 恢复 | 用户按清单 restore 指定批次 | 文件哈希和原路径恢复；失败时从版本控制取回 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Python 与回收站磁盘 | 标注 ignore、归档规则并 dry-run | 配置分钟未知 |\n| 持续使用 | 每回合目录扫描、移动 I/O、14 天存储 | 阅读清单和抽查正式产物 | 每千文件扫描秒数与移动字节未知 |\n| 失败恢复 | 保留重复文件占磁盘 | restore、核对哈希与修复引用 | 误收率和恢复分钟未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 可逆清理 | 回收站、批次清单和 restore 机制存在 | 真实仓库恢复成功率 |\n| 项目保护 | open 状态跳过，close 分类归档 | 引用改写对复杂 Markdown 的正确率 |\n| 安全范围 | 跳过 git、node_modules、嵌套仓库等 | 自定义命名下的误收/漏收率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 AI 残渣清运 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向代理频繁生成探测脚本、备份、日志和缓存的项目，在不直接删除文件的前提下恢复整洁并保留结项清单。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是人工清理或一次性脚本；插件增加回收站、保留期和项目结项语义，但必须承担规则维护与恢复检查。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n# AI 残渣清运 (ai-residue-cleaner)\n\nAI 干完活,工地上到处是它留下的东西:探测脚本写了十几个(`_probe2.py`、`_probe3.py`、`_probe4.py`…),渲染出来的图、跑出来的结果、中途备份的目录,全堆在项目根目录。这个插件负责收拾:每回合结束自动把这类副产物收走,收到一个**可逆的回收站**里——不是删除,是移进 `.ai-residue-trash/<批次>/`,带清单,可以还原,14 天后才真删。\n\n它还管两件相关的事:\n\n- **项目制**。开工时用 `/residue-open` 声明一个产出目录,之后所有东西都往里放;没结项之前插件不清理,一切原地保留。结项时用 `/residue-close`:成品按类型归档(文稿、视频成品、音频、图片、数据),报告里引用的图片跟着报告走(引用路径自动改写,报告搬走后照样打得开),`*_results.txt` 这类之后可能还要翻的结果移进 `归档/`(长期保留,不进回收站),剩下的副产物进回收站,最后生成一份《结项清理清单》,写明哪些文件被收走了、收到了哪、去哪找回。\n- **少说废话**。每个回合注入一条输出守则:直奔结论和新信息,不复述背景,不写空洞总结。\n\n## 安装\n\n**方式一:作为插件市场添加(ZCode / DeepSeek Harness 系客户端通用)**\n\n客户端打开 **插件市场 → 添加 → 添加插件市场**,粘贴本仓库地址(或克隆到本地后选目录),然后在 **个人 → residue-cleaner-market** 里安装「AI 残渣清运」。\n\n**方式二:Git 仓库直装(桌面端插件页)**\n\n插件页直接粘贴 `https://github.com/1344738825/ai-residue-cleaner`。仓库同时是一个 cordis bundle,会以 Host 插件形式安装。\n\n两种方式的差别:方式一走 Python 会话钩子(Stop / UserPromptSubmit),需要系统有 `python` 命令(3.8+,可执行名不同就改 `hooks/hooks.json` 里的 2 处);方式二走 JS bundle,回合结束时后台调一次 `cleanup.py`,需要**系统里有 Python 3**——插件按 `python3` → `python` → `py`(Windows)顺序自动探测,探不到就跳过清运、写宿主错误日志,并在会话里明确提示一次(不会静默),守则注入始终不受影响。三个斜杠命令(`/residue-open`、`/residue-close`、`/residue-trash`)两种方式都有。\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n会话事件在首条消息注入简洁守则，在回合结束派生 Python 清理进程；Python 引擎按忽略规则、项目状态与保留期移动文件并维护批次清单。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对 `find` 加删除脚本，它把自动清理改成可逆移动，并用 open/close 项目状态保护进行中的产出、在结项时分类归档和改写引用。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：规则匹配仍可能把有价值但命名像临时文件的材料移走，后台 detached 进程也无法让当前回合确认最终结果；可恢复降低损失但没有消除误分类。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n宿主 JS 路径依赖 Python 3 和项目目录写权限；清理规则、忽略表与 `.ai-residue.json` 影响结果，嵌套仓库和关键目录显式跳过。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本包括安装 Python 3、审阅默认规则、建立 `.ai-residue-ignore` 和把回收站加入 gitignore；每回合持续成本是一次 detached 清理进程、目录扫描和回收站磁盘增长；失败恢复包括从 manifest 还原误收文件、处理 Python 缺失提示，以及结项后核对改写的文档引用。合格单位是一轮清理后工作区无目标残渣、正式产物未移动且所有引用仍可打开。当前缺少扫描文件数、移动字节、误收率、恢复分钟和 14 天存储峰值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n#### 缺口\n\n- 缺少真实仓库的候选文件数、扫描耗时、移动字节、误收/漏收率、恢复时间和保留期磁盘占用。\n  **影响**：无法判断自动清运是否减少整理时间，或把风险转移到恢复和清单核对。\n  **进一步探讨**：选取含已标注正式产物、临时文件和嵌套仓库的副本，先 dry-run 再执行/恢复，统计精确率、召回率、扫描秒数、移动字节与人工核对分钟。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n解释器探测、失败提示、敏感目录排除和可逆移动体现防御性设计；后台启动后仍需要结果可观测性与针对真实仓库的误收测试。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可加入“来源感知清理”，要求候选文件同时满足命名规则和本回合创建记录，再用清单预览训练项目级白名单，降低误收。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n适合副产物命名规律稳定、能先维护 ignore 且使用版本控制的项目试用；高价值数据目录或命名混乱仓库只运行 dry-run。成功标准是目标残渣召回达到门槛、正式文件零误收、结项引用全部可打开且 restore latest 可恢复；出现一次无法恢复的误收或 detached 清理无清单即停止自动模式。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-residue-cleaner/blob/997d95c16a802678b702ba3378ae83c881abeee6/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\r\n * AI 残渣清运 — Host plugin for the DeepSeek Harness (cordis bundle).\r\n *\r\n * 与 ZCode CLI 端的 hooks/ Python 钩子同源双端:本 bundle 服务 cordis 系宿主\r\n * (ZCode 桌面端、dsh),结构对齐 ai-look-up 的既有实践。\r\n *\r\n * 职责:\r\n * - `session/event` `user/message`: 每个会话首条消息注入一次输出守则(agent.inject),\r\n *   压制复述背景、空洞总结、客套话;\r\n * - `session/event` `turn/end`: 后台派生进程运行 hooks/cleanup.py 按项目制清运副产物\r\n *   (detached + stdio ignore,绝不阻塞会话)。\r\n *\r\n * 清运引擎是 Python,所以解释器是硬前提:缺 Python 3 时不再静默跳过——写宿主 error\r\n * 日志,并在会话里提示一次(见 resolvePython / PYTHON_MISSING_NOTICE),\r\n * 否则用户界面上什么都看不到,会误以为清运成功了。\r\n *\r\n * 清运引擎(cleanup.py)自行判断项目状态:未立项/已结项按常规清,项目 open 期间\r\n * 自动跳过且产出目录受保护——宿主侧无需任何判断逻辑。\r\n *\r\n * 扩展点(见 cordis-plugin-development skill,与 ai-look-up 相同):\r\n * - `session/event`\r\n * - `agent.inject()`\r\n */\r\n\r\nimport { spawn, spawnSync } from 'node:child_process';\r\nimport { randomUUID } from 'node:crypto';\r\nimport { existsSync } from 'node:fs';\r\nimport { fileURLToPath } from 'node:url';\r\nimport { dirname, join, resolve } from 'node:path';\r\n\r\nconst PLUGIN_ROOT = dirname(fileURLToPath(import.meta.url));\r\nconst CLEANUP_SCRIPT = join(PLUGIN_ROOT, 'hooks', 'cleanup.py');\r\n\r\nconst BREVITY_RULE = '【输出守则】回答直奔结论和新信息:不复述用户已知背景,不写客套话、空洞总结或教学铺垫;能用一句话说清就不用三句;除非用户明确要求,不主动生成报告、总结或逐条复述刚才做过的事。';\r\n\r\nconst DEFAULTS = {\r\n  enabled: true,\r\n  cleanupOnTurnEnd: true,\r\n  brevityOnFirstMessage: true,\r\n  // 空 = 自动探测:按 PYTHON_CANDIDATES 顺序找第一个可用的 Python 3。\r\n```\n\n</details>\n\n#### 缺口\n\n- 规则在真实混合仓库中的误收率和引用改写正确率未测。\n  **影响**：文件移动具有直接副作用，可恢复声明不足以证明安全采用。\n  **进一步探讨**：在可丢弃仓库副本中标注金标准，执行 dry-run、清理、结项和 restore，核对文件哈希、链接可达与 git diff。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：536a4625f534aa9a5459830944568fc8605a606249038e02781968e79cc9f2a2。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 196 | — | — | 2872 |\n| .js | source | 1 | 231 | 163 | 54 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 回合清运 | 按规则把副产物移动到分批回收站。 | 仅由固定版本源码确认；运行效果未验证 |\n| 项目结项 | 保护开放项目并在关闭时分类归档。 | 仅由固定版本源码确认；运行效果未验证 |\n| 恢复与清单 | 记录移动明细并支持还原。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\n解释器探测、失败提示、敏感目录排除和可逆移动体现防御性设计；后台启动后仍需要结果可观测性与针对真实仓库的误收测试。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：在带金标准的可丢弃仓库副本中包含正式报告、引用图片、备份、缓存和嵌套仓库；运行 dry-run、普通清理、close、restore，逐文件比对哈希和 Markdown 链接，并记录每千文件扫描秒数、移动字节、误收/漏收和人工分钟。任何正式产物误收且不能完整恢复即否定自动启用。\n",
+        "metadata": {
+            "repository": "1344738825/ai-residue-cleaner",
+            "repository_id": 1406611614,
+            "captured_at": "2026-10-22T15:13:11.153Z",
+            "window_start": "2026-09-22T15:13:11.153Z",
+            "stars": 0,
+            "pushed_at": "2026-10-22T08:02:45Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 50B4:E97E6:9A9ADC:A6DED8:6ADA2809 and timestamp 2026-10-22 15:13:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5180:324E3B:9B8AA1:A7C9E5:6ADA280A and timestamp 2026-10-22 15:13:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A11.153Z..2026-10-22T15%3A13%3A11.153Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 525C:1C3985:A7178C:B367FB:6ADA280B and timestamp 2026-10-22 15:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A11.153Z..2026-10-22T15%3A13%3A11.153Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 538E:1B7905:9FB369:ABFF4B:6ADA280D and timestamp 2026-10-22 15:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A11.153Z..2026-10-22T15%3A13%3A11.153Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 54D4:327DCF:992625:A56B5E:6ADA280E and timestamp 2026-10-22 15:13:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "ai-residue-cleaner",
+                "captured_at": "2026-10-22T15:13:18.361Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/ai-residue-cleaner",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-22T15:13:18.361Z",
+                    "source_url": "https://registry.npmjs.org/ai-residue-cleaner",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1406611614:root",
+            "repository": "1344738825/ai-residue-cleaner",
+            "path": "",
+            "revision": "997d95c16a802678b702ba3378ae83c881abeee6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fefd41388d1811dc51c64a840417ed6adbe4ea67c94d22e71ef828969de19333",
+                "code": "997d95c16a802678b702ba3378ae83c881abeee6",
+                "maintenance": "3b5df61b3376c3c251f95b81b5c65771fad43ca1d719a400a702bef3ed91a615"
+            }
+        }
+    }
+}

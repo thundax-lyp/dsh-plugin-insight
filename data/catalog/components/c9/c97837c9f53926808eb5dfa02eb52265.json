@@ -7,15 +7,15 @@
             "id": "github:1412690009:root",
             "repository": "zhao-guang-ai/dsh-quote-annotate-pro",
             "path": "",
-            "revision": "b14a4c994750c5cce17040b6bb6a95d66df28249",
+            "revision": "e1b7809e9376eae910767f4c0b3ca7001fc3865d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "e2d111fb7efcf787b347ec3ffda2694253d3918e0bc25cfff64d72ff1955b9fe",
-                "code": "b14a4c994750c5cce17040b6bb6a95d66df28249",
-                "maintenance": "33f5dc202a99de2fe6d8ca909fd4bd83260606f62845bc15a7cbe172fe9bde8c"
+                "code": "e1b7809e9376eae910767f4c0b3ca7001fc3865d",
+                "maintenance": "d52783c8d4d8acd8bfbaf051930d8a03e085d02b2f3607fbc1ae0b8197a1573b"
             }
         }
     }

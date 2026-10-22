@@ -7,14 +7,14 @@
             "id": "github:1333788844:root",
             "repository": "linyp/dsh-plugin-langfuse",
             "path": "",
-            "revision": "4014187d3b8e84c0b483ebfe712746140d2be9be",
+            "revision": "5fc5f6bd93834123545d5006a5e2344ca3b8cc03",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "d2b483b2987edf2cfda0891bcfdce498b86dff2c1c9550e42f166411b92395fd",
-                "code": "4014187d3b8e84c0b483ebfe712746140d2be9be",
-                "maintenance": "9fe29c1bab59a8cba96c555df58df3a7488f1aacc20c67de2b1572a996200f69"
+                "code": "5fc5f6bd93834123545d5006a5e2344ca3b8cc03",
+                "maintenance": "0feec1f6c80bee824414fd7a83ba535ece407a548eaf94914092df935c211142"
             }
         }
     }

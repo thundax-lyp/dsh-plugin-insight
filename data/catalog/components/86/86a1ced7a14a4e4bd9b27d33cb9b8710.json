@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "86a1ced7a14a4e4bd9b27d33cb9b8710",
+    "identity": "github:1427169964:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427169964:root",
+            "repository": "zirscard/dsh-taskboard-epic",
+            "path": "",
+            "revision": "ccc50c277a472d58bc8e84f7286d54a6962e2967",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7b619ef97ac1839b8f5bc8a5ee844292124db305033dcbe4ba67bed67c3b4b2e",
+                "code": "ccc50c277a472d58bc8e84f7286d54a6962e2967",
+                "maintenance": "4cac72f0fac330b88bb4b2edf4fdcc05c3a495ee258f2f2a3aeb3573da077f4b"
+            }
+        }
+    }
+}

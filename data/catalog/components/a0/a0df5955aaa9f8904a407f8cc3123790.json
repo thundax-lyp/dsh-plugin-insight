@@ -7,14 +7,14 @@
             "id": "github:1349641014:root",
             "repository": "dingminhua/dsh-connect-workbuddy",
             "path": "",
-            "revision": "2ce4f5e1ec890d98ea56b388a1de98993cd9c507",
+            "revision": "b2777d6274a4d3b81b3893c983d7f03396da7aef",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d674030853becd4ba45ad3eed4cef7f83ac6630ae98d99f573c79172125486e5",
-                "code": "2ce4f5e1ec890d98ea56b388a1de98993cd9c507",
-                "maintenance": "387eb57dfbad2f14c751e194bfa1a7db9732dae6d2d367913f6700aeca27467e"
+                "code": "b2777d6274a4d3b81b3893c983d7f03396da7aef",
+                "maintenance": "b4cf9ab653d3752b4b939ed963f60478ce5a878f12b88d3fe2fe485cc65288e0"
             }
         }
     }

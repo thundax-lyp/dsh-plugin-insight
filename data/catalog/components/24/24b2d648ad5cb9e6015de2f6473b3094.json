@@ -7,14 +7,14 @@
             "id": "github:1368394884:root",
             "repository": "EmotionG/dsh-llm-config",
             "path": "",
-            "revision": "c689432c228afa15e4d3dba6d8d7cd0123ab7781",
+            "revision": "d2b6020f1a57a9861020e355ed216e57f7697d9e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e838eddeb0c49015d72078c3b10ef894bc3d6b19e1acecf9c324f4f6b7e87bb7",
-                "code": "c689432c228afa15e4d3dba6d8d7cd0123ab7781",
-                "maintenance": "7545e5215e9d873e71de28f94064fbbb02dae43c565fb885fe7acc865dcfc50a"
+                "code": "d2b6020f1a57a9861020e355ed216e57f7697d9e",
+                "maintenance": "bd78e7cd2cf18e7c77732148869d650a978d2fb8988ce933885e19348073b56f"
             }
         }
     }

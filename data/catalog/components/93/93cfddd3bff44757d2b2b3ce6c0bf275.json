@@ -477,15 +477,15 @@
             "repository": "Aik358/dsh-anchored-monitor",
             "path": "",
             "revision": "086bd05e1e3035ddf23133f3a0ee479291a4b237",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
             "fingerprints": {
                 "directory": "0a32701071b2cce0402af681a43d43aa658a531922bd13db3ed67e2bebb411fb",
                 "code": "086bd05e1e3035ddf23133f3a0ee479291a4b237",
                 "maintenance": "12ef11b1263cbb9e42d8122b5718ff0e5ec8b21dcc54d67d84d0539067520858"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            }
         }
     }
 }

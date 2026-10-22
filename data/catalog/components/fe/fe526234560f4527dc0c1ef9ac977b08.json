@@ -480,14 +480,14 @@
             "repository": "2861292267/DSH-Official-WorkBuddy-Credit-Proxy",
             "path": "",
             "revision": "17a02c085af35ab08ceb3075b003a981afa76d5c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "c139a131e40f9787a7f3201f76b73cf6238f4a313eb7449f37b19a05b52e8f86",
                 "code": "17a02c085af35ab08ceb3075b003a981afa76d5c",
                 "maintenance": "640674f3394b99598fd05ea08d2b1ae4ae5ad12d84631e54fab8b1f4343793ee"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

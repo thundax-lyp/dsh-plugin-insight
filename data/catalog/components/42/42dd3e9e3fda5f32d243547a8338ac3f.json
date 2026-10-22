@@ -7,14 +7,14 @@
             "id": "github:1369398336:packages-dsh-knowledge-studio",
             "repository": "ECNU/EduWork",
             "path": "packages/dsh-knowledge-studio",
-            "revision": "4277582de87dc0a16eb67528225314e4591a369b",
+            "revision": "60b561de3afa6eeac929c729ce74c75e7c0fb26c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "21304b2c51302bbbb63686039c0c6c4e1617d473efc1e95ea88fcd1e44e8fede",
-                "code": "4277582de87dc0a16eb67528225314e4591a369b",
-                "maintenance": "66b250ae108f42287fee765980af40160c853dc5552a6dfd0b01af81f4fc0da2"
+                "code": "60b561de3afa6eeac929c729ce74c75e7c0fb26c",
+                "maintenance": "b852ab45984b6e6f776533f70a7f379fadfb61676505f0235c267022d3ece46d"
             }
         }
     }

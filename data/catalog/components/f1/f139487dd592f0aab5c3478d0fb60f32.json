@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f139487dd592f0aab5c3478d0fb60f32",
+    "identity": "github:1425291372:plugins-git-bash",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425291372:plugins-git-bash",
+            "repository": "HwFee/HwFee-dsh",
+            "path": "plugins/git-bash",
+            "revision": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c959e8b97f25c4915bfd482ae20e64718c5fc3c750fb156df83cf7c600eb1d97",
+                "code": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
+                "maintenance": "14d48da1a00d0360203f6302bf1187a0270ae5af62b767cd7059fe0958c8f9b0"
+            }
+        }
+    }
+}

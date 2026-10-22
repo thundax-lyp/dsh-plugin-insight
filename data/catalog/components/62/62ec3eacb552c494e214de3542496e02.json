@@ -7,14 +7,14 @@
             "id": "github:1338074634:root",
             "repository": "bailinghub/bailinghub-dsh-plugin",
             "path": "",
-            "revision": "2f32923a0da47d24a0c2de77cc8ed7b976406f40",
+            "revision": "990b7582cbb1c3a50737f12065e49072dacf931a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7bb401bd5156fdde0381ed3c7bb37e7ae7db639d9c84fb3b519f3038d9b672e2",
-                "code": "2f32923a0da47d24a0c2de77cc8ed7b976406f40",
-                "maintenance": "a98fdf3e0debb6a24066c330959a79452b517e9d24a98c4b8192199f272dccbd"
+                "code": "990b7582cbb1c3a50737f12065e49072dacf931a",
+                "maintenance": "cbd397e8f5c23ab162dc9c2da9cd7876a134e7c07354ee1fa36a2e479cad0839"
             }
         }
     }

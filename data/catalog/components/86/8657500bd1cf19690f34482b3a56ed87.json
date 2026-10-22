@@ -7,14 +7,14 @@
             "id": "github:1171186947:root",
             "repository": "LiPu-jpg/Openwrite",
             "path": "",
-            "revision": "c662440f351436e666b6f996d3bdb3274f351b31",
+            "revision": "2fd94caaf3cff391c80f051bfcfa4ba3b44efdbb",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0a2da73bf73316b1dba99e7d15e395b08e843b040123cccf3f07eee85b7014a2",
-                "code": "c662440f351436e666b6f996d3bdb3274f351b31",
-                "maintenance": "c5b997b8f5e48846632b6218942ab91f5c2cc82dc11749d1c429a2be36baa30f"
+                "code": "2fd94caaf3cff391c80f051bfcfa4ba3b44efdbb",
+                "maintenance": "a6382557e96885f72a8a968df547ba0708b51618b9967790c32d5c2a02c04092"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1425917948:root",
             "repository": "vagur1689/dsh-conversation-find",
             "path": "",
-            "revision": "74e781d138804db316eafcd148b3953a05f70d59",
+            "revision": "6ff57fc5f324862cc3ab2563dd790667b05f6ca3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "745d6acdbbdc81d9a8a48f0604638b2a24e35a8e14670c2cc3b094b13006c45f",
-                "code": "74e781d138804db316eafcd148b3953a05f70d59",
-                "maintenance": "771401e5adf8ec6e648ab75bb90e481fc741dc1f4786cae2cf7ec0c952c444d8"
+                "code": "6ff57fc5f324862cc3ab2563dd790667b05f6ca3",
+                "maintenance": "99c42568cb25104cf5334e90af9fb1f86653e3a4327b19322f2fea50426df4b7"
             }
         }
     }

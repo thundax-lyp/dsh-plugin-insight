@@ -190,7 +190,7 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核host当前与默认区别、实时/缓存来源、列表编码与完整性、固定只读子进程预算、成本与采用。
+**插件研究总目标**：核host当前与默认区别、实时/缓存来源、列表编码与完整性、固定只读子进程预算、成本与采用。
 
 <a id="research-q01"></a>
 
@@ -198,7 +198,7 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 ### Q01 · 为什么需要发行版信息，结果不能替代什么？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -251,7 +251,7 @@ Reports wsl -l -v: default distro vs the one the agent is in, plus UNC path safe
 
 ### Q02 · 信息采集、解析与提示如何组合？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -429,7 +429,7 @@ export function formatDistroReport(info) {
 
 ### Q03 · 本地化、进程与失败边界有哪些缺口？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -559,8 +559,8 @@ export function detectWsl({ env = process.env, readRelease = readOsRelease } = {
 #### 缺口
 
 - 真实本地化/非ASCII列表、取消/外层超时与不同host注册契约未矩阵核对。
-  **影响：**不保证全语言/完整列表或立刻取消。
-  **进一步探讨：**用固定UTF16/UTF8与多词/局部坏行mock及延迟exec核partial/身份/预算，不运行wsl命令。
+  **影响**：不保证全语言/完整列表或立刻取消。
+  **进一步探讨**：用固定UTF16/UTF8与多词/局部坏行mock及延迟exec核partial/身份/预算，不运行wsl命令。
 
 <a id="research-q04"></a>
 
@@ -568,7 +568,7 @@ export function detectWsl({ env = process.env, readRelease = readOsRelease } = {
 
 ### Q04 · 如何启动使用并衡量成本？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -712,8 +712,8 @@ export async function listDistros({ execFileFn = execFileAsync } = {}) {
 #### 缺口
 
 - 与手动查询相比的错发行版率/响应时间/总上下文没有对照。
-  **影响：**不量化省时或错误减少。
-  **进一步探讨：**固定多发行版任务与mock列表，让人工判目标，比较误判/缺项/阅读成本。
+  **影响**：不量化省时或错误减少。
+  **进一步探讨**：固定多发行版任务与mock列表，让人工判目标，比较误判/缺项/阅读成本。
 
 <a id="research-q05"></a>
 
@@ -721,7 +721,7 @@ export async function listDistros({ execFileFn = execFileAsync } = {}) {
 
 ### Q05 · 推荐与可继续探讨入口是什么？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -810,7 +810,7 @@ export async function listDistros({ execFileFn = execFileAsync } = {}) {
 #### 缺口
 
 - 新环境收据/宿主进程预算方案未实现。
-  **影响：**不计当前完整性/治理优势。
-  **进一步探讨：**固定mock编码/身份/进程时序对照误判与资源，不调用Windows命令。
+  **影响**：不计当前完整性/治理优势。
+  **进一步探讨**：固定mock编码/身份/进程时序对照误判与资源，不调用Windows命令。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

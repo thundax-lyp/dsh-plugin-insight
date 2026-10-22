@@ -7,14 +7,14 @@
             "id": "github:1413074206:root",
             "repository": "WenOwen/dsh-your-turn",
             "path": "",
-            "revision": "44f4687c2bcca6d7cb6465ab720af25a486aa0ef",
+            "revision": "c9f9fc82c97637810272053467add8c3c2a4a90e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7465c8faad8fb322a31505db273c059550b5227747cd050fad9962305e50460b",
-                "code": "44f4687c2bcca6d7cb6465ab720af25a486aa0ef",
-                "maintenance": "4da95be4bce6169824b72058e28ea20c566e7a1ebe176ca5e45a0a75305275ec"
+                "code": "c9f9fc82c97637810272053467add8c3c2a4a90e",
+                "maintenance": "32e075dc2ff0eb077f977d89ad81c52f87e748f1701f42e08f602f050f9a40e7"
             }
         }
     }

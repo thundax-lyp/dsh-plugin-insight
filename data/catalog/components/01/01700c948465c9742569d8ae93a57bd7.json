@@ -7,14 +7,14 @@
             "id": "github:1382463211:root",
             "repository": "hasan-aghayev/dsh-pet-companion",
             "path": "",
-            "revision": "84e23e1cc8be25732df73dd20ccd4d5be97f2ed8",
+            "revision": "c10ffa313b38ec2802c0c0cc781470615a993c2b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c494061c46b4199e105cdb07d03780d74389f0cc9491f7b3f1d8a796b45d58a4",
-                "code": "84e23e1cc8be25732df73dd20ccd4d5be97f2ed8",
-                "maintenance": "3bee23845e9cb07ca8ba6bdc044aa463f52ce893491b552959a893daf2541224"
+                "code": "c10ffa313b38ec2802c0c0cc781470615a993c2b",
+                "maintenance": "f7911a2d488fc37d57fd04a15ebac1e766864bd12f9cc82fe9a3ccc0f63b4654"
             }
         }
     }

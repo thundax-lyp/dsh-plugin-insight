@@ -7,14 +7,14 @@
             "id": "github:1336166883:root",
             "repository": "dsh-research/dsh-research",
             "path": "",
-            "revision": "d098c5a178e9d8da205c4b5793c97124a553e7aa",
+            "revision": "1398e9b8d60bb8804badba1a762005791f0e65d0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "21f2fc60456b4e7a239547208c5e280206a06259f17e620fa79a9cda023feb26",
-                "code": "d098c5a178e9d8da205c4b5793c97124a553e7aa",
-                "maintenance": "cdc4bca1398935f9607afe8a31162ac03563721b8904ed5458b4f9198b7e6bc8"
+                "code": "1398e9b8d60bb8804badba1a762005791f0e65d0",
+                "maintenance": "a7016a0c550e8c9097902504e78eaffa9e7941e4fc2f45c16abfe8e8b9982394"
             }
         }
     }

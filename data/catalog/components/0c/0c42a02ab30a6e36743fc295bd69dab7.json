@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0c42a02ab30a6e36743fc295bd69dab7",
+    "identity": "github:1412721907:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412721907:root",
+            "repository": "dreamfarer-space/deepseek-harness-intelligent-ui",
+            "path": "",
+            "revision": "1caca7f7ff9310e23cc73e0f496ba6fab6ebb39e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c0cb3701521551e743fa1bf42f42f47bc96e866e0f1365977becba9fbf23bb72",
+                "code": "1caca7f7ff9310e23cc73e0f496ba6fab6ebb39e",
+                "maintenance": "98c855a791c2164b451f21038869c5e4d4bc928943484be8e6f14d4ec85eea72"
+            }
+        }
+    }
+}

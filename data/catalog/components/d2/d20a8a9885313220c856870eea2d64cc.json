@@ -7,14 +7,14 @@
             "id": "github:1319866779:malong-dsh-bundle",
             "repository": "wulun811/LiuHe",
             "path": "malong/dsh/bundle",
-            "revision": "7093c67d4dda05f7a5bec127a6068ca55f58daea",
+            "revision": "f5cc6858f9fb45d2284f039bea8f871deb98de3a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7b200d52fba434004bdba11073fe6303cb57878b6c95d45d5f586532a60d98cf",
-                "code": "7093c67d4dda05f7a5bec127a6068ca55f58daea",
-                "maintenance": "14bb157613e0d3b454f08187b069f32a4d18a14cf425ebd3661378120ed0194b"
+                "code": "f5cc6858f9fb45d2284f039bea8f871deb98de3a",
+                "maintenance": "15c22d73f15fd6b24fe80ffd6d511ab0ca857eea9cc40cb6e56aa9f9239ed91a"
             }
         }
     }

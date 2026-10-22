@@ -7,14 +7,14 @@
             "id": "github:1408156323:root",
             "repository": "yupaoa/dsh-persona-switcher",
             "path": "",
-            "revision": "f6b5a90dfdcad02100625f1d2e1494d064509743",
+            "revision": "563854472ae7fe3b2e96f6cbcb53428d3af81e1c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "89a702de11b95eb71cceade6929a0a73d3c9b1d081e43916763c4f64305027bf",
-                "code": "f6b5a90dfdcad02100625f1d2e1494d064509743",
-                "maintenance": "ba1821e392f679289dac8b92947fb479cff64493bcae040ee1f41392f4d6dfa8"
+                "code": "563854472ae7fe3b2e96f6cbcb53428d3af81e1c",
+                "maintenance": "c085eee9225197a22407cc60f9c750ad1a1b26a1ca52bd60dbdc992e7d44ba36"
             }
         }
     }

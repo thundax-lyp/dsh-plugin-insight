@@ -7,14 +7,14 @@
             "id": "github:1423427764:root",
             "repository": "flysusdjd/dsh-rank-board",
             "path": "",
-            "revision": "a9e9b690afa2286b0020170fc91ba544e0084594",
+            "revision": "12143a4199036cb5239426a07af217a268c04af5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a3b1c62906299d127e85c6f66f1ff091fe3500f09e87b18a7905977bd132de01",
-                "code": "a9e9b690afa2286b0020170fc91ba544e0084594",
-                "maintenance": "bcaeeedcf89730d4489467f8748a4a411c4eb03712430c6f19a0da14633e6485"
+                "code": "12143a4199036cb5239426a07af217a268c04af5",
+                "maintenance": "4d4dcef2064cc98604a6464e23230b775117a1eb781b0c32786db345de641951"
             }
         }
     }

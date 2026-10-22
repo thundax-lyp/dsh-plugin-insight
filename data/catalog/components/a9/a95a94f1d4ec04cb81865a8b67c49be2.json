@@ -7,14 +7,14 @@
             "id": "github:1361080830:root",
             "repository": "mo-n/dsh-provider-qoder",
             "path": "",
-            "revision": "943d54f6bbbd0492e053b2bf6496910b326e1c38",
+            "revision": "6732028f2b44204f02b475a08f66d4a286d0c453",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d75623c65c784a8643776c6b50158b37d12b7a0f22827160b785660787cf689a",
-                "code": "943d54f6bbbd0492e053b2bf6496910b326e1c38",
-                "maintenance": "8c7d9f7d8ac640f389571c038038f2db17d74afcd77aab4ed5ca444890e35c6a"
+                "code": "6732028f2b44204f02b475a08f66d4a286d0c453",
+                "maintenance": "d252b8d4359f3dfa0f621aeadf0a419c2a7d2cc63803a44cebf789113ede71d2"
             }
         }
     }

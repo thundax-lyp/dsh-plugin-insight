@@ -7,14 +7,14 @@
             "id": "github:1365336780:plugins-token-meter",
             "repository": "Yinxe/dshp",
             "path": "plugins/token-meter",
-            "revision": "05138744877ff041210fa7e71e5c2446da017f14",
+            "revision": "19f0d18c41626896acc40e0510e9dc790c400fa6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "51c16fd734366754ae20d64a2c51fbe450ca3a4b47de72365739584f49a9a623",
-                "code": "05138744877ff041210fa7e71e5c2446da017f14",
-                "maintenance": "9cf94ef1ccebddf1fd5f018f35276c1d0f1108cfe23d180768b06f734ba4b97a"
+                "code": "19f0d18c41626896acc40e0510e9dc790c400fa6",
+                "maintenance": "42981045ba57c24b2a2240272be2d3a8022ca948be21de99ca13d9005c076b16"
             }
         }
     }

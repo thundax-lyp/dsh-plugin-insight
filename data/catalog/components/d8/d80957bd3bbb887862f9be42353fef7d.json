@@ -7,14 +7,14 @@
             "id": "github:1334193467:root",
             "repository": "crazywoola/dsh-balance",
             "path": "",
-            "revision": "30cf71aa7d6e521be209dd156ffafcd40b046cbc",
+            "revision": "ec7c3fa6b1fe0b895b1d22e0be899e1b09e1b88b",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "ef11206a9365f97d80fcab1103e91271a04c19629301c57ff580c31f5d3f4d55",
-                "code": "30cf71aa7d6e521be209dd156ffafcd40b046cbc",
-                "maintenance": "471713c1dec58ff93a3a2aa0eb7c9188d62362972ec39042a21137ea74fa5f7f"
+                "code": "ec7c3fa6b1fe0b895b1d22e0be899e1b09e1b88b",
+                "maintenance": "c26d9de0473acf45e31385ed031cb0a0838dcb5cb08d4a6b19038bd6df225965"
             }
         }
     }

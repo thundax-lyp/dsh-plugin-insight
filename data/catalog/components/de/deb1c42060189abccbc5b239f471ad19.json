@@ -7,14 +7,14 @@
             "id": "github:1418639621:root",
             "repository": "c1overzz/dsh-bili-scroll",
             "path": "",
-            "revision": "eab82bb749bdab1e58723b734011dbb583993785",
+            "revision": "2d71abd25bee19a6bdc0c586b7d6e11c5ee4499c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d8394ea8b8a246d8c155aa97720f17ca1c79d397107e311c022cc8c16e9cbc4c",
-                "code": "eab82bb749bdab1e58723b734011dbb583993785",
-                "maintenance": "f2a0b57559133ceb215bd3ad3b916d2fcb0a4d78358e3dcf1fa6fc5f32af16a4"
+                "code": "2d71abd25bee19a6bdc0c586b7d6e11c5ee4499c",
+                "maintenance": "ccf7e049dd5fc2dc3d7262016c8f33ed215d6a5e32a008594863d7799e39749f"
             }
         }
     }

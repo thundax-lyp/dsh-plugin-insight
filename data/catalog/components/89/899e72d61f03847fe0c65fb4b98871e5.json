@@ -7,15 +7,15 @@
             "id": "github:1351966712:root",
             "repository": "weibaohui/hermes-loop",
             "path": "",
-            "revision": "97d39677bebfb25d2bda9936375b05ffe7fde57a",
+            "revision": "a32b7eab9a86136dfd793129fbcc0ae2defca2fd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "dc8481b66199a4c50b921d881ce3d66436abdfdb278f39b17cdea0f56673f8ee",
-                "code": "97d39677bebfb25d2bda9936375b05ffe7fde57a",
-                "maintenance": "d988ce644f3064c186fd75059303703071d525c5f48be3c647c42d58e2bf48e6"
+                "code": "a32b7eab9a86136dfd793129fbcc0ae2defca2fd",
+                "maintenance": "0cf6d0e88e7e1f0fc0fcb3321671b3090fc649b07c6bcf49caca9cc66b9837f8"
             }
         }
     }

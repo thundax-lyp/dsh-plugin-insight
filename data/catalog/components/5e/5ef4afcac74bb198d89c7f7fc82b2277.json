@@ -7,14 +7,14 @@
             "id": "github:1339795822:root",
             "repository": "Octo-o-o-o/dsh-plugin-deploy",
             "path": "",
-            "revision": "2536a05de2e337c8fe8f3aca30c027bcd9825f6e",
+            "revision": "f6e1f8471ed5bc5ab6d4002ee5e29788a358b5d5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "cbe4de1315e7dff592ae6e0ac2f7519f4321e06854325800857d36a7be5f2090",
-                "code": "2536a05de2e337c8fe8f3aca30c027bcd9825f6e",
-                "maintenance": "cbd28a5cf59aeb93e441a70349b046a454f635dedce60924227a4cbbc8aa5458"
+                "code": "f6e1f8471ed5bc5ab6d4002ee5e29788a358b5d5",
+                "maintenance": "74a9df1a9f137ed3304407a8cb90b71eddf66f015c8f4bb1d756e8bf8813cacb"
             }
         }
     }

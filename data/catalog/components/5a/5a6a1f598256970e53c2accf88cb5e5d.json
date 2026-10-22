@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5a6a1f598256970e53c2accf88cb5e5d",
+    "identity": "github:1426783194:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426783194:root",
+            "repository": "mhlywxl/dsh-coding-sound",
+            "path": "",
+            "revision": "0bd171d3cc84de812dbdbf640fb2c901eaf18552",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fc62b08d36877c535beadda1c794e796840eff9190d4dbd7b22fbcca091b7ea3",
+                "code": "0bd171d3cc84de812dbdbf640fb2c901eaf18552",
+                "maintenance": "37c3b8939802c8b21c526cf3124be73efcf3a63a49f076c9db667d8e535df96e"
+            }
+        }
+    }
+}

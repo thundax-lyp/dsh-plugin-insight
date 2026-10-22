@@ -175,7 +175,7 @@ Ctrl+S 除 better-sidebar panelHost 外全局先 preventDefault，即便动作 n
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实三键快捷路由、配置传输、焦点冲突与使用条件。
+**插件研究总目标**：核实三键快捷路由、配置传输、焦点冲突与使用条件。
 
 <a id="research-q01"></a>
 
@@ -183,7 +183,7 @@ Ctrl+S 除 better-sidebar panelHost 外全局先 preventDefault，即便动作 n
 
 ### Q01 · 哪些用户及场景获得什么增量？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -299,8 +299,8 @@ function createChords(keymap: typeof defaultKeymap): Readonly<Record<string, Cho
 #### 缺口
 
 - 未在真实 Web UI 和不同平台键盘布局试用。
-  **影响：**无法证明快捷键易用性或浏览器/编辑器兼容。
-  **进一步探讨：**在 Windows/macOS/Linux 浏览器对输入框、插件编辑器和无会话页面测试。
+  **影响**：无法证明快捷键易用性或浏览器/编辑器兼容。
+  **进一步探讨**：在 Windows/macOS/Linux 浏览器对输入框、插件编辑器和无会话页面测试。
 
 <a id="research-q02"></a>
 
@@ -308,7 +308,7 @@ function createChords(keymap: typeof defaultKeymap): Readonly<Record<string, Cho
 
 ### Q02 · 按键、右侧栏和配置怎么路由？
 
-**研究主题：**功能与机制、工程质量与复用、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
 
 #### 完整回答
 
@@ -512,8 +512,8 @@ export function apply(ctx: ClientContext, config?: KeymapConfig): void {
 #### 缺口
 
 - 未在目标 DSH 版本/可选 better-sidebar 版本对照 DOM。
-  **影响：**某个 DOM 标记变更可能静默 no-op 或点错末按钮。
-  **进一步探讨：**在有/无 better-sidebar 与无会话/已选会话下手动验键位和目标。
+  **影响**：某个 DOM 标记变更可能静默 no-op 或点错末按钮。
+  **进一步探讨**：在有/无 better-sidebar 与无会话/已选会话下手动验键位和目标。
 
 <a id="research-q03"></a>
 
@@ -521,7 +521,7 @@ export function apply(ctx: ClientContext, config?: KeymapConfig): void {
 
 ### Q03 · Ctrl+S 与编辑/浏览器保存有何冲突？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -628,7 +628,7 @@ test('Ctrl+S inside the better-sidebar surface yields to the editor save', () =>
 
 ### Q04 · 采用成本、验证与改进假设？
 
-**研究主题：**效果与总成本、采用判断、新假设与验证
+**研究主题**：效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -783,10 +783,10 @@ function createChords(keymap: typeof defaultKeymap): Readonly<Record<string, Cho
 #### 缺口
 
 - 无真实用户/编辑器/浏览器快捷键冲突测量。
-  **影响：**不能量化便利与误拦截比例。
-  **进一步探讨：**隔离 Web profile 按焦点和布局矩阵记录 defaultPrevented、保存结果和动作。
+  **影响**：不能量化便利与误拦截比例。
+  **进一步探讨**：隔离 Web profile 按焦点和布局矩阵记录 defaultPrevented、保存结果和动作。
 - 目标有效性/编辑焦点门控未实现。
-  **影响：**改进方案不能算现有保护。
-  **进一步探讨：**原型化后与现版比较保存误拦截和快捷动作命中。
+  **影响**：改进方案不能算现有保护。
+  **进一步探讨**：原型化后与现版比较保存误拦截和快捷动作命中。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

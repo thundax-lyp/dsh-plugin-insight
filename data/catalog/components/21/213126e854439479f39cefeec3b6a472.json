@@ -450,14 +450,14 @@
             "repository": "643048695/dsh-compaction-route",
             "path": "",
             "revision": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "2f4fa1878d3db6411797082ec101d016200bc52d3df20c48e16f0be3abb06908",
                 "code": "6039b260d96652ce4af606f850cd1a179cd9d4f7",
                 "maintenance": "d58ce7ccc2000f6bb976aacdfb185b6756e85f6fc039ba67218da9ba276fb4bb"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

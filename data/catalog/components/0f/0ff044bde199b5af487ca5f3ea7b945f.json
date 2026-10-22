@@ -1,0 +1,470 @@
+{
+    "schema_version": 3,
+    "id": "0ff044bde199b5af487ca5f3ea7b945f",
+    "identity": "github:1379204512:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1379204512:root",
+            "repository_id": 1379204512,
+            "component_id": "root",
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "path": "",
+            "aliases": [],
+            "name": "oh-my-dsh",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+                "code": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                "maintenance": "5a87e6183eef3cbbb81da0bec4792dcf3ea3f93da1569bc658f6426896de61b1"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1379204512-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:29:58.657Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1379204512-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1225Sakura/oh-my-deepseekharness",
+                            "commit": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                            "path": "README.md",
+                            "content_sha256": "8f1d3ecb960cfb74971b77dccbb0c9afd777f20f6064b76b8de6e83475921531"
+                        }
+                    ],
+                    "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                    "captured_at": "2026-10-22T15:29:58.657Z",
+                    "summary": "为 DSH 提供多智能体编排、角色资产、状态工具、团队运行时与恢复机制。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1379204512-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1225Sakura/oh-my-deepseekharness",
+                            "commit": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                            "path": "README.md",
+                            "content_sha256": "8f1d3ecb960cfb74971b77dccbb0c9afd777f20f6064b76b8de6e83475921531"
+                        },
+                        {
+                            "repository_url": "https://github.com/1225Sakura/oh-my-deepseekharness",
+                            "commit": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                            "path": "lib/index.js",
+                            "content_sha256": "1d49b1f76e7e049a0efdd1144eab2098f06ecbefd8697e586a9b7304b9bc7a51"
+                        }
+                    ],
+                    "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                    "captured_at": "2026-10-22T15:29:58.657Z",
+                    "summary": "核查 README.md、lib/index.js；入口探测宿主服务并注册协议、技能、命令、记忆、委派、关键词钩子、心跳与 HUD；项目内 `.omd` 保存模式状态和交接材料。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向希望在 DSH 内组织长链路编码任务的开发者，把规划、委派、评审、恢复与团队协作收进一套显式协议。 [Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口探测宿主服务并注册协议、技能、命令、记忆、委派、关键词钩子、心跳与 HUD；项目内 `.omd` 保存模式状态和交接材料。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Node/DSH 与可选 LSP/AST 进程；金额未知 | 选择模型档位、理解 42 Skill 与模式，分钟数未知 | 复杂度显著高于原生 goal |\n| 持续使用 | 多角色模型调用、heartbeat、HUD 与状态 I/O | 阶段交接、双评审和冲突处理 | 缺 token 与委派次数台账 |\n| 失败恢复 | 重跑节点或模型会追加调用 | 核对 graph journal、mailbox、handoff、worktree | 恢复成功率与重复执行风险未测 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。试验成功需在相同测试门槛下减少人工接管或返工，且取消后能从 journal/handoff 恢复；若委派调用和状态修复增加而合格率不升，应停用复杂模式。 [Q09](#research-q09)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 编排覆盖 | 三模式、角色资产、team/graph 状态机存在 | 是否提高真实任务合格率 |\n| 降级与恢复 | 核心/可选依赖分层，状态有 journal/handoff | 崩溃后是否无重复副作用恢复 |\n| 总负担 | 协议集中规划、评审和交接 | 是否比原生 goal 少人工且不多耗模型 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "入口将硬依赖与可降级能力分开，注册随 Cordis scope 回收，值得借鉴；但资产、工具和状态面很宽，升级时需同时验证协议、文件格式和宿主 API。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对直接使用 DSH 原生工具，它把 OMC/OMX 的编排资产适配为 DSH 服务、降级矩阵和可恢复团队状态，增量主要是系统化组合与宿主接线，而非全新基础算法。 [Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "覆盖面很大，但价值依赖模型遵循协议、宿主服务契约与大量状态文件持续一致；源码可见注册和守卫，尚无同任务对照证明端到端合格率高于更小的原生流程。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可验证“按任务风险渐进开启编排能力”的设计，只在跨阶段或并行冲突出现时启用 team/graph，以降低常规任务的提示与状态负担。 [Q08](#research-q08)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1379204512:root",
+                            "area": "code",
+                            "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:29:58.657Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:29:58.657Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                "reviewed_at": "2026-10-22T15:29:58.657Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1379204512:root",
+                        "area": "code",
+                        "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "相对明确基线存在具体集成和机制增量；覆盖面很大，但价值依赖模型遵循协议、宿主服务契约与大量状态文件持续一致；源码可见注册和守卫，尚无同任务对照证明端到端合格率高于更小的原生流程。 未运行，效果只作解释性判断。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向希望在 DSH 内组织长链路编码任务的开发者，把规划、委派、评审、恢复与团队协作收进一套显式协议。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1379204512-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "仅复杂、多阶段且愿意维护 `.omd` 状态的团队值得观察；先与原生 goal 做同预算对照。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "长链路编码与并行冲突场景明确，但普通任务不需要该复杂度。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "团队状态机、恢复材料和降级矩阵提供具体增量，尚未证明优于原生组合。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码可见完整接线；本轮没有执行测试或宿主验收。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "多模型委派、状态文件、LSP 与人工评审负担较高且未计量。"
+                    }
+                },
+                "score": 60,
+                "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                "reviewed_at": "2026-10-22T15:29:58.657Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1379204512-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1379204512:root",
+                        "area": "code",
+                        "fingerprint": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1379204512:root",
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "path": "",
+            "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+            "fingerprints": {
+                "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+                "code": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                "maintenance": "5a87e6183eef3cbbb81da0bec4792dcf3ea3f93da1569bc658f6426896de61b1"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "b6f5206a6ed481466ce5c9e42d6a1ddaf19d78d5c9db1d58a84343d01094060f"
+        },
+        "publication.metadata": "data/plugins/1225sakura--oh-my-deepseekharness/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供多智能体编排、角色资产、状态工具、团队运行时与恢复机制。",
+            "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+            "source_url": "https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+            "items": {
+                "Skill": "注册多语言编排、规划、质量、研究、记忆与基础设施 Skill 资产。",
+                "Agent/Preset": "提供多种 omd-agent 角色卡及 autopilot、ralph、team 编排预设。",
+                "模型工具": "提供委派、记忆、状态、团队、graph、AST 与 LSP 等模型工具。",
+                "用户命令": "提供 `/omd-cancel` 与 `/omd-doctor`，用于取消和验装诊断。",
+                "Host 路由": "可注册只读 HUD 数据路由，向 Web 客户端呈现 `.omd` 状态摘要。",
+                "界面": "在 Web 侧提供 HUD 面板，展示活跃模式、队员和工具调用。",
+                "事件监听": "监听 agent/pre-step 以执行关键词触发和模式守卫。",
+                "后台": "维护 team heartbeat、graph journal、mailbox、检查点与恢复状态。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 三种编排模式 | autopilot、ralph 与 team 组织不同复杂度任务。 | 仅由固定版本源码确认；运行效果未验证 |\n| 状态与恢复 | 以 `.omd` 保存阶段、交接、事件与检查点。 | 仅由固定版本源码确认；运行效果未验证 |\n| 委派与代码智能 | 提供模型路由、AST/LSP 及团队协调工具。 | 仅由固定版本源码确认；运行效果未验证 |"
+        },
+        "publication.advice": {
+            "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+            "text": "适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。试验成功需在相同测试门槛下减少人工接管或返工，且取消后能从 journal/handoff 恢复；若委派调用和状态修复增加而合格率不升，应停用复杂模式。 [Q09](#research-q09)"
+        },
+        "registry": "data/plugins/1225sakura--oh-my-deepseekharness",
+        "reports": "# oh-my-dsh\n\n> 为 DSH 提供多智能体编排、角色资产、状态工具、团队运行时与恢复机制。\n\n## 研究范围\n\n- **仓库**：[1225Sakura/oh-my-deepseekharness](https://github.com/1225Sakura/oh-my-deepseekharness)\n- **版本号**：0.5.1（[固定提交 aa0b8dee1a15e0eb66a3a334377c74dd505a743e](https://github.com/1225Sakura/oh-my-deepseekharness/tree/aa0b8dee1a15e0eb66a3a334377c74dd505a743e)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向希望在 DSH 内组织长链路编码任务的开发者，把规划、委派、评审、恢复与团队协作收进一套显式协议。 [Q01](#research-q01)\n- **亮点**：相对直接使用 DSH 原生工具，它把 OMC/OMX 的编排资产适配为 DSH 服务、降级矩阵和可恢复团队状态，增量主要是系统化组合与宿主接线，而非全新基础算法。 [Q03](#research-q03)\n- **思考**：覆盖面很大，但价值依赖模型遵循协议、宿主服务契约与大量状态文件持续一致；源码可见注册和守卫，尚无同任务对照证明端到端合格率高于更小的原生流程。 [Q04](#research-q04)\n- **建议**：可验证“按任务风险渐进开启编排能力”的设计，只在跨阶段或并行冲突出现时启用 team/graph，以降低常规任务的提示与状态负担。 [Q08](#research-q08)\n\n采用建议：适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。试验成功需在相同测试门槛下减少人工接管或返工，且取消后能从 journal/handoff 恢复；若委派调用和状态修复增加而合格率不升，应停用复杂模式。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对直接使用 DSH 原生工具，它把 OMC/OMX 的编排资产适配为 DSH 服务、降级矩阵和可恢复团队状态，增量主要是系统化组合与宿主接线，而非全新基础算法。 [Q03](#research-q03)\n\n## 关键质疑\n\n覆盖面很大，但价值依赖模型遵循协议、宿主服务契约与大量状态文件持续一致；源码可见注册和守卫，尚无同任务对照证明端到端合格率高于更小的原生流程。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可验证“按任务风险渐进开启编排能力”的设计，只在跨阶段或并行冲突出现时启用 team/graph，以降低常规任务的提示与状态负担。 [Q08](#research-q08)\n\n在同一固定仓库和模型预算下完成一个跨模块变更：原生 goal、autopilot、team 各运行至少多次，以测试全绿和两类评审无阻塞为合格；记录调用数、token、墙钟、人工接管、重复节点和恢复结果。team 未提高合格率或恢复产生重复副作用即推翻渐进启用假设。\n\n## 场景与替代办法\n\n面向希望在 DSH 内组织长链路编码任务的开发者，把规划、委派、评审、恢复与团队协作收进一套显式协议。 [Q01](#research-q01)\n\n基线是直接使用 DSH 的 goal、ralph、subagent 与文件工具，由用户自行规划和验收；该插件增加角色资产、状态协议和团队运行时，但也增加配置、提示与状态维护。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node.js ≥22.19 与兼容 DSH | 必需 | 加载插件及宿主 API | 启动失败或契约不兼容 |\n| tools/skills/systemPrompt/commands | 必需 | 注入协议、资产、命令和工具 | `apply` 明确抛错 |\n| storage/subagents/MCP/webServer | 按能力 | 记忆、委派、状态工具与 HUD | 探测后降级，能力矩阵必须显示缺口 |\n| `.omd` 写权限与可信 graph descriptor | team/graph 必需 | 保存状态、交接和执行命令 | 不能恢复；不可信命令节点具有 shell 权限 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 验装 | 用户重载 profile 并运行 `/omd-doctor` | 核心服务、目录写入与 MCP 状态可见 |\n| 选择模式 | 用户按任务复杂度显式选 autopilot/ralph/team | 普通任务不误触发 team |\n| 执行与验收 | 领队模型推进阶段并执行测试/评审门 | graph/team 状态与产物一致 |\n| 取消或恢复 | 用户调用 cancel 并核对 `.omd` journal/handoff | 无孤儿 worktree、重复节点或丢失交接 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Node/DSH 与可选 LSP/AST 进程；金额未知 | 选择模型档位、理解 42 Skill 与模式，分钟数未知 | 复杂度显著高于原生 goal |\n| 持续使用 | 多角色模型调用、heartbeat、HUD 与状态 I/O | 阶段交接、双评审和冲突处理 | 缺 token 与委派次数台账 |\n| 失败恢复 | 重跑节点或模型会追加调用 | 核对 graph journal、mailbox、handoff、worktree | 恢复成功率与重复执行风险未测 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 编排覆盖 | 三模式、角色资产、team/graph 状态机存在 | 是否提高真实任务合格率 |\n| 降级与恢复 | 核心/可选依赖分层，状态有 journal/handoff | 崩溃后是否无重复副作用恢复 |\n| 总负担 | 协议集中规划、评审和交接 | 是否比原生 goal 少人工且不多耗模型 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 oh-my-dsh 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向希望在 DSH 内组织长链路编码任务的开发者，把规划、委派、评审、恢复与团队协作收进一套显式协议。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是直接使用 DSH 的 goal、ralph、subagent 与文件工具，由用户自行规划和验收；该插件增加角色资产、状态协议和团队运行时，但也增加配置、提示与状态维护。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\n# oh-my-dsh (omd)\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) [![Node.js >=22.19.0](https://img.shields.io/badge/node-%3E%3E22.19.0-brightgreen)](https://nodejs.org/) [![Tests: 558 passed](https://img.shields.io/badge/tests-558%20passed-brightgreen)](./tests)\n\n**DeepSeek Harness 的多智能体编排层** —— OMC / OMX 编排理念的 dsh 宿主适配实现。\nMulti-agent orchestration layer for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), adapted from:\n\n- [oh-my-claudecode (OMC)](https://github.com/Yeachan-Heo/oh-my-claudecode) — Claude Code 编排层\n- [oh-my-codex (OMX)](https://github.com/Yeachan-Heo/oh-my-codex) — Codex 编排层\n\nomd 以单个 dsh 插件交付：注入编排协议到系统提示词、注册 42 个 skill 目录 + 33 个 `omd-agent-*` 角色卡（66 个双语文件，会话技能目录共 75 条）与 2 个斜杠命令、挂载内置 MCP server 提供 55 个状态/记忆/协调/代码智能/graph 运行时工具。三种执行模式（autopilot / ralph / team）：autopilot 与 ralph 由 dsh 原生 `goal` / `ralph` 工具驱动前台循环；team 由 `lib/team.js` 领队运行时驱动（阶段状态机 + 队员 UUID 生命周期 + mailbox + heartbeat + merge 计划，无 tmux——dsh 无承载面）。\n\n---\n\n## 安装 / Install\n\n```bash\n# 发布后（npm 包名 @sakura12/oh-my-deepseekharness——注意裸 oh-my-dsh 是 npm 上另一个已停更的包）\ndsh plugin --profile <profile> add @sakura12/oh-my-deepseekharness\n\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n入口探测宿主服务并注册协议、技能、命令、记忆、委派、关键词钩子、心跳与 HUD；项目内 `.omd` 保存模式状态和交接材料。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对直接使用 DSH 原生工具，它把 OMC/OMX 的编排资产适配为 DSH 服务、降级矩阵和可恢复团队状态，增量主要是系统化组合与宿主接线，而非全新基础算法。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：覆盖面很大，但价值依赖模型遵循协议、宿主服务契约与大量状态文件持续一致；源码可见注册和守卫，尚无同任务对照证明端到端合格率高于更小的原生流程。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\nNode.js 22.19 及兼容 DSH；核心 tools、skills、systemPrompt、commands 服务必需，storage、subagents、MCP、AST/LSP 与 webServer 可降级；需允许项目写入 `.omd`。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次使用需要安装 Node.js 22.19+、兼容 DSH，并理解 42 个 Skill、33 个角色和三种模式；持续成本来自更多模型委派、`.omd` 状态文件、heartbeat/HUD 与可选 LSP 进程；失败恢复要核对 graph journal、mailbox、handoff 和 worktree 状态。现金成本取决于各 tier/role 实际模型调用，当前没有每个合格任务的 token、委派次数和人工评审分钟数，因此不能声称编排节省成本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n#### 缺口\n\n- 缺少同一编码任务在原生 DSH 与 omd 三种模式下的模型调用数、token、墙钟时间、人工评审时间和恢复次数。\n  **影响**：无法判断大量角色与状态协议是否降低返工，还是只增加模型和协调预算。\n  **进一步探讨**：固定一个跨文件实现任务，分别用原生 goal、autopilot 和 team 执行，按通过同一测试与双评审门计合格数，并记录总调用、token、人工分钟和失败恢复。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n入口将硬依赖与可降级能力分开，注册随 Cordis scope 回收，值得借鉴；但资产、工具和状态面很宽，升级时需同时验证协议、文件格式和宿主 API。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可验证“按任务风险渐进开启编排能力”的设计，只在跨阶段或并行冲突出现时启用 team/graph，以降低常规任务的提示与状态负担。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。试验成功需在相同测试门槛下减少人工接管或返工，且取消后能从 journal/handoff 恢复；若委派调用和状态修复增加而合格率不升，应停用复杂模式。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1225Sakura/oh-my-deepseekharness/blob/aa0b8dee1a15e0eb66a3a334377c74dd505a743e/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n// lib/index.js\nimport { dirname, join } from 'node:path'\nimport { fileURLToPath } from 'node:url'\nimport { Config } from './config.js'\nimport { probeCapabilities, _resetCache } from './probe.js'\nimport { renderProtocol } from './protocol.js'\nimport { renderRuntimeSnapshot } from './runtime.js'\nimport { loadAssets, registerAssets } from './skills.js'\nimport { registerCommands } from './commands.js'\nimport { registerMemoryTools } from './memory.js'\nimport { registerDelegateTool } from './delegate.js'\nimport { registerKeywordHook } from './hook.js'\nimport { registerHeartbeatTimer } from './heartbeat.js'\nimport { registerHudRoute } from './hud-route.js'\n\nexport const name = 'oh-my-dsh'\n// 双清单语义（M1.1 修复）：\n// - CORE_SERVICES：缺失即抛错（规格 §6.1 例外条款——没有它们插件根本无法工作）\n// - inject 全量 = CORE_SERVICES + storage：storage 必须进 inject（cordis 对未 inject\n//   服务的访问抛错——B1 教训；dsh-base 的 cordis.patch.yml 挂载了 dsh-storage 三件套，\n//   任何 base profile 都保证它存在）。storage 缺失仍走降级不抛错（防御非 base profile）。\nconst CORE_SERVICES = ['tools', 'skills', 'systemPrompt', 'commands']\n// M3 c1：subagents 进 inject（设计规格 §7-5：omd_delegate 用宿主 dsh-subagent 服务 spawn\n// 指定 model）——cordis 对未 inject 服务的访问抛错（B1 教训）；dsh-base 每个模板都挂\n// subagent 缝，缺席时 setup 内 tryGet 降级记 probeReport.delegate=unavailable。\nexport const inject = [...CORE_SERVICES, 'storage', 'subagents']\nexport { Config }\n\nconst DEFAULT_ASSETS = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets')\n\n// §7-2 核验：dsh-system-prompt 的 section()/context() 都强制 Number.isFinite(order)；\n// context 的集中档位 CONTEXT_ORDERS 用到 120（SUBAGENT_DELEGATION），omd 顺延。\nconst PROTOCOL_SECTION_ORDER = 100\nconst RUNTIME_CONTEXT_ORDER = 130\n\n/**\n * cordis 插件入口。配置变更时宿主经 Fiber.update() → restart() 重放本函数，\n * 所有注册（section/context/skill/command/tool/domain close）随 scope dispose 自动回收。\n *\n * cordis 契约：apply 的返回值只能是 dispose 函数或 null/undefined，\n```\n\n</details>\n\n#### 缺口\n\n- 未比较原生 DSH 与 omd 在同任务、同模型预算下的合格率和协调开销。\n  **影响**：无法判断系统化编排是否值得常驻，而非仅在复杂任务临时启用。\n  **进一步探讨**：用同一仓库任务对照原生 goal、autopilot 和 team，记录测试通过、评审缺陷、调用预算、人工接管和恢复成功。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：eca410550a8616180d077c06fa208be0c011f17e0ce9e5f8a9b44af32caa130d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 173 | 22218 | — | — | 271382 |\n| .mjs | source | 18 | 2708 | 2233 | 328 | — |\n| .js | source | 30 | 6203 | 4525 | 1350 | — |\n| .js | test | 46 | 10116 | 8651 | 918 | — |\n| .mjs | example | 1 | 83 | 74 | 5 | — |\n| .mjs | test | 1 | 66 | 42 | 17 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 三种编排模式 | autopilot、ralph 与 team 组织不同复杂度任务。 | 仅由固定版本源码确认；运行效果未验证 |\n| 状态与恢复 | 以 `.omd` 保存阶段、交接、事件与检查点。 | 仅由固定版本源码确认；运行效果未验证 |\n| 委派与代码智能 | 提供模型路由、AST/LSP 及团队协调工具。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\n入口将硬依赖与可降级能力分开，注册随 Cordis scope 回收，值得借鉴；但资产、工具和状态面很宽，升级时需同时验证协议、文件格式和宿主 API。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：在同一固定仓库和模型预算下完成一个跨模块变更：原生 goal、autopilot、team 各运行至少多次，以测试全绿和两类评审无阻塞为合格；记录调用数、token、墙钟、人工接管、重复节点和恢复结果。team 未提高合格率或恢复产生重复副作用即推翻渐进启用假设。\n",
+        "metadata": {
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "repository_id": 1379204512,
+            "captured_at": "2026-10-22T15:13:03.419Z",
+            "window_start": "2026-09-22T15:13:03.419Z",
+            "stars": 12,
+            "pushed_at": "2026-10-22T08:21:38Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A03.419Z..2026-10-22T15%3A13%3A03.419Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D3C:1865FC:95A02B:A1E26A:6ADA2804 and timestamp 2026-10-22 15:13:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A03.419Z..2026-10-22T15%3A13%3A03.419Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E1A:31129F:9BDA29:A81BA8:6ADA2805 and timestamp 2026-10-22 15:13:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1225Sakura%2Foh-my-deepseekharness%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A03.419Z..2026-10-22T15%3A13%3A03.419Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4EEE:103D08:99B64E:A5FEBD:6ADA2807 and timestamp 2026-10-22 15:13:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@sakura12/oh-my-deepseekharness",
+                "captured_at": "2026-10-22T15:13:11.285Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2166,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40sakura12%2Foh-my-deepseekharness",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-09-21T08:34:33.011Z",
+                    "captured_at": "2026-10-22T15:13:11.285Z",
+                    "source_url": "https://registry.npmjs.org/%40sakura12%2Foh-my-deepseekharness",
+                    "error": null,
+                    "latest_version": "0.5.1",
+                    "latest_published_at": "2026-10-22T08:25:41.391Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1379204512:root",
+            "repository": "1225Sakura/oh-my-deepseekharness",
+            "path": "",
+            "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0966d4532078cb7d7abccf688281fe0693520aa9a6b617cd29b54d717d51dbeb",
+                "code": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
+                "maintenance": "5a87e6183eef3cbbb81da0bec4792dcf3ea3f93da1569bc658f6426896de61b1"
+            }
+        }
+    }
+}

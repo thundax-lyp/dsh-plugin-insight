@@ -7,14 +7,14 @@
             "id": "github:1419253194:root",
             "repository": "eghrhegpe/dsh-connect-atomcode",
             "path": "",
-            "revision": "fb89d09fe1ee5f2cb26207658f376f3708ae69b8",
+            "revision": "529cca7c625342119681e158e5c9b8d974930c62",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f8b7d014d75a9985e5e64cfa9c931a40e7458a2a3f8874c55c4f64f436b49be5",
-                "code": "fb89d09fe1ee5f2cb26207658f376f3708ae69b8",
-                "maintenance": "5d052c61ffc8b9e6de94aadf008201bf1cd8810f2e09a4b2affe6cfa8e69d2e6"
+                "code": "529cca7c625342119681e158e5c9b8d974930c62",
+                "maintenance": "48738914aaab00d1ca3ed0a6b7f7cbcf5cfb9a6d8b0776590d8525d7618468e9"
             }
         }
     }

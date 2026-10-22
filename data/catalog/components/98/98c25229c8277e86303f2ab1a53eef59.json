@@ -7,14 +7,14 @@
             "id": "github:1350976050:root",
             "repository": "LuminariSoftwares/tool-guardian",
             "path": "",
-            "revision": "7fe6e68b9def586aa73def342a4735a627e6fbbc",
+            "revision": "662062732963514d195aa7d64fc3aa8d375d6874",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1fad4da1c3f2ed392525b76a301dce702242ae6a67b6e09abdcad9f229939991",
-                "code": "7fe6e68b9def586aa73def342a4735a627e6fbbc",
-                "maintenance": "90f8eae06f9d6533f1b57e4fb35ca7714fb139e99cb93e048fd12bbc193e881f"
+                "code": "662062732963514d195aa7d64fc3aa8d375d6874",
+                "maintenance": "2c00e9fdef4fc133cca6d74d2370e90f9e5e4e6e280fecdfffa8e5e19cfcb384"
             }
         }
     }

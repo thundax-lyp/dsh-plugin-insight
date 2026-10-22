@@ -7,14 +7,14 @@
             "id": "github:1340749561:root",
             "repository": "1692775560/dsh-Mimir-Academic-research",
             "path": "",
-            "revision": "b0c31cd51b70cbc5a5409e699d600e7bbc24ead0",
+            "revision": "e2fb631d40b5084b544898ac7a2313ce9dde8f50",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "6b905947592889cc2ce9a2abe79e4dc85f894d0fb6531236c97455d152ea97c1",
-                "code": "b0c31cd51b70cbc5a5409e699d600e7bbc24ead0",
-                "maintenance": "3700d2b4cab0714219fab03d04e694aace2fd706d5af79c33411d92bb072f7a1"
+                "code": "e2fb631d40b5084b544898ac7a2313ce9dde8f50",
+                "maintenance": "c2f6301fc1cebf6cc8bc53523e15244b85c8385fa3b82c2a95bf689d67037e61"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1389035449:root",
             "repository": "mistnest/dsh-cuigengji-plugin",
             "path": "",
-            "revision": "31ede9f94ad22dfc7e1d512e14386bda11ec7319",
+            "revision": "e9b78d065c0a681c6c516d7bb6f66ecb48108203",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "a7c7f70f091235b3db3f1c4cbfebecb7b61c1419ee22c525b3d27b0bbdb18baf",
-                "code": "31ede9f94ad22dfc7e1d512e14386bda11ec7319",
-                "maintenance": "27ce7582c1115f1cb5fe2c3abc164f47fac9ed21addce63d19da050697ea43c7"
+                "directory": "9aa01aded0a9c93656e32079f22b3c273b7c05efff910baff7cc1d49fee279a6",
+                "code": "e9b78d065c0a681c6c516d7bb6f66ecb48108203",
+                "maintenance": "9d9d0e1ec60f4faf8edd2df9ad1f596c74b2b8362aaee6cad36ebaafea35a93c"
             }
         }
     }

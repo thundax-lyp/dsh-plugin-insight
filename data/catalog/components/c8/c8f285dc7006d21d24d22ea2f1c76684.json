@@ -7,14 +7,14 @@
             "id": "github:1407225023:root",
             "repository": "ishanshmalviya5/dsh-local-plugins",
             "path": "",
-            "revision": "9353ac1550c5e023acaecb3cff68ba1d46c42b85",
+            "revision": "5a00682818079aec709e1f87f8eed82ab7b65e11",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8361f00a9f23417e403410a47899b30dbd851f2bc42f966339890ef140b7bba4",
-                "code": "9353ac1550c5e023acaecb3cff68ba1d46c42b85",
-                "maintenance": "6629632d910a0fa209f11d0ccd991de30e55107a1e338cc8d6b945699bed34e2"
+                "code": "5a00682818079aec709e1f87f8eed82ab7b65e11",
+                "maintenance": "336a5656d890d6b6d2b770d472c7137449fb26d5ac7870b62a5565caa9e2d818"
             }
         }
     }

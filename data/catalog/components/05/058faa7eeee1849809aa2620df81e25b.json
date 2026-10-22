@@ -7,14 +7,14 @@
             "id": "github:1335046216:packages-profile",
             "repository": "hyzyn/dsh-plugin-kit",
             "path": "packages/profile",
-            "revision": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
+            "revision": "089a0027ba22dde19ba16c4db3d9e60f54f4bb3d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4f3e5470707b8204db4dd83bbdfc0282c6d82c3bc226b6bbf709e5b1d295e953",
-                "code": "70074a602a42b595eaca2bdc2b4c0be3f3ab6a62",
-                "maintenance": "2e7b920c8063d40c640ac1413638a8754c56991d360e6f103eb8ec2a73934260"
+                "code": "089a0027ba22dde19ba16c4db3d9e60f54f4bb3d",
+                "maintenance": "375db9d39250a376bcfa09e4bf645c2070bf8b857e9c6f94d30406c65db4570b"
             }
         }
     }

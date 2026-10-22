@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "adcd104888080d6e2ab04356926969a8",
+    "identity": "github:1426698453:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426698453:root",
+            "repository": "good-saltfish/dsh-novel-shelf",
+            "path": "",
+            "revision": "4faeebfd14e268e0e699156424c6c8b815521456",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fab9f085926fcdfc4ea0c87aa5cf4bbbfdc3155d8232abfb9644c74ce558faaa",
+                "code": "4faeebfd14e268e0e699156424c6c8b815521456",
+                "maintenance": "7790ab9542973795ab49bc96493e6355db904e630185a9444c26f416d1f47f6b"
+            }
+        }
+    }
+}

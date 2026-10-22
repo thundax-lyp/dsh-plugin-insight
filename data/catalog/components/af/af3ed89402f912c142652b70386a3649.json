@@ -7,14 +7,14 @@
             "id": "github:1394712002:root",
             "repository": "BuvkB/dsh-vaultwarden",
             "path": "",
-            "revision": "5def9ec4aec9980ad3296c611b4a06bc186f4b15",
+            "revision": "7a96c9f3fbb462d40574d37072efab54d12fa4ff",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5b6cbb21c72bc2d143e7a295430905fb905241f1fc1ab88c953b63f33eb62f5e",
-                "code": "5def9ec4aec9980ad3296c611b4a06bc186f4b15",
-                "maintenance": "12baf2400253e4000127b5c8c4a19bfbdf531924d0edf10df2db0ca28a34bcf0"
+                "code": "7a96c9f3fbb462d40574d37072efab54d12fa4ff",
+                "maintenance": "bec3b4c4c00f8c2a3238874050e0c82a3323b698b5c7acd70dbbbe5c6f920a62"
             }
         }
     }

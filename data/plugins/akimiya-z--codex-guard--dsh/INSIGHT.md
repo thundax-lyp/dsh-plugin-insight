@@ -162,7 +162,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**把 DSH 子包的本地 CLI 包装与主仓 GitHub Action 能力清楚分开。
+**插件研究总目标**：把 DSH 子包的本地 CLI 包装与主仓 GitHub Action 能力清楚分开。
 
 <a id="research-q01"></a>
 
@@ -170,7 +170,7 @@
 
 ### Q01 · DSH 子组件能在提交前检查什么，与仓库 GitHub Action 有何不同？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -331,7 +331,7 @@ line**, plus a human-readable summary comment on the PR.
 
 ### Q02 · 工具怎样启动 CLI、传 ref 并返回结果？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -534,7 +534,7 @@ function parseArgs(argv) {
 
 ### Q03 · 工具描述的 commit/CI 保障是否由实际调用提供？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -712,8 +712,8 @@ function collectUntrackedFiles({ execGit, root, readBuffer, statFile } = {}) {
 #### 缺口
 
 - 未执行本地 CLI/DSH。
-  **影响：**实际下载、阻塞和输出呈现未知。
-  **进一步探讨：**隔离假 npm/仓库测试缺网、超长输出、提交主题。
+  **影响**：实际下载、阻塞和输出呈现未知。
+  **进一步探讨**：隔离假 npm/仓库测试缺网、超长输出、提交主题。
 
 <a id="research-q04"></a>
 
@@ -721,7 +721,7 @@ function collectUntrackedFiles({ execGit, root, readBuffer, statFile } = {}) {
 
 ### Q04 · 使用本地 guard 的依赖与代价是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -972,8 +972,8 @@ finding will prevent the PR from merging until it is resolved (or the PR is
 #### 缺口
 
 - 未测性能和 npm 版本一致性。
-  **影响：**本地检查可重现性未知。
-  **进一步探讨：**固定 CLI 版本及大小矩阵对照结果。
+  **影响**：本地检查可重现性未知。
+  **进一步探讨**：固定 CLI 版本及大小矩阵对照结果。
 
 <a id="research-q05"></a>
 
@@ -981,7 +981,7 @@ finding will prevent the PR from merging until it is resolved (or the PR is
 
 ### Q05 · 怎样把这个工具用于可复核的提交前门槛？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1212,7 +1212,7 @@ finding will prevent the PR from merging until it is resolved (or the PR is
 #### 缺口
 
 - 版本锁/结构化状态/超时未实现。
-  **影响：**不能视为当前能力。
-  **进一步探讨：**隔离实现后与基线比较。
+  **影响**：不能视为当前能力。
+  **进一步探讨**：隔离实现后与基线比较。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

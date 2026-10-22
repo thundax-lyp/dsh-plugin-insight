@@ -7,14 +7,14 @@
             "id": "github:1321492978:root",
             "repository": "IcyCreamDAS/shidi-skill",
             "path": "",
-            "revision": "003509b684b59d8be1caa325db03c4626cf39b6e",
+            "revision": "4a0c1e3dc917ec9ad8bd15e05682fc615992eb96",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a5e918b984e4874c7c2fb585a84121b8ce2725fc9ee9b88a7dded74e293f700d",
-                "code": "003509b684b59d8be1caa325db03c4626cf39b6e",
-                "maintenance": "7a9b5774106ca89de36873654e54131cdf63775efdebf0542b8a9ca181268faf"
+                "code": "4a0c1e3dc917ec9ad8bd15e05682fc615992eb96",
+                "maintenance": "aa239ee10bf70f44ffeabcbccbfd9c3111a7d58aa9902d748783bf0aa2ce51f0"
             }
         }
     }

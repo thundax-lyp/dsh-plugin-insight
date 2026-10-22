@@ -7,14 +7,14 @@
             "id": "github:1339028491:root",
             "repository": "HorusJiang/dsh-map-tools",
             "path": "",
-            "revision": "3ba1b4b9f9c7faf7f2e41acbbed76c0228e0902f",
+            "revision": "104bb3d00af5f5e5fe963b7d1454ffc0128ba7bc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e2740132d8ea74e7c9a457fe11b3c6a3f615a0aa2c0cb1e1e45c76cc76ad1d1d",
-                "code": "3ba1b4b9f9c7faf7f2e41acbbed76c0228e0902f",
-                "maintenance": "ab88b7cca82ee2034781aabf7a0a0107ed945669520324c74702530bed3060b7"
+                "code": "104bb3d00af5f5e5fe963b7d1454ffc0128ba7bc",
+                "maintenance": "c25759a12be4f2f3c590c93ffaf9550a3bef1f804af91e02f4002d66e88c2430"
             }
         }
     }

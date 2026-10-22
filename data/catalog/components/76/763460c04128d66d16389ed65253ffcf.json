@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "763460c04128d66d16389ed65253ffcf",
+    "identity": "github:1410061852:plugins-deepseek-specflow",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1410061852:plugins-deepseek-specflow",
+            "repository": "HuYellow/specflow",
+            "path": "plugins/deepseek-specflow",
+            "revision": "3217d7517a301e6cb2a5654a2bca14c6b25c5429",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e09f06d09e9e021e521b5ac0d8038100a99e1164c2159039f72b57272aef21f",
+                "code": "3217d7517a301e6cb2a5654a2bca14c6b25c5429",
+                "maintenance": "ecbfaa68d739a28da5503965e8f219532cd500720c146ebb737d8936b0c09ba1"
+            }
+        }
+    }
+}

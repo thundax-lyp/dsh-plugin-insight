@@ -7,14 +7,14 @@
             "id": "github:1375511582:root",
             "repository": "wzn16/dsh-task-capsule",
             "path": "",
-            "revision": "e42f7b108b0965bd8673b415fa7296f63ebfc89b",
+            "revision": "c0c75e16f347e6a9cc1988c3af0cc36b21bdc772",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "53a09c84c90dc0c797c01ad2267a7c1793fff72bbdc7b27f687cd0f07af54794",
-                "code": "e42f7b108b0965bd8673b415fa7296f63ebfc89b",
-                "maintenance": "ad9f20186252cdf5f33f8f1138bec757838c6a0316863cbea65fc4ab68ec7c19"
+                "code": "c0c75e16f347e6a9cc1988c3af0cc36b21bdc772",
+                "maintenance": "db4d362362ee0d1afbf0021983d5a5ba2e40d10e96049dd369d9713fe96d9a0b"
             }
         }
     }

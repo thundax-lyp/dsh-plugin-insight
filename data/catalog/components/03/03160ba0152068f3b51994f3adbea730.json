@@ -7,14 +7,14 @@
             "id": "github:1389961028:root",
             "repository": "underworld-oddball/dsh-volume-knob",
             "path": "",
-            "revision": "2501be19f97a17e1be259a47b4fd91f7703a9ef7",
+            "revision": "0bf03a7db185c0347941417ce0ad9380c4a4db37",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "3934148933b5fc2797b5ad83a7c5592db166bcb68bcde82d9d63b5dcdeb51053",
-                "code": "2501be19f97a17e1be259a47b4fd91f7703a9ef7",
-                "maintenance": "39f12e22e10d8a01c18f9da209fa5f76ee862327c532158b80ed01f4c1834f87"
+                "code": "0bf03a7db185c0347941417ce0ad9380c4a4db37",
+                "maintenance": "bea61c385849bc2c6207fbb5494a20edc5e7d46b74c2ccfe80326dc79fe6229f"
             }
         }
     }

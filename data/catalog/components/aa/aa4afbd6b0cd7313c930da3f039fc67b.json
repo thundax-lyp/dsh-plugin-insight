@@ -7,14 +7,14 @@
             "id": "github:1356951582:root",
             "repository": "XDTrees/dsh-xdpool",
             "path": "",
-            "revision": "799cfa423bf07620c6150dcfbed727ca43f8078c",
+            "revision": "871ddd7735e3f0aecab57d92381b45952c8b5d6a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1f5889b2c15986c747e05096f56bfb3a0d98d619341cb41ce92c2cb07176cea7",
-                "code": "799cfa423bf07620c6150dcfbed727ca43f8078c",
-                "maintenance": "b0764d4cac3f9eb3de1081382e0038c55e0c0e480615d585d7294741b64a1a1b"
+                "code": "871ddd7735e3f0aecab57d92381b45952c8b5d6a",
+                "maintenance": "d1b712747b7f2145da43eb70825f83ba397719d5cf750401fc666134a4ef17e2"
             }
         }
     }

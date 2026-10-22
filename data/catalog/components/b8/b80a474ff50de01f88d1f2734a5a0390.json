@@ -7,14 +7,14 @@
             "id": "github:1249040497:root",
             "repository": "fwerkor/local-shell-mcp",
             "path": "",
-            "revision": "74794f7d044a4f55f8615d8fa47620504400e3c1",
+            "revision": "2b82796e2937d5527e529de4c92db039d24754e0",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "103981ed8295e299c3e27cd188e6e3ab5d36eafba7b0cb506db902565a9263cd",
-                "code": "74794f7d044a4f55f8615d8fa47620504400e3c1",
-                "maintenance": "8cf3ec7bb83a3dcb1f7adf369eba91da10ec6324c189d9442ac88bca5ccad4dd"
+                "code": "2b82796e2937d5527e529de4c92db039d24754e0",
+                "maintenance": "8dfc3d5b59460e0e7debc5a08d86073078bf3f1ae6be88eab5375c87a375bc39"
             }
         }
     }

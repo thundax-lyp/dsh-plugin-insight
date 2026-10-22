@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "000e174243efb5261fd698a83863e1d2",
+    "identity": "github:1427169029:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427169029:root",
+            "repository": "zirscard/dsh-principles-audit",
+            "path": "",
+            "revision": "cf511fad7c56cda26e51babb0a23e9951722733f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b6d18b905b81fc00565804209a4e4b429672a025e4ccc5946155e94f46a37131",
+                "code": "cf511fad7c56cda26e51babb0a23e9951722733f",
+                "maintenance": "f20b27f810f92b9bf9cdce7ba93f35ef97573a47e6847744c46d23a52829a258"
+            }
+        }
+    }
+}

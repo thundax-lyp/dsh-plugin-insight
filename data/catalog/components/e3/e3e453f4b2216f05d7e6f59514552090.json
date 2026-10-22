@@ -470,15 +470,15 @@
             "repository": "263311487-ux/dsh-verify",
             "path": "",
             "revision": "d969899808e51dcccd261588f667b18633020fca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
             "fingerprints": {
                 "directory": "3986bffc85d4e2d5429c316a8d61a14d514213d23ef78dc7cde89e1e8155b6a4",
                 "code": "d969899808e51dcccd261588f667b18633020fca",
                 "maintenance": "3f43e42a18f1b0ead166c963e5e744baf32436e90d745af2cb67a2a67d893027"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            }
         }
     }
 }

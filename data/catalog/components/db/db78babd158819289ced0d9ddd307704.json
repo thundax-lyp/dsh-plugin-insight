@@ -7,14 +7,14 @@
             "id": "github:1333715550:root",
             "repository": "Luaphes/dsh-plugins-market",
             "path": "",
-            "revision": "1e0352b2e382d87653c3753cdc246a9cf43fd4e3",
+            "revision": "a16c75d45304388b982abefa8536f2d977d7455e",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "c804f7c7525052f33308a3202f0d7b663cece7a910c2e34312afcde8a1b220ab",
-                "code": "1e0352b2e382d87653c3753cdc246a9cf43fd4e3",
-                "maintenance": "98048d12ea968a6f4052a5f29f4c176909c597ce6940b8c95ecf717e8742bb32"
+                "code": "a16c75d45304388b982abefa8536f2d977d7455e",
+                "maintenance": "6210f53025cd7e43c01b4d39d723de1c782ef3441994f50b232dbd6b29b1f3f0"
             }
         }
     }

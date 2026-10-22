@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "29602b223966ffeba6a3a02f68afae20",
+    "identity": "github:1427446630:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427446630:root",
+            "repository": "Chlyz621/dsh-unstuck",
+            "path": "",
+            "revision": "61f20c1e16512f17779f29c24be6070a2603ee8f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9520ee006512a5058eff02f6c5f1e276e819f062e139cab01399a2804559b160",
+                "code": "61f20c1e16512f17779f29c24be6070a2603ee8f",
+                "maintenance": "9c59ff92802b53555823ccbb3db48ac3cb2da0446d8bfe09d18ac75a8856be62"
+            }
+        }
+    }
+}

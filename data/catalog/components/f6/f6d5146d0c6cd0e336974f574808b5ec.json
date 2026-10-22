@@ -7,14 +7,14 @@
             "id": "github:1348273986:root",
             "repository": "STARDUSTLC666/dsh-suite",
             "path": "",
-            "revision": "913ad2b8abad0e5fddff4c910f0f1cbffc28e54d",
+            "revision": "b059b25db6aaa5ee00e8169918be3ec71467a058",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7cefe19645d21ae75079ae3b9e6ac77587f4b1371a23a5880f628a38f07032f3",
-                "code": "913ad2b8abad0e5fddff4c910f0f1cbffc28e54d",
-                "maintenance": "22b718f66927cbca316ec398d845f859828323c16afbeb983333946543b95a26"
+                "code": "b059b25db6aaa5ee00e8169918be3ec71467a058",
+                "maintenance": "b143b5508fcc67e1108c51c43286c5d6dea6869f88279d2faf83d3759642f307"
             }
         }
     }

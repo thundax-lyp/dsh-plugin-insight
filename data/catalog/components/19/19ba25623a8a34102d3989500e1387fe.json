@@ -7,15 +7,15 @@
             "id": "github:1382709707:root",
             "repository": "exoticknight/dsh-system1",
             "path": "",
-            "revision": "d45e6c481b6b19df6ae9ff5b968700f346a7b82e",
+            "revision": "9ab7ee16b92550014359538dd3bde6a7c785488e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "3caeeced8f216c8aef07d647a0427ce97653cf6c84f6b9bf8e6907eb569092fd",
-                "code": "d45e6c481b6b19df6ae9ff5b968700f346a7b82e",
-                "maintenance": "90964ff1497b5b9ce4c1d91bec0d29fc4c74eab5bd2be95da8b5881870a22578"
+                "code": "9ab7ee16b92550014359538dd3bde6a7c785488e",
+                "maintenance": "107c9422c8261a2496de568b0c29dc04aab64f78b6e909422e5bd54155e3eb90"
             }
         }
     }

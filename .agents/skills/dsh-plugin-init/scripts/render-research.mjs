@@ -55,7 +55,9 @@ function normalizeLegacyTrial(text) {
                 else if (marker[1][0] === fence[0] && marker[1].length >= fence.length && !marker[2].trim())
                     fence = null;
             } else if (!fence && /^## /.test(line)) questions = /^## (?:[0-9]+ )?研究问题与完整回答$/.test(line);
-            return questions ? line : line.replaceAll('条件试用', '试用');
+            if (fence) return line;
+            const normalized = line.replace(/\*\*([^*\n]+)：\*\*/g, '**$1**：');
+            return questions ? normalized : normalized.replaceAll('条件试用', '试用');
         })
         .join('\n');
 }

@@ -507,14 +507,14 @@
             "repository": "1687210989/agent-clinic",
             "path": "",
             "revision": "e88d6ec63d7a67277bf3c6c86f38a43ee97527c4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "36efafac1d1aafeba036898798ce0ba0732320501186d93af3e374d82cf85514",
                 "code": "e88d6ec63d7a67277bf3c6c86f38a43ee97527c4",
                 "maintenance": "371719b99092800c56c7a47ac93c1c346defffe82b60da115a0603f2031fa183"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

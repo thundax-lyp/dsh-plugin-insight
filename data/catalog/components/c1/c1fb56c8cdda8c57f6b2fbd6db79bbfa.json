@@ -7,14 +7,14 @@
             "id": "github:1421933481:root",
             "repository": "Zxy0902/dsh-notes-plugin",
             "path": "",
-            "revision": "fd172be10910b85076f815c41bec42792811c7b3",
+            "revision": "8ac9187d7c392840e0c7a72fc31313054d983ef0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "77a593e119d949536d80253c7e2d31b9334f4031d3334148bd7ed7bfc69d2b3a",
-                "code": "fd172be10910b85076f815c41bec42792811c7b3",
-                "maintenance": "bb11005a1180efb114329174f6eb2fc6a604bf96eafb5994c098148011c2303c"
+                "code": "8ac9187d7c392840e0c7a72fc31313054d983ef0",
+                "maintenance": "3c67cebe6cc7764e28901e2877c88f9023c5789a8acc1b07437949fb1912e545"
             }
         }
     }

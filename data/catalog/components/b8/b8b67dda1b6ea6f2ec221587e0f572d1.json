@@ -526,14 +526,14 @@
             "repository": "Ame-Choo/dsh-study-coach",
             "path": "",
             "revision": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "7a53c41c5eb6f4b05b3a553eab7173cf7667dd8e5acdf9f4e5c4a46865c9837c",
                 "code": "7c2c2d3f71cb49508e567674882eddb1b3a689ba",
                 "maintenance": "22bd48dab10e2aec80f4647fa348dac6c414e30283dce5076ac732e6caa9a799"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

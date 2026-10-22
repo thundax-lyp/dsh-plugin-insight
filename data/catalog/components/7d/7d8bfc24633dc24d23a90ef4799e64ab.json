@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d8bfc24633dc24d23a90ef4799e64ab",
+    "identity": "github:1358821276:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1358821276:root",
+            "repository": "345420242/dsh-commandcode-usage-inline",
+            "path": "",
+            "revision": "67ae01891935472467cdf77562861062e91d9b5b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "71bc8be16a0051d9a3da3722a7265789582d56dc26f6537fcb0cc7b4025bcd00",
+                "code": "67ae01891935472467cdf77562861062e91d9b5b",
+                "maintenance": "8f14854bc9f7b81bd65d07605057bdc898e0909b9eb9fd7078e508c0a8d9775f"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1411818133:root",
             "repository": "Ok541151/cwk",
             "path": "",
-            "revision": "e0fce9ab73c26e56463b2de2bfbef8426e50a08f",
+            "revision": "6a17206fcc85083493e812e3cd00c9627f6562f4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2a8192768182aaeec6ac06f30b94460dedc2dc3ac7059fe3fc4e74b2de9eedcc",
-                "code": "e0fce9ab73c26e56463b2de2bfbef8426e50a08f",
-                "maintenance": "e672d48d7f3adc49b0003508dad439c684de90d864f39f49d0d41268ffd518bb"
+                "code": "6a17206fcc85083493e812e3cd00c9627f6562f4",
+                "maintenance": "f140fa0929b707cd924e31ec1090a74278fa4d1140e9887975c84c73ac1464a3"
             }
         }
     }

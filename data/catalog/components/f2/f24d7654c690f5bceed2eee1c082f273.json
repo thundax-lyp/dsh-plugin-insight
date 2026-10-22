@@ -1,0 +1,457 @@
+{
+    "schema_version": 3,
+    "id": "f24d7654c690f5bceed2eee1c082f273",
+    "identity": "github:1336994666:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336994666:root",
+            "repository_id": 1336994666,
+            "component_id": "root",
+            "repository": "1070296335-create/dph-taskboard",
+            "path": "",
+            "aliases": [],
+            "name": "DPH 任务看板",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "a5c9face93f92e36fcf6937b10268c4e9a6a97c13b9fbaa48dea89829348e27d",
+                "code": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                "maintenance": "6a58431095addb8dd43d3ea639b738cab36b17ed70b923cc23ab755de78e6668"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1336994666-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:32:50.231Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1336994666-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1070296335-create/dph-taskboard",
+                            "commit": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                            "path": "README.md",
+                            "content_sha256": "f0d84f083031c4e2a741e5619456eb6e05073e4d02e295aa41854895677268d2"
+                        }
+                    ],
+                    "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                    "captured_at": "2026-10-22T15:32:50.231Z",
+                    "summary": "把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1070296335-create--dph-taskboard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1336994666-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1070296335-create/dph-taskboard",
+                            "commit": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                            "path": "README.md",
+                            "content_sha256": "f0d84f083031c4e2a741e5619456eb6e05073e4d02e295aa41854895677268d2"
+                        },
+                        {
+                            "repository_url": "https://github.com/1070296335-create/dph-taskboard",
+                            "commit": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                            "path": "package.json",
+                            "content_sha256": "dbf7d2aa238f9070b05df72de79fbb80d05d41f73e064667a193cb4e6757dea7"
+                        },
+                        {
+                            "repository_url": "https://github.com/1070296335-create/dph-taskboard",
+                            "commit": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                            "path": "src/client/index.js",
+                            "content_sha256": "ff7d27bb09920113023a1d7539896037c6a5e177b336563fdb5cd02465e4bf3b"
+                        }
+                    ],
+                    "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                    "captured_at": "2026-10-22T15:32:50.231Z",
+                    "summary": "核查 README.md、package.json、src/client/index.js；固定源码显示 src/client/index.js 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1070296335-create--dph-taskboard/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "同时推进多个 DSH 会话、需要可视化归类和复盘的个人或小团队可用它把真实 DSH 会话作为看板卡片，提供状态拖拽、新建会话、回收站、备注、搜索和导入导出；合格结果是看板状态与真实会话一致，删除可恢复，导出导入不丢关联，Agent快照不泄漏或误覆盖状态。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "固定源码显示 src/client/index.js 承担关键入口、注册或生命周期接线，包清单限定分发和宿主边界；静态存在不等于运行可用。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "包清单与固定仓库路径定义分发边界；是否已在注册表发布、安装量、外部服务可用性和长期维护质量不从源码推断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器/宿主本地存储 | 运行部署脚本、打UI补丁、重启和备份 | 补丁适配时间未知 |\n| 持续使用 | localStorage与宿主快照I/O | 维护列/备注、处理跨浏览器差异 | 每百会话渲染与同步耗时未知 |\n| 失败恢复 | 导入导出和会话反归档操作 | 核真实会话、localStorage、taskboard.json三方状态 | 错误覆盖可能丢备注或把卡片放错列 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 会话即卡片 | 客户端直接读取/操作sessions服务 | 大量会话下同步与渲染正确率 |\n| 看板元数据 | localStorage保存列/备注/标签 | 跨设备、清缓存和版本迁移可靠性 |\n| Agent快照 | 宿主侧写taskboard.json | 浏览器与宿主投影冲突处理 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "固定源码把关键职责收敛到 src/client/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“导出或宿主快照后做导入/恢复演练｜覆盖前确认，冲突能选择而非静默覆盖”验证。详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转。它相对“使用宿主会话列表、命名约定和外部看板手工同步会话进度”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未来可探索：可把状态变更设计为带版本的单一事件日志，由浏览器和宿主快照共同投影并对冲突提供显式选择。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336994666:root",
+                            "area": "code",
+                            "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:32:50.231Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:32:50.231Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                "reviewed_at": "2026-10-22T15:32:50.231Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336994666:root",
+                        "area": "code",
+                        "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "评分只针对固定源码可见的机制组合与迁移条件；没有把作者宣传、功能数量或本次未来假设计入。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 8
+                    },
+                    "rationale": "评分只针对当前实现改变的流程与交付方式；没有运行数据，因此不把节时、成功率或ROI写成已验证收益。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1336994666-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "目标人群和合格结果在固定 README 与源码中较明确，但真实频率与组织需求仍未知。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "相对基线存在把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转的可解释增量，但未做同条件任务对照。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已核固定提交的作者材料、入口和关键实现；未执行目标插件、测试或真实宿主验收。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "可从源码识别安装、配置和恢复负担；主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险，金额与人工时间未知。"
+                    }
+                },
+                "score": 54,
+                "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                "reviewed_at": "2026-10-22T15:32:50.231Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1336994666-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336994666:root",
+                        "area": "code",
+                        "fingerprint": "ceda7a378b713afdfcae4d94b670b026f2e24100"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336994666:root",
+            "repository": "1070296335-create/dph-taskboard",
+            "path": "",
+            "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+            "fingerprints": {
+                "directory": "a5c9face93f92e36fcf6937b10268c4e9a6a97c13b9fbaa48dea89829348e27d",
+                "code": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                "maintenance": "6a58431095addb8dd43d3ea639b738cab36b17ed70b923cc23ab755de78e6668"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "28b62f8efedd8e0dcd1a8ed3f2eedd3e39e31ed0bddb8688516d05e1bc339644"
+        },
+        "publication.metadata": "data/plugins/1070296335-create--dph-taskboard/META.json",
+        "publication.summaries": {
+            "text": "把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。",
+            "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+            "source_url": "https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+            "items": {
+                "Host 路由": "提供看板快照落盘与会话撤销归档路由。",
+                "界面": "提供侧边栏入口和会话化四列看板，可新建、打开、归档、恢复、备注及导入导出。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 会话化看板 | 把真实会话归入待办、进行中、评审中和已完成。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 会话与回收站操作 | 新建、打开、归档和恢复会话。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 备注与迁移 | 保存描述、优先级、标签并导入导出看板数据。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |"
+        },
+        "publication.advice": {
+            "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+            "text": "多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/1070296335-create--dph-taskboard",
+        "reports": "# DPH 任务看板\n\n> 把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。\n\n## 研究范围\n\n- **仓库**：[1070296335-create/dph-taskboard](https://github.com/1070296335-create/dph-taskboard)\n- **版本号**：0.1.0（[固定提交 ceda7a378b713afdfcae4d94b670b026f2e24100](https://github.com/1070296335-create/dph-taskboard/tree/ceda7a378b713afdfcae4d94b670b026f2e24100)）\n- **版本日期**：2026-08-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为源码支持的宿主接线与流程组合；效果、兼容和恢复没有真实宿主证据。未来方向保持未验证，不计入当前贡献。\n\n## 洞察短评\n\n- **用途**：同时推进多个 DSH 会话、需要可视化归类和复盘的个人或小团队可用它把真实 DSH 会话作为看板卡片，提供状态拖拽、新建会话、回收站、备注、搜索和导入导出；合格结果是看板状态与真实会话一致，删除可恢复，导出导入不丢关联，Agent快照不泄漏或误覆盖状态。详见[Q01](#research-q01)。\n- **亮点**：把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转。它相对“使用宿主会话列表、命名约定和外部看板手工同步会话进度”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n- **思考**：主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n- **建议**：未来可探索：可把状态变更设计为带版本的单一事件日志，由浏览器和宿主快照共同投影并对冲突提供显式选择。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n采用建议：多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 采用结论是观察，不是安装保证；成功与停止标准见[Q09](#research-q09)。\n\n## 核心贡献\n\n把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转。它相对“使用宿主会话列表、命名约定和外部看板手工同步会话进度”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。\n\n## 关键质疑\n\n主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未来可探索：可把状态变更设计为带版本的单一事件日志，由浏览器和宿主快照共同投影并对冲突提供显式选择。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。\n\n创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。\n\n## 场景与替代办法\n\n同时推进多个 DSH 会话、需要可视化归类和复盘的个人或小团队可用它把真实 DSH 会话作为看板卡片，提供状态拖拽、新建会话、回收站、备注、搜索和导入导出；合格结果是看板状态与真实会话一致，删除可恢复，导出导入不丢关联，Agent快照不泄漏或误覆盖状态。详见[Q01](#research-q01)。\n\n基线是使用宿主会话列表、命名约定和外部看板手工同步会话进度。本项的价值主要来自把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转；尚无同任务、同资源与同验收口径的运行对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH客户端sessions/workspaces/connection注入 | 必需 | 读取、创建、归档和打开真实会话 | 服务未就绪时不得用空快照覆盖 |\n| 浏览器 localStorage dph.taskboard.v1 | 必需 | 保存列、备注、标签和新会话标记 | 清理浏览器会丢本地元数据 |\n| 宿主 taskboard.json快照与UI挂载补丁 | Agent读取/入口必需 | 将看板投影给模型并插入侧栏 | 补丁漂移时UI可能不可达 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 读取真实会话并与localStorage元数据合并 | 不显示的归档/子Agent规则一致 |\n| 2 | 拖拽/新建/归档后先更新真实会话再持久化元数据 | 失败不形成假状态卡 |\n| 3 | 导出或宿主快照后做导入/恢复演练 | 覆盖前确认，冲突能选择而非静默覆盖 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器/宿主本地存储 | 运行部署脚本、打UI补丁、重启和备份 | 补丁适配时间未知 |\n| 持续使用 | localStorage与宿主快照I/O | 维护列/备注、处理跨浏览器差异 | 每百会话渲染与同步耗时未知 |\n| 失败恢复 | 导入导出和会话反归档操作 | 核真实会话、localStorage、taskboard.json三方状态 | 错误覆盖可能丢备注或把卡片放错列 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 会话即卡片 | 客户端直接读取/操作sessions服务 | 大量会话下同步与渲染正确率 |\n| 看板元数据 | localStorage保存列/备注/标签 | 跨设备、清缓存和版本迁移可靠性 |\n| Agent快照 | 宿主侧写taskboard.json | 浏览器与宿主投影冲突处理 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：确认 DPH 任务看板 在固定版本中实际实现了什么、相对基线的贡献与关键限制，并给出有证据边界的采用和未来验证结论。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 目标用户、反复任务、原有办法与合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n目标用户是同时推进多个 DSH 会话、需要可视化归类和复盘的个人或小团队。反复任务是把真实 DSH 会话作为看板卡片，提供状态拖拽、新建会话、回收站、备注、搜索和导入导出。原有办法为使用宿主会话列表、命名约定和外部看板手工同步会话进度。合格结果必须达到“看板状态与真实会话一致，删除可恢复，导出导入不丢关联，Agent快照不泄漏或误覆盖状态”，不能以安装成功、工具注册或一次演示替代。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md#L1-L19)\n\n作者材料限定目标任务和操作入口；研究回答另加合格交付标准。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# DPH 任务看板（@dph/taskboard）— DeepSeek Harness 客户端插件\n\n在 Harness 侧边栏「工作区」**搜索图标左侧**提供任务看板入口（与搜索按钮同款样式）。\n\n**完全会话化**：看板上的每一张卡片就是一个真实会话（harness session），卡片 = 会话，\n拖拽归类 = 给会话打状态标记，新建卡片 = 真正新建一个会话。\n\n![任务看板截图（占位，发布前请替换为真实界面截图）](docs/screenshot.png)\n\n## 功能\n\n- **侧边栏入口**：工作区搜索图标左侧的看板按钮（wide / 窄栏 rail 两种形态）\n- **四列状态看板**：待办 / 进行中 / 评审中 / 已完成，拖拽归类，彩色状态标识\n- **会话总览列**：未归类会话集中显示，点击卡片进入会话\n- **完全会话化**：\n  - 卡片 = 会话；看板显示与侧边栏一致（隐藏子代理 / 归档 / 空白会话）\n  - **新建会话**：命名 + 选模型 + 推理强度 + 开始消息 + 选择分组（跟随当前 / 已有分组 / 新建分组）\n  - 删除会话 → 进回收站（可恢复，恢复后回到原列）\n  - 运行状态点：正在处理的会话卡片右上角有呼吸闪烁的「处理中」标记\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 入口、调用链、数据和状态如何实现核心能力？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nsrc/client/index.js 中的固定片段显示关键入口、注册或生命周期接线，包清单限定加载组件。实际链路围绕“读取真实会话并与localStorage元数据合并｜不显示的归档/子Agent规则一致；拖拽/新建/归档后先更新真实会话再持久化元数据｜失败不形成假状态卡；导出或宿主快照后做导入/恢复演练｜覆盖前确认，冲突能选择而非静默覆盖”推进，状态发生在插件配置、宿主服务或外部目标中。静态路径只能证明机制存在，不能证明注册后所有分支可运行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n关键源码片段支持入口、注册或生命周期接线。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/package.json#L1-L26)\n\n包清单绑定版本、入口和宿主声明。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"@dph/taskboard\",\n  \"version\": \"0.1.0\",\n  \"description\": \"DeepSeek Harness 任务看板插件：侧边栏看板入口、会话化四列状态看板（拖拽归类）、新建会话（模型/推理强度/分组）、回收站恢复、备注、导出导入\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"keywords\": [\n    \"deepseek\",\n    \"harness\",\n    \"dsh\",\n    \"taskboard\",\n    \"kanban\",\n    \"plugin\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相比宿主原生能力和简单替代，具体增量与归属是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n研究者识别的增量是把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转。参照是“使用宿主会话列表、命名约定和外部看板手工同步会话进度”。贡献归属于本插件的集成、状态编排或工作流封装，不把外部服务、上游算法或子组件能力重复算作原创，也不从功能数量推断用户收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n源码证明本插件承担接线或编排，而非仅有文字描述。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:1-19](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md#L1-L19)\n\nREADME 提供作者主张，用于与源码可见机制分开比较。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# DPH 任务看板（@dph/taskboard）— DeepSeek Harness 客户端插件\n\n在 Harness 侧边栏「工作区」**搜索图标左侧**提供任务看板入口（与搜索按钮同款样式）。\n\n**完全会话化**：看板上的每一张卡片就是一个真实会话（harness session），卡片 = 会话，\n拖拽归类 = 给会话打状态标记，新建卡片 = 真正新建一个会话。\n\n![任务看板截图（占位，发布前请替换为真实界面截图）](docs/screenshot.png)\n\n## 功能\n\n- **侧边栏入口**：工作区搜索图标左侧的看板按钮（wide / 窄栏 rail 两种形态）\n- **四列状态看板**：待办 / 进行中 / 评审中 / 已完成，拖拽归类，彩色状态标识\n- **会话总览列**：未归类会话集中显示，点击卡片进入会话\n- **完全会话化**：\n  - 卡片 = 会话；看板显示与侧边栏一致（隐藏子代理 / 归档 / 空白会话）\n  - **新建会话**：命名 + 选模型 + 推理强度 + 开始消息 + 选择分组（跟随当前 / 已有分组 / 新建分组）\n  - 删除会话 → 进回收站（可恢复，恢复后回到原列）\n  - 运行状态点：正在处理的会话卡片右上角有呼吸闪烁的「处理中」标记\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心贡献无法转化为端到端价值？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最有力支持是固定源码确有相应接线；最关键反例或其他解释是主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险。若失败后不能判断副作用是否已发生，局部自动化可能把恢复负担转移给用户。该问题不直接否定插件，但会把适用范围收窄到可隔离、可回读的任务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n源码显示关键状态边界，也说明为什么需要运行时故障验证。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n#### 缺口\n\n- 缺少针对“主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险”的固定版本故障注入记录\n  **影响**：无法确认核心贡献在异常路径仍成立\n  **进一步探讨**：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 本题重点观察异常是否改变贡献结论。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复各依赖什么，操作负担由谁承担？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n关键依赖分别是：DSH客户端sessions/workspaces/connection注入｜必需｜读取、创建、归档和打开真实会话｜服务未就绪时不得用空快照覆盖；浏览器 localStorage dph.taskboard.v1｜必需｜保存列、备注、标签和新会话标记｜清理浏览器会丢本地元数据；宿主 taskboard.json快照与UI挂载补丁｜Agent读取/入口必需｜将看板投影给模型并插入侧栏｜补丁漂移时UI可能不可达。启动者负责版本与权限，使用者负责输入和验收，维护者负责外部服务/API 漂移。失败恢复按“导出或宿主快照后做导入/恢复演练｜覆盖前确认，冲突能选择而非静默覆盖”执行；包依赖存在或工具可注册都不表示业务已经办结。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[package.json:1-26](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/package.json#L1-L26)\n\n包清单提供运行时、依赖和分发边界。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"@dph/taskboard\",\n  \"version\": \"0.1.0\",\n  \"description\": \"DeepSeek Harness 任务看板插件：侧边栏看板入口、会话化四列状态看板（拖拽归类）、新建会话（模型/推理强度/分组）、回收站恢复、备注、导出导入\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"keywords\": [\n    \"deepseek\",\n    \"harness\",\n    \"dsh\",\n    \"taskboard\",\n    \"kanban\",\n    \"plugin\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n源码提供实际宿主接线，用于区分声明依赖与调用依赖。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n#### 缺口\n\n- 真实宿主中的依赖失效顺序与部分成功状态未观测\n  **影响**：无法确认重试是否会重复副作用\n  **进一步探讨**：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 另逐项切断依赖并回读部分成功状态。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 完成一个合格任务的首次、持续和失败恢复成本与效果是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n成本必须以“看板状态与真实会话一致，删除可恢复，导出导入不丢关联，Agent快照不泄漏或误覆盖状态”为合格单位。三阶段投入为：首次使用｜浏览器/宿主本地存储｜运行部署脚本、打UI补丁、重启和备份｜补丁适配时间未知；持续使用｜localStorage与宿主快照I/O｜维护列/备注、处理跨浏览器差异｜每百会话渲染与同步耗时未知；失败恢复｜导入导出和会话反归档操作｜核真实会话、localStorage、taskboard.json三方状态｜错误覆盖可能丢备注或把卡片放错列。当前源码只支持机制存在，效果维度为“会话即卡片｜客户端直接读取/操作sessions服务｜大量会话下同步与渲染正确率；看板元数据｜localStorage保存列/备注/标签｜跨设备、清缓存和版本迁移可靠性；Agent快照｜宿主侧写taskboard.json｜浏览器与宿主投影冲突处理”。没有合格数、总尝试、人工分钟与现金/资源量，因此不能计算单位成本、节时或ROI。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md#L1-L19)\n\n作者材料支持操作范围，不提供同条件成本或合格率。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# DPH 任务看板（@dph/taskboard）— DeepSeek Harness 客户端插件\n\n在 Harness 侧边栏「工作区」**搜索图标左侧**提供任务看板入口（与搜索按钮同款样式）。\n\n**完全会话化**：看板上的每一张卡片就是一个真实会话（harness session），卡片 = 会话，\n拖拽归类 = 给会话打状态标记，新建卡片 = 真正新建一个会话。\n\n![任务看板截图（占位，发布前请替换为真实界面截图）](docs/screenshot.png)\n\n## 功能\n\n- **侧边栏入口**：工作区搜索图标左侧的看板按钮（wide / 窄栏 rail 两种形态）\n- **四列状态看板**：待办 / 进行中 / 评审中 / 已完成，拖拽归类，彩色状态标识\n- **会话总览列**：未归类会话集中显示，点击卡片进入会话\n- **完全会话化**：\n  - 卡片 = 会话；看板显示与侧边栏一致（隐藏子代理 / 归档 / 空白会话）\n  - **新建会话**：命名 + 选模型 + 推理强度 + 开始消息 + 选择分组（跟随当前 / 已有分组 / 新建分组）\n  - 删除会话 → 进回收站（可恢复，恢复后回到原列）\n  - 运行状态点：正在处理的会话卡片右上角有呼吸闪烁的「处理中」标记\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/package.json#L1-L26)\n\n包清单支持本地/外部资源与依赖边界的定性判断。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"@dph/taskboard\",\n  \"version\": \"0.1.0\",\n  \"description\": \"DeepSeek Harness 任务看板插件：侧边栏看板入口、会话化四列状态看板（拖拽归类）、新建会话（模型/推理强度/分组）、回收站恢复、备注、导出导入\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"keywords\": [\n    \"deepseek\",\n    \"harness\",\n    \"dsh\",\n    \"taskboard\",\n    \"kanban\",\n    \"plugin\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n#### 缺口\n\n- 缺少按合格任务统计的总尝试、失败、人工分钟与现金/资源量\n  **影响**：无法比较总成本与净收益\n  **进一步探讨**：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 同时按合格交付数汇总总尝试、人工分钟和资源量。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现是否可靠可维护，哪些设计可复用，移植代价是什么？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n固定源码把核心职责落在 src/client/index.js 及相邻模块，入口可追踪；inventory 仅作规模和静态候选索引。可复用的是“把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转”的显式接线方式。移植必须重做宿主API、权限、状态持久化和“导出或宿主快照后做导入/恢复演练｜覆盖前确认，冲突能选择而非静默覆盖”验证，不能从测试脚本存在推断当前环境可靠。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n固定源码用于评价职责和宿主耦合。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n**依据 2 · 作者声明**：[package.json:1-26](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/package.json#L1-L26)\n\n包清单用于确认版本、分发与依赖面。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n{\n  \"name\": \"@dph/taskboard\",\n  \"version\": \"0.1.0\",\n  \"description\": \"DeepSeek Harness 任务看板插件：侧边栏看板入口、会话化四列状态看板（拖拽归类）、新建会话（模型/推理强度/分组）、回收站恢复、备注、导出导入\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"src\"\n  ],\n  \"keywords\": [\n    \"deepseek\",\n    \"harness\",\n    \"dsh\",\n    \"taskboard\",\n    \"kanban\",\n    \"plugin\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n#### 缺口\n\n- 未执行仓库测试、安装和真实宿主压力/升级验证\n  **影响**：维护性和异常恢复只能作源码级判断\n  **进一步探讨**：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 在此之外记录构建、卸载和宿主升级后的回归面积。\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献与反例可推导什么未验证方向，如何证伪？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n由“把卡片直接绑定真实会话，减少外部看板与 DSH 会话之间的双录和跳转”和“主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险”推导的新方向是可把状态变更设计为带版本的单一事件日志，由浏览器和宿主快照共同投影并对冲突提供显式选择。它不是当前能力。最小验证为创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 若合格结果不改善、误差/副作用越界或恢复负担高于“使用宿主会话列表、命名约定和外部看板手工同步会话进度”，即削弱或推翻假设。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n假设只以已实现机制和边界为推导起点，不表示源码已经实现新方向。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n#### 缺口\n\n- 假设尚无实现、需求频率或效果数据\n  **影响**：不能计入插件贡献、创新效果或商业机会\n  **进一步探讨**：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 只验证最小原型，不改变当前能力状态。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对谁值得观察或试用，成功与停止标准是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n当前结论为继续观察。多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 试用成功标准是“看板状态与真实会话一致，删除可恢复，导出导入不丢关联，Agent快照不泄漏或误覆盖状态”，并且 大量会话下同步与渲染正确率、跨设备、清缓存和版本迁移可靠性、浏览器与宿主投影冲突处理 有可接受结果；停止标准包括发生主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险所述核心风险、出现未知副作用自动重试，或总人工/资源成本高于“使用宿主会话列表、命名约定和外部看板手工同步会话进度”。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-19](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/README.md#L1-L19)\n\n作者材料限定可操作范围；采用结论由研究者结合限制给出。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n# DPH 任务看板（@dph/taskboard）— DeepSeek Harness 客户端插件\n\n在 Harness 侧边栏「工作区」**搜索图标左侧**提供任务看板入口（与搜索按钮同款样式）。\n\n**完全会话化**：看板上的每一张卡片就是一个真实会话（harness session），卡片 = 会话，\n拖拽归类 = 给会话打状态标记，新建卡片 = 真正新建一个会话。\n\n![任务看板截图（占位，发布前请替换为真实界面截图）](docs/screenshot.png)\n\n## 功能\n\n- **侧边栏入口**：工作区搜索图标左侧的看板按钮（wide / 窄栏 rail 两种形态）\n- **四列状态看板**：待办 / 进行中 / 评审中 / 已完成，拖拽归类，彩色状态标识\n- **会话总览列**：未归类会话集中显示，点击卡片进入会话\n- **完全会话化**：\n  - 卡片 = 会话；看板显示与侧边栏一致（隐藏子代理 / 归档 / 空白会话）\n  - **新建会话**：命名 + 选模型 + 推理强度 + 开始消息 + 选择分组（跟随当前 / 已有分组 / 新建分组）\n  - 删除会话 → 进回收站（可恢复，恢复后回到原列）\n  - 运行状态点：正在处理的会话卡片右上角有呼吸闪烁的「处理中」标记\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.js:16-33](https://github.com/1070296335-create/dph-taskboard/blob/ceda7a378b713afdfcae4d94b670b026f2e24100/src/client/index.js#L16-L33)\n\n源码证据只支撑窄范围试用/观察，不构成安装验收。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst __dph_h = (type, props, ...children) => __dph_react.createElement(type, props ?? null, ...children);\n\n// ── 常量 ──────────────────────────────────────────────────────────────\nconst __dph_STORAGE_KEY = \"dph.taskboard.v1\";\nconst __dph_COLUMNS = [\n\t{ id: \"todo\", title: \"待办\", accent: \"#5b8def\" },\n\t{ id: \"doing\", title: \"进行中\", accent: \"#e8a13a\" },\n\t{ id: \"review\", title: \"评审中\", accent: \"#9b7bf0\" },\n\t{ id: \"done\", title: \"已完成\", accent: \"#3fbf8f\" }\n];\nconst __dph_PRIORITIES = [\n\t{ id: \"low\", label: \"低\", color: \"#8a94a6\" },\n\t{ id: \"medium\", label: \"中\", color: \"#5b8def\" },\n\t{ id: \"high\", label: \"高\", color: \"#e8a13a\" },\n\t{ id: \"urgent\", label: \"紧急\", color: \"#e5534b\" }\n];\n\n// ── 数据层：会话归类 + 会话备注（浏览器 localStorage）─────────────────────\n```\n\n</details>\n\n#### 缺口\n\n- 未有真实用户频率、迁移意愿与固定版本宿主验收\n  **影响**：不能升级为持续安装或生产采用\n  **进一步探讨**：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。 试用结束还需访谈目标用户的重复频率与退出意愿。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6dd5fc2425a46178cb172e3d90a7b6af9d6cc5517f82f418aee0d911c45c9d92。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 231 | — | — | 1675 |\n| .js | source | 2 | 1188 | 1076 | 105 | — |\n| .mjs | source | 4 | 396 | 303 | 56 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 会话化看板 | 把真实会话归入待办、进行中、评审中和已完成。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 会话与回收站操作 | 新建、打开、归档和恢复会话。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n| 备注与迁移 | 保存描述、优先级、标签并导入导出看板数据。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |\n\n## 工程亮点\n\n固定源码把关键职责收敛到 src/client/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“导出或宿主快照后做导入/恢复演练｜覆盖前确认，冲突能选择而非静默覆盖”验证。详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/client/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。\n- 下一步：创建100个含归档/子Agent/空白的会话，在两个浏览器导出导入并注入写失败/重启；记录丢卡、错列、重复、备注丢失和恢复分钟，任何静默覆盖真实会话状态即停止。\n",
+        "metadata": {
+            "repository": "1070296335-create/dph-taskboard",
+            "repository_id": 1336994666,
+            "captured_at": "2026-10-22T15:12:58.561Z",
+            "window_start": "2026-09-22T15:12:58.561Z",
+            "stars": 7,
+            "pushed_at": "2026-08-17T12:10:08Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "@dph/taskboard",
+                "captured_at": "2026-10-22T15:13:07.046Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40dph%2Ftaskboard",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-22T15:13:07.046Z",
+                    "source_url": "https://registry.npmjs.org/%40dph%2Ftaskboard",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1336994666:root",
+            "repository": "1070296335-create/dph-taskboard",
+            "path": "",
+            "revision": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "a5c9face93f92e36fcf6937b10268c4e9a6a97c13b9fbaa48dea89829348e27d",
+                "code": "ceda7a378b713afdfcae4d94b670b026f2e24100",
+                "maintenance": "6a58431095addb8dd43d3ea639b738cab36b17ed70b923cc23ab755de78e6668"
+            }
+        }
+    }
+}

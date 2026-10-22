@@ -467,14 +467,14 @@
             "repository": "9livewolf/dsh-think-bounce-pet",
             "path": "",
             "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "d3d7f054d0764b5f5dee006cc4903b6177d1040d59ed25aa8d06765292b48427",
                 "code": "3bfe9cb32afea176937379351af39dfd46f955f4",
                 "maintenance": "5d89dd536289d67fe87cae194cd4469da1082af0e7250cf0241026ee183cfa28"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d79995b4268efd8a5146ffa5ae2e1117",
+    "identity": "github:1426943823:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426943823:root",
+            "repository": "ramwin/dsh-branch-cleaner",
+            "path": "",
+            "revision": "3e4862351e5da53dfc3624f835b9d499537db4dd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "14ef606c9b1bb97a9f62a3c1026b1b2e34afb7f6fbd691de1724c92603cdae71",
+                "code": "3e4862351e5da53dfc3624f835b9d499537db4dd",
+                "maintenance": "86ede04eff1b4a2523387e2a64de190563a7d9897efbdceebbebb1bba7501faa"
+            }
+        }
+    }
+}

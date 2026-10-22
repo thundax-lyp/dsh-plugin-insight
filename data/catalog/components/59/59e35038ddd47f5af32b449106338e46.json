@@ -7,14 +7,14 @@
             "id": "github:1423579712:root",
             "repository": "xiean676/dsh-freemodels-opencode",
             "path": "",
-            "revision": "2517ffb3883ddcf5eab1789544bdcdbd1e64ab2e",
+            "revision": "1df1157228a48db00535e3298fb9c85ef697d63b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "de772c7202c4678d8d75f4cd6136c1ad4a7231569212c36a26091c458bd6f3e4",
-                "code": "2517ffb3883ddcf5eab1789544bdcdbd1e64ab2e",
-                "maintenance": "39f164f6891b7ba62b3f4592a04df6f3628035d9587a0fdc91c2dd95ccfd4df7"
+                "code": "1df1157228a48db00535e3298fb9c85ef697d63b",
+                "maintenance": "233cd921d4c5b6ef8221c00cd085c1712815a3b840e40a1ed253282ce6841295"
             }
         }
     }

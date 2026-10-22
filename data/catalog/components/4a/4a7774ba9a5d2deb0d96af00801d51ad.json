@@ -7,14 +7,14 @@
             "id": "github:1359009818:root",
             "repository": "IvenKooLab/desktop-pet",
             "path": "",
-            "revision": "70386cc06c6c046b438aca01b5f25fcafc18d6e1",
+            "revision": "33b845652e788d5ac8d23d4be0159d70d39d1e28",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "5f7e9b5d3730de24ba83f9b7913d837cac3263fc8418cb16c02f5586c10dd8fc",
-                "code": "70386cc06c6c046b438aca01b5f25fcafc18d6e1",
-                "maintenance": "e55bc6759e8f15656aee9e0163a01a782fdc34fbb8122c1161c2f0fc6ab10080"
+                "code": "33b845652e788d5ac8d23d4be0159d70d39d1e28",
+                "maintenance": "1d8362703e21b15039716e060b80668ad81567beeef85798d4fca490892afc4e"
             }
         }
     }

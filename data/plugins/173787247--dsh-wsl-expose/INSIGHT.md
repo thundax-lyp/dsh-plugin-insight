@@ -151,7 +151,7 @@ PowerShell 执行 portproxy；实际不会创建展示的防火墙规则。
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 WSL 端口发布的建议/执行边界、默认暴露风险与安全声明一致性。
+**插件研究总目标**：核实 WSL 端口发布的建议/执行边界、默认暴露风险与安全声明一致性。
 
 <a id="research-q01"></a>
 
@@ -159,7 +159,7 @@ PowerShell 执行 portproxy；实际不会创建展示的防火墙规则。
 
 ### Q01 · 端口建议与执行如何工作？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -388,8 +388,8 @@ Under NAT-mode WSL, Windows localhost forwarding can be flaky; mirrored networki
 #### 缺口
 
 - 未在 WSL/Windows 执行
-  **影响：**实际 portproxy/防火墙结果未知
-  **进一步探讨：**隔离 Windows 主机测 NAT/mirrored 和回滚
+  **影响**：实际 portproxy/防火墙结果未知
+  **进一步探讨**：隔离 Windows 主机测 NAT/mirrored 和回滚
 
 <a id="research-q02"></a>
 
@@ -397,7 +397,7 @@ Under NAT-mode WSL, Windows localhost forwarding can be flaky; mirrored networki
 
 ### Q02 · 安全声明中的 allowApply 与端口白名单是否由代码强制？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -502,8 +502,8 @@ apply/remove 没有 allowApply 检查。
 #### 缺口
 
 - 未在 Windows 权限上下文试 apply
-  **影响：**操作是否被系统管理员权限拦截未知
-  **进一步探讨：**隔离虚拟机验证无 allowApply 调用被阻断与否
+  **影响**：操作是否被系统管理员权限拦截未知
+  **进一步探讨**：隔离虚拟机验证无 allowApply 调用被阻断与否
 
 <a id="research-q03"></a>
 
@@ -511,7 +511,7 @@ apply/remove 没有 allowApply 检查。
 
 ### Q03 · Windows 网络和回滚有哪些未覆盖处？
 
-**研究主题：**依赖、兼容与流程、采用判断、缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、采用判断、缺陷与关键质疑
 
 #### 完整回答
 
@@ -627,8 +627,8 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 #### 缺口
 
 - 未测试 WSL 多网卡/IP 变化
-  **影响：**连接目标正确性与持久性未知
-  **进一步探讨：**测试多网卡、WSL 重启后连接与清理
+  **影响**：连接目标正确性与持久性未知
+  **进一步探讨**：测试多网卡、WSL 重启后连接与清理
 
 <a id="research-q04"></a>
 
@@ -636,7 +636,7 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 
 ### Q04 · 首次、持续及失败恢复分别消耗什么，如何验收？
 
-**研究主题：**效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
@@ -780,8 +780,8 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 #### 缺口
 
 - 实际权限、网络模式、流量与旧规则清理成本未知
-  **影响：**无法估算长期成本或保证可达/恢复
-  **进一步探讨：**从隔离规则快照与目标/非目标连通真值记录入手
+  **影响**：无法估算长期成本或保证可达/恢复
+  **进一步探讨**：从隔离规则快照与目标/非目标连通真值记录入手
 
 <a id="research-q05"></a>
 
@@ -789,7 +789,7 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 
 ### Q05 · 怎样证伪显式许可与状态回读能减少误暴露？
 
-**研究主题：**新假设与验证、工程质量与复用、采用判断
+**研究主题**：新假设与验证、工程质量与复用、采用判断
 
 #### 完整回答
 
@@ -890,7 +890,7 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 #### 缺口
 
 - 管理授权入口、规则归属与回退方案未实现
-  **影响：**不能将配置设想算现有安全保障
-  **进一步探讨：**从明确授权和旧规则所有权的失败矩阵入手
+  **影响**：不能将配置设想算现有安全保障
+  **进一步探讨**：从明确授权和旧规则所有权的失败矩阵入手
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

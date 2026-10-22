@@ -7,14 +7,14 @@
             "id": "github:1207780921:root",
             "repository": "syncable-dev/memtrace-public",
             "path": "",
-            "revision": "801f15510509163cd921ca1a1937cd1362a99480",
+            "revision": "09ff24781d20b5d86bb6df36b33f54f10336b430",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "6142c6db31fc83bc2c6fa0f5f46329ccd1e08e005048eab32d1ab7b9a4a2b4ef",
-                "code": "801f15510509163cd921ca1a1937cd1362a99480",
-                "maintenance": "5474c366e168da097cfdf704e31a221b5de06c1e64d367e65e4eded91c3e4a9c"
+                "code": "09ff24781d20b5d86bb6df36b33f54f10336b430",
+                "maintenance": "7e5243d9cdfba61fe0816d3d5a800daf7b6e62aecf51fa8b564371c835307a51"
             }
         }
     }

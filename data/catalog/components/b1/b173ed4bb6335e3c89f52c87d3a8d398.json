@@ -7,14 +7,14 @@
             "id": "github:1355873458:root",
             "repository": "amazing-fish/dsh-piano-nav",
             "path": "",
-            "revision": "f195be3c399e57618e443711da4d2836394ce3d0",
+            "revision": "32c5c9417e42e5e840d7f8a56d813297d39edac3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "23646329c3cfe00ad5e57a3cf0b8b2a232bb1d2917b90d387fedb0a23824a1ef",
-                "code": "f195be3c399e57618e443711da4d2836394ce3d0",
-                "maintenance": "4cc1ae0ed0d773a7b87cb48fc7df43b359d99a79ed5118197c41267642611c8c"
+                "code": "32c5c9417e42e5e840d7f8a56d813297d39edac3",
+                "maintenance": "c93d378f3f6f3184da9ef4a9add9cb4b216977ae2db2744f2483c28ec72a818e"
             }
         }
     }

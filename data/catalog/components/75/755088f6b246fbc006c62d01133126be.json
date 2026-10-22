@@ -7,14 +7,14 @@
             "id": "github:292529340:root",
             "repository": "xiaods/k8e",
             "path": "",
-            "revision": "2e8998cc278fed02cb6ea951a2b559a07011e718",
+            "revision": "23afaa2c47cdceb1c71bfdc2525a24d3966795e7",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "e42172edb4282a3db23da9250bc078df35b0429f1576cf6ed4a36cc06ff5b97d",
-                "code": "2e8998cc278fed02cb6ea951a2b559a07011e718",
-                "maintenance": "47285a689b868ec904e3c03e5f05edf72b89cb66d19c6222d8371b4bc9ebc2d2"
+                "code": "23afaa2c47cdceb1c71bfdc2525a24d3966795e7",
+                "maintenance": "7b1d4f223b5b72f7db7d0b8a50e67c139cc1f0eb27a314d227e9baa8ad9c2428"
             }
         }
     }

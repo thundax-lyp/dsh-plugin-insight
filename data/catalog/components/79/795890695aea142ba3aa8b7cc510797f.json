@@ -473,14 +473,14 @@
             "repository": "988hj7tczd-oss/dsh-dep-vuln-scan",
             "path": "",
             "revision": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "8470c002cdb09e0e3137ea45d353d998cacf6b56a7dc06d6e95e3484d6f81295",
                 "code": "db879fc01cd02b9f0821a87ba728a310ae08d9ac",
                 "maintenance": "48a74ca5b5d47ee77d1a6a33ab55f518701d172f8f709a508c8e7947f04e83c9"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1416786967:root",
             "repository": "YiuTerran/dsh-wps365-plugin",
             "path": "",
-            "revision": "455c6ea1ece1ea26c76c5fb56f3f1cc0ea837fbd",
+            "revision": "c79b32464d9d51b6a330da368e764449a8460468",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6f31d96edcd7b14646dc58dab8e5376ad8d764dcd023b721620329b49aa366d7",
-                "code": "455c6ea1ece1ea26c76c5fb56f3f1cc0ea837fbd",
-                "maintenance": "8a08ee33f3e663c59315d9c6970fd8ac1ba4b7849a1e62c75382122e02e32b4c"
+                "code": "c79b32464d9d51b6a330da368e764449a8460468",
+                "maintenance": "081373c4c7f52acbae60dc41cc6993fcc693905434274f71b85949c46ddb97a0"
             }
         }
     }

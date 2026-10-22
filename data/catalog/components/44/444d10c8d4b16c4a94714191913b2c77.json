@@ -7,14 +7,14 @@
             "id": "github:1424174287:root",
             "repository": "TINGOD2006/dsh-scratch-vault",
             "path": "",
-            "revision": "6b95931758789540b62d30666149b82db5beaeb4",
+            "revision": "dc3a8b7e103a988a8d08cc69226c7ce7b44755b1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0673a4552a00f97b1f9e98b60605e31f0aa52886bcbe3957b192bec4cf9c0efe",
-                "code": "6b95931758789540b62d30666149b82db5beaeb4",
-                "maintenance": "4944729bcc6dc21f58ff9fa644f405ff9b5ce0f322332f8bc1ac4b1311ec554c"
+                "code": "dc3a8b7e103a988a8d08cc69226c7ce7b44755b1",
+                "maintenance": "379c9b78044ba30ab5d00792029dc2858d09563cad4abcf6b56ae00aa229e369"
             }
         }
     }

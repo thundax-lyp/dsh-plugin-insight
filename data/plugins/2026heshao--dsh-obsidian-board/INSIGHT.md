@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[072612e](https://github.com/2026heshao/dsh-obsidian-board/tree/072612e0245565cee12cbfd07a421f2029d35c4e)
+分析版本：[5f8744f](https://github.com/2026heshao/dsh-obsidian-board/tree/5f8744f5347caeaa5001ebd68754d0c1f25563ec)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-obsidian-board) [![npm 30d 133](https://img.shields.io/static/v1?label=npm+30d&message=133&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board)
@@ -43,7 +43,9 @@
 
 > **用途**：个人笔记库问答、找原文并回存知识。详见[Q01](#research-q01)。
 
-原Obsidian搜索复制到聊天，集中RAG便利不等已证召回可靠。
+在DSH专用三栏页面浏览Obsidian库、提问并点引用看笔记原文，回答可存成AI回答笔记。检索不需embedding服务，BM25和CJK bigram在宿主本地算，回答复用宿主模型通道。相较手工搜库复制到聊天，主要贡献是搜索、来源阅读、流式对话和保存形成同页闭环；不是Obsidian插件或新检索算法。
+
+README“no data leaves your machine”只能收窄到本地索引/检索计算，问句、历史和命中正文明确进入llm.stream，对远程模型就会离机。引用代表被检索的来源，不自动证明模型每个主张被支持。成功需相关笔记真能召回、回答忠实且引用定位可靠，不能由界面可点或自带演示得出准确率结论。
 
 <a id="detail-section-3"></a>
 
@@ -85,7 +87,6 @@
 | 持续使用 | 元数据扫描+模型/规划/回退 | 审阅召回和规划结果，处理漏项与冲突 | 规划/回退增加模型调用；费用与召回效果未量化 |
 | 失败恢复 | 原库备份/partial/历史 | 核保存、重建与实际上游停止 | 要分保存、partial与上游真正停止；恢复工时未知 |
 
-
 #### 效果
 
 | 目标 | 源码支持 | 边界 |
@@ -124,18 +125,18 @@ attempt隔离、思考分流与统一契约有价值，源码正则测试不能�
 
 **核查状态**：已检查源码。
 
-本地检索与attempt恢复设计可查，索引路径/大小、自动回退和写入/历史隔离边界限制采用。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/vault.js、lib/typert.js、lib/client.js、test/stop-cycle.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/vault.js、lib/typert.js、package.json、test/stop-cycle.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定VaultIndex扫描/构建/读源、gateway检索规划/上下文/流式/历史/保存、typert契约和停止源码测试；不穷尽客户端渲染。
-- 下一步：进一步从外链/大文件、双vault、阻塞planner/return和双同名保存探讨统一边界。
+- 下一步：进一步探讨应按本项缺口执行：对照部署宿主admission与远端模型授权范围，明确允许回退的通道
 
 **分析版本**
 
 - **仓库**：[2026heshao/dsh-obsidian-board](https://github.com/2026heshao/dsh-obsidian-board)
-- **版本号**：0.2.4（[固定提交 072612e](https://github.com/2026heshao/dsh-obsidian-board/tree/072612e0245565cee12cbfd07a421f2029d35c4e)）
-- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.5（[固定提交 5f8744f](https://github.com/2026heshao/dsh-obsidian-board/tree/5f8744f5347caeaa5001ebd68754d0c1f25563ec)）
+- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -145,7 +146,7 @@ attempt隔离、思考分流与统一契约有价值，源码正则测试不能�
 
 研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](#research-q06)。
 
-进一步从外链/大文件、双vault、阻塞planner/return和双同名保存探讨统一边界。
+进一步探讨应按本项缺口执行：对照部署宿主admission与远端模型授权范围，明确允许回退的通道
 
 <a id="detail-section-9"></a>
 
@@ -156,26 +157,22 @@ attempt隔离、思考分流与统一契约有价值，源码正则测试不能�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 23 | 1699 | — | — | 24131 |
+| .md | source | 23 | 1751 | — | — | 27424 |
 | .mjs | source | 25 | 1519 | 1196 | 151 | — |
-| .js | source | 4 | 4593 | 3590 | 880 | — |
-| .mjs | test | 22 | 1782 | 1355 | 233 | — |
+| .js | source | 4 | 5542 | 4388 | 1008 | — |
+| .mjs | test | 25 | 2725 | 2138 | 326 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-obsidian-board/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-obsidian-board/issues?q=is%3Aissue+created%3A2026-09-22T06%3A19%3A18.896Z..2026-10-22T06%3A19%3A18.896Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-obsidian-board/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A19%3A18.896Z..2026-10-22T06%3A19%3A18.896Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/2026heshao/dsh-obsidian-board/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**本地BM25问答如何处理笔记/模型/流式与保存，哪些边界限制可信采用？
+**插件研究总目标**：本地BM25问答如何处理笔记/模型/流式与保存，哪些边界限制可信采用？
 
 <a id="research-q01"></a>
 
@@ -183,7 +180,7 @@ attempt隔离、思考分流与统一契约有价值，源码正则测试不能�
 
 ### Q01 · 本地笔记问答的实际目标是什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -193,40 +190,41 @@ README“no data leaves your machine”只能收窄到本地索引/检索计算�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-18](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/README.md#L5-L18)
+**依据 1 · 作者声明**：[README.md:5-18](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/README.md#L5-L18)
 
-作者RAG与本地主张。
+当前固定版本复核。作者RAG与本地主张。
 
 <details>
 <summary>查看原文（14行）</summary>
 
 ```text
-A [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) plugin that turns your local **Obsidian vault** into a **dedicated RAG chat panel** inside the DSH GUI — a sidebar entry leading to a full three-pane page: note browser on the left, retrieval-augmented chat in the middle, cited note source on the right. The desktop app and the Web GUI ship the same browser-rendered client, so the panel behaves identically in both. All retrieval and indexing run **100% locally** (BM25 + CJK bigram); answers go through the model channel you already configured in DSH.
+A [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) plugin that turns your local **Obsidian vault** into a **dedicated RAG chat panel** inside the DSH GUI — a sidebar entry leading to a full three-pane page: note browser on the left, retrieval-augmented chat in the middle, cited note source on the right. The desktop app and the Web GUI ship the same browser-rendered client, so the panel behaves identically in both. Indexing and BM25 matching run **100% locally** (no embedding model, no vector database); the optional planner query rewrite and answer generation go through the model channel you already configured in DSH — only your question, the recent conversation and the retrieved snippets are sent, never the vault itself.
 
 > **Not an MCP integration, not an Obsidian plugin** — this is a dual-half DSH plugin (host + browser client). The UI is injected into the DSH main window as a `main` slot page (same mechanism as switching conversations); model calls reuse the host `ctx.llm`; the knowledge base points at your local vault directory (Obsidian doesn't even need to be running).
 
-> **Compatibility**: fully tested on DeepSeek Harness 44.7.0 (host ships `@deepseek-ai/dsh-typert-protocol@0.2.1-rc.2` / cordis 4.0.5); the declared peer range `>=0.1.5-rc.1` still covers it — no code changes needed in v0.2.3.
+> **Compatibility**: checked against a live DeepSeek Harness 44.7.0 install (host ships `@deepseek-ai/dsh-typert-protocol@0.2.1-rc.2` / cordis 4.0.5); the declared peer range `>=0.1.5-rc.1` still covers it. Since v0.2.5 the browser half additionally pulls `react`, `react-dom` and `@deepseek-ai/dsh-client-ui-primitives` out of the host's browser module table (that is how the model menu reuses the host's own primitives — the same three modules the sibling plugin `dsh-forget-session` already requires on 44.x); if a profile ever lacks them, the panel page fails to render rather than degrading. Changes after the 44.7.0 check are covered by the repo suite (`node --test`); the indexing and watcher numbers come from re-runs on a local synthetic 10k-note vault, while the UI batch (composer and model menu) has not had a fresh in-app regression pass.
 
 ## Features
 
-- 🔍 **Local-first retrieval** — BM25 with CJK bigram tokenization, title/path boosting, Obsidian tag & alias awareness. No embedding model, no network, no data leaves your machine.
+- 🔍 **Local-first retrieval** — BM25 with CJK bigram tokenization, title/path boosting, Obsidian tag & alias awareness. No embedding model; indexing and BM25 matching make no network calls, and the vault itself never leaves your machine. Answer generation (plus the optional planner query rewrite) uses the DSH model channel you configured — question, recent conversation and retrieved snippets only.
 - 🎯 **Finds what you actually wrote** — your own notes outrank collected third-party material (public skill libraries are down-weighted), long identifiers such as `github_pat_…` are matched literally, and meaningful hidden folders (e.g. `.workbuddy/`) are indexed instead of silently skipped.
-- 🛑 **Stop that actually stops** — the stop button takes effect at any stage, including the retrieval/planning phase and the model's silent period before its first token. Stopped replies are shown as a neutral "stopped" state, not a red error.
-- 🧵 **Output that never garbles or hangs** — the stream pipeline is keyed per attempt, so switching provider fallbacks can't splice two answers together or silently swallow a reply; each answer shows the model that actually produced it. Replies left mid-stream by a panel refresh are marked "interrupted" with a retry button instead of spinning forever.
-- 📖 **Clickable citations** — every `[n]` in the answer and the citation chips below it open the exact note in the right-hand source pane.
-- 📊 **Rich Markdown answers** — tables, headings, links, italics and task lists render in answers and the source pane, sandboxed (no executable links).
+- 🛑 **Stop that actually stops** — the stop button takes effect at any stage, including the retrieval/planning phase and the model's silent period before its first token. Stopped replies are shown as a neutral "stopped" state, not a red error. Double-press Escape does the same thing from anywhere on the page.
+- ⌨️ **A composer that behaves like the main chat** — the input card is rebuilt against the host InputBar's geometry and interaction contract: send and stop share one primary button (the stop square appears while a reply streams and the box is empty), Enter while a reply is still generating queues the message instead of losing it (queued items list above the card, auto-send after the current answer finishes, each individually removable, and an explicit stop hands the text back to the input instead of dropping it), IME composition is respected so picking a candidate with Enter never sends a half-typed message, the box auto-grows, and focus returns to the input after you send. The focus indicator is drawn on the rounded card, so no rectangular outline floats over it.
+- 🎚 **Model menu ported from the host** — the picker is the host `ModelSelect` ported rather than imitated: two-level "Model / Reasoning effort" menu, provider grouping with sticky headers, search once the list passes 4 entries, full keyboard navigation with focus hand-off, an upward-opening portal menu that repositions on scroll and resize, and per-row metadata (free / credits / context window / supported efforts). It shows the host's actual default model instead of a generic "default model" label, and the effort you see is the effort that gets sent. Selections apply to the panel's next message only — a per-message route override, your DSH global settings stay untouched.
+- 🧵 **Output that never garbles or hangs** — the stream pipeline is keyed per attempt, so switching provider fallbacks can't splice two answers together or silently swallow a reply; each answer shows the model that actually produced it, and a reply regenerated on a fallback channel carries a "fallback channel" tag so the detour is visible, not hidden. Replies left mid-stream by a panel refresh are marked "interrupted" with a retry button instead of spinning forever.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:161-214](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L161-L214)
+**依据 2 · 源码核查**：[lib/index.js:161-214](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L161-L214)
 
-正文历史构造模型上下文。
+当前固定版本复核。正文历史构造模型上下文。
 
 <details>
 <summary>查看原文（54行）</summary>
 
 ```text
+//               用户视角就是「总是输出异常」。id 用 randomUUID（宿主用同款）。
 function buildMessages({ system, context, history, question, historyLimit = 24, route }) {
 	const messages = [];
 	const modelSource = () => ({ kind: "model", provider: String(route?.provider || ""), model: String(route?.model || "") });
@@ -280,17 +278,16 @@ function contextBlock(hits, chunkLimit) {
 				: "";
 			return `[${i + 1}] 笔记「${hit.noteTitle}」${hit.heading ? " · " + hit.heading : ""}${tag}\n${body}`;
 		})
-		.join("\n\n---\n\n");
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1177-1177](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1177-L1177)
+**依据 3 · 源码核查**：[lib/index.js:1177-1177](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1177-L1177)
 
-buildMessages实际入口。
+当前固定版本复核。buildMessages实际入口。
 
 ```text
-		const messages = buildMessages({ system, context, history, question, historyLimit: this.config.historyLimit, route });
+			state.error = "已停止";
 ```
 
 <a id="research-q02"></a>
@@ -299,7 +296,7 @@ buildMessages实际入口。
 
 ### Q02 · 检索和规划的机制是什么？
 
-**研究主题：**功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
@@ -309,14 +306,18 @@ VaultIndex扫描Markdown、按标题切片与长段拆分，标题/面包屑参�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/vault.js:19-36](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L19-L36)
+**依据 1 · 源码核查**：[lib/vault.js:19-36](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L19-L36)
 
-分词。
+当前固定版本复核。分词。
 
 <details>
 <summary>查看原文（18行）</summary>
 
 ```text
+// ── 切词 ────────────────────────────────────────────────────────────
+// CJK 单字信息量低、bigram 召回稳；拉丁词走小写 + 轻量复数归一。
+const CJK_RE = /[\u2E80-\u9FFF\uF900-\uFAFF]/;
+
 export function tokenize(text) {
 	const tokens = [];
 	const lowered = String(text).toLowerCase();
@@ -331,31 +332,42 @@ export function tokenize(text) {
 	// CJK bigram（单字也保留，权重低——用于单字专有名词）
 	for (const m of lowered.matchAll(/[\u2E80-\u9FFF\uF900-\uFAFF]{1,}/g)) {
 		const run = m[0];
-		if (run.length === 1) { tokens.push(run); continue; }
-		for (let i = 0; i < run.length - 1; i++) tokens.push(run.slice(i, i + 2));
-	}
-	return tokens;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/vault.js:289-349](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L289-L349)
+**依据 2 · 源码核查**：[lib/vault.js:289-349](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L289-L349)
 
-增量与并发。
+当前固定版本复核。增量与并发。
 
 <details>
 <summary>查看原文（61行）</summary>
 
 ```text
+		this.byNote = new Map(); // notePath -> {title, mtimeMs, aliases, tags, chunkIdx: []}
+		this.df = new Map();     // token -> doc count
+		this.avgLen = 0;
+		this.builtAt = 0;
+		this.scanning = false;
+		this._watcher = null;
+		this._watchTimer = null;
+		this._watchVaultPath = "";
+		this._watchError = "";
+		// 定向监听状态：待重建的绝对路径集合 + 「需要一次全量对账」标记（rename/删除/越界/null
+		// 文件名都可能让「哪篇变了」不可知，对账兜住这批定向处理覆盖不到的删改）。
+		this._watchPending = new Set();
+		this._watchNeedFull = false;
+	}
+
 	async ensureIndexed(vaultPath, { force = false } = {}) {
 		if (this.scanning) return { queued: true };
-		if (!force && this.builtAt && this.vaultPath === vaultPath) {
-			// 轻量增量：只对 mtime 变化的笔记重建 chunk。
-			return this._incremental(vaultPath);
-		}
+		// 全量 / 增量 / 定向三类重建共用同一把 scanning 互斥锁：以前「已建过就轻量增量」这条
+		// 快捷分支不进锁，监听器与查询路径可以并发跑两份 _incremental，两份交替 drop/commit +
+		// _recomputeStats 压实 chunks 时会互相踩索引。定向重建落地后重建更频繁，这个竞态必须堵掉。
 		this.scanning = true;
 		try {
-			if (force || this.vaultPath !== vaultPath) await this._full(vaultPath);
+			if (!force && this.builtAt && this.vaultPath === vaultPath) await this._incremental(vaultPath);
+			else if (force || this.vaultPath !== vaultPath) await this._full(vaultPath);
 			else await this._incremental(vaultPath);
 		} finally {
 			this.scanning = false;
@@ -393,10 +405,18 @@ export function tokenize(text) {
 		const dirty = [];
 		for (let i = 0; i < files.length; i++) {
 			seen.add(files[i]);
-			if (mtimes[i] === null) continue;
-			const rec = this.byNote.get(files[i]);
-			if (!rec || rec.mtimeMs !== mtimes[i]) dirty.push(files[i]);
-		}
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/vault.js:354-374](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L354-L374)
+
+当前固定版本复核。切片计权。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
 		const built = await mapPool(dirty, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));
 		for (let i = 0; i < dirty.length; i++) {
 			// 先标记旧 chunk 为孤儿再提交新 chunk：与基线的「drop+index 逐文件交替」等价
@@ -408,51 +428,29 @@ export function tokenize(text) {
 		for (const path of [...this.byNote.keys()]) {
 			if (!seen.has(path)) { this._dropNote(path); dirtyAny = true; }
 		}
-```
+		if (dirtyAny) { this._recomputeStats(); this.builtAt = Date.now(); }
+	}
 
-</details>
-
-**依据 3 · 源码核查**：[lib/vault.js:354-374](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L354-L374)
-
-切片计权。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
+	// OPT-1.7：读+切分成纯数据，不碰实例状态，才能并发。
 	async _buildNote(file, vaultPath) {
 		const raw = await readFile(file, "utf8");
 		const { frontmatter, body } = parseFrontmatter(raw);
 		const rel = relative(vaultPath, file).split(sep).join("/");
 		const title = basename(file).replace(/\.(md|markdown)$/i, "");
 		const mtimeMs = (await stat(file)).mtimeMs;
-		const note = {
-			path: rel,
-			title,
-			mtimeMs,
-			aliases: extractAliases(frontmatter),
-			tags: extractTags(frontmatter, body),
-			chunkIdx: [],
-		};
-		const chunks = chunkNote({ path: rel, title, body }).map((chunk) => {
-			// 标题面包屑重复进正文计权：标题词在检索里更重。
-			const boost = note.title + "\n" + chunk.crumbs + "\n" + chunk.heading;
-			const tokenList = tokenize(boost + "\n" + chunk.text);
-			const tokens = new Map();
-			for (const t of tokenList) tokens.set(t, (tokens.get(t) || 0) + 1);
-			return { ...chunk, tokens, len: tokenList.length };
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:784-845](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L784-L845)
+**依据 4 · 源码核查**：[lib/index.js:784-845](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L784-L845)
 
-多query与extra空分支。
+当前固定版本复核。多query与extra空分支。
 
 <details>
 <summary>查看原文（62行）</summary>
 
 ```text
+
 	async _multiHits(question, llm, route) {
 		const vaultPath = await this._vaultPath();
 		await this.index.ensureIndexed(vaultPath);
@@ -488,7 +486,7 @@ export function tokenize(text) {
 			})();
 			await withTimeout(planStream, 20000, "检索规划");
 			const queries = parseQueryList(planText).filter((q) => q !== question.trim());
-			// 各路检索（串行即可：BM25 是内存毫秒级）
+			// 各路检索（串行即可：BM25 全在内存里跑，10k 笔记 / 5k chunk 级库实测单次 p50 约 3–10ms）
 			const perQuery = [];
 			for (const q of queries.slice(0, 3)) {
 				const r = this.index.search(q, { topK });
@@ -514,19 +512,19 @@ export function tokenize(text) {
 		}
 		const merged = [...fused.values()]
 			.sort((a, b) => b.count - a.count || b.rrf - a.rrf) // 多路共同命中优先，再按 RRF
-			.map((v) => ({ ...v.hit, multiHit: v.count > 1, score: Math.round(v.rrf * 100) / 100 }));
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:405-432](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L405-L432)
+**依据 5 · 源码核查**：[lib/index.js:405-432](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L405-L432)
 
-Gateway依赖。
+当前固定版本复核。Gateway依赖。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
+
 export class ObsidianBoardGateway extends TypertRemoteService {
 	// 只写必然存在的服务。可选依赖一律在方法内用 ctx.get 探测——loader 不认 "?"
 	// 后缀语法（实测 0.2.0-rc.2：带 ? 的条目会让注入解析失败 → 服务整体不激活）。
@@ -554,14 +552,13 @@ export class ObsidianBoardGateway extends TypertRemoteService {
 		if (extraSkip.length) indexOptions.skipDirs = [...BASELINE_SKIP_DIRS, ...extraSkip];
 		const extraDot = configList(this.config.extraDotDirs);
 		if (extraDot.length) indexOptions.allowDotDirs = [...BASELINE_ALLOW_DOT_DIRS, ...extraDot];
-		this.index = new VaultIndex(indexOptions);
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[lib/typert.js:5-43](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/typert.js#L5-L43)
+**依据 6 · 源码核查**：[lib/typert.js:5-43](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/typert.js#L5-L43)
 
-RPC描述符。
+当前固定版本复核。RPC描述符。
 
 <details>
 <summary>查看原文（39行）</summary>
@@ -610,9 +607,9 @@ export const TYPERT = {
 
 </details>
 
-**依据 7 · 源码核查**：[package.json:29-34](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/package.json#L29-L34)
+**依据 7 · 源码核查**：[package.json:29-34](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/package.json#L29-L34)
 
-分发依赖。
+当前固定版本复核。分发依赖。
 
 ```text
   },
@@ -629,7 +626,7 @@ export const TYPERT = {
 
 ### Q03 · 索引、读源和保存的路径保护一致吗？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -639,14 +636,18 @@ saveNote清理标题、同名追加序号后普通writeFile，但access再写不
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/vault.js:191-205](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L191-L205)
+**依据 1 · 源码核查**：[lib/vault.js:191-205](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L191-L205)
 
-非目录md加入。
+当前固定版本复核。非目录md加入。
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
+	// 又保留 `ALLOW_DOT_DIRS.has(...)` 这行既有形态（测试对它做源码正则断言）。
+	const ALLOW_DOT_DIRS = opts.allowDotDirs ?? ALLOW_DOT_DIRS_DEFAULT;
+	const maxDepth = opts.maxDepth ?? DEFAULT_MAX_DEPTH;
+	const files = [];
 	async function walk(dir, depth) {
 		if (depth > maxDepth) return;
 		let entries;
@@ -658,22 +659,33 @@ saveNote清理标题、同名追加序号后普通writeFile，但access再写不
 				// 点目录：默认跳过；但白名单目录（.workbuddy）在开启时放行
 				if (!includeDotDirs || !ALLOW_DOT_DIRS.has(e.name)) continue;
 			}
-			const full = join(dir, e.name);
-			if (e.isDirectory()) await walk(full, depth + 1);
-			else if (MD_EXT.has(e.name.slice(e.name.lastIndexOf(".")).toLowerCase())) files.push(full);
-		}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/vault.js:354-380](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L354-L380)
+**依据 2 · 源码核查**：[lib/vault.js:354-380](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L354-L380)
 
-直接读索引与静默失败。
+当前固定版本复核。直接读索引与静默失败。
 
 <details>
 <summary>查看原文（27行）</summary>
 
 ```text
+		const built = await mapPool(dirty, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));
+		for (let i = 0; i < dirty.length; i++) {
+			// 先标记旧 chunk 为孤儿再提交新 chunk：与基线的「drop+index 逐文件交替」等价
+			// （孤儿只在 _recomputeStats 里压实，追加顺序不受影响）。
+			this._dropNote(dirty[i]);
+			if (built[i]) this._commitNote(built[i]);
+		}
+		let dirtyAny = dirty.length > 0;
+		for (const path of [...this.byNote.keys()]) {
+			if (!seen.has(path)) { this._dropNote(path); dirtyAny = true; }
+		}
+		if (dirtyAny) { this._recomputeStats(); this.builtAt = Date.now(); }
+	}
+
+	// OPT-1.7：读+切分成纯数据，不碰实例状态，才能并发。
 	async _buildNote(file, vaultPath) {
 		const raw = await readFile(file, "utf8");
 		const { frontmatter, body } = parseFrontmatter(raw);
@@ -686,33 +698,33 @@ saveNote清理标题、同名追加序号后普通writeFile，但access再写不
 			mtimeMs,
 			aliases: extractAliases(frontmatter),
 			tags: extractTags(frontmatter, body),
-			chunkIdx: [],
-		};
-		const chunks = chunkNote({ path: rel, title, body }).map((chunk) => {
-			// 标题面包屑重复进正文计权：标题词在检索里更重。
-			const boost = note.title + "\n" + chunk.crumbs + "\n" + chunk.heading;
-			const tokenList = tokenize(boost + "\n" + chunk.text);
-			const tokens = new Map();
-			for (const t of tokenList) tokens.set(t, (tokens.get(t) || 0) + 1);
-			return { ...chunk, tokens, len: tokenList.length };
-		});
-		return { file, note, chunks };
-	}
-
-	async _safeBuild(file, vaultPath) {
-		try { return await this._buildNote(file, vaultPath); } catch { return null; /* 单文件失败不拖垮全量 */ }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/vault.js:646-690](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L646-L690)
+**依据 3 · 源码核查**：[lib/vault.js:646-690](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L646-L690)
 
-读源realpath与大小检查。
+当前固定版本复核。读源realpath与大小检查。
 
 <details>
 <summary>查看原文（45行）</summary>
 
 ```text
+		const paged = offset !== undefined && offset !== null;
+		const off = paged ? Math.max(0, Math.trunc(Number(offset)) || 0) : 0;
+		const lim = Number.isFinite(limit) ? Math.min(2000, Math.max(0, Math.trunc(limit))) : 500;
+		const page = rows.slice(off, off + lim);
+		return { notes: page, total: rows.length, offset: off, hasMore: paged && off + page.length < rows.length };
+	}
+
+	// 读整篇笔记（引用展开用）
+	// OPT-1.6：只允许 MD_EXT 内扩展名；超过 maxNoteBytes 抛明确错误（含实际字节数）。
+	// OPT-5.1：为什么快筛之后仍需 realpath —— join() 只做字符串拼接，`linkout -> ../outside`
+	//   这种符号链接/junction 会让拼出来的路径前缀仍长在 vault 之下（字符串看着合法），
+	//   但真实文件早已在 vault 外；Windows 的 8.3 短名同理只是字符串层面的别名。
+	//   所以顺序是：快筛（拒绝 `..` → 前缀比对 → 扩展名白名单 → 体积上限）先挡掉绝大多数
+	//   垃圾输入且零 IO 成本，再用 realpath 把「vault 根」与「实际目标」两侧都归一化为真实
+	//   路径做终判；归一化后仍以 `realVault + sep` 前缀比对，避免 `/vault-evil` 冒充 `/vault`。
 	async readNote(vaultPath, relPath) {
 		const safe = String(relPath ?? "").split("/").join(sep);
 		if (safe.includes("..")) throw new Error("路径不允许包含 ..");
@@ -743,33 +755,29 @@ saveNote清理标题、同名追加序号后普通writeFile，但access再写不
 			const code = (err && err.code) || "UNKNOWN";
 			throw new Error(`无法解析笔记路径：${relPath}（${code}）`);
 		}
-
-		// 终判 3：归一化后的真实路径仍必须落在 vault 根内——这才是挡 junction / 符号链接逃逸的那道闸。
-		if (realTarget !== realVault && !realTarget.startsWith(realVault + sep)) {
-			throw new Error(`路径越出 vault 范围（真实路径解析后）：${relPath}`);
-		}
-
-		const info = await stat(realTarget);
-		if (!info.isFile()) throw new Error(`不是普通文件：${relPath}`);
-		if (info.size > this.maxNoteBytes) {
-			throw new Error(`笔记过大：${info.size} 字节，超过上限 ${this.maxNoteBytes} 字节（可调整 VaultIndex 的 maxNoteBytes）`);
-		}
-		const raw = await readFile(realTarget, "utf8");
-		return { path: relPath, content: raw, mtimeMs: Math.round(info.mtimeMs) };
-	}
-
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1409-1442](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1409-L1442)
+**依据 4 · 源码核查**：[lib/index.js:1409-1442](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1409-L1442)
 
-保存路径、access写与YAML。
+当前固定版本复核。保存路径、access写与YAML。
 
 <details>
 <summary>查看原文（34行）</summary>
 
 ```text
+	async historySet(payload) {
+		const key = String(payload?.vaultId || "").trim() || "default";
+		const raw = Array.isArray(payload?.items) ? payload.items : [];
+		// 与客户端 sanitizeHistory(-40) 对齐：只保留最近 40 条
+		const items = raw.slice(-40);
+		const updatedAt = Number(payload?.updatedAt) || Date.now();
+		ObsidianBoardGateway._historyStore.set(key, { items, updatedAt });
+		return { ok: true };
+	}
+
+	// ── RPC：保存回答为 vault 笔记（知识库闭环）────────────────────
 	async saveNote(payload) {
 		await this._restorePersisted();
 		const vaultPath = await this._vaultPath();
@@ -793,17 +801,6 @@ saveNote清理标题、同名追加序号后普通writeFile，但access再写不
 			`source: dsh-obsidian-board`,
 		];
 		// OPT-2.1 YAML 列表写法：每个文件只出现一次 refs: 键（重复 key 是非法 YAML，
-		// Obsidian 会丢字段）；零引用时不写 refs 键。
-		const cites = Array.isArray(payload?.citations) ? payload.citations : [];
-		const refs = cites.filter((c) => c?.notePath).slice(0, 20).map((c) => `  - "[[${c.notePath.replace(/\.md$/i, "")}|${c.noteTitle || c.notePath}]]"`);
-		if (refs.length) header.push("refs:", ...refs);
-		header.push("---", "");
-		const body = header.join("\n") + content.trim() + "\n";
-		await writeFile(path, body, "utf8");
-		// OPT-2.10 保存一条笔记后不再全量重建索引：万级笔记的库 force 一次要卡好几秒，
-		// 而 ensureIndexed 的增量分支按 mtime 就能捡到刚写的这个文件。
-		await this.index.ensureIndexed(vaultPath);
-		return { saved: true, path: "AI 回答/" + path.split(/[\\/]/).pop(), title: path.split(/[\\/]/).pop().replace(/\.md$/i, "") };
 ```
 
 </details>
@@ -814,7 +811,7 @@ saveNote清理标题、同名追加序号后普通writeFile，但access再写不
 
 ### Q04 · 停止、回退和历史隔离有哪些边界？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -824,14 +821,15 @@ stream先注册状态，再以abortable包装检索，生成时race iterator.nex
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:798-817](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L798-L817)
+**依据 1 · 源码核查**：[lib/index.js:798-817](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L798-L817)
 
-planner无signal。
+当前固定版本复核。planner无signal。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
+		try {
 			const planMessages = [
 				{ role: "system", content: [{ type: "text", text: PLANNER_PROMPT }] },
 				{ role: "user", content: [{ type: "text", text: question.slice(0, 500) }] },
@@ -851,19 +849,29 @@ planner无signal。
 					planText += visibleDelta(chunk);
 				}
 			})();
-			await withTimeout(planStream, 20000, "检索规划");
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1090-1148](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1090-L1148)
+**依据 2 · 源码核查**：[lib/index.js:1090-1148](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1090-L1148)
 
-共享流池与驱逐。
+当前固定版本复核。共享流池与驱逐。
 
 <details>
 <summary>查看原文（59行）</summary>
 
 ```text
+	async search(payload) {
+		const vaultPath = await this._vaultPath();
+		await this.index.ensureIndexed(vaultPath);
+		const q = String(payload?.query || "");
+		const topK = Math.max(1, Math.min(20, Number(payload?.topK) || 8));
+		return { query: q, ...this.index.search(q, { topK }) };
+	}
+
+	// ── 流式会话（可中断）：chatStart 起流后台攒文本，chatPoll 取增量，chatStop 中断 ──
+	// typert direct 调用是「一问一答」，没法在一次 RPC 里持续推流；这里用三段式：
+	// chatStart 返回 sessionId，流在宿主后台跑，客户端 300ms 轮询 chatPoll 拿增量。
 	static _streams = new Map(); // sessionId -> {text, done, error, controller, provider, model, ts}
 	static _historyStore = new Map(); // OPT-4.2 vaultId -> { items, updatedAt }，纯内存（服务重启即丢，客户端 localStorage 另有本地兜底）
 
@@ -912,29 +920,29 @@ planner无signal。
 			}
 		}
 		while (ObsidianBoardGateway._streams.size > 6) {
-			let oldestKey = null;
-			let oldestTs = Infinity;
-			for (const [k, v] of ObsidianBoardGateway._streams) {
-				if (v.ts < oldestTs) {
-					oldestTs = v.ts;
-					oldestKey = k;
-				}
-			}
-			const oldest = ObsidianBoardGateway._streams.get(oldestKey);
-			if (oldest && oldest.controller && !oldest.done) oldest.controller.abort();
-			ObsidianBoardGateway._streams.delete(oldestKey);
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1183-1229](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1183-L1229)
+**依据 3 · 源码核查**：[lib/index.js:1183-1229](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1183-L1229)
 
-deadline/abort/return。
+当前固定版本复核。deadline/abort/return。
 
 <details>
 <summary>查看原文（47行）</summary>
 
 ```text
+		// OPT-2.8 检索完成 → 进入生成阶段，并把命中数报给客户端（面板显示「检索到 N 段」）。
+		state.phase = "generating";
+		state.hitCount = hits.length;
+		const context = contextBlock(hits, Math.max(200, Number(this.config.chunkLimit) || 1200));
+		const system = String(this.config.systemPrompt || "").trim() || BUILTIN_SYSTEM_PROMPT;
+		const messages = buildMessages({ system, context, history, question, historyLimit: this.config.historyLimit, route });
+
+		// 后台跑流；目录回退逻辑与 chat 相同（provider+model 成对探测）。
+		// 全程受 chatStart 的超时上限约束（OPT-2.12：来自 timeoutMs 配置）：任何一步挂住都会让
+		// 轮询看到明确的超时错误，而不是无限转圈。历史值 120s 太短——onlyReasoning 模型
+		// （glm-5.3-flash / hy 系列）在 max/high 推理档的思考期可达 2-3 分钟，会把正常长回答掐死。
 		(async () => {
 			let timedOut = false;
 			const deadline = setTimeout(() => {
@@ -971,29 +979,29 @@ deadline/abort/return。
 						const usage = usageOf(chunk);
 						if (usage) state.usage = usage;
 						// 思考增量：单独通道攒给面板展示（onlyReasoning 模型的思考期可达分钟级，
-						// 不展示就是「只转圈」；正文与思考互不混入）
-						const think = thinkingDelta(chunk);
-						if (think) state.think += think;
-						const delta = visibleDelta(chunk);
-						if (delta) state.text += delta;
-					}
-					return true;
-				} finally {
-					signal.removeEventListener("abort", abortResolve);
-					// 提前退出（停止/失败）时释放上游迭代器，让适配器尽快收尾
-					try { await iterator.return?.(); } catch { /* ignore */ }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1284-1305](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1284-L1305)
+**依据 4 · 源码核查**：[lib/index.js:1284-1305](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1284-L1305)
 
-自动回退上下文与提示。
+当前固定版本复核。自动回退上下文与提示。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
+						} catch { /* 注册表不可读 */ }
+					}
+					// ② workbuddy catalog 兜底：catalog 里的模型 id 只在 workbuddy 路由有效
+					if (!pairs.length && typeof llm.listProviders === "function") {
+						try {
+							const names = (Array.isArray(llm.listProviders()) ? llm.listProviders() : []).map(providerRouteOf).filter(Boolean);
+							if (names.includes("workbuddy")) {
+								for (const row of readCatalogModels().slice(0, 8)) pushPair("workbuddy", row.id);
+							}
+						} catch { /* 无 catalog */ }
+					}
 					for (const pair of pairs) {
 						if (state.controller.signal.aborted) break;
 						try {
@@ -1005,29 +1013,29 @@ deadline/abort/return。
 							// 会同步重置偏移并清掉气泡里上一轮的残文。
 							state.text = "";
 							state.think = "";
-							state.error = ""; // 清残留：上一对的失败不能吞掉这一对的结果
-							state.usage = null; // 用量也是上一轮的，别混算
-							state.attempt += 1;
-							ok = await runOne(withEffort({ messages, provider: pair.provider, ...(pair.model ? { model: pair.model } : {}) }));
-							attempts.push(pair.provider + "/" + (pair.model || "?") + (state.error ? "：" + state.error : (state.text.trim() ? "有输出" : "零文本")));
-							if (state.text.trim()) {
-								state.provider = pair.provider;
-								state.model = pair.model || state.model;
-								// OPT-2.2 回退成功不再写 config / _saveState：持久层保持用户显式配置，
-								// 只在会话内存里记 fallback，客户端经 chatPoll.fallback 一次性提示。
-								state.fallback = { provider: pair.provider, model: pair.model || state.model };
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:1378-1405](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1378-L1405)
+**依据 5 · 源码核查**：[lib/index.js:1378-1405](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1378-L1405)
 
-停止与历史存储。
+当前固定版本复核。停止与历史存储。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
+			model: state.model,
+			effort: state.effort || "",
+			// OPT-2.8 阶段可见：retrieval（检索+规划中）/ generating（模型已在出字）/ done。
+			// 只加字段：phase 缺省回落 done，保证老会话状态对象（没有该字段）不出现 undefined。
+			phase: state.phase || "done",
+			hitCount: state.hitCount || 0,
+			// OPT-2.2 回退链命中时的兜底路由（一次性提示用；null = 本轮无回退）
+			fallback: state.fallback || null,
+		};
+	}
+
 	async chatStop(payload) {
 		const state = ObsidianBoardGateway._streams.get(String(payload?.sessionId || ""));
 		if (!state) return { stopped: false };
@@ -1045,17 +1053,6 @@ deadline/abort/return。
 	async historyGet(payload) {
 		const key = String(payload?.vaultId || "").trim() || "default";
 		const entry = ObsidianBoardGateway._historyStore.get(key);
-		return entry ? { items: entry.items, updatedAt: entry.updatedAt } : { items: [], updatedAt: 0 };
-	}
-
-	async historySet(payload) {
-		const key = String(payload?.vaultId || "").trim() || "default";
-		const raw = Array.isArray(payload?.items) ? payload.items : [];
-		// 与客户端 sanitizeHistory(-40) 对齐：只保留最近 40 条
-		const items = raw.slice(-40);
-		const updatedAt = Number(payload?.updatedAt) || Date.now();
-		ObsidianBoardGateway._historyStore.set(key, { items, updatedAt });
-		return { ok: true };
 ```
 
 </details>
@@ -1063,8 +1060,8 @@ deadline/abort/return。
 #### 缺口
 
 - 宿主typert对这些direct RPC的身份/客户端隔离与可用provider数据策略
-  **影响：**插件局部池键和vaultId不能单独提供多用户权限保证
-  **进一步探讨：**对照部署宿主admission与远端模型授权范围，明确允许回退的通道
+  **影响**：插件局部池键和vaultId不能单独提供多用户权限保证
+  **进一步探讨**：对照部署宿主admission与远端模型授权范围，明确允许回退的通道
 
 <a id="research-q05"></a>
 
@@ -1072,7 +1069,7 @@ deadline/abort/return。
 
 ### Q05 · 工程证据与三阶段成本如何评价？
 
-**研究主题：**效果与总成本、工程质量与复用
+**研究主题**：效果与总成本、工程质量与复用
 
 #### 完整回答
 
@@ -1082,14 +1079,29 @@ vault纯函数/索引、gateway与client分离，统一typert描述符生成可�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/vault.js:313-349](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L313-L349)
+**依据 1 · 源码核查**：[lib/vault.js:313-349](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L313-L349)
 
-全量/增量工作。
+当前固定版本复核。全量/增量工作。
 
 <details>
 <summary>查看原文（37行）</summary>
 
 ```text
+			else await this._incremental(vaultPath);
+		} finally {
+			this.scanning = false;
+		}
+		return { queued: false };
+	}
+
+	_scan(vaultPath) {
+		return scanVault(vaultPath, {
+			skipDirs: this.skipDirs,
+			allowDotDirs: this.allowDotDirs,
+			maxDepth: this.maxDepth,
+		});
+	}
+
 	async _full(vaultPath) {
 		this.vaultPath = vaultPath;
 		this.chunks = [];
@@ -1112,33 +1124,19 @@ vault纯函数/索引、gateway与client分离，统一typert描述符生成可�
 		const dirty = [];
 		for (let i = 0; i < files.length; i++) {
 			seen.add(files[i]);
-			if (mtimes[i] === null) continue;
-			const rec = this.byNote.get(files[i]);
-			if (!rec || rec.mtimeMs !== mtimes[i]) dirty.push(files[i]);
-		}
-		const built = await mapPool(dirty, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));
-		for (let i = 0; i < dirty.length; i++) {
-			// 先标记旧 chunk 为孤儿再提交新 chunk：与基线的「drop+index 逐文件交替」等价
-			// （孤儿只在 _recomputeStats 里压实，追加顺序不受影响）。
-			this._dropNote(dirty[i]);
-			if (built[i]) this._commitNote(built[i]);
-		}
-		let dirtyAny = dirty.length > 0;
-		for (const path of [...this.byNote.keys()]) {
-			if (!seen.has(path)) { this._dropNote(path); dirtyAny = true; }
-		}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:170-190](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L170-L190)
+**依据 2 · 源码核查**：[lib/index.js:170-190](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L170-L190)
 
-历史字符预算。
+当前固定版本复核。历史字符预算。
 
 <details>
 <summary>查看原文（21行）</summary>
 
 ```text
+	});
 	// 面板会话历史（截断到最近 N 条，防止上下文膨胀）
 	const limit = Math.max(2, Math.min(60, Number(historyLimit) || 24));
 	const tail = history.slice(-limit);
@@ -1159,19 +1157,20 @@ vault纯函数/索引、gateway与client分离，统一typert描述符生成可�
 		messages.push({
 			id: randomUUID(),
 			role: isAssistant ? "assistant" : "user",
-			content: [{ type: "text", text: m.content.slice(0, budget) }],
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[test/stop-cycle.test.mjs:17-38](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/test/stop-cycle.test.mjs#L17-L38)
+**依据 3 · 源码核查**：[test/stop-cycle.test.mjs:17-38](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/test/stop-cycle.test.mjs#L17-L38)
 
-源码字符串测试。
+当前固定版本复核。源码字符串测试。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
+const t = (n, c, extra) => { if (c) { pass++; console.log("PASS", n); } else { fail++; console.log("FAIL", n, extra || ""); } };
+
 const host = readFileSync(new URL("../lib/index.js", import.meta.url), "utf8");
 const client = readFileSync(new URL("../lib/client.js", import.meta.url), "utf8");
 
@@ -1192,15 +1191,13 @@ t("abortable 同时监听 abort 与 resolve/reject 并摘除监听", /signal\.ad
 // ── 3. 宿主：chatStop 立即可见 + 幂等 ───────────────────────────────
 t("chatStop 立刻给空正文会话写入中性终态", /state\.stopping = true;/.test(host) && /if \(!state\.text\.trim\(\) && !state\.error\) state\.error = "已停止";/.test(host));
 t("chatStop 对 abort 抛错免疫（幂等）", /try \{ state\.controller\.abort\(\); \} catch/.test(host));
-t("停止引发的迭代器异常收敛为中性终态", /state\.controller\.signal\.aborted\s*\?\s*"已停止"\s*:\s*"模型调用失败："/.test(host));
-t("已有正文的停止保留正文（不写 error）", /if \(state\.controller\.signal\.aborted && state\.text\.trim\(\)\) state\.error = "";/.test(host));
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/typert.js:1-3](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/typert.js#L1-L3)
+**依据 4 · 源码核查**：[lib/typert.js:1-3](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/typert.js#L1-L3)
 
-统一契约源。
+当前固定版本复核。统一契约源。
 
 ```text
 /* Generated for dsh-obsidian-board — do not edit. */
@@ -1214,7 +1211,7 @@ t("已有正文的停止保留正文（不写 error）", /if \(state\.controller
 
 ### Q06 · 如何采用及继续探讨？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1224,39 +1221,54 @@ t("已有正文的停止保留正文（不写 error）", /if \(state\.controller
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/vault.js:289-301](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L289-L301)
+**依据 1 · 源码核查**：[lib/vault.js:289-301](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L289-L301)
 
-扫描已进行时仅queued返回。
+当前固定版本复核。扫描已进行时仅queued返回。
 
 <details>
 <summary>查看原文（13行）</summary>
 
 ```text
-	async ensureIndexed(vaultPath, { force = false } = {}) {
-		if (this.scanning) return { queued: true };
-		if (!force && this.builtAt && this.vaultPath === vaultPath) {
-			// 轻量增量：只对 mtime 变化的笔记重建 chunk。
-			return this._incremental(vaultPath);
-		}
-		this.scanning = true;
-		try {
-			if (force || this.vaultPath !== vaultPath) await this._full(vaultPath);
-			else await this._incremental(vaultPath);
-		} finally {
-			this.scanning = false;
-		}
+		this.byNote = new Map(); // notePath -> {title, mtimeMs, aliases, tags, chunkIdx: []}
+		this.df = new Map();     // token -> doc count
+		this.avgLen = 0;
+		this.builtAt = 0;
+		this.scanning = false;
+		this._watcher = null;
+		this._watchTimer = null;
+		this._watchVaultPath = "";
+		this._watchError = "";
+		// 定向监听状态：待重建的绝对路径集合 + 「需要一次全量对账」标记（rename/删除/越界/null
+		// 文件名都可能让「哪篇变了」不可知，对账兜住这批定向处理覆盖不到的删改）。
+		this._watchPending = new Set();
+		this._watchNeedFull = false;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/vault.js:354-380](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/vault.js#L354-L380)
+**依据 2 · 源码核查**：[lib/vault.js:354-380](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/vault.js#L354-L380)
 
-索引基线。
+当前固定版本复核。索引基线。
 
 <details>
 <summary>查看原文（27行）</summary>
 
 ```text
+		const built = await mapPool(dirty, this.readConcurrency, (file) => this._safeBuild(file, vaultPath));
+		for (let i = 0; i < dirty.length; i++) {
+			// 先标记旧 chunk 为孤儿再提交新 chunk：与基线的「drop+index 逐文件交替」等价
+			// （孤儿只在 _recomputeStats 里压实，追加顺序不受影响）。
+			this._dropNote(dirty[i]);
+			if (built[i]) this._commitNote(built[i]);
+		}
+		let dirtyAny = dirty.length > 0;
+		for (const path of [...this.byNote.keys()]) {
+			if (!seen.has(path)) { this._dropNote(path); dirtyAny = true; }
+		}
+		if (dirtyAny) { this._recomputeStats(); this.builtAt = Date.now(); }
+	}
+
+	// OPT-1.7：读+切分成纯数据，不碰实例状态，才能并发。
 	async _buildNote(file, vaultPath) {
 		const raw = await readFile(file, "utf8");
 		const { frontmatter, body } = parseFrontmatter(raw);
@@ -1269,33 +1281,19 @@ t("已有正文的停止保留正文（不写 error）", /if \(state\.controller
 			mtimeMs,
 			aliases: extractAliases(frontmatter),
 			tags: extractTags(frontmatter, body),
-			chunkIdx: [],
-		};
-		const chunks = chunkNote({ path: rel, title, body }).map((chunk) => {
-			// 标题面包屑重复进正文计权：标题词在检索里更重。
-			const boost = note.title + "\n" + chunk.crumbs + "\n" + chunk.heading;
-			const tokenList = tokenize(boost + "\n" + chunk.text);
-			const tokens = new Map();
-			for (const t of tokenList) tokens.set(t, (tokens.get(t) || 0) + 1);
-			return { ...chunk, tokens, len: tokenList.length };
-		});
-		return { file, note, chunks };
-	}
-
-	async _safeBuild(file, vaultPath) {
-		try { return await this._buildNote(file, vaultPath); } catch { return null; /* 单文件失败不拖垮全量 */ }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:798-817](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L798-L817)
+**依据 3 · 源码核查**：[lib/index.js:798-817](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L798-L817)
 
-规划基线。
+当前固定版本复核。规划基线。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
+		try {
 			const planMessages = [
 				{ role: "system", content: [{ type: "text", text: PLANNER_PROMPT }] },
 				{ role: "user", content: [{ type: "text", text: question.slice(0, 500) }] },
@@ -1315,19 +1313,29 @@ t("已有正文的停止保留正文（不写 error）", /if \(state\.controller
 					planText += visibleDelta(chunk);
 				}
 			})();
-			await withTimeout(planStream, 20000, "检索规划");
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1409-1442](https://github.com/2026heshao/dsh-obsidian-board/blob/072612e0245565cee12cbfd07a421f2029d35c4e/lib/index.js#L1409-L1442)
+**依据 4 · 源码核查**：[lib/index.js:1409-1442](https://github.com/2026heshao/dsh-obsidian-board/blob/5f8744f5347caeaa5001ebd68754d0c1f25563ec/lib/index.js#L1409-L1442)
 
-保存基线。
+当前固定版本复核。保存基线。
 
 <details>
 <summary>查看原文（34行）</summary>
 
 ```text
+	async historySet(payload) {
+		const key = String(payload?.vaultId || "").trim() || "default";
+		const raw = Array.isArray(payload?.items) ? payload.items : [];
+		// 与客户端 sanitizeHistory(-40) 对齐：只保留最近 40 条
+		const items = raw.slice(-40);
+		const updatedAt = Number(payload?.updatedAt) || Date.now();
+		ObsidianBoardGateway._historyStore.set(key, { items, updatedAt });
+		return { ok: true };
+	}
+
+	// ── RPC：保存回答为 vault 笔记（知识库闭环）────────────────────
 	async saveNote(payload) {
 		await this._restorePersisted();
 		const vaultPath = await this._vaultPath();
@@ -1351,17 +1359,6 @@ t("已有正文的停止保留正文（不写 error）", /if \(state\.controller
 			`source: dsh-obsidian-board`,
 		];
 		// OPT-2.1 YAML 列表写法：每个文件只出现一次 refs: 键（重复 key 是非法 YAML，
-		// Obsidian 会丢字段）；零引用时不写 refs 键。
-		const cites = Array.isArray(payload?.citations) ? payload.citations : [];
-		const refs = cites.filter((c) => c?.notePath).slice(0, 20).map((c) => `  - "[[${c.notePath.replace(/\.md$/i, "")}|${c.noteTitle || c.notePath}]]"`);
-		if (refs.length) header.push("refs:", ...refs);
-		header.push("---", "");
-		const body = header.join("\n") + content.trim() + "\n";
-		await writeFile(path, body, "utf8");
-		// OPT-2.10 保存一条笔记后不再全量重建索引：万级笔记的库 force 一次要卡好几秒，
-		// 而 ensureIndexed 的增量分支按 mtime 就能捡到刚写的这个文件。
-		await this.index.ensureIndexed(vaultPath);
-		return { saved: true, path: "AI 回答/" + path.split(/[\\/]/).pop(), title: path.split(/[\\/]/).pop().replace(/\.md$/i, "") };
 ```
 
 </details>

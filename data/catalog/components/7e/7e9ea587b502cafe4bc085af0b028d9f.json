@@ -7,14 +7,14 @@
             "id": "github:1343684581:root",
             "repository": "GooDAnDReaDY/dsh-russian-lang",
             "path": "",
-            "revision": "878ee210360b4438673582652fc9337f5e67d7d7",
+            "revision": "a78e489f3504f9d609d2fcf60296db67061ffada",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "692effd90b61063b9942680a5787d10a961bff9e18b3d7ab29c4716ba8059906",
-                "code": "878ee210360b4438673582652fc9337f5e67d7d7",
-                "maintenance": "af080f027366f44eb1e6982acae9d34d840ac4692a8dd3c7c18d2d4856ddc84c"
+                "code": "a78e489f3504f9d609d2fcf60296db67061ffada",
+                "maintenance": "297b8931e6dfd38f480df3867901337c78f0fd90f2c5b7adc0765c2f34807d98"
             }
         }
     }

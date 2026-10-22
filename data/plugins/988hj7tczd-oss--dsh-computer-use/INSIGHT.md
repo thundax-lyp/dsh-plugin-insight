@@ -193,7 +193,7 @@ snapshot.js只有模块全局snapshot，CUA_SESSION默认固定字符串，未�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核driver归属、观察/坐标/时效/会话边界、审批与视觉数据/取消、成本及可证伪动作凭据。
+**插件研究总目标**：核driver归属、观察/坐标/时效/会话边界、审批与视觉数据/取消、成本及可证伪动作凭据。
 
 <a id="research-q01"></a>
 
@@ -201,7 +201,7 @@ snapshot.js只有模块全局snapshot，CUA_SESSION默认固定字符串，未�
 
 ### Q01 · 适合什么桌面任务，哪些能力属于驱动？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -331,7 +331,7 @@ export async function humanClick(opts) {
 
 ### Q02 · 观察、坐标与视觉模式是否同一个可执行参照？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -651,8 +651,8 @@ zoom描述口径。
 #### 缺口
 
 - 缩放/裁剪坐标与driver版本的真实对应尚无本轮独立验证。
-  **影响：**不能保证所见图像像素直接点到目标。
-  **进一步探讨：**固定假窗口/原图与compact/crop尺寸，核回传transform和最终driver坐标，不点击真实桌面。
+  **影响**：不能保证所见图像像素直接点到目标。
+  **进一步探讨**：固定假窗口/原图与compact/crop尺寸，核回传transform和最终driver坐标，不点击真实桌面。
 
 <a id="research-q03"></a>
 
@@ -660,7 +660,7 @@ zoom描述口径。
 
 ### Q03 · TTL、密码/危险操作和会话范围有哪些缺口？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -963,8 +963,8 @@ async function callWithForegroundFallback(call, tool, payload, { approval, agent
 #### 缺口
 
 - 外部driver的token过期/目标与OS权限保证不由当前适配证明。
-  **影响：**不能从本地guard推所有动作安全/平台密码保护。
-  **进一步探讨：**固定driver契约与假clock/会话/审批交错，核实际调用是否拒绝旧/错目标。
+  **影响**：不能从本地guard推所有动作安全/平台密码保护。
+  **进一步探讨**：固定driver契约与假clock/会话/审批交错，核实际调用是否拒绝旧/错目标。
 
 <a id="research-q04"></a>
 
@@ -972,7 +972,7 @@ async function callWithForegroundFallback(call, tool, payload, { approval, agent
 
 ### Q04 · 视觉数据、子进程与返回值会怎样失败？
 
-**研究主题：**依赖、兼容与流程、缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
 
 #### 完整回答
 
@@ -1321,8 +1321,8 @@ async function describeVision(ctx, cfg, state, target, exec, question) {
 #### 缺口
 
 - driver未知效果是否可重试、不同模型截图留存/计费/退出取消没有独立记录。
-  **影响：**不能保证零重复操作/隐私/费用或硬超时。
-  **进一步探讨：**假driver输出/挂起/已执行后错误矩阵与固定模型数据策略，未知效果先核状态不重放。
+  **影响**：不能保证零重复操作/隐私/费用或硬超时。
+  **进一步探讨**：假driver输出/挂起/已执行后错误矩阵与固定模型数据策略，未知效果先核状态不重放。
 
 <a id="research-q05"></a>
 
@@ -1330,7 +1330,7 @@ async function describeVision(ctx, cfg, state, target, exec, question) {
 
 ### Q05 · 启动、持续和失败恢复成本怎样展示？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
@@ -1493,8 +1493,8 @@ export async function glideCursor(tx, ty, opts = {}) {
 #### 缺口
 
 - 同任务相对人工/裸driver/API的正确率、耗时、token与误操作成本未知。
-  **影响：**不能量化自动化提效。
-  **进一步探讨：**固定无秘密可丢弃页面/假driver任务对照，分别计观察/动作/恢复。
+  **影响**：不能量化自动化提效。
+  **进一步探讨**：固定无秘密可丢弃页面/假driver任务对照，分别计观察/动作/恢复。
 
 <a id="research-q06"></a>
 
@@ -1502,7 +1502,7 @@ export async function glideCursor(tx, ty, opts = {}) {
 
 ### Q06 · 推荐与进一步探索入口是什么？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -1651,7 +1651,7 @@ export function createCuaCall(callRaw, session = CUA_SESSION) {
 #### 缺口
 
 - 逐Agent观察/变换/动作凭据与unknown效果契约未实现。
-  **影响：**不是现有会话隔离/安全保证。
-  **进一步探讨：**先用假driver/合成像素矩阵对照错误率和额外成本，不控制真实桌面。
+  **影响**：不是现有会话隔离/安全保证。
+  **进一步探讨**：先用假driver/合成像素矩阵对照错误率和额外成本，不控制真实桌面。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

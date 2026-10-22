@@ -7,14 +7,14 @@
             "id": "github:1339300438:packages-dsh-policy",
             "repository": "TGYD-helige/dsh-plugins",
             "path": "packages/dsh-policy",
-            "revision": "1bac06860f5059d417563520b228c420e62badd6",
+            "revision": "da98a82aee62f648262bd497dc42018cd5715c2e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7a921b7b7889a871e2a17462ae74f740fc704bffc24671d644952219d6e293e8",
-                "code": "1bac06860f5059d417563520b228c420e62badd6",
-                "maintenance": "4c91c619f6fa8efe719c82dde27cc0d0374132f61e199e1a8d47adb3c32301a5"
+                "code": "da98a82aee62f648262bd497dc42018cd5715c2e",
+                "maintenance": "62825559d84214a1ee12b046844234fb471dc5592a37d960f76294e80cd49d70"
             }
         }
     }

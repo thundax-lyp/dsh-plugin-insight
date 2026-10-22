@@ -170,7 +170,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**Compose 运维工具的目录隔离、确认语义及超时后状态是否足以支持安全采用？
+**插件研究总目标**：Compose 运维工具的目录隔离、确认语义及超时后状态是否足以支持安全采用？
 
 <a id="research-q01"></a>
 
@@ -178,7 +178,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ### Q01 · Compose 工具覆盖哪些诊断与变更任务？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -430,8 +430,8 @@ export function apply(ctx, config = {}) {
 #### 缺口
 
 - 目标 Docker/Compose 和 DSH 工具权限未测
-  **影响：**不能据注册判断目标容器可用
-  **进一步探讨：**目标隔离项目 status/ps/logs 对照 docker CLI
+  **影响**：不能据注册判断目标容器可用
+  **进一步探讨**：目标隔离项目 status/ps/logs 对照 docker CLI
 
 <a id="research-q02"></a>
 
@@ -439,7 +439,7 @@ export function apply(ctx, config = {}) {
 
 ### Q02 · 路径、命令和输出的边界如何实现？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -554,8 +554,8 @@ export async function composeLogs({ projectDir, service, tail = 80, allowRoots, 
 #### 缺口
 
 - 目标文件系统符号链接竞争、超大 stderr 未测
-  **影响：**默认目录范围宽，恶意日志可耗内存
-  **进一步探讨：**隔离目录/大 stderr/路径替换测试
+  **影响**：默认目录范围宽，恶意日志可耗内存
+  **进一步探讨**：隔离目录/大 stderr/路径替换测试
 
 <a id="research-q03"></a>
 
@@ -563,7 +563,7 @@ export async function composeLogs({ projectDir, service, tail = 80, allowRoots, 
 
 ### Q03 · “双重确认”是不是人工审批？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -727,8 +727,8 @@ export async function composeUpDown({ projectDir, action, confirm, allowRoots, t
 #### 缺口
 
 - 宿主工具批准策略未核
-  **影响：**可能产生意外容器启动/停止
-  **进一步探讨：**目标宿主确认调用前审批与根范围
+  **影响**：可能产生意外容器启动/停止
+  **进一步探讨**：目标宿主确认调用前审批与根范围
 
 <a id="research-q04"></a>
 
@@ -736,7 +736,7 @@ export async function composeUpDown({ projectDir, action, confirm, allowRoots, t
 
 ### Q04 · 超时与失败恢复能否证明操作未发生？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -863,8 +863,8 @@ export async function composeUpDown({ projectDir, action, confirm, allowRoots, t
 #### 缺口
 
 - 目标 daemon 超时后状态未知
-  **影响：**误重试可能扩大变更
-  **进一步探讨：**隔离 Compose 项目模拟超时并核服务状态
+  **影响**：误重试可能扩大变更
+  **进一步探讨**：隔离 Compose 项目模拟超时并核服务状态
 
 <a id="research-q05"></a>
 
@@ -872,7 +872,7 @@ export async function composeUpDown({ projectDir, action, confirm, allowRoots, t
 
 ### Q05 · 怎样在不误停服务的前提下试用？
 
-**研究主题：**采用判断、新假设与验证、效果与总成本
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
@@ -1060,7 +1060,7 @@ export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 80_000 } = {}
 #### 缺口
 
 - 目标宿主审批、实际服务中断代价未知
-  **影响：**不能直接推广到生产变更
-  **进一步探讨：**隔离项目完成诊断/变更/超时矩阵
+  **影响**：不能直接推广到生产变更
+  **进一步探讨**：隔离项目完成诊断/变更/超时矩阵
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

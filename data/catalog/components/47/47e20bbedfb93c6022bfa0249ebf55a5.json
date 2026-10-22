@@ -7,14 +7,14 @@
             "id": "github:1402985287:root",
             "repository": "hiocobueno653-pixel/dsh-ui-polish",
             "path": "",
-            "revision": "1b212d350f0966613d795215cab0bc99b4c9b6ea",
+            "revision": "b98665fb6e0a5cad716389f8646bba370a7a2d83",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "90f2d0c3eee8b54023b641afad4d73c9ae9335916110d3310abe5786380697f7",
-                "code": "1b212d350f0966613d795215cab0bc99b4c9b6ea",
-                "maintenance": "7fb1c58e64f9f960df93104244920b9af4f020690a64f15af4b38984145d6bc5"
+                "code": "b98665fb6e0a5cad716389f8646bba370a7a2d83",
+                "maintenance": "0e360bd78ebb7478bb940719b5bd6051ab3b3ed8d3947347d1a93a3844b7b205"
             }
         }
     }

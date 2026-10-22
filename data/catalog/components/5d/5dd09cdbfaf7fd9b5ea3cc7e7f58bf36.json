@@ -7,14 +7,14 @@
             "id": "github:1410811549:root",
             "repository": "Faide-cyber/dsh-workbuddy",
             "path": "",
-            "revision": "9951d25d0a229fd135c1ef676bc5c17db70e4db7",
+            "revision": "a37210e14aee5284336cf26de6a4ba0f35ed46e5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "afcc0fd9b70aa8357306026499cb6187dc71318ab2b0ea5ee98e8d9317bb8dcf",
-                "code": "9951d25d0a229fd135c1ef676bc5c17db70e4db7",
-                "maintenance": "c68ac49feb10b13b2ab9bb451a5e9efd6f7819a9f9e6e804db0815f6d0fb85a6"
+                "code": "a37210e14aee5284336cf26de6a4ba0f35ed46e5",
+                "maintenance": "c938f93f6b49f0718063566c538a77148cfb042a0b8072db5c180ba31a9aa40c"
             }
         }
     }

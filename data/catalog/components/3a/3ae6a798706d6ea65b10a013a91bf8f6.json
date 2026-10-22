@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "3ae6a798706d6ea65b10a013a91bf8f6",
+    "identity": "github:1426564085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426564085:root",
+            "repository": "Nihao7-L/dsh-prompt-chain",
+            "path": "",
+            "revision": "c2afde52f60dd938136670c1aa04258b16fff334",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "99224f4b49fe97ea58bf9cd166bf77d4c65df2cd9a7402ed627e4b343fe8d402",
+                "code": "c2afde52f60dd938136670c1aa04258b16fff334",
+                "maintenance": "916a9275fb1f561829af5ce6d154f0a59b52c3c7ab43ea633de982accb8d2acf"
+            }
+        }
+    }
+}

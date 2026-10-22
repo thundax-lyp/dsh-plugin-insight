@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[21fc69e](https://github.com/00080000/dsh-project-memory/tree/21fc69e3e98f3864677e091477b7d543a0e54939)
+分析版本：[70aa69b](https://github.com/00080000/dsh-project-memory/tree/70aa69b06af58b33f9de98f7e6cc085877063714)
 
 <!-- BEGIN META -->
 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) [![npm 30d 4,399](https://img.shields.io/static/v1?label=npm+30d&message=4%2C399&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
@@ -50,7 +50,11 @@
 
 参照为rg/IDE符号查找加手工项目笔记/AGENTS，插件减少重复索引和上下文接线，但维护更多持久状态。适合长期项目与可公开给模型的经验；一次性目录、多人隔离要求高或必须保留完整审计原文时，应先核对根解析、全局知识流转和删除/覆盖边界。
 
-rg/IDE符号查询、手工项目笔记/AGENTS与宿主任务列表；增量是分层持久索引和有界提示，不是自动可信记忆。
+TaskBridge监听todo/write，把非空清单自动建任务/绑定会话，排除子代理自动建档；后续同步steps与文件热点，选择旧任务时可将其步骤反向推入宿主todo/write。/tasks集中驱动任务与记忆审核动作，减少模型工具和界面各维护一份任务的漂移，但模型todo仍不是独立任务验收。
+
+经验、lesson、decision、procedure统一进入insight实体，支持task/project/global。相似标题的向量分或词法重叠决定覆盖/强化/新建，旧字段保留prev；两任务命中且confidence门槛可升project，多任务再升global。reflection默认关，开启后模型从任务快照产草稿。贡献是“检索材料”和“做事前须知”两条交付契约加任务绑定、范围流转与可观测门控，而非新embedding模型或自动正确的经验学习。
+
+这些机制有实际可迁移的工程组合，尤其分层召回、自动注入与审计共用候选结构。然而相似度对应的是文本近邻，两个任务重复写同一错结论仍可能强化或扩大scope；自动提升不等于经过独立检验，必须结合Q05的草稿合并范围理解。
 
 <a id="detail-section-3"></a>
 
@@ -79,8 +83,6 @@ rg/IDE符号查询、手工项目笔记/AGENTS与宿主任务列表；增量是�
 | 模型路由 | 可选扩展/反思需要 | query expansion和draft生成 | 默认两功能关；无route降级 |
 | Web客户端/commands | UI与/tasks需要 | 任务面板与审核卡 | host工具可用不等于所有面板就绪 |
 
-
-
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -101,8 +103,6 @@ rg/IDE符号查询、手工项目笔记/AGENTS与宿主任务列表；增量是�
 | 首次使用 | 文件/PDF抽取、符号/词项、optional向量资源 | 选根、去秘密、设置任务和知识范围 | 20000文件/12深度是局部扫描上限，不是常驻内存保证 |
 | 持续使用 | watch/lazy IO、候选打分、近似400-token上下文、审计与向量缓存 | 核对引用、新鲜度、近邻覆盖和全局知识 | 索引期无LLM，扩展/反思另计模型成本 |
 | 失败恢复 | shards/辅助文件/global原件和有限prev/deleted备份 | 查截断、根错位、误覆盖/提升与重建 | 不是完整历史版本库，恢复投入随语料变化 |
-
-
 
 #### 效果
 
@@ -155,18 +155,23 @@ reflection虽生成task草稿，近邻路径仍可覆盖已有project/global正�
 
 **核查状态**：已检查源码。
 
-固定源码支持分片增量、分层召回、TaskBridge与可解释注入；相关性不是验证，草稿跨scope合并、来源/根边界和事务粒度需明确。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.js、src/index-pipeline.js、src/doc-pipeline.js、src/parsers/pdfjs-parser.js、src/store.js、src/recall.js、src/tools/query-memory.js、src/setup/taskbridge.js、src/insight-store.js、src/reflection-pipeline.js、src/auto-inject.js、src/util/fs.js、src/lazy.js、src/watch.js、src/audit.js、src/vector-index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/recall.js、src/insight-store.js、src/index-pipeline.js、src/doc-pipeline.js、src/parsers/pdfjs-parser.js、src/store.js、src/util/fs.js、src/tools/query-memory.js、src/setup/taskbridge.js、src/index.js、src/reflection-pipeline.js、src/auto-inject.js、package.json、src/watch.js、src/lazy.js、src/audit.js、src/vector-index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定源码检查共享文件索引、doc抽取、shard/CAS、分层召回、autoInject门控/预算、TaskBridge、reflection到跨scope合并和global提升、root/scan及审计；未穷尽所有UI、解析器/符号语言或完整host契约，不运行目标。
-- 下一步：进一步探讨可固定两项目与冲突知识/过期引用/反思草稿，记录真实任务质量、漏注误注、scope变化、token/RSS和审核工时，与手工检索基线比较。
+- 下一步：进一步探讨分四步进行：
+
+1. 固定中文、代码和长提示问题集，保存全部召回候选与遗漏真值，比较实际 token 和后续任务遵循。
+2. 在非敏感独立项目根中放入确认知识与同标题反思草稿，追踪 scope、draft、prev 和实际注入内容。
+3. 固定语料、任务、模型和压缩点，测召回错误、RSS、人工返工和恢复时间。
+4. 用两个项目、冲突近邻和过期来源检验污染与漏注；若错误知识扩大或审核成本超过节省时间，则停止自动提升与反思。
 
 **分析版本**
 
 - **仓库**：[00080000/dsh-project-memory](https://github.com/00080000/dsh-project-memory)
-- **版本号**：0.6.3（[固定提交 21fc69e](https://github.com/00080000/dsh-project-memory/tree/21fc69e3e98f3864677e091477b7d543a0e54939)）
-- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.6.3（[固定提交 70aa69b](https://github.com/00080000/dsh-project-memory/tree/70aa69b06af58b33f9de98f7e6cc085877063714)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -176,7 +181,12 @@ reflection虽生成task草稿，近邻路径仍可覆盖已有project/global正�
 
 可探索来源版本/适用域/审批修订链，将草稿建议、相似、曝光和结果验证分开，比较跨scope错误、任务违约与审核负担；未实现。详见[Q09](#research-q09)。
 
-进一步探讨可固定两项目与冲突知识/过期引用/反思草稿，记录真实任务质量、漏注误注、scope变化、token/RSS和审核工时，与手工检索基线比较。
+进一步探讨分四步进行：
+
+1. 固定中文、代码和长提示问题集，保存全部召回候选与遗漏真值，比较实际 token 和后续任务遵循。
+2. 在非敏感独立项目根中放入确认知识与同标题反思草稿，追踪 scope、draft、prev 和实际注入内容。
+3. 固定语料、任务、模型和压缩点，测召回错误、RSS、人工返工和恢复时间。
+4. 用两个项目、冲突近邻和过期来源检验污染与漏注；若错误知识扩大或审核成本超过节省时间，则停止自动提升与反思。
 
 <a id="detail-section-9"></a>
 
@@ -187,18 +197,18 @@ reflection虽生成task草稿，近邻路径仍可覆盖已有project/global正�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 4 | 2263 | — | — | 48510 |
-| .js | source | 53 | 14366 | 10430 | 3414 | — |
-| .mjs | source | 6 | 1447 | 1189 | 156 | — |
-| .ts | source | 9 | 1343 | 937 | 324 | — |
-| .tsx | source | 5 | 1563 | 1333 | 151 | — |
-| .mjs | test | 41 | 9671 | 7738 | 1204 | — |
+| .md | source | 4 | 2267 | — | — | 48660 |
+| .js | source | 53 | 15393 | 11132 | 3711 | — |
+| .mjs | source | 6 | 1458 | 1201 | 155 | — |
+| .ts | source | 10 | 1449 | 1020 | 342 | — |
+| .tsx | source | 5 | 1619 | 1370 | 166 | — |
+| .mjs | test | 44 | 10431 | 8366 | 1291 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/issues?q=is%3Aissue+created%3A2026-09-22T05%3A37%3A38.810Z..2026-10-22T05%3A37%3A38.810Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A37%3A38.810Z..2026-10-22T05%3A37%3A38.810Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/issues?q=is%3Aissue+created%3A2026-09-22T15%3A11%3A49.244Z..2026-10-22T15%3A11%3A49.244Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A11%3A49.244Z..2026-10-22T15%3A11%3A49.244Z)
 
 
 
@@ -208,7 +218,7 @@ reflection虽生成task草稿，近邻路径仍可覆盖已有project/global正�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**判断项目索引/任务/insight与自动注入的贡献和边界，重点核查草稿跨scope、相关性/预算和持久化恢复。
+**插件研究总目标**：判断项目索引/任务/insight与自动注入的贡献和边界，重点核查草稿跨scope、相关性/预算和持久化恢复。
 
 <a id="research-q01"></a>
 
@@ -216,7 +226,7 @@ reflection虽生成task草稿，近邻路径仍可覆盖已有project/global正�
 
 ### Q01 · 项目记忆服务什么任务，效果如何判断？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -228,9 +238,9 @@ reflection虽生成task草稿，近邻路径仍可覆盖已有project/global正�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-17](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/README.md#L1-L17)
+**依据 1 · 作者声明**：[README.md:1-17](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/README.md#L1-L17)
 
-作者定义项目记忆及召回用途。
+当前固定版本复核。作者定义项目记忆及召回用途。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -257,9 +267,9 @@ A persistent **project development memory** for [DeepSeek Harness](https://githu
 
 </details>
 
-**依据 2 · 源码核查**：[src/recall.js:1-18](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/recall.js#L1-L18)
+**依据 2 · 源码核查**：[src/recall.js:1-18](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/recall.js#L1-L18)
 
-召回与动手前提示分契约，跨层分数不伪可比。
+当前固定版本复核。召回与动手前提示分契约，跨层分数不伪可比。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -287,28 +297,28 @@ A persistent **project development memory** for [DeepSeek Harness](https://githu
 
 </details>
 
-**依据 3 · 源码核查**：[src/insight-store.js:310-323](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L310-L323)
+**依据 3 · 源码核查**：[src/insight-store.js:310-323](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L310-L323)
 
-曝光/命中并非实际采纳或验证。
+当前固定版本复核。曝光/命中并非实际采纳或验证。
 
 <details>
 <summary>查看原文（14行）</summary>
 
 ```text
-  if (near.top1 - near.top2 < cfg.autoMergeMargin) return null
-  return near
-}
-
-/**
- * 使用记账：条目被**真正用到**时更新活跃度——注入进了上下文，或被 `query_memory` 命中。
- *
- * 为什么必须有：`applyDecay` / `pruneItems` 判活跃度只看 `lastHitAt || updatedAt || createdAt`，
- * 而 `lastHitAt` 此前只由 merge/reinforce 写（= 模型又写了一条相近的知识）。于是一条天天被注入、
- * 但从没人重写它的教训，`decayDays`（默认 90）之后会被自动归档、再也不会被推送——**用得最多的
- * 反而等于没人用过**。这是行为缺陷，不是调优问题。
- *
- * 记账**不参与任何注入判据**：它只影响活跃度/衰减，以及离线训练样本的标签。
- * 语义是"曝光次数"而非"被采纳次数"——更强的信号（模型是否真的照着做了）需要另外的回路。
+    if (typeof v !== 'number' || !Number.isFinite(v)) continue
+    n++
+    sum += v
+    sumSq += v * v
+    if (v > top1) {
+      top2 = top1
+      top1 = v
+      item = it
+    } else if (v > top2) top2 = v
+  }
+  if (!item) return null
+  // 分布必须**排除候选自己**：top1 本身就是待检验的那个值，把它算进 μ/σ 会把自己的极端值
+  // 摊进方差里（稀疏池里一条 0.92 + 三条 0.2 会把 σ 抬到 0.33，阈值冲上 1 以上，于是永远不合并）。
+  // 排除之后 μ/σ 描述的是"池子里随机一条与这段文本有多像"——那才是零假设。
 ```
 
 </details>
@@ -319,7 +329,7 @@ A persistent **project development memory** for [DeepSeek Harness](https://githu
 
 ### Q02 · 文档/代码索引与增量召回怎样工作？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -331,9 +341,9 @@ query_memory解析安全根、校验存在/非空查询，分层top-k召回，�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index-pipeline.js:45-67](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index-pipeline.js#L45-L67)
+**依据 1 · 源码核查**：[src/index-pipeline.js:45-67](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/index-pipeline.js#L45-L67)
 
-共享哈希/抽取和不变跳过。
+当前固定版本复核。共享哈希/抽取和不变跳过。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -366,9 +376,9 @@ export async function planFileIndex({ rel, filePath, kind, config, record, exist
 
 </details>
 
-**依据 2 · 源码核查**：[src/doc-pipeline.js:25-54](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/doc-pipeline.js#L25-L54)
+**依据 2 · 源码核查**：[src/doc-pipeline.js:25-54](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/doc-pipeline.js#L25-L54)
 
-确定性summary/terms和chunk引用。
+当前固定版本复核。确定性summary/terms和chunk引用。
 
 <details>
 <summary>查看原文（30行）</summary>
@@ -408,9 +418,9 @@ export async function buildDocEntries(relPath, filePath, opts = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[src/parsers/pdfjs-parser.js:60-80](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/parsers/pdfjs-parser.js#L60-L80)
+**依据 3 · 源码核查**：[src/parsers/pdfjs-parser.js:60-80](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/parsers/pdfjs-parser.js#L60-L80)
 
-PDF文本抽取而非OCR。
+当前固定版本复核。PDF文本抽取而非OCR。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -441,99 +451,120 @@ PDF文本抽取而非OCR。
 
 </details>
 
-**依据 4 · 源码核查**：[src/store.js:1011-1034](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/store.js#L1011-L1034)
+**依据 4 · 源码核查**：[src/store.js:1011-1034](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/store.js#L1011-L1034)
 
-CAS比较store旧记录，不重新哈希源文件。
+当前固定版本复核。CAS比较store旧记录，不重新哈希源文件。
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
-  commit(fn) {
-    const result = fn(this)
-    this.pruneTasks()
-    this.save()
-    return result
+    this._idfCache = { version: this._entriesVersion, idf }
+    return idf
   }
 
-  /**
-   * 写入一条文件更新，以 expectedHash 做 CAS。
-   * @returns {boolean} true = 已写入；false = 文件自扫描后又被改动，本次拒绝
-   *   （调用方让该条目保持未落快照，下一轮重试）。
-   * 移除条目不经过这里：调用方在 commit 里直接 removeFile（见 index-pipeline.js）。
-   */
-  applyFileUpdate(relPath, { expectedHash, hash, entries, type, size }) {
-    if ((this.fileRecord(relPath)?.sha256 ?? null) !== (expectedHash ?? null)) return false
-    this.markFile(relPath, {
-      sha256: hash,
-      size,
-      type,
-      indexedAt: new Date().toISOString(),
-    })
-    this.setEntries(relPath, entries)
-    return true
-  }
+  _rebuildIdf() {
+    const entries = this.allEntries()
+    const N = entries.length
+    if (N === 0) return {}
+    const df = {}
+    for (const entry of entries) {
+      // 语料必须与**检索**同源：检索走 search.js 的 weightedFieldText = title×5 + keywords
+      // + summary + **terms** + sourcePath。此前这里手抄了一份少了 `terms`/`sourcePath` 的
+      // 副本，于是只出现在 `terms` 里的词 df=0 → 被当成极稀有词拿虚高 IDF（而 `terms` 正是
+      // 0.5.x 为修"只有前 300 字符可检索"加的主检索面）。直接调 makeSearchText，权重自动对齐。
+      const terms = tokenizeRaw(makeSearchText(entry))
+      const seen = new Set(terms)
+      for (const t of seen) {
+        df[t] = (df[t] || 0) + 1
+      }
+    }
+    const idf = {}
+    for (const [t, df_t] of Object.entries(df)) {
+      idf[t] = Math.log(1 + (N - df_t + 0.5) / (df_t + 0.5))
+    }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/util/fs.js:232-268](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/util/fs.js#L232-L268)
+**依据 5 · 源码核查**：[src/util/fs.js:232-268](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/util/fs.js#L232-L268)
 
-不可读/截断和遍历上限。
+当前固定版本复核。不可读/截断和遍历上限。
 
 <details>
 <summary>查看原文（37行）</summary>
 
 ```text
-  let hitFileCap = false
-  while (stack.length) {
-    const [dir, depth] = stack.pop()
+ *
+ * 存在的理由：`walkDir()` 会跳过这些子树（父根不再重复保存它们的内容），于是"在父根下问子项目
+ * 的事"必须换个 `root=` 再问一次。这个函数就是用来在**查询未命中时给模型指路**的，不是文件系统
+ * 巡检：BFS、限深 3 层、最多列 8 个、最多看 300 个目录，且不往已知的子根里下探。
+ */
+export function nestedStoreRoots(root, memoryDirName, { maxDepth = 3, maxEntries = 8, maxVisited = 300 } = {}) {
+  const found = []
+  const queue = [[root, 0]]
+  let visited = 0
+  while (queue.length && found.length < maxEntries && visited < maxVisited) {
+    const [dir, depth] = queue.shift()
+    visited++
     let entries
     try {
       entries = readdirSync(dir, { withFileTypes: true })
     } catch {
-      // 读不到 ≠ 不存在。旧实现直接 continue，于是这片子树被当成"已删除"（调用方拿
-      // seen 去清 unseen），而且失败是静默的。置 truncated 让调用方跳过清理。
-      unreadable.push(dir)
-      truncated = true
       continue
     }
     for (const entry of entries) {
-      if (entry.name.startsWith('.')) continue
+      if (found.length >= maxEntries) break
+      if (!entry.isDirectory() || entry.name.startsWith('.')) continue
+      if (DEFAULT_IGNORE.has(entry.name)) continue
       const full = path.join(dir, entry.name)
-      if (entry.isDirectory()) {
-        if (ignoreNames.has(entry.name)) continue
-        if (nestedStoreName && hasOwnStore(full, nestedStoreName)) {
-          skipped.push(full)
-          continue
-        }
-        if (depth + 1 > maxDepth) {
-          truncated = true
-          capped = true
-          continue
-        }
-        stack.push([full, depth + 1])
-      } else {
-        if (out.length >= maxFiles) {
-          truncated = true
-          capped = true
-          hitFileCap = true
-          break
-        }
-        out.push(full)
+      if (hasOwnStore(full, memoryDirName)) {
+        found.push(full)
+        continue // 已知的子根不再往里下探
       }
+      if (depth + 1 <= maxDepth) queue.push([full, depth + 1])
+    }
+  }
+  return found.sort()
+}
+
+export function walkDir(root, opts = {}) {
+  const ignoreNames = opts.ignoreNames || DEFAULT_IGNORE
+  const maxFiles = Number.isFinite(opts.maxFiles) && opts.maxFiles > 0 ? opts.maxFiles : Infinity
+  const maxDepth = Number.isFinite(opts.maxDepth) && opts.maxDepth > 0 ? opts.maxDepth : Infinity
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/tools/query-memory.js:68-119](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/tools/query-memory.js#L68-L119)
+**依据 6 · 源码核查**：[src/tools/query-memory.js:68-119](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/tools/query-memory.js#L68-L119)
 
-根/非空/分层与可选扩展、向量。
+当前固定版本复核。根/非空/分层与可选扩展、向量。
 
 <details>
 <summary>查看原文（52行）</summary>
 
 ```text
+        description: 'What to look for',
+      },
+      root: {
+        type: 'string',
+        description: '项目根（默认当前工作目录）',
+      },
+      type: {
+        type: 'string',
+        enum: ['all', 'doc', 'symbol', 'experience', 'insight', 'task'],
+        description: 'all|doc|symbol|experience|insight|task；默认 all',
+      },
+      limit: {
+        type: 'number',
+        description: '最多返回条数，默认 8',
+      },
+    },
+    output: {
+      schema: { type: 'string' },
+      render: (_args, value) => [{ type: 'text', text: value }],
+    },
+    async execute(args, exec) {
       const root = resolveSafeIndexRoot(exec, args.root, config)
       // 读路径也要验根存在。这条不是洁癖：可选的向量层（leanvec）在空 store 上会建
       // `<root>/.dsh-project-memory/vectors.json`，于是传错一个 root（拼写错误/旧路径）就能
@@ -565,27 +596,6 @@ CAS比较store旧记录，不重新哈希源文件。
       // 只影响 experience/insight 两层的排序（doc/symbol 与返回条数都不变）。
       const cfg = cfgEngine(config)
       const rerank = await createVectorRerank({
-        storeDir: memoryRootFor(root, config.memoryDir),
-        items: vectorItemsFrom(store, globalStore),
-        vectorDir: cfg.vectorDir,
-        alpha: cfg.vectorAlpha,
-      })
-      // 一次 recall 覆盖全部层：doc/symbol/experience/insight 共用同一个检索核心（src/recall.js）。
-      const recalled = recallItems({
-        store,
-        globalStore,
-        queries,
-        boundTaskId,
-        limit,
-        rerank,
-        layers: [
-          ...(wantMemory ? (type === 'symbol' ? ['symbol'] : type === 'doc' ? ['doc'] : ['doc', 'symbol']) : []),
-          ...(wantInsight ? ['insight'] : []),
-          ...(type === 'all' || type === 'experience' ? ['experience'] : []),
-        ],
-      })
-
-      const lines = []
 ```
 
 </details>
@@ -593,8 +603,8 @@ CAS比较store旧记录，不重新哈希源文件。
 #### 缺口
 
 - 所有文件类型/字符编码及扫描时编辑的实际索引新鲜度未验证。
-  **影响：**不能把引用路径当版本固定原文，也不承诺扫描完整。
-  **进一步探讨：**可用已知符号/文档问题集，在plan后改文件、删文件和截断扫描对照引用与原文。
+  **影响**：不能把引用路径当版本固定原文，也不承诺扫描完整。
+  **进一步探讨**：可用已知符号/文档问题集，在plan后改文件、删文件和截断扫描对照引用与原文。
 
 <a id="research-q03"></a>
 
@@ -602,7 +612,7 @@ CAS比较store旧记录，不重新哈希源文件。
 
 ### Q03 · insight与TaskBridge带来什么贡献？
 
-**研究主题：**贡献与相对优势
+**研究主题**：贡献与相对优势
 
 #### 完整回答
 
@@ -614,14 +624,15 @@ TaskBridge监听todo/write，把非空清单自动建任务/绑定会话，排�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/setup/taskbridge.js:216-247](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/setup/taskbridge.js#L216-L247)
+**依据 1 · 源码核查**：[src/setup/taskbridge.js:216-247](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/setup/taskbridge.js#L216-L247)
 
-todo自动建任务、绑定与子代理排除。
+当前固定版本复核。todo自动建任务、绑定与子代理排除。
 
 <details>
 <summary>查看原文（32行）</summary>
 
 ```text
+
   if (type === 'todo/write') {
     const todos = event.data?.todos
     if (!Array.isArray(todos)) return
@@ -653,19 +664,19 @@ todo自动建任务、绑定与子代理排除。
       task.steps = todos
       task.lastTodoAt = now // 模型/todo 最近一次自维护时刻
       task.updatedAt = now
-      task.lastActiveAt = now
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/setup/taskbridge.js:78-93](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/setup/taskbridge.js#L78-L93)
+**依据 2 · 源码核查**：[src/setup/taskbridge.js:78-93](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/setup/taskbridge.js#L78-L93)
 
-任务步骤反向写宿主todo。
+当前固定版本复核。任务步骤反向写宿主todo。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
+/**
  * 反向接管：任务成为某会话绑定后，把任务步骤推成宿主 todo/write 快照，
  * 让 dsh 渲染的任务清单（UI/投影）变成我们这套任务的步骤。
  * 规则：任务没有步骤时不推（避免误清模型手头正在用的宿主清单）。
@@ -681,19 +692,30 @@ export function adoptStepsToSession(session, task) {
 }
 
 /** 是否开启“任务接管时同步宿主清单”（config.tasklist.syncHostOnAdopt 默认 true）。 */
-export function shouldAdoptToHost(config) {
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.js:191-218](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index.js#L191-L218)
+**依据 3 · 源码核查**：[src/index.js:191-218](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/index.js#L191-L218)
 
-集中工具/命令和自动注入接线。
+当前固定版本复核。集中工具/命令和自动注入接线。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
+    if (event?.type === 'request/header') rememberRoute(session)
+    // 会话活跃信号：有人正在跑回合时把 watch 轮询压到最低，回合结束立刻补扫一次（见 watch.js）。
+    // 这是"轮询只在空闲时发生"的落点 —— 交互期间把 I/O 全让给模型，停下那一刻才整理索引。
+    const key = session?.id ?? 'unknown'
+    if (event?.type === 'turn/start' || event?.type === 'step/start') watchManager.setSessionActive(key, true)
+    else if (event?.type === 'turn/end') watchManager.setSessionActive(key, false)
+  })
+  // 会话被销毁时也要摘掉活跃标记：否则一个没有正常 turn/end 的会话会把轮询**永久**压在兜底节拍
+  // （不会卡死，但"空闲时高速刷新"再也不会回来）。
+  ctx.on('session/disposed', (session) => {
+    watchManager.setSessionActive(session?.id ?? 'unknown', false)
+  })
   ctx.tools.register(listTasksTool(config))
   ctx.tools.register(selectTaskTool(config, { llm: ctx.llm, ctx }))
   ctx.tools.register(archiveTaskTool(config, { llm: ctx.llm, ctx }))
@@ -710,102 +732,90 @@ export function shouldAdoptToHost(config) {
     console.error(`[dsh-project-memory] /tasks registration skipped: ${err.message}`)
   }
 
-  ctx.tools.register(indexDocTool(ctx, config))
-  ctx.tools.register(indexRepoTool(ctx, config))
-  ctx.tools.register(queryMemoryTool(ctx, config))
-  ctx.tools.register(rememberTool(config))
-  ctx.tools.register(forgetTool(config))
-  ctx.tools.register(lessonTool(config))
-  ctx.tools.register(watchRepoTool(watchManager, config))
-  ctx.tools.register(statsTool(config))
-
-  // PR 2：注册 agent/pre-step 监听，向每步请求的 enter 决策追加记忆消息（默认开；
-  // 任何异常/无会话 cwd → 交回默认决策，零副作用）
-  installAutoInject(ctx, config)
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/insight-store.js:775-798](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L775-L798)
+**依据 4 · 源码核查**：[src/insight-store.js:775-798](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L775-L798)
 
-向量/词法覆盖强化与新建。
+当前固定版本复核。向量/词法覆盖强化与新建。
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
-function upsertIntoPool(items, raw, cfg, nowIso, extra = {}) {
-  const base = { ...raw, source: extra.source, sourceTaskIds: extra.sourceTaskIds || raw.sourceTaskIds }
-  const text = insightMatchText(base)
-  const near = vectorNear(vectorText(base), items, extra.cosine)
-  const target = autoMergeTarget(near, cfg)
-  if (target) {
-    const { replaced } = mergeInto(target.item, base, cfg, nowIso)
-    return { action: 'auto-merged', id: target.item.id, replaced, cos: Number(target.top1.toFixed(3)) }
-  }
-  const hit = findBestOverlapMatch(text, items)
-  if (hit && hit.score >= cfg.dedupOverlap) {
-    const { replaced } = mergeInto(hit.item, base, cfg, nowIso)
-    return { action: 'merged', id: hit.item.id, replaced }
-  }
-  if (hit && hit.score >= cfg.reinforceBand) {
-    reinforceOnly(hit.item, base, nowIso)
-    return { action: 'reinforced', id: hit.item.id }
-  }
-  const ins = normalizeInsight(base, { scope: extra.scope || 'project', source: extra.source, nowIso })
-  items.push(ins)
-  const hint = hintOf(near, cfg)
-  return hint ? { action: 'created', id: ins.id, near: hint } : { action: 'created', id: ins.id }
-}
 
+/** 按 home 把条目从各自真相源里移除；删除前先把**完整条目**写进留痕文件。 */
+function removeEntries({ store, globalStore }, entries) {
+  // 传进来的 entries 是 at() 的摘要（只有 id/home/title），留痕要的是正文，
+  // 所以这里按 id 回真相源取完整对象——顺序在 splice 之前，取不到就跳过留痕（不挡删除）。
+  const full = []
+  for (const e of entries) {
+    if (e.home === 'project') {
+      const it = (store.insightItems() || []).find((x) => x.id === e.id)
+      if (it) full.push({ ...it, home: 'project' })
+    } else if (e.home === 'global') {
+      const it = (globalStore.items() || []).find((x) => x.id === e.id)
+      if (it) full.push({ ...it, home: 'global' })
+    } else if (e.home === 'task') {
+      const task = store.getTask(e.taskId)
+      const it = (task?.insights || []).find((x) => x.id === e.id)
+      if (it) full.push({ ...it, home: 'task', taskId: e.taskId })
+    }
+  }
+  const keptIn = recordDeleted({ store, globalStore }, full)
+
+  const projectIds = new Set()
+  const globalIds = new Set()
+  const taskIds = new Map()
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/insight-store.js:917-945](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L917-L945)
+**依据 5 · 源码核查**：[src/insight-store.js:917-945](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L917-L945)
 
-两任务、confidence与提升非草稿。
+当前固定版本复核。两任务、confidence与提升非草稿。
 
 <details>
 <summary>查看原文（29行）</summary>
 
 ```text
-export function promoteAllTasksToProject(store, globalStore, cfg, now) {
-  const tasks = store.getTasks() || []
-  let promoted = 0
-  for (const task of tasks) {
-    const list = task.insights || []
-    for (const ins of [...list]) {
-      if (ins.scope && ins.scope !== 'task') continue
-      const members = new Set(ins.sourceTaskIds || [])
-      if (members.size < 2) continue
-      if (num(ins.confidence, 0) < cfg.promoteConfidence) continue
-      // 与 project 已有资产去重：重复 → 并成员，删 task 副本
-      const pjItems = store.insightItems()
-      const pjHit = findBestOverlapMatch(insightMatchText(ins), pjItems)
-      if (pjHit && pjHit.score >= cfg.dedupOverlap) {
-        mergeInto(pjHit.item, { sourceTaskIds: ins.sourceTaskIds, files: ins.files, symbols: ins.symbols, tags: ins.tags, confidence: ins.confidence }, cfg, now)
-        store.replaceInsightItems(pjItems)
-        removeFromTask(store, ins.id)
-        promoted++
-        continue
-      }
-      const moved = carryUsageFields(
-        normalizeInsight(ins, { scope: 'project', source: ins.source, nowIso: now }),
-        ins,
-      )
-      moved.id = ins.id
-      moved.draft = false
-      moved.confidence = num(ins.confidence, cfg.promoteConfidence)
-      moved.movedFrom = { scope: 'task', id: ins.id, at: now }
-      pjItems.push(moved)
+  else if (res.action === 'reinforced') bits.push('近重复，已强化命中')
+  else if (res.action === 'auto-merged') bits.push(`相似度 ${res.cos}，已自动覆盖既有条目`)
+  if (Array.isArray(res.replaced) && res.replaced.length) {
+    bits.push(`覆盖字段 ${res.replaced.join('/')}（旧值留在 prev：用同一个 id 再写一次即可写回）`)
+  }
+  if (res.near && res.near.id !== res.id) {
+    bits.push(`近邻 ${res.near.id}（相似度 ${res.near.cos}：《${res.near.title}》）——若这是同一条知识，带 id=${res.near.id} 再写一次即可就地覆盖；确认过时的用 forget 删掉它`)
+  }
+  if (pruned && pruned.removed) bits.push(`容量清理 ${pruned.removed} 条`)
+  if (promoted) bits.push(`自动提升 global ${promoted} 条`)
+  return bits.length ? bits.join('；') : ''
+}
+
+// ---- scope = task ----
+
+function saveTaskInsight(store, globalStore, task, raw, cfg, now, source, cosine) {
+  // 反思产出是**待确认草稿**：只落在当前任务，绝不参与 project/global/跨任务的自动合并或
+  // 自动提升。否则一条 LLM 生成的 draft 可以覆盖作者手写的 project 级知识，草稿审核也就
+  // 失去意义。确认走显式编辑（applyUpdate 会清 draft）或面板的 confirm。
+  const draftOnly = raw.draft === true || source === 'reflect'
+  const base = { ...raw, source, sourceTaskIds: [task.id] }
+  const text = insightMatchText(base)
+  if (!draftOnly) {
+    // 1) 已有 project 级知识 → 挂成员/命中，不再在 task 层重复存
+    const pjItems = store.insightItems()
+    const pjNear = vectorNear(vectorText(base), pjItems, cosine)
+    const pjTarget = autoMergeTarget(pjNear, cfg)
+    if (pjTarget) {
+      const { replaced } = mergeInto(pjTarget.item, base, cfg, now)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/reflection-pipeline.js:91-116](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/reflection-pipeline.js#L91-L116)
+**依据 6 · 源码核查**：[src/reflection-pipeline.js:91-116](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/reflection-pipeline.js#L91-L116)
 
-反思产draft:true任务知识。
+当前固定版本复核。反思产draft:true任务知识。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -847,7 +857,7 @@ export function promoteAllTasksToProject(store, globalStore, cfg, now) {
 
 ### Q04 · 自动注入怎样控制相关性、预算和副作用？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -859,14 +869,28 @@ maxTokens实际乘3变字符预算，最终clamp也按字符，不是模型token
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/auto-inject.js:704-731](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/auto-inject.js#L704-L731)
+**依据 1 · 源码核查**：[src/auto-inject.js:704-731](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/auto-inject.js#L704-L731)
 
-真实session cwd、危险根及store读入。
+当前固定版本复核。真实session cwd、危险根及store读入。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
+
+function warnUnsafeSessionRoot(root) {
+  if (warnedUnsafeRoots.has(root)) return
+  warnedUnsafeRoots.add(root)
+  console.error(
+    `[dsh-project-memory] session cwd ${root} is not a project root (home / system / package-manager prefix); ` +
+      'project memory and its audit logs are disabled for this session. Start dsh inside a project directory to enable them.',
+  )
+}
+
+/**
+ * 一个 pre-step 的注入决策：解析会话 → 排程 → 必要时构造消息。
+ * 返回 null 表示本步无事可做（交回原决策）。
+ */
 async function injectForStep({ payload, decision, config, cfg, audit, shadow, sessions }) {
   const session = payload && payload.agent && payload.agent.session
   // 与工具侧同一口径的「当前工作目录」：0.2.1+ 走 workingDirectory 投影（cd 后会变），
@@ -881,32 +905,31 @@ async function injectForStep({ payload, decision, config, cfg, audit, shadow, se
     warnUnsafeSessionRoot(cwd)
     return null
   }
-  // 记忆根与懒索引/工具侧同一套解析：项目标记优先，其次是安全的会话工作目录。
-  // 少了这一步，同一个会话的审计日志与懒索引会落在两个不同的 store 里。
-  const root = resolveProjectMemoryRoot(cwd)
-  if (!root) return null
-
-  const query = lastUserText(decision.messages)
-  const memoryRoot = memoryRootFor(root, config.memoryDir)
-  const store = new ProjectMemoryStore(memoryRoot).load()
-  const globalStore = new GlobalStore(cfg.globalFile || defaultGlobalFile()).load()
-  const boundTaskId = store.getBoundTaskId(sessionId)
-  const task = boundTaskId ? store.getTask(boundTaskId) : null
-
-  // 两个窗口合并进同一个就绪上下文：人类消息（先发）+ 已观察动作（反应）。
-  // 动作平面（S1）：把"最近做过什么"解析成 op / 写目标 / 主机——不再把原始参数当文本搜。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/auto-inject.js:481-518](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/auto-inject.js#L481-L518)
+**依据 2 · 源码核查**：[src/auto-inject.js:481-518](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/auto-inject.js#L481-L518)
 
-字符近似预算和两通道。
+当前固定版本复核。字符近似预算和两通道。
 
 <details>
 <summary>查看原文（38行）</summary>
 
 ```text
+}
+
+/**
+ * 构建注入内容（不写盘、无副作用）。
+ *
+ * 交付契约：**authored trigger（所有 kind）= 确定性全文注入，优先级 1；统计信号 = 截断提示，
+ * 优先级 2**。预算排程为：常驻任务卡 → trigger 命中 → 提示。每一步都记 `reasons`（为什么注入）
+ * 与 `dropped`（为什么没注入），让"注入/未注入"可审计——而不是只有静默的门槛。
+ * @param {object} opts { query, readiness, task, store, globalStore, projectTagsList, cfg, skipItem? }
+ * @param {(it: object) => boolean} [opts.skipItem] 条目级去重：返回 true 的条目直接退出排程
+ *   （本会话已注入过且正文未变）。在排程前过滤，省下的预算留给新条目。
+ * @returns {{ text: string, labels: string[], reasons: object[], dropped: object[] }}
+ */
 export function buildInjection(opts) {
   const { query, task, globalStore, cfg } = opts
   const store = opts.store || null
@@ -932,31 +955,32 @@ export function buildInjection(opts) {
   // 两条通道：authored trigger（确定性、全文、优先级 1）→ 统计信号提示（优先级 2）。
   const triggered = collectTriggered(cands, ctx)
   if (skipItems) {
-    // 会话级限流命中：条目通道本轮整体沉默，但把"本该注入什么"记进 dropped——不做静默降级。
-    for (const { it } of triggered) dropped.push({ id: it.id, channel: 'trigger', reason: opts.silenceReason || 'cooldown' })
-  }
-  // procedure 不进提示通道：它要过 trigger.scope（见 scoreHints 注释）。
-  const consumed = new Set(triggered.map((t) => t.it.id))
-  // 限流命中时**照旧评分**（只算不注入，`place()` 仍按 skipItems 跳过）：影子记录要能回答
-  // "这一步如果不限流会注入什么"——那正是限流期间最需要回答的问题。此前这里直接置空，
-  // 实测 1420 个静默步一个候选都没留下。
-  const hintCands = cands.filter((it) => !consumed.has(it.id) && it.kind !== 'procedure')
-  const { hints, candidates, scoreQuery } = scoreHints({
-    cands: hintCands,
-    query,
-    humanText: ctx.humanText,
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/auto-inject.js:534-591](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/auto-inject.js#L534-L591)
+**依据 3 · 源码核查**：[src/auto-inject.js:534-591](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/auto-inject.js#L534-L591)
 
-预算placement、丢弃原因与clamp。
+当前固定版本复核。预算placement、丢弃原因与clamp。
 
 <details>
 <summary>查看原文（58行）</summary>
 
 ```text
+    dropped,
+    rerank: opts.rerank || null,
+  })
+
+  // 常驻块文本。去重指纹包含“编辑中”行：否则这条常驻状态只会在别的条目变化时顺带更新，
+  // 模型会一直看到旧文件列表。editedFiles 只返回文件名（不含时间戳），所以同一个文件
+  // 反复写不会改变指纹；只有热点文件集合/顺序变化时才重发整块。
+  const echo = cfg.entryOn !== false && shouldEchoTaskCard(task, cfg)
+  const entry = echo ? buildEntryContent(task, cfg) : ''
+  const entryStable = entry
+  let used = entry.length
+  let itemUsed = 0
+  let itemCount = 0
+
   /** 把一组候选按优先级放进剩余预算：放不下的进 dropped（quota / budget），不静默。 */
   const place = (channel, list, minChars, labelOf) => {
     for (const { it, why } of list) {
@@ -1001,59 +1025,45 @@ export function buildInjection(opts) {
       c.outcome = skipItems ? 'idle'
         : c.decision !== 'cand' ? 'gate'
           : outcomeById.get(`hint\u0000${c.id}`) || 'unscheduled'
-    }
-  }
-
-  const total = [entry, ...parts].filter(Boolean)
-  // 早退也必须带上 candidates/scoreQuery：空块不等于"没有候选"（无任务卡 + 全部被预算挤掉
-  // 就是这种形状），此前这里把两者一起丢了。
-  if (!total.length) {
-    return { text: '', entry, labels, reasons, dropped, candidates, scoreQuery, itemChars: itemUsed }
-  }
-  // 整块只受单轮预算（maxTokens）约束；会话条目额度已在 place() 里单独扣过。
-  const clamp = (t) => (t.length > stepBudget ? `${t.slice(0, stepBudget)}\n…(截断)` : t)
-  const dedupeText = clamp([entryStable, ...parts].filter(Boolean).join('\n'))
-  return { text: clamp(total.join('\n')), entry, entryStable, labels, reasons, dropped, candidates, scoreQuery, dedupeText, itemChars: itemUsed }
-}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/auto-inject.js:810-829](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/auto-inject.js#L810-L829)
+**依据 4 · 源码核查**：[src/auto-inject.js:810-829](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/auto-inject.js#L810-L829)
 
-曝光记账不影响主流程。
+当前固定版本复核。曝光记账不影响主流程。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
-    quota.items += built.reasons.length
-    quota.chars += typeof built.itemChars === 'number' ? built.itemChars : 0
-    quota.lastStep = stepNo
-  }
+  // 记忆根通告：根是**推定**的（会话工作目录，且该目录没有任何项目标记）时，
+  // 第一次注入前告诉模型"记忆现在存在哪、怎么改"。它是状态声明（与常驻任务卡同类），
+  // 只发一次、不占条目额度；否则模型只看到一条来自某处的记忆，却不知道那个根是怎么来的。
+  const notice = rootNotice({ root, sessionId, sessions, config })
 
-  // 使用记账：注入进上下文 = 这条记忆被用到了。必须在这里显式落盘——注入路径不会走到
-  // 任何其它 save()，只标脏等于进程退出就丢。记账失败绝不影响注入（与审计同约定）。
-  if (built.reasons.length) {
-    try {
-      if (recordHit({ store, globalStore, ids: built.reasons.map((r) => r.id) })) {
-        // 只有这个根里真有东西才落盘。否则一次**全局** insight 的命中就会为一个从没被
-        // 索引过的容器目录建出整个 store（`save()` 会 mkdir）。审计侧同样不建，见 audit.js。
-        if (store.hasContent) store.save()
-        globalStore.commit()
-      }
-    } catch {
-      /* ignore：记账是旁路，不能拖累注入 */
-    }
-  }
+  const fp = built.text ? fingerprint(built.dedupeText ?? built.text) : fingerprint(notice || '')
+  const injectedText = notice ? (built.text ? `${notice}\n${built.text}` : notice) : built.text
+  if (!injectedText || fp === sessions.lastText.peek(sessionId)) return null
+  sessions.lastText.set(sessionId, fp)
+  const itemCount = built.reasons.length
+  const summary = itemCount
+    ? `memory inject: ${itemCount} item(s)${built.entry ? ' + task card' : ''}`
+    : built.entry ? 'memory inject: task card' : 'memory root notice'
 
+  // 只记真的进了上下文的那几条：dropped 的没被看到，不能记账（否则以后永远不再注入）。
+  const seen = sessions.items.ensure(sessionId)
+  for (const r of built.reasons) {
+    if (r && r.id && r.hash) seen.set(r.id, { hash: r.hash, step: stepNo })
+  }
+  // 会话额度只被"条目"消耗；任务卡不算（否则任务一多就把记忆挤没了）。
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/recall.js:44-66](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/recall.js#L44-L66)
+**依据 5 · 源码核查**：[src/recall.js:44-66](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/recall.js#L44-L66)
 
-有无向量的匹配门槛差异。
+当前固定版本复核。有无向量的匹配门槛差异。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -1062,26 +1072,26 @@ export function buildInjection(opts) {
  * （来自 `git commit --amend --no-edit`），于是单个片段就拿走了 3.13 分。提示通道早就有这条规则
  * （`hintMinMatched`，默认 min(2, 词数)），**工具路径与这两层一直漏着**。
  *
- * ⚠ **只在没有向量层时生效**（`rerank` 为空）。这是同查询集 A/B 实测出来的（36 条、同一个 store）：
+ * ⚠ **只对没有语义分的条目生效**，而且是**逐条**判——不是"有 rerank 就整条关掉"。这是同查询集
+ * A/B 实测出来的（36 条、同一个 store）：
  *   · 纯词法下加闸门：BM25 的 hit@1/3/5/10 = 39/50/58/69% **完全不变**，只是不再对乱码查询出声；
- *   · 有向量时加闸门：融合 hit@5/10 从 64/72% 掉到 58/64%，"完全没召回"从 10 涨到 13。
+ *   · 有向量时对**所有**条目加闸门：融合 hit@5/10 从 64/72% 掉到 58/64%，"完全没召回"从 10 涨到 13。
  * 原因是结构性的：**向量救回来的那批，恰恰就是词法弱到不足 2 个命中的**——用词法的尺子去筛，
- * 等于把向量的全部价值砍掉。有语义分时就该让语义分判质量，词法闸门不要越权。
+ * 等于把向量的全部价值砍掉。所以：拿到语义分的条目豁免，没拿到的照旧过闸。
+ *
+ * 旧实现按 `Boolean(rerank)` 整条关闸，于是"装了 leanvec 但这一轮给不出余弦"（查询编码失败、
+ * embed 抛异常、或者根本没有候选可编码）时，弱命中会漏进来——那不是降级，是**换了行为**：
+ * 注释承诺的"逐字段退回纯词法"在那种情况下并不成立。
  *
  * 只作用于 experience / insight 两层：它们是短标题语料，单片段命中几乎没有证据力；
  * doc/symbol 层是代码与路径（`js` / `id` 这类单词查询本来就该命中），不动它。
  * 单词查询不受影响：need = min(2, 1) = 1，与"score>0 即命中"等价。
  */
-function matchedFloor(scored, queries, hasVector) {
-  if (hasVector) return scored // 有语义分 → 不用词法的"命中词数"判质量
+function matchedFloor(scored, queries) {
   const qTokens = new Set()
   for (const q of queries) for (const t of tokenizeRaw(String(q ?? ''))) qTokens.add(t)
   const need = Math.min(2, qTokens.size)
   if (need <= 1) return scored
-  return scored.filter((r) => (r.matched ?? 0) >= need)
-}
-
-/** 各层先验：insight 是"踩过的坑"，略高于普通文档；经验笔记（同库、kind 区分）留痕价值略低。 */
 ```
 
 </details>
@@ -1089,8 +1099,8 @@ function matchedFloor(scored, queries, hasVector) {
 #### 缺口
 
 - 门控在用户真实语料的漏注/误注、预算与实际token偏差未独立测量。
-  **影响：**不能把配置400写成硬token预算，也不能承诺关键约束总会到达模型。
-  **进一步探讨：**固定中文/代码/长提示问题集，保留所有候选与遗漏真值，比较实际token和后续任务遵循。
+  **影响**：不能把配置400写成硬token预算，也不能承诺关键约束总会到达模型。
+  **进一步探讨**：固定中文/代码/长提示问题集，保留所有候选与遗漏真值，比较实际token和后续任务遵循。
 
 <a id="research-q05"></a>
 
@@ -1098,7 +1108,7 @@ function matchedFloor(scored, queries, hasVector) {
 
 ### Q05 · 根目录、数据来源和跨层记忆边界在哪里？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -1110,127 +1120,127 @@ reflection的“draft-only at task level”也不是封闭写域。它确实传d
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/util/fs.js:656-700](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/util/fs.js#L656-L700)
+**依据 1 · 源码核查**：[src/util/fs.js:656-700](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/util/fs.js#L656-L700)
 
-根解析和显式root护栏，不作会话访问授权。
+当前固定版本复核。根解析和显式root护栏，不作会话访问授权。
 
 <details>
 <summary>查看原文（45行）</summary>
 
 ```text
-export function findProjectRoot(filePath, opts = {}) {
-  if (typeof filePath !== 'string' || !filePath) return null
-  const isUnsafe = typeof opts.isUnsafe === 'function' ? opts.isUnsafe : isUnsafeRoot
-  let abs
-  try {
-    abs = path.resolve(filePath)
-  } catch {
-    return null
+    this.name = 'UnsafeRootError'
+    this.root = root
   }
-  const explicit = longestRootContaining(opts.extraRoots || [], abs)
-  if (explicit) return isUnsafe(explicit) ? null : explicit
-
-  const byMarker = nearestMarker(abs, VCS_MARKERS, isUnsafe) || nearestMarker(abs, PROJECT_MARKERS, isUnsafe)
-  if (byMarker) return byMarker
-
-  const session = resolveDir(opts.sessionRoot)
-  if (session && !isUnsafe(session) && isInside(session, abs)) return session
-  return null
 }
 
 /**
- * **会话记忆根**：本插件所有"这个会话的记忆放哪"的唯一答案。
- * 声明优先（标记）→ 会话工作目录（安全时）→ null（家目录/系统目录，且没有标记）。
+ * 校验「这个根可以当项目记忆根」。所有把目录当根写盘的入口都必须先过这一关：
+ * 写盘前拒绝，比事后清理 `.dsh-project-memory` 便宜得多。
  */
-export function resolveProjectMemoryRoot(cwd) {
-  const base = resolveDir(cwd) || resolveDir(process.cwd())
-  if (!base) return null
-  return findProjectRoot(path.join(base, PROJECT_PROBE), { sessionRoot: base })
+export function assertSafeRoot(root, { requested = root, allowUnsafe = false } = {}) {
+  if (allowUnsafe) return root
+  if (!isUnsafeRoot(root)) return root
+  throw new UnsafeRootError(root, requested)
 }
 
+export function resolveIndexRoot(exec, explicitRoot) {
+  if (explicitRoot && explicitRoot.trim()) return path.resolve(explicitRoot)
+  // 会话当前工作目录：0.2.1+ 读 workingDirectory 投影（cd 后会变），老宿主回退 header.cwd。
+  const sessionCwd = sessionWorkingDir(exec?.agent?.session, { agent: exec?.agent })
+  if (sessionCwd) return path.resolve(sessionCwd)
+  return path.resolve(process.cwd())
+}
+
+// ---------------------------------------------------------------------------
+// 项目根推导 —— 全插件唯一的策略实现。
+//
+// 顺序（前两者是"声明"，后两者是"推定"）：
+//   1. 显式传入的 root（工具参数）；
+//   2. 显式登记过的根（watch_repo / watchManager）；
+//   3. 最近的、含 VCS 或构建/清单标记的祖先；
+//   4. 会话工作目录本身 —— 只要它是安全目录。
+// 都没有 → null（该文件不落任何记忆）。
+//
+// 第 4 条是刻意的：`cwd` 是**人明确选择的工作位置**（在那里启动了 dsh），和"模型顺手读到的
+// 某个文件所在目录"完全不是一回事。旧实现把后者也当根（兜底 `path.dirname(file)`），
+// 又让 `.dsh-project-memory` 自己当标记，才把家目录锁成了项目（issue #5）。
+// ---------------------------------------------------------------------------
+
+/** VCS 边界：最强的项目根信号（`.git` 在 worktree 里是文件，existsSync 同样命中）。 */
+export const VCS_MARKERS = ['.git', '.hg', '.svn']
+
 /**
- * 工具侧的根解析：显式 root 优先（并校验安全），否则取会话记忆根。
- * 会话 cwd 是家目录且没有标记时抛 `UnsafeRootError`——旧代码会在那里建
- * `.dsh-project-memory` 并把它当成项目标记，进而把整个家目录锁成"项目"（issue #5）。
- */
-export function resolveSafeIndexRoot(exec, explicitRoot, config) {
-  const allowUnsafe = config?.allowUnsafeRoots === true
-  const explicit = explicitRoot && String(explicitRoot).trim() ? String(explicitRoot) : null
-  if (explicit) {
-    return assertSafeRoot(path.resolve(explicit), { requested: explicit, allowUnsafe })
-  }
-  const cwd = resolveIndexRoot(exec)
-  const root = resolveProjectMemoryRoot(cwd)
-  if (root) return root
-  if (allowUnsafe) return cwd
+ * 构建/清单标记。**刻意不含 `.dsh-project-memory`**：那个目录是插件自己创建的，
+ * 一旦算作项目标记就会自我固化——审计日志在会话 cwd 建出它之后，读该目录下任意文件
+ * 都会把根解析回该目录，于是家目录被永久锁成"项目"。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/util/fs.js:243-266](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/util/fs.js#L243-L266)
+**依据 2 · 源码核查**：[src/util/fs.js:243-266](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/util/fs.js#L243-L266)
 
-非目录项加入列表，无逐文件realpath围栏。
+当前固定版本复核。非目录项加入列表，无逐文件realpath围栏。
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
+    visited++
+    let entries
+    try {
+      entries = readdirSync(dir, { withFileTypes: true })
+    } catch {
       continue
     }
     for (const entry of entries) {
-      if (entry.name.startsWith('.')) continue
+      if (found.length >= maxEntries) break
+      if (!entry.isDirectory() || entry.name.startsWith('.')) continue
+      if (DEFAULT_IGNORE.has(entry.name)) continue
       const full = path.join(dir, entry.name)
-      if (entry.isDirectory()) {
-        if (ignoreNames.has(entry.name)) continue
-        if (nestedStoreName && hasOwnStore(full, nestedStoreName)) {
-          skipped.push(full)
-          continue
-        }
-        if (depth + 1 > maxDepth) {
-          truncated = true
-          capped = true
-          continue
-        }
-        stack.push([full, depth + 1])
-      } else {
-        if (out.length >= maxFiles) {
-          truncated = true
-          capped = true
-          hitFileCap = true
-          break
-        }
+      if (hasOwnStore(full, memoryDirName)) {
+        found.push(full)
+        continue // 已知的子根不再往里下探
+      }
+      if (depth + 1 <= maxDepth) queue.push([full, depth + 1])
+    }
+  }
+  return found.sort()
+}
+
+export function walkDir(root, opts = {}) {
+  const ignoreNames = opts.ignoreNames || DEFAULT_IGNORE
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/insight-store.js:730-742](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L730-L742)
+**依据 3 · 源码核查**：[src/insight-store.js:730-742](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L730-L742)
 
-密钥形态检查和统一写入口。
+当前固定版本复核。密钥形态检查和统一写入口。
 
 <details>
 <summary>查看原文（13行）</summary>
 
 ```text
-export function saveInsight({ store, globalStore, raw, scope, taskId, cfg, source = 'agent', nowIso, cosine = null }) {
-  const cfg2 = cfg || cfgInsight({})
-  const now = nowIso || new Date().toISOString()
-  const secretField = containsSecretFields(raw)
-  if (secretField) {
-    return { ok: false, error: `内容疑似包含密钥/token/私钥形态数据（字段: ${secretField}），已拒绝写入` }
-  }
-  if (raw && raw.id) {
-    const found = findInsightAnywhere({ store, globalStore }, raw.id)
-    if (!found) return { ok: false, error: `找不到要更新的条目: ${raw.id}（可能已被删除/提升；用 query_memory 重新确认 id）` }
-    const replaced = applyUpdate(found.item, raw, now)
-    if (found.scope === 'global') globalStore.markDirty()
-    else if (found.scope === 'task') store.markTasksDirty()
+export function removeMemory({ store, globalStore, idOrQuery, maxMatches = 10 } = {}) {
+  const query = String(idOrQuery ?? '').trim()
+  if (!query) return { ok: false, removed: [], matches: [] }
+  const at = (home, item, taskId) => ({
+    id: item.id,
+    home,
+    taskId,
+    title: String(item.title || item.problem || '(untitled)').slice(0, 60),
+  })
+  const pools = { project: [], global: [], task: [] }
+  for (const it of (store && typeof store.insightItems === 'function' ? store.insightItems() : []) || []) pools.project.push(at('project', it))
+  for (const it of (globalStore && typeof globalStore.items === 'function' ? globalStore.items() : []) || []) pools.global.push(at('global', it))
+  for (const t of (store && typeof store.getTasks === 'function' ? store.getTasks() : []) || []) {
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/reflection-pipeline.js:91-116](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/reflection-pipeline.js#L91-L116)
+**依据 4 · 源码核查**：[src/reflection-pipeline.js:91-116](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/reflection-pipeline.js#L91-L116)
 
-草稿任务scope调用。
+当前固定版本复核。草稿任务scope调用。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -1266,63 +1276,76 @@ export function saveInsight({ store, globalStore, raw, scope, taskId, cfg, sourc
 
 </details>
 
-**依据 5 · 源码核查**：[src/insight-store.js:830-866](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L830-L866)
+**依据 5 · 源码核查**：[src/insight-store.js:830-866](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L830-L866)
 
-task写先匹配project/global并改内容。
+当前固定版本复核。task写先匹配project/global并改内容。
 
 <details>
 <summary>查看原文（37行）</summary>
 
 ```text
-function saveTaskInsight(store, globalStore, task, raw, cfg, now, source, cosine) {
-  // 1) 已有 project 级知识 → 挂成员/命中，不再在 task 层重复存
-  const pjItems = store.insightItems()
-  const base = { ...raw, source, sourceTaskIds: [task.id] }
-  const text = insightMatchText(base)
-  const pjNear = vectorNear(vectorText(base), pjItems, cosine)
-  const pjTarget = autoMergeTarget(pjNear, cfg)
-  if (pjTarget) {
-    const { replaced } = mergeInto(pjTarget.item, base, cfg, now)
-    store.replaceInsightItems(pjItems)
-    applyDecay(pjItems, cfg, now)
-    pruneItems(pjItems, cfg.maxProject, now)
-    const promoted = promoteProjectToGlobal(store, globalStore, cfg, now)
-    return { ok: true, action: 'auto-merged', id: pjTarget.item.id, scope: 'project', replaced, cos: Number(pjTarget.top1.toFixed(3)), hint: `相似度 ${pjTarget.top1.toFixed(3)}，已自动覆盖 project 级既有条目${replaced.length ? `（覆盖字段 ${replaced.join('/')}）` : ''}${promoted ? '；已自动提升 global' : ''}` }
+  const now = nowIso || new Date().toISOString()
+  const secretField = containsSecretFields(raw)
+  if (secretField) {
+    return { ok: false, error: `内容疑似包含密钥/token/私钥形态数据（字段: ${secretField}），已拒绝写入` }
   }
-  const pjHit = findBestOverlapMatch(text, pjItems)
-  if (pjHit && pjHit.score >= cfg.dedupOverlap) {
-    const { replaced } = mergeInto(pjHit.item, base, cfg, now)
-    store.replaceInsightItems(pjItems)
-    applyDecay(pjItems, cfg, now)
-    pruneItems(pjItems, cfg.maxProject, now)
-    const promoted = promoteProjectToGlobal(store, globalStore, cfg, now)
-    return { ok: true, action: 'linked-project', id: pjHit.item.id, scope: 'project', replaced, hint: `该知识已在 project 级，累计第 ${(pjHit.item.sourceTaskIds || []).length} 个任务命中${promoted ? '；已自动提升 global' : ''}` }
-  }
-  // 2) 已有 global 级知识 → 同样只挂命中
-  if (globalStore) {
-    const glNear = vectorNear(vectorText(base), globalStore.items(), cosine)
-    const glTarget = autoMergeTarget(glNear, cfg)
-    if (glTarget) {
-      const { replaced } = mergeInto(glTarget.item, base, cfg, now)
-      globalStore.markDirty()
-      return { ok: true, action: 'auto-merged', id: glTarget.item.id, scope: 'global', replaced, cos: Number(glTarget.top1.toFixed(3)), hint: `相似度 ${glTarget.top1.toFixed(3)}，已自动覆盖 global 级既有条目${replaced.length ? `（覆盖字段 ${replaced.join('/')}）` : ''}` }
+  if (raw && raw.id) {
+    const found = findInsightAnywhere({ store, globalStore }, raw.id)
+    if (!found) return { ok: false, error: `找不到要更新的条目: ${raw.id}（可能已被删除/提升；用 query_memory 重新确认 id）` }
+    const wasDraft = found.item.draft === true
+    const replaced = applyUpdate(found.item, raw, now)
+    if (found.scope === 'global') globalStore.markDirty()
+    else if (found.scope === 'task') store.markTasksDirty()
+    else store.replaceInsightItems(store.insightItems())
+    const hint = replaced.length
+      ? `已就地更新（覆盖字段：${replaced.join('/')}，旧值在 prev）`
+      : wasDraft ? '已确认草稿（draft=false）' : '没有字段变化'
+    return {
+      ok: true,
+      action: 'updated',
+      id: raw.id,
+      scope: found.scope,
+      replaced,
+      hint: wasDraft && replaced.length ? `${hint}；草稿已确认` : hint,
     }
-    const glHit = findBestOverlapMatch(text, globalStore.items())
-    if (glHit && glHit.score >= cfg.dedupOverlap) {
-      const { replaced } = mergeInto(glHit.item, base, cfg, now)
-      globalStore.markDirty()
+  }
+  const s = scope || 'project'
+  if (!INSIGHT_SCOPES.includes(s)) return { ok: false, error: `非法 scope: ${s}` }
+  if (s === 'global') {
+    if (!globalStore) return { ok: false, error: 'global 存储未初始化' }
+    const res = upsertIntoPool(globalStore.items(), raw, cfg2, now, { source, scope: 'global', cosine })
+    if (res.action === 'created') pruneItems(globalStore.items(), cfg2.maxGlobalProcedures, now)
+    globalStore.markDirty()
+    return { ok: true, ...res, scope: 'global', hint: res.hint || buildHint(res) }
+  }
+  if (s === 'task') {
+    if (!store || !taskId) return { ok: false, error: 'task 级写入需要 taskId' }
+    const task = store.getTask(taskId)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/insight-store.js:207-226](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L207-L226)
+**依据 6 · 源码核查**：[src/insight-store.js:207-226](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L207-L226)
 
-merge正文并不传播draft隔离。
+当前固定版本复核。merge正文并不传播draft隔离。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
+}
+
+/** 自动合并会改写的正文字段（title 也在内：0.90 以上的两条标题本就近乎同一句）。 */
+const MERGE_FIELDS = ['title', 'pattern', 'fix', 'choice', 'reason', 'problem', 'solution', 'body']
+
+/**
+ * 把 base 合并进既有条目：**正文取新值**（旧值进 `prev`），成员/文件/符号并集，置信取高，记命中。
+ *
+ * 与旧实现的区别就是那一个 `if (b && !existing[f])`：以前字段已有值就**静默丢掉新文本**，
+ * 于是"我记错了，改成正确的"永远落不进去（只加 hitCount）。现在反过来——新值落地、旧值可还原。
+ * 提升路径只传成员/文件/符号/置信，不传正文字段，所以它们的语义一字未变。
+ * @returns {{item: object, replaced: string[]}} 被改动的字段名（供调用方回报）
+ */
 export function mergeInto(existing, base, cfg, nowIso) {
   const now = nowIso || new Date().toISOString()
   existing.sourceTaskIds = unionStrings(existing.sourceTaskIds, base.sourceTaskIds)
@@ -1330,54 +1353,41 @@ export function mergeInto(existing, base, cfg, nowIso) {
   existing.symbols = unionStrings(existing.symbols, base.symbols)
   existing.tags = unionStrings(existing.tags, base.tags)
   const replaced = []
-  for (const f of MERGE_FIELDS) {
-    const b = base[f]
-    if (b === undefined || b === null || b === '') continue
-    putField(existing, f, String(b), replaced)
-  }
-  if (Array.isArray(base.steps) && base.steps.length) putField(existing, 'steps', base.steps.map(String), replaced)
-  if (base.trigger && typeof base.trigger === 'object') putField(existing, 'trigger', base.trigger, replaced)
-  existing.confidence = Math.max(num(existing.confidence, 0.5), num(base.confidence, 0.5))
-  existing.hitCount = (existing.hitCount || 0) + 1
-  existing.lastHitAt = now
-  existing.updatedAt = now
-  if (existing.archived) existing.archived = false // 重新被使用 → 复活
-  return { item: existing, replaced }
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/insight-store.js:960-982](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L960-L982)
+**依据 7 · 源码核查**：[src/insight-store.js:960-982](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L960-L982)
 
-global提升条件与draft=false。
+当前固定版本复核。global提升条件与draft=false。
 
 <details>
 <summary>查看原文（23行）</summary>
 
 ```text
-/** project 扫描：sourceTaskIds ≥ globalPromoteTasks → 升 global。返回移动条数。 */
-export function promoteProjectToGlobal(store, globalStore, cfg, now) {
-  if (!globalStore) return 0
-  const items = store.insightItems()
-  let moved = 0
-  for (const ins of [...items]) {
-    if (ins.scope && ins.scope !== 'project') continue
-    const members = new Set(ins.sourceTaskIds || [])
-    if (members.size < cfg.globalPromoteTasks) continue
-    const glItems = globalStore.items()
-    const glHit = findBestOverlapMatch(insightMatchText(ins), glItems)
-    if (glHit && glHit.score >= cfg.dedupOverlap) {
-      mergeInto(glHit.item, { sourceTaskIds: ins.sourceTaskIds, files: ins.files, symbols: ins.symbols, tags: ins.tags, confidence: ins.confidence }, cfg, now)
-    } else {
-      const movedIns = carryUsageFields(
-        normalizeInsight(ins, { scope: 'global', source: ins.source, nowIso: now }),
-        ins,
-      )
-      movedIns.id = ins.id
-      movedIns.draft = false
-      movedIns.confidence = num(ins.confidence, cfg.promoteConfidence)
-      movedIns.movedFrom = { scope: 'project', id: ins.id, at: now }
-      glItems.push(movedIns)
+    }
+    // 2) 已有 global 级知识 → 同样只挂命中
+    if (globalStore) {
+      const glNear = vectorNear(vectorText(base), globalStore.items(), cosine)
+      const glTarget = autoMergeTarget(glNear, cfg)
+      if (glTarget) {
+        const { replaced } = mergeInto(glTarget.item, base, cfg, now)
+        globalStore.markDirty()
+        return { ok: true, action: 'auto-merged', id: glTarget.item.id, scope: 'global', replaced, cos: Number(glTarget.top1.toFixed(3)), hint: `相似度 ${glTarget.top1.toFixed(3)}，已自动覆盖 global 级既有条目${replaced.length ? `（覆盖字段 ${replaced.join('/')}）` : ''}` }
+      }
+      const glHit = findBestOverlapMatch(text, globalStore.items())
+      if (glHit && glHit.score >= cfg.dedupOverlap) {
+        const { replaced } = mergeInto(glHit.item, base, cfg, now)
+        globalStore.markDirty()
+        return { ok: true, action: 'linked-global', id: glHit.item.id, scope: 'global', replaced, hint: `该知识已在 global 级，累计第 ${(glHit.item.sourceTaskIds || []).length} 个任务命中` }
+      }
+    }
+    // 3) 跨任务池去重合并（同一坑只留一份，sourceTaskIds 累积）。
+    // 草稿不是已确认知识：非草稿写入不得把正文并进一条 draft（那会让新知识永远停在待审状态）。
+    const pool = allTaskInsights(store).filter((it) => it.draft !== true)
+    const poolNear = vectorNear(vectorText(base), pool, cosine)
+    const poolTarget = autoMergeTarget(poolNear, cfg)
+    if (poolTarget) {
 ```
 
 </details>
@@ -1385,8 +1395,8 @@ export function promoteProjectToGlobal(store, globalStore, cfg, now) {
 #### 缺口
 
 - 符号链接读取、跨scope反思更新与自动提升的真实影响未执行核查。
-  **影响：**不能宣称数据绝不离开项目或所有反思只停草稿，更不推断现有知识已受污染。
-  **进一步探讨：**可用非敏感独立根、已有确认知识与同标题反思草稿，追踪scope/draft/prev和实际注入内容。
+  **影响**：不能宣称数据绝不离开项目或所有反思只停草稿，更不推断现有知识已受污染。
+  **进一步探讨**：可用非敏感独立根、已有确认知识与同标题反思草稿，追踪scope/draft/prev和实际注入内容。
 
 <a id="research-q06"></a>
 
@@ -1394,45 +1404,38 @@ export function promoteProjectToGlobal(store, globalStore, cfg, now) {
 
 ### Q06 · 启动与操作依赖什么？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
-#### 启动与依赖
+依赖或条件为Node>=18及DSH接口代际，是否必需为包声明/host必需，用途为tools/llm、fs观察、pre-step与会话事件，缺失或不满足时为声明范围不等于所有宿主实际兼容。
+依赖或条件为pdfjs-dist，是否必需为包运行依赖，用途为PDF文本抽取，缺失或不满足时为扫描PDF图片无OCR文本层保障。
+依赖或条件为TypeScript，是否必需为可选peer，用途为代码类型/符号增强，缺失或不满足时为关闭或缺失退弱提取，不等价结果。
+依赖或条件为leanvec，是否必需为optional dependency，用途为经验/insight语义排序/写近邻，缺失或不满足时为不可用退词法，准确率会变化。
+依赖或条件为安全项目根与可写store，是否必需为索引/任务必需，用途为shards/tasks/insights与审计，缺失或不满足时为危险根自动链停用，显式配置需慎核。
+依赖或条件为模型路由，是否必需为可选扩展/反思需要，用途为query expansion和draft生成，缺失或不满足时为默认两功能关；无route降级。
+依赖或条件为Web客户端/commands，是否必需为UI与/tasks需要，用途为任务面板与审核卡，缺失或不满足时为host工具可用不等于所有面板就绪。
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| Node>=18及DSH接口代际 | 包声明/host必需 | tools/llm、fs观察、pre-step与会话事件 | 声明范围不等于所有宿主实际兼容 |
-| pdfjs-dist | 包运行依赖 | PDF文本抽取 | 扫描PDF图片无OCR文本层保障 |
-| TypeScript | 可选peer | 代码类型/符号增强 | 关闭或缺失退弱提取，不等价结果 |
-| leanvec | optional dependency | 经验/insight语义排序/写近邻 | 不可用退词法，准确率会变化 |
-| 安全项目根与可写store | 索引/任务必需 | shards/tasks/insights与审计 | 危险根自动链停用，显式配置需慎核 |
-| 模型路由 | 可选扩展/反思需要 | query expansion和draft生成 | 默认两功能关；无route降级 |
-| Web客户端/commands | UI与/tasks需要 | 任务面板与审核卡 | host工具可用不等于所有面板就绪 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 固定包/宿主，备份现有project/global store | 明确工作区、秘密及全局范围 |
-| 安装 | Web或目标profile挂载，核工具与cwd | 不在家目录/容器根盲开全扫 |
-| 建索引 | 先少量已知文件或按读lazy，再看stats/截断 | 有引用且当前原文可核对 |
-| 召回 | query_memory分层读结果，再打开来源 | 不以score当事实confidence |
-| 任务知识 | 绑定任务，审核scope/draft/近邻覆盖 | 关闭反思不消除手动global写入 |
-| 调整恢复 | 比较审计/影子候选与实际任务，备份后更改阈值 | 删除仅最近少量可回找，避免盲删 |
+步骤为准备，执行者与动作为固定包/宿主，备份现有project/global store，成功判据或失败处理为明确工作区、秘密及全局范围。
+步骤为安装，执行者与动作为Web或目标profile挂载，核工具与cwd，成功判据或失败处理为不在家目录/容器根盲开全扫。
+步骤为建索引，执行者与动作为先少量已知文件或按读lazy，再看stats/截断，成功判据或失败处理为有引用且当前原文可核对。
+步骤为召回，执行者与动作为query_memory分层读结果，再打开来源，成功判据或失败处理为不以score当事实confidence。
+步骤为任务知识，执行者与动作为绑定任务，审核scope/draft/近邻覆盖，成功判据或失败处理为关闭反思不消除手动global写入。
+步骤为调整恢复，执行者与动作为比较审计/影子候选与实际任务，备份后更改阈值，成功判据或失败处理为删除仅最近少量可回找，避免盲删。
 
 本轮不运行插件、PDF、模型调用、测试或普通宿主冒烟。最低版本仅按声明，作者benchmark不当本轮执行数据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:47-60](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/package.json#L47-L60)
+**依据 1 · 源码核查**：[package.json:47-60](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/package.json#L47-L60)
 
-Node与pdfjs声明。
+当前固定版本复核。Node与pdfjs声明。
 
 <details>
 <summary>查看原文（14行）</summary>
 
 ```text
+  },
   "engines": {
     "node": ">=18"
   },
@@ -1446,19 +1449,19 @@ Node与pdfjs声明。
     "@deepseek-ai/dsh-client-ui-primitives": "0.2.1-rc.2",
     "@deepseek-ai/dsh-client-ui-slots": "0.2.1-rc.2",
     "@deepseek-ai/dsh-llm": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-tools": "0.2.1-rc.2",
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[package.json:70-91](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/package.json#L70-L91)
+**依据 2 · 源码核查**：[package.json:70-91](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/package.json#L70-L91)
 
-宿主与TS peer及optional条件。
+当前固定版本复核。宿主与TS peer及optional条件。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
+  "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-llm": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0 || >=0.1.1-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.3.0-0",
     "@deepseek-ai/dsh-tools": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0 || >=0.1.1-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.3.0-0",
@@ -1480,24 +1483,23 @@ Node与pdfjs声明。
     },
     "typescript": {
       "optional": true
-    }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[package.json:112-114](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/package.json#L112-L114)
+**依据 3 · 源码核查**：[package.json:112-114](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/package.json#L112-L114)
 
-leanvec optional。
+当前固定版本复核。leanvec optional。
 
 ```text
+  },
   "optionalDependencies": {
     "leanvec": "^0.1.0"
-  }
 ```
 
-**依据 4 · 源码核查**：[src/index.js:21-45](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index.js#L21-L45)
+**依据 4 · 源码核查**：[src/index.js:21-45](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/index.js#L21-L45)
 
-硬依赖与默认关闭扩展/默认lazy。
+当前固定版本复核。硬依赖与默认关闭扩展/默认lazy。
 
 <details>
 <summary>查看原文（25行）</summary>
@@ -1532,9 +1534,9 @@ export const Config = Schema.object({
 
 </details>
 
-**依据 5 · 源码核查**：[src/parsers/pdfjs-parser.js:60-80](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/parsers/pdfjs-parser.js#L60-L80)
+**依据 5 · 源码核查**：[src/parsers/pdfjs-parser.js:60-80](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/parsers/pdfjs-parser.js#L60-L80)
 
-读取文本层条件。
+当前固定版本复核。读取文本层条件。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -1571,7 +1573,7 @@ export const Config = Schema.object({
 
 ### Q07 · 工程恢复、缓存与审计怎样组织？
 
-**研究主题：**工程质量与复用
+**研究主题**：工程质量与复用
 
 #### 完整回答
 
@@ -1583,83 +1585,84 @@ watch递归setTimeout避免常态重叠，活动/空闲与变化调节轮询，s
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/store.js:690-746](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/store.js#L690-L746)
+**依据 1 · 源码核查**：[src/store.js:690-746](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/store.js#L690-L746)
 
-脏分片顺序保存与单文件写粒度。
+当前固定版本复核。脏分片顺序保存与单文件写粒度。
 
 <details>
 <summary>查看原文（57行）</summary>
 
 ```text
-  save() {
-    // 没有脏数据就不落盘。watch 每轮对每个根都无条件 commit → save；照旧执行的话，
-    // 末尾的 ID 缓存失效会打在跨实例共享的 store 上，等于每轮清空一次 IDF 复用（v0.3.4 的 20x）。
-    // 待压实队列不算"脏数据"，但它需要有界推进，所以也走这条落盘路径。
-    const compacting = this._compactQueue.size > 0
-    const dirty =
-      compacting ||
-      this._dirtyShards.size > 0 ||
-      this._removedShards.size > 0 ||
-      this._dirtyInsights ||
-      this._dirtyTasks ||
-      this._dirtyBinding ||
-      this._dirtyWatch ||
-      !this._formatWritten
-    if (dirty) mkdirSync(this.dir, { recursive: true })
-    // 崩溃遗留的 *.tmp 无论有没有脏数据都顺手清掉（两次 readdir，自带 try/catch）
-    this.cleanStaleTmp()
-    // 自我忽略也在无脏数据时执行：老版本建出来的 store 会在下一次 save 时补上。
-    this.ensureSelfIgnore()
-    if (!dirty) return
-    if (!this._formatWritten) {
-      writeJsonAtomic(path.join(this.dir, FORMAT_FILE), { version: 2, layout: 'sharded' })
-      this._formatWritten = true
-    }
-    // 存量压实：≤0.5.10 的分片带着派生字段，而那些字段只在分片被重写时才会从磁盘消失。
-    // 每轮最多补写 COMPACT_BATCH 个，让升级后的 store 在后续任意一次 save（watch 轮询、
-    // 索引、写入）里自动收敛，而不是永远停在旧体积。
-    let compactBudget = COMPACT_BATCH
-    for (const rel of this._compactQueue) {
-      if (compactBudget <= 0) break
-      compactBudget--
-      this._compactQueue.delete(rel)
-      if (this.files[rel]) this._dirtyShards.add(rel)
-    }
-    for (const rel of this._dirtyShards) {
-      if (this.files[rel]) {
-        // 父目录由 writeJsonAtomic 保证
-        writeJsonAtomic(shardRelPath(this.dir, rel), { relPath: rel, record: this.files[rel], entries: (this.entries[rel] || []).map(withoutPersistedDerived) })
-      } else {
-        this._removedShards.add(rel)
-      }
-    }
-    this._dirtyShards.clear()
-    for (const rel of this._removedShards) {
+
+  replaceInsightItems(items) {
+    const next = new Set((items || []).map((it) => it?.id).filter(Boolean))
+    // 与上次落盘的基线比，而不是与当前数组比：调用方经常先原地 splice 再调用这里。
+    for (const id of this._baseInsightIds) if (!next.has(id)) this._deletedInsightIds.add(id)
+    for (const id of next) this._deletedInsightIds.delete(id)
+    this.insights.items = items
+    this._baseInsightIds = next
+    this._dirtyInsights = true
+    this._auxVersion++
+  }
+
+  /**
+   * 调用方**直接改过** task 内容（包括 task 内的条目）后的标脏入口。任务树不在 `addTask` /
+   * `updateTask` 那几条写口里，所以这里也要 bump 内容版本，否则精确估算停在前一水位。
+   */
+  markTasksDirty() {
+    this._dirtyTasks = true
+    this._auxVersion++
+  }
+
+  cleanStaleTmp() {
+    const scanDirs = [this.dir, path.join(this.dir, SHARDS_DIR)]
+    const now = Date.now()
+    for (const dir of scanDirs) {
+      let entries
       try {
-        unlinkSync(shardRelPath(this.dir, rel))
+        entries = readdirSync(dir)
       } catch {
-        // shard file already gone; nothing to do
+        continue
+      }
+      for (const name of entries) {
+        if (!name.endsWith('.tmp')) continue
+        try {
+          if (now - statSync(path.join(dir, name)).mtimeMs > 60000) unlinkSync(path.join(dir, name))
+        } catch {
+          // already gone or locked; skip
+        }
       }
     }
-    this._removedShards.clear()
-    if (this._dirtyInsights) {
-      // v2 → v3 是纯语义升级（`kind:'experience'` 从"影子副本"变成一等实体），形状不变；
-      // 落盘即把版本推上去，老版本读到 v3 也照样按 v2 的字段解析（它只是排除 experience 影子）。
-      if (this.insights && this.insights.version !== 3) this.insights.version = 3
-      writeJsonAtomic(path.join(this.dir, INSIGHTS_FILE), this.insights)
-      this._dirtyInsights = false
+  }
+
+  /**
+   * store 目录**自我忽略**：在目录里放一个内容为 `*` 的 `.gitignore`。
+   *
+   * 为什么不写进用户的 `.gitignore`：那是用户的文件，插件不该改；而且"忘了加"的代价
+   * 是一次误提交。为什么这样就够：git 会读取工作区里**任意**目录下的 `.gitignore`，
+   * 而 `*` 连这个 `.gitignore` 自己一起命中，于是 `git status` / `git add -A` 里整棵树
+   * 都不出现，用户一个字都不用写（`git check-ignore -v` 可复核）。
+   *
+   * 顺带的好处：被忽略的文件不会被 `git clean -fd` 删除（未跟踪且未忽略的会被删）。
+   * 想把记忆跟着仓库提交：`git add -f .dsh-project-memory`——已跟踪的文件不受忽略规则影响。
+   */
+  ensureSelfIgnore() {
+    if (!existsSafe(this.dir)) return
+    const file = path.join(this.dir, GITIGNORE_FILE)
+    if (existsSafe(file)) return
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/util/fs.js:24-39](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/util/fs.js#L24-L39)
+**依据 2 · 源码核查**：[src/util/fs.js:24-39](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/util/fs.js#L24-L39)
 
-pid tmp/rename失败抛出。
+当前固定版本复核。pid tmp/rename失败抛出。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
+ */
 export function writeJsonAtomic(file, data) {
   mkdirSync(path.dirname(file), { recursive: true })
   const tmp = `${file}.${process.pid}.tmp`
@@ -1675,14 +1678,13 @@ export function writeJsonAtomic(file, data) {
     throw err
   }
 }
-
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/watch.js:154-180](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/watch.js#L154-L180)
+**依据 3 · 源码核查**：[src/watch.js:154-180](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/watch.js#L154-L180)
 
-递归调度和stop检查。
+当前固定版本复核。递归调度和stop检查。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -1719,14 +1721,16 @@ export function writeJsonAtomic(file, data) {
 
 </details>
 
-**依据 4 · 源码核查**：[src/lazy.js:58-95](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/lazy.js#L58-L95)
+**依据 4 · 源码核查**：[src/lazy.js:58-95](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/lazy.js#L58-L95)
 
-lazy队列和timer清理。
+当前固定版本复核。lazy队列和timer清理。
 
 <details>
 <summary>查看原文（38行）</summary>
 
 ```text
+
+export function setupLazyIndexing(ctx, config, watchManager = null) {
   const pending = new Map()
   let timer = null
 
@@ -1763,20 +1767,30 @@ lazy队列和timer清理。
   })
 
   ctx.effect(() => () => {
-    if (timer) clearTimeout(timer)
-  })
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/index.js:220-250](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index.js#L220-L250)
+**依据 5 · 源码核查**：[src/index.js:220-250](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/index.js#L220-L250)
 
-auto-index cancelled只限制日志。
+当前固定版本复核。auto-index cancelled只限制日志。
 
 <details>
 <summary>查看原文（31行）</summary>
 
 ```text
+  ctx.tools.register(indexRepoTool(ctx, config))
+  ctx.tools.register(queryMemoryTool(ctx, config))
+  ctx.tools.register(rememberTool(config))
+  ctx.tools.register(forgetTool(config))
+  ctx.tools.register(lessonTool(config))
+  ctx.tools.register(watchRepoTool(watchManager, config))
+  ctx.tools.register(statsTool(config))
+
+  // PR 2：注册 agent/pre-step 监听，向每步请求的 enter 决策追加记忆消息（默认开；
+  // 任何异常/无会话 cwd → 交回默认决策，零副作用）
+  installAutoInject(ctx, config)
+
   if (config.autoIndexOnFirstUse) {
     // effect 回调必须同步并返回 disposer；异步体独立执行，用 cancelled 标志避免卸载后再写日志
     ctx.effect(() => {
@@ -1796,25 +1810,13 @@ auto-index cancelled只限制日志。
           }
           return
         }
-        try {
-          watchManager.addRoot(root)
-          const report = await indexRepository(ctx, config, root, { allowUnsafe: config.allowUnsafeRoots === true })
-          if (!cancelled) console.log(`[dsh-project-memory] ${report}`)
-        } catch (err) {
-          if (!cancelled) console.error(`[dsh-project-memory] auto-index failed for ${root}: ${err.message}`)
-        }
-      }
-      run()
-      return () => {
-        cancelled = true
-      }
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/audit.js:18-56](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/audit.js#L18-L56)
+**依据 6 · 源码核查**：[src/audit.js:18-56](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/audit.js#L18-L56)
 
-候选裁剪和日志配置。
+当前固定版本复核。候选裁剪和日志配置。
 
 <details>
 <summary>查看原文（39行）</summary>
@@ -1840,37 +1842,43 @@ const DEFAULT_SHADOW_MAX_BYTES = 512 * 1024
  */
 const SHADOW_MAX_CANDIDATES = 16
 
-/** 审计配置：默认开（观测是这个插件唯一的仪表盘），显式 `auditLog: false` 才关。 */
-export function cfgAudit(config) {
+/**
+ * 两份 JSONL 旁路日志共用的配置归一。它们的差别只有「开关名 / 字节上限键 / 默认上限」，
+ * 其余判定（默认开、非法上限退回默认）必须完全一致——抄成两份就等着一边补了 `> 0`、
+ * 另一边忘了。语义刻意选择：
+ *  - `!== false` 而不是 `=== true`：未配置 = 开（观测是这个插件唯一的仪表盘）；
+ *  - `> 0` 而不是 `!= null`：0 / 负数 / NaN 都视为「没配」，退回默认上限，而不是禁用。
+ */
+function cfgSideLog(config, { enabledKey, maxKey, defaultMaxBytes }) {
   const c = (config && config.autoContext) || {}
   return {
-    enabled: c.auditLog !== false,
-    maxBytes: typeof c.auditMaxBytes === 'number' && c.auditMaxBytes > 0 ? c.auditMaxBytes : DEFAULT_MAX_BYTES,
+    enabled: c[enabledKey] !== false,
+    maxBytes: typeof c[maxKey] === 'number' && c[maxKey] > 0 ? c[maxKey] : defaultMaxBytes,
   }
 }
 
-export function auditFileFor(memoryDir) {
-  return path.join(memoryDir, AUDIT_FILE)
+/** 审计配置：默认开，显式 `auditLog: false` 才关。 */
+export function cfgAudit(config) {
+  return cfgSideLog(config, { enabledKey: 'auditLog', maxKey: 'auditMaxBytes', defaultMaxBytes: DEFAULT_MAX_BYTES })
 }
-
-/** 影子记录配置：默认开（它只写盘、不进 prompt、不花 token），显式 `shadowLog: false` 才关。 */
-export function cfgShadow(config) {
-  const c = (config && config.autoContext) || {}
-  return {
-    enabled: c.shadowLog !== false,
-    maxBytes: typeof c.shadowMaxBytes === 'number' && c.shadowMaxBytes > 0 ? c.shadowMaxBytes : DEFAULT_SHADOW_MAX_BYTES,
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/vector-index.js:34-50](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/vector-index.js#L34-L50)
+**依据 7 · 源码核查**：[src/vector-index.js:34-50](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/vector-index.js#L34-L50)
 
-向量指纹近似。
+当前固定版本复核。向量指纹近似。
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
+  const t = it?.title || it?.pattern || it?.problem || it?.choice || it?.topic || it?.body
+  return String(t ?? '').trim().slice(0, 200)
+}
+
+const hashOf = (text) => createHash('sha256').update(String(text)).digest('hex').slice(0, 16)
+const keyOf = (it) => (it?.insightId ?? it?.id ?? null)
 
 /**
  * leanvec 的模型指纹：词表内容 sha256 + 向量表字节数。
@@ -1882,12 +1890,6 @@ export function cfgShadow(config) {
  */
 export function leanvecFingerprint(modelDir) {
   if (!modelDir) return null
-  const tj = join(modelDir, 'dist', 'leanvec.tokenizer.json')
-  const tb = join(modelDir, 'dist', 'leanvec.f32')
-  if (!existsSync(tj) || !existsSync(tb)) return null
-  const h = createHash('sha256').update(readFileSync(tj)).digest('hex').slice(0, 16)
-  return `l1:${h}:${statSync(tb).size}`
-}
 ```
 
 </details>
@@ -1895,8 +1897,8 @@ export function leanvecFingerprint(modelDir) {
 #### 缺口
 
 - 跨进程同store、掉电中断、卸载时在途写入与完整迁移恢复未验证。
-  **影响：**单文件原子不等于整库事务或取消保证。
-  **进一步探讨：**从两个进程、分片/辅助文件写入故障和在途抽取卸载检查版本/日志及可恢复原件。
+  **影响**：单文件原子不等于整库事务或取消保证。
+  **进一步探讨**：从两个进程、分片/辅助文件写入故障和在途抽取卸载检查版本/日志及可恢复原件。
 
 <a id="research-q08"></a>
 
@@ -1904,34 +1906,26 @@ export function leanvecFingerprint(modelDir) {
 
 ### Q08 · 首次、持续与恢复成本，效果证据到哪层？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
-#### 成本
+阶段为首次使用，现金与资源成本为文件/PDF抽取、符号/词项、optional向量资源，人工与时间投入为选根、去秘密、设置任务和知识范围，已知条件与未知项为20000文件/12深度是局部扫描上限，不是常驻内存保证。
+阶段为持续使用，现金与资源成本为watch/lazy IO、候选打分、近似400-token上下文、审计与向量缓存，人工与时间投入为核对引用、新鲜度、近邻覆盖和全局知识，已知条件与未知项为索引期无LLM，扩展/反思另计模型成本。
+阶段为失败恢复，现金与资源成本为shards/辅助文件/global原件和有限prev/deleted备份，人工与时间投入为查截断、根错位、误覆盖/提升与重建，已知条件与未知项为不是完整历史版本库，恢复投入随语料变化。
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 文件/PDF抽取、符号/词项、optional向量资源 | 选根、去秘密、设置任务和知识范围 | 20000文件/12深度是局部扫描上限，不是常驻内存保证 |
-| 持续使用 | watch/lazy IO、候选打分、近似400-token上下文、审计与向量缓存 | 核对引用、新鲜度、近邻覆盖和全局知识 | 索引期无LLM，扩展/反思另计模型成本 |
-| 失败恢复 | shards/辅助文件/global原件和有限prev/deleted备份 | 查截断、根错位、误覆盖/提升与重建 | 不是完整历史版本库，恢复投入随语料变化 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 索引 | 哈希增量、分片、词项与可定位引用 | 任意语料完整/引用持续有效 |
-| 检索 | 分层top-k、词法/向量融合和门控 | 真实用户相关性及知识适用性 |
-| 工作流 | todo绑定/反向同步、记忆范围与自动提示 | 任务质量和减少返工 |
-| 可观察性 | 注入/候选/预算留痕 | 永久完整日志或曝光即采纳 |
+效果项为索引，当前证据支持为哈希增量、分片、词项与可定位引用，尚不能确定为任意语料完整/引用持续有效。
+效果项为检索，当前证据支持为分层top-k、词法/向量融合和门控，尚不能确定为真实用户相关性及知识适用性。
+效果项为工作流，当前证据支持为todo绑定/反向同步、记忆范围与自动提示，尚不能确定为任务质量和减少返工。
+效果项为可观察性，当前证据支持为注入/候选/预算留痕，尚不能确定为永久完整日志或曝光即采纳。
 
 README和源码注释列出特定语料的大小/延迟/hit@k、向量包/RSS数据，这些是作者报告与标定，不是本轮重复测量，不外推所有项目。库越大、PDF越多与长标题/中文混合都会改变IO、内存与token。默认懒索引降低初始扫描负担，但并不免除持续检查资料有效性。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index-pipeline.js:25-67](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index-pipeline.js#L25-L67)
+**依据 1 · 源码核查**：[src/index-pipeline.js:25-67](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/index-pipeline.js#L25-L67)
 
-大小/哈希和无模型索引链。
+当前固定版本复核。大小/哈希和无模型索引链。
 
 <details>
 <summary>查看原文（43行）</summary>
@@ -1984,33 +1978,33 @@ export async function planFileIndex({ rel, filePath, kind, config, record, exist
 
 </details>
 
-**依据 2 · 源码核查**：[src/auto-inject.js:493-504](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/auto-inject.js#L493-L504)
+**依据 2 · 源码核查**：[src/auto-inject.js:493-504](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/auto-inject.js#L493-L504)
 
-字符近似预算。
+当前固定版本复核。字符近似预算。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-  // 旧实现把两者取小成同一个 budgetChars，会话额度用尽后连任务卡都被截成 `…(截断)`。
-  const quotaChars = typeof opts.maxChars === 'number' ? opts.maxChars : Infinity
-  const maxItems = typeof opts.maxItems === 'number' ? opts.maxItems : Infinity
-  const skipItems = opts.skipItems === true
-  const stepBudget = Math.max(0, (cfg.maxTokens || 400) * 3)
-  const itemBudget = Math.max(0, Math.min(stepBudget, quotaChars))
-
-  const skipItem = typeof opts.skipItem === 'function' ? opts.skipItem : null
-  const cands = insightCandidates(store, globalStore, task, cfg).filter((it) => !(skipItem && skipItem(it)))
-
-  // 两条通道：authored trigger（确定性、全文、优先级 1）→ 统计信号提示（优先级 2）。
-  const triggered = collectTriggered(cands, ctx)
+ */
+export function buildInjection(opts) {
+  const { query, task, globalStore, cfg } = opts
+  const store = opts.store || null
+  const tags = opts.projectTagsList || []
+  const ctx = buildReadinessContext({ ...(opts.readiness || { humanText: query || '' }), tags })
+  const labels = []
+  const reasons = []
+  const dropped = []
+  const parts = []
+  // 预算只能是上限，不是目标。两条额度分开：
+  //   stepBudget —— 单轮（常驻块 + 条目）共享的 maxTokens；
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/audit.js:18-56](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/audit.js#L18-L56)
+**依据 3 · 源码核查**：[src/audit.js:18-56](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/audit.js#L18-L56)
 
-持续日志负载。
+当前固定版本复核。持续日志负载。
 
 <details>
 <summary>查看原文（39行）</summary>
@@ -2036,32 +2030,32 @@ const DEFAULT_SHADOW_MAX_BYTES = 512 * 1024
  */
 const SHADOW_MAX_CANDIDATES = 16
 
-/** 审计配置：默认开（观测是这个插件唯一的仪表盘），显式 `auditLog: false` 才关。 */
-export function cfgAudit(config) {
+/**
+ * 两份 JSONL 旁路日志共用的配置归一。它们的差别只有「开关名 / 字节上限键 / 默认上限」，
+ * 其余判定（默认开、非法上限退回默认）必须完全一致——抄成两份就等着一边补了 `> 0`、
+ * 另一边忘了。语义刻意选择：
+ *  - `!== false` 而不是 `=== true`：未配置 = 开（观测是这个插件唯一的仪表盘）；
+ *  - `> 0` 而不是 `!= null`：0 / 负数 / NaN 都视为「没配」，退回默认上限，而不是禁用。
+ */
+function cfgSideLog(config, { enabledKey, maxKey, defaultMaxBytes }) {
   const c = (config && config.autoContext) || {}
   return {
-    enabled: c.auditLog !== false,
-    maxBytes: typeof c.auditMaxBytes === 'number' && c.auditMaxBytes > 0 ? c.auditMaxBytes : DEFAULT_MAX_BYTES,
+    enabled: c[enabledKey] !== false,
+    maxBytes: typeof c[maxKey] === 'number' && c[maxKey] > 0 ? c[maxKey] : defaultMaxBytes,
   }
 }
 
-export function auditFileFor(memoryDir) {
-  return path.join(memoryDir, AUDIT_FILE)
+/** 审计配置：默认开，显式 `auditLog: false` 才关。 */
+export function cfgAudit(config) {
+  return cfgSideLog(config, { enabledKey: 'auditLog', maxKey: 'auditMaxBytes', defaultMaxBytes: DEFAULT_MAX_BYTES })
 }
-
-/** 影子记录配置：默认开（它只写盘、不进 prompt、不花 token），显式 `shadowLog: false` 才关。 */
-export function cfgShadow(config) {
-  const c = (config && config.autoContext) || {}
-  return {
-    enabled: c.shadowLog !== false,
-    maxBytes: typeof c.shadowMaxBytes === 'number' && c.shadowMaxBytes > 0 ? c.shadowMaxBytes : DEFAULT_SHADOW_MAX_BYTES,
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[src/vector-index.js:1-10](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/vector-index.js#L1-L10)
+**依据 4 · 作者声明**：[src/vector-index.js:1-10](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/vector-index.js#L1-L10)
 
-作者特定规模/延迟报告。
+当前固定版本复核。作者特定规模/延迟报告。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -2081,9 +2075,9 @@ export function cfgShadow(config) {
 
 </details>
 
-**依据 5 · 源码核查**：[src/index.js:30-49](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/index.js#L30-L49)
+**依据 5 · 源码核查**：[src/index.js:30-49](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/index.js#L30-L49)
 
-扩展关闭、lazy与scan默认。
+当前固定版本复核。扩展关闭、lazy与scan默认。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -2116,8 +2110,8 @@ export function cfgShadow(config) {
 #### 缺口
 
 - 没有本轮同任务rg/手工笔记与插件的端到端质量、资源和人工对照。
-  **影响：**不能把作者小样本hit率转为实际效率/成本承诺。
-  **进一步探讨：**固定语料/任务/模型和压缩点，测召回、错误建议、真实token/RSS、人工返工和恢复。
+  **影响**：不能把作者小样本hit率转为实际效率/成本承诺。
+  **进一步探讨**：固定语料/任务/模型和压缩点，测召回、错误建议、真实token/RSS、人工返工和恢复。
 
 <a id="research-q09"></a>
 
@@ -2125,7 +2119,7 @@ export function cfgShadow(config) {
 
 ### Q09 · 采用建议与未来假设怎样证伪？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -2137,14 +2131,27 @@ export function cfgShadow(config) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/insight-store.js:207-226](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L207-L226)
+**依据 1 · 源码核查**：[src/insight-store.js:207-226](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L207-L226)
 
-近邻覆盖正文和confidence强化。
+当前固定版本复核。近邻覆盖正文和confidence强化。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
+}
+
+/** 自动合并会改写的正文字段（title 也在内：0.90 以上的两条标题本就近乎同一句）。 */
+const MERGE_FIELDS = ['title', 'pattern', 'fix', 'choice', 'reason', 'problem', 'solution', 'body']
+
+/**
+ * 把 base 合并进既有条目：**正文取新值**（旧值进 `prev`），成员/文件/符号并集，置信取高，记命中。
+ *
+ * 与旧实现的区别就是那一个 `if (b && !existing[f])`：以前字段已有值就**静默丢掉新文本**，
+ * 于是"我记错了，改成正确的"永远落不进去（只加 hitCount）。现在反过来——新值落地、旧值可还原。
+ * 提升路径只传成员/文件/符号/置信，不传正文字段，所以它们的语义一字未变。
+ * @returns {{item: object, replaced: string[]}} 被改动的字段名（供调用方回报）
+ */
 export function mergeInto(existing, base, cfg, nowIso) {
   const now = nowIso || new Date().toISOString()
   existing.sourceTaskIds = unionStrings(existing.sourceTaskIds, base.sourceTaskIds)
@@ -2152,135 +2159,122 @@ export function mergeInto(existing, base, cfg, nowIso) {
   existing.symbols = unionStrings(existing.symbols, base.symbols)
   existing.tags = unionStrings(existing.tags, base.tags)
   const replaced = []
-  for (const f of MERGE_FIELDS) {
-    const b = base[f]
-    if (b === undefined || b === null || b === '') continue
-    putField(existing, f, String(b), replaced)
-  }
-  if (Array.isArray(base.steps) && base.steps.length) putField(existing, 'steps', base.steps.map(String), replaced)
-  if (base.trigger && typeof base.trigger === 'object') putField(existing, 'trigger', base.trigger, replaced)
-  existing.confidence = Math.max(num(existing.confidence, 0.5), num(base.confidence, 0.5))
-  existing.hitCount = (existing.hitCount || 0) + 1
-  existing.lastHitAt = now
-  existing.updatedAt = now
-  if (existing.archived) existing.archived = false // 重新被使用 → 复活
-  return { item: existing, replaced }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/insight-store.js:830-866](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L830-L866)
+**依据 2 · 源码核查**：[src/insight-store.js:830-866](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L830-L866)
 
-任务scope写可合并更广知识。
+当前固定版本复核。任务scope写可合并更广知识。
 
 <details>
 <summary>查看原文（37行）</summary>
 
 ```text
-function saveTaskInsight(store, globalStore, task, raw, cfg, now, source, cosine) {
-  // 1) 已有 project 级知识 → 挂成员/命中，不再在 task 层重复存
-  const pjItems = store.insightItems()
-  const base = { ...raw, source, sourceTaskIds: [task.id] }
-  const text = insightMatchText(base)
-  const pjNear = vectorNear(vectorText(base), pjItems, cosine)
-  const pjTarget = autoMergeTarget(pjNear, cfg)
-  if (pjTarget) {
-    const { replaced } = mergeInto(pjTarget.item, base, cfg, now)
-    store.replaceInsightItems(pjItems)
-    applyDecay(pjItems, cfg, now)
-    pruneItems(pjItems, cfg.maxProject, now)
-    const promoted = promoteProjectToGlobal(store, globalStore, cfg, now)
-    return { ok: true, action: 'auto-merged', id: pjTarget.item.id, scope: 'project', replaced, cos: Number(pjTarget.top1.toFixed(3)), hint: `相似度 ${pjTarget.top1.toFixed(3)}，已自动覆盖 project 级既有条目${replaced.length ? `（覆盖字段 ${replaced.join('/')}）` : ''}${promoted ? '；已自动提升 global' : ''}` }
+  const now = nowIso || new Date().toISOString()
+  const secretField = containsSecretFields(raw)
+  if (secretField) {
+    return { ok: false, error: `内容疑似包含密钥/token/私钥形态数据（字段: ${secretField}），已拒绝写入` }
   }
-  const pjHit = findBestOverlapMatch(text, pjItems)
-  if (pjHit && pjHit.score >= cfg.dedupOverlap) {
-    const { replaced } = mergeInto(pjHit.item, base, cfg, now)
-    store.replaceInsightItems(pjItems)
-    applyDecay(pjItems, cfg, now)
-    pruneItems(pjItems, cfg.maxProject, now)
-    const promoted = promoteProjectToGlobal(store, globalStore, cfg, now)
-    return { ok: true, action: 'linked-project', id: pjHit.item.id, scope: 'project', replaced, hint: `该知识已在 project 级，累计第 ${(pjHit.item.sourceTaskIds || []).length} 个任务命中${promoted ? '；已自动提升 global' : ''}` }
-  }
-  // 2) 已有 global 级知识 → 同样只挂命中
-  if (globalStore) {
-    const glNear = vectorNear(vectorText(base), globalStore.items(), cosine)
-    const glTarget = autoMergeTarget(glNear, cfg)
-    if (glTarget) {
-      const { replaced } = mergeInto(glTarget.item, base, cfg, now)
-      globalStore.markDirty()
-      return { ok: true, action: 'auto-merged', id: glTarget.item.id, scope: 'global', replaced, cos: Number(glTarget.top1.toFixed(3)), hint: `相似度 ${glTarget.top1.toFixed(3)}，已自动覆盖 global 级既有条目${replaced.length ? `（覆盖字段 ${replaced.join('/')}）` : ''}` }
+  if (raw && raw.id) {
+    const found = findInsightAnywhere({ store, globalStore }, raw.id)
+    if (!found) return { ok: false, error: `找不到要更新的条目: ${raw.id}（可能已被删除/提升；用 query_memory 重新确认 id）` }
+    const wasDraft = found.item.draft === true
+    const replaced = applyUpdate(found.item, raw, now)
+    if (found.scope === 'global') globalStore.markDirty()
+    else if (found.scope === 'task') store.markTasksDirty()
+    else store.replaceInsightItems(store.insightItems())
+    const hint = replaced.length
+      ? `已就地更新（覆盖字段：${replaced.join('/')}，旧值在 prev）`
+      : wasDraft ? '已确认草稿（draft=false）' : '没有字段变化'
+    return {
+      ok: true,
+      action: 'updated',
+      id: raw.id,
+      scope: found.scope,
+      replaced,
+      hint: wasDraft && replaced.length ? `${hint}；草稿已确认` : hint,
     }
-    const glHit = findBestOverlapMatch(text, globalStore.items())
-    if (glHit && glHit.score >= cfg.dedupOverlap) {
-      const { replaced } = mergeInto(glHit.item, base, cfg, now)
-      globalStore.markDirty()
+  }
+  const s = scope || 'project'
+  if (!INSIGHT_SCOPES.includes(s)) return { ok: false, error: `非法 scope: ${s}` }
+  if (s === 'global') {
+    if (!globalStore) return { ok: false, error: 'global 存储未初始化' }
+    const res = upsertIntoPool(globalStore.items(), raw, cfg2, now, { source, scope: 'global', cosine })
+    if (res.action === 'created') pruneItems(globalStore.items(), cfg2.maxGlobalProcedures, now)
+    globalStore.markDirty()
+    return { ok: true, ...res, scope: 'global', hint: res.hint || buildHint(res) }
+  }
+  if (s === 'task') {
+    if (!store || !taskId) return { ok: false, error: 'task 级写入需要 taskId' }
+    const task = store.getTask(taskId)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/insight-store.js:960-982](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/insight-store.js#L960-L982)
+**依据 3 · 源码核查**：[src/insight-store.js:960-982](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/insight-store.js#L960-L982)
 
-按任务数扩大global。
+当前固定版本复核。按任务数扩大global。
 
 <details>
 <summary>查看原文（23行）</summary>
 
 ```text
-/** project 扫描：sourceTaskIds ≥ globalPromoteTasks → 升 global。返回移动条数。 */
-export function promoteProjectToGlobal(store, globalStore, cfg, now) {
-  if (!globalStore) return 0
-  const items = store.insightItems()
-  let moved = 0
-  for (const ins of [...items]) {
-    if (ins.scope && ins.scope !== 'project') continue
-    const members = new Set(ins.sourceTaskIds || [])
-    if (members.size < cfg.globalPromoteTasks) continue
-    const glItems = globalStore.items()
-    const glHit = findBestOverlapMatch(insightMatchText(ins), glItems)
-    if (glHit && glHit.score >= cfg.dedupOverlap) {
-      mergeInto(glHit.item, { sourceTaskIds: ins.sourceTaskIds, files: ins.files, symbols: ins.symbols, tags: ins.tags, confidence: ins.confidence }, cfg, now)
-    } else {
-      const movedIns = carryUsageFields(
-        normalizeInsight(ins, { scope: 'global', source: ins.source, nowIso: now }),
-        ins,
-      )
-      movedIns.id = ins.id
-      movedIns.draft = false
-      movedIns.confidence = num(ins.confidence, cfg.promoteConfidence)
-      movedIns.movedFrom = { scope: 'project', id: ins.id, at: now }
-      glItems.push(movedIns)
+    }
+    // 2) 已有 global 级知识 → 同样只挂命中
+    if (globalStore) {
+      const glNear = vectorNear(vectorText(base), globalStore.items(), cosine)
+      const glTarget = autoMergeTarget(glNear, cfg)
+      if (glTarget) {
+        const { replaced } = mergeInto(glTarget.item, base, cfg, now)
+        globalStore.markDirty()
+        return { ok: true, action: 'auto-merged', id: glTarget.item.id, scope: 'global', replaced, cos: Number(glTarget.top1.toFixed(3)), hint: `相似度 ${glTarget.top1.toFixed(3)}，已自动覆盖 global 级既有条目${replaced.length ? `（覆盖字段 ${replaced.join('/')}）` : ''}` }
+      }
+      const glHit = findBestOverlapMatch(text, globalStore.items())
+      if (glHit && glHit.score >= cfg.dedupOverlap) {
+        const { replaced } = mergeInto(glHit.item, base, cfg, now)
+        globalStore.markDirty()
+        return { ok: true, action: 'linked-global', id: glHit.item.id, scope: 'global', replaced, hint: `该知识已在 global 级，累计第 ${(glHit.item.sourceTaskIds || []).length} 个任务命中` }
+      }
+    }
+    // 3) 跨任务池去重合并（同一坑只留一份，sourceTaskIds 累积）。
+    // 草稿不是已确认知识：非草稿写入不得把正文并进一条 draft（那会让新知识永远停在待审状态）。
+    const pool = allTaskInsights(store).filter((it) => it.draft !== true)
+    const poolNear = vectorNear(vectorText(base), pool, cosine)
+    const poolTarget = autoMergeTarget(poolNear, cfg)
+    if (poolTarget) {
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/auto-inject.js:810-829](https://github.com/00080000/dsh-project-memory/blob/21fc69e3e98f3864677e091477b7d543a0e54939/src/auto-inject.js#L810-L829)
+**依据 4 · 源码核查**：[src/auto-inject.js:810-829](https://github.com/00080000/dsh-project-memory/blob/70aa69b06af58b33f9de98f7e6cc085877063714/src/auto-inject.js#L810-L829)
 
-曝光记账与注入分离，是证据状态分层起点。
+当前固定版本复核。曝光记账与注入分离，是证据状态分层起点。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
-    quota.items += built.reasons.length
-    quota.chars += typeof built.itemChars === 'number' ? built.itemChars : 0
-    quota.lastStep = stepNo
-  }
+  // 记忆根通告：根是**推定**的（会话工作目录，且该目录没有任何项目标记）时，
+  // 第一次注入前告诉模型"记忆现在存在哪、怎么改"。它是状态声明（与常驻任务卡同类），
+  // 只发一次、不占条目额度；否则模型只看到一条来自某处的记忆，却不知道那个根是怎么来的。
+  const notice = rootNotice({ root, sessionId, sessions, config })
 
-  // 使用记账：注入进上下文 = 这条记忆被用到了。必须在这里显式落盘——注入路径不会走到
-  // 任何其它 save()，只标脏等于进程退出就丢。记账失败绝不影响注入（与审计同约定）。
-  if (built.reasons.length) {
-    try {
-      if (recordHit({ store, globalStore, ids: built.reasons.map((r) => r.id) })) {
-        // 只有这个根里真有东西才落盘。否则一次**全局** insight 的命中就会为一个从没被
-        // 索引过的容器目录建出整个 store（`save()` 会 mkdir）。审计侧同样不建，见 audit.js。
-        if (store.hasContent) store.save()
-        globalStore.commit()
-      }
-    } catch {
-      /* ignore：记账是旁路，不能拖累注入 */
-    }
-  }
+  const fp = built.text ? fingerprint(built.dedupeText ?? built.text) : fingerprint(notice || '')
+  const injectedText = notice ? (built.text ? `${notice}\n${built.text}` : notice) : built.text
+  if (!injectedText || fp === sessions.lastText.peek(sessionId)) return null
+  sessions.lastText.set(sessionId, fp)
+  const itemCount = built.reasons.length
+  const summary = itemCount
+    ? `memory inject: ${itemCount} item(s)${built.entry ? ' + task card' : ''}`
+    : built.entry ? 'memory inject: task card' : 'memory root notice'
 
+  // 只记真的进了上下文的那几条：dropped 的没被看到，不能记账（否则以后永远不再注入）。
+  const seen = sessions.items.ensure(sessionId)
+  for (const r of built.reasons) {
+    if (r && r.id && r.hash) seen.set(r.id, { hash: r.hash, step: stepNo })
+  }
+  // 会话额度只被"条目"消耗；任务卡不算（否则任务一多就把记忆挤没了）。
 ```
 
 </details>
@@ -2288,7 +2282,7 @@ export function promoteProjectToGlobal(store, globalStore, cfg, now) {
 #### 缺口
 
 - 审批修订链/来源版本方案未实现或对照。
-  **影响：**不提升当前知识可靠性和安全边界。
-  **进一步探讨：**用两项目、冲突近邻、过期来源和草稿序列比较污染/漏注/任务质量及人工成本。
+  **影响**：不提升当前知识可靠性和安全边界。
+  **进一步探讨**：用两项目、冲突近邻、过期来源和草稿序列比较污染/漏注/任务质量及人工成本。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

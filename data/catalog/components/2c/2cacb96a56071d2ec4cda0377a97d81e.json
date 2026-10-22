@@ -7,14 +7,14 @@
             "id": "github:1408809487:root",
             "repository": "copylee711/dsh-academic",
             "path": "",
-            "revision": "a805e0de5e0075f365f090acc85f7b76c9ba2751",
+            "revision": "2aa8fe0056814e7792f27253e578d8b6f8624604",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9579e69e3247553c8aabe46d4683b4b09154345929879a3d4f31e0fe5c26003f",
-                "code": "a805e0de5e0075f365f090acc85f7b76c9ba2751",
-                "maintenance": "26fcf1e6c6689fccf4b7920f13d4ea2d320e888aafb397a9a057b7538cf3a357"
+                "code": "2aa8fe0056814e7792f27253e578d8b6f8624604",
+                "maintenance": "2aa7c0764691a77170eef2784a896ffdd21d50ff36e86c8bf96a38d0ddab47e2"
             }
         }
     }

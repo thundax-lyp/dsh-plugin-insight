@@ -7,14 +7,14 @@
             "id": "github:1407102609:packages-plugin-wisdom",
             "repository": "shanhai-city-states/kaipu-dsh-plugin-release",
             "path": "packages/plugin-wisdom",
-            "revision": "2d806e7ceebbf5fd8e0f3776b72eada8adee6305",
+            "revision": "858ff68d41b0fe3ef6266030799e7d73d9578a69",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6d467381ce3513c9f508cf7f900e7c48e36c400381db82dbe34c70a92e6ccf83",
-                "code": "2d806e7ceebbf5fd8e0f3776b72eada8adee6305",
-                "maintenance": "75e42e5e12016d6c9fb77bf950b2e85e4ab87a27c95003009fb11e8eda494ab5"
+                "code": "858ff68d41b0fe3ef6266030799e7d73d9578a69",
+                "maintenance": "74f43cd3fb35195338f05f269ecc411b527a6e965c916ef56232923dfa29913d"
             }
         }
     }

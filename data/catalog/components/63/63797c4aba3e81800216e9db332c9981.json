@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "63797c4aba3e81800216e9db332c9981",
+    "identity": "github:1426448931:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426448931:root",
+            "repository": "AaronKate/dsh-codex-appearance",
+            "path": "",
+            "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fb165e82cdd2daabda7513863c91d83d10d81562475e6d3d3f202d5bc3a971df",
+                "code": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                "maintenance": "f66c617b4c3e30133f31d5e9b50d6acb46b2aa3d75d8c998f2e83120d04e815f"
+            }
+        }
+    }
+}

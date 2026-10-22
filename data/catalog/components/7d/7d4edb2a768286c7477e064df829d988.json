@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7d4edb2a768286c7477e064df829d988",
+    "identity": "github:1367071464:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1367071464:root",
+            "repository": "cheesewoo/dsh-qqbot-dafeiyu",
+            "path": "",
+            "revision": "5d5e5db38d57698fb408d9093e32820c252003ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f3c7e68f2ac2783bef9148aec87bd37713516f54a072e2bd169977a3822704c",
+                "code": "5d5e5db38d57698fb408d9093e32820c252003ca",
+                "maintenance": "b65681db113da8e93f09e1c4e4597f4ccbf4c30f10f7bdd8cba8d9ad720a969d"
+            }
+        }
+    }
+}

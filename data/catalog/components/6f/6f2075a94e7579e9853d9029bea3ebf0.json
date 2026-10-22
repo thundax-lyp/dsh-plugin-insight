@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6f2075a94e7579e9853d9029bea3ebf0",
+    "identity": "github:1426401977:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426401977:root",
+            "repository": "imshz6669/dsh-split-chat",
+            "path": "",
+            "revision": "58f86c0cdfcb9bf6a7b9f901b881c3e658b04876",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "11be5dcdc1369463c177859c98c09014d641022a2dd26361aef0d8207db1e5c0",
+                "code": "58f86c0cdfcb9bf6a7b9f901b881c3e658b04876",
+                "maintenance": "b515f3a16a79e6e8a94888367ff52118b0093029cac45452c07cf8812c9f0dd4"
+            }
+        }
+    }
+}

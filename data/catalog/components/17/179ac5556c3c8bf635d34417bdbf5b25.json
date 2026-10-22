@@ -7,14 +7,14 @@
             "id": "github:1423003102:root",
             "repository": "pyh-pan/dsh-openai-oauth",
             "path": "",
-            "revision": "110399b391cd3f38f376360577aa0edf9518f3e4",
+            "revision": "2fe2f184018c064260aa3cd47e1e5e958cbb299f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "368cf87a09f6755ee9fd0642cbd33378b421224d5c51c50268732e3de96a3cac",
-                "code": "110399b391cd3f38f376360577aa0edf9518f3e4",
-                "maintenance": "d064bbb8e623d07554890c5c36b6d567d72fa5eea2983bf94dcfe7af089da871"
+                "code": "2fe2f184018c064260aa3cd47e1e5e958cbb299f",
+                "maintenance": "566340fd7af85ff5d2df3d2d40775747db42ff844f7b278aa875c9f869cac0da"
             }
         }
     }

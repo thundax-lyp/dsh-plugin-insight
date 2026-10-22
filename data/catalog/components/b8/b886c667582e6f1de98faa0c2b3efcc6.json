@@ -7,14 +7,14 @@
             "id": "github:1341523790:root",
             "repository": "lengzhanbao/dsh-taffy-theme",
             "path": "",
-            "revision": "23cf1fe22e06d6e0f3455d007481499c34a08c6c",
+            "revision": "056b452c385360de51bc016c009dbc0a5140e0cb",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a466805b768c203193f58ee8a2f1ccbe6196d2a676de83f5266287f0a19249b1",
-                "code": "23cf1fe22e06d6e0f3455d007481499c34a08c6c",
-                "maintenance": "e95b2f9e726bbc1ca8ff5608c7f56731b3d9d405c397093ec5466e76e360f025"
+                "code": "056b452c385360de51bc016c009dbc0a5140e0cb",
+                "maintenance": "6f2fa63e5feddabce5f87de566ddcd69066906711cdd17958b5df8fbb7ec9225"
             }
         }
     }

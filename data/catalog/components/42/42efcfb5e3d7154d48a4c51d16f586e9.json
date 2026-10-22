@@ -490,15 +490,15 @@
             "repository": "AngelosZou/dsh-multi-folder",
             "path": "",
             "revision": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
             "fingerprints": {
                 "directory": "5390bae6999aef50400eeabc85f8cbae1db64e1d16abbb60c9e8bb99fc29c5d6",
                 "code": "5921c0e2fd2623bc0757b8f13feaf73cee3648ca",
                 "maintenance": "56bf4b77734bb42b99d046fb87fb984fa9136f893cc5f7ee1501760beda7666e"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            }
         }
     }
 }

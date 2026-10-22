@@ -7,14 +7,14 @@
             "id": "github:1355387445:root",
             "repository": "OMSociety/dsh-ppt-maker",
             "path": "",
-            "revision": "7ee1c2df1ee05b29f0fbea4b1c395ae9015345a6",
+            "revision": "bffe9a1f0cf7f46d69b5f2846f051ed39c8898fd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e67d4bdcf58161ef0182b2df41abf75b4c9fefc6d1c441c37aecce92b9e67f40",
-                "code": "7ee1c2df1ee05b29f0fbea4b1c395ae9015345a6",
-                "maintenance": "247c48e0b912f3d9146e732a46475c99f0fdabd1e23bec363272cc9378a37797"
+                "code": "bffe9a1f0cf7f46d69b5f2846f051ed39c8898fd",
+                "maintenance": "30f743ac054c388cc974e20b088c7b3c32abf1f97290a18706e971367742b7db"
             }
         }
     }

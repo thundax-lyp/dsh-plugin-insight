@@ -7,14 +7,14 @@
             "id": "github:1255217938:packages-dsh-loopx-plugin",
             "repository": "loopx-project/loopx",
             "path": "packages/dsh-loopx-plugin",
-            "revision": "d98804591271380db9737443ed5345e3f4e5b890",
+            "revision": "e8873f70a3e43a58ee9b2c919a4a40b70bc1c102",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1ec13df186b3d77da2acee5952ca5ec26475e15de9bfb7c54c570e7817d5f842",
-                "code": "d98804591271380db9737443ed5345e3f4e5b890",
-                "maintenance": "c897d97c4d7e078d64e2474bc2d87dd3375250ba2de9ecd99f3f3fac2befd091"
+                "code": "e8873f70a3e43a58ee9b2c919a4a40b70bc1c102",
+                "maintenance": "40cfdf26eda489a05fde024544d705d68a5547c066a1f52a78974b7d26d46db2"
             }
         }
     }

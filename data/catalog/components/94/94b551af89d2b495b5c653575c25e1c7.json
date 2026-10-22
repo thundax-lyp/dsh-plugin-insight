@@ -7,15 +7,15 @@
             "id": "github:1336228384:root",
             "repository": "liangmianya/dsh-synapse",
             "path": "",
-            "revision": "847b712b14579ca5e5c5fcf414f4559589c44d93",
+            "revision": "265d7ff1f41c87e41f5648166e410cbf972c417f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "60b6ce0dc8a3bf915dec914c7be1264b34abf78d8f01e5bd1e893aa11ce16b35",
-                "code": "847b712b14579ca5e5c5fcf414f4559589c44d93",
-                "maintenance": "13b7c314af11ff1a3643d43431e1d2226b73e95485080ee45f20a5f2ff8aca31"
+                "code": "265d7ff1f41c87e41f5648166e410cbf972c417f",
+                "maintenance": "b931578d6995533c3b1156a3a066278384a037f747afa5be8ee7dd51f14bae4d"
             }
         }
     }

@@ -478,15 +478,15 @@
             "repository": "AKS1st/model-usage-plugin",
             "path": "",
             "revision": "a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
             "fingerprints": {
                 "directory": "344fbd150065e57f94e3e4655a0f842b380879d23894d10fb60a6d804abe21ef",
                 "code": "a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57",
                 "maintenance": "126f9842a17675d514e9442c0a5c282de8f764771b15d7ed157a11e994246af3"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ]
+            }
         }
     }
 }

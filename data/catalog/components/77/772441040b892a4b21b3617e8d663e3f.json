@@ -432,14 +432,14 @@
             "repository": "AK-blank/dsh-plugin-auto-answer",
             "path": "",
             "revision": "0147e9b83cd100b4532024f8907799741ce87429",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "4a5602e7608d8e71a8bc6e2903fab2de98a7e6e24f57931d25edee7a22a91f27",
                 "code": "0147e9b83cd100b4532024f8907799741ce87429",
                 "maintenance": "7a4072b9591c16c5c96c29dc3a44a1baf2ce35f3fa3fe17230691dce12e2102d"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1394456333:root",
             "repository": "GaoHu1997/dsh-model-think-level",
             "path": "",
-            "revision": "1489d3eecd25ab4c524cdb77c149b89ece1b2949",
+            "revision": "4ce489b8dfde3a7b79eb8658377bc5ef26e4d679",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f7156743616fa819b0ca282e176b9766bc1aa7c39eefbfe5fe46bacc0029cedc",
-                "code": "1489d3eecd25ab4c524cdb77c149b89ece1b2949",
-                "maintenance": "6ecab25bc6be334d1898951f0d692e2165aae00a0761fc07b7a000a343be6400"
+                "code": "4ce489b8dfde3a7b79eb8658377bc5ef26e4d679",
+                "maintenance": "07b65ec79c54e28aad1e5e365f7fefaec558f6de778c9ce95f2adef64883279e"
             }
         }
     }

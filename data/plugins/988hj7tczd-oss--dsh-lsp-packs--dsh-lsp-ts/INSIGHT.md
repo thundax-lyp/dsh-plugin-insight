@@ -151,7 +151,7 @@ DSH LSP service/tool、fs/subprocess、typescript-language-server 和建议的 T
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 TypeScript/JavaScript LSP 薄包的四扩展映射、外部服务器要求及缺服降级。
+**插件研究总目标**：核实 TypeScript/JavaScript LSP 薄包的四扩展映射、外部服务器要求及缺服降级。
 
 <a id="research-q01"></a>
 
@@ -159,7 +159,7 @@ DSH LSP service/tool、fs/subprocess、typescript-language-server 和建议的 T
 
 ### Q01 · TypeScript/JavaScript 导航由语言包还是共享基座提供？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -259,8 +259,8 @@ The server embeds its own `tsserver`; installing `typescript` next to it is stil
 #### 缺口
 
 - 未启动真实 TypeScript language server
-  **影响：**跨文件定义、引用与项目配置下表现未知
-  **进一步探讨：**在真实 TS/JS 项目试四操作和跨文件导航
+  **影响**：跨文件定义、引用与项目配置下表现未知
+  **进一步探讨**：在真实 TS/JS 项目试四操作和跨文件导航
 
 <a id="research-q02"></a>
 
@@ -268,7 +268,7 @@ The server embeds its own `tsserver`; installing `typescript` next to it is stil
 
 ### Q02 · 缺服 fallback 是否覆盖自定义映射并能区分故障？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -407,8 +407,8 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 #### 缺口
 
 - 未模拟配置/注册错误和自定义扩展缺服
-  **影响：**用户可见错误与路由范围需实测
-  **进一步探讨：**隔离分别测试缺 binary、配置异常和自定义扩展
+  **影响**：用户可见错误与路由范围需实测
+  **进一步探讨**：隔离分别测试缺 binary、配置异常和自定义扩展
 
 <a id="research-q03"></a>
 
@@ -416,7 +416,7 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 
 ### Q03 · 采用前提和已有测试证据到哪里？
 
-**研究主题：**依赖、兼容与流程、采用判断
+**研究主题**：依赖、兼容与流程、采用判断
 
 #### 完整回答
 
@@ -675,8 +675,8 @@ describe.skipIf(!installed)('dsh-lsp-ts real server (typescript-language-server)
 #### 缺口
 
 - 未运行真实服务器或 TS/JS 项目矩阵
-  **影响：**四扩展和项目索引的实际适配未知
-  **进一步探讨：**在 TS/TSX/JS/JSX 多文件项目与不同 tsconfig 下试用
+  **影响**：四扩展和项目索引的实际适配未知
+  **进一步探讨**：在 TS/TSX/JS/JSX 多文件项目与不同 tsconfig 下试用
 
 <a id="research-q04"></a>
 
@@ -684,7 +684,7 @@ describe.skipIf(!installed)('dsh-lsp-ts real server (typescript-language-server)
 
 ### Q04 · 首次、持续和失败恢复怎样核算成本与效果？
 
-**研究主题：**效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
@@ -796,8 +796,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 实际项目大小、tsconfig/混合JS配置和资源耗量未知
-  **影响：**无法给出项目级总拥有成本或导航收益幅度
-  **进一步探讨：**从相同项目人工配置与包配置的资源/正确结果记录入手
+  **影响**：无法给出项目级总拥有成本或导航收益幅度
+  **进一步探讨**：从相同项目人工配置与包配置的资源/正确结果记录入手
 
 <a id="research-q05"></a>
 
@@ -805,7 +805,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q05 · 怎样证伪故障分层与保留映射能改善扩展恢复？
 
-**研究主题：**新假设与验证、工程质量与复用、采用判断
+**研究主题**：新假设与验证、工程质量与复用、采用判断
 
 #### 完整回答
 
@@ -907,7 +907,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 共享基座的错误分类/失败清理契约未知，方案未实现
-  **影响：**不能声称所有初始化错误可安全降级
-  **进一步探讨：**从固定基座错误原文及隔离状态差异入手
+  **影响**：不能声称所有初始化错误可安全降级
+  **进一步探讨**：从固定基座错误原文及隔离状态差异入手
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -7,14 +7,14 @@
             "id": "github:306829688:root",
             "repository": "nocobase/nocobase",
             "path": "",
-            "revision": "85aafdcc2fe4c40349507307d1304849ed0fecae",
+            "revision": "012a751bc142089d31e7b47027387b56dc3861f1",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "3f48fbb89fc0e59bdfc56e600630f36752db3f1e61ea574848e5355f7d055a9a",
-                "code": "85aafdcc2fe4c40349507307d1304849ed0fecae",
-                "maintenance": "c3b6947c271a2d4682d6de3d54b0fe8fbdece472afc39a6a815489d27f520551"
+                "code": "012a751bc142089d31e7b47027387b56dc3861f1",
+                "maintenance": "f6788bf7c6d9774b36e5857708960306262b88b05089a6cb40dcb8351d763027"
             }
         }
     }

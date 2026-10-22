@@ -7,14 +7,14 @@
             "id": "github:1402107084:root",
             "repository": "lianzhimanye/dsh-bard-0.10",
             "path": "",
-            "revision": "f3a9f3319073527a3fb231669d24bf95cba84d7a",
+            "revision": "fe81c320a2469bd515ec9250fce3461e49689ed7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a05c9ea99c7a47cb6847447eacd38d27d47c4f513ed30d98f94001dfdc6b3809",
-                "code": "f3a9f3319073527a3fb231669d24bf95cba84d7a",
-                "maintenance": "ae4d3a4b1265669e56e802c5fa54da0737aeeb9f7656bfed10637753dbff2c72"
+                "code": "fe81c320a2469bd515ec9250fce3461e49689ed7",
+                "maintenance": "a14c94f5a84715d48ccb97a925995e6576f0cfaa724d8eddbb5c63d8cabbb6b7"
             }
         }
     }

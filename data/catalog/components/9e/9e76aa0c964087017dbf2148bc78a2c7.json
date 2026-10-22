@@ -7,14 +7,14 @@
             "id": "github:1423971407:root",
             "repository": "qiyuexue-xiyu/dsh-tool-cost-hint",
             "path": "",
-            "revision": "3fc67cbc66260801136ea38bc10be36072dc1c6e",
+            "revision": "a15004e1a9ff70b86d2640472142d5fba4002ce8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8408f1e24d529e26a689c46bc03b3780799eb4cb00f27eea0ef1939ee02cdae7",
-                "code": "3fc67cbc66260801136ea38bc10be36072dc1c6e",
-                "maintenance": "89041d5a56f91dc7d05e9798a1b9e0cd51214d8a9b4974fbe680946ad44b8542"
+                "code": "a15004e1a9ff70b86d2640472142d5fba4002ce8",
+                "maintenance": "439b66c133a61b1113c42e3e7a1a717976e907350deab0098e1a8cb2eac6436c"
             }
         }
     }

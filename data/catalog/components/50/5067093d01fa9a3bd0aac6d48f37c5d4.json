@@ -467,14 +467,14 @@
             "repository": "988hj7tczd-oss/dsh-math-olympiad",
             "path": "",
             "revision": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "6df14560a76cd5edd71ca5259d6e371fbc9541e765431beb6fd8d2f4df902688",
                 "code": "b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0",
                 "maintenance": "7b10175ee5e78186795c9d439b2fabeb59d26365ce15137b7acf6c92f4de5804"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

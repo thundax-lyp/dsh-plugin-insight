@@ -7,14 +7,14 @@
             "id": "github:1424492885:root",
             "repository": "wilsonchengassistant/dsh-session-clean-delete",
             "path": "",
-            "revision": "b8f884dc24547a3fae15c38b3d3a713004a1911c",
+            "revision": "ac566a4b06b36fe9a30e00b1ebcce01b84d6d51c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a5ebd75a7944ffb45ba7ba8c3e2ff4bdbb99929bbac4a37faf6b84c1ee801807",
-                "code": "b8f884dc24547a3fae15c38b3d3a713004a1911c",
-                "maintenance": "bc92565fa46ab0dd73eb6bd8eb21d8b18c0bbcaf5a4235037e9144c4e4519e69"
+                "code": "ac566a4b06b36fe9a30e00b1ebcce01b84d6d51c",
+                "maintenance": "3f4af84094cc02bf06df2735bf5199b19dae10336ae28b889786b7639dcb42cf"
             }
         }
     }

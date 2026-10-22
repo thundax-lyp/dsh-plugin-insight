@@ -484,14 +484,14 @@
             "repository": "863683348/dsh-plugin-local-life",
             "path": "",
             "revision": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "de94ba3182c1930ca13ed9503fa38ef69f14ea6ef30d7654dcadf56cd7a2bc51",
                 "code": "c7abe0935ceab43d784019fb42caf600b3aaadc5",
                 "maintenance": "80f3055d492084c5f25bd5cf3a0e9c0cff9da255ed2179b68903954c4e87ded2"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1373309426:root",
             "repository": "GGboya/dsh-paper-reader",
             "path": "",
-            "revision": "0c5a0fb6d7ea6f5d1a5e54705803140735acdf75",
+            "revision": "b4c0f3beb648b6792a24c5542a876c496c330edd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9dbe6b6cbfbbdeaa6f2b92959754112e67e9d7517d7238c93e3ae44ab30d6ac5",
-                "code": "0c5a0fb6d7ea6f5d1a5e54705803140735acdf75",
-                "maintenance": "f0eb2ccd817cfba52d4a28396080d4f61ab072380733c13bdb805ba4dff9c590"
+                "code": "b4c0f3beb648b6792a24c5542a876c496c330edd",
+                "maintenance": "b9016ae82638fa7b768c898924d994e1a8c74ef1102dcae3e9bd879dfdf4f130"
             }
         }
     }

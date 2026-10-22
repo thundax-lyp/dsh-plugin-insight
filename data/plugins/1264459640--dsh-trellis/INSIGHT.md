@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b6b1d52](https://github.com/1264459640/dsh-trellis/tree/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f)
+分析版本：[d6325d8](https://github.com/1264459640/dsh-trellis/tree/d6325d858e276917dacdec888a9cee42a175a636)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) [![npm 30d 1,515](https://img.shields.io/static/v1?label=npm+30d&message=1%2C515&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) [![npm 30d 1,515](https://img.shields.io/static/v1?label=npm+30d&message=1%2C515&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
 <!-- END META -->
 
 > **实现功能**：为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。
@@ -44,7 +44,7 @@
 
 Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物和单一steps状态为本项目增量，不是新通用任务算法。Skill以提示规定创建任务须同意、设计批准后实施、独立审查与测试业务双验收；这些是有价值的工作约定，但须与JS实际门禁分开。15个bundled Skill由文件复制到项目，不等15个常驻Agent或15个强制验证器。
 
-手工任务Markdown/聊天恢复与Git/CI；当前增加结构化任务状态、会话投影及可恢复产物。
+Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物和单一steps状态为本项目增量，不是新通用任务算法。Skill以提示规定创建任务须同意、设计批准后实施、独立审查与测试业务双验收；这些是有价值的工作约定，但须与JS实际门禁分开。15个bundled Skill由文件复制到项目，不等15个常驻Agent或15个强制验证器。
 
 <a id="detail-section-3"></a>
 
@@ -72,9 +72,7 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 | Git及项目质量门 | 提交检查/业务验收 | Git失败可放行，质量检查由Agent执行 |
 | Web remotes/sidebar等 | 看板与绑定 | 非独立认证层 |
 
-
-
-#### 使用流程
+#### 启动步骤
 
 | 阶段 | 行为 | 人员判断 |
 | --- | --- | --- |
@@ -90,8 +88,6 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 | 首次 | 本地Skill/模板/任务存储及Host依赖 | allowlist、备份/合并同名Skill、制定验收 | 安装工时与存储量未知 |
 | 持续使用 | 提示上下文token、任务JSON/文档/Git查询 | 写需求/设计/验证、审阶段与用户批准 | 无同任务token/节省工时对照 |
 | 失败恢复 | 备份恢复/重复模型调用、残留部分写入 | 核实际代码/产物后修指针与未完整更新 | 无跨文件事务/硬验收证明，恢复时间未知 |
-
-
 
 #### 效果
 
@@ -139,18 +135,18 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 **核查状态**：已检查源码。
 
-已检查源码。任务恢复适配贡献成立，强审批/验收与物理只读不能由当前机制推出。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/task.js、lib/git.js、lib/readonly.js、lib/artifact.js、lib/trust.js、lib/skills.js、test/native-steps.test.js、skills/trellis-start/SKILL.md、skills/trellis-feat/SKILL.md、skills/trellis-check/SKILL.md、skills/trellis-finish-work/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 skills/trellis-start/SKILL.md、skills/trellis-feat/SKILL.md、lib/skills.js、lib/index.js、lib/artifact.js、lib/trust.js、lib/task.js、lib/git.js、lib/readonly.js、package.json、skills/trellis-finish-work/SKILL.md、test/native-steps.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：读取task步骤规范/更新/完成、Git门禁、readonly全模块、核心index工具/API/每轮钩子、artifact/trust/skills部署及四份关键Skill和原生步骤测试设计；其余Skill仅目录定义，不全面审阅客户端/归档/全部模板及外部Host，不运行目标/测试/宿主。
-- 下一步：可继续用假fs/Git/审批事件核版本绑定验收、替换降级与失败条件，原型未实现。
+- 下一步：进一步探讨应按本项缺口执行：固定需求/中断点比较恢复目标正确性、验收遗漏及规划/审查/恢复人时。；先用假fs/事件/固定Git输出对照接受/拒绝矩阵与人工负担。
 
 **分析版本**
 
 - **仓库**：[1264459640/dsh-trellis](https://github.com/1264459640/dsh-trellis)
-- **版本号**：0.4.1（[固定提交 b6b1d52](https://github.com/1264459640/dsh-trellis/tree/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f)）
-- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.4（[固定提交 d6325d8](https://github.com/1264459640/dsh-trellis/tree/d6325d858e276917dacdec888a9cee42a175a636)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -160,7 +156,7 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 可探索与代码/要求版本绑定的独立验收凭据，把unknown与clean分开，并用假事件/Git矩阵证伪；尚未实现。详见[Q05](#research-q05)。
 
-可继续用假fs/Git/审批事件核版本绑定验收、替换降级与失败条件，原型未实现。
+进一步探讨应按本项缺口执行：固定需求/中断点比较恢复目标正确性、验收遗漏及规划/审查/恢复人时。；先用假fs/事件/固定Git输出对照接受/拒绝矩阵与人工负担。
 
 <a id="detail-section-9"></a>
 
@@ -171,19 +167,19 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 138 | 8731 | — | — | 139514 |
-| .md | test | 2 | 293 | — | — | 5524 |
-| .mjs | source | 3 | 728 | 571 | 106 | — |
-| .js | source | 15 | 8011 | 6060 | 1601 | — |
-| .js | test | 13 | 3427 | 2788 | 325 | — |
+| .md | source | 153 | 9741 | — | — | 157750 |
+| .md | test | 2 | 396 | — | — | 7812 |
+| .mjs | source | 4 | 891 | 724 | 115 | — |
+| .js | source | 16 | 8004 | 5810 | 1799 | — |
+| .js | test | 16 | 4311 | 3563 | 371 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+created%3A2026-09-22T10%3A38%3A54.295Z..2026-10-22T10%3A38%3A54.295Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A38%3A54.295Z..2026-10-22T10%3A38%3A54.295Z)
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A01.099Z..2026-10-22T15%3A12%3A01.099Z)
 
-
+暂未获取：Issue 未关闭、近30天关闭。
 
 统计日期：2026-10-22。
 
@@ -191,7 +187,7 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核三轨任务与会话恢复的贡献、实际验收/只读边界、自更新成本和可信凭据假设。
+**插件研究总目标**：核三轨任务与会话恢复的贡献、实际验收/只读边界、自更新成本和可信凭据假设。
 
 <a id="research-q01"></a>
 
@@ -199,7 +195,7 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 ### Q01 · 谁用什么交付物恢复开发任务，贡献归谁？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -209,9 +205,9 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/trellis-start/SKILL.md:7-47](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/skills/trellis-start/SKILL.md#L7-L47)
+**依据 1 · 源码核查**：[skills/trellis-start/SKILL.md:7-47](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/skills/trellis-start/SKILL.md#L7-L47)
 
-意图与授权约定。
+当前固定版本复核。意图与授权约定。
 
 <details>
 <summary>查看原文（41行）</summary>
@@ -262,9 +258,9 @@ trellis_task_create({
 
 </details>
 
-**依据 2 · 源码核查**：[skills/trellis-feat/SKILL.md:69-108](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/skills/trellis-feat/SKILL.md#L69-L108)
+**依据 2 · 源码核查**：[skills/trellis-feat/SKILL.md:69-108](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/skills/trellis-feat/SKILL.md#L69-L108)
 
-阶段/人卡约定。
+当前固定版本复核。阶段/人卡约定。
 
 <details>
 <summary>查看原文（40行）</summary>
@@ -314,9 +310,9 @@ review.md
 
 </details>
 
-**依据 3 · 源码核查**：[lib/skills.js:100-115](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/skills.js#L100-L115)
+**依据 3 · 源码核查**：[lib/skills.js:100-115](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/skills.js#L100-L115)
 
-15个目录。
+当前固定版本复核。15个目录。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -348,7 +344,7 @@ const SKILL_DIRS = [
 
 ### Q02 · 状态与会话/看板怎样连接，哪些边界设计可借鉴？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -360,14 +356,68 @@ artifact写入仅标准basename、slug/direct-child及路径relative检查，使
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:900-1025](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/index.js#L900-L1025)
+**依据 1 · 源码核查**：[lib/index.js:900-1025](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L900-L1025)
 
-API信任/会话/绑定。
+当前固定版本复核。API信任/会话/绑定。
 
 <details>
 <summary>查看原文（126行）</summary>
 
 ```text
+            ok: true,
+            error: null,
+            project: root,
+            slug: result.slug,
+            taskDir: result.taskDir,
+            month: result.month,
+            bucket: result.bucket,
+            archivedAt: result.archivedAt,
+            unbound: result.unbound,
+            gitCheck: result.gitCheck || null,
+          }
+        } catch (error) {
+          // Map sandbox denials to the model-facing marker (like the harness
+          // editor tools) so the escalation flow stays recognizable.
+          if (error && error.code === 'FS_SANDBOX_DENIED') {
+            const mode = sandboxPolicy && sandboxPolicy.mode !== void 0 ? sandboxPolicy.mode : 'unknown'
+            throw new Error(`[sandbox: file access denied under ${mode} mode]`)
+          }
+          throw error
+        }
+      },
+    })
+    const disposeArchiveTool = ctx.tools.register(archiveTool)
+    ctx.effect(() => disposeArchiveTool)
+
+    // --- trellis_artifact_update: sandboxed artifact write channel ----------
+    const artifactTool = createArtifactUpdateTool({ ctx, effectiveConfig })
+    const disposeArtifactTool = ctx.tools.register(artifactTool)
+    ctx.effect(() => disposeArtifactTool)
+
+    ctx.inject(['webServer', 'sessions'], (web) => {
+      /**
+       * Resolve the current project summary for a session. The cwd comes from
+       * the session header (trusted source) — never from the request or the
+       * model. Writes no files; guarded refresh publishes the current summary.
+       * @param {string} sessionId live session id.
+       * @param {boolean} [inline] codex-inline dispatch flag.
+       * @returns {Promise<object>} path-free summary.
+       */
+      const refreshSummary = async (sessionId, inline = false) => {
+        const session = web.sessions.get(sessionId)
+        const cwd = normalizePath(session && session.header ? session.header.cwd : undefined)
+        const root = matchAllowlist(cwd, effectiveConfig.get().allowlist)
+        if (!root) {
+          const value = { kind: 'no-match', phase: 'no_task' }
+          cacheSummary(sessionId, value)
+          return value
+        }
+        return refreshSessionSummary(root, sessionId, inline)
+      }
+
+      // Same-origin read-only route: cached hits avoid IO; a miss resolves the
+      // current session state once (with mutation fencing). Never writes files.
+      const disposeRoute = web.webServer.register({
         kind: 'prefix',
         path: API_PREFIX,
         handler: async (req, res) => {
@@ -440,149 +490,95 @@ API信任/会话/绑定。
             // header cwd (trusted) — never from the request; the task slug is
             // format-checked and existence-checked against that root.
             const sessionId = body && typeof body.sessionId === 'string' ? body.sessionId : ''
-            const live = sessionId ? web.sessions.get(sessionId) : undefined
-            if (!live) {
-              respondJson(res, 404, { ok: false, error: 'session not found' })
-              return
-            }
-            const cwd = normalizePath(live.header ? live.header.cwd : undefined)
-            const root = matchAllowlist(cwd, effectiveConfig.get().allowlist)
-            if (!root) {
-              respondJson(res, 403, { ok: false, error: 'forbidden' })
-              return
-            }
-            const taskSlug = body && typeof body.taskSlug === 'string' ? body.taskSlug.trim() : null
-            if (taskSlug !== null && !/^[A-Za-z0-9._-]{1,120}$/.test(taskSlug)) {
-              respondJson(res, 400, { ok: false, error: 'bad task slug' })
-              return
-            }
-            let sandboxPolicy
-            try {
-              const policy = web.fs.sandboxMode === void 0 ? void 0 : web.get('sandboxPolicy')
-              sandboxPolicy = policy ? policy.resolve({ session: live }) : void 0
-            } catch {
-              sandboxPolicy = void 0
-            }
-            try {
-              if (taskSlug !== null) {
-                const taskJsonTarget = await web.fs.resolve(path.join(root, '.trellis', 'tasks', taskSlug, 'task.json'))
-                const info = await web.fs.stat(taskJsonTarget)
-                if (!info) {
-                  respondJson(res, 404, { ok: false, error: 'task not found' })
-                  return
-                }
-                await bindTaskPointer(web.fs, root, sessionId, `.trellis/tasks/${taskSlug}`, { sandboxPolicy })
-              } else {
-                await unbindTaskPointer(web.fs, root, sessionId, { sandboxPolicy })
-              }
-            } catch (error) {
-              if (error && error.code === 'FS_SANDBOX_DENIED') {
-                respondJson(res, 403, { ok: false, error: 'sandbox denied' })
-                return
-              }
-              respondJson(res, 500, { ok: false, error: 'write failed' })
-              return
-            }
-            // Fence any refresh that captured the previous binding.
-            invalidateSummary(sessionId)
-            const summary = await refreshSummary(sessionId, effectiveConfig.get().inline === true)
-            respondJson(res, 200, { ok: true, value: { bound: taskSlug, summary } })
-          } catch {
-            respondJson(res, 500, { ok: false, error: 'internal error' })
-          }
-        },
-      })
-      web.effect(() => disposeRoute)
-
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1116-1185](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/index.js#L1116-L1185)
+**依据 2 · 源码核查**：[lib/index.js:1116-1185](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L1116-L1185)
 
-每轮解析/提示/epoch。
+当前固定版本复核。每轮解析/提示/epoch。
 
 <details>
 <summary>查看原文（70行）</summary>
 
 ```text
-    ctx.on('agent/pre-step', async ({ agent, messages, step, signal }, next) => {
-      const decision = await next()
-      if (decision.kind === 'reject') return decision
-
-      const cwd = normalizePath(agent && agent.session && agent.session.header ? agent.session.header.cwd : undefined)
-      const root = matchAllowlist(cwd, effectiveConfig.get().allowlist)
-      if (!root) return decision
-
-      const effective = effectiveConfig.get()
-      if (effective.injectStep !== undefined && step !== effective.injectStep) return decision
-
-      const lastUser = extractMessageText(messages[messages.length - 1])
-      if (shouldSkip(lastUser, effective.skipKeywords)) return decision
-
-      signal?.throwIfAborted()
-
-      const inline = effective.inline === true
-
-      // --- skill provisioning (session-start, once per project root) --------
-      // Detect whether the project's .agents/skills carries the trellis skills;
-      // copy the missing ones from the package when absent, skip when present.
-      // Never throws into the turn: a provisioning failure only warns and the
-      // breadcrumb still injects (skills remain copyable on a later turn).
-      let provisionedNote = ''
-      try {
-        const policy = ctx.fs.sandboxMode === void 0 ? void 0 : ctx.get('sandboxPolicy')
-        const sandboxPolicy = policy
-          ? policy.resolve({ ...(agent === void 0 ? {} : { session: agent.session }) })
-          : void 0
-        const provisioned = await ensureProjectSkills(ctx.fs, root, {
-          signal: signal ?? undefined,
-          sandboxPolicy,
-        })
-        if (provisioned.updated && provisioned.updated.length > 0) {
-          provisionedNote =
-            `\n\n（已自动将 trellis-* 技能同步更新至 v${provisioned.version}：` +
-            `${provisioned.updated.join(', ')}；harness 将从项目目录加载，无需重启）`
-        } else if (provisioned.copied.length > 0) {
-          provisionedNote =
-            `\n\n（已把 trellis-* 技能复制到项目 .agents/skills/：` +
-            `${provisioned.copied.join(', ')}；harness 将从项目目录加载，无需重启）`
-        }
-      } catch (error) {
-        console.warn(`[${NAME}] skill provisioning failed for ${root}:`, error && error.message)
-      }
-
-      const epoch = summaryEpoch
-      const st = await resolveProjectState(
-        ctx.fs,
-        root,
-        inline,
-        agent && agent.session && typeof agent.session.id === 'string' ? agent.session.id : undefined,
+                ? exec.agent.session.id
+                : undefined
+            if (!sessionId) return { kind: 'no-summary', phase: 'no_task' }
+            const summary = await refreshSummary(sessionId, effectiveConfig.get().inline === true)
+            return summary
+          },
+        }),
       )
-      if (provisionedNote) st.text += provisionedNote
+      web.effect(() => disposeUiTool)
+    })
 
-      // Keep the Web UI chip cache fresh without model discipline: every turn
-      // in a matched project already resolves state for the breadcrumb, so
-      // mirror it into the session cache. The chip picks it up on its next
-      // fetch (mount / session switch / focus return / manual click); the
-      // trellis_ui_update tool still covers same-turn immediate refresh.
-      if (epoch === summaryEpoch && agent && agent.session && typeof agent.session.id === 'string') {
-        cacheSummary(agent.session.id, taskSummaryOf(st.task, { matched: true, phase: st.phase }))
+    // --- Read-only planning + project-spec index ---------------------------
+    // Two independent concerns share one assembly pass:
+    //
+    //  A) READ-ONLY ENFORCEMENT (gated by enforceReadonlyPlanning). When the
+    //     session cwd matches the allowlist, TRIM the tool surface by
+    //     AUTHORIZATION state (lib/readonly.js) using DENYLIST semantics — only
+    //     the specified tools are removed:
+    //       undecided (no task, not skipped) → trim write/edit + task-write trellis tools
+    //       planning (task in planning)       → trim write/edit + create/skip/archive trellis tools
+    //       authorized (approved / skipped)   → full tool surface, no trimming
+    //     Every other tool — including tools registered by other plugins
+    //     (web_search, generate_image, subagent, skill, ...) — is preserved.
+    //     For undecided/planning an explicit read-only instruction section is
+    //     APPENDED (appendReadonlyInstruction), so the model sees its read-only
+    //     state in the prompt text, not just a pruned tool surface.
+    //
+    //  B) PROJECT-SPEC INDEX (own switch: injectSpecIndex; NOT gated by the
+    //     readonly one — the index is domain knowledge, not a write guard). This
+    //     plugin no longer creates or injects `.trellis/workflow.md`, which used
+    //     to be the only runtime path that told the model a project carries
+    //     `.trellis/spec/`. We restore that awareness as a compact INDEX
+    //     (`trellis:spec-index`): the list of governing spec files, anchored to
+    //     the project root, plus a read-first constraint. Bodies are never
+    //     injected — the model opens the file that actually governs its change.
+    //     No specs on disk → no section, so the assembly stays byte-identical.
+    ctx.on('system-prompt/assemble', async (assembly, context, next) => {
+      const assembled = await next()
+      const effective = effectiveConfig.get()
+
+      // AssembleContext carries no `agent` (0.1.7): the assembling agent is the
+      // process-local initiator, so resolve the session cwd from it.
+      const agent = (ctx.agents && typeof ctx.agents.currentInitiator === 'function' && ctx.agents.currentInitiator()) || undefined
+      const cwd = normalizePath(agent && agent.session && agent.session.header ? agent.session.header.cwd : undefined)
+      const root = matchAllowlist(cwd, effective.allowlist)
+      if (!root) return assembled
+
+      const sessionId = agent && agent.session && typeof agent.session.id === 'string' ? agent.session.id : undefined
+
+      let tools = null
+      let sections = null
+
+      if (effective.enforceReadonlyPlanning) {
+        const st = await resolveProjectState(ctx.fs, root, effective.inline === true, sessionId)
+        tools = applyReadonlyPolicy(assembled.tools, st.phase, st.skipState)
+        sections = appendReadonlyInstruction(
+          applyReadonlySections(assembled.sections, st.phase, st.skipState) ?? assembled.sections,
+          st.phase,
+          st.skipState,
+        )
       }
 
-      // --- active step injection (in_progress tasks with steps) --------------
-      // Inject the single active step's acceptance criteria into the breadcrumb.
-      // Dedup via an in-memory per-session snapshot key: when the same step in
-      // the same state was already announced, degrade to a one-line reminder
-      // instead of re-flooding the context window. No disk IO here.
-      let stepInfo = null
+      if (effective.injectSpecIndex !== false) {
+        sections =
+          appendSpecInstruction(
+            sections ?? assembled.sections,
+            await resolveSpecIndex(ctx.fs, root, context && context.signal),
+          ) ?? sections
+      }
+
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/artifact.js:45-91](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/artifact.js#L45-L91)
+**依据 3 · 源码核查**：[lib/artifact.js:45-91](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/artifact.js#L45-L91)
 
-词法约束。
+当前固定版本复核。词法约束。
 
 <details>
 <summary>查看原文（47行）</summary>
@@ -639,9 +635,9 @@ export function assertSafeArtifactPath(root, slug, artifact) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/artifact.js:115-139](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/artifact.js#L115-L139)
+**依据 4 · 源码核查**：[lib/artifact.js:115-139](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/artifact.js#L115-L139)
 
-Host写入。
+当前固定版本复核。Host写入。
 
 <details>
 <summary>查看原文（25行）</summary>
@@ -676,9 +672,9 @@ Host写入。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/trust.js:1-60](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/trust.js#L1-L60)
+**依据 5 · 源码核查**：[lib/trust.js:1-60](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/trust.js#L1-L60)
 
-非认证层。
+当前固定版本复核。非认证层。
 
 <details>
 <summary>查看原文（60行）</summary>
@@ -748,59 +744,59 @@ export function isTrustedApiRequest(headers, trustedHosts = []) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:1188-1232](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/index.js#L1188-L1232)
+**依据 6 · 源码核查**：[lib/index.js:1188-1232](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L1188-L1232)
 
-相同步骤缓存缩成一行提醒并按source-kind去重本轮提示
+当前固定版本复核。相同步骤缓存缩成一行提醒并按source-kind去重本轮提示
 
 <details>
 <summary>查看原文（45行）</summary>
 
 ```text
-      if (
-        st.task &&
-        Array.isArray(st.task.steps) &&
-        st.task.steps.length > 0 &&
-        (st.phase === 'in_progress' || st.phase === 'in_progress-inline')
-      ) {
-        stepInfo = findActiveStep(st.task.steps)
-        if (stepInfo) {
-          const sid = agent && agent.session && typeof agent.session.id === 'string' ? agent.session.id : '_anon'
-          const snapshotKey = `${stepInfo.step.id}:${stepInfo.step.status}:${stepInfo.step.verified ? 'v' : 'u'}`
-          if (stepInjectedCache.get(sid) === snapshotKey) {
-            // Same step, same state — already announced; keep it to one line.
-            stepPromptOverride = formatStepReminder(stepInfo.step)
-          } else {
-            stepInjectedCache.set(sid, snapshotKey)
-            stepPromptOverride = formatStepPrompt(stepInfo)
-          }
+          ...assembled,
+          ...(tools ? { tools } : {}),
+          ...(sections ? { sections } : {}),
         }
       }
+      return assembled
+    })
 
-      const desired = buildBreadcrumbMessage(
-        {
-          sourceKind: SOURCE_KIND,
-          text: st.text,
-          source: st.source,
-          projectRoot: root,
-          activeTask: st.activeTask,
-          phase: st.phase,
-          stepInfo,
-          stepPromptOverride,
-        },
-        createUserMessage,
-      )
+    // --- per-turn breadcrumb injection -------------------------------------
+    ctx.on('agent/pre-step', async ({ agent, messages, step, signal }, next) => {
+      const decision = await next()
+      if (decision.kind === 'reject') return decision
 
-      // Dedupe: a breadcrumb (or any of this plugin's injected context) already
-      // present this turn — skip rather than stack copies.
-      if (decision.messages.some((message) => message.source && message.source.kind === SOURCE_KIND)) {
-        return decision
-      }
+      const cwd = normalizePath(agent && agent.session && agent.session.header ? agent.session.header.cwd : undefined)
+      const root = matchAllowlist(cwd, effectiveConfig.get().allowlist)
+      if (!root) return decision
 
-      const lastClaimedIndex = decision.messages.findLastIndex((message) => messages.includes(message))
-      return {
-        kind: 'enter',
-        messages: decision.messages.toSpliced(lastClaimedIndex + 1, 0, desired),
-      }
+      const effective = effectiveConfig.get()
+      if (effective.injectStep !== undefined && step !== effective.injectStep) return decision
+
+      const lastUser = extractMessageText(messages[messages.length - 1])
+      if (shouldSkip(lastUser, effective.skipKeywords)) return decision
+
+      signal?.throwIfAborted()
+
+      const inline = effective.inline === true
+
+      // --- skill provisioning (session-start, once per project root) --------
+      // Detect whether the project's .agents/skills carries the trellis skills;
+      // copy the missing ones from the package when absent, skip when present.
+      // Never throws into the turn: a provisioning failure only warns and the
+      // breadcrumb still injects (skills remain copyable on a later turn).
+      let provisionedNote = ''
+      try {
+        const policy = ctx.fs.sandboxMode === void 0 ? void 0 : ctx.get('sandboxPolicy')
+        const sandboxPolicy = policy
+          ? policy.resolve({ ...(agent === void 0 ? {} : { session: agent.session }) })
+          : void 0
+        const provisioned = await ensureProjectSkills(ctx.fs, root, {
+          signal: signal ?? undefined,
+          sandboxPolicy,
+        })
+        if (provisioned.updated && provisioned.updated.length > 0) {
+          provisionedNote =
+            `\n\n（已自动将 trellis-* 技能同步更新至 v${provisioned.version}：` +
 ```
 
 </details>
@@ -808,8 +804,8 @@ export function isTrustedApiRequest(headers, trustedHosts = []) {
 #### 缺口
 
 - Host物理路径策略和外层API身份隔离未包含在本插件源码证明中。
-  **影响：**不能从词法检查/Host头判断部署鉴权或符号链接隔离。
-  **进一步探讨：**核固定Host fs.resolve/writeText与HTTP认证契约，分别检查物理路径和身份边界。
+  **影响**：不能从词法检查/Host头判断部署鉴权或符号链接隔离。
+  **进一步探讨**：核固定Host fs.resolve/writeText与HTTP认证契约，分别检查物理路径和身份边界。
 
 <a id="research-q03"></a>
 
@@ -817,7 +813,7 @@ export function isTrustedApiRequest(headers, trustedHosts = []) {
 
 ### Q03 · 验证和只读是强制授权门吗？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -829,9 +825,9 @@ enforceReadonlyPlanning默认关闭。开启后在system-prompt组装时删除�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/task.js:55-110](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/task.js#L55-L110)
+**依据 1 · 源码核查**：[lib/task.js:55-110](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L55-L110)
 
-整组字段。
+当前固定版本复核。整组字段。
 
 <details>
 <summary>查看原文（56行）</summary>
@@ -897,9 +893,9 @@ enforceReadonlyPlanning默认关闭。开启后在system-prompt组装时删除�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/task.js#L172-L301)
+**依据 2 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L172-L301)
 
-增量/空组验收。
+当前固定版本复核。增量/空组验收。
 
 <details>
 <summary>查看原文（130行）</summary>
@@ -1039,9 +1035,9 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/task.js#L880-L915)
+**依据 3 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L880-L915)
 
-替换与完成门。
+当前固定版本复核。替换与完成门。
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -1087,63 +1083,63 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:600-641](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/index.js#L600-L641)
+**依据 4 · 源码核查**：[lib/index.js:600-641](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L600-L641)
 
-模型可填human/降级。
+当前固定版本复核。模型可填human/降级。
 
 <details>
 <summary>查看原文（42行）</summary>
 
 ```text
-        slug: { type: 'string', description: 'Optional explicit task slug `<work-type>-<mm-dd>-<name>`. Defaults to the active task bound to this session.' },
-        status: { type: 'string', description: 'Optional new status: planning | in_progress | completed.' },
-        stage: { type: 'string', description: 'Optional new work.stage (validated against the task workType track).' },
-        mode: { type: 'string', description: 'Optional execution mode: quick | standard.' },
-        title: { type: 'string', description: 'Optional new task title.' },
-        description: { type: 'string', description: 'Optional new task description (empty string removes it).' },
-        steps: {
-          type: 'array',
-          items: {
-            type: 'object',
-            additionalProperties: false,
-            properties: {
-              id: { type: 'string' },
-              title: { type: 'string' },
-              spec: { type: 'string' },
-              acceptance: { type: 'array', items: { type: 'string' } },
-              status: { type: 'string' },
-              verification: { type: 'string' },
-              verify: { type: 'boolean' },
-              verified: { type: 'boolean' },
-              verifiedBy: { type: 'string' },
-              verificationNotes: { type: 'string' },
-              blockedReason: { type: 'string' },
-            },
-          },
-          description: 'Optional full replacement of the execution steps list.',
-        },
-        step: {
-          type: 'object',
-          additionalProperties: false,
-          properties: {
-            id: { type: 'string', description: 'Step id to update (required).' },
-            status: { type: 'string', description: 'pending | in_progress | verifying | blocked | completed.' },
-            verification: { type: 'string', description: 'none | ai | human.' },
-            verified: { type: 'boolean', description: 'Mark the step verification as passed (true) when verify/verification is required.' },
-            verifiedBy: { type: 'string', description: 'ai | human.' },
-            verificationNotes: { type: 'string', description: 'Verification evidence (test cases / logs) or human review notes.' },
-            blockedReason: { type: 'string', description: 'Reason if step is marked as blocked.' },
-          },
-          description: 'Optional incremental update to a single step. A step with verification/verify cannot reach completed until verified: true is recorded via a prior call.',
-        },
-        modified_files: { type: 'array', items: { type: 'string' }, description: 'Optional list of files actually modified/committed for this task. When provided, the Git cleanliness check is scoped to these files: uncommitted changes OUTSIDE the list no longer block completion — they are allowed with a warning. Files listed must themselves be clean and committed. Omit it to keep the global strict check (working tree must be fully clean). It is a one-shot, call-time credential used only for this call\'s Git check — it is NOT persisted into `task.json` and does not alter task metadata; pass it again on each completing/archiving call that needs scoped relaxation.' },
+        if (!root) {
+          return { ok: false, error: '项目不在 allowlist 内；请先在 Web 设置或配置里把项目根加入 trellis-workflow.allowlist', project: null, sessionFile: null, skipped: false }
+        }
+        const sessionId =
+          exec.agent && exec.agent.session && typeof exec.agent.session.id === 'string'
+            ? exec.agent.session.id
+            : void 0
+        const policy = ctx.fs.sandboxMode === void 0 ? void 0 : ctx.get('sandboxPolicy')
+        if (ctx.fs.sandboxMode !== void 0 && policy === void 0) {
+          throw new Error('trellis_task_skip: the mounted filesystem confines but ctx.sandboxPolicy is missing')
+        }
+        const sandboxPolicy = policy
+          ? policy.resolve({ ...(exec.agent === void 0 ? {} : { session: exec.agent.session }) })
+          : void 0
+        try {
+          const result = await skipTaskPointer(ctx.fs, root, sessionId, {
+            signal: exec.signal,
+            sandboxPolicy,
+          })
+          if (!result.ok) {
+            return { ok: false, error: result.error, project: root, sessionFile: null, skipped: false }
+          }
+          // Resolve the actual pointer in case a newer bind followed this
+          // skip write. The skip flag affects authorization, not display phase.
+          if (sessionId) {
+            invalidateSummary(sessionId)
+            await refreshSessionSummary(root, sessionId, effectiveConfig.get().inline === true)
+          }
+          return { ok: true, error: null, project: root, sessionFile: result.sessionFile, skipped: true }
+        } catch (error) {
+          if (error && error.code === 'FS_SANDBOX_DENIED') {
+            const mode = sandboxPolicy && sandboxPolicy.mode !== void 0 ? sandboxPolicy.mode : 'unknown'
+            throw new Error(`[sandbox: file access denied under ${mode} mode]`)
+          }
+          throw error
+        }
+      },
+    })
+    const disposeSkipTool = ctx.tools.register(skipTool)
+    ctx.effect(() => disposeSkipTool)
+
+    // --- task update tool ----------------------------------------------------
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/git.js:151-258](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/git.js#L151-L258)
+**依据 5 · 源码核查**：[lib/git.js:151-258](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/git.js#L151-L258)
 
-失败放行/声明范围。
+当前固定版本复核。失败放行/声明范围。
 
 <details>
 <summary>查看原文（108行）</summary>
@@ -1261,9 +1257,9 @@ export function checkGitCleanliness(root, options = {}) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/readonly.js:25-113](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/readonly.js#L25-L113)
+**依据 6 · 源码核查**：[lib/readonly.js:25-113](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/readonly.js#L25-L113)
 
-名单/状态。
+当前固定版本复核。名单/状态。
 
 <details>
 <summary>查看原文（89行）</summary>
@@ -1362,42 +1358,42 @@ export function applyReadonlyPolicy(tools, phase, skipState = false) {
 
 </details>
 
-**依据 7 · 源码核查**：[lib/index.js:1087-1114](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/index.js#L1087-L1114)
+**依据 7 · 源码核查**：[lib/index.js:1087-1114](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L1087-L1114)
 
-仅组装过滤。
+当前固定版本复核。仅组装过滤。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-    ctx.on('system-prompt/assemble', async (assembly, context, next) => {
-      const assembled = await next()
-      const effective = effectiveConfig.get()
-      if (!effective.enforceReadonlyPlanning) return assembled
 
-      // AssembleContext carries no `agent` (0.1.7): the assembling agent is the
-      // process-local initiator, so resolve the session cwd from it.
-      const agent = (ctx.agents && typeof ctx.agents.currentInitiator === 'function' && ctx.agents.currentInitiator()) || undefined
-      const cwd = normalizePath(agent && agent.session && agent.session.header ? agent.session.header.cwd : undefined)
-      const root = matchAllowlist(cwd, effective.allowlist)
-      if (!root) return assembled
-
-      const sessionId = agent && agent.session && typeof agent.session.id === 'string' ? agent.session.id : undefined
-      const st = await resolveProjectState(ctx.fs, root, effective.inline === true, sessionId)
-
-      const tools = applyReadonlyPolicy(assembled.tools, st.phase, st.skipState)
-      const trimmedSections = applyReadonlySections(assembled.sections, st.phase, st.skipState)
-      const sections = appendReadonlyInstruction(trimmedSections ?? assembled.sections, st.phase, st.skipState)
-      if (tools || sections) {
-        return {
-          ...assembled,
-          ...(tools ? { tools } : {}),
-          ...(sections ? { sections } : {}),
-        }
-      }
-      return assembled
-    })
-
+      // Model-facing refresh trigger: empty parameters; the session and cwd
+      // come from exec.agent (trusted host context), never from the model.
+      const disposeUiTool = web.tools.register(
+        defineTool({
+          name: 'trellis_ui_update',
+          description:
+            'Refresh the Web UI Trellis task-phase chip cache for the current session. No parameters. Call after a Trellis stage switch, task creation, or check completion so the session-header chip shows the new phase; returns the refreshed summary.',
+          parameters: {},
+          output: {
+            schema: {
+              type: 'object',
+              additionalProperties: false,
+              properties: {
+                kind: { type: 'string' },
+                title: { oneOf: [{ type: 'string' }, { type: 'null' }] },
+                status: { oneOf: [{ type: 'string' }, { type: 'null' }] },
+                stage: { oneOf: [{ type: 'string' }, { type: 'null' }] },
+                phase: { type: 'string' },
+                workType: { oneOf: [{ type: 'string' }, { type: 'null' }] },
+              },
+            },
+            render(args, value) {
+              return [{ type: 'text', text: JSON.stringify(value, null, 2) }]
+            },
+          },
+          async execute(args, exec) {
+            const sessionId =
 ```
 
 </details>
@@ -1408,52 +1404,36 @@ export function applyReadonlyPolicy(tools, phase, skipState = false) {
 
 ### Q04 · 部署、持续与恢复需要哪些投入？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-#### 启动与依赖
+条件为DSH rc.2相关服务/cordis与项目fs，用途为工具、每轮提示与Web状态，边界为peer版本须核，非任意宿主兼容。
+条件为显式cwd allowlist，用途为选择受管项目，边界为默认空不介入。
+条件为可写.agents/skills与.trellis，用途为Skill/模板及任务持久化，边界为进入匹配项目首轮可自动写入。
+条件为Git及项目质量门，用途为提交检查/业务验收，边界为Git失败可放行，质量检查由Agent执行。
+条件为Web remotes/sidebar等，用途为看板与绑定，边界为非独立认证层。
 
-| 条件 | 用途 | 边界 |
-| --- | --- | --- |
-| DSH rc.2相关服务/cordis与项目fs | 工具、每轮提示与Web状态 | peer版本须核，非任意宿主兼容 |
-| 显式cwd allowlist | 选择受管项目 | 默认空不介入 |
-| 可写.agents/skills与.trellis | Skill/模板及任务持久化 | 进入匹配项目首轮可自动写入 |
-| Git及项目质量门 | 提交检查/业务验收 | Git失败可放行，质量检查由Agent执行 |
-| Web remotes/sidebar等 | 看板与绑定 | 非独立认证层 |
+阶段为启动，行为为固定版本、备份同名Skill与任务文件、配allowlist，人员判断为审自动更新与readonly真实范围。
+阶段为规划，行为为用户同意建任务、写产物/steps与验收，人员判断为设计批准须外部真实记录。
+阶段为实施，行为为按步骤推进、独立检查并保存证据，人员判断为不信verified标签等同实际完成。
+阶段为收尾，行为为核业务结果/代码版本、完成与归档，人员判断为Git干净不代业务验收。
 
-#### 使用流程
+阶段为首次，现金与资源成本为本地Skill/模板/任务存储及Host依赖，人工与时间投入为allowlist、备份/合并同名Skill、制定验收，已知条件与未知项为安装工时与存储量未知。
+阶段为持续使用，现金与资源成本为提示上下文token、任务JSON/文档/Git查询，人工与时间投入为写需求/设计/验证、审阶段与用户批准，已知条件与未知项为无同任务token/节省工时对照。
+阶段为失败恢复，现金与资源成本为备份恢复/重复模型调用、残留部分写入，人工与时间投入为核实际代码/产物后修指针与未完整更新，已知条件与未知项为无跨文件事务/硬验收证明，恢复时间未知。
 
-| 阶段 | 行为 | 人员判断 |
-| --- | --- | --- |
-| 启动 | 固定版本、备份同名Skill与任务文件、配allowlist | 审自动更新与readonly真实范围 |
-| 规划 | 用户同意建任务、写产物/steps与验收 | 设计批准须外部真实记录 |
-| 实施 | 按步骤推进、独立检查并保存证据 | 不信verified标签等同实际完成 |
-| 收尾 | 核业务结果/代码版本、完成与归档 | Git干净不代业务验收 |
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 本地Skill/模板/任务存储及Host依赖 | allowlist、备份/合并同名Skill、制定验收 | 安装工时与存储量未知 |
-| 持续使用 | 提示上下文token、任务JSON/文档/Git查询 | 写需求/设计/验证、审阶段与用户批准 | 无同任务token/节省工时对照 |
-| 失败恢复 | 备份恢复/重复模型调用、残留部分写入 | 核实际代码/产物后修指针与未完整更新 | 无跨文件事务/硬验收证明，恢复时间未知 |
-
-#### 效果
-
-| 目标 | 当前增量 | 限制 |
-| --- | --- | --- |
-| 可恢复 | 任务文件/steps/会话绑定 | 记录完整性仍靠写入与人员 |
-| 可见阶段 | 每轮提示/看板 | 不证明批准/测试结果 |
-| 收尾提醒 | 步骤与Git检查 | 可降级/替换/失败放行 |
+目标为可恢复，当前增量为任务文件/steps/会话绑定，限制为记录完整性仍靠写入与人员。
+目标为可见阶段，当前增量为每轮提示/看板，限制为不证明批准/测试结果。
+目标为收尾提醒，当前增量为步骤与Git检查，限制为可降级/替换/失败放行。
 
 Skill部署用版本marker判断升级，同版本只检查目录存在；升级或force覆盖官方同名目录/模板，不比较用户编辑内容，定制其他名字保留。marker写失败仅warn；逐文件写非事务，部分更新可残留。还会尝试删4个明确废弃模板。应先备份/评审同名定制，不能泛称所有用户Skill都不受影响。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-92](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/package.json#L1-L92)
+**依据 1 · 源码核查**：[package.json:1-92](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/package.json#L1-L92)
 
-包/peer。
+当前固定版本复核。包/peer。
 
 <details>
 <summary>查看原文（92行）</summary>
@@ -1461,7 +1441,7 @@ Skill部署用版本marker判断升级，同版本只检查目录存在；升级
 ```text
 {
   "name": "@banana-peeljj12/dsh-trellis",
-  "version": "0.4.1",
+  "version": "0.4.4",
   "description": "Self-contained Trellis workflow trigger for DeepSeek Harness: per-turn breadcrumb injection via agent/pre-step, a bundled skill provider, and DSH-native task/phase state resolution. No Trellis AGPL code is vendored; workflow semantics are rewritten and licensed MIT.",
   "type": "module",
   "main": "lib/index.js",
@@ -1555,9 +1535,9 @@ Skill部署用版本marker判断升级，同版本只检查目录存在；升级
 
 </details>
 
-**依据 2 · 源码核查**：[lib/skills.js:139-236](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/skills.js#L139-L236)
+**依据 2 · 源码核查**：[lib/skills.js:139-236](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/skills.js#L139-L236)
 
-版本覆盖/marker/清理。
+当前固定版本复核。版本覆盖/marker/清理。
 
 <details>
 <summary>查看原文（98行）</summary>
@@ -1665,9 +1645,9 @@ export async function ensureProjectSkills(dshFs, root, { signal, sandboxPolicy, 
 
 </details>
 
-**依据 3 · 源码核查**：[skills/trellis-finish-work/SKILL.md:11-33](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/skills/trellis-finish-work/SKILL.md#L11-L33)
+**依据 3 · 源码核查**：[skills/trellis-finish-work/SKILL.md:11-33](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/skills/trellis-finish-work/SKILL.md#L11-L33)
 
-收尾顺序与范围。
+当前固定版本复核。收尾顺序与范围。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -1700,9 +1680,9 @@ export async function ensureProjectSkills(dshFs, root, { signal, sandboxPolicy, 
 
 </details>
 
-**依据 4 · 源码核查**：[lib/skills.js:50-96](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/skills.js#L50-L96)
+**依据 4 · 源码核查**：[lib/skills.js:50-96](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/skills.js#L50-L96)
 
-四个硬编码废弃模板及实际policy检查后unlink
+当前固定版本复核。四个硬编码废弃模板及实际policy检查后unlink
 
 <details>
 <summary>查看原文（47行）</summary>
@@ -1762,8 +1742,8 @@ export async function pruneDeprecatedProjectTemplates(dshFs, root, { sandboxPoli
 #### 缺口
 
 - 同任务相对手工清单的恢复正确率、上下文token与总人时未知。
-  **影响：**不能量化收益或声称更低总成本。
-  **进一步探讨：**固定需求/中断点比较恢复目标正确性、验收遗漏及规划/审查/恢复人时。
+  **影响**：不能量化收益或声称更低总成本。
+  **进一步探讨**：固定需求/中断点比较恢复目标正确性、验收遗漏及规划/审查/恢复人时。
 
 <a id="research-q05"></a>
 
@@ -1771,7 +1751,7 @@ export async function pruneDeprecatedProjectTemplates(dshFs, root, { sandboxPoli
 
 ### Q05 · 如何采用并进一步探讨可信验收？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1783,9 +1763,9 @@ export async function pruneDeprecatedProjectTemplates(dshFs, root, { sandboxPoli
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/task.js#L172-L301)
+**依据 1 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L172-L301)
 
-凭据来源/降级推导。
+当前固定版本复核。凭据来源/降级推导。
 
 <details>
 <summary>查看原文（130行）</summary>
@@ -1925,9 +1905,9 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/task.js#L880-L915)
+**依据 2 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L880-L915)
 
-整组替换推导。
+当前固定版本复核。整组替换推导。
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -1973,9 +1953,9 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/git.js:151-215](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/lib/git.js#L151-L215)
+**依据 3 · 源码核查**：[lib/git.js:151-215](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/git.js#L151-L215)
 
-unknown与clean分离推导。
+当前固定版本复核。unknown与clean分离推导。
 
 <details>
 <summary>查看原文（65行）</summary>
@@ -2050,14 +2030,17 @@ export function checkGitCleanliness(root, options = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[test/native-steps.test.js:65-101](https://github.com/1264459640/dsh-trellis/blob/b6b1d5260d3d41a5d9cc2e703ad7cae0e6680f6f/test/native-steps.test.js#L65-L101)
+**依据 4 · 源码核查**：[test/native-steps.test.js:65-101](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/test/native-steps.test.js#L65-L101)
 
-作者两阶段测试设计，不等独立执行。
+当前固定版本复核。作者两阶段测试设计，不等独立执行。
 
 <details>
 <summary>查看原文（37行）</summary>
 
 ```text
+  assert.equal(validateSteps([{ id: 'dup', title: 'A' }, { id: 'dup', title: 'B' }]).ok, false)
+
+  const res = validateSteps([
     {
       id: 'step-1',
       title: '接入数据采集',
@@ -2092,9 +2075,6 @@ test('applyStepUpdate enforces verify gate before completion', () => {
   assert.equal(completed.ok, true)
   assert.equal(completed.steps[0].status, 'completed')
 })
-
-test('checkStepsCompletion gates incomplete and unverified steps', () => {
-  assert.equal(checkStepsCompletion(undefined).ok, true)
 ```
 
 </details>
@@ -2102,7 +2082,7 @@ test('checkStepsCompletion gates incomplete and unverified steps', () => {
 #### 缺口
 
 - 版本绑定凭据/独立批准与执行级只读原型未实现。
-  **影响：**不是当前插件已具备的强验收或权限保证。
-  **进一步探讨：**先用假fs/事件/固定Git输出对照接受/拒绝矩阵与人工负担。
+  **影响**：不是当前插件已具备的强验收或权限保证。
+  **进一步探讨**：先用假fs/事件/固定Git输出对照接受/拒绝矩阵与人工负担。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

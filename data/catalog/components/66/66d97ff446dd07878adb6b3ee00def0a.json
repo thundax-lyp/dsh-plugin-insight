@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "66d97ff446dd07878adb6b3ee00def0a",
+    "identity": "github:1422842086:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1422842086:root",
+            "repository": "Fleey/dsh-workspace-folders",
+            "path": "",
+            "revision": "e628a67b208dd3a9efe94897b0bbb2f88bfe6bb2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8a4a38543f4c8cf9d1ebc778e4fb6fe9a30a7386cdd6bd504c1d77732c8bd847",
+                "code": "e628a67b208dd3a9efe94897b0bbb2f88bfe6bb2",
+                "maintenance": "1a59d4d52a947bc17aa45b0c98f2b8c24b99f12633b27b4f72282ed8386fa82b"
+            }
+        }
+    }
+}

@@ -194,7 +194,7 @@ windowHandle声明未用，pid取首窗、tree默认前台而wait/path默认首�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核固定WSL Windows UIA观察机制，区分窗口/观测标签与稳定身份、返回数与访问预算、读取与披露。
+**插件研究总目标**：核固定WSL Windows UIA观察机制，区分窗口/观测标签与稳定身份、返回数与访问预算、读取与披露。
 
 <a id="research-q01"></a>
 
@@ -202,7 +202,7 @@ windowHandle声明未用，pid取首窗、tree默认前台而wait/path默认首�
 
 ### Q01 · 观察Windows UI适合什么问题？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -296,7 +296,7 @@ export function normalizeElement(e, index, epoch) {
 
 ### Q02 · 从WSL到UIA数据怎么产生，亮点在哪里？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -539,7 +539,7 @@ ConvertTo-Json -Compress -Depth 5 @{ chain = @($chain); searched = $seen }
 
 ### Q03 · 窗口、handle与秘密披露怎样界定？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -706,11 +706,11 @@ export function checkHandle(handle, { epoch, pid }) {
 #### 缺口
 
 - 独立wininput对handle/窗口/名称的同版本验证链未检查。
-  **影响：**不提供跨插件防陈旧动作或授权保证。
-  **进一步探讨：**可继续固定两仓版本，核观察ID/窗口身份/目标名称在动作前是否重读且拒歧义。
+  **影响**：不提供跨插件防陈旧动作或授权保证。
+  **进一步探讨**：可继续固定两仓版本，核观察ID/窗口身份/目标名称在动作前是否重读且拒歧义。
 - 各应用UIA provider可见数据与敏感Name/title缺少受控样本。
-  **影响：**不能承诺无秘密披露或UIA覆盖率。
-  **进一步探讨：**用无真实秘密的自制窗口测试password控件、带假token标题及被遮挡/提权窗，核过滤策略。
+  **影响**：不能承诺无秘密披露或UIA覆盖率。
+  **进一步探讨**：用无真实秘密的自制窗口测试password控件、带假token标题及被遮挡/提权窗，核过滤策略。
 
 <a id="research-q04"></a>
 
@@ -718,7 +718,7 @@ export function checkHandle(handle, { epoch, pid }) {
 
 ### Q04 · 启动需要哪些条件，推荐读者怎样使用？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
@@ -850,7 +850,7 @@ ${locate(expectName, expectType, maxDepth, maxElements)}
 
 ### Q05 · 遍历上限、等待与取消是否真正有界？
 
-**研究主题：**工程质量与复用
+**研究主题**：工程质量与复用
 
 #### 完整回答
 
@@ -1068,8 +1068,8 @@ import { buildWaitScript, buildPathScript, waitForElement, elementPath } from ".
 #### 缺口
 
 - 窄过滤大树、慢UIA、取消和同时观察的实际开销/资源清理未量测。
-  **影响：**不能保证节点/时间预算严格或下游目标稳定。
-  **进一步探讨：**自制大树与慢provider核visited/returned/depth截断、总等待和取消后进程，不用真实桌面数据。
+  **影响**：不能保证节点/时间预算严格或下游目标稳定。
+  **进一步探讨**：自制大树与慢provider核visited/returned/depth截断、总等待和取消后进程，不用真实桌面数据。
 
 <a id="research-q06"></a>
 
@@ -1077,7 +1077,7 @@ import { buildWaitScript, buildPathScript, waitForElement, elementPath } from ".
 
 ### Q06 · 成本效果、推荐和可继续探讨的方向是什么？
 
-**研究主题：**效果与总成本、采用判断、新假设与验证
+**研究主题**：效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -1175,10 +1175,10 @@ export async function waitForElement(args, config) {
 #### 缺口
 
 - 没有截图/手动描述与UIA同任务正确率、时间和披露量对照。
-  **影响：**不能量化省时或安全优势。
-  **进一步探讨：**用自制无敏感应用的固定定位任务比较准确、操作数、token和延迟。
+  **影响**：不能量化省时或安全优势。
+  **进一步探讨**：用自制无敏感应用的固定定位任务比较准确、操作数、token和延迟。
 - 窗口绑定观察收据/敏感策略/贯穿取消方案未实现。
-  **影响：**不计当前防陈旧或隐私保证。
-  **进一步探讨：**固定多窗/焦点/慢树/假秘密异常序列对照拒绝和成本。
+  **影响**：不计当前防陈旧或隐私保证。
+  **进一步探讨**：固定多窗/焦点/慢树/假秘密异常序列对照拒绝和成本。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

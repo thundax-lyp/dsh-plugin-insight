@@ -7,14 +7,14 @@
             "id": "github:1353490737:root",
             "repository": "drscrewdriver/dsh-prime-memory",
             "path": "",
-            "revision": "14b78ba71acbf474599a147bc95487f8a719b76f",
+            "revision": "ef0896f1e3741e88d1b0128c3a14077576ed77b8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "238548b9a9169d15103ef24d4a5976ddb34cb0282349039b8c38707b63dbec70",
-                "code": "14b78ba71acbf474599a147bc95487f8a719b76f",
-                "maintenance": "132be1e38af68dd3e1e9a4b64f005dd566f2501e13caf80c61b3de3c01e518be"
+                "code": "ef0896f1e3741e88d1b0128c3a14077576ed77b8",
+                "maintenance": "39a92d18ff3ada44ab9052e3fad13c460289d856a1890acb1690ff700f17a9b8"
             }
         }
     }

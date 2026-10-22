@@ -7,14 +7,14 @@
             "id": "github:1341363840:root",
             "repository": "lemonxiny55/dsh-code-index",
             "path": "",
-            "revision": "ba24d2abdc158ae14d60727c20d77752453237ad",
+            "revision": "72be3146247d7e9c7f9df2847eb55b1ab0d992c5",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8d79ac39f30a36bd15ee57a436d7714a3feb813d10022ad64c21b23b332109bd",
-                "code": "ba24d2abdc158ae14d60727c20d77752453237ad",
-                "maintenance": "09e6580142d75686eb8fe5ec35cfca09076111d0132613214756faafd802a71c"
+                "code": "72be3146247d7e9c7f9df2847eb55b1ab0d992c5",
+                "maintenance": "90f44fb53db9a191e8898497b70a75be70328299b2b22a58c7ff477dcde089c2"
             }
         }
     }

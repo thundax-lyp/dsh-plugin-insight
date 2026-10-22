@@ -438,14 +438,14 @@
             "repository": "439436269-ctrl/dsh-piano",
             "path": "",
             "revision": "6d04df38659655b3c71136bfe0172d0d14439d64",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "26ee1a4ef48846ccd4718603bf0141a4edd0d6b687a8b97c2b6480844ddc4bb1",
                 "code": "6d04df38659655b3c71136bfe0172d0d14439d64",
                 "maintenance": "2045b9651c588221b48cf45fb1dc2ab87401c1ec5aaddc3e8e077eb7f2f0f16b"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

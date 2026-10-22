@@ -7,14 +7,14 @@
             "id": "github:1422886907:root",
             "repository": "wweir/dsh-advisor",
             "path": "",
-            "revision": "e60ab17592c8e182f65bd94a3fc2fe37f76a6f54",
+            "revision": "96a332bc64da726e3f0dbfc11b56cbe698c77569",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d2fd4dfb8160f040425fd7eb6b79ef365e1b05d6ea990b8d79eee3edf30795e4",
-                "code": "e60ab17592c8e182f65bd94a3fc2fe37f76a6f54",
-                "maintenance": "d7902d067aa8cf04aa0432914110e6f2978ba83f5b030181d38f1f214a8f8e77"
+                "code": "96a332bc64da726e3f0dbfc11b56cbe698c77569",
+                "maintenance": "781828e7b827233243b0b02758849ad8753d93d29706dc502b57304b5c700ccc"
             }
         }
     }

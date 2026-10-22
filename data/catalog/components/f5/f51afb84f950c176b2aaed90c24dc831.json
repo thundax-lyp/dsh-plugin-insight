@@ -472,14 +472,14 @@
             "repository": "AhYi8/dsh-gotify-notify",
             "path": "",
             "revision": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "c6e98f08572541ff5f559cf915a61d7c3228ce0bc655ba6235e771156896d95f",
                 "code": "6fe16310caa4233bb09086cd76c8dfb4b3e871c7",
                 "maintenance": "8cdc99c9f85902a8033896e41d3bdb686028c3225eccd0b1e4bb72324132387f"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

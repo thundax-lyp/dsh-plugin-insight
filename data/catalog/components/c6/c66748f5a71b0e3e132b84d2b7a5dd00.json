@@ -7,14 +7,14 @@
             "id": "github:1342382831:plugins-dsh-my-context",
             "repository": "baosfeng/my-dsh-plugins",
             "path": "plugins/dsh-my-context",
-            "revision": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
+            "revision": "bc34eda01068f9e862d9953ca569773539c6b820",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f329cdabc742346f5f0c7db6c935d4ee01fe0f8c599776b93a18368649e2783f",
-                "code": "187f4e9342b0af0122cb681bb2f781b9aaa12008",
-                "maintenance": "fb9b774cd98aed1498b3728886e651d430a33b9df901c2194b4f19380c3f5850"
+                "code": "bc34eda01068f9e862d9953ca569773539c6b820",
+                "maintenance": "836cd5189fa725f7d6d622b06482dab61b19abf5d2d6104323f6110aaef50213"
             }
         }
     }

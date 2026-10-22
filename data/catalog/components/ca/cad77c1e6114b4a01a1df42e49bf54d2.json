@@ -457,14 +457,14 @@
             "repository": "AgentDebugX/AgentDebugX",
             "path": "integrations/dsh-agentdebugx",
             "revision": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "7c50b90f0eb0fe5742f5959d6a25d4efc769370104d3c3e8aa4ee4fd54b8daf3",
                 "code": "2437c73c3183e6b6495259dfbb12464a7f07f6b8",
                 "maintenance": "5faa62256e92200bf18e0e62831dbf24b02d7a6b93a96b1a28e1db34a56fb607"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

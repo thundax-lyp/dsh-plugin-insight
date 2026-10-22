@@ -7,14 +7,14 @@
             "id": "github:1405916815:root",
             "repository": "Zian-anson/dsh-prompt-seed",
             "path": "",
-            "revision": "69ad427f935653f0c5ae0acb27227d02cdc6f415",
+            "revision": "104948860daeb0c2bb7e015e2facc51d9c9ddb61",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7232898e8df75f5126ee57095eeab2507a5a12e0f1c912f1bf8d282329dc081f",
-                "code": "69ad427f935653f0c5ae0acb27227d02cdc6f415",
-                "maintenance": "ab52c3804e9e2ab92dc5fd7f7f9e2dd5ed6aa689aa76ff7593c0c8002a494801"
+                "code": "104948860daeb0c2bb7e015e2facc51d9c9ddb61",
+                "maintenance": "03daa7cdabed703f6ab52322c789af82ded0eed171ad9308230e011b98f5e5fd"
             }
         }
     }

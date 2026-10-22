@@ -7,14 +7,14 @@
             "id": "github:1399065742:root",
             "repository": "copylee711/dsh-image-gen",
             "path": "",
-            "revision": "34ef250e0d3f5961f8c13c0ce188e267624415e4",
+            "revision": "a54827ff759cbb9b7d4d971d8c92e4eed86343aa",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "dcd67dd24366f010ce1bf5ba47d7a2ba540eb9e9b502eaed722d5144db87d648",
-                "code": "34ef250e0d3f5961f8c13c0ce188e267624415e4",
-                "maintenance": "269dfb626188c90b3f6799f4ceef0aab2bf419ba532aa554274898595bb9bbc9"
+                "code": "a54827ff759cbb9b7d4d971d8c92e4eed86343aa",
+                "maintenance": "19714467088839f611956feaea1a61acfd85006e52acb72d82939a2c30188c11"
             }
         }
     }

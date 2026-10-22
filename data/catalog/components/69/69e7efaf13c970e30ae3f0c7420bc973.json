@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "69e7efaf13c970e30ae3f0c7420bc973",
+    "identity": "github:1336092482:01-content",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1336092482:01-content",
+            "repository": "Aisland-SJL/dsh-worktable",
+            "path": "01_content",
+            "revision": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e8c1104a3b4044f551c6940dfed8b37ceec4d0b2ced7b3c0a263a2d3f9ef6867",
+                "code": "6cb86b6c73b3c356373e06cd81e08952542ea040",
+                "maintenance": "c34d5070dcaeb63bd99ea170af4d58d2da7b18017deb355d96b87a3f6c920754"
+            }
+        }
+    }
+}

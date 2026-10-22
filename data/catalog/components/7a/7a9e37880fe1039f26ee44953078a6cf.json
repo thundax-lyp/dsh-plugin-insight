@@ -468,14 +468,14 @@
             "repository": "AmethystLuna/embedded-workbench",
             "path": "",
             "revision": "1bb1bcfc45ca6efab327967a252d4d9203a323a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "2a783512285aa0e800c01f481d75a5b205e2d26dc5ed5fa0ab795c2e328634b7",
                 "code": "1bb1bcfc45ca6efab327967a252d4d9203a323a7",
                 "maintenance": "2b99ec8902132696d3e5e309b74353038404ea77059b8ca9b14d5902952aaa60"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -168,7 +168,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**WSL 到 Obscura 的浏览器抓取桥有哪些真实能力与安全依赖？
+**插件研究总目标**：WSL 到 Obscura 的浏览器抓取桥有哪些真实能力与安全依赖？
 
 <a id="research-q01"></a>
 
@@ -176,7 +176,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-20），可前往 [Gi
 
 ### Q01 · 与 GUI 浏览器或完整 MCP 工具有何区别？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -361,7 +361,7 @@ hint 不启动
 
 ### Q02 · 二进制与 fetch 参数如何组装？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -520,8 +520,8 @@ export async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFil
 #### 缺口
 
 - 目标 Windows interop 与二进制架构未验
-  **影响：**配置存在不代表可执行
-  **进一步探讨：**WSL 内对 native/.exe 各验 --version 与 fetch
+  **影响**：配置存在不代表可执行
+  **进一步探讨**：WSL 内对 native/.exe 各验 --version 与 fetch
 
 <a id="research-q03"></a>
 
@@ -529,7 +529,7 @@ export async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFil
 
 ### Q03 · 私网访问防线是否由插件实现？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -638,8 +638,8 @@ fetch 真正调用
 #### 缺口
 
 - Obscura 私网/DNS/重定向规则未核
-  **影响：**不能把插件 URL 过滤当完整 SSRF 保护
-  **进一步探讨：**固定 Obscura 版本测 localhost、LAN、DNS/重定向
+  **影响**：不能把插件 URL 过滤当完整 SSRF 保护
+  **进一步探讨**：固定 Obscura 版本测 localhost、LAN、DNS/重定向
 
 <a id="research-q04"></a>
 
@@ -647,7 +647,7 @@ fetch 真正调用
 
 ### Q04 · 默认 stealth、超时和输出有何容易误解处？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -771,8 +771,8 @@ export async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFil
 #### 缺口
 
 - 目标网页耗时/大输出未测
-  **影响：**预期 stealth 或截断与实际不同
-  **进一步探讨：**目标大小页/超时矩阵
+  **影响**：预期 stealth 或截断与实际不同
+  **进一步探讨**：目标大小页/超时矩阵
 
 <a id="research-q05"></a>
 
@@ -780,7 +780,7 @@ export async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFil
 
 ### Q05 · 怎样试用和评估可迁移价值？
 
-**研究主题：**采用判断、新假设与验证、效果与总成本
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
@@ -949,7 +949,7 @@ export async function runObscura(bin, args, { timeoutMs = 60_000, exec = execFil
 #### 缺口
 
 - 站点兼容与维护成本未知
-  **影响：**不能仅凭静态代码投入批量网页工作流
-  **进一步探讨：**许可站点样本集与二进制矩阵
+  **影响**：不能仅凭静态代码投入批量网页工作流
+  **进一步探讨**：许可站点样本集与二进制矩阵
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

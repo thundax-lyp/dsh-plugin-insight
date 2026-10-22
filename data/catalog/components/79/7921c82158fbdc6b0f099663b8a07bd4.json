@@ -7,14 +7,14 @@
             "id": "github:1350415897:root",
             "repository": "mengnanxyyyy/dsh-markdown-xyy",
             "path": "",
-            "revision": "fae588b9d83c551b58057454e41574ab31c94d65",
+            "revision": "a61751fe4e527c5f8926923984c323bb464c5561",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "eb9382d0f4b5cf566083bb876d7b0efaa6f63e3f2d66da7feb2b2d5e09afb299",
-                "code": "fae588b9d83c551b58057454e41574ab31c94d65",
-                "maintenance": "29e55092eece0f1ad41a26f63de6bee9e33f749c98deaedb6c93fa42c45661eb"
+                "code": "a61751fe4e527c5f8926923984c323bb464c5561",
+                "maintenance": "e50d85428959b38b8fa8e4efd5eea09744e82bcffa8dc6eaf40617acc5c46704"
             }
         }
     }

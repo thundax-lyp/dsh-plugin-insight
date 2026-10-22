@@ -7,14 +7,14 @@
             "id": "github:1333928224:root",
             "repository": "gezi-wen/sage-mem",
             "path": "",
-            "revision": "2fff74cfddbc9afaec562e73aa0aa5f82bd1be15",
+            "revision": "e58f9ecf430ca942bf0e7358106142d28e43190e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "648a215245735f70940f79ba890d1bc81fa4277e35b3daf6598be9eddecbb663",
-                "code": "2fff74cfddbc9afaec562e73aa0aa5f82bd1be15",
-                "maintenance": "2bf0b3005198750075d32e16a8d942dfefb4334f64d7ba19699ec8b288615de6"
+                "code": "e58f9ecf430ca942bf0e7358106142d28e43190e",
+                "maintenance": "70e851c70bdb87ab05b683f341601bdedd4b6299873859024e227b86cda426d6"
             }
         }
     }

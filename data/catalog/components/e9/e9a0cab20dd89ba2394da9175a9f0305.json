@@ -7,14 +7,14 @@
             "id": "github:1411219511:root",
             "repository": "wt0812/dsh-vocab-study",
             "path": "",
-            "revision": "b5df0fd0dacf93092b3e6065aecef072a83abbba",
+            "revision": "2593c16a9f6dbf53e7f64d93babcf658f8edada7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e4ca26b2f7c7df89d78af3d8395d53b33545d58bc425ce402a3705356125df69",
-                "code": "b5df0fd0dacf93092b3e6065aecef072a83abbba",
-                "maintenance": "00e57cd8d0d3481ccbd0c928f072cd61b3714ad9f83e745430af3f21a6c81802"
+                "code": "2593c16a9f6dbf53e7f64d93babcf658f8edada7",
+                "maintenance": "59c14216c63a7f694f7a9075e2bc3c1afc3d069c6410bc3e2d4540e0f4d5520c"
             }
         }
     }

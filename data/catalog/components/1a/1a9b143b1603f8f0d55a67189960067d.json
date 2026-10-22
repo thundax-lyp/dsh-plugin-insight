@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1a9b143b1603f8f0d55a67189960067d",
+    "identity": "github:1426272073:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426272073:root",
+            "repository": "XiaoOu2024/dsh-novel-generator",
+            "path": "",
+            "revision": "f50388958c16b90ae10657eee94e3176d9d69f26",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "54f822dcb0989b8b15a3291dfad532cb5399d939099626526c3f6bad86038b1e",
+                "code": "f50388958c16b90ae10657eee94e3176d9d69f26",
+                "maintenance": "6405f50be20bb01a76c253cfce197bfd139c8ef4e49a4b6859a1575d0de9a79f"
+            }
+        }
+    }
+}

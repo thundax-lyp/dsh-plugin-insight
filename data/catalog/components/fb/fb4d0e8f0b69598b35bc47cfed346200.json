@@ -7,14 +7,14 @@
             "id": "github:1398206168:root",
             "repository": "YunongDai2005/dsh-theone",
             "path": "",
-            "revision": "ed864595b8072cef571d1e52935a51ea45d8770e",
+            "revision": "d21553fb8d151f875221bc54dfe1e90ed71c23e3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e9afb28628723fefa5f514e76a1440a5cefd62acde67f4ba79e240b915116fe8",
-                "code": "ed864595b8072cef571d1e52935a51ea45d8770e",
-                "maintenance": "1026a212f8dcf1cb0ae09d9fd6f163d0ebdb745d0f54ec98ab50dfff8b93fbd8"
+                "code": "d21553fb8d151f875221bc54dfe1e90ed71c23e3",
+                "maintenance": "d508ca2030ce118a3a62f4f71140db86522a8256bbd23f2b019a604124d6a571"
             }
         }
     }

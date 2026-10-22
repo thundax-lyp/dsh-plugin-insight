@@ -7,14 +7,14 @@
             "id": "github:1411566518:root",
             "repository": "happyqu/dsh-plugin-git",
             "path": "",
-            "revision": "44de54f656d381d1c4b5f9b9d5828a7940146006",
+            "revision": "1843683ff49f3ee1fbbebd377e71744647326cdb",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "576f00010394d5520f77ddef0762a9c1b1e6c7eb651e9e81d3d78c8d45acd2a4",
-                "code": "44de54f656d381d1c4b5f9b9d5828a7940146006",
-                "maintenance": "fb600f0a5f4bda75b11b4c30e9d4a8e35a3896f741238515c6791795faa146c2"
+                "code": "1843683ff49f3ee1fbbebd377e71744647326cdb",
+                "maintenance": "eb6a810d152262fb163b9c9c916c7ccad890b23014f650c561ce2c8c813c0f15"
             }
         }
     }

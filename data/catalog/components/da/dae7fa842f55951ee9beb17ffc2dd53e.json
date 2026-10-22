@@ -7,14 +7,14 @@
             "id": "github:1337213109:root",
             "repository": "fno2010/dsh-web-search-ext",
             "path": "",
-            "revision": "58da16b497f83ca321de8c384d5c6b50f58003ce",
+            "revision": "8574382d30adc5b7c0434298336a7fb7afc1bf9b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ca608a425b06d8cd6813f7afc77e852beb041f186fe3440a2934b9f12f9a768c",
-                "code": "58da16b497f83ca321de8c384d5c6b50f58003ce",
-                "maintenance": "92fdd877a15d9cad4f88dc2b792e3671c263fc3ce102d3831c0200511692776d"
+                "code": "8574382d30adc5b7c0434298336a7fb7afc1bf9b",
+                "maintenance": "c815cca68eb1a9ed9cb3fd1931cafe4dfa41e05e07f77717182de5e9fadcf67b"
             }
         }
     }

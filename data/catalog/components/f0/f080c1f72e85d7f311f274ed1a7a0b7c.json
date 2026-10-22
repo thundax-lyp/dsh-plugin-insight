@@ -7,14 +7,14 @@
             "id": "github:1408744753:root",
             "repository": "PerryLink/dsh-aqua-input-check",
             "path": "",
-            "revision": "a53e5eee040f7de7647fe01b2c8c351076b850c8",
+            "revision": "c7263f23d1561137816add0a975d01be4e3e71dc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e2fd4ba213cc44fbc197a07681aca2622232209c508e214dc329166648fb655a",
-                "code": "a53e5eee040f7de7647fe01b2c8c351076b850c8",
-                "maintenance": "b066b46d629350b2c07179d74c7f8029b2e29ec2f90cae27999a625373c1ed2c"
+                "code": "c7263f23d1561137816add0a975d01be4e3e71dc",
+                "maintenance": "8c6de55baa71ae3c18965f0a817b52ba3a791aa900598731dc92767f5cea3dd7"
             }
         }
     }

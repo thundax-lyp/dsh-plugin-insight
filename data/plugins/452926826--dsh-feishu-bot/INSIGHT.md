@@ -180,7 +180,7 @@ coordinator/bridge/store职责分开和会话队列有价值；连接重连不�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**固定版扫码绑定与远程会话/审批/投递能否形成可解释可信流程。
+**插件研究总目标**：固定版扫码绑定与远程会话/审批/投递能否形成可解释可信流程。
 
 <a id="research-q01"></a>
 
@@ -188,7 +188,7 @@ coordinator/bridge/store职责分开和会话队列有价值；连接重连不�
 
 ### Q01 · 飞书入口实际完成什么任务，相比手动桥接有何增量？
 
-**研究主题：**场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -393,7 +393,7 @@ export function apply(ctx) {
 
 ### Q02 · 扫码凭证与状态界面是否形成可信绑定？
 
-**研究主题：**依赖、兼容与流程、缺陷与关键质疑、工程质量与复用
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -642,8 +642,8 @@ export function isSenderAllowed(chatId, senderOpenId, allowedChats, allowedUsers
 #### 缺口
 
 - 宿主webServer访问控制与SDK扫码user_info契约
-  **影响：**未绑定QR的可读人群、默认owner限制与状态展示可信度依赖这两项
-  **进一步探讨：**核固定宿主路由认证及SDK确切返回字段，比较环境/本地凭证并存、缺owner及仅appId损坏文件
+  **影响**：未绑定QR的可读人群、默认owner限制与状态展示可信度依赖这两项
+  **进一步探讨**：核固定宿主路由认证及SDK确切返回字段，比较环境/本地凭证并存、缺owner及仅appId损坏文件
 
 <a id="research-q03"></a>
 
@@ -651,7 +651,7 @@ export function isSenderAllowed(chatId, senderOpenId, allowedChats, allowedUsers
 
 ### Q03 · 选择按聊天保存是否意味着项目/会话隔离，并发失败怎样处理？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -879,7 +879,7 @@ active Set。
 
 ### Q04 · 审批能确认原始发起者批准了正确操作吗？
 
-**研究主题：**缺陷与关键质疑、功能与机制
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
@@ -1103,8 +1103,8 @@ test('passes approvals without a Feishu route to the next answerer', async () =>
 #### 缺口
 
 - 宿主审批signal的超时/撤回契约和飞书SDK业务失败是否reject
-  **影响：**本地没有超时且不核code，不能保证未投递/过期审批一定退出
-  **进一步探讨：**核固定宿主取消语义及SDK错误形态，按延迟旧批准、同chat两session和返回非0 code反例检验
+  **影响**：本地没有超时且不核code，不能保证未投递/过期审批一定退出
+  **进一步探讨**：核固定宿主取消语义及SDK错误形态，按延迟旧批准、同chat两session和返回非0 code反例检验
 
 <a id="research-q05"></a>
 
@@ -1112,7 +1112,7 @@ test('passes approvals without a Feishu route to the next answerer', async () =>
 
 ### Q05 · 回复、完成广播与重连保证何种交付？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -1381,7 +1381,7 @@ async function registerUntilComplete(options) {
 
 ### Q06 · 启动与三阶段成本需要哪些真实条件？
 
-**研究主题：**效果与总成本、依赖、兼容与流程、工程质量与复用
+**研究主题**：效果与总成本、依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
@@ -1565,7 +1565,7 @@ test('always keeps the originating chat in completion targets', () => {
 
 ### Q07 · 采用与可证伪改进方向是什么？
 
-**研究主题：**采用判断、贡献与相对优势、新假设与验证
+**研究主题**：采用判断、贡献与相对优势、新假设与验证
 
 #### 完整回答
 

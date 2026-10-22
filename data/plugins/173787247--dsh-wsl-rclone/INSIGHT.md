@@ -173,7 +173,7 @@ argv 避免 shell 拼接；默认 remote 策略和上游枚举限额需部署控
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**rclone 只读工具的远程授权、枚举成本与健康状态是否清楚？
+**插件研究总目标**：rclone 只读工具的远程授权、枚举成本与健康状态是否清楚？
 
 <a id="research-q01"></a>
 
@@ -181,7 +181,7 @@ argv 避免 shell 拼接；默认 remote 策略和上游枚举限额需部署控
 
 ### Q01 · 只读 rclone 能力覆盖什么、不能做什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -449,7 +449,7 @@ export async function rcloneAbout({ remote, timeoutMs } = {}) {
 
 ### Q02 · 允许列表和路径校验能否约束 egress？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -615,8 +615,8 @@ export function run(bin, args, { timeoutMs = 60_000, maxOut = 80_000 } = {}) {
 #### 缺口
 
 - 目标 rclone on-the-fly backend 语义未运行
-  **影响：**默认允许配置外动态后端探测
-  **进一步探讨：**目标隔离配置测 :backend: 与白名单
+  **影响**：默认允许配置外动态后端探测
+  **进一步探讨**：目标隔离配置测 :backend: 与白名单
 
 <a id="research-q03"></a>
 
@@ -624,7 +624,7 @@ export function run(bin, args, { timeoutMs = 60_000, maxOut = 80_000 } = {}) {
 
 ### Q03 · 条目上限是否限制云端枚举量？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -747,8 +747,8 @@ export async function rcloneLsf({ remotePath, maxEntries = 100, timeoutMs, maxOu
 #### 缺口
 
 - 目标大 remote 枚举请求成本未知
-  **影响：**对对象存储可能产生较多 list API 费用
-  **进一步探讨：**目标小/大桶对照请求次数与截断
+  **影响**：对对象存储可能产生较多 list API 费用
+  **进一步探讨**：目标小/大桶对照请求次数与截断
 
 <a id="research-q04"></a>
 
@@ -756,7 +756,7 @@ export async function rcloneLsf({ remotePath, maxEntries = 100, timeoutMs, maxOu
 
 ### Q04 · status 与 about 的成功状态能代表什么？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -864,8 +864,8 @@ listremotes 过滤
 #### 缺口
 
 - 目标后端 about 支持/工具耗时未测
-  **影响：**自动诊断若只看 ok 会误判
-  **进一步探讨：**目标无 rclone/不支持 about 的 remote 验证
+  **影响**：自动诊断若只看 ok 会误判
+  **进一步探讨**：目标无 rclone/不支持 about 的 remote 验证
 
 <a id="research-q05"></a>
 
@@ -873,7 +873,7 @@ listremotes 过滤
 
 ### Q05 · 怎样安全采用云端只读目录观察？
 
-**研究主题：**采用判断、新假设与验证、效果与总成本
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
@@ -966,7 +966,7 @@ export async function rcloneAbout({ remote, timeoutMs } = {}) {
 #### 缺口
 
 - 真实对象存储计费/可见范围未知
-  **影响：**只能当受控只读诊断工具
-  **进一步探讨：**只读凭据小目录试点与审计
+  **影响**：只能当受控只读诊断工具
+  **进一步探讨**：只读凭据小目录试点与审计
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[aeac4c9](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)
+分析版本：[6ee58a2](https://github.com/456erddgr/dsh-boo550wt-animation/tree/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
@@ -42,7 +42,7 @@
 
 > **用途**：个人用户为 DSH 开机增加品牌化 550W 风格视频，播毕或 Esc 后进入界面。详见[Q01](#research-q01)。
 
-默认 DSH 直接进入界面；动画提升风格但增加启动等待和资源。
+插件在 Desktop/Web 入口的 webserver/index-inject 中注入 style 和 body script，先于客户端模块加载建立全屏视频遮罩；应用在下面继续启动，视频播完或按 Esc 后淡出。自带 12.1MB 素材、可换本地 mp4，适合个人品牌化启动体验，不改变 DSH 工作流效率。README 的真实 Chromium 截图/自检是作者报告，本轮只看源码与资源存在，未复现目标 Desktop。
 
 <a id="detail-section-3"></a>
 
@@ -66,7 +66,7 @@
 | 浏览器媒体栈 | 必需 | H.264/AAC 解码与 Range | 播放失败回退 |
 | boot.mp4/自定义视频 | 必需 | 内容 | 404/错误退出 |
 
-#### 使用步骤
+#### 启动步骤
 
 | 步骤 | 动作 | 判据/恢复 |
 | --- | --- | --- |
@@ -123,18 +123,18 @@ maxSeconds 初始计时器被 metadata 清掉，长视频或无效 duration 可�
 
 **核查状态**：已检查源码。
 
-源码可核注入/Range/跳过；loadedmetadata 会替换 maxSeconds guard，所谓硬上限不成立，配置和减动效缺口未实测。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/inject.js、lib/media.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/inject.js、lib/media.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：只读核固定提交 README、Host/注入/媒体源码与素材大小；未运行插件、自检、浏览器或目标 Desktop；旧 META 仅复用。
-- 下一步：目标 Desktop 冷启动、Range/解码、自动播放拒绝、无效/长 metadata、负值配置、减动效与 state 鉴权。
+- 下一步：进一步探讨应按本项缺口执行：保留独立 absolute guard，长视频/无效 metadata/停滞回归；参数边界、reduced-motion、内存/首帧性能矩阵；目标环境做鉴权/安装/损坏素材/长视频/减动效验收
 
 **分析版本**
 
 - **仓库**：[456erddgr/dsh-boo550wt-animation](https://github.com/456erddgr/dsh-boo550wt-animation)
-- **版本号**：1.0.0（[固定提交 aeac4c9](https://github.com/456erddgr/dsh-boo550wt-animation/tree/aeac4c96f33b7947e19b44c36c421185ec2cda1a)）
-- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.4.0（[固定提交 6ee58a2](https://github.com/456erddgr/dsh-boo550wt-animation/tree/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147)）
+- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -144,7 +144,7 @@ maxSeconds 初始计时器被 metadata 清掉，长视频或无效 duration 可�
 
 未验证方向为独立绝对上限计时器、配置 schema/range、减动效门控和状态路由权限审计。详见[Q05](#research-q05)。
 
-目标 Desktop 冷启动、Range/解码、自动播放拒绝、无效/长 metadata、负值配置、减动效与 state 鉴权。
+进一步探讨应按本项缺口执行：保留独立 absolute guard，长视频/无效 metadata/停滞回归；参数边界、reduced-motion、内存/首帧性能矩阵；目标环境做鉴权/安装/损坏素材/长视频/减动效验收
 
 <a id="detail-section-9"></a>
 
@@ -155,21 +155,21 @@ maxSeconds 初始计时器被 metadata 清掉，长视频或无效 duration 可�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 500 | 359 | 95 | — |
-| .md | source | 1 | 148 | — | — | 1753 |
-| .mjs | source | 4 | 900 | 744 | 84 | — |
+| .js | source | 7 | 3034 | 2468 | 352 | — |
+| .md | source | 2 | 176 | — | — | 2443 |
+| .mjs | source | 4 | 1308 | 1100 | 115 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/456erddgr/dsh-boo550wt-animation/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/456erddgr/dsh-boo550wt-animation/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**启动遮罩能否可靠交接且在长视频、异常配置和无障碍条件下及时释放界面？
+**插件研究总目标**：启动遮罩能否可靠交接且在长视频、异常配置和无障碍条件下及时释放界面？
 
 <a id="research-q01"></a>
 
@@ -177,7 +177,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ### Q01 · 开机动画如何覆盖应用启动，实际带来何种价值？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -185,83 +185,100 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-23](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L1-L23)
+**依据 1 · 作者声明**：[README.md:1-23](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/README.md#L1-L23)
 
-作者启动体验和预览声明
+当前固定版本复核。作者启动体验和预览声明
 
 <details>
 <summary>查看原文（23行）</summary>
 
-````text
+```text
 # dsh-boo550wt-animation
 
-给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏播放一段视频，播完（或者按 `Esc`）才进入界面。
+给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏展示一段内容，播完（或者按 `Esc`）才进入界面。
 
-> 自带素材 `assets/boot.mp4` 是一段 **550W 风格**的启动动画 —— 16.6 秒、1024×576、H.264 + AAC、12.1 MB。
+支持四种模式，全部可以在设置面板里改：
 
+| 模式 | 内容 | 结束方式 |
+| --- | --- | --- |
+| `video` | 视频（默认：自带的 550W 风格动画，16.6 秒） | 播完自动进入 |
+| `image` | 图片 | 显示 `durationMs` 后进入 |
+| `web` | 网页（URL 或本地 HTML 文件） | 页面发完成消息，或超时 |
+| `game` | 内置小游戏（六款） | 通关后进入 |
+
+素材来源有两条路：**直接上传**（设置面板里点选或拖入文件，存进插件自己的目录），或**填绝对路径**指向你已有的文件。视频默认**带声音播放**。
+
+## 内置小游戏
+
+| 游戏 | 玩法 | 通关条件 |
+| --- | --- | --- |
+| 贪吃蛇 | 方向键 / WASD 吃豆子 | 吃满 30 个 |
+| 2048 | 方向键 / WASD 合并数字 | 拼出 2048 |
+| 打砖块 | ← → 移动挡板接球 | 清空全部砖块 |
+| 记忆翻牌 | 点击翻牌配对 | 8 组全部配对 |
 ```
-打开 DSH  ─▶  黑底 + 视频  ─▶  播完 / 按 Esc  ─▶  淡出  ─▶  正常界面
-```
-
-关键在于**交接时机**：遮罩在 DSH 结算「启动就绪」之前就已经挂上去了，所以应用是在遮罩底下正常渲染的，等动画结束再把界面让出来 —— 而不是先看到界面再盖一层。
-
-## 效果预览
-
-自带素材的分镜（2.0s / 6.0s / 12.0s / 15.0s）：
-
-![开机动画分镜：550W 标志、量子计算机控制系统、剩余进度 69%、剩余进度 100%](docs/preview.png)
-
-真实播放时的样子 —— 画面铺满窗口，右下角在 4 秒后浮现跳过提示：
-
-![实际播放画面，右下角显示「按 Esc 跳过」](docs/boot-scene.png)
-
-> 两张图都是从 `assets/boot.mp4` 里实拍的，不是效果图：用真实 Chromium 媒体栈经插件的 Range 路由解码后截帧生成（`tools/stills.mjs` 与 `tools/browser-check.mjs --shot=`）。
-````
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:127-148](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L127-L148)
+**依据 2 · 源码核查**：[lib/index.js:127-148](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/index.js#L127-L148)
 
-注入 style/script
+当前固定版本复核。注入 style/script
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
-  const disposers = [];
-  disposers.push(ctx.effect(() => ctx.webServer.register({ kind: "prefix", path: BASE, handler }), "boot-animation: clip route"));
 
-  ctx.on("webserver/index-inject", (table) => {
-    table.push({ kind: "style", text: BOOT_STYLE });
-    table.push({
-      kind: "script",
-      placement: "body",
-      text: bootScript({
-        src: `${BASE}${VIDEO_ROUTE}`,
-        zIndex: settings.zIndex,
-        skipHint: settings.skipHint,
-        silentHint: settings.silentHint,
-        blockedHint: settings.blockedHint,
-        errorHint: settings.errorHint,
-        hintDelayMs: settings.hintDelayMs,
-        maxSeconds: settings.maxSeconds,
-        graceMs: settings.graceMs,
-        fadeMs: settings.fadeMs,
-      }),
-    });
-  });
+    if (path === `${BASE}${IMAGE_ROUTE}`) {
+      if (req.method !== "GET" && req.method !== "HEAD") {
+        res.writeHead(405, { allow: "GET, HEAD", "cache-control": "no-store" });
+        res.end();
+        return;
+      }
+      const file = spec.kind === "image" ? spec.file : BUNDLED_IMAGE;
+      await serveFile(file, req, res);
+      return;
+    }
+
+    if (path === `${BASE}${WEB_ROUTE}`) {
+      if (req.method !== "GET" && req.method !== "HEAD") {
+        res.writeHead(405, { allow: "GET, HEAD", "cache-control": "no-store" });
+        res.end();
+        return;
+      }
+      if (spec.kind !== "web-local") {
+        res.writeHead(404, { "cache-control": "no-store" });
+        res.end();
+        return;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/inject.js:49-81](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L49-L81)
+**依据 3 · 源码核查**：[lib/inject.js:49-81](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L49-L81)
 
-视频遮罩在页面直接挂载
+当前固定版本复核。视频遮罩在页面直接挂载
 
 <details>
 <summary>查看原文（33行）</summary>
 
 ```text
+}
+
+/**
+ * Runs in the page. Kept as an ordinary function so its source is parsed and
+ * linted here, then stringified into the injected row.
+ *
+ * The injected script carries only first-paint defaults; it fetches the live
+ * settings from /config before mounting, so the user's latest choices apply on
+ * every boot without re-injecting anything.
+ *
+ * @param {{
+ *   base: string, mode: string, url: string, durationMs: number,
+ *   zIndex: number, skipHint: string, silentHint: string,
+ *   blockedHint: string, errorHint: string, hintDelayMs: number,
+ *   maxSeconds: number, graceMs: number, fadeMs: number
+ * }} CONFIG
+ */
 function bootClient(CONFIG) {
   var doc = document;
   var ID = "dsh-boo550wt-animation-layer";
@@ -275,66 +292,49 @@ function bootClient(CONFIG) {
   layer.setAttribute("data-dsh-boo550wt-animation", "playing");
   layer.style.zIndex = String(CONFIG.zIndex);
 
-  var video = doc.createElement("video");
-  video.className = "dsh-boo550wt-animation-video";
-  video.autoplay = true;
-  video.playsInline = true;
-  video.setAttribute("playsinline", "");
-  video.setAttribute("webkit-playsinline", "");
-  video.setAttribute("preload", "auto");
-  video.controls = false;
-  video.loop = false;
-  video.disablePictureInPicture = true;
-  video.src = CONFIG.src;
-
-  var hint = doc.createElement("div");
+  var hint = doc.createElement("button");
+  hint.type = "button";
   hint.className = "dsh-boo550wt-animation-hint";
-  hint.textContent = CONFIG.skipHint;
-
-  layer.appendChild(video);
-  layer.appendChild(hint);
-  (doc.body !== null ? doc.body : doc.documentElement).appendChild(layer);
-  doc.documentElement.classList.add("dsh-boo550wt-animation-locked");
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/inject.js:124-152](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L124-L152)
+**依据 4 · 源码核查**：[lib/inject.js:124-152](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L124-L152)
 
-播毕淡出/解锁
+当前固定版本复核。播毕淡出/解锁
 
 <details>
 <summary>查看原文（29行）</summary>
 
 ```text
-  function finish() {
-    if (finished) return;
-    finished = true;
-    if (guard !== null) clearTimeout(guard);
-    if (hintTimer !== null) clearTimeout(hintTimer);
-    guard = null;
-    hintTimer = null;
-    disarmGesture();
-    window.removeEventListener("keydown", onKeyDown, true);
-    video.removeEventListener("ended", finish);
-    video.removeEventListener("loadedmetadata", onMetadata);
-    video.removeEventListener("error", onVideoError);
-    layer.setAttribute("data-dsh-boo550wt-animation", "done");
-    try { video.pause(); } catch (ignored) { /* ignore */ }
-    layer.classList.add("dsh-boo550wt-animation-out");
-    fade = setTimeout(unmount, CONFIG.fadeMs);
-  }
-
-  function unmount() {
-    if (fade !== null) clearTimeout(fade);
-    fade = null;
-    doc.documentElement.classList.remove("dsh-boo550wt-animation-locked");
-    if (layer.parentNode !== null) layer.parentNode.removeChild(layer);
-    try {
-      video.removeAttribute("src");
-      video.load();
-    } catch (ignored) { /* ignore */ }
-    try { delete globalThis.__DSH_BOOT_ANIMATION__; } catch (ignored) { /* ignore */ }
+    req.onreadystatechange = function () {
+      if (req.readyState !== 4) return;
+      if (req.status === 200) {
+        try {
+          var data = JSON.parse(req.responseText);
+          var spec = data.media || {};
+          var merged = settingsFor(spec, CONFIG);
+          merged.skipHint = data.skipHint || CONFIG.skipHint;
+          merged.silentHint = data.silentHint || CONFIG.silentHint;
+          merged.blockedHint = data.blockedHint || CONFIG.blockedHint;
+          merged.errorHint = data.errorHint || CONFIG.errorHint;
+          merged.hintDelayMs = data.hintDelayMs || CONFIG.hintDelayMs;
+          merged.maxSeconds = data.maxSeconds || CONFIG.maxSeconds;
+          merged.fadeMs = data.fadeMs || CONFIG.fadeMs;
+          merged.durationMs = data.durationMs || CONFIG.durationMs;
+          merged.zIndex = data.zIndex || CONFIG.zIndex;
+          merged.sound = data.sound !== false;
+          merged.mutedFallback = data.mutedFallback !== false;
+          start(merged);
+        } catch (e) {
+          start(CONFIG);
+        }
+      } else {
+        start(CONFIG);
+      }
+    };
+    req.onerror = function () { start(CONFIG); };
+    req.send();
   }
 ```
 
@@ -343,8 +343,8 @@ function bootClient(CONFIG) {
 #### 缺口
 
 - 目标 Desktop 注入时序与用户体感未测
-  **影响：**不能保证所有宿主版本首帧无遮挡或有收益
-  **进一步探讨：**真实 Desktop 冷/热启动截图与主观等待测试
+  **影响**：不能保证所有宿主版本首帧无遮挡或有收益
+  **进一步探讨**：真实 Desktop 冷/热启动截图与主观等待测试
 
 <a id="research-q02"></a>
 
@@ -352,7 +352,7 @@ function bootClient(CONFIG) {
 
 ### Q02 · 视频字节服务与失败回退如何实现？
 
-**研究主题：**功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
@@ -360,74 +360,66 @@ Host 把包内或 videoPath 指向的 mp4 通过同源 /boot-animation/video.mp4
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:90-129](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L90-L129)
+**依据 1 · 源码核查**：[lib/index.js:90-129](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/index.js#L90-L129)
 
-路由及视频路径
+当前固定版本复核。路由及视频路径
 
 <details>
 <summary>查看原文（40行）</summary>
 
 ```text
-  const video = settings.videoPath === "" ? BUNDLED_VIDEO : resolve(settings.videoPath);
-  const logger = ctx.logger?.("boot-animation");
+    if (path === `${BASE}/config`) {
+      if (req.method === "GET" || req.method === "HEAD") {
+        const settings = await loadSettings();
+        sendJson(res, 200, publicSettings(settings));
+        return;
+      }
+      if (req.method === "POST" || req.method === "PUT") {
+        let raw;
+        try {
+          raw = await readJson(req);
+        } catch {
+          sendJson(res, 400, { error: "invalid JSON body" });
+          return;
+        }
+        const next = normalizeConfig({ ...defaults, ...raw });
+        const saved = await saveSettings(next);
+        sendJson(res, saved ? 200 : 500, saved ? publicSettings(next) : { error: "could not save settings" });
+        return;
+      }
+      res.writeHead(405, { allow: "GET, HEAD, POST, PUT", "cache-control": "no-store" });
+      res.end();
+      return;
+    }
 
-  /** Answer the plugin's own subpaths; anything else is not ours. */
-  const handler = async (req, res) => {
-    const path = new URL(req.url ?? "/", "http://x").pathname;
+    const settings = await loadSettings();
+    const spec = mediaSpec(settings);
+
     if (path === `${BASE}${VIDEO_ROUTE}`) {
       if (req.method !== "GET" && req.method !== "HEAD") {
         res.writeHead(405, { allow: "GET, HEAD", "cache-control": "no-store" });
         res.end();
         return;
       }
-      await serveVideo(video, req, res);
+      const file = spec.kind === "video" ? spec.file : BUNDLED_VIDEO;
+      await serveFile(file, req, res);
       return;
     }
-    if (path === `${BASE}${STATE_ROUTE}` && (req.method === "GET" || req.method === "HEAD")) {
-      let stat = null;
-      try {
-        const { promises: fs } = await import("node:fs");
-        stat = await fs.stat(video);
-      } catch {
-        stat = null;
-      }
-      sendJson(res, 200, {
-        plugin: "dsh-boo550wt-animation",
-        base: BASE,
-        video,
-        videoAvailable: stat !== null && stat.isFile(),
-        videoBytes: stat !== null && stat.isFile() ? stat.size : null,
-        settings,
-      });
-      return;
-    }
-    res.writeHead(404, { "cache-control": "no-store" });
-    res.end();
-  };
 
-  const disposers = [];
-  disposers.push(ctx.effect(() => ctx.webServer.register({ kind: "prefix", path: BASE, handler }), "boot-animation: clip route"));
-
+    if (path === `${BASE}${IMAGE_ROUTE}`) {
+      if (req.method !== "GET" && req.method !== "HEAD") {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/media.js:25-46](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/media.js#L25-L46)
+**依据 2 · 源码核查**：[lib/media.js:25-46](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/media.js#L25-L46)
 
-Range 解析
+当前固定版本复核。Range 解析
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
-/** Parse a single-range `Range` header against a known total size. */
-export function parseRange(header, size) {
-  if (typeof header !== "string" || header.length === 0) return { kind: "full" };
-  const match = /^bytes=(.*)$/i.exec(header.trim());
-  if (match === null) return { kind: "unsatisfiable" };
-  const spec = match[1].split(",")[0].trim();
-  const parts = /^(\d*)-(\d*)$/.exec(spec);
-  if (parts === null) return { kind: "unsatisfiable" };
   const rawStart = parts[1];
   const rawEnd = parts[2];
   if (rawStart === "" && rawEnd === "") return { kind: "unsatisfiable" };
@@ -442,35 +434,50 @@ export function parseRange(header, size) {
   const end = rawEnd === "" ? size - 1 : Math.min(Number(rawEnd), size - 1);
   if (!Number.isFinite(end) || end < start) return { kind: "unsatisfiable" };
   return { kind: "range", start, end };
+}
+
+function sendHead(res, status, size, range, contentType) {
+  const headers = {
+    "content-type": contentType,
+    "accept-ranges": "bytes",
+    "cache-control": "no-store",
+  };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/media.js:71-136](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/media.js#L71-L136)
+**依据 3 · 源码核查**：[lib/media.js:71-136](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/media.js#L71-L136)
 
-GET/HEAD/206/416 与流输出
+当前固定版本复核。GET/HEAD/206/416 与流输出
 
 <details>
 <summary>查看原文（66行）</summary>
 
 ```text
-export async function serveVideo(file, req, res) {
+ *
+ * @param {string} file absolute path
+ * @param {import("node:http").IncomingMessage} req
+ * @param {import("node:http").ServerResponse} res
+ * @param {string} [contentType]
+ */
+export async function serveFile(file, req, res, contentType) {
   let stat;
   try {
     stat = await fs.stat(file);
   } catch (error) {
     res.writeHead(404, { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" });
-    res.end(`boot animation: clip is unavailable (${error.code ?? "unknown"})`);
+    res.end(`boot animation: file is unavailable (${error.code ?? "unknown"})`);
     return;
   }
   if (!stat.isFile()) {
     res.writeHead(404, { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" });
-    res.end("boot animation: clip path is not a file");
+    res.end("boot animation: path is not a file");
     return;
   }
 
   const size = stat.size;
   const range = parseRange(req.headers.range, size);
+  const type = contentType ?? contentTypeOf(file);
 
   if (range.kind === "unsatisfiable") {
     res.writeHead(416, {
@@ -483,19 +490,19 @@ export async function serveVideo(file, req, res) {
   }
 
   if (req.method === "HEAD") {
-    if (range.kind === "full") sendHead(res, 200, size, undefined);
-    else sendHead(res, 206, size, range);
+    if (range.kind === "full") sendHead(res, 200, size, undefined, type);
+    else sendHead(res, 206, size, range, type);
     res.end();
     return;
   }
 
   if (range.kind === "full") {
-    sendHead(res, 200, size, undefined);
+    sendHead(res, 200, size, undefined, type);
     await pump(createReadStream(file, { highWaterMark: CHUNK }), res);
     return;
   }
 
-  sendHead(res, 206, size, range);
+  sendHead(res, 206, size, range, type);
   await pump(createReadStream(file, { start: range.start, end: range.end, highWaterMark: CHUNK }), res);
 }
 
@@ -513,25 +520,90 @@ function pump(stream, res) {
       res.end();
       done();
     });
-    res.on("close", () => {
-      stream.destroy();
-      done();
-    });
-    res.on("finish", done);
-    stream.pipe(res);
-  });
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/inject.js:91-116](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L91-L116)
+**依据 4 · 源码核查**：[lib/inject.js:91-116](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L91-L116)
 
-跳过与手势处理
+当前固定版本复核。跳过与手势处理
 
 <details>
 <summary>查看原文（26行）</summary>
 
 ```text
+  layer.appendChild(hint);
+  (doc.body !== null ? doc.body : doc.documentElement).appendChild(layer);
+  doc.documentElement.classList.add("dsh-boo550wt-animation-locked");
+
+  var finished = false;
+  var started = false;
+  var guard = null;
+  var fade = null;
+  var hintTimer = null;
+  var gestureArmed = false;
+  var media = null;
+
+  // ---- live settings ---------------------------------------------------
+
+  function resolveUrl(spec) {
+    var raw = spec.url;
+    if (typeof raw !== "string") return "";
+    if (/^[a-z][a-z0-9+.-]*:/i.test(raw)) return raw; // absolute URL
+    if (raw.startsWith("/")) return raw;
+    return CONFIG.base + "/" + raw.replace(/^\//, "");
+  }
+
+  function settingsFor(spec, base) {
+    var out = {};
+    for (var k in base) out[k] = base[k];
+    out.mode = spec.kind || base.mode;
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/inject.js:124-207](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L124-L207)
+
+当前固定版本复核。失败/结束/清理
+
+<details>
+<summary>查看原文（84行）</summary>
+
+```text
+    req.onreadystatechange = function () {
+      if (req.readyState !== 4) return;
+      if (req.status === 200) {
+        try {
+          var data = JSON.parse(req.responseText);
+          var spec = data.media || {};
+          var merged = settingsFor(spec, CONFIG);
+          merged.skipHint = data.skipHint || CONFIG.skipHint;
+          merged.silentHint = data.silentHint || CONFIG.silentHint;
+          merged.blockedHint = data.blockedHint || CONFIG.blockedHint;
+          merged.errorHint = data.errorHint || CONFIG.errorHint;
+          merged.hintDelayMs = data.hintDelayMs || CONFIG.hintDelayMs;
+          merged.maxSeconds = data.maxSeconds || CONFIG.maxSeconds;
+          merged.fadeMs = data.fadeMs || CONFIG.fadeMs;
+          merged.durationMs = data.durationMs || CONFIG.durationMs;
+          merged.zIndex = data.zIndex || CONFIG.zIndex;
+          merged.sound = data.sound !== false;
+          merged.mutedFallback = data.mutedFallback !== false;
+          start(merged);
+        } catch (e) {
+          start(CONFIG);
+        }
+      } else {
+        start(CONFIG);
+      }
+    };
+    req.onerror = function () { start(CONFIG); };
+    req.send();
+  }
+
+  // ---- control flow ----------------------------------------------------
+
+  function noop() {}
+
   function onKeyDown(event) {
     if (event.key === "Escape" || event.key === "Esc" || event.keyCode === 27) {
       event.preventDefault();
@@ -542,8 +614,10 @@ function pump(stream, res) {
 
   function onGestureStart() {
     disarmGesture();
-    var attempt = video.play();
-    if (attempt !== undefined && typeof attempt.catch === "function") attempt.catch(noop);
+    if (media !== null && typeof media.play === "function") {
+      var attempt = media.play();
+      if (attempt !== undefined && typeof attempt.catch === "function") attempt.catch(noop);
+    }
   }
 
   function armGesture() {
@@ -558,18 +632,13 @@ function pump(stream, res) {
     gestureArmed = false;
     window.removeEventListener("pointerdown", onGestureStart, true);
     window.removeEventListener("keydown", onGestureStart, true);
-```
+  }
 
-</details>
+  function showHint(text) {
+    hint.textContent = text;
+    hint.classList.add("dsh-boo550wt-animation-hint-on");
+  }
 
-**依据 5 · 源码核查**：[lib/inject.js:124-207](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L124-L207)
-
-失败/结束/清理
-
-<details>
-<summary>查看原文（84行）</summary>
-
-```text
   function finish() {
     if (finished) return;
     finished = true;
@@ -579,81 +648,12 @@ function pump(stream, res) {
     hintTimer = null;
     disarmGesture();
     window.removeEventListener("keydown", onKeyDown, true);
-    video.removeEventListener("ended", finish);
-    video.removeEventListener("loadedmetadata", onMetadata);
-    video.removeEventListener("error", onVideoError);
-    layer.setAttribute("data-dsh-boo550wt-animation", "done");
-    try { video.pause(); } catch (ignored) { /* ignore */ }
-    layer.classList.add("dsh-boo550wt-animation-out");
-    fade = setTimeout(unmount, CONFIG.fadeMs);
-  }
-
-  function unmount() {
-    if (fade !== null) clearTimeout(fade);
-    fade = null;
-    doc.documentElement.classList.remove("dsh-boo550wt-animation-locked");
-    if (layer.parentNode !== null) layer.parentNode.removeChild(layer);
-    try {
-      video.removeAttribute("src");
-      video.load();
-    } catch (ignored) { /* ignore */ }
-    try { delete globalThis.__DSH_BOOT_ANIMATION__; } catch (ignored) { /* ignore */ }
-  }
-
-  function onMetadata() {
-    if (guard !== null) clearTimeout(guard);
-    var seconds = video.duration;
-    // Phrased as a negated comparison so the emitted text stays free of angle
-    // brackets: the row is inserted verbatim inside a script element.
-    if (typeof seconds !== "number" || !isFinite(seconds) || !(seconds > 0)) return;
-    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);
-  }
-
-  function onVideoError() {
-    if (finished) return;
-    showHint(CONFIG.errorHint);
-    if (guard !== null) clearTimeout(guard);
-    guard = setTimeout(finish, 900);
-  }
-
-  function onPlayRefused() {
-    if (finished) return;
-    // Sound was refused (or playback entirely). Muted playback is allowed by
-    // every engine, so fall back to it and say so; a gesture retries with sound.
-    video.muted = true;
-    var retry = video.play();
-    if (retry !== undefined && typeof retry.catch === "function") {
-      retry.catch(function () {
-        if (finished) return;
-        showHint(CONFIG.blockedHint);
-        armGesture();
-      });
+    if (media !== null) {
+      media.removeEventListener("ended", finish);
+      media.removeEventListener("loadedmetadata", onMetadata);
+      media.removeEventListener("error", onMediaError);
+      if (typeof media.pause === "function") { try { media.pause(); } catch (ignored) { /* ignore */ } }
     }
-    showHint(CONFIG.silentHint);
-  }
-
-  function start() {
-    var attempt = video.play();
-    if (attempt !== undefined && typeof attempt.catch === "function") attempt.catch(onPlayRefused);
-  }
-
-  video.addEventListener("ended", finish);
-  video.addEventListener("loadedmetadata", onMetadata);
-  video.addEventListener("error", onVideoError);
-  window.addEventListener("keydown", onKeyDown, true);
-
-  // Absolute ceiling: never hold the user hostage if the file stalls.
-  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);
-  // The skip affordance only appears after the animation has had the stage.
-  hintTimer = setTimeout(function () {
-    if (!finished) hint.classList.add("dsh-boo550wt-animation-hint-on");
-  }, CONFIG.hintDelayMs);
-
-  try {
-    globalThis.__DSH_BOOT_ANIMATION__ = { skip: finish, element: layer, video: video };
-  } catch (ignored) { /* ignore */ }
-
-  start();
 ```
 
 </details>
@@ -661,8 +661,8 @@ function pump(stream, res) {
 #### 缺口
 
 - 目标浏览器编码/自动播放/Range 代理行为未测
-  **影响：**不能从源码保证实际解码播放
-  **进一步探讨：**目标 Desktop 冷启动、错误视频和 Range 网络检查
+  **影响**：不能从源码保证实际解码播放
+  **进一步探讨**：目标 Desktop 冷启动、错误视频和 Range 网络检查
 
 <a id="research-q03"></a>
 
@@ -670,7 +670,7 @@ function pump(stream, res) {
 
 ### Q03 · maxSeconds 是否真的构成绝对硬上限？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -678,248 +678,14 @@ function pump(stream, res) {
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:73-85](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L73-L85)
+**依据 1 · 作者声明**：[README.md:73-85](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/README.md#L73-L85)
 
-作者将 maxSeconds 称为硬上限
+当前固定版本复核。作者将 maxSeconds 称为硬上限
 
 <details>
 <summary>查看原文（13行）</summary>
 
-```text
-| 字段 | 默认值 | 含义 |
-| --- | --- | --- |
-| `enabled` | `true` | 设 `false` 可以临时停用而不卸载 |
-| `videoPath` | `""` | 换成别的视频；留空 = 用自带素材 |
-| `zIndex` | `2147483000` | 遮罩层级 |
-| `maxSeconds` | `120` | 硬上限，卡死的视频也绝不会锁住窗口 |
-| `graceMs` | `1500` | 上报时长之外再宽限多久才触发上限 |
-| `fadeMs` | `380` | 交接时的淡出时长 |
-| `hintDelayMs` | `4000` | 多久之后出现跳过提示 |
-| `skipHint` | `按 Esc 跳过` | 提示文字 |
-| `silentHint` | `按 Esc 跳过 · 点击开启声音` | 被降级成静音时显示 |
-| `blockedHint` | `点击以播放开机动画` | 自动播放被彻底拦截时显示 |
-| `errorHint` | `开机动画不可用` | 视频解不开时显示 |
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/inject.js:154-161](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L154-L161)
-
-metadata 清旧 guard 并按媒体时长重设
-
-```text
-  function onMetadata() {
-    if (guard !== null) clearTimeout(guard);
-    var seconds = video.duration;
-    // Phrased as a negated comparison so the emitted text stays free of angle
-    // brackets: the row is inserted verbatim inside a script element.
-    if (typeof seconds !== "number" || !isFinite(seconds) || !(seconds > 0)) return;
-    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);
-  }
-```
-
-**依据 3 · 源码核查**：[lib/inject.js:191-201](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L191-L201)
-
-初始 maxSeconds 守卫与跳过
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-  video.addEventListener("ended", finish);
-  video.addEventListener("loadedmetadata", onMetadata);
-  video.addEventListener("error", onVideoError);
-  window.addEventListener("keydown", onKeyDown, true);
-
-  // Absolute ceiling: never hold the user hostage if the file stalls.
-  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);
-  // The skip affordance only appears after the animation has had the stage.
-  hintTimer = setTimeout(function () {
-    if (!finished) hint.classList.add("dsh-boo550wt-animation-hint-on");
-  }, CONFIG.hintDelayMs);
-```
-
-</details>
-
-#### 缺口
-
-- 长/损坏 metadata 在目标媒体栈是否触发未测
-  **影响：**不能承诺窗口最多锁 120 秒
-  **进一步探讨：**保留独立 absolute guard，长视频/无效 metadata/停滞回归
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 参数与无障碍边界是否受控？
-
-**研究主题：**缺陷与关键质疑、效果与总成本
-
-#### 完整回答
-
-resolveConfig 只校验 videoPath 为字符串和 zIndex 为有限数，其余 maxSeconds/graceMs/fadeMs/hintDelayMs 可接收负数、非数字或极大值，随后直接进入 setTimeout；hint 等文案虽经 JSON.stringify 注入，但无需假定 HTML 字符串拼接风险。启动脚本没有读取 prefers-reduced-motion，默认自动播视频且遮罩拦住界面，Esc/禁用配置可绕过。12.1MB 视频资源和重启加载成本在源码/资产中可见，电量和实际首帧延迟未测。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:39-63](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L39-L63)
-
-配置默认值与有限校验
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-const DEFAULTS = Object.freeze({
-  enabled: true,
-  videoPath: "",
-  zIndex: 2147483000,
-  maxSeconds: 120,
-  graceMs: 1500,
-  fadeMs: 380,
-  hintDelayMs: 4000,
-  skipHint: "按 Esc 跳过",
-  silentHint: "按 Esc 跳过 · 点击开启声音",
-  blockedHint: "点击以播放开机动画",
-  errorHint: "开机动画不可用",
-});
-
-/** Merge user config onto the defaults, rejecting unusable values. */
-function resolveConfig(config) {
-  const input = config !== null && typeof config === "object" ? config : {};
-  const out = { ...DEFAULTS };
-  for (const key of Object.keys(DEFAULTS)) {
-    if (input[key] === undefined || input[key] === null) continue;
-    out[key] = key === "enabled" ? input[key] === true : input[key];
-  }
-  if (typeof out.videoPath !== "string") out.videoPath = DEFAULTS.videoPath;
-  if (!Number.isFinite(out.zIndex)) out.zIndex = DEFAULTS.zIndex;
-  return out;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/inject.js:154-207](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L154-L207)
-
-定时/自动播放，无 reduced-motion 分支
-
-<details>
-<summary>查看原文（54行）</summary>
-
-```text
-  function onMetadata() {
-    if (guard !== null) clearTimeout(guard);
-    var seconds = video.duration;
-    // Phrased as a negated comparison so the emitted text stays free of angle
-    // brackets: the row is inserted verbatim inside a script element.
-    if (typeof seconds !== "number" || !isFinite(seconds) || !(seconds > 0)) return;
-    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);
-  }
-
-  function onVideoError() {
-    if (finished) return;
-    showHint(CONFIG.errorHint);
-    if (guard !== null) clearTimeout(guard);
-    guard = setTimeout(finish, 900);
-  }
-
-  function onPlayRefused() {
-    if (finished) return;
-    // Sound was refused (or playback entirely). Muted playback is allowed by
-    // every engine, so fall back to it and say so; a gesture retries with sound.
-    video.muted = true;
-    var retry = video.play();
-    if (retry !== undefined && typeof retry.catch === "function") {
-      retry.catch(function () {
-        if (finished) return;
-        showHint(CONFIG.blockedHint);
-        armGesture();
-      });
-    }
-    showHint(CONFIG.silentHint);
-  }
-
-  function start() {
-    var attempt = video.play();
-    if (attempt !== undefined && typeof attempt.catch === "function") attempt.catch(onPlayRefused);
-  }
-
-  video.addEventListener("ended", finish);
-  video.addEventListener("loadedmetadata", onMetadata);
-  video.addEventListener("error", onVideoError);
-  window.addEventListener("keydown", onKeyDown, true);
-
-  // Absolute ceiling: never hold the user hostage if the file stalls.
-  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);
-  // The skip affordance only appears after the animation has had the stage.
-  hintTimer = setTimeout(function () {
-    if (!finished) hint.classList.add("dsh-boo550wt-animation-hint-on");
-  }, CONFIG.hintDelayMs);
-
-  try {
-    globalThis.__DSH_BOOT_ANIMATION__ = { skip: finish, element: layer, video: video };
-  } catch (ignored) { /* ignore */ }
-
-  start();
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:3-11](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L3-L11)
-
-作者描述素材/遮罩
-
 ````text
-给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏播放一段视频，播完（或者按 `Esc`）才进入界面。
-
-> 自带素材 `assets/boot.mp4` 是一段 **550W 风格**的启动动画 —— 16.6 秒、1024×576、H.264 + AAC、12.1 MB。
-
-```
-打开 DSH  ─▶  黑底 + 视频  ─▶  播完 / 按 Esc  ─▶  淡出  ─▶  正常界面
-```
-
-关键在于**交接时机**：遮罩在 DSH 结算「启动就绪」之前就已经挂上去了，所以应用是在遮罩底下正常渲染的，等动画结束再把界面让出来 —— 而不是先看到界面再盖一层。
-````
-
-#### 缺口
-
-- 减动效需求、解码性能和非数配置影响未测
-  **影响：**不能称所有配置下硬上限/无障碍安全
-  **进一步探讨：**参数边界、reduced-motion、内存/首帧性能矩阵
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 安装与回退应怎样验收？
-
-**研究主题：**采用判断、新假设与验证
-
-#### 完整回答
-
-作者给 Desktop profile CLI 安装/重启流程，/boot-animation/state 可报告视频绝对路径、文件可用性/字节数和 settings，适合确认 Host 加载；但该状态路由也暴露本地文件路径与配置，目标 webServer 的鉴权边界本轮未核。启用前应确认开机可 Esc 跳过、错误视频 0.9 秒后退出及长视频不超过期望；可改进独立硬上限、数值范围校验和减动效门控。以上改进均未实现，建议个人环境观察使用。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:27-59](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/README.md#L27-L59)
-
-作者安装及状态路由自查
-
-<details>
-<summary>查看原文（33行）</summary>
-
-````text
-## 怎么用
-
-### 1. 装
-
-DSH 的插件用它自己的 CLI 安装（`desktop` 是保留 profile，由 Electron 应用托管）：
-
-```powershell
-# 先拿到仓库
-git clone https://github.com/456erddgr/dsh-boo550wt-animation.git
-
-# 再用 DSH 自带的 CLI 装进 desktop profile
-$env:ELECTRON_RUN_AS_NODE = '1'
 & "<你的安装目录>\DeepSeek Harness.exe" --expose-internals `
   "<你的安装目录>\resources\app.asar\dsh\node_modules\@deepseek-ai\dsh-desktop-host\lib\cli.js" `
   plugin --profile desktop add "<clone 出来的目录>"
@@ -933,75 +699,309 @@ $env:ELECTRON_RUN_AS_NODE = '1'
 > `plugin --profile desktop add github:456erddgr/dsh-boo550wt-animation`
 
 ### 2. 重启 DSH
-
-**必须重启。** Host 半侧的代码只在 DSH 启动时被 import 一次，热更新不会加载它。
-
-重启后可以自查 —— 浏览器打开这个地址，返回 JSON 就说明 Host 半侧已经起来了：
-
-```
-http://127.0.0.1:19387/boot-animation/state
-```
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:105-120](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/index.js#L105-L120)
+**依据 2 · 源码核查**：[lib/inject.js:154-161](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L154-L161)
 
-状态路由返回绝对路径和配置
-
-<details>
-<summary>查看原文（16行）</summary>
+当前固定版本复核。metadata 清旧 guard 并按媒体时长重设
 
 ```text
-    if (path === `${BASE}${STATE_ROUTE}` && (req.method === "GET" || req.method === "HEAD")) {
-      let stat = null;
-      try {
-        const { promises: fs } = await import("node:fs");
-        stat = await fs.stat(video);
-      } catch {
-        stat = null;
-      }
-      sendJson(res, 200, {
-        plugin: "dsh-boo550wt-animation",
-        base: BASE,
-        video,
-        videoAvailable: stat !== null && stat.isFile(),
-        videoBytes: stat !== null && stat.isFile() ? stat.size : null,
-        settings,
-      });
+  // ---- control flow ----------------------------------------------------
+
+  function noop() {}
+
+  function onKeyDown(event) {
+    if (event.key === "Escape" || event.key === "Esc" || event.keyCode === 27) {
+      event.preventDefault();
+      event.stopPropagation();
+```
+
+**依据 3 · 源码核查**：[lib/inject.js:191-201](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L191-L201)
+
+当前固定版本复核。初始 maxSeconds 守卫与跳过
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  }
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    if (guard !== null) clearTimeout(guard);
+    if (hintTimer !== null) clearTimeout(hintTimer);
+    guard = null;
+    hintTimer = null;
+    disarmGesture();
+    window.removeEventListener("keydown", onKeyDown, true);
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/inject.js:163-167](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L163-L167)
+#### 缺口
 
-错误 900ms 退出
+- 长/损坏 metadata 在目标媒体栈是否触发未测
+  **影响**：不能承诺窗口最多锁 120 秒
+  **进一步探讨**：保留独立 absolute guard，长视频/无效 metadata/停滞回归
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 参数与无障碍边界是否受控？
+
+**研究主题**：缺陷与关键质疑、效果与总成本
+
+#### 完整回答
+
+resolveConfig 只校验 videoPath 为字符串和 zIndex 为有限数，其余 maxSeconds/graceMs/fadeMs/hintDelayMs 可接收负数、非数字或极大值，随后直接进入 setTimeout；hint 等文案虽经 JSON.stringify 注入，但无需假定 HTML 字符串拼接风险。启动脚本没有读取 prefers-reduced-motion，默认自动播视频且遮罩拦住界面，Esc/禁用配置可绕过。12.1MB 视频资源和重启加载成本在源码/资产中可见，电量和实际首帧延迟未测。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:39-63](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/index.js#L39-L63)
+
+当前固定版本复核。配置默认值与有限校验
+
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
-  function onVideoError() {
-    if (finished) return;
-    showHint(CONFIG.errorHint);
-    if (guard !== null) clearTimeout(guard);
-    guard = setTimeout(finish, 900);
+import { serveGame } from "./games.js";
+import { handleRemove, handleUpload, listUploads, resolveUpload } from "./upload.js";
+import {
+  BUNDLED_IMAGE,
+  BUNDLED_VIDEO,
+  DEFAULTS,
+  configPath,
+  loadSettings,
+  saveSettings,
+  mediaSpec,
+  normalizeConfig,
+  publicSettings,
+} from "./config.js";
+
+/** Route base owned by this plugin; must stay unique across the profile. */
+const BASE = "/boot-animation";
+
+/** Wait for the profile's webserver before claiming the route. */
+export const inject = ["webServer"];
+
+/** Standard JSON response. */
+function sendJson(res, status, body) {
+  const payload = JSON.stringify(body, null, 2);
+  res.writeHead(status, {
+    "content-type": "application/json; charset=utf-8",
 ```
 
-**依据 4 · 源码核查**：[lib/inject.js:91-96](https://github.com/456erddgr/dsh-boo550wt-animation/blob/aeac4c96f33b7947e19b44c36c421185ec2cda1a/lib/inject.js#L91-L96)
+</details>
 
-Esc 退出
+**依据 2 · 源码核查**：[lib/inject.js:154-207](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L154-L207)
+
+当前固定版本复核。定时/自动播放，无 reduced-motion 分支
+
+<details>
+<summary>查看原文（54行）</summary>
 
 ```text
+  // ---- control flow ----------------------------------------------------
+
+  function noop() {}
+
   function onKeyDown(event) {
     if (event.key === "Escape" || event.key === "Esc" || event.keyCode === 27) {
       event.preventDefault();
       event.stopPropagation();
       finish();
     }
+  }
+
+  function onGestureStart() {
+    disarmGesture();
+    if (media !== null && typeof media.play === "function") {
+      var attempt = media.play();
+      if (attempt !== undefined && typeof attempt.catch === "function") attempt.catch(noop);
+    }
+  }
+
+  function armGesture() {
+    if (gestureArmed || finished) return;
+    gestureArmed = true;
+    window.addEventListener("pointerdown", onGestureStart, true);
+    window.addEventListener("keydown", onGestureStart, true);
+  }
+
+  function disarmGesture() {
+    if (!gestureArmed) return;
+    gestureArmed = false;
+    window.removeEventListener("pointerdown", onGestureStart, true);
+    window.removeEventListener("keydown", onGestureStart, true);
+  }
+
+  function showHint(text) {
+    hint.textContent = text;
+    hint.classList.add("dsh-boo550wt-animation-hint-on");
+  }
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    if (guard !== null) clearTimeout(guard);
+    if (hintTimer !== null) clearTimeout(hintTimer);
+    guard = null;
+    hintTimer = null;
+    disarmGesture();
+    window.removeEventListener("keydown", onKeyDown, true);
+    if (media !== null) {
+      media.removeEventListener("ended", finish);
+      media.removeEventListener("loadedmetadata", onMetadata);
+      media.removeEventListener("error", onMediaError);
+      if (typeof media.pause === "function") { try { media.pause(); } catch (ignored) { /* ignore */ } }
+    }
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:3-11](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/README.md#L3-L11)
+
+当前固定版本复核。作者描述素材/遮罩
+
+```text
+给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏展示一段内容，播完（或者按 `Esc`）才进入界面。
+
+支持四种模式，全部可以在设置面板里改：
+
+| 模式 | 内容 | 结束方式 |
+| --- | --- | --- |
+| `video` | 视频（默认：自带的 550W 风格动画，16.6 秒） | 播完自动进入 |
+| `image` | 图片 | 显示 `durationMs` 后进入 |
+| `web` | 网页（URL 或本地 HTML 文件） | 页面发完成消息，或超时 |
+```
+
+#### 缺口
+
+- 减动效需求、解码性能和非数配置影响未测
+  **影响**：不能称所有配置下硬上限/无障碍安全
+  **进一步探讨**：参数边界、reduced-motion、内存/首帧性能矩阵
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 安装与回退应怎样验收？
+
+**研究主题**：采用判断、新假设与验证
+
+#### 完整回答
+
+作者给 Desktop profile CLI 安装/重启流程，/boot-animation/state 可报告视频绝对路径、文件可用性/字节数和 settings，适合确认 Host 加载；但该状态路由也暴露本地文件路径与配置，目标 webServer 的鉴权边界本轮未核。启用前应确认开机可 Esc 跳过、错误视频 0.9 秒后退出及长视频不超过期望；可改进独立硬上限、数值范围校验和减动效门控。以上改进均未实现，建议个人环境观察使用。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:27-59](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/README.md#L27-L59)
+
+当前固定版本复核。作者安装及状态路由自查
+
+<details>
+<summary>查看原文（33行）</summary>
+
+````text
+**跳过永远可用**：按 `Esc`，或点右下角的「跳过」按钮。小游戏跑在 iframe 里会吃掉键盘，所以每一款游戏都内置了把 Esc 转发给宿主页面的中继；右下角那个是真正的按钮，可以点。
+
+### 行星发动机 3D 是从哪来的
+
+这一款不是手画的 canvas，而是接入了开源项目 **[oxomkbk/earth-migration](https://github.com/oxomkbk/earth-migration)**（MIT 协议）——一个基于 three.js 的电影级 WebGL 场景：真实的地球贴图、云层、行星发动机群、赤道转向阵列、太空电梯、银河背景。整套 three.js、贴图和模型都**内置在插件里**（`vendor/earth-migration/`，约 25 MB），不联网、不依赖 CDN。
+
+原项目是个"观影 + 自由探索"的体验，这里保留了它的场景，在上面叠了一层点火玩法：三路参数压进绿区撑满 3 秒即点火成功。进入时会自动切到它的自由探索模式。
+
+```
+打开 DSH  ─▶  黑底 + 动画  ─▶  播完 / 通关 / 按 Esc  ─▶  淡出  ─▶  正常界面
+```
+
+关键在于**交接时机**：遮罩在 DSH 结算「启动就绪」之前就已经挂上去了，所以应用是在遮罩底下正常渲染的，等动画结束再把界面让出来 —— 而不是先看到界面再盖一层。
+
+## 效果预览
+
+自带素材的分镜（2.0s / 6.0s / 12.0s / 15.0s）：
+
+![开机动画分镜：550W 标志、量子计算机控制系统、剩余进度 69%、剩余进度 100%](docs/preview.png)
+
+真实播放时的样子 —— 画面铺满窗口，右下角在 4 秒后浮现跳过提示：
+
+![实际播放画面，右下角显示「按 Esc 跳过」](docs/boot-scene.png)
+
+内置贪吃蛇小游戏：
+
+![贪吃蛇：通关即进入](docs/snake.png)
+
+流浪地球主题的「行星发动机」：三路参数都压在绿区，撑满 3 秒点火成功。
+
+![行星发动机：转向/姿态/推力三路仪表，右下角可直接跳过](docs/wandering-earth.png)
+
+> 截图都是从真实播放里截的，不是效果图：用 Chromium 媒体栈经插件的路由解码后截帧生成（`tools/stills.mjs` 与 `tools/browser-check.mjs --shot=`）。
+````
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:105-120](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/index.js#L105-L120)
+
+当前固定版本复核。状态路由返回绝对路径和配置
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+        const saved = await saveSettings(next);
+        sendJson(res, saved ? 200 : 500, saved ? publicSettings(next) : { error: "could not save settings" });
+        return;
+      }
+      res.writeHead(405, { allow: "GET, HEAD, POST, PUT", "cache-control": "no-store" });
+      res.end();
+      return;
+    }
+
+    const settings = await loadSettings();
+    const spec = mediaSpec(settings);
+
+    if (path === `${BASE}${VIDEO_ROUTE}`) {
+      if (req.method !== "GET" && req.method !== "HEAD") {
+        res.writeHead(405, { allow: "GET, HEAD", "cache-control": "no-store" });
+        res.end();
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/inject.js:163-167](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L163-L167)
+
+当前固定版本复核。错误 900ms 退出
+
+```text
+    }
+  }
+
+  function onGestureStart() {
+    disarmGesture();
+```
+
+**依据 4 · 源码核查**：[lib/inject.js:91-96](https://github.com/456erddgr/dsh-boo550wt-animation/blob/6ee58a22a2c4e0dd8ac7313bee8f5d902cda1147/lib/inject.js#L91-L96)
+
+当前固定版本复核。Esc 退出
+
+```text
+  layer.appendChild(hint);
+  (doc.body !== null ? doc.body : doc.documentElement).appendChild(layer);
+  doc.documentElement.classList.add("dsh-boo550wt-animation-locked");
+
+  var finished = false;
+  var started = false;
 ```
 
 #### 缺口
 
 - 目标 Desktop 安装/鉴权与回退实效未测
-  **影响：**不可用状态路由或自测声明替代目标验收
-  **进一步探讨：**目标环境做鉴权/安装/损坏素材/长视频/减动效验收
+  **影响**：不可用状态路由或自测声明替代目标验收
+  **进一步探讨**：目标环境做鉴权/安装/损坏素材/长视频/减动效验收
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

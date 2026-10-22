@@ -7,14 +7,14 @@
             "id": "github:1334899369:packages-connect",
             "repository": "IvanWu2015/dsh-connect",
             "path": "packages/connect",
-            "revision": "7528f1718886c64b135b289355b74ce60f4be413",
+            "revision": "a0da9a88fefce85ba7a02d15726d7600e73460b9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ba4a950345df5c841d18cee3d662a9b0b46284627d0a9922946ac78a6c6cc18a",
-                "code": "7528f1718886c64b135b289355b74ce60f4be413",
-                "maintenance": "3488978ff99a68b478d07645d7f1686fec9376cd7769c0e7ed3e3a7b84cf027a"
+                "code": "a0da9a88fefce85ba7a02d15726d7600e73460b9",
+                "maintenance": "98e01d49e215ef501ce7355dedaabe9acff2ad1a75060b6005f6c79e66c5254d"
             }
         }
     }

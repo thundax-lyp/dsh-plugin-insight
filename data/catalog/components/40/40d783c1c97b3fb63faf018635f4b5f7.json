@@ -480,14 +480,14 @@
             "repository": "988hj7tczd-oss/dsh-invoice-tools",
             "path": "",
             "revision": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "7cb1d0059b4f70837a7062be8c8c6847fc3dcb00789ca799e5075d6aaaa0c4a0",
                 "code": "b1c8ee8f6ce6573e1de06587d428d331a0cfd02a",
                 "maintenance": "18fb2f9912667a2da57534683870a1dda3549882a02d83b6eb2153a54fa2fcf0"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

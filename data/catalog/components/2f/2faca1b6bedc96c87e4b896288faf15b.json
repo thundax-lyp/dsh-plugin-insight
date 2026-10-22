@@ -7,14 +7,14 @@
             "id": "github:1424312196:root",
             "repository": "ting-good/dsh-cook-pet",
             "path": "",
-            "revision": "fdba6f097aa0d86ee12a67cfdf88c4e5b88676f8",
+            "revision": "e365b245bf1af3811fbb9a7cc46d2f32b9ecfdbd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "31d8319d1373d996541ffa4ab0bda37d007598f590626ea6ec5fd9d1c6b3b4a2",
-                "code": "fdba6f097aa0d86ee12a67cfdf88c4e5b88676f8",
-                "maintenance": "fc5470acf4c3a3214ac41f8c8ddfc983ee1c0f4dc0c6e797d7e2098459bc0727"
+                "code": "e365b245bf1af3811fbb9a7cc46d2f32b9ecfdbd",
+                "maintenance": "bd70920ad1a0fc07a2277117f3f6ad7bfb15c580a41be7cf8fee1e73e261febd"
             }
         }
     }

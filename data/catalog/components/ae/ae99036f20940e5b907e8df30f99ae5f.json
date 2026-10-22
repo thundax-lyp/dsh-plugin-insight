@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ae99036f20940e5b907e8df30f99ae5f",
+    "identity": "github:1333716755:plugins-harness-memory",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1333716755:plugins-harness-memory",
+            "repository": "988hj7tczd-oss/harness-desktop",
+            "path": "plugins/harness-memory",
+            "revision": "9808ab77392c7cd285f87de094daff1fcd322109",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "91e034e9a6a3af2ba787f950194a67e94df2f6ef76e471ec74364b29910f8ca5",
+                "code": "9808ab77392c7cd285f87de094daff1fcd322109",
+                "maintenance": "0929bf6a292bfdce7395251eec220891799a6352343ca34e990bb057c5a8e463"
+            }
+        }
+    }
+}

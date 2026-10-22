@@ -7,14 +7,14 @@
             "id": "github:1341472327:root",
             "repository": "heiheiha798/dsh-plugin-subagent-delete",
             "path": "",
-            "revision": "5ef23cb63c35a61ca54d35330150494197c7d451",
+            "revision": "4de0abea68fe36f47554dc3a7a5b8b7e18c1249f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8c7aaa0e4e615c6dd5c433d705fe59ae3c996b850161d3bb3926ee0a4d8bfe99",
-                "code": "5ef23cb63c35a61ca54d35330150494197c7d451",
-                "maintenance": "e24620d37b753c4f60aed2920053eb91c58dd7e7989d15948e6c6081139799f9"
+                "code": "4de0abea68fe36f47554dc3a7a5b8b7e18c1249f",
+                "maintenance": "6124246ca6c2082f599805493ba8961431ec17f563607e9d876a6734e47480cd"
             }
         }
     }

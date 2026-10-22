@@ -164,7 +164,7 @@ ctx.tools 注册无参、可并发调用的工具；PowerShell 读 UTC，按纯�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核对 WSL/Windows UTC 诊断机制与顺序采样误差。
+**插件研究总目标**：核对 WSL/Windows UTC 诊断机制与顺序采样误差。
 
 <a id="research-q01"></a>
 
@@ -172,7 +172,7 @@ ctx.tools 注册无参、可并发调用的工具；PowerShell 读 UTC，按纯�
 
 ### Q01 · clock_doctor 解决 WSL 中哪类故障排查？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -282,8 +282,8 @@ export function buildClockAdvice({ level, skewSec, maxSkewSec } = {}) {
 #### 缺口
 
 - 实际TLS/JWT故障是否由本地双时钟偏移造成、该阈值能否正确定位没有独立对照。
-  **影响：**读数不是所有网络故障的根因证明。
-  **进一步探讨：**可从合成时刻/启动延迟及独立故障记录区分时间误差和其他原因，不自动重启。
+  **影响**：读数不是所有网络故障的根因证明。
+  **进一步探讨**：可从合成时刻/启动延迟及独立故障记录区分时间误差和其他原因，不自动重启。
 
 <a id="research-q02"></a>
 
@@ -291,7 +291,7 @@ export function buildClockAdvice({ level, skewSec, maxSkewSec } = {}) {
 
 ### Q02 · 时间差怎样读取、分级和呈现？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -472,8 +472,8 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 #### 缺口
 
 - 各Windows命令错误/空输出与慢启动的真实分布未知。
-  **影响：**格式可解析不代表时刻有效或精度充分。
-  **进一步探讨：**可用固定空/坏文本和延迟回执研究解析/分级语义。
+  **影响**：格式可解析不代表时刻有效或精度充分。
+  **进一步探讨**：可用固定空/坏文本和延迟回执研究解析/分级语义。
 
 <a id="research-q03"></a>
 
@@ -481,7 +481,7 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 
 ### Q03 · 顺序采样是否会把命令启动耗时算作时钟偏移？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -577,8 +577,8 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 #### 缺口
 
 - 实际命令启动耗时分布未测。
-  **影响：**误警率未量化。
-  **进一步探讨：**同次调用记录前后 WSL 时刻和 RTT，对照中点估计。
+  **影响**：误警率未量化。
+  **进一步探讨**：同次调用记录前后 WSL 时刻和 RTT，对照中点估计。
 
 <a id="research-q04"></a>
 
@@ -586,7 +586,7 @@ export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
 
 ### Q04 · 非 WSL、PowerShell 失败和配置异常怎样处理？
 
-**研究主题：**依赖、兼容与流程、缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
 
 #### 完整回答
 
@@ -717,8 +717,8 @@ export function apply(ctx, config = {}) {
 #### 缺口
 
 - DSH 工具超时和子进程 10 秒竞态未实际跑。
-  **影响：**极短配置下错误形态未知。
-  **进一步探讨：**隔离环境测试 1 秒工具超时、命令阻塞和缺失 PowerShell。
+  **影响**：极短配置下错误形态未知。
+  **进一步探讨**：隔离环境测试 1 秒工具超时、命令阻塞和缺失 PowerShell。
 
 <a id="research-q05"></a>
 
@@ -726,7 +726,7 @@ export function apply(ctx, config = {}) {
 
 ### Q05 · 怎样安全试用并提高诊断可信度？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -840,7 +840,7 @@ export function buildClockAdvice({ level, skewSec, maxSkewSec } = {}) {
 #### 缺口
 
 - 中点算法对 Windows 命令内调度延迟的收益未实测。
-  **影响：**改进幅度未知。
-  **进一步探讨：**在真实 WSL 量 RTT 与独立时钟偏移。
+  **影响**：改进幅度未知。
+  **进一步探讨**：在真实 WSL 量 RTT 与独立时钟偏移。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

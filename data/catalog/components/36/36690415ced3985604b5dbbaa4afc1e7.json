@@ -7,15 +7,15 @@
             "id": "github:1333512933:root",
             "repository": "STARDUSTLC666/dsh-email",
             "path": "",
-            "revision": "42fb5377e49178f6e59e7d6ad7541e6e69ea8016",
+            "revision": "15f41adbd04d1a47c6b24bed731791677217c10b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "15eab0fa3049f05818fa7ade38bdf582209bb65e2969b0d1ff923087345a3c8a",
-                "code": "42fb5377e49178f6e59e7d6ad7541e6e69ea8016",
-                "maintenance": "27b51843d37911716b3764d23b62e57fa47534707279c544f7e7f1c6b39a3a48"
+                "code": "15f41adbd04d1a47c6b24bed731791677217c10b",
+                "maintenance": "8a6e9ff597b5289afe48ce408ee1c562f62833b20f1f41eeb1489f73e82f35bc"
             }
         }
     }

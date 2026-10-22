@@ -7,14 +7,14 @@
             "id": "github:1204369117:packages-dsh-tongflow",
             "repository": "tong-io/tongflow",
             "path": "packages/dsh-tongflow",
-            "revision": "fce4987200e8ae44db2830e0a2fa2985275d6d36",
+            "revision": "0087122f5900073dfbdb0e7a1e2ff497245e1f21",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e2cfa141e0be3167feba9e89c68aa6adeea133377af26c407e3888df20bfef11",
-                "code": "fce4987200e8ae44db2830e0a2fa2985275d6d36",
-                "maintenance": "991257de2c3b2529e9cde4aa0ecfc60391e40adb97c6daf8b3040fd2458bfbb1"
+                "code": "0087122f5900073dfbdb0e7a1e2ff497245e1f21",
+                "maintenance": "3020fdc0ca080c856be1655879814550dab41a983d37326e5bae9bad8e049180"
             }
         }
     }

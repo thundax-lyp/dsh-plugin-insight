@@ -7,14 +7,14 @@
             "id": "github:1420265013:root",
             "repository": "liuli-zsl/dsh-unreal-engine-skills",
             "path": "",
-            "revision": "6286b60fbced54e6c246b6b0a4be6e88c312c367",
+            "revision": "f69b2e6b7f38b1cfd1b42c4875e836f53b5ddb87",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9aaa1265480cf67afbdeda0d42fa400a9a0ff50f95fc97e8f4c36de285691060",
-                "code": "6286b60fbced54e6c246b6b0a4be6e88c312c367",
-                "maintenance": "d579949609c3e90369cc41c83be2ff121289d2be654f119eb185b5555011fd0d"
+                "code": "f69b2e6b7f38b1cfd1b42c4875e836f53b5ddb87",
+                "maintenance": "2c32a886231c55e8f9be29655438be2704dc5abbd87b5bc6e8bb8315952f136f"
             }
         }
     }

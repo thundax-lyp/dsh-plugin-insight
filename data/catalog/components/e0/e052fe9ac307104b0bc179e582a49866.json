@@ -7,14 +7,14 @@
             "id": "github:1349237873:root",
             "repository": "wszhoho/dsh-file-attachment",
             "path": "",
-            "revision": "5101bf6c131cde545bd824da2dff766c4ae1f6a4",
+            "revision": "da481962b151a38e9950d5272269dd7ce57ba5b3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "f9dae7d31751a7be3d33c902340d32be801db116d5536f7d43ffe16061569f2d",
-                "code": "5101bf6c131cde545bd824da2dff766c4ae1f6a4",
-                "maintenance": "ef048ca7434782572ec54b3596493a50fd89bb92b1dc722a5bdf04099f9bbcd2"
+                "code": "da481962b151a38e9950d5272269dd7ce57ba5b3",
+                "maintenance": "458479117d68a43947a5edac77ad45cf60fac563ebbc9dce440ab955a8cb6770"
             }
         }
     }

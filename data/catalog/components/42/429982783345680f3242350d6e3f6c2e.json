@@ -7,14 +7,14 @@
             "id": "github:1368655873:root",
             "repository": "qtaik/dsh-noname-kit",
             "path": "",
-            "revision": "fb3854fc79a831a14c1a9efa5809eb1faeee3b83",
+            "revision": "e9cb5ef49bd2757c39ee15fd720b82d5ee5519b0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "60a8c8977115e0ada032e248dc7cf11419eca213a395045335591c82354bd13d",
-                "code": "fb3854fc79a831a14c1a9efa5809eb1faeee3b83",
-                "maintenance": "523696d4b299873def0b35dec0b1187ba26fb7a257a288c89c579466116c3795"
+                "code": "e9cb5ef49bd2757c39ee15fd720b82d5ee5519b0",
+                "maintenance": "75f516e2d73d3cd93eadf69ae36710b295051b196a1365199d6582904d13ea6b"
             }
         }
     }

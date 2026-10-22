@@ -7,15 +7,15 @@
             "id": "github:1348119615:root",
             "repository": "loyalchiiina/dsh-font-enhancer",
             "path": "",
-            "revision": "e59d54fc9c419c5ab55587139a3e71fa94e2511f",
+            "revision": "760a81fae725ba7ccee62061664d5898715e0d75",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
-                "directory": "c051db272902c05215bfe52ccd642f294db5bca0d8b63eb721c67af3dcb61928",
-                "code": "e59d54fc9c419c5ab55587139a3e71fa94e2511f",
-                "maintenance": "04ca60fdbf1d6b305d7df5f74283159245800fd2c2ac0f92d73b1ee0d85a06d1"
+                "directory": "4a9fbd85239dd5525961b4cd28d3e51508bdccf7b07d439bd452b702480fe1fb",
+                "code": "760a81fae725ba7ccee62061664d5898715e0d75",
+                "maintenance": "65bd2995a6d5beab794787663088f9a4afc8e40509dab4928c52a6ba2c744fc7"
             }
         }
     }

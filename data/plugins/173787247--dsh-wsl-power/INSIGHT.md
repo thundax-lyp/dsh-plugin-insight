@@ -172,7 +172,7 @@ Windows 原生 powercfg 与控制面板可直接看到部分状态；插件做�
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**WSL 电源读取的字段、错误信号和本地化适配是否可信？
+**插件研究总目标**：WSL 电源读取的字段、错误信号和本地化适配是否可信？
 
 <a id="research-q01"></a>
 
@@ -180,7 +180,7 @@ Windows 原生 powercfg 与控制面板可直接看到部分状态；插件做�
 
 ### Q01 · win_power 真正能观察哪些状态？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -300,7 +300,7 @@ ConvertTo-Json -Compress -Depth 4 @{ plan = "$plan"; plans = @($plans); battery 
 
 ### Q02 · Windows 到 WSL 的读取与解析路径是什么？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -437,8 +437,8 @@ export function normalize(raw) {
 #### 缺口
 
 - 目标 PowerShell/WSL interop 未测
-  **影响：**超时信号可能不一致
-  **进一步探讨：**目标高延迟 interop 比较内外超时
+  **影响**：超时信号可能不一致
+  **进一步探讨**：目标高延迟 interop 比较内外超时
 
 <a id="research-q03"></a>
 
@@ -446,7 +446,7 @@ export function normalize(raw) {
 
 ### Q03 · 不同 Windows 语言和版本是否可靠？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -513,8 +513,8 @@ Reads the active scheme with `powercfg`. `battery` is absent on desktops.
 #### 缺口
 
 - 目标语言与 powercfg 输出未采样
-  **影响：**多语言机器可能出现看似成功但字段缺失
-  **进一步探讨：**目标中英 Windows 文本对照
+  **影响**：多语言机器可能出现看似成功但字段缺失
+  **进一步探讨**：目标中英 Windows 文本对照
 
 <a id="research-q04"></a>
 
@@ -522,7 +522,7 @@ Reads the active scheme with `powercfg`. `battery` is absent on desktops.
 
 ### Q04 · 休眠 available 和电池缺失如何解释？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -602,8 +602,8 @@ export function normalize(raw) {
 #### 缺口
 
 - 目标具体文案/异常输出未测
-  **影响：**可能把读取失败当真实节能设置
-  **进一步探讨：**目标故意失败 CIM/powercfg 对照
+  **影响**：可能把读取失败当真实节能设置
+  **进一步探讨**：目标故意失败 CIM/powercfg 对照
 
 <a id="research-q05"></a>
 
@@ -611,7 +611,7 @@ export function normalize(raw) {
 
 ### Q05 · 怎样验证并使用电源诊断？
 
-**研究主题：**采用判断、新假设与验证、效果与总成本
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
@@ -753,7 +753,7 @@ export function format(v) {
 #### 缺口
 
 - 目标硬件/语言覆盖未知
-  **影响：**不宜直接据结果调电源策略
-  **进一步探讨：**多设备/语言对照测试
+  **影响**：不宜直接据结果调电源策略
+  **进一步探讨**：多设备/语言对照测试
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

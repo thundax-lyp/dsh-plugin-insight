@@ -7,14 +7,14 @@
             "id": "github:1387190592:root",
             "repository": "dsh-plugin-lab/dsh-workbuddy-bridge",
             "path": "",
-            "revision": "28b2d123c52555084426d3875056e3d74d8532c3",
+            "revision": "0aff1d514dd755a32dc627c90ae9efa09e9f0271",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5de64429e4e020b583a5eec2477975e69860ef6f55aa5dd33e6c30839227b996",
-                "code": "28b2d123c52555084426d3875056e3d74d8532c3",
-                "maintenance": "3e2c9e2dae27b6c19dcb5ee9b1b9eafe956bcfe3411f53c270326f2bd8418e54"
+                "code": "0aff1d514dd755a32dc627c90ae9efa09e9f0271",
+                "maintenance": "5dba9e9034ba30716c27808b4bd775cd5a86d673386b25c0c38d610dd1b7ed32"
             }
         }
     }

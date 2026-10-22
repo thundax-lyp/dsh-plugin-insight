@@ -7,14 +7,14 @@
             "id": "github:1411192428:root",
             "repository": "berhbro/dsh-cyrene-theme",
             "path": "",
-            "revision": "6f2e3ad4b4a28379b1d1932feb330f79213273cd",
+            "revision": "dda6092e53c5b9f0897813ea419d6b313219317c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "da82a8522a0f3004019dd3fa173986be27355c3b9f71d531384aec5adec8f4b7",
-                "code": "6f2e3ad4b4a28379b1d1932feb330f79213273cd",
-                "maintenance": "7ab7ba14945e91bff78ab800718c79f4ffb37163a57df39313d84c740da23a76"
+                "code": "dda6092e53c5b9f0897813ea419d6b313219317c",
+                "maintenance": "befb273e70010a5f788b5bf03946a0fff78c3f526953f3d1003b17fafda9b813"
             }
         }
     }

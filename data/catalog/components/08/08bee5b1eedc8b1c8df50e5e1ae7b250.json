@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "08bee5b1eedc8b1c8df50e5e1ae7b250",
+    "identity": "github:1425216193:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425216193:root",
+            "repository": "OrderG-X/dsh-design-studio",
+            "path": "",
+            "revision": "98016fa9a89f01d843a9fbb969e4717c7ef1c1a4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c47b0cffacc83d6ab4228e3d109c4e2002c7b5ebd3312004f069dcdd39a5874b",
+                "code": "98016fa9a89f01d843a9fbb969e4717c7ef1c1a4",
+                "maintenance": "a48198a6809d1cabf22b9357f474ea7e52508eaa66c99bf49145c121160789fa"
+            }
+        }
+    }
+}

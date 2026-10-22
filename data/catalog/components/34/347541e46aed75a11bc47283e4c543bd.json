@@ -7,14 +7,14 @@
             "id": "github:1410177777:root",
             "repository": "yjrqz777/dsh-qqbot-lite",
             "path": "",
-            "revision": "67d2b45c1d04fbbf9610d0b5264db32ea2ec0a62",
+            "revision": "d55fa3fe6d68620bbe90393fc4b0c5a43d562f60",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2a8424d5d00b935f51f86b45fa59cba3c298ef726092b75f2a94c1f8abfe7040",
-                "code": "67d2b45c1d04fbbf9610d0b5264db32ea2ec0a62",
-                "maintenance": "294b2946ba7c357f84cae8cf072978a17badd96f4e1489bc9ef950fcb7d2b64d"
+                "code": "d55fa3fe6d68620bbe90393fc4b0c5a43d562f60",
+                "maintenance": "502c498c3e55db10ed63d917f8cae4f4134c9cb3562ca6ddaaf2b80442467ec0"
             }
         }
     }

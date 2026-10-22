@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d72ebd05eacb2f74ad70b8758692e939",
+    "identity": "github:1427062571:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427062571:root",
+            "repository": "diexianxiang/dsh-custom-splash",
+            "path": "",
+            "revision": "a43e6b88568b8d10684612227e484452171bae6d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "bc22e6ed65ce84da7e369b91a64d661b4e268f01331cb7a53a48e4ef10cd06aa",
+                "code": "a43e6b88568b8d10684612227e484452171bae6d",
+                "maintenance": "fca2c0e739aa6d88ca5d9a2f15758921d8c07d4861ba9088ec93064348093733"
+            }
+        }
+    }
+}

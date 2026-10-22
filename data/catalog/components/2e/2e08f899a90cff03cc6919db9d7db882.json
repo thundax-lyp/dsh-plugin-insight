@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2e08f899a90cff03cc6919db9d7db882",
+    "identity": "github:1334862230:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334862230:root",
+            "repository": "534119219/chicheng-gate",
+            "path": "",
+            "revision": "cfee329acf7f886749469779259a6a9147a2b190",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "002b91c1723d913164d3d6a581d64e4088bc1dbf90b527b2c61a8610c5debb64",
+                "code": "cfee329acf7f886749469779259a6a9147a2b190",
+                "maintenance": "82300ce30fccbc1cd62b8e64aa4251362a867e7176cd00fdbe630222bf55de14"
+            }
+        }
+    }
+}

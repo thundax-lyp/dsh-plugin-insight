@@ -7,14 +7,14 @@
             "id": "github:1367930952:root",
             "repository": "functy23/dsh-workbuddy-connect-functy",
             "path": "",
-            "revision": "7c71c058547248b2a1569b219caeb6d803080f0e",
+            "revision": "a13f54e34d357024801ea36963d1ba5c87923ca1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "252e5b74e5f1da4429fcb2b76fd2f3f37f406fd21ae2ab87b30fb7e2f75d34d5",
-                "code": "7c71c058547248b2a1569b219caeb6d803080f0e",
-                "maintenance": "5fe4de78b5db59a42ce60d0839a3fa54b39e7848c001c1ae189c63dd55999951"
+                "code": "a13f54e34d357024801ea36963d1ba5c87923ca1",
+                "maintenance": "54561b78edd3a346e1b8404b9aa884172318da56eeb498f3323a7fb7ecb822aa"
             }
         }
     }

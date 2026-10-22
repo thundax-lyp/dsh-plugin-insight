@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8eeef2b0bbd68d1cc10805cc66a7cb43",
+    "identity": "github:1412162067:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412162067:root",
+            "repository": "439436269-ctrl/dsh-scroll-piano",
+            "path": "",
+            "revision": "756fa15ba689f2cb0af38f20f4270c21f44f703d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c512281df11c270a143a990688cb5a14c96ed852e8f46d051ff6b400ab95ac62",
+                "code": "756fa15ba689f2cb0af38f20f4270c21f44f703d",
+                "maintenance": "a644691237daff019811fed5b6e3f6582064097bdda43a3b8abb10250a592c85"
+            }
+        }
+    }
+}

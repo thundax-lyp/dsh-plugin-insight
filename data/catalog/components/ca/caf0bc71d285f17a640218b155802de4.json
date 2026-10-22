@@ -7,14 +7,14 @@
             "id": "github:1340294768:root",
             "repository": "alpacachen/dsh-kanban",
             "path": "",
-            "revision": "3a32deced6f226fcdac1bf0dc2fae7e06189f441",
+            "revision": "aa2025e0846067da4ff221492e69498fca00c802",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "8a203cdb1da3c497047fdc5a9613350f8c71867e6bb891850557c815f3c5b4d9",
-                "code": "3a32deced6f226fcdac1bf0dc2fae7e06189f441",
-                "maintenance": "44d519392e17f1436bb3f9f1b797440988b8a4d4167a0d29460c3b08f75b7c16"
+                "code": "aa2025e0846067da4ff221492e69498fca00c802",
+                "maintenance": "5e77a93d78dabd89793c72256e26b9888ee4901c8516234fa8fb189fd1619e9d"
             }
         }
     }

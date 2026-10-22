@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "61187cfe1a4d004c791c6a3c663b3fda",
+    "identity": "github:1426872117:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426872117:root",
+            "repository": "tinyblckc0000al/dsh-deepworker",
+            "path": "",
+            "revision": "dbb3f565d873e62d20625f167cbc326d4ccdca29",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cd6affb0891ebfd2f758f97a75cef746d07916a28372b969670cae497391ba55",
+                "code": "dbb3f565d873e62d20625f167cbc326d4ccdca29",
+                "maintenance": "522b0f233e83c45a452cf55c1a37adf97d66875e5fd55fdd6b847d58f6c8551e"
+            }
+        }
+    }
+}

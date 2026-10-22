@@ -7,14 +7,14 @@
             "id": "github:1248774202:root",
             "repository": "text2future/flowix",
             "path": "",
-            "revision": "af97a440590ba85f15048736e4487210ae8bb1d7",
+            "revision": "bd102c8d7c57d9882ff24de8ceb91ea7e0a0f6e5",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "8baa60ca81c035def5e0e9143db1c9f806cd9b74ba6f31b91496990a4d1bd74b",
-                "code": "af97a440590ba85f15048736e4487210ae8bb1d7",
-                "maintenance": "3563f9d87fbe4dd9253df8d77a98c0595465b2f3f1008903fcbe05d9aed80416"
+                "code": "bd102c8d7c57d9882ff24de8ceb91ea7e0a0f6e5",
+                "maintenance": "5c0721394a677031002f12e4daa75b7a80d7d2044e3c04b6e0be1d8b438c6ee6"
             }
         }
     }

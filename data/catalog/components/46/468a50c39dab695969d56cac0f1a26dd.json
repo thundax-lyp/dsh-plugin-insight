@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "468a50c39dab695969d56cac0f1a26dd",
+    "identity": "github:1403037544:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1403037544:root",
+            "repository": "zudazhuang/dsh-update-safe",
+            "path": "",
+            "revision": "03279b5390d5fb4d9e6bc5e1c638871d5d132f51",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "90daaf4270a643fa4f4433d5be2270401db38e5201de2182b55fd649363ae92a",
+                "code": "03279b5390d5fb4d9e6bc5e1c638871d5d132f51",
+                "maintenance": "a44f7ffa67d5c91f76037d53e4ffb933f1a1853512249134b884dd56a03150f2"
+            }
+        }
+    }
+}

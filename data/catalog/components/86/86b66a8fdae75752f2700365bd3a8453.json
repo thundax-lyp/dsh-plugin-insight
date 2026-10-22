@@ -7,15 +7,15 @@
             "id": "github:1334346564:root",
             "repository": "MichengAI/dsh-codex-ui",
             "path": "",
-            "revision": "3752bbf631948e8025f5f9870f7096c059f187c3",
+            "revision": "1400f830867e8ef4a098df2de21f6e23ecc29324",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "dca161c530751706b1440a3ec8c5f0dedc4af2b75feec736d47e070a31704349",
-                "code": "3752bbf631948e8025f5f9870f7096c059f187c3",
-                "maintenance": "f17b1b86d234fc1d961ba2b776318db3bcf2aaf90b25eaeccba88e5391560e62"
+                "code": "1400f830867e8ef4a098df2de21f6e23ecc29324",
+                "maintenance": "369be808b2b97a106455c0697f5ff760705c0996cff50fac5278f4ac7b976cff"
             }
         }
     }

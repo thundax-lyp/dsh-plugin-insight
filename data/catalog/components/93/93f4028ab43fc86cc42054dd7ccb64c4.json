@@ -7,14 +7,14 @@
             "id": "github:1406062357:root",
             "repository": "gulagala001/oh-my-agents-above-all",
             "path": "",
-            "revision": "7840eef52f0bbc533da59ec6b2b847ce42117c3e",
+            "revision": "0a4542a1868a7c64e49d45d743c49b8e014810da",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c445f1c99e9c71b98917d058aba927563cbdac17624df206281efdaa9bbde1b8",
-                "code": "7840eef52f0bbc533da59ec6b2b847ce42117c3e",
-                "maintenance": "fa7727b16b312a30c5b53b60f44bbb4ced44d1be5e9d7879d298cd01c59a442a"
+                "code": "0a4542a1868a7c64e49d45d743c49b8e014810da",
+                "maintenance": "023c2ecfa2cf4382ef274997d1f222643bda9f7e1c12b9b034a6d9ccd907310e"
             }
         }
     }

@@ -7,15 +7,15 @@
             "id": "github:1366979533:root",
             "repository": "ouli-1242/dsh-plugin-tool-management",
             "path": "",
-            "revision": "8f950c5e8e0fd822ad547349b5f918b3e54709b3",
+            "revision": "4d7063e974d7dcbeb4f6cbb1a9ddbbf7ecc6f2fd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "58ec4de886083f9ae94786ea097c47173f6b5fe5d2c0d01e35de45ec03bd05ba",
-                "code": "8f950c5e8e0fd822ad547349b5f918b3e54709b3",
-                "maintenance": "ed6abfaad460afd418cc887a1c65974806f5aa835eddadbdbf1b626e7d365b32"
+                "code": "4d7063e974d7dcbeb4f6cbb1a9ddbbf7ecc6f2fd",
+                "maintenance": "54d94900094d204efaa574fde1c1c33267dc4e4677fd3eb7ee22b8385b792cdd"
             }
         }
     }

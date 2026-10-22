@@ -7,14 +7,14 @@
             "id": "github:1334902330:packages-plugin",
             "repository": "Blank-not-black/dsh-Remote",
             "path": "packages/plugin",
-            "revision": "280c201afa3714a8ff208cf6a09b691d80c09f2e",
+            "revision": "813db9518ae250a38a0c7262c4ec330cc8d67c63",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e57a2d47d71612cc9d2cb66d7711277e791fa075dfa8d100e52456ff26c664f1",
-                "code": "280c201afa3714a8ff208cf6a09b691d80c09f2e",
-                "maintenance": "4571ec6d2659bdaf3a56b90d994d80b132b3bc6cbb0366a5cd6aedca3cde91c6"
+                "code": "813db9518ae250a38a0c7262c4ec330cc8d67c63",
+                "maintenance": "b32bd076dc0af495c261adb7b84b153212b38e9f989144a8582ab01214f8ddad"
             }
         }
     }

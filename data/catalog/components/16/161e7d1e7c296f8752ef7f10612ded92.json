@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "161e7d1e7c296f8752ef7f10612ded92",
+    "identity": "github:1425291372:plugins-genui",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425291372:plugins-genui",
+            "repository": "HwFee/HwFee-dsh",
+            "path": "plugins/genui",
+            "revision": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ccaa8d624f6263633fffa6103137788e1dd22febc762535e9c4edfeb3e82e1d6",
+                "code": "5fbb1ea4ed8a3684d7285e7da619a7fe0b4a8bce",
+                "maintenance": "14d48da1a00d0360203f6302bf1187a0270ae5af62b767cd7059fe0958c8f9b0"
+            }
+        }
+    }
+}

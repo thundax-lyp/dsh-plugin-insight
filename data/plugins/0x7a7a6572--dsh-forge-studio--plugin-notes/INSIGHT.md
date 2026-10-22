@@ -174,7 +174,7 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**便签到任务、Agent 写入和 WebDAV 备份在失败与删除情形下是否可靠？
+**插件研究总目标**：便签到任务、Agent 写入和 WebDAV 备份在失败与删除情形下是否可靠？
 
 <a id="research-q01"></a>
 
@@ -182,7 +182,7 @@
 
 ### Q01 · 便签板从记录到 AI 任务覆盖哪些步骤？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -391,7 +391,7 @@ export function createScheduleRunner(deps: ScheduleRunnerDeps): ScheduleRunner {
 
 ### Q02 · 任务会话的授权与失败边界是什么？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -506,8 +506,8 @@ export function notesTaskGuard(ctx: Context, exec: ToolExecution): string | unde
 #### 缺口
 
 - 目标 host session 清理行为未知
-  **影响：**失败后可能留下孤儿会话
-  **进一步探讨：**模拟模型选择/授租约/prompt 失败检查会话
+  **影响**：失败后可能留下孤儿会话
+  **进一步探讨**：模拟模型选择/授租约/prompt 失败检查会话
 
 <a id="research-q03"></a>
 
@@ -515,7 +515,7 @@ export function notesTaskGuard(ctx: Context, exec: ToolExecution): string | unde
 
 ### Q03 · WebDAV 只在有变更时自动备份是否包括删除？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -601,8 +601,8 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 #### 缺口
 
 - 目标 WebDAV 定时路径未运行
-  **影响：**删除后远端备份可过期
-  **进一步探讨：**删除最后一条便签后等待检查并核远端
+  **影响**：删除后远端备份可过期
+  **进一步探讨**：删除最后一条便签后等待检查并核远端
 
 <a id="research-q04"></a>
 
@@ -610,7 +610,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 
 ### Q04 · 恢复与调度有哪些不可忽略的副作用？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -755,8 +755,8 @@ export function isRunTimeout(note: NoteRecord, now: number): boolean {
 #### 缺口
 
 - 宿主停止/写入原子性未测
-  **影响：**恢复失败或超时可能产生状态不一致
-  **进一步探讨：**隔离副本故障注入与长任务核查
+  **影响**：恢复失败或超时可能产生状态不一致
+  **进一步探讨**：隔离副本故障注入与长任务核查
 
 <a id="research-q05"></a>
 
@@ -764,7 +764,7 @@ export function isRunTimeout(note: NoteRecord, now: number): boolean {
 
 ### Q05 · Agent 对手写便签的修改和定时任务应如何治理？
 
-**研究主题：**采用判断、新假设与验证、效果与总成本
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
@@ -1054,7 +1054,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 #### 缺口
 
 - 真实提问/用户授权流程未测
-  **影响：**agent 写入与定时执行需用户可追踪
-  **进一步探讨：**目标宿主按来源和租约逐动作验证
+  **影响**：agent 写入与定时执行需用户可追踪
+  **进一步探讨**：目标宿主按来源和租约逐动作验证
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

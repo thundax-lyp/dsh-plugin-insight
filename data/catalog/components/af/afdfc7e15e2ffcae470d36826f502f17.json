@@ -7,14 +7,14 @@
             "id": "github:1362151550:packages-openwiki-dsh-openwiki-visualize",
             "repository": "zhangj1164/dsh-mega-plugins",
             "path": "packages/openwiki/dsh-openwiki-visualize",
-            "revision": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
+            "revision": "267a4b57dc7c4b39219435ae7ec0f21fc88dd4ce",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e722712b07d997355c60dc6ade7cff042d6ff99059d622a957161b0c88992838",
-                "code": "76ef8c9216c1ae42579915eed0e310600e8c2f7f",
-                "maintenance": "9ea72a2176062ee89775bbff1e26d12f18488a364559ecfdae551af0626f5eed"
+                "code": "267a4b57dc7c4b39219435ae7ec0f21fc88dd4ce",
+                "maintenance": "f1556f2e928ec094460fd5dccfa2c563d70657b070a3f4a697544cbd88f83807"
             }
         }
     }

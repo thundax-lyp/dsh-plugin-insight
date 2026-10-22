@@ -7,15 +7,15 @@
             "id": "github:1334170127:root",
             "repository": "tomowang/dsh-tui",
             "path": "",
-            "revision": "3e7a51f6ec14eaaaeb79c8102c996e8fe9c3b0df",
+            "revision": "3b36bc42172abd0e7ad2c818b4e9e5fd78b2a922",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "656948acab752fc6a510c04b1e0e97887f6d45258cb4332ee58d94da2ea46071",
-                "code": "3e7a51f6ec14eaaaeb79c8102c996e8fe9c3b0df",
-                "maintenance": "a05a6dc0798e4f66a2a75315bf79533cce97a3a339dc353b7ce2a85453cdbd4c"
+                "code": "3b36bc42172abd0e7ad2c818b4e9e5fd78b2a922",
+                "maintenance": "6b1a0ddb37dc75aa29454ccb3fede229eb3fe66a4b42b0ac4e984411a16b93e6"
             }
         }
     }

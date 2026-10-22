@@ -7,14 +7,14 @@
             "id": "github:1399398526:root",
             "repository": "ccll/dsh-advisor-flow",
             "path": "",
-            "revision": "d44548d6603c0983205be673f3322993bb3adc1d",
+            "revision": "b1a71e13f9c7fafe7b5819fc9d601ccbb7cf89ea",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1fed6a70bc791b4fa7464ccabca6b39275335bf8caaaac36eb31e18009876441",
-                "code": "d44548d6603c0983205be673f3322993bb3adc1d",
-                "maintenance": "2c2b281760c7ff6de9cfbd987c02491e7fa61bd2390058c2c9fbb8d71b993f1e"
+                "code": "b1a71e13f9c7fafe7b5819fc9d601ccbb7cf89ea",
+                "maintenance": "ec9c75b7a631fe5c99535e6eeffeb8e7624f4d99f9ace57a11915e92b33243c4"
             }
         }
     }

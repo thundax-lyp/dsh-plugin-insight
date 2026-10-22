@@ -7,14 +7,14 @@
             "id": "github:1188590713:plugins-rotifer",
             "repository": "rotifer-protocol/rotifer-playground",
             "path": "plugins/rotifer",
-            "revision": "93feb355f5bbc06e3991c82e53ad95b907bead31",
+            "revision": "336315e8bb065ab5b453952aa0e53f90e34eca0b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "efdefaabc88c61964b185601dc30138ba9242095e6d1c5a9c07e9fcdb36b24a1",
-                "code": "93feb355f5bbc06e3991c82e53ad95b907bead31",
-                "maintenance": "cabbb0ab0fd94b3427b10f0bc56ff8ad3e6e9f750d7bd736bc162b08f11504bd"
+                "code": "336315e8bb065ab5b453952aa0e53f90e34eca0b",
+                "maintenance": "f96c719c4867dac6a91f30310754c4f3270b83212ab6e9f86578c3251a441339"
             }
         }
     }

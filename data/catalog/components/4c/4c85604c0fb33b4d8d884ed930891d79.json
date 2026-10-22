@@ -7,14 +7,14 @@
             "id": "github:1365405341:root",
             "repository": "l956615272-hub/dsh-token-usage",
             "path": "",
-            "revision": "8e3de2113b1219e48128423cb61ccf95ffcd31a3",
+            "revision": "867527279ef2d8f18b97efc59f01a659e6ed287d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ceb10b4ed7abb3e08f08a9cc65b2606a66bb342f99bf8191154c9d2a0fd786ce",
-                "code": "8e3de2113b1219e48128423cb61ccf95ffcd31a3",
-                "maintenance": "d5e549ac5fabacd4cf04449e82bb8563210677b251361d5d9343d56e8c300037"
+                "code": "867527279ef2d8f18b97efc59f01a659e6ed287d",
+                "maintenance": "ce1400a6773db81f8b7fa68500ced93c52fc45a307a588cd0e26bc8ca6675a2d"
             }
         }
     }

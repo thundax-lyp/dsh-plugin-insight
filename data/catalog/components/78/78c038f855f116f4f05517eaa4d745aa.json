@@ -7,14 +7,14 @@
             "id": "github:1353275854:root",
             "repository": "HOWILLMAKEIT/dsh-model-context-catalog",
             "path": "",
-            "revision": "e0dd90d7d3920c60066dbd8efd6dd12b7f6d02f6",
+            "revision": "434193897035c1c31015f5c790b1be0b9f69b834",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b75380d1d0fbebc2843eed39c071ab530bce51c406f69718e05f444d0053b0f5",
-                "code": "e0dd90d7d3920c60066dbd8efd6dd12b7f6d02f6",
-                "maintenance": "db264c428e918a518455031edf7fa66b54ec5ec9b6aa39afbfdf498bfdbea2c1"
+                "code": "434193897035c1c31015f5c790b1be0b9f69b834",
+                "maintenance": "f4af697367d13e5a3b6710d72004f1d57654ddf2bcc11b06bbb67b8226b103f8"
             }
         }
     }

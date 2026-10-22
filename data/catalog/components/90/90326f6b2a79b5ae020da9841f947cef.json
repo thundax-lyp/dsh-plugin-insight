@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "90326f6b2a79b5ae020da9841f947cef",
+    "identity": "github:1426455774:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426455774:root",
+            "repository": "ACGsu/dsh-sidebar-panel-fold",
+            "path": "",
+            "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "4d2db2bcaa9ea15a393947000fdbf255c91855e304c7513dddc12caac56e0c61",
+                "code": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                "maintenance": "c9fd38a3d0dfccff6693f6a3af9488fcc019933114494fb13f6594adb67fd922"
+            }
+        }
+    }
+}

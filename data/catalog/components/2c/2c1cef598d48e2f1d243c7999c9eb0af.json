@@ -7,14 +7,14 @@
             "id": "github:1397259660:root",
             "repository": "f-e-n-g-0531/dsh-code-review",
             "path": "",
-            "revision": "9b0f05582fee48a202317f7ad24be50bb9842031",
+            "revision": "3934213a4d1a8c8cefaeeb348b38bb4c85aa9c2a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6a7e3adeb8a2861254baac52a7bb921e8efd27521aa19a42cc6d025277443948",
-                "code": "9b0f05582fee48a202317f7ad24be50bb9842031",
-                "maintenance": "b5420a39e87de5dd773f5bd4e9621257869d49c5a842073ca82d4ce101980509"
+                "code": "3934213a4d1a8c8cefaeeb348b38bb4c85aa9c2a",
+                "maintenance": "1b40c5848e999d20d4501bf9c96259bca1db1a7415e1fa66ff76337665408cbe"
             }
         }
     }

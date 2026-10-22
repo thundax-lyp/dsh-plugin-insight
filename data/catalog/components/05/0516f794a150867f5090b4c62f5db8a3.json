@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0516f794a150867f5090b4c62f5db8a3",
+    "identity": "github:1427459222:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427459222:root",
+            "repository": "GoldenLoaf24h/dsh-prompt-suggestion",
+            "path": "",
+            "revision": "79119de2e6cfa762dff1eb9c570c8f7b3d995b7f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "48f369f913a604be78d720011fe2a3049866b34db9b55bea138362476c17e040",
+                "code": "79119de2e6cfa762dff1eb9c570c8f7b3d995b7f",
+                "maintenance": "3a1087c228ed21c076377a3904b1d7f5af69f022bc3e2369d215c546ced2aac4"
+            }
+        }
+    }
+}

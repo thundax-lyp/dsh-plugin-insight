@@ -7,14 +7,14 @@
             "id": "github:1276665883:packages-dsh-plugin-browserskill",
             "repository": "Tencent/BrowserSkill",
             "path": "packages/dsh-plugin-browserskill",
-            "revision": "6214e3d6a3d74eaf39c0202c4f182b5755974da9",
+            "revision": "71e7b3c2ac67c34e7947a838df95f4e45724e796",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b107e2473eab2a9ce7834e89af90be3cc738be7640d03f1f79091d00d4920d04",
-                "code": "6214e3d6a3d74eaf39c0202c4f182b5755974da9",
-                "maintenance": "200264235c51df4415e37b881277ed412c78b46c1349a23e034f185ed0beae64"
+                "code": "71e7b3c2ac67c34e7947a838df95f4e45724e796",
+                "maintenance": "bd254dacd42883f3faa425a05fcd4c6ef4c2fa33d5af28ef2a646bf5804b8b7e"
             }
         }
     }

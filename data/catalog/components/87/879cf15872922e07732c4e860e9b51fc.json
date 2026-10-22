@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "879cf15872922e07732c4e860e9b51fc",
+    "identity": "github:1427167255:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427167255:root",
+            "repository": "zirscard/dsh-macos-signfix",
+            "path": "",
+            "revision": "adb660ffe2e95dad23f265dd22389cfd619aeac2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2dd07a944b09f79663ebfd753a0bbebb4e7c5d75dd94fdc49e5d1b9154e52f2a",
+                "code": "adb660ffe2e95dad23f265dd22389cfd619aeac2",
+                "maintenance": "ba726e99b667acc859375cae78ebe36e4b6643a92239ee023c42e1eb5d848d4f"
+            }
+        }
+    }
+}

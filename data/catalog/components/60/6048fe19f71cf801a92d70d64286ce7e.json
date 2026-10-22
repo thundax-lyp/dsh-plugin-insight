@@ -7,15 +7,15 @@
             "id": "github:1345275112:root",
             "repository": "kfirsch/dsh-hebrew-rtl",
             "path": "",
-            "revision": "bba7de3b9db71d1c1218f7a6d32982badd6dd4ab",
+            "revision": "f82398b22834f776563efa6974930d05861d361a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "c3c1305cbd98e8618486bdbbf59c8c17e23b6f771587f0e4cbc9196a9ac93305",
-                "code": "bba7de3b9db71d1c1218f7a6d32982badd6dd4ab",
-                "maintenance": "165760553f245887d0753cfe7aa2d2bd1456e735ffa2ccbdcb88eecbc36bd0b8"
+                "code": "f82398b22834f776563efa6974930d05861d361a",
+                "maintenance": "b2970d1b9cebaf92071331b941a66e50c41add26e64b61539810d5edffbb46a0"
             }
         }
     }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e525317fccfb46d07ba748b98b9a8f09",
+    "identity": "github:1425870546:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425870546:root",
+            "repository": "S-anZZz/dsh-pink-bow-kitty",
+            "path": "",
+            "revision": "364f5962b1187fca3817bb24bbf5c794302bb46a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f75900ddcf69ad4c843df15bdf7608d22ee41fc76457f15f3723b28de0914be5",
+                "code": "364f5962b1187fca3817bb24bbf5c794302bb46a",
+                "maintenance": "f4e68f8ac686a030f696026a1644463b4ef805b028ed2fba2bcbbce36a4aa13c"
+            }
+        }
+    }
+}

@@ -151,7 +151,7 @@ DSH LSP service/tool、fs/subprocess 与 LuaLS。
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实 LuaLS 配置包的 --stdio、单文件前提和故障降级。
+**插件研究总目标**：核实 LuaLS 配置包的 --stdio、单文件前提和故障降级。
 
 <a id="research-q01"></a>
 
@@ -159,7 +159,7 @@ DSH LSP service/tool、fs/subprocess 与 LuaLS。
 
 ### Q01 · Lua 导航功能由配置包还是 lua-language-server/共享基座提供？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -254,8 +254,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 未启动 LuaLS
-  **影响：**真实 Lua 模块导航/诊断未知
-  **进一步探讨：**在真实 Lua 项目试四项导航
+  **影响**：真实 Lua 模块导航/诊断未知
+  **进一步探讨**：在真实 Lua 项目试四项导航
 
 <a id="research-q02"></a>
 
@@ -263,7 +263,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q02 · 缺服降级是否保留自定义扩展并准确区分故障？
 
-**研究主题：**工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
@@ -401,8 +401,8 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 #### 缺口
 
 - 未构造配置错误或额外扩展故障
-  **影响：**用户可见错误类型待验证
-  **进一步探讨：**隔离测试命令缺失、非法配置、.xyz 路由
+  **影响**：用户可见错误类型待验证
+  **进一步探讨**：隔离测试命令缺失、非法配置、.xyz 路由
 
 <a id="research-q03"></a>
 
@@ -410,7 +410,7 @@ accepted (`command`, `args`, `env`, `extensionToLanguage`, `initializationOption
 
 ### Q03 · 在 Lua 工程采用的条件和证据范围是什么？
 
-**研究主题：**依赖、兼容与流程、采用判断
+**研究主题**：依赖、兼容与流程、采用判断
 
 #### 完整回答
 
@@ -615,8 +615,8 @@ describe.skipIf(!installed)('dsh-lsp-lua real server (lua-language-server)', () 
 #### 缺口
 
 - 未运行真实 LuaLS lane
-  **影响：**四操作尤其 implementation 的结果未知
-  **进一步探讨：**在真实 Lua 文件及模块间引用中试四操作
+  **影响**：四操作尤其 implementation 的结果未知
+  **进一步探讨**：在真实 Lua 文件及模块间引用中试四操作
 
 <a id="research-q04"></a>
 
@@ -624,7 +624,7 @@ describe.skipIf(!installed)('dsh-lsp-lua real server (lua-language-server)', () 
 
 ### Q04 · 首次、持续及失败恢复分别消耗什么？
 
-**研究主题：**效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
@@ -732,8 +732,8 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 实际项目规模、LuaLS资源和配置恢复工时未知
-  **影响：**不能估算总成本或效果提升幅度
-  **进一步探讨：**从相同项目的人工配置记录、服务器资源与导航真值入手
+  **影响**：不能估算总成本或效果提升幅度
+  **进一步探讨**：从相同项目的人工配置记录、服务器资源与导航真值入手
 
 <a id="research-q05"></a>
 
@@ -741,7 +741,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 ### Q05 · 怎样证伪保留扩展并区分失败原因能改善降级诊断？
 
-**研究主题：**新假设与验证、工程质量与复用、采用判断
+**研究主题**：新假设与验证、工程质量与复用、采用判断
 
 #### 完整回答
 
@@ -842,7 +842,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 #### 缺口
 
 - 共享基座错误类型与部分注册清理语义未核实
-  **影响：**分层恢复方案可行性未知
-  **进一步探讨：**从固定基座错误契约及各阶段失败状态记录入手
+  **影响**：分层恢复方案可行性未知
+  **进一步探讨**：从固定基座错误契约及各阶段失败状态记录入手
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

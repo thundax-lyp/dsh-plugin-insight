@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d944e426a296993671d8337cc55924d6",
+    "identity": "github:1426070939:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426070939:root",
+            "repository": "7starsseeker/MCModsDevBridge",
+            "path": "",
+            "revision": "c7f7c384eeb5b0c1bc6d744f8e2d5b95631ca7b6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "783c17a093ed643fd54b44d771b958f4d8759196b0ba5c01cfed66a7e4a0c445",
+                "code": "c7f7c384eeb5b0c1bc6d744f8e2d5b95631ca7b6",
+                "maintenance": "f878a13b7ca8f98283d59b11832c2c8f07bd164cde37fead402b6e2511ce0d63"
+            }
+        }
+    }
+}

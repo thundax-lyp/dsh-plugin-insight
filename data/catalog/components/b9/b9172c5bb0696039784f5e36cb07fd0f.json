@@ -7,14 +7,14 @@
             "id": "github:1385896447:root",
             "repository": "Ebony-Vinyl/dsh-our-free-model",
             "path": "",
-            "revision": "3b78248304301d4e22e336dd826df62bffc58739",
+            "revision": "482500f79ecbf92f581e1d2e98f170701a743083",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "49a4a9c9d35fe21738794b6c71f8fe36027781147fdcf033bd0f2c88d44a4ac7",
-                "code": "3b78248304301d4e22e336dd826df62bffc58739",
-                "maintenance": "86a7b6310955912be8cfa083b6d3e5625e4e0c9df8900e63fbd22330bc9bfbd5"
+                "code": "482500f79ecbf92f581e1d2e98f170701a743083",
+                "maintenance": "233cd921d4c5b6ef8221c00cd085c1712815a3b840e40a1ed253282ce6841295"
             }
         }
     }

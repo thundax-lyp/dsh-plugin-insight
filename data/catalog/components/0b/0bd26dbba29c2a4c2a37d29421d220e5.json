@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0bd26dbba29c2a4c2a37d29421d220e5",
+    "identity": "github:1426573280:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426573280:root",
+            "repository": "ShallBay/dsh-bridge-browser",
+            "path": "",
+            "revision": "558248bb10cf3a216ca159c4fefcaf61df09d695",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8c4997c0d737a6659854af8d49c0464e75c948df1d3d2c310572be3fc5b3f277",
+                "code": "558248bb10cf3a216ca159c4fefcaf61df09d695",
+                "maintenance": "f22164487d73c351a786c50d86da136a8800a7e86b6a85b270730e5a560ea199"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1408853264:root",
             "repository": "PerryLink/dsh-tender-matrix",
             "path": "",
-            "revision": "0b3fe80941571f8b91cd597271376b2bf744ebe0",
+            "revision": "82e27d2fdee8339262a1ca5481aaaf3bc0012a10",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "925173b542e0b1247746ccf2ef6997b78339cc5ecb1318b4ee3741b0672827ae",
-                "code": "0b3fe80941571f8b91cd597271376b2bf744ebe0",
-                "maintenance": "8d35964023d789fe0b7e829fee12055b268d402ac32708fd4df8ab4e58b58ea5"
+                "code": "82e27d2fdee8339262a1ca5481aaaf3bc0012a10",
+                "maintenance": "720ad5b8d35fd64994c7d82d2900fa37bf35a587b1ac210ddfb66549d807356e"
             }
         }
     }

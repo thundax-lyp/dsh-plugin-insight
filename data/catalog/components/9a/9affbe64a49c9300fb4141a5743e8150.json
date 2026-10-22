@@ -7,14 +7,14 @@
             "id": "github:1340635080:root",
             "repository": "cilis/dsh-tauri-launcher",
             "path": "",
-            "revision": "f40d427be79d162fbec2e0b56df73ef0facb5a07",
+            "revision": "980ed54a2433bcce33a087a76f7f77c48b578b8a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "613d8854a53bccb771d76235e4dba34a0d1917a4cf00101c29915d5cf017618e",
-                "code": "f40d427be79d162fbec2e0b56df73ef0facb5a07",
-                "maintenance": "4178cba00522517148d9a9c0c904a866858c7ec2e20feaeedb184ee249dae652"
+                "code": "980ed54a2433bcce33a087a76f7f77c48b578b8a",
+                "maintenance": "28e00b9ca019da11404334c643bc18bfef01da94a6b46d607ac0415f2269f9d9"
             }
         }
     }

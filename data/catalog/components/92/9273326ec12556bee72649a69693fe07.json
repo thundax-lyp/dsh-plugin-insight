@@ -501,14 +501,14 @@
             "repository": "23swccp/dsh-undo",
             "path": "packages/bundle-rollback",
             "revision": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "9d6f39fe967c514fb5db06e4cb612d2913926e2f3d0e7a9d6723d3dc419a0714",
                 "code": "bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67",
                 "maintenance": "5d0507c17826aa57cf81ece894a4c9f701d8d84c5272645d14b1ebaf6b6631eb"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

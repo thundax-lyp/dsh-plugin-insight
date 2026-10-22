@@ -168,7 +168,7 @@ fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核实四工具技能创建链路、会话上下文实际使用与打包/文件写入完整性。
+**插件研究总目标**：核实四工具技能创建链路、会话上下文实际使用与打包/文件写入完整性。
 
 <a id="research-q01"></a>
 
@@ -176,7 +176,7 @@ fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF
 
 ### Q01 · 四个工具实际生成什么？
 
-**研究主题：**场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
@@ -479,8 +479,8 @@ export async function writeSkillDraft(fs: HostFs, outputDir: string, draft: Skil
 #### 缺口
 
 - 生成技能与目标任务的契合程度及触发稳定性缺少对照。
-  **影响：**结构化草稿不代表技能合意或有效。
-  **进一步探讨：**对固定结构化/散文goal逐条审阅任务步骤，再区分发现、触发与任务质量。
+  **影响**：结构化草稿不代表技能合意或有效。
+  **进一步探讨**：对固定结构化/散文goal逐条审阅任务步骤，再区分发现、触发与任务质量。
 
 <a id="research-q02"></a>
 
@@ -488,7 +488,7 @@ export async function writeSkillDraft(fs: HostFs, outputDir: string, draft: Skil
 
 ### Q02 · fromSession 真正进入生成内容吗？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -602,8 +602,8 @@ export function extractSessionTail(session: unknown): string | undefined {
 #### 缺口
 
 - 未观察模型调用 skill_new 前是否自行将会话写进 goal。
-  **影响：**终端用户感知与实际内容差异待实测。
-  **进一步探讨：**同一 goal 分别以 fromSession false/true 生成并比较字节。
+  **影响**：终端用户感知与实际内容差异待实测。
+  **进一步探讨**：同一 goal 分别以 fromSession false/true 生成并比较字节。
 
 <a id="research-q03"></a>
 
@@ -611,7 +611,7 @@ export function extractSessionTail(session: unknown): string | undefined {
 
 ### Q03 · 文件安全和打包保真度怎样？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
@@ -808,7 +808,7 @@ export async function packSkillDir(fs: HostFs, skillDir: string, outDir?: string
 #### 缺口
 
 - 文本化打包的资源受损范围、漏文件覆盖与目标环境路径权限缺少对照。
-  **影响：**源码已识别字节保真风险，不能据此界定所有资源和部署的实际损失范围。
-  **进一步探讨：**以合成二进制及目录清单做原/解包字节对照，并单独核路径策略与覆盖。
+  **影响**：源码已识别字节保真风险，不能据此界定所有资源和部署的实际损失范围。
+  **进一步探讨**：以合成二进制及目录清单做原/解包字节对照，并单独核路径策略与覆盖。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

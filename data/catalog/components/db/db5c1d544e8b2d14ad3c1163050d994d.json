@@ -7,14 +7,14 @@
             "id": "github:1182135360:root",
             "repository": "zhaoolee/notes",
             "path": "",
-            "revision": "6a9b6a3f02a3dd189117bd511d840e44e0c665d5",
+            "revision": "50d498923df11b8d3e9f225477622939adc87fe0",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "1b68cda65c5e5e9f23a7f02a1bb5230c9830454ea3d0f4f894a08ba19a535423",
-                "code": "6a9b6a3f02a3dd189117bd511d840e44e0c665d5",
-                "maintenance": "2595fa2eb668f8720200f2a663050ea02b210d5ef2b722a1150c161baa50c436"
+                "code": "50d498923df11b8d3e9f225477622939adc87fe0",
+                "maintenance": "fcf53622d41316482bd4cca548d7b8e7f3f17d09c35075f7f6e6212c42ec6dda"
             }
         }
     }

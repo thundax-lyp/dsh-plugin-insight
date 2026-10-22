@@ -492,14 +492,14 @@
             "repository": "1497105876/dsh-text-inject",
             "path": "",
             "revision": "42970dd9743730259ba04af40f5ece1db1e7c7bc",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "e52cdc4484c9bee8ced8978ea21a5818f611f9957f6ddd94b0c17bed99c431cf",
                 "code": "42970dd9743730259ba04af40f5ece1db1e7c7bc",
                 "maintenance": "61ae35adc9b0b3ab17a64517934e29a0be9fe41f04efda6d378b3d48ede85c13"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

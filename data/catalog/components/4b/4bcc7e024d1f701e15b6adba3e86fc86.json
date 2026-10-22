@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4bcc7e024d1f701e15b6adba3e86fc86",
+    "identity": "github:1429305958:workbench",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1429305958:workbench",
+            "repository": "baiye1997/MEB-DSH",
+            "path": "workbench",
+            "revision": "0bd0d1819ada995278f75f4afcaa812b7b861d8d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0d3d29edea850e698d08386a07d58435e57b281ae1aae30fd717b3ca07433ae5",
+                "code": "0bd0d1819ada995278f75f4afcaa812b7b861d8d",
+                "maintenance": "2a512abc81569e7154966eea2902461eece866edadfdb3fad9d8076381d2299a"
+            }
+        }
+    }
+}

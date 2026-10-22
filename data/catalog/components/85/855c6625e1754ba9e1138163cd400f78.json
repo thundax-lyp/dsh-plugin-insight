@@ -7,15 +7,15 @@
             "id": "github:1334305197:root",
             "repository": "Rianico/dsh-better-edit",
             "path": "",
-            "revision": "7f38175fe2eefa765485d14f06abcb97bfda736c",
+            "revision": "b20e1307e4b343f79c0303a48f748456e20d01b8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "13a9d1ce051e5675aa74b6e4e3df9310f1c37847176c7f8929e27b4fab2c9041",
-                "code": "7f38175fe2eefa765485d14f06abcb97bfda736c",
-                "maintenance": "2be40eb15f85dadecd28333b8664fec10207c4ec174d12bea4757d97d9ddc90b"
+                "code": "b20e1307e4b343f79c0303a48f748456e20d01b8",
+                "maintenance": "bd775e27a870dbdfa6856e8baba76f138e38c8c4cb8a555b23224313464cd4ab"
             }
         }
     }

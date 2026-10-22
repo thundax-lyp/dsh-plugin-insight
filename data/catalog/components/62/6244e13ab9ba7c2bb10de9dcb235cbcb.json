@@ -437,14 +437,14 @@
             "repository": "764475881/dsh-chat-width",
             "path": "",
             "revision": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "c2f83d3753278cf0cbcba1ea5a83be487a1b1a4b177d0985531984cfde9ae7c6",
                 "code": "5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd",
                 "maintenance": "c234738ccbba6ab71c6b2a18f9c98d5924d5a9f5b1e033f228ca3dddb30da31c"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

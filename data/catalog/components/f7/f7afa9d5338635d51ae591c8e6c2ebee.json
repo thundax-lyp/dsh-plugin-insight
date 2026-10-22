@@ -7,14 +7,14 @@
             "id": "github:1349566530:root",
             "repository": "CARVIN94/dsh-router",
             "path": "",
-            "revision": "d3b04a7b13215a5bc401806d1909c9e0239d629c",
+            "revision": "2d3aa22118c4e976ec24f36d84e2c08b893c7fa2",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "dd5daf42a7e5dc441760a05451320d0e7b76e11cc599ac9299a484a96e83a836",
-                "code": "d3b04a7b13215a5bc401806d1909c9e0239d629c",
-                "maintenance": "fef1178a32ddfbfab718bdb8490b40beeae32095df8f308339e74bf73b05165d"
+                "code": "2d3aa22118c4e976ec24f36d84e2c08b893c7fa2",
+                "maintenance": "f4a6dba653a85b2e28e93a5d3812c5886feb9e04a6b033d87d34f0bd98075739"
             }
         }
     }

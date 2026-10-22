@@ -7,15 +7,15 @@
             "id": "github:1336614837:root",
             "repository": "wssfk12138/dsh-damage-pulse",
             "path": "",
-            "revision": "14af778e159de7009937ba1063781eb7f4f5b355",
+            "revision": "7f739ef8aae7e5d80b7e4a5ad4957d1a704420a3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "697d95cf4ef71e1a69c094cf53ba5077dd12300f1f5145289bea1f32016545ef",
-                "code": "14af778e159de7009937ba1063781eb7f4f5b355",
-                "maintenance": "b5aa9a2143c5762443268854844feebed7145edf5e98e3b17aee97efaa287bc3"
+                "code": "7f739ef8aae7e5d80b7e4a5ad4957d1a704420a3",
+                "maintenance": "65d8c40f89d34e0129528c482c36550de7605a6510ee6edadc09cc6d4fe58af9"
             }
         }
     }

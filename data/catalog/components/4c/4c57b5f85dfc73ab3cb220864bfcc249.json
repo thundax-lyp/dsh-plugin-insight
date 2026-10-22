@@ -445,14 +445,14 @@
             "repository": "AlyceStocking/dsh-yukimi-theme",
             "path": "",
             "revision": "4b162a3572e894e71001f3cefd0105519d5c4461",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "3c489c8cd6c9da01071e3287d16e56cc49fdb26130581470616dea8750f32f50",
                 "code": "4b162a3572e894e71001f3cefd0105519d5c4461",
                 "maintenance": "c609a4aee03acf41ae4d13bc1a3aa223f0e9d81d98cf69eff2a8a3e8ebf4777d"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

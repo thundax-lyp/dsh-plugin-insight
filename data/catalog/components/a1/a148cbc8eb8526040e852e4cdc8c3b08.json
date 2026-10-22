@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a148cbc8eb8526040e852e4cdc8c3b08",
+    "identity": "github:1352600211:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1352600211:root",
+            "repository": "All3nCN/dsh-better-sidebar-N23",
+            "path": "",
+            "revision": "ca9694b4d232ff47eefec07e395b23eef0766831",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8faf23e7b1ad2fab468d10506b5e021d72aec521e3d72f285afe294bd45cc74c",
+                "code": "ca9694b4d232ff47eefec07e395b23eef0766831",
+                "maintenance": "a6bde64d80cfe72e140ca57f882eff7563ce64b36d4d435af5c3490a5e889ffe"
+            }
+        }
+    }
+}

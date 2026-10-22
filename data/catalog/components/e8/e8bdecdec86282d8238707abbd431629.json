@@ -7,14 +7,14 @@
             "id": "github:1335306889:plugins-whaleharbor-promo",
             "repository": "MoonlitDropOfBlood/DSH-Desktop",
             "path": "plugins/whaleharbor-promo",
-            "revision": "9beb6a6794163be19a2c194df63947d379def1b2",
+            "revision": "edd98619a407195b9c3468903e22c621b65a0af8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "12d9a320f727032e5a6f510924314168ac54072aa071e5c3d982463a54ce8635",
-                "code": "9beb6a6794163be19a2c194df63947d379def1b2",
-                "maintenance": "448392adbde194b1092d5e53b364d71c1f8d2a1f719fee189aea747ba769a4e2"
+                "code": "edd98619a407195b9c3468903e22c621b65a0af8",
+                "maintenance": "c24a087df637ce248ae74994d98be97ab8612314a2875832b2790e879531f056"
             }
         }
     }

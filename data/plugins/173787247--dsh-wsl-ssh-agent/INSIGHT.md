@@ -191,7 +191,7 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**核socket/身份/认证四层区别、密钥减量/真实读取、失败/进程预算与转发授权、成本及采用。
+**插件研究总目标**：核socket/身份/认证四层区别、密钥减量/真实读取、失败/进程预算与转发授权、成本及采用。
 
 <a id="research-q01"></a>
 
@@ -199,7 +199,7 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 ### Q01 · 适合什么SSH故障，ok能证明Git认证吗？
 
-**研究主题：**场景与需求
+**研究主题**：场景与需求
 
 #### 完整回答
 
@@ -274,7 +274,7 @@ export async function execute(_args, _config = {}, deps = {}) {
 
 ### Q02 · 检查范围和隐私减量如何实现？
 
-**研究主题：**功能与机制、贡献与相对优势
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
@@ -432,7 +432,7 @@ export async function sshAddList({ execFileFn = execFileAsync } = {}) {
 
 ### Q03 · 诊断状态、错误与进程治理有何不足？
 
-**研究主题：**缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
@@ -589,8 +589,8 @@ export function format(v) {
 #### 缺口
 
 - socket存在但不可通信、ssh-add各退出状态和取消后的进程/诊断表现未模拟。
-  **影响：**不保证live/noidentity标签准确或总预算/即时取消。
-  **进一步探讨：**mock文件类型与退出码/超时/无工具，区分missing/existing/unreachable/empty/loaded，核signal传递，不读真实SSH目录或调用agent。
+  **影响**：不保证live/noidentity标签准确或总预算/即时取消。
+  **进一步探讨**：mock文件类型与退出码/超时/无工具，区分missing/existing/unreachable/empty/loaded，核signal传递，不读真实SSH目录或调用agent。
 
 <a id="research-q04"></a>
 
@@ -598,7 +598,7 @@ export function format(v) {
 
 ### Q04 · 启动流程和首次持续恢复成本是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
@@ -712,8 +712,8 @@ export async function sshAddList({ execFileFn = execFileAsync } = {}) {
 #### 缺口
 
 - 与人工排查的正确归因率/时间/上下文披露成本没有比较。
-  **影响：**不能量化更安全或省时。
-  **进一步探讨：**用合成socket/目录/进程stub矩阵标真实状态，对照误建议和人工步骤，不访问真实凭据。
+  **影响**：不能量化更安全或省时。
+  **进一步探讨**：用合成socket/目录/进程stub矩阵标真实状态，对照误建议和人工步骤，不访问真实凭据。
 
 <a id="research-q05"></a>
 
@@ -721,7 +721,7 @@ export async function sshAddList({ execFileFn = execFileAsync } = {}) {
 
 ### Q05 · 推荐与继续探讨入口是什么？
 
-**研究主题：**采用判断、新假设与验证
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
@@ -837,7 +837,7 @@ export async function sshAddList({ execFileFn = execFileAsync } = {}) {
 #### 缺口
 
 - 分层agent状态与宿主预算方案未实现。
-  **影响：**不计当前准确/治理优势。
-  **进一步探讨：**合成最小文件/进程stub对照标签/错误可见和披露，不接真实agent或加载key。
+  **影响**：不计当前准确/治理优势。
+  **进一步探讨**：合成最小文件/进程stub对照标签/错误可见和披露，不接真实agent或加载key。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

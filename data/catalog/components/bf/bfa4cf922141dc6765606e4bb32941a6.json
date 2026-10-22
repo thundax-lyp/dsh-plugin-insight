@@ -7,14 +7,14 @@
             "id": "github:1421822085:root",
             "repository": "kingcharleslzy-ai/dsh-purge",
             "path": "",
-            "revision": "1f60643089a88ac7a511b64a091359d7e9a8ccee",
+            "revision": "d39d24835bcac5a8fe930a6f1f97f3277495efd2",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1e23b8b921d8777d0bec088fc25eb9f8e0d3e0b2719141fad37ec2aac069ad72",
-                "code": "1f60643089a88ac7a511b64a091359d7e9a8ccee",
-                "maintenance": "543eec3f01be7fa4b8ead56afa02c17e3f12f2ca50430e4a029a6d8a6fa82e06"
+                "code": "d39d24835bcac5a8fe930a6f1f97f3277495efd2",
+                "maintenance": "3d55aa2cc73e6c15af59d8337ed0734c2a1a56f541f15b1940ceb9ba4beb20e3"
             }
         }
     }

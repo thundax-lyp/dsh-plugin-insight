@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[72cbba8](https://github.com/240xu/dsh-websearch/tree/72cbba8e3c19c77fea2396c7ac00c40b08df52a9)
+分析版本：[da42e44](https://github.com/240xu/dsh-websearch/tree/da42e44a0f54913e132c5219174a3b6f267188fc)
 
 <!-- BEGIN META -->
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-websearch) [![npm 30d 4,731](https://img.shields.io/static/v1?label=npm+30d&message=4%2C731&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-websearch)
@@ -44,7 +44,9 @@
 
 > **用途**：公开资料检索希望减少后端切换并对单服务失败软降级。详见[Q01](#research-q01)。
 
-单可靠搜索provider、已有连接器或人工多源检索是替代，聚合增加候选也增加接收方和核查成本。
+面向DSH研究/检索用户，希望不在每次任务中手选搜索后端，并在个别网络或服务失败时仍取得候选来源。合格产物应是带真实来源URL的候选资料和可解释失败记录，读者仍需打开原始材料核实；多后端、多来源和原文正确性是不同目标。
+
+插件向ctx.web注册单个unified provider，内部集成11后端，默认选四个无key路线。简单替代是单一可靠provider、已有搜索连接器或手工并行检索。贡献是宿主搜索接缝的一体化扇出、过滤/去重/可选重排、故障软降级和设置交接，不是自建搜索索引，也不是RRF原创。只注册一个自己的provider不能保证宿主没有其他provider，仍应显式选择unified，README“永远不歧义”不宜无条件采用。
 
 <a id="detail-section-3"></a>
 
@@ -86,7 +88,6 @@
 | 持续使用 | 变体×后端请求与模型费 | 等拖尾、复核原文，收益未知 | 变体乘后端及模型费依配置；拖尾/原文复核工时未知 |
 | 失败恢复 | 清缓存/历史、认证换实例 | 复核错误合并和旧策略命中 | 历史/缓存/身份和错误合并处置金额与时间未知 |
 
-
 #### 效果
 
 | 目标 | 源码支持 | 边界 |
@@ -125,18 +126,18 @@
 
 **核查状态**：已检查源码。
 
-聚合及容错流程可查；缓存策略指纹、合并语义和查询留存有限制，预算/来源策略为未验证方向。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/provider.js、lib/cache.js、lib/history.js、lib/trust.js、lib/util/rank.js、lib/rrf.js、lib/backends/searxng.js、tests/v286-failures.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/provider.js、package.json、lib/backends/searxng.js、lib/util/rank.js、lib/rrf.js、lib/cache.js、lib/history.js、tests/v286-failures.test.js、lib/trust.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：阅读固定入口、全部provider、缓存键、历史/信任接线、排序/RRF、SearXNG关键链及故障测试；未穷尽全部后端/egress/浏览器，不执行目标。
-- 下一步：进一步探讨大小写路径、同标题异文、策略/端点切换、混合空结果与清历史并发，按召回/费用/错误合并评估。
+- 下一步：进一步探讨应围绕本项假设执行固定输入与简单替代对照。可进一步研究完整策略指纹缓存、可追溯合并来源和预算约束扇出，把排序/去重/安全过滤/端点模型与身份版本纳入失效，合并保留所有原始URL证据链；查询计划在总费用/等待预算中自适应选路线。基线是当前固定扇出及单后端，固定测试集含大小写路径、同标题异文、safeSearch切换、端点切换和成功空+失败混合；比较查全、错误合并、费用与人工复核量。它是待验证假设，不能把更多结果等同更准，也不能把已有RRF算新算法。
 
 **分析版本**
 
 - **仓库**：[240xu/dsh-websearch](https://github.com/240xu/dsh-websearch)
-- **版本号**：2.8.6（[固定提交 72cbba8](https://github.com/240xu/dsh-websearch/tree/72cbba8e3c19c77fea2396c7ac00c40b08df52a9)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.8.8（[固定提交 da42e44](https://github.com/240xu/dsh-websearch/tree/da42e44a0f54913e132c5219174a3b6f267188fc)）
+- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -146,7 +147,7 @@
 
 可研究完整策略指纹、合并来源链及总预算约束扇出，用固定反例比较误合并、召回与总成本。当前未验证。详见[Q07](#research-q07)。
 
-进一步探讨大小写路径、同标题异文、策略/端点切换、混合空结果与清历史并发，按召回/费用/错误合并评估。
+进一步探讨应围绕本项假设执行固定输入与简单替代对照。可进一步研究完整策略指纹缓存、可追溯合并来源和预算约束扇出，把排序/去重/安全过滤/端点模型与身份版本纳入失效，合并保留所有原始URL证据链；查询计划在总费用/等待预算中自适应选路线。基线是当前固定扇出及单后端，固定测试集含大小写路径、同标题异文、safeSearch切换、端点切换和成功空+失败混合；比较查全、错误合并、费用与人工复核量。它是待验证假设，不能把更多结果等同更准，也不能把已有RRF算新算法。
 
 <a id="detail-section-9"></a>
 
@@ -157,7 +158,7 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 7 | 1072 | — | — | 10327 |
+| .md | source | 7 | 1084 | — | — | 10398 |
 | .js | source | 30 | 5615 | 3895 | 1343 | — |
 | .mjs | test | 1 | 97 | 84 | 7 | — |
 | .js | test | 17 | 2526 | 2182 | 315 | — |
@@ -166,17 +167,13 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/240xu/dsh-websearch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/240xu/dsh-websearch/issues?q=is%3Aissue+created%3A2026-09-22T05%3A26%3A43.728Z..2026-10-22T05%3A26%3A43.728Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/240xu/dsh-websearch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A26%3A43.728Z..2026-10-22T05%3A26%3A43.728Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/240xu/dsh-websearch/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**固定版本聚合搜索如何联结多后端、容错和结果策略，查询隐私、缓存与去重边界如何影响采用？
+**插件研究总目标**：固定版本聚合搜索如何联结多后端、容错和结果策略，查询隐私、缓存与去重边界如何影响采用？
 
 <a id="research-q01"></a>
 
@@ -184,7 +181,7 @@
 
 ### Q01 · 聚合搜索服务为谁解决什么问题？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -194,9 +191,9 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:6-14](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/README.md#L6-L14)
+**依据 1 · 作者声明**：[README.md:6-14](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/README.md#L6-L14)
 
-作者聚合和单provider主张。
+当前固定版本复核。作者聚合和单provider主张。
 
 ```text
 > Aggregated web search provider for [DeepSeek Harness](https://github.com/deepseek-ai/dsh) — one plugin id `unified` that fans out to eleven backends concurrently, merges + URL-dedups results, and stays usable even when some backends go down.
@@ -210,9 +207,9 @@ DSH（[DeepSeek Harness](https://github.com/deepseek-ai/dsh)）原生插件：�
 纯 Cordis 直插：只注册一个 provider，所以 `dsh-web` 的选择规则永远不会触发 `WEB_PROVIDER_AMBIGUOUS`。**零配置即可搜索**——Exa + Parallel + DuckDuckGo + SearXNG 四者皆无 key、开箱即用；DeepSeek / Anthropic / OpenAI / Brave / Tavily / Serper / Mojeek 在提供 API key 后自动激活。
 ```
 
-**依据 2 · 源码核查**：[lib/index.js:53-72](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/index.js#L53-L72)
+**依据 2 · 源码核查**：[lib/index.js:53-72](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/index.js#L53-L72)
 
-11注册后端与默认四项。
+当前固定版本复核。11注册后端与默认四项。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -242,9 +239,9 @@ const DEFAULT_ENABLED = ["exa", "parallel", "ddg", "searxng"];
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:439-455](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/index.js#L439-L455)
+**依据 3 · 源码核查**：[lib/index.js:439-455](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/index.js#L439-L455)
 
-仅注册自身provider。
+当前固定版本复核。仅注册自身provider。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -277,7 +274,7 @@ const DEFAULT_ENABLED = ["exa", "parallel", "ddg", "searxng"];
 
 ### Q02 · 查询从输入到结果如何流动？
 
-**研究主题：**功能与机制
+**研究主题**：功能与机制
 
 #### 完整回答
 
@@ -287,9 +284,9 @@ search首先读取配置和过滤项，shapeQuery归一并拒绝空查询；deep
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/provider.js:198-242](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L198-L242)
+**依据 1 · 源码核查**：[lib/provider.js:198-242](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L198-L242)
 
-输入、门控与缓存键。
+当前固定版本复核。输入、门控与缓存键。
 
 <details>
 <summary>查看原文（45行）</summary>
@@ -344,9 +341,9 @@ search首先读取配置和过滤项，shapeQuery归一并拒绝空查询；deep
 
 </details>
 
-**依据 2 · 源码核查**：[lib/provider.js:273-318](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L273-L318)
+**依据 2 · 源码核查**：[lib/provider.js:273-318](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L273-L318)
 
-冷却及限并发。
+当前固定版本复核。冷却及限并发。
 
 <details>
 <summary>查看原文（46行）</summary>
@@ -402,9 +399,9 @@ search首先读取配置和过滤项，shapeQuery归一并拒绝空查询；deep
 
 </details>
 
-**依据 3 · 源码核查**：[lib/provider.js:370-418](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L370-L418)
+**依据 3 · 源码核查**：[lib/provider.js:370-418](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L370-L418)
 
-allSettled和分查询去重融合。
+当前固定版本复核。allSettled和分查询去重融合。
 
 <details>
 <summary>查看原文（49行）</summary>
@@ -463,9 +460,9 @@ allSettled和分查询去重融合。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/provider.js:476-520](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L476-L520)
+**依据 4 · 源码核查**：[lib/provider.js:476-520](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L476-L520)
 
-空成功条件与all-fail合成。
+当前固定版本复核。空成功条件与all-fail合成。
 
 <details>
 <summary>查看原文（45行）</summary>
@@ -526,7 +523,7 @@ allSettled和分查询去重融合。
 
 ### Q03 · 凭据、宿主和服务端点有哪些条件？
 
-**研究主题：**依赖、兼容与流程
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
@@ -536,9 +533,9 @@ baseURL是操作员信任边界，会收到查询及对应密钥。provider校�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:47-53](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/package.json#L47-L53)
+**依据 1 · 源码核查**：[package.json:47-53](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/package.json#L47-L53)
 
-不固定宿主peer范围。
+当前固定版本复核。不固定宿主peer范围。
 
 ```text
   "peerDependencies": {
@@ -550,9 +547,9 @@ baseURL是操作员信任边界，会收到查询及对应密钥。provider校�
     "@deepseek-ai/dsh-launch-environment": "*"
 ```
 
-**依据 2 · 源码核查**：[package.json:70-72](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/package.json#L70-L72)
+**依据 2 · 源码核查**：[package.json:70-72](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/package.json#L70-L72)
 
-Node下限。
+当前固定版本复核。Node下限。
 
 ```text
   "engines": {
@@ -560,9 +557,9 @@ Node下限。
   }
 ```
 
-**依据 3 · 源码核查**：[lib/index.js:283-345](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/index.js#L283-L345)
+**依据 3 · 源码核查**：[lib/index.js:283-345](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/index.js#L283-L345)
 
-选择优先级与凭据策略。
+当前固定版本复核。选择优先级与凭据策略。
 
 <details>
 <summary>查看原文（63行）</summary>
@@ -635,9 +632,9 @@ export function resolveOptions(ctx, config) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/provider.js:319-332](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L319-L332)
+**依据 4 · 源码核查**：[lib/provider.js:319-332](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L319-L332)
 
-只校验beOpts.baseURL。
+当前固定版本复核。只校验beOpts.baseURL。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -661,9 +658,9 @@ export function resolveOptions(ctx, config) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/backends/searxng.js:54-68](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/backends/searxng.js#L54-L68)
+**依据 5 · 源码核查**：[lib/backends/searxng.js:54-68](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/backends/searxng.js#L54-L68)
 
-主与备用候选统一进入queryInstance。
+当前固定版本复核。主与备用候选统一进入queryInstance。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -688,9 +685,9 @@ export function resolveOptions(ctx, config) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/backends/searxng.js:118-139](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/backends/searxng.js#L118-L139)
+**依据 6 · 源码核查**：[lib/backends/searxng.js:118-139](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/backends/searxng.js#L118-L139)
 
-候选URL和Bearer使用。
+当前固定版本复核。候选URL和Bearer使用。
 
 <details>
 <summary>查看原文（22行）</summary>
@@ -725,8 +722,8 @@ async function queryInstance(baseURL, request, signal, backendOpts, apiKey, hook
 #### 缺口
 
 - 全部外部搜索后端的当前服务可用性/计费/覆盖没有固定材料可证明
-  **影响：**不能写11后端都可用或免费额度仍有效
-  **进一步探讨：**按实际选中后端在采用时核对官方服务与账号额度；报告只保留源码支持的接线
+  **影响**：不能写11后端都可用或免费额度仍有效
+  **进一步探讨**：按实际选中后端在采用时核对官方服务与账号额度；报告只保留源码支持的接线
 
 <a id="research-q04"></a>
 
@@ -734,7 +731,7 @@ async function queryInstance(baseURL, request, signal, backendOpts, apiKey, hook
 
 ### Q04 · 去重、缓存与熔断如何影响结果可信度？
 
-**研究主题：**缺陷与关键质疑
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
@@ -744,9 +741,9 @@ URL去重把完整URL转小写，域名不区分大小写合理但路径/查询�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/util/rank.js:52-86](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/util/rank.js#L52-L86)
+**依据 1 · 源码核查**：[lib/util/rank.js:52-86](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/util/rank.js#L52-L86)
 
-全URL小写和标题相似合并。
+当前固定版本复核。全URL小写和标题相似合并。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -791,9 +788,9 @@ export function dedupeSources(sources, strategy) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/util/rank.js:92-120](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/util/rank.js#L92-L120)
+**依据 2 · 源码核查**：[lib/util/rank.js:92-120](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/util/rank.js#L92-L120)
 
-词匹配权重。
+当前固定版本复核。词匹配权重。
 
 <details>
 <summary>查看原文（29行）</summary>
@@ -832,9 +829,9 @@ export function rerankSources(sources, query) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/rrf.js:32-55](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/rrf.js#L32-L55)
+**依据 3 · 源码核查**：[lib/rrf.js:32-55](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/rrf.js#L32-L55)
 
-按位置累计RRF。
+当前固定版本复核。按位置累计RRF。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -868,9 +865,9 @@ export function rrfFuse(lists, { k = RRF_K } = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/cache.js:36-45](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/cache.js#L36-L45)
+**依据 4 · 源码核查**：[lib/cache.js:36-45](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/cache.js#L36-L45)
 
-缓存键具体维度。
+当前固定版本复核。缓存键具体维度。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -890,9 +887,9 @@ export function cacheKeyFor({ query, filters, maxResults, backends, mode }) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/provider.js:239-268](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L239-L268)
+**依据 5 · 源码核查**：[lib/provider.js:239-268](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L239-L268)
 
-查缓存发生在候选选择之前。
+当前固定版本复核。查缓存发生在候选选择之前。
 
 <details>
 <summary>查看原文（30行）</summary>
@@ -932,9 +929,9 @@ export function cacheKeyFor({ query, filters, maxResults, backends, mode }) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/provider.js:60-81](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L60-L81)
+**依据 6 · 源码核查**：[lib/provider.js:60-81](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L60-L81)
 
-全局按id健康。
+当前固定版本复核。全局按id健康。
 
 <details>
 <summary>查看原文（22行）</summary>
@@ -966,9 +963,9 @@ function recordBackendHealth(id, entry, breakerCfg) {
 
 </details>
 
-**依据 7 · 源码核查**：[lib/history.js:56-82](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/history.js#L56-L82)
+**依据 7 · 源码核查**：[lib/history.js:56-82](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/history.js#L56-L82)
 
-本地记录与上限。
+当前固定版本复核。本地记录与上限。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -1005,9 +1002,9 @@ function recordBackendHealth(id, entry, breakerCfg) {
 
 </details>
 
-**依据 8 · 源码核查**：[lib/index.js:447-450](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/index.js#L447-L450)
+**依据 8 · 源码核查**：[lib/index.js:447-450](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/index.js#L447-L450)
 
-关闭仅阻止新记录。
+当前固定版本复核。关闭仅阻止新记录。
 
 ```text
     history: {
@@ -1022,7 +1019,7 @@ function recordBackendHealth(id, entry, breakerCfg) {
 
 ### Q05 · 容错与隐私入口实现到了哪一步？
 
-**研究主题：**工程质量与复用
+**研究主题**：工程质量与复用
 
 #### 完整回答
 
@@ -1032,9 +1029,9 @@ provider将解析、排序、过滤、缓存、历史、熔断和失败标签拆
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/provider.js:97-121](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L97-L121)
+**依据 1 · 源码核查**：[lib/provider.js:97-121](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L97-L121)
 
-同步异常释放limiter。
+当前固定版本复核。同步异常释放limiter。
 
 <details>
 <summary>查看原文（25行）</summary>
@@ -1069,9 +1066,9 @@ export function createLimiter(concurrency) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/provider.js:333-379](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L333-L379)
+**依据 2 · 源码核查**：[lib/provider.js:333-379](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L333-L379)
 
-协作abort与等待全部settled。
+当前固定版本复核。协作abort与等待全部settled。
 
 <details>
 <summary>查看原文（47行）</summary>
@@ -1128,9 +1125,9 @@ export function createLimiter(concurrency) {
 
 </details>
 
-**依据 3 · 源码核查**：[tests/v286-failures.test.js:40-83](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/tests/v286-failures.test.js#L40-L83)
+**依据 3 · 源码核查**：[tests/v286-failures.test.js:40-83](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/tests/v286-failures.test.js#L40-L83)
 
-冷却和错误汇总mock测试。
+当前固定版本复核。冷却和错误汇总mock测试。
 
 <details>
 <summary>查看原文（44行）</summary>
@@ -1184,9 +1181,9 @@ test("all-fail error: cooled-skipped backends are named and >4 reasons collapse 
 
 </details>
 
-**依据 4 · 源码核查**：[lib/history.js:65-91](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/history.js#L65-L91)
+**依据 4 · 源码核查**：[lib/history.js:65-91](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/history.js#L65-L91)
 
-record队列与clear不共队列。
+当前固定版本复核。record队列与clear不共队列。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -1223,9 +1220,9 @@ record队列与clear不共队列。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/history.js:150-161](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/history.js#L150-L161)
+**依据 5 · 源码核查**：[lib/history.js:150-161](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/history.js#L150-L161)
 
-实际route用rejectionFor。
+当前固定版本复核。实际route用rejectionFor。
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -1247,9 +1244,9 @@ export function registerHistoryRoutes(ws, { getStore, getBackendHealth, getConne
 
 </details>
 
-**依据 6 · 源码核查**：[lib/trust.js:82-119](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/trust.js#L82-L119)
+**依据 6 · 源码核查**：[lib/trust.js:82-119](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/trust.js#L82-L119)
 
-宿主admission优先及异常拒绝。
+当前固定版本复核。宿主admission优先及异常拒绝。
 
 <details>
 <summary>查看原文（38行）</summary>
@@ -1303,7 +1300,7 @@ export function rejectionFor(req, connection, onRejection) {
 
 ### Q06 · 多后端的首次、持续与恢复成本如何估计？
 
-**研究主题：**效果与总成本
+**研究主题**：效果与总成本
 
 #### 完整回答
 
@@ -1313,9 +1310,9 @@ export function rejectionFor(req, connection, onRejection) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/provider.js:44-52](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L44-L52)
+**依据 1 · 源码核查**：[lib/provider.js:44-52](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L44-L52)
 
-特定后端超时上限。
+当前固定版本复核。特定后端超时上限。
 
 ```text
 const BACKEND_TIMEOUT_OVERRIDES_MS = {
@@ -1329,9 +1326,9 @@ export function effectiveBackendTimeoutMs(id, backendTimeoutMs) {
   return Number.isFinite(override) ? Math.min(override, backendTimeoutMs) : backendTimeoutMs;
 ```
 
-**依据 2 · 源码核查**：[lib/provider.js:224-230](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L224-L230)
+**依据 2 · 源码核查**：[lib/provider.js:224-230](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L224-L230)
 
-覆盖/多查询带来的扩展。
+当前固定版本复核。覆盖/多查询带来的扩展。
 
 ```text
       // v2.8.0 coverage / multiQuery gates (both default OFF; arXiv:2404.01037
@@ -1343,9 +1340,9 @@ export function effectiveBackendTimeoutMs(id, backendTimeoutMs) {
       const variants = multi ? deriveSubQueries(effReq.query) : [effReq.query];
 ```
 
-**依据 3 · 源码核查**：[lib/provider.js:384-418](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L384-L418)
+**依据 3 · 源码核查**：[lib/provider.js:384-418](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L384-L418)
 
-变体顺序且内部扇出。
+当前固定版本复核。变体顺序且内部扇出。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -1390,9 +1387,9 @@ export function effectiveBackendTimeoutMs(id, backendTimeoutMs) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:431-437](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/index.js#L431-L437)
+**依据 4 · 源码核查**：[lib/index.js:431-437](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/index.js#L431-L437)
 
-缓存历史磁盘位置。
+当前固定版本复核。缓存历史磁盘位置。
 
 ```text
   const storeDir = resolveStoreDir();
@@ -1410,7 +1407,7 @@ export function effectiveBackendTimeoutMs(id, backendTimeoutMs) {
 
 ### Q07 · 如何采用，哪些方向值得继续探讨？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1420,9 +1417,9 @@ export function effectiveBackendTimeoutMs(id, backendTimeoutMs) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/cache.js:36-45](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/cache.js#L36-L45)
+**依据 1 · 源码核查**：[lib/cache.js:36-45](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/cache.js#L36-L45)
 
-当前策略指纹不全。
+当前固定版本复核。当前策略指纹不全。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -1442,9 +1439,9 @@ export function cacheKeyFor({ query, filters, maxResults, backends, mode }) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/util/rank.js:57-76](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/util/rank.js#L57-L76)
+**依据 2 · 源码核查**：[lib/util/rank.js:57-76](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/util/rank.js#L57-L76)
 
-合并丢失独立来源的具体机制。
+当前固定版本复核。合并丢失独立来源的具体机制。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -1474,9 +1471,9 @@ export function cacheKeyFor({ query, filters, maxResults, backends, mode }) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/provider.js:476-520](https://github.com/240xu/dsh-websearch/blob/72cbba8e3c19c77fea2396c7ac00c40b08df52a9/lib/provider.js#L476-L520)
+**依据 3 · 源码核查**：[lib/provider.js:476-520](https://github.com/240xu/dsh-websearch/blob/da42e44a0f54913e132c5219174a3b6f267188fc/lib/provider.js#L476-L520)
 
-成功空+失败混合的判据。
+当前固定版本复核。成功空+失败混合的判据。
 
 <details>
 <summary>查看原文（45行）</summary>

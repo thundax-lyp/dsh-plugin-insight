@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e11367f774f0d59c1bc4dc8499cf5bc7",
+    "identity": "github:1425286471:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425286471:root",
+            "repository": "lilcandi/dsh-session-live",
+            "path": "",
+            "revision": "147c56042ebea664db8a54381c09843d3845e822",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "19b50a371c52ead71cef80f9c7adaacc2460d0c477ce7d8c5c66116645345e3a",
+                "code": "147c56042ebea664db8a54381c09843d3845e822",
+                "maintenance": "ec23e9f7a3e5351f33554b84a173ec0024ca26090ef3ab37ce82a4e3bd445c9c"
+            }
+        }
+    }
+}

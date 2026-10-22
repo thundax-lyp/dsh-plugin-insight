@@ -7,15 +7,15 @@
             "id": "github:1335949833:root",
             "repository": "Chael-Chael/dsh-reference-anything",
             "path": "",
-            "revision": "5bb263e8c1350770fef6befc839ad14bc065c7b8",
+            "revision": "0e6dae483f5641525bac4646a72e9f9b4314578e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "0a7f54b55061888fa947b2a55352594cad80097c5fb13c981827eda1ebb97f3c",
-                "code": "5bb263e8c1350770fef6befc839ad14bc065c7b8",
-                "maintenance": "00c18c0a260cad1b8b815bfc6500ebf9a427baf77fae36fa5ebde9ca480efe48"
+                "code": "0e6dae483f5641525bac4646a72e9f9b4314578e",
+                "maintenance": "76fde89326b132661d7b3b630f085b3d9f8252eea1a53894c94329d388ff7475"
             }
         }
     }

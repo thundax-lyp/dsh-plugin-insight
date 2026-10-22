@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e34adbb60ccdb40aec317c1138e15a72",
+    "identity": "github:1425522223:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425522223:root",
+            "repository": "docsor1212/dsh-aesthete-agent",
+            "path": "",
+            "revision": "cc2ae85c238d15208b3c6b6462fc1231be308a2f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b60804451dca2780c0ddc771f475cfb60fca0e6d7b744c98843ba149666524fd",
+                "code": "cc2ae85c238d15208b3c6b6462fc1231be308a2f",
+                "maintenance": "51e0006a0970b786aaf0a0c7f51dd70770de3a964fd8cfae097f131189a6da86"
+            }
+        }
+    }
+}

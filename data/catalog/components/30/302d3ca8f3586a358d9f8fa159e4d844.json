@@ -7,14 +7,14 @@
             "id": "github:1417747466:root",
             "repository": "YangShen-SWE/dsh-plugin-chat-zoom",
             "path": "",
-            "revision": "89629394691e43b0541ade7a764b5219a2a43e9a",
+            "revision": "8eba2d836006a46efa0553012c26d0d2f72272f0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "3945fb2159bcb84d77779e9f508750d07e0359a0a66df17857816ac842bdf8f0",
-                "code": "89629394691e43b0541ade7a764b5219a2a43e9a",
-                "maintenance": "bd508bad20eb872aaa3c93a0fa21afc842650f813ca148805f2dfa733f4ca824"
+                "code": "8eba2d836006a46efa0553012c26d0d2f72272f0",
+                "maintenance": "121de5ec77972378be368090c0470fef83515084496e62a5b157955fee761d50"
             }
         }
     }

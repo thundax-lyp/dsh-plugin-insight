@@ -7,14 +7,14 @@
             "id": "github:1374524293:root",
             "repository": "SAXEM1997/specpowers",
             "path": "",
-            "revision": "43fc9e621671755269de94c63bb493408d6c25f2",
+            "revision": "3f8ed4df15a50d1476c9660b2f77f4eeb8d4efc8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c90b7fbaba3b06e7c5fa4b720962d6e3d02a1e1807a4501f04e29ebf2d653f5f",
-                "code": "43fc9e621671755269de94c63bb493408d6c25f2",
-                "maintenance": "ac5ca6c04218a721a0060e1f38489300558da724fae0fd035ceedbf53882727e"
+                "code": "3f8ed4df15a50d1476c9660b2f77f4eeb8d4efc8",
+                "maintenance": "12ec9b32b2e808261ba77e996427a634c4e02812aca1d5c0db0afd5854484f95"
             }
         }
     }

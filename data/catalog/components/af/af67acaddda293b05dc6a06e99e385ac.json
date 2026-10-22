@@ -7,14 +7,14 @@
             "id": "github:1336604787:root",
             "repository": "LyaxZ/dsh-quick-toc",
             "path": "",
-            "revision": "0ef113744d22fd452d995f8f368d82624ad5a027",
+            "revision": "7a182891d8d7f0537255f852c7b8f103a798e898",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a55bbb8feae13d773fb1be4e3b398ae91b98caf7390f361d11a089b5eb0ecec3",
-                "code": "0ef113744d22fd452d995f8f368d82624ad5a027",
-                "maintenance": "a9282b47d9e2c6e0bd526453606a0655b13bad8940ee78a4b27b659aaec12740"
+                "code": "7a182891d8d7f0537255f852c7b8f103a798e898",
+                "maintenance": "feab81d8ff9a9204e30d3dca27af3aea770de88cf51ab4ac8de8e1d06c6c5a1b"
             }
         }
     }

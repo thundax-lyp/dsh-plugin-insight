@@ -487,14 +487,14 @@
             "repository": "0x7A7A6572/dsh-forge-studio",
             "path": "packages/plugin-notes",
             "revision": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "c3af87b164fcda3642b0e6fbcfe22150dc043aec1ae559685f115f671a45611b",
                 "code": "acb136c0dbbf8e984bdffea9de48b6ed73d0103e",
                 "maintenance": "3b8db7c619c4fb07bdc46fc33b60ebd53c612c483654be23b7c416d9ea35c3ba"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

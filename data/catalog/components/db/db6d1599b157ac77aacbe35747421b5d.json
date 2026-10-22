@@ -7,14 +7,14 @@
             "id": "github:1392949260:root",
             "repository": "drscrewdriver/dsh-tidy-display",
             "path": "",
-            "revision": "613619cab6d727f71d86c3d52f93186681c80a49",
+            "revision": "77ec1d83888e3514463d57cb8daf0a80f0630c08",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "75a68483d64af47580a5f2f55a75dc65a2f409df8295c8685808a2ea3b32b788",
-                "code": "613619cab6d727f71d86c3d52f93186681c80a49",
-                "maintenance": "703daead06dbae231035d19a63a933ab5a1f8fd9c32f679bd0cd23b1eb50fd2e"
+                "code": "77ec1d83888e3514463d57cb8daf0a80f0630c08",
+                "maintenance": "3bbf3dd0964d9c92069e8cbc9a669da23d9efc30142bb33a8a3202eb9279f7a6"
             }
         }
     }

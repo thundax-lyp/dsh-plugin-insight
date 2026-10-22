@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c615eeb](https://github.com/0xRabit/dsh-crypto-portfolio/tree/c615eeb9e76d9a91bffb0171ef349532e794eb3c)
+分析版本：[d3edb74](https://github.com/0xRabit/dsh-crypto-portfolio/tree/d3edb74bef1fcb779e899c26c37b19664ecf0a9f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio)
@@ -43,7 +43,7 @@
 
 > **用途**：多钱包/CEX 用户在本机观察资产估值与趋势；需对账，不能替代财务账本。详见[Q01](#research-q01)。
 
-手动登录多个钱包/交易所可逐一对账；该工具需证明聚合效率、数值一致与密钥暴露控制。
+作者要在本机汇总链上钱包与 CEX 余额、趋势、健康度和来源状态，面向自管多钱包用户。DSH 插件本身是 Cordis 壳：复制公开模板，spawn Python 子进程；Python 标准库 HTTP 服务提供独立仪表盘和 JSON API。它不交易也不持有私钥，但要处理钱包地址、交易所只读 API 密钥和本地资产历史；计算值必须视为来源依赖的估算，不是账本或投资建议。作者列的多链、CEX、健康与分享功能本轮只核部分实现，不把 README 叙述当覆盖完整性的独立验证。
 
 <a id="detail-section-3"></a>
 
@@ -125,18 +125,18 @@ HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤
 
 **核查状态**：已检查源码。
 
-源码可核聚合/历史机制；敏感 GET 无认证且可 reveal/export 原始密钥；CEX 黑名单后底层 raw total 可与过滤行不符。未做目标运行、行情对账。
+固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.zh.md、index.js、tracker/config.py、tracker/server.py、tracker/portfolio.py、tracker/storage.py、tracker/views.py、tracker/sources.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.zh.md、index.js、tracker/server.py、tracker/portfolio.py、tracker/storage.py、tracker/sources.py、tracker/views.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：只读核固定提交 README、Node 壳及相关 Python 模块；未运行目标代码、上游 API、宿主或行情对账；旧 META 仅复用。
-- 下一步：隔离运行核绑定/认证/敏感 GET、CSRF/DNS rebinding、CEX 黑名单数值、失败来源、Profile 切换/备份、真实地址对账与 API 成本。
+- 下一步：进一步探讨应按本项缺口执行：限制绑定/访问并在隔离机测本地及 LAN 未授权读取；做 CEX 黑名单夹具，比较刷新响应、DB、快照列表、历史与 UI；在隔离环境核依赖、API 成本、数据目录权限与对账误差；先做最小安全/数值修复并运行隔离测试矩阵
 
 **分析版本**
 
 - **仓库**：[0xRabit/dsh-crypto-portfolio](https://github.com/0xRabit/dsh-crypto-portfolio)
-- **版本号**：0.2.0（[固定提交 c615eeb](https://github.com/0xRabit/dsh-crypto-portfolio/tree/c615eeb9e76d9a91bffb0171ef349532e794eb3c)）
-- **版本日期**：2026-10-06（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.0（[固定提交 d3edb74](https://github.com/0xRabit/dsh-crypto-portfolio/tree/d3edb74bef1fcb779e899c26c37b19664ecf0a9f)）
+- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -146,7 +146,7 @@ HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤
 
 未验证方向是认证敏感读、限定绑定、统一过滤后数值并记录来源完整度，以安全矩阵与资产对账验收。详见[Q06](#research-q06)。
 
-隔离运行核绑定/认证/敏感 GET、CSRF/DNS rebinding、CEX 黑名单数值、失败来源、Profile 切换/备份、真实地址对账与 API 成本。
+进一步探讨应按本项缺口执行：限制绑定/访问并在隔离机测本地及 LAN 未授权读取；做 CEX 黑名单夹具，比较刷新响应、DB、快照列表、历史与 UI；在隔离环境核依赖、API 成本、数据目录权限与对账误差；先做最小安全/数值修复并运行隔离测试矩阵
 
 <a id="detail-section-9"></a>
 
@@ -157,20 +157,24 @@ HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 3 | 652 | — | — | 7190 |
-| .js | source | 2 | 3094 | 2702 | 324 | — |
+| .md | source | 3 | 736 | — | — | 9120 |
+| .js | source | 2 | 3939 | 3414 | 427 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/0xRabit/dsh-crypto-portfolio/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+created%3A2026-09-22T15%3A11%3A48.053Z..2026-10-22T15%3A11%3A48.053Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A11%3A48.053Z..2026-10-22T15%3A11%3A48.053Z)
+
+
+
+统计日期：2026-10-22。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标：**自托管多来源资产仪表盘能否保护敏感配置并呈现一致、可对账的估算？
+**插件研究总目标**：自托管多来源资产仪表盘能否保护敏感配置并呈现一致、可对账的估算？
 
 <a id="research-q01"></a>
 
@@ -178,7 +182,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 ### Q01 · 多链资产组合的目标任务和交付边界是什么？
 
-**研究主题：**场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
@@ -186,9 +190,9 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:1-13](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.zh.md#L1-L13)
+**依据 1 · 作者声明**：[README.zh.md:1-13](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/README.zh.md#L1-L13)
 
-作者定位、依赖与安装
+当前固定版本复核。作者定位、依赖与安装
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -211,9 +215,9 @@ dsh --profile demo                                    # 仪表盘 http://127.0.0
 
 </details>
 
-**依据 2 · 作者声明**：[README.zh.md:59-92](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.zh.md#L59-L92)
+**依据 2 · 作者声明**：[README.zh.md:59-92](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/README.zh.md#L59-L92)
 
-作者列主要功能
+当前固定版本复核。作者列主要功能
 
 <details>
 <summary>查看原文（34行）</summary>
@@ -229,9 +233,11 @@ dsh --profile demo                                    # 仪表盘 http://127.0.0
 - **定时每日刷新。** 每个 Profile 可设置本地时间自动刷新（服务端守护线程，关闭网页不影响）；设置页显示各数据源最后成功时间。
 - **多 Profile 配置隔离。** `default` Profile 内置公开模板钱包（vitalik.eth、创世 BTC、公开 SOL、公开 DOGE、公开 ADA）与空 key；你的私人钱包和 key 放在独立命名的 Profile 里，拥有各自的快照历史。每个 Profile 可重命名（快照随之迁移），并各自维护独立的每日定时刷新时间。
 - **资产健康度。** 代币明细表上方一个面板用三张卡片给组合打分——**波动性风险**（稳定币 · 比特币 · 其他，按高波动占比评级）、**集中度**（最大钱包占比，画成带两条阈值刻度的量尺）、**托管安全**（冷 · 热 · 交易所）。每一行都同时给出余额和占比，未通过的项各配一句人话建议。三条阈值都能在设置页里改（按 Profile 保存、带校验，托管安全那对是反向的），数据取自同一份已过滤黑名单的快照，因此永远和上面的总额一致。在设置里把钱包标成「冷钱包」，托管安全那项**立刻**跟着变（冷热以当前钱包列表为准，快照里的值只作为已删除钱包的兜底）。
+- **手动协议持仓。** 不是每个协议都读得到：全新的协议（这次是 Papertrade）可能根本没有余额 API。在持有它的钱包下手工登记一条——协议、符号、数量、估值（USD）和登记日期——它就会像普通持仓一样进入总额、钱包卡片、链分布与健康度报告。它刻意是一个**带日期的估值**而不是实时值：不跟行情变动，刷新也不会覆盖，所以页面会一直显示你登记的那个金额和日期（代币表里该行带 `manual` 标记和日期），直到你重新登记。登记只从它自己的日期起生效，因此今天新增的一条不会改写上个月的历史。
+- **「计划」标签页 —— 资产管理的操作手册。** 在 Dashboard 与 Settings 之外新增第三个标签页，把一份财务计划变成今天的操作指令。计划只需设定一次（按 Profile 存在 `plan.json`）：每种币的价格档位、每个档位每周投入多少、新增资金如何分配、哪些现金与股票仓位算作「弹药」、目标是什么。之后每次刷新它都会回答唯一重要的问题 —— **下一块钱该怎么花？**：本周各币买入额（BTC 40% / ETH 35% / HYPE+SOL 25%）、每个币当前所处档位（按自身价格判定，HYPE+SOL 跟随 BTC）、这笔钱从哪个弹药来源出、该来源还剩多少、本季度投放额度用掉多少、总资产相对各目标路径的位置与仍需的年化收益，以及当前真正生效的止盈 / 再平衡 / 回撤规则。执行记录写入 `plan_log.jsonl` 并按来源扣减弹药池，所以「还能投多少」是真实数字而不是估算。追踪器看不到的现金与股票以「手工资产」登记，并因此进入总资产与目标计算。默认值是示意用的占位数据（其中的股票与金额都是示例，在「计划设置」里替换成你自己的），标签页与它自带的示例完全一致：BTC $80,422 属 T2、ETH $2,353 属 T3，则本周为 $160 + $280 + $100 = $540。
 - **分享卡片。** 顶栏「分享」按钮（就在「刷新」旁边）弹出对话框，实时预览一张 1200×630 的 PNG——总额、日环比、按币种合并的前五大持仓、资产类别甜甜圈、三条健康度结论。可以直接下载、复制图片、复制文案，或一键跳转 **X / Facebook / WhatsApp / Telegram**。全部用 canvas 手绘：不引入 `html2canvas`、不依赖 CDN，图片里也不含任何钱包地址。
 - **作者链接 + 打赏。** 设置页底部有作者的社交链接（X / Discord / GitHub）与「请我喝杯咖啡」弹窗，内含 tip.md 徽章和币安支付二维码；徽章已本地内置，页面不会发出任何第三方请求。
-- **可链接的页面。** `#pageSettings` 直达设置页，`#pageSettings/secWallets` 直达某个设置分区——刷新或收藏后回到原处。
+- **可链接的页面。** `#pageSettings` 直达设置页，`#pageSettings/secWallets` 直达某个设置分区，`#pagePlan` 直达计划页——刷新或收藏后回到原处。
 - **主题与多语言。** 深/浅色主题切换、中英双语（默认英文）、全站链与交易所图标。
 
 
@@ -241,6 +247,8 @@ dsh --profile demo                                    # 仪表盘 http://127.0.0
 
 ## 与 DSH 的集成方式
 
+仪表盘还会盯着自己的 Python 源码：改 `tracker/*.py` 会在几秒内自动重启（同一个进程，不需要重启 DSH），静态文件本来就是每次请求读盘，所以改界面刷新页面即可。设置页的「服务」面板里有一个「重启服务」按钮，需要强制重启时用。
+
 不是套壳，是真插件：
 
 - 声明 `dsh.bundle` manifest（`cordis.patch.yml`），`dsh plugin add` 直接安装。
@@ -249,22 +257,19 @@ dsh --profile demo                                    # 仪表盘 http://127.0.0
 
 ## 隐私声明（重要）
 
-本仓库**不含任何私钥、私人钱包或余额**——`tracker/config.py` 只有 `WALLETS = []` 和空 key。所有私人配置都存放在本地 git-ignored 的 `profiles/` 里。你可以放心 clone、放心 review、放心跑。
-
-## 安装
-
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:35-72](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/index.js#L35-L72)
+**依据 3 · 源码核查**：[index.js:35-72](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/index.js#L35-L72)
 
-模板、Python 子进程与生命周期
+当前固定版本复核。模板、Python 子进程与生命周期
 
 <details>
 <summary>查看原文（38行）</summary>
 
 ```text
+
 function seedConfigs(dataDir) {
   // seed the default profile (<dataDir>/default) from the public templates
   const dir = join(dataDir, 'default')
@@ -280,41 +285,45 @@ function seedConfigs(dataDir) {
 
 // Cordis hands the row's config to apply() as the SECOND argument. Reading it
 // from `ctx.config` throws "cannot get property config without inject".
-export function apply(ctx, config) {
-  const cfg = config || {}
-  const port = cfg.port || Number(process.env.PORTFOLIO_PORT) || 8080
-  const host = cfg.host || '127.0.0.1'
-
-  const dataDir = resolveDataDir(cfg)
-  seedConfigs(dataDir)
-
-  const child = spawn(PYTHON, [join(ROOT, 'run.py'), '--port', String(port), '--host', host], {
-    cwd: ROOT,
-    env: {
-      ...process.env,
-      PORTFOLIO_NO_BUILTIN_WALLETS: '1',
-      PORTFOLIO_PROFILES_DIR: dataDir,
-    },
-    stdio: 'inherit',
+/** Is nothing listening on host:port? A leaked server from an earlier run would
+ *  hold the port, and the new child would exit on EADDRINUSE — the dashboard then
+ *  keeps serving *old code* while this plugin looks loaded. Probe first instead. */
+function portFree(host, port, timeout = 800) {
+  return new Promise((resolve) => {
+    const sock = createConnection({ host, port })
+    let done = false
+    const finish = (free) => {
+      if (done) return
+      done = true
+      sock.destroy()
+      resolve(free)
+    }
+    sock.once('connect', () => finish(false))
+    sock.once('error', () => finish(true))
+    setTimeout(() => finish(true), timeout)
   })
-
-  console.log(`[dsh-crypto-portfolio] dashboard: http://${host}:${port}`)
-  console.log(`[dsh-crypto-portfolio] profiles: ${dataDir} (first run: click Refresh)`)
-  // The child is tied to this plugin's lifecycle: unloading the row stops it.
-  ctx.on('dispose', () => { child.kill('SIGTERM') })
 }
+
+// Cordis hands the row's config to apply() as the SECOND argument. Reading it
+// from `ctx.config` throws "cannot get property config without inject".
+export function apply(ctx, config) {
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[tracker/server.py:85-171](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L85-L171)
+**依据 4 · 源码核查**：[tracker/server.py:85-171](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L85-L171)
 
-仪表盘 JSON API
+当前固定版本复核。仪表盘 JSON API
 
 <details>
 <summary>查看原文（87行）</summary>
 
 ```text
+    server_version = "PortfolioTracker/1.0"
+
+    def log_message(self, fmt, *args):  # silence request log
+        pass
+
     def do_GET(self):  # noqa: N802
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
@@ -353,6 +362,14 @@ export function apply(ctx, config) {
                 self._reply(code, body, "application/json; charset=utf-8")
             elif path == "/api/health":
                 self._reply_json(self._health_view())
+            elif path == "/api/manual":
+                code, body = _json(self._manual_view())
+                self._reply(code, body, "application/json; charset=utf-8")
+            elif path == "/api/plan":
+                # the asset plan, evaluated against a snapshot (default: the newest)
+                d = qs.get("date", [None])[0] or None
+                code, body = _json(plan.analyze(d))
+                self._reply(code, body, "application/json; charset=utf-8")
             elif path == "/api/history":
                 days = int(qs.get("days", ["0"])[0] or 0) or None
                 code, body = _json(storage.get_history(days))
@@ -389,26 +406,13 @@ export function apply(ctx, config) {
                     "status": status.get_status(),
                 })
                 self._reply(code, body, "application/json; charset=utf-8")
-            elif path == "/api/schedule":
-                # per-profile: ?profile=<name> (defaults to the active profile)
-                prof = (qs.get("profile") or [None])[0]
-                if prof and not profiles.exists(prof):
-                    raise ValueError(f"profile {prof!r} does not exist")
-                code, body = _json(sched.get_schedule(prof))
-                self._reply(code, body, "application/json; charset=utf-8")
-            elif path == "/api/config/export":
-                code, body = _json(self._config_export())
-                self._reply(code, body, "application/json; charset=utf-8")
-            elif path == "/api/profiles":
-                code, body = _json(self._profiles_view())
-                self._reply(code, body, "application/json; charset=utf-8")
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[tracker/portfolio.py:100-110](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/portfolio.py#L100-L110)
+**依据 5 · 源码核查**：[tracker/portfolio.py:100-110](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/portfolio.py#L100-L110)
 
-统一快照入口
+当前固定版本复核。统一快照入口
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -432,8 +436,8 @@ def fetch_all(progress=None):
 #### 缺口
 
 - 真实地址/交易所范围、资产准确率与投资用途未核
-  **影响：**不能证明全面或可据此作财务决策
-  **进一步探讨：**选少量自有对账样例核余额、价格和故障显示
+  **影响**：不能证明全面或可据此作财务决策
+  **进一步探讨**：选少量自有对账样例核余额、价格和故障显示
 
 <a id="research-q02"></a>
 
@@ -441,7 +445,7 @@ def fetch_all(progress=None):
 
 ### Q02 · 刷新、黑名单、历史和多 Profile 如何组织？
 
-**研究主题：**功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
@@ -449,9 +453,9 @@ def fetch_all(progress=None):
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[tracker/portfolio.py:100-209](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/portfolio.py#L100-L209)
+**依据 1 · 源码核查**：[tracker/portfolio.py:100-209](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/portfolio.py#L100-L209)
 
-多来源取数流程
+当前固定版本复核。多来源取数流程
 
 <details>
 <summary>查看原文（110行）</summary>
@@ -571,9 +575,9 @@ def fetch_all(progress=None):
 
 </details>
 
-**依据 2 · 源码核查**：[tracker/portfolio.py:209-286](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/portfolio.py#L209-L286)
+**依据 2 · 源码核查**：[tracker/portfolio.py:209-286](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/portfolio.py#L209-L286)
 
-黑名单过滤、总计、写快照与清理
+当前固定版本复核。黑名单过滤、总计、写快照与清理
 
 <details>
 <summary>查看原文（78行）</summary>
@@ -661,9 +665,9 @@ def refresh_snapshot(progress=None):
 
 </details>
 
-**依据 3 · 源码核查**：[tracker/storage.py:103-139](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/storage.py#L103-L139)
+**依据 3 · 源码核查**：[tracker/storage.py:103-139](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/storage.py#L103-L139)
 
-当日 upsert/明细存储
+当前固定版本复核。当日 upsert/明细存储
 
 <details>
 <summary>查看原文（37行）</summary>
@@ -710,9 +714,9 @@ def save_snapshot(data):
 
 </details>
 
-**依据 4 · 源码核查**：[tracker/storage.py:236-276](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/storage.py#L236-L276)
+**依据 4 · 源码核查**：[tracker/storage.py:236-276](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/storage.py#L236-L276)
 
-历史视图
+当前固定版本复核。历史视图
 
 <details>
 <summary>查看原文（41行）</summary>
@@ -751,26 +755,44 @@ def get_history(days=None):
                 else:
                     chains.setdefault(r["name"], {})[r["date"]] = r["usd"]
             totals = [totals_by_date.get(d, 0.0) for d in dates]
-            return {
-                "dates": dates,
-                "totals": totals,
-                "wallets": {w: [series.get(d, 0.0) for d in dates]
-                            for w, series in wallets.items()},
-                "chains": {c: [series.get(d, 0.0) for d in dates]
-                           for c, series in chains.items()},
-            }
+            # manual registrations are part of the portfolio from their own date on,
+            # so the trend line steps up when one is registered instead of jumping
+            # retroactively across the whole history
+            extra_total = manual.totals_by_date(dates)
+            totals = [round((totals[i] or 0.0) + extra_total.get(d, 0.0), 2)
+                      for i, d in enumerate(dates)]
+            extra_wallet = manual.wallet_totals_by_date(dates)
+            for w, series in extra_wallet.items():
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[tracker/storage.py:298-363](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/storage.py#L298-L363)
+**依据 5 · 源码核查**：[tracker/storage.py:298-363](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/storage.py#L298-L363)
 
-90 日+月度保留
+当前固定版本复核。90 日+月度保留
 
 <details>
 <summary>查看原文（66行）</summary>
 
 ```text
+                "ORDER BY usd DESC", (date,)).fetchall()
+            # classification is applied at read time, so editing the rules also
+            # reclassifies every historical snapshot
+            out = assetlabels.annotate(filter_rows([dict(r) for r in rows]))
+            # manually registered protocol positions ride along: same row shape, same
+            # blacklist, their own registration date (see tracker/manual.py)
+            extra = assetlabels.annotate(filter_rows(manual.rows(date)))
+            if extra:
+                out = out + extra
+                out.sort(key=lambda r: -float(r.get("usd") or 0.0))
+            return out
+        finally:
+            conn.close()
+
+
+# ————————————————————————————————————————————————————————————————
+# retention
+#
 # Every snapshot keeps a copy of every token row, so a profile grows by roughly
 # 0.75 MB per day (a 12-wallet profile reaches ~280 MB/year) with nothing ever
 # removed. Keep a dense recent window for the trend chart, and thin anything older
@@ -819,36 +841,19 @@ def plan_retention(dates, today=None, keep_days=None, keep_monthly=None):
     return sorted(keep), sorted(drop)
 
 
-def prune_snapshots(today=None, keep_days=None, keep_monthly=None):
-    """Delete snapshots outside the retention window; returns a summary."""
-    with _lock:
-        conn = _connect()
-        try:
-            dates = [r["date"] for r in conn.execute("SELECT date FROM snapshots").fetchall()]
-            keep, drop = plan_retention(dates, today=today, keep_days=keep_days,
-                                        keep_monthly=keep_monthly)
-            for d in drop:
-                conn.execute("DELETE FROM tokens WHERE date=?", (d,))
-                conn.execute("DELETE FROM wallet_totals WHERE date=?", (d,))
-                conn.execute("DELETE FROM history_totals WHERE date=?", (d,))
-                conn.execute("DELETE FROM snapshots WHERE date=?", (d,))
-            if drop:
-                conn.execute("INSERT OR REPLACE INTO meta(key, value) VALUES ('history_sig', ?)",
-                             (_history_sig(conn),))
-                conn.commit()
-            return {"kept": len(keep), "dropped": len(drop), "dropped_dates": drop}
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[index.js:17-33](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/index.js#L17-L33)
+**依据 6 · 源码核查**：[index.js:17-33](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/index.js#L17-L33)
 
-安装态数据目录避开 node_modules
+当前固定版本复核。安装态数据目录避开 node_modules
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
+
 /** Where the profiles (wallets, keys, snapshot DB) live.
  *
  * Inside the package by default, but an installed plugin MUST keep them outside:
@@ -865,7 +870,6 @@ function resolveDataDir(config) {
     return join(home, 'storages', 'crypto-portfolio')
   }
   return join(ROOT, 'profiles')
-}
 ```
 
 </details>
@@ -873,8 +877,8 @@ function resolveDataDir(config) {
 #### 缺口
 
 - 外部数据源成功率、保留策略业务适宜性未测
-  **影响：**不能声称历史完整或真实总资产准确
-  **进一步探讨：**真实来源对账、失败注入和长期 profile 迁移/备份验证
+  **影响**：不能声称历史完整或真实总资产准确
+  **进一步探讨**：真实来源对账、失败注入和长期 profile 迁移/备份验证
 
 <a id="research-q03"></a>
 
@@ -882,7 +886,7 @@ function resolveDataDir(config) {
 
 ### Q03 · 本地 HTTP API 对密钥和资产数据的保护边界是什么？
 
-**研究主题：**缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
@@ -890,45 +894,50 @@ function resolveDataDir(config) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:50-68](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/index.js#L50-L68)
+**依据 1 · 源码核查**：[index.js:50-68](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/index.js#L50-L68)
 
-host 默认回环但可由配置覆盖
+当前固定版本复核。host 默认回环但可由配置覆盖
 
 <details>
 <summary>查看原文（19行）</summary>
 
 ```text
-export function apply(ctx, config) {
-  const cfg = config || {}
-  const port = cfg.port || Number(process.env.PORTFOLIO_PORT) || 8080
-  const host = cfg.host || '127.0.0.1'
-
-  const dataDir = resolveDataDir(cfg)
-  seedConfigs(dataDir)
-
-  const child = spawn(PYTHON, [join(ROOT, 'run.py'), '--port', String(port), '--host', host], {
-    cwd: ROOT,
-    env: {
-      ...process.env,
-      PORTFOLIO_NO_BUILTIN_WALLETS: '1',
-      PORTFOLIO_PROFILES_DIR: dataDir,
-    },
-    stdio: 'inherit',
+// from `ctx.config` throws "cannot get property config without inject".
+/** Is nothing listening on host:port? A leaked server from an earlier run would
+ *  hold the port, and the new child would exit on EADDRINUSE — the dashboard then
+ *  keeps serving *old code* while this plugin looks loaded. Probe first instead. */
+function portFree(host, port, timeout = 800) {
+  return new Promise((resolve) => {
+    const sock = createConnection({ host, port })
+    let done = false
+    const finish = (free) => {
+      if (done) return
+      done = true
+      sock.destroy()
+      resolve(free)
+    }
+    sock.once('connect', () => finish(false))
+    sock.once('error', () => finish(true))
+    setTimeout(() => finish(true), timeout)
   })
-
-  console.log(`[dsh-crypto-portfolio] dashboard: http://${host}:${port}`)
+}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[tracker/server.py:95-171](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L95-L171)
+**依据 2 · 源码核查**：[tracker/server.py:95-171](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L95-L171)
 
-GET 敏感配置和资产 API，无认证门禁
+当前固定版本复核。GET 敏感配置和资产 API，无认证门禁
 
 <details>
 <summary>查看原文（77行）</summary>
 
 ```text
+        try:
+            if path == "/":
+                self._serve_file("index.html")
+            elif path.startswith("/static/"):
+                self._serve_file(path[len("/static/"):], subdir=_STATIC)
             elif path == "/api/wallets":
                 code, body = _json(self._wallet_view())
                 self._reply(code, body, "application/json; charset=utf-8")
@@ -957,6 +966,14 @@ GET 敏感配置和资产 API，无认证门禁
                 self._reply(code, body, "application/json; charset=utf-8")
             elif path == "/api/health":
                 self._reply_json(self._health_view())
+            elif path == "/api/manual":
+                code, body = _json(self._manual_view())
+                self._reply(code, body, "application/json; charset=utf-8")
+            elif path == "/api/plan":
+                # the asset plan, evaluated against a snapshot (default: the newest)
+                d = qs.get("date", [None])[0] or None
+                code, body = _json(plan.analyze(d))
+                self._reply(code, body, "application/json; charset=utf-8")
             elif path == "/api/history":
                 days = int(qs.get("days", ["0"])[0] or 0) or None
                 code, body = _json(storage.get_history(days))
@@ -993,12 +1010,18 @@ GET 敏感配置和资产 API，无认证门禁
                     "status": status.get_status(),
                 })
                 self._reply(code, body, "application/json; charset=utf-8")
-            elif path == "/api/schedule":
-                # per-profile: ?profile=<name> (defaults to the active profile)
-                prof = (qs.get("profile") or [None])[0]
-                if prof and not profiles.exists(prof):
-                    raise ValueError(f"profile {prof!r} does not exist")
-                code, body = _json(sched.get_schedule(prof))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[tracker/server.py:178-189](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L178-L189)
+
+当前固定版本复核。export 返回原始 sources.load()
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
                 self._reply(code, body, "application/json; charset=utf-8")
             elif path == "/api/config/export":
                 code, body = _json(self._config_export())
@@ -1006,42 +1029,36 @@ GET 敏感配置和资产 API，无认证门禁
             elif path == "/api/profiles":
                 code, body = _json(self._profiles_view())
                 self._reply(code, body, "application/json; charset=utf-8")
+            else:
+                self._reply(404, json.dumps({"error": "not found"}).encode(), "application/json")
+        except Exception as e:  # noqa: BLE001
+            self._reply(500, json.dumps({"error": f"{type(e).__name__}: {e}"}).encode(),
+                        "application/json")
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[tracker/server.py:178-189](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L178-L189)
+**依据 4 · 源码核查**：[tracker/server.py:207-242](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L207-L242)
 
-export 返回原始 sources.load()
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    def _config_export(self):
-        import datetime as _dt
-        return {
-            "format": "portfolio-config",
-            "version": 1,
-            "exported_at": _dt.datetime.now().isoformat(timespec="seconds"),
-            "sources": sources.load(),
-            "wallets": walletstore.user_wallets(),
-            "blacklist": bl.user_entries(),
-            "stablecoins": assetlabels.user_entries(),
-            "note": "sources/wallets/blacklist 配置文件备份；导入后点「刷新数据」生效",
-        }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[tracker/server.py:207-242](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L207-L242)
-
-栅栏只给写侧使用
+当前固定版本复核。栅栏只给写侧使用
 
 <details>
 <summary>查看原文（36行）</summary>
 
 ```text
+            sources.save(src)
+        wallets = (cfg or {}).get("wallets")
+        if isinstance(wallets, list):
+            walletstore.save_all(wallets)
+        blacklist_entries = (cfg or {}).get("blacklist")
+        if isinstance(blacklist_entries, list):
+            bl.save_all(blacklist_entries)
+        stable_rules = (cfg or {}).get("stablecoins")
+        if isinstance(stable_rules, list):
+            assetlabels.save_all(stable_rules)
+        sources.reset_failover()
+        return self._config_export()
+
     def _write_guard(self, is_post):
         """Reject cross-site writes; returns an error string, or None when allowed.
 
@@ -1065,26 +1082,13 @@ export 返回原始 sources.load()
             host = (self.headers.get("Host") or "").strip()
             if origin == "null":
                 # opaque origin: sandboxed iframe / data: document / file:// page
-                return "opaque origin refused"
-            origin_host = urllib.parse.urlparse(origin).netloc
-            if origin_host and host and origin_host != host:
-                return "origin does not match host"
-        if is_post:
-            ctype = (self.headers.get("Content-Type") or "").split(";", 1)[0].strip().lower()
-            # Empty-body POSTs (no content-type) are allowed; anything with a body
-            # must be JSON so a simple cross-site POST is forced into a preflight
-            # this server never answers.
-            length = int(self.headers.get("Content-Length") or 0)
-            if ctype != "application/json" and (length > 0 or ctype):
-                return "content type must be application/json"
-        return None
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[tracker/sources.py:244-290](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/sources.py#L244-L290)
+**依据 5 · 源码核查**：[tracker/sources.py:244-290](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/sources.py#L244-L290)
 
-默认 mask 但 reveal 可解除
+当前固定版本复核。默认 mask 但 reveal 可解除
 
 <details>
 <summary>查看原文（47行）</summary>
@@ -1144,8 +1148,8 @@ def mask_config(cfg):
 #### 缺口
 
 - 目标部署网络拓扑、主机访问控制与浏览器策略未核
-  **影响：**不能推断已遭泄露或公网暴露
-  **进一步探讨：**限制绑定/访问并在隔离机测本地及 LAN 未授权读取
+  **影响**：不能推断已遭泄露或公网暴露
+  **进一步探讨**：限制绑定/访问并在隔离机测本地及 LAN 未授权读取
 
 <a id="research-q04"></a>
 
@@ -1153,7 +1157,7 @@ def mask_config(cfg):
 
 ### Q04 · 汇总数字是否在失败或黑名单场景保持一致？
 
-**研究主题：**缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
@@ -1161,9 +1165,9 @@ CEX 合成时 tokens 使用 filter_rows(res[rows])，但同一个 obj.total_usd 
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:36-42](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.zh.md#L36-L42)
+**依据 1 · 作者声明**：[README.zh.md:36-42](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/README.zh.md#L36-L42)
 
-作者承诺黑名单剔除总额与趋势
+当前固定版本复核。作者承诺黑名单剔除总额与趋势
 
 ```text
 ### 二、链上浏览器看不到的"隐形资产"
@@ -1175,9 +1179,9 @@ CEX 合成时 tokens 使用 filter_rows(res[rows])，但同一个 obj.total_usd 
 ### 三、空气币和钓鱼代币把数字搞得虚高
 ```
 
-**依据 2 · 源码核查**：[tracker/portfolio.py:249-267](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/portfolio.py#L249-L267)
+**依据 2 · 源码核查**：[tracker/portfolio.py:249-267](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/portfolio.py#L249-L267)
 
-CEX 过滤 tokens 但原始 rows 求 total 并累计
+当前固定版本复核。CEX 过滤 tokens 但原始 rows 求 total 并累计
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -1206,9 +1210,9 @@ CEX 过滤 tokens 但原始 rows 求 total 并累计
 
 </details>
 
-**依据 3 · 源码核查**：[tracker/storage.py:103-114](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/storage.py#L103-L114)
+**依据 3 · 源码核查**：[tracker/storage.py:103-114](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/storage.py#L103-L114)
 
-原始总值写入 SQLite
+当前固定版本复核。原始总值写入 SQLite
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -1230,9 +1234,9 @@ def save_snapshot(data):
 
 </details>
 
-**依据 4 · 源码核查**：[tracker/storage.py:167-173](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/storage.py#L167-L173)
+**依据 4 · 源码核查**：[tracker/storage.py:167-173](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/storage.py#L167-L173)
 
-日期列表读原始总值
+当前固定版本复核。日期列表读原始总值
 
 ```text
 def get_snapshot_dates():
@@ -1244,9 +1248,9 @@ def get_snapshot_dates():
         finally:
 ```
 
-**依据 5 · 源码核查**：[tracker/views.py:13-47](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/views.py#L13-L47)
+**依据 5 · 源码核查**：[tracker/views.py:13-47](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/views.py#L13-L47)
 
-读取视图按过滤 token 重算
+当前固定版本复核。读取视图按过滤 token 重算
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -1261,12 +1265,19 @@ def view_of(snap, storage_map=None):
     next refresh. The snapshot's own value stays as the fallback, which is what
     keeps the class of a wallet that has since been removed.
     """
+    # Manually registered positions (tracker/manual.py) count on the snapshot's own
+    # date and later — registering one today must not rewrite last month's history.
+    manual_by_wallet = manual.by_wallet(snap.get("date"))
     wallets = []
     total = 0.0
     by_chain = {}
+    seen = set()
     for w in snap.get("wallets", []):
         name = w.get("wallet") or w.get("name", "")
+        seen.add(name)
+        # a manual row is subject to the same blacklist as a fetched one
         tokens = [t for t in w.get("tokens", []) if not is_blacklisted(t)]
+        tokens += [t for t in manual_by_wallet.get(name, []) if not is_blacklisted(t)]
         wt = round(sum(float(t.get("usd", 0.0)) for t in tokens), 2)
         total += wt
         for t in tokens:
@@ -1280,20 +1291,13 @@ def view_of(snap, storage_map=None):
                         "error": w.get("error") or None,
                         "notes": w.get("notes") or [],
                         # storage class (cold/hot/cex) drives the health report; a
-                        # snapshot taken before this field existed simply has none
-                        "storage": (storage_map or {}).get(name) or w.get("storage"),
-                        "total_usd": wt, "token_count": len(tokens)})
-    return {"date": snap.get("date", ""), "created_at": snap.get("created_at"),
-            "total_usd": round(total, 2), "by_chain": by_chain,
-            "by_volatility": volatility_totals(snap),
-            "wallets": wallets, "token_count": sum(w["token_count"] for w in wallets)}
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[tracker/portfolio.py:255-259](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/portfolio.py#L255-L259)
+**依据 6 · 源码核查**：[tracker/portfolio.py:255-259](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/portfolio.py#L255-L259)
 
-CEX 错误行零值且有 error
+当前固定版本复核。CEX 错误行零值且有 error
 
 ```text
         if res["error"]:
@@ -1306,8 +1310,8 @@ CEX 错误行零值且有 error
 #### 缺口
 
 - CEX 黑名单触发频率与仪表盘调用日期列表方式未测
-  **影响：**不能量化受影响金额或所有 UI 展示
-  **进一步探讨：**做 CEX 黑名单夹具，比较刷新响应、DB、快照列表、历史与 UI
+  **影响**：不能量化受影响金额或所有 UI 展示
+  **进一步探讨**：做 CEX 黑名单夹具，比较刷新响应、DB、快照列表、历史与 UI
 
 <a id="research-q05"></a>
 
@@ -1315,7 +1319,7 @@ CEX 错误行零值且有 error
 
 ### Q05 · 安装维护成本与财务使用风险是什么？
 
-**研究主题：**依赖、兼容与流程、效果与总成本、采用判断
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
@@ -1323,14 +1327,18 @@ CEX 错误行零值且有 error
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:95-153](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/README.zh.md#L95-L153)
+**依据 1 · 作者声明**：[README.zh.md:95-153](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/README.zh.md#L95-L153)
 
-作者安装和依赖说明
+当前固定版本复核。作者安装和依赖说明
 
 <details>
 <summary>查看原文（59行）</summary>
 
 ````text
+## 安装
+
+### 依赖前提
+
 - **`dsh` `0.1.1-rc.2`**（同一预发布线内的兼容版本）与 **Node `^22.19.0 || >=24.0.0`** —— 即 DSH 自身声明的区间。
 - **Python 3.9+**，并安装两个 pip 包：
 
@@ -1386,22 +1394,19 @@ patch 会**整体替换**某一行的 `config`，所以必须把你需要的键�
 
 也可以设环境变量 `PORTFOLIO_PORT`。
 
-### 脱离 DSH 独立运行
-
-```sh
-python3 run.py --init-template --port 8080   # 用公开模板初始化 profiles/default
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:14-33](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/index.js#L14-L33)
+**依据 2 · 源码核查**：[index.js:14-33](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/index.js#L14-L33)
 
-Python 与 profile 路径
+当前固定版本复核。Python 与 profile 路径
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
+
 const ROOT = dirname(fileURLToPath(import.meta.url))
 const PYTHON = process.env.PORTFOLIO_PYTHON || 'python3'
 
@@ -1421,99 +1426,98 @@ function resolveDataDir(config) {
     return join(home, 'storages', 'crypto-portfolio')
   }
   return join(ROOT, 'profiles')
-}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[tracker/server.py:42-48](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L42-L48)
+**依据 3 · 源码核查**：[tracker/server.py:42-48](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L42-L48)
 
-刷新成本与冷却注释
+当前固定版本复核。刷新成本与冷却注释
 
 ```text
+_state_lock = threading.Lock()
+
 # A full fetch hits DeBank/Binance/CoinGecko and takes tens of seconds. Without a
 # floor, anything that can reach this port (including a cross-site page, see
 # _write_guard) could loop refresh and burn the upstream API quotas.
 REFRESH_COOLDOWN_SECONDS = float(os.environ.get("PORTFOLIO_REFRESH_COOLDOWN", "60"))
 _last_refresh_at = 0.0
-# Cooperative cancel: checked from the progress callback between wallets.
-_refresh_cancel = threading.Event()
 ```
 
-**依据 4 · 源码核查**：[tracker/server.py:516-534](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L516-L534)
+**依据 4 · 源码核查**：[tracker/server.py:516-534](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L516-L534)
 
-60秒默认冷却
+当前固定版本复核。60秒默认冷却
 
 <details>
 <summary>查看原文（19行）</summary>
 
 ```text
-    def _handle_refresh(self, qs):
-        global _last_refresh_at
-        dry = qs.get("dry", ["0"])[0] in ("1", "true")
-        now = time.time()
-        with _state_lock:
-            if _refresh_state["running"]:
-                self._reply(429, json.dumps({"error": "Refresh already in progress"}).encode(),
-                            "application/json")
-                return
-            wait = REFRESH_COOLDOWN_SECONDS - (now - _last_refresh_at)
-            if _last_refresh_at and wait > 0:
-                self._reply(429, json.dumps({
-                    "error": f"Refresh rate-limited, retry in {int(wait) + 1}s",
-                    "retry_after": int(wait) + 1,
-                }).encode(), "application/json")
-                return
-            _refresh_state["running"] = True
-            _last_refresh_at = now
-        _refresh_cancel.clear()
+                        for i, e in enumerate(bl.user_entries())]
+        return {"entries": config_entries + user_entries,
+                "file": bl.blacklist_file()}
+
+    def _manual_view(self):
+        """Hand-registered protocol positions + the wallets they may attach to."""
+        positions = manual.positions()
+        return {"positions": positions,
+                "wallets": manual.wallet_names(),
+                "total": manual.total(),
+                "today": __import__("datetime").date.today().isoformat(),
+                "file": manual.manual_file()}
+
+    def _health_view(self):
+        thresholds = healthconfig.load()
+        return {"thresholds": thresholds, "defaults": healthconfig.defaults(),
+                "file": healthconfig.health_file(),
+                "note": "percent of the portfolio; storage is inverted (safe > warning)"}
+
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[tracker/server.py:633-660](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L633-L660)
+**依据 5 · 源码核查**：[tracker/server.py:633-660](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L633-L660)
 
-定时线程与服务
+当前固定版本复核。定时线程与服务
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-def _scheduler_loop():
-    while not _scheduler_stop.wait(30):
+        self.send_response(code)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
         try:
-            now = datetime.now()
-            for p in profiles.list_profiles():
-                if sched.is_due(p, now):
-                    _run_scheduled(p)
-        except Exception as e:  # noqa: BLE001
-            print(f"[scheduler] loop error: {e}", flush=True)
+            self.wfile.write(body)
+        except (BrokenPipeError, ConnectionResetError):
+            pass
+
+    def _serve_file(self, name, subdir=None):
+        root = subdir or _STATIC
+        if ".." in name or name.startswith("/"):
+            self._reply(403, b"forbidden", "text/plain")
+            return
+        fp = os.path.join(root, name)
+        if not os.path.isfile(fp):
+            self._reply(404, b"not found", "text/plain")
+            return
+        ext = os.path.splitext(fp)[1].lower()
+        with open(fp, "rb") as f:
+            self._reply(200, f.read(), MIME.get(ext, "application/octet-stream"))
 
 
-def run(port=None, host="127.0.0.1", profile=None):
-    port = port or config.DEFAULT_PORT
-    profiles.ensure_profiles()
-    # undo a scheduled refresh that was interrupted by a hard kill
-    recovered = profiles.recover_active()
-    if recovered:
-        print(f"[profiles] recovered interrupted refresh; active restored to {recovered}", flush=True)
-    if profile:
-        profiles.set_active(profile)
-    sources.ensure_file()
-    storage.init_db()
-    print(f"[profiles] active: {profiles.active()}", flush=True)
-    scheduler = threading.Thread(target=_scheduler_loop, daemon=True)
-    scheduler.start()
-    print("[scheduler] daily auto-refresh thread started", flush=True)
-    server = ThreadingHTTPServer((host, port), Handler)
-    print(f"Portfolio Tracker running at http://{host}:{port}")
+_scheduler_stop = threading.Event()
+
+
+def _run_scheduled(profile):
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[tracker/sources.py:26-112](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/sources.py#L26-L112)
+**依据 6 · 源码核查**：[tracker/sources.py:26-112](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/sources.py#L26-L112)
 
-多来源配置含付费 DeBank Pro
+当前固定版本复核。多来源配置含付费 DeBank Pro
 
 <details>
 <summary>查看原文（87行）</summary>
@@ -1613,8 +1617,8 @@ _DEFAULTS = {
 #### 缺口
 
 - 真实 API 额度/费用、目标环境安装与密钥文件权限未核
-  **影响：**不能给费用估计或金融决策可用性结论
-  **进一步探讨：**在隔离环境核依赖、API 成本、数据目录权限与对账误差
+  **影响**：不能给费用估计或金融决策可用性结论
+  **进一步探讨**：在隔离环境核依赖、API 成本、数据目录权限与对账误差
 
 <a id="research-q06"></a>
 
@@ -1622,7 +1626,7 @@ _DEFAULTS = {
 
 ### Q06 · 怎样把资产数字与敏感配置提升到可审计水平？
 
-**研究主题：**新假设与验证、采用判断
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
@@ -1630,14 +1634,27 @@ _DEFAULTS = {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[tracker/server.py:147-168](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L147-L168)
+**依据 1 · 源码核查**：[tracker/server.py:147-168](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L147-L168)
 
-敏感 GET 暴露点
+当前固定版本复核。敏感 GET 暴露点
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
+                self._reply(code, body, "application/json; charset=utf-8")
+            elif path == "/api/status":
+                code, body = _json(dict(_refresh_state))
+                self._reply(code, body, "application/json; charset=utf-8")
+            elif path == "/api/snapshots":
+                code, body = _json(storage.get_snapshot_dates())
+                self._reply(code, body, "application/json; charset=utf-8")
+            elif path == "/api/labels":
+                code, body = _json(self._stablecoins_view())
+                self._reply(code, body, "application/json; charset=utf-8")
+            elif path == "/api/blacklist":
+                code, body = _json(self._blacklist_view())
+                self._reply(code, body, "application/json; charset=utf-8")
             elif path == "/api/sources":
                 # secrets are masked unless the caller explicitly asks to reveal
                 reveal = (qs.get("reveal") or ["0"])[0] in ("1", "true")
@@ -1647,26 +1664,13 @@ _DEFAULTS = {
                     "config": cfg if reveal else sources.mask_config(cfg),
                     "masked": not reveal,
                     "last_ok": sources.failover_state(),
-                    "status": status.get_status(),
-                })
-                self._reply(code, body, "application/json; charset=utf-8")
-            elif path == "/api/schedule":
-                # per-profile: ?profile=<name> (defaults to the active profile)
-                prof = (qs.get("profile") or [None])[0]
-                if prof and not profiles.exists(prof):
-                    raise ValueError(f"profile {prof!r} does not exist")
-                code, body = _json(sched.get_schedule(prof))
-                self._reply(code, body, "application/json; charset=utf-8")
-            elif path == "/api/config/export":
-                code, body = _json(self._config_export())
-                self._reply(code, body, "application/json; charset=utf-8")
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[tracker/portfolio.py:249-267](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/portfolio.py#L249-L267)
+**依据 2 · 源码核查**：[tracker/portfolio.py:249-267](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/portfolio.py#L249-L267)
 
-CEX 汇总差异点
+当前固定版本复核。CEX 汇总差异点
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -1695,9 +1699,9 @@ CEX 汇总差异点
 
 </details>
 
-**依据 3 · 源码核查**：[tracker/views.py:13-47](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/views.py#L13-L47)
+**依据 3 · 源码核查**：[tracker/views.py:13-47](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/views.py#L13-L47)
 
-视图可重算总额
+当前固定版本复核。视图可重算总额
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -1712,12 +1716,19 @@ def view_of(snap, storage_map=None):
     next refresh. The snapshot's own value stays as the fallback, which is what
     keeps the class of a wallet that has since been removed.
     """
+    # Manually registered positions (tracker/manual.py) count on the snapshot's own
+    # date and later — registering one today must not rewrite last month's history.
+    manual_by_wallet = manual.by_wallet(snap.get("date"))
     wallets = []
     total = 0.0
     by_chain = {}
+    seen = set()
     for w in snap.get("wallets", []):
         name = w.get("wallet") or w.get("name", "")
+        seen.add(name)
+        # a manual row is subject to the same blacklist as a fetched one
         tokens = [t for t in w.get("tokens", []) if not is_blacklisted(t)]
+        tokens += [t for t in manual_by_wallet.get(name, []) if not is_blacklisted(t)]
         wt = round(sum(float(t.get("usd", 0.0)) for t in tokens), 2)
         total += wt
         for t in tokens:
@@ -1731,63 +1742,56 @@ def view_of(snap, storage_map=None):
                         "error": w.get("error") or None,
                         "notes": w.get("notes") or [],
                         # storage class (cold/hot/cex) drives the health report; a
-                        # snapshot taken before this field existed simply has none
-                        "storage": (storage_map or {}).get(name) or w.get("storage"),
-                        "total_usd": wt, "token_count": len(tokens)})
-    return {"date": snap.get("date", ""), "created_at": snap.get("created_at"),
-            "total_usd": round(total, 2), "by_chain": by_chain,
-            "by_volatility": volatility_totals(snap),
-            "wallets": wallets, "token_count": sum(w["token_count"] for w in wallets)}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[tracker/server.py:379-416](https://github.com/0xRabit/dsh-crypto-portfolio/blob/c615eeb9e76d9a91bffb0171ef349532e794eb3c/tracker/server.py#L379-L416)
+**依据 4 · 源码核查**：[tracker/server.py:379-416](https://github.com/0xRabit/dsh-crypto-portfolio/blob/d3edb74bef1fcb779e899c26c37b19664ecf0a9f/tracker/server.py#L379-L416)
 
-钱包 fetch 状态展示
+当前固定版本复核。钱包 fetch 状态展示
 
 <details>
 <summary>查看原文（38行）</summary>
 
 ```text
-    def _wallet_view(self):
-        """Configured wallets + CEX accounts, each with its last fetch outcome.
-
-        `fetch` lets Settings flag a wallet that did not update (a failed key, an
-        API that answered with an error) instead of showing a silent $0 — the same
-        information the dashboard marks with an asterisk.
-        """
-        wallets = [dict(w, source="user", index=i)
-                   for i, w in enumerate(walletstore.user_wallets())]
-        cex_wallets = [{"name": a["name"], "type": "cex", "source": "cex",
-                        "address": str(a.get("exchange") or "")}
-                       for a in cex.cex_accounts()]
-        rows = wallets + cex_wallets
-
-        snap = storage.get_latest_snapshot()
-        by_name = {}
-        if snap:
-            for w in snap.get("wallets", []):
-                by_name[w.get("wallet") or w.get("name")] = w
-        for row in rows:
-            last = by_name.get(row["name"])
-            if last is None:
-                row["fetch"] = {"state": "missing", "date": (snap or {}).get("date")}
-                continue
-            err = last.get("error")
-            row["fetch"] = {
-                "state": "error" if err else "ok",
-                "date": snap.get("date"),
-                "usd": last.get("total_usd", 0.0),
-                "tokens": len(last.get("tokens") or []),
-                "error": err,
-                "notes": last.get("notes") or [],
-            }
-        return {"wallets": rows,
-                "chains": get_chain_names(),
-                "profile": profiles.active(),
-                "last_snapshot": (snap or {}).get("date"),
-                "file": walletstore.wallets_file()}
+                time_val = str((body or {}).get("time") or "").strip()
+                # per-profile: an explicit profile lets the UI edit any profile's
+                # schedule, not only the active one
+                prof = str((body or {}).get("profile") or "").strip() or None
+                if prof and not profiles.exists(prof):
+                    raise ValueError(f"profile {prof!r} does not exist")
+                self._reply_json(sched.set_schedule(enabled, time_val, prof))
+            elif path == "/api/profiles":
+                action = (body or {}).get("action")
+                name = str((body or {}).get("name") or "").strip()
+                if action == "switch":
+                    if not name or not profiles.exists(name):
+                        raise ValueError("profile does not exist")
+                    profiles.set_active(name)
+                    self._switch_profile()
+                    self._reply_json(self._profiles_view())
+                elif action == "create":
+                    profiles.create_profile(
+                        name, from_template=(body or {}).get("from_template", False),
+                        copy_from=(body or {}).get("copy_from") or None)
+                    self._reply_json(self._profiles_view())
+                elif action == "rename":
+                    new_name = str((body or {}).get("new_name") or "").strip()
+                    if not new_name:
+                        raise ValueError("new_name is required")
+                    renamed_active = (profiles.active() == name)
+                    profiles.rename_profile(name, new_name)
+                    if renamed_active:
+                        self._switch_profile()
+                    self._reply_json(self._profiles_view())
+                elif action == "delete":
+                    profiles.delete_profile(name)
+                    self._reply_json(self._profiles_view())
+                else:
+                    raise ValueError("action must be switch/create/rename/delete")
+            elif path == "/api/restart":
+                # the dashboard is a child of the plugin; restarting it here is the
+                # same re-exec the file watcher uses, so no DSH restart is involved
 ```
 
 </details>
@@ -1795,7 +1799,7 @@ def view_of(snap, storage_map=None):
 #### 缺口
 
 - 改进、独立对账与权限测试均未做
-  **影响：**不能据此提高当前评分
-  **进一步探讨：**先做最小安全/数值修复并运行隔离测试矩阵
+  **影响**：不能据此提高当前评分
+  **进一步探讨**：先做最小安全/数值修复并运行隔离测试矩阵
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

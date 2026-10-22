@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b75900e305fd5779ce8cbf1e2b55ee14",
+    "identity": "github:1413483332:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1413483332:root",
+            "repository": "xx529/dsh-task-gantt",
+            "path": "",
+            "revision": "8cfc8761f71ca372ab1c148d615758fa86353841",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a3e8a5ff3f2c0fdc09e77ed1a020f889a8a8aac90ba921ec66ba71c0ea04285",
+                "code": "8cfc8761f71ca372ab1c148d615758fa86353841",
+                "maintenance": "5f93fcc0de0b317657f593eb8719bc416a60ceb259dd7f0b79b7a51e250b7bc9"
+            }
+        }
+    }
+}

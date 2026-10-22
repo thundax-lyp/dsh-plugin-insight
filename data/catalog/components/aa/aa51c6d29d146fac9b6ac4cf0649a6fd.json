@@ -7,14 +7,14 @@
             "id": "github:1333123776:maid-atelier",
             "repository": "Small-tailqwq/dsh-deep-whale",
             "path": "maid-atelier",
-            "revision": "9f198960e8d28b2dfb7495443a1b752b4e4a4486",
+            "revision": "dc561129f3bb3bc94c4a7c3e4007eaa274650d31",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ef6e689b3d34294c0dc67386ce639c16cd2c6e38970c3504aa66e8a09feda024",
-                "code": "9f198960e8d28b2dfb7495443a1b752b4e4a4486",
-                "maintenance": "59899d59fdbcb2ff6e3d410dfc0346768d410fa9087a77af9ec78d18e40300ae"
+                "code": "dc561129f3bb3bc94c4a7c3e4007eaa274650d31",
+                "maintenance": "ae03d1fa71a1d440616727f10c0c939f52a2451fdad57f014cf8ab63a77242da"
             }
         }
     }

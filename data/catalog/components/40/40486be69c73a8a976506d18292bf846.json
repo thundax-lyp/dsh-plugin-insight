@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40486be69c73a8a976506d18292bf846",
+    "identity": "github:1342524723:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1342524723:root",
+            "repository": "9931666/dsh-plugin-roundtable",
+            "path": "",
+            "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d0ec235b774654f6957afd368d669f77bdf11829ba916be88ac700cc886aa6cf",
+                "code": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                "maintenance": "bc5726de267fd2128e62d2ec0da54a3db4c351cc674f43bdb7b54d9059f89fc0"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1148960257:root",
             "repository": "zhukunpenglinyutong/desktop-cc-gui",
             "path": "",
-            "revision": "6434632ec69861da906e15abb0c08964d11c0e2f",
+            "revision": "af3537bee62d9f219c879353276f2d6c840e9e6c",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "88cd38e2ca8d50eed0b8e6d16c3275a1289c2c1b670711e2c5909d64b9b1ef3d",
-                "code": "6434632ec69861da906e15abb0c08964d11c0e2f",
-                "maintenance": "9dafad8ea557427a1a790de12d56a1ac8ae1ee3adac2245a4d70b8bf4e1f0b6e"
+                "code": "af3537bee62d9f219c879353276f2d6c840e9e6c",
+                "maintenance": "510e8d9a0ff4a6975555f6641ffec260e0bad2d643958ff8e2497926b6e7967e"
             }
         }
     }

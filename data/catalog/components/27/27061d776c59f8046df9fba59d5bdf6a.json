@@ -536,14 +536,14 @@
             "repository": "AdonisSheldon/dsh-openai-oauth",
             "path": "",
             "revision": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "e2373a6aacdc0aec7c753e8a5c34c17dc525ad23128decafa6a385790031bfe7",
                 "code": "ba29660530fe05779b06f129a0c0ed5c2237b73f",
                 "maintenance": "4eda328c046a354ebe1bc7c780dec414e9573a7bb76dd3ebc9b629786b3dfe98"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

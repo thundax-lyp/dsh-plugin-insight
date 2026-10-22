@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8cae214d57c183849a5a5f601a007ec5",
+    "identity": "github:1396813894:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1396813894:root",
+            "repository": "kongbai-shike/dsh-novel-wallpaper",
+            "path": "",
+            "revision": "8c8e4e7be49e5f5eb33230525a0d8d9e13cb5db0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0f788af9df6fc3728bce4b536f9af767ce9031331a0f6b38fc28e0699bd74d0c",
+                "code": "8c8e4e7be49e5f5eb33230525a0d8d9e13cb5db0",
+                "maintenance": "5800f8fa16f655bdad55c5644d937b618a42fb30bc47122074474a013d31bb8d"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1335356493:root",
             "repository": "hkkz9522/dsh-session-manager",
             "path": "",
-            "revision": "93c1ced09ea87ae28543a5fd9950385f97c27e20",
+            "revision": "b5f188735bbb8b7c041b1f3d6c156c51f08615ba",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ca79258195a8f6f77d0c4bd11d494d225c523b3cc880493a3c9bb4032c254f6b",
-                "code": "93c1ced09ea87ae28543a5fd9950385f97c27e20",
-                "maintenance": "032d5dd4de118c33daef6dfda91a9d43bfe1e00525010aef560ad6ae3a9da06f"
+                "code": "b5f188735bbb8b7c041b1f3d6c156c51f08615ba",
+                "maintenance": "e453567547a32e2ed7084a6866c5c5067b0164799e776e1b7a18a6a76c96ffdc"
             }
         }
     }

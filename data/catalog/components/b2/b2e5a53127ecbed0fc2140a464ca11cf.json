@@ -460,14 +460,14 @@
             "repository": "Aik358/dsh-draw-gacha",
             "path": "",
             "revision": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "4c8e365a43548861fb082fe5f795f4a550eda3325dc76662e91dd9e6fde42168",
                 "code": "9fd81e6db10944b6fa339aeb731e2850e1627b9a",
                 "maintenance": "458aab4e94ae58986e3b4f156f689eee01ce54f48737b066f7094aab91bd10bb"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

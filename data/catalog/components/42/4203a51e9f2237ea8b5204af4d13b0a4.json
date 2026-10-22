@@ -7,14 +7,14 @@
             "id": "github:1337937395:root",
             "repository": "xiaoshenming/dsh-session-surgeon",
             "path": "",
-            "revision": "80b68030ed35c34af5ea560d9435eb02cb30a09f",
+            "revision": "ecac5d5d32e8c122ab37850bbccca48d1f9510d6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "74092e403203a93bd294284131c433d0bff43932a08c144899244418c0ab435d",
-                "code": "80b68030ed35c34af5ea560d9435eb02cb30a09f",
-                "maintenance": "4e423e1f7cc916eff7ed5e192e5c0b4fac7c3a9c20a1595b36059060e7e87cce"
+                "code": "ecac5d5d32e8c122ab37850bbccca48d1f9510d6",
+                "maintenance": "09f1ed498ac8ef7aa103e5ef2b5939dd8737de8cd18c9bf7a563ca22f1a1ba77"
             }
         }
     }

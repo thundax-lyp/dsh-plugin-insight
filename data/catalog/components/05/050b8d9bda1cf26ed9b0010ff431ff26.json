@@ -7,14 +7,14 @@
             "id": "github:1329484633:root",
             "repository": "melandlabs/opencontext",
             "path": "",
-            "revision": "6fc6a9d6258835319bd3477d0107a242438ee103",
+            "revision": "a8fe1d79caa403f1cd8eafb501d18bd77386a3df",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "2381434db54f4aa0e1094d2f997e84c1c12c96e0483f9711f8ee0561ed5d2c65",
-                "code": "6fc6a9d6258835319bd3477d0107a242438ee103",
-                "maintenance": "a3654fed602b3c6f6d269a71b18ba12dca731504cc047a3117f91bbaf5a2d6c7"
+                "code": "a8fe1d79caa403f1cd8eafb501d18bd77386a3df",
+                "maintenance": "12cece68ef4347546c07b31cf99b4ca4706c1dc04517181098edf33cbd3bda33"
             }
         }
     }

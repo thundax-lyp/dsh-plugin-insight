@@ -7,14 +7,14 @@
             "id": "github:1342631584:root",
             "repository": "xiaxi626/dsh-skills-nexus",
             "path": "",
-            "revision": "78a394a3cd4deeafcf06eed85c71a3e4e0221465",
+            "revision": "17468c2e3bf4b340f472d29b4809695db5ce0208",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "de5c29ffac645fbc32eede02de241861dc7dea3d511d54dc9db3beac3be3c2ec",
-                "code": "78a394a3cd4deeafcf06eed85c71a3e4e0221465",
-                "maintenance": "ed578bd1e27f14afef13dc60059cb8322bdfadc914a899c3e7a55194ce84e0c2"
+                "code": "17468c2e3bf4b340f472d29b4809695db5ce0208",
+                "maintenance": "28d841b43253403f10596dd07625b235228871d59821029cc9d33e99cc479d1f"
             }
         }
     }

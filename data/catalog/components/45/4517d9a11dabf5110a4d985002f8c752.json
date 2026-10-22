@@ -7,14 +7,14 @@
             "id": "github:1333671427:root",
             "repository": "like-study1/Oh-My-DSH",
             "path": "",
-            "revision": "0f374118dc5376c21656a6c9861ee4e2269c347e",
+            "revision": "b8750e22a132e0d0ecbe2099798347e97931c5ef",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "9e920f13340019b6d7ce757226ecf320ef164e1c0a7ab3998587acc51cae4531",
-                "code": "0f374118dc5376c21656a6c9861ee4e2269c347e",
-                "maintenance": "c6268bb43f1780a32cfedda573c766a911bc344943af265fad9d1c2d58a0ef52"
+                "code": "b8750e22a132e0d0ecbe2099798347e97931c5ef",
+                "maintenance": "cb24058fc839cf2991615719127b6a5f69004a7d6b682da8f25fa6b89182976d"
             }
         }
     }

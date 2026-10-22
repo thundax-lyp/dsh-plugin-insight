@@ -7,14 +7,14 @@
             "id": "github:1357063156:root",
             "repository": "popu2do/dsh-call-session",
             "path": "",
-            "revision": "256b5450ee011036898cc4af1b9005216de9c584",
+            "revision": "644489785d74e7d6c892eb9962cbba7be1d040c3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "95bae37d931a99fdcc299cd253e948813e1a4013f4a742a1808d8b5cb74c47a9",
-                "code": "256b5450ee011036898cc4af1b9005216de9c584",
-                "maintenance": "c30b19139223e64b10ea3910318846ac5cfda04c532ed54b0159bb1d3d15d8b6"
+                "code": "644489785d74e7d6c892eb9962cbba7be1d040c3",
+                "maintenance": "c3845979fc75fd89e4fc7b110e91b26e0d5cee29162e7385ec2135cd24e36e29"
             }
         }
     }

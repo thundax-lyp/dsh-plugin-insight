@@ -7,14 +7,14 @@
             "id": "github:1336920059:root",
             "repository": "redfox-data/redfox-community-dsh",
             "path": "",
-            "revision": "e2484d1a0492dce13b3d44877bc636af8f3e1975",
+            "revision": "8d47c77cae671e5f1ac3498c83f5130982bdbd4b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "68d5eea9b260e4ecd25e5d078e039bd0f862cf4041501ee041768e9f8cbf4223",
-                "code": "e2484d1a0492dce13b3d44877bc636af8f3e1975",
-                "maintenance": "0e3252dfb484d9f9662b29a3108be8bc05ada9aca07dcdb0462527fd96e4a0a4"
+                "code": "8d47c77cae671e5f1ac3498c83f5130982bdbd4b",
+                "maintenance": "82cb3bef9236d40c20e6d2fb7ae3100b20cf4c22bdc37ceb43824774a4d2a5e5"
             }
         }
     }

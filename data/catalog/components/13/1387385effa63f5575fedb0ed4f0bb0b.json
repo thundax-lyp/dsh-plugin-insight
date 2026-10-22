@@ -7,14 +7,14 @@
             "id": "github:1398655556:root",
             "repository": "eghrhegpe/dsh-connect-agnes-token-plan",
             "path": "",
-            "revision": "c4c1dad0ce7ed94d069337b69ca5c04da947f698",
+            "revision": "fab19aa686c02d0fd467b355f1eafcfe80f798ad",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "763ff970352b6922129f24481d3da341b43e2744e075b36a6910f0ace72d2ffb",
-                "code": "c4c1dad0ce7ed94d069337b69ca5c04da947f698",
-                "maintenance": "5f7f345c79bdd4c41191b7208c80cb7eadd5736c7c127480706cb16b8ed86aeb"
+                "code": "fab19aa686c02d0fd467b355f1eafcfe80f798ad",
+                "maintenance": "2b482b7823191c1e8650820de80d14b68a3c28d33ed23032260e0ba59976cc42"
             }
         }
     }

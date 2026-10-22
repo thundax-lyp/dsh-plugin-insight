@@ -524,14 +524,14 @@
             "repository": "Aik358/dsh-literature",
             "path": "",
             "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "184609b1829de872ecf5957c78e465006e75ec50963cbb25d79ded6d3741c652",
                 "code": "fc6650ef12747de08512d99c2f9c8388572b7724",
                 "maintenance": "28a52fa6612a6e938b2647daef637ebfd7b4b279560bc168804676e77a5c7fc7"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2d87558b51fc122eb7c0b94735181b09",
+    "identity": "github:1390103795:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1390103795:root",
+            "repository": "AllenWES365/dsh-local-memory",
+            "path": "",
+            "revision": "45045e44ffebecceca4f68ab4351895148bbc696",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b18188653b4edc04edbd7528a6e4cdf09bb1c6d7c22028acf4720fb537876086",
+                "code": "45045e44ffebecceca4f68ab4351895148bbc696",
+                "maintenance": "294de14004556c90407370d8b9dc77e79ffc5f5f0ab4db4c57f0458d5d25550c"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1358839657:packages-plugin-manager",
             "repository": "FeatherHunter/ilife",
             "path": "packages/plugin-manager",
-            "revision": "6eeee140e289946ef8ff29fa194c1207990f7454",
+            "revision": "f0ca48345311437c47a69dbcce8338eff091b562",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "274f47773bcd83d29e4565b4541eb45ab50449c4521a8677175e4c9793ef7f2e",
-                "code": "6eeee140e289946ef8ff29fa194c1207990f7454",
-                "maintenance": "6f5254008b9a53a1dbf72f94f9ca0fec5e56623cb7d5340b26c4236dab6dc755"
+                "code": "f0ca48345311437c47a69dbcce8338eff091b562",
+                "maintenance": "cb05e0d87d8a490c0440c8bd194711a61f9620fcba5fcf91c75bb48a535fa286"
             }
         }
     }

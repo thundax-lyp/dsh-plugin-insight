@@ -7,14 +7,14 @@
             "id": "github:1340504349:root",
             "repository": "JerryLiu369/agent-web-search",
             "path": "",
-            "revision": "c549bf3eb8681e347833a3d927c79231294236ed",
+            "revision": "8f2a21d147e9ad42b61758850f7bfdc9f1c91f10",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "34f16e38725a40389cfd2bc94f261b96f1f9618ba156951f3015f165f83ecfab",
-                "code": "c549bf3eb8681e347833a3d927c79231294236ed",
-                "maintenance": "2c7612f30bdb0621183c40bcbbaadbbf517ff418a44b0cc70605209401da9c22"
+                "code": "8f2a21d147e9ad42b61758850f7bfdc9f1c91f10",
+                "maintenance": "3d8f21f7ed3e1dc1e86e1306c795f6f0c6bfcf6d26fb853193c300e1bb8de469"
             }
         }
     }

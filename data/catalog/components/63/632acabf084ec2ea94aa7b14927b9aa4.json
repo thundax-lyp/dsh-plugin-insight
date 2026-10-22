@@ -450,14 +450,14 @@
             "repository": "2404723600/dsh-router-loomy",
             "path": "",
             "revision": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "e52daf6aa97e4acd7dfb420c89e5dda09cc4f0bf43adda0037968de2d7b24e14",
                 "code": "ccabca348ca2194287f0770ce348283fdb8bf3d8",
                 "maintenance": "f009ffe1139278eae0c1230c0e61d02bd9d5e55e04d9caea112a36f2f9770c67"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

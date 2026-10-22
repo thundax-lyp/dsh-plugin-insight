@@ -7,14 +7,14 @@
             "id": "github:1361316870:packages-dsh-agent-board",
             "repository": "PPawnsir/task-board-plugin",
             "path": "packages/dsh-agent-board",
-            "revision": "b886f4607c06cd130294c7a60df5664120e082a5",
+            "revision": "83490a901dc0f9194edb7f2b80b3ec60e67ed5fb",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ee77132d27c2b56c404b9924a476c8389ad0238b2ae476c0b0ed477b8ceef2b0",
-                "code": "b886f4607c06cd130294c7a60df5664120e082a5",
-                "maintenance": "adeb4a54ef735787ed01706a0dd15a31b69fc9712fa34cfbe0fc41b9670930c6"
+                "code": "83490a901dc0f9194edb7f2b80b3ec60e67ed5fb",
+                "maintenance": "0a6c1d5e77d964c6a236b5214c60c7786f9174a5e60ef12bd0ea21aad3ef9fe8"
             }
         }
     }

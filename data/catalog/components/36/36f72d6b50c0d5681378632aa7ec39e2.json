@@ -7,14 +7,14 @@
             "id": "github:1421015102:root",
             "repository": "Void-LifeStream/dsh-phone-butler",
             "path": "",
-            "revision": "0d1fb65ea6c6de4248f8d5cd61dca0fd603b629b",
+            "revision": "3b8d15c7a6f8d3d599df1ee5e04a4e62d05e87ab",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ad3247ffac3735eae423929c9e569a3e87222de5a8f6d165f18b21d950fcbf5c",
-                "code": "0d1fb65ea6c6de4248f8d5cd61dca0fd603b629b",
-                "maintenance": "0e27898a0b6638b9777922b5e1f6a25fe6238cb652250944f30f380d31c7c74e"
+                "code": "3b8d15c7a6f8d3d599df1ee5e04a4e62d05e87ab",
+                "maintenance": "b97cf5691e3cddeda8ab68b85d8204a920a0091b9e90eb83096b73c02d9ed31a"
             }
         }
     }

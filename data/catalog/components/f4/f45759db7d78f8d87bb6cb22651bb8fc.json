@@ -7,14 +7,14 @@
             "id": "github:1423816973:root",
             "repository": "bufan528/dsh-longterm-memory",
             "path": "",
-            "revision": "01e99b5dbf4266ab608182af59884d18b2249a82",
+            "revision": "4a58d3f7d8f0768385e2821a0ba221b8e1a31658",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4902d7f3be315441ca0af6c24163e1b7444848dabd559993b2e8a239c7fde8f7",
-                "code": "01e99b5dbf4266ab608182af59884d18b2249a82",
-                "maintenance": "f69699ad7182c7568c8591126fd7409e099b9d8593ece82df7bdd7b3cf4caaa5"
+                "code": "4a58d3f7d8f0768385e2821a0ba221b8e1a31658",
+                "maintenance": "4770e3a077e29f70d4e0f71f0628b423082ed9b014789d1fafe550c55e7c62e6"
             }
         }
     }

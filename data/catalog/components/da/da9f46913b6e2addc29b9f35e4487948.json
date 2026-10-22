@@ -7,14 +7,14 @@
             "id": "github:1414343697:root",
             "repository": "Passenger-Qin/dsh-task-splitter",
             "path": "",
-            "revision": "ca4d67368865b143d320bca7d460a2732806a065",
+            "revision": "db609c67f2d503937affcdd5acdcd7d4ba65a5e6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "aeaaa212be1e4f5351c78ff19a6e6be71629eb20444222d96103b51ae8f5f3c6",
-                "code": "ca4d67368865b143d320bca7d460a2732806a065",
-                "maintenance": "3fb6507fb48abde68ba7e842720af325a10e2b53129fb0f49012c6e6c760fb12"
+                "code": "db609c67f2d503937affcdd5acdcd7d4ba65a5e6",
+                "maintenance": "6bb1232219e6c35a97ed3f9aca62a879de3c734b2628b494ee227a53d85a0fc8"
             }
         }
     }

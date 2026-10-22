@@ -480,14 +480,14 @@
             "repository": "AhYi8/dsh-agent-recycle-guard",
             "path": "",
             "revision": "fd84079f98170d5066547c087c58c824b4e59d07",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "12c8a7df9770948ac49d320c8b6052ad7a196505f1af73a3b828f291e86fd87b",
                 "code": "fd84079f98170d5066547c087c58c824b4e59d07",
                 "maintenance": "48ef41c8f366d9a7580c6104d6f1f7e68311f36bb7e62e3b3087f10b7fb550a4"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

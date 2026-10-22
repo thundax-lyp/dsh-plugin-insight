@@ -488,14 +488,14 @@
             "repository": "962599627/agent-development-constraints",
             "path": "",
             "revision": "fc9af918ac14f03d63bee299cab90862adbc8963",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "f00f39e43c605ea56c417b34f13dda5e0ec1bbd32f2dd3976cf755c0964f7cd6",
                 "code": "fc9af918ac14f03d63bee299cab90862adbc8963",
                 "maintenance": "d971f2f067fe71e55d01a40ad15f22ac9008b5f0aee91b66aa83d0a51d3bcf0c"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -7,14 +7,14 @@
             "id": "github:1333629201:root",
             "repository": "kelai141/dsh-mobile-apk",
             "path": "",
-            "revision": "1a8f9fb309580c8c1a3c826272c8da17c9e4877b",
+            "revision": "a8d79b5e861574b6a0229767629eded577c55766",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "7a70603faddfbaa93077b27cf05e097d0255ca06183824d0c2782d053a442144",
-                "code": "1a8f9fb309580c8c1a3c826272c8da17c9e4877b",
-                "maintenance": "36fa08bb6d88ef6d02e869c44e1a9ee3a7c7c1b6219abd72200f97c07b6d9c80"
+                "code": "a8d79b5e861574b6a0229767629eded577c55766",
+                "maintenance": "66d34826672d71652e71cb44b39ed39937ef848a127d37b702bad69e7e97a7cc"
             }
         }
     }

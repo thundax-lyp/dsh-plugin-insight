@@ -491,14 +491,14 @@
             "repository": "988hj7tczd-oss/dsh-receipts",
             "path": "",
             "revision": "ebc1ae1cc2a24da9ce8407bb02606db0438e83a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "53da1e6e129bf99a73f041741401e0cf6dfe9c3295322bbc30ecf635df265841",
                 "code": "ebc1ae1cc2a24da9ce8407bb02606db0438e83a7",
                 "maintenance": "08409c646fcd91b1d0f76269350ab818473911d5a822ebf40c1d8fed1d769fd1"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

@@ -453,14 +453,14 @@
             "repository": "988hj7tczd-oss/dsh-lsp-packs",
             "path": "dsh-lsp-pyright",
             "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
             "fingerprints": {
                 "directory": "2b8a750f61bb026dedb4b668b0b609c888dc62b246406f269b2ca0ccff380da9",
                 "code": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
                 "maintenance": "c574dcf28e68df0fb97fbd81638d887e8e9b60b99dbcf2e34fc7481b1d25448e"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ]
+            }
         }
     }
 }

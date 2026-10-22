@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b0ee56c4d0af11c154f935d683ab54fd",
+    "identity": "github:1425349796:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425349796:root",
+            "repository": "uumit-ai/dsh-uumit-remote",
+            "path": "",
+            "revision": "9e64809f6db492f5eff4381cb90ddbbb7164c215",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5c5b1cd87a3aaba33b4f684f073b52f7bb1a52e42e4d3b1e4a107c8f89c66c2c",
+                "code": "9e64809f6db492f5eff4381cb90ddbbb7164c215",
+                "maintenance": "11b1a11f7ae85e901119bd93dc2d3b7e9ea90557b6938b5a829942d4385d575b"
+            }
+        }
+    }
+}
