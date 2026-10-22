@@ -1,7 +1,7 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "35dde5c6cf3981674b24f03c75cd759613547905ad9336205e9ea5a0c49c4589",
-    "index_sha256": "a03e8b4863ba29de89b0cc4d337a7eecd73214b6f57ba3fb8c7c1d2229645c69",
+    "snapshot_digest": "cbbc248086e413588d13af042ab5d2ebbad1591550c6698b6d70e21926bb6b46",
+    "index_sha256": "aa555da02031910e2dda1ef429f7a5a52975291ae67ee33641ebbc18e4d5ad77",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-22T04:36:02.544Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本次逐题研究已更新 333/336，保留其余有效研究",
+            "scope": "本次逐题研究已更新 334/336，保留其余有效研究",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -11281,10 +11281,6 @@
             "path": "evidence/b1/b125afcb59898a1c51c7cd1e676a57e81655537c7e8cd90fb8ea2a8097a69f60.json",
             "sha256": "b125afcb59898a1c51c7cd1e676a57e81655537c7e8cd90fb8ea2a8097a69f60"
         },
-        "data/runs/2026-10-21-01/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json": {
-            "path": "evidence/50/5010196d145c22056f5ec048f9497733a49ee0c7c3e511042512cfa234b2fffd.json",
-            "sha256": "5010196d145c22056f5ec048f9497733a49ee0c7c3e511042512cfa234b2fffd"
-        },
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-scroll-piano/REVIEWED-SOURCE.json": {
             "path": "evidence/2a/2a4451f74837257619d6339ca92827cce1d17117c20464676d934c1ec9182ab2.json",
             "sha256": "2a4451f74837257619d6339ca92827cce1d17117c20464676d934c1ec9182ab2"
@@ -12120,6 +12116,10 @@
         "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-session-path/REVIEWED-SOURCE.json": {
             "path": "evidence/0d/0db048888d665b133373f8db66c3272314e2141679d8d717541bb47510a985cc.json",
             "sha256": "0db048888d665b133373f8db66c3272314e2141679d8d717541bb47510a985cc"
+        },
+        "data/runs/2026-10-22-02/snapshots/3chatai-nct--3chatai-deepseek-harness-plugin/REVIEWED-SOURCE.json": {
+            "path": "evidence/f2/f2ba353b23777e1445248733ed7fb9d36a45ca971d1525061239f74523c7acf4.json",
+            "sha256": "f2ba353b23777e1445248733ed7fb9d36a45ca971d1525061239f74523c7acf4"
         },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-media/REVIEWED-SOURCE.json": {
             "path": "evidence/bb/bbdbcd6747331a70ad7b7fbf2c316779058cb4149340749db80f9e78c10a89df.json",
