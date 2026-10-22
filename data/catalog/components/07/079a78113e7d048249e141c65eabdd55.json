@@ -24,36 +24,94 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-01-github-1346023186-root-directory-0",
+                    "id": "2026-10-22-02-github-1346023186-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T02:06:41.930Z",
+                    "retrieved_at": "2026-10-22T09:35:46.920Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-01-github-1346023186-root-author",
+                    "id": "2026-10-22-02-github-1346023186-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "README.md",
+                            "content_sha256": "61ffbbb785961cdd3f44e5b89f9d0bcc24b18233160308a5ccd9f1ac19c4112b"
+                        }
+                    ],
                     "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-                    "captured_at": "2026-10-21T02:06:41.930Z",
-                    "summary": "为 DSH 增加 @name 技能候选和发送前确定性技能加载。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:46.920Z",
+                    "summary": "给Web输入框增加@Skill候选，并在host模型步骤前加载匹配且可用户调用的Skill。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-01-github-1346023186-root-source",
+                    "id": "2026-10-22-02-github-1346023186-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts",
+                    "url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "README.md",
+                            "content_sha256": "61ffbbb785961cdd3f44e5b89f9d0bcc24b18233160308a5ccd9f1ac19c4112b"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "package.json",
+                            "content_sha256": "22b8ac432cad4ba7fb0dc9e5184e8a8744acea6b3069bbe101fc8f53f2135e96"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "src/index.ts",
+                            "content_sha256": "e35a85516922d6c1073984304c9247e0018609d090219693c98a11b0782a5c21"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "318423779af7e96207b2e029f43cd1034c320df5d6f3d1daf72630bd2e5d94c5"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "lib/index.js",
+                            "content_sha256": "206539ac108e45152cc899d99b9f5f8d479921474cc1142a92314b7bb9435250"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "lib/client.js",
+                            "content_sha256": "a1ac6fffffd344ca00ce943dcee2e8f5cf97d719df4986ab2d3808fe583154d4"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "tsdown.config.ts",
+                            "content_sha256": "a7f456b7751310c21bcc3ca57843f5300a54c93e3d22d6b335cc39b4fd561a98"
+                        },
+                        {
+                            "repository_url": "https://github.com/452926826/dsh-at-skill",
+                            "commit": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
+                            "path": "test/marketplace.test.js",
+                            "content_sha256": "7ef40da58506813a0e1b169324385374d52c580514f90a366c764fd05e41bb49"
+                        }
+                    ],
                     "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-                    "captured_at": "2026-10-21T02:06:41.930Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts；客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。",
-                    "artifact": "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:35:46.920Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/client/index.ts、lib/index.js、lib/client.js、tsdown.config.ts、test/marketplace.test.js；client按session列目录插入文本，host按空白@正则取名并scope查询后注入Skill消息。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                        "完整TS与两份发布lib、package/构建配置、元数据测试、README；不执行目标或扩展读取宿主。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +122,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户在输入框选择可调用Skill并确保模型开始前加载其指令，减少记忆斜杠命令或依赖模型自行判断。",
+                    "text": "希望用@菜单发现并明确调用已有Skill的DSH0.1系用户。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +133,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。",
+                    "text": "client按session列目录插入文本，host按空白@正则取名并scope查询后注入Skill消息。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +151,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。",
+                    "text": "完整TS与两份发布lib、package/构建配置、元数据测试、README；不执行目标或扩展读取宿主。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +169,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "检查固定提交包清单与入口；安装说明属于作者主张，本次未验证分发产物与宿主兼容。",
+                    "text": "0.1.0 MIT，Node>=20，DSH peer限定0.1系，提交lib可安装而重建需改本地绝对路径。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +187,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "本地候选缓存和消息注入开销；人工为命名冲突、候选陈旧和重复指令核对，构建配置还引用本地Harness路径，升级维护需处理。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 匹配0.1宿主 | 核同名与菜单 | 宿主0.1系匹配与同名核查工时未知 |\n| 持续使用 | 会话目录与注入完整Skill的模型上下文 | 维护目录缓存、复核加载意图 | 无独立模型请求；完整Skill注入token/缓存维护费用未知 |\n| 失败恢复 | 重连或新回合 | 误注入动作另行纠正 | 重连/误加载后动作纠正工时未知，卸载不回滚动作 |\n",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +205,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。",
+                    "text": "命名清楚且宿主匹配时试用，轨迹核加载来源。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +223,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "让显式Skill选择更可预测；同名歧义是文本协议边界，不能靠菜单分组消除。",
+                    "text": "#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 发现Skill | 前缀菜单 | session缓存可旧 |\n| 明确加载 | host get+isUserInvocable | 纯文本意图歧义 |\n| 尊重拒绝 | next reject原返 | 其它宿主契约另核 |",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +241,16 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "客户端注册源生命周期与连接重置缓存清理明确；宿主先尊重拒绝再追加Skill消息，查找带signal/cwd/scope。复用需保留原始用户消息与类型身份，不能将正则匹配当授权。 源码依据：[src/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L28)、[src/client/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L8)。",
+                    "text": "短链复用scope/renderer，业务测试与缓存更新/拒绝恢复缺口明确。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,15 +259,69 @@
                             "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T02:06:41.930Z",
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "普通文本不携带对象身份，示例/同名对象可触发，缓存没有更新事件与transport拒绝删除。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究有身份的输入chip和版本化可重试目录缓存，比较误加载与恢复成本，未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1346023186-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1346023186:root",
+                            "area": "code",
+                            "fingerprint": "7502c9bce1a65597188c12d4ab1e33e9365e3a22"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:46.920Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T02:06:41.930Z",
+            "last_checked_at": "2026-10-22T09:35:46.920Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-                "reviewed_at": "2026-10-21T02:06:41.930Z",
+                "reviewed_at": "2026-10-22T09:35:46.920Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -225,57 +337,57 @@
                         "transferability": 5,
                         "simplification": 8
                     },
-                    "rationale": "novelty：已有@补全与Skill加载的组合适配；mechanism：pre-step确定加载为局部机制改动；transferability：类型化引用模式可推广但当前实现依赖宿主；simplification：统一入口减少记命令。",
+                    "rationale": "novelty小幅，@调用常见；mechanism小幅，事件注入接线；transferability小幅，宿主ABI绑定；simplification实质，发现/调用统一。",
                     "basis": "interpretation",
                     "score": 30,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
-                        "economics": 0
+                        "delivery": 0,
+                        "reach": 10,
+                        "economics": 4
                     },
-                    "rationale": "workflow：简化Skill选择步骤；delivery：指令加载可确认，不等于任务完成；reach：降低命令记忆门槛；economics：未发现成本结构改变。",
+                    "rationale": "workflow小幅，输入入口；delivery无Skill任务效果保证；reach实质，可视发现；economics小幅，节时未测且上下文增加。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 23,
                     "evidence_ids": [
-                        "2026-10-21-01-github-1346023186-root-source"
+                        "2026-10-22-02-github-1346023186-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "Skill命名清楚者可试用@候选；先检查同名和缓存陈旧，并核对发出文本，加载指令不代表执行合格。",
+                "reason": "匹配0.1系宿主且命名不冲突时可试用，注意示例@误触发与缓存恢复；严格对象身份流程先核契约。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "显式选Skill且模型前加载指令需求具体。"
+                        "rationale": "已有Skill发现与调用明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "输入菜单省记斜杠和自行猜测，同名文本协议仍有歧义。"
+                        "rationale": "菜单便捷，/命令可替。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "pre-step边界扫描与来源消息注入源码可查，重名流程未验。"
+                        "rationale": "发布入口完整可核，宿主消息范围未知。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无专用服务但需处理构建本地路径、命名及宿主升级。"
+                        "score": 10,
+                        "rationale": "旧ABI/开发路径和缓存维护，Skill上下文另计。"
                     }
                 },
-                "score": 64,
+                "score": 59,
                 "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:35:46.920Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-01-github-1346023186-root-source"
+                    "2026-10-22-02-github-1346023186-root-source"
                 ],
                 "dependencies": [
                     {
@@ -300,89 +412,61 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T01:54:44Z",
-            "analysis_sha256": "cd8bd0db85e4e4b51f690f3bfe8046f325b5e178ec1813f59fe3c7e6cf2c27aa"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "6c8fe8d68b2b0663b11a70115378895435b1a56cd862cae8f8d3151909056358"
         },
         "publication.metadata": "data/plugins/452926826--dsh-at-skill/META.json",
         "publication.summaries": {
-            "text": "为 DSH 增加 @name 技能候选和发送前确定性技能加载。",
+            "text": "给Web输入框增加@Skill候选，并在host模型步骤前加载匹配且可用户调用的Skill。",
             "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
             "source_url": "https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md"
         },
         "publication.capabilities": {
             "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
             "items": {
-                "界面": "@Skill候选补全",
-                "事件监听": "agent/pre-step确定性Skill加载"
-            }
+                "界面": "输入框@Skill候选源",
+                "事件监听": "agent/pre-step按用户文本确定加载已有Skill"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| @候选 | 发现Skill | 前缀/session缓存 |\n| host加载 | 可调用Skill注入 | 纯文本非身份chip |\n| 拒绝保留 | next拒绝优先 | 未提供新Skill内容 |"
         },
         "publication.advice": {
             "revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-            "text": "Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。"
+            "text": "命名清楚且宿主匹配时试用，轨迹核加载来源。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/452926826--dsh-at-skill",
-        "reports": "# dsh-at-skill\n\n> 为 DSH 增加 @name 技能候选和发送前确定性技能加载。\n\n## 使用建议\n\nSkill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。\n\n**核查状态**：已实现机制有源码支持；贡献价值为条件性解释，未来设计假设未验证。本轮仅作固定版本源码核查，未安装、运行目标代码或验收宿主。\n\n- **用途**：用户在输入框选择可调用Skill并确保模型开始前加载其指令，减少记忆斜杠命令或依赖模型自行判断。\n- **亮点**：相对只给输入补全，将匹配token的Skill在模型步骤前确定性加载；同时遵循next拒绝决定、用户可调用过滤与会话cwd/scope查找，保持宿主作用域。\n- **思考**：文本token不携带来源身份。与subagent/plugin同名或用户仅讨论@名称时，宿主仍可加载匹配Skill。客户端会话缓存只在connection/reset清理，Skill变更后候选与宿主即时查找可能不同；“确定性”不等于用户意图准确。\n- **建议**：Skill命名清晰的用户可评估；与插件或子代理重名时谨慎使用，发送前确认文本，加载不代表任务执行验收。\n\n## 能力与限制\n\n参照现有斜杠Skill入口和@subagent/@plugin；本次不主张底层Skill能力由该插件创造。\n\n客户端向inputTriggers注册@候选，按会话缓存skills列表；宿主agent/pre-step扫描用户文本中空白边界的@名称，查可调用Skill并注入带skill-invocation来源的用户消息。\n\n\nDSH agents/skills和inputTriggers/connection服务；预建lib可安装，开发构建引用本地Harness路径需配置。\n\n输入@列会话Skill候选，选择插入token；发送后pre-step查可调用Skill，将renderSkillContent注入后进入模型步骤；连接重置清候选缓存。\n\n本地候选缓存和消息注入开销；人工为命名冲突、候选陈旧和重复指令核对，构建配置还引用本地Harness路径，升级维护需处理。\n\n让显式Skill选择更可预测；同名歧义是文本协议边界，不能靠菜单分组消除。\n\n## 能力清单\n\n- **界面**：@Skill候选补全\n- **事件监听**：agent/pre-step确定性Skill加载\n\n## 工程分析\n\n客户端注册源生命周期与连接重置缓存清理明确；宿主先尊重拒绝再追加Skill消息，查找带signal/cwd/scope。复用需保留原始用户消息与类型身份，不能将正则匹配当授权。 源码依据：[src/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L28)、[src/client/index.ts](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L8)。\n\n## 未来设计假设（未验证）\n\n待验证假设：让输入选择携带类型化skill引用并由宿主核对，可在保持补全体验时减少名称碰撞；由当前文字注入和README承认的冲突推导，需要宿主消息格式支持而非只改正则。\n\n最小验证：建立同名Skill/子代理/插件和仅讨论@名称的消息，比较文字token与类型引用的误加载；热更新Skill后比较菜单与宿主解析一致性，若仍有误加载则假设失败。\n\n## 核查说明\n\n- **仓库**：[452926826/dsh-at-skill](https://github.com/452926826/dsh-at-skill)\n- **版本号**：0.1.0（[固定提交 7502c9b](https://github.com/452926826/dsh-at-skill/tree/7502c9bce1a65597188c12d4ab1e33e9365e3a22)）\n- **版本日期**：2026-08-26（固定提交日期，北京时间；不是包发布日期）\n- **实际范围**：固定提交源码抽读与作者材料核查；没有执行目标代码、测试、安装或真实宿主验收，没有确认独立用户效果。\n- **来源**：作者README与上述固定版本源码；未确认独立采用效果，目录收录与下载统计不作效果证据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4b2434a6c3878682b7d36bb7e995a79eb800b7f6726ce60bffd5c9ff83b77d37。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 103 | — | — | 722 |\n| .js | source | 2 | 114 | 106 | 9 | — |\n| .ts | source | 3 | 111 | 96 | 2 | — |\n| .js | test | 1 | 16 | 14 | 1 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n",
+        "reports": "# dsh-at-skill\n\n> 给Web输入框增加@Skill候选，并在host模型步骤前加载匹配且可用户调用的Skill。\n\n## 研究范围\n\n- **仓库**：[452926826/dsh-at-skill](https://github.com/452926826/dsh-at-skill)\n- **版本号**：0.1.0（[固定提交 7502c9bce1a65597188c12d4ab1e33e9365e3a22](https://github.com/452926826/dsh-at-skill/tree/7502c9bce1a65597188c12d4ab1e33e9365e3a22)）\n- **版本日期**：2026-08-26（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n发布lib与TS关键链可查，文本同名歧义、缓存拒绝和宿主版本范围需关注。\n\n## 洞察短评\n\n- **用途**：希望用@菜单发现并明确调用已有Skill的DSH0.1系用户。详见[Q01](#research-q01)。\n- **亮点**：将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。\n- **思考**：普通文本不携带对象身份，示例/同名对象可触发，缓存没有更新事件与transport拒绝删除。详见[Q03](#research-q03)。\n- **建议**：研究有身份的输入chip和版本化可重试目录缓存，比较误加载与恢复成本，未验证。详见[Q05](#research-q05)。\n\n采用建议：命名清楚且宿主匹配时试用，轨迹核加载来源。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n普通文本不携带对象身份，示例/同名对象可触发，缓存没有更新事件与transport拒绝删除。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究有身份的输入chip和版本化可重试目录缓存，比较误加载与恢复成本，未验证。详见[Q05](#research-q05)。\n\n从同名/示例/网络reject/热更新核身份与缓存方向。\n\n## 场景与替代办法\n\n希望用@菜单发现并明确调用已有Skill的DSH0.1系用户。详见[Q01](#research-q01)。\n\n已有/skill和手工显式Skill说明，不增加Skill本身能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node>=20/DSH0.1 | 发布入口ABI | 0.2不能直接推定 |\n| agents/skills | host解析 | scope/消息契约 |\n| inputTriggers/connection | Web菜单 | 缓存/候选契约 |\n| 本地Harness路径 | 重建 | 修改构建配置 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 装匹配宿主 | 用户 | peers满足 |\n| @选Skill | 用户 | 名称无冲突 |\n| 发送查轨迹 | 用户 | 来源/内容正确 |\n| 目录变化重连 | 用户 | 缓存更新 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 匹配0.1宿主 | 核同名与菜单 | 宿主0.1系匹配与同名核查工时未知 |\n| 持续使用 | 会话目录与注入完整Skill的模型上下文 | 维护目录缓存、复核加载意图 | 无独立模型请求；完整Skill注入token/缓存维护费用未知 |\n| 失败恢复 | 重连或新回合 | 误注入动作另行纠正 | 重连/误加载后动作纠正工时未知，卸载不回滚动作 |\n\n\n#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 发现Skill | 前缀菜单 | session缓存可旧 |\n| 明确加载 | host get+isUserInvocable | 纯文本意图歧义 |\n| 尊重拒绝 | next reject原返 | 其它宿主契约另核 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**@菜单如何确定性加载Skill，纯文本身份、会话scope和目录缓存的边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · @Skill给谁解决什么问题？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n想在同一输入框用@菜单选Skill的DSH Web用户，可按名称前缀找候选并插入@name空格。发送后host在agent/pre-step把匹配Skill渲染为带skill-invocation来源的新消息，减轻模型是否自行读Skill的不确定。它提供已有Skill的调用入口，不包含新Skill内容，不改变Skill许可或执行权限。\n\n基线是已有/skill调用和手工指明Skill，贡献是菜单发现与host确定性加载接合。order=2只声明菜单组顺序，不能由本插件单独证明其他组默认Enter永远不变。README也承认同名Skill/subagent/plugin的纯文本身份歧义。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-16](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/README.md#L5-L16)\n\n入口与排序主张。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nA standalone DeepSeek Harness plugin that adds Skill invocation through `@name` without modifying Harness source code.\n\n## Behavior\n\n- Typing `@` in the conversation composer lists every user-invocable Skill available to the current session.\n- Typing more characters filters candidates by Skill-name prefix.\n- Picking a candidate inserts `@skill-name `.\n- Sending a whitespace-bounded `@skill-name` token loads that Skill deterministically before the model step.\n- Existing `/skill-name`, `@subagent`, and `@plugin` behavior remains owned by their original plugins.\n\nThe Skill group uses menu order `2`, after existing `@` reference groups, so it does not change their default Enter target.\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:26-42](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L26-L42)\n\n候选与插入。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  const source: InputTriggerSource = {\n    trigger: '@',\n    name: 'skill',\n    order: 2,\n    async candidates(session, { query, signal }) {\n      const skills = await catalog(session.sessionId)\n      if (signal.aborted) return []\n      return skills\n        .filter(skill => skill.name.startsWith(query))\n        .map(skill => ({ name: skill.name, description: skill.description }))\n    },\n    warm(session) {\n      catalog(session.sessionId).catch(() => {})\n    },\n    onPick({ candidate }) {\n      return { text: `@${candidate.name} ` }\n    },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:23-55](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/lib/index.js#L23-L55)\n\n加载与消息追加。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\tctx.on(\"agent/pre-step\", async ({ agent, messages, signal }, next) => {\n\t\tconst decision = await next();\n\t\tif (decision.kind === \"reject\") return decision;\n\t\tconst names = invokedNames(messages);\n\t\tif (names.length === 0) return decision;\n\t\tconst lookup = {\n\t\t\tcwd: agent.session.header.cwd,\n\t\t\tsignal,\n\t\t\tscope: agent\n\t\t};\n\t\tconst injections = [];\n\t\tfor (const name of names) {\n\t\t\tsignal.throwIfAborted();\n\t\t\tconst skill = await ctx.skills.get(name, lookup);\n\t\t\tif (skill === void 0 || !isUserInvocable(skill)) continue;\n\t\t\tconst source = {\n\t\t\t\tkind: \"skill-invocation\",\n\t\t\t\tname,\n\t\t\t\tform: \"instructions\"\n\t\t\t};\n\t\t\tinjections.push(createUserMessage({\n\t\t\t\tcontent: [{\n\t\t\t\t\ttype: \"text\",\n\t\t\t\t\ttext: renderSkillContent(skill)\n\t\t\t\t}],\n\t\t\t\tsource\n\t\t\t}));\n\t\t}\n\t\treturn injections.length === 0 ? decision : {\n\t\t\tkind: \"enter\",\n\t\t\tmessages: [...decision.messages, ...injections]\n\t\t};\n\t});\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 加载怎样尊重当前会话与拒绝？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nhost先await next，若reject原样返回；对传入messages只处理source.kind=user的text，按空白边界、小写字母数字和连字符正则取名并Set去重。每名用session.header.cwd、signal和scope=agent取skills.get，未知或不可用户调用跳过，渲染后追加decision.messages。每轮检查abort，避免工具/Skill消息来源再次被本段当用户触发；但不是用户内容语义理解。\n\nclient从connection.api.skills.list按sessionId拉列表，前缀过滤/描述展示，query取消只在取列表完成后检查；源注册和connection/reset清缓存依宿主事件。Node>=20，peer明确限定DSH0.1系到<0.2.0-0，别把安装了当前宿主就当ABI兼容。package main及client导出指向已提交lib，本次TS与两lib关键链对照一致；重建另依本地绝对Harness路径，不影响阅读当前发布入口但影响可移植开发。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:10-59](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L10-L59)\n\nhost拒绝、来源与scope。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\nconst AT_SKILL = /(^|\\s)@([a-z0-9]+(?:-[a-z0-9]+)*)(?=\\s|$)/g\n\nfunction invokedNames(messages: readonly UserMessage[]): string[] {\n  const names = new Set<string>()\n  for (const message of messages) {\n    if (message.source.kind !== 'user') continue\n    for (const block of message.content) {\n      if (block.type !== 'text') continue\n      for (const match of block.text.matchAll(AT_SKILL)) {\n        const name = match[2]\n        if (name !== undefined) names.add(name)\n      }\n    }\n  }\n  return [...names]\n}\n\n/** Register deterministic host-side @skill invocation. */\nexport function apply(ctx: Context): void {\n  ctx.on('agent/pre-step', async (\n    { agent, messages, signal },\n    next,\n  ): Promise<PreStepDecision> => {\n    const decision = await next()\n    if (decision.kind === 'reject') return decision\n\n    const names = invokedNames(messages)\n    if (names.length === 0) return decision\n\n    const lookup = { cwd: agent.session.header.cwd, signal, scope: agent }\n    const injections: UserMessage[] = []\n    for (const name of names) {\n      signal.throwIfAborted()\n      const skill = await ctx.skills.get(name, lookup)\n      if (skill === undefined || !isUserInvocable(skill)) continue\n      const source: SkillInvocationSource = {\n        kind: 'skill-invocation',\n        name,\n        form: 'instructions',\n      }\n      injections.push(createUserMessage({\n        content: [{ type: 'text', text: renderSkillContent(skill) }],\n        source,\n      }))\n    }\n\n    return injections.length === 0\n      ? decision\n      : { kind: 'enter', messages: [...decision.messages, ...injections] }\n  })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:8-47](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L8-L47)\n\n客户端目录缓存/取消。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport function apply(ctx: ClientContext): void {\n  const api = (ctx.get('connection') as ConnectionHandle).api.skills\n  const cache = new Map<SessionId, Promise<readonly SkillEntry[]>>()\n\n  const catalog = (sessionId: SessionId): Promise<readonly SkillEntry[]> => {\n    const existing = cache.get(sessionId)\n    if (existing !== undefined) return existing\n    const pending = api.list({ sessionId }).then(({ result }) => {\n      if (!result.ok) {\n        cache.delete(sessionId)\n        throw new Error(`skill.list failed: ${result.error.code}: ${result.error.message}`)\n      }\n      return result.value.skills\n    })\n    cache.set(sessionId, pending)\n    return pending\n  }\n\n  const source: InputTriggerSource = {\n    trigger: '@',\n    name: 'skill',\n    order: 2,\n    async candidates(session, { query, signal }) {\n      const skills = await catalog(session.sessionId)\n      if (signal.aborted) return []\n      return skills\n        .filter(skill => skill.name.startsWith(query))\n        .map(skill => ({ name: skill.name, description: skill.description }))\n    },\n    warm(session) {\n      catalog(session.sessionId).catch(() => {})\n    },\n    onPick({ candidate }) {\n      return { text: `@${candidate.name} ` }\n    },\n  }\n\n  const inputTriggers = ctx.get('inputTriggers') as InputTriggerServiceContract\n  ctx.on('connection/reset', () => cache.clear())\n  ctx.effect(() => inputTriggers.registerSource(source), 'dsh-at-skill: @ source')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1-58](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/lib/index.js#L1-L58)\n\n发布host链。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\nimport { createUserMessage } from \"@deepseek-ai/dsh-llm\";\nimport { isUserInvocable, renderSkillContent } from \"@deepseek-ai/dsh-skill\";\n//#region src/index.ts\nconst name = \"at-skill\";\nconst inject = [\"agents\", \"skills\"];\nconst AT_SKILL = /(^|\\s)@([a-z0-9]+(?:-[a-z0-9]+)*)(?=\\s|$)/g;\nfunction invokedNames(messages) {\n\tconst names = /* @__PURE__ */ new Set();\n\tfor (const message of messages) {\n\t\tif (message.source.kind !== \"user\") continue;\n\t\tfor (const block of message.content) {\n\t\t\tif (block.type !== \"text\") continue;\n\t\t\tfor (const match of block.text.matchAll(AT_SKILL)) {\n\t\t\t\tconst name = match[2];\n\t\t\t\tif (name !== void 0) names.add(name);\n\t\t\t}\n\t\t}\n\t}\n\treturn [...names];\n}\n/** Register deterministic host-side @skill invocation. */\nfunction apply(ctx) {\n\tctx.on(\"agent/pre-step\", async ({ agent, messages, signal }, next) => {\n\t\tconst decision = await next();\n\t\tif (decision.kind === \"reject\") return decision;\n\t\tconst names = invokedNames(messages);\n\t\tif (names.length === 0) return decision;\n\t\tconst lookup = {\n\t\t\tcwd: agent.session.header.cwd,\n\t\t\tsignal,\n\t\t\tscope: agent\n\t\t};\n\t\tconst injections = [];\n\t\tfor (const name of names) {\n\t\t\tsignal.throwIfAborted();\n\t\t\tconst skill = await ctx.skills.get(name, lookup);\n\t\t\tif (skill === void 0 || !isUserInvocable(skill)) continue;\n\t\t\tconst source = {\n\t\t\t\tkind: \"skill-invocation\",\n\t\t\t\tname,\n\t\t\t\tform: \"instructions\"\n\t\t\t};\n\t\t\tinjections.push(createUserMessage({\n\t\t\t\tcontent: [{\n\t\t\t\t\ttype: \"text\",\n\t\t\t\t\ttext: renderSkillContent(skill)\n\t\t\t\t}],\n\t\t\t\tsource\n\t\t\t}));\n\t\t}\n\t\treturn injections.length === 0 ? decision : {\n\t\t\tkind: \"enter\",\n\t\t\tmessages: [...decision.messages, ...injections]\n\t\t};\n\t});\n}\n//#endregion\nexport { apply, inject, name };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:10-47](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/lib/client.js#L10-L47)\n\n发布client链。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n\t\tfunction apply(ctx) {\n\t\t\tconst api = ctx.get(\"connection\").api.skills;\n\t\t\tconst cache = /* @__PURE__ */ new Map();\n\t\t\tconst catalog = (sessionId) => {\n\t\t\t\tconst existing = cache.get(sessionId);\n\t\t\t\tif (existing !== void 0) return existing;\n\t\t\t\tconst pending = api.list({ sessionId }).then(({ result }) => {\n\t\t\t\t\tif (!result.ok) {\n\t\t\t\t\t\tcache.delete(sessionId);\n\t\t\t\t\t\tthrow new Error(`skill.list failed: ${result.error.code}: ${result.error.message}`);\n\t\t\t\t\t}\n\t\t\t\t\treturn result.value.skills;\n\t\t\t\t});\n\t\t\t\tcache.set(sessionId, pending);\n\t\t\t\treturn pending;\n\t\t\t};\n\t\t\tconst source = {\n\t\t\t\ttrigger: \"@\",\n\t\t\t\tname: \"skill\",\n\t\t\t\torder: 2,\n\t\t\t\tasync candidates(session, { query, signal }) {\n\t\t\t\t\tconst skills = await catalog(session.sessionId);\n\t\t\t\t\tif (signal.aborted) return [];\n\t\t\t\t\treturn skills.filter((skill) => skill.name.startsWith(query)).map((skill) => ({\n\t\t\t\t\t\tname: skill.name,\n\t\t\t\t\t\tdescription: skill.description\n\t\t\t\t\t}));\n\t\t\t\t},\n\t\t\t\twarm(session) {\n\t\t\t\t\tcatalog(session.sessionId).catch(() => {});\n\t\t\t\t},\n\t\t\t\tonPick({ candidate }) {\n\t\t\t\t\treturn { text: `@${candidate.name} ` };\n\t\t\t\t}\n\t\t\t};\n\t\t\tconst inputTriggers = ctx.get(\"inputTriggers\");\n\t\t\tctx.on(\"connection/reset\", () => cache.clear());\n\t\t\tctx.effect(() => inputTriggers.registerSource(source), \"dsh-at-skill: @ source\");\n```\n\n</details>\n\n**依据 5 · 源码核查**：[package.json:49-65](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/package.json#L49-L65)\n\nNode和peer范围。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-agent\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-api-remotes\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-client-connection\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-client-runtime\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-client-ui-input-trigger\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-llm\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-session\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\",\n    \"@deepseek-ai/dsh-skill\": \">=0.1.0-rc.1 <0.1.0 || >=0.1.1-rc.1 <0.2.0-0\"\n  },\n  \"scripts\": {\n    \"build\": \"tsdown\",\n    \"test\": \"node --test test/*.test.js\",\n    \"check\": \"node --check lib/index.js && node --check lib/client.js && npm test\",\n    \"prepack\": \"npm run check\"\n  },\n```\n\n</details>\n\n**依据 6 · 源码核查**：[tsdown.config.ts:1-3](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/tsdown.config.ts#L1-L3)\n\n绝对构建路径。\n\n```text\nimport { clientBundle } from '/media/dengzhilong/项目/projects/deepseek-harness/packages/client/tsdown.client.ts'\n\nexport default clientBundle('dsh-at-skill', ['src/index.ts'])\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 纯文本调用和目录缓存有哪些风险？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n菜单只插入普通字符串，没有来源标识。同名@subagent/@plugin也可能被host解析为用户可调用Skill；引号/Markdown代码块里的空白界定@name同样匹配，不区分举例和意图。反过来中文标点紧邻、大小写或下划线名字不匹配，菜单候选是否一定满足该正则由宿主目录命名契约决定。host确实过滤isUserInvocable，但client本层没二次过滤，只信api.list；菜单可见与最终加载需要分别核。\n\nsession缓存无TTL和Skill更新事件失效，仅connection/reset清除，因此会话内新增/改名可能一直不反映；业务result非ok会删缓存，api.list自身Promise reject却没有catch删Map，拒绝的Promise可持续被复用直到reset。host每次重新get使已撤Skill不会因旧列表强装，这是积极边界；但失败get/render可直接使pre-step抛错，没有逐Skill失败降级。是否跨轮重复解析旧用户消息取决pre-step的messages范围，本插件没有全局已调用标记，不能声称一次性调用保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:10-23](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L10-L23)\n\n纯文本正则。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nconst AT_SKILL = /(^|\\s)@([a-z0-9]+(?:-[a-z0-9]+)*)(?=\\s|$)/g\n\nfunction invokedNames(messages: readonly UserMessage[]): string[] {\n  const names = new Set<string>()\n  for (const message of messages) {\n    if (message.source.kind !== 'user') continue\n    for (const block of message.content) {\n      if (block.type !== 'text') continue\n      for (const match of block.text.matchAll(AT_SKILL)) {\n        const name = match[2]\n        if (name !== undefined) names.add(name)\n      }\n    }\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:39-52](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L39-L52)\n\n最终用户调用资格和无局部catch。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    const lookup = { cwd: agent.session.header.cwd, signal, scope: agent }\n    const injections: UserMessage[] = []\n    for (const name of names) {\n      signal.throwIfAborted()\n      const skill = await ctx.skills.get(name, lookup)\n      if (skill === undefined || !isUserInvocable(skill)) continue\n      const source: SkillInvocationSource = {\n        kind: 'skill-invocation',\n        name,\n        form: 'instructions',\n      }\n      injections.push(createUserMessage({\n        content: [{ type: 'text', text: renderSkillContent(skill) }],\n        source,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:10-23](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L10-L23)\n\nPromise缓存和业务错误删除。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  const cache = new Map<SessionId, Promise<readonly SkillEntry[]>>()\n\n  const catalog = (sessionId: SessionId): Promise<readonly SkillEntry[]> => {\n    const existing = cache.get(sessionId)\n    if (existing !== undefined) return existing\n    const pending = api.list({ sessionId }).then(({ result }) => {\n      if (!result.ok) {\n        cache.delete(sessionId)\n        throw new Error(`skill.list failed: ${result.error.code}: ${result.error.message}`)\n      }\n      return result.value.skills\n    })\n    cache.set(sessionId, pending)\n    return pending\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:28-47](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L28-L47)\n\n列表信任/唯一reset。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    name: 'skill',\n    order: 2,\n    async candidates(session, { query, signal }) {\n      const skills = await catalog(session.sessionId)\n      if (signal.aborted) return []\n      return skills\n        .filter(skill => skill.name.startsWith(query))\n        .map(skill => ({ name: skill.name, description: skill.description }))\n    },\n    warm(session) {\n      catalog(session.sessionId).catch(() => {})\n    },\n    onPick({ candidate }) {\n      return { text: `@${candidate.name} ` }\n    },\n  }\n\n  const inputTriggers = ctx.get('inputTriggers') as InputTriggerServiceContract\n  ctx.on('connection/reset', () => cache.clear())\n  ctx.effect(() => inputTriggers.registerSource(source), 'dsh-at-skill: @ source')\n```\n\n</details>\n\n#### 缺口\n\n- 宿主pre-step messages范围、目录可调用过滤和命名约束\n  **影响：**决定是否重复注入、菜单与host匹配是否一致\n  **进一步探讨：**只读同版本宿主事件/skills API契约，以引用文字、同名对象和旧消息反例核一次性意图\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程与分阶段成本有哪些证据？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\nhost/client职责短而清楚，使用宿主renderSkillContent与scope查询复用现有语义，拒绝决策优先是可借鉴细节。提交的测试只核marketplace包入口/仓库元数据，不测试实际正则、拒绝、可调用过滤、缓存失效和消息注入；npm check语法检查也不证明业务契约。本次只读测试，不执行。开发构建脚本绝对路径与peer范围使维护者需显式匹配本地Harness。\n\n首次装匹配0.1系宿主并查菜单/技能来源；持续每session保一份目录Promise，host每次按命中名查询/渲染，插件无独立模型请求或远端服务，但注入完整Skill会增加后续模型token。多Skill去重仅当次，输入提到大量名字可增加上下文，未提供额度/截断。恢复可重连清缓存、删误触发文字或停用插件；已注入消息和已发生的模型动作不能靠卸载回滚，需用新回合/会话确认。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/marketplace.test.js:1-15](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/test/marketplace.test.js#L1-L15)\n\n测试仅元数据。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nimport assert from 'node:assert/strict';\nimport { readFile } from 'node:fs/promises';\nimport test from 'node:test';\n\nconst root = new URL('../', import.meta.url);\n\ntest('declares an installable marketplace bundle', async () => {\n  const pkg = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));\n  const entryText = await readFile(new URL('marketplace-entry.yml', root), 'utf8');\n  assert.equal(pkg.dsh.bundle.patch, './cordis.patch.yml');\n  assert.match(entryText, /^url: https:\\/\\/github\\.com\\/452926826\\/dsh-at-skill$/m);\n  assert.match(entryText, /^name: 452926826\\/dsh-at-skill$/m);\n  assert.match(entryText, /^category: skill$/m);\n  assert.equal(pkg.repository.url, 'git+https://github.com/452926826/dsh-at-skill.git');\n  assert.ok(pkg.keywords.includes('dsh-plugin'));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:67-73](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/package.json#L67-L73)\n\n构建/语法/元数据脚本。\n\n```text\n    \"lib\",\n    \"src\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.zh-CN.md\",\n    \"LICENSE\"\n  ],\n```\n\n**依据 3 · 源码核查**：[src/index.ts:39-57](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L39-L57)\n\n逐名完整渲染。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    const lookup = { cwd: agent.session.header.cwd, signal, scope: agent }\n    const injections: UserMessage[] = []\n    for (const name of names) {\n      signal.throwIfAborted()\n      const skill = await ctx.skills.get(name, lookup)\n      if (skill === undefined || !isUserInvocable(skill)) continue\n      const source: SkillInvocationSource = {\n        kind: 'skill-invocation',\n        name,\n        form: 'instructions',\n      }\n      injections.push(createUserMessage({\n        content: [{ type: 'text', text: renderSkillContent(skill) }],\n        source,\n      }))\n    }\n\n    return injections.length === 0\n      ? decision\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:10-23](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L10-L23)\n\n会话缓存。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  const cache = new Map<SessionId, Promise<readonly SkillEntry[]>>()\n\n  const catalog = (sessionId: SessionId): Promise<readonly SkillEntry[]> => {\n    const existing = cache.get(sessionId)\n    if (existing !== undefined) return existing\n    const pending = api.list({ sessionId }).then(({ result }) => {\n      if (!result.ok) {\n        cache.delete(sessionId)\n        throw new Error(`skill.list failed: ${result.error.code}: ${result.error.message}`)\n      }\n      return result.value.skills\n    })\n    cache.set(sessionId, pending)\n    return pending\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么时候值得试用，继续研究从何处入手？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n匹配宿主、Skill命名不冲突且希望@菜单入口者可试用；发送前注意示例文字里的@也可能触发，重要自动化用明确/Skill入口或确认轨迹里加载来源。不要把autocomplete候选当安全授权，多Skill上下文成本和真实执行仍由原Skill/工具边界承担。要求严格对象身份或完全支持0.2宿主时先核契约再采用。\n\n可研究由输入chip携带Skill身份/意图而非纯文本推断，并将目录版本或更新事件纳入缓存，所有reject都可重试。基线是普通@字符串与session永久Promise；最小反例为同名subagent、代码块示例、标点边界、热新增Skill、网络reject后恢复、scope撤销和next拒绝。比较误加载/漏加载率、缓存恢复时间、注入token和手工/菜单步骤，尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.ts:40-42](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L40-L42)\n\n仅文本身份基线。\n\n```text\n    onPick({ candidate }) {\n      return { text: `@${candidate.name} ` }\n    },\n```\n\n**依据 2 · 源码核查**：[src/index.ts:10-23](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/index.ts#L10-L23)\n\n解析基线。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nconst AT_SKILL = /(^|\\s)@([a-z0-9]+(?:-[a-z0-9]+)*)(?=\\s|$)/g\n\nfunction invokedNames(messages: readonly UserMessage[]): string[] {\n  const names = new Set<string>()\n  for (const message of messages) {\n    if (message.source.kind !== 'user') continue\n    for (const block of message.content) {\n      if (block.type !== 'text') continue\n      for (const match of block.text.matchAll(AT_SKILL)) {\n        const name = match[2]\n        if (name !== undefined) names.add(name)\n      }\n    }\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:10-23](https://github.com/452926826/dsh-at-skill/blob/7502c9bce1a65597188c12d4ab1e33e9365e3a22/src/client/index.ts#L10-L23)\n\n缓存基线。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  const cache = new Map<SessionId, Promise<readonly SkillEntry[]>>()\n\n  const catalog = (sessionId: SessionId): Promise<readonly SkillEntry[]> => {\n    const existing = cache.get(sessionId)\n    if (existing !== undefined) return existing\n    const pending = api.list({ sessionId }).then(({ result }) => {\n      if (!result.ok) {\n        cache.delete(sessionId)\n        throw new Error(`skill.list failed: ${result.error.code}: ${result.error.message}`)\n      }\n      return result.value.skills\n    })\n    cache.set(sessionId, pending)\n    return pending\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：4b2434a6c3878682b7d36bb7e995a79eb800b7f6726ce60bffd5c9ff83b77d37。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 103 | — | — | 722 |\n| .js | source | 2 | 114 | 106 | 9 | — |\n| .ts | source | 3 | 111 | 96 | 2 | — |\n| .js | test | 1 | 16 | 14 | 1 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| @候选 | 发现Skill | 前缀/session缓存 |\n| host加载 | 可调用Skill注入 | 纯文本非身份chip |\n| 拒绝保留 | next拒绝优先 | 未提供新Skill内容 |\n\n## 工程亮点\n\n短链复用scope/renderer，业务测试与缓存更新/拒绝恢复缺口明确。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/client/index.ts、lib/index.js、lib/client.js、tsdown.config.ts、test/marketplace.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整TS与两份发布lib、package/构建配置、元数据测试、README；不执行目标或扩展读取宿主。\n- 下一步：从同名/示例/网络reject/热更新核身份与缓存方向。\n",
         "metadata": {
             "repository": "452926826/dsh-at-skill",
             "repository_id": 1346023186,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T07:08:25.798Z",
+            "window_start": "2026-09-22T07:08:25.798Z",
             "stars": 2,
             "pushed_at": "2026-08-26T09:57:05Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640F:1EF33:13E507:21806D:6AD84A0B and timestamp 2026-10-21 05:13:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:15F2FE:1491F5:22205C:6AD84A0B and timestamp 2026-10-21 05:13:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:AF775:1442BF:21D088:6AD84A0B and timestamp 2026-10-21 05:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:250B02:14CAC1:22655E:6AD84A0C and timestamp 2026-10-21 05:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A452926826%2Fdsh-at-skill%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:B3C47:146F30:221F86:6AD84A0C and timestamp 2026-10-21 05:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-at-skill",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T07:08:34.619Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-at-skill",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-at-skill",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T07:08:34.619Z",
                     "source_url": "https://registry.npmjs.org/dsh-at-skill",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-                "current_revision": "7502c9bce1a65597188c12d4ab1e33e9365e3a22",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

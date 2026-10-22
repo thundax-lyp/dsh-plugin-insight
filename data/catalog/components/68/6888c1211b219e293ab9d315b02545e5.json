@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1343882273-root-directory-0",
+                    "id": "2026-10-22-02-github-1343882273-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:19:20.840Z",
+                    "retrieved_at": "2026-10-22T05:51:02.138Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1343882273-root-author",
+                    "id": "2026-10-22-02-github-1343882273-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/9livewolf/dsh-think-bounce-pet",
+                            "commit": "3bfe9cb32afea176937379351af39dfd46f955f4",
+                            "path": "README.md",
+                            "content_sha256": "1988b354cd3e43d279042663ffe124921db1dd8933db2e16288d1bfd6025055c"
+                        }
+                    ],
                     "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
-                    "captured_at": "2026-10-21T04:19:20.840Z",
-                    "summary": "在 DSH Web 显示常驻和随 reasoning 文本变化的弹球宠物，可调整物理效果。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:51:02.138Z",
+                    "summary": "在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1343882273-root-source",
+                    "id": "2026-10-22-02-github-1343882273-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/index.js",
+                    "url": "https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/9livewolf/dsh-think-bounce-pet",
+                            "commit": "3bfe9cb32afea176937379351af39dfd46f955f4",
+                            "path": "README.md",
+                            "content_sha256": "1988b354cd3e43d279042663ffe124921db1dd8933db2e16288d1bfd6025055c"
+                        },
+                        {
+                            "repository_url": "https://github.com/9livewolf/dsh-think-bounce-pet",
+                            "commit": "3bfe9cb32afea176937379351af39dfd46f955f4",
+                            "path": "package.json",
+                            "content_sha256": "160b61885f31ca9bc38a1ee0286dd687394b20810eb1b14b10fa570b482a841f"
+                        },
+                        {
+                            "repository_url": "https://github.com/9livewolf/dsh-think-bounce-pet",
+                            "commit": "3bfe9cb32afea176937379351af39dfd46f955f4",
+                            "path": "lib/index.js",
+                            "content_sha256": "0663552b88e9ef47a00ce5c2dae05df911b3fb569c969177d96ce19209745149"
+                        },
+                        {
+                            "repository_url": "https://github.com/9livewolf/dsh-think-bounce-pet",
+                            "commit": "3bfe9cb32afea176937379351af39dfd46f955f4",
+                            "path": "lib/client.js",
+                            "content_sha256": "31f549967065b188ff262b1e6c7ef935b61ed440d8f64977314fb20af30a4673"
+                        }
+                    ],
                     "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
-                    "captured_at": "2026-10-21T04:19:20.840Z",
-                    "summary": "核查 lib/index.js、lib/client.js、package.json；host空apply，仅client注册shell.overlay/settings；requestAnimationFrame更新碰撞/重力，localStorage存参数，订阅当前会话legacy.partial的reasoning文本开关思考球并基线化历史。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:51:02.138Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、lib/client.js；监听当前会话 legacy.partial 的 reasoning 文本，从空到非空生成思考球；常驻球独立运行，共享 rAF 物理。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "抽读client动画/设置/生命周期/会话订阅与空host；未看外部视频、跑UI或评估用户体验。",
+                        "只读核固定提交 README、package、Host/Client；未执行目标代码、浏览器/宿主或性能测试；旧 META 仅复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户希望界面有陪伴和思考状态视觉提示，交付本地动画，不代表真实推理进度或任务结果。",
+                    "text": "纯娱乐 Web UI 装饰，适合愿接受持续动画的个人用户；不代表模型思考质量。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "host空apply，仅client注册shell.overlay/settings；requestAnimationFrame更新碰撞/重力，localStorage存参数，订阅当前会话legacy.partial的reasoning文本开关思考球并基线化历史。",
+                    "text": "监听当前会话 legacy.partial 的 reasoning 文本，从空到非空生成思考球；常驻球独立运行，共享 rAF 物理。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "抽读client动画/设置/生命周期/会话订阅与空host；未看外部视频、跑UI或评估用户体验。",
+                    "text": "只读核固定提交 README、package、Host/Client；未执行目标代码、浏览器/宿主或性能测试；旧 META 仅复用。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "纯client功能、host空壳，依赖DSH overlay/settings与legacy会话投影；浏览器本地参数非跨设备同步。",
+                    "text": "包声明 0.1.0、MIT、DSH Web 客户端注入；当前安装可达性未本轮核实。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次设置，持续动画CPU/GPU与注意力，实际帧/内存未测；无模型调用费用路径。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web/browser，金额未知 | 安装、重启和调参数；耗时未知 | 兼容未测 |\n| 持续使用 | 常驻前台 rAF、CPU/电量未知 | 因遮挡/分心可能调开关；耗时未知 | 两球共享循环 |\n| 失败恢复 | 状态错示/偏好丢失；损失未知 | 关闭插件、重配 localStorage；耗时未知 | 存储失败静默 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "喜欢界面装饰的人可先调低速度/大小；遇到遮挡或干扰关闭，不把思考球当可靠运行状态。",
+                    "text": "仅当个人偏好装饰且可接受资源/遮挡时观察；勿把球当真实推理计时，低性能或减动效需求先关闭。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "提供趣味反馈，不证明工作效率或模型思考可观测性。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 双球动画 | 常驻/思考球源码 | 真实 GUI 呈现与手感 |\n| 思考反馈 | partial reasoning 文本沿 | 与实际推理生命周期一致性 |\n| 设置/清理 | localStorage 与卸载回调 | 坏存储和不同浏览器行为 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "会话open后基线化避免历史重放、切会话解绑、统一rAF清理和本地设置迁移可借鉴；状态信号需避免依赖内部投影。",
+                    "text": "共用 rAF、dt 上限、设置与碰撞箱同步可借鉴；性能和真实事件对齐需单独验证。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对固定装饰图，增量是可拍打拖扔的物理球和基于会话reasoning可见文本的状态响应，区分常驻与思考球。物理动画/React槽位为成熟方法，不是任务能力提升。",
+                    "text": "把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "宠物出现能否说明Agent真在思考？仅检测legacy.partial.blocks含非空reasoning，隐藏推理/不同provider或宿主投影变化会无球，残留块也可能误提示；常驻动画与可交互球会占用注意力和指针区域，不能由pointer-events none概括为完全不干扰。",
+                    "text": "reasoning 文本不等于真实推理生命周期，空块/切会话可错过或提前结束动画；默认常驻球无推理时也持续 rAF，性能/遮挡需实测。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：将宠物状态改为宿主明确运行/等待/结束事件，并给低动态或可访问模式，可减少伪进度和视觉干扰。由reasoning文本启发式与物理动画推导，未实现。对照无reasoning模型、历史回放、会话切换和减少动态设置，测状态误导、误触与帧耗时；不宣传提效。",
+                    "text": "未验证方向是宿主生命周期驱动的明确标注反馈、默认减动效和空闲暂停，以事件对齐、帧耗与操作遮挡夹具验收。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "3bfe9cb32afea176937379351af39dfd46f955f4"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:20.840Z",
+                    "reviewed_at": "2026-10-22T05:51:02.138Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:19:20.840Z",
+            "last_checked_at": "2026-10-22T05:51:02.138Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
-                "reviewed_at": "2026-10-21T04:19:20.840Z",
+                "reviewed_at": "2026-10-22T05:51:02.138Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,15 +309,15 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty 小幅：弹球宠物界面适配；mechanism 小幅：reasoning信号与rAF物理常规；transferability 小幅：宿主legacy结构耦合；simplification 小幅：两球同引擎参数。",
+                    "rationale": "novelty 是常规物理弹球与推理文本信号结合；mechanism 两球共用帧循环和设置但信号近似；transferability 受 DSH 会话结构约束；simplification 设置清楚但持续动画成本在。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 37,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ]
                 },
                 "business": {
@@ -293,43 +327,43 @@
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow 未识别：不改变任务组织；delivery 小幅：交互装饰体验；reach 小幅：设置可调但可访问未验；economics 未识别：无成本结构变化。",
+                    "rationale": "纯装饰不改变任务流程；交付可见动画但效果未验；面向部分偏好娱乐的 GUI 用户；无经济效果。",
                     "basis": "interpretation",
                     "score": 13,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1343882273-root-source"
+                        "2026-10-22-02-github-1343882273-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "喜爱界面陪伴者可低速小尺寸试动画；核遮挡与关闭恢复，不把思考球当Agent真实进度。",
+                "decision": "observe",
+                "reason": "可作为非关键个人装饰观察；持续动画资源、遮挡和推理信号真实性待实测。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "装饰与陪伴偏好明确但收益限个人审美。"
+                        "score": 8,
+                        "rationale": "娱乐偏好场景存在但非任务刚需。"
                     },
                     "advantage": {
                         "score": 6,
-                        "rationale": "可拖扔物理球和reasoning响应增加趣味，非可靠状态监控。"
+                        "rationale": "可配置双球交互，但通用动画机制可替代。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "动画清理与订阅基线已核，无帧耗或体验实验。"
+                        "rationale": "固定源码可核，未运行宿主或性能实验。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无模型调用，动画资源及注意力成本可通过关闭控制。"
+                        "score": 5,
+                        "rationale": "无账号/网络成本，但持续帧与交互干扰未知。"
                     }
                 },
-                "score": 49,
+                "score": 32,
                 "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:51:02.138Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1343882273-root-source"
+                    "2026-10-22-02-github-1343882273-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,28 +388,29 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "8b5cf42fec4e775a3d6ec305bbd738887791e0048bc13fff9100df4d23812cca"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "0e0769346ee0c197a42d2c98b70a2bd60fe90171e18923f8121a97f273e4a4f4"
         },
         "publication.metadata": "data/plugins/9livewolf--dsh-think-bounce-pet/META.json",
         "publication.summaries": {
-            "text": "在 DSH Web 显示常驻和随 reasoning 文本变化的弹球宠物，可调整物理效果。",
+            "text": "在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。",
             "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
             "source_url": "https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/README.md"
         },
         "publication.capabilities": {
             "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
             "items": {
-                "界面": "弹球overlay、物理交互与设置页。",
-                "事件监听": "当前会话reasoning投影变化。"
-            }
+                "界面": "双弹球 overlay 与物理参数设置",
+                "事件监听": "会话 partial reasoning 文本信号"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 常驻球 | 装饰 UI | 默认开启，前台持续动画 |\n| 思考球 | 可见推理文本反馈 | 不等于真实模型思考状态 |\n| 物理设置 | 调速度/重力/碰撞 | localStorage 坏数据回默认 |"
         },
         "publication.advice": {
             "revision": "3bfe9cb32afea176937379351af39dfd46f955f4",
-            "text": "喜欢界面装饰的人可先调低速度/大小；遇到遮挡或干扰关闭，不把思考球当可靠运行状态。"
+            "text": "仅当个人偏好装饰且可接受资源/遮挡时观察；勿把球当真实推理计时，低性能或减动效需求先关闭。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/9livewolf--dsh-think-bounce-pet",
-        "reports": "# dsh-think-bounce-pet\n\n> 在 DSH Web 显示常驻和随 reasoning 文本变化的弹球宠物，可调整物理效果。\n\n## 使用建议\n\n喜欢界面装饰的人可先调低速度/大小；遇到遮挡或干扰关闭，不把思考球当可靠运行状态。\n\n核查状态：源码确认动画/设置/会话信号；未运行UI或测资源，reasoning信号不是模型内部思考真值。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：用户希望界面有陪伴和思考状态视觉提示，交付本地动画，不代表真实推理进度或任务结果。\n- **亮点**：相对固定装饰图，增量是可拍打拖扔的物理球和基于会话reasoning可见文本的状态响应，区分常驻与思考球。物理动画/React槽位为成熟方法，不是任务能力提升。\n- **思考**：宠物出现能否说明Agent真在思考？仅检测legacy.partial.blocks含非空reasoning，隐藏推理/不同provider或宿主投影变化会无球，残留块也可能误提示；常驻动画与可交互球会占用注意力和指针区域，不能由pointer-events none概括为完全不干扰。\n- **建议**：待验证假设：将宠物状态改为宿主明确运行/等待/结束事件，并给低动态或可访问模式，可减少伪进度和视觉干扰。由reasoning文本启发式与物理动画推导，未实现。对照无reasoning模型、历史回放、会话切换和减少动态设置，测状态误导、误触与帧耗时；不宣传提效。\n\n## 场景与替代办法\n\n用户希望界面有陪伴和思考状态视觉提示，交付本地动画，不代表真实推理进度或任务结果。\n\n参照普通桌宠和加载动画；无模型/业务创新效果对照。\n\n## 能力清单\n\n- **界面**：弹球overlay、物理交互与设置页。\n- **事件监听**：当前会话reasoning投影变化。\n\n## 依赖与流程\n\nhost空apply，仅client注册shell.overlay/settings；requestAnimationFrame更新碰撞/重力，localStorage存参数，订阅当前会话legacy.partial的reasoning文本开关思考球并基线化历史。\n\nDSH客户端sessions/slots/settings、浏览器rAF与localStorage；无额外host文件/网络能力。\n\n读设置→挂overlay常驻球→订阅会话→reasoning变化出入球→拖拍物理更新→切会话/关闭清理；参数仅本浏览器。\n\n纯client功能、host空壳，依赖DSH overlay/settings与legacy会话投影；浏览器本地参数非跨设备同步。\n\n## 成本与效果\n\n首次设置，持续动画CPU/GPU与注意力，实际帧/内存未测；无模型调用费用路径。\n\n提供趣味反馈，不证明工作效率或模型思考可观测性。\n\n## 核心贡献\n\n相对固定装饰图，增量是可拍打拖扔的物理球和基于会话reasoning可见文本的状态响应，区分常驻与思考球。物理动画/React槽位为成熟方法，不是任务能力提升。\n\n## 关键质疑\n\n宠物出现能否说明Agent真在思考？仅检测legacy.partial.blocks含非空reasoning，隐藏推理/不同provider或宿主投影变化会无球，残留块也可能误提示；常驻动画与可交互球会占用注意力和指针区域，不能由pointer-events none概括为完全不干扰。\n\n## 工程亮点\n\n会话open后基线化避免历史重放、切会话解绑、统一rAF清理和本地设置迁移可借鉴；状态信号需避免依赖内部投影。\n\n固定源码依据：[lib/index.js](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/index.js)、[lib/client.js](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js)、[package.json](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：将宠物状态改为宿主明确运行/等待/结束事件，并给低动态或可访问模式，可减少伪进度和视觉干扰。由reasoning文本启发式与物理动画推导，未实现。对照无reasoning模型、历史回放、会话切换和减少动态设置，测状态误导、误触与帧耗时；不宣传提效。\n\n隔离UI验证会话切换/历史回放、无reasoning、关闭清理、后台恢复和低动态需求；本轮不执行。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：13c4a7b97b4932e846e42391df777ef9a71313ea2518fddb329cd3d4a7ccb0cf。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1252 | 1058 | 160 | — |\n| .md | source | 1 | 50 | — | — | 605 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.0；版本日期：2026-08-24（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[3bfe9cb3](https://github.com/9livewolf/dsh-think-bounce-pet/tree/3bfe9cb32afea176937379351af39dfd46f955f4)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：抽读client动画/设置/生命周期/会话订阅与空host；未看外部视频、跑UI或评估用户体验。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-think-bounce-pet\n\n> 在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。\n\n## 研究范围\n\n- **仓库**：[9livewolf/dsh-think-bounce-pet](https://github.com/9livewolf/dsh-think-bounce-pet)\n- **版本号**：0.1.0（[固定提交 3bfe9cb32afea176937379351af39dfd46f955f4](https://github.com/9livewolf/dsh-think-bounce-pet/tree/3bfe9cb32afea176937379351af39dfd46f955f4)）\n- **版本日期**：2026-08-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持双球与设置机制；推理边界只是 partial 文本近似，常驻球持续占用前台动画，真实宿主和性能未测；改进是假设。\n\n## 洞察短评\n\n- **用途**：纯娱乐 Web UI 装饰，适合愿接受持续动画的个人用户；不代表模型思考质量。详见[Q01](#research-q01)。\n- **亮点**：把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。\n- **思考**：reasoning 文本不等于真实推理生命周期，空块/切会话可错过或提前结束动画；默认常驻球无推理时也持续 rAF，性能/遮挡需实测。详见[Q03](#research-q03)。\n- **建议**：未验证方向是宿主生命周期驱动的明确标注反馈、默认减动效和空闲暂停，以事件对齐、帧耗与操作遮挡夹具验收。详见[Q05](#research-q05)。\n\n采用建议：仅当个人偏好装饰且可接受资源/遮挡时观察；勿把球当真实推理计时，低性能或减动效需求先关闭。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nreasoning 文本不等于真实推理生命周期，空块/切会话可错过或提前结束动画；默认常驻球无推理时也持续 rAF，性能/遮挡需实测。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是宿主生命周期驱动的明确标注反馈、默认减动效和空闲暂停，以事件对齐、帧耗与操作遮挡夹具验收。详见[Q05](#research-q05)。\n\n真实 DSH Web 测推理空块、短/长推理、切会话、后台恢复、坏 localStorage、操作遮挡、帧耗和减动效。\n\n## 场景与替代办法\n\n纯娱乐 Web UI 装饰，适合愿接受持续动画的个人用户；不代表模型思考质量。详见[Q01](#research-q01)。\n\n普通网页动画和宿主推理 UI 已能装饰/显示状态；本项需证明趣味价值大于持续资源与干扰成本。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web sessions/slots | 必需 | 推理信号与 overlay/设置 | 组件不工作 |\n| 浏览器 rAF/localStorage | 体验必需 | 动画与偏好 | 无动画或只保内存态 |\n| 当前会话 partial 结构 | 思考球必需 | 检出 reasoning 文本 | 无球或错时 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 安装 | 在 Web profile 装并重启 | 设置页与 overlay 可见 |\n| 调整 | 设速度/尺寸/碰撞或关闭 | 偏好持久、无关键 UI 遮挡 |\n| 观察 | 新推理文本出现时看思考球 | 不把动画解释为模型内部状态 |\n| 恢复 | 关闭或卸载 | DOM/监听/帧循环停止 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | DSH Web/browser，金额未知 | 安装、重启和调参数；耗时未知 | 兼容未测 |\n| 持续使用 | 常驻前台 rAF、CPU/电量未知 | 因遮挡/分心可能调开关；耗时未知 | 两球共享循环 |\n| 失败恢复 | 状态错示/偏好丢失；损失未知 | 关闭插件、重配 localStorage；耗时未知 | 存储失败静默 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 双球动画 | 常驻/思考球源码 | 真实 GUI 呈现与手感 |\n| 思考反馈 | partial reasoning 文本沿 | 与实际推理生命周期一致性 |\n| 设置/清理 | localStorage 与卸载回调 | 坏存储和不同浏览器行为 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**思考弹球宠物是否如实响应当前推理状态、可控地使用界面资源并能完整清理？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 这个纯娱乐组件提供什么体验，是否有可证的生产力价值？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件面向愿在 DSH Web 界面看到装饰性动画的个人用户。作者直接称“无实意”，合格交付是球出现/消失符合预期、不挡主界面操作、设置可恢复、关闭后不残留。宿主半 apply 为空，浏览器半在 shell.overlay 画常驻球与推理球、settings.section 配物理参数，localStorage 保存偏好。相对一般网页动画，增量是接入 DSH 会话 partial reasoning 信号及两球独立物理/交互；不应把动画理解为模型思考质量、速度或真实内部状态仪表。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-14](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/README.md#L1-L14)\n\n作者定位为无实意娱乐插件并列功能。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n# dsh-think-bounce-pet\n\n[📺 点击观看效果演示](https://www.bilibili.com/video/BV14d886GEx1)\n\nDeepSeek Harness Web UI 的「思考弹球宠物」插件：让两只大肥鱼在界面里弹来弹去，无实意。\n\n## 功能\n\n- **常驻球**：插件开启期间一直在界面弹跳，不受思考状态影响。\n- **思考球**：推理开始时从屏幕边缘飞入，思考结束后缩小消失。\n- **交互**：点一下把球拍走，按住拖动再松手可扔出去。\n- **鼠标碰撞**：开启后鼠标变成不可推动的障碍，球碰到会被弹开，且不能抓取。\n- **重力**：可调 0（无重力）、1 倍、2 倍向下重力。\n- **自定义**：初速度、碰撞损耗、摩擦力、球体大小都可实时调整。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1-10](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/index.js#L1-L10)\n\nHost 空壳。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Host half of the dsh-think-bounce-pet Web surface.\n *\n * The browser half is discovered from package.json's `dsh.client` declaration.\n * This plugin is purely a client-side UI pet (a ball that bounces while the\n * agent thinks), so the host half stays an empty apply: keeping the row in the\n * host Loader is what lets the client-modules roster scan pick up the browser\n * half. No file/process/network capabilities are needed here today.\n */\nexport function apply() {}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:248-281](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L248-L281)\n\n两球引擎与共用帧循环。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    // ── Ball engines ─────────────────────────────────────────────────────────\n    // 现在有两颗独立的球：\n    //   engine       = 原来的「思考球」：think 开始出现、think 结束消失，其他行为不变\n    //   alwaysEngine = 新加的「常驻球」：启用插件期间一直显示，不受 think 状态影响\n    // 两颗球都走同一套物理，因此都受 MIN_SPEED 保护，永远不会停下。\n    function createEngine() {\n      return {\n        layer: null,\n        ball: null,\n        core: null,\n        state: \"idle\",\n        x: 0,\n        y: 0,\n        vx: 0,\n        vy: 0,\n        roll: 0, // 滚动自转角（让高光跟着滚，滚动感可见）\n        deformAmp: 0, // 「ber」当前振幅 [0..1]，碰撞/点击时置 1\n        deformT: 0, // 距上次触发「ber」的时间（ms）\n        heading: 0, // 最近一次运动朝向（静止时保留用于形变轴向）\n        spawnedAt: 0,\n        dieAt: 0,\n        raf: null,\n        lastTs: 0,\n        lastRadius: 0, // 上次写入 DOM 的球半径，用于避免重复设置 width/height\n        grab: null\n      };\n    }\n\n    var engine = createEngine();\n    var alwaysEngine = createEngine();\n\n    // 两颗球共用一个 rAF 主循环：这样同一帧里可以统一积分 + 做球间碰撞，\n    // 避免两颗球各自跑一套 rAF 导致碰撞时序不稳定。\n    var master = { raf: null, lastTs: 0 };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:1190-1207](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L1190-L1207)\n\n设置页与 overlay 槽位。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    // 必需服务：sessions（会话快照/推理流）、slots（overlay + 设置页槽位）。\n    // 浏览器半边访问 ctx.<服务名> 前，必须把服务名声明在这里。\n    var inject = [\"slots\", \"sessions\"];\n\n    function apply(ctx) {\n      ctxRef = ctx;\n      var disposeList = ctx.sessions.list.subscribe(refresh);\n      var disposeStyles = ctx.effect(injectStyles, \"think-bounce-pet: styles\");\n\n      ctx.slots.inject(\"settings.section\", () =>\n        ctx.slots.register(\n          { name: \"settings.section\", id: \"think-bounce-pet\", order: 12, label: () => \"宠物 · 思考弹球\" },\n          PetSettingsSection\n        )\n      );\n      ctx.slots.inject(\"shell.overlay\", () =>\n        ctx.slots.register({ name: \"shell.overlay\", id: \"think-bounce-pet-overlay\", order: 85, label: \"思考弹球宠物\" }, PetOverlay)\n      );\n```\n\n</details>\n\n#### 缺口\n\n- 未做真实用户体验与 UI 可访问性检查\n  **影响：**不能声称提升专注、效率或审美满意度\n  **进一步探讨：**目标浏览器比较开关前后操作遮挡、分心和个人偏好\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 推理信号、球的动画与设置持久化如何接线？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\n客户端订阅 sessions.list，绑定当前会话，历史窗口 openState 首次打开先基线化，随后每次 session snapshot 检查 chat.legacy.partial.blocks 是否有 kind=reasoning 且 text 非空；false→true 生成推理球，true→false 缩小移除。常驻球在启用时一直存在，两球共用 requestAnimationFrame masterFrame 做积分/碰撞，视窗后台 rAF 通常停。设置包含初速、损耗、摩擦、尺寸、鼠标碰撞和重力，有限值被夹到范围后写 localStorage；旧 enabled 键可迁移。关闭和卸载调用清理订阅/样式/监听与球 DOM。代码接线可确认，真实宿主 partial 格式与事件时机本轮未实测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:57-113](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L57-L113)\n\n设置默认、迁移与本地读取。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n    // ── Settings store（localStorage；开关 + 物理参数 + 球体大小，带订阅给设置页用）──\n    var SETTINGS_KEY = \"dsh-think-bounce-pet.settings\";\n    var LEGACY_ENABLED_KEY = \"dsh-think-bounce-pet.enabled\"; // v0.1 只存 \"0\"/\"1\"\n\n    // 默认值 = 当前设置固化：启用开 / 初速 3440 / 碰撞损耗 14% / 摩擦力 0 / 球体大小 86% / 鼠标碰撞 0（关） / 重力 0。\n    var PHYSICS_DEFAULTS = { launchSpeed: 3440, lossPct: 14, friction: 0, sizePct: 86, mouseCollide: 0, gravity: 0 };\n    var PHYSICS_BOUNDS = {\n      launchSpeed: [200, 4000], // 初速 px/s\n      lossPct: [0, 90], // 每次碰撞的速度损耗百分比（内部换算成恢复系数）\n      friction: [0, 100], // 摩擦力：指数阻尼强度，0 = 无\n      sizePct: [20, 200], // 球体大小：以 100% 为当前尺寸基准，20% ~ 200%\n      mouseCollide: [0, 100], // 鼠标碰撞：0 = 关闭；50 = 较大推力；100 = 非常大推力\n      gravity: [0, 100] // 重力：0 = 当前状态；50 = 1 倍重力；100 = 2 倍重力\n    };\n\n    function clampField(value, bounds, fallback) {\n      var n = Number(value);\n      if (!isFinite(n)) return fallback;\n      return Math.min(bounds[1], Math.max(bounds[0], Math.round(n)));\n    }\n\n    function normalizeSettings(raw) {\n      var out = {\n        enabled: true,\n        launchSpeed: PHYSICS_DEFAULTS.launchSpeed,\n        lossPct: PHYSICS_DEFAULTS.lossPct,\n        friction: PHYSICS_DEFAULTS.friction,\n        sizePct: PHYSICS_DEFAULTS.sizePct,\n        mouseCollide: PHYSICS_DEFAULTS.mouseCollide,\n        gravity: PHYSICS_DEFAULTS.gravity\n      };\n      if (raw !== null && typeof raw === \"object\") {\n        out.enabled = raw.enabled === true;\n        out.launchSpeed = clampField(raw.launchSpeed, PHYSICS_BOUNDS.launchSpeed, PHYSICS_DEFAULTS.launchSpeed);\n        out.lossPct = clampField(raw.lossPct, PHYSICS_BOUNDS.lossPct, PHYSICS_DEFAULTS.lossPct);\n        out.friction = clampField(raw.friction, PHYSICS_BOUNDS.friction, PHYSICS_DEFAULTS.friction);\n        out.sizePct = clampField(raw.sizePct, PHYSICS_BOUNDS.sizePct, PHYSICS_DEFAULTS.sizePct);\n        // 旧版布尔开关迁移：true → 50（较大推力），false/缺失 → 0（关闭）。\n        out.mouseCollide = raw.mouseCollide === true ? 50 : clampField(raw.mouseCollide, PHYSICS_BOUNDS.mouseCollide, PHYSICS_DEFAULTS.mouseCollide);\n        out.gravity = clampField(raw.gravity, PHYSICS_BOUNDS.gravity, PHYSICS_DEFAULTS.gravity);\n      }\n      return out;\n    }\n\n    var settings = (function () {\n      var state = (function () {\n        try {\n          var raw = window.localStorage.getItem(SETTINGS_KEY);\n          if (raw !== null) return normalizeSettings(JSON.parse(raw));\n          // v0.1 迁移：旧版只有 \"0\"/\"1\" 的 enabled 键。\n          var legacy = window.localStorage.getItem(LEGACY_ENABLED_KEY);\n          if (legacy !== null) return normalizeSettings({ enabled: legacy !== \"0\" });\n        } catch {\n          // 解析失败按默认处理\n        }\n        return normalizeSettings(null);\n      })();\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:125-215](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L125-L215)\n\n设置写入和订阅。\n\n<details>\n<summary>查看原文（91行）</summary>\n\n```text\n      function persist() {\n        try {\n          window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(state));\n        } catch {\n          // 配额/隐私模式：仅保留内存态\n        }\n      }\n      return {\n        getSnapshot: function () {\n          return snapshot;\n        },\n        subscribe: function (listener) {\n          listeners.push(listener);\n          return function () {\n            var at = listeners.indexOf(listener);\n            if (at !== -1) listeners.splice(at, 1);\n          };\n        },\n        isEnabled: function () {\n          return state.enabled === true;\n        },\n        setEnabled: function (value) {\n          var next = value === true;\n          if (next === state.enabled) return;\n          state.enabled = next;\n          snapshot = Object.assign({}, state);\n          persist();\n          notify();\n        },\n        /** 更新物理参数（部分字段），值越界会被夹回合法区间。 */\n        setPhysics: function (patch) {\n          var changed = false;\n          if (patch.launchSpeed !== void 0) {\n            var ls = clampField(patch.launchSpeed, PHYSICS_BOUNDS.launchSpeed, state.launchSpeed);\n            if (ls !== state.launchSpeed) {\n              state.launchSpeed = ls;\n              changed = true;\n            }\n          }\n          if (patch.lossPct !== void 0) {\n            var lp = clampField(patch.lossPct, PHYSICS_BOUNDS.lossPct, state.lossPct);\n            if (lp !== state.lossPct) {\n              state.lossPct = lp;\n              changed = true;\n            }\n          }\n          if (patch.friction !== void 0) {\n            var fr = clampField(patch.friction, PHYSICS_BOUNDS.friction, state.friction);\n            if (fr !== state.friction) {\n              state.friction = fr;\n              changed = true;\n            }\n          }\n          if (patch.sizePct !== void 0) {\n            var sz = clampField(patch.sizePct, PHYSICS_BOUNDS.sizePct, state.sizePct);\n            if (sz !== state.sizePct) {\n              state.sizePct = sz;\n              changed = true;\n            }\n          }\n          if (patch.gravity !== void 0) {\n            var gv = clampField(patch.gravity, PHYSICS_BOUNDS.gravity, state.gravity);\n            if (gv !== state.gravity) {\n              state.gravity = gv;\n              changed = true;\n            }\n          }\n          if (patch.mouseCollide !== void 0) {\n            var mc = clampField(patch.mouseCollide, PHYSICS_BOUNDS.mouseCollide, state.mouseCollide);\n            if (mc !== state.mouseCollide) {\n              state.mouseCollide = mc;\n              changed = true;\n            }\n          }\n          if (!changed) return;\n          snapshot = Object.assign({}, state);\n          persist();\n          notify();\n        },\n        resetPhysics: function () {\n          state.launchSpeed = PHYSICS_DEFAULTS.launchSpeed;\n          state.lossPct = PHYSICS_DEFAULTS.lossPct;\n          state.friction = PHYSICS_DEFAULTS.friction;\n          state.sizePct = PHYSICS_DEFAULTS.sizePct;\n          state.mouseCollide = PHYSICS_DEFAULTS.mouseCollide;\n          state.gravity = PHYSICS_DEFAULTS.gravity;\n          snapshot = Object.assign({}, state);\n          persist();\n          notify();\n        }\n      };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:607-628](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L607-L628)\n\n两球共用帧循环及后台标志。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n    function masterFrame(ts) {\n      master.raf = null;\n      var dt = master.lastTs === 0 ? 0.016 : Math.min(MAX_DT, (ts - master.lastTs) / 1000);\n      master.lastTs = ts;\n      step(engine, dt, ts);\n      step(alwaysEngine, dt, ts);\n      resolveBallCollision(ts);\n      resolveMouseCollision(engine, ts);\n      resolveMouseCollision(alwaysEngine, ts);\n      if (\n        (engine.raf !== null && needsAnimation(engine)) ||\n        (alwaysEngine.raf !== null && needsAnimation(alwaysEngine))\n      ) {\n        master.raf = window.requestAnimationFrame(masterFrame);\n      }\n    }\n\n    /** 生成一只球：随机一条边外的随机点，瞄准界面中部以初始动能射入。 */\n    function spawnBall(eng, force) {\n      if (!force && !settings.isEnabled()) return;\n      removeBall(eng);\n      if (!force && document.hidden === true) return; // 后台页不空转，回到前台下次 think 再见\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:919-992](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L919-L992)\n\nreasoning partial 触发沿。\n\n<details>\n<summary>查看原文（74行）</summary>\n\n```text\n    // ── 会话挂钩：只盯推理流的开始/结束两个沿 ────────────────────────────────\n    // 语义与 dsh-beautify 一致：partial 里出现带文本的 reasoning 块 = 思考开始；\n    // 该信号消失 = 思考结束。openState 安装完成后再基线化，避免页面加载时\n    // 把历史思考重放成新球。\n    var sessionHook = { id: void 0, unsub: null, opened: false, reasoningOn: false };\n\n    function hasReasoningText(partial) {\n      if (partial === null || partial === void 0 || partial.blocks === void 0) return false;\n      for (var i = 0; i < partial.blocks.length; i++) {\n        var block = partial.blocks[i];\n        if (block !== null && block !== void 0 && block.kind === \"reasoning\" && typeof block.text === \"string\" && block.text.length > 0) {\n          return true;\n        }\n      }\n      return false;\n    }\n\n    function detachSession() {\n      if (sessionHook.unsub !== null) {\n        try {\n          sessionHook.unsub();\n        } catch {\n          // 已经解绑\n        }\n        sessionHook.unsub = null;\n      }\n      sessionHook.id = void 0;\n      sessionHook.opened = false;\n      sessionHook.reasoningOn = false;\n      despawnBall(engine, true); // 切换会话时不留悬空的思考球；常驻球不受影响\n    }\n\n    function baselineSession(snap) {\n      var legacy = snap.chat === void 0 ? void 0 : snap.chat.legacy;\n      sessionHook.reasoningOn = hasReasoningText(legacy === void 0 ? null : legacy.partial);\n    }\n\n    function attachSession(id) {\n      detachSession();\n      sessionHook.id = id;\n      if (id === void 0) return;\n      var binding = ctxSessions().binding(id);\n      var session = binding === void 0 ? void 0 : binding.session;\n      if (session === void 0) return;\n      sessionHook.unsub = session.subscribe(onSessionChange);\n      var snap = session.getSnapshot();\n      if (snap !== void 0 && snap.openState === \"open\") {\n        sessionHook.opened = true;\n        baselineSession(snap);\n      }\n    }\n\n    function onSessionChange() {\n      var binding = ctxSessions().binding(sessionHook.id);\n      var session = binding === void 0 ? void 0 : binding.session;\n      var snap = session === void 0 ? void 0 : session.getSnapshot();\n      if (snap === void 0 || snap.chat === void 0) return;\n\n      // 历史窗口安装完成后才基线 + 判定，防止重放旧思考。\n      if (!sessionHook.opened) {\n        if (snap.openState === \"open\") {\n          sessionHook.opened = true;\n          baselineSession(snap);\n        }\n        return;\n      }\n      if (snap.openState !== \"open\") return;\n\n      var legacy = snap.chat.legacy === void 0 ? void 0 : snap.chat.legacy;\n      var reasoningNow = hasReasoningText(legacy === void 0 ? null : legacy.partial);\n      if (reasoningNow && !sessionHook.reasoningOn) spawnBall(engine, false);\n      else if (!reasoningNow && sessionHook.reasoningOn) despawnBall(engine, false);\n      sessionHook.reasoningOn = reasoningNow;\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:1194-1235](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L1194-L1235)\n\n槽位挂载和清理。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    function apply(ctx) {\n      ctxRef = ctx;\n      var disposeList = ctx.sessions.list.subscribe(refresh);\n      var disposeStyles = ctx.effect(injectStyles, \"think-bounce-pet: styles\");\n\n      ctx.slots.inject(\"settings.section\", () =>\n        ctx.slots.register(\n          { name: \"settings.section\", id: \"think-bounce-pet\", order: 12, label: () => \"宠物 · 思考弹球\" },\n          PetSettingsSection\n        )\n      );\n      ctx.slots.inject(\"shell.overlay\", () =>\n        ctx.slots.register({ name: \"shell.overlay\", id: \"think-bounce-pet-overlay\", order: 85, label: \"思考弹球宠物\" }, PetOverlay)\n      );\n\n      function onResize() {\n        clampIntoViewport(engine);\n        clampIntoViewport(alwaysEngine);\n      }\n      window.addEventListener(\"resize\", onResize);\n      window.addEventListener(\"pointermove\", onPointerMove);\n      document.addEventListener(\"mouseleave\", onMouseLeave);\n      // 设置变化时立刻把尺寸应用到现有球（即使球在静止/被抓状态下）。\n      var disposeSettings = settings.subscribe(function () {\n        applyBallSize(engine);\n        applyBallSize(alwaysEngine);\n      });\n      refresh();\n      spawnAlwaysBall();\n\n      ctx.effect(function () {\n        return function () {\n          disposeList();\n          disposeStyles();\n          disposeSettings();\n          window.removeEventListener(\"resize\", onResize);\n          window.removeEventListener(\"pointermove\", onPointerMove);\n          document.removeEventListener(\"mouseleave\", onMouseLeave);\n          destroy();\n          ctxRef = null;\n        };\n      }, \"think-bounce-pet: lifecycle\");\n```\n\n</details>\n\n#### 缺口\n\n- 目标 DSH 实际 partial 事件顺序及浏览器后台行为未测\n  **影响：**不能证明所有推理都恰好有一次出现/消失\n  **进一步探讨：**真实会话覆盖短推理、长推理、无文本推理、切会话与后台回前台\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 动画状态、误触和资源开销有哪些重要边界？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n判断仅依赖 legacy.partial 中带文本的 reasoning 块，不等于模型真实思考开始/结束；没有文本的推理不会生成球，partial 暂时清空会令球提前消失，切到已在思考的会话会先基线化而不重放球。启用默认 true，常驻球永不停（MIN_SPEED=46）并每帧改 transform/碰撞，即使没有推理也持续占用前台动画资源；真实 CPU/电量未测。图层 pointer-events:none，但球本体 pointer-events:auto，在屏幕上可抓取/碰撞，可能遮挡某些点击；鼠标碰撞模式不能抓球是明确功能取舍。localStorage 读取失败/损坏会回默认启用，用户原先关闭的偏好可能丢失。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:10-20](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L10-L20)\n\n最低速度和物理常量。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    // ── Tuning constants ──────────────────────────────────────────────────────\n    // 物理三参数（初速 / 碰撞损耗 / 摩擦力）已搬进设置页，默认值见\n    // PHYSICS_DEFAULTS；这里只留结构常量。MIN_SPEED 是「最低速度」：\n    // 任何球的速度都不会低于它，因此球永远不会真正停下来。\n    var MIN_SPEED = 46;\n    var MIN_BOUNCE_HEIGHT = 80; // 重力模式下贴地至少弹起的可见高度（px），避免贴地滚/抽搐\n    var RADIUS = 72; // 与 CSS 尺寸 144px 对应\n    var SPAWN_POP_MS = 180; // 出生放大动画时长\n    var SHRINK_MS = 400; // think 结束后的缩小消失动画时长\n    var FRICTION_SCALE = 0.04; // 摩擦力滑条值(0-100) → 阻尼系数(1/s)，100 ⇒ 4/s\n    var GRAVITY_BASE = 1500; // 重力滑条 50 ⇒ 1 倍重力基准加速度（px/s²），100 ⇒ 2 倍\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:101-113](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L101-L113)\n\n坏设置回默认 enabled true。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    var settings = (function () {\n      var state = (function () {\n        try {\n          var raw = window.localStorage.getItem(SETTINGS_KEY);\n          if (raw !== null) return normalizeSettings(JSON.parse(raw));\n          // v0.1 迁移：旧版只有 \"0\"/\"1\" 的 enabled 键。\n          var legacy = window.localStorage.getItem(LEGACY_ENABLED_KEY);\n          if (legacy !== null) return normalizeSettings({ enabled: legacy !== \"0\" });\n        } catch {\n          // 解析失败按默认处理\n        }\n        return normalizeSettings(null);\n      })();\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:607-620](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L607-L620)\n\n前台帧循环。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    function masterFrame(ts) {\n      master.raf = null;\n      var dt = master.lastTs === 0 ? 0.016 : Math.min(MAX_DT, (ts - master.lastTs) / 1000);\n      master.lastTs = ts;\n      step(engine, dt, ts);\n      step(alwaysEngine, dt, ts);\n      resolveBallCollision(ts);\n      resolveMouseCollision(engine, ts);\n      resolveMouseCollision(alwaysEngine, ts);\n      if (\n        (engine.raf !== null && needsAnimation(engine)) ||\n        (alwaysEngine.raf !== null && needsAnimation(alwaysEngine))\n      ) {\n        master.raf = window.requestAnimationFrame(masterFrame);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:908-992](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L908-L992)\n\n常驻球和 reasoning 文本信号。\n\n<details>\n<summary>查看原文（85行）</summary>\n\n```text\n    // ── 常驻球：启用插件期间一直显示，不受 think 状态影响 ───────────────────\n    function spawnAlwaysBall() {\n      if (!settings.isEnabled()) {\n        removeBall(alwaysEngine);\n        return;\n      }\n      // 常驻球用 force=true：只要插件启用就确保存在（即使页面当前在后台，\n      // 回到前台也能立即看到；requestAnimationFrame 本身会在后台暂停，不会白耗）。\n      if (alwaysEngine.ball === null) spawnBall(alwaysEngine, true);\n    }\n\n    // ── 会话挂钩：只盯推理流的开始/结束两个沿 ────────────────────────────────\n    // 语义与 dsh-beautify 一致：partial 里出现带文本的 reasoning 块 = 思考开始；\n    // 该信号消失 = 思考结束。openState 安装完成后再基线化，避免页面加载时\n    // 把历史思考重放成新球。\n    var sessionHook = { id: void 0, unsub: null, opened: false, reasoningOn: false };\n\n    function hasReasoningText(partial) {\n      if (partial === null || partial === void 0 || partial.blocks === void 0) return false;\n      for (var i = 0; i < partial.blocks.length; i++) {\n        var block = partial.blocks[i];\n        if (block !== null && block !== void 0 && block.kind === \"reasoning\" && typeof block.text === \"string\" && block.text.length > 0) {\n          return true;\n        }\n      }\n      return false;\n    }\n\n    function detachSession() {\n      if (sessionHook.unsub !== null) {\n        try {\n          sessionHook.unsub();\n        } catch {\n          // 已经解绑\n        }\n        sessionHook.unsub = null;\n      }\n      sessionHook.id = void 0;\n      sessionHook.opened = false;\n      sessionHook.reasoningOn = false;\n      despawnBall(engine, true); // 切换会话时不留悬空的思考球；常驻球不受影响\n    }\n\n    function baselineSession(snap) {\n      var legacy = snap.chat === void 0 ? void 0 : snap.chat.legacy;\n      sessionHook.reasoningOn = hasReasoningText(legacy === void 0 ? null : legacy.partial);\n    }\n\n    function attachSession(id) {\n      detachSession();\n      sessionHook.id = id;\n      if (id === void 0) return;\n      var binding = ctxSessions().binding(id);\n      var session = binding === void 0 ? void 0 : binding.session;\n      if (session === void 0) return;\n      sessionHook.unsub = session.subscribe(onSessionChange);\n      var snap = session.getSnapshot();\n      if (snap !== void 0 && snap.openState === \"open\") {\n        sessionHook.opened = true;\n        baselineSession(snap);\n      }\n    }\n\n    function onSessionChange() {\n      var binding = ctxSessions().binding(sessionHook.id);\n      var session = binding === void 0 ? void 0 : binding.session;\n      var snap = session === void 0 ? void 0 : session.getSnapshot();\n      if (snap === void 0 || snap.chat === void 0) return;\n\n      // 历史窗口安装完成后才基线 + 判定，防止重放旧思考。\n      if (!sessionHook.opened) {\n        if (snap.openState === \"open\") {\n          sessionHook.opened = true;\n          baselineSession(snap);\n        }\n        return;\n      }\n      if (snap.openState !== \"open\") return;\n\n      var legacy = snap.chat.legacy === void 0 ? void 0 : snap.chat.legacy;\n      var reasoningNow = hasReasoningText(legacy === void 0 ? null : legacy.partial);\n      if (reasoningNow && !sessionHook.reasoningOn) spawnBall(engine, false);\n      else if (!reasoningNow && sessionHook.reasoningOn) despawnBall(engine, false);\n      sessionHook.reasoningOn = reasoningNow;\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:1007-1010](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L1007-L1010)\n\n球本体接收指针事件。\n\n```text\n.dsh-tbp-layer{position:fixed;inset:0;z-index:9995;pointer-events:none;overflow:hidden}\n.dsh-tbp-ball{position:absolute;left:0;top:0;width:144px;height:144px;margin:-72px 0 0 -72px;border-radius:0;pointer-events:auto;cursor:grab;touch-action:none;will-change:transform;opacity:1}\n.dsh-tbp-ball[data-grab=\"1\"]{cursor:grabbing}\n.dsh-tbp-ball[data-state=\"dying\"]{pointer-events:none}\n```\n\n#### 缺口\n\n- 实际 CPU/电量、遮挡率和错误状态频率未测\n  **影响：**不能估计持续使用成本或说可完全无干扰\n  **进一步探讨：**测前台/后台帧时间、电量、关键操作命中与推理事件对齐\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装、维护与恢复需要什么，哪些实现可复用？\n\n**研究主题：**依赖、兼容与流程、工程质量与复用\n\n#### 完整回答\n\n需要 DSH Web 客户端 runtime、sessions/slots 服务和浏览器 requestAnimationFrame、localStorage；首次安装并重启 Web，配置可在设置页调整。持续维护依赖 legacy.partial.blocks 形态和 overlay/settings 槽位，宿主结构变更会使信号或界面失效；重力/碰撞每帧资源可通过设置调低但常驻仍在。失败恢复可在设置中关启用或卸载以移除 DOM/监听；本地存储拒写时偏好仅驻内存。两球共用一个 rAF、dt 上限、尺寸与碰撞箱同步、清理器集中是可复用的动画工程设计，但无独立性能测量。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-36](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/package.json#L1-L36)\n\nWeb 客户端包和注入。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n{\n  \"name\": \"dsh-think-bounce-pet\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Think-step bounce pet for the DeepSeek Harness Web UI: a ball launches in from a random screen edge whenever a reasoning step starts, bounces around with energy loss, can be poked or flung with the mouse, and shrinks away when the think step ends\",\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib/index.js\",\n    \"lib/client.js\",\n    \"cordis.patch.yml\"\n  ],\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/9livewolf/dsh-think-bounce-pet.git\"\n  },\n  \"homepage\": \"https://github.com/9livewolf/dsh-think-bounce-pet\",\n  \"bugs\": {\n    \"url\": \"https://github.com/9livewolf/dsh-think-bounce-pet/issues\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\"\n      ]\n    }\n  }\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:16-50](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/README.md#L16-L50)\n\n设置、安装和结构说明。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n````text\n## 设置\n\n| 参数 | 默认 | 范围 | 说明 |\n|---|---|---|---|\n| 启用 | 开 | — | 关闭后移除常驻球与思考球，也不再随 think 生成球 |\n| 鼠标碰撞 | 0（关） | 0–100 | 0=关闭；50=较大推力（400px/s）；100=50 的 5 倍推力；开启时鼠标为障碍且不能抓取球 |\n| 重力 | 0（无） | 0–100 | 0=当前无重力；50=1 倍重力；100=2 倍重力 |\n| 初速度 | 3440 px/s | 200–4000 | 发射、拍飞、扔出的初始速率 |\n| 碰撞损耗 | 14 % | 0–90 | 每次碰壁损失的速度比例 |\n| 摩擦力 | 0（无） | 0–100 | 指数阻尼强度（100 ≈ 每秒速度 ×0.018） |\n| 球体大小 | 86 % | 20–200 | 以当前 144px 直径/72px 半径为 100% 基准，实时缩放视觉尺寸与碰撞箱 |\n\n参数改动立即生效（飞行中的球下一帧就按新值计算），持久化在\nlocalStorage 的 `dsh-think-bounce-pet.settings`；v0.1 的旧开关键会自动迁移。\n最低速度固定为 46 px/s，不随以上设置项修改；重力模式下贴地时会额外保证竖直方向至少能弹起约 80px 高度，避免球贴地滚/抽搐。\n\n## 安装 / 更新\n\n```powershell\n# 从 GitHub 安装\n& '.\\node_modules\\.bin\\dsh.cmd' plugin --profile web add github:9livewolf/dsh-think-bounce-pet\n\n# 更新\n& '.\\node_modules\\.bin\\dsh.cmd' plugin --profile web update dsh-think-bounce-pet\n```\n\n客户端半边改动只需浏览器 F5；本插件无宿主侧逻辑，装好后重启一次 `dsh web`\n即可长期生效。\n\n## 结构\n\n标准 DSH 双面插件：宿主半边 `lib/index.js` 为空壳（纯客户端 UI 插件）；\n浏览器半边 `lib/client.js` 通过 `shell.overlay` 槽位挂载全屏\n`pointer-events:none` 图层（每颗球各自一个图层，球本体 `pointer-events:auto`），通过\n`settings.section` 槽位提供设置页。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:218-235](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L218-L235)\n\n尺寸与碰撞半径同步。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    /** 当前设置下的实际半径：以 RADIUS 为 100% 基准，sizePct 动态缩放。 */\n    function currentRadius() {\n      return RADIUS * settings.getSnapshot().sizePct / 100;\n    }\n\n    /** 让 DOM 上的球尺寸与当前设置中的碰撞半径保持一致（拖动滑条实时生效）。 */\n    function applyBallSize(eng) {\n      var el = eng.ball;\n      if (el === null) return;\n      var r = currentRadius();\n      // 尺寸没变就不重复写 style，避免每帧无谓的样式重算。\n      if (eng.lastRadius === r) return;\n      eng.lastRadius = r;\n      el.style.width = (r * 2).toFixed(2) + \"px\";\n      el.style.height = (r * 2).toFixed(2) + \"px\";\n      el.style.marginLeft = \"-\" + r.toFixed(2) + \"px\";\n      el.style.marginTop = \"-\" + r.toFixed(2) + \"px\";\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:279-301](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L279-L301)\n\n共用帧循环。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    // 两颗球共用一个 rAF 主循环：这样同一帧里可以统一积分 + 做球间碰撞，\n    // 避免两颗球各自跑一套 rAF 导致碰撞时序不稳定。\n    var master = { raf: null, lastTs: 0 };\n\n    function startLoop(eng) {\n      if (eng.raf === null && typeof window.requestAnimationFrame === \"function\") {\n        eng.raf = 1;\n        if (master.raf === null) {\n          master.lastTs = 0;\n          master.raf = window.requestAnimationFrame(masterFrame);\n        }\n      }\n    }\n\n    function stopLoop(eng) {\n      if (eng.raf !== null) {\n        eng.raf = null;\n        if (master.raf !== null && engine.raf === null && alwaysEngine.raf === null) {\n          window.cancelAnimationFrame(master.raf);\n          master.raf = null;\n        }\n      }\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:1224-1235](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L1224-L1235)\n\n卸载清理。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      ctx.effect(function () {\n        return function () {\n          disposeList();\n          disposeStyles();\n          disposeSettings();\n          window.removeEventListener(\"resize\", onResize);\n          window.removeEventListener(\"pointermove\", onPointerMove);\n          document.removeEventListener(\"mouseleave\", onMouseLeave);\n          destroy();\n          ctxRef = null;\n        };\n      }, \"think-bounce-pet: lifecycle\");\n```\n\n</details>\n\n#### 缺口\n\n- 真实安装成功率、持续耗电和故障恢复耗时未核\n  **影响：**不能量化总体使用代价\n  **进一步探讨：**目标浏览器测安装、开关、卸载及资源性能\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何保持娱乐反馈而不误示推理状态或影响工作？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n未验证方向是把思考球明确标记为“当前可见 reasoning 文本动画”，由宿主更稳定的推理生命周期事件驱动；为常驻球提供默认关闭、prefers-reduced-motion 和帧率/暂停选项，保存失败给可见提示。最小验证将模型思考事件与球出现/消失逐帧对照，并测无推理闲置、低电量/后台、触控与关键按钮遮挡。当前可作为非关键个人装饰试用，但不要把出现时间当实际推理时长；对低性能/需无障碍减动效的用户建议先观察或关闭。推荐 observe，待性能与可访问性验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:919-992](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L919-L992)\n\n当前基于 partial 文本的近似信号。\n\n<details>\n<summary>查看原文（74行）</summary>\n\n```text\n    // ── 会话挂钩：只盯推理流的开始/结束两个沿 ────────────────────────────────\n    // 语义与 dsh-beautify 一致：partial 里出现带文本的 reasoning 块 = 思考开始；\n    // 该信号消失 = 思考结束。openState 安装完成后再基线化，避免页面加载时\n    // 把历史思考重放成新球。\n    var sessionHook = { id: void 0, unsub: null, opened: false, reasoningOn: false };\n\n    function hasReasoningText(partial) {\n      if (partial === null || partial === void 0 || partial.blocks === void 0) return false;\n      for (var i = 0; i < partial.blocks.length; i++) {\n        var block = partial.blocks[i];\n        if (block !== null && block !== void 0 && block.kind === \"reasoning\" && typeof block.text === \"string\" && block.text.length > 0) {\n          return true;\n        }\n      }\n      return false;\n    }\n\n    function detachSession() {\n      if (sessionHook.unsub !== null) {\n        try {\n          sessionHook.unsub();\n        } catch {\n          // 已经解绑\n        }\n        sessionHook.unsub = null;\n      }\n      sessionHook.id = void 0;\n      sessionHook.opened = false;\n      sessionHook.reasoningOn = false;\n      despawnBall(engine, true); // 切换会话时不留悬空的思考球；常驻球不受影响\n    }\n\n    function baselineSession(snap) {\n      var legacy = snap.chat === void 0 ? void 0 : snap.chat.legacy;\n      sessionHook.reasoningOn = hasReasoningText(legacy === void 0 ? null : legacy.partial);\n    }\n\n    function attachSession(id) {\n      detachSession();\n      sessionHook.id = id;\n      if (id === void 0) return;\n      var binding = ctxSessions().binding(id);\n      var session = binding === void 0 ? void 0 : binding.session;\n      if (session === void 0) return;\n      sessionHook.unsub = session.subscribe(onSessionChange);\n      var snap = session.getSnapshot();\n      if (snap !== void 0 && snap.openState === \"open\") {\n        sessionHook.opened = true;\n        baselineSession(snap);\n      }\n    }\n\n    function onSessionChange() {\n      var binding = ctxSessions().binding(sessionHook.id);\n      var session = binding === void 0 ? void 0 : binding.session;\n      var snap = session === void 0 ? void 0 : session.getSnapshot();\n      if (snap === void 0 || snap.chat === void 0) return;\n\n      // 历史窗口安装完成后才基线 + 判定，防止重放旧思考。\n      if (!sessionHook.opened) {\n        if (snap.openState === \"open\") {\n          sessionHook.opened = true;\n          baselineSession(snap);\n        }\n        return;\n      }\n      if (snap.openState !== \"open\") return;\n\n      var legacy = snap.chat.legacy === void 0 ? void 0 : snap.chat.legacy;\n      var reasoningNow = hasReasoningText(legacy === void 0 ? null : legacy.partial);\n      if (reasoningNow && !sessionHook.reasoningOn) spawnBall(engine, false);\n      else if (!reasoningNow && sessionHook.reasoningOn) despawnBall(engine, false);\n      sessionHook.reasoningOn = reasoningNow;\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:908-916](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L908-L916)\n\n启用时常驻球。\n\n```text\n    // ── 常驻球：启用插件期间一直显示，不受 think 状态影响 ───────────────────\n    function spawnAlwaysBall() {\n      if (!settings.isEnabled()) {\n        removeBall(alwaysEngine);\n        return;\n      }\n      // 常驻球用 force=true：只要插件启用就确保存在（即使页面当前在后台，\n      // 回到前台也能立即看到；requestAnimationFrame 本身会在后台暂停，不会白耗）。\n      if (alwaysEngine.ball === null) spawnBall(alwaysEngine, true);\n```\n\n**依据 3 · 源码核查**：[lib/client.js:125-130](https://github.com/9livewolf/dsh-think-bounce-pet/blob/3bfe9cb32afea176937379351af39dfd46f955f4/lib/client.js#L125-L130)\n\n存储失败静默。\n\n```text\n      function persist() {\n        try {\n          window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(state));\n        } catch {\n          // 配额/隐私模式：仅保留内存态\n        }\n```\n\n#### 缺口\n\n- 生命周期 API/减动效和性能策略未实现/测试\n  **影响：**不能计作当前插件能力\n  **进一步探讨：**隔离原型对照体验和帧耗，并核宿主可用事件\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：13c4a7b97b4932e846e42391df777ef9a71313ea2518fddb329cd3d4a7ccb0cf。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1252 | 1058 | 160 | — |\n| .md | source | 1 | 50 | — | — | 605 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 常驻球 | 装饰 UI | 默认开启，前台持续动画 |\n| 思考球 | 可见推理文本反馈 | 不等于真实模型思考状态 |\n| 物理设置 | 调速度/重力/碰撞 | localStorage 坏数据回默认 |\n\n## 工程亮点\n\n共用 rAF、dt 上限、设置与碰撞箱同步可借鉴；性能和真实事件对齐需单独验证。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README、package、Host/Client；未执行目标代码、浏览器/宿主或性能测试；旧 META 仅复用。\n- 下一步：真实 DSH Web 测推理空块、短/长推理、切会话、后台恢复、坏 localStorage、操作遮挡、帧耗和减动效。\n",
         "metadata": {
             "repository": "9livewolf/dsh-think-bounce-pet",
             "repository_id": 1343882273,

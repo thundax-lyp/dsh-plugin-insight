@@ -24,36 +24,64 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-04-github-1368115538-root-directory-0",
+                    "id": "2026-10-22-02-github-1368115538-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T04:19:19.770Z",
+                    "retrieved_at": "2026-10-22T06:27:29.219Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-04-github-1368115538-root-author",
+                    "id": "2026-10-22-02-github-1368115538-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/9Ashwin/dsh-session-rename",
+                            "commit": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
+                            "path": "README.md",
+                            "content_sha256": "795b5c918d27051b00b13f9d2c6e33dced11cf1a47b42866065dddd04015a21d"
+                        }
+                    ],
                     "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-                    "captured_at": "2026-10-21T04:19:19.770Z",
-                    "summary": "给 DSH 模型提供 rename_session 工具，设置当前或已加载会话的显式标题。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:27:29.219Z",
+                    "summary": "向模型提供 rename_session 工具，显式设置当前或已加载会话标题。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-04-github-1368115538-root-source",
+                    "id": "2026-10-22-02-github-1368115538-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js",
+                    "url": "https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/9Ashwin/dsh-session-rename",
+                            "commit": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
+                            "path": "README.md",
+                            "content_sha256": "795b5c918d27051b00b13f9d2c6e33dced11cf1a47b42866065dddd04015a21d"
+                        },
+                        {
+                            "repository_url": "https://github.com/9Ashwin/dsh-session-rename",
+                            "commit": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
+                            "path": "package.json",
+                            "content_sha256": "62802a6dc565f2169cd2e3e21c6061b4339055a7ec8162ed23722808d250c1b7"
+                        },
+                        {
+                            "repository_url": "https://github.com/9Ashwin/dsh-session-rename",
+                            "commit": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
+                            "path": "index.js",
+                            "content_sha256": "f736eb886ff5f01a4767f14b2c7299f980bf32f6b538f19f5d171431a2e08491"
+                        }
+                    ],
                     "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-                    "captured_at": "2026-10-21T04:19:19.770Z",
-                    "summary": "核查 index.js、package.json；index手写工具schema并校验title/session_id，默认exec.agent.session，显式目标用ctx.agents.get；调用sessionTitle.rename后返回title和eventSeq。",
-                    "artifact": "data/runs/2026-10-21-04/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:27:29.219Z",
+                    "summary": "核查 README.md、package.json、index.js；模型调用工具→解析当前/指定已加载会话→sessionTitle.rename 写标题事件。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "完整抽读单index与manifest；未验证宿主服务/事件真实行为。",
+                        "固定 SHA 静态审阅 README、package、index.js；未运行目标插件/宿主。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +92,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户希望用需求ID或任务名定位会话，由Agent组织标题并调用工具；不做自动总结或业务状态管理。",
+                    "text": "按需求编号为 DSH 会话命名，便于在历史列表定位。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +103,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "index手写工具schema并校验title/session_id，默认exec.agent.session，显式目标用ctx.agents.get；调用sessionTitle.rename后返回title和eventSeq。",
+                    "text": "模型调用工具→解析当前/指定已加载会话→sessionTitle.rename 写标题事件。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +121,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "完整抽读单index与manifest；未验证宿主服务/事件真实行为。",
+                    "text": "固定 SHA 静态审阅 README、package、index.js；未运行目标插件/宿主。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +139,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "纯host零运行依赖，需tools/agents和可选取得的sessionTitle，冷会话显式失败。",
+                    "text": "GitHub 安装、纯 Host 包、MIT，README 称零运行时依赖。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +157,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首次匹配宿主schema，持续标题规则/误改恢复；无新服务现金费证据，定位收益未测。",
+                    "text": "| 项目 | 边界 |\n| --- | --- |\n| 集成 | DSH tools/agents/sessionTitle |\n| 治理 | 模型发起、可指定已加载会话 |\n| 测试 | 标题持久性与权限 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +175,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先用当前会话改成简短需求ID；指定别的会话前确认目标已加载且确需修改，记住显式标题会取代自动生成。",
+                    "text": "先仅省略 session_id 命名当前会话；多用户前核宿主权限。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +193,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "方便定位对话，不能代表需求状态或完成验收。",
+                    "text": "| 能力 | 状态 |\n| --- | --- |\n| 当前改名 | 源码有路径 |\n| 指定会话 | 仅已加载 |\n| 标题钉住 | 作者描述的宿主语义 |",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +211,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "工具边界小、明确参数/冷会话错误、不import宿主包避免realpath解析冲突可借鉴；需靠实际schema兼容验证。",
+                    "text": "tools.register 手写参数/结果 schema、执行校验；动态获取 sessionTitle 服务；isConcurrencySafe:false。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +229,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "technical_innovation",
                     "basis": "interpretation",
-                    "text": "相对只有host API或人手标题入口，增量是把sessionTitle.rename暴露为模型工具，支持当前会话默认，零官方包import减少链接路径冲突。标题持久语义由宿主提供，不是插件新存储机制。",
+                    "text": "用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +247,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "模型显式标题与用户手工标题是否应同等钉住？宿主rename会生成user来源标题并覆盖自动生成，插件不区分模型与人工意图；指定任意已加载session_id可改别的会话，未做“仅当前会话”的工具层限制。调用返回事件seq也不证明持久化已完成。",
+                    "text": "可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +265,16 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "待验证假设：默认只允许当前会话，并把模型建议标题与用户固定标题区分来源，可减少跨会话误改和自动标题永久被压制。由任意loaded目标与显式user语义推导，未实现。用双会话、自动标题在途和用户已有固定标题对照误覆盖与找回成本；跨会话改名需显式目标授权。",
+                    "text": "默认仅当前会话、跨会话改名显式授权能缩小误操作面；尚未实现。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +283,15 @@
                             "fingerprint": "f073bfa1fa7e59832df5efacb5b94ee44749326c"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T04:19:19.770Z",
+                    "reviewed_at": "2026-10-22T06:27:29.219Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T04:19:19.770Z",
+            "last_checked_at": "2026-10-22T06:27:29.219Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-                "reviewed_at": "2026-10-21T04:19:19.770Z",
+                "reviewed_at": "2026-10-22T06:27:29.219Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -274,16 +302,16 @@
                 ],
                 "technical": {
                     "criteria": {
-                        "novelty": 9,
-                        "mechanism": 0,
+                        "novelty": 0,
+                        "mechanism": 8,
                         "transferability": 5,
-                        "simplification": 4
+                        "simplification": 8
                     },
-                    "rationale": "novelty 小幅：host API工具包装；mechanism 未识别新增：直接rename未改原理；transferability 小幅：手写schema适配可借鉴；simplification 小幅：当前会话缺省减少参数。",
+                    "rationale": "薄工具封装解决实用入口，核心语义由宿主实现。",
                     "basis": "interpretation",
-                    "score": 18,
+                    "score": 21,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ]
                 },
                 "business": {
@@ -291,45 +319,45 @@
                         "workflow": 9,
                         "delivery": 8,
                         "reach": 5,
-                        "economics": 0
+                        "economics": 4
                     },
-                    "rationale": "workflow 小幅：任务ID标题自动衔接；delivery 小幅：会话定位标题；reach 小幅：模型可调用；economics 未识别：无成本结构变化。",
+                    "rationale": "编号命名便于检索，但跨会话权限需查。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-21-04-github-1368115538-root-source"
+                        "2026-10-22-02-github-1368115538-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "需要需求ID标题的用户可先只改当前会话；指定其他会话前核目标加载及授权，确认显式标题覆盖自动生成。",
+                "reason": "适合个人隔离会话按明确规则试用；共享环境先验证跨会话权限。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "通过任务名定位对话的合格结果明确。"
+                        "score": 15,
+                        "rationale": "会话标题定位需求明确。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "把原生rename暴露给Agent是局部便利，非需求状态管理。"
+                        "score": 13,
+                        "rationale": "模型可直接按工作项改名。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "完整单入口与冷会话错误已读，事件seq不证明持久完成。"
+                        "rationale": "固定源码可查，宿主行为未运行。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "零外部服务，误改可人工恢复，但跨会话目标和schema需核。"
+                        "score": 10,
+                        "rationale": "依赖宿主服务和跨会话目标授权。"
                     }
                 },
-                "score": 57,
+                "score": 51,
                 "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:27:29.219Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-04-github-1368115538-root-source"
+                    "2026-10-22-02-github-1368115538-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,89 +382,43 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T04:06:46Z",
-            "analysis_sha256": "03d15d967d45bc4e90901cbf1648760ea6d1b4cb5228236433aab36edcc557e6"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "ca35298c3b67ca55b87c045af510edb7daa398128ce451826ea52c2e41d1ffd4"
         },
         "publication.metadata": "data/plugins/9ashwin--dsh-session-rename/META.json",
         "publication.summaries": {
-            "text": "给 DSH 模型提供 rename_session 工具，设置当前或已加载会话的显式标题。",
+            "text": "向模型提供 rename_session 工具，显式设置当前或已加载会话标题。",
             "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
             "source_url": "https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md"
         },
         "publication.capabilities": {
             "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
             "items": {
-                "模型工具": "rename_session显式标题工具。"
-            }
+                "模型工具": "rename_session 显式改名"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | 设置会话标题 | 仅已加载目标、授权未核 |"
         },
         "publication.advice": {
             "revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-            "text": "先用当前会话改成简短需求ID；指定别的会话前确认目标已加载且确需修改，记住显式标题会取代自动生成。"
+            "text": "先仅省略 session_id 命名当前会话；多用户前核宿主权限。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/9ashwin--dsh-session-rename",
-        "reports": "# dsh-session-rename\n\n> 给 DSH 模型提供 rename_session 工具，设置当前或已加载会话的显式标题。\n\n## 使用建议\n\n先用当前会话改成简短需求ID；指定别的会话前确认目标已加载且确需修改，记住显式标题会取代自动生成。\n\n核查状态：源码确认模型侧重命名适配；未运行宿主，不验证标题事件落盘或UI刷新。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：用户希望用需求ID或任务名定位会话，由Agent组织标题并调用工具；不做自动总结或业务状态管理。\n- **亮点**：相对只有host API或人手标题入口，增量是把sessionTitle.rename暴露为模型工具，支持当前会话默认，零官方包import减少链接路径冲突。标题持久语义由宿主提供，不是插件新存储机制。\n- **思考**：模型显式标题与用户手工标题是否应同等钉住？宿主rename会生成user来源标题并覆盖自动生成，插件不区分模型与人工意图；指定任意已加载session_id可改别的会话，未做“仅当前会话”的工具层限制。调用返回事件seq也不证明持久化已完成。\n- **建议**：待验证假设：默认只允许当前会话，并把模型建议标题与用户固定标题区分来源，可减少跨会话误改和自动标题永久被压制。由任意loaded目标与显式user语义推导，未实现。用双会话、自动标题在途和用户已有固定标题对照误覆盖与找回成本；跨会话改名需显式目标授权。\n\n## 场景与替代办法\n\n用户希望用需求ID或任务名定位会话，由Agent组织标题并调用工具；不做自动总结或业务状态管理。\n\n参照直接host API和手工标题；未发现新机制或业务流程。\n\n## 能力清单\n\n- **模型工具**：rename_session显式标题工具。\n\n## 依赖与流程\n\nindex手写工具schema并校验title/session_id，默认exec.agent.session，显式目标用ctx.agents.get；调用sessionTitle.rename后返回title和eventSeq。\n\nDSH tools、agents、sessionTitle及当前exec.agent；持久化/展示归宿主。\n\n组织title→校参数→解析当前或已加载会话→rename→返回seq/title；冷会话/服务缺失拒绝。\n\n纯host零运行依赖，需tools/agents和可选取得的sessionTitle，冷会话显式失败。\n\n## 成本与效果\n\n首次匹配宿主schema，持续标题规则/误改恢复；无新服务现金费证据，定位收益未测。\n\n方便定位对话，不能代表需求状态或完成验收。\n\n## 核心贡献\n\n相对只有host API或人手标题入口，增量是把sessionTitle.rename暴露为模型工具，支持当前会话默认，零官方包import减少链接路径冲突。标题持久语义由宿主提供，不是插件新存储机制。\n\n## 关键质疑\n\n模型显式标题与用户手工标题是否应同等钉住？宿主rename会生成user来源标题并覆盖自动生成，插件不区分模型与人工意图；指定任意已加载session_id可改别的会话，未做“仅当前会话”的工具层限制。调用返回事件seq也不证明持久化已完成。\n\n## 工程亮点\n\n工具边界小、明确参数/冷会话错误、不import宿主包避免realpath解析冲突可借鉴；需靠实际schema兼容验证。\n\n固定源码依据：[index.js](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js)、[package.json](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/package.json)。\n\n## 未来设计假设（未验证）\n\n待验证假设：默认只允许当前会话，并把模型建议标题与用户固定标题区分来源，可减少跨会话误改和自动标题永久被压制。由任意loaded目标与显式user语义推导，未实现。用双会话、自动标题在途和用户已有固定标题对照误覆盖与找回成本；跨会话改名需显式目标授权。\n\n隔离宿主验证当前/跨会话/冷会话、空白归一、自动生成竞争与落盘；本轮不执行。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1e41edcc84b43c610f81845da00938870f228a7c28763086b99f644fa47567f3。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 117 | 78 | 31 | — |\n| .md | source | 1 | 95 | — | — | 918 |\n| .mjs | source | 1 | 131 | 104 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.0；版本日期：2026-09-13（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[f073bfa1](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)；本轮基准：2026-10-21T04:06:46Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：完整抽读单index与manifest；未验证宿主服务/事件真实行为。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-session-rename\n\n> 向模型提供 rename_session 工具，显式设置当前或已加载会话标题。\n\n## 研究范围\n\n- **仓库**：[9Ashwin/dsh-session-rename](https://github.com/9Ashwin/dsh-session-rename)\n- **版本号**：0.1.0（[固定提交 f073bfa1fa7e59832df5efacb5b94ee44749326c](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)）\n- **版本日期**：2026-09-13（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码实现模型显式改名；跨会话 session_id 无插件级权限校验，持久化/钉住依赖宿主。\n\n## 洞察短评\n\n- **用途**：按需求编号为 DSH 会话命名，便于在历史列表定位。\n- **亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。\n- **思考**：可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。\n- **建议**：默认仅当前会话、跨会话改名显式授权能缩小误操作面；尚未实现。详见[Q05](#research-q05)。\n\n采用建议：先仅省略 session_id 命名当前会话；多用户前核宿主权限。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。\n\n## 关键质疑\n\n可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n默认仅当前会话、跨会话改名显式授权能缩小误操作面；尚未实现。详见[Q05](#research-q05)。\n\n固定 SHA 隔离环境核模型工具、标题事件、重载持久性、冷会话错误与跨用户权限。\n\n## 场景与替代办法\n\n按需求编号为 DSH 会话命名，便于在历史列表定位。\n\n宿主有标题 API，但模型没有可见改名工具；本包增加薄封装。\n\n## 依赖与流程\n\n| 服务 | 用途 | 缺失时 |\n| --- | --- | --- |\n| tools | 注册模型工具 | 插件无法加载 |\n| agents | 查已加载会话 | 无指定目标 |\n| sessionTitle | 实际改名 | 调用报错 |\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 规则 | 确定需求 ID | 标题可追溯 |\n| 调用 | 默认当前会话 | 无误指目标 |\n| 验证 | 重载/多用户测试 | 权限与标题正确 |\n\n## 成本与效果\n\n| 项目 | 边界 |\n| --- | --- |\n| 集成 | DSH tools/agents/sessionTitle |\n| 治理 | 模型发起、可指定已加载会话 |\n| 测试 | 标题持久性与权限 |\n\n| 能力 | 状态 |\n| --- | --- |\n| 当前改名 | 源码有路径 |\n| 指定会话 | 仅已加载 |\n| 标题钉住 | 作者描述的宿主语义 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核模型改名工具的目标作用域与宿主标题语义。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 工具填补什么缺口，会自动生成标题吗？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件注册模型可见 rename_session 工具，title 必填；模型决定何时调用与标题内容，插件没有自动总结或触发。未给 session_id 时使用当前执行 agent 的会话。它补的是模型发起显式改名入口，而不是 UI 改名卡片或自动标题模型。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-24](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md#L3-L24)\n\n作者定位及标题语义。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nA [DSH (DeepSeek Harness)](https://github.com/deepseek-ai/deepseek-harness) plugin that gives the **model** a `rename_session` tool — so the agent can retitle a session from inside the conversation.\n\n一个 DSH 插件：给**模型**一个 `rename_session` 工具，让 agent 在对话中直接重命名当前会话。\n\n## Why\n\nDSH 的会话标题有三个来源——首条用户消息的确定性回退、可选的 LLM 生成 provider、显式重命名——但**只有 Host 侧 API**（`ctx.sessionTitle.rename(session, title)`）和线级的 `session.rename`。内置的 Web 客户端里没有改名入口，也没有任何模型可见的工具。这个插件补上模型这一侧。\n\n它不做自动总结。要不要改名、改成什么，由模型按你的规则决定——典型用法是在 `AGENTS.md` 里约定：**开始一个新需求时，把需求 id 写进会话标题**。\n\n## The tool\n\n`rename_session`\n\n| 参数 | 必填 | 说明 |\n|---|---|---|\n| `title` | 是 | 新标题。归一化后必须含可见字符。 |\n| `session_id` | 否 | 目标会话 id。**省略即重命名当前会话**——日常用法。 |\n\n返回 `{ session_id, title, seq }`（格式化 JSON 文本）。\n\n标题语义由 `@deepseek-ai/dsh-session-title` 决定：写入一条 `source.kind === 'user'` 的 `session/title` 事件，**钉住**标题——进行中的自动生成被取代，后续用户消息也不再触发自动修订。标题只进会话日志，**绝不进入模型输入**。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:25-46](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L25-L46)\n\n模型工具定义与参数。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function apply(ctx) {\n  ctx.tools.register({\n    name: 'rename_session',\n    description:\n      'Rename a session by setting an explicit title. A user title pins the session: in-flight automatic title generation is superseded and later user messages no longer revise it. Call this when the user asks to rename the conversation, or when the work has moved to a new task and the title should name it — for example naming the session after a requirement, issue, or ticket id (\"PRD-042 ...\"). Omit session_id to rename the session you are running in.',\n    parameters: {\n      type: 'object',\n      additionalProperties: false,\n      properties: {\n        title: {\n          type: 'string',\n          description:\n            'New session title. Must contain visible characters after normalization. Keep it short and descriptive; include the work item id when the session is about one.',\n        },\n        session_id: {\n          type: 'string',\n          description:\n            'Target session id. Omit to rename the current session. A non-current session must already be loaded, otherwise the call fails.',\n        },\n      },\n      required: ['title'],\n    },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:75-94](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L75-L94)\n\n当前会话缺省处理。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    async execute(args, exec) {\n      const input = args !== null && typeof args === 'object' ? args : {}\n\n      const title = input.title\n      if (typeof title !== 'string' || title.trim() === '') {\n        throw new Error('rename_session: title is required and must be a non-empty string')\n      }\n\n      const targetId = input.session_id\n      if (targetId !== undefined && (typeof targetId !== 'string' || targetId.trim() === '')) {\n        throw new Error('rename_session: session_id must be a non-empty string when provided')\n      }\n\n      let session\n      if (targetId === undefined) {\n        if (exec.agent === undefined) {\n          throw new Error('rename_session: no session_id was given and this call has no owning session')\n        }\n        session = exec.agent.session\n      } else {\n```\n\n</details>\n\n#### 缺口\n\n- 未运行实际模型调用。\n  **影响：**调用频率和标题质量未知。\n  **进一步探讨：**隔离会话按工作项 ID 提示测试。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 显式标题写入链和宿主依赖是什么？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n工具从 exec.agent 或 ctx.agents.get(id) 取会话，再动态获取 sessionTitle 服务并调用 rename。返回 session_id/title/eventSeq。README 称宿主服务写 source.kind=user 的 session/title 事件并钉住标题；这部分属于宿主语义，插件本身没有实现持久化。仅 tools、agents 是强制 inject，sessionTitle 缺失时执行报错。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:18-19](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L18-L19)\n\n强制服务。\n\n```text\n/** 必需服务：工具注册表与会话注册表。 */\nexport const inject = ['tools', 'agents']\n```\n\n**依据 2 · 源码核查**：[index.js:88-115](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L88-L115)\n\n目标查询、服务调用和结果。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n      let session\n      if (targetId === undefined) {\n        if (exec.agent === undefined) {\n          throw new Error('rename_session: no session_id was given and this call has no owning session')\n        }\n        session = exec.agent.session\n      } else {\n        const agent = ctx.agents.get(targetId)\n        if (agent === undefined) {\n          throw new Error(`cannot rename session ${targetId}: not loaded — open or switch to it first`)\n        }\n        session = agent.session\n      }\n\n      const sessionTitle = ctx.get('sessionTitle')\n      if (sessionTitle === undefined) {\n        throw new Error(\n          'session-title-unavailable: the session-title service is not mounted, so no title can be written',\n        )\n      }\n\n      const snapshot = sessionTitle.rename(session, title)\n      return {\n        session_id: String(session.id),\n        title: snapshot.title,\n        seq: snapshot.eventSeq,\n      }\n    },\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:22-24](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md#L22-L24)\n\n宿主标题事件语义的作者说明。\n\n```text\n返回 `{ session_id, title, seq }`（格式化 JSON 文本）。\n\n标题语义由 `@deepseek-ai/dsh-session-title` 决定：写入一条 `source.kind === 'user'` 的 `session/title` 事件，**钉住**标题——进行中的自动生成被取代，后续用户消息也不再触发自动修订。标题只进会话日志，**绝不进入模型输入**。\n```\n\n#### 缺口\n\n- 未检查固定宿主 sessionTitle 实现或运行事件流。\n  **影响：**钉住/持久化语义依赖宿主版本。\n  **进一步探讨：**在测试会话检查 title 事件和重载后标题。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 传入其他 session_id 时有哪些边界？\n\n**研究主题：**缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n显式 session_id 可指向 ctx.agents.get 能取到的任一已加载 agent；冷会话失败。插件只检非空字符串，不在源码中核调用 agent 与目标会话的所有权/用户权限，也不限定为当前会话。是否由宿主工具或 agents 服务做权限隔离，固定插件源码不能证明。跨会话改名是应重点测试的信任边界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:39-43](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L39-L43)\n\n参数允许非当前会话。\n\n```text\n        session_id: {\n          type: 'string',\n          description:\n            'Target session id. Omit to rename the current session. A non-current session must already be loaded, otherwise the call fails.',\n        },\n```\n\n**依据 2 · 源码核查**：[index.js:83-100](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L83-L100)\n\n仅校验非空并查已加载 agent。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n      const targetId = input.session_id\n      if (targetId !== undefined && (typeof targetId !== 'string' || targetId.trim() === '')) {\n        throw new Error('rename_session: session_id must be a non-empty string when provided')\n      }\n\n      let session\n      if (targetId === undefined) {\n        if (exec.agent === undefined) {\n          throw new Error('rename_session: no session_id was given and this call has no owning session')\n        }\n        session = exec.agent.session\n      } else {\n        const agent = ctx.agents.get(targetId)\n        if (agent === undefined) {\n          throw new Error(`cannot rename session ${targetId}: not loaded — open or switch to it first`)\n        }\n        session = agent.session\n      }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:76-82](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md#L76-L82)\n\n作者限制说明。\n\n```text\n## Limitations\n\n- **只能改已加载的会话。** 传 `session_id` 时走 `ctx.agents.get()`，冷会话会报\n  `not loaded — open or switch to it first`。省略 `session_id` 走当前会话，无此限制。\n- **没有专属卡片。** 纯 host 插件，工具调用在对话流里显示为通用卡片；要专属视图需要\n  额外注册客户端的 `tool.call.toolview`。\n- **不自动触发。** 改成什么、什么时候改，由模型（即你的规则）决定。\n```\n\n#### 缺口\n\n- 未审宿主 agents.get 授权与多用户隔离。\n  **影响：**不能据插件源码断言可越权利用，但边界未展示。\n  **进一步探讨：**在双用户隔离 profile 用无害标题验证权限。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 无官方包依赖的实现代价和标题校验是什么？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n源码手写 tools.register schema 与 execute 校验，不 import @deepseek-ai 包，规避 link/Git 安装时的版本解析偏差。title 仅检查 trim 后非空，最终归一化交给 sessionTitle.rename；工具声明 isConcurrencySafe:false，但不能替代目标会话级并发控制验证。作者称 test.mjs 覆盖分支，本轮未运行。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:61-74](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md#L61-L74)\n\n作者解释零运行时依赖与代价。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## Design notes\n\n**零运行时依赖。** 本插件不 `import` 任何 `@deepseek-ai/*` 包：工具对象按\n`ctx.tools.register()` 的契约手写（`defineTool` 只是 spec→JSON Schema 的转换器，\n`SessionId` 只是恒等 brand）。这样做的原因很实际：\n\n- CLI 自带的 `dsh-tools` 与 profile 侧解析到的版本经常不一致；\n- 以 `link:` / `github:` 安装的插件若 `import` 官方包，Node 会从插件的 realpath\n  逐级向上找 `node_modules`，而 profile 的 `node_modules/@deepseek-ai/` 未必有对应版本。\n\n结果是同一个 peer 被解析成两个版本、链接期抛\n`does not provide an export named ...`。不 import 就同时避开这两个问题。\n\n代价是自己做参数校验（`defineTool` 原本会包一层 JSON Schema 校验），`test.mjs` 覆盖了这些分支。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:30-68](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L30-L68)\n\nschema 与并发标记。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n    parameters: {\n      type: 'object',\n      additionalProperties: false,\n      properties: {\n        title: {\n          type: 'string',\n          description:\n            'New session title. Must contain visible characters after normalization. Keep it short and descriptive; include the work item id when the session is about one.',\n        },\n        session_id: {\n          type: 'string',\n          description:\n            'Target session id. Omit to rename the current session. A non-current session must already be loaded, otherwise the call fails.',\n        },\n      },\n      required: ['title'],\n    },\n    output: {\n      schema: {\n        type: 'object',\n        additionalProperties: false,\n        properties: {\n          session_id: { type: 'string' },\n          title: { type: 'string' },\n          seq: { type: 'integer' },\n        },\n        required: ['session_id', 'title', 'seq'],\n      },\n      /**\n       * 结果以格式化 JSON 文本返回，模型直接读结构化字段。\n       * @param _args - 已校验的调用参数（此处不使用）。\n       * @param value - 已校验的执行结果。\n       * @returns 单块文本内容。\n       */\n      render(_args, value) {\n        return [{ type: 'text', text: JSON.stringify(value, null, 2) }]\n      },\n    },\n    isConcurrencySafe: () => false,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:75-85](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L75-L85)\n\n输入校验。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    async execute(args, exec) {\n      const input = args !== null && typeof args === 'object' ? args : {}\n\n      const title = input.title\n      if (typeof title !== 'string' || title.trim() === '') {\n        throw new Error('rename_session: title is required and must be a non-empty string')\n      }\n\n      const targetId = input.session_id\n      if (targetId !== undefined && (typeof targetId !== 'string' || targetId.trim() === '')) {\n        throw new Error('rename_session: session_id must be a non-empty string when provided')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:109-115](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L109-L115)\n\n宿主归一化结果。\n\n```text\n      const snapshot = sessionTitle.rename(session, title)\n      return {\n        session_id: String(session.id),\n        title: snapshot.title,\n        seq: snapshot.eventSeq,\n      }\n    },\n```\n\n#### 缺口\n\n- 未运行 test.mjs 或并发改名。\n  **影响：**宿主是否按标记串行、长标题如何截断未知。\n  **进一步探讨：**隔离 profile 测并发和异常标题。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么使用方式能让标题变化可控？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n在个人会话按用户明确的工作项 ID 规则调用当前会话改名；不提供 session_id 可避免意外触碰其他已加载会话。需核实标题事件、重载持久性和权限后再用于多用户环境。若只需本会话，移除跨会话参数/增加目标授权检查会缩小信任面；属于改进设想。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:50-59](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/README.md#L50-L59)\n\n作者给出的需求编号规则。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n````text\n## Recipe: name the session after the work item\n\n把这条加进你的 `AGENTS.md`，模型就会在有需求 id 时自己改名：\n\n```md\n- 开始一个新需求（出现 PRD-NNN、Issue #NNN 等需求 id）时，调用 `rename_session`，\n  把会话标题改成 `<需求 id> <一句话描述>`，例如 `PRD-042 重构 router 层`。\n```\n\n`title` 由模型组织，插件不做任何拼装——所以规则想怎么写就怎么写（带不带 id、用哪种编号、要不要加阶段前缀都行）。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:89-100](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L89-L100)\n\n当前/其他会话分支。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      if (targetId === undefined) {\n        if (exec.agent === undefined) {\n          throw new Error('rename_session: no session_id was given and this call has no owning session')\n        }\n        session = exec.agent.session\n      } else {\n        const agent = ctx.agents.get(targetId)\n        if (agent === undefined) {\n          throw new Error(`cannot rename session ${targetId}: not loaded — open or switch to it first`)\n        }\n        session = agent.session\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:102-115](https://github.com/9Ashwin/dsh-session-rename/blob/f073bfa1fa7e59832df5efacb5b94ee44749326c/index.js#L102-L115)\n\n服务调用。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      const sessionTitle = ctx.get('sessionTitle')\n      if (sessionTitle === undefined) {\n        throw new Error(\n          'session-title-unavailable: the session-title service is not mounted, so no title can be written',\n        )\n      }\n\n      const snapshot = sessionTitle.rename(session, title)\n      return {\n        session_id: String(session.id),\n        title: snapshot.title,\n        seq: snapshot.eventSeq,\n      }\n    },\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1e41edcc84b43c610f81845da00938870f228a7c28763086b99f644fa47567f3。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 117 | 78 | 31 | — |\n| .md | source | 1 | 95 | — | — | 918 |\n| .mjs | source | 1 | 131 | 104 | 13 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | 设置会话标题 | 仅已加载目标、授权未核 |\n\n## 工程亮点\n\ntools.register 手写参数/结果 schema、执行校验；动态获取 sessionTitle 服务；isConcurrencySafe:false。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定 SHA 静态审阅 README、package、index.js；未运行目标插件/宿主。\n- 下一步：固定 SHA 隔离环境核模型工具、标题事件、重载持久性、冷会话错误与跨用户权限。\n",
         "metadata": {
             "repository": "9Ashwin/dsh-session-rename",
             "repository_id": 1368115538,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T06:26:33.051Z",
+            "window_start": "2026-09-22T06:26:33.051Z",
             "stars": 0,
             "pushed_at": "2026-09-13T06:36:29Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A9Ashwin%2Fdsh-session-rename%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:24642:AA78C4:F45C91:6AD84B0C and timestamp 2026-10-21 05:18:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A9Ashwin%2Fdsh-session-rename%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:3FE178:AA130C:F3D814:6AD84B0C and timestamp 2026-10-21 05:18:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A9Ashwin%2Fdsh-session-rename%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6400:25685:A990E5:F2ED33:6AD84B0D and timestamp 2026-10-21 05:18:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A9Ashwin%2Fdsh-session-rename%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6401:25685:A9912E:F2ED9E:6AD84B0D and timestamp 2026-10-21 05:18:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A9Ashwin%2Fdsh-session-rename%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:1F14A0:A880B1:F245C1:6AD84B0D and timestamp 2026-10-21 05:18:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-session-rename",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-session-rename",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-session-rename",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-                "current_revision": "f073bfa1fa7e59832df5efacb5b94ee44749326c",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1368115538:root",

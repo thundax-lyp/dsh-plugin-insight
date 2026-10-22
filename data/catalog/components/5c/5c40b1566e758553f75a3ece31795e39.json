@@ -27,36 +27,94 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1355639507-root-directory-0",
+                    "id": "2026-10-22-02-github-1355639507-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:15:09.735Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:07:06.882Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1355639507-root-author",
+                    "id": "2026-10-22-02-github-1355639507-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "README.md",
+                            "content_sha256": "1f8591751b65e469a46cb562b4684bf2fc490ff6e92a4c17acc34bad6cefe84b"
+                        }
+                    ],
                     "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-                    "captured_at": "2026-10-20T03:15:09.735Z",
-                    "summary": "从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:07:06.882Z",
+                    "summary": "从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1355639507-root-source",
+                    "id": "2026-10-22-02-github-1355639507-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts",
+                    "url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "README.md",
+                            "content_sha256": "1f8591751b65e469a46cb562b4684bf2fc490ff6e92a4c17acc34bad6cefe84b"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "package.json",
+                            "content_sha256": "70abfcd25b00b331a0b759983d3b2849cfbb441f79137f8d53d4f25cbc28218a"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "7dd91fe0f77b6c8d682e0740607308466a44457219733c130c9a7b0a719859dd"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "build.mjs",
+                            "content_sha256": "dc84d71df372963a3a0dde3ddc311a848bba9bdd51b60c1f589b9be4e8aa09b8"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "src/index.ts",
+                            "content_sha256": "389786c97b616202be5a0643b16b2c1aea8c822d460e27b1332dd0b14968b900"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "f3f649d34e422a4c1e389fd7cfac117faa4d327276c5faf7f97b890aa1518c45"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "lib/index.js",
+                            "content_sha256": "70591f1c00d3809491b7762e6d7b5b9dccf5b0ee9a75f70144f4184612c10b59"
+                        },
+                        {
+                            "repository_url": "https://github.com/123dbl/dsh-side-session",
+                            "commit": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                            "path": "lib/client.js",
+                            "content_sha256": "104d8be94a704c9b52460d47c13af1e1bb8a564816754eb3868c96712210bbc9"
+                        }
+                    ],
                     "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-                    "captured_at": "2026-10-20T03:15:09.735Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts；/side-chat 调用 startContinuable 创建子会话，客户端在成功事件后比较子目录并打开新会话。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:07:06.882Z",
+                    "summary": "核查 README.md、package.json、cordis.patch.yml、build.mjs、src/index.ts、src/client/index.ts、lib/index.js、lib/client.js；Host调用continuable spawn，Web监听成功事件并以目录差集选child、打开官方会话视图。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未验证并发创建或目录冷启动时准确跳转；所谓独立会话仍是父会话下的 continuable 子代理。",
+                        "已检查固定README/package/patch、完整Host/Web src与发布lib以及构建脚本。未运行目标、模型或真实宿主；不核上游spawn权限/持久化实现。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +125,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "主任务运行时，用户需要另外讨论独立问题，同时保留主会话上下文。",
+                    "text": "主会话工作时另开问题分支，由读者接管可继续子会话；不承担成果合并或隔离保证。",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +136,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "/side-chat 调用 startContinuable 创建子会话，客户端在成功事件后比较子目录并打开新会话。",
+                    "text": "Host调用continuable spawn，Web监听成功事件并以目录差集选child、打开官方会话视图。",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +154,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "复用原生聊天视图避免维护第二套面板；便利不代表资源或权限完全隔离。",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 减少接线 | 单菜单调用既有continuable spawn与官方视图 | 相较手动创建的实际节时 |\n| 主流程并行 | Host不调用主agent的prompt入口 | 上游资源争用、权限/上下文继承和主任务体验 |\n| 自动定位 | 成功事件后目录差集与六次刷新 | 并发/订阅时序下正确匹配率 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +172,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "开场确认与额外对话消耗模型额度；简单问题直接新建原生会话可能更低成本。",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主/模型环境，金额依读者配置 | 配置Web与服务，核spawn权限/继承 | 本插件无独立收费代码，不能据此称免费 |\n| 持续使用 | 每次创建固定中英提示的模型运行；最多六次目录刷新 | 核会话身份并输入实际问题 | 五次150ms间隔外还有刷新耗时，无总deadline；真实token/费率未知 |\n| 失败恢复 | 重复创建可能增加子会话和模型消耗 | 手工定位、结束多余会话、检查错投内容 | 没有创建ID收据、幂等键或失败自动清理 |\n",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +190,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "Host 只负责创建、Client 负责导航职责清晰；通过目录差分猜测新 ID 有并发与回退边界。",
+                    "text": "工程可借鉴处是把命令创建与官方聊天视图复用分开，Host透传signal，用ctx.effect托管命令和订阅，不引入自制聊天UI。发布src/lib双份且构建入口明确，便于审查实际装载逻辑；这种接线方式可迁移到其他“创建实体再跳转”场景，但当前目录猜测不是可复用的可靠关联协议。",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +208,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。",
+                    "text": "先观察，核/修创建ID关联、目录时序与恢复凭据后再评估试用。读者进一步探讨可从匹配上游spawn返回和事件契约入手。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +226,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未验证并发创建或目录冷启动时准确跳转；所谓独立会话仍是父会话下的 continuable 子代理。",
+                    "text": "已检查固定README/package/patch、完整Host/Web src与发布lib以及构建脚本。未运行目标、模型或真实宿主；不核上游spawn权限/持久化实现。",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +244,16 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "版本 0.1.0，依赖支持 continuable children 的宿主以及 sessions 客户端服务。",
+                    "text": "0.1.0仓库安装使用提交的lib与patch，Node ^22.19或>=24，Web与上游服务必需。",
                     "evidence_ids": [
-                        "20261020-research40-github-1355639507-root-source"
+                        "2026-10-22-02-github-1355639507-root-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +262,135 @@
                             "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:15:09.735Z",
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1355639507-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1355639507:root",
+                            "area": "code",
+                            "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "Host不返回childID，事后目录差集在目录先到、冷缓存和并发时不能证明本次归属；错误跳转可能使问题错投。均为静态时序推演。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1355639507-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1355639507:root",
+                            "area": "code",
+                            "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨请求关联的child/parent精确收据与可查询幂等恢复，配合活动视图/取消检查。错开或重复创建反例可推翻实现，尚未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1355639507-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1355639507:root",
+                            "area": "code",
+                            "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:07:06.882Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:15:09.735Z",
+            "last_checked_at": "2026-10-22T09:07:06.882Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
+                "reviewed_at": "2026-10-22T09:07:06.882Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1355639507:root",
+                        "area": "code",
+                        "fingerprint": "39443eb1ea15fb080121a3a6474426980f346a6c"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty以已有spawn/官方视图为参照，新增菜单到跳转的小幅接线，未新增会话技术，9；mechanism以手工定位为参照，差集刷新补自动选择但不保证关联，只取小幅，8；transferability以单用途按钮为参照，Host创建/客户端打开分层可小幅迁移，仍依赖DSH事件与目录契约，5；simplification以另造聊天UI或多步手动操作为参照，复用官方视图/单入口有实质简化，受差集恢复负担限制，8。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1355639507-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow以手工开子会话为参照，一键转入人工旁问小幅减少切换，不改变责任分工，9；delivery以宿主已有可继续会话为参照，把新会话交到读者视图是小幅交付接线，不创造新业务产物，8；reach以熟悉子会话API者为参照，菜单降低Web用户操作门槛，仍要求兼容宿主/模型和权限，5；economics以手动创建定位为参照，潜在减少人工点击，但固定就绪模型调用与误开恢复可能抵消，未量化ROI，仅小幅设计增量4。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1355639507-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "需保留主任务的用户可试旁会话，先测双击、主会话忙碌和目录冷启动，未知创建结果先查列表。",
+                "decision": "observe",
+                "reason": "一键旁问的接线明确，但差集不能可靠绑定本次child，自动误开有错投和恢复成本，宜先核/修ID关联再试用。详见[Q05](#research-q05)。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "主任务旁讨论独立问题的需求清楚。"
+                        "rationale": "并行旁问且读者接管的重复场景明确，自动成果合并不在范围。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "复用原生可继续视图省入口，原生新会话也是简单替代。"
+                        "rationale": "相对手工创建/定位有具体便利，底层能力已有且差集削弱可靠增益。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "startContinuable和目录差分导航可查，并发准确性未验。"
+                        "rationale": "固定src/lib注册及谓词均已核，无实际宿主/时序效果证据。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无需第二套面板，仍有开场模型费用和生命周期核查。"
+                        "score": 10,
+                        "rationale": "小型接线/可停用，但固定prompt模型消耗、错开和重复创建恢复未量化。"
                     }
                 },
-                "score": 64,
+                "score": 59,
                 "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:07:06.882Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1355639507-root-source"
+                    "2026-10-22-02-github-1355639507-root-source"
                 ],
                 "dependencies": [
                     {
@@ -262,89 +415,62 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "16154bea2e4dc232df1da76dc223adacec520f2a1d4f77604df49755f52d946e"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "1d195b438efef376ae941410192f9231b7eded89236257f9e42465428fc9256b"
         },
         "publication.metadata": "data/plugins/123dbl--dsh-side-session/META.json",
         "publication.summaries": {
-            "text": "从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。",
+            "text": "从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。",
             "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
             "source_url": "https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md"
         },
         "publication.capabilities": {
             "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
             "items": {
-                "用户命令": "/side-chat 新建可继续子会话。",
-                "界面": "自动打开原生子会话视图。"
-            }
+                "用户命令": "side-chat创建可继续子会话",
+                "界面": "复用官方子会话视图",
+                "事件监听": "command/executed与目录订阅"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| side-chat命令 | 固定就绪prompt创建continuable子会话 | 依赖commands/subagents，不返回childID |\n| 自动打开 | 目录刷新后调用官方openSubagent | Web差集猜归属，冷缓存/并发有误选条件 |\n| 目录与成功事件监听 | 更新已见集合并触发定位 | 无总deadline/在途dispose检查 |"
         },
         "publication.advice": {
             "revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-            "text": "先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。"
+            "text": "先观察，核/修创建ID关联、目录时序与恢复凭据后再评估试用。读者进一步探讨可从匹配上游spawn返回和事件契约入手。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/123dbl--dsh-side-session",
-        "reports": "# dsh-side-session\n\n> 从命令菜单创建可继续的旁会话，并跳转到原生子会话聊天视图。\n\n## 固定范围与依据\n\n固定提交 [39443eb1ea15fb080121a3a6474426980f346a6c](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:15:09.735Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/client/index.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：主任务运行时，用户需要另外讨论独立问题，同时保留主会话上下文。\n- **亮点**：/side-chat 调用 startContinuable 创建子会话，客户端在成功事件后比较子目录并打开新会话。\n- **思考**：复用原生聊天视图避免维护第二套面板；便利不代表资源或权限完全隔离。\n- **建议**：先测试主会话忙碌、双击和连续创建，确认旁会话可恢复且不会跳错子会话。\n\n## 场景与替代办法\n\n主任务运行时，用户需要另外讨论独立问题，同时保留主会话上下文。\n\n原生新会话操作更透明；该插件主要减少在主任务旁开讨论的入口步骤。\n\n## 依赖与流程\n\n需要 commands、subagents 和实时子目录，模型与子会话生命周期由宿主承担。\n\n菜单创建旁会话、确认跳转后聊天；若跳转失败，回到子会话列表检查是否已创建再重试。\n\n## 成本与效果\n\n开场确认与额外对话消耗模型额度；简单问题直接新建原生会话可能更低成本。\n\n复用原生聊天视图避免维护第二套面板；便利不代表资源或权限完全隔离。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a841a97eef45cf5bf89cecced32eb159519bbb889defa760959f374e354c7ed4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 59 | 40 | 13 | — |\n| .js | source | 2 | 119 | 114 | 8 | — |\n| .md | source | 1 | 60 | — | — | 528 |\n| .ts | source | 2 | 176 | 98 | 64 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **用户命令**：/side-chat 新建可继续子会话。\n- **界面**：自动打开原生子会话视图。\n\n## 工程亮点\n\nHost 只负责创建、Client 负责导航职责清晰；通过目录差分猜测新 ID 有并发与回退边界。\n\n## 分发与兼容\n\n版本 0.1.0，依赖支持 continuable children 的宿主以及 sessions 客户端服务。\n\n## 历史对照\n\n前次代码指纹为 39443eb1ea15fb080121a3a6474426980f346a6c；本轮固定为 39443eb1ea15fb080121a3a6474426980f346a6c。原生新会话操作更透明；该插件主要减少在主任务旁开讨论的入口步骤。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未验证并发创建或目录冷启动时准确跳转；所谓独立会话仍是父会话下的 continuable 子代理。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：覆盖目录未预热、同时创建多个子代理、超时、取消和重启继续，避免未知结果后重复创建。\n",
+        "reports": "# dsh-side-session\n\n> 从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。\n\n## 研究范围\n\n- **仓库**：[123dbl/dsh-side-session](https://github.com/123dbl/dsh-side-session)\n- **版本号**：0.1.0（[固定提交 39443eb1ea15fb080121a3a6474426980f346a6c](https://github.com/123dbl/dsh-side-session/tree/39443eb1ea15fb080121a3a6474426980f346a6c)）\n- **版本日期**：2026-09-03（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持菜单创建与官方子会话视图复用；差集缺少请求到child的一一对应，冷缓存/目录时序和并发可能错开或不打开。精确ID收据与幂等恢复仍为未验证设计假设。\n\n## 洞察短评\n\n- **用途**：主会话工作时另开问题分支，由读者接管可继续子会话；不承担成果合并或隔离保证。\n- **亮点**：在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：Host不返回childID，事后目录差集在目录先到、冷缓存和并发时不能证明本次归属；错误跳转可能使问题错投。均为静态时序推演。详见[Q02](#research-q02)。\n- **建议**：可探讨请求关联的child/parent精确收据与可查询幂等恢复，配合活动视图/取消检查。错开或重复创建反例可推翻实现，尚未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，核/修创建ID关联、目录时序与恢复凭据后再评估试用。读者进一步探讨可从匹配上游spawn返回和事件契约入手。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\nHost不返回childID，事后目录差集在目录先到、冷缓存和并发时不能证明本次归属；错误跳转可能使问题错投。均为静态时序推演。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨请求关联的child/parent精确收据与可查询幂等恢复，配合活动视图/取消检查。错开或重复创建反例可推翻实现，尚未验证。详见[Q05](#research-q05)。\n\n可比较手动、目录差集与精确ID收据，在冷缓存、并发、乱序、取消和未知创建结果夹具下核唯一关联、恢复和资源成本；假设尚未验证。\n\n## 场景与替代办法\n\n主会话工作时另开问题分支，由读者接管可继续子会话；不承担成果合并或隔离保证。\n\n宿主原有子会话/新会话创建后手工定位；该插件减少入口接线，不新增子会话隔离、模型调度或任务合并机制。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node ^22.19或>=24、DSH commands/subagents | 必需 | 注册命令、spawn可继续子会话 | 不满足无法提供创建链 |\n| Web sessions、command/executed事件、模块加载器 | 自动打开必需 | 刷新目录与openSubagent | Host创建成功仍可能无法定位/打开 |\n| spawn上游模型、权限与会话持久化 | 子会话运行必需 | 处理固定就绪提示与用户后续任务 | 本插件不定义隔离/计费/数据继承策略 |\n| 已提交lib与cordis.patch.yml | 仓库安装必需 | Host及Web发布入口 | 源码变更须同步构建产物 |\n| pnpm/esbuild/tsc | 仅开发构建 | 生成lib/声明 | 普通仓库安装按README不要求自行构建 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 读者核宿主版本、模型权限和非敏感测试工作区 | 确认子会话权限/费用，不把旁会话当沙箱 |\n| 创建 | 菜单执行一次side-chat，等待目录刷新 | 记录新子会话ID/父关系，避免失败后立即重复 |\n| 核对 | 核实际打开的会话是否刚创建 | 错会话则停止发送问题，手工查父目录 |\n| 退出 | 关闭视图并按宿主结束不需要的子会话 | 关闭视图不等取消后台任务或删除记录 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主/模型环境，金额依读者配置 | 配置Web与服务，核spawn权限/继承 | 本插件无独立收费代码，不能据此称免费 |\n| 持续使用 | 每次创建固定中英提示的模型运行；最多六次目录刷新 | 核会话身份并输入实际问题 | 五次150ms间隔外还有刷新耗时，无总deadline；真实token/费率未知 |\n| 失败恢复 | 重复创建可能增加子会话和模型消耗 | 手工定位、结束多余会话、检查错投内容 | 没有创建ID收据、幂等键或失败自动清理 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 减少接线 | 单菜单调用既有continuable spawn与官方视图 | 相较手动创建的实际节时 |\n| 主流程并行 | Host不调用主agent的prompt入口 | 上游资源争用、权限/上下文继承和主任务体验 |\n| 自动定位 | 成功事件后目录差集与六次刷新 | 并发/订阅时序下正确匹配率 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核对固定版本旁会话从创建到打开的关联可靠性，区分入口便利、子会话权限和恢复成本，推导可证伪的关联收据假设。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 旁会话面向什么任务，创建与跳转怎样协作？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n直接用途是在主会话仍有工作时，给另一个问题开可继续的子会话，然后读者亲自接管；不是把一次性任务交给自动团队并合并成果。合格结果是同一父会话下恰好找到本次新建的continuable子会话，输入第一条真实问题前能核其身份。替代办法是用宿主原有子会话/新会话入口创建后手工打开；该插件省的是入口和跳转接线。\n\nHost注册side-chat命令，取得当前agent，startContinuable指定provider spawn、父agent、固定中英双语就绪提示及本地小时分钟标签，传入signal。它等待调用返回，但丢弃result，只返回通用成功文本。主agent没有被本插件直接调用prompt，因此“不往主对话插入新问题”有源码；“主会话完全不受影响”仍是作者强声明，共享模型/调度资源和上游继承不由这里保证。子会话的固定就绪回复本身可能调用模型，不是空白零工作新窗口。\n\nWeb监听side-chat成功事件，读取父会话此前子ID集合，最多刷新六次，每次取当前目录里第一个未见的可继续child，随后openSubagent。若未找到就静默返回，没有把自动跳转失败返回Host。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-14](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md#L3-L14)\n\n作者用途及并行声明。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nSide-chat (旁会话) plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).\n\nWhile your main session is running, pick **side-chat** from the composer's \"＋\" command menu to open a fresh, independent, continuable session in parallel — the main session is never prompted or touched.\n\n主会话进行中，从输入框的「＋」命令菜单选 **side-chat（旁会话）**，即可一键新开一个独立、可继续对话的并行会话——主会话不受任何影响。\n\n## What it does / 功能\n\n- Registers one host command, `/side-chat` (旁会话), shown in the composer's \"＋\" command menu. / 注册一个宿主命令 `/side-chat`（旁会话），出现在输入框「＋」命令菜单。\n- Picking it spawns a **continuable subagent** under the calling session, with a fixed ready-to-go opening prompt and an auto timestamp label (`旁会话 14:32`). / 选中后在当前会话下派生一个可继续对话的子代理，附带就绪开场白与自动时间戳标签。\n- The browser half then jumps straight into the new child's official chat view, where you take over the conversation. / 前端随即自动跳转到新旁会话的对话视图，由你接管对话。\n- No panel, no popup, no settings: the command menu entry *is* the whole UI. / 无面板、无弹窗、无设置——命令菜单入口即全部 UI。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:34-46](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L34-L46)\n\n依赖、固定prompt与标签。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nexport const inject = ['commands', 'subagents']\n\n/** Fixed opening prompt delivered to a freshly spawned side session. */\nconst OPENING_PROMPT = [\n  '这是一个新的旁会话。请用一两句话确认你已经就绪，并等待我输入第一个问题。',\n  'This is a new side session. Confirm in a sentence or two that you are ready, then wait for my first question.',\n].join('\\n')\n\n/** Short timestamp used as the child's display label, e.g. `旁会话 14:32`. */\nfunction labelFor(now: Date): string {\n  const hh = String(now.getHours()).padStart(2, '0')\n  const mm = String(now.getMinutes()).padStart(2, '0')\n  return `旁会话 ${hh}:${mm}`\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:53-77](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L53-L77)\n\n创建请求/信号和通用结果。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport function apply(ctx: Context): void {\n  ctx.effect(() => ctx.commands.register({\n    name: 'side-chat',\n    description: '新建一个独立的旁会话（可继续对话的子代理），不影响当前会话',\n    handler: async ({ agent, signal }): Promise<CommandResult> => {\n      try {\n        const subagents = ctx.get('subagents')\n        if (subagents === undefined) {\n          return { kind: 'error', text: '旁会话服务未就绪' }\n        }\n        const result = await subagents.startContinuable({\n          provider: 'spawn',\n          label: labelFor(new Date()),\n          request: {\n            parent: agent,\n            prompt: [{ type: 'text', text: OPENING_PROMPT }],\n          },\n          signal,\n        })\n        return { kind: 'success', text: '已创建旁会话' }\n      } catch {\n        return { kind: 'error', text: '创建旁会话失败' }\n      }\n    },\n  }), 'dsh-side-session: /side-chat command')\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:35-61](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L35-L61)\n\n目录刷新及挑选。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nasync function settleChild(\n  sessions: ISessions,\n  parentId: SessionId,\n  before: Set<SessionId>,\n  attempts = 6,\n): Promise<SessionId | undefined> {\n  for (let i = 0; i < attempts; i += 1) {\n    await sessions.refreshSubagents(parentId)\n    const snapshot = sessions.list.getSnapshot()\n    const catalog = snapshot.subagentsByParent[parentId]\n    if (catalog && catalog.state === 'ready') {\n      // Prefer a continuable child that was not there before the command ran.\n      let fallback: SessionId | undefined\n      for (const entry of catalog.entries) {\n        if (entry.kind !== 'child' || entry.mode !== 'continuable') continue\n        if (!before.has(entry.id)) return entry.id\n        fallback = entry.id\n      }\n      // The feed had never warmed (empty `before`): fall back to the last\n      // continuable child, which is the most recently created one.\n      if (fallback !== undefined && before.size === 0) return fallback\n    }\n    if (i < attempts - 1) {\n      await new Promise(resolve => setTimeout(resolve, 150))\n    }\n  }\n  return undefined\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/client/index.ts:88-95](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L88-L95)\n\n事件后自动打开。\n\n```text\n  ctx.on('command/executed', async (sessionId: SessionId, name: string, result: CommandResult) => {\n    if (name !== 'side-chat') return\n    if (result.kind !== 'success') return\n    const before = seenByParent.get(sessionId) ?? new Set<SessionId>()\n    const childId = await settleChild(sessions, sessionId, before)\n    if (childId === undefined) return\n    sessions.openSubagent({ parentSessionId: sessionId, childSessionId: childId, mode: 'continuable' })\n  })\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 目录差集能否准确打开本次创建的子会话？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n有条件地能找到“目录中此前未见的continuable child”，不能据此证明就是本命令创建的会话。已有贡献是沿用官方子会话/视图，实现极小的Host命令与Web连接，不另造聊天系统；关键薄弱点是缺少创建返回ID，必须猜关联。\n\nseenByParent并不是执行命令之前固定下来的快照，而是sessions.list订阅持续更新的模块级Map。若新child的目录帧先于command/executed回调到达，before已包含刚创建的ID，随后它不再是差集；若目录无其他新child且before非空，六次都找不到就不跳转。反向在冷缓存或订阅尚未更新时before为空，目录中任何旧continuable child都未见，循环立即返回第一个，不能保证是新建或最近创建。代码注释提“last fallback”，但before为空且存在合格entry时前面的return已先触发，fallback分支无法修复这种情况。\n\n并发两次命令、另一入口同时创建或同父多客户端创建时，事件没有requestID/childID匹配，两个回调可能选同一个child或其他新child。等待间隔只有5×150ms，refreshSubagents本身没有本地超时或取消，总时长并非750ms。即使读者切换到其他会话，await完成仍可能执行openSubagent抢回视图。Host捕获错误统一失败，但没有保留是否已创建的状态；若上游创建后抛错，重试是否重复不能由插件判定。以上是按代码时序推演的反例，未声称实测发生。\n\n目录订阅在dispose时解除，但Map未清理、异步刷新循环无dispose检查；父会话移除后旧集合仍可能留存。没有执行任意命令或新Host路由，风险集中在会话归属、错投问题和资源恢复。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:63-75](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L63-L75)\n\nresult丢弃与统一catch。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n        const result = await subagents.startContinuable({\n          provider: 'spawn',\n          label: labelFor(new Date()),\n          request: {\n            parent: agent,\n            prompt: [{ type: 'text', text: OPENING_PROMPT }],\n          },\n          signal,\n        })\n        return { kind: 'success', text: '已创建旁会话' }\n      } catch {\n        return { kind: 'error', text: '创建旁会话失败' }\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:31-61](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L31-L61)\n\n模块Map、差集和fallback次序。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n/** Last-seen direct-child id sets, per parent session, from the live list feed. */\nconst seenByParent = new Map<SessionId, Set<SessionId>>()\n\n/** Poll a few times after a refresh for the catalog to settle (defensive). */\nasync function settleChild(\n  sessions: ISessions,\n  parentId: SessionId,\n  before: Set<SessionId>,\n  attempts = 6,\n): Promise<SessionId | undefined> {\n  for (let i = 0; i < attempts; i += 1) {\n    await sessions.refreshSubagents(parentId)\n    const snapshot = sessions.list.getSnapshot()\n    const catalog = snapshot.subagentsByParent[parentId]\n    if (catalog && catalog.state === 'ready') {\n      // Prefer a continuable child that was not there before the command ran.\n      let fallback: SessionId | undefined\n      for (const entry of catalog.entries) {\n        if (entry.kind !== 'child' || entry.mode !== 'continuable') continue\n        if (!before.has(entry.id)) return entry.id\n        fallback = entry.id\n      }\n      // The feed had never warmed (empty `before`): fall back to the last\n      // continuable child, which is the most recently created one.\n      if (fallback !== undefined && before.size === 0) return fallback\n    }\n    if (i < attempts - 1) {\n      await new Promise(resolve => setTimeout(resolve, 150))\n    }\n  }\n  return undefined\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:75-97](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L75-L97)\n\n订阅更新、事后读取before及仅解除订阅。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  const unlisten = sessions.list.subscribe(() => {\n    const snapshot = sessions.list.getSnapshot()\n    for (const parentId of Object.keys(snapshot.subagentsByParent)) {\n      const catalog = snapshot.subagentsByParent[parentId as SessionId]\n      if (!catalog || catalog.state !== 'ready') continue\n      const ids = new Set<SessionId>()\n      for (const entry of catalog.entries) {\n        if (entry.kind === 'child') ids.add(entry.id)\n      }\n      seenByParent.set(parentId as SessionId, ids)\n    }\n  })\n\n  ctx.on('command/executed', async (sessionId: SessionId, name: string, result: CommandResult) => {\n    if (name !== 'side-chat') return\n    if (result.kind !== 'success') return\n    const before = seenByParent.get(sessionId) ?? new Set<SessionId>()\n    const childId = await settleChild(sessions, sessionId, before)\n    if (childId === undefined) return\n    sessions.openSubagent({ parentSessionId: sessionId, childSessionId: childId, mode: 'continuable' })\n  })\n\n  ctx.effect(() => unlisten, 'dsh-side-session: catalog subscription')\n```\n\n</details>\n\n#### 缺口\n\n- 目录帧与command/executed真实先后顺序、refresh完成语义及并发条件未由上游材料确认。\n  **影响：**不能把差集打开当一一对应收据。\n  **进一步探讨：**可先检查匹配版本上游事件/目录契约，用新ID先到、旧目录冷缓存及并发创建的固定时序夹具验证关联。\n- spawn创建返回值和失败后是否已有持久子会话未定义在本仓库。\n  **影响：**通用失败后重试可能重复，不能确认可安全重放。\n  **进一步探讨：**可从上游返回/异常提交边界及幂等机制核起，再设计可查询收据。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 依赖、权限与采用流程需要什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n发布package0.1.0要求Node ^22.19或>=24，main/exports指向已提交lib，cordis patch挂Host，dsh.client平台限定web并声明客户端runtime/commands。Host硬依赖commands/subagents，Web硬依赖sessions及上游command/executed事件；类型import不是本插件运行时实现子agent服务。已逐行读发布lib/index.js与client.js，关键创建、差集选择、订阅和打开逻辑与src相符，未执行构建或启动。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node ^22.19或>=24、DSH commands/subagents | 必需 | 注册命令、spawn可继续子会话 | 不满足无法提供创建链 |\n| Web sessions、command/executed事件、模块加载器 | 自动打开必需 | 刷新目录与openSubagent | Host创建成功仍可能无法定位/打开 |\n| spawn上游模型、权限与会话持久化 | 子会话运行必需 | 处理固定就绪提示与用户后续任务 | 本插件不定义隔离/计费/数据继承策略 |\n| 已提交lib与cordis.patch.yml | 仓库安装必需 | Host及Web发布入口 | 源码变更须同步构建产物 |\n| pnpm/esbuild/tsc | 仅开发构建 | 生成lib/声明 | 普通仓库安装按README不要求自行构建 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 读者核宿主版本、模型权限和非敏感测试工作区 | 确认子会话权限/费用，不把旁会话当沙箱 |\n| 创建 | 菜单执行一次side-chat，等待目录刷新 | 记录新子会话ID/父关系，避免失败后立即重复 |\n| 核对 | 核实际打开的会话是否刚创建 | 错会话则停止发送问题，手工查父目录 |\n| 退出 | 关闭视图并按宿主结束不需要的子会话 | 关闭视图不等取消后台任务或删除记录 |\n\n所谓independent只能解释为分开的可继续会话，本插件仍把live parent agent传给spawn。源码没有限定子会话文件访问、模型配置、工具权限、工作目录或父上下文继承，不能因没有自写IO就称子会话隔离。本仓库也没有删除/结束子会话或关闭视图即取消的逻辑。读者应通过现有宿主机制了解权限并核对刚创建ID；菜单成功而未跳转时先查看父目录，再决定是否重新创建。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:4-24](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/package.json#L4-L24)\n\n版本、引擎、发布exports。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  \"version\": \"0.1.0\",\n  \"type\": \"module\",\n  \"packageManager\": \"pnpm@11.7.0\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n  },\n  \"scripts\": {\n    \"build\": \"node build.mjs\",\n    \"typecheck\": \"tsc --noEmit\"\n  },\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./client\": {\n      \"types\": \"./lib/types/client/index.d.ts\",\n      \"default\": \"./lib/client.js\"\n    },\n    \"./package.json\": \"./package.json\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:50-60](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/package.json#L50-L60)\n\nWeb客户端声明。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-ui-commands\"\n      ]\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[cordis.patch.yml:1-5](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/cordis.patch.yml#L1-L5)\n\nHost挂载。\n\n```text\n# dsh-side-session bundle patch: mount the host half (the client half is\n# loaded by the web client roster through the package's dsh.client manifest).\n- insert:\n    - id: dsh-side-session\n      name: dsh-side-session\n```\n\n**依据 4 · 源码核查**：[src/index.ts:63-71](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L63-L71)\n\n父agent直接交spawn。\n\n```text\n        const result = await subagents.startContinuable({\n          provider: 'spawn',\n          label: labelFor(new Date()),\n          request: {\n            parent: agent,\n            prompt: [{ type: 'text', text: OPENING_PROMPT }],\n          },\n          signal,\n        })\n```\n\n**依据 5 · 源码核查**：[lib/index.js:13-37](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/lib/index.js#L13-L37)\n\n发布Host对应创建/结果。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nfunction apply(ctx) {\n  ctx.effect(() => ctx.commands.register({\n    name: \"side-chat\",\n    description: \"\\u65B0\\u5EFA\\u4E00\\u4E2A\\u72EC\\u7ACB\\u7684\\u65C1\\u4F1A\\u8BDD\\uFF08\\u53EF\\u7EE7\\u7EED\\u5BF9\\u8BDD\\u7684\\u5B50\\u4EE3\\u7406\\uFF09\\uFF0C\\u4E0D\\u5F71\\u54CD\\u5F53\\u524D\\u4F1A\\u8BDD\",\n    handler: async ({ agent, signal }) => {\n      try {\n        const subagents = ctx.get(\"subagents\");\n        if (subagents === void 0) {\n          return { kind: \"error\", text: \"\\u65C1\\u4F1A\\u8BDD\\u670D\\u52A1\\u672A\\u5C31\\u7EEA\" };\n        }\n        const result = await subagents.startContinuable({\n          provider: \"spawn\",\n          label: labelFor(/* @__PURE__ */ new Date()),\n          request: {\n            parent: agent,\n            prompt: [{ type: \"text\", text: OPENING_PROMPT }]\n          },\n          signal\n        });\n        return { kind: \"success\", text: \"\\u5DF2\\u521B\\u5EFA\\u65C1\\u4F1A\\u8BDD\" };\n      } catch {\n        return { kind: \"error\", text: \"\\u521B\\u5EFA\\u65C1\\u4F1A\\u8BDD\\u5931\\u8D25\" };\n      }\n    }\n  }), \"dsh-side-session: /side-chat command\");\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/client.js:28-72](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/lib/client.js#L28-L72)\n\n发布Web对应差集/订阅。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\nvar inject = [\"sessions\"];\nvar seenByParent = /* @__PURE__ */ new Map();\nasync function settleChild(sessions, parentId, before, attempts = 6) {\n  for (let i = 0; i < attempts; i += 1) {\n    await sessions.refreshSubagents(parentId);\n    const snapshot = sessions.list.getSnapshot();\n    const catalog = snapshot.subagentsByParent[parentId];\n    if (catalog && catalog.state === \"ready\") {\n      let fallback;\n      for (const entry of catalog.entries) {\n        if (entry.kind !== \"child\" || entry.mode !== \"continuable\") continue;\n        if (!before.has(entry.id)) return entry.id;\n        fallback = entry.id;\n      }\n      if (fallback !== void 0 && before.size === 0) return fallback;\n    }\n    if (i < attempts - 1) {\n      await new Promise((resolve) => setTimeout(resolve, 150));\n    }\n  }\n  return void 0;\n}\nfunction apply(ctx) {\n  const sessions = ctx.get(\"sessions\");\n  const unlisten = sessions.list.subscribe(() => {\n    const snapshot = sessions.list.getSnapshot();\n    for (const parentId of Object.keys(snapshot.subagentsByParent)) {\n      const catalog = snapshot.subagentsByParent[parentId];\n      if (!catalog || catalog.state !== \"ready\") continue;\n      const ids = /* @__PURE__ */ new Set();\n      for (const entry of catalog.entries) {\n        if (entry.kind === \"child\") ids.add(entry.id);\n      }\n      seenByParent.set(parentId, ids);\n    }\n  });\n  ctx.on(\"command/executed\", async (sessionId, name, result) => {\n    if (name !== \"side-chat\") return;\n    if (result.kind !== \"success\") return;\n    const before = seenByParent.get(sessionId) ?? /* @__PURE__ */ new Set();\n    const childId = await settleChild(sessions, sessionId, before);\n    if (childId === void 0) return;\n    sessions.openSubagent({ parentSessionId: sessionId, childSessionId: childId, mode: \"continuable\" });\n  });\n  ctx.effect(() => unlisten, \"dsh-side-session: catalog subscription\");\n```\n\n</details>\n\n**依据 7 · 作者声明**：[README.md:18-29](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/README.md#L18-L29)\n\n作者安装路径说明。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n````text\nFrom this repository (no build step: the client and host halves are prebuilt and committed under `lib/`):\n\n```sh\ndsh plugin --profile web add github:123dbl/dsh-side-session\n```\n\nor, once listed, one-click from the plugin market (Settings → plugins).\n\nLocal development link (already used by the author's `web` profile):\n\n```sh\ndsh plugin --profile web add link:/path/to/dsh-side-session\n````\n\n</details>\n\n#### 缺口\n\n- 匹配宿主spawn的权限/上下文继承和持久化/终止规则未核。\n  **影响：**不能推荐敏感任务隔离，也不能认为关闭视图已释放模型任务。\n  **进一步探讨：**继续探讨可先固定宿主版本，查看spawn的Agent配置继承、工作区和生命周期契约。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续与失败恢复成本和效果如何？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n该插件没有单独的远程付费API或文件复制流程，但startContinuable发固定就绪prompt，子会话后续仍消耗宿主模型/工具资源。模型价格、实际上下文、token与调度队列不在这里，所以不估金额和效率百分比。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主/模型环境，金额依读者配置 | 配置Web与服务，核spawn权限/继承 | 本插件无独立收费代码，不能据此称免费 |\n| 持续使用 | 每次创建固定中英提示的模型运行；最多六次目录刷新 | 核会话身份并输入实际问题 | 五次150ms间隔外还有刷新耗时，无总deadline；真实token/费率未知 |\n| 失败恢复 | 重复创建可能增加子会话和模型消耗 | 手工定位、结束多余会话、检查错投内容 | 没有创建ID收据、幂等键或失败自动清理 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 减少接线 | 单菜单调用既有continuable spawn与官方视图 | 相较手动创建的实际节时 |\n| 主流程并行 | Host不调用主agent的prompt入口 | 上游资源争用、权限/上下文继承和主任务体验 |\n| 自动定位 | 成功事件后目录差集与六次刷新 | 并发/订阅时序下正确匹配率 |\n\n相较手动创建/打开，单入口可能节省操作；若自动跳转错会话或未跳转，寻找与清理成本可能抵消收益。成本评估应以“准确创建并打开指定新会话”计成功，并计重复child数量、目录请求和恢复人时，不能只计Host success或菜单点击。代码中的分钟标签可帮助看时间但同一分钟重复标签不构成唯一收据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:36-46](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L36-L46)\n\n固定模型输入与非唯一分钟标签。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n/** Fixed opening prompt delivered to a freshly spawned side session. */\nconst OPENING_PROMPT = [\n  '这是一个新的旁会话。请用一两句话确认你已经就绪，并等待我输入第一个问题。',\n  'This is a new side session. Confirm in a sentence or two that you are ready, then wait for my first question.',\n].join('\\n')\n\n/** Short timestamp used as the child's display label, e.g. `旁会话 14:32`. */\nfunction labelFor(now: Date): string {\n  const hh = String(now.getHours()).padStart(2, '0')\n  const mm = String(now.getMinutes()).padStart(2, '0')\n  return `旁会话 ${hh}:${mm}`\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:63-75](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L63-L75)\n\n创建而无child收据。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n        const result = await subagents.startContinuable({\n          provider: 'spawn',\n          label: labelFor(new Date()),\n          request: {\n            parent: agent,\n            prompt: [{ type: 'text', text: OPENING_PROMPT }],\n          },\n          signal,\n        })\n        return { kind: 'success', text: '已创建旁会话' }\n      } catch {\n        return { kind: 'error', text: '创建旁会话失败' }\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:35-61](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L35-L61)\n\n六次刷新与局部间隔。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nasync function settleChild(\n  sessions: ISessions,\n  parentId: SessionId,\n  before: Set<SessionId>,\n  attempts = 6,\n): Promise<SessionId | undefined> {\n  for (let i = 0; i < attempts; i += 1) {\n    await sessions.refreshSubagents(parentId)\n    const snapshot = sessions.list.getSnapshot()\n    const catalog = snapshot.subagentsByParent[parentId]\n    if (catalog && catalog.state === 'ready') {\n      // Prefer a continuable child that was not there before the command ran.\n      let fallback: SessionId | undefined\n      for (const entry of catalog.entries) {\n        if (entry.kind !== 'child' || entry.mode !== 'continuable') continue\n        if (!before.has(entry.id)) return entry.id\n        fallback = entry.id\n      }\n      // The feed had never warmed (empty `before`): fall back to the last\n      // continuable child, which is the most recently created one.\n      if (fallback !== undefined && before.size === 0) return fallback\n    }\n    if (i < attempts - 1) {\n      await new Promise(resolve => setTimeout(resolve, 150))\n    }\n  }\n  return undefined\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:88-95](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L88-L95)\n\n静默未定位与跳转。\n\n```text\n  ctx.on('command/executed', async (sessionId: SessionId, name: string, result: CommandResult) => {\n    if (name !== 'side-chat') return\n    if (result.kind !== 'success') return\n    const before = seenByParent.get(sessionId) ?? new Set<SessionId>()\n    const childId = await settleChild(sessions, sessionId, before)\n    if (childId === undefined) return\n    sessions.openSubagent({ parentSessionId: sessionId, childSessionId: childId, mode: 'continuable' })\n  })\n```\n\n#### 缺口\n\n- 实际首次配置人时、模型资源、目录刷新总耗时和恢复重复会话人时无对照。\n  **影响：**不能承诺零额外成本或更快完成问题。\n  **进一步探讨：**可比较同固定宿主/模型下手动创建与单入口的准确定位率、全部资源与恢复步骤，不以通用成功文本代替验收。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 工程可借鉴点及关联收据假设如何检验，是否可试用？\n\n**研究主题：**工程质量与复用、新假设与验证、采用判断\n\n#### 完整回答\n\n工程可借鉴处是把命令创建与官方聊天视图复用分开，Host透传signal，用ctx.effect托管命令和订阅，不引入自制聊天UI。发布src/lib双份且构建入口明确，便于审查实际装载逻辑；这种接线方式可迁移到其他“创建实体再跳转”场景，但当前目录猜测不是可复用的可靠关联协议。\n\n由“Host已有创建结果却不交childID”和“客户端只能猜目录差集”推导未验证假设，可采用请求关联的创建收据。Host生成/接受requestID，成功返回实际childID/parentID及创建状态；Web只刷新核对这个精确ID，限定本请求仍活动、父关系和mode匹配后才打开。取消、迟到结果与已创建但未打开分开记状态，不因视图失败重放创建；需要额外幂等或查询机制处理网络未知结果，不假定加requestID自然幂等。相对手工定位，仍保留一键入口；相对当前差集，增加明确关联与恢复凭据，代价是兼容宿主CommandResult与spawn返回协议。若上游不暴露ID，可采用可查询的业务关联记录；不能拿时间戳/最新项充当同等替代。\n\n对照当前差集和精确ID方案，设目录先到/事件先到、冷缓存有旧child、两次并发、他客户端新增、刷新超时、创建后错误、切换父视图和dispose后回调等反例。判据是每个创建收据最多关联自身child且不打开他人child，未知结果能查不盲重试，取消/视图切换后不强制迟到导航；若任何反例仍错开/重复创建且无法区分，则证伪该实现的关联保证。当前未实现也未运行这个方案，不计入插件创新贡献。\n\n推荐observe。单入口接线的已有便利明确，但自动打开这个核心流程没有可靠ID关联，可能把后续问题发送给错误会话，宜先核/修关联与恢复语义再评估日常试用。若读者继续探讨，可从匹配宿主的spawn返回和事件目录顺序入手。核对前不在自动打开视图输入敏感或有副作用的请求，不根据通用失败立即重复创建。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:53-77](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/index.ts#L53-L77)\n\neffect、signal与未使用result。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nexport function apply(ctx: Context): void {\n  ctx.effect(() => ctx.commands.register({\n    name: 'side-chat',\n    description: '新建一个独立的旁会话（可继续对话的子代理），不影响当前会话',\n    handler: async ({ agent, signal }): Promise<CommandResult> => {\n      try {\n        const subagents = ctx.get('subagents')\n        if (subagents === undefined) {\n          return { kind: 'error', text: '旁会话服务未就绪' }\n        }\n        const result = await subagents.startContinuable({\n          provider: 'spawn',\n          label: labelFor(new Date()),\n          request: {\n            parent: agent,\n            prompt: [{ type: 'text', text: OPENING_PROMPT }],\n          },\n          signal,\n        })\n        return { kind: 'success', text: '已创建旁会话' }\n      } catch {\n        return { kind: 'error', text: '创建旁会话失败' }\n      }\n    },\n  }), 'dsh-side-session: /side-chat command')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.ts:88-97](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L88-L97)\n\n关联/生命周期改进位置。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  ctx.on('command/executed', async (sessionId: SessionId, name: string, result: CommandResult) => {\n    if (name !== 'side-chat') return\n    if (result.kind !== 'success') return\n    const before = seenByParent.get(sessionId) ?? new Set<SessionId>()\n    const childId = await settleChild(sessions, sessionId, before)\n    if (childId === undefined) return\n    sessions.openSubagent({ parentSessionId: sessionId, childSessionId: childId, mode: 'continuable' })\n  })\n\n  ctx.effect(() => unlisten, 'dsh-side-session: catalog subscription')\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.ts:35-61](https://github.com/123dbl/dsh-side-session/blob/39443eb1ea15fb080121a3a6474426980f346a6c/src/client/index.ts#L35-L61)\n\n差集对照与反例来源。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nasync function settleChild(\n  sessions: ISessions,\n  parentId: SessionId,\n  before: Set<SessionId>,\n  attempts = 6,\n): Promise<SessionId | undefined> {\n  for (let i = 0; i < attempts; i += 1) {\n    await sessions.refreshSubagents(parentId)\n    const snapshot = sessions.list.getSnapshot()\n    const catalog = snapshot.subagentsByParent[parentId]\n    if (catalog && catalog.state === 'ready') {\n      // Prefer a continuable child that was not there before the command ran.\n      let fallback: SessionId | undefined\n      for (const entry of catalog.entries) {\n        if (entry.kind !== 'child' || entry.mode !== 'continuable') continue\n        if (!before.has(entry.id)) return entry.id\n        fallback = entry.id\n      }\n      // The feed had never warmed (empty `before`): fall back to the last\n      // continuable child, which is the most recently created one.\n      if (fallback !== undefined && before.size === 0) return fallback\n    }\n    if (i < attempts - 1) {\n      await new Promise(resolve => setTimeout(resolve, 150))\n    }\n  }\n  return undefined\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a841a97eef45cf5bf89cecced32eb159519bbb889defa760959f374e354c7ed4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 59 | 40 | 13 | — |\n| .js | source | 2 | 119 | 114 | 8 | — |\n| .md | source | 1 | 60 | — | — | 528 |\n| .ts | source | 2 | 176 | 98 | 64 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| side-chat命令 | 固定就绪prompt创建continuable子会话 | 依赖commands/subagents，不返回childID |\n| 自动打开 | 目录刷新后调用官方openSubagent | Web差集猜归属，冷缓存/并发有误选条件 |\n| 目录与成功事件监听 | 更新已见集合并触发定位 | 无总deadline/在途dispose检查 |\n\n## 工程亮点\n\n工程可借鉴处是把命令创建与官方聊天视图复用分开，Host透传signal，用ctx.effect托管命令和订阅，不引入自制聊天UI。发布src/lib双份且构建入口明确，便于审查实际装载逻辑；这种接线方式可迁移到其他“创建实体再跳转”场景，但当前目录猜测不是可复用的可靠关联协议。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、build.mjs、src/index.ts、src/client/index.ts、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：已检查固定README/package/patch、完整Host/Web src与发布lib以及构建脚本。未运行目标、模型或真实宿主；不核上游spawn权限/持久化实现。\n- 下一步：可比较手动、目录差集与精确ID收据，在冷缓存、并发、乱序、取消和未知创建结果夹具下核唯一关联、恢复和资源成本；假设尚未验证。\n",
         "metadata": {
             "repository": "123dbl/dsh-side-session",
             "repository_id": 1355639507,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T09:04:31.143Z",
+            "window_start": "2026-09-22T09:04:31.143Z",
             "stars": 2,
             "pushed_at": "2026-09-03T07:14:52Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A123dbl%2Fdsh-side-session%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:136700:20D2B6:6AD84917 and timestamp 2026-10-21 05:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A123dbl%2Fdsh-side-session%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:154D87:22B497:6AD84917 and timestamp 2026-10-21 05:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A123dbl%2Fdsh-side-session%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6416:1E49B1:14493D:21B144:6AD84917 and timestamp 2026-10-21 05:09:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A123dbl%2Fdsh-side-session%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6403:3FE872:139BD5:210B9C:6AD84918 and timestamp 2026-10-21 05:09:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A123dbl%2Fdsh-side-session%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6417:2401FE:14A161:221144:6AD84918 and timestamp 2026-10-21 05:09:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-side-session",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-22T09:04:39.004Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-side-session",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-side-session",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-22T09:04:39.004Z",
                     "source_url": "https://registry.npmjs.org/dsh-side-session",
                     "error": "HTTP 404",
                     "latest_version": null,
                     "latest_published_at": null,
                     "latest_error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-                "current_revision": "39443eb1ea15fb080121a3a6474426980f346a6c",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

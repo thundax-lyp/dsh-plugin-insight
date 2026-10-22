@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1378742722-root-directory-0",
+                    "id": "2026-10-22-02-github-1378742722-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:08:49.567Z",
+                    "retrieved_at": "2026-10-22T07:01:00.274Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1378742722-root-author",
+                    "id": "2026-10-22-02-github-1378742722-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "README.md",
+                            "content_sha256": "7f9f4b708accd78e1aa35c6dcbde5e3bc9fad1542c24150221b86c58fb79e0de"
+                        }
+                    ],
                     "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
-                    "captured_at": "2026-10-21T08:08:49.567Z",
-                    "summary": "为特定DSH版本修补Aqua玻璃主题的加载与设置入口兼容。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:01:00.274Z",
+                    "summary": "Aqua 玻璃主题的非官方修补分支，针对 DSH 0.1.2-rc.1 修三处加载/设置入口问题。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1378742722-root-source",
+                    "id": "2026-10-22-02-github-1378742722-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/index.ts",
+                    "url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "README.zh.md",
+                            "content_sha256": "5b98b91b194e4766c3b0d6856db049d2798f98aaae5620497348e87101fbb8f9"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "REPAIR.md",
+                            "content_sha256": "29d6c4e0997a3566875c83af6ff7e16b2debc8331a5edd1ecbd1e989cae42ae9"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "package.json",
+                            "content_sha256": "6709344cc5ca610ece83a52e6bbe3274ae6e2bfba2ea315b428acb4e3276daf8"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "lib/client.js",
+                            "content_sha256": "c2e0e6dfbaac69abf70d8a9d57fe233edc2bdafb0188709eaa1be1feb3fce214"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "lib/index.js",
+                            "content_sha256": "983fe201220ffd74f103961e882b549aead22390567bf0d8bdf6582e3d07a56d"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "src/index.ts",
+                            "content_sha256": "9b1c99bf3f0e7324e040aa7e2e798b24d1c2e0e9ebfa04d682b0bd023da99c6d"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "src/client/index.ts",
+                            "content_sha256": "72b10e7f7597e118a409886bf6ae2e403e8608d470c1b8c669c7857a6665ebce"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "src/client/settings-store.ts",
+                            "content_sha256": "b072ca3db68990dedd23b5c5e8e0690a7e1f081daef6928f75bd4d3b0058d5d4"
+                        },
+                        {
+                            "repository_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched",
+                            "commit": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
+                            "path": "src/client/theme-layer.ts",
+                            "content_sha256": "7df953e04d3be7fc2694987d40ffb79ea600869138583fb7d9d964a5ad2d69b6"
+                        }
+                    ],
                     "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
-                    "captured_at": "2026-10-21T08:08:49.567Z",
-                    "summary": "核查 src/index.ts、src/client/index.ts、src/client/theme-layer.ts、REPAIR.md；浏览器store导入改到dsh-client-store、keyed settings slot补aqua key，主机以鸭类型schema注册空aqua namespace以触发卡片；实际外观仍在localStorage和AquaLayer effects。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T07:01:00.274Z",
+                    "summary": "核查 README.zh.md、REPAIR.md、package.json、lib/client.js、lib/index.js、src/index.ts、src/client/index.ts、src/client/settings-store.ts、src/client/theme-layer.ts；预构建 client 更换 store import 与 keyed slot，Host 注册空 aqua 命名空间；客户端视觉与偏好驻 localStorage。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "静态审阅 README.zh、REPAIR、src/关键路径和当前 lib 哈希；未运行 DSH/CDP 或视觉验收。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "使用DSH0.1.2-rc.1并希望沿用Aqua外观的用户。",
+                    "text": "用户在固定 DSH 0.1.2-rc.1 Web profile 使用玻璃主题与壁纸。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "浏览器store导入改到dsh-client-store、keyed settings slot补aqua key，主机以鸭类型schema注册空aqua namespace以触发卡片；实际外观仍在localStorage和AquaLayer effects。",
+                    "text": "预构建 client 更换 store import 与 keyed slot，Host 注册空 aqua 命名空间；客户端视觉与偏好驻 localStorage。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "静态审阅 README.zh、REPAIR、src/关键路径和当前 lib 哈希；未运行 DSH/CDP 或视觉验收。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "非官方分支声明 AGPL-3.0-only；上游仓库与 npm 包许可声明冲突，法律适用未判。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无模型费用，动态背景与模糊有GPU/电池代价；fork追宿主API、手补构建产物与源码同步有维护成本。",
+                    "text": "#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 安装 | GitHub/git、固定 DSH 版本 | 仅作者验证 0.1.2-rc.1 |\n| 使用 | 浏览器存储/GPU | 大壁纸配额/性能未知 |\n| 升级 | 重新适配/测试 | 手工产物 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "只在匹配版本先核设置开关与卸载恢复；别用同名npm上游包替代该fork。",
+                    "text": "固定版本的隔离 profile 装入、核哈希、重跑 CDP 与人工视觉/开关测试，确认许可再部署。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "作者给定环境运行记录是作者证据，本轮未复测；没有生产效率收益。",
+                    "text": "#### 效果\n\n| 项 | 材料支持 | 未知 |\n| --- | --- | --- |\n| 玻璃主题 | src/预构建入口 | 本轮视觉未验 |\n| 设置开关 | namespace/key/localStorage | 当前宿主实效 |\n| 兼容 | 作者单版本报告 | 后续版本 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "将命名空间、key和模块来源三个独立契约逐一修正可借鉴；鸭类型空schema是版本适配技巧，不保证新版settings接口。",
+                    "text": "通过 keyed slot 和空设置命名空间补 DSH 0.1.2 接口；交付以手工修补 lib 为真相，src 是镜像。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +265,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "fork增量是恢复已有视觉能力可加载/可关闭，并明确源/产物修补归属；不将上游完整主题体量或视觉机制算本fork创新。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "修复旧 Aqua 主题在 DSH 0.1.2 的三处接口断裂，延续原有外观能力。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +283,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "REPAIR明确lib手工补、src仅镜像且未在独立工具链typecheck，固定src阅读不自动证明与所有发布bundle行为一致。对0.1.2-rc.1的作者验收不能外推0.2.x，旧settings.register接口尤其需另核。",
+                    "basis": "supported",
+                    "text": "交付 lib 是手工修补的预构建产物，src 未类型检查；只验证一个宿主版本，不能从源码镜像推断更广兼容。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +301,16 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：给模块表、keyed slot和settings namespace写声明式版本适配探针，并生成src/lib一致性材料，可减少手补漂移。以目标/新宿主和重建bundle核开关可达、释放和差异；无法重建时保留产物修补限定。",
+                    "text": "把补丁重建和固定宿主视觉回归自动化，可降低后续适配负担；该分支目前未实现。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +319,15 @@
                             "fingerprint": "e3d96e46e3ef0034b1304663ffcd70a87ff70982"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:08:49.567Z",
+                    "reviewed_at": "2026-10-22T07:01:00.274Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:08:49.567Z",
+            "last_checked_at": "2026-10-22T07:01:00.274Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
-                "reviewed_at": "2026-10-21T08:08:49.567Z",
+                "reviewed_at": "2026-10-22T07:01:00.274Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +339,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 0,
-                        "mechanism": 8,
+                        "mechanism": 15,
                         "transferability": 5,
-                        "simplification": 0
+                        "simplification": 4
                     },
-                    "rationale": "novelty=0：fork为兼容修补无新视觉方法。 mechanism=8：三个契约修补局部增量。 transferability=5：特定版本技巧迁移有限。 simplification=0：未改变主题机制复杂度。",
+                    "rationale": "接口修补针对特定 DSH 版本，产物哈希/测试报告清楚但手工补丁难迁移。",
                     "basis": "interpretation",
-                    "score": 13,
+                    "score": 24,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 0,
-                        "delivery": 0,
+                        "workflow": 9,
+                        "delivery": 15,
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "workflow=0：恢复入口非业务重组。 delivery=0：仍是原主题效果。 reach=5：让特定宿主用户恢复使用。 economics=0：无成本结构改变。",
+                    "rationale": "外观需求明确，维护和许可适用范围限制扩散。",
                     "basis": "interpretation",
-                    "score": 5,
+                    "score": 29,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1378742722-root-source"
+                        "2026-10-22-02-github-1378742722-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "恰用DSH0.1.2-rc.1且需Aqua外观者可试此fork；核实际lib开关及卸载恢复，不外推0.2.x兼容。",
+                "decision": "observe",
+                "reason": "仅同一目标版本隔离试用；先确认许可证和作者验收在本机复现。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "固定旧版本沿用外观的人群明确但较窄。"
+                        "rationale": "固定版本主题需求明确。"
                     },
                     "advantage": {
-                        "score": 6,
-                        "rationale": "修补store/settings接线让旧主题延续，独立增量局部。"
+                        "score": 13,
+                        "rationale": "修复三处断裂并保留丰富外观。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核REPAIR手补lib与src镜像，作者运行记录非本轮验收。"
+                        "rationale": "产物哈希独立核对，实机结果仍是作者报告。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "GPU与fork追接口、手补产物同步成本高于普通主题。"
+                        "score": 5,
+                        "rationale": "手工补丁、版本漂移、壁纸存储和许可审查。"
                     }
                 },
-                "score": 44,
+                "score": 46,
                 "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T07:01:00.274Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1378742722-root-source"
+                    "2026-10-22-02-github-1378742722-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,66 +418,43 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "6f93a70667ca21622fcf379db7da171a5b7a41006b94f8faf5ec34bbaa0cc603"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "9c9de3be1de22e629c03f454f0b440e0ca4224b94e79b103c0f63d7aa3dc4753"
         },
         "publication.metadata": "data/plugins/aliww2468--dsh-client-ui-aqua-patched/META.json",
         "publication.summaries": {
-            "text": "为特定DSH版本修补Aqua玻璃主题的加载与设置入口兼容。",
+            "text": "Aqua 玻璃主题的非官方修补分支，针对 DSH 0.1.2-rc.1 修三处加载/设置入口问题。",
             "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
             "source_url": "https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.md"
         },
         "publication.capabilities": {
             "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
             "items": {
-                "界面": "修补版Aqua主题及设置",
-                "后台": "aqua空设置命名空间适配"
-            }
+                "界面": "Aqua 玻璃主题、壁纸、流体及设置开关"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 玻璃界面 | 个性化 | 视觉未独立验 |\n| 修补入口 | 适配 0.1.2 | 更广版本未知 |\n| 本地壁纸 | 自定义 | 配额和残留 |"
         },
         "publication.advice": {
             "revision": "e3d96e46e3ef0034b1304663ffcd70a87ff70982",
-            "text": "只在匹配版本先核设置开关与卸载恢复；别用同名npm上游包替代该fork。"
+            "text": "固定版本的隔离 profile 装入、核哈希、重跑 CDP 与人工视觉/开关测试，确认许可再部署。详见[Q03](#research-q03)。"
         },
         "registry": "data/plugins/aliww2468--dsh-client-ui-aqua-patched",
-        "reports": "# dsh-client-ui-aqua-patched\n\n> 为特定DSH版本修补Aqua玻璃主题的加载与设置入口兼容。\n\n## 使用建议\n\n只在匹配版本先核设置开关与卸载恢复；别用同名npm上游包替代该fork。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：使用DSH0.1.2-rc.1并希望沿用Aqua外观的用户。\n- **亮点**：fork增量是恢复已有视觉能力可加载/可关闭，并明确源/产物修补归属；不将上游完整主题体量或视觉机制算本fork创新。\n- **思考**：REPAIR明确lib手工补、src仅镜像且未在独立工具链typecheck，固定src阅读不自动证明与所有发布bundle行为一致。对0.1.2-rc.1的作者验收不能外推0.2.x，旧settings.register接口尤其需另核。\n- **建议**：未验证假设：给模块表、keyed slot和settings namespace写声明式版本适配探针，并生成src/lib一致性材料，可减少手补漂移。以目标/新宿主和重建bundle核开关可达、释放和差异；无法重建时保留产物修补限定。\n\n## 场景与替代办法\n\n参照上游Aqua1.3.1，玻璃、流体、粒子与壁纸设计均归上游；fork仅修三个宿主契约不匹配。\n\n## 能力清单\n\n- **界面**：修补版Aqua主题及设置\n- **后台**：aqua空设置命名空间适配\n\n## 依赖与流程\n\n浏览器store导入改到dsh-client-store、keyed settings slot补aqua key，主机以鸭类型schema注册空aqua namespace以触发卡片；实际外观仍在localStorage和AquaLayer effects。\n\n作者验证目标DSH0.1.2-rc.1/Node22.21.1，旧settings.register接口与客户端store/slots；AGPL-3.0-only复用许可，源码依赖原monorepo构建环境。\n\n加载修补lib→空namespace供设置卡分派→启用AquaLayer→本地保存外观→关闭时释放effects；不改变模型/文件任务。\n\n## 成本与效果\n\n无模型费用，动态背景与模糊有GPU/电池代价；fork追宿主API、手补构建产物与源码同步有维护成本。\n\n作者给定环境运行记录是作者证据，本轮未复测；没有生产效率收益。\n\n## 核心贡献\n\nfork增量是恢复已有视觉能力可加载/可关闭，并明确源/产物修补归属；不将上游完整主题体量或视觉机制算本fork创新。\n\n## 关键质疑\n\nREPAIR明确lib手工补、src仅镜像且未在独立工具链typecheck，固定src阅读不自动证明与所有发布bundle行为一致。对0.1.2-rc.1的作者验收不能外推0.2.x，旧settings.register接口尤其需另核。\n\n## 工程亮点\n\n将命名空间、key和模块来源三个独立契约逐一修正可借鉴；鸭类型空schema是版本适配技巧，不保证新版settings接口。\n\n源码依据：[src/index.ts](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/index.ts)、[src/client/index.ts](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/client/index.ts)、[src/client/theme-layer.ts](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/client/theme-layer.ts)、[REPAIR.md](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/REPAIR.md)。\n\n## 未来设计假设（未验证）\n\n未验证假设：给模块表、keyed slot和settings namespace写声明式版本适配探针，并生成src/lib一致性材料，可减少手补漂移。以目标/新宿主和重建bundle核开关可达、释放和差异；无法重建时保留产物修补限定。\n\n未来隔离目标宿主核实际lib注册、关主题释放和新版本拒绝/降级；本轮未运行CDP或重建。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：40a3fad98722bc566692b5d8f23ddabbd173c857c2e49d67027081da2fb38eec。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 751 | — | — | 8326 |\n| .js | source | 6 | 4028 | 3516 | 583 | — |\n| .tsx | source | 3 | 568 | 398 | 154 | — |\n| .ts | source | 19 | 3907 | 2885 | 742 | — |\n| .mjs | source | 2 | 229 | 184 | 21 | — |\n\n排除 14 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[Aliww2468/dsh-client-ui-aqua-patched](https://github.com/Aliww2468/dsh-client-ui-aqua-patched)\n- **版本号**：1.3.1-patch.1（[固定提交 e3d96e46](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/tree/e3d96e46e3ef0034b1304663ffcd70a87ff70982)）\n- **版本日期**：2026-09-21（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/client/index.ts、src/client/theme-layer.ts、REPAIR.md、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离目标宿主核实际lib注册、关主题释放和新版本拒绝/降级；本轮未运行CDP或重建。\n",
+        "reports": "# dsh-client-ui-aqua-patched\n\n> Aqua 玻璃主题的非官方修补分支，针对 DSH 0.1.2-rc.1 修三处加载/设置入口问题。\n\n## 研究范围\n\n- **仓库**：[Aliww2468/dsh-client-ui-aqua-patched](https://github.com/Aliww2468/dsh-client-ui-aqua-patched)\n- **版本号**：1.3.1-patch.1（[固定提交 e3d96e46e3ef0034b1304663ffcd70a87ff70982](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/tree/e3d96e46e3ef0034b1304663ffcd70a87ff70982)）\n- **版本日期**：2026-09-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n三处修复与检出产物哈希可核；作者报告的目标宿主 CDP 结果未独立复现，兼容面和授权链有边界。\n\n## 洞察短评\n\n- **用途**：用户在固定 DSH 0.1.2-rc.1 Web profile 使用玻璃主题与壁纸。\n- **亮点**：修复旧 Aqua 主题在 DSH 0.1.2 的三处接口断裂，延续原有外观能力。详见[Q01](#research-q01)。\n- **思考**：交付 lib 是手工修补的预构建产物，src 未类型检查；只验证一个宿主版本，不能从源码镜像推断更广兼容。详见[Q02](#research-q02)。\n- **建议**：把补丁重建和固定宿主视觉回归自动化，可降低后续适配负担；该分支目前未实现。详见[Q03](#research-q03)。\n\n采用建议：固定版本的隔离 profile 装入、核哈希、重跑 CDP 与人工视觉/开关测试，确认许可再部署。详见[Q03](#research-q03)。\n\n## 核心贡献\n\n修复旧 Aqua 主题在 DSH 0.1.2 的三处接口断裂，延续原有外观能力。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n交付 lib 是手工修补的预构建产物，src 未类型检查；只验证一个宿主版本，不能从源码镜像推断更广兼容。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n把补丁重建和固定宿主视觉回归自动化，可降低后续适配负担；该分支目前未实现。详见[Q03](#research-q03)。\n\n目标 0.1.2-rc.1 重跑作者 CDP 与人工视觉；核状态残留、壁纸配额和版本升级。\n\n## 场景与替代办法\n\n用户在固定 DSH 0.1.2-rc.1 Web profile 使用玻璃主题与壁纸。\n\nDSH 原生 UI 或上游未修补 Aqua；分支只针对后者的版本断裂。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH 0.1.2-rc.1 | 已报告兼容 | 其它版本未验 |\n| 浏览器 localStorage | 偏好/壁纸 | 状态不能保存 |\n| 许可确认 | 分发使用 | 决策待定 |\n\n#### 试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 安装 | github 分支而非上游裸包 | 正确产物哈希 |\n| UI | 开/关主题、壁纸 | 可恢复 |\n| 升级 | 更换宿主版本 | 先验再迁移 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源 | 边界 |\n| --- | --- | --- |\n| 安装 | GitHub/git、固定 DSH 版本 | 仅作者验证 0.1.2-rc.1 |\n| 使用 | 浏览器存储/GPU | 大壁纸配额/性能未知 |\n| 升级 | 重新适配/测试 | 手工产物 |\n\n#### 效果\n\n| 项 | 材料支持 | 未知 |\n| --- | --- | --- |\n| 玻璃主题 | src/预构建入口 | 本轮视觉未验 |\n| 设置开关 | namespace/key/localStorage | 当前宿主实效 |\n| 兼容 | 作者单版本报告 | 后续版本 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实非官方 Aqua 修补分支的三项修复、实际交付产物及兼容/许可证边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 修补版给用户提供什么，修的是哪三处？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\nAqua 将 DSH Web 的顶栏、侧栏、输入区等变为玻璃材质，提供流体/壁纸背景、云母/兼容模式及粒子装饰。本分支不是原创主题，作者明确列出三项适配 DSH 0.1.2 的修复：浏览器 import 改用 dsh-client-store、设置卡片注册加 key=aqua、Host 注册 aqua 设置命名空间。源码和包内产物有这些对应路径；本轮未重跑作者的 CDP 端到端夹具，因此“已在 0.1.2-rc.1 工作”属于作者报告。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:1-17](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.zh.md#L1-L17)\n\n作者定位非官方修补分支及主题价值。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n> **非官方修补分支 —— 已修复以适配 DSH 0.1.2-rc.1。**\n> 上游 `dsh-client-ui-aqua@1.3.1`（npm，2026-08-17）与上游仓库 HEAD 在 DSH 0.1.2 线上均无法工作。\n> 本分支修复了三处独立缺陷，并已在 DSH 0.1.2-rc.1（宿主 Node v22.21.1）上完成端到端验证。\n> 诊断、逐项改动、证据与注意事项见 **[REPAIR.md](REPAIR.md)**。与上游作者无隶属、无背书、\n> 无维护关系；按 **AGPL-3.0-only** 分发（见[许可证](#许可证)）。本分支所依据的上游源码说明\n> 见[上游与本分支](#上游与本分支)。\n\n# dsh-client-ui-aqua —— DeepSeek Harness 玻璃质感主题\n\n[English](README.md) | 中文\n\n## 一句话价值\n\n装上它，DSH 网页端立刻变成磨砂玻璃——顶栏、侧边栏、输入框、统计行与轨迹视图化作悬浮玻璃片，背景可以是流动的流体板，也可以是你自己的壁纸。关掉唯一的总开关，界面完全还原，不留任何残留。\n\n## 安装\n\n```\n\n</details>\n\n**依据 2 · 作者声明**：[REPAIR.md:48-79](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/REPAIR.md#L48-L79)\n\n三项修复与交付文件列表。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n````text\n\n```\nError: keyed slot \"settings.plugin.item\" requires options.key\n```\n\n### 1.3 The host half serves no settings namespace, so the card can never render\n\nThe node half is `export function apply(): void {}`. Since rc.7 the settings page\ndispatches cards **by served settings namespace** — `ConfigurablePluginsTab`\nrenders `renderSlot(\"settings.plugin.item\", {}, { entryKey: ns })` once per\nnamespace the host answers for. With no namespace registered, no `entryKey`\nequals `aqua`, so the card is never dispatched even after 1.2 is fixed: the\nmaster on/off switch silently disappears.\n\n---\n\n## 2. Changes in this fork\n\n| File | Change |\n|---|---|\n| `lib/client.js` | `require(\"@deepseek-ai/dsh-client-runtime/client\")` → `require(\"@deepseek-ai/dsh-client-store\")` |\n| `lib/client.js` | `settings.plugin.item` registration gains `key: \"aqua\"` (keeps `id`) |\n| `lib/index.js` | empty `apply()` → registers an empty pass-through settings namespace `aqua` via `ctx.inject(['settings'], scope => scope.settings.register('aqua', schema, { base: {} }))` |\n| `src/client/settings-store.ts` | import re-pointed at `@deepseek-ai/dsh-client-store` |\n| `src/client/index.ts` | slot registration gains `key: 'aqua'`; the type-only `ClientContext` import re-pointed at `@deepseek-ai/cordis` |\n| `src/index.ts` | source-level mirror of the host-half namespace registration |\n| `lib/types/index.d.ts` | matches the new `apply(ctx)` signature |\n| `package.json` | version `1.3.1-patch.1`; `dsh.client.inject` and `peerDependencies` re-pointed from `dsh-client-runtime` to `dsh-client-store`; license statement corrected (see §5) |\n\nThe namespace registered by the node half is a deliberate **empty pass-through**:\nAqua keeps its state in `localStorage` behind the browser half, so the namespace's\nonly job is to make the card dispatchable. Host-side settings values for `aqua`\n````\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:1-57](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/index.ts#L1-L57)\n\nHost 注册 aqua 命名空间。\n\n<details>\n<summary>查看原文（57行）</summary>\n\n```text\n/**\n * Aqua theme-layer plugin, node half.\n *\n * Upstream this half is an empty `apply()`: the enable flag is a browser-local\n * preference and a client-only visual layer owns no host configuration.\n *\n * Since DSH 0.1.2-rc.1 that is not enough. The settings page dispatches plugin\n * cards by *served settings namespace* — `settings.plugin.item` is a keyed slot\n * rendered once per namespace the host answers for, and the key must match one\n * of them. Aqua's card is keyed `aqua`, but the host served no such namespace,\n * so the card never dispatched: registering the keyed slot first threw\n * `keyed slot \"settings.plugin.item\" requires options.key`, and would have\n * rendered nothing even once the key was supplied.\n *\n * The stored values are not the point — Aqua keeps them in localStorage behind\n * the browser half. This half therefore registers an empty pass-through\n * namespace whose only job is to make the card dispatchable. Its schema is\n * duck-typed to what the settings seam calls on it (callable plus `toJSON`), so\n * this package still needs no `@deepseek-ai/*` import at runtime.\n */\n\n/** Settings namespace the browser half's card is keyed by. */\nconst AQUA_NAMESPACE = 'aqua'\n\n/** Schema-shaped callable the settings seam accepts in place of a real schema. */\ninterface PassThroughSchema {\n  (value: unknown): Record<string, unknown>\n  toJSON(): {\n    uid: number\n    refs: Record<string, { type: string; meta: { default: Record<string, unknown> }; dict: Record<string, unknown> }>\n  }\n}\n\n/** Minimal host context surface used here (avoids a runtime package import). */\ninterface HostContext {\n  inject?: (deps: string[], callback: (scope: { settings: { register: (name: string, schema: unknown, options: { base: Record<string, unknown> } ) => unknown } }) => void) => void\n}\n\nconst passThroughSchema = ((value: unknown) => ({ ...((value ?? {}) as Record<string, unknown>) })) as PassThroughSchema\n\npassThroughSchema.toJSON = () => ({\n  uid: 0,\n  refs: { 0: { type: 'object', meta: { default: {} }, dict: {} } },\n})\n\n/**\n * Host plugin body: advertise the namespace the Aqua settings card dispatches\n * on, so `Settings → Plugins` can render its master switch.\n * @param ctx - cordis host context.\n */\nexport function apply(ctx: HostContext): void {\n  if (typeof ctx.inject !== 'function') return\n  ctx.inject(['settings'], (scope) => {\n    try {\n      scope.settings.register(AQUA_NAMESPACE, passThroughSchema, { base: {} })\n    } catch (error) {\n      console.error(`[ui-aqua] settings namespace skipped: ${String(error)}`)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/index.ts:180-189](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/client/index.ts#L180-L189)\n\n卡片 keyed slot 用 aqua。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  // match the namespace the node half registers (`aqua`) or the card silently\n  // never renders. `id` is kept for the older list-shaped slot.\n  ctx.slots.inject('settings.plugin.item', () => ctx.slots.register({\n    name: 'settings.plugin.item',\n    id: 'aqua',\n    key: 'aqua',\n    order: 5,\n    store: pluginStore,\n    locale: NS,\n    inject: pluginInjected,\n```\n\n</details>\n\n#### 缺口\n\n- 未在目标 DSH 0.1.2-rc.1 重跑浏览器。\n  **影响：**真实视觉、插件冲突和设置卡片行为未独立证实。\n  **进一步探讨：**在可回滚 profile 重跑作者夹具并人工检查壁纸/开关。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 交付产物与源码和状态怎样对应？\n\n**研究主题：**功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nREADME/REPAIR 指出上游 monorepo 依赖 workspace:^，本分支无法独立构建；实际安装的是手工修过的预构建 lib，而 src 只作可审镜像且未类型检查。本轮独立计算 lib/client.js 与 lib/index.js 的 SHA-256，分别为 c2e0…e214 与 983f…a56d，与 REPAIR.md 记载相同，仅证明当前检出字节匹配作者报告的测试对象，不证明测试结果。Host aqua namespace 是空 pass-through，真实主题状态在浏览器 localStorage；关闭开关移除视觉层，但偏好键仍保留，不能把“视觉恢复”理解成清空持久化数据。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[REPAIR.md:69-87](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/REPAIR.md#L69-L87)\n\n说明手工补丁、src 未类型检查及状态只在 localStorage。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n| `lib/client.js` | `settings.plugin.item` registration gains `key: \"aqua\"` (keeps `id`) |\n| `lib/index.js` | empty `apply()` → registers an empty pass-through settings namespace `aqua` via `ctx.inject(['settings'], scope => scope.settings.register('aqua', schema, { base: {} }))` |\n| `src/client/settings-store.ts` | import re-pointed at `@deepseek-ai/dsh-client-store` |\n| `src/client/index.ts` | slot registration gains `key: 'aqua'`; the type-only `ClientContext` import re-pointed at `@deepseek-ai/cordis` |\n| `src/index.ts` | source-level mirror of the host-half namespace registration |\n| `lib/types/index.d.ts` | matches the new `apply(ctx)` signature |\n| `package.json` | version `1.3.1-patch.1`; `dsh.client.inject` and `peerDependencies` re-pointed from `dsh-client-runtime` to `dsh-client-store`; license statement corrected (see §5) |\n\nThe namespace registered by the node half is a deliberate **empty pass-through**:\nAqua keeps its state in `localStorage` behind the browser half, so the namespace's\nonly job is to make the card dispatchable. Host-side settings values for `aqua`\nare stored but unused. The same technique is used in production by\n`@liustack/modsearch` on this DSH line.\n\n### Why the built artifacts are patched by hand\n\nUpstream's repository is an extraction from the author's `deepseek-harness`\nmonorepo: every `@deepseek-ai/*` dependency is declared as `workspace:^`, and\n`tsdown`/`typescript` are not declared at all even though `scripts.bundle` calls\n```\n\n</details>\n\n**依据 2 · 作者声明**：[REPAIR.md:109-132](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/REPAIR.md#L109-L132)\n\n作者 CDP 测试与两份产物哈希。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n````text\n| Plugins tab card | “玻璃主题 …” card with master switch present |\n| Master switch functional | click → layer removed, `localStorage['dsh.ui-aqua.enabled'] = \"false\"`, fluid canvas gone; click again → layer back, flag `\"true\"`; zero exceptions |\n\nShipped artifact hashes (SHA-256), i.e. the exact bytes that passed the tests:\n\n```\nlib/client.js  C2E0E6DFBAAC69ABF70D8A9D57FE233EDC2BDAFB0188709EAA1BE1FEB3FCE214\nlib/index.js   983FE201220FFD74F103961E882B549AEAD22390567BF0D8BDF6582E3D07A56D\n```\n\n`lib/client.js.map` was removed: it belonged to upstream's repository build,\nwhich is not the build shipped here.\n\nReproduce:\n\n```sh\ndsh plugin --profile web add link:<path-to-this-repo>       # or github:<owner>/<repo>\ndsh --profile web --port 0 --no-open                        # note the printed token URL\nnode tools/cdp-aqua-test.mjs \"http://127.0.0.1:<port>/?token=<token>\" 15000\nnode tools/cdp-eval.mjs     \"http://127.0.0.1:<port>/?token=<token>\" 12000 @tools/expr-toggle.js\n```\n\n---\n\n````\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/theme-layer.ts:199-215](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/client/theme-layer.ts#L199-L215)\n\n启用标记读写 localStorage。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nfunction readEnabled(): boolean {\n  try {\n    const raw = localStorage.getItem(AQUA_ENABLED_KEY)\n    return raw === null ? DEFAULT_ENABLED : raw === 'true'\n  } catch {\n    return DEFAULT_ENABLED\n  }\n}\n\n/** Persist the enable flag (storage failures keep the in-memory state). */\nfunction writeEnabled(value: boolean): void {\n  try {\n    localStorage.setItem(AQUA_ENABLED_KEY, String(value))\n  } catch {\n    /* in-memory state still applies for this tab */\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/theme-layer.ts:610-625](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/client/theme-layer.ts#L610-L625)\n\n开关应用/撤销视觉层。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    if (value === this.enabled) return\n    this.enabled = value\n    writeEnabled(value)\n    this.sync()\n  }\n\n  /** Set the rendering mode ('mica' or 'compat'). */\n  setMode(value: 'mica' | 'compat'): void {\n    if (value === this.settings.mode) return\n    this.settings.mode = value\n    writeMode(value)\n    if (this.enabled) { this.applySettings(); this.applyTokens() }\n  }\n\n  /** Set the glass blur radius (px). */\n  setBlur(value: number): void {\n```\n\n</details>\n\n#### 缺口\n\n- 未独立验证 lib 与 src 全量语义一致或重跑测试。\n  **影响：**源码镜像不能替代预构建产物审计。\n  **进一步探讨：**用固定 SHA 产物在隔离宿主做视觉/开关/卸载验证，必要时逐字节比较修补 diff。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 采用时需注意哪些兼容和许可问题？\n\n**研究主题：**依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n作者只在 DSH 0.1.2-rc.1 验证，且分支是一次性社区修复；直接安装 npm 裸包名会得到未修复上游版。主题无需运行时外部服务的声明来自作者对产物的静态审计，壁纸 data URL 存 localStorage 会受浏览器配额限制，GPU/视觉开销未测。上游仓库 LICENSE 为 AGPL、其 npm 包称 MIT，本分支按 AGPL-3.0-only 声明分发；这是一项明确的来源/再分发不确定性，不在本轮作法律判断。建议仅在相同目标版本隔离试用，确认许可适用性、视觉可读性、存储容量和升级恢复。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:19-57](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.zh.md#L19-L57)\n\n安装方式、版本基线及避免裸 npm 包。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n````text\n\n```sh\ndsh plugin --profile web add github:Aliww2468/dsh-client-ui-aqua-patched\ndsh --profile web --dump-config     # 校验：应出现 \"# == dsh-client-ui-aqua\" 这一层\ndsh web                             # 重启宿主；主题默认开启\n```\n\n需要 `git` 位于 `PATH` 且能访问 `github.com`（受限网络需要 HTTP 代理）。插件会把自身追加进 `dsh.profile.bundles`。各控件见[使用](#使用)；权限、外部服务与兼容性见[权限、外部服务与兼容性](#权限外部服务与兼容性)。\n\n### 从本仓库安装（推荐）\n\n上面那段就是全部：安装本修补版，并通过包内的 `dsh.bundle.patch` 自动注册为 profile 插件层，所有平台通用。\n\n### 从本地克隆安装\n\n```sh\ngit clone https://github.com/Aliww2468/dsh-client-ui-aqua-patched.git\ndsh plugin --profile web add link:/本仓库的绝对路径\n```\n\n### 卸载\n\n```sh\ndsh plugin --profile web remove dsh-client-ui-aqua\n```\n\n然后重启 `dsh web`。所有视觉效果都是可释放的 effect，随插件一并回收，原生界面随之还原。\n\n### 环境要求\n\nDSH **0.1.2-rc.1**（本分支的验证基线，宿主 Node v22.21.1）。安装会往 profile 的\n`dsh.profile.bundles` 追加 `dsh-client-ui-aqua`，因此**必须重启宿主**主题才会加载。\n\n### ⚠️ 不要安装 npm 上的裸包名\n\n```sh\ndsh plugin --profile web add dsh-client-ui-aqua   # ← 装到的是上游未修复的 1.3.1\n```\n\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.zh.md:100-128](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/README.zh.md#L100-L128)\n\n运行权限、localStorage、外部依赖与兼容表。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n## 权限、外部服务与兼容性\n\n以下结论审计自随包产物（`lib/client.js`、`lib/index.js`），即 REPAIR.md §3 中给出哈希的那份字节。\n\n| 问题 | 结论 |\n|---|---|\n| 运行时网络请求 | **无。** 浏览器半中 `fetch`、`XMLHttpRequest`、`WebSocket`、`EventSource`、`sendBeacon` 出现次数均为 0；宿主半不 import 任何模块，也不触网。 |\n| 文件 / 凭据 / Cookie | **无。** 不使用文件系统或凭据服务，不读 `document.cookie`，无 `eval` / `new Function`，不加载远程代码。 |\n| 实际触碰的内容 | 往页面注入一张 `<style>` 与若干装饰性 DOM 节点（氛围场景、壁纸层、边缘渐隐），并注册一个名为 `aqua` 的设置命名空间。效果仅此而已。 |\n| 存储的状态 | 仅 `localStorage` 中 `dsh.ui-aqua.*` 前缀的键（开关、模式、模糊度、磨砂度、背景、壁纸、鲸鱼、小鱼、网状、悬停、按下…）。自定义壁纸以 data URL 存在 `localStorage`，因此超大图片或视频可能触及浏览器存储配额。 |\n| 遥测 / 账号 | 无。没有统计上报、不需要账号、不需要 API key。 |\n| 安装期执行代码 | **无。** `package.json` 未声明 `install` / `postinstall` / `prepare`，且 `lib/` 随包提供预构建产物，因此 `dsh plugin add` 不会执行任何包脚本。 |\n| 外部服务 | 主题本身不依赖任何外部服务。安装过程需访问一次 GitHub 且需要 `git`；受限网络下需要 HTTP 代理。 |\n| 兼容性 | 仅在 **DSH 0.1.2-rc.1**（宿主 Node v22.21.1）上验证通过。上游的 peer 基线是 `^0.1.0-rc.5`，本分支未在其它 DSH 线上测试。上游已停止维护，未来 DSH 版本可能再次使其失效——建议把 `dump-config` 那一步固定进你的升级流程。 |\n| 卸载 | `dsh plugin --profile web remove dsh-client-ui-aqua` 后重启。所有视觉效果都是可释放的 effect，移除即回收，原生界面随之还原。 |\n| 维护 | 一次性的社区修复，非上游维护。无任何担保；唯一可依赖的兼容性承诺是那两组产物哈希。 |\n\n## DSH 插件规范符合性\n\n- **宿主半导出 `apply(ctx)`** —— `lib/index.js` 提供 `export { apply }` 与\n  `function apply(ctx)`：它注册浏览器半卡片所依的 key（设置命名空间 `aqua`），这正是\n  DSH 0.1.2 上总开关能被派发的原因。\n- **浏览器半导出 `apply` + `inject`** —— `lib/client.js` 是 lazy-CJS 的\n  `window.__ModuleLoader__.load({ id: \"dsh-client-ui-aqua\", factory })` 产物，工厂返回\n  `exports.apply` 与 `exports.inject = ['theme', 'slots', 'locale']`。\n- **bundle 补丁** —— `dsh.bundle.patch` 指向 `cordis.patch.yml`，其中插入唯一的加载器行\n  `{ id: ui-aqua, name: 'dsh-client-ui-aqua' }`；包名与该行一致，因此一条\n  `dsh plugin add` 即可同时完成安装与挂载。\n- **浏览器 roster** —— `dsh.client` 声明 `platform: web`，并列出需先加载的模块 id。\n```\n\n</details>\n\n**依据 3 · 作者声明**：[REPAIR.md:141-155](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/REPAIR.md#L141-L155)\n\n作者说明兼容与许可证冲突。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n- Office document previews, embedded-browser logins and other upstream caveats are\n  unchanged.\n\n## 5. License and copyright\n\n- Upstream repository `LICENSE` = **GNU AGPL-3.0** (34.5 kB, read in full).\n- The published npm tarball `dsh-client-ui-aqua@1.3.1` ships a 1.1 kB **MIT**\n  `LICENSE` and declares `\"license\": \"MIT\"`. The same code, two licenses — an\n  upstream inconsistency, not something this fork can resolve.\n- This fork therefore follows the **more restrictive** reading: it keeps the\n  upstream AGPL-3.0 `LICENSE` file untouched and is distributed under\n  **AGPL-3.0-only**. All modifications are listed in §2 and the repository is\n  public, satisfying AGPL's source-availability terms.\n- Copyright in the original work remains with the upstream author. Please ask\n  upstream to clarify the MIT/AGPL discrepancy before redistributing elsewhere.\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/theme-layer.ts:368-378](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/blob/e3d96e46e3ef0034b1304663ffcd70a87ff70982/src/client/theme-layer.ts#L368-L378)\n\n壁纸 data URL 写 localStorage。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    return localStorage.getItem(WALLPAPER_KEY) ?? ''\n  } catch {\n    return ''\n  }\n}\n\n/** Persist the wallpaper data URL (quota failures keep it in memory only). */\nfunction writeWallpaper(value: string): void {\n  try {\n    localStorage.setItem(WALLPAPER_KEY, value)\n  } catch {\n```\n\n</details>\n\n#### 缺口\n\n- 未核上游授权链、真实性能或其它 DSH 版本。\n  **影响：**生产/再分发决策仍需独立许可和版本审查。\n  **进一步探讨：**在目标部署确认许可、升级矩阵、性能与大壁纸配额；向上游确认冲突。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：40a3fad98722bc566692b5d8f23ddabbd173c857c2e49d67027081da2fb38eec。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 751 | — | — | 8326 |\n| .js | source | 6 | 4028 | 3516 | 583 | — |\n| .tsx | source | 3 | 568 | 398 | 154 | — |\n| .ts | source | 19 | 3907 | 2885 | 742 | — |\n| .mjs | source | 2 | 229 | 184 | 21 | — |\n\n排除 14 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 玻璃界面 | 个性化 | 视觉未独立验 |\n| 修补入口 | 适配 0.1.2 | 更广版本未知 |\n| 本地壁纸 | 自定义 | 配额和残留 |\n\n## 工程亮点\n\n通过 keyed slot 和空设置命名空间补 DSH 0.1.2 接口；交付以手工修补 lib 为真相，src 是镜像。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、REPAIR.md、package.json、lib/client.js、lib/index.js、src/index.ts、src/client/index.ts、src/client/settings-store.ts、src/client/theme-layer.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅 README.zh、REPAIR、src/关键路径和当前 lib 哈希；未运行 DSH/CDP 或视觉验收。\n- 下一步：目标 0.1.2-rc.1 重跑作者 CDP 与人工视觉；核状态残留、壁纸配额和版本升级。\n",
         "metadata": {
             "repository": "Aliww2468/dsh-client-ui-aqua-patched",
             "repository_id": 1378742722,
-            "captured_at": "2026-10-21T08:00:34.965Z",
-            "window_start": "2026-09-21T08:00:34.965Z",
+            "captured_at": "2026-10-22T06:15:20.003Z",
+            "window_start": "2026-09-22T06:15:20.003Z",
             "stars": 2,
             "pushed_at": "2026-09-20T20:37:19Z",
             "issues": {
                 "open": 0,
-                "closed": null,
+                "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
                 "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAliww2468%2Fdsh-client-ui-aqua-patched%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 49CC:4C3CE:69F9E5:71ED3C:6AD8712F and timestamp 2026-10-21 08:00:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-client-ui-aqua",
-                "captured_at": "2026-10-21T08:01:01.514Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 1116,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-client-ui-aqua",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-08-17T10:18:50.583Z",
-                    "captured_at": "2026-10-21T08:01:01.514Z",
-                    "source_url": "https://registry.npmjs.org/dsh-client-ui-aqua",
-                    "error": null,
-                    "latest_version": "1.3.1",
-                    "latest_published_at": "2026-08-17T10:37:20.515Z",
-                    "latest_error": null
-                }
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1378742722:root",

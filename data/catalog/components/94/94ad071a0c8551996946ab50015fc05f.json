@@ -24,36 +24,100 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-07-github-1342948215-root-directory-0",
+                    "id": "2026-10-22-02-github-1342948215-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T08:13:58.508Z",
+                    "retrieved_at": "2026-10-22T06:10:00.482Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-07-github-1342948215-root-author",
+                    "id": "2026-10-22-02-github-1342948215-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "README.md",
+                            "content_sha256": "8243c0a2b1a7eb655e4179c0aa014cf334a03e53b66d0ada80755761a58ef183"
+                        }
+                    ],
                     "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
-                    "captured_at": "2026-10-21T08:13:58.508Z",
-                    "summary": "组合外观、项目文件夹、提示库、会话导出、搜索与用量观察。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:10:00.482Z",
+                    "summary": "DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-07-github-1342948215-root-source",
+                    "id": "2026-10-22-02-github-1342948215-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/index.ts",
+                    "url": "https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "README.zh.md",
+                            "content_sha256": "34dfd1bf64735dc940f5b2d4039f64411cdb89404065cd92d04d9ac663e8dba3"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "package.json",
+                            "content_sha256": "e9f2f11ac4dd4e403ec497128cf38bcfcc965915f1be57f7f5994c5163d8e0ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/index.ts",
+                            "content_sha256": "b060d61275a3cf128b20f2b414195ca7e6dca587e7af493119209ad5c24010f1"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/routes.ts",
+                            "content_sha256": "e12c7de54b3c12db5b0ece655c21ca6bddbb07000d3780921baa2a1b4b79ef4b"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/loopback.ts",
+                            "content_sha256": "f818116ae85d45651ebd7b4a7a84294dc7b6f6b08a062921ff6c3c5755e8a9f1"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/state.ts",
+                            "content_sha256": "d61fd72b9a2ea8915b2b8117742a097de800f882a099068c5bac265f4c5588b0"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/backup.ts",
+                            "content_sha256": "4c70acf8596be6790947be6f56c5b8225487a216685129da4fff06b5059b68a7"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/host-service.ts",
+                            "content_sha256": "b3477824575fccb4a5e834de72010d0b7308d4689277fbe273a41f6045267451"
+                        },
+                        {
+                            "repository_url": "https://github.com/AlexPeng07/dsh-custom-plugin",
+                            "commit": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
+                            "path": "src/credentials.ts",
+                            "content_sha256": "0a6c969ba8422aaf199803b6494761704e24611452fa779990246093206791a9"
+                        }
+                    ],
                     "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
-                    "captured_at": "2026-10-21T08:13:58.508Z",
-                    "summary": "核查 src/index.ts、src/routes.ts、src/host-service.ts、src/backup.ts、src/state.ts、src/client/index.ts；主机CustomPluginHost串行状态操作，事件折叠usage，路由提供状态/时间线/导出/备份/搜索/余额及Mermaid；客户端官方slots挂便利界面，状态保存DSH_HOME。",
-                    "artifact": "data/runs/2026-10-21-07/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T06:10:00.482Z",
+                    "summary": "核查 README.zh.md、package.json、src/index.ts、src/routes.ts、src/loopback.ts、src/state.ts、src/backup.ts、src/host-service.ts、src/credentials.ts；Host 注册多路由与工具并维护共享 JSON 状态，客户端 slots 挂载面板；状态原子替换并尝试跨宿主三方合并。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                        "静态审阅 README.zh、Host 路由、状态、备份、凭据与 Mermaid 路径；不运行目标插件。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +128,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "希望集中管理本地会话资料和个性化设置的DSH用户。",
+                    "text": "希望在一个插件中集中管理 Web 外观、会话操作和本地用量的用户。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +139,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "主机CustomPluginHost串行状态操作，事件折叠usage，路由提供状态/时间线/导出/备份/搜索/余额及Mermaid；客户端官方slots挂便利界面，状态保存DSH_HOME。",
+                    "text": "Host 注册多路由与工具并维护共享 JSON 状态，客户端 slots 挂载面板；状态原子替换并尝试跨宿主三方合并。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +157,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。",
+                    "text": "静态审阅 README.zh、Host 路由、状态、备份、凭据与 Mermaid 路径；不运行目标插件。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +175,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发以本插件固定package.json、运行依赖与本轮META为界；作者测试及STORE说明不作本轮运行证据，仓库级热度不能拆成组件采用量。",
+                    "text": "package 0.8.x、Apache-2.0、Node 22+；作者列举 DSH 0.1.7-rc.2、0.2.0-rc.2、0.2.1-rc.2 适配，未独立复现。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +193,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "首配和多功能状态迁移、模型提示另计token；扫描历史/导出有I/O，外观GPU与CDN网络，人工确认备份替换和导出隐私。",
+                    "text": "#### 成本\n\n| 阶段 | 资源/人工 | 边界 |\n| --- | --- | --- |\n| 装入 | 版本匹配、profile | 宿主兼容严格 |\n| 使用 | 多功能设置、凭据可选 | 计价仅估算 |\n| 维护 | 状态备份/冲突处理 | 跨进程风险需测 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +211,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "按实际需要启用，先核备份恢复、密钥存储来源与导出内容；用量/余额提示不替代账单。",
+                    "text": "隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +229,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "集中便利与secret-free备份有实现，无节约工时或任务质量提升验证。",
+                    "text": "#### 效果\n\n| 项 | 代码支持 | 未知 |\n| --- | --- | --- |\n| 工作台功能 | slots/Host API | 实际效率 |\n| 状态备份 | 投影/预览/恢复 | 多进程压力 |\n| 用量预算 | 本地折叠 | 与账单差异 |",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +247,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "状态加载失败保持只读、防未加载默认覆盖、applyEdit错误恢复内存和备份严格形状有实质设计；功能组合需持续跟宿主API。",
+                    "text": "Web/Host 双半区通过同源路由联动；共享状态文件采用队列、PID 临时文件、三方合并。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +265,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "将用户便利数据归为统一可备份状态，并把凭据从公开state投影剥离；价值在本地操作一致性，Mermaid/计价/外观来自成熟方法，不视为新的交付机制。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "多项 Web 效率功能共用一套设置、状态、备份与宿主路由。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +283,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "credentialStore.set失败时明确退回state.apiKey明文，saveStateFile普通JSON写入未显式0600；“备份无密钥/前端不返回”不等于磁盘不落密钥。扫描/计价依赖宿主usage与价格，不能把消费数字当项目真实成本或成果。",
+                    "basis": "supported",
+                    "text": "Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +301,16 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "未验证假设：凭据写失败默认拒绝持久化并给可选明确本地权限方案，可避免用户误以为已用系统密钥库。以凭据不可用、只读状态、备份/导出及重启核秘密落点和恢复行为；发现秘密进入备份即否定。",
+                    "text": "加入跨进程版本/CAS 协议并持续核价，可降低同步与费用误导；现版未验证。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +319,15 @@
                             "fingerprint": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T08:13:58.508Z",
+                    "reviewed_at": "2026-10-22T06:10:00.482Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T08:13:58.508Z",
+            "last_checked_at": "2026-10-22T06:10:00.482Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
-                "reviewed_at": "2026-10-21T08:13:58.508Z",
+                "reviewed_at": "2026-10-22T06:10:00.482Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -275,61 +339,61 @@
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 8,
-                        "transferability": 5,
+                        "mechanism": 23,
+                        "transferability": 10,
                         "simplification": 4
                     },
-                    "rationale": "novelty=9：常见便利功能组合。 mechanism=8：状态一致性有局部实现。 transferability=5：宿主数据耦合限制迁移。 simplification=4：统一备份少重复设置但功能多。",
+                    "rationale": "多模块、路由围栏、状态三方合并和备份工程较完整；跨进程原子性与宿主适配复杂。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 46,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
+                        "workflow": 18,
+                        "delivery": 23,
+                        "reach": 10,
                         "economics": 0
                     },
-                    "rationale": "workflow=9：集中入口非业务分工重组。 delivery=8：增加可携备份/导出但格式常规。 reach=5：原DSH用户有限便利。 economics=0：无结构性经济改善。",
+                    "rationale": "组合功能覆盖高频 Web 操作，缺独立使用率、效率与成本验证。",
                     "basis": "interpretation",
-                    "score": 22,
+                    "score": 51,
                     "evidence_ids": [
-                        "2026-10-21-07-github-1342948215-root-source"
+                        "2026-10-22-02-github-1342948215-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "会话资料管理者应先修凭据存储失败回退明文及文件权限；备份无密钥不保证磁盘安全，再逐功能验恢复和导出。",
+                "decision": "trial",
+                "reason": "隔离 profile 与状态备份后按需试用；生产共享状态和外部计价需验证。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "集中会话资料和设置的用户目标明确。"
+                        "rationale": "多功能 Web 用户场景明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "状态、搜索、备份与用量入口组合减少分散操作。"
+                        "score": 19,
+                        "rationale": "会话、外观、备份和用量整合广。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核credentialStore失败写state.apiKey及普通JSON持久化。"
+                        "rationale": "源码与作者测试报告可核，但未独立宿主测试。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "密钥回退、状态迁移及多功能/外观维护面大，关键凭据阻碍当前采用。"
+                        "rationale": "广权限、状态迁移和兼容矩阵维护较重。"
                     }
                 },
-                "score": 54,
+                "score": 60,
                 "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T06:10:00.482Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-07-github-1342948215-root-source"
+                    "2026-10-22-02-github-1342948215-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,35 +418,36 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T07:52:12Z",
-            "analysis_sha256": "f47832dac8794b6a3f63948ae20ae1b7b2cab14b7f94017b9b21417120a36bb7"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "f3be22a51135471ece972f045f34ec79015edcc6bc8602a7a2f1844a0459d4de"
         },
         "publication.metadata": "data/plugins/alexpeng07--dsh-custom-plugin/META.json",
         "publication.summaries": {
-            "text": "组合外观、项目文件夹、提示库、会话导出、搜索与用量观察。",
+            "text": "DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。",
             "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
             "source_url": "https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.md"
         },
         "publication.capabilities": {
             "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
             "items": {
-                "模型工具": "custom_plugin_status状态查询",
-                "Host 路由": "状态、会话导出/搜索、备份和余额等接口",
-                "事件监听": "会话usage与模型上下文折叠",
-                "界面": "外观、项目资料与便利面板"
-            }
+                "界面": "外观、会话组织、提示词库、Mermaid 与用量视图",
+                "模型工具": "custom_plugin_status",
+                "Host 路由": "状态、搜索、导出、备份与余额等接口",
+                "后台": "共享状态持久化与合并"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 多功能面板 | 集中操作 | 广权限/复杂性 |\n| 共享状态 | Web/Desktop 一致 | 并发需测 |\n| 预算/余额 | 成本感知 | 估算非账单 |"
         },
         "publication.advice": {
             "revision": "901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f",
-            "text": "按实际需要启用，先核备份恢复、密钥存储来源与导出内容；用量/余额提示不替代账单。"
+            "text": "隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见[Q04](#research-q04)。"
         },
         "registry": "data/plugins/alexpeng07--dsh-custom-plugin",
-        "reports": "# dsh-custom-plugin\n\n> 组合外观、项目文件夹、提示库、会话导出、搜索与用量观察。\n\n## 使用建议\n\n按实际需要启用，先核备份恢复、密钥存储来源与导出内容；用量/余额提示不替代账单。\n\n**核查状态**：已检查固定版本源码，未安装或执行目标插件、未完成真实宿主验收。贡献仅获固定版本源码支持，插件与依赖流程的实际运行尚未验证；未来假设未验证。\n\n## 洞察短评\n\n- **用途**：希望集中管理本地会话资料和个性化设置的DSH用户。\n- **亮点**：将用户便利数据归为统一可备份状态，并把凭据从公开state投影剥离；价值在本地操作一致性，Mermaid/计价/外观来自成熟方法，不视为新的交付机制。\n- **思考**：credentialStore.set失败时明确退回state.apiKey明文，saveStateFile普通JSON写入未显式0600；“备份无密钥/前端不返回”不等于磁盘不落密钥。扫描/计价依赖宿主usage与价格，不能把消费数字当项目真实成本或成果。\n- **建议**：未验证假设：凭据写失败默认拒绝持久化并给可选明确本地权限方案，可避免用户误以为已用系统密钥库。以凭据不可用、只读状态、备份/导出及重启核秘密落点和恢复行为；发现秘密进入备份即否定。\n\n## 场景与替代办法\n\n参照宿主设置、手动导出和多个便利插件；增量为统一状态与备份/搜索交互，功能数量不当作机制创新。\n\n## 能力清单\n\n- **模型工具**：custom_plugin_status状态查询\n- **Host 路由**：状态、会话导出/搜索、备份和余额等接口\n- **事件监听**：会话usage与模型上下文折叠\n- **界面**：外观、项目资料与便利面板\n\n## 依赖与流程\n\n主机CustomPluginHost串行状态操作，事件折叠usage，路由提供状态/时间线/导出/备份/搜索/余额及Mermaid；客户端官方slots挂便利界面，状态保存DSH_HOME。\n\nwebServer/tools、会话查询/持久化、客户端slots与可选系统凭据；余额需DeepSeek网络，Mermaid本地包缺失时CDN回退。\n\n读取状态/迁移→用户编辑/搜索/导出→校验并串行保存→UI刷新；备份可预览后merge/replace并保留恢复点；usage只是观察，提示库插入后仍用户提交。\n\n## 成本与效果\n\n首配和多功能状态迁移、模型提示另计token；扫描历史/导出有I/O，外观GPU与CDN网络，人工确认备份替换和导出隐私。\n\n集中便利与secret-free备份有实现，无节约工时或任务质量提升验证。\n\n## 核心贡献\n\n将用户便利数据归为统一可备份状态，并把凭据从公开state投影剥离；价值在本地操作一致性，Mermaid/计价/外观来自成熟方法，不视为新的交付机制。\n\n## 关键质疑\n\ncredentialStore.set失败时明确退回state.apiKey明文，saveStateFile普通JSON写入未显式0600；“备份无密钥/前端不返回”不等于磁盘不落密钥。扫描/计价依赖宿主usage与价格，不能把消费数字当项目真实成本或成果。\n\n## 工程亮点\n\n状态加载失败保持只读、防未加载默认覆盖、applyEdit错误恢复内存和备份严格形状有实质设计；功能组合需持续跟宿主API。\n\n源码依据：[src/index.ts](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/index.ts)、[src/routes.ts](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts)、[src/host-service.ts](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/host-service.ts)、[src/backup.ts](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/backup.ts)、[src/state.ts](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts)、[src/client/index.ts](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/client/index.ts)。\n\n## 未来设计假设（未验证）\n\n未验证假设：凭据写失败默认拒绝持久化并给可选明确本地权限方案，可避免用户误以为已用系统密钥库。以凭据不可用、只读状态、备份/导出及重启核秘密落点和恢复行为；发现秘密进入备份即否定。\n\n未来隔离配置核凭据降级、备份往返、状态漂移与导出/搜索范围；本轮未读取真实凭据或会话。\n\n<details>\n<summary>工程统计</summary>\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：510f5e70e725a05143b283bd29741dc3b5e2bdbd02943f99b54fcbae8778c913。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 1628 | — | — | 25466 |\n| .mjs | source | 5 | 825 | 591 | 174 | — |\n| .ts | source | 24 | 4714 | 3652 | 785 | — |\n| .tsx | source | 1 | 3038 | 2689 | 298 | — |\n| .ts | test | 26 | 3397 | 2809 | 318 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n</details>\n\n## 核查说明\n\n- **仓库**：[AlexPeng07/dsh-custom-plugin](https://github.com/AlexPeng07/dsh-custom-plugin)\n- **版本号**：0.8.0（[固定提交 901a665f](https://github.com/AlexPeng07/dsh-custom-plugin/tree/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n- 已检查：src/index.ts、src/routes.ts、src/host-service.ts、src/backup.ts、src/state.ts、src/client/index.ts、作者README、package与固定范围inventory；源码抽读不等于完整审计。\n- 未验证：插件执行、测试、安装、真实宿主与独立采用。\n- 证据限制：固定SHA内本插件列明注册、核心与副作用文件及作者资料的有界源码检查；inventory包含生成包时不将其重复代码计为独立原创。未安装或执行目标代码、测试、语言服务、外部发布或真实宿主验收。\n- 下一步：未来隔离配置核凭据降级、备份往返、状态漂移与导出/搜索范围；本轮未读取真实凭据或会话。\n",
+        "reports": "# dsh-custom-plugin\n\n> DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。\n\n## 研究范围\n\n- **仓库**：[AlexPeng07/dsh-custom-plugin](https://github.com/AlexPeng07/dsh-custom-plugin)\n- **版本号**：0.8.0（[固定提交 901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f](https://github.com/AlexPeng07/dsh-custom-plugin/tree/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f)）\n- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n组合能力与保护机制可从源码核查；跨进程读合并写无共同锁、目标版本体验和外部价目仍待验证。\n\n## 洞察短评\n\n- **用途**：希望在一个插件中集中管理 Web 外观、会话操作和本地用量的用户。\n- **亮点**：多项 Web 效率功能共用一套设置、状态、备份与宿主路由。详见[Q01](#research-q01)。\n- **思考**：Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。\n- **建议**：加入跨进程版本/CAS 协议并持续核价，可降低同步与费用误导；现版未验证。详见[Q04](#research-q04)。\n\n采用建议：隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见[Q04](#research-q04)。\n\n## 核心贡献\n\n多项 Web 效率功能共用一套设置、状态、备份与宿主路由。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nWeb/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n加入跨进程版本/CAS 协议并持续核价，可降低同步与费用误导；现版未验证。详见[Q04](#research-q04)。\n\n在目标声明版本验证 slots 与路由；双进程交错写、备份脱敏、Mermaid 本地/后备与账单对照。\n\n## 场景与替代办法\n\n希望在一个插件中集中管理 Web 外观、会话操作和本地用量的用户。\n\nDSH 默认 Web GUI 与多单功能插件；此套件提供一个共享面板和状态文件。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| 声明 DSH 版本 | slots/Host API | 整包跳过或降级 |\n| 本地 Mermaid 包 | 离线图表 | CDN 回退 |\n| DeepSeek Key | 官方余额 | 只用本地估算 |\n\n#### 试用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 备份 | 导出状态 | 可恢复 |\n| 核功能 | 会话/图表/用量 | 数据正确 |\n| 并发 | Web/Desktop 同写 | 无丢失 |\n| 对账 | 本地估算对官方 | 差异可接受 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源/人工 | 边界 |\n| --- | --- | --- |\n| 装入 | 版本匹配、profile | 宿主兼容严格 |\n| 使用 | 多功能设置、凭据可选 | 计价仅估算 |\n| 维护 | 状态备份/冲突处理 | 跨进程风险需测 |\n\n#### 效果\n\n| 项 | 代码支持 | 未知 |\n| --- | --- | --- |\n| 工作台功能 | slots/Host API | 实际效率 |\n| 状态备份 | 投影/预览/恢复 | 多进程压力 |\n| 用量预算 | 本地折叠 | 与账单差异 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实多功能套件的真实模块、持久状态并发边界、敏感路由与采用成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 套件的组合价值和宿主形态是什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n作者把外观、文件夹、提示词库、会话搜索/导出、Mermaid、批量归档、用量/预算及快捷面板集中到 DSH Web。Host 注册状态、时间线、搜索、备份、余额、Mermaid 等路由和 custom_plugin_status 工具；客户端通过 slots 挂载。这降低多插件拼装成本，但也让一个包同时拥有会话读取、本地状态、凭据和外部余额查询能力。README 所列宿主活体验证为作者报告，本轮仅静态检查源码，不视为独立复现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:15-35](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L15-L35)\n\n作者描述多功能和双半区架构。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\nDeepSeek Harness（DSH）Web GUI 的 Custom 便利套件：个性化外观、天气特效、玻璃效果、项目文件夹、增强提示词库、会话导出与会话搜索、Mermaid 渲染、引用回复、7/30/90 天用量分析、预算与无密钥本地备份，以及 Ctrl/Cmd+K 快捷面板。\n\n插件为双半区架构：宿主半区（`src/`）持有状态文档、注册 `/api/custom-plugin` 路由与 `custom_plugin_status` 智能体工具；浏览器半区（`src/client/`）通过 7 个官方 slot 的 8 处注入挂载 UI，以同源 fetch 与宿主通信。经官方 profile 机制挂载，不改 DSH 源码。\n\n<p align=\"center\">\n  <img src=\"https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/overview.png\" alt=\"dsh-custom-plugin 总览\" width=\"100%\">\n</p>\n\n## 部分界面展示\n\n<table>\n<tr>\n<td width=\"50%\" valign=\"top\"><b>「设置 → 个性化」整页外观配置</b><br><img src=\"https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/settings-appearance.png\" alt=\"设置 → 个性化 整页外观配置\" width=\"100%\"></td>\n<td width=\"50%\" valign=\"top\"><b>会话头部弹出的同一套面板（浅色主题）</b><br><img src=\"https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/personalization-panel.png\" alt=\"个性化弹窗面板\" width=\"100%\"></td>\n</tr>\n<tr>\n<td width=\"50%\" valign=\"top\"><b>液态玻璃（Custom 面板位移折射）</b><br><img src=\"https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/liquid-glass.png\" alt=\"液态玻璃\" width=\"100%\"></td>\n<td width=\"50%\" valign=\"top\"><b>多级项目文件夹</b><br><img src=\"https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/project-folders.png\" alt=\"项目文件夹\" width=\"100%\"></td>\n</tr>\n<tr>\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:23-63](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/index.ts#L23-L63)\n\nHost 注入 webServer/tools/sessionQuery 并初始化服务。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nexport const inject = ['webServer', 'tools', 'sessionQuery']\n\nexport const apply = mountOnce('@alexpeng/dsh-custom-plugin', applyImpl)\n\nfunction applyImpl(ctx: Context): void {\n  const state = defaultState()\n  // Keep diagnostics truthful even before the asynchronous load resolves.\n  // `dshHome()` is a directory; the state path is its sibling file.\n  let statePath = join(dshHome(), STATE_FILE)\n  let stateLoaded = false\n  // Flipped only when the state file could be neither read nor quarantined\n  // aside: every save path funnels through `saveNow`/`saveSoon`, so gating\n  // here keeps the host from persisting never-loaded defaults over a\n  // document that may still be intact on disk.\n  let stateWritable = true\n  const sessionModels = new Map<string, string | null>()\n  const pendingUsage: Array<{ sessionId: string; usage: NonNullable<Extract<SessionEvent, { type: 'assistant/message' }>['data']['usage']>; time: number; model: string | null }> = []\n\n  const diagReports: string[] = []\n  const reportDiag = (message: string): void => {\n    diagReports.push(String(message ?? '').slice(0, 400))\n    if (diagReports.length > 20) diagReports.splice(0, diagReports.length - 20)\n  }\n\n  const saveSoon = (() => {\n    let timer: ReturnType<typeof setTimeout> | undefined\n    return (): void => {\n      if (!stateWritable) return\n      if (timer !== undefined) clearTimeout(timer)\n      timer = setTimeout(() => {\n        timer = undefined\n        void host.persistWhenIdle().catch((error) => {\n          reportDiag(`state save failed: ${String((error as Error)?.message ?? error)}`)\n        })\n      }, 500)\n    }\n  })()\n\n  const host = new CustomPluginHost({\n    sessionQuery: ctx.sessionQuery,\n    state,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/routes.ts:66-75](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts#L66-L75)\n\n集中构造各类 Host route。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nexport function makeCustomPluginRoutes(host: CustomPluginHost, ready: Promise<void> = Promise.resolve()): WebRoute[] {\n  const stateRoute: WebRoute = {\n    kind: 'exact',\n    path: `${CUSTOM_PLUGIN_API_PREFIX}/state`,\n    handler: async (req, res): Promise<void> => {\n      if (!guard(req, res)) return\n      await ready\n      if (req.method === 'GET') {\n        json(res, 200, { ok: true, data: await host.stateView() })\n        return\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/routes.ts:320-329](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts#L320-L329)\n\n返回状态、搜索、导出、余额、Mermaid 等路由。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n    path: `${CUSTOM_PLUGIN_API_PREFIX}/debug`,\n    handler: (req, res): void => {\n      if (!guard(req, res)) return\n      if (!isMethod(req, 'GET', res)) return\n      void ready.then(() => host.debugInfo()).then((info) => { json(res, 200, { ok: true, ...info }) }).catch(() => { json(res, 200, { ok: false, error: '调试信息不可用' }) })\n    },\n  }\n\n  return [stateRoute, timelineRoute, backupRoute, searchRoute, exportRoute, balanceRoute, usageScanRoute, mermaidFetchRoute, mermaidScriptRoute, diagRoute, debugRoute]\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未在目标 DSH 运行完整套件。\n  **影响：**UI、槽位冲突和实际节省时间未知。\n  **进一步探讨：**在作者声明的三个宿主版本逐项试用核心流程，记录冲突和功能使用率。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 共享状态在 Web 与 Desktop 同时写入时怎样处理？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n状态放在共享 DSH_HOME/custom-plugin-state.json，采用 per-process PID 临时文件、同进程每路径写队列和 rename 原子替换。保存前根据 mtimeMs 与 size 发现外部变化，再做三方合并；不同 section 按本地/远端变更处理，用量计数通过 theirs+ours-base 折叠。此机制比直接覆盖完善，但跨进程的“读取外部变化→合并→写入”没有共同锁；两宿主恰好交错写时仍可能丢更新。mtime/size 相同的快速改写、外部文件不可读也按源码注释回退覆盖。需竞争复现，不能宣称实际发生丢失。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/state.ts:292-345](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts#L292-L345)\n\n写队列、PID 临时文件、rename 和保存基线。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n/** In-flight save per state path: concurrent saves queue instead of racing on\n * the rename order. Two writers renaming one temp file is the Windows\n * EPERM/EBUSY source; queuing also coalesces naturally, because each turn\n * serializes the live document when it runs, not when it was requested. */\nconst saveQueues = new Map<string, Promise<void>>()\n\n/**\n * Temp name for an atomic replace, qualified by the writing process.\n *\n * The queue above is per-process, but `$DSH_HOME` is not: dsh Web and dsh\n * Desktop both run hosts against one home (separate profiles, one `$DSH_HOME`),\n * so a fixed temp name would let the two hosts write and rename the same file\n * and hand each other a partially written document.\n */\nexport function tempPathFor(target: string, pid: number = process.pid): string {\n  return `${target}.${pid}.tmp`\n}\n\n/** Atomically persist the state document. Saves to the same path are\n * serialized: a caller awaits its own turn's completion, a failed turn never\n * poisons the queue behind it. Before writing, another host's changes since\n * this process last loaded or saved the file are merged back in (see\n * `mergeExternalChanges`). */\nexport function saveStateFile(state: CustomPluginState, home: string = dshHome()): Promise<void> {\n  const statePath = join(home, STATE_FILE)\n  const turn = (saveQueues.get(statePath) ?? Promise.resolve())\n    .catch(() => {})\n    .then(async () => {\n      await mergeExternalChanges(state, statePath)\n      await mkdir(dirname(statePath), { recursive: true })\n      const doc = JSON.stringify(state)\n      const tmpPath = tempPathFor(statePath)\n      try {\n        await writeFile(tmpPath, doc, 'utf8')\n        await rename(tmpPath, statePath)\n      } catch (error) {\n        // A pid-qualified temp would otherwise survive a failed turn and accumulate.\n        await rm(tmpPath, { force: true }).catch(() => { /* the rename may have landed; nothing left to clean */ })\n        throw error\n      }\n      // Record what this process just made the file look like, so the next\n      // turn can tell its own writes from another host's.\n      const st = await stat(statePath).catch(() => null)\n      syncBaselines.set(statePath, st !== null ? { mtimeMs: st.mtimeMs, size: st.size, doc } : null)\n    })\n  saveQueues.set(statePath, turn)\n  return turn.finally(() => {\n    if (saveQueues.get(statePath) === turn) saveQueues.delete(statePath)\n  })\n}\n\n/** Per-path view of the on-disk document this process last saw: its stat\n * identity and its serialized bytes. `$DSH_HOME` is shared by every dsh host\n * under it (Web + Desktop), so a save must first notice whether another host\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/state.ts:349-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts#L349-L386)\n\n通过 stat 比较和三方合并，源码注明漏检及不可读回退。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nconst syncBaselines = new Map<string, { mtimeMs: number; size: number; doc: string } | null>()\n\n/**\n * Fold another host's writes back in before this process saves over them.\n *\n * Each host holds the whole document in memory, so an unchecked save is\n * last-writer-wins and silently discards the other host's usage folds and\n * config edits. When the file's stat identity no longer matches what this\n * process last wrote or loaded, the current bytes are re-read and three-way\n * merged against the last-saved snapshot: sections this process has not\n * touched adopt the external version, the usage ledger unions arithmetically\n * (`theirs + ours − base` per counter — exact for two hosts that both\n * started from `base`), and locally-dirty sections keep the local version.\n *\n * The stat fast path misses only a same-instant, same-length rewrite by\n * another host. An unreadable or undecodable external document falls back to\n * the plain overwrite — the boot-time quarantine remains the backstop for\n * the destructive case.\n */\nasync function mergeExternalChanges(state: CustomPluginState, statePath: string): Promise<void> {\n  const baseline = syncBaselines.get(statePath)\n  if (baseline === undefined) return\n  const st = await stat(statePath).catch(() => null)\n  if (st === null) return // absent (or vanishing mid-check): nothing to merge\n  if (baseline !== null && st.mtimeMs === baseline.mtimeMs && st.size === baseline.size) return\n  const text = await readFile(statePath, 'utf8').catch(() => null)\n  if (text === null) return\n  let theirs: unknown\n  try {\n    theirs = JSON.parse(text)\n  } catch {\n    return // an undecodable external document has nothing mergeable\n  }\n  if (theirs === null || typeof theirs !== 'object') return\n  mergeThreeWay(state, baseline !== null ? safeParse(baseline.doc) : null, theirs as Record<string, unknown>)\n}\n\nfunction safeParse(text: string): CustomPluginState | null {\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.zh.md:171-179](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L171-L179)\n\n作者说明 Web/Desktop 共用状态文件。\n\n```text\n   安装和更新，不想开终端就用它。\n\n外观、提示词库、项目文件夹、星标和用量都存在\n`$DSH_HOME/custom-plugin-state.json`，这个文件按设计由桌面版和 Web 共享——两\n边各自持有自己的 `profiles/<名字>`，那里面只放代码不放这个文件——所以在两者\n之间切换看到的是同一份数据。两个宿主因此可能同时写它，这就是状态替换把临时文\n件按写入进程的 pid 命名的原因。\n\n### 从 GitHub 安装（源码安装）\n```\n\n#### 缺口\n\n- 未做跨进程交错写/故障注入。\n  **影响：**并发风险为代码推断而非实测故障率。\n  **进一步探讨：**用两个宿主进程屏障控制同一基线并发保存，比较文件夹/提示词/用量结果和恢复副本。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 敏感访问、备份和外部依赖如何限制？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nHost 路由设回环 socket 与 Host 校验、拒 cross-site，Origin 有值时需匹配 Host；桌面转发去掉来源标记时无标记被接受，这是特定宿主信任假设。状态/备份请求分别设尺寸上限；备份显式投影排除 API Key，导入前可预览并写恢复副本。余额查询需要 Key，Mermaid 本地包优先、缺失回退多个 CDN，因此“离线可用”以本地依赖确实随安装到位为条件。外部 DeepSeek 价目/时间规则可能变化，本轮不核实时价格。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/loopback.ts:43-65](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/loopback.ts#L43-L65)\n\n本地请求、Host、cross-site/Origin 信任逻辑。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n * loopback socket address AND a loopback Host header, non-`cross-site` fetch\n * marker, and an Origin that is absent (trusted — the dsh Desktop forward\n * shape) or matches the Host authority. The socket address is authoritative;\n * X-Forwarded-For is never trusted.\n */\nexport function isLoopbackRequest(request: IncomingMessage): boolean {\n  if (!isLoopbackAddress(request.socket.remoteAddress)) return false\n  const host = request.headers.host\n  if (typeof host !== 'string') return false\n  let hostUrl: URL\n  try {\n    hostUrl = new URL('http://' + host)\n  } catch {\n    return false\n  }\n  if (!isLoopbackHostname(hostUrl.hostname)) return false\n  if (request.headers['sec-fetch-site'] === 'cross-site') return false\n  const origin = request.headers.origin\n  if (origin === undefined) return true\n  try {\n    return new URL(origin).host === hostUrl.host\n  } catch {\n    return false\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/routes.ts:18-55](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts#L18-L55)\n\n状态/备份 body 限制与路由 guard。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nexport const STATE_BODY_LIMIT = 1024 * 1024\nconst TIMELINE_LIMIT = 64 * 1024\n// The request envelope contains JSON keys around the document. Keep a small\n// reserve so a document at the documented 5 MiB limit is not rejected solely\n// because of that envelope; the document itself is checked below as well.\nconst BACKUP_REQUEST_LIMIT = BACKUP_BODY_LIMIT + 64 * 1024\n\nfunction json(res: ServerResponse, status: number, body: unknown): void {\n  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })\n  res.end(JSON.stringify(body))\n}\n\n/**\n * The request fence. Trust is decided by `isLoopbackRequest` alone: a loopback\n * socket with a loopback Host, a non-`cross-site` fetch marker, and an Origin\n * that is absent or matches the Host authority. Absent markers are *accepted*\n * — that is the exact header shape dsh Desktop's shell produces when it\n * forwards renderer requests to its own Host (it deletes `host`, `origin`,\n * `sec-fetch-site` and `cookie` first), and the same shape the platform fence\n * treats as trusted. A foreign origin, a cross-site marker, or a non-loopback\n * peer is rejected.\n */\nfunction guard(req: IncomingMessage, res: ServerResponse): boolean {\n  if (isLoopbackRequest(req)) return true\n  json(res, 403, { ok: false, error: 'forbidden' })\n  return false\n}\n\nasync function readBody(req: IncomingMessage, limit: number): Promise<unknown> {\n  const chunks: Buffer[] = []\n  let size = 0\n  for await (const chunk of req) {\n    const buffer = chunk as Buffer\n    size += buffer.length\n    if (size > limit) throw new Error('body-too-large')\n    chunks.push(buffer)\n  }\n  if (chunks.length === 0) return {}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/backup.ts:83-111](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/backup.ts#L83-L111)\n\n备份字段显式投影。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nexport function createBackup(state: CustomPluginState): CustomPluginBackupV1 {\n  const seen = new Set<string>()\n  const folders = (Array.isArray(state.folders) ? state.folders : []).map((item) => folder(item, seen)).filter((item): item is FolderNode => item !== null)\n  const prompts = (Array.isArray(state.prompts) ? state.prompts : []).map(normalizePrompt).filter((item): item is PromptItem => item !== null)\n  const stars: StarsMap = {}\n  if (state.stars !== null && typeof state.stars === 'object') {\n    for (const [sessionId, entries] of Object.entries(state.stars)) {\n      if (!safeKey(sessionId) || entries === null || typeof entries !== 'object' || Array.isArray(entries)) continue\n      const clean: Record<string, boolean> = {}\n      for (const [seq, value] of Object.entries(entries)) if (value === true && /^\\d+$/.test(seq)) clean[seq] = true\n      if (Object.keys(clean).length > 0) stars[sessionId] = clean\n    }\n  }\n  const usage: UsageMap = {}\n  if (state.usage !== null && typeof state.usage === 'object') {\n    for (const [day, models] of Object.entries(state.usage)) {\n      if (!validDayKey(day) || models === null || typeof models !== 'object' || Array.isArray(models)) continue\n      const clean: Record<string, UsageRow> = {}\n      for (const [model, rawRow] of Object.entries(models)) {\n        if (!safeKey(model)) continue\n        const row = usageRow(rawRow)\n        if (model !== '' && row !== null) clean[model] = row\n      }\n      if (Object.keys(clean).length > 0) usage[day] = clean\n    }\n  }\n  return clone({ format: BACKUP_FORMAT, version: BACKUP_VERSION, exportedAt: new Date().toISOString(), data: { cfg: normalizeCfg(state.cfg), folders, prompts, stars, usage } })\n}\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/host-service.ts:828-843](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/host-service.ts#L828-L843)\n\nMermaid 本地加载与 CDN 后备。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nfunction looksLikeMermaidBundle(text: string): boolean {\n  const head = text.slice(0, 64).replace(/^\\uFEFF/, '').trimStart()\n  return text.length >= 1000 && !head.startsWith('<')\n}\n\n/** Resolve `mermaid/dist/mermaid.min.js` from the package's own dependency\n * tree (works for `link:` checkouts and registry installs alike); null when\n * the dependency is absent, which falls mermaidFetch back to the CDN. */\nexport function defaultLocalMermaidPath(): string | null {\n  try {\n    const require = createRequire(import.meta.url)\n    return require.resolve('mermaid/dist/mermaid.min.js')\n  } catch {\n    return null\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未验证实际桌面转发、凭据存储和第三方网络结果。\n  **影响：**无法确认目标环境安全/离线/余额表现。\n  **进一步探讨：**隔离宿主验证同源围栏、脱敏备份和本地包缺失场景；查当前官方价目。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 应怎样选择和验证此套件？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n适合同时需要多项个性化、会话管理和本地用量视图的 DSH 用户；先在隔离 profile 的声明版本装入，导出状态备份，逐项验会话搜索/导出、Mermaid、本地用量和来源围栏，视觉与性能需人工验收。预算为本地估算而非账单真值，余额查询依赖有效 Key。若只需单一功能，广权限与状态迁移成本可能不划算。可优先增强跨进程写入的版本/CAS 或锁协议、持续校验当前价目，并把各能力的开关/权限呈现得更清楚。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh.md:109-135](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L109-L135)\n\n作者描述本地估算、余额和 Key 来源。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n\n`custom_plugin_status` 工具报告：外观配置、今日按模型用量、余额、时间线样本、Mermaid 引擎加载情况、状态文件路径与客户端诊断。插件不注入任何系统提示。\n\n## 版本对应\n\n| 插件版本 | 构建并实测过的 dsh | 状态 |\n| --- | --- | --- |\n| 0.8.x | dsh 0.1.7-rc.2、dsh 0.2.0-rc.2 与 dsh 0.2.1-rc.2（两道门都写了这三个版本，见「安装」） | 本版本 |\n| 0.7.x | dsh 0.1.7-rc.2 与 dsh 0.2.0-rc.2 | 上一版；在 dsh 0.2.1-rc.2 上会被拒绝 |\n| 0.6.x | dsh 0.1.7-rc.2 与 dsh 0.2.0-rc.2 | 上一版；在 dsh 0.2.1-rc.2 上会被拒绝 |\n| 0.5.x | dsh 0.1.7-rc.2（peer 范围 `>=0.1.7-rc.2 <0.2.0-0`） | 在 0.1.x 上没问题；任何 0.2.x 宿主都会拒绝它，dsh 桌面版也算 |\n| 0.4.2 | dsh 0.1.1-rc.1 … 0.1.6 时代 | 已被取代，在 0.1.7+ 上不要指望可用 |\n\n0.1.7 改掉了本套件依赖的插件侧契约（会话导航归 `ctx.uiWorkspace`、会话列表不再提供\n当前查看的会话、消息模型移除 `tool-result` 内容块），两个版本互不替代。dsh\n0.2.1-alpha.4 又改掉了兼容门本身：优先读 `engines.dsh`，只有它缺省时才回退到\n`@deepseek-ai/dsh-*` peer 范围。本包两处声明同一条范围；旧宿主读 peer，新宿主读\n`engines.dsh`，`pnpm smoke` 会在两者判定不一致时判红。范围不匹配的 bundle 会在\n安装与启动时被整包跳过。没有这道闸的更早宿主仍会加载插件，但表现为功能退化：实测\n0.1.1-rc.2 上 8 个槽位注册成 7 个，turnTail 条目被拒（该槽位自 0.1.6-alpha.2 起由\nchain 改为 list），打开会话、创建分支、跨会话搜索会提示对应服务缺失，而不是抛错。\n\n## 安装\n\n前置：Node 22+、pnpm，以及 `dsh` CLI（官方 npm 包 `@deepseek-ai/dsh`；未全局安装时，可用 `npx @deepseek-ai/dsh` 代替 `dsh`）。本版本面向 **dsh 0.1.7-rc.2 及其后的 0.1.x，外加 0.2.0-rc.2 与 0.2.1-rc.2**：dsh 0.2.1-alpha.4 及更新版本优先读 `engines.dsh`，仅在它缺省时回退到 `@deepseek-ai/dsh-*` peer 范围；旧宿主仍读 peer。本包两处声明同一条范围，不为没构建过的版本开口子。0.8.0 把构建与测试队列整体切到 0.2.1-rc.2。产物用桌面版自带 CLI 装进隔离的 0.2.1-rc.2 profile，**没有使用任何兼容豁免**，随后真实冷启动：boot 图 70 行、五个 `dsh.client.inject` 目标齐全、客户端 bundle 服务约 200 KB、Mermaid 本地引擎 3.57 MB、state / 用量 / 备份路由、UTF-8 往返与桌面转发信任形状全部通过（16 项通过、1 项跳过；跳过的只是无会话 profile 上的时间线/导出/搜索，该路径由单测覆盖，且 0.2.1 只新增可选 `formatStatus` 字段）。0.6.0 的产物在 0.2.0-rc.2（66 行）与 0.1.7-rc.2（65 行）上各跑过活体探针，19 项里 18 项通过；0.7.0 的产物额外在**真实桌面安装**上过了桌面形态活体探针（见下文「在 dsh 桌面版上」）。验不到的部分和以往一样：回合内的 chips（Mermaid 渲染、LaTeX）需要一次真实的模型回复，无凭据的临时家目录跑不出来，槽位渲染也仍要在浏览器里过一遍。范围刻意不收 0.2.0-rc.1、0.2.0-rc.3 及之后、0.2.0 正式版；同理也不收 0.2.1-alpha.x、0.2.1-rc.3 及之后与 0.2.1 正式版。范围的写法在这里有讲究：`^0.1.7-rc.2` 展开成 `>=0.1.7-rc.2 <0.2.0-0`，而每一个 `0.2.0-rc.N` 都排在 `0.2.0-0` **之上**，所以实测过的预发布版本必须单独写成一段——`pnpm smoke` 会检查构建目标确实落在声明范围里，并且 `engines.dsh` 与 peer 范围放行完全相同的版本。仍在旧版 dsh 的用户请安装对应的旧版插件（0.5.0 面向 0.1.7-rc.2），而不是授予兼容性豁免。\n\n### 从 npm 安装\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.zh.md:149-187](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L149-L187)\n\n作者给出版本兼容及冷启动测试报告。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n````text\n这个版本，因此在桌面版上安装不需要任何兼容性豁免；0.7.1 及更早版本会被 0.2.1 的\n兼容门拒绝，给出的信息和 0.2.x 的 Web profile 完全一样。\n\n对 0.2.1-rc.2 的实测：boot 图里 70 行、我们那一行与五个 inject 目标都在、客户端\nbundle 以约 200 KB 服务、Mermaid 引擎本地加载，活体宿主探针 16 项通过、1 项跳过\n（跳过的是需要真实会话的会话路径）。访问围栏与官方 API 围栏同一套信任语义：回环\n套接字 + 回环 Host、非 `cross-site`、`origin` 缺省或与 Host 一致即放行。壳在把\n渲染进程的请求转发给它自己的 Host 之前会删掉 `host`、`origin`、`sec-fetch-site`、\n`cookie`，再挂上它自己的凭证——这种无标记形状因此被直接接受（0.6.0 及之前的围栏\n还额外要求同源标记，曾把这套形状全部误拒为 forbidden，0.7.0 起修复并补了围栏级\n单测）。异源与跨站请求仍然 403。**0.7.0 的产物已在真实桌面安装上按桌面转发形状\n逐路由实测过**（state / debug / backup / 用量扫描 / Mermaid 引擎预加载与脚本路由\n全部 200，异源与跨站仍 403）；0.8.0 在冷启动的 0.2.1-rc.2 宿主上复跑了同一套形状。\n桌面窗口内的视觉验收（液态玻璃观感、面板布局、点阵清除）归装它的人过目。\n\n管桌面 profile 要用桌面版自带的 `dsh` 命令，不是 npm 装的那个——公开 CLI 拒绝\n保留的 `desktop` profile：\n\n1. 先启动一次桌面版让 profile 建立，然后完全退出（关窗口只是隐藏；Windows 上\n   从托盘退出）。\n2. `dsh plugin --profile desktop add @alexpeng/dsh-custom-plugin`\n3. 重新打开桌面版。应用内的插件管理器也用桌面版自带的 pnpm 在同一个 profile 上\n   安装和更新，不想开终端就用它。\n\n外观、提示词库、项目文件夹、星标和用量都存在\n`$DSH_HOME/custom-plugin-state.json`，这个文件按设计由桌面版和 Web 共享——两\n边各自持有自己的 `profiles/<名字>`，那里面只放代码不放这个文件——所以在两者\n之间切换看到的是同一份数据。两个宿主因此可能同时写它，这就是状态替换把临时文\n件按写入进程的 pid 命名的原因。\n\n### 从 GitHub 安装（源码安装）\n\n```sh\ndsh plugin --profile web add github:AlexPeng07/dsh-custom-plugin\n# 重启 dsh web\n```\n\ngit 安装拉取的是源码，`prepare` 脚本会在安装端构建 `lib/`。pnpm ≥10 需要一次性授权该构建——把 pnpm 提示的确切包键复制进 profile 的 `pnpm-workspace.yaml` 的 `allowBuilds` 下，再重新执行 add。走上方 npm 路线可免去构建授权。\n\n````\n\n</details>\n\n**依据 3 · 源码核查**：[src/backup.ts:155-233](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/backup.ts#L155-L233)\n\n导入预览/合并及恢复副本实现。\n\n<details>\n<summary>查看原文（79行）</summary>\n\n```text\nexport function backupPreview(current: CustomPluginState, backup: CustomPluginBackupV1): BackupImportPreview {\n  const currentFolders = folderIds(current.folders)\n  const incomingFolders = folderIds(backup.data.folders)\n  const currentPrompts = new Set(current.prompts.map((item) => item.id))\n  return {\n    folders: incomingFolders.size,\n    prompts: backup.data.prompts.length,\n    starredSessions: Object.keys(backup.data.stars).length,\n    usageDays: Object.keys(backup.data.usage).length,\n    conflicts: {\n      folders: [...incomingFolders].filter((id) => currentFolders.has(id)).length,\n      prompts: backup.data.prompts.filter((item) => currentPrompts.has(item.id)).length,\n      usageDays: Object.keys(backup.data.usage).filter((day) => current.usage[day] !== undefined).length,\n    },\n  }\n}\n\nfunction mergeById<T extends { id: string }>(current: readonly T[], incoming: readonly T[]): T[] {\n  const replacements = new Map(incoming.map((item) => [item.id, clone(item)]))\n  const out = current.map((item) => replacements.get(item.id) ?? item)\n  for (const item of incoming) if (!current.some((old) => old.id === item.id)) out.push(clone(item))\n  return out\n}\n\n/** Merge a folder tree by stable node id. Imported parents and sibling order\n * win for nodes present in the document; current nodes absent from it remain\n * in their existing order. This also moves a duplicate node when its parent\n * changed in the imported tree, instead of leaving a stale root copy behind. */\nfunction mergeFolders(current: readonly FolderNode[], incoming: readonly FolderNode[]): FolderNode[] {\n  const incomingIds = folderIds(incoming)\n  const index = new Map<string, FolderNode>()\n  const indexTree = (nodes: readonly FolderNode[]): void => {\n    for (const node of nodes) { index.set(node.id, node); indexTree(node.children) }\n  }\n  indexTree(current)\n\n  const retain = (node: FolderNode): FolderNode | null => {\n    if (incomingIds.has(node.id)) return null\n    const children = node.children.map(retain).filter((item): item is FolderNode => item !== null)\n    return { id: node.id, name: node.name, children, sessionIds: clone(node.sessionIds), workspaceIds: clone(node.workspaceIds), prompts: clone(node.prompts) }\n  }\n\n  const imported = (source: FolderNode): FolderNode => {\n    const currentNode = index.get(source.id)\n    // Unrelated current children stay before the imported sequence; all\n    // imported siblings then follow the exact order from the backup.\n    const children = (currentNode?.children ?? []).map(retain).filter((item): item is FolderNode => item !== null)\n      .concat(source.children.map(imported))\n    return { id: source.id, name: source.name, children, sessionIds: clone(source.sessionIds), workspaceIds: clone(source.workspaceIds), prompts: clone(source.prompts) }\n  }\n\n  // The imported tree owns the ordering of imported roots. Current roots that\n  // are absent from the document are appended in their existing order.\n  const out = incoming.map(imported)\n  for (const node of current) if (!incomingIds.has(node.id)) {\n    const kept = retain(node)\n    if (kept !== null) out.push(kept)\n  }\n  return out\n}\n\nexport function importedState(current: CustomPluginState, backup: CustomPluginBackupV1, mode: BackupImportMode): CustomPluginState {\n  const data = backup.data\n  if (mode === 'replace') return { cfg: clone(data.cfg), folders: clone(data.folders), prompts: clone(data.prompts), stars: clone(data.stars), usage: clone(data.usage), apiKey: current.apiKey }\n  const stars = clone(current.stars)\n  for (const [sessionId, values] of Object.entries(data.stars)) stars[sessionId] = { ...(stars[sessionId] ?? {}), ...clone(values) }\n  const usage = clone(current.usage)\n  for (const [day, models] of Object.entries(data.usage)) usage[day] = { ...(usage[day] ?? {}), ...clone(models) }\n  pruneUsage(usage)\n  return { cfg: normalizeCfg({ ...current.cfg, ...clone(data.cfg) }), folders: mergeFolders(current.folders, data.folders), prompts: mergeById(current.prompts, data.prompts), stars, usage, apiKey: current.apiKey }\n}\n\nexport async function writeRecoveryBackup(path: string, state: CustomPluginState): Promise<string> {\n  const target = path + '.backup.json'\n  const temporary = tempPathFor(target)\n  await writeFile(temporary, JSON.stringify(createBackup(state), null, 2), 'utf8')\n  await rename(temporary, target)\n  return target\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/state.ts:315-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts#L315-L386)\n\n跨进程状态写与合并路径。\n\n<details>\n<summary>查看原文（72行）</summary>\n\n```text\nexport function saveStateFile(state: CustomPluginState, home: string = dshHome()): Promise<void> {\n  const statePath = join(home, STATE_FILE)\n  const turn = (saveQueues.get(statePath) ?? Promise.resolve())\n    .catch(() => {})\n    .then(async () => {\n      await mergeExternalChanges(state, statePath)\n      await mkdir(dirname(statePath), { recursive: true })\n      const doc = JSON.stringify(state)\n      const tmpPath = tempPathFor(statePath)\n      try {\n        await writeFile(tmpPath, doc, 'utf8')\n        await rename(tmpPath, statePath)\n      } catch (error) {\n        // A pid-qualified temp would otherwise survive a failed turn and accumulate.\n        await rm(tmpPath, { force: true }).catch(() => { /* the rename may have landed; nothing left to clean */ })\n        throw error\n      }\n      // Record what this process just made the file look like, so the next\n      // turn can tell its own writes from another host's.\n      const st = await stat(statePath).catch(() => null)\n      syncBaselines.set(statePath, st !== null ? { mtimeMs: st.mtimeMs, size: st.size, doc } : null)\n    })\n  saveQueues.set(statePath, turn)\n  return turn.finally(() => {\n    if (saveQueues.get(statePath) === turn) saveQueues.delete(statePath)\n  })\n}\n\n/** Per-path view of the on-disk document this process last saw: its stat\n * identity and its serialized bytes. `$DSH_HOME` is shared by every dsh host\n * under it (Web + Desktop), so a save must first notice whether another host\n * wrote the file since. `null` marks \"believed absent\"; no entry at all marks\n * \"never loaded through this module\", where a direct save keeps the plain\n * last-writer-wins behavior. */\nconst syncBaselines = new Map<string, { mtimeMs: number; size: number; doc: string } | null>()\n\n/**\n * Fold another host's writes back in before this process saves over them.\n *\n * Each host holds the whole document in memory, so an unchecked save is\n * last-writer-wins and silently discards the other host's usage folds and\n * config edits. When the file's stat identity no longer matches what this\n * process last wrote or loaded, the current bytes are re-read and three-way\n * merged against the last-saved snapshot: sections this process has not\n * touched adopt the external version, the usage ledger unions arithmetically\n * (`theirs + ours − base` per counter — exact for two hosts that both\n * started from `base`), and locally-dirty sections keep the local version.\n *\n * The stat fast path misses only a same-instant, same-length rewrite by\n * another host. An unreadable or undecodable external document falls back to\n * the plain overwrite — the boot-time quarantine remains the backstop for\n * the destructive case.\n */\nasync function mergeExternalChanges(state: CustomPluginState, statePath: string): Promise<void> {\n  const baseline = syncBaselines.get(statePath)\n  if (baseline === undefined) return\n  const st = await stat(statePath).catch(() => null)\n  if (st === null) return // absent (or vanishing mid-check): nothing to merge\n  if (baseline !== null && st.mtimeMs === baseline.mtimeMs && st.size === baseline.size) return\n  const text = await readFile(statePath, 'utf8').catch(() => null)\n  if (text === null) return\n  let theirs: unknown\n  try {\n    theirs = JSON.parse(text)\n  } catch {\n    return // an undecodable external document has nothing mergeable\n  }\n  if (theirs === null || typeof theirs !== 'object') return\n  mergeThreeWay(state, baseline !== null ? safeParse(baseline.doc) : null, theirs as Record<string, unknown>)\n}\n\nfunction safeParse(text: string): CustomPluginState | null {\n```\n\n</details>\n\n#### 缺口\n\n- 未独立验证实际时间收益、宿主版本矩阵和价格正确性。\n  **影响：**推荐只限隔离试用，不能推广为生产稳定。\n  **进一步探讨：**真实工作流记录任务耗时、功能冲突、状态并发结果和账单对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：510f5e70e725a05143b283bd29741dc3b5e2bdbd02943f99b54fcbae8778c913。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 1628 | — | — | 25466 |\n| .mjs | source | 5 | 825 | 591 | 174 | — |\n| .ts | source | 24 | 4714 | 3652 | 785 | — |\n| .tsx | source | 1 | 3038 | 2689 | 298 | — |\n| .ts | test | 26 | 3397 | 2809 | 318 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 多功能面板 | 集中操作 | 广权限/复杂性 |\n| 共享状态 | Web/Desktop 一致 | 并发需测 |\n| 预算/余额 | 成本感知 | 估算非账单 |\n\n## 工程亮点\n\nWeb/Host 双半区通过同源路由联动；共享状态文件采用队列、PID 临时文件、三方合并。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、src/index.ts、src/routes.ts、src/loopback.ts、src/state.ts、src/backup.ts、src/host-service.ts、src/credentials.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅 README.zh、Host 路由、状态、备份、凭据与 Mermaid 路径；不运行目标插件。\n- 下一步：在目标声明版本验证 slots 与路由；双进程交错写、备份脱敏、Mermaid 本地/后备与账单对照。\n",
         "metadata": {
             "repository": "AlexPeng07/dsh-custom-plugin",
             "repository_id": 1342948215,
-            "captured_at": "2026-10-21T07:59:50.702Z",
-            "window_start": "2026-09-21T07:59:50.702Z",
+            "captured_at": "2026-10-22T06:06:15.492Z",
+            "window_start": "2026-09-22T06:06:15.492Z",
             "stars": 8,
             "pushed_at": "2026-10-17T12:30:45Z",
             "issues": {
@@ -390,25 +455,20 @@
                 "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
-                "updated_30d": null
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAlexPeng07%2Fdsh-custom-plugin%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A50.702Z..2026-10-21T07%3A59%3A50.702Z&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3AAlexPeng07%2Fdsh-custom-plugin%20is%3Aissue%20updated%3A2026-09-21T07%3A59%3A50.702Z..2026-10-21T07%3A59%3A50.702Z&per_page=1\": net/http: TLS handshake timeout"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "@alexpeng/dsh-custom-plugin",
-                "captured_at": "2026-10-21T08:00:12.469Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 2238,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40alexpeng%2Fdsh-custom-plugin",
+                "captured_at": "2026-10-22T06:06:24.608Z",
+                "window_start": "2026-09-22",
+                "window_end": "2026-10-21",
+                "downloads_30d": 2207,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40alexpeng%2Fdsh-custom-plugin",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-22T14:45:34.391Z",
-                    "captured_at": "2026-10-21T08:00:12.469Z",
+                    "captured_at": "2026-10-22T06:06:24.608Z",
                     "source_url": "https://registry.npmjs.org/%40alexpeng%2Fdsh-custom-plugin",
                     "error": null,
                     "latest_version": "0.8.0",

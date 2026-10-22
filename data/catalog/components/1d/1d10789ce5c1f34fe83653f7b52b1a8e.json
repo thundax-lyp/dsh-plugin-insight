@@ -12,8 +12,8 @@
             "aliases": [],
             "name": "dsh-web-url-view",
             "entry_type": "plugin",
-            "technical_category": "tools-integration",
-            "business_category": "infrastructure",
+            "technical_category": "channels-remote",
+            "business_category": "personal-productivity",
             "tags": [
                 "局域网访问",
                 "Web 地址"
@@ -27,36 +27,82 @@
             },
             "sources": [
                 {
-                    "id": "20261020-research40-github-1366583376-root-directory-0",
+                    "id": "2026-10-22-02-github-1366583376-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T03:11:13.276Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:41:10.995Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-research40-github-1366583376-root-author",
+                    "id": "2026-10-22-02-github-1366583376-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "README.md",
+                            "content_sha256": "6cd41c5ab2cae94b4aaa210001dda3cfe566905aa257e467843c6f67dec1d953"
+                        }
+                    ],
                     "revision": "193343093186016080a81c5512c6936809daff25",
-                    "captured_at": "2026-10-20T03:11:13.276Z",
-                    "summary": "显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:10.995Z",
+                    "summary": "给 DSH Web GUI 展示一次性 URL，并以默认全接口绑定的固定端口代理提供跨设备入口。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-research40-github-1366583376-root-source",
+                    "id": "2026-10-22-02-github-1366583376-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts",
+                    "url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "README.md",
+                            "content_sha256": "6cd41c5ab2cae94b4aaa210001dda3cfe566905aa257e467843c6f67dec1d953"
+                        },
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "src/index.ts",
+                            "content_sha256": "d30df918d33b253e0cb8880438bf36eca0f910ed74f4de8b86bd004fff772e43"
+                        },
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "src/fixed-entry.ts",
+                            "content_sha256": "0b64d205faf1b45e80625572c97aee13d8b86113c190416aa2bb34be5c9953d4"
+                        },
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "src/service.ts",
+                            "content_sha256": "a1691f2ef3585c7e4de466e29bcb9fd674508ec565a437a78cc6b0bd6fc21455"
+                        },
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "src/lan.ts",
+                            "content_sha256": "c6d11046a86eeed5732d52bc5f9eb4e32e7a75af5b52933a523d32c4b219d7e6"
+                        },
+                        {
+                            "repository_url": "https://github.com/1032740078/dsh-web-url-view",
+                            "commit": "193343093186016080a81c5512c6936809daff25",
+                            "path": "package.json",
+                            "content_sha256": "fad17f0fa8c39bb405ee74c321c0f915caa2a22c5f55d211f031682ad41492cb"
+                        }
+                    ],
                     "revision": "193343093186016080a81c5512c6936809daff25",
-                    "captured_at": "2026-10-20T03:11:13.276Z",
-                    "summary": "核查 src/index.ts、src/service.ts、src/fixed-entry.ts；固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。",
-                    "artifact": "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T09:41:10.995Z",
+                    "summary": "核查 README.md、src/index.ts、src/fixed-entry.ts、src/service.ts、src/lan.ts、package.json；固定端口代理内握手启动令牌并缓存 cookie，转发 HTTP/WebSocket 且改写认证相关头。详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "未做认证审计或真实网络测试；固定入口持有目标会话能力，不能视为普通无权限书签。",
+                        "只读核固定提交 README.md、src/index.ts、src/fixed-entry.ts、src/service.ts、src/lan.ts；未运行目标 DSH。旧 META 复用。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -67,9 +113,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。",
+                    "text": "可信局域网中从手机等设备访问 DSH GUI；使用者需接受同网设备无额外口令的权限边界。详见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -78,16 +124,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。",
+                    "text": "固定端口代理内握手启动令牌并缓存 cookie，转发 HTTP/WebSocket 且改写认证相关头。详见[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -96,16 +142,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 固定入口 | 端口代理 | LAN IP 恒定 |\n| 认证 | 内存 cookie | 异常日志保密 |\n| 实时连接 | WS 代理 | 各宿主版本兼容 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -114,16 +160,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "无需模型调用，代价是额外监听端口和代理状态，升级时要核查信任边界。",
+                    "text": "#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 选 bind/固定端口、配置防火墙/设备边界 | 本机端口/网络资源；证书/网络设备费用未知 | 排查 IP/端口、授权范围与书签，工时未知 | 端口占用或换网需重配 |\n| 持续 | HTTP/WS 转发、进程内握手/续期 | 代理 CPU/内存/带宽；现金消耗未知 | 审访问日志/令牌保密、设备权限，工时未知 | LAN 暴露面随网络变化 |\n| 失败恢复 | token 日志泄露、401 POST 丢体、IP 漂移 | 可能需重启/重新提交或轮换认证；损失未知 | 查日志、阻断端口、核业务写入、重设书签，工时未知 | 有体重放和 WS 101 真实行为未测 |",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -132,16 +178,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "固定入口与易变目标分离有可借鉴性，但重写请求头和代持 cookie 需要专门审查。",
+                    "text": "进程内单飞握手与 HTTP/WS 转发；默认 LAN trust、异常日志和有体重放是部署关键。详见[Q02](#research-q02)至[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -150,16 +196,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。",
+                    "text": "仅在可信 LAN 小范围试用，按需限制 bind/firewall；验证重启、WebSocket 和 401 写入。详见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -168,16 +214,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "未做认证审计或真实网络测试；固定入口持有目标会话能力，不能视为普通无权限书签。",
+                    "text": "只读核固定提交 README.md、src/index.ts、src/fixed-entry.ts、src/service.ts、src/lan.ts；未运行目标 DSH。旧 META 复用。",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -186,16 +232,16 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "包版本 0.1.0，依赖连接和 Web 服务；源码与打包库体积需分开理解。",
+                    "text": "作者提供 GitHub 与市场安装方式；市场上架和版本兼容仅为作者主张。",
                     "evidence_ids": [
-                        "20261020-research40-github-1366583376-root-source"
+                        "2026-10-22-02-github-1366583376-root-source"
                     ],
                     "dependencies": [
                         {
@@ -204,40 +250,135 @@
                             "fingerprint": "193343093186016080a81c5512c6936809daff25"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T03:11:13.276Z",
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "LAN 无密码即认证代理的核心代价；异常日志中 token URL 和有体请求 401 重放可能带来风险。详见[Q03](#research-q03)和[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未实现的改进是绑定来源授权/TLS、日志脱敏和不可重放请求的安全续期。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366583376-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366583376:root",
+                            "area": "code",
+                            "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:41:10.995Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T03:11:13.276Z",
+            "last_checked_at": "2026-10-22T09:41:10.995Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "193343093186016080a81c5512c6936809daff25",
+                "reviewed_at": "2026-10-22T09:41:10.995Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366583376:root",
+                        "area": "code",
+                        "fingerprint": "193343093186016080a81c5512c6936809daff25"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 23,
+                        "transferability": 10,
+                        "simplification": 11
+                    },
+                    "rationale": "novelty 9：相对每次变化的一次性 URL，固定代理书签是集成增量，反代技术本身常见（Q01/Q02）。mechanism 23：authenticatedUrl 握 cookie、内存续期和 HTTP/WS 转发形成 DSH 适配；异常日志/401 有体重放限制可靠性（Q02-Q04）。transferability 10：固定入口思路可用于其它本地 Web 服务，代码依 DSH connection/webServer 和 cookie 协议（Q02）。simplification 11：相对复制 token URL，跨设备书签减少操作；默认 LAN 无密码要求网络配置和日志治理（Q01/Q05）。",
+                    "basis": "interpretation",
+                    "score": 53,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366583376-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 26,
+                        "delivery": 0,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 26：相对每次取得 token URL，手机固定地址打开 GUI 明显省步骤；同网设备都能控制完整 GUI（Q01）。delivery以原生DSH Web界面为参照，代理仍呈现同一应用、数据与任务结果；稳定书签改变访问流程，没有新增交付物、验收规则或价值单元，故本分项0（Q01/Q02），入口便利计workflow，端口/WS可靠性不用于本分项评分。\nreach 10：扩至可信 LAN 设备，但共享/公网部署不具独立认证（Q01/Q05）。economics 4：节省复制链接时间，网络控制、TLS/日志治理及失败写入恢复成本未知，净收益未量化（Q03-Q05）。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366583376-root-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "频繁重启桌面实例的用户可限回环试固定入口，先验旧令牌失效与外部Origin拒绝。",
+                "decision": "observe",
+                "reason": "默认全 LAN 暴露 GUI；先在隔离可信网络核授权、令牌日志与写请求重放。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "端口令牌更换导致入口不稳的痛点具体。"
+                        "rationale": "稳定跨设备书签需求清楚。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "固定代理省复制地址，但原生带令牌地址更简单。"
+                        "rationale": "自动处理令牌轮换。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "HTTP和WebSocket握手代理可查，认证网络行为未实测。"
+                        "rationale": "固定源码可核，目标网络未测。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "监听端口与代持cookie引入额外信任边界维护。"
+                        "score": 5,
+                        "rationale": "默认 LAN 无额外认证的风险高。"
                     }
                 },
-                "score": 59,
+                "score": 54,
                 "revision": "193343093186016080a81c5512c6936809daff25",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T09:41:10.995Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-research40-github-1366583376-root-source"
+                    "2026-10-22-02-github-1366583376-root-source"
                 ],
                 "dependencies": [
                     {
@@ -262,33 +403,34 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T02:51:30Z",
-            "analysis_sha256": "b0d362fcde057bfc08c9156b8c2ca5186768a1602e1ff25ce79a6712aa1270ee"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "588cb502228dc417040e1d838b2d227c71417be35cec0bdc3b4d3699ea9859a5"
         },
         "publication.metadata": "data/plugins/1032740078--dsh-web-url-view/META.json",
         "publication.summaries": {
-            "text": "显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。",
+            "text": "给 DSH Web GUI 展示一次性 URL，并以默认全接口绑定的固定端口代理提供跨设备入口。",
             "revision": "193343093186016080a81c5512c6936809daff25",
             "source_url": "https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md"
         },
         "publication.capabilities": {
             "revision": "193343093186016080a81c5512c6936809daff25",
             "items": {
-                "Host 路由": "固定端口 HTTP/WebSocket 转发。",
-                "界面": "查看当前访问地址。"
-            }
+                "Host 路由": "固定HTTP/WS代理与webUrlView/current服务路由",
+                "界面": "当前/固定URL展示"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 固定 URL | 跨设备书签 | LAN 默认开放 |\n| 认证代理 | 自动握手 | token 异常日志 |\n| WS | 实时会话 | 目标兼容未知 |"
         },
         "publication.advice": {
             "revision": "193343093186016080a81c5512c6936809daff25",
-            "text": "先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。"
+            "text": "仅在可信 LAN 小范围试用，按需限制 bind/firewall；验证重启、WebSocket 和 401 写入。详见[Q05](#research-q05)。"
         },
         "registry": "data/plugins/1032740078--dsh-web-url-view",
-        "reports": "# dsh-web-url-view\n\n> 显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。\n\n## 固定范围与依据\n\n固定提交 [193343093186016080a81c5512c6936809daff25](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts)；组件路径：仓库根。核查时间 2026-10-20T03:11:13.276Z；本轮基准 2026-10-20T02:51:30Z。\n源码抽读路径：src/index.ts、src/service.ts、src/fixed-entry.ts。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。\n- **亮点**：固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。\n- **思考**：稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。\n- **建议**：先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。\n\n## 场景与替代办法\n\n桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。\n\n复制宿主原生带令牌地址最简单；固定代理只在频繁重启且明确网络边界时值得增加。\n\n## 依赖与流程\n\n依赖宿主认证握手、WebSocket 和当前目标端口，不能脱离宿主认证实现单独保证安全。\n\n查看当前地址或打开固定端口；重启后代理重新取得目标会话，失败时检查握手和绑定地址。\n\n## 成本与效果\n\n无需模型调用，代价是额外监听端口和代理状态，升级时要核查信任边界。\n\n稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e01146b826cfba304a4890d14eb979a282dce5f49064163b11e94e71c63b203e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 12 | 11342 | 9891 | 1880 | — |\n| .md | source | 2 | 384 | — | — | 3075 |\n| .ts | source | 10 | 1097 | 586 | 443 | — |\n| .tsx | source | 1 | 206 | 160 | 32 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **Host 路由**：固定端口 HTTP/WebSocket 转发。\n- **界面**：查看当前访问地址。\n\n## 工程亮点\n\n固定入口与易变目标分离有可借鉴性，但重写请求头和代持 cookie 需要专门审查。\n\n## 分发与兼容\n\n包版本 0.1.0，依赖连接和 Web 服务；源码与打包库体积需分开理解。\n\n## 历史对照\n\n前次代码指纹为 193343093186016080a81c5512c6936809daff25；本轮固定为 193343093186016080a81c5512c6936809daff25。复制宿主原生带令牌地址最简单；固定代理只在频繁重启且明确网络边界时值得增加。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：未做认证审计或真实网络测试；固定入口持有目标会话能力，不能视为普通无权限书签。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：验证旧令牌失效、目标重启、异源请求、WebSocket 与回环/局域网绑定差异。\n",
+        "reports": "# dsh-web-url-view\n\n> 给 DSH Web GUI 展示一次性 URL，并以默认全接口绑定的固定端口代理提供跨设备入口。\n\n## 研究范围\n\n- **仓库**：[1032740078/dsh-web-url-view](https://github.com/1032740078/dsh-web-url-view)\n- **版本号**：0.1.0（[固定提交 193343093186016080a81c5512c6936809daff25](https://github.com/1032740078/dsh-web-url-view/tree/193343093186016080a81c5512c6936809daff25)）\n- **版本日期**：2026-09-13（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认默认暴露完整 GUI 于 LAN；异常握手日志拼入 token URL；401 重试不缓存请求体。目标网络/宿主未测。\n\n## 洞察短评\n\n- **用途**：可信局域网中从手机等设备访问 DSH GUI；使用者需接受同网设备无额外口令的权限边界。详见[Q01](#research-q01)。\n- **亮点**：以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。\n- **思考**：LAN 无密码即认证代理的核心代价；异常日志中 token URL 和有体请求 401 重放可能带来风险。详见[Q03](#research-q03)和[Q04](#research-q04)。\n- **建议**：未实现的改进是绑定来源授权/TLS、日志脱敏和不可重放请求的安全续期。详见[Q05](#research-q05)。\n\n采用建议：仅在可信 LAN 小范围试用，按需限制 bind/firewall；验证重启、WebSocket 和 401 写入。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nLAN 无密码即认证代理的核心代价；异常日志中 token URL 和有体请求 401 重放可能带来风险。详见[Q03](#research-q03)和[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未实现的改进是绑定来源授权/TLS、日志脱敏和不可重放请求的安全续期。详见[Q05](#research-q05)。\n\n目标宿主核 LAN 无密码、日志失败脱敏、101 Set-Cookie、cookie过期 POST、换网/端口占用。\n\n## 场景与替代办法\n\n可信局域网中从手机等设备访问 DSH GUI；使用者需接受同网设备无额外口令的权限边界。详见[Q01](#research-q01)。\n\nDSH 原生一次性 token URL 可访问但每次启动变化；固定入口用额外代理换取书签便利和更大 LAN 权限面。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| DSH connection/webServer | 必需 | 令牌与目标端口 | 无固定入口 |\n| 固定端口 | 必需 | 稳定 URL | 冲突不可用 |\n| 可信 LAN | 默认方案必需 | 跨设备 | 未授权访问 |\n\n#### 使用步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 配置 | 选 bind/端口 | 核网络边界 |\n| 打开 | 手机访问固定 URL | GUI 加载/WS |\n| 复核 | 重启/换网 | 地址/权限 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 本插件动作 | 现金/资源 | 人工/时间 | 未知与失败恢复 |\n| --- | --- | --- | --- | --- |\n| 首次 | 选 bind/固定端口、配置防火墙/设备边界 | 本机端口/网络资源；证书/网络设备费用未知 | 排查 IP/端口、授权范围与书签，工时未知 | 端口占用或换网需重配 |\n| 持续 | HTTP/WS 转发、进程内握手/续期 | 代理 CPU/内存/带宽；现金消耗未知 | 审访问日志/令牌保密、设备权限，工时未知 | LAN 暴露面随网络变化 |\n| 失败恢复 | token 日志泄露、401 POST 丢体、IP 漂移 | 可能需重启/重新提交或轮换认证；损失未知 | 查日志、阻断端口、核业务写入、重设书签，工时未知 | 有体重放和 WS 101 真实行为未测 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 固定入口 | 端口代理 | LAN IP 恒定 |\n| 认证 | 内存 cookie | 异常日志保密 |\n| 实时连接 | WS 代理 | 各宿主版本兼容 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定 Web 入口如何处理身份与跨设备访问，异常路径是否泄露/损坏会话？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 固定 URL 实际提供什么便利，默认访问范围有多大？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n插件在设置里展示一次性 token URL 和固定 http://LAN-IP:47524 地址。固定口默认绑定 0.0.0.0；进程内代理持有 DSH 会话 cookie，对连接者自动加认证。README 明确同一 LAN 任意设备可无额外密码打开完整 Web GUI。这是把启动令牌保护转化成 LAN 信任边界，不只是只读 URL 展示；公共/共享网络应限定 127.0.0.1 或关掉。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-27](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md#L9-L27)\n\n作者产品用途\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nAdds a **View URL** page to the left menu of **Settings** in DSH Desktop\n(DeepSeek Harness desktop) and in any `dsh web` GUI running the same profile.\nThe page shows two Web GUI addresses, and the fixed one is **stable across\nrestarts and reachable from other devices on the same LAN**.\n\n- **Fixed address** (bookmark this): `http://<LAN-IP>:47524/`, e.g.\n  `http://192.168.1.88:47524/` — it stays the same no matter how often the\n  desktop restarts or how the port and launch token rotate.\n- **Current address (one-time)**: the tokenized URL of the running session,\n  which changes on every desktop restart.\n\n## Why it exists\n\nThe desktop picks a random Web port and a per-process launch token on every\nstart (the token is a replay-protection secret). The native URL therefore\nchanges constantly, so it cannot be bookmarked or kept on a phone. The token\nshould not — and cannot — be pinned, so this plugin pins the **entry point**\ninstead: an in-process fixed-port forwarder holds one stable address and\nperforms the authentication handshake against the current session by itself.\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:121-132](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md#L121-L132)\n\n作者明确无密码 LAN 访问\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n## Security boundary (important)\n\nThe fixed entry **holds a session cookie inside the proxy**, therefore:\n\n- With the default `0.0.0.0` bind, **any device on the same LAN can open the Web\n  GUI, with no extra password.** That default exists to serve the \"open it on my\n  phone\" use case.\n- Use it on trusted LANs only. On public or shared networks set\n  `fixedHost: 127.0.0.1` (localhost only) or `fixedPort: 0` (disable the fixed\n  address entirely).\n- The forwarder listens on the fixed port and nothing else: it opens no extra\n  API and never writes browser cookies.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:39-75](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts#L39-L75)\n\n默认 0.0.0.0:47524\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n/** Default fixed-port forwarder bind port. */\nconst DEFAULT_FIXED_PORT = 47524\n/** Default fixed entry bind interface: all interfaces, so other LAN devices can connect. */\nconst DEFAULT_FIXED_HOST = '0.0.0.0'\n\n/** Plugin configuration; all fields optional (documented defaults). */\nexport interface Config {\n  /** Fixed entry bind port; 0 disables the fixed address. Default 47524. */\n  fixedPort?: number\n  /** Fixed entry bind interface. Default 0.0.0.0 (all interfaces, LAN-reachable). */\n  fixedHost?: string\n}\n\n/** The plugin declares no services of its own (the service class injects `connection`). */\nexport const inject: readonly string[] = []\n\n/**\n * Mount the `webUrlView` service and the fixed-port forwarder once their\n * `connection`/`webServer` dependencies activate. The forwarder shares the\n * plugin's effect lifecycle: a harness restart recreates this process, which\n * rebinds the SAME fixed port and refreshes the session against the new\n * launch token automatically — that is what makes the fixed address stable.\n * @param ctx - plugin context.\n * @param config - optional plugin config (see {@link Config}).\n */\nexport async function apply(ctx: Context, config: Config | undefined): Promise<void> {\n  const fixedPort = typeof config?.fixedPort === 'number' ? Math.trunc(config.fixedPort) : DEFAULT_FIXED_PORT\n  const fixedHost = typeof config?.fixedHost === 'string' && config.fixedHost !== ''\n    ? config.fixedHost\n    : DEFAULT_FIXED_HOST\n\n  await ctx.plugin(WebUrlViewService)\n  console.info('[dsh-web-url-view] host mounted: webUrlView/current is available')\n\n  if (fixedPort <= 0 || fixedPort > 65535) {\n    console.info(`[dsh-web-url-view] fixed entry disabled (fixedPort=${String(fixedPort)})`)\n    return\n```\n\n</details>\n\n#### 缺口\n\n- 目标网络/宿主权限未测\n  **影响：**默认可能扩大 GUI 控制面\n  **进一步探讨：**目标 LAN 设备验证并设防火墙\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 固定入口怎样保持跨启动的身份连接？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\napply 在 connection/webServer/webUrlView ready 后监听固定端口，代理首请求调用 connection.authenticatedUrl 对当前进程令牌握手，提取 dsh-auth cookie 存内存，22 小时后更新；HTTP 与 WebSocket 都转发并改写 Host/Origin/Cookie，HTTP Set-Cookie 被剥离。每次桌面重启进程重绑同端口再握新 cookie。因此地址固定依赖端口可用、LAN IP 不变和宿主版本兼容，而非保证网络寻址永远不变。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:78-131](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts#L78-L131)\n\n服务装配/端口\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n  // The forwarder lives exactly as long as the plugin fiber that owns it.\n  // The inject list includes 'webUrlView' on purpose: the service registers\n  // through ctx.plugin() above, but its own `connection` dependency keeps its\n  // fiber PENDING until the harness connection is actually provided — which\n  // can be after apply() returned. Declaring it as an inject dependency makes\n  // this callback run only once the service fiber is ACTIVE, so the strict\n  // ctx.get() below is guaranteed to return the same global instance the\n  // gateway dispatches to.\n  ctx.inject(['connection', 'webServer', 'webUrlView'], (scope) => {\n    scope.effect(() => {\n      const serverPort = scope.webServer.port\n      // 注入列表已包含 'webUrlView':回调仅在服务激活后执行,严格 get 必然命中。\n      const service = ctx.get('webUrlView') as WebUrlViewService\n      // Whatever the listen host (`127.0.0.1` or `0.0.0.0`), this process can\n      // always reach its own server through loopback, and the harness trust\n      // fence accepts a loopback Host — so loopback is the connect address\n      // and the authority we name in forwarded headers.\n      const connectHost = '127.0.0.1'\n      // 对外展示主机名:探测内网 IP(优先默认路由网卡),供局域网设备访问;\n      // 找不到可用的内网 IP 时回退到回环,保证本机总能通过固定地址打开。\n      const advertiseHost = detectLanAddress() ?? '127.0.0.1'\n      const entry = new FixedEntryServer(fixedHost, fixedPort, {\n        authority: `${connectHost}:${String(serverPort)}`,\n        hostname: connectHost,\n        port: serverPort,\n        advertiseHost,\n        // Authenticate through the service instance (never through `scope`):\n        // the inject scope is tied to this fiber and becomes inactive the\n        // moment the plugin reloads, while the forwarder must keep serving\n        // across requests. The service's own ctx stays live for the whole\n        // mount.\n        authenticate: () => service.mintFixedUrl(`http://${connectHost}:${String(serverPort)}`),\n      })\n      entry.start()\n      if (service === undefined) {\n        // Diagnostic: without the service the fixed URL can never be set.\n        console.error('[dsh-web-url-view] attachFixed skipped: service is undefined')\n        return async () => {\n          await entry.close()\n        }\n      }\n      try {\n        service.attachFixed(entry)\n      } catch (error) {\n        // A throw here is invisible to harness.log (cordis sends it to\n        // logger.error, not stdout): surface it on stdout with the full\n        // message so one restart pinpoints the cause.\n        console.error(`[dsh-web-url-view] attachFixed failed: ${error instanceof Error ? error.stack ?? error.message : String(error)}`)\n      }\n      return async () => {\n        service.attachFixed(null)\n        await entry.close()\n      }\n    }, 'dsh-web-url-view: fixed entry')\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/fixed-entry.ts:121-145](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L121-L145)\n\nlisten 与 cookie 生命周期\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n  /** Bind the fixed port (non-blocking). */\n  start(): void {\n    this.server.listen(this.port, this.bindHost, () => {\n      this.listening = true\n      console.info(`[dsh-web-url-view] fixed entry listening on ${this.bindHost}:${this.port} (advertised http://${this.target.advertiseHost}:${this.port}) -> ${this.target.authority}`)\n    })\n  }\n\n  /** Release the port and drop the held session cookie. */\n  async close(): Promise<void> {\n    this.listening = false\n    this.sessionCookie = null\n    const server = this.server\n    // Close lingering keep-alive sockets so a restarted harness never finds\n    // the fixed port still occupied by this process's stale sockets.\n    server.closeAllConnections?.()\n    await new Promise<void>((resolve) => {\n      server.close(() => resolve())\n    })\n    console.info(`[dsh-web-url-view] fixed entry on ${this.bindHost}:${this.port} closed`)\n  }\n\n  /** Whether the held session cookie is still plausibly valid (server grants 24h). */\n  private get sessionFresh(): boolean {\n    return this.sessionCookie !== null && Date.now() - this.sessionAt < 22 * 60 * 60 * 1000\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/fixed-entry.ts:154-195](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L154-L195)\n\n握手取 cookie\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  private async handshake(): Promise<string | null> {\n    if (this.handshakePromise !== null) return this.handshakePromise\n    this.handshakePromise = (async () => {\n      let url: string\n      try {\n        // authenticate()（服务 ctx 的 connection 读取）可能在插件重载边界抛错；\n        // 手握手失败必须转为会话刷新失败,绝不作为 unhandled rejection 逃逸。\n        url = this.target.authenticate()\n      } catch (error) {\n        console.error(`[dsh-web-url-view] fixed entry handshake: authenticate() failed: ${error instanceof Error ? error.message : String(error)}`)\n        return null\n      }\n      let response: Response\n      try {\n        response = await fetch(url, { redirect: 'manual', headers: { accept: 'text/html' } })\n      } catch (error) {\n        console.error(`[dsh-web-url-view] fixed entry handshake to ${url} failed: ${error instanceof Error ? error.message : String(error)}`)\n        return null\n      }\n      try {\n        await response.body?.cancel()\n      } catch {\n        // A manual-redirect response carries no readable body; best effort.\n      }\n      const setCookies = typeof response.headers.getSetCookie === 'function'\n        ? response.headers.getSetCookie()\n        : []\n      const cookie = setCookies.find((entry) => entry.startsWith('dsh-auth-'))\n      if (cookie === undefined) {\n        console.error(`[dsh-web-url-view] fixed entry handshake to ${url} returned HTTP ${response.status} without a dsh-auth cookie`)\n        return null\n      }\n      // Keep only the name=value pair; attributes belong to a browser jar.\n      this.sessionCookie = cookie.split(';')[0]?.trim() ?? null\n      this.sessionAt = Date.now()\n      console.info(`[dsh-web-url-view] fixed entry session refreshed (HTTP ${response.status})`)\n      return this.sessionCookie\n    })().finally(() => {\n      this.handshakePromise = null\n    })\n    return this.handshakePromise\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/fixed-entry.ts:205-228](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L205-L228)\n\n请求头改写\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  private rewrite(inbound: IncomingHttpHeaders, cookie: string | null): IncomingHttpHeaders {\n    const headers: IncomingHttpHeaders = {}\n    for (const [key, value] of Object.entries(inbound)) {\n      if (value === undefined) continue\n      if (OWNED_HEADERS.has(key.toLowerCase())) continue\n      if (key.toLowerCase() === 'origin') {\n        // Rewrite only origins that name this forwarder (its port); foreign\n        // origins stay untouched so the target fence still rejects them.\n        try {\n          const origin = new URL(String(value))\n          if (origin.port === String(this.port)) {\n            headers.origin = `http://${this.target.authority}`\n            continue\n          }\n        } catch {\n          // Keep the malformed origin verbatim for the target fence.\n        }\n      }\n      headers[key] = value\n    }\n    headers.host = this.target.authority\n    if (cookie !== null) headers.cookie = cookie\n    return headers\n  }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/fixed-entry.ts:395-407](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L395-L407)\n\nHTTP 响应删 cookie\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nfunction stripHopHeaders(headers: IncomingHttpHeaders): IncomingHttpHeaders {\n  const out: IncomingHttpHeaders = {}\n  for (const [key, value] of Object.entries(headers)) {\n    if (value === undefined) continue\n    const lower = key.toLowerCase()\n    if (lower === 'connection' || lower === 'keep-alive' || lower === 'transfer-encoding'\n      || lower === 'upgrade' || lower === 'set-cookie' || lower === 'proxy-connection') {\n      continue\n    }\n    out[key] = value\n  }\n  return out\n}\n```\n\n</details>\n\n#### 缺口\n\n- 目标重启和 WebSocket 未重放\n  **影响：**IP 变化/端口冲突时固定书签失效\n  **进一步探讨：**目标重启/换网/占端口矩阵\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 启动令牌真的不出现在日志或浏览器吗？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n正常代理转发把 session cookie 留在进程、HTTP 响应删除 Set-Cookie；但握手 fetch 失败与未收到 cookie 两条错误日志都插入完整 url，而 url 来自 authenticatedUrl、含 ?token= 启动令牌。README 宣称 token/cookie 不离开进程，至少异常日志路径不满足“令牌不入日志”；日志读取者可能看到一次性令牌。WebSocket 101 则原样转发全部原始响应头，若上游带 Set-Cookie 也不会被剥离，需实际核上游行为。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:78-90](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md#L78-L90)\n\n作者令牌/cookie 留进程主张\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n- It binds `0.0.0.0:47524` (configurable) as a reverse proxy and advertises the\n  machine's LAN IP.\n- It targets the CURRENT harness instance: on the first request it performs the\n  same `?token=` handshake a browser would, using the in-process launch token,\n  and holds the browser-session cookie internally — tokens and cookies never\n  leave the process or reach a browser.\n- After a desktop restart the new harness process rebinds the SAME fixed port\n  and refreshes the session against the new launch token, so the address never\n  changes from a browser's point of view.\n- Both plain HTTP and WebSocket upgrades (`/api/remote.mux`, the live session\n  channel) are forwarded; `Host`/`Origin` are rewritten per the harness trust\n  fence, and response `Set-Cookie` headers are absorbed by the forwarder so they\n  never pollute the browser's cookie jar.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/fixed-entry.ts:154-184](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L154-L184)\n\n握手失败日志包含 url\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  private async handshake(): Promise<string | null> {\n    if (this.handshakePromise !== null) return this.handshakePromise\n    this.handshakePromise = (async () => {\n      let url: string\n      try {\n        // authenticate()（服务 ctx 的 connection 读取）可能在插件重载边界抛错；\n        // 手握手失败必须转为会话刷新失败,绝不作为 unhandled rejection 逃逸。\n        url = this.target.authenticate()\n      } catch (error) {\n        console.error(`[dsh-web-url-view] fixed entry handshake: authenticate() failed: ${error instanceof Error ? error.message : String(error)}`)\n        return null\n      }\n      let response: Response\n      try {\n        response = await fetch(url, { redirect: 'manual', headers: { accept: 'text/html' } })\n      } catch (error) {\n        console.error(`[dsh-web-url-view] fixed entry handshake to ${url} failed: ${error instanceof Error ? error.message : String(error)}`)\n        return null\n      }\n      try {\n        await response.body?.cancel()\n      } catch {\n        // A manual-redirect response carries no readable body; best effort.\n      }\n      const setCookies = typeof response.headers.getSetCookie === 'function'\n        ? response.headers.getSetCookie()\n        : []\n      const cookie = setCookies.find((entry) => entry.startsWith('dsh-auth-'))\n      if (cookie === undefined) {\n        console.error(`[dsh-web-url-view] fixed entry handshake to ${url} returned HTTP ${response.status} without a dsh-auth cookie`)\n        return null\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/fixed-entry.ts:339-345](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L339-L345)\n\n101 原始头全部转发\n\n```text\n    })\n    upstream.on('upgrade', (upstreamResponse, upstreamSocket, upstreamHead) => {\n      // Relay the target's raw 101 (accept computed from the client key we\n      // forwarded), then splice the sockets together.\n      const buffered = Buffer.concat([head, upstreamHead])\n      socket.write(`HTTP/1.1 101 Switching Protocols\\r\\n${rawHeaderText(upstreamResponse.rawHeaders)}`)\n      if (buffered.length > 0) upstreamSocket.unshift(buffered)\n```\n\n**依据 4 · 源码核查**：[src/fixed-entry.ts:409-424](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L409-L424)\n\nrawHeaderText 无过滤\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/**\n * Serialize raw header pairs into `Name: value` lines plus the terminator.\n * EVERY header of the 101 response is relayed verbatim — including\n * `Connection: Upgrade`, which is what tells the browser's HTTP parser this\n * response completes the WebSocket handshake (dropping it would surface the\n * 101 as an ordinary response and break the upgrade).\n */\nfunction rawHeaderText(rawHeaders: readonly string[]): string {\n  let text = ''\n  for (let index = 0; index < rawHeaders.length; index += 2) {\n    const name = rawHeaders[index]\n    const value = rawHeaders[index + 1]\n    if (name === undefined || value === undefined) continue\n    text += `${name}: ${value}\\r\\n`\n  }\n  return `${text}\\r\\n`\n```\n\n</details>\n\n#### 缺口\n\n- 上游 101 是否含 Set-Cookie 未测\n  **影响：**故障日志可泄露启动令牌\n  **进一步探讨：**目标失败握手与 101 头验证\n\n<a id=\"research-q04\"></a>\n\n### Q04 · HTTP 401 自动重放是否适合有请求体的操作？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\ndispatch 首次请求用 request.pipe(upstream) 消耗入站流。若上游 401，直接对同一个 IncomingMessage 再次 dispatch/pipe，没有缓存 body 或重建流。GET 等无体请求较可能恢复；POST/PUT 的 body 已被第一腿消费，重试不能保证原样传输。代理转发任意方法，因此用户在 cookie 过期时提交写操作可能失败或被上游看到不同请求。应在到期前刷新、对有体请求不盲重放或设计可重放缓冲与幂等性。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/fixed-entry.ts:236-299](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L236-L299)\n\n任意方法、401重调 dispatch、流只传一次\n\n<details>\n<summary>查看原文（64行）</summary>\n\n```text\n  /**\n   * Forward one plain HTTP request (any method; streaming body and response).\n   * A 401 on the first attempt triggers one handshake + replay; a second 401\n   * is relayed to the browser unchanged.\n   * @param request - inbound request from the fixed port.\n   * @param response - outbound response to the fixed-port client.\n   */\n  private async forward(request: IncomingMessage, response: ServerResponse): Promise<void> {\n    await this.dispatch(request, response, await this.currentCookie(), 0)\n  }\n\n  /**\n   * One dispatch leg; recursion depth is capped by the attempt counter.\n   * @param request - inbound request.\n   * @param response - outbound response.\n   * @param cookie - cookie to attach on this leg.\n   * @param attempts - completed legs so far (0 = first try).\n   */\n  private async dispatch(\n    request: IncomingMessage,\n    response: ServerResponse,\n    cookie: string | null,\n    attempts: number,\n  ): Promise<void> {\n    const upstream = httpRequest({\n      hostname: this.target.hostname,\n      port: this.target.port,\n      method: request.method,\n      path: request.url,\n      headers: this.rewrite(request.headers, cookie),\n    }, (upstreamResponse) => {\n      // Session rotated or expired: refresh once and replay the same request.\n      if (upstreamResponse.statusCode === 401 && attempts === 0) {\n        upstreamResponse.resume()\n        void this.handshake().then((fresh) => {\n          if (fresh === null) {\n            this.fail(response, 401, 'fixed entry: session refresh failed')\n            return\n          }\n          void this.dispatch(request, response, fresh, attempts + 1)\n        })\n        return\n      }\n      upstreamResponse.on('error', (error) => {\n        console.error(`[dsh-web-url-view] fixed entry upstream response error: ${error instanceof Error ? error.message : String(error)}`)\n        if (!response.destroyed) response.destroy()\n      })\n      response.writeHead(upstreamResponse.statusCode ?? 502, stripHopHeaders(upstreamResponse.headers))\n      upstreamResponse.pipe(response)\n    })\n    upstream.on('error', (error) => {\n      console.error(`[dsh-web-url-view] fixed entry upstream error: ${error instanceof Error ? error.message : String(error)}`)\n      this.fail(response, 502, 'fixed entry: harness web server unreachable')\n    })\n    // The inbound body stream can die (aborted client); without a listener\n    // the pipe teardown would surface an unhandled 'error' on the request.\n    request.on('error', () => {\n      upstream.destroy()\n    })\n    request.on('aborted', () => {\n      upstream.destroy()\n    })\n    request.pipe(upstream)\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/fixed-entry.ts:143-145](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/fixed-entry.ts#L143-L145)\n\n22h 软过期\n\n```text\n  /** Whether the held session cookie is still plausibly valid (server grants 24h). */\n  private get sessionFresh(): boolean {\n    return this.sessionCookie !== null && Date.now() - this.sessionAt < 22 * 60 * 60 * 1000\n```\n\n#### 缺口\n\n- 目标 Node stream 重放结果未测\n  **影响：**保存/提交可能失败或不可预测\n  **进一步探讨：**目标 cookie 过期时 POST 大小正文\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样部署才能控制暴露面并验证可用性？\n\n**研究主题：**采用判断、新假设与验证、效果与总成本\n\n#### 完整回答\n\n在信任 LAN 且明确需要手机访问时试用，先把 fixedHost 设为所需接口、限制防火墙来源，再核 Web GUI 权限范围、重启后的地址、换网与 WebSocket；若只在本机用，应绑定 127.0.0.1。需要独立用户鉴权/HTTPS 时此插件没有实现，必须在外层设计且避免公开代理。当前 URL 仅 http，固定 LAN IP 自动探测；业务安全性随网络条件变化。 假设推导：默认 0.0.0.0 代理把 cookie 授予同 LAN 连接者，握手失败路径会记录 token URL，有体请求在 401 后对已消费入站流重用；便利性因此与 LAN 信任/续期可靠性捆绑。相对固定版，若固定入口先要求独立设备身份（或受控 TLS 反代）、日志只记录事件码不记录 URL，并在 cookie 过期前刷新或让不可重放请求返回明确重新提交指令，可保留书签便利且减少无授权 GUI 控制与写入丢体。条件是可安全配置设备身份、DSH 连接认证支持续期；代价是配证书/账号、额外提示与可能的重新登录。对照固定版/原型在两台可信及一台未授权 LAN 设备、失败握手、cookie 过期后 JSON POST/上传、WebSocket 101 及换网场景测未授权成功率、日志 token 泄露、请求体一致性和额外登录时间。若未授权设备仍能进入、日志仍含 token，或续期后写入体不一致，假设被证伪；该方案不是固定版已有功能。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:95-130](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/README.md#L95-L130)\n\n配置和安全建议\n\n<details>\n<summary>查看原文（36行）</summary>\n\n````text\n## Configuration (port / bind host / off switch)\n\nDefault fixed port `47524`, bound to `0.0.0.0` (all interfaces). To change the\nport, restrict the bind, or disable the fixed address, override the row config in\nthe desktop profile's `cordis.patch.yml` and restart the desktop:\n\n```yaml\n- id: web-url-view\n  name: dsh-web-url-view\n  config:\n    # Fixed entry listen port; 0 disables the fixed address. Default 47524.\n    fixedPort: 47524\n    # Bind interface. Default 0.0.0.0 (all interfaces, LAN-reachable); use 127.0.0.1 for localhost only.\n    fixedHost: 0.0.0.0\n```\n\n| Option | Type | Default | Meaning |\n| --- | --- | --- | --- |\n| `fixedPort` | number | `47524` | Fixed entry listen port. `0` or an invalid value (>65535) disables the fixed address, leaving only the one-time address. |\n| `fixedHost` | string | `0.0.0.0` | Fixed entry bind interface. `0.0.0.0` = all interfaces (LAN-reachable); `127.0.0.1` = localhost only. |\n\nThe LAN address is **auto-detected**: it prefers the IPv4 of the default-route\ninterface and skips loopback, link-local (`169.254.*`) and common virtual\ninterfaces (docker/veth/vmnet/utun/…). When nothing usable is found it falls\nback to `127.0.0.1`, so localhost keeps working.\n\n## Security boundary (important)\n\nThe fixed entry **holds a session cookie inside the proxy**, therefore:\n\n- With the default `0.0.0.0` bind, **any device on the same LAN can open the Web\n  GUI, with no extra password.** That default exists to serve the \"open it on my\n  phone\" use case.\n- Use it on trusted LANs only. On public or shared networks set\n  `fixedHost: 127.0.0.1` (localhost only) or `fixedPort: 0` (disable the fixed\n  address entirely).\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:64-109](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/index.ts#L64-L109)\n\n绑定与 LAN 探测\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\nexport async function apply(ctx: Context, config: Config | undefined): Promise<void> {\n  const fixedPort = typeof config?.fixedPort === 'number' ? Math.trunc(config.fixedPort) : DEFAULT_FIXED_PORT\n  const fixedHost = typeof config?.fixedHost === 'string' && config.fixedHost !== ''\n    ? config.fixedHost\n    : DEFAULT_FIXED_HOST\n\n  await ctx.plugin(WebUrlViewService)\n  console.info('[dsh-web-url-view] host mounted: webUrlView/current is available')\n\n  if (fixedPort <= 0 || fixedPort > 65535) {\n    console.info(`[dsh-web-url-view] fixed entry disabled (fixedPort=${String(fixedPort)})`)\n    return\n  }\n\n  // The forwarder lives exactly as long as the plugin fiber that owns it.\n  // The inject list includes 'webUrlView' on purpose: the service registers\n  // through ctx.plugin() above, but its own `connection` dependency keeps its\n  // fiber PENDING until the harness connection is actually provided — which\n  // can be after apply() returned. Declaring it as an inject dependency makes\n  // this callback run only once the service fiber is ACTIVE, so the strict\n  // ctx.get() below is guaranteed to return the same global instance the\n  // gateway dispatches to.\n  ctx.inject(['connection', 'webServer', 'webUrlView'], (scope) => {\n    scope.effect(() => {\n      const serverPort = scope.webServer.port\n      // 注入列表已包含 'webUrlView':回调仅在服务激活后执行,严格 get 必然命中。\n      const service = ctx.get('webUrlView') as WebUrlViewService\n      // Whatever the listen host (`127.0.0.1` or `0.0.0.0`), this process can\n      // always reach its own server through loopback, and the harness trust\n      // fence accepts a loopback Host — so loopback is the connect address\n      // and the authority we name in forwarded headers.\n      const connectHost = '127.0.0.1'\n      // 对外展示主机名:探测内网 IP(优先默认路由网卡),供局域网设备访问;\n      // 找不到可用的内网 IP 时回退到回环,保证本机总能通过固定地址打开。\n      const advertiseHost = detectLanAddress() ?? '127.0.0.1'\n      const entry = new FixedEntryServer(fixedHost, fixedPort, {\n        authority: `${connectHost}:${String(serverPort)}`,\n        hostname: connectHost,\n        port: serverPort,\n        advertiseHost,\n        // Authenticate through the service instance (never through `scope`):\n        // the inject scope is tied to this fiber and becomes inactive the\n        // moment the plugin reloads, while the forwarder must keep serving\n        // across requests. The service's own ctx stays live for the whole\n        // mount.\n        authenticate: () => service.mintFixedUrl(`http://${connectHost}:${String(serverPort)}`),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/service.ts:104-129](https://github.com/1032740078/dsh-web-url-view/blob/193343093186016080a81c5512c6936809daff25/src/service.ts#L104-L129)\n\ncurrent 返回 token URL\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  /**\n   * Mint the launch-token URL for the origin the browser reported.\n   * Read-only: touches no configuration and mutates no registry.\n   * @param origin - absolute origin from `window.location.origin`.\n   * @returns the tokenized root URL, externally openable in any browser.\n   */\n  current(origin: string): WebUrlViewResult {\n    // Logged on every call: the instance id proves whether the gateway\n    // dispatches to the same instance the plugin body attached the fixed\n    // entry to.\n    console.info(`[dsh-web-url-view] current(${origin}) on instance ${instanceId(this)}`)\n    if (!isTrustedOrigin(origin)) {\n      // Reject loudly: an untrusted origin must never reach token minting.\n      throw new Error(`webUrlView: origin rejected (must be a loopback or private-LAN http(s) origin): ${origin}`)\n    }\n    let url: string\n    try {\n      url = this.ctx.connection.authenticatedUrl(origin)\n    } catch (error) {\n      const reason = error instanceof Error ? error.message : String(error)\n      throw new Error(`webUrlView: could not mint the authenticated URL for ${origin}: ${reason}`)\n    }\n    // The URLs carry a session secret; only the origin is logged.\n    const fixedUrl = this.fixed?.url ?? null\n    console.info(`[dsh-web-url-view] current() for ${origin}: url minted, fixedUrl=${fixedUrl ?? 'null'}`)\n    return { url, fixedUrl }\n```\n\n</details>\n\n#### 缺口\n\n- 外层 TLS/身份控制未测\n  **影响：**局域网共享不等同本人访问\n  **进一步探讨：**目标网络权限与跨设备端到端验证\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e01146b826cfba304a4890d14eb979a282dce5f49064163b11e94e71c63b203e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 12 | 11342 | 9891 | 1880 | — |\n| .md | source | 2 | 384 | — | — | 3075 |\n| .ts | source | 10 | 1097 | 586 | 443 | — |\n| .tsx | source | 1 | 206 | 160 | 32 | — |\n\n排除 11 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 固定 URL | 跨设备书签 | LAN 默认开放 |\n| 认证代理 | 自动握手 | token 异常日志 |\n| WS | 实时会话 | 目标兼容未知 |\n\n## 工程亮点\n\n进程内单飞握手与 HTTP/WS 转发；默认 LAN trust、异常日志和有体重放是部署关键。详见[Q02](#research-q02)至[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/fixed-entry.ts、src/service.ts、src/lan.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读核固定提交 README.md、src/index.ts、src/fixed-entry.ts、src/service.ts、src/lan.ts；未运行目标 DSH。旧 META 复用。\n- 下一步：目标宿主核 LAN 无密码、日志失败脱敏、101 Set-Cookie、cookie过期 POST、换网/端口占用。\n",
         "metadata": {
             "repository": "1032740078/dsh-web-url-view",
             "repository_id": 1366583376,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-20T02:57:08.272Z",
+            "window_start": "2026-09-20T02:57:08.272Z",
             "stars": 0,
             "pushed_at": "2026-09-13T09:19:57Z",
             "issues": {
@@ -301,50 +443,39 @@
             "errors": [
                 {
                     "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6406:157B26:14AE98:222747:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 785C:1E1095:8FA6B:99D96:6AD6D885 and timestamp 2026-10-20 02:57:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640B:13810:1465BD:21E185:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7942:CCD53:89769:93A06:6AD6D886 and timestamp 2026-10-20 02:57:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:1493B4:221964:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A08.272Z..2026-10-20T02%3A57%3A08.272Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7A1A:6FB37:93546:9D96C:6AD6D887 and timestamp 2026-10-20 02:57:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6411:3E6BCD:14DD92:2255C7:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A57%3A08.272Z..2026-10-20T02%3A57%3A08.272Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7ADE:1E00D3:99A78:A3DA1:6AD6D888 and timestamp 2026-10-20 02:57:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 },
                 {
                     "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:14434B:21B14A:6AD84902 and timestamp 2026-10-21 05:09:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                    "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A08.272Z..2026-10-20T02%3A57%3A08.272Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7B7A:7BF23:87B58:91D16:6AD6D889 and timestamp 2026-10-20 02:57:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
                 }
             ],
             "npm": {
                 "package_name": "dsh-web-url-view",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
+                "captured_at": "2026-10-20T02:57:13.732Z",
+                "window_start": "2026-09-20",
+                "window_end": "2026-10-19",
                 "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-web-url-view",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-web-url-view",
                 "error": "HTTP 404",
                 "publication": {
                     "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
+                    "captured_at": "2026-10-20T02:57:13.732Z",
                     "source_url": "https://registry.npmjs.org/dsh-web-url-view",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
+                    "error": "HTTP 404"
                 }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "193343093186016080a81c5512c6936809daff25",
-                "current_revision": "193343093186016080a81c5512c6936809daff25",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
             }
         },
         "discovery.plugins": {

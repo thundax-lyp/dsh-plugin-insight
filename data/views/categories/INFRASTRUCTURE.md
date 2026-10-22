@@ -49,7 +49,6 @@
 | [dsh-vps](#plugin-1377159975-root) | 在VPS部署DSH并提供登录网关、HTTPS、远程安装和升级回滚管理页面。 | 适合能维护Linux服务器的管理员在测试VPS验证。 |
 | [dsh-web-lan-access](#plugin-1334255288-root) | 让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。 | 只在已有可信访问控制的临时私网环境核查；先证明未认证请求不能写宿主，再考虑日常远程使用。 |
 | [dsh-web-restart](#plugin-1335060007-root) | 在 Web 侧边栏提供重启按钮，通过独立 PowerShell 进程触发宿主重启脚本。 | 当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。 |
-| [dsh-web-url-view](#plugin-1366583376-root) | 显示当前 Web 地址，并提供转发到当前 DSH 实例的固定端口入口。 | 先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。 |
 | [dsh-wsl-clock](#plugin-1351854066-root) | 比较WSL与Windows时间，报告时钟偏差并给出休眠后TLS或令牌故障的排查建议。 | 先把它当粗粒度线索，临界偏差用系统命令复核；保存工作后再考虑关闭WSL或同步时间。 |
 | [dsh-wsl-defender](#plugin-1391141174-root) | 从WSL读取Windows Defender、防火墙、近期检测和排除项，形成安全状态摘要。 | 作为状态收集工具使用，对关键异常回到Windows安全中心核对；遇到unavailable先查权限和安全产品。 |
 | [dsh-wsl-docker](#plugin-1351854301-root) | 检查WSL的Docker CLI、daemon与context，汇总疑似推理容器及本地API端口线索。 | 先用作收集context与容器信息，再用受控/v1/models和小请求验证API；不要因portHealth为ok就交付推理服务。 |
@@ -626,20 +625,6 @@
 > **思考**：便利入口不能替代可靠的进程管理；返回触发成功不能当作重启完成。
 
 > **建议**：当前更适合参考实现，先在可丢弃 profile 验证脚本路径、失败反馈和会话恢复。
-
-<a id="plugin-1366583376-root"></a>
-
-## [dsh-web-url-view](../../plugins/1032740078--dsh-web-url-view/INSIGHT.md)
-
-
-
-> **用途**：桌面版每次重启更换端口和令牌时，用户希望有稳定的浏览器入口。
-
-> **亮点**：固定端口代理在内部换取当前实例会话 cookie，转发 HTTP/WebSocket 并处理 Host、Origin 与 cookie。
-
-> **思考**：稳定地址能减少复制地址的操作；将访问扩展到局域网会改变访问控制需求。
-
-> **建议**：先保持回环绑定，测试重启后的令牌更新与拒绝外部 Origin，再考虑受控网络访问。
 
 <a id="plugin-1351854066-root"></a>
 

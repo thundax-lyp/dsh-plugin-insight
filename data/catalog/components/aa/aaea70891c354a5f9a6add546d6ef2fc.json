@@ -13,7 +13,7 @@
             "name": "dsh-cortex",
             "entry_type": "plugin",
             "technical_category": "memory-knowledge",
-            "business_category": "research-knowledge",
+            "business_category": "personal-productivity",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
@@ -24,36 +24,64 @@
             },
             "sources": [
                 {
-                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-directory-0",
+                    "id": "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "0355e74b577b04a6d0987616df084a19c636c04a",
-                    "retrieved_at": "2026-10-20T04:31:46.607Z",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:54:20.311Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-author",
+                    "id": "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-author",
                     "kind": "author_claim",
                     "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-cortex/README.md",
+                            "content_sha256": "cc86d6afbcdec11e94d1108a57ffbf49ca4773e3888044075a2a7f1846f57001"
+                        }
+                    ],
                     "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                    "captured_at": "2026-10-20T04:31:46.607Z",
-                    "summary": "按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:54:20.311Z",
+                    "summary": "按会话静默相位巩固工具经历成长期记忆卡，跨会话召回并对重复告警降噪。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source",
+                    "id": "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts",
+                    "url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-cortex/README.md",
+                            "content_sha256": "cc86d6afbcdec11e94d1108a57ffbf49ca4773e3888044075a2a7f1846f57001"
+                        },
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-cortex/package.json",
+                            "content_sha256": "dfe17ec864bad05d54ce524b55bae862d34ac88d4a7ed61beb00c2146a5fc9ac"
+                        },
+                        {
+                            "repository_url": "https://github.com/1420079678-ctrl/agent-body",
+                            "commit": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                            "path": "workspace/plugins/dsh-cortex/src/index.ts",
+                            "content_sha256": "588b1644e9fbf709f4b704a1a4c9b00305bdb3fa8359b6023ebca1d4f9adb1bf"
+                        }
+                    ],
                     "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                    "captured_at": "2026-10-20T04:31:46.607Z",
-                    "summary": "核查 workspace/plugins/dsh-cortex/src/index.ts、workspace/plugins/dsh-cortex/lib/index.js；组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。",
-                    "artifact": "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:54:20.311Z",
+                    "summary": "核查 workspace/plugins/dsh-cortex/README.md、workspace/plugins/dsh-cortex/package.json、workspace/plugins/dsh-cortex/src/index.ts；agent/pre-step 刷新清醒时间，工具结果进环形缓冲；深睡时按固定规则制卡、衰减，下一真人命令用关键词匹配卡片并注入消息。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "卡片来自调用成功/失败统计，不证明任务结论正确；反复告警被静默也不表示故障解决。未测长期召回质量。",
+                        "静态阅读固定组件 README、package、src/index.ts；未加载 DSH 宿主、执行插件或写入用户记忆。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +92,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "长期运行Agent-Body的用户希望跨会话保留失败教训和重复做法，并减少常驻告警噪声。",
+                    "text": "长期运行的 DSH Agent 想复用过去工具调用中的失败、成功链路和告警模式。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +103,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。",
+                    "text": "agent/pre-step 刷新清醒时间，工具结果进环形缓冲；深睡时按固定规则制卡、衰减，下一真人命令用关键词匹配卡片并注入消息。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +121,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "卡片来自调用成功/失败统计，不证明任务结论正确；反复告警被静默也不表示故障解决。未测长期召回质量。",
+                    "text": "静态阅读固定组件 README、package、src/index.ts；未加载 DSH 宿主、执行插件或写入用户记忆。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +139,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.1.1，Node>=18及Cordis/DSH工具服务；有TS源与发布lib，统计须按组件限定，不重复相加生成产物。",
+                    "text": "package 0.1.1、BSD-3-Clause、Node>=18；作者声称已装入 profile，当前可用性与兼容未独立验证。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +157,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "巩固本身为确定性处理，但每轮召回增加上下文；卡片整理、阈值与误报复查占人工时间，没有实测token净节省。",
+                    "text": "#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 初次 | DSH 事件兼容、隔离 DSH_HOME | 默认召回开启 |\n| 持续 | 检查卡片、误提醒与敏感错误文本 | 全局 JSONL |\n| 运维 | 备份/恢复与磁盘错误处理 | 源码静默失败 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +175,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。",
+                    "text": "在个人隔离目录试验，先检查错误消息是否可持久化，关闭或限制召回并追踪误命中。共享环境暂不建议。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +193,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 巩固 | 固定阈值制四类卡 | 经验是否正确 |\n| 召回 | 关键词匹配并注入 | 对任务净帮助 |\n| 持久化 | 本地 JSONL/状态文件 | 失败后的可恢复性 |",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +211,16 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "噪声内核可单独复用，记忆写入节流减少频繁IO；写盘异常被吞掉且非原子整文件重写，持久化失败可见性需补证。",
+                    "text": "计时器、事件钩子与三工具由 ctx.effect 管理；JSONL 全量覆盖、错误静默。相同 DSH_HOME 的所有会话共享记忆，卡片不含作用域。",
                     "evidence_ids": [
-                        "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                     ],
                     "dependencies": [
                         {
@@ -201,40 +229,135 @@
                             "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
                         }
                     ],
-                    "reviewed_at": "2026-10-20T04:31:46.607Z",
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "统一 DSH_HOME 记忆库无项目/会话作用域，错误文本可持久化；写失败静默且非原子，全局召回可能跨任务误导。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "加入作用域与脱敏、可靠写盘和按任务效果评估，可把启发式记忆变为可信辅助；现版未实现。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+                            "area": "code",
+                            "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:54:20.311Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-20T04:31:46.607Z",
+            "last_checked_at": "2026-10-22T05:54:20.311Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
+                "reviewed_at": "2026-10-22T05:54:20.311Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1366089972:workspace-plugins-dsh-cortex",
+                        "area": "code",
+                        "fingerprint": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "睡眠节律与确定性卡片机制有可审计设计；无语义正确性和作用域隔离，跨项目迁移须改数据层；省模型调用。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "反复工具错误有明确痛点，可本地部署，但误召回与手动维护成本未量化，适用长期 DSH 会话。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
+                    ]
+                }
+            },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "重复流程记忆有潜力，但写盘异常被吞且整文件非原子，先修失败可见性和重启持久化再长期使用。",
+                "decision": "trial",
+                "reason": "可在单人隔离 DSH_HOME 下试用并监看卡片；共享环境先补作用域、敏感信息和写入失败处理。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "长期运行者跨会话保存教训的任务明确。"
+                        "rationale": "跨会话重复排障场景明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "确定性巩固及关键词召回减少整理，但成功统计不证明正确。"
+                        "rationale": "零模型巩固成本和即时召回，但卡片语义粗。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已发现非原子重写和异常吞没，非单纯缺运行证据。"
+                        "rationale": "静态源码证实机制；真实效果仅作者报告。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "召回增上下文且需人工纠错，静默故障可能增加恢复负担。"
+                        "rationale": "误召回、存储和敏感信息监控需要人工。"
                     }
                 },
                 "score": 54,
                 "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:54:20.311Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "20261020-incremental40-r2-github-1366089972-workspace-plugins-dsh-cortex-source"
+                    "2026-10-22-02-github-1366089972-workspace-plugins-dsh-cortex-source"
                 ],
                 "dependencies": [
                     {
@@ -259,90 +382,44 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-20T04:25:27.514Z",
-            "analysis_sha256": "f452d79b1ab954d138623a223993c5fa63790bbef5676e8a6d5189a3795aa95a"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "7cefc0d62cc45dcbfcfe31d70ae1b636e4ef87d6018e1c89eca84ad9b60a5701"
         },
         "publication.metadata": "data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/META.json",
         "publication.summaries": {
-            "text": "按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。",
+            "text": "按会话静默相位巩固工具经历成长期记忆卡，跨会话召回并对重复告警降噪。",
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
             "source_url": "https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/README.md"
         },
         "publication.capabilities": {
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
             "items": {
-                "模型工具": "cortex_sleep、cortex_memory、cortex_homeo。",
-                "事件监听": "会话活动、工具结果与organism心跳。"
-            }
+                "事件监听": "工具经历采集与真人回合前记忆召回",
+                "后台": "静默睡眠、规则记忆巩固、衰减与心跳降噪"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 睡眠巩固 | 持久化工具模式 | 规则不懂任务语义 |\n| 主动召回 | 跨会话提示 | 全局库缺作用域 |\n| 降噪 | 压低重复告警 | 错误收敛可能掩盖变化 |"
         },
         "publication.advice": {
             "revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-            "text": "先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。"
+            "text": "在个人隔离目录试验，先检查错误消息是否可持久化，关闭或限制召回并追踪误命中。共享环境暂不建议。详见[Q03](#research-q03)、[Q04](#research-q04)。"
         },
         "registry": "data/plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex",
-        "reports": "# dsh-cortex\n\n> 按会话活动安排静默巩固，将工具经历归为持久记忆卡，并召回相关卡片与压低重复告警。\n\n## 固定范围与依据\n\n固定提交 [9403444d87d5e962f9a4f0c4c10fdb48f37f7d66](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts)；组件路径：workspace/plugins/dsh-cortex。核查时间 2026-10-20T04:31:46.607Z；本轮基准 2026-10-20T04:25:27.514Z。\n源码抽读路径：workspace/plugins/dsh-cortex/src/index.ts、workspace/plugins/dsh-cortex/lib/index.js。完整静态统计以固定 Git 提交和组件范围为准，抽读不冒充完整审计。\n\n## 用途与采用点评\n\n- **用途**：长期运行Agent-Body的用户希望跨会话保留失败教训和重复做法，并减少常驻告警噪声。\n- **亮点**：组件src/index.ts以agent/pre-step判断活动，静默后按工具记录确定性生成卡片，关键词加权召回，权重衰减归档；重复告警收敛静默。\n- **思考**：不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。\n- **建议**：先少量召回并定期抽查卡片来源，重要故障保持外部告警；先验证重启后记忆仍可恢复再长期使用。\n\n## 场景与替代办法\n\n长期运行Agent-Body的用户希望跨会话保留失败教训和重复做法，并减少常驻告警噪声。\n\n此前未入档；手工维护项目规则更透明，本项适合有重复工具流程且愿意管理卡片的人。\n\n## 依赖与流程\n\n依赖宿主工具和pre-step事件及可写DSH_HOME，告警降噪依赖organism事件；同一目录的记忆可能跨项目影响模型。\n\n观察会话推进，静默时巩固，下一次任务召回相关卡片，用户检查并归档误记；异常时先核对磁盘原件及错误日志。\n\n## 成本与效果\n\n巩固本身为确定性处理，但每轮召回增加上下文；卡片整理、阈值与误报复查占人工时间，没有实测token净节省。\n\n不让心跳和维护调用冒充会话活动能避免永不巩固；自动抽取的打法可能只记录偶然成功，需要真实任务对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：workspace/plugins/dsh-cortex；内容摘要：6b4b76cbcfba99f0c3c5bcf1e0a7b0d85066ac7152ba373532ed5cc378b2910d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 1014 | 936 | 86 | — |\n| .md | source | 1 | 128 | — | — | 1659 |\n| .mjs | source | 1 | 220 | 162 | 29 | — |\n| .ts | source | 1 | 1115 | 890 | 140 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n- **模型工具**：cortex_sleep、cortex_memory、cortex_homeo。\n- **事件监听**：会话活动、工具结果与organism心跳。\n\n## 工程亮点\n\n噪声内核可单独复用，记忆写入节流减少频繁IO；写盘异常被吞掉且非原子整文件重写，持久化失败可见性需补证。\n\n## 分发与兼容\n\n0.1.1，Node>=18及Cordis/DSH工具服务；有TS源与发布lib，统计须按组件限定，不重复相加生成产物。\n\n## 历史对照\n\n当前快照此前没有该稳定身份的研究档案。此前未入档；手工维护项目规则更透明，本项适合有重复工具流程且愿意管理卡片的人。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、上述源码路径及固定范围 inventory；来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：卡片来自调用成功/失败统计，不证明任务结论正确；反复告警被静默也不表示故障解决。未测长期召回质量。\n- 独立证据：未核实第三方采用与端到端收益；META 的 Star、Issue、npm 下载不作效果证明。\n- 下一步：用已知成功链、失败序列与无关项目验证卡片生成、召回和归档；注入写盘失败并重启，确认数据与界面没有假成功。\n",
+        "reports": "# dsh-cortex\n\n> 按会话静默相位巩固工具经历成长期记忆卡，跨会话召回并对重复告警降噪。\n\n## 研究范围\n\n- **仓库**：[1420079678-ctrl/agent-body](https://github.com/1420079678-ctrl/agent-body)\n- **版本号**：0.1.1（[固定提交 9403444d87d5e962f9a4f0c4c10fdb48f37f7d66](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码可核实确定性睡眠与记忆流程；记忆正确性、跨项目隔离和落盘成功缺少保证。\n\n## 洞察短评\n\n- **用途**：长期运行的 DSH Agent 想复用过去工具调用中的失败、成功链路和告警模式。\n- **亮点**：将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：统一 DSH_HOME 记忆库无项目/会话作用域，错误文本可持久化；写失败静默且非原子，全局召回可能跨任务误导。详见[Q03](#research-q03)。\n- **建议**：加入作用域与脱敏、可靠写盘和按任务效果评估，可把启发式记忆变为可信辅助；现版未实现。详见[Q04](#research-q04)。\n\n采用建议：在个人隔离目录试验，先检查错误消息是否可持久化，关闭或限制召回并追踪误命中。共享环境暂不建议。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n## 核心贡献\n\n将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n统一 DSH_HOME 记忆库无项目/会话作用域，错误文本可持久化；写失败静默且非原子，全局召回可能跨任务误导。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n加入作用域与脱敏、可靠写盘和按任务效果评估，可把启发式记忆变为可信辅助；现版未实现。详见[Q04](#research-q04)。\n\n用带标签的真实任务评估卡片准确率和误提醒；多项目共用 DSH_HOME、敏感错误、权限/磁盘故障及崩溃写测试。\n\n## 场景与替代办法\n\n长期运行的 DSH Agent 想复用过去工具调用中的失败、成功链路和告警模式。\n\n依靠会话文本或手工笔记保存经验；插件把工具事件转为规则卡并主动召回。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH agent/tools 事件 | 记录与召回 | 无经历数据 |\n| 可写 DSH_HOME | 长期保存 | 错误被静默吞掉 |\n| 审慎的错误文本 | 卡片内容 | 可能保留敏感值 |\n| 项目隔离 | 避免交叉召回 | 不同任务混用 |\n\n#### 隔离试验\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 隔离 | 单独 DSH_HOME/无秘密日志 | 范围明确 |\n| 生成 | 设计失败/成功链路 | 卡片类别符合预期 |\n| 召回 | 同/异任务验证 | 有用且不过度提醒 |\n| 故障 | 注入只读盘/损坏文件 | 失败可识别和恢复 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 初次 | DSH 事件兼容、隔离 DSH_HOME | 默认召回开启 |\n| 持续 | 检查卡片、误提醒与敏感错误文本 | 全局 JSONL |\n| 运维 | 备份/恢复与磁盘错误处理 | 源码静默失败 |\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 巩固 | 固定阈值制四类卡 | 经验是否正确 |\n| 召回 | 关键词匹配并注入 | 对任务净帮助 |\n| 持久化 | 本地 JSONL/状态文件 | 失败后的可恢复性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 dsh-cortex 以会话节律、工具经历形成跨会话记忆的机制，以及持久化和召回的边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 睡眠和长期记忆解决何种工作流问题？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n作者目标是将工具使用的重复失败、成功链路、低成功率热点和未解失败转成可跨会话复用的卡片，并降低反复心跳告警噪声。源码不以“有工具调用”作为清醒活动，而以 agent/pre-step 的会话推进刷新活动时间；超过阈值后定时器入深睡，有新工具经历才巩固。相比每次会话从零分析，规则式卡片可提前提示相似命令；但只基于工具名、成功标记和短错误文本，不理解任务结果或判断建议是否正确。README 的真实宿主测试和 58 项回归是作者报告，本轮未复跑。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[workspace/plugins/dsh-cortex/README.md:3-58](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/README.md#L3-L58)\n\n作者说明睡眠、四类记忆和主动召回目标。\n\n<details>\n<summary>查看原文（56行）</summary>\n\n```text\n给这具身体装上**时间**与**记忆**的器官。\n\n## 为什么需要它\n\n`dsh-organism` 给了身体「器官 + 心跳 + 反射 + 自愈 + 自训练」，但它只有**此刻**：心跳均匀地跳、器官各干各的、经验随会话一起漂走。一个从不睡觉的身体有两处硬伤：\n\n- **学到的留不住** —— 突触长期停在个位数，干过的活没有沉淀成可复用的东西；\n- **忘不掉的甩不掉** —— 同一条离线告警每跳刷一次，真异常被噪音淹没。\n\n皮层补的正是生物体区别于机器的这两件事：**静默即入睡、睡中巩固经历、醒来带着记忆**。\n\n## 三大机制\n\n### ⓪ 睡眠周期 Sleep-Wake Cycle\n\n**清醒信号取「会话是否在推进」（`agent/pre-step`），不是「有没有工具在跑」。** 这个判据是实测逼出来的：系统内部的后台工具（如零驻留的维护调用 `zr_fast`）会周期性自触发，若按工具调用计时，`lastActivityAt` 每十几秒被刷新一次，身体**永远睡不着**——而且是静默失败，看起来一切正常。同理，organism 的心跳每 15 秒一跳，也只记入独立的 `beats` 计数、**不参与睡意计算**：心脏自动跳动不代表身体在干活。\n\n静默越久越困：\n\n| 静默时长 | 相位 | 行为 |\n|---|---|---|\n| < 2 分钟 | ☀️ 清醒 | 正常采集经历 |\n| ≥ 2 分钟 | 🌙 浅睡 | 停止采集，等待更深 |\n| ≥ 5 分钟 | 😴 深睡 | **执行巩固**（每 2 分钟一轮，有新经历才跑） |\n\n任何活动立刻唤醒，并给上一段睡眠写一份报告（睡了多久、整理出什么）。手动入口：`cortex_sleep action=enter`。\n\n`cortex_sleep action=status` 会显示**最近清醒信号的来源**（如 `session-step`）——睡不着时先看它，就知道是谁在刷活动。\n\n### ① 长期记忆 Long-term Memory\n\n巩固把经历提炼成四类**记忆卡**：\n\n| 类型 | 触发条件 | 价值 |\n|---|---|---|\n| 坑 `pitfall` | 同一工具连续失败 ≥3 次 | 下次别在同一个地方摔 |\n| 打法 `playbook` | 跨工具成功链路重复出现 ≥2 次 | 同类任务直接复用顺序 |\n| 薄弱环节 `hotspot` | 调用 ≥8 次且成功率 <70% | 知道哪里该多留一步校验 |\n| 未解 `unresolved` | 最后一次成功之后累计 ≥3 次失败 | 死路标记，下次换路径 |\n| 事实 `fact` | 手工写入 | 稳定结论 |\n\n记忆卡带权重与使用计数，跨会话持久化（`memory.jsonl`）。**新命令一进来，皮层按关键词主动召回最相关的几张卡注入上下文**——不必等大脑自己想起来（零 token 的确定性打分：标签 > 标题 > 正文，乘权重）。\n\n遗忘也是机制的一部分：久未使用的卡按 168 小时半衰期衰减，权重低于 0.08 自动归档（不物理删除，`cortex_memory action=revive` 可召回）。\n\n### ② 稳态降噪 Homeostatic Noise Control\n\n接住 `organism/heartbeat` 泵来的全身稳态告警，做两件事：\n\n- **窗口内重复**（默认 60 秒）只计数不刷屏；\n- **反复出现且从未自愈**（默认 5 次）收敛为「已知稳态偏移」并静默——之后再重复既不计入抑制也不刷屏，把音量还给真正的异常。\n\n纯函数内核 `reduceNoise()`，16 项断言覆盖。\n\n## 工具\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:693-779](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L693-L779)\n\n定时相位与工具结果、会话推进事件监听。\n\n<details>\n<summary>查看原文（87行）</summary>\n\n```text\n  ctx.effect(() => {\n    const timer = setInterval(() => {\n      if (stopped) return\n      try {\n        const idle = clock() - state.lastActivityAt\n        const prev = state.phase\n        let next: Phase = 'awake'\n        if (idle >= config.deepAfterMs) next = 'deep'\n        else if (idle >= config.sleepAfterMs) next = 'light'\n        if (!config.autoSleep && next !== 'awake') next = state.phase === 'awake' ? 'awake' : state.phase\n\n        if (prev === 'awake' && next !== 'awake') {\n          state.sleepStartedAt = clock()\n          pushRhythmNote(`🌙 入睡（${next === 'deep' ? '深睡' : '浅睡'}）`)\n        }\n        state.phase = next\n\n        if (state.phase === 'deep' && clock() - state.lastConsolidateAt >= config.consolidateGapMs) {\n          const hasNew = buffer.some(e => e.t > state.lastConsolidateAt)\n          if (hasNew) consolidate('深睡巩固', state.sleepStartedAt || clock(), 'deep')\n        }\n        persistState()\n      } catch { /* 节律钟绝不因单次异常停摆 */ }\n    }, Math.max(1000, config.tickMs))\n    return () => { clearInterval(timer); stopped = true }\n  }, 'cortex: sleep-wake pacemaker')\n\n  // ═══════════ 信号接入 ═══════════\n\n  // 信号 A：每次工具结果 = 清醒信号 + 经历记录\n  ctx.effect(() => ctx.on('tools/result', ((exec: unknown, result: unknown) => {\n    try {\n      const ex = exec as { name?: unknown; callId?: unknown }\n      const toolName = String(ex?.name ?? '')\n      if (!toolName) return\n      const r = result as { isError?: unknown; error?: { message?: unknown } }\n      const isError = Boolean(r?.isError)\n      buffer.push({\n        t: clock(),\n        tool: toolName,\n        ok: !isError,\n        ms: 0,\n        err: String(r?.error?.message ?? '').slice(0, 240),\n      })\n      if (buffer.length > config.bufferMax) buffer.splice(0, buffer.length - config.bufferMax)\n      // 工具调用**不算清醒信号**——只记录成经历。定义「醒着」的是会话推进（见信号 A0）：\n      // 系统内部的后台工具（如零驻留的维护调用）会周期性自触发，若按它们计时，皮层永远睡不着。\n    } catch { /* 皮层绝不影响主流程 */ }\n  }) as never), 'cortex: tools/result listener')\n\n  // 信号 A2：时延观测（只测不改）\n  ctx.effect(() => ctx.on('tools/post-execute', (async (exec: unknown, _result: unknown, next: () => Promise<unknown>) => {\n    const started = clock()\n    try {\n      return await next()\n    } finally {\n      const name = String((exec as { name?: unknown })?.name ?? '')\n      const ms = clock() - started\n      for (let i = buffer.length - 1; i >= 0 && i > buffer.length - 6; i--) {\n        const e = buffer[i]\n        if (e && e.tool === name && e.ms === 0) { e.ms = ms; break }\n      }\n    }\n  }) as never), 'cortex: latency probe')\n\n  // 信号 B：接上 organism 的心跳——血液包里带着全身稳态告警，皮层对它做降噪\n  ctx.effect(() => (ctx.on as any)('organism/heartbeat', (blood: unknown) => {\n    try {\n      const b = blood as { alerts?: unknown; beat?: unknown }\n      ingestAlerts(b?.alerts)\n      // 心跳**不算清醒活动**：心脏是自动跳的，不代表身体在干活。\n      // 若把心跳当活动，每 15 秒就刷新一次「最后一次活动」——皮层将永远睡不着。\n      // 只记一个独立的搏动计数，供观测「心跳确实通到皮层」，不参与睡意计算。\n      state.beats = (state.beats ?? 0) + 1\n    } catch { /* 忽略 */ }\n  }), 'cortex: heartbeat listener (noise control)')\n\n  // 信号 A0：**会话推进 = 身体醒着**。这是唯一的清醒信号。\n  // 判据取「会话是否在推进」而不是「有没有工具在跑」——后者会被系统内部的后台工具\n  // （零驻留维护、各种自触发调用）周期性刷成永不静默，身体就再也睡不着了。\n  ctx.effect(() => ctx.on('agent/pre-step' as never, (async (_payload: unknown, next: () => Promise<unknown>) => {\n    try { markActivity('session-step') } catch { /* 皮层绝不影响主流程 */ }\n    return await next()\n  }) as never), 'cortex: wake on session step')\n\n  // 信号 C：命令进来 → 主动召回记忆\n  if (config.memoryRecall) {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:301-418](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L301-L418)\n\n四类模式按固定阈值从工具事件提取。\n\n<details>\n<summary>查看原文（118行）</summary>\n\n```text\nexport function extractPatterns(evs: Ev[], since: number, now: number): PatternResult {\n  const pitfalls: MemoryCard[] = []\n  const playbooks: MemoryCard[] = []\n  const hotspots: MemoryCard[] = []\n  const unresolved: MemoryCard[] = []\n\n  // ── 坑：同一工具连续失败 ≥3 ──\n  let run: { tool: string; count: number; err: string; at: number } | null = null\n  const failRuns: Array<{ tool: string; count: number; err: string; at: number }> = []\n  const flush = (): void => {\n    if (run && run.count >= 3) failRuns.push(run)\n    run = null\n  }\n  for (const e of evs) {\n    if (!e.ok) {\n      if (run && run.tool === e.tool) { run.count += 1; run.err = e.err || run.err; run.at = e.t }\n      else { flush(); run = { tool: e.tool, count: 1, err: e.err, at: e.t } }\n    } else flush()\n  }\n  flush()\n  for (const f of failRuns) {\n    if (f.at <= since) continue\n    pitfalls.push({\n      id: cardId('pitfall', f.tool),\n      t: f.at,\n      kind: 'pitfall',\n      title: `${f.tool} 连续失败 ${f.count} 次`,\n      body: `错误：${f.err || '（无错误信息）'}\\n处置：先核参数与路径，再换工具或换器官；不要原地重试。`,\n      tags: [f.tool, ...tokens(f.err).slice(0, 8)],\n      weight: 1 + Math.min(2, f.count / 3),\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  // ── 打法：重复出现的成功链路（n-gram，n=2..4） ──\n  const okEvs = evs.filter(e => e.ok)\n  const grams = new Map<string, { count: number; last: number }>()\n  for (let n = 2; n <= 4; n++) {\n    for (let i = 0; i + n <= okEvs.length; i++) {\n      const slice = okEvs.slice(i, i + n)\n      const g = slice.map(e => e.tool).join(' → ')\n      const lastT = slice[slice.length - 1]?.t ?? now\n      const cur = grams.get(g) ?? { count: 0, last: 0 }\n      cur.count += 1\n      cur.last = Math.max(cur.last, lastT)\n      grams.set(g, cur)\n    }\n  }\n  const plays = [...grams.entries()]\n    .filter(([g, v]) => {\n      if (v.count < 2 || v.last <= since) return false\n      // 排除「同一个工具连做几次」这类平凡链路——它们不含可复用的顺序信息\n      return new Set(g.split(' → ')).size >= 2\n    })\n    .sort((a, b) => {\n      const distinct = (g: string): number => new Set(g.split(' → ')).size\n      return (distinct(b[0]) - distinct(a[0])) || (b[1].count - a[1].count)\n    })\n    .slice(0, 5)\n  for (const [g, v] of plays) {\n    playbooks.push({\n      id: cardId('playbook', g),\n      t: v.last,\n      kind: 'playbook',\n      title: `链路 ${g}`,\n      body: `这条链路在一次经历中跑通 ${v.count} 次。同类任务可直接复用，不必重新摸索顺序。`,\n      tags: tokens(g),\n      weight: 1 + Math.min(2, v.count / 3),\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  // ── 薄弱环节：高频但成功率偏低 ──\n  const perTool = new Map<string, { ok: number; fail: number; ms: number }>()\n  for (const e of evs) {\n    const s = perTool.get(e.tool) ?? { ok: 0, fail: 0, ms: 0 }\n    if (e.ok) s.ok += 1; else s.fail += 1\n    s.ms += e.ms\n    perTool.set(e.tool, s)\n  }\n  for (const [tool, s] of perTool) {\n    const total = s.ok + s.fail\n    if (total < 8) continue\n    const rate = s.ok / total\n    if (rate >= 0.7) continue\n    hotspots.push({\n      id: cardId('hotspot', tool),\n      t: now,\n      kind: 'hotspot',\n      title: `${tool} 是薄弱环节（成功率 ${(rate * 100).toFixed(0)}%）`,\n      body: `共调用 ${total} 次：成功 ${s.ok}、失败 ${s.fail}，平均 ${Math.round(s.ms / total)}ms。\\n用法上多留一步校验，或考虑换能力重叠的其他器官。`,\n      tags: [tool],\n      weight: 1.2,\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  // ── 未解：最后一次成功之后，再没走通过 ──\n  const tail = evs.slice(-60)\n  const lastOkAt = tail.filter(e => e.ok).reduce((acc, e) => Math.max(acc, e.t), 0)\n  const dangling = tail.filter(e => !e.ok && e.t > lastOkAt)\n  if (dangling.length >= 3) {\n    const names = [...new Set(dangling.map(e => e.tool))].join('、')\n    unresolved.push({\n      id: cardId('unresolved', names),\n      t: dangling[dangling.length - 1]?.t ?? now,\n      kind: 'unresolved',\n      title: `悬而未决：${names}`,\n      body: `最后一次成功之后累计 ${dangling.length} 次失败，始终没有走通。\\n下次遇到先换路径，别沿着这条死路再走一遍。`,\n      tags: tokens(names),\n      weight: 1.5,\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  return { pitfalls, playbooks, hotspots, unresolved }\n}\n\n```\n\n</details>\n\n#### 缺口\n\n- 未在目标 DSH 宿主复现睡眠、记忆或提醒收益。\n  **影响：**不能把作者测试记录当独立效果证明。\n  **进一步探讨：**隔离会话重放同类/异类任务并观察提示准确率及干扰。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 经历如何变成记忆并在新命令时召回？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\n工具结果事件只记录工具名、成功与否、耗时和最多 240 字错误；巩固用连续失败≥3、跨工具成功链重复、调用≥8 且成功率<70%、末端多次失败四条规则制卡。卡按 ID upsert，使用与重复出现增权，按半衰期归档；命令到来时对最新真人输入分词，标签/标题/正文匹配后按权重排序，在 agent/pre-step 追加来源标记为插件的 user 消息。它不调用模型，故可审计且成本低；但同一工具的多种任务被合并为同一坑/热点，成功链路也可能只是偶然顺序，召回属于启发式相似而非已验证经验。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:301-418](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L301-L418)\n\n提取四类卡的阈值和 ID 构造。\n\n<details>\n<summary>查看原文（118行）</summary>\n\n```text\nexport function extractPatterns(evs: Ev[], since: number, now: number): PatternResult {\n  const pitfalls: MemoryCard[] = []\n  const playbooks: MemoryCard[] = []\n  const hotspots: MemoryCard[] = []\n  const unresolved: MemoryCard[] = []\n\n  // ── 坑：同一工具连续失败 ≥3 ──\n  let run: { tool: string; count: number; err: string; at: number } | null = null\n  const failRuns: Array<{ tool: string; count: number; err: string; at: number }> = []\n  const flush = (): void => {\n    if (run && run.count >= 3) failRuns.push(run)\n    run = null\n  }\n  for (const e of evs) {\n    if (!e.ok) {\n      if (run && run.tool === e.tool) { run.count += 1; run.err = e.err || run.err; run.at = e.t }\n      else { flush(); run = { tool: e.tool, count: 1, err: e.err, at: e.t } }\n    } else flush()\n  }\n  flush()\n  for (const f of failRuns) {\n    if (f.at <= since) continue\n    pitfalls.push({\n      id: cardId('pitfall', f.tool),\n      t: f.at,\n      kind: 'pitfall',\n      title: `${f.tool} 连续失败 ${f.count} 次`,\n      body: `错误：${f.err || '（无错误信息）'}\\n处置：先核参数与路径，再换工具或换器官；不要原地重试。`,\n      tags: [f.tool, ...tokens(f.err).slice(0, 8)],\n      weight: 1 + Math.min(2, f.count / 3),\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  // ── 打法：重复出现的成功链路（n-gram，n=2..4） ──\n  const okEvs = evs.filter(e => e.ok)\n  const grams = new Map<string, { count: number; last: number }>()\n  for (let n = 2; n <= 4; n++) {\n    for (let i = 0; i + n <= okEvs.length; i++) {\n      const slice = okEvs.slice(i, i + n)\n      const g = slice.map(e => e.tool).join(' → ')\n      const lastT = slice[slice.length - 1]?.t ?? now\n      const cur = grams.get(g) ?? { count: 0, last: 0 }\n      cur.count += 1\n      cur.last = Math.max(cur.last, lastT)\n      grams.set(g, cur)\n    }\n  }\n  const plays = [...grams.entries()]\n    .filter(([g, v]) => {\n      if (v.count < 2 || v.last <= since) return false\n      // 排除「同一个工具连做几次」这类平凡链路——它们不含可复用的顺序信息\n      return new Set(g.split(' → ')).size >= 2\n    })\n    .sort((a, b) => {\n      const distinct = (g: string): number => new Set(g.split(' → ')).size\n      return (distinct(b[0]) - distinct(a[0])) || (b[1].count - a[1].count)\n    })\n    .slice(0, 5)\n  for (const [g, v] of plays) {\n    playbooks.push({\n      id: cardId('playbook', g),\n      t: v.last,\n      kind: 'playbook',\n      title: `链路 ${g}`,\n      body: `这条链路在一次经历中跑通 ${v.count} 次。同类任务可直接复用，不必重新摸索顺序。`,\n      tags: tokens(g),\n      weight: 1 + Math.min(2, v.count / 3),\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  // ── 薄弱环节：高频但成功率偏低 ──\n  const perTool = new Map<string, { ok: number; fail: number; ms: number }>()\n  for (const e of evs) {\n    const s = perTool.get(e.tool) ?? { ok: 0, fail: 0, ms: 0 }\n    if (e.ok) s.ok += 1; else s.fail += 1\n    s.ms += e.ms\n    perTool.set(e.tool, s)\n  }\n  for (const [tool, s] of perTool) {\n    const total = s.ok + s.fail\n    if (total < 8) continue\n    const rate = s.ok / total\n    if (rate >= 0.7) continue\n    hotspots.push({\n      id: cardId('hotspot', tool),\n      t: now,\n      kind: 'hotspot',\n      title: `${tool} 是薄弱环节（成功率 ${(rate * 100).toFixed(0)}%）`,\n      body: `共调用 ${total} 次：成功 ${s.ok}、失败 ${s.fail}，平均 ${Math.round(s.ms / total)}ms。\\n用法上多留一步校验，或考虑换能力重叠的其他器官。`,\n      tags: [tool],\n      weight: 1.2,\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  // ── 未解：最后一次成功之后，再没走通过 ──\n  const tail = evs.slice(-60)\n  const lastOkAt = tail.filter(e => e.ok).reduce((acc, e) => Math.max(acc, e.t), 0)\n  const dangling = tail.filter(e => !e.ok && e.t > lastOkAt)\n  if (dangling.length >= 3) {\n    const names = [...new Set(dangling.map(e => e.tool))].join('、')\n    unresolved.push({\n      id: cardId('unresolved', names),\n      t: dangling[dangling.length - 1]?.t ?? now,\n      kind: 'unresolved',\n      title: `悬而未决：${names}`,\n      body: `最后一次成功之后累计 ${dangling.length} 次失败，始终没有走通。\\n下次遇到先换路径，别沿着这条死路再走一遍。`,\n      tags: tokens(names),\n      weight: 1.5,\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n\n  return { pitfalls, playbooks, hotspots, unresolved }\n}\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:579-669](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L579-L669)\n\nupsert、衰减归档和关键词加权召回。\n\n<details>\n<summary>查看原文（91行）</summary>\n\n```text\n  function upsert(card: MemoryCard, reinforce: boolean): boolean {\n    const cur = memories.find(m => m.id === card.id)\n    if (cur) {\n      if (reinforce) cur.weight = Math.min(10, cur.weight + 1)\n      cur.body = card.body\n      if (cur.archived) cur.archived = false\n      return false\n    }\n    memories.push(card)\n    return true\n  }\n\n  /**\n   * 巩固：把一段经历提炼成长期记忆。全程确定性，零模型调用。\n   * 四类产物——反复踩的坑 / 跑通的链路 / 高频低成功率的薄弱环节 / 失败后悬空的未解之事。\n   */\n  function consolidate(reason: string, enteredAt: number, deepest: Phase): SleepReport {\n    const now = clock()\n    const evs = buffer.slice()\n    const notes: string[] = []\n    let created = 0\n    let reinforced = 0\n    const since = state.lastConsolidateAt\n\n    // 提炼：四类模式全部交给确定性内核（纯函数，可离线回归）\n    const pat = extractPatterns(evs, since, now)\n\n    for (const card of pat.pitfalls) {\n      if (upsert(card, true)) { created += 1; notes.push(`坑：${card.title}`) } else reinforced += 1\n    }\n    for (const card of pat.playbooks) {\n      if (upsert(card, true)) { created += 1; notes.push(`打法：${card.title}`) } else reinforced += 1\n    }\n    for (const card of pat.hotspots) {\n      if (upsert(card, false)) { created += 1; notes.push(`薄弱：${card.title}`) } else reinforced += 1\n    }\n    for (const card of pat.unresolved) {\n      if (upsert(card, true)) { created += 1; notes.push(`未解：${card.title}`) } else reinforced += 1\n    }\n\n    // ── 遗忘：久未使用的记忆按半衰期衰减，越线归档 ──\n    let archived = 0\n    for (const m of memories) {\n      if (m.archived) continue\n      const anchor = m.lastUsed || m.t\n      const dt = Math.max(0, now - anchor)\n      m.weight *= Math.pow(0.5, dt / config.memoryHalfLifeMs)\n      if (m.weight < config.archiveBelow) { m.archived = true; archived += 1 }\n    }\n\n    persistMemories()\n    state.lastConsolidateAt = clock()\n    state.stats.consolidations += 1\n    state.stats.cardsCreated += created\n\n    const report: SleepReport = {\n      t: now, enteredAt, wokeAt: 0, deepest,\n      durationMs: 0, scanned: evs.length, created, reinforced, archived, notes: notes.slice(0, 12),\n    }\n    state.reports.push(report)\n    if (state.reports.length > 20) state.reports.splice(0, state.reports.length - 20)\n    persistState(true)\n\n    pushRhythmNote(`😴 巩固（${reason}）：扫描 ${evs.length} 段经历 → 新建 ${created} / 强化 ${reinforced} / 归档 ${archived}`)\n    return report\n  }\n\n  // ═══════════ ③ 召回 ═══════════\n\n  /** 按文本召回最相关的记忆卡（确定性打分：标签 > 标题 > 正文，再乘权重） */\n  function recall(text: string, limit: number): MemoryCard[] {\n    const q = tokens(text)\n    if (!q.length) return []\n    const scored: Array<{ m: MemoryCard; s: number }> = []\n    for (const m of memories) {\n      if (m.archived) continue\n      let s = 0\n      for (const tk of q) {\n        if (m.tags.some(x => x === tk)) s += 3\n        else if (m.tags.some(x => x.length >= 3 && (x.includes(tk) || tk.includes(x)))) s += 1.5\n        if (m.title.toLowerCase().includes(tk)) s += 2\n        else if (m.body.toLowerCase().includes(tk)) s += 1\n      }\n      if (s <= 0) continue\n      scored.push({ m, s: s * (0.5 + m.weight) })\n    }\n    return scored.sort((a, b) => b.s - a.s).slice(0, Math.max(1, limit)).map(x => x.m)\n  }\n\n  // ═══════════ ④ 稳态降噪 ═══════════\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:779-820](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L779-L820)\n\n新命令召回并插入带插件来源的消息。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n  if (config.memoryRecall) {\n    ctx.effect(() => ctx.on('agent/pre-step' as never, (async (payload: unknown, next: () => Promise<unknown>) => {\n      const decision = await next() as { kind?: unknown; messages?: unknown[] } | null\n      if (!decision || decision.kind !== 'enter') return decision\n      try {\n        const p = payload as { agent?: unknown }\n        const agent = p?.agent\n        if (agent === undefined) return decision\n        const session = (agent as { session?: { id?: unknown; snapshotEvents?: () => unknown } }).session\n        const sid = String(session?.id ?? 'default')\n        const human = latestHuman(session?.snapshotEvents?.())\n        if (!human) return decision\n        // 同一条命令只注入一次。关键：**只有真注入了才记账**——\n        // 若在「没命中」时也记账，那条命令就永久失去召回机会（记忆库是随睡眠慢慢长出来的，\n        // 一条命令进来时库里可能还没有对应经验，不该被一次性判死）。\n        const turn = Number((p as { turn?: unknown })?.turn ?? NaN)\n        const key = Number.isFinite(turn) ? `turn:${turn}` : `seq:${human.seq}`\n        if (recalledKeyBySession.get(sid) === key) return decision\n\n        const hits = recall(human.text, config.recallLimit)\n        if (!hits.length) return decision\n        recalledKeyBySession.set(sid, key)\n        const now = clock()\n        for (const h of hits) { h.uses += 1; h.lastUsed = now; h.weight = Math.min(10, h.weight + 0.2) }\n        persistMemories(true)\n        state.stats.recalls += 1\n        persistState(true)\n\n        const lines = [\n          '【皮层记忆】这类事以前有过记录，先看一眼再动手：',\n          ...hits.map(h => `- [${KIND_LABEL[h.kind] ?? h.kind}] ${h.title}${h.body ? ` —— ${h.body.split('\\n')[0]}` : ''}（用过 ${h.uses} 次）`),\n          '（cortex_memory action=search 看全文；与本次无关就忽略）',\n        ]\n        return {\n          ...decision,\n          messages: [...(Array.isArray(decision.messages) ? decision.messages : []), createUserMessage({\n            source: { kind: 'plugin:@dsh-external/dsh-cortex' },\n            content: [{ type: 'text', text: lines.join('\\n') }],\n          })],\n        }\n      } catch { return decision }\n    }) as never), 'cortex: memory recall on pre-step')\n```\n\n</details>\n\n#### 缺口\n\n- 没有已标注任务集衡量误召回/漏召回。\n  **影响：**可能将不同上下文中的同名工具错误泛化。\n  **进一步探讨：**跨项目分组测试同名工具、错误消息变化及实际建议帮助率。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 持久化、隔离和静默失败怎样影响可靠性？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n全部卡片写到统一 $DSH_HOME/plugins/dsh-cortex/memory.jsonl，状态写 state.json，数据结构不带 project/session/用户范围；读取时会加载所有卡并对所有会话的真人命令搜索，因此在共用 DSH_HOME 的多项目环境会交叉召回。卡片可能含工具错误文本，错误中若有敏感内容会持久化；普通 writeFileSync 没显式权限、原子写或版本检查。读写异常被 catch 后静默吞掉，调用方无法分辨“记忆已持久化”与“磁盘失败”。这些风险都可由静态源码看到，真实泄露/损坏是否发生未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:103-112](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L103-L112)\n\n单一全局数据目录和 JSONL/状态文件。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nfunction dshHome(): string {\n  return process.env.DSH_HOME || join(homedir(), '.dsh')\n}\nfunction dataDir(): string {\n  const d = join(dshHome(), 'plugins', 'dsh-cortex')\n  if (!existsSync(d)) mkdirSync(d, { recursive: true })\n  return d\n}\nfunction memoryFile(): string { return join(dataDir(), 'memory.jsonl') }\nfunction stateFile(): string { return join(dataDir(), 'state.json') }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:193-201](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L193-L201)\n\nstate 写盘失败静默吞掉。\n\n```text\nfunction readJson<T>(file: string, fallback: T): T {\n  try {\n    if (!existsSync(file)) return fallback\n    return JSON.parse(readFileSync(file, 'utf8')) as T\n  } catch { return fallback }\n}\nfunction writeJson(file: string, data: unknown): void {\n  try { writeFileSync(file, JSON.stringify(data, null, 2), 'utf8') } catch { /* 稳态优先：落盘失败不抛 */ }\n}\n```\n\n**依据 3 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:471-513](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L471-L513)\n\nmemory.jsonl 全量读写、异常静默且未设置权限。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n  function loadMemories(): void {\n    memories = []\n    try {\n      if (!existsSync(memoryFile())) return\n      for (const line of readFileSync(memoryFile(), 'utf8').split('\\n')) {\n        const s = line.trim()\n        if (!s) continue\n        try { memories.push(JSON.parse(s) as MemoryCard) } catch { /* 跳过坏行，记忆不许拖垮皮层 */ }\n      }\n    } catch { /* 忽略 */ }\n  }\n  /**\n   * 记忆落盘。throttled=true 时 30 秒内只写一次——召回是**读操作**，\n   * 只更新「用过几次」，不该每读一次就落一次盘（否则外部清理会被立刻写回）。\n   */\n  function persistMemories(throttled = false): void {\n    if (throttled && clock() - lastMemoryPersistAt < 30000) return\n    lastMemoryPersistAt = clock()\n    try {\n      writeFileSync(memoryFile(), memories.map(m => JSON.stringify(m)).join('\\n') + (memories.length ? '\\n' : ''), 'utf8')\n    } catch { /* 忽略 */ }\n  }\n  function loadState(): void {\n    const s = readJson<Partial<CortexState>>(stateFile(), {})\n    state = {\n      phase: 'awake',\n      lastActivityAt: clock(),\n      lastConsolidateAt: Number(s.lastConsolidateAt ?? 0),\n      sleepStartedAt: 0,\n      reports: Array.isArray(s.reports) ? (s.reports as SleepReport[]).slice(-20) : [],\n      rhythm: (s.rhythm && typeof s.rhythm === 'object') ? s.rhythm as Record<string, number[]> : {},\n      noise: (s.noise && typeof s.noise === 'object') ? s.noise as Record<string, NoiseEntry> : {},\n      stats: {\n        consolidations: Number(s.stats?.consolidations ?? 0),\n        cardsCreated: Number(s.stats?.cardsCreated ?? 0),\n        recalls: Number(s.stats?.recalls ?? 0),\n        noiseSuppressed: Number(s.stats?.noiseSuppressed ?? 0),\n      },\n    }\n  }\n  function persistState(force = false): void {\n    if (!force && clock() - lastPersistAt < 10000) return\n    lastPersistAt = clock()\n```\n\n</details>\n\n**依据 4 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:324-333](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L324-L333)\n\npitfall 正文与标签取自错误文本。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n      id: cardId('pitfall', f.tool),\n      t: f.at,\n      kind: 'pitfall',\n      title: `${f.tool} 连续失败 ${f.count} 次`,\n      body: `错误：${f.err || '（无错误信息）'}\\n处置：先核参数与路径，再换工具或换器官；不要原地重试。`,\n      tags: [f.tool, ...tokens(f.err).slice(0, 8)],\n      weight: 1 + Math.min(2, f.count / 3),\n      uses: 0, lastUsed: 0, source: 'sleep',\n    })\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 未在多用户/项目与失败注入环境复现交叉召回或写丢失。\n  **影响：**风险范围取决于 DSH_HOME 共享方式和宿主文件权限。\n  **进一步探讨：**隔离多会话并注入权限/磁盘错误，核查状态可见性和文件权限。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何试用并判断它是否比人工记忆更有价值？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n只建议在个人、隔离的 DSH_HOME 试验。先审阅历史错误信息是否含敏感值，关闭自动召回或控制卡片，再执行跨会话同/异任务测试，记录有效提醒、误提醒和错误持久化。若用于团队或多个项目，应先按项目/会话分区或显式作用域、对卡片脱敏并将写失败报给操作者，同时用原子写/备份降低损坏风险；这些不是当前实现。成本主要是持续监看误判、存储与失效卡清理，而非模型 token。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:70-83](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L70-L83)\n\n默认自动睡眠/召回与阈值配置。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport const Config = z.object({\n  enabled: z.boolean().default(true),\n  sleepAfterMs: z.number().default(120000),\n  deepAfterMs: z.number().default(300000),\n  autoSleep: z.boolean().default(true),\n  consolidateGapMs: z.number().default(120000),\n  tickMs: z.number().default(3000),\n  memoryRecall: z.boolean().default(true),\n  recallLimit: z.number().default(3),\n  memoryHalfLifeMs: z.number().default(604800000),\n  archiveBelow: z.number().default(0.08),\n  bufferMax: z.number().default(400),\n  noiseWindowMs: z.number().default(60000),\n  noiseConvergeAt: z.number().default(5),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[workspace/plugins/dsh-cortex/src/index.ts:486-492](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/src/index.ts#L486-L492)\n\n每次持久化全量覆盖 memory.jsonl。\n\n```text\n  function persistMemories(throttled = false): void {\n    if (throttled && clock() - lastMemoryPersistAt < 30000) return\n    lastMemoryPersistAt = clock()\n    try {\n      writeFileSync(memoryFile(), memories.map(m => JSON.stringify(m)).join('\\n') + (memories.length ? '\\n' : ''), 'utf8')\n    } catch { /* 忽略 */ }\n  }\n```\n\n**依据 3 · 作者声明**：[workspace/plugins/dsh-cortex/README.md:85-119](https://github.com/1420079678-ctrl/agent-body/blob/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex/README.md#L85-L119)\n\n作者说明配置、数据目录和试验报告。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n````text\n$DSH_HOME/plugins/dsh-cortex/\n├── memory.jsonl    # 长期记忆（一行一张卡）\n└── state.json      # 相位 / 昼夜节律 / 告警账本 / 睡眠报告 / 统计\n```\n\n## 与 organism 的分工\n\n- **organism 侧根治**：申报器官的来源插件不在时标 `installed=false`，判为「未安装」而非「离线」——告警只报「装了却坏了」的，不再每跳刷一个永远好不了的僵尸告警。\n- **cortex 侧兜底**：即使 organism 真的发出告警，皮层也会去重、收敛、静默。\n\n两层互补：一层不产生噪音，一层即使有噪音也不让它变噪音。\n\n## 构建与重放\n\n```powershell\n& <DSH_CHECKOUT>\\workspace\\plugins\\dsh-cortex\\scripts\\replay-cortex.ps1\n# junction 依赖 → tsc 编译 → 58 项离线确定性回归\n```\n\n注入：`dev_inject_plugin dir=<DSH_CHECKOUT>\\workspace\\plugins\\dsh-cortex`\n已注入后改代码：`dev_reload_package dsh-cortex`（**只编译不重载 = 跑的还是旧代码**）\n\n已 `dev_install_package` 进 profile bundles，**随 DSH 重启自动上线**。\n\n## 实测口径（2026-09-11）\n\n| 机制 | 验证方式 | 结果 |\n|---|---|---|\n| **自动入睡 → 深睡 → 自动巩固** | 节律临时压到 6s/15s，真静默 36 秒全程采样 | `awake → light(12.9s) → deep(18.9s)`，深睡中自动巩固（次数 1→2），零人工干预 |\n| **醒来报告** | 下次会话活动唤醒后看 history | `12:20:52 最深 deep 时长 32 秒 扫描 4 段经历` |\n| **心跳不干扰睡眠** | 同期观察心跳计数与相位 | 心跳 1→2（通道在），相位保持 deep、静默时长持续增长到 40s |\n| **遗忘归档** | 半衰期临时压到 1 秒 + 关召回 16 秒后巩固 | 真实触发 `归档遗忘：1`，`cortex_memory action=revive` 可召回 |\n| **降噪收敛** | 造真实告警（内脏感觉连续失败 3 次），逐 11 秒采样 | count 爬到 6 时 `silenced=True`，此后彻底安静 |\n| **降噪抑制** | 默认 60 秒窗口下重复告警 | 抑制计数 2→4→7→9，窗口内重复只计数不刷屏 |\n| **命令级召回** | 写入记忆卡后发下一条命令 | 输入里出现《皮层记忆》注入，召回计数 +1，卡权重 2.00→2.20 |\n````\n\n</details>\n\n#### 缺口\n\n- 缺少真实任务的收益、误提醒成本和增长规模测量。\n  **影响：**无法估算长期净效益。\n  **进一步探讨：**在受控任务集按周衡量召回命中、误引导、人工纠错和卡片增长。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：workspace/plugins/dsh-cortex；内容摘要：6b4b76cbcfba99f0c3c5bcf1e0a7b0d85066ac7152ba373532ed5cc378b2910d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 1014 | 936 | 86 | — |\n| .md | source | 1 | 128 | — | — | 1659 |\n| .mjs | source | 1 | 220 | 162 | 29 | — |\n| .ts | source | 1 | 1115 | 890 | 140 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 睡眠巩固 | 持久化工具模式 | 规则不懂任务语义 |\n| 主动召回 | 跨会话提示 | 全局库缺作用域 |\n| 降噪 | 压低重复告警 | 错误收敛可能掩盖变化 |\n\n## 工程亮点\n\n计时器、事件钩子与三工具由 ctx.effect 管理；JSONL 全量覆盖、错误静默。相同 DSH_HOME 的所有会话共享记忆，卡片不含作用域。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 workspace/plugins/dsh-cortex/README.md、workspace/plugins/dsh-cortex/package.json、workspace/plugins/dsh-cortex/src/index.ts 及固定范围 inventory；组件：workspace/plugins/dsh-cortex。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态阅读固定组件 README、package、src/index.ts；未加载 DSH 宿主、执行插件或写入用户记忆。\n- 下一步：用带标签的真实任务评估卡片准确率和误提醒；多项目共用 DSH_HOME、敏感错误、权限/磁盘故障及崩溃写测试。\n",
         "metadata": {
             "repository": "1420079678-ctrl/agent-body",
             "repository_id": 1366089972,
-            "captured_at": "2026-10-21T05:08:56.162Z",
-            "window_start": "2026-09-21T05:08:56.162Z",
+            "captured_at": "2026-10-22T05:49:54.083Z",
+            "window_start": "2026-09-22T05:49:54.083Z",
             "stars": 17,
             "pushed_at": "2026-09-30T00:33:17Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 6,
+                "closed": 1,
+                "created_30d": 7,
+                "closed_30d": 1,
+                "updated_30d": 7
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641A:3A08F:146715:21F2FD:6AD8493E and timestamp 2026-10-21 05:10:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641B:E4386:14F747:226C80:6AD8493E and timestamp 2026-10-21 05:10:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6408:24715:143947:21AB4C:6AD8493E and timestamp 2026-10-21 05:10:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640A:1FA705:13CE7F:21467C:6AD8493E and timestamp 2026-10-21 05:10:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A1420079678-ctrl%2Fagent-body%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640C:C23BB:142B23:21B112:6AD8493E and timestamp 2026-10-21 05:10:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "@dsh-external/dsh-cortex",
-                "captured_at": "2026-10-21T05:08:56.162Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": null,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/%40dsh-external%2Fdsh-cortex",
-                "error": "HTTP 404",
-                "publication": {
-                    "first_published_at": null,
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-cortex",
-                    "error": "HTTP 404",
-                    "latest_version": null,
-                    "latest_published_at": null,
-                    "latest_error": "HTTP 404"
-                }
-            },
-            "code_update": {
-                "checked_at": "2026-10-21T05:08:56.162Z",
-                "baseline_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                "current_revision": "9403444d87d5e962f9a4f0c4c10fdb48f37f7d66",
-                "script_changed": false,
-                "changed_files": [],
-                "error": null
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1366089972:workspace-plugins-dsh-cortex",

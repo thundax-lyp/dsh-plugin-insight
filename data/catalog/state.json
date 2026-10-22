@@ -1,7 +1,7 @@
 {
     "schema_version": 3,
-    "snapshot_digest": "77ef5db420f72e30e99ed2f6956df207c691a0633860576052ea62fac8e08eaa",
-    "index_sha256": "dc617a017b7daddbaf0892ae54df0efc480b8840d98648edd4587b9ebb441ac6",
+    "snapshot_digest": "aa1e742a870efef6723a6e57cfc82df5ea04149b62af5ea01b606d5c63ee0099",
+    "index_sha256": "11e6c7c1c352cbade0797a7fe97d6c861243ee512ce93dbd9829d557cca2a858",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-22T04:36:02.544Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本次逐题研究已更新 167/336，保留其余有效研究",
+            "scope": "本次逐题研究已更新 207/336，保留其余有效研究",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -11181,37 +11181,13 @@
             "path": "evidence/c1/c1290d626cfe94a5e9ce42139559a2d347244e7e19d2fea9214e38e01471c11a.json",
             "sha256": "c1290d626cfe94a5e9ce42139559a2d347244e7e19d2fea9214e38e01471c11a"
         },
-        "data/runs/2026-10-20-02/snapshots/0qwq0--dsh-discord-richpresence/REVIEWED-SOURCE.json": {
-            "path": "evidence/00/0089857493c6a30351c8a5cc1a98b84ad0e0a50aabf3428783673dfa93083093.json",
-            "sha256": "0089857493c6a30351c8a5cc1a98b84ad0e0a50aabf3428783673dfa93083093"
-        },
         "data/runs/2026-10-20-02/snapshots/0qwq0--dsh-ui-auth/REVIEWED-SOURCE.json": {
             "path": "evidence/6c/6cf20844f7dcddf7d832b86a3009d9fe2626eb0ec3c6708bfa46f9b7a44a5f08.json",
             "sha256": "6cf20844f7dcddf7d832b86a3009d9fe2626eb0ec3c6708bfa46f9b7a44a5f08"
         },
-        "data/runs/2026-10-20-02/snapshots/0imzero--dsh-workspace-menu/REVIEWED-SOURCE.json": {
-            "path": "evidence/be/befd60d08db7a9a35e33d1fd4abe2804b09e5ccb37e2c79204d9da6364cc854a.json",
-            "sha256": "befd60d08db7a9a35e33d1fd4abe2804b09e5ccb37e2c79204d9da6364cc854a"
-        },
-        "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-daily-log/REVIEWED-SOURCE.json": {
-            "path": "evidence/ff/ff01ff43d159f3addb9294ea08aec641c9bd0030bf78e560c040fa8e35e8255a.json",
-            "sha256": "ff01ff43d159f3addb9294ea08aec641c9bd0030bf78e560c040fa8e35e8255a"
-        },
-        "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json": {
-            "path": "evidence/b8/b894da0112350a27664a195496bd06027f63565488bdba9e2875147ff2be9dce.json",
-            "sha256": "b894da0112350a27664a195496bd06027f63565488bdba9e2875147ff2be9dce"
-        },
         "data/runs/2026-10-20-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/REVIEWED-SOURCE.json": {
             "path": "evidence/fc/fc3e13cf157d31149dae7bc3dbbcf8eaf4ce88eb5c3eb37ce43d5bc96ddab30e.json",
             "sha256": "fc3e13cf157d31149dae7bc3dbbcf8eaf4ce88eb5c3eb37ce43d5bc96ddab30e"
-        },
-        "data/runs/2026-10-20-02/snapshots/0xrabit--dsh-crypto-portfolio/REVIEWED-SOURCE.json": {
-            "path": "evidence/c6/c6b4c0c56a564b57071a229a347ee34c97140a7a45aa2d786986cffa7c9a06f5.json",
-            "sha256": "c6b4c0c56a564b57071a229a347ee34c97140a7a45aa2d786986cffa7c9a06f5"
-        },
-        "data/runs/2026-10-20-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json": {
-            "path": "evidence/ce/ceea0d7d244b3c24e29d9f29b2d4ba718cd82d6282bc5552dfc21068abe3044d.json",
-            "sha256": "ceea0d7d244b3c24e29d9f29b2d4ba718cd82d6282bc5552dfc21068abe3044d"
         },
         "data/runs/2026-10-20-02/snapshots/1069137617--dsh-reasoning-tiers/REVIEWED-SOURCE.json": {
             "path": "evidence/27/2786f7f59a88592561b5b6819e7d3a59eb9c26017423655e7b9c4f46dff90b25.json",
@@ -11236,10 +11212,6 @@
         "data/runs/2026-10-20-02/snapshots/1225sakura--oh-my-deepseekharness/REVIEWED-SOURCE.json": {
             "path": "evidence/13/133e8ac7d6c8e1e4f73d847ab1d5dcf9031bf5449b88e06af0373ef9a604ca3a.json",
             "sha256": "133e8ac7d6c8e1e4f73d847ab1d5dcf9031bf5449b88e06af0373ef9a604ca3a"
-        },
-        "data/runs/2026-10-20-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json": {
-            "path": "evidence/91/9155cad8d83448c1839058bcfcbf5e3c48322ef4bb19d4e845308df54ea6dd27.json",
-            "sha256": "9155cad8d83448c1839058bcfcbf5e3c48322ef4bb19d4e845308df54ea6dd27"
         },
         "data/runs/2026-10-20-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json": {
             "path": "evidence/c0/c03244fabc38c619137fe4c649836007a7a6f625df3a0ffc96a4dd0019b64127.json",
@@ -11273,10 +11245,6 @@
             "path": "evidence/39/39f90ccb8d2d5be3af097ef8dfbc8d29a9c35f171326abe859a1ee16f1653db6.json",
             "sha256": "39f90ccb8d2d5be3af097ef8dfbc8d29a9c35f171326abe859a1ee16f1653db6"
         },
-        "data/runs/2026-10-20-04/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json": {
-            "path": "evidence/e6/e641a6d85b0b20b1ddf01c88932724216cd52a0c1aaf5f20ef69f9fb9b61f5bc.json",
-            "sha256": "e641a6d85b0b20b1ddf01c88932724216cd52a0c1aaf5f20ef69f9fb9b61f5bc"
-        },
         "data/runs/2026-10-20-04/snapshots/1497105876--dsh-mimotts/REVIEWED-SOURCE.json": {
             "path": "evidence/33/334d9653ba066976fd202d8107b24f9eeeda6c71eaec2a4f55c673bf4c64eb1b.json",
             "sha256": "334d9653ba066976fd202d8107b24f9eeeda6c71eaec2a4f55c673bf4c64eb1b"
@@ -11309,10 +11277,6 @@
             "path": "evidence/0f/0ff4b37e497188776f4006b99920a795f89849981110ce5ae0c6f757042c236e.json",
             "sha256": "0ff4b37e497188776f4006b99920a795f89849981110ce5ae0c6f757042c236e"
         },
-        "data/runs/2026-10-20-04/snapshots/173787247--dsh-mac-companion/REVIEWED-SOURCE.json": {
-            "path": "evidence/c6/c60deb2320b5aef147e568e3422e8b2bdc1944b1deefdb19c021a623139be96d.json",
-            "sha256": "c60deb2320b5aef147e568e3422e8b2bdc1944b1deefdb19c021a623139be96d"
-        },
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json": {
             "path": "evidence/79/7960634c725c504f8dec222a370b8e434abb275070535415b0305ef6ab9c8417.json",
             "sha256": "7960634c725c504f8dec222a370b8e434abb275070535415b0305ef6ab9c8417"
@@ -11328,10 +11292,6 @@
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-cal/REVIEWED-SOURCE.json": {
             "path": "evidence/c5/c5c717006abfb0b512e8d66253f5f987daa6faab9d5242516f5ff0c1fce5ec72.json",
             "sha256": "c5c717006abfb0b512e8d66253f5f987daa6faab9d5242516f5ff0c1fce5ec72"
-        },
-        "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clipboard/REVIEWED-SOURCE.json": {
-            "path": "evidence/17/17d030ad5dfb116227a20ced47be73a939c2d8c7c1ef106e94a5a65d12bd0747.json",
-            "sha256": "17d030ad5dfb116227a20ced47be73a939c2d8c7c1ef106e94a5a65d12bd0747"
         },
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-clock/REVIEWED-SOURCE.json": {
             "path": "evidence/69/69a24209cffa9c8e78a3c4981c7a1b8380e576c651122bd5994e01035a9cb240.json",
@@ -11352,10 +11312,6 @@
         "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-docker/REVIEWED-SOURCE.json": {
             "path": "evidence/07/07ae6839a5d32ca0122694bff0e1a5468f1f368f9767ffc4b12c937504375089.json",
             "sha256": "07ae6839a5d32ca0122694bff0e1a5468f1f368f9767ffc4b12c937504375089"
-        },
-        "data/runs/2026-10-20-04/snapshots/173787247--dsh-wsl-download/REVIEWED-SOURCE.json": {
-            "path": "evidence/b7/b724c9086984ff4503a954d7cda5d416598a6db1b8addd775424e8d3163b16a2.json",
-            "sha256": "b724c9086984ff4503a954d7cda5d416598a6db1b8addd775424e8d3163b16a2"
         },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-env/REVIEWED-SOURCE.json": {
             "path": "evidence/5f/5f85bead0d31e3eb76ed15030fbe176bee6e3dbbb8fedc0cdb3d4d9988cedec0.json",
@@ -11389,10 +11345,6 @@
             "path": "evidence/f3/f307bd6d47014a5dc46bd53c0c2535e2a769302b669f3f3d8c6a7bc7d5f50ae6.json",
             "sha256": "f307bd6d47014a5dc46bd53c0c2535e2a769302b669f3f3d8c6a7bc7d5f50ae6"
         },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-launch/REVIEWED-SOURCE.json": {
-            "path": "evidence/e9/e98c66954ab57dba66b0695002072d91bafd1c3334ae8f5fc7722bd39a4ce38d.json",
-            "sha256": "e98c66954ab57dba66b0695002072d91bafd1c3334ae8f5fc7722bd39a4ce38d"
-        },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-llamacpp/REVIEWED-SOURCE.json": {
             "path": "evidence/df/df20b2a2c476b016e97673732d24c2a266ca6b68a37a2c087090af5c755602f8.json",
             "sha256": "df20b2a2c476b016e97673732d24c2a266ca6b68a37a2c087090af5c755602f8"
@@ -11409,17 +11361,9 @@
             "path": "evidence/f2/f232ceeb1cd0a3b1fe9da658e1ffce7a5f14dde314eec89c1d9da4d55a2d7c1f.json",
             "sha256": "f232ceeb1cd0a3b1fe9da658e1ffce7a5f14dde314eec89c1d9da4d55a2d7c1f"
         },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json": {
-            "path": "evidence/ab/ab99843438031b06978971700d7e6220e7f45a53f2b175424e394641c1a39107.json",
-            "sha256": "ab99843438031b06978971700d7e6220e7f45a53f2b175424e394641c1a39107"
-        },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-ollama/REVIEWED-SOURCE.json": {
             "path": "evidence/bc/bca7e63b30ebb87a91c9ba23bd16926f052b4cbd177b38c237168dcc5eb0aba2.json",
             "sha256": "bca7e63b30ebb87a91c9ba23bd16926f052b4cbd177b38c237168dcc5eb0aba2"
-        },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-open/REVIEWED-SOURCE.json": {
-            "path": "evidence/15/1565afe1ac59d65f717b9b19b2a42c9f58c9bcd4644359de4c5b3b6a9a4c6ce4.json",
-            "sha256": "1565afe1ac59d65f717b9b19b2a42c9f58c9bcd4644359de4c5b3b6a9a4c6ce4"
         },
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-perf/REVIEWED-SOURCE.json": {
             "path": "evidence/32/32c8f941315494276f18ae6ae026e74036a0361e8822498715934945caa605eb.json",
@@ -11452,10 +11396,6 @@
         "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-service/REVIEWED-SOURCE.json": {
             "path": "evidence/02/02dbc1f7fb61e1fe9b34921498ac33061c2587686d1f369524c51b282ef7df90.json",
             "sha256": "02dbc1f7fb61e1fe9b34921498ac33061c2587686d1f369524c51b282ef7df90"
-        },
-        "data/runs/2026-10-20-07/snapshots/173787247--dsh-wsl-shot/REVIEWED-SOURCE.json": {
-            "path": "evidence/05/0529744bcdc7fa023760e1736c2a0e321305ceafb31b481ac84d3db99cf794c0.json",
-            "sha256": "0529744bcdc7fa023760e1736c2a0e321305ceafb31b481ac84d3db99cf794c0"
         },
         "data/runs/2026-10-20-07/snapshots/1497105876--dsh-media-studio/REVIEWED-SOURCE.json": {
             "path": "evidence/4a/4abad685e0491d91b7228c8e3a6cfaf31d32c5442078368316d90c6a39bbe677.json",
@@ -11529,10 +11469,6 @@
             "path": "evidence/df/dfa9f29656ea871fe6b80762951c1e3609c19bc4b3b924c154f65f2635fee2e5.json",
             "sha256": "dfa9f29656ea871fe6b80762951c1e3609c19bc4b3b924c154f65f2635fee2e5"
         },
-        "data/runs/2026-10-20-08/snapshots/1985899182--dsh-harness-chat-control/REVIEWED-SOURCE.json": {
-            "path": "evidence/95/9544a31a3299ced1e416f57a8b60ca32953616f59e87a94807fcd150e9d0ba5c.json",
-            "sha256": "9544a31a3299ced1e416f57a8b60ca32953616f59e87a94807fcd150e9d0ba5c"
-        },
         "data/runs/2026-10-20-08/snapshots/19north--dsh-redstone-music/REVIEWED-SOURCE.json": {
             "path": "evidence/fe/fe10ef7fe6ad59213dac57ae76ea95a69642b36bc55c460f0bcf3dee670fc834.json",
             "sha256": "fe10ef7fe6ad59213dac57ae76ea95a69642b36bc55c460f0bcf3dee670fc834"
@@ -11577,10 +11513,6 @@
             "path": "evidence/19/193405d165f1c67f78ded64f80424bd213315ecc638de473f5c32a585a055183.json",
             "sha256": "193405d165f1c67f78ded64f80424bd213315ecc638de473f5c32a585a055183"
         },
-        "data/runs/2026-10-21-01/snapshots/3361805598-gif--dsh-usage-analytics/REVIEWED-SOURCE.json": {
-            "path": "evidence/cb/cbba90884e22741ef7480f1cf1b37213071433b71bf7a8e64f9e123aa156a856.json",
-            "sha256": "cbba90884e22741ef7480f1cf1b37213071433b71bf7a8e64f9e123aa156a856"
-        },
         "data/runs/2026-10-21-01/snapshots/345420242--dsh-commandcode-usage-inline/REVIEWED-SOURCE.json": {
             "path": "evidence/e3/e3ef02c5377d949b6215cfe8c77a01b6ab47485bd6d250b9cbe9dc1ea19c5fe0.json",
             "sha256": "e3ef02c5377d949b6215cfe8c77a01b6ab47485bd6d250b9cbe9dc1ea19c5fe0"
@@ -11600,10 +11532,6 @@
         "data/runs/2026-10-21-01/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json": {
             "path": "evidence/98/98e48d0b128d461e8260a5f55f20d9f55f03cb4fcae006b65c06de47bc003691.json",
             "sha256": "98e48d0b128d461e8260a5f55f20d9f55f03cb4fcae006b65c06de47bc003691"
-        },
-        "data/runs/2026-10-21-01/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json": {
-            "path": "evidence/25/254eb2b36ca49074965ce5b4913f530edf95f47faec1f0e5d96bb0de9b474358.json",
-            "sha256": "254eb2b36ca49074965ce5b4913f530edf95f47faec1f0e5d96bb0de9b474358"
         },
         "data/runs/2026-10-21-01/snapshots/2026heshao--dsh-armory/REVIEWED-SOURCE.json": {
             "path": "evidence/d1/d1df8c3d2903ea00441d35699d0a49379744cedf331570ec0105a2700c1be909.json",
@@ -11697,10 +11625,6 @@
             "path": "evidence/1b/1b451646e0fa89c82653ba3688a140b6a2cbebf0ee3b8b4e82273898ff861a53.json",
             "sha256": "1b451646e0fa89c82653ba3688a140b6a2cbebf0ee3b8b4e82273898ff861a53"
         },
-        "data/runs/2026-10-21-02/snapshots/598829314--oil-dsh-title/REVIEWED-SOURCE.json": {
-            "path": "evidence/0f/0fc1c4a51987b0b11417ed9a085a2370d534e995e55965a3ad288bc7c914d8e2.json",
-            "sha256": "0fc1c4a51987b0b11417ed9a085a2370d534e995e55965a3ad288bc7c914d8e2"
-        },
         "data/runs/2026-10-21-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json": {
             "path": "evidence/02/0256d56252152e343090ac3d78516617d84f4cc14415e7cbf1a27e08ab620c5f.json",
             "sha256": "0256d56252152e343090ac3d78516617d84f4cc14415e7cbf1a27e08ab620c5f"
@@ -11728,10 +11652,6 @@
         "data/runs/2026-10-21-02/snapshots/777-zen--dsh-capability-index/REVIEWED-SOURCE.json": {
             "path": "evidence/c6/c64f588847be0528d09b3b34c89a7c6331501d141dde4b544ac738ed641605c0.json",
             "sha256": "c64f588847be0528d09b3b34c89a7c6331501d141dde4b544ac738ed641605c0"
-        },
-        "data/runs/2026-10-21-02/snapshots/778672151--dsh-session-turn-eta/REVIEWED-SOURCE.json": {
-            "path": "evidence/9e/9ea817a5158f5249d552bedb6acc4e4c52c9ea5c984384e9d5711ef72a7726cb.json",
-            "sha256": "9ea817a5158f5249d552bedb6acc4e4c52c9ea5c984384e9d5711ef72a7726cb"
         },
         "data/runs/2026-10-21-02/snapshots/7dgroup-ai--dsh-skill-7d-git-commit/REVIEWED-SOURCE.json": {
             "path": "evidence/c2/c262bd53237f61b57419cfffcccf16e473dc35faca81d79886808d7419f52b56.json",
@@ -11841,10 +11761,6 @@
             "path": "evidence/a4/a4fcbf2b5daf666a78b925f854be9144e3f8f1f70a2404be724257c08ad8c2f2.json",
             "sha256": "a4fcbf2b5daf666a78b925f854be9144e3f8f1f70a2404be724257c08ad8c2f2"
         },
-        "data/runs/2026-10-21-04/snapshots/a8chann--dsh-pet-live2d--dsh-live2d-pet/REVIEWED-SOURCE.json": {
-            "path": "evidence/20/20cac969c01b1d82b06770a9aa69721cc3ef5ffcaab61bb008782efb01804ffd.json",
-            "sha256": "20cac969c01b1d82b06770a9aa69721cc3ef5ffcaab61bb008782efb01804ffd"
-        },
         "data/runs/2026-10-21-04/snapshots/aaalenwow--dsh-spring-admin-kit/REVIEWED-SOURCE.json": {
             "path": "evidence/d1/d140c891751cdda61e7cf600371548d8efab79bd73d653368bd95b81b9d56d30.json",
             "sha256": "d140c891751cdda61e7cf600371548d8efab79bd73d653368bd95b81b9d56d30"
@@ -11869,21 +11785,9 @@
             "path": "evidence/3a/3a684e23a717172a8e193d1e76d3a106cfeb32058b610a334516822caf9084b6.json",
             "sha256": "3a684e23a717172a8e193d1e76d3a106cfeb32058b610a334516822caf9084b6"
         },
-        "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-receipts/REVIEWED-SOURCE.json": {
-            "path": "evidence/f5/f55e3021cafe374fb1334b0a7a8c7f4170bff5ad0508adc214245f55f30c860d.json",
-            "sha256": "f55e3021cafe374fb1334b0a7a8c7f4170bff5ad0508adc214245f55f30c860d"
-        },
         "data/runs/2026-10-21-04/snapshots/9931666--dsh-plugin-roundtable/REVIEWED-SOURCE.json": {
             "path": "evidence/0a/0ad1d9581c5f91a981e79d0a7892831a6e7cdc647d8714768575e20a28793239.json",
             "sha256": "0ad1d9581c5f91a981e79d0a7892831a6e7cdc647d8714768575e20a28793239"
-        },
-        "data/runs/2026-10-21-04/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json": {
-            "path": "evidence/2e/2e1bb51aaf7a24d5b2746aaedd3b5d8ed9b1fc4ef6a6a3f84921e689f2752079.json",
-            "sha256": "2e1bb51aaf7a24d5b2746aaedd3b5d8ed9b1fc4ef6a6a3f84921e689f2752079"
-        },
-        "data/runs/2026-10-21-04/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json": {
-            "path": "evidence/ea/ea033991136f1b76ee574c933f2772b641bb72041eac948bb3a8861b8454a49d.json",
-            "sha256": "ea033991136f1b76ee574c933f2772b641bb72041eac948bb3a8861b8454a49d"
         },
         "data/runs/2026-10-21-04/snapshots/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json": {
             "path": "evidence/8c/8ced7c2ea6ebebef27d4d093ecf8b22689e49ba64662409544777a00513cc8ce.json",
@@ -11925,14 +11829,6 @@
             "path": "evidence/ed/ed358bd308dd72c4397842a05b79162ba85cb477b3d66c1235cf0ebb7f0c3102.json",
             "sha256": "ed358bd308dd72c4397842a05b79162ba85cb477b3d66c1235cf0ebb7f0c3102"
         },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock-images/REVIEWED-SOURCE.json": {
-            "path": "evidence/dd/dd25c8f20d18f5188e9d54bd1e89bda948f367a361fe9123826846a2a05d1078.json",
-            "sha256": "dd25c8f20d18f5188e9d54bd1e89bda948f367a361fe9123826846a2a05d1078"
-        },
-        "data/runs/2026-10-21-06/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json": {
-            "path": "evidence/d3/d3961c06a65637558efd2fcff99471315168e9092001ef5928eb0122c812d3e0.json",
-            "sha256": "d3961c06a65637558efd2fcff99471315168e9092001ef5928eb0122c812d3e0"
-        },
         "data/runs/2026-10-21-06/snapshots/aks1st--dock-spreadsheet/REVIEWED-SOURCE.json": {
             "path": "evidence/96/96194ce540654c58d4de4ff8d7fe53aaddf04474fffd6ab88f0f8d3e52ee3e74.json",
             "sha256": "96194ce540654c58d4de4ff8d7fe53aaddf04474fffd6ab88f0f8d3e52ee3e74"
@@ -11957,10 +11853,6 @@
             "path": "evidence/b2/b2b3ccde20ac9b9e573f7f92a54f9444e994a70db8da66c1e8fdbe658efa5385.json",
             "sha256": "b2b3ccde20ac9b9e573f7f92a54f9444e994a70db8da66c1e8fdbe658efa5385"
         },
-        "data/runs/2026-10-21-06/snapshots/akush99--dsh-balance-chip/REVIEWED-SOURCE.json": {
-            "path": "evidence/2c/2c91e5c664f74e5ee45012a99db73cff0e236be9d0cdb0fb695156cd501f04c6.json",
-            "sha256": "2c91e5c664f74e5ee45012a99db73cff0e236be9d0cdb0fb695156cd501f04c6"
-        },
         "data/runs/2026-10-21-06/snapshots/al-yichen--dsh-fullscreen-input/REVIEWED-SOURCE.json": {
             "path": "evidence/13/13b68301eab901bbb751daa2a3414e93b8553fad8fc8f9ab72e1dac13af1d2c4.json",
             "sha256": "13b68301eab901bbb751daa2a3414e93b8553fad8fc8f9ab72e1dac13af1d2c4"
@@ -11973,25 +11865,9 @@
             "path": "evidence/4d/4d4cc9a382f65507af5848ddb6bb4f367f3413e2b4eb282bc34d2ea840282b91.json",
             "sha256": "4d4cc9a382f65507af5848ddb6bb4f367f3413e2b4eb282bc34d2ea840282b91"
         },
-        "data/runs/2026-10-21-06/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json": {
-            "path": "evidence/33/33deec3704bda737acbb9ce6bf702c36b2577300bac662078a7af3f2d5b0267a.json",
-            "sha256": "33deec3704bda737acbb9ce6bf702c36b2577300bac662078a7af3f2d5b0267a"
-        },
-        "data/runs/2026-10-21-06/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json": {
-            "path": "evidence/95/95eb6ca190f70f15ecd11a95703560d84498bb89bc402f70539e3deb8cfe98ff.json",
-            "sha256": "95eb6ca190f70f15ecd11a95703560d84498bb89bc402f70539e3deb8cfe98ff"
-        },
-        "data/runs/2026-10-21-06/snapshots/aafff623--dsh-keyboard-manager/REVIEWED-SOURCE.json": {
-            "path": "evidence/ec/ec9fb37b8dead10a12d9538b893fa7b0551ed6a582a7e3451d49e6e37f61e4c3.json",
-            "sha256": "ec9fb37b8dead10a12d9538b893fa7b0551ed6a582a7e3451d49e6e37f61e4c3"
-        },
         "data/runs/2026-10-21-06/snapshots/aik358--dsh-ark9canvas/REVIEWED-SOURCE.json": {
             "path": "evidence/41/41032ef3006c68803f68a55df0d74ec11fce3922f9ce075b9efd49eb1d6c0d36.json",
             "sha256": "41032ef3006c68803f68a55df0d74ec11fce3922f9ce075b9efd49eb1d6c0d36"
-        },
-        "data/runs/2026-10-21-06/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json": {
-            "path": "evidence/62/62d8c80794d2b7455fef92c809da705736a0cec4f1f16448694ca1350da6e3aa.json",
-            "sha256": "62d8c80794d2b7455fef92c809da705736a0cec4f1f16448694ca1350da6e3aa"
         },
         "data/runs/2026-10-21-06/snapshots/abcdefgxw--dsh-msg-hub/REVIEWED-SOURCE.json": {
             "path": "evidence/c7/c72c14a710a5b25fe3b9448248b4ab51ea587f5c1644782c5036b87c7fefd329.json",
@@ -12001,17 +11877,9 @@
             "path": "evidence/f0/f0c2cc4de239ba06a07422d41deeda019911f1491471869d05fe5777b1a7911c.json",
             "sha256": "f0c2cc4de239ba06a07422d41deeda019911f1491471869d05fe5777b1a7911c"
         },
-        "data/runs/2026-10-21-06/snapshots/abelkeithsun--dsh-question-nav/REVIEWED-SOURCE.json": {
-            "path": "evidence/50/50a6895d42369ca80377d30cca1fb39c6344310479919184c32979fbd8c88722.json",
-            "sha256": "50a6895d42369ca80377d30cca1fb39c6344310479919184c32979fbd8c88722"
-        },
         "data/runs/2026-10-21-07/snapshots/1373700184--dsh-subagent/REVIEWED-SOURCE.json": {
             "path": "evidence/cd/cd413cbaa4753bc637d39bc4a8dbf9d40038eed6339e669ba2cace2f492d717b.json",
             "sha256": "cd413cbaa4753bc637d39bc4a8dbf9d40038eed6339e669ba2cace2f492d717b"
-        },
-        "data/runs/2026-10-21-07/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json": {
-            "path": "evidence/5d/5d8f6563305a0d3cc23791539338221eea2fad2ff6fe4890bba502696e677eb7.json",
-            "sha256": "5d8f6563305a0d3cc23791539338221eea2fad2ff6fe4890bba502696e677eb7"
         },
         "data/runs/2026-10-21-07/snapshots/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/REVIEWED-SOURCE.json": {
             "path": "evidence/eb/eb70186f686cc827399981bab7988336b3cbb8407dcb249fb2a8ed1464acb89f.json",
@@ -12033,17 +11901,9 @@
             "path": "evidence/6e/6ec8d1787082b259be2799d98a23862461e06c0b1779d6be02ff079c992e48b5.json",
             "sha256": "6ec8d1787082b259be2799d98a23862461e06c0b1779d6be02ff079c992e48b5"
         },
-        "data/runs/2026-10-21-07/snapshots/andersen216--dsh-whale-girl-live2d/REVIEWED-SOURCE.json": {
-            "path": "evidence/dd/dd4d30493d60f2180bfa387352880a14b5c35b7506f2970926c808aabd684d5c.json",
-            "sha256": "dd4d30493d60f2180bfa387352880a14b5c35b7506f2970926c808aabd684d5c"
-        },
         "data/runs/2026-10-21-07/snapshots/andiii208--gzhflow/REVIEWED-SOURCE.json": {
             "path": "evidence/06/06741407a8dd8e9f81fe00f053363e12d645adf3396da3042f4317367934f6ae.json",
             "sha256": "06741407a8dd8e9f81fe00f053363e12d645adf3396da3042f4317367934f6ae"
-        },
-        "data/runs/2026-10-21-07/snapshots/andor-z--dsh-turn-outline/REVIEWED-SOURCE.json": {
-            "path": "evidence/8b/8b00c36cc087fed38007785e6a07eba1cfa4b82830adb6641cf0b15089454058.json",
-            "sha256": "8b00c36cc087fed38007785e6a07eba1cfa4b82830adb6641cf0b15089454058"
         },
         "data/runs/2026-10-21-07/snapshots/airpineapplea--feiyu-memory/REVIEWED-SOURCE.json": {
             "path": "evidence/87/8706e08adaa59a8582595261accb6f22558dcc548defadeeeee44075d1d8d516.json",
@@ -12061,14 +11921,6 @@
             "path": "evidence/05/05725e58ba42aa87a1284e71cce1693ddcc3dcb58a1fe593bb2f2de649a5b440.json",
             "sha256": "05725e58ba42aa87a1284e71cce1693ddcc3dcb58a1fe593bb2f2de649a5b440"
         },
-        "data/runs/2026-10-21-07/snapshots/aliuyanfeng--dsh-soul/REVIEWED-SOURCE.json": {
-            "path": "evidence/a8/a8e6de91b09b6b36952a84d86bddb55e1e6e40bf2891c94d056cd47da11a1af8.json",
-            "sha256": "a8e6de91b09b6b36952a84d86bddb55e1e6e40bf2891c94d056cd47da11a1af8"
-        },
-        "data/runs/2026-10-21-07/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json": {
-            "path": "evidence/8c/8c3d3386811daf16ed5b19c33d5011bc2ac20533896d7eff0093261e1151172e.json",
-            "sha256": "8c3d3386811daf16ed5b19c33d5011bc2ac20533896d7eff0093261e1151172e"
-        },
         "data/runs/2026-10-21-07/snapshots/andrew111888--dsh-plugin-balance/REVIEWED-SOURCE.json": {
             "path": "evidence/1f/1f6400af5ab68207076c2a7330ff22d8e02587427be41c60d2b75d2a08e90204.json",
             "sha256": "1f6400af5ab68207076c2a7330ff22d8e02587427be41c60d2b75d2a08e90204"
@@ -12076,10 +11928,6 @@
         "data/runs/2026-10-21-07/snapshots/andyyang12345--dsh-dictation-hotkey/REVIEWED-SOURCE.json": {
             "path": "evidence/0a/0ae376f7e31883ea2b76a4abe12f5cd5678cb8fe85c7b1cd1098d518d708352e.json",
             "sha256": "0ae376f7e31883ea2b76a4abe12f5cd5678cb8fe85c7b1cd1098d518d708352e"
-        },
-        "data/runs/2026-10-21-07/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json": {
-            "path": "evidence/22/22d07cc8dc69eed671e7707e786d08b435d9c26969bb88951fca3c200984ea3d.json",
-            "sha256": "22d07cc8dc69eed671e7707e786d08b435d9c26969bb88951fca3c200984ea3d"
         },
         "data/runs/2026-10-21-07/snapshots/alnita-m--dsh-almost_full_access/REVIEWED-SOURCE.json": {
             "path": "evidence/b4/b4d6d900d20cf3d2a44b418e9ffc651e9b7721f9551588ce54b21d4aeeb9345a.json",
@@ -12101,17 +11949,9 @@
             "path": "evidence/fe/fe80df8fd68928fdb7414b86f8b55e083e490147d8ef0fc9e39d95aa4f7994bd.json",
             "sha256": "fe80df8fd68928fdb7414b86f8b55e083e490147d8ef0fc9e39d95aa4f7994bd"
         },
-        "data/runs/2026-10-21-07/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json": {
-            "path": "evidence/8e/8ec2cee2bc44a7c0bb0b012a945b96c9d3304af05b7c6c649fef16f89d4416fc.json",
-            "sha256": "8ec2cee2bc44a7c0bb0b012a945b96c9d3304af05b7c6c649fef16f89d4416fc"
-        },
         "data/runs/2026-10-21-07/snapshots/all3ncn--dsh-better-sidebar-n23/REVIEWED-SOURCE.json": {
             "path": "evidence/a3/a36bea4997d639f1201ad1db955c9ffe0ba5d7726b7a6976f5f8abcd6c358871.json",
             "sha256": "a36bea4997d639f1201ad1db955c9ffe0ba5d7726b7a6976f5f8abcd6c358871"
-        },
-        "data/runs/2026-10-21-07/snapshots/alycestocking--hover-glossary/REVIEWED-SOURCE.json": {
-            "path": "evidence/aa/aa0f1bdee5af7dd7df64b2c6e0138652fa737214053e253ff9f9df1b6d2772ae.json",
-            "sha256": "aa0f1bdee5af7dd7df64b2c6e0138652fa737214053e253ff9f9df1b6d2772ae"
         },
         "data/runs/2026-10-21-07/snapshots/amethystluna--dsh-model-everything/REVIEWED-SOURCE.json": {
             "path": "evidence/ba/ba47b1c572e2cca39c05c3ce937e5965a7b91214d2b7a1a1ba5b219ba42d2ea2.json",
@@ -12136,6 +11976,14 @@
         "data/runs/2026-10-22-02/snapshots/2672243194--dsh-read-url/REVIEWED-SOURCE.json": {
             "path": "evidence/f6/f6245e0125b9017cbc0ee63c3824288c4848c8cb294515a36a425d2acb143bd3.json",
             "sha256": "f6245e0125b9017cbc0ee63c3824288c4848c8cb294515a36a425d2acb143bd3"
+        },
+        "data/runs/2026-10-22-02/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json": {
+            "path": "evidence/a8/a86e27e23a0ee1575fe84857c208c4400f7a52f6d7723e0d5b38ccea5d369eb3.json",
+            "sha256": "a86e27e23a0ee1575fe84857c208c4400f7a52f6d7723e0d5b38ccea5d369eb3"
+        },
+        "data/runs/2026-10-22-02/snapshots/3361805598-gif--dsh-usage-analytics/REVIEWED-SOURCE.json": {
+            "path": "evidence/ba/baa7035dee564094fd2e1721751ab94402dde82a2d3ea66d90ebbfb0cf7d6c04.json",
+            "sha256": "baa7035dee564094fd2e1721751ab94402dde82a2d3ea66d90ebbfb0cf7d6c04"
         },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--harness-github/REVIEWED-SOURCE.json": {
             "path": "evidence/ba/bac34bdf685bf3e204f82c8009e0b7fcc2e8aeddecb913caff7ff95190ddc5f7.json",
@@ -12181,6 +12029,10 @@
             "path": "evidence/54/54974e66605bc9d66391c6354f3b58bb8481cc3e5532b66b92769bc9008aa626.json",
             "sha256": "54974e66605bc9d66391c6354f3b58bb8481cc3e5532b66b92769bc9008aa626"
         },
+        "data/runs/2026-10-22-02/snapshots/akush99--dsh-balance-chip/REVIEWED-SOURCE.json": {
+            "path": "evidence/ad/add7d1583cf772858df0bce2512a6fe2ddd97b49dc11114b1ea0bfb515949467.json",
+            "sha256": "add7d1583cf772858df0bce2512a6fe2ddd97b49dc11114b1ea0bfb515949467"
+        },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json": {
             "path": "evidence/62/62a19528c9e46b3efc36749510117dc874e32e0b012b64378a3ef15af10e1017.json",
             "sha256": "62a19528c9e46b3efc36749510117dc874e32e0b012b64378a3ef15af10e1017"
@@ -12196,6 +12048,10 @@
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-swift/REVIEWED-SOURCE.json": {
             "path": "evidence/9d/9dbabc790768e7ea2787bd99a648813a543030ce38bfd482d2d96ad25afc8961.json",
             "sha256": "9dbabc790768e7ea2787bd99a648813a543030ce38bfd482d2d96ad25afc8961"
+        },
+        "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-receipts/REVIEWED-SOURCE.json": {
+            "path": "evidence/47/47729935a9b7140c168fb6dc6663f38cf5c1c9b5234ca232fcd876c3a734be84.json",
+            "sha256": "47729935a9b7140c168fb6dc6663f38cf5c1c9b5234ca232fcd876c3a734be84"
         },
         "data/runs/2026-10-22-02/snapshots/764475881--dsh-chat-width/REVIEWED-SOURCE.json": {
             "path": "evidence/17/1724257d5c69af672a7ea3f1e65e80a9dc2e792794e7c0c0e1317f746ad6bfec.json",
@@ -12285,6 +12141,10 @@
             "path": "evidence/e0/e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237.json",
             "sha256": "e0e3b169b5116797266be1e76d4b355113f8bdf59adc3ab212274cfdceec9237"
         },
+        "data/runs/2026-10-22-02/snapshots/aafff623--dsh-keyboard-manager/REVIEWED-SOURCE.json": {
+            "path": "evidence/19/192c0d3787111838e8a9e0e465e683427af483a54193bfb0e33bb76f576af67d.json",
+            "sha256": "192c0d3787111838e8a9e0e465e683427af483a54193bfb0e33bb76f576af67d"
+        },
         "data/runs/2026-10-22-02/snapshots/240xu--verdict-engine--packages-dsh-tech-lead/REVIEWED-SOURCE.json": {
             "path": "evidence/d6/d690bdf22d32075395a0eb558be6576306c79fe1314d924bf0a434537dba98a6.json",
             "sha256": "d690bdf22d32075395a0eb558be6576306c79fe1314d924bf0a434537dba98a6"
@@ -12305,6 +12165,10 @@
             "path": "evidence/9f/9f7e8031041b7be6e34bbc87d231cbef5d9773eca4a4c6d38a40feb327888021.json",
             "sha256": "9f7e8031041b7be6e34bbc87d231cbef5d9773eca4a4c6d38a40feb327888021"
         },
+        "data/runs/2026-10-22-02/snapshots/9livewolf--dsh-think-bounce-pet/REVIEWED-SOURCE.json": {
+            "path": "evidence/3b/3b9e9f6ea33a20b4772b6de4741d484b9dcb356029cca0206e36868a1d97e54f.json",
+            "sha256": "3b9e9f6ea33a20b4772b6de4741d484b9dcb356029cca0206e36868a1d97e54f"
+        },
         "data/runs/2026-10-22-02/snapshots/398894496-arch--krouter/REVIEWED-SOURCE.json": {
             "path": "evidence/e1/e17c38e9e372d0fb44f5c2bcf5b0dcdacff480a15bb62c889e3484778e6aca31.json",
             "sha256": "e17c38e9e372d0fb44f5c2bcf5b0dcdacff480a15bb62c889e3484778e6aca31"
@@ -12317,29 +12181,61 @@
             "path": "evidence/65/657d258ba1abfd63d6b88a3eb00b313108372f45cb3d1992adf274ad87695138.json",
             "sha256": "657d258ba1abfd63d6b88a3eb00b313108372f45cb3d1992adf274ad87695138"
         },
+        "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-cortex/REVIEWED-SOURCE.json": {
+            "path": "evidence/69/69db9225913bd218484dd084c684f33ea8e7ca3ddc3f508113a968833efb520e.json",
+            "sha256": "69db9225913bd218484dd084c684f33ea8e7ca3ddc3f508113a968833efb520e"
+        },
         "data/runs/2026-10-22-02/snapshots/akimiya-z--codex-guard--dsh/REVIEWED-SOURCE.json": {
             "path": "evidence/fa/fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182.json",
             "sha256": "fa09ee317afc2b21566bbe4868ab1a3ca9e34f0eb4a4de5ff4101a68475ab182"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-mac-companion/REVIEWED-SOURCE.json": {
+            "path": "evidence/81/81d5b6c99479170ee7de8d4b38e5d26c533b0d8efc8b61a48a0903566cf4b7d2.json",
+            "sha256": "81d5b6c99479170ee7de8d4b38e5d26c533b0d8efc8b61a48a0903566cf4b7d2"
         },
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-dep-vuln-scan/REVIEWED-SOURCE.json": {
             "path": "evidence/bc/bc2f403bd8796c3feaa81624629d62e911d1990a6dd761d8bd764ed340497103.json",
             "sha256": "bc2f403bd8796c3feaa81624629d62e911d1990a6dd761d8bd764ed340497103"
         },
+        "data/runs/2026-10-22-02/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json": {
+            "path": "evidence/4b/4b0217011fd94bb7935f7667d45a531fc8c1b0a6cadbc656cfd42c4bcf87f3cb.json",
+            "sha256": "4b0217011fd94bb7935f7667d45a531fc8c1b0a6cadbc656cfd42c4bcf87f3cb"
+        },
         "data/runs/2026-10-22-02/snapshots/452926826--dsh-ssh-logs/REVIEWED-SOURCE.json": {
             "path": "evidence/c4/c403db82ffca065f4d2640d8f1c5f114f07682ad0fc406b7b96088ac0f583845.json",
             "sha256": "c403db82ffca065f4d2640d8f1c5f114f07682ad0fc406b7b96088ac0f583845"
+        },
+        "data/runs/2026-10-22-02/snapshots/0xrabit--dsh-crypto-portfolio/REVIEWED-SOURCE.json": {
+            "path": "evidence/f3/f3e8f6e782231d07013c34446033190aedf0d569f93d9a3d831fb1c51868d294.json",
+            "sha256": "f3e8f6e782231d07013c34446033190aedf0d569f93d9a3d831fb1c51868d294"
+        },
+        "data/runs/2026-10-22-02/snapshots/a8chann--dsh-pet-live2d--dsh-live2d-pet/REVIEWED-SOURCE.json": {
+            "path": "evidence/bc/bcffe48d21f0f5bd091982df5417549370d0dfef0175a7b62cad8a7c5e8f8c81.json",
+            "sha256": "bcffe48d21f0f5bd091982df5417549370d0dfef0175a7b62cad8a7c5e8f8c81"
         },
         "data/runs/2026-10-22-02/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json": {
             "path": "evidence/92/92f0e430f4bf73e6b702b8e39ce7342ec307f4bae1218bf5ab825bdfacc6d87f.json",
             "sha256": "92f0e430f4bf73e6b702b8e39ce7342ec307f4bae1218bf5ab825bdfacc6d87f"
         },
+        "data/runs/2026-10-22-02/snapshots/andersen216--dsh-whale-girl-live2d/REVIEWED-SOURCE.json": {
+            "path": "evidence/f0/f0d64d5b86e69aec05754ded2c5958254d6c1fb5047bb0f9507edcb0dee9afb3.json",
+            "sha256": "f0d64d5b86e69aec05754ded2c5958254d6c1fb5047bb0f9507edcb0dee9afb3"
+        },
         "data/runs/2026-10-22-02/snapshots/aikenfra--dsh-alive/REVIEWED-SOURCE.json": {
             "path": "evidence/0d/0d524d978b7460efb5ae7efe6186242e3e688e23792b645698bad70f45e24502.json",
             "sha256": "0d524d978b7460efb5ae7efe6186242e3e688e23792b645698bad70f45e24502"
         },
+        "data/runs/2026-10-22-02/snapshots/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json": {
+            "path": "evidence/1c/1cf52db32ea0740272c984684ebff0f5e31a4c2ced4f9106ee61775a419cad83.json",
+            "sha256": "1cf52db32ea0740272c984684ebff0f5e31a4c2ced4f9106ee61775a419cad83"
+        },
         "data/runs/2026-10-22-02/snapshots/aks1st--dsh-cyber-particle/REVIEWED-SOURCE.json": {
             "path": "evidence/1c/1c2c8ec1e12de3d749eebf01744ae86c6ec8eb6bea118e3ecb55b0690d9de903.json",
             "sha256": "1c2c8ec1e12de3d749eebf01744ae86c6ec8eb6bea118e3ecb55b0690d9de903"
+        },
+        "data/runs/2026-10-22-02/snapshots/angel2518975237--deepseek-harness-hello-kitty-suite/REVIEWED-SOURCE.json": {
+            "path": "evidence/c4/c41db7e34ad6727f7e129a6fdc444cff1d2329fe7c72b1db36ebaa639ccecee4.json",
+            "sha256": "c41db7e34ad6727f7e129a6fdc444cff1d2329fe7c72b1db36ebaa639ccecee4"
         },
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-finance-data/REVIEWED-SOURCE.json": {
             "path": "evidence/65/650208903a60df507a8747363e13b7eab7ecb22d16be01d8a6bf049e16ce0c78.json",
@@ -12361,9 +12257,21 @@
             "path": "evidence/f7/f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da.json",
             "sha256": "f762dd59688db262ec2ae22db2aad3a8884c9bb49127d60ddc21db697a3a27da"
         },
+        "data/runs/2026-10-22-02/snapshots/9ashwin--dsh-session-rename/REVIEWED-SOURCE.json": {
+            "path": "evidence/12/12f42ca0e6fa7b83ecb397df78d4a7cfc1b0b163df996b189b3d343f0d29e003.json",
+            "sha256": "12f42ca0e6fa7b83ecb397df78d4a7cfc1b0b163df996b189b3d343f0d29e003"
+        },
         "data/runs/2026-10-22-02/snapshots/0nt-one--dsh-neo-skin/REVIEWED-SOURCE.json": {
             "path": "evidence/bd/bd0b5abcf5f2ad537595b7c962049f5f2e85234f9bb63ff4d3b82ca30a19afd9.json",
             "sha256": "bd0b5abcf5f2ad537595b7c962049f5f2e85234f9bb63ff4d3b82ca30a19afd9"
+        },
+        "data/runs/2026-10-22-02/snapshots/0qwq0--dsh-discord-richpresence/REVIEWED-SOURCE.json": {
+            "path": "evidence/2b/2b2e44d7843e973676f14145b0410ee39b4bf780bdec12c2b89dadcf070dd58c.json",
+            "sha256": "2b2e44d7843e973676f14145b0410ee39b4bf780bdec12c2b89dadcf070dd58c"
+        },
+        "data/runs/2026-10-22-02/snapshots/aliww2468--dsh-client-ui-aqua-patched/REVIEWED-SOURCE.json": {
+            "path": "evidence/b8/b89ee45f4164db96547f0dbd09b24431c3e4cf004715eb62ef87783eaa199e29.json",
+            "sha256": "b89ee45f4164db96547f0dbd09b24431c3e4cf004715eb62ef87783eaa199e29"
         },
         "data/runs/2026-10-22-02/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json": {
             "path": "evidence/42/424ca5daa4d814b69e64c28553e8cdc3086a69df237e17ca84952940a50a5acf.json",
@@ -12377,13 +12285,25 @@
             "path": "evidence/7f/7f8b97b42a95e1d8ca358892eb79297838b1b23f9804542f8114e7bc43d57e28.json",
             "sha256": "7f8b97b42a95e1d8ca358892eb79297838b1b23f9804542f8114e7bc43d57e28"
         },
+        "data/runs/2026-10-22-02/snapshots/778672151--dsh-session-turn-eta/REVIEWED-SOURCE.json": {
+            "path": "evidence/2d/2d57c7efce4fdb5cd01bef9b2f3f2667361fe052ac855a9e2c84620bc8a01f08.json",
+            "sha256": "2d57c7efce4fdb5cd01bef9b2f3f2667361fe052ac855a9e2c84620bc8a01f08"
+        },
         "data/runs/2026-10-22-02/snapshots/11111353535--dsh-folderwatch/REVIEWED-SOURCE.json": {
             "path": "evidence/92/924b5652df3a03070c45324366997fd8a0e6c82acb6b4f108cd643924747af00.json",
             "sha256": "924b5652df3a03070c45324366997fd8a0e6c82acb6b4f108cd643924747af00"
         },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-notify/REVIEWED-SOURCE.json": {
+            "path": "evidence/29/29f45c389650600ca33759c581cf399b627b1c1ebb28edc008ef7893938ad10a.json",
+            "sha256": "29f45c389650600ca33759c581cf399b627b1c1ebb28edc008ef7893938ad10a"
+        },
         "data/runs/2026-10-22-02/snapshots/030611--dsh-verification-receipt/REVIEWED-SOURCE.json": {
             "path": "evidence/b7/b76f2af387b67349e470c45bdf9f16abcbd1ef01a7a412536bb2e003d5b8a599.json",
             "sha256": "b76f2af387b67349e470c45bdf9f16abcbd1ef01a7a412536bb2e003d5b8a599"
+        },
+        "data/runs/2026-10-22-02/snapshots/andor-z--dsh-turn-outline/REVIEWED-SOURCE.json": {
+            "path": "evidence/7f/7fcad0a492d8c8010fa514fdb3113a021b578b717352e7c4dd61b7b0253d14ef.json",
+            "sha256": "7fcad0a492d8c8010fa514fdb3113a021b578b717352e7c4dd61b7b0253d14ef"
         },
         "data/runs/2026-10-22-02/snapshots/1014029855--dsh-codevault/REVIEWED-SOURCE.json": {
             "path": "evidence/69/69c2670ad935b6ec79b69a540c457e8dc40a8161734e1086f21dccc0fc3f0a4c.json",
@@ -12400,6 +12320,14 @@
         "data/runs/2026-10-22-02/snapshots/121212165--dsh-plugin-task-forge/REVIEWED-SOURCE.json": {
             "path": "evidence/76/76e3019c7dec373fa143799275edee121743172eb2b52d7d7f61271531aa98a7.json",
             "sha256": "76e3019c7dec373fa143799275edee121743172eb2b52d7d7f61271531aa98a7"
+        },
+        "data/runs/2026-10-22-02/snapshots/1985899182--dsh-harness-chat-control/REVIEWED-SOURCE.json": {
+            "path": "evidence/53/539f9c53788558af2514a175b19bb06f2a53b57fc36e92f7a3efafe3919ca84f.json",
+            "sha256": "539f9c53788558af2514a175b19bb06f2a53b57fc36e92f7a3efafe3919ca84f"
+        },
+        "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-daily-log/REVIEWED-SOURCE.json": {
+            "path": "evidence/17/17296d6b1cba119f57fc11b8b4ee3715aa92ac24aef3a337b87140b2b0264e55.json",
+            "sha256": "17296d6b1cba119f57fc11b8b4ee3715aa92ac24aef3a337b87140b2b0264e55"
         },
         "data/runs/2026-10-22-02/snapshots/1420079678-ctrl--agent-body--workspace-plugins-dsh-zero-residence/REVIEWED-SOURCE.json": {
             "path": "evidence/fe/fede494a091650e09ec83db1d6c24657db74f01f0531cde6d55c7cfeea4d22b5.json",
@@ -12444,6 +12372,10 @@
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-plugin-verify/REVIEWED-SOURCE.json": {
             "path": "evidence/74/7403dc321b42bc5a5b2bfe679815a43b94714f3ac7c8c491bef97ef38ef270ce.json",
             "sha256": "7403dc321b42bc5a5b2bfe679815a43b94714f3ac7c8c491bef97ef38ef270ce"
+        },
+        "data/runs/2026-10-22-02/snapshots/0imzero--dsh-workspace-menu/REVIEWED-SOURCE.json": {
+            "path": "evidence/c1/c1aade3eee8536578da6d2cd5ab56f1488a9fdf9bccff2e0bdd8ca785aebebb9.json",
+            "sha256": "c1aade3eee8536578da6d2cd5ab56f1488a9fdf9bccff2e0bdd8ca785aebebb9"
         },
         "data/runs/2026-10-22-02/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json": {
             "path": "evidence/8c/8c3fbc9cd965c228c115019c873cbc6f80ea9cfcb46b1e5a9d07bea543432c67.json",
@@ -12501,6 +12433,10 @@
             "path": "evidence/3a/3a72b757921be97913a1669e9ff127964aa2042ed3eae494132d92a79b885b3e.json",
             "sha256": "3a72b757921be97913a1669e9ff127964aa2042ed3eae494132d92a79b885b3e"
         },
+        "data/runs/2026-10-22-02/snapshots/452926826--dsh-at-skill/REVIEWED-SOURCE.json": {
+            "path": "evidence/7f/7fa7f4daacee8a2da8d0faa6bce0ec768985af5920cb4dfeaca72668d9fbf7f6.json",
+            "sha256": "7fa7f4daacee8a2da8d0faa6bce0ec768985af5920cb4dfeaca72668d9fbf7f6"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-cred/REVIEWED-SOURCE.json": {
             "path": "evidence/ba/ba9f4edd4ad68974ee7eca3c0ee45d163284825b03dcb3a1e2fe2c2fac3bb102.json",
             "sha256": "ba9f4edd4ad68974ee7eca3c0ee45d163284825b03dcb3a1e2fe2c2fac3bb102"
@@ -12513,6 +12449,10 @@
             "path": "evidence/1f/1f5ffbf423e07de56383028bbe078f4564ad7a1725ad5c8dd3b67338d4870bd5.json",
             "sha256": "1f5ffbf423e07de56383028bbe078f4564ad7a1725ad5c8dd3b67338d4870bd5"
         },
+        "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01-adjudicated/revised/snapshots/aks1st--dock-markdown/REVIEWED-SOURCE.json": {
+            "path": "evidence/a3/a3384db8466c2e22ccd77f6eb5b016cfd655e05e953b5303ddb57439fd5f052c.json",
+            "sha256": "a3384db8466c2e22ccd77f6eb5b016cfd655e05e953b5303ddb57439fd5f052c"
+        },
         "data/runs/2026-10-22-02/extra-worker-5-refill-01/revision-batch-01/revised/snapshots/988hj7tczd-oss--dsh-modernize-code/REVIEWED-SOURCE.json": {
             "path": "evidence/71/71cb1b8191891d8109b0dbb9f487dd0e7d45f0f7de3566d555949dedfaa63c96.json",
             "sha256": "71cb1b8191891d8109b0dbb9f487dd0e7d45f0f7de3566d555949dedfaa63c96"
@@ -12520,6 +12460,14 @@
         "data/runs/2026-10-22-02/snapshots/117bs--dsh-perlica-ding/REVIEWED-SOURCE.json": {
             "path": "evidence/fb/fb91c229b3811fce677c9534c46a39baedf27b5210b84f42041691570b609990.json",
             "sha256": "fb91c229b3811fce677c9534c46a39baedf27b5210b84f42041691570b609990"
+        },
+        "data/runs/2026-10-22-02/snapshots/aks1st--dock-images/REVIEWED-SOURCE.json": {
+            "path": "evidence/ae/ae0cb6638a374e999f75367377f5980c76617f8f2bd2bcf0e466efd7ffc06149.json",
+            "sha256": "ae0cb6638a374e999f75367377f5980c76617f8f2bd2bcf0e466efd7ffc06149"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-clipboard/REVIEWED-SOURCE.json": {
+            "path": "evidence/85/858455413746333fce5dba00334e5dee824b7e6d6b819d115b8bb0f41a232072.json",
+            "sha256": "858455413746333fce5dba00334e5dee824b7e6d6b819d115b8bb0f41a232072"
         },
         "data/runs/2026-10-22-02/snapshots/18477514055--dsh-ledger-memory/REVIEWED-SOURCE.json": {
             "path": "evidence/48/4851e88ad4005678b16bebac203eeae1d7aab9f5fe90c436bca760dcfec1b1e3.json",
@@ -12532,6 +12480,10 @@
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-need-finder/REVIEWED-SOURCE.json": {
             "path": "evidence/0e/0e95547a4837033ca35d850982946a9ce26f1136d4481c041a65681b2ba82758.json",
             "sha256": "0e95547a4837033ca35d850982946a9ce26f1136d4481c041a65681b2ba82758"
+        },
+        "data/runs/2026-10-22-02/snapshots/123dbl--dsh-side-session/REVIEWED-SOURCE.json": {
+            "path": "evidence/01/01ce6c6f21a44c6bab304904ac4678dc7725cb3f07edaba3f29444d43ee35188.json",
+            "sha256": "01ce6c6f21a44c6bab304904ac4678dc7725cb3f07edaba3f29444d43ee35188"
         },
         "data/runs/2026-10-22-02/snapshots/1624318455--dsh-plugin-tavily/REVIEWED-SOURCE.json": {
             "path": "evidence/b3/b3f53ca662e9a0b526514789e245ec5f506140c5750bdff44d52f1a77a4875ae.json",
@@ -12581,6 +12533,10 @@
             "path": "evidence/b7/b732473e1e312fa8d9d1175783dea6e0ec970569486d3b15df624bb9899f6aeb.json",
             "sha256": "b732473e1e312fa8d9d1175783dea6e0ec970569486d3b15df624bb9899f6aeb"
         },
+        "data/runs/2026-10-22-02/snapshots/598829314--oil-dsh-title/REVIEWED-SOURCE.json": {
+            "path": "evidence/16/1689eff21407b357b94d85ffd6ab0faa43b3f52be606f693d8fc3c08f0ea4e1c.json",
+            "sha256": "1689eff21407b357b94d85ffd6ab0faa43b3f52be606f693d8fc3c08f0ea4e1c"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-tmux/REVIEWED-SOURCE.json": {
             "path": "evidence/4b/4b0b3e7281fb0d9e6d4556831b8dd8ffe7d7ebc73612f6824f91f4d7e7fcafb7.json",
             "sha256": "4b0b3e7281fb0d9e6d4556831b8dd8ffe7d7ebc73612f6824f91f4d7e7fcafb7"
@@ -12596,6 +12552,10 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-net/REVIEWED-SOURCE.json": {
             "path": "evidence/cc/cc6d86da40fb47d679c349ebcf087ef68d428c9101101ab42c90dbc38f9dce70.json",
             "sha256": "cc6d86da40fb47d679c349ebcf087ef68d428c9101101ab42c90dbc38f9dce70"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-open/REVIEWED-SOURCE.json": {
+            "path": "evidence/e5/e5974a3f36891384dfce072b7196369c501cab8eef103e8095f373449459bf73.json",
+            "sha256": "e5974a3f36891384dfce072b7196369c501cab8eef103e8095f373449459bf73"
         },
         "data/runs/2026-10-22-02/snapshots/1na-ko--dsh-hdc-bridge/REVIEWED-SOURCE.json": {
             "path": "evidence/1a/1a537a08921b5fc25aa7af14be67da914746e1928d65df1a20f580b30a7fb7c9.json",
@@ -12621,6 +12581,10 @@
             "path": "evidence/0c/0c24bf4ec9a60812b79fbdb3e08cb769044cd96581d565331289e65de678083b.json",
             "sha256": "0c24bf4ec9a60812b79fbdb3e08cb769044cd96581d565331289e65de678083b"
         },
+        "data/runs/2026-10-22-02/snapshots/abelkeithsun--dsh-question-nav/REVIEWED-SOURCE.json": {
+            "path": "evidence/0d/0d61f94699f7066f4bfbf6e3751e715e6422984eda19259e8148672bbfa8aef4.json",
+            "sha256": "0d61f94699f7066f4bfbf6e3751e715e6422984eda19259e8148672bbfa8aef4"
+        },
         "data/runs/2026-10-22-02/snapshots/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/REVIEWED-SOURCE.json": {
             "path": "evidence/d8/d80e5522fecfec8ef1a4151d84c5f32f82cb88714a5ecd15e5dbcb55bb081953.json",
             "sha256": "d80e5522fecfec8ef1a4151d84c5f32f82cb88714a5ecd15e5dbcb55bb081953"
@@ -12628,6 +12592,10 @@
         "data/runs/2026-10-22-02/snapshots/ahyi8--dsh-agent-recycle-guard/REVIEWED-SOURCE.json": {
             "path": "evidence/a3/a3e1f3bdb6ae8a4fce2ecc47d127434df9cfe4afed98be3c2ea863fc84a27b6f.json",
             "sha256": "a3e1f3bdb6ae8a4fce2ecc47d127434df9cfe4afed98be3c2ea863fc84a27b6f"
+        },
+        "data/runs/2026-10-22-02/snapshots/aliuyanfeng--dsh-soul/REVIEWED-SOURCE.json": {
+            "path": "evidence/3d/3d8ec926b9e278e7af3bb36745f2abce835a4dd71bbc2d784b686c99b1e49ee3.json",
+            "sha256": "3d8ec926b9e278e7af3bb36745f2abce835a4dd71bbc2d784b686c99b1e49ee3"
         },
         "data/runs/2026-10-22-02/snapshots/angeloszou--dsh-github-router/REVIEWED-SOURCE.json": {
             "path": "evidence/12/1248ae3333c5977686888c94fa865e6725e155a08209737a0efb98d04e061818.json",
@@ -12653,6 +12621,14 @@
             "path": "evidence/05/05aa66eeecaad29099c20c13447b0b7d6dfc7c8264296b0ca4901613da0f4bfc.json",
             "sha256": "05aa66eeecaad29099c20c13447b0b7d6dfc7c8264296b0ca4901613da0f4bfc"
         },
+        "data/runs/2026-10-22-02/snapshots/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json": {
+            "path": "evidence/d5/d505ba4e9e4d659832e15b216708cf3221f9c4f0af21194489059af8fcd13c22.json",
+            "sha256": "d505ba4e9e4d659832e15b216708cf3221f9c4f0af21194489059af8fcd13c22"
+        },
+        "data/runs/2026-10-22-02/snapshots/1032740078--dsh-web-url-view/REVIEWED-SOURCE.json": {
+            "path": "evidence/04/044115cf6b27fb3345f8974dc3d0178999fafe3e7d2f3d4a4f5e3290ec093754.json",
+            "sha256": "044115cf6b27fb3345f8974dc3d0178999fafe3e7d2f3d4a4f5e3290ec093754"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-distro/REVIEWED-SOURCE.json": {
             "path": "evidence/9c/9caf4b24de161e37f64b04d27e6fa09ffe65e0417dbb7f01e2feb6ee560d1ba8.json",
             "sha256": "9caf4b24de161e37f64b04d27e6fa09ffe65e0417dbb7f01e2feb6ee560d1ba8"
@@ -12665,6 +12641,10 @@
             "path": "evidence/e8/e86de9c6f3cd88c838ec103ffc011a9220df3d8f5231efad8b4f6165b1560115.json",
             "sha256": "e86de9c6f3cd88c838ec103ffc011a9220df3d8f5231efad8b4f6165b1560115"
         },
+        "data/runs/2026-10-22-02/snapshots/aafff623--dsh-callout/REVIEWED-SOURCE.json": {
+            "path": "evidence/3b/3b5327567575b8376149fa521035f117094a9b66e197163b8a4a49f38741d5cd.json",
+            "sha256": "3b5327567575b8376149fa521035f117094a9b66e197163b8a4a49f38741d5cd"
+        },
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-ssh-agent/REVIEWED-SOURCE.json": {
             "path": "evidence/a7/a749f6905eb3c68ef361dca6bf302a2cb5152dc73305d79fadd286e8d9629dcd.json",
             "sha256": "a749f6905eb3c68ef361dca6bf302a2cb5152dc73305d79fadd286e8d9629dcd"
@@ -12672,6 +12652,10 @@
         "data/runs/2026-10-22-02/snapshots/abnerai--dsh-monitor/REVIEWED-SOURCE.json": {
             "path": "evidence/6e/6e331b778aad86f4e322786fad5924f5349b26422b0de756d85616eb1a17876b.json",
             "sha256": "6e331b778aad86f4e322786fad5924f5349b26422b0de756d85616eb1a17876b"
+        },
+        "data/runs/2026-10-22-02/snapshots/alycestocking--hover-glossary/REVIEWED-SOURCE.json": {
+            "path": "evidence/10/1097c0e43dab3b5a72e9f51379371ae73e86c2650daf3c4450e194f7a94dd720.json",
+            "sha256": "1097c0e43dab3b5a72e9f51379371ae73e86c2650daf3c4450e194f7a94dd720"
         },
         "data/runs/2026-10-22-02/snapshots/13071301808--dsh-composer-expand/REVIEWED-SOURCE.json": {
             "path": "evidence/b0/b0af979cdd8251954811142fab9359574722f71913e347bc1442a4f9452327dc.json",
@@ -12713,6 +12697,10 @@
             "path": "evidence/25/25b337e9450743374a959e7e62dcc04f0cc170f336132cfb36947deb3bb78bab.json",
             "sha256": "25b337e9450743374a959e7e62dcc04f0cc170f336132cfb36947deb3bb78bab"
         },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-launch/REVIEWED-SOURCE.json": {
+            "path": "evidence/43/43dfc31ecfd18c94d18e9a3750985d5e648c60c8ab80a2960965fac48b73bd3d.json",
+            "sha256": "43dfc31ecfd18c94d18e9a3750985d5e648c60c8ab80a2960965fac48b73bd3d"
+        },
         "data/runs/2026-10-22-02/snapshots/anetresearch--anet--deploy-plugins-dist-dsh/REVIEWED-SOURCE.json": {
             "path": "evidence/6c/6cbc20114ab46906cc50347d249061710c25fef915ce6b858aeffc7a49366c51.json",
             "sha256": "6cbc20114ab46906cc50347d249061710c25fef915ce6b858aeffc7a49366c51"
@@ -12725,9 +12713,17 @@
             "path": "evidence/7d/7d83c9b50224356e50b9f089441143fdfa177ed546689a67aec971048c1c2756.json",
             "sha256": "7d83c9b50224356e50b9f089441143fdfa177ed546689a67aec971048c1c2756"
         },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-download/REVIEWED-SOURCE.json": {
+            "path": "evidence/a3/a36ee084a7665e71680cc55c2e63fa40c3848e06f89766a5724aacad004706d9.json",
+            "sha256": "a36ee084a7665e71680cc55c2e63fa40c3848e06f89766a5724aacad004706d9"
+        },
         "data/runs/2026-10-22-02/snapshots/amethystluna--embedded-workbench/REVIEWED-SOURCE.json": {
             "path": "evidence/cb/cbb92230482dc6525e869ead243a2acf0300f787812b15806ff63d7eadf186b4.json",
             "sha256": "cbb92230482dc6525e869ead243a2acf0300f787812b15806ff63d7eadf186b4"
+        },
+        "data/runs/2026-10-22-02/snapshots/aik358--dsh-cua-pre/REVIEWED-SOURCE.json": {
+            "path": "evidence/55/5537f59521c2f190144f1c06a16e9f8de241328519db044536d5a2a619f705a0.json",
+            "sha256": "5537f59521c2f190144f1c06a16e9f8de241328519db044536d5a2a619f705a0"
         },
         "data/runs/2026-10-22-02/snapshots/3403473060--dsh-inline-images/REVIEWED-SOURCE.json": {
             "path": "evidence/bb/bb2bc2c48bea206499f2412f950ab3a5fdab607aacf9d2798b15ee1ab4bb1961.json",
@@ -12784,6 +12780,10 @@
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-computer-use/REVIEWED-SOURCE.json": {
             "path": "evidence/ad/ade4c53bf9e05aca2455166dcffc1342f4aa27be4361ac96c61173546186e8de.json",
             "sha256": "ade4c53bf9e05aca2455166dcffc1342f4aa27be4361ac96c61173546186e8de"
+        },
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-shot/REVIEWED-SOURCE.json": {
+            "path": "evidence/69/69d6f3108ae1e1e0d1a52692ef29411f06c93e7dace295b105ca477aaf863b2a.json",
+            "sha256": "69d6f3108ae1e1e0d1a52692ef29411f06c93e7dace295b105ca477aaf863b2a"
         },
         "data/runs/2026-10-22-02/snapshots/amengclass--dsh-settings-hub/REVIEWED-SOURCE.json": {
             "path": "evidence/d7/d74e0b40135f93d2d5d13ecd82947399dac8e1c5d7ec91afd13c989a7c03ed5a.json",

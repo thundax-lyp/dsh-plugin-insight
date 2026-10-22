@@ -13,14 +13,11 @@
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把会话副产物移入可还原回收站，并提供项目结项归类、归档与清理清单。 | 先在完整副本执行dry-run，核对日志和backup类文件是否仍需保留，再启用自动清理并设置合适保留期。 |
 | [chicheng-push](#plugin-1335382133-root) | 在 DSH 配置多种推送渠道，并通过进程内服务或 HTTP 接口发送通知。 | 有多个任务插件要发通知时可先接一个非敏感测试渠道；检查每渠道结果、令牌文件权限和远程接口范围，再发正式任务摘要，避免把秘密内容直接推到群里。 |
 | [dock-spreadsheet](#plugin-1400109121-root) | 在Dock只读预览工作簿及UTF-8分隔文本，保持表格坐标。 | 用于小表快速阅读；需编辑、计算或完整报表时另用表格软件。 |
-| [dsh-crypto-portfolio](#plugin-1342742812-root) | 以 DSH 插件启动 Python 资产看板，汇集链上钱包和交易所账户数据。 | 先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。 |
-| [dsh-cua-pre](#plugin-1346533795-root) | 以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。 | 先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 为 DSH 提供桌面控件读取、操作与审计面板。 | 适合控件可访问性良好的Windows应用；先对照审批模式检查实际放行条件，在无敏感数据的应用里验证动作和后置状态。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | 把实现Companion协议的手机或设备接入DSH，提供设备列表、健康查询和动作调用。 | 先只开放ping/status等无副作用动作，在隔离网络核对设备身份；固定共享依赖与设备端实现后再启用实际控制。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。 | 远程控制需求明确时在专用profile试用，先固定允许chat、验证拒绝/取消/断连恢复；普通消息具有该DSH profile的实际权限。 |
 | [dsh-feishu（2048lr）](#plugin-1418842530-root) | 为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。 | 先在测试租户明确选user身份，创建一份可丢弃文档并确认实际落点和权限，再验证token过期及超时重试；正式写入前要检查重复创建，避免把auto降级警告忽略。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 在本地解析电子发票字段，核对金额并汇总生成报销单资料。 | 先用脱敏且有XML/文本层的发票做汇总草稿；逐张核票号、买卖方与金额，确认缓存会话和.xlsx.b64解码后再交财务。 |
-| [dsh-mac-companion](#plugin-1384810483-root) | 从DSH经HTTP调用Mac端Companion，支持通知、快捷指令和剪贴板读写。 | 先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。 |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接到 DSH 会话，并提供主动推送与远程审批。 | 可先作为渠道桥源码候选；当前远程批准归属不足，不建议让它承担真实高影响工具的批准。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | 适合有可复核SQL和只读数据环境的分析任务；先定义关键指标标准答案，核对生成SQL再复用报表。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 按工作区归属成员统计模型用量，提供团队报表、预算告警和可选请求拦截。 | 先只监测不拦截，对照实际账单和子代理用量，补全模型价格并检查相似工作区前缀；金额可信后再考虑预算阻断。 |
@@ -33,7 +30,6 @@
 | [dsh-wsl-wininput](#plugin-1391142149-root) | 从 WSL 按名称调用 Windows 控件，或向指定窗口发送文本、按键与点击。 | 适合有人看护的Windows自动化；优先具备唯一名称的invoke，打字/点击会干扰焦点和鼠标，执行前暂停其他桌面操作并检查结果。 |
 | [dsh-wsl-winshot](#plugin-1391140767-root) | 把指定 Windows 窗口或控件区域截图保存为 WSL 文件。 | 适合前台可见窗口的图片观察；先把窗口完整露出并核对PNG，避免用它收集被遮挡窗口的权威证据，截图会还原最小化窗口。 |
 | [feishu-dsh-plugin（2286893544）](#plugin-1364766828-root) | 通过企业自建飞书应用为 DSH 提供消息、云文档、多维表格、表格与权限操作工具。 | 已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。 |
-| [Forge 工作报告](#plugin-1363429979-plugin-daily-log) | 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 | 先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。 |
 | [Markdown 批注器](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，把批注整理为会话草稿。 | 适合短期人工审阅中等大小Markdown；接受批注不持久化且能按次导出时再试用，不用于未经保存的跨日批注存档。 |
 | [峰谷价任务执行器](#plugin-1417227361-root) | 根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。 | 适合无硬期限的文本批任务做模拟日程与测试额度验证；修正峰前窗口和路由绑定之前，不依赖其保证避峰节费。 |
 
@@ -78,34 +74,6 @@
 > **思考**：行列上限在工作簿解析之后才应用，20MiB压缩文件不代表展开内存有界；公式显示依赖缓存/格式化值，不能用预览判断计算正确。只读不意味着文件内容可当可靠业务报表。
 
 > **建议**：未验证假设：解析隔离到worker并提供取消/复杂度预算和公式缓存提示，可使大表失败可控。比较高压缩XLSX、大范围和陈旧公式缓存样例的峰值内存、可取消性及误判。
-
-<a id="plugin-1342742812-root"></a>
-
-## [dsh-crypto-portfolio](../../plugins/0xrabit--dsh-crypto-portfolio/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio)
-
-> **用途**：同时管理多个钱包与交易所账户的人需要统一查看持仓，而非在多个页面手工汇总。
-
-> **亮点**：Node 入口初始化配置模板并启动 run.py 子进程，默认绑定回环地址，卸载时发送 SIGTERM。
-
-> **思考**：多来源汇总有明确便利，但看板属于数据呈现，不能提供资产真实性或收益保证。
-
-> **建议**：先使用公开钱包和无资金操作权限的测试账户，对照账户原始持仓再考虑正式使用。
-
-<a id="plugin-1346533795-root"></a>
-
-## [dsh-cua-pre](../../plugins/aik358--dsh-cua-pre/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre) [![npm 30d 381](https://img.shields.io/static/v1?label=npm+30d&message=381&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre) [![最新发布 2026-09-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-06&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre)
-
-> **用途**：Windows桌面任务需先观察、定位后动作，并区分未执行与可能已执行，尤其不能重复发送/支付等副作用。
-
-> **亮点**：将观察失效、目标校验、未知动作结果和持久停止纳入同一工具协议，比裸pyautogui坐标脚本更可治理；UIA/SendInput及视觉模型本身来自系统与上游。
-
-> **思考**：安全语义是否等于实际动作保证？RuntimeId不支持时会降级，矩形容差也不能保证同语义控件；timeout只是等待结果结束，noop不能撤销已发原生动作。付款/删除/外发确认主要是GUIDANCE措辞，不是通用Host硬审批。
-
-> **建议**：由epoch和观察状态推导，可对高影响动作增加Host授权令牌和动作后可核查收据，未知结果冻结同业务动作直到人工或只读对账。未验证；注入worker迟响应/崩溃与UI漂移时应不重放、不误点，确认不可仅靠模型守提示。
 
 <a id="plugin-1381221232-root"></a>
 
@@ -176,20 +144,6 @@
 > **思考**：解析高置信和xlsx输出是否等于合格报销件？XML存在不证明票真，正则可能取错编号，勾稽只检金额关系；无OCR的扫描件会跳过。xlsx实际保存为.xlsx.b64还需解码，缺session时global缓存可跨调用共享，不能把本地处理概括为严格会话隐私隔离。
 
 > **建议**：待验证假设：每字段保存原文位置/方法及人工确认，汇总只纳入确认字段且缓存缺session时拒绝，可减少错字段和跨会话混入。由置信度只按解析方法与global回退推导，未实现。对照错序文本、同号不同主体、扫描件和缺session，测错汇总/漏票与复核时间；不能用勾稽通过代替原票核对。
-
-<a id="plugin-1384810483-root"></a>
-
-## [dsh-mac-companion](../../plugins/173787247--dsh-mac-companion/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-mac-companion)
-
-> **用途**：主Agent在WSL等环境运行，用户希望触达Mac桌面动作；验收应是目标Mac正确执行且数据未送错。
-
-> **亮点**：index.js注册Mac专用工具，将通知、shortcut和剪贴板动作交给共享Companion客户端；Mac侧Python服务调用系统能力。
-
-> **思考**：为跨系统桌面任务提供薄协议有便利；读取剪贴板会把潜在敏感文本带入工具输出及模型上下文。
-
-> **建议**：先只测试通知，再检查剪贴板和快捷指令权限；写入前保留剪贴板副本，并使用专门的低风险Shortcut。
 
 <a id="plugin-1335387524-root"></a>
 
@@ -358,20 +312,6 @@
 > **思考**：创建成功是否意味着操作者拥有可用结果？autoGrantOwner失败返回auto-grant failed文本，仍保留创建成果，且grantOpenId可为空。它避免授权失败丢失文档，却把可访问性复核交给模型/用户；应用身份共享权限也不等同于个人原生所有权。群权限和文档归属是采用前必须实际核对的边界。
 
 > **建议**：已有自建机器人且权限清楚的团队可在测试群和可丢弃文档先试；确认创建后目标人可打开再扩展。中文图表先用外部可核对图片，不直接依赖当前ASCII字库输出。
-
-<a id="plugin-1363429979-plugin-daily-log"></a>
-
-## [Forge 工作报告](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
-
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,976](https://img.shields.io/static/v1?label=npm+30d&message=1%2C976&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
-
-> **用途**：面向需要定期汇报工作的个人或团队，从实际活动记录生成报告，并支持回查来源。
-
-> **亮点**：入口按 agent 作用域启用报告工具，/report 转发用户需求，扫描索引和模板为后续生成提供材料。
-
-> **思考**：按需启用工具可减少常驻上下文；提交与对话是活动证据，不自动证明业务成果。
-
-> **建议**：先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。
 
 <a id="plugin-1335286261-root"></a>
 

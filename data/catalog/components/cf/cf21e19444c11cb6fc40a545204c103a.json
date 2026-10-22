@@ -10,7 +10,7 @@
             "repository": "AWL-MC2/DSH-Plugin_awl",
             "path": "",
             "aliases": [],
-            "name": "type-tune（DSH-Plugin_awl）",
+            "name": "dsh-type-tune",
             "entry_type": "plugin",
             "technical_category": "interface-input",
             "business_category": "personal-productivity",
@@ -24,36 +24,70 @@
             },
             "sources": [
                 {
-                    "id": "2026-10-21-06-github-1388463793-root-directory-0",
+                    "id": "2026-10-22-02-github-1388463793-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                     "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-21T05:41:15.270Z",
+                    "retrieved_at": "2026-10-22T05:58:38.424Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-21-06-github-1388463793-root-author",
+                    "id": "2026-10-22-02-github-1388463793-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AWL-MC2/DSH-Plugin_awl",
+                            "commit": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                            "path": "README.md",
+                            "content_sha256": "e0cc9af6b445066d9908d296fa295c5c4ee62d51a2f86c7fcb8ab1a5ee51bbe8"
+                        }
+                    ],
                     "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
-                    "captured_at": "2026-10-21T05:41:15.270Z",
-                    "summary": "调节 DSH Web 字体、文字对比度、光晕与内容特效。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:58:38.424Z",
+                    "summary": "为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-21-06-github-1388463793-root-source",
+                    "id": "2026-10-22-02-github-1388463793-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js",
+                    "url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AWL-MC2/DSH-Plugin_awl",
+                            "commit": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                            "path": "README.md",
+                            "content_sha256": "e0cc9af6b445066d9908d296fa295c5c4ee62d51a2f86c7fcb8ab1a5ee51bbe8"
+                        },
+                        {
+                            "repository_url": "https://github.com/AWL-MC2/DSH-Plugin_awl",
+                            "commit": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                            "path": "package.json",
+                            "content_sha256": "da8c5567300d7c3c5ecee4e9281af836ef9e0ed1f7e3a69e1c98d907da9b4910"
+                        },
+                        {
+                            "repository_url": "https://github.com/AWL-MC2/DSH-Plugin_awl",
+                            "commit": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                            "path": "index.js",
+                            "content_sha256": "b18551a665ff90206fe7c166bca79effefc596bb342ed2a33b401ba46a176d01"
+                        },
+                        {
+                            "repository_url": "https://github.com/AWL-MC2/DSH-Plugin_awl",
+                            "commit": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
+                            "path": "client.js",
+                            "content_sha256": "9f71456291a3819816502fb54d9a19c819be920f34278e91523f949aff039d1f"
+                        }
+                    ],
                     "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
-                    "captured_at": "2026-10-21T05:41:15.270Z",
-                    "summary": "核查 index.js、client.js、package.json、cordis.patch.yml；Host扫描两处字体目录、解析sfnt家族名并以manifest/font/state路由服务；/style命令与浏览器共享DSH_HOME/type-tune.json。浏览器动态CSS与预览渲染，localStorage作缓存，宿主不可达则降级本地；可见页每两秒轮询新revision。",
-                    "artifact": "data/runs/2026-10-21-06/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-22T05:58:38.424Z",
+                    "summary": "核查 README.md、package.json、index.js、client.js；客户端注入 token/CSS 和设置卡，Host 扫字体并提供 /style 命令及无认证状态/字体路由，浏览器轮询同步。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/awl-mc2--dsh-plugin_awl/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "根Host字体解析/扫描、共享状态/路由/命令，以及client状态同步与settings注册；视觉效果未渲染测量，不执行目标。",
+                        "静态审阅固定 README、Host index.js、client.js；未加载 DSH、访问路由或视觉测量。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -64,9 +98,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "壁纸或主题使次要文字难读的用户调整会话阅读样式；交付物是可恢复的个人排版配置，不是模型结果质量提升。",
+                    "text": "壁纸让次级文本难读，用户希望低成本调字体和 Markdown 样式。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -75,16 +109,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "Host扫描两处字体目录、解析sfnt家族名并以manifest/font/state路由服务；/style命令与浏览器共享DSH_HOME/type-tune.json。浏览器动态CSS与预览渲染，localStorage作缓存，宿主不可达则降级本地；可见页每两秒轮询新revision。",
+                    "text": "客户端注入 token/CSS 和设置卡，Host 扫字体并提供 /style 命令及无认证状态/字体路由，浏览器轮询同步。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -93,16 +127,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "根Host字体解析/扫描、共享状态/路由/命令，以及client状态同步与settings注册；视觉效果未渲染测量，不执行目标。",
+                    "text": "静态审阅固定 README、Host index.js、client.js；未加载 DSH、访问路由或视觉测量。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -111,16 +145,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "Apache-2.0双面bundle，无构建的提交JS，Host可选注入webServer/commands；桌面无路由时仅浏览器缓存，命令共享不成立。",
+                    "text": "package 0.1.1、Apache-2.0，声明 DSH >=0.1.7-rc.2 <0.3.0-0；实际 Web 版本兼容未验。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -129,16 +163,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "现金无新增API；人工是字体文件管理、偏好调整、升级CSS选择器维护。动画/正文特效会增加渲染负担，字体首次加载有开销，收益未实测。",
+                    "text": "#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 初次 | 安装、选壁纸、调样式和字体 | 宿主版本依赖 |\n| 使用 | 看对比度与性能 | 动效可能降清晰度 |\n| 运维 | 状态备份与 LAN 安全 | 无认证 POST/写失败静默 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -147,16 +181,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。",
+                    "text": "仅回环、单人 Web 可审慎试用，留默认恢复路径；LAN/多人环境先补认证与错误反馈。详见[Q03](#research-q03)、[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -165,16 +199,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "统一字体/样式与恢复操作，主价值是阅读舒适和减少手调CSS；不保证无障碍合规或提高工作产出。",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 对比/字体 | token CSS 与字体 manifest | 实际对比达标率 |\n| 状态同步 | Host 文件/localStorage 轮询 | 并发丢更新概率 |\n| 命令 | /style 操作 | 多人权限边界 |",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -183,16 +217,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "sfnt解析做边界检查、字体数量与体积有限制，同名家族确定性取舍且报告落选；write-rename减少半文件，但吞错与无并发条件令耐久性声明过强。",
+                    "text": "Host 扫字体、提供 manifest/state/font 路由和 /style 命令；客户端注入 CSS、预览、localStorage 与轮询。状态 .tmp 重命名但无 CAS，写失败静默。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -201,16 +235,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
-                    "basis": "interpretation",
-                    "text": "相较手写CSS，把字体发现、阅读对比与预设调节做成双入口，并用present区分尚未配置和明确恢复默认，避免迁移抹掉旧偏好。它是可读性配置集成，不能由WCAG预览徽标推出壁纸背景上所有文字均达标。",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -219,16 +253,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
-                    "basis": "interpretation",
-                    "text": "共享状态是否真有持久确认？saveState写临时文件rename失败被吞掉，仍返回新revision；浏览器可把未落盘状态当成功且下一次重启丢失。全量配置POST没有expected revision，多标签并发可覆盖。字体/manifest读路由无认证，暴露网络的Host会扩大可读范围，不能用写同源检查代替访问授权。",
+                    "basis": "supported",
+                    "text": "无认证状态 POST 接受无 Origin 请求；若 Web 暴露 LAN 可被网络客户端改写。写盘错误被吞、并发状态无版本保护。详见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -237,16 +271,16 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "把写入错误和expectedRevision纳入状态协议，浏览器只在持久成功后推进revision，可能减少假成功和双标签丢配置。对只读home、rename失败和两个标签同时更改不同字段验证不回成功且冲突可见；若配置仍静默覆盖，则协议未实现预期。",
+                    "text": "加入 Host 身份验证、明确写失败和 CAS/临时文件唯一名，再做真实对比度/性能测量可提高多人部署可靠性；现版未实现。详见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ],
                     "dependencies": [
                         {
@@ -255,15 +289,15 @@
                             "fingerprint": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19"
                         }
                     ],
-                    "reviewed_at": "2026-10-21T05:41:15.270Z",
+                    "reviewed_at": "2026-10-22T05:58:38.424Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-21T05:41:15.270Z",
+            "last_checked_at": "2026-10-22T05:58:38.424Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
-                "reviewed_at": "2026-10-21T05:41:15.270Z",
+                "reviewed_at": "2026-10-22T05:58:38.424Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -276,60 +310,60 @@
                     "criteria": {
                         "novelty": 9,
                         "mechanism": 15,
-                        "transferability": 10,
+                        "transferability": 5,
                         "simplification": 8
                     },
-                    "rationale": "新颖性9：CSS排版预设已有；机制15：字体解析、共享状态/缓存降级具实现细节；迁移性10：present语义与双入口可复用；简化8：替代手改CSS但状态同步增加维护。",
+                    "rationale": "字体扫描与 Host/客户端状态同步较完整；样式机制常见且依赖 DSH token/槽位，UI 调参降低门槛；并发/认证边界不足。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 37,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 9,
-                        "delivery": 8,
+                        "workflow": 18,
+                        "delivery": 15,
                         "reach": 10,
-                        "economics": 4
+                        "economics": 0
                     },
-                    "rationale": "工作流9：改善个人阅读设置而非业务交付；交付8：可恢复预设但持久错误可能假成功；覆盖10：多字体/亮暗主题人群较广；经济4：无模型费用，省时和阅读收益未测。",
+                    "rationale": "壁纸下可读性痛点明确，零构建设置卡可用性较高；视觉收益、性能和人群规模未证实。",
                     "basis": "interpretation",
-                    "score": 31,
+                    "score": 43,
                     "evidence_ids": [
-                        "2026-10-21-06-github-1388463793-root-source"
+                        "2026-10-22-02-github-1388463793-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "observe",
-                "reason": "文字难读者可关注静态排版预设；saveState吞rename错误仍报revision且无并发版本检查，先修持久确认后再依赖共享样式。",
+                "decision": "trial",
+                "reason": "可在单人、回环 DSH Web 试用并实际量测视觉效果；LAN/多人访问先补身份认证和写失败反馈。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "主题造成文字可读性问题的人群明确。"
+                        "rationale": "个性化壁纸的可读性问题明确。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "字体管理、统一配置与恢复减少手改CSS。"
+                        "rationale": "设置与命令集中化；实际效果需视觉测量。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核状态写入与字体路由，确认落盘假成功和多标签覆盖。"
+                        "rationale": "固定源码可核，作者测试未随包发布且本轮未跑视觉。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "配置丢失、网络字体读取与CSS回归增加维护，当前先解决真持久。"
+                        "rationale": "样式兼容、字体管理与 LAN 写路由需要维护。"
                     }
                 },
                 "score": 54,
                 "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
-                "reviewed_at": "2026-10-21T09:39:01.705Z",
+                "reviewed_at": "2026-10-22T05:58:38.424Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-21-06-github-1388463793-root-source"
+                    "2026-10-22-02-github-1388463793-root-source"
                 ],
                 "dependencies": [
                     {
@@ -354,83 +388,45 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-21T05:26:52Z",
-            "analysis_sha256": "0aff1a9d8a65de11e406c4dd9ad959bbcc4f4748e8795cfabad13f2d434453e2"
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "654fdc9c0136acc86d9ac25b31b8a7fd2dd7a684064ed0fe024314e4cb88a691"
         },
         "publication.metadata": "data/plugins/awl-mc2--dsh-plugin_awl/META.json",
         "publication.summaries": {
-            "text": "调节 DSH Web 字体、文字对比度、光晕与内容特效。",
+            "text": "为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。",
             "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
             "source_url": "https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md"
         },
         "publication.capabilities": {
             "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
             "items": {
-                "Host 路由": "字体manifest、字体内容及共享style状态读写。",
-                "用户命令": "/style查看与改变预设、字体、对比、特效和恢复默认。",
-                "界面": "设置卡、动态排版CSS、自定义字体与浮动预览。"
-            }
+                "界面": "对比 token、Markdown 样式、字体与预览设置",
+                "用户命令": "style 配置与恢复",
+                "Host 路由": "字体清单、字体读取与共享样式状态"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| CSS 调节 | 提升视觉可读性 | 未独立视觉验证 |\n| 字体扫描 | 自定义家族 | 文件来源需管理 |\n| 状态同步 | 命令/UI 共用 | LAN 无认证、写失败静默 |"
         },
         "publication.advice": {
             "revision": "02b8cec919d8857187eef74cf7bb6dc7fd7ddc19",
-            "text": "需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。"
+            "text": "仅回环、单人 Web 可审慎试用，留默认恢复路径；LAN/多人环境先补认证与错误反馈。详见[Q03](#research-q03)、[Q04](#research-q04)。"
         },
         "registry": "data/plugins/awl-mc2--dsh-plugin_awl",
-        "reports": "# type-tune（DSH-Plugin_awl）\n\n> 调节 DSH Web 字体、文字对比度、光晕与内容特效。\n\n## 使用建议\n\n需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。\n\n核查状态：字体发现、共享状态和样式渲染源码可确认；视觉可读性、对比达标和真实兼容未验证。 本轮只检查源码，未安装、执行目标代码/测试或真实宿主验收。\n\n## 洞察短评\n\n- **用途**：壁纸或主题使次要文字难读的用户调整会话阅读样式；交付物是可恢复的个人排版配置，不是模型结果质量提升。\n- **亮点**：相较手写CSS，把字体发现、阅读对比与预设调节做成双入口，并用present区分尚未配置和明确恢复默认，避免迁移抹掉旧偏好。它是可读性配置集成，不能由WCAG预览徽标推出壁纸背景上所有文字均达标。\n- **思考**：共享状态是否真有持久确认？saveState写临时文件rename失败被吞掉，仍返回新revision；浏览器可把未落盘状态当成功且下一次重启丢失。全量配置POST没有expected revision，多标签并发可覆盖。字体/manifest读路由无认证，暴露网络的Host会扩大可读范围，不能用写同源检查代替访问授权。\n- **建议**：把写入错误和expectedRevision纳入状态协议，浏览器只在持久成功后推进revision，可能减少假成功和双标签丢配置。对只读home、rename失败和两个标签同时更改不同字段验证不回成功且冲突可见；若配置仍静默覆盖，则协议未实现预期。\n\n## 场景与替代办法\n\n壁纸或主题使次要文字难读的用户调整会话阅读样式；交付物是可恢复的个人排版配置，不是模型结果质量提升。\n\n宿主字号/主题设置或用户CSS能覆盖部分需求；插件增加字体发现、恢复与双入口同步。\n\n## 能力清单\n\n- **Host 路由**：字体manifest、字体内容及共享style状态读写。\n- **用户命令**：/style查看与改变预设、字体、对比、特效和恢复默认。\n- **界面**：设置卡、动态排版CSS、自定义字体与浮动预览。\n\n## 依赖与流程\n\nHost扫描两处字体目录、解析sfnt家族名并以manifest/font/state路由服务；/style命令与浏览器共享DSH_HOME/type-tune.json。浏览器动态CSS与预览渲染，localStorage作缓存，宿主不可达则降级本地；可见页每两秒轮询新revision。\n\nDSH Web React/slots/locale、CSS color-mix等浏览器能力，Host字体目录和DSH_HOME写权限；字体授权由用户自行确保。\n\n放字体→扫描manifest→调预设/预览→POST共享状态并缓存→/style局部修改→浏览器轮询→recover写null配置；Host缺失时退本地模式。\n\nApache-2.0双面bundle，无构建的提交JS，Host可选注入webServer/commands；桌面无路由时仅浏览器缓存，命令共享不成立。\n\n## 成本与效果\n\n现金无新增API；人工是字体文件管理、偏好调整、升级CSS选择器维护。动画/正文特效会增加渲染负担，字体首次加载有开销，收益未实测。\n\n统一字体/样式与恢复操作，主价值是阅读舒适和减少手调CSS；不保证无障碍合规或提高工作产出。\n\n## 核心贡献\n\n相较手写CSS，把字体发现、阅读对比与预设调节做成双入口，并用present区分尚未配置和明确恢复默认，避免迁移抹掉旧偏好。它是可读性配置集成，不能由WCAG预览徽标推出壁纸背景上所有文字均达标。\n\n## 关键质疑\n\n共享状态是否真有持久确认？saveState写临时文件rename失败被吞掉，仍返回新revision；浏览器可把未落盘状态当成功且下一次重启丢失。全量配置POST没有expected revision，多标签并发可覆盖。字体/manifest读路由无认证，暴露网络的Host会扩大可读范围，不能用写同源检查代替访问授权。\n\n## 工程亮点\n\nsfnt解析做边界检查、字体数量与体积有限制，同名家族确定性取舍且报告落选；write-rename减少半文件，但吞错与无并发条件令耐久性声明过强。\n\n固定源码依据：[index.js](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js)、[client.js](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/client.js)、[package.json](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/package.json)、[cordis.patch.yml](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/cordis.patch.yml)。\n\n## 未来设计假设（未验证）\n\n把写入错误和expectedRevision纳入状态协议，浏览器只在持久成功后推进revision，可能减少假成功和双标签丢配置。对只读home、rename失败和两个标签同时更改不同字段验证不回成功且冲突可见；若配置仍静默覆盖，则协议未实现预期。\n\n未运行或渲染；拟先故障注入持久化与并发测试，再在真实壁纸/长文本上测对比与动画开销，不把预览值替代全页测量。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc73805bc555d0533bcc6860460a9a24b182818f63d1a7cc9869c2cd0fa57a3e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2147 | 1608 | 408 | — |\n| .md | source | 1 | 137 | — | — | 1865 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n\n## 核查说明\n\n- 版本号：0.1.1；版本日期：2026-09-30（固定提交日期，北京时间，非包发布日期）。\n- 固定提交：[02b8cec9](https://github.com/AWL-MC2/DSH-Plugin_awl/tree/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19)；本轮基准：2026-10-21T05:26:52Z。\n- 已检查：上述源码路径、README、包清单及组件inventory。\n- 范围：根Host字体解析/扫描、共享状态/路由/命令，以及client状态同步与settings注册；视觉效果未渲染测量，不执行目标。\n- 未执行：目标安装、代码/测试、真实宿主和第三方服务。作者说明与源码不等于独立效果验证。\n",
+        "reports": "# dsh-type-tune\n\n> 为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。\n\n## 研究范围\n\n- **仓库**：[AWL-MC2/DSH-Plugin_awl](https://github.com/AWL-MC2/DSH-Plugin_awl)\n- **版本号**：0.1.1（[固定提交 02b8cec919d8857187eef74cf7bb6dc7fd7ddc19](https://github.com/AWL-MC2/DSH-Plugin_awl/tree/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n样式与状态机制可静态核查；视觉收益未验，无 Origin 的 JSON POST 可绕过浏览器同源意图，写盘失败仍报告成功。\n\n## 洞察短评\n\n- **用途**：壁纸让次级文本难读，用户希望低成本调字体和 Markdown 样式。\n- **亮点**：把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：无认证状态 POST 接受无 Origin 请求；若 Web 暴露 LAN 可被网络客户端改写。写盘错误被吞、并发状态无版本保护。详见[Q03](#research-q03)。\n- **建议**：加入 Host 身份验证、明确写失败和 CAS/临时文件唯一名，再做真实对比度/性能测量可提高多人部署可靠性；现版未实现。详见[Q04](#research-q04)。\n\n采用建议：仅回环、单人 Web 可审慎试用，留默认恢复路径；LAN/多人环境先补认证与错误反馈。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n## 核心贡献\n\n把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n无认证状态 POST 接受无 Origin 请求；若 Web 暴露 LAN 可被网络客户端改写。写盘错误被吞、并发状态无版本保护。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n加入 Host 身份验证、明确写失败和 CAS/临时文件唯一名，再做真实对比度/性能测量可提高多人部署可靠性；现版未实现。详见[Q04](#research-q04)。\n\n在目标 DSH Web 亮暗主题和多壁纸测对比度/性能；LAN 无 Origin POST、不可写状态目录、多标签并发与回滚实测。\n\n## 场景与替代办法\n\n壁纸让次级文本难读，用户希望低成本调字体和 Markdown 样式。\n\n手改 Web CSS/主题或更换壁纸；插件提供设置卡、命令与字体管理。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 缺失时 |\n| --- | --- | --- |\n| DSH Web token/slots | 样式与设置 UI | UI 降级/样式失效 |\n| Webserver 路由 | 跨页面状态/字体 | 本地缓存降级 |\n| 可写 DSH_HOME | 持久化命令设置 | 仍可能假成功 |\n| 回环访问或认证 | 限路由写入 | LAN 可改状态 |\n\n#### 视觉验证\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 对照 | 默认/调节后截图 | 次级文字实测可读 |\n| 性能 | 长会话开/关动画 | 帧率与清晰度可接受 |\n| 状态 | 命令、设置、多标签交错 | 无丢更新/假成功 |\n| 回滚 | /style recover | 主题恢复 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源与人工 | 边界 |\n| --- | --- | --- |\n| 初次 | 安装、选壁纸、调样式和字体 | 宿主版本依赖 |\n| 使用 | 看对比度与性能 | 动效可能降清晰度 |\n| 运维 | 状态备份与 LAN 安全 | 无认证 POST/写失败静默 |\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 对比/字体 | token CSS 与字体 manifest | 实际对比达标率 |\n| 状态同步 | Host 文件/localStorage 轮询 | 并发丢更新概率 |\n| 命令 | /style 操作 | 多人权限边界 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 DSH Web 可读性/字体定制的样式与状态同步路径，界定视觉效果和无认证路由的风险。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 它解决哪类可读性与定制负担？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n目标是 DSH Web 更换壁纸后次级文字对比不足，以及希望针对会话 Markdown 调整链接、标题、字体和特效的用户。客户端通过 color-mix 覆盖部分标签 token、注入范围化样式和悬浮预览；Host 扫描自定义字体并提供 /style 聊天命令、共享状态路由。相较手改 CSS，操作者可在设置卡或命令里调节并在页面即时看到变化。作者说“可读性修复”和 WCAG 徽标，但实际视觉质量、对比度达标率和不同主题兼容未在本轮浏览器中检验。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-45](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md#L1-L45)\n\n作者描述可读性、内容规则、特效和自定义字体。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n````text\n# dsh-type-tune\n\nDSH Web GUI 排版与可读性调校插件：专治「改了壁纸之后原版字体发虚 / 发淡」这一类问题，并提供轻量的字体特效与内容规则。\n\n- **可读性修复（核心）**：覆盖 `--dsw-alias-label-secondary/tertiary/caption` 三个低对比 token（用 `color-mix` 向 `label-primary` 靠拢，亮/暗主题自适应），再叠一个可调强度的文字光晕，把叠在壁纸上的次级文字（轨迹、重试提示、工具摘要）拉回可读。\n- **内容规则**：链接加粗 / 常驻下划线 / 变色，标题变色，正文变色——作用范围精确锁定在会话 Markdown（`[class*=\"_markdown_\"]`），不碰侧栏和设置页。\n- **特效**：彩虹描边（`@property --dtt-hue` 做色相循环）与渐变填充（`background-clip: text` 平移），速度 / 方向 / 渐变角度 / 描边宽度 / 色标全部可调；默认只作用于标题、强调、链接。\n- **预览小窗**：可拖动的悬浮 WYSIWYG 预览，正文区透明、壁纸直接透出，附带 WCAG 对比度徽标。\n- **两档 UI**：简单模式只有预设卡片 + 对比 + 光晕 + 链接/特效开关；高级模式展开渐变角度、描边宽度、色标等细节。\n\n## 安装\n\n从 GitHub 安装（推荐；零构建，无需编译）：\n\n```bash\ndsh plugin --profile <你的 profile> add github:AWL-MC2/DSH-Plugin_awl\n```\n\n或以本地目录安装（开发 / 自用）：\n\n```bash\ndsh plugin --profile <你的 profile> add <插件目录绝对路径>\n```\n\n安装后**重启一次 DSH 并刷新 Web UI**（改设置之后无需再重启）。\n\n## 使用\n\n打开 **设置 → 通用 → 「字体与可读性」**。改完即时生效。\n\n- 字号基准仍由 **设置 → 外观 → 对话字号** 控制；本插件的「正文字号偏移」在其上做增量，不与之冲突。\n- 预览窗可用右上角 ✕ 临时隐藏；在设置里取消再勾选「显示预览窗」可重新打开。\n\n## 自定义字体\n\n把字体文件丢进插件目录下的 **`fonts/`**（首次启动会自动创建，里面带一份 `README.txt`），\n刷新页面就能在字体下拉框的「自定义」分组里选到它们。\n\n```\ndsh-type-tune/fonts/          ← 主目录，跟着插件走\n$DSH_HOME/fonts/              ← 备用目录，重装插件也不会丢\n```\n\n| 项目 | 说明 |\n|---|---|\n````\n\n</details>\n\n**依据 2 · 源码核查**：[client.js:274-355](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/client.js#L274-L355)\n\n客户端生成对比 token 与样式规则。\n\n<details>\n<summary>查看原文（82行）</summary>\n\n```text\n\t\t/** Pull a label token toward `label-primary` by pct% to raise contrast\n\t\t * (mode-agnostic: label-primary already flips light/dark). */\n\t\tfunction contrastMix(pct) {\n\t\t\treturn \"color-mix(in oklab, var(--dsw-alias-label-primary) \" + pct + \"%, #7c818a)\";\n\t\t}\n\t\tconst CONTRAST_LEVELS = {\n\t\t\t0: { secondary: 0, tertiary: 0, caption: 0 },\n\t\t\t1: { secondary: 30, tertiary: 45, caption: 45 },\n\t\t\t2: { secondary: 45, tertiary: 65, caption: 65 },\n\t\t\t3: { secondary: 60, tertiary: 82, caption: 82 }\n\t\t};\n\t\tconst HALO_LIGHT = [\"none\", \"0 0 1px 1px rgba(255,255,255,.55)\", \"0 0 2px 2px rgba(255,255,255,.7)\", \"0 0 3px 3px rgba(255,255,255,.85)\"];\n\t\tconst HALO_DARK = [\"none\", \"0 0 1px 1px rgba(0,0,0,.5)\", \"0 0 2px 2px rgba(0,0,0,.65)\", \"0 0 3px 3px rgba(0,0,0,.8)\"];\n\n\t\tfunction targetSel(target) {\n\t\t\tswitch (target) {\n\t\t\t\tcase \"heading\": return \":is(h1,h2,h3,h4,h5,h6)\";\n\t\t\t\tcase \"strong\": return \"strong\";\n\t\t\t\tcase \"link\": return \"a[href]\";\n\t\t\t\tcase \"body\": return \":is(p, li, td, th, dd, blockquote, h1, h2, h3, h4, h5, h6)\";\n\t\t\t\tdefault: return \"\";\n\t\t\t}\n\t\t}\n\n\t\t/**\n\t\t * Resolve a UI-font selection to a CSS stack.\n\t\t * @param {string} value - \"auto\", a built-in id, or a family name.\n\t\t * @returns {string | null} the stack, or null to leave DSH's own alone.\n\t\t */\n\t\tfunction resolveUiStack(value) {\n\t\t\tif (value === \"auto\") return null;\n\t\t\tconst builtin = UI_FONTS.find((f) => f.id === value);\n\t\t\tif (builtin !== undefined) return builtin.stack;\n\t\t\treturn '\"' + value + '\", ' + DEFAULT_UI_STACK;\n\t\t}\n\n\t\t/**\n\t\t * Resolve a code-font selection to a CSS stack.\n\t\t * @param {string} value - \"auto\", a built-in id, or a family name.\n\t\t * @returns {string | null} the stack, or null to leave DSH's own alone.\n\t\t */\n\t\tfunction resolveCodeStack(value) {\n\t\t\tif (value === \"auto\") return null;\n\t\t\tconst builtin = CODE_FONTS.find((f) => f.id === value);\n\t\t\tif (builtin !== undefined) return builtin.stack;\n\t\t\treturn '\"' + value + '\", ' + DEFAULT_CODE_STACK;\n\t\t}\n\n\t\t/** Token/global rules (contrast, halo, fonts). */\n\t\tfunction buildGlobalCss(cfg) {\n\t\t\tconst rules = [];\n\t\t\tconst lv = CONTRAST_LEVELS[cfg.contrast] || CONTRAST_LEVELS[0];\n\t\t\tconst tokenDecls = [];\n\t\t\tif (lv.secondary > 0) tokenDecls.push(\"--dsw-alias-label-secondary: \" + contrastMix(lv.secondary) + \";\");\n\t\t\tif (lv.tertiary > 0) tokenDecls.push(\"--dsw-alias-label-tertiary: \" + contrastMix(lv.tertiary) + \";\");\n\t\t\tif (lv.caption > 0) tokenDecls.push(\"--dsw-alias-label-caption: \" + contrastMix(lv.caption) + \";\");\n\t\t\tif (tokenDecls.length > 0) {\n\t\t\t\t// Emit on both `body` and the dark palette selector so a later\n\t\t\t\t// stylesheet wins the cascade in BOTH color schemes.\n\t\t\t\trules.push(\"body, body[data-ds-dark-theme] { \" + tokenDecls.join(\" \") + \" }\");\n\t\t\t}\n\n\t\t\tif (cfg.halo > 0) {\n\t\t\t\tconst h = cfg.halo;\n\t\t\t\trules.push(\"body:not([data-ds-dark-theme]) \" + MARKDOWN_SCOPE + \", body:not([data-ds-dark-theme]) [data-text-shimmer] { text-shadow: \" + HALO_LIGHT[h] + \"; }\");\n\t\t\t\trules.push(\"body[data-ds-dark-theme] \" + MARKDOWN_SCOPE + \", body[data-ds-dark-theme] [data-text-shimmer] { text-shadow: \" + HALO_DARK[h] + \"; }\");\n\t\t\t}\n\n\t\t\tconst uiStack = resolveUiStack(cfg.uiFont);\n\t\t\tconst codeStack = resolveCodeStack(cfg.codeFont);\n\t\t\tconst fontDecls = [];\n\t\t\tif (uiStack !== null) fontDecls.push(\"--dsw-font-family: \" + uiStack + \";\");\n\t\t\tif (codeStack !== null) fontDecls.push(\"--ds-font-family-code: \" + codeStack + \";\");\n\t\t\tif (fontDecls.length > 0) rules.push(\":root, body { \" + fontDecls.join(\" \") + \" }\");\n\n\t\t\treturn rules;\n\t\t}\n\n\t\t/** Scoped rules (content rules + effects) under one scope selector. */\n\t\tfunction buildScopedCss(cfg, scope) {\n\t\t\tconst rules = [];\n\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:479-589](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L479-L589)\n\n/style 命令读取并更新共享状态。\n\n<details>\n<summary>查看原文（111行）</summary>\n\n```text\nexport function runStyleCommand(rawInput) {\n\tconst tokens = String(rawInput ?? \"\").trim().split(/\\s+/).filter(Boolean);\n\tconst sub = (tokens[0] ?? \"\").toLowerCase();\n\tconst rest = tokens.slice(1);\n\tconst arg = rest.join(\" \");\n\n\tconst reply = (text) => ({ kind: \"success\", text });\n\tconst fail = (text) => ({ kind: \"error\", text });\n\n\tif (sub === \"\" || sub === \"status\") {\n\t\tconst state = loadState();\n\t\tconst { fonts } = scanFonts();\n\t\treturn reply([\n\t\t\t`字体与可读性：${summarize(state.config)}`,\n\t\t\t`自定义字体：${String(fonts.length)} 个${fonts.length > 0 ? `（${fonts.slice(0, 6).map((f) => f.family).join(\"、\")}${fonts.length > 6 ? \" 等\" : \"\"}）` : \"\"}`,\n\t\t\t\"改完约 1 秒内在页面上生效，无需刷新。\",\n\t\t\t\"输入 /style help 查看全部命令。\"\n\t\t].join(\"\\n\"));\n\t}\n\tif (sub === \"help\" || sub === \"-h\" || sub === \"--help\") return reply(HELP);\n\n\tif (sub === \"recover\" || sub === \"reset\" || sub === \"default\") {\n\t\tsaveState(null);\n\t\treturn reply(\"已恢复默认：所有覆盖已清空（对比、光晕、字体、字号、特效、链接样式、预览窗）。约 1 秒内在页面上生效。\");\n\t}\n\n\tif (sub === \"fonts\") {\n\t\tconst { fonts, rejected } = scanFonts();\n\t\tconst lines = [`扫描目录：`, ...fontDirs().map((d) => `  ${d}`), `共发现 ${String(fonts.length)} 个可用字体：`];\n\t\tfor (const font of fonts.slice(0, 40)) lines.push(`  ${font.family}  (${font.file}, ${font.format}, ${String(Math.round(font.bytes / 1024))} KB)`);\n\t\tif (fonts.length > 40) lines.push(`  … 另有 ${String(fonts.length - 40)} 个`);\n\t\tif (rejected.length > 0) {\n\t\t\tlines.push(\"\", `跳过了 ${String(rejected.length)} 个文件：`);\n\t\t\tfor (const item of rejected.slice(0, 15)) lines.push(`  ${item.file} — ${item.reason}`);\n\t\t}\n\t\tlines.push(\"\", \"把字体文件放进上面的目录后刷新页面即可看到。\");\n\t\treturn reply(lines.join(\"\\n\"));\n\t}\n\n\tif (sub === \"preset\") {\n\t\tconst ids = Object.keys(PRESETS).concat([\"off\"]);\n\t\tif (!ids.includes(arg)) return fail(`未知预设「${arg || \"(空)\"}」。可用：${ids.join(\" | \")}`);\n\t\tif (arg === \"off\") {\n\t\t\tsaveState(null);\n\t\t\treturn reply(\"已关闭全部覆盖（等同 /style recover）：对比、光晕、字体、字号、特效、链接样式与预览窗全部回到默认。\");\n\t\t}\n\t\tpatchState(PRESETS[arg]);\n\t\treturn reply(`已应用预设「${arg}」：${summarize(loadState().config)}`);\n\t}\n\n\tconst intArg = (label, min, max) => {\n\t\tconst value = Number(arg);\n\t\tif (arg === \"\" || !Number.isFinite(value) || !Number.isInteger(value) || value < min || value > max) return null;\n\t\treturn value;\n\t};\n\n\tif (sub === \"contrast\" || sub === \"halo\") {\n\t\tconst value = intArg(sub, 0, 3);\n\t\tif (value === null) return fail(`用法：/style ${sub} <0-3>`);\n\t\tpatchState({ [sub]: value });\n\t\treturn reply(`已设置${sub === \"contrast\" ? \"对比增强\" : \"文字光晕\"} = ${String(value)}`);\n\t}\n\n\tif (sub === \"size\") {\n\t\tconst value = intArg(sub, -2, 4);\n\t\tif (value === null) return fail(\"用法：/style size <-2..4>（0 表示不干预「外观」里的对话字号）\");\n\t\tpatchState({ sizeOffset: value });\n\t\treturn reply(`已设置正文字号偏移 = ${value > 0 ? `+${String(value)}` : String(value)} px`);\n\t}\n\n\tif (sub === \"fx\") {\n\t\tconst modes = [\"off\", \"rainbow-edge\", \"gradient-fill\"];\n\t\tif (!modes.includes(arg)) return fail(`用法：/style fx <${modes.join(\"|\")}>`);\n\t\tpatchState({ fx: arg });\n\t\treturn reply(arg === \"off\" ? \"已关闭字体特效\" : `已开启特效「${arg}」`);\n\t}\n\n\tif (sub === \"links\") {\n\t\tconst modes = {\n\t\t\toff: { linkBold: false, linkUnderline: false },\n\t\t\tbold: { linkBold: true, linkUnderline: false },\n\t\t\tunderline: { linkBold: false, linkUnderline: true },\n\t\t\tboth: { linkBold: true, linkUnderline: true }\n\t\t};\n\t\tif (!(arg in modes)) return fail(`用法：/style links <${Object.keys(modes).join(\"|\")}>`);\n\t\tpatchState(modes[arg]);\n\t\treturn reply(`链接样式已设为「${arg}」`);\n\t}\n\n\tif (sub === \"font\" || sub === \"code\") {\n\t\tif (arg === \"\") return fail(`用法：/style ${sub} <家族名|auto>（用 /style fonts 查看可用家族名）`);\n\t\tconst key = sub === \"font\" ? \"uiFont\" : \"codeFont\";\n\t\tif (arg === \"auto\" || arg === \"默认\" || arg === \"default\") {\n\t\t\tpatchState({ [key]: \"auto\" });\n\t\t\treturn reply(`已把${sub === \"font\" ? \"界面\" : \"代码\"}字体恢复为默认`);\n\t\t}\n\t\t// Custom families are stored under their real name so @font-face matches.\n\t\tpatchState({ [key]: arg });\n\t\treturn reply(`已把${sub === \"font\" ? \"界面\" : \"代码\"}字体设为「${arg}」。若是自定义字体，请确认它出现在 /style fonts 列表里。`);\n\t}\n\n\tif (sub === \"preview\") {\n\t\tif (arg !== \"on\" && arg !== \"off\") return fail(\"用法：/style preview <on|off>\");\n\t\tpatchState({ previewVisible: arg === \"on\" });\n\t\treturn reply(arg === \"on\" ? \"预览小窗已显示\" : \"预览小窗已隐藏\");\n\t}\n\n\treturn fail(`未知子命令「${sub}」。\\n${HELP}`);\n}\n//#endregion\n\n```\n\n</details>\n\n#### 缺口\n\n- 未在 DSH Web 和不同壁纸/主题中进行视觉检查。\n  **影响：**不能认定 WCAG 对比度或实际阅读效率改善。\n  **进一步探讨：**对多主题/壁纸及长文本进行浏览器截图、对比度和性能测量。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 设置、字体与状态怎样在 Host/浏览器之间流动？\n\n**研究主题：**功能与机制、工程质量与复用\n\n#### 完整回答\n\nHost 扫描插件 fonts/ 与 DSH_HOME/fonts/，识别 TTF/OTF 的 name 表，对字体清单去重并生成可索引 ID；浏览器按 manifest 加载 @font-face。状态文件 $DSH_HOME/type-tune.json 供聊天命令和设置卡共用；浏览器本地 localStorage 作为首帧缓存或无 webserver 降级，页面每 2 秒轮询 Host 状态。Host saveState 使用临时文件重命名，能减少半文件风险；但固定 .tmp 文件名与先读后写 revision 没并发锁，多个命令/页面同时写仍可能覆盖更新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:252-360](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L252-L360)\n\n字体目录扫描、格式过滤、去重及签名。\n\n<details>\n<summary>查看原文（109行）</summary>\n\n```text\n * Scan the drop folders for loadable fonts.\n *\n * Never throws: an unreadable directory simply contributes nothing, and every\n * skipped file is reported with a reason so the UI can explain itself.\n * @param {string[]} [dirs] - directories to scan; defaults to {@link fontDirs}.\n * @returns {{ fonts: Array<{id: string, family: string, file: string, dir: string, format: string, bytes: number}>, rejected: Array<{file: string, reason: string}> }}\n */\nexport function scanFonts(dirs = fontDirs()) {\n\t/** Every loadable candidate, before duplicate-family arbitration. */\n\tconst candidates = [];\n\t/** @type {Array<{file:string,reason:string}>} */\n\tconst rejected = [];\n\n\t/** Cap the total files inspected, so a directory with tens of thousands of\n\t * entries cannot make the manifest handler read (and parse) every one. */\n\tconst SCAN_BUDGET = 1000;\n\tlet scanned = 0;\n\n\touter:\n\tfor (const dir of dirs) {\n\t\tlet entries;\n\t\ttry {\n\t\t\tentries = fs.readdirSync(dir, { withFileTypes: true });\n\t\t} catch {\n\t\t\tcontinue; // folder absent (or unreadable): nothing to report\n\t\t}\n\t\t// Stable order so the manifest does not shuffle between requests.\n\t\tentries.sort((a, b) => a.name.localeCompare(b.name));\n\t\tfor (const entry of entries) {\n\t\t\tscanned += 1;\n\t\t\tif (scanned > SCAN_BUDGET) break outer;\n\t\t\tif (!entry.isFile() || entry.name.startsWith(\".\")) continue;\n\t\t\tconst ext = path.extname(entry.name).toLowerCase();\n\t\t\tconst filePath = path.join(dir, entry.name);\n\t\t\tif (COLLECTION_EXT.has(ext)) {\n\t\t\t\trejected.push({ file: entry.name, reason: \"字体集合（.ttc/.otc）浏览器无法通过 @font-face 加载，请改用 .ttf/.otf/.woff2\" });\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (!SUPPORTED_EXT.has(ext)) {\n\t\t\t\tif (ext !== \".txt\" && ext !== \".md\") rejected.push({ file: entry.name, reason: `不支持的扩展名 ${ext || \"(无)\"}` });\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tlet stats;\n\t\t\ttry {\n\t\t\t\tstats = fs.statSync(filePath);\n\t\t\t} catch {\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (stats.size === 0) {\n\t\t\t\trejected.push({ file: entry.name, reason: \"空文件\" });\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tconst parsed = familyOf(filePath, stats);\n\t\t\tif (parsed.collection) {\n\t\t\t\trejected.push({ file: entry.name, reason: \"该 .ttf/.otf 实为 TrueType 字体集合（TTC），浏览器无法通过 @font-face 加载\" });\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tconst family = parsed.family;\n\t\t\tif (family === null || family === \"\") {\n\t\t\t\trejected.push({ file: entry.name, reason: \"无法确定字体家族名（文件可能已损坏）\" });\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tconst hash = createHash(\"sha1\")\n\t\t\t\t.update(`${entry.name}:${String(stats.size)}:${String(Math.round(stats.mtimeMs))}`)\n\t\t\t\t.digest(\"hex\")\n\t\t\t\t.slice(0, 8);\n\t\t\tconst familySlug = slug(family).slice(0, 40) || \"font\";\n\t\t\tcandidates.push({\n\t\t\t\tid: `${familySlug}-${hash}`,\n\t\t\t\tfamily,\n\t\t\t\tfile: entry.name,\n\t\t\t\tdir,\n\t\t\t\tformat: ext.slice(1),\n\t\t\t\tbytes: stats.size,\n\t\t\t\t// A file named after its own family is the better keeper.\n\t\t\t\texact: slug(path.basename(entry.name, ext)) === slug(family)\n\t\t\t});\n\t\t}\n\t}\n\n\t// One family, one slot: the file whose name matches the family wins, then the\n\t// shorter name, then the earlier name. Deterministic, and the losers are\n\t// reported instead of silently vanishing.\n\tconst byFamily = new Map();\n\tfor (const candidate of candidates) {\n\t\tconst list = byFamily.get(candidate.family);\n\t\tif (list === undefined) byFamily.set(candidate.family, [candidate]);\n\t\telse list.push(candidate);\n\t}\n\tconst fonts = [];\n\tfor (const [family, list] of byFamily) {\n\t\tlist.sort((a, b) => (Number(b.exact) - Number(a.exact)) || (a.file.length - b.file.length) || a.file.localeCompare(b.file));\n\t\tfonts.push(list[0]);\n\t\tfor (const loser of list.slice(1)) {\n\t\t\trejected.push({ file: loser.file, reason: `字体家族「${family}」已由 ${list[0].file} 提供` });\n\t\t}\n\t}\n\tfonts.sort((a, b) => a.family.localeCompare(b.family));\n\treturn { fonts: fonts.slice(0, MAX_FONTS), rejected };\n}\n\n/**\n * A short signature of the current font set, so the browser half can tell\n * whether a refresh changed anything.\n * @param {Array<{id: string, bytes: number}>} fonts - scanned fonts.\n * @returns {string} signature.\n */\nexport function fontSignature(fonts) {\n\treturn createHash(\"sha1\").update(fonts.map((f) => `${f.id}:${String(f.bytes)}`).join(\"|\")).digest(\"hex\").slice(0, 12);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:375-437](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L375-L437)\n\n状态读取、revision 加一及 .tmp 后 rename。\n\n<details>\n<summary>查看原文（63行）</summary>\n\n```text\nexport function loadState() {\n\t/** @type {{ revision: number, config: object | null, updatedAt: string | null, present: boolean }} */\n\tconst absent = { revision: 0, config: null, updatedAt: null, present: false };\n\tlet raw;\n\ttry {\n\t\traw = fs.readFileSync(stateFile(), \"utf8\");\n\t} catch {\n\t\treturn absent;\n\t}\n\ttry {\n\t\tconst parsed = JSON.parse(raw);\n\t\tif (parsed === null || typeof parsed !== \"object\") return absent;\n\t\tconst config = parsed.config;\n\t\treturn {\n\t\t\trevision: Number.isFinite(parsed.revision) ? Math.max(0, Math.floor(parsed.revision)) : 0,\n\t\t\tconfig: config !== null && typeof config === \"object\" && !Array.isArray(config) ? config : null,\n\t\t\tupdatedAt: typeof parsed.updatedAt === \"string\" ? parsed.updatedAt : null,\n\t\t\tpresent: true\n\t\t};\n\t} catch {\n\t\treturn absent;\n\t}\n}\n\n/**\n * Write the shared state, bumping the revision so pollers notice.\n * @param {object | null} config - the full browser config, or null for defaults.\n * @returns {{ revision: number, config: object | null, updatedAt: string | null, present: boolean }} the stored state.\n */\nexport function saveState(config) {\n\tconst previous = loadState();\n\tconst next = {\n\t\trevision: previous.revision + 1,\n\t\tconfig: config === null || typeof config !== \"object\" || Array.isArray(config) ? null : config,\n\t\tupdatedAt: new Date().toISOString(),\n\t\tpresent: true\n\t};\n\ttry {\n\t\tconst file = stateFile();\n\t\tfs.mkdirSync(path.dirname(file), { recursive: true });\n\t\t// Write-then-rename: a crash mid-write can never leave a half state file.\n\t\tconst temp = `${file}.tmp`;\n\t\tfs.writeFileSync(temp, `${JSON.stringify(next, null, 2)}\\n`, \"utf8\");\n\t\tfs.renameSync(temp, file);\n\t} catch {\n\t\t// Unwritable home: the browser keeps its own localStorage copy.\n\t}\n\treturn next;\n}\n\n/**\n * Merge a partial patch onto the stored config, honouring the null (defaults)\n * base and dropping unknown keys is left to the browser half's normalizer —\n * this half only guarantees the object stays a plain, bounded JSON object.\n * @param {object} patch - the keys to set.\n * @returns {{ revision: number, config: object | null, updatedAt: string | null }} the stored state.\n */\nexport function patchState(patch) {\n\tconst current = loadState().config;\n\tconst merged = { ...(current ?? {}), ...patch };\n\treturn saveState(merged);\n}\n//#endregion\n```\n\n</details>\n\n**依据 3 · 源码核查**：[client.js:708-820](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/client.js#L708-L820)\n\n客户端 fetch 状态、播种及更新路径。\n\n<details>\n<summary>查看原文（113行）</summary>\n\n```text\n\t\t * @param {object} [init] - fetch init.\n\t\t * @returns {Promise<any | null>} parsed body or null.\n\t\t */\n\t\tasync function fetchJson(url, init) {\n\t\t\ttry {\n\t\t\t\tconst response = await window.fetch(url, init);\n\t\t\t\tif (response === undefined || response === null || response.ok !== true) return null;\n\t\t\t\treturn await response.json();\n\t\t\t} catch {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t}\n\n\t\t/**\n\t\t * Apply a host state revision when it is newer than the last applied one.\n\t\t * @param {any} state - a `/state` or manifest `state` payload.\n\t\t * @returns {boolean} whether anything was applied.\n\t\t */\n\t\tfunction applyState(state) {\n\t\t\tif (state === null || typeof state !== \"object\") return false;\n\t\t\t// \"No state file yet\" is not \"the user asked for defaults\": keeping the\n\t\t\t// browser's own config is what makes an upgrade non-destructive.\n\t\t\tif (state.present === false) return false;\n\t\t\tconst revision = Number.isFinite(state.revision) ? state.revision : -1;\n\t\t\tif (revision <= appliedRevision) return false;\n\t\t\tappliedRevision = revision;\n\t\t\t// A null config is an explicit \"/style recover\": back to defaults.\n\t\t\tcfgRef = normalizeConfig(state.config === null || state.config === undefined ? {} : state.config);\n\t\t\tsaveConfig(cfgRef); // cache for the next first paint\n\t\t\tapplyCss(cfgRef);\n\t\t\trenderPreview(cfgRef);\n\t\t\tnotifySubscribers();\n\t\t\treturn true;\n\t\t}\n\n\t\t/**\n\t\t * Seed the host state from this browser's config the first time we meet it,\n\t\t * so a later `/style contrast 3` merges onto what the user actually has\n\t\t * instead of onto defaults.\n\t\t * @returns {Promise<void>} resolves once the write answered (or failed).\n\t\t */\n\t\tasync function seedHost() {\n\t\t\tconst state = await fetchJson(`${ROUTE_BASE}/state`, {\n\t\t\t\tmethod: \"POST\",\n\t\t\t\theaders: { \"content-type\": \"application/json\" },\n\t\t\t\tbody: JSON.stringify({ config: cfgRef })\n\t\t\t});\n\t\t\tif (state !== null && Number.isFinite(state.revision)) appliedRevision = state.revision;\n\t\t}\n\n\t\t/**\n\t\t * Read the manifest once: the font set, the drop folders, and the state.\n\t\t * @returns {Promise<void>} resolves once applied.\n\t\t */\n\t\tasync function loadFromHost() {\n\t\t\tconst manifest = await fetchJson(`${ROUTE_BASE}/manifest`);\n\t\t\tif (manifest === null) {\n\t\t\t\thostMode = false;\n\t\t\t\treturn;\n\t\t\t}\n\t\t\thostMode = true;\n\t\t\tconst signature = typeof manifest.signature === \"string\" ? manifest.signature : \"\";\n\t\t\tif (signature !== manifestSignature) {\n\t\t\t\tmanifestSignature = signature;\n\t\t\t\tcustomFonts = cleanFonts(manifest.fonts);\n\t\t\t\tcustomRejected = Array.isArray(manifest.rejected)\n\t\t\t\t\t? manifest.rejected.filter((entry) => entry !== null && typeof entry === \"object\").slice(0, 50)\n\t\t\t\t\t: [];\n\t\t\t\tcustomDirs = Array.isArray(manifest.dirs) ? manifest.dirs.filter((dir) => typeof dir === \"string\").slice(0, 4) : [];\n\t\t\t\tapplyFontFaces();\n\t\t\t\tnotifySubscribers();\n\t\t\t}\n\t\t\tif (applyState(manifest.state ?? null) === false && manifest.state?.present === false) {\n\t\t\t\tawait seedHost();\n\t\t\t}\n\t\t}\n\n\t\t/**\n\t\t * Poll the lightweight state route so a `/style` command lands within about\n\t\t * a second. Hidden tabs skip the round trip entirely.\n\t\t * @returns {Promise<void>} resolves once checked.\n\t\t */\n\t\tasync function pollHostState() {\n\t\t\tif (typeof document.visibilityState === \"string\" && document.visibilityState !== \"visible\") return;\n\t\t\tconst state = await fetchJson(`${ROUTE_BASE}/state`);\n\t\t\tif (state === null) return;\n\t\t\thostMode = true;\n\t\t\tapplyState(state);\n\t\t}\n\n\t\t/** Re-read the folder (the card's \"重新扫描\" button). */\n\t\tasync function rescanFonts() {\n\t\t\tmanifestSignature = \"\";\n\t\t\tawait loadFromHost();\n\t\t\tnotifySubscribers();\n\t\t}\n\n\t\t/** Persist to the host, coalescing a slider drag into one write. */\n\t\tfunction scheduleHostWrite() {\n\t\t\tif (!hostMode) return;\n\t\t\tif (postTimer !== null) window.clearTimeout(postTimer);\n\t\t\tpostTimer = window.setTimeout(async () => {\n\t\t\t\tpostTimer = null;\n\t\t\t\t// Fold in any host change that has not reached us yet (e.g. a /style\n\t\t\t\t// command issued just before this edit), so a stale local config can\n\t\t\t\t// never overwrite it.\n\t\t\t\tawait pollHostState();\n\t\t\t\tconst state = await fetchJson(`${ROUTE_BASE}/state`, {\n\t\t\t\t\tmethod: \"POST\",\n\t\t\t\t\theaders: { \"content-type\": \"application/json\" },\n\t\t\t\t\tbody: JSON.stringify({ config: cfgRef })\n\t\t\t\t});\n\t\t\t\t// Record the revision we caused so the next poll does not echo it back.\n```\n\n</details>\n\n**依据 4 · 源码核查**：[client.js:1238-1250](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/client.js#L1238-L1250)\n\n客户端轮询状态定时器。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\t\t\tapplyCss(cfgRef);\n\t\t\tmountPreview(cfgRef);\n\t\t\trenderPreview(cfgRef);\n\n\t\t\t// The host channel: fetch the custom fonts and the shared state, then\n\t\t\t// poll for tiny state-only changes so a `/style` command lands without a\n\t\t\t// refresh. Polling stops with the fiber and skips hidden tabs.\n\t\t\tvoid loadFromHost();\n\t\t\tconst pollTimer = window.setInterval(() => { void pollHostState(); }, HOST_POLL_MS);\n\t\t\tconst onVisible = () => { if (document.visibilityState === \"visible\") void pollHostState(); };\n\t\t\tdocument.addEventListener(\"visibilitychange\", onVisible);\n\n\t\t\tctx.effect(() => () => {\n```\n\n</details>\n\n#### 缺口\n\n- 未用多标签页/命令并发与写入失败测试状态同步。\n  **影响：**可能丢失配置更新或客户端显示与文件不一致。\n  **进一步探讨：**交错双写与不可写目录/崩溃注入，比较响应、文件和 UI 状态。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 无认证 Web 路由与写入失败的边界是什么？\n\n**研究主题：**缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n本组件 GET manifest/state/font handler 未独立认证，字体 ID 白名单限制路径；POST /state 检查 JSON Content-Type 和 Origin 与 Host 同源，但明确允许无 Origin 请求。若 DSH Web 被绑定到 LAN、请求可达且外层未另设身份校验，非浏览器客户端可发送无 Origin 的 JSON POST 改写样式状态；这形成条件性的未授权配置变更路径，不是源码已证明发生的远程代码执行。saveState 捕获磁盘错误并仍返回 next，路由可报 200、命令也可能声称成功而持久化未发生。README 已承认无认证和 LAN 可读，写入保护只覆盖普通跨站浏览器请求。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:619-638](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L619-L638)\n\nsameOriginJson 接受无 Origin 的 application/json 请求。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n * The routes are unauthenticated by design (the webserver is loopback-only\n * unless an operator deliberately binds `0.0.0.0`), so writes are additionally\n * gated on a same-origin `Origin` and a JSON content type — a cross-site form\n * or `fetch` cannot satisfy both without a CORS preflight this server never\n * grants.\n * @param {import('node:http').IncomingMessage} req - the request.\n * @returns {boolean} whether the write is allowed.\n */\nfunction sameOriginJson(req) {\n\tconst type = String(req.headers[\"content-type\"] ?? \"\");\n\tif (!type.toLowerCase().includes(\"application/json\")) return false;\n\tconst origin = req.headers.origin;\n\tif (typeof origin !== \"string\" || origin === \"\") return true; // curl / same-origin without Origin\n\ttry {\n\t\treturn new URL(origin).host === req.headers.host;\n\t} catch {\n\t\treturn false;\n\t}\n}\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:674-716](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L674-L716)\n\n无认证 GET/POST 状态路由。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\nexport async function handleRoute(req, res) {\n\ttry {\n\t\tconst url = new URL(req.url ?? \"/\", `http://${req.headers.host ?? \"127.0.0.1\"}`);\n\t\tconst pathname = url.pathname;\n\t\tconst method = (req.method ?? \"GET\").toUpperCase();\n\n\t\tif (pathname === `${ROUTE_BASE}/manifest` && method === \"GET\") {\n\t\t\tsendJson(res, 200, manifestPayload());\n\t\t\treturn;\n\t\t}\n\t\tif (pathname === `${ROUTE_BASE}/state`) {\n\t\t\tif (method === \"GET\") {\n\t\t\t\tsendJson(res, 200, loadState());\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tif (method === \"POST\") {\n\t\t\t\tif (!sameOriginJson(req)) {\n\t\t\t\t\tsendJson(res, 403, { error: \"forbidden\" });\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tconst body = await readBody(req);\n\t\t\t\tif (body === null) {\n\t\t\t\t\tsendJson(res, 413, { error: \"body too large\" });\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tlet parsed;\n\t\t\t\ttry {\n\t\t\t\t\tparsed = JSON.parse(body);\n\t\t\t\t} catch {\n\t\t\t\t\tsendJson(res, 400, { error: \"invalid json\" });\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tif (parsed === null || typeof parsed !== \"object\" || Array.isArray(parsed)) {\n\t\t\t\t\tsendJson(res, 400, { error: \"expected a config object\" });\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tconst mode = parsed.mode === \"recover\" ? \"recover\" : \"set\";\n\t\t\t\tconst state = mode === \"recover\" ? saveState(null) : saveState(parsed.config);\n\t\t\t\tsendJson(res, 200, state);\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tsendJson(res, 405, { error: \"method not allowed\" });\n\t\t\treturn;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:404-422](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L404-L422)\n\n落盘错误被吞且返回成功形态。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function saveState(config) {\n\tconst previous = loadState();\n\tconst next = {\n\t\trevision: previous.revision + 1,\n\t\tconfig: config === null || typeof config !== \"object\" || Array.isArray(config) ? null : config,\n\t\tupdatedAt: new Date().toISOString(),\n\t\tpresent: true\n\t};\n\ttry {\n\t\tconst file = stateFile();\n\t\tfs.mkdirSync(path.dirname(file), { recursive: true });\n\t\t// Write-then-rename: a crash mid-write can never leave a half state file.\n\t\tconst temp = `${file}.tmp`;\n\t\tfs.writeFileSync(temp, `${JSON.stringify(next, null, 2)}\\n`, \"utf8\");\n\t\tfs.renameSync(temp, file);\n\t} catch {\n\t\t// Unwritable home: the browser keeps its own localStorage copy.\n\t}\n\treturn next;\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:69-74](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md#L69-L74)\n\n作者说明状态/字体路由不带认证及 LAN 可读。\n\n```text\n## 数据与安全\n\n- 设置存在 **`$DSH_HOME/type-tune.json`**，是聊天命令与设置卡**唯一**的共享真相源；浏览器另存一份 `localStorage` 仅作首帧缓存。宿主的 `webserver` 不可用时（桌面端 / Electron）自动退回纯 `localStorage` 模式。\n- 状态文件里有一个 `present` 标志：区分「还没有状态文件」与「用户主动恢复了默认」。**升级不会覆盖你已有的设置**——首次联通时反而会把你现有的配置播种给宿主，这样后续 `/style` 的改动是在你的真实配置上叠加，而不是叠在默认值上。\n- 宿主半开的 `prefix` 路由是**只读优先**的：`GET` 供页面读取字体与状态；唯一的写入口 `POST /state` 额外要求 `Content-Type: application/json` 且 `Origin` 与 `Host` 同源，跨站表单/请求拿不到这个组合（不授予任何 CORS 预检）。字体 id 也做了白名单校验，路径穿越无效。\n- 该路由**不带认证**：默认只在回环地址可用；如果你把 DSH 绑到 `0.0.0.0`，字体与状态对那个网络可读（写入仍受同源保护）。\n```\n\n#### 缺口\n\n- 未在真实网络绑定/代理环境验证 Host 认证边界。\n  **影响：**实际可访问范围取决于 DSH Web 部署配置。\n  **进一步探讨：**隔离 LAN 用无 Origin 请求和不可写目录测试状态/响应。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 采用时如何验证可读性与部署条件？\n\n**研究主题：**效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n适合自用、仅回环访问的 DSH Web 先试用。选择壁纸与亮暗主题测量次级文字/链接/标题的真实对比和可读性，并在低配置设备、长 Markdown 中观察动画开销；自定义字体需核来源和许可证。若提供 LAN/多人访问，应先给写路由增加认证，报告持久化失败，并处理并发写/版本冲突；当前只实现同源浏览器保护。安装后用 `/style recover` 与移除/状态删除验证回滚。作者提到三套离线测试但测试文件在未发布的 dev/，本轮不可复核。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:76-107](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/README.md#L76-L107)\n\n作者说明动画取舍、回滚与未发布 dev/ 测试。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n````text\n## 已知取舍（重要）\n\n- 彩色循环 / 描边会牺牲 Windows ClearType 次像素锐度，且天然与高对比冲突；插件默认只在标题/强调/链接等少量节点上启用。\n- 「正文特效」会显著增加渲染开销，长文本请慎用（UI 有警告）。\n- 字体文件通过 `@font-face` 按需加载（`font-display: swap`），首次选择某个自定义字体时会有一次极短的切换。\n\n## 回滚\n\n```bash\ndsh plugin --profile 0.1.7-rc.2 remove dsh-type-tune\n```\n\n或只清掉状态与本地偏好：\n\n```bash\ndel %USERPROFILE%\\.dsh\\type-tune.json\n```\n\n浏览器控制台：`localStorage.removeItem('dsh-type-tune:v1')` 后刷新。\n\n## 开发\n\n- 零构建：`index.js`（宿主半）+ `client.js`（`window.__ModuleLoader__.load` 包裹的浏览器半）。\n- 语法检查：`node --check index.js && node --check client.js`。\n- 三套离线测试（全部无依赖、无需 DSH 进程）。\n  **说明**：测试文件位于作者开发工作区的 `dev/` 目录，**不随本仓库发布**；下表记录的是本插件实际被验证过的范围。\n\n| 命令 | 覆盖 |\n|---|---|\n| `node dev/test-host.mjs` | 用**真实系统字体**验证 `name` 表解析（Georgia / Consolas / Noto Sans SC）、`.ttc` 与损坏文件拒绝、目录扫描与同名家族仲裁、状态读写、全部 `/style` 子命令、路由（含 CSRF 与路径穿越拒绝）、字体字节、无 webserver 宿主的降级 |\n| `node dev/test.mjs` | 浏览器半：vm 加载、种子词约束（守住曾导致 boot 失败的那条 require）、配置归一化与 CSS 注入、字体值反注入、降级路径 |\n| `node dev/test-integration.mjs` | **端到端**：把浏览器半的 `fetch` 直接桥接到真实路由处理器，验证「升级不丢设置并把配置播种给宿主 → manifest 变成 `@font-face` → 字体路由返回正确字节 → 卡片写入落到状态文件 → `/style` 回流到页面 → `/style recover` 清空覆盖」 |\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:404-437](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/index.js#L404-L437)\n\n状态写盘及补丁合并。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport function saveState(config) {\n\tconst previous = loadState();\n\tconst next = {\n\t\trevision: previous.revision + 1,\n\t\tconfig: config === null || typeof config !== \"object\" || Array.isArray(config) ? null : config,\n\t\tupdatedAt: new Date().toISOString(),\n\t\tpresent: true\n\t};\n\ttry {\n\t\tconst file = stateFile();\n\t\tfs.mkdirSync(path.dirname(file), { recursive: true });\n\t\t// Write-then-rename: a crash mid-write can never leave a half state file.\n\t\tconst temp = `${file}.tmp`;\n\t\tfs.writeFileSync(temp, `${JSON.stringify(next, null, 2)}\\n`, \"utf8\");\n\t\tfs.renameSync(temp, file);\n\t} catch {\n\t\t// Unwritable home: the browser keeps its own localStorage copy.\n\t}\n\treturn next;\n}\n\n/**\n * Merge a partial patch onto the stored config, honouring the null (defaults)\n * base and dropping unknown keys is left to the browser half's normalizer —\n * this half only guarantees the object stays a plain, bounded JSON object.\n * @param {object} patch - the keys to set.\n * @returns {{ revision: number, config: object | null, updatedAt: string | null }} the stored state.\n */\nexport function patchState(patch) {\n\tconst current = loadState().config;\n\tconst merged = { ...(current ?? {}), ...patch };\n\treturn saveState(merged);\n}\n//#endregion\n```\n\n</details>\n\n**依据 3 · 源码核查**：[client.js:322-355](https://github.com/AWL-MC2/DSH-Plugin_awl/blob/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19/client.js#L322-L355)\n\n对比与特效 CSS 生成。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n\t\t/** Token/global rules (contrast, halo, fonts). */\n\t\tfunction buildGlobalCss(cfg) {\n\t\t\tconst rules = [];\n\t\t\tconst lv = CONTRAST_LEVELS[cfg.contrast] || CONTRAST_LEVELS[0];\n\t\t\tconst tokenDecls = [];\n\t\t\tif (lv.secondary > 0) tokenDecls.push(\"--dsw-alias-label-secondary: \" + contrastMix(lv.secondary) + \";\");\n\t\t\tif (lv.tertiary > 0) tokenDecls.push(\"--dsw-alias-label-tertiary: \" + contrastMix(lv.tertiary) + \";\");\n\t\t\tif (lv.caption > 0) tokenDecls.push(\"--dsw-alias-label-caption: \" + contrastMix(lv.caption) + \";\");\n\t\t\tif (tokenDecls.length > 0) {\n\t\t\t\t// Emit on both `body` and the dark palette selector so a later\n\t\t\t\t// stylesheet wins the cascade in BOTH color schemes.\n\t\t\t\trules.push(\"body, body[data-ds-dark-theme] { \" + tokenDecls.join(\" \") + \" }\");\n\t\t\t}\n\n\t\t\tif (cfg.halo > 0) {\n\t\t\t\tconst h = cfg.halo;\n\t\t\t\trules.push(\"body:not([data-ds-dark-theme]) \" + MARKDOWN_SCOPE + \", body:not([data-ds-dark-theme]) [data-text-shimmer] { text-shadow: \" + HALO_LIGHT[h] + \"; }\");\n\t\t\t\trules.push(\"body[data-ds-dark-theme] \" + MARKDOWN_SCOPE + \", body[data-ds-dark-theme] [data-text-shimmer] { text-shadow: \" + HALO_DARK[h] + \"; }\");\n\t\t\t}\n\n\t\t\tconst uiStack = resolveUiStack(cfg.uiFont);\n\t\t\tconst codeStack = resolveCodeStack(cfg.codeFont);\n\t\t\tconst fontDecls = [];\n\t\t\tif (uiStack !== null) fontDecls.push(\"--dsw-font-family: \" + uiStack + \";\");\n\t\t\tif (codeStack !== null) fontDecls.push(\"--ds-font-family-code: \" + codeStack + \";\");\n\t\t\tif (fontDecls.length > 0) rules.push(\":root, body { \" + fontDecls.join(\" \") + \" }\");\n\n\t\t\treturn rules;\n\t\t}\n\n\t\t/** Scoped rules (content rules + effects) under one scope selector. */\n\t\tfunction buildScopedCss(cfg, scope) {\n\t\t\tconst rules = [];\n\n```\n\n</details>\n\n#### 缺口\n\n- 缺少独立视觉、性能和真实宿主测试。\n  **影响：**不能给出普遍可读性提升或开销结论。\n  **进一步探讨：**在目标 DSH 版本上截图/计帧并测多主题 WCAG 对比。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：cc73805bc555d0533bcc6860460a9a24b182818f63d1a7cc9869c2cd0fa57a3e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 2147 | 1608 | 408 | — |\n| .md | source | 1 | 137 | — | — | 1865 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| CSS 调节 | 提升视觉可读性 | 未独立视觉验证 |\n| 字体扫描 | 自定义家族 | 文件来源需管理 |\n| 状态同步 | 命令/UI 共用 | LAN 无认证、写失败静默 |\n\n## 工程亮点\n\nHost 扫字体、提供 manifest/state/font 路由和 /style 命令；客户端注入 CSS、预览、localStorage 与轮询。状态 .tmp 重命名但无 CAS，写失败静默。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态审阅固定 README、Host index.js、client.js；未加载 DSH、访问路由或视觉测量。\n- 下一步：在目标 DSH Web 亮暗主题和多壁纸测对比度/性能；LAN 无 Origin POST、不可写状态目录、多标签并发与回滚实测。\n",
         "metadata": {
             "repository": "AWL-MC2/DSH-Plugin_awl",
             "repository_id": 1388463793,
-            "captured_at": "2026-10-21T05:34:07.904Z",
-            "window_start": "2026-09-21T05:34:07.904Z",
+            "captured_at": "2026-10-22T05:54:58.143Z",
+            "window_start": "2026-09-22T05:54:58.143Z",
             "stars": 0,
             "pushed_at": "2026-09-30T13:44:56Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCC8:25D4C9:5868B3:5E71B0:6AD84ED1 and timestamp 2026-10-21 05:34:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FE02:275C9A:54AC3F:5AB9F9:6AD84ED2 and timestamp 2026-10-21 05:34:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20created%3A2026-09-21T05%3A34%3A07.904Z..2026-10-21T05%3A34%3A07.904Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 731E:3E2FA6:AFED09:FBB272:6AD84ED3 and timestamp 2026-10-21 05:34:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A34%3A07.904Z..2026-10-21T05%3A34%3A07.904Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 745E:1ADA16:A9EC67:F448A4:6AD84ED4 and timestamp 2026-10-21 05:34:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3AAWL-MC2%2FDSH-Plugin_awl%20is%3Aissue%20updated%3A2026-09-21T05%3A34%3A07.904Z..2026-10-21T05%3A34%3A07.904Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 759C:3E2FA6:AFEFF9:FBB6E5:6AD84ED5 and timestamp 2026-10-21 05:34:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
-            "npm": {
-                "package_name": "dsh-type-tune",
-                "captured_at": "2026-10-21T05:34:13.769Z",
-                "window_start": "2026-09-21",
-                "window_end": "2026-10-20",
-                "downloads_30d": 290,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-type-tune",
-                "error": null,
-                "publication": {
-                    "first_published_at": "2026-09-26T04:47:48.726Z",
-                    "captured_at": "2026-10-21T07:15:57.121Z",
-                    "source_url": "https://registry.npmjs.org/dsh-type-tune",
-                    "error": null,
-                    "latest_version": "0.1.0",
-                    "latest_published_at": "2026-09-26T04:47:48.957Z",
-                    "latest_error": null
-                }
-            }
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1388463793:root",

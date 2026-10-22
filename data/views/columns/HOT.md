@@ -13,7 +13,6 @@
 | 插件 | 主要用途 | npm 近30天下载 | GitHub Star |
 | --- | --- | --- | --- |
 | [dsh-status-rotator](#plugin-1333328839-root) | DSH 运行状态文案、主题、弹幕与鲸尾动画插件，带持久配置与词库热更新。 | [![npm 近30天下载 10,930](https://img.shields.io/static/v1?label=&message=10%2C930&color=blue&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) | [![GitHub Star 197](https://img.shields.io/static/v1?label=&message=197&color=yellow&style=flat)](https://github.com/01Virex/dsh-status-rotator) |
-| [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。 | [![npm 近30天下载 7,358](https://img.shields.io/static/v1?label=&message=7%2C358&color=blue&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d) | [![GitHub Star 46](https://img.shields.io/static/v1?label=&message=46&color=yellow&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) |
 | [dsh-update-checker](#plugin-1334836615-root) | 在DSH GUI检查主程序和第三方插件版本，提供备份更新回退与Web重启流程，Desktop主程序转原生更新。 | [![npm 近30天下载 7,106](https://img.shields.io/static/v1?label=&message=7%2C106&color=blue&style=flat)](https://www.npmjs.com/package/dsh-update-checker) | [![GitHub Star 19](https://img.shields.io/static/v1?label=&message=19&color=yellow&style=flat)](https://github.com/Airmetro/dsh-update-checker) |
 | [dsh-calendar](#plugin-1376880747-root) | 在 DSH 右侧栏读 Obsidian 日记与待办，并受控写回 Markdown。 | [![npm 近30天下载 6,032](https://img.shields.io/static/v1?label=&message=6%2C032&color=blue&style=flat)](https://www.npmjs.com/package/dsh-calendar) | - |
 | [dsh-diff-approval](#plugin-1335980444-root) | 在DSH web集中审阅工具写入与VCS本地变更，提供文件/块级保留、回退及评论。 | [![npm 近30天下载 5,357](https://img.shields.io/static/v1?label=&message=5%2C357&color=blue&style=flat)](https://www.npmjs.com/package/dsh-diff-approval) | [![GitHub Star 14](https://img.shields.io/static/v1?label=&message=14&color=yellow&style=flat)](https://github.com/9087/dsh-diff-approval) |
@@ -29,16 +28,16 @@
 | [embedded-workbench](#plugin-1276714299-root) | 为嵌入式固件开发提供八份 Skill，并在 DSH 会话首个模型步骤注入短验证提示。 | [![npm 近30天下载 2,906](https://img.shields.io/static/v1?label=&message=2%2C906&color=blue&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) | [![GitHub Star 21](https://img.shields.io/static/v1?label=&message=21&color=yellow&style=flat)](https://github.com/AmethystLuna/embedded-workbench) |
 | [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH提供Edge、云端及本地语音后端，支持长文分块播放和自定义音色管理。 | [![npm 近30天下载 2,693](https://img.shields.io/static/v1?label=&message=2%2C693&color=blue&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tts) | [![GitHub Star 28](https://img.shields.io/static/v1?label=&message=28&color=yellow&style=flat)](https://github.com/1624318455/dsh-plugin-tts) |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | [![npm 近30天下载 2,587](https://img.shields.io/static/v1?label=&message=2%2C587&color=blue&style=flat)](https://www.npmjs.com/package/dsh-read-url) | [![GitHub Star 22](https://img.shields.io/static/v1?label=&message=22&color=yellow&style=flat)](https://github.com/2672243194/dsh-read-url) |
-| [Forge 便签](#plugin-1363429979-plugin-notes) | 提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。 | [![npm 近30天下载 2,413](https://img.shields.io/static/v1?label=&message=2%2C413&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
+| [dsh-plugin-notes](#plugin-1363429979-plugin-notes) | 把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。 | [![npm 近30天下载 2,413](https://img.shields.io/static/v1?label=&message=2%2C413&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
 | [dsh-verify](#plugin-1335843750-root) | 执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。 | [![npm 近30天下载 2,385](https://img.shields.io/static/v1?label=&message=2%2C385&color=blue&style=flat)](https://www.npmjs.com/package/dsh-verify) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/263311487-ux/dsh-verify) |
 | [oh-my-dsh](#plugin-1379204512-root) | 为 DSH 提供角色、Skill 与多智能体协调协议，支持自动推进和显式团队流程。 | [![npm 近30天下载 2,379](https://img.shields.io/static/v1?label=&message=2%2C379&color=blue&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) | [![GitHub Star 11](https://img.shields.io/static/v1?label=&message=11&color=yellow&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) |
-| [dsh-soul](#plugin-1352089397-root) | 管理分层人设配置、提示词注入、变更历史及带确认的人设修改。 | [![npm 近30天下载 2,373](https://img.shields.io/static/v1?label=&message=2%2C373&color=blue&style=flat)](https://www.npmjs.com/package/dsh-soul) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/Aliuyanfeng/dsh-soul) |
-| [dsh-custom-plugin](#plugin-1342948215-root) | 组合外观、项目文件夹、提示库、会话导出、搜索与用量观察。 | [![npm 近30天下载 2,238](https://img.shields.io/static/v1?label=&message=2%2C238&color=blue&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) | [![GitHub Star 8](https://img.shields.io/static/v1?label=&message=8&color=yellow&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) |
+| [dsh-soul](#plugin-1352089397-root) | 管理DSH个性化资料、人格预设及全局/工作区/会话覆盖，提供Web、命令、工具确认与变更回滚。 | [![npm 近30天下载 2,337](https://img.shields.io/static/v1?label=&message=2%2C337&color=blue&style=flat)](https://www.npmjs.com/package/dsh-soul) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/Aliuyanfeng/dsh-soul) |
 | [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。 | [![npm 近30天下载 2,223](https://img.shields.io/static/v1?label=&message=2%2C223&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
+| [dsh-custom-plugin](#plugin-1342948215-root) | DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。 | [![npm 近30天下载 2,207](https://img.shields.io/static/v1?label=&message=2%2C207&color=blue&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) | [![GitHub Star 8](https://img.shields.io/static/v1?label=&message=8&color=yellow&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) |
 | [dsh-jev-guard](#plugin-1378138611-root) | 在 DSH 命令执行前结合静态规则与 Jev 判定，返回放行、改写、拒绝或人工升级。 | [![npm 近30天下载 2,072](https://img.shields.io/static/v1?label=&message=2%2C072&color=blue&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) |
 | [dsh-multi-folder](#plugin-1334119885-root) | 为DSH项目配置副工作目录，保持主cwd并将原文件和shell工具按单次目标重定根，附UI与@发现。 | [![npm 近30天下载 2,036](https://img.shields.io/static/v1?label=&message=2%2C036&color=blue&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) | [![GitHub Star 11](https://img.shields.io/static/v1?label=&message=11&color=yellow&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) |
 | [dsh-model](#plugin-1410395082-root) | 聚合多种模型来源为统一鉴权端点，提供模型目录、来源登录、组合切换与DSH管理页。 | [![npm 近30天下载 2,009](https://img.shields.io/static/v1?label=&message=2%2C009&color=blue&style=flat)](https://www.npmjs.com/package/dsh-model) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/AIcivilization/dsh-model) |
-| [Forge 工作报告](#plugin-1363429979-plugin-daily-log) | 汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。 | [![npm 近30天下载 1,976](https://img.shields.io/static/v1?label=&message=1%2C976&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
+| [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。 | [![npm 近30天下载 1,971](https://img.shields.io/static/v1?label=&message=1%2C971&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | [![npm 近30天下载 1,892](https://img.shields.io/static/v1?label=&message=1%2C892&color=blue&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature) | [![GitHub Star 8](https://img.shields.io/static/v1?label=&message=8&color=yellow&style=flat)](https://github.com/Aik358/dsh-literature) |
 | [Forge 用量计费](#plugin-1363429979-plugin-usage-billing) | 从会话用量建立账本，以事件时刻价格计费并展示预算、趋势与未计价项目。 | [![npm 近30天下载 1,814](https://img.shields.io/static/v1?label=&message=1%2C814&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
 | [dsh-web-mobile-fix](#plugin-1334255250-root) | 调整DSH窄屏布局，并为悬浮窗模式提供会话导航、桥接按钮与软键盘滚动适配。 | [![npm 近30天下载 1,787](https://img.shields.io/static/v1?label=&message=1%2C787&color=blue&style=flat)](https://www.npmjs.com/package/dsh-web-mobile-fix) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/AcidGr/dsh-web-mobile-fix) |
@@ -52,9 +51,9 @@
 | [滚动钢琴与消息小地图](#plugin-1412162067-root) | 在聊天区边缘按鼠标位置演奏钢琴音，并预览和跳转用户消息。 | [![npm 近30天下载 1,565](https://img.shields.io/static/v1?label=&message=1%2C565&color=blue&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano) | - |
 | [prompt-optimizer](#plugin-1403959948-root) | 用当前 Harness 模型或 Codex 澄清、改写提示词，预览后填回草稿。 | [![npm 近30天下载 1,554](https://img.shields.io/static/v1?label=&message=1%2C554&color=blue&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) |
 | [dsh-web-lan-access](#plugin-1334255288-root) | 让DSH网页监听全部网卡，并为局域网页面提供Host能力声明与地址信任配置。 | [![npm 近30天下载 1,548](https://img.shields.io/static/v1?label=&message=1%2C548&color=blue&style=flat)](https://www.npmjs.com/package/dsh-web-lan-access) | [![GitHub Star 39](https://img.shields.io/static/v1?label=&message=39&color=yellow&style=flat)](https://github.com/AcidGr/dsh-web-lan-access) |
-| [dsh-turn-outline](#plugin-1356219122-root) | 把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。 | [![npm 近30天下载 1,546](https://img.shields.io/static/v1?label=&message=1%2C546&color=blue&style=flat)](https://www.npmjs.com/package/dsh-turn-outline) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Andor-Z/dsh-turn-outline) |
 | [dock-base](#plugin-1340492184-root) | 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。 | [![npm 近30天下载 1,532](https://img.shields.io/static/v1?label=&message=1%2C532&color=blue&style=flat)](https://www.npmjs.com/package/dock-base) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/AKS1st/dock) |
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信群聊与邮件接入DSH，提供Web界面和十个通信工具，支持用户摘要及可选白名单来信到Agent。 | [![npm 近30天下载 1,529](https://img.shields.io/static/v1?label=&message=1%2C529&color=blue&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin) | [![GitHub Star 19](https://img.shields.io/static/v1?label=&message=19&color=yellow&style=flat)](https://github.com/AgentConnect/dsh-awiki) |
+| [dsh-turn-outline](#plugin-1356219122-root) | 不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。 | [![npm 近30天下载 1,529](https://img.shields.io/static/v1?label=&message=1%2C529&color=blue&style=flat)](https://www.npmjs.com/package/dsh-turn-outline) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Andor-Z/dsh-turn-outline) |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在 DSH 中搜索 GitHub 插件并提供安装、更新、冲突预检与启动恢复。 | [![npm 近30天下载 1,526](https://img.shields.io/static/v1?label=&message=1%2C526&color=blue&style=flat)](https://www.npmjs.com/package/@1e0zj/dsh-plugin-mall) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/1e0zj/dsh-plugin-mall) |
 | [dsh-trellis](#plugin-1335559646-root) | 为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。 | [![npm 近30天下载 1,515](https://img.shields.io/static/v1?label=&message=1%2C515&color=blue&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/1264459640/dsh-trellis) |
 | [Moli 浏览器工具](#plugin-1415767842-root) | 通过本地 Moli 引擎渲染页面，读取选区并生成截图或 PDF。 | [![npm 近30天下载 1,514](https://img.shields.io/static/v1?label=&message=1%2C514&color=blue&style=flat)](https://www.npmjs.com/package/dsh-moli) | [![GitHub Star 5](https://img.shields.io/static/v1?label=&message=5&color=yellow&style=flat)](https://github.com/27painter/dsh-moli) |
@@ -71,9 +70,9 @@
 | [dsh-temptask](#plugin-1390600932-root) | 为临时任务创建独立目录和DSH工作区，提供清理、转正搬迁与会话历史重建。 | [![npm 近30天下载 1,309](https://img.shields.io/static/v1?label=&message=1%2C309&color=blue&style=flat)](https://www.npmjs.com/package/@aeroscis/dsh-temptask) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Aeroscis/dsh-temptask) |
 | [dsh-plugin-balance](#plugin-1340280087-root) | 在DSH输入框附近显示多供应商余额/套餐用量，并持久统计会话token及估算费用。 | [![npm 近30天下载 1,271](https://img.shields.io/static/v1?label=&message=1%2C271&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-balance) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/Andrew111888/dsh-plugin-balance) |
 | [dsh-vision](#plugin-1335070045-packages-vision-route) | 给纯文本模型路由添加图片附件转译旁路，使用智谱视觉模型生成文字证据。 | [![npm 近30天下载 1,264](https://img.shields.io/static/v1?label=&message=1%2C264&color=blue&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/314857493/dsh-vision) |
-| [dsh-question-nav](#plugin-1341946801-root) | 以会话提问索引与圆点导航跳转历史用户提问。 | [![npm 近30天下载 1,247](https://img.shields.io/static/v1?label=&message=1%2C247&color=blue&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) |
 | [dsh-zspace](#plugin-1406500233-root) | 将极空间 NAS 文件管理与容器诊断能力接入 DSH，自动选择直连或中转。 | [![npm 近30天下载 1,242](https://img.shields.io/static/v1?label=&message=1%2C242&color=blue&style=flat)](https://www.npmjs.com/package/dsh-zspace) | - |
 | [dsh-usage-billing](#plugin-1333954586-root) | 统计DSH的DeepSeek模型调用与估算消费，提供预算提醒、历史回填、导出和余额展示。 | [![npm 近30天下载 1,231](https://img.shields.io/static/v1?label=&message=1%2C231&color=blue&style=flat)](https://www.npmjs.com/package/dsh-usage-billing) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/940842546/dsh-usage-billing) |
+| [@luziyang2026/dsh-question-nav](#plugin-1341946801-root) | 在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。 | [![npm 近30天下载 1,224](https://img.shields.io/static/v1?label=&message=1%2C224&color=blue&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合右侧文件预览、@文件引用、本地壁纸和活动宠物，增强DSH web桌面体验。 | [![npm 近30天下载 1,212](https://img.shields.io/static/v1?label=&message=1%2C212&color=blue&style=flat)](https://www.npmjs.com/package/dsh-ui-enhancer) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/AlexYin-Tongji/dsh-ui-enhancer) |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接到 DSH 会话，并提供主动推送与远程审批。 | [![npm 近30天下载 1,207](https://img.shields.io/static/v1?label=&message=1%2C207&color=blue&style=flat)](https://www.npmjs.com/package/dsh-msg-hub) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub) |
 | [DSH Telemetry Redactor](#plugin-1333368566-root) | 在遥测记录瀑布中递归脱敏支持的凭据模式，保留原始会话日志。 | [![npm 近30天下载 1,182](https://img.shields.io/static/v1?label=&message=1%2C182&color=blue&style=flat)](https://www.npmjs.com/package/dsh-telemetry-redactor) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/030611/dsh-telemetry-redactor) |
@@ -81,15 +80,14 @@
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听工具结果和会话事件，生成不保存观察明文的哈希链 JSONL 证据回执。 | [![npm 近30天下载 1,173](https://img.shields.io/static/v1?label=&message=1%2C173&color=blue&style=flat)](https://www.npmjs.com/package/qiushi-dsh-evidence-audit) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/030611/qiushi-dsh-evidence-audit) |
 | [dsh-better-sidebar-N23](#plugin-1352600211-root) | 提供文件编辑预览、Git、终端和可扩展页签的会话工作台。 | [![npm 近30天下载 1,164](https://img.shields.io/static/v1?label=&message=1%2C164&color=blue&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23) | - |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页正文、结构、链接与关键词，可选下载内容图片并交给扩展分析器。 | [![npm 近30天下载 1,132](https://img.shields.io/static/v1?label=&message=1%2C132&color=blue&style=flat)](https://www.npmjs.com/package/dsh-scrape-webpage) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage) |
-| [dsh-client-ui-aqua-patched](#plugin-1378742722-root) | 为特定DSH版本修补Aqua玻璃主题的加载与设置入口兼容。 | [![npm 近30天下载 1,116](https://img.shields.io/static/v1?label=&message=1%2C116&color=blue&style=flat)](https://www.npmjs.com/package/dsh-client-ui-aqua) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched) |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | [![npm 近30天下载 1,111](https://img.shields.io/static/v1?label=&message=1%2C111&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-console) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/AlexYin-Tongji/dsh-plugin-console) |
 | [dsh-youreyes](#plugin-1335045545-root) | 将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。 | [![npm 近30天下载 1,096](https://img.shields.io/static/v1?label=&message=1%2C096&color=blue&style=flat)](https://www.npmjs.com/package/dsh-youreyes) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/54xkeee/dsh-youreyes) |
 | [dsh-skill-manager](#plugin-1336106328-root) | 在设置界面分层浏览、编辑和导入导出技能目录。 | [![npm 近30天下载 1,061](https://img.shields.io/static/v1?label=&message=1%2C061&color=blue&style=flat)](https://www.npmjs.com/package/dsh-skill-manager) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/AKS1st/dsh-skill-manager) |
 | [dsh-toolbox-web](#plugin-1335244607-root) | 在 Web 管理会话、回收站、搜索与配置，并提供后台定时心跳。 | [![npm 近30天下载 1,058](https://img.shields.io/static/v1?label=&message=1%2C058&color=blue&style=flat)](https://www.npmjs.com/package/dsh-toolbox-web) | [![GitHub Star 5](https://img.shields.io/static/v1?label=&message=5&color=yellow&style=flat)](https://github.com/AbcdefgXW/dsh-toolbox-web) |
 | [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在 DSH 侧栏和设置页展示账户余额、调用用量与分模型费用统计。 | [![npm 近30天下载 1,049](https://img.shields.io/static/v1?label=&message=1%2C049&color=blue&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) |
-| [dock-images](#plugin-1340492378-root) | 通过受限文件读取在Dock缩放、旋转和拖动图片。 | [![npm 近30天下载 1,046](https://img.shields.io/static/v1?label=&message=1%2C046&color=blue&style=flat)](https://www.npmjs.com/package/dock-images) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/AKS1st/dock-images) |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按规则补齐第三方模型推理档位，并在设置页编辑模型能力声明。 | [![npm 近30天下载 1,044](https://img.shields.io/static/v1?label=&message=1%2C044&color=blue&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers) | - |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为Agent翻译提供分段、术语提取、一致性检查、风格指南及工作区翻译记忆。 | [![npm 近30天下载 1,042](https://img.shields.io/static/v1?label=&message=1%2C042&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-translation) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/863683348/dsh-plugin-translation) |
+| [dock-images](#plugin-1340492378-root) | 在dock工作台打开本地图片，整文件经Host转base64给浏览器img显示，支持缩放/旋转/拖动。 | [![npm 近30天下载 1,028](https://img.shields.io/static/v1?label=&message=1%2C028&color=blue&style=flat)](https://www.npmjs.com/package/dock-images) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/AKS1st/dock-images) |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | [![npm 近30天下载 973](https://img.shields.io/static/v1?label=&message=973&color=blue&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor) | [![GitHub Star 13](https://img.shields.io/static/v1?label=&message=13&color=yellow&style=flat)](https://github.com/Aik358/dsh-anchored-monitor) |
 | [model-usage-plugin](#plugin-1334569518-root) | 在DSH Web设置中展示模型token、估算费用、工具指标、使用趋势与DeepSeek账户余额，并从会话日志补充历史日账。 | [![npm 近30天下载 972](https://img.shields.io/static/v1?label=&message=972&color=blue&style=flat)](https://www.npmjs.com/package/model-usage-plugin) | [![GitHub Star 7](https://img.shields.io/static/v1?label=&message=7&color=yellow&style=flat)](https://github.com/AKS1st/model-usage-plugin) |
 | [dsh-composer-expand](#plugin-1334850903-root) | 在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。 | [![npm 近30天下载 969](https://img.shields.io/static/v1?label=&message=969&color=blue&style=flat)](https://www.npmjs.com/package/dsh-composer-expand) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/13071301808/dsh-composer-expand) |
@@ -102,9 +100,9 @@
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书应用机器人长连接操作 DSH 项目与会话，支持扫码绑定、审批与完成通知。 | [![npm 近30天下载 919](https://img.shields.io/static/v1?label=&message=919&color=blue&style=flat)](https://www.npmjs.com/package/dsh-feishu-bot) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/452926826/dsh-feishu-bot) |
 | [dsh-vision-fallback](#plugin-1333993743-root) | 保持原主模型选择，把聊天与工具图片交给固定视觉模型转成文字观察，并保留界面原图。 | [![npm 近30天下载 909](https://img.shields.io/static/v1?label=&message=909&color=blue&style=flat)](https://www.npmjs.com/package/dsh-vision-fallback) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/1HelloMan1/dsh-vision-fallback) |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 在 DSH 中用自然语言查询 MySQL，生成表格、图表与可保存报表。 | [![npm 近30天下载 906](https://img.shields.io/static/v1?label=&message=906&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-nlbi) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/1byteone/dsh-plugin-nlbi) |
-| [dock-markdown](#plugin-1340492424-root) | 将Markdown净化渲染、目录与本地资源解析接入Dock。 | [![npm 近30天下载 900](https://img.shields.io/static/v1?label=&message=900&color=blue&style=flat)](https://www.npmjs.com/package/dock-markdown) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/AKS1st/dock-markdown) |
 | [dsh-evidence-gate](#plugin-1365519118-root) | 为 DSH 会话提供可切换的证据提示、主张裁定工具及持久活动索引。 | [![npm 近30天下载 888](https://img.shields.io/static/v1?label=&message=888&color=blue&style=flat)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AaronandWork/dsh-evidence-gate) |
 | [dock-editor](#plugin-1340492335-root) | 为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。 | [![npm 近30天下载 886](https://img.shields.io/static/v1?label=&message=886&color=blue&style=flat)](https://www.npmjs.com/package/dock-editor) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/AKS1st/dock-editor) |
+| [dock-markdown](#plugin-1340492424-root) | dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。 | [![npm 近30天下载 878](https://img.shields.io/static/v1?label=&message=878&color=blue&style=flat)](https://www.npmjs.com/package/dock-markdown) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/AKS1st/dock-markdown) |
 | [dsh-ark9canvas](#plugin-1352959121-root) | 为DSH提供多渠道图片工作台、批量任务和Agent生图审批队列，生成结果保存为本地路径。 | [![npm 近30天下载 877](https://img.shields.io/static/v1?label=&message=877&color=blue&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Aik358/dsh-ark9canvas) |
 | [dsh-agent-recycle-guard](#plugin-1414323673-root) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | [![npm 近30天下载 876](https://img.shields.io/static/v1?label=&message=876&color=blue&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard) | - |
 | [dsh-plugin-focus](#plugin-1336084195-root) | 为DSH提供工作区内的持久焦点板，模型可记录目标、约束和决定，按标签汇总，并在每轮或内容变化时自动注入上下文。 | [![npm 近30天下载 867](https://img.shields.io/static/v1?label=&message=867&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/863683348/dsh-plugin-focus) |
@@ -154,7 +152,6 @@
 | [dsh-gotify-notify](#plugin-1412623357-root) | 将DSH轮次结束和部分等待用户输入事件推送至Gotify，并提供原因过滤、优先级与凭据设置。 | [![npm 近30天下载 398](https://img.shields.io/static/v1?label=&message=398&color=blue&style=flat)](https://www.npmjs.com/package/dsh-gotify-notify) | - |
 | [dsh-workflow-templates](#plugin-1344715132-root) | 12 个预置 JS workflow 编排脚本目录，提供列出、搜索、渲染调用起点和静态校验四工具。 | [![npm 近30天下载 385](https://img.shields.io/static/v1?label=&message=385&color=blue&style=flat)](https://www.npmjs.com/package/dsh-workflow-templates) | - |
 | [dsh-asciinema](#plugin-1344714509-root) | 把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。 | [![npm 近30天下载 384](https://img.shields.io/static/v1?label=&message=384&color=blue&style=flat)](https://www.npmjs.com/package/dsh-asciinema) | - |
-| [dsh-cua-pre](#plugin-1346533795-root) | 以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。 | [![npm 近30天下载 381](https://img.shields.io/static/v1?label=&message=381&color=blue&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/Aik358/dsh-cua-pre) |
 | [@adwmc/helm-d](#plugin-1334304098-packages-helmd) | 为DSH提供安全分析工作台，组织case、参考资料、领域工具输出、证据编号和结论记录。 | [![npm 近30天下载 372](https://img.shields.io/static/v1?label=&message=372&color=blue&style=flat)](https://www.npmjs.com/package/@adwmc/helm-d) | [![GitHub Star 380](https://img.shields.io/static/v1?label=&message=380&color=yellow&style=flat)](https://github.com/ADWMC/helm-d) |
 | [dsh-domain-bridge](#plugin-1424063534-plugins-dsh-domain-bridge) | 为 DSH 顶层会话提供域寻址、职责交接、分级暂停和模型选择。 | [![npm 近30天下载 372](https://img.shields.io/static/v1?label=&message=372&color=blue&style=flat)](https://www.npmjs.com/package/dsh-domain-bridge) | [![GitHub Star 8](https://img.shields.io/static/v1?label=&message=8&color=yellow&style=flat)](https://github.com/1Lany2a/dsh-domain-role) |
 | [dsh-pr-description](#plugin-1344714177-root) | 读取分支差异生成 PR 标题和五段描述，可选确认、保存与调用 gh 创建 PR。 | [![npm 近30天下载 368](https://img.shields.io/static/v1?label=&message=368&color=blue&style=flat)](https://www.npmjs.com/package/dsh-pr-description) | - |
@@ -163,7 +160,6 @@
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | [![npm 近30天下载 320](https://img.shields.io/static/v1?label=&message=320&color=blue&style=flat)](https://www.npmjs.com/package/dsh-perlica-ding) | [![GitHub Star 7](https://img.shields.io/static/v1?label=&message=7&color=yellow&style=flat)](https://github.com/117BS/dsh-perlica-ding) |
 | [orchd项目任务面板](#plugin-1422240642-root) | 在DSH右侧栏显示会话项目的orchd任务、依赖图、想法和审查时间线，并提供接入指令。 | [![npm 近30天下载 301](https://img.shields.io/static/v1?label=&message=301&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) | - |
 | [dsh-ai-arcade](#plugin-1413897334-root) | 在 DSH 中提供双脑贪吃蛇和中国象棋，结合本地规则引擎与模型策略解说。 | [![npm 近30天下载 299](https://img.shields.io/static/v1?label=&message=299&color=blue&style=flat)](https://www.npmjs.com/package/dsh-ai-arcade) | - |
-| [type-tune（DSH-Plugin_awl）](#plugin-1388463793-root) | 调节 DSH Web 字体、文字对比度、光晕与内容特效。 | [![npm 近30天下载 290](https://img.shields.io/static/v1?label=&message=290&color=blue&style=flat)](https://www.npmjs.com/package/dsh-type-tune) | - |
 | [dsh-forget-session](#plugin-1413882487-root) | 在 DSH 会话菜单中遗忘会话，清理活动会话、日志目录与投影缓存并复查残留。 | [![npm 近30天下载 283](https://img.shields.io/static/v1?label=&message=283&color=blue&style=flat)](https://www.npmjs.com/package/dsh-forget-session) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/2026heshao/dsh-forget-session) |
 | [dsh-im-qq](#plugin-1335806472-root) | 将QQ私聊、群和频道文本接入DSH完整Agent，提供会话恢复、回复分段与审批桥。 | [![npm 近30天下载 280](https://img.shields.io/static/v1?label=&message=280&color=blue&style=flat)](https://www.npmjs.com/package/dsh-im-qq) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/988hj7tczd-oss/dsh-im-qq) |
 | [dsh-armory](#plugin-1413052822-root) | 在 DSH 中管理 MCP、技能、专家、插件市场及工具账本，支持项目作用域与授权引导。 | [![npm 近30天下载 261](https://img.shields.io/static/v1?label=&message=261&color=blue&style=flat)](https://www.npmjs.com/package/dsh-armory) | [![GitHub Star 17](https://img.shields.io/static/v1?label=&message=17&color=yellow&style=flat)](https://github.com/2026heshao/dsh-armory) |
@@ -188,11 +184,11 @@
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | [![npm 近30天下载 92](https://img.shields.io/static/v1?label=&message=92&color=blue&style=flat)](https://www.npmjs.com/package/dsh-feed) | - |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 通过运行时设置切换DSH全局fetch代理，支持直连、系统代理和手动HTTP或SOCKS代理。 | [![npm 近30天下载 85](https://img.shields.io/static/v1?label=&message=85&color=blue&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy) | - |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。 | [![npm 近30天下载 83](https://img.shields.io/static/v1?label=&message=83&color=blue&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan) | - |
-| [dsh-receipts](#plugin-1344714660-root) | 从本地DSH会话日志汇总使用记录，结合Git信息生成Markdown和离线HTML报告。 | [![npm 近30天下载 77](https://img.shields.io/static/v1?label=&message=77&color=blue&style=flat)](https://www.npmjs.com/package/dsh-receipts) | - |
+| [dsh-receipts](#plugin-1344714660-root) | 汇总本地 DSH 会话与工具痕迹，生成 Markdown 和离线 HTML 报告，可选本地 Git 提交核对。 | [![npm 近30天下载 77](https://img.shields.io/static/v1?label=&message=77&color=blue&style=flat)](https://www.npmjs.com/package/dsh-receipts) | - |
 | [dsh-feishu（2048lr）](#plugin-1418842530-root) | 为 DSH 提供飞书与 Lark 文档、表格、多维表格、消息和授权工具及操作面板。 | [![npm 近30天下载 75](https://img.shields.io/static/v1?label=&message=75&color=blue&style=flat)](https://www.npmjs.com/package/dsh-feishu) | - |
 | [dsh-wrapup-guard](#plugin-841979943-root) | 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。 | [![npm 近30天下载 74](https://img.shields.io/static/v1?label=&message=74&color=blue&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/566001/dsh-wrapup-guard) |
 | [dsh-voice-input-web](#plugin-1335558973-root) | 为 DSH Web 输入栏增加浏览器 Web Speech 麦克风转写按钮，把识别最终文本写入草稿。 | [![npm 近30天下载 60](https://img.shields.io/static/v1?label=&message=60&color=blue&style=flat)](https://www.npmjs.com/package/dsh-voice-input-web) | [![GitHub Star 5](https://img.shields.io/static/v1?label=&message=5&color=yellow&style=flat)](https://github.com/0nt-one/dsh-voice-input) |
-| [hover-glossary](#plugin-1374454334-root) | 在已发送聊天正文中悬停词语，显示内置的一对多释义。 | [![npm 近30天下载 48](https://img.shields.io/static/v1?label=&message=48&color=blue&style=flat)](https://www.npmjs.com/package/hover-glossary) | - |
+| [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | [![npm 近30天下载 48](https://img.shields.io/static/v1?label=&message=48&color=blue&style=flat)](https://www.npmjs.com/package/hover-glossary) | - |
 | [DSH Harness Switch](#plugin-1414577411-root) | 在 DSH 原生会话中切换原生适配与嵌入式 Kimi Code 执行核心。 | [![npm 近30天下载 39](https://img.shields.io/static/v1?label=&message=39&color=blue&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) | - |
 | [dsh-mysql](#plugin-1337916824-root) | 在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。 | [![npm 近30天下载 35](https://img.shields.io/static/v1?label=&message=35&color=blue&style=flat)](https://www.npmjs.com/package/dsh-mysql) | [![GitHub Star 7](https://img.shields.io/static/v1?label=&message=7&color=yellow&style=flat)](https://github.com/1321928757/dsh-mysql) |
 | [峰谷价任务执行器](#plugin-1417227361-root) | 根据配置的峰谷时段排队执行模型任务，提供队列查询与取消。 | [![npm 近30天下载 24](https://img.shields.io/static/v1?label=&message=24&color=blue&style=flat)](https://www.npmjs.com/package/dsh-peak-runner) | - |
@@ -211,20 +207,6 @@
 **热度依据：**npm 近30天下载 10,930 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
 **使用条件：**测试 profile 先静态文案，再逐项开启更新与动画，核读屏和性能。详见Q05(#research-q05)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1378097401-dsh-live2d-pet"></a>
-
-## [dsh-pet-live2d](../../plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md)
-
-[![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) [![npm 30d 7,358](https://img.shields.io/static/v1?label=npm+30d&message=7%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
-
-**主要用途：**在DSH中显示可拖动Live2D宠物，并随会话状态切换动作、气泡与表情。
-
-**热度依据：**npm 近30天下载 7,358 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**适合个人会话提示先试用。自定义资源先独立备份，核对角色与Core使用条件；升级前检查只改贴图情形，不以manifest未变认定无人修改。
 
 [返回表格](#column-index)
 
@@ -440,15 +422,15 @@
 
 <a id="plugin-1363429979-plugin-notes"></a>
 
-## [Forge 便签](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md)
+## [dsh-plugin-notes](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md)
 
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,413](https://img.shields.io/static/v1?label=npm+30d&message=2%2C413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
 
-**主要用途：**提供 Markdown 便签板、搜索归档和任务泳道，可把便签交给智能体或定时执行。
+**主要用途：**把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。
 
 **热度依据：**npm 近30天下载 2,413 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件：**先只用便签与归档，再用无副作用任务检查定时运行和失败恢复。
+**使用条件：**先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -484,27 +466,13 @@
 
 ## [dsh-soul](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,373](https://img.shields.io/static/v1?label=npm+30d&message=2%2C373&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-soul)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,337](https://img.shields.io/static/v1?label=npm+30d&message=2%2C337&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-soul)
 
-**主要用途：**管理分层人设配置、提示词注入、变更历史及带确认的人设修改。
+**主要用途：**管理DSH个性化资料、人格预设及全局/工作区/会话覆盖，提供Web、命令、工具确认与变更回滚。
 
-**热度依据：**npm 近30天下载 2,373 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
+**热度依据：**npm 近30天下载 2,337 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件：**适合显式风格管理；先核作用域和实际注入，重要规则仍由宿主权限和验收保障。
-
-[返回表格](#column-index)
-
-<a id="plugin-1342948215-root"></a>
-
-## [dsh-custom-plugin](../../plugins/alexpeng07--dsh-custom-plugin/INSIGHT.md)
-
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,238](https://img.shields.io/static/v1?label=npm+30d&message=2%2C238&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
-
-**主要用途：**组合外观、项目文件夹、提示库、会话导出、搜索与用量观察。
-
-**热度依据：**npm 近30天下载 2,238 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**按实际需要启用，先核备份恢复、密钥存储来源与导出内容；用量/余额提示不替代账单。
+**使用条件：**先观察；单用户无敏感内容对照，明确scope和一次待确认提议，保存/送达分开核对，重要资料保留备份。详见Q06(#research-q06)。
 
 [返回表格](#column-index)
 
@@ -519,6 +487,20 @@
 **热度依据：**npm 近30天下载 2,223 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
 **使用条件：**先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。详见Q06(#research-q06)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1342948215-root"></a>
+
+## [dsh-custom-plugin](../../plugins/alexpeng07--dsh-custom-plugin/INSIGHT.md)
+
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,207](https://img.shields.io/static/v1?label=npm+30d&message=2%2C207&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
+
+**主要用途：**DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。
+
+**热度依据：**npm 近30天下载 2,207 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
+
+**使用条件：**隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见Q04(#research-q04)。
 
 [返回表格](#column-index)
 
@@ -566,15 +548,15 @@
 
 <a id="plugin-1363429979-plugin-daily-log"></a>
 
-## [Forge 工作报告](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
+## [@zzerx/dsh-plugin-daily-log](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
 
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,976](https://img.shields.io/static/v1?label=npm+30d&message=1%2C976&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,971](https://img.shields.io/static/v1?label=npm+30d&message=1%2C971&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 
-**主要用途：**汇集 Git 提交和本地智能体对话，按模板生成并保存日报、周报或月报。
+**主要用途：**聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。
 
-**热度依据：**npm 近30天下载 1,976 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
+**热度依据：**npm 近30天下载 1,971 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件：**先只接一个仓库和一种会话来源，对照手写周报检查作者过滤、遗漏与错误归功。
+**使用条件：**先观察，优先保留渠道截断/失败收据并加确认/安全导出，再以个人匿名语料核事实与漏项。详见Q07(#research-q07)。
 
 [返回表格](#column-index)
 
@@ -760,20 +742,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1356219122-root"></a>
-
-## [dsh-turn-outline](../../plugins/andor-z--dsh-turn-outline/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline) [![npm 30d 1,546](https://img.shields.io/static/v1?label=npm+30d&message=1%2C546&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-turn-outline) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-turn-outline)
-
-**主要用途：**把DSH会话事件折叠为轮次轨迹，并在better-sidebar侧栏定位回聊天或轨迹视图。
-
-**热度依据：**npm 近30天下载 1,546 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**适合已用better-sidebar的长会话用户先试，核对压缩前历史和并行工具的定位；重大追溯仍查看完整日志。
-
-[返回表格](#column-index)
-
 <a id="plugin-1340492184-root"></a>
 
 ## [dock-base](../../plugins/aks1st--dock/INSIGHT.md)
@@ -799,6 +767,20 @@
 **热度依据：**npm 近30天下载 1,529 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
 **使用条件：**有条件试用，已有AWiki需求者先固定依赖与身份/发送审批，listener保持关闭直到独立评估效果重试。详见Q07(#research-q07)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1356219122-root"></a>
+
+## [dsh-turn-outline](../../plugins/andor-z--dsh-turn-outline/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-turn-outline) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-turn-outline)
+
+**主要用途：**不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。
+
+**热度依据：**npm 近30天下载 1,529 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
+
+**使用条件：**宿主授权明确的一人本地长会话可试用作导航摘要，远程/多用户先核会话授权。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1026,20 +1008,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1341946801-root"></a>
-
-## [dsh-question-nav](../../plugins/abelkeithsun--dsh-question-nav/INSIGHT.md)
-
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) [![npm 30d 1,247](https://img.shields.io/static/v1?label=npm+30d&message=1%2C247&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav)
-
-**主要用途：**以会话提问索引与圆点导航跳转历史用户提问。
-
-**热度依据：**npm 近30天下载 1,247 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**经常回看长会话者可列为导航候选；多模态/多文本块提问需核对索引完整性，不把圆点缺失理解为没有历史问题。
-
-[返回表格](#column-index)
-
 <a id="plugin-1406500233-root"></a>
 
 ## [dsh-zspace](../../plugins/439436269-ctrl--dsh-zspace/INSIGHT.md)
@@ -1065,6 +1033,20 @@
 **热度依据：**npm 近30天下载 1,231 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
 **使用条件：**适合本机单实例做大致用量观察。先把模型映射和价格与实际账单核对，未知项单独检查；告警只提醒，不会自动阻止超预算调用。
+
+[返回表格](#column-index)
+
+<a id="plugin-1341946801-root"></a>
+
+## [@luziyang2026/dsh-question-nav](../../plugins/abelkeithsun--dsh-question-nav/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) [![npm 30d 1,224](https://img.shields.io/static/v1?label=npm+30d&message=1%2C224&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav)
+
+**主要用途：**在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。
+
+**热度依据：**npm 近30天下载 1,224 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
+
+**使用条件：**个人匹配SDK长会话试用；单文本之外不保证完整卡片，重要上下文保留手工回看，切会话避免连点旧任务。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1166,20 +1148,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1378742722-root"></a>
-
-## [dsh-client-ui-aqua-patched](../../plugins/aliww2468--dsh-client-ui-aqua-patched/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched) [![npm 30d 1,116](https://img.shields.io/static/v1?label=npm+30d&message=1%2C116&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-client-ui-aqua) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-client-ui-aqua)
-
-**主要用途：**为特定DSH版本修补Aqua玻璃主题的加载与设置入口兼容。
-
-**热度依据：**npm 近30天下载 1,116 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**只在匹配版本先核设置开关与卸载恢复；别用同名npm上游包替代该fork。
-
-[返回表格](#column-index)
-
 <a id="plugin-1336720864-root"></a>
 
 ## [dsh-plugin-console](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md)
@@ -1250,20 +1218,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1340492378-root"></a>
-
-## [dock-images](../../plugins/aks1st--dock-images/INSIGHT.md)
-
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-images) [![npm 30d 1,046](https://img.shields.io/static/v1?label=npm+30d&message=1%2C046&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-images) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-images)
-
-**主要用途：**通过受限文件读取在Dock缩放、旋转和拖动图片。
-
-**热度依据：**npm 近30天下载 1,046 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**用于普通小图片预览；大图先核资源占用，别把视图旋转当文件编辑。
-
-[返回表格](#column-index)
-
 <a id="plugin-1367305514-root"></a>
 
 ## [dsh-reasoning-tiers](../../plugins/1069137617--dsh-reasoning-tiers/INSIGHT.md)
@@ -1289,6 +1243,20 @@
 **热度依据：**npm 近30天下载 1,042 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
 **使用条件：**适合技术文档翻译先检查数字与术语一致。先用正反译和否定样例验证规则，quality高分后仍人工核对意义；不要将词表自动积累当正确性保证。
+
+[返回表格](#column-index)
+
+<a id="plugin-1340492378-root"></a>
+
+## [dock-images](../../plugins/aks1st--dock-images/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-images) [![npm 30d 1,028](https://img.shields.io/static/v1?label=npm+30d&message=1%2C028&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-images) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-images)
+
+**主要用途：**在dock工作台打开本地图片，整文件经Host转base64给浏览器img显示，支持缩放/旋转/拖动。
+
+**热度依据：**npm 近30天下载 1,028 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
+
+**使用条件：**先观察，核原始API文件授权/非图片拒绝和资源/解码状态后再评估小图试用。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1460,20 +1428,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1340492424-root"></a>
-
-## [dock-markdown](../../plugins/aks1st--dock-markdown/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown) [![npm 30d 900](https://img.shields.io/static/v1?label=npm+30d&message=900&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-markdown) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-markdown)
-
-**主要用途：**将Markdown净化渲染、目录与本地资源解析接入Dock。
-
-**热度依据：**npm 近30天下载 900 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**适合有限Markdown阅读；先确认editor依赖、资源来源与截断提示。
-
-[返回表格](#column-index)
-
 <a id="plugin-1365519118-root"></a>
 
 ## [dsh-evidence-gate](../../plugins/aaronandwork--dsh-evidence-gate/INSIGHT.md)
@@ -1499,6 +1453,20 @@
 **热度依据：**npm 近30天下载 886 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
 **使用条件：**可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。详见Q06(#research-q06)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1340492424-root"></a>
+
+## [dock-markdown](../../plugins/aks1st--dock-markdown/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown) [![npm 30d 878](https://img.shields.io/static/v1?label=npm+30d&message=878&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-markdown) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-markdown)
+
+**主要用途：**dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。
+
+**热度依据：**npm 近30天下载 878 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
+
+**使用条件：**当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。详见Q02(#research-q02)。
 
 [返回表格](#column-index)
 
@@ -2188,20 +2156,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1346533795-root"></a>
-
-## [dsh-cua-pre](../../plugins/aik358--dsh-cua-pre/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre) [![npm 30d 381](https://img.shields.io/static/v1?label=npm+30d&message=381&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre) [![最新发布 2026-09-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-06&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-cua-pre)
-
-**主要用途：**以Windows无障碍树优先的工具、Python worker和可视面板，为DSH提供桌面观察与操作。
-
-**热度依据：**npm 近30天下载 381 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**先在可丢弃窗口、明确PID范围验证观察/动作/停止；高影响任务保留人工确认和结果核对，不能将提示纪律当已实现审批。
-
-[返回表格](#column-index)
-
 <a id="plugin-1334304098-packages-helmd"></a>
 
 ## [@adwmc/helm-d](../../plugins/adwmc--helm-d--packages-helmd/INSIGHT.md)
@@ -2311,20 +2265,6 @@
 **热度依据：**npm 近30天下载 299 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
 **使用条件：**娱乐用途可隔离试用并设调用预算；不要用游戏胜率或作者单机延迟数字选择生产模型。
-
-[返回表格](#column-index)
-
-<a id="plugin-1388463793-root"></a>
-
-## [type-tune（DSH-Plugin_awl）](../../plugins/awl-mc2--dsh-plugin_awl/INSIGHT.md)
-
-[![npm 30d 290](https://img.shields.io/static/v1?label=npm+30d&message=290&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-type-tune) [![最新发布 2026-09-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-type-tune)
-
-**主要用途：**调节 DSH Web 字体、文字对比度、光晕与内容特效。
-
-**热度依据：**npm 近30天下载 290 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件：**需要修复主题文字可读性者可评估静态阅读预设；先确认本地状态可持久，特效是否有利于阅读应按实际长文测量。
 
 [返回表格](#column-index)
 
@@ -2670,11 +2610,11 @@
 
 [![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-receipts) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-receipts)
 
-**主要用途：**从本地DSH会话日志汇总使用记录，结合Git信息生成Markdown和离线HTML报告。
+**主要用途：**汇总本地 DSH 会话与工具痕迹，生成 Markdown 和离线 HTML 报告，可选本地 Git 提交核对。
 
 **热度依据：**npm 近30天下载 77 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件：**当前先在复制日志和Git关闭模式审阅。修复越界目标及时间窗传递后再启用交叉核对；分享HTML前检查路径与会话内容，活动时长不当收益。
+**使用条件：**建议观察，先复制日志并关闭 Git 核对，审阅原始会话与输出；对外分享须人工脱敏，不能把活动跨度或提交数当绩效证明。详见Q06(#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2726,11 +2666,11 @@
 
 [![npm 30d 48](https://img.shields.io/static/v1?label=npm+30d&message=48&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/hover-glossary) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/hover-glossary)
 
-**主要用途：**在已发送聊天正文中悬停词语，显示内置的一对多释义。
+**主要用途：**在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。
 
-**热度依据：**npm 近30天下载 48 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
+**热度依据：**npm 近30天下载 48 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件：**固定术语查阅需求可评估；需要权威领域解释或上下文消歧时仍回原来源，不以首条释义作唯一结论。
+**使用条件：**先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。详见Q05(#research-q05)。
 
 [返回表格](#column-index)
 
