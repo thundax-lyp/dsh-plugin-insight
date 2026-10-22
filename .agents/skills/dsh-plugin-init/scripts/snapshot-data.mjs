@@ -701,6 +701,66 @@ export function renderSnapshot(root = ROOT, checkOnly = false) {
     if (digest(readSnapshot(root)) !== before) throw Error('snapshot changed while rendering; rerun generation');
     console.log(checkOnly ? 'Snapshot outputs match' : 'Snapshot outputs generated');
 }
+// Explicitly forget selected research; discovery can be rebuilt from the source directories.
+export function forgetResearch(input, root = ROOT, apply = false) {
+    if (!Array.isArray(input.plugin_ids) || !input.plugin_ids.length) throw Error('plugin_ids required');
+    const file = snapshotFile(root),
+        lock = file + '.lock',
+        fd = openSync(lock, 'wx', 0o600);
+    try {
+        writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        const current = readSnapshot(root);
+        if (digest(current) !== input.base_digest) throw Error('snapshot baseline changed');
+        const ids = new Set(input.plugin_ids),
+            next = structuredClone(current);
+        if (
+            ids.size !== input.plugin_ids.length ||
+            [...ids].some((id) => !current.catalog.plugins.some((p) => p.id === id))
+        )
+            throw Error('duplicate or unknown research identity');
+        const directories = [...ids].map((id) => current.registry[id]).filter(Boolean);
+        const removedFindings = [];
+        next.catalog.plugins = next.catalog.plugins.filter((p) => !ids.has(p.id));
+        for (const plugin of next.catalog.plugins) {
+            plugin.findings = plugin.findings.filter((f) => {
+                if (!f.dependencies.some((d) => ids.has(d.plugin_id))) return true;
+                removedFindings.push({ plugin_id: plugin.id, finding_id: f.id });
+                return false;
+            });
+        }
+        for (const name of ['registry', 'reports', 'metadata', 'research_blocks'])
+            for (const id of ids) delete next[name]?.[id];
+        next.publication.records = next.publication.records.filter((r) => !ids.has(r.id));
+        for (const name of ['metadata', 'summaries', 'capabilities', 'advice'])
+            for (const id of ids) delete next.publication[name][id];
+        delete next.publication.recommendations;
+        for (const record of next.publication.records)
+            record.analysis_sha256 = analysisDigest(next.catalog.plugins.find((p) => p.id === record.id));
+        next.discovery.plugins = next.discovery.plugins.filter((p) => !ids.has(p.id));
+        next.discovery.complete_baseline = false;
+        const artifacts = new Set(
+            next.catalog.plugins.flatMap((p) => p.evidence.map((e) => e.artifact).filter(Boolean))
+        );
+        next.artifacts = Object.fromEntries(Object.entries(next.artifacts).filter(([name]) => artifacts.has(name)));
+        next.unavailable_artifacts = next.unavailable_artifacts.filter((name) => artifacts.has(name));
+        next.publication.scope = `当前发布 ${next.publication.records.length}；按用户要求移除未完成研究 ${ids.size}`;
+        validateSnapshot(next, root);
+        if (apply) {
+            writeSnapshotStorage(file, next);
+            if (digest(readSnapshot(root)) !== digest(next)) throw Error('snapshot readback failed');
+        }
+        return {
+            apply,
+            removed: ids.size,
+            directories,
+            removed_findings: removedFindings,
+            result_digest: digest(next)
+        };
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
 export function cleanWork(path, root = ROOT, apply = false) {
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel)) throw Error('invalid cleanup work path');
@@ -877,6 +937,9 @@ export async function main(args = process.argv.slice(2)) {
         if (!v.plugin) throw Error('--plugin required');
         stageRecord(need('work'), v.plugin, need('observations'), need('report'), need('display'));
         console.log('Record staged; formal snapshot unchanged');
+    } else if (command === 'forget') {
+        console.log(JSON.stringify(forgetResearch(read(need('input')), ROOT, v.apply)));
+        if (v.apply) renderSnapshot();
     } else if (command === 'block-batch') {
         changeBlockRecords(need('work'), read(need('input')));
         console.log('Block batch saved; formal snapshot unchanged');
@@ -900,7 +963,7 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
     else
         throw Error(
-            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
+            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|forget|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
         );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
