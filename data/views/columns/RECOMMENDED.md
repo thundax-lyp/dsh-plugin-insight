@@ -58,10 +58,10 @@
 | [dsh-rtl-chat](#plugin-1410794267-root) | 给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。 | 阿拉伯语为主的匹配Web宿主可本地试用，先核混排与代码，理解全局偏好；热卸载后留意残按钮样式。 |
 | [logicprobe](#plugin-1331586818-root) | 以八个工具和 Skill 对状态机、数据模型、UML/依赖图与报告差异做模型级核验。 | 有形式化建模基础的团队可用已知缺陷项目试用，逐项对账源码且严禁把 ok/truncated 当通过。 |
 | [dsh-trellis](#plugin-1335559646-root) | 为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。 | 任务/会话恢复适配有实际价值，可在人工复核下试用；须审同名Skill覆盖，不把自填验证与名单过滤当强授权。 |
-| [dsh-vision](#plugin-1335664137-root) | 为纯文本模型接入多通道识图，提供图片面板、视觉工具和会话证据记忆。 | 已有视觉通道且愿核对原图者可试用证据缓存；先验登录、密集截图与压缩恢复，JSON失败会按simple降级不能信任自动深查。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 仅在隔离 profile/备份同名目录后用于辅助建模试点；结果必须人工独立核。 |
-| [dsh-plugin-roundtable 圆桌会议](#plugin-1342524723-root) | 在 DSH 以拓扑视图组织多角色专家协作、讨论、汇聚与用户决策。 | 复杂问题讨论者可先用少数专家和明确预算试会；阅读原文分歧并核真实状态，摘要和预算估计不作最终验收。 |
 | [dsh-custom-plugin](#plugin-1342948215-root) | DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。 | 隔离 profile 与状态备份后按需试用；生产共享状态和外部计价需验证。 |
+| [dsh-cua-pre](#plugin-1346533795-root) | Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。 | 仅在隔离 Windows 桌面、明确目标应用、保留人工确认的低风险任务试点；故障后重观察。 |
+| [dsh-agent-recycle-guard](#plugin-1414323673-root) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 适合有独立备份的DSH维护者在可丢弃目录试用常见删除缓冲；须接受有限脚本覆盖并核对权限重入和回收结果。 |
 
 <a id="plugin-1407166868-root"></a>
 
@@ -707,20 +707,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1335664137-root"></a>
-
-## [dsh-vision](../../plugins/54xkeee--dsh-vision/INSIGHT.md)
-
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/54xkeee/dsh-vision) [![npm 30d 1,431](https://img.shields.io/static/v1?label=npm+30d&message=1%2C431&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-web) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-web)
-
-**主要用途：**为纯文本模型接入多通道识图，提供图片面板、视觉工具和会话证据记忆。
-
-**推荐理由：**已有视觉通道且愿核对原图者可试用证据缓存；先验登录、密集截图与压缩恢复，JSON失败会按simple降级不能信任自动深查。
-
-**使用条件：**已有可用视觉通道且愿意核对原图时可试。先检查桥接登录、密集截图和压缩后记录恢复，敏感图片先确认会送到哪个通道。
-
-[返回表格](#column-index)
-
 <a id="plugin-1337487779-root"></a>
 
 ## [dsh-ultramath](../../plugins/andiii208--dsh-ultramath/INSIGHT.md)
@@ -735,20 +721,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1342524723-root"></a>
-
-## [dsh-plugin-roundtable 圆桌会议](../../plugins/9931666--dsh-plugin-roundtable/INSIGHT.md)
-
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-roundtable) [![npm 30d 1,464](https://img.shields.io/static/v1?label=npm+30d&message=1%2C464&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-roundtable) [![最新发布 2026-10-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-roundtable)
-
-**主要用途：**在 DSH 以拓扑视图组织多角色专家协作、讨论、汇聚与用户决策。
-
-**推荐理由：**复杂问题讨论者可先用少数专家和明确预算试会；阅读原文分歧并核真实状态，摘要和预算估计不作最终验收。
-
-**使用条件：**有明确讨论目标的人先用少数专家；定预算并读原文分歧，核对真实状态和消息路径，再扩大阵容，别让会议代替最终验收。
-
-[返回表格](#column-index)
-
 <a id="plugin-1342948215-root"></a>
 
 ## [dsh-custom-plugin](../../plugins/alexpeng07--dsh-custom-plugin/INSIGHT.md)
@@ -760,6 +732,34 @@
 **推荐理由：**隔离 profile 与状态备份后按需试用；生产共享状态和外部计价需验证。
 
 **使用条件：**隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见Q04(#research-q04)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1346533795-root"></a>
+
+## [dsh-cua-pre](../../plugins/aik358--dsh-cua-pre/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre)
+
+**主要用途：**Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。
+
+**推荐理由：**仅在隔离 Windows 桌面、明确目标应用、保留人工确认的低风险任务试点；故障后重观察。
+
+**使用条件：**隔离 Windows profile 开始，以最小目标 PID 配白名单并检查日志可写；非幂等动作结果不明时先重观察/人工核，避免自动重放。详见Q04(#research-q04)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1414323673-root"></a>
+
+## [dsh-agent-recycle-guard](../../plugins/ahyi8--dsh-agent-recycle-guard/INSIGHT.md)
+
+[![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-agent-recycle-guard)
+
+**主要用途：**将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。
+
+**推荐理由：**适合有独立备份的DSH维护者在可丢弃目录试用常见删除缓冲；须接受有限脚本覆盖并核对权限重入和回收结果。
+
+**使用条件：**建议有独立备份的维护者在可丢弃目录受控试用常见删除缓冲；不以此替代权限隔离，准备长期阻断、语义不一致或需要动态程序全覆盖时停止。详见Q07(#research-q07)。
 
 [返回表格](#column-index)
 

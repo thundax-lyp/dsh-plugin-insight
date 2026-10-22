@@ -384,36 +384,6 @@
                     ],
                     "reviewed_at": "2026-10-22T05:22:33.725Z",
                     "status": "current"
-                },
-                {
-                    "id": "cross-dock-resource-contract",
-                    "topic": "technical_innovation",
-                    "basis": "unverified",
-                    "text": "dock基座提供视图注册、实例seed、beforeClose与openPath分派；dock-files用资源地址中的sessionId解析cwd和路径后，只把path交给workbench.openPath；dock-editor读取接受绝对路径，写入独立约束session工作区，尺寸检查后直接writeFile，没有读取版本或内容摘要比较。这些控制分别处理界面关闭、资源分派和写入范围，不能替代保存时并发版本检查。由此提出未验证假设，跨插件资源句柄统一携带原会话身份、读写能力和读取版本，保存时比较内容摘要，冲突保留双方内容。可用两个会话与外部改写交错打开/保存，对照现有路径传递，比较错误目标、静默覆盖、冲突处理和恢复工时；若覆盖或恢复成本无改善，则不支持该假设。固定源码支持前述结构和限制，未证明实际发生错误目标，也未验证未来设计的净收益。",
-                    "evidence_ids": [
-                        "2026-10-22-02-manual-cross-dock-editor-1340492184",
-                        "2026-10-22-02-manual-cross-dock-editor-1340492214",
-                        "2026-10-22-02-manual-cross-dock-editor-1340492335"
-                    ],
-                    "dependencies": [
-                        {
-                            "plugin_id": "github:1340492184:root",
-                            "area": "code",
-                            "fingerprint": "8535f6e24670931d9e93fb087ab474e38aa01856"
-                        },
-                        {
-                            "plugin_id": "github:1340492214:root",
-                            "area": "code",
-                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
-                        },
-                        {
-                            "plugin_id": "github:1340492335:root",
-                            "area": "code",
-                            "fingerprint": "f6e5e0845c42e2b09a7a8d671a66b331fe094634"
-                        }
-                    ],
-                    "reviewed_at": "2026-10-22T05:21:05.797033+00:00",
-                    "status": "current"
                 }
             ],
             "last_checked_at": "2026-10-22T05:22:33.725Z",
@@ -512,7 +482,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "d59951616d6da56406022d8e40ab4ae7b3d67c8180cf9c7fbd315fce2cd03d60"
+            "analysis_sha256": "56204fea9a4a974147643d9c45a7310023f9ca6a3288eddf356973f63f72ac1f"
         },
         "publication.metadata": "data/plugins/aks1st--dock-editor/META.json",
         "publication.summaries": {

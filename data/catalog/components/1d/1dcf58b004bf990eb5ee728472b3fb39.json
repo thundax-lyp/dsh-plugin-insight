@@ -351,30 +351,6 @@
                     ],
                     "reviewed_at": "2026-10-22T05:39:31.254Z",
                     "status": "current"
-                },
-                {
-                    "id": "cross_remote_access_identity_boundary",
-                    "topic": "comparison",
-                    "basis": "interpretation",
-                    "text": "围绕反向代理访问自管DSH，loopback-trust只在客户端把非loopback网页标成ownsHost并修改isLoopback事实，宿主apply为空，不提供身份认证；chicheng-gate包装宿主HTTP request/upgrade，按peer与cookie作门禁，另建须cookie的HTTP/WS隧道网关，并以备份文本替换官方客户端访问/设置文件。它们分别处理客户端持久化分类和入口准入，不能把设置可写或二者安装并存视为端到端授权成立。固定gate实现对直接loopback peer先放行，故反代若直入宿主端口且自身无认证，不能依赖该门禁；其SessionStore构造器收数字ttlSec，apply传对象，令新token exp为NaN、运行期过期比较不触发，不能无条件声称七天过期有效。上述为固定源码静态推导，未声称发生真实越权。维护取舍是客户端私有协议/加载时序耦合与服务端门禁、监听入口及官方文件补丁的恢复负担。进一步探讨应从统一服务端身份与origin绑定能力入手，逐项核对反代直入/隧道网关、匿名/已认证、HTTP/WS、过期/撤销及升级/卸载恢复；任何入口未授权仍有设置写能力即不支持组合访问边界假设，当前净收益与整体安全性未知。",
-                    "evidence_ids": [
-                        "2026-10-22-02-manual-loopback-identity-1394489199",
-                        "2026-10-22-02-manual-loopback-identity-1334862230"
-                    ],
-                    "dependencies": [
-                        {
-                            "plugin_id": "github:1394489199:root",
-                            "area": "code",
-                            "fingerprint": "838ddf0d79fb977be896c6cb5dcd0bba68015832"
-                        },
-                        {
-                            "plugin_id": "github:1334862230:root",
-                            "area": "code",
-                            "fingerprint": "cfee329acf7f886749469779259a6a9147a2b190"
-                        }
-                    ],
-                    "reviewed_at": "2026-10-22T05:36:20.767916+00:00",
-                    "status": "current"
                 }
             ],
             "last_checked_at": "2026-10-22T05:39:31.254Z",
@@ -473,7 +449,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "30ad7eef9575deb93c92284b13a128843c9128b86be1cd981d3ced2b30d15fac"
+            "analysis_sha256": "24162766327ff9335007cfa3f78c266bb301e10e8d6ebdef5f75f8c966a3557a"
         },
         "publication.metadata": "data/plugins/6mt--dsh-plugin-loopback-trust/META.json",
         "publication.summaries": {

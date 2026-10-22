@@ -414,36 +414,6 @@
                     ],
                     "reviewed_at": "2026-10-22T09:35:44.570Z",
                     "status": "current"
-                },
-                {
-                    "id": "cross_delivery_gate_boundary",
-                    "topic": "comparison",
-                    "basis": "interpretation",
-                    "text": "固定源码下，task-monitor汇总会话活动并提供工作区Git commit/push及GitHub发布入口；dsh-verify把给定JSON步骤映射为Playwright动作/断言并汇总步骤PASS；VeriScope核评分回执当前绑定并限制自有managed完成记录，builtin不支持bind/complete。三者分别解决活动可见性、给定检查可重复执行与历史裁决追溯，没有把三种状态、最终产物版本和Git/GitHub副作用接成共同事务。task-monitor写入口未消费另两者结果，verify PASS不绑定提交哈希，VeriScope完成仅wx写完成文件，因此不能用任一面板/断言PASS/完成记录替代最终发布放行。保留未验证设计方向，由外部发布适配器以一次性令牌绑定最终产物哈希、目标远端和当前PASS范围，副作用前复核、之后记确定结果，未知结果不盲重试。最小反证用检查后改文件、切分支/远端、提交后推送失败及响应丢失，要求旧令牌拒用、同令牌不重复发且保留未知结果。若仍错放行或恢复工时不降则否定；本轮没有组合安装或执行效果证据。",
-                    "evidence_ids": [
-                        "2026-10-22-02-manual-delivery-boundary-1335843750",
-                        "2026-10-22-02-manual-delivery-boundary-1406156934",
-                        "2026-10-22-02-manual-delivery-boundary-1422943787"
-                    ],
-                    "dependencies": [
-                        {
-                            "plugin_id": "github:1335843750:root",
-                            "area": "code",
-                            "fingerprint": "d969899808e51dcccd261588f667b18633020fca"
-                        },
-                        {
-                            "plugin_id": "github:1406156934:dsh-task-monitor",
-                            "area": "code",
-                            "fingerprint": "e628e3ea76cf0f7f0a3489b93c9f00271daeb791"
-                        },
-                        {
-                            "plugin_id": "github:1422943787:root",
-                            "area": "code",
-                            "fingerprint": "5299b64087bbfa5beef6ae2e336045468f1af01d"
-                        }
-                    ],
-                    "reviewed_at": "2026-10-22T06:33:06.060625+00:00",
-                    "status": "current"
                 }
             ],
             "last_checked_at": "2026-10-22T09:35:44.570Z",
@@ -542,7 +512,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "490cb9d49943b7963806ce50b75c3f522ca3db2212a61fe0ada315bbaf5a83bb"
+            "analysis_sha256": "9495cc03bdc74d8d4ff12d22a84b4427cf20ac438f4d2394c0f1cfe960598bb3"
         },
         "publication.metadata": "data/plugins/4444wjt--dsh-plugin-veriscope/META.json",
         "publication.summaries": {
