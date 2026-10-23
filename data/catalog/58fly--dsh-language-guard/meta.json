@@ -1,0 +1,34 @@
+{
+    "repository": "58fly/dsh-language-guard",
+    "repository_id": 1424475406,
+    "captured_at": "2026-10-22T16:03:14.785Z",
+    "window_start": "2026-09-22T16:03:14.785Z",
+    "stars": 2,
+    "pushed_at": "2026-10-21T14:58:22Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-language-guard",
+        "captured_at": "2026-10-22T16:03:24.050Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-language-guard",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": "2026-10-20T14:49:43.940Z",
+            "captured_at": "2026-10-22T16:03:24.050Z",
+            "source_url": "https://registry.npmjs.org/dsh-language-guard",
+            "error": null,
+            "latest_version": "0.3.4",
+            "latest_published_at": "2026-10-21T07:05:58.806Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "repository": "283Gawin/dsh-heatmap",
+    "repository_id": 1334318461,
+    "captured_at": "2026-10-22T07:00:58.231Z",
+    "window_start": "2026-09-22T07:00:58.231Z",
+    "stars": 5,
+    "pushed_at": "2026-08-14T16:17:32Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@linxin666/dsh-client-ui-activity-heatmap",
+        "captured_at": "2026-10-22T07:01:08.476Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40linxin666%2Fdsh-client-ui-activity-heatmap",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T07:01:08.476Z",
+            "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-client-ui-activity-heatmap",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

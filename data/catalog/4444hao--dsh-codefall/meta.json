@@ -1,0 +1,34 @@
+{
+    "repository": "4444Hao/dsh-codefall",
+    "repository_id": 1409889533,
+    "captured_at": "2026-10-22T05:50:44.301Z",
+    "window_start": "2026-09-22T05:50:44.301Z",
+    "stars": 1,
+    "pushed_at": "2026-10-20T03:22:32Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-codefall",
+        "captured_at": "2026-10-22T05:50:56.006Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 407,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-codefall",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-08T12:44:17.147Z",
+            "captured_at": "2026-10-22T05:50:56.006Z",
+            "source_url": "https://registry.npmjs.org/dsh-codefall",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-10-13T14:00:13.761Z",
+            "latest_error": null
+        }
+    }
+}

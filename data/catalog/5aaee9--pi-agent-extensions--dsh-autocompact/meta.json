@@ -1,0 +1,47 @@
+{
+    "repository": "5aaee9/pi-agent-extensions",
+    "repository_id": 1324229194,
+    "captured_at": "2026-10-23T01:49:42.166Z",
+    "window_start": "2026-09-23T01:49:42.166Z",
+    "stars": 3,
+    "pushed_at": "2026-10-22T23:19:13Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20created%3A2026-09-23T01%3A49%3A42.166Z..2026-10-23T01%3A49%3A42.166Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9852:230FF4:1295DA:140B9B:6ADABD3B and timestamp 2026-10-23 01:49:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A49%3A42.166Z..2026-10-23T01%3A49%3A42.166Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9970:3F7CA3:11EA44:135EB9:6ADABD3C and timestamp 2026-10-23 01:49:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20updated%3A2026-09-23T01%3A49%3A42.166Z..2026-10-23T01%3A49%3A42.166Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9AA0:3F64BC:171864:18E465:6ADABD3E and timestamp 2026-10-23 01:49:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@indexyz/dsh-autocompact",
+        "captured_at": "2026-10-23T01:49:50.331Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 735,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40indexyz%2Fdsh-autocompact",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-16T14:19:18.589Z",
+            "captured_at": "2026-10-23T01:49:50.331Z",
+            "source_url": "https://registry.npmjs.org/%40indexyz%2Fdsh-autocompact",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-10-18T18:34:26.247Z",
+            "latest_error": null
+        }
+    }
+}

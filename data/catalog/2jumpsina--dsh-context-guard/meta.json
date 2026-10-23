@@ -1,0 +1,55 @@
+{
+    "repository": "2JumpSinA/dsh-context-guard",
+    "repository_id": 1396768359,
+    "captured_at": "2026-10-22T15:12:13.767Z",
+    "window_start": "2026-09-22T15:12:13.767Z",
+    "stars": 1,
+    "pushed_at": "2026-10-22T08:04:43Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A2JumpSinA%2Fdsh-context-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2B26:3241C0:9D72C8:A9B4ED:6ADA27D0 and timestamp 2026-10-22 15:12:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A2JumpSinA%2Fdsh-context-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BE2:1BA224:9A1486:A658A7:6ADA27D1 and timestamp 2026-10-22 15:12:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2JumpSinA%2Fdsh-context-guard%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A13.767Z..2026-10-22T15%3A12%3A13.767Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2C9E:19AC95:99489F:A594C7:6ADA27D2 and timestamp 2026-10-22 15:12:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2JumpSinA%2Fdsh-context-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A13.767Z..2026-10-22T15%3A12%3A13.767Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D5E:32355E:9A0542:A64F83:6ADA27D3 and timestamp 2026-10-22 15:12:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2JumpSinA%2Fdsh-context-guard%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A13.767Z..2026-10-22T15%3A12%3A13.767Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2E3E:31EE37:9B1870:A75F98:6ADA27D4 and timestamp 2026-10-22 15:12:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@2jumpsina/dsh-context-guard",
+        "captured_at": "2026-10-22T15:12:20.950Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1388,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%402jumpsina%2Fdsh-context-guard",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-30T05:33:49.449Z",
+            "captured_at": "2026-10-22T15:12:20.950Z",
+            "source_url": "https://registry.npmjs.org/%402jumpsina%2Fdsh-context-guard",
+            "error": null,
+            "latest_version": "0.7.6",
+            "latest_published_at": "2026-10-22T08:06:52.721Z",
+            "latest_error": null
+        }
+    }
+}

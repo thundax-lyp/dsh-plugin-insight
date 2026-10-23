@@ -1,0 +1,422 @@
+{
+    "schema_version": 4,
+    "id": "e22ee69472d53c69bb8fca603414c503",
+    "identity": "github:1406500233:root",
+    "slug": "439436269-ctrl--dsh-zspace",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1406500233:root",
+            "repository_id": 1406500233,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-zspace",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-zspace",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "a82fdbccd2f85d5f2aba1bf402cacc5098963b9a215f4725432b1a334fb9c83e",
+                "code": "70743909450191c09f3dcef15d46d8d0119200a9",
+                "maintenance": "227976950230fda47035dc977a3a2723b75ab89534908af1e59472bdf8ac5982"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1406500233-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:14:00.660Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1406500233-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-zspace",
+                            "commit": "70743909450191c09f3dcef15d46d8d0119200a9",
+                            "path": "README.md",
+                            "content_sha256": "18c726531619a8fd331f9c3d74d5c36bbe143bfa1b61f6fe04c93dfb55540734"
+                        }
+                    ],
+                    "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+                    "captured_at": "2026-10-22T16:14:00.660Z",
+                    "summary": "用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1406500233-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-zspace",
+                            "commit": "70743909450191c09f3dcef15d46d8d0119200a9",
+                            "path": "README.md",
+                            "content_sha256": "18c726531619a8fd331f9c3d74d5c36bbe143bfa1b61f6fe04c93dfb55540734"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-zspace",
+                            "commit": "70743909450191c09f3dcef15d46d8d0119200a9",
+                            "path": "lib/index.js",
+                            "content_sha256": "e888542534414458445f085c4ddf6ba2c527ae5a418af9f17fb60b7ef07ad4e7"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-zspace",
+                            "commit": "70743909450191c09f3dcef15d46d8d0119200a9",
+                            "path": "lib/tools.js",
+                            "content_sha256": "37db15978c0138ef0737d2b814106cc320df97c1a8fe06c45d812cc3551c124d"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-zspace",
+                            "commit": "70743909450191c09f3dcef15d46d8d0119200a9",
+                            "path": "lib/client/router.js",
+                            "content_sha256": "26d7ec2f72f0ba620954c64d2cd58d8019199df098d1b555b7a720400981287d"
+                        }
+                    ],
+                    "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+                    "captured_at": "2026-10-22T16:14:00.660Z",
+                    "summary": "核查 README.md、lib/index.js、lib/tools.js、lib/client/router.js；客户端在 WebDAV 直连和桌面客户端 relay 间选择，同次调用可回退；19 个工具覆盖文件、Docker、状态和系统重启。 详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只读检查固定提交 README.md、lib/index.js、lib/tools.js、lib/zspace-client.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合从对话读取/传输 NAS 文件、检查容器和健康状态；重启、删除等管理任务用官方客户端更易确认目标。 详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "客户端在 WebDAV 直连和桌面客户端 relay 间选择，同次调用可回退；19 个工具覆盖文件、Docker、状态和系统重启。 详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只读检查固定提交 README.md、lib/index.js、lib/tools.js、lib/zspace-client.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "以当前仓库包清单和 README 所示方式分发；可用性、包注册表现状和目标 Host 安装兼容未做动态确认。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 接入 | 已有 NAS/客户端/凭据 | 配置两通道 | 固件适配未知 |\n| 传输 | 局域网带宽和磁盘 IO | 选择文件/目录 | 大文件耗时 |\n| 破坏恢复 | 服务中断与数据恢复 | 备份/人工确认 | 最坏损失高 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 详见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 验证指标 |\n| --- | --- | --- |\n| 对话式文件管理 | 19 工具统一入口 | 任务成功率 |\n| 通道韧性 | 直连/relay 回退 | 故障恢复率 |\n| 官方客户端对照 | 自动化更强但风险更高 | 每任务人工分钟与误操作数 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "HTTP 200 内业务失败检查、30秒重探与健康分类有价值；写操作需要 operation id、幂等键和调用前后快照。 详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。 详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "依赖社区逆向/私有 API 与本地 vuex 凭据；confirm=true 仍只是模型参数，不能替代人在设备级破坏操作前的独立批准。 详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。 详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1406500233:root",
+                            "area": "code",
+                            "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:14:00.660Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:14:00.660Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+                "reviewed_at": "2026-10-22T16:14:00.660Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1406500233:root",
+                        "area": "code",
+                        "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "dsh-zspace 的核心接线可复用，但关键运行边界尚未验证。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流价值存在，经济与真实采用没有本轮独立证据。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1406500233-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "目标任务明确但适用范围受依赖限制。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "相对简单基线有特定机制优势。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码可核，真实 Host 未运行。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "直接资源可识别，实际总成本仍需计量。"
+                    }
+                },
+                "score": 46,
+                "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+                "reviewed_at": "2026-10-22T16:14:00.660Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1406500233-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1406500233:root",
+                        "area": "code",
+                        "fingerprint": "70743909450191c09f3dcef15d46d8d0119200a9"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1406500233:root",
+            "repository": "439436269-ctrl/dsh-zspace",
+            "path": "",
+            "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+            "fingerprints": {
+                "directory": "a82fdbccd2f85d5f2aba1bf402cacc5098963b9a215f4725432b1a334fb9c83e",
+                "code": "70743909450191c09f3dcef15d46d8d0119200a9",
+                "maintenance": "227976950230fda47035dc977a3a2723b75ab89534908af1e59472bdf8ac5982"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "869d4a5d88b1aace353f21f6db135f3342c06e65bfa66471c69f995677eeeb4e"
+        },
+        "publication.metadata": "data/catalog/439436269-ctrl--dsh-zspace/meta.json",
+        "publication.summaries": {
+            "text": "用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。",
+            "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+            "source_url": "https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+            "items": {
+                "模型工具": "文件、Docker、系统健康与重启等 19 个 NAS 操作"
+            },
+            "table": "#### 能力明细\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | 文件、Docker、系统健康与重启等 19 个 NAS 操作 | 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证 |"
+        },
+        "publication.advice": {
+            "revision": "70743909450191c09f3dcef15d46d8d0119200a9",
+            "text": "保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 详见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-zspace",
+        "reports": "# dsh-zspace\n\n> 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-zspace](https://github.com/439436269-ctrl/dsh-zspace)\n- **版本号**：0.4.0（[固定提交 70743909450191c09f3dcef15d46d8d0119200a9](https://github.com/439436269-ctrl/dsh-zspace/tree/70743909450191c09f3dcef15d46d8d0119200a9)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持 19 个 NAS 工具、WebDAV/relay 路由及健康分类；本轮未连接极空间设备、客户端或凭据，尤其未验证非幂等回退、删除与重启，因此不把静态确认视为设备操作验收。\n\n## 洞察短评\n\n- **用途**：适合从对话读取/传输 NAS 文件、检查容器和健康状态；重启、删除等管理任务用官方客户端更易确认目标。 详见[Q01](#research-q01)。\n- **亮点**：双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。 详见[Q03](#research-q03)。\n- **思考**：依赖社区逆向/私有 API 与本地 vuex 凭据；confirm=true 仍只是模型参数，不能替代人在设备级破坏操作前的独立批准。 详见[Q04](#research-q04)。\n- **建议**：把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。 详见[Q08](#research-q08)。\n\n采用建议：保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 详见[Q09](#research-q09)。\n\n## 核心贡献\n\n双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。 详见[Q03](#research-q03)。\n\n## 关键质疑\n\n依赖社区逆向/私有 API 与本地 vuex 凭据；confirm=true 仍只是模型参数，不能替代人在设备级破坏操作前的独立批准。 详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。 详见[Q08](#research-q08)。\n\n下一步只做本项可证伪实验：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练。\n\n## 场景与替代办法\n\n适合从对话读取/传输 NAS 文件、检查容器和健康状态；重启、删除等管理任务用官方客户端更易确认目标。 详见[Q01](#research-q01)。\n\n适合从对话读取/传输 NAS 文件、检查容器和健康状态；重启、删除等管理任务用官方客户端更易确认目标。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| 极空间 NAS/账户 | 必需 | 目标资源与权限 | 无操作目标 |\n| 桌面客户端 relay | 默认通道 | 复用登录态 | 回退 WebDAV |\n| WebDAV 凭据 | 可选直连 | 文件操作 | 凭据泄漏风险 |\n\n#### 启动步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 只读接入 | 先列目录/健康 | 核设备与路径 |\n| 故障注入 | 切断一种通道 | 确认同次回退次数 |\n| 写操作 | 独立批准目标/备份 | 记录 operation id |\n| 恢复 | 官方客户端核状态 | 必要时从备份还原 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 接入 | 已有 NAS/客户端/凭据 | 配置两通道 | 固件适配未知 |\n| 传输 | 局域网带宽和磁盘 IO | 选择文件/目录 | 大文件耗时 |\n| 破坏恢复 | 服务中断与数据恢复 | 备份/人工确认 | 最坏损失高 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 验证指标 |\n| --- | --- | --- |\n| 对话式文件管理 | 19 工具统一入口 | 任务成功率 |\n| 通道韧性 | 直连/relay 回退 | 故障恢复率 |\n| 官方客户端对照 | 自动化更强但风险更高 | 每任务人工分钟与误操作数 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：模型直控 NAS 的双通道路由是否能在不可逆操作与私有 API 漂移下保持可恢复？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 场景：适合从对话读取/传输 NAS 文件、检查容器和健康状态？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n适合从对话读取/传输 NAS 文件、检查容器和健康状态；重启、删除等管理任务用官方客户端更易确认目标。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md#L1-L5)\n\n固定提交复核：场景相关声明与实现入口。\n\n```text\n# dsh-zspace\n\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n```\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：场景结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 机制：客户端在 WebDAV 直连和桌面客户端 relay 间选择，同次调用可回退？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n客户端在 WebDAV 直连和桌面客户端 relay 间选择，同次调用可回退；19 个工具覆盖文件、Docker、状态和系统重启。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:1-10](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/tools.js#L1-L10)\n\n固定提交复核：机制相关声明与实现入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Tool registry for the 极空间 (ZSpace) plugin.\n *\n * One tool per file under `./tools/`, in the order the model should see them.\n * Each factory receives the shared context and returns a plain tool spec, which\n * `lib/index.js` turns into a registered host tool.\n *\n * @module dsh-zspace/tools\n */\n\n```\n\n</details>\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：机制结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 贡献：双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md#L1-L5)\n\n固定提交复核：贡献相关声明与实现入口。\n\n```text\n# dsh-zspace\n\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n```\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：贡献结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 局限：依赖社区逆向/私有 API 与本地 vuex 凭据？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n依赖社区逆向/私有 API 与本地 vuex 凭据；confirm=true 仍只是模型参数，不能替代人在设备级破坏操作前的独立批准。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:1-10](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/tools.js#L1-L10)\n\n固定提交复核：局限相关声明与实现入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Tool registry for the 极空间 (ZSpace) plugin.\n *\n * One tool per file under `./tools/`, in the order the model should see them.\n * Each factory receives the shared context and returns a plain tool spec, which\n * `lib/index.js` turns into a registered host tool.\n *\n * @module dsh-zspace/tools\n */\n\n```\n\n</details>\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：局限结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 依赖：需要极空间设备、桌面客户端已登录或 WebDAV 凭据/网络？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n需要极空间设备、桌面客户端已登录或 WebDAV 凭据/网络；账户权限、固件版本和局域网拓扑共同决定结果。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md#L1-L5)\n\n固定提交复核：依赖相关声明与实现入口。\n\n```text\n# dsh-zspace\n\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n```\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：依赖结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 成本与效果：通常复用已有 NAS，但大文件传输占带宽、容器/重启中断服务？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n通常复用已有 NAS，但大文件传输占带宽、容器/重启中断服务；错误回退可能重复非幂等请求，恢复工时未知。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md#L1-L5)\n\n固定提交复核：成本与效果相关声明与实现入口。\n\n```text\n# dsh-zspace\n\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n```\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：成本与效果结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 工程：HTTP 200 内业务失败检查、30秒重探与健康分类有价值？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\nHTTP 200 内业务失败检查、30秒重探与健康分类有价值；写操作需要 operation id、幂等键和调用前后快照。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:1-10](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/lib/tools.js#L1-L10)\n\n固定提交复核：工程相关声明与实现入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Tool registry for the 极空间 (ZSpace) plugin.\n *\n * One tool per file under `./tools/`, in the order the model should see them.\n * Each factory receives the shared context and returns a plain tool spec, which\n * `lib/index.js` turns into a registered host tool.\n *\n * @module dsh-zspace/tools\n */\n\n```\n\n</details>\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：工程结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 假设：把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md#L1-L5)\n\n固定提交复核：假设相关声明与实现入口。\n\n```text\n# dsh-zspace\n\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n```\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：假设结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 采用：保持观察，不连接承载唯一数据或家庭核心服务的 NAS？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-zspace/blob/70743909450191c09f3dcef15d46d8d0119200a9/README.md#L1-L5)\n\n固定提交复核：采用相关声明与实现入口。\n\n```text\n# dsh-zspace\n\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n```\n\n#### 缺口\n\n- 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\n  **影响**：采用结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a81a323e639256f110eb2f9d1b12e1e797f366ffd5212df7f1ef08bd7e44c5a6。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 618 | — | — | 9835 |\n| .js | source | 43 | 4789 | 3056 | 1443 | — |\n| .js | test | 4 | 1940 | 1596 | 214 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力明细\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | 文件、Docker、系统健康与重启等 19 个 NAS 操作 | 固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证 |\n\n## 工程亮点\n\nHTTP 200 内业务失败检查、30秒重探与健康分类有价值；写操作需要 operation id、幂等键和调用前后快照。 详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/tools.js、lib/client/router.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读检查固定提交 README.md、lib/index.js、lib/tools.js、lib/zspace-client.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证。\n- 下一步：下一步只做本项可证伪实验：在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-zspace/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"439436269-ctrl/dsh-zspace\",\n  \"revision\": \"70743909450191c09f3dcef15d46d8d0119200a9\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\",\n    \"lib/tools.js\",\n    \"lib/client/router.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"模型直控 NAS 的双通道路由是否能在不可逆操作与私有 API 漂移下保持可恢复？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"场景：适合从对话读取/传输 NAS 文件、检查容器和健康状态？\",\n        \"answer\": \"适合从对话读取/传输 NAS 文件、检查容器和健康状态；重启、删除等管理任务用官方客户端更易确认目标。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：场景相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"场景结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"机制：客户端在 WebDAV 直连和桌面客户端 relay 间选择，同次调用可回退？\",\n        \"answer\": \"客户端在 WebDAV 直连和桌面客户端 relay 间选择，同次调用可回退；19 个工具覆盖文件、Docker、状态和系统重启。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/tools.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定提交复核：机制相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"机制结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"贡献：双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。？\",\n        \"answer\": \"双通道自动探测与业务错误判定提升家用 NAS 可达性，且能区分 containerd 卡死与需整机重启。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：贡献相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"贡献结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"局限：依赖社区逆向/私有 API 与本地 vuex 凭据？\",\n        \"answer\": \"依赖社区逆向/私有 API 与本地 vuex 凭据；confirm=true 仍只是模型参数，不能替代人在设备级破坏操作前的独立批准。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/tools.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定提交复核：局限相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"局限结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"依赖：需要极空间设备、桌面客户端已登录或 WebDAV 凭据/网络？\",\n        \"answer\": \"需要极空间设备、桌面客户端已登录或 WebDAV 凭据/网络；账户权限、固件版本和局域网拓扑共同决定结果。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：依赖相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"依赖结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"成本与效果：通常复用已有 NAS，但大文件传输占带宽、容器/重启中断服务？\",\n        \"answer\": \"通常复用已有 NAS，但大文件传输占带宽、容器/重启中断服务；错误回退可能重复非幂等请求，恢复工时未知。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：成本与效果相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"成本与效果结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"工程：HTTP 200 内业务失败检查、30秒重探与健康分类有价值？\",\n        \"answer\": \"HTTP 200 内业务失败检查、30秒重探与健康分类有价值；写操作需要 operation id、幂等键和调用前后快照。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/tools.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定提交复核：工程相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"工程结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"假设：把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。？\",\n        \"answer\": \"把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：假设相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"假设结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"采用：保持观察，不连接承载唯一数据或家庭核心服务的 NAS？\",\n        \"answer\": \"保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：采用相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固件/API 版本矩阵、非幂等回退和灾难恢复路径未验证\",\n            \"impact\": \"采用结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"在测试共享目录注入直连超时/relay 恢复，逐工具记录请求次数；对删除/重启做 dry-run 与备份恢复演练\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-zspace\\n\\n[![npm](https://img.shields.io/npm/v/dsh-zspace.svg)](https://www.npmjs.com/package/dsh-zspace)\\n[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n[![dsh-plugin](https://img.shields.io/badge/awesome-dsh--plugin-listed-8a2be2.svg)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\\n\\n极空间（ZSpace）NAS 的 **DeepSeek Harness 插件**：把 NAS 变成 agent 的原生工具 —— **跨网络可用**，不需要同一局域网、不需要 WebDAV、不需要 SSH、不需要 Python。\\n\\n```\\nDSH 插件  →  http://127.0.0.1:13579  →  极空间桌面客户端（已登录）  →  极空间云中转 / P2P  →  NAS\\n```\\n\\n认证直接复用桌面客户端自己的登录态（`vuex.json`），所以**换任何网络都能用**：只要跑 DSH 的这台机器上极空间桌面客户端在线即可。这正好补上 `dsh-webdav` 那类\\\"必须同网段\\\"方案的短板。\\n\\n## 安装\\n\\n```sh\\n# 从 npm 安装（推荐）\\ndsh plugin --profile desktop add dsh-zspace@latest\\n\\n# 或用仓库里的本地包\\ndsh plugin --profile desktop add /绝对路径/dsh-zspace-0.1.0.tgz\\n```\\n\\n装完**重启 DSH**（或在插件市场点「一键重启」）即可在会话里看到 `zspace_*` 工具。\\n\\n前置条件：\\n\\n1. 极空间桌面客户端已安装、**已登录并正在运行**（跨网络访问靠它做云中转）；\\n2. 该账号对目标空间有权限（个人空间 / 公共空间）；\\n3. 不需要给 NAS 开任何端口，也不需要 DDNS。\\n\\n## 双通道：同网络直连 WebDAV，跨网络走云中转\\n\\n插件对同一套工具**自动选路**，判断依据是**可达性**而不是 IP 网段（本机在 `192.168.31.x` 也能直连 `<nas-ip>` 的 NAS）：\\n\\n| 情况 | 通道 | 条件 |\\n|---|---|---|\\n| 能直连 NAS（同网络） | **WebDAV 直连** | 配了 `webdavUrl` + 环境变量 `ZS_WEBDAV_PASSWORD`；1.5s PROPFIND 探测通过即启用 |\\n| 跨网络 / WebDAV 不可达 | 桌面客户端云中转（默认） | 桌面客户端已登录并在运行 |\\n\\n- WebDAV 通道的好处：延迟更低、不依赖桌面客户端在线、目录列表一次 `PROPFIND` 拿全（没有中转的 50 行分页）。\\n- 运行中 WebDAV 掉了（换网、NAS 重启）会**自动回退到中转并在同一次调用内重试**，只损失一点延迟，不会让工具调用失败；30s 后重新探测。\\n- `transportMode`：`auto`（默认）/ `webdav`（强制，失败直接报错）/ `relay`（保持旧行为）。\\n- 路径映射：NAS 的 `/sata1/my/data/...` ↔ WebDAV 的 `<webdavHomePath>/...`（默认根 `/`）；公共空间由 `webdavPublicPath` 指定（默认空＝不在 WebDAV 暴露，相关路径自动回到中转）。\\n- 极空间要在「系统设置 → 文件服务」里开启 WebDAV（默认端口 `5005`，本机实测可用；`5006` 是自签 HTTPS，证书校验会失败）。\\n- **零 patch 配置**：三个环境变量就能启用直连，不需要改任何 patch 文件（避开\\\"同 id 插两次导致挂载两次\\\"的坑）：\\n  `ZS_WEBDAV_URL`（如 `http://<nas-ip>:5005/`）、`ZS_WEBDAV_USER`（NAS 账号）、`ZS_WEBDAV_PASSWORD`。\\n  插件跑在 DSH Desktop 进程里，所以要让**桌面端**能看到这些变量（macOS）：\\n  ```sh\\n  launchctl setenv ZS_WEBDAV_URL 'http://<nas-ip>:5005/'\\n  launchctl setenv ZS_WEBDAV_USER '<NAS账号>'\\n  launchctl setenv ZS_WEBDAV_PASSWORD '<密码>'\\n  # 然后 Cmd+Q 完全退出 DSH Desktop 再重新打开（launchctl setenv 只影响之后启动的进程）\\n  ```\\n  想改回只走中转：`launchctl unsetenv ZS_WEBDAV_URL`（或设 `transportMode: relay`）。\\n- 密码不写进 patch 文件——patch 是明文，会被备份/截图带走。\\n- `zspace_remove` 在 WebDAV 通道下是 NAS 侧的删除语义（是否进回收站由 NAS 决定）；要确保进回收站请用 `transportMode: relay`。\\n\\n## 工具\\n\\n| 工具 | 作用 |\\n|---|---|\\n| `zspace_status` | 探活：**当前通道**（WebDAV 直连 / 云中转）、代理、账号、NAS、存储池余量、个人/公共空间根路径与条目数。其它工具报错时先跑它 |\\n| `zspace_ls` | 列目录，支持 `depth` 递归与 `limit` 预算；自动分页（NAS 单页 50 条） |\\n| `zspace_stat` | 单个文件/目录的元信息（大小、修改/创建时间） |\\n| `zspace_find` | 按名称在目录树里查找（大小写不敏感子串），会报告扫描了多少条目、是否提前停止 |\\n| `zspace_read` | 把小文本文件读进上下文（默认上限 256 KB，二进制自动识别） |\\n| `zspace_download` | 从 NAS 下载到本机（默认落到 `~/Downloads/zspace`） |\\n| `zspace_upload` | 上传本地文件，**大文件自动走分片协议**，中文文件名可用 |\\n| `zspace_write` | 把文本**直接写到 NAS**（省掉本地临时文件），默认覆盖、可传 `overwrite: false` 拒绝覆盖 |\\n| `zspace_mkdir` | 建目录 |\\n| `zspace_rename` | 就地重命名 |\\n| `zspace_move` | 移动到另一个目录（服务端操作，不下载） |\\n| `zspace_copy` | 服务端复制 |\\n| `zspace_remove` | 删除（NAS 侧进回收站）；**必须显式传 `confirm: true`** |\\n| `zspace_docker_list` | 容器列表（name/state/status/id）与 running/count |\\n| `zspace_docker_inspect` | 单个容器的完整配置：镜像、命令、env、挂载、端口、网络模式、重启策略。重建前先留底 |\\n| `zspace_docker_logs` | 容器尾部日志（`tail` 默认 200）；多路复用帧头已剥掉，可直接读 |\\n| `zspace_docker_op` | 容器生命周期：`start` / `stop` / `restart` / `remove` / `pause`；**`remove` 必须 `confirm: true`** |\\n| `zspace_docker_health` | 引擎真健康判据；verdict 见下 |\\n| `zspace_system_reboot` | 整机重启（`POST /system/reboot`）；**必须 `confirm: true`** |\\n\\n### Docker 与整机（0.4.0）\\n\\n这台 NAS 的 containerd 会周期性卡死（wedge），此时容器状态还显示 `running`，但所有启动/停止/删除都静默失效。这几个工具就是为诊断与恢复准备的：\\n\\n- **先 `zspace_docker_health` 再动手**。`verdict`：`healthy`（`container_top` 返回了真实进程列表，containerd 在工作）、`containerd-wedged`（`dial unix:///run/containerd/containerd.sock: timeout`，此时任何容器操作都无效）、`container-not-running`（探针容器没跑，`container_top` 根本不碰 containerd，结论不可信）、`service-off`、`error`。\\n- **wedge 只能整机重启**：`zspace_system_reboot`（`POST /system/reboot`，约 7~8 分钟）。Docker 引擎重启只重启 dockerd，不动 containerd，救不了。\\n- **方法不对称是实打实的坑**：`container_op`（start/stop/restart/remove/pause）是 **GET**，而 `system_restart` 与 `/system/reboot` 是 **POST**；传错一律 `404 page not found`。插件在客户端层固定方法，工具参数里没有 method。\\n- **HTTP 200 ≠ 成功**：业务失败时状态码仍是 200，错误文本在 `code` 字段里。插件会把它当失败抛出，并附带下一步提示。\\n- 只新增服务端工具，**没有客户端 UI**；原有 13 个文件工具的名字、参数与返回结构完全不变。\\n\\n### 路径写法\\n\\n| 写法 | 含义 |\\n|---|---|\\n| 省略 / `\\\"\\\"` | 个人空间根（形如 `/<pool>/my/data`，实际值由插件探测） |\\n| `home:相册` | 个人空间下的 `相册` |\\n| `public:公共分组/skills` | 公共空间下的路径（形如 `/<pool>/public/...`） |\\n| `docs/2026` | 相对个人空间根 |\\n| `/<pool>/my/data/x.txt` | NAS 绝对路径，原样使用 |\\n\\n两个根路径由插件按存储池自动探测（`/<pool>/my/data`、`/<pool>/public`），也可在配置里写死。\\n\\n### 本地路径\\n\\n`zspace_upload` 的 `localPath`、`zspace_download` 的 `dir` 建议传**绝对路径**或 `~/…`：插件跑在 DSH 宿主进程里，普通相对路径是按**宿主进程的工作目录**解析的（不是会话工作区）。找不到文件时的报错会把解析后的绝对路径打出来。\\n\\n## 配置\\n\\n写在 profile 的补丁层（`~/.dsh/profiles/<profile>/cordis.patch.yml`）里 `id: zspace` 那一条的 `config` 下，改完热加载：\\n\\n| 配置项 | 默认 | 说明 |\\n|---|---|---|\\n| `baseUrl` | `http://127.0.0.1:13579` | 桌面客户端本地代理（可用 `ZS_BASE_URL` 覆盖） |\\n| `configDir` | 自动探测 | `vuex.json` 所在目录（可用 `ZS_CONFIG_DIR` 覆盖） |\\n| `apiVersion` | `2.3.2026042401` | NAS Web API 版本号参数 |\\n| `homePath` / `publicPath` | 空＝自动探测 | 写死个人/公共空间根 |\\n| `downloadDir` | 空＝`~/Downloads/zspace` | 默认下载目录 |\\n| `transportMode` | `auto` | 通道：`auto` / `webdav` / `relay` |\\n| `webdavUrl` | 空＝关闭 | WebDAV 地址，如 `http://<nas-ip>:5005/` |\\n| `webdavUser` | 空 | WebDAV 账号（NAS 账号）；密码走 `ZS_WEBDAV_PASSWORD` |\\n| `webdavPassword` | 空 | 密码兜底项，建议留空改用环境变量 |\\n| `webdavHomePath` / `webdavPublicPath` | `/` / 空 | 个人/公共空间在 WebDAV 里的路径（空＝公共空间不暴露） |\\n| `webdavProbeTimeoutMs` | `1500` | 直连探测超时 |\\n| `readMaxBytes` | `262144` | `zspace_read` 上限 |\\n| `writeMaxBytes` | `5242880` | `zspace_write` 单次写入上限（更大的内容用 `zspace_upload`） |\\n| `listMaxEntries` | `2000` | 单次列目录/树的上限 |\\n| `timeoutMs` / `maxRetries` | `60000` / `2` | 请求超时与瞬时失败重试 |\\n| `smallUploadMaxBytes` | `8388608` | 超过就用分片上传 |\\n| `sliceSize` | `2097152` | 分片大小（远端模式上限 2 MB） |\\n| `promptEnabled` / `promptOrder` | `true` / `60` | 是否向系统提示注入使用说明 |\\n\\n## 安全与边界\\n\\n- **只读别人的东西是不可能的**：插件不存任何凭据，每次调用从桌面客户端的 `vuex.json` 现读 token（按 mtime 缓存），客户端退出登录即失效。\\n- **删除是两段式的**：`zspace_remove` 必须 `confirm: true`，且 NAS 侧进回收站，不是硬删。\\n- **不做端口暴露**：所有流量经本机代理走极空间云通道，NAS 不需要公网入口。\\n- 已知限制：\\n  - 极空间**没有官方公开 API**，本插件走的是社区整理的桌面客户端接口，客户端大版本更新可能改动；\\n  - NAS 网页层的 `/file_search/file_search` 在当前固件上**忽略关键字**（换任何关键词都返回同一批 100 项），所以 `zspace_find` 用的是**受限目录遍历**而不是该接口，结果会明确报告扫描范围；\\n  - 单次 list 最多 50 条（插件已自动分页）；远端模式分片上限 2 MB/片。\\n\\n## 代码结构\\n\\n按「**一个文件 = 一个能独立解释的能力**」组织，完整职责表与扩展步骤见 [lib/README.md](lib/README.md)：\\n\\n```\\nlib/index.js      插件接线（name/inject 转发 Config + apply）    lib/client/  协议按能力拆分\\nlib/config.js     配置 schema、默认值、边界校验                  transport  URL/编码/重试/校验\\nlib/prompt.js     系统提示里的用法说明                            spaces     探活、存储池、空间根\\nlib/tools.js      工具注册表（只做注册）                          browse/mutate  列表 / 增删改\\nlib/tools/*.js    19 个工具，各一个文件                            upload/download  分片上传 / 流式下载\\n```\\n\\n依赖是严格单向无环：`index → tools → client → {errors,transport} → format/auth`。加一个工具 = 新建 `lib/tools/<名字>.js` + 在 `lib/tools.js` 注册一行。\\n\\n## 测试\\n\\n```sh\\nnode --test test/client.test.js test/tools.test.js test/adaptor.test.js   # 36 项单测/集成（mock 代理）\\nnode scripts/live-selftest.js                                            # 真机端到端自检（会创建并清理临时目录）\\nnode scripts/docker-selftest.js                                          # 真机 Docker 只读冒烟（列表/详情/日志/健康判据）\\n```\\n\\n`live-selftest.js` 覆盖：探活 → 存储池 → 定位个人/公共空间 → 建目录 → 中文名单请求上传 → 强制多分片上传 → 详情 → 读取 → 下载并校验 sha256 → 服务端复制 → 重命名 → 遍历查找 → 移动 → 删除 → 确认消失。\\n\\n## 与已有极空间 skill 的关系\\n\\n本机的 `zspace-nas` / `zspace-public-access` 等 skill 依赖 `zspace-cli`（Python）或独立 Node 脚本；本插件把同一套协议**内置进 DSH**，不依赖 Python、不依赖额外命令，并且带输出 schema、错误提示与安全护栏。两者可以共存。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-zspace\\\",\\n  \\\"version\\\": \\\"0.4.0\\\",\\n  \\\"description\\\": \\\"极空间（ZSpace）NAS plugin for DeepSeek Harness: cross-network agent tools for browsing, searching, reading, uploading and organizing NAS files through the desktop client's relay — no LAN, no WebDAV, no SSH, no Python.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"author\\\": \\\"439436269-ctrl\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/439436269-ctrl/dsh-zspace.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/439436269-ctrl/dsh-zspace#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/439436269-ctrl/dsh-zspace/issues\\\"\\n  },\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\",\\n    \\\"registry\\\": \\\"https://registry.npmjs.org/\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"zspace\\\",\\n    \\\"极空间\\\",\\n    \\\"nas\\\",\\n    \\\"webdav-alternative\\\"\\n  ],\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/index.d.ts\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./client\\\": {\\n      \\\"types\\\": \\\"./lib/client.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/client.js\\\"\\n    },\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib/**/*.js\\\",\\n    \\\"lib/**/*.d.ts\\\",\\n    \\\"lib/README.md\\\",\\n    \\\"CHANGELOG.md\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/client.test.js test/tools.test.js test/adaptor.test.js\\\",\\n    \\\"selftest\\\": \\\"node scripts/live-selftest.js\\\",\\n    \\\"selftest:docker\\\": \\\"node scripts/docker-selftest.js\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-system-prompt\\\": \\\"^0.2.0-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.2.0-rc.2\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"compatibility\\\": {\\n      \\\"dshReleases\\\": {\\n        \\\"0.2.0-rc.2\\\": \\\"compatible\\\"\\n      }\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/**\\n * dsh-zspace — 极空间 (ZSpace) NAS tools for DeepSeek Harness.\\n *\\n * Cross-network by construction: every call rides the desktop client's local\\n * proxy, which relays to the NAS over 极空间's cloud/P2P channel. No LAN\\n * address, no DDNS, no WebDAV, no SSH, no Python.\\n *\\n * This entry point only wires things together: it validates config, owns the\\n * client lifecycle, contributes the guide section, and registers the tools\\n * described in `./tools/`. Configuration lives in `./config.js`, the guide text\\n * in `./prompt.js`, the protocol in `./client/`.\\n *\\n * @module dsh-zspace\\n */\\n\\nimport { defineTool } from \\\"@deepseek-ai/dsh-tools\\\";\\n\\nimport { ZSpaceClient } from \\\"./client.js\\\";\\nimport { Config, resolveConfig, validateConfig } from \\\"./config.js\\\";\\nimport { guideText } from \\\"./prompt.js\\\";\\nimport { createToolSpecs } from \\\"./tools.js\\\";\\n\\nexport const name = \\\"zspace\\\";\\n\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport { Config };\\n\\nexport function apply(ctx, config) {\\n\\tconst settings = resolveConfig(config);\\n\\tvalidateConfig(settings);\\n\\n\\t/** @type {ZSpaceClient|undefined} */\\n\\tlet client;\\n\\tctx.effect(() => {\\n\\t\\tclient = new ZSpaceClient({\\n\\t\\t\\tbaseUrl: settings.baseUrl,\\n\\t\\t\\tconfigDir: settings.configDir || undefined,\\n\\t\\t\\tapiVersion: settings.apiVersion,\\n\\t\\t\\thomePath: settings.homePath,\\n\\t\\t\\tpublicPath: settings.publicPath,\\n\\t\\t\\ttimeoutMs: settings.timeoutMs,\\n\\t\\t\\tmaxRetries: settings.maxRetries,\\n\\t\\t\\tlistMaxEntries: settings.listMaxEntries,\\n\\t\\t\\tsmallUploadMaxBytes: settings.smallUploadMaxBytes,\\n\\t\\t\\tsliceSize: settings.sliceSize,\\n\\t\\t\\ttransportMode: settings.transportMode,\\n\\t\\t\\twebdavUrl: settings.webdavUrl,\\n\\t\\t\\twebdavUser: settings.webdavUser,\\n\\t\\t\\twebdavPassword: settings.webdavPassword,\\n\\t\\t\\twebdavHomePath: settings.webdavHomePath,\\n\\t\\t\\twebdavPublicPath: settings.webdavPublicPath,\\n\\t\\t\\twebdavProbeTimeoutMs: settings.webdavProbeTimeoutMs,\\n\\t\\t});\\n\\t\\treturn () => {\\n\\t\\t\\tclient = undefined;\\n\\t\\t};\\n\\t});\\n\\n\\t/**\\n\\t * The live client, or a loud failure — reached only while the fiber is active.\\n\\t *\\n\\t * @returns {ZSpaceClient} live client.\\n\\t */\\n\\tconst getClient = () => {\\n\\t\\tif (!client) throw new Error(\\\"zspace: client is not available\\\");\\n\\t\\treturn client;\\n\\t};\\n\\n\\tif (settings.promptEnabled) {\\n\\t\\tctx.systemPrompt.section({\\n\\t\\t\\tname: \\\"zspace:guide\\\",\\n\\t\\t\\torder: settings.promptOrder,\\n\\t\\t\\ttext: () => guideText(settings),\\n\\t\\t});\\n\\t}\\n\\n\\tfor (const spec of createToolSpecs({ getClient, config: settings })) {\\n\\t\\tctx.tools.register(\\n\\t\\t\\tdefineTool({\\n\\t\\t\\t\\tname: spec.name,\\n\\t\\t\\t\\tdescription: spec.description,\\n\\t\\t\\t\\tparameters: spec.parameters,\\n\\t\\t\\t\\toutput: {\\n\\t\\t\\t\\t\\tschema: spec.outputSchema,\\n\\t\\t\\t\\t\\trender: spec.render,\\n\\t\\t\\t\\t\\t...(spec.presentationMeta ? { presentationMeta: spec.presentationMeta } : {}),\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t...(spec.call ? { presentCall: spec.call } : {}),\\n\\t\\t\\t\\texecute: spec.execute,\\n\\t\\t\\t}),\\n\\t\\t);\\n\\t}\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/tools.js\",\n      \"content\": \"/**\\n * Tool registry for the 极空间 (ZSpace) plugin.\\n *\\n * One tool per file under `./tools/`, in the order the model should see them.\\n * Each factory receives the shared context and returns a plain tool spec, which\\n * `lib/index.js` turns into a registered host tool.\\n *\\n * @module dsh-zspace/tools\\n */\\n\\nimport { createResolver, defaultDownloadDir, normalizeRemote } from \\\"./tools/paths.js\\\";\\nimport { clampInt, entryLine, guarded } from \\\"./tools/shared.js\\\";\\nimport { findByName, walkDirectory } from \\\"./tools/walk.js\\\";\\nimport { expandLocalPath } from \\\"./tools/paths.js\\\";\\nimport { createStatusTool } from \\\"./tools/status.js\\\";\\nimport { createLsTool } from \\\"./tools/ls.js\\\";\\nimport { createStatTool } from \\\"./tools/stat.js\\\";\\nimport { createFindTool } from \\\"./tools/find.js\\\";\\nimport { createReadTool } from \\\"./tools/read.js\\\";\\nimport { createDownloadTool } from \\\"./tools/download.js\\\";\\nimport { createUploadTool } from \\\"./tools/upload.js\\\";\\nimport { createWriteTool } from \\\"./tools/write.js\\\";\\nimport { createMkdirTool } from \\\"./tools/mkdir.js\\\";\\nimport { createRenameTool } from \\\"./tools/rename.js\\\";\\nimport { createMoveTool } from \\\"./tools/move.js\\\";\\nimport { createCopyTool } from \\\"./tools/copy.js\\\";\\nimport { createRemoveTool } from \\\"./tools/remove.js\\\";\\nimport { createDockerListTool } from \\\"./tools/docker-list.js\\\";\\nimport { createDockerInspectTool } from \\\"./tools/docker-inspect.js\\\";\\nimport { createDockerLogsTool } from \\\"./tools/docker-logs.js\\\";\\nimport { createDockerOpTool } from \\\"./tools/docker-op.js\\\";\\nimport { createDockerHealthTool } from \\\"./tools/docker-health.js\\\";\\nimport { createSystemRebootTool } from \\\"./tools/system-reboot.js\\\";\\n\\nexport { findByName } from \\\"./tools/walk.js\\\";\\nexport { normalizeRemote } from \\\"./tools/paths.js\\\";\\n\\n/**\\n * Build every tool spec for one plugin instance.\\n *\\n * @param {{getClient: () => import(\\\"./client.js\\\").ZSpaceClient, config: Record<string, any>}} deps - plugin deps.\\n * @returns {Array<Record<string, any>>} tool specs in presentation order.\\n */\\nexport function createToolSpecs({ getClient, config }) {\\n\\tconst resolve = (input) => createResolver({ client: getClient() })(input);\\n\\tconst ctx = {\\n\\t\\tgetClient,\\n\\t\\tconfig,\\n\\t\\tresolve,\\n\\t\\tguarded,\\n\\t\\tclampInt,\\n\\t\\tentryLine,\\n\\t\\twalkDirectory,\\n\\t\\tfindByName,\\n\\t\\texpandLocalPath,\\n\\t\\tdownloadDir: () => defaultDownloadDir(config),\\n\\t};\\n\\n\\treturn [\\n\\t\\tcreateStatusTool(ctx),\\n\\t\\tcreateLsTool(ctx),\\n\\t\\tcreateStatTool(ctx),\\n\\t\\tcreateFindTool(ctx),\\n\\t\\tcreateReadTool(ctx),\\n\\t\\tcreateDownloadTool(ctx),\\n\\t\\tcreateUploadTool(ctx),\\n\\t\\tcreateWriteTool(ctx),\\n\\t\\tcreateMkdirTool(ctx),\\n\\t\\tcreateRenameTool(ctx),\\n\\t\\tcreateMoveTool(ctx),\\n\\t\\tcreateCopyTool(ctx),\\n\\t\\tcreateRemoveTool(ctx),\\n\\t\\tcreateDockerListTool(ctx),\\n\\t\\tcreateDockerInspectTool(ctx),\\n\\t\\tcreateDockerLogsTool(ctx),\\n\\t\\tcreateDockerOpTool(ctx),\\n\\t\\tcreateDockerHealthTool(ctx),\\n\\t\\tcreateSystemRebootTool(ctx),\\n\\t];\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/client/router.js\",\n      \"content\": \"/**\\n * Transport router — WebDAV fast path vs. desktop-client relay.\\n *\\n * The plugin always speaks the same tool surface; this module decides which\\n * transport serves a call:\\n *\\n * | mode | behaviour |\\n * |---|---|\\n * | `auto` (default) | probe WebDAV once per minute; usable → WebDAV, otherwise relay |\\n * | `webdav` | always WebDAV (failures surface loudly) |\\n * | `relay` | always the desktop-client relay (previous behaviour) |\\n *\\n * \\\"Same network\\\" is decided by **reachability**, not by comparing IP prefixes:\\n * a machine on `192.168.31.x` may still route straight to a NAS on\\n * `<nas-ip>`, and a machine on the NAS's own subnet may have WebDAV\\n * disabled. A 1.5s PROPFIND answers that question directly.\\n *\\n * Runtime failures on the WebDAV path (timeouts, refused connections, 5xx)\\n * mark it down for a cooldown and retry the same call over the relay, so losing\\n * the LAN mid-session only costs latency — never a failed tool call. Business\\n * errors (401/403/404/405/409, `N00…` codes) are *not* transport failures and\\n * are returned as-is.\\n *\\n * @module dsh-zspace/client/router\\n */\\n\\nimport * as relay from \\\"./relay.js\\\";\\nimport { ZSpaceError } from \\\"./errors.js\\\";\\nimport * as webdav from \\\"./webdav.js\\\";\\n\\n/** How long a probe result is trusted. */\\nconst PROBE_TTL_MS = 60_000;\\n\\n/** How long to stay on the relay after a WebDAV runtime failure. */\\nconst DOWN_COOLDOWN_MS = 30_000;\\n\\n/** Methods served by a transport (the rest are relay internals). */\\nexport const ROUTED_METHODS = [\\n\\t\\\"check\\\",\\n\\t\\\"pools\\\",\\n\\t\\\"isDirectory\\\",\\n\\t\\\"homePath\\\",\\n\\t\\\"publicPath\\\",\\n\\t\\\"list\\\",\\n\\t\\\"info\\\",\\n\\t\\\"mkdir\\\",\\n\\t\\\"rename\\\",\\n\\t\\\"move\\\",\\n\\t\\\"copy\\\",\\n\\t\\\"remove\\\",\\n\\t\\\"download\\\",\\n\\t\\\"readFile\\\",\\n\\t\\\"upload\\\",\\n];\\n\\n/**\\n * Whether an error means \\\"this transport is unusable right now\\\" (as opposed to\\n * a legitimate answer about the path or the credentials).\\n *\\n * @param {unknown} error - thrown value.\\n * @returns {boolean} true when falling back to the relay is the right move.\\n */\\nexport function isTransportFailure(error) {\\n\\tconst code = String(/** @type {{code?: string}} */ (error)?.code ?? \\\"\\\");\\n\\tif ([\\\"ETIMEDOUT\\\", \\\"EDAV\\\", \\\"EPROXY\\\", \\\"ECONNREFUSED\\\", \\\"ECONNRESET\\\", \\\"ENETUNREACH\\\", \\\"EAI_AGAIN\\\"].includes(code)) return true;\\n\\tif (/^HTTP(5\\\\d\\\\d)$/.test(code)) return true;\\n\\treturn error instanceof TypeError; // undici network failures\\n}\\n\\n/**\\n * Which transport should serve the next call.\\n *\\n * @param {import(\\\"../client.js\\\").ZSpaceClient} client - live client.\\n * @returns {Promise<\\\"webdav\\\"|\\\"relay\\\">} chosen transport.\\n */\\nexport async function selectTransport(client) {\\n\\tconst mode = client.transportMode || \\\"auto\\\";\\n\\tif (mode !== \\\"webdav\\\" && mode !== \\\"auto\\\") return \\\"relay\\\";\\n\\tif (!webdav.configured(client)) return \\\"relay\\\";\\n\\tif (mode === \\\"webdav\\\") return \\\"webdav\\\";\\n\\tif (client._webdavDownUntil && Date.now() < client._webdavDownUntil) return \\\"relay\\\";\\n\\n\\tconst cached = client._webdavProbe;\\n\\tif (cached && Date.now() - cached.at < PROBE_TTL_MS) return cached.usable ? \\\"webdav\\\" : \\\"relay\\\";\\n\\n\\tconst result = await webdav.probe(client);\\n\\tclient._webdavProbe = { at: Date.now(), ...result };\\n\\treturn result.usable ? \\\"webdav\\\" : \\\"relay\\\";\\n}\\n\\n/**\\n * Human-readable transport state for `zspace_status`.\\n *\\n * @param {import(\\\"../client.js\\\").ZSpaceClient} client - live client.\\n * @returns {Promise<{transport: string, configured: boolean, probe: Record<string, any>|null}>} report.\\n */\\nexport async function transportReport(client) {\\n\\tconst transport = await selectTransport(client);\\n\\treturn {\\n\\t\\ttransport,\\n\\t\\tconfigured: webdav.configured(client),\\n\\t\\tprobe: client._webdavProbe ?? null,\\n\\t};\\n}\\n\\n/**\\n * Run one capability through the selected transport, with relay fallback.\\n *\\n * @param {import(\\\"../client.js\\\").ZSpaceClient} client - live client.\\n * @param {string} method - capability name (see {@link ROUTED_METHODS}).\\n * @param {unknown[]} args - arguments after the client.\\n * @returns {Promise<any>} capability result.\\n */\\nexport async function dispatch(client, method, args) {\\n\\tconst transport = await selectTransport(client);\\n\\tconst implementation = transport === \\\"webdav\\\" ? webdav : relay;\\n\\tconst fn = /** @type {Record<string, Function>} */ (implementation)[method];\\n\\tif (typeof fn !== \\\"function\\\") throw new ZSpaceError(\\\"ENOTIMPL\\\", `传输 ${transport} 未实现 ${method}`);\\n\\ttry {\\n\\t\\treturn await fn(client, ...args);\\n\\t} catch (error) {\\n\\t\\tif (transport !== \\\"webdav\\\" || client.transportMode === \\\"webdav\\\" || !isTransportFailure(error)) throw error;\\n\\t\\tclient._webdavDownUntil = Date.now() + DOWN_COOLDOWN_MS;\\n\\t\\tclient._webdavProbe = {\\n\\t\\t\\tat: Date.now(),\\n\\t\\t\\treachable: false,\\n\\t\\t\\tusable: false,\\n\\t\\t\\treason: `运行中失败，${Math.round(DOWN_COOLDOWN_MS / 1000)}s 内走中转：${error?.message ?? error}`,\\n\\t\\t};\\n\\t\\treturn await /** @type {Record<string, Function>} */ (relay)[method](client, ...args);\\n\\t}\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"70743909450191c09f3dcef15d46d8d0119200a9\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"a81a323e639256f110eb2f9d1b12e1e797f366ffd5212df7f1ef08bd7e44c5a6\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 618,\n        \"words\": 9835\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 43,\n        \"lines\": 4789,\n        \"code\": 3056,\n        \"comments\": 1443,\n        \"blank\": 304\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 4,\n        \"lines\": 1940,\n        \"code\": 1596,\n        \"comments\": 214,\n        \"blank\": 154\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"lib/client.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 79,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 80,\n          \"api\": \"defineTool\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"lib/client/download.js\",\n          \"line\": 92,\n          \"api\": \"request.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client/spaces.js\",\n          \"line\": 26,\n          \"api\": \"request.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client/transport.js\",\n          \"line\": 204,\n          \"api\": \"request.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client/transport.js\",\n          \"line\": 218,\n          \"api\": \"source.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"lib/client/download.js\",\n          \"line\": 91,\n          \"api\": \"request.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client/spaces.js\",\n          \"line\": 25,\n          \"api\": \"request.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client/transport.js\",\n          \"line\": 128,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client/transport.js\",\n          \"line\": 201,\n          \"api\": \"request.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"error\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 4,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"439436269-ctrl/dsh-zspace\",\n    \"repository_id\": 1406500233,\n    \"captured_at\": \"2026-10-22T16:02:59.070Z\",\n    \"window_start\": \"2026-09-22T16:02:59.070Z\",\n    \"stars\": 0,\n    \"pushed_at\": \"2026-10-18T15:30:05Z\",\n    \"issues\": {\n      \"open\": null,\n      \"closed\": null,\n      \"created_30d\": null,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"open\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F008:326F1D:A65912:B344D7:6ADA33B5 and timestamp 2026-10-22 16:03:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F10E:11532E:A763F7:B462BF:6ADA33B6 and timestamp 2026-10-22 16:03:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"created_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A59.070Z..2026-10-22T16%3A02%3A59.070Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F1D0:254CC5:9E4D74:AB3D63:6ADA33B7 and timestamp 2026-10-22 16:03:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A59.070Z..2026-10-22T16%3A02%3A59.070Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F2E0:1B9EB5:AC7268:B96C21:6ADA33B8 and timestamp 2026-10-22 16:03:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A59.070Z..2026-10-22T16%3A02%3A59.070Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F418:2AD50B:A5271B:B22250:6ADA33BA and timestamp 2026-10-22 16:03:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"dsh-zspace\",\n      \"captured_at\": \"2026-10-22T16:03:06.318Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": 1242,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-zspace\",\n      \"error\": null,\n      \"publication\": {\n        \"first_published_at\": \"2026-10-05T21:47:18.314Z\",\n        \"captured_at\": \"2026-10-22T16:03:06.318Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-zspace\",\n        \"error\": null,\n        \"latest_version\": \"0.4.0\",\n        \"latest_published_at\": \"2026-10-18T15:32:55.528Z\",\n        \"latest_error\": null\n      }\n    }\n  }\n}\n",
+            "sha256": "031bf52c3a8bffd2e6bd4461e8d81de608e397cd1a7cd246dbf57072509e2563"
+        }
+    },
+    "unavailable_artifacts": []
+}

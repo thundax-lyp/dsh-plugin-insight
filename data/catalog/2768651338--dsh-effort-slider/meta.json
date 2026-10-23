@@ -1,0 +1,34 @@
+{
+    "repository": "2768651338/dsh-effort-slider",
+    "repository_id": 1335766616,
+    "captured_at": "2026-10-22T06:49:58.749Z",
+    "window_start": "2026-09-22T06:49:58.749Z",
+    "stars": 20,
+    "pushed_at": "2026-10-20T14:21:40Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 2,
+        "closed_30d": 2,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@txc2768651338/dsh-effort-slider",
+        "captured_at": "2026-10-22T06:50:07.817Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1403,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40txc2768651338%2Fdsh-effort-slider",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-01T08:03:51.076Z",
+            "captured_at": "2026-10-22T06:50:07.817Z",
+            "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-effort-slider",
+            "error": null,
+            "latest_version": "0.5.1",
+            "latest_published_at": "2026-10-20T11:42:25.940Z",
+            "latest_error": null
+        }
+    }
+}

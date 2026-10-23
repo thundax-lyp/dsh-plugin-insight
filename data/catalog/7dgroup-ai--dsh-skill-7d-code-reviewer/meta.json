@@ -1,0 +1,34 @@
+{
+    "repository": "7dgroup-ai/dsh-skill-7d-code-reviewer",
+    "repository_id": 1336021761,
+    "captured_at": "2026-10-22T06:55:46.053Z",
+    "window_start": "2026-09-22T06:55:46.053Z",
+    "stars": 11,
+    "pushed_at": "2026-10-02T08:09:00Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 1,
+        "closed_30d": 2,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@7dgroup/dsh-skill-7d-code-reviewer",
+        "captured_at": "2026-10-22T06:55:55.079Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%407dgroup%2Fdsh-skill-7d-code-reviewer",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T06:55:55.079Z",
+            "source_url": "https://registry.npmjs.org/%407dgroup%2Fdsh-skill-7d-code-reviewer",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

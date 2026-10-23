@@ -1,0 +1,34 @@
+{
+    "repository": "439436269-ctrl/dsh-ai-arcade",
+    "repository_id": 1413897334,
+    "captured_at": "2026-10-22T06:06:18.310Z",
+    "window_start": "2026-09-22T06:06:18.310Z",
+    "stars": 0,
+    "pushed_at": "2026-10-11T05:37:15Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-ai-arcade",
+        "captured_at": "2026-10-22T06:06:28.938Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 299,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-ai-arcade",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-11T05:31:31.226Z",
+            "captured_at": "2026-10-22T06:06:28.938Z",
+            "source_url": "https://registry.npmjs.org/dsh-ai-arcade",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-10-11T05:32:27.336Z",
+            "latest_error": null
+        }
+    }
+}

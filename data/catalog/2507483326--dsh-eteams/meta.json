@@ -1,0 +1,34 @@
+{
+    "repository": "2507483326/dsh-eteams",
+    "repository_id": 1372993989,
+    "captured_at": "2026-10-22T10:41:54.451Z",
+    "window_start": "2026-09-22T10:41:54.451Z",
+    "stars": 2,
+    "pushed_at": "2026-09-22T13:21:58Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-eteams",
+        "captured_at": "2026-10-22T10:42:06.421Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1404,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-eteams",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-16T12:58:09.261Z",
+            "captured_at": "2026-10-22T10:42:06.421Z",
+            "source_url": "https://registry.npmjs.org/dsh-eteams",
+            "error": null,
+            "latest_version": "0.2.22",
+            "latest_published_at": "2026-09-22T13:33:54.196Z",
+            "latest_error": null
+        }
+    }
+}

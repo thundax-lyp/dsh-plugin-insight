@@ -1,0 +1,34 @@
+{
+    "repository": "534119219/chicheng-cron",
+    "repository_id": 1335807482,
+    "captured_at": "2026-10-22T05:28:26.324Z",
+    "window_start": "2026-09-22T05:28:26.324Z",
+    "stars": 7,
+    "pushed_at": "2026-08-26T12:47:03Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "chicheng-cron",
+        "captured_at": "2026-10-22T05:28:35.298Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/chicheng-cron",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T05:28:35.298Z",
+            "source_url": "https://registry.npmjs.org/chicheng-cron",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

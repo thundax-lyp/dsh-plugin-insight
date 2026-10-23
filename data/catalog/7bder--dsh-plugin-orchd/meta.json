@@ -1,0 +1,34 @@
+{
+    "repository": "7bder/dsh-plugin-orchd",
+    "repository_id": 1422240642,
+    "captured_at": "2026-10-22T09:43:36.530Z",
+    "window_start": "2026-09-22T09:43:36.530Z",
+    "stars": 0,
+    "pushed_at": "2026-10-17T16:27:34Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-plugin-orchd",
+        "captured_at": "2026-10-22T09:43:43.675Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 301,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-orchd",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-16T15:37:21.457Z",
+            "captured_at": "2026-10-22T09:43:43.675Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-orchd",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-10-16T15:38:18.118Z",
+            "latest_error": null
+        }
+    }
+}

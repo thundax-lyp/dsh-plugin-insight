@@ -1,0 +1,51 @@
+{
+    "repository": "534119219/chicheng-quickinput",
+    "repository_id": 1337038478,
+    "captured_at": "2026-10-22T16:03:05.342Z",
+    "window_start": "2026-09-22T16:03:05.342Z",
+    "stars": 5,
+    "pushed_at": "2026-08-26T12:35:08Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-quickinput%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F5F6:FEEE4:9F621D:AC5188:6ADA33BB and timestamp 2026-10-22 16:03:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-quickinput%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F6CA:19AC95:A2313C:AF2CD3:6ADA33BC and timestamp 2026-10-22 16:03:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-quickinput%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A05.342Z..2026-10-22T16%3A03%3A05.342Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F740:1032B3:9E2DEF:AB1E47:6ADA33BD and timestamp 2026-10-22 16:03:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A534119219%2Fchicheng-quickinput%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A05.342Z..2026-10-22T16%3A03%3A05.342Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F814:FF42C:A16448:AE5470:6ADA33BF and timestamp 2026-10-22 16:03:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "chicheng-vault",
+        "captured_at": "2026-10-22T16:03:12.563Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/chicheng-vault",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T16:03:12.563Z",
+            "source_url": "https://registry.npmjs.org/chicheng-vault",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

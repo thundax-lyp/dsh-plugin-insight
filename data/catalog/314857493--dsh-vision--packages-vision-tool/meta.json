@@ -1,0 +1,34 @@
+{
+    "repository": "314857493/dsh-vision",
+    "repository_id": 1335070045,
+    "captured_at": "2026-10-22T07:35:37.703Z",
+    "window_start": "2026-09-22T07:35:37.703Z",
+    "stars": 2,
+    "pushed_at": "2026-09-05T08:07:54Z",
+    "issues": {
+        "open": 0,
+        "closed": 1,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-vision-free-eyes",
+        "captured_at": "2026-10-22T07:35:45.904Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1179,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-vision-free-eyes",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T08:51:35.289Z",
+            "captured_at": "2026-10-22T07:35:45.904Z",
+            "source_url": "https://registry.npmjs.org/dsh-vision-free-eyes",
+            "error": null,
+            "latest_version": "0.1.4",
+            "latest_published_at": "2026-09-05T14:24:55.482Z",
+            "latest_error": null
+        }
+    }
+}

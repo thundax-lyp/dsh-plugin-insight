@@ -1,0 +1,34 @@
+{
+    "repository": "3361805598-gif/dsh-usage-analytics",
+    "repository_id": 1356960582,
+    "captured_at": "2026-10-22T04:49:05.505Z",
+    "window_start": "2026-09-22T04:49:05.505Z",
+    "stars": 2,
+    "pushed_at": "2026-09-06T17:57:06Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-usage-analytics",
+        "captured_at": "2026-10-22T04:49:14.116Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-usage-analytics",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T04:49:14.116Z",
+            "source_url": "https://registry.npmjs.org/dsh-usage-analytics",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}
