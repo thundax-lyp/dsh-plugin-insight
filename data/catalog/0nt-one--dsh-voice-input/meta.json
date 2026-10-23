@@ -1,0 +1,34 @@
+{
+    "repository": "0nt-one/dsh-voice-input",
+    "repository_id": 1335558973,
+    "captured_at": "2026-10-22T06:52:31.713Z",
+    "window_start": "2026-09-22T06:52:31.713Z",
+    "stars": 5,
+    "pushed_at": "2026-08-16T02:38:42Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-voice-input-web",
+        "captured_at": "2026-10-22T06:52:39.834Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 60,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-voice-input-web",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T05:26:06.925Z",
+            "captured_at": "2026-10-22T06:52:39.834Z",
+            "source_url": "https://registry.npmjs.org/dsh-voice-input-web",
+            "error": null,
+            "latest_version": "0.1.2",
+            "latest_published_at": "2026-08-15T05:26:07.229Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "repository": "1708994293-hue/dsh-auto-update",
+    "repository_id": 1428034710,
+    "captured_at": "2026-10-23T01:50:02.415Z",
+    "window_start": "2026-09-23T01:50:02.415Z",
+    "stars": 0,
+    "pushed_at": "2026-10-21T08:36:28Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A678:3F7CA3:11F4A2:1369D2:6ADABD4C and timestamp 2026-10-23 01:50:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A742:320EB6:1195F48:12E1366:6ADABD4E and timestamp 2026-10-23 01:50:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A02.415Z..2026-10-23T01%3A50%3A02.415Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A816:29366C:167201:18420D:6ADABD4F and timestamp 2026-10-23 01:50:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A02.415Z..2026-10-23T01%3A50%3A02.415Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8E4:102599:133C926:14898A1:6ADABD50 and timestamp 2026-10-23 01:50:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A02.415Z..2026-10-23T01%3A50%3A02.415Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9C2:1B6D53:165C2E:182A32:6ADABD51 and timestamp 2026-10-23 01:50:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@sueleven/dsh-auto-update",
+        "captured_at": "2026-10-23T01:50:10.119Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40sueleven%2Fdsh-auto-update",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": "2026-10-21T07:44:42.958Z",
+            "captured_at": "2026-10-23T01:50:10.119Z",
+            "source_url": "https://registry.npmjs.org/%40sueleven%2Fdsh-auto-update",
+            "error": null,
+            "latest_version": "1.0.1",
+            "latest_published_at": "2026-10-22T00:56:54.093Z",
+            "latest_error": null
+        }
+    }
+}

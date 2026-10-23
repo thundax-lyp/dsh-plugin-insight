@@ -1,0 +1,440 @@
+{
+    "schema_version": 4,
+    "id": "820da202e8e05a8ce184170843be955f",
+    "identity": "github:1350379113:root",
+    "slug": "173787247--dsh-wsl-cred",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1350379113:root",
+            "repository_id": 1350379113,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-cred",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-cred",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0f4a0b1c09fa9e7d26659aef5e65dc26fd4d121cdbe61fc4fa655d4b0851015a",
+                "code": "1c45da3969a109959783373175150c87a3a33fa0",
+                "maintenance": "baca9e19c4f14c3bea0dbc01cd1a87a32b4689d423e656cd65cab66cc1058ab5"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1350379113-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:35:03.389Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1350379113-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "README.md",
+                            "content_sha256": "815a4c5268466d1538f45794c37769d7b3360105e41b318122f7c94bf06965d1"
+                        }
+                    ],
+                    "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+                    "captured_at": "2026-10-22T09:35:03.389Z",
+                    "summary": "汇总Git helper配置、Windows GCM候选路径与origin类型，但原样helper输出存在敏感配置外发边界。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-cred/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1350379113-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "README.md",
+                            "content_sha256": "815a4c5268466d1538f45794c37769d7b3360105e41b318122f7c94bf06965d1"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "SECURITY.md",
+                            "content_sha256": "c07bf5e8ba8c3012fede086ce5c564fc9afe80bda135265739e0a0a79ec31288"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "package.json",
+                            "content_sha256": "aa85523472ade4d28a7859d985e63d1018c3fab42a76fa6cf79fc2d24f2a69cd"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "index.js",
+                            "content_sha256": "3f75f2936ec811c434946b181bb18c8254a7e97d198f8a8485114dafde0a307a"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "lib/cred.js",
+                            "content_sha256": "9597e19ca6c16b73290e97b1d04eda77eb92e1d74012414038365a2f0b01267e"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-cred",
+                            "commit": "1c45da3969a109959783373175150c87a3a33fa0",
+                            "path": "test/cred.test.js",
+                            "content_sha256": "3014bbaaffaf6cf46ab6428c8afc72baa6e46cb5f84ff3d85564e36a6cb762ca"
+                        }
+                    ],
+                    "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+                    "captured_at": "2026-10-22T09:35:03.389Z",
+                    "summary": "核查 README.md、SECURITY.md、package.json、index.js、lib/cred.js、lib/wsl-host.js、test/cred.test.js；固定git只读命令和路径exists，经协议分类生成模型报告。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-cred/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "完整入口/105行cred/57行wsl-host/55行生产测试/README/SECURITY/package，只读不查真实凭据。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "WSL Git HTTPS/SSH配置排障，先区分配置线索与认证成功。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "固定git只读命令和路径exists，经协议分类生成模型报告。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "完整入口/105行cred/57行wsl-host/55行生产测试/README/SECURITY/package，只读不查真实凭据。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.2.0 MIT ESM，Node>=18，宿主tools/systemPrompt和PATH git，Windows GCM固定候选布局。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | git/宿主 | 核cwd及helper敏感性 | 先核host cwd和内联helper敏感性；工时未知 |\n| 持续使用 | 两本地进程/结果token | 预检与错误复核 | 无插件网络请求；宿主结果token及人工预检金额未知 |\n| 失败恢复 | 无插件持久写入；已发送结果留在宿主/模型流程 | 核外发范围并处理敏感值 | 停用不撤回已外发敏感值；处置工时与损失未知 |\n",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先观察，补最小化输出/明确目标再评估。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 配置线索 | helper/GCM路径 | 非有效凭据认证 |\n| 协议建议 | origin分类 | scheme/SSH样式有限 |\n| 避免秘密 | 无fill/remote只host | helper原串未脱敏 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "固定execFile优点明确，需最终输出脱敏测试与可区分错误。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把常用Git凭据配置线索放入单一模型报告。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "内联helper可能含敏感值却原样输出，错误吞成未配，宿主cwd不等会话仓库。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究只回类型/状态的最小化输出及明确cwd/错误层级，比较敏感片段和归属误判，尚未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1350379113:root",
+                            "area": "code",
+                            "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:03.389Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T09:35:03.389Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+                "reviewed_at": "2026-10-22T09:35:03.389Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1350379113:root",
+                        "area": "code",
+                        "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty小幅，常见配置诊断；mechanism小幅，只读命令接线；transferability小幅，Windows布局绑定；simplification实质，聚合查看。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow小幅，配置排查；delivery无认证证明且秘密承诺缺口；reach小幅，WSL用户；economics小幅，节时未知。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1350379113-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "先补helper最小化输出与明确会话cwd；内联配置可能把敏感值原样交模型，不能按无秘密承诺直接启用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "WSL Git排查明确。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "少量命令聚合，手动本地检查更易控。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "输出风险静态链可核，不读真实秘密。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "敏感结果和错误仓库的纠正代价。"
+                    }
+                },
+                "score": 47,
+                "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+                "reviewed_at": "2026-10-22T09:35:03.389Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1350379113-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1350379113:root",
+                        "area": "code",
+                        "fingerprint": "1c45da3969a109959783373175150c87a3a33fa0"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1350379113:root",
+            "repository": "173787247/dsh-wsl-cred",
+            "path": "",
+            "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+            "fingerprints": {
+                "directory": "0f4a0b1c09fa9e7d26659aef5e65dc26fd4d121cdbe61fc4fa655d4b0851015a",
+                "code": "1c45da3969a109959783373175150c87a3a33fa0",
+                "maintenance": "baca9e19c4f14c3bea0dbc01cd1a87a32b4689d423e656cd65cab66cc1058ab5"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "4fc5e0a94825771a9077c3e67638dcfb08b7416ffb848e66f2376ef5ea669fb2"
+        },
+        "publication.metadata": "data/catalog/173787247--dsh-wsl-cred/meta.json",
+        "publication.summaries": {
+            "text": "汇总Git helper配置、Windows GCM候选路径与origin类型，但原样helper输出存在敏感配置外发边界。",
+            "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+            "source_url": "https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+            "items": {
+                "模型工具": "cred_hint只读Git配置/路径线索"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 配置读取 | helper/origin | 进程cwd/原串 |\n| GCM候选 | 路径存在 | 非认证状态 |\n| 建议文本 | HTTPS/SSH排查 | 不执行修复 |"
+        },
+        "publication.advice": {
+            "revision": "1c45da3969a109959783373175150c87a3a33fa0",
+            "text": "先观察，补最小化输出/明确目标再评估。详见[Q05](#research-q05)。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-cred",
+        "reports": "# dsh-wsl-cred\n\n> 汇总Git helper配置、Windows GCM候选路径与origin类型，但原样helper输出存在敏感配置外发边界。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-cred](https://github.com/173787247/dsh-wsl-cred)\n- **版本号**：0.2.0（[固定提交 1c45da3969a109959783373175150c87a3a33fa0](https://github.com/173787247/dsh-wsl-cred/tree/1c45da3969a109959783373175150c87a3a33fa0)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n无fill/无自动配置，但helper原串进结果/advice且未绑定会话cwd，安全承诺需收窄。\n\n## 洞察短评\n\n- **用途**：WSL Git HTTPS/SSH配置排障，先区分配置线索与认证成功。详见[Q01](#research-q01)。\n- **亮点**：把常用Git凭据配置线索放入单一模型报告。详见[Q01](#research-q01)。\n- **思考**：内联helper可能含敏感值却原样输出，错误吞成未配，宿主cwd不等会话仓库。详见[Q03](#research-q03)。\n- **建议**：研究只回类型/状态的最小化输出及明确cwd/错误层级，比较敏感片段和归属误判，尚未验证。详见[Q05](#research-q05)。\n\n采用建议：先观察，补最小化输出/明确目标再评估。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把常用Git凭据配置线索放入单一模型报告。详见[Q01](#research-q01)。\n\n## 关键质疑\n\n内联helper可能含敏感值却原样输出，错误吞成未配，宿主cwd不等会话仓库。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究只回类型/状态的最小化输出及明确cwd/错误层级，比较敏感片段和归属误判，尚未验证。详见[Q05](#research-q05)。\n\n以虚构helper敏感占位值和A/B仓库反例核输出与作用域。\n\n## 场景与替代办法\n\nWSL Git HTTPS/SSH配置排障，先区分配置线索与认证成功。详见[Q01](#research-q01)。\n\n手工本地git config/remote检查，插件不登录或验证push。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node>=18/tools | 运行工具 | ABI匹配 |\n| PATH git/进程cwd | 配置与origin | 可能非会话仓库 |\n| 固定GCM路径 | 候选存在 | 其他盘布局遗漏 |\n| 安全helper配置 | 结果可外发 | 内联值原样输出 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 本地核helper | 用户 | 不含敏感内联值 |\n| 核实际目标cwd | 用户 | 与目标仓一致 |\n| 看类型与建议 | 用户 | 非认证成功证据 |\n| 独立决定改配置 | 用户 | 全局影响有备份 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | git/宿主 | 核cwd及helper敏感性 | 先核host cwd和内联helper敏感性；工时未知 |\n| 持续使用 | 两本地进程/结果token | 预检与错误复核 | 无插件网络请求；宿主结果token及人工预检金额未知 |\n| 失败恢复 | 无插件持久写入；已发送结果留在宿主/模型流程 | 核外发范围并处理敏感值 | 停用不撤回已外发敏感值；处置工时与损失未知 |\n\n\n#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 配置线索 | helper/GCM路径 | 非有效凭据认证 |\n| 协议建议 | origin分类 | scheme/SSH样式有限 |\n| 避免秘密 | 无fill/remote只host | helper原串未脱敏 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**凭据诊断读取/输出什么，秘密最小化和当前会话仓库归属是否成立？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 凭据提示工具实际检查什么，能证明认证成功吗？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n给WSL里Git HTTPS/SSH认证排障者汇总credential.helper配置、三处Windows GCM候选路径存在性、origin协议/host及固定建议。贡献是把常用只读检查接到模型工具，基线是手工git config与remote get-url；不调用credential fill，不登录/取token、不验证凭据能用或git push授权。GCM exe存在不等安装完整或有当前账户凭据，helper配置存在也不等实际远端会采用它。\n\nREADME和工具说明“never returns secrets”是作者目标，当前原样输出helper字符串不能支撑该无条件承诺，需按具体数据流评估。SSH建议用ssh_agent_hint、HTTPS建议GCM/gh，不核这些工具/登录状态。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-9](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/README.md#L5-L9)\n\n作者承诺。\n\n```text\nDeepSeek Harness tool: **`cred_hint`** — report `git credential.helper` and safe guidance for **Windows Git Credential Manager** from WSL.\n\n**Never returns tokens or passwords.**\n\nPart of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\n```\n\n**依据 2 · 源码核查**：[index.js:46-58](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/index.js#L46-L58)\n\n输出字段。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    async execute() {\n      const helperInfo = await gitCredentialHelper();\n      const helper = helperInfo.helper || \"\";\n      const gcmPath = findGcmPath();\n      const remoteInfo = await gitRemoteUrl();\n      const remote = classifyRemote(remoteInfo.url);\n      return {\n        wsl,\n        helper,\n        gcmPath,\n        remoteKind: remote.kind,\n        remoteHost: remote.host,\n        advice: buildCredAdvice(helper, { remote, gcmPath }),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cred.js:7-28](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L7-L28)\n\n只读两命令。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function gitCredentialHelper({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"config\", \"--get\", \"credential.helper\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, helper: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: true, helper: \"\" };\n  }\n}\n\nexport async function gitRemoteUrl({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"remote\", \"get-url\", \"origin\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, url: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: false, url: \"\" };\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/cred.js:51-61](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L51-L61)\n\nGCM候选存在。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport function findGcmPath({ exists = existsSync } = {}) {\n  const candidates = [\n    \"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe\",\n    \"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager-core.exe\",\n    \"/mnt/c/Program Files (x86)/Git/mingw64/bin/git-credential-manager.exe\",\n  ];\n  for (const p of candidates) {\n    if (exists(p)) return p;\n  }\n  return \"\";\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 仓库和配置作用域如何确定？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n固定execFile调用git config --get credential.helper与git remote get-url origin，无shell、不执行helper本身。入口execute不接agent/session上下文，两次execFile均未给cwd，实际用宿主进程cwd及继承环境，不能保证检查的是当前会话工作区。工具参数为空，读者无法显式指定目标；多仓使用容易把一个仓的origin建议给另一个仓。\n\n读取helper异常全部返回ok=true和空字符串，既可能确实未配也可能git不可执行/超时/权限失败；origin异常变none，原因未透出输出。两次命令各5秒、外层默认10秒且无signal传递，不是统一总预算。detectWsl只影响报告字段，不阻止非WSL运行。Node>=18 ESM、宿主tools/systemPrompt、PATH git和固定/mnt/c候选为依赖，无独立网络访问。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:14-21](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/index.js#L14-L21)\n\n配置/提示。\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 10_000);\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:cred_hint\",\n    order: 122,\n    text: \"Use cred_hint for Git/GitHub credential setup between Windows and WSL (GCM vs SSH). Never dump secrets; pair with ssh_agent_hint / github_app_hint.\",\n```\n\n**依据 2 · 源码核查**：[index.js:44-59](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/index.js#L44-L59)\n\nexecute无上下文。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute() {\n      const helperInfo = await gitCredentialHelper();\n      const helper = helperInfo.helper || \"\";\n      const gcmPath = findGcmPath();\n      const remoteInfo = await gitRemoteUrl();\n      const remote = classifyRemote(remoteInfo.url);\n      return {\n        wsl,\n        helper,\n        gcmPath,\n        remoteKind: remote.kind,\n        remoteHost: remote.host,\n        advice: buildCredAdvice(helper, { remote, gcmPath }),\n      };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cred.js:7-28](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L7-L28)\n\n无cwd与异常吞。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function gitCredentialHelper({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"config\", \"--get\", \"credential.helper\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, helper: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: true, helper: \"\" };\n  }\n}\n\nexport async function gitRemoteUrl({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"remote\", \"get-url\", \"origin\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, url: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: false, url: \"\" };\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/wsl-host.js:21-27](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/wsl-host.js#L21-L27)\n\nWSL探测。\n\n```text\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\n  try {\n    return /microsoft/i.test(readRelease());\n  } catch {\n    return false;\n  }\n```\n\n**依据 5 · 源码核查**：[package.json:14-17](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/package.json#L14-L17)\n\n运行条件。\n\n```text\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/cred.test.js\" },\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 为什么不返回完整remote仍可能暴露秘密？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n返回remote只带kind/host，不透redacted完整URL，这能避免普通https userinfo直接输出。可是credential.helper是任意Git配置字符串，可能是含内联敏感值的!shell helper、URL或命令参数。gitCredentialHelper直接读stdout，入口把它放helper，buildCredAdvice又复制“Current credential.helper”，format再打印helper和advice，没有任何脱敏。即使不调用凭据读取命令，只要配置把秘密嵌在helper，这条静态数据流就会把它交给模型结果/轨迹；本次不读取用户真实Git配置，也不复现真实秘密。\n\nclassifyRemote将所有可new URL解析且非ssh的scheme归https，http/file等会被误归类；SSH正则只覆盖git@或ssh://，非git用户的scp样式可能other。GCM路径固定C盘Program Files，其他盘/安装布局会漏，helper识别仅字符串credential-manager，不是执行或配置优先级验证。建议的全局git config是文本而非自动执行，若照做会影响其他仓库，须先核目标与现有多helper配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/cred.js:7-15](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L7-L15)\n\nhelper原样读取。\n\n```text\nexport async function gitCredentialHelper({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"config\", \"--get\", \"credential.helper\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, helper: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: true, helper: \"\" };\n```\n\n**依据 2 · 源码核查**：[index.js:47-58](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/index.js#L47-L58)\n\nhelper原样返回。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      const helperInfo = await gitCredentialHelper();\n      const helper = helperInfo.helper || \"\";\n      const gcmPath = findGcmPath();\n      const remoteInfo = await gitRemoteUrl();\n      const remote = classifyRemote(remoteInfo.url);\n      return {\n        wsl,\n        helper,\n        gcmPath,\n        remoteKind: remote.kind,\n        remoteHost: remote.host,\n        advice: buildCredAdvice(helper, { remote, gcmPath }),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cred.js:31-48](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L31-L48)\n\n协议分类和userinfo。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** Classify remote without exposing tokens (strip userinfo). */\nexport function classifyRemote(url) {\n  const raw = String(url || \"\").trim();\n  if (!raw) return { kind: \"none\", host: \"\", redacted: \"\" };\n  if (/^git@/i.test(raw) || /^ssh:\\/\\//i.test(raw)) {\n    const host = (raw.match(/git@([^:]+):/) || raw.match(/ssh:\\/\\/(?:[^@]+@)?([^/]+)/) || [])[1] || \"\";\n    return { kind: \"ssh\", host, redacted: raw.replace(/:[^@]+@/, \":***@\") };\n  }\n  try {\n    const u = new URL(raw);\n    if (u.username || u.password) {\n      u.username = \"***\";\n      u.password = \"\";\n    }\n    return { kind: \"https\", host: u.hostname, redacted: u.toString() };\n  } catch {\n    return { kind: \"other\", host: \"\", redacted: raw.slice(0, 80) };\n  }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/cred.js:64-76](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L64-L76)\n\nadvice复制原helper。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  const tips = [\n    \"This tool never prints tokens or passwords. Do not paste secrets into chat or the system prompt.\",\n  ];\n  if (helper) tips.push(`Current credential.helper: ${helper}`);\n  else tips.push(\"credential.helper is unset in this environment.\");\n\n  if (gcmPath) {\n    tips.push(`Found Windows GCM at ${gcmPath}`);\n    if (!/credential-manager/i.test(helper || \"\")) {\n      tips.push(\n        `Wire it from WSL: git config --global credential.helper \"${gcmPath.replace(/ /g, \"\\\\ \")}\"`,\n      );\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/cred.js:99-105](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L99-L105)\n\nrender再次输出。\n\n```text\nexport function formatCredReport(report) {\n  const lines = [\"cred_hint\", `helper: ${report.helper || \"(none)\"}`];\n  if (report.gcmPath) lines.push(`gcm: ${report.gcmPath}`);\n  if (report.remoteKind) lines.push(`origin: ${report.remoteKind}${report.remoteHost ? ` ${report.remoteHost}` : \"\"}`);\n  for (const tip of report.advice || []) lines.push(`- ${tip}`);\n  return lines.join(\"\\n\");\n}\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 工程与成本如何评估？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n生产模块可注入execFile/exists，现有55行测试直接检查协议、普通URL token redaction、建议分流、GCM候选与文本格式。优点是固定命令不走shell、不读取密码库且remote只交host；但脱敏测试仅针对classifyRemote.redacted，没有覆盖最终helper/advice输出，对README无秘密承诺的关键路径未守住。异常丢失也使“未配”和“查询失败”难区分。本次只读测试，不执行目标。\n\n首次核实际host cwd、helper配置是否含敏感值后才考虑调用；持续两次本地进程和候选exists，报告占模型上下文，无插件网络费用。恢复无插件持久写入，但若输出已含配置秘密，停用不能抹去已发送模型/会话数据，需由凭据所有者按实际泄露范围处置；不能用“没调用fill”否认这种影响。照建议改全局helper是外部动作，需自己备份恢复。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/cred.test.js:1-55](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/test/cred.test.js#L1-L55)\n\n脱敏只测remote。\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\nimport assert from \"node:assert/strict\";\nimport { describe, it } from \"node:test\";\nimport {\n  buildCredAdvice,\n  classifyRemote,\n  findGcmPath,\n  formatCredReport,\n} from \"../lib/cred.js\";\n\ndescribe(\"classifyRemote\", () => {\n  it(\"detects https and ssh\", () => {\n    assert.equal(classifyRemote(\"https://github.com/a/b.git\").kind, \"https\");\n    assert.equal(classifyRemote(\"git@github.com:a/b.git\").kind, \"ssh\");\n  });\n\n  it(\"redacts userinfo\", () => {\n    const r = classifyRemote(\"https://user:token@github.com/a/b.git\");\n    assert.equal(r.kind, \"https\");\n    assert.ok(!/token/.test(r.redacted));\n  });\n});\n\ndescribe(\"buildCredAdvice\", () => {\n  it(\"routes SSH remotes to ssh_agent_hint\", () => {\n    const tips = buildCredAdvice(\"manager\", {\n      remote: { kind: \"ssh\", host: \"github.com\" },\n      gcmPath: \"\",\n    });\n    assert.ok(tips.some((t) => /ssh_agent_hint/i.test(t)));\n  });\n\n  it(\"suggests GCM when found\", () => {\n    const gcm = \"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe\";\n    const tips = buildCredAdvice(\"\", { remote: { kind: \"https\", host: \"github.com\" }, gcmPath: gcm });\n    assert.ok(tips.some((t) => /Found Windows GCM/i.test(t)));\n  });\n});\n\ndescribe(\"findGcmPath\", () => {\n  it(\"returns first existing candidate\", () => {\n    const p = findGcmPath({\n      exists: (x) => x.includes(\"git-credential-manager.exe\"),\n    });\n    assert.match(p, /git-credential-manager\\.exe$/);\n  });\n});\n\ndescribe(\"formatCredReport\", () => {\n  it(\"includes origin kind\", () => {\n    assert.match(\n      formatCredReport({ helper: \"manager\", remoteKind: \"https\", remoteHost: \"github.com\", advice: [] }),\n      /origin: https github.com/,\n    );\n  });\n});\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/cred.js:7-28](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L7-L28)\n\n本地进程范围。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function gitCredentialHelper({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"config\", \"--get\", \"credential.helper\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, helper: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: true, helper: \"\" };\n  }\n}\n\nexport async function gitRemoteUrl({ execFileFn = execFileAsync } = {}) {\n  try {\n    const { stdout } = await execFileFn(\"git\", [\"remote\", \"get-url\", \"origin\"], {\n      encoding: \"utf8\",\n      timeout: 5_000,\n    });\n    return { ok: true, url: String(stdout || \"\").trim() };\n  } catch {\n    return { ok: false, url: \"\" };\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/cred.js:64-81](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L64-L81)\n\n全局配置仅建议。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  const tips = [\n    \"This tool never prints tokens or passwords. Do not paste secrets into chat or the system prompt.\",\n  ];\n  if (helper) tips.push(`Current credential.helper: ${helper}`);\n  else tips.push(\"credential.helper is unset in this environment.\");\n\n  if (gcmPath) {\n    tips.push(`Found Windows GCM at ${gcmPath}`);\n    if (!/credential-manager/i.test(helper || \"\")) {\n      tips.push(\n        `Wire it from WSL: git config --global credential.helper \"${gcmPath.replace(/ /g, \"\\\\ \")}\"`,\n      );\n    }\n  } else {\n    tips.push(\n      \"Prefer Windows Git Credential Manager from WSL when installed under Program Files\\\\Git\\\\mingw64\\\\bin\\\\.\",\n    );\n  }\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 当前推荐结论及继续探讨方向？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n先观察。常见只含可执行路径的helper场景可提供便捷线索，但秘密安全是本插件核心承诺，原样helper外发与会话cwd不绑定是当前具体缺陷，不宜把它作为无需预检的安全凭据诊断直接启用。读者可先在本机可信终端检查配置，避免将含内联值的helper交给模型，并明确目标仓库；这不是要求在研究中运行凭据命令。\n\n可继续研究最小化输出，只返回helper类型/是否疑似内联而不返回原串，以明确cwd和错误状态代替隐式进程环境，区分协议/路径存在/认证成功层级。基线为当前原串复制，反例包括虚构!helper含敏感占位值、非https URL、多helper、git缺失、A/B会话cwd、其他盘GCM与总超时。比较输出敏感片段数、仓库归属误判和恢复工时；该方向尚未实现/验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:46-58](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/index.js#L46-L58)\n\n输出/作用域基线。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    async execute() {\n      const helperInfo = await gitCredentialHelper();\n      const helper = helperInfo.helper || \"\";\n      const gcmPath = findGcmPath();\n      const remoteInfo = await gitRemoteUrl();\n      const remote = classifyRemote(remoteInfo.url);\n      return {\n        wsl,\n        helper,\n        gcmPath,\n        remoteKind: remote.kind,\n        remoteHost: remote.host,\n        advice: buildCredAdvice(helper, { remote, gcmPath }),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/cred.js:64-68](https://github.com/173787247/dsh-wsl-cred/blob/1c45da3969a109959783373175150c87a3a33fa0/lib/cred.js#L64-L68)\n\n原串复制基线。\n\n```text\n  const tips = [\n    \"This tool never prints tokens or passwords. Do not paste secrets into chat or the system prompt.\",\n  ];\n  if (helper) tips.push(`Current credential.helper: ${helper}`);\n  else tips.push(\"credential.helper is unset in this environment.\");\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d3ccda63a061ecf58816ed9a0ad91f5de4ccff1ad83789db4d62ad50f945dbae。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 154 | — | — | 768 |\n| .js | source | 3 | 235 | 210 | 3 | — |\n| .js | test | 1 | 55 | 49 | 2 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 配置读取 | helper/origin | 进程cwd/原串 |\n| GCM候选 | 路径存在 | 非认证状态 |\n| 建议文本 | HTTPS/SSH排查 | 不执行修复 |\n\n## 工程亮点\n\n固定execFile优点明确，需最终输出脱敏测试与可区分错误。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、SECURITY.md、package.json、index.js、lib/cred.js、lib/wsl-host.js、test/cred.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整入口/105行cred/57行wsl-host/55行生产测试/README/SECURITY/package，只读不查真实凭据。\n- 下一步：以虚构helper敏感占位值和A/B仓库反例核输出与作用域。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-cred/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-wsl-cred\",\n  \"revision\": \"1c45da3969a109959783373175150c87a3a33fa0\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"SECURITY.md\",\n    \"package.json\",\n    \"index.js\",\n    \"lib/cred.js\",\n    \"lib/wsl-host.js\",\n    \"test/cred.test.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"凭据诊断读取/输出什么，秘密最小化和当前会话仓库归属是否成立？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"凭据提示工具实际检查什么，能证明认证成功吗？\",\n        \"answer\": \"给WSL里Git HTTPS/SSH认证排障者汇总credential.helper配置、三处Windows GCM候选路径存在性、origin协议/host及固定建议。贡献是把常用只读检查接到模型工具，基线是手工git config与remote get-url；不调用credential fill，不登录/取token、不验证凭据能用或git push授权。GCM exe存在不等安装完整或有当前账户凭据，helper配置存在也不等实际远端会采用它。\\n\\nREADME和工具说明“never returns secrets”是作者目标，当前原样输出helper字符串不能支撑该无条件承诺，需按具体数据流评估。SSH建议用ssh_agent_hint、HTTPS建议GCM/gh，不核这些工具/登录状态。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 5,\n            \"line_end\": 9,\n            \"observation\": \"作者承诺。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 46,\n            \"line_end\": 58,\n            \"observation\": \"输出字段。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 7,\n            \"line_end\": 28,\n            \"observation\": \"只读两命令。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 51,\n            \"line_end\": 61,\n            \"observation\": \"GCM候选存在。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"dependencies\"\n        ],\n        \"question\": \"仓库和配置作用域如何确定？\",\n        \"answer\": \"固定execFile调用git config --get credential.helper与git remote get-url origin，无shell、不执行helper本身。入口execute不接agent/session上下文，两次execFile均未给cwd，实际用宿主进程cwd及继承环境，不能保证检查的是当前会话工作区。工具参数为空，读者无法显式指定目标；多仓使用容易把一个仓的origin建议给另一个仓。\\n\\n读取helper异常全部返回ok=true和空字符串，既可能确实未配也可能git不可执行/超时/权限失败；origin异常变none，原因未透出输出。两次命令各5秒、外层默认10秒且无signal传递，不是统一总预算。detectWsl只影响报告字段，不阻止非WSL运行。Node>=18 ESM、宿主tools/systemPrompt、PATH git和固定/mnt/c候选为依赖，无独立网络访问。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 14,\n            \"line_end\": 21,\n            \"observation\": \"配置/提示。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 44,\n            \"line_end\": 59,\n            \"observation\": \"execute无上下文。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 7,\n            \"line_end\": 28,\n            \"observation\": \"无cwd与异常吞。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/wsl-host.js\",\n            \"line_start\": 21,\n            \"line_end\": 27,\n            \"observation\": \"WSL探测。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 14,\n            \"line_end\": 17,\n            \"observation\": \"运行条件。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"为什么不返回完整remote仍可能暴露秘密？\",\n        \"answer\": \"返回remote只带kind/host，不透redacted完整URL，这能避免普通https userinfo直接输出。可是credential.helper是任意Git配置字符串，可能是含内联敏感值的!shell helper、URL或命令参数。gitCredentialHelper直接读stdout，入口把它放helper，buildCredAdvice又复制“Current credential.helper”，format再打印helper和advice，没有任何脱敏。即使不调用凭据读取命令，只要配置把秘密嵌在helper，这条静态数据流就会把它交给模型结果/轨迹；本次不读取用户真实Git配置，也不复现真实秘密。\\n\\nclassifyRemote将所有可new URL解析且非ssh的scheme归https，http/file等会被误归类；SSH正则只覆盖git@或ssh://，非git用户的scp样式可能other。GCM路径固定C盘Program Files，其他盘/安装布局会漏，helper识别仅字符串credential-manager，不是执行或配置优先级验证。建议的全局git config是文本而非自动执行，若照做会影响其他仓库，须先核目标与现有多helper配置。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 7,\n            \"line_end\": 15,\n            \"observation\": \"helper原样读取。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 47,\n            \"line_end\": 58,\n            \"observation\": \"helper原样返回。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 31,\n            \"line_end\": 48,\n            \"observation\": \"协议分类和userinfo。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 64,\n            \"line_end\": 76,\n            \"observation\": \"advice复制原helper。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 99,\n            \"line_end\": 105,\n            \"observation\": \"render再次输出。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"engineering\"\n        ],\n        \"question\": \"工程与成本如何评估？\",\n        \"answer\": \"生产模块可注入execFile/exists，现有55行测试直接检查协议、普通URL token redaction、建议分流、GCM候选与文本格式。优点是固定命令不走shell、不读取密码库且remote只交host；但脱敏测试仅针对classifyRemote.redacted，没有覆盖最终helper/advice输出，对README无秘密承诺的关键路径未守住。异常丢失也使“未配”和“查询失败”难区分。本次只读测试，不执行目标。\\n\\n首次核实际host cwd、helper配置是否含敏感值后才考虑调用；持续两次本地进程和候选exists，报告占模型上下文，无插件网络费用。恢复无插件持久写入，但若输出已含配置秘密，停用不能抹去已发送模型/会话数据，需由凭据所有者按实际泄露范围处置；不能用“没调用fill”否认这种影响。照建议改全局helper是外部动作，需自己备份恢复。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"test/cred.test.js\",\n            \"line_start\": 1,\n            \"line_end\": 55,\n            \"observation\": \"脱敏只测remote。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 7,\n            \"line_end\": 28,\n            \"observation\": \"本地进程范围。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 64,\n            \"line_end\": 81,\n            \"observation\": \"全局配置仅建议。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"当前推荐结论及继续探讨方向？\",\n        \"answer\": \"先观察。常见只含可执行路径的helper场景可提供便捷线索，但秘密安全是本插件核心承诺，原样helper外发与会话cwd不绑定是当前具体缺陷，不宜把它作为无需预检的安全凭据诊断直接启用。读者可先在本机可信终端检查配置，避免将含内联值的helper交给模型，并明确目标仓库；这不是要求在研究中运行凭据命令。\\n\\n可继续研究最小化输出，只返回helper类型/是否疑似内联而不返回原串，以明确cwd和错误状态代替隐式进程环境，区分协议/路径存在/认证成功层级。基线为当前原串复制，反例包括虚构!helper含敏感占位值、非https URL、多helper、git缺失、A/B会话cwd、其他盘GCM与总超时。比较输出敏感片段数、仓库归属误判和恢复工时；该方向尚未实现/验证。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 46,\n            \"line_end\": 58,\n            \"observation\": \"输出/作用域基线。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/cred.js\",\n            \"line_start\": 64,\n            \"line_end\": 68,\n            \"observation\": \"原串复制基线。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-cred\\n> **Install set:** part of [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit). Prefer `KIT_SET=daily` | `llm` | `github` | `full` (see kit README). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\\n\\n\\nDeepSeek Harness tool: **`cred_hint`** — report `git credential.helper` and safe guidance for **Windows Git Credential Manager** from WSL.\\n\\n**Never returns tokens or passwords.**\\n\\nPart of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\\n\\n[中文说明 → README.zh.md](./README.zh.md)\\n\\n## Where it sits\\n\\nHints whether Git credentials exist (GCM path, HTTPS vs SSH). It never returns secrets.\\n\\n```mermaid\\nflowchart LR\\n  agent[\\\"dsh agent\\\"] --> tool[\\\"cred_hint\\\"] --> git[\\\"Git credential presence\\\"]\\n```\\n\\nSuite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.2.0** (github). Do not copy that matrix into this README.\\n\\n\\n---\\n## Compatibility\\n\\n| Field | Value |\\n|-------|-------|\\n| **Plugin** | `dsh-wsl-cred` **0.2.0** |\\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\\n| **Kit set** | `github` / `full` |\\n| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |\\n| **Agent Teams** | Upstream experimental; not required here |\\n\\nSuite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\\n\\n## Why\\n\\nHTTPS git from WSL often fails until credential helper points at Windows GCM (or `gh auth` on Windows). This tool explains the setup without dumping secrets into the chat or prompt.\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-wsl-cred\\n```\\n\\n## Config\\n\\n```yaml\\n- id: dsh-wsl-cred\\n  name: dsh-wsl-cred\\n  config:\\n    timeoutMs: 10000\\n```\\n\\n## Test\\n\\n```sh\\nnpm test\\n```\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-cred\\\",\\n  \\\"version\\\": \\\"0.2.0\\\",\\n  \\\"description\\\": \\\"Safe Git credential hints: GCM path, HTTPS vs SSH origin (never returns secrets).\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-cred.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-cred/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/173787247/dsh-wsl-cred#readme\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": { \\\"node\\\": \\\">=18\\\" },\\n  \\\"scripts\\\": { \\\"test\\\": \\\"node --test test/cred.test.js\\\" },\\n  \\\"files\\\": [\\\"index.js\\\", \\\"lib\\\", \\\"cordis.patch.yml\\\", \\\"README.md\\\", \\\"README.zh.md\\\", \\\"LICENSE\\\",\\n    \\\"CHANGELOG.md\\\",\\n    \\\"CONTRIBUTING.md\\\"],\\n  \\\"keywords\\\": [\\\"dsh-plugin\\\", \\\"deepseek-harness\\\", \\\"wsl\\\", \\\"credential\\\"],\\n  \\\"dsh\\\": { \\\"bundle\\\": { \\\"patch\\\": \\\"./cordis.patch.yml\\\" } }\\n}\\n\"\n    },\n    {\n      \"path\": \"SECURITY.md\",\n      \"content\": \"# Security\\n\\n`dsh-wsl-cred` must not log, print, or return secrets (tokens, passwords, PEM keys).\\n\\nReport issues via GitHub Issues on this repository.\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import { detectWsl } from \\\"./lib/wsl-host.js\\\";\\nimport {\\n  buildCredAdvice,\\n  classifyRemote,\\n  findGcmPath,\\n  formatCredReport,\\n  gitCredentialHelper,\\n  gitRemoteUrl,\\n} from \\\"./lib/cred.js\\\";\\n\\nexport const name = \\\"dsh-wsl-cred\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  const timeoutMs = positive(config.timeoutMs, 10_000);\\n  const wsl = detectWsl();\\n\\n  ctx.systemPrompt.section({\\n    name: \\\"tool:cred_hint\\\",\\n    order: 122,\\n    text: \\\"Use cred_hint for Git/GitHub credential setup between Windows and WSL (GCM vs SSH). Never dump secrets; pair with ssh_agent_hint / github_app_hint.\\\",\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"cred_hint\\\",\\n    description:\\n      \\\"Report git credential.helper, detect Windows GCM path, classify origin HTTPS vs SSH (never returns secrets).\\\",\\n    parameters: { type: \\\"object\\\", additionalProperties: false, properties: {} },\\n    output: {\\n      schema: {\\n        type: \\\"object\\\",\\n        additionalProperties: false,\\n        properties: {\\n          wsl: { type: \\\"boolean\\\" },\\n          helper: { type: \\\"string\\\" },\\n          gcmPath: { type: \\\"string\\\" },\\n          remoteKind: { type: \\\"string\\\" },\\n          remoteHost: { type: \\\"string\\\" },\\n          advice: { type: \\\"array\\\", items: { type: \\\"string\\\" } },\\n        },\\n      },\\n      render: (_args, value) => [{ type: \\\"text\\\", text: formatCredReport(value) }],\\n    },\\n    timeoutMs,\\n    isConcurrencySafe: () => true,\\n    async execute() {\\n      const helperInfo = await gitCredentialHelper();\\n      const helper = helperInfo.helper || \\\"\\\";\\n      const gcmPath = findGcmPath();\\n      const remoteInfo = await gitRemoteUrl();\\n      const remote = classifyRemote(remoteInfo.url);\\n      return {\\n        wsl,\\n        helper,\\n        gcmPath,\\n        remoteKind: remote.kind,\\n        remoteHost: remote.host,\\n        advice: buildCredAdvice(helper, { remote, gcmPath }),\\n      };\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"Credential hint\\\" }),\\n    presentResult: (_args, result) => (\\n      result.isError\\n        ? { card: \\\"generic\\\", title: \\\"Credential hint failed\\\", content: result.content }\\n        : { card: \\\"generic\\\", title: \\\"Credential hint\\\", content: result.content }\\n    ),\\n  });\\n}\\n\\nfunction positive(value, fallback) {\\n  const n = Number(value);\\n  return Number.isFinite(n) && n > 0 ? n : fallback;\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/cred.js\",\n      \"content\": \"import { existsSync } from \\\"node:fs\\\";\\nimport { execFile } from \\\"node:child_process\\\";\\nimport { promisify } from \\\"node:util\\\";\\n\\nconst execFileAsync = promisify(execFile);\\n\\nexport async function gitCredentialHelper({ execFileFn = execFileAsync } = {}) {\\n  try {\\n    const { stdout } = await execFileFn(\\\"git\\\", [\\\"config\\\", \\\"--get\\\", \\\"credential.helper\\\"], {\\n      encoding: \\\"utf8\\\",\\n      timeout: 5_000,\\n    });\\n    return { ok: true, helper: String(stdout || \\\"\\\").trim() };\\n  } catch {\\n    return { ok: true, helper: \\\"\\\" };\\n  }\\n}\\n\\nexport async function gitRemoteUrl({ execFileFn = execFileAsync } = {}) {\\n  try {\\n    const { stdout } = await execFileFn(\\\"git\\\", [\\\"remote\\\", \\\"get-url\\\", \\\"origin\\\"], {\\n      encoding: \\\"utf8\\\",\\n      timeout: 5_000,\\n    });\\n    return { ok: true, url: String(stdout || \\\"\\\").trim() };\\n  } catch {\\n    return { ok: false, url: \\\"\\\" };\\n  }\\n}\\n\\n/** Classify remote without exposing tokens (strip userinfo). */\\nexport function classifyRemote(url) {\\n  const raw = String(url || \\\"\\\").trim();\\n  if (!raw) return { kind: \\\"none\\\", host: \\\"\\\", redacted: \\\"\\\" };\\n  if (/^git@/i.test(raw) || /^ssh:\\\\/\\\\//i.test(raw)) {\\n    const host = (raw.match(/git@([^:]+):/) || raw.match(/ssh:\\\\/\\\\/(?:[^@]+@)?([^/]+)/) || [])[1] || \\\"\\\";\\n    return { kind: \\\"ssh\\\", host, redacted: raw.replace(/:[^@]+@/, \\\":***@\\\") };\\n  }\\n  try {\\n    const u = new URL(raw);\\n    if (u.username || u.password) {\\n      u.username = \\\"***\\\";\\n      u.password = \\\"\\\";\\n    }\\n    return { kind: \\\"https\\\", host: u.hostname, redacted: u.toString() };\\n  } catch {\\n    return { kind: \\\"other\\\", host: \\\"\\\", redacted: raw.slice(0, 80) };\\n  }\\n}\\n\\nexport function findGcmPath({ exists = existsSync } = {}) {\\n  const candidates = [\\n    \\\"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe\\\",\\n    \\\"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager-core.exe\\\",\\n    \\\"/mnt/c/Program Files (x86)/Git/mingw64/bin/git-credential-manager.exe\\\",\\n  ];\\n  for (const p of candidates) {\\n    if (exists(p)) return p;\\n  }\\n  return \\\"\\\";\\n}\\n\\nexport function buildCredAdvice(helper, { remote = null, gcmPath = \\\"\\\" } = {}) {\\n  const tips = [\\n    \\\"This tool never prints tokens or passwords. Do not paste secrets into chat or the system prompt.\\\",\\n  ];\\n  if (helper) tips.push(`Current credential.helper: ${helper}`);\\n  else tips.push(\\\"credential.helper is unset in this environment.\\\");\\n\\n  if (gcmPath) {\\n    tips.push(`Found Windows GCM at ${gcmPath}`);\\n    if (!/credential-manager/i.test(helper || \\\"\\\")) {\\n      tips.push(\\n        `Wire it from WSL: git config --global credential.helper \\\"${gcmPath.replace(/ /g, \\\"\\\\\\\\ \\\")}\\\"`,\\n      );\\n    }\\n  } else {\\n    tips.push(\\n      \\\"Prefer Windows Git Credential Manager from WSL when installed under Program Files\\\\\\\\Git\\\\\\\\mingw64\\\\\\\\bin\\\\\\\\.\\\",\\n    );\\n  }\\n\\n  if (remote?.kind === \\\"https\\\") {\\n    tips.push(\\n      `origin is HTTPS (${remote.host || \\\"host\\\"}) — GCM / gh auth login on Windows usually covers WSL git push.`,\\n    );\\n    tips.push(\\\"GitHub App API tokens (github_app_hint) do not replace git push credentials.\\\");\\n  } else if (remote?.kind === \\\"ssh\\\") {\\n    tips.push(`origin is SSH (${remote.host || \\\"host\\\"}) — use ssh_agent_hint / ssh-add, not GCM.`);\\n  } else if (remote?.kind === \\\"none\\\") {\\n    tips.push(\\\"No git origin in cwd — advice is environment-wide only.\\\");\\n  }\\n\\n  tips.push(\\\"For HTTPS GitHub, `gh auth login` on Windows + GCM often covers WSL git pushes.\\\");\\n  tips.push(\\\"Pair with github_app_hint for read-only PR/Actions API (separate from push auth).\\\");\\n  return tips;\\n}\\n\\nexport function formatCredReport(report) {\\n  const lines = [\\\"cred_hint\\\", `helper: ${report.helper || \\\"(none)\\\"}`];\\n  if (report.gcmPath) lines.push(`gcm: ${report.gcmPath}`);\\n  if (report.remoteKind) lines.push(`origin: ${report.remoteKind}${report.remoteHost ? ` ${report.remoteHost}` : \\\"\\\"}`);\\n  for (const tip of report.advice || []) lines.push(`- ${tip}`);\\n  return lines.join(\\\"\\\\n\\\");\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/wsl-host.js\",\n      \"content\": \"// Canonical copy — sync to plugins via dsh-wsl-kit/scripts/sync-wsl-common.mjs\\nimport { existsSync, readFileSync } from \\\"node:fs\\\";\\nimport { execFile } from \\\"node:child_process\\\";\\nimport { promisify } from \\\"node:util\\\";\\n\\nconst execFileAsync = promisify(execFile);\\n\\nconst WINDOWS_BINS = {\\n  \\\"powershell.exe\\\": [\\\"/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe\\\"],\\n  \\\"cmd.exe\\\": [\\\"/mnt/c/Windows/System32/cmd.exe\\\"],\\n  \\\"explorer.exe\\\": [\\\"/mnt/c/Windows/explorer.exe\\\"],\\n};\\n\\nexport function windowsBin(name, { exists = existsSync } = {}) {\\n  for (const p of WINDOWS_BINS[name] || []) {\\n    if (exists(p)) return p;\\n  }\\n  return name;\\n}\\n\\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\\n  try {\\n    return /microsoft/i.test(readRelease());\\n  } catch {\\n    return false;\\n  }\\n}\\n\\nexport function distroName({ env = process.env } = {}) {\\n  return env.WSL_DISTRO_NAME || \\\"WSL\\\";\\n}\\n\\nexport async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {\\n  const bin = windowsBin(\\\"powershell.exe\\\");\\n  const { stdout, stderr } = await execFileAsync(\\n    bin,\\n    [\\\"-NoProfile\\\", \\\"-NonInteractive\\\", \\\"-Command\\\", script],\\n    { timeout: timeoutMs, windowsHide: true, encoding: \\\"utf8\\\", maxBuffer: 4 * 1024 * 1024 },\\n  );\\n  return { stdout: String(stdout ?? \\\"\\\"), stderr: String(stderr ?? \\\"\\\") };\\n}\\n\\nexport async function runCmd(args, { timeoutMs = 15_000 } = {}) {\\n  const bin = windowsBin(\\\"cmd.exe\\\");\\n  const { stdout, stderr } = await execFileAsync(bin, args, {\\n    timeout: timeoutMs,\\n    windowsHide: true,\\n    encoding: \\\"utf8\\\",\\n    maxBuffer: 4 * 1024 * 1024,\\n  });\\n  return { stdout: String(stdout ?? \\\"\\\"), stderr: String(stderr ?? \\\"\\\") };\\n}\\n\\nfunction readOsRelease() {\\n  return readFileSync(\\\"/proc/sys/kernel/osrelease\\\", \\\"utf8\\\");\\n}\\n\"\n    },\n    {\n      \"path\": \"test/cred.test.js\",\n      \"content\": \"import assert from \\\"node:assert/strict\\\";\\nimport { describe, it } from \\\"node:test\\\";\\nimport {\\n  buildCredAdvice,\\n  classifyRemote,\\n  findGcmPath,\\n  formatCredReport,\\n} from \\\"../lib/cred.js\\\";\\n\\ndescribe(\\\"classifyRemote\\\", () => {\\n  it(\\\"detects https and ssh\\\", () => {\\n    assert.equal(classifyRemote(\\\"https://github.com/a/b.git\\\").kind, \\\"https\\\");\\n    assert.equal(classifyRemote(\\\"git@github.com:a/b.git\\\").kind, \\\"ssh\\\");\\n  });\\n\\n  it(\\\"redacts userinfo\\\", () => {\\n    const r = classifyRemote(\\\"https://user:token@github.com/a/b.git\\\");\\n    assert.equal(r.kind, \\\"https\\\");\\n    assert.ok(!/token/.test(r.redacted));\\n  });\\n});\\n\\ndescribe(\\\"buildCredAdvice\\\", () => {\\n  it(\\\"routes SSH remotes to ssh_agent_hint\\\", () => {\\n    const tips = buildCredAdvice(\\\"manager\\\", {\\n      remote: { kind: \\\"ssh\\\", host: \\\"github.com\\\" },\\n      gcmPath: \\\"\\\",\\n    });\\n    assert.ok(tips.some((t) => /ssh_agent_hint/i.test(t)));\\n  });\\n\\n  it(\\\"suggests GCM when found\\\", () => {\\n    const gcm = \\\"/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe\\\";\\n    const tips = buildCredAdvice(\\\"\\\", { remote: { kind: \\\"https\\\", host: \\\"github.com\\\" }, gcmPath: gcm });\\n    assert.ok(tips.some((t) => /Found Windows GCM/i.test(t)));\\n  });\\n});\\n\\ndescribe(\\\"findGcmPath\\\", () => {\\n  it(\\\"returns first existing candidate\\\", () => {\\n    const p = findGcmPath({\\n      exists: (x) => x.includes(\\\"git-credential-manager.exe\\\"),\\n    });\\n    assert.match(p, /git-credential-manager\\\\.exe$/);\\n  });\\n});\\n\\ndescribe(\\\"formatCredReport\\\", () => {\\n  it(\\\"includes origin kind\\\", () => {\\n    assert.match(\\n      formatCredReport({ helper: \\\"manager\\\", remoteKind: \\\"https\\\", remoteHost: \\\"github.com\\\", advice: [] }),\\n      /origin: https github.com/,\\n    );\\n  });\\n});\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"1c45da3969a109959783373175150c87a3a33fa0\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"d3ccda63a061ecf58816ed9a0ad91f5de4ccff1ad83789db4d62ad50f945dbae\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 154,\n        \"words\": 768\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 235,\n        \"code\": 210,\n        \"comments\": 3,\n        \"blank\": 23\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 55,\n        \"code\": 49,\n        \"comments\": 2,\n        \"blank\": 6\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 24,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"cred_hint\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"cred_hint\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-wsl-cred\",\n    \"repository_id\": 1350379113,\n    \"captured_at\": \"2026-10-22T07:15:35.391Z\",\n    \"window_start\": \"2026-09-22T07:15:35.391Z\",\n    \"stars\": 1,\n    \"pushed_at\": \"2026-09-29T15:04:02Z\",\n    \"issues\": {\n      \"open\": 0,\n      \"closed\": 0,\n      \"created_30d\": 0,\n      \"closed_30d\": 0,\n      \"updated_30d\": 0\n    },\n    \"errors\": [],\n    \"npm\": {\n      \"package_name\": \"dsh-wsl-cred\",\n      \"captured_at\": \"2026-10-22T07:15:43.958Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-cred\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T07:15:43.958Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-wsl-cred\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
+            "sha256": "e81fa662564a28d911f787e3d1ca2464d074042112d0434e250c1e81b5c29bf8"
+        }
+    },
+    "unavailable_artifacts": []
+}

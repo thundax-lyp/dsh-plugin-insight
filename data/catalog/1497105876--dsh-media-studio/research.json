@@ -1,0 +1,413 @@
+{
+    "schema_version": 4,
+    "id": "c392ece1c08056b769c59afae311e973",
+    "identity": "github:1399694663:root",
+    "slug": "1497105876--dsh-media-studio",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1399694663:root",
+            "repository_id": 1399694663,
+            "component_id": "root",
+            "repository": "1497105876/dsh-media-studio",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-media-studio",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "content-creation",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8eb0906609d16d7deccdc991652795b28b44ff5219c76e8d43b0db9636c87f25",
+                "code": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                "maintenance": "75eb8dbf688182c91098bcc2d4eb881d20f9a2b944d0e4cf46d1353084094595"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1399694663-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:30:06.054Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1399694663-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1497105876/dsh-media-studio",
+                            "commit": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                            "path": "README.md",
+                            "content_sha256": "90042429480173475f4e132f69d0814650230eacc84e98b126a3ffa7cc96e9e1"
+                        }
+                    ],
+                    "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                    "captured_at": "2026-10-22T15:30:06.054Z",
+                    "summary": "在 DSH 中统一发起图像与视频生成任务，并通过作业、附件和界面展示结果。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1497105876--dsh-media-studio/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1399694663-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1497105876/dsh-media-studio",
+                            "commit": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                            "path": "README.md",
+                            "content_sha256": "90042429480173475f4e132f69d0814650230eacc84e98b126a3ffa7cc96e9e1"
+                        },
+                        {
+                            "repository_url": "https://github.com/1497105876/dsh-media-studio",
+                            "commit": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                            "path": "lib/index.js",
+                            "content_sha256": "9262c9e4a3695c723ddbd206dbba8d8c90bf983bf82ed7658b3c7402a423fc52"
+                        }
+                    ],
+                    "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                    "captured_at": "2026-10-22T15:30:06.054Z",
+                    "summary": "核查 README.md、lib/index.js；入口注册 generate_image、generate_video、send_media 及命令；provider 层适配外部服务，jobs 层用 AbortController 管理后台任务，附件与客户端 slot 呈现结果。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/1497105876--dsh-media-studio/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。 [Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口注册 generate_image、generate_video、send_media 及命令；provider 层适配外部服务，jobs 层用 AbortController 管理后台任务，附件与客户端 slot 呈现结果。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | provider 账户、密钥和本地存储 | 配预设、模型和交付规格 | 初始化分钟未知 |\n| 持续使用 | 每次图/视频请求费、带宽、媒体 MB | 等待、筛选、提示修订和内容审核 | 单价与合格尝试数未采集 |\n| 失败恢复 | 失败/取消请求可能仍计费 | 清理部分文件、重提 job | detached 降级的取消与追踪较弱 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。只有取消、凭据隔离、附件交付和费用上限在目标 provider 上通过，且每个合格媒体的重试数低于网页手工流程，才进入试用；费用失控或 detached job 无法追踪应停用。 [Q09](#research-q09)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 会话内交付 | 工具、job、附件与 UI 接线存在 | 真实 provider 到附件的完整成功率 |\n| 异步控制 | jobs 路径使用 AbortController | provider 取消是否停止计费 |\n| 统一提供商 | provider 与 preset 分层 | 不同模型的质量、政策和可比性 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "provider、media、jobs 与 UI 分层便于扩展，AbortController 贯穿取消路径；需重点验证 detached 降级、凭据隔离、失败重试和大文件生命周期。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对直接调用各家 API，它统一媒体任务、提供商、作业进度、附件交付和会话 UI，业务增量是把生成与交付放在同一对话链路。 [Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可增加“交付规格优先”的生成计划，先固定尺寸、格式、版权与验收项，再并行低成本草图和高质量定稿，减少无效重生成。 [Q08](#research-q08)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1399694663:root",
+                            "area": "code",
+                            "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:06.054Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:30:06.054Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                "reviewed_at": "2026-10-22T15:30:06.054Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1399694663:root",
+                        "area": "code",
+                        "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "相对明确基线存在具体集成和机制增量；生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 未运行，效果只作解释性判断。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1399694663-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "媒体工作流接线完整但外部费用、内容政策和取消语义未核实；先做低额度沙箱验证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "会话内生成并交付媒体的用户流程明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "job、附件、provider 与 UI 统一减少跨应用交接。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码确认接线；未调用任何媒体服务。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "视频费用、大文件、重生成和人工内容审核负担可能很高。"
+                    }
+                },
+                "score": 60,
+                "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                "reviewed_at": "2026-10-22T15:30:06.054Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1399694663-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1399694663:root",
+                        "area": "code",
+                        "fingerprint": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1399694663:root",
+            "repository": "1497105876/dsh-media-studio",
+            "path": "",
+            "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+            "fingerprints": {
+                "directory": "8eb0906609d16d7deccdc991652795b28b44ff5219c76e8d43b0db9636c87f25",
+                "code": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+                "maintenance": "75eb8dbf688182c91098bcc2d4eb881d20f9a2b944d0e4cf46d1353084094595"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "b7b1e68f7c4d494b340594dd02907006f9a0c7c0eb800447121333e8807908fe"
+        },
+        "publication.metadata": "data/catalog/1497105876--dsh-media-studio/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 中统一发起图像与视频生成任务，并通过作业、附件和界面展示结果。",
+            "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+            "source_url": "https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+            "items": {
+                "模型工具": "注册图像生成、视频生成和媒体发送工具，统一 provider 与媒体参数。",
+                "用户命令": "提供 image 与 video 命令入口，按预设提交生成任务。",
+                "界面": "提供插件配置、命令行、工具结果和媒体画廊等会话界面。",
+                "后台": "通过 jobs 与 AbortController 执行异步媒体生成、进度更新、取消和结果推送。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 图像生成 | 通过统一工具和命令提交图像任务。 | 仅由固定版本源码确认；运行效果未验证 |\n| 视频生成 | 异步执行视频任务并报告进度。 | 仅由固定版本源码确认；运行效果未验证 |\n| 媒体交付 | 将生成结果作为会话媒体或附件发送。 | 仅由固定版本源码确认；运行效果未验证 |"
+        },
+        "publication.advice": {
+            "revision": "4fb706a3fb2b68cdbb81e951885d2178905d6ca2",
+            "text": "适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。只有取消、凭据隔离、附件交付和费用上限在目标 provider 上通过，且每个合格媒体的重试数低于网页手工流程，才进入试用；费用失控或 detached job 无法追踪应停用。 [Q09](#research-q09)"
+        },
+        "registry": "data/plugins/1497105876--dsh-media-studio",
+        "reports": "# dsh-media-studio\n\n> 在 DSH 中统一发起图像与视频生成任务，并通过作业、附件和界面展示结果。\n\n## 研究范围\n\n- **仓库**：[1497105876/dsh-media-studio](https://github.com/1497105876/dsh-media-studio)\n- **版本号**：0.6.0（[固定提交 4fb706a3fb2b68cdbb81e951885d2178905d6ca2](https://github.com/1497105876/dsh-media-studio/tree/4fb706a3fb2b68cdbb81e951885d2178905d6ca2)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。 [Q01](#research-q01)\n- **亮点**：相对直接调用各家 API，它统一媒体任务、提供商、作业进度、附件交付和会话 UI，业务增量是把生成与交付放在同一对话链路。 [Q03](#research-q03)\n- **思考**：生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 [Q04](#research-q04)\n- **建议**：可增加“交付规格优先”的生成计划，先固定尺寸、格式、版权与验收项，再并行低成本草图和高质量定稿，减少无效重生成。 [Q08](#research-q08)\n\n采用建议：适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。只有取消、凭据隔离、附件交付和费用上限在目标 provider 上通过，且每个合格媒体的重试数低于网页手工流程，才进入试用；费用失控或 detached job 无法追踪应停用。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对直接调用各家 API，它统一媒体任务、提供商、作业进度、附件交付和会话 UI，业务增量是把生成与交付放在同一对话链路。 [Q03](#research-q03)\n\n## 关键质疑\n\n生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可增加“交付规格优先”的生成计划，先固定尺寸、格式、版权与验收项，再并行低成本草图和高质量定稿，减少无效重生成。 [Q08](#research-q08)\n\n在低额度账户按固定规格生成一张图和 5 秒视频，记录每次价格、秒数、文件 MB、失败/取消和人工评分；中途取消一次并模拟 jobs 不可用的 detached 降级，核对是否停止请求、是否残留文件及结果能否交付。无法限定费用或追踪 detached 任务即保持观察。\n\n## 场景与替代办法\n\n面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。 [Q01](#research-q01)\n\n基线是各提供商网页或脚本；插件减少切换和回传步骤，但仍需人工选择、内容审核和费用控制。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| tools/jobs/commands/attachments/credentials | 必需 | 注册生成、后台任务、媒体交付和密钥 | 对应入口无法工作 |\n| 至少一个外部 provider 与额度 | 必需 | 实际生成图像或视频 | 工具可注册但不能产出媒体 |\n| 可写附件/媒体存储 | 必需 | 保存和发送大文件 | job 完成也无法交付 |\n| 内容与费用验收规则 | 安全采用必需 | 控制版权、品牌和重试预算 | 可能反复生成或交付不合格内容 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|---|\n| 定规格 | 用户给出尺寸、格式、内容、预算和停止条件 | provider/预设能满足约束 |\n| 提交 | Agent 调 generate_image/video，job 记录 owner 与进度 | 获得可追踪 job id |\n| 取消/失败 | 用户取消或 provider 返回错误 | AbortSignal 生效；部分文件可定位清理 |\n| 验收交付 | 用户审查媒体并调用 send_media | 附件可访问且符合规格；不合格计入重试 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | provider 账户、密钥和本地存储 | 配预设、模型和交付规格 | 初始化分钟未知 |\n| 持续使用 | 每次图/视频请求费、带宽、媒体 MB | 等待、筛选、提示修订和内容审核 | 单价与合格尝试数未采集 |\n| 失败恢复 | 失败/取消请求可能仍计费 | 清理部分文件、重提 job | detached 降级的取消与追踪较弱 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 会话内交付 | 工具、job、附件与 UI 接线存在 | 真实 provider 到附件的完整成功率 |\n| 异步控制 | jobs 路径使用 AbortController | provider 取消是否停止计费 |\n| 统一提供商 | provider 与 preset 分层 | 不同模型的质量、政策和可比性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 dsh-media-studio 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是各提供商网页或脚本；插件减少切换和回传步骤，但仍需人工选择、内容审核和费用控制。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n# dsh-media-studio\n\n[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)\n[![dsh](https://img.shields.io/badge/dsh-0.2.1--rc.2-4b8bbe)](https://github.com/deepseek-ai/deepseek-harness)\n[![node](https://img.shields.io/badge/node-%3E%3D22.19-339933)](https://nodejs.org)\n\n在 dsh（DeepSeek Harness）聊天里**直接生成图片 / 视频**并发送到会话的插件。\n模型侧拿到 `generate_image` / `generate_video` / `send_media` 三个工具，人侧拿到\n内联画廊、可播放的视频卡片，支持下载与用系统默认应用打开；长耗时生成默认走\n后台任务，完成后自动把结果推送回会话。\n\n生成后端可插拔：内置 **Agnes**（免费额度，图生图 / 首尾帧 / 参考图视频）与\n**OpenAI 兼容**两种适配器，预设硅基流动、阿里百炼、Gemini（OpenAI 兼容端点）、\nSora 2 等条目，也可以在配置里加任意 `baseURL + model + apiKeyEnv` 的自定义条目。\n\n## 功能\n\n| 能力 | 说明 |\n|---|---|\n| 文生图 / 图生图 | `generate_image`：本地路径、https URL、data URI 均可作参考图 |\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n入口注册 generate_image、generate_video、send_media 及命令；provider 层适配外部服务，jobs 层用 AbortController 管理后台任务，附件与客户端 slot 呈现结果。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对直接调用各家 API，它统一媒体任务、提供商、作业进度、附件交付和会话 UI，业务增量是把生成与交付放在同一对话链路。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n依赖 DSH tools、jobs、commands、attachments、credentials 和至少一个外部媒体提供商；需要密钥、网络、额度与本地结果存储。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本是配置至少一个图像/视频提供商、密钥、模型、预设和附件存储；持续成本按每次生成的提供商计费、等待时间、媒体文件大小及人工筛选重生成次数累积；失败恢复包括取消 job、识别 provider 错误、清理部分媒体并重新提交。合格单位应是一份满足尺寸、格式、内容和可交付链接要求的媒体，而不是 job completed。当前缺每种 provider 的单次价格、成功率、生成秒数、文件 MB 与平均重生成次数。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n#### 缺口\n\n- 缺少图像/视频提供商的实际请求价格、生成时长、失败率、输出 MB、人工筛选分钟和达到合格结果的尝试数。\n  **影响**：无法计算每个合格媒体的总成本，也无法判断统一入口是否减少重生成。\n  **进一步探讨**：固定图片和视频各一份交付规格，记录每次 provider 请求、金额、秒数、输出大小、失败/取消和人工评分，按总支出除以合格件数。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\nprovider、media、jobs 与 UI 分层便于扩展，AbortController 贯穿取消路径；需重点验证 detached 降级、凭据隔离、失败重试和大文件生命周期。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可增加“交付规格优先”的生成计划，先固定尺寸、格式、版权与验收项，再并行低成本草图和高质量定稿，减少无效重生成。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。只有取消、凭据隔离、附件交付和费用上限在目标 provider 上通过，且每个合格媒体的重试数低于网页手工流程，才进入试用；费用失控或 detached job 无法追踪应停用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/1497105876/dsh-media-studio/blob/4fb706a3fb2b68cdbb81e951885d2178905d6ca2/lib/index.js#L1-L10)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nimport { Config } from './config.js';\nimport { registerMediaCommands } from './commands.js';\nimport { registerMediaTools } from './tools.js';\nexport const name = 'media-studio';\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\nexport { Config };\nexport function apply(ctx, config) {\n    registerMediaTools(ctx, config);\n    registerMediaCommands(ctx, config);\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未核实任何真实 provider 的费用、内容政策、取消语义和附件生命周期。\n  **影响**：媒体生成具有外部费用与大文件副作用，源码接线不足以支持直接试用。\n  **进一步探讨**：用低额度沙箱分别执行一张图和一段短视频，验证取消、失败、凭据、附件删除并核算每个合格产物的总成本。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1d798560b9fd1d51c11eb4c5bff220e364eb77325b0df413a698fe024eb13bcc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 10 | 2674 | 2570 | 224 | — |\n| .md | source | 1 | 151 | — | — | 1661 |\n| .mjs | source | 1 | 50 | 33 | 13 | — |\n| .tsx | source | 5 | 1303 | 1095 | 140 | — |\n| .ts | source | 11 | 1733 | 1390 | 244 | — |\n\n排除 9 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 图像生成 | 通过统一工具和命令提交图像任务。 | 仅由固定版本源码确认；运行效果未验证 |\n| 视频生成 | 异步执行视频任务并报告进度。 | 仅由固定版本源码确认；运行效果未验证 |\n| 媒体交付 | 将生成结果作为会话媒体或附件发送。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\nprovider、media、jobs 与 UI 分层便于扩展，AbortController 贯穿取消路径；需重点验证 detached 降级、凭据隔离、失败重试和大文件生命周期。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：在低额度账户按固定规格生成一张图和 5 秒视频，记录每次价格、秒数、文件 MB、失败/取消和人工评分；中途取消一次并模拟 jobs 不可用的 detached 降级，核对是否停止请求、是否残留文件及结果能否交付。无法限定费用或追踪 detached 任务即保持观察。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-01/snapshots/1497105876--dsh-media-studio/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"1497105876/dsh-media-studio\",\n  \"revision\": \"4fb706a3fb2b68cdbb81e951885d2178905d6ca2\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"研究 dsh-media-studio 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"谁在何种任务中使用，原有办法和合格结果是什么？\",\n        \"answer\": \"面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是各提供商网页或脚本；插件减少切换和回传步骤，但仍需人工选择、内容审核和费用控制。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 20,\n            \"observation\": \"作者材料说明目标用户、安装方式、主要能力和已知边界。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"能力如何从入口、注册、调用到状态变化实现？\",\n        \"answer\": \"入口注册 generate_image、generate_video、send_media 及命令；provider 层适配外部服务，jobs 层用 AbortController 管理后台任务，附件与客户端 slot 呈现结果。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"相对原生能力或简单替代，固定版本增加了什么？\",\n        \"answer\": \"相对直接调用各家 API，它统一媒体任务、提供商、作业进度、附件交付和会话 UI，业务增量是把生成与交付放在同一对话链路。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"什么前提最可能使核心价值不成立？\",\n        \"answer\": \"最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 这会直接收窄采用范围，而不是否定所有能力。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"启动、持续生效和失败恢复分别依赖什么？\",\n        \"answer\": \"依赖 DSH tools、jobs、commands、attachments、credentials 和至少一个外部媒体提供商；需要密钥、网络、额度与本地结果存储。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"首次、持续与失败恢复成本及效果证据如何？\",\n        \"answer\": \"首次成本是配置至少一个图像/视频提供商、密钥、模型、预设和附件存储；持续成本按每次生成的提供商计费、等待时间、媒体文件大小及人工筛选重生成次数累积；失败恢复包括取消 job、识别 provider 错误、清理部分媒体并重新提交。合格单位应是一份满足尺寸、格式、内容和可交付链接要求的媒体，而不是 job completed。当前缺每种 provider 的单次价格、成功率、生成秒数、文件 MB 与平均重生成次数。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少图像/视频提供商的实际请求价格、生成时长、失败率、输出 MB、人工筛选分钟和达到合格结果的尝试数。\",\n            \"impact\": \"无法计算每个合格媒体的总成本，也无法判断统一入口是否减少重生成。\",\n            \"next_step\": \"固定图片和视频各一份交付规格，记录每次 provider 请求、金额、秒数、输出大小、失败/取消和人工评分，按总支出除以合格件数。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"实现有哪些可靠性取舍和可复用设计？\",\n        \"answer\": \"provider、media、jobs 与 UI 分层便于扩展，AbortController 贯穿取消路径；需重点验证 detached 降级、凭据隔离、失败重试和大文件生命周期。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"由贡献和限制能推导什么未验证方向？\",\n        \"answer\": \"从已确认机制与关键限制可推导：可增加“交付规格优先”的生成计划，先固定尺寸、格式、版权与验收项，再并行低成本草图和高质量定稿，减少无效重生成。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"对什么人值得观察或试用，成功与停止条件是什么？\",\n        \"answer\": \"适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。只有取消、凭据隔离、附件交付和费用上限在目标 provider 上通过，且每个合格媒体的重试数低于网页手工流程，才进入试用；费用失控或 detached job 无法追踪应停用。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未核实任何真实 provider 的费用、内容政策、取消语义和附件生命周期。\",\n            \"impact\": \"媒体生成具有外部费用与大文件副作用，源码接线不足以支持直接试用。\",\n            \"next_step\": \"用低额度沙箱分别执行一张图和一段短视频，验证取消、失败、凭据、附件删除并核算每个合格产物的总成本。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-media-studio\\n\\n[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)\\n[![dsh](https://img.shields.io/badge/dsh-0.2.1--rc.2-4b8bbe)](https://github.com/deepseek-ai/deepseek-harness)\\n[![node](https://img.shields.io/badge/node-%3E%3D22.19-339933)](https://nodejs.org)\\n\\n在 dsh（DeepSeek Harness）聊天里**直接生成图片 / 视频**并发送到会话的插件。\\n模型侧拿到 `generate_image` / `generate_video` / `send_media` 三个工具，人侧拿到\\n内联画廊、可播放的视频卡片，支持下载与用系统默认应用打开；长耗时生成默认走\\n后台任务，完成后自动把结果推送回会话。\\n\\n生成后端可插拔：内置 **Agnes**（免费额度，图生图 / 首尾帧 / 参考图视频）与\\n**OpenAI 兼容**两种适配器，预设硅基流动、阿里百炼、Gemini（OpenAI 兼容端点）、\\nSora 2 等条目，也可以在配置里加任意 `baseURL + model + apiKeyEnv` 的自定义条目。\\n\\n## 功能\\n\\n| 能力 | 说明 |\\n|---|---|\\n| 文生图 / 图生图 | `generate_image`：本地路径、https URL、data URI 均可作参考图 |\\n| 文生视频 | `generate_video`：支持首尾帧（keyframe）与参考图（reference）两种模式 |\\n| 发送本地媒体 | `send_media`：把已有图片 / 视频文件以画廊 / 文件卡片形式进入会话 |\\n| 斜杠命令 | `/image`、`/video`，加 `--wait` 前缀同步等待并在命令卡片内联展示 |\\n| 后台生成 | 默认走 `ctx.jobs` 后台任务，立即返回任务句柄，完成后自动推送 |\\n| 富渲染 | 工具行 / 命令行内联画廊与视频播放器，支持下载、灯箱查看、系统默认应用打开 |\\n| 自动保存 | 生成结果写进输出目录（默认 `~/.dsh/media-studio`，`~` 展开到用户主目录；相对路径基于会话工作目录） |\\n| 凭据安全 | API key 走 `credential-ref`（环境变量名），永不写进配置文件 |\\n| 设置卡片 | 插件详情页内的官方样式配置卡片：模型条目、默认参数、高级参数 |\\n\\n## 安装\\n\\n要求 dsh `0.2.1-rc.2` 及以上 0.2.x、Node `>=22.19.0`。\\n\\n打开 dsh 的 **插件** 页，点右上角 **「+ 添加插件」**，输入 GitHub 地址：\\n\\n```\\nhttps://github.com/1497105876/dsh-media-studio\\n```\\n\\n安装完成并启用即可。设置卡片在插件详情页里，API Key 直接在卡片里填。\\n\\n## 凭据\\n\\n每个模型条目通过 `apiKeyEnv` 引用一个**环境变量名**，插件运行时先走\\n`ctx.credentials` 解析，取不到再回退普通环境变量。例如用 Agnes 免费生图：\\n\\n```bash\\nexport AGNES_API_KEY=sk-...\\n```\\n\\n## 模型配置\\n\\n默认只内置 **Agnes**（有免费额度，填一个 `AGNES_API_KEY` 就能用，支持文生图 /\\n图生图 / 文生视频）。\\n\\n其他服务商在设置卡片里「+ 添加」后**选服务商即可**——OpenAI 生图 / Sora 2、\\nGemini、硅基流动、阿里云百炼等常见服务商已内置，选中自动填好接口地址和\\n参考模型名，再填一个 API Key 就能用；下拉里没有的服务商选「自定义」手填\\n`provider`（适配器）+ `model`（模型名）+ `baseURL`（接口地址）三件套。\\n常见服务商参考：\\n\\n| 服务商 | provider | baseURL | model 示例 | Key 引用名 |\\n|---|---|---|---|---|\\n| OpenAI 生图 | `openai` | `https://api.openai.com/v1` | `gpt-image-1` | `OPENAI_API_KEY` |\\n| OpenAI Sora 2 | `openai-videos` | `https://api.openai.com/v1` | `sora-2` | `OPENAI_API_KEY` |\\n| Gemini 生图 | `openai` | `https://generativelanguage.googleapis.com/v1beta/openai` | `gemini-2.5-flash-image` | `GEMINI_API_KEY` |\\n| 硅基流动 | `openai` | `https://api.siliconflow.cn/v1` | `Kwai-Kolors/Kolors` | `SILICONFLOW_API_KEY` |\\n| 阿里云百炼 | `openai` | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `wanx2.1-t2i-turbo` | `DASHSCOPE_API_KEY` |\\n\\nprovider 三选一：`agnes`（Agnes 专有 quirks）、`openai`（OpenAI 兼容图片接口）、\\n`openai-videos`（OpenAI Videos 风格异步接口）。任何 OpenAI 兼容的中转 /\\n自建服务都能接。\\n\\n## 工具\\n\\n- **`generate_image`** — `prompt` 必填；可选 `model`、`resolution`（1K–4K）、\\n  `aspect_ratio`、`reference_images`（图生图）、`run_in_background`（默认 true）。\\n- **`generate_video`** — `prompt` 必填；可选 `model`、`seconds`（4–12）、`size`\\n  （720P–2K）、`aspect_ratio`、`mode`（text / keyframe / reference）、\\n  `first_frame` / `last_frame`、`reference_images`、`run_in_background`（默认 true）。\\n- **`send_media`** — `paths`（本地文件路径的字符串数组）+ 可选 `caption`。\\n\\n三个工具都声明了规范 JSON 输出 schema，并在工具结果里直接渲染媒体块，\\n同时投影 `presentationMeta` 供浏览器半渲染富视图。\\n\\n## 斜杠命令\\n\\n```\\n/image <提示词>            # 后台生成，完成后推送\\n/image --wait <提示词>      # 同步等待，命令卡片内联展示（可附图做图生图）\\n/video <提示词>            # 后台生成（通常几分钟），完成后推送\\n/video --wait <提示词>      # 同步等待，卡片内联播放\\n```\\n\\n## 配置\\n\\n**设置卡片（推荐）**：插件详情页里的配置卡片，分四区：\\n\\n- **图片模型 / 视频模型**：选服务商自动填好地址和模型，填上 API Key 就能用；\\n  Key 走官方 `remote.credentials` 通道存进 dsh 凭据库（只写不读），保存即时生效。\\n- **默认参数**：默认模型、输出目录、分辨率 / 画幅 / 时长（常见档位下拉点选）。\\n  这些只是默认值，对话里明确指定了参数时以对话指定的为准。\\n- **高级**：请求超时与视频轮询节奏（秒），默认折叠，一般不用动。\\n\\n凭据也可以用系统环境变量代替（`setx AGNES_API_KEY sk-...` 后重启 dsh），\\n两种方式插件都会识别。\\n\\n也可以用 profile patch 整值覆盖（patch 语义是整值替换，不做深合并）：\\n\\n| 键 | 默认 | 说明 |\\n|---|---|---|\\n| `imageModels` / `videoModels` | 预设清单 | 模型条目目录 |\\n| `defaultImageModel` / `defaultVideoModel` | `agnes-image` / `agnes-video` | 工具省略 `model` 时的兜底 |\\n| `outputDir` | `~/.dsh/media-studio` | 自动保存目录（`~` 展开到用户主目录；相对路径基于会话工作目录） |\\n| `autoSave` | `true` | 是否自动落盘一份 |\\n| `imageResolution` / `imageAspectRatio` | `2K` / `16:9` | 图片默认参数（允许服务商支持的其他档位） |\\n| `videoSeconds` / `videoSize` / `videoAspectRatio` | `5` / `720P` / `16:9` | 视频默认参数（允许服务商支持的其他档位） |\\n| `requestTimeoutSec` | `300` | 生成请求超时（秒） |\\n| `videoPollIntervalSec` / `videoPollTimeoutSec` | `30` / `300` | 视频任务轮询（秒） |\\n\\n## 架构\\n\\n```\\nsrc/\\n  index.ts            host 半入口：export const name / inject / Config / apply\\n  tools.ts            三个媒体工具（schema / render / presentationMeta / execute）\\n  commands.ts         /image /video 斜杠命令\\n  jobs.ts             ctx.jobs 后台任务 + 完成通知（followup / inject）\\n  providers.ts        agnes / openai / openai-videos 三种适配器\\n  media.ts            落盘、附件提交、参考图读取、媒体类型嗅探\\n  presets.ts          内置模型预设（Agnes）\\n  types.ts            两半共享的类型与命令 payload 编解码\\n  config.ts           schemastery 配置（volatile，卡片即时生效）\\n  client/             浏览器半（React）\\n    tool-row.tsx        工具行：内联画廊 / 视频播放器\\n    command-row.tsx     /image /video 命令行\\n    gallery.tsx         消息图片画廊（替换 stock gallery）\\n    media.tsx           画廊 / 灯箱 / 播放器 / 下载 / 系统打开\\n    native-open.ts      宿主原生打开通道（系统默认应用）\\n    settings-card.tsx   设置卡片（官方 SettingsForm 风格，走 remote.credentials）\\nscripts/\\n  build-client.mjs  esbuild 打包浏览器半为 lazy-CJS client bundle\\n```\\n\\nhost 半是 tsc 直出的 ESM（`lib/index.js`）；浏览器半打包成官方\\n`window.__ModuleLoader__.load({ id, factory })` 形状（`lib/client.js`），\\n`react` 走平台注入的模块表，不自带 react 副本。\\n\\n## License\\n\\n[MIT](./LICENSE)\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@gw/dsh-media-studio\\\",\\n  \\\"version\\\": \\\"0.6.0\\\",\\n  \\\"description\\\": \\\"DeepSeek Harness plugin: generate and send images/videos directly in the chat. Agnes / OpenAI-compatible providers, preset models, custom API models, background generation with chat push, inline preview with download and native open.\\\",\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"plugin\\\",\\n    \\\"image-generation\\\",\\n    \\\"video-generation\\\",\\n    \\\"agnes\\\"\\n  ],\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22.19.0\\\",\\n    \\\"dsh\\\": \\\">=0.2.1-rc.2 <0.3.0\\\"\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/1497105876/dsh-media-studio.git\\\"\\n  },\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./client\\\": {\\n      \\\"default\\\": \\\"./lib/client.js\\\"\\n    },\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib/*.js\\\",\\n    \\\"lib/types/**/*.d.ts\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"icon.svg\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"manifestVersion\\\": 1,\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-api-remotes\\\",\\n        \\\"@deepseek-ai/dsh-client-ui-primitives\\\"\\n      ]\\n    }\\n  },\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"npm run build:host && npm run build:client\\\",\\n    \\\"build:host\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:client\\\": \\\"node scripts/build-client.mjs\\\",\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit\\\"\\n  },\\n  \\\"dependencies\\\": {\\n    \\\"@deepseek-ai/schemastery\\\": \\\"~3.18.4\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"~4.0.4\\\",\\n    \\\"@deepseek-ai/dsh-agent\\\": \\\"~0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-attachment\\\": \\\"~0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-commands\\\": \\\"~0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-credentials\\\": \\\"~0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-jobs\\\": \\\"~0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-llm\\\": \\\"~0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"~0.2.1-rc.2\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"~4.0.4\\\",\\n    \\\"@deepseek-ai/dsh-agent\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-attachment\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-chat\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-conversation\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-primitives\\\": \\\"^0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-renderer\\\": \\\"^0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-slots\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-tool\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-commands\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-credentials\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-jobs\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-llm\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"0.2.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^22.19.0\\\",\\n    \\\"@types/react\\\": \\\"~18.3.1\\\",\\n    \\\"esbuild\\\": \\\"~0.25.0\\\",\\n    \\\"react\\\": \\\"^18.3.1\\\",\\n    \\\"typescript\\\": \\\"~5.9.0\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"import { Config } from './config.js';\\nimport { registerMediaCommands } from './commands.js';\\nimport { registerMediaTools } from './tools.js';\\nexport const name = 'media-studio';\\nexport const inject = ['tools', 'jobs', 'commands', 'attachments', 'credentials'];\\nexport { Config };\\nexport function apply(ctx, config) {\\n    registerMediaTools(ctx, config);\\n    registerMediaCommands(ctx, config);\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"4fb706a3fb2b68cdbb81e951885d2178905d6ca2\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"1d798560b9fd1d51c11eb4c5bff220e364eb77325b0df413a698fe024eb13bcc\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 10,\n        \"lines\": 2674,\n        \"code\": 2570,\n        \"comments\": 224,\n        \"blank\": 10\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 151,\n        \"words\": 1661\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 50,\n        \"code\": 33,\n        \"comments\": 13,\n        \"blank\": 4\n      },\n      {\n        \"extension\": \".tsx\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 1303,\n        \"code\": 1095,\n        \"comments\": 140,\n        \"blank\": 77\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 11,\n        \"lines\": 1733,\n        \"code\": 1390,\n        \"comments\": 244,\n        \"blank\": 103\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"lib/types/commands.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/config.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/jobs.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/media.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/presets.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/providers.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/tools.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/types.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"lib/tools.js\",\n          \"line\": 196,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/tools.js\",\n          \"line\": 196,\n          \"api\": \"defineTool\",\n          \"name\": \"generate_image\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/tools.js\",\n          \"line\": 288,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/tools.js\",\n          \"line\": 288,\n          \"api\": \"defineTool\",\n          \"name\": \"generate_video\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/tools.js\",\n          \"line\": 386,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/tools.js\",\n          \"line\": 386,\n          \"api\": \"defineTool\",\n          \"name\": \"send_media\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/tools.ts\",\n          \"line\": 267,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/tools.ts\",\n          \"line\": 267,\n          \"api\": \"defineTool\",\n          \"name\": \"generate_image\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/tools.ts\",\n          \"line\": 359,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/tools.ts\",\n          \"line\": 359,\n          \"api\": \"defineTool\",\n          \"name\": \"generate_video\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/tools.ts\",\n          \"line\": 458,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/tools.ts\",\n          \"line\": 458,\n          \"api\": \"defineTool\",\n          \"name\": \"send_media\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [\n        {\n          \"path\": \"lib/commands.js\",\n          \"line\": 36,\n          \"api\": \"ctx.commands.register\",\n          \"name\": \"image\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/commands.js\",\n          \"line\": 103,\n          \"api\": \"ctx.commands.register\",\n          \"name\": \"video\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/commands.ts\",\n          \"line\": 53,\n          \"api\": \"ctx.commands.register\",\n          \"name\": \"image\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/commands.ts\",\n          \"line\": 119,\n          \"api\": \"ctx.commands.register\",\n          \"name\": \"video\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"events\": [],\n      \"timers\": [\n        {\n          \"path\": \"lib/providers.js\",\n          \"line\": 196,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/providers.ts\",\n          \"line\": 265,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 1343,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"plugins.bundle.config\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 1415,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"tool.call.toolview\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 1421,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"conversation.chat.commandview\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 1427,\n          \"api\": \"ctx.slots.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/client/index.ts\",\n          \"line\": 37,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"tool.call.toolview\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/client/index.ts\",\n          \"line\": 41,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"conversation.chat.commandview\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/client/index.ts\",\n          \"line\": 51,\n          \"api\": \"ctx.slots.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/client/settings-card.tsx\",\n          \"line\": 712,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"plugins.bundle.config\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"generate_image\",\n          \"generate_video\",\n          \"send_media\"\n        ],\n        \"unresolved_sites\": 6,\n        \"literal_count\": 3,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [\n          \"image\",\n          \"video\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 2,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"conversation.chat.commandview\",\n          \"plugins.bundle.config\",\n          \"tool.call.toolview\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 3,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"1497105876/dsh-media-studio\",\n    \"repository_id\": 1399694663,\n    \"captured_at\": \"2026-10-22T15:13:20.289Z\",\n    \"window_start\": \"2026-09-22T15:13:20.289Z\",\n    \"stars\": 0,\n    \"pushed_at\": \"2026-10-20T06:13:43Z\",\n    \"issues\": {\n      \"open\": null,\n      \"closed\": null,\n      \"created_30d\": null,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"open\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 587E:1B6125:98C8FC:A5142B:6ADA2812 and timestamp 2026-10-22 15:13:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 598E:31EE37:9B41DC:A78CBA:6ADA2813 and timestamp 2026-10-22 15:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"created_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A20.289Z..2026-10-22T15%3A13%3A20.289Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5ACE:320EB6:9C5191:A8903D:6ADA2814 and timestamp 2026-10-22 15:13:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A20.289Z..2026-10-22T15%3A13%3A20.289Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5BEE:10116C:99DB4D:A6238C:6ADA2816 and timestamp 2026-10-22 15:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A20.289Z..2026-10-22T15%3A13%3A20.289Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5CBA:1C593F:9CE245:A92473:6ADA2817 and timestamp 2026-10-22 15:13:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"@gw/dsh-media-studio\",\n      \"captured_at\": \"2026-10-22T15:13:27.496Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40gw%2Fdsh-media-studio\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T15:13:27.496Z\",\n        \"source_url\": \"https://registry.npmjs.org/%40gw%2Fdsh-media-studio\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
+            "sha256": "c9aeb005fa39e9e1f02a6eecc2e5fa6b39abccc0eb3bad5e27203cef42af65f6"
+        }
+    },
+    "unavailable_artifacts": []
+}

@@ -1,0 +1,441 @@
+{
+    "schema_version": 4,
+    "id": "21febdcb0644bd76b60f69e7b1ea192a",
+    "identity": "github:1339262076:root",
+    "slug": "173787247--dsh-repeat-stop",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1339262076:root",
+            "repository_id": 1339262076,
+            "component_id": "root",
+            "repository": "173787247/dsh-repeat-stop",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-repeat-stop",
+            "entry_type": "plugin",
+            "technical_category": "security-governance",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "63b15c7ecd0bbaaddbb2290661b669c6f25cfd20e3b5c06a862dea29bd4ff87e",
+                "code": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                "maintenance": "a41e795eb8d5fce46780656e2fa17a69494b5e18cb172f4550157812f761e33a"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1339262076-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:35:01.289Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1339262076-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "README.md",
+                            "content_sha256": "835d1deda6f416a0b2a584a4915f20db9a39aacc46fc622dec49746a4e338e51"
+                        }
+                    ],
+                    "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                    "captured_at": "2026-10-22T09:35:01.289Z",
+                    "summary": "在 DSH 中按 Agent 拦截超过阈值的连续同工具同参数调用，支持过滤与用户消息重置。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-repeat-stop/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1339262076-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "README.md",
+                            "content_sha256": "835d1deda6f416a0b2a584a4915f20db9a39aacc46fc622dec49746a4e338e51"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "index.js",
+                            "content_sha256": "2f1e803ec5f8795cba976eeb27bac7d7c3e95800303055e214002e42b581de06"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "lib/repeat.js",
+                            "content_sha256": "69d691d767632642a27fb96742f248b014dac121b3bf2e2b1b5aba6ddf0acc02"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "test/repeat.test.js",
+                            "content_sha256": "aa7aa79cca267aad2226a3b1163927815b83e32fa985ec6c079c89a2c53984a4"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "test/apply.test.js",
+                            "content_sha256": "4486a862a97fe71093347dab36439fa3eb317fe19f1b0517bbe7a597dceb9608"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "38c6c8d93d3b58fe86e92147120bd0e193d889d8896ffb1ce3f995ad24b09fd1"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-repeat-stop",
+                            "commit": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                            "path": "package.json",
+                            "content_sha256": "748a428ac23e2a66be9b3ac74ba7f2684d297384fbd8bcb666c5151d73ced3e6"
+                        }
+                    ],
+                    "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                    "captured_at": "2026-10-22T09:35:01.289Z",
+                    "summary": "核查 README.md、index.js、lib/repeat.js、test/repeat.test.js、test/apply.test.js、cordis.patch.yml、package.json；入口以 WeakMap 按 Agent 保存链，以 WeakSet 对执行对象去重；递归排序参数生成键，guard 超阈值返回拒绝，用户消息出现时重置。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-repeat-stop/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定 Git 提交源码核查，包括入口、纯函数、配置、清单与两组测试材料；不把作者兼容矩阵当宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "为反复原样重试工具的 Agent 提供执行前保险丝，合格结果是阻断无效重复并保留合法探索；正常轮询需单独配置。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "入口以 WeakMap 按 Agent 保存链，以 WeakSet 对执行对象去重；递归排序参数生成键，guard 超阈值返回拒绝，用户消息出现时重置。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定 Git 提交源码核查，包括入口、纯函数、配置、清单与两组测试材料；不把作者兼容矩阵当宿主验收。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "清单版本0.1.2，入口index.js、Node>=18、MIT；README提供GitHub安装，npm状态以本轮META原始采集为准。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无独立服务调用；模型与宿主费用依部署 | 安装、重启和排除规则核查，耗时未知 | 无独立服务不等模型/宿主总费为零；准备耗时未知 |\n| 持续使用 | 参数递归排序和序列化；实际资源量未知 | 维护阈值、复核拒绝轨迹 | 规范化成本随参数层级/大小增长；节费无任务对照 |\n| 失败恢复 | 重新执行可能产生工具或模型费用，金额未知 | 判断误拦、调整规则或停用并核对副作用 | 重执行可重复工具/模型费用；误拦恢复工时未知 |\n",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议观察。先由维护者确认消息窗口和执行对象身份，再决定是否在可丢弃任务试用；历史消息反复重置、合法等待误拦或恢复负担高于收益时停止。详见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 判断对象 | 可见支持 | 未确定边界 |\n| --- | --- | --- |\n| 阈值硬拒绝 | guard 超阈值返回拒绝文本 | 宿主计数持续性待核对 |\n| 节省无效调用 | 精确重复可被阻断 | 账单、合格率和端到端收益未量化 |\n| 合法任务保护 | include/exclude 可调 | 真实误拦与恢复成本未知 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯函数与宿主接线分开、弱引用状态隔离值得借鉴；测试源码覆盖阈值和重置，却没有真实事件消息窗口或双钩子对象身份的集成证明。详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把原样重复检测接入工具 guard，默认允许六次并拒绝第七次，同时按 Agent 隔离状态并规范化对象键；属于有用的局部机制组合，官方提醒器对照仅为作者声明。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "跨步计数能否成立取决于宿主消息窗口。pre-step 遇到任何 user 消息便重置，若每步含历史用户消息就可能削弱保护；这是静态条件风险，未做故障复现。精确键还无法识别交替与改参循环。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可探讨让工具结果声明进展，在精确重复规则旁区分合法等待和无进展失败；先用固定事件反例比较误拦及漏拦，再评估状态契约的维护代价。当前未验证，不属于已有能力。详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1339262076:root",
+                            "area": "code",
+                            "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:35:01.289Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T09:35:01.289Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                "reviewed_at": "2026-10-22T09:35:01.289Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1339262076:root",
+                        "area": "code",
+                        "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 小幅增量，精确重复与 guard 为常规组合；mechanism 小幅增量，增加拒绝而非新检测算法；transferability 实质增量，纯函数与弱引用设计可迁移但需事件契约；simplification 实质增量，以小状态实现按 Agent 阈值，不能覆盖一般无进展。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 小幅增量，自动替代看轨迹中断；delivery 未识别新交付单元，仍由原任务验收；reach 小幅增量，以配置降低写拦截代码门槛；economics 小幅增量，有阻断重复消耗的机制但未测成本差。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1339262076-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "适合遭遇原样工具循环的维护者观察；先查清宿主消息与执行对象契约，避免重置失效和合法轮询误拦。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "重复调用场景和阈值结果清楚，但实际频率与受影响范围未测。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "执行前硬拒绝有明确增量，精确键与重置前提限制收益。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码和测试材料可核查；本轮没有执行，证据最多取50%档。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "无额外服务且停用简单，但排除维护和误拦恢复负担未量化。"
+                    }
+                },
+                "score": 59,
+                "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                "reviewed_at": "2026-10-22T09:35:01.289Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1339262076-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1339262076:root",
+                        "area": "code",
+                        "fingerprint": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1339262076:root",
+            "repository": "173787247/dsh-repeat-stop",
+            "path": "",
+            "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+            "fingerprints": {
+                "directory": "63b15c7ecd0bbaaddbb2290661b669c6f25cfd20e3b5c06a862dea29bd4ff87e",
+                "code": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+                "maintenance": "a41e795eb8d5fce46780656e2fa17a69494b5e18cb172f4550157812f761e33a"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "7f88d295b013e6d53de42793c6c575143d16967bd401165068ece3d75e32f5ff"
+        },
+        "publication.metadata": "data/catalog/173787247--dsh-repeat-stop/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 中按 Agent 拦截超过阈值的连续同工具同参数调用，支持过滤与用户消息重置。",
+            "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+            "source_url": "https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+            "items": {
+                "事件监听": "tools/post-execute补观察；agent/pre-step在user消息出现时重置",
+                "后台": "tools.guard按Agent精确重复阈值阻断；systemPrompt提示注册"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 精确重复硬拒绝 | 阻止原样连续重试 | 不覆盖交替工具和变化参数循环 |\n| 按 Agent 隔离与去重 | 多 Agent 分开计数 | 依赖 Agent 和 exec 对象语义 |\n| 过滤与用户消息重置 | 保留合法轮询和新任务 | 历史消息窗口需核对 |"
+        },
+        "publication.advice": {
+            "revision": "cb1ed9fb558072adf80e2068b3bc7c50ff736fb9",
+            "text": "建议观察。先由维护者确认消息窗口和执行对象身份，再决定是否在可丢弃任务试用；历史消息反复重置、合法等待误拦或恢复负担高于收益时停止。详见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/173787247--dsh-repeat-stop",
+        "reports": "# dsh-repeat-stop\n\n> 在 DSH 中按 Agent 拦截超过阈值的连续同工具同参数调用，支持过滤与用户消息重置。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-repeat-stop](https://github.com/173787247/dsh-repeat-stop)\n- **版本号**：0.1.2（[固定提交 cb1ed9fb558072adf80e2068b3bc7c50ff736fb9](https://github.com/173787247/dsh-repeat-stop/tree/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n硬阻断及按 Agent 隔离具有源码支持；跨步骤消息和执行对象约定仍有缺口。进展感知扩展是未验证假设。\n\n## 洞察短评\n\n- **用途**：为反复原样重试工具的 Agent 提供执行前保险丝，合格结果是阻断无效重复并保留合法探索；正常轮询需单独配置。详见[Q01](#research-q01)。\n- **亮点**：把原样重复检测接入工具 guard，默认允许六次并拒绝第七次，同时按 Agent 隔离状态并规范化对象键；属于有用的局部机制组合，官方提醒器对照仅为作者声明。详见[Q03](#research-q03)。\n- **思考**：跨步计数能否成立取决于宿主消息窗口。pre-step 遇到任何 user 消息便重置，若每步含历史用户消息就可能削弱保护；这是静态条件风险，未做故障复现。精确键还无法识别交替与改参循环。详见[Q04](#research-q04)。\n- **建议**：可探讨让工具结果声明进展，在精确重复规则旁区分合法等待和无进展失败；先用固定事件反例比较误拦及漏拦，再评估状态契约的维护代价。当前未验证，不属于已有能力。详见[Q08](#research-q08)。\n\n采用建议：建议观察。先由维护者确认消息窗口和执行对象身份，再决定是否在可丢弃任务试用；历史消息反复重置、合法等待误拦或恢复负担高于收益时停止。详见[Q09](#research-q09)。\n\n## 核心贡献\n\n把原样重复检测接入工具 guard，默认允许六次并拒绝第七次，同时按 Agent 隔离状态并规范化对象键；属于有用的局部机制组合，官方提醒器对照仅为作者声明。详见[Q03](#research-q03)。\n\n## 关键质疑\n\n跨步计数能否成立取决于宿主消息窗口。pre-step 遇到任何 user 消息便重置，若每步含历史用户消息就可能削弱保护；这是静态条件风险，未做故障复现。精确键还无法识别交替与改参循环。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨让工具结果声明进展，在精确重复规则旁区分合法等待和无进展失败；先用固定事件反例比较误拦及漏拦，再评估状态契约的维护代价。当前未验证，不属于已有能力。详见[Q08](#research-q08)。\n\n进一步探讨可从宿主 pre-step 消息窗口与执行对象传递关系入手，再比较固定循环和合法轮询序列，最后用合格任务成本决定是否值得扩展规则。\n\n## 场景与替代办法\n\n为反复原样重试工具的 Agent 提供执行前保险丝，合格结果是阻断无效重复并保留合法探索；正常轮询需单独配置。详见[Q01](#research-q01)。\n\n简单替代是人工查看轨迹后中断；作者另以仅提醒的 repeat-tool-reminder 和全会话 dsh-tool-budget 作职责对照，本轮没有完成它们的同版本独立源码比较。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途与必要性 | 失效影响与处理 |\n| --- | --- | --- |\n| Node >=18、ESM | 清单声明的运行时 | 运行时不满足则先调整宿主环境 |\n| tools、systemPrompt | 入口注入与提示、guard | 宿主服务及事件语义需匹配 |\n| 阈值与过滤规则 | 区分循环和合法轮询 | 先排除正常等待，必要时停用 |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断依据 |\n| --- | --- | --- |\n| 加入目标 profile 并重启 | 维护者 | 作者安装说明及 loaded 日志 |\n| 核查阈值、合法等待与消息重置 | 维护者 | 固定宿主事件契约及反例序列 |\n| 观察拒绝并处理任务 | 使用者 | 超阈值后换参、换工具或结束 |\n| 出现误拦时停用或调整 | 维护者 | enabled=false 注册前返回 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无独立服务调用；模型与宿主费用依部署 | 安装、重启和排除规则核查，耗时未知 | 无独立服务不等模型/宿主总费为零；准备耗时未知 |\n| 持续使用 | 参数递归排序和序列化；实际资源量未知 | 维护阈值、复核拒绝轨迹 | 规范化成本随参数层级/大小增长；节费无任务对照 |\n| 失败恢复 | 重新执行可能产生工具或模型费用，金额未知 | 判断误拦、调整规则或停用并核对副作用 | 重执行可重复工具/模型费用；误拦恢复工时未知 |\n\n\n#### 效果\n\n| 判断对象 | 可见支持 | 未确定边界 |\n| --- | --- | --- |\n| 阈值硬拒绝 | guard 超阈值返回拒绝文本 | 宿主计数持续性待核对 |\n| 节省无效调用 | 精确重复可被阻断 | 账单、合格率和端到端收益未量化 |\n| 合法任务保护 | include/exclude 可调 | 真实误拦与恢复成本未知 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**固定版本的精确重复保险丝能否以可控误拦截负担切断 Agent 原样重试，其贡献、限制和采用条件是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 什么重复任务适合硬阻断，怎样算合格结果？\n\n**研究主题：**场景与需求\n\n#### 完整回答\n\n适用对象是运行会调用工具的 DSH Agent 的维护者，尤其是工具失败后模型连续提交完全相同调用的任务。这里的合格结果不是“完成用户业务”，而是在允许的一段重试后拒绝进一步原样调用，并让模型改变参数、换工具或结束。README 明确将它与限制整场工具总量的预算插件区分；正常轮询不能直接按这种判据视为无效，因此默认排除了 job_output、job_list、job_kill。\n\n原有替代办法是用户看轨迹后手工中断，或者按作者描述使用仅提示不拦截的 repeat-tool-reminder。后者的具体官方版本未在本插件内固定，故本轮只把它作为作者提出的参照，不能宣称完成宿主能力全量比较。插件适合重复副作用可接受且希望尽早介入的任务，不适合依赖多次同参数读取等待远端状态变化、又没有正确设置排除的流程。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:35-39](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/README.md#L35-L39)\n\n作者定义提醒与硬拦截的差别及默认第七次阻断。\n\n```text\n## Why\n\nOfficial `repeat-tool-reminder` only advises and never blocks. Agents can still spin on the same failing call. This plugin **denies** the next call after a streak.\n\nDefault: **6** identical calls may run; the **7th** is blocked. Changing args/tool or a real user message resets the streak.\n```\n\n**依据 2 · 源码核查**：[index.js:12-18](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L12-L18)\n\n默认排除三种 job 工具，体现正常轮询与无效重试需要区分。\n\n```text\nexport function apply(ctx, config = {}) {\n  const enabled = config.enabled !== false;\n  const threshold = readThreshold(config.threshold);\n  const excludePatterns = toPatterns(config.exclude ?? [\"job_output\", \"job_list\", \"job_kill\"]);\n  const includePatterns = toPatterns(config.include ?? []);\n  const chains = new WeakMap();\n  const counted = new WeakSet();\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 调用如何计数、阻断和重置？\n\n**研究主题：**功能与机制\n\n#### 完整回答\n\napply 读取 enabled、threshold 和 include/exclude 规则，创建按 Agent 对象索引的 WeakMap 与按执行对象去重的 WeakSet。guard 在执行前调用 observe，只有存在 agent 且工具通过过滤才计数。调用键包含工具名和参数的规范化 JSON，递归排序对象键、保留数组顺序，因此对象键顺序变化不会重置计数。相同键递增，不同键从一开始；超过阈值时返回拒绝文本，默认六次允许、第七次拒绝。\n\npost-execute 再次调用同一个 observe，意图覆盖不同执行路径并用 WeakSet 避免同一个 exec 被算两次。agent/pre-step 在 messages 中看到 user 来源便删除该 Agent 的计数。状态只保存在内存，没有磁盘写入、外部请求或新增模型工具。过滤分支会直接返回而不重置旧链，因此“连续”实际指连续被跟踪的调用，不是轨迹上所有调用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:33-64](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L33-L64)\n\n展示过滤、去重、guard、事后观察与用户消息重置。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n  function observe(exec) {\n    if (!exec.agent || !tracked(exec.name, includePatterns, excludePatterns)) return undefined;\n    if (counted.has(exec)) return chains.get(exec.agent);\n    counted.add(exec);\n    const key = callKey(exec);\n    const next = nextChain(chains.get(exec.agent), key);\n    chains.set(exec.agent, next);\n    return next;\n  }\n\n  ctx.tools.guard((exec) => {\n    const chain = observe(exec);\n    if (!chain || chain.count <= threshold) return undefined;\n    return [\n      `dsh-repeat-stop: blocked ${exec.name} after ${threshold} consecutive identical calls.`,\n      \"Change the arguments, use a different tool, or finish the task.\",\n      \"In Agent Teams sessions, stop spawning loops — ask the lead to conclude.\",\n      `count=${chain.count} threshold=${threshold}`,\n    ].join(\" \");\n  });\n\n  ctx.on(\"tools/post-execute\", async (exec, _result, next) => {\n    observe(exec);\n    return next();\n  });\n\n  ctx.on(\"agent/pre-step\", ({ agent, messages }, next) => {\n    if (messages.some((message) => message.source?.kind === \"user\")) {\n      chains.delete(agent);\n    }\n    return next();\n  });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/repeat.js:25-54](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/lib/repeat.js#L25-L54)\n\n调用键、排序、计数和过滤的纯函数实现。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nexport function callKey(exec) {\n  return JSON.stringify([exec.name, canonicalize(exec.arguments)]);\n}\n\nexport function canonicalize(argumentsValue) {\n  return JSON.stringify(sortJsonValue(argumentsValue ?? {}));\n}\n\nexport function sortJsonValue(value) {\n  if (Array.isArray(value)) return value.map(sortJsonValue);\n  if (value !== null && typeof value === \"object\") {\n    const sorted = {};\n    for (const key of Object.keys(value).sort()) {\n      sorted[key] = sortJsonValue(value[key]);\n    }\n    return sorted;\n  }\n  return value;\n}\n\nexport function nextChain(chain, key) {\n  const count = chain !== undefined && chain.key === key ? chain.count + 1 : 1;\n  return { key, count };\n}\n\nexport function tracked(toolName, includePatterns, excludePatterns) {\n  if (includePatterns.length > 0 && !includePatterns.some((re) => re.test(toolName))) {\n    return false;\n  }\n  return !excludePatterns.some((re) => re.test(toolName));\n```\n\n</details>\n\n#### 缺口\n\n- 宿主是否让 guard 与 post-execute 共享同一个 exec 对象未由本仓库材料确定。\n  **影响：**若对象身份不同，单次调用可能被重复计数。\n  **进一步探讨：**检查所用宿主固定版本中两条事件链传递对象的构造与引用关系。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对提示提醒和总预算机制增加了什么？\n\n**研究主题：**贡献与相对优势\n\n#### 完整回答\n\n可确认的已有贡献是在宿主工具 guard 上把重复调用提示升级为执行前拒绝，并用按 Agent 分离的状态避免不同队友相互消耗同一连续计数。参数排序和双观察去重让规则更接近“同一语义参数的执行”，属于局部机制组合，不能据此称为新的循环检测算法。\n\n相对手工看轨迹，它把介入时点自动化；相对总调用预算，它只针对精确重复键，允许参数变化后的探索继续进行。这项取舍同时减少了对有进展长任务的直接限制，也放过交替工具或轻微改参的循环。作者关于官方提醒器只提示不阻断的描述没有附固定宿主源码，故本轮贡献判断限于本插件可核查的硬拒绝和状态结构，不给同类效果排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-18](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L17-L18)\n\nAgent 状态和执行对象分别使用弱引用。\n\n```text\n  const chains = new WeakMap();\n  const counted = new WeakSet();\n```\n\n**依据 2 · 源码核查**：[index.js:43-51](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L43-L51)\n\n明确的执行前拒绝文本。\n\n```text\n  ctx.tools.guard((exec) => {\n    const chain = observe(exec);\n    if (!chain || chain.count <= threshold) return undefined;\n    return [\n      `dsh-repeat-stop: blocked ${exec.name} after ${threshold} consecutive identical calls.`,\n      \"Change the arguments, use a different tool, or finish the task.\",\n      \"In Agent Teams sessions, stop spawning loops — ask the lead to conclude.\",\n      `count=${chain.count} threshold=${threshold}`,\n    ].join(\" \");\n```\n\n**依据 3 · 作者声明**：[README.md:71-76](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/README.md#L71-L76)\n\n作者区分精确重复与全会话预算的职责。\n\n```text\n## vs dsh-tool-budget\n\n| Plugin | What it blocks |\n|--------|----------------|\n| `dsh-repeat-stop` | Consecutive identical calls |\n| `dsh-tool-budget` | Total tool calls in the whole session |\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 连续性、排除和用户消息重置能否削弱保护？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\n最影响价值成立的前提是重复计数能够跨宿主步骤稳定累积，而不是用户消息检测每步重置。实现对 messages 只执行 some(user)，没有识别新用户消息或游标。如果宿主每步提供包含历史用户消息的完整数组，就可能每步删掉链；若只提供新增消息则符合设计。这是条件化兼容风险，不能写成已经发生的故障。\n\n规则本身也不能检测一般无进展。A、B 工具交替会重置链；参数增加无意义字段或时间戳也生成新键。相反同参数合法轮询会达到阈值。被排除的工具不会删除已计数链，A 与被排除轮询交错后仍可达到阈值。重试是否成功与是否产生结果完全不参与计数，因此六次成功的相同读取与六次失败获得同等处理。这些限制决定它是精确重复保险丝，不是进展判断或资源总预算。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:33-40](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L33-L40)\n\n排除工具直接返回，旧链保留。\n\n```text\n  function observe(exec) {\n    if (!exec.agent || !tracked(exec.name, includePatterns, excludePatterns)) return undefined;\n    if (counted.has(exec)) return chains.get(exec.agent);\n    counted.add(exec);\n    const key = callKey(exec);\n    const next = nextChain(chains.get(exec.agent), key);\n    chains.set(exec.agent, next);\n    return next;\n```\n\n**依据 2 · 源码核查**：[index.js:59-64](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L59-L64)\n\n任意 user 来源消息触发删除，没有新消息判定。\n\n```text\n  ctx.on(\"agent/pre-step\", ({ agent, messages }, next) => {\n    if (messages.some((message) => message.source?.kind === \"user\")) {\n      chains.delete(agent);\n    }\n    return next();\n  });\n```\n\n**依据 3 · 源码核查**：[lib/repeat.js:25-47](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/lib/repeat.js#L25-L47)\n\n精确键判等，不包含结果或任务进展。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function callKey(exec) {\n  return JSON.stringify([exec.name, canonicalize(exec.arguments)]);\n}\n\nexport function canonicalize(argumentsValue) {\n  return JSON.stringify(sortJsonValue(argumentsValue ?? {}));\n}\n\nexport function sortJsonValue(value) {\n  if (Array.isArray(value)) return value.map(sortJsonValue);\n  if (value !== null && typeof value === \"object\") {\n    const sorted = {};\n    for (const key of Object.keys(value).sort()) {\n      sorted[key] = sortJsonValue(value[key]);\n    }\n    return sorted;\n  }\n  return value;\n}\n\nexport function nextChain(chain, key) {\n  const count = chain !== undefined && chain.key === key ? chain.count + 1 : 1;\n  return { key, count };\n```\n\n</details>\n\n#### 缺口\n\n- 所用宿主 agent/pre-step 消息数组的增量语义未确定。\n  **影响：**直接影响跨步骤阻断是否可兑现。\n  **进一步探讨：**在对应宿主固定提交检查消息装配和事件派发代码；若含历史记录则需要新用户消息标识。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动和长期工作依赖什么，如何退出？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n包清单声明 ESM、入口 index.js、Node >=18，没有 npm runtime dependencies；Cordis 补丁将插件以 enabled 和阈值六插入配置。入口硬声明 tools 与 systemPrompt 注入，工具 guard 与 tools/post-execute、agent/pre-step 的执行语义是主要宿主依赖。提示区注册使用可选链，但注入声明本身并没有把 systemPrompt 标为可选，不能仅因可选链就承诺缺服务也能加载。\n\n维护者按 README 把 GitHub 来源加入目标 profile 并重启 web，再核对 loaded 日志和阻断轨迹；长期使用需要维护 include/exclude 与合法重试阈值。enabled=false 会在注册前返回，是源码可见的退出途径。更改配置是否需要重启、热卸载是否撤销事件处理由宿主管理，本仓库未给独立卸载回调。内存状态在重新 apply 后重建，不需要迁移磁盘数据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:14-28](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/package.json#L14-L28)\n\n运行时、入口和发布文件清单。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"scripts\": {\n    \"test\": \"node --test test/repeat.test.js test/apply.test.js\"\n  },\n  \"files\": [\n    \"index.js\",\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.zh.md\",\n    \"LICENSE\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:9-31](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L9-L31)\n\n注入、开关和提示注册。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport const name = \"dsh-repeat-stop\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const enabled = config.enabled !== false;\n  const threshold = readThreshold(config.threshold);\n  const excludePatterns = toPatterns(config.exclude ?? [\"job_output\", \"job_list\", \"job_kill\"]);\n  const includePatterns = toPatterns(config.include ?? []);\n  const chains = new WeakMap();\n  const counted = new WeakSet();\n\n  if (!enabled) {\n    console.log(\"[dsh-repeat-stop] disabled\");\n    return;\n  }\n\n  console.log(`[dsh-repeat-stop] loaded threshold=${threshold}`);\n\n  ctx.systemPrompt?.section?.({\n    name: \"plugin:dsh-repeat-stop\",\n    order: 40,\n    text: `Identical tool calls are hard-stopped after ${threshold} repeats (dsh-repeat-stop). Agent Teams: each teammate agent has its own streak counter — still avoid hammering the same tool. Prefer finishing or changing args over looping.`,\n  });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[cordis.patch.yml:1-10](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/cordis.patch.yml#L1-L10)\n\n配置插入的具体默认值。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n- insert:\n    - id: dsh-repeat-stop\n      name: dsh-repeat-stop\n      config:\n        enabled: true\n        threshold: 6\n        exclude:\n          - job_output\n          - job_list\n          - job_kill\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:41-69](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/README.md#L41-L69)\n\n安装、重启、配置与观察入口均为作者操作说明。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n````text\n## Install\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-repeat-stop\n```\n\nRestart `dsh web`. No new tool appears. When it fires, Trajectory shows `dsh-repeat-stop: blocked`.\n\n## Config\n\n```yaml\n- id: dsh-repeat-stop\n  name: dsh-repeat-stop\n  config:\n    enabled: true\n    threshold: 6\n    exclude:\n      - job_output\n      - job_list\n      - job_kill\n    # include: []   # if set, only these names (wildcards ok) are tracked\n```\n\n| Key | Default | Meaning |\n|-----|---------|---------|\n| `enabled` | `true` | Master switch |\n| `threshold` | `6` | Allowed streak; next call blocked (integer ≥ 2) |\n| `exclude` | job_* | Names that never count |\n| `include` | (empty) | If set, only these names are tracked |\n````\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续和恢复成本及收益是否可计量？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n源码没有单独账号、服务或付费 API 调用，不能据此把采用总成本写成零。首次投入是 profile 安装、重启和按工作流核查阈值与排除；持续阶段每个被跟踪调用都规范化并序列化参数，成本随参数大小、对象层级和键排序增长。WeakMap/WeakSet 不主动保活 Agent 和执行对象，仍需宿主正确释放对象。\n\n潜在现金收益来自阻断无效调用后减少工具或后续模型消耗，但本实现不统计 token、账单、任务完成率和被阻断次数收益。失败恢复由用户检查轨迹、识别合法重试、调整排除或停用，再核对原任务是否存在已完成副作用。恰当对照是同任务同模型下的手工中断或提醒器，计入失败尝试和人工复核；本材料没有这种工作负载与结果，因此不提供金额、耗时或 ROI 数值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/repeat.js:25-43](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/lib/repeat.js#L25-L43)\n\n递归规范化和排序显示每次调用的局部资源负担。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function callKey(exec) {\n  return JSON.stringify([exec.name, canonicalize(exec.arguments)]);\n}\n\nexport function canonicalize(argumentsValue) {\n  return JSON.stringify(sortJsonValue(argumentsValue ?? {}));\n}\n\nexport function sortJsonValue(value) {\n  if (Array.isArray(value)) return value.map(sortJsonValue);\n  if (value !== null && typeof value === \"object\") {\n    const sorted = {};\n    for (const key of Object.keys(value).sort()) {\n      sorted[key] = sortJsonValue(value[key]);\n    }\n    return sorted;\n  }\n  return value;\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:43-51](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L43-L51)\n\n阻断只返回文本，没有效果或账单核算。\n\n```text\n  ctx.tools.guard((exec) => {\n    const chain = observe(exec);\n    if (!chain || chain.count <= threshold) return undefined;\n    return [\n      `dsh-repeat-stop: blocked ${exec.name} after ${threshold} consecutive identical calls.`,\n      \"Change the arguments, use a different tool, or finish the task.\",\n      \"In Agent Teams sessions, stop spawning loops — ask the lead to conclude.\",\n      `count=${chain.count} threshold=${threshold}`,\n    ].join(\" \");\n```\n\n#### 缺口\n\n- 缺少合法轮询与故障重试混合任务的误拦截和成本记录。\n  **影响：**不能量化节省是否超过恢复负担。\n  **进一步探讨：**在另行授权的对照研究中记录合格任务数、总工具费、模型费和人工恢复时间。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 哪些工程设计值得复用，测试证明到哪里？\n\n**研究主题：**工程质量与复用\n\n#### 完整回答\n\n可借鉴的是将配置、通配过滤、参数规范化和链计数拆成纯函数，再由小型入口绑定宿主生命周期。WeakSet 防重复计数解决同一执行对象穿过多个钩子的重复观察问题，WeakMap 则隔离 Agent 计数，移植时必须同时确认执行对象身份和 Agent 对象生命周期，否则无法直接复制正确性结论。\n\n测试源码覆盖阈值回退、通配符、include/exclude、键顺序、空参数、链切换，以及 mock guard 阈值和用户消息重置。apply 测试的 mock 没有真实消息窗口，也没有 guard 后接 post-execute 的组合断言，不能证明双钩子去重和宿主事件先后关系。测试文件本轮只阅读未执行。代码易于检查不等于完整循环防护，更不意味着效果可靠性已得到测试验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/repeat.test.js:54-88](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/test/repeat.test.js#L54-L88)\n\n纯函数测试覆盖规范化和链切换。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\ndescribe(\"canonicalize\", () => {\n  it(\"sorts object keys so argument order does not reset the streak\", () => {\n    assert.equal(\n      canonicalize({ b: 1, a: 2 }),\n      canonicalize({ a: 2, b: 1 }),\n    );\n  });\n});\n\ndescribe(\"callKey\", () => {\n  it(\"includes the tool name and canonical arguments\", () => {\n    const a = callKey({ name: \"bash\", arguments: { command: \"ls\", cwd: \".\" } });\n    const b = callKey({ name: \"bash\", arguments: { cwd: \".\", command: \"ls\" } });\n    const c = callKey({ name: \"bash\", arguments: { command: \"pwd\" } });\n    assert.equal(a, b);\n    assert.notEqual(a, c);\n  });\n\n  it(\"treats missing arguments as an empty object\", () => {\n    assert.equal(\n      callKey({ name: \"net_doctor\" }),\n      callKey({ name: \"net_doctor\", arguments: {} }),\n    );\n  });\n});\n\ndescribe(\"nextChain\", () => {\n  it(\"increments only while the key stays the same\", () => {\n    const first = nextChain(undefined, \"a\");\n    const second = nextChain(first, \"a\");\n    const reset = nextChain(second, \"b\");\n    assert.deepEqual(first, { key: \"a\", count: 1 });\n    assert.deepEqual(second, { key: \"a\", count: 2 });\n    assert.deepEqual(reset, { key: \"b\", count: 1 });\n  });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[test/apply.test.js:26-61](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/test/apply.test.js#L26-L61)\n\nmock 覆盖 guard、重置、停用及默认配置，没有真实宿主事件链。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\ndescribe(\"apply\", () => {\n  it(\"blocks the call after the threshold of identical tools\", () => {\n    const ctx = mockCtx();\n    apply(ctx, { threshold: 2, exclude: [] });\n    const agent = {};\n    const guard = ctx.guards[0];\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n    assert.match(guard(call(agent, \"bash\", { command: \"ls\" })), /blocked bash after 2/);\n  });\n\n  it(\"resets the streak after a real user message\", () => {\n    const ctx = mockCtx();\n    apply(ctx, { threshold: 2, exclude: [] });\n    const agent = {};\n    const guard = ctx.guards[0];\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n    ctx.handlers[\"agent/pre-step\"]({\n      agent,\n      messages: [{ source: { kind: \"user\" } }],\n    }, () => {});\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n  });\n\n  it(\"does not install a guard when disabled\", () => {\n    const ctx = mockCtx();\n    apply(ctx, { enabled: false, threshold: 6 });\n    assert.equal(ctx.guards.length, 0);\n  });\n\n  it(\"loads with the default threshold when config omits it\", () => {\n    const ctx = mockCtx();\n    apply(ctx, { exclude: [] });\n    assert.equal(ctx.guards.length, 1);\n  });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:33-40](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L33-L40)\n\n弱引用去重机制及其对象身份前提。\n\n```text\n  function observe(exec) {\n    if (!exec.agent || !tracked(exec.name, includePatterns, excludePatterns)) return undefined;\n    if (counted.has(exec)) return chains.get(exec.agent);\n    counted.add(exec);\n    const key = callKey(exec);\n    const next = nextChain(chains.get(exec.agent), key);\n    chains.set(exec.agent, next);\n    return next;\n```\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 从绕过与误拦截可推导什么新机制？\n\n**研究主题：**新假设与验证\n\n#### 完整回答\n\n未验证假设是保留现有精确重复保险丝，同时由工具结果声明可等待的进展状态，将合法轮询与无变化失败分开计数。推导来自两个事实，即规则目前只看输入键、不看输出，而默认排除 job 工具体现了合法等待的存在。相对直接增加阈值，这种组合有望保留故障阻断而减少合法轮询误拦，但会新增结果契约、状态所有权和工具适配成本。\n\n最小验证先用固定事件序列对照精确规则与候选规则，覆盖输出有进展、输出不变、结果缺失、工具交替和历史用户消息。随后如获授权，在相同宿主、模型和任务下比较合格交付、无效调用与人工恢复；若候选规则靠模型自报进展持续放过故障循环，或适配负担大于减少的误拦截，就否定采用该扩展。该设想没有进入本插件当前能力，也不计入现有贡献评分。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/repeat.js:25-47](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/lib/repeat.js#L25-L47)\n\n输入精确键与简单链是推导起点。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nexport function callKey(exec) {\n  return JSON.stringify([exec.name, canonicalize(exec.arguments)]);\n}\n\nexport function canonicalize(argumentsValue) {\n  return JSON.stringify(sortJsonValue(argumentsValue ?? {}));\n}\n\nexport function sortJsonValue(value) {\n  if (Array.isArray(value)) return value.map(sortJsonValue);\n  if (value !== null && typeof value === \"object\") {\n    const sorted = {};\n    for (const key of Object.keys(value).sort()) {\n      sorted[key] = sortJsonValue(value[key]);\n    }\n    return sorted;\n  }\n  return value;\n}\n\nexport function nextChain(chain, key) {\n  const count = chain !== undefined && chain.key === key ? chain.count + 1 : 1;\n  return { key, count };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:15-16](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L15-L16)\n\n默认排除合法任务轮询类工具。\n\n```text\n  const excludePatterns = toPatterns(config.exclude ?? [\"job_output\", \"job_list\", \"job_kill\"]);\n  const includePatterns = toPatterns(config.include ?? []);\n```\n\n#### 缺口\n\n- 缺少结果进展契约及候选机制的实际对照。\n  **影响：**只能形成设计假设，不能宣称减少误拦截。\n  **进一步探讨：**先约定结果状态和所有权，再对固定反例序列进行可复核比较。\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对谁值得试用，什么结果应停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n本轮建议观察，适合已经遇到原样工具循环、愿意核查宿主事件语义的维护者。硬拒绝、参数排序与按 Agent 隔离有明确源码依据，安装及关闭流程简单；但历史用户消息是否每步重置是直接影响主能力的兼容缺口，不能在未查清时普遍推荐启用。经确认宿主只传新增消息且执行对象共享后，才有理由为可丢弃、低副作用工作流制定小范围试用。\n\n合格判据应包括阈值后稳定拒绝、合法轮询不误拦、不同 Agent 不串计数和停用后恢复正常调用。若每步重置导致不能累积，或正常等待需要不断修改排除且收益不显著，应停止该工作流采用。不给 install，因为没有同版本安装、核心任务和禁用卸载的真实验收；推荐分也仅表达固定源码研究下的采用优先级。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:43-64](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/index.js#L43-L64)\n\n同一段源码同时支持硬拒绝和兼容缺口，采用结论须同时考虑。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  ctx.tools.guard((exec) => {\n    const chain = observe(exec);\n    if (!chain || chain.count <= threshold) return undefined;\n    return [\n      `dsh-repeat-stop: blocked ${exec.name} after ${threshold} consecutive identical calls.`,\n      \"Change the arguments, use a different tool, or finish the task.\",\n      \"In Agent Teams sessions, stop spawning loops — ask the lead to conclude.\",\n      `count=${chain.count} threshold=${threshold}`,\n    ].join(\" \");\n  });\n\n  ctx.on(\"tools/post-execute\", async (exec, _result, next) => {\n    observe(exec);\n    return next();\n  });\n\n  ctx.on(\"agent/pre-step\", ({ agent, messages }, next) => {\n    if (messages.some((message) => message.source?.kind === \"user\")) {\n      chains.delete(agent);\n    }\n    return next();\n  });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[test/apply.test.js:37-54](https://github.com/173787247/dsh-repeat-stop/blob/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9/test/apply.test.js#L37-L54)\n\n源码测试明确重置与关闭的预期，但不是宿主验收。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  it(\"resets the streak after a real user message\", () => {\n    const ctx = mockCtx();\n    apply(ctx, { threshold: 2, exclude: [] });\n    const agent = {};\n    const guard = ctx.guards[0];\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n    ctx.handlers[\"agent/pre-step\"]({\n      agent,\n      messages: [{ source: { kind: \"user\" } }],\n    }, () => {});\n    assert.equal(guard(call(agent, \"bash\", { command: \"ls\" })), undefined);\n  });\n\n  it(\"does not install a guard when disabled\", () => {\n    const ctx = mockCtx();\n    apply(ctx, { enabled: false, threshold: 6 });\n    assert.equal(ctx.guards.length, 0);\n```\n\n</details>\n\n#### 缺口\n\n- 宿主消息和执行对象的约定尚未固定。\n  **影响：**阻碍把观察升级为当前可控试用。\n  **进一步探讨：**定位部署宿主的固定版本核查两项事件契约，再按阈值和合法轮询反例决定试用。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：754c8f369f2ed2fc889610ed17de861da5dc967f9fe522a96a8c6c1067cb3474。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 120 | 103 | 0 | — |\n| .md | source | 2 | 172 | — | — | 879 |\n| .js | test | 2 | 151 | 135 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 精确重复硬拒绝 | 阻止原样连续重试 | 不覆盖交替工具和变化参数循环 |\n| 按 Agent 隔离与去重 | 多 Agent 分开计数 | 依赖 Agent 和 exec 对象语义 |\n| 过滤与用户消息重置 | 保留合法轮询和新任务 | 历史消息窗口需核对 |\n\n## 工程亮点\n\n纯函数与宿主接线分开、弱引用状态隔离值得借鉴；测试源码覆盖阈值和重置，却没有真实事件消息窗口或双钩子对象身份的集成证明。详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/repeat.js、test/repeat.test.js、test/apply.test.js、cordis.patch.yml、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定 Git 提交源码核查，包括入口、纯函数、配置、清单与两组测试材料；不把作者兼容矩阵当宿主验收。\n- 下一步：进一步探讨可从宿主 pre-step 消息窗口与执行对象传递关系入手，再比较固定循环和合法轮询序列，最后用合格任务成本决定是否值得扩展规则。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-repeat-stop/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-repeat-stop\",\n  \"revision\": \"cb1ed9fb558072adf80e2068b3bc7c50ff736fb9\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"index.js\",\n    \"lib/repeat.js\",\n    \"test/repeat.test.js\",\n    \"test/apply.test.js\",\n    \"cordis.patch.yml\",\n    \"package.json\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"固定版本的精确重复保险丝能否以可控误拦截负担切断 Agent 原样重试，其贡献、限制和采用条件是什么？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"什么重复任务适合硬阻断，怎样算合格结果？\",\n        \"answer\": \"适用对象是运行会调用工具的 DSH Agent 的维护者，尤其是工具失败后模型连续提交完全相同调用的任务。这里的合格结果不是“完成用户业务”，而是在允许的一段重试后拒绝进一步原样调用，并让模型改变参数、换工具或结束。README 明确将它与限制整场工具总量的预算插件区分；正常轮询不能直接按这种判据视为无效，因此默认排除了 job_output、job_list、job_kill。\\n\\n原有替代办法是用户看轨迹后手工中断，或者按作者描述使用仅提示不拦截的 repeat-tool-reminder。后者的具体官方版本未在本插件内固定，故本轮只把它作为作者提出的参照，不能宣称完成宿主能力全量比较。插件适合重复副作用可接受且希望尽早介入的任务，不适合依赖多次同参数读取等待远端状态变化、又没有正确设置排除的流程。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 35,\n            \"line_end\": 39,\n            \"observation\": \"作者定义提醒与硬拦截的差别及默认第七次阻断。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 12,\n            \"line_end\": 18,\n            \"observation\": \"默认排除三种 job 工具，体现正常轮询与无效重试需要区分。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"调用如何计数、阻断和重置？\",\n        \"answer\": \"apply 读取 enabled、threshold 和 include/exclude 规则，创建按 Agent 对象索引的 WeakMap 与按执行对象去重的 WeakSet。guard 在执行前调用 observe，只有存在 agent 且工具通过过滤才计数。调用键包含工具名和参数的规范化 JSON，递归排序对象键、保留数组顺序，因此对象键顺序变化不会重置计数。相同键递增，不同键从一开始；超过阈值时返回拒绝文本，默认六次允许、第七次拒绝。\\n\\npost-execute 再次调用同一个 observe，意图覆盖不同执行路径并用 WeakSet 避免同一个 exec 被算两次。agent/pre-step 在 messages 中看到 user 来源便删除该 Agent 的计数。状态只保存在内存，没有磁盘写入、外部请求或新增模型工具。过滤分支会直接返回而不重置旧链，因此“连续”实际指连续被跟踪的调用，不是轨迹上所有调用。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 33,\n            \"line_end\": 64,\n            \"observation\": \"展示过滤、去重、guard、事后观察与用户消息重置。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/repeat.js\",\n            \"line_start\": 25,\n            \"line_end\": 54,\n            \"observation\": \"调用键、排序、计数和过滤的纯函数实现。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"宿主是否让 guard 与 post-execute 共享同一个 exec 对象未由本仓库材料确定。\",\n            \"impact\": \"若对象身份不同，单次调用可能被重复计数。\",\n            \"next_step\": \"检查所用宿主固定版本中两条事件链传递对象的构造与引用关系。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"相对提示提醒和总预算机制增加了什么？\",\n        \"answer\": \"可确认的已有贡献是在宿主工具 guard 上把重复调用提示升级为执行前拒绝，并用按 Agent 分离的状态避免不同队友相互消耗同一连续计数。参数排序和双观察去重让规则更接近“同一语义参数的执行”，属于局部机制组合，不能据此称为新的循环检测算法。\\n\\n相对手工看轨迹，它把介入时点自动化；相对总调用预算，它只针对精确重复键，允许参数变化后的探索继续进行。这项取舍同时减少了对有进展长任务的直接限制，也放过交替工具或轻微改参的循环。作者关于官方提醒器只提示不阻断的描述没有附固定宿主源码，故本轮贡献判断限于本插件可核查的硬拒绝和状态结构，不给同类效果排名。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 17,\n            \"line_end\": 18,\n            \"observation\": \"Agent 状态和执行对象分别使用弱引用。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 43,\n            \"line_end\": 51,\n            \"observation\": \"明确的执行前拒绝文本。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 71,\n            \"line_end\": 76,\n            \"observation\": \"作者区分精确重复与全会话预算的职责。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"连续性、排除和用户消息重置能否削弱保护？\",\n        \"answer\": \"最影响价值成立的前提是重复计数能够跨宿主步骤稳定累积，而不是用户消息检测每步重置。实现对 messages 只执行 some(user)，没有识别新用户消息或游标。如果宿主每步提供包含历史用户消息的完整数组，就可能每步删掉链；若只提供新增消息则符合设计。这是条件化兼容风险，不能写成已经发生的故障。\\n\\n规则本身也不能检测一般无进展。A、B 工具交替会重置链；参数增加无意义字段或时间戳也生成新键。相反同参数合法轮询会达到阈值。被排除的工具不会删除已计数链，A 与被排除轮询交错后仍可达到阈值。重试是否成功与是否产生结果完全不参与计数，因此六次成功的相同读取与六次失败获得同等处理。这些限制决定它是精确重复保险丝，不是进展判断或资源总预算。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 33,\n            \"line_end\": 40,\n            \"observation\": \"排除工具直接返回，旧链保留。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 59,\n            \"line_end\": 64,\n            \"observation\": \"任意 user 来源消息触发删除，没有新消息判定。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/repeat.js\",\n            \"line_start\": 25,\n            \"line_end\": 47,\n            \"observation\": \"精确键判等，不包含结果或任务进展。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"所用宿主 agent/pre-step 消息数组的增量语义未确定。\",\n            \"impact\": \"直接影响跨步骤阻断是否可兑现。\",\n            \"next_step\": \"在对应宿主固定提交检查消息装配和事件派发代码；若含历史记录则需要新用户消息标识。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"启动和长期工作依赖什么，如何退出？\",\n        \"answer\": \"包清单声明 ESM、入口 index.js、Node >=18，没有 npm runtime dependencies；Cordis 补丁将插件以 enabled 和阈值六插入配置。入口硬声明 tools 与 systemPrompt 注入，工具 guard 与 tools/post-execute、agent/pre-step 的执行语义是主要宿主依赖。提示区注册使用可选链，但注入声明本身并没有把 systemPrompt 标为可选，不能仅因可选链就承诺缺服务也能加载。\\n\\n维护者按 README 把 GitHub 来源加入目标 profile 并重启 web，再核对 loaded 日志和阻断轨迹；长期使用需要维护 include/exclude 与合法重试阈值。enabled=false 会在注册前返回，是源码可见的退出途径。更改配置是否需要重启、热卸载是否撤销事件处理由宿主管理，本仓库未给独立卸载回调。内存状态在重新 apply 后重建，不需要迁移磁盘数据。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 14,\n            \"line_end\": 28,\n            \"observation\": \"运行时、入口和发布文件清单。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 9,\n            \"line_end\": 31,\n            \"observation\": \"注入、开关和提示注册。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"配置插入的具体默认值。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 41,\n            \"line_end\": 69,\n            \"observation\": \"安装、重启、配置与观察入口均为作者操作说明。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"首次、持续和恢复成本及收益是否可计量？\",\n        \"answer\": \"源码没有单独账号、服务或付费 API 调用，不能据此把采用总成本写成零。首次投入是 profile 安装、重启和按工作流核查阈值与排除；持续阶段每个被跟踪调用都规范化并序列化参数，成本随参数大小、对象层级和键排序增长。WeakMap/WeakSet 不主动保活 Agent 和执行对象，仍需宿主正确释放对象。\\n\\n潜在现金收益来自阻断无效调用后减少工具或后续模型消耗，但本实现不统计 token、账单、任务完成率和被阻断次数收益。失败恢复由用户检查轨迹、识别合法重试、调整排除或停用，再核对原任务是否存在已完成副作用。恰当对照是同任务同模型下的手工中断或提醒器，计入失败尝试和人工复核；本材料没有这种工作负载与结果，因此不提供金额、耗时或 ROI 数值。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/repeat.js\",\n            \"line_start\": 25,\n            \"line_end\": 43,\n            \"observation\": \"递归规范化和排序显示每次调用的局部资源负担。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 43,\n            \"line_end\": 51,\n            \"observation\": \"阻断只返回文本，没有效果或账单核算。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少合法轮询与故障重试混合任务的误拦截和成本记录。\",\n            \"impact\": \"不能量化节省是否超过恢复负担。\",\n            \"next_step\": \"在另行授权的对照研究中记录合格任务数、总工具费、模型费和人工恢复时间。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"哪些工程设计值得复用，测试证明到哪里？\",\n        \"answer\": \"可借鉴的是将配置、通配过滤、参数规范化和链计数拆成纯函数，再由小型入口绑定宿主生命周期。WeakSet 防重复计数解决同一执行对象穿过多个钩子的重复观察问题，WeakMap 则隔离 Agent 计数，移植时必须同时确认执行对象身份和 Agent 对象生命周期，否则无法直接复制正确性结论。\\n\\n测试源码覆盖阈值回退、通配符、include/exclude、键顺序、空参数、链切换，以及 mock guard 阈值和用户消息重置。apply 测试的 mock 没有真实消息窗口，也没有 guard 后接 post-execute 的组合断言，不能证明双钩子去重和宿主事件先后关系。测试文件本轮只阅读未执行。代码易于检查不等于完整循环防护，更不意味着效果可靠性已得到测试验证。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"test/repeat.test.js\",\n            \"line_start\": 54,\n            \"line_end\": 88,\n            \"observation\": \"纯函数测试覆盖规范化和链切换。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"test/apply.test.js\",\n            \"line_start\": 26,\n            \"line_end\": 61,\n            \"observation\": \"mock 覆盖 guard、重置、停用及默认配置，没有真实宿主事件链。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 33,\n            \"line_end\": 40,\n            \"observation\": \"弱引用去重机制及其对象身份前提。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"从绕过与误拦截可推导什么新机制？\",\n        \"answer\": \"未验证假设是保留现有精确重复保险丝，同时由工具结果声明可等待的进展状态，将合法轮询与无变化失败分开计数。推导来自两个事实，即规则目前只看输入键、不看输出，而默认排除 job 工具体现了合法等待的存在。相对直接增加阈值，这种组合有望保留故障阻断而减少合法轮询误拦，但会新增结果契约、状态所有权和工具适配成本。\\n\\n最小验证先用固定事件序列对照精确规则与候选规则，覆盖输出有进展、输出不变、结果缺失、工具交替和历史用户消息。随后如获授权，在相同宿主、模型和任务下比较合格交付、无效调用与人工恢复；若候选规则靠模型自报进展持续放过故障循环，或适配负担大于减少的误拦截，就否定采用该扩展。该设想没有进入本插件当前能力，也不计入现有贡献评分。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/repeat.js\",\n            \"line_start\": 25,\n            \"line_end\": 47,\n            \"observation\": \"输入精确键与简单链是推导起点。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 15,\n            \"line_end\": 16,\n            \"observation\": \"默认排除合法任务轮询类工具。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少结果进展契约及候选机制的实际对照。\",\n            \"impact\": \"只能形成设计假设，不能宣称减少误拦截。\",\n            \"next_step\": \"先约定结果状态和所有权，再对固定反例序列进行可复核比较。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"对谁值得试用，什么结果应停止？\",\n        \"answer\": \"本轮建议观察，适合已经遇到原样工具循环、愿意核查宿主事件语义的维护者。硬拒绝、参数排序与按 Agent 隔离有明确源码依据，安装及关闭流程简单；但历史用户消息是否每步重置是直接影响主能力的兼容缺口，不能在未查清时普遍推荐启用。经确认宿主只传新增消息且执行对象共享后，才有理由为可丢弃、低副作用工作流制定小范围试用。\\n\\n合格判据应包括阈值后稳定拒绝、合法轮询不误拦、不同 Agent 不串计数和停用后恢复正常调用。若每步重置导致不能累积，或正常等待需要不断修改排除且收益不显著，应停止该工作流采用。不给 install，因为没有同版本安装、核心任务和禁用卸载的真实验收；推荐分也仅表达固定源码研究下的采用优先级。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 43,\n            \"line_end\": 64,\n            \"observation\": \"同一段源码同时支持硬拒绝和兼容缺口，采用结论须同时考虑。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"test/apply.test.js\",\n            \"line_start\": 37,\n            \"line_end\": 54,\n            \"observation\": \"源码测试明确重置与关闭的预期，但不是宿主验收。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"宿主消息和执行对象的约定尚未固定。\",\n            \"impact\": \"阻碍把观察升级为当前可控试用。\",\n            \"next_step\": \"定位部署宿主的固定版本核查两项事件契约，再按阈值和合法轮询反例决定试用。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-repeat-stop\\n\\nDeepSeek Harness plugin: **hard-stop** consecutive identical tool calls (same tool + same arguments).\\n\\nPairs with [dsh-tool-budget](https://github.com/173787247/dsh-tool-budget). Part of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\\n\\n[中文说明 → README.zh.md](./README.zh.md)\\n\\n## Where it sits\\n\\nHard-stops a streak of identical tool calls. It does not cap a varied tool session; that is dsh-tool-budget.\\n\\n```mermaid\\nflowchart LR\\n  calls[\\\"identical tool calls\\\"] --> guard[\\\"dsh-repeat-stop\\\"] --> stop[\\\"hard stop\\\"]\\n```\\n\\nSuite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.1.2** (daily). Do not copy that matrix into this README.\\n\\n\\n---\\n## Compatibility\\n\\n| Field | Value |\\n|-------|-------|\\n| **Plugin** | `dsh-repeat-stop` **0.1.2** |\\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\\n| **Kit set** | `daily` (also in `github` / `full`; fetch+net also in `llm`) |\\n| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |\\n| **Agent Teams** | Upstream experimental; not required here |\\n\\nSuite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\\n\\n## Why\\n\\nOfficial `repeat-tool-reminder` only advises and never blocks. Agents can still spin on the same failing call. This plugin **denies** the next call after a streak.\\n\\nDefault: **6** identical calls may run; the **7th** is blocked. Changing args/tool or a real user message resets the streak.\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-repeat-stop\\n```\\n\\nRestart `dsh web`. No new tool appears. When it fires, Trajectory shows `dsh-repeat-stop: blocked`.\\n\\n## Config\\n\\n```yaml\\n- id: dsh-repeat-stop\\n  name: dsh-repeat-stop\\n  config:\\n    enabled: true\\n    threshold: 6\\n    exclude:\\n      - job_output\\n      - job_list\\n      - job_kill\\n    # include: []   # if set, only these names (wildcards ok) are tracked\\n```\\n\\n| Key | Default | Meaning |\\n|-----|---------|---------|\\n| `enabled` | `true` | Master switch |\\n| `threshold` | `6` | Allowed streak; next call blocked (integer ≥ 2) |\\n| `exclude` | job_* | Names that never count |\\n| `include` | (empty) | If set, only these names are tracked |\\n\\n## vs dsh-tool-budget\\n\\n| Plugin | What it blocks |\\n|--------|----------------|\\n| `dsh-repeat-stop` | Consecutive identical calls |\\n| `dsh-tool-budget` | Total tool calls in the whole session |\\n\\n## Test\\n\\n```sh\\nnpm test\\n```\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-repeat-stop\\\",\\n  \\\"version\\\": \\\"0.1.2\\\",\\n  \\\"description\\\": \\\"Hard-stop consecutive identical DeepSeek Harness tool calls after a configurable streak.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-repeat-stop.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-repeat-stop/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/173787247/dsh-repeat-stop#readme\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/repeat.test.js test/apply.test.js\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"loop\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import {\\n  callKey,\\n  nextChain,\\n  readThreshold,\\n  toPatterns,\\n  tracked,\\n} from \\\"./lib/repeat.js\\\";\\n\\nexport const name = \\\"dsh-repeat-stop\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  const enabled = config.enabled !== false;\\n  const threshold = readThreshold(config.threshold);\\n  const excludePatterns = toPatterns(config.exclude ?? [\\\"job_output\\\", \\\"job_list\\\", \\\"job_kill\\\"]);\\n  const includePatterns = toPatterns(config.include ?? []);\\n  const chains = new WeakMap();\\n  const counted = new WeakSet();\\n\\n  if (!enabled) {\\n    console.log(\\\"[dsh-repeat-stop] disabled\\\");\\n    return;\\n  }\\n\\n  console.log(`[dsh-repeat-stop] loaded threshold=${threshold}`);\\n\\n  ctx.systemPrompt?.section?.({\\n    name: \\\"plugin:dsh-repeat-stop\\\",\\n    order: 40,\\n    text: `Identical tool calls are hard-stopped after ${threshold} repeats (dsh-repeat-stop). Agent Teams: each teammate agent has its own streak counter — still avoid hammering the same tool. Prefer finishing or changing args over looping.`,\\n  });\\n\\n  function observe(exec) {\\n    if (!exec.agent || !tracked(exec.name, includePatterns, excludePatterns)) return undefined;\\n    if (counted.has(exec)) return chains.get(exec.agent);\\n    counted.add(exec);\\n    const key = callKey(exec);\\n    const next = nextChain(chains.get(exec.agent), key);\\n    chains.set(exec.agent, next);\\n    return next;\\n  }\\n\\n  ctx.tools.guard((exec) => {\\n    const chain = observe(exec);\\n    if (!chain || chain.count <= threshold) return undefined;\\n    return [\\n      `dsh-repeat-stop: blocked ${exec.name} after ${threshold} consecutive identical calls.`,\\n      \\\"Change the arguments, use a different tool, or finish the task.\\\",\\n      \\\"In Agent Teams sessions, stop spawning loops — ask the lead to conclude.\\\",\\n      `count=${chain.count} threshold=${threshold}`,\\n    ].join(\\\" \\\");\\n  });\\n\\n  ctx.on(\\\"tools/post-execute\\\", async (exec, _result, next) => {\\n    observe(exec);\\n    return next();\\n  });\\n\\n  ctx.on(\\\"agent/pre-step\\\", ({ agent, messages }, next) => {\\n    if (messages.some((message) => message.source?.kind === \\\"user\\\")) {\\n      chains.delete(agent);\\n    }\\n    return next();\\n  });\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/repeat.js\",\n      \"content\": \"export const DEFAULT_THRESHOLD = 6;\\n\\nexport function readThreshold(value, fallback = DEFAULT_THRESHOLD) {\\n  if (value === undefined || value === null || value === \\\"\\\") {\\n    return fallback;\\n  }\\n  const n = Number(value);\\n  if (!Number.isInteger(n) || n < 2) {\\n    console.warn(`[dsh-repeat-stop] invalid threshold ${JSON.stringify(value)}; using ${fallback}`);\\n    return fallback;\\n  }\\n  return n;\\n}\\n\\nexport function toPatterns(list) {\\n  if (!Array.isArray(list)) return [];\\n  return list.map((pattern) => wildcardToRegExp(String(pattern)));\\n}\\n\\nexport function wildcardToRegExp(pattern) {\\n  const escaped = pattern.replace(/[|\\\\\\\\{}()[\\\\]^$+?.]/g, \\\"\\\\\\\\$&\\\");\\n  return new RegExp(`^${escaped.replaceAll(\\\"*\\\", \\\".*\\\")}$`);\\n}\\n\\nexport function callKey(exec) {\\n  return JSON.stringify([exec.name, canonicalize(exec.arguments)]);\\n}\\n\\nexport function canonicalize(argumentsValue) {\\n  return JSON.stringify(sortJsonValue(argumentsValue ?? {}));\\n}\\n\\nexport function sortJsonValue(value) {\\n  if (Array.isArray(value)) return value.map(sortJsonValue);\\n  if (value !== null && typeof value === \\\"object\\\") {\\n    const sorted = {};\\n    for (const key of Object.keys(value).sort()) {\\n      sorted[key] = sortJsonValue(value[key]);\\n    }\\n    return sorted;\\n  }\\n  return value;\\n}\\n\\nexport function nextChain(chain, key) {\\n  const count = chain !== undefined && chain.key === key ? chain.count + 1 : 1;\\n  return { key, count };\\n}\\n\\nexport function tracked(toolName, includePatterns, excludePatterns) {\\n  if (includePatterns.length > 0 && !includePatterns.some((re) => re.test(toolName))) {\\n    return false;\\n  }\\n  return !excludePatterns.some((re) => re.test(toolName));\\n}\\n\"\n    },\n    {\n      \"path\": \"test/repeat.test.js\",\n      \"content\": \"import assert from \\\"node:assert/strict\\\";\\nimport { describe, it } from \\\"node:test\\\";\\nimport {\\n  callKey,\\n  canonicalize,\\n  nextChain,\\n  readThreshold,\\n  toPatterns,\\n  tracked,\\n  wildcardToRegExp,\\n} from \\\"../lib/repeat.js\\\";\\n\\ndescribe(\\\"readThreshold\\\", () => {\\n  it(\\\"accepts integers >= 2\\\", () => {\\n    assert.equal(readThreshold(6), 6);\\n    assert.equal(readThreshold(\\\"8\\\"), 8);\\n  });\\n\\n  it(\\\"falls back to 6 when the value is missing or invalid\\\", () => {\\n    assert.equal(readThreshold(undefined), 6);\\n    assert.equal(readThreshold(1), 6);\\n    assert.equal(readThreshold(1.5), 6);\\n  });\\n});\\n\\ndescribe(\\\"wildcardToRegExp\\\", () => {\\n  it(\\\"matches a literal tool name\\\", () => {\\n    assert.equal(wildcardToRegExp(\\\"bash\\\").test(\\\"bash\\\"), true);\\n    assert.equal(wildcardToRegExp(\\\"bash\\\").test(\\\"bash2\\\"), false);\\n  });\\n\\n  it(\\\"treats * as a glob\\\", () => {\\n    const re = wildcardToRegExp(\\\"job_*\\\");\\n    assert.equal(re.test(\\\"job_output\\\"), true);\\n    assert.equal(re.test(\\\"net_doctor\\\"), false);\\n  });\\n});\\n\\ndescribe(\\\"tracked\\\", () => {\\n  it(\\\"skips excluded names\\\", () => {\\n    const exclude = toPatterns([\\\"job_output\\\", \\\"job_*\\\"]);\\n    assert.equal(tracked(\\\"job_list\\\", [], exclude), false);\\n    assert.equal(tracked(\\\"bash\\\", [], exclude), true);\\n  });\\n\\n  it(\\\"limits tracking to include when set\\\", () => {\\n    const include = toPatterns([\\\"bash\\\", \\\"read_*\\\"]);\\n    assert.equal(tracked(\\\"bash\\\", include, []), true);\\n    assert.equal(tracked(\\\"read_file\\\", include, []), true);\\n    assert.equal(tracked(\\\"net_doctor\\\", include, []), false);\\n  });\\n});\\n\\ndescribe(\\\"canonicalize\\\", () => {\\n  it(\\\"sorts object keys so argument order does not reset the streak\\\", () => {\\n    assert.equal(\\n      canonicalize({ b: 1, a: 2 }),\\n      canonicalize({ a: 2, b: 1 }),\\n    );\\n  });\\n});\\n\\ndescribe(\\\"callKey\\\", () => {\\n  it(\\\"includes the tool name and canonical arguments\\\", () => {\\n    const a = callKey({ name: \\\"bash\\\", arguments: { command: \\\"ls\\\", cwd: \\\".\\\" } });\\n    const b = callKey({ name: \\\"bash\\\", arguments: { cwd: \\\".\\\", command: \\\"ls\\\" } });\\n    const c = callKey({ name: \\\"bash\\\", arguments: { command: \\\"pwd\\\" } });\\n    assert.equal(a, b);\\n    assert.notEqual(a, c);\\n  });\\n\\n  it(\\\"treats missing arguments as an empty object\\\", () => {\\n    assert.equal(\\n      callKey({ name: \\\"net_doctor\\\" }),\\n      callKey({ name: \\\"net_doctor\\\", arguments: {} }),\\n    );\\n  });\\n});\\n\\ndescribe(\\\"nextChain\\\", () => {\\n  it(\\\"increments only while the key stays the same\\\", () => {\\n    const first = nextChain(undefined, \\\"a\\\");\\n    const second = nextChain(first, \\\"a\\\");\\n    const reset = nextChain(second, \\\"b\\\");\\n    assert.deepEqual(first, { key: \\\"a\\\", count: 1 });\\n    assert.deepEqual(second, { key: \\\"a\\\", count: 2 });\\n    assert.deepEqual(reset, { key: \\\"b\\\", count: 1 });\\n  });\\n});\\n\"\n    },\n    {\n      \"path\": \"test/apply.test.js\",\n      \"content\": \"import assert from \\\"node:assert/strict\\\";\\nimport { describe, it } from \\\"node:test\\\";\\nimport { apply } from \\\"../index.js\\\";\\n\\nfunction mockCtx() {\\n  const guards = [];\\n  const handlers = {};\\n  return {\\n    tools: {\\n      guard(fn) {\\n        guards.push(fn);\\n      },\\n    },\\n    on(name, fn) {\\n      handlers[name] = fn;\\n    },\\n    guards,\\n    handlers,\\n  };\\n}\\n\\nfunction call(agent, name, args) {\\n  return { agent, name, arguments: args };\\n}\\n\\ndescribe(\\\"apply\\\", () => {\\n  it(\\\"blocks the call after the threshold of identical tools\\\", () => {\\n    const ctx = mockCtx();\\n    apply(ctx, { threshold: 2, exclude: [] });\\n    const agent = {};\\n    const guard = ctx.guards[0];\\n    assert.equal(guard(call(agent, \\\"bash\\\", { command: \\\"ls\\\" })), undefined);\\n    assert.equal(guard(call(agent, \\\"bash\\\", { command: \\\"ls\\\" })), undefined);\\n    assert.match(guard(call(agent, \\\"bash\\\", { command: \\\"ls\\\" })), /blocked bash after 2/);\\n  });\\n\\n  it(\\\"resets the streak after a real user message\\\", () => {\\n    const ctx = mockCtx();\\n    apply(ctx, { threshold: 2, exclude: [] });\\n    const agent = {};\\n    const guard = ctx.guards[0];\\n    assert.equal(guard(call(agent, \\\"bash\\\", { command: \\\"ls\\\" })), undefined);\\n    assert.equal(guard(call(agent, \\\"bash\\\", { command: \\\"ls\\\" })), undefined);\\n    ctx.handlers[\\\"agent/pre-step\\\"]({\\n      agent,\\n      messages: [{ source: { kind: \\\"user\\\" } }],\\n    }, () => {});\\n    assert.equal(guard(call(agent, \\\"bash\\\", { command: \\\"ls\\\" })), undefined);\\n  });\\n\\n  it(\\\"does not install a guard when disabled\\\", () => {\\n    const ctx = mockCtx();\\n    apply(ctx, { enabled: false, threshold: 6 });\\n    assert.equal(ctx.guards.length, 0);\\n  });\\n\\n  it(\\\"loads with the default threshold when config omits it\\\", () => {\\n    const ctx = mockCtx();\\n    apply(ctx, { exclude: [] });\\n    assert.equal(ctx.guards.length, 1);\\n  });\\n});\\n\"\n    },\n    {\n      \"path\": \"cordis.patch.yml\",\n      \"content\": \"- insert:\\n    - id: dsh-repeat-stop\\n      name: dsh-repeat-stop\\n      config:\\n        enabled: true\\n        threshold: 6\\n        exclude:\\n          - job_output\\n          - job_list\\n          - job_kill\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"cb1ed9fb558072adf80e2068b3bc7c50ff736fb9\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"754c8f369f2ed2fc889610ed17de861da5dc967f9fe522a96a8c6c1067cb3474\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 120,\n        \"code\": 103,\n        \"comments\": 0,\n        \"blank\": 17\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 172,\n        \"words\": 879\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 151,\n        \"code\": 135,\n        \"comments\": 0,\n        \"blank\": 16\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 54,\n          \"api\": \"ctx.on\",\n          \"name\": \"tools/post-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 59,\n          \"api\": \"ctx.on\",\n          \"name\": \"agent/pre-step\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"agent/pre-step\",\n          \"tools/post-execute\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 2,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-repeat-stop\",\n    \"repository_id\": 1339262076,\n    \"captured_at\": \"2026-10-22T04:37:07.159Z\",\n    \"window_start\": \"2026-09-22T04:37:07.159Z\",\n    \"stars\": 2,\n    \"pushed_at\": \"2026-09-30T03:25:05Z\",\n    \"issues\": {\n      \"open\": 0,\n      \"closed\": 0,\n      \"created_30d\": 0,\n      \"closed_30d\": 0,\n      \"updated_30d\": 0\n    },\n    \"errors\": [],\n    \"npm\": {\n      \"package_name\": \"dsh-repeat-stop\",\n      \"captured_at\": \"2026-10-22T04:37:16.343Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-repeat-stop\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T04:37:16.343Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-repeat-stop\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
+            "sha256": "3e7a6b3a72622313b2eccc909270cae9c898ec79c5f71e6c3e1c16000aec4f20"
+        }
+    },
+    "unavailable_artifacts": []
+}

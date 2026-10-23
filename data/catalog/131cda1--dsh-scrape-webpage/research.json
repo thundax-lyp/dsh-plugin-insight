@@ -1,0 +1,410 @@
+{
+    "schema_version": 4,
+    "id": "33a9bd5663b97841b35249751038ac7c",
+    "identity": "github:1334269686:root",
+    "slug": "131cda1--dsh-scrape-webpage",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334269686:root",
+            "repository_id": 1334269686,
+            "component_id": "root",
+            "repository": "131CDA1/dsh-scrape-webpage",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-scrape-webpage",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "3058a443a54b4c33e40a4becef948013e83df36d9f3097052a577dc48acd684c",
+                "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "maintenance": "e0ca1a9d12ba7b2605ba6a8c4bad7c68aa6265a15b652c5b468dce68b606ab52"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1334269686-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:30:00.146Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1334269686-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/131CDA1/dsh-scrape-webpage",
+                            "commit": "7485af10c063579323058583c7f13e69c4c8bd21",
+                            "path": "README.md",
+                            "content_sha256": "472fa529dc4021f0360de69b32f26f7e33e9f18b86a088278d05b5d8cba58b17"
+                        }
+                    ],
+                    "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                    "captured_at": "2026-10-22T15:30:00.146Z",
+                    "summary": "抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1334269686-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/131CDA1/dsh-scrape-webpage",
+                            "commit": "7485af10c063579323058583c7f13e69c4c8bd21",
+                            "path": "README.md",
+                            "content_sha256": "472fa529dc4021f0360de69b32f26f7e33e9f18b86a088278d05b5d8cba58b17"
+                        },
+                        {
+                            "repository_url": "https://github.com/131CDA1/dsh-scrape-webpage",
+                            "commit": "7485af10c063579323058583c7f13e69c4c8bd21",
+                            "path": "lib/index.js",
+                            "content_sha256": "013dc2d6b52ab0c94ada1fcb5d4ed134ecbed25be800f5da10c215888a0d1090"
+                        }
+                    ],
+                    "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                    "captured_at": "2026-10-22T15:30:00.146Z",
+                    "summary": "核查 README.md、lib/index.js；`scrape_webpage` 接收 URL，先按配置获取内容，再对 HTML 清洗和分析；实现把 fetch、curl、HTML 解析与策略判断拆成独立模块。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向需要把公开网页正文交给模型分析的 DSH 用户，用一个工具完成抓取、正文提取与失败降级。 [Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "`scrape_webpage` 接收 URL，先按配置获取内容，再对 HTML 清洗和分析；实现把 fetch、curl、HTML 解析与策略判断拆成独立模块。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地 Node 与网络，无已知独立订阅 | 选超时、核对备用后端 | 安装分钟数未知 |\n| 持续使用 | 每页 HTTP 请求、响应字节与上下文 token | 抽查正文和来源链接 | 不同站点请求次数与 token 未测 |\n| 失败恢复 | 备用请求可能重复消耗带宽 | 切浏览器、登录或手工复制 | 反爬时应停止而非持续重试 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 [Q09](#research-q09)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 接线简化 | 单工具封装获取、解析与分析 | 是否比浏览器复制节时 |\n| 正文压缩 | HTML 清洗减少结构噪声 | 关键段落召回和误删率 |\n| 降级覆盖 | 存在多个获取模块 | 动态站点、登录页与反爬成功率 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "获取、解析和分析职责拆分清楚，便于替换单一后端；主要维护风险来自站点差异、超时和正文抽取启发式，试用需保留原链接并抽查遗漏。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对直接 curl 或 fetch，它将多获取路径与正文规整封装为单一 DSH 工具，贡献是降低网页材料进入会话的接线负担，而不是替代完整浏览器自动化。 [Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态抓取对登录、脚本渲染、反爬和页面结构变化敏感；源码结构能证明降级路径存在，但没有同站点样本证明正文完整性和稳定性。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可增加“证据保真模式”，同时返回正文、关键 DOM 定位和被删除区块摘要，让研究任务在压缩上下文时仍能回查来源。 [Q08](#research-q08)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334269686:root",
+                            "area": "code",
+                            "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:00.146Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:30:00.146Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "reviewed_at": "2026-10-22T15:30:00.146Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334269686:root",
+                        "area": "code",
+                        "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "相对明确基线存在具体集成和机制增量；静态抓取对登录、脚本渲染、反爬和页面结构变化敏感；源码结构能证明降级路径存在，但没有同站点样本证明正文完整性和稳定性。 未运行，效果只作解释性判断。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向需要把公开网页正文交给模型分析的 DSH 用户，用一个工具完成抓取、正文提取与失败降级。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1334269686-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "公开静态正文抓取可小范围试用；必须逐页回查来源，动态或登录页面直接切浏览器。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "公开网页进入研究上下文的任务清楚且频繁。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "统一清洗和降级比单次 curl 更方便，但不覆盖交互网页。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码确认模块链路；未进行站点样本测试。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "本地接线较轻，但失败重试、上下文长度和人工抽查仍需计量。"
+                    }
+                },
+                "score": 70,
+                "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "reviewed_at": "2026-10-22T15:30:00.146Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1334269686-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334269686:root",
+                        "area": "code",
+                        "fingerprint": "7485af10c063579323058583c7f13e69c4c8bd21"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334269686:root",
+            "repository": "131CDA1/dsh-scrape-webpage",
+            "path": "",
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "fingerprints": {
+                "directory": "3058a443a54b4c33e40a4becef948013e83df36d9f3097052a577dc48acd684c",
+                "code": "7485af10c063579323058583c7f13e69c4c8bd21",
+                "maintenance": "e0ca1a9d12ba7b2605ba6a8c4bad7c68aa6265a15b652c5b468dce68b606ab52"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "24baa70f9b07649e8827f435eef50c0f9fb24f589567062daa013a15b453591b"
+        },
+        "publication.metadata": "data/catalog/131cda1--dsh-scrape-webpage/meta.json",
+        "publication.summaries": {
+            "text": "抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。",
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "source_url": "https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "items": {
+                "模型工具": "注册 `scrape_webpage`，统一网页获取、HTML 清洗、内容分析与获取路径降级。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 网页抓取 | 从 URL 获取页面内容并返回模型可读结果。 | 仅由固定版本源码确认；运行效果未验证 |\n| 内容清洗 | 解析 HTML 并压缩无关结构。 | 仅由固定版本源码确认；运行效果未验证 |\n| 降级获取 | 在不同获取后端间处理失败。 | 仅由固定版本源码确认；运行效果未验证 |"
+        },
+        "publication.advice": {
+            "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
+            "text": "适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 [Q09](#research-q09)"
+        },
+        "registry": "data/plugins/131cda1--dsh-scrape-webpage",
+        "reports": "# dsh-scrape-webpage\n\n> 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。\n\n## 研究范围\n\n- **仓库**：[131CDA1/dsh-scrape-webpage](https://github.com/131CDA1/dsh-scrape-webpage)\n- **版本号**：1.0.0（[固定提交 7485af10c063579323058583c7f13e69c4c8bd21](https://github.com/131CDA1/dsh-scrape-webpage/tree/7485af10c063579323058583c7f13e69c4c8bd21)）\n- **版本日期**：2026-08-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向需要把公开网页正文交给模型分析的 DSH 用户，用一个工具完成抓取、正文提取与失败降级。 [Q01](#research-q01)\n- **亮点**：相对直接 curl 或 fetch，它将多获取路径与正文规整封装为单一 DSH 工具，贡献是降低网页材料进入会话的接线负担，而不是替代完整浏览器自动化。 [Q03](#research-q03)\n- **思考**：静态抓取对登录、脚本渲染、反爬和页面结构变化敏感；源码结构能证明降级路径存在，但没有同站点样本证明正文完整性和稳定性。 [Q04](#research-q04)\n- **建议**：可增加“证据保真模式”，同时返回正文、关键 DOM 定位和被删除区块摘要，让研究任务在压缩上下文时仍能回查来源。 [Q08](#research-q08)\n\n采用建议：适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对直接 curl 或 fetch，它将多获取路径与正文规整封装为单一 DSH 工具，贡献是降低网页材料进入会话的接线负担，而不是替代完整浏览器自动化。 [Q03](#research-q03)\n\n## 关键质疑\n\n静态抓取对登录、脚本渲染、反爬和页面结构变化敏感；源码结构能证明降级路径存在，但没有同站点样本证明正文完整性和稳定性。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可增加“证据保真模式”，同时返回正文、关键 DOM 定位和被删除区块摘要，让研究任务在压缩上下文时仍能回查来源。 [Q08](#research-q08)\n\n选取公开静态页、长文页、脚本渲染页和反爬页各若干，人工标注关键段落；比较插件、curl 与浏览器复制的召回率、噪声比例、请求数、处理秒数和人工修正分钟。关键段落召回低于预设门槛或重试多于基线即限定为静态页工具。\n\n## 场景与替代办法\n\n面向需要把公开网页正文交给模型分析的 DSH 用户，用一个工具完成抓取、正文提取与失败降级。 [Q01](#research-q01)\n\n基线是终端 curl、宿主浏览器工具或手工复制页面；插件用统一参数和内容清洗减少步骤，但不覆盖交互式网页。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH tools 与 Node 网络 | 必需 | 注册工具并发起请求 | 无法抓取 |\n| 目标 URL 可公开访问 | 必需 | 获取 HTML/文本 | 登录、验证码或付费墙返回不完整结果 |\n| curl/备用获取路径 | 条件必需 | 主路径失败时降级 | 只剩单一路径，失败覆盖收窄 |\n| 人工来源核对 | 研究使用必需 | 检查正文遗漏与错误页面 | HTTP 成功可能被误当作证据完整 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 选择页面 | 用户提供公开 http(s) URL | 明确无需登录且允许访问 |\n| 获取与解析 | 工具尝试 fetch/curl 并清洗 HTML | 返回标题、正文和来源而非挑战页 |\n| 证据抽查 | 用户核对关键段落与原页面 | 关键内容缺失则切换浏览器/手工复制 |\n| 失败退出 | 工具返回具体错误和已试路径 | 不循环轰炸站点，不把空文本写入研究 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地 Node 与网络，无已知独立订阅 | 选超时、核对备用后端 | 安装分钟数未知 |\n| 持续使用 | 每页 HTTP 请求、响应字节与上下文 token | 抽查正文和来源链接 | 不同站点请求次数与 token 未测 |\n| 失败恢复 | 备用请求可能重复消耗带宽 | 切浏览器、登录或手工复制 | 反爬时应停止而非持续重试 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 接线简化 | 单工具封装获取、解析与分析 | 是否比浏览器复制节时 |\n| 正文压缩 | HTML 清洗减少结构噪声 | 关键段落召回和误删率 |\n| 降级覆盖 | 存在多个获取模块 | 动态站点、登录页与反爬成功率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 dsh-scrape-webpage 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向需要把公开网页正文交给模型分析的 DSH 用户，用一个工具完成抓取、正文提取与失败降级。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是终端 curl、宿主浏览器工具或手工复制页面；插件用统一参数和内容清洗减少步骤，但不覆盖交互式网页。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n# dsh-scrape-webpage\n\n网页抓取与分析插件 —— DeepSeek Harness 组合插件(Host-only,零依赖)。\n\n用爬虫读取网站内容并做分析:注册模型工具 `scrape_webpage`,抓取网页正文,提取标题、页面描述、H1–H6 标题结构、链接列表,统计字符数/词数/预计阅读时长与语言倾向,计算高频关键词(中文二元组 + 英文单词,含停用词过滤);可选下载页面内容图片供视觉分析,并提供 `scrape.imageAnalyzer` 扩展服务供识图插件接入。\n\n## ✨ 功能特性\n\n- **网页抓取**:http/https,自动重定向,非 2xx 状态码优雅返回\n- **内容提取**:标题、页面描述、正文(截断可调)、H1–H6 标题结构、链接列表(上限 100)\n- **自动分析**:字符数、词/字数、标题数、链接数、预计阅读时长、语言倾向(中/英/混合)、高频关键词 Top30\n- **图片下载**:提取 `<img src/data-src/srcset>`(相对路径自动归一化,过滤图标/logo 等噪音),下载到会话工作区 `.scrape-images\\`,返回本地路径供视觉模型 `read_image` 分析\n- **识图插件接口**:发布 `scrape.imageAnalyzer` 服务,识图插件注册分析器后,图片自动交给分析器并把结果附在工具输出中\n- **安全模型**:默认沙箱内抓取;HTTPS 沙箱 TLS 受限时按 pwsh 工具的升级契约,显式 `sandbox_permissions` + 审批一次性授权\n- **bundle 打包**:package.json 声明 `dsh.bundle.patch`,`dsh plugin --profile <name> add` 安装后自动注册为组合层,无需手动编辑 cordis.patch.yml\n\n## 📦 安装\n\n本包是 **bundle 包**(`package.json` 中 `dsh.bundle.patch` 指向 `cordis.patch.yml`)。`dsh plugin` 安装成功后会**自动**把它加入 profile 的 `dsh.profile.bundles`,重启即加载。\n\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n`scrape_webpage` 接收 URL，先按配置获取内容，再对 HTML 清洗和分析；实现把 fetch、curl、HTML 解析与策略判断拆成独立模块。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对直接 curl 或 fetch，它将多获取路径与正文规整封装为单一 DSH 工具，贡献是降低网页材料进入会话的接线负担，而不是替代完整浏览器自动化。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：静态抓取对登录、脚本渲染、反爬和页面结构变化敏感；源码结构能证明降级路径存在，但没有同站点样本证明正文完整性和稳定性。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n需要 DSH tools 服务、Node 网络访问及目标站点允许访问；curl 或浏览器相关能力只在对应分支可用，登录态和付费墙没有通用保证。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本是安装插件并确定网络、超时和可用获取后端；单次持续成本主要是一次或多次 HTTP/curl 请求、HTML 解析占用和模型上下文中的正文长度；失败时可能依次尝试备用获取路径并由用户回到浏览器手工复制。合格单位应是一篇“关键正文和来源链接均可回查”的页面，而不是 HTTP 200。当前缺少不同站点类型的正文召回率、请求次数、字节数和人工补录分钟数。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n#### 缺口\n\n- 缺少静态页、脚本页、反爬页与长文页的正文完整率、请求次数、抓取字节和人工补录时间。\n  **影响**：无法判断多后端降级是否比直接 curl 或浏览器复制更省时。\n  **进一步探讨**：建立含已知正文的站点样本，对 scrape_webpage、curl 和手工复制比较关键段落召回、噪声比例、总请求数和人工修正分钟。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n获取、解析和分析职责拆分清楚，便于替换单一后端；主要维护风险来自站点差异、超时和正文抽取启发式，试用需保留原链接并抽查遗漏。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可增加“证据保真模式”，同时返回正文、关键 DOM 定位和被删除区块摘要，让研究任务在压缩上下文时仍能回查来源。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/131CDA1/dsh-scrape-webpage/blob/7485af10c063579323058583c7f13e69c4c8bd21/lib/index.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\n *\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\n *  - html.js     HTML/文本解析（纯函数）\n *  - analyze.js  统计与关键词分析（纯函数）\n *  - curl.js     curl 命令构建与结果解析（纯函数）\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\n *\n * 能力：\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\n *    返回本地路径供视觉模型 read_image 分析。\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\n *\n * 抓取链路与安全：\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\n *    escalation available 提示，模型可用 sandbox_permissions=\"danger-full-access\"\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\n *    approval、sessions（可选，缺失时优雅降级报错）。\n */\n\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\nimport { createFetchLayer } from './fetch.js'\n\nexport const name = 'dsh-scrape-webpage'\nexport const inject = ['timer', 'tools', 'systemPrompt']\n\nexport function apply(ctx) {\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\n\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\n  const analyzerRegistry = {\n    analyzers: new Map(),\n```\n\n</details>\n\n#### 缺口\n\n- 未对多类网站测量正文召回和错误抽取。\n  **影响**：无法确定“统一抓取工具”在目标站点组合上的可靠采用范围。\n  **进一步探讨**：用带人工金标的公开页面样本测关键段落召回、噪声比例、失败率和人工修正时间。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：85b5c05d679412c6f8c60fe91617c416dbf9fcd6d1dd587c00d20d11880bff5b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 139 | — | — | 1522 |\n| .js | source | 5 | 716 | 622 | 65 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 网页抓取 | 从 URL 获取页面内容并返回模型可读结果。 | 仅由固定版本源码确认；运行效果未验证 |\n| 内容清洗 | 解析 HTML 并压缩无关结构。 | 仅由固定版本源码确认；运行效果未验证 |\n| 降级获取 | 在不同获取后端间处理失败。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\n获取、解析和分析职责拆分清楚，便于替换单一后端；主要维护风险来自站点差异、超时和正文抽取启发式，试用需保留原链接并抽查遗漏。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：选取公开静态页、长文页、脚本渲染页和反爬页各若干，人工标注关键段落；比较插件、curl 与浏览器复制的召回率、噪声比例、请求数、处理秒数和人工修正分钟。关键段落召回低于预设门槛或重试多于基线即限定为静态页工具。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-01/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"131CDA1/dsh-scrape-webpage\",\n  \"revision\": \"7485af10c063579323058583c7f13e69c4c8bd21\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"研究 dsh-scrape-webpage 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"谁在何种任务中使用，原有办法和合格结果是什么？\",\n        \"answer\": \"面向需要把公开网页正文交给模型分析的 DSH 用户，用一个工具完成抓取、正文提取与失败降级。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是终端 curl、宿主浏览器工具或手工复制页面；插件用统一参数和内容清洗减少步骤，但不覆盖交互式网页。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 20,\n            \"observation\": \"作者材料说明目标用户、安装方式、主要能力和已知边界。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"能力如何从入口、注册、调用到状态变化实现？\",\n        \"answer\": \"`scrape_webpage` 接收 URL，先按配置获取内容，再对 HTML 清洗和分析；实现把 fetch、curl、HTML 解析与策略判断拆成独立模块。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"相对原生能力或简单替代，固定版本增加了什么？\",\n        \"answer\": \"相对直接 curl 或 fetch，它将多获取路径与正文规整封装为单一 DSH 工具，贡献是降低网页材料进入会话的接线负担，而不是替代完整浏览器自动化。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"什么前提最可能使核心价值不成立？\",\n        \"answer\": \"最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：静态抓取对登录、脚本渲染、反爬和页面结构变化敏感；源码结构能证明降级路径存在，但没有同站点样本证明正文完整性和稳定性。 这会直接收窄采用范围，而不是否定所有能力。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"启动、持续生效和失败恢复分别依赖什么？\",\n        \"answer\": \"需要 DSH tools 服务、Node 网络访问及目标站点允许访问；curl 或浏览器相关能力只在对应分支可用，登录态和付费墙没有通用保证。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"首次、持续与失败恢复成本及效果证据如何？\",\n        \"answer\": \"首次成本是安装插件并确定网络、超时和可用获取后端；单次持续成本主要是一次或多次 HTTP/curl 请求、HTML 解析占用和模型上下文中的正文长度；失败时可能依次尝试备用获取路径并由用户回到浏览器手工复制。合格单位应是一篇“关键正文和来源链接均可回查”的页面，而不是 HTTP 200。当前缺少不同站点类型的正文召回率、请求次数、字节数和人工补录分钟数。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少静态页、脚本页、反爬页与长文页的正文完整率、请求次数、抓取字节和人工补录时间。\",\n            \"impact\": \"无法判断多后端降级是否比直接 curl 或浏览器复制更省时。\",\n            \"next_step\": \"建立含已知正文的站点样本，对 scrape_webpage、curl 和手工复制比较关键段落召回、噪声比例、总请求数和人工修正分钟。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"实现有哪些可靠性取舍和可复用设计？\",\n        \"answer\": \"获取、解析和分析职责拆分清楚，便于替换单一后端；主要维护风险来自站点差异、超时和正文抽取启发式，试用需保留原链接并抽查遗漏。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"由贡献和限制能推导什么未验证方向？\",\n        \"answer\": \"从已确认机制与关键限制可推导：可增加“证据保真模式”，同时返回正文、关键 DOM 定位和被删除区块摘要，让研究任务在压缩上下文时仍能回查来源。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"对什么人值得观察或试用，成功与停止条件是什么？\",\n        \"answer\": \"适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未对多类网站测量正文召回和错误抽取。\",\n            \"impact\": \"无法确定“统一抓取工具”在目标站点组合上的可靠采用范围。\",\n            \"next_step\": \"用带人工金标的公开页面样本测关键段落召回、噪声比例、失败率和人工修正时间。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-scrape-webpage\\n\\n网页抓取与分析插件 —— DeepSeek Harness 组合插件(Host-only,零依赖)。\\n\\n用爬虫读取网站内容并做分析:注册模型工具 `scrape_webpage`,抓取网页正文,提取标题、页面描述、H1–H6 标题结构、链接列表,统计字符数/词数/预计阅读时长与语言倾向,计算高频关键词(中文二元组 + 英文单词,含停用词过滤);可选下载页面内容图片供视觉分析,并提供 `scrape.imageAnalyzer` 扩展服务供识图插件接入。\\n\\n## ✨ 功能特性\\n\\n- **网页抓取**:http/https,自动重定向,非 2xx 状态码优雅返回\\n- **内容提取**:标题、页面描述、正文(截断可调)、H1–H6 标题结构、链接列表(上限 100)\\n- **自动分析**:字符数、词/字数、标题数、链接数、预计阅读时长、语言倾向(中/英/混合)、高频关键词 Top30\\n- **图片下载**:提取 `<img src/data-src/srcset>`(相对路径自动归一化,过滤图标/logo 等噪音),下载到会话工作区 `.scrape-images\\\\`,返回本地路径供视觉模型 `read_image` 分析\\n- **识图插件接口**:发布 `scrape.imageAnalyzer` 服务,识图插件注册分析器后,图片自动交给分析器并把结果附在工具输出中\\n- **安全模型**:默认沙箱内抓取;HTTPS 沙箱 TLS 受限时按 pwsh 工具的升级契约,显式 `sandbox_permissions` + 审批一次性授权\\n- **bundle 打包**:package.json 声明 `dsh.bundle.patch`,`dsh plugin --profile <name> add` 安装后自动注册为组合层,无需手动编辑 cordis.patch.yml\\n\\n## 📦 安装\\n\\n本包是 **bundle 包**(`package.json` 中 `dsh.bundle.patch` 指向 `cordis.patch.yml`)。`dsh plugin` 安装成功后会**自动**把它加入 profile 的 `dsh.profile.bundles`,重启即加载。\\n\\n> 前置:`dsh plugin` 转发给 pnpm,需要 `pnpm` 在 PATH 上;首次使用会自动初始化目标 profile。\\n\\n### 方式 A:从 npm 安装(推荐)\\n\\n```powershell\\n# 通过 dsh plugin 从 npm registry 安装并自动注册到 profile\\ndsh plugin --profile web add dsh-scrape-webpage\\n```\\n\\n如果自行管理 profile 的 `node_modules`,也可以在对应目录中直接使用 npm 安装:\\n\\n```powershell\\nnpm install dsh-scrape-webpage\\n```\\n\\n### 方式 B:从 GitHub 或本地目录安装\\n\\n```powershell\\n# 直接从 GitHub 安装\\ndsh plugin --profile web add \\\"github:131CDA1/dsh-scrape-webpage\\\"\\n\\n# 本地目录调试(注意:必须显式 file: 前缀)\\ndsh plugin --profile web add \\\"file:D:\\\\path\\\\to\\\\dsh-scrape-webpage\\\"\\n```\\n\\n重启 DSH 后生效。卸载:`dsh plugin --profile web remove dsh-scrape-webpage`。\\n\\n> ⚠️ 本地目录请用 `file:` 前缀。裸路径 / 相对路径会被 pnpm 当作 `link:` 协议,\\n> 在 hoisted 布局下不会物化到 node_modules 顶层,导致启动时无法解析该包。\\n\\n### 方式 C:手动复制(离线兜底)\\n\\n```powershell\\ngit clone https://github.com/131CDA1/dsh-scrape-webpage.git\\nCopy-Item -Recurse .\\\\dsh-scrape-webpage \\\"$env:DSH_HOME\\\\profiles\\\\web\\\\node_modules\\\\dsh-scrape-webpage\\\"\\n```\\n\\n再把 `cordis.patch.yml` 中的 insert 行合并进该 profile 的 `cordis.patch.yml`:\\n\\n```yaml\\n- insert:\\n    - id: scrape-webpage\\n      name: dsh-scrape-webpage\\n```\\n\\n重启 DSH 生效。\\n\\n## 🚀 使用\\n\\n对话中直接说:\\\"帮我抓取 https://example.com 并分析\\\"。工具参数:\\n\\n| 参数 | 类型 | 说明 |\\n| --- | --- | --- |\\n| `url` | string(必填) | 要抓取的网页地址(http/https) |\\n| `maxChars` | number | 返回正文最大字符数,默认 30000,范围 1000–100000 |\\n| `images` | number | 同时下载内容图片数(上限 6,默认 0),图片保存到 `.scrape-images\\\\<时间戳>\\\\`,返回本地路径供 `read_image` 查看 |\\n| `sandbox_permissions` | string | 仅 `danger-full-access`。HTTPS 沙箱受限报错提示 `escalation available` 后,重试同一次抓取时携带;审批弹窗由用户决定 |\\n| `justification` | string | 与 `sandbox_permissions` 配套:一句话说明为何需要更宽权限 |\\n\\n输出:成功 `{ url, statusCode, truncated, title, description, headings, links, text, stats, keywords, images, imageNote, imageAnalysis }`,失败 `{ error, url }`。\\n\\n## 🖼 图片下载与识图\\n\\n**方式一:视觉模型直接看图。** 带 `images: N` 抓取后,对返回的 `relPath` 调用 `read_image` 即可。\\n\\n**方式二:识图插件接入。** 插件发布服务 `scrape.imageAnalyzer`(宿主 realm),识图插件注册分析器:\\n\\n```js\\nconst registry = ctx.get('scrape.imageAnalyzer')   // 可选服务,注意 undefined 检查\\nif (registry !== undefined) {\\n  ctx.effect(() => registry.register({\\n    id: 'my-vision',\\n    async analyze(image) {\\n      // image = { url, filePath, relPath, mime, size }（JSON 安全）\\n      const text = await yourVisionBackend(image.filePath)\\n      return { text }            // 返回 null 表示不处理\\n    },\\n  }))\\n}\\n```\\n\\n注册后,每次带 `images > 0` 的抓取都会把图片自动交给分析器,结果以\\n`imageAnalysis: [{ analyzerId, relPath, text }]` 附在工具输出中。\\n\\n## 🔒 安全模型\\n\\n- 默认在**沙箱内**(会话策略)执行:http 页面直接可用;https 页面因沙箱 TLS 凭据受限而失败时,结果携带 `escalation available` 提示。\\n- 模型显式携带 `sandbox_permissions=\\\"danger-full-access\\\"` + `justification` 重试时,插件经审批服务询问用户,`allowed-once` 只授权当次调用。\\n- 仅 http/https 协议;正文/图片下载均有截断上限;超时受控(工具 180s、页面 30s、单图 20s)。\\n\\n## 🖥 平台要求\\n\\n- 有 `web` fetch provider 的部署:直接走该 provider。\\n- 无 fetch provider 的部署(内置回退):经 `shell` 服务调用 `curl.exe`(Windows 10 1803+ 自带;其他平台请确保 PATH 有 curl)。\\n- 依赖宿主服务:`tools`、`systemPrompt`、`timer`(硬依赖);`web`、`shell`、`sandboxPolicy`、`approval`、`sessions`(可选,缺失时优雅报错)。\\n\\n## 📄 License\\n\\n[MIT](LICENSE)\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-scrape-webpage\\\",\\n  \\\"version\\\": \\\"1.0.0\\\",\\n  \\\"description\\\": \\\"网页抓取与分析插件：抓取网页正文并给出统计与关键词分析，支持内容图片下载与识图分析器扩展接口。\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"plugin\\\",\\n    \\\"scrape\\\",\\n    \\\"web\\\",\\n    \\\"web-scraper\\\"\\n  ],\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/131CDA1/dsh-scrape-webpage.git\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/131CDA1/dsh-scrape-webpage/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/131CDA1/dsh-scrape-webpage#readme\\\",\\n  \\\"author\\\": \\\"131CDA1\\\",\\n  \\\"license\\\": \\\"MIT\\\"\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/**\\n * dsh-scrape-webpage —— 网页抓取与分析插件（宿主组合行，Host-only，零依赖）。\\n *\\n * 模块结构（低耦合：纯函数层 ← 服务层 ← 组合层）：\\n *  - html.js     HTML/文本解析（纯函数）\\n *  - analyze.js  统计与关键词分析（纯函数）\\n *  - curl.js     curl 命令构建与结果解析（纯函数）\\n *  - fetch.js    抓取执行层（会话沙箱策略、shell/curl 执行、审批升级）\\n *  - index.js    插件主体（工具注册、编排、识图分析器服务）\\n *\\n * 能力：\\n *  - 注册模型工具 `scrape_webpage`：抓取网页并提取标题/描述/正文/标题结构/链接，\\n *    统计字符数、词数、预计阅读时长，计算高频关键词（中文二元组 + 英文单词，含停用词过滤）。\\n *  - 可选下载页面内容图片（images 参数，上限 6 张）到会话工作区 .scrape-images 目录，\\n *    返回本地路径供视觉模型 read_image 分析。\\n *  - 提供 `scrape.imageAnalyzer` 服务（register/list/analyze）：识图插件注册分析器后，\\n *    下载的图片自动交给分析器，结果附在工具输出的 imageAnalysis 中。\\n *\\n * 抓取链路与安全：\\n *  - 优先使用宿主 web 服务的 fetch provider（若部署了）；否则经 shell 服务调用 curl.exe。\\n *  - 默认在沙箱内（会话策略）执行；HTTPS 因沙箱 TLS 凭据受限失败时返回\\n *    escalation available 提示，模型可用 sandbox_permissions=\\\"danger-full-access\\\"\\n *    + justification 重试一次，由审批弹窗决定（与 pwsh 工具的升级契约一致）。\\n *  - 依赖宿主服务：tools、systemPrompt、timer（硬依赖）；web、shell、sandboxPolicy、\\n *    approval、sessions（可选，缺失时优雅降级报错）。\\n */\\n\\nimport { normalizeUrl, extractImages, extractFromHtml } from './html.js'\\nimport { computeStats, topKeywords, formatScrapeText } from './analyze.js'\\nimport { createFetchLayer } from './fetch.js'\\n\\nexport const name = 'dsh-scrape-webpage'\\nexport const inject = ['timer', 'tools', 'systemPrompt']\\n\\nexport function apply(ctx) {\\n  const { resolveSessionPolicy, fetchViaShell, downloadImages, resolveEscalationPolicy } = createFetchLayer(ctx)\\n\\n  // ===== 识图分析器扩展接口（发布到宿主 realm，供识图插件注册） =====\\n  const analyzerRegistry = {\\n    analyzers: new Map(),\\n    register(analyzer) {\\n      if (analyzer === null || typeof analyzer !== 'object' || typeof analyzer.analyze !== 'function') {\\n        throw new Error('scrape.imageAnalyzer.register 需要 { id, analyze(image) } 对象')\\n      }\\n      const id = String(analyzer.id || 'anon-' + Date.now())\\n      this.analyzers.set(id, analyzer)\\n      return () => { this.analyzers.delete(id) }\\n    },\\n    list() {\\n      return Array.from(this.analyzers.keys())\\n    },\\n    async analyze(image) {\\n      for (const entry of Array.from(this.analyzers.entries())) {\\n        try {\\n          const r = await entry[1].analyze(image)\\n          if (r && typeof r === 'object' && typeof r.text === 'string' && r.text) {\\n            return { analyzerId: entry[0], text: r.text }\\n          }\\n        } catch (err) {\\n          console.error('scrape image analyzer failed:', err)\\n        }\\n      }\\n      return null\\n    },\\n  }\\n  ctx.provide('scrape.imageAnalyzer', analyzerRegistry)\\n\\n  async function scrapePage(input, exec) {\\n    const url = normalizeUrl(input && input.url)\\n    const rawMax = Number(input && input.maxChars)\\n    const maxChars = Math.min(Math.max(Number.isFinite(rawMax) && rawMax > 0 ? rawMax : 30000, 1000), 100000)\\n    const rawImages = Number(input && input.images)\\n    const imagesWanted = Math.min(Math.max(Number.isFinite(rawImages) && rawImages > 0 ? Math.floor(rawImages) : 0, 0), 6)\\n    const signal = exec && exec.signal\\n    const sessionId = input && input.sessionId\\n    const basePolicy = resolveSessionPolicy(exec, sessionId)\\n    const esc = resolveEscalationPolicy(input, exec, basePolicy, signal)\\n    if (esc.error !== null) return { error: esc.error, url }\\n    let policy = esc.policy\\n    if (policy === null) {\\n      try {\\n        policy = await esc.pending()\\n      } catch (err) {\\n        return { error: String((err && err.message) || err), url }\\n      }\\n    }\\n    let fetched = null\\n    const web = ctx.get('web')\\n    if (web !== undefined) {\\n      try {\\n        fetched = await web.fetch({ url }, signal)\\n      } catch (err) {\\n        // 无可用 provider，落到 shell/curl 路径\\n      }\\n    }\\n    if (fetched === null) {\\n      const shell = ctx.get('shell')\\n      if (shell === undefined) {\\n        return { error: '当前环境既没有可用的 web 抓取 provider，也没有 shell 服务，无法抓取网页', url }\\n      }\\n      try {\\n        fetched = await fetchViaShell(shell, url, policy, signal)\\n      } catch (err) {\\n        const msg = String((err && err.message) || err)\\n        const tlsBlocked = /schannel|SEC_E|credential/i.test(msg)\\n        const isConfined = policy === undefined || (policy !== null && policy.mode !== 'danger-full-access')\\n        if (tlsBlocked && isConfined && /^https:/i.test(url)) {\\n          return {\\n            error: '沙箱内无法完成 HTTPS 抓取（TLS 凭据受限）。[sandbox: escalation available — retry this exact scrape once with sandbox_permissions=\\\"danger-full-access\\\" + justification; the approval prompt asks the user] 详情：' + msg,\\n            url\\n          }\\n        }\\n        return { error: msg, url }\\n      }\\n    }\\n    const body = fetched.body || {}\\n    const kind = body.kind === 'html' ? 'html' : 'text'\\n    const content = typeof body.content === 'string' ? body.content : ''\\n    const parsed = kind === 'html' ? extractFromHtml(content) : { title: '', description: '', headings: [], links: [], text: content }\\n    const fullText = parsed.text || ''\\n    const truncated = Boolean(fetched.truncated) || fullText.length > maxChars\\n    const text = fullText.slice(0, maxChars)\\n    const stats = computeStats(text, parsed.headings.length, parsed.links.length)\\n    let images = []\\n    let imageNote = ''\\n    let imageAnalysis = []\\n    if (imagesWanted > 0) {\\n      if (kind !== 'html') {\\n        imageNote = '目标不是 HTML 页面，跳过图片提取'\\n      } else if (basePolicy === undefined || !basePolicy.workspaceRoot) {\\n        imageNote = '无法确定会话工作区路径，跳过图片下载'\\n      } else {\\n        const urls = extractImages(content, fetched.url || url, imagesWanted)\\n        if (urls.length === 0) {\\n          imageNote = '页面中未发现内容图片'\\n        } else {\\n          const shell = ctx.get('shell')\\n          if (shell === undefined) {\\n            imageNote = '缺少 shell 服务，无法下载图片'\\n          } else {\\n            const dir = String(basePolicy.workspaceRoot).replace(/[\\\\\\\\\\\\/]+$/, '') + '\\\\\\\\.scrape-images\\\\\\\\' + String(Date.now())\\n            const dl = await downloadImages(shell, urls, dir, basePolicy.workspaceRoot, policy, signal)\\n            images = dl.images\\n            imageNote = dl.note\\n            for (const img of images) {\\n              const r = await analyzerRegistry.analyze({\\n                url: img.url,\\n                filePath: img.filePath,\\n                relPath: img.relPath,\\n                mime: img.mime,\\n                size: img.size\\n              })\\n              if (r) imageAnalysis.push({ relPath: img.relPath, url: img.url, analyzerId: r.analyzerId, text: r.text })\\n            }\\n          }\\n        }\\n      }\\n    }\\n    return {\\n      url: fetched.url || url,\\n      statusCode: fetched.statusCode,\\n      truncated,\\n      title: (parsed.title || '').slice(0, 500),\\n      description: (parsed.description || '').slice(0, 1000),\\n      headings: parsed.headings.map((h) => 'H' + h.level + ' ' + h.text),\\n      links: parsed.links,\\n      text,\\n      stats,\\n      keywords: topKeywords(text, 30),\\n      images,\\n      imageNote,\\n      imageAnalysis\\n    }\\n  }\\n\\n  ctx.tools.register({\\n    name: 'scrape_webpage',\\n    description: '抓取一个网页 URL 的完整内容并做基础分析：提取标题、页面描述、正文、标题层级与链接，统计字符数/词数/预计阅读时长，并计算高频关键词。可选下载页面中的内容图片（images 参数）到会话工作区，返回本地路径供 read_image 工具视觉分析；若注册了识图分析器（scrape.imageAnalyzer 服务），图片会自动交给分析器并附上识别结果。默认在沙箱内抓取；如果结果报告沙箱 TLS 受限（escalation available 提示），以 sandbox_permissions=\\\"danger-full-access\\\" 加一句话 justification 重试同一次抓取，审批弹窗会询问用户。',\\n    parameters: {\\n      type: 'object',\\n      properties: {\\n        url: { type: 'string', description: '要抓取的网页地址（http/https）。' },\\n        maxChars: { type: 'number', description: '返回正文的最大字符数，默认 30000，范围 1000–100000。' },\\n        images: { type: 'number', description: '同时下载页面中的内容图片用于视觉分析：0=不下载（默认），>0 表示最多下载的图片数量（上限 6）。图片保存到会话工作区 .scrape-images 目录，返回本地路径，可用 read_image 工具查看。' },\\n        sandbox_permissions: { type: 'string', enum: ['danger-full-access'], description: '更宽的沙箱模式。仅作为刚被沙箱拒绝的同一次抓取的一次性重试参数；需要用户审批。' },\\n        justification: { type: 'string', description: '必须与 sandbox_permissions 同时提供：一句话说明为什么这次抓取需要更宽权限。' }\\n      },\\n      required: ['url']\\n    },\\n    timeoutMs: 180000,\\n    isConcurrencySafe: () => true,\\n    output: {\\n      schema: {\\n        type: 'object',\\n        additionalProperties: false,\\n        properties: {\\n          url: { type: 'string' },\\n          statusCode: { type: 'number' },\\n          truncated: { type: 'boolean' },\\n          title: { type: 'string' },\\n          description: { type: 'string' },\\n          headings: { type: 'array', items: { type: 'string' } },\\n          links: {\\n            type: 'array',\\n            items: {\\n              type: 'object',\\n              additionalProperties: false,\\n              properties: { href: { type: 'string' }, text: { type: 'string' } }\\n            }\\n          },\\n          text: { type: 'string' },\\n          stats: {\\n            type: 'object',\\n            additionalProperties: false,\\n            properties: {\\n              charCount: { type: 'number' },\\n              wordCount: { type: 'number' },\\n              cjkCount: { type: 'number' },\\n              headingCount: { type: 'number' },\\n              linkCount: { type: 'number' },\\n              readingTimeMinutes: { type: 'number' },\\n              language: { type: 'string' }\\n            }\\n          },\\n          keywords: {\\n            type: 'array',\\n            items: {\\n              type: 'object',\\n              additionalProperties: false,\\n              properties: { word: { type: 'string' }, count: { type: 'number' } }\\n            }\\n          },\\n          images: {\\n            type: 'array',\\n            items: {\\n              type: 'object',\\n              additionalProperties: false,\\n              properties: {\\n                url: { type: 'string' },\\n                filePath: { type: 'string' },\\n                relPath: { type: 'string' },\\n                mime: { type: 'string' },\\n                size: { type: 'number' }\\n              }\\n            }\\n          },\\n          imageNote: { type: 'string' },\\n          imageAnalysis: {\\n            type: 'array',\\n            items: {\\n              type: 'object',\\n              additionalProperties: false,\\n              properties: {\\n                relPath: { type: 'string' },\\n                url: { type: 'string' },\\n                analyzerId: { type: 'string' },\\n                text: { type: 'string' }\\n              }\\n            }\\n          },\\n          error: { type: 'string' }\\n        }\\n      },\\n      render: (_args, value) => [{ type: 'text', text: formatScrapeText(value) }]\\n    },\\n    async execute(args, exec) {\\n      try {\\n        return await scrapePage(args || {}, exec)\\n      } catch (err) {\\n        return { error: String((err && err.message) || err), url: String((args && args.url) || '') }\\n      }\\n    }\\n  })\\n\\n  ctx.systemPrompt.section({\\n    name: 'tool:scrape_webpage',\\n    order: 120,\\n    text: 'When the user asks to read, scrape, or analyze a specific web page, call the scrape_webpage tool with that URL. It returns the page title, description, main text, heading outline, links, reading stats, and top keywords; summarize and analyze the content in the conversation afterwards. Set images to a positive number to also download content images for visual analysis with the read_image tool on the returned local paths. If the result reports a sandbox TLS restriction with an escalation-available hint, retry the same scrape once with sandbox_permissions=\\\"danger-full-access\\\" and a one-sentence justification; the approval prompt asks the user.'\\n  })\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"7485af10c063579323058583c7f13e69c4c8bd21\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"85b5c05d679412c6f8c60fe91617c416dbf9fcd6d1dd587c00d20d11880bff5b\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 139,\n        \"words\": 1522\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 716,\n        \"code\": 622,\n        \"comments\": 65,\n        \"blank\": 33\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 176,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"scrape_webpage\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"scrape_webpage\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"131CDA1/dsh-scrape-webpage\",\n    \"repository_id\": 1334269686,\n    \"captured_at\": \"2026-10-22T15:13:09.651Z\",\n    \"window_start\": \"2026-09-22T15:13:09.651Z\",\n    \"stars\": 10,\n    \"pushed_at\": \"2026-08-20T06:26:10Z\",\n    \"issues\": {\n      \"open\": null,\n      \"closed\": null,\n      \"created_30d\": null,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"open\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4F98:1002A1:9965D1:A5B0A8:6ADA2808 and timestamp 2026-10-22 15:13:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 505E:30B824:998021:A5C9CA:6ADA2809 and timestamp 2026-10-22 15:13:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"created_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A09.651Z..2026-10-22T15%3A13%3A09.651Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 514A:613D4:9A7B90:A6BF24:6ADA280A and timestamp 2026-10-22 15:13:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A09.651Z..2026-10-22T15%3A13%3A09.651Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5234:FEEE4:968292:A2C677:6ADA280B and timestamp 2026-10-22 15:13:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A131CDA1%2Fdsh-scrape-webpage%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A09.651Z..2026-10-22T15%3A13%3A09.651Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5342:FEEE4:968360:A2C759:6ADA280C and timestamp 2026-10-22 15:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"dsh-scrape-webpage\",\n      \"captured_at\": \"2026-10-22T15:13:16.890Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": 1067,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-scrape-webpage\",\n      \"error\": null,\n      \"publication\": {\n        \"first_published_at\": \"2026-08-20T06:18:05.317Z\",\n        \"captured_at\": \"2026-10-22T15:13:16.890Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-scrape-webpage\",\n        \"error\": null,\n        \"latest_version\": \"1.0.0\",\n        \"latest_published_at\": \"2026-08-20T06:18:05.741Z\",\n        \"latest_error\": null\n      }\n    }\n  }\n}\n",
+            "sha256": "d8cf447c8a5181350162bc10754886f4b26ee29e1ca26a54efa3586e5ca1292c"
+        }
+    },
+    "unavailable_artifacts": []
+}

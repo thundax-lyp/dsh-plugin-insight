@@ -1,0 +1,34 @@
+{
+    "repository": "0xsline/dsh-spotlight",
+    "repository_id": 1333136466,
+    "captured_at": "2026-10-22T06:54:01.890Z",
+    "window_start": "2026-09-22T06:54:01.890Z",
+    "stars": 23,
+    "pushed_at": "2026-08-24T09:03:11Z",
+    "issues": {
+        "open": 2,
+        "closed": 4,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@0xsline/dsh-spotlight",
+        "captured_at": "2026-10-22T06:54:12.708Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 599,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%400xsline%2Fdsh-spotlight",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T09:37:00.387Z",
+            "captured_at": "2026-10-22T06:54:12.708Z",
+            "source_url": "https://registry.npmjs.org/%400xsline%2Fdsh-spotlight",
+            "error": null,
+            "latest_version": "0.0.2",
+            "latest_published_at": "2026-08-14T10:40:32.291Z",
+            "latest_error": null
+        }
+    }
+}

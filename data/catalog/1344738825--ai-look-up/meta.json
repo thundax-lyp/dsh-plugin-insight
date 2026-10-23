@@ -1,0 +1,55 @@
+{
+    "repository": "1344738825/ai-look-up",
+    "repository_id": 1401618027,
+    "captured_at": "2026-10-22T15:13:10.295Z",
+    "window_start": "2026-09-22T15:13:10.295Z",
+    "stars": 4,
+    "pushed_at": "2026-10-22T08:02:44Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4FE0:1C3985:A7155F:B365AA:6ADA2808 and timestamp 2026-10-22 15:13:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 50E4:31129F:9BDD37:A81EF1:6ADA2809 and timestamp 2026-10-22 15:13:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A10.295Z..2026-10-22T15%3A13%3A10.295Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 51C6:24D2EB:9B3583:A78134:6ADA280B and timestamp 2026-10-22 15:13:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A10.295Z..2026-10-22T15%3A13%3A10.295Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 52B6:31A217:9CE578:A9327D:6ADA280C and timestamp 2026-10-22 15:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-look-up%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A10.295Z..2026-10-22T15%3A13%3A10.295Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 540A:FDCE3:9AB4C7:A701B2:6ADA280D and timestamp 2026-10-22 15:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "ai-look-up",
+        "captured_at": "2026-10-22T15:13:17.735Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/ai-look-up",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T15:13:17.735Z",
+            "source_url": "https://registry.npmjs.org/ai-look-up",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

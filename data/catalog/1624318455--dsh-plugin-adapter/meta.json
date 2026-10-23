@@ -1,0 +1,29 @@
+{
+    "repository": "1624318455/dsh-plugin-adapter",
+    "repository_id": 1374274469,
+    "captured_at": "2026-10-22T15:12:01.065Z",
+    "window_start": "2026-09-22T15:12:01.065Z",
+    "stars": 5,
+    "pushed_at": "2026-10-22T07:47:49Z",
+    "issues": {
+        "open": null,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "incomplete issue search"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A01.065Z..2026-10-22T15%3A12%3A01.065Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26DC:FDBD3:961B93:A25DF6:6ADA27C8 and timestamp 2026-10-22 15:12:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1624318455%2Fdsh-plugin-adapter%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A01.065Z..2026-10-22T15%3A12%3A01.065Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 276C:102206:9B9EF3:A7E49A:6ADA27C9 and timestamp 2026-10-22 15:12:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ]
+}
