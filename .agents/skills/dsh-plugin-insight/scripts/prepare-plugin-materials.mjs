@@ -139,7 +139,7 @@ export function validateMaterialsOutput(session, pluginId, out, round, root = RO
     const item = session.items.find((candidate) => candidate.id === pluginId);
     if (!item) throw new Error(`plugin is not in session: ${pluginId}`);
     const directory = pluginDirectory({ ...item, component_id: pluginId.split(':')[2] }, root);
-    const expected = resolve(root, `data/runs/${round}/snapshots/${basename(directory)}/MATERIALS.json`);
+    const expected = resolve(root, `data/runs/${round}/${basename(directory)}/MATERIALS.json`);
     if (resolve(out) !== expected) throw new Error('materials output path differs from selected plugin');
     if (existsSync(out)) {
         const existing = read(out);
