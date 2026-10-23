@@ -8,16 +8,18 @@ const tableCell = (text) =>
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/\|/g, '&#124;');
+// Shared display order for navigation, category selections and the category index.
 const categoryNames = {
-    'office-operations': '办公与运营',
-    'software-delivery': '软件交付',
-    'research-knowledge': '研究与知识',
-    'customer-service': '客户服务',
-    'content-creation': '内容生产',
     'personal-productivity': '个人效率',
+    'office-operations': '办公与运营',
+    'research-knowledge': '研究与知识',
+    'software-delivery': '软件交付',
+    'content-creation': '内容生产',
+    'customer-service': '客户服务',
     infrastructure: '基础设施',
     other: '其他'
 };
+const categoryOrder = new Map(Object.keys(categoryNames).map((key, index) => [key, index]));
 const categoryScopes = {
     'personal-productivity': '输入、会话、快捷操作与个人工作体验',
     'office-operations': '工作记录、日程、团队用量与日常运营',
@@ -331,7 +333,11 @@ export function categoryGroups(items) {
         if (!groups.has(key)) groups.set(key, { key, name: category, entries: [] });
         groups.get(key).entries.push(e);
     }
-    return [...groups.values()];
+    return [...groups.values()].sort(
+        (a, b) =>
+            (categoryOrder.get(a.key) ?? categoryOrder.size) - (categoryOrder.get(b.key) ?? categoryOrder.size) ||
+            a.key.localeCompare(b.key, 'en')
+    );
 }
 export const alphabetical = (a, b) =>
     a.plugin.name.localeCompare(b.plugin.name, 'en', { sensitivity: 'base' }) || a.i.id.localeCompare(b.i.id);
