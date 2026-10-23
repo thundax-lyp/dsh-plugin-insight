@@ -6,7 +6,7 @@
 
 ## 分类索引
 
-- [个人效率（146）](PERSONAL-PRODUCTIVITY.md)
+- [个人效率（148）](PERSONAL-PRODUCTIVITY.md)
 - [研究与知识（35）](RESEARCH-KNOWLEDGE.md)
 - [基础设施（81）](INFRASTRUCTURE.md)
 - [软件交付（121）](SOFTWARE-DELIVERY.md)

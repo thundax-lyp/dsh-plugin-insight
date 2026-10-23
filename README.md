@@ -8,7 +8,7 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 146 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 148 |
 | [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 35 |
 | [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 81 |
 | [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 121 |
@@ -53,7 +53,7 @@
 
 <a id="category-personal-productivity"></a>
 
-### [个人效率（146）](data/views/categories/PERSONAL-PRODUCTIVITY.md)
+### [个人效率（148）](data/views/categories/PERSONAL-PRODUCTIVITY.md)
 
 <a id="plugin-1333328839-root"></a>
 
