@@ -11,6 +11,8 @@
 
 ## 拆分过程与迁移
 
+INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗口与例外见 [INIT Skill](../SKILL.md#频繁更新过滤)，同轮恢复不重算墙上时间。
+
 新建 WORK 为 v2 索引：固定清单只存 INPUT，变化按下标存 QUEUE，状态与单项结果按内容摘要独立存放。SESSION 是指向 WORK 的兼容入口；读取器完成校验后还原既有内存结构，业务脚本不各自拼装。完整不变量见数据契约。
 
 - `npm run snapshot -- migrate-work --work data/runs/<round>/WORK.json`：预览源格式、语义摘要和原文件大小，不写文件。

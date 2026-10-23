@@ -72,11 +72,11 @@ export function validateSession(session, root = ROOT) {
         )
             throw Error('invalid blocked selection');
         if (
-            (session.selection.metadata_only_ids ?? []).some(
+            [...(session.selection.metadata_only_ids ?? []), ...(session.selection.cooldown_ids ?? [])].some(
                 (id) => !candidates.has(id) || !session.selection.researched_ids.includes(id)
             )
         )
-            throw Error('invalid metadata-only selection');
+            throw Error('invalid deferred research selection');
         const expected = incrementalSelection(session);
         if ([...retries].some((id) => !expected.includes(id))) throw Error('retry exceeds research limit');
         if (digest(session.selected_ids) !== digest(expected)) throw new Error('invalid incremental selection');
@@ -209,7 +209,10 @@ export function incrementalSelection(session) {
     const suppressed = new Set(session.selection.suppressed_ids ?? []);
     const retries = new Set(session.selection.retry_ids ?? []);
     const metadataOnly = new Set(session.selection.metadata_only_ids ?? []);
-    const eligible = session.items.filter((item) => !suppressed.has(item.id));
+    const cooldown = new Set(session.selection.cooldown_ids ?? []);
+    const eligible = session.items.filter(
+        (item) => !suppressed.has(item.id) && (!cooldown.has(item.id) || required.has(item.id) || retries.has(item.id))
+    );
     const updates = eligible.filter(
         (item) =>
             researched.has(item.id) &&

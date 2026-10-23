@@ -293,7 +293,7 @@ function startWorkUnlocked(input, path, limit, root, retryIds) {
         for (const url of item.source_urls)
             if (!session.sources.some((source) => source.url === url))
                 session.sources.push({ url, revision: null, complete: false });
-    session.selection = snapshotSelection(base, session.items, retryIds);
+    session.selection = snapshotSelection(base, session.items, retryIds, true, session.checked_at);
     session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {
@@ -342,7 +342,34 @@ export function metadataOnlyIds(base, items) {
         })
         .map((item) => item.id);
 }
-function snapshotSelection(base, items = null, retryIds = [], metadataPolicy = true) {
+// INIT's frequent-update filter uses the fixed round cutoff, never wall time.
+export function cooldownIds(base, items, checkedAt) {
+    const records = new Map(base.publication.records.map((record) => [record.id, record]));
+    const plugins = new Map(base.catalog.plugins.map((plugin) => [plugin.id, plugin]));
+    return items
+        .filter((item) => {
+            const plugin = plugins.get(item.id),
+                record = records.get(item.id);
+            const before = record ?? plugin;
+            const age = Date.parse(checkedAt) - Date.parse(record?.checked_at ?? plugin?.last_checked_at);
+            return Boolean(
+                base.reports[item.id] &&
+                before &&
+                item.revision &&
+                before.fingerprints.code &&
+                item.revision !== before.fingerprints.code &&
+                item.repository === before.repository &&
+                item.path === before.path &&
+                item.changes.includes('content_changed') &&
+                !item.changes.some((change) => ['unknown', 'moved', 'removed_from_source'].includes(change)) &&
+                Number.isFinite(age) &&
+                age >= 0 &&
+                age < 3 * 24 * 60 * 60 * 1000
+            );
+        })
+        .map((item) => item.id);
+}
+function snapshotSelection(base, items = null, retryIds = [], metadataPolicy = true, cooldownCheckedAt = null) {
     const published = new Set(base.publication.records.map((record) => record.id));
     const researched = [
         ...new Set([
@@ -373,6 +400,7 @@ function snapshotSelection(base, items = null, retryIds = [], metadataPolicy = t
         mode: 'incremental',
         ...blockedSelection,
         ...(metadataPolicy ? { metadata_only_ids: metadataOnlyIds(base, items ?? []) } : {}),
+        ...(cooldownCheckedAt !== null ? { cooldown_ids: cooldownIds(base, items ?? [], cooldownCheckedAt) } : {}),
         researched_ids: researched,
         review_required_ids: base.catalog.plugins
             .filter(
@@ -395,7 +423,8 @@ function assemble(base, work, root = ROOT) {
         base,
         selection?.suppressed_ids === undefined ? null : work.session.items,
         selection?.retry_ids ?? [],
-        selection?.metadata_only_ids !== undefined
+        selection?.metadata_only_ids !== undefined,
+        selection?.cooldown_ids !== undefined ? work.session.checked_at : null
     );
     if (selection && digest(selection) !== digest(expectedSelection))
         throw Error('incremental selection baseline differs from snapshot');
@@ -476,7 +505,7 @@ function assemble(base, work, root = ROOT) {
     delete next.publication.recommendations;
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
-    next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；已知同版本受阻跳过 ${work.session.selection?.suppressed_ids?.length ?? 0}；当前发布 ${records.size}`;
+    next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；已知同版本受阻跳过 ${work.session.selection?.suppressed_ids?.length ?? 0}；频繁更新窗口内跳过 ${work.session.selection?.cooldown_ids?.filter((id) => !selected.has(id) && !work.session.selection?.suppressed_ids?.includes(id)).length ?? 0}；当前发布 ${records.size}`;
     next.discovery = mergeDiscovery(base.discovery, work.input);
     next.transaction = { id: work.session.id, work_digest: digest(work) };
     return validateSnapshot(next, root);
