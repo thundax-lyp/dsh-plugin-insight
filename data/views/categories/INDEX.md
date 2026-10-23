@@ -12,5 +12,5 @@
 - [软件交付（132）](SOFTWARE-DELIVERY.md)
 - [内容生产（17）](CONTENT-CREATION.md)
 - [客户服务（1）](CUSTOMER-SERVICE.md)
-- [基础设施（81）](INFRASTRUCTURE.md)
+- [基础设施（83）](INFRASTRUCTURE.md)
 - [其他（2）](OTHER.md)
