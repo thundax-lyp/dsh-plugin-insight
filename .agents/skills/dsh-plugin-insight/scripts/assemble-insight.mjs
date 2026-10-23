@@ -180,8 +180,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         inspected_paths: questionContext.sourcePaths,
         research_questions: analysis.research_questions,
         files: pack,
-        inventory: { ...inventory, files: undefined },
-        metadata
+        inventory: { ...inventory, files: undefined }
     });
     const now = new Date().toISOString(),
         run = `${work.session.id}-${item.id.replace(/:/g, '-')}`;

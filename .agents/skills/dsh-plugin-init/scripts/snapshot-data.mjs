@@ -308,7 +308,41 @@ function startWorkUnlocked(input, path, limit, root, retryIds) {
     saveWork(path, work, true);
     return work;
 }
-function snapshotSelection(base, items = null, retryIds = []) {
+// Keep research fingerprints at their last reviewed values. Discovery records the
+// current directory/maintenance state; META is refreshed independently.
+export function metadataOnlyIds(base, items) {
+    const plugins = new Map(base.catalog.plugins.map((plugin) => [plugin.id, plugin]));
+    const records = new Map(base.publication.records.map((record) => [record.id, record]));
+    const dependencies = base.catalog.plugins.flatMap((plugin) => [
+        ...plugin.findings.flatMap((finding) => finding.dependencies),
+        ...(plugin.innovation_scores?.dependencies ?? []),
+        ...(plugin.recommendation?.dependencies ?? [])
+    ]);
+    return items
+        .filter((item) => {
+            const before = records.get(item.id) ?? plugins.get(item.id);
+            if (
+                !before ||
+                !base.reports[item.id] ||
+                item.changes.every((change) => change === 'unchanged') ||
+                !item.revision ||
+                item.revision !== before.fingerprints.code ||
+                item.repository !== before.repository ||
+                item.path !== before.path ||
+                item.changes.some((change) => ['unknown', 'moved', 'removed_from_source'].includes(change))
+            )
+                return false;
+            const areas = [...new Set([...Object.keys(before.fingerprints), ...Object.keys(item.fingerprints)])].filter(
+                (area) => before.fingerprints[area] !== item.fingerprints[area]
+            );
+            return (
+                areas.every((area) => ['directory', 'maintenance'].includes(area)) &&
+                !dependencies.some((dependency) => dependency.plugin_id === item.id && areas.includes(dependency.area))
+            );
+        })
+        .map((item) => item.id);
+}
+function snapshotSelection(base, items = null, retryIds = [], metadataPolicy = true) {
     const published = new Set(base.publication.records.map((record) => record.id));
     const researched = [
         ...new Set([
@@ -338,6 +372,7 @@ function snapshotSelection(base, items = null, retryIds = []) {
     return {
         mode: 'incremental',
         ...blockedSelection,
+        ...(metadataPolicy ? { metadata_only_ids: metadataOnlyIds(base, items ?? []) } : {}),
         researched_ids: researched,
         review_required_ids: base.catalog.plugins
             .filter(
@@ -359,7 +394,8 @@ function assemble(base, work, root = ROOT) {
     const expectedSelection = snapshotSelection(
         base,
         selection?.suppressed_ids === undefined ? null : work.session.items,
-        selection?.retry_ids ?? []
+        selection?.retry_ids ?? [],
+        selection?.metadata_only_ids !== undefined
     );
     if (selection && digest(selection) !== digest(expectedSelection))
         throw Error('incremental selection baseline differs from snapshot');
