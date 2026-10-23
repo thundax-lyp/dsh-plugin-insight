@@ -1,0 +1,47 @@
+{
+    "repository": "Aliuyanfeng/dsh-soul",
+    "repository_id": 1352089397,
+    "captured_at": "2026-10-22T15:12:46.072Z",
+    "window_start": "2026-09-22T15:12:46.072Z",
+    "stars": 5,
+    "pushed_at": "2026-10-21T08:44:10Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 2,
+        "closed_30d": null,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAliuyanfeng%2Fdsh-soul%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4176:31A217:9CD1E8:A91D76:6ADA27F0 and timestamp 2026-10-22 15:12:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAliuyanfeng%2Fdsh-soul%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 422C:320EB6:9C3343:A8702D:6ADA27F1 and timestamp 2026-10-22 15:12:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "incomplete issue search"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-soul",
+        "captured_at": "2026-10-22T15:12:55.296Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 2337,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-soul",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-29T09:07:00.318Z",
+            "captured_at": "2026-10-22T15:12:55.296Z",
+            "source_url": "https://registry.npmjs.org/dsh-soul",
+            "error": null,
+            "latest_version": "0.8.0",
+            "latest_published_at": "2026-10-19T06:53:21.245Z",
+            "latest_error": null
+        }
+    }
+}

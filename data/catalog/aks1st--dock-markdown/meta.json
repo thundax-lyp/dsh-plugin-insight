@@ -1,0 +1,34 @@
+{
+    "repository": "AKS1st/dock-markdown",
+    "repository_id": 1340492424,
+    "captured_at": "2026-10-22T07:05:54.280Z",
+    "window_start": "2026-09-22T07:05:54.280Z",
+    "stars": 3,
+    "pushed_at": "2026-09-11T08:05:48Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dock-markdown",
+        "captured_at": "2026-10-22T07:06:04.984Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 878,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dock-markdown",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T06:01:22.424Z",
+            "captured_at": "2026-10-22T07:06:04.984Z",
+            "source_url": "https://registry.npmjs.org/dock-markdown",
+            "error": null,
+            "latest_version": "0.1.2",
+            "latest_published_at": "2026-09-11T08:18:34.260Z",
+            "latest_error": null
+        }
+    }
+}

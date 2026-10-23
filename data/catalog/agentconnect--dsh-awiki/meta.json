@@ -1,0 +1,39 @@
+{
+    "repository": "AgentConnect/dsh-awiki",
+    "repository_id": 1334428397,
+    "captured_at": "2026-10-22T15:12:48.159Z",
+    "window_start": "2026-09-22T15:12:48.159Z",
+    "stars": 19,
+    "pushed_at": "2026-10-22T08:16:57Z",
+    "issues": {
+        "open": null,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAgentConnect%2Fdsh-awiki%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 429E:E97E6:9A882A:A6CAD3:6ADA27F2 and timestamp 2026-10-22 15:12:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@awiki/dsh-plugin",
+        "captured_at": "2026-10-22T15:12:56.529Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1529,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40awiki%2Fdsh-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T12:44:56.132Z",
+            "captured_at": "2026-10-22T15:12:56.529Z",
+            "source_url": "https://registry.npmjs.org/%40awiki%2Fdsh-plugin",
+            "error": null,
+            "latest_version": "0.3.19",
+            "latest_published_at": "2026-10-22T06:14:15.981Z",
+            "latest_error": null
+        }
+    }
+}

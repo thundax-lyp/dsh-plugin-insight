@@ -1,0 +1,34 @@
+{
+    "repository": "AbnerAI/dsh-monitor",
+    "repository_id": 1333440937,
+    "captured_at": "2026-10-22T09:47:27.535Z",
+    "window_start": "2026-09-22T09:47:27.535Z",
+    "stars": 3,
+    "pushed_at": "2026-08-13T19:03:50Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-monitor",
+        "captured_at": "2026-10-22T09:47:35.943Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 823,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-monitor",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T19:00:50.711Z",
+            "captured_at": "2026-10-22T09:47:35.943Z",
+            "source_url": "https://registry.npmjs.org/dsh-monitor",
+            "error": null,
+            "latest_version": "0.1.1",
+            "latest_published_at": "2026-08-13T19:00:57.261Z",
+            "latest_error": null
+        }
+    }
+}

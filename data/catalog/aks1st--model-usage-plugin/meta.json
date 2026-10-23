@@ -1,0 +1,34 @@
+{
+    "repository": "AKS1st/model-usage-plugin",
+    "repository_id": 1334569518,
+    "captured_at": "2026-10-22T05:17:15.925Z",
+    "window_start": "2026-09-22T05:17:15.925Z",
+    "stars": 7,
+    "pushed_at": "2026-09-14T03:22:56Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "model-usage-plugin",
+        "captured_at": "2026-10-22T05:17:26.270Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 972,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/model-usage-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-11T08:50:15.721Z",
+            "captured_at": "2026-10-22T05:17:26.270Z",
+            "source_url": "https://registry.npmjs.org/model-usage-plugin",
+            "error": null,
+            "latest_version": "0.17.0",
+            "latest_published_at": "2026-09-14T03:24:09.698Z",
+            "latest_error": null
+        }
+    }
+}

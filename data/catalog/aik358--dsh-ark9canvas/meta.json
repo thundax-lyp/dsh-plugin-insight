@@ -1,0 +1,55 @@
+{
+    "repository": "Aik358/dsh-ark9canvas",
+    "repository_id": 1352959121,
+    "captured_at": "2026-10-23T01:51:08.495Z",
+    "window_start": "2026-09-23T01:51:08.495Z",
+    "stars": 1,
+    "pushed_at": "2026-09-02T18:06:13Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-ark9canvas%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D312:293B59:17FE84:19D118:6ADABD8E and timestamp 2026-10-23 01:51:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-ark9canvas%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D3FE:1B8FEC:173180:190465:6ADABD8F and timestamp 2026-10-23 01:51:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-ark9canvas%20is%3Aissue%20created%3A2026-09-23T01%3A51%3A08.495Z..2026-10-23T01%3A51%3A08.495Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D4AA:3F7598:11A6D2:13210D:6ADABD91 and timestamp 2026-10-23 01:51:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-ark9canvas%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A51%3A08.495Z..2026-10-23T01%3A51%3A08.495Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D574:3F64BC:17516D:1921F2:6ADABD92 and timestamp 2026-10-23 01:51:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAik358%2Fdsh-ark9canvas%20is%3Aissue%20updated%3A2026-09-23T01%3A51%3A08.495Z..2026-10-23T01%3A51%3A08.495Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D624:3F7FD5:127119:13ECD6:6ADABD93 and timestamp 2026-10-23 01:51:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@a9i5k4/dsh-ark9canvas",
+        "captured_at": "2026-10-23T01:51:15.884Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 851,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40a9i5k4%2Fdsh-ark9canvas",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-01T00:02:30.111Z",
+            "captured_at": "2026-10-23T01:51:15.884Z",
+            "source_url": "https://registry.npmjs.org/%40a9i5k4%2Fdsh-ark9canvas",
+            "error": null,
+            "latest_version": "0.4.1",
+            "latest_published_at": "2026-09-02T18:06:21.699Z",
+            "latest_error": null
+        }
+    }
+}

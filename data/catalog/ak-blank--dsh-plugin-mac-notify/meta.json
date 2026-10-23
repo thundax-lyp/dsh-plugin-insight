@@ -1,0 +1,34 @@
+{
+    "repository": "AK-blank/dsh-plugin-mac-notify",
+    "repository_id": 1402940561,
+    "captured_at": "2026-10-22T04:52:29.427Z",
+    "window_start": "2026-09-22T04:52:29.427Z",
+    "stars": 1,
+    "pushed_at": "2026-10-03T09:35:58Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-plugin-mac-notify",
+        "captured_at": "2026-10-22T04:52:37.422Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-mac-notify",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T04:52:37.422Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-mac-notify",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

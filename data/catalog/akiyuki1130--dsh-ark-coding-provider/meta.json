@@ -1,0 +1,34 @@
+{
+    "repository": "Akiyuki1130/dsh-ark-coding-provider",
+    "repository_id": 1421741516,
+    "captured_at": "2026-10-22T07:31:25.925Z",
+    "window_start": "2026-09-22T07:31:25.925Z",
+    "stars": 2,
+    "pushed_at": "2026-10-16T06:24:26Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-ark-coding-provider",
+        "captured_at": "2026-10-22T07:31:34.803Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-ark-coding-provider",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T07:31:34.803Z",
+            "source_url": "https://registry.npmjs.org/dsh-ark-coding-provider",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "repository": "Airmetro/dsh-update-checker",
+    "repository_id": 1334836615,
+    "captured_at": "2026-10-22T10:14:28.197Z",
+    "window_start": "2026-09-22T10:14:28.197Z",
+    "stars": 19,
+    "pushed_at": "2026-10-21T05:41:04Z",
+    "issues": {
+        "open": 0,
+        "closed": 34,
+        "created_30d": 12,
+        "closed_30d": 14,
+        "updated_30d": 14
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-update-checker",
+        "captured_at": "2026-10-22T10:14:36.416Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 7106,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-update-checker",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T06:15:31.401Z",
+            "captured_at": "2026-10-22T10:14:36.416Z",
+            "source_url": "https://registry.npmjs.org/dsh-update-checker",
+            "error": null,
+            "latest_version": "1.7.3",
+            "latest_published_at": "2026-10-21T05:40:56.432Z",
+            "latest_error": null
+        }
+    }
+}

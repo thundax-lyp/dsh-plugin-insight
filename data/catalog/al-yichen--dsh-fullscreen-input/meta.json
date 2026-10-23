@@ -1,0 +1,34 @@
+{
+    "repository": "AL-Yichen/dsh-fullscreen-input",
+    "repository_id": 1407166868,
+    "captured_at": "2026-10-22T06:16:14.744Z",
+    "window_start": "2026-09-22T06:16:14.744Z",
+    "stars": 4,
+    "pushed_at": "2026-10-17T03:47:56Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-fullscreen-input",
+        "captured_at": "2026-10-22T06:16:22.785Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 748,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-fullscreen-input",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-06T11:58:49.743Z",
+            "captured_at": "2026-10-22T06:16:22.785Z",
+            "source_url": "https://registry.npmjs.org/dsh-fullscreen-input",
+            "error": null,
+            "latest_version": "1.2.4",
+            "latest_published_at": "2026-10-07T12:27:52.103Z",
+            "latest_error": null
+        }
+    }
+}

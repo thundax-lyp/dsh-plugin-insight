@@ -1,0 +1,34 @@
+{
+    "repository": "AcidGr/dsh-web-lan-access",
+    "repository_id": 1334255288,
+    "captured_at": "2026-10-22T05:35:30.748Z",
+    "window_start": "2026-09-22T05:35:30.748Z",
+    "stars": 39,
+    "pushed_at": "2026-10-17T17:57:09Z",
+    "issues": {
+        "open": 0,
+        "closed": 3,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-web-lan-access",
+        "captured_at": "2026-10-22T05:35:39.484Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1470,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-web-lan-access",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T14:57:40.425Z",
+            "captured_at": "2026-10-22T05:35:39.484Z",
+            "source_url": "https://registry.npmjs.org/dsh-web-lan-access",
+            "error": null,
+            "latest_version": "1.3.2",
+            "latest_published_at": "2026-09-10T07:05:26.948Z",
+            "latest_error": null
+        }
+    }
+}
