@@ -1,4 +1,4 @@
-# DSH Plugin Insight
+# DSH Plugin Insight [![已研究 419](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=419&color=blue&style=flat)](data/views/categories/INDEX.md)
 
 ![DSH Plugin Insight](assets/dsh-plugin-insight-banner.png)
 

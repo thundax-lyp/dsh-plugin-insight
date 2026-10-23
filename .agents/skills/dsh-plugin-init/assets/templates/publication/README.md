@@ -1,4 +1,4 @@
-# DSH Plugin Insight
+# DSH Plugin Insight {{research_count}}
 
 ![DSH Plugin Insight](assets/dsh-plugin-insight-banner.png)
 

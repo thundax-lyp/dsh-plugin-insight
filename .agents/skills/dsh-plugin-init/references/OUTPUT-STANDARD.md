@@ -18,6 +18,8 @@
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
 生成输入为当前 `data/catalog/index.jsonl` 还原的 publication，逻辑结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
 README 由独立块函数合成：标题、头图与定位说明 → 分类导航 → 推荐 → 最新 → 最热 → 分类精选 → 研究出处 → LICENSE → 更新时间。
+主标题后、头图前展示“已研究”数量 Badge，点击进入分类索引。数量按稳定组件 ID 去重，统计当前有效发布项及正式快照中仍保留完整研究报告的组件，包含暂时退出发布、等待复核的研究成果；不计仅发现、研究中、受阻或仅保留历史展示稿且没有完整研究报告的条目。计数由生成器从当前快照计算并写入 Shields.io 静态 Badge URL，零项显示0，不依赖在线计数接口或旧 runs；它表示研究覆盖规模，不表示运行验收通过，可能大于当前分类展示数量。
+
 LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
 Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／HOME-NAVIGATION／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORIES／SOURCES 为块模板，
 条目、分类、插件详情入口、META及徽章使用对应小模板。`.agents/skills/dsh-plugin-init/scripts/publication/blocks.mjs` 只负责筛选、排序与装配，不硬编码标题及段落版式。
