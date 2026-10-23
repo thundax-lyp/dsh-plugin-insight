@@ -1,0 +1,63 @@
+{
+    "repository": "173787247/dsh-wsl-helm",
+    "repository_id": 1381843528,
+    "captured_at": "2026-10-21T05:08:56.162Z",
+    "window_start": "2026-09-21T05:08:56.162Z",
+    "stars": 1,
+    "pushed_at": "2026-09-30T03:22:11Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-helm%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 640D:12770C:14FD9E:228362:6AD84981 and timestamp 2026-10-21 05:11:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-helm%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C2:2EEE9E:13BCAC:213D7A:6AD84981 and timestamp 2026-10-21 05:11:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-helm%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C3:C61AA:1525D3:22C349:6AD84982 and timestamp 2026-10-21 05:11:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-helm%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 63C4:5FB64:149234:22157F:6AD84982 and timestamp 2026-10-21 05:11:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-helm%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 641C:64E75:13F935:2185FC:6AD84982 and timestamp 2026-10-21 05:11:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-wsl-helm",
+        "captured_at": "2026-10-21T05:08:56.162Z",
+        "window_start": "2026-09-21",
+        "window_end": "2026-10-20",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-helm",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-21T07:15:57.121Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-helm",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    },
+    "code_update": {
+        "checked_at": "2026-10-21T05:08:56.162Z",
+        "baseline_revision": "f63ba0892507034e8d31c3969c2b5e1b277fbd60",
+        "current_revision": "f63ba0892507034e8d31c3969c2b5e1b277fbd60",
+        "script_changed": false,
+        "changed_files": [],
+        "error": null
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "repository": "AKS1st/dsh-mermaid",
+    "repository_id": 1334569498,
+    "captured_at": "2026-10-22T05:07:35.249Z",
+    "window_start": "2026-09-22T05:07:35.249Z",
+    "stars": 9,
+    "pushed_at": "2026-08-18T03:58:23Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-mermaid",
+        "captured_at": "2026-10-22T05:07:42.833Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 4196,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-mermaid",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T08:12:00.251Z",
+            "captured_at": "2026-10-22T05:07:42.833Z",
+            "source_url": "https://registry.npmjs.org/dsh-mermaid",
+            "error": null,
+            "latest_version": "0.4.2",
+            "latest_published_at": "2026-10-15T05:43:05.632Z",
+            "latest_error": null
+        }
+    }
+}

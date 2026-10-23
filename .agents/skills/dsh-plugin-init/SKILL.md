@@ -16,8 +16,8 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
 具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
 
-正式真相由 `data/catalog/index.jsonl`、`data/catalog/components/<id前两位>/<id>.json`、全局 `state.json` 与独立证据组成；物理 id 为 canonical identity 的 MD5，完整格式见共享数据契约及 `component-storage.schema.json`，还原后的逻辑结构见 `snapshot.schema.json`。本轮工作入口仍为 `data/runs/<round>/WORK.json`，存储见 `work-storage.schema.json`，完整逻辑结构见 `snapshot-work.schema.json`。正式快照与 WORK／SESSION 均使用共享读取器，不假设索引内嵌完整数据。
-使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／migrate-work／clean。档案、路径、META 和发布数据集中在组件完整记录；不再生成旧聚合 JSON 或独立展示 META。页面是可重建输出，不单独人工写入。
+正式成果位于 `data/catalog/<plugin-slug>/research.json` 与同目录 `meta.json`，slug 与 plugins 详情目录一致。研究原稿、结论、评分、展示输入和必要证据完整嵌入 research.json；META 独立刷新。索引 `index.jsonl` 与全局 `state.json` 由共享存储器管理，不能据索引内嵌完整数据。扫描与研究过程只存本轮 `data/runs/<round>/<plugin-slug>/`，不新增 snapshots／insights／questions／observations 中间目录。工作入口为本轮 WORK.json，读取使用共享过程读取器。
+使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／reindex／migrate-work／clean。档案、路径、META 和发布数据集中在组件完整记录；不再生成旧聚合 JSON 或独立展示 META。页面是可重建输出，不单独人工写入。
 首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
 旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
 
@@ -38,7 +38,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 
 时间优先取最后完成研究的 publication.records.checked_at；保留研究但未发布的项取档案 last_checked_at，不能使用 META 采集、目录发现、页面生成或新版本发布时间重置窗口。时间缺失、无效或晚于本轮检查时间时不应用过滤。
 
-仅过滤版本更新：首次研究、仓库／组件路径迁移、未知或目录移除，本轮输入已改变现有结论／创新评分／采用推荐声明依赖的非 code 指纹（含跨插件依赖），以及已有结论 needs_review 或显式重试，不因本窗口被跳过。仅 code revision 改变仍适用窗口，不把正常版本依赖一概视为过滤例外。新版本继续如实写入发现层；保留原研究版本、报告、证据及研究时间，不标记“源码未变”或“已完成新版本研究”。后续新轮次仍与最后完成研究的版本比较，不能因窗口内已发现版本而永久漏掉更新。
+仅过滤版本更新：首次研究、仓库／组件路径迁移、未知或目录移除，本轮输入已改变现有结论／创新评分／采用推荐声明依赖的非 code 指纹（含跨插件依赖），以及已有结论 needs_review 或显式重试，不因本窗口被跳过。仅 code revision 改变仍适用窗口，不把正常版本依赖一概视为过滤例外。新版本如实保存在本轮 INPUT／WORK；保留原研究版本、报告、证据及研究时间，不标记“源码未变”或“已完成新版本研究”。后续新轮次仍与最后完成研究的版本比较，不能因窗口内已发现版本而永久漏掉更新。
 
 本轮窗口判断及跳过 ID 固定在 selection.cooldown_ids，合并时按原基线与本轮 checked_at 复算；同轮恢复不随墙上时间重排。历史会话缺少该字段时维持原选择。单列频繁更新跳过数量，不算本轮完成或受阻。
 
@@ -70,7 +70,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    ```
    Skill 未提供参数时使用40；`snapshot start` 省略 `--limit` 时同样默认40。prepare:selected 只读取固定提交、统计和采集材料/META，不运行目标代码，不生成观察或研究结论。
    选中的更新项和新项均完整分析；未变的已有项只核对后保留，不调用洞察、不伪造本轮完成记录。同轮恢复跳过已完成且材料校验一致的项。
-4. **分派单插件洞察。** 父 Agent 将所选插件分配给子 Agent 执行[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入单插件研究总目标、稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮独占输出位置。
+4. **分派单插件洞察。** 父 Agent 将所选插件分配给子 Agent 执行[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入单插件研究总目标、稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮独占的 `<plugin-slug>` 目录。
    多个子 Agent 可同时分析互不重叠的插件，由父 Agent 回收、验收与汇总；具体边界见下方“多 Agent 协作”。每项独立保存 inventory、证据、详细分析、观察批次及人工确认的摘要／能力／建议。
    按研究规范和输出标准核对贡献识别、关键质疑、新假设及验证；场景、替代办法、依赖、流程和成本支撑贡献判断，不得用静态候选批量生成通用结论。
 5. **校验并暂存完成记录。** 先对照该插件的问题计划，按稳定问题ID逐题验收完整回答、证据、未知项和状态，确认综合结论可回指具体问题且最终报告保留完整逐题正文；不得以摘要或过程文件链接替代。再核对身份、版本、来源指纹、完整 findings 复核、证据引用、报告及材料摘要。核对本轮两轴创新评分及理由已写入JSON，按数据契约校验版本、分项和依赖，不在读者Markdown中展示评分。
@@ -86,14 +86,14 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    将支撑当前结论的分析原文和必要证据落入正式快照引用的位置；发布输入只引用合并候选中的当前材料，不引用待清理的 runs 文件。
    未选、失败或未完成项保留正式快照的有效记录，不因本轮 pending／blocked 将旧成果移出发布；新证据足以使旧结论失效时，单独校验并标记待复核，调整推荐，不伪装成完成。
 7. **最后合并与生成。** 汇总审阅本轮候选；检查正式基线摘要和依赖是否变化，冲突时重做合并计划，不覆盖并发修改。
-   通过结构、身份、证据、依赖和语义校验后，再以一致的发布事务合并当前档案、分析／证据引用及展示输入；提交点前读者仍看到旧快照。
+   通过结构、身份、证据、依赖和语义校验后，再以一致的发布事务合并已完成组件的当前档案、分析／证据及展示输入；提交点前读者仍看到旧快照。
    从合并后的全部当前有效研究生成推荐：README前5项，推荐页前50项；同时生成分类页和详情展示页。旧 SESSION、runs 和历史 manifest 不参与当前发布有效性判断。
    ```sh
    npm run snapshot -- plan --work data/runs/<round>/WORK.json --out /tmp/dsh-snapshot-plan.json
    npm run snapshot -- apply --plan /tmp/dsh-snapshot-plan.json
    npm run check
    ```
-   目录／维护轻量项在合并后按需用 `npm run refresh:meta -- --plugin <稳定ID>` 定向刷新 META（可重复指定）；不调用单插件洞察，不替换源码证据，不刷新研究检查时间。META 与源码证据的兼容及依赖边界见数据契约的“目录与维护信息的轻量更新”。
+   目录／维护轻量项只保留在本轮过程，不更新正式研究文件；按需用 `npm run refresh:meta -- --plugin <稳定ID>` 定向刷新 META（可重复指定）；不调用单插件洞察，不替换源码证据，不刷新研究检查时间。META 与源码证据的兼容及依赖边界见数据契约的“目录与维护信息的轻量更新”。
    检查 plan 的基线、合并范围与保留项后才 apply；再按输出标准人工核对贡献、质疑和假设论证、引用、成立条件和覆盖范围。
 批量登记受阻原因可用 `snapshot block-batch --work <WORK.json> --input <entries.json>`，输入为 `{ id, input }` 数组，input 与单项 block 相同；整批校验后保存，不写正式快照。
 
@@ -121,7 +121,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 
 ## 读者页面重新生成
 
-仅在用户明确要求更新本 Skill 或重新生成读者页面时执行；研究原稿、证据、快照与分析版本作为只读输入，不为排版重做研究或制造新结论。
+仅在用户明确要求更新本 Skill 或重新生成读者页面时执行；catalog 内研究原稿、证据与分析版本作为只读输入；不读取旧 runs、manifest 或 checkout，不为排版重做研究或制造新结论。
 
 1. **先更新生成要求。** 将用户确认的阅读目标落实到 Skill 的写作与发布步骤，核对输出标准中的相关约定。已有确认要求优先，不把“改 Skill”替换成直接编辑生成的 Markdown；生成要求与既有标准有冲突时按用户当前要求处理并明确同步范围。
 2. **组织三个阅读层次。** 首页先定位和分类导航，再推荐、最新、最热、分类精选，最后出处、许可与页面更新时间；分类导航用“分类／用途／数量”紧凑表，精选用加粗名称、功能简介与必要指标，不为每个插件创建标题。分类页先说明范围，再给紧凑比较表，下方以二级插件标题保留四标签短评，取消重复的同名分类标题；表内只放简短用途和完整的关键条件，长建议放回短评。

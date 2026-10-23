@@ -1,0 +1,51 @@
+{
+    "repository": "19north/dsh-redstone-music",
+    "repository_id": 1401037852,
+    "captured_at": "2026-10-22T16:02:22.220Z",
+    "window_start": "2026-09-22T16:02:22.220Z",
+    "stars": 0,
+    "pushed_at": "2026-10-02T04:06:46Z",
+    "issues": {
+        "open": 0,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4B5C:F03E0:167CDEC:20AD2EA:6ADA3392 and timestamp 2026-10-22 16:02:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A22.220Z..2026-10-22T16%3A02%3A22.220Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4C28:15D91B:16DBE8E:20FB141:6ADA3393 and timestamp 2026-10-22 16:02:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A22.220Z..2026-10-22T16%3A02%3A22.220Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D24:7E6BD:162A9A4:20283DA:6ADA3394 and timestamp 2026-10-22 16:02:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A19north%2Fdsh-redstone-music%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A22.220Z..2026-10-22T16%3A02%3A22.220Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E2A:11916F:16FD6AF:212B671:6ADA3395 and timestamp 2026-10-22 16:02:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-redstone-music",
+        "captured_at": "2026-10-22T16:02:30.318Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-redstone-music",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T16:02:30.318Z",
+            "source_url": "https://registry.npmjs.org/dsh-redstone-music",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

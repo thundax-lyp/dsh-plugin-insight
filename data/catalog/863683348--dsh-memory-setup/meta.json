@@ -1,0 +1,34 @@
+{
+    "repository": "863683348/dsh-memory-setup",
+    "repository_id": 1337350700,
+    "captured_at": "2026-10-22T10:47:05.357Z",
+    "window_start": "2026-09-22T10:47:05.357Z",
+    "stars": 1,
+    "pushed_at": "2026-09-11T03:26:11Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-memory-setup",
+        "captured_at": "2026-10-22T10:47:16.703Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 155,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-memory-setup",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T15:29:48.317Z",
+            "captured_at": "2026-10-22T10:47:16.703Z",
+            "source_url": "https://registry.npmjs.org/dsh-memory-setup",
+            "error": null,
+            "latest_version": "1.2.0",
+            "latest_published_at": "2026-08-19T15:29:48.563Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "repository": "AbcdefgXW/dsh-toolbox-web",
+    "repository_id": 1335244607,
+    "captured_at": "2026-10-23T01:50:56.685Z",
+    "window_start": "2026-09-23T01:50:56.685Z",
+    "stars": 5,
+    "pushed_at": "2026-09-15T18:44:10Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C976:37EE1A:177541:1948C8:6ADABD83 and timestamp 2026-10-23 01:50:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA16:31129F:113E8C7:128A627:6ADABD84 and timestamp 2026-10-23 01:51:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A56.685Z..2026-10-23T01%3A50%3A56.685Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB16:102599:133EAD0:148BD4D:6ADABD85 and timestamp 2026-10-23 01:51:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A56.685Z..2026-10-23T01%3A50%3A56.685Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC24:102599:133EBA1:148BE25:6ADABD86 and timestamp 2026-10-23 01:51:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A56.685Z..2026-10-23T01%3A50%3A56.685Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD3E:324C6A:14890EB:15D626D:6ADABD88 and timestamp 2026-10-23 01:51:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-toolbox-web",
+        "captured_at": "2026-10-23T01:51:04.628Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 977,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-toolbox-web",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T06:40:23.890Z",
+            "captured_at": "2026-10-23T01:51:04.628Z",
+            "source_url": "https://registry.npmjs.org/dsh-toolbox-web",
+            "error": null,
+            "latest_version": "0.1.29",
+            "latest_published_at": "2026-09-15T19:46:39.471Z",
+            "latest_error": null
+        }
+    }
+}

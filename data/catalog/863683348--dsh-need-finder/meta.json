@@ -1,0 +1,34 @@
+{
+    "repository": "863683348/dsh-need-finder",
+    "repository_id": 1336571882,
+    "captured_at": "2026-10-22T09:04:31.650Z",
+    "window_start": "2026-09-22T09:04:31.650Z",
+    "stars": 2,
+    "pushed_at": "2026-09-11T03:26:14Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-need-finder",
+        "captured_at": "2026-10-22T09:04:39.195Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 841,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-need-finder",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T02:27:43.573Z",
+            "captured_at": "2026-10-22T09:04:39.195Z",
+            "source_url": "https://registry.npmjs.org/dsh-need-finder",
+            "error": null,
+            "latest_version": "0.3.1",
+            "latest_published_at": "2026-09-11T02:35:11.637Z",
+            "latest_error": null
+        }
+    }
+}

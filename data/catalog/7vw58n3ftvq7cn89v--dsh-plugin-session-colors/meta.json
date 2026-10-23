@@ -1,0 +1,34 @@
+{
+    "repository": "7vw58n3ftvq7cn89v/dsh-plugin-session-colors",
+    "repository_id": 1394188597,
+    "captured_at": "2026-10-22T09:28:53.741Z",
+    "window_start": "2026-09-22T09:28:53.741Z",
+    "stars": 0,
+    "pushed_at": "2026-10-08T04:54:31Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-plugin-session-colors",
+        "captured_at": "2026-10-22T09:29:00.236Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-session-colors",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T09:29:00.236Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-session-colors",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

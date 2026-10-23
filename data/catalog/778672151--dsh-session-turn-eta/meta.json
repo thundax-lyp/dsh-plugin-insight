@@ -1,0 +1,34 @@
+{
+    "repository": "778672151/dsh-session-turn-eta",
+    "repository_id": 1368581082,
+    "captured_at": "2026-10-22T07:23:41.551Z",
+    "window_start": "2026-09-22T07:23:41.551Z",
+    "stars": 2,
+    "pushed_at": "2026-09-14T11:50:14Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@dsh-external/dsh-session-turn-eta",
+        "captured_at": "2026-10-22T07:23:49.406Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40dsh-external%2Fdsh-session-turn-eta",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T07:23:49.406Z",
+            "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-session-turn-eta",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

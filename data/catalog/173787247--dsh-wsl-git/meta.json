@@ -1,0 +1,34 @@
+{
+    "repository": "173787247/dsh-wsl-git",
+    "repository_id": 1381833309,
+    "captured_at": "2026-10-22T07:26:46.081Z",
+    "window_start": "2026-09-22T07:26:46.081Z",
+    "stars": 1,
+    "pushed_at": "2026-09-30T03:22:05Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-wsl-git",
+        "captured_at": "2026-10-22T07:26:55.085Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-git",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T07:26:55.085Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-git",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "repository": "AK-blank/dsh-codex-bridge",
+    "repository_id": 1427331352,
+    "captured_at": "2026-10-23T01:50:44.633Z",
+    "window_start": "2026-09-23T01:50:44.633Z",
+    "stars": 0,
+    "pushed_at": "2026-10-20T17:14:13Z",
+    "issues": {
+        "open": 0,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-codex-bridge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C308:10466D:115C31E:12A8A4F:6ADABD78 and timestamp 2026-10-23 01:50:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-codex-bridge%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A44.633Z..2026-10-23T01%3A50%3A44.633Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C3E6:3FE3CA:120C7D:1384DA:6ADABD7A and timestamp 2026-10-23 01:50:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-codex-bridge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A44.633Z..2026-10-23T01%3A50%3A44.633Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C4B4:3FD3DC:1BD9B8:1D537D:6ADABD7B and timestamp 2026-10-23 01:50:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAK-blank%2Fdsh-codex-bridge%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A44.633Z..2026-10-23T01%3A50%3A44.633Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C56A:3F5089:1621C8:17F33D:6ADABD7C and timestamp 2026-10-23 01:50:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-codex-bridge",
+        "captured_at": "2026-10-23T01:50:52.867Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 47,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-codex-bridge",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T14:11:08.253Z",
+            "captured_at": "2026-10-23T01:50:52.867Z",
+            "source_url": "https://registry.npmjs.org/dsh-codex-bridge",
+            "error": null,
+            "latest_version": "0.1.5",
+            "latest_published_at": "2026-08-15T14:56:02.195Z",
+            "latest_error": null
+        }
+    }
+}

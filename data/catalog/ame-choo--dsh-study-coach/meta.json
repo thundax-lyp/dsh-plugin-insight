@@ -1,0 +1,34 @@
+{
+    "repository": "Ame-Choo/dsh-study-coach",
+    "repository_id": 1400498179,
+    "captured_at": "2026-10-22T06:09:56.527Z",
+    "window_start": "2026-09-22T06:09:56.527Z",
+    "stars": 3,
+    "pushed_at": "2026-10-14T14:00:18Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-study-coach",
+        "captured_at": "2026-10-22T06:10:04.582Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 353,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-study-coach",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-01T18:57:54.050Z",
+            "captured_at": "2026-10-22T06:10:04.582Z",
+            "source_url": "https://registry.npmjs.org/dsh-study-coach",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-10-01T18:57:54.488Z",
+            "latest_error": null
+        }
+    }
+}

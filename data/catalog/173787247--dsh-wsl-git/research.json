@@ -1,0 +1,428 @@
+{
+    "schema_version": 4,
+    "id": "566a29e9dd31fce7d5603275af76ea08",
+    "identity": "github:1381833309:root",
+    "slug": "173787247--dsh-wsl-git",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1381833309:root",
+            "repository_id": 1381833309,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-git",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-git",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "48ebc30eaaabd07b281ccdc8b462f94b109759c21ea2e8f8c7a1c6c80327bcb5",
+                "code": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                "maintenance": "ba67f7132dcbcf4aae51d0d2ee2de9dd5edba81b0dd79c14c97c2ac336e07bb1"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1381833309-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T09:22:18.312Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1381833309-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-git",
+                            "commit": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                            "path": "README.md",
+                            "content_sha256": "0e970e7500dc37ac7860211c3c1cc31848ee96db7997fae6b8e6d2070bbcea1b"
+                        }
+                    ],
+                    "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                    "captured_at": "2026-10-22T09:22:18.312Z",
+                    "summary": "提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1381833309-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-git",
+                            "commit": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                            "path": "README.md",
+                            "content_sha256": "0e970e7500dc37ac7860211c3c1cc31848ee96db7997fae6b8e6d2070bbcea1b"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-git",
+                            "commit": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                            "path": "package.json",
+                            "content_sha256": "11864e6947acd1903f9e08972fac310567a0c73fb3aece5efb78545ae0c777aa"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-git",
+                            "commit": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                            "path": "index.js",
+                            "content_sha256": "ac8e2056cd0ad6e576b93b8d62c830e4ed5df0eb8c1d643765cd45e6e66b51bb"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-git",
+                            "commit": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                            "path": "lib/git.js",
+                            "content_sha256": "286b7e2d9949dd384e93bbf55b37ee899e932d59d73894e19327e8492a35a900"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-git",
+                            "commit": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                            "path": "test/git.test.js",
+                            "content_sha256": "d96ab692f8c94d80fd66b4527e2d929fc78e0b8c37daf5d16788310eb6e31b10"
+                        }
+                    ],
+                    "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                    "captured_at": "2026-10-22T09:22:18.312Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/git.js、test/git.test.js；realpath允许根校验后spawn git -C，逐工具摘要/切片并返回truncated字段。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "完整136行入口/136行Git模块/17行测试及README/package，不执行目标或查询真实工作区Git状态。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发任务先看仓库摘要，减少整段diff进入模型。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "realpath允许根校验后spawn git -C，逐工具摘要/切片并返回truncated字段。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "完整136行入口/136行Git模块/17行测试及README/package，不执行目标或查询真实工作区Git状态。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.1 MIT ESM，Node>=18，无WSL门，依赖git/bash和宿主tools/systemPrompt。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/宿主、git/bash与配置资源，金额未知 | 配明确仓库根、核Git环境，耗时未知 | allowRoots默认any，允许子目录不等父仓数据隔离 |\n| 持续使用 | status最多三Git两bash，log/stat一Git；过程缓冲/stderr与结果上下文 | 核截断、错误和完整diff，实际工时未知 | 无独立远端API或额外模型请求不等宿主总费为零；token节省无基准 |\n| 失败恢复 | 重查消耗本地进程资源；无commit/push恢复功能 | 先查部分输出/错误，再人工复核后续提交判断 | 插件不替用户回滚仓库；重查金额与恢复工时未知 |\n",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "摘要入口试用，完整审查另读变更，确认根与截断。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 少上下文 | 截断摘要 | render可能不标截断 |\n| 路径限制 | realpath前缀 | 非仓库/环境隔离 |\n| 变更概览 | status/log/stat | 非一致快照/强文件计数 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "物理路径/固定argv可复用，补全子命令失败与显式partial更关键。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "porcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父仓/Git环境范围。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "研究仓库来源约束/统一预算和显式partial摘要，比较误判断与token，尚未验证。详见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381833309:root",
+                            "area": "code",
+                            "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T09:22:18.312Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T09:22:18.312Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                "reviewed_at": "2026-10-22T09:22:18.312Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381833309:root",
+                        "area": "code",
+                        "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty小幅，Git摘要常见；mechanism小幅，固定命令/截断；transferability实质，通用Git；simplification实质，减少上下文整理。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow取9，参照手工Git摘要命令，工具入口减少拼接但未改变开发职责；delivery取8，原生status/log/stat文本被包装为带repo/计数/truncated字段的定长模型回执，构成小幅交付格式增量，内容仍是既有Git摘要且部分失败语义有限；reach取10，明确让不熟Git参数的模型工作流得到固定入口；economics取4，通过限制回传减少上下文组织步骤，实际节省未知。未实测属于证据性质，不作为delivery归零理由。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1381833309-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "明确仓库根并核结构化截断后可试用摘要，不以changedFiles或ok替代完整变更审查；大仓部分结果需复核。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "模型仓库概览明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "聚合限制便利，普通Git可替。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定链可核，部分结果/范围缺口明确。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "大输出/超时与范围复核维护。"
+                    }
+                },
+                "score": 59,
+                "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                "reviewed_at": "2026-10-22T09:22:18.312Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1381833309-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381833309:root",
+                        "area": "code",
+                        "fingerprint": "79fa248103904f63b552e92c9655be0d3c6e4981"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1381833309:root",
+            "repository": "173787247/dsh-wsl-git",
+            "path": "",
+            "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+            "fingerprints": {
+                "directory": "48ebc30eaaabd07b281ccdc8b462f94b109759c21ea2e8f8c7a1c6c80327bcb5",
+                "code": "79fa248103904f63b552e92c9655be0d3c6e4981",
+                "maintenance": "ba67f7132dcbcf4aae51d0d2ee2de9dd5edba81b0dd79c14c97c2ac336e07bb1"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "e6be70d5d70258c0dd31f66d55da3d7bca08b51e6ac1444ce7dd3ba0682e81aa"
+        },
+        "publication.metadata": "data/catalog/173787247--dsh-wsl-git/meta.json",
+        "publication.summaries": {
+            "text": "提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。",
+            "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+            "source_url": "https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+            "items": {
+                "模型工具": "四个Git只读摘要/可用性入口"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `git_tool_status` | 查询Git位置/版本与允许根数量 | 依bash/PATH，ok不代表仓库可读，which无自身超时 |\n| `git_status_summary` | 分支、短状态与变更条目数 | 指定cwd/allowRoots；porcelain失败未独立验收，非原子快照 |\n| `git_log_oneline` | 有限条提交摘要 | 默认20最多100；字段count不等切片后可见行数，核truncated |\n| `git_diff_stat` | 工作树或暂存区变更量 | 不含完整patch；核结构化truncated，不代替代码审查 |"
+        },
+        "publication.advice": {
+            "revision": "79fa248103904f63b552e92c9655be0d3c6e4981",
+            "text": "摘要入口试用，完整审查另读变更，确认根与截断。详见[Q05](#research-q05)。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-git",
+        "reports": "# dsh-wsl-git\n\n> 提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-git](https://github.com/173787247/dsh-wsl-git)\n- **版本号**：0.1.1（[固定提交 79fa248103904f63b552e92c9655be0d3c6e4981](https://github.com/173787247/dsh-wsl-git/tree/79fa248103904f63b552e92c9655be0d3c6e4981)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定命令/物理路径检查可查，但Git仓库范围不等cwd范围，部分状态和截断render存在缺口。\n\n## 洞察短评\n\n- **用途**：开发任务先看仓库摘要，减少整段diff进入模型。详见[Q01](#research-q01)。\n- **亮点**：把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。\n- **思考**：porcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父仓/Git环境范围。详见[Q03](#research-q03)。\n- **建议**：研究仓库来源约束/统一预算和显式partial摘要，比较误判断与token，尚未验证。详见[Q05](#research-q05)。\n\n采用建议：摘要入口试用，完整审查另读变更，确认根与截断。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。\n\n## 关键质疑\n\nporcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父仓/Git环境范围。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n研究仓库来源约束/统一预算和显式partial摘要，比较误判断与token，尚未验证。详见[Q05](#research-q05)。\n\n从父仓范围/porcelain cap/缺bash/工作树并发反例核。\n\n## 场景与替代办法\n\n开发任务先看仓库摘要，减少整段diff进入模型。详见[Q01](#research-q01)。\n\n手工git status/log/diff stat，插件不是提交或审查判定器。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失效影响 |\n| --- | --- | --- |\n| Node>=18/tools | 入口 | ABI匹配 |\n| git/bash PATH | 查询/which | 不同环境/缺bash |\n| allowRoots仓库根 | 来源边界 | 默认any/父仓差异 |\n| 输出复核 | 完整性 | 部分摘要可能ok |\n\n#### 启动步骤\n\n| 步骤 | 执行者 | 判断标准 |\n| --- | --- | --- |\n| 配仓库根 | 用户 | 物理根和Git根一致 |\n| 请求摘要 | 工具 | 指定cwd |\n| 看truncated/错误 | 用户 | 部分结果不误读 |\n| 按需读具体diff | 用户/模型 | 不按摘要完成审查 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/宿主、git/bash与配置资源，金额未知 | 配明确仓库根、核Git环境，耗时未知 | allowRoots默认any，允许子目录不等父仓数据隔离 |\n| 持续使用 | status最多三Git两bash，log/stat一Git；过程缓冲/stderr与结果上下文 | 核截断、错误和完整diff，实际工时未知 | 无独立远端API或额外模型请求不等宿主总费为零；token节省无基准 |\n| 失败恢复 | 重查消耗本地进程资源；无commit/push恢复功能 | 先查部分输出/错误，再人工复核后续提交判断 | 插件不替用户回滚仓库；重查金额与恢复工时未知 |\n\n\n#### 效果\n\n| 目标 | 支持 | 边界 |\n| --- | --- | --- |\n| 少上下文 | 截断摘要 | render可能不标截断 |\n| 路径限制 | realpath前缀 | 非仓库/环境隔离 |\n| 变更概览 | status/log/stat | 非一致快照/强文件计数 |\n\n## 研究问题与完整回答\n\n**插件研究总目标：**Git摘要的路径/截断/成功语义是否足以支持模型判断，怎样保留部分结果边界？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 摘要工具比直接Git命令多什么？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向模型要了解工作树/提交历史而不想整段diff占上下文的开发场景，提供git_tool_status、status摘要、diff stat和oneline log四工具。默认status/log最多12000字符，stat8000，log最多100条；无commit/push工具，不生成补丁、不自动修改仓库业务内容。README工具表漏列log且前部版本0.1.0与package0.1.1不一致，按当前入口代码评估。\n\n贡献是常用只读Git固定命令、大小限制和可选路径根规则接进模型工具，基线是手工Git摘要命令，不是新版本控制。摘要不足以审查代码语义或证明仓库干净/可发布，使用者仍需按任务读具体变更。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:21-136](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js#L21-L136)\n\n四个实际注册。\n\n<details>\n<summary>查看原文（116行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"git_tool_status\",\n    description: \"Whether git is on PATH; version string.\",\n    parameters: { type: \"object\", additionalProperties: false, properties: {} },\n    output: { schema: { type: \"object\", additionalProperties: true }, render: (_a, v) => [{ type: \"text\", text: JSON.stringify(v, null, 2) }] },\n    timeoutMs: 5_000,\n    isConcurrencySafe: () => true,\n    async execute() {\n      return { ...(await gitToolStatus()), allowRootsCount: allowRoots.length };\n    },\n    presentCall: () => ({ card: \"generic\", title: \"git tool\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"git tool\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"git_status_summary\",\n    description: \"Short git status (-sb) + changed file count for a repo. Caps size.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"cwd\"],\n      properties: { cwd: { type: \"string\", description: \"Git work tree path\" } },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [\n        {\n          type: \"text\",\n          text:\n            v.ok === false\n              ? v.error\n              : `repo=${v.repo}\\nbranch=${v.branch}\\nchangedFiles=${v.changedFiles}\\n${v.status}`,\n        },\n      ],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await gitStatusSummary({ cwd: args.cwd, allowRoots, timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"git status\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"git status\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"git_log_oneline\",\n    description: \"git log --oneline -n N (capped, default 20, max 100). Read-only.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"cwd\"],\n      properties: {\n        cwd: { type: \"string\" },\n        limit: { type: \"number\", description: \"Commit count (default 20, max 100)\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.log || \"(empty)\" }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await gitLogOneline({ cwd: args.cwd, limit: args.limit, allowRoots, timeoutMs });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"git log\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"git log\", content: r.content }),\n  });\n\n  ctx.tools.register({\n    name: \"git_diff_stat\",\n    description: \"git diff --stat (or --cached) only — never full patch. Caps size.\",\n    parameters: {\n      type: \"object\",\n      additionalProperties: false,\n      required: [\"cwd\"],\n      properties: {\n        cwd: { type: \"string\" },\n        staged: { type: \"boolean\" },\n      },\n    },\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.stat }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n        return await gitDiffStat({\n          cwd: args.cwd,\n          staged: args.staged === true,\n          allowRoots,\n          timeoutMs,\n        });\n      } catch (e) {\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"git diff --stat\" }),\n    presentResult: (_a, r) => ({ card: \"generic\", title: \"git diff --stat\", content: r.content }),\n  });\n}\n\nfunction positive(v, fb) {\n  const n = Number(v);\n  return Number.isFinite(n) && n > 0 ? n : fb;\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/git.js:57-106](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L57-L106)\n\n输出限制。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n\nexport async function gitStatusSummary({ cwd, allowRoots, timeoutMs, maxOut = 12_000 }) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const bin = (await which(\"git\")) || \"git\";\n  if (!(await which(\"git\"))) {\n    /* still try git on PATH via spawn */\n  }\n  void bin;\n  const branch = await runGit(repo, [\"rev-parse\", \"--abbrev-ref\", \"HEAD\"], timeoutMs);\n  const short = await runGit(repo, [\"status\", \"-sb\", \"--untracked-files=no\"], timeoutMs);\n  const porcelain = await runGit(repo, [\"status\", \"--porcelain\"], timeoutMs);\n  if (short.code !== 0) throw new Error(`git status failed: ${short.stderr || short.code}`);\n  const lines = porcelain.stdout.split(\"\\n\").filter(Boolean);\n  const summary = short.stdout.slice(0, maxOut);\n  return {\n    ok: true,\n    repo,\n    branch: branch.code === 0 ? branch.stdout.trim() : null,\n    changedFiles: lines.length,\n    status: summary,\n    truncated: short.stdout.length > maxOut,\n  };\n}\n\nexport async function gitDiffStat({ cwd, allowRoots, timeoutMs, staged = false, maxOut = 8_000 }) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const args = staged ? [\"diff\", \"--cached\", \"--stat\"] : [\"diff\", \"--stat\"];\n  const { code, stdout, stderr } = await runGit(repo, args, timeoutMs);\n  if (code !== 0) throw new Error(`git diff --stat failed: ${stderr || code}`);\n  return {\n    ok: true,\n    repo,\n    staged: !!staged,\n    truncated: stdout.length > maxOut,\n    stat: stdout.slice(0, maxOut),\n  };\n}\n\nexport async function gitLogOneline({ cwd, allowRoots, timeoutMs, limit = 20, maxOut = 12_000 } = {}) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const n = Math.min(100, Math.max(1, Number(limit) || 20));\n  const { code, stdout, stderr } = await runGit(repo, [\"log\", `--oneline`, `-n`, String(n), \"--no-decorate\"], timeoutMs);\n  if (code !== 0) throw new Error(`git log failed: ${stderr || code}`);\n  const lines = stdout.split(\"\\n\").filter(Boolean);\n  return {\n    ok: true,\n    repo,\n    count: lines.length,\n    truncated: stdout.length > maxOut,\n    log: stdout.slice(0, maxOut),\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:9-34](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/README.md#L9-L34)\n\n作者版本/工具表。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n````text\n| 版本 | **0.1.0** |\n| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |\n\n## 安装\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-git\n# 或本机 path：\n# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-git\n```\n\nkit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`\n\n## 工具\n\n| 工具 | 作用 |\n|------|------|\n| `git_tool_status` | git 是否可用 |\n| `git_status_summary` | status -sb + 变更数 |\n| `git_diff_stat` | 仅 --stat |\n\n## 配置要点\n\n`allowRoots / timeoutMs`\n\n不提供 commit / push。\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 路径允许范围怎样判定，Git是否只看这个目录？\n\n**研究主题：**功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\ncwd必填但核心resolve对空值也回进程cwd，存在则realpath；allowRoots存在也realpath后用相等或分隔符前缀比较，能拒普通../或符号链接出根，空数组默认any。规则约束传给git -C的目录，不绑定agent session scope，也未查询仓库toplevel或Git环境变量覆盖。允许目录若只是更大仓库里的子目录，status/log可能仍看整个父仓，不能将allowRoots当完整Git数据隔离。\n\nGit命令走spawn固定argv，不把cwd拼shell；which则用bash -lc command-v安全清洗名，status调用两次which但结果bin没实际用，最终spawn git仍用进程PATH。缺bash或登录shell行为与实际PATH差异可使诊断异常，which未设error监听/超时。Node>=18、PATH git/bash、宿主tools/systemPrompt为依赖，虽名wsl没有WSL门，普通Linux也可用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/git.js:6-29](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L6-L29)\n\nwhich和realpath边界。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  const safe = String(cmd || \"\").replace(/[^a-zA-Z0-9._+-]/g, \"\");\n  if (!safe) return Promise.resolve(\"\");\n  return new Promise((resolvePromise) => {\n    const child = spawn(\"bash\", [\"-lc\", `command -v ${safe}`], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });\n    let out = \"\";\n    child.stdout.on(\"data\", (d) => (out += d));\n    child.on(\"close\", (c) => resolvePromise(c === 0 ? out.trim() : \"\"));\n  });\n}\n\nexport function resolveRepo(cwd, allowRoots = []) {\n  const abs = resolve(String(cwd || \".\").trim() || \".\");\n  const real = existsSync(abs) ? realpathSync(abs) : abs;\n  if (allowRoots.length) {\n    const roots = allowRoots.map((r) => {\n      const a = resolve(r);\n      return existsSync(a) ? realpathSync(a) : a;\n    });\n    const ok = roots.some((root) => {\n      const r = root.replace(/[/\\\\]+$/, \"\");\n      return real === r || real.startsWith(r + \"/\") || real.startsWith(r + \"\\\\\");\n    });\n    if (!ok) throw new Error(`repo outside allowRoots: ${real}`);\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/git.js:57-66](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L57-L66)\n\n重复which/固定-C。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n\nexport async function gitStatusSummary({ cwd, allowRoots, timeoutMs, maxOut = 12_000 }) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const bin = (await which(\"git\")) || \"git\";\n  if (!(await which(\"git\"))) {\n    /* still try git on PATH via spawn */\n  }\n  void bin;\n  const branch = await runGit(repo, [\"rev-parse\", \"--abbrev-ref\", \"HEAD\"], timeoutMs);\n  const short = await runGit(repo, [\"status\", \"-sb\", \"--untracked-files=no\"], timeoutMs);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:11-19](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js#L11-L19)\n\n默认any和提示。\n\n```text\n  const timeoutMs = positive(config.timeoutMs, 20_000);\n  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];\n  console.log(`[dsh-wsl-git] allowRoots=${allowRoots.length || \"any\"}`);\n\n  ctx.systemPrompt.section({\n    name: \"tool:git-summary\",\n    order: 132,\n    text: \"dsh-wsl-git exposes git_status_summary, git_log_oneline, and git_diff_stat with capped output. Prefer these over dumping full diffs into context. Does not run commit/push.\",\n  });\n```\n\n**依据 4 · 源码核查**：[package.json:7-10](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/package.json#L7-L10)\n\nNode入口。\n\n```text\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": { \"node\": \">=18\" },\n  \"scripts\": { \"test\": \"node --test test/*.test.js\" },\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 输出截断和成功状态有哪些陷阱？\n\n**研究主题：**缺陷与关键质疑\n\n#### 完整回答\n\nrunGit将stdout全部累加，超过400000字符kill进程，但不是严格内存/字节上限，也不标专门cap原因；stderr无上限。各最终工具再slice返回并给truncated，但status render只打印repo/branch/count/status，不打印truncated，diff/log render也只文本，读者可能看不到截断标记，结构化字段仍在。\n\nstatus顺序执行rev-parse、status -sb --untracked-files=no与status --porcelain，只检查short退出码。porcelain若被400k kill/返回非零，仍用捕获行数当changedFiles且ok；该数本来也把未跟踪目录按Git默认条目计而非目录内每个文件，short又不列未跟踪项，故数量和显示清单不一定一一对应。log count按切片前输出算，不等可见行数。\n\n每runGit独立timeoutMs，status可三轮，加上无超时which，外层工具timeout不传abort；宿主已超时不代表全部后续命令已停。Git查询也不是多命令原子快照，工作树变化可让branch/status/count不同刻。read-only应理解无commit/push业务操作，不能当无任何Git内部可选锁/缓存触碰。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/git.js:31-54](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L31-L54)\n\n缓冲/kill/局部超时。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n}\n\nexport function runGit(repo, args, timeoutMs = 20_000) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(\"git\", [\"-C\", repo, ...args], { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"git timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 400_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/git.js:57-77](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L57-L77)\n\n未核porcelain状态/计数。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\nexport async function gitStatusSummary({ cwd, allowRoots, timeoutMs, maxOut = 12_000 }) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const bin = (await which(\"git\")) || \"git\";\n  if (!(await which(\"git\"))) {\n    /* still try git on PATH via spawn */\n  }\n  void bin;\n  const branch = await runGit(repo, [\"rev-parse\", \"--abbrev-ref\", \"HEAD\"], timeoutMs);\n  const short = await runGit(repo, [\"status\", \"-sb\", \"--untracked-files=no\"], timeoutMs);\n  const porcelain = await runGit(repo, [\"status\", \"--porcelain\"], timeoutMs);\n  if (short.code !== 0) throw new Error(`git status failed: ${short.stderr || short.code}`);\n  const lines = porcelain.stdout.split(\"\\n\").filter(Boolean);\n  const summary = short.stdout.slice(0, maxOut);\n  return {\n    ok: true,\n    repo,\n    branch: branch.code === 0 ? branch.stdout.trim() : null,\n    changedFiles: lines.length,\n    status: summary,\n    truncated: short.stdout.length > maxOut,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/git.js:92-107](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L92-L107)\n\nlog计数/切片。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  };\n}\n\nexport async function gitLogOneline({ cwd, allowRoots, timeoutMs, limit = 20, maxOut = 12_000 } = {}) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const n = Math.min(100, Math.max(1, Number(limit) || 20));\n  const { code, stdout, stderr } = await runGit(repo, [\"log\", `--oneline`, `-n`, String(n), \"--no-decorate\"], timeoutMs);\n  if (code !== 0) throw new Error(`git log failed: ${stderr || code}`);\n  const lines = stdout.split(\"\\n\").filter(Boolean);\n  return {\n    ok: true,\n    repo,\n    count: lines.length,\n    truncated: stdout.length > maxOut,\n    log: stdout.slice(0, maxOut),\n  };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:44-55](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js#L44-L55)\n\nstatus render漏truncated。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    output: {\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [\n        {\n          type: \"text\",\n          text:\n            v.ok === false\n              ? v.error\n              : `repo=${v.repo}\\nbranch=${v.branch}\\nchangedFiles=${v.changedFiles}\\n${v.status}`,\n        },\n      ],\n    },\n```\n\n</details>\n\n**依据 5 · 源码核查**：[index.js:83-88](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js#L83-L88)\n\nlog render。\n\n```text\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.log || \"(empty)\" }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      try {\n```\n\n**依据 6 · 源码核查**：[index.js:111-114](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js#L111-L114)\n\nstat render。\n\n```text\n      schema: { type: \"object\", additionalProperties: true },\n      render: (_a, v) => [{ type: \"text\", text: v.ok === false ? v.error : v.stat }],\n    },\n    timeoutMs,\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 测试和使用成本如何评估？\n\n**研究主题：**效果与总成本、工程质量与复用\n\n#### 完整回答\n\n17行测试仅真调用resolveRepo临时目录以及复制一段limit夹值表达式，没有生产Git执行/allowRoots反例、丢失分支、截断、missing bash或取消测试。正面是realpath+分隔符边界、固定spawn参数、超时kill和结构化truncated；但测试不能守住这些关键链，本次只读不运行。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | Node/宿主、git/bash与配置资源，金额未知 | 配明确仓库根、核Git环境，耗时未知 | allowRoots默认any，允许子目录不等父仓数据隔离 |\n| 持续使用 | status最多三Git两bash，log/stat一Git；过程缓冲/stderr与结果上下文 | 核截断、错误和完整diff，实际工时未知 | 无独立远端API或额外模型请求不等宿主总费为零；token节省无基准 |\n| 失败恢复 | 重查消耗本地进程资源；无commit/push恢复功能 | 先查部分输出/错误，再人工复核后续提交判断 | 插件不替用户回滚仓库；重查金额与恢复工时未知 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[test/git.test.js:1-17](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/test/git.test.js#L1-L17)\n\n生产路径与复制limit测试。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nimport { describe, it } from \"node:test\";\nimport assert from \"node:assert/strict\";\nimport { resolveRepo } from \"../lib/git.js\";\nimport { mkdtempSync } from \"node:fs\";\nimport { tmpdir } from \"node:os\";\nimport { join } from \"node:path\";\n\ndescribe(\"git resolve\", () => {\n  it(\"resolves cwd\", () => {\n    const d = mkdtempSync(join(tmpdir(), \"dsh-git-\"));\n    assert.ok(resolveRepo(d).includes(\"dsh-git-\"));\n  });\n  it(\"clamps log limit\", () => {\n    const n = Math.min(100, Math.max(1, Number(999) || 20));\n    assert.equal(n, 100);\n  });\n});\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/git.js:16-54](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L16-L54)\n\n路径/执行正向工程。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\nexport function resolveRepo(cwd, allowRoots = []) {\n  const abs = resolve(String(cwd || \".\").trim() || \".\");\n  const real = existsSync(abs) ? realpathSync(abs) : abs;\n  if (allowRoots.length) {\n    const roots = allowRoots.map((r) => {\n      const a = resolve(r);\n      return existsSync(a) ? realpathSync(a) : a;\n    });\n    const ok = roots.some((root) => {\n      const r = root.replace(/[/\\\\]+$/, \"\");\n      return real === r || real.startsWith(r + \"/\") || real.startsWith(r + \"\\\\\");\n    });\n    if (!ok) throw new Error(`repo outside allowRoots: ${real}`);\n  }\n  return real;\n}\n\nexport function runGit(repo, args, timeoutMs = 20_000) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(\"git\", [\"-C\", repo, ...args], { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"git timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 400_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[index.js:11-13](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/index.js#L11-L13)\n\n默认根配置。\n\n```text\n  const timeoutMs = positive(config.timeoutMs, 20_000);\n  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];\n  console.log(`[dsh-wsl-git] allowRoots=${allowRoots.length || \"any\"}`);\n```\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 采用条件和继续探讨方向？\n\n**研究主题：**新假设与验证、采用判断\n\n#### 完整回答\n\n明确仓库根且愿意看结构化截断字段者可试用摘要入口，完整审查仍读实际diff。别按changedFiles作强计数或按只读无push推安全隔离；大仓/频繁并发改动时核porcelain返回和快照时点，配置allowRoots前确认git发现的仓库根不会出范围。\n\n可研究canonical仓库toplevel和Git环境隔离、统一deadline/输出字节预算，所有子命令结果分层并显式渲染partial/truncated，计数区分tracked条目/未跟踪目录。基线是cwd根守卫和short单退出检查，反例为允许子目录内父仓、GIT_DIR覆盖、porcelain输出超cap、stderr洪流、缺bash、status间工作树变化。比较漏显示/误干净判断、token和超时后残留执行，尚未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/git.js:16-54](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L16-L54)\n\n根/缓冲基线。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\nexport function resolveRepo(cwd, allowRoots = []) {\n  const abs = resolve(String(cwd || \".\").trim() || \".\");\n  const real = existsSync(abs) ? realpathSync(abs) : abs;\n  if (allowRoots.length) {\n    const roots = allowRoots.map((r) => {\n      const a = resolve(r);\n      return existsSync(a) ? realpathSync(a) : a;\n    });\n    const ok = roots.some((root) => {\n      const r = root.replace(/[/\\\\]+$/, \"\");\n      return real === r || real.startsWith(r + \"/\") || real.startsWith(r + \"\\\\\");\n    });\n    if (!ok) throw new Error(`repo outside allowRoots: ${real}`);\n  }\n  return real;\n}\n\nexport function runGit(repo, args, timeoutMs = 20_000) {\n  return new Promise((resolvePromise, reject) => {\n    const child = spawn(\"git\", [\"-C\", repo, ...args], { stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n    let stdout = \"\";\n    let stderr = \"\";\n    const t = setTimeout(() => {\n      child.kill(\"SIGKILL\");\n      reject(new Error(\"git timeout\"));\n    }, timeoutMs);\n    child.stdout.on(\"data\", (d) => {\n      stdout += d;\n      if (stdout.length > 400_000) child.kill(\"SIGKILL\");\n    });\n    child.stderr.on(\"data\", (d) => (stderr += d));\n    child.on(\"close\", (code) => {\n      clearTimeout(t);\n      resolvePromise({ code, stdout, stderr });\n    });\n    child.on(\"error\", (e) => {\n      clearTimeout(t);\n      reject(e);\n    });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/git.js:57-77](https://github.com/173787247/dsh-wsl-git/blob/79fa248103904f63b552e92c9655be0d3c6e4981/lib/git.js#L57-L77)\n\n摘要基线。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\nexport async function gitStatusSummary({ cwd, allowRoots, timeoutMs, maxOut = 12_000 }) {\n  const repo = resolveRepo(cwd, allowRoots);\n  const bin = (await which(\"git\")) || \"git\";\n  if (!(await which(\"git\"))) {\n    /* still try git on PATH via spawn */\n  }\n  void bin;\n  const branch = await runGit(repo, [\"rev-parse\", \"--abbrev-ref\", \"HEAD\"], timeoutMs);\n  const short = await runGit(repo, [\"status\", \"-sb\", \"--untracked-files=no\"], timeoutMs);\n  const porcelain = await runGit(repo, [\"status\", \"--porcelain\"], timeoutMs);\n  if (short.code !== 0) throw new Error(`git status failed: ${short.stderr || short.code}`);\n  const lines = porcelain.stdout.split(\"\\n\").filter(Boolean);\n  const summary = short.stdout.slice(0, maxOut);\n  return {\n    ok: true,\n    repo,\n    branch: branch.code === 0 ? branch.stdout.trim() : null,\n    changedFiles: lines.length,\n    status: summary,\n    truncated: short.stdout.length > maxOut,\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：283ff4b8248bdaf6c9fdf2524186f57190fffab5282c2fafeb6a25745672c4e0。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 116 | — | — | 469 |\n| .js | source | 2 | 272 | 256 | 1 | — |\n| .js | test | 1 | 17 | 16 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| `git_tool_status` | 查询Git位置/版本与允许根数量 | 依bash/PATH，ok不代表仓库可读，which无自身超时 |\n| `git_status_summary` | 分支、短状态与变更条目数 | 指定cwd/allowRoots；porcelain失败未独立验收，非原子快照 |\n| `git_log_oneline` | 有限条提交摘要 | 默认20最多100；字段count不等切片后可见行数，核truncated |\n| `git_diff_stat` | 工作树或暂存区变更量 | 不含完整patch；核结构化truncated，不代替代码审查 |\n\n## 工程亮点\n\n物理路径/固定argv可复用，补全子命令失败与显式partial更关键。详见[Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/git.js、test/git.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整136行入口/136行Git模块/17行测试及README/package，不执行目标或查询真实工作区Git状态。\n- 下一步：从父仓范围/porcelain cap/缺bash/工作树并发反例核。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-wsl-git\",\n  \"revision\": \"79fa248103904f63b552e92c9655be0d3c6e4981\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"index.js\",\n    \"lib/git.js\",\n    \"test/git.test.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"Git摘要的路径/截断/成功语义是否足以支持模型判断，怎样保留部分结果边界？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"摘要工具比直接Git命令多什么？\",\n        \"answer\": \"面向模型要了解工作树/提交历史而不想整段diff占上下文的开发场景，提供git_tool_status、status摘要、diff stat和oneline log四工具。默认status/log最多12000字符，stat8000，log最多100条；无commit/push工具，不生成补丁、不自动修改仓库业务内容。README工具表漏列log且前部版本0.1.0与package0.1.1不一致，按当前入口代码评估。\\n\\n贡献是常用只读Git固定命令、大小限制和可选路径根规则接进模型工具，基线是手工Git摘要命令，不是新版本控制。摘要不足以审查代码语义或证明仓库干净/可发布，使用者仍需按任务读具体变更。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 21,\n            \"line_end\": 136,\n            \"observation\": \"四个实际注册。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 57,\n            \"line_end\": 106,\n            \"observation\": \"输出限制。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 9,\n            \"line_end\": 34,\n            \"observation\": \"作者版本/工具表。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"dependencies\"\n        ],\n        \"question\": \"路径允许范围怎样判定，Git是否只看这个目录？\",\n        \"answer\": \"cwd必填但核心resolve对空值也回进程cwd，存在则realpath；allowRoots存在也realpath后用相等或分隔符前缀比较，能拒普通../或符号链接出根，空数组默认any。规则约束传给git -C的目录，不绑定agent session scope，也未查询仓库toplevel或Git环境变量覆盖。允许目录若只是更大仓库里的子目录，status/log可能仍看整个父仓，不能将allowRoots当完整Git数据隔离。\\n\\nGit命令走spawn固定argv，不把cwd拼shell；which则用bash -lc command-v安全清洗名，status调用两次which但结果bin没实际用，最终spawn git仍用进程PATH。缺bash或登录shell行为与实际PATH差异可使诊断异常，which未设error监听/超时。Node>=18、PATH git/bash、宿主tools/systemPrompt为依赖，虽名wsl没有WSL门，普通Linux也可用。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 6,\n            \"line_end\": 29,\n            \"observation\": \"which和realpath边界。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 57,\n            \"line_end\": 66,\n            \"observation\": \"重复which/固定-C。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 11,\n            \"line_end\": 19,\n            \"observation\": \"默认any和提示。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 7,\n            \"line_end\": 10,\n            \"observation\": \"Node入口。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"输出截断和成功状态有哪些陷阱？\",\n        \"answer\": \"runGit将stdout全部累加，超过400000字符kill进程，但不是严格内存/字节上限，也不标专门cap原因；stderr无上限。各最终工具再slice返回并给truncated，但status render只打印repo/branch/count/status，不打印truncated，diff/log render也只文本，读者可能看不到截断标记，结构化字段仍在。\\n\\nstatus顺序执行rev-parse、status -sb --untracked-files=no与status --porcelain，只检查short退出码。porcelain若被400k kill/返回非零，仍用捕获行数当changedFiles且ok；该数本来也把未跟踪目录按Git默认条目计而非目录内每个文件，short又不列未跟踪项，故数量和显示清单不一定一一对应。log count按切片前输出算，不等可见行数。\\n\\n每runGit独立timeoutMs，status可三轮，加上无超时which，外层工具timeout不传abort；宿主已超时不代表全部后续命令已停。Git查询也不是多命令原子快照，工作树变化可让branch/status/count不同刻。read-only应理解无commit/push业务操作，不能当无任何Git内部可选锁/缓存触碰。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 31,\n            \"line_end\": 54,\n            \"observation\": \"缓冲/kill/局部超时。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 57,\n            \"line_end\": 77,\n            \"observation\": \"未核porcelain状态/计数。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 92,\n            \"line_end\": 107,\n            \"observation\": \"log计数/切片。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 44,\n            \"line_end\": 55,\n            \"observation\": \"status render漏truncated。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 83,\n            \"line_end\": 88,\n            \"observation\": \"log render。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 111,\n            \"line_end\": 114,\n            \"observation\": \"stat render。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"engineering\"\n        ],\n        \"question\": \"测试和使用成本如何评估？\",\n        \"answer\": \"17行测试仅真调用resolveRepo临时目录以及复制一段limit夹值表达式，没有生产Git执行/allowRoots反例、丢失分支、截断、missing bash或取消测试。正面是realpath+分隔符边界、固定spawn参数、超时kill和结构化truncated；但测试不能守住这些关键链，本次只读不运行。\\n\\n#### 成本\\n\\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\\n| --- | --- | --- | --- |\\n| 首次使用 | Node/宿主、git/bash与配置资源，金额未知 | 配明确仓库根、核Git环境，耗时未知 | allowRoots默认any，允许子目录不等父仓数据隔离 |\\n| 持续使用 | status最多三Git两bash，log/stat一Git；过程缓冲/stderr与结果上下文 | 核截断、错误和完整diff，实际工时未知 | 无独立远端API或额外模型请求不等宿主总费为零；token节省无基准 |\\n| 失败恢复 | 重查消耗本地进程资源；无commit/push恢复功能 | 先查部分输出/错误，再人工复核后续提交判断 | 插件不替用户回滚仓库；重查金额与恢复工时未知 |\\n\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"test/git.test.js\",\n            \"line_start\": 1,\n            \"line_end\": 17,\n            \"observation\": \"生产路径与复制limit测试。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 16,\n            \"line_end\": 54,\n            \"observation\": \"路径/执行正向工程。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 11,\n            \"line_end\": 13,\n            \"observation\": \"默认根配置。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"采用条件和继续探讨方向？\",\n        \"answer\": \"明确仓库根且愿意看结构化截断字段者可试用摘要入口，完整审查仍读实际diff。别按changedFiles作强计数或按只读无push推安全隔离；大仓/频繁并发改动时核porcelain返回和快照时点，配置allowRoots前确认git发现的仓库根不会出范围。\\n\\n可研究canonical仓库toplevel和Git环境隔离、统一deadline/输出字节预算，所有子命令结果分层并显式渲染partial/truncated，计数区分tracked条目/未跟踪目录。基线是cwd根守卫和short单退出检查，反例为允许子目录内父仓、GIT_DIR覆盖、porcelain输出超cap、stderr洪流、缺bash、status间工作树变化。比较漏显示/误干净判断、token和超时后残留执行，尚未验证。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 16,\n            \"line_end\": 54,\n            \"observation\": \"根/缓冲基线。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/git.js\",\n            \"line_start\": 57,\n            \"line_end\": 77,\n            \"observation\": \"摘要基线。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-git\\n\\n> **语言：** **中文**（本页） · [English](./README.en.md)\\n\\n截断版 git status / diff --stat，避免巨型 diff 灌上下文。\\n\\n| | |\\n|---|---|\\n| 版本 | **0.1.0** |\\n| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |\\n\\n## 安装\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-wsl-git\\n# 或本机 path：\\n# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-git\\n```\\n\\nkit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`\\n\\n## 工具\\n\\n| 工具 | 作用 |\\n|------|------|\\n| `git_tool_status` | git 是否可用 |\\n| `git_status_summary` | status -sb + 变更数 |\\n| `git_diff_stat` | 仅 --stat |\\n\\n## 配置要点\\n\\n`allowRoots / timeoutMs`\\n\\n不提供 commit / push。\\n\\n## 兼容性\\n\\n| 字段 | 值 |\\n|------|----|\\n| **插件** | `dsh-wsl-git` **0.1.1** |\\n| **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |\\n| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.0-rc.2`**）— 套件唯一真源 |\\n| **套件档位** | 可选（默认不在 `install.sh` / `KIT_SET=daily`） |\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-git\\\",\\n  \\\"version\\\": \\\"0.1.1\\\",\\n  \\\"description\\\": \\\"DeepSeek Harness WSL plugin: capped git_status_summary and git_diff_stat (no full patches).\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": { \\\"type\\\": \\\"git\\\", \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-git.git\\\" },\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": { \\\"node\\\": \\\">=18\\\" },\\n  \\\"scripts\\\": { \\\"test\\\": \\\"node --test test/*.test.js\\\" },\\n  \\\"files\\\": [\\\"index.js\\\", \\\"lib\\\", \\\"cordis.patch.yml\\\", \\\"README.md\\\", \\\"README.en.md\\\", \\\"README.zh.md\\\", \\\"LICENSE\\\", \\\"CHANGELOG.md\\\"],\\n  \\\"keywords\\\": [\\\"dsh-plugin\\\", \\\"wsl\\\", \\\"git\\\"],\\n  \\\"dsh\\\": { \\\"bundle\\\": { \\\"patch\\\": \\\"./cordis.patch.yml\\\" } }\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import { gitStatusSummary, gitDiffStat, gitLogOneline, gitToolStatus } from \\\"./lib/git.js\\\";\\n\\nexport const name = \\\"dsh-wsl-git\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  if (config.enabled === false) {\\n    console.log(\\\"[dsh-wsl-git] disabled\\\");\\n    return;\\n  }\\n  const timeoutMs = positive(config.timeoutMs, 20_000);\\n  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];\\n  console.log(`[dsh-wsl-git] allowRoots=${allowRoots.length || \\\"any\\\"}`);\\n\\n  ctx.systemPrompt.section({\\n    name: \\\"tool:git-summary\\\",\\n    order: 132,\\n    text: \\\"dsh-wsl-git exposes git_status_summary, git_log_oneline, and git_diff_stat with capped output. Prefer these over dumping full diffs into context. Does not run commit/push.\\\",\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"git_tool_status\\\",\\n    description: \\\"Whether git is on PATH; version string.\\\",\\n    parameters: { type: \\\"object\\\", additionalProperties: false, properties: {} },\\n    output: { schema: { type: \\\"object\\\", additionalProperties: true }, render: (_a, v) => [{ type: \\\"text\\\", text: JSON.stringify(v, null, 2) }] },\\n    timeoutMs: 5_000,\\n    isConcurrencySafe: () => true,\\n    async execute() {\\n      return { ...(await gitToolStatus()), allowRootsCount: allowRoots.length };\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"git tool\\\" }),\\n    presentResult: (_a, r) => ({ card: \\\"generic\\\", title: \\\"git tool\\\", content: r.content }),\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"git_status_summary\\\",\\n    description: \\\"Short git status (-sb) + changed file count for a repo. Caps size.\\\",\\n    parameters: {\\n      type: \\\"object\\\",\\n      additionalProperties: false,\\n      required: [\\\"cwd\\\"],\\n      properties: { cwd: { type: \\\"string\\\", description: \\\"Git work tree path\\\" } },\\n    },\\n    output: {\\n      schema: { type: \\\"object\\\", additionalProperties: true },\\n      render: (_a, v) => [\\n        {\\n          type: \\\"text\\\",\\n          text:\\n            v.ok === false\\n              ? v.error\\n              : `repo=${v.repo}\\\\nbranch=${v.branch}\\\\nchangedFiles=${v.changedFiles}\\\\n${v.status}`,\\n        },\\n      ],\\n    },\\n    timeoutMs,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      try {\\n        return await gitStatusSummary({ cwd: args.cwd, allowRoots, timeoutMs });\\n      } catch (e) {\\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\\n      }\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"git status\\\" }),\\n    presentResult: (_a, r) => ({ card: \\\"generic\\\", title: \\\"git status\\\", content: r.content }),\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"git_log_oneline\\\",\\n    description: \\\"git log --oneline -n N (capped, default 20, max 100). Read-only.\\\",\\n    parameters: {\\n      type: \\\"object\\\",\\n      additionalProperties: false,\\n      required: [\\\"cwd\\\"],\\n      properties: {\\n        cwd: { type: \\\"string\\\" },\\n        limit: { type: \\\"number\\\", description: \\\"Commit count (default 20, max 100)\\\" },\\n      },\\n    },\\n    output: {\\n      schema: { type: \\\"object\\\", additionalProperties: true },\\n      render: (_a, v) => [{ type: \\\"text\\\", text: v.ok === false ? v.error : v.log || \\\"(empty)\\\" }],\\n    },\\n    timeoutMs,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      try {\\n        return await gitLogOneline({ cwd: args.cwd, limit: args.limit, allowRoots, timeoutMs });\\n      } catch (e) {\\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\\n      }\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"git log\\\" }),\\n    presentResult: (_a, r) => ({ card: \\\"generic\\\", title: \\\"git log\\\", content: r.content }),\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"git_diff_stat\\\",\\n    description: \\\"git diff --stat (or --cached) only — never full patch. Caps size.\\\",\\n    parameters: {\\n      type: \\\"object\\\",\\n      additionalProperties: false,\\n      required: [\\\"cwd\\\"],\\n      properties: {\\n        cwd: { type: \\\"string\\\" },\\n        staged: { type: \\\"boolean\\\" },\\n      },\\n    },\\n    output: {\\n      schema: { type: \\\"object\\\", additionalProperties: true },\\n      render: (_a, v) => [{ type: \\\"text\\\", text: v.ok === false ? v.error : v.stat }],\\n    },\\n    timeoutMs,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      try {\\n        return await gitDiffStat({\\n          cwd: args.cwd,\\n          staged: args.staged === true,\\n          allowRoots,\\n          timeoutMs,\\n        });\\n      } catch (e) {\\n        return { ok: false, error: e instanceof Error ? e.message : String(e) };\\n      }\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"git diff --stat\\\" }),\\n    presentResult: (_a, r) => ({ card: \\\"generic\\\", title: \\\"git diff --stat\\\", content: r.content }),\\n  });\\n}\\n\\nfunction positive(v, fb) {\\n  const n = Number(v);\\n  return Number.isFinite(n) && n > 0 ? n : fb;\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/git.js\",\n      \"content\": \"import { spawn } from \\\"node:child_process\\\";\\nimport { existsSync, realpathSync } from \\\"node:fs\\\";\\nimport { resolve } from \\\"node:path\\\";\\n\\nexport function which(cmd) {\\n  const safe = String(cmd || \\\"\\\").replace(/[^a-zA-Z0-9._+-]/g, \\\"\\\");\\n  if (!safe) return Promise.resolve(\\\"\\\");\\n  return new Promise((resolvePromise) => {\\n    const child = spawn(\\\"bash\\\", [\\\"-lc\\\", `command -v ${safe}`], { stdio: [\\\"ignore\\\", \\\"pipe\\\", \\\"ignore\\\"] });\\n    let out = \\\"\\\";\\n    child.stdout.on(\\\"data\\\", (d) => (out += d));\\n    child.on(\\\"close\\\", (c) => resolvePromise(c === 0 ? out.trim() : \\\"\\\"));\\n  });\\n}\\n\\nexport function resolveRepo(cwd, allowRoots = []) {\\n  const abs = resolve(String(cwd || \\\".\\\").trim() || \\\".\\\");\\n  const real = existsSync(abs) ? realpathSync(abs) : abs;\\n  if (allowRoots.length) {\\n    const roots = allowRoots.map((r) => {\\n      const a = resolve(r);\\n      return existsSync(a) ? realpathSync(a) : a;\\n    });\\n    const ok = roots.some((root) => {\\n      const r = root.replace(/[/\\\\\\\\]+$/, \\\"\\\");\\n      return real === r || real.startsWith(r + \\\"/\\\") || real.startsWith(r + \\\"\\\\\\\\\\\");\\n    });\\n    if (!ok) throw new Error(`repo outside allowRoots: ${real}`);\\n  }\\n  return real;\\n}\\n\\nexport function runGit(repo, args, timeoutMs = 20_000) {\\n  return new Promise((resolvePromise, reject) => {\\n    const child = spawn(\\\"git\\\", [\\\"-C\\\", repo, ...args], { stdio: [\\\"ignore\\\", \\\"pipe\\\", \\\"pipe\\\"] });\\n    let stdout = \\\"\\\";\\n    let stderr = \\\"\\\";\\n    const t = setTimeout(() => {\\n      child.kill(\\\"SIGKILL\\\");\\n      reject(new Error(\\\"git timeout\\\"));\\n    }, timeoutMs);\\n    child.stdout.on(\\\"data\\\", (d) => {\\n      stdout += d;\\n      if (stdout.length > 400_000) child.kill(\\\"SIGKILL\\\");\\n    });\\n    child.stderr.on(\\\"data\\\", (d) => (stderr += d));\\n    child.on(\\\"close\\\", (code) => {\\n      clearTimeout(t);\\n      resolvePromise({ code, stdout, stderr });\\n    });\\n    child.on(\\\"error\\\", (e) => {\\n      clearTimeout(t);\\n      reject(e);\\n    });\\n  });\\n}\\n\\nexport async function gitStatusSummary({ cwd, allowRoots, timeoutMs, maxOut = 12_000 }) {\\n  const repo = resolveRepo(cwd, allowRoots);\\n  const bin = (await which(\\\"git\\\")) || \\\"git\\\";\\n  if (!(await which(\\\"git\\\"))) {\\n    /* still try git on PATH via spawn */\\n  }\\n  void bin;\\n  const branch = await runGit(repo, [\\\"rev-parse\\\", \\\"--abbrev-ref\\\", \\\"HEAD\\\"], timeoutMs);\\n  const short = await runGit(repo, [\\\"status\\\", \\\"-sb\\\", \\\"--untracked-files=no\\\"], timeoutMs);\\n  const porcelain = await runGit(repo, [\\\"status\\\", \\\"--porcelain\\\"], timeoutMs);\\n  if (short.code !== 0) throw new Error(`git status failed: ${short.stderr || short.code}`);\\n  const lines = porcelain.stdout.split(\\\"\\\\n\\\").filter(Boolean);\\n  const summary = short.stdout.slice(0, maxOut);\\n  return {\\n    ok: true,\\n    repo,\\n    branch: branch.code === 0 ? branch.stdout.trim() : null,\\n    changedFiles: lines.length,\\n    status: summary,\\n    truncated: short.stdout.length > maxOut,\\n  };\\n}\\n\\nexport async function gitDiffStat({ cwd, allowRoots, timeoutMs, staged = false, maxOut = 8_000 }) {\\n  const repo = resolveRepo(cwd, allowRoots);\\n  const args = staged ? [\\\"diff\\\", \\\"--cached\\\", \\\"--stat\\\"] : [\\\"diff\\\", \\\"--stat\\\"];\\n  const { code, stdout, stderr } = await runGit(repo, args, timeoutMs);\\n  if (code !== 0) throw new Error(`git diff --stat failed: ${stderr || code}`);\\n  return {\\n    ok: true,\\n    repo,\\n    staged: !!staged,\\n    truncated: stdout.length > maxOut,\\n    stat: stdout.slice(0, maxOut),\\n  };\\n}\\n\\nexport async function gitLogOneline({ cwd, allowRoots, timeoutMs, limit = 20, maxOut = 12_000 } = {}) {\\n  const repo = resolveRepo(cwd, allowRoots);\\n  const n = Math.min(100, Math.max(1, Number(limit) || 20));\\n  const { code, stdout, stderr } = await runGit(repo, [\\\"log\\\", `--oneline`, `-n`, String(n), \\\"--no-decorate\\\"], timeoutMs);\\n  if (code !== 0) throw new Error(`git log failed: ${stderr || code}`);\\n  const lines = stdout.split(\\\"\\\\n\\\").filter(Boolean);\\n  return {\\n    ok: true,\\n    repo,\\n    count: lines.length,\\n    truncated: stdout.length > maxOut,\\n    log: stdout.slice(0, maxOut),\\n  };\\n}\\n\\nexport async function gitToolStatus() {\\n  const git = (await which(\\\"git\\\")) || null;\\n  if (!git) return { ok: true, git: null };\\n  return new Promise((resolvePromise) => {\\n    const child = spawn(\\\"git\\\", [\\\"--version\\\"], { stdio: [\\\"ignore\\\", \\\"pipe\\\", \\\"pipe\\\"] });\\n    let stdout = \\\"\\\";\\n    let stderr = \\\"\\\";\\n    const t = setTimeout(() => {\\n      child.kill(\\\"SIGKILL\\\");\\n      resolvePromise({ ok: true, git, version: null });\\n    }, 5_000);\\n    child.stdout.on(\\\"data\\\", (d) => (stdout += d));\\n    child.stderr.on(\\\"data\\\", (d) => (stderr += d));\\n    child.on(\\\"close\\\", (code) => {\\n      clearTimeout(t);\\n      resolvePromise({\\n        ok: true,\\n        git,\\n        version: code === 0 ? (stdout || stderr).trim() : null,\\n      });\\n    });\\n    child.on(\\\"error\\\", () => {\\n      clearTimeout(t);\\n      resolvePromise({ ok: true, git, version: null });\\n    });\\n  });\\n}\\n\"\n    },\n    {\n      \"path\": \"test/git.test.js\",\n      \"content\": \"import { describe, it } from \\\"node:test\\\";\\nimport assert from \\\"node:assert/strict\\\";\\nimport { resolveRepo } from \\\"../lib/git.js\\\";\\nimport { mkdtempSync } from \\\"node:fs\\\";\\nimport { tmpdir } from \\\"node:os\\\";\\nimport { join } from \\\"node:path\\\";\\n\\ndescribe(\\\"git resolve\\\", () => {\\n  it(\\\"resolves cwd\\\", () => {\\n    const d = mkdtempSync(join(tmpdir(), \\\"dsh-git-\\\"));\\n    assert.ok(resolveRepo(d).includes(\\\"dsh-git-\\\"));\\n  });\\n  it(\\\"clamps log limit\\\", () => {\\n    const n = Math.min(100, Math.max(1, Number(999) || 20));\\n    assert.equal(n, 100);\\n  });\\n});\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"79fa248103904f63b552e92c9655be0d3c6e4981\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"283ff4b8248bdaf6c9fdf2524186f57190fffab5282c2fafeb6a25745672c4e0\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 116,\n        \"words\": 469\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 272,\n        \"code\": 256,\n        \"comments\": 1,\n        \"blank\": 15\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 17,\n        \"code\": 16,\n        \"comments\": 0,\n        \"blank\": 1\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 21,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"git_tool_status\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 35,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"git_status_summary\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 69,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"git_log_oneline\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 98,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"git_diff_stat\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 11,\n          \"api\": \"child.stdout.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 12,\n          \"api\": \"child.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 42,\n          \"api\": \"child.stdout.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 46,\n          \"api\": \"child.stderr.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 47,\n          \"api\": \"child.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 51,\n          \"api\": \"child.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 121,\n          \"api\": \"child.stdout.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 122,\n          \"api\": \"child.stderr.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 123,\n          \"api\": \"child.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 131,\n          \"api\": \"child.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 38,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/git.js\",\n          \"line\": 117,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"git_diff_stat\",\n          \"git_log_oneline\",\n          \"git_status_summary\",\n          \"git_tool_status\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 4,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"close\",\n          \"data\",\n          \"error\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 3,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-wsl-git\",\n    \"repository_id\": 1381833309,\n    \"captured_at\": \"2026-10-22T07:26:46.081Z\",\n    \"window_start\": \"2026-09-22T07:26:46.081Z\",\n    \"stars\": 1,\n    \"pushed_at\": \"2026-09-30T03:22:05Z\",\n    \"issues\": {\n      \"open\": 0,\n      \"closed\": 0,\n      \"created_30d\": 0,\n      \"closed_30d\": 0,\n      \"updated_30d\": 0\n    },\n    \"errors\": [],\n    \"npm\": {\n      \"package_name\": \"dsh-wsl-git\",\n      \"captured_at\": \"2026-10-22T07:26:55.085Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-git\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T07:26:55.085Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-wsl-git\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
+            "sha256": "a2055f43ab02a262dc1e3f48bd4daf6c7ec1a2c9fbed24f64a740f8e013ee7bb"
+        }
+    },
+    "unavailable_artifacts": []
+}

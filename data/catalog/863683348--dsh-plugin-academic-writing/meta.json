@@ -1,0 +1,34 @@
+{
+    "repository": "863683348/dsh-plugin-academic-writing",
+    "repository_id": 1336663456,
+    "captured_at": "2026-10-22T09:08:49.898Z",
+    "window_start": "2026-09-22T09:08:49.898Z",
+    "stars": 4,
+    "pushed_at": "2026-09-11T03:27:47Z",
+    "issues": {
+        "open": 7,
+        "closed": 0,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-plugin-academic-writing",
+        "captured_at": "2026-10-22T09:08:58.727Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1733,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-plugin-academic-writing",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T04:17:59.655Z",
+            "captured_at": "2026-10-22T09:08:58.727Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-academic-writing",
+            "error": null,
+            "latest_version": "0.3.2",
+            "latest_published_at": "2026-09-11T02:46:19.835Z",
+            "latest_error": null
+        }
+    }
+}

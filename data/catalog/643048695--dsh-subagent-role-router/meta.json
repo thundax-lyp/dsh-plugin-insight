@@ -1,0 +1,34 @@
+{
+    "repository": "643048695/dsh-subagent-role-router",
+    "repository_id": 1421306160,
+    "captured_at": "2026-10-22T16:03:15.556Z",
+    "window_start": "2026-09-22T16:03:15.556Z",
+    "stars": 1,
+    "pushed_at": "2026-10-20T19:25:47Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-subagent-role-router",
+        "captured_at": "2026-10-22T16:03:25.128Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-subagent-role-router",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T16:03:25.128Z",
+            "source_url": "https://registry.npmjs.org/dsh-subagent-role-router",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

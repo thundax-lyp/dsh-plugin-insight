@@ -1,0 +1,55 @@
+{
+    "repository": "1344738825/ai-residue-cleaner",
+    "repository_id": 1406611614,
+    "captured_at": "2026-10-22T15:13:11.153Z",
+    "window_start": "2026-09-22T15:13:11.153Z",
+    "stars": 0,
+    "pushed_at": "2026-10-22T08:02:45Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 50B4:E97E6:9A9ADC:A6DED8:6ADA2809 and timestamp 2026-10-22 15:13:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5180:324E3B:9B8AA1:A7C9E5:6ADA280A and timestamp 2026-10-22 15:13:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A11.153Z..2026-10-22T15%3A13%3A11.153Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 525C:1C3985:A7178C:B367FB:6ADA280B and timestamp 2026-10-22 15:13:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A11.153Z..2026-10-22T15%3A13%3A11.153Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 538E:1B7905:9FB369:ABFF4B:6ADA280D and timestamp 2026-10-22 15:13:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1344738825%2Fai-residue-cleaner%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A11.153Z..2026-10-22T15%3A13%3A11.153Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 54D4:327DCF:992625:A56B5E:6ADA280E and timestamp 2026-10-22 15:13:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "ai-residue-cleaner",
+        "captured_at": "2026-10-22T15:13:18.361Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/ai-residue-cleaner",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T15:13:18.361Z",
+            "source_url": "https://registry.npmjs.org/ai-residue-cleaner",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

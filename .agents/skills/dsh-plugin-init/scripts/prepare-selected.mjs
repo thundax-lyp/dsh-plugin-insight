@@ -81,7 +81,7 @@ export async function prepareSelected(workPath) {
     await pool(items, async (item) => {
         const checkout = checkouts.get(item.repository).path;
         const slug = basename(pluginDirectory({ ...item, component_id: item.id.split(':')[2] }, ROOT));
-        const directory = resolve(folder, 'snapshots', slug);
+        const directory = resolve(folder, slug);
         mkdirSync(directory, { recursive: true });
         try {
             if (errors.some((e) => e.repository === item.repository && e.phase === 'checkout')) return;

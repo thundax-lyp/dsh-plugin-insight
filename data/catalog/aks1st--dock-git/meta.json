@@ -1,0 +1,55 @@
+{
+    "repository": "AKS1st/dock-git",
+    "repository_id": 1340492447,
+    "captured_at": "2026-10-21T05:33:32.976Z",
+    "window_start": "2026-09-21T05:33:32.976Z",
+    "stars": 3,
+    "pushed_at": "2026-09-11T08:05:34Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2D0:4C3CE:5161B9:576EB0:6AD84EAE and timestamp 2026-10-21 05:33:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D3C0:110ECF:50313F:563737:6AD84EAF and timestamp 2026-10-21 05:33:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20created%3A2026-09-21T05%3A33%3A32.976Z..2026-10-21T05%3A33%3A32.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D660:26E19B:5100CD:570945:6AD84EB1 and timestamp 2026-10-21 05:33:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A33%3A32.976Z..2026-10-21T05%3A33%3A32.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D744:4E142:4F6E84:557A9D:6AD84EB2 and timestamp 2026-10-21 05:33:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-git%20is%3Aissue%20updated%3A2026-09-21T05%3A33%3A32.976Z..2026-10-21T05%3A33%3A32.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D816:1852C3:5449AA:5A54A3:6AD84EB3 and timestamp 2026-10-21 05:33:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dock-git",
+        "captured_at": "2026-10-21T05:33:39.484Z",
+        "window_start": "2026-09-21",
+        "window_end": "2026-10-20",
+        "downloads_30d": 866,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dock-git",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T06:01:26.171Z",
+            "captured_at": "2026-10-21T07:15:57.121Z",
+            "source_url": "https://registry.npmjs.org/dock-git",
+            "error": null,
+            "latest_version": "0.3.4",
+            "latest_published_at": "2026-09-11T08:20:26.590Z",
+            "latest_error": null
+        }
+    }
+}

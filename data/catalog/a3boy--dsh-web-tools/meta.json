@@ -1,0 +1,34 @@
+{
+    "repository": "A3Boy/dsh-web-tools",
+    "repository_id": 1335219884,
+    "captured_at": "2026-10-22T10:00:13.263Z",
+    "window_start": "2026-09-22T10:00:13.263Z",
+    "stars": 41,
+    "pushed_at": "2026-10-18T17:18:55Z",
+    "issues": {
+        "open": 0,
+        "closed": 6,
+        "created_30d": 4,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-web-tools",
+        "captured_at": "2026-10-22T10:00:23.002Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-web-tools",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T10:00:23.002Z",
+            "source_url": "https://registry.npmjs.org/dsh-web-tools",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

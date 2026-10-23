@@ -1,0 +1,34 @@
+{
+    "repository": "609476965/dsh-LorebookMD",
+    "repository_id": 1334395883,
+    "captured_at": "2026-10-22T05:13:37.051Z",
+    "window_start": "2026-09-22T05:13:37.051Z",
+    "stars": 23,
+    "pushed_at": "2026-08-14T18:34:21Z",
+    "issues": {
+        "open": 1,
+        "closed": 1,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-lorebookmd",
+        "captured_at": "2026-10-22T05:13:47.916Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 631,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-lorebookmd",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T18:33:31.417Z",
+            "captured_at": "2026-10-22T05:13:47.916Z",
+            "source_url": "https://registry.npmjs.org/dsh-lorebookmd",
+            "error": null,
+            "latest_version": "1.0.0",
+            "latest_published_at": "2026-08-14T18:33:31.629Z",
+            "latest_error": null
+        }
+    }
+}

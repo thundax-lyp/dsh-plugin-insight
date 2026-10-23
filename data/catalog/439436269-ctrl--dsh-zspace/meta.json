@@ -1,0 +1,55 @@
+{
+    "repository": "439436269-ctrl/dsh-zspace",
+    "repository_id": 1406500233,
+    "captured_at": "2026-10-22T16:02:59.070Z",
+    "window_start": "2026-09-22T16:02:59.070Z",
+    "stars": 0,
+    "pushed_at": "2026-10-18T15:30:05Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F008:326F1D:A65912:B344D7:6ADA33B5 and timestamp 2026-10-22 16:03:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F10E:11532E:A763F7:B462BF:6ADA33B6 and timestamp 2026-10-22 16:03:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A59.070Z..2026-10-22T16%3A02%3A59.070Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F1D0:254CC5:9E4D74:AB3D63:6ADA33B7 and timestamp 2026-10-22 16:03:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A59.070Z..2026-10-22T16%3A02%3A59.070Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F2E0:1B9EB5:AC7268:B96C21:6ADA33B8 and timestamp 2026-10-22 16:03:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-zspace%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A59.070Z..2026-10-22T16%3A02%3A59.070Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F418:2AD50B:A5271B:B22250:6ADA33BA and timestamp 2026-10-22 16:03:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-zspace",
+        "captured_at": "2026-10-22T16:03:06.318Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1242,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-zspace",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-05T21:47:18.314Z",
+            "captured_at": "2026-10-22T16:03:06.318Z",
+            "source_url": "https://registry.npmjs.org/dsh-zspace",
+            "error": null,
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-10-18T15:32:55.528Z",
+            "latest_error": null
+        }
+    }
+}

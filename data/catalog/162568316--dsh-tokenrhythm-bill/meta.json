@@ -1,0 +1,34 @@
+{
+    "repository": "162568316/dsh-tokenrhythm-bill",
+    "repository_id": 1351903192,
+    "captured_at": "2026-10-22T06:07:29.258Z",
+    "window_start": "2026-09-22T06:07:29.258Z",
+    "stars": 4,
+    "pushed_at": "2026-10-18T15:32:59Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-tokenrhythm-bill",
+        "captured_at": "2026-10-22T06:07:37.180Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1642,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-tokenrhythm-bill",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-31T05:41:35.830Z",
+            "captured_at": "2026-10-22T06:07:37.180Z",
+            "source_url": "https://registry.npmjs.org/dsh-tokenrhythm-bill",
+            "error": null,
+            "latest_version": "0.6.1",
+            "latest_published_at": "2026-10-09T05:49:02.654Z",
+            "latest_error": null
+        }
+    }
+}

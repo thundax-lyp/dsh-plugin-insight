@@ -1,0 +1,34 @@
+{
+    "repository": "AbelKeithsun/dsh-question-nav",
+    "repository_id": 1341946801,
+    "captured_at": "2026-10-22T05:29:53.287Z",
+    "window_start": "2026-09-22T05:29:53.287Z",
+    "stars": 6,
+    "pushed_at": "2026-09-06T01:01:56Z",
+    "issues": {
+        "open": 1,
+        "closed": 8,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@luziyang2026/dsh-question-nav",
+        "captured_at": "2026-10-22T05:30:02.773Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1224,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40luziyang2026%2Fdsh-question-nav",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T15:39:25.545Z",
+            "captured_at": "2026-10-22T05:30:02.773Z",
+            "source_url": "https://registry.npmjs.org/%40luziyang2026%2Fdsh-question-nav",
+            "error": null,
+            "latest_version": "0.7.8",
+            "latest_published_at": "2026-09-01T15:10:21.599Z",
+            "latest_error": null
+        }
+    }
+}

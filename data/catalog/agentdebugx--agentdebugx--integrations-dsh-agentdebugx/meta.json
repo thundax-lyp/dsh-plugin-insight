@@ -1,0 +1,34 @@
+{
+    "repository": "AgentDebugX/AgentDebugX",
+    "repository_id": 1296792947,
+    "captured_at": "2026-10-22T04:58:06.313Z",
+    "window_start": "2026-09-22T04:58:06.313Z",
+    "stars": 67,
+    "pushed_at": "2026-10-20T16:58:57Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-agentdebugx",
+        "captured_at": "2026-10-22T04:58:15.203Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 784,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-agentdebugx",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-25T13:09:31.687Z",
+            "captured_at": "2026-10-22T04:58:15.203Z",
+            "source_url": "https://registry.npmjs.org/dsh-agentdebugx",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-25T13:09:32.020Z",
+            "latest_error": null
+        }
+    }
+}

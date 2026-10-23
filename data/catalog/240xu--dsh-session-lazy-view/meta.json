@@ -1,0 +1,55 @@
+{
+    "repository": "240xu/dsh-session-lazy-view",
+    "repository_id": 1377185339,
+    "captured_at": "2026-10-23T01:50:06.434Z",
+    "window_start": "2026-09-23T01:50:06.434Z",
+    "stars": 0,
+    "pushed_at": "2026-10-21T14:08:49Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-session-lazy-view%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A932:205DA3:11F2EC:136699:6ADABD50 and timestamp 2026-10-23 01:50:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-session-lazy-view%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9E2:FEEE4:110991B:125552B:6ADABD52 and timestamp 2026-10-23 01:50:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-session-lazy-view%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A06.434Z..2026-10-23T01%3A50%3A06.434Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AAEC:3F19F7:1646B1:1815E3:6ADABD53 and timestamp 2026-10-23 01:50:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-session-lazy-view%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A06.434Z..2026-10-23T01%3A50%3A06.434Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ACA0:1B7168:17BBC5:198A58:6ADABD55 and timestamp 2026-10-23 01:50:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-session-lazy-view%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A06.434Z..2026-10-23T01%3A50%3A06.434Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD8A:31129F:113C896:1288373:6ADABD56 and timestamp 2026-10-23 01:50:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@240xu/dsh-session-lazy-view",
+        "captured_at": "2026-10-23T01:50:15.075Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 1359,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40240xu%2Fdsh-session-lazy-view",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-19T13:26:10.795Z",
+            "captured_at": "2026-10-23T01:50:15.075Z",
+            "source_url": "https://registry.npmjs.org/%40240xu%2Fdsh-session-lazy-view",
+            "error": null,
+            "latest_version": "0.3.6",
+            "latest_published_at": "2026-10-21T14:05:26.131Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,416 @@
+{
+    "schema_version": 4,
+    "id": "82b3b0d5970553cd7a05b657ec4e6d62",
+    "identity": "github:1423253220:root",
+    "slug": "439436269-ctrl--dsh-search",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1423253220:root",
+            "repository_id": 1423253220,
+            "component_id": "root",
+            "repository": "439436269-ctrl/dsh-search",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-search",
+            "entry_type": "plugin",
+            "technical_category": "context-search",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "906d6f197bc17274dfb2bdc19e89691549686d654d95fed97f8cf95e4b53997c",
+                "code": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                "maintenance": "6ca93e3d0748966eb82be00e216b5b631b54a0a579a0a731bf4859a67eba8873"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1423253220-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:13:42.907Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1423253220-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-search",
+                            "commit": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                            "path": "README.md",
+                            "content_sha256": "665dd757ba1fb7953dcdf8725857fed4de17d95349aa2a09be1886bd40f14edc"
+                        }
+                    ],
+                    "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                    "captured_at": "2026-10-22T16:13:42.907Z",
+                    "summary": "以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1423253220-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-search",
+                            "commit": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                            "path": "README.md",
+                            "content_sha256": "665dd757ba1fb7953dcdf8725857fed4de17d95349aa2a09be1886bd40f14edc"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-search",
+                            "commit": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                            "path": "lib/index.js",
+                            "content_sha256": "1890f0fb56cb70745fc43393b6150673d4fac06e823870d3b85cd47609ce0b8d"
+                        },
+                        {
+                            "repository_url": "https://github.com/439436269-ctrl/dsh-search",
+                            "commit": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                            "path": "lib/tools.js",
+                            "content_sha256": "6021301f2086cd0932e3355fa6ac4698a4ff6c6077dd8cea0a0249bb0c6ebd3f"
+                        }
+                    ],
+                    "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                    "captured_at": "2026-10-22T16:13:42.907Z",
+                    "summary": "核查 README.md、lib/index.js、lib/tools.js；三个工具分别检索、抓正文和执行 1+N 次研究链，带鉴权、超时、重试、QPS 限制和结构化结果。 详见[Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只读检查固定提交 README.md、lib/index.js、lib/tools.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。服务端计费失败规则、当前索引覆盖和真实正文成功率未核。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务；已有 web_search/fetch 且需求简单时不必增加供应商。 详见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "三个工具分别检索、抓正文和执行 1+N 次研究链，带鉴权、超时、重试、QPS 限制和结构化结果。 详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只读检查固定提交 README.md、lib/index.js、lib/tools.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。服务端计费失败规则、当前索引覆盖和真实正文成功率未核。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "以当前仓库包清单和 README 所示方式分发；可用性、包注册表现状和目标 Host 安装兼容未做动态确认。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| search/fetch | 约 0.005 元/成功请求 | 管理 key/配额 | 失败计费待核 |\n| research | 1+N 次调用 | 选择 N/去重 | 成本随页面线性增加 |\n| 人工复核 | 核来源和正文 | 排除摘要误导 | 每题耗时未测 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 详见[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 验证指标 |\n| --- | --- | --- |\n| 检索召回 | 结构化字段和语法 | Recall@10 |\n| 正文可用 | 同供应商 fetch | 正文成功率 |\n| 通用搜索对照 | 可能更可控但收费 | 每个合格来源成本 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "密钥分层、超时重试与显式 count 让预算可控；应输出 request id、实际调用数与计费成功数以便对账。 详见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。 详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "无法替代登录、点击和强 SPA 浏览器；转义标点、HTML 壳与正文缺失会影响结果，摘要也不是独立事实验证。 详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。 详见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1423253220:root",
+                            "area": "code",
+                            "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:13:42.907Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:13:42.907Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                "reviewed_at": "2026-10-22T16:13:42.907Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1423253220:root",
+                        "area": "code",
+                        "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "dsh-search 的核心接线可复用，但关键运行边界尚未验证。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流价值存在，经济与真实采用没有本轮独立证据。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1423253220-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "目标任务明确但适用范围受依赖限制。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "相对简单基线有特定机制优势。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码可核，真实 Host 未运行。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "直接资源可识别，实际总成本仍需计量。"
+                    }
+                },
+                "score": 46,
+                "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                "reviewed_at": "2026-10-22T16:13:42.907Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1423253220-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1423253220:root",
+                        "area": "code",
+                        "fingerprint": "24bc2e4b985559fe05497530b5c4484bc9168d71"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1423253220:root",
+            "repository": "439436269-ctrl/dsh-search",
+            "path": "",
+            "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+            "fingerprints": {
+                "directory": "906d6f197bc17274dfb2bdc19e89691549686d654d95fed97f8cf95e4b53997c",
+                "code": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+                "maintenance": "6ca93e3d0748966eb82be00e216b5b631b54a0a579a0a731bf4859a67eba8873"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "efeafbb510fa1a856e1288c3284180239a2c5532f1be552fe7c13d46f8b3974d"
+        },
+        "publication.metadata": "data/catalog/439436269-ctrl--dsh-search/meta.json",
+        "publication.summaries": {
+            "text": "以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。",
+            "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+            "source_url": "https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+            "items": {
+                "模型工具": "search、fetch、research 三个官方 API 工具"
+            },
+            "table": "#### 能力明细\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | search、fetch、research 三个官方 API 工具 | 服务端计费失败规则、当前索引覆盖和真实正文成功率未核 |"
+        },
+        "publication.advice": {
+            "revision": "24bc2e4b985559fe05497530b5c4484bc9168d71",
+            "text": "可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 详见[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/439436269-ctrl--dsh-search",
+        "reports": "# dsh-search\n\n> 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。\n\n## 研究范围\n\n- **仓库**：[439436269-ctrl/dsh-search](https://github.com/439436269-ctrl/dsh-search)\n- **版本号**：0.1.0（[固定提交 24bc2e4b985559fe05497530b5c4484bc9168d71](https://github.com/439436269-ctrl/dsh-search/tree/24bc2e4b985559fe05497530b5c4484bc9168d71)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码可确认 search、fetch、research 的请求预算、重试与限流接线；本轮没有 API key、搜索请求或账单记录，作者给出的每千次价格和正文质量尚未成为当前服务效果证据。\n\n## 洞察短评\n\n- **用途**：适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务；已有 web_search/fetch 且需求简单时不必增加供应商。 详见[Q01](#research-q01)。\n- **亮点**：搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。 详见[Q03](#research-q03)。\n- **思考**：无法替代登录、点击和强 SPA 浏览器；转义标点、HTML 壳与正文缺失会影响结果，摘要也不是独立事实验证。 详见[Q04](#research-q04)。\n- **建议**：给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。 详见[Q08](#research-q08)。\n\n采用建议：可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 详见[Q09](#research-q09)。\n\n## 核心贡献\n\n搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。 详见[Q03](#research-q03)。\n\n## 关键质疑\n\n无法替代登录、点击和强 SPA 浏览器；转义标点、HTML 壳与正文缺失会影响结果，摘要也不是独立事实验证。 详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。 详见[Q08](#research-q08)。\n\n下一步只做本项可证伪实验：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95。\n\n## 场景与替代办法\n\n适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务；已有 web_search/fetch 且需求简单时不必增加供应商。 详见[Q01](#research-q01)。\n\n适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务；已有 web_search/fetch 且需求简单时不必增加供应商。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| Search API key | 必需 | 鉴权 search/fetch | 工具报认证错误 |\n| 服务网络/配额 | 必需 | 返回搜索与正文 | 超时/限流重试 |\n| 目标网页可抓取性 | fetch 时 | 正文解析 | 登录/SPA 失败 |\n\n#### 启动步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 预算 | 设置 count 与 research N | 先算最大 1+N 次 |\n| 检索 | search 得结构化结果 | 核日期/来源 |\n| 抓取 | fetch 选少量 URL | 保留失败原因 |\n| 对账 | 比较请求日志与账单 | 超预算即停 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| search/fetch | 约 0.005 元/成功请求 | 管理 key/配额 | 失败计费待核 |\n| research | 1+N 次调用 | 选择 N/去重 | 成本随页面线性增加 |\n| 人工复核 | 核来源和正文 | 排除摘要误导 | 每题耗时未测 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 验证指标 |\n| --- | --- | --- |\n| 检索召回 | 结构化字段和语法 | Recall@10 |\n| 正文可用 | 同供应商 fetch | 正文成功率 |\n| 通用搜索对照 | 可能更可控但收费 | 每个合格来源成本 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：按次计费的 Search/Fetch 工具能否以可控请求预算换来比通用搜索更稳定的结构化证据？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 场景：适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务；已有 web_search/fetch 且需求简单时不必增加供应商。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md#L1-L5)\n\n固定提交复核：场景相关声明与实现入口。\n\n```text\n# @vfvrpq/dsh-search\n\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\n\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\n```\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：场景结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 机制：三个工具分别检索、抓正文和执行 1+N 次研究链，带鉴权、超时、重试、QPS 限制和结构化结果。？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n三个工具分别检索、抓正文和执行 1+N 次研究链，带鉴权、超时、重试、QPS 限制和结构化结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:1-10](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/tools.js#L1-L10)\n\n固定提交复核：机制相关声明与实现入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Tool registry: one tool per file, in the order the model should see them.\n *\n * @module dsh-search/tools\n */\n\nimport { clampInt, guarded, requireText } from \"./tools/shared.js\";\nimport { createSearchTool } from \"./tools/search.js\";\nimport { createFetchTool } from \"./tools/fetch.js\";\nimport { createResearchTool } from \"./tools/research.js\";\n```\n\n</details>\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：机制结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 贡献：搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md#L1-L5)\n\n固定提交复核：贡献相关声明与实现入口。\n\n```text\n# @vfvrpq/dsh-search\n\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\n\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\n```\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：贡献结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 局限：无法替代登录、点击和强 SPA 浏览器？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n无法替代登录、点击和强 SPA 浏览器；转义标点、HTML 壳与正文缺失会影响结果，摘要也不是独立事实验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:1-10](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/tools.js#L1-L10)\n\n固定提交复核：局限相关声明与实现入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Tool registry: one tool per file, in the order the model should see them.\n *\n * @module dsh-search/tools\n */\n\nimport { clampInt, guarded, requireText } from \"./tools/shared.js\";\nimport { createSearchTool } from \"./tools/search.js\";\nimport { createFetchTool } from \"./tools/fetch.js\";\nimport { createResearchTool } from \"./tools/research.js\";\n```\n\n</details>\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：局限结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 依赖：需要 DeepSeek Search API key、网络和服务配额？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n需要 DeepSeek Search API key、网络和服务配额；search/fetch 各 5 QPS，research 的 N 决定调用放大。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md#L1-L5)\n\n固定提交复核：依赖相关声明与实现入口。\n\n```text\n# @vfvrpq/dsh-search\n\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\n\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\n```\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：依赖结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 成本与效果：作者口径成功请求每千次 5 元，即约 0.005 元/次？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n作者口径成功请求每千次 5 元，即约 0.005 元/次；research 至少 1+N 次，失败/重试是否计费要向服务账单核对。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md#L1-L5)\n\n固定提交复核：成本与效果相关声明与实现入口。\n\n```text\n# @vfvrpq/dsh-search\n\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\n\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\n```\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：成本与效果结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 工程：密钥分层、超时重试与显式 count 让预算可控？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n密钥分层、超时重试与显式 count 让预算可控；应输出 request id、实际调用数与计费成功数以便对账。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/tools.js:1-10](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/lib/tools.js#L1-L10)\n\n固定提交复核：工程相关声明与实现入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Tool registry: one tool per file, in the order the model should see them.\n *\n * @module dsh-search/tools\n */\n\nimport { clampInt, guarded, requireText } from \"./tools/shared.js\";\nimport { createSearchTool } from \"./tools/search.js\";\nimport { createFetchTool } from \"./tools/fetch.js\";\nimport { createResearchTool } from \"./tools/research.js\";\n```\n\n</details>\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：工程结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 假设：给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md#L1-L5)\n\n固定提交复核：假设相关声明与实现入口。\n\n```text\n# @vfvrpq/dsh-search\n\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\n\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\n```\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：假设结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 采用：可用公开、非敏感查询小范围试用？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-search/blob/24bc2e4b985559fe05497530b5c4484bc9168d71/README.md#L1-L5)\n\n固定提交复核：采用相关声明与实现入口。\n\n```text\n# @vfvrpq/dsh-search\n\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\n\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\n```\n\n#### 缺口\n\n- 服务端计费失败规则、当前索引覆盖和真实正文成功率未核\n  **影响**：采用结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8cea62abce78e41e7b6a8ad7984aaaff91c6de222de1fe58a27a6da7cdcc7a33。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 157 | — | — | 1549 |\n| .js | source | 13 | 1001 | 622 | 312 | — |\n| .js | test | 2 | 307 | 232 | 46 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力明细\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | search、fetch、research 三个官方 API 工具 | 服务端计费失败规则、当前索引覆盖和真实正文成功率未核 |\n\n## 工程亮点\n\n密钥分层、超时重试与显式 count 让预算可控；应输出 request id、实际调用数与计费成功数以便对账。 详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/tools.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读检查固定提交 README.md、lib/index.js、lib/tools.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。服务端计费失败规则、当前索引覆盖和真实正文成功率未核。\n- 下一步：下一步只做本项可证伪实验：固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/439436269-ctrl--dsh-search/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"439436269-ctrl/dsh-search\",\n  \"revision\": \"24bc2e4b985559fe05497530b5c4484bc9168d71\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\",\n    \"lib/tools.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"按次计费的 Search/Fetch 工具能否以可控请求预算换来比通用搜索更稳定的结构化证据？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"场景：适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务？\",\n        \"answer\": \"适合需要搜索语法、结果条数、正文和多页汇总可控的研究任务；已有 web_search/fetch 且需求简单时不必增加供应商。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：场景相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"场景结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"机制：三个工具分别检索、抓正文和执行 1+N 次研究链，带鉴权、超时、重试、QPS 限制和结构化结果。？\",\n        \"answer\": \"三个工具分别检索、抓正文和执行 1+N 次研究链，带鉴权、超时、重试、QPS 限制和结构化结果。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/tools.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定提交复核：机制相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"机制结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"贡献：搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。？\",\n        \"answer\": \"搜索与正文抓取在同一 API 方言下串成可预算研究，优势是字段一致与权威度/日期等元数据。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：贡献相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"贡献结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"局限：无法替代登录、点击和强 SPA 浏览器？\",\n        \"answer\": \"无法替代登录、点击和强 SPA 浏览器；转义标点、HTML 壳与正文缺失会影响结果，摘要也不是独立事实验证。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/tools.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定提交复核：局限相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"局限结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"依赖：需要 DeepSeek Search API key、网络和服务配额？\",\n        \"answer\": \"需要 DeepSeek Search API key、网络和服务配额；search/fetch 各 5 QPS，research 的 N 决定调用放大。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：依赖相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"依赖结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"成本与效果：作者口径成功请求每千次 5 元，即约 0.005 元/次？\",\n        \"answer\": \"作者口径成功请求每千次 5 元，即约 0.005 元/次；research 至少 1+N 次，失败/重试是否计费要向服务账单核对。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：成本与效果相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"成本与效果结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"工程：密钥分层、超时重试与显式 count 让预算可控？\",\n        \"answer\": \"密钥分层、超时重试与显式 count 让预算可控；应输出 request id、实际调用数与计费成功数以便对账。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/tools.js\",\n            \"line_start\": 1,\n            \"line_end\": 10,\n            \"observation\": \"固定提交复核：工程相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"工程结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"假设：给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。？\",\n        \"answer\": \"给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：假设相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"假设结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"采用：可用公开、非敏感查询小范围试用？\",\n        \"answer\": \"可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"固定提交复核：采用相关声明与实现入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"服务端计费失败规则、当前索引覆盖和真实正文成功率未核\",\n            \"impact\": \"采用结论只能到固定源码解释，不能外推为真实运行效果\",\n            \"next_step\": \"固定 100 个带期望来源的查询，记录 search/fetch 请求数、成功数、账单元、召回@10、正文可读率和 P95\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# @vfvrpq/dsh-search\\n\\nDeepSeek 官方 Search / Fetch 接口的 DeepSeek Harness 插件：三个工具、一个配置项、零运行时依赖。\\n\\n给 agent 的是**结构化**网页结果——rerank 分、权威度、发布时间、模型友好长摘要——而不是一坨 HTML。\\n比内置 `web_search` / `web_fetch` 多出来的东西：搜索语法、条数与正文可控、成本可推算。\\n\\n## 装\\n\\n```sh\\n# 从 npm（已发布版本）\\ndsh plugin --profile desktop add @vfvrpq/dsh-search@0.1.0\\n\\n# 或从源码包（插件 import 了 @deepseek-ai/*，必须走 tgz，目录软链会让宿主包解析不到）\\npnpm pack\\ndsh plugin --profile desktop add /绝对路径/vfvrpq-dsh-search-0.1.0.tgz\\n```\\n\\n装完工具即出现在工具表里，**不用重启**（升级才需要重启）。\\n\\n## 三个工具\\n\\n| 工具 | 干什么 | 计费请求数 |\\n|---|---|---|\\n| `deepseek_search` | 搜索，返回标题/URL/snippet/summary/可选正文/日期/权威度/rerank 分 | 1 |\\n| `deepseek_fetch` | 单页转 Markdown（标题 + 正文） | 1 |\\n| `deepseek_research` | 搜索 + 抓前 N 页正文，一次给结论 | 1 + N |\\n\\n`deepseek_search` 支持的操作符，写在 `query` 里或用参数：`site:`、`-site:`、`-词`、`-\\\"短语\\\"`、`\\\"精确\\\"`、`lang:`、`after:`、`before:`。\\n\\n```text\\ndeepseek_search  query=\\\"llama.cpp 安装\\\" site=\\\"github.com\\\" after=2025 count=5\\ndeepseek_fetch   url=\\\"https://api-docs.deepseek.com/zh-cn/guides/search\\\"\\ndeepseek_research query=\\\"DeepSeek V4 上下文长度\\\" count=5 top=2\\n```\\n\\n判读口径：`rerankScore >= 1.5` 为优质（渲染里标 ★），`authority >= 3` 为高权威。\\n`summary` 是二手摘要，版本号/日期/价格/API 字段一律 `deepseek_fetch` 原文核实；引用给原始 URL。\\n\\n## 配置\\n\\n| 键 | 默认 | 说明 |\\n|---|---|---|\\n| `apiKey` | `\\\"\\\"` | 空则运行时按下面四层解析，**不要把 key 写进 profile** |\\n| `baseUrl` | `https://api.deepseek.com` | 仅兼容代理时才改 |\\n| `defaultCount` | `5` | 调用没给 `count` 时的条数 |\\n| `maxContentChars` | `8000` | `deepseek_search` 每条正文上限 |\\n| `fetchMaxChars` | `20000` | `deepseek_fetch` 正文上限 |\\n| `timeoutMs` | `30000` | 单请求超时 |\\n| `maxRetries` | `2` | 408 / 429 / 5xx 重试次数 |\\n| `promptEnabled` | `true` | 是否向系统提示贡献用法章节 |\\n| `promptOrder` | `55` | 该章节排序 |\\n\\nkey 解析顺序（**key 不落 profile**）：\\n\\n1. 插件配置 `apiKey`\\n2. `$DEEPSEEK_API_KEY`\\n3. `~/.secrets/keys.env` 里的 `DEEPSEEK_API_KEY=...`\\n4. `$DSH_HOME/.credentials.yaml` 的 `refs: DEEPSEEK_API_KEY: sk-...`\\n\\n## 成本\\n\\n- 5 元 / 1000 次成功请求 ≈ **0.005 元 / 次**；Search 与 Fetch 同价。\\n- 只有 HTTP 200 且产生结果才计费；空结果、失败、超时不计费。\\n- `count` 不影响单价——一次取够，别拆成多次小请求。\\n- 限速：Search 与 Fetch **各自** 5 QPS（账号级）；超过抛 429，插件按退避重试。\\n\\n## 结构\\n\\n```\\nlib/index.js     入口：只接线（校验配置、持有 client、注册工具、贡献提示章节）\\nlib/config.js    Config schema + 代码侧默认值 + 加载期校验\\nlib/keys.js      四层 key 解析\\nlib/query.js     query 拼装与 site: 展开\\nlib/client.js    HTTP：超时 / 重试 / 错误翻译\\nlib/format.js    结果归一化与渲染\\nlib/prompt.js    系统提示章节\\nlib/tools/       一能力一文件（search / fetch / research / shared）\\n```\\n\\n## 开发\\n\\n```sh\\nnode --test test/*.test.js     # 单测：mock fetch，不联网、不花钱\\nnode scripts/live-selftest.js  # 真机自测：1 次搜索 + 1 次抓取（约 0.01 元）\\n```\\n\\n## 已知边界\\n\\n- 抓不了需要登录态、点击交互、或返回非 HTML 的页面 → 用浏览器自动化插件。\\n- SPA 文档站可能对不存在的路径返回 200 + 站点壳内容而不是 404；正文里出现首页标语即说明是 fallback。\\n- Fetch 返回的 Markdown 会把 `\\\\/`、`\\\\.`、`\\\\#` 等标点反斜杠转义，属上游产物，按需 unescape。\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@vfvrpq/dsh-search\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"description\\\": \\\"DeepSeek first-party Search/Fetch API for DeepSeek Harness: three tools (deepseek_search / deepseek_fetch / deepseek_research) that return structured, reranked web results with search operators, page-to-Markdown fetching, and cost-aware defaults.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"author\\\": \\\"439436269-ctrl\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/439436269-ctrl/dsh-search.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/439436269-ctrl/dsh-search#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/439436269-ctrl/dsh-search/issues\\\"\\n  },\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\",\\n    \\\"registry\\\": \\\"https://registry.npmjs.org/\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"deepseek\\\",\\n    \\\"search\\\",\\n    \\\"fetch\\\",\\n    \\\"web-search\\\",\\n    \\\"rag\\\"\\n  ],\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/index.d.ts\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib/**/*.js\\\",\\n    \\\"lib/**/*.d.ts\\\",\\n    \\\"CHANGELOG.md\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-system-prompt\\\": \\\"^0.2.0-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.2.0-rc.2\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"compatibility\\\": {\\n      \\\"dshReleases\\\": {\\n        \\\"0.2.0-rc.2\\\": \\\"compatible\\\"\\n      }\\n    }\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/*.test.js\\\",\\n    \\\"selftest\\\": \\\"node scripts/live-selftest.js\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/**\\n * dsh-search — DeepSeek first-party Search / Fetch tools for\\n * DeepSeek Harness.\\n *\\n * This entry point only wires things together: it validates config, owns the\\n * client lifecycle, contributes the guide section, and registers the tools\\n * described in `./tools/`. Configuration lives in `./config.js`, key resolution\\n * in `./keys.js`, the HTTP protocol in `./client.js`, the guide text in\\n * `./prompt.js`.\\n *\\n * @module dsh-search\\n */\\n\\nimport { defineTool } from \\\"@deepseek-ai/dsh-tools\\\";\\n\\nimport { SearchClient } from \\\"./client.js\\\";\\nimport { Config, resolveConfig, validateConfig } from \\\"./config.js\\\";\\nimport { guideText } from \\\"./prompt.js\\\";\\nimport { createToolSpecs } from \\\"./tools.js\\\";\\n\\nexport const name = \\\"deepseek-search\\\";\\n\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport { Config, SearchClient };\\n\\nexport function apply(ctx, config) {\\n\\tconst settings = resolveConfig(config);\\n\\tvalidateConfig(settings);\\n\\n\\t/** @type {SearchClient|undefined} */\\n\\tlet client;\\n\\tctx.effect(() => {\\n\\t\\tclient = new SearchClient({\\n\\t\\t\\tbaseUrl: settings.baseUrl,\\n\\t\\t\\tapiKey: settings.apiKey,\\n\\t\\t\\ttimeoutMs: settings.timeoutMs,\\n\\t\\t\\tmaxRetries: settings.maxRetries,\\n\\t\\t});\\n\\t\\treturn () => {\\n\\t\\t\\tclient = undefined;\\n\\t\\t};\\n\\t});\\n\\n\\t/**\\n\\t * The live client, or a loud failure — reached only while the fiber is active.\\n\\t *\\n\\t * @returns {SearchClient} live client.\\n\\t */\\n\\tconst getClient = () => {\\n\\t\\tif (!client) throw new Error(\\\"deepseek-search: client is not available\\\");\\n\\t\\treturn client;\\n\\t};\\n\\n\\tif (settings.promptEnabled) {\\n\\t\\tctx.systemPrompt.section({\\n\\t\\t\\tname: \\\"deepseek-search:guide\\\",\\n\\t\\t\\torder: settings.promptOrder,\\n\\t\\t\\ttext: () => guideText(settings),\\n\\t\\t});\\n\\t}\\n\\n\\tfor (const spec of createToolSpecs({ client: getClient(), config: settings })) {\\n\\t\\tctx.tools.register(\\n\\t\\t\\tdefineTool({\\n\\t\\t\\t\\tname: spec.name,\\n\\t\\t\\t\\tdescription: spec.description,\\n\\t\\t\\t\\tparameters: spec.parameters,\\n\\t\\t\\t\\toutput: {\\n\\t\\t\\t\\t\\tschema: spec.outputSchema,\\n\\t\\t\\t\\t\\trender: spec.render,\\n\\t\\t\\t\\t\\t...(spec.presentationMeta ? { presentationMeta: spec.presentationMeta } : {}),\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t...(spec.call ? { presentCall: spec.call } : {}),\\n\\t\\t\\t\\texecute: spec.execute,\\n\\t\\t\\t}),\\n\\t\\t);\\n\\t}\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/tools.js\",\n      \"content\": \"/**\\n * Tool registry: one tool per file, in the order the model should see them.\\n *\\n * @module dsh-search/tools\\n */\\n\\nimport { clampInt, guarded, requireText } from \\\"./tools/shared.js\\\";\\nimport { createSearchTool } from \\\"./tools/search.js\\\";\\nimport { createFetchTool } from \\\"./tools/fetch.js\\\";\\nimport { createResearchTool } from \\\"./tools/research.js\\\";\\n\\n/**\\n * Build every tool spec for one plugin instance.\\n *\\n * @param {{client: import(\\\"./client.js\\\").SearchClient, config: Record<string, any>}} deps - plugin deps.\\n * @returns {Array<Record<string, any>>} tool specs in presentation order.\\n */\\nexport function createToolSpecs({ client, config }) {\\n\\tconst ctx = { client, config, clampInt, guarded, requireText };\\n\\treturn [createSearchTool(ctx), createFetchTool(ctx), createResearchTool(ctx)];\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"24bc2e4b985559fe05497530b5c4484bc9168d71\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"8cea62abce78e41e7b6a8ad7984aaaff91c6de222de1fe58a27a6da7cdcc7a33\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 157,\n        \"words\": 1549\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 13,\n        \"lines\": 1001,\n        \"code\": 622,\n        \"comments\": 312,\n        \"blank\": 74\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 307,\n        \"code\": 232,\n        \"comments\": 46,\n        \"blank\": 52\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"lib/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 64,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 65,\n          \"api\": \"defineTool\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 166,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/tools/research.js\",\n          \"line\": 154,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"439436269-ctrl/dsh-search\",\n    \"repository_id\": 1423253220,\n    \"captured_at\": \"2026-10-22T16:02:54.755Z\",\n    \"window_start\": \"2026-09-22T16:02:54.755Z\",\n    \"stars\": 0,\n    \"pushed_at\": \"2026-10-18T14:52:00Z\",\n    \"issues\": {\n      \"open\": null,\n      \"closed\": null,\n      \"created_30d\": null,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"open\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-search%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED40:FDCE3:A3F0D0:B0E86D:6ADA33B1 and timestamp 2026-10-22 16:02:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-search%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDEE:FDCE3:A3F1BF:B0E960:6ADA33B2 and timestamp 2026-10-22 16:02:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"created_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-search%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A54.755Z..2026-10-22T16%3A02%3A54.755Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EE8A:1B6125:A18288:AE789F:6ADA33B3 and timestamp 2026-10-22 16:02:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-search%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A54.755Z..2026-10-22T16%3A02%3A54.755Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EF54:321437:A4238D:B10FEA:6ADA33B4 and timestamp 2026-10-22 16:03:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-search%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A54.755Z..2026-10-22T16%3A02%3A54.755Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F044:100473:A98D0D:B67DE0:6ADA33B5 and timestamp 2026-10-22 16:03:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"@vfvrpq/dsh-search\",\n      \"captured_at\": \"2026-10-22T16:03:01.962Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": 239,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40vfvrpq%2Fdsh-search\",\n      \"error\": null,\n      \"publication\": {\n        \"first_published_at\": \"2026-10-17T11:21:25.175Z\",\n        \"captured_at\": \"2026-10-22T16:03:01.962Z\",\n        \"source_url\": \"https://registry.npmjs.org/%40vfvrpq%2Fdsh-search\",\n        \"error\": null,\n        \"latest_version\": \"0.1.0\",\n        \"latest_published_at\": \"2026-10-17T11:24:02.740Z\",\n        \"latest_error\": null\n      }\n    }\n  }\n}\n",
+            "sha256": "4e0253aae186c98c69fa983b155ed9e6f884c92a2e759d6dd0ea1c4b692bcdf2"
+        }
+    },
+    "unavailable_artifacts": []
+}

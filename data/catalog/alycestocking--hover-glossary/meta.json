@@ -1,0 +1,34 @@
+{
+    "repository": "AlyceStocking/hover-glossary",
+    "repository_id": 1374454334,
+    "captured_at": "2026-10-22T09:53:11.466Z",
+    "window_start": "2026-09-22T09:53:11.466Z",
+    "stars": 0,
+    "pushed_at": "2026-10-14T02:00:19Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "hover-glossary",
+        "captured_at": "2026-10-22T09:53:19.107Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 48,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/hover-glossary",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-14T01:58:35.211Z",
+            "captured_at": "2026-10-22T09:53:19.107Z",
+            "source_url": "https://registry.npmjs.org/hover-glossary",
+            "error": null,
+            "latest_version": "1.1.0",
+            "latest_published_at": "2026-10-14T01:59:31.824Z",
+            "latest_error": null
+        }
+    }
+}

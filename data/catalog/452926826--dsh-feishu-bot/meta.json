@@ -1,0 +1,34 @@
+{
+    "repository": "452926826/dsh-feishu-bot",
+    "repository_id": 1346023250,
+    "captured_at": "2026-10-22T10:29:01.036Z",
+    "window_start": "2026-09-22T10:29:01.036Z",
+    "stars": 1,
+    "pushed_at": "2026-09-01T04:27:48Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-feishu-bot",
+        "captured_at": "2026-10-22T10:29:12.889Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 884,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-feishu-bot",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T21:59:28.326Z",
+            "captured_at": "2026-10-22T10:29:12.889Z",
+            "source_url": "https://registry.npmjs.org/dsh-feishu-bot",
+            "error": null,
+            "latest_version": "0.19.16",
+            "latest_published_at": "2026-08-25T15:59:34.405Z",
+            "latest_error": null
+        }
+    }
+}

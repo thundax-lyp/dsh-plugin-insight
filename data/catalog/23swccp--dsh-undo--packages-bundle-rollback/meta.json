@@ -1,0 +1,34 @@
+{
+    "repository": "23swccp/dsh-undo",
+    "repository_id": 1338526178,
+    "captured_at": "2026-10-22T10:24:04.476Z",
+    "window_start": "2026-09-22T10:24:04.476Z",
+    "stars": 4,
+    "pushed_at": "2026-08-24T13:40:27Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-undo-plugin",
+        "captured_at": "2026-10-22T10:24:18.118Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 955,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-undo-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T09:33:58.814Z",
+            "captured_at": "2026-10-22T10:24:18.118Z",
+            "source_url": "https://registry.npmjs.org/dsh-undo-plugin",
+            "error": null,
+            "latest_version": "0.1.0-rc.8",
+            "latest_published_at": "2026-08-24T13:51:29.451Z",
+            "latest_error": null
+        }
+    }
+}

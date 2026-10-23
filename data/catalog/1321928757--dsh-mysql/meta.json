@@ -1,0 +1,34 @@
+{
+    "repository": "1321928757/dsh-mysql",
+    "repository_id": 1337916824,
+    "captured_at": "2026-10-22T05:35:09.541Z",
+    "window_start": "2026-09-22T05:35:09.541Z",
+    "stars": 7,
+    "pushed_at": "2026-10-12T01:58:43Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 2,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-mysql",
+        "captured_at": "2026-10-22T05:35:18.469Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 35,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-mysql",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T08:41:37.047Z",
+            "captured_at": "2026-10-22T05:35:18.469Z",
+            "source_url": "https://registry.npmjs.org/dsh-mysql",
+            "error": null,
+            "latest_version": "0.0.1",
+            "latest_published_at": "2026-08-19T08:41:37.447Z",
+            "latest_error": null
+        }
+    }
+}

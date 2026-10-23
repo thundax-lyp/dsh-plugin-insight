@@ -1,0 +1,34 @@
+{
+    "repository": "030611/dsh-verification-receipt",
+    "repository_id": 1333370288,
+    "captured_at": "2026-10-22T07:59:01.907Z",
+    "window_start": "2026-09-22T07:59:01.907Z",
+    "stars": 4,
+    "pushed_at": "2026-09-03T16:29:04Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-verification-receipt",
+        "captured_at": "2026-10-22T07:59:16.078Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 851,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-verification-receipt",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T05:17:58.624Z",
+            "captured_at": "2026-10-22T07:59:16.078Z",
+            "source_url": "https://registry.npmjs.org/dsh-verification-receipt",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-14T05:17:59.003Z",
+            "latest_error": null
+        }
+    }
+}

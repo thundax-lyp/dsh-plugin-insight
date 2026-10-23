@@ -1,0 +1,55 @@
+{
+    "repository": "AIR-pixel/air-pixel-liquid-glass",
+    "repository_id": 1414238544,
+    "captured_at": "2026-10-22T15:12:35.277Z",
+    "window_start": "2026-09-22T15:12:35.277Z",
+    "stars": 1,
+    "pushed_at": "2026-10-22T06:19:00Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIR-pixel%2Fair-pixel-liquid-glass%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3A08:187A00:9BB82F:A7FB55:6ADA27E5 and timestamp 2026-10-22 15:12:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIR-pixel%2Fair-pixel-liquid-glass%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3AE2:329B81:98C7E9:A50F06:6ADA27E6 and timestamp 2026-10-22 15:12:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIR-pixel%2Fair-pixel-liquid-glass%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A35.277Z..2026-10-22T15%3A12%3A35.277Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3BD4:1026BA:9BFC7B:A84741:6ADA27E7 and timestamp 2026-10-22 15:12:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIR-pixel%2Fair-pixel-liquid-glass%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A35.277Z..2026-10-22T15%3A12%3A35.277Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3CE4:102206:9BB7D1:A7FF70:6ADA27E8 and timestamp 2026-10-22 15:12:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIR-pixel%2Fair-pixel-liquid-glass%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A35.277Z..2026-10-22T15%3A12%3A35.277Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3D82:1BA224:9A26D2:A66C94:6ADA27EA and timestamp 2026-10-22 15:12:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "air-pixel-liquid-glass",
+        "captured_at": "2026-10-22T15:12:42.420Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/air-pixel-liquid-glass",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T15:12:42.420Z",
+            "source_url": "https://registry.npmjs.org/air-pixel-liquid-glass",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

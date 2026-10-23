@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "d4f04a24f6e110dc1288ea59f78e61ab",
+    "identity": "github:1351854159:root",
+    "slug": "173787247--dsh-wsl-mnt",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351854159:root",
+            "repository_id": 1351854159,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-mnt",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-mnt",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5ad2c35f25eada35012d940e0917843a8285c48c2a905150b729588c7d17769f",
+                "code": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                "maintenance": "abaa069862b8fc34a507e11ffe5523e23cec8cfeed41887fc61820f03c3e3a10"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1351854159-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
+                    "retrieved_at": "2026-10-22T05:32:24.124Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1351854159-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "README.md",
+                            "content_sha256": "45d7b7187b85d781825f7494a1726b86dc49ef00aa39b7fe5b6668ce5d1651d5"
+                        }
+                    ],
+                    "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                    "captured_at": "2026-10-22T05:32:24.124Z",
+                    "summary": "按 WSL 路径规则判断 /mnt 工作区并给出 Linux home 迁移建议。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-mnt/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1351854159-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "README.md",
+                            "content_sha256": "45d7b7187b85d781825f7494a1726b86dc49ef00aa39b7fe5b6668ce5d1651d5"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "package.json",
+                            "content_sha256": "1a008286c34c5c6d96bb104672ea656b0f2280ebb247966edf452b688b88ca0e"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "index.js",
+                            "content_sha256": "793ca88e5f8fbad63c6225e6ba44a22094a33941200e4cee6a95867833735f71"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "lib/mnt.js",
+                            "content_sha256": "58669175d2592d61b0d871e16d77d1ccf487db0dd3ab3b4c48b24d4bbe889c59"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-mnt",
+                            "commit": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                            "path": "test/mnt.test.js",
+                            "content_sha256": "2e0e3771106f9cf23880367c8905249625e5f4cdb558a77e149ac2609db4a849"
+                        }
+                    ],
+                    "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                    "captured_at": "2026-10-22T05:32:24.124Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/mnt.js、lib/wsl-host.js、test/mnt.test.js；检测 WSL，解析输入路径，按 /mnt 前缀和目录名分类，检查 .git 是否存在并返回文本建议。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-mnt/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交静态阅读 README、入口、路径模块、WSL 检测及单测；未运行目标代码或真实 WSL 基准。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "WSL 中 git/npm 在 Windows 挂载路径可能偏慢时的初步排查。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "检测 WSL，解析输入路径，按 /mnt 前缀和目录名分类，检查 .git 是否存在并返回文本建议。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交静态阅读 README、入口、路径模块、WSL 检测及单测；未运行目标代码或真实 WSL 基准。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package.json 声明0.2.0、Node>=18、kit full 或单装；套件兼容是作者材料，本轮未验安装。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 资源与人工 | 未知 |\n| --- | --- | --- |\n| 诊断 | 读取路径与 .git，近乎本地操作 | 真实分类正确率 |\n| 决策 | 核挂载与同机负载基准 | 性能差异 |\n| 迁移 | 备份、clone/rsync、重装依赖、修路径 | 未提交改动/权限与省时 |\n",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "观察。先测真实项目，再决定是否迁移；不要按 onMnt/ok 字段自动搬移项目。详见[Q03](#research-q03)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 路径分类 | /mnt 前缀、目录和 .git | 实际挂载与符号链接 |\n| 建议 | home/src/叶名 | 目标冲突与迁移收益 |\n| 性能判断 | 无测量 | 当前机器真实延迟 |\n",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "没有执行 shell 或修改文件；只依赖路径和 .git 存在性。分类未做 realpath/mountinfo；结果 ok 实为不在 /mnt，非健康探针。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "所有 /mnt 路径统一判为不佳、非 /mnt 判为 ok，未核文件系统/符号链接或测速；建议路径可能与现有项目冲突。详见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "结合 realpath、mountinfo、目标冲突预检及同机工作负载基准，使迁移建议由当前机器证据支持；本版未实现。详见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351854159:root",
+                            "area": "code",
+                            "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T05:32:24.124Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T05:32:24.124Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                "reviewed_at": "2026-10-22T05:32:24.124Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854159:root",
+                        "area": "code",
+                        "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty 为常见 WSL 路径规则；mechanism 有明确分类但未测文件系统；transferability 可转为其它环境路径诊断但当前依赖 WSL；simplification 直接返回建议，未执行迁移。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow 降低初步排查门槛；delivery 仅为建议；reach 限 WSL 工作区；economics 无实际省时/成本对照。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351854159-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可作为 WSL 路径提醒试用；迁移前需核真实挂载、项目状态与同机 I/O 对照。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "WSL 工作区位置影响开发体验的场景明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "减少人工查看路径，但只用启发式规则。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码和路径单测可见，没有实机性能测试。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "工具诊断轻，按建议迁移项目则有人工和路径风险。"
+                    }
+                },
+                "score": 59,
+                "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                "reviewed_at": "2026-10-22T05:32:24.124Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1351854159-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351854159:root",
+                        "area": "code",
+                        "fingerprint": "fd4dfd42ed07ca3c1e78942252547b895970ff8f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351854159:root",
+            "repository": "173787247/dsh-wsl-mnt",
+            "path": "",
+            "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+            "fingerprints": {
+                "directory": "5ad2c35f25eada35012d940e0917843a8285c48c2a905150b729588c7d17769f",
+                "code": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+                "maintenance": "abaa069862b8fc34a507e11ffe5523e23cec8cfeed41887fc61820f03c3e3a10"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T04:36:02.544Z",
+            "analysis_sha256": "bcbfb356859000436e1bfdb79a726309d91c0f1ec184d14234f4d6c8ee32f6fa"
+        },
+        "publication.metadata": "data/catalog/173787247--dsh-wsl-mnt/meta.json",
+        "publication.summaries": {
+            "text": "按 WSL 路径规则判断 /mnt 工作区并给出 Linux home 迁移建议。",
+            "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+            "source_url": "https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+            "items": {
+                "模型工具": "mnt_doctor"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| mnt_doctor | 路径分类和建议 | 不测速、不迁移、不核真实挂载 |\n"
+        },
+        "publication.advice": {
+            "revision": "fd4dfd42ed07ca3c1e78942252547b895970ff8f",
+            "text": "观察。先测真实项目，再决定是否迁移；不要按 onMnt/ok 字段自动搬移项目。详见[Q03](#research-q03)、[Q04](#research-q04)。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-mnt",
+        "reports": "# dsh-wsl-mnt\n\n> 按 WSL 路径规则判断 /mnt 工作区并给出 Linux home 迁移建议。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-mnt](https://github.com/173787247/dsh-wsl-mnt)\n- **版本号**：0.2.0（[固定提交 fd4dfd42ed07ca3c1e78942252547b895970ff8f](https://github.com/173787247/dsh-wsl-mnt/tree/fd4dfd42ed07ca3c1e78942252547b895970ff8f)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n路径分类源码明确；无真实挂载类型或 I/O 测量，ok 仅为路径规则，迁移建议未执行。\n\n## 洞察短评\n\n- **用途**：WSL 中 git/npm 在 Windows 挂载路径可能偏慢时的初步排查。\n- **亮点**：把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：所有 /mnt 路径统一判为不佳、非 /mnt 判为 ok，未核文件系统/符号链接或测速；建议路径可能与现有项目冲突。详见[Q03](#research-q03)。\n- **建议**：结合 realpath、mountinfo、目标冲突预检及同机工作负载基准，使迁移建议由当前机器证据支持；本版未实现。详见[Q04](#research-q04)。\n\n采用建议：观察。先测真实项目，再决定是否迁移；不要按 onMnt/ok 字段自动搬移项目。详见[Q03](#research-q03)、[Q04](#research-q04)。\n\n## 核心贡献\n\n把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n所有 /mnt 路径统一判为不佳、非 /mnt 判为 ok，未核文件系统/符号链接或测速；建议路径可能与现有项目冲突。详见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n结合 realpath、mountinfo、目标冲突预检及同机工作负载基准，使迁移建议由当前机器证据支持；本版未实现。详见[Q04](#research-q04)。\n\nWSL1/2 上对 DrvFs、Linux fs、自定义挂载、symlink 和同名仓库目标做分类与 git/npm 重复耗时对照。\n\n## 场景与替代办法\n\nWSL 中 git/npm 在 Windows 挂载路径可能偏慢时的初步排查。\n\n人工 pwd、查看 /mnt/路径与 .git，再决定是否迁移；插件把这些提示聚合成模型工具。\n\n## 依赖与流程\n\n#### 条件\n\n| 条件 | 用途 | 不满足时 |\n| --- | --- | --- |\n| WSL 环境 | 允许执行工具 | 返回 not running in WSL |\n| DSH tools/systemPrompt | 注册与提示 | 工具不可用 |\n| 可读项目路径 | 检查 .git 存在 | 路径判断仍可返回但精度下降 |\n\n\n#### 使用\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 指定 | 输入实际工作区路径 | 输出路径正确 |\n| 诊断 | 读 onMnt/drive/kind/hasGit | 只是规则分类 |\n| 验证 | 查真实挂载和同机耗时 | 确认有性能差异 |\n| 迁移 | 备份后人工 clone/rsync | 项目状态与构建正常 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源与人工 | 未知 |\n| --- | --- | --- |\n| 诊断 | 读取路径与 .git，近乎本地操作 | 真实分类正确率 |\n| 决策 | 核挂载与同机负载基准 | 性能差异 |\n| 迁移 | 备份、clone/rsync、重装依赖、修路径 | 未提交改动/权限与省时 |\n\n\n#### 效果\n\n| 项 | 源码支持 | 未知 |\n| --- | --- | --- |\n| 路径分类 | /mnt 前缀、目录和 .git | 实际挂载与符号链接 |\n| 建议 | home/src/叶名 | 目标冲突与迁移收益 |\n| 性能判断 | 无测量 | 当前机器真实延迟 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核实 WSL 路径诊断的分类、性能声明与迁移建议边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何时使用，输出何种建议？\n\n**研究主题：**场景与需求、贡献与相对优势\n\n#### 完整回答\n\n针对在 WSL 的 /mnt/c 等 Windows 挂载路径运行 DSH、git 或 npm 而担心 I/O 慢、权限/换行问题的用户。一个 mnt_doctor 工具接受可选路径，默认进程 cwd，输出是否 /mnt、盘符、Windows 用户目录类别、是否有 .git、建议的 ~/src/<叶名> 路径及文本建议。系统提示在 git/npm 慢或项目位于 /mnt/c 时建议调用。相对用户自行检查 pwd/.git 并猜测路径，它把规则归类和下一步建议集中在模型工具；没有实际迁移、基准测量或文件修复。合格结果应让用户确认原路径、真实挂载类型和项目数据备份后再决定迁移，不能把建议路径当已建立的仓库。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-17](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/README.md#L1-L17)\n\n作者定位为 /mnt 工作区诊断和 Linux home 路径建议。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n````text\n# dsh-wsl-mnt\n> **Install set:** [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)\n\nTool **`mnt_doctor`**: classify slow `/mnt` workspaces (drive, Desktop, `.git`) and suggest a Linux home path.\n\n[中文说明 → README.zh.md](./README.zh.md)\n\n## Where it sits\n\nFlags a workspace on /mnt/c (slow git, NTFS). Prefer a Linux home path when it says so.\n\n```mermaid\nflowchart LR\n  agent[\"dsh agent\"] --> tool[\"mnt_doctor\"] --> mnt[\"/mnt/c vs Linux home\"]\n```\n\nSuite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.2.0** (full). Do not copy that matrix into this README.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:7-37](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/index.js#L7-L37)\n\nWSL 检测、系统提示和 mnt_doctor 注册。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 15_000);\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:mnt_doctor\",\n    order: 117,\n    text: \"Use mnt_doctor when git/npm feels slow or the workspace is under /mnt/c: classifies Desktop/Downloads, detects .git on NTFS, suggests a ~/src/… Linux path, and points to encoding_doctor for CRLF scripts.\",\n  });\n\n  ctx.tools.register({\n    name: \"mnt_doctor\",\n    description: \"Classify whether the workspace is on slow /mnt (drive, Desktop, .git) and suggest a Linux home path.\",\n    parameters: core.parameters(config),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \"not running in WSL\" };\n      return core.execute(args, config);\n    },\n    presentCall: () => ({ card: \"generic\", title: \"mnt_doctor\" }),\n    presentResult: (_args, result) => (\n      result.isError\n        ? { card: \"generic\", title: \"mnt_doctor failed\", content: result.content }\n        : { card: \"generic\", title: \"mnt_doctor\", content: result.content }\n    ),\n  });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/mnt.js:91-112](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L91-L112)\n\n默认 cwd、路径解析、结果字段与建议。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function execute(args, _config = {}, deps = {}) {\n  const home = deps.home || homedir();\n  const exists = deps.exists || existsSync;\n  const raw = typeof args?.path === \"string\" && args.path.trim() ? args.path.trim() : process.cwd();\n  const abs = raw.startsWith(\"~/\")\n    ? `${home}${raw.slice(1)}`\n    : raw === \"~\"\n      ? home\n      : resolve(raw);\n  const info = classifyMntPath(abs, { home, exists });\n  const advice = buildMntAdvice(info);\n  return {\n    ok: !info.onMnt,\n    path: info.path,\n    onMnt: info.onMnt,\n    drive: info.drive || \"\",\n    kind: info.kind,\n    hasGit: info.hasGit,\n    suggestedHome: info.suggestedHome || \"\",\n    advice,\n  };\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · WSL 和路径分类规则准确到什么程度？\n\n**研究主题：**功能与机制、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\ndetectWsl 先看 WSL_DISTRO_NAME/WSL_INTEROP，再看 /proc/sys/kernel/osrelease 是否含 microsoft。路径规则只按解析后的字符串判断：等于 /mnt 或前缀 /mnt/ 即 onMnt，^/mnt/<字母> 抽盘符；含 Desktop/Downloads/Documents 识别 Windows 用户文件夹，其他按 Users 或 mnt_other，检查 path/.git 是否存在，并从 basename 生成 home/src/叶名。它不读取 mountinfo、不解析符号链接真实目标、不检查目标路径碰撞或 Git 工作树是否有效。因而非驱动器的 /mnt 挂载也被泛化为“慢 Windows 挂载”；通过 symlink 指向 /mnt 的 Linux 路径会被当作非 /mnt，反向亦然。hasGit 只表示 .git 路径存在，不能证明完整仓库或其元数据一定在 NTFS。参数 config.timeoutMs 被入口读取但核心同步分类未用，工具超时只由宿主层声明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/wsl-host.js:21-28](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/wsl-host.js#L21-L28)\n\nWSL 环境变量及内核 release 检测。\n\n```text\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\n  try {\n    return /microsoft/i.test(readRelease());\n  } catch {\n    return false;\n  }\n}\n```\n\n**依据 2 · 源码核查**：[lib/mnt.js:33-56](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L33-L56)\n\n字符串前缀、目录名、.git 存在性和 home 建议。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** Classify an absolute Linux path for WSL /mnt hygiene. */\nexport function classifyMntPath(abs, { home = homedir(), exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  const driveMatch = path.match(/^\\/mnt\\/([a-zA-Z])(?:\\/|$)/);\n  const drive = driveMatch ? driveMatch[1].toLowerCase() : \"\";\n  let kind = \"linux_home\";\n  if (onMnt) {\n    if (/\\/(Desktop|Downloads|Documents)(\\/|$)/i.test(path)) kind = \"windows_user_folder\";\n    else if (path.includes(\"/Users/\")) kind = \"windows_users\";\n    else kind = \"mnt_other\";\n  } else if (path === home || path.startsWith(`${home}/`)) {\n    kind = \"linux_home\";\n  } else {\n    kind = \"linux_other\";\n  }\n  const gitPath = path.endsWith(\"/\") ? `${path}.git` : `${path}/.git`;\n  const hasGit = exists(gitPath);\n  let suggestedHome = \"\";\n  if (onMnt) {\n    const leaf = basename(path) || \"project\";\n    suggestedHome = `${home.replace(/\\/+$/, \"\")}/src/${leaf}`;\n  }\n  return { path, onMnt, drive, kind, hasGit, suggestedHome };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/mnt.js:91-112](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L91-L112)\n\n~ 扩展、resolve 后分类，未用 realpath/mountinfo。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function execute(args, _config = {}, deps = {}) {\n  const home = deps.home || homedir();\n  const exists = deps.exists || existsSync;\n  const raw = typeof args?.path === \"string\" && args.path.trim() ? args.path.trim() : process.cwd();\n  const abs = raw.startsWith(\"~/\")\n    ? `${home}${raw.slice(1)}`\n    : raw === \"~\"\n      ? home\n      : resolve(raw);\n  const info = classifyMntPath(abs, { home, exists });\n  const advice = buildMntAdvice(info);\n  return {\n    ok: !info.onMnt,\n    path: info.path,\n    onMnt: info.onMnt,\n    drive: info.drive || \"\",\n    kind: info.kind,\n    hasGit: info.hasGit,\n    suggestedHome: info.suggestedHome || \"\",\n    advice,\n  };\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[index.js:7-30](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/index.js#L7-L30)\n\ntimeout 配置与非 WSL 拒绝路径。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const timeoutMs = positive(config.timeoutMs, 15_000);\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:mnt_doctor\",\n    order: 117,\n    text: \"Use mnt_doctor when git/npm feels slow or the workspace is under /mnt/c: classifies Desktop/Downloads, detects .git on NTFS, suggests a ~/src/… Linux path, and points to encoding_doctor for CRLF scripts.\",\n  });\n\n  ctx.tools.register({\n    name: \"mnt_doctor\",\n    description: \"Classify whether the workspace is on slow /mnt (drive, Desktop, .git) and suggest a Linux home path.\",\n    parameters: core.parameters(config),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \"not running in WSL\" };\n      return core.execute(args, config);\n    },\n```\n\n</details>\n\n#### 缺口\n\n- 未在符号链接、自定义 /mnt 挂载与 WSL1/2 上对照真实文件系统。\n  **影响：**路径分类不能等同真实磁盘或性能归因。\n  **进一步探讨：**在隔离 WSL 中用 mountinfo/realpath 对比工具分类，覆盖 bind、symlink、DrvFs 与 Linux fs。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 慢/快与安全迁移是否有实际测量？\n\n**研究主题：**缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n没有。源码只有路径字符串及 .git 存在性，没有运行 git status、npm install、I/O 计时或确认 /mnt 实际挂载类型；`ok` 直接设为 `!onMnt`，所以 /mnt 下任意位置都标 false，Linux 其它路径标 true，即使实际性能相反。建议文本将 /mnt 归因为 9p 比 ext4 慢，并建议 clone/rsync 到 ~/src；这属于规则性提醒而非此机器的实测结论，也未执行复制。叶名相同的两个 Windows 仓库会得到相同目标，已有路径/未提交改动/权限/大小写差异需要人工核验。测试只断言若干固定路径分类和建议文字，不能证明性能或迁移安全。故不得把“慢工作区”“good default”当当前主机的独立证据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/mnt.js:33-88](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L33-L88)\n\n诊断与建议基于路径字符串和 .git，没有测速或文件系统检查。\n\n<details>\n<summary>查看原文（56行）</summary>\n\n```text\n/** Classify an absolute Linux path for WSL /mnt hygiene. */\nexport function classifyMntPath(abs, { home = homedir(), exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  const driveMatch = path.match(/^\\/mnt\\/([a-zA-Z])(?:\\/|$)/);\n  const drive = driveMatch ? driveMatch[1].toLowerCase() : \"\";\n  let kind = \"linux_home\";\n  if (onMnt) {\n    if (/\\/(Desktop|Downloads|Documents)(\\/|$)/i.test(path)) kind = \"windows_user_folder\";\n    else if (path.includes(\"/Users/\")) kind = \"windows_users\";\n    else kind = \"mnt_other\";\n  } else if (path === home || path.startsWith(`${home}/`)) {\n    kind = \"linux_home\";\n  } else {\n    kind = \"linux_other\";\n  }\n  const gitPath = path.endsWith(\"/\") ? `${path}.git` : `${path}/.git`;\n  const hasGit = exists(gitPath);\n  let suggestedHome = \"\";\n  if (onMnt) {\n    const leaf = basename(path) || \"project\";\n    suggestedHome = `${home.replace(/\\/+$/, \"\")}/src/${leaf}`;\n  }\n  return { path, onMnt, drive, kind, hasGit, suggestedHome };\n}\n\nexport function buildMntAdvice(info) {\n  const tips = [];\n  if (!info.onMnt) {\n    tips.push(\"Path is outside /mnt — good default for day-to-day DSH / git / npm work.\");\n    if (info.hasGit) tips.push(\"Git repo on a Linux filesystem — prefer this over /mnt/c clones.\");\n    return tips;\n  }\n\n  tips.push(\n    \"This path is under /mnt — 9p I/O is much slower than ext4 under /home; git status, npm install, and node_modules suffer.\",\n  );\n  if (info.drive === \"c\") {\n    tips.push(\"Especially avoid long-lived repos on /mnt/c (NTFS + metadata). Clone or worktree under ~/… instead.\");\n  }\n  if (info.kind === \"windows_user_folder\") {\n    tips.push(\n      \"Desktop/Downloads/Documents on /mnt/c are fine for opening Office files, but not as the agent workspace root.\",\n    );\n  }\n  if (info.hasGit) {\n    tips.push(\n      \"Detected .git on /mnt — expect slow status and permission/executable-bit quirks. Move the clone to Linux home when possible.\",\n    );\n  }\n  tips.push(\"CRLF line endings on /mnt/c often break bash scripts (set: pipefail invalid option) — run encoding_doctor or dos2unix.\");\n  if (info.suggestedHome) {\n    tips.push(`Suggested Linux path: ${info.suggestedHome} (mkdir -p && git clone / rsync there).`);\n  }\n  tips.push(\"Pair with path_convert / dsh-wsl-open when you only need to open a Windows file from chat.\");\n  return tips;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/mnt.js:91-111](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L91-L111)\n\nok 只依赖 !onMnt，建议不执行迁移。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport async function execute(args, _config = {}, deps = {}) {\n  const home = deps.home || homedir();\n  const exists = deps.exists || existsSync;\n  const raw = typeof args?.path === \"string\" && args.path.trim() ? args.path.trim() : process.cwd();\n  const abs = raw.startsWith(\"~/\")\n    ? `${home}${raw.slice(1)}`\n    : raw === \"~\"\n      ? home\n      : resolve(raw);\n  const info = classifyMntPath(abs, { home, exists });\n  const advice = buildMntAdvice(info);\n  return {\n    ok: !info.onMnt,\n    path: info.path,\n    onMnt: info.onMnt,\n    drive: info.drive || \"\",\n    kind: info.kind,\n    hasGit: info.hasGit,\n    suggestedHome: info.suggestedHome || \"\",\n    advice,\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[test/mnt.test.js:5-49](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/test/mnt.test.js#L5-L49)\n\n测试为静态分类、建议匹配与格式，不含 I/O 基准或迁移。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\ndescribe(\"classifyMntPath\", () => {\n  it(\"flags /mnt/c Desktop and suggests home\", () => {\n    const info = classifyMntPath(\"/mnt/c/Users/alice/Desktop/AIFullStackDevelopment\", {\n      home: \"/home/alice\",\n      exists: (p) => p.endsWith(\"/.git\"),\n    });\n    assert.equal(info.onMnt, true);\n    assert.equal(info.drive, \"c\");\n    assert.equal(info.kind, \"windows_user_folder\");\n    assert.equal(info.hasGit, true);\n    assert.match(info.suggestedHome, /\\/home\\/alice\\/src\\/AIFullStackDevelopment/);\n  });\n\n  it(\"accepts linux home\", () => {\n    const info = classifyMntPath(\"/home/alice/proj\", {\n      home: \"/home/alice\",\n      exists: () => false,\n    });\n    assert.equal(info.onMnt, false);\n    assert.equal(info.kind, \"linux_home\");\n  });\n});\n\ndescribe(\"buildMntAdvice\", () => {\n  it(\"warns about git on mnt\", () => {\n    const tips = buildMntAdvice({\n      onMnt: true,\n      drive: \"c\",\n      kind: \"windows_users\",\n      hasGit: true,\n      suggestedHome: \"/home/alice/src/x\",\n    });\n    assert.ok(tips.some((t) => /\\.git on \\/mnt/i.test(t)));\n    assert.ok(tips.some((t) => /CRLF/i.test(t)));\n  });\n});\n\ndescribe(\"format\", () => {\n  it(\"includes kind\", () => {\n    assert.match(\n      format({ ok: false, onMnt: true, path: \"/mnt/c/x\", kind: \"mnt_other\", advice: [\"tip\"] }),\n      /kind: mnt_other/,\n    );\n  });\n});\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何采用并验证？\n\n**研究主题：**采用判断、新假设与验证\n\n#### 完整回答\n\n适合做低成本提醒：先由用户确认在 WSL，指定真实项目路径，读分类和建议，再用当前机器的 git status/npm install 或小文件/元数据负载做同条件测量。若确有性能问题，先备份和核对未提交改动、目标路径占用与文件模式，再人工迁移和复测。现金成本基本为本地资源；时间成本主要是诊断、迁移、重装依赖以及修复 Windows/Linux 路径引用。当前建议观察使用，不将工具的 ok 字段作为迁移命令。未实现的改进假设是读取 realpath/mountinfo，再显示实际文件系统、同一仓库工作负载的前后耗时和冲突预检；通过 /mnt 与 Linux home 的重复测量判断增益。若不同挂载类型性能接近或迁移引入路径问题，则应保持原位。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:8-35](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/README.md#L8-L35)\n\n作者建议 Linux home 路径及安装/套件条件。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n````text\n## Where it sits\n\nFlags a workspace on /mnt/c (slow git, NTFS). Prefer a Linux home path when it says so.\n\n```mermaid\nflowchart LR\n  agent[\"dsh agent\"] --> tool[\"mnt_doctor\"] --> mnt[\"/mnt/c vs Linux home\"]\n```\n\nSuite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.2.0** (full). Do not copy that matrix into this README.\n\n\n## Compatibility\n\n| Field | Value |\n|-------|-------|\n| **Plugin** | `dsh-wsl-mnt` **0.2.0** |\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\n| **Kit set** | `full` or install alone |\n| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |\n| **Agent Teams** | Upstream experimental; not required here |\n\nSuite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-mnt\nnpm test\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/mnt.js:49-56](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L49-L56)\n\n建议目标仅取原路径叶名，没有冲突或未提交状态检查。\n\n```text\n  const gitPath = path.endsWith(\"/\") ? `${path}.git` : `${path}/.git`;\n  const hasGit = exists(gitPath);\n  let suggestedHome = \"\";\n  if (onMnt) {\n    const leaf = basename(path) || \"project\";\n    suggestedHome = `${home.replace(/\\/+$/, \"\")}/src/${leaf}`;\n  }\n  return { path, onMnt, drive, kind, hasGit, suggestedHome };\n```\n\n**依据 3 · 源码核查**：[lib/mnt.js:59-88](https://github.com/173787247/dsh-wsl-mnt/blob/fd4dfd42ed07ca3c1e78942252547b895970ff8f/lib/mnt.js#L59-L88)\n\n迁移、CRLF 和配套工具皆为文字建议。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nexport function buildMntAdvice(info) {\n  const tips = [];\n  if (!info.onMnt) {\n    tips.push(\"Path is outside /mnt — good default for day-to-day DSH / git / npm work.\");\n    if (info.hasGit) tips.push(\"Git repo on a Linux filesystem — prefer this over /mnt/c clones.\");\n    return tips;\n  }\n\n  tips.push(\n    \"This path is under /mnt — 9p I/O is much slower than ext4 under /home; git status, npm install, and node_modules suffer.\",\n  );\n  if (info.drive === \"c\") {\n    tips.push(\"Especially avoid long-lived repos on /mnt/c (NTFS + metadata). Clone or worktree under ~/… instead.\");\n  }\n  if (info.kind === \"windows_user_folder\") {\n    tips.push(\n      \"Desktop/Downloads/Documents on /mnt/c are fine for opening Office files, but not as the agent workspace root.\",\n    );\n  }\n  if (info.hasGit) {\n    tips.push(\n      \"Detected .git on /mnt — expect slow status and permission/executable-bit quirks. Move the clone to Linux home when possible.\",\n    );\n  }\n  tips.push(\"CRLF line endings on /mnt/c often break bash scripts (set: pipefail invalid option) — run encoding_doctor or dos2unix.\");\n  if (info.suggestedHome) {\n    tips.push(`Suggested Linux path: ${info.suggestedHome} (mkdir -p && git clone / rsync there).`);\n  }\n  tips.push(\"Pair with path_convert / dsh-wsl-open when you only need to open a Windows file from chat.\");\n  return tips;\n```\n\n</details>\n\n#### 缺口\n\n- 缺同机 I/O 基准、迁移风险和实际用户省时数据。\n  **影响：**无法量化采用收益或给出通用迁移阈值。\n  **进一步探讨：**选择有代表性的 WSL 仓库，重复测 git/npm/元数据操作并记录迁移前后。\n- realpath、挂载识别与冲突预检未实现。\n  **影响：**属于研究假设，不能算现版准确性。\n  **进一步探讨：**原型与现版对照误分类、耗时及迁移错误。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2913910ff36462cb43c85cab653e6ab2384e902c2f4a04c034dbe90b0aebb00c。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 99 | — | — | 573 |\n| .js | source | 3 | 212 | 189 | 2 | — |\n| .js | test | 1 | 49 | 45 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| mnt_doctor | 路径分类和建议 | 不测速、不迁移、不核真实挂载 |\n\n\n## 工程亮点\n\n没有执行 shell 或修改文件；只依赖路径和 .git 存在性。分类未做 realpath/mountinfo；结果 ok 实为不在 /mnt，非健康探针。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/mnt.js、lib/wsl-host.js、test/mnt.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态阅读 README、入口、路径模块、WSL 检测及单测；未运行目标代码或真实 WSL 基准。\n- 下一步：WSL1/2 上对 DrvFs、Linux fs、自定义挂载、symlink 和同名仓库目标做分类与 git/npm 重复耗时对照。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-mnt/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-wsl-mnt\",\n  \"revision\": \"fd4dfd42ed07ca3c1e78942252547b895970ff8f\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"index.js\",\n    \"lib/mnt.js\",\n    \"lib/wsl-host.js\",\n    \"test/mnt.test.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核实 WSL 路径诊断的分类、性能声明与迁移建议边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁在何时使用，输出何种建议？\",\n        \"answer\": \"针对在 WSL 的 /mnt/c 等 Windows 挂载路径运行 DSH、git 或 npm 而担心 I/O 慢、权限/换行问题的用户。一个 mnt_doctor 工具接受可选路径，默认进程 cwd，输出是否 /mnt、盘符、Windows 用户目录类别、是否有 .git、建议的 ~/src/<叶名> 路径及文本建议。系统提示在 git/npm 慢或项目位于 /mnt/c 时建议调用。相对用户自行检查 pwd/.git 并猜测路径，它把规则归类和下一步建议集中在模型工具；没有实际迁移、基准测量或文件修复。合格结果应让用户确认原路径、真实挂载类型和项目数据备份后再决定迁移，不能把建议路径当已建立的仓库。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 17,\n            \"observation\": \"作者定位为 /mnt 工作区诊断和 Linux home 路径建议。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 7,\n            \"line_end\": 37,\n            \"observation\": \"WSL 检测、系统提示和 mnt_doctor 注册。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 91,\n            \"line_end\": 112,\n            \"observation\": \"默认 cwd、路径解析、结果字段与建议。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未在真实 DSH/WSL 会话查看输出与用户决策。\",\n            \"impact\": \"不能确认提示触发和迁移建议带来的实际效率。\",\n            \"next_step\": \"用隔离 WSL 项目记录调用前后路径判断和人工决策。\",\n            \"kind\": \"scope_boundary\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\",\n          \"dependencies\"\n        ],\n        \"question\": \"WSL 和路径分类规则准确到什么程度？\",\n        \"answer\": \"detectWsl 先看 WSL_DISTRO_NAME/WSL_INTEROP，再看 /proc/sys/kernel/osrelease 是否含 microsoft。路径规则只按解析后的字符串判断：等于 /mnt 或前缀 /mnt/ 即 onMnt，^/mnt/<字母> 抽盘符；含 Desktop/Downloads/Documents 识别 Windows 用户文件夹，其他按 Users 或 mnt_other，检查 path/.git 是否存在，并从 basename 生成 home/src/叶名。它不读取 mountinfo、不解析符号链接真实目标、不检查目标路径碰撞或 Git 工作树是否有效。因而非驱动器的 /mnt 挂载也被泛化为“慢 Windows 挂载”；通过 symlink 指向 /mnt 的 Linux 路径会被当作非 /mnt，反向亦然。hasGit 只表示 .git 路径存在，不能证明完整仓库或其元数据一定在 NTFS。参数 config.timeoutMs 被入口读取但核心同步分类未用，工具超时只由宿主层声明。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/wsl-host.js\",\n            \"line_start\": 21,\n            \"line_end\": 28,\n            \"observation\": \"WSL 环境变量及内核 release 检测。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 33,\n            \"line_end\": 56,\n            \"observation\": \"字符串前缀、目录名、.git 存在性和 home 建议。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 91,\n            \"line_end\": 112,\n            \"observation\": \"~ 扩展、resolve 后分类，未用 realpath/mountinfo。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 7,\n            \"line_end\": 30,\n            \"observation\": \"timeout 配置与非 WSL 拒绝路径。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未在符号链接、自定义 /mnt 挂载与 WSL1/2 上对照真实文件系统。\",\n            \"impact\": \"路径分类不能等同真实磁盘或性能归因。\",\n            \"next_step\": \"在隔离 WSL 中用 mountinfo/realpath 对比工具分类，覆盖 bind、symlink、DrvFs 与 Linux fs。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"cost\"\n        ],\n        \"question\": \"慢/快与安全迁移是否有实际测量？\",\n        \"answer\": \"没有。源码只有路径字符串及 .git 存在性，没有运行 git status、npm install、I/O 计时或确认 /mnt 实际挂载类型；`ok` 直接设为 `!onMnt`，所以 /mnt 下任意位置都标 false，Linux 其它路径标 true，即使实际性能相反。建议文本将 /mnt 归因为 9p 比 ext4 慢，并建议 clone/rsync 到 ~/src；这属于规则性提醒而非此机器的实测结论，也未执行复制。叶名相同的两个 Windows 仓库会得到相同目标，已有路径/未提交改动/权限/大小写差异需要人工核验。测试只断言若干固定路径分类和建议文字，不能证明性能或迁移安全。故不得把“慢工作区”“good default”当当前主机的独立证据。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 33,\n            \"line_end\": 88,\n            \"observation\": \"诊断与建议基于路径字符串和 .git，没有测速或文件系统检查。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 91,\n            \"line_end\": 111,\n            \"observation\": \"ok 只依赖 !onMnt，建议不执行迁移。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"test/mnt.test.js\",\n            \"line_start\": 5,\n            \"line_end\": 49,\n            \"observation\": \"测试为静态分类、建议匹配与格式，不含 I/O 基准或迁移。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"如何采用并验证？\",\n        \"answer\": \"适合做低成本提醒：先由用户确认在 WSL，指定真实项目路径，读分类和建议，再用当前机器的 git status/npm install 或小文件/元数据负载做同条件测量。若确有性能问题，先备份和核对未提交改动、目标路径占用与文件模式，再人工迁移和复测。现金成本基本为本地资源；时间成本主要是诊断、迁移、重装依赖以及修复 Windows/Linux 路径引用。当前建议观察使用，不将工具的 ok 字段作为迁移命令。未实现的改进假设是读取 realpath/mountinfo，再显示实际文件系统、同一仓库工作负载的前后耗时和冲突预检；通过 /mnt 与 Linux home 的重复测量判断增益。若不同挂载类型性能接近或迁移引入路径问题，则应保持原位。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 8,\n            \"line_end\": 35,\n            \"observation\": \"作者建议 Linux home 路径及安装/套件条件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 49,\n            \"line_end\": 56,\n            \"observation\": \"建议目标仅取原路径叶名，没有冲突或未提交状态检查。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/mnt.js\",\n            \"line_start\": 59,\n            \"line_end\": 88,\n            \"observation\": \"迁移、CRLF 和配套工具皆为文字建议。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺同机 I/O 基准、迁移风险和实际用户省时数据。\",\n            \"impact\": \"无法量化采用收益或给出通用迁移阈值。\",\n            \"next_step\": \"选择有代表性的 WSL 仓库，重复测 git/npm/元数据操作并记录迁移前后。\",\n            \"kind\": \"research_gap\"\n          },\n          {\n            \"issue\": \"realpath、挂载识别与冲突预检未实现。\",\n            \"impact\": \"属于研究假设，不能算现版准确性。\",\n            \"next_step\": \"原型与现版对照误分类、耗时及迁移错误。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-mnt\\n> **Install set:** [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)\\n\\nTool **`mnt_doctor`**: classify slow `/mnt` workspaces (drive, Desktop, `.git`) and suggest a Linux home path.\\n\\n[中文说明 → README.zh.md](./README.zh.md)\\n\\n## Where it sits\\n\\nFlags a workspace on /mnt/c (slow git, NTFS). Prefer a Linux home path when it says so.\\n\\n```mermaid\\nflowchart LR\\n  agent[\\\"dsh agent\\\"] --> tool[\\\"mnt_doctor\\\"] --> mnt[\\\"/mnt/c vs Linux home\\\"]\\n```\\n\\nSuite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.2.0** (full). Do not copy that matrix into this README.\\n\\n\\n## Compatibility\\n\\n| Field | Value |\\n|-------|-------|\\n| **Plugin** | `dsh-wsl-mnt` **0.2.0** |\\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\\n| **Kit set** | `full` or install alone |\\n| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |\\n| **Agent Teams** | Upstream experimental; not required here |\\n\\nSuite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-wsl-mnt\\nnpm test\\n```\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-mnt\\\",\\n  \\\"version\\\": \\\"0.2.0\\\",\\n  \\\"description\\\": \\\"mnt_doctor: detect slow /mnt/c workspaces, git-on-NTFS, suggest Linux home paths.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-mnt.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-mnt/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/173787247/dsh-wsl-mnt#readme\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/*.test.js\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"wsl\\\",\\n    \\\"mnt\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import { detectWsl } from \\\"./lib/wsl-host.js\\\";\\nimport * as core from \\\"./lib/mnt.js\\\";\\n\\nexport const name = \\\"dsh-wsl-mnt\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  const timeoutMs = positive(config.timeoutMs, 15_000);\\n  const wsl = detectWsl();\\n\\n  ctx.systemPrompt.section({\\n    name: \\\"tool:mnt_doctor\\\",\\n    order: 117,\\n    text: \\\"Use mnt_doctor when git/npm feels slow or the workspace is under /mnt/c: classifies Desktop/Downloads, detects .git on NTFS, suggests a ~/src/… Linux path, and points to encoding_doctor for CRLF scripts.\\\",\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"mnt_doctor\\\",\\n    description: \\\"Classify whether the workspace is on slow /mnt (drive, Desktop, .git) and suggest a Linux home path.\\\",\\n    parameters: core.parameters(config),\\n    output: {\\n      schema: core.outputSchema(),\\n      render: (_args, value) => [{ type: \\\"text\\\", text: core.format(value) }],\\n    },\\n    timeoutMs,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \\\"not running in WSL\\\" };\\n      return core.execute(args, config);\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"mnt_doctor\\\" }),\\n    presentResult: (_args, result) => (\\n      result.isError\\n        ? { card: \\\"generic\\\", title: \\\"mnt_doctor failed\\\", content: result.content }\\n        : { card: \\\"generic\\\", title: \\\"mnt_doctor\\\", content: result.content }\\n    ),\\n  });\\n}\\n\\nfunction positive(value, fallback) {\\n  const n = Number(value);\\n  return Number.isFinite(n) && n > 0 ? n : fallback;\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/mnt.js\",\n      \"content\": \"import { existsSync } from \\\"node:fs\\\";\\nimport { basename, resolve } from \\\"node:path\\\";\\nimport { homedir } from \\\"node:os\\\";\\n\\nexport function notWsl() {\\n  return { ok: false, error: \\\"not running in WSL\\\", onMnt: false, path: \\\"\\\", advice: [] };\\n}\\n\\nexport function parameters() {\\n  return {\\n    type: \\\"object\\\",\\n    additionalProperties: false,\\n    properties: {\\n      path: { type: \\\"string\\\", description: \\\"Workspace path to check (default: process.cwd()).\\\" },\\n    },\\n  };\\n}\\n\\nexport function outputSchema() {\\n  return { type: \\\"object\\\", additionalProperties: true };\\n}\\n\\nexport function format(v) {\\n  const lines = [`mnt_doctor ok=${v.ok} onMnt=${v.onMnt} path=${v.path}`];\\n  if (v.drive) lines.push(`drive: ${v.drive}`);\\n  if (v.kind) lines.push(`kind: ${v.kind}`);\\n  if (v.hasGit != null) lines.push(`hasGit: ${v.hasGit}`);\\n  if (v.suggestedHome) lines.push(`suggestedHome: ${v.suggestedHome}`);\\n  for (const a of v.advice || []) lines.push(`- ${a}`);\\n  return lines.join(\\\"\\\\n\\\");\\n}\\n\\n/** Classify an absolute Linux path for WSL /mnt hygiene. */\\nexport function classifyMntPath(abs, { home = homedir(), exists = existsSync } = {}) {\\n  const path = String(abs || \\\"\\\");\\n  const onMnt = path === \\\"/mnt\\\" || path.startsWith(\\\"/mnt/\\\");\\n  const driveMatch = path.match(/^\\\\/mnt\\\\/([a-zA-Z])(?:\\\\/|$)/);\\n  const drive = driveMatch ? driveMatch[1].toLowerCase() : \\\"\\\";\\n  let kind = \\\"linux_home\\\";\\n  if (onMnt) {\\n    if (/\\\\/(Desktop|Downloads|Documents)(\\\\/|$)/i.test(path)) kind = \\\"windows_user_folder\\\";\\n    else if (path.includes(\\\"/Users/\\\")) kind = \\\"windows_users\\\";\\n    else kind = \\\"mnt_other\\\";\\n  } else if (path === home || path.startsWith(`${home}/`)) {\\n    kind = \\\"linux_home\\\";\\n  } else {\\n    kind = \\\"linux_other\\\";\\n  }\\n  const gitPath = path.endsWith(\\\"/\\\") ? `${path}.git` : `${path}/.git`;\\n  const hasGit = exists(gitPath);\\n  let suggestedHome = \\\"\\\";\\n  if (onMnt) {\\n    const leaf = basename(path) || \\\"project\\\";\\n    suggestedHome = `${home.replace(/\\\\/+$/, \\\"\\\")}/src/${leaf}`;\\n  }\\n  return { path, onMnt, drive, kind, hasGit, suggestedHome };\\n}\\n\\nexport function buildMntAdvice(info) {\\n  const tips = [];\\n  if (!info.onMnt) {\\n    tips.push(\\\"Path is outside /mnt — good default for day-to-day DSH / git / npm work.\\\");\\n    if (info.hasGit) tips.push(\\\"Git repo on a Linux filesystem — prefer this over /mnt/c clones.\\\");\\n    return tips;\\n  }\\n\\n  tips.push(\\n    \\\"This path is under /mnt — 9p I/O is much slower than ext4 under /home; git status, npm install, and node_modules suffer.\\\",\\n  );\\n  if (info.drive === \\\"c\\\") {\\n    tips.push(\\\"Especially avoid long-lived repos on /mnt/c (NTFS + metadata). Clone or worktree under ~/… instead.\\\");\\n  }\\n  if (info.kind === \\\"windows_user_folder\\\") {\\n    tips.push(\\n      \\\"Desktop/Downloads/Documents on /mnt/c are fine for opening Office files, but not as the agent workspace root.\\\",\\n    );\\n  }\\n  if (info.hasGit) {\\n    tips.push(\\n      \\\"Detected .git on /mnt — expect slow status and permission/executable-bit quirks. Move the clone to Linux home when possible.\\\",\\n    );\\n  }\\n  tips.push(\\\"CRLF line endings on /mnt/c often break bash scripts (set: pipefail invalid option) — run encoding_doctor or dos2unix.\\\");\\n  if (info.suggestedHome) {\\n    tips.push(`Suggested Linux path: ${info.suggestedHome} (mkdir -p && git clone / rsync there).`);\\n  }\\n  tips.push(\\\"Pair with path_convert / dsh-wsl-open when you only need to open a Windows file from chat.\\\");\\n  return tips;\\n}\\n\\nexport async function execute(args, _config = {}, deps = {}) {\\n  const home = deps.home || homedir();\\n  const exists = deps.exists || existsSync;\\n  const raw = typeof args?.path === \\\"string\\\" && args.path.trim() ? args.path.trim() : process.cwd();\\n  const abs = raw.startsWith(\\\"~/\\\")\\n    ? `${home}${raw.slice(1)}`\\n    : raw === \\\"~\\\"\\n      ? home\\n      : resolve(raw);\\n  const info = classifyMntPath(abs, { home, exists });\\n  const advice = buildMntAdvice(info);\\n  return {\\n    ok: !info.onMnt,\\n    path: info.path,\\n    onMnt: info.onMnt,\\n    drive: info.drive || \\\"\\\",\\n    kind: info.kind,\\n    hasGit: info.hasGit,\\n    suggestedHome: info.suggestedHome || \\\"\\\",\\n    advice,\\n  };\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/wsl-host.js\",\n      \"content\": \"// Canonical copy — sync to plugins via dsh-wsl-kit/scripts/sync-wsl-common.mjs\\nimport { existsSync, readFileSync } from \\\"node:fs\\\";\\nimport { execFile } from \\\"node:child_process\\\";\\nimport { promisify } from \\\"node:util\\\";\\n\\nconst execFileAsync = promisify(execFile);\\n\\nconst WINDOWS_BINS = {\\n  \\\"powershell.exe\\\": [\\\"/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe\\\"],\\n  \\\"cmd.exe\\\": [\\\"/mnt/c/Windows/System32/cmd.exe\\\"],\\n  \\\"explorer.exe\\\": [\\\"/mnt/c/Windows/explorer.exe\\\"],\\n};\\n\\nexport function windowsBin(name, { exists = existsSync } = {}) {\\n  for (const p of WINDOWS_BINS[name] || []) {\\n    if (exists(p)) return p;\\n  }\\n  return name;\\n}\\n\\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\\n  try {\\n    return /microsoft/i.test(readRelease());\\n  } catch {\\n    return false;\\n  }\\n}\\n\\nexport function distroName({ env = process.env } = {}) {\\n  return env.WSL_DISTRO_NAME || \\\"WSL\\\";\\n}\\n\\nexport async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {\\n  const bin = windowsBin(\\\"powershell.exe\\\");\\n  const { stdout, stderr } = await execFileAsync(\\n    bin,\\n    [\\\"-NoProfile\\\", \\\"-NonInteractive\\\", \\\"-Command\\\", script],\\n    { timeout: timeoutMs, windowsHide: true, encoding: \\\"utf8\\\", maxBuffer: 4 * 1024 * 1024 },\\n  );\\n  return { stdout: String(stdout ?? \\\"\\\"), stderr: String(stderr ?? \\\"\\\") };\\n}\\n\\nexport async function runCmd(args, { timeoutMs = 15_000 } = {}) {\\n  const bin = windowsBin(\\\"cmd.exe\\\");\\n  const { stdout, stderr } = await execFileAsync(bin, args, {\\n    timeout: timeoutMs,\\n    windowsHide: true,\\n    encoding: \\\"utf8\\\",\\n    maxBuffer: 4 * 1024 * 1024,\\n  });\\n  return { stdout: String(stdout ?? \\\"\\\"), stderr: String(stderr ?? \\\"\\\") };\\n}\\n\\nfunction readOsRelease() {\\n  return readFileSync(\\\"/proc/sys/kernel/osrelease\\\", \\\"utf8\\\");\\n}\\n\"\n    },\n    {\n      \"path\": \"test/mnt.test.js\",\n      \"content\": \"import assert from \\\"node:assert/strict\\\";\\nimport { describe, it } from \\\"node:test\\\";\\nimport { buildMntAdvice, classifyMntPath, format } from \\\"../lib/mnt.js\\\";\\n\\ndescribe(\\\"classifyMntPath\\\", () => {\\n  it(\\\"flags /mnt/c Desktop and suggests home\\\", () => {\\n    const info = classifyMntPath(\\\"/mnt/c/Users/alice/Desktop/AIFullStackDevelopment\\\", {\\n      home: \\\"/home/alice\\\",\\n      exists: (p) => p.endsWith(\\\"/.git\\\"),\\n    });\\n    assert.equal(info.onMnt, true);\\n    assert.equal(info.drive, \\\"c\\\");\\n    assert.equal(info.kind, \\\"windows_user_folder\\\");\\n    assert.equal(info.hasGit, true);\\n    assert.match(info.suggestedHome, /\\\\/home\\\\/alice\\\\/src\\\\/AIFullStackDevelopment/);\\n  });\\n\\n  it(\\\"accepts linux home\\\", () => {\\n    const info = classifyMntPath(\\\"/home/alice/proj\\\", {\\n      home: \\\"/home/alice\\\",\\n      exists: () => false,\\n    });\\n    assert.equal(info.onMnt, false);\\n    assert.equal(info.kind, \\\"linux_home\\\");\\n  });\\n});\\n\\ndescribe(\\\"buildMntAdvice\\\", () => {\\n  it(\\\"warns about git on mnt\\\", () => {\\n    const tips = buildMntAdvice({\\n      onMnt: true,\\n      drive: \\\"c\\\",\\n      kind: \\\"windows_users\\\",\\n      hasGit: true,\\n      suggestedHome: \\\"/home/alice/src/x\\\",\\n    });\\n    assert.ok(tips.some((t) => /\\\\.git on \\\\/mnt/i.test(t)));\\n    assert.ok(tips.some((t) => /CRLF/i.test(t)));\\n  });\\n});\\n\\ndescribe(\\\"format\\\", () => {\\n  it(\\\"includes kind\\\", () => {\\n    assert.match(\\n      format({ ok: false, onMnt: true, path: \\\"/mnt/c/x\\\", kind: \\\"mnt_other\\\", advice: [\\\"tip\\\"] }),\\n      /kind: mnt_other/,\\n    );\\n  });\\n});\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"fd4dfd42ed07ca3c1e78942252547b895970ff8f\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"2913910ff36462cb43c85cab653e6ab2384e902c2f4a04c034dbe90b0aebb00c\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 99,\n        \"words\": 573\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 212,\n        \"code\": 189,\n        \"comments\": 2,\n        \"blank\": 21\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 49,\n        \"code\": 45,\n        \"comments\": 0,\n        \"blank\": 4\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 17,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"mnt_doctor\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"mnt_doctor\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-wsl-mnt\",\n    \"repository_id\": 1351854159,\n    \"captured_at\": \"2026-10-22T05:29:07.002Z\",\n    \"window_start\": \"2026-09-22T05:29:07.002Z\",\n    \"stars\": 1,\n    \"pushed_at\": \"2026-09-30T00:50:03Z\",\n    \"issues\": {\n      \"open\": 0,\n      \"closed\": 0,\n      \"created_30d\": 0,\n      \"closed_30d\": 0,\n      \"updated_30d\": 0\n    },\n    \"errors\": []\n  }\n}\n",
+            "sha256": "20dbc63c8247b013d96c73c370360970515e8fb35ee49181012f3c5cc39678fe"
+        }
+    },
+    "unavailable_artifacts": []
+}

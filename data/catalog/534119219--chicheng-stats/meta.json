@@ -1,0 +1,34 @@
+{
+    "repository": "534119219/chicheng-stats",
+    "repository_id": 1335725068,
+    "captured_at": "2026-10-22T07:38:25.109Z",
+    "window_start": "2026-09-22T07:38:25.109Z",
+    "stars": 7,
+    "pushed_at": "2026-08-26T15:05:24Z",
+    "issues": {
+        "open": 0,
+        "closed": 1,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "chicheng-stats",
+        "captured_at": "2026-10-22T07:38:33.311Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/chicheng-stats",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T07:38:33.311Z",
+            "source_url": "https://registry.npmjs.org/chicheng-stats",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

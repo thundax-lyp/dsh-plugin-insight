@@ -103,9 +103,9 @@ export async function refresh(
         validateMetadata(metadata);
         const plugin = { ...item, component_id: item.id.split(':')[2] };
         const directory = pluginDirectory(plugin, root);
-        const path = `data/runs/${manifest.round}/snapshots/meta-refresh/${stamp}/${directory.split('/').at(-1)}/META.json`;
+        const path = `data/runs/${manifest.round}/${directory.split('/').at(-1)}/META-${stamp}.json`;
         atomicWrite(resolve(root, path), metadata);
-        const current = directory + '/META.json';
+        const current = `data/catalog/${directory.split('/').at(-1)}/meta.json`;
         if (snapshot) snapshot.metadata[item.id] = metadata;
         else atomicWrite(resolve(root, current), metadata);
         mapping[item.id] = current;

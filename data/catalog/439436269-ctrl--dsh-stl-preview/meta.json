@@ -1,0 +1,55 @@
+{
+    "repository": "439436269-ctrl/dsh-stl-preview",
+    "repository_id": 1427978231,
+    "captured_at": "2026-10-23T01:50:17.271Z",
+    "window_start": "2026-09-23T01:50:17.271Z",
+    "stars": 0,
+    "pushed_at": "2026-10-21T06:42:52Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-stl-preview%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B102:3FA908:127DB9:13F322:6ADABD5B and timestamp 2026-10-23 01:50:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-stl-preview%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B1DE:291B8D:11F1C9:13659D:6ADABD5C and timestamp 2026-10-23 01:50:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-stl-preview%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A17.271Z..2026-10-23T01%3A50%3A17.271Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B2F6:103D08:1157C66:12A4371:6ADABD5E and timestamp 2026-10-23 01:50:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-stl-preview%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A17.271Z..2026-10-23T01%3A50%3A17.271Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B3CA:3F5089:160CFA:17DCC3:6ADABD5F and timestamp 2026-10-23 01:50:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A439436269-ctrl%2Fdsh-stl-preview%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A17.271Z..2026-10-23T01%3A50%3A17.271Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B4B0:3F64BC:172FE8:18FDBA:6ADABD60 and timestamp 2026-10-23 01:50:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-stl-preview",
+        "captured_at": "2026-10-23T01:50:25.147Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-stl-preview",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": "2026-10-21T06:38:03.957Z",
+            "captured_at": "2026-10-23T01:50:25.147Z",
+            "source_url": "https://registry.npmjs.org/dsh-stl-preview",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-10-21T06:40:13.232Z",
+            "latest_error": null
+        }
+    }
+}

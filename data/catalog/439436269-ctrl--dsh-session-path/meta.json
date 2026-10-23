@@ -1,0 +1,34 @@
+{
+    "repository": "439436269-ctrl/dsh-session-path",
+    "repository_id": 1412141303,
+    "captured_at": "2026-10-22T06:25:40.837Z",
+    "window_start": "2026-09-22T06:25:40.837Z",
+    "stars": 0,
+    "pushed_at": "2026-10-09T16:42:16Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-session-path",
+        "captured_at": "2026-10-22T06:25:48.912Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 667,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-session-path",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-09T16:30:12.290Z",
+            "captured_at": "2026-10-22T06:25:48.912Z",
+            "source_url": "https://registry.npmjs.org/dsh-session-path",
+            "error": null,
+            "latest_version": "0.1.2",
+            "latest_published_at": "2026-10-09T16:40:07.827Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "repository": "1032740078/dsh-web-url-view",
+    "repository_id": 1366583376,
+    "captured_at": "2026-10-20T02:57:08.272Z",
+    "window_start": "2026-09-20T02:57:08.272Z",
+    "stars": 0,
+    "pushed_at": "2026-09-13T09:19:57Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 785C:1E1095:8FA6B:99D96:6AD6D885 and timestamp 2026-10-20 02:57:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7942:CCD53:89769:93A06:6AD6D886 and timestamp 2026-10-20 02:57:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20created%3A2026-09-20T02%3A57%3A08.272Z..2026-10-20T02%3A57%3A08.272Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7A1A:6FB37:93546:9D96C:6AD6D887 and timestamp 2026-10-20 02:57:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-20T02%3A57%3A08.272Z..2026-10-20T02%3A57%3A08.272Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7ADE:1E00D3:99A78:A3DA1:6AD6D888 and timestamp 2026-10-20 02:57:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1032740078%2Fdsh-web-url-view%20is%3Aissue%20updated%3A2026-09-20T02%3A57%3A08.272Z..2026-10-20T02%3A57%3A08.272Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7B7A:7BF23:87B58:91D16:6AD6D889 and timestamp 2026-10-20 02:57:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-web-url-view",
+        "captured_at": "2026-10-20T02:57:13.732Z",
+        "window_start": "2026-09-20",
+        "window_end": "2026-10-19",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-20:2026-10-19/dsh-web-url-view",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-20T02:57:13.732Z",
+            "source_url": "https://registry.npmjs.org/dsh-web-url-view",
+            "error": "HTTP 404"
+        }
+    }
+}

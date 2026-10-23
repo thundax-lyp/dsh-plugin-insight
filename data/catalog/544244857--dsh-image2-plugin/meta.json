@@ -1,0 +1,43 @@
+{
+    "repository": "544244857/dsh-image2-plugin",
+    "repository_id": 1422216012,
+    "captured_at": "2026-10-22T16:03:09.398Z",
+    "window_start": "2026-09-22T16:03:09.398Z",
+    "stars": 1,
+    "pushed_at": "2026-10-18T01:19:33Z",
+    "issues": {
+        "open": null,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": null,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A544244857%2Fdsh-image2-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F872:FEEE4:9F6501:AC5495:6ADA33BF and timestamp 2026-10-22 16:03:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "incomplete issue search"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-image2-tool",
+        "captured_at": "2026-10-22T16:03:18.936Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 582,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-image2-tool",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-16T14:13:43.029Z",
+            "captured_at": "2026-10-22T16:03:18.936Z",
+            "source_url": "https://registry.npmjs.org/dsh-image2-tool",
+            "error": null,
+            "latest_version": "0.4.1",
+            "latest_published_at": "2026-10-19T09:02:43.195Z",
+            "latest_error": null
+        }
+    }
+}

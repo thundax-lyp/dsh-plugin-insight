@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
-import { readResearchSession } from '../../_shared/scripts/work-storage.mjs';
+import { readResearchSession, readWork } from '../../_shared/scripts/work-storage.mjs';
 import {
     existsSync,
     readFileSync,
@@ -60,7 +60,22 @@ export function validateManifest(manifest) {
     }
     return manifest;
 }
-export function validateSession(session, root = ROOT) {
+export function validateSession(session, root = ROOT, embeddedArtifacts = null) {
+    // Completed WORK owns its embedded evidence; historical artifact names are labels.
+    let materials = embeddedArtifacts;
+    const requireEvidence = (name) => {
+        if (materials === null) {
+            const workPath = resolve(root, 'data/runs', session.id, 'WORK.json');
+            materials = existsSync(workPath)
+                ? Object.assign({}, ...Object.values(readWork(workPath).records).map((r) => r.artifacts))
+                : {};
+        }
+        if (Object.hasOwn(materials, name)) {
+            const value = materials[name];
+            if (typeof value?.content !== 'string' || sha256(value.content) !== value.sha256)
+                throw Error(`embedded evidence checksum differs: ${name}`);
+        } else artifact(root, name);
+    };
     if (!check(session)) throw new Error(ajv.errorsText(check.errors));
     if (session.selection) {
         const suppressed = new Set(session.selection.suppressed_ids ?? []);
@@ -127,7 +142,7 @@ export function validateSession(session, root = ROOT) {
                 !plugin.evidence.some((e) => e.kind === 'source_inspection' && e.revision === item.revision)
             )
                 throw new Error('checkpoint identity or revision differs');
-            for (const evidence of plugin.evidence) if (evidence.artifact) artifact(root, evidence.artifact);
+            for (const evidence of plugin.evidence) if (evidence.artifact) requireEvidence(evidence.artifact);
             const report = readFileSync(artifact(root, item.checkpoint.report), 'utf8');
             if (!report.trim() || digest(report) !== item.checkpoint.report_digest)
                 throw new Error('checkpoint report changed');
@@ -337,7 +352,7 @@ export function createManifest(session, sessionPath, root = ROOT) {
             'npm ci --ignore-scripts',
             'npm run research:input -- --source-awesome <checkout> --source-harness <checkout> --id <session-id> --checked-at <iso-time> --out data/runs/<round>/INPUT.json --problems data/runs/<round>/INPUT-PROBLEMS.json',
             'npm run research -- start --input <local-input.json> [--previous <local-previous-session>] [--limit N] --out data/runs/<round>/SESSION.json',
-            'npm run prepare:plugin -- --session data/runs/<round>/SESSION.json --plugin <plugin-id> --checkout <readonly-checkout> --inventory <local-inventory.json> --out data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json',
+            'npm run prepare:plugin -- --session data/runs/<round>/SESSION.json --plugin <plugin-id> --checkout <readonly-checkout> --inventory <local-inventory.json> --out data/runs/<round>/<plugin-slug>/MATERIALS.json',
             'node .agents/skills/_shared/scripts/plugin-data.mjs plan --mode <init-or-update> --observations <local-observations.json> --out <local-plan.json>',
             'node .agents/skills/_shared/scripts/plugin-data.mjs apply --plan <local-plan.json>',
             'npm run research -- checkpoint --session data/runs/<round>/SESSION.json --plugin <plugin-id> --observations <local-observations.json> --report <local-report.md>',
@@ -349,8 +364,8 @@ export function createManifest(session, sessionPath, root = ROOT) {
         local_artifacts: { root: `data/runs/${match[1]}`, session_sha256: digest(session) }
     });
 }
-export function completeItem(session, id, obsPath, reportPath, catalog, root = ROOT) {
-    validateSession(session, root);
+export function completeItem(session, id, obsPath, reportPath, catalog, root = ROOT, embeddedArtifacts = null) {
+    validateSession(session, root, embeddedArtifacts);
     validateCatalog(catalog);
     const item = session.items.find((p) => p.id === id);
     if (!item || !selectedItems(session).includes(item) || item.status === 'complete')
@@ -389,7 +404,14 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         throw new Error('fresh analysis required for every round');
     if (!item.revision || !plugin.evidence.some((e) => e.kind === 'source_inspection' && e.revision === item.revision))
         throw new Error('analysis must match pinned revision');
-    for (const e of plugin.evidence) if (e.artifact) artifact(root, e.artifact);
+    for (const e of plugin.evidence)
+        if (e.artifact) {
+            const value = embeddedArtifacts?.[e.artifact];
+            if (value) {
+                if (typeof value.content !== 'string' || sha256(value.content) !== value.sha256)
+                    throw Error(`embedded evidence checksum differs: ${e.artifact}`);
+            } else artifact(root, e.artifact);
+        }
     const report = readFileSync(artifact(root, reportPath), 'utf8');
     if (!report.trim()) throw new Error('report is empty');
     item.status = 'complete';
@@ -401,7 +423,7 @@ export function completeItem(session, id, obsPath, reportPath, catalog, root = R
         report_digest: digest(report),
         run_id: obs.run_id
     };
-    return validateSession(session, root);
+    return validateSession(session, root, embeddedArtifacts);
 }
 export function saveSession(path, action) {
     mkdirSync(dirname(path), { recursive: true });

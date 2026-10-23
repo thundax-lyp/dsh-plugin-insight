@@ -1,0 +1,34 @@
+{
+    "repository": "5101good/amoji",
+    "repository_id": 1378933589,
+    "captured_at": "2026-10-23T01:49:38.790Z",
+    "window_start": "2026-09-23T01:49:38.790Z",
+    "stars": 0,
+    "pushed_at": "2026-10-23T01:48:43Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@amoji/dsh",
+        "captured_at": "2026-10-23T01:49:47.589Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40amoji%2Fdsh",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-23T01:49:47.589Z",
+            "source_url": "https://registry.npmjs.org/%40amoji%2Fdsh",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "repository": "7gzgn/dsh-restart-dock",
+    "repository_id": 1424433303,
+    "captured_at": "2026-10-22T16:03:27.023Z",
+    "window_start": "2026-09-22T16:03:27.023Z",
+    "stars": 0,
+    "pushed_at": "2026-10-20T14:25:47Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-dock%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A27.023Z..2026-10-22T16%3A03%3A27.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0E36:3273ED:A418CD:B10B4E:6ADA33D4 and timestamp 2026-10-22 16:03:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-dock%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A27.023Z..2026-10-22T16%3A03%3A27.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0F70:3290A2:9FD334:ACCBD4:6ADA33D5 and timestamp 2026-10-22 16:03:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-dock%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A27.023Z..2026-10-22T16%3A03%3A27.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 10A0:329B81:A1A292:AE98CF:6ADA33D6 and timestamp 2026-10-22 16:03:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-restart-dock",
+        "captured_at": "2026-10-22T16:03:34.936Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-restart-dock",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T16:03:34.936Z",
+            "source_url": "https://registry.npmjs.org/dsh-restart-dock",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

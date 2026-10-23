@@ -1,0 +1,34 @@
+{
+    "repository": "534119219/chicheng-peak",
+    "repository_id": 1336366824,
+    "captured_at": "2026-10-22T07:14:19.558Z",
+    "window_start": "2026-09-22T07:14:19.558Z",
+    "stars": 5,
+    "pushed_at": "2026-08-26T14:46:39Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "chicheng-peak",
+        "captured_at": "2026-10-22T07:14:28.539Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/chicheng-peak",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T07:14:28.539Z",
+            "source_url": "https://registry.npmjs.org/chicheng-peak",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

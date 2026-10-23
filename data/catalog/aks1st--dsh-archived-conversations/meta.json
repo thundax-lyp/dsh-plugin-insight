@@ -1,0 +1,34 @@
+{
+    "repository": "AKS1st/dsh-archived-conversations",
+    "repository_id": 1335060115,
+    "captured_at": "2026-10-22T06:41:28.266Z",
+    "window_start": "2026-09-22T06:41:28.266Z",
+    "stars": 0,
+    "pushed_at": "2026-09-11T03:49:57Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-archived-conversations",
+        "captured_at": "2026-10-22T06:41:36.725Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 804,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-archived-conversations",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-08T02:52:59.039Z",
+            "captured_at": "2026-10-22T06:41:36.725Z",
+            "source_url": "https://registry.npmjs.org/dsh-archived-conversations",
+            "error": null,
+            "latest_version": "0.3.2",
+            "latest_published_at": "2026-09-11T03:51:32.615Z",
+            "latest_error": null
+        }
+    }
+}

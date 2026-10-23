@@ -1,0 +1,34 @@
+{
+    "repository": "AKS1st/dock-images",
+    "repository_id": 1340492378,
+    "captured_at": "2026-10-22T07:29:41.447Z",
+    "window_start": "2026-09-22T07:29:41.447Z",
+    "stars": 4,
+    "pushed_at": "2026-09-23T07:40:27Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dock-images",
+        "captured_at": "2026-10-22T07:29:50.369Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1028,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dock-images",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T06:01:19.393Z",
+            "captured_at": "2026-10-22T07:29:50.369Z",
+            "source_url": "https://registry.npmjs.org/dock-images",
+            "error": null,
+            "latest_version": "0.1.3",
+            "latest_published_at": "2026-09-23T07:41:53.477Z",
+            "latest_error": null
+        }
+    }
+}

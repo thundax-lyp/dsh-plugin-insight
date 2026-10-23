@@ -1,0 +1,55 @@
+{
+    "repository": "0disoft/dsh-ci-diet",
+    "repository_id": 1426954291,
+    "captured_at": "2026-10-23T01:49:57.328Z",
+    "window_start": "2026-09-23T01:49:57.328Z",
+    "stars": 1,
+    "pushed_at": "2026-10-22T21:07:11Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A0disoft%2Fdsh-ci-diet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2A0:1BAEBA:165F18:182CE8:6ADABD47 and timestamp 2026-10-23 01:49:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A0disoft%2Fdsh-ci-diet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A40A:324C6A:14868F8:15D36F4:6ADABD49 and timestamp 2026-10-23 01:50:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A0disoft%2Fdsh-ci-diet%20is%3Aissue%20created%3A2026-09-23T01%3A49%3A57.328Z..2026-10-23T01%3A49%3A57.328Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A528:2E6A76:171788:18E797:6ADABD4A and timestamp 2026-10-23 01:50:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A0disoft%2Fdsh-ci-diet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A49%3A57.328Z..2026-10-23T01%3A49%3A57.328Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A60E:1B6B52:168964:185874:6ADABD4C and timestamp 2026-10-23 01:50:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A0disoft%2Fdsh-ci-diet%20is%3Aissue%20updated%3A2026-09-23T01%3A49%3A57.328Z..2026-10-23T01%3A49%3A57.328Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A6D4:324C6A:1486B2C:15D3962:6ADABD4D and timestamp 2026-10-23 01:50:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-ci-diet",
+        "captured_at": "2026-10-23T01:50:05.554Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-ci-diet",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": "2026-10-20T18:47:13.468Z",
+            "captured_at": "2026-10-23T01:50:05.554Z",
+            "source_url": "https://registry.npmjs.org/dsh-ci-diet",
+            "error": null,
+            "latest_version": "0.3.1",
+            "latest_published_at": "2026-10-22T21:09:19.832Z",
+            "latest_error": null
+        }
+    }
+}

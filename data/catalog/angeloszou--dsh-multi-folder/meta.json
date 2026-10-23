@@ -1,0 +1,34 @@
+{
+    "repository": "AngelosZou/dsh-multi-folder",
+    "repository_id": 1334119885,
+    "captured_at": "2026-10-22T09:52:56.400Z",
+    "window_start": "2026-09-22T09:52:56.400Z",
+    "stars": 11,
+    "pushed_at": "2026-10-10T06:58:49Z",
+    "issues": {
+        "open": 1,
+        "closed": 2,
+        "created_30d": 3,
+        "closed_30d": 2,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-multi-folder",
+        "captured_at": "2026-10-22T09:53:03.822Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 2036,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-multi-folder",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T12:07:25.310Z",
+            "captured_at": "2026-10-22T09:53:03.822Z",
+            "source_url": "https://registry.npmjs.org/dsh-multi-folder",
+            "error": null,
+            "latest_version": "0.3.3",
+            "latest_published_at": "2026-10-10T07:00:53.324Z",
+            "latest_error": null
+        }
+    }
+}

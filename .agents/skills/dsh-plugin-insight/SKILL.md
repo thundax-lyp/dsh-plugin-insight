@@ -23,7 +23,7 @@ description: 显式调用时研究一个固定版本的 DSH 插件，识别技�
    围绕核心贡献核查安装／效果依赖、用户／后台／异常流程、首次／持续／迁移成本及效果条件，深度按主张相关性选择。
    成本按首次使用、持续使用和失败恢复分开核查，按[输出标准](../dsh-plugin-init/references/OUTPUT-STANDARD.md#成本与效果的表格展示)交付成本表与效果表；金额、耗时和效果未知时写明缺口，不填0或虚构收益。
    成本包括失败、重试和人工复核，现金与人工时间分列。源码与测试支撑判断，只有实际运行才记录执行证据。
-   按研究规范先执行 `npm run inventory:plugin -- --root <readonly-checkout> --ref <commit> --component <path> --out data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json`；`data/runs/` 是本地运行目录，不进入 Git。
+   按研究规范先执行 `npm run inventory:plugin -- --root <readonly-checkout> --ref <commit> --component <path> --out data/runs/<round>/<plugin-slug>/INVENTORY.json`；`data/runs/` 是本地运行目录，不进入 Git。
    根组件省略 component；只有抽读快照时用 --snapshot 替代 root/ref 并明确子集，不把抽读行数写成完整 LOC。
    行数复用 Node CLI sloc，Markdown行／字与各 JS／TS 扩展名分开；检查生产／测试／示例及生成／第三方排除。
    核查 Skill入口、Agent/Preset、工具／命令、后台／UI候选及未解析点；补查配置、依赖、持久化与副作用。
@@ -33,18 +33,18 @@ description: 显式调用时研究一个固定版本的 DSH 插件，识别技�
    npm run prepare:plugin -- \
      --session data/runs/<round>/SESSION.json --plugin <plugin_id> \
      --checkout <readonly-checkout> \
-     --inventory data/runs/<round>/snapshots/<plugin-slug>/INVENTORY.json \
-     --out data/runs/<round>/snapshots/<plugin-slug>/MATERIALS.json
+     --inventory data/runs/<round>/<plugin-slug>/INVENTORY.json \
+     --out data/runs/<round>/<plugin-slug>/MATERIALS.json
    ```
    有本地目录条目原件时可重复传入 `--directory-entry <file>`。该脚本只生成机械材料索引，不创建 observation、finding、研究深度或报告；
    checkout 必须位于固定提交且无改动，身份／版本／组件与 inventory 不一致时停止。
 3. **逐题验收后综合。** 对照计划检查每题交付，未回答不能被综合摘要掩盖；partial／unknown 解释缺口、影响和补证动作，不适用须说明。检查跨题冲突并回指问题ID，再形成核心贡献、质疑、采用结论、创新假设与评分。
    **质疑与创新推演。** 检验最影响贡献成立的关键假设，核对归因、反例与其他解释；通过已有方案比较、机制推广／组合／替换或业务流程重组，尝试提出有推导依据的新创新假设及最小验证。状态和论证按研究规范、输出标准处理，不强凑创新，不以采用风险清单代替贡献分析。
-   组装源码证据时，REVIEWED-SOURCE.json 不嵌入 META；META 通过 DISPLAY 的 metadata 单独进入组件记录。仅刷新 META 时保留原证据包和研究检查点，旧包内 metadata 按数据契约兼容保留。
+   组装源码证据时，REVIEWED-SOURCE.json 不嵌入 META；META 通过 DISPLAY 的 metadata 单独进入同组件 meta.json。仅刷新 META 时保留原证据包和研究检查点，旧包内 metadata 按数据契约兼容保留。
    编排只将所选的新项和待更新项传入本 Skill，确认未变的已有项不调用；独立调用或因结论依赖失效等变化入选时，即使代码版本未变也完整分析；仅目录／维护信息变化且没有相关依赖失效时由列表编排执行轻量更新，不调用本 Skill。内部核对当前快照的结论是否仍适用；当前证据仅在版本、环境和适用范围匹配时复用。INSIGHT 按输出标准只展示当前状态，不开展版本差异研究或回顾旧稿。
    按本 Skill 的[百分制创新评分标准](references/SCORING-STANDARD.md#创新评分标准innovation-v1)分别评技术与业务创新；逐项说明参照、增量及限制，不将新假设计入插件贡献。创新评分写入观察批次的innovation_scores，数值与理由仅存JSON，不写入INSIGHT；未知项按数据契约处理。另按研究规范的采用推荐评分逐项判断不推荐／观察／试用／值得安装，保存recommendation及理由；新完成研究不得保留未评估，不从创新分或热度推断推荐，不将AI判断称为用户人工认可。
-4. **保存单项交付。** 原始材料写入本地 `data/runs/<round>/snapshots/<plugin-slug>/`，本轮完整洞察写入本地 `data/runs/<round>/insights/<plugin-slug>.md`，
-   观察批次写入 `data/runs/<round>/observations/<plugin-slug>.json`，使用新批次 ID；批次只含本组件成功观察及其错误。
+4. **保存单项交付。** 原始材料写入本地 `data/runs/<round>/<plugin-slug>/`，本轮完整洞察写入本地 `data/runs/<round>/<plugin-slug>/INSIGHT.md`，
+   观察批次写入 `data/runs/<round>/<plugin-slug>/OBSERVATIONS.json`，使用新批次 ID；批次只含本组件成功观察及其错误。
    最终报告必须保留“研究问题与完整回答”正文，逐题完整呈现回答、证据原文及位置、未知项和状态；不能只留下摘要、只链接本地过程文件或折叠全部回答。证据原文达到10行时按输出标准默认折叠代码块，来源链接、依据解释和回答正文保持展开。
    详情须包含唯一一组“用途／亮点／思考／建议”四标签，正文以贡献、关键质疑、新创新假设与最小验证为主线，相关场景、依赖、流程、成本用于支撑论证，保留验证边界。
    表格化后逐段去除正文对表格的重复复述，综合与逐题回答均核对；正文只补独有机制、条件、计量口径和证据，保留未知项，不用相似度规则自动删研究内容。

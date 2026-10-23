@@ -1,0 +1,55 @@
+{
+    "repository": "2026heshao/dsh-obsidian-board",
+    "repository_id": 1415116420,
+    "captured_at": "2026-10-22T15:12:11.257Z",
+    "window_start": "2026-09-22T15:12:11.257Z",
+    "stars": 3,
+    "pushed_at": "2026-10-21T14:23:29Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2986:1026BA:9BEA8C:A833C4:6ADA27CD and timestamp 2026-10-22 15:12:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2A5A:1B7905:9F8684:ABCEBA:6ADA27CE and timestamp 2026-10-22 15:12:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A11.257Z..2026-10-22T15%3A12%3A11.257Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2AEA:324F03:BE1EFC:CA61B1:6ADA27CF and timestamp 2026-10-22 15:12:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A11.257Z..2026-10-22T15%3A12%3A11.257Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BB2:1B1079:957ADA:A1BBBF:6ADA27D0 and timestamp 2026-10-22 15:12:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-obsidian-board%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A11.257Z..2026-10-22T15%3A12%3A11.257Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2C7A:FF42C:9833FA:A4756B:6ADA27D2 and timestamp 2026-10-22 15:12:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-obsidian-board",
+        "captured_at": "2026-10-22T15:12:18.359Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 133,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-obsidian-board",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-13T02:37:20.877Z",
+            "captured_at": "2026-10-22T15:12:18.359Z",
+            "source_url": "https://registry.npmjs.org/dsh-obsidian-board",
+            "error": null,
+            "latest_version": "0.2.5",
+            "latest_published_at": "2026-10-21T14:28:35.340Z",
+            "latest_error": null
+        }
+    }
+}

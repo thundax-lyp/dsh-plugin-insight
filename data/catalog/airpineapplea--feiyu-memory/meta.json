@@ -1,0 +1,55 @@
+{
+    "repository": "AirPineApplea/feiyu-memory",
+    "repository_id": 1415822787,
+    "captured_at": "2026-10-23T01:49:51.723Z",
+    "window_start": "2026-09-23T01:49:51.723Z",
+    "stars": 6,
+    "pushed_at": "2026-10-23T01:00:47Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9E4E:3F7844:16F361:18C122:6ADABD41 and timestamp 2026-10-23 01:49:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9F60:3F5089:15F86D:17C6AC:6ADABD43 and timestamp 2026-10-23 01:49:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20created%3A2026-09-23T01%3A49%3A51.723Z..2026-10-23T01%3A49%3A51.723Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A054:29366C:166A59:1839D5:6ADABD44 and timestamp 2026-10-23 01:49:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A49%3A51.723Z..2026-10-23T01%3A49%3A51.723Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A12E:1BC665:120F75B:135BC95:6ADABD45 and timestamp 2026-10-23 01:49:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAirPineApplea%2Ffeiyu-memory%20is%3Aissue%20updated%3A2026-09-23T01%3A49%3A51.723Z..2026-10-23T01%3A49%3A51.723Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A1FC:1BA71D:167753:184442:6ADABD46 and timestamp 2026-10-23 01:49:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "feiyu-memory",
+        "captured_at": "2026-10-23T01:49:58.828Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/feiyu-memory",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-23T01:49:58.828Z",
+            "source_url": "https://registry.npmjs.org/feiyu-memory",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

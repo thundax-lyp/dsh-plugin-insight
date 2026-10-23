@@ -1,0 +1,34 @@
+{
+    "repository": "2672243194/dsh-read-url",
+    "repository_id": 1335047324,
+    "captured_at": "2026-10-22T04:41:26.654Z",
+    "window_start": "2026-09-22T04:41:26.654Z",
+    "stars": 22,
+    "pushed_at": "2026-10-19T08:21:29Z",
+    "issues": {
+        "open": 0,
+        "closed": 1,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-read-url",
+        "captured_at": "2026-10-22T04:41:35.416Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 2587,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-read-url",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T14:31:25.643Z",
+            "captured_at": "2026-10-22T04:41:35.416Z",
+            "source_url": "https://registry.npmjs.org/dsh-read-url",
+            "error": null,
+            "latest_version": "1.9.3",
+            "latest_published_at": "2026-10-19T08:23:47.394Z",
+            "latest_error": null
+        }
+    }
+}

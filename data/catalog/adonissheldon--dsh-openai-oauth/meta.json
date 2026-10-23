@@ -1,0 +1,34 @@
+{
+    "repository": "AdonisSheldon/dsh-openai-oauth",
+    "repository_id": 1335992154,
+    "captured_at": "2026-10-22T10:42:48.046Z",
+    "window_start": "2026-09-22T10:42:48.046Z",
+    "stars": 9,
+    "pushed_at": "2026-08-20T16:23:48Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-openai-oauth",
+        "captured_at": "2026-10-22T10:43:02.750Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 770,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-openai-oauth",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T16:04:29.875Z",
+            "captured_at": "2026-10-22T10:43:02.750Z",
+            "source_url": "https://registry.npmjs.org/dsh-openai-oauth",
+            "error": null,
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-08-14T16:04:30.245Z",
+            "latest_error": null
+        }
+    }
+}

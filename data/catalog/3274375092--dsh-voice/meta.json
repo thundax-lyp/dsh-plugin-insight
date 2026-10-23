@@ -1,0 +1,34 @@
+{
+    "repository": "3274375092/dsh-voice",
+    "repository_id": 1334554745,
+    "captured_at": "2026-10-22T05:06:16.464Z",
+    "window_start": "2026-09-22T05:06:16.464Z",
+    "stars": 8,
+    "pushed_at": "2026-10-01T07:07:03Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@nn12138/dsh-voice",
+        "captured_at": "2026-10-22T05:06:25.112Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 578,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40nn12138%2Fdsh-voice",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T21:29:18.960Z",
+            "captured_at": "2026-10-22T05:06:25.112Z",
+            "source_url": "https://registry.npmjs.org/%40nn12138%2Fdsh-voice",
+            "error": null,
+            "latest_version": "0.2.6",
+            "latest_published_at": "2026-08-21T10:44:46.269Z",
+            "latest_error": null
+        }
+    }
+}

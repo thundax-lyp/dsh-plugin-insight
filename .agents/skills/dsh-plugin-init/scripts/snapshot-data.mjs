@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 import {
     readSnapshotStorage,
+    normalizeCatalogSnapshot,
     writeSnapshotStorage,
     migrateSnapshotStorage,
-    recoverSnapshotStorage
+    recoverSnapshotStorage,
+    reindexSnapshotStorage
 } from '../../_shared/scripts/snapshot-storage.mjs';
 import { assembleRecommendation, unassessedRecommendation } from '../../_shared/scripts/recommendation.mjs';
 import { readWork, saveWork, migrateWork, workStorageFiles } from '../../_shared/scripts/work-storage.mjs';
@@ -45,7 +47,7 @@ const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/sna
 const workCheck = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/snapshot-work.schema.json')));
 export const validateWork = (work, root = ROOT) => {
     if (!workCheck(work)) throw Error(ajv.errorsText(workCheck.errors));
-    validateSession(work.session, root);
+    validateSession(work.session, root, Object.assign({}, ...Object.values(work.records).map((r) => r.artifacts)));
     if (
         digest(work.input) !== work.input_digest ||
         work.input.id !== work.session.id ||
@@ -83,6 +85,14 @@ export function validateSnapshot(value, root = ROOT) {
     for (const [id, block] of Object.entries(value.research_blocks ?? {}))
         if (id !== block.plugin_id) throw Error('invalid research block identity');
     validateCatalog(value.catalog);
+    for (const [id, document] of Object.entries(value.retained_documents ?? {})) {
+        if (
+            document.path !== `${value.registry[id]}/INSIGHT.md` ||
+            hash(document.content) !== document.sha256 ||
+            value.publication.records.some((r) => r.id === id)
+        )
+            throw Error('invalid retained publication');
+    }
     validatePublication(value.publication);
     startSession(
         {
@@ -187,7 +197,7 @@ export function bootstrap(root = ROOT) {
     const fd = openSync(file + '.lock', 'wx', 0o600);
     try {
         if (existsSync(file)) throw Error('snapshot appeared during bootstrap');
-        writeSnapshotStorage(file, result);
+        writeSnapshotStorage(file, normalizeCatalogSnapshot(result));
     } finally {
         closeSync(fd);
         unlinkSync(file + '.lock');
@@ -224,7 +234,14 @@ function startWorkUnlocked(input, path, limit, root, retryIds) {
                 path: p.path,
                 revision: p.fingerprints.code,
                 fingerprints: p.fingerprints,
-                source_urls: []
+                source_urls: base.discovery.sources
+                    .filter((source) =>
+                        p.sources.some(
+                            (entry) =>
+                                entry.membership && (entry.url === source.url || entry.url.startsWith(source.url + '/'))
+                        )
+                    )
+                    .map((source) => source.url)
             }
         ])
     );
@@ -471,11 +488,12 @@ function assemble(base, work, root = ROOT) {
         next.catalog = candidate;
         next.registry[id] ??= pluginDirectory(plugin, root);
         next.reports[id] = entry.report;
+        if (next.retained_documents) delete next.retained_documents[id];
         next.metadata[id] = entry.metadata;
         for (const [name, artifact] of Object.entries(entry.artifacts)) next.artifacts[name] = artifact;
         records.set(id, recordFor(item, plugin, work.session.checked_at));
         for (const field of ['summaries', 'capabilities', 'advice']) next.publication[field][id] = entry[field];
-        next.publication.metadata[id] = `${next.registry[id]}/META.json`;
+        next.publication.metadata[id] = `data/catalog/${next.registry[id].split('/').at(-1)}/meta.json`;
     }
     // Dependency invalidation can affect an unselected published record; do not publish obsolete conclusions.
     for (const [id, record] of records) {
@@ -519,41 +537,10 @@ function assemble(base, work, root = ROOT) {
     next.checked_at = work.session.checked_at;
     next.publication.checked_at = next.checked_at;
     next.publication.scope = `本轮所选 ${selected.size}，完成 ${Object.keys(work.records).length}，受阻 ${selectedItems(work.session).filter((i) => i.status === 'blocked').length}；已知同版本受阻跳过 ${work.session.selection?.suppressed_ids?.length ?? 0}；频繁更新窗口内跳过 ${work.session.selection?.cooldown_ids?.filter((id) => !selected.has(id) && !work.session.selection?.suppressed_ids?.includes(id)).length ?? 0}；当前发布 ${records.size}`;
-    next.discovery = mergeDiscovery(base.discovery, work.input);
+    // Directory scans remain exclusively in this round; compare future rounds with completed research.
+    next.discovery.sources = structuredClone(work.input.sources);
     next.transaction = { id: work.session.id, work_digest: digest(work) };
-    return validateSnapshot(next, root);
-}
-// Keep memberships that an incomplete source cannot yet disprove.
-export function mergeDiscovery(previous, input) {
-    const complete = new Set(input.sources.filter((source) => source.complete).map((source) => source.url));
-    const byId = new Map(previous.plugins.map((plugin) => [plugin.id, plugin]));
-    const incomingIds = new Set(input.plugins.map((plugin) => plugin.id));
-    const uncertainMissing = previous.plugins.filter(
-        (plugin) =>
-            !incomingIds.has(plugin.id) &&
-            (!plugin.source_urls.length || plugin.source_urls.some((url) => !complete.has(url)))
-    );
-    const plugins = [
-        ...input.plugins.map((plugin) => ({
-            ...plugin,
-            source_urls: [
-                ...new Set([
-                    ...plugin.source_urls,
-                    ...(byId.get(plugin.id)?.source_urls ?? []).filter((url) => !complete.has(url))
-                ])
-            ]
-        })),
-        ...uncertainMissing
-    ];
-    const sources = structuredClone(input.sources);
-    for (const plugin of plugins)
-        for (const url of plugin.source_urls)
-            if (!sources.some((source) => source.url === url)) sources.push({ url, revision: null, complete: false });
-    return {
-        sources,
-        plugins,
-        complete_baseline: sources.every((source) => source.complete) && uncertainMissing.length === 0
-    };
+    return validateSnapshot(normalizeCatalogSnapshot(next), root);
 }
 export function stageRecord(workPath, id, observationPath, reportPath, displayPath, root = ROOT) {
     const lock = workPath + '.lock';
@@ -633,20 +620,31 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
             catalog = planCatalog(catalog, entry.observations, 'update').result;
     catalog = planCatalog(catalog, observations, 'update').result;
     delete work.session.items.find((item) => item.id === id).block;
+    const artifacts = {};
+    for (const evidence of plugin.evidence)
+        if (evidence.artifact) {
+            const name = evidence.artifact;
+            const saved = base.artifacts[name];
+            if (saved) {
+                const file = local(root, name);
+                if (existsSync(file) && hash(readFileSync(file, 'utf8')) !== saved.sha256)
+                    throw Error(`immutable evidence label reused with different content: ${name}`);
+                artifacts[name] = structuredClone(saved);
+            } else {
+                const content = readFileSync(local(root, name), 'utf8');
+                artifacts[name] = { content, sha256: hash(content) };
+            }
+        }
+    const embedded = Object.assign({}, ...Object.values(work.records).map((r) => r.artifacts), artifacts);
     completeItem(
         work.session,
         id,
         relative(root, resolve(observationPath)),
         relative(root, resolve(reportPath)),
         catalog,
-        root
+        root,
+        embedded
     );
-    const artifacts = {};
-    for (const evidence of plugin.evidence)
-        if (evidence.artifact) {
-            const content = readFileSync(local(root, evidence.artifact), 'utf8');
-            artifacts[evidence.artifact] = { content, sha256: hash(content) };
-        }
     work.records[id] = {
         observations,
         report,
@@ -760,8 +758,19 @@ export function renderSnapshot(root = ROOT, checkOnly = false) {
     const snapshot = readSnapshot(root),
         before = digest(snapshot),
         result = renderPublication(snapshot.publication, root, snapshot);
+    const retained = Object.entries(snapshot.retained_documents ?? {}).map(([id, document]) => {
+        const expected = `${snapshot.registry[id]}/INSIGHT.md`;
+        if (
+            document.path !== expected ||
+            hash(document.content) !== document.sha256 ||
+            snapshot.publication.records.some((r) => r.id === id)
+        )
+            throw Error('invalid retained publication');
+        return [expected, document.content];
+    });
     const outputs = [
         ['README.md', result.readme],
+        ...retained,
         [snapshot.publication.catalog_page, result.catalog],
         ...result.details.map((d) => [d.path, d.content]),
         ...result.categoryPages.map((d) => [d.path, d.content])
@@ -816,6 +825,7 @@ export function forgetResearch(input, root = ROOT, apply = false) {
             for (const id of ids) delete next.publication[name][id];
         delete next.publication.recommendations;
         next.discovery.plugins = next.discovery.plugins.filter((p) => !ids.has(p.id));
+        if (next.retained_documents) for (const id of ids) delete next.retained_documents[id];
         next.discovery.complete_baseline = false;
         const artifacts = new Set(
             next.catalog.plugins.flatMap((p) => p.evidence.map((e) => e.artifact).filter(Boolean))
@@ -983,6 +993,15 @@ export async function main(args = process.argv.slice(2)) {
             closeSync(fd);
             unlinkSync(file + '.lock');
         }
+    } else if (command === 'reindex') {
+        const file = snapshotFile(ROOT);
+        const fd = openSync(file + '.lock', 'wx', 0o600);
+        try {
+            console.log(JSON.stringify(reindexSnapshotStorage(file)));
+        } finally {
+            closeSync(fd);
+            unlinkSync(file + '.lock');
+        }
     } else if (command === 'recover-storage') {
         const file = snapshotFile(ROOT);
         const fd = openSync(file + '.lock', 'wx', 0o600);
@@ -1043,7 +1062,7 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
     else
         throw Error(
-            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|forget|plan|apply|render|validate|assess-recommendations|migrate-storage|recover-storage|migrate-work|clean'
+            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|forget|plan|apply|render|validate|assess-recommendations|migrate-storage|reindex|recover-storage|migrate-work|clean'
         );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))

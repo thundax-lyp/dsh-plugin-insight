@@ -1,0 +1,47 @@
+{
+    "repository": "AIcivilization/dsh-tingdong",
+    "repository_id": 1426519329,
+    "captured_at": "2026-10-23T01:50:42.657Z",
+    "window_start": "2026-09-23T01:50:42.657Z",
+    "stars": 0,
+    "pushed_at": "2026-10-22T05:19:05Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-tingdong%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A42.657Z..2026-10-23T01%3A50%3A42.657Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C296:3F2F29:161358:17E381:6ADABD77 and timestamp 2026-10-23 01:50:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-tingdong%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A42.657Z..2026-10-23T01%3A50%3A42.657Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C330:3F792C:183665:1A0838:6ADABD78 and timestamp 2026-10-23 01:50:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-tingdong%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A42.657Z..2026-10-23T01%3A50%3A42.657Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C3E8:289580:18DCDD:1AAFAD:6ADABD7A and timestamp 2026-10-23 01:50:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-tingdong",
+        "captured_at": "2026-10-23T01:50:50.536Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-tingdong",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": "2026-10-20T05:31:47.178Z",
+            "captured_at": "2026-10-23T01:50:50.536Z",
+            "source_url": "https://registry.npmjs.org/dsh-tingdong",
+            "error": null,
+            "latest_version": "0.5.1",
+            "latest_published_at": "2026-10-22T05:22:26.256Z",
+            "latest_error": null
+        }
+    }
+}

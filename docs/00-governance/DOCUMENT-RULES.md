@@ -51,7 +51,7 @@ Schema 统一放在 `.agents/skills/_shared/schemas/`，由设计文档与两个
 ## 工程文档与研究产物
 
 `docs/00-governance/` 保存工程治理规则；Skill 的 `references/` 保存研究执行规范、数据契约与必要的操作说明。
-`data/` 保存唯一当前研究快照及其引用的正式分析、必要证据和生成成果；历史 manifest 仅兼容旧实现。
+`data/catalog/<plugin-slug>/` 保存自包含的当前研究及独立 META，`data/plugins/<plugin-slug>/` 保存生成的发布稿；历史 manifest 仅兼容旧实现。
 `data/runs/` 保存本轮尚未合并的观察、材料和断点，不进入 Git；合并与清理条件由数据契约及输出标准维护，不要求永久保留每轮过程文件。
 研究产物与工程治理、研究设计文档分别维护，不因其具有“调研”性质另行迁移，也不能自行改变规则。
 其文件位置与报告结构统一由 OUTPUT-STANDARD 定义；研究输入示例放在列表编排 Skill 的 `assets/`，不维护合成观察测试数据。
