@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "98410537089ac2113c44454c5c432106",
+    "identity": "github:1428818873:packages-atlassian",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428818873:packages-atlassian",
+            "repository": "k0ndrateff/dsh-plugins",
+            "path": "packages/atlassian",
+            "revision": "3c8430b4232d8c6b25981a482eb7608a51766f9f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e58ae8163f7517d3ac9782a6fa8d7927160fbe17195be7967cadfd86bc89f3fa",
+                "code": "3c8430b4232d8c6b25981a482eb7608a51766f9f",
+                "maintenance": "abe4bbf34f6252a2d3a766f8646a1589bc4bfd47217ba041b6a952445fbb6db5"
+            }
+        }
+    }
+}

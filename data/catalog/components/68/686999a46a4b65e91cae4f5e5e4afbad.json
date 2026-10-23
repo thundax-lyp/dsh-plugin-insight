@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "686999a46a4b65e91cae4f5e5e4afbad",
+    "identity": "github:1426415396:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426415396:root",
+            "repository": "huahuazz/DSH_question_map",
+            "path": "",
+            "revision": "e004dbea37621e2417ab899312a62c58ebf650a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5ec38eab40ba79994af0bc79f8af999682ee888f488abe69a50415caa06149f3",
+                "code": "e004dbea37621e2417ab899312a62c58ebf650a7",
+                "maintenance": "42fb9927e33e4530edf6c0582bc6b95d47a336d58b88ee9e7580976c3fb483cb"
+            }
+        }
+    }
+}

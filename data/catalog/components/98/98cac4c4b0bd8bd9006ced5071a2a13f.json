@@ -7,14 +7,14 @@
             "id": "github:1415657934:root",
             "repository": "wct-lab/dsh-docchain",
             "path": "",
-            "revision": "366fffe35b8344ad98ec8830e2b1522c0a3721a2",
+            "revision": "4fad8654c8ff1026b833a9375c3b819fa9cc48ea",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "39c016da969a34ab653ca318163422f2404d00258ab408efbe100bbd9ec6d3f0",
-                "code": "366fffe35b8344ad98ec8830e2b1522c0a3721a2",
-                "maintenance": "1ce86f380974b7aeb0963189c712f2577c65256c42df213219e27756e638da14"
+                "code": "4fad8654c8ff1026b833a9375c3b819fa9cc48ea",
+                "maintenance": "0f969a22b6ae3b5b8d4ba289b3ab93edc264818f089bc6c84f1fa36da02d7ce5"
             }
         }
     }

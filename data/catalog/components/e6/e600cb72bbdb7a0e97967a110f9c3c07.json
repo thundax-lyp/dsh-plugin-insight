@@ -7,14 +7,14 @@
             "id": "github:1300173275:root",
             "repository": "vshulcz/deja-vu",
             "path": "",
-            "revision": "b962c7aa8db2d213208e4a36a73d8bf6cc35fa2b",
+            "revision": "0b9ecc2e6e789ee41943708115ea73df2bb25d2b",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "a5222ffaf50c7f8e612318454332c6bd1d298894985cdcd955bffb562fba5966",
-                "code": "b962c7aa8db2d213208e4a36a73d8bf6cc35fa2b",
-                "maintenance": "5090be4655e495d6952445fabd923f94f9d040856b832a80c5e121ac5f94d9cf"
+                "code": "0b9ecc2e6e789ee41943708115ea73df2bb25d2b",
+                "maintenance": "1306c9358a3846fa72f2c5e63c46f3dda5d96f77ca724574cefbc6580ff6f4ba"
             }
         }
     }

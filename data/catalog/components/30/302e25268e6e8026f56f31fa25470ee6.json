@@ -7,14 +7,14 @@
             "id": "github:1421563934:root",
             "repository": "StarsHarryZhu/dsh-intelligent-UI",
             "path": "",
-            "revision": "5da801dcc05bcd1a3b5c2fb315431dcb61300524",
+            "revision": "8fe3d20a8edc61dcc3a36fcb18d004b32566c2fe",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a17a0cadb2c5c9bb83c6eda006d2640826d48bbc1560fc59de3d2bf617c3617c",
-                "code": "5da801dcc05bcd1a3b5c2fb315431dcb61300524",
-                "maintenance": "bcbfe913cc2606cd946d713c04cfe63275c79087e1d3c9f4a1ae1d8f92ba1432"
+                "code": "8fe3d20a8edc61dcc3a36fcb18d004b32566c2fe",
+                "maintenance": "b24f70f413471b7a6b9508d81dd702ff323bec137dea0f0d7b63ca311337801d"
             }
         }
     }

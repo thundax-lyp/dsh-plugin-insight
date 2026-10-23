@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8ca8d9f2d08dba0cffa36d373abb185f",
+    "identity": "github:1428125931:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428125931:root",
+            "repository": "ninetyhe-90/dsh-assistant-stream",
+            "path": "",
+            "revision": "b9224b79a3042487fb49bf3a783e2af4e1f0935f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "cc3473e3d4130817b89c91cd51a34af45eba16b640f512fb2534741fc95e56ae",
+                "code": "b9224b79a3042487fb49bf3a783e2af4e1f0935f",
+                "maintenance": "2ace84fbafebb3b4e2c3ae776b0f5fbdb96ca0e79b327e4f9def84724259a3af"
+            }
+        }
+    }
+}

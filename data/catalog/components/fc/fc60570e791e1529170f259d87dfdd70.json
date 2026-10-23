@@ -7,14 +7,14 @@
             "id": "github:1074165057:packages-dsh-maker",
             "repository": "taptap/instant-games-open-mcp",
             "path": "packages/dsh-maker",
-            "revision": "3c444b78fa77f6530d088a1674d319da982bb3cb",
+            "revision": "fb50057de64f73ae2eaf8fcb69b799c3e5909585",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "fdbd0a6c99112d39ca46a68c106179c0077cfe2a0b92874bb6539d54f83ef88e",
-                "code": "3c444b78fa77f6530d088a1674d319da982bb3cb",
-                "maintenance": "2e9d0ad1be920c8f2e9c48234efb30d9806ceb512b9a641dc595cc16b6077732"
+                "code": "fb50057de64f73ae2eaf8fcb69b799c3e5909585",
+                "maintenance": "6030f959343062f69ff2121d002462abdbab6e32f46adc83904791139ea40f39"
             }
         }
     }

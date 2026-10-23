@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f99f7b01064dbdeced4213f51213e772",
+    "identity": "github:1428758701:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428758701:root",
+            "repository": "Tests4gptplay/dsh-kujira-persona",
+            "path": "",
+            "revision": "2e328492021d3476064f6c013ef1f409afdd778d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1c6ae523eb28c515a5e00f5b098ba9f0817bd784d03686daa601e0b5ef4bb50d",
+                "code": "2e328492021d3476064f6c013ef1f409afdd778d",
+                "maintenance": "64ac6c745d2aebcb74b10966f29a66139f2c9b550116c37bd33d783d1ebb9dd4"
+            }
+        }
+    }
+}

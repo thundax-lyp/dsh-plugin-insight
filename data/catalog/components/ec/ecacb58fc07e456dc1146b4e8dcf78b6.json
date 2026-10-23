@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "ecacb58fc07e456dc1146b4e8dcf78b6",
+    "identity": "github:1427788427:plugins-sessions-insight",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427788427:plugins-sessions-insight",
+            "repository": "Mt-Youya/dsh-plugins",
+            "path": "plugins/sessions-insight",
+            "revision": "8fc41b319d61c6e17304a2843325f2dffd059047",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1023d418d70adae7de07a2398d4d4494646955500b3027387cfd3e973d42d352",
+                "code": "8fc41b319d61c6e17304a2843325f2dffd059047",
+                "maintenance": "34f2b4687f78e6848f3ba3d6650f7a7f0d2f26c73f16f71c73b6ff7d03e5f16d"
+            }
+        }
+    }
+}

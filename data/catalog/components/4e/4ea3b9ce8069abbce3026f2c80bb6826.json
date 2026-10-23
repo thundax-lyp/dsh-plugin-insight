@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4ea3b9ce8069abbce3026f2c80bb6826",
+    "identity": "github:1427316272:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427316272:root",
+            "repository": "ZhaoZiyangShaanxi/dsh-netease-music",
+            "path": "",
+            "revision": "42a34e8281c76baadc173e4f2b8f1f66fda6c870",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c99985982e3f8a84f88d441c0ae006b67a82a8ebcc25bfa1e101e5fc08b56d98",
+                "code": "42a34e8281c76baadc173e4f2b8f1f66fda6c870",
+                "maintenance": "206f226e623410233b60362442fd654cfb087140232245356054c3e1f8c1ab4b"
+            }
+        }
+    }
+}

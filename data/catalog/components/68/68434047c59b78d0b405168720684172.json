@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "68434047c59b78d0b405168720684172",
+    "identity": "github:1428080108:packages-dsh-cursor-cli",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428080108:packages-dsh-cursor-cli",
+            "repository": "qyjqio/dsh-cursor-toolkit",
+            "path": "packages/dsh-cursor-cli",
+            "revision": "1d20707c1a4e0181835606db1df10fa2a6d16ed8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "238d4bcc46c1cf0412a3390148487067a1f6ec701af7ef796e6b7722f5c65c50",
+                "code": "1d20707c1a4e0181835606db1df10fa2a6d16ed8",
+                "maintenance": "4bdb0f7184fcca0a2b4027dd837716055ebc0bad819d1f4d8440e6c1f2d97c28"
+            }
+        }
+    }
+}

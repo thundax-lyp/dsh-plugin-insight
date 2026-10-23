@@ -19,81 +19,99 @@
             "research_depth": "source",
             "fingerprints": {
                 "directory": "6c5f38d7eb4cf3bdc130b0a38b3a1683c71f8324739cb6ef44d1a12faadebb47",
-                "code": "fbe21895707437df844ef3f928ae42783a4781b5",
-                "maintenance": "90a2e2441f125bf5a485f91f9c8c00bf68651c14499d192d4e58ceddf4e306c3"
+                "code": "62e013256d2020e292849e6321a426d50aeca719",
+                "maintenance": "0b0dfc32572eccc097aec74f9dfdf8266a160667aafe81841ff9c32203f7266d"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-02-github-1422328385-root-directory-0",
+                    "id": "2026-10-23-01-github-1422328385-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
-                    "retrieved_at": "2026-10-22T16:29:54.689Z",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:14:06.360Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-02-github-1422328385-root-author",
+                    "id": "2026-10-23-01-github-1422328385-root-author",
                     "kind": "author_claim",
-                    "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md",
+                    "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
-                            "commit": "fbe21895707437df844ef3f928ae42783a4781b5",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
                             "path": "README.md",
-                            "content_sha256": "f38b04034cf93b07c88312d981833d84c9365412cddbccc9920a2bf49c607ca4"
+                            "content_sha256": "a44632798d8b84749140bec14f3ff7694773633ae51d5f8b1b56468a28e62455"
                         }
                     ],
-                    "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
-                    "captured_at": "2026-10-22T16:29:54.689Z",
-                    "summary": "在 DSH 启动就绪前展示视频、图片、网页或小游戏，并提供设置与素材管理。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
+                    "revision": "62e013256d2020e292849e6321a426d50aeca719",
+                    "captured_at": "2026-10-23T02:14:06.360Z",
+                    "summary": "为DSH启动增加视频、图片、网页或内置游戏遮罩，支持素材上传与跳过。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-02-github-1422328385-root-source",
+                    "id": "2026-10-23-01-github-1422328385-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md",
+                    "url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/index.js",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
-                            "commit": "fbe21895707437df844ef3f928ae42783a4781b5",
-                            "path": "README.md",
-                            "content_sha256": "f38b04034cf93b07c88312d981833d84c9365412cddbccc9920a2bf49c607ca4"
-                        },
-                        {
-                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
-                            "commit": "fbe21895707437df844ef3f928ae42783a4781b5",
-                            "path": "package.json",
-                            "content_sha256": "4e21432fed15243cfc9b2e4e336ede67973af9df59d3738dea0b370077a2f25e"
-                        },
-                        {
-                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
-                            "commit": "fbe21895707437df844ef3f928ae42783a4781b5",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
                             "path": "lib/index.js",
                             "content_sha256": "cd5590f336507f027f1d7da0ace70eb68c88bdb94f17d01261ff4ceffd63854c"
                         },
                         {
                             "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
-                            "commit": "fbe21895707437df844ef3f928ae42783a4781b5",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
                             "path": "lib/inject.js",
                             "content_sha256": "69f767a94a0b28db5caa12aa1245547cb8d4324f40b1228aafb1e674581ede98"
                         },
                         {
                             "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
-                            "commit": "fbe21895707437df844ef3f928ae42783a4781b5",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
+                            "path": "lib/config.js",
+                            "content_sha256": "a078ea7016b306b921072f96ca5c4a3853c506a4b7ad6aa04f7254aff1a135c5"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
                             "path": "lib/upload.js",
                             "content_sha256": "9b4eb6afbf5111ffcd35747a9e05c803d304df037f447d3d82fa7311804ff668"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
+                            "path": "lib/media.js",
+                            "content_sha256": "962e17d663228c2fd68275c9cec9b8149a58ba4d90729796d2d87c4acaa07b67"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
+                            "path": "lib/games.js",
+                            "content_sha256": "8e59b09aebb4613e9a7e19b6f43ecd123293203129c4f85ef754bb75dc95aef3"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
+                            "path": "THIRD-PARTY.md",
+                            "content_sha256": "7b11da4b9402fbaf6f264293114916b6e8e8e6740c784d2356c6ee29d02a162c"
+                        },
+                        {
+                            "repository_url": "https://github.com/456erddgr/dsh-boo550wt-animation",
+                            "commit": "62e013256d2020e292849e6321a426d50aeca719",
+                            "path": "package.json",
+                            "content_sha256": "62bdb80336d462bf1b06bb86c633c70dd93914578e868b3808c80953b35d6c0e"
                         }
                     ],
-                    "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
-                    "captured_at": "2026-10-22T16:29:54.689Z",
-                    "summary": "核查 README.md、package.json、lib/index.js、lib/inject.js、lib/upload.js；Host 通过 webserver/index-inject 在启动 ready 前注入样式与脚本，并在 /boot-animation 下提供配置、媒体 Range/HEAD、小游戏、网页代理与上传管理；客户端 settings.section 读写配置。上传流先写 .tmp、计算摘要去重，再 rename 发布；遮罩用多个完成信号和 maxSeconds 守卫退出。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
+                    "revision": "62e013256d2020e292849e6321a426d50aeca719",
+                    "captured_at": "2026-10-23T02:14:06.360Z",
+                    "summary": "核查 lib/index.js、lib/inject.js、lib/config.js、lib/upload.js、lib/media.js、lib/games.js、THIRD-PARTY.md、package.json；Host预ready注入遮罩，脚本读配置建媒体/iframe，多结束信号汇聚finish；上传tmp/hash/rename存储。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/456erddgr--dsh-boo550wt-animation/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "检查 README、配置、注入、Host 路由、媒体和上传关键源码；不审计全部 vendored three.js/earth-migration。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                        "检查Host/config/inject/upload/media主链及第三方归属，未审计全部vendoredWebGL/小游戏或执行媒体。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -104,226 +122,226 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "面向愿意用品牌片头、静态图、网页或小游戏定制 DSH 启动体验的桌面用户。输入是模式、媒体或网页地址、时长和声音设置；合格结果是在应用后台正常加载时先显示遮罩，并能在播放结束、通关、Esc、按钮、错误或硬上限触发后可靠交还界面。简单替代是宿主原生启动页或不加遮罩。\n\n参见[Q01](#research-q01)。",
+                    "text": "重视启动展示的桌面用户定制开场；合格结果须可可靠跳过并交还工作，不视为启动加速。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "Host 通过 webserver/index-inject 在启动 ready 前注入样式与脚本，并在 /boot-animation 下提供配置、媒体 Range/HEAD、小游戏、网页代理与上传管理；客户端 settings.section 读写配置。上传流先写 .tmp、计算摘要去重，再 rename 发布；遮罩用多个完成信号和 maxSeconds 守卫退出。",
+                    "text": "Host预ready注入遮罩，脚本读配置建媒体/iframe，多结束信号汇聚finish；上传tmp/hash/rename存储。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "检查 README、配置、注入、Host 路由、媒体和上传关键源码；不审计全部 vendored three.js/earth-migration。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                    "text": "检查Host/config/inject/upload/media主链及第三方归属，未审计全部vendoredWebGL/小游戏或执行媒体。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "v1.4.0，private 包，desktop profile 安装，包含约 25MB 上游 MIT WebGL 资产。",
+                    "text": "private1.5.0；源码/本地安装，含上游MIT资产/three.js，npm元数据不作有效发布。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 素材存储、可能 25MB WebGL 资产；金额未知 | 安装重启、制作/上传和调参 | 512MB 上传上限，工时未知 |\n| 持续使用 | 每次启动解码、I/O、GPU/网络 | 等待或主动跳过 | 不同模式资源峰值未知 |\n| 失败恢复 | 临时/坏素材占用与重试 | Esc/按钮、排错、删素材或卸载 | 卡死率与恢复分钟数未知 |",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 素材/内置WebGL与上传存储 | 安装、制作素材、调时长 | 上传限512MB，峰值/金额未知 |\n| 持续使用 | 解码/GPU/网络/声音 | 每次启动等待或跳过 | 真实设备耗时未测 |\n| 失败恢复 | 残留/坏素材与重试 | 跳过、禁用、清理真实路径 | 硬上限不统一，恢复工时未知 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "建议观察。仅适合明确重视启动展示、能接受每次启动延迟且愿意固定本地素材的用户；先用 image 模式和短硬上限验证 Esc/按钮/错误交还，远端网页和 3D 模式在低端设备与敏感环境中暂缓。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。",
+                    "text": "先观察；有明确需求者仅本地图像短时长隔离验Esc/按钮/错误与禁用，不先用不可信HTML/远程/重3D。参见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 首屏一致性 | ready 前注入避免先闪主界面再覆盖 | 真实设备首帧与闪烁率未知 |\n| 内容选择 | 四模式、六游戏、上传和绝对路径已实现 | 可访问性与长期新鲜度未知 |\n| 失败交还 | Esc、按钮、错误与硬上限多路兜底 | 焦点和低端 GPU 下未实测 |",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 开场 | 预ready挂遮罩、多模式 | 本机首帧/闪烁与偏好价值 |\n| 交还 | finish幂等、多信号 | 所有模式严格硬上限 |\n| 素材 | 上传流控和摘要 | 不可信HTML隔离/跨源边界 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "流式上传、临时文件、内容摘要去重、白名单文件名和 rename 发布降低半文件与穿越风险；媒体 Range/HEAD 适配浏览器解码，完成路径集中到 finish/guard 是可借鉴的退出设计。代价是注入脚本、Host 路由、设置 UI 与大量 vendored WebGL 资产形成宽维护面，且网页/iframe消息的来源约束需要实际审计与验证。 参见[Q07](#research-q07)。",
+                    "text": "幂等finish、真实跳过按钮、tmp/hash/rename可借鉴；媒体时长、启动deadline与frame信任应分开，源资产体积不代表原创工程量。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "mechanism",
+                    "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "相对启动后再弹层，它把遮罩挂载时机提前到 ready 结算前，并把媒体服务、设置、上传和六款小游戏组合为一套离线可配入口。贡献是启动交接和素材生命周期的工程组合；内置 three.js 场景主要归属上游 earth-migration，不能算本插件原创渲染引擎。 参见[Q03](#research-q03)。",
+                    "text": "提前注入并整合素材管理、四模式与跳过交接，减少定制启动内容的接线；3D基础明确来自上游。参见[Q01](#research-q01)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "核心价值依赖遮罩绝不把正常界面困住。自定义网页可能不发完成消息，视频可能受自动播放和解码影响，WebGL/25MB 资源会增加启动负担；虽然有 Esc、按钮、错误降级和硬上限，真实机器上的焦点、无障碍、低端 GPU 与异常内容恢复未验证。允许绝对路径和远端 URL 还扩大本地文件与网络边界。 参见[Q04](#research-q04)。",
+                    "text": "视频metadata会清初始maxSeconds并改按媒体时长；同源HTML允许脚本且消息不核来源，不能据硬上限/sandbox字样承诺隔离和交还。参见[Q02](#research-q02)、[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "可把遮罩改成“有硬预算的启动健康门”：只展示可取消的资源预热与诊断进度，超过例如 2 秒立即交还主界面并把剩余工作转后台。它可能保留品牌体验同时降低启动阻塞，但需防止把装饰插件升级为虚假的健康信号。 参见[Q08](#research-q08)。",
+                    "text": "未验证假设为统一绝对deadline与可信frame来源，按长素材/延迟/错误/假消息/低帧率对照交还。参见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1422328385:root",
                             "area": "code",
-                            "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                            "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:29:54.689Z",
+                    "reviewed_at": "2026-10-23T02:14:06.360Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T16:29:54.689Z",
+            "last_checked_at": "2026-10-23T02:14:06.360Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
-                "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
-                "reviewed_at": "2026-10-22T16:29:54.689Z",
+                "revision": "62e013256d2020e292849e6321a426d50aeca719",
+                "reviewed_at": "2026-10-23T02:14:06.360Z",
                 "status": "current",
                 "dependencies": [
                     {
                         "plugin_id": "github:1422328385:root",
                         "area": "code",
-                        "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                        "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                     }
                 ],
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
-                        "simplification": 8
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
                     },
-                    "rationale": "启动遮罩概念成熟；ready 前注入和多退出路径有实质组合；上传与退出模式可迁移；统一配置但资产面较宽。",
+                    "rationale": "novelty为启动媒体常规整合；mechanism预ready与多信号局部组合；transferability依DSH注入接口；simplification管理素材局部便利，上游WebGL不计原创。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ]
                 },
                 "business": {
@@ -333,49 +351,49 @@
                         "reach": 5,
                         "economics": 0
                     },
-                    "rationale": "改变启动体验但不改变核心工作；交付物是可定制首屏；覆盖偏好型用户；未见经济结构增量。",
+                    "rationale": "workflow把启动等待转展示小幅变化；delivery增加可定制开场；reach让非开发用户上传；economics未识别净成本结构改善，每次启动反添资源。",
                     "basis": "interpretation",
                     "score": 22,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1422328385-root-source"
+                        "2026-10-23-01-github-1422328385-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "可定制能力完整，但纯装饰处于启动关键路径，须先证明所有失败模式都能按预算交还界面。",
+                "reason": "有明确展示偏好才考虑，先本地图像短时长核交还；视频硬上限与HTML/管理围栏需先验证。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "品牌化场景明确但频率价值有限。"
+                        "rationale": "展示需求具体但可选且未证用户价值。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "比固定 splash 多模式且可管理。"
+                        "rationale": "多模式与素材管理比固定splash便利。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码与作者截图，未做本轮 Host 验收。"
+                        "rationale": "固定源码和作者截图，无本轮宿主。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "每次启动延迟、资源和大素材负担。"
+                        "rationale": "启动等待、声音/GPU/素材与安全维护较高。"
                     }
                 },
                 "score": 46,
-                "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
-                "reviewed_at": "2026-10-22T16:29:54.689Z",
+                "revision": "62e013256d2020e292849e6321a426d50aeca719",
+                "reviewed_at": "2026-10-23T02:14:06.360Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-02-github-1422328385-root-source"
+                    "2026-10-23-01-github-1422328385-root-source"
                 ],
                 "dependencies": [
                     {
                         "plugin_id": "github:1422328385:root",
                         "area": "code",
-                        "fingerprint": "fbe21895707437df844ef3f928ae42783a4781b5"
+                        "fingerprint": "62e013256d2020e292849e6321a426d50aeca719"
                     }
                 ]
             }
@@ -384,74 +402,67 @@
             "id": "github:1422328385:root",
             "repository": "456erddgr/dsh-boo550wt-animation",
             "path": "",
-            "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
+            "revision": "62e013256d2020e292849e6321a426d50aeca719",
             "fingerprints": {
                 "directory": "6c5f38d7eb4cf3bdc130b0a38b3a1683c71f8324739cb6ef44d1a12faadebb47",
-                "code": "fbe21895707437df844ef3f928ae42783a4781b5",
-                "maintenance": "90a2e2441f125bf5a485f91f9c8c00bf68651c14499d192d4e58ceddf4e306c3"
+                "code": "62e013256d2020e292849e6321a426d50aeca719",
+                "maintenance": "0b0dfc32572eccc097aec74f9dfdf8266a160667aafe81841ff9c32203f7266d"
             },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T15:49:47Z",
-            "analysis_sha256": "d90ec369c41c9949a40cf8be2900de775e7e54ea51752cb5630fe544e6aa86b5"
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "8d9a05dfed53d6ec2c236d735a96ff3afba535cd9b4e4b437f737d7d076fa4ed"
         },
         "publication.metadata": "data/plugins/456erddgr--dsh-boo550wt-animation/META.json",
         "publication.summaries": {
-            "text": "在 DSH 启动就绪前展示视频、图片、网页或小游戏，并提供设置与素材管理。",
-            "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
-            "source_url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md"
+            "text": "为DSH启动增加视频、图片、网页或内置游戏遮罩，支持素材上传与跳过。",
+            "revision": "62e013256d2020e292849e6321a426d50aeca719",
+            "source_url": "https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/README.md"
         },
         "publication.capabilities": {
-            "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
+            "revision": "62e013256d2020e292849e6321a426d50aeca719",
             "items": {
-                "Host 路由": "配置、媒体、网页、小游戏与上传管理接口",
-                "界面": "启动遮罩、设置面板、预览和跳过控件",
-                "事件监听": "webserver/index-inject 在启动 ready 前注入",
-                "后台": "流式上传、摘要去重、媒体 Range 与临时文件清理"
+                "界面": "四模式启动遮罩、设置与跳过。",
+                "Host 路由": "配置、媒体/游戏与上传管理。"
             },
-            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 四类启动内容 | 视频、图片、网页或小游戏 | 网页和媒体失败必须受硬上限约束 |\n| 六款小游戏 | 以通关作为交还信号 | iframe 会占键盘，按钮需始终可用 |\n| 素材管理 | 上传、去重、切换与删除 | 上传上限 512MB，绝对路径扩大边界 |\n| 设置与预览 | 修改时长、声音、淡出并临时预览 | Host 配置下次重启生效 |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 四模式开场 | 展示定制 | 额外等待，硬上限需核 |\n| 素材管理 | 上传/本地路径 | 512MB，上层权限未知 |\n| 跳过/交还 | 返回工作 | 多信号，frame来源未核 |"
         },
         "publication.advice": {
-            "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
-            "text": "建议观察。仅适合明确重视启动展示、能接受每次启动延迟且愿意固定本地素材的用户；先用 image 模式和短硬上限验证 Esc/按钮/错误交还，远端网页和 3D 模式在低端设备与敏感环境中暂缓。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。"
+            "revision": "62e013256d2020e292849e6321a426d50aeca719",
+            "text": "先观察；有明确需求者仅本地图像短时长隔离验Esc/按钮/错误与禁用，不先用不可信HTML/远程/重3D。参见[Q04](#research-q04)。"
         },
         "registry": "data/plugins/456erddgr--dsh-boo550wt-animation",
-        "reports": "# dsh-boo550wt-animation\n\n> 在 DSH 启动就绪前展示视频、图片、网页或小游戏，并提供设置与素材管理。\n\n## 研究范围\n\n- **仓库**：[456erddgr/dsh-boo550wt-animation](https://github.com/456erddgr/dsh-boo550wt-animation)\n- **版本号**：1.4.0（[固定提交 fbe21895707437df844ef3f928ae42783a4781b5](https://github.com/456erddgr/dsh-boo550wt-animation/tree/fbe21895707437df844ef3f928ae42783a4781b5)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认了 ready 前遮罩、媒体路由、流式上传与多路退出兜底；不同焦点、坏媒体和低端 GPU 下能否按 maxSeconds 交还主界面尚未运行，启动健康门仍是未验证推演，见[Q08](#research-q08)。\n\n## 洞察短评\n\n- **用途**：面向愿意用品牌片头、静态图、网页或小游戏定制 DSH 启动体验的桌面用户。输入是模式、媒体或网页地址、时长和声音设置；合格结果是在应用后台正常加载时先显示遮罩，并能在播放结束、通关、Esc、按钮、错误或硬上限触发后可靠交还界面。简单替代是宿主原生启动页或不加遮罩。\n\n参见[Q01](#research-q01)。\n- **亮点**：相对启动后再弹层，它把遮罩挂载时机提前到 ready 结算前，并把媒体服务、设置、上传和六款小游戏组合为一套离线可配入口。贡献是启动交接和素材生命周期的工程组合；内置 three.js 场景主要归属上游 earth-migration，不能算本插件原创渲染引擎。 参见[Q03](#research-q03)。\n- **思考**：核心价值依赖遮罩绝不把正常界面困住。自定义网页可能不发完成消息，视频可能受自动播放和解码影响，WebGL/25MB 资源会增加启动负担；虽然有 Esc、按钮、错误降级和硬上限，真实机器上的焦点、无障碍、低端 GPU 与异常内容恢复未验证。允许绝对路径和远端 URL 还扩大本地文件与网络边界。 参见[Q04](#research-q04)。\n- **建议**：可把遮罩改成“有硬预算的启动健康门”：只展示可取消的资源预热与诊断进度，超过例如 2 秒立即交还主界面并把剩余工作转后台。它可能保留品牌体验同时降低启动阻塞，但需防止把装饰插件升级为虚假的健康信号。 参见[Q08](#research-q08)。\n\n采用建议：建议观察。仅适合明确重视启动展示、能接受每次启动延迟且愿意固定本地素材的用户；先用 image 模式和短硬上限验证 Esc/按钮/错误交还，远端网页和 3D 模式在低端设备与敏感环境中暂缓。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。\n\n## 核心贡献\n\n相对启动后再弹层，它把遮罩挂载时机提前到 ready 结算前，并把媒体服务、设置、上传和六款小游戏组合为一套离线可配入口。贡献是启动交接和素材生命周期的工程组合；内置 three.js 场景主要归属上游 earth-migration，不能算本插件原创渲染引擎。 参见[Q03](#research-q03)。\n\n## 关键质疑\n\n核心价值依赖遮罩绝不把正常界面困住。自定义网页可能不发完成消息，视频可能受自动播放和解码影响，WebGL/25MB 资源会增加启动负担；虽然有 Esc、按钮、错误降级和硬上限，真实机器上的焦点、无障碍、低端 GPU 与异常内容恢复未验证。允许绝对路径和远端 URL 还扩大本地文件与网络边界。 参见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可把遮罩改成“有硬预算的启动健康门”：只展示可取消的资源预热与诊断进度，超过例如 2 秒立即交还主界面并把剩余工作转后台。它可能保留品牌体验同时降低启动阻塞，但需防止把装饰插件升级为虚假的健康信号。 参见[Q08](#research-q08)。\n\n优先做五类故障注入和 30 次冷启动资源测量；任何退出路径超过 maxSeconds、主界面不可操作或上传残留 .tmp 即停止采用。\n\n## 场景与替代办法\n\n面向愿意用品牌片头、静态图、网页或小游戏定制 DSH 启动体验的桌面用户。输入是模式、媒体或网页地址、时长和声音设置；合格结果是在应用后台正常加载时先显示遮罩，并能在播放结束、通关、Esc、按钮、错误或硬上限触发后可靠交还界面。简单替代是宿主原生启动页或不加遮罩。\n\n参见[Q01](#research-q01)。\n\n基线是不增加启动遮罩，或使用固定宿主 splash；基线缺少可配内容但不会为装饰承担额外关键路径和素材边界。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| desktop profile 与完全重启 | 必需 | 加载 Host 注入和路由 | 设置存在但启动遮罩不生效 |\n| webServer/index-inject 与 settings slot | 必需 | 早期遮罩和设置面板 | 接口漂移会丢入口或路由 |\n| 媒体文件/网页/WebGL | 按模式必需 | 提供展示内容 | 解码、网络或 GPU 失败时应兜底退出 |\n| 用户设置的 maxSeconds | 效果必需 | 限制最坏阻塞时间 | 过大会放大卡住影响 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 安装 | 用户加入 desktop profile 并重启 | 设置项出现；否则核 bundle |\n| 配置 | 选择模式、素材、声音与上限并预览 | 预览可退出且保存成功 |\n| 启动 | Host 先注入遮罩，后台渲染应用 | 内容正常结束或用户跳过 |\n| 故障/退出 | 错误或上限调用 finish，必要时删坏素材或卸载 | 主界面恢复可操作 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 素材存储、可能 25MB WebGL 资产；金额未知 | 安装重启、制作/上传和调参 | 512MB 上传上限，工时未知 |\n| 持续使用 | 每次启动解码、I/O、GPU/网络 | 等待或主动跳过 | 不同模式资源峰值未知 |\n| 失败恢复 | 临时/坏素材占用与重试 | Esc/按钮、排错、删素材或卸载 | 卡死率与恢复分钟数未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 首屏一致性 | ready 前注入避免先闪主界面再覆盖 | 真实设备首帧与闪烁率未知 |\n| 内容选择 | 四模式、六游戏、上传和绝对路径已实现 | 可访问性与长期新鲜度未知 |\n| 失败交还 | Esc、按钮、错误与硬上限多路兜底 | 焦点和低端 GPU 下未实测 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 fbe21895707437df844ef3f928ae42783a4781b5 上判断 dsh-boo550wt-animation 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 可定制启动遮罩适合谁，合格退出是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向愿意用品牌片头、静态图、网页或小游戏定制 DSH 启动体验的桌面用户。输入是模式、媒体或网页地址、时长和声音设置；合格结果是在应用后台正常加载时先显示遮罩，并能在播放结束、通关、Esc、按钮、错误或硬上限触发后可靠交还界面。简单替代是宿主原生启动页或不加遮罩。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-8](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md#L5-L8)\n\n作者定义四模式与结束方式。\n\n```text\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 遮罩、媒体路由、上传和设置如何协作？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nHost 通过 webserver/index-inject 在启动 ready 前注入样式与脚本，并在 /boot-animation 下提供配置、媒体 Range/HEAD、小游戏、网页代理与上传管理；客户端 settings.section 读写配置。上传流先写 .tmp、计算摘要去重，再 rename 发布；遮罩用多个完成信号和 maxSeconds 守卫退出。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:76-79](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/index.js#L76-L79)\n\nHost 入口注册注入、配置和媒体路由。\n\n```text\nexport function apply(ctx, config) {\n  const defaults = normalizeConfig(config);\n  if (defaults.enabled === false) {\n    ctx.logger?.(\"boot-animation\").info?.(\"disabled by config\");\n```\n\n**依据 2 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · dsh-boo550wt-animation 相对简单替代的独立增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对启动后再弹层，它把遮罩挂载时机提前到 ready 结算前，并把媒体服务、设置、上传和六款小游戏组合为一套离线可配入口。贡献是启动交接和素材生命周期的工程组合；内置 three.js 场景主要归属上游 earth-migration，不能算本插件原创渲染引擎。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:76-79](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/index.js#L76-L79)\n\nHost 入口注册注入、配置和媒体路由。\n\n```text\nexport function apply(ctx, config) {\n  const defaults = normalizeConfig(config);\n  if (defaults.enabled === false) {\n    ctx.logger?.(\"boot-animation\").info?.(\"disabled by config\");\n```\n\n**依据 2 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启动阻塞、外部网页与大素材会带来什么风险？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n核心价值依赖遮罩绝不把正常界面困住。自定义网页可能不发完成消息，视频可能受自动播放和解码影响，WebGL/25MB 资源会增加启动负担；虽然有 Esc、按钮、错误降级和硬上限，真实机器上的焦点、无障碍、低端 GPU 与异常内容恢复未验证。允许绝对路径和远端 URL 还扩大本地文件与网络边界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n**依据 2 · 作者声明**：[README.md:5-8](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md#L5-L8)\n\n作者定义四模式与结束方式。\n\n```text\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n```\n\n#### 缺口\n\n- 不同浏览器焦点、自动播放、iframe 与低端 GPU 条件下所有退出路径是否都能按上限交还界面\n  **影响**：任何卡住都会让纯装饰能力反而阻断核心应用\n  **进一步探讨**：在视频坏编码、404 网页、不发消息 iframe、WebGL 失败和键盘焦点被吃掉时测 Esc、按钮、错误与硬上限的交还矩阵\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-boo550wt-animation 启动、持续使用与失败恢复依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n启动依赖 desktop profile、Host 重启、webServer/index-inject 与 settings slot；不同模式分别依赖浏览器媒体、文件路径、网络网页或 WebGL。失败时应由 0.9 秒错误放弃、立即跳过按钮或 maxSeconds 解锁；上传失败还需清临时文件，卸载不自动说明是否清用户素材。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:76-79](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/index.js#L76-L79)\n\nHost 入口注册注入、配置和媒体路由。\n\n```text\nexport function apply(ctx, config) {\n  const defaults = normalizeConfig(config);\n  if (defaults.enabled === false) {\n    ctx.logger?.(\"boot-animation\").info?.(\"disabled by config\");\n```\n\n**依据 2 · 作者声明**：[README.md:5-8](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md#L5-L8)\n\n作者定义四模式与结束方式。\n\n```text\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 视觉体验的首次、持续和故障成本如何计量？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n合格任务是一次启动遮罩在预算内退出并交还可操作界面。首次成本包括安装重启、素材制作/上传和参数调试；持续成本是每次启动的等待、解码、I/O、GPU/内存和可能网络访问；失败恢复包括强制跳过、排查坏媒体及清理上传。作者截图和自检说明不能给出不同机器的 P95 交还时延或卡死率。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-8](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md#L5-L8)\n\n作者定义四模式与结束方式。\n\n```text\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n```\n\n**依据 2 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n#### 缺口\n\n- 各模式对冷启动 P50/P95、CPU/GPU 峰值、内存、磁盘 I/O 和失败恢复时间的影响\n  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI\n  **进一步探讨**：在同一机器做空白基线及 video/image/web/game 各 30 次冷启动，记录 ready 到可操作时延、资源峰值、超时率和人工干预\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 上传原子性、路径防护和退出兜底是否可借鉴？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n流式上传、临时文件、内容摘要去重、白名单文件名和 rename 发布降低半文件与穿越风险；媒体 Range/HEAD 适配浏览器解码，完成路径集中到 finish/guard 是可借鉴的退出设计。代价是注入脚本、Host 路由、设置 UI 与大量 vendored WebGL 资产形成宽维护面，且网页/iframe消息的来源约束需要实际审计与验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:76-79](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/index.js#L76-L79)\n\nHost 入口注册注入、配置和媒体路由。\n\n```text\nexport function apply(ctx, config) {\n  const defaults = normalizeConfig(config);\n  if (defaults.enabled === false) {\n    ctx.logger?.(\"boot-animation\").info?.(\"disabled by config\");\n```\n\n**依据 2 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 能否把装饰遮罩改成有预算的启动健康门？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可把遮罩改成“有硬预算的启动健康门”：只展示可取消的资源预热与诊断进度，超过例如 2 秒立即交还主界面并把剩余工作转后台。它可能保留品牌体验同时降低启动阻塞，但需防止把装饰插件升级为虚假的健康信号。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n**依据 2 · 作者声明**：[README.md:5-8](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md#L5-L8)\n\n作者定义四模式与结束方式。\n\n```text\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n```\n\n#### 缺口\n\n- 健康门是否能在不延长关键路径的情况下提供可信状态\n  **影响**：新方向仍是推演，不能计入插件当前贡献或效果\n  **进一步探讨**：原型只允许 2 秒前台预算，比较无插件与健康门的可操作时延、误报率和用户跳过率；P95 增加超过 10% 即否定\n\n<a id=\"research-q09\"></a>\n\n### Q09 · dsh-boo550wt-animation 适合观察、试用还是安装，停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察。仅适合明确重视启动展示、能接受每次启动延迟且愿意固定本地素材的用户；先用 image 模式和短硬上限验证 Esc/按钮/错误交还，远端网页和 3D 模式在低端设备与敏感环境中暂缓。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-8](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/README.md#L5-L8)\n\n作者定义四模式与结束方式。\n\n```text\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n```\n\n**依据 2 · 源码核查**：[lib/inject.js:228-231](https://github.com/456erddgr/dsh-boo550wt-animation/blob/fbe21895707437df844ef3f928ae42783a4781b5/lib/inject.js#L228-L231)\n\n遮罩以定时守卫集中触发 finish。\n\n```text\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n  }\n\n  function onMediaError() {\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：315f40f71459c78e9994edc44e3354d6c925e600c5eafdc3ca6519b79963bce8。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 7 | 3034 | 2468 | 352 | — |\n| .md | source | 2 | 186 | — | — | 2518 |\n| .mjs | source | 5 | 1478 | 1226 | 151 | — |\n\n排除 71 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 四类启动内容 | 视频、图片、网页或小游戏 | 网页和媒体失败必须受硬上限约束 |\n| 六款小游戏 | 以通关作为交还信号 | iframe 会占键盘，按钮需始终可用 |\n| 素材管理 | 上传、去重、切换与删除 | 上传上限 512MB，绝对路径扩大边界 |\n| 设置与预览 | 修改时长、声音、淡出并临时预览 | Host 配置下次重启生效 |\n\n## 工程亮点\n\n流式上传、临时文件、内容摘要去重、白名单文件名和 rename 发布降低半文件与穿越风险；媒体 Range/HEAD 适配浏览器解码，完成路径集中到 finish/guard 是可借鉴的退出设计。代价是注入脚本、Host 路由、设置 UI 与大量 vendored WebGL 资产形成宽维护面，且网页/iframe消息的来源约束需要实际审计与验证。 参见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/inject.js、lib/upload.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查 README、配置、注入、Host 路由、媒体和上传关键源码；不审计全部 vendored three.js/earth-migration。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。\n- 下一步：优先做五类故障注入和 30 次冷启动资源测量；任何退出路径超过 maxSeconds、主界面不可操作或上传残留 .tmp 即停止采用。\n",
+        "reports": "# dsh-boo550wt-animation\n\n> 为DSH启动增加视频、图片、网页或内置游戏遮罩，支持素材上传与跳过。\n\n## 研究范围\n\n- **仓库**：[456erddgr/dsh-boo550wt-animation](https://github.com/456erddgr/dsh-boo550wt-animation)\n- **版本号**：1.5.0（[固定提交 62e013256d2020e292849e6321a426d50aeca719](https://github.com/456erddgr/dsh-boo550wt-animation/tree/62e013256d2020e292849e6321a426d50aeca719)）\n- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n多模式与交接机制有源码支持；硬上限/不可信HTML和真实资源边界未验，统一deadline是假设。\n\n## 洞察短评\n\n- **用途**：重视启动展示的桌面用户定制开场；合格结果须可可靠跳过并交还工作，不视为启动加速。\n- **亮点**：提前注入并整合素材管理、四模式与跳过交接，减少定制启动内容的接线；3D基础明确来自上游。参见[Q01](#research-q01)。\n- **思考**：视频metadata会清初始maxSeconds并改按媒体时长；同源HTML允许脚本且消息不核来源，不能据硬上限/sandbox字样承诺隔离和交还。参见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证假设为统一绝对deadline与可信frame来源，按长素材/延迟/错误/假消息/低帧率对照交还。参见[Q04](#research-q04)。\n\n采用建议：先观察；有明确需求者仅本地图像短时长隔离验Esc/按钮/错误与禁用，不先用不可信HTML/远程/重3D。参见[Q04](#research-q04)。\n\n## 核心贡献\n\n提前注入并整合素材管理、四模式与跳过交接，减少定制启动内容的接线；3D基础明确来自上游。参见[Q01](#research-q01)。\n\n## 关键质疑\n\n视频metadata会清初始maxSeconds并改按媒体时长；同源HTML允许脚本且消息不核来源，不能据硬上限/sandbox字样承诺隔离和交还。参见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设为统一绝对deadline与可信frame来源，按长素材/延迟/错误/假消息/低帧率对照交还。参见[Q04](#research-q04)。\n\n未运行目标。隔离五故障对照deadline、Esc/按钮和资源，先核路由认证，不用敏感路径/不可信HTML。\n\n## 场景与替代办法\n\n重视启动展示的桌面用户定制开场；合格结果须可可靠跳过并交还工作，不视为启动加速。\n\n宿主原启动页/不加遮罩是简单参照；增量为展示定制，不能由更长动画推产品效率。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH webServer/index-inject/slots | 启动必需 | 遮罩与设置 | 无注入/设置，禁用 |\n| 可读媒体/可写配置上传目录 | 自定义必需 | 读取/保存素材 | 错误交还，核路径 |\n| 编解码/WebGL/远程网络 | 对应模式必需 | 播放/场景 | 换图像或跳过 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户安装并选可信本地图像 | 短时长与声音可控 |\n| 2 | 用户重启观测与跳过 | 遮罩可结束、工作界面可用 |\n| 3 | 用户核错误/禁用/路径 | 不困住窗口，清理按真实存储 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 素材/内置WebGL与上传存储 | 安装、制作素材、调时长 | 上传限512MB，峰值/金额未知 |\n| 持续使用 | 解码/GPU/网络/声音 | 每次启动等待或跳过 | 真实设备耗时未测 |\n| 失败恢复 | 残留/坏素材与重试 | 跳过、禁用、清理真实路径 | 硬上限不统一，恢复工时未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 开场 | 预ready挂遮罩、多模式 | 本机首帧/闪烁与偏好价值 |\n| 交还 | finish幂等、多信号 | 所有模式严格硬上限 |\n| 素材 | 上传流控和摘要 | 不可信HTML隔离/跨源边界 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：多模式启动展示的贡献、可靠交还与素材信任成本是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 启动遮罩为谁创造什么价值，哪些属于上游？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n重视桌面启动仪式、品牌展示或小游戏的用户可在DSH加载时观看视频/图片/网页/内置游戏。合格结果不仅播放正确，还要在结束、跳过和故障时可靠交还工作界面；它不是提升启动速度的性能插件。相对宿主原启动页，增量是可管理素材、多模式与提前注入。\n\nearth-migration场景和three.js明确为内置上游资产，3D画面不能全算作者原创；插件自身在整合、讲解和宿主交接。README称约25MB及真实截图为作者报告，本轮没下载媒体或运行截图。对不重视启动展示的用户，每次额外等待可能没有净价值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.md:1-31](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/README.md#L1-L31)\n\n四模式、默认声音和上游。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n# dsh-boo550wt-animation\n\n给 **DeepSeek Harness** 加一段开机动画：打开 DSH 时全屏展示一段内容，播完（或者按 `Esc`）才进入界面。\n\n支持四种模式，全部可以在设置面板里改：\n\n| 模式 | 内容 | 结束方式 |\n| --- | --- | --- |\n| `video` | 视频（默认：自带的 550W 风格动画，16.6 秒） | 播完自动进入 |\n| `image` | 图片 | 显示 `durationMs` 后进入 |\n| `web` | 网页（URL 或本地 HTML 文件） | 页面发完成消息，或超时 |\n| `game` | 内置内容（五款小游戏 + 一部流浪地球讲解） | 通关 / 讲完自动进入 |\n\n素材来源有两条路：**直接上传**（设置面板里点选或拖入文件，存进插件自己的目录），或**填绝对路径**指向你已有的文件。视频默认**带声音播放**。\n\n## 内置内容\n\n| 内容 | 玩法 | 结束方式 |\n| --- | --- | --- |\n| 贪吃蛇 | 方向键 / WASD 吃豆子 | 吃满 30 个 |\n| 2048 | 方向键 / WASD 合并数字 | 拼出 2048 |\n| 打砖块 | ← → 移动挡板接球 | 清空全部砖块 |\n| 记忆翻牌 | 点击翻牌配对 | 8 组全部配对 |\n| 打字冲刺 | 照抄单词回车提交 | 完成 12 个 |\n| **流浪地球 · 行星发动机计划** | 自动播放讲解运镜，鼠标接管自由查看 | 讲完自动进入，或随时 Esc |\n\n**跳过永远可用**：按 `Esc`，或点右下角的「跳过」按钮。内容跑在 iframe 里会吃掉键盘，所以每一项都内置了把 Esc 转发给宿主页面的中继；右下角那个是真正的按钮，可以点。\n\n### 流浪地球讲解（3D）\n\n接入开源项目 **[oxomkbk/earth-migration](https://github.com/oxomkbk/earth-migration)**（MIT 协议）——基于 three.js 的电影级 WebGL 场景：真实地球贴图、云层、行星发动机群、赤道转向阵列、太空电梯、银河背景。整套 three.js、贴图和模型**内置在插件里**（`vendor/earth-migration/`，约 25 MB），不联网、不依赖 CDN。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[THIRD-PARTY.md:6-22](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/THIRD-PARTY.md#L6-L22)\n\n上游资产与新增HUD归属。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n## The Earth Migration Project\n\n- Source: https://github.com/oxomkbk/earth-migration\n- Licence: MIT (`vendor/earth-migration/LICENSE`)\n- Vendored at: `vendor/earth-migration/`\n- Used for: the \"行星发动机 3D\" boot game. The scene, textures and models are\n  served unchanged from this copy; the ignition game and its HUD are added by\n  `vendor/earth-migration/ignite.html`, which is this package's own file.\n\n## three.js\n\n- Source: https://github.com/mrdoob/three.js\n- Licence: MIT (`vendor/earth-migration/vendor/three/LICENSE`)\n- Vendored at: `vendor/earth-migration/vendor/three/`\n- Version: r160, as shipped by the project above.\n\nBoth licences permit redistribution and modification with attribution; the\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:212-235](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/index.js#L212-L235)\n\n启动ready前注入。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  ctx.on(\"webserver/index-inject\", (table) => {\n    table.push({ kind: \"style\", text: BOOT_STYLE });\n    table.push({\n      kind: \"script\",\n      placement: \"body\",\n      text: bootScript({\n        base: BASE,\n        mode: defaults.mode,\n        // The script reads the live settings itself via /config, so the\n        // injected row only carries the default mode as a first paint hint.\n        url: `${BASE}${VIDEO_ROUTE}`,\n        durationMs: defaults.durationMs,\n        zIndex: defaults.zIndex,\n        skipHint: defaults.skipHint,\n        silentHint: defaults.silentHint,\n        blockedHint: defaults.blockedHint,\n        errorHint: defaults.errorHint,\n        hintDelayMs: defaults.hintDelayMs,\n        maxSeconds: defaults.maxSeconds,\n        graceMs: 1500,\n        fadeMs: defaults.fadeMs,\n        sound: defaults.sound,\n        mutedFallback: defaults.mutedFallback,\n      }),\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 注入、退出和定时器是否实现一致硬上限？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nHost在webserver/index-inject提供样式/脚本，脚本挂全屏层后异步读配置，再创建视频、图片或iframe；全局Esc、真实跳过按钮、媒体ended/error与frame消息都可结束。finish用finished标志幂等，清监听、暂停媒体并淡出卸载，保留底下正常加载的应用是可复用交接设计。\n\n硬上限需要细看：启动设置一个CONFIG.maxSeconds timer；视频loadedmetadata把当前guard清掉并改为media.duration+grace，未与maxSeconds取min，所以长视频会越过声明的硬上限。图片/iframe另设guard但没有清初始timer，留下两个结束路径且使用注入默认与实时配置不同，时间语义不统一。不能把注释“absolute ceiling”当所有模式可靠保证。onGameMessage只看data标记，不核source/origin，其他frame也可能触发提前结束；这是静态边界，未复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/inject.js:193-228](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L193-L228)\n\n幂等退出和视频重设计时器。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n  function finish() {\n    if (finished) return;\n    finished = true;\n    if (guard !== null) clearTimeout(guard);\n    if (hintTimer !== null) clearTimeout(hintTimer);\n    guard = null;\n    hintTimer = null;\n    disarmGesture();\n    window.removeEventListener(\"keydown\", onKeyDown, true);\n    if (media !== null) {\n      media.removeEventListener(\"ended\", finish);\n      media.removeEventListener(\"loadedmetadata\", onMetadata);\n      media.removeEventListener(\"error\", onMediaError);\n      if (typeof media.pause === \"function\") { try { media.pause(); } catch (ignored) { /* ignore */ } }\n    }\n    window.removeEventListener(\"message\", onGameMessage);\n    layer.setAttribute(\"data-dsh-boo550wt-animation\", \"done\");\n    layer.classList.add(\"dsh-boo550wt-animation-out\");\n    fade = setTimeout(unmount, CONFIG.fadeMs);\n  }\n\n  function unmount() {\n    if (fade !== null) clearTimeout(fade);\n    fade = null;\n    doc.documentElement.classList.remove(\"dsh-boo550wt-animation-locked\");\n    if (layer.parentNode !== null) layer.parentNode.removeChild(layer);\n    if (media !== null && typeof media.load === \"function\") { try { media.removeAttribute(\"src\"); media.load(); } catch (ignored) { /* ignore */ } }\n    try { delete globalThis.__DSH_BOOT_ANIMATION__; } catch (ignored) { /* ignore */ }\n  }\n\n  function onMetadata() {\n    if (guard !== null) clearTimeout(guard);\n    var seconds = media !== null && typeof media.duration === \"number\" && media.duration > 0\n      ? media.duration\n      : CONFIG.maxSeconds;\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/inject.js:259-270](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L259-L270)\n\n消息未核来源。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  function onGameMessage(event) {\n    var data = event.data;\n    if (data === null || typeof data !== \"object\") return;\n    // The frame reported completion: hand over.\n    if (data.__bootGameDone === true) {\n      finish();\n      return;\n    }\n    // The frame relayed a skip request (its own script saw the Esc).\n    if (data.__bootSkip === true) {\n      finish();\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/inject.js:313-344](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L313-L344)\n\n图片/frame定时器。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n      var img = doc.createElement(\"img\");\n      img.className = \"dsh-boo550wt-animation-media\";\n      img.alt = \"boot image\";\n      img.src = cfg.url;\n      layer.appendChild(img);\n      media = img;\n      img.addEventListener(\"error\", onMediaError);\n      guard = setTimeout(finish, cfg.durationMs);\n    } else if (mode === \"web\") {\n      var frame = doc.createElement(\"iframe\");\n      frame.className = \"dsh-boo550wt-animation-frame\";\n      frame.setAttribute(\"allow\", \"autoplay; fullscreen\");\n      frame.setAttribute(\"sandbox\", \"allow-scripts allow-same-origin allow-forms allow-popups\");\n      frame.src = cfg.url;\n      layer.appendChild(frame);\n      media = frame;\n      window.addEventListener(\"message\", onGameMessage);\n      // Key events inside the frame never reach this window, so bring the\n      // focus back and accept an Esc relayed by the frame's own script.\n      releaseFrameFocus(frame);\n      guard = setTimeout(finish, cfg.durationMs);\n    } else if (mode === \"game\") {\n      var frame2 = doc.createElement(\"iframe\");\n      frame2.className = \"dsh-boo550wt-animation-frame\";\n      frame2.setAttribute(\"allow\", \"autoplay; fullscreen\");\n      frame2.setAttribute(\"sandbox\", \"allow-scripts allow-same-origin allow-forms allow-popups\");\n      frame2.src = cfg.url;\n      layer.appendChild(frame2);\n      media = frame2;\n      window.addEventListener(\"message\", onGameMessage);\n      releaseFrameFocus(frame2);\n      guard = setTimeout(finish, cfg.maxSeconds * 1000);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/inject.js:363-373](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L363-L373)\n\n启动默认硬上限。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  // ---- boot ------------------------------------------------------------\n\n  // The absolute ceiling: never hold the user hostage if anything stalls.\n  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);\n\n  try {\n    globalThis.__DSH_BOOT_ANIMATION__ = { skip: finish, element: layer };\n  } catch (ignored) { /* ignore */ }\n\n  window.addEventListener(\"keydown\", onKeyDown, true);\n  fetchSettings();\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 上传/网页的信任与存储成本是什么？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n上传支持图片/视频/HTML，512MB上限，流写tmp/摘要去重/rename发布有助避免半文件；settings与uploads路径在无DSH_HOME时分别取homedir与cwd，不是始终相邻，迁移清理需核真实路径。公开config把settings、media spec、configFile及内置绝对路径返回，不能按注释称路径不泄露到页。\n\n本地或上传HTML由宿主同源服务，iframe同时allow-scripts和allow-same-origin并允许forms/popups，不能把sandbox属性当不可信HTML安全隔离；管理路由未见局部Origin/Connection检查，上层保护未验。远程web URL直入frame，仍依网络与目标frame限制。首次安装/素材制作/上传，持续每次启动解码/GPU/等待/声音，失败需跳过、删坏素材、核磁盘与禁用；金额、峰值和人时未测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/upload.js:31-45](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/upload.js#L31-L45)\n\n上限和HTML类型。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport const UPLOAD_MAX_BYTES = 512 * 1024 * 1024;\nconst CONTROL_MAX_BYTES = 1024 * 1024;\nconst BODY_IDLE_MS = 60_000;\n\n/** MIME type -> extension for the kinds the boot animation accepts. */\nconst UPLOAD_EXT = {\n  \"image/png\": \"png\",\n  \"image/jpeg\": \"jpg\",\n  \"image/jpg\": \"jpg\",\n  \"image/gif\": \"gif\",\n  \"image/webp\": \"webp\",\n  \"video/mp4\": \"mp4\",\n  \"video/webm\": \"webm\",\n  \"text/html\": \"html\",\n  \"application/xhtml+xml\": \"html\",\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/upload.js:55-60](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/upload.js#L55-L60)\n\n无DSH_HOME取cwd。\n\n```text\n/** Directory holding uploaded assets; created on demand. */\nexport function uploadDir() {\n  const base = process.env.DSH_HOME?.trim() || process.cwd();\n  const dir = join(base, \"boot-animation-uploads\");\n  mkdirSync(dir, { recursive: true });\n  return dir;\n```\n\n**依据 3 · 源码核查**：[lib/config.js:30-32](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/config.js#L30-L32)\n\n配置无环境变量取homedir。\n\n```text\nexport function configPath() {\n  const home = process.env.DSH_HOME?.trim() || homedir();\n  return join(home, \"boot-animation-settings.json\");\n```\n\n**依据 4 · 源码核查**：[lib/config.js:187-195](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/config.js#L187-L195)\n\n公开响应含绝对路径。\n\n```text\n/** Public view of the settings for the /config route and the settings panel. */\nexport function publicSettings(settings) {\n  const spec = mediaSpec(settings);\n  return {\n    ...settings,\n    media: spec,\n    configFile: configPath(),\n    builtinVideo: BUNDLED_VIDEO,\n    builtinImage: BUNDLED_IMAGE,\n```\n\n**依据 5 · 源码核查**：[lib/inject.js:321-338](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L321-L338)\n\n脚本和同源组合。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    } else if (mode === \"web\") {\n      var frame = doc.createElement(\"iframe\");\n      frame.className = \"dsh-boo550wt-animation-frame\";\n      frame.setAttribute(\"allow\", \"autoplay; fullscreen\");\n      frame.setAttribute(\"sandbox\", \"allow-scripts allow-same-origin allow-forms allow-popups\");\n      frame.src = cfg.url;\n      layer.appendChild(frame);\n      media = frame;\n      window.addEventListener(\"message\", onGameMessage);\n      // Key events inside the frame never reach this window, so bring the\n      // focus back and accept an Esc relayed by the frame's own script.\n      releaseFrameFocus(frame);\n      guard = setTimeout(finish, cfg.durationMs);\n    } else if (mode === \"game\") {\n      var frame2 = doc.createElement(\"iframe\");\n      frame2.className = \"dsh-boo550wt-animation-frame\";\n      frame2.setAttribute(\"allow\", \"autoplay; fullscreen\");\n      frame2.setAttribute(\"sandbox\", \"allow-scripts allow-same-origin allow-forms allow-popups\");\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/index.js:90-106](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/index.js#L90-L106)\n\n配置读写未见局部围栏。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    if (path === `${BASE}/config`) {\n      if (req.method === \"GET\" || req.method === \"HEAD\") {\n        const settings = await loadSettings();\n        sendJson(res, 200, publicSettings(settings));\n        return;\n      }\n      if (req.method === \"POST\" || req.method === \"PUT\") {\n        let raw;\n        try {\n          raw = await readJson(req);\n        } catch {\n          sendJson(res, 400, { error: \"invalid JSON body\" });\n          return;\n        }\n        const next = normalizeConfig({ ...defaults, ...raw });\n        const saved = await saveSettings(next);\n        sendJson(res, saved ? 200 : 500, saved ? publicSettings(next) : { error: \"could not save settings\" });\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主上层认证和浏览器/低端设备行为未验\n  **影响**：管理/HTML边界、跳过可达与资源峰值未知\n  **进一步探讨**：先核目标路由访问契约，再隔离测本地HTML、长视频、远程拒frame和低端WebGL，不用敏感路径\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 当前采用及交接设计假设怎么验证？\n\n**研究主题**：采用判断、新假设与验证\n\n#### 完整回答\n\n建议观察，仅有明确启动展示需求的人先本地图像短时长验证，先不启用不可信HTML、远程网页或重3D。至少核Esc/按钮/错误/长素材都能交还，关闭声音和禁用后不遮挡工作。不能因作者截图成功认定本机可靠。\n\n未验证假设是以启动时刻统一deadline管理所有模式，实际配置只允许缩短，所有结束信号汇聚一个状态机并核frame来源；展示许可与素材信任分开。由混合定时器、视频覆盖硬上限和消息无来源推导，可能降低交还异常而保留定制，新增状态测试成本。最小对照超长视频、配置延迟、素材错误、frame假消息与低帧率，量实际交还时间/跳过可达/CPU，若仍超过deadline或引入新阻塞则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/inject.js:223-228](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L223-L228)\n\n视频重置deadline依据。\n\n```text\n  function onMetadata() {\n    if (guard !== null) clearTimeout(guard);\n    var seconds = media !== null && typeof media.duration === \"number\" && media.duration > 0\n      ? media.duration\n      : CONFIG.maxSeconds;\n    guard = setTimeout(finish, Math.round(seconds * 1000) + CONFIG.graceMs);\n```\n\n**依据 2 · 源码核查**：[lib/inject.js:259-270](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L259-L270)\n\nframe来源依据。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  function onGameMessage(event) {\n    var data = event.data;\n    if (data === null || typeof data !== \"object\") return;\n    // The frame reported completion: hand over.\n    if (data.__bootGameDone === true) {\n      finish();\n      return;\n    }\n    // The frame relayed a skip request (its own script saw the Esc).\n    if (data.__bootSkip === true) {\n      finish();\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/inject.js:363-373](https://github.com/456erddgr/dsh-boo550wt-animation/blob/62e013256d2020e292849e6321a426d50aeca719/lib/inject.js#L363-L373)\n\n初始deadline依据。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  // ---- boot ------------------------------------------------------------\n\n  // The absolute ceiling: never hold the user hostage if anything stalls.\n  guard = setTimeout(finish, CONFIG.maxSeconds * 1000);\n\n  try {\n    globalThis.__DSH_BOOT_ANIMATION__ = { skip: finish, element: layer };\n  } catch (ignored) { /* ignore */ }\n\n  window.addEventListener(\"keydown\", onKeyDown, true);\n  fetchSettings();\n```\n\n</details>\n\n#### 缺口\n\n- 统一deadline与交还收益未验证\n  **影响**：只能作设计假设，当前仍需保守采用\n  **进一步探讨**：按五故障对照交还时间和跳过可达\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2e0271e9e140d182de0fa751b5aef8a75be184dec0707145ecac3e810ce081dc。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 7 | 3034 | 2468 | 352 | — |\n| .md | source | 2 | 209 | — | — | 2867 |\n| .mjs | source | 5 | 1485 | 1231 | 153 | — |\n\n排除 71 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 四模式开场 | 展示定制 | 额外等待，硬上限需核 |\n| 素材管理 | 上传/本地路径 | 512MB，上层权限未知 |\n| 跳过/交还 | 返回工作 | 多信号，frame来源未核 |\n\n## 工程亮点\n\n幂等finish、真实跳过按钮、tmp/hash/rename可借鉴；媒体时长、启动deadline与frame信任应分开，源资产体积不代表原创工程量。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/inject.js、lib/config.js、lib/upload.js、lib/media.js、lib/games.js、THIRD-PARTY.md、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查Host/config/inject/upload/media主链及第三方归属，未审计全部vendoredWebGL/小游戏或执行媒体。\n- 下一步：未运行目标。隔离五故障对照deadline、Esc/按钮和资源，先核路由认证，不用敏感路径/不可信HTML。\n",
         "metadata": {
             "repository": "456erddgr/dsh-boo550wt-animation",
             "repository_id": 1422328385,
-            "captured_at": "2026-10-22T16:02:08.556Z",
-            "window_start": "2026-09-22T16:02:08.556Z",
+            "captured_at": "2026-10-23T01:49:26.981Z",
+            "window_start": "2026-09-23T01:49:26.981Z",
             "stars": 1,
-            "pushed_at": "2026-10-22T15:22:05Z",
+            "pushed_at": "2026-10-22T16:58:29Z",
             "issues": {
                 "open": 0,
                 "closed": 0,
                 "created_30d": 0,
                 "closed_30d": 0,
-                "updated_30d": null
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "updated_30d",
-                    "message": "incomplete issue search"
-                }
-            ]
+            "errors": []
         },
         "discovery.plugins": {
             "id": "github:1422328385:root",
             "repository": "456erddgr/dsh-boo550wt-animation",
             "path": "",
-            "revision": "fbe21895707437df844ef3f928ae42783a4781b5",
+            "revision": "62e013256d2020e292849e6321a426d50aeca719",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6c5f38d7eb4cf3bdc130b0a38b3a1683c71f8324739cb6ef44d1a12faadebb47",
-                "code": "fbe21895707437df844ef3f928ae42783a4781b5",
-                "maintenance": "90a2e2441f125bf5a485f91f9c8c00bf68651c14499d192d4e58ceddf4e306c3"
+                "code": "62e013256d2020e292849e6321a426d50aeca719",
+                "maintenance": "0b0dfc32572eccc097aec74f9dfdf8266a160667aafe81841ff9c32203f7266d"
             }
         }
     }

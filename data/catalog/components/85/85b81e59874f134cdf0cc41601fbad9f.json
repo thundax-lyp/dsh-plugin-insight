@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "85b81e59874f134cdf0cc41601fbad9f",
+    "identity": "github:1428326559:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428326559:root",
+            "repository": "cshengyi023-collab/dsh-deepsea-echo",
+            "path": "",
+            "revision": "c5599f80cf5a517e220a91524dbdda791406c09d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0a31a02bad5ea18ccef35f0bdc11b854dd15f0389637815bf6b527ffd93ac1f7",
+                "code": "c5599f80cf5a517e220a91524dbdda791406c09d",
+                "maintenance": "7a27de0b8f5206277528cfb4208b2d8a62fdc18f33df342dc7a89a61811f7e09"
+            }
+        }
+    }
+}

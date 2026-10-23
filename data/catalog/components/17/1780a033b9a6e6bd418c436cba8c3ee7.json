@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1780a033b9a6e6bd418c436cba8c3ee7",
+    "identity": "github:1426311829:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426311829:root",
+            "repository": "adcx222/dsh-enhance-prompt",
+            "path": "",
+            "revision": "6039d8c062cd2596db43258c59ab61d2950308ff",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "24580f8f6f263449f8c262a34025ba2dad7280fd0be7b58f463da9a87a9ceafb",
+                "code": "6039d8c062cd2596db43258c59ab61d2950308ff",
+                "maintenance": "dcb117b98affab416c737406c15147e6242809e99cd2cf610c80d5224052526e"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1166078953:root",
             "repository": "JingbiaoMei/Tokdash",
             "path": "",
-            "revision": "6c420d62d1ba3afa2f0213269ffa16b716b69619",
+            "revision": "af2c1e724bf2e558fcd8acaa4864b8f8d3443d1e",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "74a332f9a02ed60c70d22770b0082de84ca0f2c0452fdb964cb02b54eef04025",
-                "code": "6c420d62d1ba3afa2f0213269ffa16b716b69619",
-                "maintenance": "189b4f2381d2c01400b9fab0bf843cdd3716600147c1c0ca64bb335a0ee5851a"
+                "code": "af2c1e724bf2e558fcd8acaa4864b8f8d3443d1e",
+                "maintenance": "ddfd0f85cc9c6e31d13e247b187992bd591084bbf2b586039d861dbeb6937cb5"
             }
         }
     }

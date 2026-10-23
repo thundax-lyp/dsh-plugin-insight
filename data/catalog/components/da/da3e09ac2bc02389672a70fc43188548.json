@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "da3e09ac2bc02389672a70fc43188548",
+    "identity": "github:1424249299:host",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424249299:host",
+            "repository": "JialaoLiu/dsh-baton",
+            "path": "host",
+            "revision": "59148a706b8bdb98fb667f172848a6ce36e12914",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8772d397889c781c6b10df5752d6bd0dc6a4605e26be86a1b3a7096ab2b8af0a",
+                "code": "59148a706b8bdb98fb667f172848a6ce36e12914",
+                "maintenance": "2bd8ff992ec8d30d8830f40e503254a31846176b603208325a30e37624e18504"
+            }
+        }
+    }
+}

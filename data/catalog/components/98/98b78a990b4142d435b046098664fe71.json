@@ -7,14 +7,14 @@
             "id": "github:1345982757:integrations-dsh-agent-deck",
             "repository": "NeoXider/neoxider-agent-deck",
             "path": "integrations/dsh-agent-deck",
-            "revision": "b651c5624a6c9dcb7a20d19a2aa5061e0d3fe22d",
+            "revision": "9ecc28a5af9774d2bf2e6511ba12895840a9e4be",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d8bbc6340ddc1fed84e13ed7ed4010f9eedde405bcf66545d9675058ff2e6ed9",
-                "code": "b651c5624a6c9dcb7a20d19a2aa5061e0d3fe22d",
-                "maintenance": "4ad5bc9c52534defec6cb51a19e55de2ad0a46732e0f78344bcd42e16be4d132"
+                "code": "9ecc28a5af9774d2bf2e6511ba12895840a9e4be",
+                "maintenance": "99b88ff943fda5a117746c5b9aeda1f763fa92b1951a1fed4e181e1da97e18ee"
             }
         }
     }

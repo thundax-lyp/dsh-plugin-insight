@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d5fa4e0ff9a37d4f7fc651c375235771",
+    "identity": "github:1428087873:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428087873:root",
+            "repository": "wanwulizhi/dsh-claude-code-sdk",
+            "path": "",
+            "revision": "57ac2a44ccfa02d75f8a7c4f12b0f3a1b036f1f0",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d2429b0a23c5edec344abf81492119d31122c98d67c5068b0c697d1fb69ebbc3",
+                "code": "57ac2a44ccfa02d75f8a7c4f12b0f3a1b036f1f0",
+                "maintenance": "7b84727794aa2ecdd1c04c631e904194eeaf48d1ec1aeb014b56af7f478ae5e2"
+            }
+        }
+    }
+}

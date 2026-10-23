@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "f97776aa582123ac08a1b8779dafaf06",
+    "identity": "github:1427047358:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427047358:root",
+            "repository": "zz12hui/dsh-deai-audit",
+            "path": "",
+            "revision": "ce971442820a33e2c58af6a302deba4d8dda5b59",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7409faf432670b9faccf0066b74996b367a764322612ce9d8e778ac8ed2ab8d6",
+                "code": "ce971442820a33e2c58af6a302deba4d8dda5b59",
+                "maintenance": "921e7b4dd4cc81765716ccd04d841445f397071ac5ce7f3778a62a04d9fc9f68"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d7097a87113c32fbfe2e00114b7f2af7",
+    "identity": "github:1428479511:packages-profile",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428479511:packages-profile",
+            "repository": "Yurzi/dsh-tool-web-enhanced",
+            "path": "packages/profile",
+            "revision": "9aeb709b1bd2066503338e84eae00564bd9adb77",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "333b0f6e210176e1ea4829aba35e3f018ec942a0e4485ba2a51858c29ec8ca72",
+                "code": "9aeb709b1bd2066503338e84eae00564bd9adb77",
+                "maintenance": "eab2251cdc27e1c27cfe88c2b983d0f87b8319e9ac1aea37be3254ce17cd74d8"
+            }
+        }
+    }
+}

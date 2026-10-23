@@ -7,14 +7,14 @@
             "id": "github:1335080638:dsh-review",
             "repository": "Tlyer233/dsh-vscode-review",
             "path": "dsh-review",
-            "revision": "b4c2df94b900e0ed742e72c0b508505ae87a6b6b",
+            "revision": "ca293e115b03a4e47c3a9614e71bed5ace5ff013",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d63a725dfa92337fca667f958a7a6ac30e01069ebb3b4261a94e192ef7a84aa8",
-                "code": "b4c2df94b900e0ed742e72c0b508505ae87a6b6b",
-                "maintenance": "f4e5b4f193fe7e438a1e3b2a873e52fe02e7d495c99d188bc15c1621d062da50"
+                "code": "ca293e115b03a4e47c3a9614e71bed5ace5ff013",
+                "maintenance": "1e4c1330b13660e445c39a3782391ca194db942fab80354a85358bf26949a007"
             }
         }
     }

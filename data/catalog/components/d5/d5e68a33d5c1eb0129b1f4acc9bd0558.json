@@ -7,14 +7,14 @@
             "id": "github:1424595969:root",
             "repository": "jidekaixin2dian/dsh-toolgate",
             "path": "",
-            "revision": "0066fdb2e5be72bb3817d79d73467e1ce42daf84",
+            "revision": "070ecd515d319bf68a8f8c1836a933d322ad3315",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5abe8343c56bbcdcbce57fd311c31a65505b5cd737997424998b337e1535f67e",
-                "code": "0066fdb2e5be72bb3817d79d73467e1ce42daf84",
-                "maintenance": "2fa6e2a812dc671cb2fa87759f52146fb8c74327c406ea198fd13323f4c4d2e5"
+                "code": "070ecd515d319bf68a8f8c1836a933d322ad3315",
+                "maintenance": "8be220fcaac27413096040e76a64a47feb6758d677f5599e780c931c57f2fb3b"
             }
         }
     }

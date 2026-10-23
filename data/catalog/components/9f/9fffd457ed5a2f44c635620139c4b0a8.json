@@ -3,6 +3,476 @@
     "id": "9fffd457ed5a2f44c635620139c4b0a8",
     "identity": "github:1335244607:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1335244607:root",
+            "repository_id": 1335244607,
+            "component_id": "root",
+            "repository": "AbcdefgXW/dsh-toolbox-web",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-toolbox-web",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "36f8d999442c18fa39729393f5a9e4a7590795014ee3b9ba07cd30602b7b7a27",
+                "code": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                "maintenance": "be2a57be28dc5fc188fe457a7b6bfeca81cc4d86b2e97d1f2546a186435ae183"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1335244607-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:08:14.986Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1335244607-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AbcdefgXW/dsh-toolbox-web",
+                            "commit": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                            "path": "README.md",
+                            "content_sha256": "f157dcf59599bd449aa38a364c2592844d94c65ef3926e7559c8a1007cb3440b"
+                        }
+                    ],
+                    "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                    "captured_at": "2026-10-23T02:08:14.986Z",
+                    "summary": "为 DSH Web 提供会话、目录、搜索、回收站、配置与预设等管理面板。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/abcdefgxw--dsh-toolbox-web/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1335244607-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AbcdefgXW/dsh-toolbox-web",
+                            "commit": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                            "path": "README.md",
+                            "content_sha256": "f157dcf59599bd449aa38a364c2592844d94c65ef3926e7559c8a1007cb3440b"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbcdefgXW/dsh-toolbox-web",
+                            "commit": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                            "path": "index.js",
+                            "content_sha256": "cad3f3bcf86485176b12dc049d11dca486a02061110d8bc907ca6bb09bb22354"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbcdefgXW/dsh-toolbox-web",
+                            "commit": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                            "path": "lib/messages.js",
+                            "content_sha256": "ed877b1bbead36c6b679da292d730ae0f9b5268e182d1e59013d4943f24e0a85"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbcdefgXW/dsh-toolbox-web",
+                            "commit": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                            "path": "lib/sessions.js",
+                            "content_sha256": "c22fb88251474d7e65d5a5c2f2831fd4006bc82b02f75d46fcb5e38100a7a4d7"
+                        },
+                        {
+                            "repository_url": "https://github.com/AbcdefgXW/dsh-toolbox-web",
+                            "commit": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                            "path": "lib/trash.js",
+                            "content_sha256": "8931c11c3196bf62b49f6755b7f7a905e1647753317fdf073c18215b4d88291d"
+                        }
+                    ],
+                    "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                    "captured_at": "2026-10-23T02:08:14.986Z",
+                    "summary": "核查 README.md、index.js、lib/messages.js、lib/sessions.js、lib/trash.js；Cordis Service通过typert注册管理方法，模块直接读取压缩会话和目录，支持会话拷贝/分叉、消息截断/编辑、回收站和可选嵌入搜索。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/abcdefgxw--dsh-toolbox-web/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查后端Service、会话/消息/回收站模块与统计预算；未审核全部客户端、定时渠道或嵌入供应商。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向大量会话与工作目录的DSH用户；合格结果是能找到、整理和恢复目标资料，并保持宿主可见状态与磁盘一致。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Cordis Service通过typert注册管理方法，模块直接读取压缩会话和目录，支持会话拷贝/分叉、消息截断/编辑、回收站和可选嵌入搜索。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查后端Service、会话/消息/回收站模块与统计预算；未审核全部客户端、定时渠道或嵌入供应商。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "根JS包、多个后端模块和Client，state目录默认位于插件目录；升级保存策略需独立核对。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 索引、备份及插件资源 | 查目录/日志格式、建立备份 | 配置量较多，耗时未知 |\n| 持续使用 | 同步解压、缓存、可选模型费 | 标签整理和结果复核 | 大会话受预算控制但未实测 |\n| 失败恢复 | 原文件、备份及trash空间 | 核对代际、原路径和内存状态 | 默认state位置及TTL需管理 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "当前建议观察。可先在复制profile使用只读列表与搜索，消息截断、编辑和批量整理应等代际与备份语义核对后再用；不要依赖插件state作为唯一备份。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 集中管理 | Service对多个模块接线 | 对大量会话净节时 |\n| 删除恢复 | 回收站元数据与冲突后缀 | 升级/断电下完整恢复 |\n| 消息写入 | 截断编辑实现存在 | 新日志代际正确目标与活跃会话一致性 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "列表统计用setImmediate让出和预览数量/大小预算，是改善宿主响应的可借鉴手段；但消息管理仍用同步文件写回，读取和写入的代际解析不一致。回收站跨设备复制后删除并单独写meta，需考虑中断窗口；不应以有回收站就称无损管理。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "相对分散终端脚本，贡献是统一管理入口及回收站/搜索组织；部分功能直接改宿主日志而非调用原生会话控制，便利与数据格式维护成本绑定。[Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "消息读取尾部已适配最高代日志，但truncate/edit仍固定session.jsonl.zstd，且备份失败返回null后仍写入；这使新代日志与失败恢复成为实质源码边界，未做宿主复现。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "business_value",
+                    "basis": "unverified",
+                    "text": "未验证假设是将会话写操作迁到宿主控制API或至少统一最高代解析并强制备份成功，再核对内存/落盘一致性；比较迁移会话的误改和恢复率，若兼容负担不降则否定。[Q05](#research-q05)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335244607:root",
+                            "area": "code",
+                            "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.986Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T02:08:14.986Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                "reviewed_at": "2026-10-23T02:08:14.986Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335244607:root",
+                        "area": "code",
+                        "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty常规管理整合；mechanism是多模块接线与预算优化；transferability部分缓存策略可复用；simplification被直接格式维护抵消。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow集中会话资料整理；delivery仍为既有资料；reach降低终端门槛；economics无净节时实测。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1335244607-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "统一管理入口有价值，但直接日志写入、代际不一致和备份失败继续的边界阻碍当前写操作采用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "大量会话整理有明确任务。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "集中入口和回收站增加便利，原生替代仍可用。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定版本源码支持机制；本轮未执行目标代码或同版本宿主验收，效果仍不确定。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "数据写入、格式兼容与独立备份负担较高。"
+                    }
+                },
+                "score": 54,
+                "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                "reviewed_at": "2026-10-23T02:08:14.986Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1335244607-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335244607:root",
+                        "area": "code",
+                        "fingerprint": "c915fdb857bea9380ed0c181169d43c8350c4d7e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335244607:root",
+            "repository": "AbcdefgXW/dsh-toolbox-web",
+            "path": "",
+            "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+            "fingerprints": {
+                "directory": "36f8d999442c18fa39729393f5a9e4a7590795014ee3b9ba07cd30602b7b7a27",
+                "code": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+                "maintenance": "be2a57be28dc5fc188fe457a7b6bfeca81cc4d86b2e97d1f2546a186435ae183"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "92cb360b22ed1a889af2bac8b8571817d461e9ea33e03310f27bcf3cc4c61153"
+        },
+        "publication.metadata": "data/plugins/abcdefgxw--dsh-toolbox-web/META.json",
+        "publication.summaries": {
+            "text": "为 DSH Web 提供会话、目录、搜索、回收站、配置与预设等管理面板。",
+            "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+            "source_url": "https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+            "items": {
+                "界面": "会话、目录、搜索、回收站及配置/预设管理",
+                "Host 路由": "typert远程管理方法",
+                "后台": "统计缓存、索引及回收站清理"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 会话/目录管理 | 搜索、复制、分叉及整理 | 直接文件格式耦合，需备份 |\n| 消息截断和编辑 | 从指定seq重建日志 | 固定旧文件名，需核对代际 |\n| 回收站 | 恢复删除的会话或目录 | TTL和state持久化需检查 |\n| 配置/预设与嵌入搜索 | 集中维护及查询 | 可选外部模型费用未知 |"
+        },
+        "publication.advice": {
+            "revision": "c915fdb857bea9380ed0c181169d43c8350c4d7e",
+            "text": "当前建议观察。可先在复制profile使用只读列表与搜索，消息截断、编辑和批量整理应等代际与备份语义核对后再用；不要依赖插件state作为唯一备份。[Q04](#research-q04)"
+        },
+        "registry": "data/plugins/abcdefgxw--dsh-toolbox-web",
+        "reports": "# dsh-toolbox-web\n\n> 为 DSH Web 提供会话、目录、搜索、回收站、配置与预设等管理面板。\n\n## 研究范围\n\n- **仓库**：[AbcdefgXW/dsh-toolbox-web](https://github.com/AbcdefgXW/dsh-toolbox-web)\n- **版本号**：0.1.29（[固定提交 c915fdb857bea9380ed0c181169d43c8350c4d7e](https://github.com/AbcdefgXW/dsh-toolbox-web/tree/c915fdb857bea9380ed0c181169d43c8350c4d7e)）\n- **版本日期**：2026-09-16（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。\n\n## 洞察短评\n\n- **用途**：面向大量会话与工作目录的DSH用户；合格结果是能找到、整理和恢复目标资料，并保持宿主可见状态与磁盘一致。\n- **亮点**：相对分散终端脚本，贡献是统一管理入口及回收站/搜索组织；部分功能直接改宿主日志而非调用原生会话控制，便利与数据格式维护成本绑定。[Q01](#research-q01)\n- **思考**：消息读取尾部已适配最高代日志，但truncate/edit仍固定session.jsonl.zstd，且备份失败返回null后仍写入；这使新代日志与失败恢复成为实质源码边界，未做宿主复现。[Q03](#research-q03)\n- **建议**：未验证假设是将会话写操作迁到宿主控制API或至少统一最高代解析并强制备份成功，再核对内存/落盘一致性；比较迁移会话的误改和恢复率，若兼容负担不降则否定。[Q05](#research-q05)\n\n采用建议：当前建议观察。可先在复制profile使用只读列表与搜索，消息截断、编辑和批量整理应等代际与备份语义核对后再用；不要依赖插件state作为唯一备份。[Q04](#research-q04)\n\n## 核心贡献\n\n相对分散终端脚本，贡献是统一管理入口及回收站/搜索组织；部分功能直接改宿主日志而非调用原生会话控制，便利与数据格式维护成本绑定。[Q01](#research-q01)\n\n## 关键质疑\n\n消息读取尾部已适配最高代日志，但truncate/edit仍固定session.jsonl.zstd，且备份失败返回null后仍写入；这使新代日志与失败恢复成为实质源码边界，未做宿主复现。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是将会话写操作迁到宿主控制API或至少统一最高代解析并强制备份成功，再核对内存/落盘一致性；比较迁移会话的误改和恢复率，若兼容负担不降则否定。[Q05](#research-q05)\n\n复制包含v0/vN日志的profile，对照原生列表和各写操作；人为使备份目录不可写，验证是否应拒绝，再模拟回收站中断核对原文，未执行。\n\n## 场景与替代办法\n\n面向大量会话与工作目录的DSH用户；合格结果是能找到、整理和恢复目标资料，并保持宿主可见状态与磁盘一致。\n\n宿主原生会话管理加系统目录工具可替代部分功能；直接脚本需要理解zstd代际格式，本组件将其封装为UI但没有消除底层耦合。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH settings、typert、agents | 必需 | 服务与界面接线 | 注册不可用 |\n| 可读写DSH会话与工作区 | 管理必需 | 索引和文件变更 | 权限失败或格式不匹配 |\n| 嵌入模型/供应商 | 语义搜索可选 | 建索引和查询 | 可用普通搜索；价格未知 |\n| 独立备份与停止写入 | 写操作前必要控制 | 恢复和一致性 | 内置备份失败不会自动拒绝 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 在复制profile核对路径与日志代际 | 只读列表/搜索与原生一致 |\n| 2 | 先试回收站和恢复副本 | 原路径冲突处理可理解 |\n| 3 | 消息写操作前停止会话并独立备份 | 核对最高代文件与宿主刷新；异常保留副本 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 索引、备份及插件资源 | 查目录/日志格式、建立备份 | 配置量较多，耗时未知 |\n| 持续使用 | 同步解压、缓存、可选模型费 | 标签整理和结果复核 | 大会话受预算控制但未实测 |\n| 失败恢复 | 原文件、备份及trash空间 | 核对代际、原路径和内存状态 | 默认state位置及TTL需管理 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 集中管理 | Service对多个模块接线 | 对大量会话净节时 |\n| 删除恢复 | 回收站元数据与冲突后缀 | 升级/断电下完整恢复 |\n| 消息写入 | 截断编辑实现存在 | 新日志代际正确目标与活跃会话一致性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：AbcdefgXW/dsh-toolbox-web 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 工具箱统一入口适合什么任务？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n大量会话、目录和配置分散时，用户需要搜索、整理并恢复目标资料。源码Service聚合sessions、workspace、search、embed、trash、presets等模块，降低单独运行脚本的入口负担。合格交付仍是资料准确可恢复，不是管理活动本身。部分原生功能和系统工具已有替代，因此价值取决于频率与维护代价，不能用功能数量推断效率。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:19-60](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/index.js#L19-L60)\n\n具体聚合模块与操作。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nimport {\n  listAllSessions,\n  deleteSession,\n  copySession,\n  resetSessionCwd,\n  nextCopySuffix,\n  forkSession,\n  readSessionTitle,\n  readSessionStats,\n  readSessionStatsLite,\n  clearProjCache,\n  WORKSPACE_ROOT,\n} from \"./lib/sessions.js\";\nimport { sessionStatsReliable, warmStatsCache } from \"./lib/stats-cache.js\";\nimport {\n  listSubdirs,\n  createSubdir,\n  renameSubdir,\n  deleteSubdir,\n  copySubdir,\n  refreshSessionCounts,\n} from \"./lib/workspace.js\";\nimport {\n  searchAll,\n  setOfficialSearch,\n  getOfficialSearchState,\n  clearSearchCache,\n  readMessagesBySeqs,\n} from \"./lib/search.js\";\nimport { buildEmbedIndex, embedQuery, listEmbedModels, testEmbedConnection } from \"./lib/embed.js\";\nimport {\n  trashItem,\n  listTrash,\n  restoreTrashEntry,\n  emptyTrash,\n  startTrashWatcher,\n} from \"./lib/trash.js\";\nimport { getConfig, setConfigField, resetConfig } from \"./lib/config.js\";\nimport { listPresets, readPresetFile, savePresetFile } from \"./lib/presets.js\";\nimport { decompressFirstFrame } from \"./lib/zstd.js\";\nimport { listTags, setSessionTags, removeTag, renameTag } from \"./lib/tags.js\";\nimport { listMessagesTail, truncateSessionAt, editMessageAt } from \"./lib/messages.js\";\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:123-129](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/index.js#L123-L129)\n\ntypert Service接线。\n\n```text\nexport const inject = [\"settings\", \"typert\", \"agents\"];\n\n/** 端点实现：一个 Service，方法名 = typert 端点 method。 */\nclass ToolsApi extends Service {\n  constructor(ctx) {\n    super(ctx, \"dsh-toolbox-api\");\n    this.typertRemote = bindTypertRemote(this, this.name, { namespace: \"dsh-toolbox\" });\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 管理方法怎样到达磁盘与回收站？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nService从DSH配置注入，模块直接读取zstd日志和会话目录。trashItem先创建条目目录，移动内容后写原路径与时间元数据；跨设备时复制后删除源。restore读取meta并在冲突时加恢复后缀。消息编辑另有备份路径。这些是多个持久化阶段，不能自动当事务；需核对插件state目录和保留策略。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/trash.js:16-45](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/trash.js#L16-L45)\n\nstate位置及分阶段移动/写meta。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nconst TRASH_ROOT = path.join(\n  process.env.DSH_CHANNELS_STATE_DIR?.trim() ||\n    path.join(fileURLToPath(new URL(\"../\", import.meta.url)), \"state\"),\n  \"trash\",\n);\n\n/** 跨设备安全移动（rename 失败时 fallback 复制+删除）。 */\nfunction moveAcrossDevices(src, dst) {\n  try {\n    fs.renameSync(src, dst);\n  } catch (err) {\n    if (err?.code !== \"EXDEV\") throw err;\n    fs.cpSync(src, dst, { recursive: true });\n    fs.rmSync(src, { recursive: true, force: true });\n  }\n}\n\n/** 把路径移入回收站。 */\nexport function trashItem({ type, name, sourcePath, meta = {} }) {\n  fs.mkdirSync(TRASH_ROOT, { recursive: true });\n  const seq = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);\n  const entryDir = path.join(TRASH_ROOT, `${type}-${seq}-${sanitize(name)}`);\n  fs.mkdirSync(entryDir, { recursive: true });\n  moveAcrossDevices(sourcePath, path.join(entryDir, \"data\"));\n  fs.writeFileSync(\n    path.join(entryDir, \"meta.json\"),\n    JSON.stringify({ type, name, sourcePath, deletedAt: Date.now(), ...meta }, null, 2),\n    \"utf-8\",\n  );\n  return entryDir;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/trash.js:70-89](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/trash.js#L70-L89)\n\n恢复冲突处理。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/** 恢复：移回原路径（原路径被占用时改名 -恢复x）。 */\nexport function restoreTrashEntry(entryDir) {\n  const metaPath = path.join(entryDir, \"meta.json\");\n  if (!fs.existsSync(metaPath)) return { ok: false, error: \"元数据丢失\" };\n  const meta = JSON.parse(fs.readFileSync(metaPath, \"utf-8\"));\n  const dataPath = path.join(entryDir, \"data\");\n  if (!fs.existsSync(dataPath)) return { ok: false, error: \"数据缺失\" };\n  let target = meta.sourcePath;\n  if (fs.existsSync(target)) {\n    let n = 1;\n    const base = target;\n    while (fs.existsSync(target)) {\n      target = `${base}-恢复${n}`;\n      n += 1;\n    }\n  }\n  fs.mkdirSync(path.dirname(target), { recursive: true });\n  moveAcrossDevices(dataPath, target);\n  fs.rmSync(entryDir, { recursive: true, force: true });\n  return { ok: true, restoredTo: target };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/messages.js:17-33](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L17-L33)\n\n独立备份位置和失败返回null。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nconst BACKUP_ROOT = path.join(fileURLToPath(new URL(\"../\", import.meta.url)), \"state\", \"backups\");\n\n/** 操作前备份原会话文件（保留最近 20 份）。 */\nfunction backupFile(file) {\n  try {\n    fs.mkdirSync(BACKUP_ROOT, { recursive: true });\n    const name = path.basename(path.dirname(file)) + \"-\" + Date.now() + \".zstd\";\n    fs.copyFileSync(file, path.join(BACKUP_ROOT, name));\n    // 清理：只保留最近 20 个\n    const all = fs.readdirSync(BACKUP_ROOT).sort();\n    while (all.length > 20) {\n      fs.rmSync(path.join(BACKUP_ROOT, all.shift()), { force: true });\n    }\n    return name;\n  } catch {\n    return null;\n  }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 代际日志和备份失败如何影响写操作？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nlistMessagesTail明确通过resolveSessionLog读取最高代文件；truncateSessionAt和editMessageAt仍固定session.jsonl.zstd。若宿主使用vN代日志，读到的目标与写入目标可能不同，这是源码边界而非已复现事故。backupFile捕获错误返回null，调用者随后仍解压并writeFileSync，因此不能承诺“操作前一定成功备份”。同步写回也需协调宿主内存与活动会话，当前未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/messages.js:87-92](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L87-L92)\n\n尾部读取已采用最高代解析。\n\n```text\nexport function listMessagesTail(sessionPath, limit = 20) {\n  // 【修正】官方加载器只认「最高代」日志（v0 = session.jsonl.zstd；vN = session.v<N>.jsonl.zstd）。\n  // 旧实现硬编码 session.jsonl.zstd，导致迁移到 v3 代之后的会话取不到最新消息预览（返回\"会话文件不存在\"）。\n  const log = resolveSessionLog(sessionPath);\n  const file = log ? log.file : path.join(sessionPath, \"session.jsonl.zstd\");\n  if (!fs.existsSync(file)) return { ok: false, error: \"会话文件不存在\" };\n```\n\n**依据 2 · 源码核查**：[lib/messages.js:141-173](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L141-L173)\n\n截断固定文件并不检查备份成功后再写。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n/** 截断：保留 seq < atSeq 的所有事件（删除目标消息及其后全部）。 */\nexport function truncateSessionAt(sessionPath, atSeq) {\n  const file = path.join(sessionPath, \"session.jsonl.zstd\");\n  if (!fs.existsSync(file)) return { ok: false, error: \"会话文件不存在\" };\n  const backup = backupFile(file);\n  const text = decompressSessionFile(file);\n  const lines = text.split(\"\\n\");\n  const keep = [];\n  let header = null;\n  let removed = 0;\n  for (const line of lines) {\n    if (!line.trim()) continue;\n    let ev;\n    try {\n      ev = JSON.parse(line);\n    } catch {\n      continue;\n    }\n    if (header === null) {\n      header = ev; // 首行 header 保留\n      keep.push(line);\n      continue;\n    }\n    if (typeof ev.seq === \"number\" && ev.seq >= atSeq) {\n      removed += 1;\n      continue;\n    }\n    keep.push(line);\n  }\n  if (header === null) return { ok: false, error: \"文件结构异常\" };\n  const out = compressSessionText(keep.join(\"\\n\"));\n  fs.writeFileSync(file, out);\n  return { ok: true, removed, kept: keep.length, backup };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/messages.js:176-181](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L176-L181)\n\n编辑同样固定文件名。\n\n```text\n/** 编辑：替换目标消息文本 + 删除其后所有事件（该消息保留）。 */\nexport function editMessageAt(sessionPath, atSeq, content) {\n  const file = path.join(sessionPath, \"session.jsonl.zstd\");\n  if (!fs.existsSync(file)) return { ok: false, error: \"会话文件不存在\" };\n  const backup = backupFile(file);\n  const text = decompressSessionFile(file);\n```\n\n#### 缺口\n\n- 实际新宿主日志、活跃内存和失败恢复未复现\n  **影响**：妨碍关键会话写入采用\n  **进一步探讨**：复制vN会话并模拟备份失败，核对真实写入目标与宿主显示。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样控制资料管理的失败成本？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n当前建议先观察并仅在复制profile做只读浏览搜索。写操作应独立备份、停止会话并确认最高代文件，不能把内置备份或回收站当唯一恢复机制。持续成本包括同步解压、索引、备份空间和可选嵌入模型费用。源码的预览上限与事件循环让出改善响应设计，但作者测量注释未独立复核，不能据此报告本轮性能。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:151-180](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/index.js#L151-L180)\n\n列表预算与让出机制。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    // 【性能约束】原实现在一个 handler 里对全部会话同步「算统计 + 解压取最新消息」，\n    // 实测 216 个会话合计约 11.5s，且中途不让出事件循环 → Node 主线程被独占，\n    // 用户此时切到「预设 / 配置文件 / 子目录」等其它 Tab，请求全部排在后面（表现为\"什么都要等会话加载完\"）。\n    // 现改为两条约束：\n    //   ① 逐条处理时定期让出事件循环（setImmediate），让其它工具调用能插空执行；\n    //   ② 最新消息预览只对「最近活跃 + 体积可控」的前 N 个取，并设总时间预算，超预算即停（其余留空）。\n    const yieldLoop = () => new Promise((r) => setImmediate(r));\n    // 单会话超过该体积不预取预览：解压是同步操作，单个 16MB 会话实测就要 3.3s，无法中断。\n    const LATEST_MAX_BYTES = 4 * 1024 * 1024;\n    const LATEST_LIMIT = 40;\n    const LATEST_BUDGET_MS = 1500;\n    let i = 0;\n    for (const s of all) {\n      if (archivedIds.has(s.sessionId) || archivedIds.has(s.sessionDir)) continue;\n      const stats = sessionStatsReliable(s.path, s.sessionId);\n      let mtimeMs = 0;\n      try { mtimeMs = fs.statSync(s.path).mtimeMs; } catch {}\n      out.push({\n        sessionId: s.sessionId,\n        cwd: s.cwd,\n        title: stats?.title ?? null,\n        size: stats?.size ?? 0,\n        turns: stats?.turns ?? 0,\n        latest: null, // 由下面的「最近活跃」批次补；未补到的保持 null，前端自动不显示该行\n        parentSession: s.header?.parentSession ?? null, // 子代理会话标记（前端分 tab 管理）\n        delegationDepth: s.header?.delegationDepth ?? 0,\n        _path: s.path,   // 内部临时字段，返回前删除\n        _mtime: mtimeMs, // 内部临时字段，返回前删除\n      });\n      if ((++i & 15) === 0) await yieldLoop();\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/trash.js:103-110](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/trash.js#L103-L110)\n\n回收站保留策略会影响恢复。\n\n```text\n/**\n * 自动清除：删除超过 retentionDays 的条目。\n * @param {number} retentionDays 0 = 不自动清\n * @returns 清除的条目数\n */\nexport function purgeTrash(retentionDays) {\n  if (!retentionDays || retentionDays <= 0) return 0;\n  const cutoff = Date.now() - retentionDays * 24 * 60 * 60 * 1000;\n```\n\n**依据 3 · 源码核查**：[lib/messages.js:19-33](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L19-L33)\n\n备份数量与失败语义。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/** 操作前备份原会话文件（保留最近 20 份）。 */\nfunction backupFile(file) {\n  try {\n    fs.mkdirSync(BACKUP_ROOT, { recursive: true });\n    const name = path.basename(path.dirname(file)) + \"-\" + Date.now() + \".zstd\";\n    fs.copyFileSync(file, path.join(BACKUP_ROOT, name));\n    // 清理：只保留最近 20 个\n    const all = fs.readdirSync(BACKUP_ROOT).sort();\n    while (all.length > 20) {\n      fs.rmSync(path.join(BACKUP_ROOT, all.shift()), { force: true });\n    }\n    return name;\n  } catch {\n    return null;\n  }\n```\n\n</details>\n\n#### 缺口\n\n- 总人工时间、资源峰值和恢复率未知\n  **影响**：不能量化整理收益或无损保证\n  **进一步探讨**：固定会话集比较只读搜索和写入恢复的完整耗时与成功判据。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 原生控制API或统一解析能否减少格式维护？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设优先用宿主会话控制接口管理写操作；缺接口时至少统一最高代解析、强制备份成功并核对活动内存。推导来自读写路径不一致和非强制备份。以迁移日志、旧日志、不可写备份和并发会话为对照，检查错代写入与可恢复率；如果宿主接口缺关键能力，可保留只读工具箱，不应继续放宽写入保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/messages.js:87-92](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L87-L92)\n\n已有解析器可作统一入口。\n\n```text\nexport function listMessagesTail(sessionPath, limit = 20) {\n  // 【修正】官方加载器只认「最高代」日志（v0 = session.jsonl.zstd；vN = session.v<N>.jsonl.zstd）。\n  // 旧实现硬编码 session.jsonl.zstd，导致迁移到 v3 代之后的会话取不到最新消息预览（返回\"会话文件不存在\"）。\n  const log = resolveSessionLog(sessionPath);\n  const file = log ? log.file : path.join(sessionPath, \"session.jsonl.zstd\");\n  if (!fs.existsSync(file)) return { ok: false, error: \"会话文件不存在\" };\n```\n\n**依据 2 · 源码核查**：[lib/messages.js:141-173](https://github.com/AbcdefgXW/dsh-toolbox-web/blob/c915fdb857bea9380ed0c181169d43c8350c4d7e/lib/messages.js#L141-L173)\n\n当前写操作是需要替换的参照。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n/** 截断：保留 seq < atSeq 的所有事件（删除目标消息及其后全部）。 */\nexport function truncateSessionAt(sessionPath, atSeq) {\n  const file = path.join(sessionPath, \"session.jsonl.zstd\");\n  if (!fs.existsSync(file)) return { ok: false, error: \"会话文件不存在\" };\n  const backup = backupFile(file);\n  const text = decompressSessionFile(file);\n  const lines = text.split(\"\\n\");\n  const keep = [];\n  let header = null;\n  let removed = 0;\n  for (const line of lines) {\n    if (!line.trim()) continue;\n    let ev;\n    try {\n      ev = JSON.parse(line);\n    } catch {\n      continue;\n    }\n    if (header === null) {\n      header = ev; // 首行 header 保留\n      keep.push(line);\n      continue;\n    }\n    if (typeof ev.seq === \"number\" && ev.seq >= atSeq) {\n      removed += 1;\n      continue;\n    }\n    keep.push(line);\n  }\n  if (header === null) return { ok: false, error: \"文件结构异常\" };\n  const out = compressSessionText(keep.join(\"\\n\"));\n  fs.writeFileSync(file, out);\n  return { ok: true, removed, kept: keep.length, backup };\n```\n\n</details>\n\n#### 缺口\n\n- 宿主写接口覆盖与原型未验证\n  **影响**：不是现有修复\n  **进一步探讨**：先定义允许的写入和恢复不变量，再在副本实现对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2e99981627b72887e49b1f60fbd75f358ae8ff12a888cd392861e0f2b789f980。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 14 | 6557 | 5648 | 683 | — |\n| .md | source | 2 | 369 | — | — | 4365 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 会话/目录管理 | 搜索、复制、分叉及整理 | 直接文件格式耦合，需备份 |\n| 消息截断和编辑 | 从指定seq重建日志 | 固定旧文件名，需核对代际 |\n| 回收站 | 恢复删除的会话或目录 | TTL和state持久化需检查 |\n| 配置/预设与嵌入搜索 | 集中维护及查询 | 可选外部模型费用未知 |\n\n## 工程亮点\n\n列表统计用setImmediate让出和预览数量/大小预算，是改善宿主响应的可借鉴手段；但消息管理仍用同步文件写回，读取和写入的代际解析不一致。回收站跨设备复制后删除并单独写meta，需考虑中断窗口；不应以有回收站就称无损管理。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/messages.js、lib/sessions.js、lib/trash.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查后端Service、会话/消息/回收站模块与统计预算；未审核全部客户端、定时渠道或嵌入供应商。\n- 下一步：复制包含v0/vN日志的profile，对照原生列表和各写操作；人为使备份目录不可写，验证是否应拒绝，再模拟回收站中断核对原文，未执行。\n",
+        "metadata": {
+            "repository": "AbcdefgXW/dsh-toolbox-web",
+            "repository_id": 1335244607,
+            "captured_at": "2026-10-23T01:50:56.685Z",
+            "window_start": "2026-09-23T01:50:56.685Z",
+            "stars": 5,
+            "pushed_at": "2026-09-15T18:44:10Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C976:37EE1A:177541:1948C8:6ADABD83 and timestamp 2026-10-23 01:50:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA16:31129F:113E8C7:128A627:6ADABD84 and timestamp 2026-10-23 01:51:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A56.685Z..2026-10-23T01%3A50%3A56.685Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB16:102599:133EAD0:148BD4D:6ADABD85 and timestamp 2026-10-23 01:51:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A56.685Z..2026-10-23T01%3A50%3A56.685Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC24:102599:133EBA1:148BE25:6ADABD86 and timestamp 2026-10-23 01:51:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAbcdefgXW%2Fdsh-toolbox-web%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A56.685Z..2026-10-23T01%3A50%3A56.685Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD3E:324C6A:14890EB:15D626D:6ADABD88 and timestamp 2026-10-23 01:51:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-toolbox-web",
+                "captured_at": "2026-10-23T01:51:04.628Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 977,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-toolbox-web",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-16T06:40:23.890Z",
+                    "captured_at": "2026-10-23T01:51:04.628Z",
+                    "source_url": "https://registry.npmjs.org/dsh-toolbox-web",
+                    "error": null,
+                    "latest_version": "0.1.29",
+                    "latest_published_at": "2026-09-15T19:46:39.471Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1335244607:root",
             "repository": "AbcdefgXW/dsh-toolbox-web",

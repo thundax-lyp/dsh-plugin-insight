@@ -3,6 +3,463 @@
     "id": "63797c4aba3e81800216e9db332c9981",
     "identity": "github:1426448931:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1426448931:root",
+            "repository_id": 1426448931,
+            "component_id": "root",
+            "repository": "AaronKate/dsh-codex-appearance",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-eye-comfort",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "fb165e82cdd2daabda7513863c91d83d10d81562475e6d3d3f202d5bc3a971df",
+                "code": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                "maintenance": "f66c617b4c3e30133f31d5e9b50d6acb46b2aa3d75d8c998f2e83120d04e815f"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1426448931-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T01:54:48.410Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1426448931-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AaronKate/dsh-codex-appearance",
+                            "commit": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                            "path": "README.md",
+                            "content_sha256": "41e5e5e72530400cde8430c4031181e69f98758ebc54bd5f3a07632cacf891d6"
+                        }
+                    ],
+                    "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                    "captured_at": "2026-10-23T01:54:48.410Z",
+                    "summary": "为 DSH 提供主题、字体字号、内容宽度、对比度、纸张纹理与动态效果设置。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aaronkate--dsh-codex-appearance/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1426448931-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AaronKate/dsh-codex-appearance",
+                            "commit": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                            "path": "lib/index.js",
+                            "content_sha256": "50cf83a6e0c199f97c909a66da6f79152b7ff6fb9e6e46dbdb9ac706e6480001"
+                        },
+                        {
+                            "repository_url": "https://github.com/AaronKate/dsh-codex-appearance",
+                            "commit": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                            "path": "lib/client.js",
+                            "content_sha256": "bf49bddffe7d4c8685f87e66da2236014e1979847750c45d2803482897c872d6"
+                        },
+                        {
+                            "repository_url": "https://github.com/AaronKate/dsh-codex-appearance",
+                            "commit": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                            "path": "package.json",
+                            "content_sha256": "301e08cdaedb75f65cc776bd49787df230fbf52d2e3b0da9ae2eeb8a1ff1c9d7"
+                        }
+                    ],
+                    "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                    "captured_at": "2026-10-23T01:54:48.410Z",
+                    "summary": "核查 lib/index.js、lib/client.js、package.json；OS字体只读路由与缓存，浏览器localStorage设置驱动theme token及额外CSS，设置页和环境监听联动。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aaronkate--dsh-codex-appearance/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查Host字体路由、客户端状态/token/生命周期和包发布声明；未逐项视觉复验或测健康效果。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向默认外观不满足阅读偏好的桌面用户，以可读布局和可恢复设置为验收，不把护眼名称当健康疗效。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "OS字体只读路由与缓存，浏览器localStorage设置驱动theme token及额外CSS，设置页和环境监听联动。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查Host字体路由、客户端状态/token/生命周期和包发布声明；未逐项视觉复验或测健康效果。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT 0.3.7，包名dsh-eye-comfort；作者有Windows 0.2.0-rc.2验证声明，本轮未复验。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包资源、OS字体命令 | 安装重启、调参 | 费用/时间未测 |\n| 持续使用 | CSS/token重绘、本地存储 | 检查可读与主题冲突 | 无强制模型调用，耗时未知 |\n| 失败恢复 | 重载或重装 | 记录/重设参数、禁用 | 写盘异常旁路，恢复时间未知 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "单主题小范围试用，核代码/中文/链接、重启保存与禁用恢复；不把名称推为健康效果。参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 配置范围 | 主题/字体/token设置 | 真实宿主视觉一致性 |\n| 持久化 | localStorage与sanitize | 快速更新/异常后的最新保存 |\n| 阅读 | 可调整宽度与对比 | 正确率、疲劳和健康收益 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "可复用字体命令限时缓存和token清理；注意失败缓存需重启才重探、旧宿主无Connection时不加围栏以及延迟快照时序。详见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "将配色、字体、内容与动画设置整合到宿主token层，本机字体枚举减少手写CSS与候选遗漏；属集成便利。参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "lazy保存的旧快照可在后续即时更新后写回，且保存失败被旁路；本地外观正确不等于下次启动保留最新参数。参见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "未验证假设为修订号持久化与可回退对照预览，先用快速调参重载验证状态保留，再独立检验阅读收益。参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426448931:root",
+                            "area": "code",
+                            "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:54:48.410Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T01:54:48.410Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                "reviewed_at": "2026-10-23T01:54:48.410Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1426448931:root",
+                        "area": "code",
+                        "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为成熟主题机制的小幅组合；mechanism为token和OS字体的局部接线；transferability需宿主token；simplification统一设置有小幅操作减少，未证明新渲染机制。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow减少CSS配置；delivery仍是界面外观未改变业务交付；reach让非开发者可调字体；economics未识别新的成本结构，健康和效率未知不计分。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426448931-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "阅读定制价值明确且可禁用，先单主题验证重启保存与视觉布局，不依据护眼名称承诺健康收益。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "长期阅读偏好明确，个体收益未测。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "统一字体/token比手写CSS便利，宿主已有基本主题。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码与作者截图，无本轮宿主验收。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无强制模型服务，但调参、冲突与本地存储需核。"
+                    }
+                },
+                "score": 64,
+                "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                "reviewed_at": "2026-10-23T01:54:48.410Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1426448931-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1426448931:root",
+                        "area": "code",
+                        "fingerprint": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1426448931:root",
+            "repository": "AaronKate/dsh-codex-appearance",
+            "path": "",
+            "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+            "fingerprints": {
+                "directory": "fb165e82cdd2daabda7513863c91d83d10d81562475e6d3d3f202d5bc3a971df",
+                "code": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+                "maintenance": "f66c617b4c3e30133f31d5e9b50d6acb46b2aa3d75d8c998f2e83120d04e815f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "8074442ffc0d6c5eb64d99269eaf5b6a02d9935c8ffdf8bd9f5af2ce44804d9c"
+        },
+        "publication.metadata": "data/plugins/aaronkate--dsh-codex-appearance/META.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供主题、字体字号、内容宽度、对比度、纸张纹理与动态效果设置。",
+            "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+            "source_url": "https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+            "items": {
+                "界面": "主题、字体字号、宽度、动态效果与本机字体选择。",
+                "Host 路由": "只读系统字体清单接口。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 外观设置 | 调整阅读偏好 | 本地设置，不是健康效果保证 |\n| 字体枚举 | 展示本机字体 | OS命令可用，失败缓存/回退 |"
+        },
+        "publication.advice": {
+            "revision": "b07a9bdc4bcd37f23df4d93c82f271920f084b7f",
+            "text": "单主题小范围试用，核代码/中文/链接、重启保存与禁用恢复；不把名称推为健康效果。参见[Q04](#research-q04)。"
+        },
+        "registry": "data/plugins/aaronkate--dsh-codex-appearance",
+        "reports": "# dsh-eye-comfort\n\n> 为 DSH 提供主题、字体字号、内容宽度、对比度、纸张纹理与动态效果设置。\n\n## 研究范围\n\n- **仓库**：[AaronKate/dsh-codex-appearance](https://github.com/AaronKate/dsh-codex-appearance)\n- **版本号**：0.3.7（[固定提交 b07a9bdc4bcd37f23df4d93c82f271920f084b7f](https://github.com/AaronKate/dsh-codex-appearance/tree/b07a9bdc4bcd37f23df4d93c82f271920f084b7f)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n配置能力有源码支持；阅读/健康收益未验证，延迟持久化存在静态时序风险，修订号改进未实现。\n\n## 洞察短评\n\n- **用途**：面向默认外观不满足阅读偏好的桌面用户，以可读布局和可恢复设置为验收，不把护眼名称当健康疗效。\n- **亮点**：将配色、字体、内容与动画设置整合到宿主token层，本机字体枚举减少手写CSS与候选遗漏；属集成便利。参见[Q01](#research-q01)。\n- **思考**：lazy保存的旧快照可在后续即时更新后写回，且保存失败被旁路；本地外观正确不等于下次启动保留最新参数。参见[Q02](#research-q02)。\n- **建议**：未验证假设为修订号持久化与可回退对照预览，先用快速调参重载验证状态保留，再独立检验阅读收益。参见[Q04](#research-q04)。\n\n采用建议：单主题小范围试用，核代码/中文/链接、重启保存与禁用恢复；不把名称推为健康效果。参见[Q04](#research-q04)。\n\n## 核心贡献\n\n将配色、字体、内容与动画设置整合到宿主token层，本机字体枚举减少手写CSS与候选遗漏；属集成便利。参见[Q01](#research-q01)。\n\n## 关键质疑\n\nlazy保存的旧快照可在后续即时更新后写回，且保存失败被旁路；本地外观正确不等于下次启动保留最新参数。参见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设为修订号持久化与可回退对照预览，先用快速调参重载验证状态保留，再独立检验阅读收益。参见[Q04](#research-q04)。\n\n先验证滑杆lazy→非lazy主题切换→等待重载的状态，再核禁用和阅读对照；均未执行。\n\n## 场景与替代办法\n\n面向默认外观不满足阅读偏好的桌面用户，以可读布局和可恢复设置为验收，不把护眼名称当健康疗效。\n\n宿主浅深色模式和手写CSS是参照；本项主要节省配置接线，未建立健康或任务质量对照。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node>=22.19、Web扩展点 | 启动必需 | 插件与设置/token | 不启用，保留宿主主题 |\n| OS字体命令 | 可选增强 | 完整字体清单 | 候选探测回退 |\n| 可写localStorage | 持久化必需 | 保存设置 | 当次有效可能不留存 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户安装、移除旧包并重启 | 单一覆盖层，出现外观页 |\n| 2 | 用户选择主题与字号 | 正文/代码/链接可读 |\n| 3 | 用户重启并禁用检查 | 保存正确且原主题可恢复 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包资源、OS字体命令 | 安装重启、调参 | 费用/时间未测 |\n| 持续使用 | CSS/token重绘、本地存储 | 检查可读与主题冲突 | 无强制模型调用，耗时未知 |\n| 失败恢复 | 重载或重装 | 记录/重设参数、禁用 | 写盘异常旁路，恢复时间未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 配置范围 | 主题/字体/token设置 | 真实宿主视觉一致性 |\n| 持久化 | localStorage与sanitize | 快速更新/异常后的最新保存 |\n| 阅读 | 可调整宽度与对比 | 正确率、疲劳和健康收益 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：固定版本外观插件的配置增量、状态边界和采用条件是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 外观配置的实际贡献与“护眼”主张边界是什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n长时间阅读代码和聊天、对默认字号配色不适的桌面用户可在一处调整主题、界面/内容/代码字体、行距、宽度和动画。合格结果是文本可读、布局不遮挡、设置可恢复；并非医学上的视疲劳治疗。作者Windows安装和截图是作者报告，本轮未复验。\n\n相对宿主浅深色切换或手写CSS，插件把五种配色、主题token和内容样式联动，并通过本机字体枚举扩大选择。增量是配置整合与可达性，没有证据证明提高阅读正确率、保护眼健康或具原创配色算法。偏好已经由宿主满足的用户不必增加覆盖层。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.md:1-7](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/README.md#L1-L7)\n\n作者功能和Windows验证声明。\n\n```text\n# DeepSeek Harness 护眼外观插件\n\n在设置中增加「外观」页，提供五套护眼主题（暖白、米纸、豆沙绿、雾蓝、石墨），以及跟随系统/浅色/深色模式、强调色与背景色、界面与代码的字体和字号、字体样式、内容宽度、对比度、纸张质感和减少动态效果等设置。每套主题各自带有匹配的强调色与链接色，并覆盖消息气泡、轮次预览、输入框、改动文件卡片等界面区域；深色模式保持蓝灰。字体下拉会列出本机安装的全部字族（由插件主进程读取系统字体清单，读不到时回退到内置候选探测），可分别设置界面、内容与代码字体。纸张质感在内容区、侧栏、输入框和卡片上叠一层极淡的纸纤维颗粒，强度可调；纹理自带主题底色，不改变原有色温，也不触碰原生标题栏。输入框在鼠标移入时轻微上浮、聚焦输入时落回原位。通过 Harness 的主题 token 和设置 section 扩展点工作；设置保存在当前桌面应用的本地浏览器存储中。\n\nEye-comfort appearance controls for DeepSeek Harness: five light themes, accent and background colours, typography, content width, contrast and motion. This is an independent community plugin, not an official Codex or DeepSeek product.\n\n已在 Windows 上 DeepSeek Harness 0.2.0-rc.2 中验证安装、设置界面与浅色/深色主题效果。字体清单通过主进程调用系统接口读取（Windows 用 GDI+，macOS 用 system_profiler，Linux 用 fc-list），不修改系统设置。\n```\n\n**依据 2 · 源码核查**：[lib/client.js:771-787](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/client.js#L771-L787)\n\ntoken覆盖与设置页接线。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n      ctx.inject([\"theme\"], scope => {\n        function sync() {\n          removeTheme?.();\n          try { scope.theme.setTheme(state.mode); } catch {}\n          removeTheme = scope.theme.overrideTokens(\"dsh-eye-comfort\", themeTokens(state));\n          applyExtras(state, state.reducedMotion === \"on\" || (state.reducedMotion === \"system\" && motionMedia.matches));\n        }\n        const media = matchMedia(\"(prefers-color-scheme: dark)\");\n        const motionMedia = matchMedia(\"(prefers-reduced-motion: reduce)\");\n        sync();\n        const syncEnvironment = () => { if (state.mode === \"system\" || state.reducedMotion === \"system\") sync(); };\n        media.addEventListener(\"change\", syncEnvironment);\n        motionMedia.addEventListener(\"change\", syncEnvironment);\n        listeners.add(sync);\n        scope.effect(() => () => { listeners.delete(sync); media.removeEventListener(\"change\", syncEnvironment); motionMedia.removeEventListener(\"change\", syncEnvironment); removeTheme?.(); document.getElementById(\"dca-theme-extras\")?.remove(); }, \"dsh-eye-comfort: theme controls\");\n      });\n      ctx.slots.inject(\"settings.section\", () => ctx.slots.register({name:\"settings.section\",id:\"codex-appearance\",order:5,label:\"外观\"},SettingsPage));\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 字体、token和本地设置如何联动，恢复有什么细节？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nHost通过只读路由枚举系统字体，Windows用PowerShell/GDI+，macOS用system_profiler，Linux用fc-list；命令有超时与输出上限，结果在模块缓存，失败缓存空列表。Connection存在时先admit并在异常时拒绝，但旧宿主无Connection时仍放行，不能宣称所有环境都有同样访问围栏。首次同步命令可能短暂占用Host线程。\n\n客户端sanitize限制颜色和数值，localStorage保存设置，theme.overrideTokens返回清理函数，环境主题/减少动画变化触发重算；卸载清token、样式和监听。值得借鉴的是官方token层与字体探测回退，移植仍需适配宿主token。一个具体一致性边界是lazy更新把快照排进200ms定时器，随后非lazy更新直接写盘却不清pending，旧快照可能稍后覆盖新存储；当前内存正确也不能保证重启后保存最新选择。此为静态时序风险，未执行复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:92-103](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/index.js#L92-L103)\n\n字体缓存含失败结果。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function installedFonts() {\n  if (cache !== null) return cache;\n  let families = null;\n  try {\n    families = process.platform === \"win32\" ? windowsFonts() : unixFonts();\n  } catch {\n    families = null;\n  }\n  cache = [...new Set((families ?? []).map((name) => String(name).trim()).filter(Boolean))].sort((a, b) =>\n    a.localeCompare(b),\n  );\n  return cache;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:115-148](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/index.js#L115-L148)\n\n可选Connection围栏与只读响应。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport function registerFontsRoute(ctx) {\n  return ctx.webServer.register({\n    kind: \"exact\",\n    path: FONTS_PATH,\n    handler: async (request, response) => {\n      const connection = ctx.get?.(\"connection\");\n      if (connection?.admit) {\n        let admission;\n        try {\n          admission = connection.admit(request);\n        } catch {\n          // Fail closed: a fence that cannot decide must not hand out the font list.\n          response.writeHead(403);\n          response.end(\"forbidden\");\n          return;\n        }\n        if (admission && typeof admission === \"object\" && \"rejection\" in admission) {\n          response.writeHead(admission.rejection);\n          response.end(admission.rejection === 401 ? \"unauthorized\" : \"forbidden\");\n          return;\n        }\n      }\n      if (request.method !== \"GET\" && request.method !== \"HEAD\") {\n        response.writeHead(405, { allow: \"GET, HEAD\" });\n        response.end();\n        return;\n      }\n      const fonts = installedFonts();\n      const body = JSON.stringify({ platform: process.platform, fonts });\n      response.writeHead(200, {\n        \"content-type\": \"application/json; charset=utf-8\",\n        \"cache-control\": \"no-cache\",\n      });\n      response.end(request.method === \"HEAD\" ? undefined : body);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:267-288](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/client.js#L267-L288)\n\n延迟快照和即时写盘路径。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n    let state;\n    try { state = sanitize(JSON.parse(localStorage.getItem(KEY))); } catch { state = sanitize(null); }\n    function setState(next) {\n      state = sanitize(next);\n      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}\n      listeners.forEach(fn => fn());\n    }\n    const persistSoon = (function () {\n      let timer = null, pending = null;\n      const flush = () => { timer = null; if (pending !== null) { try { localStorage.setItem(KEY, JSON.stringify(pending)); } catch {} pending = null; } };\n      return next => { pending = sanitize(next); if (!timer) timer = setTimeout(flush, 200); };\n    })();\n    function useSettings() {\n      const [value, update] = React.useState(state);\n      React.useEffect(() => { const fn = () => update(state); listeners.add(fn); return () => listeners.delete(fn); }, []);\n      const patch = (p, lazy) => {\n        const next = {...state, ...p};\n        state = sanitize(next);\n        if (lazy) persistSoon(next); else { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} }\n        listeners.forEach(fn => fn());\n      };\n      return [value, patch];\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:771-785](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/client.js#L771-L785)\n\ntoken和环境监听生命周期。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n      ctx.inject([\"theme\"], scope => {\n        function sync() {\n          removeTheme?.();\n          try { scope.theme.setTheme(state.mode); } catch {}\n          removeTheme = scope.theme.overrideTokens(\"dsh-eye-comfort\", themeTokens(state));\n          applyExtras(state, state.reducedMotion === \"on\" || (state.reducedMotion === \"system\" && motionMedia.matches));\n        }\n        const media = matchMedia(\"(prefers-color-scheme: dark)\");\n        const motionMedia = matchMedia(\"(prefers-reduced-motion: reduce)\");\n        sync();\n        const syncEnvironment = () => { if (state.mode === \"system\" || state.reducedMotion === \"system\") sync(); };\n        media.addEventListener(\"change\", syncEnvironment);\n        motionMedia.addEventListener(\"change\", syncEnvironment);\n        listeners.add(sync);\n        scope.effect(() => () => { listeners.delete(sync); media.removeEventListener(\"change\", syncEnvironment); motionMedia.removeEventListener(\"change\", syncEnvironment); removeTheme?.(); document.getElementById(\"dca-theme-extras\")?.remove(); }, \"dsh-eye-comfort: theme controls\");\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 首次启用、日常和退出各有什么条件与成本？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、缺陷与关键质疑\n\n#### 完整回答\n\npackage要求Node>=22.19及具备ui-theme/settings.section等扩展点的Web宿主；字体OS命令是可选增强，失败仍可内置候选探测。首次安装/重启后调参，日常本地计算与CSS覆盖，无强制模型/订阅调用。资源量和调参分钟数未测，不能因本地运行就填零成本。\n\n持续维护来自宿主token/DOM选择器变化、多个主题的注册顺序和本地浏览器存储。旧包改名为dsh-eye-comfort，作者要求先卸旧；设置不跨设备，写盘异常被吞掉会让用户不知未保存。退出时清覆盖层但保留本地设置，需自己记录参数或清本地存储；不能据源码清理函数认定真实卸载已验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-25](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/package.json#L1-L25)\n\n版本、客户端注入与Node要求。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n{\n  \"name\": \"dsh-eye-comfort\",\n  \"version\": \"0.3.7\",\n  \"description\": \"Eye-comfort appearance controls for DeepSeek Harness: five light themes, paper-grain texture, accent and background colours, fonts, type sizes, content width, contrast and motion.\",\n  \"keywords\": [\"deepseek-harness\", \"dsh-plugin\", \"theme\", \"appearance\"],\n  \"license\": \"MIT\",\n  \"repository\": {\"type\": \"git\", \"url\": \"git+https://github.com/AaronKate/dsh-codex-appearance.git\"},\n  \"homepage\": \"https://github.com/AaronKate/dsh-codex-appearance\",\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\".\": \"./lib/index.js\", \"./client\": \"./lib/client.js\", \"./cordis.patch.yml\": \"./cordis.patch.yml\"},\n  \"files\": [\"lib\", \"cordis.patch.yml\", \"README.md\"],\n  \"dsh\": {\n    \"meta\": {\n      \"title\": {\"en\": \"Eye Comfort\", \"zh\": \"护眼外观\"},\n      \"description\": {\n        \"en\": \"Adjust the DeepSeek Harness UI: five eye-comfort themes, accent and background colours, fonts, type sizes, font styles, content width, contrast and motion.\",\n        \"zh\": \"调整 DeepSeek Harness 的界面外观：五套护眼主题、强调色与背景、字体字号、字体样式、内容宽度、对比度与动态效果。\"\n      }\n    },\n    \"bundle\": {\"patch\": \"./cordis.patch.yml\"},\n    \"client\": {\"inject\": [\"@deepseek-ai/dsh-client-ui-theme\", \"@deepseek-ai/dsh-client-ui-settings-general\", \"@deepseek-ai/dsh-client-ui-renderer\"], \"platform\": \"web\"}\n  },\n  \"engines\": {\"node\": \">=22.19\"}\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[README.md:17-35](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/README.md#L17-L35)\n\n安装、改名与卸载边界。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n![对比度 0 / 50 / 100](assets/contrast-levels.png)\n\n## 安装\n\n从 [Releases](https://github.com/AaronKate/dsh-codex-appearance/releases) 下载 `dsh-eye-comfort-0.3.7.tgz`，执行：\n\n```sh\ndsh plugin --profile desktop add ./dsh-eye-comfort-0.3.7.tgz\n```\n\n本地开发可在仓库根目录 `npm pack` 后从 `dist/` 安装打包产物。\n\n重启 DeepSeek Harness，在「设置 → 外观」中调整。Windows 上 PowerShell 同样使用以上命令；路径可改为下载文件的绝对路径。要求 DeepSeek Harness 版本包含 `ui-theme` 和 `settings.section` 插件接口。\n\n> 从 `dsh-codex-appearance` 改名为 `dsh-eye-comfort`。若你装过旧版本，请先执行下方卸载命令移除旧包，再按上面的方式安装新包；外观设置保存在浏览器存储中，与包名无关，重装后不会丢失。\n\n## 卸载\n\n```sh\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:267-288](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/client.js#L267-L288)\n\n写盘错误旁路。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n    let state;\n    try { state = sanitize(JSON.parse(localStorage.getItem(KEY))); } catch { state = sanitize(null); }\n    function setState(next) {\n      state = sanitize(next);\n      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}\n      listeners.forEach(fn => fn());\n    }\n    const persistSoon = (function () {\n      let timer = null, pending = null;\n      const flush = () => { timer = null; if (pending !== null) { try { localStorage.setItem(KEY, JSON.stringify(pending)); } catch {} pending = null; } };\n      return next => { pending = sanitize(next); if (!timer) timer = setTimeout(flush, 200); };\n    })();\n    function useSettings() {\n      const [value, update] = React.useState(state);\n      React.useEffect(() => { const fn = () => update(state); listeners.add(fn); return () => listeners.delete(fn); }, []);\n      const patch = (p, lazy) => {\n        const next = {...state, ...p};\n        state = sanitize(next);\n        if (lazy) persistSoon(next); else { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} }\n        listeners.forEach(fn => fn());\n      };\n      return [value, patch];\n```\n\n</details>\n\n#### 缺口\n\n- 多主题、存储失败与旧宿主尚未验收\n  **影响**：设置持久与视觉可用性未知\n  **进一步探讨**：在目标宿主核重启、禁用、无Connection和配色冲突，记录参数及恢复\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 可控试用与新的验证假设是什么？\n\n**研究主题**：新假设与验证、采用判断\n\n#### 完整回答\n\n建议有阅读定制需求的用户试用，先只用一个主题覆盖层，调整字号/宽度后核中文、代码与链接，重启确认保存并验禁用恢复；如果对比不足、代码截断或重启回退，停止采用。与健康相关的收益没有独立证据，不据“护眼”名称承诺。\n\n未验证假设是以状态修订号管理延迟持久化，并提供主题预览对照和一键恢复。它由延迟旧快照与错误吞掉推导，可能减少调参丢失和回退人工；增加状态同步复杂性。最小验证快速执行滑杆lazy→主题非lazy→200ms等待→重载，比较参数保留率；另在同文本字号下对照阅读正确率与主观舒适度。若状态仍旧或阅读无改善，则不支持相应收益；本轮均未执行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:275-288](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/lib/client.js#L275-L288)\n\n延迟持久化的修订需求依据。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      let timer = null, pending = null;\n      const flush = () => { timer = null; if (pending !== null) { try { localStorage.setItem(KEY, JSON.stringify(pending)); } catch {} pending = null; } };\n      return next => { pending = sanitize(next); if (!timer) timer = setTimeout(flush, 200); };\n    })();\n    function useSettings() {\n      const [value, update] = React.useState(state);\n      React.useEffect(() => { const fn = () => update(state); listeners.add(fn); return () => listeners.delete(fn); }, []);\n      const patch = (p, lazy) => {\n        const next = {...state, ...p};\n        state = sanitize(next);\n        if (lazy) persistSoon(next); else { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {} }\n        listeners.forEach(fn => fn());\n      };\n      return [value, patch];\n```\n\n</details>\n\n**依据 2 · 源码核查**：[README.md:33-35](https://github.com/AaronKate/dsh-codex-appearance/blob/b07a9bdc4bcd37f23df4d93c82f271920f084b7f/README.md#L33-L35)\n\n冲突与本机设置边界。\n\n````text\n## 卸载\n\n```sh\n````\n\n#### 缺口\n\n- 持久化修订和阅读收益未验证\n  **影响**：不能升为健康效果或持续安装认可\n  **进一步探讨**：执行快速调参/重载对照及匹配文本阅读任务\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e08e710180de4314e5f153f962aa7ca68e4e24d8bbe06af2a87ba6e0136c5fab。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 97 | — | — | 1558 |\n| .js | source | 2 | 950 | 676 | 268 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 外观设置 | 调整阅读偏好 | 本地设置，不是健康效果保证 |\n| 字体枚举 | 展示本机字体 | OS命令可用，失败缓存/回退 |\n\n## 工程亮点\n\n可复用字体命令限时缓存和token清理；注意失败缓存需重启才重探、旧宿主无Connection时不加围栏以及延迟快照时序。详见[Q02](#research-q02)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查Host字体路由、客户端状态/token/生命周期和包发布声明；未逐项视觉复验或测健康效果。\n- 下一步：先验证滑杆lazy→非lazy主题切换→等待重载的状态，再核禁用和阅读对照；均未执行。\n",
+        "metadata": {
+            "repository": "AaronKate/dsh-codex-appearance",
+            "repository_id": 1426448931,
+            "captured_at": "2026-10-23T01:50:54.416Z",
+            "window_start": "2026-09-23T01:50:54.416Z",
+            "stars": 0,
+            "pushed_at": "2026-10-22T13:12:59Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C852:258589:1717A7:18E8D7:6ADABD80 and timestamp 2026-10-23 01:50:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C904:1B1BA8:16635A:1833E9:6ADABD82 and timestamp 2026-10-23 01:50:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A54.416Z..2026-10-23T01%3A50%3A54.416Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C9D2:291B8D:120CB6:1382C5:6ADABD83 and timestamp 2026-10-23 01:50:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A54.416Z..2026-10-23T01%3A50%3A54.416Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CAB8:325B0F:16B4B6:1884FC:6ADABD84 and timestamp 2026-10-23 01:51:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A54.416Z..2026-10-23T01%3A50%3A54.416Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CB8C:1026BA:11ADA44:12FABE3:6ADABD86 and timestamp 2026-10-23 01:51:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-eye-comfort",
+                "captured_at": "2026-10-23T01:51:02.682Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-eye-comfort",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-23T01:51:02.682Z",
+                    "source_url": "https://registry.npmjs.org/dsh-eye-comfort",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1426448931:root",
             "repository": "AaronKate/dsh-codex-appearance",

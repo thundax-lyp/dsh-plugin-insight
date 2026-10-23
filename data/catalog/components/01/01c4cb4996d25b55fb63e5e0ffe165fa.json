@@ -22,84 +22,84 @@
             "research_depth": "source",
             "fingerprints": {
                 "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
-                "code": "39513500a34bea27da225f00e0ff76687989e779",
+                "code": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
                 "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
-                "maintenance": "7c55b79486c36dd73a2295eb817dcf3c4c379b64b1457fcfa21502318fcfeac3",
+                "maintenance": "8db351bf23b3c76e6b9d82200d6c682d98cdd86ead3464d892615d34505635b3",
                 "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-01-github-1333328839-root-directory-0",
+                    "id": "2026-10-23-01-github-1333328839-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
-                    "retrieved_at": "2026-10-22T15:30:47.620Z",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T01:58:59.790Z",
                     "membership": "present"
                 },
                 {
-                    "id": "2026-10-22-01-github-1333328839-root-directory-1",
+                    "id": "2026-10-23-01-github-1333328839-root-directory-1",
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
                     "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
-                    "retrieved_at": "2026-10-22T15:30:47.620Z",
+                    "retrieved_at": "2026-10-23T01:58:59.790Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-01-github-1333328839-root-author",
+                    "id": "2026-10-23-01-github-1333328839-root-author",
                     "kind": "author_claim",
-                    "url": "https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md",
+                    "url": "https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/01Virex/dsh-status-rotator",
-                            "commit": "39513500a34bea27da225f00e0ff76687989e779",
+                            "commit": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
                             "path": "README.md",
                             "content_sha256": "38d1cca9711f284936993cd387374a2f8ed893cf7ffe90e224e0336c3b786f6e"
                         }
                     ],
-                    "revision": "39513500a34bea27da225f00e0ff76687989e779",
-                    "captured_at": "2026-10-22T15:30:47.620Z",
-                    "summary": "DSH 运行状态文案、主题、弹幕与鲸尾动画插件，带持久配置与词库热更新。",
-                    "artifact": "data/runs/2026-10-22-01/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+                    "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+                    "captured_at": "2026-10-23T01:58:59.790Z",
+                    "summary": "为 DSH 运行状态提供轮换文案、主题、弹幕与鲸尾动画，并保存词库与配置。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-01-github-1333328839-root-source",
+                    "id": "2026-10-23-01-github-1333328839-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md",
+                    "url": "https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/01Virex/dsh-status-rotator",
-                            "commit": "39513500a34bea27da225f00e0ff76687989e779",
+                            "commit": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
                             "path": "README.md",
                             "content_sha256": "38d1cca9711f284936993cd387374a2f8ed893cf7ffe90e224e0336c3b786f6e"
                         },
                         {
                             "repository_url": "https://github.com/01Virex/dsh-status-rotator",
-                            "commit": "39513500a34bea27da225f00e0ff76687989e779",
-                            "path": "lib/client.js",
-                            "content_sha256": "554fc96af6f25f67b3069a2826cb65a09890c6ea02e6c466a922d57f0d5d105c"
-                        },
-                        {
-                            "repository_url": "https://github.com/01Virex/dsh-status-rotator",
-                            "commit": "39513500a34bea27da225f00e0ff76687989e779",
+                            "commit": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
                             "path": "lib/index.js",
                             "content_sha256": "ad269563e980b8fd7c6feb945cd9882c3e77601bf6521d481575b69924919db2"
                         },
                         {
                             "repository_url": "https://github.com/01Virex/dsh-status-rotator",
-                            "commit": "39513500a34bea27da225f00e0ff76687989e779",
+                            "commit": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+                            "path": "lib/client.js",
+                            "content_sha256": "554fc96af6f25f67b3069a2826cb65a09890c6ea02e6c466a922d57f0d5d105c"
+                        },
+                        {
+                            "repository_url": "https://github.com/01Virex/dsh-status-rotator",
+                            "commit": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
                             "path": "SECURITY.md",
                             "content_sha256": "0d810496691e81d1faa07be3f0c0af03f15b82a7721e12df4364756544c54673"
                         }
                     ],
-                    "revision": "39513500a34bea27da225f00e0ff76687989e779",
-                    "captured_at": "2026-10-22T15:30:47.620Z",
-                    "summary": "核查 README.md、lib/client.js、lib/index.js、SECURITY.md；客户端接管多代宿主运行行；Node half 提供分层配置、ETag 保存、SSE 推送与远端词库。",
-                    "artifact": "data/runs/2026-10-22-01/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+                    "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+                    "captured_at": "2026-10-23T01:58:59.790Z",
+                    "summary": "核查 README.md、lib/index.js、lib/client.js、SECURITY.md；Node 提供分层配置、独立用户存储与远端词库；浏览器跟踪状态 DOM，按阶段条件轮换，并以 SSE 与轮询更新配置。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交 README、package、Node/客户端源码与安全说明；未运行目标插件或浏览器。",
+                        "已检查配置持久化、条件校验、浏览器注册和生命周期；未测新宿主DOM及长时动画资源曲线。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -110,278 +110,278 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "用户希望长任务的运行状态更有辨识度且保留宿主时钟/读屏。",
+                    "text": "适合经常等待长任务、希望区分运行阶段的 DSH Web 用户；合格结果是状态文案可读且原生进度仍可识别。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "客户端接管多代宿主运行行；Node half 提供分层配置、ETag 保存、SSE 推送与远端词库。",
+                    "text": "Node 提供分层配置、独立用户存储与远端词库；浏览器跟踪状态 DOM，按阶段条件轮换，并以 SSE 与轮询更新配置。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交 README、package、Node/客户端源码与安全说明；未运行目标插件或浏览器。",
+                    "text": "已检查配置持久化、条件校验、浏览器注册和生命周期；未测新宿主DOM及长时动画资源曲线。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "0.37.0 MIT，npm 包；无运行时依赖，Cordis 可选 peer。",
+                    "text": "根 package 与配置、浏览器单包分发；发布元数据由独立META采集。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "#### 成本\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | Desktop/Web profile 重启 | 版本适配 |\n| 使用 | 动画/推送/远端拉取 | CPU/电耗 |\n| 维护 | 配置迁移/CSS 协作 | 宿主 DOM 漂移 |",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器与配置存储；金额未知 | 安装、选择主题，耗时未知 | 需匹配宿主DOM |\n| 持续使用 | 动画、观察器和轮询占用，未测 | 词库维护可选 | CDN更新可关闭 |\n| 失败恢复 | 重载和排查资源，未测 | 核对用户配置、关闭插件 | 不将美化视作任务正确性来源 |",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "测试 profile 先静态文案，再逐项开启更新与动画，核读屏和性能。详见[Q05](#research-q05)。",
+                    "text": "可在独立profile试用，先关闭额外动画确认状态与保存正常；依赖稳定运行状态的工作应保留原生显示和禁用入口。[Q04](#research-q04)",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "#### 效果\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 文案回退 | 空库用宿主原文 | 实机呈现 |\n| 设置 | $DSH_HOME 持久 | 复杂升级 |\n| 同步 | SSE/ETag | 反代行为 |",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 个性化状态 | 源码具备阶段条件与轮换 | 可读性、等待体验改善幅度 |\n| 配置保留 | 数据目录与包镜像分离 | 用户实际升级恢复成功率 |",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "Node half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私有 DOM，远端词库默认主分支。",
+                    "text": "配置落位考虑包目录替换，并以内容指纹区分镜像和人工修改，适合借鉴到小型UI插件。条件键封闭校验能把拼写问题提前暴露。浏览器是大型单文件且绑定内部DOM，复用时应移植存储逻辑和事件适配边界，而非照搬选择器。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "把阶段短语、动画和跨升级配置组成可调状态体验。详见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "text": "相对手改宿主文案，贡献在升级独立配置与条件词库形成的可维护定制入口，不能把动画或词条数量当生产率收益。[Q01](#research-q01)",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "私有 DOM 结构易随宿主/其他插件 CSS 改变；默认自动拉 main 词库并有持续定时器。详见[Q04](#research-q04)。",
+                    "text": "状态 DOM 与选择器是实际兼容契约，复杂观察器、动画及周期扫描可能增加浏览器负担；持久配置改善不证明新宿主上仍准确识别运行状态。[Q03](#research-q03)",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "business_value",
                     "basis": "unverified",
-                    "text": "宿主稳定状态槽位可减少 DOM 猜测与 CSS 协作负担，尚非本包能力。详见[Q05](#research-q05)。",
+                    "text": "未验证假设是把状态来源抽成宿主事件适配层，DOM 扫描只兜底，可减少误判和空扫；用相同长任务记录事件与DOM路径的状态延迟、漏判及主线程时间，若事件覆盖不足或负担未降则否定。[Q05](#research-q05)",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1333328839:root",
                             "area": "code",
-                            "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                            "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:47.620Z",
+                    "reviewed_at": "2026-10-23T01:58:59.790Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T15:30:47.620Z",
+            "last_checked_at": "2026-10-23T01:58:59.790Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
-                "revision": "39513500a34bea27da225f00e0ff76687989e779",
-                "reviewed_at": "2026-10-22T15:30:47.620Z",
+                "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+                "reviewed_at": "2026-10-23T01:58:59.790Z",
                 "status": "current",
                 "dependencies": [
                     {
                         "plugin_id": "github:1333328839:root",
                         "area": "code",
-                        "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                        "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                     }
                 ],
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
+                        "mechanism": 8,
                         "transferability": 10,
-                        "simplification": 8
+                        "simplification": 4
                     },
-                    "rationale": "跨版本接管与持久配置/SSE 机制清晰，宿主 DOM 耦合。",
+                    "rationale": "novelty为状态美化常规适配；mechanism为分层配置和推送的局部组合；transferability可迁移独立存储；simplification受大客户端实现限制。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 31,
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 15,
-                        "reach": 10,
-                        "economics": 8
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
                     },
-                    "rationale": "可提升等待体验，安装简单但维护和性能成本存在。",
+                    "rationale": "workflow只改变查看状态入口；delivery是定制显示；reach限现有DSH用户；economics潜在减少手工改包而无实测。",
                     "basis": "interpretation",
-                    "score": 42,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-22-01-github-1333328839-root-source"
+                        "2026-10-23-01-github-1333328839-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "先测试 profile 验证读屏、时钟和性能，再按需启用远端词库与动画。",
+                "reason": "持久配置和文案定制有明确用途，DOM耦合与资源消耗应在独立profile先核查。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "长任务反馈场景常见。"
+                        "score": 23,
+                        "rationale": "长任务等待与界面偏好明确，但收益偏个人体验。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "丰富配置及升级持久化优于静态改词。"
+                        "rationale": "相对固定CSS增加条件词库与升级独立配置。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码与作者截图/测试，未实机复验。"
+                        "rationale": "固定版本源码支持机制；本轮未执行目标代码或同版本宿主验收，效果仍不确定。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "定时拉取、长连接和 DOM 维护可控但存在。"
+                        "score": 15,
+                        "rationale": "不需模型调用；动画和宿主适配维护仍有负担。"
                     }
                 },
-                "score": 51,
-                "revision": "39513500a34bea27da225f00e0ff76687989e779",
-                "reviewed_at": "2026-10-22T15:30:47.620Z",
+                "score": 64,
+                "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+                "reviewed_at": "2026-10-23T01:58:59.790Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-01-github-1333328839-root-source"
+                    "2026-10-23-01-github-1333328839-root-source"
                 ],
                 "dependencies": [
                     {
                         "plugin_id": "github:1333328839:root",
                         "area": "code",
-                        "fingerprint": "39513500a34bea27da225f00e0ff76687989e779"
+                        "fingerprint": "bce58114d40a9db9d5ca51a3d1450889d36a67e0"
                     }
                 ]
             }
@@ -390,12 +390,12 @@
             "id": "github:1333328839:root",
             "repository": "01Virex/dsh-status-rotator",
             "path": "",
-            "revision": "39513500a34bea27da225f00e0ff76687989e779",
+            "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
             "fingerprints": {
                 "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
-                "code": "39513500a34bea27da225f00e0ff76687989e779",
+                "code": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
                 "release": "4c656e9b908ee5ac60ad2b0766ef9ec3f1dea81586d1c9d47e6432af9f6dfde2",
-                "maintenance": "7c55b79486c36dd73a2295eb817dcf3c4c379b64b1457fcfa21502318fcfeac3",
+                "maintenance": "8db351bf23b3c76e6b9d82200d6c682d98cdd86ead3464d892615d34505635b3",
                 "compatibility": "c1c472a7f9e3b078c2b2dc3906c9892ef36f99a074ec2b49e52d255d5cddb340"
             },
             "source_urls": [
@@ -403,61 +403,55 @@
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T15:06:59Z",
-            "analysis_sha256": "06e69ffa83e86d0dec1ef12b23a2fb3298a56b05c70112d6f10256ac888acbf3"
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "90c91d5615a11b5af53f3d7d4c94555bc6b2013927210d55a39f24207f808210"
         },
         "publication.metadata": "data/plugins/01virex--dsh-status-rotator/META.json",
         "publication.summaries": {
-            "text": "DSH 运行状态文案、主题、弹幕与鲸尾动画插件，带持久配置与词库热更新。",
-            "revision": "39513500a34bea27da225f00e0ff76687989e779",
-            "source_url": "https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md"
+            "text": "为 DSH 运行状态提供轮换文案、主题、弹幕与鲸尾动画，并保存词库与配置。",
+            "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+            "source_url": "https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/README.md"
         },
         "publication.capabilities": {
-            "revision": "39513500a34bea27da225f00e0ff76687989e779",
+            "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
             "items": {
-                "界面": "状态短语、时钟、渐变和可选动画",
-                "Host 路由": "共享配置、ETag 与 SSE",
-                "后台": "分层持久配置、远端词库更新和文件变化检测"
+                "后台": "分层配置与词库热更新",
+                "界面": "阶段文案、主题、弹幕与鲸尾动画设置"
             },
-            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 状态行 | 反馈 | 宿主 DOM |\n| 设置 | 升级留存 | If-Match 可选 |\n| 词库 | 自动更新 | 远端 main |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 阶段词库与主题 | 定制长任务状态 | 依赖宿主状态DOM，非业务进度证明 |\n| 配置保存与热更新 | 升级后保留偏好 | 需可写用户目录，远程更新可关闭 |\n| 弹幕与动画 | 个性化等待界面 | 资源消耗未测，可按需禁用 |"
         },
         "publication.advice": {
-            "revision": "39513500a34bea27da225f00e0ff76687989e779",
-            "text": "测试 profile 先静态文案，再逐项开启更新与动画，核读屏和性能。详见[Q05](#research-q05)。"
+            "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+            "text": "可在独立profile试用，先关闭额外动画确认状态与保存正常；依赖稳定运行状态的工作应保留原生显示和禁用入口。[Q04](#research-q04)"
         },
         "registry": "data/plugins/01virex--dsh-status-rotator",
-        "reports": "# dsh-status-rotator\n\n> DSH 运行状态文案、主题、弹幕与鲸尾动画插件，带持久配置与词库热更新。\n\n## 研究范围\n\n- **仓库**：[01Virex/dsh-status-rotator](https://github.com/01Virex/dsh-status-rotator)\n- **版本号**：0.37.0（[固定提交 39513500a34bea27da225f00e0ff76687989e779](https://github.com/01Virex/dsh-status-rotator/tree/39513500a34bea27da225f00e0ff76687989e779)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。\n\n## 洞察短评\n\n- **用途**：用户希望长任务的运行状态更有辨识度且保留宿主时钟/读屏。\n- **亮点**：把阶段短语、动画和跨升级配置组成可调状态体验。详见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：私有 DOM 结构易随宿主/其他插件 CSS 改变；默认自动拉 main 词库并有持续定时器。详见[Q04](#research-q04)。\n- **建议**：宿主稳定状态槽位可减少 DOM 猜测与 CSS 协作负担，尚非本包能力。详见[Q05](#research-q05)。\n\n采用建议：测试 profile 先静态文案，再逐项开启更新与动画，核读屏和性能。详见[Q05](#research-q05)。\n\n## 核心贡献\n\n把阶段短语、动画和跨升级配置组成可调状态体验。详见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n私有 DOM 结构易随宿主/其他插件 CSS 改变；默认自动拉 main 词库并有持续定时器。详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n宿主稳定状态槽位可减少 DOM 猜测与 CSS 协作负担，尚非本包能力。详见[Q05](#research-q05)。\n\n进一步探讨应按本项缺口执行：隔离端口与反代环境验证。；低端设备/多标签页测 CPU 与网络。；测试 profile 上做键盘/读屏/CPU 对照。\n\n## 场景与替代办法\n\n用户希望长任务的运行状态更有辨识度且保留宿主时钟/读屏。\n\nNode half 将随包默认、包内旧配置、远端词库、旧宿主设置、$DSH_HOME 用户配置和外部词库分层合成；用户写入以 $DSH_HOME/status-rotator/config.json 为真相源，包内 config.json 仅兼容镜像。旧包目录手改内容通过指纹辨别并迁移，防升级覆盖；外部词库按文件变化热读。相对纯浏览器 localStorage，这提供跨升级和共享设置的持久路径。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 条件 | 用途 | 失败时 |\n| --- | --- | --- |\n| DSH Web DOM | 状态接管 | 不显示或错位 |\n| webServer | 配置路由 | 文件回退 |\n| CDN | 自动词库 | 保留旧库 |\n\n#### 启动步骤\n\n| 步骤 | 动作 | 判据 |\n| --- | --- | --- |\n| 基础 | 静态文案 | 时钟和读屏保留 |\n| 设置 | 两标签保存 | 409 冲突可见 |\n| 动画 | 逐项启用 | 性能预算内 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 投入 | 未知 |\n| --- | --- | --- |\n| 安装 | Desktop/Web profile 重启 | 版本适配 |\n| 使用 | 动画/推送/远端拉取 | CPU/电耗 |\n| 维护 | 配置迁移/CSS 协作 | 宿主 DOM 漂移 |\n\n#### 效果\n\n| 结果 | 源码支持 | 未证实 |\n| --- | --- | --- |\n| 文案回退 | 空库用宿主原文 | 实机呈现 |\n| 设置 | $DSH_HOME 持久 | 复杂升级 |\n| 同步 | SSE/ETag | 反代行为 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：审查状态 UI、配置持久、远端词库和读屏兼容边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 状态文案轮换服务何种体验，保留什么宿主信息？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n插件在 DSH Web/Desktop 的运行中行旁轮换短语、渐变、打字机和可选弹幕/鲸尾，面向长任务等待反馈的个性化。客户端识别旧版 role=status、0.1.7 折叠头、0.2.0 data-chat-running 等布局；空词库回退宿主原文，0.2.0 的读屏公告按源码注释保留。README 的 1362 短语与 14 包是作者计数，本轮未重新计数或目视评估。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-11](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L1-L11)\n\n当前固定版本复核。定位与数量声称。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n# dsh-status-rotator\n\n> Give DSH's running status your own voice: **custom phrases, typewriter output, day/night gradients, danmaku and an optional animated whale tail**. Ships **1379 phrases, 14 theme packs**; choose which packs to enable.\n\n**English** | [中文](./README_ZH.md) · [Effects](#effect-preview) · [Install](#installation) · [Reference](#feature-overview) · [Changelog](./CHANGELOG.md)\n\n[![npm version](https://img.shields.io/npm/v/dsh-status-rotator?color=4a6cf7)](https://www.npmjs.com/package/dsh-status-rotator)\n[![GitHub stars](https://img.shields.io/github/stars/01Virex/dsh-status-rotator?color=4a6cf7)](https://github.com/01Virex/dsh-status-rotator)\n[![license](https://img.shields.io/github/license/01Virex/dsh-status-rotator)](LICENSE)\n\nA [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) client plugin that replaces `Deep diving...` / `深度求索中...` with editable phrases while preserving the host's elapsed-time clock.\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:127-142](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L127-L142)\n\n当前固定版本复核。不同版本状态行说明。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n### First run\n\nOn first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/status-rotator/config.json`) → the package `config.json` → `config.example.json` (what an npm install has: all 1379 default phrases live inside it, see [Phrase Bank](#phrase-bank)). Two more layers join in: the **auto-updated bank** (every 6 hours, see [Auto-updating the bank](#auto-updating-the-bank)) and the optional **external bank** (`$DSH_HOME/status-rotator/phrases.json`, highest priority, see [Hot-reloadable external bank](#hot-reloadable-external-bank)). Edit files directly (hot-reloaded while a page is open) or use the Settings → Status Texts page of DSH.\n\n<details>\n<summary>Host version details and isolated testing</summary>\n\n> **Status line as of dsh 0.1.7**: the host moved it into the turn's fold header `button[data-turn-process]` (`Deep diving for 12s`), which scrolls out of view in a long turn. The plugin moves the line **back above the input box**, styled like dsh ≤0.1.6's `.turnStatus` (26px, shimmer, 13px clock) and pinned with the composer; the header copy is hidden and returns when the turn ends. Duration and phase come from reading the header label (never writing into it). On 0.1.6 and older the `role=\"status\"` line already sits there and behaves as before.\n>\n> **Status line as of dsh 0.2.0**: while a turn runs the host no longer keeps the text inside the fold header — it renders a separate row in the conversation flow, `div[data-chat-running]` (hidden announcement + divider + **DeepSeek whale-tail icon** + shimmer text), and `button[data-turn-process]` now only renders once the turn is **closed**. The plugin gained a matching host path: it adopts that row (writes its phrase into it, hides the host's own shimmer text, still reads the duration from the host text) with the same position and look, and leaves the screen-reader announcement untouched. **`whaleTail` (off by default)** keeps the **whale tail** in that row, next to the plugin's phrase, and animates it with the rainbow-gradient palette. The separate **tail-wagging** switch can follow tok/s or use a fixed speed; enabling that switch explicitly opts in to the wag.\n\n> **Starting an isolated test instance** (without touching your daily profile): install a dsh version into a temp dir and boot a profile with its own `DSH_HOME` — `DSH_HOME=/tmp/dsh-test node /tmp/dsh-test/node_modules/.bin/dsh test020 --from-default-profile web --no-open --port 3081`, then `dsh plugin --profile test020 add <this plugin dir>`. That instance's config store, bank and settings live inside its own `DSH_HOME`, so your daily instance is untouched.\n\n</details>\n\n> **Never a blank line**: `config.labelSource` (default `\"phrases\"`) decides the text; with an empty bank the plugin's line falls back to the host text instead of rendering an empty row. Set it to `\"host\"` to drop rotation and get the verbatim 0.1.6 `.turnStatus` look (weight 500, inline-flex, 26px, shimmer, clock after 15s).\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:1062-1080](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L1062-L1080)\n\n当前固定版本复核。空词库回退。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n\t\t/**\n\t\t * 状态行这一次该显示什么(纯函数,供 smoke test 覆盖):\n\t\t *   \"phrases\" → 从短语库里抽一句轮换;\n\t\t *   \"host\"    → 显示宿主原文(「Deep diving…」/「深度求索中」),不走打字机;\n\t\t *   \"keep\"    → 什么都不做,保持现状。\n\t\t *\n\t\t * 两条回落规则:\n\t\t *   1. `labelSource: \"host\"` = 用户要「纯 0.1.6 观感」:插件自己那条线(0.1.7\n\t\t *      的 LINE_CLASS)写宿主原文;旧宿主(≤0.1.6)的 TurnStatus 本来就写着宿主\n\t\t *      原文,插件不该去改写它 → keep。\n\t\t *   2. 短语库为空(没 config.json / 没文案)时,插件自己那条线**回落宿主原文**\n\t\t *      —— 这就是「状态行变成一条空行、deep diving 不见了」的修复;旧宿主同理\n\t\t *      保持 keep(它自己那句就是原文,不碰最忠实)。\n\t\t */\n\t\tfunction labelPlanFor(source, hasPhrases, ownLine) {\n\t\t\tif (source === \"host\") return ownLine ? \"host\" : \"keep\";\n\t\t\tif (hasPhrases) return \"phrases\";\n\t\t\treturn ownLine ? \"host\" : \"keep\";\n\t\t}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:2989-3005](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L2989-L3005)\n\n当前固定版本复核。新版 DOM 标记与读屏节点。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\t\t\t/**\n\t\t\t * dsh 0.2.0 起,「运行中」不再是折叠头按钮里的一段文本,而是会话流里独立的一行:\n\t\t\t *   div[data-chat-running]\n\t\t\t *     ├─ span(visuallyHidden, role=status, aria-live=polite)  ← 读屏公告,别动\n\t\t\t *     ├─ span(class*=runningDivider)\n\t\t\t *     └─ span(class*=runningContent)\n\t\t\t *          ├─ span(class*=runningIcon)   ← **鲸鱼尾巴**(svg,stroke=currentColor)\n\t\t\t *          └─ span(class*=runningText)   ← shimmer 文案(\"Deep diving for 12s\")\n\t\t\t * 折叠头按钮(button[data-turn-process])在 0.2.0 只在**回合结束后**才渲染(收起态摘要),\n\t\t\t * 所以运行期间插件必须认得这一行,否则整条状态行都不会被接管(0.2.0 兼容的核心)。\n\t\t\t */\n\t\t\tconst RUNNING_ROW_SELECTOR = \"[data-chat-running]\";\n\t\t\tconst RUNNING_TEXT_SELECTOR = '[class*=\"runningText\"]';\n\t\t\tconst RUNNING_ICON_SELECTOR = '[class*=\"runningIcon\"]';\n\t\t\t/** 插件给宿主鲸鱼尾巴加的类:样式表据此给它上炫彩流光 */\n\t\t\tconst TAIL_CLASS = \"dsh-status-rotator-whale-tail\";\n\t\t\tconst TAIL_WAG_CLASS = \"dsh-status-rotator-whale-wag\";\n```\n\n</details>\n\n#### 缺口\n\n- 未运行真实 DSH 或视觉体验测试。\n  **影响**：宿主版本适配与动画效果未知。\n  **进一步探讨**：按 0.1.6/0.1.7/0.2.0 实机矩阵验证。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 词库层与配置持久化如何避免升级丢设置？\n\n**研究主题**：功能与机制、贡献与相对优势\n\n#### 完整回答\n\nNode half 将随包默认、包内旧配置、远端词库、旧宿主设置、$DSH_HOME 用户配置和外部词库分层合成；用户写入以 $DSH_HOME/status-rotator/config.json 为真相源，包内 config.json 仅兼容镜像。旧包目录手改内容通过指纹辨别并迁移，防升级覆盖；外部词库按文件变化热读。相对纯浏览器 localStorage，这提供跨升级和共享设置的持久路径。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-45](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1-L45)\n\n当前固定版本复核。层次与升级迁移设计。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n/**\n * dsh-status-rotator — node half.\n *\n * The browser half (lib/client.js) swaps the \"Deep diving...\" turn-status\n * label. This node half serves AND persists the config document:\n *\n *   GET/HEAD /plugins/dsh-status-rotator/config.json\n *       → stream the effective document, layered as\n *         bundled config.example.json → package config.json → auto-updated phrase\n *         bank ($DSH_HOME/status-rotator/bank.remote.json) → legacy settings\n *         namespace (only on hosts whose settings service still exposes\n *         `register`) → **user config store**\n *         (`$DSH_HOME/status-rotator/config.json`, survives plugin upgrades;\n *         `DSH_STATUS_ROTATOR_CONFIG` overrides the path) → external phrase bank\n *         (`$DSH_HOME/status-rotator/phrases.json`, or\n *         `$DSH_STATUS_ROTATOR_BANK`; re-read whenever the file changes).\n *         Both banks only carry `packs` / `phrases`.\n *   PUT/POST  same route\n *       → validate the submitted JSON, persist the delta into the user config\n *         store (durable across upgrades) and mirror the full document to the\n *         package-local config.json for backward compatibility.\n *\n * Where settings actually live is the whole point of issue #51: the package\n * directory is replaced wholesale on every plugin upgrade, so anything stored\n * next to the package is gone afterwards. Host-side settings were the original\n * plan, but `@deepseek-ai/dsh-settings` 0.1.7-rc.1 only offers\n * `describe`/`update`/`replace`/`mutate` — the `register()` API this plugin was\n * written against no longer exists, so that path silently returned null and the\n * package-local config.json was the only store left. Persistence now lives in\n * the plugin's own data directory under `$DSH_HOME`, which no upgrade touches.\n *\n * On start-up (and on every GET, so a hand-edited file is picked up while it\n * still exists) the package-local config.json is absorbed into the user config\n * store, because that file is documented as editable and is otherwise lost with\n * the next upgrade. A content fingerprint recorded in the store tells our own\n * mirror apart from a human edit, so the mirror is never absorbed twice.\n *\n * The external bank is what makes a phrase update take effect without\n * republishing or reinstalling the npm package: edit that one file and the\n * node half serves the new content on the next request (the browser half\n * re-reads every `reloadIntervalMs` while the page stays open).\n *\n * The browser half fetches that URL by default. No manual localStorage or\n * deployment step is needed — drop config.json next to this package, restart\n * `dsh web`, hard-refresh.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:65-100](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L65-L100)\n\n当前固定版本复核。路径与远端词库参数。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n/** 官方持久设置命名空间(存于 $DSH_HOME/settings.yaml,升级插件不会清空) */\nconst SETTINGS_NS = \"status-rotator\";\n/**\n * 外部词库(热重载)的默认位置:$DSH_HOME/status-rotator/phrases.json。\n * npm 包目录会随升级被整体替换(而且通常不可写),所以词库的\"可写副本\"必须落在\n * 用户数据目录里;该文件是**可选**覆盖层,不存在时完全按内置词库(config.example.json)运行。\n */\nconst BANK_DIR = \"status-rotator\";\nconst BANK_FILE = \"phrases.json\";\n/** 覆盖外部词库路径的环境变量(绝对路径,或相对当前工作目录) */\nconst BANK_PATH_ENV = \"DSH_STATUS_ROTATOR_BANK\";\n/**\n * 用户配置的持久存储:**必须**和词库一样落在 `$DSH_HOME/status-rotator/` 下,\n * 不能落在包目录里 —— 包目录会被 npm / Release 升级整体替换,写在里面的配置每次升级\n * 都会没(issue #51「每次更新都会重置我设置的」的根因,详见 userConfigPath)。\n */\nconst USER_CONFIG_FILE = \"config.json\";\n/** 覆盖用户配置存储路径的环境变量(绝对路径,或相对当前工作目录;测试用) */\nconst USER_CONFIG_ENV = \"DSH_STATUS_ROTATOR_CONFIG\";\n/**\n * 自动更新(从上游拉取词库):默认源是仓库 main 分支的 config.example.json,\n * 走 jsDelivr CDN(国内可达性优于 raw.githubusercontent);可用环境变量覆盖成\n * raw / 镜像 / 自建地址,空或 off = 关闭。\n */\nconst BANK_URL_ENV = \"DSH_STATUS_ROTATOR_BANK_URL\";\nconst DEFAULT_BANK_URL = \"https://cdn.jsdelivr.net/gh/01Virex/dsh-status-rotator@main/config.example.json\";\n/** 自动更新检查间隔(毫秒);未设置 = 6 小时,0 / 非法 = 关闭 */\nconst BANK_INTERVAL_ENV = \"DSH_STATUS_ROTATOR_BANK_INTERVAL_MS\";\nconst DEFAULT_BANK_INTERVAL_MS = 6 * 60 * 60 * 1000;\n/** 上游词库的落盘缓存文件名(放在本地词库文件同目录,用户不用手改) */\nconst BANK_REMOTE_FILE = \"bank.remote.json\";\n/** 单次拉取上限 2 MiB(正常 config.example.json 约 75 KB) */\nconst MAX_BANK_BYTES = 2 * 1024 * 1024;\n\n/** 请求体上限(5 MiB),避免异常大 body 吃内存 */\nconst MAX_BODY_BYTES = 5 * 1024 * 1024;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1756-1765](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1756-L1765)\n\n当前固定版本复核。写入顺序。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * 保存设置页提交的完整文档。\n *\n * 落盘顺序(**持久化以用户配置存储为准**):\n *   1. 用户配置存储 `$DSH_HOME/status-rotator/config.json` —— 升级不会被替换,写不进去\n *      就明确 500,不假装保存成功(v0.26.0 及以前只写包目录,升级即丢,#51);\n *   2. 包目录 `config.json` 兼容镜像 —— 文档 / 老版本 / 手改工作流都认它,失败不算保存\n *      失败(数据已经在存储里了),只是把指纹记成 null 不再认领这个文件;\n *   3. 老宿主(settings 服务还带 `register` 的那代)顺带写一份官方命名空间。\n */\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:127-129](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L127-L129)\n\n当前固定版本复核。作者所述配置层次。\n\n```text\n### First run\n\nOn first start the plugin serves, in order: your **saved settings** (`$DSH_HOME/status-rotator/config.json`) → the package `config.json` → `config.example.json` (what an npm install has: all 1379 default phrases live inside it, see [Phrase Bank](#phrase-bank)). Two more layers join in: the **auto-updated bank** (every 6 hours, see [Auto-updating the bank](#auto-updating-the-bank)) and the optional **external bank** (`$DSH_HOME/status-rotator/phrases.json`, highest priority, see [Hot-reloadable external bank](#hot-reloadable-external-bank)). Edit files directly (hot-reloaded while a page is open) or use the Settings → Status Texts page of DSH.\n```\n\n#### 缺口\n\n- 未模拟真实 npm 升级。\n  **影响**：迁移在复杂历史配置下的正确性未独立验证。\n  **进一步探讨**：用旧版配置样本离线迁移对照。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 并发保存与网页请求有哪些控制？\n\n**研究主题**：工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nGET 返回正文对应 ETag，设置页 PUT 带 If-Match，保存串行锁把检查与落盘串起来；无 If-Match 或 * 明确允许覆盖，因此只保护遵约客户端。写接口检查 content-type/Origin/Host 等作者说明的栅栏，配置校验和 CSS 色值白名单、计时下限抑制注入/资源耗尽。SECURITY.md 自承 DNS rebinding 残余风险，端口若暴露非环回应有外层鉴权；本轮未做漏洞验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:296-329](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L296-L329)\n\n当前固定版本复核。服务端安全动机与限制值。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n/**\n * 配置安全栅栏(服务端)。\n *\n * 为什么需要:这个写接口是本地 HTTP 端点,宿主 dsh 的 /api 通道有\n * Host/Origin 栅栏 + cookie 鉴权,插件自己注册的路由两者都不经过。\n * 跨站页面用 fetch(..., { mode: \"no-cors\", headers: { \"content-type\": \"text/plain\" } })\n * 发的是「简单请求」,不触发预检 —— 于是任何人都能改写你的本地配置。\n *\n * 两个方向一起堵:\n *   1. 请求侧:isTrustedWrite / isTrustedRead(见下);\n *   2. 内容侧:颜色白名单(颜色值会被拼进浏览器端注入的 <style>,\n *      一个 \";\" 就能越出声明块注入任意 CSS)+ 数值钳制\n *      (intervalMs 直接喂给 setInterval,没有下限就是自 DoS)。\n */\nconst COLOR_RE = /^(#[0-9a-f]{3,8}|[a-z]{3,20}|(?:rgb|rgba|hsl|hsla)\\(\\s*[0-9.,%\\s/deg-]+\\))$/i;\n/** 渐变配色模式白名单:auto = 跟随深浅色主题,day / night = 强制其中一套 */\nconst GRADIENT_MODES = [\"auto\", \"day\", \"night\"];\n/** 渐变流动方向白名单:rtl = 从右向左(默认),ltr = 从左向右 */\nconst GRADIENT_DIRECTIONS = [\"rtl\", \"ltr\"];\n/** 鲸鱼尾巴摇动速度来源 */\nconst WHALE_TAIL_MOTION_MODES = [\"tps\", \"fixed\"];\nconst WHALE_TAIL_ACTIONS = [\"wag\", \"sway\", \"twist\", \"official\"];\nconst WHALE_TAIL_ANIMATIONS = [...WHALE_TAIL_ACTIONS, \"random\"];\nconst WHALE_TAIL_WAG_SPEED_RANGE = [0.25, 6];\n/** tok/s 模式的分档数上限(0 / 1 表示不分档);与浏览器半边的 WHALE_TAIL_TPS_TIER_MAX 对齐 */\nconst WHALE_TAIL_TPS_TIER_MAX = 5;\n/** 状态行文案来源白名单:phrases = 轮换短语库(默认);host = 只用宿主原文(0.1.6 观感) */\nconst LABEL_SOURCES = [\"phrases\", \"host\"];\nconst CONFIG_LIMITS = {\n\tintervalMs: [250, 3600000],\n\ttypeSpeedMs: [0, 1000],\n\tlongAfterMs: [1000, 86400000],\n\treloadIntervalMs: [1000, 3600000],\n\tliveTickMs: [250, 60000]\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1586-1613](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1586-L1613)\n\n当前固定版本复核。ETag 与串行锁。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n/** 一段文本 → 带引号的 ETag(与 If-Match / If-None-Match 直接比字符串) */\nfunction etagFor(text) {\n\treturn '\"' + digestOf(String(text)).slice(0, 20) + '\"';\n}\n\n/**\n * 配置文档的对外表示。GET 的 body 与它的 ETag **必须出自同一段文本**,否则\n * If-None-Match 的 304 判断与 If-Match 的前提校验会各说各话。\n */\nfunction documentText(doc) {\n\treturn JSON.stringify(contentTypeOf(doc), null, 4) + \"\\n\";\n}\n\n/** 当前生效文档的 ETag;文档不可用(404 那种)返回 null */\nasync function currentConfigEtag(getSettingsApi) {\n\tconst doc = await effectiveConfigDocument(getSettingsApi);\n\treturn doc === null ? null : etagFor(documentText(doc));\n}\n\n/**\n * 保存串行化:If-Match 的「检查」与随后的「落盘」之间不能有另一个 PUT 插进来,\n * 否则两个并发请求可以双双通过检查再先后覆盖 —— 那正是要修的那个洞。\n */\nlet saveTail = Promise.resolve();\nfunction withSaveLock(fn) {\n\tconst run = saveTail.then(fn, fn);\n\tsaveTail = run.then(() => {}, () => {});\n\treturn run;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1712-1753](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1712-L1753)\n\n当前固定版本复核。读写路由。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nfunction createServeConfig(getSettingsApi) {\n\treturn async function serveConfig(req, res) {\n\t\tif (req.method === \"GET\" || req.method === \"HEAD\") {\n\t\t\tif (!isTrustedRead(req)) {\n\t\t\t\trejectUntrusted(res, \"读取\");\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tconst doc = await effectiveConfigDocument(getSettingsApi);\n\t\t\tif (doc === null) {\n\t\t\t\tres.writeHead(404);\n\t\t\t\tres.end();\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tconst text = documentText(doc);\n\t\t\tconst etag = etagFor(text);\n\t\t\t// 客户端带着上次的 ETag 来问时,没变就 304 —— 轮询兜底路径也就不必再传整个 body\n\t\t\tconst inm = String(req.headers[\"if-none-match\"] || \"\").trim();\n\t\t\tif (inm.length > 0 && inm === etag) {\n\t\t\t\tres.writeHead(304, { \"cache-control\": \"no-cache\", [ETAG_HEADER]: etag });\n\t\t\t\tres.end();\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tres.writeHead(200, {\n\t\t\t\t\"content-type\": \"application/json; charset=utf-8\",\n\t\t\t\t\"cache-control\": \"no-cache\",\n\t\t\t\t[ETAG_HEADER]: etag\n\t\t\t});\n\t\t\tres.end(text);\n\t\t\treturn;\n\t\t}\n\t\tif (req.method === \"PUT\" || req.method === \"POST\") {\n\t\t\tif (!isTrustedWrite(req)) {\n\t\t\t\trejectUntrusted(res, \"写入\");\n\t\t\t\treturn;\n\t\t\t}\n\t\t\t// 整段保存串行化 —— 校验与落盘之间不允许另一个 PUT 插队\n\t\t\tawait withSaveLock(() => saveConfig(req, res, getSettingsApi));\n\t\t\treturn;\n\t\t}\n\t\tres.writeHead(405);\n\t\tres.end();\n\t};\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1785-1799](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1785-L1799)\n\n当前固定版本复核。可选 If-Match。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n\t// ── If-Match 前提校验(必须在任何写入之前) ──\n\t// 语义按标准 HTTP:前提是**客户端自愿**的。\n\t//   缺省 / `*` → 无条件写(后写覆盖)。这是既有写入方(手写脚本、老设置页)一直以来的行为,\n\t//                 不做静默变更 —— 它们照样能用,只是拿不到并发保护;\n\t//   带了且不匹配 → 409:两端基于同一份旧配置先后写入时,后到的这次被明确拒绝。\n\t// 本插件的设置页**始终**带 If-Match,所以「两个标签页互相覆盖」那条路已经堵上。\n\tconst ifMatch = String(req.headers[\"if-match\"] || \"\").trim();\n\tif (ifMatch.length > 0 && ifMatch !== \"*\") {\n\t\tconst current = await currentConfigEtag(getSettingsApi);\n\t\tif (ifMatch !== current) {\n\t\t\tres.writeHead(409, { \"content-type\": \"application/json; charset=utf-8\", [ETAG_HEADER]: current || \"\" });\n\t\t\tres.end(JSON.stringify({ ok: false, code: \"conflict\", etag: current, error: \"配置在别处已经变更,这次写入已拒绝 —— 重读后再保存\" }));\n\t\t\treturn;\n\t\t}\n\t}\n```\n\n</details>\n\n**依据 5 · 作者声明**：[SECURITY.md:23-26](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/SECURITY.md#L23-L26)\n\n当前固定版本复核。作者安全边界。\n\n```text\n## What is in scope\n\n- **The local config route** (`GET`/`PUT /plugins/dsh-status-rotator/config.json`). Write requests are fenced by: `content-type: application/json` (cross-origin simple requests cannot set it), `sec-fetch-site` limited to `same-origin`/`none`, an `Origin` that must match the request `Host`, and the host's loopback-only binding by default. **Known residual risk**: DNS rebinding is same-origin from the browser's point of view and is not caught by this fence — if you expose the port beyond loopback, put an authenticating reverse proxy in front of it.\n- **The client half** (`lib/client.js`): it takes over DOM nodes in the DSH Web UI, animates the status line/tail, and renders phrase text. Phrase and config text is inserted as **text**, never as HTML; the submission bot additionally rejects HTML and `;`, so a malicious phrase bank should not be able to inject markup or script.\n```\n\n#### 缺口\n\n- 未检查宿主实际监听/反代配置。\n  **影响**：网络可达性与 DNS rebinding 风险取决于部署。\n  **进一步探讨**：隔离端口与反代环境验证。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 自动更新与动态 UI 的持续成本是什么？\n\n**研究主题**：依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n默认从 jsDelivr 拉 main 分支词库，启动即拉、随后默认 6 小时刷新；最多 2 MiB、15 秒超时，校验后仅留 packs/phrases，失败保留旧缓存。SSE 变更推送每 25 秒心跳、文件变更检测每 2 秒，客户端可回退轮询。动态 DOM 依赖宿主私有结构和其他插件 CSS 配合，视觉动画、长连接和定时器有持续资源成本；实际 CPU/电耗尚无独立测量。远端 main 内容可无版本更新，用户须接受内容变动或显式关闭。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:85-100](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L85-L100)\n\n当前固定版本复核。默认 URL/间隔/大小。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n * 自动更新(从上游拉取词库):默认源是仓库 main 分支的 config.example.json,\n * 走 jsDelivr CDN(国内可达性优于 raw.githubusercontent);可用环境变量覆盖成\n * raw / 镜像 / 自建地址,空或 off = 关闭。\n */\nconst BANK_URL_ENV = \"DSH_STATUS_ROTATOR_BANK_URL\";\nconst DEFAULT_BANK_URL = \"https://cdn.jsdelivr.net/gh/01Virex/dsh-status-rotator@main/config.example.json\";\n/** 自动更新检查间隔(毫秒);未设置 = 6 小时,0 / 非法 = 关闭 */\nconst BANK_INTERVAL_ENV = \"DSH_STATUS_ROTATOR_BANK_INTERVAL_MS\";\nconst DEFAULT_BANK_INTERVAL_MS = 6 * 60 * 60 * 1000;\n/** 上游词库的落盘缓存文件名(放在本地词库文件同目录,用户不用手改) */\nconst BANK_REMOTE_FILE = \"bank.remote.json\";\n/** 单次拉取上限 2 MiB(正常 config.example.json 约 75 KB) */\nconst MAX_BANK_BYTES = 2 * 1024 * 1024;\n\n/** 请求体上限(5 MiB),避免异常大 body 吃内存 */\nconst MAX_BODY_BYTES = 5 * 1024 * 1024;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:856-939](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L856-L939)\n\n当前固定版本复核。拉取和失败回退。\n\n<details>\n<summary>查看原文（84行）</summary>\n\n```text\n/**\n * 拉一次上游词库:结构校验 → 只留 packs / phrases → 与当前缓存比对,变了才原子写盘,\n * 并立刻在内存里生效(下一次 GET 就能读到,不需要重启、不需要重装包)。任何失败都只\n * 记录状态并保留上一次成功的词库 —— 离线 / CDN 挂掉不影响插件运行。\n */\nasync function refreshRemoteBank() {\n\tconst url = remoteBankUrl();\n\tif (!url) return { ok: false, skipped: \"disabled\" };\n\tif (remoteBankUpdate.inFlight) return { ok: false, skipped: \"in-flight\" };\n\tif (typeof fetch !== \"function\") {\n\t\tremoteBankUpdate.lastCheckAt = Date.now();\n\t\tremoteBankUpdate.lastError = \"当前运行时没有全局 fetch\";\n\t\treturn { ok: false, error: remoteBankUpdate.lastError };\n\t}\n\tremoteBankUpdate.inFlight = true;\n\tremoteBankUpdate.lastCheckAt = Date.now();\n\ttry {\n\t\tconst response = await fetch(url, {\n\t\t\tredirect: \"follow\",\n\t\t\tsignal: AbortSignal.timeout(15000),\n\t\t\theaders: { accept: \"application/json\", \"user-agent\": \"dsh-status-rotator\" }\n\t\t});\n\t\tif (!response.ok) throw new Error(`HTTP ${response.status}`);\n\t\tconst text = await response.text();\n\t\tif (Buffer.byteLength(text, \"utf8\") > MAX_BANK_BYTES) throw new Error(\"上游词库超过 2 MiB,已忽略\");\n\t\tconst doc = phraseOnlyDocument(validateConfigDocument(JSON.parse(text)));\n\t\tif (doc.packs === undefined && doc.phrases === undefined) throw new Error(\"上游词库为空\");\n\t\tconst current = await remoteBankDocument();\n\t\tlet updated = false;\n\t\tif (current === null || !deepEqualJson(current, doc)) {\n\t\t\tconst path = remoteBankPath();\n\t\t\tawait mkdir(dirname(path), { recursive: true });\n\t\t\tconst tmpPath = `${path}.tmp-${process.pid}-${Date.now()}`;\n\t\t\tconst serialized = JSON.stringify(doc, null, 4) + \"\\n\";\n\t\t\ttry {\n\t\t\t\tawait writeFile(tmpPath, serialized, \"utf8\");\n\t\t\t\tawait rename(tmpPath, path);\n\t\t\t} catch (error) {\n\t\t\t\ttry {\n\t\t\t\t\tawait unlink(tmpPath);\n\t\t\t\t} catch (cleanupError) {\n\t\t\t\t\tif (cleanupError.code !== \"ENOENT\") throw cleanupError;\n\t\t\t\t}\n\t\t\t\tthrow error;\n\t\t\t}\n\t\t\tconst kept = remoteBankCache.path === path ? remoteBankCache : null;\n\t\t\tremoteBankCache = { path, mtimeNs: null, size: -1, text: serialized, doc, reloads: (kept ? kept.reloads : 0) + 1, error: null };\n\t\t\tremoteBankUpdate.updates++;\n\t\t\tupdated = true;\n\t\t}\n\t\tremoteBankUpdate.lastSuccessAt = Date.now();\n\t\tremoteBankUpdate.lastError = null;\n\t\treturn { ok: true, updated };\n\t} catch (error) {\n\t\tremoteBankUpdate.lastError = String((error && error.message) || error);\n\t\treturn { ok: false, error: remoteBankUpdate.lastError };\n\t} finally {\n\t\tremoteBankUpdate.inFlight = false;\n\t}\n}\n\n/**\n * 启动自动更新定时器:串行执行(上一次没跑完不叠加请求),timer 挂 unref,不影响\n * 进程退出。返回停止函数,交给 ctx.effect 清理。\n */\nfunction startRemoteBankUpdater() {\n\tif (!remoteBankUrl() || remoteBankIntervalMs() <= 0) return () => {};\n\tlet timer = null;\n\tlet stopped = false;\n\tconst tick = async () => {\n\t\ttry {\n\t\t\tawait refreshRemoteBank();\n\t\t} catch (error) { /* refreshRemoteBank 内部已记录错误 */ }\n\t\tif (stopped || !remoteBankUrl() || remoteBankIntervalMs() <= 0) return;\n\t\ttimer = setTimeout(tick, remoteBankIntervalMs());\n\t\tif (typeof timer.unref === \"function\") timer.unref();\n\t};\n\ttimer = setTimeout(tick, 0);\n\tif (typeof timer.unref === \"function\") timer.unref();\n\treturn () => {\n\t\tstopped = true;\n\t\tif (timer !== null) clearTimeout(timer);\n\t};\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:1577-1584](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1577-L1584)\n\n当前固定版本复核。推送和检测周期。\n\n```text\n/** ── 并发控制 ── 响应头名:GET 发它,PUT 用它做前提校验(If-Match) */\nconst ETAG_HEADER = \"etag\";\n/** ── 推送式热重载 ── SSE 事件路由(独立的 exact path,宿主不允许重复 path) */\nconst EVENTS_PATH = \"/plugins/dsh-status-rotator/events\";\n/** 服务端变更检测间隔:只做本地 stat / 比对,不产生网络往返 */\nconst CHANGE_TICK_MS = 2000;\n/** SSE 心跳间隔:防中间代理或宿主把长连接掐掉 */\nconst SSE_HEARTBEAT_MS = 25000;\n```\n\n**依据 4 · 源码核查**：[lib/index.js:1940-1999](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1940-L1999)\n\n当前固定版本复核。生命周期与路由。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n\tctx.effect(() => startRemoteBankUpdater(), \"status-rotator: remote bank updater\");\n\n\tctx.effect(() => {\n\t\tconst handler = createServeConfig(getSettingsApi);\n\t\t// SSE 事件路由(独立的 exact path)与事件路由自己的 disposer\n\t\tconst eventsHandler = createEventsRoute(getSettingsApi);\n\t\tlet attempts = 0;\n\t\tlet routeDisposer = null;\n\t\tlet eventsDisposer = null;\n\t\tlet timer = null;\n\t\tlet changeTimer = null;\n\t\t/** 本地变更检测 —— 手改的 config.json、上游词库更新也就能推出去,而不只是设置页保存 */\n\t\tconst tick = async () => {\n\t\t\ttry { await broadcastIfChanged(getSettingsApi, \"file\"); } catch (error) { /* 单拍失败不影响下一拍 */ }\n\t\t};\n\t\tconst registerNow = () => {\n\t\t\tlet ws = null;\n\t\t\ttry {\n\t\t\t\tws = typeof ctx.get === \"function\" ? ctx.get(\"webServer\") : null;\n\t\t\t} catch (error) { /* ignore */ }\n\t\t\tif (!ws) {\n\t\t\t\ttry { ws = ctx.webServer || null; } catch (error) { /* ignore */ }\n\t\t\t}\n\t\t\tif (!ws || typeof ws.register !== \"function\") return false;\n\t\t\trouteDisposer = ws.register({\n\t\t\t\tkind: \"exact\",\n\t\t\t\tpath: \"/plugins/dsh-status-rotator/config.json\",\n\t\t\t\thandler\n\t\t\t});\n\t\t\t// 事件路由注册失败(比如宿主版本不支持长连接)不算致命:轮询兜底仍然可用\n\t\t\ttry {\n\t\t\t\teventsDisposer = ws.register({ kind: \"exact\", path: EVENTS_PATH, handler: eventsHandler });\n\t\t\t} catch (error) {\n\t\t\t\teventsDisposer = null;\n\t\t\t}\n\t\t\t// 事件路由一就位就起变更检测(注册失败则不起,免得白跑)\n\t\t\tif (eventsDisposer && changeTimer === null) {\n\t\t\t\tchangeTimer = setInterval(tick, CHANGE_TICK_MS);\n\t\t\t}\n\t\t\treturn true;\n\t\t};\n\t\tif (registerNow()) {\n\t\t\t// 正常路径也要把路由 disposer 交回去:否则插件重载/二次 apply 时\n\t\t\t// 宿主对重复 path 抛 duplicate exact route,激活直接失败。\n\t\t\treturn () => {\n\t\t\t\tif (routeDisposer) {\n\t\t\t\t\ttry { routeDisposer(); } catch (error) { /* ignore */ }\n\t\t\t\t}\n\t\t\t\tif (eventsDisposer) {\n\t\t\t\t\ttry { eventsDisposer(); } catch (error) { /* ignore */ }\n\t\t\t\t}\n\t\t\t\tif (changeTimer !== null) { clearInterval(changeTimer); changeTimer = null; }\n\t\t\t\t// 长连接必须显式关掉:路由注销不会替我们结束已经挂上的响应\n\t\t\t\tsseCloseAll();\n\t\t\t};\n\t\t}\n\t\ttimer = setInterval(() => {\n\t\t\tattempts++;\n\t\t\tif (registerNow() || attempts >= 20) clearInterval(timer);\n\t\t}, 500);\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/client.js:2965-2983](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L2965-L2983)\n\n当前固定版本复核。跨插件 CSS 协作边界。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n\t\t\t/**\n\t\t\t * 行根节点的**公开标记**:第三方样式表按它放行这条线(issue #141)。\n\t\t\t *\n\t\t\t * 为什么需要:接管 0.2.0 的运行行时,这条线是 append 进宿主的\n\t\t\t * `runningContent` —— 与「运行中」那一行同父母,所以别人写「除我之外全隐藏」\n\t\t\t * 的规则(dsh-claude-style 0.13.2 就是:\n\t\t\t * `[data-chat-running][data-dsh-claude-wait] > span >\n\t\t\t *  :not([aria-hidden=\"true\"]):not(.dsh-claude-chat-wait){display:none}`)\n\t\t\t * 会连它一起 `display:none`。插件照旧轮换、读时长、推 SSE,**只是看不见**。\n\t\t\t *\n\t\t\t * 注意这不是自愈机制:别人的选择器不写 `:not(...)` 时,加属性不改变级联结果\n\t\t\t * (scripts/issue-141-coexist-test.html 的 whitelist 场景量的就是这件事)。\n\t\t\t * 它的作用是给消费方一个**稳定的白名单口** —— 以前唯一的白名单口是\n\t\t\t * `aria-hidden=\"true\"`,但一条可见的文字行打上它会丢读屏,不适合当公开契约。\n\t\t\t * 消费方写法(二选一,值恒为 \"\";`.dsh-status-rotator-line` 就是下面的\n\t\t\t * LINE_CLASS,它同时充当公开别名,不再另立新类名):\n\t\t\t *   [data-chat-running] > span > :not([data-dsh-status-rotator-line]) { … }\n\t\t\t *   [data-chat-running] > span > :not(.dsh-status-rotator-line) { … }\n\t\t\t * 反向亦然:要让位给这条线时,可以直接选中这两个标记。\n```\n\n</details>\n\n#### 缺口\n\n- 未测性能、电耗或远端内容变化。\n  **影响**：使用成本依设备和页面数不同。\n  **进一步探讨**：低端设备/多标签页测 CPU 与网络。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何分阶段试用并验证可访问性？\n\n**研究主题**：新假设与验证、采用判断\n\n#### 完整回答\n\n可先在测试 profile 启用静态短语，关远端自动更新和弹幕/鲸尾，核三代宿主的状态文本、时钟与读屏公告；再开启 ETag/SSE、设置页双标签冲突测试；最后按性能预算逐项启用动画。把可访问性状态文本与装饰动画分离是现有设计方向；进一步减少浏览器 DOM 结构耦合需宿主公开稳定槽位，属于未实现假设。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:84-94](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/README.md#L84-L94)\n\n当前固定版本复核。安装与默认外观。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\n### Quick start\n\nFor Web, run:\n\n```bash\ndsh plugin --profile web add dsh-status-rotator\n```\n\nRestart `dsh web`, then open **Settings → Status Texts** and start a turn. For Desktop, use the npm walkthrough above or its command-line alternative. Later settings changes save and apply automatically; restart the corresponding host after upgrading plugin code.\n\nThe whale tail and tail motion start off; enable them under **Appearance → Whale tail**. Danmaku starts on and can be disabled under **Appearance → Danmaku**.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1062-1080](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L1062-L1080)\n\n当前固定版本复核。回退规则。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n\t\t/**\n\t\t * 状态行这一次该显示什么(纯函数,供 smoke test 覆盖):\n\t\t *   \"phrases\" → 从短语库里抽一句轮换;\n\t\t *   \"host\"    → 显示宿主原文(「Deep diving…」/「深度求索中」),不走打字机;\n\t\t *   \"keep\"    → 什么都不做,保持现状。\n\t\t *\n\t\t * 两条回落规则:\n\t\t *   1. `labelSource: \"host\"` = 用户要「纯 0.1.6 观感」:插件自己那条线(0.1.7\n\t\t *      的 LINE_CLASS)写宿主原文;旧宿主(≤0.1.6)的 TurnStatus 本来就写着宿主\n\t\t *      原文,插件不该去改写它 → keep。\n\t\t *   2. 短语库为空(没 config.json / 没文案)时,插件自己那条线**回落宿主原文**\n\t\t *      —— 这就是「状态行变成一条空行、deep diving 不见了」的修复;旧宿主同理\n\t\t *      保持 keep(它自己那句就是原文,不碰最忠实)。\n\t\t */\n\t\tfunction labelPlanFor(source, hasPhrases, ownLine) {\n\t\t\tif (source === \"host\") return ownLine ? \"host\" : \"keep\";\n\t\t\tif (hasPhrases) return \"phrases\";\n\t\t\treturn ownLine ? \"host\" : \"keep\";\n\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:2989-3005](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/client.js#L2989-L3005)\n\n当前固定版本复核。运行行结构与读屏注释。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\t\t\t/**\n\t\t\t * dsh 0.2.0 起,「运行中」不再是折叠头按钮里的一段文本,而是会话流里独立的一行:\n\t\t\t *   div[data-chat-running]\n\t\t\t *     ├─ span(visuallyHidden, role=status, aria-live=polite)  ← 读屏公告,别动\n\t\t\t *     ├─ span(class*=runningDivider)\n\t\t\t *     └─ span(class*=runningContent)\n\t\t\t *          ├─ span(class*=runningIcon)   ← **鲸鱼尾巴**(svg,stroke=currentColor)\n\t\t\t *          └─ span(class*=runningText)   ← shimmer 文案(\"Deep diving for 12s\")\n\t\t\t * 折叠头按钮(button[data-turn-process])在 0.2.0 只在**回合结束后**才渲染(收起态摘要),\n\t\t\t * 所以运行期间插件必须认得这一行,否则整条状态行都不会被接管(0.2.0 兼容的核心)。\n\t\t\t */\n\t\t\tconst RUNNING_ROW_SELECTOR = \"[data-chat-running]\";\n\t\t\tconst RUNNING_TEXT_SELECTOR = '[class*=\"runningText\"]';\n\t\t\tconst RUNNING_ICON_SELECTOR = '[class*=\"runningIcon\"]';\n\t\t\t/** 插件给宿主鲸鱼尾巴加的类:样式表据此给它上炫彩流光 */\n\t\t\tconst TAIL_CLASS = \"dsh-status-rotator-whale-tail\";\n\t\t\tconst TAIL_WAG_CLASS = \"dsh-status-rotator-whale-wag\";\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:1785-1799](https://github.com/01Virex/dsh-status-rotator/blob/39513500a34bea27da225f00e0ff76687989e779/lib/index.js#L1785-L1799)\n\n当前固定版本复核。并发写条件。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n\t// ── If-Match 前提校验(必须在任何写入之前) ──\n\t// 语义按标准 HTTP:前提是**客户端自愿**的。\n\t//   缺省 / `*` → 无条件写(后写覆盖)。这是既有写入方(手写脚本、老设置页)一直以来的行为,\n\t//                 不做静默变更 —— 它们照样能用,只是拿不到并发保护;\n\t//   带了且不匹配 → 409:两端基于同一份旧配置先后写入时,后到的这次被明确拒绝。\n\t// 本插件的设置页**始终**带 If-Match,所以「两个标签页互相覆盖」那条路已经堵上。\n\tconst ifMatch = String(req.headers[\"if-match\"] || \"\").trim();\n\tif (ifMatch.length > 0 && ifMatch !== \"*\") {\n\t\tconst current = await currentConfigEtag(getSettingsApi);\n\t\tif (ifMatch !== current) {\n\t\t\tres.writeHead(409, { \"content-type\": \"application/json; charset=utf-8\", [ETAG_HEADER]: current || \"\" });\n\t\t\tres.end(JSON.stringify({ ok: false, code: \"conflict\", etag: current, error: \"配置在别处已经变更,这次写入已拒绝 —— 重读后再保存\" }));\n\t\t\treturn;\n\t\t}\n\t}\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1371c7843ef85e836fec4e264fd737e3021266e7fc2c334aaf577d798d080b8e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 4184 | — | — | 70472 |\n| .cjs | source | 25 | 7094 | 5859 | 943 | — |\n| .js | source | 3 | 11855 | 9219 | 2337 | — |\n| .mjs | source | 1 | 111 | 88 | 15 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 状态行 | 反馈 | 宿主 DOM |\n| 设置 | 升级留存 | If-Match 可选 |\n| 词库 | 自动更新 | 远端 main |\n\n## 工程亮点\n\nNode half 分层配置与可选 If-Match，SSE 推送；客户端适配多代私有 DOM，远端词库默认主分支。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/client.js、lib/index.js、SECURITY.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交 README、package、Node/客户端源码与安全说明；未运行目标插件或浏览器。\n- 下一步：进一步探讨应按本项缺口执行：隔离端口与反代环境验证。；低端设备/多标签页测 CPU 与网络。；测试 profile 上做键盘/读屏/CPU 对照。\n",
+        "reports": "# dsh-status-rotator\n\n> 为 DSH 运行状态提供轮换文案、主题、弹幕与鲸尾动画，并保存词库与配置。\n\n## 研究范围\n\n- **仓库**：[01Virex/dsh-status-rotator](https://github.com/01Virex/dsh-status-rotator)\n- **版本号**：0.37.0（[固定提交 bce58114d40a9db9d5ca51a3d1450889d36a67e0](https://github.com/01Virex/dsh-status-rotator/tree/bce58114d40a9db9d5ca51a3d1450889d36a67e0)）\n- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。\n\n## 洞察短评\n\n- **用途**：适合经常等待长任务、希望区分运行阶段的 DSH Web 用户；合格结果是状态文案可读且原生进度仍可识别。\n- **亮点**：相对手改宿主文案，贡献在升级独立配置与条件词库形成的可维护定制入口，不能把动画或词条数量当生产率收益。[Q01](#research-q01)\n- **思考**：状态 DOM 与选择器是实际兼容契约，复杂观察器、动画及周期扫描可能增加浏览器负担；持久配置改善不证明新宿主上仍准确识别运行状态。[Q03](#research-q03)\n- **建议**：未验证假设是把状态来源抽成宿主事件适配层，DOM 扫描只兜底，可减少误判和空扫；用相同长任务记录事件与DOM路径的状态延迟、漏判及主线程时间，若事件覆盖不足或负担未降则否定。[Q05](#research-q05)\n\n采用建议：可在独立profile试用，先关闭额外动画确认状态与保存正常；依赖稳定运行状态的工作应保留原生显示和禁用入口。[Q04](#research-q04)\n\n## 核心贡献\n\n相对手改宿主文案，贡献在升级独立配置与条件词库形成的可维护定制入口，不能把动画或词条数量当生产率收益。[Q01](#research-q01)\n\n## 关键质疑\n\n状态 DOM 与选择器是实际兼容契约，复杂观察器、动画及周期扫描可能增加浏览器负担；持久配置改善不证明新宿主上仍准确识别运行状态。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是把状态来源抽成宿主事件适配层，DOM 扫描只兜底，可减少误判和空扫；用相同长任务记录事件与DOM路径的状态延迟、漏判及主线程时间，若事件覆盖不足或负担未降则否定。[Q05](#research-q05)\n\n在隔离profile保存配置、升级、断网及长任务各做同一组检查，比较原生状态一致性和浏览器CPU；这里只提出核验设计，没有执行。\n\n## 场景与替代办法\n\n适合经常等待长任务、希望区分运行阶段的 DSH Web 用户；合格结果是状态文案可读且原生进度仍可识别。\n\n简单替代是保留原生状态行或用样式脚本换固定文本；二者维护面小，但缺少跨升级的配置存储和按运行阶段选择词库。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH Web 与匹配状态DOM | 展示必需 | 识别运行行并挂载控件 | 样式或定位可能失效 |\n| 可写 DSH_HOME | 配置持久化必需 | 升级独立用户配置 | 保存失败需查目录权限 |\n| 上游词库CDN | 自动更新可选 | 每6小时取词库 | 可关闭并使用内置词库 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户在profile加载插件并刷新页面 | 设置入口及状态行可见 |\n| 2 | 用户选择词库和效果并保存 | 重启后配置保持 |\n| 3 | 发起长任务后观察运行状态 | 与原生状态一致；异常先禁用动画并恢复原生 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器与配置存储；金额未知 | 安装、选择主题，耗时未知 | 需匹配宿主DOM |\n| 持续使用 | 动画、观察器和轮询占用，未测 | 词库维护可选 | CDN更新可关闭 |\n| 失败恢复 | 重载和排查资源，未测 | 核对用户配置、关闭插件 | 不将美化视作任务正确性来源 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 个性化状态 | 源码具备阶段条件与轮换 | 可读性、等待体验改善幅度 |\n| 配置保留 | 数据目录与包镜像分离 | 用户实际升级恢复成功率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：01Virex/dsh-status-rotator 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 定制状态相对保留原生显示增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n目标用户在长任务期间反复查看状态，交付是可持续维护的显示偏好，而非更快完成模型任务。作者的Node说明明确指出包替换导致配置丢失的背景，并把用户存储放到DSH_HOME。这个增量相对直接修改包内文案成立。界面装饰和词库丰富度属于体验选择，缺少对照不能推断专注度或工作产出改善。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:7-41](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/index.js#L7-L41)\n\n配置分层与包升级边界解释具体贡献来源。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n *   GET/HEAD /plugins/dsh-status-rotator/config.json\n *       → stream the effective document, layered as\n *         bundled config.example.json → package config.json → auto-updated phrase\n *         bank ($DSH_HOME/status-rotator/bank.remote.json) → legacy settings\n *         namespace (only on hosts whose settings service still exposes\n *         `register`) → **user config store**\n *         (`$DSH_HOME/status-rotator/config.json`, survives plugin upgrades;\n *         `DSH_STATUS_ROTATOR_CONFIG` overrides the path) → external phrase bank\n *         (`$DSH_HOME/status-rotator/phrases.json`, or\n *         `$DSH_STATUS_ROTATOR_BANK`; re-read whenever the file changes).\n *         Both banks only carry `packs` / `phrases`.\n *   PUT/POST  same route\n *       → validate the submitted JSON, persist the delta into the user config\n *         store (durable across upgrades) and mirror the full document to the\n *         package-local config.json for backward compatibility.\n *\n * Where settings actually live is the whole point of issue #51: the package\n * directory is replaced wholesale on every plugin upgrade, so anything stored\n * next to the package is gone afterwards. Host-side settings were the original\n * plan, but `@deepseek-ai/dsh-settings` 0.1.7-rc.1 only offers\n * `describe`/`update`/`replace`/`mutate` — the `register()` API this plugin was\n * written against no longer exists, so that path silently returned null and the\n * package-local config.json was the only store left. Persistence now lives in\n * the plugin's own data directory under `$DSH_HOME`, which no upgrade touches.\n *\n * On start-up (and on every GET, so a hand-edited file is picked up while it\n * still exists) the package-local config.json is absorbed into the user config\n * store, because that file is documented as editable and is otherwise lost with\n * the next upgrade. A content fingerprint recorded in the store tells our own\n * mirror apart from a human edit, so the mirror is never absorbed twice.\n *\n * The external bank is what makes a phrase update take effect without\n * republishing or reinstalling the npm package: edit that one file and the\n * node half serves the new content on the next request (the browser half\n * re-reads every `reloadIntervalMs` while the page stays open).\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 配置、词库和客户端如何连接？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nNode提供有效配置并将用户差量保存在独立目录，包内文件仅作为兼容镜像；默认上游是main分支经CDN提供的词库。浏览器取配置并用EventSource更新，不可用时保留轮询。when规则只接受固定键，防止无效条件静默吞掉。远端词库不是运行必需，关闭它能缩小网络依赖，但客户端仍需找到宿主状态行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:77-100](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/index.js#L77-L100)\n\n可写用户配置与远端更新的默认条件。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n * 用户配置的持久存储:**必须**和词库一样落在 `$DSH_HOME/status-rotator/` 下,\n * 不能落在包目录里 —— 包目录会被 npm / Release 升级整体替换,写在里面的配置每次升级\n * 都会没(issue #51「每次更新都会重置我设置的」的根因,详见 userConfigPath)。\n */\nconst USER_CONFIG_FILE = \"config.json\";\n/** 覆盖用户配置存储路径的环境变量(绝对路径,或相对当前工作目录;测试用) */\nconst USER_CONFIG_ENV = \"DSH_STATUS_ROTATOR_CONFIG\";\n/**\n * 自动更新(从上游拉取词库):默认源是仓库 main 分支的 config.example.json,\n * 走 jsDelivr CDN(国内可达性优于 raw.githubusercontent);可用环境变量覆盖成\n * raw / 镜像 / 自建地址,空或 off = 关闭。\n */\nconst BANK_URL_ENV = \"DSH_STATUS_ROTATOR_BANK_URL\";\nconst DEFAULT_BANK_URL = \"https://cdn.jsdelivr.net/gh/01Virex/dsh-status-rotator@main/config.example.json\";\n/** 自动更新检查间隔(毫秒);未设置 = 6 小时,0 / 非法 = 关闭 */\nconst BANK_INTERVAL_ENV = \"DSH_STATUS_ROTATOR_BANK_INTERVAL_MS\";\nconst DEFAULT_BANK_INTERVAL_MS = 6 * 60 * 60 * 1000;\n/** 上游词库的落盘缓存文件名(放在本地词库文件同目录,用户不用手改) */\nconst BANK_REMOTE_FILE = \"bank.remote.json\";\n/** 单次拉取上限 2 MiB(正常 config.example.json 约 75 KB) */\nconst MAX_BANK_BYTES = 2 * 1024 * 1024;\n\n/** 请求体上限(5 MiB),避免异常大 body 吃内存 */\nconst MAX_BODY_BYTES = 5 * 1024 * 1024;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:119-143](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/index.js#L119-L143)\n\n封闭条件校验。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/**\n * 校验一条 `when` 规则。这里**拒绝未知键**而不像 config 那样静默丢弃:\n * when 是一张小而封闭的词表,键名写错的结果是「这句永远不出现」——\n * 正是这个仓库一贯要避免的静默失败,不如在写盘前明确报错并指出路径。\n */\nfunction assertWhen(value, pathLabel) {\n\tif (value === undefined) return;\n\tif (value === null || typeof value !== \"object\" || Array.isArray(value)) {\n\t\tthrow new Error(`${pathLabel} 必须是对象`);\n\t}\n\tfor (const key of Object.keys(value)) {\n\t\tif (WHEN_KEYS.indexOf(key) < 0) {\n\t\t\tthrow new Error(`${pathLabel}.${key} 不是可用的条件(可用:${WHEN_KEYS.join(\" / \")})`);\n\t\t}\n\t}\n\tif (value.tool !== undefined) {\n\t\tconst okTool = (t) => typeof t === \"string\" && t.length > 0 && t.length <= 64;\n\t\tif (!okTool(value.tool) && !(Array.isArray(value.tool) && value.tool.length > 0 && value.tool.every(okTool))) {\n\t\t\tthrow new Error(`${pathLabel}.tool 必须是非空字符串或非空字符串数组`);\n\t\t}\n\t}\n\tfor (const key of [\"retry\", \"firstTurn\"]) {\n\t\tif (value[key] !== undefined && typeof value[key] !== \"boolean\") {\n\t\t\tthrow new Error(`${pathLabel}.${key} 必须是布尔`);\n\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:5345-5383](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/client.js#L5345-L5383)\n\nSSE与轮询为配置传播链。\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n\t\t\t * 断线由 EventSource 自己重连,而服务端在每次连上时都会先推一条 hello(带当前 ETag),\n\t\t\t * 所以断线期间错过的变更会在重连那一刻补上 —— 那一端不会停在一个没人再推的旧值上。\n\t\t\t */\n\t\t\tlet eventSource = null;\n\t\t\tlet sseConnected = false;\n\t\t\t/** 轮询兜底定时器:只在「间隔 > 0」且「推送没连上」时跑 */\n\t\t\tconst syncReloadTimer = () => {\n\t\t\t\tconst want = config.reloadIntervalMs > 0 && !sseConnected;\n\t\t\t\tconst current = reloadTimer === null ? null : activeReloadMs;\n\t\t\t\tif (want && current === config.reloadIntervalMs) return;\n\t\t\t\tif (reloadTimer !== null) { clearInterval(reloadTimer); reloadTimer = null; }\n\t\t\t\tactiveReloadMs = config.reloadIntervalMs;\n\t\t\t\tif (want) reloadTimer = setInterval(loadExternal, config.reloadIntervalMs);\n\t\t\t};\n\t\t\t/** 推送说配置变了:立刻拉一次(带 If-None-Match,没变就是一次 304) */\n\t\t\tconst onPushPayload = (payload) => {\n\t\t\t\tif (!payload || typeof payload !== \"object\") return;\n\t\t\t\tif (typeof payload.etag === \"string\" && payload.etag.length > 0 && payload.etag === configEtag) return;\n\t\t\t\tlog(\"config push:\", payload.type || \"?\", payload.reason || \"\");\n\t\t\t\tloadExternal();\n\t\t\t};\n\t\t\tconst openEventStream = () => {\n\t\t\t\tif (eventSource !== null) return;\n\t\t\t\tif (typeof EventSource !== \"function\") { log(\"no EventSource in this host → polling fallback stays\"); return; }\n\t\t\t\ttry {\n\t\t\t\t\teventSource = new EventSource(EVENTS_URL);\n\t\t\t\t} catch (error) {\n\t\t\t\t\teventSource = null;\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\teventSource.addEventListener(\"open\", () => {\n\t\t\t\t\tsseConnected = true;\n\t\t\t\t\tsyncReloadTimer();\n\t\t\t\t\tlog(\"config push channel connected; polling suspended\");\n\t\t\t\t});\n\t\t\t\teventSource.addEventListener(\"error\", () => {\n\t\t\t\t\t// EventSource 会自己重连;这里只把轮询兜底放回去,别让页面停在一个不动的值上\n\t\t\t\t\tif (sseConnected) log(\"config push channel dropped → polling fallback resumed\");\n\t\t\t\t\tsseConnected = false;\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · DOM接管能否保持原生语义和资源可控？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n实现同时使用MutationObserver与2秒兜底重扫，说明宿主节点变化需要主动追踪，不能把成功注册等同正确状态。其配置持久化设计可复用，但浏览器对状态DOM、生命周期和大量定时器存在维护耦合。源码中清理路径提供正面支持；本轮没有运行浏览器，不能确认泄漏或卡顿，也不能断言跨宿主稳定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:5191-5237](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/client.js#L5191-L5237)\n\n重扫和观察器暴露维护边界。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n\t\t\t/** 兜底轮询:每 2 秒重扫一次(防止 MutationObserver 漏掉早期节点) */\n\t\t\tlet lastSeenStatusCount = -1;\n\t\t\tconst rescanAll = () => {\n\t\t\t\tconst status = document.querySelectorAll('[role=\"status\"][aria-live=\"polite\"]');\n\t\t\t\tif (status.length !== lastSeenStatusCount) {\n\t\t\t\t\tlastSeenStatusCount = status.length;\n\t\t\t\t\tlog(\"rescan: 状态标签 ×\", status.length);\n\t\t\t\t}\n\t\t\t\tfor (const el of status) adopt(el);\n\t\t\t\t// 会话/输入框座位重渲染可能把那行状态行一起换掉:清掉失效的再重扫重建\n\t\t\t\tfor (const line of Array.from(lineButtons.keys())) {\n\t\t\t\t\tif (!line.isConnected) releaseStatusLine(line);\n\t\t\t\t}\n\t\t\t\tscanTurnProcess(document.body);\n\t\t\t\tscanRunningRows(document.body);\n\t\t\t\tpruneWatchedButtons();\n\t\t\t\t// 实时引擎兜底:服务或「当前会话」可能晚于插件就绪(0.1.7 的 sessions\n\t\t\t\t// 服务就常晚一拍),或用户在会话间切换 —— 每 2 秒重新接一次线\n\t\t\t\ttry {\n\t\t\t\t\twireLiveEngine();\n\t\t\t\t\tsyncCurrentSession();\n\t\t\t\t} catch (error) { /* ignore */ }\n\t\t\t\t// 窗口尺寸变化后重新判断是否溢出(2 秒一次,开销可忽略);\n\t\t\t\t// 同时兜底同步一次 0.1.7 宿主的时长/回合状态(正常路径由按钮观察器触发)\n\t\t\t\tfor (const el of adopted) {\n\t\t\t\t\tif (!el.isConnected) continue;\n\t\t\t\t\tif (lineButtons.has(el)) syncTurnProcessLine(el);\n\t\t\t\t\tsyncTruncation(el);\n\t\t\t\t}\n\t\t\t\t// 宿主遮罩兜底:只切样式(不增删节点)的显隐不会触发 mutation,2 秒查一次\n\t\t\t\tsyncDanmakuMask();\n\t\t\t};\n\n\t\t\tconst observer = new MutationObserver((records) => {\n\t\t\t\t// A replaced icon can be deep inside an already-adopted row. Scanning\n\t\t\t\t// just the added icon misses its ancestor; recover immediately on its row.\n\t\t\t\tfor (const record of records) {\n\t\t\t\t\tconst target = record.target instanceof Element ? record.target : record.target.parentElement;\n\t\t\t\t\tconst row = target && target.closest(RUNNING_ROW_SELECTOR);\n\t\t\t\t\tif (row && runningLines.has(row)) syncRunningRow(row);\n\t\t\t\t}\n\t\t\t\tfor (const record of records) {\n\t\t\t\t\t// 深浅色主题切换(body[data-ds-dark-theme] 增删)→ 重算渐变 CSS 并刷新已接管元素\n\t\t\t\t\tif (record.type === \"attributes\" && record.attributeName === \"data-conversation-session\") {\n\t\t\t\t\t\tsyncCurrentSession();\n\t\t\t\t\t\tcontinue;\n\t\t\t\t\t}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:6495-6520](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/client.js#L6495-L6520)\n\n卸载清理为正面支持，未做运行复现。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n\t\t\t\t\tif (pendingUnsub) { try { pendingUnsub(); } catch (error) { /* ignore */ } }\n\t\t\t\t\tfor (const state of typists.values()) {\n\t\t\t\t\t\tif (state.timer !== null) clearInterval(state.timer);\n\t\t\t\t\t}\n\t\t\t\t\tfor (const live of liveTimers.values()) clearInterval(live);\n\t\t\t\t\tif (danmakuMaskProbeTimer !== null) {\n\t\t\t\t\t\tclearTimeout(danmakuMaskProbeTimer);\n\t\t\t\t\t\tdanmakuMaskProbeTimer = null;\n\t\t\t\t\t}\n\t\t\t\t\t// 卸载时只交还「我们自己写上去的」标题;没持有过就别碰(见 updateTitle)\n\t\t\t\t\tif (titleOwned) {\n\t\t\t\t\t\ttitleOwned = false;\n\t\t\t\t\t\tif (origTitle && document.title !== origTitle) document.title = origTitle;\n\t\t\t\t\t}\n\t\t\t\t\tteardownDanmaku();\n\t\t\t\t\tfor (const tail of Array.from(whaleTailMotionStates.keys())) stopWhaleTailMotion(tail);\n\t\t\t\t\tif (styleEl !== null && styleEl.isConnected) styleEl.remove();\n\t\t\t\t\tsettingsPage.dispose();\n\t\t\t\t\tif (danmakuStyleEl !== null && danmakuStyleEl.isConnected) danmakuStyleEl.remove();\n\t\t\t\t\tif (whaleWagStyleEl !== null && whaleWagStyleEl.isConnected) whaleWagStyleEl.remove();\n\t\t\t\t\twhaleWagStyleEl = null;\n\t\t\t\t\t// 0.1.7 状态行:撤掉插件那行、把折叠头放出来\n\t\t\t\t\tfor (const line of Array.from(lineButtons.keys())) releaseStatusLine(line);\n\t\t\t\t\tfor (const el of adopted) {\n\t\t\t\t\t\ttry {\n\t\t\t\t\t\t\tel.style.removeProperty(\"min-width\");\n```\n\n</details>\n\n#### 缺口\n\n- 不同宿主状态节点与长时资源占用未测\n  **影响**：限制持续采用的兼容和性能判断\n  **进一步探讨**：对照原生运行同样的短、长、失败任务并采样状态及主线程时间。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么条件下值得承担采用和恢复成本？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n在视觉定制需求明确且可随时停用的profile中适合试用。没有模型调用节省的依据，主要代价来自首次调参、持续浏览器工作和宿主升级后的适配。用户应把配置保存到独立数据目录并核对重启保留；异常时先关闭动画或插件，再核对原生任务状态，避免把显示问题误认作模型问题。没有人工时间数据，不能称零成本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:23-45](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/index.js#L23-L45)\n\n独立存储与重启流程支撑恢复建议。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n * Where settings actually live is the whole point of issue #51: the package\n * directory is replaced wholesale on every plugin upgrade, so anything stored\n * next to the package is gone afterwards. Host-side settings were the original\n * plan, but `@deepseek-ai/dsh-settings` 0.1.7-rc.1 only offers\n * `describe`/`update`/`replace`/`mutate` — the `register()` API this plugin was\n * written against no longer exists, so that path silently returned null and the\n * package-local config.json was the only store left. Persistence now lives in\n * the plugin's own data directory under `$DSH_HOME`, which no upgrade touches.\n *\n * On start-up (and on every GET, so a hand-edited file is picked up while it\n * still exists) the package-local config.json is absorbed into the user config\n * store, because that file is documented as editable and is otherwise lost with\n * the next upgrade. A content fingerprint recorded in the store tells our own\n * mirror apart from a human edit, so the mirror is never absorbed twice.\n *\n * The external bank is what makes a phrase update take effect without\n * republishing or reinstalling the npm package: edit that one file and the\n * node half serves the new content on the next request (the browser half\n * re-reads every `reloadIntervalMs` while the page stays open).\n *\n * The browser half fetches that URL by default. No manual localStorage or\n * deployment step is needed — drop config.json next to this package, restart\n * `dsh web`, hard-refresh.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:5420-5465](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/client.js#L5420-L5465)\n\n多类定时任务是持续资源成本来源。\n\n<details>\n<summary>查看原文（46行）</summary>\n\n```text\n\t\t\t\t}\n\t\t\t\tif (!config.whaleTail || !config.whaleTailMotion.enabled || !config.whaleTailMotion.toolSwitchEnabled) clearPendingToolSwitch(true);\n\t\t\t\tif (!config.whaleTail || !config.whaleTailMotion.enabled) whaleTailPlaybackByRow.clear();\n\t\t\t\tif (config.intervalMs !== activeIntervalMs) {\n\t\t\t\t\tactiveIntervalMs = config.intervalMs;\n\t\t\t\t\tif (timer !== null) clearInterval(timer);\n\t\t\t\t\ttimer = setInterval(rotate, config.intervalMs);\n\t\t\t\t}\n\t\t\t\t// 间隔变化与推送通道的连接状态都由 syncReloadTimer 一处决定\n\t\t\t\tsyncReloadTimer();\n\t\t\t\tconst titleRaw = JSON.stringify(config.title ?? null);\n\t\t\t\tif (titleRaw !== lastTitleRaw) {\n\t\t\t\t\tlastTitleRaw = titleRaw;\n\t\t\t\t\tif (titleTimer !== null) clearInterval(titleTimer);\n\t\t\t\t\tif (titleLiveTimer !== null) clearInterval(titleLiveTimer);\n\t\t\t\t\ttitleTimer = null;\n\t\t\t\t\ttitleLiveTimer = null;\n\t\t\t\t\tconst t = config.title;\n\t\t\t\t\tif (t && t.enabled && Array.isArray(t.templates) && t.templates.length > 0) {\n\t\t\t\t\t\tconst iv = Number(t.intervalMs) > 0 ? Number(t.intervalMs) : 8000;\n\t\t\t\t\t\ttitleTimer = setInterval(advanceTitle, iv);\n\t\t\t\t\t}\n\t\t\t\t\t// 标题含动态占位符({elapsed} 等)时按 liveTickMs 实时刷新\n\t\t\t\t\tif (t && t.enabled && config.liveTickMs > 0) {\n\t\t\t\t\t\ttitleLiveTimer = setInterval(updateTitle, config.liveTickMs);\n\t\t\t\t\t}\n\t\t\t\t\tupdateTitle();\n\t\t\t\t}\n\t\t\t\tconst doc = effectiveDoc();\n\t\t\t\tconst schedRaw = JSON.stringify(doc && doc.schedule ? doc.schedule : null);\n\t\t\t\tif (schedRaw !== lastScheduleRaw) {\n\t\t\t\t\tlastScheduleRaw = schedRaw;\n\t\t\t\t\tif (scheduleTimer !== null) clearInterval(scheduleTimer);\n\t\t\t\t\tscheduleTimer = doc && doc.schedule && doc.schedule.length > 0\n\t\t\t\t\t\t? setInterval(scheduleTick, 60000)\n\t\t\t\t\t\t: null;\n\t\t\t\t}\n\t\t\t\t// TPS motion needs its sampler even when text live refresh is disabled.\n\t\t\t\tconst tailNeedsTps = config.whaleTail && config.whaleTailMotion && config.whaleTailMotion.enabled && config.whaleTailMotion.mode !== \"fixed\";\n\t\t\t\tconst engineMs = tailNeedsTps ? 1000 : config.liveTickMs > 0 ? Math.max(500, config.liveTickMs) : 0;\n\t\t\t\tif (engineMs !== activeEngineMs) {\n\t\t\t\t\tactiveEngineMs = engineMs;\n\t\t\t\t\tif (liveEngineTimer !== null) clearInterval(liveEngineTimer);\n\t\t\t\t\tliveEngineTimer = engineMs > 0 ? setInterval(engineTick, engineMs) : null;\n\t\t\t\t}\n\t\t\t\t// 弹幕:配置变化时重建层与发射定时器(和其他定时器一样按快照对比,不重复打断)\n```\n\n</details>\n\n#### 缺口\n\n- 缺少合格任务对照与资源测量\n  **影响**：不能量化等待体验和节时收益\n  **进一步探讨**：以状态误判、配置恢复、CPU与用户操作时间作同条件比较。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 事件适配层能否减少DOM扫描？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n本次提出未验证的事件优先状态适配层。推导来自现有观察器和周期重扫对节点变化的补偿。新方案把可用宿主事件作为主输入，DOM只补齐事件缺失；状态和展示解耦后可分别测试。用同一profile和任务对照两条路径的阶段漏判、延迟及CPU；若事件不能覆盖运行、重试与结束，或资源收益抵不过适配复杂度，假设不成立。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:5191-5237](https://github.com/01Virex/dsh-status-rotator/blob/bce58114d40a9db9d5ca51a3d1450889d36a67e0/lib/client.js#L5191-L5237)\n\n兜底扫描是提出替代机制的具体依据。\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n\t\t\t/** 兜底轮询:每 2 秒重扫一次(防止 MutationObserver 漏掉早期节点) */\n\t\t\tlet lastSeenStatusCount = -1;\n\t\t\tconst rescanAll = () => {\n\t\t\t\tconst status = document.querySelectorAll('[role=\"status\"][aria-live=\"polite\"]');\n\t\t\t\tif (status.length !== lastSeenStatusCount) {\n\t\t\t\t\tlastSeenStatusCount = status.length;\n\t\t\t\t\tlog(\"rescan: 状态标签 ×\", status.length);\n\t\t\t\t}\n\t\t\t\tfor (const el of status) adopt(el);\n\t\t\t\t// 会话/输入框座位重渲染可能把那行状态行一起换掉:清掉失效的再重扫重建\n\t\t\t\tfor (const line of Array.from(lineButtons.keys())) {\n\t\t\t\t\tif (!line.isConnected) releaseStatusLine(line);\n\t\t\t\t}\n\t\t\t\tscanTurnProcess(document.body);\n\t\t\t\tscanRunningRows(document.body);\n\t\t\t\tpruneWatchedButtons();\n\t\t\t\t// 实时引擎兜底:服务或「当前会话」可能晚于插件就绪(0.1.7 的 sessions\n\t\t\t\t// 服务就常晚一拍),或用户在会话间切换 —— 每 2 秒重新接一次线\n\t\t\t\ttry {\n\t\t\t\t\twireLiveEngine();\n\t\t\t\t\tsyncCurrentSession();\n\t\t\t\t} catch (error) { /* ignore */ }\n\t\t\t\t// 窗口尺寸变化后重新判断是否溢出(2 秒一次,开销可忽略);\n\t\t\t\t// 同时兜底同步一次 0.1.7 宿主的时长/回合状态(正常路径由按钮观察器触发)\n\t\t\t\tfor (const el of adopted) {\n\t\t\t\t\tif (!el.isConnected) continue;\n\t\t\t\t\tif (lineButtons.has(el)) syncTurnProcessLine(el);\n\t\t\t\t\tsyncTruncation(el);\n\t\t\t\t}\n\t\t\t\t// 宿主遮罩兜底:只切样式(不增删节点)的显隐不会触发 mutation,2 秒查一次\n\t\t\t\tsyncDanmakuMask();\n\t\t\t};\n\n\t\t\tconst observer = new MutationObserver((records) => {\n\t\t\t\t// A replaced icon can be deep inside an already-adopted row. Scanning\n\t\t\t\t// just the added icon misses its ancestor; recover immediately on its row.\n\t\t\t\tfor (const record of records) {\n\t\t\t\t\tconst target = record.target instanceof Element ? record.target : record.target.parentElement;\n\t\t\t\t\tconst row = target && target.closest(RUNNING_ROW_SELECTOR);\n\t\t\t\t\tif (row && runningLines.has(row)) syncRunningRow(row);\n\t\t\t\t}\n\t\t\t\tfor (const record of records) {\n\t\t\t\t\t// 深浅色主题切换(body[data-ds-dark-theme] 增删)→ 重算渐变 CSS 并刷新已接管元素\n\t\t\t\t\tif (record.type === \"attributes\" && record.attributeName === \"data-conversation-session\") {\n\t\t\t\t\t\tsyncCurrentSession();\n\t\t\t\t\t\tcontinue;\n\t\t\t\t\t}\n```\n\n</details>\n\n#### 缺口\n\n- 宿主事件覆盖和性能收益未知\n  **影响**：假设尚不能作为当前能力\n  **进一步探讨**：以小适配器验证覆盖后再考虑替换扫描。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c06f573209e3299adef4f327c1c8bdaa959933244f4fe36a2a398bfb5904727f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 4190 | — | — | 71098 |\n| .cjs | source | 25 | 7094 | 5859 | 943 | — |\n| .js | source | 3 | 11855 | 9219 | 2337 | — |\n| .mjs | source | 1 | 111 | 88 | 15 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 阶段词库与主题 | 定制长任务状态 | 依赖宿主状态DOM，非业务进度证明 |\n| 配置保存与热更新 | 升级后保留偏好 | 需可写用户目录，远程更新可关闭 |\n| 弹幕与动画 | 个性化等待界面 | 资源消耗未测，可按需禁用 |\n\n## 工程亮点\n\n配置落位考虑包目录替换，并以内容指纹区分镜像和人工修改，适合借鉴到小型UI插件。条件键封闭校验能把拼写问题提前暴露。浏览器是大型单文件且绑定内部DOM，复用时应移植存储逻辑和事件适配边界，而非照搬选择器。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/client.js、SECURITY.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：已检查配置持久化、条件校验、浏览器注册和生命周期；未测新宿主DOM及长时动画资源曲线。\n- 下一步：在隔离profile保存配置、升级、断网及长任务各做同一组检查，比较原生状态一致性和浏览器CPU；这里只提出核验设计，没有执行。\n",
         "metadata": {
             "repository": "01Virex/dsh-status-rotator",
             "repository_id": 1333328839,
-            "captured_at": "2026-10-22T15:11:48.477Z",
-            "window_start": "2026-09-22T15:11:48.477Z",
-            "stars": 201,
-            "pushed_at": "2026-10-22T05:12:27Z",
+            "captured_at": "2026-10-23T01:49:27.270Z",
+            "window_start": "2026-09-23T01:49:27.270Z",
+            "stars": 203,
+            "pushed_at": "2026-10-22T18:16:14Z",
             "issues": {
-                "open": 0,
+                "open": 1,
                 "closed": 43,
                 "created_30d": 22,
                 "closed_30d": 22,
-                "updated_30d": null
+                "updated_30d": 23
             },
-            "errors": [
-                {
-                    "target": "updated_30d",
-                    "message": "incomplete issue search"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-status-rotator",
-                "captured_at": "2026-10-22T15:11:58.748Z",
-                "window_start": "2026-09-22",
-                "window_end": "2026-10-21",
-                "downloads_30d": 10930,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-status-rotator",
+                "captured_at": "2026-10-23T01:49:35.854Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 10169,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-status-rotator",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-18T08:46:04.501Z",
-                    "captured_at": "2026-10-22T15:11:58.748Z",
+                    "captured_at": "2026-10-23T01:49:35.854Z",
                     "source_url": "https://registry.npmjs.org/dsh-status-rotator",
                     "error": null,
                     "latest_version": "0.37.0",
@@ -470,15 +464,15 @@
             "id": "github:1333328839:root",
             "repository": "01Virex/dsh-status-rotator",
             "path": "",
-            "revision": "39513500a34bea27da225f00e0ff76687989e779",
+            "revision": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "813f8d9859f777bd9f78b4b66ee49a2f4b8a45d867b38acddc9fda6872b2f1a2",
-                "code": "39513500a34bea27da225f00e0ff76687989e779",
-                "maintenance": "7c55b79486c36dd73a2295eb817dcf3c4c379b64b1457fcfa21502318fcfeac3"
+                "code": "bce58114d40a9db9d5ca51a3d1450889d36a67e0",
+                "maintenance": "8db351bf23b3c76e6b9d82200d6c682d98cdd86ead3464d892615d34505635b3"
             }
         }
     }

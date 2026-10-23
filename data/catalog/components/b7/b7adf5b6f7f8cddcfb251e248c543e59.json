@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7adf5b6f7f8cddcfb251e248c543e59",
+    "identity": "github:1428333653:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428333653:root",
+            "repository": "S-anZZz/dsh-deepseek-web-sync",
+            "path": "",
+            "revision": "8ea7e5edfaf0beadcd3daf5e479952f9f175c891",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b73a31165cdeaa80f34661ed1f6f7f2068be7e908a75a0e099d05bd188f53659",
+                "code": "8ea7e5edfaf0beadcd3daf5e479952f9f175c891",
+                "maintenance": "dfaf14962089c137cd0892cf630e1e0633877705ba0dc9a0f91d34ba9d8bb319"
+            }
+        }
+    }
+}

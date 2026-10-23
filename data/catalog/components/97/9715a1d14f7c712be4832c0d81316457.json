@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9715a1d14f7c712be4832c0d81316457",
+    "identity": "github:1428106818:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428106818:root",
+            "repository": "mhlywxl/dsh-split-workspace",
+            "path": "",
+            "revision": "14e11c8e5dbdce8aa8f2a5c65a737b88225f3502",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "baca58e6c873839b3ccac1d0f0086ddea20b2dcb464fcf26f5cca68e7da7321d",
+                "code": "14e11c8e5dbdce8aa8f2a5c65a737b88225f3502",
+                "maintenance": "1557d8e824fab4d054892b1ff439c21ee018be1d1f0812b7f694624a94700165"
+            }
+        }
+    }
+}

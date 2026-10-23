@@ -3,6 +3,442 @@
     "id": "90326f6b2a79b5ae020da9841f947cef",
     "identity": "github:1426455774:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1426455774:root",
+            "repository_id": 1426455774,
+            "component_id": "root",
+            "repository": "ACGsu/dsh-sidebar-panel-fold",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-sidebar-panel-fold",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4d2db2bcaa9ea15a393947000fdbf255c91855e304c7513dddc12caac56e0c61",
+                "code": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                "maintenance": "c9fd38a3d0dfccff6693f6a3af9488fcc019933114494fb13f6594adb67fd922"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1426455774-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:08:08.463Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1426455774-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/ACGsu/dsh-sidebar-panel-fold",
+                            "commit": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                            "path": "README.md",
+                            "content_sha256": "fedec0b2a413f040bc517a67375455bbbf56665258976eaed57c01e5dec0aed0"
+                        }
+                    ],
+                    "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                    "captured_at": "2026-10-23T02:08:08.463Z",
+                    "summary": "把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/acgsu--dsh-sidebar-panel-fold/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1426455774-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/ACGsu/dsh-sidebar-panel-fold",
+                            "commit": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                            "path": "README.md",
+                            "content_sha256": "fedec0b2a413f040bc517a67375455bbbf56665258976eaed57c01e5dec0aed0"
+                        },
+                        {
+                            "repository_url": "https://github.com/ACGsu/dsh-sidebar-panel-fold",
+                            "commit": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                            "path": "src/client.js",
+                            "content_sha256": "5d7c660d58a2302a55d490e4bb0bebcb45398800626c07a932f728f0ff4cb865"
+                        },
+                        {
+                            "repository_url": "https://github.com/ACGsu/dsh-sidebar-panel-fold",
+                            "commit": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                            "path": "src/index.js",
+                            "content_sha256": "fa2ffcd1730a1be84a7c08fe881abd2dd37e4dd4379d92afd100340158366cf1"
+                        }
+                    ],
+                    "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                    "captured_at": "2026-10-23T02:08:08.463Z",
+                    "summary": "核查 README.md、src/client.js、src/index.js；浏览器定位sidebar.panellist所在nav，在其前方加独立行并用CSS隐藏原列表子项；浮层点击代理到原面板按钮，Host设置持久化并在不可用时回退localStorage。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/acgsu--dsh-sidebar-panel-fold/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查Host schema、客户端锚点、设置、点击代理与卸载；未执行视觉或键盘验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合面板较多、希望给会话列表留空间的用户；合格结果是收起后仍能访问所有原生面板并可恢复展开。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "浏览器定位sidebar.panellist所在nav，在其前方加独立行并用CSS隐藏原列表子项；浮层点击代理到原面板按钮，Host设置持久化并在不可用时回退localStorage。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查Host schema、客户端锚点、设置、点击代理与卸载；未执行视觉或键盘验收。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "根Host/Client插件，运行时主要借宿主界面，无模型或外部服务依赖。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地插件，金额未知 | 安装与逐面板核对 | 需匹配侧栏DOM |\n| 持续使用 | DOM观察与布局工作，未测 | 选择面板多一次浮层动作 | 空间收益因面板数量而异 |\n| 失败恢复 | 重载或禁用 | 恢复原列表、清理偏好 | 卸载清理路径存在，未运行 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "可在面板很多的独立profile试用，先逐个核对浮层切换和展开恢复。依赖键盘或读屏时先验证相应路径，状态回退到浏览器存储不能当跨端同步。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 释放列表高度 | 折叠CSS与摘要行 | 实际会话查找效率 |\n| 保留面板入口 | 浮层代理原按钮 | 键盘、读屏和新宿主一致性 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "把新增控件放在nav前方而非React子列表中，减少与宿主渲染所有权冲突；注销观察器和全局事件体现生命周期意识。可复用外挂UI所有权原则，具体选择器和glyph复制仍需随宿主维护。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "实现没有官方整列表包裹槽，因而依赖nav结构和DOM观察；上游侧栏变化可能让控件无法定位。动态导入schema仅缓解包解析，不能保证所有旧schemastery版本支持volatile。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "business_value",
+                    "basis": "unverified",
+                    "text": "未验证假设是增加官方面板列表容器槽与状态接口后，可取消DOM扫描并保持一致可访问性；比较宿主布局变化下的失效数和维护改动，未改善则不成立。[Q05](#research-q05)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1426455774:root",
+                            "area": "code",
+                            "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:08.463Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T02:08:08.463Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                "reviewed_at": "2026-10-23T02:08:08.463Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1426455774:root",
+                        "area": "code",
+                        "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty局部界面适配；mechanism独立控件和原按钮代理；transferability原则可迁移但选择器耦合；simplification避免改宿主文件。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow只调整导航入口；delivery未改变任务成果；reach改善有限屏幕体验；economics没有成本结构增量。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1426455774-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "局部空间整理可控且可禁用，先核对面板访问和宿主DOM兼容。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "面板拥挤明确但需求频率因人而异。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "相对隐藏CSS保留切换与恢复。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定版本源码支持机制；本轮未执行目标代码或同版本宿主验收，效果仍不确定。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无需服务和模型，主要负担是宿主DOM维护及额外点击。"
+                    }
+                },
+                "score": 56,
+                "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                "reviewed_at": "2026-10-23T02:08:08.463Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1426455774-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1426455774:root",
+                        "area": "code",
+                        "fingerprint": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1426455774:root",
+            "repository": "ACGsu/dsh-sidebar-panel-fold",
+            "path": "",
+            "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+            "fingerprints": {
+                "directory": "4d2db2bcaa9ea15a393947000fdbf255c91855e304c7513dddc12caac56e0c61",
+                "code": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+                "maintenance": "c9fd38a3d0dfccff6693f6a3af9488fcc019933114494fb13f6594adb67fd922"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "314e0961c2005246bea71924bc6e6c11702152d59b6ae00ce6067fd5839281fd"
+        },
+        "publication.metadata": "data/plugins/acgsu--dsh-sidebar-panel-fold/META.json",
+        "publication.summaries": {
+            "text": "把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。",
+            "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+            "source_url": "https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+            "items": {
+                "界面": "侧栏折叠摘要与浮层切换",
+                "后台": "Host折叠偏好与localStorage回退"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 列表折叠 | 节省侧栏高度 | 依赖panellist/nav锚点 |\n| 浮层切换 | 收起时访问原面板 | 代理原按钮，不创造新面板 |\n| 偏好保存 | 重启恢复折叠态 | Host优先，降级存储不跨端 |"
+        },
+        "publication.advice": {
+            "revision": "7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec",
+            "text": "可在面板很多的独立profile试用，先逐个核对浮层切换和展开恢复。依赖键盘或读屏时先验证相应路径，状态回退到浏览器存储不能当跨端同步。[Q04](#research-q04)"
+        },
+        "registry": "data/plugins/acgsu--dsh-sidebar-panel-fold",
+        "reports": "# dsh-sidebar-panel-fold\n\n> 把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。\n\n## 研究范围\n\n- **仓库**：[ACGsu/dsh-sidebar-panel-fold](https://github.com/ACGsu/dsh-sidebar-panel-fold)\n- **版本号**：0.1.0（[固定提交 7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec](https://github.com/ACGsu/dsh-sidebar-panel-fold/tree/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。\n\n## 洞察短评\n\n- **用途**：适合面板较多、希望给会话列表留空间的用户；合格结果是收起后仍能访问所有原生面板并可恢复展开。\n- **亮点**：相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)\n- **思考**：实现没有官方整列表包裹槽，因而依赖nav结构和DOM观察；上游侧栏变化可能让控件无法定位。动态导入schema仅缓解包解析，不能保证所有旧schemastery版本支持volatile。[Q03](#research-q03)\n- **建议**：未验证假设是增加官方面板列表容器槽与状态接口后，可取消DOM扫描并保持一致可访问性；比较宿主布局变化下的失效数和维护改动，未改善则不成立。[Q05](#research-q05)\n\n采用建议：可在面板很多的独立profile试用，先逐个核对浮层切换和展开恢复。依赖键盘或读屏时先验证相应路径，状态回退到浏览器存储不能当跨端同步。[Q04](#research-q04)\n\n## 核心贡献\n\n相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)\n\n## 关键质疑\n\n实现没有官方整列表包裹槽，因而依赖nav结构和DOM观察；上游侧栏变化可能让控件无法定位。动态导入schema仅缓解包解析，不能保证所有旧schemastery版本支持volatile。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是增加官方面板列表容器槽与状态接口后，可取消DOM扫描并保持一致可访问性；比较宿主布局变化下的失效数和维护改动，未改善则不成立。[Q05](#research-q05)\n\n逐面板、窄轨、键盘、读屏和重启检查；对照原生访问步数与会话列表可视项，未执行。\n\n## 场景与替代办法\n\n适合面板较多、希望给会话列表留空间的用户；合格结果是收起后仍能访问所有原生面板并可恢复展开。\n\n原生完整面板列表保留一键访问但占高度；手工CSS隐藏更简单但缺少活动摘要与恢复入口。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Web客户端及sidebar.panellist/nav结构 | 必需 | 定位与代理原面板 | 宿主布局变更可能失效 |\n| settings及兼容schemastery | 持久设置所需 | 跨端/重启保留 | 解析失败降级localStorage；方法版本仍需核对 |\n| localStorage | 降级才需 | 浏览器本地记忆 | 不保证跨端同步 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 安装加载后查看侧栏折叠行 | 控件与原面板均可见 |\n| 2 | 收起并从浮层逐个切换 | 与原生选择同一面板 |\n| 3 | 重启核对状态，异常展开或禁用 | 所有面板仍可访问 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地插件，金额未知 | 安装与逐面板核对 | 需匹配侧栏DOM |\n| 持续使用 | DOM观察与布局工作，未测 | 选择面板多一次浮层动作 | 空间收益因面板数量而异 |\n| 失败恢复 | 重载或禁用 | 恢复原列表、清理偏好 | 卸载清理路径存在，未运行 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 释放列表高度 | 折叠CSS与摘要行 | 实际会话查找效率 |\n| 保留面板入口 | 浮层代理原按钮 | 键盘、读屏和新宿主一致性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：ACGsu/dsh-sidebar-panel-fold 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 收成一行的增量是否超过简单隐藏？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面对多个全局面板挤占高度，简单隐藏CSS会损失入口，原生完整列表则保留直接访问。插件新增摘要和浮层，使收起后还能切换，并保留活动图标。合格结果是所有原面板均可访问及恢复，价值是局部导航取舍，不是工作流或交付能力创新。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:8-23](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L8-L23)\n\n作者解释无整列表槽与独立控件设计。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    /**\n     * Browser half of dsh-sidebar-panel-fold.\n     *\n     * The sidebar's global panel list (the `nav` inside the sidebar) is rendered\n     * exclusively by SidebarRoot: the `sidebar.panellist` slot only produces one\n     * PanelRow per registered panel, so no official seam wraps the whole list.\n     * This half therefore anchors on two stable facts guaranteed by the renderer\n     * and the sidebar:\n     *\n     *   1. `[data-slot=\"sidebar.panellist\"]` — emitted by SlotOutlet for every\n     *      list entry, with `display: contents` so it never joins layout;\n     *   2. the `nav` element containing it — the panel list container.\n     *\n     * It then owns exactly one sibling element placed *before* that `nav` (never\n     * inside React's child list) plus a stylesheet that can hide the `nav`.\n     */\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:456-465](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L456-L465)\n\n浮层最终触发原目标点击。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n          item.addEventListener(\"click\", (event) => {\n            event.preventDefault();\n            event.stopPropagation();\n            // Hand the switch back to the built-in row so DSH's own selectPanel\n            // path (analytics included) stays authoritative.\n            const target = panel.row.isConnected ? panel.row : null;\n            closeMenu();\n            target?.click();\n          });\n          menu.appendChild(item);\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 控件怎样避免争夺React子节点并保存偏好？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n查找data-slot锚点的closest nav，在nav外插入自有行，用类隐藏子项。偏好优先Host设置，缺设置客户端才回退localStorage，防止旧浏览器值遮盖权威设置。Host动态解析schemastery，解析失败保留UI降级；这降低安装路径问题但不是无条件跨版本保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:174-186](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L174-L186)\n\n锚点查找依赖具体DOM。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    //#region dom helpers\n    /**\n     * The panel list container: the `nav` holding the panellist slot anchor.\n     * The plugin's own summary row reuses the active panel's glyph markup, so the\n     * query must skip any anchor that is not inside a nav (our clone).\n     * @returns {HTMLElement|null}\n     */\n    function findNav() {\n      for (const anchor of document.querySelectorAll(`[data-slot=\"${SLOT}\"]`)) {\n        const nav = anchor.closest(\"nav\");\n        if (nav !== null) return nav;\n      }\n      return null;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:291-340](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L291-L340)\n\n设置与本地回退优先级。\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n       * Fold state backed by the Host settings document, with a localStorage\n       * fallback for deployments that do not compose the settings client.\n       */\n      const state = {\n        folded: false,\n        /** @type {{getSnapshot:Function,subscribe:Function,set:Function}|null} */\n        form: null,\n        listeners: new Set(),\n        get() {\n          return this.folded;\n        },\n        /** @param {boolean} next */\n        async set(next) {\n          if (this.folded === next) return;\n          this.folded = next;\n          this.emit();\n          if (this.form !== null) {\n            try {\n              await this.form.set(FOLDED_FIELD, next);\n            } catch (error) {\n              console.warn(\"[dsh-sidebar-panel-fold] could not persist the fold state\", error);\n            }\n            return;\n          }\n          try {\n            window.localStorage.setItem(STORAGE_KEY, next ? \"1\" : \"0\");\n          } catch {\n            /* private mode or disabled storage: keep the in-memory value */\n          }\n        },\n        /** @param {() => void} listener @returns {() => void} */\n        subscribe(listener) {\n          this.listeners.add(listener);\n          return () => this.listeners.delete(listener);\n        },\n        emit() {\n          for (const listener of [...this.listeners]) {\n            try {\n              listener();\n            } catch (error) {\n              console.error(\"[dsh-sidebar-panel-fold] listener failed\", error);\n            }\n          }\n        },\n      };\n\n      // Seed from the fallback first: a Host value that arrives later wins, so a\n      // stale localStorage entry can never shadow the real setting.\n      try {\n        state.folded = window.localStorage.getItem(STORAGE_KEY) === \"1\";\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:29-56](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/index.js#L29-L56)\n\n动态schema导入与volatile调用。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nasync function loadSchema() {\n  try {\n    const mod = await import(\"@deepseek-ai/schemastery\");\n    const z = mod?.default ?? mod;\n    return typeof z?.object === \"function\" ? z : void 0;\n  } catch (error) {\n    console.warn(\n      \"[dsh-sidebar-panel-fold] @deepseek-ai/schemastery is not resolvable from this install \" +\n        \"(a `link:` install does that — use `file:` instead); the fold state will fall back to localStorage\",\n      error,\n    );\n    return void 0;\n  }\n}\n\nconst z = await loadSchema();\n\n/**\n * Durable schema: the wire envelope the browser scope validates against.\n * Undefined when the schema library is missing, which simply means this entry\n * exposes no settings form and the browser half uses its fallback store.\n */\nconst Config =\n  z === void 0\n    ? void 0\n    : z.object({\n        [FOLDED_FIELD]: z.boolean().default(false).volatile(),\n      });\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 主要维护风险是什么？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n关键风险是非正式DOM契约。作者承认官方slot只给每项，没有列表包裹槽，因此观察body并跟踪布局变化；上游改变nav结构可能无锚点。Host只探测z.object，没有单独探测volatile方法，旧schema版本兼容仍需核对。卸载断开观察器并移除keydown为正面支持，但本轮没证明键盘和读屏完整性。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:678-699](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L678-L699)\n\n观察器与全局事件生命周期。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n        const observer = new MutationObserver(schedule);\n        observer.observe(document.body, {\n          childList: true,\n          subtree: true,\n          attributes: true,\n          attributeFilter: [\"aria-current\", \"aria-label\", \"class\", \"data-sidebar-collapsed\"],\n        });\n\n        document.addEventListener(\"pointerdown\", onDocumentPointerDown, true);\n        document.addEventListener(\"keydown\", onDocumentKeyDown, true);\n        window.addEventListener(\"resize\", onViewportChange);\n        window.addEventListener(\"scroll\", onViewportChange, true);\n\n        return () => {\n          offState();\n          observer.disconnect();\n          document.removeEventListener(\"pointerdown\", onDocumentPointerDown, true);\n          document.removeEventListener(\"keydown\", onDocumentKeyDown, true);\n          window.removeEventListener(\"resize\", onViewportChange);\n          window.removeEventListener(\"scroll\", onViewportChange, true);\n          if (runtime.raf !== null) cancelAnimationFrame(runtime.raf);\n          if (runtime.menuRaf !== null) cancelAnimationFrame(runtime.menuRaf);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.js:29-56](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/index.js#L29-L56)\n\n存在object不代表volatile必然可用。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nasync function loadSchema() {\n  try {\n    const mod = await import(\"@deepseek-ai/schemastery\");\n    const z = mod?.default ?? mod;\n    return typeof z?.object === \"function\" ? z : void 0;\n  } catch (error) {\n    console.warn(\n      \"[dsh-sidebar-panel-fold] @deepseek-ai/schemastery is not resolvable from this install \" +\n        \"(a `link:` install does that — use `file:` instead); the fold state will fall back to localStorage\",\n      error,\n    );\n    return void 0;\n  }\n}\n\nconst z = await loadSchema();\n\n/**\n * Durable schema: the wire envelope the browser scope validates against.\n * Undefined when the schema library is missing, which simply means this entry\n * exposes no settings form and the browser half uses its fallback store.\n */\nconst Config =\n  z === void 0\n    ? void 0\n    : z.object({\n        [FOLDED_FIELD]: z.boolean().default(false).volatile(),\n      });\n```\n\n</details>\n\n#### 缺口\n\n- 新宿主DOM和可访问性未实际核查\n  **影响**：限制默认长期启用判断\n  **进一步探讨**：按面板、窄轨、Tab、Escape与读屏顺序核对。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 节省空间是否抵得过额外点击？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n面板多而切换少的人更可能受益，频繁切换用户可能宁愿完整列表。资源成本是DOM观察和重新排布，无模型费用来源，但不可直接称无成本。先在隔离profile收起、逐个切换、重启并展开，异常禁用即可恢复原列表。衡量应包括可视会话数、访问步数和错误选择，当前未量化节时。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:456-488](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L456-L488)\n\n切换与展开都由浮层动作承担。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n          item.addEventListener(\"click\", (event) => {\n            event.preventDefault();\n            event.stopPropagation();\n            // Hand the switch back to the built-in row so DSH's own selectPanel\n            // path (analytics included) stays authoritative.\n            const target = panel.row.isConnected ? panel.row : null;\n            closeMenu();\n            target?.click();\n          });\n          menu.appendChild(item);\n        }\n        if (panels.length > 0) {\n          const separator = document.createElement(\"div\");\n          separator.className = CLS_SEP;\n          separator.setAttribute(\"role\", \"separator\");\n          menu.appendChild(separator);\n          const unfold = document.createElement(\"button\");\n          unfold.type = \"button\";\n          unfold.className = CLS_ITEM;\n          unfold.setAttribute(\"role\", \"menuitem\");\n          const unfoldIcon = document.createElement(\"span\");\n          unfoldIcon.className = CLS_ITEM_ICON;\n          unfoldIcon.setAttribute(\"aria-hidden\", \"true\");\n          unfoldIcon.innerHTML = CARET_UP;\n          const unfoldLabel = document.createElement(\"span\");\n          unfoldLabel.className = CLS_ITEM_LABEL;\n          unfoldLabel.textContent = t(\"menu.unfold\");\n          unfold.append(unfoldIcon, unfoldLabel);\n          unfold.addEventListener(\"click\", (event) => {\n            event.preventDefault();\n            event.stopPropagation();\n            closeMenu();\n            void state.set(false);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:678-699](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L678-L699)\n\n持续观察与清理是资源和恢复路径。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n        const observer = new MutationObserver(schedule);\n        observer.observe(document.body, {\n          childList: true,\n          subtree: true,\n          attributes: true,\n          attributeFilter: [\"aria-current\", \"aria-label\", \"class\", \"data-sidebar-collapsed\"],\n        });\n\n        document.addEventListener(\"pointerdown\", onDocumentPointerDown, true);\n        document.addEventListener(\"keydown\", onDocumentKeyDown, true);\n        window.addEventListener(\"resize\", onViewportChange);\n        window.addEventListener(\"scroll\", onViewportChange, true);\n\n        return () => {\n          offState();\n          observer.disconnect();\n          document.removeEventListener(\"pointerdown\", onDocumentPointerDown, true);\n          document.removeEventListener(\"keydown\", onDocumentKeyDown, true);\n          window.removeEventListener(\"resize\", onViewportChange);\n          window.removeEventListener(\"scroll\", onViewportChange, true);\n          if (runtime.raf !== null) cancelAnimationFrame(runtime.raf);\n          if (runtime.menuRaf !== null) cancelAnimationFrame(runtime.menuRaf);\n```\n\n</details>\n\n#### 缺口\n\n- 净导航效率没有同条件对照\n  **影响**：不保证所有用户都省时\n  **进一步探讨**：用同一面板布局比较常用任务步数和完成时间。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 正式列表槽能否替代观察器？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设是宿主提供列表容器槽、活动面板和切换接口后，插件直接声明折叠视图。增量是维护边界从DOM启发式转成接口契约，不是增加视觉功能。用宿主布局变更样本比较当前扫描与接口原型的失效和修改量；若仍需DOM桥接或维护量不降，应拒绝复杂迁移。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:11-23](https://github.com/ACGsu/dsh-sidebar-panel-fold/blob/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec/src/client.js#L11-L23)\n\n缺少容器槽是明确推导起点。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n     * The sidebar's global panel list (the `nav` inside the sidebar) is rendered\n     * exclusively by SidebarRoot: the `sidebar.panellist` slot only produces one\n     * PanelRow per registered panel, so no official seam wraps the whole list.\n     * This half therefore anchors on two stable facts guaranteed by the renderer\n     * and the sidebar:\n     *\n     *   1. `[data-slot=\"sidebar.panellist\"]` — emitted by SlotOutlet for every\n     *      list entry, with `display: contents` so it never joins layout;\n     *   2. the `nav` element containing it — the panel list container.\n     *\n     * It then owns exactly one sibling element placed *before* that `nav` (never\n     * inside React's child list) plus a stylesheet that can hide the `nav`.\n     */\n```\n\n</details>\n\n#### 缺口\n\n- 宿主接口尚未具备或验证\n  **影响**：不构成现有能力\n  **进一步探讨**：先在最小宿主扩展里比较扫描依赖。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b53d6f0593dea46d3d96cdb97c5fa6c5486bc7bb851cf2cca42f2c6ad23fab1b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 228 | — | — | 2470 |\n| .js | source | 2 | 797 | 589 | 155 | — |\n| .mjs | test | 1 | 545 | 434 | 57 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 列表折叠 | 节省侧栏高度 | 依赖panellist/nav锚点 |\n| 浮层切换 | 收起时访问原面板 | 代理原按钮，不创造新面板 |\n| 偏好保存 | 重启恢复折叠态 | Host优先，降级存储不跨端 |\n\n## 工程亮点\n\n把新增控件放在nav前方而非React子列表中，减少与宿主渲染所有权冲突；注销观察器和全局事件体现生命周期意识。可复用外挂UI所有权原则，具体选择器和glyph复制仍需随宿主维护。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/client.js、src/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查Host schema、客户端锚点、设置、点击代理与卸载；未执行视觉或键盘验收。\n- 下一步：逐面板、窄轨、键盘、读屏和重启检查；对照原生访问步数与会话列表可视项，未执行。\n",
+        "metadata": {
+            "repository": "ACGsu/dsh-sidebar-panel-fold",
+            "repository_id": 1426455774,
+            "captured_at": "2026-10-23T01:50:30.406Z",
+            "window_start": "2026-09-23T01:50:30.406Z",
+            "stars": 1,
+            "pushed_at": "2026-10-20T05:21:21Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-sidebar-panel-fold",
+                "captured_at": "2026-10-23T01:50:38.604Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-sidebar-panel-fold",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-23T01:50:38.604Z",
+                    "source_url": "https://registry.npmjs.org/dsh-sidebar-panel-fold",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1426455774:root",
             "repository": "ACGsu/dsh-sidebar-panel-fold",

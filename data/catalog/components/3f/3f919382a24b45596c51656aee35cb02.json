@@ -7,15 +7,15 @@
             "id": "github:1326942966:root",
             "repository": "omdsh-dev/dsh-llm-fallbacks",
             "path": "",
-            "revision": "b6fb1f66b4028bf1c170d8dda2a8ee99319d67c5",
+            "revision": "209e246528a01f1a32f1da0b80f7c3b339b2bfed",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "f6c39396b46d306928a1eaed3e79eb1e8eb7b75eb1e2f4bbe1055c2facec0d5a",
-                "code": "b6fb1f66b4028bf1c170d8dda2a8ee99319d67c5",
-                "maintenance": "d9f256da1d9d845f8f810013fc2a92c9cf697c9e92db01d14f0cd989e63ca8ed"
+                "code": "209e246528a01f1a32f1da0b80f7c3b339b2bfed",
+                "maintenance": "7e102101c20c5ab975125a2b47bf469de80811641b9d598cf59cff06a2245ede"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1389403331:root",
             "repository": "LeifDai/MACKORN-hydraulic-cone-crusher",
             "path": "",
-            "revision": "e272c31972fc390a2ca2ffa202ebe4b4bc9fd6d7",
+            "revision": "d709bda8b72638de5a82240589047d6c51dd2ce8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "fef4b8fce4dc01843d383fdd0c842c74f4c9631f5f2515f568e6d7be7f248f6b",
-                "code": "e272c31972fc390a2ca2ffa202ebe4b4bc9fd6d7",
-                "maintenance": "57fa48bed9111b4dda0712abd326dc2e959d872fbaaa955b7a9b8713d3aa25ea"
+                "code": "d709bda8b72638de5a82240589047d6c51dd2ce8",
+                "maintenance": "8590d336f3216cab9049dfc3da5f3255109bb74fe79a05ca210295b386147a1d"
             }
         }
     }

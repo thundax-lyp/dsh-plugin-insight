@@ -3,6 +3,470 @@
     "id": "2ac4a4bfa9fdbbd8538b9e6514011efa",
     "identity": "github:1340492214:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1340492214:root",
+            "repository_id": 1340492214,
+            "component_id": "root",
+            "repository": "AKS1st/dock-files",
+            "path": "",
+            "aliases": [],
+            "name": "dock-files",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+                "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1340492214-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:08:12.801Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1340492214-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "README.md",
+                            "content_sha256": "ad191860c3933a907107a1f6e7985c4a1c9dc2587ab90503e14a6105b0f9dee8"
+                        }
+                    ],
+                    "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                    "captured_at": "2026-10-23T02:08:12.801Z",
+                    "summary": "为 DSH Dock 添加当前会话工作目录浏览、文件打开及上传下载和文件管理入口。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aks1st--dock-files/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1340492214-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "README.md",
+                            "content_sha256": "ad191860c3933a907107a1f6e7985c4a1c9dc2587ab90503e14a6105b0f9dee8"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "src/index.ts",
+                            "content_sha256": "78e10cb7a796edadc7aeb539371c04a7f1736f3026f3769269059881ab3e7927"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "src/client/openBridge.ts",
+                            "content_sha256": "aeedaebf5482108893f330a5b8cc03eb22dd05f3d4be3147ce1396473c9af0cd"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dock-files",
+                            "commit": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                            "path": "package.json",
+                            "content_sha256": "6e86d634a70649db290d973f9662e0187c273d823388dab792cb47eba358d254"
+                        }
+                    ],
+                    "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                    "captured_at": "2026-10-23T02:08:12.801Z",
+                    "summary": "核查 README.md、src/index.ts、src/client/openBridge.ts、package.json；Host提供wb-files接口，以会话cwd及realpath约束多数文件操作；Client把聊天资源地址桥接到Dock查看器，上传使用分块和偏移核对，下载支持目录压缩。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aks1st--dock-files/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查Host路径解析、围栏、分块上传与openBridge；不做渗透测试，不推断已被利用。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向已有dock-base工作区、希望在会话旁查看与整理文件的用户；合格结果是打开正确会话目录并在明确范围内完成文件操作。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host提供wb-files接口，以会话cwd及realpath约束多数文件操作；Client把聊天资源地址桥接到Dock查看器，上传使用分块和偏移核对，下载支持目录压缩。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查Host路径解析、围栏、分块上传与openBridge；不做渗透测试，不推断已被利用。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "TS源与lib生成物共存，Node>=20、dock-base>=0.2.0为声明条件，宿主新版兼容未执行。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Dock依赖与本地资源 | 核对环境、目录及权限 | 安装耗时未知 |\n| 持续使用 | 上传临时文件、zip和传输资源 | 核对目标、冲突及查看器 | 大目录内存峰值未测 |\n| 失败恢复 | 临时文件清理/重传 | 验证偏移、源目标和副本 | 文件删除不等于系统回收站 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "当前建议观察，先确认本地访问边界和当前会话cwd。若要试验，只用可丢弃目录与文件副本，先核对缺失会话和路径越界行为，再考虑写操作。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 会话文件联动 | cwd与资源地址桥接 | 当前宿主打开正确率 |\n| 范围和传输约束 | realpath、分块偏移与大小上限 | 所有部署下身份隔离和竞态安全 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "路径canonicalization和不存在目标的父目录处理值得借鉴，分块失败truncate回已提交字节让重试边界清楚。另一方面同一API混合严格会话要求与process.cwd回退，授权模型需统一；bridge包装原openResource必须在生命周期恢复，增加宿主耦合。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "相对系统文件管理器，贡献在当前会话上下文与Dock查看器衔接；基础文件及信任围栏代码注明来自dsh-better-sidebar，主要是集成适配，不宣称原创文件安全机制。[Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "浏览器Host/Origin围栏明确不是身份认证；普通操作缺sessionId时回退process.cwd，probe又刻意不做工作区限制，不能把“会话范围”宣传当统一强隔离保证。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "business_value",
+                    "basis": "unverified",
+                    "text": "未验证假设是将写操作统一要求有效sessionId，并复用宿主认证通道，减少错目录及裸本地请求；用缺失、失效会话和符号链接任务比较拒绝正确性与操作负担，若破坏合法恢复且收益不足则否定。[Q05](#research-q05)",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1340492214:root",
+                            "area": "code",
+                            "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:12.801Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T02:08:12.801Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "reviewed_at": "2026-10-23T02:08:12.801Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492214:root",
+                        "area": "code",
+                        "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty主要适配继承代码；mechanism是范围约束、桥接和传输组合；transferability有文件传输模式；simplification依赖Dock与多接口维护。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow减少目录定位；delivery仍是文件；reach方便界面用户；economics未量化时间。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1340492214-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "会话联动便利明确，但非认证路由与会话cwd回退需要先核查，暂不直接推荐写操作试用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "文件浏览与交付核对是明确任务。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "联动Dock减少目录切换，原生/系统替代仍多。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定版本源码支持机制；本轮未执行目标代码或同版本宿主验收，效果仍不确定。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "文件写入、删除和权限模型增加失败负担。"
+                    }
+                },
+                "score": 54,
+                "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "reviewed_at": "2026-10-23T02:08:12.801Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1340492214-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1340492214:root",
+                        "area": "code",
+                        "fingerprint": "d24224beb8cf024a9c6e79fe97445001d73150b8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1340492214:root",
+            "repository": "AKS1st/dock-files",
+            "path": "",
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "fingerprints": {
+                "directory": "983fcdf396ccc238853c54eba420139aa7d6b1312fc1023e569f2561b7161e56",
+                "code": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+                "maintenance": "99d184e2cbeea68029862dea12ec2ff34a236aeeca6a440cad47a68a50155f77"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "8618cc240693526aaf70e899e5900d11dd6d057cbc8c40cc042dd5ad8cd21625"
+        },
+        "publication.metadata": "data/plugins/aks1st--dock-files/META.json",
+        "publication.summaries": {
+            "text": "为 DSH Dock 添加当前会话工作目录浏览、文件打开及上传下载和文件管理入口。",
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "source_url": "https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "items": {
+                "Host 路由": "文件浏览、探测、管理及上传下载",
+                "界面": "Dock文件浏览与聊天打开桥接",
+                "后台": "分块上传会话和过期清理"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 工作区浏览和打开 | 在Dock查看会话文件 | 依赖正确cwd及查看器 |\n| 新建、重命名、复制、移动、删除 | 文件整理 | 写前备份，范围与会话须核对 |\n| 上传下载 | 交换文件与目录 | 分块偏移和大小约束，资源峰值未测 |\n| 聊天打开桥接 | 把资源地址送到Dock | 包装宿主方法，兼容需核对 |"
+        },
+        "publication.advice": {
+            "revision": "d24224beb8cf024a9c6e79fe97445001d73150b8",
+            "text": "当前建议观察，先确认本地访问边界和当前会话cwd。若要试验，只用可丢弃目录与文件副本，先核对缺失会话和路径越界行为，再考虑写操作。[Q04](#research-q04)"
+        },
+        "registry": "data/plugins/aks1st--dock-files",
+        "reports": "# dock-files\n\n> 为 DSH Dock 添加当前会话工作目录浏览、文件打开及上传下载和文件管理入口。\n\n## 研究范围\n\n- **仓库**：[AKS1st/dock-files](https://github.com/AKS1st/dock-files)\n- **版本号**：0.4.0（[固定提交 d24224beb8cf024a9c6e79fe97445001d73150b8](https://github.com/AKS1st/dock-files/tree/d24224beb8cf024a9c6e79fe97445001d73150b8)）\n- **版本日期**：2026-10-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。\n\n## 洞察短评\n\n- **用途**：面向已有dock-base工作区、希望在会话旁查看与整理文件的用户；合格结果是打开正确会话目录并在明确范围内完成文件操作。\n- **亮点**：相对系统文件管理器，贡献在当前会话上下文与Dock查看器衔接；基础文件及信任围栏代码注明来自dsh-better-sidebar，主要是集成适配，不宣称原创文件安全机制。[Q01](#research-q01)\n- **思考**：浏览器Host/Origin围栏明确不是身份认证；普通操作缺sessionId时回退process.cwd，probe又刻意不做工作区限制，不能把“会话范围”宣传当统一强隔离保证。[Q03](#research-q03)\n- **建议**：未验证假设是将写操作统一要求有效sessionId，并复用宿主认证通道，减少错目录及裸本地请求；用缺失、失效会话和符号链接任务比较拒绝正确性与操作负担，若破坏合法恢复且收益不足则否定。[Q05](#research-q05)\n\n采用建议：当前建议观察，先确认本地访问边界和当前会话cwd。若要试验，只用可丢弃目录与文件副本，先核对缺失会话和路径越界行为，再考虑写操作。[Q04](#research-q04)\n\n## 核心贡献\n\n相对系统文件管理器，贡献在当前会话上下文与Dock查看器衔接；基础文件及信任围栏代码注明来自dsh-better-sidebar，主要是集成适配，不宣称原创文件安全机制。[Q01](#research-q01)\n\n## 关键质疑\n\n浏览器Host/Origin围栏明确不是身份认证；普通操作缺sessionId时回退process.cwd，probe又刻意不做工作区限制，不能把“会话范围”宣传当统一强隔离保证。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是将写操作统一要求有效sessionId，并复用宿主认证通道，减少错目录及裸本地请求；用缺失、失效会话和符号链接任务比较拒绝正确性与操作负担，若破坏合法恢复且收益不足则否定。[Q05](#research-q05)\n\n在隔离目录覆盖无sessionId、失效会话、外链符号链接、冲突名、上传中断和禁用恢复；检查拒绝、目标文件及残留，不执行真实用户文件操作。\n\n## 场景与替代办法\n\n面向已有dock-base工作区、希望在会话旁查看与整理文件的用户；合格结果是打开正确会话目录并在明确范围内完成文件操作。\n\n系统文件管理器不依赖DSH，但需手动定位目录；宿主原生文件树可替代部分查看，Dock桥接增加统一查看器和传输便利。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| dock-base及匹配DSH Web服务 | 必需 | Dock和Host API | 面板/文件操作不可用 |\n| 当前会话及正确cwd | 安全使用必需 | 工作区定位和范围判断 | 部分操作回退进程cwd，需警惕错目录 |\n| 本地可信访问环境 | 必需条件 | 缩小非认证路由暴露 | Host/Origin不等于身份认证 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 准备dock-base并加载插件 | 文件面板指向预期会话目录 |\n| 2 | 先浏览、打开小文件，再试副本上传 | 地址和查看器匹配 |\n| 3 | 写前核对cwd并备份 | 错误偏移/范围拒绝，失败查目标与临时文件 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Dock依赖与本地资源 | 核对环境、目录及权限 | 安装耗时未知 |\n| 持续使用 | 上传临时文件、zip和传输资源 | 核对目标、冲突及查看器 | 大目录内存峰值未测 |\n| 失败恢复 | 临时文件清理/重传 | 验证偏移、源目标和副本 | 文件删除不等于系统回收站 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 会话文件联动 | cwd与资源地址桥接 | 当前宿主打开正确率 |\n| 范围和传输约束 | realpath、分块偏移与大小上限 | 所有部署下身份隔离和竞态安全 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：AKS1st/dock-files 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 当前会话文件联动的独立增量在哪里？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n用户在DSH会话产生文件后，需要核对和交付，系统文件管理器需另找目录，原生文件树可能已经满足部分需求。插件将会话cwd与Dock查看器接起来并增加传输、整理操作，合格结果是打开和操作正确文件。源码明确基础辅助代码来自dsh-better-sidebar，因此价值在独立集成与桥接，而非原创文件系统隔离。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:1-15](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L1-L15)\n\n功能、来源归属和会话范围主张。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/**\n * Host half of dock-files: the /wb-files JSON API — single-level directory\n * listing, a stat probe (existence + directory flag, used by the client's\n * chat open-path bridge), plus the file-manager mutations (new file/folder,\n * rename, copy, move, delete), browser-trust fenced like the /api gateway.\n * Stripped and simplified from dsh-better-sidebar (MIT): fs-tree / wire /\n * trust-fence helpers are copied here because the plugin must not depend on\n * another plugin's internals.\n *\n * All operations are conversation-scoped: requests carry a sessionId and\n * the session's authoritative cwd comes from the session store (falling\n * back to the process cwd while a session is hydrating). Every target path\n * is canonicalized with realpath and must stay inside the session\n * workspace; writes never overwrite — colliding names get a numeric suffix.\n */\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/openBridge.ts:80-97](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts#L80-L97)\n\n会话资源地址转换。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** Build a Harness file resource address using b67's per-segment encoding. */\nexport function sessionResourceAddress(sessionId: string, cwd: string | undefined, path: string): string {\n  const normalized = path.replace(/\\\\/g, '/')\n  if (!isAbsoluteWorkspacePath(normalized)) {\n    const relative = normalized.replace(/^(?:\\.\\/)+/, '').replace(/^\\/+/, '')\n    return `dsh-resource://file/session/${encodeSegment(sessionId)}/${encodePath(relative)}`\n  }\n  const root = cwd?.replace(/\\\\/g, '/').replace(/\\/+$/, '') ?? ''\n  if (root !== '' && normalized === root) {\n    return `dsh-resource://file/session/${encodeSegment(sessionId)}/`\n  }\n  if (root !== '' && normalized.startsWith(`${root}/`)) {\n    return `dsh-resource://file/session/${encodeSegment(sessionId)}/${encodePath(normalized.slice(root.length + 1))}`\n  }\n  const unc = normalized.startsWith('//')\n  const absolute = normalized.replace(/^\\/+/, '')\n  return `dsh-resource://file/absolute/${unc ? '/' : ''}${encodePath(absolute)}`\n}\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 路径、桥接和上传怎样到达文件系统？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nHost以webServer、sessions和webRuntime为依赖；多数目标经过realpath并与cwd比较，防止简单路径和符号链接越界。Client包装sidebarRight.openResource，探测文件存在后在可用查看器打开，其他路径保留原逻辑。上传每块要求offset等于received，失败truncate到已确认长度，便于核对后重传。这些代码支持机制，不证明真实多客户端竞态安全。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:183-207](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L183-L207)\n\ncanonical路径范围检查。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/**\n * Confine a caller-supplied absolute path to the session workspace: the\n * canonical (symlink-resolved) path must equal the canonical session cwd or\n * live under it (separator boundary). Any escape — `..`, a symlink pointing\n * out of the workspace, or an unrelated absolute path — is rejected 403.\n * Returns the canonical target path, so callers operate on the real path.\n */\nasync function resolveWorkspacePath(cwd: string, raw: string): Promise<string> {\n  const root = await realpath(cwd).catch(() => resolve(cwd))\n  requireAbsolute(raw)\n  let target: string\n  try {\n    target = await realpath(raw)\n  } catch {\n    // A not-yet-existing target (e.g. a future write): canonicalize the\n    // parent directory and re-append the basename, then check containment.\n    const parent = await realpath(dirname(raw)).catch(() => dirname(raw))\n    target = join(parent, basename(raw))\n  }\n  const rel = relative(root, target)\n  if (rel === '' || (rel !== '..' && !rel.startsWith(`..${sep}`) && !isAbsolute(rel))) {\n    return target\n  }\n  throw new WbError('forbidden', `path is outside the session workspace: \"${raw}\"`, 403)\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:645-670](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L645-L670)\n\n分块偏移和失败回退。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nasync function receiveUploadChunk(req: IncomingMessage, upload: UploadSession, offset: number): Promise<number> {\n  if (offset !== upload.received) throw new WbError('bad-request', 'chunk offset does not match received bytes', 409)\n  if (offset > upload.size) throw new WbError('bad-request', 'chunk offset exceeds upload size', 400)\n  const file = await open(upload.tempPath, 'r+')\n  let received = 0\n  upload.activeChunk += 1\n  try {\n    for await (const chunk of req) {\n      upload.lastActivity = Date.now()\n      const buffer = Buffer.from(chunk)\n      received += buffer.length\n      if (received > MAX_UPLOAD_CHUNK_BYTES || offset + received > upload.size) {\n        throw new WbError('bad-request', 'upload chunk is too large', 400)\n      }\n      if (buffer.length > 0) await file.write(buffer, 0, buffer.length, offset + received - buffer.length)\n    }\n    await file.sync()\n    upload.received += received\n    upload.lastActivity = Date.now()\n    return upload.received\n  } catch (error) {\n    await truncate(upload.tempPath, upload.received).catch(() => undefined)\n    throw error\n  } finally {\n    upload.activeChunk -= 1\n    await file.close().catch(() => undefined)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/openBridge.ts:137-155](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/client/openBridge.ts#L137-L155)\n\n资源打开桥接。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function bridgeChatOpens(\n  sidebarRight: SidebarRightFace,\n  workbench: WorkbenchService,\n  files: FilesService,\n  mode: OpenSourceMode = 'dock',\n  sessions?: SessionsFace,\n): () => void {\n  if (mode === 'harness' || sessions === undefined) return () => undefined\n  const original = sidebarRight.openResource\n  let generation = 0\n  let active = true\n  sidebarRight.openResource = async function openResource(address: string, options?: OpenResourceOptions): Promise<void> {\n    const requestGeneration = generation\n    const path = resourcePath(address, sessions as SessionsFace)\n    if (path !== undefined) {\n      try {\n        const probe = await probePath(path)\n        if (active && requestGeneration === generation && probe.exists && !probe.isDir && files.canOpen(path)) {\n          workbench.openPath(path)\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 会话范围和浏览器围栏是否等同认证隔离？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n不是。isTrustedRequest注释明确不提供认证，缺Origin时仍可通过可信Host条件。sessionCwdOf在会话不存在或缺失时使用process.cwd，和上传下载的requireSessionCwd要求不同。probe明确不做工作区限制，仅返回存在/目录标志。以上是源码可确认的边界差异，并未复现攻击；部署不能把这些路由当成受宿主cookie完整保护的api。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:712-727](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L712-L727)\n\n围栏限制与无Origin条件。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** DNS-rebinding / cross-site defense (not authentication). */\nfunction isTrustedRequest(request: IncomingMessage, trustedHosts: readonly string[]): boolean {\n  const host = header(request.headers, 'host')\n  if (host === undefined) return false\n  const hostUrl = parseAuthority(host)\n  if (hostUrl === undefined) return false\n  if (!isLoopbackHostname(hostUrl.hostname) && !isTrustedAuthority(hostUrl, trustedHosts)) return false\n  if (header(request.headers, 'sec-fetch-site') === 'cross-site') return false\n  const origin = header(request.headers, 'origin')\n  if (origin === undefined) return true\n  try {\n    return new URL(origin).host === hostUrl.host\n  } catch {\n    return false\n  }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:748-765](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L748-L765)\n\n宽松cwd回退与严格会话要求并存。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** Resolve a session's authoritative working directory. */\nfunction sessionCwdOf(ctx: WbContext, sessionId: string | undefined): string {\n  if (sessionId !== undefined) {\n    const cwd = ctx.sessions.get(sessionId)?.header.cwd\n    if (cwd !== undefined && cwd !== '') return cwd\n  }\n  return process.cwd()\n}\n\n/** Require a live session with an authoritative, non-empty workspace. */\nfunction requireSessionCwd(ctx: WbContext, sessionId: string | undefined): string {\n  if (sessionId === undefined) throw new WbError('bad-request', 'missing \"sessionId\"', 400)\n  const session = ctx.sessions.get(sessionId)\n  if (session === undefined) throw new WbError('not-found', 'session not found', 404)\n  if (typeof session.header.cwd !== 'string' || session.header.cwd === '') {\n    throw new WbError('bad-request', 'session cwd is empty', 400)\n  }\n  return session.header.cwd\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:907-918](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L907-L918)\n\nprobe例外。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n        if (method === 'probe') {\n          // Routing probe for the client chat open-path bridge: stat an\n          // absolute path and report existence + directory flag without\n          // listing anything. No workspace confinement — the decision is a\n          // routing heuristic (workbench viewer vs native opener), and the\n          // existence of a path the page already displays is not sensitive.\n          const raw = stringOf(payload, 'path')\n          requireAbsolute(raw)\n          const info = await stat(raw).catch(() => undefined)\n          writeOk(res, info === undefined\n            ? { exists: false, isDir: false }\n            : { exists: true, isDir: info.isDirectory() })\n```\n\n</details>\n\n#### 缺口\n\n- 具体宿主是否另加全局认证及风险利用条件未知\n  **影响**：决定本地/远程部署是否可接受\n  **进一步探讨**：核对路由挂载的真实认证路径，在隔离profile发送缺cookie和失效会话请求。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 为什么先观察再考虑文件写入？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n文件管理有明确便利，但误目录、删除和覆盖处理的失败代价超过单纯UI美化。当前应先核对身份边界及session cwd，用副本验证传输和冲突；已有文件树足够时无需承担额外桥接。资源包括临时上传、目录zip和本地I/O，人工成本包括核对路径与失败后的源目标状态，尚无量化数据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:921-947](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L921-L947)\n\n新建、重命名、移动与删除都到达真实文件管理。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n        if (method === 'create') {\n          const parent = stringOf(payload, 'parent')\n          const kind = stringOf(payload, 'kind')\n          if (kind !== 'file' && kind !== 'dir') {\n            throw new WbError('bad-request', 'kind must be \"file\" or \"dir\"', 400)\n          }\n          writeOk(res, await createEntry(cwd, parent, kind, stringOrUndefined(payload, 'locale')))\n          return\n        }\n        if (method === 'rename') {\n          const path = stringOf(payload, 'path')\n          const name = stringOf(payload, 'name')\n          writeOk(res, await renameEntry(cwd, path, name))\n          return\n        }\n        if (method === 'copy' || method === 'move') {\n          const sources = stringArrayOf(payload, 'sources')\n          const dest = stringOf(payload, 'dest')\n          const value = method === 'copy'\n            ? await copyEntries(cwd, sources, dest)\n            : await moveEntries(cwd, sources, dest)\n          writeOk(res, value)\n          return\n        }\n        if (method === 'remove') {\n          const paths = stringArrayOf(payload, 'paths')\n          writeOk(res, await removeEntries(cwd, paths))\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:645-670](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L645-L670)\n\n中断上传恢复需要状态核对。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nasync function receiveUploadChunk(req: IncomingMessage, upload: UploadSession, offset: number): Promise<number> {\n  if (offset !== upload.received) throw new WbError('bad-request', 'chunk offset does not match received bytes', 409)\n  if (offset > upload.size) throw new WbError('bad-request', 'chunk offset exceeds upload size', 400)\n  const file = await open(upload.tempPath, 'r+')\n  let received = 0\n  upload.activeChunk += 1\n  try {\n    for await (const chunk of req) {\n      upload.lastActivity = Date.now()\n      const buffer = Buffer.from(chunk)\n      received += buffer.length\n      if (received > MAX_UPLOAD_CHUNK_BYTES || offset + received > upload.size) {\n        throw new WbError('bad-request', 'upload chunk is too large', 400)\n      }\n      if (buffer.length > 0) await file.write(buffer, 0, buffer.length, offset + received - buffer.length)\n    }\n    await file.sync()\n    upload.received += received\n    upload.lastActivity = Date.now()\n    return upload.received\n  } catch (error) {\n    await truncate(upload.tempPath, upload.received).catch(() => undefined)\n    throw error\n  } finally {\n    upload.activeChunk -= 1\n    await file.close().catch(() => undefined)\n```\n\n</details>\n\n#### 缺口\n\n- 写入恢复、真实权限和大目录成本未测\n  **影响**：阻止当前直接扩大采用范围\n  **进一步探讨**：以可丢弃目录验收认证、范围、备份和退出残留。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 统一会话和认证要求会否降低错目录风险？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设要求所有写请求拥有有效sessionId，并通过宿主认证通道，只读probe也显式标明范围。当前两种cwd解析和独立围栏是推导起点。实验覆盖会话加载中、失效、缺字段及外链路径，比较错误写入和合法任务拒绝；如果严格路径妨碍恢复，可单独设计只读降级而不放宽写权限。收益与负担未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:748-765](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L748-L765)\n\n不一致会话要求是可检验设计参照。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n/** Resolve a session's authoritative working directory. */\nfunction sessionCwdOf(ctx: WbContext, sessionId: string | undefined): string {\n  if (sessionId !== undefined) {\n    const cwd = ctx.sessions.get(sessionId)?.header.cwd\n    if (cwd !== undefined && cwd !== '') return cwd\n  }\n  return process.cwd()\n}\n\n/** Require a live session with an authoritative, non-empty workspace. */\nfunction requireSessionCwd(ctx: WbContext, sessionId: string | undefined): string {\n  if (sessionId === undefined) throw new WbError('bad-request', 'missing \"sessionId\"', 400)\n  const session = ctx.sessions.get(sessionId)\n  if (session === undefined) throw new WbError('not-found', 'session not found', 404)\n  if (typeof session.header.cwd !== 'string' || session.header.cwd === '') {\n    throw new WbError('bad-request', 'session cwd is empty', 400)\n  }\n  return session.header.cwd\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:712-727](https://github.com/AKS1st/dock-files/blob/d24224beb8cf024a9c6e79fe97445001d73150b8/src/index.ts#L712-L727)\n\n独立信任围栏为认证改进基础。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n/** DNS-rebinding / cross-site defense (not authentication). */\nfunction isTrustedRequest(request: IncomingMessage, trustedHosts: readonly string[]): boolean {\n  const host = header(request.headers, 'host')\n  if (host === undefined) return false\n  const hostUrl = parseAuthority(host)\n  if (hostUrl === undefined) return false\n  if (!isLoopbackHostname(hostUrl.hostname) && !isTrustedAuthority(hostUrl, trustedHosts)) return false\n  if (header(request.headers, 'sec-fetch-site') === 'cross-site') return false\n  const origin = header(request.headers, 'origin')\n  if (origin === undefined) return true\n  try {\n    return new URL(origin).host === hostUrl.host\n  } catch {\n    return false\n  }\n}\n```\n\n</details>\n\n#### 缺口\n\n- 统一模型尚未实现验证\n  **影响**：不是现有安全保证\n  **进一步探讨**：先以隔离路由原型比较拒绝正确率。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d35a94cbd0fb4093d36d448628ad907074afcb2efdcd9d86b150d9695d4b473b。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 3600 | 3300 | 314 | — |\n| .md | source | 2 | 135 | — | — | 2500 |\n| .ts | source | 10 | 3231 | 2499 | 498 | — |\n| .tsx | source | 2 | 1476 | 1281 | 121 | — |\n| .ts | test | 1 | 143 | 132 | 15 | — |\n| .mjs | source | 1 | 48 | 38 | 8 | — |\n\n排除 12 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 工作区浏览和打开 | 在Dock查看会话文件 | 依赖正确cwd及查看器 |\n| 新建、重命名、复制、移动、删除 | 文件整理 | 写前备份，范围与会话须核对 |\n| 上传下载 | 交换文件与目录 | 分块偏移和大小约束，资源峰值未测 |\n| 聊天打开桥接 | 把资源地址送到Dock | 包装宿主方法，兼容需核对 |\n\n## 工程亮点\n\n路径canonicalization和不存在目标的父目录处理值得借鉴，分块失败truncate回已提交字节让重试边界清楚。另一方面同一API混合严格会话要求与process.cwd回退，授权模型需统一；bridge包装原openResource必须在生命周期恢复，增加宿主耦合。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/client/openBridge.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查Host路径解析、围栏、分块上传与openBridge；不做渗透测试，不推断已被利用。\n- 下一步：在隔离目录覆盖无sessionId、失效会话、外链符号链接、冲突名、上传中断和禁用恢复；检查拒绝、目标文件及残留，不执行真实用户文件操作。\n",
+        "metadata": {
+            "repository": "AKS1st/dock-files",
+            "repository_id": 1340492214,
+            "captured_at": "2026-10-23T01:50:53.171Z",
+            "window_start": "2026-09-23T01:50:53.171Z",
+            "stars": 5,
+            "pushed_at": "2026-09-30T18:55:30Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C772:289580:18E07D:1AB389:6ADABD7F and timestamp 2026-10-23 01:50:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C82A:25AFA3:1115CC:128E00:6ADABD80 and timestamp 2026-10-23 01:50:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A53.171Z..2026-10-23T01%3A50%3A53.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8C4:291B8D:120B3A:138135:6ADABD81 and timestamp 2026-10-23 01:50:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A53.171Z..2026-10-23T01%3A50%3A53.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C974:1BA71D:169E74:186ED5:6ADABD83 and timestamp 2026-10-23 01:50:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdock-files%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A53.171Z..2026-10-23T01%3A50%3A53.171Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA1E:3F7598:119E8F:131837:6ADABD84 and timestamp 2026-10-23 01:51:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dock-files",
+                "captured_at": "2026-10-23T01:51:00.506Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 1336,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dock-files",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-23T06:01:11.578Z",
+                    "captured_at": "2026-10-23T01:51:00.506Z",
+                    "source_url": "https://registry.npmjs.org/dock-files",
+                    "error": null,
+                    "latest_version": "0.4.0",
+                    "latest_published_at": "2026-09-30T18:55:07.611Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1340492214:root",
             "repository": "AKS1st/dock-files",

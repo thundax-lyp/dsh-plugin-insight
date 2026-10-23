@@ -7,14 +7,14 @@
             "id": "github:1423143175:root",
             "repository": "imaused/dsh-kb-lite",
             "path": "",
-            "revision": "1cc2b9035051ca4495f0538206966b3486223913",
+            "revision": "d28624016b65bf813bfc123ba6ca58619a17ed45",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "fbfe728c5ab4f982d89a8c2b097cca230008edef3f4bc2f10fdfd10b68c75c0e",
-                "code": "1cc2b9035051ca4495f0538206966b3486223913",
-                "maintenance": "c738b5cc7c6245f577562a3f042b36d585d3a8afe9e1abe4e1b1a3f727baccbf"
+                "code": "d28624016b65bf813bfc123ba6ca58619a17ed45",
+                "maintenance": "4124ab6866f2f141ae610503ec95cd97470cde99855bc7395a83304b978fc5a4"
             }
         }
     }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c2694dc59aaf0febd5a370c2c2f8c9a8",
+    "identity": "github:1428285407:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428285407:root",
+            "repository": "Chael-Chael/dsh-ascii-whales",
+            "path": "",
+            "revision": "bb651813fe6379a5ef3535980c4c66df12c91f04",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0ad7273fc54b565d62c756616cc5def5f3beb5f03539c429fda0d2e47ce68757",
+                "code": "bb651813fe6379a5ef3535980c4c66df12c91f04",
+                "maintenance": "47ee16abfaba1bf3520b99694977bdcc6dfa4705e92921b6cdf2c42fe2ad29a5"
+            }
+        }
+    }
+}

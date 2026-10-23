@@ -7,14 +7,14 @@
             "id": "github:1229298801:root",
             "repository": "alxshelepenok/grove",
             "path": "",
-            "revision": "fdf2bd430a590a0196b2347518cdb2efc6459162",
+            "revision": "6b42eb7b0102e936d02dd181fa4328ad3471f6f9",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "8ab0e288bc36ae586e34cfa65b2db044049119e70a38f3a23e07af90ea13f610",
-                "code": "fdf2bd430a590a0196b2347518cdb2efc6459162",
-                "maintenance": "fb70807c06d76fac027c751bb45fb3f1a1d98045fd973d4313d5f69deadd0f76"
+                "code": "6b42eb7b0102e936d02dd181fa4328ad3471f6f9",
+                "maintenance": "77c9c3e446548963b166e5367dba35bf30bae157d5689675d1a00ad23a6233af"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1194748811:root",
             "repository": "hashgraph-online/hol-guard",
             "path": "",
-            "revision": "7f9d408d148e3339c35dc5a6c95708fcee8de68f",
+            "revision": "44f7507d910db7d5f7f1892a09c961c3b9363629",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "340cc95d89bf831698da3db2799f4f741c37d1f8fb63e3f5b4d075117d5f39cc",
-                "code": "7f9d408d148e3339c35dc5a6c95708fcee8de68f",
-                "maintenance": "55f4ab1e6dd337fa372e4b384fcc774a82de83030d1c7f98035f9c751a490fa8"
+                "code": "44f7507d910db7d5f7f1892a09c961c3b9363629",
+                "maintenance": "c5dfee9d30b607e2d7bb849894a07986ea8b7c26697cc73cf2d9f80e60308572"
             }
         }
     }

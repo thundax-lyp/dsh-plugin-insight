@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c4e737e805e8df0d417bac95923402ba",
+    "identity": "github:1418562998:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1418562998:root",
+            "repository": "asfre/dsh-mcp-global-manager",
+            "path": "",
+            "revision": "511d071c999b2d03f446345f56d9a5c5568b6122",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dbd3e224faf0dcb201755f06f5b688afd243170fb096e61836665b0a0e3bdf86",
+                "code": "511d071c999b2d03f446345f56d9a5c5568b6122",
+                "maintenance": "444a7544efefdd1d113dfc44ff3e9c3eae63a0fcb0a2b8cadbab641045775e1f"
+            }
+        }
+    }
+}

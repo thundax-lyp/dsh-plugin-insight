@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7b46a6168ffcab4e6fc65b380eb28e93",
+    "identity": "github:1428637143:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428637143:root",
+            "repository": "golddream-y/ratel-dsh-lumina",
+            "path": "",
+            "revision": "423f2ae6ad13d779b8d89e953bd645c5bd0fc545",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "056e7f1bb14f952a79587dc1b70908d4c1b389e21f5a6039ce2bc45f2533f4bd",
+                "code": "423f2ae6ad13d779b8d89e953bd645c5bd0fc545",
+                "maintenance": "546960e6907027fa20441ca736bb2e30688b753469d0f763df8088a0b22c0287"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "96c242dcac747ac63796b7ee5b4487fc",
+    "identity": "github:1428109585:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428109585:root",
+            "repository": "charonpi/dsh-mail",
+            "path": "",
+            "revision": "37f7fdaa02cfd0fb530c3d5e19db45662b43f8a7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "dd0f361c2736393d36eadf2e043a683797f67d29b5f9a782ce8a7c90845f2976",
+                "code": "37f7fdaa02cfd0fb530c3d5e19db45662b43f8a7",
+                "maintenance": "72316a4d5cc7f7e67c70bf29ebd2d57a89318e3909b864cc46e78a300c67d67b"
+            }
+        }
+    }
+}

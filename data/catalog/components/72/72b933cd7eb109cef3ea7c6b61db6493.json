@@ -7,15 +7,15 @@
             "id": "github:1336782782:root",
             "repository": "zuoyunlai/lunheng-article-pipeline-dsh",
             "path": "",
-            "revision": "733d50eab75cfaacdf34853dbe63e82545728128",
+            "revision": "cbc1c4cf82dbec0a70fc90c6e7848c85974ed8d4",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "911f9ee77303719c89c6709bff9f8fe39c2aaef61a2d1802ccc00921bc90a21a",
-                "code": "733d50eab75cfaacdf34853dbe63e82545728128",
-                "maintenance": "f044dc2a4f0eb276144c581e846cafe66e41897125b5ea345baa7ed011678aa9"
+                "code": "cbc1c4cf82dbec0a70fc90c6e7848c85974ed8d4",
+                "maintenance": "195ad604ed7d8941368ce6b0e6f9422c77c9c3f1fa221be99b25403fa51bc0d9"
             }
         }
     }

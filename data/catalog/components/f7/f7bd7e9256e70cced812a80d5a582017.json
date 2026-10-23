@@ -7,14 +7,14 @@
             "id": "github:1427106881:root",
             "repository": "EmptyVessel-000/dsh-file-history",
             "path": "",
-            "revision": "e277a144691e1a0bbc281e61af0a2f1c371a8a35",
+            "revision": "3d77c4a210da09bd7c792800b386fda39d4456c9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4a4af179c4213105cbd014a3021a72c4503d8c3bf89570b3871cee2549397b3d",
-                "code": "e277a144691e1a0bbc281e61af0a2f1c371a8a35",
-                "maintenance": "0f9ae539185382a9ba7342882021f4394f39fdd6f24cc2b679a10a69243ae345"
+                "code": "3d77c4a210da09bd7c792800b386fda39d4456c9",
+                "maintenance": "9336c07cdac78408592fb37fcaff86bab90645a945a86bf9639d5cd9233d60b0"
             }
         }
     }

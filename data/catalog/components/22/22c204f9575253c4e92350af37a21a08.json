@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "22c204f9575253c4e92350af37a21a08",
+    "identity": "github:1428600693:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428600693:root",
+            "repository": "SouthernSibyl/dsh-quick-prompt",
+            "path": "",
+            "revision": "234de7188552bc598e2789f506f74e36520f3271",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9cfd0f9a4f1dbf42e109224c96a8f2cb18313290feaf47fce8d127bb71d3bbf5",
+                "code": "234de7188552bc598e2789f506f74e36520f3271",
+                "maintenance": "9485663c0ed581e7cc2c6beca62fc6fdb33d0bca756f19ac4f1cf699a8f0d377"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0ae8b4f7f065768656e2a69e0d9269ea",
+    "identity": "github:1428491890:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428491890:root",
+            "repository": "cshengyi023-collab/dsh-pet-companion",
+            "path": "",
+            "revision": "350f2255da455777d8ff9f2f64a8bf15efa81c48",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "55cfb59b5e41b3977662c7f0cb5d1dfaf7fdd413ff6874aa1054f985cd309073",
+                "code": "350f2255da455777d8ff9f2f64a8bf15efa81c48",
+                "maintenance": "fb0856fa1c168d27461729544740cea5b4d7523175fa22c78502a4c79da4d159"
+            }
+        }
+    }
+}

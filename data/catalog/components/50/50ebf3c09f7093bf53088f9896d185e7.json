@@ -7,14 +7,14 @@
             "id": "github:1333633428:root",
             "repository": "Lixiaoyiao/deepseek-harness-action",
             "path": "",
-            "revision": "d569cf736f33c9bf0c6c262c5bc42b3a65afa1d3",
+            "revision": "17db400b131fa17839511bc2b8843cf62f5aabcb",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "59312fbca1faeee4289c6c13e228727ef6a4c387e315393f746314ed708dd41f",
-                "code": "d569cf736f33c9bf0c6c262c5bc42b3a65afa1d3",
-                "maintenance": "b306827234f74716f70a7242489d3e9010e212a536c2cc8d78f03d01b225d679"
+                "code": "17db400b131fa17839511bc2b8843cf62f5aabcb",
+                "maintenance": "9039b9f2415e4e4bbceb0dbd675da92b2fd164e1677ed8574d3ec4652fb1be06"
             }
         }
     }

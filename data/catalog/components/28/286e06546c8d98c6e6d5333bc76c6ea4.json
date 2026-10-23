@@ -7,15 +7,15 @@
             "id": "github:1340230123:root",
             "repository": "LAU-MARS/dsh-cad",
             "path": "",
-            "revision": "96c98bfa59e2a58d8af625932e965be3dfa6a811",
+            "revision": "9752a8e37b04c0d3f067c3955e8161b1fe72701a",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "acc53a8bb2c5893f3133f4697c610ebfb6ffcae78678271a011643f6890f21e4",
-                "code": "96c98bfa59e2a58d8af625932e965be3dfa6a811",
-                "maintenance": "2896b85ddf83f715371ce5d68b652150f8dca9042cb0e9e6f134ce7f02655eb4"
+                "code": "9752a8e37b04c0d3f067c3955e8161b1fe72701a",
+                "maintenance": "0c01811acf19c9c3017aa20c949f6afbeaa2e64a0ad76f4b77a78f3313df3876"
             }
         }
     }

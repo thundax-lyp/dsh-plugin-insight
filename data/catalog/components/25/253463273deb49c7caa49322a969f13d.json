@@ -7,14 +7,14 @@
             "id": "github:1343909743:root",
             "repository": "xswt442-cmd/dsh-instance-manager",
             "path": "",
-            "revision": "4161c4c6d036712873f0a2329caa9fab10a3f892",
+            "revision": "cc65a675c4da565c61cc3450e5257a598794d32b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4b5c334a4f5f518cb599cd5a5c45e6f52f12fda0b2aa1aed068ef82753c637fa",
-                "code": "4161c4c6d036712873f0a2329caa9fab10a3f892",
-                "maintenance": "7676bf184e717c0bb92336f516aa1141ca5d5165acff84063637198585789f3d"
+                "code": "cc65a675c4da565c61cc3450e5257a598794d32b",
+                "maintenance": "efa70897554cb35e841839a47cabcb66fb3e7392c614980be964ce17e7491c7c"
             }
         }
     }

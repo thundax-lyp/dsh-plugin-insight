@@ -7,15 +7,15 @@
             "id": "github:1333152408:packages-plugins-plugin-session-export",
             "repository": "whyihaveyou/dsh-suite",
             "path": "packages/plugins/plugin-session-export",
-            "revision": "248a7f8a806d0149dc2e8da5fddc8ea1fd16ec09",
+            "revision": "b8640276991e8e5216c77579cdabe96c73241118",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "a4c27dbcac50b2f1c3a029a0c47d789343ea7d1cb9f92736f7b9565e4b06c37b",
-                "code": "248a7f8a806d0149dc2e8da5fddc8ea1fd16ec09",
-                "maintenance": "fbf3a6036add7eda60ce35e557a9e3d91c75d986a1f4865057e048486b54b47b"
+                "code": "b8640276991e8e5216c77579cdabe96c73241118",
+                "maintenance": "833a0a40a2e20585b7bd510980310f6c4430bf400a5bb2c47a38c8f7a07a6d5c"
             }
         }
     }

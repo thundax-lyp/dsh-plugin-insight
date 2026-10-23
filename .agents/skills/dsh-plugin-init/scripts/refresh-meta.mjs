@@ -59,6 +59,7 @@ export async function refresh(
         downloads = captureNpmDownloads,
         publication = captureNpmPublication,
         publicationOnly = false,
+        pluginIds = null,
         at = new Date().toISOString(),
         root = ROOT
     } = {}
@@ -71,11 +72,19 @@ export async function refresh(
     const manifest = snapshot
         ? { items: publicationInput.records, round: at.slice(0, 10) + '-01' }
         : validateManifest(read(resolve(root, publicationInput.manifest)));
+    if (
+        pluginIds &&
+        (new Set(pluginIds).size !== pluginIds.length ||
+            pluginIds.some((id) => !manifest.items.some((item) => item.id === id && item.status === 'complete')))
+    )
+        throw Error('metadata refresh requires distinct published plugin ids');
     const stamp = at.replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
     const result = [];
     const mapping = { ...publicationInput.metadata };
     // Read the fixed list; no discovery, deep analysis, catalog writes or checkpoint edits.
-    for (const item of manifest.items.filter((item) => item.status === 'complete')) {
+    for (const item of manifest.items.filter(
+        (item) => item.status === 'complete' && (!pluginIds || pluginIds.includes(item.id))
+    )) {
         const previous = snapshot
             ? snapshot.metadata[item.id]
             : mapping[item.id]
@@ -136,10 +145,14 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
         const { values: v } = parseArgs({
             options: {
                 input: { type: 'string', default: PUBLICATION },
-                'npm-publication-only': { type: 'boolean', default: false }
+                'npm-publication-only': { type: 'boolean', default: false },
+                plugin: { type: 'string', multiple: true }
             }
         });
-        const result = await refresh(v.input, { publicationOnly: v['npm-publication-only'] });
+        const result = await refresh(v.input, {
+            publicationOnly: v['npm-publication-only'],
+            pluginIds: v.plugin ?? null
+        });
         await render(['--input', v.input]);
         console.log(JSON.stringify(result));
     } catch (e) {

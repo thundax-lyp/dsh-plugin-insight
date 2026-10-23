@@ -3,6 +3,447 @@
     "id": "6a6c268d0020d2076a89877a8ea9a517",
     "identity": "github:1412897663:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1412897663:root",
+            "repository_id": 1412897663,
+            "component_id": "root",
+            "repository": "AAAlenwow/dsh-spring-admin-kit",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-spring-admin-kit",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ae6ade50608ecd3579fdcae40b881cbeaea780c00757d0fbcb95756ede279203",
+                "code": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                "maintenance": "4d4f09e111a7ae54f55e63aa4eab30438c071023ee797c55f782d5f46967e6f7"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1412897663-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:08:14.072Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1412897663-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AAAlenwow/dsh-spring-admin-kit",
+                            "commit": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                            "path": "README.md",
+                            "content_sha256": "1e9c559f5ee0f339664df32eef779876dc5a3193eb17e82a3d1c69ac38fb3b78"
+                        }
+                    ],
+                    "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                    "captured_at": "2026-10-23T02:08:14.072Z",
+                    "summary": "注册Excel批量导入导出及Thymeleaf/LayUI模板规范两个DSH技能。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aaalenwow--dsh-spring-admin-kit/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1412897663-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/lib/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AAAlenwow/dsh-spring-admin-kit",
+                            "commit": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                            "path": "lib/index.js",
+                            "content_sha256": "6dabb15671f34ba6224d2026c81c0f09647efa27dd274951554e9402f8da78de"
+                        },
+                        {
+                            "repository_url": "https://github.com/AAAlenwow/dsh-spring-admin-kit",
+                            "commit": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                            "path": "skills/excel-batch-import-export/SKILL.md",
+                            "content_sha256": "075f8e6dc67030dc94022479806116136fae54f5c57fd9244e537c704dc45c73"
+                        },
+                        {
+                            "repository_url": "https://github.com/AAAlenwow/dsh-spring-admin-kit",
+                            "commit": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                            "path": "skills/thymeleaf-layui-guard/SKILL.md",
+                            "content_sha256": "5c75183f7d83d5efa64f595b3d514295e66837d184807cc9e8effbb23c32d66f"
+                        },
+                        {
+                            "repository_url": "https://github.com/AAAlenwow/dsh-spring-admin-kit",
+                            "commit": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                            "path": "package.json",
+                            "content_sha256": "ba35de97b03be251b6e8a32843ed1a7067299cf503424978fee38cb2190eea31"
+                        }
+                    ],
+                    "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                    "captured_at": "2026-10-23T02:08:14.072Z",
+                    "summary": "核查 lib/index.js、skills/excel-batch-import-export/SKILL.md、skills/thymeleaf-layui-guard/SKILL.md、package.json；Host读取两份SKILL并用简化front matter解析注册到skills，提示驱动模型生成而非自动运行约束。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aaalenwow--dsh-spring-admin-kit/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "完整读取两技能核心模板及Host注册；不运行Java/数据库/模板或宿主，不宣称作者实战已独立验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "特定Java后台栈开发者复用步骤与检查单，合格交付必须通过实际模板/数据库验收。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host读取两份SKILL并用简化front matter解析注册到skills，提示驱动模型生成而非自动运行约束。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "完整读取两技能核心模板及Host注册；不运行Java/数据库/模板或宿主，不宣称作者实战已独立验证。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT 0.1.0，Host两技能；兼容声明DSH0.1.7-alpha.1/web。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 插件/项目构建环境 | 读实体、唯一键、权限和替换示例 | 金额/工时未知 |\n| 持续使用 | 模型调用、编译/数据库 | 审代码、渲染与数据验收 | 无真实合格率 |\n| 失败恢复 | 数据回滚/重试生成 | 查部分提交、修模板和业务 | 禁用插件不恢复数据，工时未知 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先观察并修示例，隔离库验事务/重复键/权限和模板渲染后再有限复用；不直接生产套用。参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提示发现 | skills.register两入口 | 自动触发/模型遵循 |\n| 功能组织 | VO/端点/Service/前端模板 | 编译、权限及整批一致性 |\n| 模板规范 | 分离注入与业务JS建议 | 所有绝对语法陈述与实际引擎 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "小型注册器易维护，但简化YAML仅适合当前单行字段；可借鉴前置信息/检查单，复制代码前要修数据事务语义与并发状态。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "导入示例catch异常返回字符串且插入不更新已有键map，事务注解不能保证整批回滚；提示式守卫也不强制拦截。参见[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "未验证假设为技能携带项目契约与故障验收样例，比较纯提示生成的部分提交/重复键/模板失败及复核负担。参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1412897663:root",
+                            "area": "code",
+                            "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:08:14.072Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T02:08:14.072Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                "reviewed_at": "2026-10-23T02:08:14.072Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1412897663:root",
+                        "area": "code",
+                        "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 0,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为已有框架经验小幅封装；mechanism未新增执行/正确性约束；transferability限相同技术栈；simplification统一提示注册小幅减少重复。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow把经验变检查步骤；delivery统一三件套小幅组织交付；reach降低新手接线门槛但仍需Java技能；economics省模板整理有限且复核不可少。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1412897663-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "经验复用有价值，但事务/重复键示例需先修并做目标项目验收，不把提示守卫当生产保证。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "特定后台栈任务明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "成套提示便利，项目已有模板可替代。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定正文和注册源码，未业务执行。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "业务数据与模型生成复核负担高，示例有一致性边界。"
+                    }
+                },
+                "score": 54,
+                "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                "reviewed_at": "2026-10-23T02:08:14.072Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1412897663-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1412897663:root",
+                        "area": "code",
+                        "fingerprint": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1412897663:root",
+            "repository": "AAAlenwow/dsh-spring-admin-kit",
+            "path": "",
+            "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+            "fingerprints": {
+                "directory": "ae6ade50608ecd3579fdcae40b881cbeaea780c00757d0fbcb95756ede279203",
+                "code": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+                "maintenance": "4d4f09e111a7ae54f55e63aa4eab30438c071023ee797c55f782d5f46967e6f7"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "28de15e59eb55d682a27eec8c3401c76cb22c7f3a4573698a14864af234dd7de"
+        },
+        "publication.metadata": "data/plugins/aaalenwow--dsh-spring-admin-kit/META.json",
+        "publication.summaries": {
+            "text": "注册Excel批量导入导出及Thymeleaf/LayUI模板规范两个DSH技能。",
+            "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+            "source_url": "https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+            "items": {
+                "Skill": "注册excel-batch-import-export与thymeleaf-layui-guard两个固定技能。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| Excel技能 | 三件套生成步骤 | 示例需项目适配/一致性验收 |\n| 模板技能 | Thymeleaf/LayUI写作规范 | 提示非强制编译守卫 |"
+        },
+        "publication.advice": {
+            "revision": "46f407f29a9cc22f733962a8c56c00b65ef0e9d8",
+            "text": "先观察并修示例，隔离库验事务/重复键/权限和模板渲染后再有限复用；不直接生产套用。参见[Q03](#research-q03)。"
+        },
+        "registry": "data/plugins/aaalenwow--dsh-spring-admin-kit",
+        "reports": "# dsh-spring-admin-kit\n\n> 注册Excel批量导入导出及Thymeleaf/LayUI模板规范两个DSH技能。\n\n## 研究范围\n\n- **仓库**：[AAAlenwow/dsh-spring-admin-kit](https://github.com/AAAlenwow/dsh-spring-admin-kit)\n- **版本号**：0.1.0（[固定提交 46f407f29a9cc22f733962a8c56c00b65ef0e9d8](https://github.com/AAAlenwow/dsh-spring-admin-kit/tree/46f407f29a9cc22f733962a8c56c00b65ef0e9d8)）\n- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n两个技能注册及模板有源码支持；事务/重复键示例存在适配风险，业务运行与守卫效果未验证。\n\n## 洞察短评\n\n- **用途**：特定Java后台栈开发者复用步骤与检查单，合格交付必须通过实际模板/数据库验收。\n- **亮点**：把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。\n- **思考**：导入示例catch异常返回字符串且插入不更新已有键map，事务注解不能保证整批回滚；提示式守卫也不强制拦截。参见[Q02](#research-q02)。\n- **建议**：未验证假设为技能携带项目契约与故障验收样例，比较纯提示生成的部分提交/重复键/模板失败及复核负担。参见[Q03](#research-q03)。\n\n采用建议：先观察并修示例，隔离库验事务/重复键/权限和模板渲染后再有限复用；不直接生产套用。参见[Q03](#research-q03)。\n\n## 核心贡献\n\n把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。\n\n## 关键质疑\n\n导入示例catch异常返回字符串且插入不更新已有键map，事务注解不能保证整批回滚；提示式守卫也不强制拦截。参见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设为技能携带项目契约与故障验收样例，比较纯提示生成的部分提交/重复键/模板失败及复核负担。参见[Q03](#research-q03)。\n\n未执行。隔离数据库注入重复新键与行中异常，核回滚/权限，真实模板渲染；比较复核人时。\n\n## 场景与替代办法\n\n特定Java后台栈开发者复用步骤与检查单，合格交付必须通过实际模板/数据库验收。\n\n项目既有后台模板加手工提示为参照；插件固化经验，但未证明比目标项目模板更安全。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH skills服务 | 注册必需 | 加载技能 | 无技能入口 |\n| Spring/MyBatis/EasyExcel/Thymeleaf/LayUI | 业务必需 | 生成代码目标栈 | 改项目适配或不用 |\n| 唯一键/事务/权限约束 | 生产必需 | 数据一致与隔离 | 禁止直接导入生产 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户安装并核两技能 | 注册成功非业务通过 |\n| 2 | Agent读项目实体/权限并生成 | 先修示例和业务契约 |\n| 3 | 用户隔离验收 | 重复/异常/权限/渲染通过再采用 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 插件/项目构建环境 | 读实体、唯一键、权限和替换示例 | 金额/工时未知 |\n| 持续使用 | 模型调用、编译/数据库 | 审代码、渲染与数据验收 | 无真实合格率 |\n| 失败恢复 | 数据回滚/重试生成 | 查部分提交、修模板和业务 | 禁用插件不恢复数据，工时未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 提示发现 | skills.register两入口 | 自动触发/模型遵循 |\n| 功能组织 | VO/端点/Service/前端模板 | 编译、权限及整批一致性 |\n| 模板规范 | 分离注入与业务JS建议 | 所有绝对语法陈述与实际引擎 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：两个后台开发技能的复用价值、示例一致性与采用门槛是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 两个技能为谁减少什么重复工作？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\nSpring Boot/MyBatis Plus/Thymeleaf/LayUI后台开发者可用Excel技能组织VO、模板下载、导出、按业务键导入与前端绑定，用模板守卫分离变量注入和业务JS。合格交付是适配现有权限/实体/数据库的可运行后台功能，并通过模板渲染和数据一致性验收。\n\n相对临时对话提示或复制旧页面，增量是把常见前置信息、模板、步骤与检查单固化为两个可发现技能；并没有实现运行时Excel服务或模板编译器。业务价值在项目知识复用和少遗漏，作者“实战验证”缺少本轮独立验证，不能将提示规范等同强制守卫。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.md:1-18](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/README.md#L1-L18)\n\n作者技能定位。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n# dsh-spring-admin-kit\n\n面向 **Spring Boot + MyBatis Plus + Thymeleaf + LayUI** 企业后台开发者的 DSH 技能插件，把两个实战验证过的技能打包为一个可安装的插件，通过 DSH 官方的**运行时技能注册 API**（`ctx.skills.register()`）注入，模型可自动触发，用户也可在技能目录中手动调用。\n\n## 内置技能\n\n### 1. excel-batch-import-export\n为后台管理页面实现 EasyExcel 批量导入/导出/模板下载三件套：\n- 统一 VO（`@ExcelProperty` 列头与 index 规范）\n- Controller 三个端点（downloadTemplate / export / import）\n- Service 层按业务唯一键 Upsert（`@Transactional` + 空行过滤）\n- Thymeleaf + LayUI 前端（`upload.render` 在 table `done` 回调重绑、导出确认弹窗、`<a>` 模板链接）\n- 附实现后检查清单\n\n**触发**：批量导入、批量导出、导入模板、Excel导入、EasyExcel。\n\n### 2. thymeleaf-layui-guard\nThymeleaf + LayUI 模板语法安全守卫，防止 `cols: [[...]]`、`onclick=\"fn({...})\"` 等写法被 Thymeleaf 内联解析导致 `TemplateInputException`。含 6 条强制规则（`th:inline=\"none\"`/`\"javascript\"` 分离、cols 写法、禁内联事件、块注释、变量注入标准写法、页面标准结构）与提交前检查清单。编辑 `templates/**/*.html` 时应激活。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/excel-batch-import-export/SKILL.md:10-18](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/skills/excel-batch-import-export/SKILL.md#L10-L18)\n\n要求先确认业务字段与唯一键。\n\n```text\n## 实现前必须确认的信息\n\n1. **目标实体类**：对应哪张数据库表（Entity 类名、表名）\n2. **业务唯一键**：用哪个字段做 upsert 匹配（如 `storeCode`、`productCode`）\n3. **需要导出/导入的字段列表**：哪些字段参与，哪些是只读（仅导出不导入）\n4. **Controller 路由前缀**：现有 Controller 的 `@RequestMapping` 路径\n5. **参考页面**：用户是否指定参考某个已有页面的样式\n\n如果以上信息不完整，先读目标 Controller 和 Entity 文件获取。\n```\n\n**依据 3 · 源码核查**：[skills/thymeleaf-layui-guard/SKILL.md:23-39](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/skills/thymeleaf-layui-guard/SKILL.md#L23-L39)\n\n变量注入/业务脚本分离。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n````text\n### 规则 1：script 标签必须声明 th:inline\n\n```html\n<!-- 需要 Thymeleaf 注入变量的 script（如 projectId） -->\n<script th:inline=\"javascript\">\n    var projectId = /*[[${project.id}]]*/ 1;\n</script>\n\n<!-- 包含业务 JS 的 script（LayUI 代码） -->\n<script th:inline=\"none\">\n    layui.use(['table', 'form'], function () {\n        // LayUI 代码安全，不会被 Thymeleaf 解析\n    });\n</script>\n```\n\n**关键**：两种 script 必须分开写，不要混在一个标签中。\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 注册怎样生效，示例是否保证事务与模板安全？\n\n**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\nHost依赖skills，逐个readFileSync读取固定SKILL，用正则分front matter并逐行提description，再register。当前两份单行字段可匹配；它不是完整YAML解析器，未来多行描述/引用值可能失真。只见注册提示正文，没有文件写入拦截、AST检查或自动编译放行。\n\nExcel示例有@Transactional，但catch(Exception)后返回错误字符串而不再抛出或标rollbackOnly，注解不能独自保证发生部分写后全部回滚。existingMap只预载已有实体，插入分支未把新键加入map，同文件重复新业务键依数据库约束可能重复/异常。Controller示例还用static SimpleDateFormat，应由项目按并发场景替换。此处是待适配示例的具体风险，不代表插件已执行损坏数据库。模板技能的“违反任意一条都会失败”等绝对陈述也没有绑定引擎配置/版本证据，应以项目真实渲染核对。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:22-49](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/lib/index.js#L22-L49)\n\n读取、简化front matter与注册。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nfunction loadBundledSkill(name) {\n  const raw = readFileSync(join(skillsRoot, name, \"SKILL.md\"), \"utf8\");\n  const match = /^---\\r?\\n([\\s\\S]*?)\\r?\\n---\\r?\\n?([\\s\\S]*)$/.exec(raw);\n  if (!match) throw new Error(`dsh-spring-admin-kit: ${name}/SKILL.md has no YAML front matter`);\n  const [, frontMatter, body] = match;\n  const fields = {};\n  for (const line of frontMatter.split(/\\r?\\n/)) {\n    const entry = /^(\\w[\\w-]*):\\s*(.*)$/.exec(line.trim());\n    if (entry) fields[entry[1]] = entry[2].trim();\n  }\n  if (!fields.description) throw new Error(`dsh-spring-admin-kit: ${name}/SKILL.md front matter lacks \"description\"`);\n  return {\n    name,\n    description: fields.description,\n    ...fields.whenToUse ? { whenToUse: fields.whenToUse } : {},\n    content: body,\n    source: `plugin:dsh-spring-admin-kit/${name}`,\n  };\n}\n\nexport const inject = [\"skills\"];\n\nexport function apply(ctx) {\n  for (const name of [\"excel-batch-import-export\", \"thymeleaf-layui-guard\"]) {\n    const skill = loadBundledSkill(name);\n    ctx.skills.register(skill);\n    ctx.logger.info(\"registered skill %s\", name);\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/excel-batch-import-export/SKILL.md:101-154](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/skills/excel-batch-import-export/SKILL.md#L101-L154)\n\n事务捕获返回与未更新map的插入。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n````text\n```java\n@Override\n@Transactional(rollbackFor = Exception.class)\npublic String importXxx(MultipartFile file) {\n    try {\n        // 1. 读取 Excel（使用同一个 VO 类）\n        List<XxxExcelVO> dataList = EasyExcel.read(file.getInputStream())\n                .head(XxxExcelVO.class).sheet().doReadSync();\n        if (dataList == null || dataList.isEmpty()) return \"Excel 文件为空\";\n\n        // 2. 按业务唯一键加载已有记录\n        List<XxxEntity> existingList = xxxService.list(new LambdaQueryWrapper<>());\n        Map<String, XxxEntity> existingMap = new HashMap<>(existingList.size() * 2);\n        for (XxxEntity item : existingList) {\n            if (StringUtils.isNotBlank(item.getCode()))\n                existingMap.put(item.getCode(), item);\n        }\n\n        // 3. Upsert\n        Date now = new Date();\n        int insertCount = 0, updateCount = 0;\n        for (XxxExcelVO row : dataList) {\n            if (StringUtils.isBlank(row.getName())) continue; // 跳过空行\n            String code = StringUtils.trimToNull(row.getCode());\n\n            if (code != null && existingMap.containsKey(code)) {\n                // UPDATE：只更新可写字段；空值字段决定是否覆盖\n                XxxEntity existing = existingMap.get(code);\n                existing.setName(row.getName().trim());\n                existing.setFieldA(StringUtils.defaultString(StringUtils.trimToNull(row.getFieldA()), \"\"));\n                // 非空才覆盖的字段：\n                if (StringUtils.isNotBlank(row.getPhone())) existing.setPhone(row.getPhone().trim());\n                existing.setUpdateTime(now);\n                xxxService.updateById(existing);\n                updateCount++;\n            } else {\n                // INSERT\n                XxxEntity entity = new XxxEntity();\n                entity.setCode(code != null ? code : \"AUTO-\" + System.currentTimeMillis() + \"-\" + insertCount);\n                entity.setName(row.getName().trim());\n                entity.setFieldA(StringUtils.defaultString(StringUtils.trimToNull(row.getFieldA()), \"\"));\n                entity.setStatus(1);\n                entity.setCreateTime(now);\n                entity.setUpdateTime(now);\n                xxxService.save(entity);\n                insertCount++;\n            }\n        }\n        logger.info(\"Import upsert: insert={}, update={}\", insertCount, updateCount);\n        return null; // null 表示成功\n    } catch (Exception e) {\n        logger.error(\"Import failed\", e);\n        return \"导入失败: \" + e.getMessage();\n    }\n````\n\n</details>\n\n**依据 3 · 源码核查**：[skills/excel-batch-import-export/SKILL.md:54-56](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/skills/excel-batch-import-export/SKILL.md#L54-L56)\n\n共享日期格式示例。\n\n````text\n```java\nprivate static final SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\");\nprivate static final SimpleDateFormat dateFormat = new SimpleDateFormat(\"yyyyMMdd\");\n````\n\n**依据 4 · 源码核查**：[skills/thymeleaf-layui-guard/SKILL.md:8-19](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/skills/thymeleaf-layui-guard/SKILL.md#L8-L19)\n\n绝对主张为作者提示不是独立证据。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n当你在 Spring Boot + Thymeleaf + LayUI 项目中编辑或创建 `templates/**/*.html` 文件时，**必须**遵循以下规范。违反任何一条都会导致 Thymeleaf 模板编译失败（TemplateInputException）。\n\n## 核心冲突原理\n\nThymeleaf 3.x 会扫描**所有 HTML 内容**（包括 `<script>` 标签内的 JS 代码），将以下语法当作模板表达式解析：\n\n| JS 写法 | Thymeleaf 误解为 | 后果 |\n|---------|-----------------|------|\n| `cols: [[{field:'name'...}]]` | `[[...]]` 内联表达式 | 编译报错 |\n| `onclick=\"fn({icon: 0})\"` | `{icon: 0}` 变量表达式 | 编译报错 |\n| `// 注释内容` | 可能含有 `[[` 或 `${}` | 潜在冲突 |\n| `var x = '${name}'` | `${name}` 变量表达式 | 值被替换或报错 |\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何判断采用成本并验证改进假设？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n插件启动只需DSH skills API，包兼容声明为0.1.7-alpha.1/web；真正交付还依赖Java/Spring、EasyExcel、MyBatis、模板与数据库约束，版本/权限/租户过滤均需读目标项目。首次成本是读现有代码并替换示例路径/字段；持续成本是模型生成、人工复核、编译渲染和导入验收；失败恢复须回滚业务数据/修复已生成代码，不能靠插件禁用完成。模型费用、人时、数据规模未知。\n\n建议观察，尤其先修事务/重复键示例再作生产生成依据；可在测试数据库试学模板，但必须注入行中失败、重复键和权限越界验收，不以技能注册成功当业务通过。未验证假设为“业务契约+故障样例”随技能交付，强制先生成去重/回滚/权限的验收清单并由宿主真实执行；对照纯提示在同项目生成，若不减少部分提交与模板失败或增加复核成本更高，就否定收益。这里只提出设计，未新增测试或执行。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:31-42](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/package.json#L31-L42)\n\n兼容声明。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"compatibility\": {\n      \"dsh\": \"0.1.7-alpha.1\",\n      \"profiles\": [\n        \"web\"\n      ]\n    }\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/excel-batch-import-export/SKILL.md:101-154](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/skills/excel-batch-import-export/SKILL.md#L101-L154)\n\n数据一致性约束决定验收成本。\n\n<details>\n<summary>查看原文（54行）</summary>\n\n````text\n```java\n@Override\n@Transactional(rollbackFor = Exception.class)\npublic String importXxx(MultipartFile file) {\n    try {\n        // 1. 读取 Excel（使用同一个 VO 类）\n        List<XxxExcelVO> dataList = EasyExcel.read(file.getInputStream())\n                .head(XxxExcelVO.class).sheet().doReadSync();\n        if (dataList == null || dataList.isEmpty()) return \"Excel 文件为空\";\n\n        // 2. 按业务唯一键加载已有记录\n        List<XxxEntity> existingList = xxxService.list(new LambdaQueryWrapper<>());\n        Map<String, XxxEntity> existingMap = new HashMap<>(existingList.size() * 2);\n        for (XxxEntity item : existingList) {\n            if (StringUtils.isNotBlank(item.getCode()))\n                existingMap.put(item.getCode(), item);\n        }\n\n        // 3. Upsert\n        Date now = new Date();\n        int insertCount = 0, updateCount = 0;\n        for (XxxExcelVO row : dataList) {\n            if (StringUtils.isBlank(row.getName())) continue; // 跳过空行\n            String code = StringUtils.trimToNull(row.getCode());\n\n            if (code != null && existingMap.containsKey(code)) {\n                // UPDATE：只更新可写字段；空值字段决定是否覆盖\n                XxxEntity existing = existingMap.get(code);\n                existing.setName(row.getName().trim());\n                existing.setFieldA(StringUtils.defaultString(StringUtils.trimToNull(row.getFieldA()), \"\"));\n                // 非空才覆盖的字段：\n                if (StringUtils.isNotBlank(row.getPhone())) existing.setPhone(row.getPhone().trim());\n                existing.setUpdateTime(now);\n                xxxService.updateById(existing);\n                updateCount++;\n            } else {\n                // INSERT\n                XxxEntity entity = new XxxEntity();\n                entity.setCode(code != null ? code : \"AUTO-\" + System.currentTimeMillis() + \"-\" + insertCount);\n                entity.setName(row.getName().trim());\n                entity.setFieldA(StringUtils.defaultString(StringUtils.trimToNull(row.getFieldA()), \"\"));\n                entity.setStatus(1);\n                entity.setCreateTime(now);\n                entity.setUpdateTime(now);\n                xxxService.save(entity);\n                insertCount++;\n            }\n        }\n        logger.info(\"Import upsert: insert={}, update={}\", insertCount, updateCount);\n        return null; // null 表示成功\n    } catch (Exception e) {\n        logger.error(\"Import failed\", e);\n        return \"导入失败: \" + e.getMessage();\n    }\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:42-49](https://github.com/AAAlenwow/dsh-spring-admin-kit/blob/46f407f29a9cc22f733962a8c56c00b65ef0e9d8/lib/index.js#L42-L49)\n\n启动仅为注册。\n\n```text\nexport const inject = [\"skills\"];\n\nexport function apply(ctx) {\n  for (const name of [\"excel-batch-import-export\", \"thymeleaf-layui-guard\"]) {\n    const skill = loadBundledSkill(name);\n    ctx.skills.register(skill);\n    ctx.logger.info(\"registered skill %s\", name);\n  }\n```\n\n#### 缺口\n\n- 目标框架版本、数据权限与真实回滚/渲染未验\n  **影响**：无法认定生成代码可安全上生产\n  **进一步探讨**：在隔离数据库/模板引擎核重复键、行中异常、权限和真实HTML渲染\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：e635eba5d40c9a99c610e80794bf8cdeb32eb7c19fa76cd3442df83ac46d6f35。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 50 | 32 | 14 | — |\n| .md | source | 3 | 482 | — | — | 3138 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| Excel技能 | 三件套生成步骤 | 示例需项目适配/一致性验收 |\n| 模板技能 | Thymeleaf/LayUI写作规范 | 提示非强制编译守卫 |\n\n## 工程亮点\n\n小型注册器易维护，但简化YAML仅适合当前单行字段；可借鉴前置信息/检查单，复制代码前要修数据事务语义与并发状态。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、skills/excel-batch-import-export/SKILL.md、skills/thymeleaf-layui-guard/SKILL.md、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整读取两技能核心模板及Host注册；不运行Java/数据库/模板或宿主，不宣称作者实战已独立验证。\n- 下一步：未执行。隔离数据库注入重复新键与行中异常，核回滚/权限，真实模板渲染；比较复核人时。\n",
+        "metadata": {
+            "repository": "AAAlenwow/dsh-spring-admin-kit",
+            "repository_id": 1412897663,
+            "captured_at": "2026-10-23T01:50:28.675Z",
+            "window_start": "2026-09-23T01:50:28.675Z",
+            "stars": 0,
+            "pushed_at": "2026-10-10T07:23:36Z",
+            "issues": {
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [],
+            "npm": {
+                "package_name": "dsh-spring-admin-kit",
+                "captured_at": "2026-10-23T01:50:36.876Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-spring-admin-kit",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": null,
+                    "captured_at": "2026-10-23T01:50:36.876Z",
+                    "source_url": "https://registry.npmjs.org/dsh-spring-admin-kit",
+                    "error": "HTTP 404",
+                    "latest_version": null,
+                    "latest_published_at": null,
+                    "latest_error": "HTTP 404"
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1412897663:root",
             "repository": "AAAlenwow/dsh-spring-admin-kit",

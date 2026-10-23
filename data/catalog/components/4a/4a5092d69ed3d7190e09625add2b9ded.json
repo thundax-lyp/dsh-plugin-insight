@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4a5092d69ed3d7190e09625add2b9ded",
+    "identity": "github:1408392011:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1408392011:root",
+            "repository": "JiewiW/dsh-step-governor",
+            "path": "",
+            "revision": "d3f14beef6e87d8519899ec3f06f6e88eb6977b9",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "2efa9cbea3bc4ffdfe7daf84ff3df45b67f45cb19c53035c782b3765e643c664",
+                "code": "d3f14beef6e87d8519899ec3f06f6e88eb6977b9",
+                "maintenance": "30beedd9a93d8040c568dfaa7942c0b9d4f206dfb89427bf7830947463bacb29"
+            }
+        }
+    }
+}

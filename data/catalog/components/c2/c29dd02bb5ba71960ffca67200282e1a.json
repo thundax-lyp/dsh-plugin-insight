@@ -7,14 +7,14 @@
             "id": "github:1408137745:root",
             "repository": "zhairy/dsh-agent-swarm",
             "path": "",
-            "revision": "9cea08275e672a6e54e83b91f7242a5273568a65",
+            "revision": "e75df18a5524eac22302aa1c1bda1ad606272903",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "0997b86e9371191501bac35c3800e0a39ef240c378f18e38f22f8837a74fc030",
-                "code": "9cea08275e672a6e54e83b91f7242a5273568a65",
-                "maintenance": "b7b6f8dad3c2eb2877019d58587bd864306821f84ecd785933a1e04360458b9c"
+                "code": "e75df18a5524eac22302aa1c1bda1ad606272903",
+                "maintenance": "e59aeb508b1cc59ce2597c1fe400777a2f5a1a7b6b2a90a89cfeeef9e618329e"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:995029641:root",
             "repository": "ruvnet/ruflo",
             "path": "",
-            "revision": "96c6aa89b5a2cf5487df4d52c6b5d55134493fab",
+            "revision": "92731bc6bf8d705899c13827b358ef5860fa6f6a",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "c87ed26a17bf3f9af63945a58e5974af2cd67ffef7aadcc3a4dab2928452b44c",
-                "code": "96c6aa89b5a2cf5487df4d52c6b5d55134493fab",
-                "maintenance": "2e4f66996421d4e4609dbddfd40eec8b07377ce3050ba027a83683b0c113edd0"
+                "code": "92731bc6bf8d705899c13827b358ef5860fa6f6a",
+                "maintenance": "325ffe8a9b857378444b139754a47f6e112157e21b8515c64c57a072a5971e13"
             }
         }
     }

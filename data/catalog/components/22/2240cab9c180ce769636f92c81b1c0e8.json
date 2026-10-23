@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2240cab9c180ce769636f92c81b1c0e8",
+    "identity": "github:1427885098:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427885098:root",
+            "repository": "mess1103/dsh-inner-life",
+            "path": "",
+            "revision": "8fb750aa9f2c804d5b0f73d837b4afd64d3f04d2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "90e5d917ddf5ffb2d54ae9180d6db3ef6794f241523fc6f3769bf7be1c27df26",
+                "code": "8fb750aa9f2c804d5b0f73d837b4afd64d3f04d2",
+                "maintenance": "00542cdf59818906a319ccca0960693a74ec6f854c02f3631bcfc8f64f1275cb"
+            }
+        }
+    }
+}

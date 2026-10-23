@@ -7,14 +7,14 @@
             "id": "github:1157659618:plugins-dsh-postiz",
             "repository": "gitroomhq/postiz-agent",
             "path": "plugins/dsh-postiz",
-            "revision": "29f2eefe3b082721a3ac99ec1819d3ff8cae8c79",
+            "revision": "17f1e27b006c02cb46c64e8a319dc75dcfd870d2",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "3f8cea14946be640be5d65ea6c8733628c16f1262622f1d2247e4d17e67f5e49",
-                "code": "29f2eefe3b082721a3ac99ec1819d3ff8cae8c79",
-                "maintenance": "018b8cd654dcee2191eb6e5e343dc14e1062861e3a0cd750a31e21d83e9933ac"
+                "code": "17f1e27b006c02cb46c64e8a319dc75dcfd870d2",
+                "maintenance": "fe7583cb7b0712bbb8d7f90a7a95409d8653f9b057a415d8e6130e2eab2d4684"
             }
         }
     }

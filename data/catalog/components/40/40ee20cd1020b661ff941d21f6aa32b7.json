@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "40ee20cd1020b661ff941d21f6aa32b7",
+    "identity": "github:1428135417:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428135417:plugin",
+            "repository": "HUANGjiale123-bit/dsh-desktop-control",
+            "path": "plugin",
+            "revision": "306cffaa18bfc542d451e79caa1b4553be171960",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3d142d5cd0b10ac7aa4f095c765fc44e0018af0fcf1b04badf4fcfaeb8006a11",
+                "code": "306cffaa18bfc542d451e79caa1b4553be171960",
+                "maintenance": "02f8bf29d88fac1ac24ebaa927c5267ee0e0e1fb63e39f90586669dbe6c75788"
+            }
+        }
+    }
+}

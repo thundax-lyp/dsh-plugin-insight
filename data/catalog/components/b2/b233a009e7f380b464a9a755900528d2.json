@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b233a009e7f380b464a9a755900528d2",
+    "identity": "github:1425603131:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425603131:root",
+            "repository": "dongasai/dsh_compact_queue",
+            "path": "",
+            "revision": "76cfcb603af194ef7652c692ebe475ae18f33053",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "10591550dd36a90084f2003e50a1b27f3cc9a24f4564e41b031ed9066eae7dde",
+                "code": "76cfcb603af194ef7652c692ebe475ae18f33053",
+                "maintenance": "89d2a9cc1e9aa60f6e6b51c5ba15a728ed2c4cde2bc2cd0e19c8394d3ce6566d"
+            }
+        }
+    }
+}

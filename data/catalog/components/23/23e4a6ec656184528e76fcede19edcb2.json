@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "23e4a6ec656184528e76fcede19edcb2",
+    "identity": "github:1428086493:plugins-iamchinese",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428086493:plugins-iamchinese",
+            "repository": "lirenjie95/IamChinese",
+            "path": "plugins/iamchinese",
+            "revision": "9bdee3f80c890a917715d566412d785db42c6fef",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "25f6c093e47f8c46250933ad7da10c79c2fe8eb230f90c514518c60528ee1992",
+                "code": "9bdee3f80c890a917715d566412d785db42c6fef",
+                "maintenance": "97f5c9325d822b078c8b54ed98332aa367a831b729283291f8d31342247fd93a"
+            }
+        }
+    }
+}

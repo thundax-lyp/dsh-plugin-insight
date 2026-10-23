@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7944993575f7c36bc03716009d998992",
+    "identity": "github:1334848909:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1334848909:root",
+            "repository": "hige6/imgpost",
+            "path": "",
+            "revision": "e94fd62c19f8d43150f8c2496a263a8e0f6de11f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "30a603ecd7f9454ae835f7c5038a8a2463ca11fa7946130331280723e456bdd4",
+                "code": "e94fd62c19f8d43150f8c2496a263a8e0f6de11f",
+                "maintenance": "e8e6031af7684ed8294c3428bff5956438a1bb831e3baf51307c33322b63e164"
+            }
+        }
+    }
+}

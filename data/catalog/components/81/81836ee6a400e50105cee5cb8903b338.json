@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "81836ee6a400e50105cee5cb8903b338",
+    "identity": "github:1427262845:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427262845:root",
+            "repository": "Uid-762/dsh-ai-workbench",
+            "path": "",
+            "revision": "44cf3c88fd55b4cf66e4e9ec2e2fc6ee1f21825f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3d2d6294c6b2a2ec04b76898e84ed902c6ce07a3e125bae50f28df0d0257749c",
+                "code": "44cf3c88fd55b4cf66e4e9ec2e2fc6ee1f21825f",
+                "maintenance": "79a41a73d34456897254e690a8ca4f51746199525d3be4fb366707d3d7a811bf"
+            }
+        }
+    }
+}

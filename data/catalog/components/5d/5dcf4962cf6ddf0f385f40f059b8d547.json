@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "5dcf4962cf6ddf0f385f40f059b8d547",
+    "identity": "github:1428000475:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428000475:root",
+            "repository": "flyxiu/dsh-simple-tps",
+            "path": "",
+            "revision": "73388535ce6dd6e46ed04bece811e002a53841f5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "03cb6c373d6ab08210b30e0fd2e7da4e813624ed02ad7d9a2d58e054468b73a8",
+                "code": "73388535ce6dd6e46ed04bece811e002a53841f5",
+                "maintenance": "ddf4b64e079f71fa55d7e4411351584e344a658231588fb26cb6ad98c4c2ec34"
+            }
+        }
+    }
+}

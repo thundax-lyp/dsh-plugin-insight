@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4b3dba14247aa8da6f36d075ed758bb0",
+    "identity": "github:1428172117:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428172117:root",
+            "repository": "wangbobo-coder/dsh-mcp-manager",
+            "path": "",
+            "revision": "c340e62dedf73a6c07e208b332e3e025d75b2f80",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "325087b7452fd6d9fb9a61928233b2f5cea7ab5f73bdb9a1f255c3ae7fd95646",
+                "code": "c340e62dedf73a6c07e208b332e3e025d75b2f80",
+                "maintenance": "8ca0a5e5853fe3cb707c7f64b65ce0dfde913d06c3a286333acda4161e3f55f6"
+            }
+        }
+    }
+}

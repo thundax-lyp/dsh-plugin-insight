@@ -7,14 +7,14 @@
             "id": "github:1333175049:root",
             "repository": "awesome-dsh-plugin/awesome-dsh-plugin",
             "path": "",
-            "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+            "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "6e66df9aa8159603402e5cf5a09f8123d52f07fb3c376091549d7d46cd080acf",
-                "code": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
-                "maintenance": "0889320f467f8750066d8b5e2d9721e4d918b6706f27d619a147f7fdb51a384e"
+                "code": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                "maintenance": "8a92d611dfe914c1ce14b071623efaaad9f3d3cdf99df0274eaf7e7195491292"
             }
         }
     }

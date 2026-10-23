@@ -7,15 +7,15 @@
             "id": "github:1355989130:root",
             "repository": "PerryLink/dsh-reach",
             "path": "",
-            "revision": "fc4a0cc6909ad424dcb6a497b163b11f3df1881d",
+            "revision": "db0eb39d580a1bb5cf733b7aa12c230e2f704ea7",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "2fcd59c76456d496d593b222023e7d171c4ff55c361c2f71b8ad9aafb6fea07a",
-                "code": "fc4a0cc6909ad424dcb6a497b163b11f3df1881d",
-                "maintenance": "d1f76be830d7435be53a48e4e4123e325ce7d35c6be4a5c2eb3cae52863fb448"
+                "code": "db0eb39d580a1bb5cf733b7aa12c230e2f704ea7",
+                "maintenance": "ef53f32a3bb2050399d998c7b2fda1bb26071ad50a7a5b97a3fbe070aa2b91e8"
             }
         }
     }

@@ -11,6 +11,8 @@
 
 ## 拆分过程与迁移
 
+INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗口与例外见 [INIT Skill](../SKILL.md#频繁更新过滤)，同轮恢复不重算墙上时间。
+
 新建 WORK 为 v2 索引：固定清单只存 INPUT，变化按下标存 QUEUE，状态与单项结果按内容摘要独立存放。SESSION 是指向 WORK 的兼容入口；读取器完成校验后还原既有内存结构，业务脚本不各自拼装。完整不变量见数据契约。
 
 - `npm run snapshot -- migrate-work --work data/runs/<round>/WORK.json`：预览源格式、语义摘要和原文件大小，不写文件。
@@ -58,5 +60,7 @@
 - `snapshot validate` 和 `npm run check` 校验正式快照及派生成果；不要求旧 runs 或 manifest 存在。
 - `snapshot clean --work ...` 预览；加 `--apply` 只清理已确认合并、全部完成的已知材料。未知文件保留，受阻项需要恢复时拒绝清理。
 - `snapshot bootstrap` 仅用于现有旧数据的首次迁移，记录缺失原件，不制造新研究。已有正式快照时拒绝再次初始化。
+
+轻量更新遵循数据契约“目录与维护信息的轻量更新”：新 WORK 固定 metadata_only_ids，旧 WORK 恢复保持原选择。先合并发现层，再按需执行 `npm run refresh:meta -- --plugin <稳定ID>`（可重复）定向刷新；不在未合并事务期间改写正式基线，不重新准备源码证据。
 
 旧 research／publication 命令保留兼容读取能力，但不得对正式派生档案单独 apply。META 刷新同样先更新内存候选，校验正式快照摘要、持锁原子写入后再生成页面。

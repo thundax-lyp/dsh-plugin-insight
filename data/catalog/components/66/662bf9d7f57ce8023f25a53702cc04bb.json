@@ -7,14 +7,14 @@
             "id": "github:1215961903:root",
             "repository": "Ariestar/sivtr",
             "path": "",
-            "revision": "6a05772d0763dc1eb6e5516130189b12105ad23b",
+            "revision": "3578bb12c66f6324a48619e4c14f561aee5e85cc",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "8d4d86e450c6d60f81c6d7087188dc717c59bf546fbf68bab09b37d818123fdb",
-                "code": "6a05772d0763dc1eb6e5516130189b12105ad23b",
-                "maintenance": "19458bc9c4631c48af07189a1ed1e05ea39822bd5aa74323f70d08d973d0951f"
+                "code": "3578bb12c66f6324a48619e4c14f561aee5e85cc",
+                "maintenance": "47d6da4d504249dd25285093351eada29325357374fd5dcac25a321cee04012e"
             }
         }
     }

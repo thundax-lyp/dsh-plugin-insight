@@ -7,14 +7,14 @@
             "id": "github:1402415298:plugins-dsh-page-refresh",
             "repository": "day-day-dream/dsh-page-refresh",
             "path": "plugins/dsh-page-refresh",
-            "revision": "a65e6448a7fec4587e18692f14932f405f8e934e",
+            "revision": "a97a5e2230956672a16c31a18c1238519162622f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "c63ea26be2ee5cebf0d4e1d246e05c86d15ac6a5a2ab2254e34ee676b1240d22",
-                "code": "a65e6448a7fec4587e18692f14932f405f8e934e",
-                "maintenance": "0546ced777a6f54eb5db629329b41fda8bf643370dbe86dac176cbb4a5898168"
+                "directory": "a145061d63fc4028ed7ffbe8328fd5bb85db4715f6bbccbd338bd1095f0bf142",
+                "code": "a97a5e2230956672a16c31a18c1238519162622f",
+                "maintenance": "90e5e31b05b53bbd242549dff712d8703b70d28f556542c681b18241f8bf9a08"
             }
         }
     }

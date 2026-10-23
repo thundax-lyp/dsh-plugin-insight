@@ -7,14 +7,14 @@
             "id": "github:1352075804:root",
             "repository": "ash-qw/dsh-theme-prts",
             "path": "",
-            "revision": "13a1da56adfbf9aef71057bd452da6b7f1f949c9",
+            "revision": "bd13ae4d3a2efd34c3326c8d554693f6558f223b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "a1e94b4c2d6e1e33092e446809655acff679ee8995a177fb73f381d425780efc",
-                "code": "13a1da56adfbf9aef71057bd452da6b7f1f949c9",
-                "maintenance": "43cfbc4d78c5d35b83483d298915a48388411655f7229dcbc968a953fc1f95d1"
+                "code": "bd13ae4d3a2efd34c3326c8d554693f6558f223b",
+                "maintenance": "f1adc0a0f6e311714a59d12a833da7c6de0649b19a30f4de938f8ab168ec4528"
             }
         }
     }

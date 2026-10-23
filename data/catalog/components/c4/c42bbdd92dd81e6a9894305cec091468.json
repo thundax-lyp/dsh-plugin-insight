@@ -7,14 +7,14 @@
             "id": "github:1182135360:dsh-plugin",
             "repository": "zhaoolee/notes",
             "path": "dsh-plugin",
-            "revision": "50d498923df11b8d3e9f225477622939adc87fe0",
+            "revision": "51d11b51a80362ee0833d6d719685a8f1f68b82e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "e144699f8f81619fed8319db4f30253bedbe0660227715508683ae02994f33bc",
-                "code": "50d498923df11b8d3e9f225477622939adc87fe0",
-                "maintenance": "fcf53622d41316482bd4cca548d7b8e7f3f17d09c35075f7f6e6212c42ec6dda"
+                "code": "51d11b51a80362ee0833d6d719685a8f1f68b82e",
+                "maintenance": "3daae52e7914c1d067ed0ac52fd1091a2d58ddf537a59a7b2fc62637c0e1d8c3"
             }
         }
     }

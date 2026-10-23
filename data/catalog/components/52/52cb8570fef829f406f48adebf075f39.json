@@ -7,14 +7,14 @@
             "id": "github:1335086034:packages-openquantum-web-branding",
             "repository": "xi-zhao/OpenQuantum",
             "path": "packages/openquantum-web-branding",
-            "revision": "8d283b801a1a690d7b1aeefc08f438cd9a8db5a5",
+            "revision": "5a6b10001bbf5bacb5f41d66d2b2de7dcdbcbbd1",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b3c84565550dddfb2bd802bb3bd5b7d4a45218eff84d874d20590c5a0bea0cf4",
-                "code": "8d283b801a1a690d7b1aeefc08f438cd9a8db5a5",
-                "maintenance": "81775d9b390c7de2d09d0f12fca2f07786fc31b9041047422c9741fa6d101937"
+                "code": "5a6b10001bbf5bacb5f41d66d2b2de7dcdbcbbd1",
+                "maintenance": "0d5342928a45a470d12a98779de1d3e156b8694e3011961e14cf92501a30f4a3"
             }
         }
     }

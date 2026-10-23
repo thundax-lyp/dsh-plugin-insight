@@ -18,22 +18,22 @@
             "availability": "unknown",
             "research_depth": "source",
             "fingerprints": {
-                "directory": "5bdc4ce6c9aba72a67c14dfbbbd479069807650643da0f41dbca33f188089b36",
+                "directory": "3cdb13806eb3200e6e272b28be8c90efbdfdc70abe7caeab90f4820fafc9904a",
                 "code": "16b5886d35827047e3e8736da356c8c55c9ae564",
                 "maintenance": "86cb627cc1bffc3a9518c5378ace631d6eb3c3397eda4c5f747cfe7a353797fa"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-02-github-1415767842-root-directory-0",
+                    "id": "2026-10-23-01-github-1415767842-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
-                    "retrieved_at": "2026-10-22T16:13:10.963Z",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:02:13.113Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-02-github-1415767842-root-author",
+                    "id": "2026-10-23-01-github-1415767842-root-author",
                     "kind": "author_claim",
                     "url": "https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md",
                     "git_refs": [
@@ -45,15 +45,15 @@
                         }
                     ],
                     "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
-                    "captured_at": "2026-10-22T16:13:10.963Z",
-                    "summary": "把 Moli 无头浏览器封装成网页抓取、探测和按需安装工具。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-23T02:02:13.113Z",
+                    "summary": "把本地Moli无头浏览器接入Harness，支持渲染抓取、选择器读取、截图和PDF。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-02-github-1415767842-root-source",
+                    "id": "2026-10-23-01-github-1415767842-root-source",
                     "kind": "source_inspection",
                     "url": "https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md",
                     "git_refs": [
@@ -62,6 +62,12 @@
                             "commit": "16b5886d35827047e3e8736da356c8c55c9ae564",
                             "path": "README.md",
                             "content_sha256": "bc30763e744d04046d0a353d05b4e42be3581b12732c6531f6a374d47c6b1b4b"
+                        },
+                        {
+                            "repository_url": "https://github.com/27painter/dsh-moli",
+                            "commit": "16b5886d35827047e3e8736da356c8c55c9ae564",
+                            "path": "package.json",
+                            "content_sha256": "676630d0e4110bb3dc5225a4a496f3ab288ebf29f9d0a1d91698078a2f50b7ac"
                         },
                         {
                             "repository_url": "https://github.com/27painter/dsh-moli",
@@ -83,11 +89,11 @@
                         }
                     ],
                     "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
-                    "captured_at": "2026-10-22T16:13:10.963Z",
-                    "summary": "核查 README.md、index.js、lib/moli.js、lib/install.js；moli_fetch 组装格式、选择器、脚本与输出参数调用外部 Moli；moli_probe 检查版本、HTTPS 能力并可下载发行版安装器。 详见[Q02](#research-q02)。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json",
+                    "captured_at": "2026-10-23T02:02:13.113Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/moli.js、lib/install.js；moli_fetch校验参数并调用本地Moli可执行文件，处理选择器/滚动/等待及输出；moli_probe定位、探测或下载官方latest安装脚本再运行，设置页提供引擎生命周期。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/27painter--dsh-moli/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "只读检查固定提交 README.md、index.js、lib/moli.js、lib/install.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证。",
+                        "固定版入口、argv/进程/输出和安装器来源及校验语义；未执行Moli或验证脚本，不把已有旧报告当本轮运行。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -98,9 +104,9 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "面向 JavaScript 渲染、选择器抽取、登录态页面和截图/PDF；静态公开页用普通 fetch 更短、更少供应链。 详见[Q01](#research-q01)。",
+                    "text": "需要读取JavaScript渲染页、登录态容器或网页截图/PDF的Harness用户。合格结果应核对页面状态、内容及输出文件；静态文本已可fetch时无需启动浏览器。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -109,16 +115,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "moli_fetch 组装格式、选择器、脚本与输出参数调用外部 Moli；moli_probe 检查版本、HTTPS 能力并可下载发行版安装器。 详见[Q02](#research-q02)。",
+                    "text": "moli_fetch校验参数并调用本地Moli可执行文件，处理选择器/滚动/等待及输出；moli_probe定位、探测或下载官方latest安装脚本再运行，设置页提供引擎生命周期。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -127,16 +133,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "只读检查固定提交 README.md、index.js、lib/moli.js、lib/install.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证。",
+                    "text": "固定版入口、argv/进程/输出和安装器来源及校验语义；未执行Moli或验证脚本，不把已有旧报告当本轮运行。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -145,16 +151,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "以当前仓库包清单和 README 所示方式分发；可用性、包注册表现状和目标 Host 安装兼容未做动态确认。",
+                    "text": "MIT；1.1.20；Node>=20.12，Moli独立分发，npm包名由manifest核实。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -163,16 +169,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 准备 | 约 101MB 二进制下载 | 固定版本/哈希 | 带宽与磁盘按 release 计 |\n| 单页 | 浏览器进程与渲染等待 | 选 selector/format | P95 与 RSS 未测 |\n| 失败 | 重装或退回 fetch | 排查站点/证书 | 登录态恢复未测 |",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 单独下载浏览器引擎及磁盘，金额未知 | 审安装源、平台、代理和TLS | 引擎latest与插件固定版独立变化 |\n| 持续使用 | 浏览器进程/网络及模型阅读token | 维护选择器、等待和登录态 | 字符减少不等于等比例token/费用下降 |\n| 失败恢复 | 重试渲染与下载、残留输出 | 判别HTTP错误/不可达/条件超时 | 截图/PDF及cookie需自行清理 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -181,16 +187,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅在确需 SPA、截图或登录态抽取时于隔离 profile 小范围试用；先手工固定 Moli 版本和哈希，静态页继续用普通 fetch。 详见[Q09](#research-q09)。",
+                    "text": "建议观察；先仅对公开低敏感页面检查严格TLS、已知引擎版本与错误状态，再决定受控试用。生产登录凭据、强来源认证或共享Host延迟敏感任务应暂缓。参见[Q06](#research-q06)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -199,16 +205,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "#### 效果\n\n| 效果项 | 源码支持 | 验证指标 |\n| --- | --- | --- |\n| SPA 正文 | 渲染后再转 Markdown | 20 页正文完整率 |\n| 定点提取 | selector 与 eval 可组合 | 20 次字段命中率 |\n| 简单静态页 | 没有明显优势 | 与普通 fetch 的耗时差 |",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 渲染访问 | 本地浏览器CLI参数与状态处理 | 真实目标网站兼容与反爬 |\n| 定向读取 | selector与等待条件校验 | 跨站内容完整性及净token节省 |\n| 可诊断安装 | 多路径下载与SHA256记录 | 脚本真实性及未来引擎兼容 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -217,16 +223,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "探测与抓取拆开、参数边界和错误回传清楚；安装完整性仍需要固定版本哈希或签名策略。 详见[Q07](#research-q07)。",
+                    "text": "raw JSON schema注册、参数互斥与失败分类可借鉴；同步子进程和不安全默认值得调整。复用时需锁定外部CLI协议、权限和认证策略。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -235,16 +241,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "同一工具覆盖 Markdown、HTML、语义树、JSON、截图和 PDF，价值在浏览器渲染与可编程提取，而非替代所有网页读取。 详见[Q03](#research-q03)。",
+                    "text": "把独立Moli浏览器适配为两个Harness工具，补充选择器冲突检查、等待与错误分类、文件输出及安装诊断；渲染能力属于Moli上游。参见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -253,16 +259,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "约 101MB 的独立二进制与下载执行扩大供应链；安装器只报告 SHA256，未内置可信期望值，登录页效果也取决于 Moli 配置。 详见[Q04](#research-q04)。",
+                    "text": "默认insecureTls:true削弱证书核验；安装器来自可变latest，计算SHA256只记录所执行字节，没有可信发布摘要作比对。抓取又使用spawnSync，较慢页面可能阻塞Host事件循环；这些限制直接影响可信抓取与部署负担。参见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -271,16 +277,16 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
-                    "topic": "technical_innovation",
+                    "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "若把期望 SHA256 绑定到发行版本，并记录冷启动/选择器成功率，可把“自动装浏览器”从便利功能变成可审计依赖。 详见[Q08](#research-q08)。",
+                    "text": "可将引擎/安装脚本锁为可审版本并验证受信摘要，抓取改为可取消异步进程，同时返回页面状态与选择器覆盖收据。用故意错误证书、安装器变更及慢页面对照，若不拒绝未授权字节或Host仍阻塞则否定；假设未验证，维护版本矩阵有额外成本。参见[Q05](#research-q05)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ],
                     "dependencies": [
                         {
@@ -289,15 +295,15 @@
                             "fingerprint": "16b5886d35827047e3e8736da356c8c55c9ae564"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T16:13:10.963Z",
+                    "reviewed_at": "2026-10-23T02:02:13.113Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T16:13:10.963Z",
+            "last_checked_at": "2026-10-23T02:02:13.113Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
                 "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
-                "reviewed_at": "2026-10-22T16:13:10.963Z",
+                "reviewed_at": "2026-10-23T02:02:13.113Z",
                 "status": "current",
                 "dependencies": [
                     {
@@ -313,57 +319,57 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "dsh-moli 的核心接线可复用，但关键运行边界尚未验证。",
+                    "rationale": "novelty为上游浏览器适配；mechanism为参数/状态/安装诊断组合；transferability可借鉴CLI工具接线；simplification为两个入口减少手工调用但不消除引擎维护。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
                         "workflow": 9,
-                        "delivery": 8,
-                        "reach": 5,
+                        "delivery": 15,
+                        "reach": 10,
                         "economics": 4
                     },
-                    "rationale": "工作流价值存在，经济与真实采用没有本轮独立证据。",
+                    "rationale": "workflow为抓取入口便利；delivery增加截图/PDF与定向输出；reach让Harness Agent访问动态页面；economics仅选择性读入机制，净收益未知。",
                     "basis": "interpretation",
-                    "score": 26,
+                    "score": 38,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1415767842-root-source"
+                        "2026-10-23-01-github-1415767842-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "仅在确需 SPA、截图或登录态抽取时于隔离 profile 小范围试用；先手工固定 Moli 版本和哈希，静态页继续用普通 fetch。",
+                "decision": "observe",
+                "reason": "动态页面需求有价值，但默认TLS绕过、可变安装源及同步抓取需先明确部署边界。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "目标任务明确但适用范围受依赖限制。"
+                        "score": 23,
+                        "rationale": "动态渲染及截图任务明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "相对简单基线有特定机制优势。"
+                        "score": 19,
+                        "rationale": "较静态fetch补充渲染和选择器。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码可核，真实 Host 未运行。"
+                        "rationale": "源码可核未运行浏览器或安装器。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "直接资源可识别，实际总成本仍需计量。"
+                        "rationale": "独立引擎、证书和凭据管理负担较高。"
                     }
                 },
-                "score": 46,
+                "score": 60,
                 "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
-                "reviewed_at": "2026-10-22T16:13:10.963Z",
+                "reviewed_at": "2026-10-23T02:02:13.113Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-02-github-1415767842-root-source"
+                    "2026-10-23-01-github-1415767842-root-source"
                 ],
                 "dependencies": [
                     {
@@ -380,7 +386,7 @@
             "path": "",
             "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
             "fingerprints": {
-                "directory": "5bdc4ce6c9aba72a67c14dfbbbd479069807650643da0f41dbca33f188089b36",
+                "directory": "3cdb13806eb3200e6e272b28be8c90efbdfdc70abe7caeab90f4820fafc9904a",
                 "code": "16b5886d35827047e3e8736da356c8c55c9ae564",
                 "maintenance": "86cb627cc1bffc3a9518c5378ace631d6eb3c3397eda4c5f747cfe7a353797fa"
             },
@@ -388,75 +394,55 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T15:49:47Z",
-            "analysis_sha256": "5658ed111dfb8b365e6b69c54d3ac5c4915a1daae64586ce2052596c7eed3383"
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "df5150affe638055ea256a4e19329af815641d7b32b6efa78594556041b0ec45"
         },
         "publication.metadata": "data/plugins/27painter--dsh-moli/META.json",
         "publication.summaries": {
-            "text": "把 Moli 无头浏览器封装成网页抓取、探测和按需安装工具。",
+            "text": "把本地Moli无头浏览器接入Harness，支持渲染抓取、选择器读取、截图和PDF。",
             "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
             "source_url": "https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md"
         },
         "publication.capabilities": {
             "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
             "items": {
-                "模型工具": "moli_fetch 抓取渲染页，moli_probe 探测或安装 Moli"
+                "模型工具": "moli_fetch与moli_probe",
+                "界面": "引擎与抓取配置设置页"
             },
-            "table": "#### 能力明细\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | moli_fetch 抓取渲染页，moli_probe 探测或安装 Moli | 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证 |"
+            "table": "#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| moli_fetch | 渲染网页、定向读取、截图/PDF | 独立引擎，参数互斥与输出权限 |\n| moli_probe | 定位/探测/安装引擎 | 安装运行外部latest脚本，hash非认证 |\n| 设置页 | 代理、TLS和引擎生命周期 | schema依赖可降级，默认TLS需核对 |"
         },
         "publication.advice": {
             "revision": "16b5886d35827047e3e8736da356c8c55c9ae564",
-            "text": "仅在确需 SPA、截图或登录态抽取时于隔离 profile 小范围试用；先手工固定 Moli 版本和哈希，静态页继续用普通 fetch。 详见[Q09](#research-q09)。"
+            "text": "建议观察；先仅对公开低敏感页面检查严格TLS、已知引擎版本与错误状态，再决定受控试用。生产登录凭据、强来源认证或共享Host延迟敏感任务应暂缓。参见[Q06](#research-q06)。"
         },
         "registry": "data/plugins/27painter--dsh-moli",
-        "reports": "# dsh-moli\n\n> 把 Moli 无头浏览器封装成网页抓取、探测和按需安装工具。\n\n## 研究范围\n\n- **仓库**：[27painter/dsh-moli](https://github.com/27painter/dsh-moli)\n- **版本号**：1.1.20（[固定提交 16b5886d35827047e3e8736da356c8c55c9ae564](https://github.com/27painter/dsh-moli/tree/16b5886d35827047e3e8736da356c8c55c9ae564)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定提交可确认 moli_fetch、moli_probe 与下载器的接线，但未启动 Moli 或浏览器，也未验证约 101MB 发行物、站点渲染和登录态兼容；结论限于外置浏览器工具的源码设计。\n\n## 洞察短评\n\n- **用途**：面向 JavaScript 渲染、选择器抽取、登录态页面和截图/PDF；静态公开页用普通 fetch 更短、更少供应链。 详见[Q01](#research-q01)。\n- **亮点**：同一工具覆盖 Markdown、HTML、语义树、JSON、截图和 PDF，价值在浏览器渲染与可编程提取，而非替代所有网页读取。 详见[Q03](#research-q03)。\n- **思考**：约 101MB 的独立二进制与下载执行扩大供应链；安装器只报告 SHA256，未内置可信期望值，登录页效果也取决于 Moli 配置。 详见[Q04](#research-q04)。\n- **建议**：若把期望 SHA256 绑定到发行版本，并记录冷启动/选择器成功率，可把“自动装浏览器”从便利功能变成可审计依赖。 详见[Q08](#research-q08)。\n\n采用建议：仅在确需 SPA、截图或登录态抽取时于隔离 profile 小范围试用；先手工固定 Moli 版本和哈希，静态页继续用普通 fetch。 详见[Q09](#research-q09)。\n\n## 核心贡献\n\n同一工具覆盖 Markdown、HTML、语义树、JSON、截图和 PDF，价值在浏览器渲染与可编程提取，而非替代所有网页读取。 详见[Q03](#research-q03)。\n\n## 关键质疑\n\n约 101MB 的独立二进制与下载执行扩大供应链；安装器只报告 SHA256，未内置可信期望值，登录页效果也取决于 Moli 配置。 详见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n若把期望 SHA256 绑定到发行版本，并记录冷启动/选择器成功率，可把“自动装浏览器”从便利功能变成可审计依赖。 详见[Q08](#research-q08)。\n\n下一步只做本项可证伪实验：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS。\n\n## 场景与替代办法\n\n面向 JavaScript 渲染、选择器抽取、登录态页面和截图/PDF；静态公开页用普通 fetch 更短、更少供应链。 详见[Q01](#research-q01)。\n\n面向 JavaScript 渲染、选择器抽取、登录态页面和截图/PDF；静态公开页用普通 fetch 更短、更少供应链。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖 | 必需 | 用途 | 缺失后果 |\n| --- | --- | --- | --- |\n| Moli 可执行文件 | 必需 | 渲染与导出 | 工具返回不可用 |\n| 官方 release/安装器 | 自动安装时 | 下载约 101MB 依赖 | 离线时手工安装 |\n| 浏览器会话 | 登录页时 | 承载 cookie/脚本 | 退回公开页抓取 |\n\n#### 启动步骤\n\n| 步骤 | 动作 | 判据/恢复 |\n| --- | --- | --- |\n| 探测 | 调用 moli_probe | 记录版本、HTTPS 与路径 |\n| 固定依赖 | 校验下载 SHA256 | 不匹配即停止 |\n| 抓取 | moli_fetch 指定 format/selector | 失败保留 URL 与错误 |\n| 回退 | 改用普通 fetch | 仅适用于无需渲染页面 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 资源成本 | 人工投入 | 边界 |\n| --- | --- | --- | --- |\n| 准备 | 约 101MB 二进制下载 | 固定版本/哈希 | 带宽与磁盘按 release 计 |\n| 单页 | 浏览器进程与渲染等待 | 选 selector/format | P95 与 RSS 未测 |\n| 失败 | 重装或退回 fetch | 排查站点/证书 | 登录态恢复未测 |\n\n#### 效果\n\n| 效果项 | 源码支持 | 验证指标 |\n| --- | --- | --- |\n| SPA 正文 | 渲染后再转 Markdown | 20 页正文完整率 |\n| 定点提取 | selector 与 eval 可组合 | 20 次字段命中率 |\n| 简单静态页 | 没有明显优势 | 与普通 fetch 的耗时差 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：Moli 外置浏览器能否以可控安装与失败恢复成本补足普通 HTTP 抓取？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 场景：面向 JavaScript 渲染、选择器抽取、登录态页面和截图/PDF？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向 JavaScript 渲染、选择器抽取、登录态页面和截图/PDF；静态公开页用普通 fetch 更短、更少供应链。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-30](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L1-L30)\n\n固定提交复核：场景相关声明与实现入口。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-moli\n\n[![npm version](https://img.shields.io/npm/v/dsh-moli)](https://www.npmjs.com/package/dsh-moli)\n[![license](https://img.shields.io/npm/l/dsh-moli)](LICENSE)\n[![listed in awesome-dsh-plugin](https://img.shields.io/badge/awesome--dsh--plugin-listed-3964fe)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n\n**Two tools that let a DeepSeek Harness agent drive a real headless browser.** They wrap\n[Moli](https://github.com/lexmount/moli) — a Rust headless browser built for AI agents — so an agent can\nread pages that only exist after JavaScript runs, and can produce pictures of them.\n\nEnglish | [中文](README.zh.md)\n\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：场景结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 机制：moli_fetch 组装格式、选择器、脚本与输出参数调用外部 Moli？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\nmoli_fetch 组装格式、选择器、脚本与输出参数调用外部 Moli；moli_probe 检查版本、HTTPS 能力并可下载发行版安装器。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-20](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L1-L20)\n\n固定提交复核：机制相关声明与实现入口。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/** Host half of dsh-moli: expose the local `moli` headless browser as callable tools. */\nimport { MANUAL_INSTALL, installMoli, uninstallMoli } from './lib/install.js';\nimport { findMoli, moliCandidates, moliVersion, probe, runFetch } from './lib/moli.js';\n\nexport const name = 'dsh-moli';\nexport const inject = ['tools'];\n\n/**\n * `@deepseek-ai/schemastery` powers the live Config schema and therefore the\n * settings namespace. A profile plugin is loaded from its real path on disk (a\n * `link:` dependency stays a symlink target), so a bare specifier must resolve\n * against the plugin's own `node_modules` chain — which does not exist when the\n * plugin is installed as a `link:`/junction (the README's first install route).\n * The import is therefore optional: without schemastery the settings form does\n * not appear and the plugin degrades to plain patch-layer configuration, while\n * `moli_fetch` / `moli_probe` keep registering — those are the plugin's reason\n * to exist, and losing them would be worse than losing the form.\n */\nlet z;\ntry {\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：机制结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 贡献：同一工具覆盖 Markdown、HTML、语义树、JSON、截图和 PDF，价值在浏览器渲染与可编程提取，而非替代所有网页读取。？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n同一工具覆盖 Markdown、HTML、语义树、JSON、截图和 PDF，价值在浏览器渲染与可编程提取，而非替代所有网页读取。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-30](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L1-L30)\n\n固定提交复核：贡献相关声明与实现入口。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-moli\n\n[![npm version](https://img.shields.io/npm/v/dsh-moli)](https://www.npmjs.com/package/dsh-moli)\n[![license](https://img.shields.io/npm/l/dsh-moli)](LICENSE)\n[![listed in awesome-dsh-plugin](https://img.shields.io/badge/awesome--dsh--plugin-listed-3964fe)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n\n**Two tools that let a DeepSeek Harness agent drive a real headless browser.** They wrap\n[Moli](https://github.com/lexmount/moli) — a Rust headless browser built for AI agents — so an agent can\nread pages that only exist after JavaScript runs, and can produce pictures of them.\n\nEnglish | [中文](README.zh.md)\n\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：贡献结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 局限：约 101MB 的独立二进制与下载执行扩大供应链？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n约 101MB 的独立二进制与下载执行扩大供应链；安装器只报告 SHA256，未内置可信期望值，登录页效果也取决于 Moli 配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-20](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L1-L20)\n\n固定提交复核：局限相关声明与实现入口。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/** Host half of dsh-moli: expose the local `moli` headless browser as callable tools. */\nimport { MANUAL_INSTALL, installMoli, uninstallMoli } from './lib/install.js';\nimport { findMoli, moliCandidates, moliVersion, probe, runFetch } from './lib/moli.js';\n\nexport const name = 'dsh-moli';\nexport const inject = ['tools'];\n\n/**\n * `@deepseek-ai/schemastery` powers the live Config schema and therefore the\n * settings namespace. A profile plugin is loaded from its real path on disk (a\n * `link:` dependency stays a symlink target), so a bare specifier must resolve\n * against the plugin's own `node_modules` chain — which does not exist when the\n * plugin is installed as a `link:`/junction (the README's first install route).\n * The import is therefore optional: without schemastery the settings form does\n * not appear and the plugin degrades to plain patch-layer configuration, while\n * `moli_fetch` / `moli_probe` keep registering — those are the plugin's reason\n * to exist, and losing them would be worse than losing the form.\n */\nlet z;\ntry {\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：局限结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 依赖：Node 20.12+、可执行 Moli 与浏览器环境是主链？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\nNode 20.12+、可执行 Moli 与浏览器环境是主链；自动安装还依赖官方 release 网络和本机写入权限。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-30](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L1-L30)\n\n固定提交复核：依赖相关声明与实现入口。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-moli\n\n[![npm version](https://img.shields.io/npm/v/dsh-moli)](https://www.npmjs.com/package/dsh-moli)\n[![license](https://img.shields.io/npm/l/dsh-moli)](LICENSE)\n[![listed in awesome-dsh-plugin](https://img.shields.io/badge/awesome--dsh--plugin-listed-3964fe)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n\n**Two tools that let a DeepSeek Harness agent drive a real headless browser.** They wrap\n[Moli](https://github.com/lexmount/moli) — a Rust headless browser built for AI agents — so an agent can\nread pages that only exist after JavaScript runs, and can produce pictures of them.\n\nEnglish | [中文](README.zh.md)\n\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：依赖结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 成本与效果：插件本体很小，但首次安装约下载 101MB，渲染每页消耗浏览器进程、时间与内存？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n插件本体很小，但首次安装约下载 101MB，渲染每页消耗浏览器进程、时间与内存；本轮没有计量每页延迟。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-30](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L1-L30)\n\n固定提交复核：成本与效果相关声明与实现入口。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-moli\n\n[![npm version](https://img.shields.io/npm/v/dsh-moli)](https://www.npmjs.com/package/dsh-moli)\n[![license](https://img.shields.io/npm/l/dsh-moli)](LICENSE)\n[![listed in awesome-dsh-plugin](https://img.shields.io/badge/awesome--dsh--plugin-listed-3964fe)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n\n**Two tools that let a DeepSeek Harness agent drive a real headless browser.** They wrap\n[Moli](https://github.com/lexmount/moli) — a Rust headless browser built for AI agents — so an agent can\nread pages that only exist after JavaScript runs, and can produce pictures of them.\n\nEnglish | [中文](README.zh.md)\n\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：成本与效果结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 工程：探测与抓取拆开、参数边界和错误回传清楚？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n探测与抓取拆开、参数边界和错误回传清楚；安装完整性仍需要固定版本哈希或签名策略。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-20](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L1-L20)\n\n固定提交复核：工程相关声明与实现入口。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/** Host half of dsh-moli: expose the local `moli` headless browser as callable tools. */\nimport { MANUAL_INSTALL, installMoli, uninstallMoli } from './lib/install.js';\nimport { findMoli, moliCandidates, moliVersion, probe, runFetch } from './lib/moli.js';\n\nexport const name = 'dsh-moli';\nexport const inject = ['tools'];\n\n/**\n * `@deepseek-ai/schemastery` powers the live Config schema and therefore the\n * settings namespace. A profile plugin is loaded from its real path on disk (a\n * `link:` dependency stays a symlink target), so a bare specifier must resolve\n * against the plugin's own `node_modules` chain — which does not exist when the\n * plugin is installed as a `link:`/junction (the README's first install route).\n * The import is therefore optional: without schemastery the settings form does\n * not appear and the plugin degrades to plain patch-layer configuration, while\n * `moli_fetch` / `moli_probe` keep registering — those are the plugin's reason\n * to exist, and losing them would be worse than losing the form.\n */\nlet z;\ntry {\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：工程结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 假设：若把期望 SHA256 绑定到发行版本，并记录冷启动/选择器成功率，可把“自动装浏览器”从便利功能变成可审计依赖。？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n若把期望 SHA256 绑定到发行版本，并记录冷启动/选择器成功率，可把“自动装浏览器”从便利功能变成可审计依赖。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-30](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L1-L30)\n\n固定提交复核：假设相关声明与实现入口。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-moli\n\n[![npm version](https://img.shields.io/npm/v/dsh-moli)](https://www.npmjs.com/package/dsh-moli)\n[![license](https://img.shields.io/npm/l/dsh-moli)](LICENSE)\n[![listed in awesome-dsh-plugin](https://img.shields.io/badge/awesome--dsh--plugin-listed-3964fe)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n\n**Two tools that let a DeepSeek Harness agent drive a real headless browser.** They wrap\n[Moli](https://github.com/lexmount/moli) — a Rust headless browser built for AI agents — so an agent can\nread pages that only exist after JavaScript runs, and can produce pictures of them.\n\nEnglish | [中文](README.zh.md)\n\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：假设结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 采用：仅在确需 SPA、截图或登录态抽取时于隔离 profile 小范围试用？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n仅在确需 SPA、截图或登录态抽取时于隔离 profile 小范围试用；先手工固定 Moli 版本和哈希，静态页继续用普通 fetch。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-30](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L1-L30)\n\n固定提交复核：采用相关声明与实现入口。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n# dsh-moli\n\n[![npm version](https://img.shields.io/npm/v/dsh-moli)](https://www.npmjs.com/package/dsh-moli)\n[![license](https://img.shields.io/npm/l/dsh-moli)](LICENSE)\n[![listed in awesome-dsh-plugin](https://img.shields.io/badge/awesome--dsh--plugin-listed-3964fe)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)\n\n**Two tools that let a DeepSeek Harness agent drive a real headless browser.** They wrap\n[Moli](https://github.com/lexmount/moli) — a Rust headless browser built for AI agents — so an agent can\nread pages that only exist after JavaScript runs, and can produce pictures of them.\n\nEnglish | [中文](README.zh.md)\n\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n```\n\n</details>\n\n#### 缺口\n\n- 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证\n  **影响**：采用结论只能到固定源码解释，不能外推为真实运行效果\n  **进一步探讨**：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b2bffc6ea54985afd01d87d73edb7aafef76626e378447ad5448f9352c7cb15a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 2756 | 1810 | 846 | — |\n| .md | source | 2 | 1176 | — | — | 13129 |\n| .mjs | source | 14 | 1908 | 1390 | 405 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力明细\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 模型工具 | moli_fetch 抓取渲染页，moli_probe 探测或安装 Moli | 目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证 |\n\n## 工程亮点\n\n探测与抓取拆开、参数边界和错误回传清楚；安装完整性仍需要固定版本哈希或签名策略。 详见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/moli.js、lib/install.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读检查固定提交 README.md、index.js、lib/moli.js、lib/install.js 与 prepared inventory；未安装、未运行、未访问真实账号/设备/服务。目标系统中 Moli 二进制、浏览器沙箱与复杂站点兼容未验证。\n- 下一步：下一步只做本项可证伪实验：固定一个 Moli release 哈希，分别对静态页、SPA、登录页各跑 20 次并记录成功率、P95 延迟和峰值 RSS。\n",
+        "reports": "# dsh-moli\n\n> 把本地Moli无头浏览器接入Harness，支持渲染抓取、选择器读取、截图和PDF。\n\n## 研究范围\n\n- **仓库**：[27painter/dsh-moli](https://github.com/27painter/dsh-moli)\n- **版本号**：1.1.20（[固定提交 16b5886d35827047e3e8736da356c8c55c9ae564](https://github.com/27painter/dsh-moli/tree/16b5886d35827047e3e8736da356c8c55c9ae564)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持工具与诊断链；来源认证、实际页面效果及改造假设未验证。\n\n## 洞察短评\n\n- **用途**：需要读取JavaScript渲染页、登录态容器或网页截图/PDF的Harness用户。合格结果应核对页面状态、内容及输出文件；静态文本已可fetch时无需启动浏览器。\n- **亮点**：把独立Moli浏览器适配为两个Harness工具，补充选择器冲突检查、等待与错误分类、文件输出及安装诊断；渲染能力属于Moli上游。参见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：默认insecureTls:true削弱证书核验；安装器来自可变latest，计算SHA256只记录所执行字节，没有可信发布摘要作比对。抓取又使用spawnSync，较慢页面可能阻塞Host事件循环；这些限制直接影响可信抓取与部署负担。参见[Q03](#research-q03)。\n- **建议**：可将引擎/安装脚本锁为可审版本并验证受信摘要，抓取改为可取消异步进程，同时返回页面状态与选择器覆盖收据。用故意错误证书、安装器变更及慢页面对照，若不拒绝未授权字节或Host仍阻塞则否定；假设未验证，维护版本矩阵有额外成本。参见[Q05](#research-q05)。\n\n采用建议：建议观察；先仅对公开低敏感页面检查严格TLS、已知引擎版本与错误状态，再决定受控试用。生产登录凭据、强来源认证或共享Host延迟敏感任务应暂缓。参见[Q06](#research-q06)。\n\n## 核心贡献\n\n把独立Moli浏览器适配为两个Harness工具，补充选择器冲突检查、等待与错误分类、文件输出及安装诊断；渲染能力属于Moli上游。参见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n默认insecureTls:true削弱证书核验；安装器来自可变latest，计算SHA256只记录所执行字节，没有可信发布摘要作比对。抓取又使用spawnSync，较慢页面可能阻塞Host事件循环；这些限制直接影响可信抓取与部署负担。参见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可将引擎/安装脚本锁为可审版本并验证受信摘要，抓取改为可取消异步进程，同时返回页面状态与选择器覆盖收据。用故意错误证书、安装器变更及慢页面对照，若不拒绝未授权字节或Host仍阻塞则否定；假设未验证，维护版本矩阵有额外成本。参见[Q05](#research-q05)。\n\n固定引擎及公开页面检查证书、HTTP状态、选择器、慢响应和中断，并记录端到端任务质量与Host延迟。\n\n## 场景与替代办法\n\n需要读取JavaScript渲染页、登录态容器或网页截图/PDF的Harness用户。合格结果应核对页面状态、内容及输出文件；静态文本已可fetch时无需启动浏览器。\n\n静态公开页优先普通fetch；动态页面可用独立浏览器脚本，本插件把接线/诊断放入Harness但不保证更快。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node >=20.12、Harness tools | 必需 | 注册两个模型工具 | 工具不可用 |\n| 独立Moli引擎及平台能力 | 必需 | 真实页面渲染 | npm包不包含引擎，需另外安装 |\n| 目标网络/代理与TLS | 必需 | 访问网页及安装源 | 默认insecureTls:true需主动核对 |\n| cookie/profile文件、输出权限 | 特定操作必需 | 登录态和截图/PDF | 本地凭据/文件需用户管理 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户核对已安装引擎或审查官方安装材料 | probe报告路径/版本，摘要不是签名校验 |\n| 2 | 优先启用严格TLS并确认代理 | HTTPS诊断有效，不能仅有可执行路径 |\n| 3 | Agent按任务选择selector或dump/eval | 核对matched、status、truncated及文件 |\n| 4 | 结果为空或超时先查条件和错误页 | 不把空白页当无信息，必要时改普通fetch |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 单独下载浏览器引擎及磁盘，金额未知 | 审安装源、平台、代理和TLS | 引擎latest与插件固定版独立变化 |\n| 持续使用 | 浏览器进程/网络及模型阅读token | 维护选择器、等待和登录态 | 字符减少不等于等比例token/费用下降 |\n| 失败恢复 | 重试渲染与下载、残留输出 | 判别HTTP错误/不可达/条件超时 | 截图/PDF及cookie需自行清理 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 渲染访问 | 本地浏览器CLI参数与状态处理 | 真实目标网站兼容与反爬 |\n| 定向读取 | selector与等待条件校验 | 跨站内容完整性及净token节省 |\n| 可诊断安装 | 多路径下载与SHA256记录 | 脚本真实性及未来引擎兼容 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 16b5886d35827047e3e8736da356c8c55c9ae564 和截止 2026-10-23T01:41:11Z 范围内，渲染网页抓取和探测能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要渲染网页抓取和探测，相对手工或宿主原生办法增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n需要客户端渲染、登录态或图片/PDF的用户可以获得浏览器视角结果，原生普通fetch适合静态文本且负担更小。该版可用selector只抽容器，但作者列出的字符节省只说明具体页面样本；合格交付需核对预期元素、HTTP状态与文件内容，不由ok:true自动成立。贡献在Harness集成和诊断，不把Moli渲染器算本项目原创。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-41](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L13-L41)\n\n作者场景、两工具和静态fetch替代\n\n<details>\n<summary>查看原文（29行）</summary>\n\n````text\n## What it does, and when you want it\n\nA plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and\nDSH already covers it with `web_fetch`. It is not enough for anything a browser has to build:\n\n- **Single-page apps** — a client-rendered news site, dashboard or docs site. The response is an empty\n  shell; the content appears only after scripts run.\n- **Logins and consent walls** — a page that needs a session or cookie before it shows anything.\n- **Pictures** — a screenshot to see what a page looks like, or a PDF to keep.\n- **One value from deep inside a page** — a price, a count, a title, read with a selector instead of\n  pulling the whole document.\n- **A list you can read for 7% of the page** — `selector` returns only the matched containers, which\n  on a real feed measured 1,779 characters against 139,338 for the same page as Markdown. If you are\n  about to fetch a listing page and skim it, read the `selector` section under Usage first.\n\nFor those jobs this plugin gives the agent two tools:\n\n| Tool | What it does |\n|---|---|\n| `moli_fetch` | Renders a URL and returns Markdown, HTML, a semantic tree, or a JSON envelope carrying the HTTP status; **reads one container with `selector`**; evaluates a JavaScript expression; writes a PNG screenshot or a PDF |\n| `moli_probe` | Reports whether the engine is installed, which version, and whether HTTPS works — and installs Moli when it is missing |\n\nThe practical question is whether the agent needs the page as a **browser** would see it. If a plain\nfetch already returns the text you want, `web_fetch` is lighter and faster.\n\n```\n  agent ──moli_fetch──▶ dsh-moli plugin ──spawns──▶ moli.exe\n                              ▲                         │\n                              │                    renders the page,\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:103-109](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L103-L109)\n\nselector与eval/dump边界说明\n\n```text\n    selector: {\n      type: 'string',\n      description: 'Return the text of the elements this CSS selector matches instead of the whole page. This is the cheap way to read one container out of a noisy listing page: the cards on a feed measured 1,829 characters against 95,605 for the same page as markdown. All matches are joined with newlines and the result reports how many there were; matching nothing is an error, not empty content, because the engine cannot distinguish an empty selection from a page with no text. Not compatible with `dump` or `eval` — one of them could only be ignored.',\n    },\n    eval: {\n      type: 'string',\n      description: 'JavaScript expression evaluated once the page is ready; its value is returned as text or JSON instead of the page. Combining it with `dump` does NOT return both: the engine discards the expression value and dumps the resulting page state instead (its own documented semantics). Use `eval` alone to read a value, or `dump` alone to read the page.',\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · Moli CLI参数、安装器与输出边界如何从入口形成完整调用链，依赖失效怎么办？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\ntools注册moli_fetch后检查abort和引擎路径，再由runFetch构造argv、执行本地进程、解析stdout/stderr并按writeTo写文件；probe另查版本/HTTPS或安装。需要Node/Harness tools、独立引擎、网络及文件权限，用户先probe并核TLS，再按selector或dump使用。schemastery缺失时设置页降级但工具仍可注册，不能把装包成功当引擎可用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:19-35](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L19-L35)\n\n可选schema和默认TLS\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nlet z;\ntry {\n  z = (await import('@deepseek-ai/schemastery')).default;\n} catch {\n  z = undefined;\n}\n\n/** Deployment configuration defaults; override via the plugin's `config` entry. */\nconst DEFAULTS = {\n  defaultTimeoutMs: 30000,\n  maxChars: 200000,\n  // Behind this machine's filtering proxy Schannel cannot reach the CRL/OCSP\n  // responder, so GitHub and some APIs fail with\n  // `CRYPT_E_REVOCATION_OFFLINE` (\"the revocation server is offline\").\n  // moli's no-verify flag clears that; set insecureTls: false to enforce full\n  // certificate checks on a network that can reach the responders.\n  insecureTls: true,\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:351-376](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L351-L376)\n\n工具执行入口与缺引擎处理\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  ctx.tools.register({\n    name: 'moli_fetch',\n    description: 'Fetch a URL with the local Moli headless browser: rendered HTML or Markdown, the semantic'\n      + ' tree, a JSON envelope with status and final_url, a JavaScript expression result, a PNG screenshot, or a'\n      + ' PDF. Use it for pages that need real rendering or JavaScript; prefer web_fetch for plain text. Screenshot'\n      + ' and pdf dumps require writeTo. If moli is missing, run moli_probe with action \"install\" first.',\n    parameters: FETCH_PARAMETERS,\n    output: { schema: FETCH_OUTPUT_SCHEMA, render: renderFetch },\n    isConcurrencySafe: args => args.writeTo === undefined || args.writeTo === '',\n    async execute(args, exec) {\n      if (exec.signal?.aborted === true) throw new Error('moli_fetch aborted before start');\n      const exe = engine();\n      if (exe === undefined) {\n        return {\n          ok: false,\n          url: args.url,\n          error: 'moli was not found',\n          sandboxTlsBlock: false,\n          hint: 'Call moli_probe with action \"install\" to download it, or set the dsh-moli config field `exePath` to the absolute moli path.',\n          manualInstall: MANUAL_INSTALL,\n        };\n      }\n      // A per-call proxy wins over the plugin configuration, so one host behind a\n      // different proxy does not require a reconfiguration.\n      return runFetch({\n        exe,\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/moli.js:440-479](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L440-L479)\n\nargv构造与TLS/HTTP参数\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nexport function buildArgs(args) {\n  if (args.dump !== undefined && !TEXT_DUMPS.has(args.dump) && !BINARY_DUMPS.has(args.dump)) {\n    throw new Error(`unsupported dump: ${String(args.dump)}`);\n  }\n  if (args.wait !== undefined && args.wait !== '' && !WAIT_STAGES.has(args.wait)) {\n    throw new Error(`unsupported wait stage: ${String(args.wait)}`);\n  }\n  const needsLayout = LAYOUT_DUMPS.has(args.dump) || args.layout === true || args.scrollbars === true;\n  const argv = ['fetch', args.url];\n\n  if (args.dump !== undefined) argv.push('-d', args.dump);\n  // Screenshots and PDFs silently produce nothing without the layout renderer.\n  if (needsLayout) argv.push('--layout');\n  if (args.scrollbars === true) argv.push('--scrollbars');\n  // `scroll` and `selector` ride along in the same expression: the engine takes a\n  // single `--eval`. `hasDump` matters -- see combineEval -- because with a dump the\n  // expression exists only for its side effect, and without one it becomes the output.\n  const evaluation = combineEval(args.eval, args.scroll, args.dump !== undefined, args.selector);\n  if (evaluation !== undefined) argv.push('--eval', evaluation);\n  if (args.wait !== undefined && args.wait !== '') argv.push('--wait', args.wait);\n  if (args.waitSelector !== undefined && args.waitSelector !== '') argv.push('--wait-selector', args.waitSelector);\n  if (args.waitScript !== undefined && args.waitScript !== '') argv.push('--wait-script', args.waitScript);\n  // Response waits: the right way to await an AJAX list, where a fixed delay is a\n  // guess. The engine takes one of each, and a caller supplying several is asking\n  // for \"any of these\", which is the engine's own semantics for multiple waits.\n  if (args.waitResponseUrl !== undefined && args.waitResponseUrl !== '') argv.push('--wait-response-url', args.waitResponseUrl);\n  if (args.waitResponseJson !== undefined && args.waitResponseJson !== '') argv.push('--wait-response-json', args.waitResponseJson);\n  // The engine's own switch, but only when the caller asked for a failure to be\n  // surfaced: adding it unconditionally would turn every 404 into `ok: false` and\n  // change what existing calls do.\n  if (args.failOnHttpError === true) argv.push('--fail-with-body');\n  if (args.delayMs !== undefined) argv.push('--delay-ms', String(args.delayMs));\n  if (args.noJs === true) argv.push('--disable-js');\n  if (args.noCss === true) argv.push('--disable-css');\n  if (args.resources === true) argv.push('--resource');\n  if (args.withFrames === true) argv.push('--with-frames');\n  if (args.insecureTls === true) argv.push('--insecure-disable-tls-host-verification');\n  if (args.userAgent !== undefined && args.userAgent !== '') argv.push('--user-agent', args.userAgent);\n  if (args.profileDir !== undefined && args.profileDir !== '') argv.push('--profile-dir', args.profileDir);\n  if (args.cookieFile !== undefined && args.cookieFile !== '') argv.push('--cookie-file', args.cookieFile);\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 什么实现边界最可能使渲染网页抓取和探测的贡献不成立，哪些工程设计可复用？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n可信抓取最怕把成功读到页面与来源已认证混为一谈。该版默认跳过TLS主机核验，用户可显式关闭；latest安装器SHA256为事后记录，未与可信上游值核验。同步spawnSync对Host有阻塞风险，虽安装器采用异步子进程并有树清理，不应把安装异步泛化为抓取异步。工程可借鉴参数冲突拒绝和诊断分类，但兼容性依赖外部引擎。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:27-35](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L27-L35)\n\nTLS不安全默认值\n\n```text\nconst DEFAULTS = {\n  defaultTimeoutMs: 30000,\n  maxChars: 200000,\n  // Behind this machine's filtering proxy Schannel cannot reach the CRL/OCSP\n  // responder, so GitHub and some APIs fail with\n  // `CRYPT_E_REVOCATION_OFFLINE` (\"the revocation server is offline\").\n  // moli's no-verify flag clears that; set insecureTls: false to enforce full\n  // certificate checks on a network that can reach the responders.\n  insecureTls: true,\n```\n\n**依据 2 · 源码核查**：[lib/moli.js:356-389](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L356-L389)\n\n同步进程执行\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport function runOnce(options) {\n  const dir = mkdtempSync(join(tmpdir(), 'dsh-moli-'));\n  const outPath = join(dir, 'stdout.bin');\n  const errPath = join(dir, 'stderr.txt');\n  let outFd;\n  let errFd;\n  try {\n    outFd = openSync(outPath, 'w');\n    errFd = openSync(errPath, 'w');\n    const spawnArgs = [...options.args];\n    if (options.timeoutMs !== undefined) spawnArgs.push('-t', String(options.timeoutMs));\n    if (options.proxy !== undefined && options.proxy !== '') {\n      spawnArgs.push('--http-proxy', options.proxy);\n    }\n    const result = spawnSync(options.exe, spawnArgs, {\n      stdio: ['ignore', outFd, errFd],\n      // Cancellation backstop, not the engine's readiness deadline: it must sit\n      // above the `-t` value handed to moli, or the process is killed before it\n      // can report its own timeout.\n      timeout: options.spawnTimeoutMs ?? (options.timeoutMs === undefined ? 60000 : options.timeoutMs + 30000),\n      windowsHide: true,\n    });\n    closeSync(outFd);\n    outFd = undefined;\n    closeSync(errFd);\n    errFd = undefined;\n\n    const stdout = existsSync(outPath) ? readFileSync(outPath) : Buffer.alloc(0);\n    const stderrText = existsSync(errPath) ? readFileSync(errPath, 'utf8') : '';\n    const failed = result.error !== undefined && result.error !== null;\n    return {\n      status: failed ? null : (result.status ?? 0),\n      stdout,\n      stderr: condense(stderrText),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/install.js:749-756](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/install.js#L749-L756)\n\nSHA256记录且无官方checksum对照\n\n```text\n    return {\n      ok: true,\n      exe,\n      version,\n      installerSha256: download.sha256,\n      installerBytes: download.bytes,\n      method: download.method,\n      note: 'Installed from the official release installer. The SHA256 above is what was actually run; Moli publishes no checksum file to compare it against.',\n```\n\n#### 缺口\n\n- 严格TLS、慢页面及多平台引擎的同版本实测缺失\n  **影响**：来源可信度与共享Host可用性不能确认\n  **进一步探讨**：用固定引擎和已知证书/慢响应页记录结果与Host延迟\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次需单独获取并管理引擎、核对代理及TLS；持续需浏览器CPU/内存、网络和模型阅读成本，选择器维护/登录刷新为人工；失败还需区分HTTP错误、等待条件和网络问题并检查部分输出。字符裁剪不等于减少底层浏览器任务，未测净token、耗时或金额，不能照抄样本节省比例。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:65-85](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L65-L85)\n\n插件与引擎独立分发\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n> **The npm package is the plugin only — it does not contain the Moli engine.**\n>\n> The npm tarball is 26 kB: eight JavaScript and text files. `moli.exe` is a separate ~101 MB compiled\n> Rust binary, built and released by the Moli project on its own schedule.\n>\n> **Why it cannot be bundled:**\n>\n> - **Size.** The engine is roughly 4,000× the plugin. Every install and every plugin update would\n>   carry a browser.\n> - **Ownership.** Moli is `lexmount/moli` under its own MIT copyright. Redistributing its binary\n>   through this package would mean re-publishing someone else's artifact as our own.\n> - **Platforms.** The engine ships per OS and per architecture — Windows/Linux/macOS × x64/arm64.\n>   Bundling would pin one build into every user's install.\n> - **Versions.** The plugin must work with whatever Moli version a user has, including Moli releases\n>   that appear after the plugin was published. Bundling would lock the pair together.\n>\n> **There is no npm package for the engine either.** The registry names `moli` and `moli-cli` belong to\n> unrelated projects, and `@lexmount/moli` does not exist. Moli ships as prebuilt binaries on\n> [GitHub Releases](https://github.com/lexmount/moli/releases/latest) — do not install the engine by\n> guessing a package name.\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/moli.js:495-512](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L495-L512)\n\n参数冲突拒绝\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nexport function runFetch(options) {\n  // The configured no-verify default applies only when the call stays silent;\n  // an explicit false still means \"verify fully\".\n  const args = options.insecureTls === true && options.args.insecureTls === undefined\n    ? { ...options.args, insecureTls: true }\n    : options.args;\n  // `selector` replaces the whole-page output, so combining it with either reader is a\n  // call that cannot do what it says: one of the two would be silently ignored. That\n  // is the failure mode this plugin keeps having to fix, so it is refused up front and\n  // as a structured result, the same way a binary dump with no writeTo is.\n  if (typeof args.selector === 'string' && args.selector.trim() !== '') {\n    if (args.dump !== undefined) {\n      return {\n        ok: false,\n        url: args.url,\n        selector: args.selector,\n        error: '`selector` and `dump` cannot be combined: a selector returns one container\\'s text and a dump returns the whole page, so one of them could only be ignored',\n        hint: 'Use `selector` to read part of the page, or `dump` to read all of it.',\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/moli.js:657-660](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L657-L660)\n\n等待条件失败与网络区分\n\n```text\n      ? `The selector ${JSON.stringify(args.waitSelector)} never matched. The page loaded, so this is not a network problem: check the spelling, and confirm the element is there with \\`selector\\` (it reports the match count, where a wait only times out) or \\`dump\\`.`\n      : args.waitScript !== undefined\n        ? 'The wait expression never became truthy. The page loaded, so this is not a network problem: check the expression against the page with `eval`, and remember it is polled rather than evaluated once.'\n        : (args.waitResponseUrl !== undefined || args.waitResponseJson !== undefined)\n```\n\n#### 缺口\n\n- 单位合格抓取的总时间和成本未知\n  **影响**：无法判断渲染是否优于fetch或其他浏览器工具\n  **进一步探讨**：同页面任务对照静态fetch/完整渲染/selector，计入失败和人工核对\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可从Moli CLI参数、安装器与输出边界的限制推导什么可证伪改进？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设是固定引擎版本与受信摘要、默认严格TLS，并以异步可取消执行隔离慢页面。它针对可变安装源和同步执行，而不是替换上游浏览器。最小对照包含错误证书、篡改安装器、长期等待和中断，任何未授权字节被执行或Host延迟不降均否定；平台支持矩阵与回滚包增加维护负担。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/install.js:45-48](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/install.js#L45-L48)\n\nlatest可变安装源\n\n```text\n/** Official installer for the latest release. */\nexport const INSTALLER_URL = process.platform === 'win32'\n  ? 'https://github.com/lexmount/moli/releases/latest/download/moli-installer.ps1'\n  : 'https://github.com/lexmount/moli/releases/latest/download/moli-installer.sh';\n```\n\n**依据 2 · 源码核查**：[lib/moli.js:356-389](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L356-L389)\n\n同步执行改造切入点\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport function runOnce(options) {\n  const dir = mkdtempSync(join(tmpdir(), 'dsh-moli-'));\n  const outPath = join(dir, 'stdout.bin');\n  const errPath = join(dir, 'stderr.txt');\n  let outFd;\n  let errFd;\n  try {\n    outFd = openSync(outPath, 'w');\n    errFd = openSync(errPath, 'w');\n    const spawnArgs = [...options.args];\n    if (options.timeoutMs !== undefined) spawnArgs.push('-t', String(options.timeoutMs));\n    if (options.proxy !== undefined && options.proxy !== '') {\n      spawnArgs.push('--http-proxy', options.proxy);\n    }\n    const result = spawnSync(options.exe, spawnArgs, {\n      stdio: ['ignore', outFd, errFd],\n      // Cancellation backstop, not the engine's readiness deadline: it must sit\n      // above the `-t` value handed to moli, or the process is killed before it\n      // can report its own timeout.\n      timeout: options.spawnTimeoutMs ?? (options.timeoutMs === undefined ? 60000 : options.timeoutMs + 30000),\n      windowsHide: true,\n    });\n    closeSync(outFd);\n    outFd = undefined;\n    closeSync(errFd);\n    errFd = undefined;\n\n    const stdout = existsSync(outPath) ? readFileSync(outPath) : Buffer.alloc(0);\n    const stderrText = existsSync(errPath) ? readFileSync(errPath, 'utf8') : '';\n    const failed = result.error !== undefined && result.error !== null;\n    return {\n      status: failed ? null : (result.status ?? 0),\n      stdout,\n      stderr: condense(stderrText),\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 哪些用户可以受控采用渲染网页抓取和探测，何时应停止？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察，适合能管理本地浏览器/代理的技术用户先评估公开低敏感页；不熟悉TLS和登录态边界者、生产凭据及多人共享Host暂缓。成功标准为严格TLS下读到预定内容、正确区分404/空选择器并能取消/退出；默认证书绕过、长时间Host阻塞或状态误读即停止。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:148-154](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L148-L154)\n\nTLS与cookie/profile暴露的操作边界\n\n```text\n    insecureTls: { type: 'boolean', description: 'Skip TLS host verification. Use only for a known-broken local endpoint.' },\n    proxy: {\n      type: 'string',\n      description: 'Forward proxy for this call, e.g. \"http://127.0.0.1:7890\". Overrides the plugin configuration for one call; loopback URLs always bypass it.',\n    },\n    profileDir: { type: 'string', description: 'Moli profile directory carrying imported cookies or storage.' },\n    cookieFile: { type: 'string', description: 'Netscape/curl cookie-jar file to send.' },\n```\n\n**依据 2 · 源码核查**：[lib/install.js:756-759](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/install.js#L756-L759)\n\n安装验证边界和临时目录清理\n\n```text\n      note: 'Installed from the official release installer. The SHA256 above is what was actually run; Moli publishes no checksum file to compare it against.',\n    };\n  } finally {\n    rmSync(workDir, { recursive: true, force: true });\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b2bffc6ea54985afd01d87d73edb7aafef76626e378447ad5448f9352c7cb15a。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 2756 | 1810 | 846 | — |\n| .md | source | 2 | 1176 | — | — | 13129 |\n| .mjs | source | 14 | 1908 | 1390 | 405 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| moli_fetch | 渲染网页、定向读取、截图/PDF | 独立引擎，参数互斥与输出权限 |\n| moli_probe | 定位/探测/安装引擎 | 安装运行外部latest脚本，hash非认证 |\n| 设置页 | 代理、TLS和引擎生命周期 | schema依赖可降级，默认TLS需核对 |\n\n## 工程亮点\n\nraw JSON schema注册、参数互斥与失败分类可借鉴；同步子进程和不安全默认值得调整。复用时需锁定外部CLI协议、权限和认证策略。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/moli.js、lib/install.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定版入口、argv/进程/输出和安装器来源及校验语义；未执行Moli或验证脚本，不把已有旧报告当本轮运行。\n- 下一步：固定引擎及公开页面检查证书、HTTP状态、选择器、慢响应和中断，并记录端到端任务质量与Host延迟。\n",
         "metadata": {
             "repository": "27painter/dsh-moli",
             "repository_id": 1415767842,
-            "captured_at": "2026-10-22T16:02:44.106Z",
-            "window_start": "2026-09-22T16:02:44.106Z",
-            "stars": 5,
+            "captured_at": "2026-10-23T01:49:26.824Z",
+            "window_start": "2026-09-23T01:49:26.824Z",
+            "stars": 6,
             "pushed_at": "2026-10-22T05:25:09Z",
             "issues": {
-                "open": null,
-                "closed": null,
-                "created_30d": null,
-                "closed_30d": null,
-                "updated_30d": null
+                "open": 0,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
             },
-            "errors": [
-                {
-                    "target": "open",
-                    "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E5C6:31990B:B614A5:C30E1A:6ADA33A6 and timestamp 2026-10-22 16:02:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed",
-                    "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E67A:1C0D96:A1D333:AEC5BF:6ADA33A7 and timestamp 2026-10-22 16:02:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "created_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A44.106Z..2026-10-22T16%3A02%3A44.106Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E714:3255F8:9FD2B4:ACBF59:6ADA33A8 and timestamp 2026-10-22 16:02:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "closed_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A44.106Z..2026-10-22T16%3A02%3A44.106Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E7EA:3241C0:A6F8C1:B3E8AF:6ADA33A9 and timestamp 2026-10-22 16:02:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                },
-                {
-                    "target": "updated_30d",
-                    "message": "GitHub request failed for search/issues?q=repo%3A27painter%2Fdsh-moli%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A44.106Z..2026-10-22T16%3A02%3A44.106Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E8D4:26EE76:A36C43:B0619D:6ADA33AB and timestamp 2026-10-22 16:02:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-                }
-            ],
+            "errors": [],
             "npm": {
                 "package_name": "dsh-moli",
-                "captured_at": "2026-10-22T16:02:51.510Z",
-                "window_start": "2026-09-22",
-                "window_end": "2026-10-21",
+                "captured_at": "2026-10-23T01:49:35.778Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
                 "downloads_30d": 1514,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-moli",
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-moli",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-10-13T08:56:45.309Z",
-                    "captured_at": "2026-10-22T16:02:51.510Z",
+                    "captured_at": "2026-10-23T01:49:35.778Z",
                     "source_url": "https://registry.npmjs.org/dsh-moli",
                     "error": null,
                     "latest_version": "1.1.19",
@@ -474,7 +460,7 @@
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "5bdc4ce6c9aba72a67c14dfbbbd479069807650643da0f41dbca33f188089b36",
+                "directory": "3cdb13806eb3200e6e272b28be8c90efbdfdc70abe7caeab90f4820fafc9904a",
                 "code": "16b5886d35827047e3e8736da356c8c55c9ae564",
                 "maintenance": "86cb627cc1bffc3a9518c5378ace631d6eb3c3397eda4c5f747cfe7a353797fa"
             }

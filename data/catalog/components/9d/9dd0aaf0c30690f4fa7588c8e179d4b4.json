@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "9dd0aaf0c30690f4fa7588c8e179d4b4",
+    "identity": "github:1427724793:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427724793:root",
+            "repository": "bushizhanghan/dsh-workbuddy-harness",
+            "path": "",
+            "revision": "d7aa84f46891c05fa7e17e8f0d6b0bea5ae0e80f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9e131f8d2ece7b4cf6a55f18e74edbd741853b03841059e6085c0a31a6756ed5",
+                "code": "d7aa84f46891c05fa7e17e8f0d6b0bea5ae0e80f",
+                "maintenance": "87293735e493f3769ad514d7e209634701d0d01bc7d368a1604500b23fe90fe8"
+            }
+        }
+    }
+}

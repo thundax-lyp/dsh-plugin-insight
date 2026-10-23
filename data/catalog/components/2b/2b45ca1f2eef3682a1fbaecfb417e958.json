@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "2b45ca1f2eef3682a1fbaecfb417e958",
+    "identity": "github:1428306832:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428306832:root",
+            "repository": "danilinao/dsh-telegram-channel-ru",
+            "path": "",
+            "revision": "44c231be63477a683680a81367a6a56ecebdf843",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3776a8d51a12ee3b57107aae91d813883b69a233c4e11fdf112a1370568aaf39",
+                "code": "44c231be63477a683680a81367a6a56ecebdf843",
+                "maintenance": "21b7673075d3ac9b2b025a774313207b3d2962eecd647c9cf6e1b1a3f33e2bf0"
+            }
+        }
+    }
+}

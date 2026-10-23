@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "efd8894287ffb5805adf733dad756f36",
+    "identity": "github:1427795131:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427795131:root",
+            "repository": "Echo-Cry/dsh-intel-pulse",
+            "path": "",
+            "revision": "6ff5aaea8e40a89e32338107bbaba2bf3c8b853b",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "83801c321d012cf4ab65ee6a28ad49c7322da06ae4908f1061c7b47ec1190851",
+                "code": "6ff5aaea8e40a89e32338107bbaba2bf3c8b853b",
+                "maintenance": "b5599b3a966319bc52f9de9a9688bc577f5536e1e4fcb46e29be03e35c49abff"
+            }
+        }
+    }
+}

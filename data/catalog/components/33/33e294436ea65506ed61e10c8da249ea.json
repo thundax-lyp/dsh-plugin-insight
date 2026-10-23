@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "33e294436ea65506ed61e10c8da249ea",
+    "identity": "github:1426667521:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426667521:root",
+            "repository": "gulagala001/dsh-workflow",
+            "path": "",
+            "revision": "783d442f56b45b81d02cff7a857d99b148417308",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c5df3b06c560a76f12a1545eb45f28a633c628e4ddf979ec313865d377c5998a",
+                "code": "783d442f56b45b81d02cff7a857d99b148417308",
+                "maintenance": "2003264c374d914e1f04d40e97304a8b42b81183869c54289020ab44b24789de"
+            }
+        }
+    }
+}

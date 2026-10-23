@@ -7,14 +7,14 @@
             "id": "github:1414095359:root",
             "repository": "OrderG-X/dsh-video-preview",
             "path": "",
-            "revision": "705609ee6c2da86a6e314994815b047a40e9e9c2",
+            "revision": "d469c67bb3dfdf12dd56528854664497c7a4bfd0",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ebd0e4461c852b0b253e2aad7a3eb2d34f68ec83c29c87ea7f1fceba2cfdbdc0",
-                "code": "705609ee6c2da86a6e314994815b047a40e9e9c2",
-                "maintenance": "c67cb6e11428ea7e265f3f179d81c1ea72c42d15c421b665e56e4eeab92ec9de"
+                "code": "d469c67bb3dfdf12dd56528854664497c7a4bfd0",
+                "maintenance": "3b2a81a49dcd4da70ccfb2655c12d282a100fa5ea7bd5f486482ddd2c49094ad"
             }
         }
     }

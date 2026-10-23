@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0975cedff7323e55f1987b136a4f54b9",
+    "identity": "github:1425913575:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425913575:root",
+            "repository": "oldzhang82/dsh-tps-ttft",
+            "path": "",
+            "revision": "65682bf565d6f24b77d0029c4ff457497c96eec6",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "5f38025311eb4547db8ff2c2dc441b609c67ac0e4d9cfd4513fd50d67f1185d8",
+                "code": "65682bf565d6f24b77d0029c4ff457497c96eec6",
+                "maintenance": "1d2dc57b5e3185723b1b34252d51e8d2f20e3867434e1aab483af1bf8e508373"
+            }
+        }
+    }
+}

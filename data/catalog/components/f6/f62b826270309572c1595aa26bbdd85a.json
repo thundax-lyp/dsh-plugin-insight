@@ -7,15 +7,15 @@
             "id": "github:1334325657:root",
             "repository": "liguobao/ds-harness-remote",
             "path": "",
-            "revision": "8963f7bc2d304dfff55e98553ca30a7712c427a2",
+            "revision": "9a60e783ec1ceaff6116b0462a2863f07f602a55",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "4ef43a4c7b8dadf078c3f8a5964dd73210bdca748463a67e99329bf70c984b6b",
-                "code": "8963f7bc2d304dfff55e98553ca30a7712c427a2",
-                "maintenance": "88ea84a74bd222d9a446926a0cd26a65f925e11e30af117fe7df318568016681"
+                "code": "9a60e783ec1ceaff6116b0462a2863f07f602a55",
+                "maintenance": "8103bdef92fd9a753439e994b93aa48b477a72245a7f2b9a667c4fdb445a2551"
             }
         }
     }

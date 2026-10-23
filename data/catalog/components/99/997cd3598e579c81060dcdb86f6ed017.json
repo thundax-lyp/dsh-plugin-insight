@@ -7,14 +7,14 @@
             "id": "github:1336974348:root",
             "repository": "po-et/dsh-http-probe",
             "path": "",
-            "revision": "0e4a961f89f9e07b1f250811c4d932d2dfe244d7",
+            "revision": "97605df3c70b9bd117687501bf8fb069d11f706f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "22b8b085c778bf8bc88e31fd3fdbae398620ef2bd639fe4d77a19ad9f1d2eff1",
-                "code": "0e4a961f89f9e07b1f250811c4d932d2dfe244d7",
-                "maintenance": "8d89240f1ae982770f981917039742014b2c53a200dd226d2cfa66839ea00918"
+                "code": "97605df3c70b9bd117687501bf8fb069d11f706f",
+                "maintenance": "ebfd36e907369b0962246d073a0d1b154c95ebc700776ecd6a9574d9d39deaaf"
             }
         }
     }

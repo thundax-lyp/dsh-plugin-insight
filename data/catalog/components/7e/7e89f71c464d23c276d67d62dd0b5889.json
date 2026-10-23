@@ -7,15 +7,15 @@
             "id": "github:1334118559:root",
             "repository": "Mars-Sea/dsh-commandcode-provider",
             "path": "",
-            "revision": "ac06537acaf4fb38c85fca17c6ebb161ee8a4ad3",
+            "revision": "696476abe88ddcea8767db74d66c20c3c5916163",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b16823372f45063ae3de1ac0ac3cf2ba70810e9c106e6f736726a2086f595291",
-                "code": "ac06537acaf4fb38c85fca17c6ebb161ee8a4ad3",
-                "maintenance": "8ef4f90264edaf9c09ff7924a1417ea343477fb48d40261191cbc7e418681056"
+                "code": "696476abe88ddcea8767db74d66c20c3c5916163",
+                "maintenance": "ecac8a14e99453a9b28030fed536fa74e07b7ca9a13c4ef7f84a9d7a462fc27a"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1339977895:root",
             "repository": "WindyPro-rourou/dsh-logcat",
             "path": "",
-            "revision": "5f0fe50e754e4ac27cfa45091d45ce44604ffc30",
+            "revision": "95127da68a4d3adb08f3a15faee685e4aaf371b6",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "81a85264a4f8004e71435b3a20730b6406b31882d0dc3e1379ee2350ebd12d64",
-                "code": "5f0fe50e754e4ac27cfa45091d45ce44604ffc30",
-                "maintenance": "23aa4e803745458f9383b37f71ed229360d7dfe24819c9a79e90cfd22d41e344"
+                "code": "95127da68a4d3adb08f3a15faee685e4aaf371b6",
+                "maintenance": "4db7f126d0e5aae2864e26331f3271cde831e744aabae7b163c1df13ee77b158"
             }
         }
     }

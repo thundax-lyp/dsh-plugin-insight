@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "4f6820b244d7dd86bf6e1708f944e7ec",
+    "identity": "github:1412123796:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1412123796:root",
+            "repository": "JiewiW/dsh-derive-watcher",
+            "path": "",
+            "revision": "c25564906df7f05bab526100ae04f78fea99f7a8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "072200e1591d7be358b4c54c7cd07c8f3ef601a875cbad958733bd5198a80f4e",
+                "code": "c25564906df7f05bab526100ae04f78fea99f7a8",
+                "maintenance": "b551c742176c72cd1d7b318f57ffa60bb04ad7389208034a2697743ac461c385"
+            }
+        }
+    }
+}

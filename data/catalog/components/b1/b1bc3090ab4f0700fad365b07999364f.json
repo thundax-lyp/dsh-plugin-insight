@@ -7,14 +7,14 @@
             "id": "github:1372697810:root",
             "repository": "EvoMap/evolver-dsh-plugin",
             "path": "",
-            "revision": "bba59d18292e5386bd3a37b85631e77a4e47b2f5",
+            "revision": "d5c9a432662934f6f78ad45c209921e8bb321928",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "343d35abe81b2f77e7a956b5cd06a79f21f8038b1cf23825e0d0cd43b3710a84",
-                "code": "bba59d18292e5386bd3a37b85631e77a4e47b2f5",
-                "maintenance": "941e18cd82d2193b5e9c311d624e6730f0c55d72ee1d48c591839f2a686cb663"
+                "code": "d5c9a432662934f6f78ad45c209921e8bb321928",
+                "maintenance": "639933c937d0404b18b315f8acc3004f91761017efb56578bd1ca25db27b689b"
             }
         }
     }

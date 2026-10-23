@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "7f37df5fe495c539e3703b823b48bb84",
+    "identity": "github:1427927438:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427927438:root",
+            "repository": "Cloud017/dsh-prompt-reforge",
+            "path": "",
+            "revision": "168d10423cc11bc5f5f285c0d1860b489d666064",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "45bd0ea877095a095bc2cfe29a12da508198089499d8e2178f0502a876719390",
+                "code": "168d10423cc11bc5f5f285c0d1860b489d666064",
+                "maintenance": "221e4df36a9d5faabdc288a84d4fdb7d855d697167e628908f7eafb2c34c1b4a"
+            }
+        }
+    }
+}
