@@ -1,0 +1,55 @@
+{
+    "repository": "2048lr/dsh-feishu",
+    "repository_id": 1418842530,
+    "captured_at": "2026-10-22T16:02:40.871Z",
+    "window_start": "2026-09-22T16:02:40.871Z",
+    "stars": 0,
+    "pushed_at": "2026-10-14T13:10:29Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A2048lr%2Fdsh-feishu%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E322:1C3985:B01B42:BD1641:6ADA33A2 and timestamp 2026-10-22 16:02:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A2048lr%2Fdsh-feishu%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E400:31EE37:A3CF12:B0C33C:6ADA33A4 and timestamp 2026-10-22 16:02:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2048lr%2Fdsh-feishu%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A40.871Z..2026-10-22T16%3A02%3A40.871Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E4EE:1BCCDA:A20FE1:AF043A:6ADA33A5 and timestamp 2026-10-22 16:02:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2048lr%2Fdsh-feishu%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A40.871Z..2026-10-22T16%3A02%3A40.871Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E5C4:FEEE4:9F52E3:AC40F5:6ADA33A6 and timestamp 2026-10-22 16:02:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2048lr%2Fdsh-feishu%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A40.871Z..2026-10-22T16%3A02%3A40.871Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E692:324936:A0B26B:ADA08F:6ADA33A7 and timestamp 2026-10-22 16:02:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-feishu",
+        "captured_at": "2026-10-22T16:02:47.910Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 71,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-feishu",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T06:33:46.233Z",
+            "captured_at": "2026-10-22T16:02:47.910Z",
+            "source_url": "https://registry.npmjs.org/dsh-feishu",
+            "error": null,
+            "latest_version": "0.0.1",
+            "latest_published_at": "2026-08-14T06:33:46.598Z",
+            "latest_error": null
+        }
+    }
+}

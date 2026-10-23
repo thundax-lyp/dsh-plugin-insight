@@ -1,0 +1,34 @@
+{
+    "repository": "173787247/dsh-wsl-expose",
+    "repository_id": 1351853956,
+    "captured_at": "2026-10-22T07:29:14.499Z",
+    "window_start": "2026-09-22T07:29:14.499Z",
+    "stars": 1,
+    "pushed_at": "2026-10-09T09:01:00Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-wsl-expose",
+        "captured_at": "2026-10-22T07:29:23.060Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 674,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-expose",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T05:13:25.044Z",
+            "captured_at": "2026-10-22T07:29:23.060Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-expose",
+            "error": null,
+            "latest_version": "1.7.0",
+            "latest_published_at": "2026-08-20T11:17:30.267Z",
+            "latest_error": null
+        }
+    }
+}

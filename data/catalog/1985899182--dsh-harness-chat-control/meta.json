@@ -1,0 +1,34 @@
+{
+    "repository": "1985899182/dsh-harness-chat-control",
+    "repository_id": 1357066651,
+    "captured_at": "2026-10-22T16:02:08.519Z",
+    "window_start": "2026-09-22T16:02:08.519Z",
+    "stars": 6,
+    "pushed_at": "2026-10-22T15:22:41Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-harness-chat-control",
+        "captured_at": "2026-10-22T16:02:17.207Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-harness-chat-control",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T16:02:17.207Z",
+            "source_url": "https://registry.npmjs.org/dsh-harness-chat-control",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

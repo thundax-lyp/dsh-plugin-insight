@@ -1,0 +1,34 @@
+{
+    "repository": "173787247/dsh-wsl-hostsvc",
+    "repository_id": 1351854010,
+    "captured_at": "2026-10-22T04:47:36.102Z",
+    "window_start": "2026-09-22T04:47:36.102Z",
+    "stars": 1,
+    "pushed_at": "2026-09-29T15:05:51Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-wsl-hostsvc",
+        "captured_at": "2026-10-22T04:47:44.291Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-hostsvc",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T04:47:44.291Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-hostsvc",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

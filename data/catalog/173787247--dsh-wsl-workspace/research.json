@@ -1,0 +1,428 @@
+{
+    "schema_version": 4,
+    "id": "ad824c19f8e865716e45db408f56cc25",
+    "identity": "github:1351853812:root",
+    "slug": "173787247--dsh-wsl-workspace",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1351853812:root",
+            "repository_id": 1351853812,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-workspace",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-workspace",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b51d03542484611bc7b05b10ff5b836bd5a8cdd5b2daf2c294dc360b209206b3",
+                "code": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                "maintenance": "c772a825c7afa470c9ab1b042e1bb2b81fa3936591d18714b6366ece74bd4233"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-02-github-1351853812-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T16:30:06.250Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-02-github-1351853812-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-workspace",
+                            "commit": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                            "path": "README.md",
+                            "content_sha256": "783e488a50191e88b464a8e750ed31c189f31d07cd1505493271fff4cbc0ae3a"
+                        }
+                    ],
+                    "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                    "captured_at": "2026-10-22T16:30:06.250Z",
+                    "summary": "列出 WSL 发行版并检查 Linux 工作区路径，提示避开 /mnt 性能与语义陷阱。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-workspace/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-02-github-1351853812-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-workspace",
+                            "commit": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                            "path": "README.md",
+                            "content_sha256": "783e488a50191e88b464a8e750ed31c189f31d07cd1505493271fff4cbc0ae3a"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-workspace",
+                            "commit": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                            "path": "package.json",
+                            "content_sha256": "86651c1ed6d7e51b4ded9560b3f5ea329d9a115c149377d39556a5b1ec894565"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-workspace",
+                            "commit": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                            "path": "index.js",
+                            "content_sha256": "01d64dbe25874293cbe1fde204a902b91bb07957f08876c5e646f3d59de76df5"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-workspace",
+                            "commit": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                            "path": "lib/workspace.js",
+                            "content_sha256": "f2b89464d68118afc3b10d75829d82fc6f5d5c7b047b77912b902ec4fcebea61"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-workspace",
+                            "commit": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                            "path": "lib/wsl-host.js",
+                            "content_sha256": "c3213de3af83f68b4b12fe977890b170958229db6278b39115e8fb097d9d8801"
+                        }
+                    ],
+                    "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                    "captured_at": "2026-10-22T16:30:06.250Z",
+                    "summary": "核查 README.md、package.json、index.js、lib/workspace.js、lib/wsl-host.js；插件注册 wsl_workspace 工具，WSL 宿主层调用 Windows `wsl.exe --list` 等命令，workspace 模块规范化输出、解析发行版并根据 home、/mnt、存在性对路径分类，返回结构化 advice。它不创建、移动或删除工作区。",
+                    "artifact": "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-workspace/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查 README、工具入口、路径分类和 WSL 宿主桥；不运行 Windows/WSL 命令。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向在 WSL 中启动 DSH 项目、需要选择发行版和 Linux 工作区路径的开发者。输入是 list/check 操作及路径；合格结果是识别当前/默认发行版、确认路径存在并区分 Linux home、/mnt Windows 挂载或异常位置，给出不越权迁移建议。简单替代是手工跑 wsl.exe 和检查 pwd/mount。\n\n参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "插件注册 wsl_workspace 工具，WSL 宿主层调用 Windows `wsl.exe --list` 等命令，workspace 模块规范化输出、解析发行版并根据 home、/mnt、存在性对路径分类，返回结构化 advice。它不创建、移动或删除工作区。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查 README、工具入口、路径分类和 WSL 宿主桥；不运行 Windows/WSL 命令。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "v0.2.0，MIT，零外部运行依赖的只读 WSL 工具。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无外部服务费用 | 安装并理解路径建议 | 实际迁移不属于插件自动流程 |\n| 持续使用 | 每次调用 Windows 子进程资源 | 调用和阅读结果 | 延迟未实测 |\n| 失败恢复 | 错误迁移可能占磁盘/复制资源 | 迁回、核 Git/权限/监听 | 恢复取决于项目规模 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议试用。适合在 WSL 新建或排查开发工作区前做只读检查；把结果当提示，不自动迁移。若路径是自定义挂载或项目主要访问 Windows 工具，应先做实际构建/监听基准再决定。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 环境发现 | 结构化列当前与默认发行版 | 复杂配置准确率未测 |\n| 路径卫生 | 识别 home、/mnt 与不存在路径 | 不能直接证明性能或权限 |\n| 低副作用 | 只读检查不搬数据 | 采纳建议后的迁移风险仍由用户承担 |",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "纯函数路径分类、发行版解析与 advice 生成和宿主命令分离，适合单测和复用；工具只读，副作用小。可借鉴之处是明确返回 not-Wsl 与结构化状态，而不是让模型解析命令文本。边界是规则仍是启发式，无法替代真实项目基准。 参见[Q07](#research-q07)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "相对手工命令，它把发行版发现与 /mnt 卫生检查包装成模型可调用、只读且结构化的单工具；核心判断是常见 WSL 路径经验，不是新的文件系统机制。窄范围与无写副作用使它比通用部署插件更易审计。 参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "路径位于 /mnt 只是性能和权限风险信号，不等于所有项目都更慢；自定义挂载、WSL2 配置、网络文件系统和跨发行版路径可能让启发式误判。只验证路径存在也不能证明 Git、文件监听、权限、大小写或构建性能符合项目需要。 参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可在用户同意后运行无破坏的微基准和语义探针，例如小文件创建/删除、大小写、文件监听与 Git status，用工作负载证据补充路径标签。它可能减少把所有 /mnt 一概判坏的误报，但基准本身会写临时文件并增加等待。 参见[Q08](#research-q08)。",
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1351853812:root",
+                            "area": "code",
+                            "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T16:30:06.250Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T16:30:06.250Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                "reviewed_at": "2026-10-22T16:30:06.250Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351853812:root",
+                        "area": "code",
+                        "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 11
+                    },
+                    "rationale": "规则常见；结构化 WSL 桥是小幅机制；纯函数可迁移；只读单工具显著简化排查入口。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "把环境准备变为一次工具检查；交付是建议；降低 WSL 新手门槛；节时未测。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-10-22-02-github-1351853812-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "只读、窄范围且失败边界清楚，适合把它作为 WSL 工作区准备提示，但不能自动迁移或把路径标签当性能结论。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "WSL 工作区准备高频且清楚。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "比手工命令更结构化。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码链简单完整，未实机。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "只读且依赖少，误建议仍需防范。"
+                    }
+                },
+                "score": 64,
+                "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                "reviewed_at": "2026-10-22T16:30:06.250Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-02-github-1351853812-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1351853812:root",
+                        "area": "code",
+                        "fingerprint": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1351853812:root",
+            "repository": "173787247/dsh-wsl-workspace",
+            "path": "",
+            "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+            "fingerprints": {
+                "directory": "b51d03542484611bc7b05b10ff5b836bd5a8cdd5b2daf2c294dc360b209206b3",
+                "code": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+                "maintenance": "c772a825c7afa470c9ab1b042e1bb2b81fa3936591d18714b6366ece74bd4233"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:49:47Z",
+            "analysis_sha256": "859528b058c3c0b8a501c5a3bdcb5ef5238403737145b1317b5d4115c040443e"
+        },
+        "publication.metadata": "data/catalog/173787247--dsh-wsl-workspace/meta.json",
+        "publication.summaries": {
+            "text": "列出 WSL 发行版并检查 Linux 工作区路径，提示避开 /mnt 性能与语义陷阱。",
+            "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+            "source_url": "https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+            "items": {
+                "模型工具": "wsl_workspace 列发行版并检查 Linux 工作区路径"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 发行版列表 | 显示当前、默认及可用 WSL 发行版 | 依赖 wsl.exe 输出格式 |\n| 路径检查 | 判断路径存在、home 或 /mnt 类型 | 启发式不替代项目基准 |\n| 迁移建议 | 提示把开发工作区放到 Linux 文件系统 | 不自动复制或修改文件 |"
+        },
+        "publication.advice": {
+            "revision": "f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac",
+            "text": "建议试用。适合在 WSL 新建或排查开发工作区前做只读检查；把结果当提示，不自动迁移。若路径是自定义挂载或项目主要访问 Windows 工具，应先做实际构建/监听基准再决定。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-workspace",
+        "reports": "# dsh-wsl-workspace\n\n> 列出 WSL 发行版并检查 Linux 工作区路径，提示避开 /mnt 性能与语义陷阱。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-workspace](https://github.com/173787247/dsh-wsl-workspace)\n- **版本号**：0.2.0（[固定提交 f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac](https://github.com/173787247/dsh-wsl-workspace/tree/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac)）\n- **版本日期**：2026-10-09（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码确认 wsl_workspace 只读列举发行版并启发式分类路径；自定义挂载准确率与不同文件系统的 build/watch 性能没有实机数据，基于基准的迁移建议仍需证伪，见[Q08](#research-q08)。\n\n## 洞察短评\n\n- **用途**：面向在 WSL 中启动 DSH 项目、需要选择发行版和 Linux 工作区路径的开发者。输入是 list/check 操作及路径；合格结果是识别当前/默认发行版、确认路径存在并区分 Linux home、/mnt Windows 挂载或异常位置，给出不越权迁移建议。简单替代是手工跑 wsl.exe 和检查 pwd/mount。\n\n参见[Q01](#research-q01)。\n- **亮点**：相对手工命令，它把发行版发现与 /mnt 卫生检查包装成模型可调用、只读且结构化的单工具；核心判断是常见 WSL 路径经验，不是新的文件系统机制。窄范围与无写副作用使它比通用部署插件更易审计。 参见[Q03](#research-q03)。\n- **思考**：路径位于 /mnt 只是性能和权限风险信号，不等于所有项目都更慢；自定义挂载、WSL2 配置、网络文件系统和跨发行版路径可能让启发式误判。只验证路径存在也不能证明 Git、文件监听、权限、大小写或构建性能符合项目需要。 参见[Q04](#research-q04)。\n- **建议**：可在用户同意后运行无破坏的微基准和语义探针，例如小文件创建/删除、大小写、文件监听与 Git status，用工作负载证据补充路径标签。它可能减少把所有 /mnt 一概判坏的误报，但基准本身会写临时文件并增加等待。 参见[Q08](#research-q08)。\n\n采用建议：建议试用。适合在 WSL 新建或排查开发工作区前做只读检查；把结果当提示，不自动迁移。若路径是自定义挂载或项目主要访问 Windows 工具，应先做实际构建/监听基准再决定。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。\n\n## 核心贡献\n\n相对手工命令，它把发行版发现与 /mnt 卫生检查包装成模型可调用、只读且结构化的单工具；核心判断是常见 WSL 路径经验，不是新的文件系统机制。窄范围与无写副作用使它比通用部署插件更易审计。 参见[Q03](#research-q03)。\n\n## 关键质疑\n\n路径位于 /mnt 只是性能和权限风险信号，不等于所有项目都更慢；自定义挂载、WSL2 配置、网络文件系统和跨发行版路径可能让启发式误判。只验证路径存在也不能证明 Git、文件监听、权限、大小写或构建性能符合项目需要。 参见[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可在用户同意后运行无破坏的微基准和语义探针，例如小文件创建/删除、大小写、文件监听与 Git status，用工作负载证据补充路径标签。它可能减少把所有 /mnt 一概判坏的误报，但基准本身会写临时文件并增加等待。 参见[Q08](#research-q08)。\n\n先对多挂载类型建立真值表，再比较实际 build/watch；任何自动写入、把存在性误写成性能保证或自定义挂载大量误报都否定扩展采用。\n\n## 场景与替代办法\n\n面向在 WSL 中启动 DSH 项目、需要选择发行版和 Linux 工作区路径的开发者。输入是 list/check 操作及路径；合格结果是识别当前/默认发行版、确认路径存在并区分 Linux home、/mnt Windows 挂载或异常位置，给出不越权迁移建议。简单替代是手工跑 wsl.exe 和检查 pwd/mount。\n\n参见[Q01](#research-q01)。\n\n基线是手工执行 wsl.exe、pwd、mount 和文件检查；信息完整但需要用户知道哪些信号重要。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Windows WSL 环境 | 必需 | 提供发行版与 Linux 文件系统 | 非 WSL 返回明确不适用 |\n| wsl.exe/PowerShell 标准路径 | 必需 | 列发行版和桥接命令 | 找不到或超时则无法列出 |\n| 目标路径可见 | 检查必需 | 判断存在性与位置 | 不存在只给提示，不创建 |\n| 项目实际工作负载 | 效果条件 | 判断路径建议是否真有价值 | 静态规则不能替代 build/watch 基准 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 在 WSL profile 加载插件 | wsl_workspace 可调用 |\n| 列环境 | 调用 list 获取当前/默认发行版 | 解析成功或返回可读错误 |\n| 检查路径 | 调用 check 提交绝对路径 | 返回分类、存在性和建议 |\n| 决策 | 用户结合项目基准决定是否迁移 | 不由插件自动搬数据 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 无外部服务费用 | 安装并理解路径建议 | 实际迁移不属于插件自动流程 |\n| 持续使用 | 每次调用 Windows 子进程资源 | 调用和阅读结果 | 延迟未实测 |\n| 失败恢复 | 错误迁移可能占磁盘/复制资源 | 迁回、核 Git/权限/监听 | 恢复取决于项目规模 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 环境发现 | 结构化列当前与默认发行版 | 复杂配置准确率未测 |\n| 路径卫生 | 识别 home、/mnt 与不存在路径 | 不能直接证明性能或权限 |\n| 低副作用 | 只读检查不搬数据 | 采纳建议后的迁移风险仍由用户承担 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac 上判断 dsh-wsl-workspace 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · WSL 工作区路径检查解决什么常见准备问题？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向在 WSL 中启动 DSH 项目、需要选择发行版和 Linux 工作区路径的开发者。输入是 list/check 操作及路径；合格结果是识别当前/默认发行版、确认路径存在并区分 Linux home、/mnt Windows 挂载或异常位置，给出不越权迁移建议。简单替代是手工跑 wsl.exe 和检查 pwd/mount。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:26-29](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md#L26-L29)\n\n作者限定工具位于 WSL 工作区准备环节。\n\n```text\n## Where it sits\n\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\n\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · wsl_workspace 如何列发行版、分类路径并生成建议？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n插件注册 wsl_workspace 工具，WSL 宿主层调用 Windows `wsl.exe --list` 等命令，workspace 模块规范化输出、解析发行版并根据 home、/mnt、存在性对路径分类，返回结构化 advice。它不创建、移动或删除工作区。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/index.js#L17-L20)\n\n入口注册 wsl_workspace 单工具。\n\n```text\n  ctx.tools.register({\n    name: \"wsl_workspace\",\n    description:\n      \"List WSL distros (current vs default) or validate a Linux workspace path for DSH (/mnt hygiene).\",\n```\n\n**依据 2 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · dsh-wsl-workspace 相对简单替代的独立增量是什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对手工命令，它把发行版发现与 /mnt 卫生检查包装成模型可调用、只读且结构化的单工具；核心判断是常见 WSL 路径经验，不是新的文件系统机制。窄范围与无写副作用使它比通用部署插件更易审计。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/index.js#L17-L20)\n\n入口注册 wsl_workspace 单工具。\n\n```text\n  ctx.tools.register({\n    name: \"wsl_workspace\",\n    description:\n      \"List WSL distros (current vs default) or validate a Linux workspace path for DSH (/mnt hygiene).\",\n```\n\n**依据 2 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 路径启发式、挂载差异和不存在目录会造成哪些误导？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n路径位于 /mnt 只是性能和权限风险信号，不等于所有项目都更慢；自定义挂载、WSL2 配置、网络文件系统和跨发行版路径可能让启发式误判。只验证路径存在也不能证明 Git、文件监听、权限、大小写或构建性能符合项目需要。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n**依据 2 · 作者声明**：[README.md:26-29](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md#L26-L29)\n\n作者限定工具位于 WSL 工作区准备环节。\n\n```text\n## Where it sits\n\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\n\n```\n\n#### 缺口\n\n- 自定义挂载、网络盘和不同 WSL 版本下路径分类的误报/漏报率\n  **影响**：错误建议可能触发不必要迁移或掩盖真实性能问题\n  **进一步探讨**：收集 Linux home、/mnt、自定义 drvfs、网络盘样本，与 mount 信息和实际构建/监听结果对照\n\n<a id=\"research-q05\"></a>\n\n### Q05 · dsh-wsl-workspace 启动、持续使用与失败恢复依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n启动依赖 WSL、标准 Windows 可执行路径和 PowerShell/cmd 桥；检查依赖目标路径对 DSH 进程可见。失败恢复主要是返回不适用、命令超时或无发行版，不应自动迁移数据。若用户采纳迁移建议，复制、权限和 Git 状态核验仍由用户承担。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/index.js#L17-L20)\n\n入口注册 wsl_workspace 单工具。\n\n```text\n  ctx.tools.register({\n    name: \"wsl_workspace\",\n    description:\n      \"List WSL distros (current vs default) or validate a Linux workspace path for DSH (/mnt hygiene).\",\n```\n\n**依据 2 · 作者声明**：[README.md:26-29](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md#L26-L29)\n\n作者限定工具位于 WSL 工作区准备环节。\n\n```text\n## Where it sits\n\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\n\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 一次合格工作区检查能减少多少排障成本？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n合格任务是给出正确发行版和对项目有用的路径建议。首次几乎只有安装与理解建议，但实际迁移可能产生大量复制和验证时间；持续检查有子进程延迟；错误建议的恢复是把项目迁回并核对 Git/权限。源码没有路径建议准确率、不同工作负载基准或迁移失败率。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:26-29](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md#L26-L29)\n\n作者限定工具位于 WSL 工作区准备环节。\n\n```text\n## Where it sits\n\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\n\n```\n\n**依据 2 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n#### 缺口\n\n- 工具调用延迟、建议准确率和因建议迁移产生的复制/验证时间\n  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI\n  **进一步探讨**：对 20 个项目路径记录检查结论、真实 Git/build/watch 行为和人工排障分钟，按合格建议计算节省\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 纯函数分类与宿主桥的职责拆分是否可复用？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n纯函数路径分类、发行版解析与 advice 生成和宿主命令分离，适合单测和复用；工具只读，副作用小。可借鉴之处是明确返回 not-Wsl 与结构化状态，而不是让模型解析命令文本。边界是规则仍是启发式，无法替代真实项目基准。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/index.js#L17-L20)\n\n入口注册 wsl_workspace 单工具。\n\n```text\n  ctx.tools.register({\n    name: \"wsl_workspace\",\n    description:\n      \"List WSL distros (current vs default) or validate a Linux workspace path for DSH (/mnt hygiene).\",\n```\n\n**依据 2 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 能否加入可解释的项目工作负载基准而非只看路径？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可在用户同意后运行无破坏的微基准和语义探针，例如小文件创建/删除、大小写、文件监听与 Git status，用工作负载证据补充路径标签。它可能减少把所有 /mnt 一概判坏的误报，但基准本身会写临时文件并增加等待。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n**依据 2 · 作者声明**：[README.md:26-29](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md#L26-L29)\n\n作者限定工具位于 WSL 工作区准备环节。\n\n```text\n## Where it sits\n\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\n\n```\n\n#### 缺口\n\n- 微基准能否比静态路径规则更准确且开销可接受\n  **影响**：新方向仍是推演，不能计入插件当前贡献或效果\n  **进一步探讨**：在隔离临时目录比较规则与微基准对 build/watch 异常的预测，要求准确率提升且探针低于 2 秒、无残留\n\n<a id=\"research-q09\"></a>\n\n### Q09 · dsh-wsl-workspace 适合观察、试用还是安装，停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议试用。适合在 WSL 新建或排查开发工作区前做只读检查；把结果当提示，不自动迁移。若路径是自定义挂载或项目主要访问 Windows 工具，应先做实际构建/监听基准再决定。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:26-29](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/README.md#L26-L29)\n\n作者限定工具位于 WSL 工作区准备环节。\n\n```text\n## Where it sits\n\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\n\n```\n\n**依据 2 · 源码核查**：[lib/workspace.js:53-56](https://github.com/173787247/dsh-wsl-workspace/blob/f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac/lib/workspace.js#L53-L56)\n\n纯函数根据 home、/mnt 和存在性分类路径。\n\n```text\nexport function classifyWorkspacePath(abs, { home = \"/home/user\", exists = existsSync } = {}) {\n  const path = String(abs || \"\");\n  const onMnt = path === \"/mnt\" || path.startsWith(\"/mnt/\");\n  let kind = \"linux_other\";\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：72b6403f348c53865cf5a4fb89f32f26e816bf52de836ae04f29cc2bbbb4aa39。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 98 | — | — | 559 |\n| .js | source | 3 | 323 | 293 | 2 | — |\n| .js | test | 1 | 65 | 60 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 发行版列表 | 显示当前、默认及可用 WSL 发行版 | 依赖 wsl.exe 输出格式 |\n| 路径检查 | 判断路径存在、home 或 /mnt 类型 | 启发式不替代项目基准 |\n| 迁移建议 | 提示把开发工作区放到 Linux 文件系统 | 不自动复制或修改文件 |\n\n## 工程亮点\n\n纯函数路径分类、发行版解析与 advice 生成和宿主命令分离，适合单测和复用；工具只读，副作用小。可借鉴之处是明确返回 not-Wsl 与结构化状态，而不是让模型解析命令文本。边界是规则仍是启发式，无法替代真实项目基准。 参见[Q07](#research-q07)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/workspace.js、lib/wsl-host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查 README、工具入口、路径分类和 WSL 宿主桥；不运行 Windows/WSL 命令。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。\n- 下一步：先对多挂载类型建立真值表，再比较实际 build/watch；任何自动写入、把存在性误写成性能保证或自定义挂载大量误报都否定扩展采用。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-workspace/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-wsl-workspace\",\n  \"revision\": \"f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"index.js\",\n    \"lib/workspace.js\",\n    \"lib/wsl-host.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"在固定提交 f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac 上判断 dsh-wsl-workspace 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"WSL 工作区路径检查解决什么常见准备问题？\",\n        \"answer\": \"面向在 WSL 中启动 DSH 项目、需要选择发行版和 Linux 工作区路径的开发者。输入是 list/check 操作及路径；合格结果是识别当前/默认发行版、确认路径存在并区分 Linux home、/mnt Windows 挂载或异常位置，给出不越权迁移建议。简单替代是手工跑 wsl.exe 和检查 pwd/mount。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 26,\n            \"line_end\": 29,\n            \"observation\": \"作者限定工具位于 WSL 工作区准备环节。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"wsl_workspace 如何列发行版、分类路径并生成建议？\",\n        \"answer\": \"插件注册 wsl_workspace 工具，WSL 宿主层调用 Windows `wsl.exe --list` 等命令，workspace 模块规范化输出、解析发行版并根据 home、/mnt、存在性对路径分类，返回结构化 advice。它不创建、移动或删除工作区。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 17,\n            \"line_end\": 20,\n            \"observation\": \"入口注册 wsl_workspace 单工具。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"本轮未运行目标插件、测试、外部服务或真实 Host\",\n            \"impact\": \"只能确认固定源码中的接线与防护，不能把作者运行声明或测试清单当作本轮通过\",\n            \"next_step\": \"在多个 WSL 发行版和挂载类型下验证 list/check、超时、不存在路径与无写副作用\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"dsh-wsl-workspace 相对简单替代的独立增量是什么？\",\n        \"answer\": \"相对手工命令，它把发行版发现与 /mnt 卫生检查包装成模型可调用、只读且结构化的单工具；核心判断是常见 WSL 路径经验，不是新的文件系统机制。窄范围与无写副作用使它比通用部署插件更易审计。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 17,\n            \"line_end\": 20,\n            \"observation\": \"入口注册 wsl_workspace 单工具。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"本轮未运行目标插件、测试、外部服务或真实 Host\",\n            \"impact\": \"只能确认固定源码中的接线与防护，不能把作者运行声明或测试清单当作本轮通过\",\n            \"next_step\": \"在多个 WSL 发行版和挂载类型下验证 list/check、超时、不存在路径与无写副作用\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"路径启发式、挂载差异和不存在目录会造成哪些误导？\",\n        \"answer\": \"路径位于 /mnt 只是性能和权限风险信号，不等于所有项目都更慢；自定义挂载、WSL2 配置、网络文件系统和跨发行版路径可能让启发式误判。只验证路径存在也不能证明 Git、文件监听、权限、大小写或构建性能符合项目需要。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 26,\n            \"line_end\": 29,\n            \"observation\": \"作者限定工具位于 WSL 工作区准备环节。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"research_gap\",\n            \"issue\": \"自定义挂载、网络盘和不同 WSL 版本下路径分类的误报/漏报率\",\n            \"impact\": \"错误建议可能触发不必要迁移或掩盖真实性能问题\",\n            \"next_step\": \"收集 Linux home、/mnt、自定义 drvfs、网络盘样本，与 mount 信息和实际构建/监听结果对照\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"dsh-wsl-workspace 启动、持续使用与失败恢复依赖什么？\",\n        \"answer\": \"启动依赖 WSL、标准 Windows 可执行路径和 PowerShell/cmd 桥；检查依赖目标路径对 DSH 进程可见。失败恢复主要是返回不适用、命令超时或无发行版，不应自动迁移数据。若用户采纳迁移建议，复制、权限和 Git 状态核验仍由用户承担。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 17,\n            \"line_end\": 20,\n            \"observation\": \"入口注册 wsl_workspace 单工具。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 26,\n            \"line_end\": 29,\n            \"observation\": \"作者限定工具位于 WSL 工作区准备环节。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"本轮未运行目标插件、测试、外部服务或真实 Host\",\n            \"impact\": \"只能确认固定源码中的接线与防护，不能把作者运行声明或测试清单当作本轮通过\",\n            \"next_step\": \"在多个 WSL 发行版和挂载类型下验证 list/check、超时、不存在路径与无写副作用\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"一次合格工作区检查能减少多少排障成本？\",\n        \"answer\": \"合格任务是给出正确发行版和对项目有用的路径建议。首次几乎只有安装与理解建议，但实际迁移可能产生大量复制和验证时间；持续检查有子进程延迟；错误建议的恢复是把项目迁回并核对 Git/权限。源码没有路径建议准确率、不同工作负载基准或迁移失败率。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 26,\n            \"line_end\": 29,\n            \"observation\": \"作者限定工具位于 WSL 工作区准备环节。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"research_gap\",\n            \"issue\": \"工具调用延迟、建议准确率和因建议迁移产生的复制/验证时间\",\n            \"impact\": \"无法给出合格任务单位成本、成功率、节时或 ROI\",\n            \"next_step\": \"对 20 个项目路径记录检查结论、真实 Git/build/watch 行为和人工排障分钟，按合格建议计算节省\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"纯函数分类与宿主桥的职责拆分是否可复用？\",\n        \"answer\": \"纯函数路径分类、发行版解析与 advice 生成和宿主命令分离，适合单测和复用；工具只读，副作用小。可借鉴之处是明确返回 not-Wsl 与结构化状态，而不是让模型解析命令文本。边界是规则仍是启发式，无法替代真实项目基准。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 17,\n            \"line_end\": 20,\n            \"observation\": \"入口注册 wsl_workspace 单工具。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"本轮未运行目标插件、测试、外部服务或真实 Host\",\n            \"impact\": \"只能确认固定源码中的接线与防护，不能把作者运行声明或测试清单当作本轮通过\",\n            \"next_step\": \"在多个 WSL 发行版和挂载类型下验证 list/check、超时、不存在路径与无写副作用\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"能否加入可解释的项目工作负载基准而非只看路径？\",\n        \"answer\": \"可在用户同意后运行无破坏的微基准和语义探针，例如小文件创建/删除、大小写、文件监听与 Git status，用工作负载证据补充路径标签。它可能减少把所有 /mnt 一概判坏的误报，但基准本身会写临时文件并增加等待。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 26,\n            \"line_end\": 29,\n            \"observation\": \"作者限定工具位于 WSL 工作区准备环节。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"research_gap\",\n            \"issue\": \"微基准能否比静态路径规则更准确且开销可接受\",\n            \"impact\": \"新方向仍是推演，不能计入插件当前贡献或效果\",\n            \"next_step\": \"在隔离临时目录比较规则与微基准对 build/watch 异常的预测，要求准确率提升且探针低于 2 秒、无残留\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"dsh-wsl-workspace 适合观察、试用还是安装，停止条件是什么？\",\n        \"answer\": \"建议试用。适合在 WSL 新建或排查开发工作区前做只读检查；把结果当提示，不自动迁移。若路径是自定义挂载或项目主要访问 Windows 工具，应先做实际构建/监听基准再决定。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 26,\n            \"line_end\": 29,\n            \"observation\": \"作者限定工具位于 WSL 工作区准备环节。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/workspace.js\",\n            \"line_start\": 53,\n            \"line_end\": 56,\n            \"observation\": \"纯函数根据 home、/mnt 和存在性分类路径。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"本轮未运行目标插件、测试、外部服务或真实 Host\",\n            \"impact\": \"只能确认固定源码中的接线与防护，不能把作者运行声明或测试清单当作本轮通过\",\n            \"next_step\": \"在多个 WSL 发行版和挂载类型下验证 list/check、超时、不存在路径与无写副作用\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-workspace\\n> **kit:** [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)\\n\\n## Compatibility\\n\\n| Field | Value |\\n|-------|-------|\\n| **Plugin** | `dsh-wsl-workspace` **0.2.0** |\\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\\n| **Kit set** | `full` or install alone |\\n| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |\\n| **Agent Teams** | Upstream experimental; not required here |\\n\\nSuite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).\\n\\n**`wsl_workspace`**: list distros; check Linux workspace paths (/mnt hygiene, suggest ~/src).\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-wsl-workspace\\nnpm test\\n```\\n\\nMIT\\n\\n## Where it sits\\n\\nLists distros and checks that a Linux workspace path is not a slow /mnt mistake.\\n\\n```mermaid\\nflowchart LR\\n  agent[\\\"dsh agent\\\"] --> tool[\\\"wsl_workspace\\\"] --> ws[\\\"distro and Linux workspace path\\\"]\\n```\\n\\nSuite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.2.0** (full). Do not copy that matrix into this README.\\n\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-workspace-check\\\",\\n  \\\"version\\\": \\\"0.2.0\\\",\\n  \\\"description\\\": \\\"wsl_workspace: list distros and validate Linux workspace paths with /mnt hygiene.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-workspace.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-workspace/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/173787247/dsh-wsl-workspace#readme\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/*.test.js\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"wsl\\\",\\n    \\\"workspace\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import { detectWsl } from \\\"./lib/wsl-host.js\\\";\\nimport * as core from \\\"./lib/workspace.js\\\";\\n\\nexport const name = \\\"dsh-wsl-workspace-check\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  const timeoutMs = positive(config.timeoutMs, 15_000);\\n  const wsl = detectWsl();\\n\\n  ctx.systemPrompt.section({\\n    name: \\\"tool:wsl_workspace\\\",\\n    order: 110,\\n    text: \\\"Use wsl_workspace to list distros or check a Linux workspace path (flag /mnt Desktop, .git, suggest ~/src). Pair with mnt_doctor / distro_info / path_convert.\\\",\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"wsl_workspace\\\",\\n    description:\\n      \\\"List WSL distros (current vs default) or validate a Linux workspace path for DSH (/mnt hygiene).\\\",\\n    parameters: core.parameters(config),\\n    output: {\\n      schema: core.outputSchema(),\\n      render: (_args, value) => [{ type: \\\"text\\\", text: core.format(value) }],\\n    },\\n    timeoutMs,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: \\\"not running in WSL\\\" };\\n      return core.execute(args, config);\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"wsl_workspace\\\" }),\\n    presentResult: (_args, result) => (\\n      result.isError\\n        ? { card: \\\"generic\\\", title: \\\"wsl_workspace failed\\\", content: result.content }\\n        : { card: \\\"generic\\\", title: \\\"wsl_workspace\\\", content: result.content }\\n    ),\\n  });\\n}\\n\\nfunction positive(value, fallback) {\\n  const n = Number(value);\\n  return Number.isFinite(n) && n > 0 ? n : fallback;\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/workspace.js\",\n      \"content\": \"import { existsSync, realpathSync, statSync } from \\\"node:fs\\\";\\nimport { homedir } from \\\"node:os\\\";\\nimport { basename, resolve } from \\\"node:path\\\";\\nimport { execFile } from \\\"node:child_process\\\";\\nimport { promisify } from \\\"node:util\\\";\\nimport { distroName } from \\\"./wsl-host.js\\\";\\n\\nconst execFileAsync = promisify(execFile);\\n\\nexport function notWsl() {\\n  return { ok: false, error: \\\"not running in WSL\\\", advice: [] };\\n}\\n\\nexport function parameters() {\\n  return {\\n    type: \\\"object\\\",\\n    additionalProperties: false,\\n    properties: {\\n      action: {\\n        type: \\\"string\\\",\\n        enum: [\\\"list\\\", \\\"check\\\"],\\n        description: \\\"list = distros; check = validate a Linux workspace path.\\\",\\n      },\\n      path: {\\n        type: \\\"string\\\",\\n        description: \\\"Absolute Linux path when action=check (default: cwd or home).\\\",\\n      },\\n    },\\n  };\\n}\\n\\nexport function outputSchema() {\\n  return { type: \\\"object\\\", additionalProperties: true };\\n}\\n\\nexport function format(v) {\\n  const lines = [`wsl_workspace action=${v.action || \\\"?\\\"} ok=${v.ok}`];\\n  if (v.currentDistro) lines.push(`currentDistro: ${v.currentDistro}`);\\n  if (v.defaultDistro) lines.push(`defaultDistro: ${v.defaultDistro}`);\\n  if (v.distros) lines.push(`distros: ${v.distros.join(\\\", \\\") || \\\"(none)\\\"}`);\\n  if (v.path) lines.push(`path: ${v.path}`);\\n  if (v.kind) lines.push(`kind: ${v.kind}`);\\n  if (v.exists != null) {\\n    lines.push(`exists: ${v.exists} isDirectory: ${v.isDirectory} onMnt: ${v.onMnt} hasGit: ${v.hasGit}`);\\n  }\\n  if (v.suggestedHome) lines.push(`suggestedHome: ${v.suggestedHome}`);\\n  for (const a of v.advice || []) lines.push(`- ${a}`);\\n  if (v.error) lines.push(`error: ${v.error}`);\\n  return lines.join(\\\"\\\\n\\\");\\n}\\n\\n/** Classify workspace path (aligned with mnt_doctor tags). */\\nexport function classifyWorkspacePath(abs, { home = \\\"/home/user\\\", exists = existsSync } = {}) {\\n  const path = String(abs || \\\"\\\");\\n  const onMnt = path === \\\"/mnt\\\" || path.startsWith(\\\"/mnt/\\\");\\n  let kind = \\\"linux_other\\\";\\n  if (onMnt) {\\n    if (/\\\\/(Desktop|Downloads|Documents)(\\\\/|$)/i.test(path)) kind = \\\"windows_user_folder\\\";\\n    else if (path.includes(\\\"/Users/\\\")) kind = \\\"windows_users\\\";\\n    else kind = \\\"mnt_other\\\";\\n  } else if (path === home || path.startsWith(`${home}/`)) {\\n    kind = \\\"linux_home\\\";\\n  }\\n  const gitPath = path.endsWith(\\\"/\\\") ? `${path}.git` : `${path}/.git`;\\n  const hasGit = exists(gitPath);\\n  let suggestedHome = \\\"\\\";\\n  if (onMnt) {\\n    const leaf = basename(path) || \\\"project\\\";\\n    suggestedHome = `${home.replace(/\\\\/+$/, \\\"\\\")}/src/${leaf}`;\\n  }\\n  return { path, onMnt, kind, hasGit, suggestedHome };\\n}\\n\\nexport function buildWorkspaceCheckAdvice(info) {\\n  const tips = [];\\n  if (!info.exists) tips.push(\\\"Path does not exist; create it with mkdir -p before opening a workspace.\\\");\\n  else if (!info.isDirectory) tips.push(\\\"Path is not a directory.\\\");\\n  if (info.onMnt) {\\n    tips.push(\\\"Workspace on /mnt is slow under WSL; prefer a path under /home — run mnt_doctor for details.\\\");\\n    if (info.kind === \\\"windows_user_folder\\\") {\\n      tips.push(\\\"Desktop/Downloads/Documents: fine for opening files (dsh-wsl-open), bad as git/npm root.\\\");\\n    }\\n    if (info.hasGit) tips.push(\\\"Detected .git on /mnt — expect slow status; move clone to Linux home.\\\");\\n    if (info.suggestedHome) tips.push(`Suggested Linux path: ${info.suggestedHome}`);\\n    tips.push(\\\"Scripts on /mnt/c may be CRLF — encoding_doctor path=… ; convert paths with path_convert.\\\");\\n  } else if (info.exists && info.isDirectory) {\\n    tips.push(\\\"Looks like a good Linux-side workspace root for DSH.\\\");\\n    if (info.hasGit) tips.push(\\\"Git repo on Linux filesystem — good default.\\\");\\n  }\\n  return tips;\\n}\\n\\nexport function buildWorkspaceListAdvice({ currentDistro, defaultDistro, distros } = {}) {\\n  const tips = [\\n    \\\"Create a DSH workspace pointing at a Linux path under this distro (prefer /home/… over /mnt/c).\\\",\\n    \\\"Install companion dsh-wsl-picker to browse /mnt drives from the agent.\\\",\\n    \\\"Use distro_info for wsl -l -v details and \\\\\\\\\\\\\\\\wsl$\\\\\\\\ path safety.\\\",\\n  ];\\n  if (currentDistro && defaultDistro && currentDistro !== defaultDistro) {\\n    tips.push(\\n      `Current session distro \\\"${currentDistro}\\\" differs from default \\\"${defaultDistro}\\\" — /home paths are not interchangeable.`,\\n    );\\n  }\\n  if (distros?.length) tips.push(`Installed: ${distros.join(\\\", \\\")}`);\\n  return tips;\\n}\\n\\nexport function parseWslListQuiet(stdout) {\\n  return String(stdout || \\\"\\\")\\n    .replace(/\\\\0/g, \\\"\\\")\\n    .split(/\\\\r?\\\\n/)\\n    .map((s) => s.trim())\\n    .filter(Boolean);\\n}\\n\\nasync function listDistros({ execFileFn = execFileAsync } = {}) {\\n  try {\\n    const { stdout } = await execFileFn(\\\"wsl.exe\\\", [\\\"-l\\\", \\\"-q\\\"], {\\n      timeout: 10_000,\\n      encoding: \\\"utf16le\\\",\\n      windowsHide: true,\\n    });\\n    return parseWslListQuiet(stdout);\\n  } catch {\\n    return [distroName()].filter(Boolean);\\n  }\\n}\\n\\nasync function defaultDistroName({ execFileFn = execFileAsync } = {}) {\\n  try {\\n    const { stdout } = await execFileFn(\\\"wsl.exe\\\", [\\\"-l\\\", \\\"-v\\\"], {\\n      timeout: 10_000,\\n      encoding: \\\"utf16le\\\",\\n      windowsHide: true,\\n    });\\n    const text = String(stdout || \\\"\\\").replace(/\\\\0/g, \\\"\\\");\\n    const m = text.match(/^\\\\s*\\\\*\\\\s*(\\\\S+)/m);\\n    return m ? m[1] : \\\"\\\";\\n  } catch {\\n    return \\\"\\\";\\n  }\\n}\\n\\nexport async function execute(args, _config = {}, deps = {}) {\\n  const action = args?.action === \\\"check\\\" ? \\\"check\\\" : \\\"list\\\";\\n  const currentDistro = distroName();\\n  const home = deps.home || homedir();\\n  const exists = deps.exists || existsSync;\\n\\n  if (action === \\\"list\\\") {\\n    const distros = deps.listDistros\\n      ? await deps.listDistros()\\n      : await listDistros({ execFileFn: deps.execFileFn || execFileAsync });\\n    const defaultDistro = deps.defaultDistroName\\n      ? await deps.defaultDistroName()\\n      : await defaultDistroName({ execFileFn: deps.execFileFn || execFileAsync });\\n    return {\\n      ok: true,\\n      action: \\\"list\\\",\\n      currentDistro,\\n      defaultDistro: defaultDistro || \\\"\\\",\\n      distros,\\n      advice: buildWorkspaceListAdvice({ currentDistro, defaultDistro, distros }),\\n    };\\n  }\\n\\n  const raw =\\n    typeof args?.path === \\\"string\\\" && args.path.trim()\\n      ? args.path.trim()\\n      : process.cwd() || home;\\n  const abs = raw.startsWith(\\\"~/\\\")\\n    ? `${home}${raw.slice(1)}`\\n    : raw === \\\"~\\\"\\n      ? home\\n      : resolve(raw);\\n  if (!abs.startsWith(\\\"/\\\")) {\\n    return {\\n      ok: false,\\n      action: \\\"check\\\",\\n      path: abs,\\n      error: \\\"path must be absolute Linux\\\",\\n      advice: [],\\n    };\\n  }\\n\\n  const pathExists = exists(abs);\\n  let isDirectory = false;\\n  if (pathExists) {\\n    try {\\n      isDirectory = (deps.stat || statSync)(abs).isDirectory();\\n    } catch {\\n      isDirectory = false;\\n    }\\n  }\\n  const classified = classifyWorkspacePath(abs, { home, exists });\\n  const advice = buildWorkspaceCheckAdvice({\\n    ...classified,\\n    exists: pathExists,\\n    isDirectory,\\n  });\\n  let resolved = abs;\\n  if (pathExists) {\\n    try {\\n      resolved = (deps.realpath || realpathSync)(abs);\\n    } catch {\\n      resolved = abs;\\n    }\\n  }\\n  return {\\n    ok: pathExists && isDirectory && !classified.onMnt,\\n    action: \\\"check\\\",\\n    currentDistro,\\n    path: resolved,\\n    exists: pathExists,\\n    isDirectory,\\n    onMnt: classified.onMnt,\\n    kind: classified.kind,\\n    hasGit: classified.hasGit,\\n    suggestedHome: classified.suggestedHome || \\\"\\\",\\n    advice,\\n  };\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/wsl-host.js\",\n      \"content\": \"// Canonical copy — sync to plugins via dsh-wsl-kit/scripts/sync-wsl-common.mjs\\nimport { existsSync, readFileSync } from \\\"node:fs\\\";\\nimport { execFile } from \\\"node:child_process\\\";\\nimport { promisify } from \\\"node:util\\\";\\n\\nconst execFileAsync = promisify(execFile);\\n\\nconst WINDOWS_BINS = {\\n  \\\"powershell.exe\\\": [\\\"/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe\\\"],\\n  \\\"cmd.exe\\\": [\\\"/mnt/c/Windows/System32/cmd.exe\\\"],\\n  \\\"explorer.exe\\\": [\\\"/mnt/c/Windows/explorer.exe\\\"],\\n};\\n\\nexport function windowsBin(name, { exists = existsSync } = {}) {\\n  for (const p of WINDOWS_BINS[name] || []) {\\n    if (exists(p)) return p;\\n  }\\n  return name;\\n}\\n\\nexport function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {\\n  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;\\n  try {\\n    return /microsoft/i.test(readRelease());\\n  } catch {\\n    return false;\\n  }\\n}\\n\\nexport function distroName({ env = process.env } = {}) {\\n  return env.WSL_DISTRO_NAME || \\\"WSL\\\";\\n}\\n\\nexport async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {\\n  const bin = windowsBin(\\\"powershell.exe\\\");\\n  const { stdout, stderr } = await execFileAsync(\\n    bin,\\n    [\\\"-NoProfile\\\", \\\"-NonInteractive\\\", \\\"-Command\\\", script],\\n    { timeout: timeoutMs, windowsHide: true, encoding: \\\"utf8\\\", maxBuffer: 4 * 1024 * 1024 },\\n  );\\n  return { stdout: String(stdout ?? \\\"\\\"), stderr: String(stderr ?? \\\"\\\") };\\n}\\n\\nexport async function runCmd(args, { timeoutMs = 15_000 } = {}) {\\n  const bin = windowsBin(\\\"cmd.exe\\\");\\n  const { stdout, stderr } = await execFileAsync(bin, args, {\\n    timeout: timeoutMs,\\n    windowsHide: true,\\n    encoding: \\\"utf8\\\",\\n    maxBuffer: 4 * 1024 * 1024,\\n  });\\n  return { stdout: String(stdout ?? \\\"\\\"), stderr: String(stderr ?? \\\"\\\") };\\n}\\n\\nfunction readOsRelease() {\\n  return readFileSync(\\\"/proc/sys/kernel/osrelease\\\", \\\"utf8\\\");\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"f14cb216ecbf7551fa7fe7d81df1fb6df16e13ac\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"72b6403f348c53865cf5a4fb89f32f26e816bf52de836ae04f29cc2bbbb4aa39\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 98,\n        \"words\": 559\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 323,\n        \"code\": 293,\n        \"comments\": 2,\n        \"blank\": 28\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 65,\n        \"code\": 60,\n        \"comments\": 0,\n        \"blank\": 5\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 17,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"wsl_workspace\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"wsl_workspace\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-wsl-workspace\",\n    \"repository_id\": 1351853812,\n    \"captured_at\": \"2026-10-22T16:02:20.261Z\",\n    \"window_start\": \"2026-09-22T16:02:20.261Z\",\n    \"stars\": 1,\n    \"pushed_at\": \"2026-10-09T09:01:03Z\",\n    \"issues\": {\n      \"open\": 0,\n      \"closed\": 0,\n      \"created_30d\": 0,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A20.261Z..2026-10-22T16%3A02%3A20.261Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4C3C:34EBF8:167694C:209DC6E:6ADA3393 and timestamp 2026-10-22 16:02:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-workspace%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A20.261Z..2026-10-22T16%3A02%3A20.261Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D38:15D91B:16DC138:20FB4E1:6ADA3394 and timestamp 2026-10-22 16:02:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"dsh-wsl-workspace-check\",\n      \"captured_at\": \"2026-10-22T16:02:29.214Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-workspace-check\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T16:02:29.214Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-wsl-workspace-check\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
+            "sha256": "05fe491c11935cf93346742a17d2b83a559bd1bd54583145c63247a8ef98e153"
+        }
+    },
+    "unavailable_artifacts": []
+}

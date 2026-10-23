@@ -1,0 +1,34 @@
+{
+    "repository": "1HelloMan1/dsh-vision-fallback",
+    "repository_id": 1333993743,
+    "captured_at": "2026-10-22T05:01:11.703Z",
+    "window_start": "2026-09-22T05:01:11.703Z",
+    "stars": 1,
+    "pushed_at": "2026-09-03T06:22:47Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-vision-fallback",
+        "captured_at": "2026-10-22T05:01:20.080Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 909,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-vision-fallback",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T09:34:04.865Z",
+            "captured_at": "2026-10-22T05:01:20.080Z",
+            "source_url": "https://registry.npmjs.org/dsh-vision-fallback",
+            "error": null,
+            "latest_version": "0.10.0",
+            "latest_published_at": "2026-09-03T06:30:10.173Z",
+            "latest_error": null
+        }
+    }
+}

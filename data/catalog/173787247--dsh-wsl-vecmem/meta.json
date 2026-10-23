@@ -1,0 +1,55 @@
+{
+    "repository": "173787247/dsh-wsl-vecmem",
+    "repository_id": 1381726438,
+    "captured_at": "2026-10-22T15:13:34.841Z",
+    "window_start": "2026-09-22T15:13:34.841Z",
+    "stars": 1,
+    "pushed_at": "2026-09-30T03:25:35Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6600:102599:97D231:A4229D:6ADA2821 and timestamp 2026-10-22 15:13:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 66C4:32355E:9A3991:A68816:6ADA2822 and timestamp 2026-10-22 15:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A34.841Z..2026-10-22T15%3A13%3A34.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 677A:1035EF:96F8E4:A343B1:6ADA2823 and timestamp 2026-10-22 15:13:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A34.841Z..2026-10-22T15%3A13%3A34.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6870:325E8B:943E9B:A0898F:6ADA2825 and timestamp 2026-10-22 15:13:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A34.841Z..2026-10-22T15%3A13%3A34.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6914:1C593F:9CEDD7:A930DD:6ADA2826 and timestamp 2026-10-22 15:13:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-wsl-vecmem",
+        "captured_at": "2026-10-22T15:13:42.301Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-vecmem",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T15:13:42.301Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-vecmem",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

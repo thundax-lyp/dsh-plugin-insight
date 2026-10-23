@@ -1,0 +1,34 @@
+{
+    "repository": "18477514055/dsh-ledger-memory",
+    "repository_id": 1412857520,
+    "captured_at": "2026-10-22T07:21:29.573Z",
+    "window_start": "2026-09-22T07:21:29.573Z",
+    "stars": 2,
+    "pushed_at": "2026-10-20T07:48:55Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-ledger-memory",
+        "captured_at": "2026-10-22T07:21:38.340Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 3016,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-ledger-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-10T06:20:43.538Z",
+            "captured_at": "2026-10-22T07:21:38.340Z",
+            "source_url": "https://registry.npmjs.org/dsh-ledger-memory",
+            "error": null,
+            "latest_version": "1.3.0",
+            "latest_published_at": "2026-10-20T07:47:29.391Z",
+            "latest_error": null
+        }
+    }
+}

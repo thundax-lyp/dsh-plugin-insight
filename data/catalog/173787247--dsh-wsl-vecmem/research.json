@@ -1,0 +1,410 @@
+{
+    "schema_version": 4,
+    "id": "72041885b740f5aa3ebf9a6d2b7f8eab",
+    "identity": "github:1381726438:root",
+    "slug": "173787247--dsh-wsl-vecmem",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1381726438:root",
+            "repository_id": 1381726438,
+            "component_id": "root",
+            "repository": "173787247/dsh-wsl-vecmem",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wsl-vecmem",
+            "entry_type": "plugin",
+            "technical_category": "memory-knowledge",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "899ec507ac1fc305895213252971fd428d18745f986319bbfaedc45d18a40c32",
+                "code": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                "maintenance": "834ec50a0d47973e224753c8ef423b34d7ebd2f6435e77979679e67d602a6e2d"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-22-01-github-1381726438-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
+                    "retrieved_at": "2026-10-22T15:30:14.950Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-22-01-github-1381726438-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-vecmem",
+                            "commit": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                            "path": "README.md",
+                            "content_sha256": "bce3fb6de9585330074be053300046b1ad9e39fbe539eb0b5fe93cc492a2b6a8"
+                        }
+                    ],
+                    "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                    "captured_at": "2026-10-22T15:30:14.950Z",
+                    "summary": "用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-vecmem/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-22-01-github-1381726438-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-vecmem",
+                            "commit": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                            "path": "README.md",
+                            "content_sha256": "bce3fb6de9585330074be053300046b1ad9e39fbe539eb0b5fe93cc492a2b6a8"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-vecmem",
+                            "commit": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                            "path": "lib/store.js",
+                            "content_sha256": "2e47d4f458efc16548239b1e6348ab53512bc51abfa219a1dd3855edab36cd19"
+                        }
+                    ],
+                    "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                    "captured_at": "2026-10-22T15:30:14.950Z",
+                    "summary": "核查 README.md、lib/store.js；工具调用 Ollama 生成 embedding，元数据写 JSON、Float32 向量写 sidecar；加载时校验维度与字节数，检索计算余弦并可按工作区过滤。",
+                    "artifact": "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-vecmem/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。 [Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "工具调用 Ollama 生成 embedding，元数据写 JSON、Float32 向量写 sidecar；加载时校验维度与字节数，检索计算余弦并可按工作区过滤。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Ollama 模型下载、CPU/GPU、磁盘 | 选模型、store、workspace 与重建源 | 初始索引时间未知 |\n| 持续使用 | 每次 embedding、O(n) 扫描、Float32 字节 | 标注片段、检查命中与清理 | p50/p95 和字节/条未知 |\n| 失败恢复 | 重新 embedding 全量语料 | 识别 mismatch、恢复源文本、重建 | 崩溃/并发恢复率未知 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。若 5k 条内检索延迟与 Recall 达标、workspace 零串漏、模型变更被拒绝且崩溃后可从源文本重建，再考虑试用；出现 sidecar mismatch 无可控恢复或并发丢写即停止。 [Q09](#research-q09)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 空间结构 | 向量从 JSON 分离为 Float32 sidecar | 真实磁盘节省与 mmap/扫描上限 |\n| 一致性检测 | 字节数与 items×dims 比较 | 检测后能否自动恢复 |\n| 语义检索 | Ollama embedding、cosine、workspace 过滤存在 | Recall@K、模型迁移与隔离正确性 |",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "Float32 sidecar 和尺寸一致性检查直接回应大 JSON 的扩展瓶颈，设计可借鉴；写入顺序只能暴露不一致，尚缺恢复、锁与并发事务。",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 [Q08](#research-q08)",
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1381726438:root",
+                            "area": "code",
+                            "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-22T15:30:14.950Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-22T15:30:14.950Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                "reviewed_at": "2026-10-22T15:30:14.950Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381726438:root",
+                        "area": "code",
+                        "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "相对明确基线存在具体集成和机制增量；双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 未运行，效果只作解释性判断。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-22-01-github-1381726438-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可重建的小型本地碎片库值得观察；在检索质量、并发和崩溃重建通过前不要保存关键记忆。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "本地短文本语义检索场景和非 vault 边界明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "Float32 sidecar与 mismatch 检查相对向量 JSON 有实际增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持存储与搜索机制；未运行 Ollama 或规模实验。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "本地无 API 费，但模型计算、O(n) 扫描、磁盘和重建成本中等。"
+                    }
+                },
+                "score": 65,
+                "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                "reviewed_at": "2026-10-22T15:30:14.950Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-22-01-github-1381726438-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1381726438:root",
+                        "area": "code",
+                        "fingerprint": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1381726438:root",
+            "repository": "173787247/dsh-wsl-vecmem",
+            "path": "",
+            "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+            "fingerprints": {
+                "directory": "899ec507ac1fc305895213252971fd428d18745f986319bbfaedc45d18a40c32",
+                "code": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+                "maintenance": "834ec50a0d47973e224753c8ef423b34d7ebd2f6435e77979679e67d602a6e2d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-22T15:06:59Z",
+            "analysis_sha256": "3e366d985ae40ea046d0b4954cace2636a5a20a431f9d551121c6e04d9f76f7f"
+        },
+        "publication.metadata": "data/catalog/173787247--dsh-wsl-vecmem/meta.json",
+        "publication.summaries": {
+            "text": "用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。",
+            "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+            "source_url": "https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+            "items": {
+                "模型工具": "注册 vecmem 状态、写入、语义检索和按 workspace 清理四个本地向量记忆工具。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 短文本写入 | 生成 embedding 并保存文本、元数据与向量。 | 仅由固定版本源码确认；运行效果未验证 |\n| 语义检索 | 按余弦相似度和 workspace 返回命中。 | 仅由固定版本源码确认；运行效果未验证 |\n| 状态与清理 | 报告存储状态并按范围清除。 | 仅由固定版本源码确认；运行效果未验证 |"
+        },
+        "publication.advice": {
+            "revision": "c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29",
+            "text": "适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。若 5k 条内检索延迟与 Recall 达标、workspace 零串漏、模型变更被拒绝且崩溃后可从源文本重建，再考虑试用；出现 sidecar mismatch 无可控恢复或并发丢写即停止。 [Q09](#research-q09)"
+        },
+        "registry": "data/plugins/173787247--dsh-wsl-vecmem",
+        "reports": "# dsh-wsl-vecmem\n\n> 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-vecmem](https://github.com/173787247/dsh-wsl-vecmem)\n- **版本号**：0.2.0（[固定提交 c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29](https://github.com/173787247/dsh-wsl-vecmem/tree/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。 [Q01](#research-q01)\n- **亮点**：相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)\n- **思考**：双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 [Q04](#research-q04)\n- **建议**：可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 [Q08](#research-q08)\n\n采用建议：适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。若 5k 条内检索延迟与 Recall 达标、workspace 零串漏、模型变更被拒绝且崩溃后可从源文本重建，再考虑试用；出现 sidecar mismatch 无可控恢复或并发丢写即停止。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)\n\n## 关键质疑\n\n双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 [Q08](#research-q08)\n\n用 1k/5k 条带相关性金标和两个 workspace 的可重建语料，测索引秒数、磁盘/条、search p50/p95 与 Recall@K；在 append vector 后杀进程并并发执行 add，确认 mismatch 被发现且可从源重建。串漏、丢写或 5k 条延迟超门槛即转成熟向量库。\n\n## 场景与替代办法\n\n面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。 [Q01](#research-q01)\n\n基线是普通文本/JSON 检索或成熟向量库；插件更轻且本地，但缺少事务、索引和复杂过滤能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Ollama 与 embedding 模型 | 必需 | add/search 生成向量 | 网络/模型错误，不能写入或查询 |\n| store.json 与 vectors.f32 写权限 | 必需 | 保存元数据和 Float32 行 | 写失败或双文件 mismatch |\n| 稳定 embedding 维度/模型指纹 | 必需 | 保持余弦可比 | 维度变化被拒绝，模型语义变化尚未标记 |\n| workspace 规范与可重建源文本 | 安全采用必需 | 过滤范围和故障重建 | 空 workspace 可能混搜，损坏后难恢复 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|---|\n| 状态检查 | Agent 调 status 核对模型、路径、条数和 mismatch | 模型可达且两文件尺寸一致 |\n| 写入 | add 生成向量，先 append sidecar 后写索引 | 维度一致，返回 id；失败不继续检索 |\n| 检索 | search 生成查询向量并按 workspace/topK 排序 | 命中来源可识别且不跨空间 |\n| 清理/恢复 | 按 workspace clear 或从源文本重建 | 两文件行数保持一致，不手工拼接损坏数据 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | Ollama 模型下载、CPU/GPU、磁盘 | 选模型、store、workspace 与重建源 | 初始索引时间未知 |\n| 持续使用 | 每次 embedding、O(n) 扫描、Float32 字节 | 标注片段、检查命中与清理 | p50/p95 和字节/条未知 |\n| 失败恢复 | 重新 embedding 全量语料 | 识别 mismatch、恢复源文本、重建 | 崩溃/并发恢复率未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 空间结构 | 向量从 JSON 分离为 Float32 sidecar | 真实磁盘节省与 mmap/扫描上限 |\n| 一致性检测 | 字节数与 items×dims 比较 | 检测后能否自动恢复 |\n| 语义检索 | Ollama embedding、cosine、workspace 过滤存在 | Recall@K、模型迁移与隔离正确性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 dsh-wsl-vecmem 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是普通文本/JSON 检索或成熟向量库；插件更轻且本地，但缺少事务、索引和复杂过滤能力。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\n# dsh-wsl-vecmem\n\n> **语言：** **中文**（本页） · [English](./README.en.md)\n\n本地向量小记：用 **Ollama embedding** + `~/.dsh/vecmem/store.json` 存短文本，供语义检索。\n\n补 Obsidian / 笔记库，**不是** vault 替代品。依赖本机 Ollama（可与 [dsh-wsl-ollama](https://github.com/173787247/dsh-wsl-ollama) 同机）。\n\n## 最短上手\n\n```sh\nollama pull nomic-embed-text\ndsh plugin --profile web add github:173787247/dsh-wsl-vecmem\n```\n\n## 工具\n\n| 工具 | 作用 |\n|------|------|\n| `vecmem_status` | store 路径、embed 模型、条数 |\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n工具调用 Ollama 生成 embedding，元数据写 JSON、Float32 向量写 sidecar；加载时校验维度与字节数，检索计算余弦并可按工作区过滤。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n需要可访问的 Ollama embedding 服务、模型文件、本地磁盘与写权限；workspace 只是元数据过滤，容量、隐私备份和模型迁移需用户管理。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本是安装 Ollama、下载 embedding 模型、选择 store 路径和规划 workspace；持续成本是每次 add/search 的本地推理时间、Float32 矩阵磁盘和 O(n) 余弦扫描/可选 reranker；失败恢复包括 JSON 与 vectors.f32 尺寸不一致、模型维度变化和手工重建。合格单位是一次检索返回与查询语义相关、来源可识别且不跨 workspace 泄漏的片段。当前缺每千条写入/检索延迟、每条字节、Recall@K、跨 workspace 泄漏和崩溃恢复率。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n#### 缺口\n\n- 缺少目标硬件与语料上的 embedding 秒数、索引字节/条、搜索延迟、Recall@K、workspace 隔离和崩溃恢复数据。\n  **影响**：无法判断轻量 sidecar 在实际规模是否优于关键词搜索或成熟向量库。\n  **进一步探讨**：构造带相关性金标和多个 workspace 的 1k/5k 条语料，测 add/search p50/p95、磁盘/条、Recall@K，并在向量写后索引写前杀进程测试恢复。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\nFloat32 sidecar 和尺寸一致性检查直接回应大 JSON 的扩展瓶颈，设计可借鉴；写入顺序只能暴露不一致，尚缺恢复、锁与并发事务。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。若 5k 条内检索延迟与 Recall 达标、workspace 零串漏、模型变更被拒绝且崩溃后可从源文本重建，再考虑试用；出现 sidecar mismatch 无可控恢复或并发丢写即停止。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/store.js:1-40](https://github.com/173787247/dsh-wsl-vecmem/blob/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29/lib/store.js#L1-L40)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\n *\n * The first version kept embeddings inside store.json as decimal numbers. That\n * is 5.5x larger than the same data as Float32, and it is all cost with no\n * benefit -- nobody reads a vector by eye. Measured on a real store:\n *\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\n *     4610 items, 4096 dims, Float32    76 MB\n *\n * Worse than the size: load() ran JSON.parse over the whole file on every call\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\n * The store could not have grown past a few thousand entries no matter what\n * maxItems said.\n *\n * Layout:\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\n *\n * Two files can drift apart if a write is interrupted. dims and the item count\n * are both checked on load, and a mismatch is reported rather than silently\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\n */\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \"node:fs\";\nimport { dirname, join } from \"node:path\";\nimport { homedir } from \"node:os\";\nimport { randomUUID } from \"node:crypto\";\n\nexport function cosine(a, b) {\n  if (!a?.length || a.length !== b?.length) return 0;\n  let dot = 0;\n  let na = 0;\n  let nb = 0;\n  for (let i = 0; i < a.length; i++) {\n    dot += a[i] * b[i];\n    na += a[i] * a[i];\n    nb += b[i] * b[i];\n  }\n  const d = Math.sqrt(na) * Math.sqrt(nb);\n```\n\n</details>\n\n#### 缺口\n\n- 未验证 O(n) 搜索规模、检索质量、并发写和双文件崩溃恢复。\n  **影响**：本地不等于可靠，错误相似度或跨 workspace 命中会污染代理上下文。\n  **进一步探讨**：对多 workspace 金标语料做规模与故障注入实验，核对 Recall@K、延迟、隔离和重建结果。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：3271e98eb5b1dae3110dcabd6075905fc7268de1a3b1601691fc9b4473933baf。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 124 | — | — | 568 |\n| .js | source | 2 | 464 | 371 | 70 | — |\n| .js | test | 1 | 56 | 50 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 短文本写入 | 生成 embedding 并保存文本、元数据与向量。 | 仅由固定版本源码确认；运行效果未验证 |\n| 语义检索 | 按余弦相似度和 workspace 返回命中。 | 仅由固定版本源码确认；运行效果未验证 |\n| 状态与清理 | 报告存储状态并按范围清除。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\nFloat32 sidecar 和尺寸一致性检查直接回应大 JSON 的扩展瓶颈，设计可借鉴；写入顺序只能暴露不一致，尚缺恢复、锁与并发事务。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/store.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：用 1k/5k 条带相关性金标和两个 workspace 的可重建语料，测索引秒数、磁盘/条、search p50/p95 与 Recall@K；在 append vector 后杀进程并并发执行 add，确认 mismatch 被发现且可从源重建。串漏、丢写或 5k 条延迟超门槛即转成熟向量库。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-vecmem/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-wsl-vecmem\",\n  \"revision\": \"c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/store.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"研究 dsh-wsl-vecmem 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"谁在何种任务中使用，原有办法和合格结果是什么？\",\n        \"answer\": \"面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是普通文本/JSON 检索或成熟向量库；插件更轻且本地，但缺少事务、索引和复杂过滤能力。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 20,\n            \"observation\": \"作者材料说明目标用户、安装方式、主要能力和已知边界。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"能力如何从入口、注册、调用到状态变化实现？\",\n        \"answer\": \"工具调用 Ollama 生成 embedding，元数据写 JSON、Float32 向量写 sidecar；加载时校验维度与字节数，检索计算余弦并可按工作区过滤。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"相对原生能力或简单替代，固定版本增加了什么？\",\n        \"answer\": \"相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"什么前提最可能使核心价值不成立？\",\n        \"answer\": \"最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 这会直接收窄采用范围，而不是否定所有能力。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"启动、持续生效和失败恢复分别依赖什么？\",\n        \"answer\": \"需要可访问的 Ollama embedding 服务、模型文件、本地磁盘与写权限；workspace 只是元数据过滤，容量、隐私备份和模型迁移需用户管理。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"首次、持续与失败恢复成本及效果证据如何？\",\n        \"answer\": \"首次成本是安装 Ollama、下载 embedding 模型、选择 store 路径和规划 workspace；持续成本是每次 add/search 的本地推理时间、Float32 矩阵磁盘和 O(n) 余弦扫描/可选 reranker；失败恢复包括 JSON 与 vectors.f32 尺寸不一致、模型维度变化和手工重建。合格单位是一次检索返回与查询语义相关、来源可识别且不跨 workspace 泄漏的片段。当前缺每千条写入/检索延迟、每条字节、Recall@K、跨 workspace 泄漏和崩溃恢复率。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少目标硬件与语料上的 embedding 秒数、索引字节/条、搜索延迟、Recall@K、workspace 隔离和崩溃恢复数据。\",\n            \"impact\": \"无法判断轻量 sidecar 在实际规模是否优于关键词搜索或成熟向量库。\",\n            \"next_step\": \"构造带相关性金标和多个 workspace 的 1k/5k 条语料，测 add/search p50/p95、磁盘/条、Recall@K，并在向量写后索引写前杀进程测试恢复。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"实现有哪些可靠性取舍和可复用设计？\",\n        \"answer\": \"Float32 sidecar 和尺寸一致性检查直接回应大 JSON 的扩展瓶颈，设计可借鉴；写入顺序只能暴露不一致，尚缺恢复、锁与并发事务。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"由贡献和限制能推导什么未验证方向？\",\n        \"answer\": \"从已确认机制与关键限制可推导：可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"对什么人值得观察或试用，成功与停止条件是什么？\",\n        \"answer\": \"适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。若 5k 条内检索延迟与 Recall 达标、workspace 零串漏、模型变更被拒绝且崩溃后可从源文本重建，再考虑试用；出现 sidecar mismatch 无可控恢复或并发丢写即停止。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/store.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未验证 O(n) 搜索规模、检索质量、并发写和双文件崩溃恢复。\",\n            \"impact\": \"本地不等于可靠，错误相似度或跨 workspace 命中会污染代理上下文。\",\n            \"next_step\": \"对多 workspace 金标语料做规模与故障注入实验，核对 Recall@K、延迟、隔离和重建结果。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-vecmem\\n\\n> **语言：** **中文**（本页） · [English](./README.en.md)\\n\\n本地向量小记：用 **Ollama embedding** + `~/.dsh/vecmem/store.json` 存短文本，供语义检索。\\n\\n补 Obsidian / 笔记库，**不是** vault 替代品。依赖本机 Ollama（可与 [dsh-wsl-ollama](https://github.com/173787247/dsh-wsl-ollama) 同机）。\\n\\n## 最短上手\\n\\n```sh\\nollama pull nomic-embed-text\\ndsh plugin --profile web add github:173787247/dsh-wsl-vecmem\\n```\\n\\n## 工具\\n\\n| 工具 | 作用 |\\n|------|------|\\n| `vecmem_status` | store 路径、embed 模型、条数 |\\n| `vecmem_add` | 写入一条文本并嵌入 |\\n| `vecmem_search` | 按语义相似度检索 |\\n\\n## 配置\\n\\n```yaml\\nconfig:\\n  enabled: true\\n  storePath: \\\"\\\"            # 空 = ~/.dsh/vecmem/store.json\\n  ollamaBase: \\\"http://127.0.0.1:11434\\\"\\n  embedModel: \\\"nomic-embed-text\\\"\\n  timeoutMs: 60000\\n  maxItems: 5000\\n```\\n\\nOllama 在 Windows 时，把 `ollamaBase` 改成可从 WSL 访问的地址（见 ollama 插件说明）。\\n\\n## 兼容性\\n\\n| 字段 | 值 |\\n|------|----|\\n| **插件** | `dsh-wsl-vecmem` **0.2.0** |\\n| **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |\\n| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.0-rc.2`**）— 套件唯一真源 |\\n| **套件档位** | 可选（默认不在 `install.sh` / `KIT_SET=daily`） |\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-vecmem\\\",\\n  \\\"version\\\": \\\"0.2.0\\\",\\n  \\\"description\\\": \\\"DeepSeek Harness WSL plugin: tiny local vector memory via Ollama embeddings + JSON store.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": { \\\"type\\\": \\\"git\\\", \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-vecmem.git\\\" },\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": { \\\"node\\\": \\\">=18\\\" },\\n  \\\"scripts\\\": { \\\"test\\\": \\\"node --test test/*.test.js\\\" },\\n  \\\"files\\\": [\\\"index.js\\\", \\\"lib\\\", \\\"cordis.patch.yml\\\", \\\"README.md\\\", \\\"README.en.md\\\", \\\"README.zh.md\\\", \\\"LICENSE\\\", \\\"CHANGELOG.md\\\"],\\n  \\\"keywords\\\": [\\\"dsh-plugin\\\", \\\"wsl\\\", \\\"embeddings\\\", \\\"memory\\\"],\\n  \\\"dsh\\\": { \\\"bundle\\\": { \\\"patch\\\": \\\"./cordis.patch.yml\\\" } }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/store.js\",\n      \"content\": \"/**\\n * vecmem storage: metadata in JSON, vectors in a raw Float32 sidecar.\\n *\\n * The first version kept embeddings inside store.json as decimal numbers. That\\n * is 5.5x larger than the same data as Float32, and it is all cost with no\\n * benefit -- nobody reads a vector by eye. Measured on a real store:\\n *\\n *     4610 items, 4096 dims, JSON      400 MB   (96% of it vector text)\\n *     4610 items, 4096 dims, Float32    76 MB\\n *\\n * Worse than the size: load() ran JSON.parse over the whole file on every call\\n * and save() rewrote all of it. At 20,000 items each add() would parse ~1.7 GB.\\n * The store could not have grown past a few thousand entries no matter what\\n * maxItems said.\\n *\\n * Layout:\\n *   store.json    { version, dims, items: [{id, text, meta, createdAt}] }\\n *   vectors.f32   items.length x dims float32, row i belongs to items[i]\\n *\\n * Two files can drift apart if a write is interrupted. dims and the item count\\n * are both checked on load, and a mismatch is reported rather than silently\\n * producing garbage similarity scores -- a dimension mismatch returns NaN from\\n * cosine(), and sorting NaN gives an arbitrary order with no error at all.\\n */\\nimport { readFileSync, writeFileSync, appendFileSync, mkdirSync, existsSync, openSync, readSync, closeSync, statSync } from \\\"node:fs\\\";\\nimport { dirname, join } from \\\"node:path\\\";\\nimport { homedir } from \\\"node:os\\\";\\nimport { randomUUID } from \\\"node:crypto\\\";\\n\\nexport function cosine(a, b) {\\n  if (!a?.length || a.length !== b?.length) return 0;\\n  let dot = 0;\\n  let na = 0;\\n  let nb = 0;\\n  for (let i = 0; i < a.length; i++) {\\n    dot += a[i] * b[i];\\n    na += a[i] * a[i];\\n    nb += b[i] * b[i];\\n  }\\n  const d = Math.sqrt(na) * Math.sqrt(nb);\\n  return d ? dot / d : 0;\\n}\\n\\nfunction normalizeWorkspace(workspace) {\\n  if (workspace == null) return \\\"\\\";\\n  return String(workspace).trim();\\n}\\n\\nconst EMPTY = { version: 2, dims: 0, items: [] };\\n\\nexport function createStore(storePath) {\\n  const path = storePath || join(homedir(), \\\".dsh\\\", \\\"vecmem\\\", \\\"store.json\\\");\\n  const vecPath = path.replace(/\\\\.json$/, \\\"\\\") + \\\".vectors.f32\\\";\\n  mkdirSync(dirname(path), { recursive: true });\\n\\n  function load() {\\n    if (!existsSync(path)) return { ...EMPTY, items: [] };\\n    let db;\\n    try {\\n      db = JSON.parse(readFileSync(path, \\\"utf8\\\"));\\n    } catch {\\n      return { ...EMPTY, items: [] };\\n    }\\n    // Refuse to hand back a store whose two halves disagree. Reporting it is\\n    // the only safe option: the alternative is scores that look plausible.\\n    if (db.version === 2 && db.dims) {\\n      const bytes = existsSync(vecPath) ? statSync(vecPath).size : 0;\\n      const expected = db.items.length * db.dims * 4;\\n      if (bytes !== expected) {\\n        db.__mismatch = `vectors.f32 is ${bytes} bytes, expected ${expected} for ${db.items.length} items x ${db.dims} dims`;\\n      }\\n    }\\n    return db;\\n  }\\n\\n  /** Row i of the sidecar, as a plain array. */\\n  function readVector(i, dims) {\\n    const fd = openSync(vecPath, \\\"r\\\");\\n    try {\\n      const buf = Buffer.allocUnsafe(dims * 4);\\n      const got = readSync(fd, buf, 0, dims * 4, i * dims * 4);\\n      if (got !== dims * 4) return null;\\n      return Array.from(new Float32Array(buf.buffer, buf.byteOffset, dims));\\n    } finally {\\n      closeSync(fd);\\n    }\\n  }\\n\\n  return {\\n    path,\\n    vectorPath: vecPath,\\n    dims() { return load().dims ?? 0; },\\n    mismatch() { return load().__mismatch ?? null; },\\n\\n    list() {\\n      return load().items.map(({ id, text, meta, createdAt }) => ({ id, text, meta, createdAt }));\\n    },\\n\\n    all() {\\n      const db = load();\\n      if (!db.dims || !db.items.length) return [];\\n      // One read for the whole matrix beats one syscall per row.\\n      let buf = null;\\n      try { buf = readFileSync(vecPath); } catch { /* missing sidecar */ }\\n      return db.items.map((it, i) => ({\\n        ...it,\\n        embedding: buf && buf.length >= (i + 1) * db.dims * 4\\n          ? Array.from(new Float32Array(buf.buffer, buf.byteOffset + i * db.dims * 4, db.dims))\\n          : [],\\n      }));\\n    },\\n\\n    add(item) {\\n      const db = load();\\n      const dims = item.embedding?.length ?? 0;\\n      if (!dims) throw new Error(\\\"embedding required\\\");\\n      if (db.dims && db.dims !== dims) {\\n        throw new Error(`dimension mismatch: store holds ${db.dims}-dim vectors, this one is ${dims}. Re-index before mixing models.`);\\n      }\\n      const { embedding, ...rest } = item;\\n      db.items.push(rest);\\n      db.dims = dims;\\n      db.version = 2;\\n      // Vector first, then the index. A crash between them leaves an extra\\n      // trailing vector, which the byte-count check reports as a mismatch\\n      // rather than as a wrong answer.\\n      appendFileSync(vecPath, Buffer.from(new Float32Array(embedding).buffer));\\n      writeFileSync(path, JSON.stringify({ version: 2, dims: db.dims, items: db.items }));\\n      return rest;\\n    },\\n\\n    clear(workspace) {\\n      const ws = normalizeWorkspace(workspace);\\n      const db = load();\\n      const before = db.items.length;\\n      if (!ws) {\\n        writeFileSync(path, JSON.stringify({ version: 2, dims: 0, items: [] }));\\n        writeFileSync(vecPath, Buffer.alloc(0));\\n        return { removed: before, remaining: 0 };\\n      }\\n      // Keep the rows that survive, in order, so the sidecar stays aligned.\\n      const keep = [];\\n      const keepVec = [];\\n      const buf = existsSync(vecPath) ? readFileSync(vecPath) : Buffer.alloc(0);\\n      for (const [i, it] of db.items.entries()) {\\n        if (it.meta?.workspace === ws) continue;\\n        keep.push(it);\\n        if (db.dims && buf.length >= (i + 1) * db.dims * 4) {\\n          keepVec.push(buf.subarray(i * db.dims * 4, (i + 1) * db.dims * 4));\\n        }\\n      }\\n      writeFileSync(vecPath, keepVec.length ? Buffer.concat(keepVec) : Buffer.alloc(0));\\n      writeFileSync(path, JSON.stringify({ version: 2, dims: keep.length ? db.dims : 0, items: keep }));\\n      return { removed: before - keep.length, remaining: keep.length };\\n    },\\n  };\\n}\\n\\nexport function createVecmem({\\n  storePath,\\n  ollamaBase = \\\"http://127.0.0.1:11434\\\",\\n  embedModel = \\\"nomic-embed-text\\\",\\n  timeoutMs = 60_000,\\n  maxItems = 500_000,\\n  rerankerUrl = process.env.DSH_RERANKER_URL || \\\"http://127.0.0.1:8790/rerank\\\",\\n  rerankPool = 50,\\n  fetchImpl = fetch,\\n} = {}) {\\n  const store = createStore(storePath);\\n  const root = String(ollamaBase).replace(/\\\\/$/, \\\"\\\");\\n\\n  async function embed(text) {\\n    const ctrl = new AbortController();\\n    const t = setTimeout(() => ctrl.abort(), timeoutMs);\\n    try {\\n      // nomic rejected input past its 512-token window with a plain 500. Budget\\n      // by script, not by character count: CJK runs 1-2 tokens per character\\n      // against roughly 0.25 for Latin.\\n      const cjk = (text.match(/[\\\\u4e00-\\\\u9fff]/g) ?? []).length;\\n      const ratio = text.length ? cjk / text.length : 0;\\n      const cap = ratio > 0.3 ? 2500 : ratio > 0.1 ? 4000 : 6000;\\n      const prompt = text.length > cap ? text.slice(0, cap) : text;\\n\\n      const res = await fetchImpl(`${root}/api/embeddings`, {\\n        method: \\\"POST\\\",\\n        headers: { \\\"Content-Type\\\": \\\"application/json\\\" },\\n        body: JSON.stringify({ model: embedModel, prompt }),\\n        signal: ctrl.signal,\\n      });\\n      const json = await res.json();\\n      if (!res.ok) throw new Error(json?.error || `embed HTTP ${res.status}`);\\n      const emb = json.embedding || json.embeddings?.[0];\\n      if (!emb?.length) throw new Error(\\\"empty embedding\\\");\\n      return emb;\\n    } finally {\\n      clearTimeout(t);\\n    }\\n  }\\n\\n  return {\\n    storePath: store.path,\\n    vectorPath: store.vectorPath,\\n    embedModel,\\n    async status() {\\n      const count = store.list().length;\\n      const mismatch = store.mismatch();\\n      try {\\n        const res = await fetchImpl(`${root}/api/tags`, { signal: AbortSignal.timeout?.(5000) });\\n        return { ok: true, storePath: store.path, vectorPath: store.vectorPath,\\n          embedModel, dims: store.dims(), ollama: res.ok, count, rerankerUrl,\\n          ...(mismatch ? { warning: mismatch } : {}) };\\n      } catch (e) {\\n        return { ok: true, storePath: store.path, vectorPath: store.vectorPath, embedModel,\\n          ollama: false, error: e instanceof Error ? e.message : String(e), count,\\n          ...(mismatch ? { warning: mismatch } : {}) };\\n      }\\n    },\\n    async add({ text, meta, workspace } = {}) {\\n      const body = String(text || \\\"\\\").trim();\\n      if (!body) throw new Error(\\\"text required\\\");\\n      if (store.list().length >= maxItems) throw new Error(`store full (maxItems=${maxItems})`);\\n      const embedding = await embed(body);\\n      const m = meta && typeof meta === \\\"object\\\" ? { ...meta } : {};\\n      const ws = normalizeWorkspace(workspace);\\n      if (ws) m.workspace = ws;\\n      const item = {\\n        id: randomUUID(),\\n        text: body.slice(0, 8000),\\n        meta: m,\\n        embedding,\\n        createdAt: new Date().toISOString(),\\n      };\\n      store.add(item);\\n      return { ok: true, id: item.id, dims: embedding.length, workspace: m.workspace || null };\\n    },\\n    /**\\n     * Two-stage retrieval.\\n     *\\n     * Embeddings are a bi-encoder: query and document are encoded apart and\\n     * compared as vectors. That is cheap enough to scan the whole store, and it\\n     * cannot see how the two texts interact -- on this corpus an unrelated\\n     * transcript scored 0.633 against 0.766 for the right answer, so the order\\n     * within that gap meant nothing.\\n     *\\n     * A cross-encoder reads both texts together and produces a real ordering,\\n     * but is far too slow to run over every item. So: retrieve broadly with\\n     * vectors, reorder the shortlist with the reranker.\\n     *\\n     * The reranker is a separate local service. If it is not running the search\\n     * still answers from the embedding order rather than failing -- a degraded\\n     * ranking beats no ranking.\\n     */\\n    async search({ query, topK = 5, workspace } = {}) {\\n      const q = String(query || \\\"\\\").trim();\\n      if (!q) throw new Error(\\\"query required\\\");\\n      const qe = await embed(q);\\n      const ws = normalizeWorkspace(workspace);\\n      let items = store.all();\\n      if (ws) items = items.filter((it) => it.meta?.workspace === ws);\\n\\n      const scored = items.map((it) => ({\\n        id: it.id, text: it.text, meta: it.meta,\\n        score: cosine(qe, it.embedding),\\n      }));\\n      scored.sort((a, b) => b.score - a.score);\\n      // ★ 这里原来写死 Math.min(20, ...)。后果不是\\\"最多给 20 条\\\"，而是\\n      //   调用方【无法区分】\\\"只有 20 条相关\\\"和\\\"池子里就这么多\\\"。我复查一次\\n      //   检索缺陷时就被它误导：topK=50 拿到 20 条，我据此说\\\"前 50 名里没有\\\"，\\n      //   而实际只看了前 20。静默的上限会让诊断结论出错。\\n      const want = Math.max(1, Math.min(topK, scored.length));\\n\\n      let pool = scored.slice(0, Math.min(rerankPool, scored.length));\\n      let reranked = false;\\n      if (rerankerUrl && pool.length > 1) {\\n        try {\\n          const res = await fetchImpl(rerankerUrl, {\\n            method: \\\"POST\\\",\\n            headers: { \\\"Content-Type\\\": \\\"application/json\\\" },\\n            body: JSON.stringify({ query: q, documents: pool.map((h) => h.text), top_k: pool.length }),\\n            signal: AbortSignal.timeout?.(120_000),\\n          });\\n          if (res.ok) {\\n            const body = await res.json();\\n            if (Array.isArray(body.results) && body.results.length) {\\n              pool = body.results.map((r) => ({ ...pool[r.index], score: r.score }));\\n              reranked = true;\\n            }\\n          }\\n        } catch {\\n          // Service down, still loading, or the port is not reachable from here.\\n          // Fall through with the embedding order.\\n        }\\n      }\\n\\n      const hits = pool.slice(0, want);\\n      // ★ 一个裸列表说不出\\\"找到了\\\"还是\\\"没有\\\"。实测：问「报名了什么考试」\\n      //   时全部分数落在 0.0274..0.0028，而库里其实有那条数据 —— 换个贴切的\\n      //   问法能拿 0.99。低分不是排序错，是向量空间里没有匹配。\\n      //   把这件事报出来，调用方才分得清\\\"有结果\\\"和\\\"没结果\\\"。\\n      const top = hits.length ? hits[0].score : 0;\\n      const confidence =\\n        !hits.length ? \\\"none\\\"\\n        : top < 0.15 ? \\\"none\\\"        // 全库最高分都不到 0.15：没有可信匹配\\n        : top < 0.45 ? \\\"weak\\\"\\n        : \\\"strong\\\";\\n      return {\\n        ok: true,\\n        workspace: ws || null,\\n        reranked,\\n        // Say which stage produced the order. Without this a silently\\n        // unavailable reranker looks exactly like a reranker that agreed.\\n        stage: reranked ? \\\"rerank\\\" : \\\"embedding\\\",\\n        // ★ 调用方应按这个字段决定\\\"要不要信这批结果\\\"，而不是看列表非空\\n        confidence,\\n        topScore: Number(top.toFixed(4)),\\n        poolSize: pool.length,\\n        hits,\\n      };\\n    },\\n    clear({ workspace } = {}) {\\n      const ws = normalizeWorkspace(workspace);\\n      const result = store.clear(ws || undefined);\\n      return { ok: true, workspace: ws || null, cleared: ws ? \\\"workspace\\\" : \\\"all\\\",\\n        removed: result.removed, remaining: result.remaining ?? store.list().length };\\n    },\\n  };\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"3271e98eb5b1dae3110dcabd6075905fc7268de1a3b1601691fc9b4473933baf\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 124,\n        \"words\": 568\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 464,\n        \"code\": 371,\n        \"comments\": 70,\n        \"blank\": 28\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 56,\n        \"code\": 50,\n        \"comments\": 0,\n        \"blank\": 6\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 28,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"vecmem_status\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 42,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"vecmem_add\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 69,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"vecmem_search\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"index.js\",\n          \"line\": 107,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"vecmem_clear\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [\n        {\n          \"path\": \"lib/store.js\",\n          \"line\": 174,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"vecmem_add\",\n          \"vecmem_clear\",\n          \"vecmem_search\",\n          \"vecmem_status\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 4,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-wsl-vecmem\",\n    \"repository_id\": 1381726438,\n    \"captured_at\": \"2026-10-22T15:13:34.841Z\",\n    \"window_start\": \"2026-09-22T15:13:34.841Z\",\n    \"stars\": 1,\n    \"pushed_at\": \"2026-09-30T03:25:35Z\",\n    \"issues\": {\n      \"open\": null,\n      \"closed\": null,\n      \"created_30d\": null,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"open\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6600:102599:97D231:A4229D:6ADA2821 and timestamp 2026-10-22 15:13:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 66C4:32355E:9A3991:A68816:6ADA2822 and timestamp 2026-10-22 15:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"created_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A34.841Z..2026-10-22T15%3A13%3A34.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 677A:1035EF:96F8E4:A343B1:6ADA2823 and timestamp 2026-10-22 15:13:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A34.841Z..2026-10-22T15%3A13%3A34.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6870:325E8B:943E9B:A0898F:6ADA2825 and timestamp 2026-10-22 15:13:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-vecmem%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A34.841Z..2026-10-22T15%3A13%3A34.841Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6914:1C593F:9CEDD7:A930DD:6ADA2826 and timestamp 2026-10-22 15:13:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"dsh-wsl-vecmem\",\n      \"captured_at\": \"2026-10-22T15:13:42.301Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-vecmem\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T15:13:42.301Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-wsl-vecmem\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
+            "sha256": "0d39f9bf82f0b13da37b6d8fceb2c1481e3cdcb375602658b734bbf9d49029fd"
+        }
+    },
+    "unavailable_artifacts": []
+}
