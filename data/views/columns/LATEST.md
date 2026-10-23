@@ -88,6 +88,7 @@
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 为DSH提供直连、系统及HTTP/SOCKS手工代理设置，切换Undici全局路由并可导出子进程环境。 | [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=&message=2026-10-13&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-proxy) |
 | [dsh-hdc-bridge](#plugin-1333258432-root) | 为 DSH 集成鸿蒙设备调试、截图/UI操作、官方知识查询及可选 DevEco 构建签名流程。 | [![最新发布 2026-10-12](https://img.shields.io/static/v1?label=&message=2026-10-12&color=grey&style=flat)](https://www.npmjs.com/package/dsh-hdc-bridge) |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=&message=2026-10-11&color=grey&style=flat)](https://www.npmjs.com/package/dsh-rotakit) |
+| [DSH Graphlint](#plugin-1285824983-integrations-dsh) | 为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。 | [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=&message=2026-10-11&color=grey&style=flat)](https://www.npmjs.com/package/dsh-graphlint) |
 | [dsh-ai-arcade](#plugin-1413897334-root) | DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。 | [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=&message=2026-10-11&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ai-arcade) |
 | [dsh-multi-folder](#plugin-1334119885-root) | 为DSH项目配置副工作目录，保持主cwd并将原文件和shell工具按单次目标重定根，附UI与@发现。 | [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=&message=2026-10-10&color=grey&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=&message=2026-10-10&color=grey&style=flat)](https://www.npmjs.com/package/dsh-api-dashboard) |
@@ -1173,6 +1174,20 @@
 **最新发布**：[2.3.24 · 2026-10-11（北京时间）](https://www.npmjs.com/package/dsh-rotakit)。
 
 **使用条件**：建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。详见Q06(#research-q06)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1285824983-integrations-dsh"></a>
+
+## [DSH Graphlint](../../plugins/angeloszou--graphlint--integrations-dsh/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/graphlint) [![npm 30d 1,244](https://img.shields.io/static/v1?label=npm+30d&message=1%2C244&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-graphlint) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-graphlint)
+
+**主要用途**：为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。
+
+**最新发布**：[0.6.0 · 2026-10-11（北京时间）](https://www.npmjs.com/package/dsh-graphlint)。
+
+**使用条件**：已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。固定CLI版本、明确root与入口规则，再挑一个小模块查询，不自动删除动态入口；核对配置副作用、job取消及重新索引。不能把告警数量减少当业务交付，也不能把本插件推荐解释为其上游所有语言分析已通过验收。 Q09(#research-q09)
 
 [返回表格](#column-index)
 

@@ -14,6 +14,8 @@
 | [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
 | [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 把待核成果按维度交给只读工具受限的红队子agent，收集候选缺陷，由读者逐条认定或驳回，并保存定稿与旧缺陷复审历史。 | 有条件试用，须真实connection认证栅栏、可信同信任用户、单进程状态与人工核证据；先小规模匿名成果。 |
 | [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。 | 先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。 |
+| [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
+| [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查方法、确定性来源路由和可选Jev降档判据，要求结论附可追溯原文。 | 已有可信搜索/正文环境可试用公开事实研究，Jev按隐私选装，结论依证据并独立复核。 |
@@ -101,6 +103,34 @@
 > **思考**：本地存储不等离线提炼，项目全小写可串目录，模型scope默认global，合并/遗忘多副本非事务。详见[Q03](#research-q03)。
 
 > **建议**：可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。
+
+<a id="plugin-1390103795-root"></a>
+
+## [DSH Local Memory](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md)
+
+[![npm 30d 137](https://img.shields.io/static/v1?label=npm+30d&message=137&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-local-memory) [![最新发布 2026-09-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-local-memory)
+
+> **用途**：多项目维护者需要知道哪个项目缺记忆并对指定项目联合查询；合格结果必须有库归属和缺失诊断。
+
+> **亮点**：相对Hindsight平级分库，增量是读取时跨库视图与“发现缺失→播种→核对状态”闭环；不复制总库，不将上游抽取引擎算作自身创新。[Q01](#research-q01) [Q02](#research-q02)
+
+> **思考**：项目隔离能否成立取决于库身份。源码只用目录basename，同名仓库会映射到同库；分库不是访问控制，本地daemon也不自动代表离线LLM处理。[Q03](#research-q03)
+
+> **建议**：未验证假设是增加稳定项目身份映射和同名碰撞预警，在不破坏上游库命名兼容的条件下改善归属可信度；用同名、worktree和重命名矩阵比较误归属与维护负担。[Q04](#research-q04)
+
+<a id="plugin-1346064150-root"></a>
+
+## [DSH PDF Reader](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-pdf-reader) [![npm 30d 722](https://img.shields.io/static/v1?label=npm+30d&message=722&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pdf-reader) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pdf-reader)
+
+> **用途**：适合在DSH中阅读含图表、公式与双栏布局的论文，输出需人工核对原页。
+
+> **亮点**：以内容画像选择文本或区域渲染，将PyMuPDF能力组织成扫描、混读和精读工具；贡献在适配与路由，不是新的PDF解析算法。[Q03](#research-q03)
+
+> **思考**：缓存名缺少完整bbox、DPI与源路径，同起点区域或同名PDF可发生路径重合；尚未运行复现其读图影响。[Q04](#research-q04)
+
+> **建议**：未验证假设是用PDF内容摘要、页码、完整bbox及DPI作为缓存键，并让每个问题共享总图像预算，能减少误用旧图与过量裁剪。它从当前缓存冲突及逐区域独立预算推导，不是本版已有能力。最小验证用同basename两PDF、同起点不同bbox及图表密集页，对比现版和新缓存策略，检查路径唯一性、读图正确率、总图像token和人工复核；若只有磁盘增量而无错误或总成本改善，否定其采用优势。 [Q08](#research-q08)
 
 <a id="plugin-1337467566-root"></a>
 

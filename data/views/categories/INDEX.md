@@ -8,8 +8,8 @@
 
 - [个人效率（148）](PERSONAL-PRODUCTIVITY.md)
 - [办公与运营（15）](OFFICE-OPERATIONS.md)
-- [研究与知识（35）](RESEARCH-KNOWLEDGE.md)
-- [软件交付（126）](SOFTWARE-DELIVERY.md)
+- [研究与知识（37）](RESEARCH-KNOWLEDGE.md)
+- [软件交付（129）](SOFTWARE-DELIVERY.md)
 - [内容生产（16）](CONTENT-CREATION.md)
 - [客户服务（1）](CUSTOMER-SERVICE.md)
 - [基础设施（81）](INFRASTRUCTURE.md)

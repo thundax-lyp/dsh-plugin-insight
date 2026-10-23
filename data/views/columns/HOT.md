@@ -72,6 +72,7 @@
 | [dsh-temptask](#plugin-1390600932-root) | 一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。 | [![npm 近30天下载 1,309](https://img.shields.io/static/v1?label=&message=1%2C309&color=blue&style=flat)](https://www.npmjs.com/package/@aeroscis/dsh-temptask) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Aeroscis/dsh-temptask) |
 | [dsh-vision-route](#plugin-1335070045-packages-vision-route) | 把图片先交给智谱视觉转写，再把文本证据送入目标文本模型。 | [![npm 近30天下载 1,252](https://img.shields.io/static/v1?label=&message=1%2C252&color=blue&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/314857493/dsh-vision) |
 | [dsh-plugin-balance](#plugin-1340280087-root) | DSH Web 额度悬浮窗，整合多供应商查询、会话 token 统计与费用估算。 | [![npm 近30天下载 1,245](https://img.shields.io/static/v1?label=&message=1%2C245&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-balance) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/Andrew111888/dsh-plugin-balance) |
+| [DSH Graphlint](#plugin-1285824983-integrations-dsh) | 为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。 | [![npm 近30天下载 1,244](https://img.shields.io/static/v1?label=&message=1%2C244&color=blue&style=flat)](https://www.npmjs.com/package/dsh-graphlint) | [![GitHub Star 7](https://img.shields.io/static/v1?label=&message=7&color=yellow&style=flat)](https://github.com/AngelosZou/graphlint) |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | [![npm 近30天下载 1,242](https://img.shields.io/static/v1?label=&message=1%2C242&color=blue&style=flat)](https://www.npmjs.com/package/dsh-zspace) | - |
 | [@luziyang2026/dsh-question-nav](#plugin-1341946801-root) | 在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。 | [![npm 近30天下载 1,224](https://img.shields.io/static/v1?label=&message=1%2C224&color=blue&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合右侧文件预览、@文件引用、本地壁纸和活动宠物，增强DSH web桌面体验。 | [![npm 近30天下载 1,212](https://img.shields.io/static/v1?label=&message=1%2C212&color=blue&style=flat)](https://www.npmjs.com/package/dsh-ui-enhancer) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/AlexYin-Tongji/dsh-ui-enhancer) |
@@ -128,6 +129,8 @@
 | [dsh-fullscreen-input](#plugin-1407166868-root) | 为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。 | [![npm 近30天下载 748](https://img.shields.io/static/v1?label=&message=748&color=blue&style=flat)](https://www.npmjs.com/package/dsh-fullscreen-input) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/AL-Yichen/dsh-fullscreen-input) |
 | [@indexyz/dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。 | [![npm 近30天下载 735](https://img.shields.io/static/v1?label=&message=735&color=blue&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/5aaee9/pi-agent-extensions) |
 | [dsh-plugin-recommend](#plugin-1336684098-root) | 从内置市场目录做需求词法排序、分类详情与相似候选搜索，可显式从固定HTTPS README刷新目录。 | [![npm 近30天下载 733](https://img.shields.io/static/v1?label=&message=733&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend) | - |
+| [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | [![npm 近30天下载 722](https://img.shields.io/static/v1?label=&message=722&color=blue&style=flat)](https://www.npmjs.com/package/dsh-pdf-reader) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AngelosZou/dsh-pdf-reader) |
+| [Code RAG 索引面板](#plugin-1347752454-plugins-dsh-code-rag-index-panel) | 在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。 | [![npm 近30天下载 711](https://img.shields.io/static/v1?label=&message=711&color=blue&style=flat)](https://www.npmjs.com/package/dsh-code-rag-index-panel) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Ankali-Aylina/code-rag) |
 | [dsh-wsl-expose](#plugin-1351853956-root) | 为 WSL 服务给出 Windows portproxy 建议，并可经 PowerShell 实际增删转发。 | [![npm 近30天下载 674](https://img.shields.io/static/v1?label=&message=674&color=blue&style=flat)](https://www.npmjs.com/package/dsh-wsl-expose) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/173787247/dsh-wsl-expose) |
 | [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 把待核成果按维度交给只读工具受限的红队子agent，收集候选缺陷，由读者逐条认定或驳回，并保存定稿与旧缺陷复审历史。 | [![npm 近30天下载 669](https://img.shields.io/static/v1?label=&message=669&color=blue&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/9931666/dsh-plugin-crossfire) |
 | [dsh-session-path](#plugin-1412141303-root) | 复制DSH会话日志位置，或把压缩日志导出为可读交接文件，便于另一个会话阅读接续。 | [![npm 近30天下载 667](https://img.shields.io/static/v1?label=&message=667&color=blue&style=flat)](https://www.npmjs.com/package/dsh-session-path) | - |
@@ -167,6 +170,7 @@
 | [dsh-memory-setup](#plugin-1337350700-root) | 提供工作区JSON偏好、规范、工作流与教训记忆，含DSH工具、提示注入、知识检索及备份恢复接口。 | [![npm 近30天下载 155](https://img.shields.io/static/v1?label=&message=155&color=blue&style=flat)](https://www.npmjs.com/package/dsh-memory-setup) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/863683348/dsh-memory-setup) |
 | [harness-github](#plugin-1343702731-root) | 为DSH提供GitHub仓库、PR、issue、CI与评审工具，通过gh或REST读取和操作，并提供工作流指引。 | [![npm 近30天下载 148](https://img.shields.io/static/v1?label=&message=148&color=blue&style=flat)](https://www.npmjs.com/package/harness-github) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/988hj7tczd-oss/harness-github) |
 | [dsh-gov](#plugin-1336647931-root) | 为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。 | [![npm 近30天下载 146](https://img.shields.io/static/v1?label=&message=146&color=blue&style=flat)](https://www.npmjs.com/package/dsh-gov) | - |
+| [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | [![npm 近30天下载 137](https://img.shields.io/static/v1?label=&message=137&color=blue&style=flat)](https://www.npmjs.com/package/dsh-local-memory) | - |
 | [dsh-obsidian-board](#plugin-1415116420-root) | 在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。 | [![npm 近30天下载 133](https://img.shields.io/static/v1?label=&message=133&color=blue&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/2026heshao/dsh-obsidian-board) |
 | [dsh-starter-zh](#plugin-1336658798-root) | 在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。 | [![npm 近30天下载 128](https://img.shields.io/static/v1?label=&message=128&color=blue&style=flat)](https://www.npmjs.com/package/dsh-starter-zh) | - |
 | [dsh-plugin-quota](#plugin-1400927706-root) | 会话 token/估算花费仪表与趋势预测插件，提供系统提示、命令、Agent 工具及跨插件摘要。 | [![npm 近30天下载 126](https://img.shields.io/static/v1?label=&message=126&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/121212165/dsh-plugin-quota) |
@@ -1033,6 +1037,20 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1285824983-integrations-dsh"></a>
+
+## [DSH Graphlint](../../plugins/angeloszou--graphlint--integrations-dsh/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/graphlint) [![npm 30d 1,244](https://img.shields.io/static/v1?label=npm+30d&message=1%2C244&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-graphlint) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-graphlint)
+
+**主要用途**：为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。
+
+**热度依据**：npm 近30天下载 1,244 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
+
+**使用条件**：已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。固定CLI版本、明确root与入口规则，再挑一个小模块查询，不自动删除动态入口；核对配置副作用、job取消及重新索引。不能把告警数量减少当业务交付，也不能把本插件推荐解释为其上游所有语言分析已通过验收。 Q09(#research-q09)
+
+[返回表格](#column-index)
+
 <a id="plugin-1406500233-root"></a>
 
 ## [dsh-zspace](../../plugins/439436269-ctrl--dsh-zspace/INSIGHT.md)
@@ -1817,6 +1835,34 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1346064150-root"></a>
+
+## [DSH PDF Reader](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-pdf-reader) [![npm 30d 722](https://img.shields.io/static/v1?label=npm+30d&message=722&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pdf-reader) [![最新发布 2026-08-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pdf-reader)
+
+**主要用途**：提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。
+
+**热度依据**：npm 近30天下载 722 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
+
+**使用条件**：适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。先选含双栏、公式、扫描页和同名文件的样本；核对页码、裁剪对应关系和关键数字，遇到缓存重合时给输入PDF不同basename，或顺序清理会话cwd下.dsh-pdf-reader后重读并立即核对；工具没有独立out-dir参数，单纯移动同名输入到不同目录不能隔离缓存。只有本文本路径存在、局部截图机制可核查，尚未证实跨论文准确率；需要精确合同、统计表或出版引用时始终回到原页。 Q09(#research-q09)
+
+[返回表格](#column-index)
+
+<a id="plugin-1347752454-plugins-dsh-code-rag-index-panel"></a>
+
+## [Code RAG 索引面板](../../plugins/ankali-aylina--code-rag--plugins-dsh-code-rag-index-panel/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Ankali-Aylina/code-rag) [![npm 30d 711](https://img.shields.io/static/v1?label=npm+30d&message=711&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-code-rag-index-panel) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-code-rag-index-panel)
+
+**主要用途**：在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。
+
+**热度依据**：npm 近30天下载 711 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
+
+**使用条件**：建议已有本机code-rag基础设施且能核对目标根的开发者试用；普通搜索需求先比较现有工具，setup和重建须按实际写入与算力操作处理。Q08(#research-q08)
+
+[返回表格](#column-index)
+
 <a id="plugin-1351853956-root"></a>
 
 ## [dsh-wsl-expose](../../plugins/173787247--dsh-wsl-expose/INSIGHT.md)
@@ -2360,6 +2406,20 @@
 **热度依据**：npm 近30天下载 146 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
 **使用条件**：观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。详见Q05(#research-q05)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1390103795-root"></a>
+
+## [DSH Local Memory](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md)
+
+[![npm 30d 137](https://img.shields.io/static/v1?label=npm+30d&message=137&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-local-memory) [![最新发布 2026-09-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-local-memory)
+
+**主要用途**：保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。
+
+**热度依据**：npm 近30天下载 137 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
+
+**使用条件**：已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。Q04(#research-q04)
 
 [返回表格](#column-index)
 

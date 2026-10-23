@@ -22,9 +22,12 @@
 | [agent-development-constraints](#plugin-1404700411-root) | 提供项目开发规则库与提炼精简合并流程，DSH按症状查询规则并一次注入入口目录，另有上下文成本观察和可选提交脱敏检查。 | 先观察，可人工择取规则方法，先核隐私/路由/会话和安装保留再在重要项目启用运行面。 |
 | [AI Look-Up](#plugin-1401618027-root) | 监测代理重复调用、失败循环和目标漂移，并在触发时注入自检提示。 | 适合经常运行长时编码代理、能审阅提醒台账的团队先观察，不适合短任务或对中断敏感的会话。 |
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把代理副产物移入可恢复回收站，并支持项目结项归档。 | 适合副产物命名规律稳定、能先维护 ignore 且使用版本控制的项目试用；高价值数据目录或命名混乱仓库只运行 dry-run。 |
+| [CA 参考库](#plugin-1349267272-root) | 为Clean Architecture审查提供本地参考仓全文检索、基线清单、审查留账和观察面板。 | 建议先观察，补齐可核对的外部语料并验证过滤与健康状态后再做受控审查辅助；不能自动据基线放行项目。 |
+| [Code RAG 索引面板](#plugin-1347752454-plugins-dsh-code-rag-index-panel) | 在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。 | 建议已有本机code-rag基础设施且能核对目标根的开发者试用；普通搜索需求先比较现有工具，setup和重建须按实际写入与算力操作处理。 |
 | [dock-base](#plugin-1340492184-root) | 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。 | 有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。 |
 | [dock-editor](#plugin-1340492335-root) | 为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。 | 可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。 |
 | [dock-git](#plugin-1340492447-root) | 在 DSH Dock 中查看 Git 提交图与差异，并对会话仓库执行暂存、提交、分支和远端操作。 | 建议观察，先在隔离仓库核对钩子策略、破坏操作确认和远端失败恢复；团队质量门禁另作明确安排。 |
+| [DSH Graphlint](#plugin-1285824983-integrations-dsh) | 为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。 | 已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。 |
 | [DSH Harness Switch](#plugin-1414577411-root) | 在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。 | 熟悉Kimi和DSH的开发者可在单进程隔离profile及副本工作区试用；出现pending未知结果先查日志与文件，不自动重试，要求无损迁移或完整计费者暂缓。 |
 | [DSH Model Everything](#plugin-1423488109-root) | 为设计与代码断言提供建模Skill、有限模型验证、UML/依赖审查及可复算报告工具。 | 适合理解有限模型、愿意维护源码映射的工程师小范围试用；未决、跳过关键性质或无法映射实现时停止放行，不把它当自动程序正确性证明。 |
 | [DSH Model Router](#plugin-1353534254-root) | 在DSH工作台规划任务、比较模型路由并通过API或官方CLI执行依赖工作包。 | 建议多模型开发者在隔离小仓库试用只读流程，逐包盲评与核对全部支出；身份或权限不清、支出未知时暂停扩大使用。 |
@@ -305,6 +308,34 @@
 
 > **建议**：可加入“来源感知清理”，要求候选文件同时满足命名规则和本回合创建记录，再用清单预览训练项目级白名单，降低误收。 [Q08](#research-q08)
 
+<a id="plugin-1349267272-root"></a>
+
+## [CA 参考库](../../plugins/ansonfishing--dsh-ca-ref/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Ansonfishing/dsh-ca-ref)
+
+> **用途**：面向Clean Architecture/DDD审查者，检索参考断言、获取基线并记录目标项目证据。
+
+> **亮点**：把参考检索、路径引用、基线和审查留账组织成可复用流程，减少散落材料查找的重复步骤。[Q03](#research-q03) 不等于自动验证架构或提供普适标准答案。
+
+> **思考**：索引读取当前工作树且重建把缺失与漂移仓都标ok，健康标记不代表内容完整；混合查询OR与AND过滤也可能越过语言边界。[Q04](#research-q04)
+
+> **建议**：未验证假设是为证据块绑定实际版本并记录适用条件、反例和复核质量，可避免把命中频率当规则正确性反馈。[Q07](#research-q07)
+
+<a id="plugin-1347752454-plugins-dsh-code-rag-index-panel"></a>
+
+## [Code RAG 索引面板](../../plugins/ankali-aylina--code-rag--plugins-dsh-code-rag-index-panel/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Ankali-Aylina/code-rag) [![npm 30d 711](https://img.shields.io/static/v1?label=npm+30d&message=711&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-code-rag-index-panel) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-code-rag-index-panel)
+
+> **用途**：适合已运行code-rag的开发者在DSH会话中查看和维护当前根索引。
+
+> **亮点**：把索引状态、进度、依赖诊断与手动动作放入编码现场，并分离选模式与资源触发。[Q03](#research-q03) 贡献属于控制流程，不是新检索算法。
+
+> **思考**：端口在线与诊断绿灯并不证明当前根和索引新鲜度；多实例选最新、集合404判不可达及setup执行脚本须明确。[Q04](#research-q04)
+
+> **建议**：未验证假设是以工作区和索引代次指纹标记过期检索，并允许明确选择刷新，可减少旧代码引用；需同时计等待和嵌入资源。[Q07](#research-q07)
+
 <a id="plugin-1340492184-root"></a>
 
 ## [dock-base](../../plugins/aks1st--dock/INSIGHT.md)
@@ -346,6 +377,20 @@
 > **思考**：普通提交与合并会跳过部分仓库钩子，这与依赖钩子的团队流程不等价；直接允许浏览器运行钩子又引入代码执行风险。没有通用超时的远端操作也需核查。详见[Q03](#research-q03)。
 
 > **建议**：未验证的方向是把目标仓库、受影响 ref、钩子策略和破坏范围列入操作前确认，让可信仓库与不可信仓库采用不同执行策略，再用隔离任务检验误接受与恢复成本。详见[Q06](#research-q06)。
+
+<a id="plugin-1285824983-integrations-dsh"></a>
+
+## [DSH Graphlint](../../plugins/angeloszou--graphlint--integrations-dsh/INSIGHT.md)
+
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/graphlint) [![npm 30d 1,244](https://img.shields.io/static/v1?label=npm+30d&message=1%2C244&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-graphlint) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-graphlint)
+
+> **用途**：适合AI生成代码后需要筛选死代码、未用导入和不可达组件的开发者。合格交付是经测试与人工核对的清理补丁，而不是告警清单本身。简单替代为终端graphlint query加人工复制结果；插件让Agent直接查图、重建索引和调整入口规则。不能根据告警自动删除框架回调或动态注册代码。
+
+> **亮点**：把graphlint CLI查询、建索引和入口规则配置接到DSH模型工具，增量在结果契约与后台任务接线。[Q03](#research-q03)
+
+> **思考**：静态图告警依赖入口建模，且PATH优先CLI未绑定版本；可解析告警不足以支持自动删除。[Q04](#research-q04)
+
+> **建议**：未验证假设是每个删除候选附带“入口假设、CLI版本、关联测试及反例”证据卡，人工确认后再清理，可降低动态引用误删而保留检索便利。推导自入口建模限制和可调规则工具。最小验证用静态函数与动态回调混合仓库，对比单看告警、证据卡和普通终端三组，计量错误删除、合格补丁率与总时间；若误删不降或复核负担超过收益，则否定该方案。 [Q08](#research-q08)
 
 <a id="plugin-1414577411-root"></a>
 
