@@ -1,0 +1,34 @@
+{
+    "repository": "Alice-Marx/dsh-model-router",
+    "repository_id": 1353534254,
+    "captured_at": "2026-10-23T07:58:16.196Z",
+    "window_start": "2026-09-23T07:58:16.196Z",
+    "stars": 281,
+    "pushed_at": "2026-10-22T07:58:55Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@ljwei-stak/dsh-model-router",
+        "captured_at": "2026-10-23T07:58:30.251Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 4168,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40ljwei-stak%2Fdsh-model-router",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-02T17:11:45.891Z",
+            "captured_at": "2026-10-23T07:58:30.251Z",
+            "source_url": "https://registry.npmjs.org/%40ljwei-stak%2Fdsh-model-router",
+            "error": null,
+            "latest_version": "0.22.2",
+            "latest_published_at": "2026-10-19T09:04:31.452Z",
+            "latest_error": null
+        }
+    }
+}

@@ -25,6 +25,9 @@
 | [dock-base](#plugin-1340492184-root) | 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。 | 有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。 |
 | [dock-editor](#plugin-1340492335-root) | 为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。 | 可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。 |
 | [dock-git](#plugin-1340492447-root) | 在 DSH Dock 中查看 Git 提交图与差异，并对会话仓库执行暂存、提交、分支和远端操作。 | 建议观察，先在隔离仓库核对钩子策略、破坏操作确认和远端失败恢复；团队质量门禁另作明确安排。 |
+| [DSH Harness Switch](#plugin-1414577411-root) | 在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。 | 熟悉Kimi和DSH的开发者可在单进程隔离profile及副本工作区试用；出现pending未知结果先查日志与文件，不自动重试，要求无损迁移或完整计费者暂缓。 |
+| [DSH Model Everything](#plugin-1423488109-root) | 为设计与代码断言提供建模Skill、有限模型验证、UML/依赖审查及可复算报告工具。 | 适合理解有限模型、愿意维护源码映射的工程师小范围试用；未决、跳过关键性质或无法映射实现时停止放行，不把它当自动程序正确性证明。 |
+| [DSH Model Router](#plugin-1353534254-root) | 在DSH工作台规划任务、比较模型路由并通过API或官方CLI执行依赖工作包。 | 建议多模型开发者在隔离小仓库试用只读流程，逐包盲评与核对全部支出；身份或权限不清、支出未知时暂停扩大使用。 |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。 | 可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。 |
 | [dsh-about](#plugin-1354283280-root) | 在 DSH Web 设置页展示推断的运行版本、插件版本和 GitHub Releases 摘要。 | 仅作排障辅助，报告版本同时附 CLI 输出；试点核多安装布局和离线回退。 |
 | [dsh-agent-recycle-guard](#plugin-1414323673-root) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 建议有独立备份的维护者在可丢弃目录受控试用常见删除缓冲；不以此替代权限隔离，准备长期阻断、语义不一致或需要动态程序全覆盖时停止。 |
@@ -341,6 +344,48 @@
 > **思考**：普通提交与合并会跳过部分仓库钩子，这与依赖钩子的团队流程不等价；直接允许浏览器运行钩子又引入代码执行风险。没有通用超时的远端操作也需核查。详见[Q03](#research-q03)。
 
 > **建议**：未验证的方向是把目标仓库、受影响 ref、钩子策略和破坏范围列入操作前确认，让可信仓库与不可信仓库采用不同执行策略，再用隔离任务检验误接受与恢复成本。详见[Q06](#research-q06)。
+
+<a id="plugin-1414577411-root"></a>
+
+## [DSH Harness Switch](../../plugins/alycestocking--dsh-harness-switch/INSIGHT.md)
+
+[![npm 30d 39](https://img.shields.io/static/v1?label=npm+30d&message=39&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-harness-switch)
+
+> **用途**：希望保留DSH原生会话入口并使用Kimi执行核心、需要在模型间继续工作的开发者。
+
+> **亮点**：相对提示词替换，已实现增量是完整执行核心与DSH原生入口的桥接，以及显式审批/会话映射；核心能力归固定上游Kimi，不计为插件原创。[Q01](#research-q01) [Q02](#research-q02)
+
+> **思考**：“同一会话”不等于两边状态无损一致。pending避免未知结果重复执行，但用户承担多存储备份与人工恢复，外层token统计也不完整；这些限制直接约束持续采用。[Q03](#research-q03)
+
+> **建议**：未验证假设是跨harness交接回执能显式暴露历史、图片、压缩、计费与未确认副作用范围，减少误继续；以故障注入后的遗漏识别与实际重复执行次数对照验证。[Q04](#research-q04)
+
+<a id="plugin-1423488109-root"></a>
+
+## [DSH Model Everything](../../plugins/amethystluna--dsh-model-everything/INSIGHT.md)
+
+[![npm 30d 415](https://img.shields.io/static/v1?label=npm+30d&message=415&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model-everything) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model-everything)
+
+> **用途**：需要检查复杂行为断言及保存反例/报告的开发者，目标是对明确模型性质给出可追溯判断。
+
+> **亮点**：已有增量是把断言核验、有限模型执行、反例和可复算报告接入DSH工作流，报告明确区分跳过、未决和判定；有限状态方法本身及外部检查器不是插件原创。[Q01](#research-q01) [Q02](#research-q02)
+
+> **思考**：忠实抽象是贡献成立的前提。模型pass、规范化hash和工具ok均不能证明源码程序安全；漏掉现实异常或截断搜索时必须收窄结论，构模成本也可能超过简单办法。[Q03](#research-q03)
+
+> **建议**：未验证假设是性质—源码—模型映射—可回放反例的最小证据闭环，能减少模型正确而程序有错的假放行；以已知缺陷和遗漏迁移对照，计入构模/复核成本。[Q04](#research-q04)
+
+<a id="plugin-1353534254-root"></a>
+
+## [DSH Model Router](../../plugins/alice-marx--dsh-model-router/INSIGHT.md)
+
+[![GitHub ★ 281](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=281&color=yellow&logo=github&style=flat)](https://github.com/Alice-Marx/dsh-model-router) [![npm 30d 4,168](https://img.shields.io/static/v1?label=npm+30d&message=4%2C168&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ljwei-stak/dsh-model-router) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ljwei-stak/dsh-model-router)
+
+> **用途**：已配置多模型的开发者需要对依赖任务形成可解释的分配与执行记录；合格结果包含实际交付与验收。
+
+> **亮点**：相对手动单模型分配，实质增量是把依赖约束、可行性和成本不确定性纳入统一计划，并将执行结果回接账本。质量评分仍为代理，贡献限于可解释编排机制。[Q01](#research-q01) [Q02](#research-q02)
+
+> **思考**：代理质量能否约束真实交付，是成本感知路由是否有用的关键。字符token估计、配置价格和历史评分均不能替代同任务实测；不完整尝试账本保留未知，反馈不等于准确率。[Q03](#research-q03)
+
+> **建议**：未验证假设是用任务匹配的客观通过证据形成保守可行域，再用显式人工反馈微调选择。应对照固定模型与当前算法，并计入失败重试和人工复核；收益消失或依赖额外预算即否定。[Q05](#research-q05)
 
 <a id="plugin-1344715270-root"></a>
 
