@@ -1,0 +1,47 @@
+{
+    "repository": "AndyYang12345/dsh-dictation-hotkey",
+    "repository_id": 1414017637,
+    "captured_at": "2026-10-21T08:02:43.519Z",
+    "window_start": "2026-09-21T08:02:43.519Z",
+    "stars": 0,
+    "pushed_at": "2026-10-13T11:52:24Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-dictation-hotkey%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 58D4:1F14A0:E16E2E:144EE0B:6AD871AA and timestamp 2026-10-21 08:02:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-dictation-hotkey%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 59F2:25685:E2DC4C:145C451:6AD871AB and timestamp 2026-10-21 08:02:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAndyYang12345%2Fdsh-dictation-hotkey%20is%3Aissue%20created%3A2026-09-21T08%3A02%3A43.519Z..2026-10-21T08%3A02%3A43.519Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5CEA:1ADA16:DBD5E0:13CC4C9:6AD871AD and timestamp 2026-10-21 08:02:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-dictation-hotkey",
+        "captured_at": "2026-10-21T08:03:00.884Z",
+        "window_start": "2026-09-21",
+        "window_end": "2026-10-20",
+        "downloads_30d": 97,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-dictation-hotkey",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-13T11:45:46.492Z",
+            "captured_at": "2026-10-21T08:03:00.884Z",
+            "source_url": "https://registry.npmjs.org/dsh-dictation-hotkey",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-10-13T11:53:30.511Z",
+            "latest_error": null
+        }
+    }
+}

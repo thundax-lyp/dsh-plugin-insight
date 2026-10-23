@@ -1,0 +1,55 @@
+{
+    "repository": "AmethystLuna/logicprobe",
+    "repository_id": 1331586818,
+    "captured_at": "2026-10-23T01:49:55.570Z",
+    "window_start": "2026-09-23T01:49:55.570Z",
+    "stars": 5,
+    "pushed_at": "2026-10-23T00:14:09Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Flogicprobe%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A160:1A06B6:167785:184552:6ADABD45 and timestamp 2026-10-23 01:49:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Flogicprobe%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A228:2960F5:10FDB6:126B8A:6ADABD46 and timestamp 2026-10-23 01:49:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Flogicprobe%20is%3Aissue%20created%3A2026-09-23T01%3A49%3A55.570Z..2026-10-23T01%3A49%3A55.570Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2BE:38B534:16E7CD:18B712:6ADABD47 and timestamp 2026-10-23 01:50:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Flogicprobe%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A49%3A55.570Z..2026-10-23T01%3A49%3A55.570Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A378:3FEA73:1771F5:193FB0:6ADABD49 and timestamp 2026-10-23 01:50:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAmethystLuna%2Flogicprobe%20is%3Aissue%20updated%3A2026-09-23T01%3A49%3A55.570Z..2026-10-23T01%3A49%3A55.570Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A4C4:2928FC:1B42ED:1D52C0:6ADABD4A and timestamp 2026-10-23 01:50:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-logicprobe",
+        "captured_at": "2026-10-23T01:50:02.634Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 2746,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-logicprobe",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-24T03:39:31.558Z",
+            "captured_at": "2026-10-23T01:50:02.634Z",
+            "source_url": "https://registry.npmjs.org/dsh-logicprobe",
+            "error": null,
+            "latest_version": "1.4.1",
+            "latest_published_at": "2026-10-18T06:25:05.335Z",
+            "latest_error": null
+        }
+    }
+}
