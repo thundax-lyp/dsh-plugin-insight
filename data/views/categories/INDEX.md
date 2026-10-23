@@ -6,10 +6,10 @@
 
 ## 分类索引
 
-- [个人效率（149）](PERSONAL-PRODUCTIVITY.md)
+- [个人效率（152）](PERSONAL-PRODUCTIVITY.md)
 - [办公与运营（15）](OFFICE-OPERATIONS.md)
 - [研究与知识（37）](RESEARCH-KNOWLEDGE.md)
-- [软件交付（131）](SOFTWARE-DELIVERY.md)
+- [软件交付（132）](SOFTWARE-DELIVERY.md)
 - [内容生产（17）](CONTENT-CREATION.md)
 - [客户服务（1）](CUSTOMER-SERVICE.md)
 - [基础设施（81）](INFRASTRUCTURE.md)
