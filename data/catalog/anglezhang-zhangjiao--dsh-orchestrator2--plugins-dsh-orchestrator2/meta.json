@@ -1,0 +1,55 @@
+{
+    "repository": "AngleZhang-ZhangJiao/dsh-orchestrator2",
+    "repository_id": 1409845351,
+    "captured_at": "2026-10-23T07:58:47.372Z",
+    "window_start": "2026-09-23T07:58:47.372Z",
+    "stars": 1,
+    "pushed_at": "2026-10-20T17:32:01Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAngleZhang-ZhangJiao%2Fdsh-orchestrator2%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 621E:1DACDC:F4053:107534:6ADB13BA and timestamp 2026-10-23 07:58:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAngleZhang-ZhangJiao%2Fdsh-orchestrator2%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6312:2B9127:EF057:1025CA:6ADB13BB and timestamp 2026-10-23 07:58:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAngleZhang-ZhangJiao%2Fdsh-orchestrator2%20is%3Aissue%20created%3A2026-09-23T07%3A58%3A47.372Z..2026-10-23T07%3A58%3A47.372Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 642C:1E2A74:E440A:F7998:6ADB13BC and timestamp 2026-10-23 07:58:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAngleZhang-ZhangJiao%2Fdsh-orchestrator2%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T07%3A58%3A47.372Z..2026-10-23T07%3A58%3A47.372Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6552:1C49A:F7705:10ACA3:6ADB13BE and timestamp 2026-10-23 07:58:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAngleZhang-ZhangJiao%2Fdsh-orchestrator2%20is%3Aissue%20updated%3A2026-09-23T07%3A58%3A47.372Z..2026-10-23T07%3A58%3A47.372Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6658:1E1AED:DB563:EE22F:6ADB13BF and timestamp 2026-10-23 07:58:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-orchestrator2",
+        "captured_at": "2026-10-23T07:58:56.313Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-orchestrator2",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-23T07:58:56.313Z",
+            "source_url": "https://registry.npmjs.org/dsh-orchestrator2",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

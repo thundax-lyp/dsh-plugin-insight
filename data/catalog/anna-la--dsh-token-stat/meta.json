@@ -1,0 +1,21 @@
+{
+    "repository": "Anna-la/dsh-token-stat",
+    "repository_id": 1348535666,
+    "captured_at": "2026-10-23T07:59:08.760Z",
+    "window_start": "2026-09-23T07:59:08.760Z",
+    "stars": 0,
+    "pushed_at": "2026-08-27T15:17:39Z",
+    "issues": {
+        "open": null,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAnna-la%2Fdsh-token-stat%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7302:25BE5:DE620:F1999:6ADB13CF and timestamp 2026-10-23 07:59:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ]
+}
