@@ -20,6 +20,7 @@
 | [chicheng-peak](#plugin-1336366824-root) | 按配置峰谷时窗显示页面/输入框光效与角标，并由Host提前调度模板提醒到可选消息渠道。 | 先观察，先核真实适用规则、统一转折/投递收据/热重载，提醒仅辅助不直接作省钱依据。 |
 | [chicheng-vault](#plugin-1337038478-root) | 在输入区管理加密私密片段、普通片段与 WebDAV 备份。 | 保持观察；只存可撤销的测试 token，关闭直接发送并在空会话演练锁定/恢复，长期秘密继续交给专用密码管理器。 |
 | [cute-fat-fish-pet / src](#plugin-1409724830-src) | DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。 | 先观察；仅可信本机、明确模型及附件目的地的无敏感环境可小样评估，屏幕观察与自动 Electron 下载需分别明确配置及残留清理。 |
+| [Cutout Pet · 抠图桌宠](#plugin-1427089201-root) | 将图片在浏览器本地抠图、描边并显示为 Harness 网页桌宠，附带账户余额气泡。 | 有条件试用。 |
 | [deepseek-harness-hello-kitty-suite](#plugin-1343679449-root) | 粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。 | 个人测试 profile 分开安装两组件，先跑多会话/失败故障矩阵。 |
 | [dock-files](#plugin-1340492214-root) | 为 DSH Dock 添加当前会话工作目录浏览、文件打开及上传下载和文件管理入口。 | 当前建议观察，先确认本地访问边界和当前会话cwd。 |
 | [dock-images](#plugin-1340492378-root) | 在dock工作台打开本地图片，整文件经Host转base64给浏览器img显示，支持缩放/旋转/拖动。 | 先观察，核原始API文件授权/非图片拒绝和资源/解码状态后再评估小图试用。 |
@@ -110,6 +111,7 @@
 | [dsh-skill-manager](#plugin-1336106328-root) | 在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。 | 建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。 |
 | [dsh-soul](#plugin-1352089397-root) | 为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。 | 频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 |
 | [dsh-sound](#plugin-1335332435-root) | 按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。 | 可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。 |
+| [dsh-speak](#plugin-1334493734-root) | 为DSH提供最终回复、审批与提问的语音播报、消息重播和设置界面。 | 观察。 |
 | [dsh-spotlight](#plugin-1333136466-root) | 在DSH Web用一个快捷键面板搜索会话、slash命令、可见界面动作与插件设置入口。 | 兼容Web可有限试用，先备份/清空草稿并试无副作用导航，目标/回执未知就停止。 |
 | [dsh-starter-zh](#plugin-1336658798-root) | 在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。 | 先观察，资料可读参考但先修profile断链和版本/推荐来源，再评估安装必要性。 |
 | [dsh-status-rotator](#plugin-1333328839-root) | 为 DSH 运行状态提供轮换文案、主题、弹幕与鲸尾动画，并保存词库与配置。 | 可在独立profile试用，先关闭额外动画确认状态与保存正常；依赖稳定运行状态的工作应保留原生显示和禁用入口。 |
@@ -296,6 +298,20 @@
 > **思考**：发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)。
 
 > **建议**：首次外部下载、在线记忆发送与屏幕能力单独显式提示并作出站测试，可提高可理解性；待实机。详见[Q03](#research-q03)。
+
+<a id="plugin-1427089201-root"></a>
+
+## [Cutout Pet · 抠图桌宠](../../plugins/alannerfranklin--dsh-cutout-pet/INSIGHT.md)
+
+
+
+> **用途**：面向希望在 Harness 网页展示个人形象并顺手查看余额的用户；只作用于网页，合格结果是可接受图像、持久显示、位置可恢复和正确账户状态。
+
+> **亮点**：在 DSH 中串起本地抠图预览、Host持久化、比例拖动锚点和余额气泡，较外部编辑加贴图减少跨工具交接；增量在宿主集成而非新分割算法，尚无效果排名或首创证据。见[Q03](#research-q03)。
+
+> **思考**：核心质疑是“任意图片”和“每profile一宠/不离本机”是否被实际边界支持。颜色键会受素材限制，短边约束前后不一致；文件和缓存未显式按profile/账户分区，远端Host部署时PNG会跨机器。以上是源码条件与风险，未声称已复现泄漏。见[Q02](#research-q02)、[Q04](#research-q04)。
+
+> **建议**：未验证假设是以共享图像资格契约和可解释删除/尺寸警示替代仅靠视觉预览，可减少误删及保存返工；以20张分层素材比较最终合格率、拒绝、调整次数与耗时，警示无收益或误拒增加即否定。该方案未实现，不计为现有贡献。见[Q08](#research-q08)。
 
 <a id="plugin-1343679449-root"></a>
 
@@ -1556,6 +1572,20 @@
 > **思考**：snapshot无结束reason可误响完成，跨tab与静默播放失败不保证恰好一次/实际听到，子Agent默认和文档不一致。详见[Q02](#research-q02)。
 
 > **建议**：可探讨事件/播放状态收据和短租约、弱语义提示与模块清理，仍不能以API证明用户听到。详见[Q05](#research-q05)。
+
+<a id="plugin-1334493734-root"></a>
+
+## [dsh-speak](../../plugins/alan2z--dsh-speak/INSIGHT.md)
+
+[![GitHub ★ 18](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=18&color=yellow&logo=github&style=flat)](https://github.com/Alan2Z/dsh-speak) [![npm 30d 1,635](https://img.shields.io/static/v1?label=npm+30d&message=1%2C635&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-speak) [![最新发布 2026-09-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-speak)
+
+> **用途**：面向本机等待长任务、需要从屏幕之外获知结果或审批请求的个人使用者，交付可识别且可停止的声音提醒。[Q01](#research-q01)
+
+> **亮点**：相对手工复制文本调用系统TTS，增量是把最终回复筛选、审批/提问、FIFO重播和配置整合到DSH注意力交接流程。合成能力继承操作系统，队列与重播上游归属PR #2，不主张原创TTS或生态唯一。[Q02](#research-q02) [Q03](#research-q03)
+
+> **思考**：可靠提醒是否真受用户控制？默认assistant/message定时器不检查automaticSpeech，关闭自动朗读仍可能入队；全插件共享lastText/timer缺少会话隔离，可被另一会话开始事件取消或错配。此为源码推导而非运行复现，足以收窄采用范围。[Q04](#research-q04)
+
+> **建议**：未验证假设：以session+turn分区待播状态，审批/提问优先并在播放前再次检查开关，可减少错配和关键请求等待。用两会话交错20组事件比较错配、漏播、饥饿和停止延迟；若错配不归零或最终回复饥饿则否定方案，不计入当前插件贡献。[Q08](#research-q08)
 
 <a id="plugin-1333136466-root"></a>
 

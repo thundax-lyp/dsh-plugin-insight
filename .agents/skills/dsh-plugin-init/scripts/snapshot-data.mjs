@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateDisplay } from '../../_shared/scripts/publication-validation.mjs';
 import {
     readSnapshotStorage,
     normalizeCatalogSnapshot,
@@ -331,8 +332,8 @@ const conclusionDependencies = (base) =>
         ...(plugin.innovation_scores?.dependencies ?? []),
         ...(plugin.recommendation?.dependencies ?? [])
     ]);
-// Keep research fingerprints at their last reviewed values. Discovery records the
-// current directory/maintenance state; META is refreshed independently.
+// Compare only observed dimensions; omitted fingerprints retain their research baseline.
+// Current scan state stays in WORK; META is refreshed independently.
 export function metadataOnlyIds(base, items) {
     const plugins = new Map(base.catalog.plugins.map((plugin) => [plugin.id, plugin]));
     const records = new Map(base.publication.records.map((record) => [record.id, record]));
@@ -351,7 +352,7 @@ export function metadataOnlyIds(base, items) {
                 item.changes.some((change) => ['unknown', 'moved', 'removed_from_source'].includes(change))
             )
                 return false;
-            const areas = [...new Set([...Object.keys(before.fingerprints), ...Object.keys(item.fingerprints)])].filter(
+            const areas = Object.keys(item.fingerprints).filter(
                 (area) => before.fingerprints[area] !== item.fingerprints[area]
             );
             return (
@@ -374,7 +375,7 @@ export function cooldownIds(base, items, checkedAt) {
             // A code revision alone is the intended cooldown trigger. Changes to
             // other declared dependencies must retain full research eligibility.
             const changedAreas = new Set(
-                [...new Set([...Object.keys(before?.fingerprints ?? {}), ...Object.keys(item.fingerprints)])].filter(
+                Object.keys(item.fingerprints).filter(
                     (area) => area !== 'code' && before?.fingerprints[area] !== item.fingerprints[area]
                 )
             );
@@ -589,11 +590,7 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     const observations = read(observationPath),
         report = readFileSync(reportPath, 'utf8'),
         display = read(displayPath);
-    const expected = ['metadata', 'summaries', 'capabilities', 'advice'];
-    if (Object.keys(display).some((k) => !expected.includes(k)) || expected.some((k) => display[k] === undefined))
-        throw Error(
-            'display requires metadata, summaries, capabilities and advice; recommendations belong in observations'
-        );
+    validateDisplay(display);
     const plugin = observations.plugins.find((p) => p.id === id);
     if (!plugin || observations.plugins.length !== 1 || observations.errors.length)
         throw Error('stage needs one successful plugin');

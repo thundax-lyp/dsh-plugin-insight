@@ -1,0 +1,34 @@
+{
+    "repository": "Alan2Z/dsh-speak",
+    "repository_id": 1334493734,
+    "captured_at": "2026-10-23T05:06:15.400Z",
+    "window_start": "2026-09-23T05:06:15.400Z",
+    "stars": 18,
+    "pushed_at": "2026-09-26T09:17:08Z",
+    "issues": {
+        "open": 0,
+        "closed": 3,
+        "created_30d": 0,
+        "closed_30d": 1,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-speak",
+        "captured_at": "2026-10-23T05:06:23.986Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 1635,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-speak",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T19:35:28.838Z",
+            "captured_at": "2026-10-23T05:06:23.986Z",
+            "source_url": "https://registry.npmjs.org/dsh-speak",
+            "error": null,
+            "latest_version": "1.8.2",
+            "latest_published_at": "2026-09-26T08:58:28.647Z",
+            "latest_error": null
+        }
+    }
+}

@@ -177,6 +177,8 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
   现有可选 `catalog` 与 `history` 字段仅兼容旧输入，不作为新流程的历史依赖；首次 added 仅表示本工程入档，不代表 npm 发布。
 - 发布输入 `summaries` 按插件 ID 绑定作者功能材料的归纳文本、来源 URL 和固定版本；它不是独立验证结论，也不冒充逐字引文。
 - 发布输入 `capabilities` 绑定固定版本的人工确认能力条目；省略项不表示已确认数量为零。
+  装配输入 `ANALYSIS.capabilities` 对应发布输入 `capabilities[plugin_id].items`，是按扩展类型分类的对象，不是任意功能名或数组。允许键仅为 `Skill`、`Agent/Preset`、`模型工具`、`用户命令`、`Host 路由`、`界面`、`事件监听`、`后台`；每个值是非空、无换行的字符串。只填写已确认项，未确认类型省略，不补零。按具体用户功能组织的名称、用途及边界写入 `capability_table`，不能作为摘要对象的新键；表格不豁免摘要校验。
+  装配器与暂存入口通过共享校验器复用发布 Schema 的 summaries、capabilities、advice 单项结构，META 复用既有元数据校验。装配在写出 REVIEWED-SOURCE、INSIGHT、OBSERVATIONS、DISPLAY 前完成全部字段校验；失败报告字段路径、类型要求或允许键，不生成本次交付文件。字段校验不替代暂存时的身份、版本、证据和检查点验收。
 - 发布输入 `advice` 是按插件 ID 保存的读者版使用建议；`revision` 必须与研究提交一致，`text` 只润色表达，不改变证据事实或当前结论。
 - META 的 `captured_at` 是采集时间，`pushed_at` 是仓库推送时间，两者不能混用。
   缺失／失败值为 null 并保留错误，不用 0 代替未知；GitHub 与 npm 各自时间及窗口独立保留。

@@ -387,8 +387,25 @@ export function renderPublication(input, root = ROOT, context = null) {
                 }) + '\n'
         };
     });
+    const researchedIds = new Set([
+        ...items.map((entry) => entry.i.id),
+        ...catalog.plugins.filter((plugin) => context?.reports[plugin.id]).map((plugin) => plugin.id)
+    ]);
+    const researchCount = template('BADGE', {
+        alt: `已研究 ${researchedIds.size}`,
+        image:
+            'https://img.shields.io/static/v1?' +
+            new URLSearchParams({
+                label: '已研究',
+                message: String(researchedIds.size),
+                color: 'blue',
+                style: 'flat'
+            }).toString(),
+        url: link('README.md', input.catalog_page)
+    });
     const readme =
         template('README', {
+            research_count: researchCount,
             updated: renderUpdated(updated),
             navigation: renderHomeNavigation(homeGroups),
             latest: renderLatest(homeItems, updated),

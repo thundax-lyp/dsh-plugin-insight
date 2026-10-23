@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateDisplay } from '../../_shared/scripts/publication-validation.mjs';
 import { createGitReference, gitReferenceUrl } from '../../_shared/scripts/git-reference.mjs';
 import { validateResearchQuestions, renderResearchQuestions } from './research-questions.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
@@ -173,7 +174,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
     }
     const questionReport = renderResearchQuestions(analysis.research_questions, questionContext);
     const sourcePath = relative(ROOT, resolve(materials, 'REVIEWED-SOURCE.json')).split('\\').join('/');
-    atomicWrite(resolve(ROOT, sourcePath), {
+    const reviewedSource = {
         repository: item.repository,
         revision: item.revision,
         component: item.path,
@@ -181,7 +182,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         research_questions: analysis.research_questions,
         files: pack,
         inventory: { ...inventory, files: undefined }
-    });
+    };
     const now = new Date().toISOString(),
         run = `${work.session.id}-${item.id.replace(/:/g, '-')}`;
     const evidenceId = `${run}-source`,
@@ -303,12 +304,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
     const reportPath = resolve(materials, 'INSIGHT.md'),
         observationPath = resolve(materials, 'OBSERVATIONS.json'),
         displayPath = resolve(materials, 'DISPLAY.json');
-    mkdirSync(materials, { recursive: true });
-    if (existsSync(reportPath) || existsSync(observationPath)) throw Error('refuse overwriting authored record');
-    // Writing report after all identity/content checks avoids partially materialized semantic records.
-    writeFileSync(reportPath, report);
-    atomicWrite(observationPath, { schema_version: 1, run_id: run, checked_at: now, plugins: [plugin], errors: [] });
-    atomicWrite(displayPath, {
+    const display = validateDisplay({
         metadata,
         summaries: { text: analysis.summary, revision: item.revision, source_url: url(readme.path) },
         capabilities: {
@@ -318,6 +314,13 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         },
         advice: { revision: item.revision, text: analysis.adoption }
     });
+    mkdirSync(materials, { recursive: true });
+    if (existsSync(reportPath) || existsSync(observationPath)) throw Error('refuse overwriting authored record');
+    // Writing report after all identity/content checks avoids partially materialized semantic records.
+    atomicWrite(resolve(ROOT, sourcePath), reviewedSource);
+    writeFileSync(reportPath, report);
+    atomicWrite(observationPath, { schema_version: 1, run_id: run, checked_at: now, plugins: [plugin], errors: [] });
+    atomicWrite(displayPath, display);
     return {
         report: relative(ROOT, reportPath),
         observations: relative(ROOT, observationPath),
