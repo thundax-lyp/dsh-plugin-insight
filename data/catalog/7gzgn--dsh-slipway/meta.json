@@ -1,0 +1,55 @@
+{
+    "repository": "7gzgn/dsh-slipway",
+    "repository_id": 1422359117,
+    "captured_at": "2026-10-22T16:03:33.972Z",
+    "window_start": "2026-09-22T16:03:33.972Z",
+    "stars": 0,
+    "pushed_at": "2026-10-18T00:11:47Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-slipway%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 11E6:2155BB:A2C974:AFC00C:6ADA33D8 and timestamp 2026-10-22 16:03:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-slipway%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 12E2:FB30D:AEFED5:BBF97E:6ADA33D9 and timestamp 2026-10-22 16:03:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-slipway%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A33.972Z..2026-10-22T16%3A03%3A33.972Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 13A2:1C0DED:B04C59:BD4536:6ADA33DA and timestamp 2026-10-22 16:03:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-slipway%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A33.972Z..2026-10-22T16%3A03%3A33.972Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1492:1C143C:ADEC8E:BAE1EC:6ADA33DB and timestamp 2026-10-22 16:03:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-slipway%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A33.972Z..2026-10-22T16%3A03%3A33.972Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1566:3278A3:A419A2:B11205:6ADA33DC and timestamp 2026-10-22 16:03:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-slipway",
+        "captured_at": "2026-10-22T16:03:41.039Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-slipway",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": "2026-10-22T13:26:48.893Z",
+            "captured_at": "2026-10-22T16:03:41.039Z",
+            "source_url": "https://registry.npmjs.org/dsh-slipway",
+            "error": null,
+            "latest_version": "0.1.3",
+            "latest_published_at": "2026-10-22T13:27:46.828Z",
+            "latest_error": null
+        }
+    }
+}

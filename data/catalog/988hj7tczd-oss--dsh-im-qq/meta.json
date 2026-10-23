@@ -1,0 +1,34 @@
+{
+    "repository": "988hj7tczd-oss/dsh-im-qq",
+    "repository_id": 1335806472,
+    "captured_at": "2026-10-22T10:13:53.071Z",
+    "window_start": "2026-09-22T10:13:53.071Z",
+    "stars": 2,
+    "pushed_at": "2026-08-22T06:54:03Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-im-qq",
+        "captured_at": "2026-10-22T10:14:00.166Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 280,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-im-qq",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T10:09:02.985Z",
+            "captured_at": "2026-10-22T10:14:00.166Z",
+            "source_url": "https://registry.npmjs.org/dsh-im-qq",
+            "error": null,
+            "latest_version": "0.1.1",
+            "latest_published_at": "2026-08-16T10:35:34.337Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "repository": "988hj7tczd-oss/harness-desktop",
+    "repository_id": 1333716755,
+    "captured_at": "2026-10-23T01:50:21.301Z",
+    "window_start": "2026-09-23T01:50:21.301Z",
+    "stars": 2,
+    "pushed_at": "2026-08-31T09:37:20Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fharness-desktop%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B3D8:28E549:123C2F:13B1EA:6ADABD5F and timestamp 2026-10-23 01:50:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fharness-desktop%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B4B4:3460AA:1134FB:12ACD3:6ADABD60 and timestamp 2026-10-23 01:50:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fharness-desktop%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A21.301Z..2026-10-23T01%3A50%3A21.301Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B5B0:3EE1E7:13B323:152ABE:6ADABD62 and timestamp 2026-10-23 01:50:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fharness-desktop%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A21.301Z..2026-10-23T01%3A50%3A21.301Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B66A:324F03:136E468:14BA970:6ADABD63 and timestamp 2026-10-23 01:50:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A988hj7tczd-oss%2Fharness-desktop%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A21.301Z..2026-10-23T01%3A50%3A21.301Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B75A:102599:133D5C0:148A667:6ADABD64 and timestamp 2026-10-23 01:50:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "harness-memory",
+        "captured_at": "2026-10-23T01:50:29.045Z",
+        "window_start": "2026-09-23",
+        "window_end": "2026-10-22",
+        "downloads_30d": 187,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/harness-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-03-29T09:52:49.181Z",
+            "captured_at": "2026-10-23T01:50:29.045Z",
+            "source_url": "https://registry.npmjs.org/harness-memory",
+            "error": null,
+            "latest_version": "0.5.1",
+            "latest_published_at": "2026-04-09T11:49:25.466Z",
+            "latest_error": null
+        }
+    }
+}

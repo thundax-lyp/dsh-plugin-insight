@@ -1,0 +1,55 @@
+{
+    "repository": "863683348/dsh-insight",
+    "repository_id": 1336649545,
+    "captured_at": "2026-10-22T16:03:38.037Z",
+    "window_start": "2026-09-22T16:03:38.037Z",
+    "stars": 1,
+    "pushed_at": "2026-09-11T03:26:07Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 14EE:3241C0:A724CA:B417CE:6ADA33DC and timestamp 2026-10-22 16:03:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 15BC:101592:A416E5:B109ED:6ADA33DD and timestamp 2026-10-22 16:03:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A38.037Z..2026-10-22T16%3A03%3A38.037Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 169A:1C230A:A0D5FD:ADCDBF:6ADA33DE and timestamp 2026-10-22 16:03:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A38.037Z..2026-10-22T16%3A03%3A38.037Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1754:329B81:A1A983:AEA06D:6ADA33DF and timestamp 2026-10-22 16:03:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A863683348%2Fdsh-insight%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A38.037Z..2026-10-22T16%3A03%3A38.037Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 17FC:E97E6:A3B36A:B0A4EE:6ADA33E0 and timestamp 2026-10-22 16:03:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-insight",
+        "captured_at": "2026-10-22T16:03:45.109Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 821,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-insight",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T04:06:43.845Z",
+            "captured_at": "2026-10-22T16:03:45.109Z",
+            "source_url": "https://registry.npmjs.org/dsh-insight",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-17T04:06:44.229Z",
+            "latest_error": null
+        }
+    }
+}

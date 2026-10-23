@@ -1,0 +1,34 @@
+{
+    "repository": "7starsseeker/dsh-fact-check",
+    "repository_id": 1380181057,
+    "captured_at": "2026-10-22T06:01:01.364Z",
+    "window_start": "2026-09-22T06:01:01.364Z",
+    "stars": 2,
+    "pushed_at": "2026-10-17T15:25:13Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-fact-check",
+        "captured_at": "2026-10-22T06:01:09.389Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1388,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-fact-check",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-21T19:06:07.838Z",
+            "captured_at": "2026-10-22T06:01:09.389Z",
+            "source_url": "https://registry.npmjs.org/dsh-fact-check",
+            "error": null,
+            "latest_version": "1.4.0",
+            "latest_published_at": "2026-10-17T10:49:18.914Z",
+            "latest_error": null
+        }
+    }
+}

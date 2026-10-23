@@ -1,0 +1,55 @@
+{
+    "repository": "AAAlenwow/dsh-weknora-archive",
+    "repository_id": 1412897932,
+    "captured_at": "2026-10-22T15:12:33.725Z",
+    "window_start": "2026-09-22T15:12:33.725Z",
+    "stars": 0,
+    "pushed_at": "2026-10-22T04:28:50Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3946:1B9EB5:A38445:AFCFE9:6ADA27E4 and timestamp 2026-10-22 15:12:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 39F6:3229D4:A2C4B1:AF0FB6:6ADA27E5 and timestamp 2026-10-22 15:12:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A33.725Z..2026-10-22T15%3A12%3A33.725Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3ADC:E97E6:9A7EC9:A6C0F1:6ADA27E6 and timestamp 2026-10-22 15:12:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A33.725Z..2026-10-22T15%3A12%3A33.725Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3BE8:326669:BEACE7:CAF558:6ADA27E7 and timestamp 2026-10-22 15:12:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAAAlenwow%2Fdsh-weknora-archive%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A33.725Z..2026-10-22T15%3A12%3A33.725Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3CE6:1032B3:955ECB:A1A264:6ADA27E8 and timestamp 2026-10-22 15:12:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-weknora-archive",
+        "captured_at": "2026-10-22T15:12:41.293Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-weknora-archive",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-22T15:12:41.293Z",
+            "source_url": "https://registry.npmjs.org/dsh-weknora-archive",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

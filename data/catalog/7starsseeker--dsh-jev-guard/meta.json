@@ -1,0 +1,55 @@
+{
+    "repository": "7starsseeker/dsh-jev-guard",
+    "repository_id": 1378138611,
+    "captured_at": "2026-10-22T15:12:24.203Z",
+    "window_start": "2026-09-22T15:12:24.203Z",
+    "stars": 1,
+    "pushed_at": "2026-10-21T11:40:45Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32A8:320EB6:9C1F7C:A85B05:6ADA27DA and timestamp 2026-10-22 15:12:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3398:3261E0:9AC61C:A70667:6ADA27DB and timestamp 2026-10-22 15:12:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A24.203Z..2026-10-22T15%3A12%3A24.203Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3478:2AD50B:9C822D:A8CEDE:6ADA27DD and timestamp 2026-10-22 15:12:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A24.203Z..2026-10-22T15%3A12%3A24.203Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 353E:103D08:999999:A5DFB2:6ADA27DE and timestamp 2026-10-22 15:12:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-jev-guard%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A24.203Z..2026-10-22T15%3A12%3A24.203Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3634:2155BB:997FBF:A5C6A5:6ADA27DF and timestamp 2026-10-22 15:12:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-jev-guard",
+        "captured_at": "2026-10-22T15:12:31.680Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 1817,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-jev-guard",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-21T18:26:41.279Z",
+            "captured_at": "2026-10-22T15:12:31.680Z",
+            "source_url": "https://registry.npmjs.org/dsh-jev-guard",
+            "error": null,
+            "latest_version": "0.5.7",
+            "latest_published_at": "2026-10-21T11:45:21.550Z",
+            "latest_error": null
+        }
+    }
+}

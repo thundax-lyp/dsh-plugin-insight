@@ -1,0 +1,34 @@
+{
+    "repository": "9931666/dsh-plugin-crossfire",
+    "repository_id": 1399279897,
+    "captured_at": "2026-10-22T06:52:14.176Z",
+    "window_start": "2026-09-22T06:52:14.176Z",
+    "stars": 1,
+    "pushed_at": "2026-10-18T07:29:20Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "@y9931666/dsh-plugin-crossfire",
+        "captured_at": "2026-10-22T06:52:24.419Z",
+        "window_start": "2026-09-22",
+        "window_end": "2026-10-21",
+        "downloads_30d": 669,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40y9931666%2Fdsh-plugin-crossfire",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-01T13:31:12.828Z",
+            "captured_at": "2026-10-22T06:52:24.419Z",
+            "source_url": "https://registry.npmjs.org/%40y9931666%2Fdsh-plugin-crossfire",
+            "error": null,
+            "latest_version": "0.1.3",
+            "latest_published_at": "2026-10-18T07:33:34.663Z",
+            "latest_error": null
+        }
+    }
+}
