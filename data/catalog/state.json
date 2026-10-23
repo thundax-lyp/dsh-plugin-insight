@@ -1,7 +1,7 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "93bcfa8ef5486bdb6c5c42436dcbb69328dbd0d74a8ea57dca1325f980c060ea",
-    "index_sha256": "67c08356268119fff13aff50d61d8b53079c9dc7170b4a0884d55238d07fefa5",
+    "snapshot_digest": "aa05b60b98e382300f212d5d102099e1fceff76c2dd8be6324b9ae6b400b99d1",
+    "index_sha256": "a44e978c4370fc9cc765bbb4bc1ec9101e2b65e4477ee9295135d62d50f9b85b",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-23T07:54:19Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮已交付 3 项；当前发布 422；其余研究随后续小步提交交付",
+            "scope": "本轮已交付 5 项；当前发布 424；其余研究随后续小步提交交付",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -357,6 +357,7 @@
             "github:1343679449:root",
             "github:1343702731:root",
             "github:1343882273:root",
+            "github:1344270011:root",
             "github:1344713526:dsh-lsp-cpp",
             "github:1344713526:dsh-lsp-csharp",
             "github:1344713526:dsh-lsp-go",
@@ -551,6 +552,7 @@
             "github:1407379611:root",
             "github:1409096911:root",
             "github:1409724830:src",
+            "github:1409845351:plugins-dsh-orchestrator2",
             "github:1409889533:root",
             "github:1410395082:root",
             "github:1410794267:root",
@@ -1058,6 +1060,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -1482,6 +1486,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -1906,6 +1912,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -2330,6 +2338,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -2754,6 +2764,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -3179,6 +3191,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -3603,6 +3617,8 @@
             "github:1334493734:root",
             "github:1427089201:root",
             "github:1353534254:root",
+            "github:1409845351:plugins-dsh-orchestrator2",
+            "github:1344270011:root",
             "github:1414577411:root",
             "github:1423488109:root"
         ],
@@ -4031,6 +4047,8 @@
         "github:1334493734:root",
         "github:1427089201:root",
         "github:1353534254:root",
+        "github:1409845351:plugins-dsh-orchestrator2",
+        "github:1344270011:root",
         "github:1414577411:root",
         "github:1423488109:root"
     ],
@@ -4463,6 +4481,8 @@
         "data/runs/2026-10-23-04/alan2z--dsh-speak/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-04/alannerfranklin--dsh-cutout-pet/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/alice-marx--dsh-model-router/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-23-05/anglezhang-zhangjiao--dsh-orchestrator2--plugins-dsh-orchestrator2/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-23-05/anonyjcy--dsh-j-space/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/alycestocking--dsh-harness-switch/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/amethystluna--dsh-model-everything/REVIEWED-SOURCE.json"
     ]

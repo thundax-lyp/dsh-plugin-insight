@@ -74,6 +74,7 @@
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。 | [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=&message=2026-10-16&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) |
 | [agent-clinic](#plugin-1417442557-root) | 只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/agent-clinic) |
 | [dsh-wrapup-guard](#plugin-841979943-root) | 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard) |
+| [J-Space Cognition Suite DSH适配](#plugin-1344270011-root) | 将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) |
 | [dsh-mermaid](#plugin-1334569498-root) | 在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mermaid) |
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=&message=2026-10-14&color=grey&style=flat)](https://www.npmjs.com/package/dsh-almost-full-access) |
 | [DSH Harness Switch](#plugin-1414577411-root) | 在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。 | [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=&message=2026-10-14&color=grey&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) |
@@ -976,6 +977,20 @@
 **最新发布**：[0.1.0 · 2026-10-15（北京时间）](https://www.npmjs.com/package/dsh-wrapup-guard)。
 
 **使用条件**：仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见Q03(#research-q03)、Q04(#research-q04)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1344270011-root"></a>
+
+## [J-Space Cognition Suite DSH适配](../../plugins/anonyjcy--dsh-j-space/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AnonyJcy/dsh-j-space) [![npm 30d 2,004](https://img.shields.io/static/v1?label=npm+30d&message=2%2C004&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space)
+
+**主要用途**：将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。
+
+**最新发布**：[1.2.4 · 2026-10-15（北京时间）](https://www.npmjs.com/package/@anonyjcy/dsh-j-space)。
+
+**使用条件**：建议兼容环境下的复杂工程任务先单Agent试用，明确合作协议与真实门禁区别；简单任务先用原生工具，不据上游实验宣称收益。Q08(#research-q08)
 
 [返回表格](#column-index)
 

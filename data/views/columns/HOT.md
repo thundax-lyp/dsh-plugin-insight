@@ -36,6 +36,7 @@
 | [oh-my-dsh](#plugin-1379204512-root) | 为 DSH 提供多智能体编排、角色资产、状态工具、团队运行时与恢复机制。 | [![npm 近30天下载 2,166](https://img.shields.io/static/v1?label=&message=2%2C166&color=blue&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) | [![GitHub Star 12](https://img.shields.io/static/v1?label=&message=12&color=yellow&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) |
 | [dsh-multi-folder](#plugin-1334119885-root) | 为DSH项目配置副工作目录，保持主cwd并将原文件和shell工具按单次目标重定根，附UI与@发现。 | [![npm 近30天下载 2,036](https://img.shields.io/static/v1?label=&message=2%2C036&color=blue&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) | [![GitHub Star 11](https://img.shields.io/static/v1?label=&message=11&color=yellow&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) |
 | [dsh-model](#plugin-1410395082-root) | 整合模型中转、来源登录与管理、组合切换、设备密钥及每日签到，并同步到DSH。 | [![npm 近30天下载 2,009](https://img.shields.io/static/v1?label=&message=2%2C009&color=blue&style=flat)](https://www.npmjs.com/package/dsh-model) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/AIcivilization/dsh-model) |
+| [J-Space Cognition Suite DSH适配](#plugin-1344270011-root) | 将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。 | [![npm 近30天下载 2,004](https://img.shields.io/static/v1?label=&message=2%2C004&color=blue&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) | [![GitHub Star 6](https://img.shields.io/static/v1?label=&message=6&color=yellow&style=flat)](https://github.com/AnonyJcy/dsh-j-space) |
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。 | [![npm 近30天下载 1,971](https://img.shields.io/static/v1?label=&message=1%2C971&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | [![npm 近30天下载 1,892](https://img.shields.io/static/v1?label=&message=1%2C892&color=blue&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature) | [![GitHub Star 8](https://img.shields.io/static/v1?label=&message=8&color=yellow&style=flat)](https://github.com/Aik358/dsh-literature) |
 | [dsh-jev-guard](#plugin-1378138611-root) | 在shell执行前调用Jev判定不可逆删除或覆盖风险，并给出允许、改写、阻断或升级结果。 | [![npm 近30天下载 1,817](https://img.shields.io/static/v1?label=&message=1%2C817&color=blue&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) |
@@ -525,6 +526,20 @@
 **热度依据**：npm 近30天下载 2,009 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
 **使用条件**：有运维能力者本机少来源非敏感试用，先不开放远端并关闭不需签到；核授权/鉴权/流失败与退出。参见Q04(#research-q04)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1344270011-root"></a>
+
+## [J-Space Cognition Suite DSH适配](../../plugins/anonyjcy--dsh-j-space/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AnonyJcy/dsh-j-space) [![npm 30d 2,004](https://img.shields.io/static/v1?label=npm+30d&message=2%2C004&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space)
+
+**主要用途**：将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。
+
+**热度依据**：npm 近30天下载 2,004 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
+
+**使用条件**：建议兼容环境下的复杂工程任务先单Agent试用，明确合作协议与真实门禁区别；简单任务先用原生工具，不据上游实验宣称收益。Q08(#research-q08)
 
 [返回表格](#column-index)
 
