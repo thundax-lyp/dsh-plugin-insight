@@ -10,7 +10,8 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
-| [amoji-dsh-adapter](#plugin-1378933589-adapters-dsh) | 把 Amoji 不可变语义表情资产、市场和可靠投递接入 DSH。 | 保持观察；仅在匹配的 macOS/DSH 隔离环境检查共享服务生命周期、备份与未知结果恢复，不用于唯一资产库。 |
+| [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
+| [dsh-blend-preview](#plugin-1427791087-root) | 在 DSH 右侧栏把 Blender 文件转换为 GLB，并展示可交互三维预览与场景信息。 | 已有Blender环境且只需几何预览的用户可隔离试用；先用已知尺寸小模型核对结果，纹理、动画和最终渲染仍到Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
@@ -26,19 +27,33 @@
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 
-<a id="plugin-1378933589-adapters-dsh"></a>
+<a id="plugin-1352959121-root"></a>
 
-## [amoji-dsh-adapter](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md)
+## [@a9i5k4/dsh-ark9canvas](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md)
 
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-ark9canvas) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
 
+> **用途**：供需要在Harness里反复生图/改图并人工控制付费请求的内容制作者使用。交付为保存的图片及参数记录；批准是一道调用前门，不是预算核算或图片质量验收。
 
-> **用途**：适合需要人看图、模型只看稳定语义的表情资产创作、检索和投递；少量静态贴图用目录加说明更简单。 详见[Q01](#research-q01)。
+> **亮点**：把图片生成的Agent意图与实际付费提交拆开，用面板批准再生成，辅以路径式改图和部分成功批次，改变人机交接位置；图片模型与API能力来自外部渠道。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **亮点**：把图像身份与模型语义解耦，版本归档和可重试投递适合协作；组件自身只有接线，核心能力主要在仓库其他共享运行时。 详见[Q03](#research-q03)。
+> **思考**：审批不是持久预算账本。prompt在createApproval截到500字符后用截断值生成，批准时startGeneration读取当前渠道而非冻结创建时渠道；任务落盘和审批/通知内存又不对称。源码支持这些状态限制，未复现实际错图或错账。参见[Q03](#research-q03)。
 
-> **思考**：该组件锁定较旧 DSH/Node 组合且作者主要验证 macOS；共享数据库、浏览器 RPC 和未知结果协调增加故障面。 详见[Q04](#research-q04)。
+> **建议**：可将批准对象改为持久不可变请求摘要，绑定完整prompt、渠道标识、参数及价格上限，输出显式未知账单状态；重启与渠道切换对照中，若批准后实际提交参数不一致或重复计费未减少则否定。会增加状态迁移与上游幂等适配成本，假设未验证。参见[Q05](#research-q05)。
 
-> **建议**：以 crash-after-accepted 故障注入证明相同 operation 可协调恢复，才足以支持“可靠投递”而非普通重试。 详见[Q08](#research-q08)。
+<a id="plugin-1427791087-root"></a>
+
+## [dsh-blend-preview](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md)
+
+[![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-blend-preview)
+
+> **用途**：面向在DSH工作区生成或检查Blender模型的用户，合格结果是能核对几何、尺寸和场景结构，而不是纹理最终渲染。
+
+> **亮点**：相对切换Blender或手工导出GLB，贡献是工作区文件到本地缓存预览的一体链路和同版本任务复用；WebGL子集换取零CDN依赖，牺牲完整材质与动画表达。[Q01](#research-q01)
+
+> **思考**：预览只覆盖静态几何和底色，不能据此验收纹理、动画或最终渲染；缓存依赖大小mtime而非内容摘要，极端同大小同时间改写可能复用旧结果，尚未复现。[Q03](#research-q03)
+
+> **建议**：未验证假设是对保存事件增量计算内容摘要并标出预览能力缺口，降低旧缓存误用和视觉误验；对照同大小改写与纹理场景，若延迟增大却不改善误验则否定。[Q05](#research-q05)
 
 <a id="plugin-1422396858-root"></a>
 

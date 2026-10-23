@@ -7,14 +7,14 @@
             "id": "github:1413012630:plugin",
             "repository": "OrderG-X/dsh-mac-computer-use",
             "path": "plugin",
-            "revision": "6012874de07547a2b802a4cf80875ec04446fde9",
+            "revision": "32db48c2daea69a5537f828204a2bef9aef86d5b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "29a4e575c213aa1c52e86b11613d5568ad617517ab5d96b0a25671dff8e970f6",
-                "code": "6012874de07547a2b802a4cf80875ec04446fde9",
-                "maintenance": "928c3e5c9f7814cedc7a2127c6a34c70da3740435ddbc2c94833b93400a2fce3"
+                "code": "32db48c2daea69a5537f828204a2bef9aef86d5b",
+                "maintenance": "6e5b7f87be03e30fe9b27550e6d60ea90038376395006af49c6131c8abc9064f"
             }
         }
     }

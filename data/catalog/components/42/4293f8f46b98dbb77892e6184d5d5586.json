@@ -7,15 +7,15 @@
             "id": "github:1334830521:root",
             "repository": "MichengAI/dsh-skills-manager",
             "path": "",
-            "revision": "b4d385b10ee49c6e09d244863a06c9d3a9b43a9d",
+            "revision": "d76ab156d1d6c4e3ee22ebd54c7e191bb26ff6ac",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "4c9b27197a39c11299d91aba6ad25398024386ced7e724e2986cf81a1e5bd205",
-                "code": "b4d385b10ee49c6e09d244863a06c9d3a9b43a9d",
-                "maintenance": "f69360f8d67fe51687f2290f8997cc1e8a0c7c35fb9309a529818bad7ce5af94"
+                "code": "d76ab156d1d6c4e3ee22ebd54c7e191bb26ff6ac",
+                "maintenance": "b2a4147b153b8c2188ae3d840f10a94a013ba22bce43377f0dc2c16ebd98512a"
             }
         }
     }

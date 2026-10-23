@@ -7,15 +7,15 @@
             "id": "github:1333646693:root",
             "repository": "franksong2702/dsh-codex-connect",
             "path": "",
-            "revision": "d5fc7f7ec7d1560205afae299f7bac9b7049a931",
+            "revision": "3e71ee306e1bf6131d69d38ee53049717cb18147",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "1e894d3dd9393b5f9ced87f02546e7ffa3f68ad7cdb2b5095afb0258db3c6f18",
-                "code": "d5fc7f7ec7d1560205afae299f7bac9b7049a931",
-                "maintenance": "740310f0a42d691ce534661550fabed268f05aad94c327c29930a7deb16c87ed"
+                "code": "3e71ee306e1bf6131d69d38ee53049717cb18147",
+                "maintenance": "2493f463143b0ffd0f7b81a24749bb65ae27b152acfbcea2c712340aad206a06"
             }
         }
     }

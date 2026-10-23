@@ -7,14 +7,14 @@
             "id": "github:1406616913:root",
             "repository": "xraywu/dsh-service-monitor",
             "path": "",
-            "revision": "9525db94e5321b9b8fd23f0d7e4bd8f6f7b29b15",
+            "revision": "037fbc02a417debd9363d08cf5089f0499cf61e9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7ac6ed00806dcfd7d6ac2f2fbd4a70ef33de7dc7abf0d335c5141c613e49418a",
-                "code": "9525db94e5321b9b8fd23f0d7e4bd8f6f7b29b15",
-                "maintenance": "e3035faf21d952776350a55db338e25f10d3c8b64026d50773ad236a9a0dee8e"
+                "code": "037fbc02a417debd9363d08cf5089f0499cf61e9",
+                "maintenance": "9b5c8904f5443af0bf26b93d9f72983915af1ad4d0554671a183ce170a0d2941"
             }
         }
     }

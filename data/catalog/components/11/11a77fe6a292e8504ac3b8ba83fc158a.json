@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "11a77fe6a292e8504ac3b8ba83fc158a",
+    "identity": "github:1423607382:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423607382:root",
+            "repository": "drscrewdriver/dsh-media-lens",
+            "path": "",
+            "revision": "c9ada58b9d6c0e0a59c25fb9012b5a95db2f6dca",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "898f931ed65e93196050fff3ee4f6d4241c4d36845b2448efa7b9863aa7a6f35",
+                "code": "c9ada58b9d6c0e0a59c25fb9012b5a95db2f6dca",
+                "maintenance": "50a741464f2b14556776ba7319c32d8261280f1f7eb5b59196f05a3d2a047b50"
+            }
+        }
+    }
+}

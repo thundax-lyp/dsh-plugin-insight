@@ -7,14 +7,14 @@
             "id": "github:1336044501:packages-dsh-provider-usage",
             "repository": "wingsky-1/dsh-plugin-hub",
             "path": "packages/dsh-provider-usage",
-            "revision": "5a9c12aa33dc9853b1610f3295d26a5fc112ce1f",
+            "revision": "6261a460cd4c598993566a4ce909d3b6d1f4f11d",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "ae8ec58eb2c32f45e96e027b6ffab759035e62667bdb18d6d620d84ae311e216",
-                "code": "5a9c12aa33dc9853b1610f3295d26a5fc112ce1f",
-                "maintenance": "b470645461e8998543db16cc1458e2cb4e6cf0eda3db9e5899704abfb4b5edd8"
+                "code": "6261a460cd4c598993566a4ce909d3b6d1f4f11d",
+                "maintenance": "7fff5bd48acf01933a38ac2d31ca88a74c80702b1e841a3743f50dc3bd6cea8d"
             }
         }
     }

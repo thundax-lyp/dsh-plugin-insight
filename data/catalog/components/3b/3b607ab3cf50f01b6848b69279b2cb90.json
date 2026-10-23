@@ -3,6 +3,475 @@
     "id": "3b607ab3cf50f01b6848b69279b2cb90",
     "identity": "github:1336106328:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1336106328:root",
+            "repository_id": 1336106328,
+            "component_id": "root",
+            "repository": "AKS1st/dsh-skill-manager",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-skill-manager",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "ffa4313558ea1c8f0ed5b88853fd3b86a7adc159ecf57c547df6fe73b075c558",
+                "code": "fb452031031ea50a3287292d22b54e765d1039dc",
+                "maintenance": "d0cfaa29c13590ba616165b081b691119ca37962952928f656890cac96e32f64"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1336106328-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T01:59:55.133Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1336106328-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-skill-manager",
+                            "commit": "fb452031031ea50a3287292d22b54e765d1039dc",
+                            "path": "README.md",
+                            "content_sha256": "21ee6c86d2ff55b5b9291cfbc3cd70f7c86b83664aa43cea4dbfd1bed16dfa6b"
+                        }
+                    ],
+                    "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+                    "captured_at": "2026-10-23T01:59:55.133Z",
+                    "summary": "在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aks1st--dsh-skill-manager/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1336106328-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-skill-manager",
+                            "commit": "fb452031031ea50a3287292d22b54e765d1039dc",
+                            "path": "README.md",
+                            "content_sha256": "21ee6c86d2ff55b5b9291cfbc3cd70f7c86b83664aa43cea4dbfd1bed16dfa6b"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-skill-manager",
+                            "commit": "fb452031031ea50a3287292d22b54e765d1039dc",
+                            "path": "README.zh-CN.md",
+                            "content_sha256": "03633c31e34b131d006a052f84ec378083b2fb08f1fe00d6d8daf7415e5f53f4"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-skill-manager",
+                            "commit": "fb452031031ea50a3287292d22b54e765d1039dc",
+                            "path": "package.json",
+                            "content_sha256": "d97fe81890a17171fe384a69d8374253e4622e42a55d5de202a4c04d89ba9048"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-skill-manager",
+                            "commit": "fb452031031ea50a3287292d22b54e765d1039dc",
+                            "path": "src/index.ts",
+                            "content_sha256": "8e15eb01121c78717402a6a8466526468df4e6e26a911149c1d803878b22f24a"
+                        },
+                        {
+                            "repository_url": "https://github.com/AKS1st/dsh-skill-manager",
+                            "commit": "fb452031031ea50a3287292d22b54e765d1039dc",
+                            "path": "src/invariant.ts",
+                            "content_sha256": "f70ac443fcd4b2636b135b704a7ac1bc7ae8cb49b940bc7dc9099d12e8fb8f35"
+                        }
+                    ],
+                    "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+                    "captured_at": "2026-10-23T01:59:55.133Z",
+                    "summary": "核查 README.md、README.zh-CN.md、package.json、src/index.ts、src/invariant.ts；设置页经connection专用端点调用skillManager服务，按会话scope列出registry并构造canonical已知/可写目录；读写、zip、删除和启停分别操作宿主fs或Node文件系统。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/aks1st--dsh-skill-manager/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读Host目录/白名单、SKILL校验、zip、删除与端点，客户端依据固定README，未运行目标测试。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "为不愿手工操作技能目录的Harness维护者提供分层浏览与编辑入口，交付应是技能及附属资源可用、系统目录保持只读，而非仅出现导入成功提示。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "设置页经connection专用端点调用skillManager服务，按会话scope列出registry并构造canonical已知/可写目录；读写、zip、删除和启停分别操作宿主fs或Node文件系统。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读Host目录/白名单、SKILL校验、zip、删除与端点，客户端依据固定README，未运行目标测试。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT；0.3.2；Node ^22.19||>=24，fflate/yaml/immer；宿主SDK多为构建期依赖并须运行时解析。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包与本地存储资源，金额未知 | 对齐宿主API、备份技能目录 | 无外部模型必需调用 |\n| 持续使用 | 目录扫描、zip内存和文件IO | 内容审核及导入后资源核对 | 8MB base64/100MB展开等上限 |\n| 失败恢复 | 备份与重复导入资源 | 恢复删除/覆盖内容及技能依赖 | 未见事务回滚或自动备份 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。导入后必须逐文件与宿主可见性核对，缺资源或覆盖异常立即恢复备份。参见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 可视管理 | 分层目录、编辑与受限写路径 | 真实复杂scope下目录完整性 |\n| 格式保护 | SKILL.md写入前严格YAML校验 | 语义正确和附属资源完整性 |\n| zip迁移 | 导入/导出接口与资源上限 | 当前导入循环疑似丢弃附属文件，未运行复现 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "canonical路径白名单、zip解压前预算及保存前同YAML解析器可借鉴；导入需完整manifest、写入事务与回滚，客户端两步确认不能替代服务端恢复。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "用宿主分层registry和可写目录边界组织图形技能管理，把格式校验放在保存前，减少“编辑器能显示但宿主不加载”的差异；属于管理流程与校验集成。参见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "zip导入的归属映射仅为SKILL.md及顶层Markdown登记，但提取循环要求每个entry都在该映射中，scripts/references等附属文件会被continue跳过。静态代码支持完整性缺陷，尚未执行归档复现；这直接削弱技能搬迁承诺。参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可先构造按顶层skill归属的完整文件清单，严格校验并在暂存目录完成后原子rename，返回文件摘要与未导入原因；用含scripts/references及名称冲突的zip往返比对，若缺文件、覆盖不可回滚或目录越界即否定。假设未验证且增加暂存/备份空间。参见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336106328:root",
+                            "area": "code",
+                            "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:59:55.133Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T01:59:55.133Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+                "reviewed_at": "2026-10-23T01:59:55.133Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336106328:root",
+                        "area": "code",
+                        "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为常规管理UI；mechanism为分层registry、canonical边界及同parser门；transferability有条件可移植管理器；simplification降低手工文件操作但导入缺口限制。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow为可视编辑与分层交接；delivery仍是技能文件；reach帮助非命令行用户；economics仅局部维护便利，无收益实测。",
+                    "basis": "interpretation",
+                    "score": 40,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1336106328-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "分层编辑和格式保护有价值，但复杂技能zip导入的静态完整性缺陷影响核心迁移操作。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "技能维护任务反复发生且明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "图形分层和格式门优于手工误操作。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码可核，未执行导入或宿主。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "覆盖删除恢复及资源核对负担高。"
+                    }
+                },
+                "score": 60,
+                "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+                "reviewed_at": "2026-10-23T01:59:55.133Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1336106328-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336106328:root",
+                        "area": "code",
+                        "fingerprint": "fb452031031ea50a3287292d22b54e765d1039dc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336106328:root",
+            "repository": "AKS1st/dsh-skill-manager",
+            "path": "",
+            "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+            "fingerprints": {
+                "directory": "ffa4313558ea1c8f0ed5b88853fd3b86a7adc159ecf57c547df6fe73b075c558",
+                "code": "fb452031031ea50a3287292d22b54e765d1039dc",
+                "maintenance": "d0cfaa29c13590ba616165b081b691119ca37962952928f656890cac96e32f64"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "6cbc82069c1cbbf1fafe1474a08c688839be500a763eb72d2567c1d1fdddd8c7"
+        },
+        "publication.metadata": "data/plugins/aks1st--dsh-skill-manager/META.json",
+        "publication.summaries": {
+            "text": "在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。",
+            "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+            "source_url": "https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+            "items": {
+                "界面": "技能设置页、文件树和编辑窗口",
+                "Host 路由": "list/files/read/write/import/export/delete/toggle端点"
+            },
+            "table": "#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 分层目录与文件树 | 识别技能归属和资源 | 以会话scope及registry完整度为准 |\n| 编辑 | 更新可写技能文件 | 系统/预设只读，SKILL格式门 |\n| zip导入/导出 | 搬迁和备份 | 展开上限，导入附属资源缺口 |\n| 删除/启停 | 管理可写技能 | 删除无回收站，启停通过rename |"
+        },
+        "publication.advice": {
+            "revision": "fb452031031ea50a3287292d22b54e765d1039dc",
+            "text": "建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。导入后必须逐文件与宿主可见性核对，缺资源或覆盖异常立即恢复备份。参见[Q06](#research-q06)。"
+        },
+        "registry": "data/plugins/aks1st--dsh-skill-manager",
+        "reports": "# dsh-skill-manager\n\n> 在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。\n\n## 研究范围\n\n- **仓库**：[AKS1st/dsh-skill-manager](https://github.com/AKS1st/dsh-skill-manager)\n- **版本号**：0.3.2（[固定提交 fb452031031ea50a3287292d22b54e765d1039dc](https://github.com/AKS1st/dsh-skill-manager/tree/fb452031031ea50a3287292d22b54e765d1039dc)）\n- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n管理、边界与格式门可核；静态发现zip附属资源归属缺口，未运行复现。\n\n## 洞察短评\n\n- **用途**：为不愿手工操作技能目录的Harness维护者提供分层浏览与编辑入口，交付应是技能及附属资源可用、系统目录保持只读，而非仅出现导入成功提示。\n- **亮点**：用宿主分层registry和可写目录边界组织图形技能管理，把格式校验放在保存前，减少“编辑器能显示但宿主不加载”的差异；属于管理流程与校验集成。参见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：zip导入的归属映射仅为SKILL.md及顶层Markdown登记，但提取循环要求每个entry都在该映射中，scripts/references等附属文件会被continue跳过。静态代码支持完整性缺陷，尚未执行归档复现；这直接削弱技能搬迁承诺。参见[Q03](#research-q03)。\n- **建议**：可先构造按顶层skill归属的完整文件清单，严格校验并在暂存目录完成后原子rename，返回文件摘要与未导入原因；用含scripts/references及名称冲突的zip往返比对，若缺文件、覆盖不可回滚或目录越界即否定。假设未验证且增加暂存/备份空间。参见[Q05](#research-q05)。\n\n采用建议：建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。导入后必须逐文件与宿主可见性核对，缺资源或覆盖异常立即恢复备份。参见[Q06](#research-q06)。\n\n## 核心贡献\n\n用宿主分层registry和可写目录边界组织图形技能管理，把格式校验放在保存前，减少“编辑器能显示但宿主不加载”的差异；属于管理流程与校验集成。参见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\nzip导入的归属映射仅为SKILL.md及顶层Markdown登记，但提取循环要求每个entry都在该映射中，scripts/references等附属文件会被continue跳过。静态代码支持完整性缺陷，尚未执行归档复现；这直接削弱技能搬迁承诺。参见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可先构造按顶层skill归属的完整文件清单，严格校验并在暂存目录完成后原子rename，返回文件摘要与未导入原因；用含scripts/references及名称冲突的zip往返比对，若缺文件、覆盖不可回滚或目录越界即否定。假设未验证且增加暂存/备份空间。参见[Q05](#research-q05)。\n\n构造含SKILL.md/scripts/references的最小归档和只读/可写目录，核对导入前后逐文件摘要、冲突和恢复；本轮不执行。\n\n## 场景与替代办法\n\n为不愿手工操作技能目录的Harness维护者提供分层浏览与编辑入口，交付应是技能及附属资源可用、系统目录保持只读，而非仅出现导入成功提示。\n\n文件编辑器及zip命令提供同类能力但需人工识别层级；本插件主要减少发现与格式判断负担。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node ^22.19或>=24、Harness Web与connection | 必需 | 设置页和鉴权端点 | 无法提供管理页 |\n| skills registry、会话/工作区服务 | 目录完整性必需 | 确定可见层及导入目的地 | list可返回complete:false |\n| fs/Node目录权限 | 写入操作必需 | 编辑、zip、删除和rename | 权限/边界错误返回RPC错误 |\n| fflate、yaml、immer | 包依赖 | 归档、格式和客户端状态 | 缺失无法构建/加载对应模块 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 安装重启，打开技能管理页并选会话 | 目录分层与complete状态合理 |\n| 2 | 导出备份后编辑或导入低风险技能 | SKILL.md格式通过且附属文件齐全 |\n| 3 | 重新读取宿主目录并实际核对可见技能 | 管理页保存成功不等于registry加载成功 |\n| 4 | 异常时恢复备份或目录名 | 删除无内置回收站，启停可rename恢复 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包与本地存储资源，金额未知 | 对齐宿主API、备份技能目录 | 无外部模型必需调用 |\n| 持续使用 | 目录扫描、zip内存和文件IO | 内容审核及导入后资源核对 | 8MB base64/100MB展开等上限 |\n| 失败恢复 | 备份与重复导入资源 | 恢复删除/覆盖内容及技能依赖 | 未见事务回滚或自动备份 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 可视管理 | 分层目录、编辑与受限写路径 | 真实复杂scope下目录完整性 |\n| 格式保护 | SKILL.md写入前严格YAML校验 | 语义正确和附属资源完整性 |\n| zip迁移 | 导入/导出接口与资源上限 | 当前导入循环疑似丢弃附属文件，未运行复现 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 fb452031031ea50a3287292d22b54e765d1039dc 和截止 2026-10-23T01:41:11Z 范围内，Skill目录管理能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要Skill目录管理，相对手工或宿主原生办法增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\nHarness维护者在用户、项目及预设技能间管理内容时，原办法是文件编辑器/命令行和手工zip。该插件以分层设置页交付浏览、编辑和迁移入口，成功标准为宿主能发现并正确使用完整技能，而非页内状态变更。系统和预设只读能降低误改，但不代表技能内容可信。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.zh-CN.md:9-15](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/README.zh-CN.md#L9-L15)\n\n作者管理用途与操作主张\n\n```text\n一个 DSH Web 插件，在设置面板（从侧边栏底部的「设置」入口打开）中新增「技能管理」页面。它展示当前部署可见的全部技能，按 **系统 / 用户 / 工作区 / 预设** 四类分组，无需手动操作文件系统即可管理：\n\n- **浏览** — 展开技能查看其目录文件树；系统（bundled）技能只读，用户与工作区技能可完整管理。\n- **编辑** — 点击文件打开查看/编辑窗口，直接修改技能内容。\n- **导入** — 上传 zip 技能包，安装到你的用户技能目录或任意工作区（空白工作区也显示，排在最后）。\n- **导出** — 将任意技能下载为 zip，只读技能也可导出。\n- **删除** — 两步确认后删除可写技能。\n```\n\n**依据 2 · 源码核查**：[src/index.ts:273-286](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L273-L286)\n\n来源与管理层映射\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nfunction tierFor(source: string, provider?: string): SkillManagerEntry['tier'] {\n  switch (source) {\n    case 'bundled':\n      // The deployment's own bundled roots (default filesystem provider, the\n      // dsh-badge provider) are system skills; any other provider mounting a\n      // bundled root is a plugin contribution.\n      return provider !== undefined && SYSTEM_BUNDLED_PROVIDERS.has(provider) ? 'system' : 'plugin'\n    case 'user-dsh':\n    case 'user-agents': return 'user'\n    case 'project-dsh':\n    case 'project-agents': return 'project'\n    // custom (preset-provided dirs) and runtime-registered skills belong to\n    // the preset/deployment plane, not to a project workspace.\n    default: return 'custom'\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 文件读写、目录隔离与宿主更新如何从入口形成完整调用链，依赖失效怎么办？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n客户端请求经鉴权connection fetch端点分派至service；list按session preset/cwd读registry并保存known/writable canonical目录，write先边界校验再对SKILL.md做YAML校验后写入。导入走Node文件系统并要求登记工作区。需Web/connection/skills和对应读写权限，用户应先列目录、备份、修改，再核宿主目录；无服务时complete:false或错误，不能当空生态。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:589-623](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L589-L623)\n\ncanonical路径与白名单校验\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  async function resolveCanonical(rawPath: string): Promise<string> {\n    const fs = fsOf()\n    if (fs !== undefined) {\n      try {\n        const target = await fs.resolve(rawPath)\n        return (target as { targetKey?: string }).targetKey ?? target.displayPath\n      } catch {\n        // fall through to node realpath\n      }\n    }\n    try {\n      return await nodeRealpath(rawPath)\n    } catch {\n      return rawPath\n    }\n  }\n\n  /**\n   * Resolve a client-supplied path to its canonical key and verify it sits\n   * inside one of the given directory prefixes (or equals it).\n   * @param requestPath - the raw client path.\n   * @param prefixes - canonical directory keys to allow.\n   * @param what - action label for the refusal message (`write to`, `delete`, …).\n   * @param refusal - the category word for the refusal message (`writable` / `known`).\n   * @returns the canonical key of `requestPath`.\n   * @throws when the path is outside every allowed prefix.\n   */\n  async function assertInside(requestPath: string, prefixes: string[], what: string, refusal: string): Promise<string> {\n    const key = await resolveCanonical(requestPath)\n    const allowed = prefixes.some(prefix =>\n      key === prefix || key.startsWith(`${prefix}/`) || key.startsWith(`${prefix}\\\\`))\n    if (!allowed) {\n      throw new Error(`refusing to ${what}: path is outside a ${refusal} skill directory (${requestPath})`)\n    }\n    return key\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:936-956](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L936-L956)\n\n写前校验链\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    async write(request) {\n      // Only paths inside a non-read-only skill directory (collected by the\n      // last catalog read) may be written; system/bundled and unknown paths\n      // are refused before touching the filesystem. The path is canonicalized\n      // first so `..` segments and symlinks cannot escape the whitelist.\n      const key = await assertInside(request.path, writableSkillDirs, 'write to', 'writable')\n      const fs = fsOf()\n      if (fs === undefined) throw new Error('filesystem service is unavailable')\n      // Save-time gate for SKILL.md: the Harness drops a skill whose frontmatter\n      // does not parse, with nothing but a host-stdout warning, so an unvalidated\n      // save can make a whole skill disappear from every agent's catalog. Other\n      // files in the directory (references, scripts) are written as-is.\n      if (key.split(/[\\\\/]/).pop() === 'SKILL.md') {\n        const problems = validateSkillDocument(request.content)\n        if (problems.length > 0) {\n          throw new Error('SKILL.md 校验未通过，未写入：\\n- ' + problems.join('\\n- '))\n        }\n      }\n      const target = await fs.resolve(key)\n      await fs.writeText(target, request.content)\n      return { ok: true }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:1152-1183](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L1152-L1183)\n\n八类端点和分派\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n/** Endpoints this channel serves; each becomes one exact Fetch route under `/api`. */\nconst SKILL_MANAGER_ENDPOINTS = [\n  'list', 'files', 'read', 'write', 'importSkill', 'exportSkill', 'deleteSkill', 'toggleSkill',\n] as const\n\nexport const inject = ['connection']\n\nexport function apply(ctx: Context): void {\n  const service = buildService(ctx)\n  ctx.provide('skillManager', service)\n\n  const connection = ctx.get('connection') as HostConnectionHandle\n  // Dedicated plugin channels ride the shared `/api` carrier. The generic RPC\n  // caller's channel must be a single path segment, so the logical channel\n  // travels as the endpoint's first segment instead. Exact Fetch routes only\n  // touch this service's own route table, and the carrier applies trusted-host\n  // and browser authentication before these handlers run — which also leaves\n  // the single-slot `/api` interceptor to the Typert gateway.\n  /** Serve one decoded endpoint from a JSON RPC envelope. */\n  async function dispatchSkillManager(endpoint: string, payload: unknown): Promise<RpcResult<unknown>> {\n    const request = (payload ?? {}) as Record<string, unknown>\n    try {\n      let value: unknown\n      switch (endpoint) {\n        case 'list': value = await service.list(request as unknown as SkillManagerListRequest); break\n        case 'files': value = await service.files(request as unknown as SkillManagerFilesRequest); break\n        case 'read': value = await service.read(request as unknown as SkillManagerReadRequest); break\n        case 'write': value = await service.write(request as unknown as SkillManagerWriteRequest); break\n        case 'importSkill': value = await service.importSkill(request as unknown as SkillManagerImportRequest); break\n        case 'exportSkill': value = await service.exportSkill(request as unknown as SkillManagerExportRequest); break\n        case 'deleteSkill': value = await service.deleteSkill(request as unknown as SkillManagerDeleteRequest); break\n        case 'toggleSkill': value = await service.toggleSkill(request as unknown as SkillManagerToggleRequest); break\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 什么实现边界最可能使Skill目录管理的贡献不成立，哪些工程设计可复用？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n最关键问题是导入是否保存完整技能树。归属映射只给SKILL.md及顶层md填值，提取循环对每一entry查map并跳过undefined，因此多层资源不随SKILL.md提取；未经执行只报告静态推导。可借鉴canonical边界、zip展开预算与同yaml parser校验，不能把这些保护当完整迁移验证；直接覆盖写入亦缺事务回滚。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:1028-1035](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L1028-L1035)\n\n只有技能入口/顶层md建立归属映射\n\n```text\n        const fileName = parts[parts.length - 1] ?? ''\n        if (fileName === 'SKILL.md') {\n          // <name>/SKILL.md → skill name; bare SKILL.md → read the frontmatter name.\n          if (parts.length >= 2) skillNameByEntry.set(normalizedPath, parts[0]!)\n          else skillNameByEntry.set(normalizedPath, '')\n        } else if (parts.length === 1 && fileName.endsWith('.md')) {\n          // A single loose .md file is a one-file skill named after the file.\n          skillNameByEntry.set(normalizedPath, fileName.slice(0, -3))\n```\n\n**依据 2 · 源码核查**：[src/index.ts:1057-1078](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L1057-L1078)\n\n每entry查归属，附属文件被跳过\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n      await nodeMkdir(targetDir, { recursive: true })\n      // Extract every normalized entry belonging to an imported skill.\n      const seen = new Set<string>()\n      for (const [entryPath, data] of normalized) {\n        const parts = entryPath.split('/').filter(Boolean)\n        const skillName = skillNameByEntry.get(entryPath)\n        if (skillName === undefined || !imported.includes(skillName)) continue\n        // A single top-level file (bare SKILL.md or <name>.md) becomes the\n        // skill's own file inside <skill>/.\n        if (parts.length === 1) {\n          const outPath = nodeJoinSafe(targetDir, `${skillName}/${parts[0]}`)\n          if (outPath === undefined) continue\n          await nodeMkdir(outPath.split('/').slice(0, -1).join('/'), { recursive: true })\n          await nodeWriteFile(outPath, data)\n          continue\n        }\n        const outPath = nodeJoinSafe(targetDir, entryPath)\n        if (outPath === undefined) continue\n        if (seen.has(entryPath)) continue\n        seen.add(entryPath)\n        await nodeMkdir(outPath.split('/').slice(0, -1).join('/'), { recursive: true })\n        await nodeWriteFile(outPath, data)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:991-1007](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L991-L1007)\n\n解压前尺寸与条目上限\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n      if (request.zipBase64.length > 8 * 1024 * 1024) {\n        throw new Error('uploaded package exceeds the 8 MB size limit')\n      }\n      const bytes = Buffer.from(request.zipBase64, 'base64')\n      let seenEntries = 0\n      let declaredBytes = 0\n      const entries = unzipSync(new Uint8Array(bytes), {\n        filter(entry) {\n          seenEntries += 1\n          if (seenEntries > MAX_ZIP_ENTRIES) {\n            throw new Error(`uploaded package has too many entries (${seenEntries} > ${MAX_ZIP_ENTRIES})`)\n          }\n          declaredBytes += entry.originalSize\n          if (declaredBytes > MAX_ZIP_BYTES) {\n            throw new Error(`uploaded package expands beyond the ${Math.round(MAX_ZIP_BYTES / 1024 / 1024)} MB limit`)\n          }\n          return true\n```\n\n</details>\n\n#### 缺口\n\n- 附属资源丢失与宿主重载尚未运行复现\n  **影响**：复杂技能导入可靠性不能通过\n  **进一步探讨**：以含脚本/引用的最小zip逐文件往返比对，并观察宿主registry\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本为安装、宿主接口对齐和目录备份；持续成本是扫描、压缩与人工审内容；失败恢复需要还原被覆盖/删除文件，当前删除是recursive rm没有回收站。无额外模型调用不代表零总成本，时间和资源实测均未知。效果只支持可视操作和格式门，语义正确及资源完整仍需验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:393-396](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L393-L396)\n\n树和zip预算\n\n```text\n/** Cap on file-tree nodes and on zip entries, guarding against unbounded memory use. */\nconst MAX_TREE_NODES = 5000\nconst MAX_ZIP_ENTRIES = 2000\nconst MAX_ZIP_BYTES = 100 * 1024 * 1024\n```\n\n**依据 2 · 源码核查**：[src/index.ts:1097-1104](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L1097-L1104)\n\n直接递归删除\n\n```text\n    async deleteSkill(request) {\n      // Only writable skill directories (project/user) may be deleted. The\n      // request names the skill directory itself, so it matches the prefix\n      // exactly (or sits under it). The path is canonicalized first so `..`\n      // segments and symlinks cannot make node:rm delete outside the whitelist.\n      const key = await assertInside(request.path, writableSkillDirs, 'delete', 'writable')\n      await nodeRm(key, { recursive: true, force: true })\n      return { ok: true }\n```\n\n**依据 3 · 源码核查**：[src/index.ts:948-955](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L948-L955)\n\n校验只限制SKILL.md格式\n\n```text\n      if (key.split(/[\\\\/]/).pop() === 'SKILL.md') {\n        const problems = validateSkillDocument(request.content)\n        if (problems.length > 0) {\n          throw new Error('SKILL.md 校验未通过，未写入：\\n- ' + problems.join('\\n- '))\n        }\n      }\n      const target = await fs.resolve(key)\n      await fs.writeText(target, request.content)\n```\n\n#### 缺口\n\n- 操作工时和恢复成功率未量化\n  **影响**：不能证明比文件管理器更省成本\n  **进一步探讨**：对照完整技能的编辑/迁移/恢复任务，计入人工复核\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可从文件读写、目录隔离与宿主更新的限制推导什么可证伪改进？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n假设为manifest驱动的暂存导入：完整归属每个文件、拒绝冲突或备份旧树、校验后一次rename，并提供可对照的摘要。依据是当前入口映射与逐文件直写之间的缺口；对照原版测试多目录、碰撞、非法frontmatter和写中断，缺文件、越界或恢复失败均推翻改进主张。此方案未实现，代价为暂存空间及失败清理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:1046-1078](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L1046-L1078)\n\n当前发现入口后逐文件直写流程\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n      const imported: string[] = []\n      const validName = (name: string): boolean => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)\n      for (const name of skillNameByEntry.values()) {\n        if (!validName(name)) continue\n        if (imported.includes(name)) continue\n        imported.push(name)\n      }\n      if (imported.length === 0) {\n        const sample = [...normalized.keys()].slice(0, 5).join(', ')\n        throw new Error(`no valid skills found in the uploaded package (expected <skill>/SKILL.md entries); archive contains: ${sample || '(empty)'}`)\n      }\n      await nodeMkdir(targetDir, { recursive: true })\n      // Extract every normalized entry belonging to an imported skill.\n      const seen = new Set<string>()\n      for (const [entryPath, data] of normalized) {\n        const parts = entryPath.split('/').filter(Boolean)\n        const skillName = skillNameByEntry.get(entryPath)\n        if (skillName === undefined || !imported.includes(skillName)) continue\n        // A single top-level file (bare SKILL.md or <name>.md) becomes the\n        // skill's own file inside <skill>/.\n        if (parts.length === 1) {\n          const outPath = nodeJoinSafe(targetDir, `${skillName}/${parts[0]}`)\n          if (outPath === undefined) continue\n          await nodeMkdir(outPath.split('/').slice(0, -1).join('/'), { recursive: true })\n          await nodeWriteFile(outPath, data)\n          continue\n        }\n        const outPath = nodeJoinSafe(targetDir, entryPath)\n        if (outPath === undefined) continue\n        if (seen.has(entryPath)) continue\n        seen.add(entryPath)\n        await nodeMkdir(outPath.split('/').slice(0, -1).join('/'), { recursive: true })\n        await nodeWriteFile(outPath, data)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:349-390](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L349-L390)\n\n可复用的格式校验门\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nexport function validateSkillDocument(content: string): string[] {\n  const lines = content.split('\\n')\n  if ((lines[0] ?? '').replace(/\\r$/, '') !== '---') {\n    return ['frontmatter 必须以单独一行 `---` 开头（Harness 靠它解析 name/description）']\n  }\n  let closing = -1\n  for (let index = 1; index < lines.length; index += 1) {\n    if (lines[index].replace(/\\r$/, '') === '---') {\n      closing = index\n      break\n    }\n  }\n  if (closing < 0) return ['frontmatter 缺少结束的 `---` 行']\n  let data: unknown\n  try {\n    data = parseYaml(lines.slice(1, closing).join('\\n'))\n  } catch (error) {\n    const position = (error as { linePos?: { line: number; col: number }[] }).linePos?.[0]\n    const where = position === undefined ? '' : `（第 ${position.line} 行第 ${position.col} 列）`\n    const reason = error instanceof Error ? error.message.split('\\n')[0] : String(error)\n    return [\n      `frontmatter 不是合法 YAML${where}：${reason}`,\n      '最常见的原因：值里出现「冒号+空格」（例如 `github: ` / `link: ` / `location: `）。'\n      + 'YAML 会把它当成映射分隔符，整个技能会被丢弃。给这个值加双引号、并把内部的双引号转义即可。',\n    ]\n  }\n  if (typeof data !== 'object' || data === null || Array.isArray(data)) {\n    return ['frontmatter 必须是键值映射（至少含 name 与 description）']\n  }\n  const record = data as Record<string, unknown>\n  const problems: string[] = []\n  const name = record.name\n  const description = record.description\n  if (typeof name !== 'string' || name.trim() === '') {\n    problems.push('缺少 name（必须是字符串）')\n  } else if (!SKILL_NAME.test(name)) {\n    problems.push(`name「${name}」不合法：只允许小写字母、数字与连字符，例如 writing-skills`)\n  }\n  if (typeof description !== 'string' || description.trim() === '') {\n    problems.push('缺少 description（必须是字符串）')\n  }\n  return problems\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 哪些用户可以受控采用Skill目录管理，何时应停止？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察，用户若只是查看和编辑，可在备份低风险技能后受控评估；依赖复杂脚本资源的批量迁移用户应等导入完整性修复。成功必须是文件树与原包一致、系统目录仍只读、宿主能加载；出现资源缺失、错误工作区或删除不可恢复就停用并还原备份。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:1057-1078](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L1057-L1078)\n\n导入完整性影响迁移建议\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n      await nodeMkdir(targetDir, { recursive: true })\n      // Extract every normalized entry belonging to an imported skill.\n      const seen = new Set<string>()\n      for (const [entryPath, data] of normalized) {\n        const parts = entryPath.split('/').filter(Boolean)\n        const skillName = skillNameByEntry.get(entryPath)\n        if (skillName === undefined || !imported.includes(skillName)) continue\n        // A single top-level file (bare SKILL.md or <name>.md) becomes the\n        // skill's own file inside <skill>/.\n        if (parts.length === 1) {\n          const outPath = nodeJoinSafe(targetDir, `${skillName}/${parts[0]}`)\n          if (outPath === undefined) continue\n          await nodeMkdir(outPath.split('/').slice(0, -1).join('/'), { recursive: true })\n          await nodeWriteFile(outPath, data)\n          continue\n        }\n        const outPath = nodeJoinSafe(targetDir, entryPath)\n        if (outPath === undefined) continue\n        if (seen.has(entryPath)) continue\n        seen.add(entryPath)\n        await nodeMkdir(outPath.split('/').slice(0, -1).join('/'), { recursive: true })\n        await nodeWriteFile(outPath, data)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:936-956](https://github.com/AKS1st/dsh-skill-manager/blob/fb452031031ea50a3287292d22b54e765d1039dc/src/index.ts#L936-L956)\n\n单文件编辑的可控边界\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    async write(request) {\n      // Only paths inside a non-read-only skill directory (collected by the\n      // last catalog read) may be written; system/bundled and unknown paths\n      // are refused before touching the filesystem. The path is canonicalized\n      // first so `..` segments and symlinks cannot escape the whitelist.\n      const key = await assertInside(request.path, writableSkillDirs, 'write to', 'writable')\n      const fs = fsOf()\n      if (fs === undefined) throw new Error('filesystem service is unavailable')\n      // Save-time gate for SKILL.md: the Harness drops a skill whose frontmatter\n      // does not parse, with nothing but a host-stdout warning, so an unvalidated\n      // save can make a whole skill disappear from every agent's catalog. Other\n      // files in the directory (references, scripts) are written as-is.\n      if (key.split(/[\\\\/]/).pop() === 'SKILL.md') {\n        const problems = validateSkillDocument(request.content)\n        if (problems.length > 0) {\n          throw new Error('SKILL.md 校验未通过，未写入：\\n- ' + problems.join('\\n- '))\n        }\n      }\n      const target = await fs.resolve(key)\n      await fs.writeText(target, request.content)\n      return { ok: true }\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：77e60872010bdb73a561678fdbb6ca58226273ead89114042ba1d2df7535c4bb。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 2708 | 2450 | 392 | — |\n| .md | source | 2 | 141 | — | — | 1233 |\n| .ts | source | 7 | 2300 | 1570 | 614 | — |\n| .tsx | source | 2 | 621 | 529 | 59 | — |\n| .ts | test | 5 | 968 | 811 | 78 | — |\n| .mjs | source | 1 | 17 | 9 | 7 | — |\n\n排除 9 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 分层目录与文件树 | 识别技能归属和资源 | 以会话scope及registry完整度为准 |\n| 编辑 | 更新可写技能文件 | 系统/预设只读，SKILL格式门 |\n| zip导入/导出 | 搬迁和备份 | 展开上限，导入附属资源缺口 |\n| 删除/启停 | 管理可写技能 | 删除无回收站，启停通过rename |\n\n## 工程亮点\n\ncanonical路径白名单、zip解压前预算及保存前同YAML解析器可借鉴；导入需完整manifest、写入事务与回滚，客户端两步确认不能替代服务端恢复。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、README.zh-CN.md、package.json、src/index.ts、src/invariant.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读Host目录/白名单、SKILL校验、zip、删除与端点，客户端依据固定README，未运行目标测试。\n- 下一步：构造含SKILL.md/scripts/references的最小归档和只读/可写目录，核对导入前后逐文件摘要、冲突和恢复；本轮不执行。\n",
+        "metadata": {
+            "repository": "AKS1st/dsh-skill-manager",
+            "repository_id": 1336106328,
+            "captured_at": "2026-10-23T01:50:54.556Z",
+            "window_start": "2026-09-23T01:50:54.556Z",
+            "stars": 2,
+            "pushed_at": "2026-09-29T19:10:50Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-skill-manager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C862:1026BA:11AD63B:12FA76F:6ADABD80 and timestamp 2026-10-23 01:50:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-skill-manager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8FA:3EC4E3:1822C4:19F4CB:6ADABD82 and timestamp 2026-10-23 01:50:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-skill-manager%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A54.556Z..2026-10-23T01%3A50%3A54.556Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C9BE:3F7598:119E4B:1317FA:6ADABD83 and timestamp 2026-10-23 01:50:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-skill-manager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A54.556Z..2026-10-23T01%3A50%3A54.556Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA98:31EF24:16CBC3:189F65:6ADABD84 and timestamp 2026-10-23 01:51:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAKS1st%2Fdsh-skill-manager%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A54.556Z..2026-10-23T01%3A50%3A54.556Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CBB2:205DA3:121C82:13932E:6ADABD86 and timestamp 2026-10-23 01:51:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-skill-manager",
+                "captured_at": "2026-10-23T01:51:02.683Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 994,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-skill-manager",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-13T20:51:13.970Z",
+                    "captured_at": "2026-10-23T01:51:02.683Z",
+                    "source_url": "https://registry.npmjs.org/dsh-skill-manager",
+                    "error": null,
+                    "latest_version": "0.1.3",
+                    "latest_published_at": "2026-08-13T22:00:23.443Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1336106328:root",
             "repository": "AKS1st/dsh-skill-manager",

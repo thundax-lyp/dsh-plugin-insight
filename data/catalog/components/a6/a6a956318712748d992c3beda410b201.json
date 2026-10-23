@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "a6a956318712748d992c3beda410b201",
+    "identity": "github:1343439453:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1343439453:root",
+            "repository": "OwlNjust/deepseek-balance-dsh",
+            "path": "",
+            "revision": "768607f984947f2d47d000b4df142d908cb29881",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "e6b4e63eb23526822f6a97f7b16b90c55af8a4fd5526c62dcfe409cbdd5524b2",
+                "code": "768607f984947f2d47d000b4df142d908cb29881",
+                "maintenance": "a8d29139b09855f02b650e328b370183cf5d3eff1f5cf53a899b76d7348ce27c"
+            }
+        }
+    }
+}

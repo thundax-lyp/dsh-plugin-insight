@@ -7,14 +7,14 @@
             "id": "github:1419669069:root",
             "repository": "huhu23333/dsh-reasoning-distill",
             "path": "",
-            "revision": "322236ba56c511b652a08b87b38bdba3a83503fb",
+            "revision": "fa27b8dcdbcf380ce8f147e3430dde8621bac852",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d239f14913dfbb51a8ca20e81c041e75646f4a6ed693e652f945fbedd6b38891",
-                "code": "322236ba56c511b652a08b87b38bdba3a83503fb",
-                "maintenance": "250cf5db8b0f885476c2801c648a00237b82d3b8586f2871332b296a537894ee"
+                "code": "fa27b8dcdbcf380ce8f147e3430dde8621bac852",
+                "maintenance": "128e494b2ea29958e6e0ae36e508d04d69858862767f1913d16c4c26cff9da4b"
             }
         }
     }

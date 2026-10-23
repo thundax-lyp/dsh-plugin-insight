@@ -7,14 +7,14 @@
             "id": "github:1357788413:root",
             "repository": "xi-kari/dsh-amphoreus",
             "path": "",
-            "revision": "6ede1dd895a95b849f918437a6712fc8d974d567",
+            "revision": "f04a1e1a3a4dc9baa86b8995ce5c9dce8d27fc48",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "5817ae29e6191bc882ca1e88897c8007b38cf9df739d9b16b8e6f114d1cd0995",
-                "code": "6ede1dd895a95b849f918437a6712fc8d974d567",
-                "maintenance": "11292dec51ac8c5717ff58a12142dee0883a10ad2d4a4ecd2be8f0c4999c84e6"
+                "code": "f04a1e1a3a4dc9baa86b8995ce5c9dce8d27fc48",
+                "maintenance": "6226608a863df46a52c9fc0064a1dfea7125cc34de028fa0cd8675427458a103"
             }
         }
     }

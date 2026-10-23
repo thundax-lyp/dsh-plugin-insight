@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "93ad775d8cb3bb40c0135d7848045cca",
+    "identity": "github:1428126356:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428126356:root",
+            "repository": "ninetyhe-90/dsh-decision-review",
+            "path": "",
+            "revision": "81ba639b3fa8176e09d5eb5687d2c4489cdfe335",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9f46365a773ec44a7b0c6da509ec607653435f07e340ba29a2f7cf7b7c214254",
+                "code": "81ba639b3fa8176e09d5eb5687d2c4489cdfe335",
+                "maintenance": "d3abbedecc6de29e6fa49af5632aa099abbc15865970327e712385ff1c217eec"
+            }
+        }
+    }
+}

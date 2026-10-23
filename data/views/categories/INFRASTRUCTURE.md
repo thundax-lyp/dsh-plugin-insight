@@ -10,11 +10,12 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
+| [ANet DSH bundle](#plugin-1302597978-deploy-plugins-dist-dsh) | 把 ANet 节点、身份与 MCP 工具及操作 Skill 接入 DSH。 | 建议观察；先手工预装并明确是否加入公共网络，确认身份与二进制来源后再在隔离profile使用只读状态入口。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | 重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
-| [dsh-anet](#plugin-1302597978-deploy-plugins-dist-dsh) | 把 DSH 接入本地 AgentNetwork 节点，用 Skill 与 MCP 委派、跟踪和接收加密代理任务。 | 建议观察。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。 |
 | [dsh-armory](#plugin-1413052822-root) | 统一管理 MCP、工具账本、专家、Skill 与插件市场入口。 | 建议观察。 |
 | [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。 | 隔离桌面 profile 分别验本地/远程、离线下载、托盘退出与升级后再替换原版。 |
@@ -24,7 +25,9 @@
 | [dsh-integration-settings](#plugin-1429103083-root) | 在设置页管理 MCP 网关、凭据探测与 thinking 配置。 | 建议观察。 |
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。 | 仅可在无敏感数据的隔离测试环境验证。 |
+| [dsh-model](#plugin-1410395082-root) | 整合模型中转、来源登录与管理、组合切换、设备密钥及每日签到，并同步到DSH。 | 有运维能力者本机少来源非敏感试用，先不开放远端并关闭不需签到；核授权/鉴权/流失败与退出。 |
 | [dsh-model-auto-enricher](#plugin-1425159954-root) | 按模型名称规则批量补齐 DSH 上下文、输出、图片与推理配置并默认自动写盘。 | 默认不推荐自动模式。 |
+| [dsh-model-failover](#plugin-1415863200-root) | 为 DSH 添加按优先级切换真实模型的 provider 路由、隔离状态与继续控制。 | 可用只读小任务和有上限预算试用。 |
 | [dsh-model-info-fill](#plugin-1358816037-root) | 从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。 | 先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。 | 先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。 |
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。 | 仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。 |
@@ -89,6 +92,34 @@
 | [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | 可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。 |
 | [元冰可 · 企业 AI 资源管理平台](#plugin-1416699252-root) | 以插件化控制面统一管理Agent、应用、身份、审计、连接器、MCP、技能和用量。 | 具备平台工程团队者可观察并从最小治理内核评估，不宜仅凭工具数量直接作为生产控制面。 |
 
+<a id="plugin-1428034710-root"></a>
+
+## [@sueleven/dsh-auto-update](../../plugins/1708994293-hue--dsh-auto-update/INSIGHT.md)
+
+[![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@sueleven/dsh-auto-update)
+
+> **用途**：多npm插件桌面用户集中发现更新；合格交付须是同意版本被安装并通过重启功能核查。
+
+> **亮点**：整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。
+
+> **思考**：runApply未把提示targets传给脚本，实际重新查latest/候选；可能安装用户未看到的版本，且apply处理器未见局部确认围栏。参见[Q02](#research-q02)、[Q03](#research-q03)。
+
+> **建议**：未验证假设是版本/候选/profile摘要绑定的确认计划，漂移后重新确认而非自动换集合；故障对照核计划外安装。参见[Q04](#research-q04)。
+
+<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
+
+## [ANet DSH bundle](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
+
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
+
+> **用途**：适合需要在DSH会话使用ANet节点与网络服务的用户；合格结果是同一身份、同一二进制下完成明确网络任务并核对结果。
+
+> **亮点**：贡献是把二进制、身份与MCP/Skill入口统一到宿主bundle，减少多个入口各用不同配置的错误；网络协议、节点能力归属ANet上游，不能计为DSH适配原创。[Q01](#research-q01)
+
+> **思考**：启用bundle可能触发下载、执行安装器、启动节点并加入公共hub，接入便利与副作用扩大同时存在；固定插件提交并不固定届时下载的远端安装器。[Q03](#research-q03)
+
+> **建议**：未验证假设是把安装与网络加入拆成显式的预检和确认阶段，并记录实际二进制摘要；比较误启动和配置错误率，若步骤增加而错误没有下降则否定。[Q05](#research-q05)
+
 <a id="plugin-1334862230-root"></a>
 
 ## [chicheng-gate](../../plugins/534119219--chicheng-gate/INSIGHT.md)
@@ -144,20 +175,6 @@
 > **思考**：脉冲和器官等运行时字段进入 innerHTML 未转义；部分文件损坏仍返回 200 且面板可显示零/空。真实风险取决于上游字段可控性和宿主访问控制。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 > **建议**：未验证方向是逐源 freshness/解析状态、文本安全渲染及明确路由认证边界，用恶意字段、丢源和多标签页夹具核结果与性能。详见[Q05](#research-q05)。
-
-<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
-
-## [dsh-anet](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
-
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
-
-> **用途**：面向已有本地 anet 节点、需要把明确子任务委派给其他 AI 代理或接收外部任务的 DSH 用户。输入是任务描述、目标代理/技能、预算和信任决定；合格结果是任务端到端可追踪、内容按节点间加密传输、花费不越界、第三方结果只作为不可信材料交回。简单替代是人工在多个代理间复制任务和结果。
-
-> **亮点**：相对手工复制，它把代理发现、加密任务、状态跟踪、定价技能与入站任务接入同一 DSH 配置，并通过统一 runner 保证 MCP 与 Skill 使用同一 executable/identity。核心网络、加密和结算能力归属 ANet；此组件的增量是 DSH 打包、引导和安全默认。 参见[Q03](#research-q03)。
-
-> **思考**：价值依赖外部节点、hub、对端信誉和任务结果质量。端到端加密不隐藏通信元数据，也不保证对端输出正确；第三方任务与结果可能包含提示注入。用户还必须独立维持节点进程、明确开放入站、信任 peer 与提高预算，错误决策会扩大数据与现金风险。 参见[Q04](#research-q04)。
-
-> **建议**：可在委派前要求对端返回机器可读的能力契约、价格上限、数据保留和验收样例，完成后附产物摘要与可复核证据；本地先做低敏感 canary，再放大任务。它可能降低盲委派与争议，但会增加协议和验收成本。 参见[Q08](#research-q08)。
 
 <a id="plugin-1346196699-root"></a>
 
@@ -285,6 +302,20 @@
 
 > **建议**：把秘密片段权限和目录生命周期做成闭环、锁定代理镜像并加入真实未授权/授权 MCP 握手测试，可提高生产适用性；现版未实现。详见[Q04](#research-q04)。
 
+<a id="plugin-1410395082-root"></a>
+
+## [dsh-model](../../plugins/aicivilization--dsh-model/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,009](https://img.shields.io/static/v1?label=npm+30d&message=2%2C009&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model)
+
+> **用途**：多来源、多客户端用户统一入口与运维；签到是独立账号动作，合格输出仍需核授权、实际来源和任务质量。
+
+> **亮点**：围绕上游CLIProxyAPI补齐多平台生命周期、来源/设备key与DSH管理接线，并把签到独立管理，减少多客户端重复配置。参见[Q01](#research-q01)、[Q02](#research-q02)。
+
+> **思考**：HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切到不同模型不保证工具/图像/质量等价，统一地址也不提供额度。参见[Q02](#research-q02)、[Q03](#research-q03)。
+
+> **建议**：未验证假设为能力/来源/预算契约约束fallback并输出实际尝试收据，以同预算合格任务率衡量而非HTTP成功率。参见[Q04](#research-q04)。
+
 <a id="plugin-1425159954-root"></a>
 
 ## [dsh-model-auto-enricher](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md)
@@ -298,6 +329,20 @@
 > **思考**：未知模型默认1M/图片/思考，且启动自动巡检会直接备份并覆盖 YAML；只升不降不等于安全，备份也不保护并发写。详见[Q03](#research-q03)。
 
 > **建议**：默认保守、逐项可审 diff 与能力来源，配 CAS/原子替换；用真实模型/并发矩阵比较误配置与省时，现版未实现。详见[Q04](#research-q04)。
+
+<a id="plugin-1415863200-root"></a>
+
+## [dsh-model-failover](../../plugins/airisey--dsh-model-failover/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover)
+
+> **用途**：面向已配置多个供应商、遇到额度或连接失败需要继续任务的用户；合格结果是不拼接不同候选的可见答案，且失败、费用和实际模型可追溯。
+
+> **亮点**：相对失败后人工换模型，增量是流级提交点、错误分类与队列状态组合，避免切换前把两个候选的文本混写；包装provider模式有已知同类来源，不宣称首次。[Q01](#research-q01)
+
+> **思考**：不可见不代表上游没有计费或计算，长reasoning失败后丢弃再调用会增加成本和等待；可见文本/工具chunk后就不再隐式切换，不能承诺任务全程无中断。[Q03](#research-q03)
+
+> **建议**：未验证假设是按任务预算和候选失败成本决定重试/切换，并展示累计丢弃调用资源，可减少盲重试；固定预算故障对照中合格率不增或等待更长则否定。[Q05](#research-q05)
 
 <a id="plugin-1358816037-root"></a>
 

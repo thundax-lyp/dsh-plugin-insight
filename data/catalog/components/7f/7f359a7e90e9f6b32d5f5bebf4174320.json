@@ -7,14 +7,14 @@
             "id": "github:1409791354:root",
             "repository": "ruaibeite/dsh-undo",
             "path": "",
-            "revision": "16be3585f1b42cd4da24e6b08f0674e8f5d01867",
+            "revision": "c00f2c034786306d32821b87e069da754096ec1b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "9e7a67ff499f35c025c49e7403ab095b49446d0c6221bf435f79feb1bfee777c",
-                "code": "16be3585f1b42cd4da24e6b08f0674e8f5d01867",
-                "maintenance": "38da97412880cd2e1145348398e52bded1fe89e2e5c1fe94d6fe677537abf889"
+                "code": "c00f2c034786306d32821b87e069da754096ec1b",
+                "maintenance": "f573e266abc0ed3b17b153366eec86fcaf12aff8dbef754efde709ae18e0dfac"
             }
         }
     }

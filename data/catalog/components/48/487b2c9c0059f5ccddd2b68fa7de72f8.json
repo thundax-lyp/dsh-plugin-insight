@@ -7,14 +7,14 @@
             "id": "github:1329484633:plugins-dsh-opencontext",
             "repository": "melandlabs/opencontext",
             "path": "plugins/dsh-opencontext",
-            "revision": "a8fe1d79caa403f1cd8eafb501d18bd77386a3df",
+            "revision": "b6bac7bfd0dba4069e2ce5777c2c90ae300bbd16",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "343120f6b1eddddcc97b4fcf4fbc131eeafef469b6c7710acaedca835156171a",
-                "code": "a8fe1d79caa403f1cd8eafb501d18bd77386a3df",
-                "maintenance": "12cece68ef4347546c07b31cf99b4ca4706c1dc04517181098edf33cbd3bda33"
+                "code": "b6bac7bfd0dba4069e2ce5777c2c90ae300bbd16",
+                "maintenance": "3aea5983106f8d05d351425920c3b14b3e9968b85cba1cff353bb001d38d7f33"
             }
         }
     }

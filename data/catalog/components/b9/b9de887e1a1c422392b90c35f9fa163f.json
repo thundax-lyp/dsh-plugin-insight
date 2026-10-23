@@ -7,15 +7,15 @@
             "id": "github:1336521207:root",
             "repository": "PerryLink/dsh-test-drive",
             "path": "",
-            "revision": "6fdcdfaee8b539858bc59888267889da584dee0a",
+            "revision": "8adaf1f028a5803ef421033236eb8dd89a7f8d1c",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "3ae76888446ec5bc0344d43f5d1ac09965f5ba9648306d6f6e2a0bc285162acb",
-                "code": "6fdcdfaee8b539858bc59888267889da584dee0a",
-                "maintenance": "e2dc0a30037ae46e913b063cfd072e1b4ace274b6883ff6ab4f0b4a136f7f5a9"
+                "code": "8adaf1f028a5803ef421033236eb8dd89a7f8d1c",
+                "maintenance": "a3577e00268977d2f1cc810882f748e141ba7c8a421a08842222c20d1fad031f"
             }
         }
     }

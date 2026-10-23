@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d31b8dcafe43ede37c9af4c8893ad402",
+    "identity": "github:1423074020:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1423074020:root",
+            "repository": "TPSCE/dsh-side-assistant",
+            "path": "",
+            "revision": "f45b482fd94780beb71ca289c2dac38aa8f7f21d",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "7eb37541a1db2b36fdc77e638bc75761a6616f5a8bd0e4a789c8b7a7d5f65122",
+                "code": "f45b482fd94780beb71ca289c2dac38aa8f7f21d",
+                "maintenance": "4e2e960ca94efbe3818795217509a20b5f5f21509880c1abe6c80c8fcf517c7d"
+            }
+        }
+    }
+}

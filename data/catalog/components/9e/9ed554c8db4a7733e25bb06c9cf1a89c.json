@@ -7,14 +7,14 @@
             "id": "github:1339714338:root",
             "repository": "daha1216/dsh-adult-tension",
             "path": "",
-            "revision": "c1fde4ba502cc78196324f73f7b6225ed1ac4408",
+            "revision": "8ab664dc3159b910a275d9d7442afd1507ae17b1",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "254c09eb476f9924f970f20b7d5aec5af9f737c19fa2009c7976eac2b367356e",
-                "code": "c1fde4ba502cc78196324f73f7b6225ed1ac4408",
-                "maintenance": "1c90414947460db0f94bca216a359e38a97fd033e79a57aa3a3bd56103d0aeb3"
+                "code": "8ab664dc3159b910a275d9d7442afd1507ae17b1",
+                "maintenance": "add6f752d4379a0685874eb37e6801f3389c2e466b45032ca34df66d692ab476"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1216785679:root",
             "repository": "esengine/DeepSeek-Reasonix",
             "path": "",
-            "revision": "9f8478b578add5e81e97fdd982c76a4c16f4bf46",
+            "revision": "b10f8bfd6ffb207b4652d7d5118f5229a92dbf52",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "3c9d45465dc194ad20f9592001d763f13f65448cd79aafbcd2124c6c11555956",
-                "code": "9f8478b578add5e81e97fdd982c76a4c16f4bf46",
-                "maintenance": "90f39f596d4c72c7d2fb7e208e09549d669bdd69bceeb53386c5fd6407c67cd8"
+                "code": "b10f8bfd6ffb207b4652d7d5118f5229a92dbf52",
+                "maintenance": "1eb3dcd86baffb62aa4287959c39f4513ec49f5a2747f31ecfb4a77ec9361734"
             }
         }
     }

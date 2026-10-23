@@ -7,14 +7,14 @@
             "id": "github:1342382831:plugins-dsh-file-activity",
             "repository": "baosfeng/my-dsh-plugins",
             "path": "plugins/dsh-file-activity",
-            "revision": "bc34eda01068f9e862d9953ca569773539c6b820",
+            "revision": "bc470edaadc028b2f5d357f60979e9c7aa3eb4bf",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "6ed18ae2c3cf42fe766312b7eb1e3e7fbb92da565644747b6da6d758071cf22a",
-                "code": "bc34eda01068f9e862d9953ca569773539c6b820",
-                "maintenance": "836cd5189fa725f7d6d622b06482dab61b19abf5d2d6104323f6110aaef50213"
+                "code": "bc470edaadc028b2f5d357f60979e9c7aa3eb4bf",
+                "maintenance": "113274ed40d68a472b54084a414fbee8c9692f6c85f2e080b57e5707547c6ec6"
             }
         }
     }

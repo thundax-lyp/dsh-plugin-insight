@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "eb59acf9a456412806afe945169fb4d9",
+    "identity": "github:1427158289:plugin",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427158289:plugin",
+            "repository": "fengt8291-lab/dsh-first-principles",
+            "path": "plugin",
+            "revision": "a1b7b79025785911a21608241f333517c9bfe625",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3a74fff47be9c407797b2ea996f3e272ee0381b6fb03d083741adea7d190657f",
+                "code": "a1b7b79025785911a21608241f333517c9bfe625",
+                "maintenance": "7749b570333802f53ca4f8438b27f8d275a7756550e769df983c18169e88d5bb"
+            }
+        }
+    }
+}

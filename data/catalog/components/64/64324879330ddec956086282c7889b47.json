@@ -7,14 +7,14 @@
             "id": "github:1133901637:root",
             "repository": "Q00/ouroboros",
             "path": "",
-            "revision": "97b0bca0ffe3788e5d90245bd1aec423ca01ca8f",
+            "revision": "58f3ecdfff55debe2606f22265917ac2886feac8",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "b3fed892281f28cae3eb1b746ca362ac0ed0402399306aceee66d791b9df6fc2",
-                "code": "97b0bca0ffe3788e5d90245bd1aec423ca01ca8f",
-                "maintenance": "991fa58bf52f84f3b38e0ee9d221ef13a44cda9c3cd08902cc6e0c40ec34fc55"
+                "code": "58f3ecdfff55debe2606f22265917ac2886feac8",
+                "maintenance": "a817bc9ac51ffc303f5b6656dd85159f7a8038c8fb6a2a9a4c0bd75e25206cac"
             }
         }
     }

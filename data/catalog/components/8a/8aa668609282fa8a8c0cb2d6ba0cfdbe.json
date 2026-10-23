@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "8aa668609282fa8a8c0cb2d6ba0cfdbe",
+    "identity": "github:1424560336:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1424560336:root",
+            "repository": "raven3005672/dsh-plugin-shell-skin",
+            "path": "",
+            "revision": "3ba9402fbbabd5bc1fbcb225292a16a5c122eaaf",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "3739bd064ed1a0c42e10b36ca78732b1720b1228fd40fa3ac421690effc019b6",
+                "code": "3ba9402fbbabd5bc1fbcb225292a16a5c122eaaf",
+                "maintenance": "5f19982d42cc93c702a635e22131479965bce828494ec92530190b8e3991ba61"
+            }
+        }
+    }
+}

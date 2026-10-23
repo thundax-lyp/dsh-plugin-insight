@@ -7,14 +7,14 @@
             "id": "github:1195873793:root",
             "repository": "agentic-os-org/ANOLISA",
             "path": "",
-            "revision": "fd3701b299277ae5746ca4b43b7d62bd31a26147",
+            "revision": "e6becc613e181dffa5deb9931d5198d36fa43b90",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "2331e59a5189fa5d504248c2f4aadbec6b4582e5080c97182ad86a495291e464",
-                "code": "fd3701b299277ae5746ca4b43b7d62bd31a26147",
-                "maintenance": "0aff5d2bfaadba65efc0e1acb05d2b46d9560414c5e651b1518780a03ca25c94"
+                "code": "e6becc613e181dffa5deb9931d5198d36fa43b90",
+                "maintenance": "6791b4a0a3ffb91aa422439503d279ad841efa57ed896dd7ddf2cfe0c6e9029e"
             }
         }
     }

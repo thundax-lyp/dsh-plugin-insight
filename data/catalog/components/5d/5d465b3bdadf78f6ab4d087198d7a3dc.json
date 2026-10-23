@@ -7,15 +7,15 @@
             "id": "github:1336488925:root",
             "repository": "FeatherHunter/dsh-mattpocock-skills-deck",
             "path": "",
-            "revision": "b8499a1351f2227945673ed01bfcd7ba16f6d978",
+            "revision": "a3014b1d95e76454418f9032947237ceb24ac545",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "14ff11fa171c27252aaa9c4f7850d33720c8efcdb492639870be716fbcf6a1fe",
-                "code": "b8499a1351f2227945673ed01bfcd7ba16f6d978",
-                "maintenance": "3b12ce34965449256c56dcb7a343ceb1c3ed2e6cb7a0faba371d5dd532102076"
+                "code": "a3014b1d95e76454418f9032947237ceb24ac545",
+                "maintenance": "c2c2ec0acf1d388b762a318512a467badbdc5a7c5005084cbd87c921194c4ed6"
             }
         }
     }

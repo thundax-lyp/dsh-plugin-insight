@@ -7,14 +7,14 @@
             "id": "github:1427189256:root",
             "repository": "yixing233/dsh-crabtodo",
             "path": "",
-            "revision": "381986e629033300bb5c791dd4c908563b77e037",
+            "revision": "7b235363c30f91f6d90646933ed4cd26f4f30646",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "362c07d00fafacc78a2401ee3b7f607911b799019a4e2cf4f54ce2ec70e27e88",
-                "code": "381986e629033300bb5c791dd4c908563b77e037",
-                "maintenance": "489380483265456acf8fc0c2d1da49a6276d2bc05d6fa5346e8233db4c238604"
+                "code": "7b235363c30f91f6d90646933ed4cd26f4f30646",
+                "maintenance": "c19c02e2c7e1064475a2666e77cde73e88ab5541c96ad73fee8ea148782ac760"
             }
         }
     }

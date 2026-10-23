@@ -7,15 +7,15 @@
             "id": "github:1334315996:root",
             "repository": "XMoon/dsh-pi-tui",
             "path": "",
-            "revision": "e1ab25483de95f4d896b3754e9da861b4ebb5442",
+            "revision": "7194491e17025ba441dbc20bc15efed7d8c64596",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "456ddd4685adfa36cebbf8ab539a1a3cf6aed164e324c5064e97cbd767d589dd",
-                "code": "e1ab25483de95f4d896b3754e9da861b4ebb5442",
-                "maintenance": "122dbdd901cacc018543d1cae2fe4177e71ec3983d10cdba634e3dfce6cc1a62"
+                "code": "7194491e17025ba441dbc20bc15efed7d8c64596",
+                "maintenance": "e899ee59a4de27873689f35af7b217482c8fba93e4ea2064f9797bcf7158d485"
             }
         }
     }

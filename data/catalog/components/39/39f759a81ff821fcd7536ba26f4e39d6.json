@@ -7,14 +7,14 @@
             "id": "github:1269961299:root",
             "repository": "whh110112/human-writing-skills",
             "path": "",
-            "revision": "dea742eb61870266a108402a37e84c24af4c92da",
+            "revision": "0b5041274639d0da45a4200d07a2bf634c13aecc",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "94a660027093498d8b6b1d832e6f219fd40e3917fdbd9d71020d665c91fc28f6",
-                "code": "dea742eb61870266a108402a37e84c24af4c92da",
-                "maintenance": "cc5f82c9f0c37780d74a2dd802aeeb57a2f4e2ad9a182ae6265392f858e0cbad"
+                "directory": "e2450ada3575100666bf45b4f76b45190bf43d3cba3924c8cd6c118ad5eb10e6",
+                "code": "0b5041274639d0da45a4200d07a2bf634c13aecc",
+                "maintenance": "a0efb354b4b2e37d9c3856a354166fa99c9819b0598fcdec7f65d30bcc22c955"
             }
         }
     }

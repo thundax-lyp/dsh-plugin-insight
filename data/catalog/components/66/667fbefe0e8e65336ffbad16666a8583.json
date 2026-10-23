@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "667fbefe0e8e65336ffbad16666a8583",
+    "identity": "github:1427980409:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427980409:root",
+            "repository": "yanlijin/dsh-qwen-balance",
+            "path": "",
+            "revision": "701a4d94fac13924931d43f7aeb2de49894efb0c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "50c6ff12e4309e63800633e22a9f3350beec859c90973cdb4a33dea644469708",
+                "code": "701a4d94fac13924931d43f7aeb2de49894efb0c",
+                "maintenance": "137a768636a12c83970ef9920c23d1ab385d71d6559e911dd150322c32a5ede2"
+            }
+        }
+    }
+}

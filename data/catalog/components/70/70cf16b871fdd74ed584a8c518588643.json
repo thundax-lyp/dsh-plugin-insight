@@ -7,14 +7,14 @@
             "id": "github:1343951443:root",
             "repository": "Contexera/dsh-agent-team",
             "path": "",
-            "revision": "e4d2d2a30344d1ea53f2dcc189d2084784d539ef",
+            "revision": "a10035ac8b538ad9644900b22184495ca5d66015",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "4072c718ad8b0118c63aa882ad9ecfac1d277f36c64ffdf2ea13539761ca95b1",
-                "code": "e4d2d2a30344d1ea53f2dcc189d2084784d539ef",
-                "maintenance": "96badad152a6aeb179fd754861a373fc9ff2e416a0bd9db03d01badcf035faa3"
+                "code": "a10035ac8b538ad9644900b22184495ca5d66015",
+                "maintenance": "a5eebe6c2047bb2a7ed52fdbca13390800b2faaaa5d3897ace0fd2eb46e5a90b"
             }
         }
     }

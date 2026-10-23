@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "6eaa257d996be2de3b8fb2781de69ca3",
+    "identity": "github:1356485710:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1356485710:root",
+            "repository": "Ragnoryok1/dsh-client-locale-ru",
+            "path": "",
+            "revision": "49f7149066305c50ad493a7a8c8ad51d9ebe945c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1ebb324775b93688f3602f86ef08569f8679327b432c954e70aabbc2c6a8246b",
+                "code": "49f7149066305c50ad493a7a8c8ad51d9ebe945c",
+                "maintenance": "942cc0977e3d9b68a00edfc2e499b63bfc17d7f19a9ca181d92e207294c6e6f6"
+            }
+        }
+    }
+}

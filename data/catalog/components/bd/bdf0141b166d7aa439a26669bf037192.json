@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bdf0141b166d7aa439a26669bf037192",
+    "identity": "github:1428004198:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428004198:root",
+            "repository": "GU143312/dsh-training-lens",
+            "path": "",
+            "revision": "30250ee658e713482fd786ebeb8211dc9bc51e99",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f749d1770e486bc28e00d841f07902d286add736142f9a4abeddb55629eb54a4",
+                "code": "30250ee658e713482fd786ebeb8211dc9bc51e99",
+                "maintenance": "51532e55f451a89fa8a54d7138605d2285fff89c152f1b8fa49ad5de921de65f"
+            }
+        }
+    }
+}

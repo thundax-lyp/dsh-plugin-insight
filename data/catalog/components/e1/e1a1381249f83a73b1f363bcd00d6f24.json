@@ -7,14 +7,14 @@
             "id": "github:1424078727:packages-dsh-status-bar",
             "repository": "wfz2006/dsh-status-bar",
             "path": "packages/dsh-status-bar",
-            "revision": "642c52b71e4b70221c3301a97ab3e445533ddcd7",
+            "revision": "60cf5339eb627925e5770539248a912a3f947e19",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "eb6e162e9c4287d0e1aa79c15bc9ab78d109ea3a294d9d3cb6fb2e86e72a5ce6",
-                "code": "642c52b71e4b70221c3301a97ab3e445533ddcd7",
-                "maintenance": "fdd61f8b9ba844672b6c78f67444f3c7c51284910b9cdca26627f5a67bfd684f"
+                "code": "60cf5339eb627925e5770539248a912a3f947e19",
+                "maintenance": "154580f98ab777ce1fbb80490ffc4fe2107eac49f37f5b21984f69a18b55cd9b"
             }
         }
     }

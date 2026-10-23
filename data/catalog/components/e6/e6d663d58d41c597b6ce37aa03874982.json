@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e6d663d58d41c597b6ce37aa03874982",
+    "identity": "github:1427754325:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427754325:root",
+            "repository": "DIPPER12138/dsh-mathtype",
+            "path": "",
+            "revision": "9f4ca194a56a569817badfcb7f9a3bfd9d6ee4b4",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "495ad368158a80bf6312fbc6a738cecc81b7364cbd699b28c2b2fedf979f8135",
+                "code": "9f4ca194a56a569817badfcb7f9a3bfd9d6ee4b4",
+                "maintenance": "d01389cc0f0e773197078a2b7c88c438353e84b796b5263a666560eb8d735957"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1333173677:root",
             "repository": "Dominic789654/awesome-deepseek-harness",
             "path": "",
-            "revision": "730ad985817a54806b9c625d7b80a98dc7d56818",
+            "revision": "bc734a98c7a8d61eb13e5b89b6ba40d6f7fa08b7",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "339a252ffc738233b50fd8abcfe6670d1713f121a015eedad56a2aa18ee2ae20",
-                "code": "730ad985817a54806b9c625d7b80a98dc7d56818",
-                "maintenance": "f39b35e96af7fb60877cb9890d912d669d2a4d4a94b088806bdab1168310e841"
+                "code": "bc734a98c7a8d61eb13e5b89b6ba40d6f7fa08b7",
+                "maintenance": "0edfe140168a27920f6ffcd143b00d856b3b4a51d13e919b6613f7393d77f58b"
             }
         }
     }

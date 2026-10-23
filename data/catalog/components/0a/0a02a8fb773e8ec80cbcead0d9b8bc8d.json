@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a02a8fb773e8ec80cbcead0d9b8bc8d",
+    "identity": "github:1427141075:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427141075:root",
+            "repository": "zz12hui/dsh-bili-video-summary",
+            "path": "",
+            "revision": "1c91f82ad840bc8a2e6cf914d5b983aff708f642",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ad8bc6a60cc6161d7b4873590cd42574dbb7399e9afc47efbb376cf1513e901e",
+                "code": "1c91f82ad840bc8a2e6cf914d5b983aff708f642",
+                "maintenance": "367bc959f74e9127fe8e9010b7ab5ab6024663008b8704faf8dac1e081575eac"
+            }
+        }
+    }
+}

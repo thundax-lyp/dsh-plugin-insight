@@ -7,14 +7,14 @@
             "id": "github:1409666578:root",
             "repository": "dsh-remote/plugin",
             "path": "",
-            "revision": "934dc8ba5b9542b62e8667348d0757dc79ba0284",
+            "revision": "e127ae3bf37f5c15867aee82a9254afd31f5c205",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "7d030f385127f811d5d1bb3f3a8efe237d2981884dcca4a226731390cc25269c",
-                "code": "934dc8ba5b9542b62e8667348d0757dc79ba0284",
-                "maintenance": "72a96972a5e15d18f797c4ac601d94a5dba1b60e33ad690a2893dd468c36db66"
+                "code": "e127ae3bf37f5c15867aee82a9254afd31f5c205",
+                "maintenance": "14a15898a7d5d52f1242469c88804d9e2e17238b78770a6ddd19e23cce30bf4d"
             }
         }
     }

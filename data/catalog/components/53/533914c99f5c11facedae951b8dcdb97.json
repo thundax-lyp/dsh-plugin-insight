@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "533914c99f5c11facedae951b8dcdb97",
+    "identity": "github:1409071587:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1409071587:root",
+            "repository": "KouzakiUmi/dsh-code-pill",
+            "path": "",
+            "revision": "8e154c3b373632c4cff94af1c81891460b320bac",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9c7b430a68bed105a66f1eeda2936a44a562fd8e54f18ce7c001cf6b74136c71",
+                "code": "8e154c3b373632c4cff94af1c81891460b320bac",
+                "maintenance": "9822e246ed19d801ab417c4e174197d526143ad12e323284d2c50c136ab39c32"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d36867bde2035f22d7f161514af8674f",
+    "identity": "github:1426696812:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426696812:root",
+            "repository": "hhaosheng/dsh-desktop-toast",
+            "path": "",
+            "revision": "2f426609d62946a9723e163cc65d31519b283648",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d131fe51e3bcf2549fd17384ade8853c1a3b69b81ce00c8589c0ff111763db83",
+                "code": "2f426609d62946a9723e163cc65d31519b283648",
+                "maintenance": "d464833ff8fe9febedfc87e7e1211af92c2e47876cb84667622f3a07654ca9d0"
+            }
+        }
+    }
+}

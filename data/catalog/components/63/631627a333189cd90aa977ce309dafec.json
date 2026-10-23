@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "631627a333189cd90aa977ce309dafec",
+    "identity": "github:1427148269:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427148269:root",
+            "repository": "Zephinel/dsh-intelligent-ui",
+            "path": "",
+            "revision": "b53482f3917f1d4ba25d6afc1025598f4619ba28",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "d60b3b45c99b895ac3291119bb295f2e2495ca13c7b83e04d2fdd0ff8ddac38a",
+                "code": "b53482f3917f1d4ba25d6afc1025598f4619ba28",
+                "maintenance": "efc747c8663d34b3e0b35c6e8f825afa586df2e09084e39e5418f0927b386048"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d594d90aded5c3f8b8e1418dd14ad478",
+    "identity": "github:1426614895:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426614895:root",
+            "repository": "Yuuyuko-uu/dsh-qq-bridge",
+            "path": "",
+            "revision": "00dc7e37a3a40487e057090e7db8c5749085827f",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "992425bb8a39e272d1d887e92a20873accbef07ceb6015086e63cdaebb97456c",
+                "code": "00dc7e37a3a40487e057090e7db8c5749085827f",
+                "maintenance": "80759f110a12a995ff2b49ded3a97c5feac54637a889e07757aa3c4e87bd7c26"
+            }
+        }
+    }
+}

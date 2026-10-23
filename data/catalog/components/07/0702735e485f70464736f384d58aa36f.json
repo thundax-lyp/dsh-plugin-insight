@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0702735e485f70464736f384d58aa36f",
+    "identity": "github:1428287823:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428287823:root",
+            "repository": "XA-anjiu/dsh-notify-sfx",
+            "path": "",
+            "revision": "6986469888f2133617a89608e8bb914cad13f2c2",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c5eb06018cdf6a02d29e7522fde02a63059993996aad7e943b44c2af9d128a0e",
+                "code": "6986469888f2133617a89608e8bb914cad13f2c2",
+                "maintenance": "3056bf446b9626446921bca2d875675b4736660728518c9e44132c539516c906"
+            }
+        }
+    }
+}

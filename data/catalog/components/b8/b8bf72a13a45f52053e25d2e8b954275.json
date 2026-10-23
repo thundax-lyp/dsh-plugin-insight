@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b8bf72a13a45f52053e25d2e8b954275",
+    "identity": "github:1425691430:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425691430:root",
+            "repository": "WangLemna/dsh-recycle-bin",
+            "path": "",
+            "revision": "a67b29cb7323f3b496ade08d4a1e077c9345cd8a",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "56298d68803803ab0e11ac954949d54b675e772481adfe22793eb86c1b454b26",
+                "code": "a67b29cb7323f3b496ade08d4a1e077c9345cd8a",
+                "maintenance": "ee8c008656e04141772ce824e839665b2a2643fc93c231c570803a55baf4cbe5"
+            }
+        }
+    }
+}

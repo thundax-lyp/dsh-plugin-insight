@@ -7,14 +7,14 @@
             "id": "github:1335677835:root",
             "repository": "sakuraqqq/dsh-auto-paste",
             "path": "",
-            "revision": "83bebac32199ca5c015ad10bb475ce5baf7d4455",
+            "revision": "0c5ec71487f1b4e5edce7e25d1ec68f3ce0748fd",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c882a2cd0a9340b6e9fbfe7380ca19a587b08690d914d4e8ad8fc19983a2342a",
-                "code": "83bebac32199ca5c015ad10bb475ce5baf7d4455",
-                "maintenance": "ee14c728aeeb47a09495b2b3012c317797e4159145757737caa4489f91d5379c"
+                "code": "0c5ec71487f1b4e5edce7e25d1ec68f3ce0748fd",
+                "maintenance": "d1e874a087fb784cfaeb872943e4a3a7a69d2ba021902ce5117266ac982b703a"
             }
         }
     }

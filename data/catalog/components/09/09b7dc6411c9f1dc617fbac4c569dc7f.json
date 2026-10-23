@@ -7,15 +7,15 @@
             "id": "github:1366204745:root",
             "repository": "a86582751/dsh-nexttavern",
             "path": "",
-            "revision": "a05795fe009c4544b6fa01be4036f0529cd96026",
+            "revision": "361bc28f70f92020336bb30a70bc5bcef94f9439",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "0f4ca02d9313f4258e469d21a5b73ca8105cd271088709a251f6e68b9b1ad93b",
-                "code": "a05795fe009c4544b6fa01be4036f0529cd96026",
-                "maintenance": "7e397a61f16de74c756a399db4a9f06b183feaeec5fd6208fb169700e0b072c6"
+                "code": "361bc28f70f92020336bb30a70bc5bcef94f9439",
+                "maintenance": "4997d749ec84de9b4041edff169debb02bdf30f6f9c416c8b679e765e4eefd46"
             }
         }
     }

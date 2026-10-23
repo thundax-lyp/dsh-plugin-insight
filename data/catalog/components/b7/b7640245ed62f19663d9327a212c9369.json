@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b7640245ed62f19663d9327a212c9369",
+    "identity": "github:1428430880:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428430880:root",
+            "repository": "feigo313/dsh-structured",
+            "path": "",
+            "revision": "0224afe5dd34be85c8bec46d37e46513ad9f9fb3",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "1e0abf845e308d256cf9beef2af7f3c027d4b980f034833f657172ff199a6d01",
+                "code": "0224afe5dd34be85c8bec46d37e46513ad9f9fb3",
+                "maintenance": "f8575b3bb2a2c4fba37d34d74109bbbb39239cf2a416d8699b7a06d0a6fd198f"
+            }
+        }
+    }
+}

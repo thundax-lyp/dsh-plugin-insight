@@ -7,14 +7,14 @@
             "id": "github:1190633989:root",
             "repository": "lizhiyao/oh-my-knowledge",
             "path": "",
-            "revision": "ce1900d20a7084ef09a3623b3500565981c5a221",
+            "revision": "e6766d3834f7ad90dac0a36fcd428124a4a6c97a",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "fb399f48a552ab4cf92c17983e2507cc15986b8f8cfa0e0848b8c2dce38e9175",
-                "code": "ce1900d20a7084ef09a3623b3500565981c5a221",
-                "maintenance": "f8ab894574f832a1a3772e8f432d78e56146f31d879679e88cbc5e772f818608"
+                "code": "e6766d3834f7ad90dac0a36fcd428124a4a6c97a",
+                "maintenance": "49e4e63868f516e6edd6f790d3e63f5662788ba146c85ab7cddc7e18dd3cde40"
             }
         }
     }

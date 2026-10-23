@@ -7,14 +7,14 @@
             "id": "github:1414092901:root",
             "repository": "WNLUO/dsh-mobile-plugin",
             "path": "",
-            "revision": "a294135703513457364d5ee16b6869842f116858",
+            "revision": "2f8db6157b23ac5dfbb13758b62cca4371d4d774",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "562eb053c11028f8c6fd1adbfbc08931dea7e9d890ebb0502f4dc221d93790f9",
-                "code": "a294135703513457364d5ee16b6869842f116858",
-                "maintenance": "406c0b06d123aa3ed9305f8b6de13aa2869e2d8ce9ab9579fa8a69949b47e26c"
+                "code": "2f8db6157b23ac5dfbb13758b62cca4371d4d774",
+                "maintenance": "af1142c1d834176f0398ba7eef8c4e21a34790e5c9e6411f1614f6548829385c"
             }
         }
     }

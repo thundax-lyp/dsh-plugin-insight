@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b21d716e7ff0a2fc0dfeb4db6778c654",
+    "identity": "github:1425143769:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425143769:root",
+            "repository": "TuDouPn/dsh-grok-xai",
+            "path": "",
+            "revision": "33a5cc2ebfd288bb273a7f95f66e93b09c50c6d8",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f6ec400951063881f97285c454925438cca9f35cb0cca6ec38efa6e3d74311e1",
+                "code": "33a5cc2ebfd288bb273a7f95f66e93b09c50c6d8",
+                "maintenance": "d7f37f6dc7842df934b289845f98be7025b551bfcd0d22bdb20f66274b8c73c1"
+            }
+        }
+    }
+}

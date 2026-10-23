@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1d810d8211aa226c5b26aa4726faddfb",
+    "identity": "github:1427943142:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427943142:root",
+            "repository": "lij0000-arch/dsh-workspace-migrate",
+            "path": "",
+            "revision": "73f3afd2142415623e36942b481968b52a278bf5",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "ebab9245f45885dab8182e16d769cbe5660847b11332c7862ea5e713fa511988",
+                "code": "73f3afd2142415623e36942b481968b52a278bf5",
+                "maintenance": "adaba80ada7afec266332dcafa3e1b58d4947dea7233cd13448020a361d69020"
+            }
+        }
+    }
+}

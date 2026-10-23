@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0b4740317be4d3ad87d5f6cd90cd63c6",
+    "identity": "github:1426456030:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1426456030:root",
+            "repository": "hairyf/dsh-office-kit",
+            "path": "",
+            "revision": "418ab105be7a3c7c0bb5e9824ba6a6c4797bef96",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fa1fcc81c336ac3ec3888ec988945b7858a99495f15107daa1922a68d28a31bf",
+                "code": "418ab105be7a3c7c0bb5e9824ba6a6c4797bef96",
+                "maintenance": "8a1051e4d42912def8568c6f81935604d1008954c2ce59c8d36a8d97c0cd3300"
+            }
+        }
+    }
+}

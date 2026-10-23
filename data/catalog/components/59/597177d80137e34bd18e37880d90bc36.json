@@ -7,14 +7,14 @@
             "id": "github:1335086034:root",
             "repository": "xi-zhao/OpenQuantum",
             "path": "",
-            "revision": "8d283b801a1a690d7b1aeefc08f438cd9a8db5a5",
+            "revision": "5a6b10001bbf5bacb5f41d66d2b2de7dcdbcbbd1",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "346dcf2ffe64ee14362522aa6125489144e35b4cc7e0f1524c6e30cee5854b07",
-                "code": "8d283b801a1a690d7b1aeefc08f438cd9a8db5a5",
-                "maintenance": "81775d9b390c7de2d09d0f12fca2f07786fc31b9041047422c9741fa6d101937"
+                "code": "5a6b10001bbf5bacb5f41d66d2b2de7dcdbcbbd1",
+                "maintenance": "0d5342928a45a470d12a98779de1d3e156b8694e3011961e14cf92501a30f4a3"
             }
         }
     }

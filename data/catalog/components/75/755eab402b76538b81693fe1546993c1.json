@@ -7,14 +7,14 @@
             "id": "github:1419420213:root",
             "repository": "LUgABeEEE/dsh-global-todo",
             "path": "",
-            "revision": "b2a2b27c6bf4a8e3719b312df889db65af9e381a",
+            "revision": "9a51347252416ddfb1d373b4ee70bec53bda44b2",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "b5fa031ab7a4620b973522986e2cb8e6cf41351ef0b0ae79af93565d7669a2f1",
-                "code": "b2a2b27c6bf4a8e3719b312df889db65af9e381a",
-                "maintenance": "4aa3700c76a06f06f363788b54f78404214764e96f80baab92000d4ad48f980b"
+                "code": "9a51347252416ddfb1d373b4ee70bec53bda44b2",
+                "maintenance": "6d15745f652a987a36a6cb8f7b63780f53003803db18513e3b963099ae6b6761"
             }
         }
     }

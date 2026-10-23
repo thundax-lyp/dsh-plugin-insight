@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "b4be6d432e8d29ebee009a7596760c6d",
+    "identity": "github:1428028119:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428028119:root",
+            "repository": "fishcg/dsh-airpod-control",
+            "path": "",
+            "revision": "0a518b4b0d7f370ba032ff7eab8fb2b20a68eadd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f77aae892b32d529129b854f9937ef27b34d862dd928c25c8fde4a83f35be0a7",
+                "code": "0a518b4b0d7f370ba032ff7eab8fb2b20a68eadd",
+                "maintenance": "c8e69cabed0fa916a15bb7d7ecabd88cadee6a563801519b8532625f85e9fe23"
+            }
+        }
+    }
+}

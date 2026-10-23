@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "e13341116ff9833046d730600489e2fd",
+    "identity": "github:1427046022:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427046022:root",
+            "repository": "sensen-jo/dsh-conversation-search",
+            "path": "",
+            "revision": "6ff8d2be58a751559fdec72b3d3b562b929a9665",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "c735fd4574a16c99ffd3ff9e511a2dc9030daf8b58727f02f26db60ec32b945f",
+                "code": "6ff8d2be58a751559fdec72b3d3b562b929a9665",
+                "maintenance": "8baf0964af0b4c74392ee240c3a9dd769cc63c1c53865603e4e9c2ed3da39aa1"
+            }
+        }
+    }
+}

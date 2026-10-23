@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "1399778523da88553b78542149201cd7",
+    "identity": "github:1425005199:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425005199:root",
+            "repository": "KukaNo996/dsh-prompt-optimization",
+            "path": "",
+            "revision": "ee1acf5fca4385dd876a5c6bdbd0c5486dd4f64c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "0c0fcf7feb9742ca52a576c2044f123619f939434ee1ced9b7922a5dffc32a88",
+                "code": "ee1acf5fca4385dd876a5c6bdbd0c5486dd4f64c",
+                "maintenance": "8e83e45d2b8996f4dcc842a07c63f10362ab82491f21d6bf44b209d932e5eff7"
+            }
+        }
+    }
+}

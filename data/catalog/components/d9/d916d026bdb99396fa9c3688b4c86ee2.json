@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "d916d026bdb99396fa9c3688b4c86ee2",
+    "identity": "github:1425800085:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1425800085:root",
+            "repository": "helo060228/dsh-chat-search",
+            "path": "",
+            "revision": "dc845fe2cc80373c45f795663cf682ca86cbc656",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "b4a27c7a49b0e2bf2d65c087a74bf01db78d79ae23b800679e421aa75b448bde",
+                "code": "dc845fe2cc80373c45f795663cf682ca86cbc656",
+                "maintenance": "1efd1fe14bd69fa92183b42f3e4b48075ce30c5126b57829ae18afe1cbf52c82"
+            }
+        }
+    }
+}

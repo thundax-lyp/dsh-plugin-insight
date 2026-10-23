@@ -12,100 +12,94 @@
             "aliases": [],
             "name": "dsh-diff-approval",
             "entry_type": "plugin",
-            "technical_category": "interface-input",
+            "technical_category": "security-governance",
             "business_category": "software-delivery",
             "tags": [],
             "availability": "unknown",
             "research_depth": "source",
             "fingerprints": {
                 "directory": "d97bec8270d292186d6c47291842b630e0008cc04e030d720158dc450b15c42d",
-                "code": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                "maintenance": "dee6ee876cc0afacacbccc2721fbfa8083d92ee3610b4bbf9aaef34769e700f0"
+                "code": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                "maintenance": "349bf157f755096c357b7ab80627529445ea3abf4a328c7b50aefb33e87d3ced"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-02-github-1335980444-root-directory-0",
+                    "id": "2026-10-23-01-github-1335980444-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "89257f135874cf0fd21b97faa71e444dd3cf9031",
-                    "retrieved_at": "2026-10-22T08:59:00.787Z",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:16:54.092Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-02-github-1335980444-root-author",
+                    "id": "2026-10-23-01-github-1335980444-root-author",
                     "kind": "author_claim",
-                    "url": "https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md",
+                    "url": "https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
                             "path": "README.md",
-                            "content_sha256": "047be3b2dda9bbb9973f9494c4d53f0287d2463bdb87950eaef9cbde700f7107"
+                            "content_sha256": "f2aa68c87cbd5501fb7df886bb6ccd8861110d7656c366a9fdd94eac63c3ae18"
                         }
                     ],
-                    "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                    "captured_at": "2026-10-22T08:59:00.787Z",
-                    "summary": "在DSH web集中审阅工具写入与VCS本地变更，提供文件/块级保留、回退及评论。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json",
+                    "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                    "captured_at": "2026-10-23T02:16:54.092Z",
+                    "summary": "捕获DSH成功文件编辑并集中展示差异，支持Keep/Revert、评论、撤销及VCS变更导入。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-02-github-1335980444-root-source",
+                    "id": "2026-10-23-01-github-1335980444-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md",
+                    "url": "https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                            "path": "README.md",
-                            "content_sha256": "047be3b2dda9bbb9973f9494c4d53f0287d2463bdb87950eaef9cbde700f7107"
-                        },
-                        {
-                            "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
                             "path": "src/index.ts",
-                            "content_sha256": "f3d184929113040bbdb2fa83a18d2dd8442793737c9be3ede5bb3efdc5797863"
+                            "content_sha256": "48aeb652cc2afd35dfc30f6906b1406073e4b396014061b21adaa3750142e313"
                         },
                         {
                             "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
                             "path": "src/pending.ts",
                             "content_sha256": "3a950403636d1bddda77a072ac6b273ad3e1a984d6693b95c2c6b458a237d557"
                         },
                         {
                             "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
                             "path": "src/persist.ts",
                             "content_sha256": "a132b4d2b6ade38fd84e9560b9351323cf5745da60676cfa937d125928ae172b"
                         },
                         {
                             "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                            "path": "package.json",
-                            "content_sha256": "d8cd73aebd1de837a3fad8852fdbd02a308a6d8c6dbc59ce34f7a2702ba290ef"
-                        },
-                        {
-                            "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
                             "path": "src/atomic-write.ts",
                             "content_sha256": "cdcafa6be318d3005ef454237985eb385e9a848abfc96a4b39a48d9554bc0354"
                         },
                         {
                             "repository_url": "https://github.com/9087/dsh-diff-approval",
-                            "commit": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
                             "path": "src/client/markdown-preview.ts",
-                            "content_sha256": "8f3192a23c61902b3d153728e61b757190a731a7e086556254a4d8708ae0731a"
+                            "content_sha256": "c9f3f5abf43be925b58dbc84b8149dc30c40c147f92eb0bf01c6f50619bd4c1f"
+                        },
+                        {
+                            "repository_url": "https://github.com/9087/dsh-diff-approval",
+                            "commit": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                            "path": "package.json",
+                            "content_sha256": "d8cd73aebd1de837a3fad8852fdbd02a308a6d8c6dbc59ce34f7a2702ba290ef"
                         }
                     ],
-                    "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                    "captured_at": "2026-10-22T08:59:00.787Z",
-                    "summary": "核查 README.md、src/index.ts、src/pending.ts、src/persist.ts、package.json、src/atomic-write.ts、src/client/markdown-preview.ts；成功工具结果折叠为全局按路径的累计差异，lineage视图筛选条目，RPC驱动Keep/Revert并保存全文件快照。",
-                    "artifact": "data/runs/2026-10-22-02/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json",
+                    "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                    "captured_at": "2026-10-23T02:16:54.092Z",
+                    "summary": "核查 src/index.ts、src/pending.ts、src/persist.ts、src/atomic-write.ts、src/client/markdown-preview.ts、package.json；成功工具结果fold为全局按路径pending，lineage/workspace过滤，RPC决策经宿主fs写回，单JSON持久与内存undo。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/9087--dsh-diff-approval/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "固定提交主捕获、pending/persist/原子写、lineage/普通回退/undo与客户端Markdown净化；未全面审计UI/VCS/AI评论，不执行目标代码或回退。",
+                        "核捕获、pending/lineage、持久、普通回退/删除与undo、预览净化；未全面审计VCS解析/所有UI和AI评论，不运行目标。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -116,212 +110,212 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "给在DSH web修改工作文件的读者集中核对变更，重点是目标、差异与回退结果对应。",
+                    "text": "编码用户在宿主中事后审阅已发生的修改，验收决定与实际文件一致，不当写前审批。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "成功工具结果折叠为全局按路径的累计差异，lineage视图筛选条目，RPC驱动Keep/Revert并保存全文件快照。",
+                    "text": "成功工具结果fold为全局按路径pending，lineage/workspace过滤，RPC决策经宿主fs写回，单JSON持久与内存undo。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "固定提交主捕获、pending/persist/原子写、lineage/普通回退/undo与客户端Markdown净化；未全面审计UI/VCS/AI评论，不执行目标代码或回退。",
+                    "text": "核捕获、pending/lineage、持久、普通回退/删除与undo、预览净化；未全面审计VCS解析/所有UI和AI评论，不运行目标。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "npm包0.36.1，服务/客户端分导出，DSH web注入及Cordis/React peer，MIT。",
+                    "text": "MIT0.36.1，Host/Client分导出，diff/marked/DOMPurify/Shiki依赖；宿主API耦合需固定版本核。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 安装依赖、客户端资源与存储，金额未知 | 固定版本、备份与熟悉回退语义 | 作者安装说明非本轮安装结果 |\n| 持续使用 | 全文件old/new内存与JSON，轮询读文件及diff渲染 | 逐文件/块审阅与合并外部变更 | AI评论另有模型费用，普通审阅不强制 |\n| 失败恢复 | 快照、备份、冲突重做及持久写失败处理 | 区分已回退、部分完成及未知文件状态 | 无同规模数据集性能/恢复人时结果 |\n",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 客户端/字体/依赖与备份 | 核宿主、理解回退和留存 | 金额/时间未知 |\n| 持续使用 | old/new快照、JSON/diff与外改检查 | 逐文件/块审阅，AI评论另计费 | 全局快照隐私和规模未测 |\n| 失败恢复 | 备份/重写/部分恢复 | 查已写和持久日志、冲突修复 | 非事务，创建删除不可undo |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "单人可备份工作树可试用事后审阅；先核对普通回退冲突及数据留存，保留版本控制与备份。详见[Q06](#research-q06)。",
+                    "text": "单人可备份工作树试用；普通回退先冻结其他写入，删除先确认，保留Git/备份和持久日志核查。参见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 审阅连贯性 | 捕获、累计文件差异与Keep/Revert同处宿主 | 是否降低漏审及人工时间 |\n| 恢复 | 有限重试原子JSON保存及部分undo路径 | 断电耐久、多进程写和外部并发结果 |\n| 变更归属 | 全局按路径累计并按lineage过滤 | 同文件多来源变更能否符合读者预期 |\n",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 审阅接线 | 捕获/块/评论/决策 | 漏审与人工时间下降 |\n| 归属 | lineage/workspace视图和请求策略 | 未知workspace/多源符合预期 |\n| 恢复 | undo预检、部分计数、重试保存 | 无损回退/断电/多进程耐久 |",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "可复用的是纯pending状态机与I/O分离，内容版本缓存标记、请求视图统一复用、动作写策略与来源归属分离，以及原子JSON保存对EPERM/EACCES/EBUSY有限退避。Markdown预览使用DOMPurify而不是直接插入原文，但这不替代所有UI/网络面安全审计。原子rename不等fsync断电耐久或多进程事务。",
+                    "text": "Pending状态与I/O分离、内容缓存、策略归属和rename退避值得复用；全局按路径快照不能误当按workspace隔离，写时内容版本和耐久需补契约。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
                     "topic": "mechanism",
                     "basis": "interpretation",
-                    "text": "将工具写入捕获、文件/块级决策、评论及宿主fs连为连续审阅，增量在交互接线而非新diff算法。详见[Q01](#research-q01)与[Q02](#research-q02)。",
+                    "text": "把工具捕获、差异/评论与文件决策连成连续审阅，lineage视图与请求方策略分离可借鉴；算法依成熟库。参见[Q01](#research-q01)、[Q02](#research-q02)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "普通回退读当前内容后写旧基线，未见写时版本比较；新建删除不可undo，全局快照也需留存治理。静态核查不承诺无损回退。详见[Q02](#research-q02)。",
+                    "text": "普通回退不做写时版本比较、创建删除不可undo，持久失败不拒动作成功；外改检测/undo预检不能当无损保证。参见[Q03](#research-q03)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "mechanism",
                     "basis": "unverified",
-                    "text": "可探讨版本绑定回退收据，冲突不覆盖并保存删除/批量恢复记录；增加空间与交互成本，尚未验证。详见[Q05](#research-q05)。",
+                    "text": "未验证假设为expected hash动作收据、删除恢复包及显式持久结果，批量按已写状态恢复；故障对照检查丢改/误报。参见[Q04](#research-q04)。",
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1335980444:root",
                             "area": "code",
-                            "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                            "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T08:59:00.787Z",
+                    "reviewed_at": "2026-10-23T02:16:54.092Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T08:59:00.787Z",
+            "last_checked_at": "2026-10-23T02:16:54.092Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
-                "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                "reviewed_at": "2026-10-22T08:59:00.787Z",
+                "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                "reviewed_at": "2026-10-23T02:16:54.092Z",
                 "status": "current",
                 "dependencies": [
                     {
                         "plugin_id": "github:1335980444:root",
                         "area": "code",
-                        "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                        "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                     }
                 ],
                 "technical": {
@@ -331,11 +325,11 @@
                         "transferability": 10,
                         "simplification": 8
                     },
-                    "rationale": "novelty成熟diff审阅集成取小幅；mechanism成功捕获到真实回退有机制取实质；transferability纯状态与原子写可迁移取实质；simplification集中交互取实质，未验证冲突改善不加分。",
+                    "rationale": "novelty是既有diff集成；mechanism路径fold/lineage与策略分离有实质组合；transferability可移植但宿主fs/RPC耦合；simplification集中文件/块/评论减少跨工具交接。",
                     "basis": "interpretation",
                     "score": 42,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ]
                 },
                 "business": {
@@ -345,49 +339,49 @@
                         "reach": 5,
                         "economics": 4
                     },
-                    "rationale": "workflow宿主内集中审阅取实质；delivery仍交付文件修改取小幅；reach限DSH web取小幅；economics可能减少切换但无成本对照取小幅。",
+                    "rationale": "workflow把捕获到决策集中有实质改进；delivery仍改代码/审阅小幅变化；reach便利宿主用户；economics可能减少切换但恢复负担未测，仅小幅。",
                     "basis": "interpretation",
                     "score": 35,
                     "evidence_ids": [
-                        "2026-10-22-02-github-1335980444-root-source"
+                        "2026-10-23-01-github-1335980444-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "集中审阅有直接用途，但属事后操作，普通回退冲突、不可undo删除与全局快照应先限范围核对。详见[Q06](#research-q06)。",
+                "reason": "单人可备份工作树可试用事后审阅，回退前冻结外写并核实际文件，创建删除不可undo且持久失败需查日志。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "文件变更审阅任务明确，实际需求强度未独立确认。"
+                        "rationale": "编码差异审阅反复且明确。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "工具写入捕获到决策接线有增量，Git/编辑器仍可替代。"
+                        "score": 19,
+                        "rationale": "工具捕获/块决策/评论接线比手工Git有增量。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码链与引用支持，未做宿主执行。"
+                        "rationale": "固定源码关键状态链，无宿主恢复实测。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "普通人工流程不强制模型，但快照与真实回退有维护责任。"
+                        "rationale": "人工审阅无强制模型，但快照/冲突/恢复责任较大。"
                     }
                 },
-                "score": 59,
-                "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                "reviewed_at": "2026-10-22T08:59:00.787Z",
+                "score": 65,
+                "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                "reviewed_at": "2026-10-23T02:16:54.092Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-02-github-1335980444-root-source"
+                    "2026-10-23-01-github-1335980444-root-source"
                 ],
                 "dependencies": [
                     {
                         "plugin_id": "github:1335980444:root",
                         "area": "code",
-                        "fingerprint": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168"
+                        "fingerprint": "c6edcac3d89968e1213ce61ce2c52435aefefd05"
                     }
                 ]
             }
@@ -396,66 +390,82 @@
             "id": "github:1335980444:root",
             "repository": "9087/dsh-diff-approval",
             "path": "",
-            "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+            "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
             "fingerprints": {
                 "directory": "d97bec8270d292186d6c47291842b630e0008cc04e030d720158dc450b15c42d",
-                "code": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                "maintenance": "dee6ee876cc0afacacbccc2721fbfa8083d92ee3610b4bbf9aaef34769e700f0"
+                "code": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                "maintenance": "349bf157f755096c357b7ab80627529445ea3abf4a328c7b50aefb33e87d3ced"
             },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "32714b964cce608b81132b2927dc1bc6703632d1c7cdce36cc56bd3aee02faa6"
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "06695ab57baa61025ae953acc32c69ddad02eb4d4c9d747074dd23b0d41a5e47"
         },
         "publication.metadata": "data/plugins/9087--dsh-diff-approval/META.json",
         "publication.summaries": {
-            "text": "在DSH web集中审阅工具写入与VCS本地变更，提供文件/块级保留、回退及评论。",
-            "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-            "source_url": "https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md"
+            "text": "捕获DSH成功文件编辑并集中展示差异，支持Keep/Revert、评论、撤销及VCS变更导入。",
+            "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+            "source_url": "https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/README.md"
         },
         "publication.capabilities": {
-            "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+            "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
             "items": {
-                "界面": "集中差异/评论审阅",
-                "事件监听": "成功工具结果与编辑意图",
-                "Host 路由": "trusted-host审阅RPC"
+                "界面": "文件/块差异、Keep/Revert、评论、行引用及撤销。",
+                "事件监听": "捕获成功edit/write/editor变化。"
             },
-            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 写入捕获 | 集中累计差异 | 成功写入后，不阻止先写 |\n| Keep/Revert | 接受或恢复文件/块 | 真实副作用，删除不undo |\n| 评论/预览 | 审阅与可选AI讨论 | AI另需模型，完整UI未审计 |\n| VCS导入 | 查看未提交变更 | 需对应CLI，非本轮运行结果 |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 自动捕获 | 事后集中审阅 | 仅支持工具成功结果，非写前 |\n| Keep/Revert | 文件/块决策 | 普通回退无写时CAS，删除不可undo |\n| Undo/Redo | 恢复已记录动作 | 内存lineage历史，批量可部分 |\n| 持久 | 重启保pending | 全局JSON，失败日志非动作拒绝 |"
         },
         "publication.advice": {
-            "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-            "text": "单人可备份工作树可试用事后审阅；先核对普通回退冲突及数据留存，保留版本控制与备份。详见[Q06](#research-q06)。"
+            "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+            "text": "单人可备份工作树试用；普通回退先冻结其他写入，删除先确认，保留Git/备份和持久日志核查。参见[Q04](#research-q04)。"
         },
         "registry": "data/plugins/9087--dsh-diff-approval",
-        "reports": "# dsh-diff-approval\n\n> 在DSH web集中审阅工具写入与VCS本地变更，提供文件/块级保留、回退及评论。\n\n## 研究范围\n\n- **仓库**：[9087/dsh-diff-approval](https://github.com/9087/dsh-diff-approval)\n- **版本号**：0.36.1（[固定提交 393bdc4c9b6ee007027c9e4da4d9732d60c9e168](https://github.com/9087/dsh-diff-approval/tree/393bdc4c9b6ee007027c9e4da4d9732d60c9e168)）\n- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持成功文件工具结果的差异汇总、Keep/Revert与快照恢复入口；这是事后审阅，Revert缺当前内容CAS且新建文件删除不等可撤销。版本绑定回退和恢复收据尚未验证。\n\n## 洞察短评\n\n- **用途**：给在DSH web修改工作文件的读者集中核对变更，重点是目标、差异与回退结果对应。\n- **亮点**：将工具写入捕获、文件/块级决策、评论及宿主fs连为连续审阅，增量在交互接线而非新diff算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：普通回退读当前内容后写旧基线，未见写时版本比较；新建删除不可undo，全局快照也需留存治理。静态核查不承诺无损回退。详见[Q02](#research-q02)。\n- **建议**：可探讨版本绑定回退收据，冲突不覆盖并保存删除/批量恢复记录；增加空间与交互成本，尚未验证。详见[Q05](#research-q05)。\n\n采用建议：单人可备份工作树可试用事后审阅；先核对普通回退冲突及数据留存，保留版本控制与备份。详见[Q06](#research-q06)。\n\n## 核心贡献\n\n将工具写入捕获、文件/块级决策、评论及宿主fs连为连续审阅，增量在交互接线而非新diff算法。详见[Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n普通回退读当前内容后写旧基线，未见写时版本比较；新建删除不可undo，全局快照也需留存治理。静态核查不承诺无损回退。详见[Q02](#research-q02)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可探讨版本绑定回退收据，冲突不覆盖并保存删除/批量恢复记录；增加空间与交互成本，尚未验证。详见[Q05](#research-q05)。\n\n进一步探讨可从固定文件集、外部编辑与第N文件失败夹具入手，核对冲突、部分完成、删除恢复及人时。\n\n## 场景与替代办法\n\n给在DSH web修改工作文件的读者集中核对变更，重点是目标、差异与回退结果对应。\n\n独立Git diff/编辑器与备份可完成审阅恢复；插件把非提交工具写入与会话交互集中，增加宿主版本和快照管理负担。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH web、Cordis和React客户端注入 | 启动必需 | 宿主事件、RPC和审阅面板 | 版本不匹配可能缺入口或捕获 |\n| fs/connection/workspaceRegistry/sessions等服务 | 主链必需 | 文件快照、会话视图与回退 | 不等于普通独立diff工具 |\n| 可写storageDir | 重启恢复必需 | 保存完整old/new文本 | 错误需处理，禁用不清数据 |\n| Git/SVN/Perforce CLI及宿主shell | 选用VCS导入时 | 读取本地变更 | 不导入可不用 |\n| 模型/agent服务 | 选用AI评论时 | 评论提问与回写 | 普通Keep/Revert无需模型调用 |\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定包/profile并备份工作树 | 明确这是事后审阅，非写前审批 |\n| 加载 | 按README添加包/patch并重启web | 入口、事件与RPC均能接线 |\n| 审阅 | 人工核对差异、原始文件和目标 | Keep只接受，Revert会改真实文件 |\n| 退出/恢复 | 停用包并核对pending.json、评论及备份 | 不将删除状态文件当作文件恢复 |\n\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 安装依赖、客户端资源与存储，金额未知 | 固定版本、备份与熟悉回退语义 | 作者安装说明非本轮安装结果 |\n| 持续使用 | 全文件old/new内存与JSON，轮询读文件及diff渲染 | 逐文件/块审阅与合并外部变更 | AI评论另有模型费用，普通审阅不强制 |\n| 失败恢复 | 快照、备份、冲突重做及持久写失败处理 | 区分已回退、部分完成及未知文件状态 | 无同规模数据集性能/恢复人时结果 |\n\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 审阅连贯性 | 捕获、累计文件差异与Keep/Revert同处宿主 | 是否降低漏审及人工时间 |\n| 恢复 | 有限重试原子JSON保存及部分undo路径 | 断电耐久、多进程写和外部并发结果 |\n| 变更归属 | 全局按路径累计并按lineage过滤 | 同文件多来源变更能否符合读者预期 |\n\n\n## 研究问题与完整回答\n\n**插件研究总目标：**核查事后文件审阅的主链、回退/跨会话/存储边界及采用成本。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要这个面板，成功写入到人工决策怎样连接？\n\n**研究主题：**场景与需求、功能与机制\n\n#### 完整回答\n\n面向在DSH web让agent修改工作文件、希望集中核对变更的人。输入是成功edit/write/editor结果或可选VCS本地变更，输出是按文件累计差异、保留或真实回退。合格交付需差异对应实际文件，决定作用于预期目标且能辨认失败。它不在写入前等待批准，不能当作阻止模型先改文件的权限闸门。\n\ntools/result同步折叠成功结果，editor意图钩子仅预存基线并继续next；pending按绝对路径保留最早基线与最新文本并累计触碰session。RPC列出可见条目，Keep只接受/移除待审状态，Revert通过宿主fs恢复基线或删除新建文件。全局累计不等逐工具调用回放。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:11-17](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md#L11-L17)\n\n作者定义成功操作后的待审列表。\n\n```text\nA DeepSeek Harness (DSH) plugin for pending-change review: it automatically tracks every successful `edit`, `write`, and editor (`str_replace_editor`) mutation, folds them into a single pending list in the sidebar where each file's diff can be reviewed and kept/reverted — and it can also import the workspace's version-control repository's local changes (Git / SVN / Perforce) in one click.\n\n![Pending changes panel](docs/images/pending-panel.png)\n\nThe panel also collapses its file list into a floating card; while floating, each of its four edges — the left sidebar, the header above, the right sidebar, the composer below — can be chosen to be covered (all four is what used to be fullscreen, and covering nothing is a plain floating card), and it can dock as a tab in the right sidebar:\n\nTwo entries open it: the row at the sidebar foot, and a button in the Session header's right-hand controls — the cluster the app keeps its own per-session actions in (where \"Download session log\" lives) — so the review stays one click away with the sidebar collapsed or hidden.\n```\n\n**依据 2 · 源码核查**：[src/index.ts:2484-2496](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2484-L2496)\n\n成功工具结果进入累计store。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  ctx.on('tools/result', (exec: Readonly<ToolExecution>, result: Readonly<ToolExecutionResult>) => {\n    if (exec.name === 'str_replace_editor') {\n      void captureEditorMutation(exec, result)\n      return\n    }\n    if (result.isError || exec.agent === undefined) return\n    const outcome = exec.name === 'edit' ? editOutcomeOf(result.value) : exec.name === 'write' ? writeOutcomeOf(result.value) : undefined\n    if (outcome === undefined || outcome.oldText === outcome.newText) return\n    const sessionId = exec.agent.id\n    const entry: PendingEntry = { id: outcome.path, sessionId, ...outcome, updatedAt: Date.now(), sessionIds: [sessionId], lineage: lineageOf(sessionId, exec.agent), unseen: true }\n    // Fold synchronously so the very next list sees the capture; persistence\n    // (hydration + save) rides the same turn asynchronously.\n    if (store.fold(entry)) persistSession()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:3652-3659](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L3652-L3659)\n\n意图观察后继续链，不拥有批准决策。\n\n```text\n  ctx.effect(() => ctx.on('fs/edit-intent', async (target, actor, next) => {\n    await stashEditorIntent(target, actor, 'file')\n    return next()\n  }, { prepend: true }), 'diff-approval: str_replace_editor edit basis')\n  ctx.effect(() => ctx.on('fs/write-intent', async (target, actor, next) => {\n    await stashEditorIntent(target, actor, 'none')\n    return next()\n  }, { prepend: true }), 'diff-approval: str_replace_editor create basis')\n```\n\n**依据 4 · 源码核查**：[src/pending.ts:111-142](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/pending.ts#L111-L142)\n\n按文件合并基线和多session。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n    const later = earlier === a ? b : a\n    const sessionIds = [...new Set([...touchedBy(a), b.sessionId])]\n    // A creation is the whole change only while creations are all there is: the entry is anchored at a\n    // path that did not exist, and `earlierVersion: 'none'` is what makes a revert remove the file. As\n    // soon as a later capture EDITS that file, the reader is reviewing rounds of work on a file that\n    // exists, so the basis becomes the content it was created with and `回退` writes that back, keeping the\n    // file. Freezing the field at 'none' (the rule from 2026-08-31 until now) left a file that had been\n    // rewritten many times still tagged 新增 and still offering 删除.\n    const onlyCreations = earlier.earlierVersion === 'none' && later.earlierVersion === 'none'\n    return {\n      ...later,\n      // The global identity is the path; `id` must always equal it.\n      id: later.path,\n      // With no old side of the file's own to keep, the creation's content is the basis: `earlier.newText`\n      // is the file as it stood right after it was created.\n      oldText: onlyCreations ? '' : earlier.earlierVersion === 'none' ? earlier.newText : earlier.oldText,\n      earlierVersion: onlyCreations ? 'none' : 'file',\n      sessionIds,\n      // Sticky until the reader looks: a capture that arrives while the dot is up does not take it down, and\n      // one that arrives after it went out puts it back (that is what the capture site sets).\n      unseen: earlier.unseen === true || later.unseen === true,\n    }\n  }\n\n  /**\n   * Copy every entry touching a session (the session's view), oldest capture\n   * first. The file list is session-scoped: an entry appears for each session\n   * that touched it, so a session only sees files it worked on.\n   * @param sessionId - the viewing session.\n   * @returns detached entries in capture order.\n   */\n  list(sessionId: SessionId): PendingEntry[] {\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:2750-2789](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2750-L2789)\n\nKeep接受已有内容，不写文件。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n        const target = targetOf(payload)\n        if (target === undefined) return rpcError('sessionId and id must be non-empty strings')\n        // Remove synchronously: once the user acts, the entry must be gone for\n        // any concurrent list. (The store is hydrated by the time an action\n        // runs, since the panel lists first.)\n        // Resolved through the request's merged view, so a row the reader can see is actionable and a row\n        // outside its lineage answers `missing` — the same answer an id that names nothing gets.\n        const lineage = lineageView()\n        let entry = actionableEntryOf(lineage, target.sessionId, target.id)\n        if (entry === undefined) {\n          await ensureLoaded()\n          entry = actionableEntryOf(lineage, target.sessionId, target.id)\n          if (entry === undefined) {\n            const value: DiffApprovalActionValue = { outcome: 'missing' }\n            return { ok: true, value }\n          }\n        }\n        // The file already holds the accepted content, so nothing is written:\n        // folding `newText` into the baseline clears the diff. The panel asks\n        // whether to also drop the resolved entry, and rides the answer here.\n        if ((payload as Record<string, unknown>).keepListed === true) {\n          store.update(target.id, { oldText: entry.newText })\n          const afterEntry: PendingEntry = { ...entry, oldText: entry.newText, updatedAt: Date.now() }\n          pushUndo(target.sessionId,\n            { id: entry.path, path: entry.path, entry, fileText: undefined },\n            { id: entry.path, path: entry.path, entry: afterEntry, fileText: undefined })\n          persistSession(true)\n          const value: DiffApprovalActionValue = { outcome: 'kept', resolved: true }\n          return { ok: true, value }\n        }\n        // Snapshotted BEFORE the drop: the threads are what that call is about to take away.\n        const beforeDrop = droppingComments({ id: entry.path, path: entry.path, entry, fileText: undefined })\n        dropEntry(target.id)\n        pushUndo(target.sessionId, beforeDrop,\n          { id: entry.path, path: entry.path, entry: undefined, fileText: undefined })\n        persistSession(true)\n        const value: DiffApprovalActionValue = { outcome: 'kept' }\n        return { ok: true, value }\n      }\n      case 'revert': {\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 相比独立Git diff的贡献是什么，回退有哪些关键边界？\n\n**研究主题：**贡献与相对优势、缺陷与关键质疑\n\n#### 完整回答\n\n增量是把非提交文件变更、会话来源、块级决策、评论和宿主文件写接口连成连续审阅体验。diff、语法高亮与Markdown净化来自成熟库；创新不在差分算法。独立Git diff/编辑器加备份仍是可替代基线。\n\n最关键边界是回退不是操作级事务。普通Revert读取当前内容作undo快照后写旧基线，没有像undo预检那样先比较当前文件与审阅newText；外部并发修改与点击之间可能被整体恢复覆盖。list会主动吸收外部内容，但这不是写入时的原子比较交换。新建文件的删除回退不进入undo，批量动作不是跨文件原子事务。此处为源码风险推断，未做覆盖复现。\n\n数据层也不再是README所称每workspace独立文件，persist当前v3保存全局pending.json，old/new完整文本可能含敏感内容。视图按lineage/workspace筛选、动作重新检查可见性并用请求session写策略是积极约束；未知workspace采用兼容放行，不应推广成多租户安全隔离。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:2057-2071](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2057-L2071)\n\n普通回退先读当前内容作为undo快照，随后写旧基线。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async function revertEntryContent(entry: PendingEntry, sessionId: SessionId, signal: AbortSignal): Promise<{ before: DiffApprovalUndoState; after: DiffApprovalUndoState } | undefined> {\n    const resolved = await ctx.fs.resolve(entry.path, { signal })\n    if (entry.earlierVersion === 'none') {\n      await removeRevert(resolved, sessionId, signal)\n      return undefined\n    }\n    const preWrite = await ctx.fs.readText(resolved, undefined) ?? entry.newText\n    const content = reencodeEol(entry.oldText, detectEol(entry.newText))\n    await writeRevert(resolved, content, sessionId, signal)\n    return {\n      before: { id: entry.id, path: entry.path, entry, fileText: preWrite },\n      after: { id: entry.id, path: entry.path, entry: undefined, fileText: content },\n    }\n  }\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:2014-2018](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2014-L2018)\n\nundo有显式文件内容比较，不能投射到普通回退。\n\n```text\n      if (write.expected !== undefined) {\n        const current = await ctx.fs.readText(resolved, undefined)\n        if (current !== write.expected) {\n          return { path: write.path, error: new Error('the file changed outside the review after the action; undo is unavailable') }\n        }\n```\n\n**依据 3 · 源码核查**：[src/index.ts:1390-1421](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L1390-L1421)\n\nworkspace未知兼容视图语义。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n   * `undefined` — \"not known\", never a guess: the caller keeps the pre-workspace behaviour for it\n   * rather than refusing a row it cannot show to be elsewhere.\n   * @param sessionId - the session whose workspace is wanted.\n   * @returns the comparison key, or `undefined` when it is not known.\n   */\n  function workspaceKeyOf(sessionId: SessionId): string | undefined {\n    const path = workspaceOf(sessionId)?.path\n    if (typeof path !== 'string' || path.length === 0) return undefined\n    const resolved = resolve(path)\n    return process.platform === 'win32' ? resolved.toLowerCase() : resolved\n  }\n\n  /**\n   * Whether two workspaces, already reduced to comparison keys by {@link workspaceKeyOf}, are the same\n   * one as far as this deployment can say.\n   *\n   * TRUE when either side is unknown, which is the whole point: an unknown workspace must not turn into\n   * a refusal. The pending list is not scoped by workspace (see `workspaceKeyOf`), so a session the\n   * registry does not account — a memory-only session, a row from a host that named no workspace, a\n   * deployment whose registry the plugin cannot read — would otherwise lose rows it has always shown.\n   * The check is for the case this code can actually see: two KNOWN roots that differ.\n   * @param left - one session's key, or `undefined` when unknown.\n   * @param right - the other's.\n   * @returns whether they can be shown to share a workspace.\n   */\n  function sameWorkspaceKey(left: string | undefined, right: string | undefined): boolean {\n    return left === undefined || right === undefined || left === right\n  }\n\n  /**\n   * Resolve the file-sandbox policy for one session's Revert write, or\n   * undefined when no confining backend is mounted. A live session carries\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:1783-1816](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L1783-L1816)\n\n可操作条目与请求session策略。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  /**\n   * The entry one id names, when the requesting session may act on it; `undefined` otherwise.\n   *\n   * Every action path resolves its entry through this, so an id outside the requester's lineage is\n   * answered exactly like an id that names nothing — `missing` — and no action can reach a row the\n   * requester cannot see.\n   * @param view - the request's lineage view.\n   * @param sessionId - the requesting session.\n   * @param id - the entry id (its path).\n   * @returns the entry, or `undefined` when it is absent or outside the view.\n   */\n  function actionableEntryOf(\n    view: { sees: (sessionId: SessionId, entry: PendingEntry) => boolean },\n    sessionId: SessionId,\n    id: string,\n  ): PendingEntry | undefined {\n    const entry = store.get(id)\n    return entry !== undefined && view.sees(sessionId, entry) ? entry : undefined\n  }\n\n  /**\n   * Write a Revert through `ctx.fs`, carrying the session's sandbox policy\n   * only when a confining backend is mounted (so the plain 4-arg call shape is\n   * preserved for the unsandboxed composition).\n   * @param target - the resolved target to write.\n   * @param content - the restored file content.\n   * @param sessionId - the entry's session, for the per-session policy.\n   * @param signal - aborts before atomic publication takes effect.\n   * @returns the write outcome.\n   */\n  async function writeRevert(target: FsTarget, content: string, sessionId: SessionId, signal: AbortSignal): Promise<unknown> {\n    const policy = sandboxPolicyOf(sessionId)\n    return policy === undefined\n      ? ctx.fs.writeText(target, content, undefined, signal)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/persist.ts:140-199](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/persist.ts#L140-L199)\n\nv3全局持久文件和单实例保存串行。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n/**\n * File-backed pending entries, one global file keyed by path.\n */\nexport class PendingPersistence {\n  private readonly tails = new Map<string, Promise<unknown>>()\n  private readonly globalFile: string\n\n  /**\n   * @param root - directory holding the global `pending.json` (and, pre-migration,\n   * one JSON file per workspace).\n   */\n  constructor(private readonly root: string) {\n    this.globalFile = join(root, 'pending.json')\n  }\n\n  /**\n   * Load every persisted entry. Returns the global file's entries, or — when the\n   * global file is absent — flattens the legacy per-workspace files so the\n   * caller can fold them once and then save (which clears the legacy files).\n   * @returns the entries plus whether they came from the legacy layout (awaiting\n   * a save to finalize the migration).\n   */\n  async loadAll(): Promise<{ entries: PendingEntry[]; migratedLegacy: boolean }> {\n    const global = await readJson(this.globalFile)\n    if (global !== undefined) {\n      const parsed = globalFileOf(this.globalFile, global)\n      const entries: PendingEntry[] = []\n      for (const row of parsed.entries) {\n        const entry = pendingEntryOf(row)\n        if (entry !== undefined) entries.push(entry)\n      }\n      return { entries: entries.sort((l, r) => l.updatedAt - r.updatedAt), migratedLegacy: false }\n    }\n    const legacy = await collectLegacy(this.root)\n    if (legacy.length > 0) {\n      return { entries: legacy.sort((l, r) => l.updatedAt - r.updatedAt), migratedLegacy: true }\n    }\n    return { entries: [], migratedLegacy: false }\n  }\n\n  /**\n   * Replace the persisted entry set durably. Saves to the one file are\n   * serialized; a previous save's failure does not block the next one. On a\n   * legacy migration this also removes the per-workspace files.\n   * @param entries - the complete entry list, possibly empty.\n   * @returns resolution after the file is durable.\n   */\n  save(entries: readonly PendingEntry[]): Promise<void> {\n    const task = async () => {\n      await writeJsonAtomic(this.globalFile, { version: FILE_VERSION, entries })\n      await removeLegacy(this.root)\n    }\n    const tail = this.tails.get(this.globalFile) ?? Promise.resolve()\n    const run = tail.then(task, task)\n    this.tails.set(this.globalFile, run.catch(() => {}))\n    return run\n  }\n}\n\n/** Flatten every legacy per-workspace file's entries (adding `sessionIds`). */\n```\n\n</details>\n\n**依据 6 · 作者声明**：[README.md:43-46](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md#L43-L46)\n\n旧按workspace存储说明。\n\n```text\n- **File menu**: on by default (the \"File menu\" row in the \"Diff view\" group turns it off). It takes over the click on some file links: a file row in the shell's edited / produced lists, an `@file` reference or file link in a message, and a relative link in this plugin's Markdown preview, and offers: **Open as usual** (the shell's own behaviour, replayed), **View in the review panel**, and **Copy file path**.\n- **Bundled CJK code font**: the panel ships JetBrains Maple Mono, subset and sliced by `unicode-range`; it is on by default and can be turned off in settings.\n- **External changes**: files already in the pending list are monitored — if one is later modified outside the reviewed edits (another tool, an editor), the panel adopts the new content and flags the divergence.\n- **Open / Reveal**: while reviewing a file's diff, open it in its default app or reveal it in the system file manager with one click.\n```\n\n#### 缺口\n\n- 实际宿主fs的并发写/策略与插件外部写交互未完全确定。\n  **影响：**不能把源码回退链称为无损或原子冲突保护。\n  **进一步探讨：**可从固定外部编辑发生在list之后、Revert读写之间及新建删除场景入手，检查文件内容与undo可达性。\n- 全局快照与评论的多进程冲突、敏感数据留存策略未有完整证据。\n  **影响：**原子rename只解决单文件替换，不等跨进程协调或隐私删除。\n  **进一步探讨：**可检查多实例共享storageDir约束及停用后的数据盘点与权限。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 安装、运行和退出依赖什么？\n\n**研究主题：**依赖、兼容与流程\n\n#### 完整回答\n\n作者提供profile安装、patch和web重启步骤。包分服务端和客户端，主链需fs/connection/webServer/workspaceRegistry/sessions/sessionController/agents等注入；这不是任意Node中直接运行的工具。VCS导入和AI评论分别增加CLI/shell与模型依赖，普通人工审阅不强制这些功能。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH web、Cordis和React客户端注入 | 启动必需 | 宿主事件、RPC和审阅面板 | 版本不匹配可能缺入口或捕获 |\n| fs/connection/workspaceRegistry/sessions等服务 | 主链必需 | 文件快照、会话视图与回退 | 不等于普通独立diff工具 |\n| 可写storageDir | 重启恢复必需 | 保存完整old/new文本 | 错误需处理，禁用不清数据 |\n| Git/SVN/Perforce CLI及宿主shell | 选用VCS导入时 | 读取本地变更 | 不导入可不用 |\n| 模型/agent服务 | 选用AI评论时 | 评论提问与回写 | 普通Keep/Revert无需模型调用 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 维护者固定包/profile并备份工作树 | 明确这是事后审阅，非写前审批 |\n| 加载 | 按README添加包/patch并重启web | 入口、事件与RPC均能接线 |\n| 审阅 | 人工核对差异、原始文件和目标 | Keep只接受，Revert会改真实文件 |\n| 退出/恢复 | 停用包并核对pending.json、评论及备份 | 不将删除状态文件当作文件恢复 |\n\n持久状态与工作文件是两类数据，停用包不自动撤销已写文件，也不自动清理完整快照。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:15-28](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/package.json#L15-L28)\n\n独立服务与客户端导出。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./client\": {\n      \"types\": \"./lib/types/client/index.d.ts\",\n      \"default\": \"./lib/client.js\"\n    },\n    \"./src/*\": \"./src/*\",\n    \"./package.json\": \"./package.json\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:41-57](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/package.json#L41-L57)\n\nDSH web客户端注入。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-runtime\",\n        \"@deepseek-ai/dsh-client-connection\",\n        \"@deepseek-ai/dsh-client-locale\",\n        \"@deepseek-ai/dsh-client-ui-settings\",\n        \"@deepseek-ai/dsh-client-ui-sidebar\"\n      ],\n      \"platform\": \"web\"\n    }\n  },\n  \"scripts\": {\n```\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:72-87](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/package.json#L72-L87)\n\n运行库与peer依赖。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    \"@deepseek-ai/dsh-home-paths\": \"^0.1.0-rc.5\",\n    \"@shikijs/langs\": \"^4.4.3\",\n    \"diff\": \"^9.0.0\",\n    \"dompurify\": \"^3.4.15\",\n    \"marked\": \"^18.0.11\",\n    \"shiki\": \"^4.4.3\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \">=4.0.1\",\n    \"react\": \"^18.2.0\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-client-connection\": \"^0.1.0-rc.5\",\n    \"@deepseek-ai/dsh-client-locale\": \"^0.1.0-rc.5\",\n    \"@deepseek-ai/dsh-client-runtime\": \"^0.1.0-rc.5\",\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:99-104](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L99-L104)\n\n服务注入。\n\n```text\n * base composition this plugin already requires for `sessions`, so a host that could\n * list pending changes at all has them.\n */\nexport const inject = ['fs', 'connection', 'webServer', 'workspaceRegistry', 'sessions', 'sessionController', 'agents']\n\n/** The connection RPC channel this plugin serves. */\n```\n\n**依据 5 · 作者声明**：[README.md:48-78](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md#L48-L78)\n\n作者安装与存储配置。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n````text\n- **Persistence**: pending state is stored per workspace at `<dshHome>/diff-approval/workspaces/<workspaceId>.json` and survives restarts — unhandled changes are still there when you come back, even in a fresh session.\n\n## 📦 Install\n\nIf `dsh` is on your `PATH`:\n\n```sh\ndsh plugin --profile web add dsh-diff-approval\n```\n\nOr, if you run the harness through npx (e.g. `npx @deepseek-ai/dsh web`):\n\n```sh\nnpx @deepseek-ai/dsh plugin --profile web add dsh-diff-approval\n```\n\nor manually: add the package to your profile's `package.json` dependencies and insert this row into the profile's `cordis.patch.yml`:\n\n```yaml\n- insert:\n    - id: diff-approval\n      name: dsh-diff-approval\n      # Optional: relocate durable pending state (defaults to\n      # <dshHome>/diff-approval/workspaces).\n      # config:\n      #   storageDir: ~/dsh-pending\n```\n\nThen restart `dsh web`.\n\n## 🚀 Usage\n````\n\n</details>\n\n**依据 6 · 作者声明**：[README.md:87-94](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/README.md#L87-L94)\n\nVCS CLI、删除与持久注意。\n\n```text\n- The VCS import runs read-only Git/SVN/Perforce commands through the deployment's shell executor, so the respective CLI must be on `PATH`. Including files version control has not seen (default off) scans the whole workspace, which can be slow on large trees.\n- For a newly-created file, the whole-file revert action reads **Delete** and removes the file.\n- Reverting a file writes it back with its current line endings (LF / CRLF) preserved.\n- Sessions with no workspace keep their entries memory-only; corrupt persistence files are rejected and can be deleted to reset.\n- The sidebar footer entry stacks vertically with other plugins' footer actions and defers to the dedicated `dsh-footer-order` plugin when it is present.\n\n## 🛠 Development\n\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次、持续、失败恢复成本和效果怎么衡量？\n\n**研究主题：**效果与总成本\n\n#### 完整回答\n\n完整任务是一次真实变更被正确审阅并保留/恢复，不能仅以列表出现或文件数衡量。保存完整旧新文本、轮询核对、diff计算和高亮会随文件规模增长；虚拟化能减少展示节点，不证明差分计算或持久JSON的成本恒定。作者原子写注释提到本机测量，本轮没有运行，不能当独立性能或可靠性证据。\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 安装依赖、客户端资源与存储，金额未知 | 固定版本、备份与熟悉回退语义 | 作者安装说明非本轮安装结果 |\n| 持续使用 | 全文件old/new内存与JSON，轮询读文件及diff渲染 | 逐文件/块审阅与合并外部变更 | AI评论另有模型费用，普通审阅不强制 |\n| 失败恢复 | 快照、备份、冲突重做及持久写失败处理 | 区分已回退、部分完成及未知文件状态 | 无同规模数据集性能/恢复人时结果 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 审阅连贯性 | 捕获、累计文件差异与Keep/Revert同处宿主 | 是否降低漏审及人工时间 |\n| 恢复 | 有限重试原子JSON保存及部分undo路径 | 断电耐久、多进程写和外部并发结果 |\n| 变更归属 | 全局按路径累计并按lineage过滤 | 同文件多来源变更能否符合读者预期 |\n\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/pending.ts:1-10](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/pending.ts#L1-L10)\n\n保存文件完整基线与最新文本。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * In-memory pending-diff store: one entry per file path, globally, holding the\n * file's full set of unhandled changes as one cumulative span (earliest basis →\n * latest content) across every session and workspace that touched it. Every\n * later operation to a tracked path folds into its entry — `oldText` stays the\n * earliest basis, `newText` takes the latest content, and the touching sessions\n * accumulate in `sessionIds` — even when the chain breaks (an outside writer\n * changed the file between operations). Pure state and transitions; the plugin\n * body owns the `tools/result` observation, the RPC surface, and the\n * filesystem I/O.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:1130-1133](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L1130-L1133)\n\n作者说明面板轮询读取状态。\n\n```text\n   * path (the panel polls once a second and the review set stays small).\n   * @param entries - the store's entries for one session.\n   * @returns entries with `missing` and `diverged` set from the live file.\n   */\n```\n\n**依据 3 · 源码核查**：[src/persist.ts:188-199](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/persist.ts#L188-L199)\n\n保存整份entries并串行。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    const task = async () => {\n      await writeJsonAtomic(this.globalFile, { version: FILE_VERSION, entries })\n      await removeLegacy(this.root)\n    }\n    const tail = this.tails.get(this.globalFile) ?? Promise.resolve()\n    const run = tail.then(task, task)\n    this.tails.set(this.globalFile, run.catch(() => {}))\n    return run\n  }\n}\n\n/** Flatten every legacy per-workspace file's entries (adding `sessionIds`). */\n```\n\n</details>\n\n**依据 4 · 作者声明**：[src/atomic-write.ts:1-20](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/atomic-write.ts#L1-L20)\n\n作者瞬时失败重试测量说明，并非本轮复现。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n/**\n * Stage a JSON envelope beside its target and rename it into place, retrying the rename.\n *\n * Both stores in this plugin persist the same way — write a sibling temp file, `rename` it over the\n * real one — because a crash must leave either the old file or the new one and never a torn one. What\n * neither of them did was survive the rename itself being refused, and on Windows that is not rare:\n * replacing a file another process has open at that instant answers `EPERM`, and the readers here are\n * everyone — a second panel, a backup agent, an antivirus, the user's own editor, or this suite's own\n * 50ms `readFile` loop waiting for the write. The refusal is transient by construction (the handle that\n * caused it closes within a tick), but the write it killed was the ONLY copy of that update: the\n * pending list or a session's comment file simply kept its previous content, and the failure was\n * reported as \"your threads will not survive a restart\" without ever being retried.\n *\n * So the rename is attempted a few times with a short, growing pause. Measured on this machine with a\n * concurrent reader, the retry turns 6 lost writes in 12 into 0 — see `tests/atomic-write.spec.ts` for\n * the deterministic shape (an injected rename that fails once) and the commit message for the numbers.\n *\n * Failures that are NOT about a held handle (a missing directory, a full disk, a read-only mount) are\n * rethrown on the first attempt: retrying those only delays the report the caller has to make.\n *\n```\n\n</details>\n\n#### 缺口\n\n- 没有同一变更集、同一文件规模的审阅时间、漏审、内存和失败恢复对照。\n  **影响：**不能给出节省百分比或适合超大文件承诺。\n  **进一步探讨：**可和Git diff加编辑器比较完整审阅任务，统计回退冲突、人工核对、峰值内存及恢复人时。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 哪些工程机制可复用，冲突保护假设如何验证？\n\n**研究主题：**工程质量与复用、新假设与验证\n\n#### 完整回答\n\n可复用的是纯pending状态机与I/O分离，内容版本缓存标记、请求视图统一复用、动作写策略与来源归属分离，以及原子JSON保存对EPERM/EACCES/EBUSY有限退避。Markdown预览使用DOMPurify而不是直接插入原文，但这不替代所有UI/网络面安全审计。原子rename不等fsync断电耐久或多进程事务。\n\n由Q02提出未验证的“版本绑定回退收据”。用户看见差异时绑定newText哈希及条目版本，执行前检查文件/版本，冲突返回可读收据而不覆盖，并为删除与批量部分完成保存可恢复副本。相比当前普通Revert，目标是明确副作用对应哪次审阅；代价是快照空间、冲突交互和跨文件补偿复杂度。可用外部编辑、并发捕获、失败在第N文件与重启夹具，对照静默覆盖、恢复完整性与人工时间；若持续误报阻塞或仍无法恢复，应修正或否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/pending.ts:43-76](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/pending.ts#L43-L76)\n\n纯状态store与内容版本。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n * The pending-diff store: one entry per file path across all sessions. Keep /\n * Revert decides one whole file at a time.\n */\nexport class PendingDiffStore {\n  private readonly entries = new Map<string, PendingEntry>()\n  /**\n   * The content version of each entry: bumped whenever its tracked `newText` moves, and never for a\n   * change that leaves the content alone (a block keep advances `oldText` only).\n   *\n   * It is what lets derived, content-dependent state — the lines a comment's quote resolves to, read\n   * off `newText` — be cached and refreshed when the content moved rather than recomputed on every\n   * read. The versions come from one monotonic counter and are never reused, so an entry that leaves\n   * the list and comes back cannot hand back the number a stale cache was keyed to.\n   */\n  private readonly contentVersions = new Map<string, number>()\n  /** The last version handed out; only ever climbs (see `contentVersions`). */\n  private contentVersionCounter = 0\n\n  /** Note that one path's tracked content moved, and give it a fresh version. */\n  private bumpContent(path: string): void {\n    this.contentVersions.set(pathKeyOf(path), ++this.contentVersionCounter)\n  }\n\n  /**\n   * The version of one path's tracked content, or 0 while it has none.\n   *\n   * Two calls that return the same number describe the same `newText`: a caller caching something\n   * derived from that content may serve its copy until the number changes.\n   * @param path - the file path (the global entry key).\n   * @returns the path's content version.\n   */\n  contentVersion(path: string): number {\n    return this.contentVersions.get(pathKeyOf(path)) ?? 0\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/atomic-write.ts:58-71](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/atomic-write.ts#L58-L71)\n\n瞬时错误类别与默认有限退避。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n */\nexport const ATOMIC_WRITE_RETRY: AtomicWriteRetry = { attempts: 5, delayMs: 25 }\n\n/**\n * Whether one rename error is the transient \"somebody else has this file open\" refusal.\n *\n * Windows answers `EPERM` for a replace whose target is open; `EACCES` and `EBUSY` are the same\n * situation seen through a network share or a mapped drive. Nothing else is retried.\n *\n * @param error - whatever the rename threw.\n * @returns whether another attempt is worth making.\n */\nexport function isHeldOpen(error: unknown): boolean {\n  const code = (error as NodeJS.ErrnoException | null | undefined)?.code\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/atomic-write.ts:81-113](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/atomic-write.ts#L81-L113)\n\n同目录暂存、rename、失败清理。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n * @throws the rename's own error when the attempts run out, or at once when it is not a held handle.\n */\nexport async function writeJsonAtomic(\n  file: string,\n  value: unknown,\n  options: { fs?: Partial<AtomicWriteFs> | undefined; retry?: AtomicWriteRetry | undefined } = {},\n): Promise<void> {\n  const io: AtomicWriteFs = {\n    mkdir,\n    writeFile,\n    rename,\n    remove: staged => rm(staged, { force: true }),\n    ...options.fs,\n  }\n  const retry = options.retry ?? ATOMIC_WRITE_RETRY\n  await io.mkdir(dirname(file), { recursive: true })\n  const staged = `${file}.${process.pid}.${Date.now()}.tmp`\n  await io.writeFile(staged, JSON.stringify(value), 'utf8')\n  for (let attempt = 1; ; attempt++) {\n    try {\n      await io.rename(staged, file)\n      return\n    } catch (error: unknown) {\n      if (attempt >= retry.attempts || !isHeldOpen(error)) {\n        // The staged bytes are this write's own and nothing else points at them: leaving them behind\n        // would litter the state directory with files nothing reads (and `loadAll` skips `.tmp`).\n        await io.remove(staged).catch(() => {})\n        throw error\n      }\n      await new Promise(resolve => setTimeout(resolve, retry.delayMs * 2 ** (attempt - 1)))\n    }\n  }\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client/markdown-preview.ts:53-67](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/client/markdown-preview.ts#L53-L67)\n\nMarkdown经DOMPurify净化。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/** Render one text run to sanitized HTML (Markdown). */\nfunction renderRun(run: DiffRun): string {\n  const html = marked.parse(run.text, { async: false }) as string\n  return DOMPurify.sanitize(html)\n}\n\n/** Escape HTML special characters before embedding text in the Markdown source. */\nfunction escapeHtml(text: string): string {\n  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')\n}\n\n/** Render a Markdown string (already carrying injected inline spans) to sanitized HTML. */\nfunction renderMarkdownInline(markdown: string): string {\n  return DOMPurify.sanitize(marked.parse(markdown, { async: false }) as string)\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:2057-2071](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2057-L2071)\n\n假设针对普通回退的真实写路径。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  async function revertEntryContent(entry: PendingEntry, sessionId: SessionId, signal: AbortSignal): Promise<{ before: DiffApprovalUndoState; after: DiffApprovalUndoState } | undefined> {\n    const resolved = await ctx.fs.resolve(entry.path, { signal })\n    if (entry.earlierVersion === 'none') {\n      await removeRevert(resolved, sessionId, signal)\n      return undefined\n    }\n    const preWrite = await ctx.fs.readText(resolved, undefined) ?? entry.newText\n    const content = reencodeEol(entry.oldText, detectEol(entry.newText))\n    await writeRevert(resolved, content, sessionId, signal)\n    return {\n      before: { id: entry.id, path: entry.path, entry, fileText: preWrite },\n      after: { id: entry.id, path: entry.path, entry: undefined, fileText: content },\n    }\n  }\n\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 当前谁适合试用，出现什么应停止？\n\n**研究主题：**采用判断\n\n#### 完整回答\n\n推荐trial，面向单人可备份工作树的DSH web文件审阅，先将其视为便利的事后审阅面板。普通Git diff不能覆盖全部会话工具写入体验，但成熟版本控制/备份仍需保留。不要把名称中的approval解释为写前保护，也不要把全局路径累计解释为逐次可逆历史。\n\n继续探讨可先核对固定宿主接口和回退冲突语义，选择无敏感小文件，分别看Keep、编辑回退、新建删除与批量失败的结果。若目标/来源不明、外部变更被覆盖、部分完成未清楚回报、持久失败或快照数据留存不清，应停止相关写动作并以备份/版本控制恢复。Q02的冲突保护与Q04成本结果会影响是否扩大范围，本轮不做文件回退。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:2750-2818](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2750-L2818)\n\n接受与真实回退的不同副作用。\n\n<details>\n<summary>查看原文（69行）</summary>\n\n```text\n        const target = targetOf(payload)\n        if (target === undefined) return rpcError('sessionId and id must be non-empty strings')\n        // Remove synchronously: once the user acts, the entry must be gone for\n        // any concurrent list. (The store is hydrated by the time an action\n        // runs, since the panel lists first.)\n        // Resolved through the request's merged view, so a row the reader can see is actionable and a row\n        // outside its lineage answers `missing` — the same answer an id that names nothing gets.\n        const lineage = lineageView()\n        let entry = actionableEntryOf(lineage, target.sessionId, target.id)\n        if (entry === undefined) {\n          await ensureLoaded()\n          entry = actionableEntryOf(lineage, target.sessionId, target.id)\n          if (entry === undefined) {\n            const value: DiffApprovalActionValue = { outcome: 'missing' }\n            return { ok: true, value }\n          }\n        }\n        // The file already holds the accepted content, so nothing is written:\n        // folding `newText` into the baseline clears the diff. The panel asks\n        // whether to also drop the resolved entry, and rides the answer here.\n        if ((payload as Record<string, unknown>).keepListed === true) {\n          store.update(target.id, { oldText: entry.newText })\n          const afterEntry: PendingEntry = { ...entry, oldText: entry.newText, updatedAt: Date.now() }\n          pushUndo(target.sessionId,\n            { id: entry.path, path: entry.path, entry, fileText: undefined },\n            { id: entry.path, path: entry.path, entry: afterEntry, fileText: undefined })\n          persistSession(true)\n          const value: DiffApprovalActionValue = { outcome: 'kept', resolved: true }\n          return { ok: true, value }\n        }\n        // Snapshotted BEFORE the drop: the threads are what that call is about to take away.\n        const beforeDrop = droppingComments({ id: entry.path, path: entry.path, entry, fileText: undefined })\n        dropEntry(target.id)\n        pushUndo(target.sessionId, beforeDrop,\n          { id: entry.path, path: entry.path, entry: undefined, fileText: undefined })\n        persistSession(true)\n        const value: DiffApprovalActionValue = { outcome: 'kept' }\n        return { ok: true, value }\n      }\n      case 'revert': {\n        const target = targetOf(payload)\n        if (target === undefined) return rpcError('sessionId and id must be non-empty strings')\n        // Resolved through the request's merged view, so a row the reader can see is actionable and a row\n        // outside its lineage answers `missing` — the same answer an id that names nothing gets.\n        const lineage = lineageView()\n        let entry = actionableEntryOf(lineage, target.sessionId, target.id)\n        if (entry === undefined) {\n          await ensureLoaded()\n          entry = actionableEntryOf(lineage, target.sessionId, target.id)\n          if (entry === undefined) {\n            const value: DiffApprovalActionValue = { outcome: 'missing' }\n            return { ok: true, value }\n          }\n        }\n        // The REQUESTER governs the WRITE: the sandbox and workspace a revert runs under are the pressing\n        // seat's own, never another session's (see `DiffApprovalUndoPair.policySession`). Visibility has\n        // already established that this session shares a workspace with an owner of the row, so the file is\n        // inside this session's workspace — and a press runs under the authority of the seat that pressed it\n        // rather than silently borrowing a wider grant from whoever touched the file last. The undo pair\n        // below is filed under that same pressing session (`pushUndo` canonicalizes the STACK, not this).\n        // A revert that deletes a created file is not undoable (the file is\n        // gone); a revert that writes keeps a snapshot for Ctrl+Z.\n        let undo: { before: DiffApprovalUndoState; after: DiffApprovalUndoState } | undefined\n        try {\n          undo = await revertEntryContent(entry, target.sessionId, signal)\n        } catch (error: unknown) {\n          // A refusal by this session's own authority says so, and names the file; every other failure\n          // (a missing file, a diverged one, an IO fault) keeps its own answer.\n          if (isPolicyRefusal(error)) return policyRefusal(entry.path, error)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/persist.ts:140-199](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/persist.ts#L140-L199)\n\n全局完整快照需留存治理。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n/**\n * File-backed pending entries, one global file keyed by path.\n */\nexport class PendingPersistence {\n  private readonly tails = new Map<string, Promise<unknown>>()\n  private readonly globalFile: string\n\n  /**\n   * @param root - directory holding the global `pending.json` (and, pre-migration,\n   * one JSON file per workspace).\n   */\n  constructor(private readonly root: string) {\n    this.globalFile = join(root, 'pending.json')\n  }\n\n  /**\n   * Load every persisted entry. Returns the global file's entries, or — when the\n   * global file is absent — flattens the legacy per-workspace files so the\n   * caller can fold them once and then save (which clears the legacy files).\n   * @returns the entries plus whether they came from the legacy layout (awaiting\n   * a save to finalize the migration).\n   */\n  async loadAll(): Promise<{ entries: PendingEntry[]; migratedLegacy: boolean }> {\n    const global = await readJson(this.globalFile)\n    if (global !== undefined) {\n      const parsed = globalFileOf(this.globalFile, global)\n      const entries: PendingEntry[] = []\n      for (const row of parsed.entries) {\n        const entry = pendingEntryOf(row)\n        if (entry !== undefined) entries.push(entry)\n      }\n      return { entries: entries.sort((l, r) => l.updatedAt - r.updatedAt), migratedLegacy: false }\n    }\n    const legacy = await collectLegacy(this.root)\n    if (legacy.length > 0) {\n      return { entries: legacy.sort((l, r) => l.updatedAt - r.updatedAt), migratedLegacy: true }\n    }\n    return { entries: [], migratedLegacy: false }\n  }\n\n  /**\n   * Replace the persisted entry set durably. Saves to the one file are\n   * serialized; a previous save's failure does not block the next one. On a\n   * legacy migration this also removes the per-workspace files.\n   * @param entries - the complete entry list, possibly empty.\n   * @returns resolution after the file is durable.\n   */\n  save(entries: readonly PendingEntry[]): Promise<void> {\n    const task = async () => {\n      await writeJsonAtomic(this.globalFile, { version: FILE_VERSION, entries })\n      await removeLegacy(this.root)\n    }\n    const tail = this.tails.get(this.globalFile) ?? Promise.resolve()\n    const run = tail.then(task, task)\n    this.tails.set(this.globalFile, run.catch(() => {}))\n    return run\n  }\n}\n\n/** Flatten every legacy per-workspace file's entries (adding `sessionIds`). */\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:2057-2080](https://github.com/9087/dsh-diff-approval/blob/393bdc4c9b6ee007027c9e4da4d9732d60c9e168/src/index.ts#L2057-L2080)\n\n删除回退不进入undo。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  async function revertEntryContent(entry: PendingEntry, sessionId: SessionId, signal: AbortSignal): Promise<{ before: DiffApprovalUndoState; after: DiffApprovalUndoState } | undefined> {\n    const resolved = await ctx.fs.resolve(entry.path, { signal })\n    if (entry.earlierVersion === 'none') {\n      await removeRevert(resolved, sessionId, signal)\n      return undefined\n    }\n    const preWrite = await ctx.fs.readText(resolved, undefined) ?? entry.newText\n    const content = reencodeEol(entry.oldText, detectEol(entry.newText))\n    await writeRevert(resolved, content, sessionId, signal)\n    return {\n      before: { id: entry.id, path: entry.path, entry, fileText: preWrite },\n      after: { id: entry.id, path: entry.path, entry: undefined, fileText: content },\n    }\n  }\n\n  // Undo/redo stacks, in memory only (lost on restart). Every undoable\n  // keep/revert/block action pushes its before/after pair; undo restores\n  // `before`, redo re-applies `after`. Actions that delete a file (revert of a\n  // created file, block-revert to empty) are not pushed.\n  //\n  // PER LINEAGE ROOT, not per session and not global: an entry's id is globally unique (it is the path),\n  // and a single LIFO queue across every session meant session B's Ctrl+Z could pop session A's keep and\n  // report success — an action the reader never took, on a file they may not even be looking at.\n  //\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：833cabe16c3c5e89c25fad7905774204e79dbfc31f3d2dd2808e2a2070ef641e。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 1280 | — | — | 14419 |\n| .ts | test | 58 | 18044 | 13063 | 3237 | — |\n| .ts | source | 51 | 19327 | 9937 | 8466 | — |\n| .mjs | source | 4 | 1304 | 802 | 421 | — |\n| .tsx | source | 9 | 14853 | 9390 | 5222 | — |\n| .tsx | test | 6 | 17471 | 12270 | 3680 | — |\n\n排除 5 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 写入捕获 | 集中累计差异 | 成功写入后，不阻止先写 |\n| Keep/Revert | 接受或恢复文件/块 | 真实副作用，删除不undo |\n| 评论/预览 | 审阅与可选AI讨论 | AI另需模型，完整UI未审计 |\n| VCS导入 | 查看未提交变更 | 需对应CLI，非本轮运行结果 |\n\n## 工程亮点\n\n可复用的是纯pending状态机与I/O分离，内容版本缓存标记、请求视图统一复用、动作写策略与来源归属分离，以及原子JSON保存对EPERM/EACCES/EBUSY有限退避。Markdown预览使用DOMPurify而不是直接插入原文，但这不替代所有UI/网络面安全审计。原子rename不等fsync断电耐久或多进程事务。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/pending.ts、src/persist.ts、package.json、src/atomic-write.ts、src/client/markdown-preview.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交主捕获、pending/persist/原子写、lineage/普通回退/undo与客户端Markdown净化；未全面审计UI/VCS/AI评论，不执行目标代码或回退。\n- 下一步：进一步探讨可从固定文件集、外部编辑与第N文件失败夹具入手，核对冲突、部分完成、删除恢复及人时。\n",
+        "reports": "# dsh-diff-approval\n\n> 捕获DSH成功文件编辑并集中展示差异，支持Keep/Revert、评论、撤销及VCS变更导入。\n\n## 研究范围\n\n- **仓库**：[9087/dsh-diff-approval](https://github.com/9087/dsh-diff-approval)\n- **版本号**：0.36.1（[固定提交 c6edcac3d89968e1213ce61ce2c52435aefefd05](https://github.com/9087/dsh-diff-approval/tree/c6edcac3d89968e1213ce61ce2c52435aefefd05)）\n- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n捕获/展示/恢复接线有源码支持；普通回退竞争、不可undo删除与持久弱确认限制无损承诺；动作收据未验证。\n\n## 洞察短评\n\n- **用途**：编码用户在宿主中事后审阅已发生的修改，验收决定与实际文件一致，不当写前审批。\n- **亮点**：把工具捕获、差异/评论与文件决策连成连续审阅，lineage视图与请求方策略分离可借鉴；算法依成熟库。参见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：普通回退不做写时版本比较、创建删除不可undo，持久失败不拒动作成功；外改检测/undo预检不能当无损保证。参见[Q03](#research-q03)。\n- **建议**：未验证假设为expected hash动作收据、删除恢复包及显式持久结果，批量按已写状态恢复；故障对照检查丢改/误报。参见[Q04](#research-q04)。\n\n采用建议：单人可备份工作树试用；普通回退先冻结其他写入，删除先确认，保留Git/备份和持久日志核查。参见[Q04](#research-q04)。\n\n## 核心贡献\n\n把工具捕获、差异/评论与文件决策连成连续审阅，lineage视图与请求方策略分离可借鉴；算法依成熟库。参见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n普通回退不做写时版本比较、创建删除不可undo，持久失败不拒动作成功；外改检测/undo预检不能当无损保证。参见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设为expected hash动作收据、删除恢复包及显式持久结果，批量按已写状态恢复；故障对照检查丢改/误报。参见[Q04](#research-q04)。\n\n未运行目标。隔离外改竞争、创建删除、磁盘满和批量中断，核文件字节、已写计数及重启状态。\n\n## 场景与替代办法\n\n编码用户在宿主中事后审阅已发生的修改，验收决定与实际文件一致，不当写前审批。\n\nIDE/Git差异加手工恢复是参照；插件省宿主交接，但不覆盖所有shell写或替代版本控制。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 宿主fs/connection/workspace/session等 | 启动必需 | 捕获/RPC/策略 | 停用，外部审阅工具 |\n| 客户端模块/React | 界面必需 | 差异/评论展示 | 无审阅面板 |\n| Git/SVN/Perforce CLI | 导入可选 | 读取本地变化 | 仅自动捕获或手工比较 |\n| 备份/可写存储 | 恢复必需 | 真实回退/重启保存 | 停止破坏动作，先核日志 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户备份并固定宿主启用 | 工具变化捕获正确 |\n| 2 | 用户事后审差异/评论 | 接受或回退前核当前文件 |\n| 3 | 用户验证回退/undo/持久 | 实际字节一致；删除/故障走备份 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 客户端/字体/依赖与备份 | 核宿主、理解回退和留存 | 金额/时间未知 |\n| 持续使用 | old/new快照、JSON/diff与外改检查 | 逐文件/块审阅，AI评论另计费 | 全局快照隐私和规模未测 |\n| 失败恢复 | 备份/重写/部分恢复 | 查已写和持久日志、冲突修复 | 非事务，创建删除不可undo |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 审阅接线 | 捕获/块/评论/决策 | 漏审与人工时间下降 |\n| 归属 | lineage/workspace视图和请求策略 | 未知workspace/多源符合预期 |\n| 恢复 | undo预检、部分计数、重试保存 | 无损回退/断电/多进程耐久 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：集中差异审阅的贡献、归属与回退恢复的一致性边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 集中审阅增加什么，是否构成写前审批？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\nDSH编码用户可集中查看成功edit/write/editor产生的差异，逐文件/块Keep/Revert，评论与复制行引用，也可导入Git/SVN/Perforce本地变更。合格交付是看清哪些变化已发生、哪些被接受/恢复，以及实际文件与决定一致。相对切到IDE/Git工具，增量是把工具捕获、宿主差异展示、评论和恢复动作连起来。\n\n捕获发生tools/result且需成功结果，文件在审阅前已修改；Keep是接受已有变化，不是事前批准。名称approval不能推为写前防护，也不能捕获所有shell写。算法使用diff/marked/DOMPurify/Shiki等既有库，贡献集中接线、状态和交互，不是新diff算法。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.md:11-16](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/README.md#L11-L16)\n\n作者集中差异定位。\n\n```text\nA DeepSeek Harness (DSH) plugin for pending-change review: it automatically tracks every successful `edit`, `write`, and editor (`str_replace_editor`) mutation, folds them into a single pending list in the sidebar where each file's diff can be reviewed and kept/reverted — and it can also import the workspace's version-control repository's local changes (Git / SVN / Perforce) in one click.\n\n![Pending changes panel](docs/images/pending-panel.png)\n\nThe panel also collapses its file list into a floating card; while floating, each of its four edges — the left sidebar, the header above, the right sidebar, the composer below — can be chosen to be covered (all four is what used to be fullscreen, and covering nothing is a plain floating card), and it can dock as a tab in the right sidebar:\n\n```\n\n**依据 2 · 源码核查**：[src/index.ts:2484-2496](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2484-L2496)\n\n成功结果后捕获。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  ctx.on('tools/result', (exec: Readonly<ToolExecution>, result: Readonly<ToolExecutionResult>) => {\n    if (exec.name === 'str_replace_editor') {\n      void captureEditorMutation(exec, result)\n      return\n    }\n    if (result.isError || exec.agent === undefined) return\n    const outcome = exec.name === 'edit' ? editOutcomeOf(result.value) : exec.name === 'write' ? writeOutcomeOf(result.value) : undefined\n    if (outcome === undefined || outcome.oldText === outcome.newText) return\n    const sessionId = exec.agent.id\n    const entry: PendingEntry = { id: outcome.path, sessionId, ...outcome, updatedAt: Date.now(), sessionIds: [sessionId], lineage: lineageOf(sessionId, exec.agent), unseen: true }\n    // Fold synchronously so the very next list sees the capture; persistence\n    // (hydration + save) rides the same turn asynchronously.\n    if (store.fold(entry)) persistSession()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[package.json:71-80](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/package.json#L71-L80)\n\n依赖来源。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  \"dependencies\": {\n    \"@deepseek-ai/dsh-home-paths\": \"^0.1.0-rc.5\",\n    \"@shikijs/langs\": \"^4.4.3\",\n    \"diff\": \"^9.0.0\",\n    \"dompurify\": \"^3.4.15\",\n    \"marked\": \"^18.0.11\",\n    \"shiki\": \"^4.4.3\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \">=4.0.1\",\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 状态怎样聚合、持久与按会话展示？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nPendingStore按绝对路径全局唯一，后续同路径fold保最早基线、最新内容并累计sessionIds。正式持久为一个pending.json v3，源码明确不同于README“每workspace一个JSON”的说明。list/action用lineage root相等且同workspace过滤；未知workspace维持旧允许答案，不能当多租户强隔离。\n\nundo/redo在内存按lineage root共享，实际写入记录发起动作座位的policySession，避免借另一会话宽权限。持久采用同实例串行写，捕获1秒节流、用户动作force；tmp+rename对EPERM/EACCES/EBUSY有限退避。状态/I/O分层和内容版本缓存值得借鉴，但全文件快照、单全局JSON与跨进程写无锁有规模/留存负担，rename不等fsync耐久。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/pending.ts:103-128](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/pending.ts#L103-L128)\n\n路径fold与sessionIds聚合。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n   * Combine a stored entry and a new capture. `oldText` comes from the earlier capture (the file's\n   * original basis) — except where that capture was the file's creation and this one edits it, when\n   * the creation's own content becomes the basis — and `newText` from the later (latest content).\n   * The session set is the union, so the entry always spans the whole pending change regardless of\n   * which session contributed which part.\n   */\n  private mergeEntry(a: PendingEntry, b: PendingEntry): PendingEntry {\n    const earlier = a.updatedAt <= b.updatedAt ? a : b\n    const later = earlier === a ? b : a\n    const sessionIds = [...new Set([...touchedBy(a), b.sessionId])]\n    // A creation is the whole change only while creations are all there is: the entry is anchored at a\n    // path that did not exist, and `earlierVersion: 'none'` is what makes a revert remove the file. As\n    // soon as a later capture EDITS that file, the reader is reviewing rounds of work on a file that\n    // exists, so the basis becomes the content it was created with and `回退` writes that back, keeping the\n    // file. Freezing the field at 'none' (the rule from 2026-08-31 until now) left a file that had been\n    // rewritten many times still tagged 新增 and still offering 删除.\n    const onlyCreations = earlier.earlierVersion === 'none' && later.earlierVersion === 'none'\n    return {\n      ...later,\n      // The global identity is the path; `id` must always equal it.\n      id: later.path,\n      // With no old side of the file's own to keep, the creation's content is the basis: `earlier.newText`\n      // is the file as it stood right after it was created.\n      oldText: onlyCreations ? '' : earlier.earlierVersion === 'none' ? earlier.newText : earlier.oldText,\n      earlierVersion: onlyCreations ? 'none' : 'file',\n      sessionIds,\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/persist.ts:1-15](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/persist.ts#L1-L15)\n\n实际全局pending与旧布局迁移。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/**\n * Durable pending-entry persistence under the harness home: one global JSON\n * file holding one entry per file path (across all sessions and workspaces), at\n * `<storageDir>/pending.json`; the default root is `<dshHome>/diff-approval/workspaces`\n * and the plugin's `storageDir` config relocates it. Saves rewrite the whole\n * file (the entry set is small), staged as a sibling temp file and atomically\n * renamed, so a crash leaves either the old or the new file. A missing file\n * reads as empty; corrupt content and unknown versions throw.\n *\n * Legacy layout: the pre-global schema stored one JSON file per workspace\n * (`<storageDir>/<workspaceId>.json`, `{ version: 2, sessions: { [sessionId]:\n * PendingEntry[] } }`). On first load without a global file, `loadAll` scans for\n * those files, flattens every session's entries, and reports them so the caller\n * can fold them into the global store once; `save` then writes the global file\n * and deletes the legacy files.\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/persist.ts:180-195](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/persist.ts#L180-L195)\n\n实例内串行。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  /**\n   * Replace the persisted entry set durably. Saves to the one file are\n   * serialized; a previous save's failure does not block the next one. On a\n   * legacy migration this also removes the per-workspace files.\n   * @param entries - the complete entry list, possibly empty.\n   * @returns resolution after the file is durable.\n   */\n  save(entries: readonly PendingEntry[]): Promise<void> {\n    const task = async () => {\n      await writeJsonAtomic(this.globalFile, { version: FILE_VERSION, entries })\n      await removeLegacy(this.root)\n    }\n    const tail = this.tails.get(this.globalFile) ?? Promise.resolve()\n    const run = tail.then(task, task)\n    this.tails.set(this.globalFile, run.catch(() => {}))\n    return run\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:1559-1594](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L1559-L1594)\n\n可见性和未知workspace语义。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n   * The rule is ROOT-EQUAL **AND SAME-WORKSPACE**: an entry is visible when any session that touched it\n   * walks to the same lineage root as the requester AND can be shown to sit in the requester's workspace.\n   * Walking is `knownLineageOf` links only, so a teammate's rows appear in the lead's list (both walk to\n   * the lead) and the lead's appear in the teammate's — while a host fork, which names a parent but is not\n   * a subagent child, stays an independent root and shares nothing.\n   *\n   * The workspace half is not redundant with the lineage half, because NOTHING ELSE IN THE LIST PATH\n   * SCOPES BY WORKSPACE: the store is one map keyed by absolute path persisted to one `pending.json` under\n   * the storage root (`pending.ts`, `persist.ts` — the `workspaces/` component of the default path is the\n   * legacy per-workspace layout, folded in and deleted on load). So without this a row recorded by a\n   * session in ANOTHER workspace would be listed here whenever the two share a lineage root — which is a\n   * real shape: this view merges every subagent child (see the KNOWN LIMIT below), and the harness's\n   * out-of-process shape lets a child run under a configured `cwd` of its own, its cwd being documented as\n   * the child's \"workspace identity\" (`dsh-subagent/lib/types/out-of-process.js`:\n   * `resolveChildCwd`/`assertUsableCwd`). An in-process child copies its parent's cwd verbatim\n   * (`…/child-agent.js:childSessionMeta`), so the two agree there; this rule is what makes the plugin's\n   * answer independent of which of those two shapes it is handed.\n   *\n   * A session the registry does not account is NOT refused: `sameWorkspace` answers true when either\n   * side's workspace is unknown, so an unaccounted or memory-only session keeps exactly the view it had\n   * before this term existed. UNKNOWN DEGRADES TO SELF on the lineage half and TO THE OLD ANSWER here —\n   * never to a guess, and never to a refusal the reader cannot see the reason for.\n   *\n   * UNKNOWN DEGRADES TO SELF, never to a guess: with no recorded lineage and no header facts every\n   * session is its own root, so only the requester matches — byte-for-byte today's behaviour. A cycle\n   * (which no shell should produce) stops at the first repeat, and the walk is bounded by\n   * {@link MAX_LINEAGE_DEPTH}.\n   *\n   * TWO THINGS A MERGED VIEW DOES NOT MERGE, so the next reader does not expect them:\n   * comments stay per-session (`comments` is read with the requester's id, so a merged list shows the\n   * requester's threads only), and undo stacks stay per-lineage — every ACTION records its pair under the\n   * canonical session of the seat that PRESSED it, so the seats of one lineage share one history and a\n   * different lineage cannot reach into it (`undoStackOf`/`popOwnPair` are keyed by that root). The\n   * session-scoped thing a merged press does NOT take from the ROW is the write policy: an action's file\n   * write runs under the REQUESTING session's own workspace and sandbox (see\n   * `DiffApprovalUndoPair.policySession`), never the owner's.\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:2072-2094](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2072-L2094)\n\nlineage内存undo/写策略。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  // Undo/redo stacks, in memory only (lost on restart). Every undoable\n  // keep/revert/block action pushes its before/after pair; undo restores\n  // `before`, redo re-applies `after`. Actions that delete a file (revert of a\n  // created file, block-revert to empty) are not pushed.\n  //\n  // PER LINEAGE ROOT, not per session and not global: an entry's id is globally unique (it is the path),\n  // and a single LIFO queue across every session meant session B's Ctrl+Z could pop session A's keep and\n  // report success — an action the reader never took, on a file they may not even be looking at.\n  //\n  // The key is the requester's CANONICAL session — its lineage root, `canonicalOf` — because the seats of\n  // one lineage read ONE list: a row a teammate recorded is the lead's row, and the human who supervises\n  // the root is the one who presses Ctrl+Z. So the ACCEPTED consequence, and the point of the change\n  // rather than an accident of it: a teammate's Ctrl+Z can take back the root's last action, and the\n  // root's can take back a teammate's — one history per lineage, taken back from wherever it is read.\n  //\n  // The POLICY a restore writes under is canonicalized in the opposite direction: the pair RECORDS the\n  // session the action ran under (`policySession`) and the restore replays exactly that — never the seat\n  // that popped the pair, and never the entry's owner re-derived at restore time. That is what makes a\n  // cross-seat Ctrl+Z safe: the popper's wider (or narrower) grant cannot leak into a write the presser\n  // made, and a lineage whose seats do NOT share a workspace still writes each file under the seat that\n  // actually acted on it.\n  const undoStacks = new Map<SessionId, DiffApprovalUndoPair[]>()\n  const redoStacks = new Map<SessionId, DiffApprovalUndoPair[]>()\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/atomic-write.ts:95-110](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/atomic-write.ts#L95-L110)\n\n临时写和有限退避。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  const retry = options.retry ?? ATOMIC_WRITE_RETRY\n  await io.mkdir(dirname(file), { recursive: true })\n  const staged = `${file}.${process.pid}.${Date.now()}.tmp`\n  await io.writeFile(staged, JSON.stringify(value), 'utf8')\n  for (let attempt = 1; ; attempt++) {\n    try {\n      await io.rename(staged, file)\n      return\n    } catch (error: unknown) {\n      if (attempt >= retry.attempts || !isHeldOpen(error)) {\n        // The staged bytes are this write's own and nothing else points at them: leaving them behind\n        // would litter the state directory with files nothing reads (and `loadAll` skips `.tmp`).\n        await io.remove(staged).catch(() => {})\n        throw error\n      }\n      await new Promise(resolve => setTimeout(resolve, retry.delayMs * 2 ** (attempt - 1)))\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 回退与撤销能否保证外部修改不丢、所有动作可撤销？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n普通文件revert读当前文本用于undo快照，然后直接写oldText，writeRevert未传expected内容；没有写时CAS。若面板显示后或读写之间有外部修改，普通revert仍可覆盖，而新建文件revert调用remove且不生成undo。README“every revert undoable”被这条删除路径明确收窄。外部监视和undo前内容检查不能追溯保护已发生普通回退。\n\nundo/redo有预检和每文件当前内容等于对侧快照的比较，能拒已知漂移，仍存在检查到写之间的竞争；批量恢复顺序逐项进行，已写数量在失败中返回，不能当原子回滚。持久失败会记录error但persistSession永不reject，部分动作调用未await它，因此RPC成功不必然表示重启可恢复。静态发现不等已复现数据丢失，但会改变采用范围。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:2057-2075](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2057-L2075)\n\n普通回退无内容比较、创建删除不可undo。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  async function revertEntryContent(entry: PendingEntry, sessionId: SessionId, signal: AbortSignal): Promise<{ before: DiffApprovalUndoState; after: DiffApprovalUndoState } | undefined> {\n    const resolved = await ctx.fs.resolve(entry.path, { signal })\n    if (entry.earlierVersion === 'none') {\n      await removeRevert(resolved, sessionId, signal)\n      return undefined\n    }\n    const preWrite = await ctx.fs.readText(resolved, undefined) ?? entry.newText\n    const content = reencodeEol(entry.oldText, detectEol(entry.newText))\n    await writeRevert(resolved, content, sessionId, signal)\n    return {\n      before: { id: entry.id, path: entry.path, entry, fileText: preWrite },\n      after: { id: entry.id, path: entry.path, entry: undefined, fileText: content },\n    }\n  }\n\n  // Undo/redo stacks, in memory only (lost on restart). Every undoable\n  // keep/revert/block action pushes its before/after pair; undo restores\n  // `before`, redo re-applies `after`. Actions that delete a file (revert of a\n  // created file, block-revert to empty) are not pushed.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:1813-1818](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L1813-L1818)\n\nwriteText未带expected。\n\n```text\n  async function writeRevert(target: FsTarget, content: string, sessionId: SessionId, signal: AbortSignal): Promise<unknown> {\n    const policy = sandboxPolicyOf(sessionId)\n    return policy === undefined\n      ? ctx.fs.writeText(target, content, undefined, signal)\n      : ctx.fs.writeText(target, content, undefined, signal, policy)\n  }\n```\n\n**依据 3 · 源码核查**：[src/index.ts:2336-2375](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2336-L2375)\n\nundo内容检查和批量顺序写。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n  async function restoreState(\n    sessionId: SessionId,\n    state: DiffApprovalUndoState,\n    expectedFile: DiffApprovalUndoState | undefined,\n    signal: AbortSignal,\n    scope: CommentScope,\n    progress?: RestoreProgress,\n  ): Promise<void> {\n    // A comment pair carries no file and no entry, so it takes the one branch that has neither.\n    // Dispatching on the pair's own kind is what keeps ONE stack honest: the top of it decides what\n    // the pop means, and everything below this line is about files.\n    if (state.kind === 'comments') {\n      restoreComments(state, expectedFile, scope)\n      return\n    }\n    if (state.fileText !== undefined) {\n      const resolved = await ctx.fs.resolve(state.path, { signal })\n      if (expectedFile?.fileText !== undefined) {\n        const current = await ctx.fs.readText(resolved, undefined)\n        if (current !== expectedFile.fileText) {\n          throw new Error('the file changed outside the review after the action; undo is unavailable')\n        }\n      }\n      // The snapshot is the exact bytes the action wrote (line-endings already\n      // adjusted), so restore writes it verbatim — reproducing the action\n      // regardless of the current line-ending-sensitivity setting.\n      if (progress !== undefined) progress.path = state.path\n      await writeRevert(resolved, state.fileText, sessionId, signal)\n      if (progress !== undefined) progress.written += 1\n    }\n    if (state.batch !== undefined) {\n      // A batch is ONE decision over several entries — one VCS import, or one keep/revert asked of a\n      // pick of files — so restoring it is restoring each item in turn. An item that carries `fileText`\n      // writes its file exactly as a lone state does: the session-wide 全部回退 has always put the bytes\n      // each file held into its undo states, and this branch used to ignore them, so undoing it brought\n      // the rows back while the files stayed reverted on disk. The counterpart item is the same index on\n      // the other side, so a single restore's divergence guard applies here too.\n      const counterpart = expectedFile?.batch\n      for (const [index, item] of state.batch.entries()) {\n        await restoreState(sessionId, { ...item, batch: undefined }, counterpart?.[index], signal, scope, progress)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:2035-2043](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2035-L2043)\n\n部分恢复计数。\n\n```text\n  function restoreFailure(action: 'undo' | 'redo', path: string, error: unknown, progress: RestoreProgress): RpcResult<unknown> {\n    if (isPolicyRefusal(error)) {\n      const far = progress.written === 0\n        ? ''\n        : ` The ${action} had already written ${progress.written} of ${progress.total} files before that.`\n      return rpcError(refusalText(path, error) + far)\n    }\n    const far = progress.written === 0 ? '' : ` after writing ${progress.written} of ${progress.total} files`\n    return rpcError(`${action} failed${far}: ${errorMessage(error)}`)\n```\n\n**依据 5 · 源码核查**：[src/index.ts:2457-2467](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2457-L2467)\n\n持久promise永不reject。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n   *\n   * @param force - write immediately rather than on the throttle's schedule.\n   * @returns a promise that settles when the write this call started has finished (never rejects: a\n   * failure is logged and reported through `persistFailureReported`, because a store that cannot write\n   * must keep answering reads).\n   */\n  function persistSession(force = false): Promise<void> {\n    persistDirty = true\n    if (force) {\n      if (persistScheduled) { clearTimeout(persistTimer); persistScheduled = false }\n      return flushPersist()\n```\n\n</details>\n\n**依据 6 · 源码核查**：[src/index.ts:2825-2836](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2825-L2836)\n\nforce未await即返回。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n        if ((payload as Record<string, unknown>).keepListed === true) {\n          const content = undo?.after.fileText ?? ''\n          store.update(target.id, { newText: content })\n          const afterEntry: PendingEntry = { ...entry, newText: content, updatedAt: Date.now() }\n          if (undo !== undefined) {\n            pushUndo(target.sessionId,\n              { id: entry.path, path: entry.path, entry, fileText: undo.before.fileText },\n              { id: entry.path, path: entry.path, entry: afterEntry, fileText: content })\n          }\n          persistSession(true)\n          const value: DiffApprovalActionValue = { outcome: 'reverted', resolved: true }\n          return { ok: true, value }\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 成本、受控试用与新的恢复假设是什么？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n启动依赖fs/connection/webServer/workspaceRegistry/sessions/controller/agents及客户端模块与React，VCS导入还需相关CLI。普通人工审阅无强制模型调用，评论/AI协作另有模型费。首次要固定宿主/备份和理解Keep/Revert，持续为old/new全文件内存/JSON、diff渲染、外改检测及人工逐块核查，失败恢复要区分已写/未写与持久失败；金额、峰值与人时未知。Markdown预览用DOMPurify可减少直接HTML注入，但不是所有网络/文件面的安全验收。\n\n建议单人可备份工作树试用事后审阅，创建文件删除不可undo先确认，回退前冻结其他写入并查实际文件，保留Git/备份。多来源同文件或敏感全局快照先观察。未验证假设是版本绑定动作收据和删除恢复包，所有revert/undo带expected hash，批量记录逐项已写并将持久结果回给UI。由普通回退和部分恢复/持久弱确认推导，可能减少覆盖/误以为持久，但增加存储和冲突交互。最小验证回退前/检查后外改、创建删除、写满磁盘和批量中断，对照丢改、可恢复与人工操作；若仍覆盖或UI误报耐久则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:102-102](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L102-L102)\n\nHost必需服务。\n\n```text\nexport const inject = ['fs', 'connection', 'webServer', 'workspaceRegistry', 'sessions', 'sessionController', 'agents']\n```\n\n**依据 2 · 源码核查**：[src/client/markdown-preview.ts:699-703](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/client/markdown-preview.ts#L699-L703)\n\n预览净化。\n\n```text\n/** Render one top-level token's Markdown, sanitized, as detached elements. */\nfunction renderToken(raw: string): HTMLElement[] {\n  const holder = document.createElement('div')\n  holder.innerHTML = DOMPurify.sanitize(marked.parse(raw, { async: false }) as string)\n  return [...holder.children].filter((node): node is HTMLElement => node instanceof HTMLElement)\n```\n\n**依据 3 · 源码核查**：[src/index.ts:2057-2075](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2057-L2075)\n\n删除与普通回退边界导出假设。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  async function revertEntryContent(entry: PendingEntry, sessionId: SessionId, signal: AbortSignal): Promise<{ before: DiffApprovalUndoState; after: DiffApprovalUndoState } | undefined> {\n    const resolved = await ctx.fs.resolve(entry.path, { signal })\n    if (entry.earlierVersion === 'none') {\n      await removeRevert(resolved, sessionId, signal)\n      return undefined\n    }\n    const preWrite = await ctx.fs.readText(resolved, undefined) ?? entry.newText\n    const content = reencodeEol(entry.oldText, detectEol(entry.newText))\n    await writeRevert(resolved, content, sessionId, signal)\n    return {\n      before: { id: entry.id, path: entry.path, entry, fileText: preWrite },\n      after: { id: entry.id, path: entry.path, entry: undefined, fileText: content },\n    }\n  }\n\n  // Undo/redo stacks, in memory only (lost on restart). Every undoable\n  // keep/revert/block action pushes its before/after pair; undo restores\n  // `before`, redo re-applies `after`. Actions that delete a file (revert of a\n  // created file, block-revert to empty) are not pushed.\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:2423-2442](https://github.com/9087/dsh-diff-approval/blob/c6edcac3d89968e1213ce61ce2c52435aefefd05/src/index.ts#L2423-L2442)\n\n持久失败保内存/报告。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  async function flushPersist(): Promise<void> {\n    if (!persistDirty) return\n    persistDirty = false\n    lastPersistAt = Date.now()\n    try {\n      await ensureLoaded()\n      await persistence.save(store.all())\n      persistFailureReported = undefined\n    } catch (error: unknown) {\n      const message = errorMessage(error)\n      // Not a detail to file away. This file is what makes the list survive a restart, and a filesystem\n      // that refuses the write — no permission, no space, a directory this host cannot create (issue #6:\n      // a hand-rolled split of the path answered `.` for a Windows path, so the write threw ENOENT; the\n      // atomic write's `dirname(file)` is what fixed it) — leaves the reader with a list that silently\n      // disappears, which is the one failure nobody can diagnose from the outside. At\n      // error level, once per distinct message, so a writer retrying every second cannot bury it.\n      if (persistFailureReported !== message) {\n        persistFailureReported = message\n        ctx.logger.error(`diff-approval: persisting pending changes failed, so the list will not survive a restart: ${message}`)\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主沙箱、并发、制品与真实恢复未验\n  **影响**：不能宣称无损回退/全部undo或重启耐久\n  **进一步探讨**：隔离工作树做外改/删除/磁盘故障/批量中断对照，核字节与持久状态\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：923602b24505d4df6ac9d4620b4a7b95cb4e278e816c06a42bd5e37eb8ff742d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 8 | 1280 | — | — | 14559 |\n| .ts | test | 61 | 18637 | 13540 | 3301 | — |\n| .ts | source | 52 | 22114 | 11688 | 9376 | — |\n| .mjs | source | 4 | 1304 | 802 | 421 | — |\n| .tsx | source | 10 | 15565 | 9830 | 5474 | — |\n| .tsx | test | 6 | 18633 | 13160 | 3923 | — |\n\n排除 5 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 自动捕获 | 事后集中审阅 | 仅支持工具成功结果，非写前 |\n| Keep/Revert | 文件/块决策 | 普通回退无写时CAS，删除不可undo |\n| Undo/Redo | 恢复已记录动作 | 内存lineage历史，批量可部分 |\n| 持久 | 重启保pending | 全局JSON，失败日志非动作拒绝 |\n\n## 工程亮点\n\nPending状态与I/O分离、内容缓存、策略归属和rename退避值得复用；全局按路径快照不能误当按workspace隔离，写时内容版本和耐久需补契约。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 src/index.ts、src/pending.ts、src/persist.ts、src/atomic-write.ts、src/client/markdown-preview.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核捕获、pending/lineage、持久、普通回退/删除与undo、预览净化；未全面审计VCS解析/所有UI和AI评论，不运行目标。\n- 下一步：未运行目标。隔离外改竞争、创建删除、磁盘满和批量中断，核文件字节、已写计数及重启状态。\n",
         "metadata": {
             "repository": "9087/dsh-diff-approval",
             "repository_id": 1335980444,
-            "captured_at": "2026-10-22T05:18:37.811Z",
-            "window_start": "2026-09-22T05:18:37.811Z",
+            "captured_at": "2026-10-23T01:49:44.072Z",
+            "window_start": "2026-09-23T01:49:44.072Z",
             "stars": 14,
-            "pushed_at": "2026-10-19T16:28:35Z",
+            "pushed_at": "2026-10-22T18:18:30Z",
             "issues": {
                 "open": 0,
-                "closed": 6,
-                "created_30d": 0,
-                "closed_30d": 3,
-                "updated_30d": 3
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
             },
-            "errors": [],
+            "errors": [
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 98B2:102599:133BCF7:1488B64:6ADABD3B and timestamp 2026-10-23 01:49:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20created%3A2026-09-23T01%3A49%3A44.072Z..2026-10-23T01%3A49%3A44.072Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 99B4:1B6B52:1680AB:184EEF:6ADABD3D and timestamp 2026-10-23 01:49:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A49%3A44.072Z..2026-10-23T01%3A49%3A44.072Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9AB8:29A208:1263E9:13D977:6ADABD3E and timestamp 2026-10-23 01:49:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20updated%3A2026-09-23T01%3A49%3A44.072Z..2026-10-23T01%3A49%3A44.072Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B92:26F38E:117088:12E41E:6ADABD3F and timestamp 2026-10-23 01:49:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
             "npm": {
                 "package_name": "dsh-diff-approval",
-                "captured_at": "2026-10-22T05:18:47.231Z",
-                "window_start": "2026-09-22",
-                "window_end": "2026-10-21",
-                "downloads_30d": 5357,
-                "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-diff-approval",
+                "captured_at": "2026-10-23T01:49:51.741Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 4906,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-diff-approval",
                 "error": null,
                 "publication": {
                     "first_published_at": "2026-08-16T16:05:19.437Z",
-                    "captured_at": "2026-10-22T05:18:47.231Z",
+                    "captured_at": "2026-10-23T01:49:51.741Z",
                     "source_url": "https://registry.npmjs.org/dsh-diff-approval",
                     "error": null,
                     "latest_version": "0.36.1",
@@ -468,14 +478,14 @@
             "id": "github:1335980444:root",
             "repository": "9087/dsh-diff-approval",
             "path": "",
-            "revision": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
+            "revision": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "d97bec8270d292186d6c47291842b630e0008cc04e030d720158dc450b15c42d",
-                "code": "393bdc4c9b6ee007027c9e4da4d9732d60c9e168",
-                "maintenance": "dee6ee876cc0afacacbccc2721fbfa8083d92ee3610b4bbf9aaef34769e700f0"
+                "code": "c6edcac3d89968e1213ce61ce2c52435aefefd05",
+                "maintenance": "349bf157f755096c357b7ab80627529445ea3abf4a328c7b50aefb33e87d3ced"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1390951068:root",
             "repository": "momasiku/dsh-pilot",
             "path": "",
-            "revision": "9a73104c11d681307139125f154084ed29461c96",
+            "revision": "4fd55a55a4c5ada46f1a4ca7047f4982ca6100b9",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "79ce7390a0cf968db6d05c0a86c8e6d1c94f70d3db62702e90585ede93dbba22",
-                "code": "9a73104c11d681307139125f154084ed29461c96",
-                "maintenance": "6dde51ff8cdd35563a62a975235cc71d1e1360e6b47e0c0a9fa79938b9788657"
+                "code": "4fd55a55a4c5ada46f1a4ca7047f4982ca6100b9",
+                "maintenance": "7f1765849a868efd68430cb9153e58e89600fa6f3d0c0f24b924339c1995d4d2"
             }
         }
     }

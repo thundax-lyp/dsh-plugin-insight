@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "147c9c8c8f429653f6d68b18b5206a30",
+    "identity": "github:1379030430:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1379030430:root",
+            "repository": "kira905/dsh-session-title-live",
+            "path": "",
+            "revision": "c0db1bf3860325934f9201a4faa0d77397815bc7",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9370cf51a0992965aedaec90745c00ad835cb95290aa40adad0b603596d8df42",
+                "code": "c0db1bf3860325934f9201a4faa0d77397815bc7",
+                "maintenance": "1ff53f3e556cbda2d0b137fe7f82b1c4a1365d7e642692faf342f3022d0438ca"
+            }
+        }
+    }
+}

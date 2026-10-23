@@ -7,14 +7,14 @@
             "id": "github:1331636953:packages-dsh-remote-web-ui",
             "repository": "zhu1090093659/dsh-web",
             "path": "packages/dsh-remote-web-ui",
-            "revision": "764089c1b64990880095cea1d0eee9bd8486315a",
+            "revision": "05b448397c81074667feec2a6175d26e36b69a26",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "84ac656ada9036fce0a255efed412fc572e91f0d09766b62c94c8ba4c95031b7",
-                "code": "764089c1b64990880095cea1d0eee9bd8486315a",
-                "maintenance": "7536269133520e053df118c30105fdad98b7af6a7715dda230b6e0dc534209e2"
+                "code": "05b448397c81074667feec2a6175d26e36b69a26",
+                "maintenance": "67ebe87ab62dc076b6532cbd67e62d8019a4957fcf3bf6e891baf6268fe8486c"
             }
         }
     }

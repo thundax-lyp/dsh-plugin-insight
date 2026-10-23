@@ -7,14 +7,14 @@
             "id": "github:1425477038:root",
             "repository": "ruegg114514/dsh-colorlab",
             "path": "",
-            "revision": "87691d10289f9676ef232790bd8e12b46caa40b3",
+            "revision": "1bd929dc29794e77a39d1a702c5f2e9c1f0835ec",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "15b6a225c4b9f392d9ef903d1d39813f892d59f7ca213486ce17b861cd07c8e2",
-                "code": "87691d10289f9676ef232790bd8e12b46caa40b3",
-                "maintenance": "c0defdf26bbe9f81d3687177ab500f5ed44a85b4ad9693ab13fba50998444213"
+                "code": "1bd929dc29794e77a39d1a702c5f2e9c1f0835ec",
+                "maintenance": "c45d406438473056f85b30d98b2a10e67d6ed1acbab28fac1252feb85b5dea27"
             }
         }
     }

@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "c9267d91c804fc8c677c6998aab032c5",
+    "identity": "github:1416499853:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1416499853:root",
+            "repository": "LinHyu-2006/dsh-balance-hud",
+            "path": "",
+            "revision": "cc90035d0363ddd7b4cc7002fe6415df7f32e6c1",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "8c0acf5f7fdc05d1f0087d258aff23293e87bfdf724c514e989899559e141ff0",
+                "code": "cc90035d0363ddd7b4cc7002fe6415df7f32e6c1",
+                "maintenance": "03eb21fda00eef830ef9b42e67b3397d3faad54a319a261a8b23b9a17ba936b3"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1342869266:root",
             "repository": "mokuyoaxis/agent-guard",
             "path": "",
-            "revision": "9295b9a8ccadba1a5a34b71fe049105fd8aefe6b",
+            "revision": "7a534dc39187d4be51f81e83c3e0453a7537bc4f",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "1df546b44e1e659c5a6b8e891ffdd2f9ba26ca979f603b0f4f9e84c9a00957ee",
-                "code": "9295b9a8ccadba1a5a34b71fe049105fd8aefe6b",
-                "maintenance": "145fa33c53d9d22e8de664d247ca830a301c74bf2b37a5f3bc27e01ce81566ea"
+                "code": "7a534dc39187d4be51f81e83c3e0453a7537bc4f",
+                "maintenance": "f52dabd7bfa37084d54b693d795762681fad7446427f5deb44e9a76fc5841694"
             }
         }
     }

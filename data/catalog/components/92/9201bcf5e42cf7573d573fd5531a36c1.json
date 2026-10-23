@@ -1,0 +1,485 @@
+{
+    "schema_version": 3,
+    "id": "9201bcf5e42cf7573d573fd5531a36c1",
+    "identity": "github:1428034710:root",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1428034710:root",
+            "repository_id": 1428034710,
+            "component_id": "root",
+            "repository": "1708994293-hue/dsh-auto-update",
+            "path": "",
+            "aliases": [],
+            "name": "@sueleven/dsh-auto-update",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "046b0501f11c8ea6167e79b63e06a3528b8c0b03a4a881b152dbe72b721a89ff",
+                "code": "22f7d60a000a2c6ad608b25944932a752b690465",
+                "maintenance": "51db9e50d95105af9600bdc1e86fc1bf63e5e911e511dbcc94eea8dc3b72eed8"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1428034710-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:03:36.314Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1428034710-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1708994293-hue/dsh-auto-update",
+                            "commit": "22f7d60a000a2c6ad608b25944932a752b690465",
+                            "path": "README.md",
+                            "content_sha256": "4c8a4af0c82e946110fd2d421a3b3c1411a757ebfc4e109c8a9c9642c26c09c9"
+                        }
+                    ],
+                    "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+                    "captured_at": "2026-10-23T02:03:36.314Z",
+                    "summary": "启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/1708994293-hue--dsh-auto-update/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1428034710-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/1708994293-hue/dsh-auto-update",
+                            "commit": "22f7d60a000a2c6ad608b25944932a752b690465",
+                            "path": "lib/index.js",
+                            "content_sha256": "cc5d3e2f78e53f4fddbcd8d35ca20257dd580675dfc5620f359129ef51997bd3"
+                        },
+                        {
+                            "repository_url": "https://github.com/1708994293-hue/dsh-auto-update",
+                            "commit": "22f7d60a000a2c6ad608b25944932a752b690465",
+                            "path": "lib/update.mjs",
+                            "content_sha256": "e3619fc8a88b21c20af5cc1302e2a151cb726a6b6c4cdebafd8e77673aea3ef1"
+                        },
+                        {
+                            "repository_url": "https://github.com/1708994293-hue/dsh-auto-update",
+                            "commit": "22f7d60a000a2c6ad608b25944932a752b690465",
+                            "path": "lib/client.js",
+                            "content_sha256": "a020d2ba76d96a5f955bc2dbdc89d2cfa5cb7cfe160c598b66110ee460d5b5b7"
+                        },
+                        {
+                            "repository_url": "https://github.com/1708994293-hue/dsh-auto-update",
+                            "commit": "22f7d60a000a2c6ad608b25944932a752b690465",
+                            "path": "package.json",
+                            "content_sha256": "b92627471efb3a705852f36c4db8ebc250bedf1f8499632d624fd3879c33dcb6"
+                        }
+                    ],
+                    "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+                    "captured_at": "2026-10-23T02:03:36.314Z",
+                    "summary": "核查 lib/index.js、lib/update.mjs、lib/client.js、package.json；读取profile与启用候选、查registry latest、提示确认，再重扫并经桌面内部CLI安装及版本后验。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/1708994293-hue--dsh-auto-update/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查候选、版本、Host状态/路由、安装与版本后验；不执行registry/安装，不全面核自写semver或全部CLI平台。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "多npm插件桌面用户集中发现更新；合格交付须是同意版本被安装并通过重启功能核查。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "读取profile与启用候选、查registry latest、提示确认，再重扫并经桌面内部CLI安装及版本后验。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查候选、版本、Host状态/路由、安装与版本后验；不执行registry/安装，不全面核自写semver或全部CLI平台。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT 1.0.1、Node>=20；npm名带scope，安装器固定Windows.exe与asar内部路径。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包/状态目录/备份 | 核profile、路径与路由 | 金额/时间未知 |\n| 持续使用 | registry请求、日志、安装网络 | 审发布差异、确认与重启 | latest不等兼容 |\n| 失败恢复 | 重装旧包/锁文件恢复 | 逐包核实际版本和功能 | 批量非事务，恢复工时未知 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 发现 | 启用候选和latest比较 | patch子串启用准确性 |\n| 安装 | 官方CLI和版本后验 | 确认集合一致/功能兼容 |\n| 恢复 | 日志与超时 | 批量部分写入与回滚 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "参数数组、进程超时、wx锁和版本后验可借鉴；迁移需避免内部asar路径和确认漂移，原子状态文件也不能替代安装事务。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "runApply未把提示targets传给脚本，实际重新查latest/候选；可能安装用户未看到的版本，且apply处理器未见局部确认围栏。参见[Q02](#research-q02)、[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "未验证假设是版本/候选/profile摘要绑定的确认计划，漂移后重新确认而非自动换集合；故障对照核计划外安装。参见[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1428034710:root",
+                            "area": "code",
+                            "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:03:36.314Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T02:03:36.314Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+                "reviewed_at": "2026-10-23T02:03:36.314Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1428034710:root",
+                        "area": "code",
+                        "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为已有包更新接线；mechanism有候选/超时/版本后验局部组合但未约束确认；transferability受Windows内部路径；simplification统一按钮小幅减少操作。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow将逐包检查集中到启动有实质组织变化；delivery仍是包版本无新业务成果；reach便利不熟CLI的桌面用户；economics仅减少手工检查，未测维护净收益。",
+                    "basis": "interpretation",
+                    "score": 27,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1428034710-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "更新发现有用，但确认列表与执行集合漂移、局部路由围栏和Windows内部路径需先核，暂缓批量更新。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多插件升级需求明确。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "集中启动提示有增量，原生市场可替代。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码，无真实更新/恢复验收。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "包更新和锁文件恢复责任较大，关闭发布年龄等待。"
+                    }
+                },
+                "score": 54,
+                "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+                "reviewed_at": "2026-10-23T02:03:36.314Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1428034710-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1428034710:root",
+                        "area": "code",
+                        "fingerprint": "22f7d60a000a2c6ad608b25944932a752b690465"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1428034710:root",
+            "repository": "1708994293-hue/dsh-auto-update",
+            "path": "",
+            "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+            "fingerprints": {
+                "directory": "046b0501f11c8ea6167e79b63e06a3528b8c0b03a4a881b152dbe72b721a89ff",
+                "code": "22f7d60a000a2c6ad608b25944932a752b690465",
+                "maintenance": "51db9e50d95105af9600bdc1e86fc1bf63e5e911e511dbcc94eea8dc3b72eed8"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "0fa2998c639af16cb54ac56685d95dac5e9839423a47481d9953a18c3c70799b"
+        },
+        "publication.metadata": "data/plugins/1708994293-hue--dsh-auto-update/META.json",
+        "publication.summaries": {
+            "text": "启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。",
+            "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+            "source_url": "https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+            "items": {
+                "后台": "启动延迟查启用registry插件。",
+                "Host 路由": "status/check/apply/dismiss状态与更新入口。",
+                "界面": "overlay列新版、全部更新与稍后。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 新版检查 | 减少逐包查找 | registry启用候选，自身/本地包跳过 |\n| 确认更新 | 调官方CLI | Windows内部路径，集合会重选 |\n| 版本后验 | 查已安装版本 | 不证明功能兼容或回滚 |"
+        },
+        "publication.advice": {
+            "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+            "text": "先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。参见[Q04](#research-q04)。"
+        },
+        "registry": "data/plugins/1708994293-hue--dsh-auto-update",
+        "reports": "# @sueleven/dsh-auto-update\n\n> 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。\n\n## 研究范围\n\n- **仓库**：[1708994293-hue/dsh-auto-update](https://github.com/1708994293-hue/dsh-auto-update)\n- **版本号**：1.0.1（[固定提交 22f7d60a000a2c6ad608b25944932a752b690465](https://github.com/1708994293-hue/dsh-auto-update/tree/22f7d60a000a2c6ad608b25944932a752b690465)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n发现/提示/CLI接线有源码支持；确认与执行集合不绑定且更新器仅Windows路径，可信确认计划未验证。\n\n## 洞察短评\n\n- **用途**：多npm插件桌面用户集中发现更新；合格交付须是同意版本被安装并通过重启功能核查。\n- **亮点**：整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。\n- **思考**：runApply未把提示targets传给脚本，实际重新查latest/候选；可能安装用户未看到的版本，且apply处理器未见局部确认围栏。参见[Q02](#research-q02)、[Q03](#research-q03)。\n- **建议**：未验证假设是版本/候选/profile摘要绑定的确认计划，漂移后重新确认而非自动换集合；故障对照核计划外安装。参见[Q04](#research-q04)。\n\n采用建议：先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。参见[Q04](#research-q04)。\n\n## 核心贡献\n\n整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。\n\n## 关键质疑\n\nrunApply未把提示targets传给脚本，实际重新查latest/候选；可能安装用户未看到的版本，且apply处理器未见局部确认围栏。参见[Q02](#research-q02)、[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证假设是版本/候选/profile摘要绑定的确认计划，漂移后重新确认而非自动换集合；故障对照核计划外安装。参见[Q04](#research-q04)。\n\n未执行。隔离测latest/profile漂移、重复apply和半途失败，核包版本/锁文件/功能与恢复。\n\n## 场景与替代办法\n\n多npm插件桌面用户集中发现更新；合格交付须是同意版本被安装并通过重启功能核查。\n\n原生市场逐包检查/更新为参照；本项省发现接线，不能仅凭使用官方命令认定保配置或功能兼容已验收。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH0.2.1+ Web overlay | 提示必需 | 展示确认 | 无卡片，手工市场 |\n| npm网络、可写profile | 检查/安装必需 | 查版本及改依赖 | 保留旧包，查日志 |\n| Windows.exe及asar CLI | 固定更新器必需 | 官方安装入口 | 非Windows不满足 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户核profile/备份并启用 | 延迟出现候选或明确检查错误 |\n| 2 | 用户审列表再确认 | 注意实际会重选，先隔离 |\n| 3 | 插件安装、用户重启核功能 | 核实际版本和配置；部分失败逐包恢复 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包/状态目录/备份 | 核profile、路径与路由 | 金额/时间未知 |\n| 持续使用 | registry请求、日志、安装网络 | 审发布差异、确认与重启 | latest不等兼容 |\n| 失败恢复 | 重装旧包/锁文件恢复 | 逐包核实际版本和功能 | 批量非事务，恢复工时未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 发现 | 启用候选和latest比较 | patch子串启用准确性 |\n| 安装 | 官方CLI和版本后验 | 确认集合一致/功能兼容 |\n| 恢复 | 日志与超时 | 批量部分写入与回滚 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：启动检查与用户确认是否约束实际更新，平台和恢复边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要启动检查，具体改变什么更新组织？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n维护多个已启用npm插件的桌面用户可在启动后看到版本差异并集中确认更新。合格交付应是用户看到并同意的包/版本被官方安装通道写入，重启后核心功能仍可用；仅版本更高不证明兼容或业务收益。相对逐包查市场，插件减少发现和发起更新的重复步骤。\n\n贡献是启动检查、提示卡和官方CLI的流程整合，不是新包管理器；确认前只查询有助保留用户控制。但README“任意平台”只对安装陈述不能外推实际更新，固定安装器只认.exe和resources/app.asar，非Windows找不到符合条件执行文件。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.md:1-8](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/README.md#L1-L8)\n\n作者检查与确认流程。\n\n```text\n# dsh-auto-update\n\n[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（`dsh`）插件：**每次打开 DSH 时自动检查你已经下载并启用的插件有没有新版本，发现后主动列出并询问是否更新**——点确认才更新，更新走 DSH 官方通道，不会覆盖你的 profile 配置。\n\n- 启动约 8 秒后后台检查，不阻塞界面；\n- 有新版本时右下角出现提示卡，逐条列出 `插件  当前版本 → 最新版本`；\n- 按钮：**全部更新 / 稍后提醒**；无更新时完全静默；\n- 更新完成后提示「重启 DSH 后生效」，与插件市场的更新语义一致。\n```\n\n**依据 2 · 源码核查**：[lib/update.mjs:396-410](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L396-L410)\n\n执行文件仅接受.exe。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n/** DSH 桌面可执行文件的特征：同目录下存在 resources\\app.asar。 */\nfunction isDshExecutable(candidate) {\n  if (!candidate || !/\\.exe$/i.test(candidate) || !existingFile(candidate)) return false;\n  try {\n    return fs.existsSync(path.join(path.dirname(candidate), 'resources', 'app.asar'));\n  } catch {\n    return false;\n  }\n}\n\nfunction resolveDshExe(opts) {\n  for (const candidate of candidateExePaths(opts)) {\n    if (isDshExecutable(candidate)) return candidate;\n  }\n  return null;\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 候选、确认和实际安装是否绑定同一集合？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\ncollectCandidates从profile dependencies取包，bundle精确包含或patch字符串包含视为启用，排除自身、market禁用和非registry。registry latest用自写semver比较，只前向升级；多查询并发，命令/安装有超时，更新锁用wx。官方CLI参数是包@latest固定值，安装后重新读取node_modules版本校验。\n\n关键断点是Host runApply保存targets用于文案，却调用更新脚本时不传targets；脚本重新扫描profile并重新查latest，再安装新的updates。若提示后新发布或profile改变，用户确认的列表与实际安装可不同，完成提示仍显示旧targets。CLI内部固定版本不等确认绑定版本。patchText.includes也不是结构化启用解析，注释或相似名字可误判。参数数组、超时和版本后验值得借鉴，但尚无整体原子回滚。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/update.mjs:267-295](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L267-L295)\n\n候选启用判断与排除。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nfunction collectCandidates(data) {\n  const candidates = [];\n  const skipped = [];\n  for (const [name, spec] of Object.entries(data.dependencies)) {\n    if (SELF_NAMES.has(name)) {\n      skipped.push({ name, reason: '插件自身（不做自我更新）' });\n      continue;\n    }\n    const enabledByBundle = data.bundles.includes(name);\n    const enabledByPatch = data.patchText.includes(name);\n    if (!enabledByBundle && !enabledByPatch) {\n      skipped.push({ name, reason: '未启用（不在 bundles / cordis.patch.yml）' });\n      continue;\n    }\n    if (data.disabled.has(name)) {\n      skipped.push({ name, reason: '已被插件市场禁用（.dsh-market/state.json）' });\n      continue;\n    }\n    if (typeof spec !== 'string' || NON_REGISTRY_SPEC.test(spec)) {\n      skipped.push({ name, reason: `非 registry 依赖（${String(spec)}）` });\n      continue;\n    }\n    const installed = installedVersion(data.profileDir, name);\n    if (!installed) {\n      skipped.push({ name, reason: '未安装到 node_modules（无法确定当前版本）' });\n      continue;\n    }\n    candidates.push({ name, spec, installed });\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:195-215](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/index.js#L195-L215)\n\ntargets仅用于提示，未作为脚本参数。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nasync function runApply() {\n  if (disposed) return;\n  if (state.phase === 'updating') return;\n  if (state.updates.length === 0) return;\n  if (applyPromise) return applyPromise;\n  const targets = state.updates.slice();\n  state.phase = 'updating';\n  state.message = `正在更新 ${targets.map((item) => item.name).join('、')}…`;\n  state.error = null;\n  log(`用户确认更新：${targets.map((item) => `${item.name} ${item.from}->${item.to}`).join('，')}`);\n  writeJson(join(STATE_DIR, 'plugin-state.json'), snapshot());\n  applyPromise = (async () => {\n    const args = ['--profile', state.profile, '--launched-by', 'user-confirmed'];\n    if (process.execPath) args.push('--dsh-exe', process.execPath);\n    const result = await runUpdater(args, APPLY_TIMEOUT_MS);\n    const lastRun = readJson(join(STATE_DIR, 'last-run.json'));\n    const ok = Boolean(lastRun?.ok) && result.ok;\n    if (ok) {\n      state.updates = [];\n      state.phase = 'done';\n      state.message = `已更新 ${targets.map((item) => `${item.name} ${item.from} → ${item.to}`).join('，')}，重启 DSH 后生效。`;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/update.mjs:584-599](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L584-L599)\n\n执行时重新查候选/registry。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  const { candidates, skipped } = collectCandidates(data);\n  result.skipped = skipped;\n  log.info(`profile 目录：${data.profileDir}`);\n  log.info(`已下载 ${Object.keys(data.dependencies).length} 个依赖，其中启用 ${candidates.length} 个参与检查；跳过 ${skipped.length} 个`);\n  for (const item of skipped) log.info(`  跳过 ${item.name}：${item.reason}`);\n\n  if (candidates.length === 0) {\n    log.info('没有需要检查的插件，结束');\n    writeJsonSafe(path.join(stateDir, 'last-run.json'), { ...result, durationMs: Date.now() - startedAt });\n    return 0;\n  }\n\n  const checked = await checkCandidates(candidates, log);\n  result.checked = checked.map((c) => ({ name: c.name, installed: c.installed, latest: c.latest, updateAvailable: c.updateAvailable }));\n  const updates = checked.filter((c) => c.updateAvailable);\n  result.updates = updates.map((c) => ({ name: c.name, from: c.installed, to: c.latest }));\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/update.mjs:462-467](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L462-L467)\n\n最终安装参数固定但关闭发布年龄限制。\n\n```text\nfunction buildInstallArgs(profile, updates) {\n  const pinned = updates.map((u) => `${u.name}@${u.latest}`);\n  const allExactSpecs = updates.every((u) => !/^[\\^~]/.test(String(u.spec || '')));\n  const args = ['plugin', '--profile', profile, 'add', ...pinned, '--config.minimum-release-age=0'];\n  if (allExactSpecs) args.push('--save-exact');\n  return args;\n```\n\n**依据 5 · 源码核查**：[lib/update.mjs:663-682](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L663-L682)\n\n后验已安装版本。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    const verification = updates.map((u) => ({\n      name: u.name,\n      expected: u.latest,\n      actual: installedVersion(data.profileDir, u.name),\n    }));\n    result.verification = verification;\n\n    if (!install.ok) {\n      result.ok = false;\n      result.error = install.timedOut ? '更新超时' : `更新命令退出码 ${install.code}`;\n      log.info(`更新失败：${result.error}`);\n      return 1;\n    }\n\n    const bad = verification.filter((v) => compareVersions(v.actual, v.expected) !== 0);\n    if (bad.length > 0) {\n      result.ok = false;\n      result.error = `更新后版本校验不一致：${bad.map((b) => `${b.name} 期望 ${b.expected} 实际 ${b.actual}`).join('，')}`;\n      log.info(`版本校验失败：${result.error}`);\n      return 1;\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 授权、安全和失败恢复有哪些前提与负担？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n更新依赖Windows桌面包内部CLI路径、可写profile/状态目录和npm网络。参数显式minimum-release-age=0放弃发布年龄等待，并不等于新包已安全/兼容。路由apply是POST但没有本地Origin/Connection/Content-Type或确认令牌检查；上层保护未核验，不能把注释same-origin当强制用户确认。\n\n首次需核profile、包管理兼容与备份，持续为registry联网、日志及用户比较发布差异。更新可能改依赖/锁文件，成功仅版本一致还要重启验功能；批量超时/失败不证明所有包未写入，需逐包核实际版本再恢复。运行日志默认包内目录可能权限不足。现金和人工时间未测，无强制模型调用也不等无维护代价。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:263-290](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/index.js#L263-L290)\n\n处理器方法检查，无局部同源/令牌验证。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nfunction createHandler() {\n  return (req, res) => {\n    try {\n      const url = new URL(req.url ?? '/', 'http://dsh.internal');\n      const path = url.pathname;\n      if (!path.startsWith(ROUTE_PREFIX)) {\n        sendJson(res, 404, { error: 'not found' });\n        return;\n      }\n      const route = path.slice(ROUTE_PREFIX.length) || '/';\n      const method = req.method ?? 'GET';\n      if (method === 'GET' && route === '/status') {\n        sendJson(res, 200, snapshot());\n        return;\n      }\n      if (method === 'POST' && route === '/check') {\n        runCheck().catch(() => {});\n        sendJson(res, 202, snapshot());\n        return;\n      }\n      if (method === 'POST' && route === '/apply') {\n        if (state.updates.length === 0) {\n          sendJson(res, 409, { ...snapshot(), error: '没有可更新的插件' });\n          return;\n        }\n        runApply().catch(() => {});\n        sendJson(res, 202, snapshot());\n        return;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/update.mjs:462-467](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L462-L467)\n\n关闭release age。\n\n```text\nfunction buildInstallArgs(profile, updates) {\n  const pinned = updates.map((u) => `${u.name}@${u.latest}`);\n  const allExactSpecs = updates.every((u) => !/^[\\^~]/.test(String(u.spec || '')));\n  const args = ['plugin', '--profile', profile, 'add', ...pinned, '--config.minimum-release-age=0'];\n  if (allExactSpecs) args.push('--save-exact');\n  return args;\n```\n\n**依据 3 · 源码核查**：[lib/update.mjs:645-682](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L645-L682)\n\n安装与部分状态后验。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n    const install = await runInstaller(\n      exe,\n      cliEntryFor(exe),\n      opts.profile,\n      updates,\n      { ...opts, profileDir: data.profileDir, dshHome },\n      log,\n    );\n    if (install.stdout.trim()) log.raw(install.stdout.trimEnd());\n    if (install.stderr.trim()) log.raw(install.stderr.trimEnd());\n\n    result.install = {\n      code: install.code,\n      signal: install.signal,\n      timedOut: install.timedOut,\n      command: [exe, ...buildInstallArgs(opts.profile, updates)],\n    };\n\n    const verification = updates.map((u) => ({\n      name: u.name,\n      expected: u.latest,\n      actual: installedVersion(data.profileDir, u.name),\n    }));\n    result.verification = verification;\n\n    if (!install.ok) {\n      result.ok = false;\n      result.error = install.timedOut ? '更新超时' : `更新命令退出码 ${install.code}`;\n      log.info(`更新失败：${result.error}`);\n      return 1;\n    }\n\n    const bad = verification.filter((v) => compareVersions(v.actual, v.expected) !== 0);\n    if (bad.length > 0) {\n      result.ok = false;\n      result.error = `更新后版本校验不一致：${bad.map((b) => `${b.name} 期望 ${b.expected} 实际 ${b.actual}`).join('，')}`;\n      log.info(`版本校验失败：${result.error}`);\n      return 1;\n```\n\n</details>\n\n#### 缺口\n\n- 目标宿主上层路由权限与批量故障未验\n  **影响**：确认来源/部分更新可能影响安全和恢复\n  **进一步探讨**：先读目标路由围栏契约，隔离测跨源POST和安装半途失败后各包/锁文件状态\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 当前何时采用，可证伪的改进是什么？\n\n**研究主题**：新假设与验证、采用判断\n\n#### 完整回答\n\n建议观察，先把它用作检查候选而不批量更新生产profile。采用前需确认Windows路径、路由权限、备份与逐包验收，尤其不能仅按提示旧列表假定实际更新对象。非Windows可用其检查逻辑，不应预期固定安装器可更新。\n\n未验证假设是生成包含profile摘要、包/版本和发布时间的确认计划，apply只接受计划摘要并再次核依赖/权限；漂移则重新展示，不自动替换。由确认/执行漂移和关闭发布年龄推导，它可能同时保留少操作和审慎放行，但增加计划过期与交互成本。最小验证确认后latest变化、profile改动、重复apply与半途失败，比较未授权版本数、重复执行和恢复时间；若仍安装计划外包则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:195-215](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/index.js#L195-L215)\n\n确认未绑定集合的推导依据。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nasync function runApply() {\n  if (disposed) return;\n  if (state.phase === 'updating') return;\n  if (state.updates.length === 0) return;\n  if (applyPromise) return applyPromise;\n  const targets = state.updates.slice();\n  state.phase = 'updating';\n  state.message = `正在更新 ${targets.map((item) => item.name).join('、')}…`;\n  state.error = null;\n  log(`用户确认更新：${targets.map((item) => `${item.name} ${item.from}->${item.to}`).join('，')}`);\n  writeJson(join(STATE_DIR, 'plugin-state.json'), snapshot());\n  applyPromise = (async () => {\n    const args = ['--profile', state.profile, '--launched-by', 'user-confirmed'];\n    if (process.execPath) args.push('--dsh-exe', process.execPath);\n    const result = await runUpdater(args, APPLY_TIMEOUT_MS);\n    const lastRun = readJson(join(STATE_DIR, 'last-run.json'));\n    const ok = Boolean(lastRun?.ok) && result.ok;\n    if (ok) {\n      state.updates = [];\n      state.phase = 'done';\n      state.message = `已更新 ${targets.map((item) => `${item.name} ${item.from} → ${item.to}`).join('，')}，重启 DSH 后生效。`;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/update.mjs:584-599](https://github.com/1708994293-hue/dsh-auto-update/blob/22f7d60a000a2c6ad608b25944932a752b690465/lib/update.mjs#L584-L599)\n\n运行时重选集合。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  const { candidates, skipped } = collectCandidates(data);\n  result.skipped = skipped;\n  log.info(`profile 目录：${data.profileDir}`);\n  log.info(`已下载 ${Object.keys(data.dependencies).length} 个依赖，其中启用 ${candidates.length} 个参与检查；跳过 ${skipped.length} 个`);\n  for (const item of skipped) log.info(`  跳过 ${item.name}：${item.reason}`);\n\n  if (candidates.length === 0) {\n    log.info('没有需要检查的插件，结束');\n    writeJsonSafe(path.join(stateDir, 'last-run.json'), { ...result, durationMs: Date.now() - startedAt });\n    return 0;\n  }\n\n  const checked = await checkCandidates(candidates, log);\n  result.checked = checked.map((c) => ({ name: c.name, installed: c.installed, latest: c.latest, updateAvailable: c.updateAvailable }));\n  const updates = checked.filter((c) => c.updateAvailable);\n  result.updates = updates.map((c) => ({ name: c.name, from: c.installed, to: c.latest }));\n```\n\n</details>\n\n#### 缺口\n\n- 确认计划与故障恢复未实现/实测\n  **影响**：不能升级为可靠更新事务或值得安装\n  **进一步探讨**：按四漂移/失败样例核实际对象和恢复\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c0f284c4a4763720695b35399c3c0d5456c9e069eed67cb9a29b251e0aeb0b6d。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 153 | — | — | 1405 |\n| .js | source | 2 | 621 | 544 | 37 | — |\n| .mjs | source | 1 | 706 | 596 | 49 | — |\n| .mjs | test | 1 | 85 | 79 | 1 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 新版检查 | 减少逐包查找 | registry启用候选，自身/本地包跳过 |\n| 确认更新 | 调官方CLI | Windows内部路径，集合会重选 |\n| 版本后验 | 查已安装版本 | 不证明功能兼容或回滚 |\n\n## 工程亮点\n\n参数数组、进程超时、wx锁和版本后验可借鉴；迁移需避免内部asar路径和确认漂移，原子状态文件也不能替代安装事务。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/update.mjs、lib/client.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查候选、版本、Host状态/路由、安装与版本后验；不执行registry/安装，不全面核自写semver或全部CLI平台。\n- 下一步：未执行。隔离测latest/profile漂移、重复apply和半途失败，核包版本/锁文件/功能与恢复。\n",
+        "metadata": {
+            "repository": "1708994293-hue/dsh-auto-update",
+            "repository_id": 1428034710,
+            "captured_at": "2026-10-23T01:50:02.415Z",
+            "window_start": "2026-09-23T01:50:02.415Z",
+            "stars": 0,
+            "pushed_at": "2026-10-21T08:36:28Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A678:3F7CA3:11F4A2:1369D2:6ADABD4C and timestamp 2026-10-23 01:50:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A742:320EB6:1195F48:12E1366:6ADABD4E and timestamp 2026-10-23 01:50:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A02.415Z..2026-10-23T01%3A50%3A02.415Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A816:29366C:167201:18420D:6ADABD4F and timestamp 2026-10-23 01:50:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A02.415Z..2026-10-23T01%3A50%3A02.415Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8E4:102599:133C926:14898A1:6ADABD50 and timestamp 2026-10-23 01:50:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3A1708994293-hue%2Fdsh-auto-update%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A02.415Z..2026-10-23T01%3A50%3A02.415Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9C2:1B6D53:165C2E:182A32:6ADABD51 and timestamp 2026-10-23 01:50:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@sueleven/dsh-auto-update",
+                "captured_at": "2026-10-23T01:50:10.119Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": null,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40sueleven%2Fdsh-auto-update",
+                "error": "HTTP 404",
+                "publication": {
+                    "first_published_at": "2026-10-21T07:44:42.958Z",
+                    "captured_at": "2026-10-23T01:50:10.119Z",
+                    "source_url": "https://registry.npmjs.org/%40sueleven%2Fdsh-auto-update",
+                    "error": null,
+                    "latest_version": "1.0.1",
+                    "latest_published_at": "2026-10-22T00:56:54.093Z",
+                    "latest_error": null
+                }
+            }
+        },
+        "discovery.plugins": {
+            "id": "github:1428034710:root",
+            "repository": "1708994293-hue/dsh-auto-update",
+            "path": "",
+            "revision": "22f7d60a000a2c6ad608b25944932a752b690465",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "046b0501f11c8ea6167e79b63e06a3528b8c0b03a4a881b152dbe72b721a89ff",
+                "code": "22f7d60a000a2c6ad608b25944932a752b690465",
+                "maintenance": "51db9e50d95105af9600bdc1e86fc1bf63e5e911e511dbcc94eea8dc3b72eed8"
+            }
+        }
+    }
+}

@@ -7,14 +7,14 @@
             "id": "github:1338486244:root",
             "repository": "EIGHTfs/dsh-git-push",
             "path": "",
-            "revision": "140405f6a5b1b8d7702ce7849b8165578d8dd152",
+            "revision": "77ef9052dee60efd8044a52467b5fdeeb9af8733",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "2c71c8c94a8a1588e43ed96356284ccce12d664bbfde8679844d54a8b97d7020",
-                "code": "140405f6a5b1b8d7702ce7849b8165578d8dd152",
-                "maintenance": "b997cd700bf939a44aa727774a2948bcd9863090307bb9386bc825c36412fe65"
+                "code": "77ef9052dee60efd8044a52467b5fdeeb9af8733",
+                "maintenance": "4a2e111cdb6cd86339a5f1a94a7f98b372a87a5b605d1df54dfb64576842d32f"
             }
         }
     }

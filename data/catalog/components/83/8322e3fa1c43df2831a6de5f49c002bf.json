@@ -7,14 +7,14 @@
             "id": "github:1086419061:hindsight-integrations-coding-agents",
             "repository": "vectorize-io/hindsight",
             "path": "hindsight-integrations/coding-agents",
-            "revision": "626cdbe0176cd5b3867a15a199c251bce5dd2253",
+            "revision": "0691b504a88480844b2db53384b8c81971b7cf1e",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "da6f40bb7cdf92c42a883b59430e593edbb7d414d849b775a44f188ff67d0082",
-                "code": "626cdbe0176cd5b3867a15a199c251bce5dd2253",
-                "maintenance": "7fbe2384e64752ea9ad6d51e1d2b210b847f05e6183cbff04dc62b6f119518f1"
+                "code": "0691b504a88480844b2db53384b8c81971b7cf1e",
+                "maintenance": "7675ff4b016255acb0b746435097533970f57f64fc80e7c67473d8b3a961c3c3"
             }
         }
     }

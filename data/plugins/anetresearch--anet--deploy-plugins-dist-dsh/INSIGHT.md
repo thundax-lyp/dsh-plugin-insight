@@ -1,18 +1,18 @@
-# dsh-anet
+# ANet DSH bundle
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[0343705](https://github.com/ANetResearch/ANet/tree/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh)
+分析版本：[d03c528](https://github.com/ANetResearch/ANet/tree/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
 <!-- END META -->
 
-> **实现功能**：把 DSH 接入本地 AgentNetwork 节点，用 Skill 与 MCP 委派、跟踪和接收加密代理任务。
+> **实现功能**：把 ANet 节点、身份与 MCP 工具及操作 Skill 接入 DSH。
 
-> **核心亮点**：相对手工复制，它把代理发现、加密任务、状态跟踪、定价技能与入站任务接入同一 DSH 配置，并通过统一 runner 保证 MCP 与 Skill 使用同一 executable/identity。核心网络、加密和结算能力归属 ANet；此组件的增量是 DSH 打包、引导和安全默认。 参见[Q03](#research-q03)。
+> **核心亮点**：贡献是把二进制、身份与MCP/Skill入口统一到宿主bundle，减少多个入口各用不同配置的错误；网络协议、节点能力归属ANet上游，不能计为DSH适配原创。[Q01](#research-q01)
 
-> **风险与缺陷**：价值依赖外部节点、hub、对端信誉和任务结果质量。端到端加密不隐藏通信元数据，也不保证对端输出正确；第三方任务与结果可能包含提示注入。用户还必须独立维持节点进程、明确开放入站、信任 peer 与提高预算，错误决策会扩大数据与现金风险。 参见[Q04](#research-q04)。
+> **风险与缺陷**：启用bundle可能触发下载、执行安装器、启动节点并加入公共hub，接入便利与副作用扩大同时存在；固定插件提交并不固定届时下载的远端安装器。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 跨代理委派适合什么任务与信任条件？](#detail-section-11)
-  - [Q02 · DSH 插件、Skill、MCP 与本地 anet 节点如何分工？](#detail-section-12)
-  - [Q03 · dsh-anet 相对简单替代的独立增量是什么？](#detail-section-13)
-  - [Q04 · 外部代理输入、身份、预算和节点生命周期有哪些关键前提？](#detail-section-14)
-  - [Q05 · dsh-anet 启动、持续使用与失败恢复依赖什么？](#detail-section-15)
-  - [Q06 · 端到端委派的合格任务成本如何核算？](#detail-section-16)
-  - [Q07 · 统一 runner、保守默认和安装边界是否可靠？](#detail-section-17)
-  - [Q08 · 能否增加任务能力契约与可验证回执以减少盲委派？](#detail-section-18)
-  - [Q09 · dsh-anet 适合观察、试用还是安装，停止条件是什么？](#detail-section-19)
+  - [Q01 · DSH组件相对手配MCP增加什么？](#detail-section-11)
+  - [Q02 · 设置如何进入MCP和Skill且在停用时恢复？](#detail-section-12)
+  - [Q03 · 自动安装的便利改变哪些信任和副作用边界？](#detail-section-13)
+  - [Q04 · 为什么当前建议观察而非普遍试用？](#detail-section-14)
+  - [Q05 · 安装预检与网络加入分离能否降低误启动？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,11 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已有本地 anet 节点、需要把明确子任务委派给其他 AI 代理或接收外部任务的 DSH 用户。输入是任务描述、目标代理/技能、预算和信任决定；合格结果是任务端到端可追踪、内容按节点间加密传输、花费不越界、第三方结果只作为不可信材料交回。简单替代是人工在多个代理间复制任务和结果。
+> **用途**：适合需要在DSH会话使用ANet节点与网络服务的用户；合格结果是同一身份、同一二进制下完成明确网络任务并核对结果。
 
-参见[Q01](#research-q01)。
-
-基线是在不同代理界面手工复制任务和结果，透明但缺统一发现、状态、加密传输与结算；直接调用单一远端 API 则更简单但没有对等节点市场。
+手工安装anet再配置MCP能完成同样网络能力，但需要分别维护身份、路径和Skill；bundle主要减少配置分歧。
 
 <a id="detail-section-3"></a>
 
@@ -57,71 +51,66 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 节点设置 Skill | 安装并跟随 anet guide | 安装联网且需用户同意 |
-| 任务 Skill | 发现代理、发送和跟踪任务 | 第三方内容必须按不可信输入处理 |
-| 状态 Skill | 检查本地节点与连接状态 | 节点需独立持续运行 |
-| MCP 接入 | 把 anet 工具接到 DSH | 依赖同一 executable 与 identity |
+|---|---|---|
+| MCP接入 | 从DSH调用ANet | 需核心二进制和网络身份 |
+| 操作Skill | 引导安装与状态核对 | registry缺失时不影响MCP |
+| 自动安装启动器 | 缺失核心时准备运行环境 | 会执行远端安装器，可关闭 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| anet 可执行文件与本地身份 | 必需 | 运行节点、MCP 与 Skill 命令 | 缺失时 setup 需经同意安装 |
-| 独立运行的 anet node | 必需 | 连接 hub 和其他节点 | 会话结束后由 shell 启动的节点会停止 |
-| hub、peer 与网络 | 任务必需 | 发现和传输任务 | 离线或不可信时不能完成 |
-| 预算与信任决策 | 效果必需 | 限制付费和入站范围 | 默认 0/关闭，不应由代理自行放开 |
+|---|---|---|---|
+| DSH MCP client | MCP必需 | stdio连接anet | 无法提供网络工具 |
+| ANet二进制与身份 | 任务必需 | 启动节点并访问网络 | 指定错误路径报错，不安装其他副本 |
+| 外网与官方安装器 | 自动安装必需 | 下载核心程序 | 可设NO_INSTALL并预装 |
+| skills registry | Skill可选 | 注册操作说明 | MCP仍可独立工作 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 安装插件，用户同意 setup 并配置身份 | anet guide 完成；失败核平台工具 |
-| 启动节点 | 用户在独立终端运行 anet up 后开新会话 | MCP 状态连接到同一身份 |
-| 委派/接收 | 明确目标、预算与敏感边界后发送 | 任务可跟踪且未越预算 |
-| 验收/恢复 | 把结果视为不可信输入并验收，失败时取消或重派 | 产物合格才接受，争议保留记录 |
+|---|---|---|
+| 1 | 用户预检安装器、二进制和身份；按需关闭自动安装 | resolve显示预期路径 |
+| 2 | 加载bundle并连接MCP | stderr诊断与协议stdout分离 |
+| 3 | 用只读状态Skill核对节点和身份 | 确认后才进行有副作用网络操作 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 下载二进制、身份和配置资源；金额未知 | 安装、guide、hub 与安全设置 | 跨平台依赖不同 |
-| 持续使用 | 技能报价、网络及双方模型资源 | 选代理、写契约、验收输出 | 金额和费率未核 |
-| 失败恢复 | 可能重复支付或占用预算 | 取消、重派、争议与泄露处置 | 补偿语义和恢复时延未知 |
+|---|---|---|---|
+| 首次使用 | 下载与本地节点资源，金额未知 | 核查安装、身份和网络加入 | 自动安装等待可达15分钟上限，不是实测耗时 |
+| 持续使用 | 节点网络、模型及可能外部服务费未知 | 管理身份和节点生命周期 | 不推断协议任务免费 |
+| 失败恢复 | 安装日志、锁与重连资源 | 核查原安装与状态后恢复 | 不应反复启动未知安装 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 减少人工搬运 | Skill 与 MCP 共享 runner/身份 | 未测同任务节时 |
-| 跨代理交易 | 节点支持发现、定价与跟踪的作者主张 | 未验证真实结算和对端质量 |
-| 安全默认 | 入站关闭、发布关闭、支出 0 | 用户提额后风险取决于外部系统 |
+|---|---|---|
+| 配置一致 | MCP与Skill共享路径身份 | 实际网络任务成功率 |
+| 自动安装 | 锁、超时、stderr路径存在 | 远端安装器与各平台真实行为 |
 
-> **思考**：价值依赖外部节点、hub、对端信誉和任务结果质量。端到端加密不隐藏通信元数据，也不保证对端输出正确；第三方任务与结果可能包含提示注入。用户还必须独立维持节点进程、明确开放入站、信任 peer 与提高预算，错误决策会扩大数据与现金风险。 参见[Q04](#research-q04)。
+> **思考**：启用bundle可能触发下载、执行安装器、启动节点并加入公共hub，接入便利与副作用扩大同时存在；固定插件提交并不固定届时下载的远端安装器。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程贡献
 
-> **亮点**：相对手工复制，它把代理发现、加密任务、状态跟踪、定价技能与入站任务接入同一 DSH 配置，并通过统一 runner 保证 MCP 与 Skill 使用同一 executable/identity。核心网络、加密和结算能力归属 ANet；此组件的增量是 DSH 打包、引导和安全默认。 参见[Q03](#research-q03)。
+> **亮点**：贡献是把二进制、身份与MCP/Skill入口统一到宿主bundle，减少多个入口各用不同配置的错误；网络协议、节点能力归属ANet上游，不能计为DSH适配原创。[Q01](#research-q01)
 
-相对手工复制，它把代理发现、加密任务、状态跟踪、定价技能与入站任务接入同一 DSH 配置，并通过统一 runner 保证 MCP 与 Skill 使用同一 executable/identity。核心网络、加密和结算能力归属 ANet；此组件的增量是 DSH 打包、引导和安全默认。 参见[Q03](#research-q03)。
+贡献是把二进制、身份与MCP/Skill入口统一到宿主bundle，减少多个入口各用不同配置的错误；网络协议、节点能力归属ANet上游，不能计为DSH适配原创。[Q01](#research-q01)
 
-统一 runner 和环境避免 Skill/MCP 身份分叉；新节点默认不接任务、不发布能力、支出上限为 0，开放和提额留给用户，是合理的安全门。插件无 hook 且声明不读 ~/.anet，但安装器和外部二进制属于独立信任边界；固定 dist 组件未证明上游 release、签名与当前平台的实际安装链。 参见[Q07](#research-q07)。
+设置键封闭校验和按值恢复环境避免覆盖后来的写入者，是小型宿主适配可借鉴的所有权设计。安装器将stdout留给MCP并滤掉相对PATH，降低工作区命令劫持面；仍需信任远端脚本和签名链，未完成全供应链审计。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-价值依赖外部节点、hub、对端信誉和任务结果质量。端到端加密不隐藏通信元数据，也不保证对端输出正确；第三方任务与结果可能包含提示注入。用户还必须独立维持节点进程、明确开放入站、信任 peer 与提高预算，错误决策会扩大数据与现金风险。 参见[Q04](#research-q04)。
+启用bundle可能触发下载、执行安装器、启动节点并加入公共hub，接入便利与副作用扩大同时存在；固定插件提交并不固定届时下载的远端安装器。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察。只适合已理解 ANet 身份、hub 与预算模型的用户；先保持入站关闭和支出 0，用无敏感 canary 验证同一身份、报价、超时、取消和不可信输出处理，再考虑有限试用。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。
-
-参见[Q01](#research-q01)。
+建议观察；先手工预装并明确是否加入公共网络，确认身份与二进制来源后再在隔离profile使用只读状态入口。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -129,17 +118,17 @@
 
 **核查状态**：已检查源码。
 
-固定源码能够证明 AgentNetwork 节点、Skill/MCP 委派和加密任务状态的接线；远端身份、预算、重试与任务实际执行效果没有外部节点证据，收据式委派假设仍未验证，见[Q08](#research-q08)。
+贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。
 
-- 已检查：作者 README、包清单、源码路径 deploy/plugins/dist/dsh/README.md、deploy/plugins/dist/dsh/package.json、deploy/plugins/dist/dsh/index.js、deploy/plugins/dist/dsh/skills.js 及固定范围 inventory；组件：deploy/plugins/dist/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 deploy/plugins/dist/dsh/README.md、deploy/plugins/dist/dsh/index.js、deploy/plugins/dist/dsh/cordis.patch.yml、deploy/plugins/dist/dsh/bin/anet-install.sh、deploy/plugins/dist/dsh/skills.js 及固定范围 inventory；组件：deploy/plugins/dist/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查 dist/dsh README、package、入口和 Skill 注册；不核 ANet 核心网络、加密、hub 或安装器实现。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。
-- 下一步：先做双身份、预算 0 的无敏感 canary，再逐级覆盖报价、取消、离线和恶意输入；任何越预算、身份分叉或把对端指令当本地指令执行都否定试用。
+- 边界：研究边界是deploy/plugins/dist/dsh及启动脚本，不审计整个Go网络或付款协议。
+- 下一步：以预装/缺失/错误路径及并发启动验证解析和锁；在隔离环境核对禁用自动安装是否真正无新增进程、以及实际二进制摘要。没有运行本方案。
 
 **分析版本**
 
 - **仓库**：[ANetResearch/ANet](https://github.com/ANetResearch/ANet)
-- **版本号**：0.2.0（[固定提交 0343705](https://github.com/ANetResearch/ANet/tree/0343705ad75ee90d83c3044853569fd4df5baea6)）
+- **版本号**：0.3.0（[固定提交 d03c528](https://github.com/ANetResearch/ANet/tree/d03c5282a69647dc8a301e53b02ab376692d5ac5)）
 - **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
@@ -148,9 +137,9 @@
 
 <a id="innovation"></a>
 
-可在委派前要求对端返回机器可读的能力契约、价格上限、数据保留和验收样例，完成后附产物摘要与可复核证据；本地先做低敏感 canary，再放大任务。它可能降低盲委派与争议，但会增加协议和验收成本。 参见[Q08](#research-q08)。
+未验证假设是把安装与网络加入拆成显式的预检和确认阶段，并记录实际二进制摘要；比较误启动和配置错误率，若步骤增加而错误没有下降则否定。[Q05](#research-q05)
 
-先做双身份、预算 0 的无敏感 canary，再逐级覆盖报价、取消、离线和恶意输入；任何越预算、身份分叉或把对端指令当本地指令执行都否定试用。
+以预装/缺失/错误路径及并发启动验证解析和锁；在隔离环境核对禁用自动安装是否真正无新增进程、以及实际二进制摘要。没有运行本方案。
 
 <a id="detail-section-9"></a>
 
@@ -166,9 +155,9 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aopen) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A08.364Z..2026-10-22T16%3A02%3A08.364Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aopen)
 
-暂未获取：近30天新建。
+暂未获取：近30天新建、近30天关闭。
 
 统计日期：2026-10-23。
 
@@ -176,323 +165,423 @@
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定提交 0343705ad75ee90d83c3044853569fd4df5baea6 上判断 dsh-anet 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。
+**插件研究总目标**：ANetResearch/ANet 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 跨代理委派适合什么任务与信任条件？
+### Q01 · DSH组件相对手配MCP增加什么？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向已有本地 anet 节点、需要把明确子任务委派给其他 AI 代理或接收外部任务的 DSH 用户。输入是任务描述、目标代理/技能、预算和信任决定；合格结果是任务端到端可追踪、内容按节点间加密传输、花费不越界、第三方结果只作为不可信材料交回。简单替代是人工在多个代理间复制任务和结果。
+组件不重做ANet网络协议，主要把同一个二进制路径和身份提供给MCP行与Skill命令。合格结果是任务入口不再出现身份或路径分叉，并能拿到明确状态。手工MCP配置也能完成网络工作，所以贡献是接入和生命周期管理。仅从bundle无法证明节点任务质量或公共网络需求。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[deploy/plugins/dist/dsh/README.md:9-12](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/README.md#L9-L12)
+**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/index.js:1-17](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/index.js#L1-L17)
 
-作者列出 DSH 插件提供的 Skill/MCP 能力。
+明确bundle分工和共享配置目的。
+
+<details>
+<summary>查看原文（17行）</summary>
 
 ```text
-## What the plugin provides
-
-| Component | Name | Purpose |
-| --- | --- | --- |
+// The anet plugin for DeepSeek Harness (DSH): settings and bundle directory.
+//
+// The bundle layer (cordis.patch.yml) mounts this module and the MCP client row
+// that starts bin/anet-mcp (bin/anet-mcp.cmd on Windows). This module does two
+// things:
+//
+//   1. It provides the service `anetPlugin` ({ root, settings }) to the MCP row,
+//      because a patch has no variable for the directory of the bundle.
+//   2. It applies the two settings, anetPath and identity, to the environment of
+//      the DSH process (ANET_PLUGIN_BIN, ANET_PLUGIN_IDENTITY), so that the MCP
+//      server and the commands of the skills reach the same executable and
+//      identity (bin/anet-run.sh reads them). The previous values are restored
+//      when the plugin is disposed.
+//
+// The skills are registered by skills.js, a second row of the patch, so that
+// the MCP server also works in a profile without a skill registry.
+// The module depends on nothing but Node.js.
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/cordis.patch.yml:4-24](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/cordis.patch.yml#L4-L24)
+
+三个挂载行固定实际接入结构。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+- insert:
+    - id: anet-plugin
+      name: dsh-anet
+      config:
+        anetPath: ''
+        identity: ''
+    - id: anet-skills
+      name: ./skills.js
+    - id: anet-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      inject: [anetPlugin]
+      config:
+        serverName: anet
+        transport: stdio
+        # bin/anet-mcp on Linux and macOS; on Windows the same path selects bin/anet-mcp.cmd.
+        command: !!js "ctx.anetPlugin.root + '/bin/anet-mcp'"
+        args: []
+        env:
+          ANET_PLUGIN_BIN: !!js "ctx.anetPlugin.settings.anetPath"
+          ANET_PLUGIN_IDENTITY: !!js "ctx.anetPlugin.settings.identity"
+        toolCallTimeoutMs: 900000
+```
+
+</details>
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · DSH 插件、Skill、MCP 与本地 anet 节点如何分工？
+### Q02 · 设置如何进入MCP和Skill且在停用时恢复？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-插件设置 anet 可执行文件和身份环境，启动 `anet mcp` 让工具面连接同一节点，并注册 anet、anet-setup、anet-status 三个 Skill。Skill 负责安装/引导、状态和安全指令；节点进程需由用户在独立终端持续运行，插件自身不代替网络节点。
+resolveSettings仅接受两个键，配置非空值优先环境变量，避免拼错参数被忽略。apply提供anetPlugin服务并设置进程环境，MCP patch同时将设置显式传到子进程。dispose只恢复仍等于本组件写入值的变量，保留后来所有者的修改。Skill注册独立成行，因此没有skills服务时MCP仍有机会工作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/index.js:69-72](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/index.js#L69-L72)
+**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/index.js:31-73](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/index.js#L31-L73)
 
-入口统一设置 runner 环境并挂 MCP。
+设置解析、环境所有权与dispose。
+
+<details>
+<summary>查看原文（43行）</summary>
 
 ```text
+// The effective settings: a non-empty value of the plugin row wins over the
+// environment variable of the same setting. Unknown keys are errors, so that a
+// misspelled setting does not pass silently.
+export function resolveSettings(config, env) {
+  const given = config ?? {}
+  if (typeof given !== 'object' || Array.isArray(given)) throw new TypeError('dsh-anet: the plugin configuration must be a mapping')
+  const known = new Set(SETTINGS.map(([key]) => key))
+  for (const key of Object.keys(given)) {
+    if (!known.has(key)) throw new Error(`dsh-anet: unknown setting "${key}" (expected ${[...known].join(', ')})`)
+  }
+  const settings = {}
+  for (const [key, variable] of SETTINGS) {
+    const value = given[key]
+    if (value !== undefined && value !== null && typeof value !== 'string') throw new TypeError(`dsh-anet: setting "${key}" must be a string`)
+    settings[key] = value || env[variable] || ''
+  }
+  return settings
+}
+
+// Sets the environment variables of the effective settings and returns the
+// function that restores the previous state.
+export function applyEnvironment(settings, env) {
+  const previous = new Map()
+  for (const [key, variable] of SETTINGS) {
+    if (!settings[key] || env[variable] === settings[key]) continue
+    previous.set(variable, { before: env[variable], applied: settings[key] })
+    env[variable] = settings[key]
+  }
+  return () => {
+    for (const [variable, { before, applied }] of previous) {
+      // Restore only a value that this plugin set; a later change by another owner stays.
+      if (env[variable] !== applied) continue
+      if (before === undefined) delete env[variable]
+      else env[variable] = before
+    }
+  }
+}
+
 export function apply(ctx, config) {
   const settings = resolveSettings(config, process.env)
   ctx.provide('anetPlugin', { root: bundleRoot, settings })
   ctx.on('dispose', applyEnvironment(settings, process.env))
-```
-
-**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
-
-组件从随包定义加载并注册三个 Skill。
-
-```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
 }
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/cordis.patch.yml:12-24](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/cordis.patch.yml#L12-L24)
+
+stdio MCP环境和900秒调用上限。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+    - id: anet-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      inject: [anetPlugin]
+      config:
+        serverName: anet
+        transport: stdio
+        # bin/anet-mcp on Linux and macOS; on Windows the same path selects bin/anet-mcp.cmd.
+        command: !!js "ctx.anetPlugin.root + '/bin/anet-mcp'"
+        args: []
+        env:
+          ANET_PLUGIN_BIN: !!js "ctx.anetPlugin.settings.anetPath"
+          ANET_PLUGIN_IDENTITY: !!js "ctx.anetPlugin.settings.identity"
+        toolCallTimeoutMs: 900000
+```
+
+</details>
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · dsh-anet 相对简单替代的独立增量是什么？
+### Q03 · 自动安装的便利改变哪些信任和副作用边界？
 
-**研究主题**：贡献与相对优势
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-相对手工复制，它把代理发现、加密任务、状态跟踪、定价技能与入站任务接入同一 DSH 配置，并通过统一 runner 保证 MCP 与 Skill 使用同一 executable/identity。核心网络、加密和结算能力归属 ANet；此组件的增量是 DSH 打包、引导和安全默认。
+启动器缺二进制时能下载并运行远端脚本，默认安装节点并加入公共hub。脚本的锁、超时、独立会话与stderr日志有助于完整性和诊断，但不等于固定插件版本锁住安装内容。源码注释声称远端安装器校验签名和摘要，本轮只检查启动层，不能将注释当独立验证。相对PATH过滤可减少工作区可执行文件误选，仍无法消除远端供应链信任。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/index.js:69-72](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/index.js#L69-L72)
+**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/bin/anet-install.sh:4-47](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/bin/anet-install.sh#L4-L47)
 
-入口统一设置 runner 环境并挂 MCP。
+自动安装、加入网络、锁和等待边界。
 
-```text
-export function apply(ctx, config) {
-  const settings = resolveSettings(config, process.env)
-  ctx.provide('anetPlugin', { root: bundleRoot, settings })
-  ctx.on('dispose', applyEnvironment(settings, process.env))
-```
-
-**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
-
-组件从随包定义加载并注册三个 Skill。
+<details>
+<summary>查看原文（44行）</summary>
 
 ```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
-}
+# `sh anet-install.sh [installer arguments]` downloads https://agentnetwork.org.cn/install.sh
+# into a new private directory, runs it only when the download succeeded, and
+# removes the directory afterwards. The installer checks the signed release
+# manifest and the SHA-256 of the binary and stops without changing anything
+# when a check fails; by default it installs anet for this user, starts the
+# node and joins the public hub. The script exists so that an agent host that
+# refuses command substitution in a shell command can still run the
+# installation as one plain command (the anet-setup skill).
+#
+# `sh anet-install.sh --mcp` is the first step of the MCP launcher
+# (anet-mcp.sh): it installs anet when the runner finds no anet executable, so
+# that enabling the plugin is enough to have anet installed and its node
+# running. It does nothing when the environment variable ANET_PLUGIN_NO_INSTALL
+# is set to a value other than 0, when the plugin setting anetPath is set (an
+# invalid one is reported by the runner, and no other copy is installed), and
+# in a POSIX shell on Windows (anet-mcp.cmd installs there). Otherwise it runs
+# the installer without arguments: nothing from the workspace or the session
+# reaches it, the user's settings select nothing of it either. The installer
+# runs
+#   * with no input and no controlling terminal (in a session of its own, with
+#     setsid or Perl where available), so that it never asks for a password
+#     on the terminal of the host, and never reads the MCP session;
+#   * in the user's home directory, not in the working directory of the
+#     session (a workspace);
+#   * with its output written to install.log in the state directory, which is
+#     copied to standard error afterwards (the launcher sends this script's
+#     output to standard error: standard output is the MCP session). Because
+#     the installer does not write to the host's pipe and has a session of
+#     its own, a host that gives up on a slow start does not end it halfway;
+#     it finishes, and the next session finds anet.
+# It waits for the installer at most 15 minutes, and exits with status 0 in
+# every case: the launcher goes on, and the runner reports anet as missing
+# when the installation did not succeed.
+#
+# One installation at a time. Both forms hold the lock directory
+# <state>/install.lock while the installer runs, with the process ID of the
+# holder and its start time (as ps prints it) in the file pid; <state> is
+# $XDG_CACHE_HOME/anet-plugin, or ~/.cache/anet-plugin (an absolute path only;
+# without one the --mcp form installs nothing). Another host that starts at
+# the same moment waits for it, at most 10 minutes (5 for the plain form), and
+# then installs nothing itself when the first installation left an anet
+# behind. A lock whose holder no longer runs (no process with that ID, or one
+# that started at another time: the ID was reused), or that is older than 30
+# minutes, is removed.
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/bin/anet-install.sh:50-68](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/bin/anet-install.sh#L50-L68)
+
+PATH绝对目录过滤为具体防护。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+# Programs (sh, sed, uname and the others) are found only in the absolute
+# directories of PATH: a relative entry (such as "." or an empty one) would
+# find a file of the working directory of the session, which can be an
+# untrusted workspace. This comes before the first command that is not built
+# into the shell, and the scripts started from here inherit it.
+_abs=
+_ifs=$IFS
+IFS=:
+set -f
+for _d in ${PATH:-}; do
+  case $_d in
+    /*) _abs=${_abs:+$_abs:}$_d ;;
+  esac
+done
+IFS=$_ifs
+set +f
+PATH=${_abs:-/usr/bin:/bin}
+export PATH
+unset _abs _ifs _d
+```
+
+</details>
+
+#### 缺口
+
+- 实际下载安装器及核心版本未固定核验
+  **影响**：限制供应链与跨平台可靠性判断
+  **进一步探讨**：固定安装器字节、签名和二进制摘要，在隔离环境核验行为。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 外部代理输入、身份、预算和节点生命周期有哪些关键前提？
+### Q04 · 为什么当前建议观察而非普遍试用？
 
-**研究主题**：缺陷与关键质疑
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-价值依赖外部节点、hub、对端信誉和任务结果质量。端到端加密不隐藏通信元数据，也不保证对端输出正确；第三方任务与结果可能包含提示注入。用户还必须独立维持节点进程、明确开放入站、信任 peer 与提高预算，错误决策会扩大数据与现金风险。
+现有ANet用户可能通过bundle降低多入口配置成本，但没有该网络任务的用户要承担身份、节点、网络和外部服务负担。自动安装最长等待不是日常耗时，不能拿上限估算真实效率。建议先预装核心并关闭自动安装，用只读状态确认路径和身份，再决定是否允许公共连接。停止DSH插件也不应被假定等于卸载节点或抹除身份，退出需要独立核对。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
+**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/bin/anet-install.sh:13-36](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/bin/anet-install.sh#L13-L36)
 
-组件从随包定义加载并注册三个 Skill。
+缺失/自定义路径和NO_INSTALL分支。
+
+<details>
+<summary>查看原文（24行）</summary>
 
 ```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
+# `sh anet-install.sh --mcp` is the first step of the MCP launcher
+# (anet-mcp.sh): it installs anet when the runner finds no anet executable, so
+# that enabling the plugin is enough to have anet installed and its node
+# running. It does nothing when the environment variable ANET_PLUGIN_NO_INSTALL
+# is set to a value other than 0, when the plugin setting anetPath is set (an
+# invalid one is reported by the runner, and no other copy is installed), and
+# in a POSIX shell on Windows (anet-mcp.cmd installs there). Otherwise it runs
+# the installer without arguments: nothing from the workspace or the session
+# reaches it, the user's settings select nothing of it either. The installer
+# runs
+#   * with no input and no controlling terminal (in a session of its own, with
+#     setsid or Perl where available), so that it never asks for a password
+#     on the terminal of the host, and never reads the MCP session;
+#   * in the user's home directory, not in the working directory of the
+#     session (a workspace);
+#   * with its output written to install.log in the state directory, which is
+#     copied to standard error afterwards (the launcher sends this script's
+#     output to standard error: standard output is the MCP session). Because
+#     the installer does not write to the host's pipe and has a session of
+#     its own, a host that gives up on a slow start does not end it halfway;
+#     it finishes, and the next session finds anet.
+# It waits for the installer at most 15 minutes, and exits with status 0 in
+# every case: the launcher goes on, and the runner reports anet as missing
+# when the installation did not succeed.
+```
+
+</details>
+
+**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/index.js:50-73](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/index.js#L50-L73)
+
+dispose只明确恢复环境，不证明外部节点退出。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+// Sets the environment variables of the effective settings and returns the
+// function that restores the previous state.
+export function applyEnvironment(settings, env) {
+  const previous = new Map()
+  for (const [key, variable] of SETTINGS) {
+    if (!settings[key] || env[variable] === settings[key]) continue
+    previous.set(variable, { before: env[variable], applied: settings[key] })
+    env[variable] = settings[key]
+  }
+  return () => {
+    for (const [variable, { before, applied }] of previous) {
+      // Restore only a value that this plugin set; a later change by another owner stays.
+      if (env[variable] !== applied) continue
+      if (before === undefined) delete env[variable]
+      else env[variable] = before
+    }
+  }
+}
+
+export function apply(ctx, config) {
+  const settings = resolveSettings(config, process.env)
+  ctx.provide('anetPlugin', { root: bundleRoot, settings })
+  ctx.on('dispose', applyEnvironment(settings, process.env))
 }
 ```
 
-**依据 2 · 作者声明**：[deploy/plugins/dist/dsh/README.md:9-12](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/README.md#L9-L12)
-
-作者列出 DSH 插件提供的 Skill/MCP 能力。
-
-```text
-## What the plugin provides
-
-| Component | Name | Purpose |
-| --- | --- | --- |
-```
+</details>
 
 #### 缺口
 
-- 真实 anet 节点、hub 与对端在身份、预算、取消和结果签名上的端到端行为
-  **影响**：插件接线正确仍不能证明委派安全、结算正确或结果可信
-  **进一步探讨**：用两个隔离身份互发无敏感 canary，覆盖预算 0、超额报价、取消、离线、恶意指令和结果摘要不匹配
+- 端到端任务和节点退出成本未知
+  **影响**：不能量化接入收益或长期运维成本
+  **进一步探讨**：在明确任务与预算下记录合格结果、节点资源和退出残留。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · dsh-anet 启动、持续使用与失败恢复依赖什么？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-启动依赖 anet release、跨平台 runner、POSIX 工具或 PowerShell，并要求重启会话使 MCP 连接新节点；安装 Skill 会在同意后联网下载安装。持续使用依赖 hub 与对端节点。失败恢复需区分插件/MCP、节点未启动、身份不一致、网络中断、预算拒绝和对端失败，不能把重试都交给模型。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/index.js:69-72](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/index.js#L69-L72)
-
-入口统一设置 runner 环境并挂 MCP。
-
-```text
-export function apply(ctx, config) {
-  const settings = resolveSettings(config, process.env)
-  ctx.provide('anetPlugin', { root: bundleRoot, settings })
-  ctx.on('dispose', applyEnvironment(settings, process.env))
-```
-
-**依据 2 · 作者声明**：[deploy/plugins/dist/dsh/README.md:9-12](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/README.md#L9-L12)
-
-作者列出 DSH 插件提供的 Skill/MCP 能力。
-
-```text
-## What the plugin provides
-
-| Component | Name | Purpose |
-| --- | --- | --- |
-```
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 端到端委派的合格任务成本如何核算？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-合格任务应是对端完成约定交付并能由本地验收。首次成本含安装二进制、建身份、加入 hub 和安全配置；持续成本含技能报价、网络、模型/代理资源与人工验收；失败恢复含重新委派、争议和敏感信息处置。源码没有同任务人工转交基线、结算金额分布、成功率或恢复时延。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[deploy/plugins/dist/dsh/README.md:9-12](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/README.md#L9-L12)
-
-作者列出 DSH 插件提供的 Skill/MCP 能力。
-
-```text
-## What the plugin provides
-
-| Component | Name | Purpose |
-| --- | --- | --- |
-```
-
-**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
-
-组件从随包定义加载并注册三个 Skill。
-
-```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
-}
-```
-
-#### 缺口
-
-- 每类任务的报价、总模型/网络成本、合格率、人工验收分钟数与失败争议成本
-  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI
-  **进一步探讨**：固定十个可自动验收任务，对比人工复制与 ANet 委派，统计总支付、完成率、时延、返工和提示注入处置
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 统一 runner、保守默认和安装边界是否可靠？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-统一 runner 和环境避免 Skill/MCP 身份分叉；新节点默认不接任务、不发布能力、支出上限为 0，开放和提额留给用户，是合理的安全门。插件无 hook 且声明不读 ~/.anet，但安装器和外部二进制属于独立信任边界；固定 dist 组件未证明上游 release、签名与当前平台的实际安装链。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/index.js:69-72](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/index.js#L69-L72)
-
-入口统一设置 runner 环境并挂 MCP。
-
-```text
-export function apply(ctx, config) {
-  const settings = resolveSettings(config, process.env)
-  ctx.provide('anetPlugin', { root: bundleRoot, settings })
-  ctx.on('dispose', applyEnvironment(settings, process.env))
-```
-
-**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
-
-组件从随包定义加载并注册三个 Skill。
-
-```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
-}
-```
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 能否增加任务能力契约与可验证回执以减少盲委派？
+### Q05 · 安装预检与网络加入分离能否降低误启动？
 
 **研究主题**：新假设与验证
 
 #### 完整回答
 
-可在委派前要求对端返回机器可读的能力契约、价格上限、数据保留和验收样例，完成后附产物摘要与可复核证据；本地先做低敏感 canary，再放大任务。它可能降低盲委派与争议，但会增加协议和验收成本。
+未验证假设是先报告解析路径、将下载内容摘要和默认网络副作用展示给用户，再显式完成安装和加入。现有NO_INSTALL与resolve能力使这条分离有现实基础。对照自动一体启动与分阶段流程，记录错误身份、重复安装、意外网络加入和总人工时间；若错误不下降或步骤负担超过收益，则维持现状更合理。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
+**依据 1 · 源码核查**：[deploy/plugins/dist/dsh/bin/anet-install.sh:13-21](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/bin/anet-install.sh#L13-L21)
 
-组件从随包定义加载并注册三个 Skill。
+现有可关闭自动安装为拆分流程基础。
 
 ```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
-}
+# `sh anet-install.sh --mcp` is the first step of the MCP launcher
+# (anet-mcp.sh): it installs anet when the runner finds no anet executable, so
+# that enabling the plugin is enough to have anet installed and its node
+# running. It does nothing when the environment variable ANET_PLUGIN_NO_INSTALL
+# is set to a value other than 0, when the plugin setting anetPath is set (an
+# invalid one is reported by the runner, and no other copy is installed), and
+# in a POSIX shell on Windows (anet-mcp.cmd installs there). Otherwise it runs
+# the installer without arguments: nothing from the workspace or the session
+# reaches it, the user's settings select nothing of it either. The installer
 ```
 
-**依据 2 · 作者声明**：[deploy/plugins/dist/dsh/README.md:9-12](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/README.md#L9-L12)
+**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/bin/anet-install.sh:88-92](https://github.com/ANetResearch/ANet/blob/d03c5282a69647dc8a301e53b02ab376692d5ac5/deploy/plugins/dist/dsh/bin/anet-install.sh#L88-L92)
 
-作者列出 DSH 插件提供的 Skill/MCP 能力。
+resolve探测支持预检设计。
 
 ```text
-## What the plugin provides
-
-| Component | Name | Purpose |
-| --- | --- | --- |
+# anet_missing: whether the runner finds no anet executable and no anetPath is
+# set (its --resolve prints "executable: not found" exactly then).
+anet_missing() {
+  [ "$(sh "$here/anet-run.sh" --resolve 2>/dev/null | sed -n 1p)" = "executable: not found" ]
+}
 ```
 
 #### 缺口
 
-- 能力契约与证据回执是否会提高合格率而不使小任务失去经济性
-  **影响**：新方向仍是推演，不能计入插件当前贡献或效果
-  **进一步探讨**：随机一半任务使用契约+canary，比较一次通过率、争议率、额外字节/分钟；若成本增加超过返工下降则否定
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · dsh-anet 适合观察、试用还是安装，停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-建议观察。只适合已理解 ANet 身份、hub 与预算模型的用户；先保持入站关闭和支出 0，用无敏感 canary 验证同一身份、报价、超时、取消和不可信输出处理，再考虑有限试用。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[deploy/plugins/dist/dsh/README.md:9-12](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/README.md#L9-L12)
-
-作者列出 DSH 插件提供的 Skill/MCP 能力。
-
-```text
-## What the plugin provides
-
-| Component | Name | Purpose |
-| --- | --- | --- |
-```
-
-**依据 2 · 源码核查**：[deploy/plugins/dist/dsh/skills.js:70-71](https://github.com/ANetResearch/ANet/blob/0343705ad75ee90d83c3044853569fd4df5baea6/deploy/plugins/dist/dsh/skills.js#L70-L71)
-
-组件从随包定义加载并注册三个 Skill。
-
-```text
-  for (const skill of loadSkills()) ctx.skills.register(skill)
-}
-```
+- 分阶段流程的需求和收益未测
+  **影响**：假设不能计入当前bundle贡献
+  **进一步探讨**：以隔离用户任务比较错误和时间后决定。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

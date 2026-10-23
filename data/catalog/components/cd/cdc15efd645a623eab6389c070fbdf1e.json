@@ -7,15 +7,15 @@
             "id": "github:1342573739:root",
             "repository": "exoticknight/dsh-labnana",
             "path": "",
-            "revision": "7e7de76aacccd8ad58d16f7ed79383cfac603207",
+            "revision": "14f7547cb24cce50eb0e2c7f56f9a0bd57f08d0b",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "76786fb2f0ed0a19b06b225a5137e8b7e39267796de9d188a049ef417ba21b41",
-                "code": "7e7de76aacccd8ad58d16f7ed79383cfac603207",
-                "maintenance": "b00a060438a19c120342cd780fb93734c5bf6b66b9a1c11b68aa43284e89c992"
+                "code": "14f7547cb24cce50eb0e2c7f56f9a0bd57f08d0b",
+                "maintenance": "804011f4d0ddbd70bc9fe12f478b7b7ac195e6c7d5d263297490ce69c428dab1"
             }
         }
     }

@@ -3,6 +3,484 @@
     "id": "40486be69c73a8a976506d18292bf846",
     "identity": "github:1342524723:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1342524723:root",
+            "repository_id": 1342524723,
+            "component_id": "root",
+            "repository": "9931666/dsh-plugin-roundtable",
+            "path": "",
+            "aliases": [],
+            "name": "@y9931666/dsh-plugin-roundtable",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d0ec235b774654f6957afd368d669f77bdf11829ba916be88ac700cc886aa6cf",
+                "code": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                "maintenance": "bc5726de267fd2128e62d2ec0da54a3db4c351cc674f43bdb7b54d9059f89fc0"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1342524723-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T02:16:23.269Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1342524723-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "README.md",
+                            "content_sha256": "561b9dfda502b5fdb33201e8199064112521c35c5ffbebd4528ddd3513e4ff6f"
+                        }
+                    ],
+                    "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                    "captured_at": "2026-10-23T02:16:23.269Z",
+                    "summary": "把Harness会话组织成持久专家圆桌，提供拓扑、发言汇聚、人工决策和红队评审。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/9931666--dsh-plugin-roundtable/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1342524723-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "README.md",
+                            "content_sha256": "561b9dfda502b5fdb33201e8199064112521c35c5ffbebd4528ddd3513e4ff6f"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "package.json",
+                            "content_sha256": "d6aa16a265d16d87344e55f4247589da5c62b58cabc1e1af36eb5018c00778ee"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/index.ts",
+                            "content_sha256": "97b267c32801cd7b0c59fc4b7775ef42e9ac21927612636d7781973474c2d570"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/tools.ts",
+                            "content_sha256": "3c056e316e26b1e5f426ad00d67aa1ce9a198172b8cc6548804bc707910c29d1"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/plan.ts",
+                            "content_sha256": "3d650fe1c2ba0c9b1c55effa34bb5b742b8e6aead8ef6477fa99484112439be2"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/budget.ts",
+                            "content_sha256": "72d31a2fb4e33393608175e535058438a86617a929b09e268b6d0c76858c7195"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/token-usage.ts",
+                            "content_sha256": "c266ecddb01e3fbbd54ed717a36a0960292af244a02af9a2350378b6652e89b6"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/aggregator.ts",
+                            "content_sha256": "0cde64b9e0efe3b6819e32fdd9072566e06d1c3bc377a8562fe3057920fa7a41"
+                        },
+                        {
+                            "repository_url": "https://github.com/9931666/dsh-plugin-roundtable",
+                            "commit": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                            "path": "src/state.ts",
+                            "content_sha256": "e64184fe04bd482b50ce9bafd1ac81f84888ebf0614b744cdcbb157d1a93206a"
+                        }
+                    ],
+                    "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                    "captured_at": "2026-10-23T02:16:23.269Z",
+                    "summary": "核查 README.md、package.json、src/index.ts、src/tools.ts、src/plan.ts、src/budget.ts、src/token-usage.ts、src/aggregator.ts、src/state.ts；21个roundtable工具管理草案确认、会议/节点/连线、发言与唤醒、汇聚及评审，状态落工作区；专家是宿主持久子代理，事件补录产出，UI投影与review/user-actions协作。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/9931666--dsh-plugin-roundtable/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读Host接线、21工具注册及关键发言/送达/评审、预算、usage、汇聚和草案；未完整审计全部RPC/UI/子代理生命周期或运行。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "为需要多个观点、人工拍板和可留档评审的方案维护者，把主持会话组织成持久专家讨论；合格交付是观点、证据与决策可追踪，不是专家人数或拓扑图本身。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "21个roundtable工具管理草案确认、会议/节点/连线、发言与唤醒、汇聚及评审，状态落工作区；专家是宿主持久子代理，事件补录产出，UI投影与review/user-actions协作。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读Host接线、21工具注册及关键发言/送达/评审、预算、usage、汇聚和草案；未完整审计全部RPC/UI/子代理生命周期或运行。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT，1.0.0-rc.4预发布；README部分安装段仍写rc.2，实际manifest为准；宿主基线0.2.0-rc.2。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 多模型配置和本地状态，金额未知 | 设角色边界、模式、预算和验收 | 没有预置角色，需自定义 |\n| 持续使用 | 专家上下文/输出、拆分LLM、可能工具成本 | 主持转交、审证、人工表态 | 发言估算预算不是实际账单上限 |\n| 失败恢复 | 冷会话重接、重复模型/文件成本 | 核持久日志与未送达消息 | dropped与已落盘发言是不同结果 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "适合能主持和审证的方案维护者先用少量专家、短轮数试用，比较同预算单Agent；严格费用封顶、无人值守交付或不可重复副作用任务先观察。只依发言粗估不设账单保证，dropped/冷节点先查持久记录再重派。参见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 组织与留档 | 持久节点、发言、评审与导出 | 最终方案质量对比单Agent |\n| 状态/预算 | 发言量粗估门、live实际usage派生 | 冷会话不可测且真费用不受粗估硬控 |\n| 汇聚 | 确定性抽核心并截断 | 旧文占满时后续关键观点被省略 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "留档和唤醒拆分、状态投影与预算恢复通道值得借鉴；复用需主持/专家所有权、未知送达不重放、汇聚覆盖及真实成本测量，图形UI不代替执行语义。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "将专家持久身份、发言留档与即时唤醒分开，并把红队观点、人类表态与修订轮次结构化；贡献是协作责任与可检查记录，不是独立证据或多模型必然更准。参见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "预算门按发言字符估算，真实usage仅状态派生且冷节点不可测；网关按发言顺序拼接后整体截前4000字符，后续观点可能消失。角色讨论和支持表态不能替代缺陷复现，图上的边也不能自动等同严格执行流程。参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可用按轮次/观点ID的增量汇聚收据，明确覆盖/遗漏与未决冲突，再以真实请求预算而非文本量限制新唤醒。对照单Agent和当前圆桌同预算任务，若质量不升、关键观点仍漏或实际费用越界则否定；假设未验证，追踪和收据会增上下文成本。参见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1342524723:root",
+                            "area": "code",
+                            "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T02:16:23.269Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T02:16:23.269Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                "reviewed_at": "2026-10-23T02:16:23.269Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1342524723:root",
+                        "area": "code",
+                        "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为持久专家、留档与评审组合；mechanism为模式权限和留档/唤醒拆分，仍受宿主语义；transferability可移协作工具；simplification集中状态但组织复杂度未消失。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 10,
+                        "economics": 4
+                    },
+                    "rationale": "workflow将专家协作与人类表态结构化；delivery为可导出评审链；reach为可视主持用户；economics仅减少重复传全文的机制，净费用未证。",
+                    "basis": "interpretation",
+                    "score": 47,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1342524723-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "可由能主持和审证的人用少量专家受控试用，必须比较同预算结果且不把粗估预算当账单上限。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多观点方案评审人群明确。"
+                    },
+                    "advantage": {
+                        "score": 19,
+                        "rationale": "持久报告/唤醒分离与人类评审有价值。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码可核未执行宿主。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "模型、主持、冷节点恢复和多状态维护负担较高。"
+                    }
+                },
+                "score": 60,
+                "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                "reviewed_at": "2026-10-23T02:16:23.269Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1342524723-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1342524723:root",
+                        "area": "code",
+                        "fingerprint": "e2cb127bc0c2654a92cf2db64256c982c78b90e4"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1342524723:root",
+            "repository": "9931666/dsh-plugin-roundtable",
+            "path": "",
+            "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+            "fingerprints": {
+                "directory": "d0ec235b774654f6957afd368d669f77bdf11829ba916be88ac700cc886aa6cf",
+                "code": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+                "maintenance": "bc5726de267fd2128e62d2ec0da54a3db4c351cc674f43bdb7b54d9059f89fc0"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "bc55e33c9cca0200f9119ea3e519d66fd16795477cf2380775dcd290bb11b58b"
+        },
+        "publication.metadata": "data/plugins/9931666--dsh-plugin-roundtable/META.json",
+        "publication.summaries": {
+            "text": "把Harness会话组织成持久专家圆桌，提供拓扑、发言汇聚、人工决策和红队评审。",
+            "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+            "source_url": "https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+            "items": {
+                "模型工具": "21个roundtable工具，逐项见能力表",
+                "界面": "圆桌Tab、评审卡片与设置页",
+                "后台": "持久专家事件补录、会议/发言/评审状态存储"
+            },
+            "table": "#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| roundtable_plan_meeting | 草案确认 | 依赖用户问答；缺失不等于批准 |\n| roundtable_create | 建会及固定设置 | 确认草案及工作区状态 |\n| roundtable_add_node | 创建持久专家 | 可用模型、角色与宿主子代理 |\n| roundtable_remove_node | 移除专家 | 需核子代理清理 |\n| roundtable_connect | 设置拓扑连线 | 图语义依协作模式 |\n| roundtable_disconnect | 删除连线 | 不把图当严格工作流 |\n| roundtable_speak | 持久报告发言 | 不唤醒接收者 |\n| roundtable_send_message | 请求对方立即行动 | 模式权限，可能dropped |\n| roundtable_summarize | 拉取确定性汇聚 | 字符截断，非证据审定 |\n| roundtable_request_decision | 用户拍板 | 问答服务及人工决定 |\n| roundtable_status | 查状态和用量 | 真实usage仅live可测部分 |\n| roundtable_kb_digest | 记录KB要点缓存 | path/size/mtime非内容真实性 |\n| roundtable_actions_clear | 清用户动作队列 | 坏行计数需如实处理 |\n| roundtable_start_review | 开启红队轮次 | 超过三轮需显式用户批准 |\n| roundtable_collect_review | 收集拆分观点 | LLM/本地兜底，需核原文 |\n| roundtable_finish_review | 结束并记修订 | 不自动证明缺陷修复 |\n| roundtable_export_review | 导出评审链 | 含观点和用户表态 |\n| roundtable_export_meeting | 导出整场记录 | 进行中为快照，写本地export.md |\n| roundtable_set_budget | 补充/收紧预算 | 发言量估算非真实费用 |\n| roundtable_close | 结束会议 | 需核节点处置 |\n| roundtable_proxy_think | 为黑盒工作模型准备导演参数 | 额外模型思考非工作模型真实内部过程 |\n| 圆桌Tab/设置页 | 拓扑与角色/阵容管理 | 自建角色，无斜杠命令 |"
+        },
+        "publication.advice": {
+            "revision": "e2cb127bc0c2654a92cf2db64256c982c78b90e4",
+            "text": "适合能主持和审证的方案维护者先用少量专家、短轮数试用，比较同预算单Agent；严格费用封顶、无人值守交付或不可重复副作用任务先观察。只依发言粗估不设账单保证，dropped/冷节点先查持久记录再重派。参见[Q06](#research-q06)。"
+        },
+        "registry": "data/plugins/9931666--dsh-plugin-roundtable",
+        "reports": "# @y9931666/dsh-plugin-roundtable\n\n> 把Harness会话组织成持久专家圆桌，提供拓扑、发言汇聚、人工决策和红队评审。\n\n## 研究范围\n\n- **仓库**：[9931666/dsh-plugin-roundtable](https://github.com/9931666/dsh-plugin-roundtable)\n- **版本号**：1.0.0-rc.4（[固定提交 e2cb127bc0c2654a92cf2db64256c982c78b90e4](https://github.com/9931666/dsh-plugin-roundtable/tree/e2cb127bc0c2654a92cf2db64256c982c78b90e4)）\n- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n协作/留档/评审机制有源码支持；质量增益、真实成本控制及增量收据假设未验证。\n\n## 洞察短评\n\n- **用途**：为需要多个观点、人工拍板和可留档评审的方案维护者，把主持会话组织成持久专家讨论；合格交付是观点、证据与决策可追踪，不是专家人数或拓扑图本身。\n- **亮点**：将专家持久身份、发言留档与即时唤醒分开，并把红队观点、人类表态与修订轮次结构化；贡献是协作责任与可检查记录，不是独立证据或多模型必然更准。参见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：预算门按发言字符估算，真实usage仅状态派生且冷节点不可测；网关按发言顺序拼接后整体截前4000字符，后续观点可能消失。角色讨论和支持表态不能替代缺陷复现，图上的边也不能自动等同严格执行流程。参见[Q03](#research-q03)。\n- **建议**：可用按轮次/观点ID的增量汇聚收据，明确覆盖/遗漏与未决冲突，再以真实请求预算而非文本量限制新唤醒。对照单Agent和当前圆桌同预算任务，若质量不升、关键观点仍漏或实际费用越界则否定；假设未验证，追踪和收据会增上下文成本。参见[Q05](#research-q05)。\n\n采用建议：适合能主持和审证的方案维护者先用少量专家、短轮数试用，比较同预算单Agent；严格费用封顶、无人值守交付或不可重复副作用任务先观察。只依发言粗估不设账单保证，dropped/冷节点先查持久记录再重派。参见[Q06](#research-q06)。\n\n## 核心贡献\n\n将专家持久身份、发言留档与即时唤醒分开，并把红队观点、人类表态与修订轮次结构化；贡献是协作责任与可检查记录，不是独立证据或多模型必然更准。参见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n预算门按发言字符估算，真实usage仅状态派生且冷节点不可测；网关按发言顺序拼接后整体截前4000字符，后续观点可能消失。角色讨论和支持表态不能替代缺陷复现，图上的边也不能自动等同严格执行流程。参见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可用按轮次/观点ID的增量汇聚收据，明确覆盖/遗漏与未决冲突，再以真实请求预算而非文本量限制新唤醒。对照单Agent和当前圆桌同预算任务，若质量不升、关键观点仍漏或实际费用越界则否定；假设未验证，追踪和收据会增上下文成本。参见[Q05](#research-q05)。\n\n在可重复任务中对照单Agent/当前圆桌/增量收据，核关键反例覆盖、正确修改、实际用量和人工主持时间。\n\n## 场景与替代办法\n\n为需要多个观点、人工拍板和可留档评审的方案维护者，把主持会话组织成持久专家讨论；合格交付是观点、证据与决策可追踪，不是专家人数或拓扑图本身。\n\n单Agent审稿和手动多会话提供低复杂度对照；只有同预算质量提升才支持多专家额外负担。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 兼容Harness子代理/工具/会话API | 必需 | 持久专家与执行 | 宿主契约漂移可导致入口或节点失效 |\n| 专家模型和可用路由 | 必需 | 实际讨论/红队 | 新增调用、模型差异与费用 |\n| 工作区.roundtable及全局偏好可写 | 必需 | 会议和审阅状态 | 进程内锁不覆盖多个Host进程 |\n| userQuestions/skills/Web界面 | 可选或对应流程需要 | 确认、技能及可视交互 | 缺服务降级，不能伪称用户已确认 |\n| 观点拆分固定LLM路由 | 优先分支 | 将发言拆观点 | 默认deepseek-official不可用需本地兜底 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 主持人plan草案，用户确认角色/模式/预算 | 确认后create，不把不可用当批准 |\n| 2 | 加节点、派发和收集持久发言 | speak不唤醒，send_message才请求行动 |\n| 3 | 主持汇聚并核完整原文/证据 | 网关截断不等于全部观点 |\n| 4 | 用户对评审观点表态，主持修订/结束 | 支持是用户判断不是缺陷自动实证 |\n| 5 | 导出、关会并核专家状态 | 重启冷节点需明确重接，不自动重放未知任务 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 多模型配置和本地状态，金额未知 | 设角色边界、模式、预算和验收 | 没有预置角色，需自定义 |\n| 持续使用 | 专家上下文/输出、拆分LLM、可能工具成本 | 主持转交、审证、人工表态 | 发言估算预算不是实际账单上限 |\n| 失败恢复 | 冷会话重接、重复模型/文件成本 | 核持久日志与未送达消息 | dropped与已落盘发言是不同结果 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 组织与留档 | 持久节点、发言、评审与导出 | 最终方案质量对比单Agent |\n| 状态/预算 | 发言量粗估门、live实际usage派生 | 冷会话不可测且真费用不受粗估硬控 |\n| 汇聚 | 确定性抽核心并截断 | 旧文占满时后续关键观点被省略 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 e2cb127bc0c2654a92cf2db64256c982c78b90e4 和截止 2026-10-23T01:41:11Z 范围内，多角色圆桌协作能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要多角色圆桌协作，相对手工或宿主原生办法增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n方案维护者希望多视角讨论可暂停拍板并留下“谁说了什么、谁支持什么”的记录。简单替代是单Agent自审或手工开多个会话；插件用持久专家、模式和评审卡改变组织与交接。合格输出须有可回指证据/决策和最终修订，图上热闹、观点数及人类支持均不自动证明方案正确。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:16-24](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/README.md#L16-L24)\n\n作者圆桌场景\n\n```text\n## 一句话\n\n> 你只负责抛出议题。DeepSeek 成为主持人，在拓扑图上拉起一圈专家节点，用带箭头的连线组织协作，经过汇聚网关汇总，遇到分歧时把决策权交还给你。\n\n## 特性\n\n### 会议组织\n| 能力 | 说明 |\n| --- | --- |\n```\n\n**依据 2 · 源码核查**：[src/tools.ts:838-843](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L838-L843)\n\n持久报告语义与核心输出格式\n\n```text\n    name: 'roundtable_speak',\n    description: 'Report into the meeting transcript — the default channel: durable, feeds the aggregation gateway, and wakes nobody. Use this instead of roundtable_send_message unless someone must act right now. Keep the charter format and the report envelope [REPORT R{轮} {key}] 结论（≤3 条）｜证据｜待决策; [核心产出] is the exact segment the gateway captures. Leave `to` empty to submit to the gateway; set it to a participant key for a directed remark.',\n    parameters: {\n      content: { type: 'string', required: true, description: 'The full contribution text.' },\n      to: { type: 'string', description: 'Directed audience: a node key or \"captain\". Empty submits to the aggregation gateway.' },\n      kind: { type: 'string', enum: ['speech', 'proxy-thinking', 'retrieval'], description: 'Contribution kind (default speech). Use \"proxy-thinking\" when you speak for a black-box worker model, \"retrieval\" when reporting knowledge-base retrieval.' },\n```\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 角色调度、会话状态与结论交付如何从入口形成完整调用链，依赖失效怎么办？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n主持人先plan确认草案再create，添加持久子代理后按模式转交；speak只写transcript不唤醒，send_message在锁内留发言后于锁外送达。summarize用确定性网关，review工具保存观点/表态/修订，UI读状态投影。需宿主子代理/模型/可写工作区，问答与skills可降级；失败dropped要与持久记录区分，重启冷节点不能假装live。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/plan.ts:24-53](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/plan.ts#L24-L53)\n\n草案与approved/revise/unavailable区别\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n * 一张设置卡片所描述的会议草案（尚未创建）。\n *\n * 字段与 `roundtable_create` 的入参一一对应，外加 `skills` / `skillDelivery`，\n * 这样用户确认后主持人可以**原样**按草案创建会议，不再自行拍参数。\n */\nexport interface MeetingDraft {\n  /** 会议名称（同时作为会议 id 的稳定来源）。 */\n  name: string\n  /** 会议背景与核心目标（总纲第一节）。 */\n  goal: string\n  /** 协作模式。 */\n  mode: 'orchestrated' | 'egalitarian' | 'redteam'\n  /** 轮数上限，超限闭麦。 */\n  maxRounds: number\n  /** Token 预算上限，超限闭麦。 */\n  maxTokens: number\n  /** 知识库目录（可空）：主持人按需读取其中文件转交专家。 */\n  kbPath: string\n  /** 本次会议选中的 skill 名称清单（可为空）。 */\n  skills: string[]\n  /** skill 传递方式：relay=主持人中转；direct=专家自行调用。 */\n  skillDelivery: SkillDelivery\n}\n\n/** 卡片选项的两态解析结果。 */\nexport type PlanConfirmation =\n  | { kind: 'approved' }\n  | { kind: 'revise'; note: string }\n  /** 服务缺失或用户没给任何选择：主持人应把它当作\"再确认一次\"。 */\n  | { kind: 'unavailable'; note: string }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/tools.ts:861-887](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L861-L887)\n\nspeak留档链\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n    async execute(args, exec) {\n      const caller = requireCaptain(exec)\n      const stateRoot = stateRootOf(workspaceOf(caller), config.stateDir)\n      const located = await locateParticipantMeeting(stateRoot, caller.id)\n      const recorded = await withMeetingLock(meetingLockKey(stateRoot, located.id), async () => {\n        const { meeting, identity } = await requireFreshParticipant(stateRoot, located.id, caller.id)\n        const content = String(args.content ?? '').trim()\n        if (content === '') throw new Error('content must not be empty')\n        const speaker = identity.kind === 'captain' ? CAPTAIN_KEY : identity.name\n        const to = args.to !== undefined ? String(args.to).trim() : undefined\n        if (to !== undefined && to !== '' && !validEndpoint(meeting, to)) {\n          throw new Error(`unknown directed audience \"${to}\"`)\n        }\n        const kind = (args.kind ?? 'speech') as 'speech' | 'proxy-thinking' | 'retrieval'\n        const utterance = await recordUtterance(\n          stateRoot,\n          meeting,\n          { nodeKey: speaker, kind, content, to: to === '' ? undefined : to },\n          { opensNewRound: identity.kind === 'captain' },\n        )\n        return {\n          utterance_id: utterance.id,\n          round: utterance.round,\n          tokens_used: estimateTokens(content),\n          budget_remaining_tokens: Math.max(0, meeting.budget.maxTokens - meeting.budget.usedTokens),\n        }\n      })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/tools.ts:917-946](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L917-L946)\n\n落盘与即时送达分开\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n      const prepared = await withMeetingLock(meetingLockKey(stateRoot, located.id), async () => {\n        const { meeting, identity } = await requireFreshParticipant(stateRoot, located.id, caller.id)\n        await assertUsablePersisting(stateRoot, meeting)\n        const speaker = identity.kind === 'captain' ? CAPTAIN_KEY : identity.name\n        if (meeting.mode !== 'egalitarian' && identity.kind === 'node' && to !== CAPTAIN_KEY) {\n          throw new Error('orchestrated/redteam mode: nodes report to the captain only — the captain relays between nodes')\n        }\n        if (to === CAPTAIN_KEY) {\n          // Captain-bound messages are persisted in the transcript; live steering happens after the lock.\n          await recordUtterance(stateRoot, meeting, { nodeKey: speaker, kind: 'speech', content, to: CAPTAIN_KEY })\n          return { kind: 'captain' as const, meeting, speaker }\n        }\n        const recipient = requireNode(meeting, to)\n        if (recipient.id === '') throw new Error(`node \"${to}\" has no live subagent yet`)\n        await recordUtterance(stateRoot, meeting, { nodeKey: speaker, kind: 'speech', content, to })\n        return { kind: 'node' as const, meeting, speaker, recipient }\n      })\n      const captainLive = ctx.agents.get(prepared.meeting.captainSessionId as import('@deepseek-ai/dsh-session').SessionId)\n      if (prepared.kind === 'captain') {\n        if (captainLive !== undefined && prepared.speaker !== CAPTAIN_KEY) {\n          const delivered = steerCaptain(captainLive, `RoundTable message from ${prepared.speaker}:\\n\\n${content}`)\n          return { delivered: delivered ? 'live' : 'dropped' }\n        }\n        return { delivered: 'dropped' }\n      }\n      if (captainLive !== undefined) {\n        const accepted = await deliverToNode(ctx, captainLive, prepared.recipient.id, content, exec.signal)\n        return { delivered: accepted ? 'wake' : 'dropped' }\n      }\n      return { delivered: 'dropped' }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.ts:157-194](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/index.ts#L157-L194)\n\n工具配置与事件补录\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n  registerRoundTableTools(ctx, {\n    stateDir: resolved.stateDir,\n    memberProvider: resolved.memberProvider,\n    maxNodes: resolved.maxNodes,\n    defaultMode: resolved.defaultMode,\n    memberMaxDepth: resolved.memberMaxDepth,\n    // 观点拆分 LLM 路由：默认 deepseek-official/deepseek-v4-flash（实测可用），\n    // 后续可配置化；不可用时 collect 自动整条兜底（三道防线②）。\n    reviewSplit: {\n      provider: 'deepseek-official',\n      model: 'deepseek-v4-flash',\n      maxOpinions: 3,\n    },\n    // Read live every spawn so a settings change applies to newly added\n    // experts without a restart.\n    getExpertLimits: () => {\n      const prefs = runtime.prefs.get()\n      return {\n        maxTokens: prefs.expertMaxTokens ?? 0,\n        maxOpinions: prefs.expertMaxOpinions ?? 0,\n      }\n    },\n    // R2.2/D5：skill 传递方式的默认值，读设置页（实时）。\n    getSkillDelivery: () => (runtime.prefs.get()).skillDelivery ?? 'relay',\n    // R1 第 3 条：卡片默认值的设置页那一层。\n    getPlannedDefaults: () => {\n      const prefs = runtime.prefs.get()\n      return {\n        mode: prefs.defaultMode,\n        maxRounds: prefs.maxRounds,\n        maxTokens: prefs.maxTokens,\n        skillDelivery: prefs.skillDelivery ?? 'relay',\n      }\n    },\n  })\n  // 第 1 批：接入宿主子代理生命周期 —— 专家产出自动落盘（即使它没调\n  // roundtable_speak 或中途中断），失败原因写进 node.lastError。\n  attachNodeEvents(ctx)\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 什么实现边界最可能使多角色圆桌协作的贡献不成立，哪些工程设计可复用？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n核心质疑是多人机制是否带来净质量而非更多文字。budget只算文本，provider usage为另一个派生状态；网关每条160字符并在4000总长截头，长会下最新反例可能不进入主持摘要。普通speak不按拓扑强制执行，多模式消息权限也不能等同DAG调度。可借鉴同会议锁、原子写和留档/唤醒分离，但进程内锁不是跨Host事务。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/budget.ts:9-14](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/budget.ts#L9-L14)\n\n预算门使用usedTokens\n\n```text\nexport function budgetExceeded(meeting: Meeting): 'rounds' | 'tokens' | undefined {\n  // 设 N 轮就能开 N 轮：`round` 是\"已开启的轮次\"，只有想开第 N+1 轮时才触顶。\n  // （旧口径 `>=` 会让 maxRounds=10 实际只能开 9 轮——对面向用户的设置项不直觉。）\n  if (meeting.round > meeting.budget.maxRounds) return 'rounds'\n  if (meeting.budget.usedTokens >= meeting.budget.maxTokens) return 'tokens'\n  return undefined\n```\n\n**依据 2 · 源码核查**：[src/budget.ts:75-84](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/budget.ts#L75-L84)\n\n字符估算公式\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/** Estimate the token cost of a text (coarse: ~0.6 tokens per CJK char, ~0.3 per latin). */\nexport function estimateTokens(text: string): number {\n  let cjk = 0\n  let other = 0\n  for (const char of text) {\n    const code = char.codePointAt(0) ?? 0\n    if (code >= 0x2e80) cjk += 1\n    else if (char.trim() !== '') other += 1\n  }\n  return Math.ceil(cjk * 0.6 + other * 0.3)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/token-usage.ts:22-24](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/token-usage.ts#L22-L24)\n\n真实usage仅派生且冷会话不可测\n\n```text\n * 本模块只读、不写状态：把真实值作为 `roundtable_status` 的派生输出，而不是\n * 新落一个半成品字段（否则又是\"定义了却没人用\"的账）。冷会话（进程重启后的\n * 旧节点）取不到值 —— 宁可标注\"不可测\"，也不拿估算冒充实测。\n```\n\n**依据 4 · 源码核查**：[src/aggregator.ts:31-42](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/aggregator.ts#L31-L42)\n\n顺序拼接并截前4000\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/** Merge utterances into a compact, chronological exchange (who → whom: core point). */\nexport function aggregateUtterances(utterances: readonly MeetingUtterance[], maxLength = MAX_LENGTH): string {\n  const lines: string[] = []\n  for (const utterance of utterances) {\n    if (utterance.kind !== 'speech' && utterance.kind !== 'proxy-thinking') continue\n    const from = utterance.nodeKey\n    const to = utterance.to ?? '网关'\n    const body = compact(extractCore(utterance.summary ?? utterance.content), MAX_PER_UTTERANCE)\n    lines.push(`[R${utterance.round}] ${from} → ${to}\\n${body}`)\n  }\n  const text = `[汇聚网关·交锋摘要]\\n${lines.join('\\n\\n') || '（暂无发言）'}`\n  return text.length > maxLength ? `${text.slice(0, maxLength)}\\n…(截断)` : text\n```\n\n</details>\n\n**依据 5 · 源码核查**：[src/tools.ts:917-932](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L917-L932)\n\n权限按模式及参与者判断\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      const prepared = await withMeetingLock(meetingLockKey(stateRoot, located.id), async () => {\n        const { meeting, identity } = await requireFreshParticipant(stateRoot, located.id, caller.id)\n        await assertUsablePersisting(stateRoot, meeting)\n        const speaker = identity.kind === 'captain' ? CAPTAIN_KEY : identity.name\n        if (meeting.mode !== 'egalitarian' && identity.kind === 'node' && to !== CAPTAIN_KEY) {\n          throw new Error('orchestrated/redteam mode: nodes report to the captain only — the captain relays between nodes')\n        }\n        if (to === CAPTAIN_KEY) {\n          // Captain-bound messages are persisted in the transcript; live steering happens after the lock.\n          await recordUtterance(stateRoot, meeting, { nodeKey: speaker, kind: 'speech', content, to: CAPTAIN_KEY })\n          return { kind: 'captain' as const, meeting, speaker }\n        }\n        const recipient = requireNode(meeting, to)\n        if (recipient.id === '') throw new Error(`node \"${to}\" has no live subagent yet`)\n        await recordUtterance(stateRoot, meeting, { nodeKey: speaker, kind: 'speech', content, to })\n        return { kind: 'node' as const, meeting, speaker, recipient }\n```\n\n</details>\n\n#### 缺口\n\n- 同预算单Agent/多专家质量与完整coverage未比较\n  **影响**：无法判断多模型讨论是否值得额外费用\n  **进一步探讨**：固定任务和验收标准，比较遗漏、正确修改、总用量与人工主持时间\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次要设角色/模型/模式并理解确认卡；持续成本含各专家system/persona/历史、输出、拆观点模型和人工主持；失败需读日志、核dropped或冷节点、避免重复副作用。预算文本量只是交流刻度，实际费用取所有请求和可测覆盖，未知会话不能填零。没有每合格决策成本或净节时数据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/token-usage.ts:4-24](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/token-usage.ts#L4-L24)\n\n真实费用遗漏边界\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n * 背景：`meeting.budget.usedTokens` 只累加**发言文本**的粗估（≈0.6 token/字），\n * 不含 system prompt、专家 persona、历史上下文与工具调用开销。真实会议数据\n * 里，它 7/7 场与\"逐条发言文本估算\"完全相等，而主持人自己的发言就吃掉\n * 38.9%（某一场达 73.4%）—— 用户设 200k，专家实际能用的远不到一半。v0.2.35\n * 只补了 UI 标注（\"不是真实账单\"），根因未修。\n *\n * 宿主其实有精确的 provider 上报值：\n * - `ctx.sessionProjections.snapshot(session, ['tokenUsage'])` 的\n *   `tokenUsage` 由每个 assistant settlement 的 usage 采样累加而来\n *   （`uncachedInputTokens` / `outputTokens` / `cacheReadTokens` /\n *   `cacheWriteTokens`，四桶互不重叠）；\n * - `Agent.session` 是拿到 `Session` 的现成入口（`tools.ts` 早已在用\n *   `agent.session.header.cwd`）。\n *\n * **明确否定的一条**：`ctx.subagents.sendMessage` / `startContinuable` 的返回值\n * 都不带 usage，`SubagentResult` / `SubagentRunEndInfo` 也没有 —— 想接真实用量\n * 只能走\"子会话的 session\"这条路。\n *\n * 本模块只读、不写状态：把真实值作为 `roundtable_status` 的派生输出，而不是\n * 新落一个半成品字段（否则又是\"定义了却没人用\"的账）。冷会话（进程重启后的\n * 旧节点）取不到值 —— 宁可标注\"不可测\"，也不拿估算冒充实测。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.ts:163-168](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/index.ts#L163-L168)\n\n观点拆分额外固定路由\n\n```text\n    // 观点拆分 LLM 路由：默认 deepseek-official/deepseek-v4-flash（实测可用），\n    // 后续可配置化；不可用时 collect 自动整条兜底（三道防线②）。\n    reviewSplit: {\n      provider: 'deepseek-official',\n      model: 'deepseek-v4-flash',\n      maxOpinions: 3,\n```\n\n**依据 3 · 源码核查**：[src/tools.ts:934-946](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L934-L946)\n\n送达失败恢复责任\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n      const captainLive = ctx.agents.get(prepared.meeting.captainSessionId as import('@deepseek-ai/dsh-session').SessionId)\n      if (prepared.kind === 'captain') {\n        if (captainLive !== undefined && prepared.speaker !== CAPTAIN_KEY) {\n          const delivered = steerCaptain(captainLive, `RoundTable message from ${prepared.speaker}:\\n\\n${content}`)\n          return { delivered: delivered ? 'live' : 'dropped' }\n        }\n        return { delivered: 'dropped' }\n      }\n      if (captainLive !== undefined) {\n        const accepted = await deliverToNode(ctx, captainLive, prepared.recipient.id, content, exec.signal)\n        return { delivered: accepted ? 'wake' : 'dropped' }\n      }\n      return { delivered: 'dropped' }\n```\n\n</details>\n\n#### 缺口\n\n- 账单、主持工时与结果质量数据不足\n  **影响**：不能支持成本下降或无人值守\n  **进一步探讨**：同任务同总预算记录所有请求、人工修订和合格决策\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可从角色调度、会话状态与结论交付的限制推导什么可证伪改进？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证方案把汇聚改成按观点ID/轮次增量收据，明确哪些发言已看、哪条被裁剪与冲突未解；预算则在新唤醒前依据可测真实请求并为冷节点预留unknown。它针对当前截头汇聚和发言粗估的局限。对照当前圆桌与单Agent，若关键反例仍漏、真用量失控或合格方案质量不升则否定，收据token与主持负担另计。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/aggregator.ts:31-42](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/aggregator.ts#L31-L42)\n\n汇聚覆盖改进切入点\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n/** Merge utterances into a compact, chronological exchange (who → whom: core point). */\nexport function aggregateUtterances(utterances: readonly MeetingUtterance[], maxLength = MAX_LENGTH): string {\n  const lines: string[] = []\n  for (const utterance of utterances) {\n    if (utterance.kind !== 'speech' && utterance.kind !== 'proxy-thinking') continue\n    const from = utterance.nodeKey\n    const to = utterance.to ?? '网关'\n    const body = compact(extractCore(utterance.summary ?? utterance.content), MAX_PER_UTTERANCE)\n    lines.push(`[R${utterance.round}] ${from} → ${to}\\n${body}`)\n  }\n  const text = `[汇聚网关·交锋摘要]\\n${lines.join('\\n\\n') || '（暂无发言）'}`\n  return text.length > maxLength ? `${text.slice(0, maxLength)}\\n…(截断)` : text\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/token-usage.ts:53-60](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/token-usage.ts#L53-L60)\n\n真实用量带可测/不可测覆盖\n\n```text\n/** How many expert sessions could be measured for one meeting. */\nexport interface MeetingRealUsage {\n  /** Sum of measured session totals. */\n  measuredTotal: number\n  /** Sessions that produced a provider-reported figure. */\n  measuredSessions: number\n  /** Child sessions that exist but could not be measured (cold / not live). */\n  unmeasuredSessions: number\n```\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 哪些用户可以受控采用多角色圆桌协作，何时应停止？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n适合愿主持和审证的开发/研究维护者先用两三位角色、低轮数和可重做任务试用；不适合要求严格账单封顶、自动质量认证或不可重复外部动作。成功是决策可回证据且同预算有增益；budget异常、摘要漏反例、dropped或冷节点应暂停查持久事实再派发，不依据UI状态重放。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/tools.ts:893-907](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L893-L907)\n\n即时消息返回wake/live/dropped\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n    name: 'roundtable_send_message',\n    description: 'Send a direct message that WAKES the recipient as its next turn — use it only when they must act right now; ordinary reporting goes through roundtable_speak (durable, wakes nobody). When forwarding someone else\\'s opinion, quote the reference R{n}[{speaker}] instead of pasting the full text. In \"orchestrated\" mode only the captain may message nodes (nodes report to the captain); in \"egalitarian\" mode any participant may message any other — this is how experts debate peer-to-peer.',\n    parameters: {\n      to: { type: 'string', required: true, description: 'Recipient: \"captain\" or a node key.' },\n      content: { type: 'string', required: true, description: 'The message text.' },\n    },\n    output: {\n      schema: {\n        type: 'object',\n        additionalProperties: false,\n        properties: {\n          delivered: { type: 'string', required: true, description: 'wake (recipient node woken), live (captain steered), or dropped (best effort failed).' },\n        },\n      },\n      render: (_args, value) => [{ type: 'text', text: `Message delivered via ${value.delivered}.` }],\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/budget.ts:48-58](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/budget.ts#L48-L58)\n\n闭麦仍留退出/补预算通道\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n * @param options.allowMuted - resolve/escalate paths (top up the budget, close,\n *   export, clear the user-action queue) stay reachable while muted; everything\n *   that produces new work still throws.\n */\nexport function assertUsable(meeting: Meeting, options: { allowMuted?: boolean } = {}): void {\n  if (meeting.status === 'ended' || meeting.status === 'archived') {\n    throw new MeetingEndedError(meeting.id)\n  }\n  if (options.allowMuted === true) return\n  const axis = budgetExceeded(meeting)\n  if (axis !== undefined) throw new MeetingMutedError(meeting.id, axis)\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/tools.ts:1483-1496](https://github.com/9931666/dsh-plugin-roundtable/blob/e2cb127bc0c2654a92cf2db64256c982c78b90e4/src/tools.ts#L1483-L1496)\n\n结束review是状态而非修复验收\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      return withCaptainLock(stateRoot, located.id, captain.id, 'finish the review', async (fresh) => {\n        const review = await readReview(stateRoot, fresh.id)\n        if (review === undefined) throw new Error('no review in progress — call roundtable_start_review first')\n        if (review.status === 'done') {\n          return { status: review.status, review_pass: review.reviewPass, endorsed_count: countEndorsed(review), can_review_again: review.reviewPass < review.maxReviewPass }\n        }\n        if (review.status === 'reviewing') {\n          throw new Error('review is still collecting viewpoints — call roundtable_collect_review before finishing')\n        }\n        review.status = 'done'\n        review.finishedAt = Date.now()\n        const summary = String(args.revised_plan_summary ?? '').trim()\n        if (summary !== '') {\n          // 本轮修订说明并入最后一条历史（无历史则新建），供下一轮\"旧缺陷是否修复\"核对。\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：022ff220382fcf477d254f924a2a5a6b43820dbaf2c2df9d5d82e1d3b0774d98。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 15 | 1935 | — | — | 32429 |\n| .mjs | source | 7 | 1387 | 1016 | 248 | — |\n| .ts | source | 30 | 8121 | 5959 | 1748 | — |\n| .tsx | source | 5 | 3125 | 2689 | 305 | — |\n| .mjs | test | 17 | 1994 | 1606 | 199 | — |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| roundtable_plan_meeting | 草案确认 | 依赖用户问答；缺失不等于批准 |\n| roundtable_create | 建会及固定设置 | 确认草案及工作区状态 |\n| roundtable_add_node | 创建持久专家 | 可用模型、角色与宿主子代理 |\n| roundtable_remove_node | 移除专家 | 需核子代理清理 |\n| roundtable_connect | 设置拓扑连线 | 图语义依协作模式 |\n| roundtable_disconnect | 删除连线 | 不把图当严格工作流 |\n| roundtable_speak | 持久报告发言 | 不唤醒接收者 |\n| roundtable_send_message | 请求对方立即行动 | 模式权限，可能dropped |\n| roundtable_summarize | 拉取确定性汇聚 | 字符截断，非证据审定 |\n| roundtable_request_decision | 用户拍板 | 问答服务及人工决定 |\n| roundtable_status | 查状态和用量 | 真实usage仅live可测部分 |\n| roundtable_kb_digest | 记录KB要点缓存 | path/size/mtime非内容真实性 |\n| roundtable_actions_clear | 清用户动作队列 | 坏行计数需如实处理 |\n| roundtable_start_review | 开启红队轮次 | 超过三轮需显式用户批准 |\n| roundtable_collect_review | 收集拆分观点 | LLM/本地兜底，需核原文 |\n| roundtable_finish_review | 结束并记修订 | 不自动证明缺陷修复 |\n| roundtable_export_review | 导出评审链 | 含观点和用户表态 |\n| roundtable_export_meeting | 导出整场记录 | 进行中为快照，写本地export.md |\n| roundtable_set_budget | 补充/收紧预算 | 发言量估算非真实费用 |\n| roundtable_close | 结束会议 | 需核节点处置 |\n| roundtable_proxy_think | 为黑盒工作模型准备导演参数 | 额外模型思考非工作模型真实内部过程 |\n| 圆桌Tab/设置页 | 拓扑与角色/阵容管理 | 自建角色，无斜杠命令 |\n\n## 工程亮点\n\n留档和唤醒拆分、状态投影与预算恢复通道值得借鉴；复用需主持/专家所有权、未知送达不重放、汇聚覆盖及真实成本测量，图形UI不代替执行语义。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/tools.ts、src/plan.ts、src/budget.ts、src/token-usage.ts、src/aggregator.ts、src/state.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读Host接线、21工具注册及关键发言/送达/评审、预算、usage、汇聚和草案；未完整审计全部RPC/UI/子代理生命周期或运行。\n- 下一步：在可重复任务中对照单Agent/当前圆桌/增量收据，核关键反例覆盖、正确修改、实际用量和人工主持时间。\n",
+        "metadata": {
+            "repository": "9931666/dsh-plugin-roundtable",
+            "repository_id": 1342524723,
+            "captured_at": "2026-10-23T01:50:26.766Z",
+            "window_start": "2026-09-23T01:50:26.766Z",
+            "stars": 12,
+            "pushed_at": "2026-10-18T07:33:32Z",
+            "issues": {
+                "open": null,
+                "closed": 0,
+                "created_30d": 0,
+                "closed_30d": 0,
+                "updated_30d": 0
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B784:291B8D:11F6EC:136B31:6ADABD65 and timestamp 2026-10-23 01:50:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "@y9931666/dsh-plugin-roundtable",
+                "captured_at": "2026-10-23T01:50:34.818Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 1464,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40y9931666%2Fdsh-plugin-roundtable",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-10-01T13:52:06.605Z",
+                    "captured_at": "2026-10-23T01:50:34.818Z",
+                    "source_url": "https://registry.npmjs.org/%40y9931666%2Fdsh-plugin-roundtable",
+                    "error": null,
+                    "latest_version": "1.0.0-rc.3",
+                    "latest_published_at": "2026-10-03T07:55:20.846Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1342524723:root",
             "repository": "9931666/dsh-plugin-roundtable",

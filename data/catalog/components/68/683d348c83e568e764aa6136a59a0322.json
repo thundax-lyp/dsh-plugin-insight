@@ -7,14 +7,14 @@
             "id": "github:1421924264:root",
             "repository": "NeoHotaru/dsh-knowledge-canvas",
             "path": "",
-            "revision": "7523548086ae9daf282c8fcc60a80f49c771a6d8",
+            "revision": "99750d7a598136566436617eade11c286453a918",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c11fec2bfed472b2a81dc69c24ddbe90094bb44d65a8b698442752053c8bc8b2",
-                "code": "7523548086ae9daf282c8fcc60a80f49c771a6d8",
-                "maintenance": "eb200e8660ff6cf5dac81115ca8d04078e0f3366913792a9f3f42acffdc2e226"
+                "code": "99750d7a598136566436617eade11c286453a918",
+                "maintenance": "e84943f6101c95032d84b885d147279955c88570f7e379fb50c4e9bb9e26d7cf"
             }
         }
     }

@@ -7,14 +7,14 @@
             "id": "github:1414585141:root",
             "repository": "HYClub/deepseek-harness-game-studios",
             "path": "",
-            "revision": "4e5059b0421861e07fc2af26df42ad65c2fec509",
+            "revision": "9af5ff1775889817328a7da33a940c29dbb6b1b8",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "315b74df5f90030d9d7497df31dd77ad1bc2306b235c8aa76f28481d0c4957b7",
-                "code": "4e5059b0421861e07fc2af26df42ad65c2fec509",
-                "maintenance": "d6442f75839ae32c3c2dc3a72db512181db2ff1794429e1e681d92c7df630cee"
+                "code": "9af5ff1775889817328a7da33a940c29dbb6b1b8",
+                "maintenance": "77d009d22e78344852331d51e08896afc0d1da2a486b94b1b50516afb9c5244d"
             }
         }
     }

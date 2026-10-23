@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "0a0e39dc1120ee4ade40c89470211cfa",
+    "identity": "github:1428315538:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1428315538:root",
+            "repository": "shrekcg/dsh-turn-rail",
+            "path": "",
+            "revision": "a65137a6e3cbf63c30c6bd12f36cb0c917bc835c",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "fcada2ca46cc013543993c4b835cd52c2db98d2087e2eaec4dd2b4c51664974e",
+                "code": "a65137a6e3cbf63c30c6bd12f36cb0c917bc835c",
+                "maintenance": "2ea2afafcfbb37e0ec754181b1ea4ac4375dce941d86777c1c86ca22bd70d8d6"
+            }
+        }
+    }
+}

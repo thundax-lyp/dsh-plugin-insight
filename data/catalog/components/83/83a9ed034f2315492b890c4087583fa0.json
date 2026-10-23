@@ -3,6 +3,475 @@
     "id": "83a9ed034f2315492b890c4087583fa0",
     "identity": "github:1334255250:root",
     "data": {
+        "catalog.plugins": {
+            "id": "github:1334255250:root",
+            "repository_id": 1334255250,
+            "component_id": "root",
+            "repository": "AcidGr/dsh-web-mobile-fix",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-web-mobile-fix",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "8d870625bf344bde336f0472262bdcc667acdef3f0a53ba130f732dd4a636973",
+                "code": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "maintenance": "1c1523f88a811e8b3a839f01aa4fd59519d8adbaab1fd531a7f394b4693603ee"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-23-01-github-1334255250-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "a5284f29fddb836f4afb87893fa9ea6c8b4cb9ff",
+                    "retrieved_at": "2026-10-23T01:58:18.476Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-23-01-github-1334255250-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AcidGr/dsh-web-mobile-fix",
+                            "commit": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                            "path": "README.md",
+                            "content_sha256": "8518197571578429ad207d0dee53d1bebc1823121e81f2085d9e231d3b1eb764"
+                        }
+                    ],
+                    "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                    "captured_at": "2026-10-23T01:58:18.476Z",
+                    "summary": "为Harness网页提供窄屏布局修复，并适配悬浮窗口中的会话和输入交互。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/acidgr--dsh-web-mobile-fix/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-23-01-github-1334255250-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AcidGr/dsh-web-mobile-fix",
+                            "commit": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                            "path": "README.md",
+                            "content_sha256": "8518197571578429ad207d0dee53d1bebc1823121e81f2085d9e231d3b1eb764"
+                        },
+                        {
+                            "repository_url": "https://github.com/AcidGr/dsh-web-mobile-fix",
+                            "commit": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                            "path": "README.zh.md",
+                            "content_sha256": "d6b240d924285f670d4f6026935bdea01981af2d26501ce71e4c804962abaf7a"
+                        },
+                        {
+                            "repository_url": "https://github.com/AcidGr/dsh-web-mobile-fix",
+                            "commit": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                            "path": "package.json",
+                            "content_sha256": "d08dd2c113c2797996fe3152ab5d13de9fb948b4864b516e8a588594097699cb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AcidGr/dsh-web-mobile-fix",
+                            "commit": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                            "path": "lib/index.js",
+                            "content_sha256": "921dffa10a158e6595ec7a3f8cc127e6865090aba65a8c91682c0533e75b86bb"
+                        },
+                        {
+                            "repository_url": "https://github.com/AcidGr/dsh-web-mobile-fix",
+                            "commit": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                            "path": "lib/client.js",
+                            "content_sha256": "cf6c7573edb935fdc6a8c390822914ddace8b760a6652d59a6116507a8b2a139"
+                        }
+                    ],
+                    "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                    "captured_at": "2026-10-23T01:58:18.476Z",
+                    "summary": "核查 README.md、README.zh.md、package.json、lib/index.js、lib/client.js；客户端模块注入样式，<=700px覆盖布局；overlay识别后改document标记和HTMLElement.prototype.focus，添加桥接按钮、会话深链接与事件监听。Node入口apply为空。",
+                    "artifact": "data/runs/2026-10-23-01/snapshots/acidgr--dsh-web-mobile-fix/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定版README、manifest、Node空入口与客户端CSS/overlay/清理链；未运行浏览器、软键盘或宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向通过手机浏览Harness Web、频繁在设置、会话列表和对话输入间切换的人。合格结果是窄屏能选会话、配置及发送信息而不遮挡；简单替代是宿主原生响应式布局或用户样式。该版还包含Android悬浮窗口行为，不应仅按CSS补丁理解。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "客户端模块注入样式，<=700px覆盖布局；overlay识别后改document标记和HTMLElement.prototype.focus，添加桥接按钮、会话深链接与事件监听。Node入口apply为空。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定版README、manifest、Node空入口与客户端CSS/overlay/清理链；未运行浏览器、软键盘或宿主。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT；包1.0.8，客户端web声明，兼容表为作者元数据。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器加载脚本和CSS，金额未知 | 安装及多尺寸/键盘核对，耗时未知 | 已有布局能满足时无需增加覆盖 |\n| 持续使用 | CSS匹配、事件监听及blur渲染资源，量未知 | 宿主升级后回归各选择器 | 移动耗电和掉帧未测 |\n| 失败恢复 | 重新加载页面资源，金额未知 | 停用插件、刷新并重验焦点与侧栏 | effect清理不恢复focus覆盖 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "建议观察。普通窄屏用户先确认宿主原生布局是否足够；确需评估时用非关键profile，测试设置、长会话、键盘和停用后全页刷新。需要可靠热卸载、无障碍焦点或与其他focus插件共存时暂缓。参见[Q06](#research-q06)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 窄屏布局 | <=700px规则覆盖导航/输入/侧栏 | 不同语言、缩放与软键盘下可用性 |\n| 悬浮交互 | 桥接按钮、触控焦点及深链接实现可见 | 与辅助技术及其他插件是否冲突 |\n| 可逆性 | 移除样式及部分监听 | 无刷新卸载无法由源码保证完全恢复 |",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "样式注入与ctx.effect回收的模式便于局部复用；全局focus替换、宽DOM选择器、空catch及遗漏监听使维护边界扩大，移植需重建宿主DOM契约与可撤销生命周期。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "相对手改产品源码，插件封装了可随profile加载的窄屏布局及悬浮窗口交互，集中处理导航、输入与会话切换；增量为宿主界面适配，未识别新布局算法。参见[Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "README的纯CSS与完全可逆描述不覆盖真实实现。overlay分支全局替换focus且清理未恢复，pointer/touch/mousedown与侧栏监听也未全部移除；这是静态可见的清理遗漏，实际干扰尚未复现。参见[Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "可把悬浮焦点策略改为有所有者的可撤销适配器，保存原focus、统一登记监听和计时器，停用时逐项恢复。对照当前分支反复加载/停用、键盘导航及两个插件并存，若焦点和监听未恢复或触控体验变差则否定方案；仍是未验证设计。参见[Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334255250:root",
+                            "area": "code",
+                            "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-23T01:58:18.476Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-23T01:58:18.476Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "reviewed_at": "2026-10-23T01:58:18.476Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334255250:root",
+                        "area": "code",
+                        "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty为常规CSS与bridge适配小幅增量；mechanism为局部交互组合；transferability受宿主DOM限制；simplification为免改产品源码便利。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "workflow为移动任务入口便利；delivery仍是原会话；reach为手机/悬浮环境扩展；economics未识别可核查成本结构增量。",
+                    "basis": "interpretation",
+                    "score": 27,
+                    "evidence_ids": [
+                        "2026-10-23-01-github-1334255250-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "移动布局有针对性，但全局focus与事件清理遗漏妨碍安全热卸载，先观察并限定非关键评估。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "手机配置和会话任务具体，频率未量化。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "集中布局与bridge适配有价值，原生布局也可能满足。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码可核，未运行浏览器与宿主。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "热卸载残留和升级选择器维护提高负担。"
+                    }
+                },
+                "score": 54,
+                "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "reviewed_at": "2026-10-23T01:58:18.476Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-23-01-github-1334255250-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334255250:root",
+                        "area": "code",
+                        "fingerprint": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334255250:root",
+            "repository": "AcidGr/dsh-web-mobile-fix",
+            "path": "",
+            "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+            "fingerprints": {
+                "directory": "8d870625bf344bde336f0472262bdcc667acdef3f0a53ba130f732dd4a636973",
+                "code": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+                "maintenance": "1c1523f88a811e8b3a839f01aa4fd59519d8adbaab1fd531a7f394b4693603ee"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-23T01:41:11Z",
+            "analysis_sha256": "6b1dab1787d799a029f46ed719000c7be12df5033e6cf56c17c09f87e17e1c44"
+        },
+        "publication.metadata": "data/plugins/acidgr--dsh-web-mobile-fix/META.json",
+        "publication.summaries": {
+            "text": "为Harness网页提供窄屏布局修复，并适配悬浮窗口中的会话和输入交互。",
+            "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+            "source_url": "https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+            "items": {
+                "界面": "窄屏设置、侧栏和输入布局覆盖；悬浮控制按钮与会话切换",
+                "后台": "焦点、点击和视口事件驱动交互适配"
+            },
+            "table": "#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 窄屏布局覆盖 | 设置/输入/侧栏可用布局 | <=700px，依赖DOM选择器 |\n| 悬浮窗口控制 | 返回、退出及会话切换 | 需overlay模式与相应bridge |\n| 焦点和滚动适配 | 抑制非触摸聚焦并保持输入可见 | 全局原型补丁，清理不完整 |"
+        },
+        "publication.advice": {
+            "revision": "bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7",
+            "text": "建议观察。普通窄屏用户先确认宿主原生布局是否足够；确需评估时用非关键profile，测试设置、长会话、键盘和停用后全页刷新。需要可靠热卸载、无障碍焦点或与其他focus插件共存时暂缓。参见[Q06](#research-q06)。"
+        },
+        "registry": "data/plugins/acidgr--dsh-web-mobile-fix",
+        "reports": "# dsh-web-mobile-fix\n\n> 为Harness网页提供窄屏布局修复，并适配悬浮窗口中的会话和输入交互。\n\n## 研究范围\n\n- **仓库**：[AcidGr/dsh-web-mobile-fix](https://github.com/AcidGr/dsh-web-mobile-fix)\n- **版本号**：1.0.8（[固定提交 bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7](https://github.com/AcidGr/dsh-web-mobile-fix/tree/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7)）\n- **版本日期**：2026-09-24（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n界面适配机制由固定源码支持；移动端效果、兼容范围和设计假设未运行验证。\n\n## 洞察短评\n\n- **用途**：面向通过手机浏览Harness Web、频繁在设置、会话列表和对话输入间切换的人。合格结果是窄屏能选会话、配置及发送信息而不遮挡；简单替代是宿主原生响应式布局或用户样式。该版还包含Android悬浮窗口行为，不应仅按CSS补丁理解。\n- **亮点**：相对手改产品源码，插件封装了可随profile加载的窄屏布局及悬浮窗口交互，集中处理导航、输入与会话切换；增量为宿主界面适配，未识别新布局算法。参见[Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：README的纯CSS与完全可逆描述不覆盖真实实现。overlay分支全局替换focus且清理未恢复，pointer/touch/mousedown与侧栏监听也未全部移除；这是静态可见的清理遗漏，实际干扰尚未复现。参见[Q03](#research-q03)。\n- **建议**：可把悬浮焦点策略改为有所有者的可撤销适配器，保存原focus、统一登记监听和计时器，停用时逐项恢复。对照当前分支反复加载/停用、键盘导航及两个插件并存，若焦点和监听未恢复或触控体验变差则否定方案；仍是未验证设计。参见[Q05](#research-q05)。\n\n采用建议：建议观察。普通窄屏用户先确认宿主原生布局是否足够；确需评估时用非关键profile，测试设置、长会话、键盘和停用后全页刷新。需要可靠热卸载、无障碍焦点或与其他focus插件共存时暂缓。参见[Q06](#research-q06)。\n\n## 核心贡献\n\n相对手改产品源码，插件封装了可随profile加载的窄屏布局及悬浮窗口交互，集中处理导航、输入与会话切换；增量为宿主界面适配，未识别新布局算法。参见[Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\nREADME的纯CSS与完全可逆描述不覆盖真实实现。overlay分支全局替换focus且清理未恢复，pointer/touch/mousedown与侧栏监听也未全部移除；这是静态可见的清理遗漏，实际干扰尚未复现。参见[Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可把悬浮焦点策略改为有所有者的可撤销适配器，保存原focus、统一登记监听和计时器，停用时逐项恢复。对照当前分支反复加载/停用、键盘导航及两个插件并存，若焦点和监听未恢复或触控体验变差则否定方案；仍是未验证设计。参见[Q05](#research-q05)。\n\n可在隔离profile用同一设置/发送任务对照原生布局，覆盖加载/停用、软键盘、横屏与其他焦点插件，记录功能与恢复结果。\n\n## 场景与替代办法\n\n面向通过手机浏览Harness Web、频繁在设置、会话列表和对话输入间切换的人。合格结果是窄屏能选会话、配置及发送信息而不遮挡；简单替代是宿主原生响应式布局或用户样式。该版还包含Android悬浮窗口行为，不应仅按CSS补丁理解。\n\n手工用户样式只解决布局；原生响应式界面若已满足，插件额外监听与桥接负担不一定值得。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Harness Web profile与客户端模块加载器 | 必需 | 加载 ./client 与样式 | Node半部为空，单独加载不产生布局效果 |\n| 宿主DOM槽位及类名片段 | 必需 | 命中设置、侧栏、输入框 | 选择器变更可能失效或误匹配 |\n| DSHOverlayBridge或overlay URL标记 | 悬浮模式必需 | 原生返回、退出与切换会话 | 部分按钮退化，URL误匹配仍可能进入模式 |\n| Node >=20、DSH >=0.1.0 | 包声明 | 安装与宿主依赖 | 范围声明不是逐版验收 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 用户在web profile安装并刷新 | 确认客户端模块进入页面 |\n| 2 | 用户用窄屏检查设置、侧栏及输入 | 不遮挡内容，可用键盘及触控完成操作 |\n| 3 | 需要悬浮模式时核查bridge与焦点行为 | 输入框只在用户意图时聚焦且能正常辅助导航 |\n| 4 | 移除插件并重新加载页面 | 样式、监听和focus恢复；当前实现需全页刷新消除全局补丁 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 浏览器加载脚本和CSS，金额未知 | 安装及多尺寸/键盘核对，耗时未知 | 已有布局能满足时无需增加覆盖 |\n| 持续使用 | CSS匹配、事件监听及blur渲染资源，量未知 | 宿主升级后回归各选择器 | 移动耗电和掉帧未测 |\n| 失败恢复 | 重新加载页面资源，金额未知 | 停用插件、刷新并重验焦点与侧栏 | effect清理不恢复focus覆盖 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 窄屏布局 | <=700px规则覆盖导航/输入/侧栏 | 不同语言、缩放与软键盘下可用性 |\n| 悬浮交互 | 桥接按钮、触控焦点及深链接实现可见 | 与辅助技术及其他插件是否冲突 |\n| 可逆性 | 移除样式及部分监听 | 无刷新卸载无法由源码保证完全恢复 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在固定提交 bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7 和截止 2026-10-23T01:41:11Z 范围内，移动网页布局修复能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要移动网页布局修复，相对手工或宿主原生办法增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n手机浏览Harness的个人用户若反复遇到设置、会话列表和输入区挤压，可用插件集中覆盖布局；交付标准为能完成选会话、配置和发送。与手改产品或用户CSS相比，它提供profile加载与悬浮桥接，但并无新布局算法。\n\n作者宣称槽位稳定与不改产品源码；源码支持独立注入，但大量[class*=]和宽role选择器不是独立版本契约。贡献是否节省操作应以完成同一手机任务的成功率核对，不能由截图或规则数量推出。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-25](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/README.md#L1-L25)\n\n作者定位移动布局修复，属于主张而非运行证据\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n# dsh-web-mobile-fix\n[![awesome · DSH plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)\n\n**English** | [简体中文](README.zh.md)\n\nMobile layout fixes for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web UI.\n\nA pure client-side CSS overlay that repairs the worst mobile breakages on narrow (≤700px viewport) screens, without touching any product source:\n\n- Settings panel becomes a full-screen column layout instead of a squeezed desktop layout\n- Sidebar opens floating instead of squeezing the conversation\n- Settings nav tabs fit on a single horizontal row\n- Composer action bar fits on a single row without wrapping or layering\n\n## How it works\n\nThe plugin ships a browser half (`exports[\"./client\"]`, declared via `dsh.client.platform: \"web\"`), discovered by the client-modules scanner and loaded from the boot manifest. It injects one `<style>` tag with `@media (max-width: 700px)` overrides targeting the product's stable `data-slot` attributes, and removes the tag on unload — fully reversible.\n\n## Requirements\n\n- DeepSeek Harness Web profile (`dsh --profile web`), any recent 0.1.x release\n- Selectors target product slot contracts; they are stable within a version line but may need small updates after a major product revamp\n\n## Install\n\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:48-66](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L48-L66)\n\n设置规则实际为居中卡片且匹配通用dialog，不能照抄全屏设置描述\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n      \"@media (max-width: 700px) {\",\n      \"  /* 1. Settings panel: elegant centered floating modal card */\",\n      \"  [role=\\\"dialog\\\"][aria-modal=\\\"true\\\"][aria-labelledby] {\",\n      \"    flex-direction: column !important;\",\n      \"    width: min(92vw, 440px) !important;\",\n      \"    max-width: min(92vw, 440px) !important;\",\n      \"    height: min(78vh, 78dvh, 620px) !important;\",\n      \"    min-height: 420px !important;\",\n      \"    max-height: min(86vh, 86dvh, 680px) !important;\",\n      \"    border-radius: 20px !important;\",\n      \"    background: rgba(28, 32, 42, 0.96) !important;\",\n      \"    backdrop-filter: blur(28px) !important;\",\n      \"    -webkit-backdrop-filter: blur(28px) !important;\",\n      \"    border: 1px solid rgba(255, 255, 255, 0.14) !important;\",\n      \"    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;\",\n      \"    overflow: hidden !important;\",\n      \"    margin: auto !important;\",\n      \"    display: flex !important;\",\n      \"  }\",\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · CSS选择器、overlay bridge及生命周期如何从入口形成完整调用链，依赖失效怎么办？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n插件的Node apply为空，Web加载器发现./client后注入style；窄屏CSS命中DOM槽位，overlay检测另加根标记、focus原型补丁、会话localStorage与桥接按钮。需要Web profile、对应DOM、客户端加载器；先安装刷新，再检查窄屏任务，有bridge才有完整悬浮操作，失败可停用并全页刷新。\n\nURL检测使用字符串包含而非严格参数值；标记一旦设置未在effect中清除。样式范围既有窄屏也有overlay全屏规则，实际影响不局限于手机宽度。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:1-10](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/index.js#L1-L10)\n\nNode入口没有服务端逻辑\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/**\n * Mobile-fix node half. Pure UI plugin: the empty apply exists so the plugin\n * appears in the web profile's cordis.yml / Loader; the browser half ships via\n * exports[\"./client\"], discovered through the package.json dsh.client\n * declaration.\n */\n\n/** Host plugin body — no host-side behavior for this surface plugin. */\nfunction apply() {}\nexport { apply };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1058-1111](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1058-L1111)\n\n检测overlay并全局替换focus\n\n<details>\n<summary>查看原文（54行）</summary>\n\n```text\n    function apply(ctx) {\n      var checkOverlay = function () {\n        if (typeof window === \"undefined\") return false;\n        try {\n          if (window.DSHOverlayBridge !== undefined || window.__DSH_OVERLAY__ === true) return true;\n          var search = window.location && window.location.search;\n          if (search && (search.indexOf(\"ov=\") !== -1 || search.indexOf(\"overlay\") !== -1)) return true;\n        } catch (e) {}\n        return false;\n      };\n\n      var isOverlayMode = checkOverlay();\n      if (isOverlayMode) {\n        document.documentElement.setAttribute(\"data-dsh-overlay\", \"true\");\n        window.__DSH_OVERLAY__ = true;\n\n        // In mobile overlay mode, prevent auto-focus on input fields when switching sessions or clicking home.\n        // Soft keyboard should ONLY pop up when user explicitly touches/clicks the input box!\n        var userTouchingInputRecently = false;\n        var userTouchingInputTimer = null;\n        var recordUserTouch = function (e) {\n          var target = e.target instanceof Element ? e.target : (e.target && e.target.parentElement);\n          var isInputArea = target && target.closest && target.closest(\n            'input, textarea, [contenteditable=\"true\"], [role=\"textbox\"], [data-lexical-editor], [data-composer-input], [class*=\"_input\"]'\n          );\n          if (isInputArea) {\n            userTouchingInputRecently = true;\n            if (userTouchingInputTimer) clearTimeout(userTouchingInputTimer);\n            userTouchingInputTimer = setTimeout(function () {\n              userTouchingInputRecently = false;\n            }, 350);\n          } else {\n            userTouchingInputRecently = false;\n            if (userTouchingInputTimer) clearTimeout(userTouchingInputTimer);\n          }\n        };\n        document.addEventListener(\"pointerdown\", recordUserTouch, true);\n        document.addEventListener(\"touchstart\", recordUserTouch, true);\n        document.addEventListener(\"mousedown\", recordUserTouch, true);\n\n        var origFocus = HTMLElement.prototype.focus;\n        HTMLElement.prototype.focus = function (opts) {\n          // If this is an input/textarea/contenteditable and it wasn't triggered by direct user touch ON THE INPUT BOX, suppress focus\n          var isInputLike = this.matches && this.matches('input, textarea, [contenteditable=\"true\"], [role=\"textbox\"], [data-lexical-editor], [data-composer-input]');\n          if (isInputLike && !userTouchingInputRecently) {\n            return;\n          }\n          return origFocus.apply(this, arguments);\n        };\n\n        // Target session deep link & hot-switching support\n        var getTargetSession = function () {\n          try {\n            var search = window.location && window.location.search;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:1113-1167](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1113-L1167)\n\n深链接写localStorage并重试打开会话\n\n<details>\n<summary>查看原文（55行）</summary>\n\n```text\n              var params = new URLSearchParams(search);\n              var s = params.get(\"session\") || params.get(\"session_id\") || params.get(\"s\");\n              if (s) return s;\n            }\n            var hash = window.location && window.location.hash;\n            if (hash && hash.indexOf(\"session-\") !== -1) {\n              var m = hash.match(/(session-[a-z0-9-]+)/);\n              if (m) return m[1];\n            }\n          } catch (e) {}\n          return null;\n        };\n\n        var targetSessionFromUrl = getTargetSession();\n        if (targetSessionFromUrl) {\n          try {\n            localStorage.setItem(\"dsh.sessions.current\", JSON.stringify({ sessionId: targetSessionFromUrl }));\n          } catch (e) {}\n        }\n\n        // Global hot-switch interface for Android WebView bridge\n        window.DSH_SWITCH_SESSION = function (sessionId) {\n          if (!sessionId) return false;\n          try {\n            localStorage.setItem(\"dsh.sessions.current\", JSON.stringify({ sessionId: sessionId }));\n            var uiWorkspace = ctx.get ? ctx.get(\"uiWorkspace\") : (ctx.uiWorkspace || void 0);\n            if (uiWorkspace && typeof uiWorkspace.openSession === \"function\") {\n              uiWorkspace.openSession(sessionId);\n              return true;\n            }\n          } catch (e) {\n            console.warn(\"[dsh-web-mobile-fix] DSH_SWITCH_SESSION failed:\", e);\n          }\n          return false;\n        };\n\n        if (targetSessionFromUrl) {\n          var openRetries = 0;\n          var tryOpenSession = function () {\n            var uiWorkspace = ctx.get ? ctx.get(\"uiWorkspace\") : (ctx.uiWorkspace || void 0);\n            if (uiWorkspace && typeof uiWorkspace.openSession === \"function\") {\n              uiWorkspace.openSession(targetSessionFromUrl);\n            } else if (openRetries++ < 15) {\n              setTimeout(tryOpenSession, 150);\n            }\n          };\n          setTimeout(tryOpenSession, 100);\n        }\n      }\n\n      var tag = document.createElement(\"style\");\n      tag.dataset.plugin = \"dsh-web-mobile-fix\";\n      tag.textContent = CSS;\n      document.head.append(tag);\n\n```\n\n</details>\n\n**依据 4 · 源码核查**：[package.json:22-43](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/package.json#L22-L43)\n\n运行时与客户端声明\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\"\n    },\n    \"compatibility\": {\n      \"dsh\": \">=0.1.0\",\n      \"dshReleases\": {\n        \"0.1.2-alpha.2\": \"compatible\",\n        \"0.1.2-alpha.3\": \"compatible\",\n        \"0.1.2-alpha.4\": \"compatible\",\n        \"0.1.2-alpha.5\": \"compatible\",\n        \"0.1.2-rc.1\": \"compatible\",\n        \"0.1.3-alpha.1\": \"compatible\",\n        \"0.1.3-alpha.2\": \"compatible\",\n        \"0.1.5-alpha.1\": \"compatible\",\n        \"0.1.5-alpha.2\": \"compatible\",\n        \"0.1.5-rc.1\": \"compatible\",\n        \"0.1.5-rc.2\": \"compatible\",\n        \"0.1.5-rc.3\": \"compatible\",\n        \"0.1.6-alpha.1\": \"compatible\",\n        \"0.1.6-alpha.2\": \"compatible\",\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 什么实现边界最可能使移动网页布局修复的贡献不成立，哪些工程设计可复用？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n最影响可逆性主张的是全局focus补丁和监听的撤销不完整。源码保留origFocus但cleanup没有恢复，侧栏及触摸监听亦残留；未实际复现干扰，不能称已造成故障。集中样式注入可复用，但应补齐生命周期。\n\n设置高度min-height 420px与动态视口上限可能在短屏冲突；侧栏隐藏中心而不是保持正文可见抽屉。工程可借鉴的是效果层集中注入和style标签移除，但作用域宽、空catch与全局原型补丁提高维护负担。当前代码没有恢复origFocus，cleanup只移除部分事件；若热重载重复apply，可能叠加残留闭包。需把代码事实与未复现后果分开。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1093-1111](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1093-L1111)\n\n全局focus替换且闭包捕获用户触摸状态\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n        };\n        document.addEventListener(\"pointerdown\", recordUserTouch, true);\n        document.addEventListener(\"touchstart\", recordUserTouch, true);\n        document.addEventListener(\"mousedown\", recordUserTouch, true);\n\n        var origFocus = HTMLElement.prototype.focus;\n        HTMLElement.prototype.focus = function (opts) {\n          // If this is an input/textarea/contenteditable and it wasn't triggered by direct user touch ON THE INPUT BOX, suppress focus\n          var isInputLike = this.matches && this.matches('input, textarea, [contenteditable=\"true\"], [role=\"textbox\"], [data-lexical-editor], [data-composer-input]');\n          if (isInputLike && !userTouchingInputRecently) {\n            return;\n          }\n          return origFocus.apply(this, arguments);\n        };\n\n        // Target session deep link & hot-switching support\n        var getTargetSession = function () {\n          try {\n            var search = window.location && window.location.search;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1370-1401](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1370-L1401)\n\n侧栏点击监听单独注册\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n      // Auto-collapse full-screen sidebar on mobile/overlay when a session, panel, plugin, or new session is selected\n      var onSidebarItemClick = function (event) {\n        var target = event.target instanceof Element ? event.target : (event.target && event.target.parentElement);\n        if (!target) return;\n        var frame = document.querySelector('[class*=\"_frame\"]');\n        if (!frame || frame.hasAttribute(\"data-sidebar-collapsed\")) return;\n\n        var isOverlay = document.documentElement.hasAttribute(\"data-dsh-overlay\");\n        var isNarrow = isOverlay || (window.innerWidth && window.innerWidth <= 700);\n        if (!isNarrow) return;\n\n        var autoCollapseTarget = target.closest && target.closest(\n          '[class*=\"_sessionRow\"], [class*=\"_searchResultRow\"], ' +\n          '[class*=\"_panelRow\"], nav[class*=\"_panelList\"] button, ' +\n          'button[class*=\"_panelRow\"], button[aria-label*=\"插件\"], button[aria-label*=\"Plugin\" i], ' +\n          'button[class*=\"_newSession\"], button[aria-label*=\"新会话\"], button[aria-label*=\"新建会话\"]'\n        );\n        if (autoCollapseTarget) {\n          setTimeout(function () {\n            try {\n              var layout = ctx.get ? ctx.get(\"layout\") : void 0;\n              if (layout && typeof layout.toggleSidebar === \"function\") {\n                var currentFrame = document.querySelector('[class*=\"_frame\"]');\n                if (currentFrame && !currentFrame.hasAttribute(\"data-sidebar-collapsed\")) {\n                  layout.toggleSidebar();\n                }\n              }\n            } catch (e) {}\n          }, 80);\n        }\n      };\n      document.addEventListener(\"click\", onSidebarItemClick, false);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:1440-1455](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1440-L1455)\n\ncleanup移除部分监听，未恢复focus和触摸/侧栏监听\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      ctx.effect(function () {\n        return function () {\n          tag.remove();\n          if (whaleBtn && whaleBtn.parentNode) whaleBtn.parentNode.removeChild(whaleBtn);\n          if (closeBtn && closeBtn.parentNode) closeBtn.parentNode.removeChild(closeBtn);\n          if (homeBtn && homeBtn.parentNode) homeBtn.parentNode.removeChild(homeBtn);\n          if (backToChatBtn && backToChatBtn.parentNode) backToChatBtn.parentNode.removeChild(backToChatBtn);\n          document.removeEventListener(\"click\", onOverlayClick, true);\n          document.removeEventListener(\"focusin\", onComposerFocus, true);\n          if (typeof window !== \"undefined\") {\n            if (window.visualViewport) {\n              window.visualViewport.removeEventListener(\"resize\", onViewportResize);\n            }\n            window.removeEventListener(\"resize\", onViewportResize);\n          }\n        };\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:159-177](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L159-L177)\n\n展开侧栏时隐藏中心区域\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n      \"  /* 3. Expanded sidebar on narrow screens: take 100% full width and collapse center */\",\n      \"  [class*=\\\"_frame\\\"]:not([data-sidebar-collapsed]) {\",\n      \"    grid-template-columns: 100% 0px 0px !important;\",\n      \"  }\",\n      \"  [class*=\\\"_frame\\\"]:not([data-sidebar-collapsed]) [class*=\\\"_sidebarCol\\\"] {\",\n      \"    width: 100% !important;\",\n      \"    min-width: 100% !important;\",\n      \"    max-width: 100% !important;\",\n      \"    overflow: hidden !important;\",\n      \"    z-index: 60 !important;\",\n      \"  }\",\n      \"  [class*=\\\"_frame\\\"]:not([data-sidebar-collapsed]) [class*=\\\"_centerCol\\\"] {\",\n      \"    width: 0 !important;\",\n      \"    min-width: 0 !important;\",\n      \"    max-width: 0 !important;\",\n      \"    overflow: hidden !important;\",\n      \"    visibility: hidden !important;\",\n      \"    opacity: 0 !important;\",\n      \"    pointer-events: none !important;\",\n```\n\n</details>\n\n#### 缺口\n\n- 宿主DOM和辅助技术实际组合未核查\n  **影响**：无法判定选择器命中及键盘影响覆盖\n  **进一步探讨**：可比较窄屏/overlay、键盘与读屏完成同任务的结果\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次采用需安装并核对手机尺寸、键盘与DOM命中，持续成本是浏览器渲染/监听与升级回归，失败成本是停用、刷新及恢复焦点。现金、耗时和耗电都无实测；效果只能确认覆盖与桥接存在，不能确认任务更快。\n\n计量单位应是手机上完成一次会话切换及发送、或一次设置保存；应记录失败重试、刷新和宿主升级复核。源码没有金额、耗时或耗电对照，不能称免费、零成本或已节省操作。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1403-1437](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1403-L1437)\n\n聚焦及视口变化触发多次定时滚动\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n      // Auto-scroll chat bubbles to bottom when soft keyboard pops up or composer is focused\n      var scrollChatToBottom = function () {\n        if (!document.documentElement.hasAttribute(\"data-dsh-overlay\")) return;\n        var scroller = document.querySelector('[data-conversation-scroll], [class*=\"_scrollBody\"], [class*=\"_scroll\"]');\n        if (scroller) {\n          scroller.scrollTop = scroller.scrollHeight;\n        }\n      };\n\n      var onComposerFocus = function (e) {\n        if (!document.documentElement.hasAttribute(\"data-dsh-overlay\")) return;\n        var target = e.target;\n        if (target && (target.tagName === \"INPUT\" || target.tagName === \"TEXTAREA\" || target.isContentEditable || (target.closest && target.closest('[data-composer-card], [class*=\"_card\"]')))) {\n          scrollChatToBottom();\n          setTimeout(scrollChatToBottom, 100);\n          setTimeout(scrollChatToBottom, 250);\n          setTimeout(scrollChatToBottom, 400);\n        }\n      };\n      document.addEventListener(\"focusin\", onComposerFocus, true);\n\n      var onViewportResize = function () {\n        if (!document.documentElement.hasAttribute(\"data-dsh-overlay\")) return;\n        var active = document.activeElement;\n        if (active && (active.tagName === \"INPUT\" || active.tagName === \"TEXTAREA\" || active.isContentEditable || (active.closest && active.closest('[data-composer-card], [class*=\"_card\"]')))) {\n          scrollChatToBottom();\n          setTimeout(scrollChatToBottom, 100);\n          setTimeout(scrollChatToBottom, 250);\n        }\n      };\n      if (typeof window !== \"undefined\") {\n        if (window.visualViewport) {\n          window.visualViewport.addEventListener(\"resize\", onViewportResize);\n        }\n        window.addEventListener(\"resize\", onViewportResize);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1440-1455](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1440-L1455)\n\n退出恢复负担与清理覆盖相关\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      ctx.effect(function () {\n        return function () {\n          tag.remove();\n          if (whaleBtn && whaleBtn.parentNode) whaleBtn.parentNode.removeChild(whaleBtn);\n          if (closeBtn && closeBtn.parentNode) closeBtn.parentNode.removeChild(closeBtn);\n          if (homeBtn && homeBtn.parentNode) homeBtn.parentNode.removeChild(homeBtn);\n          if (backToChatBtn && backToChatBtn.parentNode) backToChatBtn.parentNode.removeChild(backToChatBtn);\n          document.removeEventListener(\"click\", onOverlayClick, true);\n          document.removeEventListener(\"focusin\", onComposerFocus, true);\n          if (typeof window !== \"undefined\") {\n            if (window.visualViewport) {\n              window.visualViewport.removeEventListener(\"resize\", onViewportResize);\n            }\n            window.removeEventListener(\"resize\", onViewportResize);\n          }\n        };\n```\n\n</details>\n\n#### 缺口\n\n- 端到端操作时间、掉帧和维护工时无数据\n  **影响**：不能量化净收益\n  **进一步探讨**：同设备同任务对照原生布局与插件，分记操作及恢复时间\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 可从CSS选择器、overlay bridge及生命周期的限制推导什么可证伪改进？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设是把悬浮行为收进有所有者的可撤销适配器，统一回收原型补丁、监听和计时器。应以反复加载/停用、键盘导航和插件并存对照原版，只有焦点/监听恢复且触控未退步才支持；残留不降或兼容性变差即否定。\n\n推导来自注入易回滚和原型补丁难回滚之间的不对称。适配器应保存前置值并只在自身仍拥有补丁时恢复，避免覆盖后加载插件；监听/定时器统一dispose，URL模式严格解析。新增代价是生命周期管理与多插件共存测试，不能把设计复杂性当收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:1093-1111](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1093-L1111)\n\n原focus已捕获但未用于撤销，支持设计改进切入点\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n        };\n        document.addEventListener(\"pointerdown\", recordUserTouch, true);\n        document.addEventListener(\"touchstart\", recordUserTouch, true);\n        document.addEventListener(\"mousedown\", recordUserTouch, true);\n\n        var origFocus = HTMLElement.prototype.focus;\n        HTMLElement.prototype.focus = function (opts) {\n          // If this is an input/textarea/contenteditable and it wasn't triggered by direct user touch ON THE INPUT BOX, suppress focus\n          var isInputLike = this.matches && this.matches('input, textarea, [contenteditable=\"true\"], [role=\"textbox\"], [data-lexical-editor], [data-composer-input]');\n          if (isInputLike && !userTouchingInputRecently) {\n            return;\n          }\n          return origFocus.apply(this, arguments);\n        };\n\n        // Target session deep link & hot-switching support\n        var getTargetSession = function () {\n          try {\n            var search = window.location && window.location.search;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:1440-1455](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1440-L1455)\n\n现有effect清理可作为统一dispose挂载点\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      ctx.effect(function () {\n        return function () {\n          tag.remove();\n          if (whaleBtn && whaleBtn.parentNode) whaleBtn.parentNode.removeChild(whaleBtn);\n          if (closeBtn && closeBtn.parentNode) closeBtn.parentNode.removeChild(closeBtn);\n          if (homeBtn && homeBtn.parentNode) homeBtn.parentNode.removeChild(homeBtn);\n          if (backToChatBtn && backToChatBtn.parentNode) backToChatBtn.parentNode.removeChild(backToChatBtn);\n          document.removeEventListener(\"click\", onOverlayClick, true);\n          document.removeEventListener(\"focusin\", onComposerFocus, true);\n          if (typeof window !== \"undefined\") {\n            if (window.visualViewport) {\n              window.visualViewport.removeEventListener(\"resize\", onViewportResize);\n            }\n            window.removeEventListener(\"resize\", onViewportResize);\n          }\n        };\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 哪些用户可以受控采用移动网页布局修复，何时应停止？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n建议观察，适合确有窄屏痛点且能用非关键profile核对的用户；依赖无障碍焦点、热卸载或多个focus插件者暂缓。试用验收应覆盖设置保存、切会话、发消息和停用后刷新；出现聚焦失效或页面截断就停止。\n\n布局便利的证据仅为固定源码实现，作者的兼容版本表没有本轮独立验收。停止条件包括输入无法聚焦、设置被截断、停用后仍自动收侧栏或键盘导航失效；退出采用完整页面刷新，不承诺热卸载恢复。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:19-25](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/README.md#L19-L25)\n\n兼容范围为作者说明\n\n```text\n## Requirements\n\n- DeepSeek Harness Web profile (`dsh --profile web`), any recent 0.1.x release\n- Selectors target product slot contracts; they are stable within a version line but may need small updates after a major product revamp\n\n## Install\n\n```\n\n**依据 2 · 源码核查**：[lib/client.js:1440-1455](https://github.com/AcidGr/dsh-web-mobile-fix/blob/bba4d83bfb1aac90c209fb5602428cbb9bb3fcc7/lib/client.js#L1440-L1455)\n\n恢复限制影响采用结论\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      ctx.effect(function () {\n        return function () {\n          tag.remove();\n          if (whaleBtn && whaleBtn.parentNode) whaleBtn.parentNode.removeChild(whaleBtn);\n          if (closeBtn && closeBtn.parentNode) closeBtn.parentNode.removeChild(closeBtn);\n          if (homeBtn && homeBtn.parentNode) homeBtn.parentNode.removeChild(homeBtn);\n          if (backToChatBtn && backToChatBtn.parentNode) backToChatBtn.parentNode.removeChild(backToChatBtn);\n          document.removeEventListener(\"click\", onOverlayClick, true);\n          document.removeEventListener(\"focusin\", onComposerFocus, true);\n          if (typeof window !== \"undefined\") {\n            if (window.visualViewport) {\n              window.visualViewport.removeEventListener(\"resize\", onViewportResize);\n            }\n            window.removeEventListener(\"resize\", onViewportResize);\n          }\n        };\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b1acd2faeb5005158f8810492bf165cd4e54283ceec5b9d6bc71faf6859dad07。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 1472 | 1399 | 86 | — |\n| .md | source | 2 | 157 | — | — | 1082 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 窄屏布局覆盖 | 设置/输入/侧栏可用布局 | <=700px，依赖DOM选择器 |\n| 悬浮窗口控制 | 返回、退出及会话切换 | 需overlay模式与相应bridge |\n| 焦点和滚动适配 | 抑制非触摸聚焦并保持输入可见 | 全局原型补丁，清理不完整 |\n\n## 工程亮点\n\n样式注入与ctx.effect回收的模式便于局部复用；全局focus替换、宽DOM选择器、空catch及遗漏监听使维护边界扩大，移植需重建宿主DOM契约与可撤销生命周期。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、README.zh.md、package.json、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定版README、manifest、Node空入口与客户端CSS/overlay/清理链；未运行浏览器、软键盘或宿主。\n- 下一步：可在隔离profile用同一设置/发送任务对照原生布局，覆盖加载/停用、软键盘、横屏与其他焦点插件，记录功能与恢复结果。\n",
+        "metadata": {
+            "repository": "AcidGr/dsh-web-mobile-fix",
+            "repository_id": 1334255250,
+            "captured_at": "2026-10-23T01:51:05.704Z",
+            "window_start": "2026-09-23T01:51:05.704Z",
+            "stars": 9,
+            "pushed_at": "2026-09-24T14:25:57Z",
+            "issues": {
+                "open": null,
+                "closed": null,
+                "created_30d": null,
+                "closed_30d": null,
+                "updated_30d": null
+            },
+            "errors": [
+                {
+                    "target": "open",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D062:3229D4:13A7E35:14F4ED7:6ADABD8C and timestamp 2026-10-23 01:51:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D1DE:3FB47D:17838E:19541C:6ADABD8D and timestamp 2026-10-23 01:51:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "created_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20created%3A2026-09-23T01%3A51%3A05.704Z..2026-10-23T01%3A51%3A05.704Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2F2:1BA71D:16A5D1:1876B2:6ADABD8E and timestamp 2026-10-23 01:51:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "closed_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A51%3A05.704Z..2026-10-23T01%3A51%3A05.704Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D3F0:294215:129259:140D13:6ADABD8F and timestamp 2026-10-23 01:51:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                },
+                {
+                    "target": "updated_30d",
+                    "message": "GitHub request failed for search/issues?q=repo%3AAcidGr%2Fdsh-web-mobile-fix%20is%3Aissue%20updated%3A2026-09-23T01%3A51%3A05.704Z..2026-10-23T01%3A51%3A05.704Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D496:325B0F:16BC44:188CFF:6ADABD90 and timestamp 2026-10-23 01:51:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+                }
+            ],
+            "npm": {
+                "package_name": "dsh-web-mobile-fix",
+                "captured_at": "2026-10-23T01:51:13.218Z",
+                "window_start": "2026-09-23",
+                "window_end": "2026-10-22",
+                "downloads_30d": 1715,
+                "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-web-mobile-fix",
+                "error": null,
+                "publication": {
+                    "first_published_at": "2026-08-14T14:57:27.766Z",
+                    "captured_at": "2026-10-23T01:51:13.218Z",
+                    "source_url": "https://registry.npmjs.org/dsh-web-mobile-fix",
+                    "error": null,
+                    "latest_version": "1.0.6",
+                    "latest_published_at": "2026-09-11T08:30:23.557Z",
+                    "latest_error": null
+                }
+            }
+        },
         "discovery.plugins": {
             "id": "github:1334255250:root",
             "repository": "AcidGr/dsh-web-mobile-fix",

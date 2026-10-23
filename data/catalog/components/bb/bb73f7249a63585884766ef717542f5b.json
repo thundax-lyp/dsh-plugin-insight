@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "bb73f7249a63585884766ef717542f5b",
+    "identity": "github:1427231038:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427231038:root",
+            "repository": "xyzYaeMiko/dsh-deepsleep-progress",
+            "path": "",
+            "revision": "ecdaa4162ee1c8402fd5219c27c4cb3fd2a1658e",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "9a89cfe6718a3050e00daafd0a7fcd8aace63edca2c74bd63f787e5cb0407319",
+                "code": "ecdaa4162ee1c8402fd5219c27c4cb3fd2a1658e",
+                "maintenance": "eceef8da9e5a4d488e44074ad953b4bb7d9e28166f9b27659c4689a044dd5cea"
+            }
+        }
+    }
+}

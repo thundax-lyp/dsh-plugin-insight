@@ -7,14 +7,14 @@
             "id": "github:1401489479:packages-dsh-roleplay-state",
             "repository": "Firefox2100/dsh-agentic-roleplay",
             "path": "packages/dsh-roleplay-state",
-            "revision": "e7124fe53391450b4dd625698ff7aa38a714d44e",
+            "revision": "e10cea75c29a2b1cac2ec9a2d211dbc4ef580423",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "03de184d3bc8afdf127d85c04b05648841eefdef1d18a15c4dacab1dd83bc36b",
-                "code": "e7124fe53391450b4dd625698ff7aa38a714d44e",
-                "maintenance": "dc85786dc08774665a2d2bc443ab259065d9d0ca3caeec78a5301e1c054aa141"
+                "code": "e10cea75c29a2b1cac2ec9a2d211dbc4ef580423",
+                "maintenance": "3193c703d7686293eb70d84e4984aefbea79d22699112b58fbe27c555e8df3d9"
             }
         }
     }

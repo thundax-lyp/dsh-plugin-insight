@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "91c4f9d83b65ecabf2706e3e7e190921",
+    "identity": "github:1427349486:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427349486:root",
+            "repository": "manny333/dsh-checklists",
+            "path": "",
+            "revision": "791bfa73a43e03182e593926b411c50f422125ea",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "99f05c402b6f3ba6a28264a9fad5d0312666930160b8c3994160bcc8835fc9cd",
+                "code": "791bfa73a43e03182e593926b411c50f422125ea",
+                "maintenance": "175ca828e262f0d47eaa78b4c127055ba729a1822e57f82513412bfd7f54eaa7"
+            }
+        }
+    }
+}

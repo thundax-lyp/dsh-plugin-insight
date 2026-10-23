@@ -7,14 +7,14 @@
             "id": "github:1363525420:root",
             "repository": "gulagala001/oh-my-dsh",
             "path": "",
-            "revision": "3d8f4eab9c5d64717848622161a7abd8a5bf6859",
+            "revision": "cf23eff19816a29ee15b08945403d48131f233a3",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
-                "directory": "7d1295d4b9f815e564877efa570cef60a5d719b9ac5ed79803bfb56baabf8397",
-                "code": "3d8f4eab9c5d64717848622161a7abd8a5bf6859",
-                "maintenance": "34bad0621e7f3741499d7f3e432359855969869efb70b86d30e496a371364f40"
+                "directory": "83f0ad71e2023cb8af04169c4ab0e6658347e9826c15e84d31f3c76baa8a6fb8",
+                "code": "cf23eff19816a29ee15b08945403d48131f233a3",
+                "maintenance": "dd1f5453157e19382f319d9f1863991ffaf3e3a977d50e0a5d1e0ad9c4399fe8"
             }
         }
     }

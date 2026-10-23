@@ -7,14 +7,14 @@
             "id": "github:1333591877:root",
             "repository": "WSL043/DSH-Portable",
             "path": "",
-            "revision": "e6a77a0fff84031443d2f0dcfb697fdabdfc0cfb",
+            "revision": "4c2a01f38964c73264437ba40728f4bb94544448",
             "source_urls": [
                 "https://github.com/0xsline/awesome-deepseek-harness"
             ],
             "fingerprints": {
                 "directory": "443505dc8c7845e307b955c7e587162ff16929f54e15d95b1d73c8746d1557ce",
-                "code": "e6a77a0fff84031443d2f0dcfb697fdabdfc0cfb",
-                "maintenance": "57f232594321034eb7deea2322d6b2c9acd3df7d808f848c14c2ed1f47975d5f"
+                "code": "4c2a01f38964c73264437ba40728f4bb94544448",
+                "maintenance": "6b8a19cf8cd13a30442420b02d309343692b5ad25b6ad3458cd29ecb98a6931b"
             }
         }
     }

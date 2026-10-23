@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "26070a5669ddfc3c6615fb869cd70702",
+    "identity": "github:1391655874:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1391655874:root",
+            "repository": "aiyacharley/dsh-at-sider",
+            "path": "",
+            "revision": "a2c80cf3123990655019146fe6eea35ab7b557ae",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f720ce0bacb28a459833d07a2cabb2cd04f9da8407191a4d77b64f6461552692",
+                "code": "a2c80cf3123990655019146fe6eea35ab7b557ae",
+                "maintenance": "97c6c11c10b668ce377f77baeef5d30e13e959eadc6a3f6a7eb08e87f9e6fff4"
+            }
+        }
+    }
+}

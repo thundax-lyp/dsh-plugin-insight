@@ -1,0 +1,21 @@
+{
+    "schema_version": 3,
+    "id": "88631b2defaa0cc4815511635d9a7d94",
+    "identity": "github:1427123471:root",
+    "data": {
+        "discovery.plugins": {
+            "id": "github:1427123471:root",
+            "repository": "gulagala001/dsh-btw",
+            "path": "",
+            "revision": "212e53345a6e2944aed73acd1e90c88b775501fd",
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "fingerprints": {
+                "directory": "f24acec4ab6109104408e319b714160755c7fd0fb6a1eeb09522aa707b067cb5",
+                "code": "212e53345a6e2944aed73acd1e90c88b775501fd",
+                "maintenance": "19f32d6e589b099078b1da4ab46db8952afa865305d949d1b2c64adb3881a140"
+            }
+        }
+    }
+}

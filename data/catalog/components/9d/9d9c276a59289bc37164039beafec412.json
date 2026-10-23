@@ -7,14 +7,14 @@
             "id": "github:1403478066:packages-dsh-ai-providers",
             "repository": "Firefox2100/dsh-ai-providers",
             "path": "packages/dsh-ai-providers",
-            "revision": "1237db801920fd87a0b5879d4749f41d620b8266",
+            "revision": "77009d526c1538f90086bd3b0be32fa0ea591452",
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "fingerprints": {
                 "directory": "c180f88085dc2161df2b052e5c8375c777b69ea457e3a01327c9ba00e96d1e30",
-                "code": "1237db801920fd87a0b5879d4749f41d620b8266",
-                "maintenance": "03398af91a29f9458300824840b025be3e9ef61acb47dc83dd3fd12d5f3236ff"
+                "code": "77009d526c1538f90086bd3b0be32fa0ea591452",
+                "maintenance": "84bab7e2d657a248af063d763074578a0e271186e18262f759e10d5ce7708be0"
             }
         }
     }
