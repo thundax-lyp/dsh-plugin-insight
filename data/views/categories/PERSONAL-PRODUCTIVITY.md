@@ -27,6 +27,7 @@
 | [dock-markdown](#plugin-1340492424-root) | dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。 | 当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。 |
 | [dock-spreadsheet](#plugin-1400109121-root) | 在DSH dock-files中只读预览XLSX、XLS、ODS、CSV与TSV，支持切表、搜索筛选、坐标检查和显式链接导航。 | 可信私有Host普通文件可条件试用，先核三方加载/路径权限、缓存与字符串排序；公开Host/恶意大书/验算不宜直接依赖。 |
 | [DPH 任务看板](#plugin-1336994666-root) | 把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。 | 多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 |
+| [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。 | 有明确原生应用任务的macOS用户可在可撤销夹具上试用。 |
 | [dsh-ai-arcade](#plugin-1413897334-root) | DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。 | 假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。 |
 | [dsh-alive](#plugin-1335661970-root) | 在会话头部显示本地 DSH 插件端点的 15 秒轮询可达状态。 | 仅以“本地 DSH Web 端点可达”解释，并在固定版本上做故障矩阵。 |
 | [dsh-api-balance](#plugin-1334899834-root) | 在 DSH Web 输入框旁轮询显示 DeepSeek API 余额与可用状态。 | 先在隔离环境核凭证执行与路由权限，使用低频或手动刷新，再评估真实账户接入。 |
@@ -396,6 +397,20 @@
 > **思考**：主要元数据保存在浏览器 localStorage，另有宿主快照；双存储同步、补丁安装和跨浏览器恢复是核心可靠性风险。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
 
 > **建议**：未来可探索：可把状态变更设计为带版本的单一事件日志，由浏览器和宿主快照共同投影并对冲突提供显式选择。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。
+
+<a id="plugin-1333116579-root"></a>
+
+## [DSH Computer Use](../../plugins/anionex--dsh-computer-use/INSIGHT.md)
+
+[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,269](https://img.shields.io/static/v1?label=npm+30d&message=3%2C269&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
+
+> **用途**：目标是必须跨入macOS原生应用、缺少更窄API的Agent任务，例如读取窗口、修改控件后核查状态。合格交付是目标应用内业务结果正确，且用户前台工作未受到非预期干扰。能用应用API、CLI或浏览器DOM完成时应先用它们；本插件不负责像素语义/OCR，也不把截图或点击成功当最终任务完成。
+
+> **亮点**：将观察绑定、精确进程窗口输入、应用授权和动作后状态组织为原生动作层，较盲目桌面脚本有可解释控制边界。[Q03](#research-q03)
+
+> **思考**：默认键盘会激活应用，敏感确认依赖调用方正确设置sensitive；不能把定向路由当成全场景无干扰或自动识别高影响保证。[Q04](#research-q04)
+
+> **建议**：未验证假设是把动作风险声明与激活后输入目标摘要一起纳入确认计划，对发送、删除等明确应用语义加入可配置分类器，能减少仅依赖模型sensitive标记的漏判。推导自确认消费条件与键盘激活后焦点变化。最小验证在不真实提交的夹具中构造改标签、按钮重排和激活后焦点切换，比较漏确认率、误拒绝及人工次数；分类器若不能识别或授权负担高于收益，应只收缩可操作应用范围。 [Q08](#research-q08)
 
 <a id="plugin-1413897334-root"></a>
 

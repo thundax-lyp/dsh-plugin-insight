@@ -25,6 +25,9 @@
 | [@indexyz/dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。 | 单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。 |
 | [LogicProbe](#plugin-1331586818-root) | 为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。 | 确定性模型检查有可控用途，但抽象忠实性与实际缺陷收益须由用户复核。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
+| [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 文本模型用户可用非敏感截图受控试用；先测真实图像请求和最终任务质量，核实外部服务政策、费用及宿主兼容。 |
+| [DSH Turn Rewind](#plugin-1333100390-root) | 按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。 | 在非关键项目副本演练覆盖、过期计划及rescue后可控试用，不代替外部副作用与备份管理。 |
+| [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。 | 明确原生应用需求可在单应用和可撤销任务上试用，先核对焦点策略及敏感动作确认。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [dsh-verification-receipt](#plugin-1333370288-root) | 被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。 | 被动最小字段与边界文档清楚，适合精确宿主私有单进程路径观察；词法/可重算hash与无界queue不适合验证门禁或强审计。 |
 | [dsh-wsl-workspace](#plugin-1334205011-root) | 从DSH界面创建WSL工作区，使会话命令、文件操作和搜索在选定发行版中协同运行。 | Windows 上长期使用 WSL 工程者可在隔离项目试用，先核对双平面权限边界与固定 DSH 版本。 |
@@ -59,9 +62,6 @@
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把代理副产物移入可恢复回收站，并支持项目结项归档。 | 规则稳定且有版本控制的项目可先 dry-run 后试用；正式产物零误收和可恢复是硬门槛。 |
 | [AIR-pixel Liquid Glass](#plugin-1414238544-root) | 为DSH提供可配置的液态玻璃主题、壁纸、桌面透明、光标与点击涟漪。 | 重视界面个性化者可在非关键工作区试用，先验证目标宿主版本、文字对比、性能与一键恢复。 |
 | [dsh-model-failover](#plugin-1415863200-root) | 为 DSH 添加按优先级切换真实模型的 provider 路由、隔离状态与继续控制。 | 提交点和错误分类有明确设计价值，可在预算受控的只读任务试用，真实可靠性与费用尚未知。 |
-| [dsh-subagent-role-router](#plugin-1421306160-root) | 按探索、规划、修补角色为子代理分配模型候补池，并处理故障转移与 fork 窗口切片。 | 多模型子代理团队可在带角色标签的低风险任务中试用，先核路由命中和失败重试预算。 |
-| [dsh-ark-coding-provider](#plugin-1421741516-root) | 为DSH注册Ark Coding Plan模型路由，适配流式和工具消息，管理API Key/CLI多账户，并展示官方目录与套餐额度。 | 适合已有Ark订阅的本机DSH先单账户小样；专用流式/失败轮换和最小CLI环境明确，多账号/额度需核身份/HOME/取消与平台口径。 |
-| [dsh-slipway](#plugin-1422359117-root) | 预检本地 DSH 插件，上传到 GitHub、创建市场登记 PR，并回拉逐文件校验发布字节。 | GitHub 插件维护者可在测试仓以默认 dry-run/verify 试用，真实发布仍需逐次人工授权。 |
 
 <a id="plugin-1334269686-root"></a>
 
@@ -242,6 +242,48 @@
 **推荐理由**：适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。
 
 **使用条件**：资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。详见Q06(#research-q06)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1333100071-root"></a>
+
+## [DSH Vision Toolkit](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md)
+
+[![GitHub ★ 905](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=905&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-vision-toolkit) [![npm 30d 10,948](https://img.shields.io/static/v1?label=npm+30d&message=10%2C948&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit)
+
+**主要用途**：为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。
+
+**推荐理由**：文本模型用户可用非敏感截图受控试用；先测真实图像请求和最终任务质量，核实外部服务政策、费用及宿主兼容。
+
+**使用条件**：建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。Q08(#research-q08)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333100390-root"></a>
+
+## [DSH Turn Rewind](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md)
+
+[![GitHub ★ 135](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=135&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-turn-rewind) [![npm 30d 4,574](https://img.shields.io/static/v1?label=npm+30d&message=4%2C574&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind)
+
+**主要用途**：按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。
+
+**推荐理由**：在非关键项目副本演练覆盖、过期计划及rescue后可控试用，不代替外部副作用与备份管理。
+
+**使用条件**：经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。先手工备份并覆盖新增/删除/二进制/符号链接样本，核对skip清单，再测试预览后改文件会拒绝、fork失败补偿和rescue可读。正式项目恢复前停掉其他写入者；外部部署和服务状态由用户单独处理。未做本版本安装与恢复演练，因此只支持可控试用，不代替备份制度。 Q09(#research-q09)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333116579-root"></a>
+
+## [DSH Computer Use](../../plugins/anionex--dsh-computer-use/INSIGHT.md)
+
+[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,269](https://img.shields.io/static/v1?label=npm+30d&message=3%2C269&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
+
+**主要用途**：为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。
+
+**推荐理由**：明确原生应用需求可在单应用和可撤销任务上试用，先核对焦点策略及敏感动作确认。
+
+**使用条件**：有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 Q09(#research-q09)
 
 [返回表格](#column-index)
 
@@ -718,48 +760,6 @@
 **推荐理由**：提交点和错误分类有明确设计价值，可在预算受控的只读任务试用，真实可靠性与费用尚未知。
 
 **使用条件**：可用只读小任务和有上限预算试用。先关高次数自动继续，核对实际模型与失败调用费用；涉及写文件或外部服务时，提交后失败应人工确认，不盲目重跑。Q04(#research-q04)
-
-[返回表格](#column-index)
-
-<a id="plugin-1421306160-root"></a>
-
-## [dsh-subagent-role-router](../../plugins/643048695--dsh-subagent-role-router/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/643048695/dsh-subagent-role-router)
-
-**主要用途**：按探索、规划、修补角色为子代理分配模型候补池，并处理故障转移与 fork 窗口切片。
-
-**推荐理由**：多模型子代理团队可在带角色标签的低风险任务中试用，先核路由命中和失败重试预算。
-
-**使用条件**：适合已经并行使用多个子代理、拥有多供应商额度且能审查路由日志的团队做隔离试用；单模型、强合规固定路由或不能容忍凭据切换的环境不宜启用。先用带显式角色标签的小任务，验收角色命中、显式覆盖、冷却恢复和 seed 完整性，出现跨角色切换或重复烧额度即停用。 详见Q09(#research-q09)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1421741516-root"></a>
-
-## [dsh-ark-coding-provider](../../plugins/akiyuki1130--dsh-ark-coding-provider/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
-
-**主要用途**：为DSH注册Ark Coding Plan模型路由，适配流式和工具消息，管理API Key/CLI多账户，并展示官方目录与套餐额度。
-
-**推荐理由**：适合已有Ark订阅的本机DSH先单账户小样；专用流式/失败轮换和最小CLI环境明确，多账号/额度需核身份/HOME/取消与平台口径。
-
-**使用条件**：有条件试用，已有订阅用户先可信本机单API Key小请求，确需额度/多账号再核CLI HOME/取消与身份。详见Q07(#research-q07)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1422359117-root"></a>
-
-## [dsh-slipway](../../plugins/7gzgn--dsh-slipway/INSIGHT.md)
-
-[![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-slipway)
-
-**主要用途**：预检本地 DSH 插件，上传到 GitHub、创建市场登记 PR，并回拉逐文件校验发布字节。
-
-**推荐理由**：GitHub 插件维护者可在测试仓以默认 dry-run/verify 试用，真实发布仍需逐次人工授权。
-
-**使用条件**：有固定 GitHub 发布流程的插件维护者可先在测试组织以 dry-run 和只读 verify 试用；真实 publish 必须由人核对 owner/repo、文件清单、secret 扫描与市场描述后单独授权。含大文件、需要 npm/GitLab、无法轮换 PAT 或不能接受部分远端状态的项目不适合。 详见Q09(#research-q09)。
 
 [返回表格](#column-index)
 

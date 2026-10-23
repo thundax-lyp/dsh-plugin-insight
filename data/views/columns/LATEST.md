@@ -63,6 +63,9 @@
 | [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 把待核成果按维度交给只读工具受限的红队子agent，收集候选缺陷，由读者逐条认定或驳回，并保存定稿与旧缺陷复审历史。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire) |
 | [embedded-workbench](#plugin-1276714299-root) | 为嵌入式固件开发提供八份 Skill，并在 DSH 会话首个模型步骤注入短验证提示。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) |
 | [LogicProbe](#plugin-1331586818-root) | 为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/dsh-logicprobe) |
+| [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit) |
+| [DSH Turn Rewind](#plugin-1333100390-root) | 按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind) |
+| [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) |
 | [dsh-plugin-veriscope](#plugin-1422943787-root) | 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-veriscope) |
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。 | [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=&message=2026-10-18&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance) |
 | [dsh-custom-plugin](#plugin-1342948215-root) | DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。 | [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=&message=2026-10-17&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) |
@@ -824,6 +827,48 @@
 **最新发布**：[1.4.1 · 2026-10-18（北京时间）](https://www.npmjs.com/package/dsh-logicprobe)。
 
 **使用条件**：适合愿意人工检查模型的开发者在小型状态机上试用。先核对模型与源码关系，读取verdict、覆盖和未决，不把pass当上线许可。Q04(#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333100071-root"></a>
+
+## [DSH Vision Toolkit](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md)
+
+[![GitHub ★ 905](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=905&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-vision-toolkit) [![npm 30d 10,948](https://img.shields.io/static/v1?label=npm+30d&message=10%2C948&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit)
+
+**主要用途**：为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。
+
+**最新发布**：[0.1.47 · 2026-10-18（北京时间）](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit)。
+
+**使用条件**：建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。Q08(#research-q08)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333100390-root"></a>
+
+## [DSH Turn Rewind](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md)
+
+[![GitHub ★ 135](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=135&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-turn-rewind) [![npm 30d 4,574](https://img.shields.io/static/v1?label=npm+30d&message=4%2C574&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind)
+
+**主要用途**：按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。
+
+**最新发布**：[0.3.10 · 2026-10-18（北京时间）](https://www.npmjs.com/package/@anionex/dsh-turn-rewind)。
+
+**使用条件**：经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。先手工备份并覆盖新增/删除/二进制/符号链接样本，核对skip清单，再测试预览后改文件会拒绝、fork失败补偿和rescue可读。正式项目恢复前停掉其他写入者；外部部署和服务状态由用户单独处理。未做本版本安装与恢复演练，因此只支持可控试用，不代替备份制度。 Q09(#research-q09)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333116579-root"></a>
+
+## [DSH Computer Use](../../plugins/anionex--dsh-computer-use/INSIGHT.md)
+
+[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,269](https://img.shields.io/static/v1?label=npm+30d&message=3%2C269&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
+
+**主要用途**：为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。
+
+**最新发布**：[0.3.4 · 2026-10-18（北京时间）](https://www.npmjs.com/package/@anionex/dsh-computer-use)。
+
+**使用条件**：有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 Q09(#research-q09)
 
 [返回表格](#column-index)
 

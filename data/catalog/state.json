@@ -1,7 +1,7 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "d0589125a4047d86663c5be0cbac79c7dc792372a9495e7d5eb1164a3d0c78ff",
-    "index_sha256": "3fd8059922c57d3424a05804e8de71481987e2b66fb0459ddf0476631d8c3668",
+    "snapshot_digest": "3acc92ea1a94cdff8ff62428ac63a6a63df7e74fdaef8242737ba2b02f8581ed",
+    "index_sha256": "3b21138904b761c7d45196538a97f5de406d3840769de1fd70df497679582483",
     "head": {
         "schema_version": 1,
         "checked_at": "2026-10-23T07:54:19Z",
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮已交付 10 项；当前发布 429；其余研究随后续小步提交交付",
+            "scope": "本轮已交付 14 项；当前发布 433；其余研究随后续小步提交交付",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -221,6 +221,9 @@
             "github:1324229194:dsh-autocompact",
             "github:1331586818:root",
             "github:1331846104:root",
+            "github:1333100071:root",
+            "github:1333100390:root",
+            "github:1333116579:root",
             "github:1333136466:root",
             "github:1333258432:root",
             "github:1333328839:root",
@@ -291,6 +294,7 @@
             "github:1335798113:packages-messaging-core",
             "github:1335806472:root",
             "github:1335807482:root",
+            "github:1335843541:root",
             "github:1335843750:root",
             "github:1335928912:root",
             "github:1335980444:root",
@@ -1066,6 +1070,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -1073,7 +1078,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "publication.metadata": [
             "github:1335557891:root",
@@ -1497,6 +1505,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -1504,7 +1513,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "publication.summaries": [
             "github:1335557891:root",
@@ -1928,6 +1940,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -1935,7 +1948,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "publication.capabilities": [
             "github:1335557891:root",
@@ -2359,6 +2375,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -2366,7 +2383,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "publication.advice": [
             "github:1335557891:root",
@@ -2790,6 +2810,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -2797,7 +2818,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "registry": [
             "github:1170373459:dsh-invoice-downloader",
@@ -3222,6 +3246,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -3229,7 +3254,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "reports": [
             "github:1335557891:root",
@@ -3653,6 +3681,7 @@
             "github:1427089201:root",
             "github:1353534254:root",
             "github:1346064150:root",
+            "github:1335843541:root",
             "github:1285824983:integrations-dsh",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
             "github:1390103795:root",
@@ -3660,7 +3689,10 @@
             "github:1409845351:plugins-dsh-orchestrator2",
             "github:1344270011:root",
             "github:1414577411:root",
-            "github:1423488109:root"
+            "github:1333116579:root",
+            "github:1333100071:root",
+            "github:1423488109:root",
+            "github:1333100390:root"
         ],
         "retained_documents": [
             "github:1170373459:dsh-invoice-downloader"
@@ -4088,6 +4120,7 @@
         "github:1427089201:root",
         "github:1353534254:root",
         "github:1346064150:root",
+        "github:1335843541:root",
         "github:1285824983:integrations-dsh",
         "github:1347752454:plugins-dsh-code-rag-index-panel",
         "github:1390103795:root",
@@ -4095,7 +4128,10 @@
         "github:1409845351:plugins-dsh-orchestrator2",
         "github:1344270011:root",
         "github:1414577411:root",
-        "github:1423488109:root"
+        "github:1333116579:root",
+        "github:1333100071:root",
+        "github:1423488109:root",
+        "github:1333100390:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json",
@@ -4527,6 +4563,7 @@
         "data/runs/2026-10-23-04/alannerfranklin--dsh-cutout-pet/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/alice-marx--dsh-model-router/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/angeloszou--dsh-pdf-reader/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-23-05/angeloszou--dsh-python-env/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/angeloszou--graphlint--integrations-dsh/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/ankali-aylina--code-rag--plugins-dsh-code-rag-index-panel/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/allenwes365--dsh-local-memory/REVIEWED-SOURCE.json",
@@ -4534,6 +4571,9 @@
         "data/runs/2026-10-23-05/anglezhang-zhangjiao--dsh-orchestrator2--plugins-dsh-orchestrator2/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/anonyjcy--dsh-j-space/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/alycestocking--dsh-harness-switch/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-23-05/amethystluna--dsh-model-everything/REVIEWED-SOURCE.json"
+        "data/runs/2026-10-23-05/anionex--dsh-computer-use/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-23-05/anionex--dsh-vision-toolkit/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-23-05/amethystluna--dsh-model-everything/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-23-05/anionex--dsh-turn-rewind/REVIEWED-SOURCE.json"
     ]
 }

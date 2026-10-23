@@ -32,6 +32,8 @@
 | [DSH Model Everything](#plugin-1423488109-root) | 为设计与代码断言提供建模Skill、有限模型验证、UML/依赖审查及可复算报告工具。 | 适合理解有限模型、愿意维护源码映射的工程师小范围试用；未决、跳过关键性质或无法映射实现时停止放行，不把它当自动程序正确性证明。 |
 | [DSH Model Router](#plugin-1353534254-root) | 在DSH工作台规划任务、比较模型路由并通过API或官方CLI执行依赖工作包。 | 建议多模型开发者在隔离小仓库试用只读流程，逐包盲评与核对全部支出；身份或权限不清、支出未知时暂停扩大使用。 |
 | [DSH Orchestrator2](#plugin-1409845351-plugins-dsh-orchestrator2) | 提供自动开发调度预设，以任务包组织设计、开发、审查、预算与人工验收。 | 建议先观察并核对派工回执与角色参数，再做隔离任务包验收。 |
+| [DSH Python Env](#plugin-1335843541-root) | 管理工作区Python虚拟环境，提供发现、创建、安装、卸载和删除工具。 | 可信代码仓库的开发者可在一次性工作区试用。 |
+| [DSH Turn Rewind](#plugin-1333100390-root) | 按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。 | 经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。 |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。 | 可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。 |
 | [dsh-about](#plugin-1354283280-root) | 在 DSH Web 设置页展示推断的运行版本、插件版本和 GitHub Releases 摘要。 | 仅作排障辅助，报告版本同时附 CLI 输出；试点核多安装布局和离线回退。 |
 | [dsh-agent-recycle-guard](#plugin-1414323673-root) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 建议有独立备份的维护者在可丢弃目录受控试用常见删除缓冲；不以此替代权限隔离，准备长期阻断、语义不一致或需要动态程序全覆盖时停止。 |
@@ -447,6 +449,34 @@
 > **思考**：派工成功回执要求后台参数false，但角色工具明确拒绝false；同时旧目录同步的实际副作用与移除声明冲突，需先核对。[Q04](#research-q04)
 
 > **建议**：未验证假设是把派工协议写成单一可执行状态契约，生成工具参数、成功回执及persona对应段，并在启动前做无副作用协议检查，能减少“回执要求工具拒绝参数”的交接失败。推导来自false参数冲突和旧目录同步漂移。最小验证固定最小任务包，在新旧API宿主mock和真实沙箱分别走begin→角色→end、失败与重启；比较人工修正次数、重复派工及完成率，若漂移仍需手工多处修改则否定单源收益。 [Q08](#research-q08)
+
+<a id="plugin-1335843541-root"></a>
+
+## [DSH Python Env](../../plugins/angeloszou--dsh-python-env/INSIGHT.md)
+
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-python-env) [![npm 30d 1,121](https://img.shields.io/static/v1?label=npm+30d&message=1%2C121&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-python-env) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-python-env)
+
+> **用途**：目标用户是在DSH沙箱shell里遇到venv、临时目录或网络安装失败的开发者。合格结果是项目解释器能导入所需固定版本包，并可删除环境，不影响全局Python。简单替代是开发者在外部终端创建venv或使用uv；这里的增量是让Agent调用受控工具完成环境准备，而不是新的Python包管理器。
+
+> **亮点**：将host侧venv/pip接入会话写权限、镜像回退和job状态，减少环境准备的人工交接；核心包管理来自Python。[Q03](#research-q03)
+
+> **思考**：词法路径检查不等于进程隔离，第三方构建仍拥有host权限，符号链接与pip选项需独立检验。[Q04](#research-q04)
+
+> **建议**：未验证假设是把允许包规格、完整真实路径和审批后的索引记录成安装计划，执行前显示目标与副作用，配合隔离构建，可保留自动配置便利而缩小host写入范围。推导来自词法guard和host pip的边界差距。最小验证使用常规wheel、源码构建包、符号链接及异常pip选项，对比当前与受限计划路线的拒绝准确性、完成率与额外人工；若合法任务阻塞而越界仍可发生，则否定该方案。 [Q08](#research-q08)
+
+<a id="plugin-1333100390-root"></a>
+
+## [DSH Turn Rewind](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md)
+
+[![GitHub ★ 135](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=135&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-turn-rewind) [![npm 30d 4,574](https://img.shields.io/static/v1?label=npm+30d&message=4%2C574&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-turn-rewind)
+
+> **用途**：面向Agent修改项目后，开发者想回到某条用户请求之前再尝试的场景。合格结果应明确哪些文件恢复、哪些未纳入、当前Git控制状态及新会话从何处开始。简单替代是提前Git提交或复制目录，再手工找到聊天分叉点；本插件把消息边界与文件检查点关联，但不能撤销已发送邮件、数据库写入或外部部署。
+
+> **亮点**：把用户消息、路径预览计划、rescue和中断journal组合成恢复生命周期，文件与会话可分开处理。[Q03](#research-q03)
+
+> **思考**：检查点可能部分覆盖，ignored/超限路径及外部副作用不会整体撤销；恢复还需控制外部写入者，不能当完整环境时光机。[Q04](#research-q04)
+
+> **建议**：未验证假设是回退预览显式列出“文件覆盖矩阵+外部副作用清单”，并让任务运行时记录潜在外部写操作，可减少用户把文件回退当整体撤销。推导来自partial point和会话/文件分离。最小验证用有超大文件、ignored配置及模拟外部写入的任务，比较普通差异列表与覆盖矩阵对用户恢复范围判断正确率、漏确认和人工时间；若用户仍误判或负担明显增加，应缩小为更明确的“已记录文件恢复”。 [Q08](#research-q08)
 
 <a id="plugin-1344715270-root"></a>
 

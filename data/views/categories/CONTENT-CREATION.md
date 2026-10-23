@@ -11,6 +11,7 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
+| [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在 DSH 右侧栏把 Blender 文件转换为 GLB，并展示可交互三维预览与场景信息。 | 已有Blender环境且只需几何预览的用户可隔离试用；先用已知尺寸小模型核对结果，纹理、动画和最终渲染仍到Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
@@ -40,6 +41,20 @@
 > **思考**：审批不是持久预算账本。prompt在createApproval截到500字符后用截断值生成，批准时startGeneration读取当前渠道而非冻结创建时渠道；任务落盘和审批/通知内存又不对称。源码支持这些状态限制，未复现实际错图或错账。参见[Q03](#research-q03)。
 
 > **建议**：可将批准对象改为持久不可变请求摘要，绑定完整prompt、渠道标识、参数及价格上限，输出显式未知账单状态；重启与渠道切换对照中，若批准后实际提交参数不一致或重复计费未减少则否定。会增加状态迁移与上游幂等适配成本，假设未验证。参见[Q05](#research-q05)。
+
+<a id="plugin-1333100071-root"></a>
+
+## [DSH Vision Toolkit](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md)
+
+[![GitHub ★ 905](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=905&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-vision-toolkit) [![npm 30d 10,948](https://img.shields.io/static/v1?label=npm+30d&message=10%2C948&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit)
+
+> **用途**：适合仍使用DSH文本模型、需要截图理解、长图OCR及UI还原验证的人群；按任务验收具体视觉证据和可编辑产物。
+
+> **亮点**：把上游视觉工具变成可组合DSH工具、原生附件与产物流程，并加入准备后切换的运行时管理。[Q03](#research-q03) 上游算法和playbook归上游，不以适配宣称模型视觉能力胜出。
+
+> **思考**：文本模型得到视觉转述而非原像素，范围合法的框也不证明定位正确；外部服务、路径允许根和队列分段期限都须明确。[Q04](#research-q04) 图片任务合格率不能由工具存在推断。
+
+> **建议**：未验证假设是带区域和待核点的视觉证据对象配合按需局部复查，可减少转述丢失；用同预算图集比较最终合格率、误定位与总调用证伪。[Q07](#research-q07)
 
 <a id="plugin-1427791087-root"></a>
 
