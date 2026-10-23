@@ -308,16 +308,18 @@ function startWorkUnlocked(input, path, limit, root, retryIds) {
     saveWork(path, work, true);
     return work;
 }
+const conclusionDependencies = (base) =>
+    base.catalog.plugins.flatMap((plugin) => [
+        ...plugin.findings.flatMap((finding) => finding.dependencies),
+        ...(plugin.innovation_scores?.dependencies ?? []),
+        ...(plugin.recommendation?.dependencies ?? [])
+    ]);
 // Keep research fingerprints at their last reviewed values. Discovery records the
 // current directory/maintenance state; META is refreshed independently.
 export function metadataOnlyIds(base, items) {
     const plugins = new Map(base.catalog.plugins.map((plugin) => [plugin.id, plugin]));
     const records = new Map(base.publication.records.map((record) => [record.id, record]));
-    const dependencies = base.catalog.plugins.flatMap((plugin) => [
-        ...plugin.findings.flatMap((finding) => finding.dependencies),
-        ...(plugin.innovation_scores?.dependencies ?? []),
-        ...(plugin.recommendation?.dependencies ?? [])
-    ]);
+    const dependencies = conclusionDependencies(base);
     return items
         .filter((item) => {
             const before = records.get(item.id) ?? plugins.get(item.id);
@@ -344,6 +346,7 @@ export function metadataOnlyIds(base, items) {
 }
 // INIT's frequent-update filter uses the fixed round cutoff, never wall time.
 export function cooldownIds(base, items, checkedAt) {
+    const dependencies = conclusionDependencies(base);
     const records = new Map(base.publication.records.map((record) => [record.id, record]));
     const plugins = new Map(base.catalog.plugins.map((plugin) => [plugin.id, plugin]));
     return items
@@ -351,6 +354,13 @@ export function cooldownIds(base, items, checkedAt) {
             const plugin = plugins.get(item.id),
                 record = records.get(item.id);
             const before = record ?? plugin;
+            // A code revision alone is the intended cooldown trigger. Changes to
+            // other declared dependencies must retain full research eligibility.
+            const changedAreas = new Set(
+                [...new Set([...Object.keys(before?.fingerprints ?? {}), ...Object.keys(item.fingerprints)])].filter(
+                    (area) => area !== 'code' && before?.fingerprints[area] !== item.fingerprints[area]
+                )
+            );
             const age = Date.parse(checkedAt) - Date.parse(record?.checked_at ?? plugin?.last_checked_at);
             return Boolean(
                 base.reports[item.id] &&
@@ -361,6 +371,9 @@ export function cooldownIds(base, items, checkedAt) {
                 item.repository === before.repository &&
                 item.path === before.path &&
                 item.changes.includes('content_changed') &&
+                !dependencies.some(
+                    (dependency) => dependency.plugin_id === item.id && changedAreas.has(dependency.area)
+                ) &&
                 !item.changes.some((change) => ['unknown', 'moved', 'removed_from_source'].includes(change)) &&
                 Number.isFinite(age) &&
                 age >= 0 &&

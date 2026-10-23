@@ -155,7 +155,7 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 
 ### INIT 版本更新暂缓集合
 
-过滤策略定义在[列表编排 Skill 的频繁更新过滤](../../dsh-plugin-init/SKILL.md#频繁更新过滤)。新会话的可选 selection.cooldown_ids 保存按正式基线与本轮固定 checked_at 计算的近期版本更新候选；已有 review_required_ids 和显式 retry_ids 优先，suppressed_ids 仍代表同版本受阻，不混用原因。合并重算该集合并校验摘要，不修改旧会话选择。发现层保存实际 revision；暂缓不刷新研究基线、报告或证据，不表示新版本已完成研究。窗口跳过数按未入选且未被同版本受阻抑制的 ID 单列。
+过滤策略定义在[列表编排 Skill 的频繁更新过滤](../../dsh-plugin-init/SKILL.md#频繁更新过滤)。新会话的可选 selection.cooldown_ids 保存按正式基线与本轮固定 checked_at 计算的近期版本更新候选；入队前还需将输入与最后研究基线比较：非 code 指纹变化若被任一现有结论、创新评分或采用推荐声明依赖，则排除出暂缓集合，不等待 catalog 先变为 needs_review；仅 code revision 变化仍遵循 INIT 的过滤策略。已有 review_required_ids 和显式 retry_ids 优先，suppressed_ids 仍代表同版本受阻，不混用原因。合并重算该集合并校验摘要，不修改旧会话选择。发现层保存实际 revision；暂缓不刷新研究基线、报告或证据，不表示新版本已完成研究。窗口跳过数按未入选且未被同版本受阻抑制的 ID 单列。
 
 ### 目录与维护信息的轻量更新
 
