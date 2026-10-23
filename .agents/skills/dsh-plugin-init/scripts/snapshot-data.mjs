@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateDisplay } from '../../_shared/scripts/publication-validation.mjs';
 import {
     readSnapshotStorage,
     normalizeCatalogSnapshot,
@@ -589,11 +590,7 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     const observations = read(observationPath),
         report = readFileSync(reportPath, 'utf8'),
         display = read(displayPath);
-    const expected = ['metadata', 'summaries', 'capabilities', 'advice'];
-    if (Object.keys(display).some((k) => !expected.includes(k)) || expected.some((k) => display[k] === undefined))
-        throw Error(
-            'display requires metadata, summaries, capabilities and advice; recommendations belong in observations'
-        );
+    validateDisplay(display);
     const plugin = observations.plugins.find((p) => p.id === id);
     if (!plugin || observations.plugins.length !== 1 || observations.errors.length)
         throw Error('stage needs one successful plugin');
