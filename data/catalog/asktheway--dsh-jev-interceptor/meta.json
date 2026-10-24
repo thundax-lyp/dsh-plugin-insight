@@ -1,0 +1,34 @@
+{
+    "repository": "AskTheWay/dsh-jev-interceptor",
+    "repository_id": 1382292535,
+    "captured_at": "2026-10-24T08:19:16.810Z",
+    "window_start": "2026-09-24T08:19:16.810Z",
+    "stars": 31,
+    "pushed_at": "2026-10-22T18:47:59Z",
+    "issues": {
+        "open": 1,
+        "closed": 4,
+        "created_30d": 5,
+        "closed_30d": 4,
+        "updated_30d": 5
+    },
+    "errors": [],
+    "npm": {
+        "package_name": "dsh-jev-interceptor",
+        "captured_at": "2026-10-24T08:19:24.647Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 2667,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-jev-interceptor",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-24T18:32:57.762Z",
+            "captured_at": "2026-10-24T08:19:24.647Z",
+            "source_url": "https://registry.npmjs.org/dsh-jev-interceptor",
+            "error": null,
+            "latest_version": "0.6.0",
+            "latest_published_at": "2026-10-22T18:50:15.860Z",
+            "latest_error": null
+        }
+    }
+}

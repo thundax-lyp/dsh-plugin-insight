@@ -281,6 +281,169 @@
             "type": "string",
             "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
           }
+        },
+        "heat": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "version",
+            "checked_at",
+            "base_digest",
+            "sources",
+            "rows"
+          ],
+          "properties": {
+            "version": {
+              "const": "heat-v1"
+            },
+            "checked_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "base_digest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sources": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "git",
+                "npm",
+                "errors"
+              ],
+              "properties": {
+                "git": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": false,
+                  "required": [
+                    "commit_sha",
+                    "blob_sha",
+                    "errors_blob_sha"
+                  ],
+                  "properties": {
+                    "commit_sha": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{40}$"
+                    },
+                    "blob_sha": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{40}$"
+                    },
+                    "errors_blob_sha": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{40}$"
+                    }
+                  }
+                },
+                "npm": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": false,
+                  "required": [
+                    "blob_sha"
+                  ],
+                  "properties": {
+                    "blob_sha": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{40}$"
+                    }
+                  }
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "rows": {
+              "type": "object",
+              "propertyNames": {
+                "pattern": "^github:[0-9]+:[a-zA-Z0-9_-]+$"
+              },
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "stars",
+                  "downloads_30d",
+                  "stars_at",
+                  "downloads_at",
+                  "package_name",
+                  "stars_source",
+                  "downloads_source"
+                ],
+                "properties": {
+                  "stars": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "downloads_30d": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "stars_at": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "downloads_at": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "package_name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^(?:@[a-z0-9][a-z0-9._~-]*/)?[a-z0-9][a-z0-9._~-]*$"
+                  },
+                  "stars_source": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "git-meta",
+                      "npm-meta",
+                      "formal-meta",
+                      null
+                    ]
+                  },
+                  "downloads_source": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "git-meta",
+                      "npm-meta",
+                      "formal-meta",
+                      null
+                    ]
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

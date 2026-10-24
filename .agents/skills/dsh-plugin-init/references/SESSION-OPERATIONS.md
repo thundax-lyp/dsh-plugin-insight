@@ -49,6 +49,8 @@ INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗�
 
 ## 合并后清理
 
+清理前须按 INIT 第8步执行 `npm run export:meta-manifests -- --work <WORK.json>` 的预览、`--apply` 和最终只读回读，确认 npm 与 Git 清单均无待写差异。路径未部署、身份解析、并发更新或任一回读失败时保留 WORK；单独 npm 回写成功不能视为双清单已完成。目标字段和事务语义以[数据契约](../../_shared/references/DATA-CONTRACT.md#外部-meta-双清单回写)为准。
+
 按[输出标准](OUTPUT-STANDARD.md#本地-runs-与-git-清单)检查本轮合并结果、当前引用及恢复需求。确认当前快照可独立校验和生成后，预览并清理无引用的已合并副本，不要求永久归档。
 未合并增量、待处理失败材料、活动锁和用途不明的文件保留；当前引用仍指向 runs 时先完成落位，不能先删文件。
 旧历史文件是否迁移或删除另按实际任务执行，本次规范变更本身不执行清理。
@@ -58,7 +60,8 @@ INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗�
 - `npm run snapshot -- start --input <INPUT.json> --work data/runs/<round>/WORK.json [--limit N] [--retry-plugin <id>]`：重试参数可重复，仅在用户明确要求时传入；指定已登记受阻候选优先占正常额度。省略 `--limit` 默认40，绑定当前快照摘要并固定选择，不读取上轮会话。
 - `block --work ... --plugin <id> --input <reason.json>`：reason包含稳定reason_code、可读reason及自包含问题详情；写入本轮block，最终由plan/apply落入正式快照。
 - `retry --work ... --plugin <id>`：用户明确要求时，重置未合并的已选blocked项为pending后重新准备，原始失败材料保留；不改变固定选择或额度。已合并事务不能重置，开启新轮并指定--retry-plugin。
-- `next --work ...` 返回本轮待处理项；`stage --work ... --plugin <id> --observations ... --report ... --display ...` 校验完整单项记录，只更新 WORK／本轮 SESSION。
+- 新轮 `snapshot start` 在截断额度前按数据契约固定综合热度排序，保存 selection.heat；旧 WORK 和同轮恢复不重新排行。
+- `next --work ...` 按固定 selected_ids 返回本轮待处理项；`stage --work ... --plugin <id> --observations ... --report ... --display ...` 校验完整单项记录，只更新 WORK／本轮 SESSION。
 - `plan --work ... --out ...` 产生合并候选；`apply --plan ...` 持锁复核并原子更新正式快照，重复执行同一结果不重复追加。
 - apply 已成功而生成中断时，直接执行 `snapshot render`；不重新研究或重复应用观察。
 - `snapshot validate` 和 `npm run check` 校验正式快照及派生成果；不要求旧 runs 或 manifest 存在。

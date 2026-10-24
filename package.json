@@ -17,6 +17,7 @@
         "prepare:plugin": "node .agents/skills/dsh-plugin-insight/scripts/prepare-plugin-materials.mjs",
         "publication": "node .agents/skills/dsh-plugin-init/scripts/publication-data.mjs",
         "render:research": "node .agents/skills/dsh-plugin-init/scripts/render-research.mjs --input data/catalog/index.jsonl",
+        "export:package-manifest": "node .agents/skills/dsh-plugin-init/scripts/export-package-manifest.mjs",
         "capture:meta": "node .agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs",
         "inventory:plugin": "node .agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs",
         "loc": "sloc",
@@ -26,7 +27,8 @@
         "codex-review": "node .agents/skills/codex-comment-fix/scripts/codex-review.mjs",
         "snapshot": "node .agents/skills/dsh-plugin-init/scripts/snapshot-data.mjs",
         "prepare:selected": "node .agents/skills/dsh-plugin-init/scripts/prepare-selected.mjs",
-        "assemble:insight": "node .agents/skills/dsh-plugin-insight/scripts/assemble-insight.mjs"
+        "assemble:insight": "node .agents/skills/dsh-plugin-insight/scripts/assemble-insight.mjs",
+        "export:meta-manifests": "node .agents/skills/dsh-plugin-init/scripts/export-meta-manifests.mjs"
     },
     "devDependencies": {
         "ajv": "8.20.0",

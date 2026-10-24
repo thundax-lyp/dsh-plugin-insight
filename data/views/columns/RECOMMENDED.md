@@ -58,10 +58,10 @@
 | [dsh-eteams](#plugin-1372993989-root) | 为DSH提供领队主导的多会话团队、任务执行链、成员对话与SQLite持久状态。 | 可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。 |
 | [3chat-customer-growth](#plugin-1374055714-root) | 连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。 | 适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。 |
 | [@240xu/dsh-session-lazy-view](#plugin-1377185339-root) | 以独立网页只读查看本地会话尾帧，提供时间线、搜索、统计及Markdown导出。 | 本机只读尾部排查有明确可控试用路径，全文资源与投影完整性限制必须保留。 |
+| [dsh-jev-interceptor](#plugin-1382292535-root) | 为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。 | 适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。 |
 | [dsh-cache-bricks](#plugin-1386463441-root) | 用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。 | 适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。 |
 | [dsh-message-ops](#plugin-1389945615-root) | 为 DSH 提供消息回撤、删除显示与恢复操作及对应模型工具。 | 追加式纠错有明确价值，但必须在停止运行且可备份会话中核对上下文和外部副作用。 |
 | [@240xu/dsh-session-search](#plugin-1390987906-root) | 对本地 DSH 会话日志建立消息索引，提供跨会话关键词搜索、定位摘录和独立面板。 | 单人本地历史定位有可控试用价值，但仅前缀索引且可能保留陈旧缓存，命中须核原文。 |
-| [dsh-ollama-cloud](#plugin-1394197658-root) | 接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。 | 适合已有Ollama凭据并能锁宿主版本的用户先试短文本与可丢弃工具任务，核对档位、配额和取消。 |
 
 <a id="plugin-1334269686-root"></a>
 
@@ -707,6 +707,20 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1382292535-root"></a>
+
+## [dsh-jev-interceptor](../../plugins/asktheway--dsh-jev-interceptor/INSIGHT.md)
+
+[![GitHub ★ 31](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=31&color=yellow&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 2,667](https://img.shields.io/static/v1?label=npm+30d&message=2%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor)
+
+**主要用途**：为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。
+
+**推荐理由**：适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。
+
+**使用条件**：建议只在隔离 profile 条件试用。保持 `imageOffloadEnabled: false`、预批白名单为空和主插件 shadow，先验证所有挂点零状态变化与故障回到 stock；再对可逆、可重建工具逐项扩范围。任何 shadow 副作用、无遥测有效动作或 session-reference 缺失都应停止。详见Q09(#research-q09)。
+
+[返回表格](#column-index)
+
 <a id="plugin-1386463441-root"></a>
 
 ## [dsh-cache-bricks](../../plugins/3289192-bot--dsh-cache-bricks/INSIGHT.md)
@@ -746,20 +760,6 @@
 **推荐理由**：单人本地历史定位有可控试用价值，但仅前缀索引且可能保留陈旧缓存，命中须核原文。
 
 **使用条件**：单人非敏感本地范围试用，先验已知词与长消息尾部边界，命中后核原文；完整全文/多租户需求暂缓。参见Q04(#research-q04)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1394197658-root"></a>
-
-## [dsh-ollama-cloud](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/Asheblog/dsh-ollama-cloud)
-
-**主要用途**：接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。
-
-**推荐理由**：适合已有Ollama凭据并能锁宿主版本的用户先试短文本与可丢弃工具任务，核对档位、配额和取消。
-
-**使用条件**：适合已有Ollama凭据且可锁宿主版本的用户，以短文本和一个可丢弃工具任务试接入。首次要移除同route的dsh-llm-ollama冲突，配置key和完整重启；持续有模型调用费用、目录发现和配额轮询流量，以及上游升级维护。网络重试、缓存旧目录和人工切回模型也应计入失败成本。没有套餐与同任务账单，不给节省金额。成功需聊天、取消、工具结果和当前档位确实一致，配额方向与供应商页面相符；重复适配器冲突、能力误报或费用不可解释时停止扩大。 Q04(#research-q04)
 
 [返回表格](#column-index)
 

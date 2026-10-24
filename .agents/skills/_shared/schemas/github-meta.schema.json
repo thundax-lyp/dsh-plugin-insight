@@ -275,6 +275,72 @@
           ]
         }
       }
+    },
+    "archived": {
+      "type": "boolean"
+    },
+    "git_cache": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "captured_at",
+        "source_repository",
+        "path",
+        "errors_path",
+        "commit_sha",
+        "blob_sha",
+        "errors_blob_sha",
+        "latest_error"
+      ],
+      "properties": {
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_repository": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+$"
+        },
+        "path": {
+          "const": "data/GIT-META.jsonl"
+        },
+        "errors_path": {
+          "const": "data/GIT-ERRORS.jsonl"
+        },
+        "commit_sha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "blob_sha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "errors_blob_sha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "latest_error": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "checked_at",
+            "code"
+          ],
+          "properties": {
+            "checked_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "code": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
     }
   }
 }

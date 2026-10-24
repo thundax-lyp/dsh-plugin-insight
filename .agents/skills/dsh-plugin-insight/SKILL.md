@@ -13,6 +13,7 @@ description: 显式调用时研究一个固定版本的 DSH 插件，识别技�
 
 专用工具为 [代码统计脚本](scripts/plugin-inventory.mjs)、[材料准备脚本](scripts/prepare-plugin-materials.mjs)与 [META 采集脚本](scripts/capture-plugin-meta.mjs)，
 共同复用 [共享脚本和 Schema](../_shared)。从工程根用 package.json 中的命令运行。
+META 采集按[数据契约](../_shared/references/DATA-CONTRACT.md#发布输入meta-与统计字段)读取外部 Git 指标缓存；独立调用可传 `--repository-id <数字ID>`，编排调用使用父进程固定的缓存副本。只复用新鲜 Star 与归档状态，原始采集时间和来源随 META 保存，不用缓存替代推送时间、Issue 或源码更新检查。
 
 1. **确定输入边界。** 获取稳定组件 ID、注册表中的 plugin-slug、轮次目录、仓库／组件路径、固定版本、检查时间、目标研究深度、来源材料和输出位置。
    父 Agent 分派本 Skill 给子 Agent 执行，多个子 Agent 可并行分析不同插件；职责与共享写入边界遵循[列表编排 Skill 的多 Agent 协作](../dsh-plugin-init/SKILL.md#多-agent-协作)。只处理父 Agent 分配的组件和独占本轮输出，父 Agent 统一验收与暂存，不自行改动共享 WORK／SESSION 或扩展委派。

@@ -99,6 +99,7 @@
 | [dsh-neo-skin](#plugin-1335557891-root) | 为 DSH Web UI 叠加两套新粗野主义配色和结构样式。 | 个人隔离 profile 先做浅/深/系统、双方案与开关的视觉回归。 |
 | [dsh-notification-desktop](#plugin-1428147033-root) | 在 DSH 0.2.x 轮次结束时按原因与后台状态触发桌面或浏览器通知。 | 先观察并核制品/路由，Windows非敏感任务以实际toast验收后再试用；Mac/Linux桌面不依当前路径。 |
 | [dsh-openai-bridge（dsh-remote）](#plugin-1405845793-root) | 提供 OpenAI 兼容会话接口和手机面板，可继续 DSH 会话、浏览文件、处理审批及管理模型与上下文。 | 先观察，在隔离非敏感profile核对TLS和代理来源，显式选择session，并测试新会话权限set失败会被拒绝。 |
+| [dsh-opencodego-status](#plugin-1426264117-root) | 在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。 | 当前建议保持观察。 |
 | [dsh-peak-runner](#plugin-1417227361-root) | 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。 | 自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | 有条件试用，可信本机小PCM/低音量先核事件和设备；声音不是任务验收，远端和严格隔离提醒先观察。 |
 | [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 为 DSH Web/可选桌面层提供随会话状态变化的 Live2D 宠物、装扮、提示音和共享设置。 | 个人隔离安装可试用；先备份 pets 和设置，用改资源不改 manifest 的升级副本测覆盖。 |
@@ -1429,6 +1430,20 @@
 > **思考**：远程操作是否始终处于预期只读边界决定采用风险。openAgent仅对created会话尝试set预设，异常被catch记录后仍return agent，已存在会话不重钉权限；因此“桥驱动会话都只读”不能概括实际代码。read-only也不约束保密性和网络外发，token及IP白名单并不按每会话细分权限。首句相同的隐式映射还会合并会话，应显式选session。[Q02](#research-q02)
 
 > **建议**：未验证方向是配对后签发限定session、读/发/审批能力和有效期的设备令牌，创建会话时必须确认权限预设成功再接收首请求，已有会话显式展示并确认当前权限。用权限set抛错、同首句双客户端、撤销设备和会话越权矩阵测试，要求失败关闭且不串会话；若能力分拆破坏正常续聊或代理无法绑定身份，应收窄方案而非承诺完整隔离。[Q04](#research-q04)
+
+<a id="plugin-1426264117-root"></a>
+
+## [dsh-opencodego-status](../../plugins/assidefok--dsh-opencodego-status/INSIGHT.md)
+
+
+
+> **用途**：面向频繁在 DSH Web 工作且已有 OpenCode Go 订阅的用户，常驻查看三档额度和重置时间；偶尔查询时直接打开 Console 更简单。详见[Q01](#research-q01)。
+
+> **亮点**：研究者识别的贡献是把 OpenCode Console 的三档额度嵌入 DSH 工作表面，并把 token 留在 Host；相对直接打开 Console，增量是减少查看路径而非改变计量能力，节时尚无对照。详见[Q03](#research-q03)。
+
+> **思考**：最影响价值成立的限制是响应结构缺少校验：未公开 API 若以 2xx 返回缺失字段，源码会把 meter 归零并仍标为成功，可能把“不可确定”误呈现为“低用量”；这是静态可见缺口，不是已复现事故。详见[Q04](#research-q04)。
+
+> **建议**：未验证假设是增加 OpenCode 响应 schema 守卫，并把字段完整性、数据新鲜度与最近成功时间作为一等 UI 状态，可降低静默错值；先用五类 fake-server 响应矩阵检验误显示和误拒绝。详见[Q08](#research-q08)。
 
 <a id="plugin-1417227361-root"></a>
 

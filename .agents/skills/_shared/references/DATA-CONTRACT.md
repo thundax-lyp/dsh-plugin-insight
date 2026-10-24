@@ -142,7 +142,7 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
   缩小范围不算生态删除；变化标记可重叠，不能相加为对象总数，完整研究资格须结合下述轻量更新规则判断。
 - 新轮次使用 `selection.mode = incremental`，将基线中已有完成研究记录（含保留完整研究原稿、因失效退出当前展示的项）的 ID 固定在 `selection.researched_ids`，其中结论已失效或尚未恢复当前展示记录的待复核 ID 固定在 `selection.review_required_ids`；两者必须与正式基线一致。目录中已发现但从未完成研究的条目仍是新研究项。
   先比较全部已有成果与本轮输入；源码版本变化、路径迁移、缺席无法确认、指纹未知或依赖失效的已有项进入更新队列（INIT 的频繁更新过滤适用时暂缓版本更新）；仅目录／维护信息变化按轻量更新规则处理，确认未变的已有项保留原成果且不占额度。比较基线取该项最后完成研究的记录，不能取后来只发现而未完成研究的版本。
-  先排除正式同版本受阻项，将显式重试项按输入顺序置前，再按完整输入顺序排列更新队列（缺席项追加其后）和尚无完成研究记录的新项，去重后按此顺序固定 `selected_ids`。
+  先排除正式同版本受阻项，将显式重试项按输入顺序置前；新轮将更新队列和尚无完成研究记录的新项分别按下述综合热度排序，依次补入并固定 `selected_ids`。缺少 selection.heat 的历史会话保留完整输入顺序（缺席更新项追加其后），不按新规则重排。
   `research_limit` 表示更新与新项的总额度，必须为正安全整数；新调用省略参数时默认40，并在新会话中显式保存40。历史会话未保存额度时保持原有选择语义，不在恢复时套用新默认值。额度40、待更新 n≤40时补充最多40−n个新项；n>40时先做40个更新项，剩余更新留待后轮。新项不足时允许少于额度。
   `selected_ids` 在增量模式总是存在（允许空数组）；`selectedItems` 按固定选择顺序返回。未带 `selection` 的既有会话继续按旧的前 N 项语义校验和恢复，不反写历史选择。
   本轮选中后首次受阻的项仍占名额，续跑不补位、不重置；正式同版本受阻在选择前跳过，不占新轮名额；未选项保留 pending，但不接受完成、受阻或重试状态变更。
@@ -161,6 +161,20 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 ### INIT 版本更新暂缓集合
 
 过滤策略定义在[列表编排 Skill 的频繁更新过滤](../../dsh-plugin-init/SKILL.md#频繁更新过滤)。新会话的可选 selection.cooldown_ids 保存按正式基线与本轮固定 checked_at 计算的近期版本更新候选；入队前还需将输入与最后研究基线比较：非 code 指纹变化若被任一现有结论、创新评分或采用推荐声明依赖，则排除出暂缓集合，不等待 catalog 先变为 needs_review；仅 code revision 变化仍遵循 INIT 的过滤策略。已有 review_required_ids 和显式 retry_ids 优先，suppressed_ids 仍代表同版本受阻，不混用原因。合并重算该集合并校验摘要，不修改旧会话选择。本轮 INPUT 保存实际 revision；暂缓不刷新研究基线、报告或证据，不表示新版本已完成研究。窗口跳过数按未入选且未被同版本受阻抑制的 ID 单列。
+
+### 综合热度与固定队列
+
+综合热度 `heat-v1` 只用于 INIT 的候选排期，不是研究结论、创新分或采用推荐。新轮在截断额度前排序：显式重试优先，已有更新项其次，首次研究项补足额度；更新与首次研究两组各按热度降序，同分按稳定 ID 字节序。冷却、受阻、轻量更新资格不因热度改变。旧 WORK 没有 `selection.heat` 时按原顺序恢复，不反向升级历史选择。
+
+冻结会话全体候选的可用 Star 最大值 `Smax` 和近30日下载量最大值 `Dmax`，对各项已知值分别计算 `s=ln(1+S)/ln(1+Smax)`、`d=ln(1+D)/ln(1+Dmax)`；最大值为0时，该项已知零的归一化值为0。两项都已知时 `H=100*(s+d)/2`，只有一项时 `H=100*s` 或 `100*d`，都未知时 H 为 null 并排在所有有数据项之后。这个分数是本轮相对热度，跨轮分数不能直接比较；单指标与双指标的覆盖差异必须保留，不将缺失补0。
+
+Star 按稳定仓库 ID 读取 Git 缓存，下载量只按当前正式 META 中最后核实的精确 npm 包名读取 npm 缓存。字段组缺失时允许使用本轮开始时的正式 META，但成功采集时间同样必须不晚于截止且不超过24小时，下载窗口必须覆盖截止前30个完整UTC日。Star 的正式 META 时间优先取 git_cache.captured_at，不以较新的顶层采集时间延长缓存寿命；已知仓库 ID 冲突时也不能借用该 META 的 npm 包名。缺少包名的候选只评估 Star，不因仓库下其他组件的包名关联猜测自身身份。
+
+同仓库多个组件共享 Star，同包多个组件共享下载量，分别引用同一指标而不相加；重复引用不会增大归一化最大值。热度取值不代表用户数或质量，也不创建对未研究插件的正式成果。
+
+`selection.heat` 保存版本、截止时间、正式基线摘要、逐项原始值／成功时间／包名／字段来源，以及固定 Git commit/blob 和 npm blob、缓存读取错误；无指标用 null。分数由冻结值确定性重算，不单独人工填分。CLI 开始新轮固定远端缓存；直接调用 startWork 未提供外部缓存时仍以正式 META 固定本地热度。外部缓存失败不会逐插件无预算回源，保留错误并退化到新鲜正式 META 或未知。startWork 持锁核对热度的正式基线摘要，期间基线变化必须重新采集，不把旧热度套入新基线。
+
+会话校验核对热度范围、时间、来源和选择顺序；WORK 摘要绑定热度。恢复、stage、plan 和 apply 均使用该冻结值，不依据墙上时间或后续 META 刷新重排；合并仍重新核对原有资格和正式基线。只保存于本轮过程，正式研究、来源指纹、评分和页面排序不受影响。
 
 ### 目录与维护信息的轻量更新
 
@@ -186,10 +200,37 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
   返回包名、窗口与非负整数下载数须匹配，否则记未知；下载量不等于用户数。
 - `npm.publication` 的 first_published_at 来自已核实包的注册表 time.created，表示首次发布，仅保留为数据。可选的 latest_version、latest_published_at、latest_error 必须成组出现，来自注册表 dist-tags.latest、该版本的 time[version] 及版本条目身份核对；不是 time.modified、任意最高版本或 Git 推送时间。成功时版本与日期同时存在且 latest_error 为 null，失败时两者为 null 并保存错误。首次时间与最新版本采集可独立失败；旧快照缺少 latest 字段时视为未知，不回退首次时间。采集时间及注册表来源共用 publication.captured_at／source_url，缺失或失败不从入档、Git 或下载量推断。
 - `refresh:meta -- --npm-publication-only` 仅重采既有已确认包名的 publication，保留下载、GitHub指标、脚本更新检查、研究记录与推荐，仍经基线摘要、完整校验、独占锁及原子快照写入；默认每日完整META刷新也采集最新版本字段。
+- META 采集开始时先从私有 `thundax-lyp/dsh-plugin-meta` 仓库回读一次固定的 `main:data/NPM-META.jsonl` blob，并对整份 JSONL 的包名、排序和已出现字段做校验。同次运行只使用该 blob，不在组件之间追随移动分支头。
+  对已有已核实 `npm.package_name` 的组件，近30日下载量和发布信息分别按字段组查找外部记录：记录的成功 `checked_at` 不得晚于本轮采集时点且不超过24小时；下载字段组还必须精确覆盖本轮采集时点之前30个完整UTC日。满足时保留记录自身的 `checked_at` 作为 `captured_at`；记录不存在、过期、窗口不匹配、失败记录没有仍新鲜的旧成功值或字段组不完整时，才回源 npm downloads／registry。外部缓存读取失败时记录缓存错误并回源，不把失败当成空值或零。包级缓存不保存组件对应的 GitHub 仓库指标，因此仓库身份、Star、Issue、推送时间和代码更新检查仍在需要时访问 GitHub 仓库接口。缓存值进入正式 META 前继续通过本工程 Schema 校验，不改变 npm 包名必须先由源码核实的身份边界。
+  `prepare:selected` 与手动 `refresh:meta` 使用同一缓存解析和字段组判定；前者在任何选中项 META 采集前固定远端 blob，并在本轮 `PREPARATION.json` 保存仓库、分支、路径、blob SHA、缓存错误及每项下载量／发布信息的实际来源。缓存命中不得再请求对应 npm 接口；缓存下载量完整而发布信息不完整时只回源 registry，不能重复请求 downloads。
+- Git 仓库指标缓存独立读取 `data/GIT-META.jsonl` 和 `data/GIT-ERRORS.jsonl`，两者必须绑定同一完整远端 commit SHA；同次 prepare:selected 或完整 refresh:meta 仅固定读取一次，不逐组件追随分支。整份 JSONL 校验字段、正整数 ID、数值排序、非负 Star、布尔归档状态及完整 UTC 时间戳（拒绝仅日期与非法日历日期）；未知字段、重复 ID 和不完整记录导致缓存读取失败并显式回源，不视为零。
+  已核实稳定 ID 对应的成功记录时间不得晚于本轮采集时点且不超过24小时，满足才复用 `stars` 和可选 `archived`。零 Star 与 false 归档状态都是有效值；改名按 ID 匹配，不按仓库名匹配。存在失败记录但旧成功值仍新鲜时可复用，保留 `latest_error`，不能以失败尝试时间延长成功值有效期。
+  命中时在 META 的可选 `git_cache` 中保存原成功 `captured_at`、缓存来源仓库、路径、固定 commit SHA、指标与错误 blob SHA 及最新错误，顶层 `captured_at` 仍代表本轮采集，不能用它冒充缓存 Star 的新采集时间。缓存缺失、过期、未来时间或身份不匹配时回源 GitHub；已知 ID 的仓库查询使用 `/repositories/<id>` 并核对返回身份，身份冲突直接拒绝，不用缓存掩盖。
+  当前 Git 缓存不包含 `pushed_at`、Issue 统计或代码更新信息；这些继续直接查询 GitHub，因此缓存命中不意味着完全取消仓库接口请求。仓库接口失败但有新鲜缓存时保留 Star、归档状态和错误，缺失的推送时间及 Issue 统计保持未知，不继续按可能过期的名称查询 Issue。publication-only 刷新不读取或更新 Git 缓存。
+  prepare:selected 在本轮 `GIT-META-CACHE.json` 只落地无令牌的固定缓存副本供采集子进程使用，并在 PREPARATION 保存缓存来源、commit/blob、错误及逐项字段来源；完整 refresh:meta 的结果同样报告字段来源和缓存错误。缓存副本属于可保留的本轮过程，不写入源码证据或研究结论。
 - 可选 `code_update` 绑定研究基线、当前提交、变更路径和核查时间；`script_changed` 为 true／false／null 三态。
   它表示待重新洞察的脚本变化，独立于 findings 的依赖失效状态，不改写研究深度或完成检查点。
 - 工程统计的 `revision`／`component`／`coverage` 界定版本、组件及完整或抽读范围；工具版本、内容摘要与排除项须保留。
   静态能力候选不是正式能力数，`confirmed_count: null` 表示未确认，不能转成 0；统计材料同样不可覆盖检查点已绑定的原件。
+
+### 外部 META 双清单回写
+
+私有 GitHub 仓库 `thundax-lyp/dsh-plugin-meta` 分开维护 npm 与 GitHub 采集对象和指标。INIT 收尾使用
+`npm run export:meta-manifests -- --work data/runs/<round>/WORK.json` 预览两份清单，再以 `--apply` 同步；原 `export:package-manifest` 只更新 npm，保留作单清单工具，不能替代 INIT 完成条件。不得依赖相邻 checkout 或直接写入其他工作区。
+
+- `data/NPM-MANIFEST.jsonl` 每行只有 `{ "package": "<npm-name>" }`，按完整包名字节序去重排序。`data/NPM-META.jsonl` 为独立指标缓存。
+- `data/GIT-MANIFEST.jsonl` 每行包含 `repository_id`、`node_id`、`repository`、`npm_packages`、`source_repositories`，按正整数 `repository_id` 数值升序去重。`repository` 保存仓库名称，`node_id` 供批量采集固定对象，`source_repositories` 是小写来源仓库名称数组；同仓库多个组件及改名后的来源归入同一 ID。`npm_packages` 是包名关联数组，空数组只表示无已核实包名。所有数组去重并按字节序排序，同一来源名称不能同时归入不同仓库 ID。
+- `data/GIT-META.jsonl` 由目标工程独立采集 Star 等仓库指标。回写只更新两个 MANIFEST，不写 npm／Git 指标、待解析或错误文件，不触发采集工作流。
+
+WORK 通过共享过程读取器和校验器读取；INPUT 的 `plugins` 是该轮来源扫描中通过仓库身份和默认分支核实的完整组件集合，不能用已研究 catalog 数量替代。Git 候选从每个组件的稳定 ID 提取仓库 ID，并与存在的 INPUT metadata.repository_id 交叉核对；不因缺少正式 META 排除仓库。已有远端 ID 复用其 node ID，新 ID 通过 GitHub `/repositories/<id>` 核实数字 ID、node ID 和当前名称后才能写入；身份查询失败即阻止整次同步，不能伪造 node ID 或静默漏项。
+
+当前固定目录源码及 INPUT 不提供 npm 包名字段；上游在线目录可提供，但不是本轮固定 INPUT 的身份依据。回写只联结正式 catalog META 中已有的精确 `npm.package_name`，同时用于 npm 清单和 Git 的包名关联；没有正式 META 或没有已核实包名的组件分别计入缺失，不从仓库、组件、目录名称或描述推断。目标工程独立导入的已有包名、仓库和关联全部保留，不以本轮缺席推断删除。
+
+两份输出分别为“远端已有 ∪ 本轮已核实”的追加合并；必须报告完整组件数、具有来源包名字段的组件数、已核实包名组件数、唯一包名数、两类缺失数，以及 npm／Git 的远端已有、本轮已存在、新增、保留历史、删除数0和最终输出数。Git 另报告本轮唯一仓库数。来源扫描失败、INPUT 不包含的未解析条目不冒充已覆盖；不得将已核实 npm 子集表述为全量包覆盖。
+
+预览先固定远端分支完整 commit SHA，并从该提交读取两个 MANIFEST，目标文件缺失时停止，不回退旧路径或自动初始化。`--apply` 使用 Git Data API 基于该提交创建只包含变更清单的 tree 和单个 commit，以非强制分支更新防止覆盖并发提交。无内容变化则不创建提交。写入后从分支最新的同一固定提交回读两个文件并逐字节核对，任一不匹配均报告受阻、保留 WORK，先重新预览再恢复；不能凭提交 API 返回值判定完成。最后再运行只读命令，确认两份 `changed: false` 后才进入清理。
+
+省略 `--work` 仅在 `data/runs/` 中恰有一个 WORK 时允许。认证使用 `GH_TOKEN`、`GITHUB_TOKEN` 或本机 `gh` 登录，目标写入需要对应 Contents 权限并遵守分支保护。Skill 收尾授权只覆盖 npm／Git 两份清单的单个远端提交，不授权部署或改名目标工程文件、修改指标和 CI、推送本工程、创建 PR 或触发消费方刷新。包名或仓库错误、迁移和退役走独立显式清理，不由普通 INIT 裁剪。
 
 ## 路径、兼容与清理
 
