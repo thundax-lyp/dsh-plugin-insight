@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { captureHeat, subsetHeat, heatFromCaches, heatScores } from '../../_shared/scripts/plugin-heat.mjs';
 import { validateDisplay } from '../../_shared/scripts/publication-validation.mjs';
 import {
     readSnapshotStorage,
@@ -205,19 +206,19 @@ export function bootstrap(root = ROOT) {
     }
     return result;
 }
-export function startWork(input, path, limit = 40, root = ROOT, retryIds = []) {
+export function startWork(input, path, limit = 40, root = ROOT, retryIds = [], heat = null) {
     mkdirSync(dirname(path), { recursive: true });
     const lock = path + '.lock',
         fd = openSync(lock, 'wx', 0o600);
     try {
         if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
-        return startWorkUnlocked(input, path, limit, root, retryIds);
+        return startWorkUnlocked(input, path, limit, root, retryIds, heat);
     } finally {
         closeSync(fd);
         unlinkSync(lock);
     }
 }
-function startWorkUnlocked(input, path, limit, root, retryIds) {
+function startWorkUnlocked(input, path, limit, root, retryIds, heat) {
     if (existsSync(path)) throw Error('work already exists; resume it');
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel))
@@ -311,7 +312,12 @@ function startWorkUnlocked(input, path, limit, root, retryIds) {
         for (const url of item.source_urls)
             if (!session.sources.some((source) => source.url === url))
                 session.sources.push({ url, revision: null, complete: false });
-    session.selection = snapshotSelection(base, session.items, retryIds, true, session.checked_at);
+    if (heat && heat.base_digest !== digest(base)) throw Error('heat baseline changed; capture heat again');
+    const fixedHeat = subsetHeat(
+        heat ?? { ...heatFromCaches(session.items, base.metadata, session.checked_at), base_digest: digest(base) },
+        session.items
+    );
+    session.selection = snapshotSelection(base, session.items, retryIds, true, session.checked_at, fixedHeat);
     session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {
@@ -400,7 +406,14 @@ export function cooldownIds(base, items, checkedAt) {
         })
         .map((item) => item.id);
 }
-function snapshotSelection(base, items = null, retryIds = [], metadataPolicy = true, cooldownCheckedAt = null) {
+function snapshotSelection(
+    base,
+    items = null,
+    retryIds = [],
+    metadataPolicy = true,
+    cooldownCheckedAt = null,
+    heat = null
+) {
     const published = new Set(base.publication.records.map((record) => record.id));
     const researched = [
         ...new Set([
@@ -429,6 +442,7 @@ function snapshotSelection(base, items = null, retryIds = [], metadataPolicy = t
     }
     return {
         mode: 'incremental',
+        ...(heat ? { heat } : {}),
         ...blockedSelection,
         ...(metadataPolicy ? { metadata_only_ids: metadataOnlyIds(base, items ?? []) } : {}),
         ...(cooldownCheckedAt !== null ? { cooldown_ids: cooldownIds(base, items ?? [], cooldownCheckedAt) } : {}),
@@ -455,7 +469,8 @@ function assemble(base, work, root = ROOT) {
         selection?.suppressed_ids === undefined ? null : work.session.items,
         selection?.retry_ids ?? [],
         selection?.metadata_only_ids !== undefined,
-        selection?.cooldown_ids !== undefined ? work.session.checked_at : null
+        selection?.cooldown_ids !== undefined ? work.session.checked_at : null,
+        selection?.heat ?? null
     );
     if (selection && digest(selection) !== digest(expectedSelection))
         throw Error('incremental selection baseline differs from snapshot');
@@ -1013,13 +1028,35 @@ export async function main(args = process.argv.slice(2)) {
         renderSnapshot();
     } else if (command === 'start') {
         const n = v.limit === undefined ? undefined : Number(v.limit);
-        const w = startWork(read(need('input')), need('work'), n, ROOT, v['retry-plugin'] ?? []);
+        const input = read(need('input'));
+        if (existsSync(need('work'))) throw Error('work already exists; resume it');
+        const baseline = readSnapshot(ROOT);
+        const items = [
+            ...new Map([...baseline.catalog.plugins, ...input.plugins].map((item) => [item.id, item])).values()
+        ];
+        const heat = {
+            ...(await captureHeat(items, baseline.metadata, input.checked_at)),
+            base_digest: digest(baseline)
+        };
+        const w = startWork(input, need('work'), n, ROOT, v['retry-plugin'] ?? [], heat);
+        const scores = heatScores(w.session.selection.heat);
         console.log(
             JSON.stringify({
                 selected: selectedItems(w.session).length,
                 listed: w.session.items.length,
                 suppressed: w.session.selection.suppressed_ids.length,
-                retry_ids: w.session.selection.retry_ids
+                retry_ids: w.session.selection.retry_ids,
+                heat: {
+                    version: w.session.selection.heat.version,
+                    sources: w.session.selection.heat.sources,
+                    unknown: Object.values(w.session.selection.heat.rows).filter(
+                        (row) => row.stars === null && row.downloads_30d === null
+                    ).length,
+                    selected: selectedItems(w.session).map((item) => ({
+                        id: item.id,
+                        score: scores.get(item.id)
+                    }))
+                }
             })
         );
     } else if (command === 'next') {

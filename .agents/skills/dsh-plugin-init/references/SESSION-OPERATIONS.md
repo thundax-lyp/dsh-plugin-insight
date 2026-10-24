@@ -60,7 +60,8 @@ INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗�
 - `npm run snapshot -- start --input <INPUT.json> --work data/runs/<round>/WORK.json [--limit N] [--retry-plugin <id>]`：重试参数可重复，仅在用户明确要求时传入；指定已登记受阻候选优先占正常额度。省略 `--limit` 默认40，绑定当前快照摘要并固定选择，不读取上轮会话。
 - `block --work ... --plugin <id> --input <reason.json>`：reason包含稳定reason_code、可读reason及自包含问题详情；写入本轮block，最终由plan/apply落入正式快照。
 - `retry --work ... --plugin <id>`：用户明确要求时，重置未合并的已选blocked项为pending后重新准备，原始失败材料保留；不改变固定选择或额度。已合并事务不能重置，开启新轮并指定--retry-plugin。
-- `next --work ...` 返回本轮待处理项；`stage --work ... --plugin <id> --observations ... --report ... --display ...` 校验完整单项记录，只更新 WORK／本轮 SESSION。
+- 新轮 `snapshot start` 在截断额度前按数据契约固定综合热度排序，保存 selection.heat；旧 WORK 和同轮恢复不重新排行。
+- `next --work ...` 按固定 selected_ids 返回本轮待处理项；`stage --work ... --plugin <id> --observations ... --report ... --display ...` 校验完整单项记录，只更新 WORK／本轮 SESSION。
 - `plan --work ... --out ...` 产生合并候选；`apply --plan ...` 持锁复核并原子更新正式快照，重复执行同一结果不重复追加。
 - apply 已成功而生成中断时，直接执行 `snapshot render`；不重新研究或重复应用观察。
 - `snapshot validate` 和 `npm run check` 校验正式快照及派生成果；不要求旧 runs 或 manifest 存在。

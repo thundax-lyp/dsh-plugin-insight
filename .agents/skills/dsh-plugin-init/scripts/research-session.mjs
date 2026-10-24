@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateHeat, sortByHeat } from '../../_shared/scripts/plugin-heat.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { readResearchSession, readWork } from '../../_shared/scripts/work-storage.mjs';
 import {
@@ -92,6 +93,9 @@ export function validateSession(session, root = ROOT, embeddedArtifacts = null) 
             )
         )
             throw Error('invalid deferred research selection');
+        if (session.selection.heat && session.selection.heat.base_digest !== session.base_digest)
+            throw Error('heat snapshot baseline mismatch');
+        validateHeat(session.selection.heat, session.items, session.checked_at);
         const expected = incrementalSelection(session);
         if ([...retries].some((id) => !expected.includes(id))) throw Error('retry exceeds research limit');
         if (digest(session.selected_ids) !== digest(expected)) throw new Error('invalid incremental selection');
@@ -238,8 +242,14 @@ export function incrementalSelection(session) {
     const priority = eligible.filter((item) => retries.has(item.id));
     return [
         ...priority,
-        ...updates.filter((item) => !retries.has(item.id)),
-        ...additions.filter((item) => !retries.has(item.id))
+        ...sortByHeat(
+            updates.filter((item) => !retries.has(item.id)),
+            session.selection.heat
+        ),
+        ...sortByHeat(
+            additions.filter((item) => !retries.has(item.id)),
+            session.selection.heat
+        )
     ]
         .slice(0, session.research_limit)
         .map((item) => item.id);
