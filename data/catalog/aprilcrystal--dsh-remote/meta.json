@@ -1,0 +1,55 @@
+{
+    "repository": "AprilCrystal/dsh-remote",
+    "repository_id": 1405845793,
+    "captured_at": "2026-10-24T05:56:04.032Z",
+    "window_start": "2026-09-24T05:56:04.032Z",
+    "stars": 0,
+    "pushed_at": "2026-10-18T06:30:26Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAprilCrystal%2Fdsh-remote%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2CF4:879BB:814F75:8B87F1:6ADC4878 and timestamp 2026-10-24 05:56:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAprilCrystal%2Fdsh-remote%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D9A:8C1F2:7E8236:88C090:6ADC4879 and timestamp 2026-10-24 05:56:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAprilCrystal%2Fdsh-remote%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A04.032Z..2026-10-24T05%3A56%3A04.032Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2E48:7E6D5:7D1994:8756DE:6ADC487A and timestamp 2026-10-24 05:56:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAprilCrystal%2Fdsh-remote%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A04.032Z..2026-10-24T05%3A56%3A04.032Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2EE4:32560F:7DEC64:882738:6ADC487B and timestamp 2026-10-24 05:56:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAprilCrystal%2Fdsh-remote%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A04.032Z..2026-10-24T05%3A56%3A04.032Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2F8E:31FD0C:7CE560:871BA6:6ADC487C and timestamp 2026-10-24 05:56:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-openai-bridge",
+        "captured_at": "2026-10-24T05:56:11.043Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-openai-bridge",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-24T05:56:11.043Z",
+            "source_url": "https://registry.npmjs.org/dsh-openai-bridge",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

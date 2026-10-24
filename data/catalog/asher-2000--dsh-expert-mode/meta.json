@@ -1,0 +1,55 @@
+{
+    "repository": "Asher-2000/dsh-expert-mode",
+    "repository_id": 1334811048,
+    "captured_at": "2026-10-24T05:56:55.888Z",
+    "window_start": "2026-09-24T05:56:55.888Z",
+    "stars": 14,
+    "pushed_at": "2026-09-07T06:26:45Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-expert-mode%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D86:90947:7B5627:8591F8:6ADC48AB and timestamp 2026-10-24 05:57:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-expert-mode%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E2E:86BD2:7DB04E:87F09D:6ADC48AD and timestamp 2026-10-24 05:57:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-expert-mode%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A55.888Z..2026-10-24T05%3A56%3A55.888Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4EE2:31FC7F:7CBE05:86FFF6:6ADC48AE and timestamp 2026-10-24 05:57:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-expert-mode%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A55.888Z..2026-10-24T05%3A56%3A55.888Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4FD8:249B5F:785A15:829790:6ADC48AF and timestamp 2026-10-24 05:57:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-expert-mode%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A55.888Z..2026-10-24T05%3A56%3A55.888Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5094:249347:7CF60B:872FAE:6ADC48B0 and timestamp 2026-10-24 05:57:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-expert-mode",
+        "captured_at": "2026-10-24T05:57:02.846Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 307,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-expert-mode",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-27T06:33:13.726Z",
+            "captured_at": "2026-10-24T05:57:02.846Z",
+            "source_url": "https://registry.npmjs.org/dsh-expert-mode",
+            "error": null,
+            "latest_version": "0.9.2",
+            "latest_published_at": "2026-08-27T06:49:03.433Z",
+            "latest_error": null
+        }
+    }
+}

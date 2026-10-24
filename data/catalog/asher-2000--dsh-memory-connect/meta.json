@@ -1,0 +1,55 @@
+{
+    "repository": "Asher-2000/dsh-memory-connect",
+    "repository_id": 1339263264,
+    "captured_at": "2026-10-24T05:57:01.139Z",
+    "window_start": "2026-09-24T05:57:01.139Z",
+    "stars": 8,
+    "pushed_at": "2026-08-27T16:03:31Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-memory-connect%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A228:1EC68D:15CF869:1F816AA:6ADC48B1 and timestamp 2026-10-24 05:57:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-memory-connect%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2BC:2ABE8F:167128E:2053580:6ADC48B2 and timestamp 2026-10-24 05:57:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-memory-connect%20is%3Aissue%20created%3A2026-09-24T05%3A57%3A01.139Z..2026-10-24T05%3A57%3A01.139Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A364:1EC68D:15CFBC8:1F81BB5:6ADC48B3 and timestamp 2026-10-24 05:57:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-memory-connect%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A57%3A01.139Z..2026-10-24T05%3A57%3A01.139Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A3F6:373842:164F6E0:2027C75:6ADC48B4 and timestamp 2026-10-24 05:57:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsher-2000%2Fdsh-memory-connect%20is%3Aissue%20updated%3A2026-09-24T05%3A57%3A01.139Z..2026-10-24T05%3A57%3A01.139Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A490:282031:1674DF7:205EFCA:6ADC48B5 and timestamp 2026-10-24 05:57:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@asherliner/dsh-memory-connect",
+        "captured_at": "2026-10-24T05:57:08.213Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 146,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40asherliner%2Fdsh-memory-connect",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-27T07:29:25.236Z",
+            "captured_at": "2026-10-24T05:57:08.213Z",
+            "source_url": "https://registry.npmjs.org/%40asherliner%2Fdsh-memory-connect",
+            "error": null,
+            "latest_version": "0.6.1",
+            "latest_published_at": "2026-08-27T12:27:07.623Z",
+            "latest_error": null
+        }
+    }
+}

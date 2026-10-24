@@ -1,0 +1,423 @@
+{
+    "schema_version": 4,
+    "id": "8e172005aec306625fc29605dc7c1445",
+    "identity": "github:1365163748:root",
+    "slug": "arimakana-akane--dsh-wallpaper-position",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1365163748:root",
+            "repository_id": 1365163748,
+            "component_id": "root",
+            "repository": "ArimaKana-Akane/dsh-wallpaper-position",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-wallpaper-position",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "dda6af9dbf813add3d9999a830fb848daa79f3c89d03ef778b8d3efbcdf1a64c",
+                "code": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                "maintenance": "62e858b6c69d4d16f07e61ed41b1ef3f2caff3d2e8c27ed53111dc3bc5493de5"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-24-02-github-1365163748-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "b4d0049a80923dde87317adca15433abe345ff8a",
+                    "retrieved_at": "2026-10-24T05:58:19.928Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-24-02-github-1365163748-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position",
+                            "commit": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                            "path": "README.md",
+                            "content_sha256": "827c1ebac8f35dee2afcc7c976ad33a9a505a99b777b06cd737744abab30c279"
+                        }
+                    ],
+                    "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                    "captured_at": "2026-10-24T05:58:19.928Z",
+                    "summary": "为 dream-skin 壁纸提供按图片、URL 或渐变分别记忆的水平和垂直像素位移设置。",
+                    "artifact": "data/runs/2026-10-24-02/arimakana-akane--dsh-wallpaper-position/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-24-02-github-1365163748-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position",
+                            "commit": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                            "path": "lib/client.js",
+                            "content_sha256": "47723c6e0471a41258dae73b7dfed166a92ae470815594aa1a3241d22dff9418"
+                        },
+                        {
+                            "repository_url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position",
+                            "commit": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                            "path": "lib/index.js",
+                            "content_sha256": "66f280881cee5119d371bbd784599fccf6919f9439304b1bc3aeb49d41db8345"
+                        },
+                        {
+                            "repository_url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position",
+                            "commit": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                            "path": "scripts/install.sh",
+                            "content_sha256": "ebe334e49884d7d0950abcaf237c33814f5da71f02ccdcefe5837f5815f5df3e"
+                        },
+                        {
+                            "repository_url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position",
+                            "commit": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                            "path": "package.json",
+                            "content_sha256": "f8713169a97b517601f07ddbf235d8903dae9a5e788f2071726dc954f6c2d32c"
+                        }
+                    ],
+                    "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                    "captured_at": "2026-10-24T05:58:19.928Z",
+                    "summary": "核查 lib/client.js、lib/index.js、scripts/install.sh、package.json；浏览器读取 dream-skin 的壁纸类型和内容，经简易哈希确定 localStorage 中的位移项，设置输入经整数限幅后写回，再以根 CSS 变量影响固定背景层；两秒轮询同步换图状态。",
+                    "artifact": "data/runs/2026-10-24-02/arimakana-akane--dsh-wallpaper-position/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查固定提交的 README、包清单、主机空入口、完整浏览器实现和安装脚本；未检查 dream-skin 当前实现，跨插件接口以本项目声明及引用方式为边界。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向在 dream-skin 使用不同构图背景的用户，按壁纸保存 X/Y 位移，减少每次换图后重写 CSS 的操作。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "浏览器读取 dream-skin 的壁纸类型和内容，经简易哈希确定 localStorage 中的位移项，设置输入经整数限幅后写回，再以根 CSS 变量影响固定背景层；两秒轮询同步换图状态。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查固定提交的 README、包清单、主机空入口、完整浏览器实现和安装脚本；未检查 dream-skin 当前实现，跨插件接口以本项目声明及引用方式为边界。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package.json 提供 web 客户端入口、bundle patch 和 dream-skin peerDependency；dshDependencies 是作者自描述而非宿主强制约束。安装脚本复制文件并修改 profile bundles，市场依赖登记需额外选项。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 现有 DSH 与 dream-skin 环境，金额未知 | 备份 profile、安装、重启及构图调整，时长未知 | 不需要独立远程服务 |\n| 持续使用 | 浏览器两秒轮询与 localStorage，资源量未知 | 每张新图调整并复核 | 大 data URL 哈希开销未测 |\n| 失败恢复 | 重新加载或禁用的资源量未知 | 核对 profile 与浏览器偏移表，必要时外部终端处理 | 存储写入错误未反馈，恢复耗时未知 |",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有 dream-skin 的用户可在备份 profile 后试用，以换图返回能恢复偏移且其他背景不移动为通过标准；发现误匹配、重载后偏移丢失或界面异常就停止并禁用。只想偶尔移动一张图的人可先用局部 CSS，未使用 dream-skin 者缺少必要插槽。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 按壁纸保存位置 | 三类内容身份映射到偏移表 | 哈希冲突和浏览器存储失败频率 |\n| 界面直接微调 | 数值输入、步进按钮、恢复默认接线存在 | 当前宿主可见性和操作体验 |\n| 阅读改善 | 可以改变背景位置 | 合格阅读任务耗时与舒适度，没有同条件对照 |",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "空 host apply 保持插件接口成立，浏览器 seed 探测能在缺模块时降级；数值限幅和输入中间态处理值得借鉴。代价是大量 catch 隐藏存储和应用错误，setInterval 没有保存句柄或注册销毁，样式也未见卸载清理。可复用逐图状态映射思想，但应重新设计稳定身份和组件清理，不能直接复制全局选择器。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "相对手写一条固定 background-position，本插件把位移参数绑定到壁纸内容并暴露在现有外观设置内，省去换图后人工维护选择器和偏移值的重复步骤。这是对 dream-skin 的局部可用性补充，背景渲染和插槽来自上游，不能归为新壁纸引擎。[Q01](#research-q01) 与 [Q02](#research-q02) 支持此归属。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "精确调整能否只作用于目标壁纸决定这一便利是否可靠。源码选择器会命中任意 body 直属的固定背景层，非零位移可能同时移动其他插件背景；而上游更改 DOM 或键名又可能失效。另有轮询未见释放、写存储失败被吞掉的维护负担，不能从界面即时变化推断持久化成功。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "mechanism",
+                    "basis": "unverified",
+                    "text": "由匿名 DOM 选择器与跨插件存储键耦合，可推导一个未验证假设：让 dream-skin 提供稳定壁纸 ID、专属 DOM 标识和变化事件，可在保持逐图记忆的同时替代轮询并隔离其他背景层。该方案需要上游协作及旧记录迁移，增加接口维护成本。用两张图片、URL、渐变和第二背景层测试事件版与现版，若仍误移动其他层、丢失偏移或事件开销没有改善，就否定改进成立。[Q05](#research-q05)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1365163748:root",
+                            "area": "code",
+                            "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T05:58:19.928Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-24T05:58:19.928Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                "reviewed_at": "2026-10-24T05:58:19.928Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1365163748:root",
+                        "area": "code",
+                        "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty 相对固定 CSS 为小幅逐图适配；mechanism 用内容键与变量组合属常规实现；transferability 可移植但依赖上游 DOM；simplification 将分散 CSS 操作放入设置，增量有限，未以设想加分。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow 将手写偏移改为当前图设置，属于小幅便利；delivery 仍交付同一背景；reach 降低 CSS 操作门槛但只覆盖 dream-skin 用户；economics 未见已证实的新成本组织方式。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1365163748-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合已有 dream-skin 且经常换背景的用户在可恢复的 web profile 试用；先检查背景选择器隔离和换图持久化。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "构图遮挡与逐图调整任务明确，但真实发生频率未核实。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "相对手写 CSS 增加逐图记忆和设置入口，不能替代缩放或构图编辑。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "已检查完整浏览器实现和安装脚本，没有执行同版本宿主任务。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "没有额外服务，仍需维护上游插件和浏览器状态，选择器与生命周期兼容成本存在。"
+                    }
+                },
+                "score": 59,
+                "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                "reviewed_at": "2026-10-24T05:58:19.928Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-24-02-github-1365163748-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1365163748:root",
+                        "area": "code",
+                        "fingerprint": "14a054eef21ec5bf9c884340a2da8814735a75d3"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1365163748:root",
+            "repository": "ArimaKana-Akane/dsh-wallpaper-position",
+            "path": "",
+            "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+            "fingerprints": {
+                "directory": "dda6af9dbf813add3d9999a830fb848daa79f3c89d03ef778b8d3efbcdf1a64c",
+                "code": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+                "maintenance": "62e858b6c69d4d16f07e61ed41b1ef3f2caff3d2e8c27ed53111dc3bc5493de5"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-24T05:52:04Z",
+            "analysis_sha256": "25b2f6b10617f6ecddf24977e6dacf7be105079853dee6ca832410b66504f7d2"
+        },
+        "publication.metadata": "data/catalog/arimakana-akane--dsh-wallpaper-position/meta.json",
+        "publication.summaries": {
+            "text": "为 dream-skin 壁纸提供按图片、URL 或渐变分别记忆的水平和垂直像素位移设置。",
+            "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+            "source_url": "https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+            "items": {
+                "界面": "在 dream-skin 外观设置中调整当前壁纸的水平、垂直偏移和恢复默认。",
+                "后台": "浏览器轮询识别壁纸变化并读取逐图保存的位移。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| X/Y 像素微调 | 输入整数或使用 ±1/±10 按钮改变构图 | 依赖 dream-skin 插槽，范围 ±5000px |\n| 按壁纸记忆 | 图片、URL 与渐变分别恢复偏移 | localStorage 可用，身份为内容简易哈希 |\n| 恢复默认位置 | 清零当前壁纸位移 | 不清理其他壁纸记录 |"
+        },
+        "publication.advice": {
+            "revision": "14a054eef21ec5bf9c884340a2da8814735a75d3",
+            "text": "已有 dream-skin 的用户可在备份 profile 后试用，以换图返回能恢复偏移且其他背景不移动为通过标准；发现误匹配、重载后偏移丢失或界面异常就停止并禁用。只想偶尔移动一张图的人可先用局部 CSS，未使用 dream-skin 者缺少必要插槽。[Q04](#research-q04)"
+        },
+        "registry": "data/plugins/arimakana-akane--dsh-wallpaper-position",
+        "reports": "# dsh-wallpaper-position\n\n> 为 dream-skin 壁纸提供按图片、URL 或渐变分别记忆的水平和垂直像素位移设置。\n\n## 研究范围\n\n- **仓库**：[ArimaKana-Akane/dsh-wallpaper-position](https://github.com/ArimaKana-Akane/dsh-wallpaper-position)\n- **版本号**：1.2.0（[固定提交 14a054eef21ec5bf9c884340a2da8814735a75d3](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/tree/14a054eef21ec5bf9c884340a2da8814735a75d3)）\n- **版本日期**：2026-09-13（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n按壁纸持久化和设置插槽接线已有源码支持；跨背景层隔离、当前宿主兼容与改善阅读的效果未验证。未来设计假设未实现。\n\n## 洞察短评\n\n- **用途**：面向在 dream-skin 使用不同构图背景的用户，按壁纸保存 X/Y 位移，减少每次换图后重写 CSS 的操作。\n- **亮点**：相对手写一条固定 background-position，本插件把位移参数绑定到壁纸内容并暴露在现有外观设置内，省去换图后人工维护选择器和偏移值的重复步骤。这是对 dream-skin 的局部可用性补充，背景渲染和插槽来自上游，不能归为新壁纸引擎。[Q01](#research-q01) 与 [Q02](#research-q02) 支持此归属。\n- **思考**：精确调整能否只作用于目标壁纸决定这一便利是否可靠。源码选择器会命中任意 body 直属的固定背景层，非零位移可能同时移动其他插件背景；而上游更改 DOM 或键名又可能失效。另有轮询未见释放、写存储失败被吞掉的维护负担，不能从界面即时变化推断持久化成功。[Q03](#research-q03)\n- **建议**：由匿名 DOM 选择器与跨插件存储键耦合，可推导一个未验证假设：让 dream-skin 提供稳定壁纸 ID、专属 DOM 标识和变化事件，可在保持逐图记忆的同时替代轮询并隔离其他背景层。该方案需要上游协作及旧记录迁移，增加接口维护成本。用两张图片、URL、渐变和第二背景层测试事件版与现版，若仍误移动其他层、丢失偏移或事件开销没有改善，就否定改进成立。[Q05](#research-q05)\n\n采用建议：已有 dream-skin 的用户可在备份 profile 后试用，以换图返回能恢复偏移且其他背景不移动为通过标准；发现误匹配、重载后偏移丢失或界面异常就停止并禁用。只想偶尔移动一张图的人可先用局部 CSS，未使用 dream-skin 者缺少必要插槽。[Q04](#research-q04)\n\n## 核心贡献\n\n相对手写一条固定 background-position，本插件把位移参数绑定到壁纸内容并暴露在现有外观设置内，省去换图后人工维护选择器和偏移值的重复步骤。这是对 dream-skin 的局部可用性补充，背景渲染和插槽来自上游，不能归为新壁纸引擎。[Q01](#research-q01) 与 [Q02](#research-q02) 支持此归属。\n\n## 关键质疑\n\n精确调整能否只作用于目标壁纸决定这一便利是否可靠。源码选择器会命中任意 body 直属的固定背景层，非零位移可能同时移动其他插件背景；而上游更改 DOM 或键名又可能失效。另有轮询未见释放、写存储失败被吞掉的维护负担，不能从界面即时变化推断持久化成功。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n由匿名 DOM 选择器与跨插件存储键耦合，可推导一个未验证假设：让 dream-skin 提供稳定壁纸 ID、专属 DOM 标识和变化事件，可在保持逐图记忆的同时替代轮询并隔离其他背景层。该方案需要上游协作及旧记录迁移，增加接口维护成本。用两张图片、URL、渐变和第二背景层测试事件版与现版，若仍误移动其他层、丢失偏移或事件开销没有改善，就否定改进成立。[Q05](#research-q05)\n\n在隔离 profile 记录四类背景的偏移恢复、其他固定背景层误匹配、重复加载后的轮询数量与禁用后样式残留。再比较手写 CSS 与设置控件完成同批构图任务的人工时间和失误，尚未执行这些实验。\n\n## 场景与替代办法\n\n面向在 dream-skin 使用不同构图背景的用户，按壁纸保存 X/Y 位移，减少每次换图后重写 CSS 的操作。\n\n对照为在开发者工具或自定义样式里直接设 background-position。该方式适合单图且无需插件，但逐图记忆和设置交互要自行实现；本研究没有证明宿主所有版本都缺少等价原生能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH web 客户端、React 与 slots | 启动及设置必需 | 加载模块、渲染容器、注册设置 | seed 缺失降级；插槽不可用时设置不显示 |\n| dream-skin 插槽、DOM 和存储键 | 核心功能必需 | 识别壁纸及施加位移 | DOM 或键名变化可能静默失效 |\n| 浏览器 localStorage | 记忆必需 | 保存每图偏移 | 异常被吞掉，持久性不可保证 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户备份 profile 并确认 dream-skin 背景存在 | 插槽和背景层满足要求 |\n| 加载 | 用户安装包、登记 bundles 后重新加载 | 外观设置出现位移控件，否则禁用排查 |\n| 执行 | 用户选择背景并调 X/Y | 目标层移动且其他层保持 |\n| 验收 | 用户换图再返回并重载 | 原偏移恢复；失败恢复备份并检查存储 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 现有 DSH 与 dream-skin 环境，金额未知 | 备份 profile、安装、重启及构图调整，时长未知 | 不需要独立远程服务 |\n| 持续使用 | 浏览器两秒轮询与 localStorage，资源量未知 | 每张新图调整并复核 | 大 data URL 哈希开销未测 |\n| 失败恢复 | 重新加载或禁用的资源量未知 | 核对 profile 与浏览器偏移表，必要时外部终端处理 | 存储写入错误未反馈，恢复耗时未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 按壁纸保存位置 | 三类内容身份映射到偏移表 | 哈希冲突和浏览器存储失败频率 |\n| 界面直接微调 | 数值输入、步进按钮、恢复默认接线存在 | 当前宿主可见性和操作体验 |\n| 阅读改善 | 可以改变背景位置 | 合格阅读任务耗时与舒适度，没有同条件对照 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：固定版本能否让 dream-skin 用户可靠地逐图调整构图，相对手写 CSS 有何价值及代价？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 什么用户需要按壁纸保存构图，合格结果是什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n作者针对 dream-skin 背景中心裁切导致构图压住文字的场景提供逐图位移。使用者是已经启用该主题并经常切换背景的用户，合格结果是目标主体避开文字、换图再返回无需重设。固定 CSS 本来就能改变一个背景的位置，因此本插件的增量是状态记忆和设置入口，而非背景渲染算法。README 的遮挡说明属于作者设定，未取得独立用户需求或阅读效果数据；偶尔调整一张图可能不足以摊薄插件维护。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-26](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/README.md#L9-L26)\n\n作者给出中心裁切问题及逐图设置的功能边界，可界定任务与比较基线，不能证明用户收益。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n> A vibe-coded satellite plugin for `dsh-dream-skin`: nudge the wallpaper's position\n> per wallpaper (X/Y in pixels) from 设置 → 外观, remembered separately for every one.\n\n[dsh-dream-skin](https://github.com/RevolutionLA/dsh-dream-skin) 的壁纸是整屏铺满（`background-size: cover`、\n`background-position: center`）的固定层。构图偏左/偏上的图会压住聊天文字，\n而它本身没有提供位移设置。这个插件补上这一块：**在设置页里按像素微调，且每张壁纸各自记忆**。\n\n---\n\n## 1. 它做什么\n\n- 在 **设置 → 外观（dream-skin 页）** 注册一项设置：**「壁纸位移（仅对当前壁纸生效）」**；\n- 两个数值输入框（X / Y），步进 1 px，范围 ±5000 px，配 `−10 / −1 / +1 / +10` 微调按钮与「恢复默认位置」；\n- **按壁纸记忆**：键是当前壁纸**内容**哈希，并区分类型（`image` / `url` / `gradient`），\n  换图 / 换 URL / 换渐变即换一套位移，互不干扰；换壁纸后面板数字会跟着同步成新壁纸的记忆值；\n- 纯前端实现：只写 CSS 变量，不动图片、不改 dream-skin 的任何文件；\n- 即时生效，无需重启 dsh（改完立刻反映到壁纸上）。\n\n```\n\n</details>\n\n#### 缺口\n\n- 真实换图频率及构图调整收益未采样。\n  **影响**：无法判断便利能否摊薄维护负担。\n  **进一步探讨**：记录使用者一周换图任务并与单条 CSS 操作比较。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 壁纸身份、设置输入、存储及 CSS 生效如何相连？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\ncurrentWallpaper 根据类型选择图片 data URL、URL 或渐变键，imgId 用内容滚动哈希与长度形成键；URL 和渐变加类型前缀，图片保留旧格式。setPos 限幅并写入位移表，再将读取值写成根 CSS 变量，选择器通过 background-position calc 生效。设置控件由 React 容器承载原生 DOM，通过 slots 注册进外观页。这条链完整依赖上游私有存储键、匿名背景结构及客户端服务；缺少壁纸身份会退回零偏移，不能把字段声明视为已经在当前宿主可用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:97-155](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L97-L155)\n\n三类来源、哈希、持久化和 CSS 链路可直接跟踪。\n\n<details>\n<summary>查看原文（59行）</summary>\n\n```text\n\t\tfunction currentWallpaper() {\n\t\t\tconst kind = readKey(KIND_KEY);\n\t\t\tif (kind === 'url') {\n\t\t\t\tconst v = readKey(URL_KEY);\n\t\t\t\treturn v ? { kind: 'url', value: v } : null;\n\t\t\t}\n\t\t\tif (kind === 'gradient') {\n\t\t\t\tconst v = readKey(GRADIENT_KEY);\n\t\t\t\treturn v ? { kind: 'gradient', value: v } : null;\n\t\t\t}\n\t\t\tconst v = readKey(IMG_KEY);\n\t\t\treturn v ? { kind: 'image', value: v } : null;\n\t\t}\n\t\t/** 当前壁纸指纹：内容哈希，换图 / 换 URL / 换渐变即换记录。 */\n\t\tfunction imgId() {\n\t\t\tconst w = currentWallpaper();\n\t\t\tif (!w) return null;\n\t\t\tlet x = 5381;\n\t\t\tfor (let i = 0; i < w.value.length; i++) x = ((x * 33) ^ w.value.charCodeAt(i)) >>> 0;\n\t\t\tconst base = x.toString(36) + ':' + w.value.length.toString(36);\n\t\t\t// image 类沿用旧格式（不带类型前缀），这样升级后已保存的位移记录不会失效。\n\t\t\treturn w.kind === 'image' ? base : w.kind + ':' + base;\n\t\t}\n\t\tfunction getPos() {\n\t\t\tconst id = imgId();\n\t\t\tif (!id) return { x: 0, y: 0 };\n\t\t\tconst e = readMap()[id];\n\t\t\treturn e && typeof e.x === 'number'\n\t\t\t\t? { x: clampNum(e.x), y: clampNum(e.y) }\n\t\t\t\t: { x: 0, y: 0 };\n\t\t}\n\t\tfunction setPos(x, y) {\n\t\t\tconst next = { x: clampNum(x), y: clampNum(y) };\n\t\t\tconst id = imgId();\n\t\t\tif (id) { const m = readMap(); m[id] = next; writeMap(m); }\n\t\t\tapplyPos();\n\t\t\treturn next;\n\t\t}\n\n\t\t// ── 应用位移 ────────────────────────────────────────────────────────\n\t\tfunction injectCss() {\n\t\t\tif (document.getElementById(STYLE_ID)) return;\n\t\t\tconst st = document.createElement('style');\n\t\t\tst.id = STYLE_ID;\n\t\t\t// 同时给出两个分量的值，避免被内联的 background-position 覆盖。\n\t\t\tst.textContent = [\n\t\t\t\t'body > [style*=\"background-image\"][style*=\"position:fixed\"],',\n\t\t\t\t'body > [style*=\"background-image\"][style*=\"position: fixed\"] {',\n\t\t\t\t'  background-position: calc(50% + var(' + VAR_X + ', 0px)) calc(50% + var(' + VAR_Y + ', 0px)) !important;',\n\t\t\t\t'}'\n\t\t\t].join('\\n');\n\t\t\t(document.head || document.documentElement).appendChild(st);\n\t\t}\n\t\tfunction applyPos() {\n\t\t\tconst root = document.documentElement;\n\t\t\tif (!root) return;\n\t\t\tconst p = getPos();\n\t\t\troot.style.setProperty(VAR_X, p.x + 'px');\n\t\t\troot.style.setProperty(VAR_Y, p.y + 'px');\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:302-318](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L302-L318)\n\n设置通过 dream-skin 指定插槽注册，inject 依赖 slots。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\t\t\ttry {\n\t\t\t\tif (ctx && ctx.slots && typeof ctx.slots.inject === 'function' && typeof ctx.slots.register === 'function') {\n\t\t\t\t\tctx.slots.inject('settings.dreamSkin.item', () => ctx.slots.register({\n\t\t\t\t\t\tname: 'settings.dreamSkin.item',\n\t\t\t\t\t\tid: 'wallpaper-position',\n\t\t\t\t\t\torder: 90\n\t\t\t\t\t}, WallpaperPositionRow));\n\t\t\t\t} else {\n\t\t\t\t\ttry { console.warn('[wallpaper-position] 未取得 slots 服务，跳过设置项注册'); } catch (e) {}\n\t\t\t\t}\n\t\t\t} catch (err) {\n\t\t\t\ttry { console.warn('[wallpaper-position] 注册设置项失败：', err); } catch (e) {}\n\t\t\t}\n\t\t}\n\n\t\texports.apply = apply;\n\t\texports.inject = ['slots'];\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 哪些选择器和生命周期前提可能使位移效果失真？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nCSS 只要求 body 直接子节点内联含背景图和 fixed 定位，没有专属 ID，因此第二背景插件满足同样条件时也会被非零位移影响，这是选择器本身的范围限制。两秒定时器没有保存句柄或清理注册，重复 apply 是否发生取决于宿主生命周期，但代码未提供自行释放路径。readMap 和 writeMap 吞掉异常，失败会表现为默认位置或未保存，界面不足以证明落盘。对 seed 缺失的 no-op 降级减小加载错误外溢，但也会使功能消失，应该和报错诊断一起评估。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:55-67](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L55-L67)\n\n存储错误被吞掉且数值有边界。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\t\tfunction readMap() {\n\t\t\ttry {\n\t\t\t\tconst raw = localStorage.getItem(POS_KEY);\n\t\t\t\tconst o = raw ? JSON.parse(raw) : null;\n\t\t\t\treturn o && typeof o === 'object' ? o : {};\n\t\t\t} catch (e) { return {}; }\n\t\t}\n\t\tfunction writeMap(m) {\n\t\t\ttry { localStorage.setItem(POS_KEY, JSON.stringify(m)); } catch (e) {}\n\t\t}\n\t\tfunction clampNum(v) {\n\t\t\tconst n = Math.round(Number(v) || 0);\n\t\t\treturn Math.max(-LIMIT, Math.min(LIMIT, n));\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:137-148](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L137-L148)\n\n背景选择器没有绑定 dream-skin 专属层。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n\t\tfunction injectCss() {\n\t\t\tif (document.getElementById(STYLE_ID)) return;\n\t\t\tconst st = document.createElement('style');\n\t\t\tst.id = STYLE_ID;\n\t\t\t// 同时给出两个分量的值，避免被内联的 background-position 覆盖。\n\t\t\tst.textContent = [\n\t\t\t\t'body > [style*=\"background-image\"][style*=\"position:fixed\"],',\n\t\t\t\t'body > [style*=\"background-image\"][style*=\"position: fixed\"] {',\n\t\t\t\t'  background-position: calc(50% + var(' + VAR_X + ', 0px)) calc(50% + var(' + VAR_Y + ', 0px)) !important;',\n\t\t\t\t'}'\n\t\t\t].join('\\n');\n\t\t\t(document.head || document.documentElement).appendChild(st);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:283-300](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L283-L300)\n\n轮询启动未提供定时器句柄清理，风险是否触发依赖加载生命周期。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n\t\tfunction apply(ctx) {\n\t\t\ttry {\n\t\t\t\tinjectCss();\n\t\t\t\tapplyPos();\n\t\t\t\ttry { lastId = imgId(); } catch (e) {}\n\t\t\t\tif (ctx && typeof ctx.on === 'function') {\n\t\t\t\t\ttry { ctx.on('theme/change', () => { try { applyPos(); } catch (e) {} }); } catch (e) {}\n\t\t\t\t}\n\t\t\t\tsetInterval(() => {\n\t\t\t\t\ttry {\n\t\t\t\t\t\tapplyPos();\n\t\t\t\t\t\t// 壁纸换了（换图 / 换 URL / 换渐变）→ 把面板数字同步成新壁纸的记忆值。\n\t\t\t\t\t\tconst id = imgId();\n\t\t\t\t\t\tif (id !== lastId) { lastId = id; refreshInputs(); }\n\t\t\t\t\t} catch (e) {}\n\t\t\t\t}, 2000);\n\t\t\t} catch (err) {\n\t\t\t\ttry { console.warn('[wallpaper-position] 应用位移失败：', err); } catch (e) {}\n```\n\n</details>\n\n#### 缺口\n\n- 重复加载和多背景共存的实际表现没有复现。\n  **影响**：不能给出泄漏频率或故障概率。\n  **进一步探讨**：记录重复加载前后计时器及多层背景位置，验证何时触发。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 首次使用、持续使用和恢复有什么成本，适合怎样试用？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n首次需已有 dream-skin 环境，再复制客户端文件、登记 profile bundles 并重载；安装脚本的市场登记与普通手装不同，需要额外选项。持续成本来自逐图调整、两秒轮询和存储维护；无独立服务不等于资源为零。失败恢复应包括禁用、核对 profile 和清理浏览器映射，现金与人工时间都没有实测。适合在备份的 profile 中验证多图返回、重载持久化及其他背景不移动；误匹配或持久化丢失就停止。只调整一张图者先用 CSS 更容易评估收益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/install.sh:34-73](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/scripts/install.sh#L34-L73)\n\n文件复制和 bundles 修改说明首次部署及恢复责任，未运行该脚本。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nprintf '== 1) 拷贝插件文件 ==\\n'\n[ -d \"$SRC/lib\" ] || { bad \"源目录不完整：$SRC\"; exit 1; }\nmkdir -p \"$DEST/lib\" || { bad \"无法创建 $DEST\"; exit 1; }\ncp -f \"$SRC/package.json\" \"$DEST/package.json\"\ncp -f \"$SRC/cordis.patch.yml\" \"$DEST/cordis.patch.yml\"\ncp -f \"$SRC/lib/index.js\" \"$DEST/lib/index.js\"\ncp -f \"$SRC/lib/client.js\" \"$DEST/lib/client.js\"\nok \"已部署到 $DEST\"\n\nprintf '== 2) 注册到 dsh.profile.bundles ==\\n'\nnode - \"$PKG\" \"$PKG_NAME\" \"$MARKET\" \"$DEP_SPEC\" <<'NODE'\nconst fs = require('fs')\nconst [file, name, market, depSpec] = process.argv.slice(2)\nconst pkg = JSON.parse(fs.readFileSync(file, 'utf8'))\nlet changed = false\npkg.dsh = pkg.dsh || {}\npkg.dsh.profile = pkg.dsh.profile || {}\npkg.dsh.profile.bundles = pkg.dsh.profile.bundles || []\nif (!pkg.dsh.profile.bundles.includes(name)) {\n  pkg.dsh.profile.bundles.push(name)\n  changed = true\n  console.log('   ✓ 已加入 bundles')\n} else {\n  console.log('   ✓ bundles 中已存在（跳过）')\n}\nif (market === '1') {\n  pkg.dependencies = pkg.dependencies || {}\n  if (!pkg.dependencies[name]) {\n    pkg.dependencies[name] = depSpec\n    changed = true\n    console.log('   ✓ 已加入 dependencies（市场会显示为已安装）: ' + depSpec)\n  } else {\n    console.log('   ✓ dependencies 中已存在: ' + pkg.dependencies[name])\n  }\n} else {\n  console.log('   · 未写 dependencies（手装默认）；要让市场识别，加 --market 重新执行')\n}\nif (changed) fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\\n')\nNODE\n[ $? -eq 0 ] || bad \"注册 bundles 失败\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:291-298](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L291-L298)\n\n定时工作是持续资源投入，不足以推算资源量或金额。\n\n```text\n\t\t\t\tsetInterval(() => {\n\t\t\t\t\ttry {\n\t\t\t\t\t\tapplyPos();\n\t\t\t\t\t\t// 壁纸换了（换图 / 换 URL / 换渐变）→ 把面板数字同步成新壁纸的记忆值。\n\t\t\t\t\t\tconst id = imgId();\n\t\t\t\t\t\tif (id !== lastId) { lastId = id; refreshInputs(); }\n\t\t\t\t\t} catch (e) {}\n\t\t\t\t}, 2000);\n```\n\n#### 缺口\n\n- 安装、调图及故障恢复耗时未知。\n  **影响**：不能计算每次合格构图的单位成本。\n  **进一步探讨**：以同组图片记录部署、调整、失败重试和复核总人工时间。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何减少匿名壁纸层耦合，并证伪改进假设？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n根据选择器覆盖过宽和轮询重复读取内容的事实，可提出尚未实现的稳定壁纸协议。让上游提供 ID、专属元素标识与变化事件，插件只保存 ID 对应偏移并响应事件，可能减少其他背景误匹配与大内容重复哈希。它要求上游维护接口和旧记录迁移，不能视为当前能力。最小实验在同一 profile 上对比现版与事件原型，覆盖图片、URL、渐变、第二固定背景层和重载；成功需偏移保持且没有其他层移动，并记录空闲资源。若接口兼容负担高于节省或仍有身份错配，该假设应被否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:110-118](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L110-L118)\n\n内容哈希提示稳定 ID 替代方向，不证明替代方案有效。\n\n```text\n\t\t/** 当前壁纸指纹：内容哈希，换图 / 换 URL / 换渐变即换记录。 */\n\t\tfunction imgId() {\n\t\t\tconst w = currentWallpaper();\n\t\t\tif (!w) return null;\n\t\t\tlet x = 5381;\n\t\t\tfor (let i = 0; i < w.value.length; i++) x = ((x * 33) ^ w.value.charCodeAt(i)) >>> 0;\n\t\t\tconst base = x.toString(36) + ':' + w.value.length.toString(36);\n\t\t\t// image 类沿用旧格式（不带类型前缀），这样升级后已保存的位移记录不会失效。\n\t\t\treturn w.kind === 'image' ? base : w.kind + ':' + base;\n```\n\n**依据 2 · 源码核查**：[lib/client.js:291-298](https://github.com/ArimaKana-Akane/dsh-wallpaper-position/blob/14a054eef21ec5bf9c884340a2da8814735a75d3/lib/client.js#L291-L298)\n\n周期性读取提供事件驱动假设的推导依据。\n\n```text\n\t\t\t\tsetInterval(() => {\n\t\t\t\t\ttry {\n\t\t\t\t\t\tapplyPos();\n\t\t\t\t\t\t// 壁纸换了（换图 / 换 URL / 换渐变）→ 把面板数字同步成新壁纸的记忆值。\n\t\t\t\t\t\tconst id = imgId();\n\t\t\t\t\t\tif (id !== lastId) { lastId = id; refreshInputs(); }\n\t\t\t\t\t} catch (e) {}\n\t\t\t\t}, 2000);\n```\n\n#### 缺口\n\n- 上游是否愿意提供稳定接口及迁移成本未知。\n  **影响**：改进方案可能无法实施或不值得采用。\n  **进一步探讨**：先形成接口原型和迁移样本，再测隔离与资源收益。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：64a2d121a50df6d88649c6f446478fd6f7cf54071b4e415574f0f735bee2a293。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 336 | 258 | 65 | — |\n| .md | source | 1 | 192 | — | — | 1790 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| X/Y 像素微调 | 输入整数或使用 ±1/±10 按钮改变构图 | 依赖 dream-skin 插槽，范围 ±5000px |\n| 按壁纸记忆 | 图片、URL 与渐变分别恢复偏移 | localStorage 可用，身份为内容简易哈希 |\n| 恢复默认位置 | 清零当前壁纸位移 | 不清理其他壁纸记录 |\n\n## 工程亮点\n\n空 host apply 保持插件接口成立，浏览器 seed 探测能在缺模块时降级；数值限幅和输入中间态处理值得借鉴。代价是大量 catch 隐藏存储和应用错误，setInterval 没有保存句柄或注册销毁，样式也未见卸载清理。可复用逐图状态映射思想，但应重新设计稳定身份和组件清理，不能直接复制全局选择器。[Q03](#research-q03)\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/client.js、lib/index.js、scripts/install.sh、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查固定提交的 README、包清单、主机空入口、完整浏览器实现和安装脚本；未检查 dream-skin 当前实现，跨插件接口以本项目声明及引用方式为边界。\n- 下一步：在隔离 profile 记录四类背景的偏移恢复、其他固定背景层误匹配、重复加载后的轮询数量与禁用后样式残留。再比较手写 CSS 与设置控件完成同批构图任务的人工时间和失误，尚未执行这些实验。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-24-02/arimakana-akane--dsh-wallpaper-position/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"ArimaKana-Akane/dsh-wallpaper-position\",\n  \"revision\": \"14a054eef21ec5bf9c884340a2da8814735a75d3\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/client.js\",\n    \"lib/index.js\",\n    \"scripts/install.sh\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"固定版本能否让 dream-skin 用户可靠地逐图调整构图，相对手写 CSS 有何价值及代价？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"什么用户需要按壁纸保存构图，合格结果是什么？\",\n        \"answer\": \"作者针对 dream-skin 背景中心裁切导致构图压住文字的场景提供逐图位移。使用者是已经启用该主题并经常切换背景的用户，合格结果是目标主体避开文字、换图再返回无需重设。固定 CSS 本来就能改变一个背景的位置，因此本插件的增量是状态记忆和设置入口，而非背景渲染算法。README 的遮挡说明属于作者设定，未取得独立用户需求或阅读效果数据；偶尔调整一张图可能不足以摊薄插件维护。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 9,\n            \"line_end\": 26,\n            \"observation\": \"作者给出中心裁切问题及逐图设置的功能边界，可界定任务与比较基线，不能证明用户收益。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"真实换图频率及构图调整收益未采样。\",\n            \"impact\": \"无法判断便利能否摊薄维护负担。\",\n            \"next_step\": \"记录使用者一周换图任务并与单条 CSS 操作比较。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"dependencies\"\n        ],\n        \"question\": \"壁纸身份、设置输入、存储及 CSS 生效如何相连？\",\n        \"answer\": \"currentWallpaper 根据类型选择图片 data URL、URL 或渐变键，imgId 用内容滚动哈希与长度形成键；URL 和渐变加类型前缀，图片保留旧格式。setPos 限幅并写入位移表，再将读取值写成根 CSS 变量，选择器通过 background-position calc 生效。设置控件由 React 容器承载原生 DOM，通过 slots 注册进外观页。这条链完整依赖上游私有存储键、匿名背景结构及客户端服务；缺少壁纸身份会退回零偏移，不能把字段声明视为已经在当前宿主可用。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 97,\n            \"line_end\": 155,\n            \"observation\": \"三类来源、哈希、持久化和 CSS 链路可直接跟踪。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 302,\n            \"line_end\": 318,\n            \"observation\": \"设置通过 dream-skin 指定插槽注册，inject 依赖 slots。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"未加载当前真实宿主。\",\n            \"impact\": \"客户端接口可用性未验收。\",\n            \"next_step\": \"在版本明确的隔离 web profile 验收注册与交互。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"哪些选择器和生命周期前提可能使位移效果失真？\",\n        \"answer\": \"CSS 只要求 body 直接子节点内联含背景图和 fixed 定位，没有专属 ID，因此第二背景插件满足同样条件时也会被非零位移影响，这是选择器本身的范围限制。两秒定时器没有保存句柄或清理注册，重复 apply 是否发生取决于宿主生命周期，但代码未提供自行释放路径。readMap 和 writeMap 吞掉异常，失败会表现为默认位置或未保存，界面不足以证明落盘。对 seed 缺失的 no-op 降级减小加载错误外溢，但也会使功能消失，应该和报错诊断一起评估。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 55,\n            \"line_end\": 67,\n            \"observation\": \"存储错误被吞掉且数值有边界。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 137,\n            \"line_end\": 148,\n            \"observation\": \"背景选择器没有绑定 dream-skin 专属层。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 283,\n            \"line_end\": 300,\n            \"observation\": \"轮询启动未提供定时器句柄清理，风险是否触发依赖加载生命周期。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"重复加载和多背景共存的实际表现没有复现。\",\n            \"impact\": \"不能给出泄漏频率或故障概率。\",\n            \"next_step\": \"记录重复加载前后计时器及多层背景位置，验证何时触发。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"首次使用、持续使用和恢复有什么成本，适合怎样试用？\",\n        \"answer\": \"首次需已有 dream-skin 环境，再复制客户端文件、登记 profile bundles 并重载；安装脚本的市场登记与普通手装不同，需要额外选项。持续成本来自逐图调整、两秒轮询和存储维护；无独立服务不等于资源为零。失败恢复应包括禁用、核对 profile 和清理浏览器映射，现金与人工时间都没有实测。适合在备份的 profile 中验证多图返回、重载持久化及其他背景不移动；误匹配或持久化丢失就停止。只调整一张图者先用 CSS 更容易评估收益。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/install.sh\",\n            \"line_start\": 34,\n            \"line_end\": 73,\n            \"observation\": \"文件复制和 bundles 修改说明首次部署及恢复责任，未运行该脚本。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 291,\n            \"line_end\": 298,\n            \"observation\": \"定时工作是持续资源投入，不足以推算资源量或金额。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"安装、调图及故障恢复耗时未知。\",\n            \"impact\": \"不能计算每次合格构图的单位成本。\",\n            \"next_step\": \"以同组图片记录部署、调整、失败重试和复核总人工时间。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"如何减少匿名壁纸层耦合，并证伪改进假设？\",\n        \"answer\": \"根据选择器覆盖过宽和轮询重复读取内容的事实，可提出尚未实现的稳定壁纸协议。让上游提供 ID、专属元素标识与变化事件，插件只保存 ID 对应偏移并响应事件，可能减少其他背景误匹配与大内容重复哈希。它要求上游维护接口和旧记录迁移，不能视为当前能力。最小实验在同一 profile 上对比现版与事件原型，覆盖图片、URL、渐变、第二固定背景层和重载；成功需偏移保持且没有其他层移动，并记录空闲资源。若接口兼容负担高于节省或仍有身份错配，该假设应被否定。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 110,\n            \"line_end\": 118,\n            \"observation\": \"内容哈希提示稳定 ID 替代方向，不证明替代方案有效。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 291,\n            \"line_end\": 298,\n            \"observation\": \"周期性读取提供事件驱动假设的推导依据。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"上游是否愿意提供稳定接口及迁移成本未知。\",\n            \"impact\": \"改进方案可能无法实施或不值得采用。\",\n            \"next_step\": \"先形成接口原型和迁移样本，再测隔离与资源收益。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wallpaper-position\\n\\n> [!WARNING]\\n> **本仓库是 vibe coding 产物。** 代码由作者与 AI（DeepSeek Harness 会话）对话生成、\\n> 多轮迭代而来，**没有经过人工逐行审计**，也只在作者本机环境（WSL2 + dsh `0.1.5-rc.1` 系列）\\n> 实测过。请自行审阅后再使用；**不要直接用于生产或安全敏感场景**。\\n> 代码按 MIT「按原样（AS IS）」提供，不附带任何担保，风险自负。\\n\\n> A vibe-coded satellite plugin for `dsh-dream-skin`: nudge the wallpaper's position\\n> per wallpaper (X/Y in pixels) from 设置 → 外观, remembered separately for every one.\\n\\n[dsh-dream-skin](https://github.com/RevolutionLA/dsh-dream-skin) 的壁纸是整屏铺满（`background-size: cover`、\\n`background-position: center`）的固定层。构图偏左/偏上的图会压住聊天文字，\\n而它本身没有提供位移设置。这个插件补上这一块：**在设置页里按像素微调，且每张壁纸各自记忆**。\\n\\n---\\n\\n## 1. 它做什么\\n\\n- 在 **设置 → 外观（dream-skin 页）** 注册一项设置：**「壁纸位移（仅对当前壁纸生效）」**；\\n- 两个数值输入框（X / Y），步进 1 px，范围 ±5000 px，配 `−10 / −1 / +1 / +10` 微调按钮与「恢复默认位置」；\\n- **按壁纸记忆**：键是当前壁纸**内容**哈希，并区分类型（`image` / `url` / `gradient`），\\n  换图 / 换 URL / 换渐变即换一套位移，互不干扰；换壁纸后面板数字会跟着同步成新壁纸的记忆值；\\n- 纯前端实现：只写 CSS 变量，不动图片、不改 dream-skin 的任何文件；\\n- 即时生效，无需重启 dsh（改完立刻反映到壁纸上）。\\n\\n---\\n\\n## 2. 依赖声明（重要）\\n\\n### 2.1 运行期硬依赖：`dsh-dream-skin` 插件\\n\\n| 依赖点 | 说明 |\\n|---|---|\\n| 设置插槽 `settings.dreamSkin.item` | 本插件的设置项注册在这里（`id: wallpaper-position`，`order: 90`）。插槽不存在时，插件只是「隐身」，不影响 dsh 启动 |\\n| 壁纸层 DOM | 依赖 dream-skin 把壁纸渲染成 `body` 直接子节点、且内联样式里同时含 `background-image` 与 `position:fixed` 的元素（本插件用属性选择器命中它） |\\n| 壁纸来源 | 读取 `localStorage[\\\"dsh-dream-skin:wallpaper\\\"]`（dream-skin 写入的当前壁纸 data URL）来算「这张图」的身份 |\\n\\n> dream-skin 改了壁纸层的 DOM 结构或存储键名时，本插件会静默失效（不会报错、也不影响 dsh）。\\n\\n### 2.2 无其它依赖\\n\\n- **不需要**任何外部程序、系统服务、网络访问；\\n- host 半只有一个**空** `apply()`：不注册路由、不读写文件、不联网；所有逻辑都在浏览器半。\\n\\n### 2.3 平台与版本\\n\\n| 项目 | 要求 |\\n|---|---|\\n| dsh 核心 | 在 `0.1.5-rc.1` 系列的 web profile 上验证 |\\n| profile | `web` |\\n| 平台 | Linux / WSL2（其实浏览器端逻辑与平台无关） |\\n| Node | `>= 20`（仅安装脚本用到） |\\n| 浏览器 | 需要 `localStorage` 与 CSS 自定义属性（现代浏览器均可） |\\n\\n### 2.4 `package.json` 里的声明\\n\\n```json\\n\\\"peerDependencies\\\": { \\\"dsh-dream-skin\\\": \\\"*\\\" },\\n\\\"dshDependencies\\\": {\\n  \\\"plugins\\\": [{ \\\"name\\\": \\\"dsh-dream-skin\\\", \\\"required\\\": true, \\\"provides\\\": \\\"settings.dreamSkin.item 插槽 + 壁纸层\\\" }],\\n  \\\"programs\\\": [], \\\"services\\\": [], \\\"platform\\\": [\\\"Linux\\\", \\\"WSL2\\\"], \\\"node\\\": \\\">=20\\\"\\n}\\n```\\n\\n---\\n\\n## 3. 安装\\n\\n```bash\\ngit clone https://github.com/ankhishtar2-lang/dsh-wallpaper-position.git\\ncd dsh-wallpaper-position\\nbash scripts/install.sh\\nsystemctl --user restart dsh-web-profiled.service      # 由你手动执行\\n```\\n\\n手动安装：把目录拷到 `$DSH_HOME/profiles/web/node_modules/dsh-wallpaper-position/`，\\n把 `\\\"dsh-wallpaper-position\\\"` 追加进 profile `package.json` 的 `dsh.profile.bundles`，重启。\\n\\n> ⚠️ **硬红线（这个插件踩过两次）**：host 半必须导出 `apply`，哪怕是空实现：\\n> `export function apply() {}`。dsh 的插件加载器 **fail-fast 且不隔离** ——\\n> 一个条目 apply 失败会让**整棵插件树 boot 失败**，`dsh web` 完全起不来，\\n> 而「用来写插件的工具」正是 dsh 自己，于是会把自己钉死、只能从外部终端救。\\n> 症状：3080 没有监听（用 `ss -lntp | grep 3080` 判断，不要用 `ps`）。\\n> 急救：在 profile patch 层给该条目加 `disabled: true`，再重启。\\n\\n---\\n\\n### 安装方式补充：从 npm 安装（可选）\\n\\n本包的 `package.json` 已按 npm 发布要求准备好（去掉 `private`、用 `files` 白名单控制内容）。\\n发布到 npm 后即可用 dsh 自己的命令安装（`dsh plugin add` 本质就是 `pnpm add`）：\\n\\n```bash\\ndsh plugin --profile web add dsh-wallpaper-position\\n```\\n\\n自己发布（**需要你自己的 npm 账号**；`scripts/publish.sh` 不接触也不保存任何 token）：\\n\\n```bash\\nnpm login\\nbash scripts/publish.sh --dry     # 自检 + 列出将要发布的文件，不发布\\nbash scripts/publish.sh           # 真正发布（改过代码要先升 version，同版本号不可覆盖）\\n```\\n\\n> 发布后请同步更新 README 与上游收录表的描述，保持「描述属实」这一条成立。\\n\\n## 4. 使用\\n\\n1. 先在 dream-skin 里选好壁纸；\\n2. 打开 **设置 → 外观**，找到最下方的「壁纸位移（仅对当前这张图生效）」；\\n3. 用 `−10 / −1 / +1 / +10` 或直接输入数字微调（X 向右为正，Y 向下为正）；\\n4. 换到别的壁纸会自动加载那张图自己的位移；点「恢复默认位置」清零当前这张。\\n\\n**数据存放位置**（只在本机浏览器里）：\\n\\n| 位置 | 内容 |\\n|---|---|\\n| `localStorage[\\\"dsh-wallpaper-position:map\\\"]` | `{ \\\"<壁纸内容哈希>\\\": { \\\"x\\\": number, \\\"y\\\": number }, ... }` |\\n| `localStorage[\\\"dsh-dream-skin:wallpaper\\\"]` | dream-skin 写入的当前壁纸 data URL（本插件只读） |\\n| CSS 变量 `--wp-x` / `--wp-y`（`:root`） | 当前生效的位移 |\\n\\n生效方式：往 `<head>` 注入一条规则\\n\\n```css\\nbody > [style*=\\\"background-image\\\"][style*=\\\"position:fixed\\\"],\\nbody > [style*=\\\"background-image\\\"][style*=\\\"position: fixed\\\"] {\\n  background-position: calc(50% + var(--wp-x, 0px)) calc(50% + var(--wp-y, 0px)) !important;\\n}\\n```\\n\\n---\\n\\n## 5. 已验证 / 已知限制\\n\\n**已验证**\\n\\n- `node --check` 语法通过；host 半 `apply` 存在；`dsh --profile web --dump-config` 退出码 0；\\n- 设置行会注册进 `settings.dreamSkin.item`，控件用**原生 DOM** 构造（不吃 React 渲染歧义）。\\n\\n**已知限制**\\n\\n- **只做位移**：没有缩放、旋转、翻转，也没有鼠标直接拖拽（想要这些要另写）；\\n- 依赖 dream-skin 的 DOM 与 `localStorage` 键名，上游一改就可能失效（静默失效，不报错）；\\n- **位移规则会匹配任何「body 下、内联含 `background-image` 且 `position:fixed` 的层」**，\\n  没有限定到 dream-skin 那一个元素（dream-skin 的壁纸层是匿名 `div`，没有 class/id 可锚定）。\\n  如果你同时装了别的整屏背景层插件，偏移量会同样作用到它们身上。\\n  偏移为 0 时表达式等价于 `center`，与这些层的默认值一致，所以只有在你主动设了非 0 位移时才会看出来。\\n  **这是刻意保留的取舍**：给选择器加更多条件（例如 `z-index:-1`）一旦和上游的内联样式序列化\\n  不一致，功能就会静默失效，代价比这点交叉影响大；\\n- 位移是「裁切平移」：`cover` 模式下把画面推太多会露出背景边缘，属预期行为；\\n- 早期版本用 `react/jsx-runtime` 的 `jsx()` 渲染控件时在界面上显示为**空白方块**，\\n  现已全部改为 `document.createElement` —— 如果你改了 UI 代码，请保持这个做法；\\n- 主题变量缺失时用固定颜色兜底；极端主题下观感可能一般。\\n\\n---\\n\\n## 6. 卸载\\n\\n```bash\\nbash scripts/uninstall.sh\\nsystemctl --user restart dsh-web-profiled.service\\n```\\n\\n卸载后位移数据仍留在浏览器 `localStorage` 里，需要的话在控制台执行：\\n\\n```js\\nlocalStorage.removeItem('dsh-wallpaper-position:map')\\n```\\n\\n---\\n\\n## 7. 目录结构\\n\\n```\\ndsh-wallpaper-position/\\n├── package.json          # dsh.bundle / dsh.client / peerDependencies / dshDependencies\\n├── cordis.patch.yml      # loader 条目：id=wallpaper-position\\n├── lib/\\n│   ├── index.js          # host 半：只有空 apply()（但绝不能省）\\n│   └── client.js         # 浏览器半：位移引擎 + 设置项 UI（原生 DOM）\\n├── scripts/              # install.sh / uninstall.sh / publish.sh\\n├── LICENSE\\n└── README.md\\n```\\n\\n---\\n\\n## 8. 许可\\n\\nMIT © 2026 ankhishtar2-lang —— 见 [LICENSE](LICENSE)。\\n再次提醒：**vibe coding 产物，未经人工逐行审计，按「原样」提供，风险自负。**\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wallpaper-position\\\",\\n  \\\"version\\\": \\\"1.2.0\\\",\\n    \\\"description\\\": \\\"dsh-dream-skin 的附属插件：在「设置 → 外观」里按图片记忆调整壁纸位移（X/Y 像素微调）\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"author\\\": \\\"ankhishtar2-lang\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/ankhishtar2-lang/dsh-wallpaper-position.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/ankhishtar2-lang/dsh-wallpaper-position#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/ankhishtar2-lang/dsh-wallpaper-position/issues\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"cordis-plugin\\\",\\n    \\\"dream-skin\\\",\\n    \\\"wallpaper\\\",\\n    \\\"vibe-coding\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20\\\"\\n  },\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"files\\\": [\\n    \\\"lib/\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"scripts/\\\"\\n  ],\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./client\\\": {\\n      \\\"default\\\": \\\"./lib/client.js\\\"\\n    },\\n    \\\"./package.json\\\": {\\n      \\\"default\\\": \\\"./package.json\\\"\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"dsh-dream-skin\\\": \\\"*\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"immediately\\\": true\\n    }\\n  },\\n  \\\"dshDependencies\\\": {\\n    \\\"core\\\": \\\">=0.1.5-rc.1\\\",\\n    \\\"verifiedOn\\\": \\\"dsh 0.1.5-rc.1 系列的 web profile\\\",\\n    \\\"plugins\\\": [\\n      {\\n        \\\"name\\\": \\\"dsh-dream-skin\\\",\\n        \\\"required\\\": true,\\n        \\\"provides\\\": \\\"settings.dreamSkin.item 设置插槽、整屏壁纸层（body 下 position:fixed 的 background-image 元素），以及 wallpaper / wallpaper-url / wallpaper-gradient / wallpaper-kind 四个 localStorage 键\\\"\\n      }\\n    ],\\n    \\\"programs\\\": [],\\n    \\\"services\\\": [],\\n    \\\"platform\\\": [\\n      \\\"Linux\\\",\\n      \\\"WSL2\\\"\\n    ],\\n    \\\"node\\\": \\\">=20\\\",\\n    \\\"notes\\\": \\\"说明：本字段是本仓库的自描述文档，dsh 核心与插件市场都不会读取它。纯浏览器半插件：host 半只有一个空 apply()，不注册路由、不读写任何文件、不发任何网络请求；位移按「壁纸类型 + 内容哈希」存 localStorage['dsh-wallpaper-position:map']。\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/client.js\",\n      \"content\": \"// dsh-wallpaper-position — 浏览器半（dsh 客户端插件）\\n//\\n// 设计要点（来自 dsh-dream-skin 的踩坑注释，必须遵守）：\\n//   * host 不隔离 loader-entry factory：任何一个抛错的 factory 会聚合进\\n//     \\\"entries did not activate\\\"，把**整个 web shell** 拖垮。因此平台 seed\\n//     全部用 try 探测；任一必需的 seed 缺失时，返回一个\\\"哑模块\\\"\\n//     （no-op apply + 空 surface），插件隐身但绝不影响 DSH 启动。\\n//   * 模块级导出 `apply` / `inject`；factory 顶部先把 `exports.apply` 占位，\\n//     末尾再赋真正实现。\\n//\\n// 功能（按用户三条要求）：\\n//   1) 正确导出 apply，不再让 shell 崩；\\n//   2) 设置项注册进 dream-skin 的 `settings.dreamSkin.item` 插槽\\n//      （即 设置 → Theme / 外观 页），不另开面板；\\n//   3) 数值输入框 + 1px 步进（非滑块），并带 −10/−1/+1/+10 微调。\\n//\\n// 位移按\\\"当前壁纸内容哈希\\\"存 localStorage：每张图各自记忆。\\n// 生效方式：background-position: calc(50% + var(--wp-x)) calc(50% + var(--wp-y))，\\n// 变量挂在 :root；仅在该层内联含 background-image 时生效，默认观感不变。\\n\\nwindow.__ModuleLoader__.load({\\n\\tid: 'dsh-wallpaper-position',\\n\\tfactory: (require) => {\\n\\t\\tvar module = { exports: {} };\\n\\t\\tvar exports = module.exports;\\n\\t\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });\\n\\n\\t\\t// ── 平台 seed 防御式解析（缺失则降级为哑模块）───────────────────────\\n\\t\\tconst seedProbe = { lastError: null };\\n\\t\\tconst requireSeed = (name) => {\\n\\t\\t\\ttry { return require(name); } catch (err) { seedProbe.lastError = err; return null; }\\n\\t\\t};\\n\\t\\tconst _react = requireSeed('react');\\n\\t\\tif (_react === null) {\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tconsole.warn('[wallpaper-position] 宿主模块不可用，本会话内插件已禁用：',\\n\\t\\t\\t\\t\\tseedProbe.lastError && seedProbe.lastError.message);\\n\\t\\t\\t} catch (e) {}\\n\\t\\t\\texports.apply = () => {};\\n\\t\\t\\texports.inject = [];\\n\\t\\t\\treturn module.exports;\\n\\t\\t}\\n\\n\\t\\tconst POS_KEY = 'dsh-wallpaper-position:map';\\n\\t\\tconst IMG_KEY = 'dsh-dream-skin:wallpaper';            // 图片壁纸（data URL）\\n\\t\\tconst URL_KEY = 'dsh-dream-skin:wallpaper-url';        // URL 壁纸\\n\\t\\tconst GRADIENT_KEY = 'dsh-dream-skin:wallpaper-gradient'; // 渐变壁纸\\n\\t\\tconst KIND_KEY = 'dsh-dream-skin:wallpaper-kind';      // 'image' | 'url' | 'gradient'\\n\\t\\tconst VAR_X = '--wp-x';\\n\\t\\tconst VAR_Y = '--wp-y';\\n\\t\\tconst STYLE_ID = 'dsh-wallpaper-position-style';\\n\\t\\tconst LIMIT = 5000;                            // 位移上限（px）\\n\\n\\t\\t// ── 每张图各自的位移 ────────────────────────────────────────────────\\n\\t\\tfunction readMap() {\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tconst raw = localStorage.getItem(POS_KEY);\\n\\t\\t\\t\\tconst o = raw ? JSON.parse(raw) : null;\\n\\t\\t\\t\\treturn o && typeof o === 'object' ? o : {};\\n\\t\\t\\t} catch (e) { return {}; }\\n\\t\\t}\\n\\t\\tfunction writeMap(m) {\\n\\t\\t\\ttry { localStorage.setItem(POS_KEY, JSON.stringify(m)); } catch (e) {}\\n\\t\\t}\\n\\t\\tfunction clampNum(v) {\\n\\t\\t\\tconst n = Math.round(Number(v) || 0);\\n\\t\\t\\treturn Math.max(-LIMIT, Math.min(LIMIT, n));\\n\\t\\t}\\n\\t\\t// 已挂载的数值输入框。换壁纸后要把面板里的数字同步成「新壁纸的记忆值」——\\n\\t\\t// 旧版只在挂载时读一次，换图后显示的还是上一张图的数值（实际位移已经作用到新图），\\n\\t\\t// 会误导用户。这里登记起来，由轮询统一回写。\\n\\t\\tconst liveInputs = [];\\n\\t\\tlet lastId = null;   // 上一次看到的壁纸指纹，用于检测「换壁纸」\\n\\t\\tfunction refreshInputs() {\\n\\t\\t\\tfor (let i = liveInputs.length - 1; i >= 0; i--) {\\n\\t\\t\\t\\tconst it = liveInputs[i];\\n\\t\\t\\t\\ttry {\\n\\t\\t\\t\\t\\tif (!document.body || !document.body.contains(it.input)) { liveInputs.splice(i, 1); continue }\\n\\t\\t\\t\\t\\tif (document.activeElement === it.input) continue;   // 别打断正在输入的用户\\n\\t\\t\\t\\t\\tconst v = String(it.getVal());\\n\\t\\t\\t\\t\\tif (it.input.value !== v) it.input.value = v;\\n\\t\\t\\t\\t} catch (e) { liveInputs.splice(i, 1) }\\n\\t\\t\\t}\\n\\t\\t}\\n\\t\\tfunction readKey(k) {\\n\\t\\t\\ttry { return localStorage.getItem(k); } catch (e) { return null; }\\n\\t\\t}\\n\\t\\t/**\\n\\t\\t * 当前壁纸：**按 dream-skin 的壁纸类型取对应的键**。\\n\\t\\t * dream-skin 把三种壁纸分别存在三个键里，并用 `wallpaper-kind` 标记类型：\\n\\t\\t *   image → dsh-dream-skin:wallpaper（data URL）\\n\\t\\t *   url   → dsh-dream-skin:wallpaper-url\\n\\t\\t *   gradient → dsh-dream-skin:wallpaper-gradient\\n\\t\\t * 旧版只读 image 那个键，于是壁纸换成「URL / 渐变」后指纹恒为 null，\\n\\t\\t * 位移既不读也不写、输入框点了没反应（静默失效，且没有任何提示）。\\n\\t\\t */\\n\\t\\tfunction currentWallpaper() {\\n\\t\\t\\tconst kind = readKey(KIND_KEY);\\n\\t\\t\\tif (kind === 'url') {\\n\\t\\t\\t\\tconst v = readKey(URL_KEY);\\n\\t\\t\\t\\treturn v ? { kind: 'url', value: v } : null;\\n\\t\\t\\t}\\n\\t\\t\\tif (kind === 'gradient') {\\n\\t\\t\\t\\tconst v = readKey(GRADIENT_KEY);\\n\\t\\t\\t\\treturn v ? { kind: 'gradient', value: v } : null;\\n\\t\\t\\t}\\n\\t\\t\\tconst v = readKey(IMG_KEY);\\n\\t\\t\\treturn v ? { kind: 'image', value: v } : null;\\n\\t\\t}\\n\\t\\t/** 当前壁纸指纹：内容哈希，换图 / 换 URL / 换渐变即换记录。 */\\n\\t\\tfunction imgId() {\\n\\t\\t\\tconst w = currentWallpaper();\\n\\t\\t\\tif (!w) return null;\\n\\t\\t\\tlet x = 5381;\\n\\t\\t\\tfor (let i = 0; i < w.value.length; i++) x = ((x * 33) ^ w.value.charCodeAt(i)) >>> 0;\\n\\t\\t\\tconst base = x.toString(36) + ':' + w.value.length.toString(36);\\n\\t\\t\\t// image 类沿用旧格式（不带类型前缀），这样升级后已保存的位移记录不会失效。\\n\\t\\t\\treturn w.kind === 'image' ? base : w.kind + ':' + base;\\n\\t\\t}\\n\\t\\tfunction getPos() {\\n\\t\\t\\tconst id = imgId();\\n\\t\\t\\tif (!id) return { x: 0, y: 0 };\\n\\t\\t\\tconst e = readMap()[id];\\n\\t\\t\\treturn e && typeof e.x === 'number'\\n\\t\\t\\t\\t? { x: clampNum(e.x), y: clampNum(e.y) }\\n\\t\\t\\t\\t: { x: 0, y: 0 };\\n\\t\\t}\\n\\t\\tfunction setPos(x, y) {\\n\\t\\t\\tconst next = { x: clampNum(x), y: clampNum(y) };\\n\\t\\t\\tconst id = imgId();\\n\\t\\t\\tif (id) { const m = readMap(); m[id] = next; writeMap(m); }\\n\\t\\t\\tapplyPos();\\n\\t\\t\\treturn next;\\n\\t\\t}\\n\\n\\t\\t// ── 应用位移 ────────────────────────────────────────────────────────\\n\\t\\tfunction injectCss() {\\n\\t\\t\\tif (document.getElementById(STYLE_ID)) return;\\n\\t\\t\\tconst st = document.createElement('style');\\n\\t\\t\\tst.id = STYLE_ID;\\n\\t\\t\\t// 同时给出两个分量的值，避免被内联的 background-position 覆盖。\\n\\t\\t\\tst.textContent = [\\n\\t\\t\\t\\t'body > [style*=\\\"background-image\\\"][style*=\\\"position:fixed\\\"],',\\n\\t\\t\\t\\t'body > [style*=\\\"background-image\\\"][style*=\\\"position: fixed\\\"] {',\\n\\t\\t\\t\\t'  background-position: calc(50% + var(' + VAR_X + ', 0px)) calc(50% + var(' + VAR_Y + ', 0px)) !important;',\\n\\t\\t\\t\\t'}'\\n\\t\\t\\t].join('\\\\n');\\n\\t\\t\\t(document.head || document.documentElement).appendChild(st);\\n\\t\\t}\\n\\t\\tfunction applyPos() {\\n\\t\\t\\tconst root = document.documentElement;\\n\\t\\t\\tif (!root) return;\\n\\t\\t\\tconst p = getPos();\\n\\t\\t\\troot.style.setProperty(VAR_X, p.x + 'px');\\n\\t\\t\\troot.style.setProperty(VAR_Y, p.y + 'px');\\n\\t\\t}\\n\\n\\t\\t// ── 设置面板组件 ────────────────────────────────────────────────────\\n\\t\\tconst ST = {\\n\\t\\t\\tgroup: {\\n\\t\\t\\t\\tborderTop: '1px solid var(--dsw-alias-border-l2, rgba(128,128,128,.25))',\\n\\t\\t\\t\\tdisplay: 'flex', flexDirection: 'column', gap: 10, padding: '16px 0'\\n\\t\\t\\t},\\n\\t\\t\\ttitle: { color: 'var(--dsw-alias-label-primary, #e6e6e6)', fontSize: 14, lineHeight: '22px' },\\n\\t\\t\\trow: { display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' },\\n\\t\\t\\tlabel: { color: 'var(--dsw-alias-label-secondary, #b8b8b8)', fontSize: 13, width: 42 },\\n\\t\\t\\tinput: {\\n\\t\\t\\t\\twidth: 92, padding: '5px 8px', borderRadius: 6, fontSize: 13,\\n\\t\\t\\t\\tcolor: 'var(--dsw-alias-label-primary, #e6e6e6)',\\n\\t\\t\\t\\tbackground: 'var(--dsw-alias-bg-layer-1, rgba(255,255,255,.06))',\\n\\t\\t\\t\\tborder: '1px solid var(--dsw-alias-border-l2, rgba(128,128,128,.35))'\\n\\t\\t\\t},\\n\\t\\t\\tbtn: {\\n\\t\\t\\t\\tpadding: '5px 10px', borderRadius: 6, fontSize: 13, cursor: 'pointer',\\n\\t\\t\\t\\tcolor: 'var(--dsw-alias-label-primary, #e6e6e6)',\\n\\t\\t\\t\\tbackground: 'var(--dsw-alias-bg-layer-1, rgba(255,255,255,.06))',\\n\\t\\t\\t\\tborder: '1px solid var(--dsw-alias-border-l2, rgba(128,128,128,.35))'\\n\\t\\t\\t},\\n\\t\\t\\thint: { color: 'var(--dsw-alias-label-tertiary, #8a8a8a)', fontSize: 12, lineHeight: '18px' }\\n\\t\\t};\\n\\n\\t\\t// 控件改用原生 DOM 构造（不经 react/jsx-runtime）：\\n\\t\\t// 之前用 jsx() 渲染出来的控件呈空白方块，改用 createElement 后\\n\\t\\t// 显示完全可预期，不再受 JSX runtime 的 children 语义影响。\\n\\t\\tconst CSS = {\\n\\t\\t\\tgroup: 'display:flex;flex-direction:column;gap:10px',\\n\\t\\t\\ttitle: 'color:var(--dsw-alias-label-primary,#e6e6e6);font-size:14px;line-height:22px',\\n\\t\\t\\trow: 'display:flex;align-items:center;gap:8px;flex-wrap:wrap',\\n\\t\\t\\tlabel: 'color:var(--dsw-alias-label-secondary,#b8b8b8);font-size:13px;width:44px;flex:none',\\n\\t\\t\\tinput: 'width:104px;padding:5px 8px;border-radius:6px;font-size:13px;box-sizing:border-box;' +\\n\\t\\t\\t\\t'color:var(--dsw-alias-label-primary,#e6e6e6);' +\\n\\t\\t\\t\\t'background:var(--dsw-alias-bg-layer-1, rgba(255,255,255,.06));' +\\n\\t\\t\\t\\t'border:1px solid var(--dsw-alias-border-l2, rgba(128,128,128,.35))',\\n\\t\\t\\tbtn: 'padding:5px 10px;border-radius:6px;font-size:13px;cursor:pointer;' +\\n\\t\\t\\t\\t'color:var(--dsw-alias-label-primary,#e6e6e6);' +\\n\\t\\t\\t\\t'background:var(--dsw-alias-bg-layer-1, rgba(255,255,255,.06));' +\\n\\t\\t\\t\\t'border:1px solid var(--dsw-alias-border-l2, rgba(128,128,128,.35))',\\n\\t\\t\\thint: 'color:var(--dsw-alias-label-tertiary,#8a8a8a);font-size:12px;line-height:18px'\\n\\t\\t};\\n\\t\\tfunction mk(tag, css, text) {\\n\\t\\t\\tconst n = document.createElement(tag);\\n\\t\\t\\tif (css) n.style.cssText = css;\\n\\t\\t\\tif (text !== undefined) n.textContent = text;\\n\\t\\t\\treturn n;\\n\\t\\t}\\n\\t\\tfunction mkBtn(text, onClick) {\\n\\t\\t\\tconst b = mk('button', CSS.btn, text);\\n\\t\\t\\tb.type = 'button';\\n\\t\\t\\tb.addEventListener('click', onClick);\\n\\t\\t\\treturn b;\\n\\t\\t}\\n\\n\\t\\t/** 数值输入框 + 四个微调按钮（1px 精度）。 */\\n\\t\\tfunction makeNumberRow(host, labelText, getVal, setVal) {\\n\\t\\t\\tconst row = mk('div', CSS.row);\\n\\t\\t\\trow.appendChild(mk('span', CSS.label, labelText));\\n\\n\\t\\t\\tconst input = mk('input', CSS.input);\\n\\t\\t\\tinput.type = 'number';\\n\\t\\t\\tinput.step = '1';\\n\\t\\t\\tinput.min = String(-LIMIT);\\n\\t\\t\\tinput.max = String(LIMIT);\\n\\t\\t\\tinput.value = String(getVal());\\n\\t\\t\\tinput.setAttribute('aria-label', labelText + '位移（像素）');\\n\\t\\t\\tliveInputs.push({ input, getVal });\\n\\n\\t\\t\\tconst commit = (v) => {\\n\\t\\t\\t\\tsetVal(clampNum(v));\\n\\t\\t\\t\\tinput.value = String(getVal());\\n\\t\\t\\t};\\n\\t\\t\\tinput.addEventListener('input', () => {\\n\\t\\t\\t\\tconst raw = input.value;\\n\\t\\t\\t\\tif (raw === '' || raw === '-') return;   // 允许输入中间态\\n\\t\\t\\t\\tcommit(raw);                              // 边输边生效\\n\\t\\t\\t});\\n\\t\\t\\tinput.addEventListener('blur', () => { commit(input.value); });\\n\\n\\t\\t\\tconst nudge = (d) => () => commit((Number(input.value) || 0) + d);\\n\\t\\t\\trow.appendChild(mkBtn('−10', nudge(-10)));\\n\\t\\t\\trow.appendChild(mkBtn('−1', nudge(-1)));\\n\\t\\t\\trow.appendChild(input);\\n\\t\\t\\trow.appendChild(mk('span', CSS.hint, '像素'));\\n\\t\\t\\trow.appendChild(mkBtn('+1', nudge(1)));\\n\\t\\t\\trow.appendChild(mkBtn('+10', nudge(10)));\\n\\n\\t\\t\\thost.appendChild(row);\\n\\t\\t\\treturn input;\\n\\t\\t}\\n\\n\\t\\t/** React 只承载一个容器；内部全用原生 DOM 构建。 */\\n\\t\\tfunction WallpaperPositionRow() {\\n\\t\\t\\tconst hostRef = _react.useRef(null);\\n\\n\\t\\t\\t_react.useEffect(() => {\\n\\t\\t\\t\\tconst host = hostRef.current;\\n\\t\\t\\t\\tif (!host) return;\\n\\t\\t\\t\\thost.textContent = '';\\n\\n\\t\\t\\t\\tconst wrap = mk('div', CSS.group);\\n\\t\\t\\t\\twrap.appendChild(mk('div', CSS.title, '壁纸位移（仅对当前壁纸生效）'));\\n\\n\\t\\t\\t\\tmakeNumberRow(wrap, '水平', () => getPos().x, (v) => setPos(v, getPos().y));\\n\\t\\t\\t\\tmakeNumberRow(wrap, '垂直', () => getPos().y, (v) => setPos(getPos().x, v));\\n\\n\\t\\t\\t\\tconst actions = mk('div', CSS.row);\\n\\t\\t\\t\\tactions.appendChild(mkBtn('恢复默认位置', () => {\\n\\t\\t\\t\\t\\tsetPos(0, 0);\\n\\t\\t\\t\\t\\tconst inputs = host.querySelectorAll('input[type=number]');\\n\\t\\t\\t\\t\\tif (inputs[0]) inputs[0].value = '0';\\n\\t\\t\\t\\t\\tif (inputs[1]) inputs[1].value = '0';\\n\\t\\t\\t\\t}));\\n\\t\\t\\t\\tactions.appendChild(mk('span', CSS.hint,\\n\\t\\t\\t\\t\\t'数值即像素：负值向左 / 向上，正值向右 / 向下，步进 1px；每张壁纸（图片 / URL / 渐变）各自记忆。'));\\n\\t\\t\\t\\twrap.appendChild(actions);\\n\\n\\t\\t\\t\\thost.appendChild(wrap);\\n\\t\\t\\t}, []);\\n\\n\\t\\t\\treturn _react.createElement('div', { ref: hostRef });\\n\\t\\t}\\n\\n\\t\\t// ── 生命周期（每一步都隔离，绝不让异常逃逸）─────────────────────────\\n\\t\\tfunction apply(ctx) {\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tinjectCss();\\n\\t\\t\\t\\tapplyPos();\\n\\t\\t\\t\\ttry { lastId = imgId(); } catch (e) {}\\n\\t\\t\\t\\tif (ctx && typeof ctx.on === 'function') {\\n\\t\\t\\t\\t\\ttry { ctx.on('theme/change', () => { try { applyPos(); } catch (e) {} }); } catch (e) {}\\n\\t\\t\\t\\t}\\n\\t\\t\\t\\tsetInterval(() => {\\n\\t\\t\\t\\t\\ttry {\\n\\t\\t\\t\\t\\t\\tapplyPos();\\n\\t\\t\\t\\t\\t\\t// 壁纸换了（换图 / 换 URL / 换渐变）→ 把面板数字同步成新壁纸的记忆值。\\n\\t\\t\\t\\t\\t\\tconst id = imgId();\\n\\t\\t\\t\\t\\t\\tif (id !== lastId) { lastId = id; refreshInputs(); }\\n\\t\\t\\t\\t\\t} catch (e) {}\\n\\t\\t\\t\\t}, 2000);\\n\\t\\t\\t} catch (err) {\\n\\t\\t\\t\\ttry { console.warn('[wallpaper-position] 应用位移失败：', err); } catch (e) {}\\n\\t\\t\\t}\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tif (ctx && ctx.slots && typeof ctx.slots.inject === 'function' && typeof ctx.slots.register === 'function') {\\n\\t\\t\\t\\t\\tctx.slots.inject('settings.dreamSkin.item', () => ctx.slots.register({\\n\\t\\t\\t\\t\\t\\tname: 'settings.dreamSkin.item',\\n\\t\\t\\t\\t\\t\\tid: 'wallpaper-position',\\n\\t\\t\\t\\t\\t\\torder: 90\\n\\t\\t\\t\\t\\t}, WallpaperPositionRow));\\n\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\ttry { console.warn('[wallpaper-position] 未取得 slots 服务，跳过设置项注册'); } catch (e) {}\\n\\t\\t\\t\\t}\\n\\t\\t\\t} catch (err) {\\n\\t\\t\\t\\ttry { console.warn('[wallpaper-position] 注册设置项失败：', err); } catch (e) {}\\n\\t\\t\\t}\\n\\t\\t}\\n\\n\\t\\texports.apply = apply;\\n\\t\\texports.inject = ['slots'];\\n\\t\\treturn module.exports;\\n\\t}\\n});\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/** dsh-wallpaper-position — host half：仅作为 loader 入口，UI 全在浏览器半。 */\\nexport const name = \\\"dsh-wallpaper-position\\\";\\n/** 无 web 路由需求。 */\\nexport const inject = [];\\n\\n/**\\n * ⚠️ 这个空 apply 不能省。\\n * cordis 要求插件是函数，或\\\"带 apply 方法的对象\\\"；只导出 name/inject 的模块\\n * 命名空间两者都不是，会被判为\\n *   invalid plugin, expect function or object with an \\\"apply\\\" method, received object\\n * 而 dsh 的插件加载器是 fail-fast：一个条目 apply 失败 → 整棵插件树 boot 失败\\n * → dsh web 完全起不来。空实现也必须存在。\\n * （2026-09-11 已因这个原因打挂 dsh 两次：02:19、02:31。）\\n */\\nexport function apply() {}\\n\"\n    },\n    {\n      \"path\": \"scripts/install.sh\",\n      \"content\": \"#!/usr/bin/env bash\\n# =============================================================================\\n# install.sh — 把 dsh-wallpaper-position 幂等安装进 dsh 的 web profile\\n#\\n#   1) 拷贝插件包到 $DSH_HOME/profiles/web/node_modules/dsh-wallpaper-position/；\\n#   2) 把 \\\"dsh-wallpaper-position\\\" 注册进 profile package.json 的 dsh.profile.bundles；\\n#   3) 静态自检。\\n#\\n# 关于「插件市场里显示已安装」：市场读的是 profile 的 dependencies（不是 bundles），\\n# 手装默认**不写** dependencies，避免 pnpm 下次 install 时把手装副本替换掉（离线会失败）。\\n# 要让市场识别就加 --market，或用官方方式装：\\n#   dsh plugin add github:ankhishtar2-lang/dsh-wallpaper-position\\n#\\n# 不重启任何服务。生效请自己执行：\\n#   systemctl --user restart dsh-web-profiled.service\\n# =============================================================================\\nset -uo pipefail\\n\\nMARKET=0\\nfor a in \\\"$@\\\"; do [ \\\"$a\\\" = \\\"--market\\\" ] && MARKET=1; done\\n\\nPKG_NAME=\\\"dsh-wallpaper-position\\\"\\nDEP_SPEC=\\\"${DSH_INSTALL_DEP_SPEC:-github:ankhishtar2-lang/dsh-wallpaper-position}\\\"\\nSRC=\\\"${DSH_WP_SRC:-$(cd \\\"$(dirname \\\"${BASH_SOURCE[0]}\\\")/..\\\" && pwd)}\\\"\\nDSH_HOME=\\\"${DSH_HOME:-$HOME/.dsh}\\\"\\nPROFILE=\\\"${DSH_PROFILE_DIR:-$DSH_HOME/profiles/web}\\\"\\nDEST=\\\"$PROFILE/node_modules/$PKG_NAME\\\"\\nPKG=\\\"$PROFILE/package.json\\\"\\nFAIL=0\\n\\nok()  { printf '   ✓ %s\\\\n' \\\"$*\\\"; }\\nbad() { printf '   ✗ %s\\\\n' \\\"$*\\\"; FAIL=1; }\\n\\nprintf '== 1) 拷贝插件文件 ==\\\\n'\\n[ -d \\\"$SRC/lib\\\" ] || { bad \\\"源目录不完整：$SRC\\\"; exit 1; }\\nmkdir -p \\\"$DEST/lib\\\" || { bad \\\"无法创建 $DEST\\\"; exit 1; }\\ncp -f \\\"$SRC/package.json\\\" \\\"$DEST/package.json\\\"\\ncp -f \\\"$SRC/cordis.patch.yml\\\" \\\"$DEST/cordis.patch.yml\\\"\\ncp -f \\\"$SRC/lib/index.js\\\" \\\"$DEST/lib/index.js\\\"\\ncp -f \\\"$SRC/lib/client.js\\\" \\\"$DEST/lib/client.js\\\"\\nok \\\"已部署到 $DEST\\\"\\n\\nprintf '== 2) 注册到 dsh.profile.bundles ==\\\\n'\\nnode - \\\"$PKG\\\" \\\"$PKG_NAME\\\" \\\"$MARKET\\\" \\\"$DEP_SPEC\\\" <<'NODE'\\nconst fs = require('fs')\\nconst [file, name, market, depSpec] = process.argv.slice(2)\\nconst pkg = JSON.parse(fs.readFileSync(file, 'utf8'))\\nlet changed = false\\npkg.dsh = pkg.dsh || {}\\npkg.dsh.profile = pkg.dsh.profile || {}\\npkg.dsh.profile.bundles = pkg.dsh.profile.bundles || []\\nif (!pkg.dsh.profile.bundles.includes(name)) {\\n  pkg.dsh.profile.bundles.push(name)\\n  changed = true\\n  console.log('   ✓ 已加入 bundles')\\n} else {\\n  console.log('   ✓ bundles 中已存在（跳过）')\\n}\\nif (market === '1') {\\n  pkg.dependencies = pkg.dependencies || {}\\n  if (!pkg.dependencies[name]) {\\n    pkg.dependencies[name] = depSpec\\n    changed = true\\n    console.log('   ✓ 已加入 dependencies（市场会显示为已安装）: ' + depSpec)\\n  } else {\\n    console.log('   ✓ dependencies 中已存在: ' + pkg.dependencies[name])\\n  }\\n} else {\\n  console.log('   · 未写 dependencies（手装默认）；要让市场识别，加 --market 重新执行')\\n}\\nif (changed) fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\\\\n')\\nNODE\\n[ $? -eq 0 ] || bad \\\"注册 bundles 失败\\\"\\n\\nprintf '== 3) 静态自检 ==\\\\n'\\nnode --check \\\"$DEST/lib/client.js\\\" >/dev/null 2>&1 && ok \\\"client.js 语法\\\" || bad \\\"client.js 语法\\\"\\nnode --input-type=module --check < \\\"$DEST/lib/index.js\\\" >/dev/null 2>&1 && ok \\\"index.js 语法（ESM）\\\" || bad \\\"index.js 语法（ESM）\\\"\\ngrep -qE '^export function apply' \\\"$DEST/lib/index.js\\\" && ok \\\"host 半有 apply 导出（fail-fast 红线）\\\" || bad \\\"host 半缺 apply 导出 —— 千万不要重启！\\\"\\nif command -v dsh >/dev/null 2>&1; then\\n  dsh --profile web --dump-config >/dev/null 2>&1 && ok \\\"dsh --profile web --dump-config 退出码 0\\\" || bad \\\"dump-config 失败，先别重启 dsh\\\"\\nfi\\n\\nprintf '\\\\n'\\nif [ \\\"$FAIL\\\" -eq 0 ]; then\\n  printf '全部通过。生效方式（由你执行）：\\\\n  systemctl --user restart dsh-web-profiled.service\\\\n'\\nelse\\n  printf '存在失败项：先别重启 dsh。\\\\n'\\nfi\\nexit \\\"$FAIL\\\"\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"14a054eef21ec5bf9c884340a2da8814735a75d3\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"64a2d121a50df6d88649c6f446478fd6f7cf54071b4e415574f0f735bee2a293\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 336,\n        \"code\": 258,\n        \"comments\": 65,\n        \"blank\": 22\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 192,\n        \"words\": 1790\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 289,\n          \"api\": \"ctx.on\",\n          \"name\": \"theme/change\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 291,\n          \"api\": \"setInterval\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 304,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"settings.dreamSkin.item\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"theme/change\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"settings.dreamSkin.item\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "fe46d95c9581af65974de9385350fe178a9db8ce5881fb0c5ab8dfa1394b329f"
+        }
+    },
+    "unavailable_artifacts": []
+}

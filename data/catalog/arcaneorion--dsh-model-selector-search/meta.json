@@ -1,0 +1,55 @@
+{
+    "repository": "ArcaneOrion/dsh-model-selector-search",
+    "repository_id": 1358317875,
+    "captured_at": "2026-10-24T05:56:11.860Z",
+    "window_start": "2026-09-24T05:56:11.860Z",
+    "stars": 0,
+    "pushed_at": "2026-09-29T11:58:08Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-model-selector-search%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 315E:22F39F:798116:83B97B:6ADC4880 and timestamp 2026-10-24 05:56:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-model-selector-search%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3202:86BD2:7D994F:87D720:6ADC4881 and timestamp 2026-10-24 05:56:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-model-selector-search%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A11.860Z..2026-10-24T05%3A56%3A11.860Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3296:31CC18:85EB5C:902193:6ADC4882 and timestamp 2026-10-24 05:56:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-model-selector-search%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A11.860Z..2026-10-24T05%3A56%3A11.860Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3360:7BEA7:80D44C:8B0ED4:6ADC4883 and timestamp 2026-10-24 05:56:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-model-selector-search%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A11.860Z..2026-10-24T05%3A56%3A11.860Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3410:1C5AFE:7AABB0:84DF14:6ADC4884 and timestamp 2026-10-24 05:56:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@arcaneorion/dsh-model-selector-search",
+        "captured_at": "2026-10-24T05:56:18.685Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 1140,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40arcaneorion%2Fdsh-model-selector-search",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-05T15:05:26.787Z",
+            "captured_at": "2026-10-24T05:56:18.685Z",
+            "source_url": "https://registry.npmjs.org/%40arcaneorion%2Fdsh-model-selector-search",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-09-29T11:55:30.762Z",
+            "latest_error": null
+        }
+    }
+}
