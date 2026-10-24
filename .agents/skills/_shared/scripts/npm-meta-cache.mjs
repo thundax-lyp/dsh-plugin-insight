@@ -1,3 +1,4 @@
+import { metricTimestamp as dateTime, metricDate as date } from './metric-time.mjs';
 import { META_BRANCH, META_PATH, META_REPOSITORY, readGitHubFile } from './github-file.mjs';
 
 const PACKAGE_NAME = /^(?:@[a-z0-9][a-z0-9._~-]*\/)?[a-z0-9][a-z0-9._~-]*$/;
@@ -13,9 +14,6 @@ const META_KEYS = new Set([
     'error'
 ]);
 const bytewise = (left, right) => Buffer.compare(Buffer.from(left), Buffer.from(right));
-const dateTime = (value) => typeof value === 'string' && Number.isFinite(Date.parse(value));
-const date = (value) =>
-    typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && dateTime(`${value}T00:00:00Z`);
 const DAY_MS = 86400000;
 const freshAt = (checkedAt, at) => {
     const age = Date.parse(at) - Date.parse(checkedAt);

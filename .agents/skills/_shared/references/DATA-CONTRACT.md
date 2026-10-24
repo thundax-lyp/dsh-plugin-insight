@@ -189,6 +189,11 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 - META 采集开始时先从私有 `thundax-lyp/dsh-plugin-meta` 仓库回读一次固定的 `main:data/NPM-META.jsonl` blob，并对整份 JSONL 的包名、排序和已出现字段做校验。同次运行只使用该 blob，不在组件之间追随移动分支头。
   对已有已核实 `npm.package_name` 的组件，近30日下载量和发布信息分别按字段组查找外部记录：记录的成功 `checked_at` 不得晚于本轮采集时点且不超过24小时；下载字段组还必须精确覆盖本轮采集时点之前30个完整UTC日。满足时保留记录自身的 `checked_at` 作为 `captured_at`；记录不存在、过期、窗口不匹配、失败记录没有仍新鲜的旧成功值或字段组不完整时，才回源 npm downloads／registry。外部缓存读取失败时记录缓存错误并回源，不把失败当成空值或零。包级缓存不保存组件对应的 GitHub 仓库指标，因此仓库身份、Star、Issue、推送时间和代码更新检查仍在需要时访问 GitHub 仓库接口。缓存值进入正式 META 前继续通过本工程 Schema 校验，不改变 npm 包名必须先由源码核实的身份边界。
   `prepare:selected` 与手动 `refresh:meta` 使用同一缓存解析和字段组判定；前者在任何选中项 META 采集前固定远端 blob，并在本轮 `PREPARATION.json` 保存仓库、分支、路径、blob SHA、缓存错误及每项下载量／发布信息的实际来源。缓存命中不得再请求对应 npm 接口；缓存下载量完整而发布信息不完整时只回源 registry，不能重复请求 downloads。
+- Git 仓库指标缓存独立读取 `data/GIT-META.jsonl` 和 `data/GIT-ERRORS.jsonl`，两者必须绑定同一完整远端 commit SHA；同次 prepare:selected 或完整 refresh:meta 仅固定读取一次，不逐组件追随分支。整份 JSONL 校验字段、正整数 ID、数值排序、非负 Star、布尔归档状态及完整 UTC 时间戳（拒绝仅日期与非法日历日期）；未知字段、重复 ID 和不完整记录导致缓存读取失败并显式回源，不视为零。
+  已核实稳定 ID 对应的成功记录时间不得晚于本轮采集时点且不超过24小时，满足才复用 `stars` 和可选 `archived`。零 Star 与 false 归档状态都是有效值；改名按 ID 匹配，不按仓库名匹配。存在失败记录但旧成功值仍新鲜时可复用，保留 `latest_error`，不能以失败尝试时间延长成功值有效期。
+  命中时在 META 的可选 `git_cache` 中保存原成功 `captured_at`、缓存来源仓库、路径、固定 commit SHA、指标与错误 blob SHA 及最新错误，顶层 `captured_at` 仍代表本轮采集，不能用它冒充缓存 Star 的新采集时间。缓存缺失、过期、未来时间或身份不匹配时回源 GitHub；已知 ID 的仓库查询使用 `/repositories/<id>` 并核对返回身份，身份冲突直接拒绝，不用缓存掩盖。
+  当前 Git 缓存不包含 `pushed_at`、Issue 统计或代码更新信息；这些继续直接查询 GitHub，因此缓存命中不意味着完全取消仓库接口请求。仓库接口失败但有新鲜缓存时保留 Star、归档状态和错误，缺失的推送时间及 Issue 统计保持未知，不继续按可能过期的名称查询 Issue。publication-only 刷新不读取或更新 Git 缓存。
+  prepare:selected 在本轮 `GIT-META-CACHE.json` 只落地无令牌的固定缓存副本供采集子进程使用，并在 PREPARATION 保存缓存来源、commit/blob、错误及逐项字段来源；完整 refresh:meta 的结果同样报告字段来源和缓存错误。缓存副本属于可保留的本轮过程，不写入源码证据或研究结论。
 - 可选 `code_update` 绑定研究基线、当前提交、变更路径和核查时间；`script_changed` 为 true／false／null 三态。
   它表示待重新洞察的脚本变化，独立于 findings 的依赖失效状态，不改写研究深度或完成检查点。
 - 工程统计的 `revision`／`component`／`coverage` 界定版本、组件及完整或抽读范围；工具版本、内容摘要与排除项须保留。

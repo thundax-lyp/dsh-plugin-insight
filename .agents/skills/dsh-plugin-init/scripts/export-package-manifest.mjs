@@ -16,7 +16,7 @@ import {
     META_REPOSITORY,
     readGitHubFile,
     writeGitHubFile
-} from './github-file.mjs';
+} from '../../_shared/scripts/github-file.mjs';
 
 const RUNS = resolve(ROOT, 'data/runs');
 const PACKAGE_NAME = /^(?:@[a-z0-9][a-z0-9._~-]*\/)?[a-z0-9][a-z0-9._~-]*$/;

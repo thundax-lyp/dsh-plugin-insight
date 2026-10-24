@@ -6,6 +6,7 @@ import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { ROOT, read, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
 import { api } from '../../_shared/scripts/capture-github.mjs';
+import { readGitMetaCache, cachedGitMetadata, gitCacheFromSnapshot } from '../../_shared/scripts/git-meta-cache.mjs';
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
 const check = ajv.compile(read(resolve(ROOT, '.agents/skills/_shared/schemas/github-meta.schema.json')));
@@ -18,9 +19,26 @@ export function validateMetadata(value) {
     } else if (publication && Object.hasOwn(publication, 'latest_error') && publication.latest_error === null) {
         throw Error('missing latest npm release requires an explicit error');
     }
+    if (value.git_cache) {
+        const age = Date.parse(value.captured_at) - Date.parse(value.git_cache.captured_at);
+        if (
+            age < 0 ||
+            age > 86400000 ||
+            !Number.isSafeInteger(value.stars) ||
+            typeof value.archived !== 'boolean' ||
+            !Number.isSafeInteger(value.repository_id) ||
+            value.repository_id <= 0
+        )
+            throw Error('invalid Git cache identity, metrics or capture time');
+    }
     return value;
 }
-export function captureMetadata(repository, request = api, at = new Date().toISOString()) {
+export function captureMetadata(
+    repository,
+    request = api,
+    at = new Date().toISOString(),
+    { repositoryId, gitCache } = {}
+) {
     if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository)) throw Error('expected owner/repository');
     const from = new Date(Date.parse(at) - 30 * 86400000).toISOString();
     const result = {
@@ -33,16 +51,36 @@ export function captureMetadata(repository, request = api, at = new Date().toISO
         issues: { open: null, closed: null, created_30d: null, closed_30d: null, updated_30d: null },
         errors: []
     };
+    let cached = cachedGitMetadata(repositoryId, gitCache, at);
+    let repositoryAvailable = true;
     try {
-        const m = request(`repos/${repository}`);
+        const m = request(repositoryId ? `repositories/${repositoryId}` : `repos/${repository}`);
+        if (repositoryId && m.id !== repositoryId) {
+            const error = Error('GitHub repository identity mismatch');
+            error.identityMismatch = true;
+            throw error;
+        }
+        if (!Number.isSafeInteger(m.id) || m.id <= 0) throw Error('invalid GitHub repository ID');
+        cached ??= cachedGitMetadata(m.id, gitCache, at);
         result.repository = m.full_name;
         result.repository_id = m.id;
         result.stars = m.stargazers_count;
         result.pushed_at = m.pushed_at;
+        if (typeof m.archived === 'boolean') result.archived = m.archived;
     } catch (e) {
+        if (e.identityMismatch) throw e;
         result.errors.push({ target: repository, message: e.message });
-        return validateMetadata(result);
+        if (!cached) return validateMetadata(result);
+        result.repository = cached.repository;
+        result.repository_id = cached.repository_id;
+        repositoryAvailable = false;
     }
+    if (cached) {
+        result.stars = cached.stars;
+        result.archived = cached.archived;
+        result.git_cache = cached.provenance;
+    }
+    if (!repositoryAvailable) return validateMetadata(result);
     const queries = {
         open: 'is:open',
         closed: 'is:closed',
@@ -158,13 +196,36 @@ export async function captureNpmDownloads(
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     try {
         const { values, positionals } = parseArgs({
-            options: { out: { type: 'string' }, npm: { type: 'string' } },
+            options: {
+                out: { type: 'string' },
+                npm: { type: 'string' },
+                'repository-id': { type: 'string' },
+                at: { type: 'string' },
+                'git-cache-file': { type: 'string' },
+                'skip-git-cache': { type: 'boolean', default: false }
+            },
             allowPositionals: true
         });
         if (positionals.length !== 1 || !values.out)
             throw Error('Usage: capture-plugin-meta.mjs OWNER/REPO [--npm PACKAGE] --out FILE');
-        const result = captureMetadata(positionals[0]);
-        if (values.npm) result.npm = await captureNpmDownloads(values.npm);
+        const at = values.at ?? new Date().toISOString();
+        if (!Number.isFinite(Date.parse(at))) throw Error('invalid --at');
+        const repositoryId = values['repository-id'] === undefined ? undefined : Number(values['repository-id']);
+        if (repositoryId !== undefined && (!Number.isSafeInteger(repositoryId) || repositoryId <= 0))
+            throw Error('invalid --repository-id');
+        let gitCache;
+        let cacheError;
+        try {
+            if (!values['skip-git-cache'])
+                gitCache = values['git-cache-file']
+                    ? gitCacheFromSnapshot(read(resolve(values['git-cache-file'])))
+                    : await readGitMetaCache();
+        } catch (error) {
+            cacheError = error.message;
+        }
+        const result = captureMetadata(positionals[0], api, at, { repositoryId, gitCache });
+        if (cacheError) result.errors.push({ target: 'git_meta_cache', message: cacheError });
+        if (values.npm) result.npm = await captureNpmDownloads(values.npm, undefined, at);
         validateMetadata(result);
         atomicWrite(values.out, result);
         console.log(

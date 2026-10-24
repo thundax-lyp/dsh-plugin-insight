@@ -24,7 +24,7 @@ import {
     META_BRANCH,
     MANIFEST_PATH,
     GIT_MANIFEST_PATH
-} from './github-file.mjs';
+} from '../../_shared/scripts/github-file.mjs';
 
 export async function syncManifests({
     workPath,

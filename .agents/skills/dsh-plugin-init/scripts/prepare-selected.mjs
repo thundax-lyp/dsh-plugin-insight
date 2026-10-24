@@ -14,7 +14,8 @@ import {
     captureNpmPublication,
     validateMetadata
 } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-import { readNpmMetaCache, resolveNpmMetadata } from './npm-meta-cache.mjs';
+import { readNpmMetaCache, resolveNpmMetadata } from '../../_shared/scripts/npm-meta-cache.mjs';
+import { readGitMetaCache, gitCacheSnapshot } from '../../_shared/scripts/git-meta-cache.mjs';
 const execute = promisify(execFile);
 const run = async (command, args, options = {}) =>
     (await execute(command, args, { encoding: 'utf8', timeout: 180_000, maxBuffer: 32 * 1024 * 1024, ...options }))
@@ -53,6 +54,7 @@ export async function prepareSelected(
         downloads = captureNpmDownloads,
         publication = captureNpmPublication,
         metaCache = readNpmMetaCache,
+        gitMetaCache = readGitMetaCache,
         at = new Date().toISOString()
     } = {}
 ) {
@@ -61,14 +63,19 @@ export async function prepareSelected(
     const items = selectedItems(work.session).filter((i) => i.status === 'pending');
     const checkouts = new Map(),
         errors = [];
-    let cache;
-    let metaCacheError = null;
-    try {
-        cache = await metaCache();
-    } catch (error) {
-        metaCacheError = error.message;
-        cache = { records: new Map(), repository: null, branch: null, path: null, blob_sha: null };
-    }
+    const [npmResult, gitResult] = await Promise.allSettled([
+        Promise.resolve().then(metaCache),
+        Promise.resolve().then(gitMetaCache)
+    ]);
+    const metaCacheError = npmResult.status === 'rejected' ? npmResult.reason.message : null;
+    const cache =
+        npmResult.status === 'fulfilled'
+            ? npmResult.value
+            : { records: new Map(), repository: null, branch: null, path: null, blob_sha: null };
+    const gitCacheError = gitResult.status === 'rejected' ? gitResult.reason.message : null;
+    const gitCache = gitResult.status === 'fulfilled' ? gitResult.value : null;
+    const gitCacheFile = resolve(folder, 'GIT-META-CACHE.json');
+    if (gitCache) atomicWrite(gitCacheFile, gitCacheSnapshot(gitCache));
     const metaSources = [];
     for (const item of items)
         checkouts.set(item.repository, {
@@ -146,12 +153,27 @@ export async function prepareSelected(
             await node('.agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs', [
                 item.repository,
                 '--out',
-                metadataPath
+                metadataPath,
+                '--repository-id',
+                item.id.split(':')[1],
+                '--at',
+                at,
+                ...(gitCache ? ['--git-cache-file', gitCacheFile] : ['--skip-git-cache'])
             ]);
             const pluginMetadata = validateMetadata(read(metadataPath));
             const sources = {
                 plugin_id: item.id,
                 github: 'repository',
+                git_stars: pluginMetadata.git_cache
+                    ? 'github-meta'
+                    : pluginMetadata.stars === null
+                      ? null
+                      : 'github-api',
+                git_archived: pluginMetadata.git_cache
+                    ? 'github-meta'
+                    : pluginMetadata.archived === undefined
+                      ? null
+                      : 'github-api',
                 npm_downloads: null,
                 npm_publication: null
             };
@@ -220,6 +242,15 @@ export async function prepareSelected(
             blob_sha: cache.blob_sha,
             records: cache.records.size,
             error: metaCacheError
+        },
+        git_meta_cache: {
+            repository: gitCache?.repository ?? null,
+            path: gitCache?.path ?? null,
+            commit_sha: gitCache?.commit_sha ?? null,
+            blob_sha: gitCache?.blob_sha ?? null,
+            errors_blob_sha: gitCache?.errors_blob_sha ?? null,
+            records: gitCache?.records.size ?? 0,
+            error: gitCacheError
         },
         meta_sources: metaSources.sort((left, right) => left.plugin_id.localeCompare(right.plugin_id)),
         errors
