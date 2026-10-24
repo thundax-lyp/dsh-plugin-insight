@@ -194,6 +194,19 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 - 工程统计的 `revision`／`component`／`coverage` 界定版本、组件及完整或抽读范围；工具版本、内容摘要与排除项须保留。
   静态能力候选不是正式能力数，`confirmed_count: null` 表示未确认，不能转成 0；统计材料同样不可覆盖检查点已绑定的原件。
 
+### 外部 META 包清单
+
+私有 GitHub 仓库 `thundax-lyp/dsh-plugin-meta` 只消费本工程已核实的 npm 身份。使用
+`npm run export:package-manifest -- --work data/runs/<round>/WORK.json` 从该轮固定的完整 INIT INPUT 范围生成候选内容，并通过 GitHub Contents API 回读 `main:data/PACKAGE-MANIFEST.jsonl`；核对远端差异后显式增加 `--apply` 才更新该文件。不得依赖相邻 checkout 或直接写入其他工作区。WORK 必须通过共享过程读取器校验；INPUT 的 `plugins` 是本次全量来源扫描中通过仓库身份和默认分支核实的组件集合，不能用已研究 catalog 的条数替代。
+
+当前来源条目与 INPUT 不提供 npm 包名字段。awesome 来源拒绝手写 `npm:` 字段，其上游生成使用的 `data/npm-map.json` 只存在于对方 CI 缓存，不是当前固定 checkout 的可读输入。因此导出器以完整 INPUT 为范围，只联结正式 catalog 组件 META 中已有的精确 `npm.package_name`；没有正式 META 或没有已核实包名的组件计入缺失，不从仓库、组件、目录名称或描述文字推断。
+
+- 交换文件为 JSONL，每行只包含 `{ "package": "<npm-name>" }`，不携带组件 ID、生成时间或来源 revision；包名去重并按字节序升序排列。
+- 导出结果必须报告完整组件数、INPUT 直接提供包名字段的组件数、具有已核实包名的组件数、唯一包名数，以及“无正式 META”和“正式 META 无已核实包名”两类缺失数；不能把已核实子集表述为全量包覆盖。
+- 省略 `--work` 仅在 `data/runs/` 中恰有一个 WORK 时允许；没有或存在多个 WORK 均须显式指定，不能猜测最新轮次。
+- 读取私有仓库需要 `GH_TOKEN`、`GITHUB_TOKEN` 或本机 `gh` 登录；远端写入凭据必须具有目标仓库 Contents 权限。写入前使用远端 blob SHA 做并发保护，内容不变时不创建提交。
+- 该文件只向外提供包名清单，不把外部 META 缓存变为研究结论或插件身份真相；INIT Skill 正常完成必须在正式快照校验通过后执行带 `--apply` 的同步并再次回读，内容未变化时不创建提交。该授权只覆盖目标清单文件产生的单个远端提交，不授权修改其他文件、推送本工程、创建 PR 或触发消费方刷新。
+
 ## 路径、兼容与清理
 
 - 稳定身份与物理目录分离，路径注册表使改名／移动不改变当前入口；轮次目录只标识本轮工作区。
