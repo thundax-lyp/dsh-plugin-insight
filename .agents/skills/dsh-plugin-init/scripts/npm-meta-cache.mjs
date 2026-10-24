@@ -159,13 +159,16 @@ export async function resolveNpmMetadata(
     { downloads, publication, at = new Date().toISOString() }
 ) {
     const cachedDownloads = cachedNpmDownloads(packageName, record, at);
-    if (!cachedDownloads)
-        return {
-            npm: await downloads(packageName, undefined, at),
-            downloads_source: 'npm',
-            publication_source: 'npm'
-        };
     const cachedPublication = cachedNpmPublication(packageName, record, at);
+    if (!cachedDownloads) {
+        const npm = await downloads(packageName, undefined, at, { publication: cachedPublication ?? undefined });
+        if (cachedPublication) npm.publication = cachedPublication;
+        return {
+            npm,
+            downloads_source: 'npm',
+            publication_source: cachedPublication ? 'github-meta' : 'npm'
+        };
+    }
     return {
         npm: {
             ...cachedDownloads,

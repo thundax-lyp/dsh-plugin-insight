@@ -117,7 +117,8 @@ export async function captureNpmDownloads(
         if (!r.ok) throw Error(`HTTP ${r.status}`);
         return r.json();
     },
-    at = new Date().toISOString()
+    at = new Date().toISOString(),
+    { publication } = {}
 ) {
     if (!/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/.test(name)) throw Error('invalid npm package name');
     const end = new Date(Date.parse(at));
@@ -151,7 +152,7 @@ export async function captureNpmDownloads(
     } catch (e) {
         result.error = e.message;
     }
-    result.publication = await captureNpmPublication(name, request, at);
+    result.publication = publication ?? (await captureNpmPublication(name, request, at));
     return result;
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
