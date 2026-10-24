@@ -186,6 +186,9 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
   返回包名、窗口与非负整数下载数须匹配，否则记未知；下载量不等于用户数。
 - `npm.publication` 的 first_published_at 来自已核实包的注册表 time.created，表示首次发布，仅保留为数据。可选的 latest_version、latest_published_at、latest_error 必须成组出现，来自注册表 dist-tags.latest、该版本的 time[version] 及版本条目身份核对；不是 time.modified、任意最高版本或 Git 推送时间。成功时版本与日期同时存在且 latest_error 为 null，失败时两者为 null 并保存错误。首次时间与最新版本采集可独立失败；旧快照缺少 latest 字段时视为未知，不回退首次时间。采集时间及注册表来源共用 publication.captured_at／source_url，缺失或失败不从入档、Git 或下载量推断。
 - `refresh:meta -- --npm-publication-only` 仅重采既有已确认包名的 publication，保留下载、GitHub指标、脚本更新检查、研究记录与推荐，仍经基线摘要、完整校验、独占锁及原子快照写入；默认每日完整META刷新也采集最新版本字段。
+- META 采集开始时先从私有 `thundax-lyp/dsh-plugin-meta` 仓库回读一次固定的 `main:data/META.jsonl` blob，并对整份 JSONL 的包名、排序和已出现字段做校验。同次运行只使用该 blob，不在组件之间追随移动分支头。
+  对已有已核实 `npm.package_name` 的组件，近30日下载量和发布信息分别按字段组查找外部记录：记录的成功 `checked_at` 不得晚于本轮采集时点且不超过24小时；下载字段组还必须精确覆盖本轮采集时点之前30个完整UTC日。满足时保留记录自身的 `checked_at` 作为 `captured_at`；记录不存在、过期、窗口不匹配、失败记录没有仍新鲜的旧成功值或字段组不完整时，才回源 npm downloads／registry。外部缓存读取失败时记录缓存错误并回源，不把失败当成空值或零。包级缓存不保存组件对应的 GitHub 仓库指标，因此仓库身份、Star、Issue、推送时间和代码更新检查仍在需要时访问 GitHub 仓库接口。缓存值进入正式 META 前继续通过本工程 Schema 校验，不改变 npm 包名必须先由源码核实的身份边界。
+  `prepare:selected` 与手动 `refresh:meta` 使用同一缓存解析和字段组判定；前者在任何选中项 META 采集前固定远端 blob，并在本轮 `PREPARATION.json` 保存仓库、分支、路径、blob SHA、缓存错误及每项下载量／发布信息的实际来源。缓存命中不得再请求对应 npm 接口；缓存下载量完整而发布信息不完整时只回源 registry，不能重复请求 downloads。
 - 可选 `code_update` 绑定研究基线、当前提交、变更路径和核查时间；`script_changed` 为 true／false／null 三态。
   它表示待重新洞察的脚本变化，独立于 findings 的依赖失效状态，不改写研究深度或完成检查点。
 - 工程统计的 `revision`／`component`／`coverage` 界定版本、组件及完整或抽读范围；工具版本、内容摘要与排除项须保留。

@@ -15,6 +15,7 @@ import {
 } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { validateManifest } from './research-session.mjs';
 import { main as render } from './render-research.mjs';
+import { cachedNpmPublication, readNpmMetaCache, resolveNpmMetadata } from './npm-meta-cache.mjs';
 const scripts = /\.(?:[cm]?[jt]s|[jt]sx)$/i;
 export function inspectUpdate(item, request = api, at = new Date().toISOString()) {
     const result = {
@@ -58,6 +59,7 @@ export async function refresh(
         request = api,
         downloads = captureNpmDownloads,
         publication = captureNpmPublication,
+        metaCache = readNpmMetaCache,
         publicationOnly = false,
         pluginIds = null,
         at = new Date().toISOString(),
@@ -81,6 +83,14 @@ export async function refresh(
     const stamp = at.replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
     const result = [];
     const mapping = { ...publicationInput.metadata };
+    let cache;
+    let metaCacheError = null;
+    try {
+        cache = await metaCache();
+    } catch (error) {
+        metaCacheError = error.message;
+        cache = { records: new Map() };
+    }
     // Read the fixed list; no discovery, deep analysis, catalog writes or checkpoint edits.
     for (const item of manifest.items.filter(
         (item) => item.status === 'complete' && (!pluginIds || pluginIds.includes(item.id))
@@ -95,9 +105,29 @@ export async function refresh(
         if (metadata.repository_id !== null && metadata.repository_id !== Number(item.id.split(':')[1]))
             throw Error(`repository identity changed: ${item.id}`);
         // Only use previously confirmed npm identity. Never derive it from repository name.
-        if (publicationOnly) metadata.npm.publication = await publication(previous.npm.package_name, undefined, at);
-        else {
-            if (previous?.npm) metadata.npm = await downloads(previous.npm.package_name, undefined, at);
+        let npmDownloadsSource = null;
+        let npmPublicationSource = null;
+        if (publicationOnly) {
+            const cachedPublication = cachedNpmPublication(
+                previous.npm.package_name,
+                cache.records.get(previous.npm.package_name),
+                at
+            );
+            metadata.npm.publication =
+                cachedPublication ?? (await publication(previous.npm.package_name, undefined, at));
+            npmPublicationSource = cachedPublication ? 'github-meta' : 'npm';
+        } else {
+            if (previous?.npm) {
+                const packageName = previous.npm.package_name;
+                const resolved = await resolveNpmMetadata(packageName, cache.records.get(packageName), {
+                    downloads,
+                    publication,
+                    at
+                });
+                metadata.npm = resolved.npm;
+                npmDownloadsSource = resolved.downloads_source;
+                npmPublicationSource = resolved.publication_source;
+            }
             metadata.code_update = inspectUpdate(item, request, at);
         }
         validateMetadata(metadata);
@@ -111,6 +141,9 @@ export async function refresh(
         mapping[item.id] = current;
         result.push({
             id: item.id,
+            npm_downloads_source: npmDownloadsSource,
+            npm_publication_source: npmPublicationSource,
+            meta_cache_error: metaCacheError,
             script_changed: metadata.code_update?.script_changed ?? null,
             errors: [
                 ...metadata.errors.map((e) => e.message),

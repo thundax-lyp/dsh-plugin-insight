@@ -9,6 +9,12 @@ import { parseArgs } from 'node:util';
 import { read, atomicWrite, ROOT } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { selectedItems } from './research-session.mjs';
+import {
+    captureNpmDownloads,
+    captureNpmPublication,
+    validateMetadata
+} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
+import { readNpmMetaCache, resolveNpmMetadata } from './npm-meta-cache.mjs';
 const execute = promisify(execFile);
 const run = async (command, args, options = {}) =>
     (await execute(command, args, { encoding: 'utf8', timeout: 180_000, maxBuffer: 32 * 1024 * 1024, ...options }))
@@ -41,12 +47,29 @@ export async function restoreEolOnlyCheckout(path) {
     await run('git', ['-C', path, 'restore', '--source', 'HEAD', '--worktree', '--', '.']);
     return true;
 }
-export async function prepareSelected(workPath) {
+export async function prepareSelected(
+    workPath,
+    {
+        downloads = captureNpmDownloads,
+        publication = captureNpmPublication,
+        metaCache = readNpmMetaCache,
+        at = new Date().toISOString()
+    } = {}
+) {
     const work = readWork(resolve(workPath)),
         folder = resolve(workPath, '..');
     const items = selectedItems(work.session).filter((i) => i.status === 'pending');
     const checkouts = new Map(),
         errors = [];
+    let cache;
+    let metaCacheError = null;
+    try {
+        cache = await metaCache();
+    } catch (error) {
+        metaCacheError = error.message;
+        cache = { records: new Map(), repository: null, branch: null, path: null, blob_sha: null };
+    }
+    const metaSources = [];
     for (const item of items)
         checkouts.set(item.repository, {
             item,
@@ -119,12 +142,32 @@ export async function prepareSelected(workPath) {
                             ? pkg.name
                             : undefined;
                 } catch {}
+            const metadataPath = resolve(directory, 'META.json');
             await node('.agents/skills/dsh-plugin-insight/scripts/capture-plugin-meta.mjs', [
                 item.repository,
                 '--out',
-                resolve(directory, 'META.json'),
-                ...(typeof packageName === 'string' ? ['--npm', packageName] : [])
+                metadataPath
             ]);
+            const pluginMetadata = validateMetadata(read(metadataPath));
+            const sources = {
+                plugin_id: item.id,
+                github: 'repository',
+                npm_downloads: null,
+                npm_publication: null
+            };
+            if (typeof packageName === 'string') {
+                const resolved = await resolveNpmMetadata(packageName, cache.records.get(packageName), {
+                    downloads,
+                    publication,
+                    at
+                });
+                pluginMetadata.npm = resolved.npm;
+                sources.npm_downloads = resolved.downloads_source;
+                sources.npm_publication = resolved.publication_source;
+            }
+            validateMetadata(pluginMetadata);
+            atomicWrite(metadataPath, pluginMetadata);
+            metaSources.push(sources);
             const inventory = read(inventoryPath);
             const files = [];
             let bytes = 0;
@@ -168,8 +211,17 @@ export async function prepareSelected(workPath) {
         }
     });
     atomicWrite(resolve(folder, 'PREPARATION.json'), {
-        checked_at: new Date().toISOString(),
+        checked_at: at,
         selected: items.length,
+        meta_cache: {
+            repository: cache.repository,
+            branch: cache.branch,
+            path: cache.path,
+            blob_sha: cache.blob_sha,
+            records: cache.records.size,
+            error: metaCacheError
+        },
+        meta_sources: metaSources.sort((left, right) => left.plugin_id.localeCompare(right.plugin_id)),
         errors
     });
     return errors;
