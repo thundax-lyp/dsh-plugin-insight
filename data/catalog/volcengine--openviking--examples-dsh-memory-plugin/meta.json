@@ -1,0 +1,45 @@
+{
+    "repository": "volcengine/OpenViking",
+    "repository_id": 1128123594,
+    "captured_at": "2026-10-24T10:26:52.933Z",
+    "window_start": "2026-09-24T10:26:52.933Z",
+    "stars": 40712,
+    "pushed_at": "2026-10-24T08:36:31Z",
+    "issues": {
+        "open": 358,
+        "closed": 1138,
+        "created_30d": 316,
+        "closed_30d": 153,
+        "updated_30d": 396
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-24T08:55:29.833Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "cb189a0da755b0fb01319bb9aec6f939ccbb8cee",
+        "blob_sha": "ad80fe217f81762306d6487e5e5ebca1f403270b",
+        "errors_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@openviking/dsh-memory-plugin",
+        "captured_at": "2026-10-24T10:26:52.933Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 34730,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40openviking%2Fdsh-memory-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T10:36:19.044Z",
+            "captured_at": "2026-10-24T10:26:52.933Z",
+            "source_url": "https://registry.npmjs.org/%40openviking%2Fdsh-memory-plugin",
+            "error": null,
+            "latest_version": "0.5.29",
+            "latest_published_at": "2026-10-23T08:36:32.299Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "Ebony-Vinyl/dsh-our-free-model",
+    "repository_id": 1385896447,
+    "captured_at": "2026-10-24T10:26:52.933Z",
+    "window_start": "2026-09-24T10:26:52.933Z",
+    "stars": 40083,
+    "pushed_at": "2026-10-24T06:03:04Z",
+    "issues": {
+        "open": 270,
+        "closed": 124,
+        "created_30d": 394,
+        "closed_30d": 124,
+        "updated_30d": 394
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-24T08:55:29.833Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "cb189a0da755b0fb01319bb9aec6f939ccbb8cee",
+        "blob_sha": "ad80fe217f81762306d6487e5e5ebca1f403270b",
+        "errors_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "latest_error": null
+    }
+}

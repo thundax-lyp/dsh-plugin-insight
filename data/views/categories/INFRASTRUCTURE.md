@@ -95,6 +95,7 @@
 | [dsh-wsl-wslconfig](#plugin-1351854461-root) | 读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。 | 确定目标路径/原文安全后只作线索试用，空字段先核错误。 |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
+| [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | [Q06](#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。 |
 | [plugin-usage-billing](#plugin-1363429979-plugin-usage-billing) | 从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。 | 先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | 可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。 |
@@ -1289,6 +1290,20 @@
 > **思考**：创建成功不保证 grantOpenId 已获 full_access；图片 URL/本地路径缺约束，写操作需明确用户授权。详见[Q03](#research-q03)与[Q04](#research-q04)。
 
 > **建议**：未验证改进为创建/授权事务化状态、图片 allowlist/限量、写操作幂等与连接路由鉴权加强。详见[Q05](#research-q05)。
+
+<a id="plugin-1385896447-root"></a>
+
+## [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md)
+
+[![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=yellow&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
+
+> **用途**：为DSH用户统一多渠道模型选择、兼容网关与失败切换。
+
+> **亮点**：多车道目录与虚拟组合模型减少手工接线，视觉和窗口等元信息按成员约束。
+
+> **思考**：部分免费是作者对上游的声明；真实渠道、供给、成本和数据处理规则仍需分别核对。
+
+> **建议**：使用可信完整分发，从单车道脱敏任务开始，并核对监听、凭据和实际尝试链。
 
 <a id="plugin-1363429979-plugin-usage-billing"></a>
 

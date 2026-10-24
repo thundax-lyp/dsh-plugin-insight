@@ -1,0 +1,45 @@
+{
+    "repository": "tt-a1i/archify",
+    "repository_id": 1211139949,
+    "captured_at": "2026-10-24T10:26:52.933Z",
+    "window_start": "2026-09-24T10:26:52.933Z",
+    "stars": 88446,
+    "pushed_at": "2026-10-24T03:55:12Z",
+    "issues": {
+        "open": 150,
+        "closed": 177,
+        "created_30d": 139,
+        "closed_30d": 87,
+        "updated_30d": 191
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-24T08:55:29.833Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "cb189a0da755b0fb01319bb9aec6f939ccbb8cee",
+        "blob_sha": "ad80fe217f81762306d6487e5e5ebca1f403270b",
+        "errors_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@tt-a1i/archify-dsh",
+        "captured_at": "2026-10-24T09:11:34.598Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 31404,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40tt-a1i%2Farchify-dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T09:12:28.270Z",
+            "captured_at": "2026-10-24T09:11:34.598Z",
+            "source_url": "https://registry.npmjs.org/%40tt-a1i%2Farchify-dsh",
+            "error": null,
+            "latest_version": "1.0.0",
+            "latest_published_at": "2026-10-04T17:10:03.047Z",
+            "latest_error": null
+        }
+    }
+}

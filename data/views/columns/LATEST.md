@@ -13,6 +13,7 @@
 | 插件 | 主要用途 | 最新发布 |
 | --- | --- | --- |
 | [dsh-super-code](#plugin-1367482095-root) | 提供编码 Agent 预设、任务与委派台账、专业方法、分层记忆和可配置运行预算。 | [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=&message=2026-10-24&color=grey&style=flat)](https://www.npmjs.com/package/dsh-super-code) |
+| [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=&message=2026-10-23&color=grey&style=flat)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) |
 | [dsh-smart-prompt](#plugin-1419869951-root) | 发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。 | [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=&message=2026-10-23&color=grey&style=flat)](https://www.npmjs.com/package/dsh-smart-prompt) |
 | [dsh-model](#plugin-1410395082-root) | 整合模型中转、来源登录与管理、组合切换、设备密钥及每日签到，并同步到DSH。 | [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=&message=2026-10-23&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model) |
 | [dsh-ci-diet](#plugin-1426954291-root) | 分析GitHub Actions运行与工作流，标注浪费候选并生成需明确审批的本地YAML补丁。 | [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=&message=2026-10-23&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ci-diet) |
@@ -53,6 +54,7 @@
 | [dsh-ledger-memory](#plugin-1412857520-root) | 为DSH项目维护台账、决策目标经验卡和活动日志，自动注入记忆、压缩前后提供胶囊与seq回读，并支持跨会话交接和项目锁定。 | [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=&message=2026-10-20&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory) |
 | [MC Mods Dev Bridge](#plugin-1426070939-root) | 驱动真实 Minecraft 服务端与客户端运行场景 JSON，采集探针证据并覆盖 Fabric、Forge、NeoForge。 | [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=&message=2026-10-20&color=grey&style=flat)](https://www.npmjs.com/package/mcmodsdevbridge) |
 | [DSH Calendar](#plugin-1376880747-root) | 在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。 | [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=&message=2026-10-20&color=grey&style=flat)](https://www.npmjs.com/package/dsh-calendar) |
+| [Hindsight Coding Agents](#plugin-1086419061-hindsight-integrations-coding-agents) | 为编码 Agent 提供跨会话项目记忆、知识页工具和后台历史及对话摄取。 | [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=&message=2026-10-20&color=grey&style=flat)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) |
 | [dsh-diff-approval](#plugin-1335980444-root) | 捕获DSH成功文件编辑并集中展示差异，支持Keep/Revert、评论、撤销及VCS变更导入。 | [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=&message=2026-10-20&color=grey&style=flat)](https://www.npmjs.com/package/dsh-diff-approval) |
 | [dsh-project-memory](#plugin-1339316901-root) | 索引项目文档与代码符号，分层召回经验和insight，并将任务记录跨会话保存。 | [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=&message=2026-10-20&color=grey&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) |
 | [插件名片](#plugin-1424219088-root) | 为DSH插件换图标、中文备注和说明，支持文件夹、收藏、排序、导入导出及启停卸载。 | [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=&message=2026-10-19&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-namecards) |
@@ -91,6 +93,7 @@
 | [dsh-wrapup-guard](#plugin-841979943-root) | 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard) |
 | [J-Space Cognition Suite DSH适配](#plugin-1344270011-root) | 将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) |
 | [dsh-mermaid](#plugin-1334569498-root) | 在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mermaid) |
+| [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。 | [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=&message=2026-10-15&color=grey&style=flat)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) |
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=&message=2026-10-14&color=grey&style=flat)](https://www.npmjs.com/package/dsh-almost-full-access) |
 | [DSH Harness Switch](#plugin-1414577411-root) | 在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。 | [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=&message=2026-10-14&color=grey&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) |
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=&message=2026-10-14&color=grey&style=flat)](https://www.npmjs.com/package/hover-glossary) |
@@ -117,6 +120,7 @@
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | [![最新发布 2026-10-07](https://img.shields.io/static/v1?label=&message=2026-10-07&color=grey&style=flat)](https://www.npmjs.com/package/dsh-perlica-ding) |
 | [dsh-fullscreen-input](#plugin-1407166868-root) | 为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。 | [![最新发布 2026-10-07](https://img.shields.io/static/v1?label=&message=2026-10-07&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fullscreen-input) |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 暴露桌面观察、动作与审批。 | [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=&message=2026-10-06&color=grey&style=flat)](https://www.npmjs.com/package/dsh-desktop-uia) |
+| [Archify DSH Skill适配器](#plugin-1211139949-integrations-deepseek-harness) | 将固定版本 Archify Skill 作为文件系统 Skill provider 接入 DeepSeek Harness。 | [![最新发布 2026-10-05](https://img.shields.io/static/v1?label=&message=2026-10-05&color=grey&style=flat)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) |
 | [dsh-simplify](#plugin-1349207533-root) | 清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。 | [![最新发布 2026-10-04](https://img.shields.io/static/v1?label=&message=2026-10-04&color=grey&style=flat)](https://www.npmjs.com/package/dsh-simplify) |
 | [@y9931666/dsh-plugin-roundtable](#plugin-1342524723-root) | 把Harness会话组织成持久专家圆桌，提供拓扑、发言汇聚、人工决策和红队评审。 | [![最新发布 2026-10-03](https://img.shields.io/static/v1?label=&message=2026-10-03&color=grey&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-roundtable) |
 | [dsh-study-coach](#plugin-1400498179-root) | 以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。 | [![最新发布 2026-10-02](https://img.shields.io/static/v1?label=&message=2026-10-02&color=grey&style=flat)](https://www.npmjs.com/package/dsh-study-coach) |
@@ -144,6 +148,20 @@
 **最新发布**：[0.3.7 · 2026-10-24（北京时间）](https://www.npmjs.com/package/dsh-super-code)。
 
 **使用条件**：熟悉DSH且已有代码验收流程的开发者可在独立分支试用。首次加载预设并确认安装所有权冲突、模型权限与删除模式；持续成本包括父子模型调用、上下文、压缩、检查和长期记忆维护，不能只看调用次数。可选storageDomain不可用会保留任务记忆但失去长期记忆。失败后检查pending持久化和旧binding，不盲重放写工具；以项目原测试、需求对照、总费用与人工时间共同验收。简单任务不应强建台账，未测到收益或出现未经确认的范围扩展就退回宿主原预设。 Q04(#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
+
+## [OpenViking DSH Memory](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
+
+[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=yellow&logo=github&style=flat)](https://github.com/volcengine/OpenViking) [![npm 30d 34,730](https://img.shields.io/static/v1?label=npm+30d&message=34%2C730&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
+
+**主要用途**：为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。
+
+**最新发布**：[0.5.29 · 2026-10-23（北京时间）](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)。
+
+**使用条件**：Q06(#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。
 
 [返回表格](#column-index)
 
@@ -707,6 +725,20 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1086419061-hindsight-integrations-coding-agents"></a>
+
+## [Hindsight Coding Agents](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md)
+
+[![GitHub ★ 53,255](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=53%2C255&color=yellow&logo=github&style=flat)](https://github.com/vectorize-io/hindsight) [![npm 30d 55,816](https://img.shields.io/static/v1?label=npm+30d&message=55%2C816&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents)
+
+**主要用途**：为编码 Agent 提供跨会话项目记忆、知识页工具和后台历史及对话摄取。
+
+**最新发布**：[0.8.2 · 2026-10-20（北京时间）](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents)。
+
+**使用条件**：先在非敏感项目配置独立bank，固定更新策略并确认禁用/清理路径；核对记忆检索和原任务验收，发现串项目、误导决策或成本上升时停止。Q04(#research-q04)
+
+[返回表格](#column-index)
+
 <a id="plugin-1335980444-root"></a>
 
 ## [dsh-diff-approval](../../plugins/9087--dsh-diff-approval/INSIGHT.md)
@@ -1239,6 +1271,20 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1276665883-packages-dsh-plugin-browserskill"></a>
+
+## [BrowserSkill DSH 插件](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md)
+
+[![GitHub ★ 9,474](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C474&color=yellow&logo=github&style=flat)](https://github.com/Tencent/BrowserSkill) [![npm 30d 27,866](https://img.shields.io/static/v1?label=npm+30d&message=27%2C866&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
+
+**主要用途**：为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。
+
+**最新发布**：[0.3.3 · 2026-10-15（北京时间）](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)。
+
+**使用条件**：已用 DSH Web 的用户可从只读网页或测试表单试用，先核对 CLI 和扩展版本、技能显露、任务预览及结束清理，再扩展到实际工作流。Q04(#research-q04)
+
+[返回表格](#column-index)
+
 <a id="plugin-1336031182-root"></a>
 
 ## [dsh-almost-full-access](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md)
@@ -1600,6 +1646,20 @@
 **最新发布**：[1.1.3 · 2026-10-06（北京时间）](https://www.npmjs.com/package/dsh-desktop-uia)。
 
 **使用条件**：建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。 参见Q04(#research-q04)、Q06(#research-q06)与Q09(#research-q09)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1211139949-integrations-deepseek-harness"></a>
+
+## [Archify DSH Skill适配器](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 88,446](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=88%2C446&color=yellow&logo=github&style=flat)](https://github.com/tt-a1i/archify) [![npm 30d 31,404](https://img.shields.io/static/v1?label=npm+30d&message=31%2C404&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) [![最新发布 2026-10-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@tt-a1i/archify-dsh)
+
+**主要用途**：将固定版本 Archify Skill 作为文件系统 Skill provider 接入 DeepSeek Harness。
+
+**最新发布**：[1.0.0 · 2026-10-05（北京时间）](https://www.npmjs.com/package/@tt-a1i/archify-dsh)。
+
+**使用条件**：先等待能核对默认Skill根修复的包；熟悉DSH者只在临时profile检查个人、项目和Archify Skill共存，失败就移除适配层。Q04(#research-q04)
 
 [返回表格](#column-index)
 

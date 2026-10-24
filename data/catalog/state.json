@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "e29d99441595cea0f25cca0d81c142ad8e644047b1866a1d0a933e14db785a11",
-    "index_sha256": "f3260dc9ca48635decb5d5657f0da13acf02154bdf8c382b7f7fe51dc2f0eca5",
+    "snapshot_digest": "fd4f97ffe59b1a2408d2da109264e88ebda5d94e4b0caca4a334f0558d202f10",
+    "index_sha256": "6f34972126d33179b3620a55c9543f41e8072b8b51a117fd87217fc451b620aa",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-10-24T16:16:27+08:00",
+        "checked_at": "2026-10-24T10:26:37.690Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 2，完成 2，受阻 0；已知同版本受阻跳过 6；频繁更新窗口内跳过 39；当前发布 480",
+            "scope": "本轮所选 10，完成 10，受阻 0；已知同版本受阻跳过 6；频繁更新窗口内跳过 45；当前发布 490",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-10-24T16:16:27+08:00"
+            "checked_at": "2026-10-24T10:26:37.690Z"
         },
         "registry": {},
         "discovery": {
@@ -52,8 +52,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-10-24-03",
-            "work_digest": "455b8fc1cabc00084346759a0884cbdbd8f1f157f1f45c3b538d59607a1c45d8"
+            "id": "2026-10-24-04",
+            "work_digest": "b007e306c99fd7daae7df8135fc78c51d59aa24b525c7fd9400e39a9b73a189f"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -243,7 +243,16 @@
     },
     "orders": {
         "catalog.plugins": [
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
             "github:1170373459:dsh-invoice-downloader",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root",
             "github:1276714299:root",
             "github:1285824983:integrations-dsh",
             "github:1296792947:integrations-dsh-agentdebugx",
@@ -566,6 +575,7 @@
             "github:1384810201:root",
             "github:1384810483:root",
             "github:1384810806:root",
+            "github:1385896447:root",
             "github:1385913707:root",
             "github:1386463441:root",
             "github:1387205322:root",
@@ -1205,7 +1215,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "publication.metadata": [
             "github:1335557891:root",
@@ -1687,7 +1707,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "publication.summaries": [
             "github:1335557891:root",
@@ -2169,7 +2199,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "publication.capabilities": [
             "github:1335557891:root",
@@ -2651,7 +2691,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "publication.advice": [
             "github:1335557891:root",
@@ -3133,7 +3183,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "registry": [
             "github:1170373459:dsh-invoice-downloader",
@@ -3616,7 +3676,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "reports": [
             "github:1335557891:root",
@@ -4098,7 +4168,17 @@
             "github:1424420835:root",
             "github:1339263264:root",
             "github:1426264117:root",
-            "github:1382292535:root"
+            "github:1382292535:root",
+            "github:1211139949:integrations-deepseek-harness",
+            "github:1211139949:root",
+            "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1128123594:examples-dsh-memory-plugin",
+            "github:1128123594:root",
+            "github:1385896447:root",
+            "github:1024118326:packages-dsh-weknora",
+            "github:1024118326:root",
+            "github:1276665883:packages-dsh-plugin-browserskill",
+            "github:1276665883:root"
         ],
         "retained_documents": [
             "github:1170373459:dsh-invoice-downloader"
@@ -4584,7 +4664,17 @@
         "github:1424420835:root",
         "github:1339263264:root",
         "github:1426264117:root",
-        "github:1382292535:root"
+        "github:1382292535:root",
+        "github:1211139949:integrations-deepseek-harness",
+        "github:1211139949:root",
+        "github:1086419061:hindsight-integrations-coding-agents",
+        "github:1128123594:examples-dsh-memory-plugin",
+        "github:1128123594:root",
+        "github:1385896447:root",
+        "github:1024118326:packages-dsh-weknora",
+        "github:1024118326:root",
+        "github:1276665883:packages-dsh-plugin-browserskill",
+        "github:1276665883:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json",
@@ -5074,6 +5164,16 @@
         "data/runs/2026-10-24-02/aomiraku--dsh-accountdisplayname-edit/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-02/asher-2000--dsh-memory-connect/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-03/assidefok--dsh-opencodego-status/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-03/asktheway--dsh-jev-interceptor/REVIEWED-SOURCE.json"
+        "data/runs/2026-10-24-03/asktheway--dsh-jev-interceptor/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/tt-a1i--archify/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/vectorize-io--hindsight--hindsight-integrations-coding-agents/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/volcengine--openviking/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/tencent--weknora--packages-dsh-weknora/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/tencent--weknora/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/tencent--browserskill--packages-dsh-plugin-browserskill/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-04/tencent--browserskill/REVIEWED-SOURCE.json"
     ]
 }

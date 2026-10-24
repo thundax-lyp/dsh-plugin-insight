@@ -94,7 +94,7 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
     const title = intro.match(/^# [^\n]+/)?.[0];
     const summary = intro.match(/^> (.+)$/m)?.[1];
     if (!title || !summary) throw Error(`detail introduction missing: ${item.id}`);
-    const preface = intro
+    let preface = intro
         .replace(/^# [^\n]+\n*/, '')
         .replace(/^> [^\n]+\n*/m, '')
         .trim();
@@ -108,13 +108,31 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
         short.match(new RegExp(`^- \\*\\*${name}(?:：\\*\\*|\\*\\*：)(.+)$`, 'm'))?.[1].trim() ?? '';
     const review = label('思考') || label('关键质疑');
     const suggestion = label('建议');
+    const openingQuotes = [
+        template('SHORT-ITEM', { label: '核心亮点', text: label('亮点') }).trim(),
+        template('SHORT-ITEM', { label: '风险与缺陷', text: review }).trim()
+    ];
+    preface = preface
+        .split(/\n\s*\n/)
+        .filter((paragraph) => !openingQuotes.includes(paragraph.trim()))
+        .join('\n\n');
     const version = take(/^(版本|研究范围|分析版本)$/);
     const status = take(/^结论状态$/)
         .split(/\n\s*\n/)
         .filter((p) => p.trim() !== '[重点创新推演与最小验证](#innovation)')
         .join('\n\n');
-    const scene = take(/场景与替代办法|它试图解决什么问题|用途与适用场景/);
-    const canonicalCurrent = take(/^(当前插件分析|插件分析)$/);
+    let scene = take(/场景与替代办法|它试图解决什么问题|用途与适用场景/);
+    let canonicalCurrent = take(/^(当前插件分析|插件分析)$/);
+    const currentParts = splitSections(canonicalCurrent, 3);
+    const currentScene = currentParts.filter((part) => part.title === '用途与适用场景');
+    if (currentScene.length) {
+        scene = join([...currentScene.map((part) => part.body), scene]);
+        canonicalCurrent = join(
+            currentParts
+                .filter((part) => part.title !== '用途与适用场景')
+                .map((part) => (part.title ? section(`### ${part.title}`, part.body) : part.body))
+        );
+    }
     const canonicalAbilities = take(/^能力与限制$/);
     const canonicalTechnical = take(/^工程分析$/);
     const flow = take(/依赖与流程|依赖、流程与成本|能力与流程/);

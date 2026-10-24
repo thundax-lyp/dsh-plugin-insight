@@ -24,6 +24,8 @@
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 频繁从 WSL 打开网页的用户可试用；把浏览器页面可见而非 PowerShell 返回作为验收。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 已稳定使用 khal 且只需只读日程的 WSL 用户可试用；必须验证时区和同步陈旧边界。 |
 | [dsh-subagent](#plugin-1425006726-root) | 把多个已登录的外部编码 CLI 注册为 DSH 子代理并提供进度与恢复。 | 已信任多个外部 CLI 且能独立验收子任务的开发者可隔离试用；先验证权限、回退预算和重启去重。 |
+| [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | 对知识密集团队有明确试用路径，但当前效果与运维成本需专项对照。 |
+| [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 适合愿意核查来源的开发者在单一架构路径试用；自动门禁不替代语义审核。 |
 | [embedded-workbench](#plugin-1276714299-root) | 为嵌入式固件开发提供八份 Skill，并在 DSH 会话首个模型步骤注入短验证提示。 | 可小规模验证八 Skill 与门禁，并以专家样例评估专业正确性。 |
 | [@indexyz/dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。 | 单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。 |
 | [LogicProbe](#plugin-1331586818-root) | 为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。 | 确定性模型检查有可控用途，但抽象忠实性与实际缺陷收益须由用户复核。 |
@@ -59,9 +61,7 @@
 | [3chat-customer-growth](#plugin-1374055714-root) | 连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。 | 适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。 |
 | [@240xu/dsh-session-lazy-view](#plugin-1377185339-root) | 以独立网页只读查看本地会话尾帧，提供时间线、搜索、统计及Markdown导出。 | 本机只读尾部排查有明确可控试用路径，全文资源与投影完整性限制必须保留。 |
 | [dsh-jev-interceptor](#plugin-1382292535-root) | 为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。 | 适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。 |
-| [dsh-cache-bricks](#plugin-1386463441-root) | 用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。 | 适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。 |
-| [dsh-message-ops](#plugin-1389945615-root) | 为 DSH 提供消息回撤、删除显示与恢复操作及对应模型工具。 | 追加式纠错有明确价值，但必须在停止运行且可备份会话中核对上下文和外部副作用。 |
-| [@240xu/dsh-session-search](#plugin-1390987906-root) | 对本地 DSH 会话日志建立消息索引，提供跨会话关键词搜索、定位摘录和独立面板。 | 单人本地历史定位有可控试用价值，但仅前缀索引且可能保留陈旧缓存，命中须核原文。 |
+| [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | 可信来源与脱敏单车道有可控试用价值，多渠道供给和数据边界不能由统一UI保证。 |
 
 <a id="plugin-1334269686-root"></a>
 
@@ -228,6 +228,34 @@
 **推荐理由**：已信任多个外部 CLI 且能独立验收子任务的开发者可隔离试用；先验证权限、回退预算和重启去重。
 
 **使用条件**：适合已安装并信任多个 CLI、能写出自足任务并独立验收结果的开发者做受限试用；敏感仓库或无法授予 headless 权限的环境不应启用。成功标准是回退链在总预算内提高合格子任务数、重启接管不重复执行且父代理复核时间低于手工多终端；若上下文遗漏、权限暴露或迟到结果重复产生，应停止。 Q09(#research-q09)
+
+[返回表格](#column-index)
+
+<a id="plugin-1128123594-root"></a>
+
+## [OpenViking](../../plugins/volcengine--openviking/INSIGHT.md)
+
+[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=yellow&logo=github&style=flat)](https://github.com/volcengine/OpenViking)
+
+**主要用途**：以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。
+
+**推荐理由**：对知识密集团队有明确试用路径，但当前效果与运维成本需专项对照。
+
+**使用条件**：Q06(#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。
+
+[返回表格](#column-index)
+
+<a id="plugin-1211139949-root"></a>
+
+## [Archify](../../plugins/tt-a1i--archify/INSIGHT.md)
+
+[![GitHub ★ 88,446](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=88%2C446&color=yellow&logo=github&style=flat)](https://github.com/tt-a1i/archify)
+
+**主要用途**：将需求、代码关系和解释内容组织成交互式图表及单页 HTML。
+
+**推荐理由**：适合愿意核查来源的开发者在单一架构路径试用；自动门禁不替代语义审核。
+
+**使用条件**：先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。Q04(#research-q04)
 
 [返回表格](#column-index)
 
@@ -721,45 +749,17 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1386463441-root"></a>
+<a id="plugin-1385896447-root"></a>
 
-## [dsh-cache-bricks](../../plugins/3289192-bot--dsh-cache-bricks/INSIGHT.md)
+## [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md)
 
+[![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=yellow&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
 
+**主要用途**：为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。
 
-**主要用途**：用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。
+**推荐理由**：可信来源与脱敏单车道有可控试用价值，多渠道供给和数据边界不能由统一UI保证。
 
-**推荐理由**：适合本地单用户维护者试用缓存诊断；先核对usage口径、隐私访问和记录淘汰，不把颜色当优化效果。
-
-**使用条件**：建议本地单用户维护者用不敏感会话试用，先核对attempt、usage和访问边界；主链延迟、字段错位、UI干扰或权限不清时停止，回到宿主日志。详见Q07(#research-q07)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1389945615-root"></a>
-
-## [dsh-message-ops](../../plugins/240xu--dsh-message-ops/INSIGHT.md)
-
-[![npm 30d 5,119](https://img.shields.io/static/v1?label=npm+30d&message=5%2C119&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-message-ops) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-message-ops)
-
-**主要用途**：为 DSH 提供消息回撤、删除显示与恢复操作及对应模型工具。
-
-**推荐理由**：追加式纠错有明确价值，但必须在停止运行且可备份会话中核对上下文和外部副作用。
-
-**使用条件**：可在备份后的非关键会话试用。先停止Agent，核对选中范围和外部动作，恢复失败先读原marker进度；重要会话优先保留可追溯副本。Q04(#research-q04)
-
-[返回表格](#column-index)
-
-<a id="plugin-1390987906-root"></a>
-
-## [@240xu/dsh-session-search](../../plugins/240xu--dsh-session-search/INSIGHT.md)
-
-[![npm 30d 1,752](https://img.shields.io/static/v1?label=npm+30d&message=1%2C752&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-session-search) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-session-search)
-
-**主要用途**：对本地 DSH 会话日志建立消息索引，提供跨会话关键词搜索、定位摘录和独立面板。
-
-**推荐理由**：单人本地历史定位有可控试用价值，但仅前缀索引且可能保留陈旧缓存，命中须核原文。
-
-**使用条件**：单人非敏感本地范围试用，先验已知词与长消息尾部边界，命中后核原文；完整全文/多租户需求暂缓。参见Q04(#research-q04)。
+**使用条件**：Q06(#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。
 
 [返回表格](#column-index)
 
