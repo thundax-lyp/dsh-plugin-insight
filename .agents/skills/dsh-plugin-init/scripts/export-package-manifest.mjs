@@ -23,7 +23,7 @@ const PACKAGE_NAME = /^(?:@[a-z0-9][a-z0-9._~-]*\/)?[a-z0-9][a-z0-9._~-]*$/;
 const bytewise = (left, right) => Buffer.compare(Buffer.from(left), Buffer.from(right));
 const sha256 = (text) => createHash('sha256').update(text).digest('hex');
 
-function defaultWorkPath() {
+export function defaultWorkPath() {
     const candidates = readdirSync(RUNS, { withFileTypes: true })
         .filter((entry) => entry.isDirectory())
         .map((entry) => resolve(RUNS, entry.name, 'WORK.json'))
@@ -33,7 +33,7 @@ function defaultWorkPath() {
     return candidates[0];
 }
 
-function validatePackages(packages) {
+export function validatePackages(packages) {
     if (!Array.isArray(packages)) throw Error('package manifest must be an array');
     for (let index = 0; index < packages.length; index += 1) {
         const name = packages[index];
@@ -45,12 +45,15 @@ function validatePackages(packages) {
     return packages;
 }
 
-function renderManifest(packages) {
+export function renderManifest(packages) {
     validatePackages(packages);
-    return packages.map((packageName) => JSON.stringify({ package: packageName })).join('\n') + '\n';
+    return (
+        packages.map((packageName) => JSON.stringify({ package: packageName })).join('\n') +
+        (packages.length ? '\n' : '')
+    );
 }
 
-function parseManifest(text) {
+export function parseManifest(text) {
     if (text === '') return [];
     if (!text.endsWith('\n')) throw Error('remote package manifest must end with a newline');
     const packages = text
@@ -90,9 +93,9 @@ export function mergePackages(remotePackages, verifiedPackages) {
     };
 }
 
-function buildManifest(workPath) {
-    const work = validateWork(readWork(workPath));
-    const snapshot = readSnapshotStorage(resolve(ROOT, SNAPSHOT));
+export function buildManifest(workPath, inputs = {}) {
+    const work = inputs.work ?? validateWork(readWork(workPath));
+    const snapshot = inputs.snapshot ?? readSnapshotStorage(resolve(ROOT, SNAPSHOT));
     const names = new Set();
     let componentsWithSourcePackageField = 0;
     let componentsWithVerifiedPackageName = 0;

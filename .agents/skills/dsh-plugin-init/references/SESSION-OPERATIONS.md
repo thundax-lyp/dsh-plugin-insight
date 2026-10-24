@@ -49,6 +49,8 @@ INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗�
 
 ## 合并后清理
 
+清理前须按 INIT 第8步执行 `npm run export:meta-manifests -- --work <WORK.json>` 的预览、`--apply` 和最终只读回读，确认 npm 与 Git 清单均无待写差异。路径未部署、身份解析、并发更新或任一回读失败时保留 WORK；单独 npm 回写成功不能视为双清单已完成。目标字段和事务语义以[数据契约](../../_shared/references/DATA-CONTRACT.md#外部-meta-双清单回写)为准。
+
 按[输出标准](OUTPUT-STANDARD.md#本地-runs-与-git-清单)检查本轮合并结果、当前引用及恢复需求。确认当前快照可独立校验和生成后，预览并清理无引用的已合并副本，不要求永久归档。
 未合并增量、待处理失败材料、活动锁和用途不明的文件保留；当前引用仍指向 runs 时先完成落位，不能先删文件。
 旧历史文件是否迁移或删除另按实际任务执行，本次规范变更本身不执行清理。

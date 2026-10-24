@@ -27,7 +27,8 @@
         "codex-review": "node .agents/skills/codex-comment-fix/scripts/codex-review.mjs",
         "snapshot": "node .agents/skills/dsh-plugin-init/scripts/snapshot-data.mjs",
         "prepare:selected": "node .agents/skills/dsh-plugin-init/scripts/prepare-selected.mjs",
-        "assemble:insight": "node .agents/skills/dsh-plugin-insight/scripts/assemble-insight.mjs"
+        "assemble:insight": "node .agents/skills/dsh-plugin-insight/scripts/assemble-insight.mjs",
+        "export:meta-manifests": "node .agents/skills/dsh-plugin-init/scripts/export-meta-manifests.mjs"
     },
     "devDependencies": {
         "ajv": "8.20.0",

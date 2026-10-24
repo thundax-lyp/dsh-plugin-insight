@@ -186,7 +186,7 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
   返回包名、窗口与非负整数下载数须匹配，否则记未知；下载量不等于用户数。
 - `npm.publication` 的 first_published_at 来自已核实包的注册表 time.created，表示首次发布，仅保留为数据。可选的 latest_version、latest_published_at、latest_error 必须成组出现，来自注册表 dist-tags.latest、该版本的 time[version] 及版本条目身份核对；不是 time.modified、任意最高版本或 Git 推送时间。成功时版本与日期同时存在且 latest_error 为 null，失败时两者为 null 并保存错误。首次时间与最新版本采集可独立失败；旧快照缺少 latest 字段时视为未知，不回退首次时间。采集时间及注册表来源共用 publication.captured_at／source_url，缺失或失败不从入档、Git 或下载量推断。
 - `refresh:meta -- --npm-publication-only` 仅重采既有已确认包名的 publication，保留下载、GitHub指标、脚本更新检查、研究记录与推荐，仍经基线摘要、完整校验、独占锁及原子快照写入；默认每日完整META刷新也采集最新版本字段。
-- META 采集开始时先从私有 `thundax-lyp/dsh-plugin-meta` 仓库回读一次固定的 `main:data/META.jsonl` blob，并对整份 JSONL 的包名、排序和已出现字段做校验。同次运行只使用该 blob，不在组件之间追随移动分支头。
+- META 采集开始时先从私有 `thundax-lyp/dsh-plugin-meta` 仓库回读一次固定的 `main:data/NPM-META.jsonl` blob，并对整份 JSONL 的包名、排序和已出现字段做校验。同次运行只使用该 blob，不在组件之间追随移动分支头。
   对已有已核实 `npm.package_name` 的组件，近30日下载量和发布信息分别按字段组查找外部记录：记录的成功 `checked_at` 不得晚于本轮采集时点且不超过24小时；下载字段组还必须精确覆盖本轮采集时点之前30个完整UTC日。满足时保留记录自身的 `checked_at` 作为 `captured_at`；记录不存在、过期、窗口不匹配、失败记录没有仍新鲜的旧成功值或字段组不完整时，才回源 npm downloads／registry。外部缓存读取失败时记录缓存错误并回源，不把失败当成空值或零。包级缓存不保存组件对应的 GitHub 仓库指标，因此仓库身份、Star、Issue、推送时间和代码更新检查仍在需要时访问 GitHub 仓库接口。缓存值进入正式 META 前继续通过本工程 Schema 校验，不改变 npm 包名必须先由源码核实的身份边界。
   `prepare:selected` 与手动 `refresh:meta` 使用同一缓存解析和字段组判定；前者在任何选中项 META 采集前固定远端 blob，并在本轮 `PREPARATION.json` 保存仓库、分支、路径、blob SHA、缓存错误及每项下载量／发布信息的实际来源。缓存命中不得再请求对应 npm 接口；缓存下载量完整而发布信息不完整时只回源 registry，不能重复请求 downloads。
 - 可选 `code_update` 绑定研究基线、当前提交、变更路径和核查时间；`script_changed` 为 true／false／null 三态。
@@ -194,19 +194,24 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 - 工程统计的 `revision`／`component`／`coverage` 界定版本、组件及完整或抽读范围；工具版本、内容摘要与排除项须保留。
   静态能力候选不是正式能力数，`confirmed_count: null` 表示未确认，不能转成 0；统计材料同样不可覆盖检查点已绑定的原件。
 
-### 外部 META 包清单
+### 外部 META 双清单回写
 
-私有 GitHub 仓库 `thundax-lyp/dsh-plugin-meta` 只消费本工程已核实的 npm 身份。使用
-`npm run export:package-manifest -- --work data/runs/<round>/WORK.json` 从该轮固定的完整 INIT INPUT 范围生成本轮已核实候选，并通过 GitHub Contents API 回读 `main:data/PACKAGE-MANIFEST.jsonl`；输出是“远端已有包名 ∪ 本轮已核实包名”的规范化并集，普通 INIT 只追加、不删除。核对远端差异后显式增加 `--apply` 才更新该文件。不得依赖相邻 checkout 或直接写入其他工作区。WORK 必须通过共享过程读取器校验；INPUT 的 `plugins` 是本次全量来源扫描中通过仓库身份和默认分支核实的组件集合，不能用已研究 catalog 的条数替代。
+私有 GitHub 仓库 `thundax-lyp/dsh-plugin-meta` 分开维护 npm 与 GitHub 采集对象和指标。INIT 收尾使用
+`npm run export:meta-manifests -- --work data/runs/<round>/WORK.json` 预览两份清单，再以 `--apply` 同步；原 `export:package-manifest` 只更新 npm，保留作单清单工具，不能替代 INIT 完成条件。不得依赖相邻 checkout 或直接写入其他工作区。
 
-当前来源条目与 INPUT 不提供 npm 包名字段。awesome 来源拒绝手写 `npm:` 字段，其上游生成使用的 `data/npm-map.json` 只存在于对方 CI 缓存，不是当前固定 checkout 的可读输入。因此导出器以完整 INPUT 为范围，只联结正式 catalog 组件 META 中已有的精确 `npm.package_name`；没有正式 META 或没有已核实包名的组件计入缺失，不从仓库、组件、目录名称或描述文字推断。
+- `data/NPM-MANIFEST.jsonl` 每行只有 `{ "package": "<npm-name>" }`，按完整包名字节序去重排序。`data/NPM-META.jsonl` 为独立指标缓存。
+- `data/GIT-MANIFEST.jsonl` 每行包含 `repository_id`、`node_id`、`repository`、`npm_packages`、`source_repositories`，按正整数 `repository_id` 数值升序去重。`repository` 保存仓库名称，`node_id` 供批量采集固定对象，`source_repositories` 是小写来源仓库名称数组；同仓库多个组件及改名后的来源归入同一 ID。`npm_packages` 是包名关联数组，空数组只表示无已核实包名。所有数组去重并按字节序排序，同一来源名称不能同时归入不同仓库 ID。
+- `data/GIT-META.jsonl` 由目标工程独立采集 Star 等仓库指标。回写只更新两个 MANIFEST，不写 npm／Git 指标、待解析或错误文件，不触发采集工作流。
 
-- 交换文件为 JSONL，每行只包含 `{ "package": "<npm-name>" }`，不携带组件 ID、生成时间或来源 revision；包名去重并按字节序升序排列。
-- 导出结果必须报告完整组件数、INPUT 直接提供包名字段的组件数、具有已核实包名的组件数、唯一包名数、“无正式 META”和“正式 META 无已核实包名”两类缺失数，以及远端已有、本轮已存在、本轮新增、保留的远端历史项、删除数和最终输出数；普通流程的删除数必须为0，不能把已核实子集表述为全量包覆盖。
-- 省略 `--work` 仅在 `data/runs/` 中恰有一个 WORK 时允许；没有或存在多个 WORK 均须显式指定，不能猜测最新轮次。
-- 读取私有仓库需要 `GH_TOKEN`、`GITHUB_TOKEN` 或本机 `gh` 登录；远端写入凭据必须具有目标仓库 Contents 权限。写入前使用远端 blob SHA 做并发保护，内容不变时不创建提交。
-- 本轮没有重新识别到某个远端包名不构成删除证据；包名错误、改名或退役须由独立的显式清理流程预览并提供身份依据，不能由普通 INIT 回写隐式裁剪。
-- 该文件只向外提供包名清单，不把外部 META 缓存变为研究结论或插件身份真相；INIT Skill 正常完成必须在正式快照校验通过后执行带 `--apply` 的同步并再次回读，内容未变化时不创建提交。该授权只覆盖目标清单文件产生的单个远端提交，不授权修改其他文件、推送本工程、创建 PR 或触发消费方刷新。
+WORK 通过共享过程读取器和校验器读取；INPUT 的 `plugins` 是该轮来源扫描中通过仓库身份和默认分支核实的完整组件集合，不能用已研究 catalog 数量替代。Git 候选从每个组件的稳定 ID 提取仓库 ID，并与存在的 INPUT metadata.repository_id 交叉核对；不因缺少正式 META 排除仓库。已有远端 ID 复用其 node ID，新 ID 通过 GitHub `/repositories/<id>` 核实数字 ID、node ID 和当前名称后才能写入；身份查询失败即阻止整次同步，不能伪造 node ID 或静默漏项。
+
+当前固定目录源码及 INPUT 不提供 npm 包名字段；上游在线目录可提供，但不是本轮固定 INPUT 的身份依据。回写只联结正式 catalog META 中已有的精确 `npm.package_name`，同时用于 npm 清单和 Git 的包名关联；没有正式 META 或没有已核实包名的组件分别计入缺失，不从仓库、组件、目录名称或描述推断。目标工程独立导入的已有包名、仓库和关联全部保留，不以本轮缺席推断删除。
+
+两份输出分别为“远端已有 ∪ 本轮已核实”的追加合并；必须报告完整组件数、具有来源包名字段的组件数、已核实包名组件数、唯一包名数、两类缺失数，以及 npm／Git 的远端已有、本轮已存在、新增、保留历史、删除数0和最终输出数。Git 另报告本轮唯一仓库数。来源扫描失败、INPUT 不包含的未解析条目不冒充已覆盖；不得将已核实 npm 子集表述为全量包覆盖。
+
+预览先固定远端分支完整 commit SHA，并从该提交读取两个 MANIFEST，目标文件缺失时停止，不回退旧路径或自动初始化。`--apply` 使用 Git Data API 基于该提交创建只包含变更清单的 tree 和单个 commit，以非强制分支更新防止覆盖并发提交。无内容变化则不创建提交。写入后从分支最新的同一固定提交回读两个文件并逐字节核对，任一不匹配均报告受阻、保留 WORK，先重新预览再恢复；不能凭提交 API 返回值判定完成。最后再运行只读命令，确认两份 `changed: false` 后才进入清理。
+
+省略 `--work` 仅在 `data/runs/` 中恰有一个 WORK 时允许。认证使用 `GH_TOKEN`、`GITHUB_TOKEN` 或本机 `gh` 登录，目标写入需要对应 Contents 权限并遵守分支保护。Skill 收尾授权只覆盖 npm／Git 两份清单的单个远端提交，不授权部署或改名目标工程文件、修改指标和 CI、推送本工程、创建 PR 或触发消费方刷新。包名或仓库错误、迁移和退役走独立显式清理，不由普通 INIT 裁剪。
 
 ## 路径、兼容与清理
 
