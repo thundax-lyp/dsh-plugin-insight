@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "43c98a3d8ee5d5bf7b4dd3ab439b35fa06c9e102fd717a21f2155d1613b054ee",
-    "index_sha256": "d9b0dc9f88a1c628f63268cd9eee38684b541dddc993127a989cbba6e5133554",
+    "snapshot_digest": "e29d99441595cea0f25cca0d81c142ad8e644047b1866a1d0a933e14db785a11",
+    "index_sha256": "f3260dc9ca48635decb5d5657f0da13acf02154bdf8c382b7f7fe51dc2f0eca5",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-10-24T05:52:04Z",
+        "checked_at": "2026-10-24T16:16:27+08:00",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 40，完成 39，受阻 1；已知同版本受阻跳过 5；频繁更新窗口内跳过 39；当前发布 478",
+            "scope": "本轮所选 2，完成 2，受阻 0；已知同版本受阻跳过 6；频繁更新窗口内跳过 39；当前发布 480",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-10-24T05:52:04Z"
+            "checked_at": "2026-10-24T16:16:27+08:00"
         },
         "registry": {},
         "discovery": {
@@ -52,8 +52,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-10-24-02",
-            "work_digest": "38c8e798198a93f290714f681d9dea14f0abc51a41686967580aa4df1fdcf496"
+            "id": "2026-10-24-03",
+            "work_digest": "455b8fc1cabc00084346759a0884cbdbd8f1f157f1f45c3b538d59607a1c45d8"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -562,6 +562,7 @@
             "github:1381860995:root",
             "github:1381861315:root",
             "github:1381989584:root",
+            "github:1382292535:root",
             "github:1384810201:root",
             "github:1384810483:root",
             "github:1384810806:root",
@@ -698,6 +699,7 @@
             "github:1425159954:root",
             "github:1425208683:root",
             "github:1426070939:root",
+            "github:1426264117:root",
             "github:1426448931:root",
             "github:1426455774:root",
             "github:1426477683:root",
@@ -1201,7 +1203,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "publication.metadata": [
             "github:1335557891:root",
@@ -1681,7 +1685,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "publication.summaries": [
             "github:1335557891:root",
@@ -2161,7 +2167,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "publication.capabilities": [
             "github:1335557891:root",
@@ -2641,7 +2649,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "publication.advice": [
             "github:1335557891:root",
@@ -3121,7 +3131,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "registry": [
             "github:1170373459:dsh-invoice-downloader",
@@ -3602,7 +3614,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "reports": [
             "github:1335557891:root",
@@ -4082,7 +4096,9 @@
             "github:1358316691:root",
             "github:1405845793:root",
             "github:1424420835:root",
-            "github:1339263264:root"
+            "github:1339263264:root",
+            "github:1426264117:root",
+            "github:1382292535:root"
         ],
         "retained_documents": [
             "github:1170373459:dsh-invoice-downloader"
@@ -4566,7 +4582,9 @@
         "github:1358316691:root",
         "github:1405845793:root",
         "github:1424420835:root",
-        "github:1339263264:root"
+        "github:1339263264:root",
+        "github:1426264117:root",
+        "github:1382292535:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json",
@@ -5054,6 +5072,8 @@
         "data/runs/2026-10-24-02/arcaneorion--dsh-model-channel-manager/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-02/aprilcrystal--dsh-remote/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-02/aomiraku--dsh-accountdisplayname-edit/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-02/asher-2000--dsh-memory-connect/REVIEWED-SOURCE.json"
+        "data/runs/2026-10-24-02/asher-2000--dsh-memory-connect/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-03/assidefok--dsh-opencodego-status/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-24-03/asktheway--dsh-jev-interceptor/REVIEWED-SOURCE.json"
     ]
 }
