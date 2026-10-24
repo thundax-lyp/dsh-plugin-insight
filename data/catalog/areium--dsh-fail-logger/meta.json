@@ -1,0 +1,55 @@
+{
+    "repository": "Areium/dsh-fail-logger",
+    "repository_id": 1333463381,
+    "captured_at": "2026-10-24T05:56:22.222Z",
+    "window_start": "2026-09-24T05:56:22.222Z",
+    "stars": 10,
+    "pushed_at": "2026-09-20T23:04:25Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAreium%2Fdsh-fail-logger%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3712:83DF6:832048:8D5CDA:6ADC488A and timestamp 2026-10-24 05:56:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAreium%2Fdsh-fail-logger%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 37A0:2487D4:7B3D5D:857583:6ADC488B and timestamp 2026-10-24 05:56:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAreium%2Fdsh-fail-logger%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A22.222Z..2026-10-24T05%3A56%3A22.222Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 383E:24302F:79D0CD:840CC8:6ADC488C and timestamp 2026-10-24 05:56:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAreium%2Fdsh-fail-logger%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A22.222Z..2026-10-24T05%3A56%3A22.222Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 38D8:899F9:7B01D2:853948:6ADC488D and timestamp 2026-10-24 05:56:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAreium%2Fdsh-fail-logger%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A22.222Z..2026-10-24T05%3A56%3A22.222Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 398A:2446D0:9C7B72:A6AEF8:6ADC488E and timestamp 2026-10-24 05:56:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-fail-logger",
+        "captured_at": "2026-10-24T05:56:28.727Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 1149,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-fail-logger",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T21:01:43.446Z",
+            "captured_at": "2026-10-24T05:56:28.727Z",
+            "source_url": "https://registry.npmjs.org/dsh-fail-logger",
+            "error": null,
+            "latest_version": "0.5.2",
+            "latest_published_at": "2026-08-18T16:12:38.697Z",
+            "latest_error": null
+        }
+    }
+}

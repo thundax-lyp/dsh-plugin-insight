@@ -1,0 +1,55 @@
+{
+    "repository": "AomiRaku/dsh-accountDisplayName-edit",
+    "repository_id": 1424420835,
+    "captured_at": "2026-10-24T05:55:53.948Z",
+    "window_start": "2026-09-24T05:55:53.948Z",
+    "stars": 2,
+    "pushed_at": "2026-10-21T01:53:25Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAomiRaku%2Fdsh-accountDisplayName-edit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26B4:23B928:7D3634:8769AA:6ADC486E and timestamp 2026-10-24 05:55:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAomiRaku%2Fdsh-accountDisplayName-edit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2750:33D79A:80A171:8AD55B:6ADC486F and timestamp 2026-10-24 05:55:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAomiRaku%2Fdsh-accountDisplayName-edit%20is%3Aissue%20created%3A2026-09-24T05%3A55%3A53.948Z..2026-10-24T05%3A55%3A53.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 27D6:249402:8121B2:8B5BE9:6ADC4870 and timestamp 2026-10-24 05:56:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAomiRaku%2Fdsh-accountDisplayName-edit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A55%3A53.948Z..2026-10-24T05%3A55%3A53.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 28AA:87079:7F40AC:8972D4:6ADC4871 and timestamp 2026-10-24 05:56:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAomiRaku%2Fdsh-accountDisplayName-edit%20is%3Aissue%20updated%3A2026-09-24T05%3A55%3A53.948Z..2026-10-24T05%3A55%3A53.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 296E:864A3:7BDD68:8616CB:6ADC4872 and timestamp 2026-10-24 05:56:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-accountdisplayname-edit",
+        "captured_at": "2026-10-24T05:56:00.703Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-accountdisplayname-edit",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-24T05:56:00.703Z",
+            "source_url": "https://registry.npmjs.org/dsh-accountdisplayname-edit",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

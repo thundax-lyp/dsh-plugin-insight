@@ -18,8 +18,10 @@
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。 |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。 | 远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见[Q02](#research-q02)、[Q03](#research-q03)。 |
+| [dsh-notify-relay](#plugin-1385913707-root) | 把 DSH 生命周期事件经过去重、免打扰、摘要和重试规则转发到多种通知服务或 webhook。 | 先观察，在隔离接收器验证每类事件和部分通道失败，确认哪些内容会外发。 |
 | [dsh-plugin-balance](#plugin-1340280087-root) | DSH Web 额度悬浮窗，整合多供应商查询、会话 token 统计与费用估算。 | 先禁自定义任意 URL，以假 key 试验并同官方账单对账；只把费用视为估算。 |
 | [dsh-plugin-education](#plugin-1336663611-root) | 用edu_kit提供教案与题目骨架、测验结构检查、格式转换和成绩/计划统计，不替代教学内容审阅。 | 教师审阅下试用模板/转换，数值与答案复核后使用。 |
+| [dsh-plugin-mission-control](#plugin-1337780031-integrations-deepseek-harness-dsh-plugin-mission-control) | 将 DSH 会话、消息与工具活动镜像到 JARVIS 看板，并把结束回合送入人工审查。 | 已有可信自托管JARVIS看板的用户可在无敏感信息的会话先试。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
@@ -138,6 +140,20 @@
 
 > **建议**：以 peer/session/callId 做严格关联并授权 /bind 可收窄远程批准风险；需双 peer 并发试验，详见[Q03](#research-q03)。
 
+<a id="plugin-1385913707-root"></a>
+
+## [dsh-notify-relay](../../plugins/archaofan--dsh-notify-relay/INSIGHT.md)
+
+
+
+> **用途**：面向离开 DSH 窗口仍需关注完成、失败和审批的用户，集中管理哪些事件进入个人或团队通知通道。
+
+> **亮点**：相对单个通知转发器，插件在通道适配器上方增加是否发送、何时聚合与为何抑制的规则和日志，并持久保存失败队列，改变离线关注任务的交接方式。通道投递与客户端呈现仍由外部服务承担，不把发送请求当用户已收到。[Q01](#research-q01)
+
+> **思考**：成功回执及重试粒度决定规则是否减少打扰。deliverTo 仅用response.ok判断，未读取服务业务错误；outbox保存整条通知却不保存失败通道集合，drain调用默认channelsFor重发所有匹配通道，部分成功时可能重复推送。网络超时但远端已接受也无幂等回执，不能承诺一次送达。[Q02](#research-q02)
+
+> **建议**：未验证方向是每通知每通道保存独立投递状态和幂等键，适配器解析服务业务回执，重试只针对未确认通道。用A成功B失败、HTTP200业务失败和响应丢失矩阵比较现版，要求确认失败不被记成功且A不重复；若服务不支持幂等导致仍无法界定重复，应明确至少一次边界而不宣称严格一次。[Q03](#research-q03)
+
 <a id="plugin-1340280087-root"></a>
 
 ## [dsh-plugin-balance](../../plugins/andrew111888--dsh-plugin-balance/INSIGHT.md)
@@ -165,6 +181,20 @@
 > **思考**：重复items覆盖quiz schema，超满分/零阈值与分箱可能误导，题目和难度标签需人工复核。详见[Q03](#research-q03)。
 
 > **建议**：按action契约/域校验/剩余需求形成可解释结果，比较教师校正与误算，当前未验证。详见[Q05](#research-q05)。
+
+<a id="plugin-1337780031-integrations-deepseek-harness-dsh-plugin-mission-control"></a>
+
+## [dsh-plugin-mission-control](../../plugins/asif2bd--jarvis-mission-control-deepseek--integrations-deepseek-harness-dsh-plugin-mission-control/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/Asif2BD/JARVIS-Mission-Control-DeepSeek) [![npm 30d 809](https://img.shields.io/static/v1?label=npm+30d&message=809&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-mission-control) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-mission-control)
+
+> **用途**：面向想在独立JARVIS看板观察DSH多个会话、并由人确认完成的用户。合格结果是看板可定位对应会话、活动和待审状态，而任务是否真正满足需求仍由人工验收。原来需手动写任务状态，此插件把session建任务、消息和工具事件变活动日志，将正常turn结束送REVIEW，保留人从REVIEW批准DONE的责任。它是事件镜像集成，不是新的agent调度或交付验证器。
+
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的贡献是把会话状态转成独立看板可审阅的工作流，并保留REVIEW到DONE的人类责任。真实调度和质量验证仍不属于这个镜像组件。
+
+> **思考**：[Q03](#research-q03) 表明队列清空可包含失败丢弃，flush不证明送达；未知reason会默认REVIEW，重启跨日还可能重复任务。因此核心价值应限定best-effort可见性，不能宣传完整审计。
+
+> **建议**：[Q05](#research-q05) 提出稳定事件幂等键、持久outbox及确认水位，未验证；以丢失、重复、错状态与flush延迟共同检验，不能只看最终队列为空。
 
 <a id="plugin-1343622602-root"></a>
 
@@ -238,4 +268,4 @@
 
 ## 更新时间
 
-2026-10-23
+2026-10-24

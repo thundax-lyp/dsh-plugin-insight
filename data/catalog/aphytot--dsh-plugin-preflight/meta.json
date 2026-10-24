@@ -1,0 +1,55 @@
+{
+    "repository": "AphyTOT/dsh-plugin-preflight",
+    "repository_id": 1378350155,
+    "captured_at": "2026-10-24T05:55:53.951Z",
+    "window_start": "2026-09-24T05:55:53.951Z",
+    "stars": 1,
+    "pushed_at": "2026-09-22T06:31:29Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAphyTOT%2Fdsh-plugin-preflight%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26B2:8A036:7BB3DF:85E55B:6ADC486E and timestamp 2026-10-24 05:55:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAphyTOT%2Fdsh-plugin-preflight%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 274C:24354C:7D1D5A:8757C9:6ADC486F and timestamp 2026-10-24 05:55:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAphyTOT%2Fdsh-plugin-preflight%20is%3Aissue%20created%3A2026-09-24T05%3A55%3A53.951Z..2026-10-24T05%3A55%3A53.951Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 27E8:323F53:8008B6:8A44CE:6ADC4870 and timestamp 2026-10-24 05:56:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAphyTOT%2Fdsh-plugin-preflight%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A55%3A53.951Z..2026-10-24T05%3A55%3A53.951Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 289A:328D60:7B6B0F:85A059:6ADC4871 and timestamp 2026-10-24 05:56:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAphyTOT%2Fdsh-plugin-preflight%20is%3Aissue%20updated%3A2026-09-24T05%3A55%3A53.951Z..2026-10-24T05%3A55%3A53.951Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2966:23C218:7CD671:870A35:6ADC4872 and timestamp 2026-10-24 05:56:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-plugin-preflight",
+        "captured_at": "2026-10-24T05:56:00.618Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-plugin-preflight",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-24T05:56:00.618Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-preflight",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

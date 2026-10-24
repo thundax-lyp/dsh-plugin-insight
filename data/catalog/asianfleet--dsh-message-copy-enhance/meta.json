@@ -1,0 +1,55 @@
+{
+    "repository": "Asianfleet/dsh-message-copy-enhance",
+    "repository_id": 1337978261,
+    "captured_at": "2026-10-24T05:57:02.462Z",
+    "window_start": "2026-09-24T05:57:02.462Z",
+    "stars": 4,
+    "pushed_at": "2026-08-19T10:52:55Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsianfleet%2Fdsh-message-copy-enhance%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2EA:37D0A4:1657EA3:203FCEE:6ADC48B2 and timestamp 2026-10-24 05:57:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsianfleet%2Fdsh-message-copy-enhance%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A39E:21FA53:158DC94:1F27196:6ADC48B3 and timestamp 2026-10-24 05:57:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsianfleet%2Fdsh-message-copy-enhance%20is%3Aissue%20created%3A2026-09-24T05%3A57%3A02.462Z..2026-10-24T05%3A57%3A02.462Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A428:2ABE8F:16716CA:2053B8C:6ADC48B5 and timestamp 2026-10-24 05:57:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsianfleet%2Fdsh-message-copy-enhance%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A57%3A02.462Z..2026-10-24T05%3A57%3A02.462Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A4BC:37D0A4:1658531:204068E:6ADC48B6 and timestamp 2026-10-24 05:57:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsianfleet%2Fdsh-message-copy-enhance%20is%3Aissue%20updated%3A2026-09-24T05%3A57%3A02.462Z..2026-10-24T05%3A57%3A02.462Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A588:2688D4:16286C5:1FFEB8E:6ADC48B7 and timestamp 2026-10-24 05:57:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-message-copy-enhance",
+        "captured_at": "2026-10-24T05:57:09.814Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 1109,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-message-copy-enhance",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T07:21:31.109Z",
+            "captured_at": "2026-10-24T05:57:09.814Z",
+            "source_url": "https://registry.npmjs.org/dsh-message-copy-enhance",
+            "error": null,
+            "latest_version": "0.2.1",
+            "latest_published_at": "2026-08-19T10:51:37.442Z",
+            "latest_error": null
+        }
+    }
+}

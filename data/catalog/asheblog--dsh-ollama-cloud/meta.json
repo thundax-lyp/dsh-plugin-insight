@@ -1,0 +1,55 @@
+{
+    "repository": "Asheblog/dsh-ollama-cloud",
+    "repository_id": 1394197658,
+    "captured_at": "2026-10-24T05:56:55.192Z",
+    "window_start": "2026-09-24T05:56:55.192Z",
+    "stars": 3,
+    "pushed_at": "2026-10-18T16:30:33Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsheblog%2Fdsh-ollama-cloud%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D10:8A25E:816A46:8BA43B:6ADC48AB and timestamp 2026-10-24 05:56:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsheblog%2Fdsh-ollama-cloud%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4DD8:2489D8:7BBAFA:85F3D5:6ADC48AC and timestamp 2026-10-24 05:57:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsheblog%2Fdsh-ollama-cloud%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A55.192Z..2026-10-24T05%3A56%3A55.192Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E94:90947:7B573F:85934B:6ADC48AD and timestamp 2026-10-24 05:57:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsheblog%2Fdsh-ollama-cloud%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A55.192Z..2026-10-24T05%3A56%3A55.192Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4F56:31CDC9:83015D:8D39CB:6ADC48AE and timestamp 2026-10-24 05:57:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAsheblog%2Fdsh-ollama-cloud%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A55.192Z..2026-10-24T05%3A56%3A55.192Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 502C:320049:7B0F15:854E23:6ADC48AF and timestamp 2026-10-24 05:57:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "dsh-ollama-cloud",
+        "captured_at": "2026-10-24T05:57:02.084Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-ollama-cloud",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-24T05:57:02.084Z",
+            "source_url": "https://registry.npmjs.org/dsh-ollama-cloud",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

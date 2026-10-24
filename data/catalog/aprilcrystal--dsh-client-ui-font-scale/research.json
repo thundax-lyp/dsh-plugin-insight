@@ -1,0 +1,406 @@
+{
+    "schema_version": 4,
+    "id": "cb497545520930976efe48a7a547e7bd",
+    "identity": "github:1403442165:root",
+    "slug": "aprilcrystal--dsh-client-ui-font-scale",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1403442165:root",
+            "repository_id": 1403442165,
+            "component_id": "root",
+            "repository": "AprilCrystal/dsh-client-ui-font-scale",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-client-ui-font-scale",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "08eea9de6f31b7d99da35bcf0a82a9d48c48a02dc6035b576a369abf5d3efcec",
+                "code": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                "maintenance": "57375ffb37be8a5a5622e07629e41e6f336b375179996096a834bdce1f46d255"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-24-02-github-1403442165-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "b4d0049a80923dde87317adca15433abe345ff8a",
+                    "retrieved_at": "2026-10-24T06:02:06.170Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-24-02-github-1403442165-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AprilCrystal/dsh-client-ui-font-scale",
+                            "commit": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                            "path": "README.md",
+                            "content_sha256": "6c65b6990887db38f2291c972dcebdafd9338d4fa16915d4f19d580860d637ba"
+                        }
+                    ],
+                    "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                    "captured_at": "2026-10-24T06:02:06.170Z",
+                    "summary": "为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。",
+                    "artifact": "data/runs/2026-10-24-02/aprilcrystal--dsh-client-ui-font-scale/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-24-02-github-1403442165-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/AprilCrystal/dsh-client-ui-font-scale",
+                            "commit": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                            "path": "lib/client.js",
+                            "content_sha256": "a0a86206e1e81f7eebc8965a6de96a150d6f8419c9cd04348469ff04f84c85f2"
+                        }
+                    ],
+                    "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                    "captured_at": "2026-10-24T06:02:06.170Z",
+                    "summary": "核查 lib/client.js；所有输入经夹限后调用 theme.setFontSize，显示订阅 theme/change，持久化交由宿主。",
+                    "artifact": "data/runs/2026-10-24-02/aprilcrystal--dsh-client-ui-font-scale/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定浏览器源码与作者说明；未安装、执行插件测试或验收真实宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "反复阅读与展示长对话的人可就地调整10至22像素字号；整页 UI 放大仍是另一任务。[Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "所有输入经夹限后调用 theme.setFontSize，显示订阅 theme/change，持久化交由宿主。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定浏览器源码与作者说明；未安装、执行插件测试或验收真实宿主。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "MIT，直接分发 lib 手写模块包，没有构建步骤；未核对 npm 实际包。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 设备与宿主，金额未知 | 安装重载与熟悉入口，耗时未知 | 依赖 theme 服务 |\n| 持续使用 | 事件处理资源未测 | 注意手势与快捷键冲突 | 没有第二字号存储 |\n| 失败恢复 | 排查资源未知 | 回原生设置或停用插件 | 宿主范围变化需维护 |",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用步进器与原生设置交替修改，确认数值一致，再检查输入焦点下快捷键及 Ctrl 滚轮是否符合习惯。需要整页放大或出现冲突时保留原生设置路径。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 就地调字号 | slots、shortcuts 和 wheel 接线 | 实际宿主可用性 |\n| 状态一致 | 共用 theme 写入口 | 重启持久化 |\n| 阅读便利 | 减少导航的机制 | 节时、可读性与误触率 |",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "按调用取服务与 inject 等待注册避免捕获早期缺失值；effect 清理监听体现生命周期意识。复制主题范围常量仍有版本同步负担，window 手势副作用须被用户知晓。[Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "全页 Ctrl 滚轮先阻止默认行为，再检查冷却和调用主题服务，会改变整页缩放语义；对依赖原生缩放的人可能抵消便利。该次序已核查，设备影响未实测。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "可只在对话区域响应手势，保留其他区域原生缩放，以相同设备的两类缩放任务比较误触和耗时；若找区域负担更大则否定。尚未实现。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1403442165:root",
+                            "area": "code",
+                            "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:02:06.170Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-24T06:02:06.170Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                "reviewed_at": "2026-10-24T06:02:06.170Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1403442165:root",
+                        "area": "code",
+                        "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty 是常规输入适配；mechanism 统一写路径仅局部增量；transferability 单一状态所有者可迁移到其他设置；simplification 避免第二存储有实质简化，但未证明所有宿主兼容。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow 只减少设置导航；delivery 没有改变交付物；reach 为不愿进入设置者提供入口；economics 有少操作的机制但无工时证据。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1403442165-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合频繁调整对话字号并接受 Ctrl 滚轮语义变化的人先检查快捷键冲突后试用。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "重复字号任务明确，需求频率未测。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "较原生设置减少导航，但字号能力原已存在。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "源码可追到状态与事件，未运行。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "无独立服务和存储，手势冲突及宿主耦合仍需检查。"
+                    }
+                },
+                "score": 64,
+                "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                "reviewed_at": "2026-10-24T06:02:06.170Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-24-02-github-1403442165-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1403442165:root",
+                        "area": "code",
+                        "fingerprint": "af8976a87137a21cbe6fb527e5a38e19ffc4c596"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1403442165:root",
+            "repository": "AprilCrystal/dsh-client-ui-font-scale",
+            "path": "",
+            "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+            "fingerprints": {
+                "directory": "08eea9de6f31b7d99da35bcf0a82a9d48c48a02dc6035b576a369abf5d3efcec",
+                "code": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+                "maintenance": "57375ffb37be8a5a5622e07629e41e6f336b375179996096a834bdce1f46d255"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-24T05:52:04Z",
+            "analysis_sha256": "16cedb35279fe501a640c5af55f24facd83022d16d9a3e5e7cd152f34472f21c"
+        },
+        "publication.metadata": "data/catalog/aprilcrystal--dsh-client-ui-font-scale/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。",
+            "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+            "source_url": "https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+            "items": {
+                "界面": "对话输入区字号步进器与复位按钮",
+                "用户命令": "增大、减小和复位字号的可重绑快捷键",
+                "事件监听": "Ctrl 滚轮调整内容字号"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 输入区字号步进器 | 就地增减与复位 | theme 服务可用，范围10至22像素 |\n| 字号快捷键 | 输入焦点中调整字号 | shortcuts 服务及平台 primary 映射 |\n| Ctrl 滚轮 | 鼠标或触控板调字号 | 全页拦截默认缩放，60毫秒冷却 |"
+        },
+        "publication.advice": {
+            "revision": "af8976a87137a21cbe6fb527e5a38e19ffc4c596",
+            "text": "先用步进器与原生设置交替修改，确认数值一致，再检查输入焦点下快捷键及 Ctrl 滚轮是否符合习惯。需要整页放大或出现冲突时保留原生设置路径。[Q03](#research-q03)"
+        },
+        "registry": "data/plugins/aprilcrystal--dsh-client-ui-font-scale",
+        "reports": "# dsh-client-ui-font-scale\n\n> 为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。\n\n## 研究范围\n\n- **仓库**：[AprilCrystal/dsh-client-ui-font-scale](https://github.com/AprilCrystal/dsh-client-ui-font-scale)\n- **版本号**：0.1.0（[固定提交 af8976a87137a21cbe6fb527e5a38e19ffc4c596](https://github.com/AprilCrystal/dsh-client-ui-font-scale/tree/af8976a87137a21cbe6fb527e5a38e19ffc4c596)）\n- **版本日期**：2026-10-12（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n快捷输入与共享状态的实现有源码支持；阅读收益、平台手势和宿主重启行为未执行验证。区域化手势为未验证假设。\n\n## 洞察短评\n\n- **用途**：反复阅读与展示长对话的人可就地调整10至22像素字号；整页 UI 放大仍是另一任务。[Q01](#research-q01)\n- **亮点**：原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)\n- **思考**：全页 Ctrl 滚轮先阻止默认行为，再检查冷却和调用主题服务，会改变整页缩放语义；对依赖原生缩放的人可能抵消便利。该次序已核查，设备影响未实测。[Q03](#research-q03)\n- **建议**：可只在对话区域响应手势，保留其他区域原生缩放，以相同设备的两类缩放任务比较误触和耗时；若找区域负担更大则否定。尚未实现。[Q04](#research-q04)\n\n采用建议：先用步进器与原生设置交替修改，确认数值一致，再检查输入焦点下快捷键及 Ctrl 滚轮是否符合习惯。需要整页放大或出现冲突时保留原生设置路径。[Q03](#research-q03)\n\n## 核心贡献\n\n原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)\n\n## 关键质疑\n\n全页 Ctrl 滚轮先阻止默认行为，再检查冷却和调用主题服务，会改变整页缩放语义；对依赖原生缩放的人可能抵消便利。该次序已核查，设备影响未实测。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可只在对话区域响应手势，保留其他区域原生缩放，以相同设备的两类缩放任务比较误触和耗时；若找区域负担更大则否定。尚未实现。[Q04](#research-q04)\n\n在匹配宿主核对主题同步、重启、边界值、快捷键平台映射和滚轮冲突；对照操作时间与误触，未执行。\n\n## 场景与替代办法\n\n反复阅读与展示长对话的人可就地调整10至22像素字号；整页 UI 放大仍是另一任务。[Q01](#research-q01)\n\n宿主原生设置已经能改变相同字号；浏览器缩放可放大整页，但影响范围不同。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH Web、React 与 slots | 启动必需 | 加载与输入区控件 | 无控制入口 |\n| theme.setFontSize | 调整必需 | 规范写入与宿主持久化 | 不写入字号 |\n| shortcuts、locale | 对应入口必需 | 快捷键与文案 | 对应功能不注册 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户安装并重载 Web 页面 | 输入区出现步进器 |\n| 调整 | 用户按钮或快捷键操作 | 数值与原生设置同步 |\n| 检查 | 用户测试滚轮与重启 | 无不可接受冲突；否则停用 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 设备与宿主，金额未知 | 安装重载与熟悉入口，耗时未知 | 依赖 theme 服务 |\n| 持续使用 | 事件处理资源未测 | 注意手势与快捷键冲突 | 没有第二字号存储 |\n| 失败恢复 | 排查资源未知 | 回原生设置或停用插件 | 宿主范围变化需维护 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 就地调字号 | slots、shortcuts 和 wheel 接线 | 实际宿主可用性 |\n| 状态一致 | 共用 theme 写入口 | 重启持久化 |\n| 阅读便利 | 减少导航的机制 | 节时、可读性与误触率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：检验快捷字号控制相对原生设置的增量及全页手势的取舍。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 用户为什么需要就地调字号，增量在哪里？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n阅读长对话、临时远离屏幕或切换展示环境的人，需要反复调整对话内容字号。合格结果是内容字号达到所需大小、与原生设置一致且不改变无关页面缩放。README 明确宿主已有字号设置，因此贡献不在实现新排版能力，而在输入区步进器、快捷键和滚轮三种更近的操作入口。与打开设置相比减少了导航；与浏览器整页缩放相比保持内容字号的既定范围，但不能放大所有界面。实际点击节省与阅读改善没有测量，不能把入口便利写成可访问性效果已获验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:12-35](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/README.md#L12-L35)\n\n作者承认原生设置并列明新增输入表面，限定相对贡献。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nDSH already ships a conversation font-size setting — **Settings → General → 字号大小 / Font size**,\ncontributed by `@deepseek-ai/dsh-client-ui-theme`. Its copy is explicit that it *\"only affects\nconversation content\"*, which is exactly the right scope.\n\nThis plugin does not replace or reimplement it. It adds the input surfaces that setting lacks:\n\n- reaching it takes four clicks, so it is easy to forget it exists;\n- there is no keyboard shortcut for it anywhere in the shipped shortcuts registry;\n- there is no wheel gesture for it.\n\nEvery control here writes through the **same** `theme.setFontSize` entry point the shipped row uses,\nso the two can never disagree.\n\n## What it does\n\n| Surface | Where | Behaviour |\n|---|---|---|\n| Stepper | composer tool row, before the submit action | `A−` / readout / `A+`, clamping at the ends |\n| Reset | beside the stepper | `↺` restores the default; greys out when already there |\n| Shortcuts | `Ctrl`+`=` / `Ctrl`+`-` / `Ctrl`+`0` | increase / decrease / restore default |\n| Zoom | `Ctrl`+wheel over the page | wheel up enlarges, wheel down shrinks |\n\nBoth the readout and the reset button render the **live** size from the theme snapshot, so a change\nmade in the shipped settings row updates this control immediately, and vice versa.\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 三类输入如何共享字号与持久化？\n\n**研究主题**：功能与机制、依赖、兼容与流程、工程质量与复用\n\n#### 完整回答\n\n浏览器实现每次操作重新取 theme，current 读 getTheme().fontSize，write 将数值四舍五入并夹在10到22之间再调用 setFontSize。它不维护第二份字号存储，按钮显示依赖 theme/change 重渲染；因此一致性来自共享服务而不是本插件双向复制状态。locale 和 shortcuts 用 inject 等待挂载，输入区控制通过 slots 注册，样式和 wheel 监听均由 effect 返回清理函数。这种借用状态所有权的设计值得复用，但持久化仍由宿主 theme 服务负责，本次只核查调用方，不能证明宿主每次重启都兑现作者声明。范围常量在本插件复制，未来宿主范围变化仍需同步维护。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:94-114](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js#L94-L114)\n\n统一写路径与按次服务解析支持状态所有权判断。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n    function clamp(px) {\n      const n = Math.round(Number(px))\n      return Number.isFinite(n) ? Math.min(MAX, Math.max(MIN, n)) : DEFAULT\n    }\n\n    /**\n     * Client plugin body: provide the four input surfaces over one write path.\n     * @param ctx - client cordis context.\n     */\n    function apply(ctx) {\n      // Resolved per call: this package may load before ui-theme provides it.\n      const themeOf = () => ctx.get('theme')\n      const current = () => themeOf()?.getTheme().fontSize ?? DEFAULT\n      const write = (px) => {\n        const theme = themeOf()\n        if (theme === undefined) return\n        const next = clamp(px)\n        if (next === current()) return\n        theme.setFontSize(next)\n      }\n      const step = (delta) => write(current() + delta)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:186-200](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js#L186-L200)\n\nControl 订阅主题事件并清理订阅。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n      /** Composer-row stepper: read the snapshot, write through the service. */\n      function Control() {\n        const [, setTick] = React.useState(0)\n        React.useEffect(() => {\n          const bump = () => setTick((n) => n + 1)\n          const offTheme = ctx.on('theme/change', bump)\n          const locale = localeOf()\n          const offLocale = locale !== undefined && typeof locale.subscribe === 'function'\n            ? locale.subscribe(bump)\n            : undefined\n          return () => {\n            offTheme()\n            if (typeof offLocale === 'function') offLocale()\n          }\n        }, [])\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:229-238](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js#L229-L238)\n\n输入区 slots 接线和必要服务声明。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n      ctx.slots.inject('conversation.input.right', () => ctx.slots.register({\n        name: 'conversation.input.right',\n        id: NS,\n        order: 20,\n      }, Control))\n    }\n\n    return {\n      inject: ['slots'],\n      apply,\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 全页 Ctrl 滚轮的取舍和成本是什么，谁适合试用？\n\n**研究主题**：缺陷与关键质疑、效果与总成本、采用判断\n\n#### 完整回答\n\nwheel 监听挂在 window，凡 ctrlKey 且非零滚动就先 preventDefault，再按60毫秒冷却调整字号。因此用户在任何区域 Ctrl 滚轮都会失去原有整页缩放，甚至冷却期间和主题服务缺失时也先阻止默认动作。代码支持这一控制流边界，未测具体浏览器表现。成本单位应是一次达到目标字号且没有意外页面行为的调整。首次为安装、重新加载和学习快捷键；持续成本是记忆手势语义；故障时回原生设置或停用插件。没有独立 API 或模型调用机制，现金、人工耗时和触控板误触率仍未知。适合频繁调对话字号且接受整页缩放变化的人试用；需要全局放大 UI 或已有相同快捷键的人应先检查冲突。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:137-151](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js#L137-L151)\n\n全局监听、先 preventDefault 和冷却次序解释冲突边界。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n      // Ctrl+wheel. preventDefault suppresses the shell's own page zoom so the\n      // gesture means one thing only.\n      let lastWheel = 0\n      ctx.effect(() => {\n        const onWheel = (event) => {\n          if (!event.ctrlKey || event.deltaY === 0) return\n          event.preventDefault()\n          const now = Date.now()\n          if (now - lastWheel < WHEEL_COOLDOWN_MS) return\n          lastWheel = now\n          step(event.deltaY < 0 ? 1 : -1)\n        }\n        window.addEventListener('wheel', onWheel, { passive: false })\n        return () => window.removeEventListener('wheel', onWheel)\n      }, `${NS}: ctrl+wheel`)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:156-180](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js#L156-L180)\n\n快捷键使用 primary 修饰与可编辑区域，平台实际映射须核对。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      const commands = [\n        { id: `${NS}.increase`, code: 'Equal', alias: 'increase conversation font size', label: () => t('increase'), run: () => step(1) },\n        { id: `${NS}.decrease`, code: 'Minus', alias: 'decrease conversation font size', label: () => t('decrease'), run: () => step(-1) },\n        { id: `${NS}.reset`, code: 'Digit0', alias: 'restore default conversation font size', label: () => t('reset'), run: () => write(DEFAULT) },\n      ]\n      const registerShortcuts = (scope) => {\n        const shortcuts = scope.shortcuts ?? ctx.get('shortcuts')\n        if (shortcuts === undefined) return\n        for (const command of commands) {\n          scope.effect(() => shortcuts.register({\n            id: command.id,\n            label: command.label,\n            aliases: ['font size', command.alias],\n            defaults: {\n              'desktop:macos': { code: command.code, modifiers: ['primary'] },\n              'desktop:windows': { code: command.code, modifiers: ['primary'] },\n              'desktop:linux': { code: command.code, modifiers: ['primary'] },\n              'web:macos': { code: command.code, modifiers: ['primary'] },\n              'web:windows': { code: command.code, modifiers: ['primary'] },\n            },\n            // \"editable\" keeps the bindings alive while the composer has focus.\n            regions: ['page', 'editable'],\n            modals: [],\n            resolve: () => ({ status: 'handled', run: command.run }),\n          }), `${NS}: ${command.id}`)\n```\n\n</details>\n\n#### 缺口\n\n- 没有真实设备手势误触率和操作时间对照。\n  **影响**：不能量化便利能否抵消全页缩放冲突。\n  **进一步探讨**：比较原生设置、步进器及手势达到同目标字号的耗时和误操作。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 能否缩小手势作用域而保留便利？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n由全页拦截可推导未验证的按区域启用方案。仅在对话内容区或步进器上方响应 Ctrl 滚轮，其余区域保留原生行为；状态仍由 theme 所有，新增职责只有命中区域判定与用户设置。代价是区域结构和触控板行为适配，可能降低手势可发现性。最小对照在同设备完成内容放大与整页缩放两类任务，观察错误触发、完成时间及目标字号正确率。若区域限制显著增加找控件时间，或仍抢占原生缩放而没有减少错误，方案不成立。该方向没有实现证据，不计入当前贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:137-151](https://github.com/AprilCrystal/dsh-client-ui-font-scale/blob/af8976a87137a21cbe6fb527e5a38e19ffc4c596/lib/client.js#L137-L151)\n\nwindow 级拦截是作用域设计的推导依据。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n      // Ctrl+wheel. preventDefault suppresses the shell's own page zoom so the\n      // gesture means one thing only.\n      let lastWheel = 0\n      ctx.effect(() => {\n        const onWheel = (event) => {\n          if (!event.ctrlKey || event.deltaY === 0) return\n          event.preventDefault()\n          const now = Date.now()\n          if (now - lastWheel < WHEEL_COOLDOWN_MS) return\n          lastWheel = now\n          step(event.deltaY < 0 ? 1 : -1)\n        }\n        window.addEventListener('wheel', onWheel, { passive: false })\n        return () => window.removeEventListener('wheel', onWheel)\n      }, `${NS}: ctrl+wheel`)\n```\n\n</details>\n\n#### 缺口\n\n- 区域化手势未实现。\n  **影响**：收益仅是假设。\n  **进一步探讨**：以区域判定原型和全局版本进行同设备对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9d0d19372731de2e7afdcb45b54c42314dd2f8bd8dfb0fa323b3222f013e1476。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 250 | 174 | 62 | — |\n| .md | source | 1 | 176 | — | — | 1103 |\n| .mjs | source | 1 | 157 | 113 | 30 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 输入区字号步进器 | 就地增减与复位 | theme 服务可用，范围10至22像素 |\n| 字号快捷键 | 输入焦点中调整字号 | shortcuts 服务及平台 primary 映射 |\n| Ctrl 滚轮 | 鼠标或触控板调字号 | 全页拦截默认缩放，60毫秒冷却 |\n\n## 工程亮点\n\n按调用取服务与 inject 等待注册避免捕获早期缺失值；effect 清理监听体现生命周期意识。复制主题范围常量仍有版本同步负担，window 手势副作用须被用户知晓。[Q02](#research-q02)\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定浏览器源码与作者说明；未安装、执行插件测试或验收真实宿主。\n- 下一步：在匹配宿主核对主题同步、重启、边界值、快捷键平台映射和滚轮冲突；对照操作时间与误触，未执行。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-24-02/aprilcrystal--dsh-client-ui-font-scale/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"AprilCrystal/dsh-client-ui-font-scale\",\n  \"revision\": \"af8976a87137a21cbe6fb527e5a38e19ffc4c596\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/client.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"检验快捷字号控制相对原生设置的增量及全页手势的取舍。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"用户为什么需要就地调字号，增量在哪里？\",\n        \"answer\": \"阅读长对话、临时远离屏幕或切换展示环境的人，需要反复调整对话内容字号。合格结果是内容字号达到所需大小、与原生设置一致且不改变无关页面缩放。README 明确宿主已有字号设置，因此贡献不在实现新排版能力，而在输入区步进器、快捷键和滚轮三种更近的操作入口。与打开设置相比减少了导航；与浏览器整页缩放相比保持内容字号的既定范围，但不能放大所有界面。实际点击节省与阅读改善没有测量，不能把入口便利写成可访问性效果已获验证。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 12,\n            \"line_end\": 35,\n            \"observation\": \"作者承认原生设置并列明新增输入表面，限定相对贡献。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"dependencies\",\n          \"engineering\"\n        ],\n        \"question\": \"三类输入如何共享字号与持久化？\",\n        \"answer\": \"浏览器实现每次操作重新取 theme，current 读 getTheme().fontSize，write 将数值四舍五入并夹在10到22之间再调用 setFontSize。它不维护第二份字号存储，按钮显示依赖 theme/change 重渲染；因此一致性来自共享服务而不是本插件双向复制状态。locale 和 shortcuts 用 inject 等待挂载，输入区控制通过 slots 注册，样式和 wheel 监听均由 effect 返回清理函数。这种借用状态所有权的设计值得复用，但持久化仍由宿主 theme 服务负责，本次只核查调用方，不能证明宿主每次重启都兑现作者声明。范围常量在本插件复制，未来宿主范围变化仍需同步维护。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 94,\n            \"line_end\": 114,\n            \"observation\": \"统一写路径与按次服务解析支持状态所有权判断。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 186,\n            \"line_end\": 200,\n            \"observation\": \"Control 订阅主题事件并清理订阅。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 229,\n            \"line_end\": 238,\n            \"observation\": \"输入区 slots 接线和必要服务声明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"kind\": \"scope_boundary\",\n            \"issue\": \"没有执行真实宿主重载和主题持久化验证。\",\n            \"impact\": \"不能将调用方源码解释为宿主持久化验收。\",\n            \"next_step\": \"在匹配宿主中通过原生设置和插件交替修改并重启检查。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"全页 Ctrl 滚轮的取舍和成本是什么，谁适合试用？\",\n        \"answer\": \"wheel 监听挂在 window，凡 ctrlKey 且非零滚动就先 preventDefault，再按60毫秒冷却调整字号。因此用户在任何区域 Ctrl 滚轮都会失去原有整页缩放，甚至冷却期间和主题服务缺失时也先阻止默认动作。代码支持这一控制流边界，未测具体浏览器表现。成本单位应是一次达到目标字号且没有意外页面行为的调整。首次为安装、重新加载和学习快捷键；持续成本是记忆手势语义；故障时回原生设置或停用插件。没有独立 API 或模型调用机制，现金、人工耗时和触控板误触率仍未知。适合频繁调对话字号且接受整页缩放变化的人试用；需要全局放大 UI 或已有相同快捷键的人应先检查冲突。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 137,\n            \"line_end\": 151,\n            \"observation\": \"全局监听、先 preventDefault 和冷却次序解释冲突边界。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 156,\n            \"line_end\": 180,\n            \"observation\": \"快捷键使用 primary 修饰与可编辑区域，平台实际映射须核对。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有真实设备手势误触率和操作时间对照。\",\n            \"impact\": \"不能量化便利能否抵消全页缩放冲突。\",\n            \"next_step\": \"比较原生设置、步进器及手势达到同目标字号的耗时和误操作。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"能否缩小手势作用域而保留便利？\",\n        \"answer\": \"由全页拦截可推导未验证的按区域启用方案。仅在对话内容区或步进器上方响应 Ctrl 滚轮，其余区域保留原生行为；状态仍由 theme 所有，新增职责只有命中区域判定与用户设置。代价是区域结构和触控板行为适配，可能降低手势可发现性。最小对照在同设备完成内容放大与整页缩放两类任务，观察错误触发、完成时间及目标字号正确率。若区域限制显著增加找控件时间，或仍抢占原生缩放而没有减少错误，方案不成立。该方向没有实现证据，不计入当前贡献。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 137,\n            \"line_end\": 151,\n            \"observation\": \"window 级拦截是作用域设计的推导依据。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"区域化手势未实现。\",\n            \"impact\": \"收益仅是假设。\",\n            \"next_step\": \"以区域判定原型和全局版本进行同设备对照。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-client-ui-font-scale\\n\\nA [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) **client (browser) plugin**\\nthat puts conversation font-size controls where you are already looking: a stepper in the composer\\ntool row, keyboard shortcuts, and `Ctrl`+wheel zoom.\\n\\nNo build step. The `lib/*.js` files are authored directly in the shipped bundle format, so cloning\\nthe repository is enough.\\n\\n## Why this exists\\n\\nDSH already ships a conversation font-size setting — **Settings → General → 字号大小 / Font size**,\\ncontributed by `@deepseek-ai/dsh-client-ui-theme`. Its copy is explicit that it *\\\"only affects\\nconversation content\\\"*, which is exactly the right scope.\\n\\nThis plugin does not replace or reimplement it. It adds the input surfaces that setting lacks:\\n\\n- reaching it takes four clicks, so it is easy to forget it exists;\\n- there is no keyboard shortcut for it anywhere in the shipped shortcuts registry;\\n- there is no wheel gesture for it.\\n\\nEvery control here writes through the **same** `theme.setFontSize` entry point the shipped row uses,\\nso the two can never disagree.\\n\\n## What it does\\n\\n| Surface | Where | Behaviour |\\n|---|---|---|\\n| Stepper | composer tool row, before the submit action | `A−` / readout / `A+`, clamping at the ends |\\n| Reset | beside the stepper | `↺` restores the default; greys out when already there |\\n| Shortcuts | `Ctrl`+`=` / `Ctrl`+`-` / `Ctrl`+`0` | increase / decrease / restore default |\\n| Zoom | `Ctrl`+wheel over the page | wheel up enlarges, wheel down shrinks |\\n\\nBoth the readout and the reset button render the **live** size from the theme snapshot, so a change\\nmade in the shipped settings row updates this control immediately, and vice versa.\\n\\n## Requirements\\n\\n- DeepSeek Harness with the Web client (the `desktop` profile, or any profile mounting\\n  `@deepseek-ai/dsh-web-app`).\\n- A theme service that exposes `setFontSize` — i.e. `@deepseek-ai/dsh-client-ui-theme`, which ships\\n  in the default composition.\\n- No build step and no runtime dependencies beyond the browser module table.\\n\\n## Install\\n\\nThis package is a **dsh bundle**: `package.json` declares `dsh.bundle.patch`, so dsh treats\\n[`cordis.patch.yml`](cordis.patch.yml) as a composition layer and mounts it for you.\\n\\n```sh\\ndsh plugin --profile <profile> add dsh-client-ui-font-scale\\n```\\n\\nThat installs the package into the profile and appends it to the profile's bundle list. The profile\\nis watched, so dsh recomposes without a restart. Remove it with\\n`dsh plugin --profile <profile> remove dsh-client-ui-font-scale`.\\n\\n### From a local checkout\\n\\n```sh\\ndsh plugin --profile desktop add /absolute/path/to/dsh-client-ui-font-scale\\n```\\n\\n### Mounting by hand\\n\\nCompose [`cordis.patch.yml`](cordis.patch.yml) into the profile's own patch file, and make the\\npackage resolvable from the profile directory:\\n\\n```sh\\npnpm add link:/absolute/path/to/dsh-client-ui-font-scale --dir \\\"$DSH_HOME/profiles/desktop\\\"\\n```\\n\\n```yaml\\n# $DSH_HOME/profiles/<profile>/cordis.patch.yml\\n- insert:\\n    - id: font-scale\\n      name: dsh-client-ui-font-scale\\n```\\n\\nA patch `insert` row may also name a path instead of a package — dsh rewrites `./`-relative and\\nabsolute names to file URLs anchored at the patch file — which needs no install at all.\\n\\nAfter installing, **reload the page**: a client plugin's bundle is wired into the index at render\\ntime, so a page that was already open does not pick up a newly installed bundle.\\n\\n## Persistence\\n\\nThis plugin stores nothing, deliberately.\\n\\n`theme.setFontSize(px)` writes through the `ui-theme` settings scope on the Host\\n(`this.host.set('fontSize', px)`), and `@deepseek-ai/dsh-client-ui-theme`'s Host half re-embeds that\\ndurable value into **every index render** as a boot script. The result:\\n\\n- the size survives a page reload;\\n- the size survives an application restart;\\n- it is applied *before the shell mounts*, so there is no flash of the default size.\\n\\nA second store here would be a second source of truth for one number. If you want to change how the\\nsize persists, change it in `dsh-client-ui-theme`, not here.\\n\\n## Range\\n\\nThe accepted range is **10–22 px in whole steps**, default **14**. That range belongs to the theme\\nservice: `setFontSize` throws for a fractional or out-of-range value. Every control here clamps\\nrather than bypassing it, so the shipped settings row and this plugin always agree.\\n\\nIf you need to go beyond 22 px, note that `dsh-client-ui-layout` writes the size as an\\n*unimportant inline* `--dsh-content-font-size` on `<body>`, so a stylesheet rule with `!important`\\ncan override it. Doing that from a plugin means owning the resulting split-brain with the shipped\\nsetting, which is why this plugin does not.\\n\\n## How it works\\n\\n| Concern | Mechanism |\\n|---|---|\\n| Seat | `ctx.slots.register` into `conversation.input.right` (a list slot, `replaceRisk: none`, empty in the default composition) |\\n| Read | `theme.getTheme().fontSize`, re-rendered on the `theme/change` event |\\n| Write | `theme.setFontSize(px)` — the only font-size write entry |\\n| Keys | `ctx.shortcuts.register`, so bindings appear on the Shortcuts settings page and stay user-rebindable |\\n| Locale | `ctx.locale.register` + `ctx.locale.bind`; the readout and labels follow the active locale |\\n| Styles | one `<style>` element inserted in `ctx.effect`, removed on dispose |\\n\\nTwo ordering details are load-bearing:\\n\\n- **Services are resolved per call** (`ctx.get('theme')`), not captured once in `apply`. A peer half\\n  may mount after this one, and a captured miss would silently disable a surface for the whole run.\\n- **Shortcuts and dictionaries register through `ctx.inject`**, which waits for the service instead\\n  of racing it. Registering against a not-yet-mounted service is a no-op, not an error, so the\\n  failure would be silent.\\n\\nShortcut bindings declare `regions: ['page', 'editable']`, so they keep working while the composer\\nhas focus. On the desktop runtime no combination is reserved (`bindingIssue` returns early for\\n`desktop` on Windows and macOS), so `Ctrl`+`=` / `-` / `0` register cleanly.\\n\\n## Development\\n\\n```sh\\nnode scripts/validate-plugin.mjs .\\n# or\\nnpm run validate\\n```\\n\\nThe validator is read-only and asserts the contract this bundle depends on: the `dsh.client`\\nmanifest, the `dsh.bundle.patch` layer, `apply()` on the host half, the `__ModuleLoader__.load`\\nwrapper with a factory id equal to the package name, `require('react')` beside `createElement`,\\nCSS template-literal integrity, and locale-dictionary symmetry. It reads dictionary keys out of the\\nobject literals themselves, so labels reached through a variable still count.\\n\\nAlso worth running before a commit:\\n\\n```sh\\nnode --check lib/client.js && node --check lib/index.js\\n```\\n\\n## Repository layout\\n\\n```\\nlib/index.js                host half (empty apply: the bundle owns no host capability)\\nlib/client.js               browser half: slots, shortcuts, wheel, styles\\ncordis.patch.yml            the bundle's composition layer\\nscripts/validate-plugin.mjs structural validation\\n```\\n\\n## Caveats\\n\\n- The control is a decoration in the composer row, not a settings replacement. The shipped\\n  **Settings → General → Font size** row remains the canonical place to see and set the value.\\n- `Ctrl`+wheel calls `preventDefault`, which suppresses the Electron shell's own page zoom. That is\\n  intentional — the gesture should mean one thing — but it does mean `Ctrl`+wheel no longer zooms\\n  the whole page.\\n- The wheel handler is attached to `window`, so the gesture works anywhere over the page, not only\\n  over the conversation column.\\n\\n## License\\n\\nMIT © 2026 AprilCrystal\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-client-ui-font-scale\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"description\\\": \\\"Conversation font-size controls for the DeepSeek Harness Web UI: a composer-row stepper, keyboard shortcuts, and Ctrl+wheel zoom, all writing through the theme service's setFontSize\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./lib/index.js\\\",\\n    \\\"./client\\\": \\\"./lib/client.js\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib/index.js\\\",\\n    \\\"lib/client.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"immediately\\\": true,\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-client-ui-theme\\\",\\n        \\\"@deepseek-ai/dsh-client-ui-conversation\\\"\\n      ]\\n    }\\n  },\\n  \\\"scripts\\\": {\\n    \\\"validate\\\": \\\"node scripts/validate-plugin.mjs .\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"plugin\\\",\\n    \\\"client-plugin\\\",\\n    \\\"font-size\\\",\\n    \\\"zoom\\\",\\n    \\\"accessibility\\\"\\n  ],\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/AprilCrystal/dsh-client-ui-font-scale.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/AprilCrystal/dsh-client-ui-font-scale#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/AprilCrystal/dsh-client-ui-font-scale/issues\\\"\\n  },\\n  \\\"author\\\": \\\"AprilCrystal\\\",\\n  \\\"license\\\": \\\"MIT\\\"\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/client.js\",\n      \"content\": \"/**\\n * Client half of the font-scale bundle.\\n *\\n * The conversation font size is owned by the Client theme service; `setFontSize`\\n * is its only write entry and only accepts integers inside its configured range,\\n * so every path here clamps before writing. Four input surfaces drive one shared\\n * step function, so they can never disagree about the current value:\\n *\\n *   - a stepper in the composer tool row (`conversation.input.right`)\\n *   - a dedicated reset button, disabled while the size is already the default\\n *   - keyboard shortcuts registered through the shortcuts service\\n *   - Ctrl+wheel over the page\\n *\\n * Persistence is deliberately absent. `setFontSize` already writes through the\\n * `ui-theme` settings scope, and the Host half re-embeds that durable value in\\n * every index render, so the size survives a reload and an app restart. Storing\\n * a second copy here would create two sources of truth for one number.\\n *\\n * Services are resolved lazily per use rather than captured once in `apply`:\\n * a peer half may mount after this one, and a captured miss would silently\\n * disable a surface for the rest of the run. Registration is the one case that\\n * must wait, so shortcuts and dictionaries go through `ctx.inject`.\\n */\\nwindow.__ModuleLoader__.load({\\n  id: 'dsh-client-ui-font-scale',\\n  factory(require) {\\n    const React = require('react')\\n    const h = React.createElement\\n\\n    /**\\n     * Range and step mirrored from ui-theme's exported constants\\n     * (FONT_SIZE_MIN / DEFAULT_FONT_SIZE / FONT_SIZE_MAX). The service throws\\n     * outside this range, so these are hard bounds, not preferences.\\n     */\\n    const MIN = 10\\n    const MAX = 22\\n    const DEFAULT = 14\\n\\n    /** Trackpads emit dense wheel deltas; one step per cooldown keeps them sane. */\\n    const WHEEL_COOLDOWN_MS = 60\\n\\n    const NS = 'font-scale'\\n\\n    const ZH = {\\n      increase: '增大字号',\\n      decrease: '减小字号',\\n      reset: '恢复默认字号',\\n      value: '当前字号',\\n    }\\n    const EN = {\\n      increase: 'Increase font size',\\n      decrease: 'Decrease font size',\\n      reset: 'Restore default font size',\\n      value: 'Current font size',\\n    }\\n\\n    /**\\n     * Host tokens only, so the control belongs to the active theme in both\\n     * schemes. Fallbacks cover tokens a future theme may not define.\\n     */\\n    const CSS = `\\n.dshfs-root { display: inline-flex; align-items: center; gap: 1px; }\\n.dshfs-btn {\\n  display: inline-flex; align-items: center; justify-content: center;\\n  height: 26px; min-width: 26px; padding: 0 5px;\\n  border: 0; border-radius: 8px; background: transparent;\\n  font: inherit; font-size: 12px; font-weight: 500; line-height: 1;\\n  color: var(--dsw-alias-label-secondary, var(--dsw-alias-label-primary));\\n  cursor: pointer;\\n}\\n.dshfs-btn:hover:not(:disabled) {\\n  background: var(--dsw-alias-interactive-bg-hover);\\n  color: var(--dsw-alias-label-primary);\\n}\\n.dshfs-btn:disabled { opacity: .45; cursor: default; }\\n/* The size readout is a passive indicator; the reset action has its own button. */\\n.dshfs-value {\\n  display: inline-flex; align-items: center; justify-content: center;\\n  height: 26px; min-width: 34px; padding: 0 4px;\\n  font-size: 11px; font-variant-numeric: tabular-nums;\\n  color: var(--dsw-alias-label-secondary, var(--dsw-alias-label-primary));\\n}\\n.dshfs-btn:focus-visible {\\n  outline: none;\\n  box-shadow: 0 0 0 2px var(--dsw-focus-ring-color, var(--dsw-alias-state-business-primary));\\n}\\n`\\n\\n    /**\\n     * Clamp one requested size into the range the theme service accepts.\\n     * @param px - desired size, already integer or not.\\n     * @returns an integer inside MIN..MAX, or DEFAULT for unusable input.\\n     */\\n    function clamp(px) {\\n      const n = Math.round(Number(px))\\n      return Number.isFinite(n) ? Math.min(MAX, Math.max(MIN, n)) : DEFAULT\\n    }\\n\\n    /**\\n     * Client plugin body: provide the four input surfaces over one write path.\\n     * @param ctx - client cordis context.\\n     */\\n    function apply(ctx) {\\n      // Resolved per call: this package may load before ui-theme provides it.\\n      const themeOf = () => ctx.get('theme')\\n      const current = () => themeOf()?.getTheme().fontSize ?? DEFAULT\\n      const write = (px) => {\\n        const theme = themeOf()\\n        if (theme === undefined) return\\n        const next = clamp(px)\\n        if (next === current()) return\\n        theme.setFontSize(next)\\n      }\\n      const step = (delta) => write(current() + delta)\\n\\n      // Visible copy goes through the locale service. Registered before the\\n      // first bind so the keys always resolve.\\n      let t = (key) => ZH[key] ?? key\\n      const localeOf = () => ctx.get('locale')\\n      const bindCopy = (scope) => {\\n        const locale = scope.locale ?? ctx.get('locale')\\n        if (locale === undefined) return\\n        scope.effect(() => locale.register(NS, { zh: ZH, en: EN }), `${NS}: dictionaries`)\\n        const bound = locale.bind(NS)\\n        t = (key) => bound(key)\\n      }\\n      if (typeof ctx.inject === 'function') ctx.inject(['locale'], bindCopy)\\n      else bindCopy(ctx)\\n\\n      ctx.effect(() => {\\n        const el = document.createElement('style')\\n        el.textContent = CSS\\n        document.head.appendChild(el)\\n        return () => el.remove()\\n      }, `${NS}: styles`)\\n\\n      // Ctrl+wheel. preventDefault suppresses the shell's own page zoom so the\\n      // gesture means one thing only.\\n      let lastWheel = 0\\n      ctx.effect(() => {\\n        const onWheel = (event) => {\\n          if (!event.ctrlKey || event.deltaY === 0) return\\n          event.preventDefault()\\n          const now = Date.now()\\n          if (now - lastWheel < WHEEL_COOLDOWN_MS) return\\n          lastWheel = now\\n          step(event.deltaY < 0 ? 1 : -1)\\n        }\\n        window.addEventListener('wheel', onWheel, { passive: false })\\n        return () => window.removeEventListener('wheel', onWheel)\\n      }, `${NS}: ctrl+wheel`)\\n\\n      // Registered through the shortcuts service rather than a hand-rolled key\\n      // listener, so the bindings appear on the Shortcuts settings page and stay\\n      // user-rebindable. `inject` waits for the service instead of racing it.\\n      const commands = [\\n        { id: `${NS}.increase`, code: 'Equal', alias: 'increase conversation font size', label: () => t('increase'), run: () => step(1) },\\n        { id: `${NS}.decrease`, code: 'Minus', alias: 'decrease conversation font size', label: () => t('decrease'), run: () => step(-1) },\\n        { id: `${NS}.reset`, code: 'Digit0', alias: 'restore default conversation font size', label: () => t('reset'), run: () => write(DEFAULT) },\\n      ]\\n      const registerShortcuts = (scope) => {\\n        const shortcuts = scope.shortcuts ?? ctx.get('shortcuts')\\n        if (shortcuts === undefined) return\\n        for (const command of commands) {\\n          scope.effect(() => shortcuts.register({\\n            id: command.id,\\n            label: command.label,\\n            aliases: ['font size', command.alias],\\n            defaults: {\\n              'desktop:macos': { code: command.code, modifiers: ['primary'] },\\n              'desktop:windows': { code: command.code, modifiers: ['primary'] },\\n              'desktop:linux': { code: command.code, modifiers: ['primary'] },\\n              'web:macos': { code: command.code, modifiers: ['primary'] },\\n              'web:windows': { code: command.code, modifiers: ['primary'] },\\n            },\\n            // \\\"editable\\\" keeps the bindings alive while the composer has focus.\\n            regions: ['page', 'editable'],\\n            modals: [],\\n            resolve: () => ({ status: 'handled', run: command.run }),\\n          }), `${NS}: ${command.id}`)\\n        }\\n      }\\n      if (typeof ctx.inject === 'function') ctx.inject(['shortcuts'], registerShortcuts)\\n      else registerShortcuts(ctx)\\n\\n      /** Composer-row stepper: read the snapshot, write through the service. */\\n      function Control() {\\n        const [, setTick] = React.useState(0)\\n        React.useEffect(() => {\\n          const bump = () => setTick((n) => n + 1)\\n          const offTheme = ctx.on('theme/change', bump)\\n          const locale = localeOf()\\n          const offLocale = locale !== undefined && typeof locale.subscribe === 'function'\\n            ? locale.subscribe(bump)\\n            : undefined\\n          return () => {\\n            offTheme()\\n            if (typeof offLocale === 'function') offLocale()\\n          }\\n        }, [])\\n        const size = current()\\n        const button = (label, glyph, delta, disabled) => h('button', {\\n          type: 'button',\\n          className: 'dshfs-btn',\\n          'aria-label': label,\\n          title: label,\\n          disabled,\\n          onClick: () => step(delta),\\n        }, glyph)\\n        return h('div', { className: 'dshfs-root' },\\n          button(t('decrease'), 'A\\\\u2212', -1, size <= MIN),\\n          h('span', {\\n            className: 'dshfs-value',\\n            'aria-label': t('value'),\\n          }, `${size}px`),\\n          button(t('increase'), 'A+', 1, size >= MAX),\\n          // Disabled at the default so the affordance itself shows the state.\\n          h('button', {\\n            type: 'button',\\n            className: 'dshfs-btn',\\n            'aria-label': t('reset'),\\n            title: t('reset'),\\n            disabled: size === DEFAULT,\\n            onClick: () => write(DEFAULT),\\n          }, '\\\\u21BA'),\\n        )\\n      }\\n\\n      ctx.slots.inject('conversation.input.right', () => ctx.slots.register({\\n        name: 'conversation.input.right',\\n        id: NS,\\n        order: 20,\\n      }, Control))\\n    }\\n\\n    return {\\n      inject: ['slots'],\\n      apply,\\n    }\\n  },\\n})\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"af8976a87137a21cbe6fb527e5a38e19ffc4c596\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"9d0d19372731de2e7afdcb45b54c42314dd2f8bd8dfb0fa323b3222f013e1476\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 250,\n        \"code\": 174,\n        \"comments\": 62,\n        \"blank\": 14\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 176,\n        \"words\": 1103\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 157,\n        \"code\": 113,\n        \"comments\": 30,\n        \"blank\": 16\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 191,\n          \"api\": \"ctx.on\",\n          \"name\": \"theme/change\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": [\n        {\n          \"path\": \"lib/client.js\",\n          \"line\": 229,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"conversation.input.right\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"theme/change\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"conversation.input.right\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "0a5d9b9051cd280f67327f8e1a67f939d3a7b2352e86ca919c5cb0ac559325ba"
+        }
+    },
+    "unavailable_artifacts": []
+}

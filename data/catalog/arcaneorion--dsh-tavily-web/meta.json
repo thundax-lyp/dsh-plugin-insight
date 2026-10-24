@@ -1,0 +1,55 @@
+{
+    "repository": "ArcaneOrion/dsh-tavily-web",
+    "repository_id": 1369301269,
+    "captured_at": "2026-10-24T05:56:11.954Z",
+    "window_start": "2026-09-24T05:56:11.954Z",
+    "stars": 0,
+    "pushed_at": "2026-09-29T15:05:03Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-tavily-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3178:39A43F:7D62F4:879FA1:6ADC4880 and timestamp 2026-10-24 05:56:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-tavily-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 321A:325AE8:7A7547:84AB80:6ADC4881 and timestamp 2026-10-24 05:56:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-tavily-web%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A11.954Z..2026-10-24T05%3A56%3A11.954Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32B4:246C5A:8EF628:992CC8:6ADC4882 and timestamp 2026-10-24 05:56:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-tavily-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A11.954Z..2026-10-24T05%3A56%3A11.954Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 335E:8DF2A:7C72E5:86B12A:6ADC4883 and timestamp 2026-10-24 05:56:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AArcaneOrion%2Fdsh-tavily-web%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A11.954Z..2026-10-24T05%3A56%3A11.954Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 340C:249B5F:784165:827CAE:6ADC4884 and timestamp 2026-10-24 05:56:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "npm": {
+        "package_name": "@arcaneorion/dsh-tavily-web",
+        "captured_at": "2026-10-24T05:56:18.521Z",
+        "window_start": "2026-09-24",
+        "window_end": "2026-10-23",
+        "downloads_30d": 1353,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40arcaneorion%2Fdsh-tavily-web",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-15T02:32:00.242Z",
+            "captured_at": "2026-10-24T05:56:18.521Z",
+            "source_url": "https://registry.npmjs.org/%40arcaneorion%2Fdsh-tavily-web",
+            "error": null,
+            "latest_version": "0.2.2",
+            "latest_published_at": "2026-09-29T15:00:49.143Z",
+            "latest_error": null
+        }
+    }
+}

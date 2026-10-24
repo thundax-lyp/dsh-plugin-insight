@@ -1,0 +1,429 @@
+{
+    "schema_version": 4,
+    "id": "04623108e91c2f5a379826d12d1757f8",
+    "identity": "github:1429766953:root",
+    "slug": "7gzgn--dsh-my-plugins",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1429766953:root",
+            "repository_id": 1429766953,
+            "component_id": "root",
+            "repository": "7gzgn/dsh-my-plugins",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-my-plugins",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0851d0e17dcb585cd05010a38fe3182ef76f9f1b0deb947b1d79a5a8e189462a",
+                "code": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                "maintenance": "954bd81bec91d04c054d2f9164a12f7c5b4ecfd840916ca846a4bd123661a936"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-24-02-github-1429766953-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "b4d0049a80923dde87317adca15433abe345ff8a",
+                    "retrieved_at": "2026-10-24T06:17:30.673Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-24-02-github-1429766953-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-my-plugins",
+                            "commit": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                            "path": "README.md",
+                            "content_sha256": "196275f482a128cae7851c45efd7ec37ab248cbec27a349c781406a13992f8d3"
+                        }
+                    ],
+                    "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                    "captured_at": "2026-10-24T06:17:30.673Z",
+                    "summary": "在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。",
+                    "artifact": "data/runs/2026-10-24-02/7gzgn--dsh-my-plugins/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-24-02-github-1429766953-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-my-plugins",
+                            "commit": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                            "path": "README.md",
+                            "content_sha256": "196275f482a128cae7851c45efd7ec37ab248cbec27a349c781406a13992f8d3"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-my-plugins",
+                            "commit": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                            "path": "package.json",
+                            "content_sha256": "83c74f397f86b05144f10d71c74cf556892aae4310b80909b4ae49a86585c473"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-my-plugins",
+                            "commit": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                            "path": "lib/index.js",
+                            "content_sha256": "53d14e25a6469e54b80953b8cdf41ce2db687a85edb73ff4fb2660dc2e4e8db3"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-my-plugins",
+                            "commit": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                            "path": "client.js",
+                            "content_sha256": "6914eb8251645600770b0ca674bc1736fe22859af40a27e27d890cda960f2155"
+                        },
+                        {
+                            "repository_url": "https://github.com/7gzgn/dsh-my-plugins",
+                            "commit": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                            "path": "notes.json",
+                            "content_sha256": "4bea93289ae1e635e71781f38b97cf3a87cebe4cc3f56ad2a7c06b1587ec03e0"
+                        }
+                    ],
+                    "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                    "captured_at": "2026-10-24T06:17:30.673Z",
+                    "summary": "核查 README.md、package.json、lib/index.js、client.js、notes.json；Host从DSH_PROFILE_DIR和dshHome/profiles枚举候选，DSH_PROFILE命中优先，否则选package.json修改时间最新者。scan优先dsh.profile.bundles，非空才用作清单，否则退到所有dependencies；从各node_modules/package.json取实际版本，缺失则回退声明版本。描述优先notes.json人工短句，其次市场中文缓存，最后包描述，descSource保留来源。报告缓存60秒，GET可force；市场缓存6小时，DSH_WEB_URL存在时异步fetch市场registry并写入本地缓存。客户端插入shell.overlay，按包名/名字/描述筛选。",
+                    "artifact": "data/runs/2026-10-24-02/7gzgn--dsh-my-plugins/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定README、Host扫描与路由、client overlay、package和notes；不执行插件或读取用户真实profile。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向装了许多DSH插件、想记清包名、版本和作用的Web或Desktop用户。合格结果是能在当前profile下找到目标包并解释元数据来自哪里，不能把列表存在当激活和可靠性证明。原来可手读profile/package.json和node_modules，此项把信息汇入可搜索面板，并显示官方前缀分类和数量。贡献是方便浏览与统一呈现，不是新插件发现或运行监控算法；数量本身不证明每项能力已在宿主可用。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host从DSH_PROFILE_DIR和dshHome/profiles枚举候选，DSH_PROFILE命中优先，否则选package.json修改时间最新者。scan优先dsh.profile.bundles，非空才用作清单，否则退到所有dependencies；从各node_modules/package.json取实际版本，缺失则回退声明版本。描述优先notes.json人工短句，其次市场中文缓存，最后包描述，descSource保留来源。报告缓存60秒，GET可force；市场缓存6小时，DSH_WEB_URL存在时异步fetch市场registry并写入本地缓存。客户端插入shell.overlay，按包名/名字/描述筛选。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定README、Host扫描与路由、client overlay、package和notes；不执行插件或读取用户真实profile。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "0.1.1声明DSH0.2.0-rc.2与0.2.1-rc.2兼容，Node>=18；本轮未安装。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主资源，金额未知 | 确认profile和已知插件 | 安装耗时未知 |\n| 持续使用 | 同步文件读、市场HTTP和缓存磁盘 | 辨认描述来源和缺失包 | 大清单延迟未测 |\n| 失败恢复 | 重扫和缓存重建 | 查profile误选、缺包或市场失败 | 无模型调用不等于零代价 |",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 [Q04](#research-q04)",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 浏览与搜索 | overlay和字符串筛选 | 真实节时和大量插件性能 |\n| 版本显示 | 包版本优先、声明fallback | 是否真正加载成功 |\n| 描述可读 | notes/market/package优先 | 文案是否与实际能力一致 |",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "scan与客户端分离便于复用，包不可读时降级不会让整份清单失败。代价是宽松fallback隐藏不确定性；profile选择、hasTools和版本应显式标启发式，市场缓存需要同步文档。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "[Q03](#research-q03) 发现清单来自声明/依赖而不是运行注册表，profile还能按mtime猜选；README的无请求、仅作者描述与市场fetch/缓存写、notes优先不一致。读者应知道当前真边界，避免以数量排障。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 提出声明/安装/运行三层状态与说明来源标记，未验证；以缺包、pending和多profile任务测排障准确率，运行状态过期或理解负担上升会削弱收益。",
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1429766953:root",
+                            "area": "code",
+                            "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-24T06:17:30.673Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-24T06:17:30.673Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                "reviewed_at": "2026-10-24T06:17:30.673Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1429766953:root",
+                        "area": "code",
+                        "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "novelty是已有包元数据展示；mechanism多来源优先级为局部组合；transferability可迁移相似profile环境但需scope适配；simplification集中浏览入口但运行状态缺失。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "workflow减少手读包清单；delivery仍为信息展示；reach方便多插件Web用户；economics未识别成本结构变化或可靠节时量。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-10-24-02-github-1429766953-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "适合明确profile的多插件用户作清单阅读辅助，先逐项核对包与描述来源；不要将数量和版本fallback当运行激活证明。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "多插件辨认问题具体重复。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "搜索与说明方便，声明/激活混淆削弱排障价值。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定源码支持，浏览器未验收。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "配置少且不调用模型，仍有市场请求缓存与profile核对。"
+                    }
+                },
+                "score": 64,
+                "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                "reviewed_at": "2026-10-24T06:17:30.673Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-24-02-github-1429766953-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1429766953:root",
+                        "area": "code",
+                        "fingerprint": "a6ac5e79e9f246c322060163bc794dba9648bff4"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1429766953:root",
+            "repository": "7gzgn/dsh-my-plugins",
+            "path": "",
+            "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+            "fingerprints": {
+                "directory": "0851d0e17dcb585cd05010a38fe3182ef76f9f1b0deb947b1d79a5a8e189462a",
+                "code": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+                "maintenance": "954bd81bec91d04c054d2f9164a12f7c5b4ecfd840916ca846a4bd123661a936"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-24T05:52:04Z",
+            "analysis_sha256": "7ed6733f31c89603ec986dcdb6604f8a6a858e3e070a5de999d63653a9fd61c2"
+        },
+        "publication.metadata": "data/catalog/7gzgn--dsh-my-plugins/meta.json",
+        "publication.summaries": {
+            "text": "在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。",
+            "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+            "source_url": "https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+            "items": {
+                "Host 路由": "提供缓存清单和强刷report接口",
+                "界面": "顶栏清单overlay、搜索与重扫"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| profile清单 | 看bundle或依赖声明 | 非运行激活注册表 |\n| 版本和描述汇总 | 辨认包作用 | 实装缺失会回退，notes优先 |\n| 搜索面板 | 找包名、名称或说明 | Web/Desktop slots |\n| 强制重扫 | 更新本地包清单 | 市场map另有6小时缓存 |\n| 中文登记表缓存 | 增强说明可读性 | 真实HTTP读取与本地写，非纯无请求 |"
+        },
+        "publication.advice": {
+            "revision": "a6ac5e79e9f246c322060163bc794dba9648bff4",
+            "text": "明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 [Q04](#research-q04)"
+        },
+        "registry": "data/plugins/7gzgn--dsh-my-plugins",
+        "reports": "# dsh-my-plugins\n\n> 在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。\n\n## 研究范围\n\n- **仓库**：[7gzgn/dsh-my-plugins](https://github.com/7gzgn/dsh-my-plugins)\n- **版本号**：0.1.1（[固定提交 a6ac5e79e9f246c322060163bc794dba9648bff4](https://github.com/7gzgn/dsh-my-plugins/tree/a6ac5e79e9f246c322060163bc794dba9648bff4)）\n- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\nprofile包清单与overlay可核查；运行激活未采集，文档的不联网和作者原话保证与实现不符；三层状态为假设。\n\n## 洞察短评\n\n- **用途**：面向装了许多DSH插件、想记清包名、版本和作用的Web或Desktop用户。合格结果是能在当前profile下找到目标包并解释元数据来自哪里，不能把列表存在当激活和可靠性证明。原来可手读profile/package.json和node_modules，此项把信息汇入可搜索面板，并显示官方前缀分类和数量。贡献是方便浏览与统一呈现，不是新插件发现或运行监控算法；数量本身不证明每项能力已在宿主可用。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。\n- **思考**：[Q03](#research-q03) 发现清单来自声明/依赖而不是运行注册表，profile还能按mtime猜选；README的无请求、仅作者描述与市场fetch/缓存写、notes优先不一致。读者应知道当前真边界，避免以数量排障。\n- **建议**：[Q05](#research-q05) 提出声明/安装/运行三层状态与说明来源标记，未验证；以缺包、pending和多profile任务测排障准确率，运行状态过期或理解负担上升会削弱收益。\n\n采用建议：明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 [Q04](#research-q04)\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。\n\n## 关键质疑\n\n[Q03](#research-q03) 发现清单来自声明/依赖而不是运行注册表，profile还能按mtime猜选；README的无请求、仅作者描述与市场fetch/缓存写、notes优先不一致。读者应知道当前真边界，避免以数量排障。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 提出声明/安装/运行三层状态与说明来源标记，未验证；以缺包、pending和多profile任务测排障准确率，运行状态过期或理解负担上升会削弱收益。\n\n- 已检查固定源码和作者材料。\n- 未运行插件、目标测试、浏览器或真实profile扫描。\n- 已明确文档与市场缓存实现差异，运行状态未采集。\n\n## 场景与替代办法\n\n面向装了许多DSH插件、想记清包名、版本和作用的Web或Desktop用户。合格结果是能在当前profile下找到目标包并解释元数据来自哪里，不能把列表存在当激活和可靠性证明。原来可手读profile/package.json和node_modules，此项把信息汇入可搜索面板，并显示官方前缀分类和数量。贡献是方便浏览与统一呈现，不是新插件发现或运行监控算法；数量本身不证明每项能力已在宿主可用。\n\n参照手工读取profile/package.json和实装包；没有把main导出当模型工具或静态清单当运行可用性。\n\n## 依赖与流程\n\n#### 启动与依赖\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| webServer和Web slots | 界面必需 | report与overlay | 无面板 |\n| profile路径与package.json | 必需 | 清单来源 | 返回找不到profile或猜错 |\n| node_modules包清单 | 实装版本必需 | 作者元信息 | fallback声明版本/空描述 |\n| DSH_WEB_URL与市场 | 中文说明可选 | registry缓存 | 回退notes或package |\n| 可写dshHome缓存 | 市场缓存需要 | 保存中文map | 失败被捕获并降级 |\n\n#### 启动步骤\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 指定 | 用户确认DSH_PROFILE | 面板profile名称一致 |\n| 加载 | 宿主注册report和overlay | 能读清单 |\n| 核对 | 用户搜索已知包、强刷 | 实装与声明区别清楚 |\n| 排障 | 用户另查Loader运行状态 | 不以面板数量证明激活 |\n\n## 成本与效果\n\n#### 成本\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 宿主资源，金额未知 | 确认profile和已知插件 | 安装耗时未知 |\n| 持续使用 | 同步文件读、市场HTTP和缓存磁盘 | 辨认描述来源和缺失包 | 大清单延迟未测 |\n| 失败恢复 | 重扫和缓存重建 | 查profile误选、缺包或市场失败 | 无模型调用不等于零代价 |\n\n#### 效果\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 浏览与搜索 | overlay和字符串筛选 | 真实节时和大量插件性能 |\n| 版本显示 | 包版本优先、声明fallback | 是否真正加载成功 |\n| 描述可读 | notes/market/package优先 | 文案是否与实际能力一致 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：插件清单能否如实解释当前profile的安装与加载并减少手工辨认负担？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 插件清单解决什么重复问题？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n面向装了许多DSH插件、想记清包名、版本和作用的Web或Desktop用户。合格结果是能在当前profile下找到目标包并解释元数据来自哪里，不能把列表存在当激活和可靠性证明。原来可手读profile/package.json和node_modules，此项把信息汇入可搜索面板，并显示官方前缀分类和数量。贡献是方便浏览与统一呈现，不是新插件发现或运行监控算法；数量本身不证明每项能力已在宿主可用。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:10-23](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/README.md#L10-L23)\n\n作者目标是回答装了什么及元数据来源。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## 为什么会有这个东西\n\n装了二十几个插件之后，界面上的变化你天天看得见，但**谁也说不清到底装了什么**：\n市场里点过的、朋友推荐的、自己 link 进来的，全混在一起。\n\n所以这颗药丸只回答一个问题：**我现在到底装了什么，它们各自是干什么的。**\n\n## 它怎么知道\n\n读 **当前 profile 的 `package.json`**——`dsh.profile.bundles` 是真正被加载的名单，\n`dependencies` 给声明的版本，实装版本看 `node_modules/<包名>/package.json`。\n\n不去扫目录猜，也不用你填任何东西。插件的一句话作用取自它自己的 `package.json`，\n**作者怎么写就怎么显示**，我们不替它编、不翻译、不打分。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[client.js:183-203](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/client.js#L183-L203)\n\n面板搜索、重扫和profile标识。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n      const panel = h(\n        'div',\n        { style: css.panel },\n        h(\n          'div',\n          { style: css.head },\n          h('div', { style: { flex: '0 0 auto' } }, data ? `${data.total} 个 · 第三方 ${data.thirdParty}` : '读取中…'),\n          h('input', {\n            style: css.input,\n            value: q,\n            placeholder: '搜包名 / 名字 / 描述',\n            onChange: (e) => setQ(e.target.value),\n          }),\n          h('button', { style: css.btn, onClick: () => load(true), disabled: busy }, busy ? '刷新中' : '重扫'),\n          h('button', { style: css.btn, onClick: () => setOpen(false) }, '收起'),\n        ),\n        err ? h('div', { style: { color: '#e06a6a' } }, '出错：' + err) : null,\n        data && data.profile\n          ? h('div', { style: { color: '#6f7480', fontSize: 11, marginBottom: 4 } }, `配置：${data.profile.name}`)\n          : null,\n        rows.length ? rows : h('div', { style: { color: '#9a9aa8', padding: '8px 0' } }, data ? '没有匹配的插件' : '还没有数据，点「重扫」'),\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · profile、版本和描述怎样形成报告？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\nHost从DSH_PROFILE_DIR和dshHome/profiles枚举候选，DSH_PROFILE命中优先，否则选package.json修改时间最新者。scan优先dsh.profile.bundles，非空才用作清单，否则退到所有dependencies；从各node_modules/package.json取实际版本，缺失则回退声明版本。描述优先notes.json人工短句，其次市场中文缓存，最后包描述，descSource保留来源。报告缓存60秒，GET可force；市场缓存6小时，DSH_WEB_URL存在时异步fetch市场registry并写入本地缓存。客户端插入shell.overlay，按包名/名字/描述筛选。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:56-82](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L56-L82)\n\nprofile缺明确标识时按mtime猜选。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n/** 选当前 profile：DSH_PROFILE 命中优先，否则取 package.json 最新修改的那个。 */\nfunction pickProfile() {\n  const dirs = profileCandidates();\n  if (!dirs.length) return null;\n  const want = process.env.DSH_PROFILE;\n  if (want) {\n    for (const d of dirs) {\n      const pkg = readJson(join(d, 'package.json'));\n      if (pkg && pkg.name === `dsh-profile-${want}`) return { dir: d, pkg };\n      if (d.endsWith(`profiles${'\\\\'}${want}`) || d.endsWith(`profiles/${want}`)) {\n        if (pkg) return { dir: d, pkg };\n      }\n    }\n  }\n  let best = null;\n  for (const d of dirs) {\n    const pkg = readJson(join(d, 'package.json'));\n    if (!pkg) continue;\n    let mtime = 0;\n    try {\n      mtime = statSync(join(d, 'package.json')).mtimeMs;\n    } catch {\n      /* ignore */\n    }\n    if (!best || mtime > best.mtime) best = { dir: d, pkg, mtime };\n  }\n  return best ? { dir: best.dir, pkg: best.pkg } : null;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:181-215](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L181-L215)\n\n清单、版本与描述三种来源。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n  const { dir, pkg } = picked;\n  const zhMap = loadZhMap();\n  const notes = loadNotes();\n  const profileName = String(pkg.name || '').replace(/^dsh-profile-/, '') || 'unknown';\n  const deps = pkg.dependencies && typeof pkg.dependencies === 'object' ? pkg.dependencies : {};\n  const declared = Array.isArray(pkg.dsh?.profile?.bundles) ? pkg.dsh.profile.bundles : [];\n  // bundles 是「实际加载」的名单；万一没有，退回到 dependencies 里所有插件\n  const ids = declared.length ? declared : Object.keys(deps);\n\n  const seen = new Set();\n  const plugins = [];\n  for (const rawId of ids) {\n    const id = String(rawId);\n    if (!id || seen.has(id)) continue;\n    seen.add(id);\n    if (id === NS) continue; // 自己不列自己\n\n    const nm = join(dir, 'node_modules', id, 'package.json');\n    const modPkg = existsSync(nm) ? readJson(nm) : null;\n    const { title, desc } = humanize(modPkg, id);\n    // 优先级：人写的一句话 > 市场登记表的中文 > 包自己的描述\n    const marketZh = typeof zhMap[id] === 'string' ? clip(zhMap[id]) : '';\n    const humanZh = typeof notes[id] === 'string' ? clip(notes[id], 120) : '';\n    const finalDesc = humanZh || marketZh || desc;\n    const descSource = humanZh ? 'human' : marketZh ? 'market' : desc ? 'package' : 'none';\n    const declaredVersion = deps[id];\n    plugins.push({\n      id,\n      title,\n      version: (modPkg && modPkg.version) || (typeof declaredVersion === 'string' ? declaredVersion.replace(/^[~^]/, '') : ''),\n      desc: finalDesc,\n      descSource,\n      official: isOfficial(id),\n      hasClient: Boolean(modPkg && (modPkg.dsh?.client || modPkg.exports?.['./client'] || modPkg.exports?.client)),\n      hasTools: Boolean(modPkg && (modPkg.main || modPkg.exports?.['.'])),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:112-147](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L112-L147)\n\n市场请求与本地写缓存。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\nfunction loadZhMap() {\n  try {\n    const c = JSON.parse(readFileSync(REGISTRY_CACHE, 'utf8'));\n    if (c && c.map && typeof c.at === 'number') {\n      if (Date.now() - c.at > REGISTRY_TTL) refreshZhMap();\n      return c.map;\n    }\n  } catch {\n    /* 还没有缓存 */\n  }\n  refreshZhMap();\n  return {};\n}\n\nasync function refreshZhMap() {\n  if (refreshing) return;\n  const base = process.env.DSH_WEB_URL;\n  if (!base) return;\n  refreshing = true;\n  try {\n    const r = await fetch(`${base}/dsh-market/registry`, { headers: { accept: 'application/json' } });\n    if (!r.ok) return;\n    const j = await r.json();\n    const list = j?.registry?.plugins;\n    if (!Array.isArray(list)) return;\n    const map = {};\n    for (const p of list) {\n      const zh = p?.description?.zh;\n      if (p?.name && typeof zh === 'string' && zh.trim()) map[p.name] = zh.trim();\n    }\n    writeFileSync(REGISTRY_CACHE, JSON.stringify({ at: Date.now(), map }), 'utf8');\n    cache.at = 0; // 下次请求重新扫描，这次就能拿到中文\n  } catch {\n    /* 拿不到登记表就退回包自己的描述，不影响使用 */\n  } finally {\n    refreshing = false;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[client.js:222-233](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/client.js#L222-L233)\n\n真实UI插槽注册。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    return {\n      name: NS,\n      inject: ['slots'],\n      apply(ctx) {\n        ctx.slots.inject('shell.overlay', () =>\n          ctx.slots.register(\n            { name: 'shell.overlay', id: NS, order: 896 },\n            function MyPluginsSlot() {\n              return h(Guard, null, h(MyPlugins));\n            },\n          ),\n        );\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 为什么不能把报告称作当前已激活插件真相？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nbundles只是profile声明，不读取运行注册表、加载错误或pending服务状态；dependencies回退还可能包含没有装载的依赖。未明确环境变量时按mtime选profile可能选到另一配置。version在包缺失时显示声明版本去掉^/~，无法区分实际安装成功与期望范围。README称不联网且只显示作者原话，但当前代码会fetch宿主市场并写缓存，还以notes人工说明优先，因此文档边界与实现不符。hasTools按main/exports判断只可视作入口候选，不能等于模型工具存在。只读profile成立，纯无写入无请求不成立。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:56-82](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L56-L82)\n\nmtime不是宿主当前scope。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n/** 选当前 profile：DSH_PROFILE 命中优先，否则取 package.json 最新修改的那个。 */\nfunction pickProfile() {\n  const dirs = profileCandidates();\n  if (!dirs.length) return null;\n  const want = process.env.DSH_PROFILE;\n  if (want) {\n    for (const d of dirs) {\n      const pkg = readJson(join(d, 'package.json'));\n      if (pkg && pkg.name === `dsh-profile-${want}`) return { dir: d, pkg };\n      if (d.endsWith(`profiles${'\\\\'}${want}`) || d.endsWith(`profiles/${want}`)) {\n        if (pkg) return { dir: d, pkg };\n      }\n    }\n  }\n  let best = null;\n  for (const d of dirs) {\n    const pkg = readJson(join(d, 'package.json'));\n    if (!pkg) continue;\n    let mtime = 0;\n    try {\n      mtime = statSync(join(d, 'package.json')).mtimeMs;\n    } catch {\n      /* ignore */\n    }\n    if (!best || mtime > best.mtime) best = { dir: d, pkg, mtime };\n  }\n  return best ? { dir: best.dir, pkg: best.pkg } : null;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:185-215](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L185-L215)\n\n声明集合、版本fallback和hasTools启发式。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  const deps = pkg.dependencies && typeof pkg.dependencies === 'object' ? pkg.dependencies : {};\n  const declared = Array.isArray(pkg.dsh?.profile?.bundles) ? pkg.dsh.profile.bundles : [];\n  // bundles 是「实际加载」的名单；万一没有，退回到 dependencies 里所有插件\n  const ids = declared.length ? declared : Object.keys(deps);\n\n  const seen = new Set();\n  const plugins = [];\n  for (const rawId of ids) {\n    const id = String(rawId);\n    if (!id || seen.has(id)) continue;\n    seen.add(id);\n    if (id === NS) continue; // 自己不列自己\n\n    const nm = join(dir, 'node_modules', id, 'package.json');\n    const modPkg = existsSync(nm) ? readJson(nm) : null;\n    const { title, desc } = humanize(modPkg, id);\n    // 优先级：人写的一句话 > 市场登记表的中文 > 包自己的描述\n    const marketZh = typeof zhMap[id] === 'string' ? clip(zhMap[id]) : '';\n    const humanZh = typeof notes[id] === 'string' ? clip(notes[id], 120) : '';\n    const finalDesc = humanZh || marketZh || desc;\n    const descSource = humanZh ? 'human' : marketZh ? 'market' : desc ? 'package' : 'none';\n    const declaredVersion = deps[id];\n    plugins.push({\n      id,\n      title,\n      version: (modPkg && modPkg.version) || (typeof declaredVersion === 'string' ? declaredVersion.replace(/^[~^]/, '') : ''),\n      desc: finalDesc,\n      descSource,\n      official: isOfficial(id),\n      hasClient: Boolean(modPkg && (modPkg.dsh?.client || modPkg.exports?.['./client'] || modPkg.exports?.client)),\n      hasTools: Boolean(modPkg && (modPkg.main || modPkg.exports?.['.'])),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:126-143](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L126-L143)\n\n真实HTTP读取和本地写。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nasync function refreshZhMap() {\n  if (refreshing) return;\n  const base = process.env.DSH_WEB_URL;\n  if (!base) return;\n  refreshing = true;\n  try {\n    const r = await fetch(`${base}/dsh-market/registry`, { headers: { accept: 'application/json' } });\n    if (!r.ok) return;\n    const j = await r.json();\n    const list = j?.registry?.plugins;\n    if (!Array.isArray(list)) return;\n    const map = {};\n    for (const p of list) {\n      const zh = p?.description?.zh;\n      if (p?.name && typeof zh === 'string' && zh.trim()) map[p.name] = zh.trim();\n    }\n    writeFileSync(REGISTRY_CACHE, JSON.stringify({ at: Date.now(), map }), 'utf8');\n    cache.at = 0; // 下次请求重新扫描，这次就能拿到中文\n```\n\n</details>\n\n**依据 4 · 作者声明**：[README.md:41-50](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/README.md#L41-L50)\n\n文档给出的不联网及加载列表保证与实现对照。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## 边界\n\n- **只读**：不改 profile、不动插件文件、不联网\n- 一个无参 GET 接口 `/dsh-my-plugins/report`，60 秒缓存，`?force=1` 强刷\n- 读不到某个包的 `package.json` 时留空，不报错、不影响其他行\n\n## 已知的限制\n\n- 只在 **web / desktop 界面**有这个药丸；纯 CLI profile 看不到（但接口在）\n- 显示的是\"被加载的插件\"，不含 DSH 内置的宿主能力\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 哪些用户可试，怎样避免误读？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:170-188](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L170-L188)\n\n缓存及清单回退。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport function scan(force) {\n  const now = Date.now();\n  if (!force && cache.data && now - cache.at < CACHE_MS) return cache.data;\n\n  const picked = pickProfile();\n  if (!picked) {\n    const empty = { ok: false, error: '找不到 profile（没有 ~/.dsh/profiles/*/package.json）', profile: null, plugins: [], total: 0, thirdParty: 0 };\n    cache = { at: now, data: empty };\n    return empty;\n  }\n\n  const { dir, pkg } = picked;\n  const zhMap = loadZhMap();\n  const notes = loadNotes();\n  const profileName = String(pkg.name || '').replace(/^dsh-profile-/, '') || 'unknown';\n  const deps = pkg.dependencies && typeof pkg.dependencies === 'object' ? pkg.dependencies : {};\n  const declared = Array.isArray(pkg.dsh?.profile?.bundles) ? pkg.dsh.profile.bundles : [];\n  // bundles 是「实际加载」的名单；万一没有，退回到 dependencies 里所有插件\n  const ids = declared.length ? declared : Object.keys(deps);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:198-215](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L198-L215)\n\n缺包时仍可产生元数据项。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    const nm = join(dir, 'node_modules', id, 'package.json');\n    const modPkg = existsSync(nm) ? readJson(nm) : null;\n    const { title, desc } = humanize(modPkg, id);\n    // 优先级：人写的一句话 > 市场登记表的中文 > 包自己的描述\n    const marketZh = typeof zhMap[id] === 'string' ? clip(zhMap[id]) : '';\n    const humanZh = typeof notes[id] === 'string' ? clip(notes[id], 120) : '';\n    const finalDesc = humanZh || marketZh || desc;\n    const descSource = humanZh ? 'human' : marketZh ? 'market' : desc ? 'package' : 'none';\n    const declaredVersion = deps[id];\n    plugins.push({\n      id,\n      title,\n      version: (modPkg && modPkg.version) || (typeof declaredVersion === 'string' ? declaredVersion.replace(/^[~^]/, '') : ''),\n      desc: finalDesc,\n      descSource,\n      official: isOfficial(id),\n      hasClient: Boolean(modPkg && (modPkg.dsh?.client || modPkg.exports?.['./client'] || modPkg.exports?.client)),\n      hasTools: Boolean(modPkg && (modPkg.main || modPkg.exports?.['.'])),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[client.js:116-125](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/client.js#L116-L125)\n\n浏览器调用report处理结果。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n      const load = useCallback(async (force) => {\n        setBusy(true);\n        try {\n          const r = await fetch(`/${NS}/report` + (force ? '?force=1' : ''), { credentials: 'same-origin' });\n          const j = await r.json();\n          if (j && j.ok) {\n            setData(j);\n            setErr('');\n          } else {\n            setErr((j && j.error) || 'failed');\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 声明、安装和运行三层状态能否提升排障？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n现实现已读取profile声明与实装包，却把两者压成单个version和total。未验证方向是分列declared、installed和runtime activation，运行层从宿主Loader查询并显示pending/failed原因；描述显示notes/market/package来源，profile由宿主scope给出而不猜mtime。增量在让缺包、未加载和服务缺依赖有不同动作，代价是增加宿主版本耦合和状态UI。最小实验设置缺包、disabled、服务pending和另一个最近修改profile，比较用户定位故障的准确率与耗时；若运行状态过期或更难理解，便不支持该改造。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:185-215](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L185-L215)\n\n声明与包数据已有但未分状态。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  const deps = pkg.dependencies && typeof pkg.dependencies === 'object' ? pkg.dependencies : {};\n  const declared = Array.isArray(pkg.dsh?.profile?.bundles) ? pkg.dsh.profile.bundles : [];\n  // bundles 是「实际加载」的名单；万一没有，退回到 dependencies 里所有插件\n  const ids = declared.length ? declared : Object.keys(deps);\n\n  const seen = new Set();\n  const plugins = [];\n  for (const rawId of ids) {\n    const id = String(rawId);\n    if (!id || seen.has(id)) continue;\n    seen.add(id);\n    if (id === NS) continue; // 自己不列自己\n\n    const nm = join(dir, 'node_modules', id, 'package.json');\n    const modPkg = existsSync(nm) ? readJson(nm) : null;\n    const { title, desc } = humanize(modPkg, id);\n    // 优先级：人写的一句话 > 市场登记表的中文 > 包自己的描述\n    const marketZh = typeof zhMap[id] === 'string' ? clip(zhMap[id]) : '';\n    const humanZh = typeof notes[id] === 'string' ? clip(notes[id], 120) : '';\n    const finalDesc = humanZh || marketZh || desc;\n    const descSource = humanZh ? 'human' : marketZh ? 'market' : desc ? 'package' : 'none';\n    const declaredVersion = deps[id];\n    plugins.push({\n      id,\n      title,\n      version: (modPkg && modPkg.version) || (typeof declaredVersion === 'string' ? declaredVersion.replace(/^[~^]/, '') : ''),\n      desc: finalDesc,\n      descSource,\n      official: isOfficial(id),\n      hasClient: Boolean(modPkg && (modPkg.dsh?.client || modPkg.exports?.['./client'] || modPkg.exports?.client)),\n      hasTools: Boolean(modPkg && (modPkg.main || modPkg.exports?.['.'])),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:56-82](https://github.com/7gzgn/dsh-my-plugins/blob/a6ac5e79e9f246c322060163bc794dba9648bff4/lib/index.js#L56-L82)\n\nprofile猜选是可替换边界。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n/** 选当前 profile：DSH_PROFILE 命中优先，否则取 package.json 最新修改的那个。 */\nfunction pickProfile() {\n  const dirs = profileCandidates();\n  if (!dirs.length) return null;\n  const want = process.env.DSH_PROFILE;\n  if (want) {\n    for (const d of dirs) {\n      const pkg = readJson(join(d, 'package.json'));\n      if (pkg && pkg.name === `dsh-profile-${want}`) return { dir: d, pkg };\n      if (d.endsWith(`profiles${'\\\\'}${want}`) || d.endsWith(`profiles/${want}`)) {\n        if (pkg) return { dir: d, pkg };\n      }\n    }\n  }\n  let best = null;\n  for (const d of dirs) {\n    const pkg = readJson(join(d, 'package.json'));\n    if (!pkg) continue;\n    let mtime = 0;\n    try {\n      mtime = statSync(join(d, 'package.json')).mtimeMs;\n    } catch {\n      /* ignore */\n    }\n    if (!best || mtime > best.mtime) best = { dir: d, pkg, mtime };\n  }\n  return best ? { dir: best.dir, pkg: best.pkg } : null;\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：ccff86a0acf9b318da4eb48f6f7dc34f9835bc47888476cdd792d4f07c65c2c4。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 510 | 344 | 133 | — |\n| .md | source | 1 | 55 | — | — | 518 |\n| .mjs | test | 2 | 69 | 49 | 8 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| profile清单 | 看bundle或依赖声明 | 非运行激活注册表 |\n| 版本和描述汇总 | 辨认包作用 | 实装缺失会回退，notes优先 |\n| 搜索面板 | 找包名、名称或说明 | Web/Desktop slots |\n| 强制重扫 | 更新本地包清单 | 市场map另有6小时缓存 |\n| 中文登记表缓存 | 增强说明可读性 | 真实HTTP读取与本地写，非纯无请求 |\n\n## 工程亮点\n\nscan与客户端分离便于复用，包不可读时降级不会让整份清单失败。代价是宽松fallback隐藏不确定性；profile选择、hasTools和版本应显式标启发式，市场缓存需要同步文档。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、client.js、notes.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定README、Host扫描与路由、client overlay、package和notes；不执行插件或读取用户真实profile。\n- 下一步：- 已检查固定源码和作者材料。\n- 未运行插件、目标测试、浏览器或真实profile扫描。\n- 已明确文档与市场缓存实现差异，运行状态未采集。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-24-02/7gzgn--dsh-my-plugins/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"7gzgn/dsh-my-plugins\",\n  \"revision\": \"a6ac5e79e9f246c322060163bc794dba9648bff4\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\",\n    \"client.js\",\n    \"notes.json\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"插件清单能否如实解释当前profile的安装与加载并减少手工辨认负担？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"插件清单解决什么重复问题？\",\n        \"answer\": \"面向装了许多DSH插件、想记清包名、版本和作用的Web或Desktop用户。合格结果是能在当前profile下找到目标包并解释元数据来自哪里，不能把列表存在当激活和可靠性证明。原来可手读profile/package.json和node_modules，此项把信息汇入可搜索面板，并显示官方前缀分类和数量。贡献是方便浏览与统一呈现，不是新插件发现或运行监控算法；数量本身不证明每项能力已在宿主可用。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 10,\n            \"line_end\": 23,\n            \"observation\": \"作者目标是回答装了什么及元数据来源。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"client.js\",\n            \"line_start\": 183,\n            \"line_end\": 203,\n            \"observation\": \"面板搜索、重扫和profile标识。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"dependencies\"\n        ],\n        \"question\": \"profile、版本和描述怎样形成报告？\",\n        \"answer\": \"Host从DSH_PROFILE_DIR和dshHome/profiles枚举候选，DSH_PROFILE命中优先，否则选package.json修改时间最新者。scan优先dsh.profile.bundles，非空才用作清单，否则退到所有dependencies；从各node_modules/package.json取实际版本，缺失则回退声明版本。描述优先notes.json人工短句，其次市场中文缓存，最后包描述，descSource保留来源。报告缓存60秒，GET可force；市场缓存6小时，DSH_WEB_URL存在时异步fetch市场registry并写入本地缓存。客户端插入shell.overlay，按包名/名字/描述筛选。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 56,\n            \"line_end\": 82,\n            \"observation\": \"profile缺明确标识时按mtime猜选。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 181,\n            \"line_end\": 215,\n            \"observation\": \"清单、版本与描述三种来源。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 112,\n            \"line_end\": 147,\n            \"observation\": \"市场请求与本地写缓存。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"client.js\",\n            \"line_start\": 222,\n            \"line_end\": 233,\n            \"observation\": \"真实UI插槽注册。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"为什么不能把报告称作当前已激活插件真相？\",\n        \"answer\": \"bundles只是profile声明，不读取运行注册表、加载错误或pending服务状态；dependencies回退还可能包含没有装载的依赖。未明确环境变量时按mtime选profile可能选到另一配置。version在包缺失时显示声明版本去掉^/~，无法区分实际安装成功与期望范围。README称不联网且只显示作者原话，但当前代码会fetch宿主市场并写缓存，还以notes人工说明优先，因此文档边界与实现不符。hasTools按main/exports判断只可视作入口候选，不能等于模型工具存在。只读profile成立，纯无写入无请求不成立。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 56,\n            \"line_end\": 82,\n            \"observation\": \"mtime不是宿主当前scope。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 185,\n            \"line_end\": 215,\n            \"observation\": \"声明集合、版本fallback和hasTools启发式。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 126,\n            \"line_end\": 143,\n            \"observation\": \"真实HTTP读取和本地写。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 41,\n            \"line_end\": 50,\n            \"observation\": \"文档给出的不联网及加载列表保证与实现对照。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"哪些用户可试，怎样避免误读？\",\n        \"answer\": \"明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 170,\n            \"line_end\": 188,\n            \"observation\": \"缓存及清单回退。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 198,\n            \"line_end\": 215,\n            \"observation\": \"缺包时仍可产生元数据项。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"client.js\",\n            \"line_start\": 116,\n            \"line_end\": 125,\n            \"observation\": \"浏览器调用report处理结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"声明、安装和运行三层状态能否提升排障？\",\n        \"answer\": \"现实现已读取profile声明与实装包，却把两者压成单个version和total。未验证方向是分列declared、installed和runtime activation，运行层从宿主Loader查询并显示pending/failed原因；描述显示notes/market/package来源，profile由宿主scope给出而不猜mtime。增量在让缺包、未加载和服务缺依赖有不同动作，代价是增加宿主版本耦合和状态UI。最小实验设置缺包、disabled、服务pending和另一个最近修改profile，比较用户定位故障的准确率与耗时；若运行状态过期或更难理解，便不支持该改造。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 185,\n            \"line_end\": 215,\n            \"observation\": \"声明与包数据已有但未分状态。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 56,\n            \"line_end\": 82,\n            \"observation\": \"profile猜选是可替换边界。\"\n          }\n        ],\n        \"unknowns\": []\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-my-plugins（我装的插件）\\n\\n**顶栏一颗药丸：「我装的插件 · 23」。点开是你这个 DSH 到底装了什么。**\\n\\n每个插件一行：它的名字、版本、作者自己写的一句作用，自带的还是第三方，\\n带搜索框——装到三十几个以后靠翻是翻不完的。\\n\\n![面板](https://raw.githubusercontent.com/7gzgn/dsh-my-plugins/main/docs/panel.png)\\n\\n## 为什么会有这个东西\\n\\n装了二十几个插件之后，界面上的变化你天天看得见，但**谁也说不清到底装了什么**：\\n市场里点过的、朋友推荐的、自己 link 进来的，全混在一起。\\n\\n所以这颗药丸只回答一个问题：**我现在到底装了什么，它们各自是干什么的。**\\n\\n## 它怎么知道\\n\\n读 **当前 profile 的 `package.json`**——`dsh.profile.bundles` 是真正被加载的名单，\\n`dependencies` 给声明的版本，实装版本看 `node_modules/<包名>/package.json`。\\n\\n不去扫目录猜，也不用你填任何东西。插件的一句话作用取自它自己的 `package.json`，\\n**作者怎么写就怎么显示**，我们不替它编、不翻译、不打分。\\n\\n## 安装\\n\\n```bash\\ndsh plugin --profile web add dsh-my-plugins\\n```\\n\\n或者从市场里点安装。\\n\\n## 你会看到什么\\n\\n- 顶部药丸：`我装的插件 · N`，N 是实际加载的插件数（不含自己）\\n- 面板：`N 个 · 第三方 M`\\n- 每行：名字 · 版本 · `自带` / `第三方` · 一句描述\\n- 搜索框：按包名、名字、描述都能搜\\n- 「重扫」按钮：刚装完新插件不想重启时，强制重读一次\\n\\n## 边界\\n\\n- **只读**：不改 profile、不动插件文件、不联网\\n- 一个无参 GET 接口 `/dsh-my-plugins/report`，60 秒缓存，`?force=1` 强刷\\n- 读不到某个包的 `package.json` 时留空，不报错、不影响其他行\\n\\n## 已知的限制\\n\\n- 只在 **web / desktop 界面**有这个药丸；纯 CLI profile 看不到（但接口在）\\n- 显示的是\\\"被加载的插件\\\"，不含 DSH 内置的宿主能力\\n- 第三方插件的描述如果是英文，就显示英文——那是作者写的，我们不改\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-my-plugins\\\",\\n  \\\"version\\\": \\\"0.1.1\\\",\\n  \\\"description\\\": \\\"「我装的插件」：顶栏一颗药丸告诉你这个 DSH 到底加载了多少插件，点开是可搜索的清单——每个插件的名字、版本、作者自己写的一句作用，自带和第三方分开标。只读、零配置。 See what you actually installed: how many plugins your profile loads, each with its version and the author's own one-liner, searchable.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./lib/index.js\\\",\\n    \\\"./client\\\": \\\"./client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"client.js\\\",\\n    \\\"test\\\",\\n    \\\"notes.json\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"plugins\\\",\\n    \\\"installed\\\",\\n    \\\"inventory\\\",\\n    \\\"list\\\",\\n    \\\"panel\\\",\\n    \\\"我装的插件\\\",\\n    \\\"插件清单\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"dsh\\\": {\\n    \\\"compatibility\\\": {\\n      \\\"dshReleases\\\": {\\n        \\\"0.2.0-rc.2\\\": \\\"compatible\\\",\\n        \\\"0.2.1-rc.2\\\": \\\"compatible\\\"\\n      }\\n    },\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"immediately\\\": true,\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-client-ui-slots\\\"\\n      ]\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\">=4.0.4 <5.0.0\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-slots\\\": \\\">=0.2.0-rc.2 <0.3.0-0\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/dsh-client-ui-slots\\\": {\\n      \\\"optional\\\": true\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/**\\n * dsh-my-plugins — host half.\\n *\\n * 回答一个很朴素的问题：我这个 DSH 到底装了什么？\\n *\\n * 真相源是 **profile 的 package.json**（`dsh.profile.bundles` 决定加载哪些，\\n * `dependencies` 给出声明的版本），不是去源码目录里猜。每个插件的一句话\\n * 作用取自它自己的 package.json（作者写的），我们不做二次解释。\\n *\\n * 只读：注册一个无参 GET 接口，60 秒缓存，?force=1 强刷。\\n */\\n\\nimport { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'node:fs';\\nimport { join, dirname } from 'node:path';\\nimport { fileURLToPath } from 'node:url';\\nimport { homedir } from 'node:os';\\n\\nexport const name = 'dsh-my-plugins';\\n\\nconst HERE_DIR = dirname(fileURLToPath(import.meta.url));\\n\\nconst NS = 'dsh-my-plugins';\\nconst CACHE_MS = 60_000;\\n\\nfunction dshHome() {\\n  return process.env.DSH_HOME || join(homedir(), '.dsh');\\n}\\n\\nfunction readJson(path) {\\n  try {\\n    return JSON.parse(readFileSync(path, 'utf8'));\\n  } catch {\\n    return null;\\n  }\\n}\\n\\n/** 候选 profile 目录：环境变量优先，其次 profiles/ 下所有。 */\\nfunction profileCandidates() {\\n  const out = [];\\n  const push = (dir) => {\\n    if (!dir) return;\\n    if (!out.includes(dir) && existsSync(join(dir, 'package.json'))) out.push(dir);\\n  };\\n  push(process.env.DSH_PROFILE_DIR);\\n  const root = join(dshHome(), 'profiles');\\n  try {\\n    for (const e of readdirSync(root, { withFileTypes: true })) {\\n      if (e.isDirectory()) push(join(root, e.name));\\n    }\\n  } catch {\\n    /* 没有 profiles 目录就算了 */\\n  }\\n  return out;\\n}\\n\\n/** 选当前 profile：DSH_PROFILE 命中优先，否则取 package.json 最新修改的那个。 */\\nfunction pickProfile() {\\n  const dirs = profileCandidates();\\n  if (!dirs.length) return null;\\n  const want = process.env.DSH_PROFILE;\\n  if (want) {\\n    for (const d of dirs) {\\n      const pkg = readJson(join(d, 'package.json'));\\n      if (pkg && pkg.name === `dsh-profile-${want}`) return { dir: d, pkg };\\n      if (d.endsWith(`profiles${'\\\\\\\\'}${want}`) || d.endsWith(`profiles/${want}`)) {\\n        if (pkg) return { dir: d, pkg };\\n      }\\n    }\\n  }\\n  let best = null;\\n  for (const d of dirs) {\\n    const pkg = readJson(join(d, 'package.json'));\\n    if (!pkg) continue;\\n    let mtime = 0;\\n    try {\\n      mtime = statSync(join(d, 'package.json')).mtimeMs;\\n    } catch {\\n      /* ignore */\\n    }\\n    if (!best || mtime > best.mtime) best = { dir: d, pkg, mtime };\\n  }\\n  return best ? { dir: best.dir, pkg: best.pkg } : null;\\n}\\n\\nfunction isOfficial(id) {\\n  return id.startsWith('@deepseek-ai/');\\n}\\n\\n/* ------------------------------------------------------------------ */\\n/* 市场登记表：中文描述的来源                                            */\\n/*                                                                     */\\n/* 作者在 npm 包里写的 description 常是英文（给 npm 看的），而市场登记表  */\\n/* 里几乎每个插件都有中文 description.zh（给人看的）。所以面板优先用市场 */\\n/* 的中文，取不到才退回包自己的描述。                                    */\\n/* ------------------------------------------------------------------ */\\n\\nconst REGISTRY_CACHE = join(dshHome(), 'dsh-my-plugins-registry.json');\\nconst REGISTRY_TTL = 6 * 3600_000;\\nconst NOTES_PATH = join(HERE_DIR, '..', 'notes.json');\\nlet refreshing = false;\\n\\n/** 人写的一句话中文（优先于任何自动来源）。 */\\nfunction loadNotes() {\\n  try {\\n    const j = JSON.parse(readFileSync(NOTES_PATH, 'utf8'));\\n    return j && typeof j === 'object' ? j : {};\\n  } catch {\\n    return {};\\n  }\\n}\\n\\nfunction loadZhMap() {\\n  try {\\n    const c = JSON.parse(readFileSync(REGISTRY_CACHE, 'utf8'));\\n    if (c && c.map && typeof c.at === 'number') {\\n      if (Date.now() - c.at > REGISTRY_TTL) refreshZhMap();\\n      return c.map;\\n    }\\n  } catch {\\n    /* 还没有缓存 */\\n  }\\n  refreshZhMap();\\n  return {};\\n}\\n\\nasync function refreshZhMap() {\\n  if (refreshing) return;\\n  const base = process.env.DSH_WEB_URL;\\n  if (!base) return;\\n  refreshing = true;\\n  try {\\n    const r = await fetch(`${base}/dsh-market/registry`, { headers: { accept: 'application/json' } });\\n    if (!r.ok) return;\\n    const j = await r.json();\\n    const list = j?.registry?.plugins;\\n    if (!Array.isArray(list)) return;\\n    const map = {};\\n    for (const p of list) {\\n      const zh = p?.description?.zh;\\n      if (p?.name && typeof zh === 'string' && zh.trim()) map[p.name] = zh.trim();\\n    }\\n    writeFileSync(REGISTRY_CACHE, JSON.stringify({ at: Date.now(), map }), 'utf8');\\n    cache.at = 0; // 下次请求重新扫描，这次就能拿到中文\\n  } catch {\\n    /* 拿不到登记表就退回包自己的描述，不影响使用 */\\n  } finally {\\n    refreshing = false;\\n  }\\n}\\n\\nfunction clip(s, n = 160) {\\n  const t = String(s || '').trim();\\n  return t.length > n ? t.slice(0, n - 1) + '…' : t;\\n}\\n\\n/** 从一个包里取「人话」：作者写的 displayName / dsh.name 优先，其次 description。 */\\nfunction humanize(pkg, id) {\\n  const title =\\n    (pkg && typeof pkg.dsh?.name === 'string' && pkg.dsh.name.trim()) ||\\n    (pkg && typeof pkg.displayName === 'string' && pkg.displayName.trim()) ||\\n    '';\\n  let desc = (pkg && typeof pkg.description === 'string' && pkg.description.trim()) || '';\\n  // 双语描述取前半段（很多插件写成「中文 · English」）\\n  if (desc.length > 160) desc = desc.slice(0, 158) + '…';\\n  return { title: title || id, desc };\\n}\\n\\nlet cache = { at: 0, data: null };\\n\\nexport function scan(force) {\\n  const now = Date.now();\\n  if (!force && cache.data && now - cache.at < CACHE_MS) return cache.data;\\n\\n  const picked = pickProfile();\\n  if (!picked) {\\n    const empty = { ok: false, error: '找不到 profile（没有 ~/.dsh/profiles/*/package.json）', profile: null, plugins: [], total: 0, thirdParty: 0 };\\n    cache = { at: now, data: empty };\\n    return empty;\\n  }\\n\\n  const { dir, pkg } = picked;\\n  const zhMap = loadZhMap();\\n  const notes = loadNotes();\\n  const profileName = String(pkg.name || '').replace(/^dsh-profile-/, '') || 'unknown';\\n  const deps = pkg.dependencies && typeof pkg.dependencies === 'object' ? pkg.dependencies : {};\\n  const declared = Array.isArray(pkg.dsh?.profile?.bundles) ? pkg.dsh.profile.bundles : [];\\n  // bundles 是「实际加载」的名单；万一没有，退回到 dependencies 里所有插件\\n  const ids = declared.length ? declared : Object.keys(deps);\\n\\n  const seen = new Set();\\n  const plugins = [];\\n  for (const rawId of ids) {\\n    const id = String(rawId);\\n    if (!id || seen.has(id)) continue;\\n    seen.add(id);\\n    if (id === NS) continue; // 自己不列自己\\n\\n    const nm = join(dir, 'node_modules', id, 'package.json');\\n    const modPkg = existsSync(nm) ? readJson(nm) : null;\\n    const { title, desc } = humanize(modPkg, id);\\n    // 优先级：人写的一句话 > 市场登记表的中文 > 包自己的描述\\n    const marketZh = typeof zhMap[id] === 'string' ? clip(zhMap[id]) : '';\\n    const humanZh = typeof notes[id] === 'string' ? clip(notes[id], 120) : '';\\n    const finalDesc = humanZh || marketZh || desc;\\n    const descSource = humanZh ? 'human' : marketZh ? 'market' : desc ? 'package' : 'none';\\n    const declaredVersion = deps[id];\\n    plugins.push({\\n      id,\\n      title,\\n      version: (modPkg && modPkg.version) || (typeof declaredVersion === 'string' ? declaredVersion.replace(/^[~^]/, '') : ''),\\n      desc: finalDesc,\\n      descSource,\\n      official: isOfficial(id),\\n      hasClient: Boolean(modPkg && (modPkg.dsh?.client || modPkg.exports?.['./client'] || modPkg.exports?.client)),\\n      hasTools: Boolean(modPkg && (modPkg.main || modPkg.exports?.['.'])),\\n    });\\n  }\\n\\n  plugins.sort((a, b) => {\\n    if (a.official !== b.official) return a.official ? -1 : 1;\\n    return a.id.localeCompare(b.id);\\n  });\\n\\n  const thirdParty = plugins.filter((p) => !p.official).length;\\n  const data = {\\n    ok: true,\\n    profile: { name: profileName, dir },\\n    total: plugins.length,\\n    thirdParty,\\n    plugins,\\n  };\\n  cache = { at: now, data };\\n  return data;\\n}\\n\\nexport function apply(ctx) {\\n  try {\\n    if (typeof ctx?.inject === 'function') {\\n      ctx.inject(['webServer'], (host) => {\\n        host.effect(() =>\\n          host.webServer.register(\\n            {\\n              kind: 'exact',\\n              path: `/${NS}/report`,\\n              handler: (req, res) => {\\n                let force = false;\\n                try {\\n                  force = new URL(req.url || '/', 'http://local').searchParams.get('force') === '1';\\n                } catch {\\n                  force = false;\\n                }\\n                let body;\\n                try {\\n                  body = JSON.stringify(scan(force));\\n                } catch (err) {\\n                  body = JSON.stringify({ ok: false, error: String(err && err.message ? err.message : err), plugins: [], total: 0, thirdParty: 0 });\\n                }\\n                res.writeHead(200, {\\n                  'content-type': 'application/json; charset=utf-8',\\n                  'cache-control': 'no-store',\\n                });\\n                res.end(body);\\n              },\\n            },\\n            `${NS}: report`,\\n          ),\\n        );\\n      });\\n    }\\n  } catch {\\n    /* 没有 webServer：面板缺失，宿主照常运行 */\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"client.js\",\n      \"content\": \"/**\\n * dsh-my-plugins — client half.\\n *\\n * 顶部一颗小药丸：「我装的插件 · N」。点开是一整份清单：\\n * 每个插件一行，写着它的中文名（作者给的）或包名、版本、作者自己的一句\\n * 描述，自带的和第三方的分开标。带一个搜索框——插件多了以后靠翻是翻不完的。\\n *\\n * 数据来自宿主只读接口 GET /dsh-my-plugins/report（60 秒缓存，?force=1 强刷）。\\n */\\n\\nwindow.__ModuleLoader__.load({\\n  id: 'dsh-my-plugins',\\n  factory(require) {\\n    const React = require('react');\\n    const h = React.createElement;\\n    const { useCallback, useEffect, useMemo, useState } = React;\\n\\n    const NS = 'dsh-my-plugins';\\n\\n    const css = {\\n      chip: {\\n        position: 'fixed',\\n        top: 46,\\n        left: '50%',\\n        transform: 'translateX(-50%)',\\n        zIndex: 2147483000,\\n        height: 24,\\n        padding: '0 10px',\\n        borderRadius: 12,\\n        border: '1px solid rgba(255,255,255,0.14)',\\n        background: 'rgba(28,28,34,0.92)',\\n        color: '#d9d9e3',\\n        fontSize: 12,\\n        lineHeight: '22px',\\n        cursor: 'pointer',\\n        userSelect: 'none',\\n        WebkitAppRegion: 'no-drag',\\n        boxShadow: '0 2px 10px rgba(0,0,0,0.35)',\\n      },\\n      panel: {\\n        position: 'fixed',\\n        top: 76,\\n        left: '50%',\\n        transform: 'translateX(-50%)',\\n        zIndex: 2147483001,\\n        width: 460,\\n        maxHeight: '68vh',\\n        overflow: 'auto',\\n        borderRadius: 12,\\n        border: '1px solid rgba(255,255,255,0.12)',\\n        background: 'rgba(24,24,29,0.97)',\\n        color: '#e6e6ee',\\n        fontSize: 12,\\n        boxShadow: '0 12px 40px rgba(0,0,0,0.55)',\\n        padding: '10px 12px',\\n      },\\n      head: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, gap: 8 },\\n      input: {\\n        flex: '1 1 auto',\\n        minWidth: 0,\\n        height: 24,\\n        padding: '0 8px',\\n        borderRadius: 6,\\n        border: '1px solid rgba(255,255,255,0.14)',\\n        background: 'rgba(255,255,255,0.04)',\\n        color: '#e6e6ee',\\n        fontSize: 12,\\n        outline: 'none',\\n      },\\n      row: { padding: '7px 0', borderTop: '1px solid rgba(255,255,255,0.06)' },\\n      line1: { display: 'flex', alignItems: 'baseline', gap: 6 },\\n      title: { fontWeight: 600, wordBreak: 'break-all' },\\n      ver: { color: '#6f6f7d', fontSize: 11, flex: '0 0 auto' },\\n      tag: {\\n        fontSize: 10,\\n        padding: '0 5px',\\n        borderRadius: 4,\\n        border: '1px solid rgba(255,255,255,0.14)',\\n        color: '#9a9aa8',\\n        flex: '0 0 auto',\\n      },\\n      tagMine: { borderColor: 'rgba(120,190,255,0.45)', color: '#8fc4ff' },\\n      enTag: {\\n        fontSize: 10,\\n        padding: '0 4px',\\n        marginRight: 4,\\n        borderRadius: 3,\\n        background: 'rgba(255,255,255,0.06)',\\n        color: '#7a7a88',\\n      },\\n      desc: { color: '#9aa0ac', fontSize: 11, marginTop: 3, lineHeight: 1.45, wordBreak: 'break-word' },\\n      btn: {\\n        height: 22,\\n        padding: '0 8px',\\n        borderRadius: 6,\\n        border: '1px solid rgba(255,255,255,0.16)',\\n        background: 'transparent',\\n        color: '#cfcfda',\\n        fontSize: 11,\\n        cursor: 'pointer',\\n        flex: '0 0 auto',\\n      },\\n    };\\n\\n    function hasCn(s) {\\n      return /[\\\\u4e00-\\\\u9fa5]/.test(String(s || ''));\\n    }\\n\\n    function MyPlugins() {\\n      const [open, setOpen] = useState(false);\\n      const [data, setData] = useState(null);\\n      const [err, setErr] = useState('');\\n      const [busy, setBusy] = useState(false);\\n      const [q, setQ] = useState('');\\n\\n      const load = useCallback(async (force) => {\\n        setBusy(true);\\n        try {\\n          const r = await fetch(`/${NS}/report` + (force ? '?force=1' : ''), { credentials: 'same-origin' });\\n          const j = await r.json();\\n          if (j && j.ok) {\\n            setData(j);\\n            setErr('');\\n          } else {\\n            setErr((j && j.error) || 'failed');\\n          }\\n        } catch {\\n          setErr('network');\\n        }\\n        setBusy(false);\\n      }, []);\\n\\n      useEffect(() => {\\n        if (open && !data) load(false);\\n      }, [open, data, load]);\\n\\n      const plugins = useMemo(() => {\\n        if (!data) return [];\\n        const all = data.plugins || [];\\n        const k = q.trim().toLowerCase();\\n        if (!k) return all;\\n        return all.filter(\\n          (p) =>\\n            String(p.id).toLowerCase().includes(k) ||\\n            String(p.title || '').toLowerCase().includes(k) ||\\n            String(p.desc || '').toLowerCase().includes(k),\\n        );\\n      }, [data, q]);\\n\\n      const chipText = data ? `我装的插件 · ${data.total}` : '我装的插件';\\n\\n      const chip = h(\\n        'div',\\n        { style: css.chip, onClick: () => setOpen((v) => !v), title: '点开看每个插件是干什么的' },\\n        chipText,\\n      );\\n\\n      if (!open) return chip;\\n\\n      const rows = plugins.map((p) =>\\n        h(\\n          'div',\\n          { key: p.id, style: css.row },\\n          h(\\n            'div',\\n            { style: css.line1 },\\n            h('span', { style: css.title }, p.title || p.id),\\n            p.version ? h('span', { style: css.ver }, 'v' + p.version) : null,\\n            h('span', { style: p.official ? css.tag : { ...css.tag, ...css.tagMine } }, p.official ? '自带' : '第三方'),\\n          ),\\n          p.title && p.title !== p.id ? h('div', { style: { ...css.desc, color: '#6f7480' } }, p.id) : null,\\n          p.desc\\n            ? h(\\n                'div',\\n                { style: css.desc },\\n                hasCn(p.desc) ? null : h('span', { style: css.enTag }, '英文原文'),\\n                p.desc,\\n              )\\n            : h('div', { style: { ...css.desc, color: '#5d5d6b' } }, '（这个插件没写描述）'),\\n        ),\\n      );\\n\\n      const panel = h(\\n        'div',\\n        { style: css.panel },\\n        h(\\n          'div',\\n          { style: css.head },\\n          h('div', { style: { flex: '0 0 auto' } }, data ? `${data.total} 个 · 第三方 ${data.thirdParty}` : '读取中…'),\\n          h('input', {\\n            style: css.input,\\n            value: q,\\n            placeholder: '搜包名 / 名字 / 描述',\\n            onChange: (e) => setQ(e.target.value),\\n          }),\\n          h('button', { style: css.btn, onClick: () => load(true), disabled: busy }, busy ? '刷新中' : '重扫'),\\n          h('button', { style: css.btn, onClick: () => setOpen(false) }, '收起'),\\n        ),\\n        err ? h('div', { style: { color: '#e06a6a' } }, '出错：' + err) : null,\\n        data && data.profile\\n          ? h('div', { style: { color: '#6f7480', fontSize: 11, marginBottom: 4 } }, `配置：${data.profile.name}`)\\n          : null,\\n        rows.length ? rows : h('div', { style: { color: '#9a9aa8', padding: '8px 0' } }, data ? '没有匹配的插件' : '还没有数据，点「重扫」'),\\n      );\\n\\n      return h(React.Fragment, null, chip, panel);\\n    }\\n\\n    class Guard extends React.Component {\\n      constructor(props) {\\n        super(props);\\n        this.state = { failed: false };\\n      }\\n      static getDerivedStateFromError() {\\n        return { failed: true };\\n      }\\n      render() {\\n        return this.state.failed ? null : this.props.children;\\n      }\\n    }\\n\\n    return {\\n      name: NS,\\n      inject: ['slots'],\\n      apply(ctx) {\\n        ctx.slots.inject('shell.overlay', () =>\\n          ctx.slots.register(\\n            { name: 'shell.overlay', id: NS, order: 896 },\\n            function MyPluginsSlot() {\\n              return h(Guard, null, h(MyPlugins));\\n            },\\n          ),\\n        );\\n      },\\n    };\\n  },\\n});\\n\"\n    },\n    {\n      \"path\": \"notes.json\",\n      \"content\": \"{\\n  \\\"@deepseek-ai/dsh-base\\\": \\\"DSH 的内核：模型、工具、会话这套基本功，拆了它什么都不剩\\\",\\n  \\\"@deepseek-ai/dsh-web-app\\\": \\\"你现在看的这个网页界面本身\\\",\\n  \\\"@michengai/dsh-archive-manager\\\": \\\"把旧会话归档或彻底删掉，日志坏了还能查出哪儿坏了\\\",\\n  \\\"dsh-auto-approve\\\": \\\"审批弹框自动答「允许一次」，少点几下\\\",\\n  \\\"dsh-better-sidebar\\\": \\\"左边那一栏：文件树、编辑器、改动记录、任务\\\",\\n  \\\"dsh-builtin-browser\\\": \\\"给 AI 一个真浏览器，能自己开网页、点按钮、填表\\\",\\n  \\\"dsh-computer-use-win\\\": \\\"让 AI 操作 Windows 窗口：截图、点鼠标、敲键盘\\\",\\n  \\\"dsh-douyin-publish\\\": \\\"一段视频送到抖音 / B站投稿页，默认停在发布前不动手\\\",\\n  \\\"dsh-gui-guard\\\": \\\"点鼠标打字前先确认窗口能操作——最小化、不在前台、缩放都替你摆平\\\",\\n  \\\"dsh-infinite-gen-5\\\": \\\"逆向工具台：拆安装包、反编译、无头调试\\\",\\n  \\\"dsh-lighthouse\\\": \\\"一眼看全我们的作品：版本、star、市场收没收、下载量\\\",\\n  \\\"dsh-meme\\\": \\\"表情包：聊天时一键甩图，还能自己学新图\\\",\\n  \\\"dsh-mode-switch\\\": \\\"两个开关：思考多深、注入哪套提示词\\\",\\n  \\\"dsh-my-plugins\\\": \\\"就是它自己：顶栏一颗药丸，点开看你现在装了什么\\\",\\n  \\\"dsh-notify-me\\\": \\\"你不在页面上时，有事弹系统通知喊你\\\",\\n  \\\"dsh-opencode-palette\\\": \\\"38 套配色皮肤，一键换掉整个界面\\\",\\n  \\\"dsh-pet\\\": \\\"常驻界面的鲸鱼娘：会动、能摸头、喂小鱼干养熟\\\",\\n  \\\"dsh-purge\\\": \\\"把提示词的权威性洗成可审查的补丁，管住提示词的边界\\\",\\n  \\\"dsh-restart-dock\\\": \\\"界面上一小框：一键重启宿主、一键刷新页面\\\",\\n  \\\"dsh-restart-planner\\\": \\\"让我自己安排重启，用完了还能接着刚才的事干\\\",\\n  \\\"dsh-slipway\\\": \\\"一条命令把插件发到 GitHub，顺手开一条市场收录 PR\\\",\\n  \\\"dsh-whale-widget\\\": \\\"右下角小鲸鱼：DeepSeek 余额和今天花了多少\\\",\\n  \\\"dshmarket\\\": \\\"插件市场，逛和装都在里面\\\",\\n  \\\"meow-memory\\\": \\\"跨会话记忆：换个窗口我照样记得之前的事\\\"\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"a6ac5e79e9f246c322060163bc794dba9648bff4\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"ccff86a0acf9b318da4eb48f6f7dc34f9835bc47888476cdd792d4f07c65c2c4\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 510,\n        \"code\": 344,\n        \"comments\": 133,\n        \"blank\": 41\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 55,\n        \"words\": 518\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 69,\n        \"code\": 49,\n        \"comments\": 8,\n        \"blank\": 12\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [\n        {\n          \"path\": \"test/registry-smoke.mjs\",\n          \"line\": 22,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"ui\": [\n        {\n          \"path\": \"client.js\",\n          \"line\": 227,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"shell.overlay\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"shell.overlay\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "561832600a737dc92630f47433bcf4dacb014979fb98f14d4a1c06a7486c4206"
+        }
+    },
+    "unavailable_artifacts": []
+}
