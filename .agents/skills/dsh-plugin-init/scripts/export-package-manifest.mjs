@@ -2,6 +2,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ROOT } from '../../_shared/scripts/plugin-data.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
@@ -78,6 +79,17 @@ function parseManifest(text) {
     return packages;
 }
 
+export function mergePackages(remotePackages, verifiedPackages) {
+    const remote = new Set(validatePackages(remotePackages));
+    const verified = new Set(validatePackages(verifiedPackages));
+    return {
+        packages: validatePackages([...new Set([...remote, ...verified])].sort(bytewise)),
+        already_present: verifiedPackages.filter((packageName) => remote.has(packageName)).length,
+        added: verifiedPackages.filter((packageName) => !remote.has(packageName)).length,
+        retained: remotePackages.filter((packageName) => !verified.has(packageName)).length
+    };
+}
+
 function buildManifest(workPath) {
     const work = validateWork(readWork(workPath));
     const snapshot = readSnapshotStorage(resolve(ROOT, SNAPSHOT));
@@ -136,7 +148,7 @@ async function writeRemoteManifest(repository, path, branch, token, blobSha, tex
         token,
         blobSha,
         text,
-        message: 'Data(repo/manifest): 同步已核实 npm 包名'
+        message: 'Data(repo/manifest): 追加已核实 npm 包名'
     });
 }
 
@@ -151,10 +163,11 @@ async function main() {
         }
     });
     const workPath = resolve(ROOT, values.work ?? defaultWorkPath());
-    const { packages, summary } = buildManifest(workPath);
-    const text = renderManifest(packages);
+    const { packages: verifiedPackages, summary } = buildManifest(workPath);
     const token = githubToken();
     const remote = await readRemoteManifest(values.repo, values.path, values.branch, token);
+    const merged = mergePackages(remote.packages, verifiedPackages);
+    const text = renderManifest(merged.packages);
     const changed = remote.text !== text;
     let commit = null;
     if (values.apply && changed)
@@ -167,6 +180,11 @@ async function main() {
                 branch: values.branch,
                 path: values.path,
                 remote_package_names: remote.packages.length,
+                already_present_package_names: merged.already_present,
+                added_package_names: merged.added,
+                retained_remote_package_names: merged.retained,
+                removed_package_names: 0,
+                output_package_names: merged.packages.length,
                 remote_blob_sha: remote.blob_sha,
                 output_sha256: sha256(text),
                 changed,
@@ -180,4 +198,4 @@ async function main() {
     );
 }
 
-await main();
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main();
