@@ -24,25 +24,21 @@
 | [dsh-compaction-route](#plugin-1391040578-root) | 仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。 | 明确主备provider/原历史恢复的维护者可限范围试用，先核失败分类、全部成本和摘要保真。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。 | 仅隔离网络、低风险动作且设备端认证明确时观察；危险动作须先审共享库及设备实现。 |
 | [dsh-gov](#plugin-1336647931-root) | 为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。 | 观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。 |
-| [dsh-integration-settings](#plugin-1429103083-root) | 在设置页管理 MCP 网关、凭据探测与 thinking 配置。 | 建议观察。 |
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。 | 仅可在无敏感数据的隔离测试环境验证。 |
 | [dsh-model](#plugin-1410395082-root) | 整合模型来源、统一API中转、组合切换和每日签到，并提供DSH管理界面与命令行。 | 先在非关键任务核对单来源工具/图像兼容，再加入能力相近的combo；检查流中断和卸载残余后限定试用。 |
 | [dsh-model-auto-enricher](#plugin-1425159954-root) | 按模型名称规则批量补齐 DSH 上下文、输出、图片与推理配置并默认自动写盘。 | 默认不推荐自动模式。 |
 | [dsh-model-channel-manager](#plugin-1358316691-root) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。 |
-| [dsh-model-failover](#plugin-1415863200-root) | 为 DSH 添加按优先级切换真实模型的 provider 路由、隔离状态与继续控制。 | 可用只读小任务和有上限预算试用。 |
 | [dsh-model-info-fill](#plugin-1358816037-root) | 从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。 | 先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。 |
 | [dsh-model-manager](#plugin-1349266980-root) | 在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。 | 先在隔离端口登记已有服务、保存参数并核对测速口径。 |
 | [dsh-ollama-cloud](#plugin-1394197658-root) | 接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。 | 适合已有Ollama凭据且可锁宿主版本的用户，以短文本和一个可丢弃工具任务试接入。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。 | 先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。 |
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。 | 仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
-| [dsh-plugin-adapter](#plugin-1374274469-root) | 把匿名 Zen 模型通道接为 DSH 原生 LlmAdapter，附目录回退和可选 IP 池。 | 确认当前上游允许的接入和模型，固定版本先直连试用；只有可信代理和明确出口需求才开启池。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。 | 仅受控反代部署且双层授权明确时试用；先查官方 trusted-host，验未授权浏览器被拒。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。 | 建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 为DSH提供直连、系统及HTTP/SOCKS手工代理设置，切换Undici全局路由并可导出子进程环境。 | 可信单一管理者且允许失败回原出口可试用。 |
-| [dsh-plugin-quota](#plugin-1400927706-root) | 会话 token/估算花费仪表与趋势预测插件，提供系统提示、命令、Agent 工具及跨插件摘要。 | 限定为会话用量趋势工具；需要逐项验证价格、投影、清零和写盘后再让其他插件消费 summary.json。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。 | 先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。 |
 | [dsh-recipe](#plugin-1336583700-root) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 作为选型草案试用，补齐profile/版本/配置再执行。 |
 | [dsh-remote-ssh](#plugin-1384810201-root) | 以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。 | 用最小权限只读账号与固定命令，测试远端参数解释；变更另走人工审批。 |
@@ -99,7 +95,7 @@
 | [plugin-usage-billing](#plugin-1363429979-plugin-usage-billing) | 从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。 | 先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | 可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。 |
-| [元冰可 · 企业 AI 资源管理平台](#plugin-1416699252-root) | 以插件化控制面统一管理Agent、应用、身份、审计、连接器、MCP、技能和用量。 | 具备平台工程团队者可观察并从最小治理内核评估，不宜仅凭工具数量直接作为生产控制面。 |
+| [元冰可 · 企业 AI 资源管理平台](#plugin-1416699252-root) | 以插件化控制平面统一管理企业 MCP、Skill、Agent、AI 应用、身份、审计与用量。 | 观察；有平台团队、真实匿名案件和恢复责任人后，从一种资源建立闭环，暂不全栈生产铺开。 |
 
 <a id="plugin-1428034710-root"></a>
 
@@ -297,20 +293,6 @@
 
 > **建议**：管理员签发的版本化政策、明确usage delta/预算预留与关联审计收据，按自改政策/计量/坏盘反例检验，未验证。详见[Q05](../../plugins/863683348--dsh-gov/INSIGHT.md#research-q05)。
 
-<a id="plugin-1429103083-root"></a>
-
-## [dsh-integration-settings](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md)
-
-
-
-> **用途**：面向集中配置 MCP 网关和 thinking 的用户。输入是目标 profile、端点/凭据和策略；合格结果是只写正确 patch 管理块，重启读回一致，探测不泄密且可恢复。替代是手工 YAML。
-
-> **亮点**：提供 profile 定位、受管块合并、网关表单/探测与 thinking 选项；贡献是 DSH 配置与 UI 接线，不是网关协议。 参见[Q03](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q03)。
-
-> **思考**：可能格式正确却写错 profile，或覆盖用户并发编辑。探测会外发凭据；保存不等于重启生效。压缩客户端也降低审计透明度。 参见[Q04](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q04)。
-
-> **建议**：记录真实路径/内容哈希，生成脱敏 diff、重启要求和回滚包；确认后 CAS 写，探测另授权。若并发错写不归零则否定。 参见[Q08](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q08)。
-
 <a id="plugin-1366370702-root"></a>
 
 ## [dsh-llm-balance](../../plugins/aliengene--dsh-llm-balance-siderbar/INSIGHT.md)
@@ -380,20 +362,6 @@
 > **思考**：用户是否把totalBudgetMs理解为请求硬截止会改变可预期性。组层在开新尝试前检查剩余预算，streamAttempt内部只检查首响应/空闲超时，并不接收组截止时间；持续有chunk的长流可能越过组预算。切候选还可能改变模型行为与费用，健康成功只代表流终止成功，不证明合格业务结果。[Q02](../../plugins/arcaneorion--dsh-model-channel-manager/INSIGHT.md#research-q02)
 
 > **建议**：未验证方向是把组剩余预算传入每次尝试并合成硬截止信号，另按任务能力和成本约束建立可替代候选集。用持续心跳长流、首响应失败和能力不等价模型对照现版，要求截止明确且合格任务率不降；若硬截止损失更多可接受结果或约束成本高于手工换模型，则否定。[Q04](../../plugins/arcaneorion--dsh-model-channel-manager/INSIGHT.md#research-q04)
-
-<a id="plugin-1415863200-root"></a>
-
-## [dsh-model-failover](../../plugins/airisey--dsh-model-failover/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover)
-
-> **用途**：面向已配置多个供应商、遇到额度或连接失败需要继续任务的用户；合格结果是不拼接不同候选的可见答案，且失败、费用和实际模型可追溯。
-
-> **亮点**：相对失败后人工换模型，增量是流级提交点、错误分类与队列状态组合，避免切换前把两个候选的文本混写；包装provider模式有已知同类来源，不宣称首次。[Q01](../../plugins/airisey--dsh-model-failover/INSIGHT.md#research-q01)
-
-> **思考**：不可见不代表上游没有计费或计算，长reasoning失败后丢弃再调用会增加成本和等待；可见文本/工具chunk后就不再隐式切换，不能承诺任务全程无中断。[Q03](../../plugins/airisey--dsh-model-failover/INSIGHT.md#research-q03)
-
-> **建议**：未验证假设是按任务预算和候选失败成本决定重试/切换，并展示累计丢弃调用资源，可减少盲重试；固定预算故障对照中合格率不增或等待更长则否定。[Q05](../../plugins/airisey--dsh-model-failover/INSIGHT.md#research-q05)
 
 <a id="plugin-1358816037-root"></a>
 
@@ -479,20 +447,6 @@
 
 > **建议**：未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。 详见[Q08](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q08)。
 
-<a id="plugin-1374274469-root"></a>
-
-## [dsh-plugin-adapter](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md)
-
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
-
-> **用途**：DSH 用户希望在模型选择器直接使用上游匿名通道；合格结果须当前可用且符合上游接入条件。
-
-> **亮点**：在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md#research-q02)。
-
-> **思考**：静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md#research-q03)。
-
-> **建议**：可把目录来源、模型请求结果和出口健康联成每模型可信度闸门；通过目录变更与故障注入对照误展示、误归因及成本，尚未实现。详见[Q05](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md#research-q05)。
-
 <a id="plugin-1394489199-root"></a>
 
 ## [dsh-plugin-loopback-trust](../../plugins/6mt--dsh-plugin-loopback-trust/INSIGHT.md)
@@ -548,20 +502,6 @@
 > **思考**：无效配置先撤旧代理再回baseline，恢复缺所有权比较，不能保证严格禁直连或跨插件恢复。详见[Q03](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md#research-q03)。
 
 > **建议**：研究先构建再替换、失败关闭、dispatcher所有权和环境逐键恢复，比较误出口和恢复工时。当前未验证。详见[Q05](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md#research-q05)。
-
-<a id="plugin-1400927706-root"></a>
-
-## [dsh-plugin-quota](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) [![npm 30d 126](https://img.shields.io/static/v1?label=npm+30d&message=126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
-
-> **用途**：长会话观察 token 消耗与预计窗口/预算余量；预算是提示而非硬限制。详见[Q01](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q01)。
-
-> **亮点**：把实时用量注入模型、提供按模型榜单和 summary.json 跨插件接口。详见[Q01](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q01)。
-
-> **思考**：billingDbPath 的校准只影响显示配置，未改变真实累计/预测；/qm-reset 不清投影，可能继续显示旧用量。详见[Q03](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q03)及[Q04](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q04)。
-
-> **建议**：未实现的改进：统一价格来源、让 reset 进入投影语义、展示时明确数据刷新与今日重启边界。详见[Q05](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q05)。
 
 <a id="plugin-1367305514-root"></a>
 
@@ -1351,15 +1291,15 @@
 
 ## [元冰可 · 企业 AI 资源管理平台](../../plugins/01men--ybkkasi/INSIGHT.md)
 
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/01men/ybkkasi)
 
+> **用途**：平台团队治理多部门 AI 资源，以授权调用、真实交付、用量和审计一致为结果。
 
-> **用途**：需要自建企业 AI 资源控制面并能承担部署与治理工作的运维和平台团队可用它在一套插件化平台内管理企业 Agent、应用、身份权限、连接器、MCP、技能市场、审计和用量；合格结果是资源、权限、调用、审计和成本有一致身份与状态，可追踪失败并按组织边界操作。详见[Q01](../../plugins/01men--ybkkasi/INSIGHT.md#research-q01)。
+> **亮点**：相比分散 IAM/网关/审计脚本，提供共享主体和调用状态的插件化治理面；具体支点是 permit 与步骤账本贯穿执行。不是独立的新治理算法。见 [Q01](../../plugins/01men--ybkkasi/INSIGHT.md#research-q01)、[Q02](../../plugins/01men--ybkkasi/INSIGHT.md#research-q02)。
 
-> **亮点**：以共享平台核心和插件总线统一多个治理域，并同时提供 DSH 插件与独立宿主接线。它相对“分别使用 AI Gateway、IAM、监控、连接器平台和脚本拼装控制面”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](../../plugins/01men--ybkkasi/INSIGHT.md#research-q03)。
+> **思考**：本地幂等账本无法独自保证外部动作一致；单进程、演示数据开放面及各适配器权限覆盖限制生产承诺。见 [Q03](../../plugins/01men--ybkkasi/INSIGHT.md#research-q03)。
 
-> **思考**：能力面和工具数量很大，部署、权限、存储、第三方连接器及运维故障面也显著扩大；源码不足以证明企业生产成熟度。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](../../plugins/01men--ybkkasi/INSIGHT.md#research-q04)。
-
-> **建议**：未来可探索：可先抽取最小治理内核，将身份、审批、审计和用量回执作为所有插件的强制协议，再分阶段启用业务模块。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/01men--ybkkasi/INSIGHT.md#research-q08)。
+> **建议**：未验证的单资源治理试点，以10个真实匿名案件检验账实一致和管理员负担，再决定扩域；无案件不进入建设。见 [Q05](../../plugins/01men--ybkkasi/INSIGHT.md#research-q05)。
 
 ## 更新时间
 

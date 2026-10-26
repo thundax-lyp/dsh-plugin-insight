@@ -1,29 +1,45 @@
 {
     "repository": "5101good/amoji",
     "repository_id": 1378933589,
-    "captured_at": "2026-10-23T01:49:38.790Z",
-    "window_start": "2026-09-23T01:49:38.790Z",
+    "captured_at": "2026-10-26T03:22:47.788Z",
+    "window_start": "2026-09-26T03:22:47.788Z",
     "stars": 0,
-    "pushed_at": "2026-10-23T01:48:43Z",
+    "pushed_at": "2026-10-24T15:27:47Z",
     "issues": {
         "open": 0,
         "closed": 0,
         "created_30d": 0,
         "closed_30d": 0,
-        "updated_30d": 0
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A5101good%2Famoji%20is%3Aissue%20updated%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9380:DE677:14C8B0A:16FAFAC:6ADECA04 and timestamp 2026-10-26 03:33:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T21:15:37.465Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b93e081fcea482acac8fe75a9012ef4bacfb52cf",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@amoji/dsh",
-        "captured_at": "2026-10-23T01:49:47.589Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
+        "captured_at": "2026-10-26T03:22:47.788Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40amoji%2Fdsh",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40amoji%2Fdsh",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-23T01:49:47.589Z",
+            "captured_at": "2026-10-26T03:22:47.788Z",
             "source_url": "https://registry.npmjs.org/%40amoji%2Fdsh",
             "error": "HTTP 404",
             "latest_version": null,

@@ -12,16 +12,16 @@
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
 | [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。 |
-| [dsh-blend-preview](#plugin-1427791087-root) | 在 DSH 右侧栏把 Blender 文件转换为 GLB，并展示可交互三维预览与场景信息。 | 已有Blender环境且只需几何预览的用户可隔离试用；先用已知尺寸小模型核对结果，纹理、动画和最终渲染仍到Blender验收。 |
+| [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
-| [dsh-media-studio](#plugin-1399694663-root) | 在 DSH 中统一发起图像与视频生成任务，并通过作业、附件和界面展示结果。 | 适合已有受控媒体 API 账户、能定义尺寸/格式/内容验收并接受人工审核的团队先观察；涉及版权、品牌或高额视频生成时不应直接自动化。 |
-| [dsh-mimotts](#plugin-1397477851-root) | 为已定稿助手消息提供 MiMo TTS 朗读、播放器、配置卡和语音历史。 | 适合已接受 MiMo 数据处理、需要经常听取定稿回复且可控制历史留存的 DSH Web 用户小范围试用；敏感文本、离线要求或不兼容宿主不适用。 |
+| [dsh-media-studio](#plugin-1399694663-root) | 在DSH对话生成图片和视频或发送本地媒体，提供后台任务、自动保存及富媒体展示。 | 观察；先验收远端提交后断连与job失败的可追溯恢复，再决定后台试用。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
+| [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
@@ -60,15 +60,15 @@
 
 ## [dsh-blend-preview](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md)
 
-[![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-blend-preview)
+[![npm 30d 44](https://img.shields.io/static/v1?label=npm+30d&message=44&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-blend-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-blend-preview)
 
-> **用途**：面向在DSH工作区生成或检查Blender模型的用户，合格结果是能核对几何、尺寸和场景结构，而不是纹理最终渲染。
+> **用途**：适合已有Blender环境、在DSH工作区反复检查静态几何和尺寸的人；纹理动画与最终渲染须回到Blender，旧包迁移需先核对。[Q01](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q01)
 
-> **亮点**：相对切换Blender或手工导出GLB，贡献是工作区文件到本地缓存预览的一体链路和同版本任务复用；WebGL子集换取零CDN依赖，牺牲完整材质与动画表达。[Q01](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q01)
+> **亮点**：相对手工导出GLB或切换Blender，增量是工作区文件触发、本地转换缓存与侧栏检查的一体流程；Blender导出和glTF本身不是本项目原创。[Q01](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q01)
 
-> **思考**：预览只覆盖静态几何和底色，不能据此验收纹理、动画或最终渲染；缓存依赖大小mtime而非内容摘要，极端同大小同时间改写可能复用旧结果，尚未复现。[Q03](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q03)
+> **思考**：缓存以大小和mtime识别版本，且查看器省略纹理动画；显示成功不等于当前内容或最终视觉验收成立。认证也不等同项目文件沙箱。[Q02](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q02) [Q04](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q04)
 
-> **建议**：未验证假设是对保存事件增量计算内容摘要并标出预览能力缺口，降低旧缓存误用和视觉误验；对照同大小改写与纹理场景，若延迟增大却不改善误验则否定。[Q05](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q05)
+> **建议**：未验证假设是把内容新鲜度及表示缺口作为预览交付的一部分，以减少旧缓存和视觉误验；对照同元数据改写、纹理模型与Blender直接打开，若误验不降或复核更慢则否定。[Q05](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q05)
 
 <a id="plugin-1422396858-root"></a>
 
@@ -132,27 +132,13 @@
 
 
 
-> **用途**：面向在对话中制作图片或视频的内容团队，把提供商配置、异步生成、媒体发送和预设收进 DSH 工作流。 [Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)
+> **用途**：创作者在DSH内从提示到可找回图片/视频，验收内容、保存和会话呈现。
 
-> **亮点**：相对直接调用各家 API，它统一媒体任务、提供商、作业进度、附件交付和会话 UI，业务增量是把生成与交付放在同一对话链路。 [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03)
+> **亮点**：将生成、媒体保存与会话展示结合，并将长任务转宿主jobs，减少网页下载上传步骤；生成模型能力继承服务商。见 [Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)、[Q02](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q02)。
 
-> **思考**：生成质量、费用、内容政策和可重复性主要由外部提供商决定；插件统一入口并不能证明不同提供商的结果可比，后台降级为 detached 时取消与追踪也更弱。 [Q04](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q04)
+> **思考**：jobs注册失败会脱离控制器运行且无jobId；会话消失或推送失败不保证送达，远端ID恢复未见持久对账。见 [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03)。
 
-> **建议**：可增加“交付规格优先”的生成计划，先固定尺寸、格式、版权与验收项，再并行低成本草图和高质量定稿，减少无效重生成。 [Q08](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q08)
-
-<a id="plugin-1397477851-root"></a>
-
-## [dsh-mimotts](../../plugins/1497105876--dsh-mimotts/INSIGHT.md)
-
-
-
-> **用途**：面向希望听取长回复或无障碍消费内容的 DSH Web 用户，从单条已定稿消息生成并管理语音版本。 [Q01](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q01)
-
-> **亮点**：相对复制文本到 TTS 网站，它把消息级朗读、宿主密钥隔离、可访问播放器和重生成历史嵌入原会话，减少跨应用交接。 [Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03)
-
-> **思考**：价值依赖 MiMo API 的费用、延迟和音质，历史保存还会增加本地数据与隐私负担；源码与作者测试不能替代真实宿主长期使用和不同文本的效果对照。 [Q04](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q04)
-
-> **建议**：可增加“结构感知朗读”，把标题、列表和代码摘要转换为可控停顿与章节导航，并比较理解正确率而非只比较音频生成成功。 [Q08](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q08)
+> **建议**：未验证的持久阶段回执与原远端ID核对，可能减少重复生成和丢交付；以四阶段故障矩阵测净收益。见 [Q05](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q05)。
 
 <a id="plugin-1336663562-root"></a>
 
@@ -195,6 +181,20 @@
 > **思考**：设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q03)。
 
 > **建议**：受保护设置和交付回执能让“能选到图”升级为“已显示/送达”；尚未实现。详见[Q05](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q05)。
+
+<a id="plugin-1427978231-root"></a>
+
+## [dsh-stl-preview](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md)
+
+[![npm 30d 45](https://img.shields.io/static/v1?label=npm+30d&message=45&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-stl-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-stl-preview)
+
+> **用途**：适合在DSH内做STL打印前几何初筛的人；尺寸依赖明确单位，最终制造与切片仍需专业工具。[Q01](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q01)
+
+> **亮点**：相对切片器直开或普通3D查看器，增量是工作区内的STL解析、几何测量与边拓扑初筛；三角网格公式属于标准机制，未证明打印成功率提升。[Q01](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q01)
+
+> **思考**：无向边计数及容差焊接不足以排除自交、反向面和制造问题；Host分块传输仍对应浏览器全量缓冲，不能据此承诺大网格低内存。[Q02](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q02) [Q03](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是显式标注单位与算法覆盖，并将统计移入可取消worker，减少误验及界面阻塞；对照自交/单位错误/大网格任务，若误判或总成本不改善则否定。[Q05](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q05)
 
 <a id="plugin-1414936636-root"></a>
 

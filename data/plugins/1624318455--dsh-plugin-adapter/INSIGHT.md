@@ -1,18 +1,18 @@
 # dsh-plugin-adapter
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[3bbd05f](https://github.com/1624318455/dsh-plugin-adapter/tree/3bbd05f35cc47ccc24ac954d07fccc9cb587176f)
+分析版本：[478a132](https://github.com/1624318455/dsh-plugin-adapter/tree/478a132e79c14e7a125b5bdb7571bbda300a5411)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
 <!-- END META -->
 
-> **实现功能**：把匿名 Zen 模型通道接为 DSH 原生 LlmAdapter，附目录回退和可选 IP 池。
+> **实现功能**：在 DSH 注册原生 LlmAdapter，接入 OpenCode Zen 匿名模型并维护模型目录。
 
-> **核心亮点**：在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](#research-q02)。
+> **核心亮点**：相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](#research-q03)。
+> **风险与缺陷**：默认路径可能启动 Bun 子进程和回环端口，与无额外进程的作者描述不一致；代理失败还可能直连。缺 Bun 的可用性需要验证。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 用户需要怎样的模型入口，免费可用应如何验证？](#detail-section-11)
-  - [Q02 · 现行 adapter 怎样把目录、DSH 与流式协议接起来，增量归谁？](#detail-section-12)
-  - [Q03 · 目录、流和 IP 轮换有哪些运行边界？](#detail-section-13)
-  - [Q04 · 安装与持续使用成本、发布状态和数据声明如何界定？](#detail-section-14)
-  - [Q05 · 在可控场景怎么试用，哪种新设计假设值得验证？](#detail-section-15)
+  - [Q01 · 谁需要匿名模型与合格结果是什么？](#detail-section-11)
+  - [Q02 · 目录和请求怎样到达宿主？](#detail-section-12)
+  - [Q03 · 无需额外进程的承诺成立吗？](#detail-section-13)
+  - [Q04 · 启动与失败需要用户付出什么？](#detail-section-14)
+  - [Q05 · 能推导什么可证伪的改进？](#detail-section-15)
+  - [Q06 · 当前适合何种采用？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,84 +41,78 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：DSH 用户希望在模型选择器直接使用上游匿名通道；合格结果须当前可用且符合上游接入条件。
+> **用途**：适合已有 DSH、需要在同一会话选择 Zen 匿名模型的开发者，以有效响应及工具事件为交付。
 
-apply 默认分支立即注册 ZenAdapter，再后台启动目录刷新；目录取 Zen /v1/models，与 models.dev 价格/能力元数据及静态候选作判定，缓存可离线兜底。ZenAdapter 转换 DSH 上下文与 pi-ai 事件，为 Responses-only 模型选 /responses，其余走 chat completions，并提供思考档位。README 明说源自 FishBottle7/opencode2dsh 与 opencode2api；本 fork 可见增量包括 DSH host 注册、目录顺序修正、错误/空流看门狗和 IP 池接线，不将免费模型服务或 pi-ai 协议归作原创。
+简单替代是继续使用 OpenCode CLI 或手填兼容 provider；没有同条件质量与成本对照，不宣称更优。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| zen-free adapter | DSH 流式选模 | 当前上游准入须另核 |
-| 动态目录 | 列表和免费判定 | 静态回退可暴露失效模型 |
-| 流 watchdog | 中断静默流 | 真实恢复率未测 |
-| IP 池 | 可选出口调度 | 代理可信度与探测成本 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| 原生模型适配 | 在 DSH 选择匿名 Zen 模型 | 上游可用性、协议和宿主契约需验证 |
+| 模型目录 | 实时列表、价格判定与静态回退 | 列表可见不证明聊天可用 |
+| Bun relay | 以 Bun fetch 转发 Zen 请求 | 另需 Bun 子进程，可能从代理回退直连 |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 失败时 |
-| --- | --- | --- |
-| DSH LLM、Node>=20、pi-ai、undici | 原生注册和流 | 路由不可用 |
-| opencode.ai/models.dev 与当前准入 | 目录和模型 | 静态列表可能可见但请求失败 |
-| 可选可信代理 | IP 池 | 维持直连 |
-| 本地目录写权限 | 缓存和健康快照 | 诊断/回退变弱 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH llm/settings/credentials、Node≥20 | 启动必需 | 注册原生 adapter | 缺 llm 时日志报错，不能调用 |
+| Zen/models.dev HTTPS | 模型调用/目录所需 | 获取目录与响应 | 缓存可保列表但不保证聊天可用 |
+| Bun 与已审核出站策略 | 默认 relay 路径所需 | 转发 Zen HTTP/SSE | 缺 Bun 退 Node；代理异常可能直连 |
+
 
 #### 启动步骤
 
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 准备 | 核当前准入、固定包版本 | 许可与版本清晰 |
-| 直连 | 看目录来源、发小规模请求 | 完整流与错误可解释 |
-| 扩展 | 按需接可信出口池 | 记录额外请求和故障 |
-| 恢复 | 分上游、目录和出口排障 | 不把选择器可见当可用 |
-
-**效果与成本**
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 1 | 管理员核对包、Bun 与网络策略 | 确认实际传输分支 |
+| 2 | 用户安装并重启 DSH | zen-free 可发现，仍需响应验收 |
+| 3 | 用户验证文本、工具、取消并禁用 | 响应正确且 relay/目录停止，否则回退原 provider |
 
 #### 成本
 
-| 阶段 | 投入 | 未知 |
-| --- | --- | --- |
-| 初次 | DSH/Node、网络与模型准入核验 | 兼容时间 |
-| 持续 | 目录刷新、请求流、可选代理探测 | 配额、延迟、网络/代理成本 |
-| 恢复 | 区分上游拒绝、模型失效、代理故障 | 人工工时与误路由 |
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次使用 | Node/DSH、可选但影响可用性的 Bun、网络资源；金额未知 | 安装、出站策略与 relay 核查，耗时未知 | 根包 private；需确认实际包与宿主版本 |
+| 持续使用 | 目录刷新、模型和网络消耗；匿名服务费用保障未知 | 上游变化与模型退役维护，工时未知 | 免费目录不等于长期服务承诺 |
+| 失败恢复 | 重试及探测消耗未知 | 区分限流、Bun、代理与模型故障 | 未测全链路恢复 |
 
 #### 效果
 
-| 效果 | 源码证据 | 未证实 |
-| --- | --- | --- |
-| 选择器集成 | 立即注册 zen-free，目录后台更新 | 当前网关可用率 |
-| 流错误处理 | 首事件/中途 watchdog、仅首内容前轮换 | 故障恢复成功率 |
-| 免费候选 | 元数据及静态回退 | 当前免费额度与准入 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 模型接入 | provider 注册与目录机制可见 | 实际可调用率 |
+| 压缩预算 | 输出上限受窗口约束 | 真实任务质量和首事件时延 |
+| 恢复 | dispose 与 fallback 代码存在 | 进程退出及网络策略符合性 |
 
-> **思考**：静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](#research-q03)。
+> **思考**：默认路径可能启动 Bun 子进程和回环端口，与无额外进程的作者描述不一致；代理失败还可能直连。缺 Bun 的可用性需要验证。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](#research-q02)。
+> **亮点**：相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-在 DSH 提供原生 LlmAdapter、动态目录和流错误处理；沿用 OpenCode 通道及上游项目和 pi-ai，贡献重点是宿主接线与韧性修正。详见[Q02](#research-q02)。
+相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-adapter 分支无额外进程，sidecar 单独旧模式；目录缓存和健康快照确实写盘。流式前内容失败至多三次出口轮换，部分内容后不重放。可选代理池增加网络、信任与故障归因复杂性。
+结构化宿主接口降低编译依赖，目录与 adapter 分离便于移植；上游协议交给 pi-ai。预算协调值得借鉴，但移植必须复核宿主压缩器预留语义。relay 自动直连属于应明确配置的取舍，不将源码注释中的作者实测当独立验证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-静态目录可在实时列表缺席时暴露模型，选择器可见不保证可用；伪装请求头及可选代理池还依赖上游准入和信任。详见[Q03](#research-q03)。
+默认路径可能启动 Bun 子进程和回环端口，与无额外进程的作者描述不一致；代理失败还可能直连。缺 Bun 的可用性需要验证。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-确认当前上游允许的接入和模型，固定版本先直连试用；只有可信代理和明确出口需求才开启池。详见[Q05](#research-q05)。
+观察，先完成非敏感隔离环境的 relay/代理/工具事件/退出验收；受控出站环境暂缓采用。见 [Q06](#research-q06)。
 
 <a id="detail-section-7"></a>
 
@@ -125,18 +120,18 @@ adapter 分支无额外进程，sidecar 单独旧模式；目录缓存和健康�
 
 **核查状态**：已检查源码。
 
-固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
+源码支持原生 provider 集成贡献；上游可用性与宿主效果未验证；诊断状态假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.zh-CN.md、packages/plugin/src/index.ts、packages/plugin/src/adapter/zen-adapter.ts、packages/plugin/src/adapter/catalog.ts、packages/plugin/src/pool/dispatcher.ts、packages/plugin/src/pool/admission.ts、packages/plugin/package.json、packages/plugin/src/pool/pool.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.zh-CN.md、packages/plugin/package.json、packages/plugin/src/index.ts、packages/plugin/src/adapter/catalog.ts、packages/plugin/src/adapter/zen-adapter.ts、packages/plugin/src/adapter/zen-relay.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：审阅固定提交 0.3.9 的 README、包与现行 TS adapter/目录/IP 池核心源码，legacy Go 仅判定为可选旧模式；未运行目标插件、测试或外部模型请求。
-- 下一步：进一步探讨应按本项缺口执行：分别用直连和可信代理故障矩阵测首内容前后、429/403/5xx及中途断流。；同一模型与提示记录成功率、首 token、网络用量和人工恢复。；若采用最新版本，另锁包哈希和源码再核。；故障注入加真实模型目录变更，比较可选但失败率、误归因和恢复成本。；隔离验收且核当前上游准入。
+- 边界：只核查固定源码和作者说明，未执行安装、测试、模型调用或宿主验收；IP pool 仅核查入口，不作完整审计。
+- 下一步：最小验证覆盖目录断网、Bun 缺失、代理失败和模型退役，并记录合格任务率、诊断时间、实际目的地址与退出状态。
 
 **分析版本**
 
 - **仓库**：[1624318455/dsh-plugin-adapter](https://github.com/1624318455/dsh-plugin-adapter)
-- **版本号**：未声明（[固定提交 3bbd05f](https://github.com/1624318455/dsh-plugin-adapter/tree/3bbd05f35cc47ccc24ac954d07fccc9cb587176f)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 478a132](https://github.com/1624318455/dsh-plugin-adapter/tree/478a132e79c14e7a125b5bdb7571bbda300a5411)）
+- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -144,9 +139,9 @@ adapter 分支无额外进程，sidecar 单独旧模式；目录缓存和健康�
 
 <a id="innovation"></a>
 
-可把目录来源、模型请求结果和出口健康联成每模型可信度闸门；通过目录变更与故障注入对照误展示、误归因及成本，尚未实现。详见[Q05](#research-q05)。
+未验证的分层就绪状态与显式降级策略，可能减少误重试；以四种故障比较诊断时间和额外流量，收益不显著即否定。见 [Q05](#research-q05)。
 
-进一步探讨应按本项缺口执行：分别用直连和可信代理故障矩阵测首内容前后、429/403/5xx及中途断流。；同一模型与提示记录成功率、首 token、网络用量和人工恢复。；若采用最新版本，另锁包哈希和源码再核。；故障注入加真实模型目录变更，比较可选但失败率、误归因和恢复成本。；隔离验收且核当前上游准入。
+最小验证覆盖目录断网、Bun 缺失、代理失败和模型退役，并记录合格任务率、诊断时间、实际目的地址与退出状态。
 
 <a id="detail-section-9"></a>
 
@@ -157,54 +152,51 @@ adapter 分支无额外进程，sidecar 单独旧模式；目录缓存和健康�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 11 | 2599 | — | — | 40693 |
-| .ts | source | 29 | 7947 | 5590 | 1913 | — |
+| .md | source | 11 | 2676 | — | — | 41736 |
+| .ts | source | 31 | 8781 | 6184 | 2090 | — |
 | .tsx | source | 1 | 1138 | 994 | 84 | — |
-| .ts | test | 27 | 5196 | 4357 | 598 | — |
-| .mts | test | 3 | 311 | 223 | 64 | — |
+| .ts | test | 28 | 5368 | 4491 | 624 | — |
+| .mts | test | 4 | 383 | 278 | 74 | — |
 | .mjs | source | 1 | 21 | 10 | 9 | — |
 
 </details>
 
 **活跃度**
 
-[![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A01.065Z..2026-10-22T15%3A12%3A01.065Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
-暂未获取：Issue 未关闭、近30天关闭。
 
-统计日期：2026-10-22。
+
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：判断现行原生模型适配器的实际运行路径、上游准入与可验证价值。
+**插件研究总目标**：该固定版本能否以原生模型适配降低 DSH 接入匿名 Zen 的负担，哪些传输与容量条件限制其价值？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 用户需要怎样的模型入口，免费可用应如何验证？
+### Q01 · 谁需要匿名模型与合格结果是什么？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-项目目标是在 DSH 模型选择器提供 zen-free 匿名模型路由，旧 opencode2dsh 仅保留分发别名。合格结果要能选到目前真实可用且政策允许的模型，成功流式完成请求并正确呈现失败。README 声称无需 Key、注册和 sidecar；这是作者对特定上游通道的声明，固定源码仅证明发送 public 字面量和 CLI 形状请求，不证明 OpenCode 当前准入、免费额度或稳定可用。直接使用官方客户端/获授权 API 是基线。
+目标是已有 DSH 环境、希望将匿名 Zen 模型放入同一会话工作流的个人开发者。合格交付是模型可发现、响应与工具事件正确传回 DSH，而不是仅显示模型名称。作者宣称免 Key 与免进程；源码可支持前者的匿名凭据接线，但后者需按 Q03 收窄。相对另开 OpenCode CLI，本插件把模型调用接入 DSH；相对手填 OpenAI 兼容 provider，增加目录过滤、消息/事件转换和容量元数据约束。此为集成贡献，包作者字段明确说明 fork 来源，不能将 pi-ai 协议或 Zen 服务算作原创。没有同任务结果对照，不能确认匿名通道比已有付费 provider 更划算。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh-CN.md:25-45](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/README.zh-CN.md#L25-L45)
+**依据 1 · 作者声明**：[README.zh-CN.md:28-48](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/README.zh-CN.md#L28-L48)
 
-当前固定版本复核。作者用途和零凭据声称。
+作者说明 provider、匿名通道和无 sidecar 的主张
 
 <details>
 <summary>查看原文（21行）</summary>
 
 ```text
----
-
-dsh-plugin-adapter 会向 DSH 注册一个原生的 `LlmAdapter`，直接流式对接
 [OpenCode Zen](https://opencode.ai/zen) 的**匿名免费通道**——也就是
 OpenCode 官方 CLI 无需登录即可使用的那批免费模型，它们会以 `zen-free`
 这个常规 provider 出现在你的 DSH 模型选择器里（`opencode2dsh` 保留为
@@ -223,19 +215,372 @@ OpenCode 官方 CLI 无需登录即可使用的那批免费模型，它们会以
 - **实时目录 + 三级回退**——上游实时列表 ∩ 免费判定（models.dev 价格为 0，或名字带 `-free` 由通道本身免费供应），断网时依次回退到磁盘缓存与已验证的静态名单
 - **自愈能力**——启动期快速重试、周期刷新，并落盘健康快照便于排查
 - **规范的错误呈现**——上游故障（限流、鉴权、超时、传输）以分类的 finish 原因送达 DSH，重试策略始终由 DSH 掌控
+
+## 安装
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin/src/index.ts:53-73](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/index.ts#L53-L73)
+**依据 2 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:14-24](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/zen-adapter.ts#L14-L24)
 
-当前固定版本复核。默认 adapter 分支。
+明确复用 pi-ai 传输并实现宿主 adapter 契约
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
+/**
+ * The TS adapter: registers as a DSH LlmAdapter for the `zen-free` route
+ * (plus the `opencode2dsh` legacy alias for pre-rename sessions)
+ * and streams directly from the OpenCode Zen anonymous lane. The wire layer is
+ * pi-ai's openai-completions implementation for most models (the same one DSH
+ * uses for every OpenAI-compatible provider), plus pi-ai's openai-responses
+ * for Responses-only models (muse-spark-*); this module adds the CLI disguise
+ * headers, the derived session/request ids, and the free-model catalog.
+ *
+ * Adapter contract: dsh-llm LlmAdapter (providerInfo/listModels/resolveModel/
+ * prepareCall/stream) — structural, no host import.
+```
 
+</details>
+
+**依据 3 · 源码核查**：[packages/plugin/package.json:21-29](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/package.json#L21-L29)
+
+仓库归属与 fork 声明
+
+```text
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1624318455/dsh-plugin-adapter.git"
+  },
+  "homepage": "https://github.com/1624318455/dsh-plugin-adapter#readme",
+  "bugs": "https://github.com/1624318455/dsh-plugin-adapter/issues",
+  "author": "1624318455 (fork of FishBottle7/opencode2dsh)",
+  "engines": {
+    "node": ">=20"
+```
+
+#### 缺口
+
+- 未采集真实用户反复任务与合格率
+  **影响**：需求强度及收益未知
+  **进一步探讨**：使用者提供同一批 DSH 任务，对照原 provider
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 目录和请求怎样到达宿主？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+index 创建 ModelCatalog 与 ZenAdapter 后立即向 zen-free 和旧别名注册；目录在后台启动，模型选择器实时读目录，因而注册成功不等于上游可用。catalog 的设计将实时列表、models.dev 免费判断与静态名单组合；静态名单中明确区分 chat 与 listing 依据，listing 不能当聊天验收。适配器将模型输出上限压到上下文窗口四分之一，避免宿主为输出预留空间后没有消息预算；这是一项具体的跨接口适配取舍，可能牺牲最大输出长度换取有效压缩预算。宿主耦合集中在结构接口与事件映射，但上游模型目录和字段语义仍需要持续维护。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/plugin/src/index.ts:151-166](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L151-L166)
+
+adapter 注册与目录后台启动
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  // page or cordis.patch.yml; disabled keeps the process byte-for-byte on
+  // direct. Lifecycle (assembly on first enable, live reconfigure, dispose) is
+  // owned by applyIpPoolSettings through the plugin fiber. The probe-model
+  // dropdown rows include the live catalog, so this must run after the
+  // catalog instance exists.
+  applyIpPoolSettings(ctx, config, logger, { listLiveModels: () => catalog.list() })
+
+  // Register immediately: the provider must appear in the selector right
+  // away, even while the catalog is still warming up (listModels is read
+  // live at selector time, so models appear as refreshes land).
+  ctx.llm.registerAdapter([PROVIDER_ID, LEGACY_PROVIDER_ID], adapter)
+  logger.info(`dsh-plugin-adapter: adapter registered for "${PROVIDER_ID}" (legacy alias "${LEGACY_PROVIDER_ID}", catalog warms up in background)`)
+  void catalog.start().catch((err) => {
+    logger.error(`dsh-plugin-adapter: catalog start failed: ${err instanceof Error ? err.message : String(err)}`)
+  })
+
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:6-43](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/catalog.ts#L6-L43)
+
+三级目录来源与静态名单证据层级
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+/**
+ * Port of agent/internal/catalog (opencode2api models.go + model_metadata.go,
+ * trimmed to the single anonymous Zen lane) plus the S3 static fallback:
+ *
+ *   S1  GET {zen}/v1/models            live catalog (in-sale ids, free or paid)
+ *   S2  GET https://models.dev/api.json  pricing metadata -> free decision
+ *   S3  compile-time verified ids       last-resort bootstrap list
+ *
+ * /v1/models-equivalent exposure = S1 ∩ S2-allowed (or S3 while S1 is pending).
+ */
+
+export const ZEN_BASE_URL = 'https://opencode.ai/zen'
+
+/**
+ * Bootstrap / vouch list (S3): ids the anonymous lane serves for free.
+ *
+ * The list doubles as the fallback catalog while the live Zen directory
+ * (S1) has not loaded yet, and as the deprecation vouch: an id here stays
+ * exposed even when models.dev retires its entry (hy3-free case). Keep it in
+ * sync with the live free lane — a stale entry means the picker offers a
+ * model the lane no longer serves.
+ *
+ * Verification status per id is spelled out in the comment: "chat" means a
+ * real anonymous chat succeeded, "listing" means the live Zen directory and
+ * models.dev agree the id is free (price 0) but this repo never chat-tested
+ * it.
+ */
+export const staticFreeModels: string[] = [
+  'big-pickle', // chat 2026-10-26 (live via the v2 fingerprint + Bun relay)
+  'nemotron-3.5-lightning-free', // chat 2026-09-01
+  'deepseek-v4.1-flash-free', // chat 2026-10-26 (the lane's suggested default)
+  'beam-free', // listing (Zen + models.dev price 0, 2026-10-22)
+  'flint-40b-free', // listing (Zen + models.dev price 0, 2026-10-22)
+  'glm-5.3-flash-free', // chat 2026-10-26
+  'longcat-2.5-preview-free', // listing (Zen + models.dev price 0, 2026-10-22)
+  'mimo-v2.6-flash-free', // listing (Zen + models.dev price 0, 2026-10-22)
+  'nemotron-3.5-super-vl-free', // chat 2026-10-26
+]
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:47-95](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/zen-adapter.ts#L47-L95)
+
+输出上限与上下文窗口约束
+
+<details>
+<summary>查看原文（49行）</summary>
+
+```text
+const DEFAULT_MAX_TOKENS = 32768
+
+/**
+ * Output tokens the adapter may advertise for a window.
+ *
+ * The host reserves the advertised output limit INSIDE the advertised
+ * context window: dsh-compaction-basic computes
+ * `messageBudget = contextWindow - reservedCompletionTokens` (the reserve is
+ * the request's `maxTokens`, i.e. exactly what we advertise) and throws a
+ * target-pressure config error when that budget is not positive. The turn
+ * then continues UNCOMPACTED (the error is only logged as a warning), so the
+ * surface keeps growing until the lane cannot answer it any more.
+ *
+ * Measured 2026-10-22: minimax-m3.1-flash-free (1,000,000/512,000 in
+ * models.dev) capped to a 131,072 window kept advertising 512,000 output
+ * tokens, the reserve blew the message budget, compaction never ran, and the
+ * session's surface reached 256,327 prompt tokens before the lane answered
+ * with an empty length-stopped response.
+ *
+ * A quarter of the window keeps the envelope valid (the budget stays
+ * positive even with the host's 64K headroom) and matches what the free
+ * models actually produce (32K output).
+ */
+export function outputLimitFor(limits: ModelLimits): number {
+  const quarter = Math.floor(limits.contextWindow / 4)
+  return Math.max(1, Math.min(limits.maxTokens, quarter))
+}
+
+/**
+ * Resolve the advertised limits: per-model metadata/static first, generic
+ * defaults last. `contextWindowCap` (config.contextWindow) trims the
+ * advertised window: DSH compacts against the window the adapter reports, so
+ * a 1M-token model never triggers compaction and every turn re-sends the
+ * whole (growing) surface — the single biggest latency and quota lever.
+ *
+ * The output limit is then clamped into that window (see
+ * {@link outputLimitFor}): an output limit that does not fit the window
+ * breaks the host's compaction envelope.
+ */
+function limitsFor(catalog: CatalogLike, model: string, contextWindowCap?: number): ModelLimits {
+  const limits = catalog.modelLimits?.(model) ?? { contextWindow: DEFAULT_CONTEXT_WINDOW, maxTokens: DEFAULT_MAX_TOKENS }
+  const contextWindow =
+    contextWindowCap === undefined || contextWindowCap <= 0 ? limits.contextWindow : Math.min(limits.contextWindow, contextWindowCap)
+  return { contextWindow, maxTokens: outputLimitFor({ contextWindow, maxTokens: limits.maxTokens }) }
+}
+
+/**
+ * Reasoning-effort vocabulary the adapter owns end to end (dsh-llm treats the
+ * ids as opaque: whatever resolveModel advertises comes back on
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 无需额外进程的承诺成立吗？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+不能对当前默认路径作此保证。入口在未启用 IP pool、且 relay 未显式关闭时尝试创建 Bun relay；relay 文件导入 spawn，并在 Bun.serve 上创建 127.0.0.1 随机端口 HTTP 服务。它避免了旧 Go sidecar，但仍是另一种子进程及回环转发。缺 Bun 时返回 null，入口保留 Node 栈并告警免费通道可能 429；这是源码中的降级风险，注释中的 6/6 与 5/5 是作者报告而非本研究实测。另一个影响数据路径的取舍是代理异常后 relay 会在进程生命周期内改为直连；要求全部出站走代理的环境必须先审核此分支，不能仅按“已配置 proxyUrl”推断流量约束。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/plugin/src/index.ts:107-133](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L107-L133)
+
+默认 relay 条件、Bun 缺失告警及 transport 分支
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  // Two jobs: (1) the free tier refuses Node's own HTTP client whatever the
+  // request looks like (measured 2026-10-26: identical body, Node 0/6 vs Bun
+  // 5/5), so the lane is re-originated by a loopback relay run by bun;
+  // (2) the ambient proxy dispatcher reuses CONNECT tunnels that Clash/v2rayN
+  // silently close, so a direct proxy path still pins pipelining: 0.
+  // The IP pool owns the dispatcher when it is enabled (and already pins
+  // pipelining: 0), so this seam stays off then.
+  const relay = cfg.ipPool?.enabled === true || cfg.transport?.relay === 'off'
+    ? null
+    : createZenRelay({
+      bunPath: cfg.transport?.bunPath,
+      proxyUrl: cfg.transport?.proxyUrl,
+      log: (message) => logger.info(`dsh-plugin-adapter: ${message}`),
+    })
+  if (relay === null && cfg.transport?.relay !== 'off' && cfg.ipPool?.enabled !== true) {
+    logger.warn('dsh-plugin-adapter: bun was not found, so the Zen lane keeps the Node HTTP stack; the free tier currently answers that stack with 429 FreeUsageLimitError (install bun, or set transport.bunPath)')
+  }
+  const transport = cfg.ipPool?.enabled === true
+    ? null
+    : createZenTransport({
+      proxyUrl: cfg.transport?.proxyUrl,
+      noReuse: cfg.transport?.noReuse,
+      relay,
+    })
+  if (transport) {
+    logger.info(`dsh-plugin-adapter: ${transport.describe()}`)
+  } else if (cfg.transport?.proxyUrl) {
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/plugin/src/adapter/zen-relay.ts:21-25](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/zen-relay.ts#L21-L25)
+
+子进程依赖
+
+```text
+import { spawn, type ChildProcessByStdio } from 'node:child_process'
+import type { Readable } from 'node:stream'
+import { execFileSync } from 'node:child_process'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+```
+
+**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-relay.ts:53-85](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/zen-relay.ts#L53-L85)
+
+回环服务与代理失败后直连
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+const server = Bun.serve({
+  hostname: '127.0.0.1',
+  port: 0,
+  idleTimeout: 255,
+  async fetch(req) {
+    try {
+      const url = new URL(req.url)
+      const target = upstream + url.pathname + url.search
+      const headers = new Headers(req.headers)
+      headers.delete('host')
+      headers.delete('accept-encoding')
+      const init = { method: req.method, headers }
+      if (keepAlive) init.keepalive = true
+      if (req.method !== 'GET' && req.method !== 'HEAD') {
+        init.body = await req.arrayBuffer()
+      }
+      let res
+      if (proxy && !proxyBroken) {
+        // A configured proxy is tried first, then the direct path: Bun's proxy
+        // support is picky (a mixed HTTP/SOCKS inbound answers CONNECT with
+        // ECONNRESET), while a direct call usually works and must not be lost
+        // to a proxy the user only configured for other plugins. One failure is
+        // enough to stop paying for it on every request; a child restart (new
+        // plugin load) retests.
+        try {
+          res = await call(target, init, true)
+        } catch (err) {
+          proxyBroken = true
+          console.error('proxy unusable, using direct for the rest of this process: ' + (err && err.message ? err.message : err))
+          res = await call(target, init, false)
+        }
+      } else {
+        res = await call(target, init, false)
+```
+
+</details>
+
+#### 缺口
+
+- 同版本 Bun relay、代理失败、无 Bun 的真实宿主表现未执行
+  **影响**：不能确认可用性和网络策略适配
+  **进一步探讨**：隔离环境逐分支记录进程、目的地址、首事件与错误
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 启动与失败需要用户付出什么？
+
+**研究主题**：效果与总成本、依赖、兼容与流程
+
+#### 完整回答
+
+启动需要 DSH llm/credentials/settings 服务与 Node≥20，实际发布包位于 packages/plugin，根包是 private 包装。匿名免费是作者/目录分类，不是未来服务保障；当前研究没有查询实时价格、调用或总费用。首次投入包括安装包、确认 Bun 与出站策略、审查旧数据迁移；持续投入包括目录刷新和上游兼容维护。失败时既要核查上游限流，也要区分 Bun、代理、Node 回退与模型退役，不能把所有错误都归为模型质量。入口保存健康状态并在卸载时停止目录、恢复 transport 和 dispose relay，但这仅支持生命周期设计，未证明所有子进程均实际退出。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/plugin/package.json:1-11](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/package.json#L1-L11)
+
+发布包版本与入口
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+{
+  "name": "@memef1f1y/dsh-plugin-adapter",
+  "version": "0.5.0",
+  "description": "Free OpenCode Zen models for DeepSeek Harness (DSH): native dsh-llm adapter plugin, no API key.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./client": "./lib/client.js"
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/plugin/src/index.ts:55-82](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L55-L82)
+
+宿主服务及模式选择
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
 /** Cordis plugin id. Must match cordis.patch.yml (package + repository). */
 export const name = 'dsh-plugin-adapter'
 export const inject = ['llm', 'credentials', 'settings'] as const
@@ -256,119 +601,6 @@ function applyAdapter(ctx: PluginContext, config: DshPluginAdapterConfig): { rea
 
   if (!ctx.llm || typeof ctx.llm.registerAdapter !== 'function') {
     logger.error('dsh-plugin-adapter: llm service unavailable; adapter mode cannot register')
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:246-258](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/zen-adapter.ts#L246-L258)
-
-当前固定版本复核。只展示 zen-free 组，保留旧别名。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
- * on `POST /zen/v1/chat/completions` while `POST /zen/v1/responses` returns 200
- * (opencode #44659/#44847, DSH #3957). Route by model id; extend this list
- * if Zen moves more models (candidates: gpt-5.6-luna, grok-4.6).
- *
- * The list is a fast path, not the only guard: a model that is NOT listed but
- * refuses the chat protocol anyway is detected at runtime and switched to the
- * responses path (see {@link isProtocolUnsupported}).
- *
- * NOT in the list: `jev-1.13*` (measured 2026-10-22) — the lane refuses it
- * on BOTH protocols ("Model does not support this protocol"), so routing it
- * anywhere only burns a request.
- */
-export function isResponsesModel(id: string): boolean {
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:500-535](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/zen-adapter.ts#L500-L535)
-
-当前固定版本复核。匿名 key 和请求头落在实际协议调用。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-    // (x-session-affinity), so a dead instance fails the same conversation
-    // over and over. One re-roll of the session id asks another instance.
-    let sessionRerolled = false
-    // Protocol-class self-heal: the lane refused the chat protocol for this
-    // model, so the next attempt asks it on /responses. One switch per turn.
-    let responsesSwitched = false
-    for (let attempt = 0; ; attempt += 1) {
-      // Responses models (muse-spark-*, jev-1.13*, and any model the lane
-      // refuses on the chat protocol) stream chain-of-thought in bursts with
-      // long mid-stream pauses (issue #7): give them a wider idle window so
-      // slow reasoning is not misread as a dead tunnel. Chat models keep the
-      // live-tuned default. Their FIRST event is a burst too, so the tiered
-      // first-event window gets the same widening treatment.
-      const responsesPath = this.#usesResponsesPath(options.model)
-      const bodyIdleMs = responsesPath
-        ? Math.max(this.#bodyIdleMs, 300_000)
-        : this.#bodyIdleMs
-      const firstEventWindowMs = responsesPath && !this.#firstEventPinned
-        ? Math.max(firstEventMs, 120_000)
-        : firstEventMs
-      // The SDK-level request bound (pi-ai -> OpenAI SDK `timeout`). The SDK
-      // clears its timer once the response HEAD arrives, so this only bounds
-      // the header phase — exactly the phase our first-event watchdog owns.
-      // Without it the SDK's own default (10 minutes) is the only backstop, and
-      // a wedged upstream turns into a silent 10-minute hang reported as the
-      // bare "Request timed out." The margin keeps the watchdog the first
-      // speaker (it owns the diagnosis), the SDK only catches what escapes it.
-      const sdkTimeoutMs = firstEventWindowMs + SDK_TIMEOUT_MARGIN_MS
-      const events = routingContext.run(contextStore, () =>
-        self.#eventsFor(options, context, ids, model, sdkTimeoutMs, requestMaxTokens),
-      ) as AsyncIterable<PiEvent>
-      let deliveredContent = false
-      let preContentFailure: { message: string } | null = null
-      const buffered: PiEvent[] = []
-      const source = events[Symbol.asyncIterator]()
-      // Peek events until the stream proves itself one way or the other:
-```
-
-</details>
-
-#### 缺口
-
-- 未核官方当前准入、条款和网关实测。
-  **影响**：不能称所有列出的模型永久免费或可用。
-  **进一步探讨**：采用前以官方文档和合法账户条件核对，再隔离做小额模型请求。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 现行 adapter 怎样把目录、DSH 与流式协议接起来，增量归谁？
-
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-apply 默认分支立即注册 ZenAdapter，再后台启动目录刷新；目录取 Zen /v1/models，与 models.dev 价格/能力元数据及静态候选作判定，缓存可离线兜底。ZenAdapter 转换 DSH 上下文与 pi-ai 事件，为 Responses-only 模型选 /responses，其余走 chat completions，并提供思考档位。README 明说源自 FishBottle7/opencode2dsh 与 opencode2api；本 fork 可见增量包括 DSH host 注册、目录顺序修正、错误/空流看门狗和 IP 池接线，不将免费模型服务或 pi-ai 协议归作原创。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/plugin/src/index.ts:66-140](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/index.ts#L66-L140)
-
-当前固定版本复核。立即注册和后台目录生命周期。
-
-<details>
-<summary>查看原文（75行）</summary>
-
-```text
- */
-function applyAdapter(ctx: PluginContext, config: DshPluginAdapterConfig): { ready: Promise<{ port: number; version: string }> } {
-  const logger = ctx.logger
-  const cfg = resolveConfig(config)
-  const ready = Promise.resolve({ port: 0, version: 'adapter' })
-
-  if (!ctx.llm || typeof ctx.llm.registerAdapter !== 'function') {
-    logger.error('dsh-plugin-adapter: llm service unavailable; adapter mode cannot register')
     return { ready }
   }
 
@@ -377,9 +609,18 @@ function applyAdapter(ctx: PluginContext, config: DshPluginAdapterConfig): { rea
   // with live apply + the /status /probe bridge. Opt-in via settings page or
   // cordis.patch.yml; disabled keeps the process byte-for-byte on direct.
   // Lifecycle (assembly on first enable, live reconfigure, dispose) is owned
-  // by applyIpPoolSettings through the plugin fiber.
-  // 0.4.0 rename: the data directory moved from ~/.opencode2dsh to
-  // ~/.dsh-plugin-adapter; the legacy directory is copied over and parked
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugin/src/index.ts:86-106](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L86-L106)
+
+数据目录、健康状态与目录刷新
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
   // as a rollback path (data-dir.ts).
   const dataDir = resolveDataDir({ logger }).dir
   const statusPath = join(dataDir, 'adapter-status.json')
@@ -399,1152 +640,199 @@ function applyAdapter(ctx: PluginContext, config: DshPluginAdapterConfig): { rea
       if (lastError) logger.warn(`dsh-plugin-adapter: catalog refresh issue: ${lastError}`)
     },
   })
-  // Zen-lane transport hardening (adapter/transport.ts): the ambient proxy
-  // dispatcher reuses CONNECT tunnels that Clash/v2rayN silently close, so
-  // the next request dies with UND_ERR_SOCKET / ECONNRESET instead of
-  // opening a fresh tunnel. The IP pool owns the dispatcher when it is
-  // enabled (and already pins pipelining: 0), so the seam stays off then.
-  const transport = cfg.ipPool?.enabled === true
-    ? null
-    : createZenTransport({
-      proxyUrl: cfg.transport?.proxyUrl,
-      noReuse: cfg.transport?.noReuse,
+  // Zen-lane transport (adapter/transport.ts + adapter/zen-relay.ts).
+  //
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/plugin/src/index.ts:187-195](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L187-L195)
+
+清理目录、transport 和 relay
+
+```text
+      relay?.dispose()
     })
-  if (transport) {
-    logger.info(`dsh-plugin-adapter: ${transport.describe()}`)
-  } else if (cfg.transport?.proxyUrl) {
-    logger.warn(`dsh-plugin-adapter: transport.proxyUrl "${cfg.transport.proxyUrl}" is not a usable http(s) proxy URI; Zen traffic keeps the ambient dispatcher`)
+  }
+  return { ready }
+}
+
+function applySidecar(ctx: PluginContext, config: DshPluginAdapterConfig): { ready: Promise<ReadyInfo> } {
+  const cfg = resolveConfig(config)
+  const logger = ctx.logger
+```
+
+#### 缺口
+
+- 安装、长期负载及恢复人工时未测
+  **影响**：单位合格任务现金和时间不可计算
+  **进一步探讨**：以一组可验收任务记录全部重试与排障时间
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 能推导什么可证伪的改进？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+待验证假设是将“provider 已注册”改为分层就绪状态（目录可用、relay 进程可用、上游最近一次有效 SSE）并对代理直连回退提供显式策略，会比当前日志加自动降级更容易定位故障。推导来自 Q02 中目录后台加载与 Q03 中传输栈变化：用户看到模型却不知道哪个前提未满足。最小实验只需在隔离宿主比较现有界面与一个只读状态面板，对目录断网、Bun 缺失、代理拒绝、模型退役各做注入；统计首个正确诊断时间、误重试数、额外探测流量。若诊断没有变快或新增探测消耗匿名额度导致任务失败，则否定收益假设。状态和探测必须由插件生命周期统一拥有，不另起第二个轮询器。此方案未实现、未验证，也未计入贡献评分。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/plugin/src/index.ts:86-106](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L86-L106)
+
+已有状态文件可作为状态投影基础
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  // as a rollback path (data-dir.ts).
+  const dataDir = resolveDataDir({ logger }).dir
+  const statusPath = join(dataDir, 'adapter-status.json')
+  const writeStatus = (status: CatalogSnapshot, lastError: string): void => {
+    void writeFile(
+      statusPath,
+      JSON.stringify({ ...status, lastError, writtenAt: new Date().toISOString() }, null, 2),
+      'utf8',
+    ).catch(() => {})
   }
 
-  // Watchdog windows (config.watchdog): the first-event gate is a
-  // time-to-first-token budget, tiered for reasoning models.
-  const adapter = new ZenAdapter(catalog, {
-    sessionOverride: cfg.gatewaySession,
-    firstEventMs: cfg.watchdog?.firstEventMs,
-    reasoningFirstEventMs: cfg.watchdog?.reasoningFirstEventMs,
-    bodyIdleMs: cfg.watchdog?.bodyIdleMs,
-    contextWindowCap: cfg.contextWindow,
-    transport,
+  const catalog = new ModelCatalog({
+    refreshSeconds: cfg.refreshSeconds,
+    cachePath: defaultCachePath(dataDir),
+    onRefresh: (status, lastError) => {
+      writeStatus(status, lastError)
+      if (lastError) logger.warn(`dsh-plugin-adapter: catalog refresh issue: ${lastError}`)
+    },
   })
+  // Zen-lane transport (adapter/transport.ts + adapter/zen-relay.ts).
+  //
+```
 
-  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,
-  // pinned, free sources, subscriptions, and (IP-5) the settings namespace
-  // with live apply + the /status /models /probe bridge. Opt-in via settings
+</details>
+
+**依据 2 · 源码核查**：[packages/plugin/src/index.ts:151-166](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L151-L166)
+
+先注册后目录加载的状态差
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
   // page or cordis.patch.yml; disabled keeps the process byte-for-byte on
   // direct. Lifecycle (assembly on first enable, live reconfigure, dispose) is
   // owned by applyIpPoolSettings through the plugin fiber. The probe-model
   // dropdown rows include the live catalog, so this must run after the
   // catalog instance exists.
   applyIpPoolSettings(ctx, config, logger, { listLiveModels: () => catalog.list() })
+
+  // Register immediately: the provider must appear in the selector right
+  // away, even while the catalog is still warming up (listModels is read
+  // live at selector time, so models appear as refreshes land).
+  ctx.llm.registerAdapter([PROVIDER_ID, LEGACY_PROVIDER_ID], adapter)
+  logger.info(`dsh-plugin-adapter: adapter registered for "${PROVIDER_ID}" (legacy alias "${LEGACY_PROVIDER_ID}", catalog warms up in background)`)
+  void catalog.start().catch((err) => {
+    logger.error(`dsh-plugin-adapter: catalog start failed: ${err instanceof Error ? err.message : String(err)}`)
+  })
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:96-114](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/catalog.ts#L96-L114)
+**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-relay.ts:121-129](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/zen-relay.ts#L121-L129)
 
-当前固定版本复核。免费判定优先元数据。
-
-<details>
-<summary>查看原文（19行）</summary>
+relay 已有 isReady 与 ensure 状态接口
 
 ```text
-}
-
-/**
- * Bootstrap limits for the S3 static ids (+ the current default model), taken
- * from the models.dev `opencode` section snapshot 2026-09-20. These only fire
- * while live metadata cannot speak for the model (pending/uncached); ready
- * metadata always wins via ModelCatalog.modelLimits.
- */
-export const staticModelLimits: Record<string, ModelLimits> = {
-  'big-pickle': { contextWindow: 200000, maxTokens: 32000 },
-  'mimo-v2.5-free': { contextWindow: 200000, maxTokens: 32000 },
-  'ling-3.0-flash-fin-free': { contextWindow: 262144, maxTokens: 32768 },
-  'nemotron-3.5-lightning-free': { contextWindow: 262144, maxTokens: 262144 },
-  'nemotron-3-ultra-free': { contextWindow: 1000000, maxTokens: 128000 },
-  'muse-spark-1.2-contributor-free': { contextWindow: 1048576, maxTokens: 131072 },
-  'muse-spark-1.3-contributor-free': { contextWindow: 1048576, maxTokens: 131072 },
-}
-
-/** Decide (model_metadata.go Decide, ported with the deprecation fix).
+export interface ZenRelay {
+  /** True once the child is listening and the port is known. */
+  isReady(): boolean
+  /** Start (or restart) the child; false when bun is unavailable. */
+  ensure(): Promise<boolean>
+  /** Forward one request to the relay; the response body streams through. */
+  forward(input: unknown, init?: Record<string, unknown>): Promise<Response>
+  dispose(): void
+  describe(): string
 ```
 
-</details>
+<a id="research-q06"></a>
 
-**依据 3 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:280-378](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/catalog.ts#L280-L378)
+<a id="detail-section-16"></a>
 
-当前固定版本复核。目录刷新及静态回退。
+### Q06 · 当前适合何种采用？
 
-<details>
-<summary>查看原文（99行）</summary>
-
-```text
- *   1. ready metadata verdict — deprecated/paid deny, free cost allows; a
- *      "free" name overrides *missing* cost data but never a paid or
- *      deprecated verdict
- *   2. metadata cannot speak (pending/missing) — name fallback, or the
- *      compile-time verified S3 list for known-good ids
- */
-export class ModelCatalog {
-  #zen: Set<string> = new Set()
-  #updatedAt = 0
-  #prices: Map<string, ModelPrice> = new Map()
-  #pricesReady = false
-  #lastError = ''
-  #refreshSeconds: number
-  #cachePath?: string
-  #zenBaseUrl: string
-  #metadataUrl: string
-  #fetch: typeof fetch
-  #now: () => number
-  #timer: NodeJS.Timeout | null = null
-  #stopped = false
-  #onRefresh?: (status: CatalogSnapshot, lastError: string) => void
-  #startupRetryMs: number
-
-  constructor(options: CatalogOptions = {}) {
-    this.#refreshSeconds = options.refreshSeconds ?? 300
-    this.#cachePath = options.cachePath
-    this.#zenBaseUrl = options.zenBaseUrl ?? ZEN_BASE_URL
-    this.#metadataUrl = options.metadataUrl ?? 'https://models.dev/api.json'
-    this.#fetch = options.fetchImpl ?? fetch
-    this.#now = options.now ?? Date.now
-    this.#onRefresh = options.onRefresh
-    this.#startupRetryMs = options.startupRetryMs ?? 15_000
-  }
-
-  /**
-   * Start the refresh loop: immediate S1+S2, fast retries while the live
-   * catalog is still empty (the first fetch often races the machine's network
-   * coming up — VPN/TUN reconnect, DNS), then the normal cadence (S2 24h).
-   */
-  async start(): Promise<void> {
-    await this.refreshOnce()
-    let attempts = 0
-    while (this.#zen.size === 0 && attempts < 4 && !this.#stopped) {
-      attempts += 1
-      await new Promise((resolve) => setTimeout(resolve, this.#startupRetryMs))
-      if (this.#stopped) return
-      await this.refreshOnce()
-    }
-    if (this.#stopped) return
-    this.#timer = setInterval(() => {
-      void this.refreshOnce()
-    }, this.#refreshSeconds * 1000)
-    this.#timer.unref?.()
-  }
-
-  stop(): void {
-    this.#stopped = true
-    if (this.#timer) {
-      clearInterval(this.#timer)
-      this.#timer = null
-    }
-  }
-
-  async refreshOnce(): Promise<void> {
-    await Promise.allSettled([this.refreshZen(), this.refreshMetadata()])
-    if (this.#onRefresh) {
-      try {
-        this.#onRefresh(this.snapshot(), this.#lastError)
-      } catch {
-        // observers must never break the refresh loop
-      }
-    }
-  }
-
-  async refreshZen(): Promise<void> {
-    try {
-      const ids = await fetchZenModels(this.#zenBaseUrl, this.#fetch, opencodeUserAgent())
-      this.#zen = new Set(ids)
-      this.#updatedAt = this.#now()
-      this.#lastError = ''
-    } catch (err) {
-      this.#lastError = err instanceof Error ? err.message : String(err)
-    }
-  }
-
-  async refreshMetadata(): Promise<void> {
-    try {
-      const response = await withTimeout(this.#fetch(this.#metadataUrl, { headers: { accept: 'application/json' } }))
-      if (!response.ok) throw new Error(`models.dev returned HTTP ${response.status}`)
-      const data = (await response.json()) as unknown
-      const prices = decodeModelsDev(data)
-      if (prices.size === 0) throw new Error('models.dev contains no OpenCode model metadata')
-      this.#prices = prices
-      this.#pricesReady = true
-      if (this.#cachePath) await saveMetadataCache(this.#cachePath, prices, this.#now())
-    } catch (err) {
-      // Network failure with a cached copy is not fatal: load the cache.
-      if (this.#cachePath && !this.#pricesReady) {
-        const cached = await loadMetadataCache(this.#cachePath).catch(() => null)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:490-535](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/zen-adapter.ts#L490-L535)
-
-当前固定版本复核。Responses/chat 两条协议路径。
-
-<details>
-<summary>查看原文（46行）</summary>
-
-```text
-    // pi-ai event at all (not even `start`, which only arrives after
-    // response headers). BODY_IDLE: content flowing, then a long gap (LLM
-    // streams may pace slowly, but minutes of nothing mid-stream is a dead
-    // tunnel, not pacing). The race fires the watchdog INTO the pending
-    // next() — a background return() could never cancel one (it queues
-    // behind the pending request), so timeout-promise racing is the only
-    // mechanism that actually interrupts a hung stream.
-    const firstEventMs = reasoning ? this.#reasoningFirstEventMs : this.#firstEventMs
-    const rotateStory: string[] = []
-    // Capacity-class self-heal: the gateway pins a model instance per session
-    // (x-session-affinity), so a dead instance fails the same conversation
-    // over and over. One re-roll of the session id asks another instance.
-    let sessionRerolled = false
-    // Protocol-class self-heal: the lane refused the chat protocol for this
-    // model, so the next attempt asks it on /responses. One switch per turn.
-    let responsesSwitched = false
-    for (let attempt = 0; ; attempt += 1) {
-      // Responses models (muse-spark-*, jev-1.13*, and any model the lane
-      // refuses on the chat protocol) stream chain-of-thought in bursts with
-      // long mid-stream pauses (issue #7): give them a wider idle window so
-      // slow reasoning is not misread as a dead tunnel. Chat models keep the
-      // live-tuned default. Their FIRST event is a burst too, so the tiered
-      // first-event window gets the same widening treatment.
-      const responsesPath = this.#usesResponsesPath(options.model)
-      const bodyIdleMs = responsesPath
-        ? Math.max(this.#bodyIdleMs, 300_000)
-        : this.#bodyIdleMs
-      const firstEventWindowMs = responsesPath && !this.#firstEventPinned
-        ? Math.max(firstEventMs, 120_000)
-        : firstEventMs
-      // The SDK-level request bound (pi-ai -> OpenAI SDK `timeout`). The SDK
-      // clears its timer once the response HEAD arrives, so this only bounds
-      // the header phase — exactly the phase our first-event watchdog owns.
-      // Without it the SDK's own default (10 minutes) is the only backstop, and
-      // a wedged upstream turns into a silent 10-minute hang reported as the
-      // bare "Request timed out." The margin keeps the watchdog the first
-      // speaker (it owns the diagnosis), the SDK only catches what escapes it.
-      const sdkTimeoutMs = firstEventWindowMs + SDK_TIMEOUT_MARGIN_MS
-      const events = routingContext.run(contextStore, () =>
-        self.#eventsFor(options, context, ids, model, sdkTimeoutMs, requestMaxTokens),
-      ) as AsyncIterable<PiEvent>
-      let deliveredContent = false
-      let preContentFailure: { message: string } | null = null
-      const buffered: PiEvent[] = []
-      const source = events[Symbol.asyncIterator]()
-      // Peek events until the stream proves itself one way or the other:
-```
-
-</details>
-
-**依据 5 · 作者声明**：[README.zh-CN.md:200-209](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/README.zh-CN.md#L200-L209)
-
-当前固定版本复核。作者致谢上游。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-````text
-
-- 不涉及任何机密：匿名通道的 Key 就是字面量 `public`；插件不存储任何东西，也没有任何遥测。
-- 安装产物仅限 `lib/`；不执行任何依赖的构建脚本。
-- 所有请求均从你的机器直连 `opencode.ai` / `models.dev`。
-
-## 开发
-
-```sh
-git clone https://github.com/1624318455/dsh-plugin-adapter.git
-cd dsh-plugin-adapter/packages/plugin
-````
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 目录、流和 IP 轮换有哪些运行边界？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：采用判断
 
 #### 完整回答
 
-实时 Zen 列表尚空时 list() 直接给 staticFreeModels，因此模型出现在选择器不等于当前能请求。README 所称“无需额外进程”仅默认 adapter；sidecar 是单独旧模式。流式路径在首事件/中途静默设 watchdog，首内容前符合出口故障且池同意时最多旋转三次；已有任何内容就不重放，以免重复生成。IP 池 opt-in，并通过 AsyncLocalStorage 和 dispatcher 将特定上游域名分流；免费代理入池还做探测。它增加额外网络、信任和故障归因边界，代理引入额外出口、连接元数据与传输信任边界，正文保密还取决于 TLS 和代理配置。源码支持这些条件分支，但没有本轮真实网关故障/代理隐私验收。
+当前建议观察。匿名目录与原生 adapter 有明确集成价值，但默认执行形态与作者“无额外进程”描述冲突，并存在代理失败直连分支；对出站受控环境，这会改变采用前提。可以先在非敏感隔离环境完成可控试验，验收模型列表、文本/工具事件、取消、无 Bun、relay 崩溃与禁用后进程退出；未经这些同版本验证，不建议持续安装。已使用独立 CLI 且不需要 DSH 会话整合的人收益较小。若只验证模型能回复而不验证工具事件与恢复，不能改变当前建议。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:371-378](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/catalog.ts#L371-L378)
+**依据 1 · 源码核查**：[packages/plugin/src/index.ts:107-133](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/index.ts#L107-L133)
 
-当前固定版本复核。静态列表可在 live 缺席时暴露。
-
-```text
-      if (prices.size === 0) throw new Error('models.dev contains no OpenCode model metadata')
-      this.#prices = prices
-      this.#pricesReady = true
-      if (this.#cachePath) await saveMetadataCache(this.#cachePath, prices, this.#now())
-    } catch (err) {
-      // Network failure with a cached copy is not fatal: load the cache.
-      if (this.#cachePath && !this.#pricesReady) {
-        const cached = await loadMetadataCache(this.#cachePath).catch(() => null)
-```
-
-**依据 2 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:296-370](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/zen-adapter.ts#L296-L370)
-
-当前固定版本复核。首事件和 body idle watchdog、旋转条件。
-
-<details>
-<summary>查看原文（75行）</summary>
-
-```text
-  readonly #firstEventMs: number
-  readonly #reasoningFirstEventMs: number
-  readonly #bodyIdleMs: number
-  /** True when the caller pinned the first-event window (no auto-widening). */
-  readonly #firstEventPinned: boolean
-  /** Optional cap for the advertised context window (config.contextWindow). */
-  readonly #contextWindowCap?: number
-  /** Optional transport seam (Zen-lane dispatcher hardening). */
-  readonly #transport?: ZenTransport | null
-  /** Models the lane refused on the chat protocol (runtime switch to /responses). */
-  readonly #responsesOnlyModels = new Set<string>()
-
-  constructor(catalog: CatalogLike, options: {
-    zenBaseUrl?: string
-    providerOverride?: unknown
-    /** Responses-path provider seam (tests inject a scripted stream). */
-    responsesProviderOverride?: unknown
-    /** Fixed session id override (config.gatewaySession). */
-    sessionOverride?: string
-    /** Watchdog windows (tests inject short ones; defaults are live-tuned). */
-    firstEventMs?: number
-    /** First-event window for reasoning models (longer TTFT budget). */
-    reasoningFirstEventMs?: number
-    bodyIdleMs?: number
-    /** Cap for the advertised context window (config.contextWindow). */
-    contextWindowCap?: number
-    /** Zen-lane transport hardening (see adapter/transport.ts). */
-    transport?: ZenTransport | null
-  } = {}) {
-    this.#catalog = catalog
-    this.#sessionOverride = options.sessionOverride?.trim() || undefined
-    this.#firstEventMs = options.firstEventMs ?? DEFAULT_FIRST_EVENT_MS
-    // One knob, one window: a caller that pins only `firstEventMs` (tests,
-    // or a config that wants a single budget) gets that budget for the
-    // reasoning tier too. Only an untouched adapter tiers the windows.
-    this.#reasoningFirstEventMs = options.reasoningFirstEventMs ?? options.firstEventMs ?? DEFAULT_REASONING_FIRST_EVENT_MS
-    this.#bodyIdleMs = options.bodyIdleMs ?? DEFAULT_BODY_IDLE_MS
-    this.#firstEventPinned = options.firstEventMs !== undefined || options.reasoningFirstEventMs !== undefined
-    this.#contextWindowCap = options.contextWindowCap
-    this.#transport = options.transport ?? null
-    if (options.providerOverride !== undefined) {
-      this.#provider = options.providerOverride as never
-      this.#responsesProvider = (options.responsesProviderOverride ?? null) as never
-      return
-    }
-    const baseUrl = `${(options.zenBaseUrl ?? ZEN_BASE_URL).replace(/\/+$/, '')}/v1`
-    const auth = {
-      apiKey: {
-        name: 'OpenCode Zen anonymous lane',
-        resolve: async () => ({ auth: { apiKey: ANONYMOUS_KEY } }),
-      },
-    }
-    this.#provider = createProvider<Api>({
-      id: PROVIDER_ID,
-      name: PROVIDER_ID,
-      baseUrl,
-      auth,
-      models: [],
-      api: openaiCompletions,
-    })
-    this.#responsesProvider = createProvider<Api>({
-      id: PROVIDER_ID,
-      name: PROVIDER_ID,
-      baseUrl,
-      auth,
-      models: [],
-      api: openaiResponses,
-    })
-  }
-
-  providerInfo(provider: string): { id: string; name: string } {
-    return { id: provider, name: PROVIDER_ID }
-  }
-
-  /**
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:403-487](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/zen-adapter.ts#L403-L487)
-
-当前固定版本复核。仅首内容前旋转，最多三次。
-
-<details>
-<summary>查看原文（85行）</summary>
-
-```text
-    if (provider !== PROVIDER_ID) return []
-    const seen = new Set<string>()
-    const models: Array<{ provider: string; id: string; name: string; inputModalities: string[] }> = []
-    for (const id of this.#catalog.list()) {
-      if (seen.has(id)) continue
-      seen.add(id)
-      models.push({ provider, id, name: id, inputModalities: ['text'] })
-    }
-    return models
-  }
-
-  resolveModel(provider: string, model: string): {
-    provider: string
-    id: string
-    name: string
-    inputModalities: string[]
-    context: { contextWindow: number }
-    defaultMaxTokens: number
-    reasoning?: { efforts: ZenReasoningEffort[] }
-  } {
-    const limits = limitsFor(this.#catalog, model, this.#contextWindowCap)
-    const resolved: ReturnType<ZenAdapter['resolveModel']> = {
-      provider,
-      id: model,
-      name: model,
-      inputModalities: ['text'],
-      context: { contextWindow: limits.contextWindow },
-      defaultMaxTokens: limits.maxTokens,
-    }
-    // The thinking-level picker: dsh-llm validates every selected id against
-    // this list and echoes the choice back on GenerateOptions.reasoningEffort.
-    const efforts = reasoningEfforts(this.#catalog.reasoningCapability(model))
-    if (efforts) resolved.reasoning = { efforts }
-    return resolved
-  }
-
-  async prepareCall(provider: string, model: string, _signal?: AbortSignal): Promise<{
-    model: ReturnType<ZenAdapter['resolveModel']>
-    stream: (options: HarnessGenerateOptions) => AsyncGenerator<HarnessChunk>
-  }> {
-    return {
-      model: this.resolveModel(provider, model),
-      stream: (options) => this.stream(options),
-    }
-  }
-
-  /** Stream one Chat turn from the Zen anonymous lane.
-   *
-   * IP-7 rotate loop (docs/ip-pool.md §3.4 / §8.1): a stream that dies
-   * BEFORE any content landed restarts on a fresh exit — the pool's health
-   * marks already degraded the failed exit, so the restarted pick routes
-   * elsewhere, and the host's retry budget never sees the intermediate
-   * error. Once ANY content event has flowed, rotation stops (§3.4: a
-   * partially delivered stream is never replayed). No pool running (or the
-   * failure is not exit-shaped) = the original stream surface untouched.
-   */
-  async *stream(options: HarnessGenerateOptions): AsyncGenerator<HarnessChunk> {
-    const context = toPiContext(options)
-    const ids = deriveRequestIDs(options.messages)
-    // Replica escape hatch (config.gatewaySession): a poisoned derived id
-    // fails deterministically while fresh ones stream — override reroutes.
-    if (this.#sessionOverride) ids.session = this.#sessionOverride
-    // The reasoning flag drives BOTH the wire shape (pi-ai's effort branch)
-    // and the watchdog tier: reasoning models compose longer before their
-    // first token, so their first-event window is wider.
-    const reasoning = this.#catalog.reasoningCapability(options.model)?.reasoning === true
-    const limits = limitsFor(this.#catalog, options.model, this.#contextWindowCap)
-    const model = toPiModel(options.model, reasoning, options.provider ?? PROVIDER_ID, limits)
-    // The wire asks for at most what we advertise: the host's request
-    // `maxTokens` is our advertised default, and the upstream charges the
-    // requested output against the same window as the prompt. A host that
-    // asks for more (a per-session override) must not widen the envelope the
-    // host's own compaction math depends on.
-    const requestMaxTokens = Math.max(1, Math.min(options.maxTokens ?? limits.maxTokens, limits.maxTokens))
-    // The Zen lane's own dispatcher seam (adapter/transport.ts): install the
-    // hardened fetch before the request leaves, so a hostile proxy that
-    // silently closed the previous CONNECT tunnel cannot kill this turn.
-    this.#transport?.ensure()
-    // IP-pool routing context (docs/ip-pool.md 3.3): pi-ai builds the request
-    // body and dispatches it on separate layers with no channel for "which
-    // model is this fetch for", so the per-request context rides AsyncLocalStorage.
-    const contextStore: RoutingContext = { model: options.model, session: ids.session }
-    const self = this
-    const MAX_ROTATES = 3
-    // Watchdog windows (live-observed 2026-09-07): the OpenAI SDK timeout
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin/src/index.ts:76-115](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/index.ts#L76-L115)
-
-当前固定版本复核。IP 池为可选接线。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-
-  // IP-pool exit routing (docs/ip-pool.md IP-1..IP-5): manual proxies,
-  // pinned, free sources, subscriptions, and (IP-5) the settings namespace
-  // with live apply + the /status /probe bridge. Opt-in via settings page or
-  // cordis.patch.yml; disabled keeps the process byte-for-byte on direct.
-  // Lifecycle (assembly on first enable, live reconfigure, dispose) is owned
-  // by applyIpPoolSettings through the plugin fiber.
-  // 0.4.0 rename: the data directory moved from ~/.opencode2dsh to
-  // ~/.dsh-plugin-adapter; the legacy directory is copied over and parked
-  // as a rollback path (data-dir.ts).
-  const dataDir = resolveDataDir({ logger }).dir
-  const statusPath = join(dataDir, 'adapter-status.json')
-  const writeStatus = (status: CatalogSnapshot, lastError: string): void => {
-    void writeFile(
-      statusPath,
-      JSON.stringify({ ...status, lastError, writtenAt: new Date().toISOString() }, null, 2),
-      'utf8',
-    ).catch(() => {})
-  }
-
-  const catalog = new ModelCatalog({
-    refreshSeconds: cfg.refreshSeconds,
-    cachePath: defaultCachePath(dataDir),
-    onRefresh: (status, lastError) => {
-      writeStatus(status, lastError)
-      if (lastError) logger.warn(`dsh-plugin-adapter: catalog refresh issue: ${lastError}`)
-    },
-  })
-  // Zen-lane transport hardening (adapter/transport.ts): the ambient proxy
-  // dispatcher reuses CONNECT tunnels that Clash/v2rayN silently close, so
-  // the next request dies with UND_ERR_SOCKET / ECONNRESET instead of
-  // opening a fresh tunnel. The IP pool owns the dispatcher when it is
-  // enabled (and already pins pipelining: 0), so the seam stays off then.
-  const transport = cfg.ipPool?.enabled === true
-    ? null
-    : createZenTransport({
-      proxyUrl: cfg.transport?.proxyUrl,
-      noReuse: cfg.transport?.noReuse,
-    })
-  if (transport) {
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugin/src/pool/dispatcher.ts:185-222](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/pool/dispatcher.ts#L185-L222)
-
-当前固定版本复核。指定域名路由和直连回退。
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-      this.#logger?.warn(`dsh-plugin-adapter: failed to build proxy agent for ${exitId}: ${err instanceof Error ? err.message : String(err)}`)
-      return null
-    }
-  }
-
-  dispatch(options: Dispatcher.DispatchOptions, handler: Dispatcher.DispatchHandler): boolean {
-    if (this.#closed) {
-      handler.onResponseError?.({} as Dispatcher.DispatchController, new Error('dsh-plugin-adapter: routing dispatcher closed'))
-      return false
-    }
-    const origin = String(options.origin ?? '')
-    const host = normalizeHost(origin)
-    if (isLoopback(host) || !this.#proxyHosts.has(host)) {
-      return this.#direct.dispatch(options, handler)
-    }
-    const context = routingContext.getStore() ?? {}
-    const model = context.model ?? 'default'
-    const session = context.session ?? 'default'
-    const exitId = this.#pool.pick(session, model)
-    if (exitId === null) {
-      // Pool unusable (empty / all cooling): direct, never fail closed (3.3).
-      return this.#direct.dispatch(options, handler)
-    }
-    const agent = this.#agentFor(exitId)
-    if (!agent) {
-      return this.#direct.dispatch(options, handler)
-    }
-    return agent.dispatch(options, this.#observe(exitId, model, session, handler))
-  }
-
-  /**
-   * Wrap the downstream handler with the passive-signal observer
-   * (docs/ip-pool.md §4.2 rule table, §4.3 被动): the real request's own
-   * outcome feeds the two-tier health — free liveness data no probe spends
-   * quota on. Body bytes stream through untouched; only the response start
-   * line and terminal transport errors are read.
-   *
-   * Forwarding discipline (measured against undici 8.10 on this host): the
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/plugin/src/pool/admission.ts:179-292](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/pool/admission.ts#L179-L292)
-
-当前固定版本复核。候选代理入池探测。
-
-<details>
-<summary>查看原文（114行）</summary>
-
-```text
-export async function admitCandidate(
-  deps: AdmissionDeps,
-  candidate: { address: string; protocol: 'http' | 'socks5'; source: ExitNode['source'] },
-  options: {
-    relaxed?: boolean
-    pinned?: boolean
-    timeoutMs?: number
-    /** Pre-screened echo facts (coarseScreen output): skips steps 1-2. */
-    echoFacts?: EchoFacts
-  } = {},
-): Promise<AdmissionResult> {
-  const zenBase = deps.zenBaseUrl ?? ZEN_BASE_URL
-  const timeout = options.timeoutMs ?? DEFAULT_TIMEOUT_MS
-  const smokeModel = deps.smokeModel ?? 'big-pickle'
-  // Live-observed 2026-09-09: zen now REJECTS anonymous-lane chat without
-  // the CLI session headers (400 MissingSessionID "can only be used in
-  // OpenCode") — the smoke request must carry the same disguise set the
-  // adapter sends, or every candidate fails step 4 regardless of exit
-  // quality (a full refill round admitted 0 of 701 tunnel-OK survivors).
-  // Per-candidate ids: the upstream correlates sessions with exits, so a
-  // probe session must not collide with real adapter sessions. The canonical
-  // mapping (ids.ts) is mandatory here too — the old 24-hex probe sessions
-  // drew 403 FreeTierError on the free lane like every other foreign shape.
-  const probeHeaders = disguiseHeaders({
-    session: canonicalSessionID(`admission:${candidate.address}`),
-    request: randomID('req', 16),
-    project: stableID('prj', 'dsh-plugin-adapter:default-project'),
-    parentSession: '',
-  })
-
-  let agent: Dispatcher | null = null
-  try {
-    agent = new deps.undici.ProxyAgent({
-      uri: candidate.protocol === 'socks5' ? `socks5://${candidate.address}` : `http://${candidate.address}`,
-    })
-  } catch (err) {
-    return { admitted: false, reason: `agent-build: ${err instanceof Error ? err.message : String(err)}` }
-  }
-
-  const request = (url: string, init: { method?: string; headers?: Record<string, string>; body?: string } = {}) =>
-    withTimeout(
-      deps.undici.request(url, { dispatcher: agent!, ...init }),
-      timeout,
-      init.method === 'POST' ? 'smoke' : 'probe',
-    )
-
-  try {
-    // Steps 1+2 run inline only when the caller has not pre-screened the
-    // candidate (coarseScreen/batch output = echoFacts; the refill loop
-    // always pre-screens free candidates at high fan-out).
-    let facts: EchoFacts
-    if (options.echoFacts) {
-      facts = options.echoFacts
-    } else {
-      const verdict = await coarseScreen(deps, candidate, options)
-      if ('rejected' in verdict) return { admitted: false, reason: verdict.rejected }
-      facts = verdict
-    }
-
-    // Step 3: HTTPS tunnel to the real upstream (models list, Bearer public).
-    const models = await request(`${zenBase.replace(/\/+$/, '')}/v1/models`, {
-      headers: { authorization: 'Bearer public', 'user-agent': opencodeUserAgent(), 'x-opencode-client': 'cli', accept: 'application/json', ...probeHeaders },
-    })
-    if (models.statusCode !== 200) {
-      return { admitted: false, reason: `zen models HTTP ${models.statusCode}` }
-    }
-
-    // Step 4: anonymous-lane smoke (streaming, 1 token). The free lane
-    // rejects non-streaming bodies outright and wants the agent-shape gate
-    // tools in the body (adapter/messages.ts, live-probed 2026-09-18) — a
-    // bare 1-token probe 403s like every toolless chat.
-    const smoke = await request(`${zenBase.replace(/\/+$/, '')}/v1/chat/completions`, {
-      method: 'POST',
-      headers: {
-        authorization: 'Bearer public',
-        'content-type': 'application/json',
-        'user-agent': opencodeUserAgent(),
-        'x-opencode-client': 'cli',
-        ...probeHeaders,
-      },
-      body: JSON.stringify({
-        model: smokeModel,
-        messages: [{ role: 'user', content: 'ping' }],
-        max_tokens: 1,
-        stream: true,
-        stream_options: { include_usage: true },
-        tools: FREE_LANE_GATE_TOOL_NAMES.map((name) => freeLaneGateTool(name)),
-        tool_choice: 'none',
-      }),
-    })
-    if (smoke.statusCode !== 200) {
-      // 429 = the exit is good (alive + tunnel verified) but its anonymous
-      // quota is currently consumed. Admit with limited: the caller cools it
-      // and the periodic probe retries later (measured 2026-09-05: 429 is
-      // the single largest smoke failure among tunnel-OK survivors).
-      if (smoke.statusCode === 429) {
-        return {
-          admitted: true,
-          limited: true,
-          reason: `zen smoke HTTP 429`,
-          node: {
-            id: candidate.address,
-            protocol: candidate.protocol,
-            source: candidate.source,
-            pinned: options.pinned ?? false,
-            exitIP: facts.exitIP,
-            exitLocation: facts.exitLocation,
-            latencyMs: facts.latencyMs,
-            quality: gradeOf(facts.latencyMs),
-            addedAt: Date.now(),
-          },
-        }
-      }
-      return { admitted: false, reason: `zen smoke HTTP ${smoke.statusCode}` }
-```
-
-</details>
-
-#### 缺口
-
-- 未做真实上游流式及代理故障注入。
-  **影响**：不能确认恢复率、隐私或失败类别是否稳定。
-  **进一步探讨**：分别用直连和可信代理故障矩阵测首内容前后、429/403/5xx及中途断流。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 安装与持续使用成本、发布状态和数据声明如何界定？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-固定提交包是 0.3.9、Node>=20，依赖 pi-ai、undici、yaml 和 DSH 宿主，要求能访问 opencode.ai/models.dev；npm 元信息单独显示查询时 latest 0.4.0，因此不可把固定提交结论扩展到最新包。目录每 300 秒刷新，元数据缓存与 adapter-status.json 写到本机；README “不存储任何东西”与这两个文件至少在字面上不一致，应区分不存凭据/会话与会写健康及缓存。IP 池一旦打开还带探测流量和代理信任成本。模型现金价格可能为零，但配额、网络、失败重试、人工排障及上游可用性都未知。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/plugin/package.json:1-75](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/package.json#L1-L75)
-
-当前固定版本复核。固定提交版本、引擎与依赖。
-
-<details>
-<summary>查看原文（75行）</summary>
-
-```text
-{
-  "name": "@memef1f1y/dsh-plugin-adapter",
-  "version": "0.4.0",
-  "description": "Free OpenCode Zen models for DeepSeek Harness (DSH): native dsh-llm adapter plugin, no API key.",
-  "type": "module",
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json",
-    "./client": "./lib/client.js"
-  },
-  "files": [
-    "lib",
-    "cordis.patch.yml",
-    "README.md",
-    "README.zh-CN.md",
-    "LICENSE",
-    "tsdown.client.config.ts"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1624318455/dsh-plugin-adapter.git"
-  },
-  "homepage": "https://github.com/1624318455/dsh-plugin-adapter#readme",
-  "bugs": "https://github.com/1624318455/dsh-plugin-adapter/issues",
-  "author": "1624318455 (fork of FishBottle7/opencode2dsh)",
-  "engines": {
-    "node": ">=20"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "slots",
-        "locale",
-        "configForms"
-      ],
-      "platform": "web"
-    }
-  },
-  "scripts": {
-    "build": "tsdown src/index.ts --format esm --dts --out-dir lib --no-clean",
-    "prepack": "node -e \"require('fs').rmSync('lib',{recursive:true,force:true})\" && pnpm build && pnpm build:client && node ../../scripts/prepare-package.mjs",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test \"test/*.test.ts\"",
-    "build:client": "tsdown -c tsdown.client.config.ts"
-  },
-  "keywords": [
-    "dsh",
-    "dsh-plugin",
-    "deepseek-harness",
-    "opencode",
-    "opencode-zen",
-    "cordis",
-    "cordis-plugin",
-    "llm-adapter",
-    "llm-provider",
-    "free-models",
-    "free-llm",
-    "llm",
-    "ai-models",
-    "typescript",
-    "nodejs"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "@deepseek-ai/schemastery": "^3.18.1",
-    "@earendil-works/pi-ai": "^0.82.1",
-    "undici": "^8.10.1",
-    "yaml": "^2.9.0"
-  },
-  "pnpm": {
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.zh-CN.md:73-99](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/README.zh-CN.md#L73-L99)
-
-当前固定版本复核。作者部署和刷新说明。
+默认传输策略决定采用条件
 
 <details>
 <summary>查看原文（27行）</summary>
 
-````text
-**验证**：重启 `dsh web`，打开模型选择器，在 **zen-free** 分组里选模型即可。
-
-需要带 web profile 的 DSH（DeepSeek Harness）；Node.js ≥ 20（DSH 能跑就满足）；
-出站 HTTPS 需可达 `opencode.ai` 与 `models.dev`。
-
-## 配置
-
-默认配置开箱即用。需要覆盖时，编辑 profile 的 `cordis.patch.yml`：
-
-```yaml
-- id: dsh-plugin-adapter
-  name: '@memef1f1y/dsh-plugin-adapter'
-  config:
-    mode: adapter        # adapter（默认）| sidecar
-    providerId: zen-free
-    refreshSeconds: 300  # 目录刷新周期（秒）
-```
-
-> **从 ≤ 0.3.x 升级**：0.4.0 起插件 id 从 `opencode2dsh` 改为 `dsh-plugin-adapter`。
-> DSH 靠这个 id 把 config 挂到插件上，所以升级时要**同步**把线上
-> `cordis.patch.yml` 的 `- id:` 行改掉，否则配置（例如钉住的 `gatewaySession`）
-> 会被静默丢弃。数据目录也跟着搬了家（`~/.opencode2dsh` →
-> `~/.dsh-plugin-adapter`）：插件首次启动会把旧目录复制过去，并把原目录改名为
-> `~/.opencode2dsh.bak-<日期>` 保留，确认新配置可用后可以删掉。
-
-| 配置项 | 默认值 | 说明 |
-| --- | --- | --- |
-````
-
-</details>
-
-**依据 3 · 作者声明**：[README.zh-CN.md:180-184](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/README.zh-CN.md#L180-L184)
-
-当前固定版本复核。作者无存储和遥测说法。
-
-````text
-}
-```
-
-| 现象 | 可能原因与处理 |
-| --- | --- |
-````
-
-**依据 4 · 源码核查**：[packages/plugin/src/index.ts:82-99](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/index.ts#L82-L99)
-
-当前固定版本复核。本地健康快照写盘。
-
-<details>
-<summary>查看原文（18行）</summary>
-
 ```text
-  // by applyIpPoolSettings through the plugin fiber.
-  // 0.4.0 rename: the data directory moved from ~/.opencode2dsh to
-  // ~/.dsh-plugin-adapter; the legacy directory is copied over and parked
-  // as a rollback path (data-dir.ts).
-  const dataDir = resolveDataDir({ logger }).dir
-  const statusPath = join(dataDir, 'adapter-status.json')
-  const writeStatus = (status: CatalogSnapshot, lastError: string): void => {
-    void writeFile(
-      statusPath,
-      JSON.stringify({ ...status, lastError, writtenAt: new Date().toISOString() }, null, 2),
-      'utf8',
-    ).catch(() => {})
+  // Two jobs: (1) the free tier refuses Node's own HTTP client whatever the
+  // request looks like (measured 2026-10-26: identical body, Node 0/6 vs Bun
+  // 5/5), so the lane is re-originated by a loopback relay run by bun;
+  // (2) the ambient proxy dispatcher reuses CONNECT tunnels that Clash/v2rayN
+  // silently close, so a direct proxy path still pins pipelining: 0.
+  // The IP pool owns the dispatcher when it is enabled (and already pins
+  // pipelining: 0), so this seam stays off then.
+  const relay = cfg.ipPool?.enabled === true || cfg.transport?.relay === 'off'
+    ? null
+    : createZenRelay({
+      bunPath: cfg.transport?.bunPath,
+      proxyUrl: cfg.transport?.proxyUrl,
+      log: (message) => logger.info(`dsh-plugin-adapter: ${message}`),
+    })
+  if (relay === null && cfg.transport?.relay !== 'off' && cfg.ipPool?.enabled !== true) {
+    logger.warn('dsh-plugin-adapter: bun was not found, so the Zen lane keeps the Node HTTP stack; the free tier currently answers that stack with 429 FreeUsageLimitError (install bun, or set transport.bunPath)')
   }
-
-  const catalog = new ModelCatalog({
-    refreshSeconds: cfg.refreshSeconds,
-    cachePath: defaultCachePath(dataDir),
-    onRefresh: (status, lastError) => {
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:295-353](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/catalog.ts#L295-L353)
-
-当前固定版本复核。目录周期与元数据缓存。
-
-<details>
-<summary>查看原文（59行）</summary>
-
-```text
-  #metadataUrl: string
-  #fetch: typeof fetch
-  #now: () => number
-  #timer: NodeJS.Timeout | null = null
-  #stopped = false
-  #onRefresh?: (status: CatalogSnapshot, lastError: string) => void
-  #startupRetryMs: number
-
-  constructor(options: CatalogOptions = {}) {
-    this.#refreshSeconds = options.refreshSeconds ?? 300
-    this.#cachePath = options.cachePath
-    this.#zenBaseUrl = options.zenBaseUrl ?? ZEN_BASE_URL
-    this.#metadataUrl = options.metadataUrl ?? 'https://models.dev/api.json'
-    this.#fetch = options.fetchImpl ?? fetch
-    this.#now = options.now ?? Date.now
-    this.#onRefresh = options.onRefresh
-    this.#startupRetryMs = options.startupRetryMs ?? 15_000
-  }
-
-  /**
-   * Start the refresh loop: immediate S1+S2, fast retries while the live
-   * catalog is still empty (the first fetch often races the machine's network
-   * coming up — VPN/TUN reconnect, DNS), then the normal cadence (S2 24h).
-   */
-  async start(): Promise<void> {
-    await this.refreshOnce()
-    let attempts = 0
-    while (this.#zen.size === 0 && attempts < 4 && !this.#stopped) {
-      attempts += 1
-      await new Promise((resolve) => setTimeout(resolve, this.#startupRetryMs))
-      if (this.#stopped) return
-      await this.refreshOnce()
-    }
-    if (this.#stopped) return
-    this.#timer = setInterval(() => {
-      void this.refreshOnce()
-    }, this.#refreshSeconds * 1000)
-    this.#timer.unref?.()
-  }
-
-  stop(): void {
-    this.#stopped = true
-    if (this.#timer) {
-      clearInterval(this.#timer)
-      this.#timer = null
-    }
-  }
-
-  async refreshOnce(): Promise<void> {
-    await Promise.allSettled([this.refreshZen(), this.refreshMetadata()])
-    if (this.#onRefresh) {
-      try {
-        this.#onRefresh(this.snapshot(), this.#lastError)
-      } catch {
-        // observers must never break the refresh loop
-      }
-    }
-  }
-
-```
-
-</details>
-
-#### 缺口
-
-- 未测真实额度、延迟、token 与人工恢复工时。
-  **影响**：无法算单位成功请求成本。
-  **进一步探讨**：同一模型与提示记录成功率、首 token、网络用量和人工恢复。
-- 固定提交 0.3.9，npm 查询 latest 0.4.0。
-  **影响**：最新包行为可能不同。
-  **进一步探讨**：若采用最新版本，另锁包哈希和源码再核。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 在可控场景怎么试用，哪种新设计假设值得验证？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-建议先确认上游允许的接入方式，固定版本和模型，以默认直连 adapter 做小规模试用；只在确需出口调度且代理可信时打开 IP 池，观察目录真实来源、空流和错误。此 fork 的有价值假设是把“目录准入事实/请求结果/出口健康”绑定成每模型可信度，避免静态回退显示但不可用或错误地把模型拒绝判为出口失败。该跨层可靠性闸门尚未完整实现；可与现行目录+轮换对照模型选择后成功率、误报/漏报、额外探测流量及恢复时间。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/plugin/src/adapter/catalog.ts:355-378](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/catalog.ts#L355-L378)
-
-当前固定版本复核。目录决策与静态回退来源。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-    try {
-      const ids = await fetchZenModels(this.#zenBaseUrl, this.#fetch, opencodeUserAgent())
-      this.#zen = new Set(ids)
-      this.#updatedAt = this.#now()
-      this.#lastError = ''
-    } catch (err) {
-      this.#lastError = err instanceof Error ? err.message : String(err)
-    }
-  }
-
-  async refreshMetadata(): Promise<void> {
-    try {
-      const response = await withTimeout(this.#fetch(this.#metadataUrl, { headers: { accept: 'application/json' } }))
-      if (!response.ok) throw new Error(`models.dev returned HTTP ${response.status}`)
-      const data = (await response.json()) as unknown
-      const prices = decodeModelsDev(data)
-      if (prices.size === 0) throw new Error('models.dev contains no OpenCode model metadata')
-      this.#prices = prices
-      this.#pricesReady = true
-      if (this.#cachePath) await saveMetadataCache(this.#cachePath, prices, this.#now())
-    } catch (err) {
-      // Network failure with a cached copy is not fatal: load the cache.
-      if (this.#cachePath && !this.#pricesReady) {
-        const cached = await loadMetadataCache(this.#cachePath).catch(() => null)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/plugin/src/pool/pool.ts:287-322](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/pool/pool.ts#L287-L322)
-
-当前固定版本复核。被动结果把 429、403 等影响健康。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-   * applied to the two-tier health exactly like a probe would. Returns the
-   * classification for diagnostics.
-   */
-  recordPassive(id: string, statusCode: number, model: string, regionBlocked = false): 'ok' | 'limited' | 'refused' | 'dead' {
-    if (!this.#nodes.has(id)) return 'ok'
-    if (statusCode >= 200 && statusCode < 300) {
-      this.markOk(id, model)
-      this.#countPassive(id, 'ok')
-      return 'ok'
-    }
-    if (statusCode === 429) {
-      this.markLimited(id)
-      this.#countPassive(id, 'limited')
-      return 'limited'
-    }
-    if (statusCode === 401 || statusCode === 403) {
-      // RegionError bodies are deterministic region blocks — a second sample
-      // adds nothing, so ban the (exit, model) pairing immediately (docs 4.2).
-      if (regionBlocked) this.markModelBanned(id, model)
-      else this.markModelSignal(id, model)
-      this.#countPassive(id, 'refused')
-      return 'refused'
-    }
-    // 5xx: count into the dead bucket for diagnostics, but DO NOT strike the
-    // exit dead. Live-observed 2026-09-09: upstream 500s are often the MODEL
-    // failing behind a healthy exit (muse without contributor access answers
-    // 500 through every exit) — one strike used to mark the exit dead, the
-    // single-exit pool then picked null, and ALL traffic silently fell back
-    // direct while the pool looked enabled. Exit liveness stays the
-    // transport layer's call (sentinel/onResponseError); recovery for a
-    // 5xx-flapping exit is the adapter rotate loop (5xx is in its set).
-    this.#countPassive(id, 'dead')
-    return 'dead'
-  }
-
-  /** Transport-level failure of a real request (connection died mid-flight). */
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:454-487](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/adapter/zen-adapter.ts#L454-L487)
-
-当前固定版本复核。首内容前旋转判据。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-   * elsewhere, and the host's retry budget never sees the intermediate
-   * error. Once ANY content event has flowed, rotation stops (§3.4: a
-   * partially delivered stream is never replayed). No pool running (or the
-   * failure is not exit-shaped) = the original stream surface untouched.
-   */
-  async *stream(options: HarnessGenerateOptions): AsyncGenerator<HarnessChunk> {
-    const context = toPiContext(options)
-    const ids = deriveRequestIDs(options.messages)
-    // Replica escape hatch (config.gatewaySession): a poisoned derived id
-    // fails deterministically while fresh ones stream — override reroutes.
-    if (this.#sessionOverride) ids.session = this.#sessionOverride
-    // The reasoning flag drives BOTH the wire shape (pi-ai's effort branch)
-    // and the watchdog tier: reasoning models compose longer before their
-    // first token, so their first-event window is wider.
-    const reasoning = this.#catalog.reasoningCapability(options.model)?.reasoning === true
-    const limits = limitsFor(this.#catalog, options.model, this.#contextWindowCap)
-    const model = toPiModel(options.model, reasoning, options.provider ?? PROVIDER_ID, limits)
-    // The wire asks for at most what we advertise: the host's request
-    // `maxTokens` is our advertised default, and the upstream charges the
-    // requested output against the same window as the prompt. A host that
-    // asks for more (a per-session override) must not widen the envelope the
-    // host's own compaction math depends on.
-    const requestMaxTokens = Math.max(1, Math.min(options.maxTokens ?? limits.maxTokens, limits.maxTokens))
-    // The Zen lane's own dispatcher seam (adapter/transport.ts): install the
-    // hardened fetch before the request leaves, so a hostile proxy that
-    // silently closed the previous CONNECT tunnel cannot kill this turn.
-    this.#transport?.ensure()
-    // IP-pool routing context (docs/ip-pool.md 3.3): pi-ai builds the request
-    // body and dispatches it on separate layers with no channel for "which
-    // model is this fetch for", so the per-request context rides AsyncLocalStorage.
-    const contextStore: RoutingContext = { model: options.model, session: ids.session }
-    const self = this
-    const MAX_ROTATES = 3
-    // Watchdog windows (live-observed 2026-09-07): the OpenAI SDK timeout
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin/src/index.ts:102-115](https://github.com/1624318455/dsh-plugin-adapter/blob/3bbd05f35cc47ccc24ac954d07fccc9cb587176f/packages/plugin/src/index.ts#L102-L115)
-
-当前固定版本复核。池可选，默认 adapter 立即注册。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-    },
-  })
-  // Zen-lane transport hardening (adapter/transport.ts): the ambient proxy
-  // dispatcher reuses CONNECT tunnels that Clash/v2rayN silently close, so
-  // the next request dies with UND_ERR_SOCKET / ECONNRESET instead of
-  // opening a fresh tunnel. The IP pool owns the dispatcher when it is
-  // enabled (and already pins pipelining: 0), so the seam stays off then.
   const transport = cfg.ipPool?.enabled === true
     ? null
     : createZenTransport({
       proxyUrl: cfg.transport?.proxyUrl,
       noReuse: cfg.transport?.noReuse,
+      relay,
     })
   if (transport) {
+    logger.info(`dsh-plugin-adapter: ${transport.describe()}`)
+  } else if (cfg.transport?.proxyUrl) {
 ```
 
 </details>
 
-#### 缺口
+**依据 2 · 源码核查**：[packages/plugin/src/adapter/zen-adapter.ts:14-24](https://github.com/1624318455/dsh-plugin-adapter/blob/478a132e79c14e7a125b5bdb7571bbda300a5411/packages/plugin/src/adapter/zen-adapter.ts#L14-L24)
 
-- 跨目录、请求与出口的可信度闸门未形成对照。
-  **影响**：不能当现行效果或创新分数。
-  **进一步探讨**：故障注入加真实模型目录变更，比较可选但失败率、误归因和恢复成本。
+适配能力与依赖边界
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+/**
+ * The TS adapter: registers as a DSH LlmAdapter for the `zen-free` route
+ * (plus the `opencode2dsh` legacy alias for pre-rename sessions)
+ * and streams directly from the OpenCode Zen anonymous lane. The wire layer is
+ * pi-ai's openai-completions implementation for most models (the same one DSH
+ * uses for every OpenAI-compatible provider), plus pi-ai's openai-responses
+ * for Responses-only models (muse-spark-*); this module adds the CLI disguise
+ * headers, the derived session/request ids, and the free-model catalog.
+ *
+ * Adapter contract: dsh-llm LlmAdapter (providerInfo/listModels/resolveModel/
+ * prepareCall/stream) — structural, no host import.
+```
+
+</details>
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

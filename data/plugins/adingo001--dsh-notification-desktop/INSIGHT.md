@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a1c9725](https://github.com/Adingo001/dsh-notification-desktop/tree/a1c9725b83b56de48f684a876f0ea997cfabaad1)
+分析版本：[33f5cbf](https://github.com/Adingo001/dsh-notification-desktop/tree/33f5cbf23e00219088fca630d83e876b61fd487a)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH 0.2.x 轮次结束时按原因与后台状态触发桌面或浏览器通知。
+> **实现功能**：适配DSH 0.2.x的任务完成通知，Windows桌面经Host发送WinRT提醒。
 
-> **核心亮点**：在上游通知逻辑上适配0.2.x快照/retention并提供Windows宿主WinRT通路，区分权限与呈现。参见[Q01](#research-q01)。
+> **核心亮点**：基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
 
-> **风险与缺陷**：Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提前记成功，npm files又不含运行脚本，故不能以日志成功认定系统提醒生效。参见[Q02](#research-q02)、[Q03](#research-q03)。
+> **风险与缺陷**：客户端投递即记录成功、非Windows Electron仍走会直接skip的Host路径；页面关闭停止判定，不能承诺可靠跨平台后台提醒。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 哪种等待被改变，贡献归属与合格通知是什么？](#detail-section-11)
-  - [Q02 · 从事件投影到toast的链路能保证显示一次吗？](#detail-section-12)
-  - [Q03 · 安装、权限、发布包和恢复各有什么负担？](#detail-section-13)
-  - [Q04 · 目前何时采用，怎样证伪新的可靠投递设计？](#detail-section-14)
+  - [Q01 · 移植包解决哪种任务交接问题，贡献属于谁？](#detail-section-11)
+  - [Q02 · 事件如何形成通知，重连去重有什么取舍？](#detail-section-12)
+  - [Q03 · 请求成功是否表示用户已看到通知，跨平台如何？](#detail-section-13)
+  - [Q04 · 首次配置、持续运行和失败恢复承担哪些负担？](#detail-section-14)
+  - [Q05 · 应给什么采用建议，如何检验可靠交接假设？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：后台长轮次用户需要完成提醒；验收为及时且不重复地知道返回查看，不把结束事件当任务质量验收。
+> **用途**：适合Windows DSH长任务期间离开前台、需要完成或错误提醒的人；不覆盖等待审批，页面必须持续运行。[Q01](#research-q01)
 
-人工查看会话或浏览器原生Notification是简单参照；上游投影与通知逻辑是继承基础，本项价值集中0.2.x和Windows适配。
+简单基线为手工切回窗口查看任务状态；浏览器Notification是通道基线。没有同环境独立效果比较，不将作者平台报告外推全部版本。
 
 <a id="detail-section-3"></a>
 
@@ -49,67 +50,70 @@
 
 #### 能力
 
-| 能力 | 主要用途 | 使用条件与边界 |
+|能力|主要用途|使用条件与边界|
 |---|---|---|
-| 完成投影 | 观察turn/end | 不含待审批，正文是截断累积 |
-| 桌面提醒 | 后台通知 | Host仅Windows，需脚本/AUMID |
-| 浏览器提醒 | Web通知 | 需权限，不保证系统实际呈现 |
+|完成提醒|减少轮询|页面存活，不覆盖待审批|
+|WinRT投递|Windows桌面通知|Windows、AUMID；HTTP成功非可见回执|
+|trace诊断|分析漏提醒|核对访问控制与日志保留|
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|依赖或条件|是否必需|用途|缺失或不满足时|
 |---|---|---|---|
-| DSH0.2.x投影/slots/list | 启动必需 | 完成观察和设置 | 无提醒，人工查看 |
-| Windows/PowerShell/WinRT、toast脚本 | 桌面主路径必需 | 系统呈现 | 非Windows跳过，缺脚本失败 |
-| AUMID及协议注册 | Windows呈现/回焦条件 | 系统归属 | 按作者说明排查/撤销 |
+|DSH 0.2.x投影/webServer|必需|完成边和投递路由|核对服务、人工轮询|
+|Windows PowerShell/WinRT|桌面投递必需|系统toast|非Windows暂缓桌面路径|
+|AUMID与协议handler|Windows显示/点击必需|系统身份、返回窗口|Remove回滚或重新注册|
+|存活页面|必需|通知判断|关闭后不能依赖提醒|
 
 #### 启动步骤
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|步骤|执行者与成功判据|失败处理|
 |---|---|---|
-| 1 | 用户核安装内容与系统 | 脚本在位、受支持OS |
-| 2 | 用户配置注册项与设置 | 实际测试toast显示，非只granted |
-| 3 | 用户后台完成非敏感轮次 | 每轮按原因提醒，查trace区分失败 |
+|装包并核查本地访问控制|用户确认设置页|暂停外部暴露|
+|注册AUMID和协议|用户确认可撤销|Remove回滚|
+|测试真实任务和恢复|用户确认系统可见、重连不重复|读trace并恢复人工轮询|
+
+**效果与成本**
 
 #### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|阶段|现金与资源|人工与时间|未知|
 |---|---|---|---|
-| 首次使用 | 安装资源、Windows注册项 | 核脚本、AUMID、权限与测试 | 金额/工时未知 |
-| 持续使用 | 进程、临时日志和摘要通知 | 处理中断、控制敏感正文 | 日志文件未轮转 |
-| 失败恢复 | 重试/清临时文件 | 查回执/脚本、撤销注册项 | 不保证重试不重复 |
+|首次|Windows/PowerShell运行环境|安装、AUMID与协议注册|兼容及配置耗时|
+|持续|页面订阅、通知进程、临时文件|处理提醒与复核|实际漏报率和时间|
+|失败恢复|重试toast、重跑路径注册|查trace、恢复设置、Remove回滚|日志保留与恢复工时|
 
 #### 效果
 
-| 效果项 | 当前证据支持 | 尚不能确定 |
+|效果项|源码支持|未知|
 |---|---|---|
-| 完成识别 | turn/end投影与增量门控 | 重连窗口内不漏报 |
-| 通知投递 | WinRT进程/浏览器API | 实际显示、正确系统归属 |
-| 诊断 | 门控与helper trace | 成功日志非显示证明，文件未轮转 |
+|完成边判定|单调turn投影及原因过滤|漏报和重复率|
+|Windows投递|WinRT脚本与结果trace|系统可见和用户感知|
+|重连去重|水合与5秒宽限|真实完成被抑制的比例|
 
-> **思考**：Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提前记成功，npm files又不含运行脚本，故不能以日志成功认定系统提醒生效。参见[Q02](#research-q02)、[Q03](#research-q03)。
+> **思考**：客户端投递即记录成功、非Windows Electron仍走会直接skip的Host路径；页面关闭停止判定，不能承诺可靠跨平台后台提醒。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：在上游通知逻辑上适配0.2.x快照/retention并提供Windows宿主WinRT通路，区分权限与呈现。参见[Q01](#research-q01)。
+> **亮点**：基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
 
-在上游通知逻辑上适配0.2.x快照/retention并提供Windows宿主WinRT通路，区分权限与呈现。参见[Q01](#research-q01)。
+基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
 
-纯fold与客户端门控分离便于复用；需将观测turn、投递和显示分为不同事实。当前脚本files、跨OS路由和临时日志边界增加维护负担，详见[Q02](#research-q02)、[Q03](#research-q03)。
+投影折叠及重连水合基线可借鉴；记录投递成功的时机过早，平台回退与本地路由边界需先补验收。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提前记成功，npm files又不含运行脚本，故不能以日志成功认定系统提醒生效。参见[Q02](#research-q02)、[Q03](#research-q03)。
+客户端投递即记录成功、非Windows Electron仍走会直接skip的Host路径；页面关闭停止判定，不能承诺可靠跨平台后台提醒。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先观察并核制品/路由，Windows非敏感任务以实际toast验收后再试用；Mac/Linux桌面不依当前路径。参见[Q04](#research-q04)。
+建议观察；Windows本地隔离环境先核对路由鉴权及注册表回滚，再检查真实可见与重连；非Windows桌面Host路径不适用。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +121,18 @@ Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提�
 
 **核查状态**：已检查源码。
 
-0.2.x接线与WinRT调用有源码支持；实际显示、制品完整性与访问边界待核；可靠回执为未验证假设。
+已有集成机制有源码支持；节时、保真与宿主兼容未执行验证；设计假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 index.js、client.js、package.json、scripts/toast.ps1、scripts/fix-toast-aumid.ps1 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 index.js、client.js、scripts/toast.ps1 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查投影、客户端门控、路由、脚本引用和发布files；未运行系统通知或注册表修改，未审计全部原生focus实现。
-- 下一步：未执行。先核制品及路由权限，再对网络/helper/脚本/OS/重连五场景记录真实显示与重复。
+- 边界：源码级检查事件折叠、客户端重连和投递、Host路由与WinRT脚本；未审计完整宿主鉴权和全部前台激活代码，未执行。
+- 下一步：后续授权后用Windows/非Windows、睡眠重连、关页、权限拒绝和错误结束检查系统可见、点击返回、重复与漏报；同时核对路由和临时文件清理。
 
 **分析版本**
 
 - **仓库**：[Adingo001/dsh-notification-desktop](https://github.com/Adingo001/dsh-notification-desktop)
-- **版本号**：0.3.1（[固定提交 a1c9725](https://github.com/Adingo001/dsh-notification-desktop/tree/a1c9725b83b56de48f684a876f0ea997cfabaad1)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.2（[固定提交 33f5cbf](https://github.com/Adingo001/dsh-notification-desktop/tree/33f5cbf23e00219088fca630d83e876b61fd487a)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +140,9 @@ Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提�
 
 <a id="innovation"></a>
 
-未验证假设为分层回执、session/turn幂等键与OS能力探测；只重试明确未投递，故障对照实际显示和重复。参见[Q04](#research-q04)。
+未验证假设是分离观察、接收、系统发出和用户处理回执，并按平台能力选通道；对照睡眠重连、关页及权限拒绝，若漏交接不降则否定。[Q05](#research-q05)
 
-未执行。先核制品及路由权限，再对网络/helper/脚本/OS/重连五场景记录真实显示与重复。
+后续授权后用Windows/非Windows、睡眠重连、关页、权限拒绝和错误结束检查系统可见、点击返回、重复与漏报；同时核对路由和临时文件清理。
 
 <a id="detail-section-9"></a>
 
@@ -149,7 +153,7 @@ Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 2 | 1028 | 824 | 135 | — |
+| .js | source | 2 | 1066 | 847 | 149 | — |
 | .md | source | 1 | 148 | — | — | 2465 |
 | .mjs | source | 1 | 86 | 68 | 11 | — |
 | .mjs | test | 2 | 290 | 237 | 18 | — |
@@ -158,40 +162,36 @@ Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/Adingo001/dsh-notification-desktop/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/Adingo001/dsh-notification-desktop/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：0.2.x完成通知的投影、系统呈现与采用边界是什么？
+**插件研究总目标**：任务完成能否可靠交接给离开前台的用户，平台与恢复边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 哪种等待被改变，贡献归属与合格通知是什么？
+### Q01 · 移植包解决哪种任务交接问题，贡献属于谁？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向把长轮次放后台、需要知道何时回来查看结果的DSH 0.2.x用户。合格任务是某轮结束后只提醒一次、正文不泄露不必要内容且用户能回到工作；它不检验任务结果正确。相对盯窗口，通知降低反复查看；相对上游通知插件，增量是0.2.x投影/retention接线和Windows宿主WinRT路径。
-
-README明确基于omdsh-dev/dsh-notification移植，不能把投影模型归为原创；也明确没有移植待审批提醒。完成和待用户操作属于不同事件，本插件只覆盖完成边。系统权限granted与真正呈现分开理解是有价值的操作经验，但作者实测不能代替本轮验收。
+对象是DSH长任务期间切换去做其他工作的用户，交付物是知道一轮已完成或失败并能回到应用，不是任务结果自动验收。作者明确源于omdsh-dev/dsh-notification，Host会话投影主要继承，0.2.x会话快照/retention接线、本地设置与Windows WinRT投递是适配增量。相对反复查看窗口，通知减少轮询；相对浏览器Notification，Windows桌面路径转给Host运行PowerShell WinRT。源码支持实现差异，但作者关于系统实际静默丢弃及修复成功是作者报告，本轮没有独立复现。等待审批/回答不在移植范围，不能作为完整“任务需要关注”监控。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:1-23](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/README.md#L1-L23)
+**依据 1 · 作者声明**：[README.md:3-24](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/README.md#L3-L24)
 
-作者列上游与完成边限制。
+作者解释上游与适配范围
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-# dsh-notification-desktop
-
 给 **DeepSeek Harness 0.2.x** 用的「一轮跑完就弹系统通知」插件。上游 [`omdsh-dev/dsh-notification`](https://github.com/omdsh-dev/dsh-notification) 只覆盖 0.1.1 / 0.1.2 的客户端布局，这个包是它的 0.2.x 移植版。
 
 ## 它做什么
@@ -213,117 +213,14 @@ README明确基于omdsh-dev/dsh-notification移植，不能把投影模型归为
 | `@deepseek-ai/dsh-client-store` 存设置 | 依赖不可解析，改成 localStorage + 一个自带的极简 observable |
 | 设置页用自家 styles/组件 | 只用 React + 宿主主题 CSS 变量（`--dsw-alias-*`），不引外部组件包 |
 
+Host 半边的投影契约（`key` / `stateSchema` / `init` / `apply` / `wire` / `stateVersion`）在 0.2.1-rc.2 里没变，所以 `index.js` 基本是原逻辑。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:135-166](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L135-L166)
+**依据 2 · 源码核查**：[index.js:183-218](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L183-L218)
 
-投影仅在turn/end形成最后完成状态。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-export function reduce(state, event) {
-  switch (event.type) {
-    case 'turn/start':
-      return { ...state, open: { turn: event.data.turn, text: '', tools: [] } }
-    case 'assistant/message': {
-      const open = state.open
-      if (open === null || open.turn !== event.data.turn) return state
-      let text = open.text
-      const content = event.data.message?.content ?? []
-      for (const block of content) {
-        if (block && block.type === 'text' && typeof block.text === 'string') text += block.text
-      }
-      text = bound(text)
-      if (text === open.text) return state
-      return { ...state, open: { ...open, text } }
-    }
-    case 'tool/call': {
-      const open = state.open
-      if (open === null || open.turn !== event.data.turn) return state
-      if (typeof event.data.name !== 'string' || open.tools.includes(event.data.name)) return state
-      return { ...state, open: { ...open, tools: [...open.tools, event.data.name] } }
-    }
-    case 'turn/end': {
-      // Advance the turn number even when this session was observed mid-turn
-      // (no turn/start in memory): the client dedupes on a monotonic turn, so
-      // a silent advance is safer than a missed one.
-      const open = state.open
-      const sameTurn = open !== null && open.turn === event.data.turn
-      const body = sameTurn ? open.text.trim() : ''
-      const tools = sameTurn ? open.tools : []
-      const reason = event.data.reason?.kind ?? ''
-      return { open: null, last: { turn: event.data.turn, reason, body, tools } }
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 从事件投影到toast的链路能保证显示一次吗？
-
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
-
-#### 完整回答
-
-Host按turn/start、assistant/message、tool/call累积后在turn/end发布视图，body最多400字符。实际是把同轮文本追加并持续截断，不是README所称“最后一段回复”；后段答案可能不在预览。客户端首次和重连seed基线避免历史重报，turn增长后先更新observed，再按总开关/原因/后台过滤，Electron一律POST宿主，其余用浏览器Notification。
-
-去重是尽力而为：网络失败被吞掉，observed已推进，客户端在未等HTTP结果时记录deliver ok:true，因此投递日志不等于显示成功，也没有可靠重试。Host非Windows直接跳过，意味着macOS/Linux Electron也走到不显示路径。路由204仅表示请求已受理，PowerShell退出另记trace。纯fold与门控可借鉴，但不构成端到端恰好一次通知保证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:135-166](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L135-L166)
-
-文本追加和400字符预算。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-export function reduce(state, event) {
-  switch (event.type) {
-    case 'turn/start':
-      return { ...state, open: { turn: event.data.turn, text: '', tools: [] } }
-    case 'assistant/message': {
-      const open = state.open
-      if (open === null || open.turn !== event.data.turn) return state
-      let text = open.text
-      const content = event.data.message?.content ?? []
-      for (const block of content) {
-        if (block && block.type === 'text' && typeof block.text === 'string') text += block.text
-      }
-      text = bound(text)
-      if (text === open.text) return state
-      return { ...state, open: { ...open, text } }
-    }
-    case 'tool/call': {
-      const open = state.open
-      if (open === null || open.turn !== event.data.turn) return state
-      if (typeof event.data.name !== 'string' || open.tools.includes(event.data.name)) return state
-      return { ...state, open: { ...open, tools: [...open.tools, event.data.name] } }
-    }
-    case 'turn/end': {
-      // Advance the turn number even when this session was observed mid-turn
-      // (no turn/start in memory): the client dedupes on a monotonic turn, so
-      // a silent advance is safer than a missed one.
-      const open = state.open
-      const sameTurn = open !== null && open.turn === event.data.turn
-      const body = sameTurn ? open.text.trim() : ''
-      const tools = sameTurn ? open.tools : []
-      const reason = event.data.reason?.kind ?? ''
-      return { open: null, last: { turn: event.data.turn, reason, body, tools } }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[index.js:183-218](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L183-L218)
-
-非Windows跳过与异步子进程状态。
+Host投递实现及平台条件
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -369,15 +266,144 @@ function showToast(payload) {
 
 </details>
 
-**依据 3 · 源码核查**：[client.js:261-278](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/client.js#L261-L278)
+#### 缺口
 
-Electron检测与fire-and-forget。
+- 缺少同任务基线的端到端收益结果
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 事件如何形成通知，重连去重有什么取舍？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+Host reduce处理turn/start初始化、assistant/message累积文本并截400字符、tool/call名称去重、turn/end形成最后投影。注意正文是本轮累计文本的有界前缀，不保证是最后一段回复，README描述因此应收窄。浏览器订阅sessions.list，以projectionValues.notification及单调turn识别新完成，用retainedBy.mainView识别可见会话。seed记录已水合状态并设置5秒宽限，防重连历史完成集中弹出；这减少重复提示的机制也可能跳过宽限期内真实完成，需要实验量化。状态主要在页面内，关页停止判定，不能把Host投影注册当常驻后台通知服务。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:135-166](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L135-L166)
+
+事件折叠与有界累计文本
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
-    /** True inside the Electron desktop shell, whose toast path needs the host. */
+export function reduce(state, event) {
+  switch (event.type) {
+    case 'turn/start':
+      return { ...state, open: { turn: event.data.turn, text: '', tools: [] } }
+    case 'assistant/message': {
+      const open = state.open
+      if (open === null || open.turn !== event.data.turn) return state
+      let text = open.text
+      const content = event.data.message?.content ?? []
+      for (const block of content) {
+        if (block && block.type === 'text' && typeof block.text === 'string') text += block.text
+      }
+      text = bound(text)
+      if (text === open.text) return state
+      return { ...state, open: { ...open, text } }
+    }
+    case 'tool/call': {
+      const open = state.open
+      if (open === null || open.turn !== event.data.turn) return state
+      if (typeof event.data.name !== 'string' || open.tools.includes(event.data.name)) return state
+      return { ...state, open: { ...open, tools: [...open.tools, event.data.name] } }
+    }
+    case 'turn/end': {
+      // Advance the turn number even when this session was observed mid-turn
+      // (no turn/start in memory): the client dedupes on a monotonic turn, so
+      // a silent advance is safer than a missed one.
+      const open = state.open
+      const sameTurn = open !== null && open.turn === event.data.turn
+      const body = sameTurn ? open.text.trim() : ''
+      const tools = sameTurn ? open.tools : []
+      const reason = event.data.reason?.kind ?? ''
+      return { open: null, last: { turn: event.data.turn, reason, body, tools } }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[client.js:328-355](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/client.js#L328-L355)
+
+seed、水合状态及宽限
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+      const observed = new Map()
+
+      // A reconnect (sleep, unlock, WS reset) rebuilds the session list before
+      // the projections hydrate. Baselining those rows at "turn 0" made every
+      // session look freshly completed once its history arrived, which fired a
+      // toast per session on every unlock. Entries therefore carry whether the
+      // projection was present when they were recorded, and a seed opens a
+      // short window in which nothing may fire at all.
+      const GRACE_MS = 5000
+      let graceUntil = 0
+
+      const seed = () => {
+        const state = list.getSnapshot()
+        observed.clear()
+        if (state === undefined || !Array.isArray(state.ids)) return
+        for (const id of state.ids) {
+          const row = state.byId?.[id]
+          const projection = row?.projectionValues?.notification
+          observed.set(id, {
+            turn: turnOf(row),
+            hydrated: projection !== undefined && projection !== null,
+            // Rows present at seed time may carry history behind them; a row
+            // that shows up later is a session this page watched from birth.
+            fromSeed: true,
+          })
+        }
+        graceUntil = Date.now() + GRACE_MS
+        report({ kind: 'seed', phase: state.phase, ids: state.ids.length, baselines: [...observed.entries()] })
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:127-131](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/README.md#L127-L131)
+
+作者明示页面必须存活
+
+```text
+## 已知边界
+
+- 不提醒「等你审批 / 等你回答」这类挂起交互（原因见上）。
+- 页面必须在跑：判定发生在页面里，页面关了就没有；桌面端只是把"弹"这一步交给宿主。
+- `turn/end` 的 `forked` / `interrupted` 也会推进投影的 `turn`（这样客户端去重不会漏轮），但默认只在 `completed` / `error` 上弹。
+```
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 请求成功是否表示用户已看到通知，跨平台如何？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+不表示。client.pushToast是fire-and-forget fetch，catch被忽略；deliver随后立即记录ok:true，没有检查HTTP状态或操作系统呈现。Host showToast只在win32执行，非Windows记录skip然后返回，但客户端以electron用户代理把全部桌面壳导向Host，因此macOS/Linux Electron的这条路径不会发送浏览器通知，也没有等价Host实现。这是代码直接显示的平台限制，未运行复现。Windows helper输出TOAST-OK只说明WinRT Show返回，仍不是用户看到或点击。故关键贡献的验收必须从turn结束直到系统可见通知、点击回到对应工作界面，不能以204或trace deliver统计成功率。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[client.js:262-278](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/client.js#L262-L278)
+
+Electron判断和不校验fetch响应
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
     function isDesktopShell() {
       return typeof navigator !== 'undefined' && /electron/i.test(navigator.userAgent || '')
     }
@@ -399,127 +425,129 @@ Electron检测与fire-and-forget。
 
 </details>
 
-**依据 4 · 源码核查**：[client.js:338-350](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/client.js#L338-L350)
+**依据 2 · 源码核查**：[client.js:365-387](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/client.js#L365-L387)
 
-尚未回执就记录成功。
+Host路径即时记录成功
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-      const fire = (api, row, projection, settings) => {
-        const title = t(REASON_TITLE[projection.reason] ?? 'titleCompleted')
-        const limit = settings.bodyChars
-        const body = clampBody(projection.body, limit) || t('emptyBody')
-        const subtitle = sessionTitleOf(row, t)
-        const tag = tagOf(row.id, projection.turn)
-        const text = subtitle === '' ? body : `${subtitle}\n${body}`
         const deliver = () => {
           if (isDesktopShell()) {
             // On the desktop shell Chromium's Windows presenter reports success
             // and Windows drops the toast, so the host shows it instead.
             pushToast({ title, body: text, tag, turn: projection.turn })
             report({ kind: 'deliver', ok: true, via: 'host', tag, title, turn: projection.turn })
+            return
+          }
+          const result = show(api, title, text, tag, settings.requireInteraction)
+          report({
+            kind: 'deliver',
+            ok: result.ok,
+            via: 'notification',
+            message: result.ok ? '' : result.message,
+            tag,
+            title,
+            turn: projection.turn,
+          })
+          if (!result.ok) console.error(`[dsh-notification-desktop] notification failed: ${result.message}`)
+        }
+        if (isDesktopShell()) {
+          deliver()
+          return
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[client.js:388-419](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/client.js#L388-L419)
+**依据 3 · 源码核查**：[index.js:183-186](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L183-L186)
 
-observed先推进再过滤。
-
-<details>
-<summary>查看原文（32行）</summary>
+非Windows直接跳过
 
 ```text
-        for (const id of state.ids) {
-          const row = state.byId?.[id]
-          if (row === undefined || row === null) continue
-          const projection = row.projectionValues?.notification
-          const turn = turnOf(row)
-          const previous = observed.get(id)
-          observed.set(id, turn)
-          if (previous !== undefined && turn !== previous) changed.push({ id, from: previous, to: turn })
-          if (previous === undefined || turn <= previous) continue
-          if (!settings.enabled) {
-            report({ kind: 'skip', id, turn, previous, skip: 'disabled' })
-            continue
-          }
-          if (api === undefined && !isDesktopShell()) {
-            report({ kind: 'skip', id, turn, previous, skip: 'no-api' })
-            continue
-          }
-          if (projection === undefined || projection === null) {
-            report({ kind: 'skip', id, turn, previous, skip: 'no-projection' })
-            continue
-          }
-          const flag = REASON_FLAG[projection.reason]
-          if (flag === undefined) {
-            report({ kind: 'skip', id, turn, previous, skip: 'reason-not-mapped', reason: projection.reason })
-            continue
-          }
-          if (settings[flag] !== true) {
-            report({ kind: 'skip', id, turn, previous, skip: 'reason-off', reason: projection.reason })
-            continue
-          }
-          if (settings.backgroundOnly && !document.hidden && isMainView(row)) {
-            report({ kind: 'skip', id, turn, previous, skip: 'background-only', hidden: document.hidden, main: isMainView(row) })
+function showToast(payload) {
+  if (process.platform !== 'win32') {
+    recordTrace({ kind: 'host-notify-skip', reason: 'not-windows' })
+    return
 ```
 
-</details>
+**依据 4 · 源码核查**：[scripts/toast.ps1:36-42](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/scripts/toast.ps1#L36-L42)
 
-<a id="research-q03"></a>
+Show成功与操作系统可见性不同
 
-<a id="detail-section-13"></a>
+```text
+$notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($aumid)
+try {
+  $notifier.Show($toast)
+  Write-Output 'TOAST-OK'
+} catch {
+  Write-Output ('TOAST-FAIL ' + $_.Exception.GetType().Name + ' :: ' + $_.Exception.Message)
+  exit 1
+```
 
-### Q03 · 安装、权限、发布包和恢复各有什么负担？
+#### 缺口
+
+- 缺少Windows可见通知与非Windows Electron回退的实际结果
+  **影响**：代码平台分支和投递即成功的设计判断不能表述为本轮故障复现或真实送达率
+  **进一步探讨**：分别在Windows与非Windows桌面测试任务完成到系统可见/点击返回，模拟Host非2xx和权限拒绝并检查回退
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 首次配置、持续运行和失败恢复承担哪些负担？
 
 **研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-Windows主路径依赖PowerShell/WinRT、脚本toast.ps1和已注册AUMID；fix-toast-aumid脚本还会写用户注册表与协议handler，退出需要撤销。一个发布边界是package.files没有scripts目录，而index.js用相对路径加载scripts/toast.ps1。源码/Git安装含脚本不等于npm打包产物含脚本，当前未打包实测，应先核实际制品。
-
-trace/notify路由显式CORS星号且未在处理器内见Connection准入；是否被上层统一保护未知，外部读取日志/触发通知的安全边界不能由“本机路由”推定。trace内存200条但临时文件append不轮转，DELETE只清内存，隐私与磁盘清理需要用户负责。首次注册、日常打断和故障排查都有时间成本；无强制模型调用但系统进程、日志和通知摘要并非无资源/隐私负担。
+Windows桌面需要DSH 0.2.x、sessionProjections、webServer、PowerShell/WinRT和AUMID注册；点击激活还需协议handler及可选C#编译器/脚本降级。用户必须保留页面运行并设置通知原因与后台过滤。设置在localStorage，迁移设备需重新配置；注册表脚本会写HKCU并固定checkout绝对路径，移动目录需重跑，卸载需显式Remove。持续处理会话快照并写trace临时文件，内存ring限制200不限制appendFileSync的日志增长；通知正文写临时JSON，本段未见清理，需检查保留策略与敏感内容。trace/notify采用webServer非/api路径并给* CORS，组件内无身份检查；是否可被外部访问取决宿主边界，未确认漏洞，但在安全边界未核清前不能对外暴露。首次/恢复人工时间与实际系统显示率未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:15-24](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/package.json#L15-L24)
+**依据 1 · 作者声明**：[README.md:93-120](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/README.md#L93-L120)
 
-files白名单不含scripts。
+注册表、激活与路径依赖
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（28行）</summary>
 
-```text
-  "files": [
-    "index.js",
-    "client.js",
-    "cordis.patch.yml",
-    "locale/en.json",
-    "locale/zh.json",
-    "icon.svg",
-    "README.md",
-    "LICENSE"
-  ],
+````text
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\fix-toast-aumid.ps1
+# 撤销：加 -Remove
 ```
+
+它写两个键，都不碰壳、不碰 asar、不碰快捷方式：
+
+- `HKCU\Software\Classes\AppUserModelId\<AUMID>`（DisplayName + IconUri）—— 让 Windows 认这个 AUMID。
+- `HKCU\Software\Classes\dshnotify`（URL Protocol + handler）—— **点通知能把窗口拉回前台**。
+
+### 点通知回到前台
+
+toast 带 `activationType="protocol" launch="dshnotify:focus"`，点它时 Windows 跑上面注册的 handler，把 `DeepSeek Harness` 的主窗口提到前台。抢前台要绕开 Windows 的前台锁，所以是三级降级、每级都校验：
+
+1. `AttachThreadInput` 借前台线程的输入队列 → `BringWindowToTop` → `SetForegroundWindow`
+2. `SwitchToThisWindow`
+3. `SW_MINIMIZE` → `SW_RESTORE`（还原的窗口会拿到激活权）→ 再 `SetForegroundWindow`
+
+**handler 不能闪黑框。** 控制台程序（`powershell.exe`）在能隐藏自己之前就已经被加载器创建了控制台窗口，所以 `-WindowStyle Hidden` 也挡不住闪一下。因此：
+
+- 有 C# 编译器时，`fix-toast-aumid.ps1` 把 `scripts/focus-dsh.cs` 编成 **`scripts/focus-dsh.exe`**（`/target:winexe` = GUI 子系统，压根没有控制台），协议直接指向它；
+- 没有编译器时退到 **`wscript.exe`**（GUI 宿主）跑 `scripts/focus.ps1` 的隐藏 PowerShell —— 同样不闪。
+
+两个产物都在 `.gitignore` 里（构建物不入库），换机器装的时候由注册脚本现编。
+
+为什么不用 `activationType="foreground"`：那需要给 AUMID 注册一个 `ToastActivatorCLSID` COM 服务器（还要处理 `-ToastActivated` 命令行），而桌面壳不提供；协议激活只需要一个 HKCU 注册表项。
+
+handler 里写的是**本 checkout 的绝对路径**，所以挪动插件目录后要重跑一次 `fix-toast-aumid.ps1`。
+````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:34-37](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L34-L37)
+**依据 2 · 源码核查**：[index.js:60-67](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L60-L67)
 
-运行依赖相对toast脚本。
-
-```text
-const AUMID = 'electron.app.DeepSeek Harness'
-
-/** The ASCII-only Windows toast helper this host half spawns. */
-const TOAST_SCRIPT = fileURLToPath(new URL('./scripts/toast.ps1', import.meta.url))
-```
-
-**依据 3 · 源码核查**：[index.js:60-67](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L60-L67)
-
-文件追加不随内存环裁剪。
+trace持续追加临时日志
 
 ```text
 function recordTrace(record) {
@@ -532,9 +560,9 @@ function recordTrace(record) {
   }
 ```
 
-**依据 4 · 源码核查**：[index.js:247-289](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L247-L289)
+**依据 3 · 源码核查**：[index.js:247-289](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L247-L289)
 
-trace CORS与DELETE行为。
+诊断路由与CORS
 
 <details>
 <summary>查看原文（43行）</summary>
@@ -587,14 +615,16 @@ trace CORS与DELETE行为。
 
 </details>
 
-**依据 5 · 源码核查**：[index.js:301-335](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L301-L335)
+**依据 4 · 源码核查**：[index.js:299-329](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L299-L329)
 
-notify无局部Connection检查。
+通知路由处理
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
+    host.effect(
+      () =>
         host.webServer.register({
           path: '/dsh-notification-desktop/notify',
           handler: async (request, response) => {
@@ -624,57 +654,62 @@ notify无局部Connection检查。
               showToast(payload)
               recordTrace({ kind: 'host-notify', title: payload.title, turn: payload.turn })
               response.writeHead(204, headers)
-              response.end()
-            } catch (error) {
-              response.writeHead(400, { ...headers, 'content-type': 'application/json' })
-              response.end(JSON.stringify({ ok: false, error: String((error && error.message) || error) }))
-            }
-          },
 ```
 
 </details>
 
-#### 缺口
+<a id="research-q05"></a>
 
-- 实际安装制品及上层路由保护未核验
-  **影响**：可启动性和日志暴露范围影响采用
-  **进一步探讨**：检查目标制品文件清单与目标宿主Connection路由契约，再隔离测试非授权Origin
+<a id="detail-section-15"></a>
 
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 目前何时采用，怎样证伪新的可靠投递设计？
+### Q05 · 应给什么采用建议，如何检验可靠交接假设？
 
 **研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
-当前建议观察。Windows后台完成提醒需求明确，但依赖脚本制品、AUMID和实际呈现；Mac/Linux桌面用户不能按当前Electron检测期待可用。先核制品完整与路由权限，再在非敏感会话验证前台/后台、原因过滤、重连不重报与系统实际显示，未通过不作为唯一办结通知。
-
-未验证假设是区分accepted、helper_ok、display_observed三层回执，并以session/turn生成幂等键，受限重试只针对明确未投递，OS选择使用能力探测。由当前成功日志早于HTTP、非Windows跳过和先推进observed推导，它可能降低静默丢失，但不能通过盲目重放保证不重复。最小验证网络断连、PowerShell缺失、脚本缺失、非Windows和重连五场景，分别统计实际toast/重复/误报成功；若增加重复而仍看不出丢失，就否定收益。
+本项建议观察，Windows有明确需求者仅在核对本地路由访问控制及注册表回滚后隔离试用；其他桌面平台当前Host路径不适用。未验证假设是把“完成边被观察”“投递已接收”“系统已发出”“用户已处理”分开持久化，并以平台能力而非electron UA选通道，可降低伪成功及漏交接。额外负担是持久去重、回执和跨平台接口。最小对照用Windows与非Windows桌面、断网/睡眠恢复、页面关闭、权限拒绝和5秒窗口内完成，记录重复/漏报、可见率、点击返回与人工轮询。若仅提高日志复杂度而不减少漏交接，则否定；新假设不计为现有贡献。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[client.js:270-278](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/client.js#L270-L278)
+**依据 1 · 源码核查**：[client.js:365-387](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/client.js#L365-L387)
 
-当前无回执重试。
+即时成功记录构成回执假设依据
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
-    function pushToast(payload) {
-      try {
-        fetch(NOTIFY_URL, {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify(payload),
-        }).catch(() => {})
-      } catch {
-        /* the host route is a best-effort delivery channel */
+        const deliver = () => {
+          if (isDesktopShell()) {
+            // On the desktop shell Chromium's Windows presenter reports success
+            // and Windows drops the toast, so the host shows it instead.
+            pushToast({ title, body: text, tag, turn: projection.turn })
+            report({ kind: 'deliver', ok: true, via: 'host', tag, title, turn: projection.turn })
+            return
+          }
+          const result = show(api, title, text, tag, settings.requireInteraction)
+          report({
+            kind: 'deliver',
+            ok: result.ok,
+            via: 'notification',
+            message: result.ok ? '' : result.message,
+            tag,
+            title,
+            turn: projection.turn,
+          })
+          if (!result.ok) console.error(`[dsh-notification-desktop] notification failed: ${result.message}`)
+        }
+        if (isDesktopShell()) {
+          deliver()
+          return
 ```
 
-**依据 2 · 源码核查**：[index.js:183-218](https://github.com/Adingo001/dsh-notification-desktop/blob/a1c9725b83b56de48f684a876f0ea997cfabaad1/index.js#L183-L218)
+</details>
 
-OS与helper结果分离。
+**依据 2 · 源码核查**：[index.js:183-218](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/index.js#L183-L218)
+
+平台及子进程结果边界
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -720,10 +755,22 @@ function showToast(payload) {
 
 </details>
 
+**依据 3 · 作者声明**：[README.md:127-131](https://github.com/Adingo001/dsh-notification-desktop/blob/33f5cbf23e00219088fca630d83e876b61fd487a/README.md#L127-L131)
+
+页面生存边界
+
+```text
+## 已知边界
+
+- 不提醒「等你审批 / 等你回答」这类挂起交互（原因见上）。
+- 页面必须在跑：判定发生在页面里，页面关了就没有；桌面端只是把"弹"这一步交给宿主。
+- `turn/end` 的 `forked` / `interrupted` 也会推进投影的 `turn`（这样客户端去重不会漏轮），但默认只在 `completed` / `error` 上弹。
+```
+
 #### 缺口
 
-- 端到端回执设计与真实显示未测
-  **影响**：不能升级持续安装或投递保证
-  **进一步探讨**：按五场景记录受理、helper、实际显示和重复数
+- 未来设计假设的对照实验尚无结果
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

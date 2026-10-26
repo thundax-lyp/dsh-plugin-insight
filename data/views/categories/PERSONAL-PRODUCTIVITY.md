@@ -14,7 +14,7 @@
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。 | 先观察，优先保留渠道截断/失败收据并加确认/安全导出，再以个人匿名语料核事实与漏项。 |
 | [agent-clinic](#plugin-1417442557-root) | 只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。 | 先观察。 |
 | [AIR-pixel Liquid Glass](#plugin-1414238544-root) | 为DSH提供可配置的液态玻璃主题、壁纸、桌面透明、光标与点击涟漪。 | 重视界面个性化者可在非关键工作区试用，先验证目标宿主版本、文字对比、性能与一键恢复。 |
-| [Amoji for DSH](#plugin-1378933589-adapters-dsh) | 向 DSH 添加固定语义表情、库管理、表情包与市场发布入口。 | 目前建议观察。 |
+| [Amoji for DSH](#plugin-1378933589-adapters-dsh) | 给 DSH 提供图形表情与固定文字语义，支持表达、搜索、精确版本解析和表情库管理。 | 有限试用非敏感表达，锁定声明版本并分别核对文字、图像与效果；不把表情当业务授权。 |
 | [anan-thermal-monitor](#plugin-1335381015-root) | Windows WPF 温度桌宠，利用 PowerShell 与随包 LibreHardwareMonitor 采集传感器，DSH Host 负责启动/停止。 | 在隔离 VM 核包内容、二进制来源和 UAC；测试传感器缺失、启动误报、停止/卸载及任务计划残留。 |
 | [chicheng-cron](#plugin-1335807482-root) | 在DSH Web侧栏管理cron任务，定时执行脚本、Skill或Agent，保存输出并提供推送、会话分组和归档选项。 | 先观察。 |
 | [chicheng-peak](#plugin-1336366824-root) | 按配置峰谷时窗显示页面/输入框光效与角标，并由Host提前调度模板提醒到可选消息渠道。 | 先观察，先核真实适用规则、统一转折/投递收据/热重载，提醒仅辅助不直接作省钱依据。 |
@@ -41,7 +41,7 @@
 | [dsh-backup-sync](#plugin-1418642133-root) | 按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。 | 先从可丢弃技能目录创建包并异机导入，检查新增、本地修改和冲突各一项；确认未选模块不变，失败文件和基线可解释后扩大范围。 |
 | [dsh-balance-chip](#plugin-1347136944-root) | 在 DSH web 侧栏与右下角显示经主机查询的 DeepSeek API 余额状态。 | 建议观察；若试用，应使用隔离 Key 与可核账户余额，先测非美元/错误值、route 访问和停用后请求是否停止。 |
 | [dsh-better-workspace-file-manager](#plugin-1425087677-root) | 为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。 | 适合需要Web工作区文件交接的人在独立测试目录先试上传、下载和版本受保护编辑。 |
-| [dsh-boo550wt-animation](#plugin-1422328385-root) | 为DSH启动增加视频、图片、网页或内置游戏遮罩，支持素材上传与跳过。 | 先观察；有明确需求者仅本地图像短时长隔离验Esc/按钮/错误与禁用，不先用不可信HTML/远程/重3D。 |
+| [dsh-boo550wt-animation](#plugin-1422328385-root) | 为DSH提供可配置开机遮罩，可播放视频、图片、网页和内置游戏，并支持预览与跳过。 | 观察；只在可信素材隔离环境先验收路由、HTML、跳过与禁用，不需要个性化者不启用。 |
 | [dsh-butler-memory](#plugin-1335928912-root) | 历史 DSH Bundle：接 Butler Memory MCP agent 工具及 Web 用户记忆审阅面板，作者已停止维护。 | 只作为历史参考；存量实例先隔离验权限、修订、崩溃/超时恢复和当前 DSH 契约。 |
 | [dsh-callout](#plugin-1359145352-root) | 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。 | 有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。 |
 | [dsh-capability-index](#plugin-1335594781-root) | 在每步系统上下文中注入候选工具提示，用规则、向量召回与 not_for 过滤预审插件库。 | 不建议作为当前生产依赖：仓库已归档且作者承认 16 样本不足。 |
@@ -71,9 +71,9 @@
 | [dsh-draft-attachments](#plugin-1414492607-root) | 把DSH输入框未发送的图片和文件保存到IndexedDB，在会话输入区重新挂载时恢复附件。 | 先观察，暂不把它当日常附件保护。 |
 | [dsh-drag-and-drop](#plugin-1333975935-root) | 为 DSH Web 拖入文件/文件夹生成可删除路径 chip，并在发送时插入会话草稿。 | 建议观察，继续可从可信本机Host、明确session归属及合成同名/异步切换场景研究来源匹配；不作原件身份保证或远端文件上传工具。 |
 | [dsh-draw-gacha](#plugin-1335791040-root) | DSH Web 拉杆发送与流式信号驱动的 3D 娱乐抽卡演出。 | 限个人娱乐试用；不能用稀有度评价模型。 |
-| [dsh-edit-question](#plugin-1426619074-root) | 在 DSH Web 编辑轮首提问、保留图片并 fork 新会话重发，可选择归档原会话。 | 保留原会话，先以非敏感文本/图片小任务试用，核对首轮与中间轮前缀；含文件、删除敏感历史或切点不明时停止。 |
+| [dsh-edit-question](#plugin-1426619074-root) | 在DSH用户提问旁编辑文本与图片，以官方fork复制前缀并在新会话重发。 | 观察；先验收原child恢复，正常试验默认保留原会话，已发生副作用须单独核对。 |
 | [dsh-effort-slider](#plugin-1335766616-root) | 给DSH模型思考档位提供滑块反馈，并向pi-ai缺失声明的模型补写reasoningEfforts与方言配置。 | 备份后单route试用，核实际请求及最后选择。 |
-| [dsh-eye-comfort](#plugin-1426448931-root) | 为 DSH 提供主题、字体字号、内容宽度、对比度、纸张纹理与动态效果设置。 | 单主题小范围试用，核代码/中文/链接、重启保存与禁用恢复；不把名称推为健康效果。 |
+| [dsh-eye-comfort](#plugin-1426448931-root) | 为DSH增加外观设置，调整主题、字体、字号、宽度、对比度、纸纹和动态效果。 | 个人本机有限试用，保存原设置并验收各界面/禁用恢复，不将名称当健康效果。 |
 | [dsh-forget-session](#plugin-1413882487-root) | 永久删除会话多层状态并防止幽灵复活。 | 建议观察。 |
 | [dsh-fullscreen-input](#plugin-1407166868-root) | 为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。 | 固定宿主长文编辑可试用，先小草稿检查引用附件。 |
 | [dsh-gotify-notify](#plugin-1412623357-root) | 按 DSH 轮次结束和可选提问事件向自管 Gotify 推送通知，并提供设置页测试入口。 | 先用测试按钮核凭据与服务，再逐类事件矩阵验证；关键告警不能仅依赖此尽力推送。 |
@@ -91,13 +91,14 @@
 | [dsh-memory-setup](#plugin-1337350700-root) | 提供工作区JSON偏好、规范、工作流与教训记忆，含DSH工具、提示注入、知识检索及备份恢复接口。 | 当前不推荐直接启为真实高信任记忆层。 |
 | [dsh-message-copy-enhance](#plugin-1337978261-root) | 将助手消息选区复制为 Markdown，恢复链接、LaTeX 源码和代码围栏。 | 经常摘录技术回答的人可先试，选取链接、公式和多行代码各一段，粘贴到常用编辑器并逐字核对URL、TeX和换行，再测试禁用后默认复制恢复。 |
 | [dsh-message-ops](#plugin-1389945615-root) | 为DSH Web提供消息回撤、单条遮蔽、文本恢复和会话回收站操作。 | 先保留可重载的会话备份，验证回撤、分步恢复、中断和重载均一致，再考虑限定试用；涉及已执行工具的区间必须另外核对现实状态。 |
+| [dsh-mimotts](#plugin-1397477851-root) | 将DSH已定稿助手回复通过MiMo TTS合成为音频，提供内联播放器与多版本语音历史。 | 有限试用非敏感短文，技术内容回读原文；先验收覆盖提示、播放、历史删除和禁用。 |
 | [dsh-model-selector-search](#plugin-1358317875-root) | 替换会话模型选择器，提供宽松搜索、供应商分组、推理档位选择和偏好记忆。 | 先观察并核对 {ok:false} 返回路径，修正或确认记忆语义后再在隔离 profile 比较同组模型搜索与原生菜单。 |
 | [dsh-monitor](#plugin-1333440937-root) | 通过文件或命令轮询监听新内容，空闲时唤醒所属Agent，并提供查看和停止工具。 | 观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。 |
 | [dsh-my-plugins](#plugin-1429766953-root) | 在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。 | 明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。 |
 | [dsh-nav-history](#plugin-1429464857-root) | 为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。 | 先用普通会话和面板交错导航，检查后退后新访问的分支截断、重载和失效目标；只把它当主视图位置入口。 |
 | [dsh-need-finder](#plugin-1336571882-root) | 用本地固定插件目录做中英文词法加权检索，返回命中理由和命令文本，并给出社区套装有序安装计划。 | 观察，先补真实描述/来源/版本与约束，作为探索入口而非可信安装名单或环境求解。 |
 | [dsh-neo-skin](#plugin-1335557891-root) | 为 DSH Web UI 叠加两套新粗野主义配色和结构样式。 | 个人隔离 profile 先做浅/深/系统、双方案与开关的视觉回归。 |
-| [dsh-notification-desktop](#plugin-1428147033-root) | 在 DSH 0.2.x 轮次结束时按原因与后台状态触发桌面或浏览器通知。 | 先观察并核制品/路由，Windows非敏感任务以实际toast验收后再试用；Mac/Linux桌面不依当前路径。 |
+| [dsh-notification-desktop](#plugin-1428147033-root) | 适配DSH 0.2.x的任务完成通知，Windows桌面经Host发送WinRT提醒。 | 建议观察；Windows本地隔离环境先核对路由鉴权及注册表回滚，再检查真实可见与重连；非Windows桌面Host路径不适用。 |
 | [dsh-openai-bridge（dsh-remote）](#plugin-1405845793-root) | 提供 OpenAI 兼容会话接口和手机面板，可继续 DSH 会话、浏览文件、处理审批及管理模型与上下文。 | 先观察，在隔离非敏感profile核对TLS和代理来源，显式选择session，并测试新会话权限set失败会被拒绝。 |
 | [dsh-opencodego-status](#plugin-1426264117-root) | 在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。 | 当前建议保持观察。 |
 | [dsh-peak-runner](#plugin-1417227361-root) | 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。 | 自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。 |
@@ -112,6 +113,7 @@
 | [dsh-plugin-mac-notify](#plugin-1402940561-root) | 在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。 | Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话和返回归属；通知漏掉关键事件时回DSH直接观察，不当作审批执行或业务完成证明。 |
 | [dsh-plugin-notes](#plugin-1363429979-plugin-notes) | 提供纸卡、看板和日历便签，支持截止日期、AI任务派发、有效期日程和WebDAV备份。 | 先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。 |
 | [dsh-plugin-offpeak-badge](#plugin-1402828137-root) | 在 DSH Web 显示 DeepSeek API 模型价格空闲/高峰时段徽章与切换提示。 | 观察试用。 |
+| [dsh-plugin-quota](#plugin-1400927706-root) | 追踪会话 token 与估算花费，提供仪表、下步用量及上下文窗口预测。 | 观察；先验证 projection、重置、校准与四个读取入口一致，禁止当硬预算器使用。 |
 | [dsh-plugin-recommend](#plugin-1336684098-root) | 从内置市场目录做需求词法排序、分类详情与相似候选搜索，可显式从固定HTTPS README刷新目录。 | 观察，先加刷新来源/字段质量门，将结果当相关候选而非安全/安装推荐。 |
 | [dsh-plugin-session-colors](#plugin-1394188597-root) | 通过侧栏悬停palette为会话设置颜色，host保存id颜色映射并以浏览器镜像加快显示。 | 先观察；独立本机/唯一标题与备份下核持久结果后再评估。 |
 | [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH Web消息提供手动与自动朗读，支持Edge、Cloud及多种本地音色和长文本分块播放。 | 建议先小范围试用。 |
@@ -141,14 +143,13 @@
 | [dsh-stock-quotes](#plugin-1425208683-root) | 在 DSH 中展示股票观察列表和行情，并向模型提供 stock_quote 查询工具。 | 可当公开行情参考面板试用，优先使用明确市场代码。 |
 | [dsh-study-coach](#plugin-1400498179-root) | 以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。 | 先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。 |
 | [dsh-temptask](#plugin-1390600932-root) | 一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。 | 先观察；单host可丢弃数据、独立备份、默认关自动清理可作对照。 |
-| [dsh-text-inject](#plugin-1389458393-root) | 通过独立 Markdown 文件与设置页管理 DSH 系统提示词和运行时上下文的热加载插件。 | 只在受控 profile 观察试用；先删示例、核预览和路由权限，敏感提示词不直接放入。 |
+| [dsh-text-inject](#plugin-1389458393-root) | 在DSH设置页管理独立Markdown中的系统提示和上下文块，支持热加载与历史备份。 | 有限试用短文本，先验收实际装配、路径、禁用与恢复；不能依赖trigger门控。 |
 | [dsh-think-bounce-pet](#plugin-1343882273-root) | 在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。 | 仅当个人偏好装饰且可接受资源/遮挡时观察；勿把球当真实推理计时，低性能或减动效需求先关闭。 |
 | [dsh-thumb](#plugin-1341694685-root) | 将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。 | 个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。 |
 | [dsh-tingdong](#plugin-1426519329-root) | 把英文音频或文档制成逐句听力课，提供翻译讲解、音轨、练习、间隔复习与导出。 | 可让能核对英文与译文的个人用短篇低敏感材料试用，先修ASR/翻译再练习；考试成绩承诺、无能力审校或要求原文严格保真的任务先观察。 |
 | [dsh-toolbox-web](#plugin-1335244607-root) | 为 DSH Web 提供会话、目录、搜索、回收站、配置与预设等管理面板。 | 当前建议观察。 |
 | [dsh-turn-outline](#plugin-1356219122-root) | 不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。 | 宿主授权明确的一人本地长会话可试用作导航摘要，远程/多用户先核会话授权。 |
 | [dsh-type-tune](#plugin-1388463793-root) | 为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。 | 仅回环、单人 Web 可审慎试用，留默认恢复路径；LAN/多人环境先补认证与错误反馈。 |
-| [dsh-typing-studio](#plugin-1428515480-root) | 在 DSH Web 提供中英文计时打字练习、中文拼音、IME友好计分与本地记录。 | 本机自我练习可试用，先核IME回改与重启；长期纪录/认证需求改独立受控测评。 |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合右侧文件预览、@文件引用、本地壁纸和活动宠物，增强DSH web桌面体验。 | 先观察，优先核对活动路由授权与上游预览，明确边界后再评估个人本地小范围试用。 |
 | [dsh-usage-analytics](#plugin-1356960582-root) | 在DSH设置中展示本机1、7、30天Token图表、模型分布和技能调用状态，并支持重建派生缓存。 | 个人本机用户可用少量可人工核对的会话试用；先确认宿主依赖与访问控制，遇到用量无法对账、索引持续失败即停止依赖图表。 |
 | [dsh-vision-fallback](#plugin-1333993743-root) | 保持原主模型选择，把聊天与工具图片交给固定视觉模型转成文字观察，并保留界面原图。 | 适合明确接受外部图片和上下文传输的人，以auto和非敏感单图试用，重要结论回图核对并管理本地观察日志；漏读、陈旧观察或退出失效时停用。 |
@@ -180,6 +181,7 @@
 | [harness-memory](#plugin-1333716755-plugins-harness-memory) | 通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。 | 可在单项目或隔离profile保存少量非敏感偏好试用。 |
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | 先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。 |
 | [ikun-theme-skin](#plugin-1335144603-root) | 给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。 | 个人隔离试用，需能关闭音效并核原外观偏好；共享环境先经用户选择。 |
+| [KeyFlow Typing Studio](#plugin-1428515480-root) | DSH内的中英文打字练习面板，提供拼音、计时、上屏计分和本地记录。 | 已有DSH且需要短时双语练习者可控试用；先验证本人IME、纠错口径及本地保存，不将成绩作为正式考试或长期学习成效证明。 |
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。 | 先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。 |
 | [oil-dsh-title](#plugin-1374149009-root) | 按最近用户消息异步维护DSH会话标题，采用emoji与对象/持续目标格式并调用官方rename。 | 先观察；敏感/重要会话应先有人工命名保护与最小输入策略。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。 | 个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。 |
@@ -247,13 +249,13 @@
 
 
 
-> **用途**：面向希望以图形表达固定意图、同时让模型读取明确语义的用户；合格交付包含指定版本表情、对应语义与独立的消息和显示状态。
+> **用途**：在同一DSH对话以图形表达意图，要求资产版本、文字语义与送达状态可核对。
 
-> **亮点**：相对粘贴图片或普通emoji，关键增量是固定语义、版本化库与原生消息回执组合，使图像、语义和操作身份可核对；核心能力属于共享库，DSH组件贡献在宿主桥接。[Q01](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q01)
+> **亮点**：相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q01)、[Q02](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q02)。
 
-> **思考**：宿主接受、消息落盘与图片渲染是不同事实，不能用accepted宣布完整送达；本地共享服务、宿主版本及不同提供方工具续答仍约束可用性。[Q03](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q03)
+> **思考**：accepted不等于原生消息observed，文字送达也不等于图片rendered；未知结果重发可能重复。平台与模型支持范围受限。见 [Q03](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q03)。
 
-> **建议**：未验证假设是将同一操作的消息观察与渲染回执做成统一核对页，减少未知结果后的重复发送；以断连、刷新和重启下的重复数与人工核对时间检验，若回执缺失仍无法归因则不成立。[Q05](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q05)
+> **建议**：未验证的分层办结状态可能减少误确认/重复发送；与普通图片和短语对照，收益不成立则不增加交互负担。见 [Q05](../../plugins/5101good--amoji--adapters-dsh/INSIGHT.md#research-q05)。
 
 <a id="plugin-1335381015-root"></a>
 
@@ -625,13 +627,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
 
-> **用途**：重视启动展示的桌面用户定制开场；合格结果须可可靠跳过并交还工作，不视为启动加速。
+> **用途**：希望个性化启动的用户，以可跳过且不妨碍应用就绪为交付；主观偏好非生产效率。
 
-> **亮点**：提前注入并整合素材管理、四模式与跳过交接，减少定制启动内容的接线；3D基础明确来自上游。参见[Q01](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q01)。
+> **亮点**：通过插件扩展点组织可预览、可跳过启动内容，不修改安装包；3D底座与资产继承上游。见 [Q01](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q01)、[Q02](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q02)。
 
-> **思考**：视频metadata会清初始maxSeconds并改按媒体时长；同源HTML允许脚本且消息不核来源，不能据硬上限/sandbox字样承诺隔离和交还。参见[Q02](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q02)、[Q03](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q03)。
+> **思考**：同源HTML配allow-scripts/allow-same-origin且写路由未见局部信任校验，装饰扩大宿主能力；资源与启动代价未测。见 [Q03](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q03)。
 
-> **建议**：未验证假设为统一绝对deadline与可信frame来源，按长素材/延迟/错误/假消息/低帧率对照交还。参见[Q04](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q04)。
+> **建议**：未验证的静态默认/独立来源HTML与显式路由信任边界，可能保留个性化并缩小权限；隔离实验测兼容与退出。见 [Q04](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q04)。
 
 <a id="plugin-1335928912-root"></a>
 
@@ -1045,13 +1047,13 @@
 
 
 
-> **用途**：面向修正多轮旧提问的Web用户；合格结果是保留有效前缀、改文与原图成为新轮，后续不进入新上下文。仅适合允许保留历史的任务，不满足彻底删除敏感内容的要求。
+> **用途**：早期提问有误时从同一对话前缀重新探索，保留或归档原会话；不回滚现实副作用。
 
-> **亮点**：把前缀fork、文本编辑、原图搬运和会话导航组合为一个修正入口，减少人工重组上下文；底层fork归属宿主。参见[Q01](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q01)、[Q02](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q02)。
+> **亮点**：将官方fork与原附件读取组织成编辑重问流程，减少人工复制前缀；不改追加日志，宿主fork为继承能力。见 [Q01](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q01)、[Q02](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q02)。
 
-> **思考**：prompt失败后新分支未暴露为恢复状态，再试可能再fork；非首轮缺end直接退0也可能缩掉应保留前缀。参见[Q02](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q02)、[Q03](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q03)。
+> **思考**：prompt失败后childId未入状态，重试可能再fork；归档失败仍切换，整个操作非原子，且不撤销后续真实动作。见 [Q03](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q03)。
 
-> **建议**：未验证假设为持久化分支操作收据并复用childId重试，同时非首轮缺切点显式阻断；以故障注入比较重复分支和前缀保真。参见[Q04](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q04)。
+> **建议**：未验证的持久分阶段操作与原child核对，可能减少孤立分支/重复调用；四处故障注入测恢复收益。见 [Q04](../../plugins/akiccat--dsh-edit-question/INSIGHT.md#research-q04)。
 
 <a id="plugin-1335766616-root"></a>
 
@@ -1073,13 +1075,13 @@
 
 
 
-> **用途**：面向默认外观不满足阅读偏好的桌面用户，以可读布局和可恢复设置为验收，不把护眼名称当健康疗效。
+> **用途**：用户按个人偏好调整对话阅读界面，以清晰可操作且可恢复为交付。
 
-> **亮点**：将配色、字体、内容与动画设置整合到宿主token层，本机字体枚举减少手写CSS与候选遗漏；属集成便利。参见[Q01](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q01)。
+> **亮点**：相对基础浅深主题提供分区字体/配色及本机字体选择，属于个性化集成贡献。见 [Q01](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q01)、[Q02](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q02)。
 
-> **思考**：lazy保存的旧快照可在后续即时更新后写回，且保存失败被旁路；本地外观正确不等于下次启动保留最新参数。参见[Q02](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q02)。
+> **思考**：部分CSS依赖构建类名，字体查询是同步子进程且来源栅栏可选；本地设置不跨设备，名称不证明护眼效果。见 [Q03](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q03)。
 
-> **建议**：未验证假设为修订号持久化与可回退对照预览，先用快速调参重载验证状态保留，再独立检验阅读收益。参见[Q04](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q04)。
+> **建议**：未验证的稳定token与可关闭兼容CSS分层，可能降低宿主升级修复成本；用跨构建视觉矩阵测净收益。见 [Q04](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q04)。
 
 <a id="plugin-1413882487-root"></a>
 
@@ -1319,6 +1321,20 @@
 
 > **建议**：未验证方向是回撤前生成副作用收据，并在成功append后提交恢复进度；用带外部写入及中断的会话副本检验状态分叉和重复动作。[Q06](../../plugins/240xu--dsh-message-ops/INSIGHT.md#research-q06)
 
+<a id="plugin-1397477851-root"></a>
+
+## [dsh-mimotts](../../plugins/1497105876--dsh-mimotts/INSIGHT.md)
+
+
+
+> **用途**：在DSH内听取和复听自然语言回复，以可核对内容覆盖和播放为结果。
+
+> **亮点**：把外部TTS接入消息动作、播放器和多版本历史，减少复制流程，语音模型能力继承服务商。见 [Q01](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q01)、[Q02](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q02)。
+
+> **思考**：音频省略代码/图片并可能只读长文开头，历史原文不代表音频完整；索引恢复和并发需验证。见 [Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03)。
+
+> **建议**：未验证的音频版本覆盖标记可能减少误解；以长文/代码/表格理解对照和定位时间证伪。见 [Q05](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q05)。
+
 <a id="plugin-1358317875-root"></a>
 
 ## [dsh-model-selector-search](../../plugins/arcaneorion--dsh-model-selector-search/INSIGHT.md)
@@ -1409,13 +1425,13 @@
 
 
 
-> **用途**：后台长轮次用户需要完成提醒；验收为及时且不重复地知道返回查看，不把结束事件当任务质量验收。
+> **用途**：适合Windows DSH长任务期间离开前台、需要完成或错误提醒的人；不覆盖等待审批，页面必须持续运行。[Q01](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q01)
 
-> **亮点**：在上游通知逻辑上适配0.2.x快照/retention并提供Windows宿主WinRT通路，区分权限与呈现。参见[Q01](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q01)。
+> **亮点**：基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q01)
 
-> **思考**：Electron不分OS均POST，Host却只支持Windows；投递失败不重试且提前记成功，npm files又不含运行脚本，故不能以日志成功认定系统提醒生效。参见[Q02](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q02)、[Q03](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q03)。
+> **思考**：客户端投递即记录成功、非Windows Electron仍走会直接skip的Host路径；页面关闭停止判定，不能承诺可靠跨平台后台提醒。[Q03](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设为分层回执、session/turn幂等键与OS能力探测；只重试明确未投递，故障对照实际显示和重复。参见[Q04](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q04)。
+> **建议**：未验证假设是分离观察、接收、系统发出和用户处理回执，并按平台能力选通道；对照睡眠重连、关页及权限拒绝，若漏交接不降则否定。[Q05](../../plugins/adingo001--dsh-notification-desktop/INSIGHT.md#research-q05)
 
 <a id="plugin-1405845793-root"></a>
 
@@ -1612,6 +1628,20 @@
 > **思考**：硬编码年历仅到2026，未覆盖年退化为周一至五可高峰；slot 与 DOM 类名集成也可能随宿主变化。详见[Q03](../../plugins/ak-blank--dsh-plugin-offpeak-badge/INSIGHT.md#research-q03)。
 
 > **建议**：加入有来源和核查日期的规则/假期更新与过期告警，在边界、跨年和真实账单对照中降低误导；本版未实现。详见[Q04](../../plugins/ak-blank--dsh-plugin-offpeak-badge/INSIGHT.md#research-q04)。
+
+<a id="plugin-1400927706-root"></a>
+
+## [dsh-plugin-quota](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) [![npm 30d 93](https://img.shields.io/static/v1?label=npm+30d&message=93&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
+
+> **用途**：长会话使用者在继续前查看用量和预测，以决策收尾；不以此保证硬现金上限。
+
+> **亮点**：将事后 usage 组织成模型可读提示和用户可查的下一步预估，属于会话决策集成增量；不是强制预算控制。见 [Q01](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q01)、[Q02](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q02)。
+
+> **思考**：软提示无法保证预算刹车；reset 未同步已提交事件 projection，且校准价格与累计价格路径不同，需验证账本一致性。见 [Q03](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q03)。
+
+> **建议**：未验证的可重放清零基线与统一读模型可能减少多入口漂移；用固定事件、清零、重启及分叉矩阵证伪。见 [Q05](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q05)。
 
 <a id="plugin-1336684098-root"></a>
 
@@ -2025,13 +2055,13 @@
 
 
 
-> **用途**：个人用户维护常驻约束与背景文本；初始示例会自动注册，应先处理。详见[Q01](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q01)。
+> **用途**：频繁编辑常驻规则和项目背景者用独立文件管理内容，以真实装配为验收。
 
-> **亮点**：把提示词文本从官方配置独立出来，提供设置页、预览、历史备份与热加载。详见[Q01](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q01)。
+> **亮点**：将常驻文本与宿主配置分离，提供文件/设置页双入口和历史恢复；注入能力继承官方接口。见 [Q01](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q01)、[Q02](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q02)。
 
-> **思考**：[context] 不按 README 的 trigger 条件门控；GET/POST 路由可读改完整提示词，必须核宿主外层权限。详见[Q03](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q03)和[Q04](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q04)。
+> **思考**：README的trigger门控不在当前context注册中，用户可能误判注入范围；整组热替换与备份也无事务保证。见 [Q03](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q03)。
 
-> **建议**：未验证改进为门控文档/实现对齐、路由授权、文件版本冲突与敏感历史管理。详见[Q05](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q05)。
+> **建议**：未验证的有效装配预览与旧字段警告，可能减少误注入；比较错误发现率和多余token决定是否值得增加交互。见 [Q05](../../plugins/1497105876--dsh-text-inject/INSIGHT.md#research-q05)。
 
 <a id="plugin-1343882273-root"></a>
 
@@ -2116,20 +2146,6 @@
 > **思考**：无认证状态 POST 接受无 Origin 请求；若 Web 暴露 LAN 可被网络客户端改写。写盘错误被吞、并发状态无版本保护。详见[Q03](../../plugins/awl-mc2--dsh-plugin_awl/INSIGHT.md#research-q03)。
 
 > **建议**：加入 Host 身份验证、明确写失败和 CAS/临时文件唯一名，再做真实对比度/性能测量可提高多人部署可靠性；现版未实现。详见[Q04](../../plugins/awl-mc2--dsh-plugin_awl/INSIGHT.md#research-q04)。
-
-<a id="plugin-1428515480-root"></a>
-
-## [dsh-typing-studio](../../plugins/654970--dsh-typing-studio/INSIGHT.md)
-
-
-
-> **用途**：适合在工作间隙做本机双语自我练习；以清楚口径的练习记录验收，不作正式认证或健康/效率承诺。
-
-> **亮点**：将中文拼音、IME提交感知和双语计时整合到DSH面板，减少切换且避免候选编辑直接误计。参见[Q01](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q01)、[Q02](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q02)。
-
-> **思考**：best只来自最近16条且按JS位置计字，不能当永久纪录或任意Unicode一致测量；熟题变快也不证明陌生任务改善。参见[Q02](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q02)。
-
-> **建议**：未验证假设是独立保存永久最佳、字素计量并用陌生文本基准区分背诵与迁移；需跨IME对照。参见[Q03](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q03)。
 
 <a id="plugin-1339034478-root"></a>
 
@@ -2564,6 +2580,20 @@
 > **思考**：启用时主动 setTheme('ikun-day')，清理未恢复先前偏好；远程媒体部分追踪 main/master，长期可用性不固定。详见[Q03](../../plugins/aks1st--ikun-theme-skin/INSIGHT.md#research-q03)。
 
 > **建议**：改为显式选择、可恢复原偏好并固定/降级素材，比较启停状态保持和加载/性能；本版未实现。详见[Q04](../../plugins/aks1st--ikun-theme-skin/INSIGHT.md#research-q04)。
+
+<a id="plugin-1428515480-root"></a>
+
+## [KeyFlow Typing Studio](../../plugins/654970--dsh-typing-studio/INSIGHT.md)
+
+
+
+> **用途**：适合已有DSH并愿意短时练习中英文输入的用户；合格交付是一次可解释的练习反馈，不是正式能力认证。[Q01](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q01)
+
+> **亮点**：相对独立打字网页，增量是DSH内双语主题集成、IME组合结束计分及本地短练习；没有证据表明改变学习方法或提高迁移成绩。[Q01](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q01)
+
+> **思考**：成绩按UTF-16码元计量，最佳只来自近期保留记录，存储写失败被忽略；显示成绩不等于跨文本公平或已持久保存。[Q02](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q02) [Q03](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是显式字素口径、独立累计最佳和保存回执减少成绩误解；用扩展汉字、历史淘汰和配额失败对照，若解释和稳定性不改善则否定。[Q05](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q05)
 
 <a id="plugin-1335798113-packages-messaging-core"></a>
 

@@ -1,18 +1,18 @@
 # dsh-model-failover
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[20ed700](https://github.com/Airisey/dsh-model-failover/tree/20ed700e79dca02f1e54352de7bc763f59ec0191)
+分析版本：[b762ec0](https://github.com/Airisey/dsh-model-failover/tree/b762ec038fc2d47a0504ae55af0fdab3162367ee)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover)
 <!-- END META -->
 
-> **实现功能**：为 DSH 添加按优先级切换真实模型的 provider 路由、隔离状态与继续控制。
+> **实现功能**：把已接入 DSH 的模型组成队列，提供失败重试、切换、会话隔离与自动继续。
 
-> **核心亮点**：相对失败后人工换模型，增量是流级提交点、错误分类与队列状态组合，避免切换前把两个候选的文本混写；包装provider模式有已知同类来源，不宣称首次。[Q01](#research-q01)
+> **核心亮点**：以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：不可见不代表上游没有计费或计算，长reasoning失败后丢弃再调用会增加成本和等待；可见文本/工具chunk后就不再隐式切换，不能承诺任务全程无中断。[Q03](#research-q03)
+> **风险与缺陷**：可见输出提交不等于业务事务完成，轮级自动继续可能重做非幂等动作；有限重试也扩大总预算。没有复现重复写入，保留风险性质。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 自动切换最重要的增量是什么？](#detail-section-11)
-  - [Q02 · 什么时候可以切换，什么时候必须停止？](#detail-section-12)
-  - [Q03 · 无声切换是否等于无成本和不中断？](#detail-section-13)
-  - [Q04 · 什么试用范围能避免把恢复变成重复执行？](#detail-section-14)
-  - [Q05 · 预算感知策略能否优于固定队列？](#detail-section-15)
+  - [Q01 · 接力相对手工切换改变什么？](#detail-section-11)
+  - [Q02 · 提交点如何限制跨模型混流？](#detail-section-12)
+  - [Q03 · 自动继续有什么边界与额外代价？](#detail-section-13)
+  - [Q04 · 部署依赖和操作流程是什么？](#detail-section-14)
+  - [Q05 · 可推导什么恢复验证？](#detail-section-15)
+  - [Q06 · 什么任务适合试用？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已配置多个供应商、遇到额度或连接失败需要继续任务的用户；合格结果是不拼接不同候选的可见答案，且失败、费用和实际模型可追溯。
+> **用途**：多模型 DSH 用户在配额和短时故障下保持可回滚任务推进，验收最终任务而非吐字。
 
-宿主原生重试或用户手动选模型更简单，但要人工处理已输出内容和任务上下文。插件按流提交边界自动化部分切换，不能替代输出质量与工具副作用验收。
+简单替代是手工切换已接入 provider 或只用宿主 retry；本插件增加队列隔离和流提交控制，但效果须等预算对照。
 
 <a id="detail-section-3"></a>
 
@@ -52,67 +53,66 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 流级候选接力 | 输出前失败切换 | 提交后不隐式重放，依赖chunk协议 |
-| 模板与隔离 | 保存优先级和失败状态 | 按会话/模板逻辑日，非质量保证 |
-| 自动继续 | 处理截断/部分失败 | 有次数上限，可能增加费用与重复风险 |
-| 状态面板 | 核对实际候选与日志 | 出字/探测不代表任务合格 |
+| 队列模型 | 一个模型选择映射多候选 | 各 provider 先可用 |
+| 提交前切换 | 避免不同模型无声混流 | 工具事务完成不由此保证 |
+| 自动继续 | 截断或轮失败后继续 | agents 必需，有限但会扩大预算 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| DSH llm服务与流协议 | 必需 | 注册包装provider及嵌套调用 | 不加载或协议不兼容 |
-| 至少一个已配置真实模型 | 必需 | 实际生成 | 队列空或全部失败返回错误 |
-| 多模型能力兼容与预算 | 切换效果必需 | 接续上下文/工具 | 能出字不保证任务合格 |
-| WebServer | 设置页面需，非硬依赖 | 配队列和查状态 | headless接力仍可运行 |
+| Node ^22.19 或≥24、DSH llm | 启动必需 | 注册 wrapper provider | 接力无法运行 |
+| 已可用候选 provider | 任务必需 | 承担真实模型请求 | 队列会耗尽，不能自行修复凭据 |
+| agents | 自动继续必需 | turn/end 与 followup | 仅保留调用级接力 |
+| webServer/Web client | 设置界面可选 | 队列配置与状态 | 无 Web 不等于 llm 路由失效 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户配置真实模型、模板和重试预算 | 队列有效且无递归路由 |
-| 2 | 选择模型接力路由并执行可控任务 | 核对实际模型与隔离日志 |
-| 3 | 失败/截断后核对提交状态及继续次数 | 已可见输出不盲重放工具；需要时人工接管 |
+| 1 | 用户逐候选验收并编队 | 凭据、模态和窗口满足任务 |
+| 2 | 用户设置重试/继续上限并选择模板 | 可见输出不混流，失败预算可控 |
+| 3 | 用户测试取消、工具恢复和禁用 | 无停止后继续或重复动作，否则回退手工切换 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 多供应商账号/模型费用未知 | 配能力兼容队列与预算 | 试连接也可能产生调用费 |
-| 持续使用 | 失败候选、reasoning缓存和重试均消耗资源 | 复核模型与任务质量 | 没有合格任务费用对照 |
-| 失败恢复 | 同模型重试、继续及隔离状态 | 核对实际请求与外部工具副作用 | 可取消，不保证提交后自动接续 |
+| 首次使用 | 多 provider、宿主及测试调用，金额未知 | 队列/兼容/继续上限配置，耗时未知 | 每个后端先独立可用 |
+| 持续使用 | 失败调用、候选重试和继续上下文 | 检查隔离与模型变动 | 无单位合格交付成本实测 |
+| 失败恢复 | 重试/等待及回滚资源未知 | 对账重复动作、解除隔离 | 不保证事务幂等 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 输出前切换 | chunk缓存和提交点存在 | 真实协议组合下无拼接保证 |
-| 隔离与错误分类 | 取消/不可切换错误有分支 | 总完成率与净费用改善 |
-| 有界继续 | 次数上限和截断处理 | 跨模型答案质量与重复动作 |
+| 接力 | 提交前缓存、候选切换存在 | 实际合格任务率 |
+| 恢复边界 | 用户取消和部分错误被排除 | 工具 exactly-once 与宿主兼容 |
+| 成本 | 外层重试关闭避免整队重跑 | 总现金、时延及人工节省 |
 
-> **思考**：不可见不代表上游没有计费或计算，长reasoning失败后丢弃再调用会增加成本和等待；可见文本/工具chunk后就不再隐式切换，不能承诺任务全程无中断。[Q03](#research-q03)
+> **思考**：可见输出提交不等于业务事务完成，轮级自动继续可能重做非幂等动作；有限重试也扩大总预算。没有复现重复写入，保留风险性质。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对失败后人工换模型，增量是流级提交点、错误分类与队列状态组合，避免切换前把两个候选的文本混写；包装provider模式有已知同类来源，不宣称首次。[Q01](#research-q01)
+> **亮点**：以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相对失败后人工换模型，增量是流级提交点、错误分类与队列状态组合，避免切换前把两个候选的文本混写；包装provider模式有已知同类来源，不宣称首次。[Q01](#research-q01)
+以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-提交点显式化是可借鉴核心；tool-call-delta也触发提交有助于防止工具开始后悄悄换模型。插件向宿主声明零重试，避免外层再跑整队列。代价是依赖chunk语义和供应商错误分类，必须测各协议，而不是仅看能出字。
+commitsAnswer 将 reasoning 与用户可见结果区分，是可复用的流提交边界；外层 retry 关闭避免双重重试。移植必须对齐宿主事件与工具 delta 语义，轮级继续需要额外事务约束，不能只复制错误码表。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-不可见不代表上游没有计费或计算，长reasoning失败后丢弃再调用会增加成本和等待；可见文本/工具chunk后就不再隐式切换，不能承诺任务全程无中断。[Q03](#research-q03)
+可见输出提交不等于业务事务完成，轮级自动继续可能重做非幂等动作；有限重试也扩大总预算。没有复现重复写入，保留风险性质。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-可用只读小任务和有上限预算试用。先关高次数自动继续，核对实际模型与失败调用费用；涉及写文件或外部服务时，提交后失败应人工确认，不盲目重跑。[Q04](#research-q04)
+有限试用可回滚任务，先设总尝试上限并验证取消、隔离和副作用；不可逆操作暂缓。见 [Q06](#research-q06)。
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +120,18 @@
 
 **核查状态**：已检查源码。
 
-贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。
+源码支持提交前接力与有限继续；任务正确性、调用总成本和工具副作用未验证；事务状态恢复假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/adapter.js、lib/health.js、lib/autocontinue.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 index.js、lib/adapter.js、lib/autocontinue.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查provider入口、候选缓存提交、取消/错误/隔离和重试控制；未用真实供应商或执行故障测试。
-- 下一步：用固定流夹具覆盖reasoning后失败、工具开始、可见文本后失败、取消、上下文错误及全隔离，再用同预算真实任务对照人工切换；当前均未执行。
+- 边界：固定源码核查，不执行插件、测试或模型调用；未审计全部 Web API 与持久化安全，不将作者测试当本研究运行。
+- 下一步：以固定故障矩阵测合格交付、总调用成本、恢复耗时、用户取消及工具重复写入，完整记录宿主和模型版本。
 
 **分析版本**
 
 - **仓库**：[Airisey/dsh-model-failover](https://github.com/Airisey/dsh-model-failover)
-- **版本号**：1.0.0（[固定提交 20ed700](https://github.com/Airisey/dsh-model-failover/tree/20ed700e79dca02f1e54352de7bc763f59ec0191)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.0.0（[固定提交 b762ec0](https://github.com/Airisey/dsh-model-failover/tree/b762ec038fc2d47a0504ae55af0fdab3162367ee)）
+- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +139,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是按任务预算和候选失败成本决定重试/切换，并展示累计丢弃调用资源，可减少盲重试；固定预算故障对照中合格率不增或等待更长则否定。[Q05](#research-q05)
+未验证的提交状态与工具副作用确认联动，可能改善安全恢复；四处故障注入比较重复写入和合格率，若牺牲恢复而无收益即否定。见 [Q05](#research-q05)。
 
-用固定流夹具覆盖reasoning后失败、工具开始、可见文本后失败、取消、上下文错误及全隔离，再用同预算真实任务对照人工切换；当前均未执行。
+以固定故障矩阵测合格交付、总调用成本、恢复耗时、用户取消及工具重复写入，完整记录宿主和模型版本。
 
 <a id="detail-section-9"></a>
 
@@ -152,42 +152,81 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 11 | 5135 | 3259 | 1558 | — |
-| .md | source | 1 | 315 | — | — | 6971 |
-| .mjs | test | 4 | 4978 | 3966 | 460 | — |
+| .js | source | 11 | 5317 | 3387 | 1609 | — |
+| .md | source | 1 | 342 | — | — | 7682 |
+| .mjs | test | 4 | 5234 | 4195 | 473 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/Airisey/dsh-model-failover/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Airisey/dsh-model-failover/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+
+
+
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Airisey/dsh-model-failover 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？
+**插件研究总目标**：模型接力是否能在不混合回答、不扩大副作用的条件下改善 DSH 模型故障恢复？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 自动切换最重要的增量是什么？
+### Q01 · 接力相对手工切换改变什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-手动换模型容易把失败候选的半段答案和新答案混在一起。插件在llm包装provider层缓存首个可见答案前的chunk，失败时整批丢弃后切下一候选，因而向调用方提供清晰提交边界。源码承认该包装模式来自已有同类，贡献是边界和队列管理的组合，不能归为全新路由范式。任务成功仍需模型理解上下文与工具契约。
+适合已接入多个模型、重复遭遇配额或短时上游失败的 DSH 使用者。合格交付应是同一业务任务正确办结，而非仅队列中某模型吐字。作者把一条候选队列暴露为一个模型，用户只选模板即可由插件处理模型重试与切换。相对人工换 provider，增量是将失败记忆、会话×模板隔离和轮级继续组织成恢复流程；wrapper adapter 模式本身由既有宿主模式继承。它可能减少人工接管，但没有同任务成功率及总成本对照，不能把作者“直到任务跑完”当保证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/adapter.js:13-25](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L13-L25)
+**依据 1 · 作者声明**：[README.md:1-23](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/README.md#L1-L23)
 
-模式参照与缓存提交目的。
+作者目标和队列恢复行为
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（23行）</summary>
+
+```text
+# 模型接力 · dsh-model-failover
+
+把 **已经接入 dsh 的全部模型**排成优先级队列，再把这个插件本身当成**一组「模型」**——
+**一条队列就是模型选择器里的一个模型**。用户在模型选择里挑中哪条（默认那条叫
+`默认模板`，也可以自己新建、改名），任务就按那条队列的顺序去跑：靠前的先上，不行就自动
+往下换，直到任务跑完。
+
+## 它解决什么
+
+一个模型不能输出，往往是这几种：额度用尽、余额不足、key 失效、路由挂了、上游 5xx。
+以前遇到这些，任务当场就断了。现在：
+
+1. 先用**第一个**模型跑；
+2. 它出问题 → 把**同一个请求原样**再发几次（默认 2 次，为了换掉背后那个坏账号），
+   还是不行再补一句「继续」试一次；
+3. 仍然不行 → 换**第二个**模型，这一跳补上「继续」，接着跑；
+4. 依次往下，直到某个模型把任务跑完；
+5. 某个模型今天在这个会话里出过这种问题 → **这个会话今天不再从它开始**，直接用排在它后面、
+   已经验证过能用的那个（别的会话照常可以先用它）；
+6. 到了**第二天设定时间**（默认 01:00，可改），隔离自动清空，重新从第一个开始试。
+
+另外，**整轮**以失败告终、或被 token 上限截断时（模型自己没坏，只是这一轮没跑完），
+插件会替你自动补一句「继续」接着做 —— 见下面的「DSH 异常」。
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/adapter.js:13-24](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L13-L24)
+
+wrapper 模式归属与提交边界
+
+<details>
+<summary>查看原文（12行）</summary>
 
 ```text
  * 本插件是「包装路由」（wrapper route）：在自己的 stream() 体内再调用一次
@@ -202,69 +241,62 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
  *
  * reasoning 的 delta 故意不算提交点：「思考了一分钟然后撞上额度墙」正是最
  * 值得切换的情形，扣住的思考跟着这一轮一起丢，调用方根本不知道发生过。
- */
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:4-20](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/index.js#L4-L20)
+**依据 3 · 源码核查**：[lib/adapter.js:245-259](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L245-L259)
 
-注册路由及Host设置边界。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
- * 这个插件只做一件事：往宿主 llm 服务里注册一条名为 `model-failover` 的
- * provider 路由，并在那条路由下挂一个模型（id `auto`）。用户在模型选择器里
- * 选中「模型接力 / 自动接力」以后，每次模型调用都会进入 lib/adapter.js 的
- * 队列：按设置页排好的优先级依次尝试真实模型，失败的按当日为单位隔离。
- *
- * 为什么是「注册一条路由」而不是「改写 agent loop 的默认模型」：
- *   - 模型选择器是路由导向的（分组严格按 provider 路由），注册路由就能让
- *     插件以「一个模型」的身份出现在设置里，正是需求要的形态；
- *   - 队列顺序属于用户的运行时状态，写进 profile 的 cordis 配置只会让
- *     「重置今天的隔离」变成一次配置热重载；
- *   - 宿主在 llm 层已经把「一次调用」抽象成一条流，包装整条流是唯一能保证
- *     「换模型对调用方不可见」的位置（见 lib/adapter.js 的提交点说明）。
- *
- * 设置页的读写在同一个 host 进程里通过插件自己的同源 HTTP 路由
- * `${API_PREFIX}/*` 完成 —— 浏览器半身（client.js）是一个手写的 ModuleLoader
- * bundle，它不走 Remote 绑定，只 fetch 这些路由。这条路径与 dsh 版本无关，
- * 也不依赖任何未公开的类型化接口。
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 什么时候可以切换，什么时候必须停止？
-
-**研究主题**：功能与机制、依赖、兼容与流程
-
-#### 完整回答
-
-非空白text-delta、tool-call-delta或非reasoning block-end触发提交，随后chunk直接透传；提交前才可丢弃候选。用户取消和不可切换请求错误返回原结局，不继续撞墙；截断有独立继续处理，失败候选在重试耗尽后才隔离。外层providerRetryPolicy设零重试防宿主重复跑整队列。正常/异常链路明确，但真实协议仍需同版本验证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/adapter.js:93-107](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L93-L107)
-
-提交判据包含工具chunk。
+模板作为模型暴露
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
- * 这个 chunk 是否代表「调用方已经看见了答案」。
- *
- * 判据与宿主 assistant-stream 的可见性定义对齐：只有非空白的文本才是答案，
- * 流式工具调用一旦开始就意味着这轮已经有产品，reasoning 与它的 block-end
- * 都不算 —— 让 reasoning 的 block-end 提交，会把队列钉死在它本该熬过去的
- * 那次失败之前一个 chunk。
- */
+  /**
+   * 这条路由下的「模型」就是队列模板：一个模板一条队列。
+   *
+   * 用户在模型选择器里挑中哪个模板，那个会话就用哪条队列 —— 模板 id 会原样
+   * 出现在 `GenerateOptions.model` 里，`stream()` 拿它选队列。
+   */
+  async listModels(provider) {
+    const settings = this.settings.get()
+    const templates = Array.isArray(settings.templates) ? settings.templates : []
+    return templates.map((template) => ({
+      provider,
+      id: template.id,
+      name: template.name,
+      description: MODEL_DESCRIPTION,
+      inputModalities: ['text', 'image'],
+```
+
+</details>
+
+#### 缺口
+
+- 未见同任务手工切换与自动接力对照
+  **影响**：无法量化实际恢复收益
+  **进一步探讨**：固定模型与预算比较合格交付率、人工次数、总调用量
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 提交点如何限制跨模型混流？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+适配器先缓存候选 chunk，直到非空文本、tool-call-delta 或非 reasoning block-end 才向调用者放行。仅 reasoning 不提交，故思考阶段失败可以丢弃并换模型；已提交内容后不能再无声替换，stream 看到 committed 后记录可用并返回。这个提交点比简单“收到任意事件即成功”更贴近调用者可见产品，是可借鉴的机制；同时它解决的是单次模型调用的输出混合，不等于工具业务事务的 exactly-once。工具 delta 出现即提交，后续实际工具是否已经执行由宿主负责，轮级自动继续可能再次操作，必须另验收任务幂等。providerRetryPolicy 关闭外层重试，避免宿主再将整队候选重复跑一遍；移植时需复核 retry 契约形状。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/adapter.js:100-107](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L100-L107)
+
+可见输出提交判据
+
+```text
 export function commitsAnswer(chunk) {
   if (chunk === null || typeof chunk !== 'object') return false
   if (chunk.type === 'text-delta') return typeof chunk.text === 'string' && chunk.text.trim() !== ''
@@ -275,14 +307,11 @@ export function commitsAnswer(chunk) {
   return true
 ```
 
-</details>
+**依据 2 · 源码核查**：[lib/adapter.js:231-238](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L231-L238)
 
-**依据 2 · 源码核查**：[lib/adapter.js:230-238](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L230-L238)
-
-关闭外层自动重试。
+关闭整队外层重试
 
 ```text
-
   /**
    * 接力队列自己做重试与切换，所以这条路由对外声明「不做重试」。
    *
@@ -293,86 +322,90 @@ export function commitsAnswer(chunk) {
     return { mode: 'normal', maxRetries: 0, retryableCodes: [NEVER_RETRY], ...DEFAULT_BACKOFF }
 ```
 
-**依据 3 · 源码核查**：[lib/adapter.js:568-598](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L568-L598)
+**依据 3 · 源码核查**：[lib/adapter.js:516-523](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L516-L523)
 
-取消、不可切换和隔离顺序。
-
-<details>
-<summary>查看原文（31行）</summary>
+提交后返回，避免继续切模型
 
 ```text
-      // 用户自己按了停止：换模型救不回来，把真实结局原样交出去。
-      if (options?.signal?.aborted === true || failure?.code === 'ABORTED') {
-        for (const chunk of held) yield chunk
+      if (result.committed) {
+        // 这一轮正常写完了：撞上限的旧账一笔勾销，下一个任务还从队首开始。
+        if (userFacing && sessionId !== undefined) this.ceiling.delete(sessionId)
+        // 这个模型今天被验证过能用了；下一个任务从它开始。
+        const recorded = this.health.markGood(key, this.now(), sessionId, templateId)
+        this.health.file.flush()
+        if (recorded) this.log.push({ at: this.now(), kind: 'good', provider, model, attempts: index + 1 })
         return
-      }
-
-      // 请求本身的问题（上下文超长之类）：换模型只会再撞一次墙。
-      if (failure !== undefined && NON_FAILOVER_CODES.has(failure.code)) {
-        for (const chunk of held) yield chunk
-        this.log.warn(`model-failover: ${provider}/${model} 以不可切换的错误结束 (${failure.code})`)
-        return
-      }
-
-      // 这个候选还有一次「继续」没用完：先别判它今天不行。
-      //
-      // 隔离的语义是「今天它出不了东西」，而这要等它的重试都用完才能下结论：
-      // 失败一次、被一句「继续」叫起来接着写完的模型是**能用**的，把它隔离掉
-      // 反而会让今天的任务从这里绕开一个明明好好的模型。只有队列里的下一个
-      // 步骤换人了（或者没有下一步了），才说明这个候选这次真的交不出东西。
-      const next = steps[index + 1]
-      if (next !== undefined && next.candidate.provider === provider && next.candidate.model === model) continue
-
-      // 这个候选今天出了问题 —— 隔离到下一个逻辑日，后面的任务不会再从它开始。
-      this.health.markBroken(key, {
-        code: failure?.code,
-        message: failure?.message,
-        at: this.now(),
-        sessionId,
-        templateId,
-      })
-      this.health.file.flush()
 ```
 
-</details>
+**依据 4 · 源码核查**：[lib/adapter.js:669-740](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L669-L740)
 
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 无声切换是否等于无成本和不中断？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-不等于。reasoning可在提交前被丢弃，但上游已消耗计算和可能计费。用户看不到失败内容，等待和总费用仍存在。提交后的失败不再跨候选重试，避免拼接及工具重复，这也意味着无法兑现全程自动无中断。每个模型能力和reasoning档位有区别，候选接续不证明交付质量相同。当前仅源码支持此设计取舍，没有真实供应商费用或错误率数据。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/adapter.js:17-24](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L17-L24)
-
-不可见reasoning也会被丢弃。
-
-```text
- * 整个设计的关键只有一条 —— **提交点**：
- * 候选模型产出的 chunk 先全部扣在手里，直到出现「用户会看见的答案内容」
- * （非空白 text-delta、tool-call-delta，或非 reasoning 的 block-end）才整批
- * 放行。在此之前失败，这一整轮就被整根丢掉，调用方一个字节都没看见，于是
- * 换模型是无声的、不会把两个模型的文字拼在一起。
- *
- * reasoning 的 delta 故意不算提交点：「思考了一分钟然后撞上额度墙」正是最
- * 值得切换的情形，扣住的思考跟着这一轮一起丢，调用方根本不知道发生过。
-```
-
-**依据 2 · 源码核查**：[lib/adapter.js:730-740](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L730-L740)
-
-提交后直接透传边界。
+嵌套调用与缓存放行
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（72行）</summary>
 
 ```text
+   * 返回 `{ committed, truncated, finish, failure, held, speed }`。`held` 在未提交时
+   * 交还给调用方 —— 队列还有下一个候选就丢掉它，队列走完了就原样放出去。
+   * `speed` 是这一趟的输出速度（`{ tokens, ms }`），没跑出东西时是 `undefined`。
+   *
+   * `truncated` 单独拎出来，是因为「撞到输出上限」既不是成功也不是失败：
+   * 见下面 `failureOf` 之前的注释。
+   */
+  async * #attempt(candidate, options, messages, effort) {
+    const nested = { ...options, provider: candidate.provider, model: candidate.model, messages }
+    // 调用方给「模型接力」这条路由选的档位不能原样透给候选：它是在队列的并集上
+    // 校验过的，候选未必认识。这一轮该不该带档位由 `#effortFor` 决定，所以这里
+    // 显式删掉，避免它顺着 `...options` 漏下去。
+    if (effort === undefined) delete nested.reasoningEffort
+    else nested.reasoningEffort = effort
+    let iterator
+    try {
+      iterator = this.llm.stream(nested)[Symbol.asyncIterator]()
+    } catch (error) {
+      return { committed: false, finish: undefined, failure: failureOf(undefined, error), held: [] }
+    }
+
+    const held = []
+    let committed = false
+    let finish
+    let failure
+    let drained = false
+    // 输出速度的两个端点：第一个真的在写字（或想事情）的 chunk，和收到 finish
+    // 的那一刻。**不含**排队与首字延迟 —— 那是延迟，不是速度，混进来会让一个
+    // 「想很久但写得很快」的推理模型显得很慢。
+    let firstDeltaAt
+    let finishedAt
+    let outputTokens
+
+    try {
+      for (;;) {
+        let row
+        try {
+          row = await iterator.next()
+        } catch (error) {
+          drained = true
+          failure = failureOf(undefined, error)
+          break
+        }
+        if (row.done === true) {
+          drained = true
+          break
+        }
+        const chunk = row.value
+        if (chunk !== null && typeof chunk === 'object') {
+          if (chunk.type === 'finish') {
+            finish = chunk
+            finishedAt = this.now()
+          } else if (chunk.type === 'usage') {
+            if (Number.isFinite(chunk.usage?.outputTokens)) outputTokens = chunk.usage.outputTokens
+          } else if (
+            firstDeltaAt === undefined &&
+            (chunk.type === 'text-delta' || chunk.type === 'reasoning-delta' || chunk.type === 'tool-call-delta')
+          ) {
+            firstDeltaAt = this.now()
+          }
+        }
         if (committed) {
           yield chunk
           continue
@@ -388,84 +421,273 @@ export function commitsAnswer(chunk) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/adapter.js:630-660](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L630-L660)
+<a id="research-q03"></a>
 
-候选档位需要单独适配。
+<a id="detail-section-13"></a>
 
-<details>
-<summary>查看原文（31行）</summary>
+### Q03 · 自动继续有什么边界与额外代价？
+
+**研究主题**：缺陷与关键质疑、效果与总成本
+
+#### 完整回答
+
+自动继续分两层：候选调用中同模型重试保持原请求，切模型追加最多3条继续；turn/end 层对截断或失败可发送真正用户消息。后者是全局 agents 监听能力，不限于接力 provider，需用户明确配置和理解作用范围。源码为失败和截断分别计数，排除 aborted、上下文超长和本机网络等情形，说明有边界设计；但有限次重试仍会增加已付出的失败调用、等待和上下文，不保证便宜。预算单位应是最终合格交付而非最后成功一跳。最强质疑是“可见输出已出现”与“任务事务完成”不同：自动继续读到部分状态，可能重复非幂等工具。当前没有执行副作用重放实验，不能判已发生重复，也不能保证不会发生。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/adapter.js:50-54](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L50-L54)
+
+同模型尝试次数
 
 ```text
-  /**
-   * 这一轮该给这个候选带什么思考强度。
-   *
-   * 规则只有一条：**只发这个模型自己声明支持的档位**。
-   *
-   * 宿主在调用适配器之前会拿我对外声明的档位表（队列的并集）校验一次性
-   * `reasoningEffort`，但候选模型各自的小表才算数 —— 把一个它不认识的枚举值
-   * 发下去，适配器会以 UNSUPPORTED_REASONING_EFFORT 拒绝整个请求，那等于把
-   * 一个本来好好的模型判成「今天出不了东西」而被隔离。
-   *
-   * 认不出来（还没问到档位表，或确实不支持）就不发，让目标模型用自己的默认
-   * 档位 —— 也就是它平时的表现。
-   *
-   * 优先级：队列里给这个模型设的档位 > 调用方给「模型接力」这条路由选的档位。
-   * 前者是这个模型的专属选择，后者是「这一轮大家统一用哪个档位」的意图，所以
-   * 用户为某个模型明确设过的值不会被它盖掉；反过来，没设过的模型会跟着路由
-   * 的档位走，而不是默默用默认档位。
-   */
-  #effortFor(candidate, requested) {
-    const known = this.catalog.reasoningFor(candidate.provider, candidate.model)
-    const supported = (value) => known !== undefined && known.efforts.some((effort) => effort.id === value)
-    const configured =
-      typeof candidate.reasoningEffort === 'string' && candidate.reasoningEffort !== ''
-        ? candidate.reasoningEffort
-        : undefined
-    if (configured !== undefined) {
-      if (supported(configured)) return configured
-      this.log.warn(
-        `model-failover: ${candidate.provider}/${candidate.model} 不认识档位「${configured}」，这一轮改用它的默认档位`,
-      )
-      return undefined
+function sameModelTries(settings) {
+  const raw = settings?.sameModelRetries
+  if (Number.isInteger(raw) && raw >= 0) return Math.min(raw, MAX_SAME_MODEL_RETRIES) + 1
+  return (settings?.retrySameModelOnce === false ? 0 : 2) + 1
+}
+```
+
+**依据 2 · 源码核查**：[lib/adapter.js:461-490](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L461-L490)
+
+切换追加继续与嵌套调用
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+    for (const [index, step] of steps.entries()) {
+      const { provider, model } = step.candidate
+      const key = routeKey(provider, model)
+      const continues = networkDown ? 0 : step.continues
+
+      // 带「继续」的那一跳之前先等一等 —— 等的是上一次失败留下的余波。
+      // 不带的跳（每个候选的首发）不欠这一等，否则第一次调用就会平白慢 5 秒。
+      if (continues > 0 && delayMs > 0) {
+        await this.sleep(delayMs, options?.signal)
+        // 等待期间用户按了停止：别再打一个注定被取消的请求。
+        if (options?.signal?.aborted === true) {
+          for (const chunk of held) yield chunk
+          return
+        }
+      }
+
+      const messages = continues === 0
+        ? options.messages
+        : [...options.messages, ...Array.from({ length: continues }, () => continueMessage(continueText))]
+
+      const effort = this.#effortFor(step.candidate, options?.reasoningEffort)
+      // 标记「此刻正在跑的就是这一跳」，会话页据此把这一栏刷得快一点、并把还没
+      // 跑完任何一趟的会话也列出来。只包住真正的请求：上面等待和下面记账都不算
+      // 「正在跑」，否则用户会看到一行永远亮着的「运行中」。
+      if (sessionId !== undefined) {
+        this.live.set(sessionId, { provider, model, key, startedAt: this.now() })
+      }
+      let result
+      try {
+        result = yield * this.#attempt(step.candidate, options, messages, effort)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/autocontinue.js:23-39](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/autocontinue.js#L23-L39)
+
+两类轮级次数与用户停止边界
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+ * ── 无限循环是怎么被摁住的 ────────────────────────────────────────────
+ *
+ * 「失败 → 继续 → 又失败」是个天然的发散结构，靠三道闸：
+ *
+ *   1. `autoContinueFailureLimit` / `autoContinueMaxTokensLimit`：同一段连续
+ *      补发里，两种结局**各自**最多自动补几次。用满就停。
+ *   2. 用户自己发消息会**重置**计数（`turn/start` 时发现不是我们发起的轮
+ *      就清零），所以「停手以后用户再试一次」不会因为历史计数被拒。
+ *   3. 轮到 `completed` 一律清零。
+ *
+ * 为什么分成两个数：撞上限是「没写完」，接着写就行，默认给到 10；运行失败
+ * 往往是「这个任务现在做不下去」，再问一遍大概率还是同一个结局，默认只补
+ * 1 次。共用一个计数器的话，一段连着撞上限的长文档会把失败那份额度也吃掉，
+ * 反过来一次失败又会掐掉本该继续的长文档。
+ *
+ * 另外 `aborted`（用户按了停止）永远不触发：用户喊停的时候，替他再发一句
+ * 是十足的冒犯。
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/autocontinue.js:95-112](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/autocontinue.js#L95-L112)
+
+触发排除逻辑
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+export function autoContinueTrigger(reason, settings) {
+  if (reason === null || typeof reason !== 'object') return undefined
+  if (settings?.autoContinue !== true) return undefined
+
+  if (reason.kind === 'max-tokens') {
+    return settings.autoContinueOnMaxTokens === false ? undefined : 'max-tokens'
+  }
+
+  if (reason.kind === 'error') {
+    if (settings.autoContinueOnFailure === false) return undefined
+    const code = typeof reason.error?.code === 'string' ? reason.error.code : ''
+    if (AUTO_CONTINUE_SKIP_CODES.has(code)) return undefined
+    // 本机网络没通：重发救不回来，只会白烧一次上限。
+    if (isLocalNetworkFailure(reason.error)) return undefined
+    return 'error'
+  }
+
+  return undefined
 ```
 
 </details>
 
 #### 缺口
 
-- 同预算完成率、额外费用和流协议兼容未知
-  **影响**：决定是否值得持续采用
-  **进一步探讨**：用相同任务和预算比较原生重试、人工切换与接力，计入所有失败调用。
+- 同版本工具副作用、全局继续与预算放大未验收
+  **影响**：限制高风险业务任务采用
+  **进一步探讨**：故障注入后比对工具幂等键、实际写入次数、全部调用账单
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 什么试用范围能避免把恢复变成重复执行？
+### Q04 · 部署依赖和操作流程是什么？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：依赖、兼容与流程
 
 #### 完整回答
 
-从只读任务和少数已核对能力的候选开始，限制同模型重试和自动继续；记录所有尝试而非只算最终成功调用。工具开始已触发提交，失败后应核对现实副作用，不能重新启动整个任务假定前一轮未发生。队列模板和隔离减少人工操作，但诊断模型、维护权限与费用仍是用户责任，没有现金与耗时数据不宣称省钱。
+包是 private 的 Git 源码插件，Node 要求 ^22.19 或≥24，宿主 Cordis ^4.0.2。llm 是强依赖；webServer 与 agents 分开注入，因此无 Web 的组合仍可有接力路由，但没有 agents 就不能提供轮级自动继续。用户首先要让每个候选 provider 独立可用，再编排模板；连接测试并不证明长上下文或工具调用可办结。失败恢复包括查看会话隔离、解除指定会话、核对重置时间和禁用自动继续。不同模型的模态、上下文及 reasoning 支持需在真实任务检查，不能从列表宣称 text/image 推断每个后端兼容。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/adapter.js:93-107](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L93-L107)
+**依据 1 · 源码核查**：[package.json:1-16](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/package.json#L1-L16)
 
-工具chunk提交支撑谨慎恢复。
+private 包、入口与 Node 要求
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
- * 这个 chunk 是否代表「调用方已经看见了答案」。
+{
+  "name": "dsh-model-failover",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "模型接力 — 把已接入 dsh 的全部模型排成一条优先级队列，用它当模型跑任务：额度耗尽或模型无法输出时自动重试「继续」，再不行就切到下一个模型，直到任务跑完；当天出过问题的模型会被隔离，次日设定时间后自动复活。",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:55-60](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/index.js#L55-L60)
+
+llm 强依赖、Web 非强依赖
+
+```text
  *
- * 判据与宿主 assistant-stream 的可见性定义对齐：只有非空白的文本才是答案，
- * 流式工具调用一旦开始就意味着这轮已经有产品，reasoning 与它的 block-end
- * 都不算 —— 让 reasoning 的 block-end 提交，会把队列钉死在它本该熬过去的
- * 那次失败之前一个 chunk。
+ * `webServer` **故意不在这里** —— 它只影响设置页能不能连上后端，而 headless
+ * 组合（TUI、离线测试）根本没有 HTTP 服务。把它写进 inject 会让整个插件在
+ * 那些组合里静默不加载，连接力本身一起丢掉。它由下面的 ctx.inject 按需取得。
  */
+export const inject = ['llm']
+```
+
+**依据 3 · 源码核查**：[index.js:747-772](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/index.js#L747-L772)
+
+webServer 与 agents 可选注入
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  ctx.inject(['webServer'], (scoped) => {
+    const server = scoped.webServer
+    scoped.effect(
+      () => server.register({ kind: 'prefix', path: API_PREFIX, handler: api }),
+      'model-failover: settings API',
+    )
+    logger.info?.(`model-failover: 设置接口已挂载到 ${API_PREFIX}`)
+  })
+
+  // ── 本轮失败 / 输出撞上限时，自动补一句「继续」 ────────────────────────────
+  // `agents` 和 `webServer` 一样**故意不写进 inject**：headless 组合（TUI、
+  // 离线测试）里没有它，写进去会让整个插件静默不加载，连接力一起丢掉。
+  ctx.inject(['agents'], (scoped) => {
+    const autoContinue = new AutoContinue({
+      agents: scoped.agents,
+      settings: settingsFile,
+      notes,
+      log: {
+        info: (message) => logger.info?.(`model-failover: ${message}`),
+        warn: (message) => logger.warn?.(`model-failover: ${message}`),
+        push: (event) => pushEvent(event),
+      },
+    })
+    scoped.effect(() => autoContinue.attach(scoped), 'model-failover: auto continue')
+    logger.info?.('model-failover: 已接管「本轮失败 / 输出撞上限」时的自动「继续」')
+  })
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/adapter.js:251-259](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L251-L259)
+
+列表宣称输入模态
+
+```text
+  async listModels(provider) {
+    const settings = this.settings.get()
+    const templates = Array.isArray(settings.templates) ? settings.templates : []
+    return templates.map((template) => ({
+      provider,
+      id: template.id,
+      name: template.name,
+      description: MODEL_DESCRIPTION,
+      inputModalities: ['text', 'image'],
+```
+
+#### 缺口
+
+- 候选模型兼容和真实宿主注册未运行
+  **影响**：模板可见不等于后端任务可用
+  **进一步探讨**：逐候选验收文本、工具、图像及上下文限制
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 可推导什么恢复验证？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是把恢复策略从“错误码+可见输出”扩展为“提交前/提交后+工具副作用确认状态”，能在保持故障恢复的同时减少重复写入。依据是 Q02 的流提交点已可用，而 Q03 的轮级继续并不知道业务事务状态。最小验证以一项可幂等文件写任务和一项模拟非幂等计数任务，在 reasoning、首个 tool delta、工具执行后与 finish 前四个位置注入失败，对照当前策略与只读恢复摘要；统计重复写次数、合格率、人工修复及调用成本。若收益只能靠全面禁止工具换来，或重复率不降而恢复率下降，则否定该方向。需要宿主明确提供工具结果/幂等状态，不用插件自行猜测事务完成。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/adapter.js:100-107](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L100-L107)
+
+现有提交点可作为分层信号
+
+```text
 export function commitsAnswer(chunk) {
   if (chunk === null || typeof chunk !== 'object') return false
   if (chunk.type === 'text-delta') return typeof chunk.text === 'string' && chunk.text.trim() !== ''
@@ -476,150 +698,91 @@ export function commitsAnswer(chunk) {
   return true
 ```
 
-</details>
+**依据 2 · 源码核查**：[lib/autocontinue.js:164-179](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/autocontinue.js#L164-L179)
 
-**依据 2 · 源码核查**：[index.js:68-87](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/index.js#L68-L87)
-
-继续与探测上限是成本控制而非免费保证。
+轮结束层的继续计数
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-/** 「自动继续」连续补发次数的硬上限：再大就只是把同一堵墙撞更多次。 */
-const AUTO_CONTINUE_HARD_LIMIT = 20
-
-/** 「继续」前的等待秒数上限：再多就不如让用户自己决定什么时候重试了。 */
-const CONTINUE_DELAY_HARD_LIMIT = 300
-
-/** 同一个模型额外重试几次的上限，和 lib/constants.js 的 MAX_SAME_MODEL_RETRIES 一致。 */
-const SAME_MODEL_RETRIES_HARD_LIMIT = MAX_SAME_MODEL_RETRIES
-
-/**
- * 试连接时的输出上限。
- *
- * 试连接只需要证明「连得上、能出字」，不需要它写完一句话。压到 8 个 token，
- * 一次探测的花销就跟用户随手打一句问候差不多；被截断也算通（说明它在正常
- * 写字），所以不会因为上限太小而误报失败。
+ * 监听 `turn/end`，在「本轮失败」和「输出撞上限」两种结局下自动补一句「继续」。
  */
-const PROBE_MAX_TOKENS = 8
-
-/** 单个模型试连接的等待上限。超过就当作「连不上」，免得一个卡死的供应商拖住整轮测试。 */
-const PROBE_TIMEOUT_MS = 15_000
+export class AutoContinue {
+  #agents
+  #settings
+  #log
+  #notes
+  #now
+  #pendingTtlMs
+  #sleep
+  /**
+   * 每个会话、每种触发原因**连续**自动补发了几次。
+   *
+   * 键是 `sessionId`，值是 `{ 'max-tokens'?: number, error?: number }`。两种结局
+   * 各算各的，因为它们的上限是两个独立设置（默认 10 和 1）。
+   * 用户自己发言的 `turn/start` 与 `completed` 会把整条记录清掉。
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/adapter.js:599-612](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L599-L612)
+<a id="research-q06"></a>
 
-日志实际记录继续数用于核对。
+<a id="detail-section-16"></a>
 
-<details>
-<summary>查看原文（14行）</summary>
+### Q06 · 什么任务适合试用？
 
-```text
-      this.log.push({
-        at: this.now(),
-        kind: 'quarantine',
-        provider,
-        model,
-        // 事件日志里也带上会话：隔离是按会话算的，没有这个字段就分不清某一行
-        // 是哪个会话撞的墙。模板同理 —— 一个模板一条队列。
-        sessionId,
-        templateId,
-        code: failure?.code ?? CODE_NO_VISIBLE_OUTPUT,
-        message: failure?.message ?? '',
-        // 如实记录这一跳**实际**带了几条「继续」—— 本机网络没通时它是 0，
-        // 而不是 plan() 里排的那个数。事件日志是排查问题的依据，不能写计划值。
-        continues,
-```
-
-</details>
-
-#### 缺口
-
-- 候选任务质量与失败总成本未测
-  **影响**：试用不能升级为持续安装推荐
-  **进一步探讨**：先记录小任务的合格率、总费用、延迟与人工接管次数。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 预算感知策略能否优于固定队列？
-
-**研究主题**：新假设与验证
+**研究主题**：采用判断
 
 #### 完整回答
 
-未验证假设在每次切换前核对任务剩余预算、该候选历史失败成本与能力匹配，同时展示被丢弃调用的累计资源。现有固定重试次数与每日隔离只粗略控制失败，不能判断本任务重试是否划算。以同一故障注入任务和现金上限比较合格完成数、等待和人工接管；若策略估计误差导致更差完成率或更长等待，则否定，不把隐藏失败当可靠性提升。
+建议有限试用，优先阅读、草稿或可回滚的开发任务；有多个已独立验证的 provider，且能设置总尝试与轮级继续上限时，接力可减少手工换模型。金融、发布、消息发送等不可逆工具任务先观察，不能将自动继续视作业务补偿。试用成功标准是对同任务在等预算下提高合格交付或减少人工，且无取消后续跑、跨会话隔离污染、重复写入。若只提高吐字率却增加总成本或错误，停止试用。没有执行同版本安装和卸载，不给持续安装建议。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/adapter.js:44-53](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L44-L53)
+**依据 1 · 源码核查**：[lib/adapter.js:568-575](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/adapter.js#L568-L575)
 
-固定重试策略是比较基线。
-
-<details>
-<summary>查看原文（10行）</summary>
+用户取消与不可接力错误退出
 
 ```text
- * 同一个模型最多试几次（含第一次）。
- *
- * 旧配置里只有一个布尔开关 `retrySameModelOnce`，它表达的是「多试一次」；
- * 现在这件事要能调，因为同一个模型背后可能是好几个账号。没设过新键时按
- * 老开关折算：关掉过就是只试一次，否则用默认值。
- */
-function sameModelTries(settings) {
-  const raw = settings?.sameModelRetries
-  if (Number.isInteger(raw) && raw >= 0) return Math.min(raw, MAX_SAME_MODEL_RETRIES) + 1
-  return (settings?.retrySameModelOnce === false ? 0 : 2) + 1
+      // 用户自己按了停止：换模型救不回来，把真实结局原样交出去。
+      if (options?.signal?.aborted === true || failure?.code === 'ABORTED') {
+        for (const chunk of held) yield chunk
+        return
+      }
+
+      // 请求本身的问题（上下文超长之类）：换模型只会再撞一次墙。
+      if (failure !== undefined && NON_FAILOVER_CODES.has(failure.code)) {
+```
+
+**依据 2 · 源码核查**：[lib/autocontinue.js:95-112](https://github.com/Airisey/dsh-model-failover/blob/b762ec038fc2d47a0504ae55af0fdab3162367ee/lib/autocontinue.js#L95-L112)
+
+自动继续的受限触发
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+export function autoContinueTrigger(reason, settings) {
+  if (reason === null || typeof reason !== 'object') return undefined
+  if (settings?.autoContinue !== true) return undefined
+
+  if (reason.kind === 'max-tokens') {
+    return settings.autoContinueOnMaxTokens === false ? undefined : 'max-tokens'
+  }
+
+  if (reason.kind === 'error') {
+    if (settings.autoContinueOnFailure === false) return undefined
+    const code = typeof reason.error?.code === 'string' ? reason.error.code : ''
+    if (AUTO_CONTINUE_SKIP_CODES.has(code)) return undefined
+    // 本机网络没通：重发救不回来，只会白烧一次上限。
+    if (isLocalNetworkFailure(reason.error)) return undefined
+    return 'error'
+  }
+
+  return undefined
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/adapter.js:590-615](https://github.com/Airisey/dsh-model-failover/blob/20ed700e79dca02f1e54352de7bc763f59ec0191/lib/adapter.js#L590-L615)
-
-按日隔离提供可扩展但粗粒度的状态。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-      // 这个候选今天出了问题 —— 隔离到下一个逻辑日，后面的任务不会再从它开始。
-      this.health.markBroken(key, {
-        code: failure?.code,
-        message: failure?.message,
-        at: this.now(),
-        sessionId,
-        templateId,
-      })
-      this.health.file.flush()
-      this.log.push({
-        at: this.now(),
-        kind: 'quarantine',
-        provider,
-        model,
-        // 事件日志里也带上会话：隔离是按会话算的，没有这个字段就分不清某一行
-        // 是哪个会话撞的墙。模板同理 —— 一个模板一条队列。
-        sessionId,
-        templateId,
-        code: failure?.code ?? CODE_NO_VISIBLE_OUTPUT,
-        message: failure?.message ?? '',
-        // 如实记录这一跳**实际**带了几条「继续」—— 本机网络没通时它是 0，
-        // 而不是 plan() 里排的那个数。事件日志是排查问题的依据，不能写计划值。
-        continues,
-      })
-      this.log.warn(
-        `model-failover: ${provider}/${model} 无法输出 (${failure?.code ?? CODE_NO_VISIBLE_OUTPUT})，隔离到明天 ${settings.resetHour} 点`,
-```
-
-</details>
-
-#### 缺口
-
-- 预算数据和新策略未实现验证
-  **影响**：不能计入当前贡献或经济收益
-  **进一步探讨**：先离线回放固定调用账单与失败轨迹比较。
-
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
