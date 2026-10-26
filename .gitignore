@@ -1,4 +1,5 @@
 node_modules/
+.DS_Store
 /.idea/
 
 # Local research process, checkpoints and raw evidence are not versioned.
@@ -15,7 +16,6 @@ node_modules/
 /data/**/*.lock
 /data/**/*.tmp
 /data/**/*.tmp-*
-/data/**/.DS_Store
 
 # Catalog write journal: preserve locally until recovery.
 data/catalog/.transaction/
