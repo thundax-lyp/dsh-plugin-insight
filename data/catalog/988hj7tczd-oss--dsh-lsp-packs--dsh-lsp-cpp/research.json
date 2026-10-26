@@ -327,28 +327,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "具备 clangd 与编译数据库的 C/C++ 项目可先试用只读导航，并用 rg/编译器结果交叉核对。",
+                "reason": "仅面向已有稳定 clangd、有效 compile_commands.json 且可装配同一执行世界共享 LSP 基座的 C/C++ 项目，先试用只读导航并用 rg／编译器及代表文件交叉核对；未核结果前不允许模型据此自动修改代码。没有工具链、重型交叉编译或不能限制索引资源的环境先观察。此为配置封装的源码分析，未执行安装、查询或真实宿主验收。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "C/C++ 仓库中的代理需要跨文件定义、引用、实现和 hover；基线是 grep/rg、编译器诊断或手工启动 clangd。合格结果是.c/.h/.cpp/.hpp/.cc映射正确、首次查询惰性启动每工作区进程、缺 server 返回结构化错误，跨文件精度可由 compile_commands.json 复现。"
+                        "score": 15,
+                        "rationale": "依据 [Q01](#research-q01)、[Q05](#research-q05)、[Q09](#research-q09)。Q01识别 C/C++ 代理的定义／引用／实现／hover 导航、rg／编译器／手工 clangd 基线及映射与跨文件正确性验收；固定材料 dsh-lsp-cpp/README.md:3-11、25、65-75给出功能和采用前提。这不是只指出偶发便利，故超过25%档8分；但Q01没有展开一次反复导航任务中原流程的具体摩擦与后果，Q09是研究者有条件试用判断而非持续需求材料。人群、任务、基线及合格结果明确，取50%档15分；尚不足75%档23分所要求的具体流程摩擦及为何值得承担共享基座和构建配置负担的论证，更非100%持续需求已充分支持。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "相对手工配置，它把 clangd 默认值、扩展映射、依赖约束和缺 server 降级封装为可安装 pack；十二语言包复用同一基座，增量是 C/C++ 配置而非实现 LSP。没有 compile database 时只能做有限单文件导航，价值取决于项目构建信息。"
+                        "score": 13,
+                        "rationale": "依据 [Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)。源码 dsh-lsp-cpp/src/index.ts:37-49、107-121、156-173确认默认clangd、扩展映射、可覆盖配置及加载失败provider；dsh-lsp-cpp/README.md:6-11、25-29、65-69明确协议、工具和server都来自外部共享基座／clangd。相对逐项手工接线，pack有具体配置复用与结构化失败增量，超过25%档6分的纯入口便利；但不能把clangd本身相对rg的语义能力全记为pack优势，既有Q03未比较手动共享stdio配置的步骤减少量，复杂工程又受编译数据库限制，尚不满足75%档19分所需的任务步骤或结果实质改善已充分论证，取50%档13分。Q02称默认args=--stdio与嵌入源码:40-41的DEFAULT_ARGS=[]不一致；此处按源码判定，不将该参数说法当增益依据。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定版本 README 与源码已检查；未运行插件或真实 Host。"
+                        "rationale": "依据 [Q02](#research-q02)、[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)、[Q07](#research-q07)。固定版本258bb6409c504fa1eed20b6f70d13009522ca0ce嵌入入口src/index.ts:107-121、124-138、156-173覆盖配置合并、共享stdio委派、加载异常与LSP_UNAVAILABLE恢复提示，package.json:45-78和组件README:25-29、65-69覆盖版本和环境前提；对“已有基座的只读配置pack试用”而言，超过25%档6分的局部入口片段。共享stdio内部惰性启动、每工作区进程与生命周期主要仍是作者说明，未直接嵌入其实现；Q02默认args叙述还与源码:40-41不一致，本评分明确排除此说法。导航正确率、资源、Host接线无运行证据，作者README的测试说明不等于本次测试。核心配置层与主要失败边界足以支持有条件试用，取50%档13分；未真实执行相关本地测试，不能取75%档19分，也没有100%宿主与效果验收。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "首次要安装 clangd、挂共享 base、配置 compile_commands 和必要 env；持续每工作区保留一个 clangd 进程，消耗索引CPU/内存/磁盘与等待时间；失败恢复先读 LSP_UNAVAILABLE/日志，修PATH或重建 compile database并重启该server，普通文本搜索仍可降级。"
+                        "score": 10,
+                        "rationale": "依据 [Q05](#research-q05)、[Q06](#research-q06)、[Q07](#research-q07)、[Q09](#research-q09)。组件README.md:25-29、41-45、65-69明确外部clangd、精确跨文件需compile_commands和共享服务／工具及同一执行世界fs/subprocess；package.json:69-78列多项peer，源码src/index.ts:70-79、116-120暴露消息／文档／退出边界配置，124-138给出缺server后安装与重载提示。Q06区分首次接线、每工作区索引CPU／内存／磁盘、失败后修PATH或重建数据库并回退文本搜索；这些是源码与作者材料上的负担识别及分析，不是已测耗时。目标人群即使已有clangd和数据库，仍须维护共享基座、版本及索引，过期数据库的错误结果不一定显式失败，不能仅因可卸载给低负担档。存在只读导航、结构错误和rg／编译器退路，超过25%档5分的恢复缺口严重／收益难覆盖；但尚不支持75%档15分的持续负担较轻且主要失败均可发现恢复，取50%档10分。资源金额与时间未知，不记0成本。"
                     }
                 },
-                "score": 70,
+                "score": 51,
                 "revision": "258bb6409c504fa1eed20b6f70d13009522ca0ce",
-                "reviewed_at": "2026-10-22T16:16:48.525Z",
+                "reviewed_at": "2026-10-26T06:35:55.890Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -378,7 +378,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T15:49:47Z",
-            "analysis_sha256": "81d64b2ed4c87d04e27e53c2e3e8f31a4430bd6995129a71487f31138f41afaa"
+            "analysis_sha256": "b2e50ab36e78413f12d729f26c6729e637eadc9ee59c1f70d27a153f5e061d0b"
         },
         "publication.metadata": "data/catalog/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp/meta.json",
         "publication.summaries": {

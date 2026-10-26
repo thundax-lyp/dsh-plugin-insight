@@ -339,28 +339,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合常摘录技术回答的Web用户，先在目标编辑器核对公式、链接和代码；逐字原稿归档应另保留源文。",
+                "reason": "经常将技术回答片段摘入Markdown的Web用户可在常用编辑器先试单条消息内的链接、公式和代码，并核对源文；不用于逐字原稿归档或跨消息选区。若符号、URL或换行静默丢失，禁用并回原消息复制。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "技术笔记摘录任务明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q04](#research-q04)：README.md:10–30具体说明复制到Markdown笔记时href、TeX和代码语言在普通可见文本复制中丢失，Q04限定经常摘录技术回答者并明确核对URL、TeX和换行。此流程揭示每次选片段后补格式的重复摩擦及产物受损后果，超过50%档仅用途和一般痛点推断；对该人群达到75%档的采用必要性分析。需求频次和现有原始消息复制的不足尚无真实使用材料，普通纯文本用户仍不需要插件，故不取100%档，不把作者目标当用户采用实证。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "普通文本复制会丢链接等结构，此项明确恢复。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)：src/client/index.ts:69–94保留plain code原字面、克隆部分选区，toMarkdown.ts:118–166恢复KaTeX源、Shiki换行及链接href；相对普通选区复制丢元信息、整条原始消息复制后再裁剪，具体改进是一次选区复制直接编码为Markdown，而非只增入口，达到75%档且高于50%档未解释核心增量。Q03反证为DOM不能唯一逆推原稿、局部公式扩为整公式、跨消息和嵌套结构未验；限定单条消息、常见链接/代码/公式的语义复用，反例不击穿该价值，但不足100%档的直接替代优势及主要反证充分排查，未把省时或无损写成实测。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码支持转换，浏览器效果未测。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)：完整src/client/index.ts:69–94、99–153与toMarkdown.ts:39–48、118–166可核查选区入口、助手门槛、转换、两种MIME、异常分支及监听释放，package.json:28–45、55–65给出客户端导出、构建和依赖。核心调用和主要格式恢复设计有直接固定版本源码，不止25%档的声明/局部入口，达到50%档有条件试用支持。跨消息、目标编辑器粘贴与发布加载均未运行；catch日志中的“默认回退”也不能证明preventDefault后setData失败仍能恢复默认，故保留该限制，不达75%档真实执行相关本地测试。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无模型配置且可禁用，但需检查发布构建及宿主DOM变化。"
+                        "score": 10,
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)：package.json:28–45显示源码安装需构建，src/client/index.ts:143–152显示copy监听可在作用域释放时移除；不改原消息、无需模型服务，原稿仍可回查并改用默认/手工复制，超过25%档恢复退出有重要缺口且收益难覆盖。持续却需检查URL、TeX和换行，DOM/KaTeX/Shiki变化会产生维护，跨消息边界和大选区延迟未知；index.ts:129–137先preventDefault再setData，错误日志不能当作已验证的复制恢复。未建立静默格式损失的自动检测，故属于50%档“负担明确、有退路但需日常复核”，不足75%档主要失败可发现且持续负担较轻，不能仅因无模型调用就给15。"
                     }
                 },
-                "score": 70,
+                "score": 65,
                 "revision": "9d8595501224621db5942fadddcbdb0efceba686",
-                "reviewed_at": "2026-10-24T06:03:01.147Z",
+                "reviewed_at": "2026-10-26T06:35:55.890Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -390,7 +390,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T05:52:04Z",
-            "analysis_sha256": "303eb3c7b995e8dc0b6e1b3a4b38239e06657de371449bbbfe38fd0537da59ed"
+            "analysis_sha256": "fbecfb1890c618cf3dde6839f6325b1d77cdab059463924024ef04ac8bed3644"
         },
         "publication.metadata": "data/catalog/asianfleet--dsh-message-copy-enhance/meta.json",
         "publication.summaries": {

@@ -327,28 +327,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "公开静态正文抓取可小范围试用；必须逐页回查来源，动态或登录页面直接切浏览器。",
+                "reason": "仅对公开静态、非关键决策页面进行人工逐页对照试用，关闭可选图片路径；关键段落或来源不一致即停用并切浏览器。现有材料未覆盖实际获取及正文抽取模块，不能承诺可靠抓取、权限边界或节时收益。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "公开网页进入研究上下文的任务清楚且频繁。"
+                        "score": 15,
+                        "rationale": "依据[Q01](#research-q01)、[Q06](#research-q06)、[Q09](#research-q09)：README.md:1–20明确把公开网页交给模型分析，原办法是curl、宿主浏览器或手工复制，合格结果是关键正文及来源可回查；这些支持50%档的人群、任务、基线和结果，不只是25%档的偶发入口便利。但“任务频繁”没有使用材料，Q06承认缺少人工补录时间，Q09仍需确定可靠页面范围，重复痛点及值得承担复核成本的需求强度主要是分析推断，尚不足75%档。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "统一清洗和降级比单次 curl 更方便，但不覆盖交互网页。"
+                        "score": 13,
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)和[Q04](#research-q04)：固定包lib/index.js:87–123、159–172、176–188可见web失败后转shell、获取后调用正文解析并返回标题/链接/文本的一体化工具，相对直接curl后自行清洗存在可解释增量，达到50%档而非仅25%档的入口包装。反证是导入的html.js/fetch.js/analyze.js未在既有证据包内，Q06和Q09明确没有正文完整率及人工修正对照；不能证明关键内容完整且总步骤实际减少，因而不达75%档的任务结果实质改善。浏览器回退是用户另行操作，不是已验证的浏览器自动化能力。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "源码确认模块链路；未进行站点样本测试。"
+                        "score": 6,
+                        "rationale": "依据[Q02](#research-q02)、[Q04](#research-q04)、[Q05](#research-q05)、[Q07](#research-q07)与[Q09](#research-q09)：原各题反复引用lib/index.js:1–40，实际主要是注释、导入和接线；现有包完整index.js:87–123及266–271能直接确认编排和异常返回，故不是0%档的核心主张遭反驳。但fetch.js/html.js/curl.js/analyze.js的实际实现未嵌入，权限升级、超时、正文保留和响应解析仍依赖未直接检查的关键调用；属25%档“固定材料局部支持、关键调用缺直接依据”，不足50%档的机制、依赖和主要失败边界覆盖。未运行也未获宿主验收；13是源码检查上限而非默认分。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "本地接线较轻，但失败重试、上下文长度和人工抽查仍需计量。"
+                        "score": 10,
+                        "rationale": "依据[Q05](#research-q05)、[Q06](#research-q06)、[Q07](#research-q07)、[Q09](#research-q09)：首次需宿主tools/systemPrompt/timer及web或shell，lib/index.js:33、87–114显示依赖与显式错误；持续承担请求、正文上下文及逐页关键段落核对，错正文可能不能由HTTP状态识别。README安装/卸载说明及Q09提供停用后改浏览器/手工复制的退路，且此试用限定非关键公开静态页、关闭图片，不覆盖原页面，超过25%档的收益难覆盖且恢复缺重要依据。仍需人工判断遗漏与挑战页，权限/超时内部模块未覆盖、请求次数和修正时间未知，不能仅因本地零依赖取75%档“负担轻且主要失败可发现恢复”；50%档对应负担可识别、可退回但日常复核显著。"
                     }
                 },
-                "score": 70,
+                "score": 44,
                 "revision": "7485af10c063579323058583c7f13e69c4c8bd21",
-                "reviewed_at": "2026-10-22T15:30:00.146Z",
+                "reviewed_at": "2026-10-26T06:35:55.890Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -378,7 +378,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T15:06:59Z",
-            "analysis_sha256": "24baa70f9b07649e8827f435eef50c0f9fb24f589567062daa013a15b453591b"
+            "analysis_sha256": "beea3369e4c6cdaad23666b9b8882a756be1d1aed9fd72bc14903f642b6f708f"
         },
         "publication.metadata": "data/catalog/131cda1--dsh-scrape-webpage/meta.json",
         "publication.summaries": {
