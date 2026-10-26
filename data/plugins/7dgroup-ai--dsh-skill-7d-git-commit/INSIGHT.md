@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -96,7 +96,7 @@
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：相对复制 Markdown，它提供可安装、可版本化且可被本地同名规则覆盖的规范载体；增量主要是分发和优先级接线，不是新的 Git 算法。其价值取决于团队确实使用 7DGroup 约定，通用 Conventional Commits 团队可能只需更小的本地说明。 详见[Q03](#research-q03)。
 

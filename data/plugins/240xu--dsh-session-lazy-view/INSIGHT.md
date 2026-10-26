@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -97,7 +97,7 @@
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：多帧尾部读取把“找最近事件”从完整解压拆成有界窗口查看，并把seq、turn和遮蔽投影组合为只读诊断入口；收益依赖多帧文件与局部问题，不代表全文检索有界。参见[Q01](#research-q01)、[Q02](#research-q02)。
 

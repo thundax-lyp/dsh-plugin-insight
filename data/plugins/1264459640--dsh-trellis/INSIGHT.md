@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -103,7 +103,7 @@ Skill部署用版本marker判断升级，同版本只检查目录存在；升级
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：把三轨任务产物、单一steps、会话绑定/每轮提示与看板连接，降低仅靠聊天和手工清单恢复的接线负担；不归属为新通用任务算法。详见[Q01](#research-q01)。
 

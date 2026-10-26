@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -95,7 +95,7 @@ Xcode/Swift 工具链可直接提供 SourceKit-LSP，或人工组合 DSH 官方 
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：相对手工接入 SourceKit-LSP，本包提供 DSH 中的命令、映射与组合行，减少配置重复；Swift 编译索引和 LSP 语义不属于本包实现。详见[Q01](#research-q01)。
 

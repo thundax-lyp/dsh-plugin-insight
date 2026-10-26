@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -93,7 +93,7 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
 

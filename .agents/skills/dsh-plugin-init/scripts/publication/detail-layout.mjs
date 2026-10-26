@@ -219,7 +219,7 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
                   canonicalCurrent,
                   section('### 用途与适用场景', use),
                   section('### 能力、流程与成本', abilities),
-                  section('### 工程贡献', technical.replace(/^### /gm, '#### ')),
+                  section('### 工程亮点', technical.replace(/^### /gm, '#### ')),
                   section('### 主要限制', questions.replace(/^### /gm, '#### ')),
                   section('### 使用建议', adoption),
                   section('### 核查说明与分析版本', checks),
