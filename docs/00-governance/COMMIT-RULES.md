@@ -21,7 +21,8 @@ Commit 记录一个明确工程判断或小步变化，不表示阶段交付完�
 - 同一判断涉及的代码、测试、Schema、配置和文档放在同一 commit。
 - 独立判断、独立风险或可单独回滚的变化分别提交。
 - 不为减少数量机械 squash，也不为追求小文件数拆出不可独立理解或验证的状态。
-- 文件数量只用于检查内聚性，不作为机械拆分标准；不夹带格式化、重构、个人配置或临时文件。
+- 单次提交涉及的文件数不得超过 100 个；超出时按可独立理解和验证的工程判断拆分提交。
+- 不夹带格式化、重构、个人配置或临时文件。
 - 研究交付按[输出标准](../../.agents/skills/dsh-plugin-init/references/OUTPUT-STANDARD.md)维护 README、档案、观察批次、证据与报告的一致性。
 
 ## 消息格式与工程登记
@@ -31,19 +32,37 @@ Type(<project>[/<module>]): <中文工程判断>
 ```
 
 Type 使用 Feat、Fix、Docs、Test、Refactor、CI 等准确类型。
-project 必须从下表选择；module 可选，用于稳定模块或治理域，不代替工程标识。
+project 必须从下表选择；module 可选，填写时必须使用下方登记的名称，不代替工程标识。
 中文说明表达形成的判断或能力结果，避免只有“调整”“修改”“优化”的描述。
 
 | project | 对应范围 | 使用边界 |
 |---|---|---|
 | `repo` | 当前根 package 对应的单工程：研究数据、Skill、脚本、测试、治理与 CI | 不虚构尚不存在的独立插件或服务工程 |
 
+module 使用固定的小写英文名称，不使用插件名、批次名、临时简称或自创同义词：
+
+| module | 对应范围 |
+|---|---|
+| `governance` | 工程文档、提交、PR 与协作规则，以及根 `AGENTS.md` 路由 |
+| `init` | 列表研究编排、断点恢复、批次维护及 `dsh-plugin-init` 的专用工具 |
+| `insight` | 单插件研究、分类、评分、研究问题及 `dsh-plugin-insight` 的专用工具 |
+| `shared` | 共享数据契约、Schema 及 `.agents/skills/_shared/` 中的共用工具 |
+| `review` | Codex 评论修复 Skill、评论处置流程及 GitHub review 工具 |
+| `data` | 真实研究档案、索引、META 与证据等研究数据的新增和修订 |
+| `publication` | 输出标准、发布模板、生成与导出逻辑，以及 README 和发布稿 |
+| `tooling` | 根依赖、Node 版本、格式化、Git 配置及通用开发命令 |
+| `ci` | GitHub Actions 工作流及仓库检查的 CI 接入 |
+
+按本次工程判断的主要职责选择 module，不仅按文件所在目录选择；例如列表 Skill 内的发布生成器归 `publication`。
+同一判断涉及多个 module 时，选择主责 module；没有明确主责的工程级变化可省略 module，不拼接多个名称。
+独立判断仍按提交边界拆分；新增稳定职责时，先在本表登记 module，再用于提交消息。
+
 示例：
 
 ```text
 Docs(repo/governance): 分离提交与 PR 交付规则
 Feat(repo/data): 保留失败采集前的插件档案
-CI(repo): 校验研究数据与增量行为
+CI(repo/ci): 接入研究数据与增量行为检查
 ```
 
 新增独立构建、测试或交付的工程时，在同次初始化中登记唯一工程名并更新相关配置。
