@@ -44,6 +44,8 @@ META 采集按[数据契约](../_shared/references/DATA-CONTRACT.md#发布输入
    组装源码证据时，REVIEWED-SOURCE.json 不嵌入 META；META 通过 DISPLAY 的 metadata 单独进入同组件 meta.json。仅刷新 META 时保留原证据包和研究检查点，旧包内 metadata 按数据契约兼容保留。
    编排只将所选的新项和待更新项传入本 Skill，确认未变的已有项不调用；独立调用或因结论依赖失效等变化入选时，即使代码版本未变也完整分析；仅目录／维护信息变化且没有相关依赖失效时由列表编排执行轻量更新，不调用本 Skill。内部核对当前快照的结论是否仍适用；当前证据仅在版本、环境和适用范围匹配时复用。INSIGHT 按输出标准只展示当前状态，不开展版本差异研究或回顾旧稿。
    按本 Skill 的[百分制创新评分标准](references/SCORING-STANDARD.md#创新评分标准innovation-v1)分别评技术与业务创新；逐项说明参照、增量及限制，不将新假设计入插件贡献。创新评分写入观察批次的innovation_scores，数值与理由仅存JSON，不写入INSIGHT；未知项按数据契约处理。另按研究规范的采用推荐评分逐项判断不推荐／观察／试用／值得安装，保存recommendation及理由；新完成研究不得保留未评估，不从创新分或热度推断推荐，不将AI判断称为用户人工认可。
+   采用评分直接复用已有研究问题，按[问题到评分及档位判据](references/SCORING-STANDARD.md#从已有问题回答到分数)映射四项；每项criteria.rationale用问题链接定位回答，说明具体材料、支持与反证、所属档位及为何不取相邻档。不得另起通用评分问卷、从题目answered推高分或把源码证据上限当默认分；父Agent逐项核对推导，不能只验总分和字段。仅复核已有推荐时使用既有问题与固定材料，由父Agent按snapshot assess-recommendations事务入档，不创建新轮或改研究截止时间。
+   采用综合按[最值得推荐的具体用法](references/QUESTION-ADOPTION.md#最值得推荐的具体用法)，将“谁能做什么／相比原办法省哪一步或多做成什么／何时停止或退回”写成recommendation.reason的三句单行说明。先固定任务并逐项论证再对照旧分；不新增问卷或评分维度，任一句无依据时先定向补查，仍无法成立则不强行推荐试用。
 4. **保存单项交付。** 原始材料写入本地 `data/runs/<round>/<plugin-slug>/`，本轮完整洞察写入本地 `data/runs/<round>/<plugin-slug>/INSIGHT.md`，
    观察批次写入 `data/runs/<round>/<plugin-slug>/OBSERVATIONS.json`，使用新批次 ID；批次只含本组件成功观察及其错误。
    最终报告必须保留“研究问题与完整回答”正文，逐题完整呈现回答、证据原文及位置、未知项和状态；不能只留下摘要、只链接本地过程文件或折叠全部回答。证据原文达到10行时按输出标准默认折叠代码块，来源链接、依据解释和回答正文保持展开。

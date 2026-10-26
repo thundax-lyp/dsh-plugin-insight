@@ -352,28 +352,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "在非关键项目副本演练覆盖、过期计划及rescue后可控试用，不代替外部副作用与备份管理。",
+                "reason": "经常让Agent改本地项目的开发者可在有备份的副本中试用按消息检查点恢复文件并分叉会话。相比手工找聊天节点及恢复目录，源码把路径预览、新鲜度核查和救援点串联，实际恢复成功率未测。检查点有关键跳过路径、出现recovery-required或其他进程仍在写文件时，应停止恢复并用救援记录及独立备份核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "Agent改文件后回退重试需求明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q05](#research-q05)，README第129—143行将目标定在重新尝试某次请求之前的文件和聊天边界，rewind-host.ts第476—506行约束运行中的Agent。频繁试错的本地项目同时追踪会话和文件基线，手工提交与找分叉点的摩擦具体，支持23分高于15分。它不能撤销数据库或部署，已有严密Git流程者未必需要额外检查点；没有实际回退频率和净收益材料，不取30分，评分限定可备份副本而不是通用系统回滚。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "消息锚、选择路径及补偿较手工复制便利。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，src/engine.ts第624—683行把会话确认、计划新鲜度、rescue及journal置于实际写路径之前，相比git reset或复制目录提供消息锚定和可核查的恢复生命周期，取19分，超过仅包装命令的13分。部分检查点和外部状态不在覆盖内，且路径检查不等跨进程原子事务，优势不覆盖“完整撤销所有操作”。未进行对照恢复演练和耗时测量，不能取25分，也不把底层Git内容寻址计为插件原创。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码可见，无真实恢复演练。"
+                        "rationale": "依据[Q02](#research-q02)、[Q04](#research-q04)、[Q07](#research-q07)，实际核查engine.ts第624—683行先验证再造救援点和写journal，原题第688—743行另定位补偿及recovery-required，snapshot.ts第103—129行明确部分覆盖。关键写入、防陈旧和失败状态都有固定提交材料，取13分超过片段支持的6分；README超限叙述矛盾已按实际skip清单收窄，不能把文档当完整快照保证。本次未执行故障注入、宿主分叉或恢复验证，故不取19分，作者性能数据也不替代运行。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "捕获IO、保留空间及恢复核对需要投入。"
+                        "rationale": "依据[Q05](#research-q05)、[Q06](#research-q06)、[Q07](#research-q07)，engine.ts第640—678行要求存储分离并额外创建rescue、journal，snapshot.ts第50—65行的跳过预算需人工审阅。首次配置、每轮扫描磁盘以及救援保留都有成本，但失败状态和独立备份形成可行退路，取10分高于恢复无清单的5分。用户仍需暂停其他写入者、检查未覆盖文件、处理回滚失败，实际空间与耗时未知，不支持15分；不把检查点当外部副作用撤销或替代备份。"
                     }
                 },
                 "score": 65,
                 "revision": "5b33fd51925dbd615836d72323e89262796efae5",
-                "reviewed_at": "2026-10-23T08:31:54.394Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -404,7 +404,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "2fde4dd3078148b302c22f89e7825f213c4964091815ac1753b16027b8cc20ef"
+            "analysis_sha256": "5657261250016917687fb051541e4a2395f654744c6eeaa174f388525b583153"
         },
         "publication.metadata": "data/catalog/anionex--dsh-turn-rewind/meta.json",
         "publication.summaries": {

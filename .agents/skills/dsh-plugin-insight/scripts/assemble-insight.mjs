@@ -13,7 +13,7 @@ import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ROOT, read, digest, atomicWrite, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
-import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
+import { pluginDirectory, researchDataDirectory } from '../../_shared/scripts/data-paths.mjs';
 // Read regular blobs at the pinned revision; checkout symlinks are never followed.
 export function readPinnedSource(checkout, revision, name) {
     if (
@@ -123,7 +123,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
     const slug = basename(pluginDirectory({ ...item, component_id: item.id.split(':')[2] }, ROOT));
     const folder = resolve(workPath, '..'),
         materials = resolve(folder, slug),
-        checkout = resolve(ROOT, `data/checkouts/${pluginId.split(':')[1]}-${item.revision}`);
+        checkout = resolve(researchDataDirectory(ROOT), `checkouts/${pluginId.split(':')[1]}-${item.revision}`);
     const inventory = read(resolve(materials, 'INVENTORY.json')),
         metadata = read(resolve(materials, 'META.json'));
     const manifest = readPinnedSource(

@@ -358,28 +358,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "not_recommended",
-                "reason": "拒绝返回值错误令多条写路由可在拒绝响应后继续副作用，涉及更新/重启/备份删除，不宜日常启用。",
+                "reason": "自行维护DSH Web的用户，目前不应把日常部署更新与恢复交给此固定版本。相比手工查版本和包管理器操作，其源码虽集中备份、安装与回执，但写入拒绝后仍可能继续执行，不能据此主张可控省事。若已安装，应停止使用更新与恢复入口，保留部署和配置备份并退回官方CLI或包管理器维护，待拒绝零副作用得到验证后再评估。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "部署/插件维护明确且频繁。"
+                        "rationale": "[Q01](#research-q01)的lib/index.js:4361–4428和client.js:1150–1225对应查源、安装、声明、重启的一串重复维护工作；任务及后果清楚，足以超过15分一般用途。实际维护频率、停机损失及手工成本未有独立数据，不给30分；选择核心更新恢复而不以无关只读通知回避写入缺陷。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "多源/备份/布局/平台维护集成较完整。"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的index.js:4018–4103有staging交换与备份，相对裸覆盖存在局部便利，非0分完全无增量。但[Q04](#research-q04)的5303–5352拒绝值为undefined且5424–5438继续mount，核心可控更新承诺受损；4361–4428还可把persist失败包在ok下，不能13分稳定净增量。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "固定关键源码/作者测试设计，危险路径未实测。"
+                        "score": 6,
+                        "rationale": "[Q03](#research-q03)与[Q04](#research-q04)的index.js:5303–5310直接证明json没有返回，5337–5349将该返回装成err，5428–5431仅if(g.err)后仍执行。材料充分支持拒绝不终止的静态风险，却不能支持当前任务所需受控写入；其余安装与回执有局部依据，取6而非13。未发请求不声称真实越权，亦不将风险材料等同采用正证据。"
                     },
                     "cost": {
                         "score": 0,
-                        "rationale": "当前写权限拒绝失效与恢复部分状态风险不可接受。"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)的index.js:5428–5431说明请求已拒绝仍可继续装配，2568–2582对匹配GitHub域关闭TLS校验；安装还运行第三方脚本。日常部署下写授权底线和来源真实性叠加、备份非全树事务，不能靠操作习惯补救，故已知负担不可接受取0而非5。可卸载退官方维护并不使当前更新任务可接受。"
                     }
                 },
-                "score": 55,
+                "score": 35,
                 "revision": "d9b20e1de7298f43a8bd50d0e3565685bb17eeb8",
-                "reviewed_at": "2026-10-22T10:15:20.643Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -410,7 +410,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "3dd0fb8f8e174b5975c6c3b61155ed2d74cd0588213afffdb2b4b73fff0822b0"
+            "analysis_sha256": "de9d61e2551bda7cd9d15b9b034ad46dfbc1d6ea33c9fd662cffed0ac0276a3a"
         },
         "publication.metadata": "data/catalog/airmetro--dsh-update-checker/meta.json",
         "publication.summaries": {

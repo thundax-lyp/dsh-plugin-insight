@@ -327,28 +327,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "仅复杂、多阶段且愿意维护 `.omd` 状态的团队值得观察；先与原生 goal 做同预算对照。",
+                "reason": "希望用角色化编排完成长链路编码任务的DSH开发者，应先观察该固定版本并核清运行状态与实际副作用的对应关系。相对自行拼装goal和subagent，源码分析支持路由校验、状态镜像和持久journal，但尚不足以证明中断后可以无遗漏或重复地恢复主要流程。出现状态冲突覆盖告警、派发记录缺失或恢复依据不清时停止自动续跑，退回原生委派与人工账本逐项核对已发生操作。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "长链路编码与并行冲突场景明确，但普通任务不需要该复杂度。"
+                        "rationale": "[Q01](#research-q01)与[Q06](#research-q06)针对长链路编码的规划、委派、评审和恢复，而不是任意简单问答；lib/index.js:5-14可见协议、角色、委派和HUD模块接线，.omd用于持久交接。重复手工协调角色和模型路由的摩擦具体，对熟悉原生流程者75%即23分超过15分一般用途。未有真实任务频率及原生流程不足的直接对照，资产数量不代表需求强度，故不取30分，也不把复杂度当必然采用理由。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "团队状态机、恢复材料和降级矩阵提供具体增量，尚未证明优于原生组合。"
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)认为它是上游编排资产的DSH适配；补查lib/delegate.js:118-145注册硬路由工具，181-198在派发前校验模型，较手动约定路由有可解释增量。取50%即13分，超过6分纯入口包装。但[Q04](#research-q04)指出端到端价值依赖模型遵约和大量状态一致性；delegate.js:153-166事件落盘失败不阻断派发，记录不能当已执行凭证。未验证规划到验收闭环更好，不给19分。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "固定源码可见完整接线；本轮没有执行测试或宿主验收。"
+                        "score": 6,
+                        "rationale": "既有[Q02](#research-q02)至[Q07](#research-q07)主要引lib/index.js:1-40，补查delegate.js仍只证明局部；本次再查graph/journal.js:300-363及373-424确认fence、fsync与坏行拒绝，runstate.js:98-141确认CAS冲突处理。这增加了状态机制直接支持，超过0分，但仍未核对其与实际子任务、mailbox/handoff的恢复接线，取25%即6分，未达13分主要采用链路覆盖。独立工作区限制影响范围却不证明恢复，不能据此强推试用，未运行更不满足19分。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "多模型委派、状态文件、LSP 与人工评审负担较高且未计量。"
+                        "rationale": "[Q05](#research-q05)、[Q06](#research-q06)要求多服务、.omd、角色配置和额外模型费用；delegate.js:153-166事件写失败可继续派发。补查runstate.js:130-141重试耗尽会merge覆盖并告警，journal.js:415-419坏行则拒绝恢复；这些并非一律无保护，却仍需人工解释镜像、持久日志和已执行操作。恢复链未核清，取25%即5分而非10分，独立工作区不能消除状态误判。可停自动续跑并回原生工具核对，故不取0分不可接受；也没有15分轻负担依据。"
                     }
                 },
-                "score": 60,
+                "score": 47,
                 "revision": "aa0b8dee1a15e0eb66a3a334377c74dd505a743e",
-                "reviewed_at": "2026-10-22T15:29:58.657Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -378,7 +378,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T15:06:59Z",
-            "analysis_sha256": "b6f5206a6ed481466ce5c9e42d6a1ddaf19d78d5c9db1d58a84343d01094060f"
+            "analysis_sha256": "3cfa1ecde76f9cf47e75acea5580317fe5d9af8471b5cc6e85481e2ead473a9e"
         },
         "publication.metadata": "data/catalog/1225sakura--oh-my-deepseekharness/meta.json",
         "publication.summaries": {

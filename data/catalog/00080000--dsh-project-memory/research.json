@@ -362,28 +362,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "项目续接和可回源记忆有明确价值，可单项目控制范围；需审阅自动注入、global可见性和真实落盘，不把召回分数当事实。",
+                "reason": "反复接续同一非敏感项目的开发者可备份存储后试用任务记忆检索与按需注入。相比手写任务笔记再搜索文件，源码支持把任务、经验和出处关联，实际接续正确率与token节省未测。出现跨项目内容、无依据指令或保存状态不明时，应暂停注入并回源码及人工任务笔记核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话同项目开发需求明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)，README第10—27行及src/setup/taskbridge.js第47—107行把同项目重复接续、todo和文件关系具体化。任务完成标准是找回相关事实及当前步骤再回源，而不是多存条目；这类反复重建上下文的摩擦支持23分超过15分。已有短AGENTS或简单任务笔记可能足够，缺少真实跨会话任务分布和持续使用反馈，不取30分，不能用作者节省比例代替需求材料；目标明确限定单项目非敏感试用。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "任务/文件与多层召回比人工笔记有具体接线增量。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)，src/tools/query-memory.js第88—125行绑定任务可见性，auto-inject.js第290—314行分通道注入，相比单一grep与手写笔记，任务、出处和经验能在接续时一起取得，支持19分的实质步骤改善而非13分的一般增量。但global始终可见、词法或向量相关不证明时效真实，故不能取25分。对回源核查的人有具体价值，尚未证明减少总调用或避免重犯，也不把索引数量视为效果。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "只固定源码，无宿主或最终任务对照。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，实际核查src/store.js第830—849行，锁失败返回false并静默重试；query-memory.js第108—124行与auto-inject.js第29—50行分别定位global范围和来源提示边界。核心存储、任务召回、注入及失败状态可由固定源码连通，取13分而非仅接口6分。未执行并发保存、异常退出和模型接续，不能取19分；退出flush存在不等于任意崩溃可靠，自动命中也不当作内容正确的运行证据。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "本地存储简化服务部署，索引/注入/纠错治理负担仍明显。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，src/store.js第830—843行未获锁并不即时落盘，package.json第61—90行含解析与可选本地向量资源，auto-inject.js第290—314行还占上下文。操作者要整理项目及global存储、核回源、确认落盘和保留备份，负担明显但有暂停注入退人工笔记的路径，取10分高于5分。持续维护、陈旧经验和异常退出尚需核对，不支持15分；不把没有必选外部LLM当零模型、零I/O或零恢复成本。"
                     }
                 },
                 "score": 65,
                 "revision": "f5aa9dcfd815edf4256e619648e9455889b316a7",
-                "reviewed_at": "2026-10-26T02:15:57.291Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -415,7 +415,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "2bb37632e65de08e1221371f76c576f9af84843d93ac0485cc5ead36eb57dbe8"
+            "analysis_sha256": "e40aa4645de1ef441d6b761173007bc7874594261a93d5fcff56d2ef6f24425c"
         },
         "publication.metadata": "data/catalog/00080000--dsh-project-memory/meta.json",
         "publication.summaries": {

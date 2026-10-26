@@ -357,28 +357,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "多扩展本机用户可在独立 profile 先验证一项非关键更新，仍须重启后检查核心功能与恢复路径。",
+                "reason": "使用兼容DSH且可备份临时profile的本机用户，可试用单个npm插件更新后手动重启并核对核心功能。相比逐个查npm和执行CLI，源码支持版本比较、写入结果回读与部分失败回退，便利尚未实测。若profile或版本不符、重启加载失败或回滚报错，停止后续更新并恢复备份，退回官方插件管理器或CLI处理。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "安装数量多时版本管理是明确任务，真实频率未知。"
+                        "rationale": "[Q01](#research-q01)的README.md:18–27针对多扩展版本检查和更新，gateway.ts:943–998显式核对依赖与目标版本。查版本、写profile、重启核验的具体重复摩擦超过15分；但实际更新频率和手工代价未有用户材料，不能30分，且试用任务坚持完成核心更新而非只浏览版本表。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "比逐项 CLI 增加兼容检查与状态回读，但官方已有基础管理。"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)的gateway.ts:943–998把依赖回读、重复挂载处理、dump-config及精确版本核对串接，bundle-guard.ts:103–112只处理本次新增重复项。相对手动CLI退出码多了具体状态校验和回退路径，超过13分；dump-config不导入真实条目、未声明版本约束包无兼容保护，不能给25分或保证运行成功。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码机制可见，没有运行更新或恢复实验。"
+                        "rationale": "[Q02](#research-q02)至[Q04](#research-q04)可在gateway.ts:789–818核对进程内串行，943–998核对落盘与预检，1001–1043核对恢复错误。机制、依赖及终点早于真实加载的限制明确，足以13分；未执行临时profile更新、宿主重启与失败回滚，不能19分，不从自动回滚名称推定已验证。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "需允许本机代码安装、重启与回归，失败仍可能人工恢复。"
+                        "rationale": "[Q04](#research-q04)的service.ts:42–46说明启用只在下次启动生效，gateway.ts:1001–1043显示旧包重取也会失败。备份临时profile并逐项重启能给出可执行退路，较5分恢复无着落有所改善；仍需下载、重启、功能回归和外部CLI并发避让，负担不算轻，不足15分。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "6b984b10950f78f1f4a5b5adf4c16636b5e6113d",
-                "reviewed_at": "2026-10-26T03:47:03.505Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -408,7 +408,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "8afbe39fc02ad876532d8819e9450fa4f82a20cd6cfecfa70dbb3d3c0ae990ec"
+            "analysis_sha256": "7a7e780fbdc195cba1f0c6dfff15c7939bc5b946f781f3f7f7cae74abce6e6fc"
         },
         "publication.metadata": "data/catalog/zhu1090093659--dsh-web--packages-dsh-plugin-manager/meta.json",
         "publication.summaries": {

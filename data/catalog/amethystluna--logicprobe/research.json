@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "确定性模型检查有可控用途，但抽象忠实性与实际缺陷收益须由用户复核。",
+                "reason": "能人工核对源码与模型对应关系的开发者可试用小型协议状态机检查。相比模型口头认可，源码提供可重复判决、反例和预算未决信息，但真实缺陷发现率与建模收益未测。缺失关键转移、结果undecided或语义超出支持范围时，应停止放行并补建模型或退回专业检查器与人工审查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "状态机设计与迁移回归场景清楚。"
+                        "rationale": "依据[Q01](#research-q01)、[Q04](#research-q04)，src/index.ts第79—100行要求读verdict而非ok，tool.ts第21—33行面向显式状态机及探索上限。对可枚举协议，重复审查转移和不变量仅靠口头评价容易漏路径，合格交付含模型与具体反例，摩擦明确支持23分超过15分。直线代码或复杂实时系统未必合适，专业求解器仍是基线；没有用户任务持续性和建模收益的直接材料，不取30分，也不把检查数量当需求强度。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "比自由文本评审增加反例和版本绑定报告。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)，src/tool.ts第58—67行对明确模型调用runVerification，engine.ts第2537—2546行不把预算耗尽当证明，相比LLM口头同意能交付重复判决与反例，支持19分超过一般接线13分。模型正确不等程序正确，漏建失败路径无法由Schema补回，也未证实强于专业求解器，不取25分。关键增量是模型执行与Agent审阅连结，不是任意源码自动形式化，真实缺陷收益尚未实测。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定版本源码支持机制；本轮未执行目标代码或同版本宿主验收，效果仍不确定。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，实际核查src/tool.ts第21—67行输入及直接引擎调用，engine.ts第2537—2546行说明预算未决，第2609—2638行给出相应处理。入口、模型边界和未决输出可定位，足以支撑小模型试用，取13分高于仅声明6分。没有执行引擎、已知缺陷集、源码映射或宿主验收，不取19分；工具参数闭合只支持形式输入，导出文件不意味着专业求解已跑，不能用确定性实现名义承诺验证结论有效。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "无需外部服务完成引擎检查，但专业建模与复核负担明显。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，src/tool.ts第27—33行探索预算及58—67行10秒工具限时，不是任务建模总工时。人需构造模型、核源码映射、解释未决并补建失败路径，负担显著，但能缩模型、增加合理预算或退专业工具，取10分高于重要恢复无路的5分。没有简单任务及同题工时对照，不支持15分；本地无被审程序执行降低副作用，却不消除误放行代价，必须读verdict、覆盖及nextSteps而非只见ok。"
                     }
                 },
                 "score": 65,
                 "revision": "e1b5ac4a426c43878863092bc79387700a8189cb",
-                "reviewed_at": "2026-10-26T02:11:48.090Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "bd121d04816338ec038e8ed6e133399f3814f5e99d48f0dc18a234e8d9aedf83"
+            "analysis_sha256": "0bb0ccb3a1806bcc8c3daaba19638cfc4ff7dae4b697bf5f108a23592397e973"
         },
         "publication.metadata": "data/catalog/amethystluna--logicprobe/meta.json",
         "publication.summaries": {

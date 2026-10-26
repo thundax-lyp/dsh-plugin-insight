@@ -381,28 +381,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合非敏感公开查询、限定后端和明确缓存历史策略后试用；核实来源，不把扇出数量当正确率，备用端点须审阅。",
+                "reason": "需要多源公开资料的DSH用户可在明确接收方及缓存历史策略后试用小后端集合检索。相比逐个切换搜索服务，源码支持一次扇出并汇总来源，但召回提升和净节时未测。发现大小写路径被误合并、切换策略后命中旧结果或来源不可核查时，应清理缓存并退回单一可靠搜索与原文阅读。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "Agent公开检索和单后端故障场景明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q06](#research-q06)，lib/index.js第53—72行列出可选路线，provider.js第384—418行展示一次任务的扇出和变体合并。对反复检索公开资料且遇到单服务故障的用户，手工切换、重新输入和汇总来源是明确摩擦，支持23分而非只有用途清楚的15分。该场景不等于所有研究必须多后端：已有可靠连接器或偶发查询可用单一provider；无真实任务频率、用户量和失败代价材料，不能取30分，也不因下载量高而升档。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "集中容错与配置，单provider和连接器已有替代。"
+                        "rationale": "依据[Q02](#research-q02)、[Q04](#research-q04)，provider.js第370—418行提供故障收集与来源合并，相对手动并行检索有可解释的编排增量。但rank.js第52—86行会把完整URL小写，cache.js第36—45行遗漏端点及安全策略，返回更多候选不等于更完整正确。故取13分，高于纯入口包装6分；核心收益仍被误合并和陈旧策略复用限制，缺少同题集单后端比较，不取19分。RRF为既有算法，不能将11后端数量或排序存在作为采用优势证明。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定聚合与策略源码、故障测试可查，召回/费用收益未测。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q05](#research-q05)，实际核查cache.js第36—45行和provider.js第476—520行，确认缓存维度不全及成功空结果混合失败时的误导报错；原题还定位SearXNG备用端点发密钥与历史写入。材料覆盖真实聚合路径、外发、缓存及主要失败边界，足以取13分而非只有声明的6分。未执行后端故障测试或接入11个服务，实际超时、召回和安全过滤仍未知，不取19分；已知缺陷进入采用限制，不以“有测试”冒充运行通过。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "需管理多服务费用、隐私和缓存策略，恢复可通过关功能/清数据。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)、[Q06](#research-q06)，lib/history.js第56—91行的明文查询、排队写入和清除不同步，加上cache.js第36—45行策略缺项，要求用户审阅接收方并处理旧缓存。首次需选择provider和密钥，持续要读原文、核对遗漏，失败可退单后端，不是不可恢复，所以取10分而非5分。本任务明确非敏感且后端少，限制尚可识别；但请求数随扇出增长、备用实例与清除复核有日常负担，不支持15分，更不能把无key当零费用或可靠服务承诺。"
                     }
                 },
                 "score": 59,
                 "revision": "da42e44a0f54913e132c5219174a3b6f267188fc",
-                "reviewed_at": "2026-10-22T15:31:11.433Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -432,7 +432,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T15:06:59Z",
-            "analysis_sha256": "be6ba07074f835daa6c4b435152f910ad6493ea93168b5aea91d7211138e0778"
+            "analysis_sha256": "0413992518296f2acff6a99d0be3e1968e9f96ee62d1528b095ad52741ddf2d2"
         },
         "publication.metadata": "data/catalog/240xu--dsh-websearch/meta.json",
         "publication.summaries": {

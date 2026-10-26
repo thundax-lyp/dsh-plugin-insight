@@ -369,28 +369,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "可备份的非关键V3项目可试用，先核对授权、暂存与审计回执，不依赖无损或全事务承诺。",
+                "reason": "跨会话推进同一项目的用户可在有备份的V3记忆目录试用台账写回与接续读取。相比手工维护单份笔记，源码支持活跃状态、卡片及归档指针分责，实际接续质量和节省未测。发现正文与清单不一致、写入缺审计或授权目标不符时，应停止自动写回并比对备份及人工笔记。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话项目任务明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)，README第3—23行和lib/index.js第325—339行把跨会话目标、决策与活动状态接回当前步骤。重复解释项目状态与分散笔记的摩擦具体，支持23分而非只有用途15分；合格接续要求与工作区一致，不是有台账就算完成。单文件AGENTS对小任务仍足够，尚无真实接续频率、重要性及错误下降材料，不取30分。目标含写入和归档生命周期，不用只读卡片来绕开多文件状态风险。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "自动生命周期较普通笔记有增量。"
+                        "score": 13,
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)，lib/part3.js第1329—1364行按块注入，part1.js第1924—1959行把压缩指针与事件文本关联，相比手记有明确生命周期增量，取13分高于单入口6分。但超大单事件会直接break、授权未绑定正文根目录，多文件更新不原子，削弱核心可信接续，不能取19分。内容语义仍靠模型与人核查，不把“只追加”、注入量或文件存在当无损历史，未测净token与人工量。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码主链可核查，无真实接续验收。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)、[Q06](#research-q06)，实际核查lib/base.js第265—293行，独占创建失败仍清理同名临时文件；part2.js第363—378行定位会话授权窗口，part4.js第2669—2707行主写与审计分步。核心写入、授权和读回反证有固定源码支持，取13分高于局部声明6分。没有并发碰撞、授权跨root和异常恢复执行，不能取19分；临时名风险仅为静态可触发条件，未声称已复现数据丢失。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "权限与多资产失败、注入和整理成本较高。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)、[Q05](#research-q05)，lib/part4.js第2669—2707行允许主写成功审计失败仍ok，base.js第274—282行清理所有权不足，V2和V3暂存策略又不同。用户要核root、布局、授权及多资产一致性，重要恢复缺口不能靠rename抹去，取5分而非10分。V3备份副本可限定试用并退回人工笔记，尚不认定目标负担必然不可接受而取0分；持续整理、注入和恢复人工量未知，不把零外部import当零依赖。"
                     }
                 },
-                "score": 60,
+                "score": 54,
                 "revision": "c3fda3608c9e8585523df7d2db53d65dc69c6eea",
-                "reviewed_at": "2026-10-26T02:18:19.381Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -420,7 +420,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "3837a7d4a7fc3d1761ea7116a461dc9185468c59e2776adac147860b2b899ee2"
+            "analysis_sha256": "96b949305b0f2a4cb368427bfd13d90847d9956d1aefd1fa54a09200fb55c0ba"
         },
         "publication.metadata": "data/catalog/18477514055--dsh-ledger-memory/meta.json",
         "publication.summaries": {

@@ -388,28 +388,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "原生桌面适配实用，但元素TTL/全局目标与缩图空间/有限风险识别缺口较大，先在可丢弃环境研究。",
+                "reason": "需要桌面动作且无更窄API的用户目前应先观察该适配器，不把它交给日常桌面执行。相比裸driver命令，源码提供观察与动作接线，但元素过期及缩图坐标边界尚不支持可靠任务交付。若无法确认当前窗口、坐标映射或动作是否已发生，应停止重试并退回人工操作或应用API。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "无API桌面任务明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q05](#research-q05)，index.js第1—27行及lib/cua.js第85—110行把缺少API的原生或Canvas任务交给观察与动作工具，合格目标是应用业务状态改变后再核查。相比反复手工操作、为各应用单独接driver，摩擦明确，支持23分而非15分。能用业务API或DOM时不该优先桌面，跨平台演示不是当前环境的需求证据，没有任务频率与实际完成材料，不取30分。场景有价值不自动保证该实现适合试用。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "DSH工具/图像路由与可见轨迹有用，归属外部driver。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)，lib/observe.js第214—342行连接AX与截图，human.js第93—108行把元素编号转driver目标，比裸命令有可解释接线增量，因此取13分高于6分。关键反证是compact图缩放没保存坐标变换，元素点击忽略ttlMs，全局snapshot又可跨Agent覆盖，直接影响核心动作正确性，不能取19分。缩小为只看截图会回避核心价值，所以本次仍按真实桌面动作评估，现有机制不支撑安全或效率优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定关键源码/测试设计，未认证driver/平台实际行为。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，实际核查lib/human.js第93—108行ttlMs未使用及observe.js第121—159行compact缩图，snapshot.js第10—29行是模块共享状态，关键问题有直接固定源码而非猜测。入口、动作与失败链覆盖到足以作出观察判断，取13分高于仅片段6分；此分表达研究覆盖，不为软件正确性背书。未执行driver、跨Agent或真实桌面任务，不能取19分，作者演示及mock拒绝用例不当作宿主运行通过。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "敏感屏幕/真实副作用/重复与目标误配恢复成本高。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)、[Q05](#research-q05)，lib/cua.js第67—110行子进程缺硬取消，vision.js第173—233行可能外发且无本模块超时，human.js第93—108行元素过期门缺失。首次权限、驱动、模型与应用约束多，持续要复核每步与模糊副作用，错误恢复缺口重要，取5分而非10分。可在可丢弃无秘密环境研究而非日常执行，尚不以0分宣称所有目标负担不可接受；分数不能抵消观察结论或以白名单代替风险识别。"
                     }
                 },
                 "score": 54,
                 "revision": "3cf9bd8ae60271512f263bfa75485cb242ca0892",
-                "reviewed_at": "2026-10-22T11:25:04.976Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -440,7 +440,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "102c4e26f528f96b261bd24c8d543df42f718f0809d941c84b9aa1a177085060"
+            "analysis_sha256": "44427368fa734fa184d96a1db96a24201468061d8d1da47a9a6015a6d9aa52db"
         },
         "publication.metadata": "data/catalog/988hj7tczd-oss--dsh-computer-use/meta.json",
         "publication.summaries": {

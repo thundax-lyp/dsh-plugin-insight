@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合个人陪伴试用，需备份整个自定义模型目录并检查状态归属、渲染资源及外部Core，不把网页源码检查扩展为桌面验收。",
+                "reason": "偏好视觉陪伴的个人DSH网页用户，可备份完整宠物目录后试用Live2D与任务相位联动。相比独立桌宠，源码支持把等待、错误和停止事件映射为角色表现，体验改善尚属推断。若动画误导任务状态、遮挡操作或素材发生异常变化，禁用插件并恢复目录备份，退回宿主日志和原生状态。",
                 "criteria": {
                     "scenario": {
-                        "score": 15,
-                        "rationale": "个人陪伴偏好清晰，普遍需求与业务收益不足。"
+                        "score": 8,
+                        "rationale": "[Q01](#research-q01)的README.md:38–51面向个人陪伴，lib/index.js:1222–1232仅粗粒度相位；没有材料证明低阅读显示解决重要重复业务摩擦。可以识别偏好用户但采用必要性弱，故8分而非15分；个人娱乐目标并非不存在，不用生产率标准误判0分。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "相对独立桌宠增加宿主事件联动，优于原生状态尚未验证。"
+                        "rationale": "[Q02](#research-q02)的index.js:1197–1236将运行、停止、错误与审批绑定，client.js:7113–7153连接事件流并驱动动画。相对无联动独立桌宠增加任务状态通道，超出6分纯入口便利；上游Live2D负责渲染，粗相位不代表完成验收，也未证明识别效率改善，故不足19分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "仅固定源码，未运行。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的index.js:1205–1215保护瀑布续链，712–747可直接核对目录更新条件只看manifest指纹，client.js:7320–7359有状态展示依据。支持带备份、非权威状态提示的核心路径，超过6分局部声明；无真实WebGL、宿主事件和禁用运行验证，不能19分。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "GPU、外部运行时和自定义资源升级风险增加持续负担。"
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)的index.js:721–745只按pet.json归属判整目录覆盖，994–1024另需CDN Core缓存；不能保证单独改贴图被保护。完整目录备份、限定网页端和禁用后看原生状态提供明确退路，较5分有所改善；仍需许可核对、素材备份和资源排查，不能15分低负担。"
                     }
                 },
-                "score": 46,
+                "score": 44,
                 "revision": "22443935bc6a47c9476f4eeeca5e67a209ce43f7",
-                "reviewed_at": "2026-10-26T02:11:45.079Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "ebb743bc63d7a0179a822436ef6d76bc416ad91381c2370227b87b24cd8b5ed2"
+            "analysis_sha256": "845295dd45a51d7b8b5f398f97ace9686057e47da82324170e68e7c7a4af9a2b"
         },
         "publication.metadata": "data/catalog/a8chann--dsh-pet-live2d--dsh-live2d-pet/meta.json",
         "publication.summaries": {

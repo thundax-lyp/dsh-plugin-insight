@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "模板/纯逻辑小工具可探索，但计数与引用/TeX基础分支缺陷需先修，不可把passed或清单当学术/投稿验收。",
+                "reason": "已有真实研究材料、希望生成论文结构与引用初稿的DSH用户，应先观察当前固定版本的写作辅助工具。相对手工模板，其统一入口有局部便利，但正则计数、无作者APA和LaTeX列规格缺陷影响主要输出，不能把passed当合格论文。出现题录字段缺失、计数与原文不符或TeX列数不一致时停止采用输出，退回文献管理器、期刊模板和人工文本检查。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "论文骨架/机械辅助场景明确。"
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01)、[Q05](#research-q05)明确有真实材料者需要骨架、引用和机械检查，lib/index.js:56-64给出十action入口及合格边界。任务和原办法清楚，达到50%即15分，高于8分仅偶发便利；但现有回答没有说明模板分散究竟在何类重复流程造成足够摩擦，更未证明成熟文献管理器不足。不能因为学术写作重要就取23分，真实频率和采用必要性未知也不足30分；模板不替代研究论证。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "统一成熟模板/格式入口，有替代工具。"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)可见纯字段模板与统一action，比反复粘模板有局部便利，25%即6分超过0分全无增量。但[Q03](#research-q03)的非global正则match.length不代表次数，[Q04](#research-q04)无作者APA对字符串调用join、latex列宽与声明可能不符，直接影响本次引用/检查初稿任务。不能通过只推荐outline掩盖这些核心输出风险，因此尚不到13分核心增量部分成立档，更谈不上19或25分实质优势。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "固定完整实现，基础分支缺口可定位。"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)至[Q04](#research-q04)确有固定直接材料，复查lib/academic.js:58-60及110-146能定位regex和无作者类型路径；这些不仅是运行未知，而是基础输出正确性反证。因此25%即6分：模板和分发部分支持任务，不是0分完全反驳所有用途；但不足13分可支撑核心交付的有条件试用。未执行函数、TeX编译或规范样例测试，不能升级19分，作者格式名称不当标准认证。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "无独立API/写文件，人工格式核验和纠错仍必要。"
+                        "rationale": "[Q05](#research-q05)说明无需独立网络/模型调用且不直接写文件，退出只需放弃草稿并回原模板，lib/index.js:125-185为函数参数分发。这使失败可逆，达到50%即10分而非5分多状态恢复缺口。但用户须核次数、作者、DOI、去重和TeX，错误输出可能进入论文再返工；无新增API不能等同整体token或人工成本低。未有同任务纠错时间对照，故不取15分轻负担，更不支持20分充分低成本。"
                     }
                 },
-                "score": 59,
+                "score": 37,
                 "revision": "cbeb4db61d11cc327092f5e7f56d333693e52bde",
-                "reviewed_at": "2026-10-22T09:40:55.801Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "afec7746be29f0eda71981fe6a184fd1bad3f51c0c5f7287b3a22a7db29aa61a"
+            "analysis_sha256": "728a9ad0f6ce138c3f2daea6c6416d5e1a87dea1bf58217b9fe76eeef78b447f"
         },
         "publication.metadata": "data/catalog/863683348--dsh-plugin-academic-writing/meta.json",
         "publication.summaries": {

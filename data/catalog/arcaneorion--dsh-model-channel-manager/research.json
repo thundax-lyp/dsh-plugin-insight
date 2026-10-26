@@ -339,28 +339,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合已有多个可替代渠道且愿意核对输出、预算和RC契约的用户试用，先验收流中失败与取消。",
+                "reason": "已维护多个可替代文本渠道的用户，可在人工可核查任务中试用首内容输出前的自动切换。相对失败后手工换模型，源码分析支持候选过滤和提交后不拼接第二模型，但不保证业务答案合格或硬性总时限。输出中断、候选能力不等价或预算超出预期时停止自动重试，退回固定渠道并核对已有输出和费用。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多渠道首响应失败和集中测试任务明确。"
+                        "rationale": "[Q01](#research-q01)、[Q03](#research-q03)明确维护真实渠道和虚拟组的人群，需求是请求尚未产生内容时少手工换模型。src/index.js:432-468及665-679把可恢复边界落实为emitted前后，合格结果必须无跨模型拼接。对已有等价候选且反复遇到启动失败者，流程摩擦具体，75%即23分超过15分一般场景。没有各供应商失败频率和任务质量对照，单渠道用户也无此需要，故不取30分，不用可用率宣传推导普遍需求。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "流边界与持久任务优于简单轮询，仍不能替代业务验收。"
+                        "rationale": "[Q01](#research-q01)的流提交边界是相对简单轮询的具体优势，index.js:665-679已输出内容后终止而不拼接另一模型；配合候选过滤能减少人工恢复首响应失败，取75%即19分，超过仅端点包装13分。[Q02](#research-q02)及复查601-613说明totalBudgetMs只阻止新尝试，397-410按chunk重置闲置计时，持续长流可越界。优势限于首内容前故障，不支持硬截止和合格答案保证，因此不满足25分充分优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "核心源码已查，作者框架/浏览器测试未本轮执行。"
+                        "rationale": "[Q01](#research-q01)至[Q03](#research-q03)的固定材料覆盖注册、流重试、组预算、任务持久和重启，复查channel-state.js:114-122确认旧running标ABORTED不重放，index.js:397-410与601-613明确计时边界。核心有条件采用主张及主要反证均可定位，取50%即13分，高于6分局部入口档。不同供应商终止块、Settings集成和取消持久失败未运行，作者测试不计独立执行，故不能达到19分本地验证，更无宿主验收。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "候选、凭据、重试和测速有额外预算，恢复协议较明确但跨配置非事务。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)说明多渠道凭据、能力等价、自动测速和失败调用都要维护与付费；channel-state.js:130-160保留预留失败及落盘失败状态，重启不重放有助恢复。已有运维者能退固定渠道并核对记录，负担可识别，取50%即10分而非5分。总预算非硬截止、完成最多保留100条、内存降级不跨重启，用户仍须查费用和输出；没有资源或恢复时间对照，不能以健康成功率替代轻维护依据，因此不升15分。"
                     }
                 },
                 "score": 65,
                 "revision": "bcb5c5a634552e357aa0ae992f3396d19048f2a3",
-                "reviewed_at": "2026-10-24T06:18:13.153Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -390,7 +390,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T05:52:04Z",
-            "analysis_sha256": "cdf4540eb304e88c012991d8db1acad3a7ce6410448dd3be821c95a9deff60d8"
+            "analysis_sha256": "61aa7f95c13fcef860378c4292ff4058340b18bbc6e75aa02d3bb8155ea2286d"
         },
         "publication.metadata": "data/catalog/arcaneorion--dsh-model-channel-manager/meta.json",
         "publication.summaries": {

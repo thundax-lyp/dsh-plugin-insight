@@ -339,28 +339,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。",
+                "reason": "已有可用WeKnora及受限密钥的团队可试用按知识库检索并回读组织文档。相比切换网页或手写接口，源码支持把段落与全文用文档标识串接，实际准确率和节时未测。出现范围越界、引用无法回读或正文截断影响结论时应停止推断并回WeKnora原界面核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "已识别重复任务和合格交付物，需求强度因团队而异。"
+                        "rationale": "依据[Q01](#research-q01)、[Q04](#research-q04)，README.md第73—98行把切网页查片段、再找原文的重复步骤具体化，目标是已有组织知识库的研发团队取得能回查的段落，而非泛指所有问答用户。tools.ts第179—183行支持显式范围，合格结果可按文档标识回读。任务与交接摩擦足以超过仅描述用途的15分，取23分；少量文件可直接工作区搜索，尚无团队持续使用频率和替代不足的直接材料，不取30分。此判断不借根平台Star推导需求。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "它把平台检索包装成可继续阅读、可核对引用的 DSH 工具协议，并通过标题补召回和范围过滤减少模型自行拼 API 的负担；检索算法属于 WeKnora 平台。[Q03](#research-q03)"
+                        "score": 19,
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，packages/dsh-weknora/src/tools.ts第110—159行保留截断与标题范围过滤，README第77—94行给出检索到全文的工具衔接。相对手写REST或切换知识库网页，减少模型取得片段后再次寻找文档标识的接线步骤，因此取实质改善19分，高于仅一般机制增量13分。混合检索和知识生产来自上游；正文召回、引用正确率及净耗时未对照，且ask另付模型代价，不足以取25分，也不把平台能力全算适配层收益。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "本轮仅固定版本源码检查，没有执行或宿主效果证据。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q05](#research-q05)，已逐行核查tools.ts第169—183行范围解析及client.ts第262—317行会话创建与SSE请求，固定材料覆盖入口、范围、超时和问答副作用；README“只读”只能限于不改知识内容，不能抹去会话写入。核心检索阅读可形成有条件采用依据，超过仅入口片段6分，取13分。未执行契约测试、部署平台或宿主验收，服务权限和效果仍未知，因此不取19分；作者兼容声明不当成本轮执行证据。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "适合已有可用 WeKnora、能签发受限 API key 的团队先试用搜索与阅读，再按需要开启 ask。对少量静态文件，工作区搜索或手工引用更简单；为这个适配层单独部署整套平台未必合算。首次成本包含宿主安装配置和权限核对，持续成本包括检索服务、embedding 基础设施及 ask 额外模型调用，金额和耗时取决于部署且未实测。失败恢复需区分超时、权限拒绝、截断及服务端已创建会话，避免无条件重试问答带来重复消耗。效果只能确认有段落和引用传输机制，不能给出回答准确率或节时比例。"
+                        "rationale": "依据[Q04](#research-q04)、[Q05](#research-q05)，README第17—35行要求既有服务和密钥，tools.ts第179—183行默认可见全库需人工收窄；client.ts第262—317行显示ask创建会话且有模型请求，失败不能无条件重试。本任务先检索和回读，存在退回网页的可行路径，负担可识别，超过恢复缺口主导的5分，取10分。团队仍承担权限、引用、截断复核和平台维护，费用与耗时未测，不支持接入持续都较轻的15分；ask风险作为真实扩展边界保留。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "e1f9a6166a593a4804a2f99f1d942919c9cc8ea7",
-                "reviewed_at": "2026-10-24T10:35:22.735Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -390,7 +390,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T10:26:37.690Z",
-            "analysis_sha256": "44d5f2127a2da97d022ede890763f1fb4eb15876d3b6a6be15cd4ef7318e5558"
+            "analysis_sha256": "73ef3605ae7e34a0e121ade565077a0d783f148c32f08d03d1242562598d17d3"
         },
         "publication.metadata": "data/catalog/tencent--weknora--packages-dsh-weknora/meta.json",
         "publication.summaries": {

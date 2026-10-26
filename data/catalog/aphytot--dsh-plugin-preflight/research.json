@@ -333,28 +333,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合插件作者作为额外提交前检查试用，明确宿主解析环境，并保留打包、审阅和宿主验证。",
+                "reason": "供反复发布或提交 DSH 插件的作者／维护者作为额外只读预检试用；先选择匹配宿主的目录，对已知正确和已知错误样本核对CLI报告及strict策略，确认工具存在或使用CLI。无finding只代表可见环境内已实现规则未发现问题，不能替代打包、代码审阅和真实宿主验收；误报漏报、简化semver边界及当前宿主兼容尚未独立验证。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "提交前重复结构检查清楚。"
+                        "rationale": "依据 [Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)。Q01不仅定义作者／维护者与发布前重复任务，还说明manifest、patch、client bundle和peer错误造成无法安装／挂载、被退回，以及带规则名、严重程度、修复提示的报告如何进入CI；固定README.md:5-34和lib/check.js:120-160、327-355将具体失配与后果对应，lib/cli.js:120-121提供阻断开关。对反复发布者，重复人工核对可转为结构检查，流程摩擦与采用理由具体，超过50%档15分的用途和一般痛点推断，取75%档23分。作者所称最常见拒绝原因和目录调查未独立核验，缺实际作者使用频率、历史退回分布及长期必要性材料，不能取100%档30分；不适用于把静态绿色当功能通过的人。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "DSH领域规则较通用包检查有增量。"
+                        "rationale": "依据 [Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)。lib/check.js:120-160、327-355、359-392将DSH manifest／patch／client-loader特有约束转成结构finding，407-447保留规则与修复提示，lib/cli.js:113-121输出JSON和可用于CI的退出判断，lib/index.js:72-82复用同一报告；相对每次人工翻贡献指南及通用npm检查，具体步骤从逐项阅读变成对已实现规则统一执行、定位和阻断，属于源码可解释的流程实质改善，超过50%档13分的仅有增量但核心机制不明确。Q03指出正则不等于YAML语义，简化semver与环境可见性限制兼容判断；这些收窄为“额外结构预检”，未击穿该有限价值，取75%档19分。未独立比较真实阻断错误发现率、误报漏报或净节时，不能取100%档25分，也不能声称比宿主原生验收更完整。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "规则和入口源码可核查，未运行。"
+                        "rationale": "依据 [Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)。固定ae10f46bcf65258d61fe54d966e8bdcc0daf60f6嵌入check.js:61-90、98-110、120-160、242-278、327-447覆盖目录版本解析、正则与文件外形检查、环境未知跳过、结构报告；index.js:29-51、72-93及cli.js:105-121覆盖共享调用、工具缺席降级和退出逻辑，超过25%档6分的仅声明或入口支持。包对semver.js的调用可见，但其完整引擎不在本次嵌入文件范围；README.md:92-115的运行与平台覆盖仅为作者声明，不能升格独立结果。对“保留宿主验收的附加只读静态检查”核心路径与失败边界已有直接材料，取50%档13分；Q03独立语义用例、误报漏报和目标宿主匹配仍缺，且本次未执行CLI／作者测试／Host，因此不满足75%档19分的真实本地测试，更无100%宿主效果验收。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "只读离线CLI接入较轻，误报与版本维护仍需人工。"
+                        "score": 10,
+                        "rationale": "依据 [Q02](#research-q02)、[Q03](#research-q03)。lib/check.js:12-15、61-90显示CLI只读文件但版本取决于目录向上node_modules解析；242-278在无宿主时静默跳过多数peer判断，98-110的正则及README.md:103-115的简化semver／平台边界要求持续复核；index.js:29-44、91-93可能静默不注册模型工具，package.json:49-52约束宿主peer，cli.js:120-121要求人工选择strict。采用者首次需选匹配目录和已知正反样本、持续审阅warning和规则更新，失败时回到贡献规则、打包及Host验证；CLI退出／不接入阻断可保留原流程，文件未被修改，故超过25%档5分的多风险且无重要退路。但绿色或工具缺席仍可能被误读，未知误报漏报意味着日常复核不能省去，不能只因无远端调用或可禁用称全周期较轻。取50%档10分，不满足75%档15分的主要失败可发现恢复及持续负担较轻，更没有100%可预测成本支持；工时、CI成本未知。"
                     }
                 },
-                "score": 70,
+                "score": 65,
                 "revision": "ae10f46bcf65258d61fe54d966e8bdcc0daf60f6",
-                "reviewed_at": "2026-10-24T06:08:49.015Z",
+                "reviewed_at": "2026-10-26T06:35:55.890Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -384,7 +384,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T05:52:04Z",
-            "analysis_sha256": "cfbd710a7d2711126e864fe3c2ded559a277238256ea947b92b03924d6f91a53"
+            "analysis_sha256": "e87178779fdc863a160d9339d0d76dc23ef782057ce358553d440d3aa68417fa"
         },
         "publication.metadata": "data/catalog/aphytot--dsh-plugin-preflight/meta.json",
         "publication.summaries": {

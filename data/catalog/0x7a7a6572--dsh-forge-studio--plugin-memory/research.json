@@ -384,28 +384,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "先观察，自动外发/留存、目录串用和并发合并可能跨会话放大错记；独立无敏感库关自动能力可继续对照。",
+                "reason": "希望跨会话自动保留项目约定的单用户，应先观察当前记忆插件，重要约定继续保存在可审阅文档中。相对手写Markdown，源码分析支持捕获、提炼和提示注入联结，但自动global归属、目录身份和合并错误可能跨会话放大。发现项目串库、错误约定再次召回或删除后仍由原文提炼时停止自动捕获与注入，退回项目指引并检查memory、raw和audit副本。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话偏好/项目复用明确。"
+                        "rationale": "[Q01](#research-q01)明确跨会话反复重述偏好和项目约定，合格交付是经认可内容在同项目召回且能修正；index.ts:49-70与service.ts:493-512支持存储和检索接线。对持续项目工作者，重复重述和失效约定有具体后果，75%即23分超过15分用途明确档。没有长期错召回或用户复述频率材料，普通项目指引也可能足够，因此不取30分，不从自动越聊越好或图谱规模推需求。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "原文/图谱/工具一体便利，Markdown/项目指引有替代。"
+                        "rationale": "[Q02](#research-q02)、[Q04](#research-q04)显示捕获、存原文、模型提炼、合并和动态提示相较手工Markdown有可解释机制增量；复查capture.ts:350-362确认它确实把转录送模型，故50%即13分超过6分入口便利。但service.ts:1301-1368的同题合并与模型判定不等事实校验，非法scope默认global和目录小写冲突可使错误扩散。核心跨项目正确性不稳，不能取19分的实质合格结果改善，更无充分效果25分。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "固定关键源码可查，召回真值和任务收益未知。"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)至[Q04](#research-q04)有明确调用和状态材料，不是无证据；然而采用主张要求受认可约定准确留在对应项目，service.ts:47-48小写身份与capture.ts:194-196非法scope回global直接冲击该条件。复查capture.ts:350-362还说明本地存储不等对话不外发。因此25%即6分而非13分可支持核心条件试用档，0分又过强，因捕获/存储机制确实部分支持任务。没有运行的并发、隔离及删除传播记录，不能升19分。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "额外LLM、隐私副本与清错/合并恢复负担。"
+                        "rationale": "[Q03](#research-q03)、[Q05](#research-q05)列明额外LLM提炼判重、每轮注入、原文/审计保留、错误合并纠正及目录归属核对。service.ts:1301-1368多await无服务级版本保护，单条删除也不统一清raw/audit，恢复和完整遗忘有重要缺口，取25%即5分，低于10分可行且清楚的恢复。可以关autoCapture/autoInject并导出、回Markdown，故不是已知无法退出的0分；但关功能不能作为自动长期记忆成本低的依据，更不支持15分。"
                     }
                 },
-                "score": 54,
+                "score": 47,
                 "revision": "be18a392f0c5c60a5253eb267b2f622d3a0e6555",
-                "reviewed_at": "2026-10-26T02:07:04.611Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -435,7 +435,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "d9eebe457df8fa37504eaae681baad6ee0da8327c3026c9e5fd693a57dbd1ebb"
+            "analysis_sha256": "7c85ac64ad3d37cb4b74a83e3f198e4a8e9430c8b4c88b629059ac94e33aefc3"
         },
         "publication.metadata": "data/catalog/0x7a7a6572--dsh-forge-studio--plugin-memory/meta.json",
         "publication.summaries": {

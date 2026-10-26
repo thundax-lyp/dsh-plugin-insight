@@ -351,28 +351,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "领域方法有明确适用任务，可先按需加载并用实际工具链验收；Gate仅提醒、指令边界和额外流程成本需要审阅。",
+                "reason": "有芯片资料和构建环境的固件开发者可在可回滚分支试用HardFault排查与逐声称核查流程。相比临时编写提示，材料提供现场分类到源码定位的检查步骤，诊断正确率与净节时未测。资料缺失、所谓验证只有文字或技能指令越过项目约束时，应停止采信结论并退回手工调试及实际构建测试。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "固件调试/构建任务清楚。"
+                        "rationale": "依据[Q01](#research-q01)、[Q04](#research-q04)，skills/hardfault-triage/SKILL.md第14—53行围绕中断现场、map和addr2line展开，README第13—41行明确固件开发工作流。反复遗漏现场输入、每次重写检查提示是具体摩擦，支持23分高于15分。任务要求当前芯片和代码对应修复，简单格式改动不需要整套流程；没有真实故障频率和团队使用材料，不取30分。明确既有构建条件，不能把安装插件当获得硬件验证能力或替代实际工程验收。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "知识组织和核查流程比临时提示更完整，非新执行能力。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)，src/index.ts第238—279行注册包内Skill并在首步追加提醒，fact-check/SKILL.md第20—40行给出逐声称检查，相对散乱笔记有可解释的方法整理增量，取13分超过纯入口6分。提醒不检查验证块也不reject，不能证明计划已核查；方法的净效果缺少同任务对照，不足19分。领域调试算法来自既有知识，文案称优先于system不构成真实权限，不能因检查清单多而推导技术优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "只有源码与文本检查。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，实际核查src/index.ts第238—279行，先next且保留reject，随后只追加gate消息；fact-check/SKILL.md第51—58行明确不做可执行状态空间检查。核心加载、历史去重和能力上限有固定材料，可形成有条件使用依据，取13分而非只有README6分。未运行宿主、固件构建或HardFault样例，不能取19分；去重、提示和inspect状态只证明消息投递设计，不证明验证履行。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无额外强制服务且可按需使用，但模型/人工验证负担仍在。"
+                        "score": 10,
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，src/index.ts第269—278行追加规则入历史，开关不会撤回旧规则，HardFault技能第18—40行要求编译与现场输入，fact-check第51—58行需外部验证或人工降级。操作者承担资料准备、逐声称核对、模型上下文和实际测试，显著但可回滚分支及人工调试有退路，取10分高于5分。没有量化工时、完整工作流额外审查调用未测，不能取15分；不把插件体积或一次注入当全周期低成本。"
                     }
                 },
-                "score": 64,
+                "score": 59,
                 "revision": "f32698d8e61bd50295ac66721838bf6aacec1859",
-                "reviewed_at": "2026-10-26T02:19:55.679Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -402,7 +402,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "2c858ce5a1d8cc4d2b8db750deb9d9176a7eff6b4c434b1c095797f3432aa4c4"
+            "analysis_sha256": "96f82e998fd477810acd4a5211f8cfa7eaee9f1d9401fe884936376babc653d7"
         },
         "publication.metadata": "data/catalog/amethystluna--embedded-workbench/meta.json",
         "publication.summaries": {

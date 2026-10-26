@@ -376,28 +376,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "跨仓原工具适配有价值，但workspace身份碰撞、失败保存仍授权与host信任/降级条件影响权限配置可靠性。",
+                "reason": "需要同一会话修改多个仓库的个人开发者，应先观察该固定版本的副目录授权与执行功能。相对切换cwd和重复解释上下文，源码分析支持逐次选择副根，但授权配置键碰撞和写盘失败后的内存状态会削弱核心边界。授权目录串入其他项目、保存报错后仍生效或执行位置不符时停止使用，退回每仓独立会话和原生目录权限。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨仓同会话明确。"
+                        "rationale": "[Q01](#research-q01)明确源码、文档、测试分仓而希望保持主cwd的开发场景，README.md:13-24及87-91说明单命令仅一个写根。合格结果是逐仓完成并能核对变更，避免切会话与重复上下文具有具体摩擦，取75%即23分，高于15分一般用途。它不提供跨仓原子提交，单仓或不频繁跨仓用户不需扩权；尚无持续需求与操作量对照，不能给30分，也不能把可选目录数当采用价值。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "保cwd/模式的原工具及@组合有实质增量。"
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)的lib/index.js:1363-1439等待配置并按真实目标选择最长副根，1456-1504复用宿主fs与observed，相对手工换cwd有具体增量，50%即13分超过6分入口包装。但[Q03](#research-q03)显示95-97有损文件键、154-205全平台小写缓存键，可能把别的workspace授权配置拿来使用；不能把此作为受控多仓执行的充分优势。保持standing mode不等严格项目隔离，关键边界反证使19分尚不成立。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "发布核心链及mock测试可核，绝对用户专管被条件收窄。"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)至[Q05](#research-q05)材料覆盖执行和UI，但关键采用条件是授权绑定正确、保存结果可信；复查lib/index.js:95-97与154-205的碰撞路径和[Q03](#research-q03)先改内存再保存，现有机制与每项目授权语义有实质冲突。故只取25%即6分，不能因源码量多默认13分。并非0分全无可用机制，任务路由与错误所有权确有实现；但未通过工作区碰撞、写失败和真实OS runner验证，不能称核心可控性已足够支持试用，更不满足19分运行档。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "需复杂宿主ABI/根授权和逐仓恢复，无事务。"
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)、[Q06](#research-q06)说明目录扩权、UI宿主能力、内存/磁盘配置和逐仓副作用都需人工管理；配置保存失败仍采用新目录，读失败又缓存空状态，恢复容易产生错误预期。取25%即5分而非10分的清晰可行恢复；不能仅靠唯一受权根说明退出风险已清。用户仍可禁用并回每仓原生会话，未确认必然损坏所有工作，故不取0分。但恢复目录身份与各仓部分变更的成本未量化，绝非15分轻负担。"
                     }
                 },
-                "score": 65,
+                "score": 47,
                 "revision": "445a803cdfdb917ab6d46b09aaf700be36bbf186",
-                "reviewed_at": "2026-10-26T02:22:34.106Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -428,7 +428,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "0ea067aae19878ebded31a447c13cce0c6548e7993798fe043e1436b33774458"
+            "analysis_sha256": "7cd66e280d31dda3804922a58f594c61e08a32ba0e5021355ea3e6904135cd1a"
         },
         "publication.metadata": "data/catalog/angeloszou--dsh-multi-folder/meta.json",
         "publication.summaries": {

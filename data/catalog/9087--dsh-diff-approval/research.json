@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "事后审阅有清楚可逆试用范围，先备份并核回退竞态、删除例外和重启边界，不当作权限批准或完整恢复保证。",
+                "reason": "有独立备份且能暂停其他写入者的开发者可试用会话内逐块审阅和回退Agent变更。相比切换编辑器查差异，源码支持把工具产生的变更及审阅决定集中到面板，净效率未测。若面板与磁盘不一致、存在外部写入或需要删除新建文件而无备份，应停止回退并改用Git及编辑器核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "协作编辑后审阅是明确需求。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)，README第29—48行给出逐块决定和评论场景，src/index.ts第2484—2496行捕获工具结果。经常由Agent修改多文件的个人开发者需要把变更与会话决定关联，反复切编辑器并追踪待审项的摩擦具体，支持23分超过15分。目标必须是写后审阅而非写前授权；偶发小修改已有Git diff足够，当前没有采用频率、审阅错误下降或持续必要性的直接用户材料，不足30分，项目名称approval不能扩张任务保障。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "自动捕获和会话内细粒度决定有增量。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)、[Q03](#research-q03)，src/pending.ts第109—131行聚合同路径变更，index.ts第2351—2375行对Undo做预期内容核查，面板能管理逐块决定与跨会话待办，相比只看Git diff是实质交互增量，取19分高于13分。原生编辑器也有差异审阅，插件并非独有；整文件回退缺少同样新鲜度门，新建删除不可Undo，所以不能以所有回退可撤销支撑25分。未测总审阅时间和错误率，只确认流程差异。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "只固定源码，无真实宿主验收。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，实际核查src/index.ts第2057—2075行和2351—2375行，确认回退会直接写oldText且删除不入撤销栈，Undo才检查expectedFile；persist.ts第1—15行为全局pending存储。主链路、持久化和关键反证均有固定源码，可支持受控工作树试用，取13分而非只看入口的6分。README部分隔离与可撤销说法不作为保障，源码已明确收窄解释；未执行真实文件交错写入或重启恢复，不能取19分，更不能当宿主验收。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "备份/外写冻结和状态核对是必要负担，资源未测。"
+                        "score": 5,
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，src/index.ts第2063—2065行回退前读现文但不比较展示基线，第2072—2075行明确Undo仅内存且删除不压栈，src/persist.ts第2—8行保存前后全文。用户必须额外备份、暂停编辑器和构建器、核对磁盘与面板，重启和删除恢复缺口仍重要，因此取5分而非可行退路较完整的10分。隔离副本和Git备份能限制损失，未达到目标条件下必然不可接受的0分；但不能因UI便利把这些恢复责任隐藏。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "c52399da9e58cd46ab7403ce785d4f04579f0b71",
-                "reviewed_at": "2026-10-26T02:22:00.017Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "16d052b44c4ea1f646f5f74abdaf54e914a9f3a8cab2d4bd74612c2a124c24fb"
+            "analysis_sha256": "66c72ca7cc09283310f4efc05d4be48ee0595a7bb6d3e4d4ebeb6ce38e10f75d"
         },
         "publication.metadata": "data/catalog/9087--dsh-diff-approval/meta.json",
         "publication.summaries": {

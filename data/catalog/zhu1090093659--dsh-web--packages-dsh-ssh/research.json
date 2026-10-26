@@ -363,28 +363,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "熟悉SSH的用户可在临时主机试只读命令与小文件；非幂等操作须独立对账，传输使用宿主本机权限。",
+                "reason": "已有OpenSSH经验和个人测试主机的用户，可试用人工监督的SSH排障与小文件核对，不据此批准无人值守部署。相比独立终端和传输客户端，源码支持共用主机清单、连接及工具入口，减少配置切换属于推断。若命令断线后结果不明、主机身份不符或传输内容不一致，停止重试并退回OpenSSH核对远端状态，写操作先另备恢复方案。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "远端运维任务明确，真实频率未核实。"
+                        "rationale": "[Q01](#research-q01)的README.md:18–35将主机清单、PTY、传输与模型工具放在同一运维流程；tools.ts:400–406要求集群选择器，说明目标范围是实际操作条件。对已有运维人员重复切换配置和检查结果的摩擦具体，超过15分；无真实频率、错误减少或大规模运维材料，不给30分，也不以只读echo代表完整运维成功。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "统一主机配置与UI/模型工具减少交接，但OpenSSH成熟替代存在。"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)的index.ts:148–180同实例建立Store与Engine并卸载清理，engine.ts:117–162统一传输与连接生命周期。相对分散工具，配置与宿主会话工具接线有实质步骤增量，超过13分；SSH/SFTP机制归上游，connection-pool.ts:493–522断线重试仍可能重放，无法支持25分的可靠自动运维优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码已查，无真实SSH或故障实验。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)覆盖实例、持久化、工具和失败：store.ts:395–403私有文件原子替换；connection-pool.ts:493–522只在broken时重试，598–609区分取消与无退出状态。核心操作边界有直接依据，超过片段声明6分；未做断线、主机认证或传输一致性运行验证，不能给19分。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "凭据、主机权限、敏感输出与未知重放增加恢复负担。"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)的README.md:39–43说明明文凭据和转发权限，connection-pool.ts:512–516、605–609允许未知结果后重连重放。目标任务仍含远端真实操作，退回OpenSSH只能辅助对账，不能自动撤销重复副作用；恢复负担的重要缺口使其低于10分。测试主机人工监督有可行控制，不认定0分不可接受。"
                     }
                 },
-                "score": 54,
+                "score": 60,
                 "revision": "6b984b10950f78f1f4a5b5adf4c16636b5e6113d",
-                "reviewed_at": "2026-10-26T03:51:35.159Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -414,7 +414,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "6625bd8c0b97eb1461337a1cf3325740d098944a21be50ea12cb696cb5a07e2b"
+            "analysis_sha256": "5d4d3fa584ce5f50690de4ba63a0005496214db71731fae128265bdb10f284f9"
         },
         "publication.metadata": "data/catalog/zhu1090093659--dsh-web--packages-dsh-ssh/meta.json",
         "publication.summaries": {

@@ -351,28 +351,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "多模型使用者可在隔离仓库先试只读计划与执行；代理质量和计费缺口阻止持续安装推荐。",
+                "reason": "已有模型账户及价格配置的开发者可在隔离小项目试用任务分包路由并逐包验收。相比手工选模型，源码支持依赖预算分配和尝试账本，但质量提高与实际省钱尚未验证。价格或实际模型身份不明、任务包不合格或补丁无法安全核查时，应停止自动路由并退回手工单模型执行。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "任务和交付较明确，频率由用户确认"
+                        "rationale": "依据[Q01](#research-q01)、[Q04](#research-q04)，README第11—19行面向已维护多模型路线的人，assignment-solver.mjs第52—70行显式处理任务依赖和预算可行性。多包任务在选模、分配与汇总支出上有具体重复摩擦，足以23分而非仅用途明确的15分。本任务必须实际执行并验收包，不能只以零调用预览冒充核心价值；固定强模型仍是简单基线，缺少当前版本真实供应商实验和用户任务分布，不取30分，账户已有是前提不是普遍采用条件。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "相对手工路线有依赖/成本可解释性但收益未测"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，assignment-solver.mjs第66—70行剔除预算内未知价格，run-ledger.mjs第48—67行保留质量级联中未知费用，构成比手选模型更可解释的分配和记录增量，超过纯入口6分，取13分。质量输入是代理，精确解只覆盖筛过的候选空间；缺少同任务真实成本及通过率比较，不能证明路由比单模型更值，故不到19分。账本能承认未知是诚实边界，不等于费用完整或质量门槛已经有效。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持机制，本轮未运行"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，实际核查assignment-solver.mjs第52—70行和run-ledger.mjs第48—67行，确认依赖校验、候选过滤和尝试计价，原题还定位adaptive-feedback.mjs第64—85行的反馈限定。规划、执行接线与计费反证可定位，足以有条件试用，取13分高于只见声明6分。核心质量先验、供应商效果和CLI身份没有本轮运行证据，不能取19分；README对当前无新实验证据的承认不被历史运行数字覆盖。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "CLI、模型、权限和价格配置复杂，需人工恢复"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，README第46—58行要求账户、CLI和宿主适配，run-ledger.mjs第48—67行表明失败重试中任何未知费用会使总额未知。操作者要校准模型质量价格、审阅每包交接和修改，Git worktree不提供操作系统隔离，历史还有截断，恢复和预算保护缺口重要，因此取5分而非退路较充分的10分。隔离小项目及停回手工路线可限制后果，尚不至目标必然不可接受的0分；不能借只读预览掩盖实际执行的外发和写入责任。"
                     }
                 },
                 "score": 54,
                 "revision": "e1f7aaa82c1fd7bc921c16ce77937889d3ca9a78",
-                "reviewed_at": "2026-10-23T08:06:54.432Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -402,7 +402,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "5ad1807f52de40f64454c5a3a5e8200e193e92926a76d0c5268287257d07a068"
+            "analysis_sha256": "58074bbf5d9cb735b8317ee6878e01238319e01ab4c859d029dd09a4929511a6"
         },
         "publication.metadata": "data/catalog/alice-marx--dsh-model-router/meta.json",
         "publication.summaries": {

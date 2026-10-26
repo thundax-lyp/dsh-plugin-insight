@@ -398,29 +398,29 @@
             },
             "recommendation": {
                 "rubric": "adoption-v1",
-                "decision": "trial",
-                "reason": "适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。",
+                "decision": "observe",
+                "reason": "希望减少审批的开发者目前应先观察可逆工具调用分类与预批准，不直接承诺自动审核有效。相比原生人工审核，源码提供参数绑定和保守决策矩阵，但预批准无作者实用样本且本轮准确率未测。任何shadow状态变化、guard升级被自动批准或遥测缺失时，应停用整个bundle并恢复原生审批及会话引用配置。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "工具审批摩擦和跨会话 FIFO 信息损失是明确重复任务，合格结果与停止标准可定义，但需求频率没有独立用户证据。"
+                        "rationale": "依据[Q01](#research-q01)、[Q06](#research-q06)，README第18—30行围绕反复工具审批，src/preapprove.ts第92—116行把白名单调用与授权判断连结。对工具频繁且动作可逆的开发者，逐次审核等待是具体摩擦，支持23分高于用途明确15分。合格结果是少审批且不越权，不能用shadow产生几条日志替代；作者预批准0/0没有实际样本，缺少需求负担及有效结果直接材料，不取30分，也不因采用外部分类型号就认定安全。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "相对作者所述生成式审核和 FIFO，typed fan-out、证据绑定与按价值保留有可解释增量；未完成同条件对照。"
+                        "score": 13,
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，src/matrix.ts第79—118行只delegate、ask、deny，preapprove.ts第92—116及125—155行绑定callId和新鲜参数证据，具有超出普通提示的接线增量，取13分高于6分。但当前主要减少审批的收益没有样本，分类误放率未知，image-offload.ts第148—164行又违背全局shadow只记录承诺，不能取19分。关闭该功能可避已知路径，却不证明其他授权判断有效，故核心自动采用保持观察。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持机制和确认缺陷，作者提供 dogfood；本轮没有本地测试或真实 Host 验收，按源码级证据上限计分。"
+                        "rationale": "依据[Q02](#research-q02)、[Q04](#research-q04)、[Q07](#research-q07)，实际核查preapprove.ts第92—116行仅enforce返回allowed-once，image-offload.ts第148—164行直接append且缺mode门，guard.ts第189—211行则有shadow委托。固定材料足够区分主链与反例并作观察判断，取13分而非仅入口6分；不代表矛盾已修，只有关闭卸载功能的窄范围叙述成立。未执行跨模式测试、分类准确率或宿主回退，不取19分，作者dogfood及预批准0/0均保留来源界限。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "只读短路、缓存、冷却和 stock 降级限制部分负担，但外部服务、人工校准、日志审计和升级兼容总成本未知。"
+                        "score": 5,
+                        "rationale": "依据[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)，src/image-offload.ts第148—164行可写不可逆卸载事件，cordis.patch.yml第6—16行替换session-reference不能单关替代row，telemetry.ts第89—118行吞日志错误。首次provider、阈值和私有接口接管，持续请求与人工校准，加上shadow和审计缺口使恢复责任重要，取5分而非10分。默认图像卸载关闭且可恢复整个bundle到原生路径，未判所有场景不可接受而取0分；观察理由不能包装成无副作用安全试用。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "7d98ee78ca2e9417894ceb2a00903d67f8f84b12",
-                "reviewed_at": "2026-10-24T16:16:27+08:00",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -450,7 +450,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T16:16:27+08:00",
-            "analysis_sha256": "1845cd5c589598363a31d99d5f9ffc30df47a7e593bc251ab864627f9b165d17"
+            "analysis_sha256": "dbcb2939024dddd4dd51eeecf0ccf057c31a379289d8abb889a9087928fa9eba"
         },
         "publication.metadata": "data/catalog/asktheway--dsh-jev-interceptor/meta.json",
         "publication.summaries": {

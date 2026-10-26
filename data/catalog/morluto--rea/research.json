@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "限定许可内已知JS样本的静态试用可控，先核运行时和证据准确，不启用所有动态工具。[Q04](#research-q04)",
+                "reason": "具备逆向经验且运行时符合要求的开发者，可对许可内非敏感JavaScript/Electron构建物试用静态功能追踪。相比手工拼接解析工具，源码支持统一交付工件关联、推断标记和证据链接，节时仍属推断。若结论无法回指工件或动态加载使关键路径缺失，停止据此重实现并退回直接检查源码映射与解析器结果。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "功能理解任务明确，真实频率未核"
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01)、[Q04](#research-q04)界定拿不到源码时理解功能；README.md:61–65、110–116给出CLI静态应用入口。已知构建物和工件可定位结果使任务超过偶发入口便利的8分；但重复摩擦主要来自工具拼装推断，未见实际任务频率、失败成本与替代不足的直接材料，不能给23分。评估不覆盖原生引擎或所有目标格式。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "统一证据契约有具体增量，正确率未测"
+                        "rationale": "[Q02](#research-q02)的JavaScriptApplicationService.ts:90–126实际串联重建、跨图校验与哈希证据；JavaScriptApplicationWorkflowEvidence.ts:13–46明确inferred和evidenceLinks。相对手工解析后自行整理，增加可回指且区分推断的交付，超过13分的机制增量；但哈希不证明解释正确，动态路径完整性和总体复核投入未测，不能给25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定核心代码抽查，无执行"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)可用固定源码核对输入safeParse、重建与证据生成，toolResultEncoding.ts:94–126另限制MCP结果预算，package.json:45–46给出运行时边界。入口、机制、依赖和推断限制均有直接材料，超过仅声明的6分；解析内部全覆盖及端到端正确率尚未验收，未执行本地测试，不能给19分。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "引擎、工具权限和人工复核负担显著"
+                        "rationale": "[Q03](#research-q03)的package.json:45–46要求特定Node最低版本，README.md:71–86说明Linux进程依赖、配置审阅备份和重启。限定静态JS避免原生引擎许可，但仍需逐结论回查及处理不完整图；相对5分存在停止推断、退回原工件的可行退路，故10分。未测资源峰值和恢复投入，不足以认定持续负担较轻的15分。"
                     }
                 },
-                "score": 65,
+                "score": 57,
                 "revision": "1173c0a9dc1b352a60943a491462294db8f353ae",
-                "reviewed_at": "2026-10-26T03:41:46.817Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "843db06a4f3c7279ab80c003d430341ac3819de6c5bf7bcea8c2b15d8b4f9ea2"
+            "analysis_sha256": "a03c665060035032ab2e4c97c1f07d4fbfb21c8fb4a0b405b8ab321a589cc5e7"
         },
         "publication.metadata": "data/catalog/morluto--rea/meta.json",
         "publication.summaries": {

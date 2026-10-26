@@ -357,28 +357,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "并行开发者可先在临时仓库验证新会话隔离与清理边界，再决定是否替代终端 worktree 流程。",
+                "reason": "已有Git基础且使用兼容DSH的开发者，可在临时仓库试用为并行任务创建worktree并打开对应新会话。相比终端创建后再手工登记工作区，源码支持把分支、checkout与DSH工作区串接，减少交接步骤仍属推断。若新会话cwd或分支不符、注册失败或清理遇到未提交内容，停止操作并用git worktree list及终端核对保留现场后恢复。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多会话共享树冲突场景明确，实际频率未核实。"
+                        "rationale": "[Q01](#research-q01)的README.md:70–82针对并行会话互扰，明确独立checkout再开新会话；[Q02](#research-q02)agent-tool.ts:113–125展示创建、注册、提示切换的连续步骤。具体交接摩擦和错误后果使其超过15分，但未有真实冲突与交付时间材料，不能给30分；当前会话不会迁移，任务必须包含新会话cwd核对。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "比终端手动衔接工作区更直接，但隔离机制非新增。"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)的git-service.ts:315–354构造受管目录和新分支，agent-tool.ts:113–125接注册表并返回workspaceId。独立工作树归Git，增量是省去终端到DSH登记的手工连接，超过仅入口便利13分。注册失败无本段补偿、已有可靠终端流程者可能无净收益，未证明端到端优势，不给25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "已核查固定源码链，未执行宿主或中断实验。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)在git-service.ts:315–354可核对分支、路径冲突和进行中操作保护，agent-tool.ts:118–125显示注册与cwd边界；git-service.ts:414–431默认拒绝脏清理。核心创建及失败限制均有固定材料，超过6分局部支撑；未做真实宿主创建、注册中断和恢复验收，不能给19分。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "需要额外 checkout、依赖准备及双状态恢复。"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)指出独立工作副本需磁盘、依赖准备和合并；agent-tool.ts:118没有紧随的注册失败补偿，414–418默认脏状态保护有助保留现场。熟悉Git者可通过worktree list对账、终端保留并恢复，超过恢复缺口主导的5分；仍需显著人工核对三处状态且资源未测，不取15分。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "6b984b10950f78f1f4a5b5adf4c16636b5e6113d",
-                "reviewed_at": "2026-10-26T03:47:01.144Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -408,7 +408,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "338c72e2ed2a714992e297c3370c84755313eb5e9875e66c0336face4e492163"
+            "analysis_sha256": "6acb76628e6935232034b0beed0c31aba43627831d361067e173fd9fb16ff3a0"
         },
         "publication.metadata": "data/catalog/zhu1090093659--dsh-web--packages-dsh-git-graph/meta.json",
         "publication.summaries": {
