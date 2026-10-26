@@ -6,6 +6,7 @@ import { resolve, dirname, extname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import ts from 'typescript';
+import sloc from 'sloc';
 import { ROOT, read, atomicWrite, digest } from '../../_shared/scripts/plugin-data.mjs';
 const CODE = new Set(['.js', '.mjs', '.cjs', '.jsx', '.ts', '.mts', '.cts', '.tsx']);
 const SKIP = /(^|\/)(node_modules|dist|build|vendor|third_party|coverage|\.git)(\/|$)|\.min\.[cm]?js$|\.d\.[cm]?ts$/;
@@ -82,7 +83,17 @@ export function scanCapabilities(path, text) {
     };
 }
 export function analyzeFiles(files, metadata) {
-    const temporary = mkdtempSync(resolve(tmpdir(), 'dsh-inventory-'));
+    const diagnostics = [];
+    const record = (message) => {
+        diagnostics.push(message);
+        console.warn(`[inventory] ${message}`);
+    };
+    let temporary;
+    try {
+        temporary = mkdtempSync(resolve(tmpdir(), 'dsh-inventory-'));
+    } catch (error) {
+        record(`LOC staging unavailable; use the pinned sloc library: ${error.message}`);
+    }
     try {
         const selected = [],
             excluded = [],
@@ -98,15 +109,22 @@ export function analyzeFiles(files, metadata) {
             }
             const ext = extname(path).toLowerCase();
             if (ext !== '.md' && !CODE.has(ext)) continue;
-            if (typeof text !== 'string' || text.includes('\0')) throw Error(`not UTF-8 text: ${path}`);
+            if (typeof text !== 'string') throw Error(`source content must be text: ${path}`);
+            if (text.includes('\0')) record(`NUL bytes in ${path}; preserve original text for counting.`);
             const stagedExtension =
                 ext === '.md' ? '.html' : ext === '.cjs' ? '.js' : ['.mts', '.cts'].includes(ext) ? '.ts' : ext;
             // sloc ignores dot-prefixed files and directories. The temporary tree is only a transport for
             // per-file counts, so use visible synthetic names and retain the real path in `selected`.
             const staged = `file-${selected.length}${stagedExtension}`;
-            const target = resolve(temporary, staged);
-            mkdirSync(dirname(target), { recursive: true });
-            writeFileSync(target, text);
+            if (temporary) {
+                try {
+                    const target = resolve(temporary, staged);
+                    mkdirSync(dirname(target), { recursive: true });
+                    writeFileSync(target, text);
+                } catch (error) {
+                    record(`LOC staging failed for ${path}; use the pinned sloc library: ${error.message}`);
+                }
+            }
             selected.push({ path, staged, extension: ext, role: role(path) });
             if (path.split('/').at(-1) === 'SKILL.md') {
                 const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] ?? '';
@@ -130,20 +148,44 @@ export function analyzeFiles(files, metadata) {
         // sloc 0.3.2 CLI aliases are broken with its Commander dependency and it ignores dot-prefixed paths.
         // Stage visible synthetic names; map md to html for total lines only and cjs/mts/cts to js/ts,
         // while preserving the original path and extension in output.
-        const args = [resolve(ROOT, 'node_modules/sloc/bin/sloc'), '--format', 'json', '--details', temporary];
-        const raw = selected.length
-            ? JSON.parse(
-                  execFileSync(process.execPath, args, {
-                      encoding: 'utf8',
-                      maxBuffer: 32 * 1024 * 1024,
-                      timeout: 60000
-                  })
-              )
-            : { files: [], summary: {}, byExt: {} };
-        const stats = new Map(raw.files.map((f) => [relative(temporary, resolve(f.path)).split('\\').join('/'), f]));
-        const rows = selected.map((f) => {
-            const item = stats.get(f.staged);
-            if (!item || item.badFile) throw Error(`LOC CLI did not count ${f.path}`);
+        let stats = new Map();
+        if (selected.length && temporary) {
+            try {
+                const raw = JSON.parse(
+                    execFileSync(
+                        process.execPath,
+                        [resolve(ROOT, 'node_modules/sloc/bin/sloc'), '--format', 'json', '--details', temporary],
+                        { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024, timeout: 60000 }
+                    )
+                );
+                if (!Array.isArray(raw?.files)) throw Error('missing file results');
+                stats = new Map(raw.files.map((f) => [relative(temporary, resolve(f.path)).split('\\').join('/'), f]));
+            } catch (error) {
+                record(`LOC CLI failed; use the pinned sloc library: ${error.message}`);
+            }
+        }
+        let uncounted = 0;
+        const rows = selected.flatMap((f) => {
+            let item = stats.get(f.staged);
+            const valid = (value) =>
+                value &&
+                !value.badFile &&
+                ['total', 'source', 'comment', 'empty'].every(
+                    (key) => Number.isSafeInteger(value.stats?.[key]) && value.stats[key] >= 0
+                );
+            if (!valid(item)) {
+                try {
+                    item = { stats: sloc(files[f.path], extname(f.staged).slice(1)) };
+                    if (!valid(item)) throw Error('invalid file counts');
+                    record(`LOC counted ${f.path} with the pinned sloc library instead of the CLI.`);
+                } catch (error) {
+                    uncounted++;
+                    const reason = `LOC unavailable: ${error.message}`;
+                    excluded.push({ path: f.path, reason });
+                    record(`${reason}; omit ${f.path} from LOC totals, not zero.`);
+                    return [];
+                }
+            }
             const { staged, ...original } = f;
             return {
                 ...original,
@@ -186,6 +228,11 @@ export function analyzeFiles(files, metadata) {
         return {
             schema_version: 1,
             ...metadata,
+            ...(uncounted
+                ? {
+                      coverage: `${metadata.coverage}; LOC covers ${rows.length}/${selected.length} files; uncounted files are unknown, not zero`
+                  }
+                : {}),
             tools: {
                 loc: {
                     name: 'sloc',
@@ -212,11 +259,18 @@ export function analyzeFiles(files, metadata) {
                 'Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.',
                 'Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.',
                 'Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.',
-                'Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.'
+                'Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.',
+                ...diagnostics
             ]
         };
     } finally {
-        rmSync(temporary, { recursive: true, force: true });
+        if (temporary) {
+            try {
+                rmSync(temporary, { recursive: true, force: true });
+            } catch (error) {
+                console.warn(`[inventory] LOC temporary cleanup failed: ${error.message}`);
+            }
+        }
     }
 }
 export function gitFiles(root, ref, component = '') {

@@ -1,0 +1,66 @@
+{
+    "repository": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
+    "repository_id": 1337920628,
+    "captured_at": "2026-10-26T09:07:10.506Z",
+    "window_start": "2026-09-26T09:07:10.506Z",
+    "stars": 6023,
+    "pushed_at": "2026-10-11T12:25:55Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AMeteorNOX%2FDeepSeek-Balance-Whale-Widget%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B13C:29D8A0:1A08A9B:1C850F8:6ADF1B2A and timestamp 2026-10-26 09:19:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AMeteorNOX%2FDeepSeek-Balance-Whale-Widget%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B13E:E1D86:180047C:1A7C1FC:6ADF1B2A and timestamp 2026-10-26 09:19:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMeteorNOX%2FDeepSeek-Balance-Whale-Widget%20is%3Aissue%20created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B150:E47C9:178CD16:1A07F15:6ADF1B2B and timestamp 2026-10-26 09:19:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMeteorNOX%2FDeepSeek-Balance-Whale-Widget%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B156:EAC0E:1896050:1B11565:6ADF1B2B and timestamp 2026-10-26 09:19:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMeteorNOX%2FDeepSeek-Balance-Whale-Widget%20is%3Aissue%20updated%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B162:6FFE0:17E223A:1A5DB6B:6ADF1B2C and timestamp 2026-10-26 09:19:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
+        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-whale-widget",
+        "captured_at": "2026-10-26T09:07:10.506Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 196943,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-whale-widget",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T10:38:51.939Z",
+            "captured_at": "2026-10-25T16:28:20.076Z",
+            "source_url": "https://registry.npmjs.org/dsh-whale-widget",
+            "error": null,
+            "latest_version": "0.4.2",
+            "latest_published_at": "2026-10-11T12:27:12.426Z",
+            "latest_error": null
+        }
+    }
+}

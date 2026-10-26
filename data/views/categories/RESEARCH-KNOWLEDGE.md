@@ -14,6 +14,7 @@
 | [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
 | [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 按维度拉起红队评审成果，汇集候选缺陷，由用户逐条认定或驳回并保存复审历史。 | 当前先观察；确认目标profile硬只读和Web访问边界后再对非关键成果试用，逐条复现缺陷并计实际模型与人工成本。 |
 | [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。 | 先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。 |
+| [Answer me with HTML](#plugin-1401476500-root) | 将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。 | 需要在协议或方案比较中交付单页材料的用户，可先选一份已有答案的短稿试渲染，并逐个核对图形关系与原文。 |
 | [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
@@ -45,7 +46,6 @@
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
 | [dsh-web-tools](#plugin-1335219884-root) | 为DSH提供多供应商网页搜索与抓取，以及小红书和X浏览器来源接入。 | 建议在可信本机、公开材料和小预算下试用，逐项回原文验收并记录全部尝试成本。 |
-| [dsh-weekly-panel](#plugin-1400385991-packages-dsh-weekly-panel) | 将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。 | 仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。 |
 | [dsh-weknora-archive](#plugin-1412897932-root) | 提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。 | 已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。 | 先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。 | 建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。 |
@@ -57,6 +57,8 @@
 | [MemOS](#plugin-1014729376-root) | 面向 LLM 与 Agent 的记忆管理平台，提供云、自托管及本地插件，支持长期记忆存取与管理。 | 有重复跨会话记忆需求且能审核内容的开发者，可先在独立profile、非敏感数据和固定模型路由上试用。 |
 | [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | [Q06](../../plugins/volcengine--openviking/INSIGHT.md#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。 |
 | [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [Q06](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。 |
+| [ReMe](#plugin-849121458-root) | 以可编辑Markdown保存Agent长期记忆，提供自动提炼、混合检索和多种运行时接入。 | 可供愿意维护本地知识目录和模型服务的开发者在独立workspace试用文件记忆。 |
+| [ReMe DSH集成](#plugin-849121458-integrations-dsh) | 为DSH提供长期记忆检索、会话自动归档、每日整理与状态页面。 | 适合愿意维护本地ReMe服务的人在虚构或非敏感项目上试用跨会话检索，先检查来源、队列和单调度者。 |
 | [WeKnora](#plugin-1024118326-root) | 面向企业文档理解、混合检索和推理的知识框架，提供问答、智能体与知识整理入口。 | 有持续知识维护与运维能力的团队可用代表性语料受控试用，先固定部署版本并核对权限、引用与恢复；少量临时文件先比较简单搜索方案。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DeepSeek Harness 提供 WeKnora 知识库检索、文档阅读及带引用的问答。 | 已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。 |
 
@@ -115,6 +117,20 @@
 > **思考**：本地存储不等离线提炼，项目全小写可串目录，模型scope默认global，合并/遗忘多副本非事务。详见[Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md#research-q03)。
 
 > **建议**：可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md#research-q06)。
+
+<a id="plugin-1401476500-root"></a>
+
+## [Answer me with HTML](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md)
+
+[![GitHub ★ 4,422](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C422&color=yellow&logo=github&style=flat)](https://github.com/QingYunA/answer-me-with-html)
+
+> **用途**：面向让Agent解释协议、架构或多维比较的读者，目标是得到可打开、可携带的含文本和图表页面。原办法是直接读Markdown或让模型手写HTML；前者简单而可读性未必差，后者要生成重复布局代码。作者称由短草稿生成单文件能减少模型输出，但复杂内容是否更易理解需读者任务对照，不由漂亮页面证明。
+
+> **亮点**：[Q03](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q03)识别出内容草稿与布局编译分离的组合贡献，相比模型手写HTML减少重复结构输出；成立条件是任务确需图表页面且内容完整，作者小样本不证明普遍节费。
+
+> **思考**：[Q04](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q04)说明结构渲染与CSP都不校验解释是否正确，1/8输出token也非1/8全轮成本；内容核对仍由作者承担。
+
+> **建议**：[Q08](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q08)提出未验证的图关系来源绑定，按错误关系发现率与审核负担对照，而非继续增加模板数量。
 
 <a id="plugin-1211139949-root"></a>
 
@@ -550,20 +566,6 @@
 
 > **建议**：未验证假设是输出约束执行、覆盖和降级来源证明，帮助减少可用性与完整性混淆；对照及否定条件见 [Q05](../../plugins/a3boy--dsh-web-tools/INSIGHT.md#research-q05)。
 
-<a id="plugin-1400385991-packages-dsh-weekly-panel"></a>
-
-## [dsh-weekly-panel](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md)
-
-
-
-> **用途**：DSH Web 内查看插件周榜与免费模型状态，减少切换页面；安装与效率待核。详见[Q01](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q01)。
-
-> **亮点**：把外部榜单接入 DSH Web 槽位，提供可复制安装命令和只读数据代理；不是榜单生产者。详见[Q01](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q01)。
-
-> **思考**：重试无法强制上游刷新且宿主旧值回退被客户端当正常新数据；未经校验 repo 进入粘贴命令、非 reciprocal 一律标赞助。详见[Q03](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q03)与[Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04)。
-
-> **建议**：未验证方向是将数据年龄和 stale 显示到面板、明确刷新语义，并限制 repo 与赞助分类输入，以契约矩阵和目标宿主体验验收。详见[Q06](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q06)。
-
 <a id="plugin-1412897932-root"></a>
 
 ## [dsh-weknora-archive](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md)
@@ -717,6 +719,34 @@
 > **思考**：正确记忆、纠错和项目隔离仍取决于服务与数据；队列有重试和TTL边界。
 
 > **建议**：先在脱敏项目试用写入、纠错、重开召回和断网恢复，再决定是否持续使用。
+
+<a id="plugin-849121458-root"></a>
+
+## [ReMe](../../plugins/agentscope-ai--reme/INSIGHT.md)
+
+[![GitHub ★ 3,683](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C683&color=yellow&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe)
+
+> **用途**：面向有大量跨会话项目知识、希望自主维护记忆文件的Agent开发者。原办法是手工Markdown加全文搜索，或专有记忆数据库；合格结果应是可回到原始文件与来源的相关片段，同时能纠正、导出和重建索引。根项目是Python记忆框架/服务，DSH桥接只是其integrations/dsh子组件，不应混为一个npm插件。
+
+> **亮点**：相对手工笔记，增量是自动提炼、分块检索与关系扩展接入Agent流程；相对不透明数据库，Markdown让内容可读、编辑和迁出。RRF、BM25、embedding及文件图是成熟技术组合，贡献在文件真相源与多接入方式的协调，不据此宣称新的检索算法。是否优于grep和人工精选，要看误召回、纠错与总维护负担。 依据[Q03](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q03)。
+
+> **思考**：核心质疑是自动提炼和演化会否把错误事实扩散为稳定知识。检索融合只按排名积分，不判事实真伪；有来源文件与模型输出也不能证明事实正确。auto_memory先执行再写成功回执，完成记录之前崩溃可能留下需协调的修改。LocalFileStore部分索引延期持久，关闭时落盘与原始Markdown不是同一事务，重建能力重要但不代表所有缓存状态无损恢复。 依据[Q04](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q04)。
+
+> **建议**：未验证假设是对自动提炼的新知识实行轻量冲突暂存，召回时保留原事实与更新来源，能减少“最后写入者覆盖”的错误。用包含同名项目、过期偏好、明确纠正与重复请求的固定会话集，对比手工Markdown、现有ReMe和冲突暂存；记录任务正确率、错误记忆复用、人工纠错和总费用。若检索分数提高但任务答案更差，或纠错成本更大，应否定采用增益。 依据[Q08](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q08)。
+
+<a id="plugin-849121458-integrations-dsh"></a>
+
+## [ReMe DSH集成](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md)
+
+[![GitHub ★ 3,683](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C683&color=yellow&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe) [![npm 30d 1,949](https://img.shields.io/static/v1?label=npm+30d&message=1%2C949&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin)
+
+> **用途**：面向跨会话反复处理同一项目、需要追溯偏好和事实的DSH用户。原办法是手工维护Markdown并粘贴相关片段；合格结果应是能追溯原文的相关记忆，而非把所有旧会话自动当指令。组件路径integrations/dsh是实际DSH桥接，不能把Python根框架直接当同一插件安装。
+
+> **亮点**：相对每次手工粘贴历史，它把检索入口与完成轮次归档接入会话事件；相对整包记忆注入，只注入指引、按需search减少无关历史进入上下文的机会。durable outbox把暂时服务离线与会话交互分开，是桥接层具体增量；记忆质量主要仍属于ReMe服务和模型，不归功于适配器。 依据[Q03](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q03)。
+
+> **思考**：关键质疑是自动归档会否把不完整回答长期化，以及未知网络结果会否重复写入。runtime允许max-tokens轮次入队。进一步核查同仓库服务端后确认，auto_memory按session_id与request_id哈希保存输入fingerprint及成功回执，已有同输入回执可重放、不同输入被拒绝；因此不能说服务端幂等全无材料。但执行顺序是先await _execute，再写成功回执，记忆写入与完成回执之间不是一个原子事务，进程在两者之间崩溃时仍需验证是否会再次执行。本轮只指出静态窗口，未复现重复事实。HTTP无API-key鉴权也要求可信网络。 依据[Q04](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q04)。
+
+> **建议**：未验证假设是给每条自动记忆保留来源轮次与“未完成回答”标记，并让检索返回时突出冲突，可以减少截断回答污染长期知识。固定含纠正、截断和重复请求的会话集，对比默认归档和带标记归档的错误召回率、用户修正时间及费用；若标记不能阻止后续模型采信错误，不扩大自动写入。 依据[Q08](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q08)。
 
 <a id="plugin-1024118326-root"></a>
 

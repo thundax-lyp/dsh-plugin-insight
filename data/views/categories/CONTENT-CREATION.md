@@ -12,13 +12,13 @@
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
-| [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
 | [dsh-media-studio](#plugin-1399694663-root) | 在DSH对话生成图片和视频或发送本地媒体，提供后台任务、自动保存及富媒体展示。 | 观察；先验收远端提交后断连与job失败的可追溯恢复，再决定后台试用。 |
+| [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠动作提示词、视频抠像、姿态归一化及透明播放素材转码流程，插件位于子目录。 | 当前建议有透明视频制作经验的素材作者先观察并核对工具路径和质量检查，避免按“全流程可复现”直接批量生成。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
@@ -29,6 +29,7 @@
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 | [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
+| [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 
 <a id="plugin-1352959121-root"></a>
@@ -58,20 +59,6 @@
 > **思考**：单次案例缺具体模型与原始条件，不能支持同条件版本排名；MIT不覆盖所有社区素材，安装默认all会覆盖同名技能目录。[Q02](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q02) [Q03](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是给模板绑定模型/参数/合格标准和失败卡，比美图目录更能选择生产方案；固定预算盲评合格率与总成本，无改善则否定。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
-
-<a id="plugin-1333100071-root"></a>
-
-## [DSH Vision Toolkit](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md)
-
-[![GitHub ★ 905](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=905&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-vision-toolkit) [![npm 30d 10,948](https://img.shields.io/static/v1?label=npm+30d&message=10%2C948&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit)
-
-> **用途**：适合仍使用DSH文本模型、需要截图理解、长图OCR及UI还原验证的人群；按任务验收具体视觉证据和可编辑产物。
-
-> **亮点**：把上游视觉工具变成可组合DSH工具、原生附件与产物流程，并加入准备后切换的运行时管理。[Q03](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md#research-q03) 上游算法和playbook归上游，不以适配宣称模型视觉能力胜出。
-
-> **思考**：文本模型得到视觉转述而非原像素，范围合法的框也不证明定位正确；外部服务、路径允许根和队列分段期限都须明确。[Q04](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md#research-q04) 图片任务合格率不能由工具存在推断。
-
-> **建议**：未验证假设是带区域和待核点的视觉证据对象配合按需局部复查，可减少转述丢失；用同预算图集比较最终合格率、误定位与总调用证伪。[Q07](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md#research-q07)
 
 <a id="plugin-1427791087-root"></a>
 
@@ -156,6 +143,20 @@
 > **思考**：jobs注册失败会脱离控制器运行且无jobId；会话消失或推送失败不保证送达，远端ID恢复未见持久对账。见 [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03)。
 
 > **建议**：未验证的持久阶段回执与原远端ID核对，可能减少重复生成和丢交付；以四阶段故障矩阵测净收益。见 [Q05](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q05)。
+
+<a id="plugin-1333652151-root"></a>
+
+## [dsh-pet 素材制作工程](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md)
+
+[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=yellow&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet)
+
+> **用途**：根仓库除dsh-pet子包外，主要提供角色动作提示词、源视频到透明动画的制作链及发布说明。面向愿意自己生成新角色/动作的桌宠素材作者，合格交付是一组尺寸/脚底对齐、循环衔接和透明通道正确的播放素材及pet pack配置。简单替代是人工视频编辑再放进现有桌宠。普通只想显示宠物的人应看子包，不需要运行这套生成链；仓库根没有package.json，不能把root当另一份npm插件。
+
+> **亮点**：[Q03](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q03)识别出提示约束、人工/自动统一中间格式、脚底对齐和播放变体的工程组合。相对逐片手工转码，它组织了可重做阶段；标准视频算法不视为原创，全部动作人工PR的作者说明限制了自动量产主张。
+
+> **思考**：[Q04](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q04)核实Windows工具硬路径与源片范围不一致，更发现alpha抽帧失败被return True并计入成功。当前检查绿灯不能承担素材放行，因而应观察根制作链，而不是把可安装子插件的演示当制作链验收。
+
+> **建议**：[Q08](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q08)提出未验证的每动作质量manifest，用坏视频、无alpha、超宽动作等反例对照误放行与补检人时；若额外扫描不改善交付或成本过高，否定整套方案。
 
 <a id="plugin-1336663562-root"></a>
 
@@ -296,6 +297,20 @@
 > **思考**：协议completed、有限占位检测和完整评论回执不等于设计合格或反馈已落地；固定DSH适配版本范围不能外推所有宿主。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是评论绑定制品版本和验收项、Agent逐条给修订证据减少遗漏与返工；对照同brief同预算的截图聊天流程，无改善则否定。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
+
+<a id="plugin-1159938129-root"></a>
+
+## [OpenPencil](../../plugins/zseven-w--openpencil/INSIGHT.md)
+
+[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=yellow&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil)
+
+> **用途**：适合希望Agent生成界面草稿后继续选择、修改和导出设计的开发者/设计者。合格结果是结构化可编辑.op文档且节点、页面和布局可核对，不是只得到一张截图。原办法是人工矢量编辑器、图片生成后重画或在代码中修改UI；编辑文档与Agent工具共享状态有机会减少重做。根项目是独立设计应用与MCP服务，不是DSH bundle，DSH通过MCP桥连接。作者“first”和多Agent更快不作为独立效果证据。
+
+> **亮点**：[Q02](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q02)Agent工具直接修改编辑器文档模型，较生成平面图片保留结构化编辑增量；根项目是独立应用和MCP服务，DSH只是接入端之一。
+
+> **思考**：[Q03](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q03)DSH配置改动跨profile，且修改内存后保存失败存在需核对的状态窗口；可编辑草稿不等于生产设计合格。
+
+> **建议**：[Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05)提出小批revision与快照验收的未验证假设，用并发和保存故障比较误覆盖与恢复。
 
 <a id="plugin-113965016-root"></a>
 
