@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -108,7 +108,7 @@ changed会话使用readFrom(id,0)重读，再过滤90天明细；长期大历史
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：把持久会话修订、流式去重、fork继承排除和本地时区图表组合成可重建的个人统计链，比简单累加消息更明确处理重复来源；不等同供应商计费协议。详见[Q02](#research-q02)。
 

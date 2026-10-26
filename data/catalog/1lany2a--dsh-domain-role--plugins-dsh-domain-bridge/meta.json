@@ -1,50 +1,40 @@
 {
     "repository": "1Lany2a/dsh-domain-role",
     "repository_id": 1424063534,
-    "captured_at": "2026-10-22T16:02:30.409Z",
-    "window_start": "2026-09-22T16:02:30.409Z",
-    "stars": 8,
-    "pushed_at": "2026-10-21T06:46:45Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
+    "stars": 11,
+    "pushed_at": "2026-10-24T10:08:39Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A1Lany2a%2Fdsh-domain-role%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DBB6:32FE7A:A9821B:B672C5:6ADA3398 and timestamp 2026-10-22 16:02:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A1Lany2a%2Fdsh-domain-role%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DC90:1C34B9:9CD88E:A9C531:6ADA3399 and timestamp 2026-10-22 16:02:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1Lany2a%2Fdsh-domain-role%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A30.409Z..2026-10-22T16%3A02%3A30.409Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD5C:236DD8:A04A8B:AD3D9D:6ADA339A and timestamp 2026-10-22 16:02:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1Lany2a%2Fdsh-domain-role%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A30.409Z..2026-10-22T16%3A02%3A30.409Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE04:FF42C:A14766:AE3599:6ADA339B and timestamp 2026-10-22 16:02:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1Lany2a%2Fdsh-domain-role%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A30.409Z..2026-10-22T16%3A02%3A30.409Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DEC6:325E8B:9D0E05:AA00A6:6ADA339D and timestamp 2026-10-22 16:02:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T23:34:33.511Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-domain-bridge",
-        "captured_at": "2026-10-22T16:02:37.565Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 372,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-domain-bridge",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 377,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-domain-bridge",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-18T14:07:04.100Z",
-            "captured_at": "2026-10-22T16:02:37.565Z",
+            "captured_at": "2026-10-25T11:38:12.058Z",
             "source_url": "https://registry.npmjs.org/dsh-domain-bridge",
             "error": null,
             "latest_version": "0.6.4",

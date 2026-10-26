@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[7848bba](https://github.com/1321928757/dsh-mysql/tree/7848bba53cccfe9e365a8fd46baa6d6883a29b78)
+分析版本：[b200ed5](https://github.com/1321928757/dsh-mysql/tree/b200ed57b3c6c1fc0359bd97a972c255f6bad052)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql) [![npm 30d 35](https://img.shields.io/static/v1?label=npm+30d&message=35&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mysql) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mysql)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql) [![npm 30d 30](https://img.shields.io/static/v1?label=npm+30d&message=30&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-mysql) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-mysql)
 <!-- END META -->
 
 > **实现功能**：在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。
@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -41,13 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向在DSH中需要问数据库问题、查看schema或辅助小型数据维护的开发者。用户在设置维护连接，在会话选零/一/多个数据源，模型每次只查一个明确目标，输出标注来源、SQL和字段。它不自动联邦查询，也没有把多库数据合并为统一真相。
+> **用途**：面向需要在DSH中读取MySQL schema和辅助查询的开发者，多源会话每次明确一个目标；重要库需要数据库自身最小权限与恢复方案。
 
-合格任务应先确认库表与权限，使用正确连接取得足够但最少披露的数据，SQL与答案对应；写入/DDL还要核对业务约束、影响行和恢复计划。返回ok/affectedRows不等于业务修改正确，工具错误也不意味着数据库完全未产生副作用。
-
-基线为数据库客户端或命令行加人工复制schema/结果给模型。增量是会话选择与结构化工具减少手工切换，默认关闭行写/DDL且两者分开。但结果会作为普通工具输出进入模型服务，密码留本地并不意味着业务数据不外发。生产敏感库、强只读/表权限和跨租户边界应以数据库账户控制为准，插件文本守卫只是附加控制。
-
-DB客户端/命令行加人工schema与结果复制；增量在选源/工具/上下文一体化，不能代替数据库权限、备份和答案核查。
+数据库客户端加人工复制schema/最少结果给模型是直接替代。比较同一只读任务的选源错误、披露量和核查时间；若需要强SQL隔离，先依数据库权限和服务端治理。
 
 <a id="detail-section-3"></a>
 
@@ -114,7 +110,7 @@ DB客户端/命令行加人工schema与结果复制；增量在选源/工具/上
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：把会话多源选择、schema先行、四类工具和独立行写/DDL权限接到动态上下文，减少手工搬运；不是SQL解析器或数据库隔离层。详见[Q02](#research-q02)。
 
@@ -138,10 +134,6 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 
 先观察。继续探讨从最低权限可丢弃库、语法/跨库语料、取消和结果外发入手，再查网关session授权；不凭guarded连接重要库。详见[Q06](#research-q06)。
 
-合格任务应先确认库表与权限，使用正确连接取得足够但最少披露的数据，SQL与答案对应；写入/DDL还要核对业务约束、影响行和恢复计划。返回ok/affectedRows不等于业务修改正确，工具错误也不意味着数据库完全未产生副作用。
-
-基线为数据库客户端或命令行加人工复制schema/结果给模型。增量是会话选择与结构化工具减少手工切换，默认关闭行写/DDL且两者分开。但结果会作为普通工具输出进入模型服务，密码留本地并不意味着业务数据不外发。生产敏感库、强只读/表权限和跨租户边界应以数据库账户控制为准，插件文本守卫只是附加控制。
-
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -153,13 +145,13 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/shared.js、lib/session-selection.js、lib/typert.host.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定lib检查配置/池/选择、四工具、SQL分类/表DDL提取、Typert与上下文，不连接数据库、不执行SQL，不作完整MySQL语法或网关审计。
-- 下一步：进一步探讨可对固定语法和业务问题集检查目标、权限/结果与资源，使用独立最低权限测试库并记录超时真实状态。
+- 下一步：按 [Q06](#research-q06) 的限定库、逗号多表、复杂DDL和读写边界语料验证AST能力化假设；另核string params对数字、null和日期的数据库语义，不以模型声明通过替代业务验收。
 
 **分析版本**
 
 - **仓库**：[1321928757/dsh-mysql](https://github.com/1321928757/dsh-mysql)
-- **版本号**：0.3.1（[固定提交 7848bba](https://github.com/1321928757/dsh-mysql/tree/7848bba53cccfe9e365a8fd46baa6d6883a29b78)）
-- **版本日期**：2026-10-12（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.3（[固定提交 b200ed5](https://github.com/1321928757/dsh-mysql/tree/b200ed57b3c6c1fc0359bd97a972c255f6bad052)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -169,7 +161,7 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 
 可探索AST允许集合、库表操作能力句柄、最小权限账户与服务端预算，返回实际对象/取消收据；未实现。详见[Q06](#research-q06)。
 
-进一步探讨可对固定语法和业务问题集检查目标、权限/结果与资源，使用独立最低权限测试库并记录超时真实状态。
+按 [Q06](#research-q06) 的限定库、逗号多表、复杂DDL和读写边界语料验证AST能力化假设；另核string params对数字、null和日期的数据库语义，不以模型声明通过替代业务验收。
 
 <a id="detail-section-9"></a>
 
@@ -180,20 +172,20 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 3 | 701 | — | — | 10475 |
-| .js | source | 5 | 3005 | 2600 | 265 | — |
+| .md | source | 4 | 1256 | — | — | 15401 |
+| .js | source | 5 | 3097 | 2669 | 285 | — |
 | .mjs | source | 2 | 401 | 328 | 53 | — |
-| .mjs | test | 5 | 893 | 770 | 46 | — |
+| .mjs | test | 5 | 917 | 790 | 49 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql/issues?q=is%3Aissue+created%3A2026-09-22T05%3A35%3A09.541Z..2026-10-22T05%3A35%3A09.541Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A35%3A09.541Z..2026-10-22T05%3A35%3A09.541Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/1321928757/dsh-mysql/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -219,7 +211,7 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:16-35](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/README.md#L16-L35)
+**依据 1 · 作者声明**：[README.md:16-35](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/README.md#L16-L35)
 
 作者说明多源、会话选择、默认读权限和数据外发边界。
 
@@ -251,7 +243,7 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:680-688](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L680-L688)
+**依据 2 · 源码核查**：[lib/index.js:688-696](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L688-L696)
 
 动态上下文要求单目标并附SQL/字段，不自动证明业务正确。
 
@@ -283,9 +275,11 @@ mysql_tables按DATABASE()查询information_schema并按表名单聚合列信息�
 
 连接池按主机/端口/用户/密码/库指纹重用，变更或删除会结束旧池，禁multipleStatements，日期保字符串。贡献是会话单目标路由、schema先行、行写与结构写分离及权限上下文的一体接线，不是SQL解析器或新的数据库隔离层；DDL边界比DML更细，但不能外推为整个工具集同等级保护。
 
+当前三个SQL工具复用SQL_PARAMS_SCHEMA，并把数组items明确为string，以满足Gemini原生函数声明要求。源码支持的是接口schema收敛，尚无本轮Gemini请求验收；只列string也意味着数字/布尔/null等参数要核实宿主编解码与数据库比较语义，不能把schema修复等同所有模型或SQL类型都正确。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/session-selection.js:6-35](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/session-selection.js#L6-L35)
+**依据 1 · 源码核查**：[lib/session-selection.js:6-35](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/session-selection.js#L6-L35)
 
 缺省/显式空、多选明确目标和选中约束。
 
@@ -327,7 +321,7 @@ export function resolveSelectedConnection(connections, sessionId, requestedId, s
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:154-168](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L154-L168)
+**依据 2 · 源码核查**：[lib/index.js:154-168](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L154-L168)
 
 密码安全对外视图。
 
@@ -354,7 +348,7 @@ function publicView(c) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:174-209](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L174-L209)
+**依据 3 · 源码核查**：[lib/index.js:174-209](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L174-L209)
 
 池指纹、禁多句及日期处理。
 
@@ -402,7 +396,7 @@ async function dropPool(connId) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:312-329](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L312-L329)
+**依据 4 · 源码核查**：[lib/index.js:320-337](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L320-L337)
 
 query前置检查。
 
@@ -432,7 +426,7 @@ query前置检查。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:435-465](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L435-L465)
+**依据 5 · 源码核查**：[lib/index.js:443-473](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L443-L473)
 
 DDL库和表边界。
 
@@ -475,7 +469,7 @@ DDL库和表边界。
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:667-688](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L667-L688)
+**依据 6 · 源码核查**：[lib/index.js:675-696](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L675-L696)
 
 Agent键上下文与单目标说明。
 
@@ -509,6 +503,20 @@ Agent键上下文与单目标说明。
 
 </details>
 
+**依据 7 · 源码核查**：[lib/index.js:287-293](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L287-L293)
+
+公共字符串数组schema修复声明形状，参数类型语义仍需具体查询核对。
+
+```text
+// 三个 SQL 工具共用同一份位置参数声明；数组必须带带类型的 items，
+// 否则 Gemini 原生 FunctionDeclaration 校验失败会让整个请求被 400 拒绝（{} 也不行）。
+const SQL_PARAMS_SCHEMA = {
+  type: 'array',
+  description: '可选的位置参数，对应 SQL 中的 ? 占位符。',
+  items: { type: 'string' },
+}
+```
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -527,7 +535,7 @@ query最多2000行是在pool.query取得完整rows后slice，不能保护数据�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/shared.js:184-197](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/shared.js#L184-L197)
+**依据 1 · 源码核查**：[lib/shared.js:184-197](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/shared.js#L184-L197)
 
 前缀分类与拒绝集合。
 
@@ -553,7 +561,7 @@ export function classifyStatement(sql) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/shared.js:206-230](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/shared.js#L206-L230)
+**依据 2 · 源码核查**：[lib/shared.js:206-230](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/shared.js#L206-L230)
 
 正则首引用提取与丢db前缀。
 
@@ -590,7 +598,7 @@ export function extractTableRefs(sql) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/shared.js:257-274](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/shared.js#L257-L274)
+**依据 3 · 源码核查**：[lib/shared.js:257-274](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/shared.js#L257-L274)
 
 空allowlist不限，缺引用不拒绝。
 
@@ -620,7 +628,7 @@ export function checkTableAllowlist(sql, allowlist) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:246-265](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L246-L265)
+**依据 4 · 源码核查**：[lib/index.js:246-265](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L246-L265)
 
 hint可跳过，完整读取后裁行。
 
@@ -652,7 +660,7 @@ async function runQuery(pool, sql, params) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:191-209](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L191-L209)
+**依据 5 · 源码核查**：[lib/index.js:191-209](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L191-L209)
 
 pool无ssl，bigNumber配置。
 
@@ -683,7 +691,7 @@ async function dropPool(connId) {
 
 </details>
 
-**依据 6 · 作者声明**：[README.md:80-82](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/README.md#L80-L82)
+**依据 6 · 作者声明**：[README.md:80-82](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/README.md#L80-L82)
 
 作者说明无TLS选项与hint限制。
 
@@ -712,34 +720,13 @@ async function dropPool(connId) {
 
 #### 完整回答
 
-#### 启动与依赖
+启动需Node>=20、匹配0.2宿主与mysql2/zod；tools是硬注入，Typert与Web/React支撑管理和选源。单个连接能SELECT1只证明基础连通，不证明目标库表权限、TLS或实际SQL结果正确。
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| Node>=20、DSH>=0.2.0-rc.2<0.3 | 包声明必需 | ESM、0.2 Typert严格codec | 0.1宿主不能按此版假设兼容 |
-| mysql2与zod | 运行依赖 | TCP池与RPC codec | 包加载/查询失败 |
-| tools | 硬注入 | 四工具全局注册 | 配置连接不代表工具已可见 |
-| Typert网关、Web与React | 管理/选择UI需要 | 七服务调用和连接选择 | 上层鉴权/宿主身份需核对 |
-| 可达MySQL、正确默认库与最小权限账户 | 数据操作必需 | schema和SQL | 未配默认库schema可能空 |
-| 可写本地DSH_HOME | 保存连接必需 | 含密码的connections.json | 失败回滚缓存并返回错误 |
-| 可信模型数据通道 | 业务采用条件 | schema/结果会外发 | 不应选择未获许可的敏感数据 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 固定包/宿主，建独立最低权限测试账户并备份 | 数据范围和外发许可明确 |
-| 安装 | Web profile挂载bundle并重启 | tools、Typert和上下文接通 |
-| 配置 | 保存连接、默认库和表范围，写/DDL保持默认关闭 | 测试连接只证明SELECT1，不证明业务权限完整 |
-| 选择 | 会话明确选一个或多源，每调用单目标 | 多源不省connectionId，清空视禁止访问 |
-| 查询 | schema先行，核对SQL、来源和最少必要结果 | 2000行显示上限不是资源保障 |
-| 恢复 | 核对SQL真实状态、回滚方案和连接配置备份 | DDL/写返回未知时不盲目重发 |
-
-本轮只读源码，不连数据库、不执行SQL或普通宿主冒烟；可视权限开关不是DB用户权限的替代。
+最小权限MySQL账户是核心约束，不能由界面读写开关替代。数据结果和schema将进入模型，必须先明确外发许可。失败时先核数据库真实执行状态和备份，不盲目重发DDL或写入。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:50-65](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/package.json#L50-L65)
+**依据 1 · 源码核查**：[package.json:50-65](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/package.json#L50-L65)
 
 mysql2/zod、peer与Node/DSH范围。
 
@@ -767,7 +754,7 @@ mysql2/zod、peer与Node/DSH范围。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:57-63](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L57-L63)
+**依据 2 · 源码核查**：[lib/index.js:57-63](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L57-L63)
 
 硬注入和超时/池上限。
 
@@ -781,7 +768,7 @@ const POOL_CONNECTION_LIMIT = 3
 const CONNECT_TIMEOUT_MS = 10000
 ```
 
-**依据 3 · 源码核查**：[lib/typert.host.js:17-29](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/typert.host.js#L17-L29)
+**依据 3 · 源码核查**：[lib/typert.host.js:17-29](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/typert.host.js#L17-L29)
 
 严格codec factory与调用映射。
 
@@ -806,7 +793,7 @@ const invocation = (method) => ({
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:590-599](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L590-L599)
+**依据 4 · 源码核查**：[lib/index.js:598-607](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L598-L607)
 
 连接测试只SELECT1。
 
@@ -828,7 +815,7 @@ const invocation = (method) => ({
 
 </details>
 
-**依据 5 · 作者声明**：[README.md:75-82](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/README.md#L75-L82)
+**依据 5 · 作者声明**：[README.md:75-82](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/README.md#L75-L82)
 
 兼容、TLS和schema条件。
 
@@ -861,7 +848,7 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:103-131](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L103-L131)
+**依据 1 · 源码核查**：[lib/index.js:103-131](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L103-L131)
 
 门闩、内存更新与失败回滚。
 
@@ -902,7 +889,7 @@ async function persistConfigs(configs) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:519-545](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L519-L545)
+**依据 2 · 源码核查**：[lib/index.js:527-553](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L527-L553)
 
 保留密码和池更新路径。
 
@@ -941,7 +928,7 @@ async function persistConfigs(configs) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/typert.host.js:17-29](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/typert.host.js#L17-L29)
+**依据 3 · 源码核查**：[lib/typert.host.js:17-29](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/typert.host.js#L17-L29)
 
 record unknown严格模式不等于逐字段授权。
 
@@ -966,7 +953,7 @@ const invocation = (method) => ({
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:495-511](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L495-L511)
+**依据 4 · 源码核查**：[lib/index.js:503-519](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L503-L519)
 
 选择只按输入sessionId。
 
@@ -995,7 +982,7 @@ async function selectConnection(args) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:513-523](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L513-L523)
+**依据 5 · 源码核查**：[lib/index.js:521-531](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L521-L531)
 
 DDL风险位host检查。
 
@@ -1018,7 +1005,7 @@ async function saveConnection(args) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:697-723](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L697-L723)
+**依据 6 · 源码核查**：[lib/index.js:705-731](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L705-L731)
 
 选择清理、服务接线和池dispose。
 
@@ -1073,22 +1060,7 @@ async function saveConnection(args) {
 
 #### 完整回答
 
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | MySQL/宿主、账户与连接配置 | 核对权限、兼容、网络和数据披露 | 未测安装与schema理解耗时 |
-| 持续使用 | 每连接最多3池连接、查询完整结果、模型接收schema/数据 | 核对SQL和结果，维护最小权限 | 显示2000行不界定DB/内存/token总成本 |
-| 失败恢复 | 数据库备份、可能回滚/人工修复 | 判明超时是否仍执行、避免重复写 | DDL和未知结果恢复可很重 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 路由 | 会话选中集合和单目标检查 | 宿主Agent ID与会话身份真实一致 |
-| 安全开关 | 行写/DDL分开，默认关闭 | 只读语义/全语法表白名单隔离 |
-| 查询结果 | 字段/行序列化与截断标记 | 业务答案正确、精度和最少披露 |
-| 接线收益 | UI+工具+上下文减少手工切换 | 相比DB客户端真实耗时/错误率改善 |
+一次合格任务是选对连接、在允许数据范围内正确解释SQL结果，并对写入确认业务影响。池上限、2000行显示裁剪和30秒工具超时作用于不同层，不能相加为数据库资源硬上限；完整结果先被读取，故资源压力与最终展示量不同。
 
 建议观察。schema先行、多源单目标和独立写权限是具体价值，但只读/表名单靠有限语法识别、资源上限在全量读取后及本地明文凭据/TLS缺失，不适合凭“guarded”直接连接重要库。继续探讨可先在最小权限可丢弃库核对允许语法与资源取消，再查网关身份与读结果外发边界。
 
@@ -1096,7 +1068,7 @@ async function saveConnection(args) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/shared.js:184-230](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/shared.js#L184-L230)
+**依据 1 · 源码核查**：[lib/shared.js:184-230](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/shared.js#L184-L230)
 
 有限语法分类和表提取是能力化假设起点。
 
@@ -1155,7 +1127,7 @@ export function extractTableRefs(sql) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:246-265](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L246-L265)
+**依据 2 · 源码核查**：[lib/index.js:246-265](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L246-L265)
 
 全量读取后截断决定资源成本。
 
@@ -1187,7 +1159,7 @@ async function runQuery(pool, sql, params) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:191-209](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L191-L209)
+**依据 3 · 源码核查**：[lib/index.js:191-209](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L191-L209)
 
 连接池资源与无TLS配置。
 
@@ -1218,7 +1190,7 @@ async function dropPool(connId) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:435-465](https://github.com/1321928757/dsh-mysql/blob/7848bba53cccfe9e365a8fd46baa6d6883a29b78/lib/index.js#L435-L465)
+**依据 4 · 源码核查**：[lib/index.js:443-473](https://github.com/1321928757/dsh-mysql/blob/b200ed57b3c6c1fc0359bd97a972c255f6bad052/lib/index.js#L443-L473)
 
 DDL已有对象/库检查可供统一设计参考。
 

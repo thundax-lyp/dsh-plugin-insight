@@ -2,24 +2,24 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes)
+分析版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,413](https://img.shields.io/static/v1?label=npm+30d&message=2%2C413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,783](https://img.shields.io/static/v1?label=npm+30d&message=1%2C783&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
 <!-- END META -->
 
-> **实现功能**：把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。
+> **实现功能**：提供纸卡、看板和日历便签，支持截止日期、AI任务派发、有效期日程和WebDAV备份。
 
-> **核心亮点**：将便签编辑、任务 AI 执行和日程以及远端备份整合为 DSH 用户工作流。详见[Q01](#research-q01)。
+> **核心亮点**：把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
 
-> **风险与缺陷**：删除后远端快照不更新是明确的判定缺口；恢复和任务派发有部分副作用，需故障验证。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **风险与缺陷**：备份以存活便签的最大 updatedAt 判变，删除不一定触发远端新快照；派发与恢复存在多步骤部分副作用。dueAt 是展示属性，endAt 也不取消已运行会话。[Q02](#research-q02)、[Q03](#research-q03)、[Q06](#research-q06)
 
 **本文目录**
 
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -31,6 +31,7 @@
   - [Q03 · WebDAV 只在有变更时自动备份是否包括删除？](#detail-section-13)
   - [Q04 · 恢复与调度有哪些不可忽略的副作用？](#detail-section-14)
   - [Q05 · Agent 对手写便签的修改和定时任务应如何治理？](#detail-section-15)
+  - [Q06 · 截止日期和日程有效期是否都能约束任务执行？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -42,38 +43,40 @@
 
 > **用途**：个人记录、待办和可派发 Agent 任务的统一面板；需要明确自动执行与备份恢复成本。详见[Q01](#research-q01)。
 
-一般便签板与任务管理可分别完成记录和计划；本插件的区别是同一便签直接派发 Agent 会话。
+Markdown 待办或普通便签加人工创建会话是直接替代。比较同一任务的交接次数、结果可追溯性、孤儿会话与恢复人工；日历视图本身不证明任务更准时。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| 便签 | 记录 | UI 未测 |
-| 任务 | AI 派发 | 失败残留会话 |
-| 备份 | 远端快照 | 删除可漏备 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| 纸卡/看板/日历 | 记录、分类和时间查看 | 截止显示不保证任务按时终止 |
+| AI任务与租约 | 新会话执行及结果回写 | 必须有工作区，部分派发失败需清会话 |
+| 定时与有效期 | 控未来派发 | 不取消已运行任务 |
+| WebDAV快照 | 远端恢复 | 删除未必触发自动备份，恢复整体覆盖 |
 
 #### 启动与依赖
 
-| 依赖 | 必需 | 用途 | 缺失后果 |
-| --- | --- | --- | --- |
-| DSH storageDomain | 必需 | 持久便签 | 插件不可用 |
-| 任务 runtime | 执行时必需 | 新会话 | 只能记便签 |
-| WebDAV | 备份时必需 | 远端快照 | 无远端备份 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH storageDomain、设置和UI | 核心必需 | 便签/租约持久化与编辑 | 匹配接口后才可使用 |
+| 会话派发和模型 | AI任务必需 | 独立工作区执行 | 无 dispatch 则拒任务 |
+| 绝对工作区 | 任务必需 | 选择执行目录 | 缺失拒执行，不自动兜底 |
+| WebDAV和应用密码 | 远端备份可选 | 快照上传和恢复 | 不配置则需自管本地备份 |
+| userQuestions | 修改手写便签必需 | 明确同意 | 无通道拒绝相应工具写操作 |
 
-#### 使用步骤
+#### 启动步骤
 
-| 步骤 | 动作 | 判据/恢复 |
-| --- | --- | --- |
-| 记录 | 便签编辑 | 核自动保存 |
-| 任务 | 设工作区/执行 | 核新会话/租约 |
-| 备份 | WebDAV 手动/自动 | 核快照 |
-| 恢复 | 先安全备份再覆盖 | 隔离环境验 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 记录 | 用户建测试便签，选视图和截止日 | 核保存和日期含义 |
+| 派发 | 用户先选隔离工作区、模型和预设 | 新会话与租约对应，结果回写可核 |
+| 日程 | 用户设置频率及 endAt | 核下一触发与到期停用，不将 dueAt 当截止执行 |
+| 备份 | 用户配置应用密码并手动备份 | 删除后另手动备份并查看远端 |
+| 恢复 | 用户确认整体覆盖并先留安全副本 | 失败核表和租约，避免盲目再派发 |
 
 **效果与成本**
 
@@ -93,15 +96,15 @@
 | 自动日程 | 30秒扫描 | 长任务停止 |
 | WebDAV | 快照与恢复 | 删除同步/故障原子性 |
 
-> **思考**：删除后远端快照不更新是明确的判定缺口；恢复和任务派发有部分副作用，需故障验证。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **思考**：备份以存活便签的最大 updatedAt 判变，删除不一定触发远端新快照；派发与恢复存在多步骤部分副作用。dueAt 是展示属性，endAt 也不取消已运行会话。[Q02](#research-q02)、[Q03](#research-q03)、[Q06](#research-q06)
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
-> **亮点**：将便签编辑、任务 AI 执行和日程以及远端备份整合为 DSH 用户工作流。详见[Q01](#research-q01)。
+> **亮点**：把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
 
-将便签编辑、任务 AI 执行和日程以及远端备份整合为 DSH 用户工作流。详见[Q01](#research-q01)。
+把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
 
 租约限定 Agent 任务工具会话、独立 userQuestions 同意；WebDAV 删除水位与恢复事务、会话失败清理需改进。详见[Q02](#research-q02)至[Q05](#research-q05)。
 
@@ -109,7 +112,7 @@
 
 ### 1.4 主要限制
 
-删除后远端快照不更新是明确的判定缺口；恢复和任务派发有部分副作用，需故障验证。详见[Q02](#research-q02)至[Q04](#research-q04)。
+备份以存活便签的最大 updatedAt 判变，删除不一定触发远端新快照；派发与恢复存在多步骤部分副作用。dueAt 是展示属性，endAt 也不取消已运行会话。[Q02](#research-q02)、[Q03](#research-q03)、[Q06](#research-q06)
 
 <a id="detail-section-6"></a>
 
@@ -125,16 +128,16 @@
 
 固定源码可核功能与批准守卫；删除不会推动 maxUpdatedAt 水位，自动备份可遗漏删除；派发失败可能留空会话，恢复非事务。目标宿主未测。
 
-- 已检查：作者 README、包清单、源码路径 packages/plugin-notes/README.md、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/agent/tools.ts、packages/plugin-notes/src/scheduler.ts、packages/plugin-notes/src/schedule.ts、packages/plugin-notes/src/webdav-core.ts、packages/plugin-notes/src/webdav-backup.ts、packages/plugin-notes/src/domain.ts 及固定范围 inventory；组件：packages/plugin-notes。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/plugin-notes/README.md、packages/plugin-notes/src/service.ts、packages/plugin-notes/src/agent/tools.ts、packages/plugin-notes/src/scheduler.ts、packages/plugin-notes/src/schedule.ts、packages/plugin-notes/src/webdav-core.ts、packages/plugin-notes/src/webdav-backup.ts、packages/plugin-notes/src/domain.ts、packages/plugin-notes/src/client/views/notes-board/components/CalendarBoard.tsx 及固定范围 inventory；组件：packages/plugin-notes。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读核固定提交 packages/plugin-notes 范围 README、service、agent/tools、scheduler、schedule、webdav；未执行目标 DSH 或 WebDAV。旧 META 复用。
-- 下一步：目标 DSH 验用户提问、租约撤销、模型选择失败、删除后自动备份、恢复中断与超时任务。
+- 边界：固定组件入口、service、agent tools、scheduler/schedule、domain、WebDAV和日历视图接线；未运行目标代码、UI或WebDAV，不是全部客户端审计。
+- 下一步：按 [Q05](#research-q05) 的删除、恢复半失败和派发失败样本核统一 revision/操作收据；另用 [Q06](#research-q06) 的 endAt 三边界样本检查预览、调度与已运行会话。假设未实现，未在宿主运行。
 
 **分析版本**
 
 - **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)
-- **版本号**：0.4.3（[固定提交 acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e)）
-- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.0（[固定提交 be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -144,7 +147,7 @@
 
 改进可用持久变更序号/墓碑判备份、事务恢复、派发失败清理会话。详见[Q03](#research-q03)和[Q05](#research-q05)。
 
-目标 DSH 验用户提问、租约撤销、模型选择失败、删除后自动备份、恢复中断与超时任务。
+按 [Q05](#research-q05) 的删除、恢复半失败和派发失败样本核统一 revision/操作收据；另用 [Q06](#research-q06) 的 endAt 三边界样本检查预览、调度与已运行会话。假设未实现，未在宿主运行。
 
 <a id="detail-section-9"></a>
 
@@ -155,20 +158,16 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 1 | 97 | — | — | 1847 |
+| .md | source | 1 | 98 | — | — | 1904 |
 | .mjs | source | 2 | 101 | 67 | 23 | — |
-| .ts | source | 48 | 7623 | 5660 | 1343 | — |
-| .tsx | source | 31 | 5650 | 4905 | 554 | — |
+| .ts | source | 51 | 7964 | 5933 | 1377 | — |
+| .tsx | source | 32 | 6015 | 5267 | 518 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z)
-
-
-
-统计日期：2026-10-21。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/0x7A7A6572/dsh-forge-studio/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -186,49 +185,38 @@
 
 #### 完整回答
 
-作者给四处入口、纸卡/列表/泳道、Markdown 与自动保存；便签转任务后必须选绝对工作区，用户可手动或按 once/interval/daily/weekly/monthly 日程派发到新会话。固定源码可见存储 domain、任务执行、调度与八个 agent 工具；界面体验只据作者 README/图片，未在 DSH 操作验证。此插件既是个人便签，也会触发新 Agent 会话，采用前须按任务执行权限评估。
+面向同时记录个人事项和把明确任务交给 DSH 的用户。当前固定版提供纸卡墙、看板、日历三种视图，不再据旧文描述为列表。普通便签可搜索、归档、Markdown编辑；任务需选择绝对工作区，可选模型和 Agent 预设，派发到新会话并回写结果。截止日期在日历显示，定时触发另有日程。合格交付应为可复查便签或真实任务结果，而非仅卡片变成已完成。
+
+主要增量是把记录、调度和执行回写接成同一工作流。简单替代是 Markdown 待办加手工开启会话；插件减少重复交接，但增加自动执行、备份和租约恢复责任。UI显示方式可由源码接线和作者说明核对，本轮没有操作宿主。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/plugin-notes/README.md:19-44](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L19-L44)
+**依据 1 · 作者声明**：[packages/plugin-notes/README.md:32-44](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/README.md#L32-L44)
 
 作者入口与功能
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-## 入口
-
-便签板本体在**中间列**（侧栏那个字形就是它的开关），也能开在**右侧栏**（导引页那张卡片）。以下入口都能在 **dsh 设置 → 便签 → 入口** 里单独开关，默认全开：
-
-| 入口 | 在哪 |
-|---|---|
-| 侧栏顶部入口 | 侧栏顶部那一整行，点行打开便签板，点 (＋) 只开快捷新建；关掉即整行消失 |
-| 输入栏入口 | 输入框左下角那一个字形，点开是三行菜单：新增便签 \| 便签板 \| 任务泳道（待办数挂在「任务泳道」那一行，点它开板并直接落到泳道页签） |
-| 存成便签 | 每条助手回复下方的按钮，把该条回答**带进快捷新建浮层**（预填标题与正文） |
-| 右侧栏导引卡片 | 右侧栏导引页里的便签卡片，点一下就在右侧栏以标签页打开便签板 |
-
-「打开方式」决定便签板开在**中间列**还是**右侧栏**（宿主没装右侧栏时自动回退中间列）。四个入口至少会留一个：全关掉就没有打开便签板的地方了，设置页会锁住最后一个开着的入口。
-
 ## 能做什么
 
-- **三种显示模式**：纸卡墙 / 行式列表 / 任务泳道，随时切换，选择会被记住。
+- **三种显示模式**：纸卡墙 / 看板 / 日历，随时切换，选择会被记住。
 - **六色纸卡 + 置顶**：配色与 Win11 便签一致，置顶优先；颜色可多选筛选。
-- **搜索与归档**：标题 + 正文实时搜索；归档便签收进列表底部折叠区，可恢复 / 编辑 / 删除。
-- **Markdown 正文**：格式工具栏（加粗 / 标题 / 列表 / 任务清单 / 引用 / 代码 / 链接 / 表格 / 撤销重做）；任务清单 `- [ ]` 在纸卡与列表上显示完成度徽标（如 `2/5`，全勾变 ✓）。
+- **搜索与归档**：标题 + 正文实时搜索；归档便签收进纸卡墙底部折叠区，可恢复 / 编辑 / 删除。
+- **截止日期与日历**：看板卡片上点「截止」即选日期，逾期标红；日历按月排格，截止（蓝点）与定时触发（绿点）分色，点事项进编辑器。
+- **Markdown 正文**：格式工具栏（加粗 / 标题 / 列表 / 任务清单 / 引用 / 代码 / 链接 / 表格 / 撤销重做）；任务清单 `- [ ]` 在纸卡上显示完成度徽标（如 `2/5`，全勾变 ✓）。
 - **粘贴图片**：编辑器里 `Ctrl+V` 直接把剪贴板里的图片内联进正文。
-- **便签变任务**：写入泳道状态即成为任务，五列看板（待规划 → 待办 → 进行中 → 已完成 → 已失败）拖拽换状态；普通便签不进泳道。编辑器底部是一块**折纸式可折叠面板**——合上只占一行摘要（状态 · 工作区 · 模型 · 预设），点「设置」才折出全部字段。
+- **便签变任务**：写入泳道状态即成为任务，五列看板（待规划 → 待办 → 进行中 → 已完成 → 已失败）拖拽换状态；普通便签不进看板。编辑器底部只留一行任务摘要（状态 · 工作区 · 模型 · 预设），点「设置」会从纸条右侧**抽出一张附表**（固定主题表面、随明暗主题），点「收起」塞回纸后。
 - **交给 AI 执行**：任务卡 hover「执行」→ 按该任务的工作区**新开一个会话**跑，便签板所在会话不被占用；完成后摘要回到卡片首行，全文进编辑器的「任务与结果」区（已完成/已失败的任务打开编辑器即展开）。跑太久可「重置为待办」。
-- **执行目标可选**：任务折纸面板里能选**模型**与 **agent 预设**（留空 = 宿主默认），只影响该任务派发出来的新会话。
+- **执行目标可选**：右侧任务附表里能选**模型**与 **Agent 预设**（留空 = 宿主默认），只影响该任务派发出来的新会话。
 - **定时执行**：一次性 / 间隔 N 分钟 / 每天 / 每周（可多选星期）/ 每月；卡片显示「周期 · 下次时刻」，编辑器显示「下次 / 上次」。宿主停机期间错过的时点**超 2 小时不补跑**（循环型顺延到下一周期，一次性停用并写明原因），2 小时以内的补跑一次；上一轮未结束则本轮跳过。
 - **自动保存**：编辑既有便签时停顿约 1 秒落盘，页脚有保存指示灯。
-- **关闭前先问一句**：X /「取消」/ `Esc` / 点弹窗外，只要还有没保存的改动就弹「便签有改动」——保存并关闭（回车即选）、放弃改动、继续编辑三选一；没改动直接关。新建便签写一半就关也不会再丢。
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[packages/plugin-notes/README.md:61-86](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L61-L86)
+**依据 2 · 作者声明**：[packages/plugin-notes/README.md:62-87](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/README.md#L62-L87)
 
 工作区/备份/工具
 
@@ -238,7 +226,7 @@
 ```text
 ## 工作区（执行目录）
 
-任务便签必须带一个**工作区**（绝对路径），决定交给 AI 执行时在哪个目录跑：编辑器折纸面板里从下拉框选（候选 = 最近会话用过的目录，只选不手填）。**没有默认值也没有兜底**——没选工作区就存不成任务（摘要行变红、保存被挡下），泳道里没设工作区的任务卡显红字「未设工作区」且「执行」按钮禁用。
+任务便签必须带一个**工作区**（绝对路径），决定交给 AI 执行时在哪个目录跑：编辑器右侧任务附表里从下拉框选（候选 = 最近会话用过的目录，只选不手填）。**没有默认值也没有兜底**——没选工作区就存不成任务（摘要行变红、保存被挡下），泳道里没设工作区的任务卡显红字「未设工作区」且「执行」按钮禁用。
 
 ## 设置
 
@@ -266,7 +254,7 @@
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-notes/src/service.ts:424-470](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L424-L470)
+**依据 3 · 源码核查**：[packages/plugin-notes/src/service.ts:428-474](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/service.ts#L428-L474)
 
 实际任务派发
 
@@ -325,12 +313,12 @@
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:63-110](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/scheduler.ts#L63-L110)
+**依据 4 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:65-117](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/scheduler.ts#L65-L117)
 
 定时执行
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（53行）</summary>
 
 ```text
 /** 装配调度执行器（纯依赖注入，无定时器；定时器见 installNotesScheduler）。 */
@@ -350,9 +338,14 @@ export function createScheduleRunner(deps: ScheduleRunnerDeps): ScheduleRunner {
               await deps.settle(note.id, RUN_TIMEOUT_SUMMARY)
               continue
             }
-            if (!isNoteScheduleDue(note, now)) continue
             const schedule = note.schedule
             if (schedule === undefined) continue
+            // 有效期到期：只对 enabled 生效（停用态不重写，避免每轮空写），直接停用收尾。
+            if (schedule.enabled && isScheduleExpired(schedule, now)) {
+              await deps.write(note.id, applyScheduleExpired(schedule))
+              continue
+            }
+            if (!isNoteScheduleDue(note, now)) continue
             // 过期太久（宿主停机超过 2 小时）：不补跑，once 停用、循环型顺延。
             // 先于状态闸门——否则躺在「待规划」里的过期 once 日程永远不会被收掉。
             if (isScheduleOverdue(schedule, now)) {
@@ -399,7 +392,7 @@ runTaskExecute 拒归档、无 lane、已有租约、无工作区；创建新 se
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-notes/src/service.ts:424-470](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L424-L470)
+**依据 1 · 源码核查**：[packages/plugin-notes/src/service.ts:428-474](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/service.ts#L428-L474)
 
 创建会话/模型/租约/投递顺序
 
@@ -458,7 +451,7 @@ runTaskExecute 拒归档、无 lane、已有租约、无工作区；创建新 se
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:201-222](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L201-L222)
+**依据 2 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:203-224](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/agent/tools.ts#L203-L224)
 
 任务工具按会话 lease
 
@@ -492,14 +485,14 @@ export function notesTaskGuard(ctx: Context, exec: ToolExecution): string | unde
 
 </details>
 
-**依据 3 · 作者声明**：[packages/plugin-notes/README.md:39-42](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L39-L42)
+**依据 3 · 作者声明**：[packages/plugin-notes/README.md:40-43](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/README.md#L40-L43)
 
 作者任务功能
 
 ```text
-- **便签变任务**：写入泳道状态即成为任务，五列看板（待规划 → 待办 → 进行中 → 已完成 → 已失败）拖拽换状态；普通便签不进泳道。编辑器底部是一块**折纸式可折叠面板**——合上只占一行摘要（状态 · 工作区 · 模型 · 预设），点「设置」才折出全部字段。
+- **便签变任务**：写入泳道状态即成为任务，五列看板（待规划 → 待办 → 进行中 → 已完成 → 已失败）拖拽换状态；普通便签不进看板。编辑器底部只留一行任务摘要（状态 · 工作区 · 模型 · 预设），点「设置」会从纸条右侧**抽出一张附表**（固定主题表面、随明暗主题），点「收起」塞回纸后。
 - **交给 AI 执行**：任务卡 hover「执行」→ 按该任务的工作区**新开一个会话**跑，便签板所在会话不被占用；完成后摘要回到卡片首行，全文进编辑器的「任务与结果」区（已完成/已失败的任务打开编辑器即展开）。跑太久可「重置为待办」。
-- **执行目标可选**：任务折纸面板里能选**模型**与 **agent 预设**（留空 = 宿主默认），只影响该任务派发出来的新会话。
+- **执行目标可选**：右侧任务附表里能选**模型**与 **Agent 预设**（留空 = 宿主默认），只影响该任务派发出来的新会话。
 - **定时执行**：一次性 / 间隔 N 分钟 / 每天 / 每周（可多选星期）/ 每月；卡片显示「周期 · 下次时刻」，编辑器显示「下次 / 上次」。宿主停机期间错过的时点**超 2 小时不补跑**（循环型顺延到下一周期，一次性停用并写明原因），2 小时以内的补跑一次；上一轮未结束则本轮跳过。
 ```
 
@@ -523,7 +516,7 @@ export function notesTaskGuard(ctx: Context, exec: ToolExecution): string | unde
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/plugin-notes/README.md:69-71](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L69-L71)
+**依据 1 · 作者声明**：[packages/plugin-notes/README.md:70-72](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/README.md#L70-L72)
 
 作者仅变更时上传主张
 
@@ -533,7 +526,7 @@ export function notesTaskGuard(ctx: Context, exec: ToolExecution): string | unde
 填服务器地址、远端目录、账号与**应用密码**（凭据只存本机设置，建议用服务商提供的应用密码而非主密码）。按**检查间隔**定时比对，**只在便签有变更时**上传快照，远端只留最近**保留份数**份。想立刻验证连通可以点「保存并立即备份」；恢复前会先自动备份当前状态，选中的那份**整体覆盖**现有便签。
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-notes/src/webdav-core.ts:87-102](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-core.ts#L87-L102)
+**依据 2 · 源码核查**：[packages/plugin-notes/src/webdav-core.ts:87-102](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/webdav-core.ts#L87-L102)
 
 只比较存活便签 maxUpdatedAt
 
@@ -561,7 +554,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-notes/src/webdav-backup.ts:233-245](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-backup.ts#L233-L245)
+**依据 3 · 源码核查**：[packages/plugin-notes/src/webdav-backup.ts:233-245](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/webdav-backup.ts#L233-L245)
 
 自动判定
 
@@ -586,7 +579,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-notes/src/service.ts:315-319](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L315-L319)
+**依据 4 · 源码核查**：[packages/plugin-notes/src/service.ts:319-323](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/service.ts#L319-L323)
 
 删除直接删表
 
@@ -618,7 +611,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-notes/src/webdav-backup.ts:262-301](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-backup.ts#L262-L301)
+**依据 1 · 源码核查**：[packages/plugin-notes/src/webdav-backup.ts:262-301](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/webdav-backup.ts#L262-L301)
 
 恢复前备份和整体覆盖
 
@@ -670,7 +663,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-notes/src/service.ts:546-551](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L546-L551)
+**依据 2 · 源码核查**：[packages/plugin-notes/src/service.ts:550-555](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/service.ts#L550-L555)
 
 非事务 replaceAll
 
@@ -683,7 +676,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
     this.broadcastChanged()
 ```
 
-**依据 3 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:23-33](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/scheduler.ts#L23-L33)
+**依据 3 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:25-35](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/scheduler.ts#L25-L35)
 
 扫描/超时
 
@@ -706,12 +699,12 @@ export function isRunTimeout(note: NoteRecord, now: number): boolean {
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:73-106](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/scheduler.ts#L73-L106)
+**依据 4 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:75-113](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/scheduler.ts#L75-L113)
 
 过期与派发
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
         for (const note of deps.list()) {
@@ -721,9 +714,14 @@ export function isRunTimeout(note: NoteRecord, now: number): boolean {
               await deps.settle(note.id, RUN_TIMEOUT_SUMMARY)
               continue
             }
-            if (!isNoteScheduleDue(note, now)) continue
             const schedule = note.schedule
             if (schedule === undefined) continue
+            // 有效期到期：只对 enabled 生效（停用态不重写，避免每轮空写），直接停用收尾。
+            if (schedule.enabled && isScheduleExpired(schedule, now)) {
+              await deps.write(note.id, applyScheduleExpired(schedule))
+              continue
+            }
+            if (!isNoteScheduleDue(note, now)) continue
             // 过期太久（宿主停机超过 2 小时）：不补跑，once 停用、循环型顺延。
             // 先于状态闸门——否则躺在「待规划」里的过期 once 日程永远不会被收掉。
             if (isScheduleOverdue(schedule, now)) {
@@ -772,7 +770,7 @@ notes_update/delete 对 origin=user 经 userQuestions 询问；无提问通道�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/plugin-notes/README.md:73-86](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/README.md#L73-L86)
+**依据 1 · 作者声明**：[packages/plugin-notes/README.md:74-87](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/README.md#L74-L87)
 
 作者 agent 工具与批准边界
 
@@ -798,7 +796,7 @@ notes_update/delete 对 origin=user 经 userQuestions 询问；无提问通道�
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:50-78](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L50-L78)
+**依据 2 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:50-78](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/agent/tools.ts#L50-L78)
 
 提问授权
 
@@ -839,12 +837,12 @@ export async function requestNoteConsent(ctx: Context, exec: ToolExecution, acti
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:310-388](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L310-L388)
+**依据 3 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:314-394](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/agent/tools.ts#L314-L394)
 
 update/pin/delete 不同路径
 
 <details>
-<summary>查看原文（79行）</summary>
+<summary>查看原文（81行）</summary>
 
 ```text
 
@@ -858,6 +856,7 @@ update/pin/delete 不同路径
       color: { type: 'string', enum: [...NOTE_COLORS], description: 'New color.' },
       pinned: { type: 'boolean', description: 'Pin or unpin.' },
       archived: { type: 'boolean', description: 'Archive or restore.' },
+      dueAt: { type: 'number', description: 'Due date as epoch milliseconds (local midnight). Pass 0 to clear it.' },
     },
     output: {
       schema: NOTE_OUTPUT_SCHEMA,
@@ -873,6 +872,7 @@ update/pin/delete 不同路径
         ...args.color !== undefined ? { color: args.color as NoteRecord['color'] } : {},
         ...args.pinned !== undefined ? { pinned: args.pinned } : {},
         ...args.archived !== undefined ? { archived: args.archived } : {},
+        ...args.dueAt !== undefined ? { dueAt: args.dueAt > 0 ? args.dueAt : null } : {},
       })
       if (note === undefined) throw new Error(`note ${id} not found`)
       return note
@@ -930,7 +930,7 @@ update/pin/delete 不同路径
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:201-222](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/agent/tools.ts#L201-L222)
+**依据 4 · 源码核查**：[packages/plugin-notes/src/agent/tools.ts:203-224](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/agent/tools.ts#L203-L224)
 
 任务租约守卫
 
@@ -964,7 +964,7 @@ export function notesTaskGuard(ctx: Context, exec: ToolExecution): string | unde
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-notes/src/webdav-core.ts:87-102](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/webdav-core.ts#L87-L102)
+**依据 5 · 源码核查**：[packages/plugin-notes/src/webdav-core.ts:87-102](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/webdav-core.ts#L87-L102)
 
 当前备份水位只看存活便签
 
@@ -992,7 +992,7 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-notes/src/service.ts:424-470](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-notes/src/service.ts#L424-L470)
+**依据 6 · 源码核查**：[packages/plugin-notes/src/service.ts:428-474](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/service.ts#L428-L474)
 
 会话创建后模型/租约/投递失败分支
 
@@ -1056,5 +1056,142 @@ export function shouldUpload(latest: number, watermark: number | null): boolean 
 - 真实提问/用户授权流程未测
   **影响**：agent 写入与定时执行需用户可追踪
   **进一步探讨**：目标宿主按来源和租约逐动作验证
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 截止日期和日程有效期是否都能约束任务执行？
+
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+不能混为同一种执行控制。dueAt 是便签可选截止时刻，service.create/update 持久化它，工具 notes_update 用 0 清除，日历把它与 schedule.nextAt 作为不同类型事项。调度器执行依赖 schedule，而非 dueAt；因此逾期标红不保证停止或拒绝派发。
+
+endAt 则属于日程有效期。调度器先处理运行超时，再检查 enabled 且 now>=endAt 的日程，写 enabled:false 后跳过派发；previewNextAt 会隐藏 endAt 后的候选。这个设计约束未来调度，不会取消已经在跑的新会话，也不是任务完成截止保证。有限日程降低忘关循环的风险，但仍须按任务副作用另设监控。
+
+源代码里 preview 用 next>endAt 而到期谓词用 now>=endAt，恰好在 endAt 的预览可能仍显示但实际 tick 已停用。应以边界时刻夹具核对产品含义，不从静态差异断言用户已遭故障。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/plugin-notes/src/service.ts:271-289](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/service.ts#L271-L289)
+
+dueAt 与 lane/schedule 独立保存，不承担调度拒绝。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+      schedule = armed
+    }
+    if (lane === undefined) schedule = undefined
+    const dueAt: number | undefined =
+      patch.dueAt === undefined ? current.dueAt : (patch.dueAt ?? undefined)
+    const { lane: _currentLane, schedule: _currentSchedule, workspace: _currentWorkspace, dueAt: _currentDueAt, ...currentWithoutLane } = current
+    const next: NoteRecord = {
+      ...currentWithoutLane,
+      ...(patch.title !== undefined ? { title: patch.title } : {}),
+      ...(patch.text !== undefined ? { text: patch.text } : {}),
+      ...(patch.pinned !== undefined ? { pinned: patch.pinned } : {}),
+      archived: patch.archived ?? current.archived ?? false,
+      color: patch.color ?? current.color ?? DEFAULT_NOTE_COLOR,
+      // origin 一经创建不可改写。
+      origin: current.origin ?? 'user',
+      updatedAt: now,
+      ...(workspace !== undefined ? { workspace } : {}),
+      ...(dueAt !== undefined ? { dueAt } : {}),
+      ...(lane !== undefined ? { lane } : {}),
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/plugin-notes/src/scheduler.ts:75-89](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/scheduler.ts#L75-L89)
+
+运行超时先处理，到期只禁后续调度。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+        for (const note of deps.list()) {
+          try {
+            // 超时兜底先跑：卡住的定时 run 由 host 收尾（否则这张便签会永久「进行中」）。
+            if (isRunTimeout(note, now)) {
+              await deps.settle(note.id, RUN_TIMEOUT_SUMMARY)
+              continue
+            }
+            const schedule = note.schedule
+            if (schedule === undefined) continue
+            // 有效期到期：只对 enabled 生效（停用态不重写，避免每轮空写），直接停用收尾。
+            if (schedule.enabled && isScheduleExpired(schedule, now)) {
+              await deps.write(note.id, applyScheduleExpired(schedule))
+              continue
+            }
+            if (!isNoteScheduleDue(note, now)) continue
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugin-notes/src/schedule.ts:237-245](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/schedule.ts#L237-L245)
+
+预览候选严格大于 endAt 才隐藏。
+
+```text
+/** 已有权威 nextAt 就用它，否则按 now 试算；endAt 之后不会再触发。 */
+export function previewNextAt(schedule: NoteScheduleInput, now: number = Date.now()): number | undefined {
+  if (!schedule.enabled) return undefined
+  const next =
+    schedule.nextAt !== undefined && Number.isFinite(schedule.nextAt) && schedule.nextAt > 0
+      ? schedule.nextAt
+      : nextFireAt({ ...schedule, nextAt: 0 } as NoteSchedule, now)
+  if (next === undefined) return undefined
+  return schedule.endAt !== undefined && next > schedule.endAt ? undefined : next
+```
+
+**依据 4 · 源码核查**：[packages/plugin-notes/src/schedule.ts:330-337](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/schedule.ts#L330-L337)
+
+实际到期判定含等号。
+
+```text
+export function isScheduleExpired(schedule: NoteSchedule, now: number): boolean {
+  const endAt = schedule.endAt
+  return endAt !== undefined && Number.isFinite(endAt) && endAt > 0 && now >= endAt
+}
+
+export function applyScheduleExpired(schedule: NoteSchedule): NoteSchedule {
+  return { ...schedule, enabled: false, lastResult: '已到有效期，自动停用' }
+}
+```
+
+**依据 5 · 源码核查**：[packages/plugin-notes/src/client/views/notes-board/components/CalendarBoard.tsx:1-12](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes/src/client/views/notes-board/components/CalendarBoard.tsx#L1-L12)
+
+日历区分截止与触发，显示不等执行控制。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+/**
+ * 日历视图：月网格（周一起始）+ 选中日事项列表。
+ * 事项两类：截止（蓝点，`dueAt`）与定时触发（绿点，`schedule.nextAt`）。
+ * 点格子选日，点事项进编辑器；月份用 ‹ › 翻，右上「今天」回到当月当日。
+ * 布局只有几何在 JSX，hover/选中态在 styles/notes-board.module.css。
+ */
+
+import type { NoteRecord } from '../../../../types.ts'
+import { fmtMonthDay } from '../../../core/due-date.ts'
+import { t } from '../../../core/theme-tokens.ts'
+import { useCalendarBoard } from './useCalendarBoard.ts'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+```
+
+</details>
+
+#### 缺口
+
+- endAt 边界显示与实际派发是否符合用户理解没有场景测试。
+  **影响**：可能误把日历截止或预览当执行保障。
+  **进一步探讨**：对 endAt 前、相等、后的 tick 与预览作对照，分别观察已运行会话与后续派发。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

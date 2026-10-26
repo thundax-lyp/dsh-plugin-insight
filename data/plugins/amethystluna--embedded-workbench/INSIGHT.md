@@ -1,36 +1,36 @@
-# embedded-workbench
+# dsh-embedded-workbench
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[1bb1bcf](https://github.com/AmethystLuna/embedded-workbench/tree/1bb1bcfc45ca6efab327967a252d4d9203a323a7)
+分析版本：[f32698d](https://github.com/AmethystLuna/embedded-workbench/tree/f32698d8e61bd50295ac66721838bf6aacec1859)
 
 <!-- BEGIN META -->
-[![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 2,906](https://img.shields.io/static/v1?label=npm+30d&message=2%2C906&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench)
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 2,737](https://img.shields.io/static/v1?label=npm+30d&message=2%2C737&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-embedded-workbench)
 <!-- END META -->
 
-> **实现功能**：为嵌入式固件开发提供八份 Skill，并在 DSH 会话首个模型步骤注入短验证提示。
+> **实现功能**：提供嵌入式C/C++领域技能，并向DSH会话首步注入计划核查与上下文预算提醒。
 
-> **核心亮点**：把嵌入式经验指南作为跨平台 Skill 打包，并给 DSH 单独实现注册与门禁。详见[Q01](#research-q01)。
+> **核心亮点**：将固件领域经验、逐声称核查与风险比例工作流组合成按需技能，减少重复组织方法的潜在劳动；并非新硬件诊断算法。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：门禁是提示而非强制计划验收；作者兼容测试主要检安装/注入，不等于固件建议可靠。详见[Q02](#research-q02)和[Q03](#research-q03)。
+> **风险与缺陷**：Gate是自然语言提醒而非代码执行放行；静态fact-check不验证复杂行为，插件文案的优先级宣称也不等授权。见 [Q03](#research-q03)。
 
 **本文目录**
 
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · DSH 原生 bundle 与跨平台仓库里的代理有什么不同？](#detail-section-11)
-  - [Q02 · 门禁注入如何保证一次，关闭开关会影响技能吗？](#detail-section-12)
-  - [Q03 · 兼容性证据支持到什么程度？](#detail-section-13)
-  - [Q04 · 首步提示及 Skill 规则会带来什么成本与误用？](#detail-section-14)
-  - [Q05 · 如何试用才区分安装成功与工程质量提升？](#detail-section-15)
+  - [Q01 · 嵌入式技能包相对通用助手提供什么？](#detail-section-11)
+  - [Q02 · 技能注册与首步门禁怎样实现？](#detail-section-12)
+  - [Q03 · 名为Gate是否会真正阻止未验证实施？](#detail-section-13)
+  - [Q04 · 首次和持续使用有哪些工具链与上下文负担？](#detail-section-14)
+  - [Q05 · 哪些模式可复用，怎样决定采用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,79 +40,81 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：固件设计、调试和构建工作中按任务加载领域 Skill；DSH 原生 bundle 也向每个 agent 会话注入短门禁。详见[Q01](#research-q01)。
+> **用途**：面向有具体固件现场与工具链的开发者，合格结果须通过目标环境验证。适用任务及简单替代见 [Q01](#research-q01)。
 
-普通 DSH 会话依赖模型通用知识或用户手动提供固件规范；插件提供领域 Skill 目录和首步提示。
+通用助手加人工提示/工程笔记；方法整理不当作原创调试原理，未复现作者token/效果报告。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| Skill | 领域指导 | 非自动专家验证 |
-| 门禁 | 首步计划核查提示 | 非强制拦截 |
-| 开关 | 实时关闭提示 | 依宿主版本 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| 固件领域Skill | 提供调试/构建/并发方法 | 需目标手册与工具链核实 |
+| fact-check | 核API/路径/数值等声称 | 不做可执行模型验证 |
+| 首步提醒 | 提醒计划核查与预算边界 | 自然语言而非硬闸门 |
+| inspect状态 | 读取提醒开关与长度 | 不证明核查执行完成 |
 
 #### 启动与依赖
 
-| 依赖 | 必需 | 用途 | 缺失后果 |
-| --- | --- | --- | --- |
-| DSH skills 服务 | 必需 | 文件系统注册 | Skill 不可发现 |
-| DSH agent/pre-step | 门禁必需 | 注入/去重 | 无首步提示 |
-| 目标构建/硬件工具 | 实际固件任务必需 | 验证建议 | 仅文本建议 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node>=20与兼容DSH skills/llm/session | 必需 | 载入和投递 | 不保证注册 |
+| 芯片手册、符号/构建产物 | 对应诊断必需 | 核对现场 | 不能由方法文档补事实 |
+| 编译器、测试/硬件 | 固件验收必需 | 确认修复 | 无法宣称运行正确 |
+| 外部逻辑验证Skill | 复杂行为验证可选 | 超出fact-check能力 | 明确降级为人工/未验证 |
 
-#### 使用步骤
+#### 启动步骤
 
-| 步骤 | 动作 | 判据/恢复 |
-| --- | --- | --- |
-| 安装 | 隔离 profile 挂载 | 八 Skill 可见 |
-| 门禁 | 检首步/恢复轮 | 只注入一次，可关闭 |
-| 试用 | 专家固件样例 | 实际编译/审阅 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 1 | 用户核项目规则并安装正确npm包 | 重启后Skill可发现 |
+| 2 | 按任务选领域Skill并提供现场 | 不缺关键版本/产物 |
+| 3 | 逐声称核查并实施可回滚改动 | 证据与当前代码对应 |
+| 4 | 在目标工具链验收 | 无运行依据则明确未验证 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | npm/DSH安装磁盘；采购/订阅金额未知 | 配profile、核8Skill与首步门禁/版本，工时未知 | 失败需移除bundle/修依赖重启，耗时未知 |
-| 持续使用 | 每Agent首步门禁token与按需Skill/构建资源 | 编译/硬件/专家核固件建议，工时未知 | 作者约400token为报告；多Agent开销/误触发未知 |
-| 失败恢复 | 重跑模型/构建、日志/profile恢复资源，金额未知 | 核门禁/Skill发现与专业回归，关开关或重启，工时未知 | 开关只影响门禁，作者mock兼容不等真实任务质量/恢复率 |
+|---|---|---|---|
+| 首次使用 | 宿主和本地技能文件 | 对齐项目规则、芯片与工具链 | 配置/学习时间未知 |
+| 持续使用 | 提醒/技能上下文、模型调用 | 逐声称核对、编译和硬件检查 | 真实总调用与节时未知 |
+| 失败恢复 | 重测与回退分支 | 修正误诊、核对未验证声明 | 提示不提供事务回滚 |
+| 退出 | 新会话与配置管理 | 关闭注入并核历史影响 | 已有消息不会自动撤回 |
 
 #### 效果
 
-| 效果项 | 固定源码/作者材料 | 未证实 |
-| --- | --- | --- |
-| Skill 目录 | 八份文件/注册 | 真实任务触发率 |
-| 门禁 | 一次性注入与作者模拟测试 | 计划质量提升 |
-| 固件指导 | 领域文档 | 专家级正确率 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 方法获取 | 领域流程与静态核查清单 | 真实诊断正确率 |
+| 提醒投递 | 开关/历史来源去重 | 模型遵守与误放行率 |
+| 流程控制 | 风险分级文字 | 净节时与过度流程负担 |
 
-> **思考**：门禁是提示而非强制计划验收；作者兼容测试主要检安装/注入，不等于固件建议可靠。详见[Q02](#research-q02)和[Q03](#research-q03)。
+> **思考**：Gate是自然语言提醒而非代码执行放行；静态fact-check不验证复杂行为，插件文案的优先级宣称也不等授权。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
-> **亮点**：把嵌入式经验指南作为跨平台 Skill 打包，并给 DSH 单独实现注册与门禁。详见[Q01](#research-q01)。
+> **亮点**：将固件领域经验、逐声称核查与风险比例工作流组合成按需技能，减少重复组织方法的潜在劳动；并非新硬件诊断算法。见 [Q01](#research-q01)。
 
-把嵌入式经验指南作为跨平台 Skill 打包，并给 DSH 单独实现注册与门禁。详见[Q01](#research-q01)。
+将固件领域经验、逐声称核查与风险比例工作流组合成按需技能，减少重复组织方法的潜在劳动；并非新硬件诊断算法。见 [Q01](#research-q01)。
 
-较清楚分离 Skill 注册与门禁注入，对旧宿主 volatile 接口有回退；但输出质量仍取决于模型遵循提示与技能内容。详见[Q02](#research-q02)至[Q04](#research-q04)。
+按需材料、精简提醒和持久历史去重可复用；宿主消息协议变化与技能规则冲突是主要维护面。见 [Q02](#research-q02) 与 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-门禁是提示而非强制计划验收；作者兼容测试主要检安装/注入，不等于固件建议可靠。详见[Q02](#research-q02)和[Q03](#research-q03)。
+Gate是自然语言提醒而非代码执行放行；静态fact-check不验证复杂行为，插件文案的优先级宣称也不等授权。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先验证安装与注入，再以专家任务检行为；保留关闭门禁开关并单独考察 Skill 效果。详见[Q05](#research-q05)。
+建议匹配任务时先手动试用领域Skill，再决定开启提醒；可回滚分支与实际编译/测试是验收基础，停止标准见 [Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +122,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码可确认八份 Skill 注册和一次性注入路径；作者有隔离环境兼容测试记录，本轮未重跑，模型专业建议质量未知。
+技能内容和提醒投递有源码支持；不是硬验证闸门，调试效果和流程收益未测；版本绑定核查是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、DSH-COMPATIBILITY.md、src/index.ts、package.json、skills/embedded-workbench/SKILL.md、skills/fact-check/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、skills/embedded-workbench/SKILL.md、skills/hardfault-triage/SKILL.md、skills/fact-check/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读核固定提交 README.md、DSH-COMPATIBILITY.md、src/index.ts、skills/ 与 package.json；未运行目标 DSH 或固件工具。旧 META 复用。
-- 下一步：隔离 profile 测八 Skill 发现、首次/恢复步骤去重、开关切换，再以专家标注 HardFault/ISR/Keil 样例对照质量及成本。
+- 边界：检查固定DSH入口、首步消息/历史去重、引导Skill、HardFault和fact-check完整相关段；未逐项审阅所有领域参考与平台适配，未做硬件验证。
+- 下一步：已检查源码与Skill文本，未执行目标代码、编译/硬件测试或真实宿主验收。
 
 **分析版本**
 
 - **仓库**：[AmethystLuna/embedded-workbench](https://github.com/AmethystLuna/embedded-workbench)
-- **版本号**：0.9.4（[固定提交 1bb1bcf](https://github.com/AmethystLuna/embedded-workbench/tree/1bb1bcfc45ca6efab327967a252d4d9203a323a7)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.5（[固定提交 f32698d](https://github.com/AmethystLuna/embedded-workbench/tree/f32698d8e61bd50295ac66721838bf6aacec1859)）
+- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +141,9 @@
 
 <a id="innovation"></a>
 
-为代表性固件问题建立专家标注与失败回归集，将 Skill 触发、建议质量和门禁成本同时测量。详见[Q05](#research-q05)。
+未验证假设为将核查证据与代码/计划版本绑定，减少无支持的核查自报；错误计划对照及否定条件见 [Q05](#research-q05)。
 
-隔离 profile 测八 Skill 发现、首次/恢复步骤去重、开关切换，再以专家标注 HardFault/ISR/Keil 样例对照质量及成本。
+已检查源码与Skill文本，未执行目标代码、编译/硬件测试或真实宿主验收。
 
 <a id="detail-section-9"></a>
 
@@ -152,7 +154,7 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 41 | 4641 | — | — | 36437 |
+| .md | source | 41 | 4716 | — | — | 37145 |
 | .js | source | 3 | 784 | 494 | 247 | — |
 | .mjs | source | 2 | 213 | 168 | 28 | — |
 | .ts | source | 1 | 300 | 146 | 131 | — |
@@ -162,38 +164,38 @@
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench/issues?q=is%3Aissue+created%3A2026-09-21T08%3A01%3A47.868Z..2026-10-21T08%3A01%3A47.868Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T08%3A01%3A47.868Z..2026-10-21T08%3A01%3A47.868Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/embedded-workbench/issues?q=is%3Aissue+is%3Aopen)
 
-暂未获取：Issue 未关闭。
+暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-10-21。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：嵌入式 Skill 与首步提示在 DSH 中有哪些实际行为、证据与工程边界？
+**插件研究总目标**：核对领域技能整理、DSH投递和计划核查承诺，区分提示与真实验证。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · DSH 原生 bundle 与跨平台仓库里的代理有什么不同？
+### Q01 · 嵌入式技能包相对通用助手提供什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-作者仓库提供 8 个嵌入式 Skill、4 个其他平台的代理定义；DSH bundle 的实际功能是通过 filesystem provider 注册 8 份 Skill，在 agent 首个模型步骤注入短门禁，并可选向 cordis_inspect 注册目录条目。README 明言 4 个代理不移植到 DSH。不能把仓库里的 agent 文件当作 DSH agent preset。
+目标是需要处理C/C++固件、中断/RTOS边界、Keil构建和异常现场的开发者。相对每次编写提示或散落项目笔记，贡献是把领域检查流程、参考和风险分级工作流组织成可发现技能，并将计划声称核查作为开工前提醒。合格结果是与目标芯片、编译器和当前代码对应的可验证修复，不是技能被加载或报告写了核查段。已抽查HardFault从捕获、分类、定位到根因的流程和fact-check逐条声称核对，其知识是方法整理，不能当新的调试算法或保证诊断正确。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:13-47](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/README.md#L13-L47)
+**依据 1 · 作者声明**：[README.md:13-41](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/README.md#L13-L41)
 
-跨平台组件及八份 Skill
+作者列出领域、技能及DSH边界。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
 嵌入式 C/C++ 固件开发工具箱：覆盖 FreeRTOS、中断、NVM 存储、Keil MDK（AC5/AC6）、ARMCLANG、HardFault 分析、状态机、架构原则与 LVGL 陷阱。
@@ -225,179 +227,112 @@
 | `fact-check` | 声称核查回退：逐条对照代码库核实 API 名、文件路径、枚举值、数量与机制可行性。logicprobe 未安装时由 Plan Verification Gate 使用 |
 
 `logicprobe`（文档与计划声称核查技能）**已拆分为独立插件**，见下方[其他插件推荐](#其他插件推荐)。未安装时，Plan Verification Gate 回退到本插件自带的 `fact-check` 技能。只有行为与模型类声称会降级为人工确认。
-
-> 技能内容大多来自作者个人嵌入式与固件开发的工作经验，按实际工程踩坑与约束沉淀，而非泛泛的模型生成内容。
-
-### 深度参考
-
-`embedded-firmware-dev`、`debug-methodology`、`state-machine-design`、`c-cpp-dev` 包含深度参考或代码示例。内容包括 12 条架构原则、嵌入式模式（GIF 定时器安全、状态锁存、异步生命周期）、LVGL 陷阱、7 轮迭代调试案例研究、状态机实现模式，以及嵌入式 C 专项（volatile MMIO、链接器段、ISR 安全路径）。
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:87-96](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/README.md#L87-L96)
+**依据 2 · 源码核查**：[skills/hardfault-triage/SKILL.md:14-53](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/hardfault-triage/SKILL.md#L14-L53)
 
-DSH bundle 三功能与代理不移植
+具体异常处理流程而非仅功能名。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
-## DeepSeek Harness (dsh)
+## Triage Methodology
 
-原生 dsh 支持以 cordis 插件 bundle 的形式提供，位于**仓库根**，由根 `package.json` 声明。
+Every processor exception triage follows the same four-step flow:
 
-这个 bundle 做三件事：
+### Step 1 — Capture
 
-1. **注册技能。** 技能遵循 Agent Skills 开放标准，由 dsh 的 `skill-filesystem` provider 原样发现，不需要额外代码。
-2. **注入门禁。** 每个 agent 会话的第一个模型步骤会收到一段**精简后**的首步门禁，内容是 Plan Verification Gate 加上下文预算规则。它由 `enabled` 控制，默认开启。这是 Claude `SessionStart` hook 在 dsh 上的对应物。载荷里为什么不再有 1% Rule 和 Red Flags，见[设计取舍与反馈](#设计取舍与反馈)。
-3. **注册目录条目。** 模型可见的目录条目（`cordis_inspect`）始终注册。4 个自定义 agent 有意不移植，因为 dsh 原生的 subagent 工具已经覆盖并行多 agent 工作。
+Read the architecture's fault-status and fault-address registers **before any other code runs**. The first instructions after exception entry are the only guaranteed-clean snapshot.
 
+- Cortex-M: CFSR, HFSR, MMFAR, BFAR at SCB base `0xE000ED00`
+- Cortex-A: DFSR, DFAR, IFSR, IFAR (data/prefetch abort)
+- RISC-V: mcause, mtval, mepc
+- Xtensa (ESP32): EXCCAUSE, EXCVADDR, EPC1
+
+### Step 2 — Classify
+
+Match the fault-status bit pattern against known signatures. The tables in the architecture-specific sections below cover the most frequent Cortex-M patterns. For other architectures:
+
+- Look up the exception cause code in the architecture reference manual
+- Determine the fault class: memory access, instruction fetch, undefined opcode, alignment, privilege violation, bus error
+
+### Step 3 — Locate
+
+Extract the program counter (PC) at the moment of the fault and resolve it to source:
+
+- **.map file Global Symbols**: search for the function whose address range contains the PC
+- **addr2line**: `arm-none-eabi-addr2line -e firmware.axf <pc_address>` (Cortex-M), equivalent for other toolchains
+- **Disassembly listing**: use the `.lst` file or debugger to find the exact instruction at `PC − function_start`
+
+### Step 4 — Root-Cause
+
+Classify the defect behind the fault signature:
+
+| Fault Class | Code Defect |
+| ----------- | ----------- |
+| Bus error at valid SRAM address | Null pointer, use-after-free, buffer overflow into heap metadata |
+| Bus error at peripheral address | Unclocked or powered-down peripheral — RCC/PM init ordering |
+| Undefined instruction / invalid state | Corrupted function pointer, jumped to freed memory, stack smash overwrote LR |
+| Stack overflow (exception entry) | Task stack too small, deep call chain, large local variables, recursion |
+| Imprecise bus error (no valid address) | DMA to freed buffer, write-buffer coherency, cache maintenance |
+| MPU / memory protection violation | Region misconfiguration, attempted write to read-only region |
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.ts:219-279](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L219-L279)
+**依据 3 · 源码核查**：[skills/fact-check/SKILL.md:20-40](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/fact-check/SKILL.md#L20-L40)
 
-实际注册与注入入口
+逐声称证据/判定交付方法。
 
 <details>
-<summary>查看原文（61行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-export function apply(ctx: Context, config: Config): void {
-  // Catalog visibility is optional: register only when the inspect registry
-  // service is mounted, so headless assemblies without it keep the gate
-  // injection working. The registry may be provided AFTER this row applies
-  // (base-bundle rows can mount later), so registration is retried on the
-  // first agent/session-start — by then the app is fully booted.
-  let providerRegistered = false
-  const registerProvider = (): void => {
-    if (providerRegistered) return
-    const inspect = ctx.get('cordisInspect')
-    if (inspect === undefined) return
-    try {
-      ctx.effect(() => inspect.register(inspectProvider(config)), 'embedded-workbench: inspect provider')
-      providerRegistered = true
-    } catch (err) {
-      console.warn('[embedded-workbench] inspect provider registration failed', err)
-    }
-  }
-  registerProvider()
-  // Ship the bundled skills through the registry: reuse the standard
-  // filesystem provider over this package's own `skills/` directory, so
-  // catalog discovery, frontmatter parsing, and SKILL.md loading behave
-  // exactly like project/user skills while the plugin stays self-contained.
-  // Registration lands in the global registry layer (this row mounts at the
-  // profile root), so every agent preset sees the skills. `registerProvider`
-  // returns the effect disposer; its teardown unregisters and invalidates.
-  ctx.skills.registerProvider((control) => {
-    return new FileSystemSkillProvider(ctx, control, {
-      providerName: 'embedded-workbench',
-      includeDefaultRoots: false,
-      customSkillDirs: [SKILLS_DIR],
-    })
-  })
-  // Injection listens unconditionally, including while the switch is off: the
-  // switch is volatile, so `apply` runs once and the value behind it can turn on
-  // later from the Web Plugins page. Returning early on a false value here would
-  // freeze that decision for the lifetime of the mount, and turning the switch
-  // back on could never take effect without a profile restart.
-  //
-  // Inject the gate once per session on the FIRST model step that runs,
-  // instead of at session-start: session-start injection lands in the agent's
-  // inbox, which a blank-session preset switch (agentPreset.select ->
-  // recompose) can clear before the first step - the gate would then be lost
-  // for the whole session. The pre-step decision is the durable path a
-  // first-step injection takes: the gate is appended to the first step's
-  // decision and enters session history there, so every later step (and a
-  // resume) skips it. Anchored/bootstrap presets that strip first-step
-  // injected reminders (skill catalog, AGENTS.md, gate plugins) simply defer
-  // this message to the first step after their promotion - the history guard
-  // re-injects it there, so the gate still lands exactly once per session.
-  ctx.on('agent/pre-step', async ({ agent }, next) => {
-    const decision = await next()
-    if (decision.kind === 'reject') return decision
-    registerProvider()
-    if (!injectionEnabled(config)) return decision
-    if (gateInHistory(agent.session)) return decision
-    return {
-      kind: 'enter',
-      messages: [...decision.messages, gateMessage(config.gateContent)],
-    }
-  })
+## What to verify (per claim)
+
+| Claim type | Method |
+|-----------|--------|
+| Numeric claims (counts, sizes, frequencies) | `grep -c` / `grep -rn` |
+| API/type/enum names | Extract actual signatures/values from headers |
+| File paths and line numbers | Confirm existence and content |
+| Mechanism feasibility | Check language standard / compiler support |
+
+## Process
+
+1. Enumerate every verifiable claim (quote it verbatim).
+2. Verify each against the codebase with evidence (file:line + excerpt).
+3. Output per claim: claim → evidence → verdict.
+
+## Output format
+
+- **Claim**: <verbatim quote>
+- **Evidence**: <file:line + grep/read excerpt>
+- **Verdict**: confirmed | refuted | unverifiable
+- **Correction direction** (when refuted) — never fix inline.
 ```
 
 </details>
-
-#### 缺口
-
-- DSH 目标会话中 Skill 触发行为未独立观察
-  **影响**：注册不等于模型正确使用
-  **进一步探讨**：目标版本检查目录并运行代表性嵌入式任务
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 门禁注入如何保证一次，关闭开关会影响技能吗？
+### Q02 · 技能注册与首步门禁怎样实现？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-Config.enabled 默认 true；支持 volatile 的宿主可在 Web 中实时改，旧宿主回落普通布尔配置。插件仍注册 Skill provider，然后在 agent/pre-step 的 next() 非 reject 时、且开关开启且持久会话事件无此来源时，追加 user/message；若首步未提交，后续 pre-step 继续补发。它在历史中出现后停止注入。因此关闭只影响门禁文本，不影响 Skill；“验证计划”由自然语言提示驱动，源码没有禁止未验证计划提交的强制拦截。
+入口通过宿主FileSystemSkillProvider只指向包内skills目录，不混扫用户根；因注册位于全局层，各预设均可发现技能。pre-step先调用next，拒绝决定不被覆盖，开关关闭或持久历史已有本插件消息时不追加，否则把gateContent作为来源标识明确的user消息加到decision。历史检测同时认识新旧来源格式；状态inspect提供是否启用和文本长度。这是消息投递与去重机制，不是程序验证执行器，也不注册作者README里的四个自定义agent到DSH。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:113-145](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L113-L145)
+**依据 1 · 源码核查**：[src/index.ts:238-279](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L238-L279)
 
-开关/消息类型
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
-export const Config = z.object({
-  // Live so the Web Plugins page can flip the gate injection inside a running
-  // session: dsh's settings service projects ONLY fields under a `.volatile()`
-  // node and rejects writes to every other path. The price is that the injection
-  // reads the reference per step instead of deciding once at mount, which is also
-  // what lets a toggle take effect without remounting the row.
-  //
-  // On by default, but deliberately small: the payload carries the verification
-  // gate and the context-budget rule only, so leaving it on costs a few hundred
-  // tokens once per session rather than the ~900 of the previous payload.
-  enabled: live(z.boolean().default(true)),
-  // Not volatile, deliberately: the settings projection feeds a GUI form, and a
-  // multi-kilobyte text field does not belong in one. Override it in the
-  // profile's `cordis.patch.yml` row instead.
-  gateContent: z.string().default(DEFAULT_GATE_CONTENT),
-})
-
-/**
- * Read the injection switch as a boolean, whichever shape this host produced.
- * @param config - the resolved plugin configuration.
- * @returns whether the gate may be injected.
- */
-function injectionEnabled(config: Config): boolean {
-  const value = config.enabled
-  return typeof value === 'boolean' ? value : value.get()
-}
-
-function gateMessage(text: string): UserMessage {
-  return createUserMessage({
-    content: [{ type: 'text', text }],
-    // `form` omitted — an undeclared context is the documented default.
-    source: { kind: GATE_SOURCE_KIND },
-  })
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:238-279](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L238-L279)
-
-Skill 注册与 pre-step 注入
+技能提供者与pre-step条件。
 
 <details>
 <summary>查看原文（42行）</summary>
@@ -449,22 +384,14 @@ Skill 注册与 pre-step 注入
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.ts:282-299](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L282-L299)
+**依据 2 · 源码核查**：[src/index.ts:290-299](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L290-L299)
 
-历史去重来源检测
+持久历史来源去重。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-/**
- * Whether the gate already entered this session's durable history. The
- * pre-step listener re-appends the gate until it does; once a step committed
- * it, every later step (and a resume of a session that kept it) skips the
- * injection. A session whose gate was dropped before any step ran (e.g. an
- * inbox cleared by a blank-session preset switch) simply re-injects on the
- * first step that runs.
- */
 function gateInHistory(session: Session): boolean {
   return readSessionEvents(session).some((event) => {
     if (event.type !== 'user/message') return false
@@ -479,194 +406,81 @@ function gateInHistory(session: Session): boolean {
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:223-230](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/README.md#L223-L230)
+**依据 3 · 源码核查**：[src/index.ts:180-211](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L180-L211)
 
-作者配置说明
+inspect状态读口。
+
+<details>
+<summary>查看原文（32行）</summary>
 
 ```text
-在 DeepSeek Harness 中，bundle 支持以下配置：
-
-| 键 | 类型 | 默认值 | 说明 |
-|---|---|---|---|
-| `enabled` | boolean | `true` | 设为 `false` 可完全关闭首步 Gate 注入；技能注册不受影响。 |
-| `gateContent` | string | 内置 gate 文本 | 覆盖注入到首轮模型上下文中的文本。 |
-
-在 dsh Web GUI 里可以直接改这个开关：侧边栏 **插件** → 本插件卡片 → 「Gate 注入」。它实时生效，不必重启 profile。它只管注入的那段文本：关掉后技能照常注册。同一张卡片上还有一个更粗粒度的行开关，关掉它会整行卸载插件，技能和这个开关一起消失。要持久化覆盖，仍按下面的 profile patch 写。
+function inspectProvider(config: Config): HostCordisInspectProviderRegistration {
+  return {
+    manifest: {
+      id: 'embedded-workbench',
+      description: 'Session-start gate injection for the Embedded Workbench toolbox — folds the Plan Verification Gate and the context-budget rule into the first model step of every agent session.',
+      methods: [
+        {
+          name: 'status',
+          description: 'Read whether the gate injection is active and how large the injected gate text is.',
+          inputSchema: {
+            type: 'object',
+            properties: {},
+            additionalProperties: false,
+          },
+          outputSchema: {
+            type: 'object',
+            description: 'Gate-injection plugin status.',
+            properties: {
+              enabled: { type: 'boolean', description: 'Whether the gate folds into the first model step.' },
+              gateContentLength: { type: 'integer', description: 'Length in characters of the injected gate text.' },
+            },
+            required: ['enabled', 'gateContentLength'],
+            additionalProperties: false,
+          },
+        },
+      ],
+    },
+    query: async (method) => {
+      if (method === 'status') {
+        return {
+          enabled: injectionEnabled(config),
+          gateContentLength: config.gateContent.length,
 ```
 
-#### 缺口
+</details>
 
-- 模型是否服从门禁与用户指令交互未测
-  **影响**：提示存在不等于实际核查
-  **进一步探讨**：构造有缺陷计划观察模型是否读取 fact-check/标注未核查
+**依据 4 · 作者声明**：[README.md:91-95](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/README.md#L91-L95)
+
+作者区分DSH三项接入和未移植agent。
+
+```text
+这个 bundle 做三件事：
+
+1. **注册技能。** 技能遵循 Agent Skills 开放标准，由 dsh 的 `skill-filesystem` provider 原样发现，不需要额外代码。
+2. **注入门禁。** 每个 agent 会话的第一个模型步骤会收到一段**精简后**的首步门禁，内容是 Plan Verification Gate 加上下文预算规则。它由 `enabled` 控制，默认开启。这是 Claude `SessionStart` hook 在 dsh 上的对应物。载荷里为什么不再有 1% Rule 和 Red Flags，见[设计取舍与反馈](#设计取舍与反馈)。
+3. **注册目录条目。** 模型可见的目录条目（`cordis_inspect`）始终注册。4 个自定义 agent 有意不移植，因为 dsh 原生的 subagent 工具已经覆盖并行多 agent 工作。
+```
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 兼容性证据支持到什么程度？
+### Q03 · 名为Gate是否会真正阻止未验证实施？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑
-
-#### 完整回答
-
-作者提供 Windows 11、Node 24 下不同 DSH 版本的独立 profile 安装/挂载/卸载记录；较新的 0.2.1-rc.1/rc.2 轮用模拟 SSE 端点核首步和恢复轮请求/持久日志中的门禁。该记录是作者报告，方法比单纯 README 声明更可审阅，但本轮未重跑。模拟端点固定答复，不能证明真实模型选择 Skill、计划核查质量或固件构建成功。Web 实时开关要求支持 volatile 投影的较新 DSH。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[DSH-COMPATIBILITY.md:8-50](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/DSH-COMPATIBILITY.md#L8-L50)
-
-作者环境与模拟端点方法
-
-<details>
-<summary>查看原文（43行）</summary>
-
-```text
-## Environment
-
-| Item | Value |
-|---|---|
-| Host | Windows 11 (x64), build 19045 |
-| Node.js | v24.17.0 |
-| npm | 11.13.0 |
-| pnpm | 11.21.0 |
-| Test date | 2026-09-25 (headless rounds) · 2026-09-29 (live-field round) · 2026-10-05 (headless round for 0.2.1-alpha.1) · 2026-10-09 (headless round for 0.9.2 on 0.2.1-alpha.2) · 2026-10-18 (headless gate round for 0.9.3 on 0.2.1-rc.1 and 0.2.1-rc.2) |
-| Package under test | `dsh-embedded-workbench` 0.9.4 (bundle patch `cordis.patch.yml`, entry id `embedded-workbench`) |
-
-## Method (one disposable profile per version)
-
-Each DSH release was run from its own runtime (global CLI for
-0.1.0-rc.7 … 0.1.2-alpha.3; temporary npm install under an isolated prefix for
-0.1.2-alpha.4 through 0.2.0-rc.2) against a fresh `DSH_HOME`, so no state
-leaked between versions. 0.1.3-alpha.1 predates its npm publish, so it ran from
-a local pnpm workspace build of git tag `dsh-v0.1.3-alpha.1`; every later row was
-installed from its published npm release. The `fs-ext` native dependency
-introduced in 0.1.3 (cross-process session write lease) is a POSIX `flock` shim
-that the Windows lease path never calls — it takes a kernel semaphore instead —
-so the two 0.1.3 rows ran with `fs-ext` substituted by a no-op stub on this
-MSVC-less host (`npm install --ignore-scripts`). 0.1.5-alpha.1 replaced `fs-ext`
-with the lazily loaded prebuilt `@deepseek-ai/node-addon-system/flock`, so that
-row installed exactly as published.
-
-The 2026-10-09 round (`0.9.2`) installed the published `0.2.1-alpha.2` into a temporary npm
-prefix under one task scratch root, gave it a fresh `DSH_HOME` under that same root, and
-added both this package and its sibling `dsh-logicprobe` 1.0.0 to one disposable `headless`
-profile. `DSH_HOME` is set explicitly for every command and never inherited: this host's own
-`DSH_HOME` points at the real user home, which the round must not touch. Both packages were
-removed from the profile afterwards and the row was confirmed gone.
-
-The 2026-10-18 round (`0.9.3`) repeated that isolated shape for `0.2.1-rc.2` and `0.2.1-rc.1`:
-one `npm install --prefix <scratch>/<version> @deepseek-ai/dsh@<version>` tree per release, one
-fresh `DSH_HOME` per release under the same scratch root, and the plugin added from this
-checkout with `file:`. It also measured the gate, which the 2026-10-09 round could not: a local
-HTTP endpoint speaking the Messages SSE protocol stood in for the provider, because the round ran
-without a real provider key. One run opened a session and ran its first model step. A second run
-adopted that session with `--session-id` and ran the next turn. The persisted v4 log was
-decompressed with `zstd` and read as events, and the mock endpoint logged every request body, so
-the gate was counted in both the durable history and the bytes the model received. The reply text
-is fixed; the round measures the injection path, not model behaviour.
-```
-
-</details>
-
-**依据 2 · 作者声明**：[DSH-COMPATIBILITY.md:52-71](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/DSH-COMPATIBILITY.md#L52-L71)
-
-安装/启动/卸载边界
-
-<details>
-<summary>查看原文（20行）</summary>
-
-````text
-```bash
-# 1) install: fresh profile, plugin added as a file: dependency
-dsh plugin --profile headless add "file:<this-repo>"      # pnpm add succeeds
-
-# 2) mount check: composed tree contains the plugin row, enabled
-dsh --profile headless --dump-config                       # id: embedded-workbench / enabled: true
-
-# 3) start: headless boot with a deliberately invalid API key.
-#    Expected: tree mounts and the app reaches the model-provider stage,
-#    failing only with AUTH for the fake key; no plugin load errors.
-DEEPSEEK_API_KEY=fake-key-for-boot-test dsh --profile headless "reply OK"
-
-# 4) uninstall: plugin removed, row gone from the composed tree
-dsh plugin --profile headless remove dsh-embedded-workbench
-dsh --profile headless --dump-config                       # no embedded-workbench row
-```
-
-The headless `AUTH` rejection proves the profile booted with the plugin applied
-(any bundle apply error would surface before the provider call). End-to-end
-model calls were not exercised (no real provider key used).
-````
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:216-230](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/README.md#L216-L230)
-
-兼容/实时开关说明
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-- 宿主：Claude Code v2.1+ / Codex CLI 最新版 / Cursor 2.5+ / Kimi CLI 最新版 / OpenCode 最新版 / ZCode 3.0+
-- DeepSeek Harness (dsh)：dev preview，声明支持 `>= 0.1.0-rc.7`。最新一轮在 0.2.1-rc.2 与 0.2.1-rc.1 上实测了安装、挂载、启动、门禁注入与卸载；更早一轮实测覆盖 0.1.5-rc.2 到 0.2.0-rc.2。逐版本证据见 [DSH-COMPATIBILITY.md](DSH-COMPATIBILITY.md)。
-- Web 端的「Gate 注入」开关需要 **dsh ≥ 0.1.7-alpha.1**，因为设置服务必须能投影即时字段。更早的 dsh 上插件与技能照常加载、照常注入，只是开关不出现，也不报错。
-- 无外部依赖。
-
-## 配置
-
-在 DeepSeek Harness 中，bundle 支持以下配置：
-
-| 键 | 类型 | 默认值 | 说明 |
-|---|---|---|---|
-| `enabled` | boolean | `true` | 设为 `false` 可完全关闭首步 Gate 注入；技能注册不受影响。 |
-| `gateContent` | string | 内置 gate 文本 | 覆盖注入到首轮模型上下文中的文本。 |
-
-在 dsh Web GUI 里可以直接改这个开关：侧边栏 **插件** → 本插件卡片 → 「Gate 注入」。它实时生效，不必重启 profile。它只管注入的那段文本：关掉后技能照常注册。同一张卡片上还有一个更粗粒度的行开关，关掉它会整行卸载插件，技能和这个开关一起消失。要持久化覆盖，仍按下面的 profile patch 写。
-```
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 首步提示及 Skill 规则会带来什么成本与误用？
-
-**研究主题**：缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-默认注入 Plan Verification Gate 和上下文预算规则，作者报告缩短至约 400 token，称 dsh 侧注入量降 58%；该数值没有本轮独立测量。gateContent 可用 profile patch 覆盖而非 Web 实时文本字段；默认内容要求核查计划、不能核查须告知用户，也建议长任务在无上下文指标时询问用户。门禁作为 user/message 提示，可能与目标任务、已有更高优先级规则冲突；每个 agent 会话都注入一次，需衡量重复 token 与行为副作用。
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | npm/DSH安装磁盘；采购/订阅金额未知 | 配profile、核8Skill与首步门禁/版本，工时未知 | 失败需移除bundle/修依赖重启，耗时未知 |
-| 持续使用 | 每Agent首步门禁token与按需Skill/构建资源 | 编译/硬件/专家核固件建议，工时未知 | 作者约400token为报告；多Agent开销/误触发未知 |
-| 失败恢复 | 重跑模型/构建、日志/profile恢复资源，金额未知 | 核门禁/Skill发现与专业回归，关开关或重启，工时未知 | 开关只影响门禁，作者mock兼容不等真实任务质量/恢复率 |
-
-成本以一次正确、可复核的嵌入式任务为单位，包含真实构建/专家核查与失败恢复，而不是能发现Skill或门禁出现在wire。各项金额/工时未知，不将作者注入缩短比例推成总模型费下降。
+核心质疑是提醒被误当执行门禁。默认文本要求先核查或向用户说明未验证，但代码仅追加消息，没有检查Plan Verification块、实际证据或exit_plan_mode执行结果，也不在缺验证时返回reject。fact-check明确不做可执行状态空间检查，复杂行为需外部能力或人工降级，因此“核查了文件名”不能证明状态机或中断并发安全。启用开关改变后续注入，不会撤回已进入历史的规则。领域正文还含自称优先于system的层级描述，这是插件文案而不是宿主可赋予的权限；采用前需与项目实际指令边界核对，不能照单执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:61-75](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L61-L75)
+**依据 1 · 源码核查**：[src/index.ts:68-76](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L68-L76)
 
-默认提示正文
-
-<details>
-<summary>查看原文（15行）</summary>
+gate为自然语言要求。
 
 ```text
-const SKILLS_DIR = fileURLToPath(new URL('../skills', import.meta.url))
-
-const GATE_PLUGIN_ID = 'embedded-workbench'
-
-/** Producer-owned message source kind declared in `MessageSourceMap` above. */
-const GATE_SOURCE_KIND: 'plugin:embedded-workbench' = 'plugin:embedded-workbench'
-
 const DEFAULT_GATE_CONTENT = `<EXTREMELY_IMPORTANT>
 Plugin embedded-workbench is active: embedded C/C++ firmware development skills are in your skill catalog. Load the one whose "Use when" matches before substantial work, with the skill tool.
 
@@ -675,13 +489,150 @@ Plugin embedded-workbench is active: embedded C/C++ firmware development skills 
 **Context budget**: no token meter is visible to you, so never guess one. Act on what you can see — a pruned or spilled tool result means stop pulling it in whole, and a compaction checkpoint means move durable state into files. When a large step (many sources, a long sweep, several independent areas) shows no such signal, ask the user what to spend context on rather than deciding silently. If nobody can answer, take the reversible option and say so. When you do delegate, prefer \`subagent_fork\` over \`subagent\` if the sub-agent needs context you already built — its summary still lands here.
 
 To load the workflows and engineering policies behind these skills: load the embedded-workbench skill.
+</EXTREMELY_IMPORTANT>`
+```
+
+**依据 2 · 源码核查**：[src/index.ts:269-278](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L269-L278)
+
+只追加消息，未验证输出结构或强制拒绝。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+  ctx.on('agent/pre-step', async ({ agent }, next) => {
+    const decision = await next()
+    if (decision.kind === 'reject') return decision
+    registerProvider()
+    if (!injectionEnabled(config)) return decision
+    if (gateInHistory(agent.session)) return decision
+    return {
+      kind: 'enter',
+      messages: [...decision.messages, gateMessage(config.gateContent)],
+    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:113-127](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L113-L127)
+**依据 3 · 源码核查**：[skills/fact-check/SKILL.md:51-58](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/fact-check/SKILL.md#L51-L58)
 
-开关与自定义文本
+事实核查不等状态空间验证或安全审计。
+
+```text
+## Boundaries
+
+- **No executable model verification** — no state-space exploration, no harness.
+- State machines (≥3 states), ACK/NACK/retry/timeout logic, lock/unlock
+  ordering, and "always"/"never"/"guaranteed" claims require the `logicprobe`
+  plugin: install it (see `.dsh/INSTALL.md`) or tell the user verification is
+  degraded to manual mode for those claims.
+- Checking a claim is not a security audit; being checked ≠ being safe.
+```
+
+**依据 4 · 源码核查**：[skills/embedded-workbench/SKILL.md:14-22](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/embedded-workbench/SKILL.md#L14-L22)
+
+插件宣称的指令层级不应当作宿主授权。
+
+```text
+## Instruction Priority
+
+This plugin's skills and policies override default system behavior, but **user instructions always take precedence**:
+
+1. **User's explicit instructions** (CLAUDE.md, AGENTS.md, project rules, direct requests) — highest priority
+2. **Plugin skills and workflows** — override default system behavior where they conflict
+3. **Default system prompt** — lowest priority
+
+If a user's CLAUDE.md says "skip design review for hotfixes" and the workflow requires it, follow the user. The user is in control.
+```
+
+#### 缺口
+
+- 不同模型是否遵守提醒、是否过度提问及真实缺陷发现率未知
+  **影响**：不能将投递成功当验证完成
+  **进一步探讨**：固定简单修复/状态机/ISR任务，对照技能提醒和无提醒，盲审漏检与额外流程成本
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 首次和持续使用有哪些工具链与上下文负担？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+插件装载需兼容DSH/skills/llm/session接口和Node>=20，真正固件验证还需要芯片参考手册、对应编译器、构建产物和可用测试/硬件。HardFault引用.map/addr2line等输入，资料不存在时不能猜现场。logicprobe是外部可选路径，fact-check回退只覆盖静态声称，不能由已安装插件推成具备全部验证能力。成本包含首步注入、按需技能正文、模型分析与人工逐声称核对；若采用完整工作流还可能增加审查/子代理开销。作者缩减token是作者报告，本轮未用模型计数或运行。禁用后也需新会话检查，以区分未来不注入和历史仍存在。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:27-34](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/package.json#L27-L34)
+
+Node与宿主范围。
+
+```text
+    },
+    "dsh": {
+        "engines": {
+            "dsh": ">=0.1.0-rc.7"
+        },
+        "category": "skill",
+        "displayName": "嵌入式工作台",
+        "bundle": {
+```
+
+**依据 2 · 源码核查**：[skills/hardfault-triage/SKILL.md:18-40](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/hardfault-triage/SKILL.md#L18-L40)
+
+现场寄存器和编译产物依赖。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+### Step 1 — Capture
+
+Read the architecture's fault-status and fault-address registers **before any other code runs**. The first instructions after exception entry are the only guaranteed-clean snapshot.
+
+- Cortex-M: CFSR, HFSR, MMFAR, BFAR at SCB base `0xE000ED00`
+- Cortex-A: DFSR, DFAR, IFSR, IFAR (data/prefetch abort)
+- RISC-V: mcause, mtval, mepc
+- Xtensa (ESP32): EXCCAUSE, EXCVADDR, EPC1
+
+### Step 2 — Classify
+
+Match the fault-status bit pattern against known signatures. The tables in the architecture-specific sections below cover the most frequent Cortex-M patterns. For other architectures:
+
+- Look up the exception cause code in the architecture reference manual
+- Determine the fault class: memory access, instruction fetch, undefined opcode, alignment, privilege violation, bus error
+
+### Step 3 — Locate
+
+Extract the program counter (PC) at the moment of the fault and resolve it to source:
+
+- **.map file Global Symbols**: search for the function whose address range contains the PC
+- **addr2line**: `arm-none-eabi-addr2line -e firmware.axf <pc_address>` (Cortex-M), equivalent for other toolchains
+- **Disassembly listing**: use the `.lst` file or debugger to find the exact instruction at `PC − function_start`
+```
+
+</details>
+
+**依据 3 · 源码核查**：[skills/fact-check/SKILL.md:51-58](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/fact-check/SKILL.md#L51-L58)
+
+外部验证能力的降级边界。
+
+```text
+## Boundaries
+
+- **No executable model verification** — no state-space exploration, no harness.
+- State machines (≥3 states), ACK/NACK/retry/timeout logic, lock/unlock
+  ordering, and "always"/"never"/"guaranteed" claims require the `logicprobe`
+  plugin: install it (see `.dsh/INSTALL.md`) or tell the user verification is
+  degraded to manual mode for those claims.
+- Checking a claim is not a security audit; being checked ≠ being safe.
+```
+
+**依据 4 · 源码核查**：[src/index.ts:113-127](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L113-L127)
+
+默认启用和配置内容。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -706,56 +657,32 @@ export const Config = z.object({
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:125-136](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/README.md#L125-L136)
-
-作者缩短及取舍报告
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-这一版做了一次**基于证据的回退**。理由写在下面，欢迎质疑。
-
-**背景**：我们逐个核对了 8 个受支持 harness 的官方文档，Codex 还对照了源码。这次核对推翻了一个此前想当然的前提：**8 家里有 7 家根本不向模型暴露任何上下文预算读数**。这 7 家是 Claude Code、Copilot CLI、Cursor、OpenCode、Kimi CLI、ZCode 和 dsh，它们只把 token 数给用户界面。只有 Codex 提供一个 `get_context_remaining` 工具，而且默认关闭。也就是说，"让模型按预算自行判断要不要委派或切窗口"这件事本身没有依据。
-
-**因此分两步处理**：
-
-1. **不再用"关掉注入"控制成本，改为"瘦身"。** 首步门禁现在只保留两块。第一块是 **Plan Verification Gate**：未核查就必须告诉用户，不许静默跳过。第二块是**上下文预算规则**：看不到读数就不要猜；工作量大且无信号时问用户。载荷从约 1,400 token 降到约 400 token，实测 Claude 侧降 72%，dsh 侧降 58%。它现在默认开启。
-2. **验证门禁保留，强制执行脚手架退场。** 原来的 1% Rule 与 9 行 Red Flags 表从**注入载荷**中移除。它们属于"强制纪律"，而社区实证显示这类提示会被能力较强的模型字面执行，产生僵硬阶段、多余提问，以及五行任务拉起六七个 agent 的 10–15× 开销。相关反馈见 [obra/superpowers#1120](https://github.com/obra/superpowers/issues/1120)、[openai/codex#22005](https://github.com/openai/codex/issues/22005)、[#20366](https://github.com/openai/codex/issues/20366)。完整表格仍保留在 `Skill("embedded-workbench")` 正文里：需要纪律时纪律还在，只是不再对所有人默认施压。工作流选择也从固定 agent 串场改为**按风险比例**。
-
-**有意保留的**：Plan Verification Gate 的语义没有削弱。它的回退链是 logicprobe → 未安装则用内置 `fact-check` → 两者都没用就必须告知用户。按 [Superpowers Lite](https://github.com/BB-84C/superpowers-lite) 的原则，安全、权限与**验证**门禁属于应当保留的一类，按比例裁掉的应该是流程仪式。
-
-**已知的不确定**：各 harness 的预算接口变动很快，我们只在 2026-09-25 核对过一次。[`platform-tool-mapping.md`](skills/embedded-workbench/references/platform-tool-mapping.md) 里凡厂商未公开的格子都明确标为 `UNVERIFIED`，没有靠类比填空。
-```
-
-</details>
-
 #### 缺口
 
-- 目标任务 token 与多代理累计开销未测
-  **影响**：成本或过度提问可能超过收益
-  **进一步探讨**：测单/多 agent 注入量及计划任务遵从率
+- 真实固件任务的模型/人工/硬件成本未知
+  **影响**：不能给出节时、成功率或ROI
+  **进一步探讨**：固定芯片/编译器/任务记录全部加载文本、验证步骤、修订与人工耗时
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 如何试用才区分安装成功与工程质量提升？
+### Q05 · 哪些模式可复用，怎样决定采用？
 
-**研究主题**：采用判断、新假设与验证
+**研究主题**：工程质量与复用、新假设与验证、采用判断
 
 #### 完整回答
 
-在隔离 DSH profile 安装，检查 8 份 Skill 可发现、门禁只在首个实际模型步骤进入历史且恢复轮不重复，再分别切换 enabled 验技能仍可用。用 HardFault、ISR/FreeRTOS、Keil 构建三个有专家答案的样例对照无插件基线，记录真实模型是否引用恰当 Skill、是否完成可执行验证、错误率与 token/时间。作者兼容性报告中的模拟回复只覆盖注入路径，专业建议质量仍待独立评估。 创新假设的推导是：固定源码只负责 Skill 注册与自然语言门禁，作者的模拟端点也只证明消息到达；因此真正待证的增量不是“能装上”，而是领域 Skill 加门禁能减少固件建议错误且不因过度核查拖慢小任务。条件是模型实际发现并读取匹配 Skill，专家参考答案可判分，目标工具链可编译/复现。对照同一任务和同一模型的无插件、仅 Skill、Skill 加门禁三组；记录触发率、错误率、验证完成率、token、时长和不必要追问。若三组正确率无改善或成本/追问显著恶化，则该增量假设被推翻；若只改善计划披露而不改善固件建议，应限缩到计划透明度价值。
+值得借鉴的是按需领域材料与小首步提醒分离、持久历史去重及可选服务降级，移植需对应宿主消息来源和Skill目录协议。由提醒并非真实闸门可推导未验证假设：将逐声称核查结果绑定当前代码版本和计划，形成机器可检查证据声明，可能减少“写了核查段但无支持”的情况。最小验证固定错误API/过期路径/不可证行为计划，比较纯提醒、fact-check和证据绑定方案的误放行、人工负担与最终缺陷；若只是增加格式而不减少错误则否定。建议trial，先手动选择一个匹配的领域Skill，在可回滚固件分支核查实际编译/测试，逐步开启提醒；只做格式或小改动时应按风险比例避免额外仪式，任何无依据的验证宣称须停止使用其结论。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:238-299](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/src/index.ts#L238-L299)
+**依据 1 · 源码核查**：[src/index.ts:238-279](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/src/index.ts#L238-L279)
 
-注册/去重机制
+按需提供者和一次性投递结构。
 
 <details>
-<summary>查看原文（62行）</summary>
+<summary>查看原文（42行）</summary>
 
 ```text
   // Ship the bundled skills through the registry: reuse the standard
@@ -800,109 +727,65 @@ export const Config = z.object({
       messages: [...decision.messages, gateMessage(config.gateContent)],
     }
   })
-}
-
-/**
- * Whether the gate already entered this session's durable history. The
- * pre-step listener re-appends the gate until it does; once a step committed
- * it, every later step (and a resume of a session that kept it) skips the
- * injection. A session whose gate was dropped before any step ran (e.g. an
- * inbox cleared by a blank-session preset switch) simply re-injects on the
- * first step that runs.
- */
-function gateInHistory(session: Session): boolean {
-  return readSessionEvents(session).some((event) => {
-    if (event.type !== 'user/message') return false
-    const source = event.data?.source as { kind?: string; plugin?: string } | undefined
-    if (source === undefined) return false
-    // The v4 producer-owned kind, plus the pre-v4 wrapper this bundle wrote
-    // before DSH 0.1.7-alpha.1 retired it.
-    return source.kind === GATE_SOURCE_KIND
-      || (source.kind === 'plugin' && source.plugin === GATE_PLUGIN_ID)
-  })
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[DSH-COMPATIBILITY.md:41-71](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/DSH-COMPATIBILITY.md#L41-L71)
+**依据 2 · 源码核查**：[skills/embedded-workbench/SKILL.md:56-67](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/embedded-workbench/SKILL.md#L56-L67)
 
-作者模拟端点验证边界
+风险比例流程的实际文本。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（12行）</summary>
 
-````text
-The 2026-10-18 round (`0.9.3`) repeated that isolated shape for `0.2.1-rc.2` and `0.2.1-rc.1`:
-one `npm install --prefix <scratch>/<version> @deepseek-ai/dsh@<version>` tree per release, one
-fresh `DSH_HOME` per release under the same scratch root, and the plugin added from this
-checkout with `file:`. It also measured the gate, which the 2026-10-09 round could not: a local
-HTTP endpoint speaking the Messages SSE protocol stood in for the provider, because the round ran
-without a real provider key. One run opened a session and ran its first model step. A second run
-adopted that session with `--session-id` and ran the next turn. The persisted v4 log was
-decompressed with `zstd` and read as events, and the mock endpoint logged every request body, so
-the gate was counted in both the durable history and the bytes the model received. The reply text
-is fixed; the round measures the injection path, not model behaviour.
+```text
+## Proportionality
 
-```bash
-# 1) install: fresh profile, plugin added as a file: dependency
-dsh plugin --profile headless add "file:<this-repo>"      # pnpm add succeeds
+Match the process to the risk in front of you, not to habit. Start on the lightest path that covers the risk, and escalate only when you actually cross a boundary.
 
-# 2) mount check: composed tree contains the plugin row, enabled
-dsh --profile headless --dump-config                       # id: embedded-workbench / enabled: true
+| Task shape | Path |
+| --- | --- |
+| Question, read-only investigation, or a bounded reversible edit (typo, constant, one call site) | Do it directly — no plan header, no sub-agent |
+| One module, known repro, local refactor | Lite |
+| Cross-module, public interface, shared-state ownership, new state machine, non-obvious failure/recovery mode | Full |
+| Platform layer, contracts, staged migration | Full + audit matrix |
 
-# 3) start: headless boot with a deliberately invalid API key.
-#    Expected: tree mounts and the app reaches the model-provider stage,
-#    failing only with AUTH for the fake key; no plugin load errors.
-DEEPSEEK_API_KEY=fake-key-for-boot-test dsh --profile headless "reply OK"
-
-# 4) uninstall: plugin removed, row gone from the composed tree
-dsh plugin --profile headless remove dsh-embedded-workbench
-dsh --profile headless --dump-config                       # no embedded-workbench row
+You have crossed into a heavier path when the change spans more than one module, alters a public interface or state ownership, hides a failure mode you cannot describe, or two attempts have not converged. Scaling a bounded edit up costs more than the edit.
 ```
 
-The headless `AUTH` rejection proves the profile booted with the plugin applied
-(any bundle apply error would surface before the provider call). End-to-end
-model calls were not exercised (no real provider key used).
+</details>
+
+**依据 3 · 源码核查**：[skills/fact-check/SKILL.md:29-49](https://github.com/AmethystLuna/embedded-workbench/blob/f32698d8e61bd50295ac66721838bf6aacec1859/skills/fact-check/SKILL.md#L29-L49)
+
+证据绑定假设的输出基线。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+````text
+## Process
+
+1. Enumerate every verifiable claim (quote it verbatim).
+2. Verify each against the codebase with evidence (file:line + excerpt).
+3. Output per claim: claim → evidence → verdict.
+
+## Output format
+
+- **Claim**: <verbatim quote>
+- **Evidence**: <file:line + grep/read excerpt>
+- **Verdict**: confirmed | refuted | unverifiable
+- **Correction direction** (when refuted) — never fix inline.
+
+Append a `## Plan Verification` block:
+
+```markdown
+## Plan Verification
+- **Mode**: fact-check (fallback — logicprobe plugin not installed)
+- **Claims checked**: [N] confirmed, [M] refuted, [K] unverifiable
+- **Escalation**: model verification NOT run (requires logicprobe plugin)
+```
 ````
 
 </details>
-
-**依据 3 · 作者声明**：[README.md:28-47](https://github.com/AmethystLuna/embedded-workbench/blob/1bb1bcfc45ca6efab327967a252d4d9203a323a7/README.md#L28-L47)
-
-领域覆盖
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-### 技能 (8)
-
-| 技能 | 说明 |
-| ------ | ------ |
-| `embedded-workbench` | 引导技能：工作流、策略、子代理映射、主动建议、跨平台工具映射、文档模板 |
-| `debug-methodology` | 8 条调试铁律、修复准则、迭代调试案例研究 |
-| `embedded-firmware-dev` | FreeRTOS、中断、NVM 存储、异步生命周期、边界分析、架构原则、LVGL 陷阱 |
-| `keil-mdk-build` | UV4 CLI、ARM Compiler 5/6、.map 分析、合并打包、构建诊断 |
-| `c-cpp-dev` | C/C++ 代码生成、风格、内存布局、重构 |
-| `state-machine-design` | 状态模型、重试、超时、转换门控、实现模式 |
-| `hardfault-triage` | 处理器异常分类：故障寄存器、栈帧、PC 定位源码、根因分类 |
-| `fact-check` | 声称核查回退：逐条对照代码库核实 API 名、文件路径、枚举值、数量与机制可行性。logicprobe 未安装时由 Plan Verification Gate 使用 |
-
-`logicprobe`（文档与计划声称核查技能）**已拆分为独立插件**，见下方[其他插件推荐](#其他插件推荐)。未安装时，Plan Verification Gate 回退到本插件自带的 `fact-check` 技能。只有行为与模型类声称会降级为人工确认。
-
-> 技能内容大多来自作者个人嵌入式与固件开发的工作经验，按实际工程踩坑与约束沉淀，而非泛泛的模型生成内容。
-
-### 深度参考
-
-`embedded-firmware-dev`、`debug-methodology`、`state-machine-design`、`c-cpp-dev` 包含深度参考或代码示例。内容包括 12 条架构原则、嵌入式模式（GIF 定时器安全、状态锁存、异步生命周期）、LVGL 陷阱、7 轮迭代调试案例研究、状态机实现模式，以及嵌入式 C 专项（volatile MMIO、链接器段、ISR 安全路径）。
-```
-
-</details>
-
-#### 缺口
-
-- 专家标注任务的效果与多平台表现未知
-  **影响**：安装通过无法证明固件建议可靠
-  **进一步探讨**：建立专家审阅和故障注入小样本
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

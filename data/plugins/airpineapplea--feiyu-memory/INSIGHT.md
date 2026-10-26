@@ -2,24 +2,24 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[4c198e4](https://github.com/AirPineApplea/feiyu-memory/tree/4c198e4fb6b86695b497d08a1f680c196d9a0431)
+分析版本：[38b2d42](https://github.com/AirPineApplea/feiyu-memory/tree/38b2d42b5026d557bf69bb711d951055858b54e9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory)
 <!-- END META -->
 
 > **实现功能**：为Harness保存人格内核、判断和情景日记，并在后续会话按相关性召回记忆。
 
-> **核心亮点**：以三声部区分人格、判断和事件，结合本地派生索引与预算召回塑造连续感；贡献是记忆叙事与管理安排，不是事实准确或隐私保证。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **核心亮点**：将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：隐私门未覆盖全部额外模型请求：session/event将原文赋lastUserText，judgeWorthKeeping直接buildJudgeInput并llm.stream；scrub只在后续consolidate。固定版面板也明确不自加鉴权，不能用“无CORS”替代访问控制。静态可核，未发送真实秘密复现。参见[Q03](#research-q03)。
+> **风险与缺陷**：多处清洗仍未覆盖judge额外模型出站，面板同源门也不等身份认证；persist失败计数在catch后被无条件清零，不能据“三次降级”承诺判断落盘可靠。[Q03](#research-q03)、[Q07](#research-q07)
 
 **本文目录**
 
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -32,6 +32,7 @@
   - [Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？](#detail-section-14)
   - [Q05 · 可从事件整理、隐私门、合并与召回的限制推导什么可证伪改进？](#detail-section-15)
   - [Q06 · 哪些用户可以受控采用个人三声部记忆，何时应停止？](#detail-section-16)
+  - [Q07 · 删除与写失败可见性是否保证档案可恢复且不会复活？](#detail-section-17)
 
 <a id="detail-section-1"></a>
 
@@ -43,7 +44,7 @@
 
 > **用途**：面向接受个人陪伴式记忆、愿意人工检查本地日记的低敏感娱乐用户；交付应区分人格规则、自发判断与事件转述，不将模型推断当作用户事实或生产知识库。
 
-手写persona和会话摘要可提供简单替代；插件额外价值是自动叙事与选择性召回，增加模型判断和隐私责任。
+长上下文与手写persona是直接替代，少自动固化但更易控制写入。比较同一组个人事件的归因、召回、额外模型费和纠错工时，娱乐熟悉感不能代替工作知识准确性。
 
 <a id="detail-section-3"></a>
 
@@ -64,20 +65,20 @@
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=22、DSH>=0.2.0-rc.2及Cordis ~4.0.4 | 必需 | 宿主事件和提示注入 | 版本兼容仅声明 |
-| systemPrompt/agents/sessions/llm | 必需 | 收集、judge/固化与召回 | 无可用模型不能完成固化 |
-| 本地~/.dsh/feiyu-diary读写 | 必需 | 人格、日记与索引原件 | 持久失败需保留原档与排查 |
-| 低敏感输入与模型处理授权 | 效果/隐私必需 | 后台额外模型调用 | judge原文未清洗，不能依赖硬拦覆盖全链 |
-| webServer/tools | 可选 | 面板和feiyu_note | 缺失降级，不影响全部核心 |
+| DSH systemPrompt/agents/sessions/llm | 核心必需 | 事件收集、固化和注入 | 降级不等完整记忆 |
+| 当前模型路由 | judge/固化必需 | 额外模型请求 | 可能外发原文，先核许可 |
+| 可写绝对档案目录 | 耐久必需 | 人格、关系与月日记 | 缺失回home默认，须核实际路径 |
+| 可信宿主访问控制 | 面板前提 | 读取/忘记/导出 | 同源检查不替代认证 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 先审模型路由与隐私链，用低敏感profile | 不把本地落盘误作全本地处理 |
-| 2 | 对话后查看人格/判断/日记来源 | 错记先修正或忘记 |
-| 3 | 新会话核对召回与相关性 | 不将随机熟悉感当事实正确 |
-| 4 | 退出前备份/按需清理档案 | 本地删除不能撤销已发模型数据 |
+| 隔离 | 用户只用娱乐无秘密样本 | 固定路由、目录并备份 |
+| 核首条 | 用户对照三声部与实际文件 | 推断不当用户事实 |
+| 复用 | 新会话核近期与旧事召回 | 来源正确且额外调用可接受 |
+| 忘记 | 用户删测试条目后重启 | 读盘和墓碑一致，核其他副本 |
+| 恢复 | 用户核文件而非只看面板 | 写错/外发/错归因即停用 |
 
 #### 成本
 
@@ -95,23 +96,23 @@
 | 隐私清洗 | consolidate前scrub与固定规则 | judge原文路径及未知密钥形态 |
 | 可管理性 | 面板查看/忘记/导出 | 部署鉴权与跨会话隔离保证 |
 
-> **思考**：隐私门未覆盖全部额外模型请求：session/event将原文赋lastUserText，judgeWorthKeeping直接buildJudgeInput并llm.stream；scrub只在后续consolidate。固定版面板也明确不自加鉴权，不能用“无CORS”替代访问控制。静态可核，未发送真实秘密复现。参见[Q03](#research-q03)。
+> **思考**：多处清洗仍未覆盖judge额外模型出站，面板同源门也不等身份认证；persist失败计数在catch后被无条件清零，不能据“三次降级”承诺判断落盘可靠。[Q03](#research-q03)、[Q07](#research-q07)
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
-> **亮点**：以三声部区分人格、判断和事件，结合本地派生索引与预算召回塑造连续感；贡献是记忆叙事与管理安排，不是事实准确或隐私保证。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-以三声部区分人格、判断和事件，结合本地派生索引与预算召回塑造连续感；贡献是记忆叙事与管理安排，不是事实准确或隐私保证。参见[Q01](#research-q01)、[Q02](#research-q02)。
+将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-派生索引与三声部有清晰可借鉴处；隐私应沿所有出站数据流验证，不能只看privacy模块存在。面板应接宿主认证，多文件档案与异步队列仍需恢复核查。
+可借鉴近期/旧事分池、墓碑读盘和月份文件清理的对应关系；持久化仍需耐久收据，失败计数和跨文件中断要单独核验。[Q07](#research-q07)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-隐私门未覆盖全部额外模型请求：session/event将原文赋lastUserText，judgeWorthKeeping直接buildJudgeInput并llm.stream；scrub只在后续consolidate。固定版面板也明确不自加鉴权，不能用“无CORS”替代访问控制。静态可核，未发送真实秘密复现。参见[Q03](#research-q03)。
+多处清洗仍未覆盖judge额外模型出站，面板同源门也不等身份认证；persist失败计数在catch后被无条件清零，不能据“三次降级”承诺判断落盘可靠。[Q03](#research-q03)、[Q07](#research-q07)
 
 <a id="detail-section-6"></a>
 
@@ -129,14 +130,14 @@
 
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、src/host/index.mjs、src/core/privacy.mjs、src/core/judge.mjs、src/core/recall.mjs、src/core/archive.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：本轮复核既有findings并读取固定事件/模型/隐私/召回/面板分支；未执行测试或宿主，也未完整审计所有导入导出。
-- 下一步：用合成敏感格式和低敏感对话追踪每次模型输入及落盘/召回，核归属、认证、忘记和停止行为。
+- 边界：固定host关键配置、事件/出站、召回、持久化、面板，以及privacy/archive/recall/judge；不执行目标、不发秘密、不穷尽客户端和全部模型输出。
+- 下一步：按 [Q05](#research-q05) 对judge/固化/手记/历史注入追踪合成凭据；按 [Q07](#research-q07) 注入连续写失败和第N文件中断，核原文、持久化、面板与重启。全部为待执行方案。
 
 **分析版本**
 
 - **仓库**：[AirPineApplea/feiyu-memory](https://github.com/AirPineApplea/feiyu-memory)
-- **版本号**：0.2.0（[固定提交 4c198e4](https://github.com/AirPineApplea/feiyu-memory/tree/4c198e4fb6b86695b497d08a1f680c196d9a0431)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.4（[固定提交 38b2d42](https://github.com/AirPineApplea/feiyu-memory/tree/38b2d42b5026d557bf69bb711d951055858b54e9)）
+- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -146,7 +147,7 @@
 
 可把隐私策略放到所有模型出站共用门，并以来源/事实-推断/敏感级/确认状态控制召回，面板走宿主认证。用合成凭据追踪judge、固化、手记与日志，任何未脱敏出站或确认前误召回即否定；假设未验证，可能降低自然感并增复核。参见[Q05](#research-q05)。
 
-用合成敏感格式和低敏感对话追踪每次模型输入及落盘/召回，核归属、认证、忘记和停止行为。
+按 [Q05](#research-q05) 对judge/固化/手记/历史注入追踪合成凭据；按 [Q07](#research-q07) 注入连续写失败和第N文件中断，核原文、持久化、面板与重启。全部为待执行方案。
 
 <a id="detail-section-9"></a>
 
@@ -157,16 +158,20 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .mjs | source | 24 | 6496 | 3826 | 2149 | — |
-| .md | source | 7 | 2626 | — | — | 31195 |
-| .js | source | 1 | 449 | 350 | 66 | — |
-| .mjs | test | 13 | 4057 | 3285 | 340 | — |
+| .md | source | 7 | 3013 | — | — | 36229 |
+| .js | source | 1 | 446 | 347 | 66 | — |
+| .mjs | source | 23 | 6874 | 3909 | 2430 | — |
+| .mjs | test | 19 | 4850 | 3853 | 467 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/AirPineApplea/feiyu-memory/issues) 查看。
+[![Issue 未关闭 7](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=grey&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=grey&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
+
+
+
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -188,7 +193,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:14-28](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/README.md#L14-L28)
+**依据 1 · 作者声明**：[README.md:14-28](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/README.md#L14-L28)
 
 作者非生产与隐私未验证声明
 
@@ -215,7 +220,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:74-94](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/README.md#L74-L94)
+**依据 2 · 作者声明**：[README.md:73-93](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/README.md#L73-L93)
 
 三声部叙事划分
 
@@ -260,9 +265,11 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
 
 agent/session事件接真人消息并保留原文，停止一轮后调用judge，再在consolidate对最近transcript清洗并调用当前模型，写档后本地索引选择记忆注入systemPrompt；feiyu_note另记判断，面板提供state/forget/export。需宿主事件、LLM路由与可写目录，先配置低敏感样本、检查落盘再开新会话核召回；缺模型或档案异常只能降级，不能当完整记忆。
 
+配置入口尝试从插件、profile、DSH安装与home位置加载schemastery，失败提供带validate的纯JS schema；dataDir仅接受绝对路径，避免以不可预期cwd落档，并在启动日志输出真实目录。召回先取最近事件，再把这些ID排出旧事候选池，避免高词面相似的近期条目占据又被渲染去重。机制可核，未在当前宿主安装验证。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/host/index.mjs:672-695](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L672-L695)
+**依据 1 · 源码核查**：[src/host/index.mjs:866-889](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L866-L889)
 
 原文事件流到lastUserText/transcript
 
@@ -298,7 +305,7 @@ agent/session事件接真人消息并保留原文，停止一轮后调用judge�
 
 </details>
 
-**依据 2 · 源码核查**：[src/host/index.mjs:817-857](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L817-L857)
+**依据 2 · 源码核查**：[src/host/index.mjs:1011-1051](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1011-L1051)
 
 judge选择模型并发请求
 
@@ -351,7 +358,7 @@ judge选择模型并发请求
 
 </details>
 
-**依据 3 · 源码核查**：[src/host/index.mjs:954-1008](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L954-L1008)
+**依据 3 · 源码核查**：[src/host/index.mjs:1148-1202](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1148-L1202)
 
 固化清洗及合并输入
 
@@ -418,7 +425,7 @@ judge选择模型并发请求
 
 </details>
 
-**依据 4 · 源码核查**：[src/core/recall.mjs:27-59](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/core/recall.mjs#L27-L59)
+**依据 4 · 源码核查**：[src/core/recall.mjs:27-59](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/core/recall.mjs#L27-L59)
 
 本地派生倒排索引
 
@@ -463,6 +470,112 @@ export function buildIndex(entries) {
 
 </details>
 
+**依据 5 · 源码核查**：[src/host/index.mjs:179-196](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L179-L196)
+
+Config提供可调用且validate的fallback。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+ */
+export const Config = (() => {
+  const z = loadSchemastery();
+  if (z !== undefined) return buildSchema(z);
+
+  // ⚠️ **拿不到 schemastery 时不能返回 undefined。**
+  //
+  // 原来这里直接吞掉并导出 undefined，注释里写着「loader 会跳过校验」。
+  // **那条假设是错的** —— 社区报告实测：没有 Config 时 DSH 会传一份**空模板**
+  // （每个字段都是 `{}`），于是 `resolveConfig` 全部回落默认，
+  // **用户改的任何配置都不生效**。铁证是：`cordis.patch.yml` 里显式写
+  // `config: { debugLog: true }`，传进来还是 `{}` —— 那不是插件没读，是 DSH 没传。
+  //
+  // 所以这里兜一个**纯 JS 的形状等价物**。它只需要满足 loader 对 Config 的
+  // 两个用法：`Config(dict)` 做校验/补默认，以及 `Config.toString()` / `.dict`
+  // 之类的展示。没有 schemastery 的链式 API，就手写一个最小的。
+  return buildPlainSchema();
+})();
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/host/index.mjs:216-232](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L216-L232)
+
+仅接受绝对路径dataDir，否则回默认。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  // ⚠️ **只认绝对路径的字符串。**
+  //
+  // 社区报的（DSH Desktop 0.2.1-rc.2）：某些情况下 config.dataDir 会是一个
+  // 被字符串化的对象 —— 字面量 "[object Object]"。
+  //
+  //   typeof 检查 → 它是 string，放行
+  //   path.resolve("[object Object]") → 以进程 CWD 为基准
+  //   桌面端的 CWD = profiles\\desktop
+  //   → 档案落进 profiles\\desktop\\[object Object]\\
+  //
+  // 后果比崩了还糟：插件一切正常，人格注入在跑、feiyu_note 能用，
+  // 只是用户改 ~/.dsh/feiyu-diary/persona.md 完全无效 —— 而且全程无报错。
+  //
+  // 所以：不是绝对路径就回落到默认。相对路径本来也不该出现在配置里
+  // （基准是进程 CWD，用户不可能预测它是什么）。
+  const raw = config?.dataDir;
+  const explicit = typeof raw === 'string' && path.isAbsolute(raw.trim()) ? raw.trim() : '';
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/host/index.mjs:734-768](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L734-L768)
+
+近期常驻事件与旧事召回池分开。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+      // 「最近的事」—— 按时间取最近的几条，不走相似度。
+      // 这是让注入区读起来像日记而不是像检索结果的关键：
+      // 最近发生的事本来就在脑子里，不需要被"想起来"。
+      //
+      // 取的是 **events**，不是整个日记 —— 判断归「我自己想的」管。
+      const recentCount = Number.isFinite(config.recentEntries) ? config.recentEntries : 8;
+      const recent = recentCount > 0 ? events.slice(-recentCount) : [];
+      const recentIds = new Set(recent.map((e) => e.id));
+
+      // ⚠️ **召回池里不能有「最近的事」那几条。**
+      //
+      // 实测抓到的坑：它们已经常驻了，却又混进召回池一起竞争 ——
+      // 而"最近"天然含着你刚说过的话，字面命中率最高，于是**永远赢**。
+      //
+      // 具体表现：他问「赛博朋克让你想到什么」，召回选中了
+      // 「他连着测了三句：赛博朋克、随心所欲、手机号……」—— 那是我自己写的
+      // 测试记录，含所有测试词所以分最高；真正的赛博朋克日记永远出不来。
+      // 而且那条已经在「最近的事」里，渲染时会被去重跳过，
+      // 连「突然想起来」都不显示 —— 召回了，等于没召回。
+      //
+      // 排除之后：同一句话会去挑真正的旧事（实测赛博朋克那条命中了
+      // 「边缘行者2 上线，总导演从今石之洋换成五十岚海」）。
+      const olderNotes = allNotes.slice(0, -MAX_NOTES);
+      const recallPool = [
+        ...events.filter((e) => !recentIds.has(e.id)),
+        ...olderNotes,
+      ];
+
+      const { chosen } = selectMemories(recallPool, index, query, s, s.turn, {
+        highSim: config.highSim,
+        maxShow: config.maxShowPerTurn,
+        wanderChance: config.wanderChance,
+        // 旧事的随机池门槛。注意下限降到 0.15 是为了跟"降门槛"一致 ——
+        // 门槛降到 0.15 却在这里卡 0.25，等于白降。
+        minSalience: Math.max(0.15, config.minSalience),
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -473,13 +586,17 @@ export function buildIndex(entries) {
 
 #### 完整回答
 
-最强支持是consolidate有scrub且密钥规则无开关，但judge先直接发送lastUserText；buildJudgeInput仅trim并返回said，没有清洗。故“发模型前密钥都拦掉”不适用于完整额外请求链。模型是否远程取决于配置，本轮未调用，不称已经泄露。面板state/forget/export处理器未见认证门且注释主动依赖无CORS，部署不能照搬其威胁假设。可借鉴派生索引、0600原子写与来源分层，不能混为安全审计通过。
+consolidate在发送转录前有scrub，feiyu_note正文和tags也做规则清洗，历史事件注入另有密钥清洗兜底；这些是实际防护，不能再说只有固化一路清洗。但judge仍从lastUserText直接buildJudgeInput，后者只trim并拼手记，原文进入额外llm.stream；因此所有模型出站都已过滤的强主张仍不成立。是否远程取决于路由，本轮未发送秘密，不称已发生泄露。
+
+面板当前对forget要求JSON及同源，对export也要求同源，应承认此边界；state GET无同源或独立认证门，Origin/Fetch Metadata不等用户认证，非浏览器调用者可设置这些头。部署仍依宿主访问控制，不能用“不设CORS”保证所有访问安全。
+
+可借鉴本地派生索引、权限受限原子写、三声部分层与最近/旧事池分离；静态修补不证明记忆归因或体验正确。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core/judge.mjs:101-115](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/core/judge.mjs#L101-L115)
+**依据 1 · 源码核查**：[src/core/judge.mjs:101-115](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/core/judge.mjs#L101-L115)
 
-judge不scrub直接返回原文
+judge输入保持原文，没有scrub。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -504,12 +621,12 @@ ${notes.join('\n')}`;
 
 </details>
 
-**依据 2 · 源码核查**：[src/host/index.mjs:842-857](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L842-L857)
+**依据 2 · 源码核查**：[src/host/index.mjs:1036-1052](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1036-L1052)
 
-judge原文进入llm.stream
+原文进入judge额外模型请求。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
     const built = buildJudgeInput({ lastUserText: said, handNotes });
@@ -528,13 +645,17 @@ judge原文进入llm.stream
     try {
       let raw = '';
       for await (const chunk of llm.stream(opts)) {
+        if (chunk?.type === 'text-delta' && typeof chunk.text === 'string') raw += chunk.text;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/host/index.mjs:967-972](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L967-L972)
+**依据 3 · 源码核查**：[src/host/index.mjs:1161-1171](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1161-L1171)
 
-scrub只在固化路径
+固化转录被洗，但近期日记作为另一输入须另核。
+
+<details>
+<summary>查看原文（11行）</summary>
 
 ```text
     // 隐私：先洗再发。密钥硬拦 + 第三方泛化都在这一步生效。
@@ -543,34 +664,47 @@ scrub只在固化路径
       amountThreshold: config.amountThreshold,
     };
     const scrubbed = scrub(transcript, scrubOpts);
+
+    const recentDiary = archive.diary
+      .slice(-5)
+      .map((e) => `- ${e.text}`)
+      .join('\n');
 ```
 
-**依据 4 · 源码核查**：[src/host/index.mjs:1288-1294](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L1288-L1294)
+</details>
 
-作者面板防护假设
+**依据 4 · 源码核查**：[src/host/index.mjs:1523-1534](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1523-L1534)
 
-```text
-   * 路由挂在应用自己的源上，**故意不设 CORS 头** —— 浏览器里别的网站
-   * `fetch` 它拿不到响应体（默认跨源策略读不到），这条是真正有意义的防护。
-   *
-   * 本机其他进程当然能 curl 它。但它们本来就能直接读
-   * `~/.dsh/feiyu-diary/` 里的明文 jsonl —— **威胁面没有变大**。
-   * 所以不要因为"怕被读"就往这里加自创的鉴权：那是假的安全感，
-   * 真正的秘密（密钥）在发给模型之前就已经被拦掉了（SPEC §6.3）。
-```
-
-**依据 5 · 源码核查**：[src/host/index.mjs:1375-1395](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L1375-L1395)
-
-state/forget处理器
+同源启发式不是身份认证。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-  ctx.inject(['webServer'], (scope) => {
-    scope.effect(() => {
-      const routes = [
-        {
+  function isSameOrigin(req) {
+    const site = String(req.headers?.['sec-fetch-site'] ?? '').toLowerCase();
+    if (site === 'same-origin') return true;
+    const origin = String(req.headers?.origin ?? '');
+    const host = String(req.headers?.host ?? '');
+    if (origin === '' || host === '') return false;
+    try {
+      return new URL(origin).host === host;
+    } catch {
+      return false;
+    }
+  }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/host/index.mjs:1624-1654](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1624-L1654)
+
+state与forget/export有不同访问边界。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
           kind: 'exact',
           path: `${PANEL_BASE}/state`,
           handler: async (req, res) => {
@@ -588,6 +722,51 @@ state/forget处理器
               const body = await readPanelBody(req);
               const removed = await forgetEntry(body?.id);
               return panelReply(res, 200, { ok: true, removed, count: archive.diary.length });
+            } catch (err) {
+              return panelReply(res, 400, {
+                ok: false,
+                error: err instanceof Error ? err.message : String(err),
+              });
+            }
+          },
+        },
+        {
+          kind: 'exact',
+          path: `${PANEL_BASE}/export`,
+          handler: async (req, res) => {
+            if (!isSameOrigin(req)) return panelReply(res, 403, { ok: false, error: '跨站请求不予处理' });
+            if (req.method !== 'GET') return panelReply(res, 405, { ok: false, error: 'method' });
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/host/index.mjs:1776-1794](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1776-L1794)
+
+主动记忆正文/tags先洗后截，属于已实现防护。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+            const scrubbed = scrub(raw, {
+              thirdParty: config.thirdPartyRedaction !== false,
+              amountThreshold: config.amountThreshold,
+            });
+            if (scrubbed.blocked) {
+              log(`主动记的那条命中了密钥规则，已替换（${scrubbed.hits.length} 处）`);
+            }
+            const now = Date.now();
+            const tags = (Array.isArray(args?.tags) ? args.tags : [])
+              .filter((t) => typeof t === 'string' && t.trim() !== '')
+              .map((t) => scrub(t.trim(), { thirdParty: false }).text.slice(0, 12))
+              .slice(0, 4);
+            if (tags.length === 0) tags.push('手记');
+
+            const sessionId = exec?.agent?.id;
+            const entry = normalizeDiaryEntry({
+              id: makeDiaryId(now, archive.diary),
+              // 洗过再截 —— 先截再洗会把半截密钥留在末尾
+              text: stripTimeWords(scrubbed.text.slice(0, 400)),
 ```
 
 </details>
@@ -612,7 +791,7 @@ state/forget处理器
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/host/index.mjs:842-852](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L842-L852)
+**依据 1 · 源码核查**：[src/host/index.mjs:1036-1046](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1036-L1046)
 
 judge额外请求预算
 
@@ -635,7 +814,7 @@ judge额外请求预算
 
 </details>
 
-**依据 2 · 源码核查**：[src/host/index.mjs:1011-1019](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L1011-L1019)
+**依据 2 · 源码核查**：[src/host/index.mjs:1205-1213](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1205-L1213)
 
 固化另一次请求
 
@@ -651,7 +830,7 @@ judge额外请求预算
       signal: signal ?? abort.signal,
 ```
 
-**依据 3 · 源码核查**：[src/core/recall.mjs:1-13](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/core/recall.mjs#L1-L13)
+**依据 3 · 源码核查**：[src/core/recall.mjs:1-13](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/core/recall.mjs#L1-L13)
 
 本地召回的有限含义
 
@@ -692,11 +871,11 @@ judge额外请求预算
 
 #### 完整回答
 
-假设是统一出站门和可确认记忆。现有只洗固化而漏judge说明隐私不能按业务函数各自约定；所有模型请求应经过同一scrub并给阻断收据。事实/推断/敏感级与来源事件绑定，仅自动召回确认的低敏感事实。合成凭据跨judge/固化/手记/日志追踪，漏出或误归因率不降就否定，需同时测确认负担与体验退步。
+假设是统一出站门和可确认记忆。已有固化、主动手记和历史事件清洗，但仍漏judge说明隐私不能按业务函数各自约定；所有模型请求应经过同一scrub并给阻断收据。事实/推断/敏感级与来源事件绑定，仅自动召回确认的低敏感事实。合成凭据跨judge/固化/手记/日志追踪，漏出或误归因率不降就否定，需同时测确认负担与体验退步。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core/privacy.mjs:129-148](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/core/privacy.mjs#L129-L148)
+**依据 1 · 源码核查**：[src/core/privacy.mjs:160-179](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/core/privacy.mjs#L160-L179)
 
 可复用密钥硬门及泛化规则
 
@@ -728,7 +907,7 @@ judge额外请求预算
 
 </details>
 
-**依据 2 · 源码核查**：[src/core/judge.mjs:101-115](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/core/judge.mjs#L101-L115)
+**依据 2 · 源码核查**：[src/core/judge.mjs:101-115](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/core/judge.mjs#L101-L115)
 
 未统一出站门的证据
 
@@ -769,7 +948,7 @@ ${notes.join('\n')}`;
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:14-28](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/README.md#L14-L28)
+**依据 1 · 作者声明**：[README.md:14-28](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/README.md#L14-L28)
 
 作者明确采用边界
 
@@ -796,7 +975,7 @@ ${notes.join('\n')}`;
 
 </details>
 
-**依据 2 · 源码核查**：[src/host/index.mjs:842-857](https://github.com/AirPineApplea/feiyu-memory/blob/4c198e4fb6b86695b497d08a1f680c196d9a0431/src/host/index.mjs#L842-L857)
+**依据 2 · 源码核查**：[src/host/index.mjs:1036-1051](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L1036-L1051)
 
 额外模型处理必须进入采用判断
 
@@ -823,5 +1002,147 @@ ${notes.join('\n')}`;
 ```
 
 </details>
+
+<a id="research-q07"></a>
+
+<a id="detail-section-17"></a>
+
+### Q07 · 删除与写失败可见性是否保证档案可恢复且不会复活？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+当前writeArchiveDir在写入清单后删除不再需要的月份jsonl，archiveFromFiles也应用deleted_ids墓碑，replace导入把loadedIds清空。三者分别约束物理残留、重启读取和导入合并，支持“删除后不应自动复活”的具体改善，但仍是多个文件顺序操作，非跨文件事务，手记/备份不在月份清理范围。
+
+连续写失败提示存在可核查控制流缺陷。persist在catch中writeFailures加1并判断>=3，catch正常返回后无条件进入then把计数归0；串行链下一次失败再次从0开始，因而通常不能累计到第三次降级。成功和被catch吞掉的失败都走同一清零分支。这里是Promise控制流推断，未故障注入；不把它写成实测数据丢失，但应拒绝依赖“三次失败必在面板显现”。
+
+采用前应分别观察工具答复、内存、实际jsonl与重启读取。备份恢复须保留墓碑和导入意图，写失败时不可把“记住了”当耐久提交收据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/host/index.mjs:282-308](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L282-L308)
+
+月份清单外jsonl被移除，其他文件明确不清。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  for (const f of files) {
+    await writeFileAtomic(path.join(dir, f.name), f.data);
+  }
+
+  // ── 写完再清一遍：下不在清单里的月份文件删掉 ──
+  //
+  // archiveToFiles 只给"有条目的月份"产出文件。于是：
+  //
+  //   某月最后一条被「忘掉」→ 那个月不再有清单文件 → 旧 jsonl 没人覆盖
+  //   焚毁（清空所有）    → 一个月份都不产出 → 所有旧 jsonl 全留着
+  //
+  // 结果就是"内存 0 条，磁盘明文还在，重启读回来" —— 删除形同虚设。
+  //
+  // 写 = 让磁盘和内存一致。所以这里必须主动清掉多余的那个月。
+  // 只清 DIARY_DIR 下的 .jsonl：日记.md（渲染版）、手记.md、.bak-* 一律不碰。
+  const wanted = new Set(
+    files.filter((f) => f.name.startsWith(`${DIARY_DIR}/`)).map((f) => path.basename(f.name)),
+  );
+  const diaryDir = path.join(dir, DIARY_DIR);
+  if (!existsSync(diaryDir)) return;
+  for (const name of await readdir(diaryDir)) {
+    if (!name.endsWith('.jsonl')) continue;
+    if (wanted.has(name)) continue;
+    await rm(path.join(diaryDir, name), { force: true });
+    warn(`清掉多余的月份文件：${DIARY_DIR}/${name}（已经没有条目标了）`);
+  }
+}
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/core/archive.mjs:245-263](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/core/archive.mjs#L245-L263)
+
+重启读取应用删除墓碑。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+  //
+  // 社区报的（这次比前两个严重）：焚毁 / 忘掉一条之后，内存里没了，
+  // **磁盘上那份 jsonl 没被重写** —— 于是重启一读，删掉的内容全回来了。
+  //
+  // 为什么之前只在 mergeArchives 里过滤：那个函数是"磁盘 + 内存"的三路合并，
+  // 它需要墓碑来判断"这条是我删的还是别人加的"。但**加载这一步不经过它** ——
+  // 启动时直接 archiveFromFiles(entries)，磁盘上有什么就读什么。
+  //
+  // 所以过滤要做两处：合并时一次，**读盘时也要一次**。
+  // （导入包依然是"先撤碑、再读"，见 importPack —— 那是用户明确要把东西拿回来。）
+  const tombstones = new Set(
+    Array.isArray(manifest.deleted_ids) ? manifest.deleted_ids.filter((x) => typeof x === 'string') : [],
+  );
+  const visible = tombstones.size > 0 ? diary.filter((e) => !tombstones.has(e.id)) : diary;
+  const resurrected = diary.length - visible.length;
+  if (resurrected > 0) {
+    warnings.push(`按墓碑跳过 ${resurrected} 条已删除的日记（它们还躺在磁盘上）`);
+  }
+
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/host/index.mjs:630-665](https://github.com/AirPineApplea/feiyu-memory/blob/38b2d42b5026d557bf69bb711d951055858b54e9/src/host/index.mjs#L630-L665)
+
+catch之后then无条件清零，失败计数不能正常累积。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+  function persist() {
+    if (!ready) return writeChain;
+    writeChain = writeChain
+      .then(async () => {
+        // ⚠️ 顺序要紧：**先并、再改时间戳、再写。**
+        // 合并会把 archive 换成新对象，所以 snapshot 必须在合并之后取。
+        await mergeDiskEntries();
+        // 人格也要先问一声磁盘 —— 不然人手动改的会在这里被覆盖掉
+        syncPersonaFromDisk();
+        const merged = archive;
+        merged.manifest.updated_at = Date.now();
+        await writeArchiveDir(archiveDirectory, archiveToFiles(merged));
+        await writeReadableDiary(merged);
+      })
+      .catch((err) => {
+        // ⚠️ **连续写盘失败要让面板看得出来。**
+        //
+        // 原来这里只 warn 一句就吞掉，工具照样返回"记住了"。
+        // 社区报告点了一句：这次这个坑是"写成功了但写错地方"，所以捕获救不了 ——
+        // 但**真的写失败**的时候，用户同样只会看到「记住了」。
+        //
+        // 所以：连续 3 次失败就把 degraded 置真，面板上会显示"档案读不了"。
+        // 一次失败可能只是临时占用，不值得惊动用户。
+        writeFailures += 1;
+        warn(
+          `写档案失败（连续第 ${writeFailures} 次）：${err instanceof Error ? err.message : String(err)}`,
+        );
+        if (writeFailures >= 3 && !degraded) {
+          degraded = true;
+          warn('档案连续写失败 3 次，标记为降级 —— 面板上会显示出来');
+        }
+      })
+      .then(() => {
+        // 成功一次就把计数清零：一次失败不该永久挂着
+        writeFailures = 0;
+      });
+```
+
+</details>
+
+#### 缺口
+
+- 跨文件中断与重启恢复没有本轮故障注入。
+  **影响**：不能证明任意断电时删除和导入均完整。
+  **进一步探讨**：对第N个文件写/删失败、三次连续写失败及重启进行合成档案对照，观察落盘、面板和恢复收据。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

@@ -1,54 +1,44 @@
 {
     "repository": "dsh-wsl-workspace-maintainers/dsh-wsl-workspace",
     "repository_id": 1334205011,
-    "captured_at": "2026-10-22T15:12:24.548Z",
-    "window_start": "2026-09-22T15:12:24.548Z",
-    "stars": 97,
-    "pushed_at": "2026-10-22T06:34:00Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
+    "stars": 100,
+    "pushed_at": "2026-10-25T06:50:13Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 3,
+        "closed": 29,
+        "created_30d": 23,
+        "closed_30d": 21,
+        "updated_30d": 24
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32DC:15C753:9757A9:A3A1A0:6ADA27DA and timestamp 2026-10-22 15:12:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 33AE:3278A3:9B2E69:A7761B:6ADA27DB and timestamp 2026-10-22 15:12:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20created%3A2026-09-22T15%3A12%3A24.548Z..2026-10-22T15%3A12%3A24.548Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 346E:31A217:9CC468:A90EA9:6ADA27DD and timestamp 2026-10-22 15:12:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A12%3A24.548Z..2026-10-22T15%3A12%3A24.548Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3544:1C34B9:93FD86:A03E34:6ADA27DE and timestamp 2026-10-22 15:12:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Adsh-wsl-workspace-maintainers%2Fdsh-wsl-workspace%20is%3Aissue%20updated%3A2026-09-22T15%3A12%3A24.548Z..2026-10-22T15%3A12%3A24.548Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3636:324F03:BE296B:CA6D43:6ADA27DF and timestamp 2026-10-22 15:12:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-wsl-workspace",
-        "captured_at": "2026-10-22T15:12:31.889Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 2975,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-workspace",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 2765,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-wsl-workspace",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T14:26:11.920Z",
-            "captured_at": "2026-10-22T15:12:31.889Z",
+            "captured_at": "2026-10-25T16:28:20.076Z",
             "source_url": "https://registry.npmjs.org/dsh-wsl-workspace",
             "error": null,
-            "latest_version": "0.7.9",
-            "latest_published_at": "2026-10-20T15:59:05.428Z",
+            "latest_version": "0.7.11",
+            "latest_published_at": "2026-10-25T06:51:39.416Z",
             "latest_error": null
         }
     }

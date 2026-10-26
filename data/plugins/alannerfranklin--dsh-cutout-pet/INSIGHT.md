@@ -23,7 +23,7 @@
   - [1.4 启动步骤](#detail-section-5)
   - [1.5 成本](#detail-section-6)
   - [1.6 效果](#detail-section-7)
-  - [1.7 工程贡献](#detail-section-8)
+  - [1.7 工程亮点](#detail-section-8)
   - [1.8 主要限制](#detail-section-9)
   - [1.9 使用建议](#detail-section-10)
   - [1.10 核查说明与分析版本](#detail-section-11)
@@ -120,7 +120,7 @@
 
 <a id="detail-section-8"></a>
 
-### 1.7 工程贡献
+### 1.7 工程亮点
 
 > **亮点**：在 DSH 中串起本地抠图预览、Host持久化、比例拖动锚点和余额气泡，较外部编辑加贴图减少跨工具交接；增量在宿主集成而非新分割算法，尚无效果排名或首创证据。见[Q03](#research-q03)。
 

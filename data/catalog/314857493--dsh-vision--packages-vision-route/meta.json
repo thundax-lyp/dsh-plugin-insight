@@ -1,10 +1,10 @@
 {
     "repository": "314857493/dsh-vision",
     "repository_id": 1335070045,
-    "captured_at": "2026-10-22T16:02:44.041Z",
-    "window_start": "2026-09-22T16:02:44.041Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
     "stars": 2,
-    "pushed_at": "2026-09-05T08:07:54Z",
+    "pushed_at": "2026-10-23T07:40:22Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,40 +15,51 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E5B6:24D2EB:A3F060:B0E6DC:6ADA33A6 and timestamp 2026-10-22 16:02:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 977C:3791EB:13B2FFE:15D2267:6ADEB52C and timestamp 2026-10-26 02:04:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E660:10116C:A29FDF:AF91AF:6ADA33A7 and timestamp 2026-10-22 16:02:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 97C6:E375F:144D0CB:166C0F7:6ADEB52D and timestamp 2026-10-26 02:04:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20created%3A2026-09-22T16%3A02%3A44.041Z..2026-10-22T16%3A02%3A44.041Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E716:1B7F18:A2B21B:AFAA6C:6ADA33A8 and timestamp 2026-10-22 16:02:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9804:374B14:162955A:1849FE1:6ADEB52E and timestamp 2026-10-26 02:04:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A02%3A44.041Z..2026-10-22T16%3A02%3A44.041Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E7E4:1009D0:A56B4B:B25FF1:6ADA33A9 and timestamp 2026-10-22 16:02:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 986C:376BC0:18F0577:1B104D5:6ADEB52F and timestamp 2026-10-26 02:04:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20updated%3A2026-09-22T16%3A02%3A44.041Z..2026-10-22T16%3A02%3A44.041Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E8BC:1035EF:9FF24B:ACE6AD:6ADA33AA and timestamp 2026-10-22 16:02:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A314857493%2Fdsh-vision%20is%3Aissue%20updated%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 98BE:381AC0:1417AE4:1637AFB:6ADEB530 and timestamp 2026-10-26 02:04:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-vision-proxy-route",
-        "captured_at": "2026-10-22T16:02:51.131Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 1252,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-vision-proxy-route",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 1305,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-vision-proxy-route",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-17T08:51:42.977Z",
-            "captured_at": "2026-10-22T16:02:51.131Z",
+            "captured_at": "2026-10-25T16:28:20.076Z",
             "source_url": "https://registry.npmjs.org/dsh-vision-proxy-route",
             "error": null,
-            "latest_version": "0.1.4",
-            "latest_published_at": "2026-09-05T14:25:08.390Z",
+            "latest_version": "0.1.5",
+            "latest_published_at": "2026-10-23T07:26:20.515Z",
             "latest_error": null
         }
     }

@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[901a665](https://github.com/AlexPeng07/dsh-custom-plugin/tree/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f)
+分析版本：[8016757](https://github.com/AlexPeng07/dsh-custom-plugin/tree/8016757784f5b94d3dfc55dcba02ef7ae239c4c5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,207](https://img.shields.io/static/v1?label=npm+30d&message=2%2C207&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,235](https://img.shields.io/static/v1?label=npm+30d&message=2%2C235&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
 <!-- END META -->
 
 > **实现功能**：DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。
@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -41,62 +41,63 @@
 
 > **用途**：希望在一个插件中集中管理 Web 外观、会话操作和本地用量的用户。
 
-DSH 默认 Web GUI 与多单功能插件；此套件提供一个共享面板和状态文件。
+单一外观插件、手工导出/搜索和人工用量表是较窄替代；只有同时需要多个能力的用户才可能抵消广权限、共享状态和版本适配负担。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| 多功能面板 | 集中操作 | 广权限/复杂性 |
-| 共享状态 | Web/Desktop 一致 | 并发需测 |
-| 预算/余额 | 成本感知 | 估算非账单 |
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| 外观/快捷面板 | 集中个人操作 | 需匹配slots，视觉未独立验 |
+| 搜索与导出 | 查阅会话 | 具有会话读取能力，权限需核 |
+| 备份与共享状态 | 迁移偏好与管理数据 | Key排除，跨进程仍有竞争窗口 |
+| 用量与余额 | 查看估算与门户数据 | 非正式账单，余额需有效Key |
 
-**流程与依赖**
+#### 启动与依赖
 
-#### 条件
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node22+与匹配DSH | 必需 | 双半区插件与路由 | 开放范围只放行，不保证所有版本接口 |
+| webServer/tools/sessionQuery | Host必需 | 状态、搜索和会话读取 | 缺少则相关功能不可用 |
+| Web slots与客户端 | GUI必需 | 面板与渲染 | 需要实际浏览器验收 |
+| API Key | 余额查询可选 | 外部服务请求 | 不配置则不用该能力 |
+| 本地Mermaid依赖 | 离线渲染必需 | 本地脚本 | 缺失可能转CDN |
+| 可写DSH_HOME | 状态必需 | 共享JSON与备份 | 多进程冲突须额外核对 |
 
-| 条件 | 用途 | 缺失时 |
-| --- | --- | --- |
-| 声明 DSH 版本 | slots/Host API | 整包跳过或降级 |
-| 本地 Mermaid 包 | 离线图表 | CDN 回退 |
-| DeepSeek Key | 官方余额 | 只用本地估算 |
+#### 启动步骤
 
-#### 试用
-
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 备份 | 导出状态 | 可恢复 |
-| 核功能 | 会话/图表/用量 | 数据正确 |
-| 并发 | Web/Desktop 同写 | 无丢失 |
-| 对账 | 本地估算对官方 | 差异可接受 |
-
-**效果与成本**
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 建立隔离profile | 用户固定宿主和本包版本 | 保留状态备份 |
+| 选择功能 | 用户只开需要的2–3项 | 核各自slots与路由 |
+| 读写核对 | 用户核搜索、导出和来源围栏 | 异源请求应拒绝，不用真实密钥试错 |
+| 备份恢复 | 用户先预览再导入 | 核Key被排除且恢复副本存在 |
+| 双宿主试用 | 用户以合成状态并发写 | 检丢更新，异常先停并保留文件 |
 
 #### 成本
 
-| 阶段 | 资源/人工 | 边界 |
-| --- | --- | --- |
-| 装入 | 版本匹配、profile | 宿主兼容严格 |
-| 使用 | 多功能设置、凭据可选 | 计价仅估算 |
-| 维护 | 状态备份/冲突处理 | 跨进程风险需测 |
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次使用 | Node/DSH、客户端资源和本地状态；金额未知 | 固定版本、备份和功能选择；工时未知 | 不自带业务模型或账户 |
+| 持续使用 | 会话查询、状态I/O、可选外部余额/CDN | 核估价与多功能设置 | 无同任务节时或资源测量 |
+| 失败恢复 | 恢复副本、重查/重建和可能重试资源 | 对照共享文件、找冲突和丢更新 | 原子rename不等跨进程事务 |
 
 #### 效果
 
-| 项 | 代码支持 | 未知 |
-| --- | --- | --- |
-| 工作台功能 | slots/Host API | 实际效率 |
-| 状态备份 | 投影/预览/恢复 | 多进程压力 |
-| 用量预算 | 本地折叠 | 与账单差异 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 多入口集中 | Host路由与client slots | 实际效率和浏览器视觉 |
+| 状态恢复 | 投影、预览和副本流程 | 并发压力下是否无丢失 |
+| 用量/预算 | 本地事件折叠估算 | 与真实账单及合同差异 |
 
 > **思考**：Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：多项 Web 效率功能共用一套设置、状态、备份与宿主路由。详见[Q01](#research-q01)。
 
@@ -122,18 +123,18 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 **核查状态**：已检查源码。
 
-组合能力与保护机制可从源码核查；跨进程读合并写无共同锁、目标版本体验和外部价目仍待验证。
+组合与状态机制由源码支持，跨进程覆盖属于待复现竞争风险；作者兼容结果不作为本轮独立验收，CAS设计假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、src/index.ts、src/routes.ts、src/loopback.ts、src/state.ts、src/backup.ts、src/host-service.ts、src/credentials.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、src/index.ts、src/routes.ts、src/loopback.ts、src/state.ts、src/backup.ts、src/host-service.ts、src/credentials.ts、scripts/compat-canary.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：静态审阅 README.zh、Host 路由、状态、备份、凭据与 Mermaid 路径；不运行目标插件。
-- 下一步：在目标声明版本验证 slots 与路由；双进程交错写、备份脱敏、Mermaid 本地/后备与账单对照。
+- 边界：固定 Host入口、路由围栏、共享状态、备份与凭据/Mermaid调用，以及兼容canary脚本；非全套UI审计，未执行插件或作者探针。
+- 下一步：按 [Q04](#research-q04) 用合成状态同时启动两个宿主，比较直接覆盖、本版三方合并与CAS原型的丢更新和恢复工时；套件净收益需同时记录单功能替代成本。
 
 **分析版本**
 
 - **仓库**：[AlexPeng07/dsh-custom-plugin](https://github.com/AlexPeng07/dsh-custom-plugin)
-- **版本号**：0.8.0（[固定提交 901a665](https://github.com/AlexPeng07/dsh-custom-plugin/tree/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f)）
-- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.1（[固定提交 8016757](https://github.com/AlexPeng07/dsh-custom-plugin/tree/8016757784f5b94d3dfc55dcba02ef7ae239c4c5)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -143,7 +144,7 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 加入跨进程版本/CAS 协议并持续核价，可降低同步与费用误导；现版未验证。详见[Q04](#research-q04)。
 
-在目标声明版本验证 slots 与路由；双进程交错写、备份脱敏、Mermaid 本地/后备与账单对照。
+按 [Q04](#research-q04) 用合成状态同时启动两个宿主，比较直接覆盖、本版三方合并与CAS原型的丢更新和恢复工时；套件净收益需同时记录单功能替代成本。
 
 <a id="detail-section-9"></a>
 
@@ -154,21 +155,17 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 5 | 1628 | — | — | 25466 |
-| .mjs | source | 5 | 825 | 591 | 174 | — |
+| .md | source | 5 | 1695 | — | — | 26213 |
+| .mjs | source | 6 | 1016 | 744 | 196 | — |
 | .ts | source | 24 | 4714 | 3652 | 785 | — |
-| .tsx | source | 1 | 3038 | 2689 | 298 | — |
-| .ts | test | 26 | 3397 | 2809 | 318 | — |
+| .tsx | source | 1 | 3051 | 2695 | 305 | — |
+| .ts | test | 26 | 3399 | 2808 | 314 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin/issues?q=is%3Aissue+created%3A2026-09-22T06%3A06%3A15.492Z..2026-10-22T06%3A06%3A15.492Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A06%3A15.492Z..2026-10-22T06%3A06%3A15.492Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/AlexPeng07/dsh-custom-plugin/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -188,9 +185,11 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 作者把外观、文件夹、提示词库、会话搜索/导出、Mermaid、批量归档、用量/预算及快捷面板集中到 DSH Web。Host 注册状态、时间线、搜索、备份、余额、Mermaid 等路由和 custom_plugin_status 工具；客户端通过 slots 挂载。这降低多插件拼装成本，但也让一个包同时拥有会话读取、本地状态、凭据和外部余额查询能力。README 所列宿主活体验证为作者报告，本轮仅静态检查源码，不视为独立复现。
 
+当前包0.9.1，engines.dsh与tools peer采用 >=0.1.7-rc.2 的开放下限。它允许更新宿主，并不证明所有未来版本已验证。README 所列0.2.1-rc.3启动结果和canary是作者报告；scripts/compat-canary.mjs实际会固定临时DSH_HOME、选择latest/next较新版本并跑探针，但本轮没有执行或检查远端运行结果。
+
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:15-35](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L15-L35)
+**依据 1 · 作者声明**：[README.zh.md:15-35](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L15-L35)
 
 作者描述多功能和双半区架构。
 
@@ -223,7 +222,7 @@ DeepSeek Harness（DSH）Web GUI 的 Custom 便利套件：个性化外观、天
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:23-63](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/index.ts#L23-L63)
+**依据 2 · 源码核查**：[src/index.ts:23-63](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/index.ts#L23-L63)
 
 Host 注入 webServer/tools/sessionQuery 并初始化服务。
 
@@ -276,7 +275,7 @@ function applyImpl(ctx: Context): void {
 
 </details>
 
-**依据 3 · 源码核查**：[src/routes.ts:66-75](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts#L66-L75)
+**依据 3 · 源码核查**：[src/routes.ts:66-75](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/routes.ts#L66-L75)
 
 集中构造各类 Host route。
 
@@ -298,7 +297,7 @@ export function makeCustomPluginRoutes(host: CustomPluginHost, ready: Promise<vo
 
 </details>
 
-**依据 4 · 源码核查**：[src/routes.ts:320-329](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts#L320-L329)
+**依据 4 · 源码核查**：[src/routes.ts:320-329](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/routes.ts#L320-L329)
 
 返回状态、搜索、导出、余额、Mermaid 等路由。
 
@@ -316,6 +315,33 @@ export function makeCustomPluginRoutes(host: CustomPluginHost, ready: Promise<vo
 
   return [stateRoute, timelineRoute, backupRoute, searchRoute, exportRoute, balanceRoute, usageScanRoute, mermaidFetchRoute, mermaidScriptRoute, diagRoute, debugRoute]
 }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[scripts/compat-canary.mjs:3-17](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/scripts/compat-canary.mjs#L3-L17)
+
+以临时profile执行兼容探针的明确边界，不等未来版本保证。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+ * Compatibility canary: install the published plugin into a scratch profile of
+ * the newest dsh release, boot that host for real, and run the live probes.
+ *
+ * The support line is an open lower bound (`engines.dsh: >=0.1.7-rc.2`), so the
+ * host no longer tells users that an untested dsh release is unsupported. This
+ * canary is what notices when such a release actually breaks an API the bundle
+ * still calls; it runs on a schedule in CI and opens an issue on failure.
+ *
+ *   node scripts/compat-canary.mjs                    # newest of npm latest/next
+ *   node scripts/compat-canary.mjs 0.2.1-rc.3         # one exact version
+ *   node scripts/compat-canary.mjs --plugin ./x.tgz   # test a local build
+ *   node scripts/compat-canary.mjs --keep             # keep the scratch profile
+ *
+ * Read-only with respect to the developer's harness: every dsh command gets a
+ * temporary DSH_HOME. Requires Node 22+, npm, bash and curl.
 ```
 
 </details>
@@ -340,7 +366,7 @@ export function makeCustomPluginRoutes(host: CustomPluginHost, ready: Promise<vo
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/state.ts:292-345](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts#L292-L345)
+**依据 1 · 源码核查**：[src/state.ts:292-345](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/state.ts#L292-L345)
 
 写队列、PID 临时文件、rename 和保存基线。
 
@@ -406,7 +432,7 @@ export function saveStateFile(state: CustomPluginState, home: string = dshHome()
 
 </details>
 
-**依据 2 · 源码核查**：[src/state.ts:349-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts#L349-L386)
+**依据 2 · 源码核查**：[src/state.ts:349-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/state.ts#L349-L386)
 
 通过 stat 比较和三方合并，源码注明漏检及不可读回退。
 
@@ -456,7 +482,7 @@ function safeParse(text: string): CustomPluginState | null {
 
 </details>
 
-**依据 3 · 作者声明**：[README.zh.md:171-179](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L171-L179)
+**依据 3 · 作者声明**：[README.zh.md:176-184](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L176-L184)
 
 作者说明 Web/Desktop 共用状态文件。
 
@@ -492,7 +518,7 @@ Host 路由设回环 socket 与 Host 校验、拒 cross-site，Origin 有值时�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/loopback.ts:43-65](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/loopback.ts#L43-L65)
+**依据 1 · 源码核查**：[src/loopback.ts:43-65](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/loopback.ts#L43-L65)
 
 本地请求、Host、cross-site/Origin 信任逻辑。
 
@@ -527,7 +553,7 @@ export function isLoopbackRequest(request: IncomingMessage): boolean {
 
 </details>
 
-**依据 2 · 源码核查**：[src/routes.ts:18-55](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/routes.ts#L18-L55)
+**依据 2 · 源码核查**：[src/routes.ts:18-55](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/routes.ts#L18-L55)
 
 状态/备份 body 限制与路由 guard。
 
@@ -577,7 +603,7 @@ async function readBody(req: IncomingMessage, limit: number): Promise<unknown> {
 
 </details>
 
-**依据 3 · 源码核查**：[src/backup.ts:83-111](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/backup.ts#L83-L111)
+**依据 3 · 源码核查**：[src/backup.ts:83-111](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/backup.ts#L83-L111)
 
 备份字段显式投影。
 
@@ -618,7 +644,7 @@ export function createBackup(state: CustomPluginState): CustomPluginBackupV1 {
 
 </details>
 
-**依据 4 · 源码核查**：[src/host-service.ts:828-843](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/host-service.ts#L828-L843)
+**依据 4 · 源码核查**：[src/host-service.ts:828-843](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/host-service.ts#L828-L843)
 
 Mermaid 本地加载与 CDN 后备。
 
@@ -666,12 +692,12 @@ export function defaultLocalMermaidPath(): string | null {
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:109-135](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L109-L135)
+**依据 1 · 作者声明**：[README.zh.md:109-139](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L109-L139)
 
 作者描述本地估算、余额和 Key 来源。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
 
@@ -681,7 +707,8 @@ export function defaultLocalMermaidPath(): string | null {
 
 | 插件版本 | 构建并实测过的 dsh | 状态 |
 | --- | --- | --- |
-| 0.8.x | dsh 0.1.7-rc.2、dsh 0.2.0-rc.2 与 dsh 0.2.1-rc.2（两道门都写了这三个版本，见「安装」） | 本版本 |
+| 0.9.x | 任何 >= 0.1.7-rc.2 的 dsh（开放式；已在 0.1.7-rc.2、0.2.0-rc.2、0.2.1-rc.2 与 0.2.1-rc.3 实测） | 本版本 |
+| 0.8.x | dsh 0.1.7-rc.2、dsh 0.2.0-rc.2 与 dsh 0.2.1-rc.2（实测窗口） | 上一版；在 dsh 0.2.1-rc.3 及以后会被拒绝 |
 | 0.7.x | dsh 0.1.7-rc.2 与 dsh 0.2.0-rc.2 | 上一版；在 dsh 0.2.1-rc.2 上会被拒绝 |
 | 0.6.x | dsh 0.1.7-rc.2 与 dsh 0.2.0-rc.2 | 上一版；在 dsh 0.2.1-rc.2 上会被拒绝 |
 | 0.5.x | dsh 0.1.7-rc.2（peer 范围 `>=0.1.7-rc.2 <0.2.0-0`） | 在 0.1.x 上没问题；任何 0.2.x 宿主都会拒绝它，dsh 桌面版也算 |
@@ -690,34 +717,40 @@ export function defaultLocalMermaidPath(): string | null {
 0.1.7 改掉了本套件依赖的插件侧契约（会话导航归 `ctx.uiWorkspace`、会话列表不再提供
 当前查看的会话、消息模型移除 `tool-result` 内容块），两个版本互不替代。dsh
 0.2.1-alpha.4 又改掉了兼容门本身：优先读 `engines.dsh`，只有它缺省时才回退到
-`@deepseek-ai/dsh-*` peer 范围。本包两处声明同一条范围；旧宿主读 peer，新宿主读
-`engines.dsh`，`pnpm smoke` 会在两者判定不一致时判红。范围不匹配的 bundle 会在
-安装与启动时被整包跳过。没有这道闸的更早宿主仍会加载插件，但表现为功能退化：实测
+`@deepseek-ai/dsh-*` peer 范围。本包两处声明同一条**开放式下限**（`>=0.1.7-rc.2`），
+因此任何更新的 dsh 版本都会被放行，不必等插件发版；旧宿主读 peer，新宿主读
+`engines.dsh`，`pnpm smoke` 会在两者判定不一致时判红。实测过的版本是证据、不是闸门，
+见上表与 CHANGELOG。定时 canary 会把已发布插件装进 npm `latest`/`next` 里最新的
+dsh，真实启动并跑活体探针——真的 API 断裂会变成 issue，而不是用户眼前的“不兼容”。
+没有这道闸的更早宿主仍会加载插件，但表现为功能退化：实测
 0.1.1-rc.2 上 8 个槽位注册成 7 个，turnTail 条目被拒（该槽位自 0.1.6-alpha.2 起由
 chain 改为 list），打开会话、创建分支、跨会话搜索会提示对应服务缺失，而不是抛错。
 
 ## 安装
 
-前置：Node 22+、pnpm，以及 `dsh` CLI（官方 npm 包 `@deepseek-ai/dsh`；未全局安装时，可用 `npx @deepseek-ai/dsh` 代替 `dsh`）。本版本面向 **dsh 0.1.7-rc.2 及其后的 0.1.x，外加 0.2.0-rc.2 与 0.2.1-rc.2**：dsh 0.2.1-alpha.4 及更新版本优先读 `engines.dsh`，仅在它缺省时回退到 `@deepseek-ai/dsh-*` peer 范围；旧宿主仍读 peer。本包两处声明同一条范围，不为没构建过的版本开口子。0.8.0 把构建与测试队列整体切到 0.2.1-rc.2。产物用桌面版自带 CLI 装进隔离的 0.2.1-rc.2 profile，**没有使用任何兼容豁免**，随后真实冷启动：boot 图 70 行、五个 `dsh.client.inject` 目标齐全、客户端 bundle 服务约 200 KB、Mermaid 本地引擎 3.57 MB、state / 用量 / 备份路由、UTF-8 往返与桌面转发信任形状全部通过（16 项通过、1 项跳过；跳过的只是无会话 profile 上的时间线/导出/搜索，该路径由单测覆盖，且 0.2.1 只新增可选 `formatStatus` 字段）。0.6.0 的产物在 0.2.0-rc.2（66 行）与 0.1.7-rc.2（65 行）上各跑过活体探针，19 项里 18 项通过；0.7.0 的产物额外在**真实桌面安装**上过了桌面形态活体探针（见下文「在 dsh 桌面版上」）。验不到的部分和以往一样：回合内的 chips（Mermaid 渲染、LaTeX）需要一次真实的模型回复，无凭据的临时家目录跑不出来，槽位渲染也仍要在浏览器里过一遍。范围刻意不收 0.2.0-rc.1、0.2.0-rc.3 及之后、0.2.0 正式版；同理也不收 0.2.1-alpha.x、0.2.1-rc.3 及之后与 0.2.1 正式版。范围的写法在这里有讲究：`^0.1.7-rc.2` 展开成 `>=0.1.7-rc.2 <0.2.0-0`，而每一个 `0.2.0-rc.N` 都排在 `0.2.0-0` **之上**，所以实测过的预发布版本必须单独写成一段——`pnpm smoke` 会检查构建目标确实落在声明范围里，并且 `engines.dsh` 与 peer 范围放行完全相同的版本。仍在旧版 dsh 的用户请安装对应的旧版插件（0.5.0 面向 0.1.7-rc.2），而不是授予兼容性豁免。
+前置：Node 22+、pnpm，以及 `dsh` CLI（官方 npm 包 `@deepseek-ai/dsh`；未全局安装时，可用 `npx @deepseek-ai/dsh` 代替 `dsh`）。本版本放行**所有 >= 0.1.7-rc.2 的 dsh**：`engines.dsh` 与 `@deepseek-ai/dsh-tools` peer 都是开放式下限，所以 dsh 0.2.1-alpha.4 及更新版本（优先读 `engines.dsh`）与旧宿主（读 peer）都不会拒绝更新的 dsh。0.9.0 的构建与测试队列是 0.2.1-rc.3。产物用桌面版自带 CLI 装进隔离的 0.2.1-rc.3 profile，**没有使用任何兼容豁免**，随后真实冷启动：boot 图 71 行、五个 `dsh.client.inject` 目标齐全、客户端 bundle 200,371 字节、Mermaid 本地引擎 3,572,661 字节、state / 用量 / 备份路由、UTF-8 往返与桌面转发信任形状全部通过（16 项通过、1 项跳过；跳过的是无会话 profile 上的时间线/导出/搜索，该路径由单测覆盖）。0.8.0 的产物在 0.2.1-rc.2 上跑过同一套探针（70 行）；0.6.0 的产物在 0.2.0-rc.2（66 行）与 0.1.7-rc.2（65 行）上各跑过 19 项里的 18 项；0.7.0 的产物额外在**真实桌面安装**上过了桌面形态活体探针（见下文「在 dsh 桌面版上」）。验不到的部分和以往一样：回合内的 chips（Mermaid 渲染、LaTeX）需要一次真实的模型回复，无凭据的临时家目录跑不出来，槽位渲染也仍要在浏览器里过一遍。宿主的兼容门分不清“实测过”与“没实测过”，所以写死上界会让每个新 dsh 版本都等到插件再次发版才可用；开放式下限加定时 canary 把这段等待换成自动发现。若确实要跑低于下限的宿主，请安装对应的旧版插件（0.5.0 面向 0.1.7-rc.2）。
 
 ### 从 npm 安装
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.zh.md:149-187](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/README.zh.md#L149-L187)
+**依据 2 · 作者声明**：[README.zh.md:150-192](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L150-L192)
 
 作者给出版本兼容及冷启动测试报告。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（43行）</summary>
 
 ````text
-这个版本，因此在桌面版上安装不需要任何兼容性豁免；0.7.1 及更早版本会被 0.2.1 的
-兼容门拒绝，给出的信息和 0.2.x 的 Web profile 完全一样。
+dsh 桌面版是同一套 Web 应用外面的一层 Electron 壳，截至 2026-10-23 随包携带
+**正好是 dsh 0.2.1-rc.3**——桌面发布线把壳和运行时钉成同一个版本，所以桌面端拿到
+的永远是某一个确定的 0.2.x 运行时。0.9.0 的开放式范围收 rc.3 及之后的每个桌面构建，
+安装不需要任何兼容性豁免；0.8.0 及更早用的是实测窗口，在 rc.3 上会被同一道门拒绝，
+给出的信息和 0.2.x 的 Web profile 完全一样。
 
-对 0.2.1-rc.2 的实测：boot 图里 70 行、我们那一行与五个 inject 目标都在、客户端
-bundle 以约 200 KB 服务、Mermaid 引擎本地加载，活体宿主探针 16 项通过、1 项跳过
+对 0.2.1-rc.3 的实测：boot 图里 71 行、我们那一行与五个 inject 目标都在、客户端
+bundle 以 200,371 字节服务、Mermaid 引擎本地加载，活体宿主探针 16 项通过、1 项跳过
 （跳过的是需要真实会话的会话路径）。访问围栏与官方 API 围栏同一套信任语义：回环
 套接字 + 回环 Host、非 `cross-site`、`origin` 缺省或与 Host 一致即放行。壳在把
 渲染进程的请求转发给它自己的 Host 之前会删掉 `host`、`origin`、`sec-fetch-site`、
@@ -725,7 +758,8 @@ bundle 以约 200 KB 服务、Mermaid 引擎本地加载，活体宿主探针 16
 还额外要求同源标记，曾把这套形状全部误拒为 forbidden，0.7.0 起修复并补了围栏级
 单测）。异源与跨站请求仍然 403。**0.7.0 的产物已在真实桌面安装上按桌面转发形状
 逐路由实测过**（state / debug / backup / 用量扫描 / Mermaid 引擎预加载与脚本路由
-全部 200，异源与跨站仍 403）；0.8.0 在冷启动的 0.2.1-rc.2 宿主上复跑了同一套形状。
+全部 200，异源与跨站仍 403）；0.8.0 在冷启动的 0.2.1-rc.2 宿主上复跑了同一套形状，
+0.9.0 在 rc.3 上再跑一遍。
 桌面窗口内的视觉验收（液态玻璃观感、面板布局、点阵清除）归装它的人过目。
 
 管桌面 profile 要用桌面版自带的 `dsh` 命令，不是 npm 装的那个——公开 CLI 拒绝
@@ -756,7 +790,7 @@ git 安装拉取的是源码，`prepare` 脚本会在安装端构建 `lib/`。pn
 
 </details>
 
-**依据 3 · 源码核查**：[src/backup.ts:155-233](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/backup.ts#L155-L233)
+**依据 3 · 源码核查**：[src/backup.ts:155-233](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/backup.ts#L155-L233)
 
 导入预览/合并及恢复副本实现。
 
@@ -847,7 +881,7 @@ export async function writeRecoveryBackup(path: string, state: CustomPluginState
 
 </details>
 
-**依据 4 · 源码核查**：[src/state.ts:315-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/901a665fd0ed6c50e9ed873bcc1b55cc6d16cb8f/src/state.ts#L315-L386)
+**依据 4 · 源码核查**：[src/state.ts:315-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/state.ts#L315-L386)
 
 跨进程状态写与合并路径。
 

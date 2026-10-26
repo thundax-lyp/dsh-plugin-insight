@@ -1,38 +1,49 @@
 {
     "repository": "AIcivilization/dsh-model",
     "repository_id": 1410395082,
-    "captured_at": "2026-10-23T01:50:40.453Z",
-    "window_start": "2026-09-23T01:50:40.453Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
     "stars": 2,
-    "pushed_at": "2026-10-23T01:08:26Z",
+    "pushed_at": "2026-10-25T12:22:00Z",
     "issues": {
-        "open": 0,
+        "open": null,
         "closed": 0,
         "created_30d": 0,
         "closed_30d": 0,
-        "updated_30d": null
+        "updated_30d": 0
     },
     "errors": [
         {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A40.453Z..2026-10-23T01%3A50%3A40.453Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C2EE:3F5089:161E5B:17EFA6:6ADABD78 and timestamp 2026-10-23 01:50:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAIcivilization%2Fdsh-model%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ABEC:DBDEA:149B538:16BBA0C:6ADEB546 and timestamp 2026-10-26 02:04:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T23:34:33.511Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-model",
-        "captured_at": "2026-10-23T01:50:48.619Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 2009,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-model",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 2481,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-model",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-08T14:12:04.163Z",
-            "captured_at": "2026-10-23T01:50:48.619Z",
+            "captured_at": "2026-10-25T16:28:20.076Z",
             "source_url": "https://registry.npmjs.org/dsh-model",
             "error": null,
-            "latest_version": "0.23.0",
-            "latest_published_at": "2026-10-23T00:50:40.868Z",
+            "latest_version": "0.23.3",
+            "latest_published_at": "2026-10-25T13:20:38.528Z",
             "latest_error": null
         }
     }

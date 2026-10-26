@@ -1,10 +1,10 @@
 {
     "repository": "240xu/dsh-message-ops",
     "repository_id": 1389945615,
-    "captured_at": "2026-10-23T01:50:05.581Z",
-    "window_start": "2026-09-23T01:50:05.581Z",
-    "stars": 0,
-    "pushed_at": "2026-10-21T14:08:39Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
+    "stars": 2,
+    "pushed_at": "2026-10-25T15:27:40Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,40 +15,51 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A86A:103D08:1157216:12A383F:6ADABD4F and timestamp 2026-10-23 01:50:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 93BC:EAC0E:14985AC:16B7F35:6ADEB535 and timestamp 2026-10-26 02:04:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A94A:3229D4:13A3905:14F064B:6ADABD51 and timestamp 2026-10-23 01:50:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9420:37C31F:1493C58:16B43D0:6ADEB537 and timestamp 2026-10-26 02:04:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20created%3A2026-09-23T01%3A50%3A05.581Z..2026-10-23T01%3A50%3A05.581Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA0E:294215:126AF0:13E234:6ADABD52 and timestamp 2026-10-23 01:50:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9494:2F83D5:1545E79:176602F:6ADEB539 and timestamp 2026-10-26 02:04:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A50%3A05.581Z..2026-10-23T01%3A50%3A05.581Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AB12:3EC4E3:1801B0:19D123:6ADABD53 and timestamp 2026-10-23 01:50:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9500:E0F1B:13FF2F7:161E3CA:6ADEB53C and timestamp 2026-10-26 02:04:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20updated%3A2026-09-23T01%3A50%3A05.581Z..2026-10-23T01%3A50%3A05.581Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AC1A:1BC665:12103F0:135CA05:6ADABD54 and timestamp 2026-10-23 01:50:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A240xu%2Fdsh-message-ops%20is%3Aissue%20updated%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A456:2A32BC:138FED8:15AEF2E:6ADEB53E and timestamp 2026-10-26 02:04:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T21:15:37.465Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@240xu/dsh-message-ops",
-        "captured_at": "2026-10-23T01:50:13.214Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 5119,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40240xu%2Fdsh-message-ops",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 5171,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40240xu%2Fdsh-message-ops",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-27T22:00:46.983Z",
-            "captured_at": "2026-10-23T01:50:13.214Z",
+            "captured_at": "2026-10-25T11:38:12.058Z",
             "source_url": "https://registry.npmjs.org/%40240xu%2Fdsh-message-ops",
             "error": null,
-            "latest_version": "0.11.1",
-            "latest_published_at": "2026-10-21T13:58:20.487Z",
+            "latest_version": "0.11.3",
+            "latest_published_at": "2026-10-25T01:45:50.648Z",
             "latest_error": null
         }
     }

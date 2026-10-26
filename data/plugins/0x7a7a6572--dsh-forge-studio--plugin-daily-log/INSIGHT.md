@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log)
+分析版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,971](https://img.shields.io/static/v1?label=npm+30d&message=1%2C971&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,593](https://img.shields.io/static/v1?label=npm+30d&message=1%2C593&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 <!-- END META -->
 
 > **实现功能**：聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。
@@ -19,7 +19,7 @@
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程贡献](#detail-section-4)
+  - [1.3 工程亮点](#detail-section-4)
   - [1.4 主要限制](#detail-section-5)
   - [1.5 使用建议](#detail-section-6)
   - [1.6 核查说明与分析版本](#detail-section-7)
@@ -42,13 +42,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向有Git提交或本地Claude/Codex/DSH对话的知识工作者，按日期/项目整理日报周报月报。Git提供提交活动，对话提供提问与模型回答，模板给业务章节；无需每个项目都有Git。历史报告本地管理、导出Markdown，适合先由本人校对再用于工作汇报。
+> **用途**：面向需要按项目和时间整理工作汇报、同时拥有 Git 或本地 Agent 日志的个人。目标是可溯源的报告草稿，使用者仍须确认真实交付与未完成事项。
 
-合格结果须可回到真实活动，区分已完成产出、讨论方案、模型建议和未完成事项。同功能多次提交可合并，但聊天里说完成不证明代码/业务真的交付，commit题目也不证明效果。未提交、会议、协作和线下工作本来不全，模型被提示向人补问而非猜。
-
-基线是人手浏览git log与多个聊天记录再编写。增量在跨源发现、按组下钻和模板辅助，报告仍由当前会话模型亲自写，不是确定性从事件生成经过业务验收的事实账本。
-
-人工浏览Git/聊天并按模板写工作汇报；插件减少跨源收集与首屏噪声，业务完成判断、隐性工作与披露审阅仍靠人。
+直接基线是人工浏览 git log 和多个本地聊天记录后写汇报；比较必须用相同项目、时间窗和作者，核漏项与把讨论误写为完成的比例，同时记录人工核查时间。
 
 <a id="detail-section-3"></a>
 
@@ -112,17 +108,13 @@
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程贡献
+### 1.3 工程亮点
 
 > **亮点**：将Git和三类本地日志归一为项目活动，按agent启用工具并用组索引下钻，再由模型按模板成文。详见[Q02](#research-q02)。
 
 将Git和三类本地日志归一为项目活动，按agent启用工具并用组索引下钻，再由模型按模板成文。详见[Q02](#research-q02)。
 
-按agent WeakMap避免重复启用，all Set保留release用于插件停用统一清理。createDailyLogGate先逐个register再加guidance，只有全部成功才返回总disposer；若中途register抛错，没有catch回滚已注册子项，gate.enable也在contribution成功后才记installed。故部分失败可能留下部分工具，下次重试重复注册；是否宿主自动回收需另核，不能从一次enable错误推断绝无残留。
-
-all Set持有每个成功release直到插件卸载，WeakMap本身不保证相关scope立即释放；长进程大量会话的保留成本未测。domain close在effect及apply失败调用但void不等待；渠道采集顺序执行，Git execFile设maxBuffer无timeout，日志readFile整文件读，渲染折叠并不限制首次解析内存和扫描时长。
-
-服务和提示做了错误/空结果区分的局部设计，但provider内部continue和tools丢truncated又破坏可见性。更优先的是统一采集收据，再谈按组索引节省多少上下文；不能把低显示行数等同低全部执行成本。
+按 Agent 限定按需工具作用域与组索引下钻值得借鉴，减少常态上下文负担；但注册中途失败缺局部回滚、采集无全链覆盖收据，影响恢复和完整性，详见 [Q06](#research-q06)。
 
 <a id="detail-section-5"></a>
 
@@ -136,28 +128,24 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 
 先观察，优先保留渠道截断/失败收据并加确认/安全导出，再以个人匿名语料核事实与漏项。详见[Q07](#research-q07)。
 
-合格结果须可回到真实活动，区分已完成产出、讨论方案、模型建议和未完成事项。同功能多次提交可合并，但聊天里说完成不证明代码/业务真的交付，commit题目也不证明效果。未提交、会议、协作和线下工作本来不全，模型被提示向人补问而非猜。
-
-基线是人手浏览git log与多个聊天记录再编写。增量在跨源发现、按组下钻和模板辅助，报告仍由当前会话模型亲自写，不是确定性从事件生成经过业务验收的事实账本。
-
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
 
 **核查状态**：已检查源码。
 
-已检查源码。采集/按需工具/分组下钻明确，截断与失败透传、确认和输出范围仍有缺口。
+已有贡献由固定提交源码支持；端到端报告或记忆质量未经运行对照；未来设计假设未验证。
 
 - 已检查：作者 README、包清单、源码路径 packages/plugin-daily-log/README.md、packages/plugin-daily-log/package.json、packages/plugin-daily-log/src/index.ts、packages/plugin-daily-log/src/service.ts、packages/plugin-daily-log/src/agent/reference.ts、packages/plugin-daily-log/src/agent/tool-gate.ts、packages/plugin-daily-log/src/agent/tool-dispatcher.ts、packages/plugin-daily-log/src/agent/scan-render.ts、packages/plugin-daily-log/src/agent/tools.ts、packages/plugin-daily-log/src/sources/git.ts、packages/plugin-daily-log/src/sources/codex.ts、packages/plugin-daily-log/src/sources/conversation-jsonl.ts 及固定范围 inventory；组件：packages/plugin-daily-log。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定组件关键服务/四渠道结构、Git/Codex/解析、agent派发门/扫描/确认和模板流程；不全代码审计，不扫描用户真实数据或执行目标build/宿主。
-- 下一步：可继续从501提交、不可读/跨日日志、缺邮箱、注册部分失败和同名导出入手，核覆盖收据与事实链接，再比较人工汇总成本。
+- 下一步：采用 [Q07](#research-q07) 的 501 提交、损坏日志和跨日追加样本；核显式部分结果、事实链接、确认与不覆盖导出，不安排真实工作数据或绩效认证。
 
 **分析版本**
 
 - **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)
-- **版本号**：0.4.3（[固定提交 acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e)）
-- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.3（[固定提交 be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -167,7 +155,7 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 
 可探索渠道覆盖收据、活动ID事实链接、正文hash确认和版本/批准根导出，比较召回/误报与额外成本；未实现。详见[Q07](#research-q07)。
 
-可继续从501提交、不可读/跨日日志、缺邮箱、注册部分失败和同名导出入手，核覆盖收据与事实链接，再比较人工汇总成本。
+采用 [Q07](#research-q07) 的 501 提交、损坏日志和跨日追加样本；核显式部分结果、事实链接、确认与不覆盖导出，不安排真实工作数据或绩效认证。
 
 <a id="detail-section-9"></a>
 
@@ -187,11 +175,11 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-22T06%3A17%3A41.600Z..2026-10-22T06%3A17%3A41.600Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A17%3A41.600Z..2026-10-22T06%3A17%3A41.600Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -217,7 +205,7 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/plugin-daily-log/README.md:3-3](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md#L3-L3)
+**依据 1 · 作者声明**：[packages/plugin-daily-log/README.md:3-3](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/README.md#L3-L3)
 
 报告场景作者定位。
 
@@ -225,7 +213,7 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 工作日报告插件：把 **Git 提交**与**本地 agent 对话**（DeepSeek / Claude / Codex）汇总起来，按你自己的模板生成日报 / 周报 / 月报。不只面向开发者——只有本地对话记录，同样能出一份工作总结。
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/agent/reference.ts:17-34](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/reference.ts#L17-L34)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/agent/reference.ts:17-34](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/reference.ts#L17-L34)
 
 真实数据、确认范围及补问/写作引导。
 
@@ -255,7 +243,7 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-daily-log/src/service.ts:277-290](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/service.ts#L277-L290)
+**依据 3 · 源码核查**：[packages/plugin-daily-log/src/service.ts:277-290](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/service.ts#L277-L290)
 
 prepare只解析模板，不执行独立生成。
 
@@ -299,7 +287,7 @@ scan默认render为会话/分支组索引，summary选首问末答，raw下钻�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-daily-log/src/index.ts:56-80](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts#L56-L80)
+**依据 1 · 源码核查**：[packages/plugin-daily-log/src/index.ts:56-80](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/index.ts#L56-L80)
 
 domain/服务/渠道和设置。
 
@@ -336,7 +324,7 @@ domain/服务/渠道和设置。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/index.ts:83-94](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts#L83-L94)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/index.ts:83-94](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/index.ts#L83-L94)
 
 按scope注册全工具。
 
@@ -360,7 +348,7 @@ domain/服务/渠道和设置。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-daily-log/src/agent/tool-gate.ts:43-64](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tool-gate.ts#L43-L64)
+**依据 3 · 源码核查**：[packages/plugin-daily-log/src/agent/tool-gate.ts:43-64](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tool-gate.ts#L43-L64)
 
 按agent幂等与释放。
 
@@ -394,7 +382,7 @@ export function createToolGate(contribution: GateContribution): ToolGate {
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-daily-log/src/agent/tool-dispatcher.ts:45-69](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tool-dispatcher.ts#L45-L69)
+**依据 4 · 源码核查**：[packages/plugin-daily-log/src/agent/tool-dispatcher.ts:45-69](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tool-dispatcher.ts#L45-L69)
 
 调用scope和引导投递。
 
@@ -431,7 +419,7 @@ export function createToolGate(contribution: GateContribution): ToolGate {
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-daily-log/src/agent/scan-render.ts:141-183](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/scan-render.ts#L141-L183)
+**依据 5 · 源码核查**：[packages/plugin-daily-log/src/agent/scan-render.ts:141-183](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/scan-render.ts#L141-L183)
 
 分组索引/summary/折叠。
 
@@ -486,7 +474,7 @@ export function renderScan(entries: readonly ActivityEntry[], options: RenderSca
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-daily-log/src/service.ts:294-304](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/service.ts#L294-L304)
+**依据 6 · 源码核查**：[packages/plugin-daily-log/src/service.ts:294-304](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/service.ts#L294-L304)
 
 save接受markdown。
 
@@ -527,7 +515,7 @@ Git“默认本人”最终回git config user.email，缺失时空过滤取全�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:50-72](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/git.ts#L50-L72)
+**依据 1 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:50-72](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/git.ts#L50-L72)
 
 作者空值不过滤和管道分隔。
 
@@ -562,7 +550,7 @@ function parseGitLog(raw: string): Array<{ hash: string; author: string; date: s
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:101-122](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/git.ts#L101-L122)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:101-122](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/git.ts#L101-L122)
 
 请求501后slice500无元数据。
 
@@ -596,7 +584,7 @@ function parseGitLog(raw: string): Array<{ hash: string; author: string; date: s
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-daily-log/src/service.ts:208-239](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/service.ts#L208-L239)
+**依据 3 · 源码核查**：[packages/plugin-daily-log/src/service.ts:208-239](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/service.ts#L208-L239)
 
 错误才truncated。
 
@@ -640,7 +628,7 @@ function parseGitLog(raw: string): Array<{ hash: string; author: string; date: s
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:194-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tools.ts#L194-L212)
+**依据 4 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:194-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tools.ts#L194-L212)
 
 agent scan只取entries丢错误状态。
 
@@ -671,7 +659,7 @@ agent scan只取entries丢错误状态。
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-daily-log/src/sources/codex.ts:15-41](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/codex.ts#L15-L41)
+**依据 5 · 源码核查**：[packages/plugin-daily-log/src/sources/codex.ts:15-41](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/codex.ts#L15-L41)
 
 日期目录选择。
 
@@ -710,7 +698,7 @@ async function listCandidates(root: string, range: DateRange): Promise<string[]>
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-daily-log/src/sources/codex.ts:95-110](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/codex.ts#L95-L110)
+**依据 6 · 源码核查**：[packages/plugin-daily-log/src/sources/codex.ts:95-110](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/codex.ts#L95-L110)
 
 读取失败continue。
 
@@ -738,7 +726,7 @@ async function listCandidates(root: string, range: DateRange): Promise<string[]>
 
 </details>
 
-**依据 7 · 源码核查**：[packages/plugin-daily-log/src/sources/conversation-jsonl.ts:15-45](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/conversation-jsonl.ts#L15-L45)
+**依据 7 · 源码核查**：[packages/plugin-daily-log/src/sources/conversation-jsonl.ts:15-45](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/conversation-jsonl.ts#L15-L45)
 
 白名单正则剥壳。
 
@@ -805,7 +793,7 @@ export function stripInjectedWrappers(text: string): string {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-daily-log/src/agent/reference.ts:22-34](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/reference.ts#L22-L34)
+**依据 1 · 源码核查**：[packages/plugin-daily-log/src/agent/reference.ts:22-34](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/reference.ts#L22-L34)
 
 确认礼仪是提示。
 
@@ -830,7 +818,7 @@ export function stripInjectedWrappers(text: string): string {
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/service.ts:294-315](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/service.ts#L294-L315)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/service.ts:294-315](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/service.ts#L294-L315)
 
 save非空与任意输出目录/覆盖写。
 
@@ -864,7 +852,7 @@ save非空与任意输出目录/覆盖写。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:74-84](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tools.ts#L74-L84)
+**依据 3 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:74-84](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tools.ts#L74-L84)
 
 ask仅policy ask。
 
@@ -887,7 +875,7 @@ export function dailyLogWriteShouldAsk(policy: DailyLogApprovalPolicy | undefine
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:539-548](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tools.ts#L539-L548)
+**依据 4 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:539-548](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tools.ts#L539-L548)
 
 approval缺失/never放行。
 
@@ -909,7 +897,7 @@ approval缺失/never放行。
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:198-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tools.ts#L198-L212)
+**依据 5 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:198-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tools.ts#L198-L212)
 
 默认scan所有来源与结构化entries。
 
@@ -952,33 +940,13 @@ approval缺失/never放行。
 
 #### 完整回答
 
-#### 启动与依赖
+启动强依赖 storageDomain 保存来源、模板和报告，工具/提示桥分别晚挂；因此 UI 正常不保证会话工具已挂载。Git 依赖本机程序、refs 和作者身份，对话依赖匹配的本地日志格式及读权限。成文由当前会话模型完成，不是插件自带离线报告器。
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| DSH storageDomain/settings/remote和Web设置页 | 核心 | 保存源、模板、报告与UI | 需匹配宿主代际 |
-| tools、agent.ctx及可选systemPrompt/commands | 会话桥 | 按需工具与/report | 桥可降级，UI可用不证明工具可用 |
-| Git程序和repo refs/身份 | Git渠道 | argv git log/config | 无邮箱可能全作者，非完整工作证明 |
-| 本地Claude/Codex/DSH日志与读权限 | 对话渠道 | 按cwd/时间解析 | 不兼容/不可读可能被跳过 |
-| 当前模型与上下文预算 | 成文必需 | 按模板综合活动 | 不是插件自带离线生成器 |
-| 输出目录权限与内容披露许可 | 导出/模型读取前提 | 保存/分享markdown | 无插件物理写根保证 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 配源 | 选项目、渠道和明确日期 | 核路径/cwd/作者，别直接全库 |
-| 启用 | daily_log或带需求/report | 工具出现并读完整引导 |
-| 采集 | 索引后按组下钻 | 对照失败/上限，空结果不当无工作 |
-| 成文 | 模板引导归纳，补问隐性工作 | 区分完成/讨论/建议，不照抄模型自述 |
-| 审阅 | 人核正文、来源和敏感信息 | 用户明确同意再存/导出 |
-| 保存 | 指定批准目录与不冲突标题 | 核文件和报告历史，保留必要证据 |
-
-包需构建lib发布，源码TS/React与大量DSH rc.1开发依赖可见；本轮只读，不执行build或扫描真实用户数据。
+应先明确日期、项目、作者和披露许可，再由索引进入原文；跨源空结果与错误必须逐项核对，不能把少量记录当全部工作。准备模板、模型归纳、人工审阅、保存导出是不同责任阶段。包需构建 lib；本轮不构建、不扫描用户数据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-daily-log/src/index.ts:56-80](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts#L56-L80)
+**依据 1 · 源码核查**：[packages/plugin-daily-log/src/index.ts:56-80](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/index.ts#L56-L80)
 
 核心服务依赖。
 
@@ -1015,7 +983,7 @@ approval缺失/never放行。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/index.ts:97-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts#L97-L116)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/index.ts:97-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/index.ts#L97-L116)
 
 可选工具/提示/指令桥。
 
@@ -1047,7 +1015,7 @@ export function installDailyLogAgentBridgeWhenReady(ctx: Context, settings: Dail
 
 </details>
 
-**依据 3 · 作者声明**：[packages/plugin-daily-log/README.md:41-46](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/README.md#L41-L46)
+**依据 3 · 作者声明**：[packages/plugin-daily-log/README.md:41-46](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/README.md#L41-L46)
 
 作者开发命令。
 
@@ -1060,7 +1028,7 @@ pnpm --filter @zzerx/dsh-plugin-daily-log build       # lib/index.js + lib/clien
 
 ````
 
-**依据 4 · 源码核查**：[packages/plugin-daily-log/src/service.ts:308-315](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/service.ts#L308-L315)
+**依据 4 · 源码核查**：[packages/plugin-daily-log/src/service.ts:308-315](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/service.ts#L308-L315)
 
 输出前提。
 
@@ -1093,7 +1061,7 @@ all Set持有每个成功release直到插件卸载，WeakMap本身不保证相�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-daily-log/src/index.ts:83-94](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts#L83-L94)
+**依据 1 · 源码核查**：[packages/plugin-daily-log/src/index.ts:83-94](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/index.ts#L83-L94)
 
 逐个register无局部回滚。
 
@@ -1117,7 +1085,7 @@ all Set持有每个成功release直到插件卸载，WeakMap本身不保证相�
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/agent/tool-gate.ts:43-64](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tool-gate.ts#L43-L64)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/agent/tool-gate.ts:43-64](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tool-gate.ts#L43-L64)
 
 成功后记installed与all到卸载。
 
@@ -1151,7 +1119,7 @@ export function createToolGate(contribution: GateContribution): ToolGate {
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-daily-log/src/index.ts:56-78](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/index.ts#L56-L78)
+**依据 3 · 源码核查**：[packages/plugin-daily-log/src/index.ts:56-78](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/index.ts#L56-L78)
 
 domain清理/失败路径。
 
@@ -1186,7 +1154,7 @@ domain清理/失败路径。
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:21-31](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/git.ts#L21-L31)
+**依据 4 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:21-31](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/git.ts#L21-L31)
 
 buffer限制无timeout。
 
@@ -1209,7 +1177,7 @@ async function gitLog(projectPath: string, args: string[]): Promise<string> {
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-daily-log/src/sources/codex.ts:95-110](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/codex.ts#L95-L110)
+**依据 5 · 源码核查**：[packages/plugin-daily-log/src/sources/codex.ts:95-110](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/codex.ts#L95-L110)
 
 整文件读取。
 
@@ -1237,7 +1205,7 @@ async function gitLog(projectPath: string, args: string[]): Promise<string> {
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:203-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tools.ts#L203-L212)
+**依据 6 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:203-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tools.ts#L203-L212)
 
 错误元数据丢失。
 
@@ -1275,22 +1243,6 @@ async function gitLog(projectPath: string, args: string[]): Promise<string> {
 
 #### 完整回答
 
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 复用本地Git/日志与模型，无金额依据 | 配源、作者/日期和模板，核本地敏感日志 | 各格式兼容与源校对时间未知 |
-| 持续使用 | 扫描Git/整日志IO、模型下钻归纳tokens | 按源下钻与归纳审阅 | token/耗时依数据量，渲染索引不等采集有界 |
-| 失败恢复 | 重扫/重读模型与文件恢复资源 | 复核漏项、部分工具启用、覆盖文件和错误汇总 | 缺收据增加人工回溯，恢复时间/金额未量化 |
-
-#### 效果
-
-| 目标 | 源码支持的增量 | 证据边界 |
-| --- | --- | --- |
-| 汇总跨源活动 | Git/三类日志归一到项目活动 | 未证明召回完整，讨论不等于交付 |
-| 控上下文首屏 | 按需15工具、组索引和下钻 | 全entries结构化与扫描成本仍存在 |
-| 模板化成文 | prompt/骨架分离，历史与markdown导出 | 确认礼仪为软约束，事实需人核 |
-
 先观察。多源采集、scope工具启用和组下钻是实用组合，但Git截断无标记、扫描工具丢渠道失败、文件写入无独立范围/不覆盖保证，会影响报告可信度。修前不把输出当完整工作证明；可信个人环境也应对原始窗口、作者和省略项逐一核对。
 
 可探讨“活动覆盖收据与事实链接”。每渠道返回扫描范围、读/跳过/失败/截断数量与续页游标，agent/UI保留partial；报告每项绑定活动ID并标完成/讨论/待确认，保存带正文hash确认token，导出带预期不存在/版本与批准根。相较现有提示，目标减少静默漏项和未确认覆盖，不是自动认证绩效。
@@ -1299,7 +1251,7 @@ async function gitLog(projectPath: string, args: string[]): Promise<string> {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:101-122](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/sources/git.ts#L101-L122)
+**依据 1 · 源码核查**：[packages/plugin-daily-log/src/sources/git.ts:101-122](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/sources/git.ts#L101-L122)
 
 覆盖收据方案基线。
 
@@ -1333,7 +1285,7 @@ async function gitLog(projectPath: string, args: string[]): Promise<string> {
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:194-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/agent/tools.ts#L194-L212)
+**依据 2 · 源码核查**：[packages/plugin-daily-log/src/agent/tools.ts:194-212](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/agent/tools.ts#L194-L212)
 
 partial透传缺口。
 
@@ -1364,7 +1316,7 @@ partial透传缺口。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-daily-log/src/service.ts:294-315](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-daily-log/src/service.ts#L294-L315)
+**依据 3 · 源码核查**：[packages/plugin-daily-log/src/service.ts:294-315](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log/src/service.ts#L294-L315)
 
 确认hash和输出版本方案基线。
 
