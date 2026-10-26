@@ -1,0 +1,48 @@
+{
+    "repository": "Q00/ouroboros",
+    "repository_id": 1133901637,
+    "captured_at": "2026-10-26T09:07:10.506Z",
+    "window_start": "2026-09-26T09:07:10.506Z",
+    "stars": 6272,
+    "pushed_at": "2026-10-26T07:19:02Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AQ00%2Fouroboros%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B16C:37F971:185FF9C:1ADB221:6ADF1B2D and timestamp 2026-10-26 09:19:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AQ00%2Fouroboros%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B172:29EDE8:183AFE2:1AB6EFA:6ADF1B2D and timestamp 2026-10-26 09:19:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AQ00%2Fouroboros%20is%3Aissue%20created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B180:318E83:1820673:1A9C591:6ADF1B2E and timestamp 2026-10-26 09:19:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AQ00%2Fouroboros%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B188:296820:18211A4:1A9BB3F:6ADF1B2E and timestamp 2026-10-26 09:19:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AQ00%2Fouroboros%20is%3Aissue%20updated%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A76:3443:4480AA4:632F447:6ADF1B2F and timestamp 2026-10-26 09:19:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
+        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    }
+}

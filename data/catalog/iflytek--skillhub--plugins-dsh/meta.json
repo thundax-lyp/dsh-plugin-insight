@@ -1,0 +1,45 @@
+{
+    "repository": "iflytek/skillhub",
+    "repository_id": 1178833585,
+    "captured_at": "2026-10-26T09:38:01.975Z",
+    "window_start": "2026-09-26T09:38:01.975Z",
+    "stars": 5292,
+    "pushed_at": "2026-10-26T09:20:50Z",
+    "issues": {
+        "open": 26,
+        "closed": 281,
+        "created_30d": 32,
+        "closed_30d": 29,
+        "updated_30d": 44
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T05:21:30.323Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
+        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@astron-team/skillhub-dsh",
+        "captured_at": "2026-10-26T04:53:39.056Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 257,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40astron-team%2Fskillhub-dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-16T11:58:16.741Z",
+            "captured_at": "2026-10-26T04:53:39.056Z",
+            "source_url": "https://registry.npmjs.org/%40astron-team%2Fskillhub-dsh",
+            "error": null,
+            "latest_version": "0.3.1",
+            "latest_published_at": "2026-10-21T06:49:53.708Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "superdesigndev/treg",
+    "repository_id": 1301657572,
+    "captured_at": "2026-10-26T09:39:31.930Z",
+    "window_start": "2026-09-26T09:39:31.930Z",
+    "stars": 6040,
+    "pushed_at": "2026-10-26T08:59:20Z",
+    "issues": {
+        "open": 21,
+        "closed": 8,
+        "created_30d": 16,
+        "closed_30d": 2,
+        "updated_30d": 18
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
+        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "treg-dsh",
+        "captured_at": "2026-10-26T09:39:31.930Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/treg-dsh",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-26T09:39:31.930Z",
+            "source_url": "https://registry.npmjs.org/treg-dsh",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}
