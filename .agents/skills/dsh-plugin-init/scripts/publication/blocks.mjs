@@ -1,6 +1,9 @@
 import { template } from './template.mjs';
 // Reader-facing blocks shared by README and the standalone classification page.
 const clean = (text) => text.replace(/[\r\n]/g, ' ').replace(/[\[\]<>|]/g, '');
+// Report fragments belong to the detail page even when quoted in a list or category.
+const detailLinks = (text, href) => text.replace(/\]\((#[^)]+)\)/g, (_, fragment) => `](${href}${fragment})`);
+const readerText = (text, href) => detailLinks(text.replace(/[\r\n]/g, ' ').replace(/[<>|]/g, ''), href);
 const tableCell = (text) =>
     text
         .replace(/[\r\n]/g, ' ')
@@ -226,7 +229,7 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                     return template('RECOMMENDED-ITEM', {
                         plugin: nameLink(e),
                         kind: r.kind === 'install' ? ' · 值得安装' : '',
-                        summary: `${clean(e.summary)} ${clean(r.summary).replaceAll('条件试用', '试用')}`,
+                        summary: `${clean(e.summary)} ${readerText(r.summary, e.href).replaceAll('条件试用', '试用')}`,
                         metrics: e.listMetrics ? ` · ${e.listMetrics}` : '',
                         review: ''
                     });
@@ -258,7 +261,9 @@ export function renderColumn(key, items, date, recommendations) {
             if (key === 'RECOMMENDED')
                 return template('COLUMN-ROW', {
                     ...common,
-                    value: tableCell(entry.recommendation.summary.replaceAll('条件试用', '试用'))
+                    value: tableCell(
+                        readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用')
+                    )
                 });
             if (key === 'HOT')
                 return template('COLUMN-HOT-ROW', {
@@ -290,7 +295,7 @@ export function renderColumn(key, items, date, recommendations) {
             const reason =
                 key === 'RECOMMENDED'
                     ? template('COLUMN-RECOMMENDATION', {
-                          reason: clean(entry.recommendation.summary).replaceAll('条件试用', '试用'),
+                          reason: readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用'),
                           kind: entry.recommendation.kind === 'install' ? ' · 值得安装' : ''
                       })
                     : key === 'HOT'
@@ -312,7 +317,7 @@ export function renderColumn(key, items, date, recommendations) {
                 meta: entry.meta,
                 purpose: clean(entry.summary),
                 reason,
-                conditions: clean(entry.usageConditions)
+                conditions: readerText(entry.usageConditions, entry.href)
             });
         })
         .join('\n\n');
@@ -397,7 +402,10 @@ export function renderCategories(items, href) {
                 plugin: nameLink(e),
                 purpose: tableCell(e.summary),
                 conditions: tableCell(
-                    e.usageConditions.match(/^[\s\S]*?[。！？](?=\s|$|[^。！？])/u)?.[0] ?? e.usageConditions
+                    readerText(
+                        e.usageConditions.match(/^[\s\S]*?[。！？](?=\s|$|[^。！？])/u)?.[0] ?? e.usageConditions,
+                        href(e)
+                    )
                 )
             })
         )
@@ -411,7 +419,7 @@ export function renderCategories(items, href) {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
                     meta: e.meta,
-                    short: e.short,
+                    short: detailLinks(e.short, href(e)),
                     detail: href(e)
                 })
             )
