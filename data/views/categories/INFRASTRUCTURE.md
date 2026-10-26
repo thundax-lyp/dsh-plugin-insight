@@ -18,7 +18,7 @@
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | 重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。 |
-| [dsh-armory](#plugin-1413052822-root) | 统一管理 MCP、工具账本、专家、Skill 与插件市场入口。 | 建议观察。 |
+| [dsh-armory](#plugin-1413052822-root) | 整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。 | 建议隔离profile先验证非关键组件的安装、更新、卸载和重启，保留配置及技能备份；不按零调用直接禁用应急能力。 |
 | [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。 |
 | [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。 | 隔离桌面 profile 分别验本地/远程、离线下载、托盘退出与升级后再替换原版。 |
 | [dsh-compaction-route](#plugin-1391040578-root) | 仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。 | 明确主备provider/原历史恢复的维护者可限范围试用，先核失败分类、全部成本和摘要保真。 |
@@ -217,15 +217,15 @@
 
 ## [dsh-armory](../../plugins/2026heshao--dsh-armory/INSIGHT.md)
 
-[![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-armory)
+[![GitHub ★ 24](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) [![npm 30d 459](https://img.shields.io/static/v1?label=npm+30d&message=459&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-armory)
 
-> **用途**：面向同时管理多个 MCP、工具、专家、Skill 和插件来源的高级用户。输入是全局/项目配置和市场条目；合格结果是来源、作用域、敏感值和生效时机清楚，变更可恢复。替代是配置文件、CLI 和市场分别管理。
+> **用途**：适合已有多组件管理负担的DSH用户；管理对象正确、作用域清楚且可恢复才算合格。原生/手工基线见 [Q01](#research-q01)。
 
-> **亮点**：把分散配置、连接详情、工具使用、专家和市场聚合为控制面，显式呈现作用域。贡献是治理视图与接线，不是第三方扩展能力。 参见[Q03](#research-q03)。
+> **亮点**：相对手改配置与分散市场，增加统一生命周期、来源识别和观测反馈；fork归属和上游管理能力须保留。见 [Q01](#research-q01)。
 
-> **思考**：集中入口也集中命令、网络和凭据风险。缓存状态不等于进程健康，热生效范围不一；大型 bundle、私有 slot 和市场 API 增加审计难度。 参见[Q04](#research-q04)。
+> **思考**：清单摘要与零调用指标不能当可信放行；更新先删旧后换入、时间兜底和同名投影都有限制。见 [Q03](#research-q03)。
 
-> **建议**：操作先生成来源、权限、作用域、diff、健康检查和回滚指令的变更集，批准后原子应用。若错作用域不降则否定。 参见[Q08](#research-q08)。
+> **建议**：未验证假设为可恢复Skill更新事务，保留旧版并显式提交状态；故障矩阵、比较指标与否定条件见 [Q05](#research-q05)。
 
 <a id="plugin-1349267122-root"></a>
 
@@ -1309,7 +1309,7 @@
 
 ## [plugin-usage-billing](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
 
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,475](https://img.shields.io/static/v1?label=npm+30d&message=1%2C475&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
 
 > **用途**：维护者核对模型用量和费用估算，要求计量、提供商价格、历史与unknown可解释。
 
@@ -1363,4 +1363,4 @@
 
 ## 更新时间
 
-2026-10-24
+2026-10-26

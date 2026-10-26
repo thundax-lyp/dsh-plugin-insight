@@ -31,11 +31,11 @@
 
 > 发现最近发布或更新的插件，看看有没有你需要的。
 
-- [dsh-super-code](data/plugins/artlexyoung--dsh-super-code/INSIGHT.md) · 提供编码 Agent 预设、任务与委派台账、专业方法、分层记忆和可配置运行预算。 · [![GitHub ★ 16](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=16&color=yellow&logo=github&style=flat)](https://github.com/ArtlexYoung/dsh-super-code) [![npm 30d 2,714](https://img.shields.io/static/v1?label=npm+30d&message=2%2C714&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-super-code) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-super-code)
-- [OpenViking DSH Memory](data/plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 · [![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=yellow&logo=github&style=flat)](https://github.com/volcengine/OpenViking) [![npm 30d 34,730](https://img.shields.io/static/v1?label=npm+30d&message=34%2C730&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
-- [dsh-smart-prompt](data/plugins/arrosam--dsh-smart-prompt/INSIGHT.md) · 发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。 · [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Arrosam/dsh-smart-prompt) [![npm 30d 363](https://img.shields.io/static/v1?label=npm+30d&message=363&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-smart-prompt) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-smart-prompt)
-- [dsh-model](data/plugins/aicivilization--dsh-model/INSIGHT.md) · 整合模型中转、来源登录与管理、组合切换、设备密钥及每日签到，并同步到DSH。 · [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,009](https://img.shields.io/static/v1?label=npm+30d&message=2%2C009&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model)
-- [dsh-ci-diet](data/plugins/0disoft--dsh-ci-diet/INSIGHT.md) · 分析GitHub Actions运行与工作流，标注浪费候选并生成需明确审批的本地YAML补丁。 · [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/0disoft/dsh-ci-diet) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ci-diet)
+- [dsh-trellis](data/plugins/1264459640--dsh-trellis/INSIGHT.md) · 为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。 · [![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) [![npm 30d 1,504](https://img.shields.io/static/v1?label=npm+30d&message=1%2C504&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
+- [dsh-plugin-ide-hub](data/plugins/121212165--dsh-plugin-ide-hub/INSIGHT.md) · 汇总多IDE本地会话、用量和规则，生成规则指针、配额计划与Obsidian快照。 · [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-ide-hub) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-ide-hub)
+- [dsh-context-guard](data/plugins/2jumpsina--dsh-context-guard/INSIGHT.md) · 读取上下文压力，在轮后提醒换会话，生成机器事实交接草稿并记录压缩读数。 · [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/2JumpSinA/dsh-context-guard) [![npm 30d 1,727](https://img.shields.io/static/v1?label=npm+30d&message=1%2C727&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard)
+- [dsh-message-ops](data/plugins/240xu--dsh-message-ops/INSIGHT.md) · 为DSH Web提供消息回撤、单条遮蔽、文本恢复和会话回收站操作。 · [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/240xu/dsh-message-ops) [![npm 30d 5,171](https://img.shields.io/static/v1?label=npm+30d&message=5%2C171&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-message-ops) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-message-ops)
+- [dsh-armory](data/plugins/2026heshao--dsh-armory/INSIGHT.md) · 整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。 · [![GitHub ★ 24](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) [![npm 30d 459](https://img.shields.io/static/v1?label=npm+30d&message=459&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-armory)
 
 ## [最热](data/views/columns/HOT.md)
 
@@ -57,7 +57,7 @@
 
 <a id="plugin-1333328839-root"></a>
 
-- **[dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)**：为 DSH 运行状态提供轮换文案、主题、弹幕与鲸尾动画，并保存词库与配置。 [![GitHub ★ 203](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=203&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 10,169](https://img.shields.io/static/v1?label=npm+30d&message=10%2C169&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
+- **[dsh-status-rotator](data/plugins/01virex--dsh-status-rotator/INSIGHT.md)**：定制DSH运行状态文案、主题、弹幕与鲸尾动画，并提供设置和词库更新。 [![GitHub ★ 208](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=208&color=yellow&logo=github&style=flat)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 9,207](https://img.shields.io/static/v1?label=npm+30d&message=9%2C207&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-status-rotator)
 
 <a id="plugin-1333116579-root"></a>
 
@@ -167,13 +167,13 @@
 
 - **[dsh-LorebookMD](data/plugins/609476965--dsh-lorebookmd/INSIGHT.md)**：将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/609476965/dsh-LorebookMD) [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-lorebookmd) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-lorebookmd)
 
+<a id="plugin-1418493685-root"></a>
+
+- **[no-ai-style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)**：提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
+
 <a id="plugin-1339888505-root"></a>
 
 - **[gzhflow](data/plugins/andiii208--gzhflow/INSIGHT.md)**：把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/Andiii208/gzhflow)
-
-<a id="plugin-1418493685-root"></a>
-
-- **[no-ai-style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)**：提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
 <a id="plugin-1352959121-root"></a>
 
@@ -205,7 +205,7 @@
 
 <a id="plugin-1413052822-root"></a>
 
-- **[dsh-armory](data/plugins/2026heshao--dsh-armory/INSIGHT.md)**：统一管理 MCP、工具账本、专家、Skill 与插件市场入口。 [![GitHub ★ 21](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) [![npm 30d 261](https://img.shields.io/static/v1?label=npm+30d&message=261&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-armory)
+- **[dsh-armory](data/plugins/2026heshao--dsh-armory/INSIGHT.md)**：整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。 [![GitHub ★ 24](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) [![npm 30d 459](https://img.shields.io/static/v1?label=npm+30d&message=459&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-armory)
 
 <a id="plugin-1387227102-root"></a>
 
@@ -223,7 +223,7 @@
 
 <a id="plugin-1409096911-root"></a>
 
-- **[dsh-armor-switch](data/plugins/571242--dsh-armor-switch/INSIGHT.md)**：向 DSH 提示词插入覆盖性规则并暴露运行时开关和显式权限预设；当前版禁止新磁盘清洗。 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/571242/dsh-armor-switch)
+- **[dsh-armor-switch](data/plugins/571242--dsh-armor-switch/INSIGHT.md)**：向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/571242/dsh-armor-switch)
 
 <a id="plugin-1412161923-root"></a>
 
@@ -242,4 +242,4 @@
 
 ## 更新时间
 
-2026-10-24
+2026-10-26

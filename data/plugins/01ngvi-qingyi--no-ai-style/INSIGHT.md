@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[a64e811](https://github.com/01NGVI-QINGYI/no-ai-style/tree/a64e811bf0aa255189a0df2011a6a392c5d59966)
+分析版本：[1e11eb6](https://github.com/01NGVI-QINGYI/no-ai-style/tree/1e11eb699fbc3745a03fae8672921019569d85bf)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 <!-- END META -->
 
 > **实现功能**：提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要保持事实与证据强度的学术/职业文本编辑。详见[Q01](#research-q01)。
+> **用途**：适合需保留学术事实、引用与不确定性的作者，在授权段落内审阅和轻改英中日文稿。验收对象是改写后的命题及证据边界，仍由作者复核。
 
-通用润色提示、禁词替换与人工编辑校对；本项将事实回查组织成可复用流程。
+直接基线是通用润色提示加作者逐句核对。此Skill增加有优先级的阅读/事实/回查门槛和明确三模式，但执行仍依模型，须用同一批文稿比较事实越界、读者问题与复核时间。
 
 <a id="detail-section-3"></a>
 
@@ -57,26 +57,24 @@
 | 可选audit脚本 | 词法/缺口候选 | 非检测器，不自动删除 |
 | 可选anchor脚本 | 数值/引用锚点变化 | Counter不保语义关系 |
 
-**流程与依赖**
-
 #### 启动与依赖
 
-| 条件 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| skills/agents/filesystem provider | 包内Skill可用 | 不写其他根，watch=false |
-| 原宿主模型/材料 | 审阅与改稿 | 费用与隐私沿宿主 |
-| React/slots/locale/inputActions | 三模式按钮 | 缺UI不等Skill消失；引用分支依版本 |
-| Python3.9+（可选） | 离线检查 | 标准库，只读文本，非语义验证 |
-
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH及filesystem Skill provider | Skill必需 | 读取包内规则 | 没有provider则无法依该入口加载 |
+| locale/slots/inputActions | 按钮可选 | 前插模式指令 | 旧引用草稿拒绝setDraft回退 |
+| 宿主模型与授权源文 | 写作必需 | 审阅/改写 | 插件不补事实和外部证据 |
+| Python3.9+ | 离线脚本可选 | flags和anchors | 可人工比对，脚本不证明同义 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 备份原文/定阅读契约 | 作者 | 范围/证据可改性明确 |
-| 选audit/revise/compose | 用户/按钮 | 指令只插入不直接发文 |
-| 模型按Skill交付 | Agent | 保事实与未知标记 |
-| 核锚点及命题证据 | 作者 | 不靠零flags判ready |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 定义范围 | 作者保留原文，指定读者/体裁和不可改事实 | 只处理授权段落 |
+| audit | Agent列可读性与证据问题 | 必要限定保留，不按改量凑字 |
+| revise/compose | Agent依据材料写作 | 缺证据明确标记 |
+| 回查 | 作者逐命题、数字、引文比对 | 发现升级主张即回退/缩窄 |
+| 按钮失败 | 用户保留富引用并检查宿主动作 | 不为插入而删除证据 |
 
 #### 成本
 
@@ -130,13 +128,13 @@
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、src/client.cjs、lib/client.js、skills/no-ai-style/SKILL.md、skills/no-ai-style/references/evidence-boundary.md、skills/no-ai-style/references/voice-contract.md、skills/no-ai-style/references/release-check.md、skills/no-ai-style/references/language-notes.md、skills/no-ai-style/scripts/audit_prose.py、skills/no-ai-style/scripts/compare_anchors.py、skills/no-ai-style/tests/test_no_ai_style.py、tests/client-smoke.cjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：完整Skill248行、provider16行、两Python脚本、证据/声音/提交参考及CJK指引；完整client源和发布插入关键链，Python测试及client smoke代表分支，不运行。
-- 下一步：固定跨语言稿件对照通用提示，用数值换位/因果/人群/缺证据反例核命题收据。
+- 下一步：用 [Q05](#research-q05) 的A/B互换、相关改因果、删null与中文语气反例，比较数字multiset检查、人工Claim-Equilibrium与命题收据原型；原型假设未验证。
 
 **分析版本**
 
 - **仓库**：[01NGVI-QINGYI/no-ai-style](https://github.com/01NGVI-QINGYI/no-ai-style)
-- **版本号**：1.2.1（[固定提交 a64e811](https://github.com/01NGVI-QINGYI/no-ai-style/tree/a64e811bf0aa255189a0df2011a6a392c5d59966)）
-- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.2.2（[固定提交 1e11eb6](https://github.com/01NGVI-QINGYI/no-ai-style/tree/1e11eb699fbc3745a03fae8672921019569d85bf)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -146,7 +144,7 @@
 
 从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](#research-q05)。
 
-固定跨语言稿件对照通用提示，用数值换位/因果/人群/缺证据反例核命题收据。
+用 [Q05](#research-q05) 的A/B互换、相关改因果、删null与中文语气反例，比较数字multiset检查、人工Claim-Equilibrium与命题收据原型；原型假设未验证。
 
 <a id="detail-section-9"></a>
 
@@ -158,7 +156,7 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .js | source | 2 | 375 | 335 | 15 | — |
-| .md | source | 10 | 876 | — | — | 6066 |
+| .md | source | 10 | 902 | — | — | 6391 |
 | .mjs | source | 1 | 11 | 9 | 0 | — |
 | .md | example | 2 | 61 | — | — | 375 |
 | .cjs | source | 1 | 349 | 313 | 15 | — |
@@ -168,11 +166,11 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/issues?q=is%3Aissue+created%3A2026-09-22T09%3A32%3A23.895Z..2026-10-22T09%3A32%3A23.895Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A32%3A23.895Z..2026-10-22T09%3A32%3A23.895Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -196,7 +194,7 @@
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/no-ai-style/SKILL.md:28-53](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L28-L53)
+**依据 1 · 源码核查**：[skills/no-ai-style/SKILL.md:28-53](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/SKILL.md#L28-L53)
 
 优先级与三模式。
 
@@ -234,7 +232,7 @@ changes. If only a response is needed, do not create or modify files.
 
 </details>
 
-**依据 2 · 源码核查**：[skills/no-ai-style/SKILL.md:71-98](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L71-L98)
+**依据 2 · 源码核查**：[skills/no-ai-style/SKILL.md:71-98](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/SKILL.md#L71-L98)
 
 事实/证据保护。
 
@@ -274,7 +272,7 @@ Classify passages for revision:
 
 </details>
 
-**依据 3 · 源码核查**：[skills/no-ai-style/SKILL.md:155-194](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L155-L194)
+**依据 3 · 源码核查**：[skills/no-ai-style/SKILL.md:155-194](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/SKILL.md#L155-L194)
 
 回查门槛。
 
@@ -326,7 +324,7 @@ Treat script findings as review flags; check the text and underlying evidence be
 
 </details>
 
-**依据 4 · 源码核查**：[skills/no-ai-style/SKILL.md:220-236](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L220-L236)
+**依据 4 · 源码核查**：[skills/no-ai-style/SKILL.md:220-236](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/SKILL.md#L220-L236)
 
 交付与检测器边界。
 
@@ -355,7 +353,7 @@ For requests to 'remove AI traces' or 'avoid plagiarism', improve clarity and
 
 </details>
 
-**依据 5 · 源码核查**：[skills/no-ai-style/references/voice-contract.md:1-25](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/voice-contract.md#L1-L25)
+**依据 5 · 源码核查**：[skills/no-ai-style/references/voice-contract.md:1-25](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/references/voice-contract.md#L1-L25)
 
 作者样本边界。
 
@@ -406,11 +404,11 @@ host用dsh-skill-filesystem注册独立provider，includeDefaultRoots=false、bu
 
 新inputActions.insertText分支可captureInsertion并强制[0,0]，宿主返回true才关闭，throw/false显示错误，依宿主revision语义保留富引用。capture不存在或抛错会以空span额外字段继续尝试，故不能从本插件独立保证CAS总存在。旧setDraft分支在occurrences非空时明确拒绝以免flatten；普通文本用渲染时draft拼前缀，没有该分支revision参数，宿主状态/渲染时序影响最新草稿。busy判断、Escape composing保护和事件清理有实际代码。
 
-包声明DSH>=0.1.5rc3<0.3、filesystem provider rc6到<0.3、React18/ReactDOM；可选UI需locale/slot/输入actions。Python3.9+仅给可选脚本，Skill本身依原宿主模型和文件读取权限。watch=false意味着包内容更新需按宿主reload策略，不是热监测。
+当前包未声明宿主版本范围；filesystem peer为 >=0.1.0-rc.6 <0.3.0，React/ReactDOM18为可选peer，实际宿主兼容未确认；可选UI需locale/slot/输入actions。Python3.9+仅给可选脚本，Skill本身依原宿主模型和文件读取权限。watch=false意味着包内容更新需按宿主reload策略，不是热监测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-16](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/index.js#L1-L16)
+**依据 1 · 源码核查**：[index.js:1-16](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/index.js#L1-L16)
 
 provider范围和watch。
 
@@ -438,7 +436,7 @@ export function apply(ctx) {
 
 </details>
 
-**依据 2 · 源码核查**：[src/client.cjs:186-247](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/src/client.cjs#L186-L247)
+**依据 2 · 源码核查**：[src/client.cjs:186-247](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/src/client.cjs#L186-L247)
 
 新旧插入动作。
 
@@ -512,7 +510,7 @@ export function apply(ctx) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/client.js:196-254](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/lib/client.js#L196-L254)
+**依据 3 · 源码核查**：[lib/client.js:196-254](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/lib/client.js#L196-L254)
 
 发布bundle同链。
 
@@ -583,7 +581,7 @@ export function apply(ctx) {
 
 </details>
 
-**依据 4 · 源码核查**：[src/client.cjs:296-349](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/src/client.cjs#L296-L349)
+**依据 4 · 源码核查**：[src/client.cjs:296-349](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/src/client.cjs#L296-L349)
 
 UI服务/样式生命周期。
 
@@ -649,17 +647,14 @@ exports.apply = apply;
 
 </details>
 
-**依据 5 · 源码核查**：[package.json:26-45](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/package.json#L26-L45)
+**依据 5 · 源码核查**：[package.json:26-42](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/package.json#L26-L42)
 
 DSH/UI范围。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-    "engines": {
-      "dsh": ">=0.1.5-rc.3 <0.3.0"
-    },
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
@@ -677,6 +672,35 @@ DSH/UI范围。
   },
   "keywords": [
     "dsh-plugin",
+```
+
+</details>
+
+**依据 6 · 源码核查**：[package.json:58-74](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/package.json#L58-L74)
+
+当前peer及可选React边界，不能继承旧engines范围。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  },
+  "license": "MIT",
+  "author": "01NGVI-QINGYI",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill-filesystem": ">=0.1.0-rc.6 <0.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}
 ```
 
 </details>
@@ -705,7 +729,7 @@ Skill的“没证据不ready”可改善审阅纪律，但执行由模型/人负
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:15-42](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/audit_prose.py#L15-L42)
+**依据 1 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:15-42](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/scripts/audit_prose.py#L15-L42)
 
 短模式与marker。
 
@@ -745,7 +769,7 @@ def scan(content: str, lang: str = "auto") -> list[dict]:
 
 </details>
 
-**依据 2 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:45-108](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/audit_prose.py#L45-L108)
+**依据 2 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:45-108](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/scripts/audit_prose.py#L45-L108)
 
 扫描屏蔽/定位。
 
@@ -821,7 +845,7 @@ def scan(content: str, lang: str = "auto") -> list[dict]:
 
 </details>
 
-**依据 3 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:111-136](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/audit_prose.py#L111-L136)
+**依据 3 · 源码核查**：[skills/no-ai-style/scripts/audit_prose.py:111-136](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/scripts/audit_prose.py#L111-L136)
 
 strict语义。
 
@@ -859,7 +883,7 @@ if __name__ == "__main__":
 
 </details>
 
-**依据 4 · 源码核查**：[skills/no-ai-style/scripts/compare_anchors.py:15-40](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/compare_anchors.py#L15-L40)
+**依据 4 · 源码核查**：[skills/no-ai-style/scripts/compare_anchors.py:15-40](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/scripts/compare_anchors.py#L15-L40)
 
 正则/Counter。
 
@@ -897,7 +921,7 @@ def compare(before: str, after: str) -> dict:
 
 </details>
 
-**依据 5 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:18-43](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/evidence-boundary.md#L18-L43)
+**依据 5 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:18-43](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/references/evidence-boundary.md#L18-L43)
 
 人工命题流程。
 
@@ -935,7 +959,7 @@ def compare(before: str, after: str) -> dict:
 
 </details>
 
-**依据 6 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:61-63](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/evidence-boundary.md#L61-L63)
+**依据 6 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:61-63](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/references/evidence-boundary.md#L61-L63)
 
 数值相同不等命题等价。
 
@@ -957,19 +981,13 @@ modality, and missing qualifiers.
 
 可选脚本纯标准库、只读文本；Python测试直接导入生产函数，覆盖语言patterns、真实hedge不误标、代码/注释/URL定位和部分anchors变化。另一些测试只检查Skill含特定规则，文件已有说明不是模型行为测试。client-smoke加载生产bundle并用mock React/host检查三语言、legacy、新revision span、引用拒绝/取消和宿主throw；能守接线设计，不是浏览器交互或写作效果对照。本次只读测试不执行。
 
-#### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | DSH Skill provider/可选Web UI，脚本另需Python3.9+；金额未知 | 明确体裁/授权段落、语言、不可改锚点与原文备份，工时未知 | 插件不自带写作模型或论文来源 |
-| 持续使用 | 宿主模型读取Skill/材料并生成；可选本地正则/计数扫描 | 审阅flags与前后命题/证据对应，实际耗时未知 | Python不联网不等整体模型处理不外发；token/价格依宿主，净节时未知 |
-| 失败恢复 | 保留原文、重生成/复查与宿主上下文，金额未知 | 回退无据改写、恢复丢锚点/引用并请作者澄清 | 相同锚点不保证同义；已采用的错误文稿需另行纠正，恢复工时未知 |
 
-成本以一份授权范围内可读且事实忠实的稿为单位，需计入模型重写和人工逐命题/引用复查，而不只运行脚本的CPU。检查模式不改文件，revise/compose由Agent在授权范围写作，原文回退与不确定性审阅仍是使用者责任；没有金额/工时/合格率数据，不给免费或固定节省承诺。
+成本以一份授权范围内可读且事实忠实的稿为单位，须计模型重写、失败回退与作者逐命题/引用复核。audit只列问题，revise/compose由Agent依据授权写作；Python脚本不联网并不证明宿主模型不外发。没有盲评忠实率、金额或人工耗时，不能据零告警推出固定净收益。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/no-ai-style/tests/test_no_ai_style.py:1-113](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/tests/test_no_ai_style.py#L1-L113)
+**依据 1 · 源码核查**：[skills/no-ai-style/tests/test_no_ai_style.py:1-113](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/tests/test_no_ai_style.py#L1-L113)
 
 生产scanner/anchor测试。
 
@@ -1094,7 +1112,7 @@ class TestSkillInstructions(unittest.TestCase):
 
 </details>
 
-**依据 2 · 源码核查**：[skills/no-ai-style/tests/test_no_ai_style.py:116-174](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/tests/test_no_ai_style.py#L116-L174)
+**依据 2 · 源码核查**：[skills/no-ai-style/tests/test_no_ai_style.py:116-174](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/tests/test_no_ai_style.py#L116-L174)
 
 指令存在性测试。
 
@@ -1165,7 +1183,7 @@ if __name__ == '__main__':
 
 </details>
 
-**依据 3 · 源码核查**：[tests/client-smoke.cjs:125-176](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/tests/client-smoke.cjs#L125-L176)
+**依据 3 · 源码核查**：[tests/client-smoke.cjs:125-176](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/tests/client-smoke.cjs#L125-L176)
 
 新旧插入与取消mock。
 
@@ -1229,7 +1247,7 @@ assert.equal(cancelledWrite, false);
 
 </details>
 
-**依据 4 · 源码核查**：[tests/client-smoke.cjs:247-274](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/tests/client-smoke.cjs#L247-L274)
+**依据 4 · 源码核查**：[tests/client-smoke.cjs:247-274](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/tests/client-smoke.cjs#L247-L274)
 
 宿主拒绝防throw。
 
@@ -1269,7 +1287,7 @@ console.log('client smoke passed: slot and locale wiring, prepend without replac
 
 </details>
 
-**依据 5 · 源码核查**：[skills/no-ai-style/SKILL.md:43-53](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L43-L53)
+**依据 5 · 源码核查**：[skills/no-ai-style/SKILL.md:43-53](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/SKILL.md#L43-L53)
 
 文件授权/三模式。
 
@@ -1314,7 +1332,7 @@ changes. If only a response is needed, do not create or modify files.
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/no-ai-style/scripts/compare_anchors.py:25-40](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/scripts/compare_anchors.py#L25-L40)
+**依据 1 · 源码核查**：[skills/no-ai-style/scripts/compare_anchors.py:25-40](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/scripts/compare_anchors.py#L25-L40)
 
 锚点基线。
 
@@ -1342,7 +1360,7 @@ def compare(before: str, after: str) -> dict:
 
 </details>
 
-**依据 2 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:18-43](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/references/evidence-boundary.md#L18-L43)
+**依据 2 · 源码核查**：[skills/no-ai-style/references/evidence-boundary.md:18-43](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/references/evidence-boundary.md#L18-L43)
 
 人工关系审查基线。
 
@@ -1380,7 +1398,7 @@ def compare(before: str, after: str) -> dict:
 
 </details>
 
-**依据 3 · 源码核查**：[skills/no-ai-style/SKILL.md:155-194](https://github.com/01NGVI-QINGYI/no-ai-style/blob/a64e811bf0aa255189a0df2011a6a392c5d59966/skills/no-ai-style/SKILL.md#L155-L194)
+**依据 3 · 源码核查**：[skills/no-ai-style/SKILL.md:155-194](https://github.com/01NGVI-QINGYI/no-ai-style/blob/1e11eb699fbc3745a03fae8672921019569d85bf/skills/no-ai-style/SKILL.md#L155-L194)
 
 回查/最小修改。
 

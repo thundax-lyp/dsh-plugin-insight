@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[d6325d8](https://github.com/1264459640/dsh-trellis/tree/d6325d858e276917dacdec888a9cee42a175a636)
+分析版本：[e5b3912](https://github.com/1264459640/dsh-trellis/tree/e5b39122d3a4b93dbfc07a660a6294af21cb18d5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) [![npm 30d 1,515](https://img.shields.io/static/v1?label=npm+30d&message=1%2C515&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis) [![npm 30d 1,504](https://img.shields.io/static/v1?label=npm+30d&message=1%2C504&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis)
 <!-- END META -->
 
 > **实现功能**：为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。
@@ -40,11 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合DSH中跨会话推进功能、缺陷与重构的维护者。原有办法是聊天约定、手工Markdown清单和Git记录；当前把任务产物、task.json.steps、会话指针与每轮阶段提示接到Host，并用Web看板显示/选择任务。合格交付仍是满足业务验收的代码，附有可恢复的需求、设计、检查与归档记录，不能以绿色步骤替代业务完成。
+> **用途**：适合跨会话推进功能、缺陷与重构的维护者，用版本化任务产物、单一steps状态、会话指针和阶段提示恢复工作；最终仍验真实业务代码。
 
-Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物和单一steps状态为本项目增量，不是新通用任务算法。Skill以提示规定创建任务须同意、设计批准后实施、独立审查与测试业务双验收；这些是有价值的工作约定，但须与JS实际门禁分开。15个bundled Skill由文件复制到项目，不等15个常驻Agent或15个强制验证器。
-
-Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物和单一steps状态为本项目增量，不是新通用任务算法。Skill以提示规定创建任务须同意、设计批准后实施、独立审查与测试业务双验收；这些是有价值的工作约定，但须与JS实际门禁分开。15个bundled Skill由文件复制到项目，不等15个常驻Agent或15个强制验证器。
+手工Markdown清单+Git+项目CI是直接替代。保持相同任务及真实验收证据，比较跨会话遗漏、恢复耗时和额外记录；流水线标签的完备性不能自证任务质量。
 
 <a id="detail-section-3"></a>
 
@@ -60,44 +58,41 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 | Web看板 | 查看/显式激活任务 | 依赖Host身份/会话 |
 | 可选planning过滤 | 减少常见写工具暴露 | 保留shell，非沙箱 |
 
-**流程与依赖**
-
 #### 启动与依赖
 
-| 条件 | 用途 | 边界 |
-| --- | --- | --- |
-| DSH rc.2相关服务/cordis与项目fs | 工具、每轮提示与Web状态 | peer版本须核，非任意宿主兼容 |
-| 显式cwd allowlist | 选择受管项目 | 默认空不介入 |
-| 可写.agents/skills与.trellis | Skill/模板及任务持久化 | 进入匹配项目首轮可自动写入 |
-| Git及项目质量门 | 提交检查/业务验收 | Git失败可放行，质量检查由Agent执行 |
-| Web remotes/sidebar等 | 看板与绑定 | 非独立认证层 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| 匹配DSH fs/tools/提示与Cordis | 必需 | 任务和阶段接线 | 按peer代际核接口 |
+| 显式cwd allowlist | 必需 | 只介入受管项目 | 默认空不介入 |
+| 可写.agents/skills与.trellis | 必需 | 首轮部署/升级和任务产物 | 同名定制可能被覆盖，先备份 |
+| Git和项目质量流程 | 收尾必需 | 提交提示及真实验收 | Git异常可放行，需独立核查 |
+| Web remotes/slots | 看板可选 | 状态与绑定 | trust fence不是完整认证 |
 
 #### 启动步骤
 
-| 阶段 | 行为 | 人员判断 |
-| --- | --- | --- |
-| 启动 | 固定版本、备份同名Skill与任务文件、配allowlist | 审自动更新与readonly真实范围 |
-| 规划 | 用户同意建任务、写产物/steps与验收 | 设计批准须外部真实记录 |
-| 实施 | 按步骤推进、独立检查并保存证据 | 不信verified标签等同实际完成 |
-| 收尾 | 核业务结果/代码版本、完成与归档 | Git干净不代业务验收 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 用户备份同名Skill/任务，设allowlist | 清楚首次会自动写入/升级 |
+| 规划 | 用户真实同意任务和设计，Agent记录 | 外部保留批准来源，非仅字段 |
+| 实施 | Agent推进steps并保存产物 | 代码与任务指针对应 |
+| 验收 | 人员独立核业务与测试收据 | human标签不当批准证据 |
+| 收尾/恢复 | 用户核commit和实际文件后归档 | Gitunknown独立处理，失败不盲重写 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 本地Skill/模板/任务存储及Host依赖 | allowlist、备份/合并同名Skill、制定验收 | 安装工时与存储量未知 |
-| 持续使用 | 提示上下文token、任务JSON/文档/Git查询 | 写需求/设计/验证、审阶段与用户批准 | 无同任务token/节省工时对照 |
-| 失败恢复 | 备份恢复/重复模型调用、残留部分写入 | 核实际代码/产物后修指针与未完整更新 | 无跨文件事务/硬验收证明，恢复时间未知 |
+|---|---|---|---|
+| 首次使用 | Skill/模板/任务本地存储及Host | allowlist、备份合并同名定制、定验收 | 安装工时和覆盖范围需核 |
+| 持续使用 | 每轮提示token、任务JSON/文档/Git | 写需求/设计与独立验证 | 无同任务费用和净工时对照 |
+| 失败恢复 | 备份、重复模型调用与部分写入资源 | 核代码/产物后修指针及部署 | 无跨文件事务，恢复耗时未知 |
 
 #### 效果
 
-| 目标 | 当前增量 | 限制 |
-| --- | --- | --- |
-| 可恢复 | 任务文件/steps/会话绑定 | 记录完整性仍靠写入与人员 |
-| 可见阶段 | 每轮提示/看板 | 不证明批准/测试结果 |
-| 收尾提醒 | 步骤与Git检查 | 可降级/替换/失败放行 |
-
-Skill部署用版本marker判断升级，同版本只检查目录存在；升级或force覆盖官方同名目录/模板，不比较用户编辑内容，定制其他名字保留。marker写失败仅warn；逐文件写非事务，部分更新可残留。还会尝试删4个明确废弃模板。应先备份/评审同名定制，不能泛称所有用户Skill都不受影响。
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 任务可恢复 | 文件产物、steps和会话指针 | 实际遗漏/恢复人时 |
+| 阶段可见 | 每轮提示与看板投影 | 设计真实批准及任务正确 |
+| 收尾提示 | 步骤与Git检查 | 标签来源可伪造/可降级，非强验收 |
 
 > **思考**：human是模型可填标签，完整steps替换/verification降级与Git探测失败放行限制强验收主张；planning只读为工具组装过滤且保留shell，不是权限沙箱。详见[Q03](#research-q03)。
 
@@ -109,11 +104,7 @@ Skill部署用版本marker判断升级，同版本只检查目录存在；升级
 
 把三轨任务产物、单一steps、会话绑定/每轮提示与看板连接，降低仅靠聊天和手工清单恢复的接线负担；不归属为新通用任务算法。详见[Q01](#research-q01)。
 
-增量step更新有实质逻辑，AI/human验证步骤完成前要先有verified记录，blocked/未完成会阻止任务完成。可是human只是工具参数verifiedBy="human"，没有独立用户审批来源或签名，verificationNotes也非强制测试收据。模型能改verification为none；整组steps替换允许直接带completed/verified/verifiedBy，随后按结果列表检查，空列表也通过。两调用约束只覆盖相应增量路径，不能推出用户批准、独立审查或测试真实通过。实现阶段更新也未核design文件批准来源。
-
-Git门禁检查工作区/声明文件，但git不可用、权限/非仓库和部分失败返回clean=true，超时也带warning放行。modified_files由调用方声明，列表外脏文件告警允许，列表内只核干净和最近30提交历史，非当前任务基线/代码SHA/验收绑定。它有流程提示价值，不能证明这次业务实现已提交且通过。
-
-enforceReadonlyPlanning默认关闭。开启后在system-prompt组装时删除特定write/edit/Trellis工具并改提示段，不是执行前拒绝所有写操作；READ_TOOLS显式保留bash/pwsh，其他插件写工具可保留，unknown阶段视authorized。可减少常见误写，但不能提供工作区只读安全保证。Skill“硬卡点”与运行时能力应分层呈现，不把静态条件说成已执行绕过。
+任务指针不被显式别项更新隐式重绑、summary epoch和活动会话cwd绑定值得借鉴；artifact当前兼容agent.session身份，但验证标签与只读过滤仍须外部真实收据和执行策略。[Q02](#research-q02)、[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
@@ -127,8 +118,6 @@ human是模型可填标签，完整steps替换/verification降级与Git探测失
 
 可试用为人工复核开发任务辅助，先备份同名Skill并核自动覆盖；独立保存批准/验证与固定代码版本，不以标签或只读过滤代授权。详见[Q05](#research-q05)。
 
-Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物和单一steps状态为本项目增量，不是新通用任务算法。Skill以提示规定创建任务须同意、设计批准后实施、独立审查与测试业务双验收；这些是有价值的工作约定，但须与JS实际门禁分开。15个bundled Skill由文件复制到项目，不等15个常驻Agent或15个强制验证器。
-
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -137,16 +126,16 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 固定版本源码支持已描述的入口、接线与数据流；贡献和采用价值为源码级解释，运行效果、真实宿主兼容与收益对照尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 skills/trellis-start/SKILL.md、skills/trellis-feat/SKILL.md、lib/skills.js、lib/index.js、lib/artifact.js、lib/trust.js、lib/task.js、lib/git.js、lib/readonly.js、package.json、skills/trellis-finish-work/SKILL.md、test/native-steps.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、skills/trellis-start/SKILL.md、skills/trellis-feat/SKILL.md、lib/skills.js、lib/index.js、lib/artifact.js、lib/trust.js、lib/task.js、lib/git.js、lib/readonly.js、skills/trellis-finish-work/SKILL.md、test/native-steps.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：读取task步骤规范/更新/完成、Git门禁、readonly全模块、核心index工具/API/每轮钩子、artifact/trust/skills部署及四份关键Skill和原生步骤测试设计；其余Skill仅目录定义，不全面审阅客户端/归档/全部模板及外部Host，不运行目标/测试/宿主。
-- 下一步：进一步探讨应按本项缺口执行：固定需求/中断点比较恢复目标正确性、验收遗漏及规划/审查/恢复人时。；先用假fs/事件/固定Git输出对照接受/拒绝矩阵与人工负担。
+- 下一步：按 [Q05](#research-q05) 对自签human、整组替换、verification降级、空steps、旧SHA及Git超时比较凭据原型；真实批准不可由普通task字段代替。
 
 **分析版本**
 
 - **仓库**：[1264459640/dsh-trellis](https://github.com/1264459640/dsh-trellis)
-- **版本号**：0.4.4（[固定提交 d6325d8](https://github.com/1264459640/dsh-trellis/tree/d6325d858e276917dacdec888a9cee42a175a636)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.7（[固定提交 e5b3912](https://github.com/1264459640/dsh-trellis/tree/e5b39122d3a4b93dbfc07a660a6294af21cb18d5)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -156,7 +145,7 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 可探索与代码/要求版本绑定的独立验收凭据，把unknown与clean分开，并用假事件/Git矩阵证伪；尚未实现。详见[Q05](#research-q05)。
 
-进一步探讨应按本项缺口执行：固定需求/中断点比较恢复目标正确性、验收遗漏及规划/审查/恢复人时。；先用假fs/事件/固定Git输出对照接受/拒绝矩阵与人工负担。
+按 [Q05](#research-q05) 对自签human、整组替换、verification降级、空steps、旧SHA及Git超时比较凭据原型；真实批准不可由普通task字段代替。
 
 <a id="detail-section-9"></a>
 
@@ -167,21 +156,21 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 153 | 9741 | — | — | 157750 |
-| .md | test | 2 | 396 | — | — | 7812 |
-| .mjs | source | 4 | 891 | 724 | 115 | — |
-| .js | source | 16 | 8004 | 5810 | 1799 | — |
-| .js | test | 16 | 4311 | 3563 | 371 | — |
+| .md | source | 167 | 10622 | — | — | 172496 |
+| .md | test | 2 | 465 | — | — | 9297 |
+| .mjs | source | 5 | 907 | 737 | 117 | — |
+| .js | source | 16 | 8180 | 5936 | 1847 | — |
+| .js | test | 17 | 4900 | 4026 | 450 | — |
 
 </details>
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A01.099Z..2026-10-22T15%3A12%3A01.099Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/1264459640/dsh-trellis/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
-暂未获取：Issue 未关闭、近30天关闭。
 
-统计日期：2026-10-22。
+
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -205,7 +194,7 @@ Trellis理念与阶段/状态受既有Trellis启发，DSH适配、三轨产物�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/trellis-start/SKILL.md:7-47](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/skills/trellis-start/SKILL.md#L7-L47)
+**依据 1 · 源码核查**：[skills/trellis-start/SKILL.md:7-47](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/skills/trellis-start/SKILL.md#L7-L47)
 
 当前固定版本复核。意图与授权约定。
 
@@ -258,7 +247,7 @@ trellis_task_create({
 
 </details>
 
-**依据 2 · 源码核查**：[skills/trellis-feat/SKILL.md:69-108](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/skills/trellis-feat/SKILL.md#L69-L108)
+**依据 2 · 源码核查**：[skills/trellis-feat/SKILL.md:69-108](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/skills/trellis-feat/SKILL.md#L69-L108)
 
 当前固定版本复核。阶段/人卡约定。
 
@@ -310,7 +299,7 @@ review.md
 
 </details>
 
-**依据 3 · 源码核查**：[lib/skills.js:100-115](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/skills.js#L100-L115)
+**依据 3 · 源码核查**：[lib/skills.js:100-115](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/skills.js#L100-L115)
 
 当前固定版本复核。15个目录。
 
@@ -354,9 +343,11 @@ Web状态/看板/绑定都是POST，先检查Host/Origin trust fence，再核ses
 
 artifact写入仅标准basename、slug/direct-child及路径relative检查，使用ctx.fs resolve/writeText和sandboxPolicy。模块自身为词法边界，不做真实路径符号链接证明；是否拒绝物理路径外写取决Host文件系统策略，不从注释“physically impossible”推沙箱。
 
+当前artifact在未显式给slug时，先取exec.sessionId，再回退exec.agent.session.id查活动任务，使会话归属更贴合宿主执行上下文；标准路径用join再relative校验。该修补改善定位，不改变批准/验证的信任来源，显式slug更新仍需用户核目标任务。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:900-1025](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L900-L1025)
+**依据 1 · 源码核查**：[lib/index.js:900-1025](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/index.js#L900-L1025)
 
 当前固定版本复核。API信任/会话/绑定。
 
@@ -494,7 +485,7 @@ artifact写入仅标准basename、slug/direct-child及路径relative检查，使
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1116-1185](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L1116-L1185)
+**依据 2 · 源码核查**：[lib/index.js:1116-1185](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/index.js#L1116-L1185)
 
 当前固定版本复核。每轮解析/提示/epoch。
 
@@ -576,7 +567,7 @@ artifact写入仅标准basename、slug/direct-child及路径relative检查，使
 
 </details>
 
-**依据 3 · 源码核查**：[lib/artifact.js:45-91](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/artifact.js#L45-L91)
+**依据 3 · 源码核查**：[lib/artifact.js:45-91](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/artifact.js#L45-L91)
 
 当前固定版本复核。词法约束。
 
@@ -600,8 +591,8 @@ export function assertSafeArtifactPath(root, slug, artifact) {
   // Belt-and-suspenders: the slug must resolve to a DIRECT child of the tasks
   // dir (rejects `.`, `..`, and any dotted/pathological segment that slips past
   // the charset guard).
-  const tasksDir = path.resolve(root, '.trellis', 'tasks')
-  const taskDir = path.resolve(tasksDir, safeSlug)
+  const tasksDir = path.join(root, '.trellis', 'tasks')
+  const taskDir = path.join(tasksDir, safeSlug)
   const taskRel = path.relative(tasksDir, taskDir)
   if (taskRel !== safeSlug || taskRel.startsWith('..') || path.isAbsolute(taskRel)) {
     throw new Error(`非法的任务 slug：路径越权 (${safeSlug})`)
@@ -620,7 +611,7 @@ export function assertSafeArtifactPath(root, slug, artifact) {
     throw new Error(`非法的文件名包含路径穿越或分隔符: "${name}"`)
   }
 
-  const targetPath = path.resolve(taskDir, name)
+  const targetPath = path.join(taskDir, name)
 
   // Ensure targetPath is strictly inside taskDir
   const rel = path.relative(taskDir, targetPath)
@@ -635,7 +626,7 @@ export function assertSafeArtifactPath(root, slug, artifact) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/artifact.js:115-139](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/artifact.js#L115-L139)
+**依据 4 · 源码核查**：[lib/artifact.js:121-145](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/artifact.js#L121-L145)
 
 当前固定版本复核。Host写入。
 
@@ -672,7 +663,7 @@ export function assertSafeArtifactPath(root, slug, artifact) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/trust.js:1-60](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/trust.js#L1-L60)
+**依据 5 · 源码核查**：[lib/trust.js:1-60](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/trust.js#L1-L60)
 
 当前固定版本复核。非认证层。
 
@@ -744,7 +735,7 @@ export function isTrustedApiRequest(headers, trustedHosts = []) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:1188-1232](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L1188-L1232)
+**依据 6 · 源码核查**：[lib/index.js:1188-1232](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/index.js#L1188-L1232)
 
 当前固定版本复核。相同步骤缓存缩成一行提醒并按source-kind去重本轮提示
 
@@ -801,6 +792,31 @@ export function isTrustedApiRequest(headers, trustedHosts = []) {
 
 </details>
 
+**依据 7 · 源码核查**：[lib/artifact.js:101-113](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/artifact.js#L101-L113)
+
+缺slug时兼容agent.session.id回退，找不到活动任务仍拒绝。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+export async function updateTaskArtifact(dshFs, root, args, exec = {}, sandboxPolicy) {
+  let slug = args.slug && typeof args.slug === 'string' ? args.slug.trim() : undefined
+  if (!slug) {
+    const sessionId =
+      typeof exec.sessionId === 'string'
+        ? exec.sessionId
+        : exec.agent && exec.agent.session && typeof exec.agent.session.id === 'string'
+          ? exec.agent.session.id
+          : undefined
+    slug = await findActiveTaskSlug(dshFs, root, sessionId)
+    if (!slug) {
+      return { ok: false, error: '未指定 slug 且当前会话未绑定任何活动任务' }
+    }
+```
+
+</details>
+
 #### 缺口
 
 - Host物理路径策略和外层API身份隔离未包含在本插件源码证明中。
@@ -825,7 +841,7 @@ enforceReadonlyPlanning默认关闭。开启后在system-prompt组装时删除�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/task.js:55-110](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L55-L110)
+**依据 1 · 源码核查**：[lib/task.js:55-110](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/task.js#L55-L110)
 
 当前固定版本复核。整组字段。
 
@@ -893,7 +909,7 @@ enforceReadonlyPlanning默认关闭。开启后在system-prompt组装时删除�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L172-L301)
+**依据 2 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/task.js#L172-L301)
 
 当前固定版本复核。增量/空组验收。
 
@@ -1035,7 +1051,7 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L880-L915)
+**依据 3 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/task.js#L880-L915)
 
 当前固定版本复核。替换与完成门。
 
@@ -1083,7 +1099,7 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:600-641](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L600-L641)
+**依据 4 · 源码核查**：[lib/index.js:600-641](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/index.js#L600-L641)
 
 当前固定版本复核。模型可填human/降级。
 
@@ -1137,7 +1153,7 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/git.js:151-258](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/git.js#L151-L258)
+**依据 5 · 源码核查**：[lib/git.js:151-258](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/git.js#L151-L258)
 
 当前固定版本复核。失败放行/声明范围。
 
@@ -1257,7 +1273,7 @@ export function checkGitCleanliness(root, options = {}) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/readonly.js:25-113](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/readonly.js#L25-L113)
+**依据 6 · 源码核查**：[lib/readonly.js:25-113](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/readonly.js#L25-L113)
 
 当前固定版本复核。名单/状态。
 
@@ -1358,7 +1374,7 @@ export function applyReadonlyPolicy(tools, phase, skipState = false) {
 
 </details>
 
-**依据 7 · 源码核查**：[lib/index.js:1087-1114](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/index.js#L1087-L1114)
+**依据 7 · 源码核查**：[lib/index.js:1087-1114](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/index.js#L1087-L1114)
 
 当前固定版本复核。仅组装过滤。
 
@@ -1408,30 +1424,15 @@ export function applyReadonlyPolicy(tools, phase, skipState = false) {
 
 #### 完整回答
 
-条件为DSH rc.2相关服务/cordis与项目fs，用途为工具、每轮提示与Web状态，边界为peer版本须核，非任意宿主兼容。
-条件为显式cwd allowlist，用途为选择受管项目，边界为默认空不介入。
-条件为可写.agents/skills与.trellis，用途为Skill/模板及任务持久化，边界为进入匹配项目首轮可自动写入。
-条件为Git及项目质量门，用途为提交检查/业务验收，边界为Git失败可放行，质量检查由Agent执行。
-条件为Web remotes/sidebar等，用途为看板与绑定，边界为非独立认证层。
+启动仅介入显式cwd allowlist项目；匹配项目会复制bundled Skill、共享模板和版本marker，任务文件与会话指针持续保存。作者称自包含不等于无项目写入，首次进入与升级均须先备份同名目录。
 
-阶段为启动，行为为固定版本、备份同名Skill与任务文件、配allowlist，人员判断为审自动更新与readonly真实范围。
-阶段为规划，行为为用户同意建任务、写产物/steps与验收，人员判断为设计批准须外部真实记录。
-阶段为实施，行为为按步骤推进、独立检查并保存证据，人员判断为不信verified标签等同实际完成。
-阶段为收尾，行为为核业务结果/代码版本、完成与归档，人员判断为Git干净不代业务验收。
+Skill部署用版本marker判断升级，同版本只检查目录存在；升级或force覆盖官方同名目录/模板，不比较用户编辑内容，其他名字保留。marker写失败仅warn，逐文件写入非事务，部分更新可残留；还尝试删除明确废弃模板。不是所有用户自定义Skill都不受影响。
 
-阶段为首次，现金与资源成本为本地Skill/模板/任务存储及Host依赖，人工与时间投入为allowlist、备份/合并同名Skill、制定验收，已知条件与未知项为安装工时与存储量未知。
-阶段为持续使用，现金与资源成本为提示上下文token、任务JSON/文档/Git查询，人工与时间投入为写需求/设计/验证、审阶段与用户批准，已知条件与未知项为无同任务token/节省工时对照。
-阶段为失败恢复，现金与资源成本为备份恢复/重复模型调用、残留部分写入，人工与时间投入为核实际代码/产物后修指针与未完整更新，已知条件与未知项为无跨文件事务/硬验收证明，恢复时间未知。
-
-目标为可恢复，当前增量为任务文件/steps/会话绑定，限制为记录完整性仍靠写入与人员。
-目标为可见阶段，当前增量为每轮提示/看板，限制为不证明批准/测试结果。
-目标为收尾提醒，当前增量为步骤与Git检查，限制为可降级/替换/失败放行。
-
-Skill部署用版本marker判断升级，同版本只检查目录存在；升级或force覆盖官方同名目录/模板，不比较用户编辑内容，定制其他名字保留。marker写失败仅warn；逐文件写非事务，部分更新可残留。还会尝试删4个明确废弃模板。应先备份/评审同名定制，不能泛称所有用户Skill都不受影响。
+持续开销包括每轮提示上下文、任务JSON/产物维护和Git查询；主要人工成本在需求/设计、真实批准与独立业务验收。失败恢复要先核实际代码、步骤状态、会话指针和已写文件，不能只重置绿色标签。缺任务总token、工时、合格率及中断恢复数据，不给节省承诺。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-92](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/package.json#L1-L92)
+**依据 1 · 源码核查**：[package.json:1-92](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/package.json#L1-L92)
 
 当前固定版本复核。包/peer。
 
@@ -1441,7 +1442,7 @@ Skill部署用版本marker判断升级，同版本只检查目录存在；升级
 ```text
 {
   "name": "@banana-peeljj12/dsh-trellis",
-  "version": "0.4.4",
+  "version": "0.4.7",
   "description": "Self-contained Trellis workflow trigger for DeepSeek Harness: per-turn breadcrumb injection via agent/pre-step, a bundled skill provider, and DSH-native task/phase state resolution. No Trellis AGPL code is vendored; workflow semantics are rewritten and licensed MIT.",
   "type": "module",
   "main": "lib/index.js",
@@ -1535,7 +1536,7 @@ Skill部署用版本marker判断升级，同版本只检查目录存在；升级
 
 </details>
 
-**依据 2 · 源码核查**：[lib/skills.js:139-236](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/skills.js#L139-L236)
+**依据 2 · 源码核查**：[lib/skills.js:139-236](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/skills.js#L139-L236)
 
 当前固定版本复核。版本覆盖/marker/清理。
 
@@ -1645,7 +1646,7 @@ export async function ensureProjectSkills(dshFs, root, { signal, sandboxPolicy, 
 
 </details>
 
-**依据 3 · 源码核查**：[skills/trellis-finish-work/SKILL.md:11-33](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/skills/trellis-finish-work/SKILL.md#L11-L33)
+**依据 3 · 源码核查**：[skills/trellis-finish-work/SKILL.md:11-33](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/skills/trellis-finish-work/SKILL.md#L11-L33)
 
 当前固定版本复核。收尾顺序与范围。
 
@@ -1680,7 +1681,7 @@ export async function ensureProjectSkills(dshFs, root, { signal, sandboxPolicy, 
 
 </details>
 
-**依据 4 · 源码核查**：[lib/skills.js:50-96](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/skills.js#L50-L96)
+**依据 4 · 源码核查**：[lib/skills.js:50-96](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/skills.js#L50-L96)
 
 当前固定版本复核。四个硬编码废弃模板及实际policy检查后unlink
 
@@ -1763,7 +1764,7 @@ export async function pruneDeprecatedProjectTemplates(dshFs, root, { sandboxPoli
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L172-L301)
+**依据 1 · 源码核查**：[lib/task.js:172-301](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/task.js#L172-L301)
 
 当前固定版本复核。凭据来源/降级推导。
 
@@ -1905,7 +1906,7 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/task.js#L880-L915)
+**依据 2 · 源码核查**：[lib/task.js:880-915](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/task.js#L880-L915)
 
 当前固定版本复核。整组替换推导。
 
@@ -1953,7 +1954,7 @@ export function checkStepsCompletion(steps) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/git.js:151-215](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/lib/git.js#L151-L215)
+**依据 3 · 源码核查**：[lib/git.js:151-215](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/lib/git.js#L151-L215)
 
 当前固定版本复核。unknown与clean分离推导。
 
@@ -2030,7 +2031,7 @@ export function checkGitCleanliness(root, options = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[test/native-steps.test.js:65-101](https://github.com/1264459640/dsh-trellis/blob/d6325d858e276917dacdec888a9cee42a175a636/test/native-steps.test.js#L65-L101)
+**依据 4 · 源码核查**：[test/native-steps.test.js:65-101](https://github.com/1264459640/dsh-trellis/blob/e5b39122d3a4b93dbfc07a660a6294af21cb18d5/test/native-steps.test.js#L65-L101)
 
 当前固定版本复核。作者两阶段测试设计，不等独立执行。
 

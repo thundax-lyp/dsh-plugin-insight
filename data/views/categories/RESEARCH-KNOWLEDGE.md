@@ -22,7 +22,7 @@
 | [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查方法、确定性来源路由和可选Jev降档判据，要求结论附可追溯原文。 | 已有可信搜索/正文环境可试用公开事实研究，Jev按隐私选装，结论依证据并独立复核。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](#research-q03)。 |
 | [dsh-insight](#plugin-1336649545-root) | 用需求匹配、环境配方、健康评分、静态安全扫描与统一 verdict 辅助选择 DSH 插件。 | 适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。 |
-| [dsh-ledger-memory](#plugin-1412857520-root) | 为DSH项目维护台账、决策目标经验卡和活动日志，自动注入记忆、压缩前后提供胶囊与seq回读，并支持跨会话交接和项目锁定。 | 先观察，无敏感项目副本中核授权目标/内容、压缩旁路、回读cap、日志披露与Git index变化，再考虑重要记忆。 |
+| [dsh-ledger-memory](#plugin-1412857520-root) | 管理项目台账、决策目标经验卡、活动日志、压缩原文指针与跨会话交接。 | 先在可备份的V3非关键项目核对写入、授权、stage和压缩回读；定期人工比较记忆与实际工作区，出现审计或文本缺口即暂停自动依赖。 |
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | 先观察。 |
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。 | 只读轮询与离线抓取先行，清零单独审批；在独立仪表/标准光源下复核后才上生产设备。 |
 | [dsh-math-olympiad](#plugin-1344714964-root) | 挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。 | 已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](#research-q03)。 |
@@ -102,9 +102,9 @@
 
 ## [@zzerx/dsh-plugin-memory](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md)
 
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,223](https://img.shields.io/static/v1?label=npm+30d&message=2%2C223&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,810](https://img.shields.io/static/v1?label=npm+30d&message=1%2C810&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
 
-> **用途**：DSH用户希望跨会话复用偏好和项目约定，并可人工修订与回看来源。详见[Q01](#research-q01)。
+> **用途**：面向希望跨会话复用偏好与项目约定的 DSH 单用户。合格结果需作用域正确、错误可纠正、来源可回看；原文与关系图不自动保证事实正确。
 
 > **亮点**：将原文、后台提炼/判定、记忆工具与scope注入/图谱管理接为跨会话流程。详见[Q01](#research-q01)。
 
@@ -228,15 +228,15 @@
 
 ## [dsh-ledger-memory](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/18477514055/dsh-ledger-memory) [![npm 30d 3,016](https://img.shields.io/static/v1?label=npm+30d&message=3%2C016&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/18477514055/dsh-ledger-memory) [![npm 30d 3,126](https://img.shields.io/static/v1?label=npm+30d&message=3%2C126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ledger-memory)
 
-> **用途**：面向跨很多轮/会话推进同一项目的DSH用户。活跃台账承接现状，决策/目标/经验卡存长期资产，活动日志保事件，压缩前后胶囊和seq索引帮助找回原话，handoff让新会话继续。它管理的是人和模型维护的项目记忆，不是自动证明项目事实的数据库。
+> **用途**：给跨会话持续推进项目的人维护状态记忆，合格结果要核对真实目标与工作区。
 
-> **亮点**：将项目文件/卡片、每轮记忆接线、被压seq索引和先index后点读组合，settings缺认证拒绝、原则用真实卡片grant，减少纯摘要盲回读。详见[Q02](#research-q02)、[Q04](#research-q04)。
+> **亮点**：在普通项目笔记之上接入检测、注入、归档、卡片索引和压缩原文回读，减少记得手动查笔记的依赖；语义正确仍需复核。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：原则grant按sid未绑定root/正文/版本；全量落盘有manual/紧急旁路；超cap单事件按事件边界无法回读，文本不是原始事件全结构。记忆写可自动git add，多资产非事务。详见[Q03](#research-q03)、[Q05](#research-q05)、[Q07](#research-q07)。
+> **思考**：原则grant按会话而非精确内容/root，超预算单事件无法靠seq拆分；主写与审计非事务，临时创建失败清理未判断所有权；V3禁自动stage而V2仍默认允许。[Q03](#research-q03)、[Q04](#research-q04)
 
-> **建议**：可探索项目/材料/省略收据、原则内容与版本授权、压缩对象hash/超大事件分块及独立Git偏好，比较污染/恢复和总成本；未实现。详见[Q09](#research-q09)。
+> **建议**：未验证方向是绑定root/内容/版本的授权与多资产写入收据，借故障矩阵检验错写、部分审计和可恢复性，不能把新假设当已实现保证。[Q06](#research-q06)
 
 <a id="plugin-1351375738-root"></a>
 
@@ -688,4 +688,4 @@
 
 ## 更新时间
 
-2026-10-24
+2026-10-26

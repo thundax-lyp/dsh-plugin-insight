@@ -46,7 +46,7 @@
 | [dsh-diff-approval](#plugin-1335980444-root) | 捕获DSH成功文件编辑并集中展示差异，支持Keep/Revert、评论、撤销及VCS变更导入。 | 单人可备份工作树可试用事后审阅，回退前冻结外写并核实际文件，创建删除不可undo且持久失败需查日志。 |
 | [dsh-openai-oauth](#plugin-1335992154-root) | 为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。 | 本机认证/凭据/provider适配完整，可保留替代路由试用；注意协议、明文凭据和消息/退出边界，不拓展远程多用户。 |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](#research-q06)。 |
-| [dsh-project-memory](#plugin-1339316901-root) | 索引项目文档与代码符号，分层召回经验和insight，并将任务记录跨会话保存。 | 长期单项目非敏感语料可有限试用，先核引用、触发截断和global；反思默认关闭，近邻/命中不能作为知识验证。 |
+| [@yolk_vat-y/dsh-project-memory](#plugin-1339316901-root) | 为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。 | 项目续接和可回源记忆有明确价值，可单项目控制范围；需审阅自动注入、global可见性和真实落盘，不把召回分数当事实。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | lookup-only的共享笔记、拒答和来源收据值得非敏感单用户试用；审核当前状态与ranked旧页，nightly/导入/CLI另评，不能把canonical当事实认证。 |
 | [dsh-thumb](#plugin-1341694685-root) | 将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。 | 适合愿意自行维护的个人窄屏DSH用户受控试用，先核对列定位、设置与轨迹交互并保留关闭重载路径；不把免hash当免维护。 |
 | [dsh-wsl-open](#plugin-1347958944-root) | 让 DSH 网页聊天中的 WSL Linux 路径可点击，并用 Windows 默认应用或 Explorer 打开。 | 适合个人本地WSL办公文件流程试用；仅打开可信文件，核对宿主路由权限和真实窗口结果。 |
@@ -55,7 +55,7 @@
 | [dsh-capmap-viz](#plugin-1356896576-dsh-capmap-viz) | 解析 CapMap 文档并在 DSH 侧栏展示能力图、状态、前沿和校验门。 | 对已有 CapMap 文档的团队有清晰只读导航价值，但必须把图视为声明并回查原文。 |
 | [dsh-usage-analytics](#plugin-1356960582-root) | 在DSH设置中展示本机1、7、30天Token图表、模型分布和技能调用状态，并支持重建派生缓存。 | 适合本机个人用户对小样本受控试用并核对用量字段和索引状态；不作账单、技能成果成功率或多人权限保证。 |
 | [dsh-model-channel-manager](#plugin-1358316691-root) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 适合已有多个可替代渠道且愿意核对输出、预算和RC契约的用户试用，先验收流中失败与取消。 |
-| [dsh-plugin-notes](#plugin-1363429979-plugin-notes) | 把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。 | 先个人隔离试用，删除后手动备份，定时任务加强监控。 |
+| [dsh-plugin-notes](#plugin-1363429979-plugin-notes) | 提供纸卡、看板和日历便签，支持截止日期、AI任务派发、有效期日程和WebDAV备份。 | 先个人隔离试用，删除后手动备份，定时任务加强监控。 |
 | [dsh-super-code](#plugin-1367482095-root) | 提供编码 Agent 预设、任务与委派台账、专业方法、分层记忆和可配置运行预算。 | 适合已有代码验收流程的DSH开发者在独立分支试复杂任务，确认预设预算和删除模式，并保留真实测试把关。 |
 | [dsh-eteams](#plugin-1372993989-root) | 为DSH提供领队主导的多会话团队、任务执行链、成员对话与SQLite持久状态。 | 可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。 |
 | [3chat-customer-growth](#plugin-1374055714-root) | 连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。 | 适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。 |
@@ -137,7 +137,7 @@
 
 ## [no-ai-style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
 **主要用途**：提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
 
@@ -541,15 +541,15 @@
 
 <a id="plugin-1339316901-root"></a>
 
-## [dsh-project-memory](../../plugins/00080000--dsh-project-memory/INSIGHT.md)
+## [@yolk_vat-y/dsh-project-memory](../../plugins/00080000--dsh-project-memory/INSIGHT.md)
 
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) [![npm 30d 4,202](https://img.shields.io/static/v1?label=npm+30d&message=4%2C202&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
+[![GitHub ★ 25](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=25&color=yellow&logo=github&style=flat)](https://github.com/00080000/dsh-project-memory) [![npm 30d 3,686](https://img.shields.io/static/v1?label=npm+30d&message=3%2C686&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
 
-**主要用途**：索引项目文档与代码符号，分层召回经验和insight，并将任务记录跨会话保存。
+**主要用途**：为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。
 
-**推荐理由**：长期单项目非敏感语料可有限试用，先核引用、触发截断和global；反思默认关闭，近邻/命中不能作为知识验证。
+**推荐理由**：项目续接和可回源记忆有明确价值，可单项目控制范围；需审阅自动注入、global可见性和真实落盘，不把召回分数当事实。
 
-**使用条件**：先单项目非敏感语料和少量人工经验试用，反思/扩展保持默认关；核原文、trigger正文和global，重要规则保权威原件。参见Q06(#research-q06)。
+**使用条件**：建议单一非敏感工程小范围试用，先按需查询和回源，后逐步开启自动注入；串项目和未落盘等停止标准见 Q05(#research-q05)。
 
 [返回表格](#column-index)
 
@@ -669,9 +669,9 @@
 
 ## [dsh-plugin-notes](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md)
 
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,413](https://img.shields.io/static/v1?label=npm+30d&message=2%2C413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,783](https://img.shields.io/static/v1?label=npm+30d&message=1%2C783&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
 
-**主要用途**：把 Markdown 便签、任务泳道、新会话执行、定时调度与 WebDAV 备份组合在 DSH 中。
+**主要用途**：提供纸卡、看板和日历便签，支持截止日期、AI任务派发、有效期日程和WebDAV备份。
 
 **推荐理由**：先个人隔离试用，删除后手动备份，定时任务加强监控。
 
@@ -765,4 +765,4 @@
 
 ## 更新时间
 
-2026-10-24
+2026-10-26

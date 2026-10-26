@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing)
+分析版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,814](https://img.shields.io/static/v1?label=npm+30d&message=1%2C814&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,475](https://img.shields.io/static/v1?label=npm+30d&message=1%2C475&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
 <!-- END META -->
 
 > **实现功能**：从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。
@@ -43,7 +43,7 @@
 
 > **用途**：维护者核对模型用量和费用估算，要求计量、提供商价格、历史与unknown可解释。
 
-provider原始账单/usage加人工估价表可替代；插件整合展示但价格匹配和合同需独立核对。
+直接基线是人工用 provider 原始 usage 和合同价表计算同批事件。插件增加会话与工作区视图，但合同、模型别名和缓存 token 桶口径仍需人核；用同一批调用对比缺失、错价、历史重折漂移和恢复人时。
 
 <a id="detail-section-3"></a>
 
@@ -69,6 +69,7 @@ provider原始账单/usage加人工估价表可替代；插件整合展示但价
 | 本地账本/快照存储 | 持久必需 | 分片、别名和口径 | 卸载不等删除敏感会话元数据 |
 
 
+
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -77,6 +78,8 @@ provider原始账单/usage加人工估价表可替代；插件整合展示但价
 | 加载 | 安装profile并核对历史回填标记 | 区分真实usage、估价、未计价 |
 | 使用 | 对照少量已知事件和账单核对 | 预算提醒不等阻止进一步调用 |
 | 退出/恢复 | 备份账本/快照，检查自定义价与alias变化 | 不盲重建/重计价覆盖历史解释 |
+
+本地账本包含sessionId、cwd、model、tokens/费用，虽不是完整会话正文仍有隐私留存责任；UI/remote共享宿主授权边界需另核。
 
 #### 成本
 
@@ -130,13 +133,13 @@ provider原始账单/usage加人工估价表可替代；插件整合展示但价
 - 已检查：作者 README、包清单、源码路径 packages/plugin-usage-billing/src/index.ts、packages/plugin-usage-billing/src/fold.ts、packages/plugin-usage-billing/src/aggregate.ts、packages/plugin-usage-billing/src/ledger-store.ts、packages/plugin-usage-billing/src/pricing/cost.ts、packages/plugin-usage-billing/src/pricing/tiers.ts、packages/plugin-usage-billing/src/shard-merge.ts、packages/plugin-usage-billing/src/service.ts、packages/plugin-usage-billing/src/pricing/fetch.ts、packages/plugin-usage-billing/src/remote-methods.ts、packages/plugin-usage-billing/README.md、packages/plugin-usage-billing/package.json 及固定范围 inventory；组件：packages/plugin-usage-billing。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定组件index/service/aggregate/fold、价格/峰谷/同名与分片merge/store、remote方法主链；未全面审计主题编译/所有Client，不读真实会话或价格。
-- 下一步：进一步探讨可用同名异价provider、alias变化、cache桶、缺usage、跨日和分片失败夹具核对误价/漂移/恢复。
+- 下一步：按 [Q05](#research-q05) 设计两 provider 同 model 异价、alias 变化、缺 usage 和分片失败夹具，先验证收费解释与历史稳定，再由明确授权对少量账单核对；本轮无实际日志或价格请求。
 
 **分析版本**
 
 - **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)
-- **版本号**：1.3.0（[固定提交 acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e)）
-- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.3.0（[固定提交 be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -146,7 +149,7 @@ provider原始账单/usage加人工估价表可替代；插件整合展示但价
 
 可探讨provider计价契约和锁价收据，绑定usage schema/规则/FX，旧行普通重折保留，重估明确修订；维护和迁移成本未验证。详见[Q05](#research-q05)。
 
-进一步探讨可用同名异价provider、alias变化、cache桶、缺usage、跨日和分片失败夹具核对误价/漂移/恢复。
+按 [Q05](#research-q05) 设计两 provider 同 model 异价、alias 变化、缺 usage 和分片失败夹具，先验证收费解释与历史稳定，再由明确授权对少量账单核对；本轮无实际日志或价格请求。
 
 <a id="detail-section-9"></a>
 
@@ -166,11 +169,7 @@ provider原始账单/usage加人工估价表可替代；插件整合展示但价
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-22T05%3A53%3A48.060Z..2026-10-22T05%3A53%3A48.060Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A53%3A48.060Z..2026-10-22T05%3A53%3A48.060Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/0x7A7A6572/dsh-forge-studio/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -194,7 +193,7 @@ Host打开storageDomain，记录install快照，通过sessionPersistence revisio
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:30-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/index.ts#L30-L38)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:30-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L30-L38)
 
 storageDomain是主依赖。
 
@@ -210,7 +209,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
   ctx.effect(() => () => { void domain.close() })
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-88](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/index.ts#L55-L88)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-88](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L55-L88)
 
 revision/日志源与install快照。
 
@@ -256,7 +255,7 @@ revision/日志源与install快照。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:53-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/fold.ts#L53-L107)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:53-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L53-L107)
 
 模型归属、usage与事件时刻费用。
 
@@ -323,7 +322,7 @@ revision/日志源与install快照。
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
 
 变化日志折叠与水位。
 
@@ -361,7 +360,7 @@ revision/日志源与install快照。
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:66-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/ledger-store.ts#L66-L116)
+**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:66-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/ledger-store.ts#L66-L116)
 
 分片串行upsert。
 
@@ -442,7 +441,7 @@ revision/日志源与install快照。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:96-117](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/pricing/cost.ts#L96-L117)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:96-117](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/cost.ts#L96-L117)
 
 未知价/汇率显式priced:false及费用计算。
 
@@ -476,7 +475,7 @@ revision/日志源与install快照。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/fold.ts#L77-L82)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L77-L82)
 
 无provider限定的时间系数。
 
@@ -489,7 +488,7 @@ revision/日志源与install快照。
     const priced = priceUsage(usage, table.entries, keys, table.usdToCny, factor)
 ```
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/tiers.ts:27-37](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/pricing/tiers.ts#L27-L37)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/tiers.ts:27-37](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/tiers.ts#L27-L37)
 
 固定空闲倍率0.5。
 
@@ -512,7 +511,7 @@ export const TIER_RULES: readonly TierRule[] = [
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:53-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/pricing/cost.ts#L53-L82)
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:53-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/cost.ts#L53-L82)
 
 同名跨provider首项兜底。
 
@@ -554,7 +553,7 @@ function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): Pri
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
+**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
 
 变动日志全量重折并写不同row。
 
@@ -592,7 +591,7 @@ function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): Pri
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-usage-billing/src/shard-merge.ts:34-53](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/shard-merge.ts#L34-L53)
+**依据 6 · 源码核查**：[packages/plugin-usage-billing/src/shard-merge.ts:34-53](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/shard-merge.ts#L34-L53)
 
 同ID后写覆盖。
 
@@ -624,7 +623,7 @@ export function mergeShardRows(current: readonly LedgerRow[], batch: readonly Le
 
 </details>
 
-**依据 7 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:317-339](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/service.ts#L317-L339)
+**依据 7 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:317-339](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/service.ts#L317-L339)
 
 repricing跳过已定价不等其他重折路径保留。
 
@@ -659,7 +658,7 @@ repricing跳过已定价不等其他重折路径保留。
 
 </details>
 
-**依据 8 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:71-75](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/fold.ts#L71-L75)
+**依据 8 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:71-75](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L71-L75)
 
 缺usage跳过费用行。
 
@@ -692,30 +691,13 @@ repricing跳过已定价不等其他重折路径保留。
 
 storageDomain是强注入，缺失降级。sessionQuery决定会话真正可读，sessionPersistence只是省I/O的revision来源。联网从models.dev和open.er-api抓元数据，未见为计算而发送会话正文；本轮只读代码、不取真实价格。失网有内置与默认汇率口径，应按来源说明而非实时价格解释。
 
-#### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH storageDomain及sessionQuery | 主聚合必需 | 账本表/价格快照与会话读取 | storage缺失降级，query缺失无法真实读会话 |
-| sessionPersistence revision | 优化可选 | 跳过未变日志 | 缺失每轮全会话重读 |
-| Host web服务/网络 | 联网价表可选 | models.dev和汇率刷新 | 降级内置/默认口径需可见 |
-| Client/设置/Typert契约 | 展示/改价必需 | 卡片、趋势、自定义价 | 内部rc版本需核对 |
-| 本地账本/快照存储 | 持久必需 | 分片、别名和口径 | 卸载不等删除敏感会话元数据 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 固定宿主/包，盘点模型usage与真实定价条款 | 把显示金额当估算，先核provider/峰谷范围 |
-| 加载 | 安装profile并核对历史回填标记 | 区分真实usage、估价、未计价 |
-| 使用 | 对照少量已知事件和账单核对 | 预算提醒不等阻止进一步调用 |
-| 退出/恢复 | 备份账本/快照，检查自定义价与alias变化 | 不盲重建/重计价覆盖历史解释 |
-
-本地账本包含sessionId、cwd、model、tokens/费用，虽不是完整会话正文仍有隐私留存责任；UI/remote共享宿主授权边界需另核。
+启动顺序决定可见性。storageDomain 先打开，sessionPersistence 只提供变化戳，真实消息仍经 sessionQuery 读入；缺后者不能用缓存戳冒充读取。网络价格失败应保留默认口径，不把当前模型目录当历史真实合同。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:30-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/index.ts#L30-L38)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:30-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L30-L38)
 
 缺storage降级。
 
@@ -731,7 +713,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
   ctx.effect(() => () => { void domain.close() })
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-83](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/index.ts#L55-L83)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-83](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L55-L83)
 
 query/revision/web服务。
 
@@ -772,7 +754,7 @@ query/revision/web服务。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/fetch.ts:15-16](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/pricing/fetch.ts#L15-L16)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/fetch.ts:15-16](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/fetch.ts#L15-L16)
 
 两个元数据URL。
 
@@ -781,7 +763,7 @@ export const MODELS_DEV_URL = 'https://models.dev/api.json'
 export const FX_URL = 'https://open.er-api.com/v6/latest/USD'
 ```
 
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:86-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/fold.ts#L86-L107)
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:86-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L86-L107)
 
 持久行会话/目录字段。
 
@@ -815,7 +797,7 @@ export const FX_URL = 'https://open.er-api.com/v6/latest/USD'
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:20-32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/remote-methods.ts#L20-L32)
+**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:20-32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/remote-methods.ts#L20-L32)
 
 读取和改价远程面。
 
@@ -852,27 +834,15 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 完整任务是正确解释同一组调用的用量与估价，并发现无法计价/不一致，不是UI数字更完整。插件不额外调用模型，但冷回填、变化日志重折、表索引与分片/网络仍有成本。模型费用是被观察对象，不应和插件自身开销混成一个“免费”。
 
-#### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 历史日志全量读取、账本分片与UI，金额未知 | 定价/汇率/usage桶口径核对 | 安装前金额标估算 |
-| 持续使用 | 变动日志重折、分片写、价表/汇率网络刷新 | 处理未计价、alias和预算提示 | 不新增模型工具/提示，不等0 CPU/I/O |
-| 失败恢复 | 价表降级、日志错误、分片/水位重建 | 检查重复/残留和历史金额漂移 | 网络刷新占写队列，恢复时长未知 |
 
-#### 效果
+首次冷回填需要遍历历史日志并建立分片；持续开销取决于会话变化戳和改价刷新；失败时要核分片写入与折叠水位是否一致。应记录 CPU/I/O、网络和人工对账，现金与时间分开。
 
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 用量可见 | 从有usage的assistant事件折叠并按seq去重 | provider usage是否完整及失败调用覆盖 |
-| 费用展示 | 价格/汇率/峰谷计算与unknown状态 | 是否等真实合同/折扣/收款账单 |
-| 历史解释 | snapshot/backfilled与分片ID | 别名/重折后金额是否保持既有含义 |
-
-对照provider原始usage/收款与人工表格时，应分别验证计量正确、价目匹配、折扣/汇率与显示分组，并计修正/重建人时。
+未知实际费用、恢复时长和错误率，不能从不调用模型推出零成本。对照 provider 原始 usage/收款与人工表格时，应分别验证计量正确、价目匹配、折扣/汇率与显示分组，并计修正/重建人时。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-71](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/index.ts#L55-L71)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-71](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L55-L71)
 
 缺revision退化全日志。
 
@@ -901,7 +871,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
 
 变动会话重折。
 
@@ -939,7 +909,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:47-62](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/ledger-store.ts#L47-L62)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:47-62](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/ledger-store.ts#L47-L62)
 
 启动把所有账本行建内存索引。
 
@@ -967,7 +937,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 </details>
 
-**依据 4 · 作者声明**：[packages/plugin-usage-billing/README.md:33-36](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/README.md#L33-L36)
+**依据 4 · 作者声明**：[packages/plugin-usage-billing/README.md:33-36](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/README.md#L33-L36)
 
 作者网络刷新占写锁等边界。
 
@@ -1000,7 +970,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:66-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/ledger-store.ts#L66-L116)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:66-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/ledger-store.ts#L66-L116)
 
 分片串行与跨片迁移。
 
@@ -1063,7 +1033,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:80-91](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/service.ts#L80-L91)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:80-91](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/service.ts#L80-L91)
 
 失败后继续队列与安装快照。
 
@@ -1087,7 +1057,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:1-6](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/remote-methods.ts#L1-L6)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:1-6](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/remote-methods.ts#L1-L6)
 
 remote名单防漂移动机。
 
@@ -1100,7 +1070,7 @@ remote名单防漂移动机。
  * 所以名单只写一次，并用 tests/service-remote.test.ts 钉住。
 ```
 
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:20-32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/remote-methods.ts#L20-L32)
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:20-32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/remote-methods.ts#L20-L32)
 
 唯一方法契约。
 
@@ -1125,7 +1095,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/fold.ts#L77-L107)
+**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L77-L107)
 
 假设计价/收据绑定起点。
 
@@ -1184,7 +1154,7 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:71-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/fold.ts#L71-L82)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:71-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L71-L82)
 
 usage缺失/统一factor。
 
@@ -1208,7 +1178,7 @@ usage缺失/统一factor。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:53-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/pricing/cost.ts#L53-L82)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:53-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/cost.ts#L53-L82)
 
 同名价格兜底。
 
@@ -1250,7 +1220,7 @@ function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): Pri
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/shard-merge.ts:34-53](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-usage-billing/src/shard-merge.ts#L34-L53)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/shard-merge.ts:34-53](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/shard-merge.ts#L34-L53)
 
 后写覆盖旧ID。
 

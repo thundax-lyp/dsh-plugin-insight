@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory)
+分析版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 2,223](https://img.shields.io/static/v1?label=npm+30d&message=2%2C223&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,810](https://img.shields.io/static/v1?label=npm+30d&message=1%2C810&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-memory)
 <!-- END META -->
 
 > **实现功能**：提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。
@@ -41,41 +41,39 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：DSH用户希望跨会话复用偏好和项目约定，并可人工修订与回看来源。详见[Q01](#research-q01)。
+> **用途**：面向希望跨会话复用偏好与项目约定的 DSH 单用户。合格结果需作用域正确、错误可纠正、来源可回看；原文与关系图不自动保证事实正确。
 
-手工Markdown记忆与项目指引加关键词检索是替代，自动提炼增加便利和模型/清错成本。
+手工项目指引和 Markdown 记忆是直接基线；它们少自动提炼与图谱，但不引入额外模型判重及隐藏原文副本。两者应以相同项目事实、错误修正和跨会话合格任务比较。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
 | 多表记忆/图谱 | 偏好项目复用 | 关系不等真值 |
 | 提炼与判重 | 自动减少重复录入 | 模型外发/错记 |
 | scope注入 | 后续对话带背景 | 目录身份和阈值需核 |
 
-**流程与依赖**
-
 #### 启动与依赖
 
-| 条件 | 用途 | 失效影响 |
-| --- | --- | --- |
-| storageDomain | 多表持久 | 原子/授权依宿主 |
-| tools/systemPrompt可选 | 存取和召回 | 缺桥仅核心管理 |
-| 可路由LLM | 提炼和判重 | 外发/额度/失败退化 |
-| Typert/GUI/canvas | 管理图谱 | 非全环境保证 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH storageDomain 与 settings | 必需 | 记忆、原文、审计持久化 | 域无法打开则不能启动 |
+| tools/systemPrompt | 会话能力必需 | 存取工具和动态召回 | 单桥失败会降级 |
+| LLM 路由 | 自动提炼/语义判重必需 | 转录与候选处理 | 无路由保留失败审计，不形成提炼 |
+| 项目身份、敏感数据许可 | 效果前提 | 限定作用域与模型披露 | 小写路径和 global 回退须人工核对 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 建无敏感库关自动 | 用户 | 接收方/留存明确 |
-| 手工保存scope条目 | 用户/Agent | 原约定可核 |
-| 对照召回和合并 | 用户 | 不串项目/限定不丢 |
-| 导出并核全副本 | 用户 | raw/audit遗忘可解释 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 建试验库 | 用户用独立 profile，关闭自动提炼/注入 | 无生产秘密，留原始指引备份 |
+| 手工写入 | 用户写 global 与 project 各一条 | 两个大小写目录分别核召回 |
+| 自动处理 | 用户明确选模型后按需启用 | 核原文、候选、审计及额外 token |
+| 纠错/退出 | 用户导出并逐副本清理 | memory/raw/audit/edges 分别核对 |
 
 #### 成本
 
@@ -104,7 +102,7 @@
 
 将原文、后台提炼/判定、记忆工具与scope注入/图谱管理接为跨会话流程。详见[Q01](#research-q01)。
 
-域schema、晚挂可选桥及错误审计可借鉴；需并发版本、项目身份和确认/遗忘契约。详见[Q04](#research-q04)。
+原文、审计与派生关系分离以及可降级的工具/提示桥可借鉴；同题并发合并和多表清理仍需版本及恢复收据，详见 [Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
 
@@ -124,24 +122,28 @@
 
 **核查状态**：已检查源码。
 
-存储/提炼/召回联结可查；模型外发与原文副本、目录身份和并发/跨表限制需管理，确认版记忆为未验证方向。
+已有贡献由固定提交源码支持；端到端报告或记忆质量未经运行对照；未来设计假设未验证。
 
 - 已检查：作者 README、包清单、源码路径 packages/plugin-memory/README.md、packages/plugin-memory/package.json、packages/plugin-memory/src/index.ts、packages/plugin-memory/src/domain.ts、packages/plugin-memory/src/conflicts.ts、packages/plugin-memory/src/service.ts、packages/plugin-memory/src/settings.ts、packages/plugin-memory/src/agent/prompt.ts、packages/plugin-memory/src/agent/capture.ts、packages/plugin-memory/src/agent/judge.ts、packages/plugin-memory/src/agent/tools.ts 及固定范围 inventory；组件：packages/plugin-memory。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定monorepo packages/plugin-memory入口、存储schema、服务关键合并/删除/项目/注入、agent捕获/判定/工具桥与设置；未穷尽GUI或宿主，未执行目标。
-- 下一步：进一步从大小写项目、矛盾同题、并发合并、错误global、原文再提炼和跨表半失败探讨候选确认与遗忘收据。
+- 下一步：可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。
+
+进一步从大小写项目、矛盾同题、并发合并、错误global、原文再提炼和跨表半失败探讨候选确认与遗忘收据。
 
 **分析版本**
 
 - **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)
-- **版本号**：0.4.3（[固定提交 acb136c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/acb136c0dbbf8e984bdffea9de48b6ed73d0103e)）
-- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.3（[固定提交 be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
+
+可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。
 
 可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](#research-q06)。
 
@@ -165,11 +167,11 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-22T05%3A47%3A20.466Z..2026-10-22T05%3A47%3A20.466Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A47%3A20.466Z..2026-10-22T05%3A47%3A20.466Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -193,7 +195,7 @@
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-memory/src/index.ts:49-70](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts#L49-L70)
+**依据 1 · 源码核查**：[packages/plugin-memory/src/index.ts:49-70](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/index.ts#L49-L70)
 
 存储/服务/桥/设置装配。
 
@@ -227,7 +229,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-memory/src/service.ts:493-512](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L493-L512)
+**依据 2 · 源码核查**：[packages/plugin-memory/src/service.ts:493-512](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L493-L512)
 
 子串字段检索。
 
@@ -259,7 +261,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-memory/src/conflicts.ts:1-12](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/conflicts.ts#L1-L12)
+**依据 3 · 源码核查**：[packages/plugin-memory/src/conflicts.ts:1-12](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/conflicts.ts#L1-L12)
 
 重名探测边界。
 
@@ -299,7 +301,7 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-memory/src/index.ts:25-28](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts#L25-L28)
+**依据 1 · 源码核查**：[packages/plugin-memory/src/index.ts:25-28](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/index.ts#L25-L28)
 
 域依赖。
 
@@ -310,7 +312,7 @@ export const inject = ['storageDomain']
 export { Config } from './settings.ts'
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-memory/src/index.ts:81-112](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/index.ts#L81-L112)
+**依据 2 · 源码核查**：[packages/plugin-memory/src/index.ts:81-112](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/index.ts#L81-L112)
 
 晚挂桥和失败降级。
 
@@ -354,7 +356,7 @@ export function installMemoryAgentBridgeWhenReady(
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:449-476](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L449-L476)
+**依据 3 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:449-476](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L449-L476)
 
 频率/inFlight与后台。
 
@@ -394,7 +396,7 @@ export function installMemoryCapture(
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:289-326](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L289-L326)
+**依据 4 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:289-326](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L289-L326)
 
 原文先落/缺路由审计。
 
@@ -444,7 +446,7 @@ export function installMemoryCapture(
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-364](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L350-L364)
+**依据 5 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-364](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L350-L364)
 
 真实模型输入。
 
@@ -471,7 +473,7 @@ export function installMemoryCapture(
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-memory/src/service.ts:679-691](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L679-L691)
+**依据 6 · 源码核查**：[packages/plugin-memory/src/service.ts:679-691](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L679-L691)
 
 scope与阈值取候选。
 
@@ -496,7 +498,7 @@ scope与阈值取候选。
 
 </details>
 
-**依据 7 · 源码核查**：[packages/plugin-memory/src/agent/prompt.ts:98-120](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/prompt.ts#L98-L120)
+**依据 7 · 源码核查**：[packages/plugin-memory/src/agent/prompt.ts:98-120](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/prompt.ts#L98-L120)
 
 动态context。
 
@@ -547,7 +549,7 @@ README“只存在本地”适合描述存储位置，不能理解提炼与判�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-362](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L350-L362)
+**依据 1 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-362](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L350-L362)
 
 原文发模型。
 
@@ -572,7 +574,7 @@ README“只存在本地”适合描述存储位置，不能理解提炼与判�
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/judge.ts:134-157](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/judge.ts#L134-L157)
+**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/judge.ts:134-157](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/judge.ts#L134-L157)
 
 候选送模型判定。
 
@@ -608,7 +610,7 @@ README“只存在本地”适合描述存储位置，不能理解提炼与判�
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:190-196](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L190-L196)
+**依据 3 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:190-196](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L190-L196)
 
 错误scope落global。
 
@@ -622,7 +624,7 @@ README“只存在本地”适合描述存储位置，不能理解提炼与判�
     items.push({ title, content, kind, scope })
 ```
 
-**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:47-48](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L47-L48)
+**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:47-48](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L47-L48)
 
 目录全小写。
 
@@ -631,7 +633,7 @@ export function normalizeProjectKey(path: string): string {
   return path.trim().replace(/[\\/]+$/, '').replace(/\\/g, '/').toLowerCase()
 ```
 
-**依据 5 · 源码核查**：[packages/plugin-memory/src/service.ts:1454-1459](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1454-L1459)
+**依据 5 · 源码核查**：[packages/plugin-memory/src/service.ts:1454-1459](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1454-L1459)
 
 单memory删除仅清边。
 
@@ -644,7 +646,7 @@ export function normalizeProjectKey(path: string): string {
     return true
 ```
 
-**依据 6 · 源码核查**：[packages/plugin-memory/src/service.ts:849-859](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L849-L859)
+**依据 6 · 源码核查**：[packages/plugin-memory/src/service.ts:849-859](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L849-L859)
 
 raw另行删除/裁剪。
 
@@ -687,9 +689,11 @@ save按同scope/kind/title或alias先合，再Dice重合，低相似近邻可交
 
 Memory put、挂实体、syncAutoEdges是多次await，失败可留下条目已写而关系未补的部分状态；delete/reset也多表顺序，宿主单table持久不等跨表事务。capture解析输出非法JSON会得到items空、failure仍undefined，审计ok可为true但未产条目，不能看ok判语义提炼成功。capture定时60秒只abort信号，忽略信号的模型stream仍可能不结束，卸载只去事件listener不取消已开任务。原文按session覆盖最近转录，不是永久保留所有历史片段。
 
+需要区分 reset 与单条删除。reset 会尝试同作用域原文清理（service.ts 1473–1477），因此不能笼统断言所有删除操作均不处理原文；这里质疑的是单条 removeMemory 及多表顺序清理失败后的完整遗忘。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-memory/src/service.ts:1301-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1301-L1368)
+**依据 1 · 源码核查**：[packages/plugin-memory/src/service.ts:1301-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1301-L1368)
 
 标题/重合/模型判定路径。
 
@@ -769,7 +773,7 @@ Memory put、挂实体、syncAutoEdges是多次await，失败可留下条目已�
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-memory/src/service.ts:1272-1298](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1272-L1298)
+**依据 2 · 源码核查**：[packages/plugin-memory/src/service.ts:1272-1298](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1272-L1298)
 
 合并长度及put。
 
@@ -808,7 +812,7 @@ Memory put、挂实体、syncAutoEdges是多次await，失败可留下条目已�
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:1395-1399](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1395-L1399)
+**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:1395-1399](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1395-L1399)
 
 多步骤持久。
 
@@ -820,7 +824,7 @@ Memory put、挂实体、syncAutoEdges是多次await，失败可留下条目已�
     // 判定跑过就带回结论，调用方能区分「模型看过」与「附近没有像的」。
 ```
 
-**依据 4 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:157-168](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L157-L168)
+**依据 4 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:157-168](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L157-L168)
 
 非法JSON变空。
 
@@ -844,7 +848,7 @@ export function parseCapturedItems(text: string): CaptureParseResult {
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:342-385](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L342-L385)
+**依据 5 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:342-385](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L342-L385)
 
 60秒协作abort。
 
@@ -900,7 +904,7 @@ export function parseCapturedItems(text: string): CaptureParseResult {
 
 </details>
 
-**依据 6 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:420-435](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L420-L435)
+**依据 6 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:420-435](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L420-L435)
 
 审计ok仅failure标记。
 
@@ -928,7 +932,7 @@ export function parseCapturedItems(text: string): CaptureParseResult {
 
 </details>
 
-**依据 7 · 源码核查**：[packages/plugin-memory/src/service.ts:785-799](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L785-L799)
+**依据 7 · 源码核查**：[packages/plugin-memory/src/service.ts:785-799](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L785-L799)
 
 同session原文替换。
 
@@ -971,7 +975,7 @@ export function parseCapturedItems(text: string): CaptureParseResult {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-356](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L350-L356)
+**依据 1 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:350-356](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L350-L356)
 
 capture输出预算。
 
@@ -985,7 +989,7 @@ capture输出预算。
       signal: controller.signal,
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/judge.ts:30-35](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/judge.ts#L30-L35)
+**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/judge.ts:30-35](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/judge.ts#L30-L35)
 
 judge预算/候选限制。
 
@@ -998,7 +1002,7 @@ export const JUDGE_TIMEOUT_MS = 15000
 export const JUDGE_MAX_CANDIDATE_CHARS = 200
 ```
 
-**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:29-41](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L29-L41)
+**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:29-41](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L29-L41)
 
 条数/正文/相似阈值。
 
@@ -1023,7 +1027,7 @@ export const MEMORY_JUDGE_MAX_CANDIDATES = 3
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:1323-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1323-L1368)
+**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:1323-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1323-L1368)
 
 合并与失败默认策略。
 
@@ -1097,7 +1101,7 @@ export const MEMORY_JUDGE_MAX_CANDIDATES = 3
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-memory/src/service.ts:47-48](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L47-L48)
+**依据 1 · 源码核查**：[packages/plugin-memory/src/service.ts:47-48](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L47-L48)
 
 项目身份现状。
 
@@ -1106,7 +1110,7 @@ export function normalizeProjectKey(path: string): string {
   return path.trim().replace(/[\\/]+$/, '').replace(/\\/g, '/').toLowerCase()
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:194-196](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/agent/capture.ts#L194-L196)
+**依据 2 · 源码核查**：[packages/plugin-memory/src/agent/capture.ts:194-196](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/agent/capture.ts#L194-L196)
 
 scope现状。
 
@@ -1116,7 +1120,7 @@ scope现状。
     items.push({ title, content, kind, scope })
 ```
 
-**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:1301-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1301-L1368)
+**依据 3 · 源码核查**：[packages/plugin-memory/src/service.ts:1301-1368](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1301-L1368)
 
 直接合并现状。
 
@@ -1196,7 +1200,7 @@ scope现状。
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:1454-1478](https://github.com/0x7A7A6572/dsh-forge-studio/blob/acb136c0dbbf8e984bdffea9de48b6ed73d0103e/packages/plugin-memory/src/service.ts#L1454-L1478)
+**依据 4 · 源码核查**：[packages/plugin-memory/src/service.ts:1454-1478](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-memory/src/service.ts#L1454-L1478)
 
 删除/重置不同副本范围。
 
