@@ -1,29 +1,53 @@
 {
     "repository": "9931666/dsh-plugin-crossfire",
     "repository_id": 1399279897,
-    "captured_at": "2026-10-22T06:52:14.176Z",
-    "window_start": "2026-09-22T06:52:14.176Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
     "stars": 1,
-    "pushed_at": "2026-10-18T07:29:20Z",
+    "pushed_at": "2026-10-25T06:30:50Z",
     "issues": {
         "open": 0,
         "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-crossfire%20is%3Aissue%20created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A200:D8AD3:1447570:16680EF:6ADEB55E and timestamp 2026-10-26 02:05:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-crossfire%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A228:DDD6A:142C7F6:164A9B0:6ADEB560 and timestamp 2026-10-26 02:05:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-crossfire%20is%3Aissue%20updated%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A246:38201D:14005F7:161F9ED:6ADEB562 and timestamp 2026-10-26 02:05:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T21:15:37.465Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@y9931666/dsh-plugin-crossfire",
-        "captured_at": "2026-10-22T06:52:24.419Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 669,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40y9931666%2Fdsh-plugin-crossfire",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 737,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40y9931666%2Fdsh-plugin-crossfire",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-01T13:31:12.828Z",
-            "captured_at": "2026-10-22T06:52:24.419Z",
+            "captured_at": "2026-10-25T11:38:12.058Z",
             "source_url": "https://registry.npmjs.org/%40y9931666%2Fdsh-plugin-crossfire",
             "error": null,
             "latest_version": "0.1.3",

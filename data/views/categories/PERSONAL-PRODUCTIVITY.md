@@ -85,7 +85,7 @@
 | [dsh-inline-images](#plugin-1334134226-root) | 将助手文本中的绝对图片路径改写成可加载的本地路由，并提供灯箱和尺寸设置。 | 仅在可信隔离环境试用，先核 Host 外围访问边界与远程客户端，再评估稳定性和资源。 |
 | [dsh-inpage-translator](#plugin-1422488467-root) | 在DSH浏览器页面注入翻译按钮，按文本去重分块调用宿主模型，缓存译文并提供翻译、还原与状态工具。 | 观察，先修文本节点/还原、宿主许可和文档版本边界，再考虑非敏感小页试用。 |
 | [dsh-keyboard-manager](#plugin-1359145374-root) | 在 DSH Web 用可配置 Ctrl 快捷键切换左右栏与设置。 | 观察，优先避免默认 Ctrl+S 或仅隔离试用；在编辑界面核保存键后再常用。 |
-| [dsh-language-guard](#plugin-1424475406-root) | 在系统提示、周期提醒和界面快捷入口中锁定模型输出语言。 | 可在非关键会话试用 Basic，并从 session log 验证 section 数和实际语言；清理 dsh-context 重复约束后再评估 Strong/Periodic。 |
+| [dsh-language-guard](#plugin-1424475406-root) | 用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。 | 先与原生单句提示对照，从B/C检查可见答复和代码；只有长会话确有漂移才试D。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | DSH 经 HTTP 调用 macOS Companion 的通知、Shortcuts 和剪贴板工具。 | 先健康/通知在可信隧道内试用；剪贴板/Shortcuts 须有独立用户审批与服务端约束。 |
 | [dsh-memory-connect](#plugin-1339263264-root) | 跨会话提取和保存记忆，通过关键词召回注入提示，并提供时态纠错与可选向量检索。 | 只适合接受全局共享语义、愿意维护记忆库的单一可信工作域用户先观察，严格多项目隔离场景先暂缓。 |
 | [dsh-memory-setup](#plugin-1337350700-root) | 提供工作区JSON偏好、规范、工作流与教训记忆，含DSH工具、提示注入、知识检索及备份恢复接口。 | 当前不推荐直接启为真实高信任记忆层。 |
@@ -102,7 +102,7 @@
 | [dsh-opencodego-status](#plugin-1426264117-root) | 在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。 | 当前建议保持观察。 |
 | [dsh-peak-runner](#plugin-1417227361-root) | 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。 | 自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | 有条件试用，可信本机小PCM/低音量先核事件和设备；声音不是任务验收，远端和严格隔离提醒先观察。 |
-| [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 为 DSH Web/可选桌面层提供随会话状态变化的 Live2D 宠物、装扮、提示音和共享设置。 | 个人隔离安装可试用；先备份 pets 和设置，用改资源不改 manifest 的升级副本测覆盖。 |
+| [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 为DSH网页挂载Live2D桌宠，支持鼠标互动、换装和会话事件驱动的动作表情。 | 建议备份自定义素材后个人试用网页端，先核对当前会话归属、穿透与声音，再观察长回合资源和禁用恢复；停止条件见 [Q05](#research-q05)。 |
 | [dsh-pick](#plugin-1423941835-root) | 从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。 | 可把它当候选搜索和数字比较工具试用；先核对日期与兼容，再读目标插件权限和源码。 |
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。 | 建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。 |
 | [dsh-plugin-auto-answer](#plugin-1423966960-root) | 无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。 | 隔离低影响任务试用，配置 fallback:none/freeText:block/planReview:ignore，核 timed 工具窗口。 |
@@ -903,7 +903,7 @@
 
 ## [dsh-custom-plugin](../../plugins/alexpeng07--dsh-custom-plugin/INSIGHT.md)
 
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,207](https://img.shields.io/static/v1?label=npm+30d&message=2%2C207&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,235](https://img.shields.io/static/v1?label=npm+30d&message=2%2C235&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
 
 > **用途**：希望在一个插件中集中管理 Web 外观、会话操作和本地用量的用户。
 
@@ -1239,15 +1239,15 @@
 
 ## [dsh-language-guard](../../plugins/58fly--dsh-language-guard/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58fly/dsh-language-guard) [![npm 30d 126](https://img.shields.io/static/v1?label=npm+30d&message=126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-language-guard) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-language-guard)
 
-> **用途**：适合希望推理、回答和工具描述长期保持同一语言的会话；只需翻译已显示推理时官方 cot-translation 更直接。 详见[Q01](#research-q01)。
+> **用途**：给长编码会话中经常语言漂移的人减少重复纠正，仍需核对代码与可见答复。
 
-> **亮点**：生成层约束、自动跟随界面语言、热更新与可验证 session log 形成闭环，且不外发对话内容。 详见[Q03](#research-q03)。
+> **亮点**：比单句提示多出工具说明后与尾部复述、可选周期和明确语言来源配置，属于宿主提示适配，不是强制语言约束。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：本质仍是提示约束，不能改写 tools schema 或保证模型服从；与 dsh-context 同位提示会重复耗 token，周期 notice 在 UI 可见。 详见[Q04](#research-q04)。
+> **思考**：不能改API tools schema或保证服从；/language实际模块级覆盖并非严格会话隔离，自动zh映射统一简体，多插件重复注入有上下文负担。[Q03](#research-q03)
 
-> **建议**：按模型服从率自适应从 Basic 升 Strong、连续合格后降级，比固定三档更省 token，但必须避免用模型自评作为唯一判据。 详见[Q08](#research-q08)。
+> **建议**：未验证方向是session绑定覆盖与可见语言违例反馈提醒，以双会话和代码混排任务检查污染、误纠正及总token，不推断内部思维语言。[Q06](#research-q06)
 
 <a id="plugin-1384810483-root"></a>
 
@@ -1477,15 +1477,15 @@
 
 ## [dsh-pet-live2d](../../plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md)
 
-[![GitHub ★ 49](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=49&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d)
+[![GitHub ★ 54](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=54&color=yellow&logo=github&style=flat)](https://github.com/A8Chann/dsh-pet-live2d) [![npm 30d 6,432](https://img.shields.io/static/v1?label=npm+30d&message=6%2C432&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pet-live2d)
 
-> **用途**：希望通过可视宠物感知 Agent 运行/等待/完成状态，并自定义模型动作与外观。
+> **用途**：为希望视觉陪伴的个人用户提供另一种状态呈现；任务质量和效率不由动画存在推定。具体对照见 [Q01](#research-q01)。
 
-> **亮点**：把 Agent 状态映射到可配置的 Live2D 动作与声画提醒，降低查看状态的切换成本假设。详见[Q01](#research-q01)。
+> **亮点**：相对独立桌宠，任务事件与角色表现的组合减少单纯看日志的需要，但未证明状态理解更准确；渲染与素材能力继承上游。见 [Q01](#research-q01)。
 
-> **思考**：升级只看 pet.json 是否改动，对自改纹理/动作但未改 manifest 的同名文件仍可能 cpSync 覆盖；作者的“任何自改不覆盖”表述过宽。详见[Q02](#research-q02)。
+> **思考**：整目录同步以pet.json指纹判断所有权，不能保护只改了同名贴图/动作而清单不变的情况；Core内容检查也不是固定摘要验证。见 [Q03](#research-q03)。
 
-> **建议**：按完整目录资源指纹保护用户文件，固定 Core 版本/哈希并统一写路由校验，可提升可靠性；现版未实现。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **建议**：未验证假设为逐文件所有权与显式冲突合并，兼顾个人素材保护和上游更新；四类素材对照及否定条件见 [Q05](#research-q05)。
 
 <a id="plugin-1423941835-root"></a>
 
@@ -2513,13 +2513,13 @@
 
 ## [feiyu-memory](../../plugins/airpineapplea--feiyu-memory/INSIGHT.md)
 
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AirPineApplea/feiyu-memory)
 
 > **用途**：面向接受个人陪伴式记忆、愿意人工检查本地日记的低敏感娱乐用户；交付应区分人格规则、自发判断与事件转述，不将模型推断当作用户事实或生产知识库。
 
-> **亮点**：以三声部区分人格、判断和事件，结合本地派生索引与预算召回塑造连续感；贡献是记忆叙事与管理安排，不是事实准确或隐私保证。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：隐私门未覆盖全部额外模型请求：session/event将原文赋lastUserText，judgeWorthKeeping直接buildJudgeInput并llm.stream；scrub只在后续consolidate。固定版面板也明确不自加鉴权，不能用“无CORS”替代访问控制。静态可核，未发送真实秘密复现。参见[Q03](#research-q03)。
+> **思考**：多处清洗仍未覆盖judge额外模型出站，面板同源门也不等身份认证；persist失败计数在catch后被无条件清零，不能据“三次降级”承诺判断落盘可靠。[Q03](#research-q03)、[Q07](#research-q07)
 
 > **建议**：可把隐私策略放到所有模型出站共用门，并以来源/事实-推断/敏感级/确认状态控制召回，面板走宿主认证。用合成凭据追踪judge、固化、手记与日志，任何未脱敏出站或确认前误召回即否定；假设未验证，可能降低自然感并增复核。参见[Q05](#research-q05)。
 

@@ -1,42 +1,53 @@
 {
     "repository": "ANetResearch/ANet",
     "repository_id": 1302597978,
-    "captured_at": "2026-10-23T01:49:41.967Z",
-    "window_start": "2026-09-23T01:49:41.967Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
     "stars": 12,
-    "pushed_at": "2026-10-22T15:54:05Z",
+    "pushed_at": "2026-10-24T15:25:08Z",
     "issues": {
-        "open": 0,
-        "closed": 1,
+        "open": null,
+        "closed": null,
         "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "closed_30d": 1,
+        "updated_30d": 1
     },
     "errors": [
         {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AANetResearch%2FANet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9BF6:2F83D5:1540CFB:17607DF:6ADEB4C0 and timestamp 2026-10-26 02:02:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AANetResearch%2FANet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8BE2:E1D86:13DD1BD:15FCB06:6ADEB4C4 and timestamp 2026-10-26 02:02:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AANetResearch%2FANet%20is%3Aissue%20created%3A2026-09-23T01%3A49%3A41.967Z..2026-10-23T01%3A49%3A41.967Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9854:3F2F29:15EA43:17B6F4:6ADABD3B and timestamp 2026-10-23 01:49:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AANetResearch%2FANet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A49%3A41.967Z..2026-10-23T01%3A49%3A41.967Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 996E:2A9013:16BD44:188B7B:6ADABD3C and timestamp 2026-10-23 01:49:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AANetResearch%2FANet%20is%3Aissue%20updated%3A2026-09-23T01%3A49%3A41.967Z..2026-10-23T01%3A49%3A41.967Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A54:103D08:11565FF:12A2B48:6ADABD3D and timestamp 2026-10-23 01:49:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AANetResearch%2FANet%20is%3Aissue%20created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C6C:C8733:14BE93A:16DE254:6ADEB4C9 and timestamp 2026-10-26 02:02:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-anet",
-        "captured_at": "2026-10-23T01:49:50.174Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-anet",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-anet",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-23T01:49:50.174Z",
+            "captured_at": "2026-10-26T01:59:33.546Z",
             "source_url": "https://registry.npmjs.org/dsh-anet",
             "error": "HTTP 404",
             "latest_version": null,

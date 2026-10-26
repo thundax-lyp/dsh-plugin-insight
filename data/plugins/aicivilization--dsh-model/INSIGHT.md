@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[57c198b](https://github.com/AIcivilization/dsh-model/tree/57c198bbd973fea8cc63eea3dc36715da947bd7a)
+分析版本：[44c466c](https://github.com/AIcivilization/dsh-model/tree/44c466cbbf62769b91f0647469dc529ecdc125ee)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,009](https://img.shields.io/static/v1?label=npm+30d&message=2%2C009&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,481](https://img.shields.io/static/v1?label=npm+30d&message=2%2C481&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model)
 <!-- END META -->
 
-> **实现功能**：整合模型中转、来源登录与管理、组合切换、设备密钥及每日签到，并同步到DSH。
+> **实现功能**：整合模型来源、统一API中转、组合切换和每日签到，并提供DSH管理界面与命令行。
 
-> **核心亮点**：围绕上游CLIProxyAPI补齐多平台生命周期、来源/设备key与DSH管理接线，并把签到独立管理，减少多客户端重复配置。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **核心亮点**：在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切到不同模型不保证工具/图像/质量等价，统一地址也不提供额度。参见[Q02](#research-q02)、[Q03](#research-q03)。
+> **风险与缺陷**：HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；替换model不保证工具、图像和质量等价，单地址不等合格交付。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,10 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 统一模型与签到为谁交付什么，上游贡献如何分配？](#detail-section-11)
-  - [Q02 · 安装与combo切换如何完成，哪些失败不能恢复？](#detail-section-12)
-  - [Q03 · 密钥、自动签到、VPS与退出的总负担是什么？](#detail-section-13)
-  - [Q04 · 怎样有限试用并检验新路由假设？](#detail-section-14)
+  - [Q01 · 统一中转、模型组合和签到面向何种重复任务？](#detail-section-11)
+  - [Q02 · 安装资产、daemon路由与组合fallback如何实现？](#detail-section-12)
+  - [Q03 · 流开始后的失败是否回退，不同模型能力是否等价？](#detail-section-13)
+  - [Q04 · 账号、密钥、服务生命周期与卸载怎样闭合？](#detail-section-14)
+  - [Q05 · 请求合格率的效果/成本与状态设计怎样核查？](#detail-section-15)
+  - [Q06 · 能力契约加流边界回退能否减少假成功，适合谁试用？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：多来源、多客户端用户统一入口与运维；签到是独立账号动作，合格输出仍需核授权、实际来源和任务质量。
+> **用途**：给已有多模型账号且愿意运维本地/服务器服务的用户统一客户端接线。
 
-各客户端分别配置官方API或自行部署CLIProxyAPI为参照；本项减少管理接线，不替代来源授权或证明模型效果。
+直接配置各客户端或直接使用CLIProxyAPI是替代；本插件增量是来源/部署/管理流程，不作同任务质量排名。
 
 <a id="detail-section-3"></a>
 
@@ -51,67 +53,67 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 统一模型入口 | 多客户端共用配置 | 需引擎/有效授权，非额度提供 |
-| 组合切换 | 请求失败时顺序降级 | 流中不重放、质量非等价 |
-| 自动签到 | 领取已有账号积分 | 默认开启，第三方资格/网络 |
-| 生命周期 | 安装/修复/卸载 | 多服务与可选远端，需运维 |
+| 统一API | 多客户端使用既有来源 | 上游额度/语义仍需核对 |
+| combo | 候选模型顺序选择 | 流开始后不再fallback |
+| 来源与签到管理 | 账号接入和日常操作 | 第三方规则/区域依赖，未执行 |
+| setup/卸载 | 配置引擎服务与DSH | 分步状态需回读，非整体事务 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=20、引擎资产/服务权限 | 核心必需 | 统一网关 | 停在引擎步骤，修复后重跑 |
-| 供应商授权/网络/额度 | 各来源必需 | 请求与签到 | 换允许来源或停用，非凭空额度 |
-| VPS root/Caddy/公网 | 远端可选 | 外部地址 | 只本机，避免扩大暴露 |
+| Node、CLIProxyAPI、daemon | 必需 | 统一中转 | 无端点或控制失败 |
+| 有效上游账号和区域网络 | 必需 | 实际模型/签到 | 不提供额度，错误或不可用 |
+| DSH/Web连接 | DSH界面必需 | 配置模型与UI | CLI仍可独立使用 |
+| 系统权限/服务工具 | 对应部署必需 | 常驻与退出 | 分步失败需核对 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户安装setup并备份 | 引擎校验与鉴权自检 |
-| 2 | 用户接入少量来源/设备key | 实际可用且无key拒绝 |
-| 3 | 用户核请求与fallback | 任务合格、实际来源/成本可查 |
-| 4 | 用户禁用/卸载验收 | 服务/配置/远端逐步核，失败留home |
+| 准备 | setup与来源登录 | 校验资产、服务与单模型 |
+| 使用 | 客户端接统一地址后设置combo | 完整文本/工具结果，非仅HTTP成功 |
+| 验收/退出 | 故障测试、卸载并回读 | 配置服务及凭据残余符合预期 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 二进制、服务、账号/可选VPS | 安装登录、鉴权/配置备份 | 金额和工时未核 |
-| 持续使用 | 订阅/API、daemon、重试、存储 | 核用量/实际模型/自动签到 | 免费与积分为作者条件非保证 |
-| 失败恢复 | 重试调用、轮换/重装 | 恢复配置、拆服务/远端、凭据 | 需分步验收，单位成本未知 |
+| 首次 | 引擎下载、服务和上游账号，金额未知 | 登录、密钥、客户端接线 | 各来源规则/网络不同 |
+| 持续 | 常驻资源和多模型请求 | 监测流、额度与质量 | 合格任务总费用未知 |
+| 失败恢复/退出 | 失败候选费用及备份 | 核对配置、服务、残余插件 | 单独warn的清理需人工检查 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 统一接入 | 单地址/key与来源管理 | 各来源现时资格和费用 |
-| 容错 | 请求开始前顺序切换 | 流中恢复/跨模型合格率 |
-| 运维 | 资产校验、分步退出 | 全平台无损恢复与总成本 |
+| 接线统一 | 一个兼容端点和来源控制 | 全客户端语义兼容 |
+| fallback | 首包前多候选重试 | 流后完整性和质量 |
+| 签到/额度 | 作者声明及控制入口 | 当前账号真实收益与规则 |
 
-> **思考**：HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切到不同模型不保证工具/图像/质量等价，统一地址也不提供额度。参见[Q02](#research-q02)、[Q03](#research-q03)。
+> **思考**：HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；替换model不保证工具、图像和质量等价，单地址不等合格交付。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：围绕上游CLIProxyAPI补齐多平台生命周期、来源/设备key与DSH管理接线，并把签到独立管理，减少多客户端重复配置。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
 
-围绕上游CLIProxyAPI补齐多平台生命周期、来源/设备key与DSH管理接线，并把签到独立管理，减少多客户端重复配置。参见[Q01](#research-q01)、[Q02](#research-q02)。
+在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
 
-资产SHA、禁止combo嵌套、分步错误汇总和卸载失败保home值得借鉴；来源转换、公开端点与流响应状态需分别建模，不能把成功码当合格答案。
+资产摘要、partial落位与状态锁可借鉴，禁止组合嵌套避免循环；分步清理保留恢复状态，但warn路径和流提交语义仍需独立验收。[Q04](#research-q04)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切到不同模型不保证工具/图像/质量等价，统一地址也不提供额度。参见[Q02](#research-q02)、[Q03](#research-q03)。
+HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；替换model不保证工具、图像和质量等价，单地址不等合格交付。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有运维能力者本机少来源非敏感试用，先不开放远端并关闭不需签到；核授权/鉴权/流失败与退出。参见[Q04](#research-q04)。
+先在非关键任务核对单来源工具/图像兼容，再加入能力相近的combo；检查流中断和卸载残余后限定试用。[Q06](#research-q06)
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +121,18 @@ HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切�
 
 **核查状态**：已检查源码。
 
-管理与切换机制有源码支持；第三方资格、费用、真实宿主及跨模型任务等价未验证，契约路由是假设。
+安装与组合主链有源码证据；流后错误不回退、能力等价和卸载残余需核对；能力契约与提交边界设计未验证。
 
-- 已检查：作者 README、包清单、源码路径 src/commands/setup.ts、src/commands/uninstall.ts、src/engine/install.ts、src/combo.ts、src/checkin/index.ts、src/secrets.ts、plugin/index.js、engine-manifest.json、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 src/combo.ts、src/engine/install.ts、src/commands/uninstall.ts、src/commands/setup.ts、plugin/index.js、README.md、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核setup、资产校验、combo、签到、插件局部围栏和卸载；未执行引擎/登录/远端/模型，不全面审计所有供应商与原生服务实现。
-- 下一步：未运行目标。先本机核鉴权/卸载，再以工具、图像、JSON、长上下文和429/流断对照合格率及总成本。
+- 边界：核查组合、安装、setup/卸载与Web桥接入口；未运行服务、签到、账号登录、VPS发布或所有第三方桥接。
+- 下一步：可进一步以首包前后断流、工具schema差异和卸载告警矩阵核查完整任务结果及总费用。
 
 **分析版本**
 
 - **仓库**：[AIcivilization/dsh-model](https://github.com/AIcivilization/dsh-model)
-- **版本号**：0.23.1（[固定提交 57c198b](https://github.com/AIcivilization/dsh-model/tree/57c198bbd973fea8cc63eea3dc36715da947bd7a)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.23.3（[固定提交 44c466c](https://github.com/AIcivilization/dsh-model/tree/44c466cbbf62769b91f0647469dc529ecdc125ee)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +140,9 @@ HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切�
 
 <a id="innovation"></a>
 
-未验证假设为能力/来源/预算契约约束fallback并输出实际尝试收据，以同预算合格任务率衡量而非HTTP成功率。参见[Q04](#research-q04)。
+未验证方向是组合能力交集和首包提交边界，首包后显式不完整收据而非盲重试，以故障矩阵核对完整率及重复副作用。[Q06](#research-q06)
 
-未运行目标。先本机核鉴权/卸载，再以工具、图像、JSON、长上下文和429/流断对照合格率及总成本。
+可进一步以首包前后断流、工具schema差异和卸载告警矩阵核查完整任务结果及总费用。
 
 <a id="detail-section-9"></a>
 
@@ -151,50 +153,48 @@ HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 1533 | 1394 | 93 | — |
-| .md | source | 5 | 1013 | — | — | 16081 |
+| .js | source | 3 | 1534 | 1394 | 94 | — |
+| .md | source | 5 | 1015 | — | — | 16188 |
 | .mjs | source | 1 | 44 | 31 | 8 | — |
-| .ts | source | 86 | 13867 | 10439 | 2476 | — |
-| .ts | test | 30 | 2502 | 2247 | 93 | — |
+| .ts | source | 87 | 13952 | 10505 | 2491 | — |
+| .ts | test | 31 | 2580 | 2316 | 97 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A40.453Z..2026-10-23T01%3A50%3A40.453Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A40.453Z..2026-10-23T01%3A50%3A40.453Z)
+[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
+暂未获取：Issue 未关闭。
 
-
-统计日期：2026-10-23。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：统一模型网关/签到的独立贡献、切换保真及运维成本是什么？
+**插件研究总目标**：核对统一模型端点的编排贡献、流式回退边界与服务退出负担。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 统一模型与签到为谁交付什么，上游贡献如何分配？
+### Q01 · 统一中转、模型组合和签到面向何种重复任务？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-有多个模型来源、希望DSH和其他OpenAI客户端共用地址的用户是主要对象；签到则面向已拥有Trae/Qoder/WorkBuddy账号的人。合格任务是鉴权后把指定请求送达允许来源、得到可用响应并能解释失败/用量；签到成功只说明账号积分领取状态，不自动变成任意模型可用额度。
-
-相对每客户端分别配置供应商，本项整合引擎安装、守护、来源管理、每设备key、组合与DSH同步。CLIProxyAPI 8.0.13为明确上游，引擎协议与大量供应商兼容能力不可算插件原创；独立增量在生命周期和管理接线。README费用/积分是作者固定材料，不是当前价格或服务资格保证。
+目标是已有多个模型账号的用户少维护多个客户端连接，把可用来源映射到一个OpenAI兼容端点，并管理签到与模型切换。相比逐客户端配置，增量是接线、来源登录、用量展示及失败候选的统一编排；推理引擎来自CLIProxyAPI，模型能力与额度仍来自上游，不能当插件提供免费额度。合格任务应是原客户端收到工具/文本等完整兼容结果，不是端口可访问或列表出现模型。签到服务受账号和供应商规则影响，作者积分数字只作版本声明。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:22-61](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/README.md#L22-L61)
+**依据 1 · 作者声明**：[README.md:22-57](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/README.md#L22-L57)
 
-签到与统一入口/来源定位。
+作者声明签到、统一端点及不提供额度。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
 ## 📅 1. 每日签到：积分自动到账
@@ -233,104 +233,42 @@ HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切�
 | 按量付费 | DeepSeek 官方、OpenCode Zen、任意 OpenAI 兼容服务 |
 
 每个来源都标出「免费 / 免费·额度少 / 需付费」，详见下面的[来源与费用](#来源与费用)。dsh-model 只负责转接，不提供额度。
-
-> WorkBuddy：2026-10 起它会认出 dsh 发出的对话并拦下，所以 dsh-model 只用它来签到，模型默认不接进 dsh。
-
-
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[engine-manifest.json:1-10](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/engine-manifest.json#L1-L10)
+**依据 2 · 源码核查**：[src/engine/install.ts:1-5](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/engine/install.ts#L1-L5)
 
-上游与固定版本/摘要。
-
-<details>
-<summary>查看原文（10行）</summary>
+引擎下载/版本组织并非自研模型推理。
 
 ```text
-{
-  "name": "CLIProxyAPI",
-  "repo": "router-for-me/CLIProxyAPI",
-  "license": "MIT",
-  "version": "8.0.13",
-  "assets": {
-    "darwin-aarch64": {
-      "file": "CLIProxyAPI_8.0.13_darwin_aarch64.tar.gz",
-      "url": "https://github.com/router-for-me/CLIProxyAPI/releases/download/v8.0.13/CLIProxyAPI_8.0.13_darwin_aarch64.tar.gz",
-      "sha256": "652a192e3e38520253e330c4a094fa8916728370c3f213f127dbc56e35be7938"
+// engine/install.ts — 下载、校验、解压、切换引擎版本
+//
+// 只信任仓库里 engine-manifest.json 的 sha256；校验不过直接失败。
+// 版本目录 engine/versions/<v>/，current 软链指向在用版本，升级与回滚只切软链。
+// Windows：发布包是 zip、程序叫 cli-proxy-api.exe；建软链要管理员，所以 current 用目录联接（junction），不需要权限。
 ```
-
-</details>
-
-**依据 3 · 源码核查**：[src/commands/setup.ts:72-105](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/commands/setup.ts#L72-L105)
-
-引擎、daemon和插件接线。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-    info('')
-    info(bold(L('统一端点（引擎）', 'Unified endpoint (engine)')))
-    let engineRunning = false
-    await step('engine', async () => {
-      engineRunning = await ensureEngine(ctx, all, { port: opts.port })
-    })
-    if (failures.includes('engine')) {
-      warn(L('引擎没装好，后面的步骤都依赖它，先停在这里', 'The engine is not ready and everything else depends on it; stopping here'))
-      return 1
-    }
-
-    info('')
-    info(bold(L('守护进程', 'Daemon')))
-    await step('daemon', () => ensureDaemon(ctx, all))
-
-    info('')
-    info(bold('OpenCode Zen'))
-    if (opts.skipOpencode) skip(L('已跳过（--skip-opencode）', 'Skipped (--skip-opencode)'))
-    // 安装时不问 key：要用的话在 dsh「设置 → dsh-model → 来源」里填，或执行 dsh-model opencode key
-    else if (await opencodeConfigured(ctx)) await step('opencode', () => configureOpencode(ctx, all))
-    else skip(L('没填 key，跳过；需要时在 dsh「设置 → dsh-model → 来源」里打开它（或执行 dsh-model opencode key）', 'No key, skipped; when you need it, turn it on in dsh Settings → dsh-model → Sources (or run dsh-model opencode key)'))
-
-    info('')
-    info(bold('WorkBuddy'))
-    if (opts.skipWorkbuddy) skip(L('已跳过（--skip-workbuddy）', 'Skipped (--skip-workbuddy)'))
-    else {
-      await step('workbuddy', () => enableWorkbuddy(ctx, all))
-      if (await userPluginInstalled(ctx, all)) warn(L('你自己装了 dsh-workbuddy-connect 插件：dsh 里会有两组 WorkBuddy 模型。不需要的话可在 dsh 的插件页移除它', 'You installed the dsh-workbuddy-connect plugin yourself: dsh will show two WorkBuddy groups. Remove it from the dsh Plugins page if you do not need it'))
-    }
-
-    info('')
-    info(bold(L('dsh 插件页', 'dsh plugin page')))
-    if (opts.skipDshPlugin) skip(L('已跳过（--skip-dsh-plugin）', 'Skipped (--skip-dsh-plugin)'))
-    else await step('dsh-plugin', () => installDshPlugin(ctx, all))
-```
-
-</details>
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 安装与combo切换如何完成，哪些失败不能恢复？
+### Q02 · 安装资产、daemon路由与组合fallback如何实现？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制
 
 #### 完整回答
 
-setup在锁内读取状态，分步骤迁移、下载校验引擎、安装服务/daemon、插件和同步；引擎失败停止后续，其他已识别错误汇总并保存，重跑用于修复。manifest固定各平台资产SHA，下载后核摘要；这是制品一致性，不是上游二进制独立安全审计。
-
-combo禁止嵌套且至少两模型，daemon逐个把同一JSON请求替换model发回本机引擎。400/422仅在额度/上下文等关键词匹配才降级，其他状态可继续。收到HTTP成功和body就把流返回；中途流错误仅结束响应，不再切换。因此“出错自动换下一个”主要在开始流转前成立，不保证流中恢复。顺序failover会改变实际模型和来源，响应头带实际model，但调用方是否保留/展示需核。
+setup持锁读取状态并按步骤安装/迁移，遇识别的错误记录failures且保存状态，不是整轮事务回滚。引擎从固定manifest取资产，下载校验sha256后解压到partial并rename，再激活版本。combo至少两模型、去重并禁止嵌套；接收到JSON请求后只替换model字段，依序通过本地引擎发请求，400/422根据错误文本决定是否继续，其余失败通常尝试下个。插件Web层转发到本机daemon控制接口，UI与实际转发分层。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/commands/setup.ts:41-80](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/commands/setup.ts#L41-L80)
+**依据 1 · 源码核查**：[src/commands/setup.ts:41-64](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/commands/setup.ts#L41-L64)
 
-锁、分步与失败停止。
+持锁与分步错误保存。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
 export async function setup(ctx: Ctx, opts: SetupOptions): Promise<number> {
@@ -357,56 +295,18 @@ export async function setup(ctx: Ctx, opts: SetupOptions): Promise<number> {
       }
       await saveAll(ctx, all)
     }
-
-    // v0.2.0 的做法（dsh 内置 opencode 路由、dsh-workbuddy-connect 插件）迁到统一端点
-    await step('migrate', async () => {
-      if (await migrateDshOpencode(ctx, all)) ok(L('已把 OpenCode 从 dsh 内置路由迁到统一端点', 'Moved OpenCode from the dsh built-in route to the unified endpoint'))
-      if (await removeWorkbuddyPlugin(ctx, all)) ok(L('已移除上一版安装的 dsh-workbuddy-connect 插件，改用 dsh-model 自己的 bridge', 'Removed the dsh-workbuddy-connect plugin installed by the previous version; using dsh-model\'s own bridge'))
-    })
-
-    info('')
-    info(bold(L('统一端点（引擎）', 'Unified endpoint (engine)')))
-    let engineRunning = false
-    await step('engine', async () => {
-      engineRunning = await ensureEngine(ctx, all, { port: opts.port })
-    })
-    if (failures.includes('engine')) {
-      warn(L('引擎没装好，后面的步骤都依赖它，先停在这里', 'The engine is not ready and everything else depends on it; stopping here'))
-      return 1
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/engine/install.ts:83-111](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/engine/install.ts#L83-L111)
+**依据 2 · 源码核查**：[src/engine/install.ts:112-134](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/engine/install.ts#L112-L134)
 
-资产摘要核对。
+资产校验、partial与版本落位。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
- * DSH_MODEL_ENGINE_ARCHIVE 可指向本地 tar.gz（离线 / 测试），同样要过 sha256 校验。
- */
-export async function installVersion(ctx: Ctx, version: string, asset: ManifestAsset): Promise<boolean> {
-  const bin = versionBinary(ctx, version)
-  if (await exists(bin)) return false
-
-  await ensureDir(ctx.paths.tmp, { owner: ctx.owner })
-  await mkdir(ctx.paths.versionsDir, { recursive: true })
-  const archive = join(ctx.paths.tmp, asset.file)
-  const partial = join(ctx.paths.versionsDir, `${version}.partial`)
-  try {
-    const local = ctx.env.DSH_MODEL_ENGINE_ARCHIVE
-    let data: Buffer
-    if (local) {
-      data = await readFile(local)
-    } else {
-      const res = await fetch(asset.url)
-      if (!res.ok || !res.body) throw new DshModelError('engine_download_failed', L(`下载引擎失败：HTTP ${res.status}`, `Engine download failed: HTTP ${res.status}`), asset.url)
-      await pipeline(Readable.fromWeb(res.body as import('node:stream/web').ReadableStream), createWriteStream(archive, { mode: 0o600 }))
-      data = await readFile(archive)
-    }
-    const actual = sha256(data)
     if (actual !== asset.sha256) {
       throw new DshModelError(
         'engine_checksum_mismatch',
@@ -414,13 +314,29 @@ export async function installVersion(ctx: Ctx, version: string, asset: ManifestA
         L('文件可能被篡改或下载不完整，已中止。', 'The file may be tampered with or incomplete; aborted.'),
       )
     }
+    if (local) {
+      const { writeFile } = await import('node:fs/promises')
+      await writeFile(archive, data, { mode: 0o600 })
+    }
+    await rm(partial, { recursive: true, force: true })
+    await mkdir(partial, { recursive: true })
+    const tar = await extract(archive, partial)
+    if (tar.code !== 0) throw new DshModelError('engine_extract_failed', L(`解压引擎失败：${tar.stderr.trim()}`, `Failed to extract engine: ${tar.stderr.trim()}`))
+    if (!(await exists(join(partial, ENGINE_BIN)))) throw new DshModelError('engine_extract_failed', L(`压缩包里没有 ${ENGINE_BIN}`, `${ENGINE_BIN} not found in archive`))
+    if (process.platform !== 'win32') await chmod(join(partial, ENGINE_BIN), 0o755)
+    await rename(partial, join(ctx.paths.versionsDir, version))
+    if (ctx.owner) await run('chown', ['-R', `${ctx.owner.uid}:${ctx.owner.gid}`, ctx.paths.engineDir])
+    return true
+  } finally {
+    await rm(archive, { force: true })
+    await rm(partial, { recursive: true, force: true })
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/combo.ts:34-55](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/combo.ts#L34-L55)
+**依据 3 · 源码核查**：[src/combo.ts:34-55](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L34-L55)
 
-combo范围和错误判断。
+组合约束和回退分类。
 
 <details>
 <summary>查看原文（22行）</summary>
@@ -452,9 +368,281 @@ export function shouldFallBack(status: number, text: string): boolean {
 
 </details>
 
-**依据 4 · 源码核查**：[src/combo.ts:81-115](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/combo.ts#L81-L115)
+**依据 4 · 源码核查**：[src/combo.ts:70-115](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L70-L115)
 
-逐模型发送与流中失败边界。
+顺序请求和模型替换。
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
+export async function runCombo(run: ComboRun): Promise<void> {
+  const { res, combo } = run
+  const log = run.log ?? (() => {})
+  let body: Record<string, unknown>
+  try {
+    body = JSON.parse(run.raw) as Record<string, unknown>
+  } catch {
+    return reply(res, 400, { error: { message: 'request body is not JSON', type: 'invalid_json', code: 'invalid_json' } })
+  }
+  const tried: string[] = []
+  let last: { status: number; text: string } | undefined
+  for (const model of combo.models) {
+    if (run.signal.aborted) return
+    let upstream: Response
+    try {
+      upstream = await fetch(`http://127.0.0.1:${run.port}/v1/chat/completions`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${run.key}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...body, model }),
+        signal: run.signal,
+      })
+    } catch (error) {
+      if (run.signal.aborted) return
+      last = { status: 502, text: String((error as Error).message ?? error) }
+      tried.push(`${model}: ${last.text.slice(0, 120)}`)
+      continue
+    }
+    if (upstream.ok && upstream.body) {
+      if (tried.length) log(`combo ${combo.id}: ${model} answered after ${tried.length} failed (${tried.join(' | ')})`)
+      res.writeHead(upstream.status, {
+        'Content-Type': upstream.headers.get('content-type') ?? 'application/json',
+        'Cache-Control': 'no-cache',
+        'X-Dsh-Model-Combo-Model': model,
+      })
+      const stream = Readable.fromWeb(upstream.body as Parameters<typeof Readable.fromWeb>[0])
+      stream.on('error', (error: unknown) => {
+        log(`combo ${combo.id}: ${model} stream failed mid-flight: ${String(error)}`)
+        if (res.writable) res.end()
+      })
+      stream.pipe(res)
+      return
+    }
+    const text = await upstream.text().catch(() => '')
+    last = { status: upstream.status, text }
+    tried.push(`${model}: HTTP ${upstream.status}`)
+    if (!shouldFallBack(upstream.status, text)) break
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 流开始后的失败是否回退，不同模型能力是否等价？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+不会。收到ok且有body后立即发响应头、pipe并return，流中error只写日志和end，已不再进入下一个候选。未解析SSE结束标志或验证工具调用完整性，因此HTTP成功不能保证合格模型交付。请求原样仅替换model，也不检查各候选上下文、图像、工具schema与推理参数的能力契约；同一请求跨模型可得到不等价答案。源码支持“启动前某些失败自动换”，不支持笼统“不怕出错”的端到端保证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/combo.ts:97-110](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L97-L110)
+
+流一开始就退出候选循环，错误结束响应。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+    if (upstream.ok && upstream.body) {
+      if (tried.length) log(`combo ${combo.id}: ${model} answered after ${tried.length} failed (${tried.join(' | ')})`)
+      res.writeHead(upstream.status, {
+        'Content-Type': upstream.headers.get('content-type') ?? 'application/json',
+        'Cache-Control': 'no-cache',
+        'X-Dsh-Model-Combo-Model': model,
+      })
+      const stream = Readable.fromWeb(upstream.body as Parameters<typeof Readable.fromWeb>[0])
+      stream.on('error', (error: unknown) => {
+        log(`combo ${combo.id}: ${model} stream failed mid-flight: ${String(error)}`)
+        if (res.writable) res.end()
+      })
+      stream.pipe(res)
+      return
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/combo.ts:85-89](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L85-L89)
+
+仅替换model而无能力归一。
+
+```text
+      upstream = await fetch(`http://127.0.0.1:${run.port}/v1/chat/completions`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${run.key}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...body, model }),
+        signal: run.signal,
+```
+
+**依据 3 · 作者声明**：[README.md:38-45](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/README.md#L38-L45)
+
+作者的统一和回退主张需收窄。
+
+```text
+你手上的模型来源，各家接口、登录方式都不一样。dsh-model 把它们合成**一个 OpenAI 兼容地址**：
+
+- **dsh 里自动出现**：全部模型按来源分组，不用手动配置。
+- **其他软件也能用**：Cline、Continue、Cherry Studio、脚本……凡是支持 OpenAI 接口的，填同一个地址和 key 就行。
+- **不怕限流**：自己排一个组合（如 Codex → Kimi → Gemini），一个限流、额度用完或出错，就自动换下一个。
+- **心里有数**：套餐用量和重置倒计时、每个模型的成功率和速度、最近失败的原因和该怎么办；额度快用完时提醒。
+- **默认安全**：始终要求 key，每台设备一把，可随时吊销；登录全在本机完成。
+- **电脑和服务器都行**：Windows、macOS、Linux；装在 VPS 上（配合 [dsh-vps](https://github.com/AIcivilization/dsh-vps)）自动开一个 https 地址，电脑、手机随处用。卸载时把 dsh 的配置逐字节还原。
+```
+
+#### 缺口
+
+- 流中失败/截断、工具调用不完整及跨模型质量无同条件结果
+  **影响**：不能证明组合提高合格率或降低任务成本
+  **进一步探讨**：注入首包前/后断流和坏工具参数，按完整任务输出核验并对齐模型能力
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 账号、密钥、服务生命周期与卸载怎样闭合？
+
+**研究主题**：依赖、兼容与流程
+
+#### 完整回答
+
+使用需Node、可启动的CLIProxyAPI和daemon、上游账号/区域网络及接入客户端；VPS还涉及系统服务和远端公开地址。Web入口说明同源POST、页面token与控制白名单，但本轮只核查接线未完成全路由安全审计。卸载按步骤拆除远端/DSH/服务，errors非空保留home供重试；不过removeDshPlugin失败只warn而未进入统一step错误列表，不能仅凭errors为空就断言所有可选插件都已移除。凭据备份需用户明确选择keep-auth，退出应核对残余状态而非盲重放setup。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[plugin/index.js:1-7](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/plugin/index.js#L1-L7)
+
+Web与daemon数据边界声明。
+
+```text
+// plugin/index.js — dsh-model 的 dsh 插件（宿主端）
+//
+// 只做一件事：把页面的请求转给 dsh-model 守护进程的 /control/*（设计 §14.1）。
+// - 路由 /api-dsh-model/call 与 /api-dsh-model/token，挂在 dsh 自己的 webServer 上，所以先过 dsh 的登录校验；
+// - 只收同源的 POST JSON，并且要带页面令牌（宿主经 index-inject / tapIndex 注入页面，跨站网页读不到）；
+// - 守护进程的地址与控制密钥从 ~/.dsh-model/bridge.json 读（dsh 与守护进程是同一个用户），浏览器永远拿不到；
+// - 只转发白名单里的控制接口。
+```
+
+**依据 2 · 源码核查**：[src/commands/uninstall.ts:64-99](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/commands/uninstall.ts#L64-L99)
+
+插件移除告警、分步清理与保留home语义。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+    if (await removeDshPlugin(ctx, all, { force: opts.removePlugin })) ok(L('已从 dsh 移除 dsh-model 插件', 'Removed the dsh-model plugin from dsh'))
+  } catch (error) {
+    warn(L(`没能自动从 dsh 移除 dsh-model 插件（${(error as Error).message}）：请在 dsh 的插件页里手动删掉它`, `Could not remove the dsh-model plugin from dsh automatically (${(error as Error).message}); remove it on the dsh Plugins page`))
+  }
+  await step('workbuddy', async () => {
+    if (await removeWorkbuddyPlugin(ctx, all)) ok(L('已移除上一版安装的 WorkBuddy 插件', 'Removed the WorkBuddy plugin installed by a previous version'))
+    if (await disableWorkbuddy(ctx, all)) ok(L('WorkBuddy bridge 服务已移除', 'WorkBuddy bridge service removed'))
+  })
+  await step('dsh', async () => {
+    if (!all.state.dsh) return
+    const r = await disconnectDsh(ctx, all.state)
+    ok(L(`dsh 配置已还原（patch：${r.patch}，凭据：${r.cred}）`, `dsh config restored (patch: ${r.patch}, credentials: ${r.cred})`))
+  })
+  await saveAll(ctx, all).catch(() => {})
+  await step('admin', async () => {
+    if (ctx.mode === 'vps') await removeAdmin()
+  })
+  await step('service', async () => {
+    if (ctx.serviceDisabled) return
+    await serviceFor(ctx).uninstall()
+    ok(L('系统服务已移除', 'Service removed'))
+  })
+  await step('auth-backup', async () => {
+    if (!opts.keepAuth || !authCount) return
+    const dest = join(homedir(), `dsh-model-auth-backup-${timestamp()}`)
+    await cp(ctx.paths.auth, dest, { recursive: true, filter: (src) => !src.includes('/logs') })
+    ok(L(`登录凭据已备份到 ${dest}`, `Credentials backed up to ${dest}`))
+  })
+  if (errors.length) {
+    warn(L(`有 ${errors.length} 步失败，保留了 ${ctx.paths.home} 以便重试（再次执行 uninstall）`, `${errors.length} step(s) failed; kept ${ctx.paths.home} so you can retry (run uninstall again)`))
+    return 1
+  }
+  // Windows：刚结束的进程可能还没完全退出、还占着目录，删除会短暂报 EBUSY / EPERM，重试一会儿
+  await rm(ctx.paths.home, { recursive: true, force: true, maxRetries: 20, retryDelay: 250 })
+  ok(L(`已删除 ${ctx.paths.home}，卸载完成`, `Deleted ${ctx.paths.home}; uninstall complete`))
+  info(L('最后可执行：npm uninstall -g dsh-model', 'Finally you can run: npm uninstall -g dsh-model'))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/commands/setup.ts:41-43](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/commands/setup.ts#L41-L43)
+
+VPS权限和状态锁要求。
+
+```text
+export async function setup(ctx: Ctx, opts: SetupOptions): Promise<number> {
+  requireRootInVps(ctx)
+  return withLock(ctx, async () => {
+```
+
+#### 缺口
+
+- 当前系统与账号下真实卸载回读未完成
+  **影响**：残余服务/插件和凭据是否按预期保留未知
+  **进一步探讨**：在隔离profile按步骤比对配置和服务清单，并核对告警路径
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 请求合格率的效果/成本与状态设计怎样核查？
+
+**研究主题**：效果与总成本、工程质量与复用
+
+#### 完整回答
+
+有价值的工程点包括资产校验、禁止combo递归、安装状态锁、分步错误汇总和清理失败留home。它们缩小下载损坏和重复接线风险，但不能证明第三方资产可信、账号授权或任务质量。首次有引擎/服务/登录维护，持续有上游账单、签到及后台常驻，失败可能向多个模型重复发送同一内容并累积费用。以完整工具结果或合格答案为单位，应将所有失败候选和人工核对计入；没有这类账单/质量/耗时对照，不能把统一地址或作者免费标签换算ROI。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/engine/install.ts:112-134](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/engine/install.ts#L112-L134)
+
+校验与落位支持安装完整性。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+    if (actual !== asset.sha256) {
+      throw new DshModelError(
+        'engine_checksum_mismatch',
+        L(`引擎文件校验失败：期望 ${asset.sha256}，实际 ${actual}`, `Engine checksum mismatch: expected ${asset.sha256}, got ${actual}`),
+        L('文件可能被篡改或下载不完整，已中止。', 'The file may be tampered with or incomplete; aborted.'),
+      )
+    }
+    if (local) {
+      const { writeFile } = await import('node:fs/promises')
+      await writeFile(archive, data, { mode: 0o600 })
+    }
+    await rm(partial, { recursive: true, force: true })
+    await mkdir(partial, { recursive: true })
+    const tar = await extract(archive, partial)
+    if (tar.code !== 0) throw new DshModelError('engine_extract_failed', L(`解压引擎失败：${tar.stderr.trim()}`, `Failed to extract engine: ${tar.stderr.trim()}`))
+    if (!(await exists(join(partial, ENGINE_BIN)))) throw new DshModelError('engine_extract_failed', L(`压缩包里没有 ${ENGINE_BIN}`, `${ENGINE_BIN} not found in archive`))
+    if (process.platform !== 'win32') await chmod(join(partial, ENGINE_BIN), 0o755)
+    await rename(partial, join(ctx.paths.versionsDir, version))
+    if (ctx.owner) await run('chown', ['-R', `${ctx.owner.uid}:${ctx.owner.gid}`, ctx.paths.engineDir])
+    return true
+  } finally {
+    await rm(archive, { force: true })
+    await rm(partial, { recursive: true, force: true })
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/combo.ts:81-115](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L81-L115)
+
+多候选转发扩大请求次数。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -499,159 +687,11 @@ export function shouldFallBack(status: number, text: string): boolean {
 
 </details>
 
-<a id="research-q03"></a>
+**依据 3 · 源码核查**：[src/commands/uninstall.ts:92-99](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/commands/uninstall.ts#L92-L99)
 
-<a id="detail-section-13"></a>
-
-### Q03 · 密钥、自动签到、VPS与退出的总负担是什么？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-统一入口仍依赖各来源有效授权、网络/地区/套餐及模型能力。key和签到PAT成为本地敏感状态，插件路由有同源和随机页面token检查；但其注释“webServer上所以经过登录”不能代替对目标宿主认证层的独立核查。自动签到默认开启，按北京时间日期和随机延后判定、失败一小时再试，收益取决第三方服务且默认后台动作应明确告知用户。
-
-VPS setup会额外部署admin和Caddy公开端点，root与远程暴露显著扩大维护边界，不能按桌面一条命令估成本。首次有二进制/服务/账号迁移，持续有模型费/订阅、VPS与daemon、跨来源重试和审核实际回答，失败恢复包括凭据轮换、配置还原、服务及远端拆除。uninstall逐步逆序且错误时保留home供重试，不能称所有情况下逐字节无损。免费/签到量、现金与人工分钟均未独立核实，未知不填0。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/checkin/index.ts:71-102](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/checkin/index.ts#L71-L102)
-
-签到持久、默认自动和一小时重试。
-
-<details>
-<summary>查看原文（32行）</summary>
+错误时保留home供恢复。
 
 ```text
-export async function runCheckin(home: string, checkers: Checker[], opts: { force?: boolean; owner?: Owner } = {}): Promise<CheckinItem[]> {
-  const file = await loadCheckin(home)
-  const { date } = beijingNow()
-  const results = new Map(todayResults(file).map((r) => [r.id, r]))
-  for (const c of checkers) {
-    const prev = results.get(c.id)
-    if (!opts.force && prev && prev.state !== 'failed') continue
-    const at = new Date().toISOString()
-    try {
-      const r = await c.run()
-      results.set(c.id, { id: c.id, label: c.label, state: r.state, ...(r.credit !== undefined ? { credit: r.credit } : {}), at })
-    } catch (error) {
-      const message = String((error as Error).message ?? error).slice(0, 200)
-      results.set(c.id, { id: c.id, label: c.label, state: 'failed', message, at })
-    }
-  }
-  const next: CheckinFile = { ...file, date, results: [...results.values()] }
-  await writeJson(checkinPath(home), next, { owner: opts.owner })
-  return next.results
-}
-
-/** 现在该不该自动签：打开了、过了今天的随机延后、有没签上的（失败的隔一小时再试） */
-export function autoDue(file: CheckinFile, checkers: Checker[], now = new Date()): boolean {
-  if (file.auto === false || !checkers.length) return false
-  const { date, minutes } = beijingNow(now)
-  const jitter = file.jitter?.date === date ? file.jitter.minutes : 0
-  if (minutes < jitter) return false
-  const today = new Map(todayResults(file, now).map((r) => [r.id, r]))
-  return checkers.some((c) => {
-    const r = today.get(c.id)
-    if (!r) return true
-    return r.state === 'failed' && now.getTime() - Date.parse(r.at) > 60 * 60 * 1000
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/commands/setup.ts:107-123](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/commands/setup.ts#L107-L123)
-
-VPS额外公开端点。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-    // vps：让 dsh 管理页能直接点「更新 / 卸载」（root 执行，只认这两件事）
-    if (ctx.mode === 'vps' && !ctx.serviceDisabled) await step('admin', () => installAdmin(ctx))
-
-    // vps：自动在 dsh 的域名上开对外端点（没有域名就用 IP），自己的其他设备直接能用
-    if (ctx.mode === 'vps') {
-      info('')
-      info(bold(L('对外端点', 'Public endpoint')))
-      if (all.state.remote?.mode && all.state.remote.mode !== 'off' && all.state.remote.mode !== 'caddy') skip(L(`已用 ${all.state.remote.mode} 方式开放，保持不变`, `Already exposed via ${all.state.remote.mode}; unchanged`))
-      else
-        await step('public-endpoint', async () => {
-          const host = await publicHost(all.config.remote.domain)
-          const port = all.config.remote.publicPort ?? DEFAULT_PUBLIC_PORT
-          await enableCaddy(ctx, all, host, port)
-          all.config.remote.domain = host
-          all.config.remote.publicPort = port
-          ok(`https://${host}:${port}/v1`)
-        })
-```
-
-</details>
-
-**依据 3 · 源码核查**：[plugin/index.js:125-129](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/plugin/index.js#L125-L129)
-
-局部同源/token检查。
-
-```text
-function check(req, token, needToken = true) {
-  if (req.method !== 'POST') return { code: 405, error: 'POST only' }
-  if (!String(req.headers['content-type'] ?? '').includes('application/json')) return { code: 415, error: 'application/json only' }
-  if (!sameOrigin(req)) return { code: 403, error: 'cross-site request refused' }
-  if (needToken && String(req.headers[TOKEN_HEADER] ?? '') !== token) return { code: 403, error: 'wrong token' }
-```
-
-**依据 4 · 源码核查**：[src/commands/uninstall.ts:48-98](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/commands/uninstall.ts#L48-L98)
-
-分步退出与失败保留状态。
-
-<details>
-<summary>查看原文（51行）</summary>
-
-```text
-  const errors: string[] = []
-  const step = async (name: string, fn: () => Promise<void>) => {
-    try {
-      await fn()
-    } catch (error) {
-      errors.push(`${name}: ${(error as Error).message}`)
-      fail(`${name}: ${(error as Error).message}`)
-    }
-  }
-
-  await step('remote', async () => {
-    if (all.state.remote && all.state.remote.mode !== 'off') await disableRemote(ctx, all)
-  })
-  // 移除插件只是尽力而为：dsh 的 pnpm 可能因"新版本要等一天"的规则拒绝改动（2026-10-14 实测，连删除也会被拦）。
-  // 这一步失败不该让卸载停在半路：服务、配置照样清掉，home 照样删，插件请用户在 dsh 的插件页手动删。
-  try {
-    if (await removeDshPlugin(ctx, all, { force: opts.removePlugin })) ok(L('已从 dsh 移除 dsh-model 插件', 'Removed the dsh-model plugin from dsh'))
-  } catch (error) {
-    warn(L(`没能自动从 dsh 移除 dsh-model 插件（${(error as Error).message}）：请在 dsh 的插件页里手动删掉它`, `Could not remove the dsh-model plugin from dsh automatically (${(error as Error).message}); remove it on the dsh Plugins page`))
-  }
-  await step('workbuddy', async () => {
-    if (await removeWorkbuddyPlugin(ctx, all)) ok(L('已移除上一版安装的 WorkBuddy 插件', 'Removed the WorkBuddy plugin installed by a previous version'))
-    if (await disableWorkbuddy(ctx, all)) ok(L('WorkBuddy bridge 服务已移除', 'WorkBuddy bridge service removed'))
-  })
-  await step('dsh', async () => {
-    if (!all.state.dsh) return
-    const r = await disconnectDsh(ctx, all.state)
-    ok(L(`dsh 配置已还原（patch：${r.patch}，凭据：${r.cred}）`, `dsh config restored (patch: ${r.patch}, credentials: ${r.cred})`))
-  })
-  await saveAll(ctx, all).catch(() => {})
-  await step('admin', async () => {
-    if (ctx.mode === 'vps') await removeAdmin()
-  })
-  await step('service', async () => {
-    if (ctx.serviceDisabled) return
-    await serviceFor(ctx).uninstall()
-    ok(L('系统服务已移除', 'Service removed'))
-  })
-  await step('auth-backup', async () => {
-    if (!opts.keepAuth || !authCount) return
-    const dest = join(homedir(), `dsh-model-auth-backup-${timestamp()}`)
-    await cp(ctx.paths.auth, dest, { recursive: true, filter: (src) => !src.includes('/logs') })
-    ok(L(`登录凭据已备份到 ${dest}`, `Credentials backed up to ${dest}`))
-  })
   if (errors.length) {
     warn(L(`有 ${errors.length} 步失败，保留了 ${ctx.paths.home} 以便重试（再次执行 uninstall）`, `${errors.length} step(s) failed; kept ${ctx.paths.home} so you can retry (run uninstall again)`))
     return 1
@@ -659,56 +699,37 @@ function check(req, token, needToken = true) {
   // Windows：刚结束的进程可能还没完全退出、还占着目录，删除会短暂报 EBUSY / EPERM，重试一会儿
   await rm(ctx.paths.home, { recursive: true, force: true, maxRetries: 20, retryDelay: 250 })
   ok(L(`已删除 ${ctx.paths.home}，卸载完成`, `Deleted ${ctx.paths.home}; uninstall complete`))
+  info(L('最后可执行：npm uninstall -g dsh-model', 'Finally you can run: npm uninstall -g dsh-model'))
 ```
-
-</details>
 
 #### 缺口
 
-- 第三方授权/费用、目标宿主认证与安装退出未验
-  **影响**：可用性、成本和暴露面决定采用
-  **进一步探讨**：只选合法可用的来源，读当前官方授权/费用及目标认证契约，再隔离核服务/禁用/卸载，不把作者声明作保证
+- 同任务组合与单模型的合格率、总费用和人工时间未知
+  **影响**：无法评估fallback成本是否值得
+  **进一步探讨**：相同预算和输入记录所有候选请求、完整输出、人工修正与账单
 
-<a id="research-q04"></a>
+<a id="research-q06"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-16"></a>
 
-### Q04 · 怎样有限试用并检验新路由假设？
+### Q06 · 能力契约加流边界回退能否减少假成功，适合谁试用？
 
 **研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-建议具备服务/凭据维护能力的人在本机非敏感范围试用，先只接一两个明确可用来源、禁用不需要的自动签到/远端，核无key拒绝、实际model、用量、流中失败和退出。新手或不允许转发/订阅来源不明的组织先观察，不用它替代来源自身授权。没有本轮宿主/服务验收，不判值得安装。
-
-未验证假设是任务契约驱动的fallback，把上下文上限、工具/图像/结构化输出、允许来源和预算作为切换前条件，并留实际来源及尝试成本收据。由同JSON换model和流中不可重放推导，它可能让成功HTTP更接近合格任务，代价是能力元数据维护和少切换。最小对照在同任务/总预算下使用工具调用、图像、严格JSON和长上下文，注入429/流中断；比较合格交付率、未授权来源数、重试token与人工复核。若响应可达增加但合格率/总成本不优则否定。
+未验证方向是给组合声明工具、图像、上下文和可接受参数的能力交集，并区分首包前可回退、首包后必须报告不完整的提交边界。不能在已经输出工具动作后自动全量重试，否则可能重复副作用；需可确认的请求收据和上层恢复协议。用兼容/不兼容模型及首包前后故障矩阵比较合格输出率和重复动作，若开销或重放风险上升应否定。已有多账号且能维护本地服务的人可在非关键任务限定试用，先验收流完整与卸载，不建议依赖自动fallback完成不可逆操作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/combo.ts:81-110](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/combo.ts#L81-L110)
+**依据 1 · 源码核查**：[src/combo.ts:97-110](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L97-L110)
 
-相同请求换model与流边界。
+当前提交边界只看HTTP成功。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-  for (const model of combo.models) {
-    if (run.signal.aborted) return
-    let upstream: Response
-    try {
-      upstream = await fetch(`http://127.0.0.1:${run.port}/v1/chat/completions`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${run.key}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...body, model }),
-        signal: run.signal,
-      })
-    } catch (error) {
-      if (run.signal.aborted) return
-      last = { status: 502, text: String((error as Error).message ?? error) }
-      tried.push(`${model}: ${last.text.slice(0, 120)}`)
-      continue
-    }
     if (upstream.ok && upstream.body) {
       if (tried.length) log(`combo ${combo.id}: ${model} answered after ${tried.length} failed (${tried.join(' | ')})`)
       res.writeHead(upstream.status, {
@@ -727,36 +748,31 @@ function check(req, token, needToken = true) {
 
 </details>
 
-**依据 2 · 源码核查**：[src/commands/setup.ts:110-123](https://github.com/AIcivilization/dsh-model/blob/57c198bbd973fea8cc63eea3dc36715da947bd7a/src/commands/setup.ts#L110-L123)
+**依据 2 · 源码核查**：[src/combo.ts:85-89](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/combo.ts#L85-L89)
 
-公开端点可扩大边界，支持先本机建议。
-
-<details>
-<summary>查看原文（14行）</summary>
+模型替换需要显式能力约束。
 
 ```text
-    // vps：自动在 dsh 的域名上开对外端点（没有域名就用 IP），自己的其他设备直接能用
-    if (ctx.mode === 'vps') {
-      info('')
-      info(bold(L('对外端点', 'Public endpoint')))
-      if (all.state.remote?.mode && all.state.remote.mode !== 'off' && all.state.remote.mode !== 'caddy') skip(L(`已用 ${all.state.remote.mode} 方式开放，保持不变`, `Already exposed via ${all.state.remote.mode}; unchanged`))
-      else
-        await step('public-endpoint', async () => {
-          const host = await publicHost(all.config.remote.domain)
-          const port = all.config.remote.publicPort ?? DEFAULT_PUBLIC_PORT
-          await enableCaddy(ctx, all, host, port)
-          all.config.remote.domain = host
-          all.config.remote.publicPort = port
-          ok(`https://${host}:${port}/v1`)
-        })
+      upstream = await fetch(`http://127.0.0.1:${run.port}/v1/chat/completions`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${run.key}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...body, model }),
+        signal: run.signal,
 ```
 
-</details>
+**依据 3 · 源码核查**：[src/commands/uninstall.ts:92-99](https://github.com/AIcivilization/dsh-model/blob/44c466cbbf62769b91f0647469dc529ecdc125ee/src/commands/uninstall.ts#L92-L99)
 
-#### 缺口
+退出路径可作为试用结束验收。
 
-- 契约路由和同预算任务收益未验证
-  **影响**：不能把failover视为质量等价或节省费用
-  **进一步探讨**：按四任务和两故障对照合格率、来源和总成本
+```text
+  if (errors.length) {
+    warn(L(`有 ${errors.length} 步失败，保留了 ${ctx.paths.home} 以便重试（再次执行 uninstall）`, `${errors.length} step(s) failed; kept ${ctx.paths.home} so you can retry (run uninstall again)`))
+    return 1
+  }
+  // Windows：刚结束的进程可能还没完全退出、还占着目录，删除会短暂报 EBUSY / EPERM，重试一会儿
+  await rm(ctx.paths.home, { recursive: true, force: true, maxRetries: 20, retryDelay: 250 })
+  ok(L(`已删除 ${ctx.paths.home}，卸载完成`, `Deleted ${ctx.paths.home}; uninstall complete`))
+  info(L('最后可执行：npm uninstall -g dsh-model', 'Finally you can run: npm uninstall -g dsh-model'))
+```
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

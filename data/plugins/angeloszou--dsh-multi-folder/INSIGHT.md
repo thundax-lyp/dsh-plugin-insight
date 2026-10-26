@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[5921c0e](https://github.com/AngelosZou/dsh-multi-folder/tree/5921c0e2fd2623bc0757b8f13feaf73cee3648ca)
+分析版本：[445a803](https://github.com/AngelosZou/dsh-multi-folder/tree/445a803cdfdb917ab6d46b09aaf700be36bbf186)
 
 <!-- BEGIN META -->
-[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) [![npm 30d 2,036](https://img.shields.io/static/v1?label=npm+30d&message=2%2C036&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-multi-folder)
+[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder) [![npm 30d 2,056](https://img.shields.io/static/v1?label=npm+30d&message=2%2C056&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-multi-folder) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-multi-folder)
 <!-- END META -->
 
 > **实现功能**：为DSH项目配置副工作目录，保持主cwd并将原文件和shell工具按单次目标重定根，附UI与@发现。
@@ -42,9 +42,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：源码/测试/文档分仓而需同一会话协作，单命令仍一个可写根。详见[Q01](#research-q01)。
+> **用途**：面向源码、测试和文档分布多个仓的DSH用户，保持主cwd并把每次原生写/执行定向一个受权副根，最终仍逐仓验收真实变更。
 
-切换项目会话/主cwd或扩大一般权限再运行工具；交付仍是各仓变更，本项新增原工具多根流程。
+切会话/cwd、复制文件或手工临时授权是直接替代。比较相同跨仓变更的上下文重述、错根与回退成本；本插件不提供跨仓提交原子性。
 
 <a id="detail-section-3"></a>
 
@@ -59,26 +59,26 @@
 | sessionless RPC/host浏览 | 创建前配置和目录交互 | 信任宿主认证，不受Agent沙箱限 |
 | @发现/notice | 发现文件及提示变化 | 索引有限，通知仅已arm会话 |
 
-**流程与依赖**
-
 #### 启动与依赖
 
-| 条件 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| Node>=20/base+Web/fs/sandboxPolicy | 重定根执行 | OS隔离依宿主runner |
-| shell/jobs/commands | 原工具/后台/用户配置 | 现代旧ABI分支，非永远兼容 |
-| gateway/typert/UI服务 | sessionless配置 | 认证与用户可达性依宿主 |
-| 可信副根与配置备份 | 赋予当前模式范围 | store不能落受控可写根，注意键碰撞 |
-
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node20+、DSH fs/sandboxPolicy | 核心必需 | 解析与执行原策略 | 沙箱强制性依OS runner |
+| shell/shellEnv/jobs | 对应执行必需 | 前后台命令及取消 | ABI需固定，不由方法存在保证未来兼容 |
+| commands与Web/Typert | 配置入口按需 | 用户选择与sessionless管理 | 依宿主访问身份 |
+| 可写配置存储 | 必需 | 每workspace副根列表 | 有损键/先内存后保存需核 |
+| inputTrigger和文件读取 | @发现可选 | 副根索引 | 不改变读权限，索引不全需手查 |
+| 本地native UI能力 | picker按需 | 打开系统对话框 | 缺服务fallback仍需可信本地条件 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 备份配置并核固定宿主 | 用户 | 路径身份和API明确 |
-| UI/命令选副目录 | 用户 | 了解写/exec授予范围 |
-| 以绝对workdir分仓执行 | Agent | 每次唯一可写根，检查真实结果 |
-| 逐仓审阅与恢复 | 用户/Agent | 没有统一跨仓事务 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 核项目 | 用户备份配置与各仓 | 路径身份无碰撞，store不在可写根 |
+| 选副根 | 用户通过可信UI/命令明确授权 | 配置磁盘与内存一致 |
+| 单根操作 | Agent设绝对workdir/file | primary走默认、副根仅当次重根 |
+| 后台任务 | 用户核job和输出契约 | cwd明确，取消与副作用分别验 |
+| 验收/退出 | 用户逐仓检查并移除副根 | 不宣称跨仓事务，失败先核现场 |
 
 #### 成本
 
@@ -107,7 +107,7 @@
 
 不改主cwd、不加模型工具，通过原工具重定根、后台jobs适配和副根@发现提供跨仓流程。详见[Q01](#research-q01)。
 
-await水合、最长根匹配、已拥有错误不回落及后台异步准备可借鉴；身份、事务与host权限不能靠命名保证。详见[Q02](#research-q02)。
+primary优先返回默认管线与完整结果schema避免不必要扩根及执行后假失败，后台取消/错误所有权也有价值；路径键与配置发布顺序仍需修复。[Q02](#research-q02)、[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
@@ -132,13 +132,13 @@ await水合、最长根匹配、已拥有错误不回落及后台异步准备可
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、SECURITY.md、lib/index.js、lib/client.js、lib/native-picker.ps1、test/intercept.mjs、test/smoke-host.mjs、test/smoke-client.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：1703行host中配置、RPC/目录浏览/OS交互、索引、notice、fs/shell/job拦截完整关键链；1629行client的RPC/picker/session/@链和mock测试代表边界。未执行目标/宿主/测试。
-- 下一步：固定宿主比较跨仓任务，按键碰撞/写失败/竞态/祖先store/符号链接/远程picker/旧UI响应反例核权限凭据。
+- 下一步：按 [Q07](#research-q07) 的路径碰撞、保存失败、祖先根和旧请求后到反例检查版本授权凭据原型，另核primary操作不会借secondary祖先扩根以及结果符合宿主schema。
 
 **分析版本**
 
 - **仓库**：[AngelosZou/dsh-multi-folder](https://github.com/AngelosZou/dsh-multi-folder)
-- **版本号**：0.3.3（[固定提交 5921c0e](https://github.com/AngelosZou/dsh-multi-folder/tree/5921c0e2fd2623bc0757b8f13feaf73cee3648ca)）
-- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.4（[固定提交 445a803](https://github.com/AngelosZou/dsh-multi-folder/tree/445a803cdfdb917ab6d46b09aaf700be36bbf186)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -148,7 +148,7 @@ await水合、最长根匹配、已拥有错误不回落及后台异步准备可
 
 稳定workspace身份和有revision的目录授权凭据，CAS保存后广播并约束host UI能力；以碰撞/失败/远程/链接反例证伪，未验证。详见[Q07](#research-q07)。
 
-固定宿主比较跨仓任务，按键碰撞/写失败/竞态/祖先store/符号链接/远程picker/旧UI响应反例核权限凭据。
+按 [Q07](#research-q07) 的路径碰撞、保存失败、祖先根和旧请求后到反例检查版本授权凭据原型，另核primary操作不会借secondary祖先扩根以及结果符合宿主schema。
 
 <a id="detail-section-9"></a>
 
@@ -159,19 +159,19 @@ await水合、最长根匹配、已拥有错误不回落及后台异步准备可
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 7 | 1310 | — | — | 12120 |
-| .js | source | 2 | 3332 | 2439 | 756 | — |
-| .mjs | test | 3 | 2313 | 1842 | 329 | — |
+| .md | source | 7 | 1320 | — | — | 12171 |
+| .js | source | 2 | 3356 | 2442 | 777 | — |
+| .mjs | test | 3 | 2398 | 1911 | 339 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+created%3A2026-09-22T09%3A52%3A56.400Z..2026-10-22T09%3A52%3A56.400Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A52%3A56.400Z..2026-10-22T09%3A52%3A56.400Z)
+[![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/AngelosZou/dsh-multi-folder/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
+暂未获取：Issue 未关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -195,7 +195,7 @@ await水合、最长根匹配、已拥有错误不回落及后台异步准备可
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:13-24](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/README.md#L13-L24)
+**依据 1 · 源码核查**：[README.md:13-24](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/README.md#L13-L24)
 
 作者范围与无新工具。
 
@@ -219,7 +219,7 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin bun
 
 </details>
 
-**依据 2 · 源码核查**：[README.md:87-91](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/README.md#L87-L91)
+**依据 2 · 源码核查**：[README.md:87-91](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/README.md#L87-L91)
 
 单命令单根限制。
 
@@ -231,7 +231,7 @@ Each confined command runs under **exactly ONE writable root** — the workspace
 - **Rule for file-creating commands: set `workdir` to the directory the command writes into**, and pass it as an **absolute** path — a relative `workdir` is resolved against the primary workspace, and changing the process directory inside the command (`Set-Location` / `cd`) does not widen the writable root (the write then fails with an OS-level denial, Windows error 5). For git, run the command from inside the repository (pass `workdir` pointing at it) instead of using `git -C` from the primary workspace. The rule applies to `run_in_background: true` runs exactly as to foreground ones.
 ```
 
-**依据 3 · 源码核查**：[lib/index.js:1450-1496](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1450-L1496)
+**依据 3 · 源码核查**：[lib/index.js:1456-1502](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1456-L1502)
 
 write/edit策略。
 
@@ -290,12 +290,12 @@ write/edit策略。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1504-1533](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1504-L1533)
+**依据 4 · 源码核查**：[lib/index.js:1510-1545](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1510-L1545)
 
 shell工作根。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
         const modernShell = shellUsesExecute(shell)
@@ -310,6 +310,12 @@ shell工作根。
         // directory so confinement root and process cwd agree exactly.
         const workdirTarget = await fs.resolve(joined, { cwd: primary })
         const absWorkdir = fs.processPath(workdirTarget)
+        // Same boundary as write/edit: a workdir inside the PRIMARY workspace
+        // belongs to the default pipeline. Without this, a secondary directory
+        // configured at an ANCESTOR of the workspace captures every ordinary
+        // shell call (the default workdir is the primary workspace) and re-roots
+        // its policy at that ancestor.
+        if (typeof primary === 'string' && primary.length > 0 && pathInside(absWorkdir, primary)) return next()
         const hit = longestRootFirst(dirs).find((d) => pathInside(absWorkdir, d))
         if (hit === undefined) return next()
         const policy = { ...standing, workspaceRoot: hit }
@@ -346,9 +352,11 @@ tools/execute先await loadDirs防首调未水合，再只拦write/edit/pwsh/bash
 
 后台通过jobs注册，现代execute分支owner为agent.id、旧接口为Agent，launch preparation在异步done里等待，job独立AbortController，cancel可在handle前后生效。现代后台onExpiry=none明确不继承前台deadline，stdout消费保留spill/loss和runner失败标记；不是给后台任务统一时间预算。前台传播exec.signal并投影结构化结果，shellRender只简化stdout/stderr/非零与denied，不同字段详尽程度依原工具和ABI。shellUsesExecute用单方法存在推定同时代jobs owner契约，是兼容性假设而非所有未来版本都成立。
 
+当前明确把primary内部目标/工作目录交回默认管线，再匹配secondary；若副目录是primary祖先，不会借它重根普通primary操作。这是最小必要根的实质保护，不能继续把所有命中祖先的主目录操作视为扩根。后台结果带cwd，前台结果带cwd与数值timeoutMs，避免动作已执行却被宿主output schema拒绝并诱发重试；缺timeout回0只表示未报告，不证明实际无时限。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1363-1439](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1363-L1439)
+**依据 1 · 源码核查**：[lib/index.js:1363-1439](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1363-L1439)
 
 水合/拦截/显式升级。
 
@@ -437,7 +445,7 @@ tools/execute先await loadDirs防首调未水合，再只拦write/edit/pwsh/bash
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1450-1498](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1450-L1498)
+**依据 2 · 源码核查**：[lib/index.js:1456-1504](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1456-L1504)
 
 fs调用和观察。
 
@@ -498,12 +506,12 @@ fs调用和观察。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1500-1621](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1500-L1621)
+**依据 3 · 源码核查**：[lib/index.js:1506-1645](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1506-L1645)
 
 前后台壳与结果。
 
 <details>
-<summary>查看原文（122行）</summary>
+<summary>查看原文（140行）</summary>
 
 ```text
 
@@ -522,6 +530,12 @@ fs调用和观察。
         // directory so confinement root and process cwd agree exactly.
         const workdirTarget = await fs.resolve(joined, { cwd: primary })
         const absWorkdir = fs.processPath(workdirTarget)
+        // Same boundary as write/edit: a workdir inside the PRIMARY workspace
+        // belongs to the default pipeline. Without this, a secondary directory
+        // configured at an ANCESTOR of the workspace captures every ordinary
+        // shell call (the default workdir is the primary workspace) and re-roots
+        // its policy at that ancestor.
+        if (typeof primary === 'string' && primary.length > 0 && pathInside(absWorkdir, primary)) return next()
         const hit = longestRootFirst(dirs).find((d) => pathInside(absWorkdir, d))
         if (hit === undefined) return next()
         const policy = { ...standing, workspaceRoot: hit }
@@ -557,9 +571,12 @@ fs调用和观察。
             ...(exec.agent ? { owner: modernShell ? exec.agent.id : exec.agent } : {}),
             run: () => startBackgroundJob(shell, request),
           })
+          // The background branch of the tool's `output.schema` requires `cwd`
+          // too; omitting it fails the kernel's oneOf check and replaces this
+          // result with INVALID_TOOL_OUTPUT after the job has already started.
           return {
             isError: false,
-            value: { kind: 'background', jobId },
+            value: { kind: 'background', jobId, cwd: absWorkdir },
             content: [{ type: 'text', text: 'started background job ' + jobId }],
           }
         }
@@ -583,13 +600,22 @@ fs调用和观察。
           truncated: !!(s && s.truncated),
           ...(s && s.spillPath !== undefined ? { spillPath: s.spillPath } : {}),
         })
+        // This value is validated against the shipped tool's `output.schema`
+        // by the kernel AFTER the command has already run, so every required
+        // field must be present or the model gets `INVALID_TOOL_OUTPUT` for a
+        // command that actually executed (and retries it). The foreground
+        // branch requires `cwd` (string) and a NUMERIC `timeoutMs`.
         const value = {
           kind: 'foreground',
+          cwd: absWorkdir,
           exitCode: result.exitCode === undefined ? null : result.exitCode,
           signal: result.signal === undefined ? null : result.signal,
           timedOut: !!result.timedOut,
           aborted: false,
-          timeoutMs: result.timeoutMs === undefined ? null : result.timeoutMs,
+          // Executors echo the resolved deadline; an older one that omits it
+          // still has to satisfy `type: "number"` (0 means "no deadline was
+          // reported", never a deadline the executor actually applied).
+          timeoutMs: typeof result.timeoutMs === 'number' ? result.timeoutMs : 0,
           stdout: stream(result.stdout),
           stderr: stream(result.stderr),
           ...(result.sandbox !== undefined
@@ -632,7 +658,7 @@ fs调用和观察。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1274-1321](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1274-L1321)
+**依据 4 · 源码核查**：[lib/index.js:1274-1321](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1274-L1321)
 
 后台生命周期。
 
@@ -692,7 +718,7 @@ fs调用和观察。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:1323-1360](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1323-L1360)
+**依据 5 · 源码核查**：[lib/index.js:1323-1360](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1323-L1360)
 
 丢失/失败信息。
 
@@ -742,6 +768,102 @@ fs调用和观察。
 
 </details>
 
+**依据 6 · 源码核查**：[lib/index.js:1448-1457](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1448-L1457)
+
+primary内写入不匹配祖先secondary，保持默认根。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+        // A target inside the PRIMARY workspace is the default pipeline's call.
+        // Intercepting it would re-root the policy at an ANCESTOR secondary
+        // directory (a configured parent of this workspace matches the target
+        // too) and grant more than the call needs; the default pipeline already
+        // serves it with the exact standing root.
+        if (typeof primary === 'string' && primary.length > 0 && pathInside(abs, primary)) return next()
+        if (dirs === null) return next()
+        const hit = longestRootFirst(dirs).find((d) => pathInside(abs, d))
+        if (hit === undefined) return next()
+        const policy = { ...standing, workspaceRoot: hit }
+```
+
+</details>
+
+**依据 7 · 源码核查**：[lib/index.js:1520-1537](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1520-L1537)
+
+shell同样先保primary边界。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+        const workdirTarget = await fs.resolve(joined, { cwd: primary })
+        const absWorkdir = fs.processPath(workdirTarget)
+        // Same boundary as write/edit: a workdir inside the PRIMARY workspace
+        // belongs to the default pipeline. Without this, a secondary directory
+        // configured at an ANCESTOR of the workspace captures every ordinary
+        // shell call (the default workdir is the primary workspace) and re-roots
+        // its policy at that ancestor.
+        if (typeof primary === 'string' && primary.length > 0 && pathInside(absWorkdir, primary)) return next()
+        const hit = longestRootFirst(dirs).find((d) => pathInside(absWorkdir, d))
+        if (hit === undefined) return next()
+        const policy = { ...standing, workspaceRoot: hit }
+        const shellEnv = ctx.get('shellEnv')
+        const request = {
+          command: String(args.command),
+          workdir: absWorkdir,
+          ...(args && args.timeoutMs !== undefined ? { timeoutMs: args.timeoutMs } : {}),
+          ...(shellEnv !== undefined ? { dshEnv: shellEnv.collect(exec) } : {}),
+          sandboxPolicy: policy,
+```
+
+</details>
+
+**依据 8 · 源码核查**：[lib/index.js:1563-1569](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1563-L1569)
+
+后台结果补cwd避免执行后schema失败。
+
+```text
+          // The background branch of the tool's `output.schema` requires `cwd`
+          // too; omitting it fails the kernel's oneOf check and replaces this
+          // result with INVALID_TOOL_OUTPUT after the job has already started.
+          return {
+            isError: false,
+            value: { kind: 'background', jobId, cwd: absWorkdir },
+            content: [{ type: 'text', text: 'started background job ' + jobId }],
+```
+
+**依据 9 · 源码核查**：[lib/index.js:1592-1609](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1592-L1609)
+
+前台数字timeoutMs为输出契约，不是已执行deadline证明。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+        // This value is validated against the shipped tool's `output.schema`
+        // by the kernel AFTER the command has already run, so every required
+        // field must be present or the model gets `INVALID_TOOL_OUTPUT` for a
+        // command that actually executed (and retries it). The foreground
+        // branch requires `cwd` (string) and a NUMERIC `timeoutMs`.
+        const value = {
+          kind: 'foreground',
+          cwd: absWorkdir,
+          exitCode: result.exitCode === undefined ? null : result.exitCode,
+          signal: result.signal === undefined ? null : result.signal,
+          timedOut: !!result.timedOut,
+          aborted: false,
+          // Executors echo the resolved deadline; an older one that omits it
+          // still has to satisfy `type: "number"` (0 means "no deadline was
+          // reported", never a deadline the executor actually applied).
+          timeoutMs: typeof result.timeoutMs === 'number' ? result.timeoutMs : 0,
+          stdout: stream(result.stdout),
+          stderr: stream(result.stderr),
+```
+
+</details>
+
 #### 缺口
 
 - 所部署fs.resolve/processPath、sandbox执行器、shell.execute与jobs.owner的固定ABI
@@ -766,7 +888,7 @@ coreAdd/Remove/Set均先entry.dirs=next再await saveDirs，写盘失败后本实
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:95-97](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L95-L97)
+**依据 1 · 源码核查**：[lib/index.js:95-97](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L95-L97)
 
 有损文件键。
 
@@ -776,7 +898,7 @@ const configFileName = (ws) => String(ws).replace(/[^a-z0-9]+/gi, '-').toLowerCa
 const configPathFor = (ws) => join(configDir(), configFileName(ws))
 ```
 
-**依据 2 · 源码核查**：[lib/index.js:154-205](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L154-L205)
+**依据 2 · 源码核查**：[lib/index.js:154-205](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L154-L205)
 
 小写键/加载。
 
@@ -840,7 +962,7 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:254-300](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L254-L300)
+**依据 3 · 源码核查**：[lib/index.js:254-300](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L254-L300)
 
 先内存后保存。
 
@@ -899,7 +1021,7 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:917-947](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L917-L947)
+**依据 4 · 源码核查**：[lib/index.js:917-947](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L917-L947)
 
 sessionless直接core。
 
@@ -942,7 +1064,7 @@ sessionless直接core。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:1069-1083](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1069-L1083)
+**依据 5 · 源码核查**：[lib/index.js:1069-1083](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1069-L1083)
 
 pending消费。
 
@@ -969,7 +1091,7 @@ pending消费。
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:1202-1225](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1202-L1225)
+**依据 6 · 源码核查**：[lib/index.js:1202-1225](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1202-L1225)
 
 水合与通知边界。
 
@@ -1005,7 +1127,7 @@ pending消费。
 
 </details>
 
-**依据 7 · 源码核查**：[lib/index.js:1672-1684](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1672-L1684)
+**依据 7 · 源码核查**：[lib/index.js:1696-1708](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1696-L1708)
 
 命令changed才arm。
 
@@ -1048,7 +1170,7 @@ picker能力读失败/非native返回unavailable可避免误开宿主对话框�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[SECURITY.md:8-27](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/SECURITY.md#L8-L27)
+**依据 1 · 源码核查**：[SECURITY.md:8-27](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/SECURITY.md#L8-L27)
 
 作者用户专管保证。
 
@@ -1080,7 +1202,7 @@ picker能力读失败/非native返回unavailable可避免误开宿主对话框�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:241-245](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L241-L245)
+**依据 2 · 源码核查**：[lib/index.js:241-245](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L241-L245)
 
 workspace仅非空。
 
@@ -1092,7 +1214,7 @@ workspace仅非空。
     if (typeof ws !== 'string' || ws.length === 0) throw new Error('workspace is required')
 ```
 
-**依据 3 · 源码核查**：[lib/index.js:337-390](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L337-L390)
+**依据 3 · 源码核查**：[lib/index.js:337-390](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L337-L390)
 
 浏览/原生mkdir。
 
@@ -1158,7 +1280,7 @@ workspace仅非空。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:406-426](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L406-L426)
+**依据 4 · 源码核查**：[lib/index.js:406-426](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L406-L426)
 
 picker gate缺失返回null。
 
@@ -1191,7 +1313,7 @@ picker gate缺失返回null。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:968-996](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L968-L996)
+**依据 5 · 源码核查**：[lib/index.js:968-996](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L968-L996)
 
 OS fallback条件。
 
@@ -1232,7 +1354,7 @@ OS fallback条件。
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:585-620](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L585-L620)
+**依据 6 · 源码核查**：[lib/index.js:585-620](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L585-L620)
 
 reveal真实宿主动作。
 
@@ -1280,7 +1402,7 @@ reveal真实宿主动作。
 
 </details>
 
-**依据 7 · 源码核查**：[lib/index.js:1410-1447](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1410-L1447)
+**依据 7 · 源码核查**：[lib/index.js:1410-1447](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1410-L1447)
 
 升级早回与exact-file guard。
 
@@ -1352,7 +1474,7 @@ client三候选席位选一个、sessionless或session命令分流、picker关�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:648-738](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L648-L738)
+**依据 1 · 源码核查**：[lib/index.js:648-738](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L648-L738)
 
 索引预算/缓存。
 
@@ -1455,7 +1577,7 @@ client三候选席位选一个、sessionless或session命令分流、picker关�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:798-905](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L798-L905)
+**依据 2 · 源码核查**：[lib/index.js:798-905](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L798-L905)
 
 level与查询。
 
@@ -1575,7 +1697,7 @@ level与查询。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/client.js:454-495](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/client.js#L454-L495)
+**依据 3 · 源码核查**：[lib/client.js:454-495](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/client.js#L454-L495)
 
 session刷新写全局状态。
 
@@ -1629,7 +1751,7 @@ session刷新写全局状态。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/client.js:502-527](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/client.js#L502-L527)
+**依据 4 · 源码核查**：[lib/client.js:502-527](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/client.js#L502-L527)
 
 browse回调。
 
@@ -1667,7 +1789,7 @@ browse回调。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/client.js:1550-1623](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/client.js#L1550-L1623)
+**依据 5 · 源码核查**：[lib/client.js:1550-1623](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/client.js#L1550-L1623)
 
 @候选与引用。
 
@@ -1753,7 +1875,7 @@ browse回调。
 
 </details>
 
-**依据 6 · 源码核查**：[test/intercept.mjs:64-114](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/test/intercept.mjs#L64-L114)
+**依据 6 · 源码核查**：[test/intercept.mjs:64-114](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/test/intercept.mjs#L64-L114)
 
 fs/策略mock。
 
@@ -1816,7 +1938,7 @@ const makeCtx = (listenersMap, overrides = {}, shellApi = 'legacy') => ({
 
 </details>
 
-**依据 7 · 源码核查**：[test/intercept.mjs:730-805](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/test/intercept.mjs#L730-L805)
+**依据 7 · 源码核查**：[test/intercept.mjs:746-821](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/test/intercept.mjs#L746-L821)
 
 错误所有权/升级测试。
 
@@ -1904,7 +2026,7 @@ const ctxR = makeCtx(listenersR, {
 
 </details>
 
-**依据 8 · 源码核查**：[test/smoke-host.mjs:380-445](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/test/smoke-host.mjs#L380-L445)
+**依据 8 · 源码核查**：[test/smoke-host.mjs:380-445](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/test/smoke-host.mjs#L380-L445)
 
 picker mock及缺失环境。
 
@@ -1994,19 +2116,13 @@ assert(absent.via === 'unavailable' && absent.path === null, 'an absent picker s
 
 需要Node>=20，base+Web组合的fs/sandboxPolicy/systemPrompt，命令service软注入、shell/shellEnv/jobs按调用取得；sessionless需typert/gateway remotes，UI需connection/sessions/workspaces/slots/locale，@依inputTrigger可选。package兼容表为作者按发行版声明，不证明任意未来DSH；README的沙箱语义特别依OS runner，UI和原生picker还分Windows/macOS/Linux。
 
-#### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | Node>=20、DSH base/Web与fs/sandboxPolicy；本地配置空间 | 核ABI、选择受权目录、备份配置并明确各仓写入根，工时未知 | 首次开启扩大可写范围，不能把选择目录当普通只读导航 |
-| 持续使用 | fs/shell/jobs执行资源、@索引最多2万entry与4秒TTL缓存 | 每个命令正确设绝对workdir，跨仓工作拆分/审阅，耗时未知 | 不增加独立模型服务；原宿主Agent费用沿原模型，净节时未知 |
-| 失败恢复 | 原配置/各仓Git备份与后台job管理资源 | 核错根/失败保存/旧缓存，逐仓撤销变更、清理job并重配 | 本插件无跨仓事务/统一回滚，配置失败可能内存先变；金额工时未知 |
 
-按一组跨仓任务成功且可回滚的总成本比较，副根数和索引entry上限不是额外免费产能。保primary有助上下文稳定，单根命令仍需拆分、检查依赖变更并逐仓提交；配置泄漏/碰撞会把目录权限弄错，恢复应先核事实而非反复运行。没有多仓任务同条件耗时/成功率或金额，未知不填0。
+按一组跨仓任务成功且可回滚的总成本比较。保primary有助上下文稳定，每次单根执行仍需拆分、审查依赖和逐仓回退；副根/索引上限不是额外免费产能。首次配置扩大当前模式允许的目录，持续付fs/shell/jobs和索引资源，失败须核配置内存/磁盘与各仓副作用。没有同任务工时/成功率/金额，对净收益保留未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:44-78](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/package.json#L44-L78)
+**依据 1 · 源码核查**：[package.json:44-78](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/package.json#L44-L78)
 
 宿主兼容/Node/client依赖。
 
@@ -2053,7 +2169,7 @@ assert(absent.via === 'unavailable' && absent.path === null, 'an absent picker s
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:91-97](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L91-L97)
+**依据 2 · 源码核查**：[lib/index.js:91-97](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L91-L97)
 
 host服务。
 
@@ -2067,12 +2183,12 @@ const configFileName = (ws) => String(ws).replace(/[^a-z0-9]+/gi, '-').toLowerCa
 const configPathFor = (ws) => join(configDir(), configFileName(ws))
 ```
 
-**依据 3 · 源码核查**：[lib/index.js:1500-1558](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1500-L1558)
+**依据 3 · 源码核查**：[lib/index.js:1506-1573](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1506-L1573)
 
 按调用取得执行服务。
 
 <details>
-<summary>查看原文（59行）</summary>
+<summary>查看原文（68行）</summary>
 
 ```text
 
@@ -2091,6 +2207,12 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
         // directory so confinement root and process cwd agree exactly.
         const workdirTarget = await fs.resolve(joined, { cwd: primary })
         const absWorkdir = fs.processPath(workdirTarget)
+        // Same boundary as write/edit: a workdir inside the PRIMARY workspace
+        // belongs to the default pipeline. Without this, a secondary directory
+        // configured at an ANCESTOR of the workspace captures every ordinary
+        // shell call (the default workdir is the primary workspace) and re-roots
+        // its policy at that ancestor.
+        if (typeof primary === 'string' && primary.length > 0 && pathInside(absWorkdir, primary)) return next()
         const hit = longestRootFirst(dirs).find((d) => pathInside(absWorkdir, d))
         if (hit === undefined) return next()
         const policy = { ...standing, workspaceRoot: hit }
@@ -2126,9 +2248,12 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
             ...(exec.agent ? { owner: modernShell ? exec.agent.id : exec.agent } : {}),
             run: () => startBackgroundJob(shell, request),
           })
+          // The background branch of the tool's `output.schema` requires `cwd`
+          // too; omitting it fails the kernel's oneOf check and replaces this
+          // result with INVALID_TOOL_OUTPUT after the job has already started.
           return {
             isError: false,
-            value: { kind: 'background', jobId },
+            value: { kind: 'background', jobId, cwd: absWorkdir },
             content: [{ type: 'text', text: 'started background job ' + jobId }],
           }
         }
@@ -2138,7 +2263,7 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
 
 </details>
 
-**依据 4 · 源码核查**：[lib/client.js:285-299](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/client.js#L285-L299)
+**依据 4 · 源码核查**：[lib/client.js:285-299](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/client.js#L285-L299)
 
 UI服务。
 
@@ -2165,7 +2290,7 @@ UI服务。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:1689-1703](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1689-L1703)
+**依据 5 · 源码核查**：[lib/index.js:1713-1727](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1713-L1727)
 
 RPC注册。
 
@@ -2214,7 +2339,7 @@ RPC注册。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:95-97](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L95-L97)
+**依据 1 · 源码核查**：[lib/index.js:95-97](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L95-L97)
 
 身份基线。
 
@@ -2224,7 +2349,7 @@ const configFileName = (ws) => String(ws).replace(/[^a-z0-9]+/gi, '-').toLowerCa
 const configPathFor = (ws) => join(configDir(), configFileName(ws))
 ```
 
-**依据 2 · 源码核查**：[lib/index.js:254-300](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L254-L300)
+**依据 2 · 源码核查**：[lib/index.js:254-300](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L254-L300)
 
 非事务内存。
 
@@ -2283,7 +2408,7 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:406-426](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L406-L426)
+**依据 3 · 源码核查**：[lib/index.js:406-426](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L406-L426)
 
 能力降级。
 
@@ -2316,12 +2441,12 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1440-1452](https://github.com/AngelosZou/dsh-multi-folder/blob/5921c0e2fd2623bc0757b8f13feaf73cee3648ca/lib/index.js#L1440-L1452)
+**依据 4 · 源码核查**：[lib/index.js:1440-1458](https://github.com/AngelosZou/dsh-multi-folder/blob/445a803cdfdb917ab6d46b09aaf700be36bbf186/lib/index.js#L1440-L1458)
 
 守卫/根匹配。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
         )
@@ -2332,6 +2457,12 @@ const configPathFor = (ws) => join(configDir(), configFileName(ws))
             content: [{ type: 'text', text: CONFIG_GUARD_TEXT }],
           }
         }
+        // A target inside the PRIMARY workspace is the default pipeline's call.
+        // Intercepting it would re-root the policy at an ANCESTOR secondary
+        // directory (a configured parent of this workspace matches the target
+        // too) and grant more than the call needs; the default pipeline already
+        // serves it with the exact standing root.
+        if (typeof primary === 'string' && primary.length > 0 && pathInside(abs, primary)) return next()
         if (dirs === null) return next()
         const hit = longestRootFirst(dirs).find((d) => pathInside(abs, d))
         if (hit === undefined) return next()

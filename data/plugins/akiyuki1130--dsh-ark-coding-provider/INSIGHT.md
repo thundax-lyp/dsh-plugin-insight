@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[a412af3](https://github.com/Akiyuki1130/dsh-ark-coding-provider/tree/a412af3f085afe7989d1386efb426e3e4a1c3d8a)
+分析版本：[c7a0240](https://github.com/Akiyuki1130/dsh-ark-coding-provider/tree/c7a02400397b15a8418736366d942e0382972246)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
 <!-- END META -->
 
 > **实现功能**：为DSH注册Ark Coding Plan模型路由，适配流式和工具消息，管理API Key/CLI多账户，并展示官方目录与套餐额度。
 
-> **核心亮点**：将专用模型能力/流式与错误分类、多账户HOME/cache、固定CLI/额度统一接到DSH，并在yield后禁止混账号重试。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **核心亮点**：把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
 
-> **风险与缺陷**：能力/容量是固定作者材料，额度不是账单；HOME只词法prefix、重复ID后者丢弃，冷却仍可请求且偏好优先。usage body不受headers timer完整保护，跨平台进程/授权需核。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **风险与缺陷**：静态能力表与额度不是本轮模型或账单实测；HOME约束为词法，冷却为排序；直接下载的实际字节限额在完整缓冲后判断，不能当流式内存硬上限。[Q03](#research-q03)、[Q04](#research-q04)、[Q08](#research-q08)
 
 **本文目录**
 
@@ -33,6 +33,7 @@
   - [Q05 · 启动与使用步骤是什么？](#detail-section-15)
   - [Q06 · 首次持续失败成本与效果是什么？](#detail-section-16)
   - [Q07 · 推荐与可继续研究的改进是什么？](#detail-section-17)
+  - [Q08 · 直接二进制安装怎样降低桌面端依赖，资源保护是否在读取前生效？](#detail-section-18)
 
 <a id="detail-section-1"></a>
 
@@ -42,13 +43,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已有火山方舟Coding Plan订阅和密钥/SSO权限的DSH用户。插件注册ark-coding路由，把兼容OpenAI的聊天/SSE、模型目录、CLI账户与额度界面接到宿主，API Key账户用于聊天，CLI账户还可读套餐/官方目录。不是免费模型、官方产品或替用户购买订阅。
+> **用途**：面向已有Ark Coding Plan订阅及密钥/SSO权限的DSH用户，将专用route、流式工具和控制面目录/额度接入宿主；不同认证类型覆盖不同能力。
 
-合格结果必须路由/模型/账户正确、流式工具调用和最终状态完整、取消/错误分类清楚，额度标时间与来源。目录上的context/max-output/vision/reasoning字段是适配器声明，不等于当前平台每个版本实测能力，API Key能聊天也不证明能读控制面额度。
-
-基线是手配通用OpenAI兼容provider再单独看门户额度。增量在专用模型能力/流式修补、多账户与CLI登录/配额接线；实际生成质量、订阅限制和费用需用户与平台核对，源码不提供这些商业承诺。
-
-通用OpenAI兼容provider加门户额度；插件省能力/账户/CLI接线，生成质量/套餐规则仍由平台及任务验证。
+通用OpenAI兼容provider加门户额度是直接替代，额外价值要看具体工具SSE、账号切换与控制面维护需求；同任务、同账号、同套餐比较请求轨迹、合格输出和恢复成本。
 
 <a id="detail-section-3"></a>
 
@@ -71,7 +68,7 @@
 | 相容DSH llm/credentials/launchEnvironment/Typert | 必需 | provider与设置接口 | 声明rc.2为作者目标非本轮验收 |
 | Ark Coding Plan订阅/API Key | 聊天必需 | 数据面模型请求 | 普通非套餐key可能拒绝 |
 | arkcli与浏览器SSO | 仅CLI账户 | 官方目录/真实套餐额度 | 可显式安装，API Key模式不等于控制面登录 |
-| DSH_HOME可写状态目录 | CLI必需 | 各账户HOME/安装目录 | 无物理沙箱保证 |
+| 按宿主规则解析的可写状态目录 | CLI必需 | DSH_HOME或默认~/.dsh下的各账户HOME/安装目录 | 无物理沙箱保证 |
 | AK/SK与最小ark读权限 | 另一路额度可选 | 控制面签名请求 | 需独立管理，不自动从API key推导 |
 | 可信apiBase/凭据服务与模型披露许可 | 使用前提 | 发Bearer/会话内容 | 可配置endpoint需读者核目标 |
 
@@ -112,37 +109,29 @@
 
 作者有离线测试/真机问题记录，但本轮不执行。可控输出、固定CLI版本与错误显式化有利于恢复，仍需看完整任务总usage/失败时间，而非12模型数量或绿色quota卡片。
 
-> **思考**：能力/容量是固定作者材料，额度不是账单；HOME只词法prefix、重复ID后者丢弃，冷却仍可请求且偏好优先。usage body不受headers timer完整保护，跨平台进程/授权需核。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **思考**：静态能力表与额度不是本轮模型或账单实测；HOME约束为词法，冷却为排序；直接下载的实际字节限额在完整缓冲后判断，不能当流式内存硬上限。[Q03](#research-q03)、[Q04](#research-q04)、[Q08](#research-q08)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将专用模型能力/流式与错误分类、多账户HOME/cache、固定CLI/额度统一接到DSH，并在yield后禁止混账号重试。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **亮点**：把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
 
-将专用模型能力/流式与错误分类、多账户HOME/cache、固定CLI/额度统一接到DSH，并在yield后禁止混账号重试。详见[Q02](#research-q02)、[Q03](#research-q03)。
+把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
 
-CLI按账户派生HOME，配置显式home只接受插件状态根下的resolve路径；ID白名单清洗，重复清洗ID只保第一个，避免共用HOME/key缓存。派生cache key包含id/type/home/ref，配置改变可自然失效。buildChildEnv用最小白名单和明确HOME，避免带宿主登录态/密钥到另一账户，这些是具体隔离措施。
-
-homeForAccount只词法resolve/prefix，未核已有目录/父目录realpath；状态根内父链接指向外部时物理写入不由该判断保证。重复ID静默丢后来者、冷却/偏好也按ID，用户应核配置结果而非仅看原输入。HOME分离不构成OS账户/进程沙箱。
-
-spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeout killTree，优于只kill npm包装器。安装显式npm prefix固定版本，安装后执行status确认文件/版本存在，不能只把npm0当成功。Windows/POSIX进程树和SSO回环回调实际清理仍需对应平台核；本轮不登录或执行npm安装。
+明确已yield后禁止跨账号续接、配置身份绑定缓存、最小子进程环境值得借鉴；当前Windows USERPROFILE和进程树处理及哈希后rename改善接线，但物理目录和下载内存边界仍需核。[Q03](#research-q03)、[Q08](#research-q08)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-能力/容量是固定作者材料，额度不是账单；HOME只词法prefix、重复ID后者丢弃，冷却仍可请求且偏好优先。usage body不受headers timer完整保护，跨平台进程/授权需核。详见[Q03](#research-q03)、[Q04](#research-q04)。
+静态能力表与额度不是本轮模型或账单实测；HOME约束为词法，冷却为排序；直接下载的实际字节限额在完整缓冲后判断，不能当流式内存硬上限。[Q03](#research-q03)、[Q04](#research-q04)、[Q08](#research-q08)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
 有试用，已有订阅用户先可信本机单API Key小请求，确需额度/多账号再核CLI HOME/取消与身份。详见[Q07](#research-q07)。
-
-合格结果必须路由/模型/账户正确、流式工具调用和最终状态完整、取消/错误分类清楚，额度标时间与来源。目录上的context/max-output/vision/reasoning字段是适配器声明，不等于当前平台每个版本实测能力，API Key能聊天也不证明能读控制面额度。
-
-基线是手配通用OpenAI兼容provider再单独看门户额度。增量在专用模型能力/流式修补、多账户与CLI登录/配额接线；实际生成质量、订阅限制和费用需用户与平台核对，源码不提供这些商业承诺。
 
 采用建议：有试用，已有订阅用户先可信本机单API Key小请求，确需额度/多账号再核CLI HOME/取消与身份。详见[Q07](#research-q07)。
 
@@ -157,13 +146,13 @@ spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeo
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、accounts.js、arkcli.js、usage.js、models.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：五Host模块关键stream/账号/CLI/额度/模型表和包声明；client只登记界面能力，非全6.7k行审计。不安装CLI/SSO/付费请求或运行测试。
-- 下一步：可继续模拟首chunk前后故障、偏好冷却/改HOME/父链接、慢body与CLI取消，核身份/最终状态/usage和资源残留。
+- 下一步：按 [Q07](#research-q07) 核首chunk前后错误、账号变更与SSO取消，按 [Q08](#research-q08) 检下载校验、版本探针和流式字节预算原型；不运行付费请求。
 
 **分析版本**
 
 - **仓库**：[Akiyuki1130/dsh-ark-coding-provider](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
-- **版本号**：0.5.0（[固定提交 a412af3](https://github.com/Akiyuki1130/dsh-ark-coding-provider/tree/a412af3f085afe7989d1386efb426e3e4a1c3d8a)）
-- **版本日期**：2026-10-16（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.2（[固定提交 c7a0240](https://github.com/Akiyuki1130/dsh-ark-coding-provider/tree/c7a02400397b15a8418736366d942e0382972246)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -173,7 +162,7 @@ spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeo
 
 可探索账户/端点/能力版本与请求阶段/终止usage收据、物理HOME和body预算，比较错身份/重复请求及元数据成本；未实现。详见[Q07](#research-q07)。
 
-可继续模拟首chunk前后故障、偏好冷却/改HOME/父链接、慢body与CLI取消，核身份/最终状态/usage和资源残留。
+按 [Q07](#research-q07) 核首chunk前后错误、账号变更与SSO取消，按 [Q08](#research-q08) 检下载校验、版本探针和流式字节预算原型；不运行付费请求。
 
 <a id="detail-section-9"></a>
 
@@ -184,19 +173,19 @@ spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeo
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 6 | 6750 | 4869 | 1521 | — |
-| .md | source | 1 | 441 | — | — | 8106 |
-| .mjs | test | 7 | 4425 | 3641 | 588 | — |
+| .js | source | 6 | 7223 | 5123 | 1741 | — |
+| .md | source | 1 | 465 | — | — | 8413 |
+| .mjs | test | 7 | 4913 | 4065 | 637 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider/issues?q=is%3Aissue+created%3A2026-09-22T07%3A31%3A25.925Z..2026-10-22T07%3A31%3A25.925Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A31%3A25.925Z..2026-10-22T07%3A31%3A25.925Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Akiyuki1130/dsh-ark-coding-provider/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -222,7 +211,7 @@ spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeo
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-10](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/README.md#L3-L10)
+**依据 1 · 作者声明**：[README.md:3-10](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/README.md#L3-L10)
 
 社区定位/订阅前提。
 
@@ -237,7 +226,7 @@ spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeo
 > 并遵守火山引擎的服务条款。
 ```
 
-**依据 2 · 作者声明**：[README.md:20-30](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/README.md#L20-L30)
+**依据 2 · 作者声明**：[README.md:20-30](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/README.md#L20-L30)
 
 路由模型/设置卡片作者功能。
 
@@ -260,7 +249,7 @@ spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeo
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:61-76](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L61-L76)
+**依据 3 · 源码核查**：[index.js:62-77](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L62-L77)
 
 provider/端点和超时默认。
 
@@ -288,7 +277,7 @@ export const DEFAULT_STREAM_IDLE_TIMEOUT_MS = 300_000
 
 </details>
 
-**依据 4 · 作者声明**：[accounts.js:5-15](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/accounts.js#L5-L15)
+**依据 4 · 作者声明**：[accounts.js:5-15](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/accounts.js#L5-L15)
 
 API key/CLI两类型作者设计。
 
@@ -329,7 +318,7 @@ API key/CLI两类型作者设计。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:797-843](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L797-L843)
+**依据 1 · 源码核查**：[index.js:798-844](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L798-L844)
 
 resolve/轮换/已yield及取消边界。
 
@@ -388,7 +377,7 @@ resolve/轮换/已yield及取消边界。
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:858-868](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L858-L868)
+**依据 2 · 源码核查**：[index.js:859-869](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L859-L869)
 
 实际模型POST。
 
@@ -411,7 +400,7 @@ resolve/轮换/已yield及取消边界。
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:915-924](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L915-L924)
+**依据 3 · 源码核查**：[index.js:916-925](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L916-L925)
 
 出口JSON可表示清理。
 
@@ -433,7 +422,7 @@ resolve/轮换/已yield及取消边界。
 
 </details>
 
-**依据 4 · 源码核查**：[accounts.js:205-235](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/accounts.js#L205-L235)
+**依据 4 · 源码核查**：[accounts.js:205-235](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/accounts.js#L205-L235)
 
 可轮换码与冷却排序/优先账户。
 
@@ -490,11 +479,13 @@ CLI按账户派生HOME，配置显式home只接受插件状态根下的resolve�
 
 homeForAccount只词法resolve/prefix，未核已有目录/父目录realpath；状态根内父链接指向外部时物理写入不由该判断保证。重复ID静默丢后来者、冷却/偏好也按ID，用户应核配置结果而非仅看原输入。HOME分离不构成OS账户/进程沙箱。
 
-spawnCollect detached进程组、error/close处理、stdout/stderr限制和timeout killTree，优于只kill npm包装器。安装显式npm prefix固定版本，安装后执行status确认文件/版本存在，不能只把npm0当成功。Windows/POSIX进程树和SSO回环回调实际清理仍需对应平台核；本轮不登录或执行npm安装。
+当前buildChildEnv在Windows同时设置USERPROFILE与HOME，补齐Go CLI的家目录语义；Windows .cmd经cmd.exe转义启动，终止用taskkill /T /F并在失败后退child.kill，POSIX用独立进程组。目标是减少账号串用与孙进程残留，实际SSO/平台行为仍需对应操作系统验收。
+
+CLI安装当前优先直接取固定1.0.39平台二进制，校验嵌入sha256、在唯一临时文件运行--version后rename；只有下载失败或用户指定其他版本才走存在的npm。不能沿用“始终npm安装”描述，固定版本和可执行探针是实际工程防护。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1570-1618](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L1570-L1618)
+**依据 1 · 源码核查**：[index.js:1590-1638](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L1590-L1638)
 
 home约束/缓存身份/失效。
 
@@ -555,7 +546,7 @@ home约束/缓存身份/失效。
 
 </details>
 
-**依据 2 · 源码核查**：[accounts.js:55-58](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/accounts.js#L55-L58)
+**依据 2 · 源码核查**：[accounts.js:55-58](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/accounts.js#L55-L58)
 
 ID清洗。
 
@@ -566,7 +557,7 @@ export function sanitizeAccountId(raw, fallback = 'default') {
   return cleaned === '' ? fallback : cleaned
 ```
 
-**依据 3 · 源码核查**：[accounts.js:131-139](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/accounts.js#L131-L139)
+**依据 3 · 源码核查**：[accounts.js:131-139](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/accounts.js#L131-L139)
 
 重复ID保首。
 
@@ -582,12 +573,12 @@ export function sanitizeAccountId(raw, fallback = 'default') {
   }
 ```
 
-**依据 4 · 源码核查**：[arkcli.js:307-345](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/arkcli.js#L307-L345)
+**依据 4 · 源码核查**：[arkcli.js:408-555](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L408-L555)
 
 最小子进程环境设计。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（148行）</summary>
 
 ```text
 /**
@@ -600,11 +591,18 @@ export function sanitizeAccountId(raw, fallback = 'default') {
  * `HOME` 是必填的：arkcli 的状态目录是 `$HOME/.arkcli` 且无法用环境变量覆盖，
  * 少传 HOME 就等于在宿主的家目录里乱写。
  *
+ * **Windows 上 `HOME` 是无效的**：Go 的 `os.UserHomeDir()` 只认 `%USERPROFILE%`。
+ * 只设 HOME 的话，所有账户都会读写宿主的 `%USERPROFILE%\.arkcli`，多账户隔离
+ * 表现成"登录一个、全部串台"。所以 Windows 还必须把 USERPROFILE 指到同一个目录，
+ * 并保留 SystemRoot / ComSpec / PATHEXT / TEMP 这些系统变量——缺了它们，Go 程序
+ * 起子进程、解析路径、写临时文件都会出怪问题。
+ *
  * @param home - 该账号的 HOME（绝对路径）。
  * @param extra - 追加/覆盖的键，值为 undefined 的键会被跳过。
+ * @param platform - 目标平台，默认 `process.platform`（测试可注入 win32）。
  * @throws 当 home 缺失或为空。
  */
-export function buildChildEnv(home, extra) {
+export function buildChildEnv(home, extra, platform = process.platform) {
   if (typeof home !== 'string' || home === '') {
     throw new Error('必须显式给定 HOME：arkcli 把状态放在 $HOME/.arkcli 且没有环境变量可以覆盖，多账号隔离完全依赖它。')
   }
@@ -614,15 +612,117 @@ export function buildChildEnv(home, extra) {
   const env = {}
   put(env, 'PATH', process.env.PATH)
   env.HOME = home
+  // Windows：Go 取家目录只看 USERPROFILE（不看 HOME）。不设它 = 多账户全部串到宿主家目录。
+  if (platform === 'win32') put(env, 'USERPROFILE', home)
   env.LANG = process.env.LANG ?? 'C.UTF-8'
   env.LC_ALL = process.env.LC_ALL ?? 'C.UTF-8'
   put(env, 'TMPDIR', process.env.TMPDIR ?? tmpdir())
+  // Windows 的系统变量：缺 SystemRoot 时部分 Go 运行时会拿不到系统目录；
+  // 缺 ComSpec/PATHEXT 时子进程无法再起 .exe/.cmd。
+  if (platform === 'win32') {
+    for (const key of ['SystemRoot', 'SystemDrive', 'windir', 'ComSpec', 'PATHEXT', 'NUMBER_OF_PROCESSORS', 'PROCESSOR_ARCHITECTURE', 'TEMP', 'TMP']) {
+      put(env, key, process.env[key])
+    }
+  }
   env.NO_COLOR = '1'
   env.ARKCLI_NO_UPDATE_NOTIFIER = '1'
   env.ARKCLI_CALLER_TYPE = 'ai_agent'
   env.ARKCLI_CALLER_NAME = 'dsh-ark-coding-provider'
   for (const [key, value] of Object.entries(extra ?? {})) put(env, key, value)
   return env
+}
+
+// ---------------------------------------------------------------------------
+// 子进程启动
+// ---------------------------------------------------------------------------
+
+/** cmd.exe 里需要引号或转义的字符（含元字符与百分号展开）。 */
+const CMD_SPECIAL = /[\s"&|<>^()%!]/
+
+/**
+ * 转义一个参数，供 `cmd.exe /d /s /c` 使用。
+ *
+ * cmd 的引号规则和 POSIX 完全不同：没有反斜杠转义，双引号里 `&|<>^()` 不再生效，
+ * 所以一律把带元字符的参数包进双引号。
+ *
+ * **两个已知边界**：①`%VAR%` 即使在双引号里也会展开，本函数不处理——Windows 路径
+ * 里带 `%` 极罕见，而且直接下载的 `.exe`（主路径）根本不经过 cmd；②双引号本身在
+ * cmd 里没有可靠转义，`""` 只是尽力而为（Windows 路径本来也不允许 `"`）。
+ * 走到这里的只有 npm 兜底和 PATH 上已有的 `.cmd` 安装，参数都是普通词/路径。
+ */
+function escapeCmdArgument(argument) {
+  if (argument === '') return '""'
+  if (!CMD_SPECIAL.test(argument)) return argument
+  // `"` 不是合法 Windows 路径字符；`""` 是 cmd 对字面引号的唯一近似写法。
+  return `"${argument.replace(/"/g, '""')}"`
+}
+
+/**
+ * 决定怎么启动一个可执行文件。
+ *
+ * POSIX 直接 `spawn(path, args)`；Windows 上 `.cmd/.bat` 不是有效的 PE，`CreateProcess`
+ * 不能直接执行它（报 ENOENT / "不是有效的 Win32 应用程序"），必须包一层
+ * `cmd.exe /d /s /c "<命令行>"`。返回的 `verbatim: true` 表示调用方要给 spawn 传
+ * `windowsVerbatimArguments`——命令行已经自己拼好了，Node 再 quote 一次反而会把
+ * cmd 看到的引号搞乱。
+ *
+ * @param target - 可执行文件路径（或 PATH 上的命令）。
+ * @param args - 参数数组。
+ * @param platform - 目标平台。
+ * @param comspec - Windows 命令解释器，默认 `$ComSpec`。
+ * @returns `{command, args, verbatim}`。
+ */
+export function spawnPlanFor(target, args, platform = process.platform, comspec = process.env.ComSpec) {
+  if (platform !== 'win32' || !/\.(?:cmd|bat)$/i.test(target)) return { command: target, args, verbatim: false }
+  const shell = typeof comspec === 'string' && comspec !== '' ? comspec : 'cmd.exe'
+  const line = [escapeCmdArgument(target), ...args.map(escapeCmdArgument)].join(' ')
+  // 整条命令包一层引号：`/s` 会剥掉最外层这一对，里面的引号原样留给 cmd。
+  return { command: shell, args: ['/d', '/s', '/c', `"${line}"`], verbatim: true }
+}
+
+/**
+ * 杀一个子进程**及其后代**。
+ *
+ * `node_modules/.bin/arkcli` 是个 node 包装脚本，它用 `execFileSync` 阻塞地去跑真正的
+ * Go 二进制。**杀掉包装进程不会杀掉那个 Go 孙子进程**：实测 SIGKILL 掉包装之后，
+ * Go 二进制被 init 收养继续活着（PPID=1），还占着回环端口和 `<HOME>/.arkcli` 下的
+ * 锁文件 —— 也就是说"超时"并没有真的停下工作，反复超时还会累积 root 进程。
+ *
+ * 所以 POSIX 上子进程一律以 `detached: true` 起独立进程组，这里按**进程组**杀（负 pid）；
+ * Windows 没有进程组信号，改用 `taskkill /T /F` 整棵树带走（直接下载安装的是单个
+ * .exe，杀它本身也够；但 PATH 上 npm 全局装的 .cmd 仍有两层）。
+ *
+ * @param child - spawn 出来的子进程。
+ * @param options.platform - 目标平台。
+ * @param options.spawnSync - 同步进程工厂（taskkill 用），可注入。
+ * @param options.comspec - Windows 命令解释器。
+ */
+export function killProcessTree(child, options = {}) {
+  const platform = options.platform ?? process.platform
+  const comspec = options.comspec ?? process.env.ComSpec
+  const runSync = options.spawnSync ?? nodeSpawnSync
+  const pid = child?.pid
+  if (typeof pid === 'number' && pid > 0) {
+    if (platform === 'win32') {
+      // `spawnSync` 正常不会抛：cmd.exe 找不到 → `{error}`，taskkill 失败 → `{status:1}`。
+      // 只有真的成功（status 0 且无 error）才提前返回，否则必须落到下面 child.kill 的兜底。
+      try {
+        const shell = typeof comspec === 'string' && comspec !== '' ? comspec : 'cmd.exe'
+        const result = runSync(shell, ['/d', '/s', '/c', `taskkill /pid ${pid} /T /F`], {
+          windowsHide: true,
+          stdio: 'ignore',
+          timeout: 5_000,
+        })
+        if (result !== null && typeof result === 'object' && result.status === 0 && result.error === undefined) return
+      } catch { /* taskkill 不可用就退回杀单个进程 */ }
+    } else {
+      try {
+        process.kill(-pid, 'SIGKILL')
+        return
+      } catch { /* 进程组可能已经没了，退回杀单个进程 */ }
+    }
+  }
+  try { child?.kill?.('SIGKILL') } catch { /* 已经退出就无所谓 */ }
 }
 
 // ---------------------------------------------------------------------------
@@ -633,21 +733,29 @@ export function buildChildEnv(home, extra) {
 
 </details>
 
-**依据 5 · 源码核查**：[arkcli.js:629-673](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/arkcli.js#L629-L673)
+**依据 5 · 源码核查**：[arkcli.js:873-925](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L873-L925)
 
 spawn组/error/输出/timeout。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（53行）</summary>
 
 ```text
   async #spawnCollect(bin, args, options) {
     const { env, timeoutMs } = options
+    const plan = spawnPlanFor(bin, args, this.platform, this.comspec)
     return await new Promise((resolve) => {
       let child
       try {
-        // `detached: true`：起独立进程组，这样超时能整组带走（见 #killTree）。
-        child = this.spawn(bin, args, { stdio: ['ignore', 'pipe', 'pipe'], env, detached: true })
+        // `detached: true`：起独立进程组，这样超时能整组带走（见 killProcessTree）。
+        // Windows 上 detached 会开一个新控制台窗口（桌面端每跑一次闪一下），所以只在 POSIX 用。
+        child = this.spawn(plan.command, plan.args, {
+          stdio: ['ignore', 'pipe', 'pipe'],
+          env,
+          detached: this.platform !== 'win32',
+          windowsHide: true,
+          ...plan.verbatim ? { windowsVerbatimArguments: true } : {},
+        })
       } catch (error) {
         resolve({ ok: false, code: null, stdout: '', stderr: '', error: `无法启动 ${bin}：${messageOf(error)}`, failure: 'spawn' })
         return
@@ -683,60 +791,349 @@ spawn组/error/输出/timeout。
       })
       if (typeof timeoutMs === 'number' && timeoutMs > 0) {
         timer = setTimeout(() => {
-          this.#killTree(child)
+          killProcessTree(child, { platform: this.platform, spawnSync: this.spawnSync, comspec: this.comspec })
           done({ ok: false, code: null, stdout, stderr, error: '超时', failure: 'timeout' })
         }, timeoutMs)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[arkcli.js:689-697](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/arkcli.js#L689-L697)
+**依据 6 · 源码核查**：[arkcli.js:928-928](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L928-L928)
 
 进程组kill fallback。
 
 ```text
-  #killTree(child) {
-    const pid = child?.pid
-    if (typeof pid === 'number' && pid > 0) {
-      try {
-        process.kill(-pid, 'SIGKILL')
-        return
-      } catch { /* 进程组可能已经没了，退回杀单个进程 */ }
-    }
-    try { child?.kill?.('SIGKILL') } catch { /* 已经退出就无所谓 */ }
+  }
 ```
 
-**依据 7 · 源码核查**：[arkcli.js:791-813](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/arkcli.js#L791-L813)
+**依据 7 · 源码核查**：[arkcli.js:1034-1249](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L1034-L1249)
 
 固定npm安装与回读status。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（216行）</summary>
 
 ```text
     const wanted = version ?? this.packageVersion ?? DEFAULT_INSTALL_VERSION
-    const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm'
+    const failures = []
+    /** 两条路都失败时的统一结论：带上两条原因，并给出"自己装"的退路。 */
+    const failureOf = () => ({
+      ok: false,
+      path: undefined,
+      version: undefined,
+      error: `安装 ${ARKCLI_PACKAGE}@${wanted} 失败：${failures.join('；')}。也可以自己装好 arkcli 后，在设置页「arkcli 路径」里指定可执行文件。`,
+    })
+
+    // 1) 直接下载官方二进制。#installBinary 会先对**临时文件**跑 --version，通过后才
+    // 落盘，所以成功即代表"这个路径上的文件真的能执行"，不需要再用 resolveBin() 复检
+    // （那会把一个坏文件已经占住的托管路径当成结论）。
+    if (wanted === ARKCLI_BINARY_VERSION) {
+      const download = await this.#installBinary(wanted, timeoutMs)
+      if (download.ok) {
+        this.logger?.debug?.(`[arkcli] 已下载 ${ARKCLI_PACKAGE}@${wanted} → ${download.path}`)
+        return download
+      }
+      failures.push(download.error)
+    } else {
+      // 版本不是内置清单里的那个：没有可信的 sha256，只能走 npm。
+      failures.push(`没有 ${wanted} 的官方二进制清单（内置 ${ARKCLI_BINARY_VERSION}）`)
+    }
+
+    // 2) npm 兜底（桌面端通常没有 npm，这条会直接跳过而不是报 ENOENT）。
+    const npm = findExecutableOnPath('npm', this.pathEnv, this.exists, this.platform)
+    if (npm === undefined) {
+      failures.push('PATH 上找不到 npm，无法用 npm 兜底')
+      return failureOf()
+    }
     const args = ['install', '--prefix', dir, `${ARKCLI_PACKAGE}@${wanted}`, ...NPM_INSTALL_FLAGS]
     // npm 也用最小环境：否则 npm 会把宿主 HOME 下的 .npm 缓存/配置带进这次安装。
     // 中性 HOME 建不出来也无所谓（npm 自己会建缓存目录），但环境绝不能退回"继承父进程"。
     const npmHome = this.#neutralHome()
     try { this.mkdir(npmHome, { recursive: true }) } catch { /* 让 npm 自己决定 */ }
-    const env = buildChildEnv(npmHome)
+    const env = buildChildEnv(npmHome, undefined, this.platform)
     const collected = await this.#spawnCollect(npm, args, { env, timeoutMs })
     if (!collected.ok) {
       const tail = collected.stderr.trim().slice(-400) || collected.stdout.trim().slice(-400) || collected.error
-      return { ok: false, path: undefined, version: undefined, error: `安装 ${ARKCLI_PACKAGE}@${wanted} 失败：${tail}` }
+      failures.push(`npm 安装失败：${tail}`)
+      return failureOf()
     }
-    const resolved = await this.resolveBin()
-    if (resolved.path === undefined) {
-      return { ok: false, path: undefined, version: undefined, error: `npm 退出码为 0，但 ${managedBinPath(this.dshHome)} 不存在。` }
+    // 验证 npm 刚写下的那份 shim，而不是 resolveBin() 的全局首选：托管目录里可能还留着
+    // 之前直接下载的旧版本，拿它复检会让"装 1.0.38"看起来装上了 1.0.39。
+    const npmShim = managedBinPath(this.dshHome, this.platform)
+    const verified = await this.#verifyInstalled(wanted, this.exists(npmShim) ? npmShim : undefined)
+    if (verified.ok) {
+      this.logger?.debug?.(`[arkcli] 已安装 ${ARKCLI_PACKAGE}@${wanted} → ${verified.path}`)
+      return verified
     }
-    const status = await this.status({ home: this.#neutralHome() })
-    if (!status.installed) {
-      return { ok: false, path: resolved.path, version: status.version, error: status.error ?? '安装后 arkcli 无法执行。' }
+    failures.push(`npm 装完后 arkcli 无法执行：${verified.error}`)
+    return failureOf()
+  }
+
+  /**
+   * 跑一次 `<target> --version`，确认这个文件真的能执行。
+   *
+   * 直接对**待落盘/刚装好**的文件验证，而不是 `resolveBin()` 的全局首选：否则一个
+   * 下载坏掉的文件会先占住托管路径，之后所有解析都指向它，连 npm 兜底都被它带死。
+   *
+   * @param target - 要验证的可执行文件绝对路径。
+   * @returns `{ok, version, error}`。
+   */
+  async #probeVersion(target) {
+    const neutral = this.#neutralHome()
+    // 中性 HOME 先建出来：Windows 上它会被当成 USERPROFILE，目录不存在时某些工具会
+    // 在第一次写状态时把错误一路带出来。
+    try { this.mkdir(neutral, { recursive: true }) } catch { /* 建不出来就让它自己报 */ }
+    const env = buildChildEnv(neutral, undefined, this.platform)
+    const collected = await this.#spawnCollect(target, ['--version'], { env, timeoutMs: 30_000 })
+    const text = `${collected.stdout}\n${collected.stderr}`
+    if (!collected.ok) {
+      return {
+        ok: false,
+        version: undefined,
+        error: collected.error ?? lastMeaningfulLine(text) ?? `无法执行 ${target}`,
+      }
     }
-    this.logger?.debug?.(`[arkcli] 已安装 ${ARKCLI_PACKAGE}@${wanted} → ${resolved.path}`)
-    return { ok: true, path: resolved.path, version: status.version ?? wanted, error: undefined }
+    const match = /(\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?)/.exec(text)
+    return { ok: true, version: match?.[1], error: undefined }
+  }
+
+  /**
+   * 复检一个**已经装好的**路径（npm 兜底用）：文件存在、能执行。
+   *
+   * @param wanted - 期望版本（只用于输出兜底，不参与判定）。
+   * @param explicitPath - 明确要验证的路径；缺省回退到 resolveBin()。
+   * @returns `{ok, path, version, error}`。
+   */
+  async #verifyInstalled(wanted, explicitPath) {
+    let target = explicitPath
+    if (target === undefined) {
+      const resolved = await this.resolveBin()
+      if (resolved.path === undefined) {
+        return { ok: false, path: undefined, version: undefined, error: '安装完成后仍然找不到 arkcli 可执行文件。' }
+      }
+      target = resolved.path
+    } else if (!this.exists(target)) {
+      return { ok: false, path: target, version: undefined, error: `安装完成后没有找到 ${target}。` }
+    }
+    const probe = await this.#probeVersion(target)
+    if (!probe.ok) {
+      return { ok: false, path: target, version: probe.version, error: probe.error ?? '安装后 arkcli 无法执行。' }
+    }
+    return { ok: true, path: target, version: probe.version ?? wanted, error: undefined }
+  }
+
+  /**
+   * 直接下载官方 Go 二进制到 `<installDir>/bin/`。
+   *
+   * 逐个源尝试（CDN → GitHub Release），每个源下载完都校验 sha256，再对临时文件实跑
+   * `--version`；任何一步失败都删掉临时文件、换下一个源。只有 sha256 与可执行性都
+   * 通过才 rename 成正式文件——坏文件绝不占住托管路径。
+   *
+   * @param version - 版本（必须等于 {@link ARKCLI_BINARY_VERSION}）。
+   * @param timeoutMs - 单个源的下载超时。
+   * @returns `{ok, path, version, error}`。
+   */
+  async #installBinary(version, timeoutMs) {
+    const key = platformKeyOf(this.platform, this.arch)
+    if (key === undefined) {
+      return { ok: false, path: undefined, version: undefined, error: `官方 arkcli 没有发布 ${this.platform}-${this.arch} 的二进制` }
+    }
+    const entry = this.binaries?.[key]
+    if (entry === undefined || typeof entry.url !== 'string') {
+      return { ok: false, path: undefined, version: undefined, error: `没有 ${key} 的下载清单` }
+    }
+    // 没有合法 sha256 就**拒绝下载**（fail closed）：官方 postinstall 也是这么做的。
+    // "清单里没写校验值 ⇒ 下什么装什么"比不装危险得多。
+    if (typeof entry.sha256 !== 'string' || !/^[0-9a-f]{64}$/i.test(entry.sha256)) {
+      return { ok: false, path: undefined, version: undefined, error: `${key} 的下载清单缺少合法的 sha256，拒绝下载。` }
+    }
+    const expected = entry.sha256.toLowerCase()
+    const destination = managedBinaryPath(this.dshHome, this.platform)
+    try {
+      this.mkdir(join(managedInstallDir(this.dshHome), 'bin'), { recursive: true })
+    } catch (error) {
+      return { ok: false, path: undefined, version: undefined, error: `无法创建 ${destination} 的目录：${messageOf(error)}` }
+    }
+    // 同一份二进制已经在了就别重下 40 MB：既省流量，也避免在 Windows 上 rename 覆盖
+    // 一个正被登录会话/扫描占用的 .exe。sha 对不上（旧版本/坏文件）才继续下载覆盖。
+    if (this.exists(destination)) {
+      try {
+        const existing = createHash('sha256').update(readFileSync(destination)).digest('hex')
+        if (existing === expected) {
+          const probe = await this.#probeVersion(destination)
+          if (probe.ok) return { ok: true, path: destination, version: probe.version ?? version, error: undefined }
+        }
+      } catch { /* 读不出来就当没装过，走下载 */ }
+    }
+    // 临时文件名必须唯一（并发点两次安装不能互相截断），且 Windows 上必须以 `.exe`
+    // 结尾——CreateProcess 不会执行无扩展名的文件，而我们要在落盘前就试跑它。
+    const unique = randomBytes(6).toString('hex')
+    const temporary = this.platform === 'win32'
+      ? `${destination}.${unique}.download.exe`
+      : `${destination}.${unique}.download`
+    const errors = []
+    const sources = [entry.url, entry.fallback].filter((url) => typeof url === 'string' && url !== '')
+    for (const url of sources) {
+      let cannotWrite = false
+      try {
+        const bytes = await this.#downloadBytes(url, timeoutMs)
+        const digest = createHash('sha256').update(bytes).digest('hex')
+        if (digest !== expected) throw new Error(`sha256 不匹配（期望 ${expected}，实际 ${digest}）`)
+        writeFileSync(temporary, bytes)
+        // 先 chmod 再验证/改名：chmod 失败时坏文件还停在临时路径，不会污染托管路径。
+        if (this.platform !== 'win32') chmodSync(temporary, 0o755)
+        const probe = await this.#probeVersion(temporary)
+        if (!probe.ok) throw new Error(`下载的二进制无法执行：${probe.error ?? '未知原因'}`)
+        try {
+          renameSync(temporary, destination)
+        } catch (error) {
+          // 写不进去通常是被占用（Windows 上正在运行的 .exe 改不了名）。换下一个源
+          // 只会再下 40 MB、然后同样写不进去，所以直接收手。
+          cannotWrite = true
+          throw new Error(`无法写入 ${destination}：${messageOf(error)}（如果 arkcli 正在运行或登录，请先取消再装）`)
+        }
+        return { ok: true, path: destination, version: probe.version ?? version, error: undefined }
+      } catch (error) {
+        try { rmSync(temporary, { force: true }) } catch { /* 临时文件清不掉不影响结论 */ }
+        errors.push(`${url}：${messageOf(error)}`)
+        if (cannotWrite) break
+      }
+    }
+    return { ok: false, path: undefined, version: undefined, error: `下载 arkcli ${version}（${key}）失败：${errors.join('；')}` }
+  }
+
+  /**
+   * 下载一个 URL 的全部字节。
+   *
+   * 用注入的 fetch：桌面端宿主跑在 Electron Node 模式里，全局 fetch 可用；测试里
+   * 换成假实现就完全离线。超时用 `AbortSignal.timeout`（运行环境没提供时就不带）。
+   *
+   * @param url - 下载地址。
+   * @param timeoutMs - 超时毫秒。
+   * @returns `Buffer`。
+   */
+  async #downloadBytes(url, timeoutMs) {
+    if (typeof this.fetchImpl !== 'function') throw new Error('当前运行环境没有 fetch，无法直接下载')
+    const init = {}
+    if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+      init.signal = AbortSignal.timeout(timeoutMs)
+    }
+    const response = await this.fetchImpl(url, init)
+    if (response === null || typeof response !== 'object') throw new Error('下载没有返回有效响应')
+    const status = typeof response.status === 'number' ? response.status : (response.ok === false ? 0 : 200)
+    if (response.ok === false || status < 200 || status >= 300) throw new Error(`HTTP ${status === 0 ? '失败' : status}`)
+    if (typeof response.arrayBuffer !== 'function') throw new Error('下载响应不支持 arrayBuffer')
+    // 先看声明的 Content-Length 就拒绝明显超大的响应，避免先把它读进内存再发现。
+    const declared = Number(response.headers?.get?.('content-length') ?? Number.NaN)
+    if (Number.isFinite(declared) && declared > MAX_BINARY_BYTES) throw new Error(`响应过大（${declared} 字节）`)
+    const bytes = Buffer.from(await response.arrayBuffer())
+    if (bytes.byteLength === 0) throw new Error('下载内容为空')
+    if (bytes.byteLength > MAX_BINARY_BYTES) throw new Error(`响应过大（${bytes.byteLength} 字节）`)
+    return bytes
+```
+
+</details>
+
+**依据 8 · 源码核查**：[arkcli.js:429-448](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L429-L448)
+
+Windows同时改USERPROFILE与HOME，保持最小环境。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+export function buildChildEnv(home, extra, platform = process.platform) {
+  if (typeof home !== 'string' || home === '') {
+    throw new Error('必须显式给定 HOME：arkcli 把状态放在 $HOME/.arkcli 且没有环境变量可以覆盖，多账号隔离完全依赖它。')
+  }
+  const put = (target, key, value) => {
+    if (value !== undefined) target[key] = value
+  }
+  const env = {}
+  put(env, 'PATH', process.env.PATH)
+  env.HOME = home
+  // Windows：Go 取家目录只看 USERPROFILE（不看 HOME）。不设它 = 多账户全部串到宿主家目录。
+  if (platform === 'win32') put(env, 'USERPROFILE', home)
+  env.LANG = process.env.LANG ?? 'C.UTF-8'
+  env.LC_ALL = process.env.LC_ALL ?? 'C.UTF-8'
+  put(env, 'TMPDIR', process.env.TMPDIR ?? tmpdir())
+  // Windows 的系统变量：缺 SystemRoot 时部分 Go 运行时会拿不到系统目录；
+  // 缺 ComSpec/PATHEXT 时子进程无法再起 .exe/.cmd。
+  if (platform === 'win32') {
+    for (const key of ['SystemRoot', 'SystemDrive', 'windir', 'ComSpec', 'PATHEXT', 'NUMBER_OF_PROCESSORS', 'PROCESSOR_ARCHITECTURE', 'TEMP', 'TMP']) {
+      put(env, key, process.env[key])
+```
+
+</details>
+
+**依据 9 · 源码核查**：[arkcli.js:524-549](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L524-L549)
+
+各平台终止路径和失败fallback。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+export function killProcessTree(child, options = {}) {
+  const platform = options.platform ?? process.platform
+  const comspec = options.comspec ?? process.env.ComSpec
+  const runSync = options.spawnSync ?? nodeSpawnSync
+  const pid = child?.pid
+  if (typeof pid === 'number' && pid > 0) {
+    if (platform === 'win32') {
+      // `spawnSync` 正常不会抛：cmd.exe 找不到 → `{error}`，taskkill 失败 → `{status:1}`。
+      // 只有真的成功（status 0 且无 error）才提前返回，否则必须落到下面 child.kill 的兜底。
+      try {
+        const shell = typeof comspec === 'string' && comspec !== '' ? comspec : 'cmd.exe'
+        const result = runSync(shell, ['/d', '/s', '/c', `taskkill /pid ${pid} /T /F`], {
+          windowsHide: true,
+          stdio: 'ignore',
+          timeout: 5_000,
+        })
+        if (result !== null && typeof result === 'object' && result.status === 0 && result.error === undefined) return
+      } catch { /* taskkill 不可用就退回杀单个进程 */ }
+    } else {
+      try {
+        process.kill(-pid, 'SIGKILL')
+        return
+      } catch { /* 进程组可能已经没了，退回杀单个进程 */ }
+    }
+  }
+  try { child?.kill?.('SIGKILL') } catch { /* 已经退出就无所谓 */ }
+```
+
+</details>
+
+**依据 10 · 源码核查**：[arkcli.js:1044-1065](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L1044-L1065)
+
+直接二进制优先，仅条件npm回退。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+    // 1) 直接下载官方二进制。#installBinary 会先对**临时文件**跑 --version，通过后才
+    // 落盘，所以成功即代表"这个路径上的文件真的能执行"，不需要再用 resolveBin() 复检
+    // （那会把一个坏文件已经占住的托管路径当成结论）。
+    if (wanted === ARKCLI_BINARY_VERSION) {
+      const download = await this.#installBinary(wanted, timeoutMs)
+      if (download.ok) {
+        this.logger?.debug?.(`[arkcli] 已下载 ${ARKCLI_PACKAGE}@${wanted} → ${download.path}`)
+        return download
+      }
+      failures.push(download.error)
+    } else {
+      // 版本不是内置清单里的那个：没有可信的 sha256，只能走 npm。
+      failures.push(`没有 ${wanted} 的官方二进制清单（内置 ${ARKCLI_BINARY_VERSION}）`)
+    }
+
+    // 2) npm 兜底（桌面端通常没有 npm，这条会直接跳过而不是报 ENOENT）。
+    const npm = findExecutableOnPath('npm', this.pathEnv, this.exists, this.platform)
+    if (npm === undefined) {
+      failures.push('PATH 上找不到 npm，无法用 npm 兜底')
+      return failureOf()
+    }
+    const args = ['install', '--prefix', dir, `${ARKCLI_PACKAGE}@${wanted}`, ...NPM_INSTALL_FLAGS]
 ```
 
 </details>
@@ -765,7 +1162,7 @@ models.js列静态context/output/vision/effort并附作者探测说明。保守�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[models.js:1-23](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/models.js#L1-L23)
+**依据 1 · 作者声明**：[models.js:1-23](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/models.js#L1-L23)
 
 作者静态能力/探测声明。
 
@@ -800,7 +1197,7 @@ models.js列静态context/output/vision/effort并附作者探测说明。保守�
 
 </details>
 
-**依据 2 · 源码核查**：[usage.js:155-181](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/usage.js#L155-L181)
+**依据 2 · 源码核查**：[usage.js:155-181](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/usage.js#L155-L181)
 
 额度/时间归一。
 
@@ -839,7 +1236,7 @@ models.js列静态context/output/vision/effort并附作者探测说明。保守�
 
 </details>
 
-**依据 3 · 源码核查**：[usage.js:212-225](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/usage.js#L212-L225)
+**依据 3 · 源码核查**：[usage.js:212-225](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/usage.js#L212-L225)
 
 usage timeout止于headers。
 
@@ -865,7 +1262,7 @@ usage timeout止于headers。
 
 </details>
 
-**依据 4 · 源码核查**：[index.js:847-854](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L847-L854)
+**依据 4 · 源码核查**：[index.js:848-855](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L848-L855)
 
 聊天signal/head timer。
 
@@ -880,7 +1277,7 @@ usage timeout止于headers。
     const headTimer = setTimeout(() => controller.abort(new Error('request timeout')), connection.requestTimeoutMs)
 ```
 
-**依据 5 · 源码核查**：[index.js:929-947](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L929-L947)
+**依据 5 · 源码核查**：[index.js:930-948](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L930-L948)
 
 stream idle取消与错误设计。
 
@@ -927,45 +1324,25 @@ stream idle取消与错误设计。
 
 #### 完整回答
 
-#### 启动与依赖
+启动需要匹配DSH llm、credentials、launchEnvironment、home-paths与Typert接口；聊天需已有Coding Plan订阅和正确API Key，控制面目录/额度则需要CLI登录或另一路AK/SK权限，二者不能混为同一凭据。
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| 相容DSH llm/credentials/launchEnvironment/Typert | 必需 | provider与设置接口 | 声明rc.2为作者目标非本轮验收 |
-| Ark Coding Plan订阅/API Key | 聊天必需 | 数据面模型请求 | 普通非套餐key可能拒绝 |
-| arkcli与浏览器SSO | 仅CLI账户 | 官方目录/真实套餐额度 | 可显式安装，API Key模式不等于控制面登录 |
-| DSH_HOME可写状态目录 | CLI必需 | 各账户HOME/安装目录 | 无物理沙箱保证 |
-| AK/SK与最小ark读权限 | 另一路额度可选 | 控制面签名请求 | 需独立管理，不自动从API key推导 |
-| 可信apiBase/凭据服务与模型披露许可 | 使用前提 | 发Bearer/会话内容 | 可配置endpoint需读者核目标 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 固定安装 | 核宿主代际和包/CLI版本 | 不把作者test当当前运行通过 |
-| 配账户 | 一账户一种认证，核ID/HOME | 重复ID/派生缓存需对照 |
-| 登录 | 如需CLI，明确安装/SSO并核取消 | 不使用他人登录态或改宿主HOME |
-| 小请求 | 先文本，再工具/图像所需能力 | route/账户/最终chunk可追踪 |
-| 查看额度 | 核来源/账号/updatedAt/reset | 不把缺数据/百分比当账单 |
-| 失败 | 核分类、是否已yield和轮换 | 不把冷却当不请求；已yield不另账号接续 |
-| 维护 | 更换key/目录后核cache与进程 | 清理凭据不等于撤销平台key |
-
-本轮只读源码，未安装CLI、登录或调用模型/控制面。
+状态根通过resolveDshHome与宿主一致，不再要求环境中必须显式设置DSH_HOME。Windows把HOME和USERPROFILE同时派生到账号目录；用户仍应核实际物理路径，不将词法prefix当沙箱。先单API Key文本小请求，再按确需功能核CLI/SSO和工具/图像。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:48-66](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/package.json#L48-L66)
+**依据 1 · 源码核查**：[package.json:48-67](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/package.json#L48-L67)
 
 DSH兼容/peer声明。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
     }
   },
   "peerDependencies": {
     "@deepseek-ai/dsh-credentials": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-home-paths": "^0.2.0-rc.2",
     "@deepseek-ai/dsh-launch-environment": "^0.2.0-rc.2",
     "@deepseek-ai/dsh-llm": "^0.2.0-rc.2",
     "@deepseek-ai/dsh-typert-protocol": "^0.2.0-rc.2",
@@ -985,7 +1362,7 @@ DSH兼容/peer声明。
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:61-78](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L61-L78)
+**依据 2 · 源码核查**：[index.js:62-79](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L62-L79)
 
 数据面/default预算。
 
@@ -1015,42 +1392,235 @@ export const DEFAULT_MAX_REQUEST_IMAGE_BYTES = 20 * 1024 * 1024
 
 </details>
 
-**依据 3 · 源码核查**：[arkcli.js:791-813](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/arkcli.js#L791-L813)
+**依据 3 · 源码核查**：[arkcli.js:1034-1249](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L1034-L1249)
 
 CLI版本/状态前提。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（216行）</summary>
 
 ```text
     const wanted = version ?? this.packageVersion ?? DEFAULT_INSTALL_VERSION
-    const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm'
+    const failures = []
+    /** 两条路都失败时的统一结论：带上两条原因，并给出"自己装"的退路。 */
+    const failureOf = () => ({
+      ok: false,
+      path: undefined,
+      version: undefined,
+      error: `安装 ${ARKCLI_PACKAGE}@${wanted} 失败：${failures.join('；')}。也可以自己装好 arkcli 后，在设置页「arkcli 路径」里指定可执行文件。`,
+    })
+
+    // 1) 直接下载官方二进制。#installBinary 会先对**临时文件**跑 --version，通过后才
+    // 落盘，所以成功即代表"这个路径上的文件真的能执行"，不需要再用 resolveBin() 复检
+    // （那会把一个坏文件已经占住的托管路径当成结论）。
+    if (wanted === ARKCLI_BINARY_VERSION) {
+      const download = await this.#installBinary(wanted, timeoutMs)
+      if (download.ok) {
+        this.logger?.debug?.(`[arkcli] 已下载 ${ARKCLI_PACKAGE}@${wanted} → ${download.path}`)
+        return download
+      }
+      failures.push(download.error)
+    } else {
+      // 版本不是内置清单里的那个：没有可信的 sha256，只能走 npm。
+      failures.push(`没有 ${wanted} 的官方二进制清单（内置 ${ARKCLI_BINARY_VERSION}）`)
+    }
+
+    // 2) npm 兜底（桌面端通常没有 npm，这条会直接跳过而不是报 ENOENT）。
+    const npm = findExecutableOnPath('npm', this.pathEnv, this.exists, this.platform)
+    if (npm === undefined) {
+      failures.push('PATH 上找不到 npm，无法用 npm 兜底')
+      return failureOf()
+    }
     const args = ['install', '--prefix', dir, `${ARKCLI_PACKAGE}@${wanted}`, ...NPM_INSTALL_FLAGS]
     // npm 也用最小环境：否则 npm 会把宿主 HOME 下的 .npm 缓存/配置带进这次安装。
     // 中性 HOME 建不出来也无所谓（npm 自己会建缓存目录），但环境绝不能退回"继承父进程"。
     const npmHome = this.#neutralHome()
     try { this.mkdir(npmHome, { recursive: true }) } catch { /* 让 npm 自己决定 */ }
-    const env = buildChildEnv(npmHome)
+    const env = buildChildEnv(npmHome, undefined, this.platform)
     const collected = await this.#spawnCollect(npm, args, { env, timeoutMs })
     if (!collected.ok) {
       const tail = collected.stderr.trim().slice(-400) || collected.stdout.trim().slice(-400) || collected.error
-      return { ok: false, path: undefined, version: undefined, error: `安装 ${ARKCLI_PACKAGE}@${wanted} 失败：${tail}` }
+      failures.push(`npm 安装失败：${tail}`)
+      return failureOf()
     }
-    const resolved = await this.resolveBin()
-    if (resolved.path === undefined) {
-      return { ok: false, path: undefined, version: undefined, error: `npm 退出码为 0，但 ${managedBinPath(this.dshHome)} 不存在。` }
+    // 验证 npm 刚写下的那份 shim，而不是 resolveBin() 的全局首选：托管目录里可能还留着
+    // 之前直接下载的旧版本，拿它复检会让"装 1.0.38"看起来装上了 1.0.39。
+    const npmShim = managedBinPath(this.dshHome, this.platform)
+    const verified = await this.#verifyInstalled(wanted, this.exists(npmShim) ? npmShim : undefined)
+    if (verified.ok) {
+      this.logger?.debug?.(`[arkcli] 已安装 ${ARKCLI_PACKAGE}@${wanted} → ${verified.path}`)
+      return verified
     }
-    const status = await this.status({ home: this.#neutralHome() })
-    if (!status.installed) {
-      return { ok: false, path: resolved.path, version: status.version, error: status.error ?? '安装后 arkcli 无法执行。' }
+    failures.push(`npm 装完后 arkcli 无法执行：${verified.error}`)
+    return failureOf()
+  }
+
+  /**
+   * 跑一次 `<target> --version`，确认这个文件真的能执行。
+   *
+   * 直接对**待落盘/刚装好**的文件验证，而不是 `resolveBin()` 的全局首选：否则一个
+   * 下载坏掉的文件会先占住托管路径，之后所有解析都指向它，连 npm 兜底都被它带死。
+   *
+   * @param target - 要验证的可执行文件绝对路径。
+   * @returns `{ok, version, error}`。
+   */
+  async #probeVersion(target) {
+    const neutral = this.#neutralHome()
+    // 中性 HOME 先建出来：Windows 上它会被当成 USERPROFILE，目录不存在时某些工具会
+    // 在第一次写状态时把错误一路带出来。
+    try { this.mkdir(neutral, { recursive: true }) } catch { /* 建不出来就让它自己报 */ }
+    const env = buildChildEnv(neutral, undefined, this.platform)
+    const collected = await this.#spawnCollect(target, ['--version'], { env, timeoutMs: 30_000 })
+    const text = `${collected.stdout}\n${collected.stderr}`
+    if (!collected.ok) {
+      return {
+        ok: false,
+        version: undefined,
+        error: collected.error ?? lastMeaningfulLine(text) ?? `无法执行 ${target}`,
+      }
     }
-    this.logger?.debug?.(`[arkcli] 已安装 ${ARKCLI_PACKAGE}@${wanted} → ${resolved.path}`)
-    return { ok: true, path: resolved.path, version: status.version ?? wanted, error: undefined }
+    const match = /(\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?)/.exec(text)
+    return { ok: true, version: match?.[1], error: undefined }
+  }
+
+  /**
+   * 复检一个**已经装好的**路径（npm 兜底用）：文件存在、能执行。
+   *
+   * @param wanted - 期望版本（只用于输出兜底，不参与判定）。
+   * @param explicitPath - 明确要验证的路径；缺省回退到 resolveBin()。
+   * @returns `{ok, path, version, error}`。
+   */
+  async #verifyInstalled(wanted, explicitPath) {
+    let target = explicitPath
+    if (target === undefined) {
+      const resolved = await this.resolveBin()
+      if (resolved.path === undefined) {
+        return { ok: false, path: undefined, version: undefined, error: '安装完成后仍然找不到 arkcli 可执行文件。' }
+      }
+      target = resolved.path
+    } else if (!this.exists(target)) {
+      return { ok: false, path: target, version: undefined, error: `安装完成后没有找到 ${target}。` }
+    }
+    const probe = await this.#probeVersion(target)
+    if (!probe.ok) {
+      return { ok: false, path: target, version: probe.version, error: probe.error ?? '安装后 arkcli 无法执行。' }
+    }
+    return { ok: true, path: target, version: probe.version ?? wanted, error: undefined }
+  }
+
+  /**
+   * 直接下载官方 Go 二进制到 `<installDir>/bin/`。
+   *
+   * 逐个源尝试（CDN → GitHub Release），每个源下载完都校验 sha256，再对临时文件实跑
+   * `--version`；任何一步失败都删掉临时文件、换下一个源。只有 sha256 与可执行性都
+   * 通过才 rename 成正式文件——坏文件绝不占住托管路径。
+   *
+   * @param version - 版本（必须等于 {@link ARKCLI_BINARY_VERSION}）。
+   * @param timeoutMs - 单个源的下载超时。
+   * @returns `{ok, path, version, error}`。
+   */
+  async #installBinary(version, timeoutMs) {
+    const key = platformKeyOf(this.platform, this.arch)
+    if (key === undefined) {
+      return { ok: false, path: undefined, version: undefined, error: `官方 arkcli 没有发布 ${this.platform}-${this.arch} 的二进制` }
+    }
+    const entry = this.binaries?.[key]
+    if (entry === undefined || typeof entry.url !== 'string') {
+      return { ok: false, path: undefined, version: undefined, error: `没有 ${key} 的下载清单` }
+    }
+    // 没有合法 sha256 就**拒绝下载**（fail closed）：官方 postinstall 也是这么做的。
+    // "清单里没写校验值 ⇒ 下什么装什么"比不装危险得多。
+    if (typeof entry.sha256 !== 'string' || !/^[0-9a-f]{64}$/i.test(entry.sha256)) {
+      return { ok: false, path: undefined, version: undefined, error: `${key} 的下载清单缺少合法的 sha256，拒绝下载。` }
+    }
+    const expected = entry.sha256.toLowerCase()
+    const destination = managedBinaryPath(this.dshHome, this.platform)
+    try {
+      this.mkdir(join(managedInstallDir(this.dshHome), 'bin'), { recursive: true })
+    } catch (error) {
+      return { ok: false, path: undefined, version: undefined, error: `无法创建 ${destination} 的目录：${messageOf(error)}` }
+    }
+    // 同一份二进制已经在了就别重下 40 MB：既省流量，也避免在 Windows 上 rename 覆盖
+    // 一个正被登录会话/扫描占用的 .exe。sha 对不上（旧版本/坏文件）才继续下载覆盖。
+    if (this.exists(destination)) {
+      try {
+        const existing = createHash('sha256').update(readFileSync(destination)).digest('hex')
+        if (existing === expected) {
+          const probe = await this.#probeVersion(destination)
+          if (probe.ok) return { ok: true, path: destination, version: probe.version ?? version, error: undefined }
+        }
+      } catch { /* 读不出来就当没装过，走下载 */ }
+    }
+    // 临时文件名必须唯一（并发点两次安装不能互相截断），且 Windows 上必须以 `.exe`
+    // 结尾——CreateProcess 不会执行无扩展名的文件，而我们要在落盘前就试跑它。
+    const unique = randomBytes(6).toString('hex')
+    const temporary = this.platform === 'win32'
+      ? `${destination}.${unique}.download.exe`
+      : `${destination}.${unique}.download`
+    const errors = []
+    const sources = [entry.url, entry.fallback].filter((url) => typeof url === 'string' && url !== '')
+    for (const url of sources) {
+      let cannotWrite = false
+      try {
+        const bytes = await this.#downloadBytes(url, timeoutMs)
+        const digest = createHash('sha256').update(bytes).digest('hex')
+        if (digest !== expected) throw new Error(`sha256 不匹配（期望 ${expected}，实际 ${digest}）`)
+        writeFileSync(temporary, bytes)
+        // 先 chmod 再验证/改名：chmod 失败时坏文件还停在临时路径，不会污染托管路径。
+        if (this.platform !== 'win32') chmodSync(temporary, 0o755)
+        const probe = await this.#probeVersion(temporary)
+        if (!probe.ok) throw new Error(`下载的二进制无法执行：${probe.error ?? '未知原因'}`)
+        try {
+          renameSync(temporary, destination)
+        } catch (error) {
+          // 写不进去通常是被占用（Windows 上正在运行的 .exe 改不了名）。换下一个源
+          // 只会再下 40 MB、然后同样写不进去，所以直接收手。
+          cannotWrite = true
+          throw new Error(`无法写入 ${destination}：${messageOf(error)}（如果 arkcli 正在运行或登录，请先取消再装）`)
+        }
+        return { ok: true, path: destination, version: probe.version ?? version, error: undefined }
+      } catch (error) {
+        try { rmSync(temporary, { force: true }) } catch { /* 临时文件清不掉不影响结论 */ }
+        errors.push(`${url}：${messageOf(error)}`)
+        if (cannotWrite) break
+      }
+    }
+    return { ok: false, path: undefined, version: undefined, error: `下载 arkcli ${version}（${key}）失败：${errors.join('；')}` }
+  }
+
+  /**
+   * 下载一个 URL 的全部字节。
+   *
+   * 用注入的 fetch：桌面端宿主跑在 Electron Node 模式里，全局 fetch 可用；测试里
+   * 换成假实现就完全离线。超时用 `AbortSignal.timeout`（运行环境没提供时就不带）。
+   *
+   * @param url - 下载地址。
+   * @param timeoutMs - 超时毫秒。
+   * @returns `Buffer`。
+   */
+  async #downloadBytes(url, timeoutMs) {
+    if (typeof this.fetchImpl !== 'function') throw new Error('当前运行环境没有 fetch，无法直接下载')
+    const init = {}
+    if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+      init.signal = AbortSignal.timeout(timeoutMs)
+    }
+    const response = await this.fetchImpl(url, init)
+    if (response === null || typeof response !== 'object') throw new Error('下载没有返回有效响应')
+    const status = typeof response.status === 'number' ? response.status : (response.ok === false ? 0 : 200)
+    if (response.ok === false || status < 200 || status >= 300) throw new Error(`HTTP ${status === 0 ? '失败' : status}`)
+    if (typeof response.arrayBuffer !== 'function') throw new Error('下载响应不支持 arrayBuffer')
+    // 先看声明的 Content-Length 就拒绝明显超大的响应，避免先把它读进内存再发现。
+    const declared = Number(response.headers?.get?.('content-length') ?? Number.NaN)
+    if (Number.isFinite(declared) && declared > MAX_BINARY_BYTES) throw new Error(`响应过大（${declared} 字节）`)
+    const bytes = Buffer.from(await response.arrayBuffer())
+    if (bytes.byteLength === 0) throw new Error('下载内容为空')
+    if (bytes.byteLength > MAX_BINARY_BYTES) throw new Error(`响应过大（${bytes.byteLength} 字节）`)
+    return bytes
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[usage.js:190-220](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/usage.js#L190-L220)
+**依据 4 · 源码核查**：[usage.js:190-220](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/usage.js#L190-L220)
 
 AK/SK和控制面请求。
 
@@ -1103,28 +1673,13 @@ export async function fetchCodingPlanUsage(options) {
 
 #### 完整回答
 
-#### 成本
+任务成本应包含套餐模型、失败轮换、目录/额度网络和可选CLI安装。当前默认可直接下载约几十MB二进制而不需要外部npm，但校验、存储、SSO和跨平台恢复仍有资源/人工成本。现金支出依用户套餐，未核订阅金额或真实总usage，不给费用承诺。
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 已有套餐/密钥、可选CLI存储/安装网络 | 宿主/provider配置、CLI/SSO与权限核对 | 订阅价格和配置时间未核，不填金额 |
-| 持续使用 | 模型上下文/工具/图像、额度/目录刷新与轮换网络 | 账户/额度与能力变化维护 | 实际消耗依套餐规则，轮换失败也有网络开销；价格/总usage未知 |
-| 失败恢复 | 重试完整任务可能再耗模型额度与网络 | 检AUTH/QUOTA、SSE断流、CLI进程/缓存/登录 | 已yield不回退避免混答，仍需用户重试；恢复时间/费用未知 |
-
-#### 效果
-
-| 目标 | 源码支持的增量 | 证据边界 |
-| --- | --- | --- |
-| 接通套餐模型 | 专用route/静态能力/流式映射 | 不证明模型任务质量 |
-| 更稳失败处理 | 仅可换码且yield后不混答，idle错误 | 不保证平台受理/额度计量正确 |
-| 多账户管理 | 隔离HOME/缓存身份/最小env | 非OS沙箱，物理父链接需核 |
-| 额度可见 | CLI/控制面归一与时间 | 不是金额节省证明 |
-
-作者有离线测试/真机问题记录，但本轮不执行。可控输出、固定CLI版本与错误显式化有利于恢复，仍需看完整任务总usage/失败时间，而非12模型数量或绿色quota卡片。
+已yield不回退避免拼接两账户回答，却使半途失败需要用户判断重试，不能忽略重复任务成本。固定CLI版本、哈希和执行探针支持安装可靠性机制，不能代替本轮安装或模型任务验收。额度百分比也不是节省金额证明。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:819-839](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L819-L839)
+**依据 1 · 源码核查**：[index.js:820-840](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L820-L840)
 
 失败轮换时序。
 
@@ -1157,21 +1712,29 @@ export async function fetchCodingPlanUsage(options) {
 
 </details>
 
-**依据 2 · 源码核查**：[arkcli.js:629-673](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/arkcli.js#L629-L673)
+**依据 2 · 源码核查**：[arkcli.js:873-925](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L873-L925)
 
 CLI预算/错误状态。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（53行）</summary>
 
 ```text
   async #spawnCollect(bin, args, options) {
     const { env, timeoutMs } = options
+    const plan = spawnPlanFor(bin, args, this.platform, this.comspec)
     return await new Promise((resolve) => {
       let child
       try {
-        // `detached: true`：起独立进程组，这样超时能整组带走（见 #killTree）。
-        child = this.spawn(bin, args, { stdio: ['ignore', 'pipe', 'pipe'], env, detached: true })
+        // `detached: true`：起独立进程组，这样超时能整组带走（见 killProcessTree）。
+        // Windows 上 detached 会开一个新控制台窗口（桌面端每跑一次闪一下），所以只在 POSIX 用。
+        child = this.spawn(plan.command, plan.args, {
+          stdio: ['ignore', 'pipe', 'pipe'],
+          env,
+          detached: this.platform !== 'win32',
+          windowsHide: true,
+          ...plan.verbatim ? { windowsVerbatimArguments: true } : {},
+        })
       } catch (error) {
         resolve({ ok: false, code: null, stdout: '', stderr: '', error: `无法启动 ${bin}：${messageOf(error)}`, failure: 'spawn' })
         return
@@ -1207,14 +1770,14 @@ CLI预算/错误状态。
       })
       if (typeof timeoutMs === 'number' && timeoutMs > 0) {
         timer = setTimeout(() => {
-          this.#killTree(child)
+          killProcessTree(child, { platform: this.platform, spawnSync: this.spawnSync, comspec: this.comspec })
           done({ ok: false, code: null, stdout, stderr, error: '超时', failure: 'timeout' })
         }, timeoutMs)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[usage.js:155-181](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/usage.js#L155-L181)
+**依据 3 · 源码核查**：[usage.js:155-181](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/usage.js#L155-L181)
 
 额度展示。
 
@@ -1253,7 +1816,7 @@ CLI预算/错误状态。
 
 </details>
 
-**依据 4 · 源码核查**：[index.js:1570-1618](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L1570-L1618)
+**依据 4 · 源码核查**：[index.js:1590-1638](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L1590-L1638)
 
 账户HOME与缓存维护。
 
@@ -1338,7 +1901,7 @@ CLI预算/错误状态。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:819-839](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L819-L839)
+**依据 1 · 源码核查**：[index.js:820-840](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L820-L840)
 
 请求阶段收据基线。
 
@@ -1371,7 +1934,7 @@ CLI预算/错误状态。
 
 </details>
 
-**依据 2 · 源码核查**：[accounts.js:228-235](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/accounts.js#L228-L235)
+**依据 2 · 源码核查**：[accounts.js:228-235](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/accounts.js#L228-L235)
 
 冷却/偏好基线。
 
@@ -1386,7 +1949,7 @@ export function orderAccounts(accounts, marks, preferredId) {
   return [...usable].sort((left, right) => rank(left) - rank(right))
 ```
 
-**依据 3 · 源码核查**：[index.js:1580-1611](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/index.js#L1580-L1611)
+**依据 3 · 源码核查**：[index.js:1600-1631](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L1600-L1631)
 
 物理HOME/身份方案基线。
 
@@ -1430,7 +1993,7 @@ export function orderAccounts(accounts, marks, preferredId) {
 
 </details>
 
-**依据 4 · 源码核查**：[usage.js:212-225](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/a412af3f085afe7989d1386efb426e3e4a1c3d8a/usage.js#L212-L225)
+**依据 4 · 源码核查**：[usage.js:212-225](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/usage.js#L212-L225)
 
 body预算基线。
 
@@ -1461,5 +2024,147 @@ body预算基线。
 - 统一能力/请求版本收据与物理HOME核验方案未实现。
   **影响**：不计当前身份/质量或创新优势。
   **进一步探讨**：模拟错阶段/错身份与延迟故障，对照可定位性与元数据成本。
+
+<a id="research-q08"></a>
+
+<a id="detail-section-18"></a>
+
+### Q08 · 直接二进制安装怎样降低桌面端依赖，资源保护是否在读取前生效？
+
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+主安装路径按platform/arch选择嵌入清单，只接受合法sha256，先校验下载字节，再写唯一临时文件、设置可执行权限、运行版本探针，通过才rename为正式文件。相同哈希的现有文件可先验证复用；CDN失败转GitHub源，写入失败不无谓换源重下。它把桌面端缺外部npm的障碍变成宿主fetch与固定二进制的条件，降低安装接线负担。
+
+哈希验证的是下载字节与插件内固定清单一致，不是本轮独立证明该清单来源或CLI全部行为安全。非内置版本走npm，需单独核依赖与版本结果。版本探针通过也只说明该文件能运行并输出版本，不证明SSO和额度协议可用。
+
+下载先检查Content-Length，但缺失或伪小长度时先await arrayBuffer，再检查256MiB上限。故它能拒绝超大结果，却不能在读取过程中按累计字节停止内存增长；AbortSignal.timeout是时间预算而非内存预算。假设中的恶意/坏CDN大流是否触发宿主内存问题未实测，不能把事后长度检查称严格流式上限。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[arkcli.js:1153-1167](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L1153-L1167)
+
+清单、平台和哈希格式为前置条件。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  async #installBinary(version, timeoutMs) {
+    const key = platformKeyOf(this.platform, this.arch)
+    if (key === undefined) {
+      return { ok: false, path: undefined, version: undefined, error: `官方 arkcli 没有发布 ${this.platform}-${this.arch} 的二进制` }
+    }
+    const entry = this.binaries?.[key]
+    if (entry === undefined || typeof entry.url !== 'string') {
+      return { ok: false, path: undefined, version: undefined, error: `没有 ${key} 的下载清单` }
+    }
+    // 没有合法 sha256 就**拒绝下载**（fail closed）：官方 postinstall 也是这么做的。
+    // "清单里没写校验值 ⇒ 下什么装什么"比不装危险得多。
+    if (typeof entry.sha256 !== 'string' || !/^[0-9a-f]{64}$/i.test(entry.sha256)) {
+      return { ok: false, path: undefined, version: undefined, error: `${key} 的下载清单缺少合法的 sha256，拒绝下载。` }
+    }
+    const expected = entry.sha256.toLowerCase()
+```
+
+</details>
+
+**依据 2 · 源码核查**：[arkcli.js:1185-1219](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L1185-L1219)
+
+唯一临时路径、哈希/执行验证、rename与失败清理。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+    // 临时文件名必须唯一（并发点两次安装不能互相截断），且 Windows 上必须以 `.exe`
+    // 结尾——CreateProcess 不会执行无扩展名的文件，而我们要在落盘前就试跑它。
+    const unique = randomBytes(6).toString('hex')
+    const temporary = this.platform === 'win32'
+      ? `${destination}.${unique}.download.exe`
+      : `${destination}.${unique}.download`
+    const errors = []
+    const sources = [entry.url, entry.fallback].filter((url) => typeof url === 'string' && url !== '')
+    for (const url of sources) {
+      let cannotWrite = false
+      try {
+        const bytes = await this.#downloadBytes(url, timeoutMs)
+        const digest = createHash('sha256').update(bytes).digest('hex')
+        if (digest !== expected) throw new Error(`sha256 不匹配（期望 ${expected}，实际 ${digest}）`)
+        writeFileSync(temporary, bytes)
+        // 先 chmod 再验证/改名：chmod 失败时坏文件还停在临时路径，不会污染托管路径。
+        if (this.platform !== 'win32') chmodSync(temporary, 0o755)
+        const probe = await this.#probeVersion(temporary)
+        if (!probe.ok) throw new Error(`下载的二进制无法执行：${probe.error ?? '未知原因'}`)
+        try {
+          renameSync(temporary, destination)
+        } catch (error) {
+          // 写不进去通常是被占用（Windows 上正在运行的 .exe 改不了名）。换下一个源
+          // 只会再下 40 MB、然后同样写不进去，所以直接收手。
+          cannotWrite = true
+          throw new Error(`无法写入 ${destination}：${messageOf(error)}（如果 arkcli 正在运行或登录，请先取消再装）`)
+        }
+        return { ok: true, path: destination, version: probe.version ?? version, error: undefined }
+      } catch (error) {
+        try { rmSync(temporary, { force: true }) } catch { /* 临时文件清不掉不影响结论 */ }
+        errors.push(`${url}：${messageOf(error)}`)
+        if (cannotWrite) break
+      }
+    }
+    return { ok: false, path: undefined, version: undefined, error: `下载 arkcli ${version}（${key}）失败：${errors.join('；')}` }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[arkcli.js:1232-1249](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/arkcli.js#L1232-L1249)
+
+声明长度提前拒绝，实际长度在arrayBuffer之后检查。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  async #downloadBytes(url, timeoutMs) {
+    if (typeof this.fetchImpl !== 'function') throw new Error('当前运行环境没有 fetch，无法直接下载')
+    const init = {}
+    if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
+      init.signal = AbortSignal.timeout(timeoutMs)
+    }
+    const response = await this.fetchImpl(url, init)
+    if (response === null || typeof response !== 'object') throw new Error('下载没有返回有效响应')
+    const status = typeof response.status === 'number' ? response.status : (response.ok === false ? 0 : 200)
+    if (response.ok === false || status < 200 || status >= 300) throw new Error(`HTTP ${status === 0 ? '失败' : status}`)
+    if (typeof response.arrayBuffer !== 'function') throw new Error('下载响应不支持 arrayBuffer')
+    // 先看声明的 Content-Length 就拒绝明显超大的响应，避免先把它读进内存再发现。
+    const declared = Number(response.headers?.get?.('content-length') ?? Number.NaN)
+    if (Number.isFinite(declared) && declared > MAX_BINARY_BYTES) throw new Error(`响应过大（${declared} 字节）`)
+    const bytes = Buffer.from(await response.arrayBuffer())
+    if (bytes.byteLength === 0) throw new Error('下载内容为空')
+    if (bytes.byteLength > MAX_BINARY_BYTES) throw new Error(`响应过大（${bytes.byteLength} 字节）`)
+    return bytes
+```
+
+</details>
+
+**依据 4 · 源码核查**：[index.js:1527-1533](https://github.com/Akiyuki1130/dsh-ark-coding-provider/blob/c7a02400397b15a8418736366d942e0382972246/index.js#L1527-L1533)
+
+状态根依宿主解析，缺DSH_HOME不直接判不可用。
+
+```text
+export function resolveDshHomePath() {
+  try {
+    return resolveDshHome()
+  } catch {
+    // `os.homedir()` 在极端的裁剪环境里会抛错（拿不到用户主目录）；交给调用方给一句人话。
+    return undefined
+  }
+```
+
+#### 缺口
+
+- Windows/macOS实际安装、SSO及大body资源行为没有本轮验收。
+  **影响**：不能给持续安装结论或严格内存上限保证。
+  **进一步探讨**：隔离环境以小型合成响应测试缺Content-Length/超长body、校验失败、并发安装与取消，再在授权目标系统核安装登录。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

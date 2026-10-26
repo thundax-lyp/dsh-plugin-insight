@@ -1,13 +1,13 @@
 {
     "repository": "9931666/dsh-plugin-roundtable",
     "repository_id": 1342524723,
-    "captured_at": "2026-10-23T01:50:26.766Z",
-    "window_start": "2026-09-23T01:50:26.766Z",
+    "captured_at": "2026-10-26T01:59:33.546Z",
+    "window_start": "2026-09-26T01:59:33.546Z",
     "stars": 12,
-    "pushed_at": "2026-10-18T07:33:32Z",
+    "pushed_at": "2026-10-25T06:30:46Z",
     "issues": {
         "open": null,
-        "closed": 0,
+        "closed": null,
         "created_30d": 0,
         "closed_30d": 0,
         "updated_30d": 0
@@ -15,20 +15,35 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B784:291B8D:11F6EC:136B31:6ADABD65 and timestamp 2026-10-23 01:50:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9C6E:DF461:141AD64:163A8EA:6ADEB4C4 and timestamp 2026-10-26 02:02:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A9931666%2Fdsh-plugin-roundtable%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8C44:E1508:141C230:163A095:6ADEB4C8 and timestamp 2026-10-26 02:02:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T16:57:05.909Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@y9931666/dsh-plugin-roundtable",
-        "captured_at": "2026-10-23T01:50:34.818Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 1464,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40y9931666%2Fdsh-plugin-roundtable",
+        "captured_at": "2026-10-26T01:59:33.546Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 1570,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40y9931666%2Fdsh-plugin-roundtable",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-01T13:52:06.605Z",
-            "captured_at": "2026-10-23T01:50:34.818Z",
+            "captured_at": "2026-10-25T11:38:12.058Z",
             "source_url": "https://registry.npmjs.org/%40y9931666%2Fdsh-plugin-roundtable",
             "error": null,
             "latest_version": "1.0.0-rc.3",

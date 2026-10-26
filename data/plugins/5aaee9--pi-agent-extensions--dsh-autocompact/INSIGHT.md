@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[80fd0a7](https://github.com/5aaee9/pi-agent-extensions/tree/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact)
+分析版本：[8ba4f8a](https://github.com/5aaee9/pi-agent-extensions/tree/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/5aaee9/pi-agent-extensions) [![npm 30d 735](https://img.shields.io/static/v1?label=npm+30d&message=735&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/5aaee9/pi-agent-extensions) [![npm 30d 804](https://img.shields.io/static/v1?label=npm+30d&message=804&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@indexyz/dsh-autocompact)
 <!-- END META -->
 
 > **实现功能**：为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。
@@ -41,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：给需要按provider/model调整长会话压缩时机的开发者，提供会话覆盖与部署阈值；合格结果仍是任务约束保留和总费用可接受，不是占用数字变小。
+> **用途**：面向了解原生压缩并愿核摘要质量的长会话开发者，以精确模型路由的绝对阈值控制提前摘要；任务约束保留和总成本才是验收对象。
 
-宿主原生压缩和手动compact已能摘要；本插件主要控制提前时机，不改变真实模型窗口。
+原生自动压缩与手动compact为直接对照；固定任务、模型、约束和预算后比较整个任务的合格率、摘要次数、总token及恢复人时，不将占用下降直接当收益。
 
 <a id="detail-section-3"></a>
 
@@ -62,19 +62,20 @@
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=22.19、DSH >=0.2.0-rc.2 <0.3 | 必需 | 宿主API兼容 | 市场按engine拒绝范围外安装 |
-| commands/tokenMeter/llm及compactRegion后台 | 必需 | 测压与原生摘要 | 缺能力或native auto关闭时不提前压缩 |
-| 正确contextWindow与保留策略 | 必需 | 阈值合法性及尾部保护 | 缺容量警告并跳过 |
-| settings volatile与remote.settings | 持久UI需要 | revision保护写默认阈值 | 只读profile不可写，手工命令仍不同层 |
+| 匹配DSH与本地构建产物 | 必需 | 挂Host插件/命令 | 不把源码存在当安装可用 |
+| tokenMeter和真实route容量 | 自动检查必需 | 测压与阈值校验 | 缺容量或不一致跳过/警告 |
+| Agent原生compaction且auto开启 | 必需 | compactRegion执行摘要 | 缺失不提前压缩，留原生行为 |
+| 模型与足够预算 | 摘要必需 | 原生摘要 | 语义损失与调用费需核 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 安装兼容包/本地先构建 | 确认引擎范围及原生压缩可用 |
-| 2 | 在单会话单route设阈值 | 命令显示有效值，off回原生而非禁全部压缩 |
-| 3 | 跨阈值后核摘要及任务约束 | 有warning/无可压范围时不视为成功 |
-| 4 | 对照原生总费用和质量 | 需持久默认才在设置页修改；恢复继承用default |
+| 基线 | 开发者保留原生行为和任务约束清单 | 任务可重做，无独有未备份上下文 |
+| 单route配置 | 用户对齐provider/model/容量 | 阈值合法且小范围生效 |
+| 会话覆盖 | 用户用命令设临时值 | UI只示部署值，不据pill猜覆盖 |
+| 验收 | 用户核摘要、后续约束和总费用 | 错漏或费用上升回default/off |
+| 故障 | 用户读warning核实际surface | off仅取消提前策略，不关原生溢出恢复 |
 
 #### 成本
 
@@ -124,16 +125,16 @@ WeakMap绑定真实Session、精确route及token-meter/current surface逐项一�
 
 阈值与结构保护机制可核；摘要语义、净成本及质量反馈假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 dsh-autocompact/README.md、dsh-autocompact/package.json、dsh-autocompact/index.ts、dsh-autocompact/compaction.ts、dsh-autocompact/settings.ts、dsh-autocompact/src/client/status-dock.tsx 及固定范围 inventory；组件：dsh-autocompact。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 dsh-autocompact/README.md、dsh-autocompact/package.json、README.md、package.json、dsh-autocompact/index.ts、dsh-autocompact/compaction.ts、dsh-autocompact/settings.ts、dsh-autocompact/src/client/status-dock.tsx 及固定范围 inventory；组件：dsh-autocompact。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定monorepo dsh-autocompact入口、范围、settings及status客户端；复核当前旧findings后重作本轮结论，未执行目标构建/测试。
-- 下一步：固定同任务和模型，比较原生及多个提前值的摘要次数、总token、约束保留与恢复投入。
+- 下一步：按 [Q05](#research-q05) 比较原生与多组提前阈值，记录有效阈值来源、压缩成本、关键约束遗漏与恢复；多会话投影不得泄露彼此状态。
 
 **分析版本**
 
 - **仓库**：[5aaee9/pi-agent-extensions](https://github.com/5aaee9/pi-agent-extensions)
-- **版本号**：0.2.0（[固定提交 80fd0a7](https://github.com/5aaee9/pi-agent-extensions/tree/80fd0a7424ce8485ab5c367940966ef68c1a6828)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.1（[固定提交 8ba4f8a](https://github.com/5aaee9/pi-agent-extensions/tree/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -143,7 +144,7 @@ WeakMap绑定真实Session、精确route及token-meter/current surface逐项一�
 
 可加入按任务约束校验的阈值实验收据，并把有效阈值及来源投影到UI；对照原生与多个提前值，记录摘要费、合格任务、遗漏与恢复工时。净成本不降或约束丢失上升则否定；假设未验证，验证本身有调用/人工负担。参见[Q05](#research-q05)。
 
-固定同任务和模型，比较原生及多个提前值的摘要次数、总token、约束保留与恢复投入。
+按 [Q05](#research-q05) 比较原生与多组提前阈值，记录有效阈值来源、压缩成本、关键约束遗漏与恢复；多会话投影不得泄露彼此状态。
 
 <a id="detail-section-9"></a>
 
@@ -154,10 +155,10 @@ WeakMap绑定真实Session、精确route及token-meter/current surface逐项一�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 17 | 1360 | — | — | 17288 |
-| .ts | source | 12 | 1490 | 920 | 467 | — |
+| .md | source | 17 | 1371 | — | — | 17380 |
+| .ts | source | 12 | 1497 | 921 | 473 | — |
 | .tsx | source | 6 | 1009 | 770 | 184 | — |
-| .ts | test | 5 | 1610 | 1366 | 100 | — |
+| .ts | test | 6 | 1709 | 1448 | 112 | — |
 
 </details>
 
@@ -167,7 +168,7 @@ WeakMap绑定真实Session、精确route及token-meter/current surface逐项一�
 
 暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-10-23。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
@@ -189,7 +190,7 @@ WeakMap绑定真实Session、精确route及token-meter/current surface逐项一�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[dsh-autocompact/README.md:1-5](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/README.md#L1-L5)
+**依据 1 · 作者声明**：[dsh-autocompact/README.md:1-5](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/README.md#L1-L5)
 
 作者明确DSH移植归属
 
@@ -201,7 +202,7 @@ the [dsh (DeepSeek Harness)](https://github.com/deepseek-ai/deepseek-harness) co
 agent. This is the dsh port of [`@indexyz/pi-autocompact`](https://github.com/5aaee9/pi-agent-extensions/tree/main/pi-autocompact).
 ```
 
-**依据 2 · 源码核查**：[dsh-autocompact/index.ts:237-280](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L237-L280)
+**依据 2 · 源码核查**：[dsh-autocompact/index.ts:244-287](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L244-L287)
 
 提前阈值与原生compactRegion接线
 
@@ -269,9 +270,11 @@ agent. This is the dsh port of [`@indexyz/pi-autocompact`](https://github.com/5a
 
 Host注册/pre-step，先解session overrides→route→default，再测token；找到当前Agent对应backend和真实窗口，按原生retain选平衡前缀compactRegion。Session WeakMap不写覆盖到日志，新Session对象清空；设置volatile写部署默认，客户端status读持久配置。需兼容宿主与可测窗口，用户先单route设置/检查，再核实际摘要；缺backend/native auto/容量时跳过或警告，保留原生处理。
 
+当前backendFor通过ctx.get("agentPresets")?.serviceFor(agent,"compaction")找真实Agent所在realm，再回Host的compaction。缺服务、缺方法或scope已拆除时可走回退，避免静态导入已移除free export导致整个模块无法加载。该源码兼容安排不等于本轮对两个宿主的实际启动验收，必须保留精确Agent身份。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-autocompact/index.ts:188-205](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L188-L205)
+**依据 1 · 源码核查**：[dsh-autocompact/index.ts:195-212](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L195-L212)
 
 Session WeakMap与warnOnce
 
@@ -301,7 +304,7 @@ Session WeakMap与warnOnce
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-autocompact/index.ts:242-280](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L242-L280)
+**依据 2 · 源码核查**：[dsh-autocompact/index.ts:249-287](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L249-L287)
 
 完整测压与调用链
 
@@ -352,7 +355,7 @@ Session WeakMap与warnOnce
 
 </details>
 
-**依据 3 · 源码核查**：[dsh-autocompact/compaction.ts:60-86](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/compaction.ts#L60-L86)
+**依据 3 · 源码核查**：[dsh-autocompact/compaction.ts:60-86](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/compaction.ts#L60-L86)
 
 surface一致、tail和工具配对
 
@@ -391,6 +394,29 @@ surface一致、tail和工具配对
 
 </details>
 
+**依据 4 · 源码核查**：[dsh-autocompact/index.ts:160-170](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L160-L170)
+
+当前实例方法查找与Host降级，不能继承旧静态free export描述。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+export function backendFor(ctx: Context, agent: Agent): CompactionEngine | undefined {
+  try {
+    // No service, or a registry object without the method: there is no preset
+    // backend. A throw from a torn-down scope is the same outcome, below.
+    const presets: AgentPresetRegistry | undefined = ctx.get("agentPresets");
+    const mounted = presets?.serviceFor?.(agent, "compaction");
+    if (mounted !== undefined) return mounted;
+  } catch {
+    // A torn-down scope or an absent preset runtime leaves only the Host plane.
+  }
+  return ctx.get("compaction");
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -405,7 +431,7 @@ surface一致、tail和工具配对
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-autocompact/index.ts:283-294](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L283-L294)
+**依据 1 · 源码核查**：[dsh-autocompact/index.ts:290-301](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L290-L301)
 
 失败警告仍继续turn
 
@@ -429,7 +455,7 @@ surface一致、tail和工具配对
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-autocompact/compaction.ts:62-83](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/compaction.ts#L62-L83)
+**依据 2 · 源码核查**：[dsh-autocompact/compaction.ts:62-83](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/compaction.ts#L62-L83)
 
 范围选择可返回undefined
 
@@ -463,7 +489,7 @@ surface一致、tail和工具配对
 
 </details>
 
-**依据 3 · 源码核查**：[dsh-autocompact/src/client/status-dock.tsx:13-17](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/src/client/status-dock.tsx#L13-L17)
+**依据 3 · 源码核查**：[dsh-autocompact/src/client/status-dock.tsx:13-17](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/src/client/status-dock.tsx#L13-L17)
 
 UI不声称有效会话阈值
 
@@ -495,7 +521,7 @@ UI不声称有效会话阈值
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[dsh-autocompact/README.md:11-24](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/README.md#L11-L24)
+**依据 1 · 作者声明**：[dsh-autocompact/README.md:11-24](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/README.md#L11-L24)
 
 本地构建与宿主/Node范围
 
@@ -521,7 +547,7 @@ installs: on a harness outside it the market refuses the install instead of
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-autocompact/index.ts:275-294](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L275-L294)
+**依据 2 · 源码核查**：[dsh-autocompact/index.ts:282-301](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L282-L301)
 
 摘要调用和失败路径
 
@@ -573,7 +599,7 @@ installs: on a harness outside it the market refuses the install instead of
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-autocompact/src/client/status-dock.tsx:13-17](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/src/client/status-dock.tsx#L13-L17)
+**依据 1 · 源码核查**：[dsh-autocompact/src/client/status-dock.tsx:13-17](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/src/client/status-dock.tsx#L13-L17)
 
 有效覆盖投影缺口
 
@@ -585,7 +611,7 @@ installs: on a harness outside it the market refuses the install instead of
  * claiming to be the effective one.
 ```
 
-**依据 2 · 源码核查**：[dsh-autocompact/index.ts:247-280](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L247-L280)
+**依据 2 · 源码核查**：[dsh-autocompact/index.ts:254-287](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L254-L287)
 
 阈值选择与摘要触发点
 
@@ -645,7 +671,7 @@ installs: on a harness outside it the market refuses the install instead of
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[dsh-autocompact/README.md:26-43](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/README.md#L26-L43)
+**依据 1 · 作者声明**：[dsh-autocompact/README.md:30-47](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/README.md#L30-L47)
 
 命令与off/default语义
 
@@ -675,7 +701,7 @@ The effective threshold for a route is resolved in this order: the session's
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-autocompact/index.ts:283-294](https://github.com/5aaee9/pi-agent-extensions/blob/80fd0a7424ce8485ab5c367940966ef68c1a6828/dsh-autocompact/index.ts#L283-L294)
+**依据 2 · 源码核查**：[dsh-autocompact/index.ts:290-301](https://github.com/5aaee9/pi-agent-extensions/blob/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact/index.ts#L290-L301)
 
 失败继续行为影响停止标准
 

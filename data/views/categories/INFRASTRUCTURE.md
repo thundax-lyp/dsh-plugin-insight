@@ -11,12 +11,12 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
-| [ANet DSH bundle](#plugin-1302597978-deploy-plugins-dist-dsh) | 把 ANet 节点、身份与 MCP 工具及操作 Skill 接入 DSH。 | 建议观察；先手工预装并明确是否加入公共网络，确认身份与二进制来源后再在隔离profile使用只读状态入口。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [DSH Cost Tracker](#plugin-1338230382-root) | 记录DSH模型调用用量和估算费用，提供仪表盘、查询工具及可选多机同步。 | 希望观察DSH调用趋势的个人用户可在备份数据后试用，先关闭不需要的云同步和账号功能，抽样核对usage与供应商账单。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | 重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
+| [dsh-anet](#plugin-1302597978-deploy-plugins-dist-dsh) | 通过本地anet节点把DSH接入AgentNetwork，提供MCP及委派、状态与设置Skill入口。 | 建议观察，先关闭自动安装并固定审阅节点与策略，再由操作者确定受控试用范围；具体缺口和决策见 [Q05](#research-q05)。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。 |
 | [dsh-armory](#plugin-1413052822-root) | 整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。 | 建议隔离profile先验证非关键组件的安装、更新、卸载和重启，保留配置及技能备份；不按零调用直接禁用应急能力。 |
 | [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。 |
@@ -27,7 +27,7 @@
 | [dsh-integration-settings](#plugin-1429103083-root) | 在设置页管理 MCP 网关、凭据探测与 thinking 配置。 | 建议观察。 |
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。 | 仅可在无敏感数据的隔离测试环境验证。 |
-| [dsh-model](#plugin-1410395082-root) | 整合模型中转、来源登录与管理、组合切换、设备密钥及每日签到，并同步到DSH。 | 有运维能力者本机少来源非敏感试用，先不开放远端并关闭不需签到；核授权/鉴权/流失败与退出。 |
+| [dsh-model](#plugin-1410395082-root) | 整合模型来源、统一API中转、组合切换和每日签到，并提供DSH管理界面与命令行。 | 先在非关键任务核对单来源工具/图像兼容，再加入能力相近的combo；检查流中断和卸载残余后限定试用。 |
 | [dsh-model-auto-enricher](#plugin-1425159954-root) | 按模型名称规则批量补齐 DSH 上下文、输出、图片与推理配置并默认自动写盘。 | 默认不推荐自动模式。 |
 | [dsh-model-channel-manager](#plugin-1358316691-root) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。 |
 | [dsh-model-failover](#plugin-1415863200-root) | 为 DSH 添加按优先级切换真实模型的 provider 路由、隔离状态与继续控制。 | 可用只读小任务和有上限预算试用。 |
@@ -115,20 +115,6 @@
 
 > **建议**：未验证假设是版本/候选/profile摘要绑定的确认计划，漂移后重新确认而非自动换集合；故障对照核计划外安装。参见[Q04](#research-q04)。
 
-<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
-
-## [ANet DSH bundle](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
-
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
-
-> **用途**：适合需要在DSH会话使用ANet节点与网络服务的用户；合格结果是同一身份、同一二进制下完成明确网络任务并核对结果。
-
-> **亮点**：贡献是把二进制、身份与MCP/Skill入口统一到宿主bundle，减少多个入口各用不同配置的错误；网络协议、节点能力归属ANet上游，不能计为DSH适配原创。[Q01](#research-q01)
-
-> **思考**：启用bundle可能触发下载、执行安装器、启动节点并加入公共hub，接入便利与副作用扩大同时存在；固定插件提交并不固定届时下载的远端安装器。[Q03](#research-q03)
-
-> **建议**：未验证假设是把安装与网络加入拆成显式的预检和确认阶段，并记录实际二进制摘要；比较误启动和配置错误率，若步骤增加而错误没有下降则否定。[Q05](#research-q05)
-
 <a id="plugin-1334862230-root"></a>
 
 ## [chicheng-gate](../../plugins/534119219--chicheng-gate/INSIGHT.md)
@@ -198,6 +184,20 @@
 > **思考**：脉冲和器官等运行时字段进入 innerHTML 未转义；部分文件损坏仍返回 200 且面板可显示零/空。真实风险取决于上游字段可控性和宿主访问控制。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 > **建议**：未验证方向是逐源 freshness/解析状态、文本安全渲染及明确路由认证边界，用恶意字段、丢源和多标签页夹具核结果与性能。详见[Q05](#research-q05)。
+
+<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
+
+## [dsh-anet](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
+
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
+
+> **用途**：适合有明确跨节点委派与验收流程的操作者，节点在线不等任务办结。CLI替代与能力归属见 [Q01](#research-q01)。
+
+> **亮点**：减少MCP/命令的身份和程序分歧，并避免复制运行指南；节点A2A/加密/结算贡献归节点而非bundle。见 [Q01](#research-q01)。
+
+> **思考**：固定bundle不固定自动下载的安装器与节点版本，提示规则不等底层支付/入站控制；公共hub加入和持久身份须单独核查。见 [Q03](#research-q03)。
+
+> **建议**：未验证假设为任务绑定运行时能力/二进制与策略版本证明，改善跨Agent复现；版本矩阵对照与否定条件见 [Q05](#research-q05)。
 
 <a id="plugin-1346196699-root"></a>
 
@@ -343,15 +343,15 @@
 
 ## [dsh-model](../../plugins/aicivilization--dsh-model/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,009](https://img.shields.io/static/v1?label=npm+30d&message=2%2C009&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,481](https://img.shields.io/static/v1?label=npm+30d&message=2%2C481&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model)
 
-> **用途**：多来源、多客户端用户统一入口与运维；签到是独立账号动作，合格输出仍需核授权、实际来源和任务质量。
+> **用途**：给已有多模型账号且愿意运维本地/服务器服务的用户统一客户端接线。
 
-> **亮点**：围绕上游CLIProxyAPI补齐多平台生命周期、来源/设备key与DSH管理接线，并把签到独立管理，减少多客户端重复配置。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：HTTP成功开始流转就结束fallback选择，流中失败不换；同JSON切到不同模型不保证工具/图像/质量等价，统一地址也不提供额度。参见[Q02](#research-q02)、[Q03](#research-q03)。
+> **思考**：HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；替换model不保证工具、图像和质量等价，单地址不等合格交付。[Q03](#research-q03)
 
-> **建议**：未验证假设为能力/来源/预算契约约束fallback并输出实际尝试收据，以同预算合格任务率衡量而非HTTP成功率。参见[Q04](#research-q04)。
+> **建议**：未验证方向是组合能力交集和首包提交边界，首包后显式不完整收据而非盲重试，以故障矩阵核对完整率及重复副作用。[Q06](#research-q06)
 
 <a id="plugin-1425159954-root"></a>
 

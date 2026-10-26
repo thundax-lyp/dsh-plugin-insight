@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[fff7300](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/tree/fff73002cfa3cfe9ffadd21df95631a8e6c2369d)
+分析版本：[3f3338d](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/tree/3f3338d9e1a82578815074f87574ca2005977082)
 
 <!-- BEGIN META -->
-[![GitHub ★ 97](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=97&color=yellow&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace) [![npm 30d 2,975](https://img.shields.io/static/v1?label=npm+30d&message=2%2C975&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace)
+[![GitHub ★ 100](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=100&color=yellow&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace) [![npm 30d 2,765](https://img.shields.io/static/v1?label=npm+30d&message=2%2C765&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wsl-workspace)
 <!-- END META -->
 
-> **实现功能**：从DSH界面创建WSL工作区，使会话命令、文件操作和搜索在选定发行版中协同运行。
+> **实现功能**：在DSH界面添加WSL工作区，并接入Linux命令、文件、搜索和终端工具。
 
-> **核心亮点**：将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面。它相对“手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+> **核心亮点**：相对手动wsl.exe包装，贡献在会话级工作区、工具提供者和预设的组合；宿主执行器与fs机制的继承须保留归属。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+> **风险与缺陷**：完整工作区不能被理解成统一用户身份、统一沙箱或恰好一次执行；自动伪终端重跑尤其需要副作用核对。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 目标用户、反复任务、原有办法与合格结果是什么？](#detail-section-11)
-  - [Q02 · 入口、调用链、数据和状态如何实现核心能力？](#detail-section-12)
-  - [Q03 · 相比宿主原生能力和简单替代，具体增量与归属是什么？](#detail-section-13)
-  - [Q04 · 什么前提最可能使核心贡献无法转化为端到端价值？](#detail-section-14)
-  - [Q05 · 启动、持续生效和失败恢复各依赖什么，操作负担由谁承担？](#detail-section-15)
-  - [Q06 · 完成一个合格任务的首次、持续和失败恢复成本与效果是什么？](#detail-section-16)
-  - [Q07 · 实现是否可靠可维护，哪些设计可复用，移植代价是什么？](#detail-section-17)
-  - [Q08 · 由贡献与反例可推导什么未验证方向，如何证伪？](#detail-section-18)
-  - [Q09 · 对谁值得观察或试用，成功与停止标准是什么？](#detail-section-19)
+  - [Q01 · Windows开发者为什么需要完整WSL执行世界？](#detail-section-11)
+  - [Q02 · 会话、执行器与文件系统如何对齐？](#detail-section-12)
+  - [Q03 · 完整会话是否意味着统一安全边界和恰好一次执行？](#detail-section-13)
+  - [Q04 · 启动、日常开发和故障恢复的代价是什么？](#detail-section-14)
+  - [Q05 · 哪些设计可借鉴，当前如何决定试用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：在 Windows 上以 WSL Linux 工程为主工作区的开发者可用它把整个 DSH 会话映射到选定 WSL 发行版，并补齐 bash、文件、搜索、终端和工作区界面接线；合格结果是模型看到一致的 Linux 路径，命令与文件工具指向同一项目且写入边界可解释。详见[Q01](#research-q01)。
+> **用途**：Windows界面与WSL工程长期并用的人群有明确集成需求；是否优于直接Linux宿主取决于界面与工作流约束。见 [Q01](#research-q01)。
 
-基线是手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换。本项的价值主要来自将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面；尚无同任务、同资源与同验收口径的运行对照。
+人工wsl.exe包装和将DSH直接运行于Linux；宿主机制按README的上游归属处理，未作竞品实测排序。
 
 <a id="detail-section-3"></a>
 
@@ -56,65 +52,70 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| WSL 工作区创建 | 在 Web 界面选择发行版与路径并创建会话。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |
-| WSL 会话工具平面 | 将 shell、文件与搜索能力接到 WSL 路径语义。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |
-| 路径与客户端接线 | 把 Linux/Windows/UNC 地址转换用于文件引用与界面打开。 | 仅确认固定源码存在；运行效果、规模与兼容范围未做宿主验收 |
+| WSL工作区入口 | 选择发行版与项目路径 | 本机Windows/WSL场景 |
+| 预设变体 | 保留任务模式并切换执行世界 | 依赖宿主预设接口 |
+| WSL bash/terminal | 命令与交互执行 | 自动重跑可能重复副作用 |
+| 文件工具 | Linux项目读写 | Windows共享平面，身份不等同shell |
+| run_code guard | 解释特定沙箱不可用 | 不提供WSL内新隔离 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Windows 主机与可用 WSL 发行版 | 必需 | 运行 wsl.exe、UNC/9P 与 Linux 命令 | 发行版缺失时无法创建工作区 |
-| DSH Web/Desktop 声明版本与 Node >=24 | 必需 | 挂载 workspace、shell、fs、search 与客户端槽位 | API 漂移时应拒绝而非留空工作区 |
-| GNU grep/find 与 WSL 文件权限 | 搜索时必需 | 在发行版内执行 grep/glob | 缺失时搜索明确失败，不能回退成 Windows 结果 |
+| Windows、WSL发行版与9P共享 | 目标场景必需 | 命令与文件桥接 | 工作区不可用 |
+| Node>=24与兼容DSH | 必需 | 加载提供者与预设 | 超出声明范围需复核 |
+| Linux项目工具与权限 | 项目操作必需 | 构建、测试和执行 | 插件不替代项目依赖 |
+| 回环访问 | 管理接口必需 | 工作区配置 | 非回环请求被拒绝 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 选择发行版和 Linux 绝对路径，先执行路径检查 | 路径存在且发行版身份明确；失败则不创建 |
-| 2 | 创建并打开 WSL variant 会话 | bash、文件、搜索看到同一 Linux cwd；不一致则关闭会话 |
-| 3 | 分别验证 bash 权限、文件 writableRoots 和 /mnt 路径引用 | 权限平面差异被记录，越界写入被拒绝 |
+| 1 | 用户安装后重启宿主 | WSL入口出现 |
+| 2 | 选择发行版、路径与可选用户并检查 | 指向正确项目 |
+| 3 | 创建会话，分别检查命令与文件身份 | 不假设两个平面同权 |
+| 4 | 运行无外部副作用任务并检查恢复/禁用 | 重跑及部分状态可解释再扩大范围 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 本机 WSL/磁盘资源 | 安装插件、核对发行版与 DSH 版本、创建工作区 | 发行版准备与兼容排障耗时未知 |
-| 持续使用 | WSL 进程、9P/UNC I/O、轮询 Skill 目录 | 处理路径差异、搜索语义和权限提示 | 每任务时延与轮询负担未知 |
-| 失败恢复 | 残留 wsl.exe/会话与配置文件核对 | 关闭会话、检查 wsl-workspaces.json 并重建 | 命令已执行时不能靠重开回滚 |
+| 首次使用 | Windows/WSL与本地磁盘 | 配置发行版、目录、用户及宿主 | 配置时间和设备负担未知 |
+| 持续使用 | 模型、Linux工具链和跨平面进程 | 维护项目依赖与版本兼容 | 同任务性能/成本未测 |
+| 失败恢复 | 重启shell、作业和重试资源 | 核对部分副作用与身份差异 | 重跑不能视为事务回滚 |
+| 升级退出 | 工作区记录与项目文件保留 | 核对预设、禁用及回退 | 未实际验收恢复耗时 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 会话路径一致性 | 源码提供 WSL variant、路径翻译和工具替换 | 不同发行版/宿主组合的端到端一致率 |
-| 权限边界 | 文件写入读取 sandboxPolicy，README 明示 bash 以 WSL 为隔离边界 | 同任务下越界命令与文件写入的差异 |
-| 搜索与引用 | 源码补 grep/glob 和文件地址翻译 | 大仓库性能、符号链接与特殊路径正确率 |
+| WSL会话接入 | 预设和专用工具装配 | 全版本实际兼容 |
+| Linux路径与文件操作 | shell参数和9P fs接缝 | 权限等价与所有符号链接情况 |
+| 等待/恢复诊断 | 伪终端重跑与guard提示 | 副作用安全和总恢复时间 |
 
-> **思考**：WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+> **思考**：完整工作区不能被理解成统一用户身份、统一沙箱或恰好一次执行；自动伪终端重跑尤其需要副作用核对。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面。它相对“手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+> **亮点**：相对手动wsl.exe包装，贡献在会话级工作区、工具提供者和预设的组合；宿主执行器与fs机制的继承须保留归属。见 [Q01](#research-q01)。
 
-将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面。它相对“手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+相对手动wsl.exe包装，贡献在会话级工作区、工具提供者和预设的组合；宿主执行器与fs机制的继承须保留归属。见 [Q01](#research-q01)。
 
-固定源码把关键职责收敛到 src/index.ts 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“分别验证 bash 权限、文件 writableRoots 和 /mnt 路径引用｜权限平面差异被记录，越界写入被拒绝”验证。详见[Q07](#research-q07)。
+可组合执行世界和显式不支持提示比隐藏降级更可检查；移植成本主要来自宿主接口、9P语义与多平面状态同步。参见 [Q02](#research-q02) 与 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+完整工作区不能被理解成统一用户身份、统一沙箱或恰好一次执行；自动伪终端重跑尤其需要副作用核对。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-Windows 上长期使用 WSL 工程者可在隔离项目试用，先核对双平面权限边界与固定 DSH 版本。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](#research-q09)。
+建议在临时发行版与非生产工程先试用，验收shell/fs身份、写入与恢复，不将作者兼容列表等同本轮通过。成功和停止判断见 [Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +123,18 @@ Windows 上长期使用 WSL 工程者可在隔离项目试用，先核对双平�
 
 **核查状态**：已检查源码。
 
-已有贡献为源码支持的宿主接线与流程组合；效果、兼容和恢复没有真实宿主证据。未来方向保持未验证，不计入当前贡献。
+跨平面适配有源码支持；兼容矩阵为作者报告，统一隔离和端到端收益未独立验证；执行阶段账本是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/fs.ts、src/host/wsl-bash-tool.ts、src/host/wsl-run-code-guard.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅核查固定提交的作者材料、包清单、关键源码和完整组件 inventory；未运行插件、测试、安装、外部服务或真实宿主任务。
-- 下一步：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。
+- 边界：固定提交检查宿主入口、WSL shell规格、9P文件系统接缝、重跑路径和run_code guard；未逐项覆盖全部PTY/搜索/作业协议和真实Windows运行。
+- 下一步：已检查源码；未执行目标代码、作者测试、Windows/WSL环境或真实宿主验收。
 
 **分析版本**
 
 - **仓库**：[dsh-wsl-workspace-maintainers/dsh-wsl-workspace](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace)
-- **版本号**：0.7.9（[固定提交 fff7300](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/tree/fff73002cfa3cfe9ffadd21df95631a8e6c2369d)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.7.11（[固定提交 3f3338d](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/tree/3f3338d9e1a82578815074f87574ca2005977082)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +142,9 @@ Windows 上长期使用 WSL 工程者可在隔离项目试用，先核对双平�
 
 <a id="innovation"></a>
 
-未来可探索：可探索在会话创建时生成可见的双平面权限清单，并对 bash 与文件工具分别给出可执行的最小权限探针。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](#research-q08)。
+未验证假设为对潜在重跑建立执行阶段账本，减少含副作用命令的重复执行误判。临时标记命令的对照和否定条件见 [Q05](#research-q05)。
 
-在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。
+已检查源码；未执行目标代码、作者测试、Windows/WSL环境或真实宿主验收。
 
 <a id="detail-section-9"></a>
 
@@ -154,146 +155,207 @@ Windows 上长期使用 WSL 工程者可在隔离项目试用，先核对双平�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 30 | 4907 | — | — | 179230 |
-| .mjs | source | 36 | 6514 | 4420 | 1740 | — |
-| .js | source | 17 | 9772 | 6471 | 3394 | — |
-| .mjs | test | 44 | 12658 | 8471 | 3460 | — |
-| .tsx | source | 2 | 530 | 398 | 109 | — |
-| .ts | source | 31 | 12163 | 6828 | 4713 | — |
-| .ts | test | 24 | 5692 | 3922 | 1321 | — |
+| .md | source | 31 | 5016 | — | — | 183811 |
+| .mjs | source | 37 | 6634 | 4492 | 1782 | — |
+| .js | source | 17 | 10216 | 6753 | 3554 | — |
+| .mjs | test | 44 | 12814 | 8600 | 3480 | — |
+| .tsx | source | 3 | 602 | 439 | 138 | — |
+| .ts | source | 32 | 12602 | 7061 | 4895 | — |
+| .ts | test | 26 | 6053 | 4194 | 1378 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/issues) 查看。
+[![Issue 未关闭 3](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 23](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=23&color=grey&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 21](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=21&color=grey&logo=github&style=flat)](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
+
+
+
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：确认 dsh-wsl-workspace 在固定版本中实际实现了什么、相对基线的贡献与关键限制，并给出有证据边界的采用和未来验证结论。
+**插件研究总目标**：核对WSL工作区的跨平面接线、贡献与身份/隔离/恢复边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 目标用户、反复任务、原有办法与合格结果是什么？
+### Q01 · Windows开发者为什么需要完整WSL执行世界？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标用户是在 Windows 上以 WSL Linux 工程为主工作区的开发者。反复任务是把整个 DSH 会话映射到选定 WSL 发行版，并补齐 bash、文件、搜索、终端和工作区界面接线。原有办法为手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换。合格结果必须达到“模型看到一致的 Linux 路径，命令与文件工具指向同一项目且写入边界可解释”，不能以安装成功、工具注册或一次演示替代。
+目标是项目与工具链在 WSL，而 DSH 界面运行于 Windows 的开发者。合格交付是同一会话的命令、读写与搜索都指向所选 Linux 项目，用户身份和文件权限边界可解释。相对手动在每条命令前包 wsl.exe，插件组合工作区选择、WSL模式变体、shell/fs/搜索适配；贡献在跨平面的系统接线。它大量继承宿主执行器、文件系统和预设机制，README 的 NOTICE 归属不能被当作全新实现。启动WSL终端或将宿主直接运行在Linux仍是更简单的替代，是否值得取决于是否需要Windows界面和原生工作区入口。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-19](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/README.md#L1-L19)
+**依据 1 · 作者声明**：[README.md:7-7](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/README.md#L7-L7)
 
-作者材料限定目标任务和操作入口；研究回答另加合格交付标准。
+作者定义整体WSL工作区目标。
 
-<details>
-<summary>查看原文（19行）</summary>
-
-````text
-# dsh-wsl-workspace
-
-[![dsh.so security](https://www.dsh.so/badge/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace) [![dsh.so install](https://www.dsh.so/badge/install/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace)
-
-[English](README.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Português](README.pt.md) · [Русский](README.ru.md)
-![alt text](https://raw.githubusercontent.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/HEAD/image-3.png)
+```text
 Add a WSL workspace from the DeepSeek Harness web GUI and run the whole agent session — bash commands and file reads/writes — inside a local WSL distribution with Linux paths. Nothing needs to be installed inside WSL. The session can reach both WSL and Windows at the same time: bash commands run inside the WSL distribution, while Windows files stay accessible via `/mnt/<drive>` (for example `/mnt/c/Users/...`).
+```
 
-## Install
+**依据 2 · 作者声明**：[README.md:34-38](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/README.md#L34-L38)
 
-Pick one of the three ways below, then restart `dsh web`:
+选择发行版、目录、用户与创建会话流程。
 
-```powershell
-# 1) npm package
-dsh plugin --profile web add dsh-wsl-workspace
+```text
+## Usage
 
-# 2) GitHub repository (ships the prebuilt lib/, no local build required)
-dsh plugin --profile web add https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace
+Click that W button — or pick “Add WSL workspace”, directly under “Add workspace…” in the same control’s menu — to open the "Add WSL workspace" dialog. Pick a distribution from the list, then browse the directory tree or type an absolute Linux path (for example `/home/me/proj`) — use the Check button to verify the path exists before creating the workspace. The dialog follows the DeepSeek Harness UI language. The username field is optional: leave it empty to run commands as the distribution's default user, or name a Linux user of that distribution to run the session as that user instead (equivalent to `wsl.exe -u <username>`). The username only changes the bash tool's run identity — the file tools go through the Windows-side WSL share and are unaffected. Each workspace's username is kept in `<dshHome>/wsl-workspaces.json`; delete the entry (or recreate the workspace from the dialog) to return to the default user.
 
-````
+Click "Create & open" to start a new session in the workspace. In the new session the bash tool executes commands inside the chosen distribution and `read`/`write`/`edit` operate on WSL files, so every path the model sees is a Linux path. The mode picker keeps working as usual: Standard, PTC, Minimal and Creative each land on their WSL variant automatically (the WSL variant entries in the picker are bilingual, e.g. `WSL · Standard mode（标准模式）`), and Windows files stay reachable from inside the session under `/mnt/<drive>` (for example `/mnt/c/Users/...`). The dialog's "?" button opens a panel with the DSH releases this build declares, how the plugin is used, and the limitations it cannot fix.
+```
 
-</details>
+**依据 3 · 作者声明**：[README.md:60-65](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/README.md#L60-L65)
+
+明确上游继承与设计参照。
+
+```text
+## License & attribution
+
+MIT — see [LICENSE](LICENSE) and [NOTICE](NOTICE). The NOTICE precisely lists:
+
+- **Adapted/inherited source code**: DeepSeek Harness (MIT) — `dsh-bash-local` (executor mechanics), `dsh-fs-local` (`WslFileSystem` subclasses it), and the shipped agent presets (read and transformed by the variant generator);
+- **Design references (no source copied)**: [dsh-bash-terminal](https://github.com/MAXeaglet/dsh-bash-terminal) (MIT, wsl argv / WSLENV approach), [dsh-side-panel](https://github.com/ccq1/dsh-side-panel) (BSD-3-Clause, host-route pattern), [vpshub](https://github.com/Sdongmaker/vpshub) (MIT, roadmap reference).
+```
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 入口、调用链、数据和状态如何实现核心能力？
+### Q02 · 会话、执行器与文件系统如何对齐？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-src/index.ts 中的固定片段显示关键入口、注册或生命周期接线，包清单限定加载组件。实际链路围绕“选择发行版和 Linux 绝对路径，先执行路径检查｜路径存在且发行版身份明确；失败则不创建；创建并打开 WSL variant 会话｜bash、文件、搜索看到同一 Linux cwd；不一致则关闭会话；分别验证 bash 权限、文件 writableRoots 和 /mnt 路径引用｜权限平面差异被记录，越界写入被拒绝”推进，状态发生在插件配置、宿主服务或外部目标中。静态路径只能证明机制存在，不能证明注册后所有分支可运行。
+宿主入口生成每种预设的WSL变体，接入专用shell、文件系统、搜索、后台作业、图片和终端工具，并通过会话环境事实定位发行版。shell规格将wsl.exe、发行版和可选用户组成参数，而不是把全部Linux路径交给Windows命令解释；文件系统继承LocalFileSystem，经Windows侧WSL共享实现读写并替换不适合9P的原子发布/DACL操作。因此“运行于WSL”需要分开看命令平面和文件平面，不能推断所有操作具有同一Linux用户语义。源代码显示接线结构，未在本轮Windows/WSL环境执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
+**依据 1 · 源码核查**：[src/index.ts:1065-1098](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/index.ts#L1065-L1098)
 
-关键源码片段支持入口、注册或生命周期接线。
+专用提供者路径与guard入口。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
- * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
- *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
- *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
- *    instead of being a mode itself. The channel follows the release:
- *    `0.1.7-alpha.1+` stopped scanning any user preset root and builds its roster
- *    from declarative `@deepseek-ai/dsh-agent-preset` rows, so there a variant
- *    is a *declaration registered through `ctx.agentPresets`* — and only that
- *    path rewrites the absolute provider specifiers below into `file:` URLs,
- *    because a registered preset's entry tree does not translate them the way
- *    the boot-time Include does; earlier releases still get a variant directory
- *    under `<dshHome>/.agent-presets/`, whose legacy standalone `wsl` directory
- *    and stale variants are removed on boot.
+export function apply(ctx: Context, config: Config): void {
+  const resolved = config as ResolvedConfig
+  const dshHome = process.env.DSH_HOME ?? join(homedir(), '.dsh')
+  const packageRoot = fileURLToPath(new URL('..', import.meta.url))
+  const shellPath = join(packageRoot, 'lib', 'shell.js').replace(/\\/g, '/')
+  const fsPath = join(packageRoot, 'lib', 'fs.js').replace(/\\/g, '/')
+  // The persistent shell runs the host PTY backend on the relay, which starts
+  // `wsl.exe … bash` under that PTY: two paths the generated preset must carry.
+  const relayPath = join(packageRoot, 'lib', 'wsl-relay.js').replace(/\\/g, '/')
+  // The pipe-driven persistent shell tool that replaces the host's PTY-backed one by default.
+  const bashToolPath = join(packageRoot, 'lib', 'wsl-bash-tool.js').replace(/\\/g, '/')
+  // The keyboard door the session tier mounts beside it: the model-facing shape over the
+  // host's PTY registry, so a password prompt or a REPL has an answer that is not "a person
+  // must do it". It is the only row in this world that needs the relay's interpreter.
+  const terminalToolPath = join(packageRoot, 'lib', 'wsl-terminal-tool.js').replace(/\\/g, '/')
+  const sandboxPath = join(packageRoot, 'lib', 'wsl-sandbox.js').replace(/\\/g, '/')
+  // The in-distribution `grep`/`glob` twin that replaces the host search suite.
+  const searchPath = join(packageRoot, 'lib', 'wsl-search.js').replace(/\\/g, '/')
+  // The persistent shell has no `run_in_background` of its own; this is the
+  // producer that gives the world's `job_*` tools something to track.
+  const jobsPath = join(packageRoot, 'lib', 'wsl-jobs.js').replace(/\\/g, '/')
+  // The world's answer for `read_image`. The host's registration of that name is made inside
+  // `ctx.inject(['attachments'], …)` and its injected-proxy lookup cannot cross the realm this
+  // world cuts, so it answers `cannot get property "fs" without inject` here (issue #54); this row
+  // resolves `fs` by realm key instead. See `src/host/wsl-image-tool.ts`.
+  const imagePath = join(packageRoot, 'lib', 'wsl-image-tool.js').replace(/\\/g, '/')
+
+  // Issue #78: `run_code` is the host's, and on a `\\wsl.localhost\…` root with `workspace-write` the
+  // Windows sandbox cannot start at all. Refuse that one shape in words instead of letting the worker
+  // die with a Win32 code. See `src/host/wsl-run-code-guard.ts` for the measurements behind it.
+  applyRunCodeGuard(ctx)
+
+  const agentPresets = ctx.get('agentPresets') as unknown as AgentPresetsService | undefined
+  if (agentPresets !== undefined) {
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[package.json:1-26](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/package.json#L1-L26)
+**依据 2 · 源码核查**：[src/host/wsl-bash-tool.ts:411-434](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/host/wsl-bash-tool.ts#L411-L434)
 
-包清单绑定版本、入口和宿主声明。
+发行版和用户的执行规格。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+export function buildSessionSpec(config: ResolvedConfig, headerCwd: string | undefined, sessionId?: string): WslBashSessionSpec | undefined {
+  const distro = resolveDistro(config, headerCwd)
+  if (distro === '') return undefined
+  const user = resolveUser(config, headerCwd)
+  const linuxCwd = linuxOf(headerCwd)
+  // One token per session, carried by every process the shell starts. It is what lets a rebuild stop
+  // the children that detached themselves from the shell without touching a process the user owns.
+  const sessionToken = randomUUID()
+  const prefix = ['wsl.exe', '-d', distro, ...(user === undefined ? [] : ['-u', user])]
+  return {
+    argv: [...prefix, ...(linuxCwd === undefined ? [] : ['--cd', linuxCwd]), '-e', 'bash', ...SESSION_ARGV],
+    // The reaper runs a script of its own, so it gets the same distribution and user without the
+    // session's working directory: it is not running the user's command.
+    reaperArgv: [...prefix, '-e', 'bash', '-c'],
+    // The witness: the same probe, run as the distribution's root, for a process that hides its own
+    // `/proc` entries (`sudo` clears its dumpable flag). It is what turns an unconfirmable wait into a
+    // reading, so the tool never has to wait out a long silence to be sure — and when root is not
+    // available here the probe simply does not answer, which the session records.
+    witnessArgv: ['wsl.exe', '-d', distro, '-u', 'root', '-e', 'bash', '-c'],
+    // The child never starts inside the UNC share: spawning with a UNC cwd is a documented
+    // Node/Windows edge, and `wsl.exe --cd` already decides the Linux side.
+    cwd: process.env.SystemRoot ?? 'C:\\Windows',
+    env: bridgeEnv(
+      {
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/fs.ts:90-115](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/fs.ts#L90-L115)
+
+继承本地fs并替换9P不支持的边界。
 
 <details>
 <summary>查看原文（26行）</summary>
 
 ```text
-{
-  "name": "dsh-wsl-workspace",
-  "description": "WSL workspace support for DeepSeek Harness: add a WSL workspace from the web GUI and run the whole agent session (bash + file tools) inside the WSL distribution, VS Code Remote-WSL style. No toolchain install inside WSL required. Works on DSH Desktop as well as dsh web.",
-  "version": "0.7.9",
-  "type": "module",
-  "packageManager": "npm@11.19.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace.git"
-  },
-  "main": "lib/index.js",
-  "scripts": {
-    "clean": "node scripts/clean-lib.mjs",
-    "build": "npm run clean && tsdown && node scripts/verify-lib.mjs",
-    "verify": "node scripts/verify-lib.mjs",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "typecheck:gate": "node scripts/typecheck-gate.mjs",
-    "verify:install": "node scripts/verify-install.mjs",
-    "verify:artifact": "node scripts/verify-artifact-identity.mjs",
-    "verify:lib-sync": "node scripts/verify-lib-sync.mjs",
-    "verify:plane": "node scripts/verify-plane-log.mjs",
-    "ci:pinned": "node ci/install-pinned.mjs",
-    "test:unit": "node --experimental-strip-types --test tests/variants.test.ts tests/paths.test.ts tests/references.test.ts tests/locales.test.ts tests/readme-compat.test.mjs tests/wsl-output-decode.test.ts tests/default-distro-parity.test.ts tests/deliberate-reds.test.mjs tests/probe-hygiene.test.mjs tests/client-classnames.test.ts tests/support/fake-child-process.test.mjs tests/wsl-env.test.ts tests/wsl-bash-protocol.test.ts tests/wsl-bash-starve.test.ts tests/wsl-bash-tty.test.ts tests/pty-readiness.test.mjs scripts/check-portable-spelling.test.mjs scripts/check-unit-closure.mjs tests/tool-contract.test.mjs tests/script-reachability.test.mjs tests/parity-claims.test.mjs tests/workflow-shape.test.mjs tests/docs-debt.test.mjs tests/wsl-run-code-guard.test.ts",
-    "lint:portability": "node scripts/check-portable-spelling.mjs",
-    "lint:portability:strict": "node scripts/check-portable-spelling.mjs --strict",
-    "test:win32": "node --experimental-strip-types --test tests/wsl-skills.test.ts tests/fs-policy.test.ts tests/relay-node.test.mjs",
+ */
+export class WslFileSystem extends LocalFileSystem {
+  static override Config: z<Config> = z.object({
+    cwd: z.string(),
+    distro: z.string(),
+    diffBasisMaxBytes: z.number().default(10 * 1024 * 1024),
+  })
+
+  private readonly distro: string | undefined
+  private readonly executionCwd = new AsyncLocalStorage<string | undefined>()
+
+  constructor(ctx: Context, config: Config) {
+    // schemastery fills the defaults before construction; the parent validates
+    // `diffBasisMaxBytes` and stores the resolved shape.
+    super(ctx, config)
+    this.distro = config.distro
+    ctx.on('tools/execute', (exec: ToolDispatchExecution, next: () => Promise<ToolExecutionResult>) => (
+      this.executionCwd.run(exec.agent?.session.header.cwd, next)
+    ))
+    // The 9P/drvfs substrate has no hard links and no Win32 security semantics:
+    // replace the atomic-publication boundaries the parent's fsio defaults to.
+    this.internals = {
+      linkFile: WslFileSystem.publishNoReplace,
+      replaceFile: WslFileSystem.replaceOverWrite,
+      copyFileDacl: WslFileSystem.skipDaclCopy,
+    }
 ```
 
 </details>
@@ -302,184 +364,245 @@ src/index.ts 中的固定片段显示关键入口、注册或生命周期接线�
 
 <a id="detail-section-13"></a>
 
-### Q03 · 相比宿主原生能力和简单替代，具体增量与归属是什么？
-
-**研究主题**：贡献与相对优势
-
-#### 完整回答
-
-研究者识别的增量是将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面。参照是“手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换”。贡献归属于本插件的集成、状态编排或工作流封装，不把外部服务、上游算法或子组件能力重复算作原创，也不从功能数量推断用户收益。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
-
-源码证明本插件承担接线或编排，而非仅有文字描述。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
- * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
- *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
- *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
- *    instead of being a mode itself. The channel follows the release:
- *    `0.1.7-alpha.1+` stopped scanning any user preset root and builds its roster
- *    from declarative `@deepseek-ai/dsh-agent-preset` rows, so there a variant
- *    is a *declaration registered through `ctx.agentPresets`* — and only that
- *    path rewrites the absolute provider specifiers below into `file:` URLs,
- *    because a registered preset's entry tree does not translate them the way
- *    the boot-time Include does; earlier releases still get a variant directory
- *    under `<dshHome>/.agent-presets/`, whose legacy standalone `wsl` directory
- *    and stale variants are removed on boot.
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:1-19](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/README.md#L1-L19)
-
-README 提供作者主张，用于与源码可见机制分开比较。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-````text
-# dsh-wsl-workspace
-
-[![dsh.so security](https://www.dsh.so/badge/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace) [![dsh.so install](https://www.dsh.so/badge/install/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace)
-
-[English](README.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Português](README.pt.md) · [Русский](README.ru.md)
-![alt text](https://raw.githubusercontent.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/HEAD/image-3.png)
-Add a WSL workspace from the DeepSeek Harness web GUI and run the whole agent session — bash commands and file reads/writes — inside a local WSL distribution with Linux paths. Nothing needs to be installed inside WSL. The session can reach both WSL and Windows at the same time: bash commands run inside the WSL distribution, while Windows files stay accessible via `/mnt/<drive>` (for example `/mnt/c/Users/...`).
-
-## Install
-
-Pick one of the three ways below, then restart `dsh web`:
-
-```powershell
-# 1) npm package
-dsh plugin --profile web add dsh-wsl-workspace
-
-# 2) GitHub repository (ships the prebuilt lib/, no local build required)
-dsh plugin --profile web add https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace
-
-````
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 什么前提最可能使核心贡献无法转化为端到端价值？
+### Q03 · 完整会话是否意味着统一安全边界和恰好一次执行？
 
 **研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-最有力支持是固定源码确有相应接线；最关键反例或其他解释是WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过。若失败后不能判断副作用是否已发生，局部自动化可能把恢复负担转移给用户。该问题不直接否定插件，但会把适用范围收窄到可隔离、可回读的任务。
+关键质疑是否会把多执行平面误认为一个统一隔离环境。README明确用户只改变bash身份，文件工具通过Windows共享不受该字段影响；run_code在workspace-write与WSL 9P根的特定组合被guard拒绝，因为Windows ACL沙箱不能启动，guard并未构建WSL内部隔离。另一个重要边界是等待键盘的命令可能在伪终端自动重跑：源码把原命令重新传入session.run，前半段已有副作用不能因此撤销，调用者可用tty:false否决。故不能将会话恢复或诊断重跑当作事务性恰好一次执行；带副作用命令应明确交互方式并核对已完成动作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
+**依据 1 · 作者声明**：[README.md:34-36](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/README.md#L34-L36)
 
-源码显示关键状态边界，也说明为什么需要运行时故障验证。
-
-<details>
-<summary>查看原文（15行）</summary>
+用户身份和文件平面的作者说明。
 
 ```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
- * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
- *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
- *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
- *    instead of being a mode itself. The channel follows the release:
- *    `0.1.7-alpha.1+` stopped scanning any user preset root and builds its roster
- *    from declarative `@deepseek-ai/dsh-agent-preset` rows, so there a variant
- *    is a *declaration registered through `ctx.agentPresets`* — and only that
- *    path rewrites the absolute provider specifiers below into `file:` URLs,
- *    because a registered preset's entry tree does not translate them the way
- *    the boot-time Include does; earlier releases still get a variant directory
- *    under `<dshHome>/.agent-presets/`, whose legacy standalone `wsl` directory
- *    and stale variants are removed on boot.
+## Usage
+
+Click that W button — or pick “Add WSL workspace”, directly under “Add workspace…” in the same control’s menu — to open the "Add WSL workspace" dialog. Pick a distribution from the list, then browse the directory tree or type an absolute Linux path (for example `/home/me/proj`) — use the Check button to verify the path exists before creating the workspace. The dialog follows the DeepSeek Harness UI language. The username field is optional: leave it empty to run commands as the distribution's default user, or name a Linux user of that distribution to run the session as that user instead (equivalent to `wsl.exe -u <username>`). The username only changes the bash tool's run identity — the file tools go through the Windows-side WSL share and are unaffected. Each workspace's username is kept in `<dshHome>/wsl-workspaces.json`; delete the entry (or recreate the workspace from the dialog) to return to the default user.
+```
+
+**依据 2 · 源码核查**：[src/host/wsl-run-code-guard.ts:49-56](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/host/wsl-run-code-guard.ts#L49-L56)
+
+guard解释特定沙箱缺口而非承诺隔离。
+
+```text
+export function refusalForRoot (root: string): string {
+  return 'run_code cannot start in this session: the Windows file sandbox grants write access by reading '
+    + `the workspace root's security descriptor, and the root here is a WSL 9P share (${root}), which has `
+    + 'none — the host reports `GetNamedSecurityInfoW failed (Win32 1)` before any program runs, so this is '
+    + 'not a problem with the code asked for. Three settings do run: switch this session to read-only (the '
+    + 'host reports enforcement as partial), switch it to danger-full-access, or use the world\'s own tools '
+    + '(`bash`, `wsl_terminal`, `read`, `write`, `edit`, `grep`, `glob`), which run inside the distribution. '
+    + 'A sandbox enforced inside the distribution itself is the open work tracked as issue #78.'
+```
+
+**依据 3 · 源码核查**：[src/host/wsl-run-code-guard.ts:77-84](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/host/wsl-run-code-guard.ts#L77-L84)
+
+只匹配特定工具、策略和9P根。
+
+```text
+export function denyRunCodeOn9p (exec: ExecFace, policy: { mode?: string; workspaceRoot?: string } | undefined): string | undefined {
+  if (exec.name !== RUN_CODE_NAME || policy === undefined) return undefined
+  // An escalated call carries the mode the user approved; only the plain session setting is ours to read.
+  if (typeof exec.arguments?.sandbox_permissions === 'string') return undefined
+  if (policy.mode !== WRITE_MODE) return undefined
+  const root = policy.workspaceRoot
+  if (typeof root !== 'string' || !isWsl9pRoot(root)) return undefined
+  return refusalForRoot(root)
+```
+
+**依据 4 · 源码核查**：[src/host/wsl-bash-tool.ts:616-644](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/host/wsl-bash-tool.ts#L616-L644)
+
+自动伪终端重跑和状态合并。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+      tally.set(signature, tried)
+      let run = await session.run(command, timeoutMs, exec.signal, escalated, args.stdin)
+      // What the session did that the body cannot show, in the order the model has to read it.
+      const before: string[] = []
+      // The command was caught waiting for a keyboard, so give it what a person at a terminal would: a
+      // terminal of its own, in this same call. Its stdin is still `script`'s end-of-file, so what comes
+      // back is the program's own complaint instead of a deadline — measured with `sudo`, which answered
+      // with its own three lines in 9.4 s of a 25 s call (2026-10-05) after having sat on the pipe for
+      // the whole deadline before. `tty: false` vetoes this, because a caller that only wanted the plain
+      // pipe must be able to insist on it.
+      // `run.restarted` is deliberately not part of this: a starved call whose shell had to be restarted
+      // (a builtin that read the terminal blocked the shell itself) still wants the pseudo-terminal
+      // retry — the command never did anything but wait.
+      if (!escalated && !vetoTty && run.starved !== undefined && !run.aborted) {
+        const first = { kind: run.starved, atMs: run.starvedAtMs ?? 0, viaRoot: run.starvedViaRoot === true, shellInterrupted: run.starvedShellInterrupt === true }
+        logging?.debug?.(`wsl-bash: stopped a command waiting for input (${first.kind}${first.viaRoot ? ' via the root plane' : ''} at ${first.atMs}ms) and re-running it on a pseudo-terminal`)
+        escalated = true
+        before.push(retryNote(first.kind, first.atMs, first.viaRoot, first.shellInterrupted))
+        command = wrap(wrapForTty(args.command))
+        // What the first attempt did to the shell is a fact about this call, not about the attempt it
+        // was found in: a builtin that read the terminal blocks the shell itself, so the shell is
+        // restarted here, and what that restart could not restore has to reach the note. Measured
+        // 2026-10-06: dropped with the first run, the loss went unreported on exactly the path that
+        // loses the most.
+        const firstRun = run
+        const retry = await session.run(command, timeoutMs, exec.signal, true, args.stdin)
+        run = { ...retry,
+          restarted: retry.restarted || firstRun.restarted,
+          skipped: retry.skipped ?? firstRun.skipped }
 ```
 
 </details>
 
 #### 缺口
 
-- 缺少针对“WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过”的固定版本故障注入记录
-  **影响**：无法确认核心贡献在异常路径仍成立
-  **进一步探讨**：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 本题重点观察异常是否改变贡献结论。
+- 同版本文件权限与跨工具隔离尚无本轮执行证据
+  **影响**：不能将所选WSL用户当统一权限边界
+  **进一步探讨**：在临时发行版使用不同属主文件，分别检查shell/fs/run_code行为与拒绝路径
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 启动、日常开发和故障恢复的代价是什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+需要Windows上的DSH与可用WSL发行版、可访问9P共享及所需Linux工具链。作者的“WSL内无需安装”针对插件支撑组件，不表示项目构建器、包依赖或任务工具自动存在。插件依赖宿主预设、PTY/子进程和文件API，并按宿主能力选择执行路径；版本兼容矩阵属于作者报告，本轮未复现。数据路由校验请求socket与Host为loopback，说明设计限于本机而不是远程WSL管理。持续成本包括Windows/WSL双平面排查与宿主升级适配；恢复须检查持久shell状态、后台作业和可能重跑的副作用。没有任务量、模型调用、CPU或人工耗时记录，不能推导单位任务成本下降。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:26-32](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/README.md#L26-L32)
+
+作者声明兼容范围，不能当本轮独立验证。
+
+```text
+## Compatibility
+
+This build declares these DSH releases, each verified on an isolated instance (its own `DSH_HOME`, dependencies pinned to that release, the full check suite):
+
+`0.1.0-rc.7` · `0.1.0-rc.8` · `0.1.1-rc.1` · `0.1.1-rc.2` · `0.1.2-rc.1` · `0.1.3-alpha.2` · `0.1.5-rc.1` · `0.1.5-rc.2` · `0.1.7-rc.1` · `0.1.7-rc.2` · `0.2.0-rc.2` · `0.2.1-rc.2`
+
+The list mirrors `dsh.compatibility.dshReleases` in `package.json`, and a unit test fails if the two drift apart. `0.2.1-rc.2` is the DSH release DSH Desktop `0.2.1-rc.2` ships — verified against the host inside that application's own bundle, not only against the npm release — so the Desktop is covered by the same declaration; the app's help panel (the dialog's "?" button) shows the same chips next to the plugin version. The plugin detects the DSH generation at runtime and picks the matching API, and a release exposing neither fails loudly instead of leaving an empty workspace. A release outside the list usually still works, but is unverified.
+```
+
+**依据 2 · 源码核查**：[src/index.ts:1290-1322](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/index.ts#L1290-L1322)
+
+本机路由的loopback检查和请求处理。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+  const webServer = ctx.get('webServer') as unknown as WebServerService
+  ctx.effect(() => webServer.register({
+    kind: 'exact',
+    path: resolved.route,
+    handler: async (req, res) => {
+      if (!isLoopback(req.socket.remoteAddress) || !isLoopbackHost(req.headers.host)) {
+        json(res, 403, { ok: false, error: 'loopback-only' })
+        return
+      }
+      if (req.method !== 'POST') {
+        json(res, 405, { ok: false, error: 'method not allowed' })
+        return
+      }
+      let body: Record<string, unknown>
+      try {
+        body = await readBody(req)
+      } catch (error) {
+        json(res, 400, { ok: false, error: messageOf(error) })
+        return
+      }
+      const method = typeof body.method === 'string' ? body.method : ''
+      const params = body.params === undefined ? {} : body.params
+      if (params === null || typeof params !== 'object' || Array.isArray(params)) {
+        json(res, 400, { ok: false, error: 'params must be an object' })
+        return
+      }
+      try {
+        const value = await dispatch(method, params as Record<string, unknown>)
+        json(res, 200, { ok: true, value })
+      } catch (error) {
+        json(res, 200, { ok: false, error: messageOf(error) })
+      }
+    },
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/host/wsl-bash-tool.ts:616-644](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/host/wsl-bash-tool.ts#L616-L644)
+
+恢复和重跑负担来源。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+      tally.set(signature, tried)
+      let run = await session.run(command, timeoutMs, exec.signal, escalated, args.stdin)
+      // What the session did that the body cannot show, in the order the model has to read it.
+      const before: string[] = []
+      // The command was caught waiting for a keyboard, so give it what a person at a terminal would: a
+      // terminal of its own, in this same call. Its stdin is still `script`'s end-of-file, so what comes
+      // back is the program's own complaint instead of a deadline — measured with `sudo`, which answered
+      // with its own three lines in 9.4 s of a 25 s call (2026-10-05) after having sat on the pipe for
+      // the whole deadline before. `tty: false` vetoes this, because a caller that only wanted the plain
+      // pipe must be able to insist on it.
+      // `run.restarted` is deliberately not part of this: a starved call whose shell had to be restarted
+      // (a builtin that read the terminal blocked the shell itself) still wants the pseudo-terminal
+      // retry — the command never did anything but wait.
+      if (!escalated && !vetoTty && run.starved !== undefined && !run.aborted) {
+        const first = { kind: run.starved, atMs: run.starvedAtMs ?? 0, viaRoot: run.starvedViaRoot === true, shellInterrupted: run.starvedShellInterrupt === true }
+        logging?.debug?.(`wsl-bash: stopped a command waiting for input (${first.kind}${first.viaRoot ? ' via the root plane' : ''} at ${first.atMs}ms) and re-running it on a pseudo-terminal`)
+        escalated = true
+        before.push(retryNote(first.kind, first.atMs, first.viaRoot, first.shellInterrupted))
+        command = wrap(wrapForTty(args.command))
+        // What the first attempt did to the shell is a fact about this call, not about the attempt it
+        // was found in: a builtin that read the terminal blocks the shell itself, so the shell is
+        // restarted here, and what that restart could not restore has to reach the note. Measured
+        // 2026-10-06: dropped with the first run, the loss went unreported on exactly the path that
+        // loses the most.
+        const firstRun = run
+        const retry = await session.run(command, timeoutMs, exec.signal, true, args.stdin)
+        run = { ...retry,
+          restarted: retry.restarted || firstRun.restarted,
+          skipped: retry.skipped ?? firstRun.skipped }
+```
+
+</details>
+
+#### 缺口
+
+- Windows/WSL双平面长期维护和恢复耗时未知
+  **影响**：不能证明比直接在Linux运行宿主总负担更低
+  **进一步探讨**：固定项目与宿主版本比较两种运行方式的任务成功率、恢复时间和人工步骤
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 启动、持续生效和失败恢复各依赖什么，操作负担由谁承担？
+### Q05 · 哪些设计可借鉴，当前如何决定试用？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：工程质量与复用、新假设与验证、采用判断
 
 #### 完整回答
 
-关键依赖分别是：Windows 主机与可用 WSL 发行版｜必需｜运行 wsl.exe、UNC/9P 与 Linux 命令｜发行版缺失时无法创建工作区；DSH Web/Desktop 声明版本与 Node >=24｜必需｜挂载 workspace、shell、fs、search 与客户端槽位｜API 漂移时应拒绝而非留空工作区；GNU grep/find 与 WSL 文件权限｜搜索时必需｜在发行版内执行 grep/glob｜缺失时搜索明确失败，不能回退成 Windows 结果。启动者负责版本与权限，使用者负责输入和验收，维护者负责外部服务/API 漂移。失败恢复按“分别验证 bash 权限、文件 writableRoots 和 /mnt 路径引用｜权限平面差异被记录，越界写入被拒绝”执行；包依赖存在或工具可注册都不表示业务已经办结。
+把执行世界作为可组合预设变体，而不是另造一种任务模式，有利于保留原有工作习惯；对9P原子发布和run_code拒绝的显式边界也值得复用。但它依赖宿主内部接口与Windows文件语义，维护者兼容投入不能视作零迁移。未验证假设是为潜在重跑增加执行阶段账本，将“尚未执行”“可能部分完成”“已完成”与纯交互诊断区分，可减少自动恢复导致的重复副作用。最小验证用会在写标记后等待输入的临时命令，比较当前自动重跑、tty:false和账本提示，检查重复写次数、恢复时间与人工判断；若账本无法可靠判定或负担超过收益则否定。当前建议trial，仅在临时发行版/非生产项目核对文件身份、shell状态和禁用恢复，不能以作者矩阵直接给持续安装结论。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[package.json:1-26](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/package.json#L1-L26)
+**依据 1 · 源码核查**：[src/index.ts:4-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/index.ts#L4-L15)
 
-包清单提供运行时、依赖和分发边界。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-{
-  "name": "dsh-wsl-workspace",
-  "description": "WSL workspace support for DeepSeek Harness: add a WSL workspace from the web GUI and run the whole agent session (bash + file tools) inside the WSL distribution, VS Code Remote-WSL style. No toolchain install inside WSL required. Works on DSH Desktop as well as dsh web.",
-  "version": "0.7.9",
-  "type": "module",
-  "packageManager": "npm@11.19.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace.git"
-  },
-  "main": "lib/index.js",
-  "scripts": {
-    "clean": "node scripts/clean-lib.mjs",
-    "build": "npm run clean && tsdown && node scripts/verify-lib.mjs",
-    "verify": "node scripts/verify-lib.mjs",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "typecheck:gate": "node scripts/typecheck-gate.mjs",
-    "verify:install": "node scripts/verify-install.mjs",
-    "verify:artifact": "node scripts/verify-artifact-identity.mjs",
-    "verify:lib-sync": "node scripts/verify-lib-sync.mjs",
-    "verify:plane": "node scripts/verify-plane-log.mjs",
-    "ci:pinned": "node ci/install-pinned.mjs",
-    "test:unit": "node --experimental-strip-types --test tests/variants.test.ts tests/paths.test.ts tests/references.test.ts tests/locales.test.ts tests/readme-compat.test.mjs tests/wsl-output-decode.test.ts tests/default-distro-parity.test.ts tests/deliberate-reds.test.mjs tests/probe-hygiene.test.mjs tests/client-classnames.test.ts tests/support/fake-child-process.test.mjs tests/wsl-env.test.ts tests/wsl-bash-protocol.test.ts tests/wsl-bash-starve.test.ts tests/wsl-bash-tty.test.ts tests/pty-readiness.test.mjs scripts/check-portable-spelling.test.mjs scripts/check-unit-closure.mjs tests/tool-contract.test.mjs tests/script-reachability.test.mjs tests/parity-claims.test.mjs tests/workflow-shape.test.mjs tests/docs-debt.test.mjs tests/wsl-run-code-guard.test.ts",
-    "lint:portability": "node scripts/check-portable-spelling.mjs",
-    "lint:portability:strict": "node scripts/check-portable-spelling.mjs --strict",
-    "test:win32": "node --experimental-strip-types --test tests/wsl-skills.test.ts tests/fs-policy.test.ts tests/relay-node.test.mjs",
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
-
-源码提供实际宿主接线，用于区分声明依赖与调用依赖。
+作者代码注释解释执行世界与预设组合。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
  * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
  *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
  *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
@@ -496,309 +619,75 @@ dsh plugin --profile web add https://github.com/dsh-wsl-workspace-maintainers/ds
 
 </details>
 
-#### 缺口
+**依据 2 · 源码核查**：[src/fs.ts:104-115](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/fs.ts#L104-L115)
 
-- 真实宿主中的依赖失效顺序与部分成功状态未观测
-  **影响**：无法确认重试是否会重复副作用
-  **进一步探讨**：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 另逐项切断依赖并回读部分成功状态。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 完成一个合格任务的首次、持续和失败恢复成本与效果是什么？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-成本必须以“模型看到一致的 Linux 路径，命令与文件工具指向同一项目且写入边界可解释”为合格单位。三阶段投入为：首次使用｜本机 WSL/磁盘资源｜安装插件、核对发行版与 DSH 版本、创建工作区｜发行版准备与兼容排障耗时未知；持续使用｜WSL 进程、9P/UNC I/O、轮询 Skill 目录｜处理路径差异、搜索语义和权限提示｜每任务时延与轮询负担未知；失败恢复｜残留 wsl.exe/会话与配置文件核对｜关闭会话、检查 wsl-workspaces.json 并重建｜命令已执行时不能靠重开回滚。当前源码只支持机制存在，效果维度为“会话路径一致性｜源码提供 WSL variant、路径翻译和工具替换｜不同发行版/宿主组合的端到端一致率；权限边界｜文件写入读取 sandboxPolicy，README 明示 bash 以 WSL 为隔离边界｜同任务下越界命令与文件写入的差异；搜索与引用｜源码补 grep/glob 和文件地址翻译｜大仓库性能、符号链接与特殊路径正确率”。没有合格数、总尝试、人工分钟与现金/资源量，因此不能计算单位成本、节时或ROI。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:1-19](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/README.md#L1-L19)
-
-作者材料支持操作范围，不提供同条件成本或合格率。
+9P适配的明确接缝。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（12行）</summary>
 
-````text
-# dsh-wsl-workspace
-
-[![dsh.so security](https://www.dsh.so/badge/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace) [![dsh.so install](https://www.dsh.so/badge/install/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace)
-
-[English](README.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Português](README.pt.md) · [Русский](README.ru.md)
-![alt text](https://raw.githubusercontent.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/HEAD/image-3.png)
-Add a WSL workspace from the DeepSeek Harness web GUI and run the whole agent session — bash commands and file reads/writes — inside a local WSL distribution with Linux paths. Nothing needs to be installed inside WSL. The session can reach both WSL and Windows at the same time: bash commands run inside the WSL distribution, while Windows files stay accessible via `/mnt/<drive>` (for example `/mnt/c/Users/...`).
-
-## Install
-
-Pick one of the three ways below, then restart `dsh web`:
-
-```powershell
-# 1) npm package
-dsh plugin --profile web add dsh-wsl-workspace
-
-# 2) GitHub repository (ships the prebuilt lib/, no local build required)
-dsh plugin --profile web add https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace
-
-````
+```text
+    super(ctx, config)
+    this.distro = config.distro
+    ctx.on('tools/execute', (exec: ToolDispatchExecution, next: () => Promise<ToolExecutionResult>) => (
+      this.executionCwd.run(exec.agent?.session.header.cwd, next)
+    ))
+    // The 9P/drvfs substrate has no hard links and no Win32 security semantics:
+    // replace the atomic-publication boundaries the parent's fsio defaults to.
+    this.internals = {
+      linkFile: WslFileSystem.publishNoReplace,
+      replaceFile: WslFileSystem.replaceOverWrite,
+      copyFileDacl: WslFileSystem.skipDaclCopy,
+    }
+```
 
 </details>
 
-**依据 2 · 作者声明**：[package.json:1-26](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/package.json#L1-L26)
+**依据 3 · 源码核查**：[src/host/wsl-bash-tool.ts:616-644](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/3f3338d9e1a82578815074f87574ca2005977082/src/host/wsl-bash-tool.ts#L616-L644)
 
-包清单支持本地/外部资源与依赖边界的定性判断。
+重跑阶段账本的推导依据。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-{
-  "name": "dsh-wsl-workspace",
-  "description": "WSL workspace support for DeepSeek Harness: add a WSL workspace from the web GUI and run the whole agent session (bash + file tools) inside the WSL distribution, VS Code Remote-WSL style. No toolchain install inside WSL required. Works on DSH Desktop as well as dsh web.",
-  "version": "0.7.9",
-  "type": "module",
-  "packageManager": "npm@11.19.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace.git"
-  },
-  "main": "lib/index.js",
-  "scripts": {
-    "clean": "node scripts/clean-lib.mjs",
-    "build": "npm run clean && tsdown && node scripts/verify-lib.mjs",
-    "verify": "node scripts/verify-lib.mjs",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "typecheck:gate": "node scripts/typecheck-gate.mjs",
-    "verify:install": "node scripts/verify-install.mjs",
-    "verify:artifact": "node scripts/verify-artifact-identity.mjs",
-    "verify:lib-sync": "node scripts/verify-lib-sync.mjs",
-    "verify:plane": "node scripts/verify-plane-log.mjs",
-    "ci:pinned": "node ci/install-pinned.mjs",
-    "test:unit": "node --experimental-strip-types --test tests/variants.test.ts tests/paths.test.ts tests/references.test.ts tests/locales.test.ts tests/readme-compat.test.mjs tests/wsl-output-decode.test.ts tests/default-distro-parity.test.ts tests/deliberate-reds.test.mjs tests/probe-hygiene.test.mjs tests/client-classnames.test.ts tests/support/fake-child-process.test.mjs tests/wsl-env.test.ts tests/wsl-bash-protocol.test.ts tests/wsl-bash-starve.test.ts tests/wsl-bash-tty.test.ts tests/pty-readiness.test.mjs scripts/check-portable-spelling.test.mjs scripts/check-unit-closure.mjs tests/tool-contract.test.mjs tests/script-reachability.test.mjs tests/parity-claims.test.mjs tests/workflow-shape.test.mjs tests/docs-debt.test.mjs tests/wsl-run-code-guard.test.ts",
-    "lint:portability": "node scripts/check-portable-spelling.mjs",
-    "lint:portability:strict": "node scripts/check-portable-spelling.mjs --strict",
-    "test:win32": "node --experimental-strip-types --test tests/wsl-skills.test.ts tests/fs-policy.test.ts tests/relay-node.test.mjs",
+      tally.set(signature, tried)
+      let run = await session.run(command, timeoutMs, exec.signal, escalated, args.stdin)
+      // What the session did that the body cannot show, in the order the model has to read it.
+      const before: string[] = []
+      // The command was caught waiting for a keyboard, so give it what a person at a terminal would: a
+      // terminal of its own, in this same call. Its stdin is still `script`'s end-of-file, so what comes
+      // back is the program's own complaint instead of a deadline — measured with `sudo`, which answered
+      // with its own three lines in 9.4 s of a 25 s call (2026-10-05) after having sat on the pipe for
+      // the whole deadline before. `tty: false` vetoes this, because a caller that only wanted the plain
+      // pipe must be able to insist on it.
+      // `run.restarted` is deliberately not part of this: a starved call whose shell had to be restarted
+      // (a builtin that read the terminal blocked the shell itself) still wants the pseudo-terminal
+      // retry — the command never did anything but wait.
+      if (!escalated && !vetoTty && run.starved !== undefined && !run.aborted) {
+        const first = { kind: run.starved, atMs: run.starvedAtMs ?? 0, viaRoot: run.starvedViaRoot === true, shellInterrupted: run.starvedShellInterrupt === true }
+        logging?.debug?.(`wsl-bash: stopped a command waiting for input (${first.kind}${first.viaRoot ? ' via the root plane' : ''} at ${first.atMs}ms) and re-running it on a pseudo-terminal`)
+        escalated = true
+        before.push(retryNote(first.kind, first.atMs, first.viaRoot, first.shellInterrupted))
+        command = wrap(wrapForTty(args.command))
+        // What the first attempt did to the shell is a fact about this call, not about the attempt it
+        // was found in: a builtin that read the terminal blocks the shell itself, so the shell is
+        // restarted here, and what that restart could not restore has to reach the note. Measured
+        // 2026-10-06: dropped with the first run, the loss went unreported on exactly the path that
+        // loses the most.
+        const firstRun = run
+        const retry = await session.run(command, timeoutMs, exec.signal, true, args.stdin)
+        run = { ...retry,
+          restarted: retry.restarted || firstRun.restarted,
+          skipped: retry.skipped ?? firstRun.skipped }
 ```
 
 </details>
 
 #### 缺口
 
-- 缺少按合格任务统计的总尝试、失败、人工分钟与现金/资源量
-  **影响**：无法比较总成本与净收益
-  **进一步探讨**：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 同时按合格交付数汇总总尝试、人工分钟和资源量。
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 实现是否可靠可维护，哪些设计可复用，移植代价是什么？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-固定源码把核心职责落在 src/index.ts 及相邻模块，入口可追踪；inventory 仅作规模和静态候选索引。可复用的是“将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面”的显式接线方式。移植必须重做宿主API、权限、状态持久化和“分别验证 bash 权限、文件 writableRoots 和 /mnt 路径引用｜权限平面差异被记录，越界写入被拒绝”验证，不能从测试脚本存在推断当前环境可靠。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
-
-固定源码用于评价职责和宿主耦合。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
- * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
- *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
- *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
- *    instead of being a mode itself. The channel follows the release:
- *    `0.1.7-alpha.1+` stopped scanning any user preset root and builds its roster
- *    from declarative `@deepseek-ai/dsh-agent-preset` rows, so there a variant
- *    is a *declaration registered through `ctx.agentPresets`* — and only that
- *    path rewrites the absolute provider specifiers below into `file:` URLs,
- *    because a registered preset's entry tree does not translate them the way
- *    the boot-time Include does; earlier releases still get a variant directory
- *    under `<dshHome>/.agent-presets/`, whose legacy standalone `wsl` directory
- *    and stale variants are removed on boot.
-```
-
-</details>
-
-**依据 2 · 作者声明**：[package.json:1-26](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/package.json#L1-L26)
-
-包清单用于确认版本、分发与依赖面。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-{
-  "name": "dsh-wsl-workspace",
-  "description": "WSL workspace support for DeepSeek Harness: add a WSL workspace from the web GUI and run the whole agent session (bash + file tools) inside the WSL distribution, VS Code Remote-WSL style. No toolchain install inside WSL required. Works on DSH Desktop as well as dsh web.",
-  "version": "0.7.9",
-  "type": "module",
-  "packageManager": "npm@11.19.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace.git"
-  },
-  "main": "lib/index.js",
-  "scripts": {
-    "clean": "node scripts/clean-lib.mjs",
-    "build": "npm run clean && tsdown && node scripts/verify-lib.mjs",
-    "verify": "node scripts/verify-lib.mjs",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "typecheck:gate": "node scripts/typecheck-gate.mjs",
-    "verify:install": "node scripts/verify-install.mjs",
-    "verify:artifact": "node scripts/verify-artifact-identity.mjs",
-    "verify:lib-sync": "node scripts/verify-lib-sync.mjs",
-    "verify:plane": "node scripts/verify-plane-log.mjs",
-    "ci:pinned": "node ci/install-pinned.mjs",
-    "test:unit": "node --experimental-strip-types --test tests/variants.test.ts tests/paths.test.ts tests/references.test.ts tests/locales.test.ts tests/readme-compat.test.mjs tests/wsl-output-decode.test.ts tests/default-distro-parity.test.ts tests/deliberate-reds.test.mjs tests/probe-hygiene.test.mjs tests/client-classnames.test.ts tests/support/fake-child-process.test.mjs tests/wsl-env.test.ts tests/wsl-bash-protocol.test.ts tests/wsl-bash-starve.test.ts tests/wsl-bash-tty.test.ts tests/pty-readiness.test.mjs scripts/check-portable-spelling.test.mjs scripts/check-unit-closure.mjs tests/tool-contract.test.mjs tests/script-reachability.test.mjs tests/parity-claims.test.mjs tests/workflow-shape.test.mjs tests/docs-debt.test.mjs tests/wsl-run-code-guard.test.ts",
-    "lint:portability": "node scripts/check-portable-spelling.mjs",
-    "lint:portability:strict": "node scripts/check-portable-spelling.mjs --strict",
-    "test:win32": "node --experimental-strip-types --test tests/wsl-skills.test.ts tests/fs-policy.test.ts tests/relay-node.test.mjs",
-```
-
-</details>
-
-#### 缺口
-
-- 未执行仓库测试、安装和真实宿主压力/升级验证
-  **影响**：维护性和异常恢复只能作源码级判断
-  **进一步探讨**：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 在此之外记录构建、卸载和宿主升级后的回归面积。
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 由贡献与反例可推导什么未验证方向，如何证伪？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-由“将工作区选择、路径翻译、shell、文件、搜索与客户端入口组合成会话级 WSL 运行平面”和“WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过”推导的新方向是可探索在会话创建时生成可见的双平面权限清单，并对 bash 与文件工具分别给出可执行的最小权限探针。它不是当前能力。最小验证为在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 若合格结果不改善、误差/副作用越界或恢复负担高于“手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换”，即削弱或推翻假设。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
-
-假设只以已实现机制和边界为推导起点，不表示源码已经实现新方向。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
- * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
- *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
- *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
- *    instead of being a mode itself. The channel follows the release:
- *    `0.1.7-alpha.1+` stopped scanning any user preset root and builds its roster
- *    from declarative `@deepseek-ai/dsh-agent-preset` rows, so there a variant
- *    is a *declaration registered through `ctx.agentPresets`* — and only that
- *    path rewrites the absolute provider specifiers below into `file:` URLs,
- *    because a registered preset's entry tree does not translate them the way
- *    the boot-time Include does; earlier releases still get a variant directory
- *    under `<dshHome>/.agent-presets/`, whose legacy standalone `wsl` directory
- *    and stale variants are removed on boot.
-```
-
-</details>
-
-#### 缺口
-
-- 假设尚无实现、需求频率或效果数据
-  **影响**：不能计入插件贡献、创新效果或商业机会
-  **进一步探讨**：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 只验证最小原型，不改变当前能力状态。
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 对谁值得观察或试用，成功与停止标准是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-当前结论为小范围试用。Windows 上长期使用 WSL 工程者可在隔离项目试用，先核对双平面权限边界与固定 DSH 版本。 试用成功标准是“模型看到一致的 Linux 路径，命令与文件工具指向同一项目且写入边界可解释”，并且 不同发行版/宿主组合的端到端一致率、同任务下越界命令与文件写入的差异、大仓库性能、符号链接与特殊路径正确率 有可接受结果；停止标准包括发生WSL bash 不受 Windows ACL 沙箱包裹，文件工具与 bash 的隔离边界不同；源码不能证明所有发行版和宿主组合均通过所述核心风险、出现未知副作用自动重试，或总人工/资源成本高于“手动在 WSL 终端运行命令，再在 Windows/UNC 路径与 DSH 文件工具之间转换”。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:1-19](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/README.md#L1-L19)
-
-作者材料限定可操作范围；采用结论由研究者结合限制给出。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-````text
-# dsh-wsl-workspace
-
-[![dsh.so security](https://www.dsh.so/badge/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace) [![dsh.so install](https://www.dsh.so/badge/install/dsh-wsl-workspace.svg)](https://www.dsh.so/artifact/dsh-wsl-workspace)
-
-[English](README.md) · [中文](README.zh.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Português](README.pt.md) · [Русский](README.ru.md)
-![alt text](https://raw.githubusercontent.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/HEAD/image-3.png)
-Add a WSL workspace from the DeepSeek Harness web GUI and run the whole agent session — bash commands and file reads/writes — inside a local WSL distribution with Linux paths. Nothing needs to be installed inside WSL. The session can reach both WSL and Windows at the same time: bash commands run inside the WSL distribution, while Windows files stay accessible via `/mnt/<drive>` (for example `/mnt/c/Users/...`).
-
-## Install
-
-Pick one of the three ways below, then restart `dsh web`:
-
-```powershell
-# 1) npm package
-dsh plugin --profile web add dsh-wsl-workspace
-
-# 2) GitHub repository (ships the prebuilt lib/, no local build required)
-dsh plugin --profile web add https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace
-
-````
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:1-15](https://github.com/dsh-wsl-workspace-maintainers/dsh-wsl-workspace/blob/fff73002cfa3cfe9ffadd21df95631a8e6c2369d/src/index.ts#L1-L15)
-
-源码证据只支撑窄范围试用/观察，不构成安装验收。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-/**
- * Host half of dsh-wsl-workspace. Three responsibilities:
- *
- * 1. Publish a `wsl-<mode>` variant for every healthy roster preset, so the
- *    WSL execution world — `shell-wsl` + `fs-wsl` behind one entry-local
- *    realm, with `tool-bash`/`tool-fs` consumers — composes with ANY mode
- *    instead of being a mode itself. The channel follows the release:
- *    `0.1.7-alpha.1+` stopped scanning any user preset root and builds its roster
- *    from declarative `@deepseek-ai/dsh-agent-preset` rows, so there a variant
- *    is a *declaration registered through `ctx.agentPresets`* — and only that
- *    path rewrites the absolute provider specifiers below into `file:` URLs,
- *    because a registered preset's entry tree does not translate them the way
- *    the boot-time Include does; earlier releases still get a variant directory
- *    under `<dshHome>/.agent-presets/`, whose legacy standalone `wsl` directory
- *    and stale variants are removed on boot.
-```
-
-</details>
-
-#### 缺口
-
-- 未有真实用户频率、迁移意愿与固定版本宿主验收
-  **影响**：不能升级为持续安装或生产采用
-  **进一步探讨**：在同一可丢弃仓库对照原生 Windows 工作区和 WSL 工作区，执行20个含空格、符号链接、/mnt与越界写入的任务；记录路径正确数、拒绝数、人工修正分钟和残留进程，任何静默跨界或路径错投即否定试用。 试用结束还需访谈目标用户的重复频率与退出意愿。
+- 跨平面恰好一次语义及账本收益未验证
+  **影响**：新假设不能算当前能力
+  **进一步探讨**：先以无外部副作用的标记文件命令做隔离对照，记录重复动作和恢复判断
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

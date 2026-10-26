@@ -12,14 +12,14 @@
 | --- | --- | --- |
 | [@240xu/dsh-session-search](#plugin-1390987906-root) | 对本地 DSH 会话日志建立消息索引，提供跨会话关键词搜索、定位摘录和独立面板。 | 单人非敏感本地范围试用，先验已知词与长消息尾部边界，命中后核原文；完整全文/多租户需求暂缓。 |
 | [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
-| [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 把待核成果按维度交给只读工具受限的红队子agent，收集候选缺陷，由读者逐条认定或驳回，并保存定稿与旧缺陷复审历史。 | 有条件试用，须真实connection认证栅栏、可信同信任用户、单进程状态与人工核证据；先小规模匿名成果。 |
+| [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 按维度拉起红队评审成果，汇集候选缺陷，由用户逐条认定或驳回并保存复审历史。 | 当前先观察；确认目标profile硬只读和Web访问边界后再对非关键成果试用，逐条复现缺陷并计实际模型与人工成本。 |
 | [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。 | 先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。 |
 | [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
-| [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查方法、确定性来源路由和可选Jev降档判据，要求结论附可追溯原文。 | 已有可信搜索/正文环境可试用公开事实研究，Jev按隐私选装，结论依证据并独立复核。 |
+| [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查流程、来源路由和可选Jev判据，生成带原文定位的报告。 | 先选可对照原始资料的事实点，确认正文链可用，再人工核对转载关系及每条引文后试用；不要把模型判据作为最终裁定。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](#research-q03)。 |
 | [dsh-insight](#plugin-1336649545-root) | 用需求匹配、环境配方、健康评分、静态安全扫描与统一 verdict 辅助选择 DSH 插件。 | 适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。 |
 | [dsh-ledger-memory](#plugin-1412857520-root) | 管理项目台账、决策目标经验卡、活动日志、压缩原文指针与跨会话交接。 | 先在可备份的V3非关键项目核对写入、授权、stage和压缩回读；定期人工比较记忆与实际工作区，出现审计或文本缺口即暂停自动依赖。 |
@@ -34,7 +34,7 @@
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](#research-q03)。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
-| [dsh-sciwork](#plugin-1416950630-root) | 把科研Agent预设、普通文件库、文献与期刊档案、绘图指引和投稿材料面板接到同一工作流。 | 先观察，在无敏感单人副本核引用/路径/快照/恢复；档案检查和导出不等投稿合规。 |
+| [dsh-sciwork](#plugin-1416950630-root) | 提供科研Agent、文件资料库、文献期刊档案、绘图适配和投稿工作台。 | 先用副本课题验收导入、计划确认和回执，组织功能限定试用；投稿包逐文件及逐引文复核，遇写超时先查实际状态。 |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。 | 适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。 |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 |
 | [dsh-source-deck](#plugin-1422910686-root) | 在会话侧栏后台查找资料，筛选和对比候选，并把保留项的不可变快照引用到当前草稿。 | 在明确支持的RC环境用非敏感选型任务试用，先检查搜索/抓页/spawn可用，再核实候选URL和关键许可。 |
@@ -43,7 +43,7 @@
 | [dsh-teaching-board](#plugin-1358319839-root) | 在 DSH 会话中展示 HTML 板书，支持圈画、方向选择及把截图作为图片消息回传。 | 先观察并补齐消息来源和提交确认，再以非敏感课程在隔离 profile 检查四工具、增量更新和截图反馈；成功需图片进入正确会话且不覆盖用户草稿。 |
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
-| [dsh-web-tools](#plugin-1335219884-root) | 为DSH统一搜索与抓取接口适配多Provider、自定义JSON源及X/小红书原生浏览器检索。 | 可信本机公开任务试用并核原始来源/预算，严格隔离/全量内容要求先核具体缺口。 |
+| [dsh-web-tools](#plugin-1335219884-root) | 为DSH提供多供应商网页搜索与抓取，以及小红书和X浏览器来源接入。 | 建议在可信本机、公开材料和小预算下试用，逐项回原文验收并记录全部尝试成本。 |
 | [dsh-weekly-panel](#plugin-1400385991-packages-dsh-weekly-panel) | 将外部 DSH 插件周榜代理到 Web 主面板，展示排行、模型与推荐位并复制安装命令。 | 仅作非关键周榜浏览观察；复制安装命令及赞助内容前核原始仓库和数据，关键决策待修正新鲜度提示。 |
 | [dsh-weknora-archive](#plugin-1412897932-root) | 提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。 | 已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。 | 先 status 后公开 URL 样本 fetch，私网防线按 Obscura 版本独立验；交互用 MCP。 |
@@ -88,15 +88,15 @@
 
 ## [@y9931666/dsh-plugin-crossfire](../../plugins/9931666--dsh-plugin-crossfire/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-crossfire) [![npm 30d 669](https://img.shields.io/static/v1?label=npm+30d&message=669&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/9931666/dsh-plugin-crossfire) [![npm 30d 737](https://img.shields.io/static/v1?label=npm+30d&message=737&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-crossfire)
 
-> **用途**：面向已形成方案、代码解释或其他待核成果的人。开评审明确subject/立场/维度，红队专家挑缺陷，收集成逐条pending，由读者认定/驳回并写理由，定稿保历史；复审只核上一轮认定项。目标是让缺陷与个人裁决可见，而不是让多个模型投票自动证真。
+> **用途**：给已有定稿成果的用户组织反方复核，候选缺陷仍需人工复现与裁定。
 
-> **亮点**：将只读工具受限专家、真实persona/发言、pending缺陷与人工理由/历史复审接为一套可追踪流程，不让专家自动作最终真值。详见[Q02](#research-q02)。
+> **亮点**：将多Agent反方意见变成用户逐条裁决和可复审旧账，persona执行/展示同源并保存轮次，不等自动证明成果正确。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：Web缺connection时放行，actor和preferredRoot来自body非强授权；锁仅进程内，report发言/预算非事务，RPC collect没透传坏行数。endorsed/settled仍是人的状态而非独立复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **思考**：0.2.1+ startActivation不带toolFilter、只读退为文字；缺Connection fence放行，body session比较非强授权；预算文本估算与转录/记账非事务。[Q03](#research-q03)、[Q04](#research-q04)
 
-> **建议**：可探索认证actor/允许根与record版本绑定、缺陷证据版本收据和可恢复发言/预算事件，比较未授权接受/缺口/复核成本；未实现。详见[Q07](#research-q07)。
+> **建议**：未验证方向是成果摘要+复现收据分层裁决、已验只读preset和连接身份能力授权，用真假缺陷/可写工具/故障矩阵检验误认定与总成本。[Q06](#research-q06)
 
 <a id="plugin-1363429979-plugin-memory"></a>
 
@@ -186,15 +186,15 @@
 
 ## [dsh-fact-check](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,388](https://img.shields.io/static/v1?label=npm+30d&message=1%2C388&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,417](https://img.shields.io/static/v1?label=npm+30d&message=1%2C417&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
 
-> **用途**：读者核实公开主张/数字，需真实正文、独立来源与反证，而非模型记忆。
+> **用途**：给研究者组织公开资料核查，合格交付需逐事实点核对来源与未确定项。
 
-> **亮点**：将来源独立、反证、未知分级和可选降档判据组织为可复用流程，取证/判断仍由执行者承担。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：把成熟核查方法组织为可反复执行、可审阅的报告协议，路由与判据分离便于替换环境；并非自动事实真值算法。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：提示规则不自动保证正文/引用真实或来源独立，小语料判据也不等泛化准确；URL无版本快照影响长期复核。详见[Q02](#research-q02)。
+> **思考**：引用模板不能证明原文真实、来源独立或结论蕴含；双轨是规范口径，Jev数值也没有独立真值保证。[Q03](#research-q03)
 
-> **建议**：可探讨逐主张证据账本，绑定源头/固定原文/位置/矛盾和判据版本再装配报告；有隐私/存储和维护成本，未验证。详见[Q05](#research-q05)。
+> **建议**：未验证假设是固定来源快照并建立断言—摘录—源头图，以复核成功率和人工耗时检验其相对纯URL报告的价值。[Q06](#research-q06)
 
 <a id="plugin-1336585522-root"></a>
 
@@ -398,13 +398,13 @@
 
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork)
 
-> **用途**：单人科研组织和写稿/图/投稿准备，须人工核原文、统计和现行刊方要求。
+> **用途**：给研究者组织文献、图、稿和投稿材料，科学与引用真实性需人工逐项复核。
 
-> **亮点**：普通文件科研库把方法指引、登记、引用与投稿材料接线集中，便于迁移和复用，非新科学方法。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：普通文件真相与同一动作清单连接面板、agent和CLI，新动作有参数/root绑定确认；Origin能力归上游，不等科学正确认证。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **思考**：字段/引用键检查不证明原文支持；面板检查较CLI弱，fail仍可导出；词法路径和并发快照不构成真实隔离/一致收据。详见[Q02](#research-q02)。
+> **思考**：legacy路径隐式代签；Promise.race超时不取消底层写，回执尽力落盘；格式fail仍可导出，先hash后重读不保证并发快照一致。[Q03](#research-q03)、[Q04](#research-q04)
 
-> **建议**：可探讨一致快照与分级证据收据，绑定实际ZIP字节、档案版本和人工支持关系，事务/存储成本未验证。详见[Q05](#research-q05)。
+> **建议**：未验证方向是冻结导出字节、分离机械与语义放行，以及operationId回读未知结果后重试；故障矩阵检验一致摘要和不重复执行。[Q06](#research-q06)
 
 <a id="plugin-1334269686-root"></a>
 
@@ -524,13 +524,13 @@
 
 [![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=yellow&logo=github&style=flat)](https://github.com/A3Boy/dsh-web-tools)
 
-> **用途**：需要多源可用性和社媒详情的研究任务，必须区分发现片段/原生详情与完整范围。详见[Q01](#research-q01)。
+> **用途**：适合有重复资料检索与服务中断问题的用户，合格材料仍须来源可追溯且覆盖问题。原生单服务对照见 [Q01](#research-q01)。
 
-> **亮点**：在标准Web接口下保留服务商特性、健康容灾、自定义协议与原生平台接线，减少逐接口维护。详见[Q01](#research-q01)。
+> **亮点**：统一宿主接口下保留后端差异并显式处理平台失败，是检索工程组合增量；不是检索算法或完整语义理解证明。见 [Q01](#research-q01)。
 
-> **思考**：统一外包装丢截断/最终URL/检索方式，off仅限制两Web工具、required失败完成也放行；通用页DNS预检未绑定最终socket。详见[Q04](#research-q04)。
+> **思考**：工具成功和固定truncated:false不能代表来源完整、约束保真或图片/评论已覆盖；长查询与规则启发式还会改变检索语义。见 [Q03](#research-q03)。
 
-> **建议**：从源到工具贯穿策略/完整性/成本收据，并给page fetch预检IP绑定；按裁剪/降级/DNS/模式与预算反例比较误用，未验证。详见[Q09](#research-q09)。
+> **建议**：未验证假设是输出约束执行、覆盖和降级来源证明，帮助减少可用性与完整性混淆；对照及否定条件见 [Q05](#research-q05)。
 
 <a id="plugin-1400385991-packages-dsh-weekly-panel"></a>
 
