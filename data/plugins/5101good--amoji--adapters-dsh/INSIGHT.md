@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[833cfc8](https://github.com/5101good/amoji/tree/833cfc8a332810ef195a1e0466259ef7687b3a65/adapters/dsh)
+分析版本：[a22c633](https://github.com/5101good/amoji/tree/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：向 DSH 添加固定语义表情、库管理、表情包与市场发布入口。
+> **实现功能**：给 DSH 提供图形表情与固定文字语义，支持表达、搜索、精确版本解析和表情库管理。
 
-> **核心亮点**：相对粘贴图片或普通emoji，关键增量是固定语义、版本化库与原生消息回执组合，使图像、语义和操作身份可核对；核心能力属于共享库，DSH组件贡献在宿主桥接。[Q01](#research-q01)
+> **核心亮点**：相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：宿主接受、消息落盘与图片渲染是不同事实，不能用accepted宣布完整送达；本地共享服务、宿主版本及不同提供方工具续答仍约束可用性。[Q03](#research-q03)
+> **风险与缺陷**：accepted不等于原生消息observed，文字送达也不等于图片rendered；未知结果重发可能重复。平台与模型支持范围受限。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 固定语义表情相对普通图片的可核查增量是什么？](#detail-section-11)
-  - [Q02 · 共享核心怎样连接到DSH工具与原生消息？](#detail-section-12)
-  - [Q03 · 为什么接受、观察与渲染不能合并成送达？](#detail-section-13)
-  - [Q04 · 共享服务和人工确认是否值得？](#detail-section-14)
-  - [Q05 · 统一核对页是否减少未知结果重复操作？](#detail-section-15)
+  - [Q01 · 表情相对图片和短语新增什么？](#detail-section-11)
+  - [Q02 · 图与语义如何进入真实会话？](#detail-section-12)
+  - [Q03 · 送达和版本承诺有哪些限制？](#detail-section-13)
+  - [Q04 · 依赖与总成本如何承担？](#detail-section-14)
+  - [Q05 · 可检验什么新假设，当前如何采用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向希望以图形表达固定意图、同时让模型读取明确语义的用户；合格交付包含指定版本表情、对应语义与独立的消息和显示状态。
+> **用途**：在同一DSH对话以图形表达意图，要求资产版本、文字语义与送达状态可核对。
 
-普通图片和emoji可直接发送，但模型读到的语义与版本不稳定；人工说明可替代固定语义协议，代价是每次重复解释和自行核对送达。
+普通emoji、图片加说明或固定短语均为低负担替代；本轮没有同条件证明图形表达比短语更好。
 
 <a id="detail-section-3"></a>
 
@@ -52,66 +52,66 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 搜索与解析表情 | 查固定语义资产 | 依赖共享库和精确版本 |
-| 原生发送及状态核对 | 对话内表达 | accepted、observed、rendered须分别判断 |
-| 库与包管理 | 草稿、历史及导入导出 | 动作启用与安装分离 |
-| 市场投稿 | 上传及审核版本 | 需设备授权和人工确认 |
+| 表达/搜索/解析 | 模型使用固定文字语义 | 三工具绑定真实会话与回合 |
+| 图像呈现 | 人查看表情与语义 | rendered需单独回执，嵌套工具不保证展示 |
+| 库与市场管理 | 保存精确版本和包 | 共享服务/备份/远端状态需维护 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=24、作者指定DSH基线 | 必需 | 运行Host和Client | 新版本兼容未知 |
-| API2/数据库4共享服务及四项能力 | 必需 | 库、消息和包操作 | 握手拒绝，不能靠刷新假装成功 |
-| 模型提供方 | AI建议才需 | 生成文字建议 | 可手工创作；按提供方计费 |
-| 市场连接及设备授权 | 发布才需 | 上传和审核 | 本地库仍可用 |
+| Node≥24、声明DSH接口版本 | 启动必需 | 宿主工具/会话/展示 | 新宿主或平台不假定兼容 |
+| 完整tgz、共享服务、SQLite与Sharp | 启动/资产必需 | 库、渲染与协议 | 单入口源文件不能替代打包 |
+| 宿主已配置模型 | AI建议可选 | 文字创作建议 | 可手动编辑，不承诺免费 |
+| 市场origin与设备授权 | 市场发布必需 | 安装/投稿状态 | 断网核对原operation |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户在隔离profile安装核对后的发布包并启动 | 共享服务能力握手通过 |
-| 2 | 在选择器选固定表情并发送 | 分别核对原生消息observed与图片rendered |
-| 3 | 结果未知时核对原请求 | 不另建发送操作盲重试 |
+| 1 | 用户备份库并隔离profile安装完整包 | 协议握手与资产可读 |
+| 2 | 用户发固定revision表达 | 原生文字observed且图片独立rendered |
+| 3 | 用户模拟断连并核对原request | 不另建请求盲重试，异常回退文字 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | Node依赖、共享核心和本地存储，金额未知 | 安装包核对、profile隔离 | 非离线安装 |
-| 持续使用 | 库与资产存储；可选模型费用未知 | 创作、预览和明确入库确认 | 只发文字意图不代表模型免费 |
-| 失败恢复 | 服务重连、请求核对资源 | 查看原操作与宿主回执，时间未知 | 不自动重放未知操作 |
+| 首次使用 | Node/Sharp/本地共享库资源，金额未知 | profile隔离、安装和备份，耗时未知 | 发布tgz完整性需验收 |
+| 持续使用 | 资产存储、渲染；可选模型建议计费 | 语义、库与市场版本维护 | 理解/节费收益未测 |
+| 失败恢复 | 重连、核对及备份资源未知 | 核对原request和图像状态 | 卸载不删除共享库 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 固定语义与回执 | 版本库与Host状态区分有源码 | 跨提供方理解与显示一致率 |
-| 创作和投稿 | 作者描述有完整人工确认链 | 实际创作耗时、市场价值和需求 |
+| 固定语义 | 精确revision与文字工具接线 | 理解准确率 |
+| 可追溯送达 | accepted/observed/display分离 | 当前宿主恢复可靠性 |
+| 表情管理 | 共享库与版本接口存在 | 维护负担和跨平台表现 |
 
-> **思考**：宿主接受、消息落盘与图片渲染是不同事实，不能用accepted宣布完整送达；本地共享服务、宿主版本及不同提供方工具续答仍约束可用性。[Q03](#research-q03)
+> **思考**：accepted不等于原生消息observed，文字送达也不等于图片rendered；未知结果重发可能重复。平台与模型支持范围受限。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对粘贴图片或普通emoji，关键增量是固定语义、版本化库与原生消息回执组合，使图像、语义和操作身份可核对；核心能力属于共享库，DSH组件贡献在宿主桥接。[Q01](#research-q01)
+> **亮点**：相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相对粘贴图片或普通emoji，关键增量是固定语义、版本化库与原生消息回执组合，使图像、语义和操作身份可核对；核心能力属于共享库，DSH组件贡献在宿主桥接。[Q01](#research-q01)
+相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-共享客户端先校验API与能力，再建立lease；断连明确中断上下文，恢复以原操作核对代替自动重放，值得借鉴。DSH适配入口小，但承担会话、模型和文件显示的多个状态边界，不能以入口LOC代表维护负担。
+会话/回合身份捕获与异步后复核值得借鉴；文字语义与图像meta分离降低模型视觉依赖。移植要实现宿主持久化、RPC与回执语义，源入口不含全部发布runtime，不能将其视作自足单文件插件。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-宿主接受、消息落盘与图片渲染是不同事实，不能用accepted宣布完整送达；本地共享服务、宿主版本及不同提供方工具续答仍约束可用性。[Q03](#research-q03)
+accepted不等于原生消息observed，文字送达也不等于图片rendered；未知结果重发可能重复。平台与模型支持范围受限。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-目前建议观察。需要固定语义表情的团队可先核对共享服务和指定宿主，再做隔离试验；未知结果必须核对原请求，不能将接受入队当作完整送达。[Q04](#research-q04)
+有限试用非敏感表达，锁定声明版本并分别核对文字、图像与效果；不把表情当业务授权。见 [Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。
+源码支持图文语义分离及回执设计；人机理解收益、发布包与宿主运行未验证；分层确认收益是假设。
 
-- 已检查：作者 README、包清单、源码路径 adapters/dsh/README.md、adapters/dsh/index.mjs、src/dsh/host.ts、src/shared-client.ts 及固定范围 inventory；组件：adapters/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 adapters/dsh/index.mjs、adapters/dsh/package.json、src/dsh/host.ts 及固定范围 inventory；组件：adapters/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：抽读DSH入口、共享连接和宿主提交/回执；不把作者描述的macOS验收升级为本轮宿主执行。
-- 下一步：用同一固定表情和requestId覆盖断连前后、页面刷新、消息已观察但图片失败三种情形，检查重复消息和状态归因；方案未执行。
+- 边界：仅 adapters/dsh 组件及明确共享依赖 src/dsh/host.ts 抽读；统计仅组件，不把全仓库当插件；未执行安装、构建、模型、市场或宿主操作。
+- 下一步：以相同表达任务比较理解、重复发送、确认正确率和修正时间，单独核验当前tgz安装/重连/卸载。
 
 **分析版本**
 
 - **仓库**：[5101good/amoji](https://github.com/5101good/amoji)
-- **版本号**：1.1.0（[固定提交 833cfc8](https://github.com/5101good/amoji/tree/833cfc8a332810ef195a1e0466259ef7687b3a65)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.0.0（[固定提交 a22c633](https://github.com/5101good/amoji/tree/a22c633ad9ee14353a4110461641f3f2fbfa00d3)）
+- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +138,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是将同一操作的消息观察与渲染回执做成统一核对页，减少未知结果后的重复发送；以断连、刷新和重启下的重复数与人工核对时间检验，若回执缺失仍无法归因则不成立。[Q05](#research-q05)
+未验证的分层办结状态可能减少误确认/重复发送；与普通图片和短语对照，收益不成立则不增加交互负担。见 [Q05](#research-q05)。
 
-用同一固定表情和requestId覆盖断连前后、页面刷新、消息已观察但图片失败三种情形，检查重复消息和状态归因；方案未执行。
+以相同表达任务比较理解、重复发送、确认正确率和修正时间，单独核验当前tgz安装/重连/卸载。
 
 <a id="detail-section-9"></a>
 
@@ -152,117 +152,107 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .mjs | source | 1 | 27 | 27 | 1 | — |
-| .md | source | 2 | 106 | — | — | 2145 |
+| .md | source | 2 | 106 | — | — | 2381 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+created%3A2026-09-23T01%3A49%3A38.790Z..2026-10-23T01%3A49%3A38.790Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A49%3A38.790Z..2026-10-23T01%3A49%3A38.790Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 
 
-统计日期：2026-10-23。
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：5101good/amoji 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？
+**插件研究总目标**：固定语义表情能否让 DSH 人机表达更可追溯，同时避免将显示或入队误认成消息送达？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 固定语义表情相对普通图片的可核查增量是什么？
+### Q01 · 表情相对图片和短语新增什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-作者把产品定位为人看图、模型读固定语义；本组件的增量是将共享资产版本与原生DSH消息结合，而不是另造图片模型。普通图片加文字也能表达意图，但每次需人工保证图文配对并检查消息状态。这里库历史和包管理把表达固定成可重复使用资产。需求规模和模型理解改善仍没有独立对照，因此贡献只认设计与流程，不认普遍交流效率提升。
+适合希望在 DSH 对话里用图形表达确认、迟疑或决策意图，同时让模型读到固定文字含义的人。合格结果是人看到正确资产版本、模型收到对应语义，并且操作者能核对送达状态；图片漂亮或码位数量不是成功标准。相对普通emoji，增量是图像资产与不可变语义版本、交互动作和回执绑定；相对固定文字短语，可能提高人类识别效率，但此收益未测。语义标准由项目协议定义，不能将固定文本推断为跨文化理解一致。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[adapters/dsh/README.md:5-25](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/adapters/dsh/README.md#L5-L25)
+**依据 1 · 作者声明**：[adapters/dsh/README.md:5-23](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/README.md#L5-L23)
 
-作者功能、安装基线和库管理说明。
+作者图像给人、固定语义给模型与创作流程
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（19行）</summary>
 
 ````text
-面向人和 AI 的原生表情：人看图，模型读固定语义。1.1.0 以 dsh **0.1.5-rc.2** 为基线，需要 Node.js **>=24**；已有实际宿主证据的平台为 macOS arm64。
+面向人和 AI 的原生表情：人看图，模型读固定语义。2.0.0 以 dsh **0.1.5-rc.2** 为基线，需要 Node.js **>=24**。历史真机记录来自 macOS arm64，本次发行范围见[2.0.0 发布说明](https://github.com/5101good/amoji/blob/v2.0.0/docs/releases/v2.0.0.md)。
 
 ## 安装与使用
 
-从 [GitHub Releases](https://github.com/5101good/amoji/releases) 下载并核对 `amoji-dsh-1.1.0.tgz`，在文件所在目录执行：
+从 [GitHub Releases](https://github.com/5101good/amoji/releases) 下载并核对 `amoji-dsh-2.0.0.tgz`，在文件所在目录执行：
 
 第一条命令为新 profile 初始化 Web 模板并显示帮助；随后安装并启动。
 
 ```sh
 npx @deepseek-ai/dsh@0.1.5-rc.2 --profile amoji --from-default-profile web --help
-npx @deepseek-ai/dsh@0.1.5-rc.2 plugin --profile amoji add ./amoji-dsh-1.1.0.tgz --ignore-scripts
+npx @deepseek-ai/dsh@0.1.5-rc.2 plugin --profile amoji add ./amoji-dsh-2.0.0.tgz --ignore-scripts
 npx @deepseek-ai/dsh@0.1.5-rc.2 --profile amoji
 ```
 
-`amoji` 是示例 profile，替换为自己的名称。安装到已有 profile 时先保存工作，安装后重启。选择工作区即可从输入区打开“表情”，无需先发送普通文字。点图发送，详情只查看含义；新库的经典/办公各有24个同语义表情，共48个资产。
+`amoji` 是示例 profile，替换为自己的名称。安装到已有 profile 时先保存工作，安装后重启。选择工作区即可从输入区打开“表情”，无需先发送普通文字。点图发送，详情只查看含义；新库的经典与办公各有 24 个表情、实现相同的 22 个码位，共 48 个资产。选择器只提供可由人发送的表情。
 
 “管理表情”支持草稿、个人副本、不可变历史版本、归档、偏好及 `.amoji` 包导入导出。创作只有一个意图输入框；AI 文字建议默认当前会话模型，可另选宿主已配置模型。只发送文字意图和生成指令，不发送图片或会话历史。采用建议后仍需编辑、保存、图文加载预览、勾选并确认入库。手工填写无需模型请求。
 
-界面跟随 dsh 中英语言，固定语义不会随 UI 翻译改写。内置语义为中文。模型建议按所选提供方配置计费，不自动重试。
-
-## 数据与兼容
+界面跟随 dsh 中英语言，固定语义不会随 UI 翻译改写。内置表情提供中文原文与英文语义，并标明翻译来源。模型建议按所选提供方配置计费，不自动重试。
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[src/dsh/host.ts:98-111](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/dsh/host.ts#L98-L111)
+**依据 2 · 源码核查**：[src/dsh/host.ts:20-24](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/src/dsh/host.ts#L20-L24)
 
-原生消息及显示状态是源码可核查增量。
-
-<details>
-<summary>查看原文（14行）</summary>
+visual meta绑定asset/revision/hash与方向
 
 ```text
-    return [...legacy.filter(m=>!m.action_intent && !current.some(c=>c.message_id===m.message_id) && events.some(e=>references(e.data,m.message_id))),...current];
-  }
-  private async rows(sessionId: string, events: readonly DshEvent[]): Promise<HistoryEntry[]> {
-    const messages=await this.messageRows(sessionId,events);
-    if(this.collaboration && messages.some(m=>m.action_intent))await this.session(sessionId,this.lifecycle);
-    return Promise.all(messages.map(async message => {
-      const action = message.action_intent ? (this.collaboration ? await this.collaboration.receipt(sessionId,message) : {status:'unsupported' as const,reason:'host-context-unavailable'}) : undefined;
-      if (message.direction !== 'human_to_ai') return { message, meta: visualMeta(message), host: null };
-      const requestId = `amoji:${message.message_id}`;
-      const user = events.find(e => e.type === 'user/message' && record(record(e.data).source).kind === 'user' && record(record(e.data).source).rpcId === requestId);
-      const accepted = message.dsh_submission === 'accepted';
-      const turn = user ? [...events].reverse().find(e => e.type === 'turn/start' && e.seq <= user.seq) : undefined;
-      return { ...(action?{action}:{}), message, meta: visualMeta(message), host: { status: user ? 'observed' : accepted ? 'accepted' : message.dsh_submission === 'attempted' ? 'unknown' : 'prepared', requestId, ...(user ? { hostMessageId: nonempty(record(user.data).id), seq: user.seq } : {}), ...(turn ? { turnStartSeq: turn.seq } : {}) } };
-    }));
+export function visualMeta(message: StoredMessage): VisualMeta {
+  const e = message.revision; const direction = message.from.role === 'human' ? 'h2a' : 'a2h';
+  return { kind: 'amoji', messageId: message.message_id, act: message.act, direction, policy: message.glyph_policy,
+    ref: e ? { asset_id: e.asset_id, revision_id: e.revision_id } : null, visualHash: e?.visual.primary.sha256 ?? null, posterHash: e?.visual.poster?.sha256 ?? null,
+    alt: actGloss(message.act, direction).text };
 ```
 
-</details>
+#### 缺口
+
+- 没有人类理解和模型执行的同任务对照
+  **影响**：不能确认表情优于固定短语
+  **进一步探讨**：比较普通emoji、文字短语和Amoji的误解率、修正时间
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 共享核心怎样连接到DSH工具与原生消息？
+### Q02 · 图与语义如何进入真实会话？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-adapter先请求四项能力，失败即无法启动完整路径；随后构建ConnectedRuntime、profile身份、协作和发布服务。共享客户端通过发现、健康检查和lease建立受控连接，工具经Host注册。src/dsh/host.ts把已有消息匹配到宿主用户事件，而非把共享数据库存在当成原生落盘。本提交adapter的runtime路径由构建产物提供，研究通过同提交src模块追踪，未声称源码目录可直接装载。
+adapter 入口连接共享核心、要求能力握手，再安装宿主工具与路由，卸载时关闭连接。实际实现位于根src/dsh，是组件之外的共享依赖，本次额外抽读而不把整个仓库统计算到adapter。三个模型工具分别表达、搜索、解析；工具捕获真实 agent/session 和 turnBoundary，并在异步返回后复核未换会话/回合。返回给模型的是固定文字JSON，图片元信息走宿主 presentationMeta；这避免模型靠图像猜语义。可借鉴处是语义与展示分离、身份冻结及异步后复核，移植需要宿主真实会话和投影接口，不能只复制三个工具名。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[adapters/dsh/index.mjs:1-27](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/adapters/dsh/index.mjs#L1-L27)
+**依据 1 · 源码核查**：[adapters/dsh/index.mjs:1-26](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/index.mjs#L1-L26)
 
-适配入口与依赖注入。
+共享运行时和生命周期接线
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
 import {DshPublisher,MARKET_ORIGIN} from './runtime/src/dsh/publisher.js';
@@ -291,271 +281,291 @@ export async function apply(ctx) {
   }
   const publisher=new DshPublisher(dshHomePath('plugins','amoji','publisher'),runtime,process.env.AMOJI_MARKET_ORIGIN||MARKET_ORIGIN);
   installDsh(ctx, runtime, hostInstanceId, defineTool, collaboration,publisher);
-}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/shared-client.ts:31-43](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/shared-client.ts#L31-L43)
+**依据 2 · 源码核查**：[src/dsh/host.ts:93-114](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/src/dsh/host.ts#L93-L114)
 
-能力协商失败条件。
+会话/回合捕获、异步后检查与文字/元信息分离
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-  static async connect(options: ConnectOptions = {}): Promise<SharedClient> {
-    let directory = resolve(options.directory ?? dataDirectory());
-    await mkdir(directory, { recursive: true, mode: 0o700 });
-    directory = await realpath(directory);
-    const range = options.apiRange ?? { min: API_VERSION, max: API_VERSION };
-    const descriptor = await discover(directory, range);
-    const identity = await health(descriptor, range);
-    for (const capability of options.requiredCapabilities ?? []) {
-      if (!identity.capabilities?.includes(capability)) fail('CAPABILITY_UNAVAILABLE', `共享服务缺少 ${capability}；请更新服务后重新连接`);
-    }
-    const client = new SharedClient(descriptor, identity, { ...options, directory });
-    await client.openLease();
-    return client;
+  private capture(exec: DshExecution): { context: BindingContext; check(): void } {
+    const agent = exec.agent;
+    if (!agent || !agent.id || agent.session?.id !== agent.id || this.ctx.sessions.get(agent.id) !== agent.session) fail('DSH_CONTEXT_UNAVAILABLE', '缺少宿主登记的真实会话身份');
+    nonempty(exec.callId); if (exec.rootCallId !== undefined) nonempty(exec.rootCallId);
+    const session = agent.session; const sessionId = agent.id;
+    const seq = this.ctx.sessionProjections.stateOf(session, 'turnBoundary')?.openTurnStartSeq;
+    if (!Number.isSafeInteger(seq) || seq === null || seq === undefined || seq < 0) fail('DSH_TURN_UNAVAILABLE', '工具必须运行在真实开启的回合');
+    const starts = session.snapshotEvents().filter(event => event.type === 'turn/start' && event.seq <= seq);
+    if (!starts.some(event => event.seq === seq)) fail('DSH_TURN_UNAVAILABLE', '当前回合缺少原生事件，无法执行频率策略');
+    const turnOrdinal = starts.length;
+    const check = () => { exec.signal.throwIfAborted(); if (exec.agent !== agent || agent.id !== sessionId || agent.session !== session || this.ctx.sessions.get(sessionId) !== session || this.ctx.sessionProjections.stateOf(session, 'turnBoundary')?.openTurnStartSeq !== seq) fail('DSH_CONTEXT_CHANGED', '调用会话或回合已变化'); };
+    check(); return { context: { ...this.context(sessionId), turnId: `turn:${seq}`, turnOrdinal }, check };
+  }
+  tool(name: 'amoji_express' | 'amoji_search' | 'amoji_resolve'): ToolOptions {
+    return { name, description: TOOL_DESCRIPTIONS[name], parameters: TOOL_PARAMETERS[name],
+      output: { schema: { type: 'json' }, render: (_args, value) => [{ type: 'text', text: modelText(value) }], ...(name === 'amoji_express' ? { presentationMeta: (_args: unknown, value: unknown) => (record(value).meta ?? null) as JsonValue } : {}) },
+      execute: async (raw, exec): Promise<JsonValue> => {
+        const frozen = this.capture(exec);
+        const args = modelArguments(name, raw);
+        const run = await runModelTool(this.runtime, frozen.context, name, args); frozen.check();
+        return { text: JSON.stringify(run.result), ...(run.message ? { meta: visualMeta(run.message) as unknown as JsonValue } : {}) };
+      } };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/dsh/host.ts:247-260](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/dsh/host.ts#L247-L260)
+**依据 3 · 源码核查**：[src/dsh/host.ts:349-357](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/src/dsh/host.ts#L349-L357)
 
-工具与认证RPC注册。
-
-<details>
-<summary>查看原文（14行）</summary>
+三工具与认证RPC注册
 
 ```text
-export function installDsh(ctx: HostPort, runtime: AdapterRuntime, hostInstanceId: string, defineTool: (options: ToolOptions) => unknown, collaboration?: DshCollaboration, publisher?: DshPublisher): DshAdapter {
-  const adapter = new DshAdapter(ctx, runtime, hostInstanceId, collaboration, publisher);
-  for (const name of ['amoji_search', 'amoji_resolve', 'amoji_emit'] as const) ctx.tools.register(defineTool(adapter.tool(name)));
+  for (const name of ['amoji_express', 'amoji_search', 'amoji_resolve'] as const) ctx.tools.register(defineTool(adapter.tool(name)));
   ctx.effect(() => {
     const releases: Array<() => Promise<void>> = [];
     const dispose = async () => { await Promise.all(releases.splice(0).reverse().map(async release => release())); };
     try {
       releases.push(...installPackRoutes(ctx, runtime, (id, signal) => adapter.rpc('amoji/history', { sessionId: id }, signal)));
-      for (const method of [...['beginLogin','loginStatus','cancelLogin','logout','drafts','create','save','upload','submit','retrySubmit','reconcile','submissions','withdraw'].map(m=>'publisher.'+m),...['search','detail','install','installStatus','collect','uncollect','remove','updateCheck','local','visual','refreshRevocations'].map(m=>'marketplace.'+m),'reconnect', 'catalog', 'search', 'history', 'visual', 'collaboration.rules', 'collaboration.enable', 'collaboration.disable', 'collaboration.disableAll', 'collaboration.capabilities', 'collaboration.receipts', 'actions', 'submit', 'submitWithAction', 'display', 'manage', 'management']) {
+      for (const method of [...['beginLogin', 'loginStatus', 'cancelLogin', 'logout', 'drafts', 'create', 'save', 'upload', 'submit', 'retrySubmit', 'reconcile', 'submissions', 'withdraw'].map(m => 'publisher.' + m), ...['search', 'detail', 'install', 'installStatus', 'collect', 'uncollect', 'remove', 'updateCheck', 'local', 'visual', 'refreshRevocations'].map(m => 'marketplace.' + m), 'reconnect', 'catalog', 'packs', 'search', 'history', 'visual', 'collaboration.rules', 'collaboration.enable', 'collaboration.disable', 'collaboration.disableAll', 'collaboration.capabilities', 'collaboration.receipts', 'effects', 'submit', 'retract', 'choose', 'display', 'manage', 'management']) {
         const endpoint = `amoji/${method}`;
         releases.push(ctx.connection.fetch.register({ path: `/api/${endpoint}`, methods: ['POST'], requestBody: 'buffered', fetch: async request => {
-          if (request.headers.get('content-type')?.split(';', 1)[0]?.trim().toLowerCase() !== 'application/json') return new Response('content type must be application/json', { status: 415 });
-          let body: unknown; try { body = await request.json(); } catch { return new Response('body is not JSON', { status: 400 }); }
-          const parsed = clientRequestSchema.safeParse(body);
 ```
-
-</details>
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 为什么接受、观察与渲染不能合并成送达？
+### Q03 · 送达和版本承诺有哪些限制？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-Host明确按原生user事件判断observed，只有共享提交标记时仍是accepted，attempted可能unknown。显示回执又单独接受rendered/fallback/failed。这个分层限制作者宣传的送达含义，却也避免重试放大副作用。SharedClient重连注释和实现要求显式恢复并核对原请求。工程可借鉴的是操作身份贯穿状态层，而不是保证任何模型都完成工具回合。
+accepted、observed 和 rendered 是三个不同事实。host history 通过原生 user event 的 rpcId 判断 observed；曾标记accepted而没有事件时只报accepted，attempted则unknown。图片加载有独立display回执，不能从原生文字存在推断图片渲染。这个边界比笼统“发送成功”可靠，但仍依赖宿主持久化和共享服务状态，断连后必须核对原 requestId，不能新发导致重复。README 明确旧库不就地迁移、旧包不能导入，Linux/Windows及全部模型组合未验证，direct tools展示路径也不保证PTC嵌套展示。源码中存在接线不证明发布包生成的 runtime 与 client 完整可用。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/dsh/host.ts:98-111](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/dsh/host.ts#L98-L111)
+**依据 1 · 源码核查**：[src/dsh/host.ts:130-148](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/src/dsh/host.ts#L130-L148)
 
-不同事实来源决定不同状态。
+原生事件与accepted/unknown分层
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-    return [...legacy.filter(m=>!m.action_intent && !current.some(c=>c.message_id===m.message_id) && events.some(e=>references(e.data,m.message_id))),...current];
-  }
   private async rows(sessionId: string, events: readonly DshEvent[]): Promise<HistoryEntry[]> {
-    const messages=await this.messageRows(sessionId,events);
-    if(this.collaboration && messages.some(m=>m.action_intent))await this.session(sessionId,this.lifecycle);
+    const context = this.context(sessionId);
+    const messages = await this.runtime.messages(context);
+    if (this.collaboration && messages.some(m => m.effect_intent)) await this.session(sessionId, this.lifecycle);
     return Promise.all(messages.map(async message => {
-      const action = message.action_intent ? (this.collaboration ? await this.collaboration.receipt(sessionId,message) : {status:'unsupported' as const,reason:'host-context-unavailable'}) : undefined;
-      if (message.direction !== 'human_to_ai') return { message, meta: visualMeta(message), host: null };
+      const effect = message.effect_intent ? (this.collaboration ? await this.collaboration.receipt(sessionId, message) : { status: 'unsupported' as const, reason: 'host-context-unavailable' }) : undefined;
+      if (message.direction !== 'human_to_ai') {
+        if (!message.choice) return { message, meta: visualMeta(message), host: null };
+        const choiceId = `amoji-choice:${message.message_id}`;
+        const answered = events.find(e => e.type.startsWith('user/') && record(record(e.data).source).rpcId === choiceId);
+        return { message, meta: visualMeta(message), host: { status: answered ? 'observed' as const : 'prepared' as const, requestId: choiceId, ...(answered ? { hostMessageId: nonempty(record(answered.data).id), seq: answered.seq } : {}) } };
+      }
       const requestId = `amoji:${message.message_id}`;
-      const user = events.find(e => e.type === 'user/message' && record(record(e.data).source).kind === 'user' && record(record(e.data).source).rpcId === requestId);
+      const user = events.find(e => e.type.startsWith('user/') && record(record(e.data).source).rpcId === requestId);
+      // A steering signal that the agent claimed during its turn reached the model there.
+      if (user && message.signal === 'queued' && this.runtime.signalState) await Promise.resolve(this.runtime.signalState(context, message.message_id, 'delivered_to_model')).then(updated => { message.signal = updated.signal; }).catch(() => {});
       const accepted = message.dsh_submission === 'accepted';
       const turn = user ? [...events].reverse().find(e => e.type === 'turn/start' && e.seq <= user.seq) : undefined;
-      return { ...(action?{action}:{}), message, meta: visualMeta(message), host: { status: user ? 'observed' : accepted ? 'accepted' : message.dsh_submission === 'attempted' ? 'unknown' : 'prepared', requestId, ...(user ? { hostMessageId: nonempty(record(user.data).id), seq: user.seq } : {}), ...(turn ? { turnStartSeq: turn.seq } : {}) } };
-    }));
+      return { ...(effect ? { effect } : {}), message, meta: visualMeta(message), host: { status: user ? 'observed' : accepted ? 'accepted' : message.dsh_submission === 'attempted' ? 'unknown' : 'prepared', requestId, ...(user ? { hostMessageId: nonempty(record(user.data).id), seq: user.seq } : {}), ...(turn ? { turnStartSeq: turn.seq } : {}) } };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/dsh/host.ts:175-182](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/dsh/host.ts#L175-L182)
+**依据 2 · 源码核查**：[src/dsh/host.ts:243-245](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/src/dsh/host.ts#L243-L245)
 
-图片显示确认独立。
+显示回执独立登记
 
 ```text
-    }
-    if (method === 'display') {
-      const messageId = nonempty(args.messageId); const currentMessages=await this.runtime.messages(context); const message = (await this.messageRows(sessionId,events)).find(m => m.message_id === messageId);
-      if (!message || ![message.revision.visual.primary.sha256, message.revision.visual.poster?.sha256].includes(nonempty(args.hash))) fail('BINDING_MISMATCH', '显示回执不匹配消息素材');
       if (!['rendered', 'fallback', 'failed'].includes(String(args.state))) fail('INVALID_ARGUMENT', '显示状态不合法');
       signal.throwIfAborted();
-      await this.runtime.acknowledge(currentMessages.some(m=>m.message_id===messageId)?context:{...context,hostInstanceId:'local'}, messageId, args.state === 'rendered' ? 'rendered' : 'fallback');
-      return null;
+      await this.runtime.acknowledge(context, messageId, args.state === 'rendered' ? 'rendered' : 'fallback');
 ```
 
-**依据 3 · 源码核查**：[src/shared-client.ts:63-80](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/shared-client.ts#L63-L80)
+**依据 3 · 作者声明**：[adapters/dsh/README.md:25-31](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/README.md#L25-L31)
 
-断连传播与显式核对恢复。
-
-<details>
-<summary>查看原文（18行）</summary>
+数据迁移、送达状态和模型/平台边界
 
 ```text
-        let reason: unknown = new ServiceError('CONNECTION_CLOSED', '共享服务连接已断开，请重新连接并核对原会话');
-        try { while (!(await reader.read()).done) {} } catch (error) { reason = error; }
-        finally {
-          if (client.lease === lease) client.closed = true;
-          disconnected.abort(new ServiceError('CONNECTION_CLOSED', `共享服务连接已断开，请重新连接并核对原会话（${reason instanceof Error ? reason.name : '连接结束'}）`));
-        }
-      })();
-    } catch (error) { client.lease.abort(); throw error; }
-    finally { clearTimeout(deadline); }
-  }
-  /** Explicit recovery only: callers reconcile their original request; no operation is replayed. */
-  async reconnect(): Promise<void> {
-    if (this.disposed) fail('CONNECTION_CLOSED', '插件已卸载，不能恢复旧连接');
-    if (this.reconnecting) return this.reconnecting;
-    this.reconnecting = (async () => {
-      const range = this.options.apiRange ?? { min: API_VERSION, max: API_VERSION };
-      // A healthy lease is shared by concurrent operations and must not be replaced.
-      if (!this.closed) {
-```
+## 数据与兼容
 
-</details>
+Host 连接本地共享服务；产品版本为 2.0.0，协议为 Amoji 0.1，共享 API 为 `3`，数据库为 `1`。macOS 默认数据目录为 `~/Library/Application Support/Amoji/prototype`，可用 `AMOJI_DATA_DIR` 隔离。从 1.x 升级前须停止旧服务并备份完整目录。2.0.0 使用新的 `library-0.1.sqlite`，保留旧 `library.sqlite`，不要求空目录；不支持旧库就地迁移或旧 `.amoji` 包导入。不要手改数据库版本号。卸载插件不主动删除共享库。
+
+浏览器只使用宿主认证 RPC，模型只使用三个文字工具。`accepted` 表示宿主已接收入队，原生用户消息是否落盘仍需核对；`observed` 表示已观察到对应原生消息，图片 `rendered` 是独立的加载证据。断连或结果未知时核对原请求，避免另发。
+
+direct tools 是 AI 图像展示的验证路径；Code Dispatch/PTC 嵌套工具不保证显示。Linux、Windows、新版 dsh 与全部模型组合尚未验证。某提供方续答会因 `reasoning_text` 兼容返回400，插件不能保证所有模型完整工具回合成功。Codex/Claude Code legacy 不在本包范围。
+```
 
 #### 缺口
 
-- 多宿主和多提供方工具回合一致性未知
-  **影响**：不能由局部回执推断完整交流成功
-  **进一步探讨**：用相同requestId和图片资产观察各状态，并收集提供方失败原因。
+- 当前发布包、宿主与断连恢复未执行
+  **影响**：无法确认端到端送达或跨平台兼容
+  **进一步探讨**：隔离profile测试丢响应、重连、同request核对和图片失败
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 共享服务和人工确认是否值得？
+### Q04 · 依赖与总成本如何承担？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-创作、预览、勾选入库、市场投稿都是用户需要承担的步骤，适合反复使用固定表达资产的人群，偶发图片发送未必划算。安装依赖不随发布包离线附带，AI建议按已配置提供方计费，卸载不主动删除共享库，退出须另做资产和凭据管理。当前建议观察，优先核对环境和关键状态，而非扩大安装范围；没有耗时与合格表达样本，不能估算单位交流成本。
+Node≥24、特定DSH接口版本、共享服务、SQLite库与Sharp等依赖共同决定启动；源adapter导入runtime构建产物，需按发布打包流程获取完整tgz，不能直接把入口单文件装成可用插件。首次包括独立profile、备份共享库、依赖安装；持续包括资产/语义维护、渲染与本地存储。可选AI建议使用宿主配置模型并产生其调用费用，手工创作不需该模型请求；本轮没有查询价格或调用，金额未知。市场安装与发布加入远端状态和凭据责任，离线能用已安装资产不等于所有操作离线。卸载不删共享库，退出与迁移要单独负责。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[adapters/dsh/README.md:21-37](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/adapters/dsh/README.md#L21-L37)
+**依据 1 · 源码核查**：[adapters/dsh/package.json:26-48](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/package.json#L26-L48)
 
-创作确认、模型费用、兼容边界与分发条件。
+Node、宿主接口与Sharp等依赖
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-“管理表情”支持草稿、个人副本、不可变历史版本、归档、偏好及 `.amoji` 包导入导出。创作只有一个意图输入框；AI 文字建议默认当前会话模型，可另选宿主已配置模型。只发送文字意图和生成指令，不发送图片或会话历史。采用建议后仍需编辑、保存、图文加载预览、勾选并确认入库。手工填写无需模型请求。
-
-界面跟随 dsh 中英语言，固定语义不会随 UI 翻译改写。内置语义为中文。模型建议按所选提供方配置计费，不自动重试。
-
-## 数据与兼容
-
-Host 连接本地共享服务，要求 API 2、数据库4，以及 `dsh-native-delivery-v1`、`dsh-reliable-delivery-v1`、`library-management-v1`、`packs-v1`。macOS 默认数据目录为 `~/Library/Application Support/Amoji/prototype`，可用 `AMOJI_DATA_DIR` 隔离。升级保留共享数据和宿主会话；卸载插件不主动删除共享库。
-
-浏览器只使用宿主认证 RPC，模型只使用三个文字工具。`accepted` 表示宿主已接收入队，原生用户消息是否落盘仍需核对；`observed` 表示已观察到对应原生消息，图片 `rendered` 是独立的加载证据。断连或结果未知时核对原请求，避免另发。
-
-direct tools 是 AI 图像展示的验证路径；Code Dispatch/PTC 嵌套工具不保证显示。Linux、Windows、新版 dsh 与全部模型组合尚未验证。某提供方续答会因 `reasoning_text` 兼容返回400，插件不能保证所有模型完整工具回合成功。Codex/Claude Code legacy 不在本包范围。
-
-## 包内容与许可
-
-包含 Host/Client、共享核心、基础资产、构建信息与许可清单，不嵌入 `node_modules`、Sharp `.node` 或 libvips 动态库；宿主包管理器安装依赖，因此不是离线安装包。Client 使用宿主 React，Host 使用宿主服务。
-
-代码 MIT；基础素材 CC0-1.0；第三方依赖保留各自许可。参见包内 `LICENSE`、`NOTICE`、`THIRD_PARTY.json`、`THIRD_PARTY_LICENSES/` 和 `assets/base-library/`。
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "0.1.5-rc.2",
+    "@deepseek-ai/cordis": "4.0.2",
+    "@deepseek-ai/dsh-client-connection": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-llm": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-client-locale": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-home-paths": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-session": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-system-prompt": "0.1.5-rc.2"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "sharp": "0.35.5",
+    "yauzl": "3.4.0",
+    "yazl": "3.3.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./patch.yml"
+    },
+    "client": {
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[adapters/dsh/README.md:49-53](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/adapters/dsh/README.md#L49-L53)
+**依据 2 · 作者声明**：[adapters/dsh/README.md:19-29](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/README.md#L19-L29)
 
-投稿与凭据边界。
+创作调用、共享库与卸载保留
+
+<details>
+<summary>查看原文（11行）</summary>
 
 ```text
-### 从 dsh 投稿
+`amoji` 是示例 profile，替换为自己的名称。安装到已有 profile 时先保存工作，安装后重启。选择工作区即可从输入区打开“表情”，无需先发送普通文字。点图发送，详情只查看含义；新库的经典与办公各有 24 个表情、实现相同的 22 个码位，共 48 个资产。选择器只提供可由人发送的表情。
 
-在管理页的「导入与导出」先确认本地表情包，再打开「发布到市场」。向导保存说明、许可和可选动作；纯视觉包可以不带动作。浏览器登录后核对 dsh 显示的设备名称及短码，勾选确认并授权。配对五分钟内有效，取消后需重新开始；无需修改模型设置。
+“管理表情”支持草稿、个人副本、不可变历史版本、归档、偏好及 `.amoji` 包导入导出。创作只有一个意图输入框；AI 文字建议默认当前会话模型，可另选宿主已配置模型。只发送文字意图和生成指令，不发送图片或会话历史。采用建议后仍需编辑、保存、图文加载预览、勾选并确认入库。手工填写无需模型请求。
 
-完整预览后上传、校验并明确投稿。结果不明时点击「核对原操作与审核状态」，不要另建投稿。退回理由显示在原草稿；选择修订后的本地包，创建新版本重新审核。断网保留已保存草稿。访问凭据仅保存在当前 dsh profile 的 `plugins/amoji/publisher` 私有目录，不进入网页、包、模型输入或共享库；不要分享该目录。注销设备会撤销授权。
+界面跟随 dsh 中英语言，固定语义不会随 UI 翻译改写。内置表情提供中文原文与英文语义，并标明翻译来源。模型建议按所选提供方配置计费，不自动重试。
+
+## 数据与兼容
+
+Host 连接本地共享服务；产品版本为 2.0.0，协议为 Amoji 0.1，共享 API 为 `3`，数据库为 `1`。macOS 默认数据目录为 `~/Library/Application Support/Amoji/prototype`，可用 `AMOJI_DATA_DIR` 隔离。从 1.x 升级前须停止旧服务并备份完整目录。2.0.0 使用新的 `library-0.1.sqlite`，保留旧 `library.sqlite`，不要求空目录；不支持旧库就地迁移或旧 `.amoji` 包导入。不要手改数据库版本号。卸载插件不主动删除共享库。
+
+浏览器只使用宿主认证 RPC，模型只使用三个文字工具。`accepted` 表示宿主已接收入队，原生用户消息是否落盘仍需核对；`observed` 表示已观察到对应原生消息，图片 `rendered` 是独立的加载证据。断连或结果未知时核对原请求，避免另发。
 ```
+
+</details>
+
+**依据 3 · 作者声明**：[adapters/dsh/README.md:35-45](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/README.md#L35-L45)
+
+包内容和许可边界
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+包含 Host/Client、共享核心、基础资产、构建信息与许可清单，不嵌入 `node_modules`、Sharp `.node` 或 libvips 动态库；宿主包管理器安装依赖，因此不是离线安装包。Client 使用宿主 React，Host 使用宿主服务。
+
+代码 MIT；官方表情包 CC0-1.0；第三方依赖保留各自许可。参见包内 `LICENSE`、`NOTICE`、`THIRD_PARTY.json`、`THIRD_PARTY_LICENSES/` 和 `assets/official-packs/`。
+
+完整[安装恢复](https://github.com/5101good/amoji/blob/main/docs/dsh-installation.md)、[使用](https://github.com/5101good/amoji/blob/main/docs/usage.md)和[已知限制](https://github.com/5101good/amoji/blob/main/docs/release.md)见源码仓库。
+
+### 表情市场
+
+在选择器点击「表情市场」，可匿名搜索、预览精确版本、安装表情包或独立收藏单张表情。安装不会启用任何效果。检查更新会列出语义和效果差异，采用后停用旧包规则；仍可在库管理中选择已经保留的旧表情版本。移除包不会删除独立收藏、其他导入或历史。
+
+Host 启动环境的 `AMOJI_MARKET_ORIGIN` 固定市场 origin（默认正式市场 `https://amoji.ai-web.ai`）；显式本地测试可使用 loopback HTTP origin。客户端及包不能覆盖它。修改此部署配置前应关闭使用同一库的宿主及共享服务，再重新启动。用 `DSH_HOME` 和 `AMOJI_DATA_DIR` 隔离测试。
+```
+
+</details>
 
 #### 缺口
 
-- 实际资产复用频率、人工核对时间未知
-  **影响**：采用价值仍偏设计解释
-  **进一步探讨**：比较固定表达任务中人工图片流程与插件的误配、重复及总耗时。
+- 首次安装、资产管理与失败恢复工时未测
+  **影响**：总成本和采用便利性未知
+  **进一步探讨**：记录完整安装/备份/重连/卸载流程人工时
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 统一核对页是否减少未知结果重复操作？
+### Q05 · 可检验什么新假设，当前如何采用？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-这是未验证设计。既有Host已区分原生消息观察与渲染，客户端又知道连接是否失效，因而可围绕原requestId汇总完整状态。增量是用户无需跨多个界面判断是否应重发。最小实验在三种断连时刻比较统一页与现状的重复消息数和人工核对时间；若仍缺失宿主事件或没有更低重复率，不应扩大为可靠送达承诺。
+未验证假设是用户可见“文字送达/图片加载/效果执行”分层状态，比单个发送成功提示更能降低误确认与重复发送。来源是Q03的已有状态分离，而新增之处是把它作为用户办结判据。最小实验在隔离宿主对同10个表达任务注入文字入队后断连、图片失败和效果未知，对照普通图片/固定短语，记录正确确认率、重复发送与纠错时间；若状态负担增加却不减少误判，就否定。当前可有限试用非敏感表达，先锁定README声明宿主和Node版本，验证文本与图分别可观测、原请求可恢复；不得作为自动执行业务授权信号。出现语义版本错配或未知结果被当成功时停止。未验证跨平台与发布流程，不给持续安装建议。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/dsh/host.ts:216-242](https://github.com/5101good/amoji/blob/833cfc8a332810ef195a1e0466259ef7687b3a65/src/dsh/host.ts#L216-L242)
+**依据 1 · 源码核查**：[src/dsh/host.ts:130-148](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/src/dsh/host.ts#L130-L148)
 
-原请求匹配、提交与未知状态为统一核对提供推导基础。
+分层送达事实基础
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-    // Read-only preflight happens before creating the atomic message/intent pair.
-    if(action){
-      const previous=(await this.runtime.messages(context)).find(m=>m.action_intent?.requestId===requestId);
-      if(!previous){await this.collaboration!.rules(sessionId);const choice=(await this.runtime.collaboration!.choices(context,ref)).find(c=>JSON.stringify(c.selection)===JSON.stringify(action));if(!choice)fail('ACTION_UNAVAILABLE','此精确动作不可用于所选表情');this.collaboration!.validate(sessionId,choice,ref);}
-    }
-    const message = await this.runtime.receive(context, ref, requestId, action); signal.throwIfAborted();
-    const existing = (await this.rows(sessionId, await this.inspect(sessionId, signal))).find(r => r.message.message_id === message.message_id)!;
-    if (existing.host!.status !== 'prepared' || (message.action_intent?.checkpoint && existing.action?.status==='unknown')) return existing;
-    await this.flush(session); signal.throwIfAborted();
-    if(message.action_intent)await this.collaboration!.prepare(sessionId,message);
-    if (!this.runtime.dshAttempted || !this.runtime.dshAccepted) fail('CAPABILITY_UNAVAILABLE', '共享服务不支持可靠投递，请升级服务后重新连接');
-    // The single writer claims dispatch before crossing the host boundary. Any
-    // later uncertainty is reconciled by native rpcId, never by another prompt.
-    try {
-    if (!await this.runtime.dshAttempted(context, message.message_id)) {
-      return (await this.rows(sessionId, await this.inspect(sessionId, signal))).find(r => r.message.message_id === message.message_id)!;
-    }
-      signal.throwIfAborted();
-      if(message.action_intent)this.collaboration!.dispatched(sessionId,message);
-      const result = await this.ctx.sessionController.prompt({ sessionId, requestId: `amoji:${message.message_id}`, mode: 'queue', content: [{ type: 'text', text: expressionMessageText(message.revision) }] }, signal);
-      signal.throwIfAborted();
-      if (result.accepted !== true) fail('DSH_NOT_ACCEPTED', '宿主未接受输入');
-      await this.flush(session); signal.throwIfAborted();
-      await this.runtime.dshAccepted(context, message.message_id); signal.throwIfAborted();
-      return (await this.rows(sessionId, await this.inspect(sessionId, signal))).find(r => r.message.message_id === message.message_id)!;
-    } catch {
-      if(message.action_intent)this.collaboration!.uncertain(sessionId,message);
+  private async rows(sessionId: string, events: readonly DshEvent[]): Promise<HistoryEntry[]> {
+    const context = this.context(sessionId);
+    const messages = await this.runtime.messages(context);
+    if (this.collaboration && messages.some(m => m.effect_intent)) await this.session(sessionId, this.lifecycle);
+    return Promise.all(messages.map(async message => {
+      const effect = message.effect_intent ? (this.collaboration ? await this.collaboration.receipt(sessionId, message) : { status: 'unsupported' as const, reason: 'host-context-unavailable' }) : undefined;
+      if (message.direction !== 'human_to_ai') {
+        if (!message.choice) return { message, meta: visualMeta(message), host: null };
+        const choiceId = `amoji-choice:${message.message_id}`;
+        const answered = events.find(e => e.type.startsWith('user/') && record(record(e.data).source).rpcId === choiceId);
+        return { message, meta: visualMeta(message), host: { status: answered ? 'observed' as const : 'prepared' as const, requestId: choiceId, ...(answered ? { hostMessageId: nonempty(record(answered.data).id), seq: answered.seq } : {}) } };
+      }
+      const requestId = `amoji:${message.message_id}`;
+      const user = events.find(e => e.type.startsWith('user/') && record(record(e.data).source).rpcId === requestId);
+      // A steering signal that the agent claimed during its turn reached the model there.
+      if (user && message.signal === 'queued' && this.runtime.signalState) await Promise.resolve(this.runtime.signalState(context, message.message_id, 'delivered_to_model')).then(updated => { message.signal = updated.signal; }).catch(() => {});
+      const accepted = message.dsh_submission === 'accepted';
+      const turn = user ? [...events].reverse().find(e => e.type === 'turn/start' && e.seq <= user.seq) : undefined;
+      return { ...(effect ? { effect } : {}), message, meta: visualMeta(message), host: { status: user ? 'observed' : accepted ? 'accepted' : message.dsh_submission === 'attempted' ? 'unknown' : 'prepared', requestId, ...(user ? { hostMessageId: nonempty(record(user.data).id), seq: user.seq } : {}), ...(turn ? { turnStartSeq: turn.seq } : {}) } };
 ```
 
 </details>
 
-#### 缺口
+**依据 2 · 作者声明**：[adapters/dsh/README.md:27-31](https://github.com/5101good/amoji/blob/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh/README.md#L27-L31)
 
-- 统一页效果尚未验证
-  **影响**：不能记作已实现功能
-  **进一步探讨**：用故障注入对照原有核对路径后再决定。
+断连核对原请求与支持范围
+
+```text
+Host 连接本地共享服务；产品版本为 2.0.0，协议为 Amoji 0.1，共享 API 为 `3`，数据库为 `1`。macOS 默认数据目录为 `~/Library/Application Support/Amoji/prototype`，可用 `AMOJI_DATA_DIR` 隔离。从 1.x 升级前须停止旧服务并备份完整目录。2.0.0 使用新的 `library-0.1.sqlite`，保留旧 `library.sqlite`，不要求空目录；不支持旧库就地迁移或旧 `.amoji` 包导入。不要手改数据库版本号。卸载插件不主动删除共享库。
+
+浏览器只使用宿主认证 RPC，模型只使用三个文字工具。`accepted` 表示宿主已接收入队，原生用户消息是否落盘仍需核对；`observed` 表示已观察到对应原生消息，图片 `rendered` 是独立的加载证据。断连或结果未知时核对原请求，避免另发。
+
+direct tools 是 AI 图像展示的验证路径；Code Dispatch/PTC 嵌套工具不保证显示。Linux、Windows、新版 dsh 与全部模型组合尚未验证。某提供方续答会因 `reasoning_text` 兼容返回400，插件不能保证所有模型完整工具回合成功。Codex/Claude Code legacy 不在本包范围。
+```
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

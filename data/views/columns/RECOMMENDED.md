@@ -23,12 +23,15 @@
 | [dsh-nav-history](#plugin-1429464857-root) | 为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。 | 适合频繁跨会话面板的人先核对交错导航与持久化后试用，接受历史记录可能失效及不恢复滚动的边界。 |
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 频繁从 WSL 打开网页的用户可试用；把浏览器页面可见而非 PowerShell 返回作为验收。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 已稳定使用 khal 且只需只读日程的 WSL 用户可试用；必须验证时区和同步陈旧边界。 |
-| [dsh-subagent](#plugin-1425006726-root) | 把多个已登录的外部编码 CLI 注册为 DSH 子代理并提供进度与恢复。 | 已信任多个外部 CLI 且能独立验收子任务的开发者可隔离试用；先验证权限、回退预算和重启去重。 |
+| [EverOS](#plugin-1085086903-root) | 以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。 | 单用户非敏感memory root先关闭reflection建立基线，验收纠错/索引/取消和恢复后再决定扩展。 |
 | [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | 对知识密集团队有明确试用路径，但当前效果与运维成本需专项对照。 |
+| [REA](#plugin-1209966933-root) | 独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。 | 限定许可内已知JS样本的静态试用可控，先核运行时和证据准确，不启用所有动态工具。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04) |
 | [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 适合愿意核查来源的开发者在单一架构路径试用；自动门禁不替代语义审核。 |
+| [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 本地非敏感小项目可控试用，先核验DSH版本/预览/取消，协作与设计收益单独测。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04) |
 | [@indexyz/dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。 | 单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。 |
 | [LogicProbe](#plugin-1331586818-root) | 为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。 | 确定性模型检查有可控用途，但抽象忠实性与实际缺陷收益须由用户复核。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
+| [DeepSeek Harness](#plugin-1333065091-root) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | 隔离profile适合有扩展需求的开发者验证可替换契约，未证明生产安全或所有插件兼容。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04) |
 | [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 文本模型用户可用非敏感截图受控试用；先测真实图像请求和最终任务质量，核实外部服务政策、费用及宿主兼容。 |
 | [DSH Turn Rewind](#plugin-1333100390-root) | 按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。 | 在非关键项目副本演练覆盖、过期计划及rescue后可控试用，不代替外部副作用与备份管理。 |
 | [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。 | 明确原生应用需求可在单应用和可撤销任务上试用，先核对焦点策略及敏感动作确认。 |
@@ -37,14 +40,14 @@
 | [dsh-wsl-workspace](#plugin-1334205011-root) | 在DSH界面添加WSL工作区，并接入Linux命令、文件、搜索和终端工具。 | Windows/WSL长期并用者有明确集成收益，可先在临时发行版核对双平面权限、非幂等重跑和固定宿主兼容。 |
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH Web消息提供手动与自动朗读，支持Edge、Cloud及多种本地音色和长文本分块播放。 | 消息内朗读与可取消长读有明确试用价值；先用非敏感文本核对Edge外发、停止与错误恢复，再按需增加本地音色，源码级证据不足以持续安装。 |
-| [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 开放发现和预检有明确价值，能备份并使用guard路径的维护者可在可丢弃profile试用；早commit与运行验收缺口不支持持续安装结论。详见[Q07](#research-q07)。 |
+| [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 开放发现和预检有明确价值，能备份并使用guard路径的维护者可在可丢弃profile试用；早commit与运行验收缺口不支持持续安装结论。详见[Q07](../../plugins/1e0zj--dsh-plugin-mall/INSIGHT.md#research-q07)。 |
 | [dsh-web-tools](#plugin-1335219884-root) | 为DSH提供多供应商网页搜索与抓取，以及小红书和X浏览器来源接入。 | 公开资料检索有具体价值和小范围试用路径；需核来源、全文/截断和真实支出，不能把可用性当完整性保证。 |
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 适合已有Better Sidebar且文稿有备份的用户试用；保存源码、导出批注并核对报告所属会话，刷新前防丢稿。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 需要细粒度工具门禁的团队可在保留宿主沙箱前提下试用，并先验证路径旁路与规则回滚。 |
 | [dsh-verify](#plugin-1335843750-root) | 执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。 | 适合可信本地应用的有限浏览器验收试用；独立审读spec和批准基线，不把新基线或runner错误当交付通过。 |
 | [dsh-diff-approval](#plugin-1335980444-root) | 记录DSH工具变更并在差异面板审阅、保留或回退，也可导入本地版本控制改动。 | 事后审阅有清楚可逆试用范围，先备份并核回退竞态、删除例外和重启边界，不当作权限批准或完整恢复保证。 |
 | [dsh-openai-oauth](#plugin-1335992154-root) | 为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。 | 本机认证/凭据/provider适配完整，可保留替代路由试用；注意协议、明文凭据和消息/退出边界，不拓展远程多用户。 |
-| [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](#research-q06)。 |
+| [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md#research-q06)。 |
 | [@yolk_vat-y/dsh-project-memory](#plugin-1339316901-root) | 为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。 | 项目续接和可回源记忆有明确价值，可单项目控制范围；需审阅自动注入、global可见性和真实落盘，不把召回分数当事实。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | lookup-only的共享笔记、拒答和来源收据值得非敏感单用户试用；审核当前状态与ranked旧页，nightly/导入/CLI另评，不能把canonical当事实认证。 |
 | [dsh-thumb](#plugin-1341694685-root) | 将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。 | 适合愿意自行维护的个人窄屏DSH用户受控试用，先核对列定位、设置与轨迹交互并保留关闭重载路径；不把免hash当免维护。 |
@@ -59,9 +62,6 @@
 | [dsh-eteams](#plugin-1372993989-root) | 为DSH提供领队主导的多会话团队、任务执行链、成员对话与SQLite持久状态。 | 可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。 |
 | [3chat-customer-growth](#plugin-1374055714-root) | 连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。 | 适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。 |
 | [@240xu/dsh-session-lazy-view](#plugin-1377185339-root) | 以独立网页只读查看本地会话尾帧，提供时间线、搜索、统计及Markdown导出。 | 本机只读尾部排查有明确可控试用路径，全文资源与投影完整性限制必须保留。 |
-| [dsh-jev-guard](#plugin-1378138611-root) | 在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。 | 在可恢复任务作为附加事故阀试用，核对降级和日志，保留宿主原生权限/审批。 |
-| [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查流程、来源路由和可选Jev判据，生成带原文定位的报告。 | 已有搜索和正文工具、能人工核对来源的研究者可试用，不能无人复核自动发布结论。 |
-| [dsh-jev-interceptor](#plugin-1382292535-root) | 为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。 | 适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。 |
 
 <a id="plugin-1334269686-root"></a>
 
@@ -73,7 +73,7 @@
 
 **推荐理由**：公开静态正文抓取可小范围试用；必须逐页回查来源，动态或登录页面直接切浏览器。
 
-**使用条件**：适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 Q09(#research-q09)
+**使用条件**：适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 [Q09](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -87,7 +87,7 @@
 
 **推荐理由**：适合常摘录技术回答的Web用户，先在目标编辑器核对公式、链接和代码；逐字原稿归档应另保留源文。
 
-**使用条件**：经常摘录技术回答的人可先试，选取链接、公式和多行代码各一段，粘贴到常用编辑器并逐字核对URL、TeX和换行，再测试禁用后默认复制恢复。首次涉及客户端加载，持续在copy时遍历选区DOM，不调用模型；现金、延迟和人工复核时间没有实测值，不写为零。发布包和Git源码的构建路径不同，源码安装含prepare构建，需确认拿到可加载客户端。失败时可禁用并用原消息或手工复制；若静默丢掉代码符号、公式或链接目标，应停止自动依赖。它不适合要求逐字原始Markdown的归档流程。 Q04(#research-q04)
+**使用条件**：经常摘录技术回答的人可先试，选取链接、公式和多行代码各一段，粘贴到常用编辑器并逐字核对URL、TeX和换行，再测试禁用后默认复制恢复。首次涉及客户端加载，持续在copy时遍历选区DOM，不调用模型；现金、延迟和人工复核时间没有实测值，不写为零。发布包和Git源码的构建路径不同，源码安装含prepare构建，需确认拿到可加载客户端。失败时可禁用并用原消息或手工复制；若静默丢掉代码符号、公式或链接目标，应停止自动依赖。它不适合要求逐字原始Markdown的归档流程。 [Q04](../../plugins/asianfleet--dsh-message-copy-enhance/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -101,7 +101,7 @@
 
 **推荐理由**：具备 clangd 与编译数据库的 C/C++ 项目可先试用只读导航，并用 rg/编译器结果交叉核对。
 
-**使用条件**：有稳定 clangd 与 compile_commands 的 C/C++ 项目可在只读导航任务中试用；先核四个操作对 sample 和本项目代表文件的结果，再允许模型依赖它改代码。没有共享 base、依赖重型交叉编译或无法限制 server资源的环境先观察，保留 rg/编译器作为基线。 详见Q09(#research-q09)。
+**使用条件**：有稳定 clangd 与 compile_commands 的 C/C++ 项目可在只读导航任务中试用；先核四个操作对 sample 和本项目代表文件的结果，再允许模型依赖它改代码。没有共享 base、依赖重型交叉编译或无法限制 server资源的环境先观察，保留 rg/编译器作为基线。 详见[Q09](../../plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-cpp/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -115,7 +115,7 @@
 
 **推荐理由**：适合插件作者作为额外提交前检查试用，明确宿主解析环境，并保留打包、审阅和宿主验证。
 
-**使用条件**：先对已知正确和已知错误的插件各检查一次，核对规则是否符合当前宿主。把它加入提交前流程，保留真实打包和加载检查；本地链接导致工具缺席时确认CLI路径。Q03(#research-q03)
+**使用条件**：先对已知正确和已知错误的插件各检查一次，核对规则是否符合当前宿主。把它加入提交前流程，保留真实打包和加载检查；本地链接导致工具缺席时确认CLI路径。[Q03](../../plugins/aphytot--dsh-plugin-preflight/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -129,7 +129,7 @@
 
 **推荐理由**：固定宿主长文输入可试用，先核多引用/附件/发送状态；不依赖其独立草稿归档或绝对IME安全保证。
 
-**使用条件**：固定宿主长文编辑可试用，先小草稿检查引用附件。详见Q05(#research-q05)。
+**使用条件**：固定宿主长文编辑可试用，先小草稿检查引用附件。详见[Q05](../../plugins/al-yichen--dsh-fullscreen-input/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -143,7 +143,7 @@
 
 **推荐理由**：适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。
 
-**使用条件**：作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见Q05(#research-q05)。
+**使用条件**：作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -157,7 +157,7 @@
 
 **推荐理由**：已有可信逐条分数与显式策略可试用，先用builtin和独立状态备份；PASS限输入范围，replay需固定环境且发布另负责。
 
-**使用条件**：可信逐条分数可试用builtin，原replay固定环境，PASS不直接授权发布。详见Q06(#research-q06)。
+**使用条件**：可信逐条分数可试用builtin，原replay固定环境，PASS不直接授权发布。详见[Q06](../../plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -171,7 +171,7 @@
 
 **推荐理由**：Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。
 
-**使用条件**：经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。依赖无障碍输入、超长文档或宿主版本频繁升级的人应先观察。 详见Q09(#research-q09)。
+**使用条件**：经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。依赖无障碍输入、超长文档或宿主版本频繁升级的人应先观察。 详见[Q09](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -185,7 +185,7 @@
 
 **推荐理由**：适合频繁跨会话面板的人先核对交错导航与持久化后试用，接受历史记录可能失效及不恢复滚动的边界。
 
-**使用条件**：先用普通会话和面板交错导航，检查后退后新访问的分支截断、重载和失效目标；只把它当主视图位置入口。记录不稳定时回侧栏手动查找。Q03(#research-q03)
+**使用条件**：先用普通会话和面板交错导航，检查后退后新访问的分支截断、重载和失效目标；只把它当主视图位置入口。记录不稳定时回侧栏手动查找。[Q03](../../plugins/ahacrazy--dsh-nav-history/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -199,7 +199,7 @@
 
 **推荐理由**：频繁从 WSL 打开网页的用户可试用；把浏览器页面可见而非 PowerShell 返回作为验收。
 
-**使用条件**：适合频繁从 WSL 打开文档或本地服务、且只需要“打开”而非抓取/交互的用户试用。成功标准是 http(s) 非法输入全部拒绝、目标页在预定秒数内可见且 localhost 失败能按提示恢复；如果命令返回成功但页面不可见率高，应退回复制链接或专门端口工具。 Q09(#research-q09)
+**使用条件**：适合频繁从 WSL 打开文档或本地服务、且只需要“打开”而非抓取/交互的用户试用。成功标准是 http(s) 非法输入全部拒绝、目标页在预定秒数内可见且 localhost 失败能按提示恢复；如果命令返回成功但页面不可见率高，应退回复制链接或专门端口工具。 [Q09](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -213,21 +213,21 @@
 
 **推荐理由**：已稳定使用 khal 且只需只读日程的 WSL 用户可试用；必须验证时区和同步陈旧边界。
 
-**使用条件**：适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。成功标准是 status 能暴露配置问题、today/list 与 khal 在事件数和时间上一致、陈旧同步被用户识别；出现时区偏移或遗漏时应停止将输出用于自动计划。 Q09(#research-q09)
+**使用条件**：适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。成功标准是 status 能暴露配置问题、today/list 与 khal 在事件数和时间上一致、陈旧同步被用户识别；出现时区偏移或遗漏时应停止将输出用于自动计划。 [Q09](../../plugins/173787247--dsh-wsl-cal/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
-<a id="plugin-1425006726-root"></a>
+<a id="plugin-1085086903-root"></a>
 
-## [dsh-subagent](../../plugins/1373700184--dsh-subagent/INSIGHT.md)
+## [EverOS](../../plugins/evermind-ai--everos/INSIGHT.md)
 
-[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
+[![GitHub ★ 13,600](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C600&color=yellow&logo=github&style=flat)](https://github.com/EverMind-AI/EverOS)
 
-**主要用途**：把多个已登录的外部编码 CLI 注册为 DSH 子代理并提供进度与恢复。
+**主要用途**：以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。
 
-**推荐理由**：已信任多个外部 CLI 且能独立验收子任务的开发者可隔离试用；先验证权限、回退预算和重启去重。
+**推荐理由**：单用户非敏感memory root先关闭reflection建立基线，验收纠错/索引/取消和恢复后再决定扩展。
 
-**使用条件**：适合已安装并信任多个 CLI、能写出自足任务并独立验收结果的开发者做受限试用；敏感仓库或无法授予 headless 权限的环境不应启用。成功标准是回退链在总预算内提高合格子任务数、重启接管不重复执行且父代理复核时间低于手工多终端；若上下文遗漏、权限暴露或迟到结果重复产生，应停止。 Q09(#research-q09)
+**使用条件**：有限试用单用户非敏感记忆，先关reflection测人工笔记基线，再验证纠错、删除、重建与断连；DSH适配单独验收。见 [Q05](../../plugins/evermind-ai--everos/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -241,7 +241,21 @@
 
 **推荐理由**：对知识密集团队有明确试用路径，但当前效果与运维成本需专项对照。
 
-**使用条件**：Q06(#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。
+**使用条件**：[Q06](../../plugins/volcengine--openviking/INSIGHT.md#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。
+
+[返回表格](#column-index)
+
+<a id="plugin-1209966933-root"></a>
+
+## [REA](../../plugins/morluto--rea/INSIGHT.md)
+
+[![GitHub ★ 383,061](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=383%2C061&color=yellow&logo=github&style=flat)](https://github.com/morluto/rea) [![npm 30d 634,260](https://img.shields.io/static/v1?label=npm+30d&message=634%2C260&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/rea-agents)
+
+**主要用途**：独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。
+
+**推荐理由**：限定许可内已知JS样本的静态试用可控，先核运行时和证据准确，不启用所有动态工具。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)
+
+**使用条件**：有逆向经验者可在已知源码、非敏感的许可内JS/Electron样本做静态试用，先满足Node引擎并验证证据定位，不外推其他provider。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -255,7 +269,21 @@
 
 **推荐理由**：适合愿意核查来源的开发者在单一架构路径试用；自动门禁不替代语义审核。
 
-**使用条件**：先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。Q04(#research-q04)
+**使用条件**：先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。[Q04](../../plugins/tt-a1i--archify/INSIGHT.md#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-1223170290-root"></a>
+
+## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
+
+[![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=yellow&logo=github&style=flat)](https://github.com/nexu-io/open-design)
+
+**主要用途**：协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。
+
+**推荐理由**：本地非敏感小项目可控试用，先核验DSH版本/预览/取消，协作与设计收益单独测。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
+
+**使用条件**：熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -269,7 +297,7 @@
 
 **推荐理由**：单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。
 
-**使用条件**：熟悉原生压缩的开发者可单route试用，保留原生对照并检查摘要与关键约束；不要按pill猜有效覆盖，不把off当关闭宿主溢出恢复。任务质量变差或总成本上升时回默认。参见Q06(#research-q06)。
+**使用条件**：熟悉原生压缩的开发者可单route试用，保留原生对照并检查摘要与关键约束；不要按pill猜有效覆盖，不把off当关闭宿主溢出恢复。任务质量变差或总成本上升时回默认。参见[Q06](../../plugins/5aaee9--pi-agent-extensions--dsh-autocompact/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -283,7 +311,7 @@
 
 **推荐理由**：确定性模型检查有可控用途，但抽象忠实性与实际缺陷收益须由用户复核。
 
-**使用条件**：适合愿意人工检查模型的开发者在小型状态机上试用。先核对模型与源码关系，读取verdict、覆盖和未决，不把pass当上线许可。Q04(#research-q04)
+**使用条件**：适合愿意人工检查模型的开发者在小型状态机上试用。先核对模型与源码关系，读取verdict、覆盖和未决，不把pass当上线许可。[Q04](../../plugins/amethystluna--logicprobe/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -297,7 +325,21 @@
 
 **推荐理由**：适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。
 
-**使用条件**：资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。详见Q06(#research-q06)。
+**使用条件**：资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。详见[Q06](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md#research-q06)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1333065091-root"></a>
+
+## [DeepSeek Harness](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 261,276](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=261%2C276&color=yellow&logo=github&style=flat)](https://github.com/deepseek-ai/deepseek-harness)
+
+**主要用途**：基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。
+
+**推荐理由**：隔离profile适合有扩展需求的开发者验证可替换契约，未证明生产安全或所有插件兼容。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04)
+
+**使用条件**：有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -311,7 +353,7 @@
 
 **推荐理由**：文本模型用户可用非敏感截图受控试用；先测真实图像请求和最终任务质量，核实外部服务政策、费用及宿主兼容。
 
-**使用条件**：建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。Q08(#research-q08)
+**使用条件**：建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。[Q08](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md#research-q08)
 
 [返回表格](#column-index)
 
@@ -325,7 +367,7 @@
 
 **推荐理由**：在非关键项目副本演练覆盖、过期计划及rescue后可控试用，不代替外部副作用与备份管理。
 
-**使用条件**：经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。先手工备份并覆盖新增/删除/二进制/符号链接样本，核对skip清单，再测试预览后改文件会拒绝、fork失败补偿和rescue可读。正式项目恢复前停掉其他写入者；外部部署和服务状态由用户单独处理。未做本版本安装与恢复演练，因此只支持可控试用，不代替备份制度。 Q09(#research-q09)
+**使用条件**：经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。先手工备份并覆盖新增/删除/二进制/符号链接样本，核对skip清单，再测试预览后改文件会拒绝、fork失败补偿和rescue可读。正式项目恢复前停掉其他写入者；外部部署和服务状态由用户单独处理。未做本版本安装与恢复演练，因此只支持可控试用，不代替备份制度。 [Q09](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -339,7 +381,7 @@
 
 **推荐理由**：明确原生应用需求可在单应用和可撤销任务上试用，先核对焦点策略及敏感动作确认。
 
-**使用条件**：有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 Q09(#research-q09)
+**使用条件**：有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 [Q09](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -353,7 +395,7 @@
 
 **推荐理由**：需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。
 
-**使用条件**：需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 采用结论是试用，不是安装保证；成功与停止标准见Q09(#research-q09)。
+**使用条件**：需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -367,7 +409,7 @@
 
 **推荐理由**：被动最小字段与边界文档清楚，适合精确宿主私有单进程路径观察；词法/可重算hash与无界queue不适合验证门禁或强审计。
 
-**使用条件**：有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见Q06(#research-q06)。
+**使用条件**：有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见[Q06](../../plugins/030611--dsh-verification-receipt/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -381,7 +423,7 @@
 
 **推荐理由**：Windows/WSL长期并用者有明确集成收益，可先在临时发行版核对双平面权限、非幂等重跑和固定宿主兼容。
 
-**使用条件**：建议在临时发行版与非生产工程先试用，验收shell/fs身份、写入与恢复，不将作者兼容列表等同本轮通过。成功和停止判断见 Q05(#research-q05)。
+**使用条件**：建议在临时发行版与非生产工程先试用，验收shell/fs身份、写入与恢复，不将作者兼容列表等同本轮通过。成功和停止判断见 [Q05](../../plugins/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -395,7 +437,7 @@
 
 **推荐理由**：已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。
 
-**使用条件**：已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 采用结论是试用，不是安装保证；成功与停止标准见Q09(#research-q09)。
+**使用条件**：已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/agentconnect--dsh-awiki/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -409,7 +451,7 @@
 
 **推荐理由**：消息内朗读与可取消长读有明确试用价值；先用非敏感文本核对Edge外发、停止与错误恢复，再按需增加本地音色，源码级证据不足以持续安装。
 
-**使用条件**：建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见Q09(#research-q09)。
+**使用条件**：建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见[Q09](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -421,9 +463,9 @@
 
 **主要用途**：在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。
 
-**推荐理由**：开放发现和预检有明确价值，能备份并使用guard路径的维护者可在可丢弃profile试用；早commit与运行验收缺口不支持持续安装结论。详见Q07(#research-q07)。
+**推荐理由**：开放发现和预检有明确价值，能备份并使用guard路径的维护者可在可丢弃profile试用；早commit与运行验收缺口不支持持续安装结论。详见[Q07](../../plugins/1e0zj--dsh-plugin-mall/INSIGHT.md#research-q07)。
 
-**使用条件**：能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。详见Q07(#research-q07)。
+**使用条件**：能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。详见[Q07](../../plugins/1e0zj--dsh-plugin-mall/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -437,7 +479,7 @@
 
 **推荐理由**：公开资料检索有具体价值和小范围试用路径；需核来源、全文/截断和真实支出，不能把可用性当完整性保证。
 
-**使用条件**：建议在可信本机、公开材料和小预算下试用，逐项回原文验收并记录全部尝试成本。平台来源及停止条件见 Q05(#research-q05)。
+**使用条件**：建议在可信本机、公开材料和小预算下试用，逐项回原文验收并记录全部尝试成本。平台来源及停止条件见 [Q05](../../plugins/a3boy--dsh-web-tools/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -451,7 +493,7 @@
 
 **推荐理由**：适合已有Better Sidebar且文稿有备份的用户试用；保存源码、导出批注并核对报告所属会话，刷新前防丢稿。
 
-**使用条件**：建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。详见Q05(#research-q05)。
+**使用条件**：建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。详见[Q05](../../plugins/3361805598-gif--dsh-md-annotator/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -465,7 +507,7 @@
 
 **推荐理由**：需要细粒度工具门禁的团队可在保留宿主沙箱前提下试用，并先验证路径旁路与规则回滚。
 
-**使用条件**：有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见Q09(#research-q09)。
+**使用条件**：有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见[Q09](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -479,7 +521,7 @@
 
 **推荐理由**：适合可信本地应用的有限浏览器验收试用；独立审读spec和批准基线，不把新基线或runner错误当交付通过。
 
-**使用条件**：建议可信本地有限spec试用，故意缺陷应失败、合法实现应通过；空覆盖、新基线和ERROR不放行，host阻塞或范围不清时停止。详见Q05(#research-q05)。
+**使用条件**：建议可信本地有限spec试用，故意缺陷应失败、合法实现应通过；空覆盖、新基线和ERROR不放行，host阻塞或范围不清时停止。详见[Q05](../../plugins/263311487-ux--dsh-verify/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -493,7 +535,7 @@
 
 **推荐理由**：事后审阅有清楚可逆试用范围，先备份并核回退竞态、删除例外和重启边界，不当作权限批准或完整恢复保证。
 
-**使用条件**：建议单人可备份工作树先试用，回退前冻结外写并核实际文件，保持测试/VCS验收。范围和停止条件见 Q05(#research-q05)。
+**使用条件**：建议单人可备份工作树先试用，回退前冻结外写并核实际文件，保持测试/VCS验收。范围和停止条件见 [Q05](../../plugins/9087--dsh-diff-approval/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -507,7 +549,7 @@
 
 **推荐理由**：本机认证/凭据/provider适配完整，可保留替代路由试用；注意协议、明文凭据和消息/退出边界，不拓展远程多用户。
 
-**使用条件**：可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。详见Q05(#research-q05)。
+**使用条件**：可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。详见[Q05](../../plugins/adonissheldon--dsh-openai-oauth/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -519,9 +561,9 @@
 
 **主要用途**：在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。
 
-**推荐理由**：维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见Q06(#research-q06)。
+**推荐理由**：维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。详见[Q06](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md#research-q06)。
 
-**使用条件**：本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见Q06(#research-q06)。
+**使用条件**：本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见[Q06](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -535,7 +577,7 @@
 
 **推荐理由**：项目续接和可回源记忆有明确价值，可单项目控制范围；需审阅自动注入、global可见性和真实落盘，不把召回分数当事实。
 
-**使用条件**：建议单一非敏感工程小范围试用，先按需查询和回源，后逐步开启自动注入；串项目和未落盘等停止标准见 Q05(#research-q05)。
+**使用条件**：建议单一非敏感工程小范围试用，先按需查询和回源，后逐步开启自动注入；串项目和未落盘等停止标准见 [Q05](../../plugins/00080000--dsh-project-memory/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -549,7 +591,7 @@
 
 **推荐理由**：lookup-only的共享笔记、拒答和来源收据值得非敏感单用户试用；审核当前状态与ranked旧页，nightly/导入/CLI另评，不能把canonical当事实认证。
 
-**使用条件**：有条件试用lookup-only。先非敏感个人vault核对来源、旧页与拒答，保持原件；nightly/导入/writer按各lane权限另评，不把接头卸载当timer停止。详见Q07(#research-q07)。
+**使用条件**：有条件试用lookup-only。先非敏感个人vault核对来源、旧页与拒答，保持原件；nightly/导入/writer按各lane权限另评，不把接头卸载当timer停止。详见[Q07](../../plugins/398894496-arch--krouter/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -563,7 +605,7 @@
 
 **推荐理由**：适合愿意自行维护的个人窄屏DSH用户受控试用，先核对列定位、设置与轨迹交互并保留关闭重载路径；不把免hash当免维护。
 
-**使用条件**：个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。详见Q06(#research-q06)。
+**使用条件**：个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。详见[Q06](../../plugins/aliceljy--dsh-thumb/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -577,7 +619,7 @@
 
 **推荐理由**：适合个人本地WSL办公文件流程试用；仅打开可信文件，核对宿主路由权限和真实窗口结果。
 
-**使用条件**：建议个人本地WSL用户限定试用可信办公文件，验收以正确窗口实际显示为准；复杂路径误点、权限不清或不明应用启动时停止。详见Q06(#research-q06)。
+**使用条件**：建议个人本地WSL用户限定试用可信办公文件，验收以正确窗口实际显示为准；复杂路径误点、权限不清或不明应用启动时停止。详见[Q06](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -591,7 +633,7 @@
 
 **推荐理由**：适合将其作为本地日志排查索引试用，先核对真实数据和模型归因，不据错误率直接做能力排名。
 
-**使用条件**：先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。需要模型选型结论时补同任务结果对照。Q03(#research-q03)
+**使用条件**：先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。需要模型选型结论时补同任务结果对照。[Q03](../../plugins/ansonfishing--dsh-cap-profile/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -605,7 +647,7 @@
 
 **推荐理由**：频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。
 
-**使用条件**：频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 采用结论是试用，不是安装保证；成功与停止标准见Q09(#research-q09)。
+**使用条件**：频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -619,7 +661,7 @@
 
 **推荐理由**：对已有 CapMap 文档的团队有清晰只读导航价值，但必须把图视为声明并回查原文。
 
-**使用条件**：建议试用。适合已经维护 CapMap 文档的小团队，只把图当导航并要求关键判断回到原文；先在单 workspace、小图验证 parse/watch/read 和错误展示。没有文档纪律的项目不应为了图而先引入整套格式。 参见Q04(#research-q04)、Q06(#research-q06)与Q09(#research-q09)。
+**使用条件**：建议试用。适合已经维护 CapMap 文档的小团队，只把图当导航并要求关键判断回到原文；先在单 workspace、小图验证 parse/watch/read 和错误展示。没有文档纪律的项目不应为了图而先引入整套格式。 参见[Q04](../../plugins/1741505640--capmap-skills--dsh-capmap-viz/INSIGHT.md#research-q04)、[Q06](../../plugins/1741505640--capmap-skills--dsh-capmap-viz/INSIGHT.md#research-q06)与[Q09](../../plugins/1741505640--capmap-skills--dsh-capmap-viz/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -633,7 +675,7 @@
 
 **推荐理由**：适合本机个人用户对小样本受控试用并核对用量字段和索引状态；不作账单、技能成果成功率或多人权限保证。
 
-**使用条件**：个人本机用户可用少量可人工核对的会话试用；先确认宿主依赖与访问控制，遇到用量无法对账、索引持续失败即停止依赖图表。详见Q06(#research-q06)。
+**使用条件**：个人本机用户可用少量可人工核对的会话试用；先确认宿主依赖与访问控制，遇到用量无法对账、索引持续失败即停止依赖图表。详见[Q06](../../plugins/3361805598-gif--dsh-usage-analytics/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -647,7 +689,7 @@
 
 **推荐理由**：适合已有多个可替代渠道且愿意核对输出、预算和RC契约的用户试用，先验收流中失败与取消。
 
-**使用条件**：在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。核对实际上游费用和合格结果；长流不能只依赖totalBudgetMs作硬限额，必要时外加截止。Q03(#research-q03)
+**使用条件**：在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。核对实际上游费用和合格结果；长流不能只依赖totalBudgetMs作硬限额，必要时外加截止。[Q03](../../plugins/arcaneorion--dsh-model-channel-manager/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -661,7 +703,7 @@
 
 **推荐理由**：先个人隔离试用，删除后手动备份，定时任务加强监控。
 
-**使用条件**：先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见Q05(#research-q05)。
+**使用条件**：先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见[Q05](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -675,7 +717,7 @@
 
 **推荐理由**：适合已有代码验收流程的DSH开发者在独立分支试复杂任务，确认预设预算和删除模式，并保留真实测试把关。
 
-**使用条件**：熟悉DSH且已有代码验收流程的开发者可在独立分支试用。首次加载预设并确认安装所有权冲突、模型权限与删除模式；持续成本包括父子模型调用、上下文、压缩、检查和长期记忆维护，不能只看调用次数。可选storageDomain不可用会保留任务记忆但失去长期记忆。失败后检查pending持久化和旧binding，不盲重放写工具；以项目原测试、需求对照、总费用与人工时间共同验收。简单任务不应强建台账，未测到收益或出现未经确认的范围扩展就退回宿主原预设。 Q04(#research-q04)
+**使用条件**：熟悉DSH且已有代码验收流程的开发者可在独立分支试用。首次加载预设并确认安装所有权冲突、模型权限与删除模式；持续成本包括父子模型调用、上下文、压缩、检查和长期记忆维护，不能只看调用次数。可选storageDomain不可用会保留任务记忆但失去长期记忆。失败后检查pending持久化和旧binding，不盲重放写工具；以项目原测试、需求对照、总费用与人工时间共同验收。简单任务不应强建台账，未测到收益或出现未经确认的范围扩展就退回宿主原预设。 [Q04](../../plugins/artlexyoung--dsh-super-code/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -689,7 +731,7 @@
 
 **推荐理由**：可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。
 
-**使用条件**：试用，备份/可信管理面/明确人工验收，completed按成员报告解读，不能当全自动业务验收。详见Q08(#research-q08)。
+**使用条件**：试用，备份/可信管理面/明确人工验收，completed按成员报告解读，不能当全自动业务验收。详见[Q08](../../plugins/2507483326--dsh-eteams/INSIGHT.md#research-q08)。
 
 [返回表格](#column-index)
 
@@ -703,7 +745,7 @@
 
 **推荐理由**：适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。
 
-**使用条件**：有条件试用。已有3Chat组织团队先测试组织只读，再经完整内容/目标确认核极小授权发送、unknown与批次恢复。详见Q07(#research-q07)。
+**使用条件**：有条件试用。已有3Chat组织团队先测试组织只读，再经完整内容/目标确认核极小授权发送、unknown与批次恢复。详见[Q07](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -717,49 +759,7 @@
 
 **推荐理由**：本机只读尾部排查有明确可控试用路径，全文资源与投影完整性限制必须保留。
 
-**使用条件**：适合本机维护者先用只读小范围试用，默认tail或fast统计；搜索未命中和统计异常必须回原件复核。远程共享服务、任意符号链接目录或需完整审计时暂缓。参见Q06(#research-q06)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1378138611-root"></a>
-
-## [dsh-jev-guard](../../plugins/7starsseeker--dsh-jev-guard/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) [![npm 30d 1,591](https://img.shields.io/static/v1?label=npm+30d&message=1%2C591&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-guard)
-
-**主要用途**：在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。
-
-**推荐理由**：在可恢复任务作为附加事故阀试用，核对降级和日志，保留宿主原生权限/审批。
-
-**使用条件**：先在可恢复目录验证良性、危险及断网样本，再把它作为附加事故阀；降级时看status，保留原生沙箱和审批，不依赖单一判据。Q06(#research-q06)
-
-[返回表格](#column-index)
-
-<a id="plugin-1380181057-root"></a>
-
-## [dsh-fact-check](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,417](https://img.shields.io/static/v1?label=npm+30d&message=1%2C417&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
-
-**主要用途**：提供多源公开事实核查流程、来源路由和可选Jev判据，生成带原文定位的报告。
-
-**推荐理由**：已有搜索和正文工具、能人工核对来源的研究者可试用，不能无人复核自动发布结论。
-
-**使用条件**：先选可对照原始资料的事实点，确认正文链可用，再人工核对转载关系及每条引文后试用；不要把模型判据作为最终裁定。Q06(#research-q06)
-
-[返回表格](#column-index)
-
-<a id="plugin-1382292535-root"></a>
-
-## [dsh-jev-interceptor](../../plugins/asktheway--dsh-jev-interceptor/INSIGHT.md)
-
-[![GitHub ★ 31](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=31&color=yellow&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 2,667](https://img.shields.io/static/v1?label=npm+30d&message=2%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor)
-
-**主要用途**：为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。
-
-**推荐理由**：适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。
-
-**使用条件**：建议只在隔离 profile 条件试用。保持 `imageOffloadEnabled: false`、预批白名单为空和主插件 shadow，先验证所有挂点零状态变化与故障回到 stock；再对可逆、可重建工具逐项扩范围。任何 shadow 副作用、无遥测有效动作或 session-reference 缺失都应停止。详见Q09(#research-q09)。
+**使用条件**：适合本机维护者先用只读小范围试用，默认tail或fast统计；搜索未命中和统计异常必须回原件复核。远程共享服务、任意符号链接目录或需完整审计时暂缓。参见[Q06](../../plugins/240xu--dsh-session-lazy-view/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 

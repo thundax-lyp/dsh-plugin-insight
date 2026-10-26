@@ -1,0 +1,48 @@
+{
+    "repository": "Molunerfinn/PicGo",
+    "repository_id": 113965016,
+    "captured_at": "2026-10-26T03:22:47.788Z",
+    "window_start": "2026-09-26T03:22:47.788Z",
+    "stars": 27409,
+    "pushed_at": "2026-10-20T09:13:53Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AMolunerfinn%2FPicGo%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ACF8:E026B:1431492:1664012:6ADECA24 and timestamp 2026-10-26 03:33:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AMolunerfinn%2FPicGo%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD14:DDD6A:14FDBFE:172E74A:6ADECA25 and timestamp 2026-10-26 03:33:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMolunerfinn%2FPicGo%20is%3Aissue%20created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD50:296820:14EA465:171C15A:6ADECA27 and timestamp 2026-10-26 03:33:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMolunerfinn%2FPicGo%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD70:2A0FCF:14ED3D8:172109F:6ADECA28 and timestamp 2026-10-26 03:34:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMolunerfinn%2FPicGo%20is%3Aissue%20updated%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD82:EA964:1582C79:17B5861:6ADECA29 and timestamp 2026-10-26 03:34:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T16:57:05.909Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b93e081fcea482acac8fe75a9012ef4bacfb52cf",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    }
+}

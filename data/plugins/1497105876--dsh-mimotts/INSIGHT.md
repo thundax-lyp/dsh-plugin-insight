@@ -1,18 +1,18 @@
 # dsh-mimotts
 
-[返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[fe04c50](https://github.com/1497105876/dsh-mimotts/tree/fe04c509d3a308a2807238162998792ba8de6bca)
+分析版本：[3c0a89c](https://github.com/1497105876/dsh-mimotts/tree/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为已定稿助手消息提供 MiMo TTS 朗读、播放器、配置卡和语音历史。
+> **实现功能**：将DSH已定稿助手回复通过MiMo TTS合成为音频，提供内联播放器与多版本语音历史。
 
-> **核心亮点**：相对复制文本到 TTS 网站，它把消息级朗读、宿主密钥隔离、可访问播放器和重生成历史嵌入原会话，减少跨应用交接。 [Q03](#research-q03)
+> **核心亮点**：把外部TTS接入消息动作、播放器和多版本历史，减少复制流程，语音模型能力继承服务商。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：价值依赖 MiMo API 的费用、延迟和音质，历史保存还会增加本地数据与隐私负担；源码与作者测试不能替代真实宿主长期使用和不同文本的效果对照。 [Q04](#research-q04)
+> **风险与缺陷**：音频省略代码/图片并可能只读长文开头，历史原文不代表音频完整；索引恢复和并发需验证。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？](#detail-section-11)
-  - [Q02 · 能力如何从入口、注册、调用到状态变化实现？](#detail-section-12)
-  - [Q03 · 相对原生能力或简单替代，固定版本增加了什么？](#detail-section-13)
-  - [Q04 · 什么前提最可能使核心价值不成立？](#detail-section-14)
-  - [Q05 · 启动、持续生效和失败恢复分别依赖什么？](#detail-section-15)
-  - [Q06 · 首次、持续与失败恢复成本及效果证据如何？](#detail-section-16)
-  - [Q07 · 实现有哪些可靠性取舍和可复用设计？](#detail-section-17)
-  - [Q08 · 由贡献和限制能推导什么未验证方向？](#detail-section-18)
-  - [Q09 · 对什么人值得观察或试用，成功与停止条件是什么？](#detail-section-19)
+  - [Q01 · 相比系统朗读新增什么？](#detail-section-11)
+  - [Q02 · 文本到音频和历史如何流转？](#detail-section-12)
+  - [Q03 · 听到的内容是否完整等同原答复？](#detail-section-13)
+  - [Q04 · 依赖与单位朗读成本是什么？](#detail-section-14)
+  - [Q05 · 可以验证什么，当前如何试用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向希望听取长回复或无障碍消费内容的 DSH Web 用户，从单条已定稿消息生成并管理语音版本。 [Q01](#research-q01)
+> **用途**：在DSH内听取和复听自然语言回复，以可核对内容覆盖和播放为结果。
 
-基线是浏览器系统朗读或外部 TTS；插件的优势在会话定位、密钥边界和历史管理，代价是服务费用和版本锁定。
+系统朗读或复制到独立TTS是直接替代；本轮无同条件听感、理解和成本对照。
 
 <a id="detail-section-3"></a>
 
@@ -56,67 +52,66 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 消息朗读 | 对单条已定稿助手回复生成并播放语音。 | 仅由固定版本源码确认；运行效果未验证 |
-| 配置与试听 | 在插件页管理音色、风格与密钥状态。 | 仅由固定版本源码确认；运行效果未验证 |
-| 语音历史 | 保存、回放、重生成和删除多个版本。 | 仅由固定版本源码确认；运行效果未验证 |
+| TTS朗读 | 听取已定稿回复 | 外部端点，代码/图像省略和长文截断 |
+| 播放器 | 暂停/定位/复听 | 浏览器音频需验收 |
+| 语音历史 | 保留不同合成版本 | 本地索引恢复未验收 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| DSH 0.2.0-rc.2 API/slots | 必需 | Host/Client、配置卡、消息动作与历史页 | 安装器警告或运行接口缺失 |
-| MiMo API Key、网络与额度 | 合成必需 | 调 mimo-v2.5-tts | 状态页提示未配置/上游错误 |
-| credentials 与 connection 信任栅栏 | 安全必需 | Host 保存密钥并拒绝裸 LAN 请求 | 密钥或额度可能暴露 |
-| 本地音频历史空间 | 历史功能必需 | 保存 WAV 多版本 | 磁盘持续增长，需要删除策略 |
+| 声明DSH接口与Web slots | 启动必需 | 配置与消息播放器 | 不兼容不假定可加载 |
+| TTS端点/凭据/网络 | 合成必需 | 外部音频生成 | 返回稳定错误，不能本地替代 |
+| 可读WAV样本 | 克隆可选 | 发送音色参考 | 可回预置音色配置 |
+| profile磁盘/浏览器音频 | 历史与播放必需 | 保存/回放 | 需检查权限和存储状态 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|---|
-| 配置 | 用户通过凭据通道保存 Key 并选择音色 | 浏览器不回显字面密钥 |
-| 试听 | 用户用当前未保存参数合成示例 | WAV 可播放，错误码就地可读 |
-| 消息朗读 | 点击定稿消息动作，Host 归一化并请求 MiMo | 音频对应消息且单播放器工作 |
-| 历史管理 | 用户回放、重生成或删除版本 | 旧版本可控，删除后存储释放 |
+|---|---|---|
+| 1 | 用户配置凭据、端点、音色和字数 | 先试听非敏感短文 |
+| 2 | 用户朗读已定稿消息 | 知道实际覆盖且可暂停定位 |
+| 3 | 用户核对历史/删除/禁用 | 索引与文件一致，否则回原文 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | MiMo 账户/Key，克隆音色需 WAV | 配凭据、音色、风格和宿主版本 | 初始化分钟未知 |
-| 持续使用 | 按字符/API 计费、网络与 WAV 存储 | 试听、重合成和听取 | 每千字符金额/秒数/MB 未测 |
-| 失败恢复 | 重试可能重复计费并新增版本 | 识别错误码、删除失败版本 | 上游失败率和重试次数未知 |
+| 首次使用 | 宿主/凭据/试听资源未知 | 配置音色、长度与播放 | 端点/计费条件未实测 |
+| 持续使用 | TTS调用、WAV存储和网络 | 校对省略、清理历史 | 每任务金额和时延未知 |
+| 失败恢复 | 重合成与索引恢复资源未知 | 核对原请求、历史和磁盘 | 不保证费用或历史原子恢复 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 消息级朗读 | actions slot、文本提取和播放器存在 | 真实宿主点击到播放成功率 |
-| 密钥边界 | credentials remote 与 Host 路由设计存在 | 运行时是否无浏览器泄漏 |
-| 理解体验 | Markdown 归一化与进度控制存在 | 音质、可懂度和无障碍收益 |
+| 朗读入口 | 消息slot与TTS路由存在 | 音质、可理解性和时延 |
+| 历史 | 原文分组与WAV版本保存 | 并发/断电恢复 |
+| 完整性 | 明确代码省略与长度截断 | 用户是否知道漏读 |
 
-> **思考**：价值依赖 MiMo API 的费用、延迟和音质，历史保存还会增加本地数据与隐私负担；源码与作者测试不能替代真实宿主长期使用和不同文本的效果对照。 [Q04](#research-q04)
+> **思考**：音频省略代码/图片并可能只读长文开头，历史原文不代表音频完整；索引恢复和并发需验证。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对复制文本到 TTS 网站，它把消息级朗读、宿主密钥隔离、可访问播放器和重生成历史嵌入原会话，减少跨应用交接。 [Q03](#research-q03)
+> **亮点**：把外部TTS接入消息动作、播放器和多版本历史，减少复制流程，语音模型能力继承服务商。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相对复制文本到 TTS 网站，它把消息级朗读、宿主密钥隔离、可访问播放器和重生成历史嵌入原会话，减少跨应用交接。 [Q03](#research-q03)
+把外部TTS接入消息动作、播放器和多版本历史，减少复制流程，语音模型能力继承服务商。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-Host/Client 状态边界、凭据远程与 typed slots 接线具体，播放器考虑键盘操作；仍需核查真实路由鉴权、音频留存策略和宿主升级兼容。
+宿主凭据、表单和展示职责分离便于维护；稳定错误码有利于本地化。需将实际朗读文本/覆盖与音频绑定，索引直接写和回空策略不宜被视为可靠归档。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-价值依赖 MiMo API 的费用、延迟和音质，历史保存还会增加本地数据与隐私负担；源码与作者测试不能替代真实宿主长期使用和不同文本的效果对照。 [Q04](#research-q04)
+音频省略代码/图片并可能只读长文开头，历史原文不代表音频完整；索引恢复和并发需验证。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合已接受 MiMo 数据处理、需要经常听取定稿回复且可控制历史留存的 DSH Web 用户小范围试用；敏感文本、离线要求或不兼容宿主不适用。成功标准是消息与音频一一对应、密钥不出 Host、键盘播放器可用、延迟和每千字符成本低于用户上限；若历史无限增长、文本归一化丢失关键信息或路由鉴权失败，应停用。 [Q09](#research-q09)
+有限试用非敏感短文，技术内容回读原文；先验收覆盖提示、播放、历史删除和禁用。见 [Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -124,18 +119,18 @@ Host/Client 状态边界、凭据远程与 typed slots 接线具体，播放器�
 
 **核查状态**：已检查源码。
 
-已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。
+源码支持朗读与历史集成；音质、理解收益和当前宿主未验证；覆盖可视化为未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、lib/node/client/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 src/index.ts、src/tts.ts、src/normalize.ts、src/recordings.ts、src/client/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。
-- 下一步：在兼容测试 profile 用专用低额度 Key，朗读短中文、长英文、代码/URL 混合与超长文本；记录字符、价格、延迟、WAV MB、重试和理解题正确率，并从浏览器网络确认无明文 Key。路由可绕过、历史删除不释放或关键信息被归一化丢失即停止。
+- 边界：固定源码抽查host、tts、normalize、recordings与client入口；未调用外部API、播放、安装或运行测试。
+- 下一步：短文、长文、代码、表格与并发合成矩阵测覆盖、理解、时延、成本和历史恢复。
 
 **分析版本**
 
 - **仓库**：[1497105876/dsh-mimotts](https://github.com/1497105876/dsh-mimotts)
-- **版本号**：0.2.0-rc.4（[固定提交 fe04c50](https://github.com/1497105876/dsh-mimotts/tree/fe04c509d3a308a2807238162998792ba8de6bca)）
-- **版本日期**：2026-10-01（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.0-rc.5（[固定提交 3c0a89c](https://github.com/1497105876/dsh-mimotts/tree/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -143,9 +138,9 @@ Host/Client 状态边界、凭据远程与 typed slots 接线具体，播放器�
 
 <a id="innovation"></a>
 
-可增加“结构感知朗读”，把标题、列表和代码摘要转换为可控停顿与章节导航，并比较理解正确率而非只比较音频生成成功。 [Q08](#research-q08)
+未验证的音频版本覆盖标记可能减少误解；以长文/代码/表格理解对照和定位时间证伪。见 [Q05](#research-q05)。
 
-在兼容测试 profile 用专用低额度 Key，朗读短中文、长英文、代码/URL 混合与超长文本；记录字符、价格、延迟、WAV MB、重试和理解题正确率，并从浏览器网络确认无明文 Key。路由可绕过、历史删除不释放或关键信息被归一化丢失即停止。
+短文、长文、代码、表格与并发合成矩阵测覆盖、理解、时延、成本和历史恢复。
 
 <a id="detail-section-9"></a>
 
@@ -156,10 +151,10 @@ Host/Client 状态边界、凭据远程与 typed slots 接线具体，播放器�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 23 | 3832 | 2878 | 993 | — |
+| .js | source | 24 | 3934 | 2954 | 1019 | — |
 | .md | source | 1 | 145 | — | — | 2426 |
 | .mjs | source | 3 | 276 | 190 | 61 | — |
-| .ts | source | 16 | 2314 | 1516 | 649 | — |
+| .ts | source | 17 | 2410 | 1581 | 674 | — |
 | .tsx | source | 6 | 722 | 564 | 121 | — |
 | .mjs | test | 5 | 326 | 288 | 14 | — |
 
@@ -167,34 +162,31 @@ Host/Client 状态边界、凭据远程与 typed slots 接线具体，播放器�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/1497105876/dsh-mimotts/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/1497105876/dsh-mimotts/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：研究 dsh-mimotts 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。
+**插件研究总目标**：MiMo朗读集成是否让DSH回复更方便听取，哪些内容转换与存储条件影响完整交付？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？
+### Q01 · 相比系统朗读新增什么？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向希望听取长回复或无障碍消费内容的 DSH Web 用户，从单条已定稿消息生成并管理语音版本。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是浏览器系统朗读或外部 TTS；插件的优势在会话定位、密钥边界和历史管理，代价是服务费用和版本锁定。
+目标是希望在DSH内听取已定稿回复、复听不同音色版本的人。合格结果是用户知道实际朗读了哪些内容，音频能播放/暂停/定位且历史可找回；合成接口返回WAV不等于听懂任务。相对复制到外部TTS，本插件把消息动作、播放器、配置和历史放入宿主；相对系统朗读，新增特定MiMo音色/克隆和按文本多版本，但不是独立语音模型贡献。没有听感与理解任务对照，不把语音入口宣传为已验证无障碍改进。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-20](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/README.md#L1-L20)
+**依据 1 · 作者声明**：[README.md:1-5](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/README.md#L1-L5)
 
-作者材料说明目标用户、安装方式、主要能力和已知边界。
-
-<details>
-<summary>查看原文（20行）</summary>
+作者消息朗读与播放器定位
 
 ```text
 # @gw/dsh-mimotts — MiMo TTS 语音合成插件（DeepSeek Harness 0.2.0-rc.2）
@@ -202,563 +194,497 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [Gi
 把助手回复"读出来"的 DSH 插件：**"插件"页里的配置卡片** + **每条已定稿助手回复动作行里的音量按钮** + **带可拖动进度条的内联播放器** + **设置页里的"语音历史"**。语音由小米 MiMo TTS（`mimo-v2.5-tts`）合成，API Key 只存在于宿主侧，浏览器只发送文本、收到 WAV。
 
 面向 **deepseek-harness `0.2.0-rc.2`**（`engines.dsh: ">=0.2.0-rc.2 <0.3.0"`），完全按照官方插件规范实现：
+```
 
-| 官方规范条目 | 本插件的落点 |
-|---|---|
-| [打包与安装插件](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/docs/user/develop/basic/publish.zh.md)（bundle 组合包） | `package.json` 声明 `dsh.bundle.patch` + `cordis.patch.yml` 插入 `id: mimotts` 行；同包携带 `dsh.client` 浏览器半侧（裸包名行同时挂载 Host/Client 两侧） |
-| [插件配置](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/docs/user/develop/basic/config.zh.md)（无硬编码可调参数） | 全部参数走 Schemastery Config + `.volatile()`（接口地址/模型/音色/克隆样本/风格/字数/超时均可配）；密钥 `role('secret')` |
-| [即时配置表单](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/docs/cookbook/adding-a-settings-card.zh.md) | `ctx.configForms`（`mimotts` 命名空间）+ `SettingsFormModel` 标准表单；`ctx.settings.configure({ auto: false })` 关闭自动页策略，配置卡片自己注册进官方 `plugins.bundle.config`（key = npm 包名） |
-| [Web Client Slots](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/docs/subsystems/slots.zh.md) | `plugins.bundle.config`（插件页配置卡）+ `conversation.chat.assistant-actions`（消息动作行）+ `settings.section`（语音历史页）三个席位，`ctx.slots.inject` 贡献、effect 生命周期托管；跨插件只 `import type` 取 slot 声明 |
-| [Web Server 子系统](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/docs/subsystems/web-server.zh.md) | `ctx.webServer.register` 挂 `/api/mimotts/status`、`/api/mimotts/synthesize` 两条路由，入口先过 `ctx.connection.requestRejection` 信任栅栏（Host/Origin + 浏览器鉴权），LAN 裸请求无法白嫖 API 额度 |
-| [客户端模块系统](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/packages/client/modules/README.zh.md) | `lib/client.js` 为 lazy-CJS factory（`window.__ModuleLoader__.load({ id, factory })`），外部仅平台模块（react / cordis / client-store / ui-primitives），跨插件只经 Cordis 服务与 `import type`（构建期 purity gate 强制） |
-| [extension-cookbook · UI 插件](https://github.com/deepseek-ai/deepseek-harness/blob/dsh-v0.2.0-rc.2/docs/cookbook/extension-cookbook.zh.md) | 业务数据不进组件 props 面：文本经 `useChat` 从 Conversation binding 派生，配置经 `configForms`，合成经宿主路由，文案经 `ctx.locale`（zh/en 双语） |
+**依据 2 · 源码核查**：[src/client/index.ts:4-18](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/client/index.ts#L4-L18)
 
-## 功能
+三个宿主slot及数据流
 
-1. **「插件」页 → @gw/dsh-mimotts 详情页的配置卡片**（官方 `plugins.bundle.config` 席位，key = 包名）
-   - API Key（只写输入框：粘贴即经官方 `credentials/set` 通道存入宿主凭据存储，页面不回显；显示"已配置/未配置"，清空保存不改动已存密钥）
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+ * Three contributions, all registered through the typed slot system:
+ * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
+ *   configuration card on the Plugins page, mounted on the bundle's detail
+ *   page — the official seat for a bundle's own configuration;
+ * - `settings.section`: the `语音历史` page (recorded speech, versions,
+ *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
+ *   configuration namespace;
+ * - `conversation.chat.assistant-actions`: the volume button under every
+ *   finalized assistant message, with its floating player (draggable progress
+ *   bar) once audio exists.
+ *
+ * Neither entry owns business state: configuration flows through
+ * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
+ * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
+ * and copy through `ctx.locale`.
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[src/recordings.ts:4-13](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/recordings.ts#L4-L13)
+
+多版本历史设计
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+ * Every spoken text becomes one recording node; each synthesis — first pass
+ * or a later re-synthesis — appends a version with its own WAV file on disk.
+ * A single `index.json` records the tree so the browser can list history
+ * without scanning directories. The store lives under the active profile's
+ * data root (`~/.dsh/profiles/<profile>/mimotts-recordings`; the legacy global
+ * `~/.dsh` when no profile is active), outside the plugin and any repository,
+ * so no recording leaks into version control.
+ *
+ * Re-synthesis never overwrites: it adds a new version, leaving earlier
+ * takes intact so the user can compare voices side by side.
+```
+
+</details>
+
+#### 缺口
+
+- 未采集用户听取场景、理解率和系统朗读对照
+  **影响**：无法确认额外价值和可及性收益
+  **进一步探讨**：同一回复比较系统朗读、外部TTS与插件的理解/回找耗时
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 能力如何从入口、注册、调用到状态变化实现？
+### Q02 · 文本到音频和历史如何流转？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-浏览器侧在三个 slot 注册配置、消息动作和历史页，Host 路由保管密钥并调用 MiMo，客户端只传文本和播放 WAV。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。
+浏览器从会话取文本，宿主路由先经connection.requestRejection验证请求，再解析凭据与当前配置。tts归一化Markdown、按maxChars截前缀，添加style后作为assistant内容发送chat/completions，音频配置为预置voice或本地WAV的base64克隆样本；回传音频统一包装WAV。录音路由先合成，再addVersion保存原request.text与WAV，返回音频并带录音ID。前后端不直接共享密钥值，凭据存储使用宿主remote接口。可借鉴的是宿主凭据/配置/slot边界与稳定错误码；外部TTS服务、PCM/WAV标准不计插件原创。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
+**依据 1 · 源码核查**：[src/index.ts:119-127](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/index.ts#L119-L127)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
+请求信任栅栏
 
 ```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
+  ctx.inject(['webServer', 'connection'], (child) => {
+    const fence = (req: IncomingMessage, res: ServerResponse): boolean => {
+      // The configured Host/Origin fence plus browser authentication: an
+      // unauthenticated LAN request must not spend the operator's API credits.
+      const rejection = child.connection.requestRejection(req)
+      if (rejection === undefined) return false
+      res.statusCode = rejection
+      res.end()
+      return true
+```
+
+**依据 2 · 源码核查**：[src/tts.ts:130-178](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/tts.ts#L130-L178)
+
+归一化、voice样本和请求负载
+
+<details>
+<summary>查看原文（49行）</summary>
+
+```text
+): Promise<Uint8Array> {
+  if (config.apiKey === '') {
+    throw new TtsError('not-configured', 'No MiMo API key is configured; add the credential in the credentials store and reference it in Settings → 语音合成.')
+  }
+  const speakable = clampText(toSpeakableText(request.text ?? ''), config.maxChars)
+  if (speakable === '') {
+    throw new TtsError('bad-request', 'The message carries no speakable text.')
+  }
+  const style = (request.style ?? '').trim() || config.style
+  const content = style === '' ? speakable : `<style>${style}</style>${speakable}`
+  const voice = (request.voice ?? '').trim() || config.voice
+
+  let audio: Record<string, unknown>
+  if (config.voiceSamplePath !== '') {
+    let sample: Uint8Array
+    try {
+      sample = await deps.readVoiceSample(config.voiceSamplePath)
+    } catch (cause) {
+      throw new TtsError(
+        'voice-sample-unreadable',
+        `The voice-clone sample at ${config.voiceSamplePath} could not be read.`,
+        cause,
+      )
+    }
+    audio = {
+      format: 'wav',
+      voice_audio: { format: 'wav', data: Buffer.from(sample).toString('base64') },
+    }
+  } else {
+    audio = { format: 'wav', voice }
+  }
+
+  const payload = {
+    model: config.model,
+    audio,
+    messages: [{ role: 'assistant', content }],
+  }
+  const endpoint = `${config.baseUrl.replace(/\/+$/, '')}/chat/completions`
+  let response: Response
+  try {
+    response = await deps.fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'api-key': config.apiKey,
+        'user-agent': 'dsh-mimotts/0.1.0',
+      },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(config.timeoutMs),
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[src/index.ts:243-259](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/index.ts#L243-L259)
+
+合成后落历史与音频返回
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+          const engine = await resolveEngineSnapshot(ctx, config)
+          try {
+            const wav = await synthesizeSpeech(engine, {
+              text: request.text,
+              style: typeof request.style === 'string' ? request.style : undefined,
+              voice: typeof request.voice === 'string' ? request.voice : undefined,
+            })
+            const style = (typeof request.style === 'string' ? request.style : '').trim() || engine.style
+            const voice = (typeof request.voice === 'string' ? request.voice : '').trim() || engine.voice
+            const { recording, version } = await addVersion(
+              request.text, style || undefined, voice || undefined, engine.model, wav,
+            )
+            res.statusCode = 200
+            res.setHeader('content-type', 'audio/wav')
+            res.setHeader('cache-control', 'no-store')
+            res.setHeader(MIMOTTS_RECORDING_HEADER, Buffer.from(JSON.stringify({ recId: recording.id, verId: version.id })).toString('base64'))
+            res.end(Buffer.from(wav))
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/client/index.ts:62-68](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/client/index.ts#L62-L68)
+
+宿主凭据写入
+
+```text
+  // The typed API key stores through the platform's credentials remote — the
+  // same host operation the official add-model credential editor writes
+  // through — so the literal key never lands in a configuration file.
+  const controller = new TtsSettingsController(
+    ctx.configForms.get<TtsSettings>(MIMOTTS_NAMESPACE),
+    async (ref, value) => (await ctx.remote.credentials.set(ref, value)).ok,
+  )
+```
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 相对原生能力或简单替代，固定版本增加了什么？
-
-**研究主题**：贡献与相对优势
-
-#### 完整回答
-
-相对复制文本到 TTS 网站，它把消息级朗读、宿主密钥隔离、可访问播放器和重生成历史嵌入原会话，减少跨应用交接。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
-```
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 什么前提最可能使核心价值不成立？
+### Q03 · 听到的内容是否完整等同原答复？
 
 **研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：价值依赖 MiMo API 的费用、延迟和音质，历史保存还会增加本地数据与隐私负担；源码与作者测试不能替代真实宿主长期使用和不同文本的效果对照。 这会直接收窄采用范围，而不是否定所有能力。
+不等同。normalize把代码块替换为“代码略”、删除图片和链接目标，将表格按顺序逗号连接；这便于听取自然语言，但不能作为代码、表格关系或图像内容的完整替代。clampText超过maxChars只读开头附近句界，历史仍以原request.text存储，因而“同一文本有一段音频”不证明全部读完。最影响核心价值的质疑是用户是否知道省略/截断了什么，否则便利入口可能造成误解而非完整交付。存储另使用单index.json直接writeFile，读坏回空；当前抽查未见跨请求事务保障，需并发/断电测试，不能把版本不覆盖推成绝不丢历史。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
+**依据 1 · 源码核查**：[src/normalize.ts:23-45](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/normalize.ts#L23-L45)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+代码/图像/链接/表格转换
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（23行）</summary>
+
+````text
+export function toSpeakableText(markdown: string): string {
+  let text = markdown
+  // Fenced code: one spoken note per block, whatever its language.
+  text = text.replace(/```[\s\S]*?```/g, `\n${CODE_FENCE_NOTE}\n`)
+  text = text.replace(/~~~[\s\S]*?~~~/g, `\n${CODE_FENCE_NOTE}\n`)
+  // Inline code keeps its content, loses its ticks.
+  text = text.replace(/`([^`\n]*)`/g, '$1')
+  // Images: drop entirely (alt text is rarely speakable).
+  text = text.replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+  // Links keep the anchor text; the URL is never spoken.
+  text = text.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+  text = text.replace(/\[([^\]]*)\]\[[^\]]*\]/g, '$1')
+  // Reference definitions and HTML tags.
+  text = text.replace(/^\[[^\]]*\]:\s+\S+.*$/gmu, '')
+  text = text.replace(/<\/?[a-zA-Z][^>\n]*>/g, '')
+  // Headings, bullets, quotes, and horizontal rules.
+  text = text.replace(/^#{1,6}\s+/gmu, '')
+  text = text.replace(/^\s*(?:[-*+]|\d+[.)])\s+/gmu, '')
+  text = text.replace(/^\s*>\s?/gmu, '')
+  text = text.replace(/^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/gmu, '\n')
+  // Tables: keep cell text in reading order, drop alignment and cell markup.
+  text = text.replace(/^\|?[\s:|-]+\|[\s:|-]*$/gmu, '')
+  text = text.replace(/\s*\|\s*/g, '，')
+````
+
+</details>
+
+**依据 2 · 源码核查**：[src/normalize.ts:68-79](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/normalize.ts#L68-L79)
+
+按字符预算截前缀
+
+<details>
+<summary>查看原文（12行）</summary>
 
 ```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
+export function clampText(text: string, maxChars: number): string {
+  if (text.length <= maxChars) return text
+  const prefix = text.slice(0, maxChars)
+  const boundary = Math.max(
+    prefix.lastIndexOf('。'),
+    prefix.lastIndexOf('！'),
+    prefix.lastIndexOf('？'),
+    prefix.lastIndexOf('!'),
+    prefix.lastIndexOf('?'),
+    prefix.lastIndexOf('.'),
+  )
+  return boundary > maxChars / 2 ? prefix.slice(0, boundary + 1) : prefix
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[src/index.ts:252-254](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/index.ts#L252-L254)
+
+历史保存原始request文本
+
+```text
+            const { recording, version } = await addVersion(
+              request.text, style || undefined, voice || undefined, engine.model, wav,
+            )
+```
+
+**依据 4 · 源码核查**：[src/recordings.ts:65-78](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/recordings.ts#L65-L78)
+
+索引读坏退空与直接写
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+async function readIndex(): Promise<TtsRecordingsIndex> {
+  try {
+    const raw = await readFile(indexFile(), 'utf8')
+    const parsed = JSON.parse(raw) as Partial<TtsRecordingsIndex>
+    return Array.isArray(parsed.entries) ? parsed as TtsRecordingsIndex : EMPTY_INDEX
+  } catch {
+    return EMPTY_INDEX
+  }
+}
+
+/** Persist the index, creating the directory first. */
+async function writeIndex(index: TtsRecordingsIndex): Promise<void> {
+  await ensureDir()
+  await writeFile(indexFile(), JSON.stringify(index), 'utf8')
+```
+
+</details>
+
+#### 缺口
+
+- 省略提示、并发历史与真实播放未运行
+  **影响**：完整理解及持久恢复不确定
+  **进一步探讨**：测试长文/代码/表格/并发合成，核对朗读覆盖与索引
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 依赖与单位朗读成本是什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+启动依赖声明DSH0.2接口、配置表单/slot与宿主凭据；实际合成还依赖外部MiMo兼容端点、有效key、网络与音频设备，克隆需可读样本。密钥仅宿主处理不等于文本留在本机：正文与克隆样本会发到配置端点，用户应按内容选择。首次成本是凭据、音色、最大长度和播放验证，持续是每次合成/重合成费用与WAV存储，失败包括已发请求但响应丢失的重复费用；本轮未查询现价、发请求或估算金额。历史多版本保留便于比较，也增加磁盘与清理负担。单位应是合格听取任务，不是一次HTTP200。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/tts.ts:142-178](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/tts.ts#L142-L178)
+
+样本和正文进入外部请求
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+  let audio: Record<string, unknown>
+  if (config.voiceSamplePath !== '') {
+    let sample: Uint8Array
+    try {
+      sample = await deps.readVoiceSample(config.voiceSamplePath)
+    } catch (cause) {
+      throw new TtsError(
+        'voice-sample-unreadable',
+        `The voice-clone sample at ${config.voiceSamplePath} could not be read.`,
+        cause,
+      )
+    }
+    audio = {
+      format: 'wav',
+      voice_audio: { format: 'wav', data: Buffer.from(sample).toString('base64') },
+    }
+  } else {
+    audio = { format: 'wav', voice }
+  }
+
+  const payload = {
+    model: config.model,
+    audio,
+    messages: [{ role: 'assistant', content }],
+  }
+  const endpoint = `${config.baseUrl.replace(/\/+$/, '')}/chat/completions`
+  let response: Response
+  try {
+    response = await deps.fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'api-key': config.apiKey,
+        'user-agent': 'dsh-mimotts/0.1.0',
+      },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(config.timeoutMs),
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/recordings.ts:24-40](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/recordings.ts#L24-L40)
+
+profile存储和全局回落
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+/** The legacy home-level store, used when no DSH profile is active. */
+const LEGACY_RECORDINGS_DIR = join(homedir(), '.dsh', 'mimotts-recordings')
+
+// Resolved lazily on first use and cached: the profile signals (env, argv,
+// install location) only settle once the harness process is up, and the store
+// must stay in one place for the process lifetime.
+let cachedDir: string | undefined
+function recordingsDir(): string {
+  if (cachedDir === undefined) {
+    cachedDir = profileScopedDefault('mimotts-recordings') ?? LEGACY_RECORDINGS_DIR
+  }
+  return cachedDir
+}
+
+/** The single index file mapping texts to their version trees. */
+function indexFile(): string {
+  return join(recordingsDir(), 'index.json')
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:89-97](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/README.md#L89-L97)
+
+宿主兼容声明边界
+
+````text
+  config:
+    apiKey: !!js process.env.MIMO_API_KEY
+```
+
+## 适配版本与「按版本选适配」
+
+**分发不会按宿主版本自动下载对应适配版本。** 本插件打包时把 `@deepseek-ai/dsh-*` 依赖锁死在某一个 release（当前 0.2.0-rc.2），别人拉到的就是同一份 `package.json`；npm 不会"看对方 dsh 版本 → 选不同版本的 dsh-* 依赖"。真正的版本闸门是 dsh 的两处兼容性声明：
+
+- `dsh.compatibility.dshReleases`：官方字段，精确列出本包适配的 release（如 `{ "0.2.0-rc.2": "compatible" }`）。安装器/市场在对方 dsh 版本不在白名单时**拒绝或警告**，而不是自动换一个适配版本。
+````
+
+#### 缺口
+
+- 价格、真实时延、音频大小与重试率未知
+  **影响**：单位合格朗读成本不可计算
+  **进一步探讨**：记录全部请求、合格听取结果、存储增量与人工时间
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 启动、持续生效和失败恢复分别依赖什么？
+### Q05 · 可以验证什么，当前如何试用？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-要求 DSH 0.2.0-rc.2 兼容 API、Web slots、配置与凭据服务，以及 MiMo API Key、网络与额度；音色克隆还需合格 WAV。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。
+未验证假设是把“朗读覆盖范围”与音频版本绑定，并在播放器显示省略代码/图像/尾部位置，能比只有音量按钮减少漏读误解。依据是Q03中原文与实际朗读不一致；增量是可核对覆盖，而不是再造TTS。最小实验20段含代码/表格/长文本，与现有播放器和系统朗读对照，测事实答题、遗漏发现率、定位时间及重合成成本；若覆盖提示不提高理解或显著干扰收听则否定。当前有限试用非敏感自然语言短文，先验收当前宿主的凭据、播放、长文提示、历史删除与禁用，技术细节仍回读原文；若用户无法辨识省略则停止用作完整答复替代。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
+**依据 1 · 源码核查**：[src/normalize.ts:23-45](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/normalize.ts#L23-L45)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+覆盖变化的可追踪基础
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（23行）</summary>
+
+````text
+export function toSpeakableText(markdown: string): string {
+  let text = markdown
+  // Fenced code: one spoken note per block, whatever its language.
+  text = text.replace(/```[\s\S]*?```/g, `\n${CODE_FENCE_NOTE}\n`)
+  text = text.replace(/~~~[\s\S]*?~~~/g, `\n${CODE_FENCE_NOTE}\n`)
+  // Inline code keeps its content, loses its ticks.
+  text = text.replace(/`([^`\n]*)`/g, '$1')
+  // Images: drop entirely (alt text is rarely speakable).
+  text = text.replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+  // Links keep the anchor text; the URL is never spoken.
+  text = text.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+  text = text.replace(/\[([^\]]*)\]\[[^\]]*\]/g, '$1')
+  // Reference definitions and HTML tags.
+  text = text.replace(/^\[[^\]]*\]:\s+\S+.*$/gmu, '')
+  text = text.replace(/<\/?[a-zA-Z][^>\n]*>/g, '')
+  // Headings, bullets, quotes, and horizontal rules.
+  text = text.replace(/^#{1,6}\s+/gmu, '')
+  text = text.replace(/^\s*(?:[-*+]|\d+[.)])\s+/gmu, '')
+  text = text.replace(/^\s*>\s?/gmu, '')
+  text = text.replace(/^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/gmu, '\n')
+  // Tables: keep cell text in reading order, drop alignment and cell markup.
+  text = text.replace(/^\|?[\s:|-]+\|[\s:|-]*$/gmu, '')
+  text = text.replace(/\s*\|\s*/g, '，')
+````
+
+</details>
+
+**依据 2 · 源码核查**：[src/normalize.ts:68-79](https://github.com/1497105876/dsh-mimotts/blob/3c0a89cf0b5ad2efd0463ffc896b544e19bb6220/src/normalize.ts#L68-L79)
+
+尾部截断需暴露
+
+<details>
+<summary>查看原文（12行）</summary>
 
 ```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
+export function clampText(text: string, maxChars: number): string {
+  if (text.length <= maxChars) return text
+  const prefix = text.slice(0, maxChars)
+  const boundary = Math.max(
+    prefix.lastIndexOf('。'),
+    prefix.lastIndexOf('！'),
+    prefix.lastIndexOf('？'),
+    prefix.lastIndexOf('!'),
+    prefix.lastIndexOf('?'),
+    prefix.lastIndexOf('.'),
+  )
+  return boundary > maxChars / 2 ? prefix.slice(0, boundary + 1) : prefix
 ```
 
 </details>
 
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 首次、持续与失败恢复成本及效果证据如何？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次成本是兼容 DSH 0.2.0-rc.2、配置 MiMo API Key、音色/克隆 WAV 和凭据存储；持续成本按每条朗读请求的字符数、MiMo 计费、延迟、WAV 字节与语音历史版本数累积；失败恢复包括超时/上游拒绝后的就地提示、重新合成和删除旧版本。合格单位是一条与目标消息匹配、可播放且用户可理解的语音，而不是收到 base64。当前缺每千字符价格、生成秒数、历史 MB、听懂率和重合成次数。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
-```
-
-</details>
-
-#### 缺口
-
-- 缺少真实 MiMo 请求的每千字符费用、端到端延迟、WAV 大小、失败率、历史增长和听众理解正确率。
-  **影响**：无法判断消息级朗读的便利是否值得 API 与历史存储成本。
-  **进一步探讨**：对短/长中文、英文、代码混合消息各运行多次，记录字符、金额、秒数、字节、失败、重合成和听众问题正确率。
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 实现有哪些可靠性取舍和可复用设计？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-Host/Client 状态边界、凭据远程与 typed slots 接线具体，播放器考虑键盘操作；仍需核查真实路由鉴权、音频留存策略和宿主升级兼容。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
-```
-
-</details>
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 由贡献和限制能推导什么未验证方向？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-从已确认机制与关键限制可推导：可增加“结构感知朗读”，把标题、列表和代码摘要转换为可控停顿与章节导航，并比较理解正确率而非只比较音频生成成功。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
-```
-
-</details>
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-适合已接受 MiMo 数据处理、需要经常听取定稿回复且可控制历史留存的 DSH Web 用户小范围试用；敏感文本、离线要求或不兼容宿主不适用。成功标准是消息与音频一一对应、密钥不出 Host、键盘播放器可用、延迟和每千字符成本低于用户上限；若历史无限增长、文本归一化丢失关键信息或路由鉴权失败，应停用。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/node/client/index.js:1-40](https://github.com/1497105876/dsh-mimotts/blob/fe04c509d3a308a2807238162998792ba8de6bca/lib/node/client/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * MiMo TTS speech synthesis, browser half.
- *
- * Three contributions, all registered through the typed slot system:
- * - `plugins.bundle.config` (keyed by the npm package name): the plugin's
- *   configuration card on the Plugins page, mounted on the bundle's detail
- *   page — the official seat for a bundle's own configuration;
- * - `settings.section`: the `语音历史` page (recorded speech, versions,
- *   re-synthesis), mounted while the Host serves this plugin's `mimotts`
- *   configuration namespace;
- * - `conversation.chat.assistant-actions`: the volume button under every
- *   finalized assistant message, with its floating player (draggable progress
- *   bar) once audio exists.
- *
- * Neither entry owns business state: configuration flows through
- * `ctx.configForms` (`mimotts` namespace), synthesis through the Host's
- * `/api/mimotts` routes, text from the Conversation binding through `useChat`,
- * and copy through `ctx.locale`.
- * @module dsh-mimotts/client
- */
-import { MIMOTTS_NAMESPACE, MIMOTTS_PACKAGE_KEY } from "../settings.js";
-import { BundleConfigCard } from "./BundleConfigCard.js";
-import { requestSpeech } from "./api.js";
-import { NS, en, zh } from "./locales.js";
-import { RecordingsPage } from "./RecordingsPage.js";
-import { SpeakAction } from "./SpeakAction.js";
-import { TtsSettingsController } from "./settings-controller.js";
-import { ensureTtsStatus, ttsStatusStore } from "./status.js";
-import { injectStyles } from "./styles.js";
-/** Required services (cordis fiber inject); remote.credentials stores the API key. */
-export const inject = ['slots', 'locale', 'configForms', 'remote', 'remote.credentials'];
-/**
- * Mount the speak entries, the Plugins-page configuration card, and the
- * speech-history settings page.
- * @param ctx - the browser plugin context.
- */
-export function apply(ctx) {
-    ctx.effect(() => injectStyles(), 'dsh-mimotts: styles');
-    ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-mimotts: dictionaries');
-    const t = ctx.locale.bind(NS);
-```
-
-</details>
-
-#### 缺口
-
-- 未在真实宿主和 MiMo 服务验证密钥边界、可访问播放器、延迟、音质与历史留存。
-  **影响**：源码与作者记录不足以证明长期朗读体验和数据安全。
-  **进一步探讨**：在专用 Key 与测试 profile 中朗读多类消息，抓取网络与存储，验证 Host-only 密钥、路由拒绝、播放器键盘操作和历史删除。
-
-[返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

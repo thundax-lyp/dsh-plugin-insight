@@ -1,18 +1,18 @@
 # dsh-stl-preview
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[fd1ad27](https://github.com/439436269-ctrl/dsh-stl-preview/tree/fd1ad275dd93c3a3766a0924f34309df85ade782)
+分析版本：[7f85985](https://github.com/439436269-ctrl/dsh-stl-preview/tree/7f8598583529962a6778320bc6185b6ea4168c63)
 
 <!-- BEGIN META -->
-[![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-stl-preview)
+[![npm 30d 45](https://img.shields.io/static/v1?label=npm+30d&message=45&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-stl-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-stl-preview)
 <!-- END META -->
 
-> **实现功能**：在Harness文档预览中查看STL三维网格，显示尺寸、体积、表面积与水密性检查。
+> **实现功能**：在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。
 
-> **核心亮点**：把轻量WebGL、浏览器STL解析和Host权限文件流接入文档预览，减少看形状时切换工具；查看器沿用blend-preview思路，几何公式和边计数不声称原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **核心亮点**：相对切片器直开或普通3D查看器，增量是工作区内的STL解析、几何测量与边拓扑初筛；三角网格公式属于标准机制，未证明打印成功率提升。[Q01](#research-q01)
 
-> **风险与缺陷**：水密标记仅检查量化焊接后的无向边使用数与退化顶点，不检查自交、面朝向或可打印性；大三角数只跳过边表，解析和面积体积仍走主线程。不能从绿色标记推断打印成功或内存有界。参见[Q03](#research-q03)。
+> **风险与缺陷**：无向边计数及容差焊接不足以排除自交、反向面和制造问题；Host分块传输仍对应浏览器全量缓冲，不能据此承诺大网格低内存。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要STL模型预览，相对手工或宿主原生办法增加什么？](#detail-section-11)
-  - [Q02 · 文件路径、解析与浏览器渲染如何从入口形成完整调用链，依赖失效怎么办？](#detail-section-12)
-  - [Q03 · 什么实现边界最可能使STL模型预览的贡献不成立，哪些工程设计可复用？](#detail-section-13)
-  - [Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？](#detail-section-14)
-  - [Q05 · 可从文件路径、解析与浏览器渲染的限制推导什么可证伪改进？](#detail-section-15)
-  - [Q06 · 哪些用户可以受控采用STL模型预览，何时应停止？](#detail-section-16)
+  - [Q01 · 侧栏STL检查增加什么交付能力？](#detail-section-11)
+  - [Q02 · “水密”和体积是否足以证明可打印？](#detail-section-12)
+  - [Q03 · Host流式传输是否消除了大模型成本？](#detail-section-13)
+  - [Q04 · 哪些工程机制值得借鉴，旧包应如何采用？](#detail-section-14)
+  - [Q05 · 怎样减少几何指标造成的错误验收？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：为在Harness工作区生成或检查STL的开发者提供就地旋转查看与几何摘要；合格输出是确认形状和尺寸假设，再交切片器验证打印，不是出具可制造证明。
+> **用途**：适合在DSH内做STL打印前几何初筛的人；尺寸依赖明确单位，最终制造与切片仍需专业工具。[Q01](#research-q01)
 
-系统3D查看器和切片器提供直接替代；插件的独立价值是Harness上下文内的快速初看，不是新增制造能力。
+直接用切片器打开STL是简单基线，具备打印配置与进一步验证；本项只比较实现流程，没有同任务效果实验。
 
 <a id="detail-section-3"></a>
 
@@ -51,70 +50,69 @@
 
 #### 能力
 
-| 能力 | 主要用途 | 使用条件与边界 |
+|能力|主要用途|使用条件与边界|
 |---|---|---|
-| STL三维视图 | 就地查看binary/ASCII网格 | WebGL与浏览器内存必需 |
-| 尺寸/体积/面积 | 快速几何摘要 | STL无单位，体积依赖有效闭合与绕序 |
-| 水密性子集检查 | 边界/非流形/退化提示 | 量化焊接，超阈值跳过，非打印保证 |
-| 鉴权字节路由 | Host文件到浏览器 | 依赖connection fence与ctx.fs权限 |
+|STL预览|初筛网格形态|WebGL、浏览器全量缓冲|
+|几何统计|尺寸面积体积|unitScale正确，非打印验收|
+|边拓扑检查|提示开边和非流形|容差焊接，超阈值跳过|
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|依赖或条件|是否必需|用途|缺失或不满足时|
 |---|---|---|---|
-| Node >=22、Cordis ^4.0.1及DSH预览API | 必需 | 加载Host和客户端渲染器 | 兼容表只声明0.2.0-rc.2/0.2.1-rc.2 |
-| connection与fs权限 | 必需 | 鉴权与文件读取 | 类型化文件错误转403/404等 |
-| WebGL浏览器及内存 | 必需 | 解析与绘制 | WebGL缺失会失败；大文件可占多份内存 |
-| 正确unitScale | 尺寸判断必需 | 解释无单位STL | 默认毫米可能使尺寸/体积失真 |
+|DSH fs/connection|必需|文件读取与认证|核对权限或专业工具直开|
+|WebGL与浏览器内存|必需|显示、全量解析|降低模型复杂度|
+|正确unitScale|物理量判断必需|尺寸面积体积|对照已知尺寸样件|
 
 #### 启动步骤
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|步骤|执行者与成功判据|失败处理|
 |---|---|---|
-| 1 | 用户安装对应profile并重启 | 预览器注册且鉴权路由可用 |
-| 2 | 设置单位和文件/三角数上限 | 单位与建模来源一致 |
-| 3 | 点开STL并旋转查看 | ready且尺寸/跳过标记明确 |
-| 4 | 在切片器独立复核 | 拓扑与打印参数通过后才生产 |
+|核对迁移与兼容|用户确认目标包入口|暂缓新装旧包|
+|配置单位并打开样件|用户确认尺寸|改unitScale|
+|检查边拓扑和跳过提示|用户以切片器复核|不将水密作为最终放行|
+
+**效果与成本**
 
 #### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|阶段|现金与资源|人工与时间|未知|
 |---|---|---|---|
-| 首次使用 | 本地Host、浏览器/GPU资源，金额未知 | 安装、核对单位和权限，时间未知 | 无需Blender服务链 |
-| 持续使用 | 完整文件buffer、顶点/法线/GPU及边表内存 | 查看几何并送切片器复核 | 512MiB文件上限不等于浏览器内存上限 |
-| 失败恢复 | 重新拉取/解析资源，量未知 | 降低上限、关闭预览、换专业工具 | 主线程解析难以即时打断 |
+|首次|DSH、WebGL环境|安装并确认STL单位|兼容与耗时|
+|持续|浏览器全量字节、顶点数组和GPU|查看并在切片器复核|峰值与节时|
+|失败恢复|重新读取解析网格|查权限、降低网格复杂度|重试次数与恢复时间|
 
 #### 效果
 
-| 效果项 | 当前证据支持 | 尚不能确定 |
+|效果项|支持|未知|
 |---|---|---|
-| 就地预览 | 渲染器注册、二进制/ASCII解析 | 真实设备交互延迟 |
-| 几何摘要 | 尺寸/面积/有符号体积及边计数公式 | 模型朝向、自交与误焊下正确性 |
-| 传输边界 | Host按chunk读取并no-store | 浏览器峰值内存与大文件响应性 |
+|几何初筛|STL解析及统计源码|准确率和节时|
+|Host读取有界|分块readByteRange|浏览器/GPU峰值|
+|水密检查|容差焊接及边计数|自交、方向和打印成功|
 
-> **思考**：水密标记仅检查量化焊接后的无向边使用数与退化顶点，不检查自交、面朝向或可打印性；大三角数只跳过边表，解析和面积体积仍走主线程。不能从绿色标记推断打印成功或内存有界。参见[Q03](#research-q03)。
+> **思考**：无向边计数及容差焊接不足以排除自交、反向面和制造问题；Host分块传输仍对应浏览器全量缓冲，不能据此承诺大网格低内存。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把轻量WebGL、浏览器STL解析和Host权限文件流接入文档预览，减少看形状时切换工具；查看器沿用blend-preview思路，几何公式和边计数不声称原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：相对切片器直开或普通3D查看器，增量是工作区内的STL解析、几何测量与边拓扑初筛；三角网格公式属于标准机制，未证明打印成功率提升。[Q01](#research-q01)
 
-把轻量WebGL、浏览器STL解析和Host权限文件流接入文档预览，减少看形状时切换工具；查看器沿用blend-preview思路，几何公式和边计数不声称原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
+相对切片器直开或普通3D查看器，增量是工作区内的STL解析、几何测量与边拓扑初筛；三角网格公式属于标准机制，未证明打印成功率提升。[Q01](#research-q01)
 
-Host配置注入保证两端路由一致，ctx.fs保持宿主权限；大小限制与三角统计门槛分离值得借鉴。复用需区分端侧峰值内存、算法诊断范围和UI绿色信号的含义。
+宿主文件服务、effect路由释放与统一参数注入可复用；浏览器内存、算法覆盖及旧包迁移仍需验收。[Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-水密标记仅检查量化焊接后的无向边使用数与退化顶点，不检查自交、面朝向或可打印性；大三角数只跳过边表，解析和面积体积仍走主线程。不能从绿色标记推断打印成功或内存有界。参见[Q03](#research-q03)。
+无向边计数及容差焊接不足以排除自交、反向面和制造问题；Host分块传输仍对应浏览器全量缓冲，不能据此承诺大网格低内存。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议有STL检查需求者先用小网格试用，明确单位并保留切片器复核；内存紧张、要求制造质量或不可信超大文件时暂缓。发生单位不明、分析跳过或视口卡顿就切专业工具。参见[Q06](#research-q06)。
+建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +120,18 @@ Host配置注入保证两端路由一致，ctx.fs保持宿主权限；大小限�
 
 **核查状态**：已检查源码。
 
-源码支持就地预览与有限几何检查；打印质量、性能和worker假设未验证。
+已有集成机制有源码支持；节时、保真与宿主兼容未执行验证；设计假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、README.zh.md、package.json、lib/index.js、lib/route.js、lib/config.js、dev/client-body.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/route.js、dev/client-body.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查Host入口/route/config及客户端原始解析、分析和注册链；viewer沿用归属依作者说明，未执行目标脚本。
-- 下一步：以已知尺寸、开口、自交、反向面及大文件做专业工具对照，分别记录正确性、取消响应和内存。
+- 边界：源码级检查Host路由、宿主接线和浏览器解析/统计；未逐行审计WebGL查看器，未执行。
+- 下一步：授权后以已知单位、开边、自交、反向面和超阈值网格对照切片器，测误验、响应与禁用恢复。
 
 **分析版本**
 
 - **仓库**：[439436269-ctrl/dsh-stl-preview](https://github.com/439436269-ctrl/dsh-stl-preview)
-- **版本号**：0.1.0（[固定提交 fd1ad27](https://github.com/439436269-ctrl/dsh-stl-preview/tree/fd1ad275dd93c3a3766a0924f34309df85ade782)）
-- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 7f85985](https://github.com/439436269-ctrl/dsh-stl-preview/tree/7f8598583529962a6778320bc6185b6ea4168c63)）
+- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +139,9 @@ Host配置注入保证两端路由一致，ctx.fs保持宿主权限；大小限�
 
 <a id="innovation"></a>
 
-可将解析与拓扑分析移到worker并分阶段给出“形状可见／单位确认／拓扑部分检查”收据；用相反绕序、自交壳、极近顶点和大网格对照专业检查器，若取消无效或误导标记未降则否定。代价是worker传输和版本化诊断，假设未验证。参见[Q05](#research-q05)。
+未验证假设是显式标注单位与算法覆盖，并将统计移入可取消worker，减少误验及界面阻塞；对照自交/单位错误/大网格任务，若误判或总成本不改善则否定。[Q05](#research-q05)
 
-以已知尺寸、开口、自交、反向面及大文件做专业工具对照，分别记录正确性、取消响应和内存。
+授权后以已知单位、开边、自交、反向面和超阈值网格对照切片器，测误验、响应与禁用恢复。
 
 <a id="detail-section-9"></a>
 
@@ -154,7 +152,7 @@ Host配置注入保证两端路由一致，ctx.fs保持宿主权限；大小限�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 4 | 294 | — | — | 2524 |
+| .md | source | 4 | 296 | — | — | 2547 |
 | .js | source | 7 | 3516 | 3093 | 225 | — |
 | .mjs | source | 3 | 279 | 229 | 32 | — |
 | .js | test | 4 | 497 | 455 | 17 | — |
@@ -163,38 +161,38 @@ Host配置注入保证两端路由一致，ctx.fs保持宿主权限；大小限�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/439436269-ctrl/dsh-stl-preview/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/439436269-ctrl/dsh-stl-preview/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定提交 fd1ad275dd93c3a3766a0924f34309df85ade782 和截止 2026-10-23T01:41:11Z 范围内，STL模型预览能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？
+**插件研究总目标**：STL侧栏测量对打印前筛查提供什么增量，其几何和成本边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要STL模型预览，相对手工或宿主原生办法增加什么？
+### Q01 · 侧栏STL检查增加什么交付能力？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-在Harness里生成STL的开发者可就地确认形状及尺寸假设；合格交付是可读预览和可解释几何摘要，再由切片器核查制造条件。相比下载后打开外部查看器，它减少初看切换，浏览器STL/WebGL算法与上游查看器能力不算原创。
-
-作者的“不上传”具体指文件从Host直接到本会话浏览器，无额外云转换。简单替代是下载后用系统查看器/切片器，优势主要在工作区连续性；若本来就需切片，该插件只节省初看一步而不替代制造流程。
+目标是对工作区产生的STL做打印前初筛，合格结果是识别外形、尺寸及明显拓扑异常，再交给切片器。作者声明二进制/ASCII解析、体积面积和水密检查，index实际注册Host字节路由并向浏览器注入单位与阈值。相对切片器直接打开，增量是保持DSH上下文且不需Blender后台转换；相对普通3D查看器增加几何统计。算法是标准三角形面积、四面体体积及边计数，不能视为新几何理论。README明确此库是旧0.1.x，新包已迁往dsh-preview-stl；新入口未在本项验证。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-24](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/README.md#L1-L24)
+**依据 1 · 作者声明**：[README.md:1-20](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/README.md#L1-L20)
 
-作者定位STL工作区预览
+作者声明目标、迁移及无Blender依赖
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（20行）</summary>
 
-````text
+```text
+> **Renamed:** the canonical package is now [`dsh-preview-stl`](https://github.com/439436269-ctrl/dsh-preview-stl). This repository is kept as the legacy 0.1.x home.
+
 # dsh-stl-preview
 
 Preview **STL** meshes inside [DeepSeek Harness](https://github.com/deepseek-ai): the right-Sidebar document preview renders the triangles in an interactive 3D viewport and reports the numbers that matter for 3D printing — size, volume, surface area and watertightness.
@@ -213,22 +211,16 @@ Preview **STL** meshes inside [DeepSeek Harness](https://github.com/deepseek-ai)
 
 - DeepSeek Harness 0.2.x (declared compatible with `0.2.0-rc.2` and `0.2.1-rc.2`).
 - A browser/GPU with WebGL (the desktop app always has it). No Blender, no slicer, no network.
-
-## Install
-
-```sh
-dsh plugin --profile <profile> add dsh-stl-preview
 ```
-````
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:31-50](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/lib/index.js#L31-L50)
+**依据 2 · 源码核查**：[lib/index.js:31-49](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/lib/index.js#L31-L49)
 
-路由和客户端配置的接线
+Host接线及参数注入
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
 export function apply(ctx, config) {
@@ -250,165 +242,87 @@ export function apply(ctx, config) {
         color: settings.color,
         analysisMaxTriangles: settings.analysisMaxTriangles,
       },
-    });
 ```
 
 </details>
+
+#### 缺口
+
+- 缺少同任务基线的端到端收益结果
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 文件路径、解析与浏览器渲染如何从入口形成完整调用链，依赖失效怎么办？
+### Q02 · “水密”和体积是否足以证明可打印？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-Host注册鉴权/api字节路由，ctx.fs解析权限后分块读取；客户端预览器fetch完整buffer，解析binary/ASCII、计算指标、变换坐标并上传WebGL。需Node22、宿主预览/connection/fs、WebGL和内存；用户先安装重启及确认unitScale，再打开小模型，失败转专业工具。
-
-文件绝对路径经过宿主fs.resolve及stat，不在插件中另建沙箱；鉴权依赖connection的/api fence。浏览器收到完整字节后产生triangle soup和GPU数据，Host流式不能等价为端到端流式。
+不能。解析器按84字节头、面数及50字节每面判定二进制，否则回退ASCII；统计遍历顶点累积包围盒、叉积面积和有向体积，最后对体积取绝对值。网格焊接以模型对角线乘1e-5形成容差，将坐标取整映射顶点，再以无向边使用次数判断边界/非流形/退化面。该检查能发现部分开边与拓扑问题，但未检查自交、法向全局一致或薄壁可制造性；闭合且自交模型可能仍通过，体积也受面方向抵消影响。这是算法范围推导，不是已复现实例。unitScale错误会使长度、面积和体积按不同幂次失真。大于analysisMaxTriangles跳过水密，但仍全量解析和基础统计，不能把跳过解释成已通过。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/route.js:41-67](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/lib/route.js#L41-L67)
+**依据 1 · 源码核查**：[dev/client-body.js:266-276](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/dev/client-body.js#L266-L276)
 
-路径、类型、大小和HEAD/GET处理
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-async function serve(request, fs, config) {
-  if (!config.enabled) return fail(503, "STL preview is disabled.");
-  const method = request.method === "HEAD" ? "HEAD" : "GET";
-  const url = new URL(request.url);
-  const path = url.searchParams.get("path");
-  if (path === null || path === "") return fail(400, "Missing `path`.");
-  if (path.includes("\0") || !isAbsolutePath(path)) return fail(400, "An absolute path is required.");
-  const suffix = path.slice(path.lastIndexOf(".") + 1).toLowerCase();
-  if (!config.extensions.includes(suffix)) return fail(400, `Only ${config.extensions.map((item) => `.${item}`).join(", ")} files are previewed.`);
-
-  const signal = request.signal;
-  try {
-    const target = await fs.resolve(path, { signal });
-    const info = await fs.stat(target, signal);
-    if (info === undefined) return fail(404, "not found");
-    if (info.type !== "file") return fail(403, "not a regular file");
-    const size = typeof info.size === "number" ? info.size : 0;
-    if (size === 0) return fail(416, "empty file");
-    if (size > config.maxBytes) return fail(413, `file exceeds the ${config.maxBytes}-byte limit`);
-
-    const headers = {
-      ...BASE_HEADERS,
-      "Content-Type": "model/stl",
-      "Content-Length": String(size),
-    };
-    if (method === "HEAD") return new Response(null, { status: 200, headers });
-    return new Response(streamMesh(fs, target, size, config.chunkBytes, signal), { status: 200, headers });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/route.js:82-92](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/lib/route.js#L82-L92)
-
-分块读取并传递AbortSignal
+格式判定
 
 <details>
 <summary>查看原文（11行）</summary>
 
 ```text
-function streamMesh(fs, target, size, chunkBytes, signal) {
-  const source = (async function* readChunks() {
-    for (let offset = 0; offset < size; offset += chunkBytes) {
-      if (signal.aborted) return;
-      const length = Math.min(chunkBytes, size - offset);
-      const bytes = await fs.readByteRange(target, { offset, length }, signal);
-      if (signal.aborted) return;
-      if (bytes.byteLength > 0) yield bytes;
-    }
-  })();
-  return Readable.toWeb(Readable.from(source));
+    function parseStl(buffer) {
+      const bytes = new Uint8Array(buffer);
+      if (bytes.byteLength === 0) throw Object.assign(new Error("empty file"), { code: "STL_EMPTY" });
+      if (bytes.byteLength >= 84) {
+        const view = new DataView(buffer);
+        const count = view.getUint32(80, true);
+        if (count > 0 && 84 + count * 50 <= bytes.byteLength && count <= 50_000_000) {
+          return parseBinaryStl(view, count, bytes);
+        }
+      }
+      return parseAsciiStl(new TextDecoder().decode(bytes));
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[dev/client-body.js:524-563](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L524-L563)
+**依据 2 · 源码核查**：[dev/client-body.js:368-414](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/dev/client-body.js#L368-L414)
 
-完整buffer、同步解析分析与上传GPU
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-      React.useEffect(() => {
-        if (absolutePath === undefined) return undefined;
-        const controller = new AbortController();
-        setState("loading");
-        setFailure(null);
-        setStats(null);
-
-        (async () => {
-          const response = await fetch(assetUrl(routePath, absolutePath, version), {
-            signal: controller.signal,
-            credentials: "same-origin",
-          });
-          if (!response.ok) {
-            const detail = await response.text().catch(() => "");
-            throw { message: detail || tRef.current("readFailed"), code: "HTTP_" + String(response.status) };
-          }
-          const bytes = await response.arrayBuffer();
-          if (controller.signal.aborted) return;
-          setState("parsing");
-          await new Promise((resolve) => setTimeout(resolve, 30));
-          const parsed = parseStl(bytes);
-          if (controller.signal.aborted) return;
-          setState("analyzing");
-          await new Promise((resolve) => setTimeout(resolve, 20));
-          const analysis = analyzeStl(parsed, { unitScale, analysisMaxTriangles });
-          if (controller.signal.aborted) return;
-          const viewer = viewerRef.current;
-          if (viewer === null) {
-            throw {
-              message: tRef.current("invalid") + (viewerErrorRef.current === "" ? "" : " " + viewerErrorRef.current),
-              code: "WEBGL_MISSING",
-            };
-          }
-          const modelStats = viewer.setGeometry({
-            positions: toYUp(parsed.positions),
-            normals: toYUp(parsed.normals),
-            color: hexToLinear(color),
-          });
-          setStats({ ...analysis, ...modelStats, sizeMm: analysis.sizeMm, bytes: bytes.byteLength });
-          setState("ready");
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 什么实现边界最可能使STL模型预览的贡献不成立，哪些工程设计可复用？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-水密结论只来自焊接后无向边使用数和退化计数，不覆盖自交、面绕序和可打印性，绿色状态容易被过度解释。边表阈值也不免去主线程解析与面积体积循环。配置注入和权限文件流可复用，几何诊断必须说明覆盖。
-
-边表按包围盒对角线比例生成epsilon并四舍五入焊接，因此近邻顶点可能合并、量化边界又可能分开；有符号体积取绝对和，对非闭合/绕序不一致网格不保证实体体积。工程上配置注入、AbortController和no-store很清楚，移植须保留宿主权限与状态收据。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[dev/client-body.js:394-414](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L394-L414)
-
-体积公式和随几何尺度变化的焊接epsilon
+面积体积、单位及阈值
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
+    function analyzeStl(parsed, options) {
+      const positions = parsed.positions;
+      const count = parsed.triangleCount;
+      const min = [Infinity, Infinity, Infinity];
+      const max = [-Infinity, -Infinity, -Infinity];
+      let areaRaw = 0;
+      let volumeRaw = 0;
+      for (let triangle = 0; triangle < count; triangle += 1) {
+        const base = triangle * 9;
+        const ax = positions[base], ay = positions[base + 1], az = positions[base + 2];
+        const bx = positions[base + 3], by = positions[base + 4], bz = positions[base + 5];
+        const cx = positions[base + 6], cy = positions[base + 7], cz = positions[base + 8];
+        for (const [x, y, z] of [[ax, ay, az], [bx, by, bz], [cx, cy, cz]]) {
+          if (x < min[0]) min[0] = x;
+          if (y < min[1]) min[1] = y;
+          if (z < min[2]) min[2] = z;
+          if (x > max[0]) max[0] = x;
+          if (y > max[1]) max[1] = y;
+          if (z > max[2]) max[2] = z;
+        }
+        const ux = bx - ax, uy = by - ay, uz = bz - az;
+        const vx = cx - ax, vy = cy - ay, vz = cz - az;
+        const nx = uy * vz - uz * vy;
+        const ny = uz * vx - ux * vz;
+        const nz = ux * vy - uy * vx;
+        areaRaw += 0.5 * Math.hypot(nx, ny, nz);
         volumeRaw += (ax * (by * cz - bz * cy) - ay * (bx * cz - bz * cx) + az * (bx * cy - by * cx)) / 6;
       }
       const scale = options.unitScale;
@@ -434,9 +348,9 @@ function streamMesh(fs, target, size, chunkBytes, signal) {
 
 </details>
 
-**依据 2 · 源码核查**：[dev/client-body.js:419-453](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L419-L453)
+**依据 3 · 源码核查**：[dev/client-body.js:419-453](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/dev/client-body.js#L419-L453)
 
-无向边计数为水密判据
+网格焊接与无向边判定
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -481,93 +395,34 @@ function streamMesh(fs, target, size, chunkBytes, signal) {
 
 </details>
 
-**依据 3 · 源码核查**：[dev/client-body.js:540-549](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L540-L549)
+<a id="research-q03"></a>
 
-同步解析和分析不能中途响应abort
+<a id="detail-section-13"></a>
 
-<details>
-<summary>查看原文（10行）</summary>
+### Q03 · Host流式传输是否消除了大模型成本？
 
-```text
-          const bytes = await response.arrayBuffer();
-          if (controller.signal.aborted) return;
-          setState("parsing");
-          await new Promise((resolve) => setTimeout(resolve, 30));
-          const parsed = parseStl(bytes);
-          if (controller.signal.aborted) return;
-          setState("analyzing");
-          await new Promise((resolve) => setTimeout(resolve, 20));
-          const analysis = analyzeStl(parsed, { unitScale, analysisMaxTriangles });
-          if (controller.signal.aborted) return;
-```
-
-</details>
-
-#### 缺口
-
-- 与专业拓扑检查及真实设备的对照缺失
-  **影响**：无法评价错误标记率和最大可用规模
-  **进一步探讨**：固定一组已知缺陷网格逐项对照切片器并记录峰值内存
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？
-
-**研究主题**：效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-首次付出安装、权限与单位核对；持续付出完整输入buffer、CPU顶点数组/GPU副本和审形人工；失败需关闭预览、降规模或改用切片器。金额、峰值内存和时间未知；机制支持就地查看，不能承诺大文件安全或打印质量提高。
-
-单位任务是正确确认一个模型形状及单位，不是成功显示画布。应把下载buffer、CPU数组、GPU副本与失败重试都计入，专业复核人工不能因预览便利省略。
+Host通过ctx.fs.resolve/stat及readByteRange逐块发送数据，避免Host一次性读全文件，且请求取消停止后续块。但浏览器仍await response.arrayBuffer，再分配positions/normals并在主线程解析和分析；所以内存压力被分配到浏览器，不能宣称端到端恒定内存。首次需要DSH插件配置和WebGL，STL单位必须由用户明确；无需外部Blender不等于没有GPU、内存和复核成本。持续使用每次下载/解析网格，失败恢复需检查大小限制、权限和GPU，并退回切片器。512MiB默认仅是输入大小限制，不是浏览器占用上限；本轮没有资源峰值、现金或人工耗时数据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dev/client-body.js:540-562](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L540-L562)
+**依据 1 · 源码核查**：[lib/route.js:51-92](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/lib/route.js#L51-L92)
 
-客户端内存和计算链
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-          const bytes = await response.arrayBuffer();
-          if (controller.signal.aborted) return;
-          setState("parsing");
-          await new Promise((resolve) => setTimeout(resolve, 30));
-          const parsed = parseStl(bytes);
-          if (controller.signal.aborted) return;
-          setState("analyzing");
-          await new Promise((resolve) => setTimeout(resolve, 20));
-          const analysis = analyzeStl(parsed, { unitScale, analysisMaxTriangles });
-          if (controller.signal.aborted) return;
-          const viewer = viewerRef.current;
-          if (viewer === null) {
-            throw {
-              message: tRef.current("invalid") + (viewerErrorRef.current === "" ? "" : " " + viewerErrorRef.current),
-              code: "WEBGL_MISSING",
-            };
-          }
-          const modelStats = viewer.setGeometry({
-            positions: toYUp(parsed.positions),
-            normals: toYUp(parsed.normals),
-            color: hexToLinear(color),
-          });
-          setStats({ ...analysis, ...modelStats, sizeMm: analysis.sizeMm, bytes: bytes.byteLength });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/route.js:57-67](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/lib/route.js#L57-L67)
-
-文件上限只约束输入字节
+文件服务分块与取消
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（42行）</summary>
 
 ```text
+  const signal = request.signal;
+  try {
+    const target = await fs.resolve(path, { signal });
+    const info = await fs.stat(target, signal);
+    if (info === undefined) return fail(404, "not found");
+    if (info.type !== "file") return fail(403, "not a regular file");
     const size = typeof info.size === "number" ? info.size : 0;
     if (size === 0) return fail(416, "empty file");
     if (size > config.maxBytes) return fail(413, `file exceeds the ${config.maxBytes}-byte limit`);
@@ -579,47 +434,43 @@ function streamMesh(fs, target, size, chunkBytes, signal) {
     };
     if (method === "HEAD") return new Response(null, { status: 200, headers });
     return new Response(streamMesh(fs, target, size, config.chunkBytes, signal), { status: 200, headers });
+  } catch (error) {
+    return fail(statusOf(error), codeOf(error));
+  }
+}
+
+/**
+ * Yield the file in fixed-size windows.
+ * @param fs - composed filesystem provider.
+ * @param target - resolved file target.
+ * @param size - total byte count.
+ * @param chunkBytes - largest single read.
+ * @param signal - aborts on a closed connection.
+ * @returns the byte stream handed to the response.
+ */
+function streamMesh(fs, target, size, chunkBytes, signal) {
+  const source = (async function* readChunks() {
+    for (let offset = 0; offset < size; offset += chunkBytes) {
+      if (signal.aborted) return;
+      const length = Math.min(chunkBytes, size - offset);
+      const bytes = await fs.readByteRange(target, { offset, length }, signal);
+      if (signal.aborted) return;
+      if (bytes.byteLength > 0) yield bytes;
+    }
+  })();
+  return Readable.toWeb(Readable.from(source));
 ```
 
 </details>
 
-#### 缺口
+**依据 2 · 源码核查**：[dev/client-body.js:531-548](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/dev/client-body.js#L531-L548)
 
-- 端到端耗时、GPU/内存和人工切换节省未测
-  **影响**：不能量化ROI或大文件安全阈值
-  **进一步探讨**：相同设备和模型对照就地预览与外部查看器
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 可从文件路径、解析与浏览器渲染的限制推导什么可证伪改进？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证假设是worker分阶段解析/分析并返回单位与拓扑覆盖收据。对照当前主线程实现和专业检查器，用反绕序、自交、极近顶点与大网格检查响应性和误导标记；不能取消、内存不降或错误诊断不减则否定，worker传输开销须计入。
-
-推导来自可取消传输与不可中断同步分析的边界，以及单一水密布尔值承载过多含义。先显示形状、再声明已检查的拓扑子集，可保留交互便利并减少误读；worker并不自动修复几何算法，须分别验证响应性和正确性。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[dev/client-body.js:524-578](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L524-L578)
-
-传输取消与计算阶段分离的切入点
+浏览器整包缓冲与主线程解析
 
 <details>
-<summary>查看原文（55行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-      React.useEffect(() => {
-        if (absolutePath === undefined) return undefined;
-        const controller = new AbortController();
-        setState("loading");
-        setFailure(null);
-        setStats(null);
-
         (async () => {
           const response = await fetch(assetUrl(routePath, absolutePath, version), {
             signal: controller.signal,
@@ -638,105 +489,200 @@ function streamMesh(fs, target, size, chunkBytes, signal) {
           setState("analyzing");
           await new Promise((resolve) => setTimeout(resolve, 20));
           const analysis = analyzeStl(parsed, { unitScale, analysisMaxTriangles });
-          if (controller.signal.aborted) return;
-          const viewer = viewerRef.current;
-          if (viewer === null) {
-            throw {
-              message: tRef.current("invalid") + (viewerErrorRef.current === "" ? "" : " " + viewerErrorRef.current),
-              code: "WEBGL_MISSING",
-            };
-          }
-          const modelStats = viewer.setGeometry({
-            positions: toYUp(parsed.positions),
-            normals: toYUp(parsed.normals),
-            color: hexToLinear(color),
-          });
-          setStats({ ...analysis, ...modelStats, sizeMm: analysis.sizeMm, bytes: bytes.byteLength });
-          setState("ready");
-          settleRef.current(true, version);
-        })().catch((error) => {
-          if (controller.signal.aborted) return;
-          setFailure({
-            code: typeof error?.code === "string" ? error.code : "UNKNOWN",
-            message: error instanceof Error ? error.message : String(error?.message ?? error),
-          });
-          setState("failed");
-          settleRef.current(false, version);
-        });
-
-        return () => {
-          controller.abort();
-        };
-      }, [absolutePath, version, attempt, routePath, unitScale, color, analysisMaxTriangles]);
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dev/client-body.js:405-410](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L405-L410)
+**依据 3 · 作者声明**：[README.md:34-43](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/README.md#L34-L43)
 
-现有analysisSkipped状态可扩展为诊断覆盖
+默认容量和分析阈值
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
-        watertight: null,
-        weldedVertices: count * 3,
-        boundaryEdges: 0,
-        nonManifoldEdges: 0,
-        degenerateTriangles: 0,
-        analysisSkipped: count > options.analysisMaxTriangles,
+| Key | Default | Meaning |
+|---|---|---|
+| `enabled` | `true` | Register the renderer and the byte route. |
+| `routePath` | `/api/stl-preview` | Authenticated mesh route. Must stay under `/api`; otherwise it falls back to the default. |
+| `extensions` | `["stl"]` | Suffixes that open in the 3D preview. |
+| `maxBytes` | `536870912` | Largest STL streamed (512 MiB). |
+| `chunkBytes` | `1048576` | Bytes per ranged read on the host. |
+| `unitScale` | `1` | Millimetres per STL unit; drives size, volume and area. |
+| `color` | `#c7d2e2` | Viewport colour (STL carries no materials). |
+| `analysisMaxTriangles` | `400000` | Above this, skip the watertightness pass instead of freezing the tab. |
 ```
 
-<a id="research-q06"></a>
+</details>
 
-<a id="detail-section-16"></a>
+#### 缺口
 
-### Q06 · 哪些用户可以受控采用STL模型预览，何时应停止？
+- 缺少实际资源峰值、失败恢复时间与单位合格任务成本
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
 
-**研究主题**：采用判断
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 哪些工程机制值得借鉴，旧包应如何采用？
+
+**研究主题**：工程质量与复用、采用判断
 
 #### 完整回答
 
-有STL初看需求的开发者可以小模型试用，先核对已知尺寸和unitScale，再用切片器确认打印条件。制造质量验收、不可信超大文件和内存受限设备应暂缓；单位不明、分析跳过或卡顿时停止并外部复核。
-
-源码证据支持受控试用，不支持持续安装验收。使用可复制的小文件确认单位、尺寸与已知开口网格；显示不一致、分析被跳过或页面无响应时停止，关闭预览并用专业软件复核，不能靠重试掩盖错误。
+正面设计是用宿主ctx.fs承担文件访问而不是绕过文件服务，用effect管理路由，使用统一注入使客户端路由、单位和阈值不漂移。权限仍依赖具体宿主fs与connection实现，本组件不能独立证明多用户隔离。旧包已改名，加上水密算法不是可打印性验证，当前建议观察此入口；已有用户可将其用作小模型几何初筛，交付必须在切片器检查。试用先取已知单位的立方体、开边、非流形和大网格，检查尺寸、统计跳过提示及禁用恢复；若误报“可打印”或界面长期阻塞则停止。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:75-81](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/README.zh.md#L75-L81)
+**依据 1 · 源码核查**：[lib/index.js:21-49](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/lib/index.js#L21-L49)
 
-作者列出无单位和主线程大模型限制
-
-```text
-
-## 已知边界
-
-- STL 无单位，面板里的毫米值按 `unitScale` 解释（默认 1）；按厘米建模的文件要把它设成 10。
-- 超大网格（数百万三角面）在主线程解析，会有一小段等待；水密性统计到 `analysisMaxTriangles` 为止。
-- ASCII STL 只解释标准语法里的顶点与法线，不处理顶点色等扩展。
-- 不上传任何文件：字节从 Host 经鉴权路由到浏览器，在页面内解析。
-```
-
-**依据 2 · 源码核查**：[dev/client-body.js:565-576](https://github.com/439436269-ctrl/dsh-stl-preview/blob/fd1ad275dd93c3a3766a0924f34309df85ade782/dev/client-body.js#L565-L576)
-
-失败状态和关闭时abort
+fs依赖、生命周期和参数接线
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-        })().catch((error) => {
-          if (controller.signal.aborted) return;
-          setFailure({
-            code: typeof error?.code === "string" ? error.code : "UNKNOWN",
-            message: error instanceof Error ? error.message : String(error?.message ?? error),
-          });
-          setState("failed");
-          settleRef.current(false, version);
-        });
+/** Host services the route needs: the filesystem and the authenticated fence. */
+export const inject = ["fs", "connection"];
 
-        return () => {
-          controller.abort();
+export { Config };
+
+/**
+ * Mount the byte route and expose its path to the browser half.
+ * @param ctx - host context carrying `fs` and `connection`.
+ * @param config - loader-supplied configuration.
+ */
+export function apply(ctx, config) {
+  const settings = resolveConfig(config);
+  if (!settings.enabled) return;
+
+  ctx.effect(() => registerStlRoute(ctx, settings), "stl-preview: mesh route");
+
+  // The client reads its route and display settings from the served page, so a
+  // configured path and the client's URL can never drift apart.
+  ctx.on("webserver/index-inject", (table) => {
+    table.push({
+      kind: "global",
+      name: "__DSH_STL_PREVIEW_CONFIG__",
+      value: {
+        routePath: settings.routePath,
+        extensions: settings.extensions,
+        unitScale: settings.unitScale,
+        color: settings.color,
+        analysisMaxTriangles: settings.analysisMaxTriangles,
+      },
 ```
 
 </details>
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+**依据 2 · 源码核查**：[lib/route.js:25-31](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/lib/route.js#L25-L31)
+
+文件读取交接给宿主
+
+```text
+export function registerStlRoute(ctx, config) {
+  return ctx.connection.fetch.register({
+    path: config.routePath,
+    methods: ["GET", "HEAD"],
+    requestBody: "buffered",
+    fetch: (request) => serve(request, ctx.fs, config),
+  });
+```
+
+**依据 3 · 作者声明**：[README.md:1-5](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/README.md#L1-L5)
+
+旧包身份约束采用
+
+```text
+> **Renamed:** the canonical package is now [`dsh-preview-stl`](https://github.com/439436269-ctrl/dsh-preview-stl). This repository is kept as the legacy 0.1.x home.
+
+# dsh-stl-preview
+
+Preview **STL** meshes inside [DeepSeek Harness](https://github.com/deepseek-ai): the right-Sidebar document preview renders the triangles in an interactive 3D viewport and reports the numbers that matter for 3D printing — size, volume, surface area and watertightness.
+```
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 怎样减少几何指标造成的错误验收？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是把拓扑结果标为“边连通检查”，同时显示单位来源、分析跳过与自交未覆盖，再将重统计移入可取消worker，可降低打印前误判并改善大网格响应。推导来自无向边判定和主线程全量缓冲；新增负担为worker复制/转移、结果版本绑定和提示理解。最小验证用闭合自交、反向面、微小间隙及超阈值网格，对照切片器检查和现有界面，测假阳性、单位错误、输入响应及人工复核时间。若误判无减少或提示/worker提高总检查时间，则否定；这不是项目当前实现，也未获得用户需求或付费证据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[dev/client-body.js:419-453](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/dev/client-body.js#L419-L453)
+
+现有拓扑检查边界
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+        const index = (x, y, z) => {
+          const key = `${Math.round(x / epsilon)}:${Math.round(y / epsilon)}:${Math.round(z / epsilon)}`;
+          let value = welded.get(key);
+          if (value === undefined) {
+            value = weldedVertices;
+            weldedVertices += 1;
+            welded.set(key, value);
+          }
+          return value;
+        };
+        for (let triangle = 0; triangle < count; triangle += 1) {
+          const base = triangle * 9;
+          const a = index(positions[base], positions[base + 1], positions[base + 2]);
+          const b = index(positions[base + 3], positions[base + 4], positions[base + 5]);
+          const c = index(positions[base + 6], positions[base + 7], positions[base + 8]);
+          if (a === b || b === c || c === a) {
+            degenerate += 1;
+            continue;
+          }
+          for (const [from, to] of [[a, b], [b, c], [c, a]]) {
+            const key = from < to ? `${from}:${to}` : `${to}:${from}`;
+            edges.set(key, (edges.get(key) ?? 0) + 1);
+          }
+        }
+        let boundary = 0;
+        let nonManifold = 0;
+        for (const uses of edges.values()) {
+          if (uses === 1) boundary += 1;
+          else if (uses > 2) nonManifold += 1;
+        }
+        result.weldedVertices = weldedVertices;
+        result.boundaryEdges = boundary;
+        result.nonManifoldEdges = nonManifold;
+        result.degenerateTriangles = degenerate;
+        result.watertight = boundary === 0 && nonManifold === 0 && degenerate === 0;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[dev/client-body.js:540-548](https://github.com/439436269-ctrl/dsh-stl-preview/blob/7f8598583529962a6778320bc6185b6ea4168c63/dev/client-body.js#L540-L548)
+
+主线程分析构成性能假设依据
+
+```text
+          const bytes = await response.arrayBuffer();
+          if (controller.signal.aborted) return;
+          setState("parsing");
+          await new Promise((resolve) => setTimeout(resolve, 30));
+          const parsed = parseStl(bytes);
+          if (controller.signal.aborted) return;
+          setState("analyzing");
+          await new Promise((resolve) => setTimeout(resolve, 20));
+          const analysis = analyzeStl(parsed, { unitScale, analysisMaxTriangles });
+```
+
+#### 缺口
+
+- 未来设计假设的对照实验尚无结果
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
+
+[返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

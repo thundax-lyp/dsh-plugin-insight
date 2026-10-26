@@ -12,7 +12,14 @@
 
 | 插件 | 主要用途 | npm 近30天下载 | GitHub Star |
 | --- | --- | --- | --- |
+| [REA](#plugin-1209966933-root) | 独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。 | [![npm 近30天下载 634,260](https://img.shields.io/static/v1?label=&message=634%2C260&color=blue&style=flat)](https://www.npmjs.com/package/rea-agents) | [![GitHub Star 383,061](https://img.shields.io/static/v1?label=&message=383%2C061&color=yellow&style=flat)](https://github.com/morluto/rea) |
+| [dsh-skill-explorer](#plugin-1331636953-packages-dsh-skill-explorer) | 在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。 | [![npm 近30天下载 116,190](https://img.shields.io/static/v1?label=&message=116%2C190&color=blue&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer) | [![GitHub Star 9,494](https://img.shields.io/static/v1?label=&message=9%2C494&color=yellow&style=flat)](https://github.com/zhu1090093659/dsh-web) |
+| [dsh-remote-web-ui](#plugin-1331636953-packages-dsh-remote-web-ui) | 通过扫码配对让自有手机或电脑访问同一 DSH Web 界面，并管理设备会话、LAN与可选隧道。 | [![npm 近30天下载 101,443](https://img.shields.io/static/v1?label=&message=101%2C443&color=blue&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui) | [![GitHub Star 9,494](https://img.shields.io/static/v1?label=&message=9%2C494&color=yellow&style=flat)](https://github.com/zhu1090093659/dsh-web) |
+| [dsh-git-graph](#plugin-1331636953-packages-dsh-git-graph) | 在 DSH 界面显示 Git 分支与提交图，并管理独立 worktree 和新会话工作区。 | [![npm 近30天下载 94,671](https://img.shields.io/static/v1?label=&message=94%2C671&color=blue&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) | [![GitHub Star 9,494](https://img.shields.io/static/v1?label=&message=9%2C494&color=yellow&style=flat)](https://github.com/zhu1090093659/dsh-web) |
+| [dsh-ssh](#plugin-1331636953-packages-dsh-ssh) | 在 DSH 中管理 SSH 主机，提供远端命令、Web 终端、文件传输、隧道和集群工具。 | [![npm 近30天下载 85,040](https://img.shields.io/static/v1?label=&message=85%2C040&color=blue&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-ssh) | [![GitHub Star 9,494](https://img.shields.io/static/v1?label=&message=9%2C494&color=yellow&style=flat)](https://github.com/zhu1090093659/dsh-web) |
+| [dsh-plugin-manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页检查更新与宿主兼容，并通过官方通道或本机网关管理插件生命周期。 | [![npm 近30天下载 78,704](https://img.shields.io/static/v1?label=&message=78%2C704&color=blue&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-plugin-manager) | [![GitHub Star 9,494](https://img.shields.io/static/v1?label=&message=9%2C494&color=yellow&style=flat)](https://github.com/zhu1090093659/dsh-web) |
 | [Hindsight Coding Agents](#plugin-1086419061-hindsight-integrations-coding-agents) | 为编码 Agent 提供跨会话项目记忆、知识页工具和后台历史及对话摄取。 | [![npm 近30天下载 55,816](https://img.shields.io/static/v1?label=&message=55%2C816&color=blue&style=flat)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) | [![GitHub Star 53,255](https://img.shields.io/static/v1?label=&message=53%2C255&color=yellow&style=flat)](https://github.com/vectorize-io/hindsight) |
+| [Ruflo](#plugin-995029641-root) | 面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。 | [![npm 近30天下载 49,674](https://img.shields.io/static/v1?label=&message=49%2C674&color=blue&style=flat)](https://www.npmjs.com/package/claude-flow) | [![GitHub Star 79,217](https://img.shields.io/static/v1?label=&message=79%2C217&color=yellow&style=flat)](https://github.com/ruvnet/ruflo) |
 | [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [![npm 近30天下载 34,730](https://img.shields.io/static/v1?label=&message=34%2C730&color=blue&style=flat)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) | [![GitHub Star 40,712](https://img.shields.io/static/v1?label=&message=40%2C712&color=yellow&style=flat)](https://github.com/volcengine/OpenViking) |
 | [Archify DSH Skill适配器](#plugin-1211139949-integrations-deepseek-harness) | 将固定版本 Archify Skill 作为文件系统 Skill provider 接入 DeepSeek Harness。 | [![npm 近30天下载 31,404](https://img.shields.io/static/v1?label=&message=31%2C404&color=blue&style=flat)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) | [![GitHub Star 88,446](https://img.shields.io/static/v1?label=&message=88%2C446&color=yellow&style=flat)](https://github.com/tt-a1i/archify) |
 | [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。 | [![npm 近30天下载 27,866](https://img.shields.io/static/v1?label=&message=27%2C866&color=blue&style=flat)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) | [![GitHub Star 9,474](https://img.shields.io/static/v1?label=&message=9%2C474&color=yellow&style=flat)](https://github.com/Tencent/BrowserSkill) |
@@ -63,6 +70,7 @@
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。 | [![npm 近30天下载 1,593](https://img.shields.io/static/v1?label=&message=1%2C593&color=blue&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) |
 | [dsh-jev-guard](#plugin-1378138611-root) | 在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。 | [![npm 近30天下载 1,591](https://img.shields.io/static/v1?label=&message=1%2C591&color=blue&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) |
 | [@y9931666/dsh-plugin-roundtable](#plugin-1342524723-root) | 把DSH会话组织为可视化专家圆桌，支持持久子代理、协作发言、红队评审和人类决策。 | [![npm 近30天下载 1,570](https://img.shields.io/static/v1?label=&message=1%2C570&color=blue&style=flat)](https://www.npmjs.com/package/@y9931666/dsh-plugin-roundtable) | [![GitHub Star 12](https://img.shields.io/static/v1?label=&message=12&color=yellow&style=flat)](https://github.com/9931666/dsh-plugin-roundtable) |
+| [Voyager](#plugin-1069943001-root) | 浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。 | [![npm 近30天下载 1,566](https://img.shields.io/static/v1?label=&message=1%2C566&color=blue&style=flat)](https://www.npmjs.com/package/voyager) | [![GitHub Star 20,463](https://img.shields.io/static/v1?label=&message=20%2C463&color=yellow&style=flat)](https://github.com/voyager-crew/voyager) |
 | [dsh-scroll-piano](#plugin-1412162067-root) | 把对话滚动位置映射为音高，并用消息刻度提供跳转导航。 | [![npm 近30天下载 1,565](https://img.shields.io/static/v1?label=&message=1%2C565&color=blue&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano) | - |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供账户登录、用户管理、TOTP/Passkey、会话授权及按用户模型配置。 | [![npm 近30天下载 1,561](https://img.shields.io/static/v1?label=&message=1%2C561&color=blue&style=flat)](https://www.npmjs.com/package/dsh-ui-auth) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/0QwQ0/dsh-ui-auth) |
 | [dock-base](#plugin-1340492184-root) | 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。 | [![npm 近30天下载 1,532](https://img.shields.io/static/v1?label=&message=1%2C532&color=blue&style=flat)](https://www.npmjs.com/package/dock-base) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/AKS1st/dock) |
@@ -107,6 +115,7 @@
 | [dsh-youreyes](#plugin-1335045545-root) | 将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。 | [![npm 近30天下载 1,096](https://img.shields.io/static/v1?label=&message=1%2C096&color=blue&style=flat)](https://www.npmjs.com/package/dsh-youreyes) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/54xkeee/dsh-youreyes) |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。 | [![npm 近30天下载 1,067](https://img.shields.io/static/v1?label=&message=1%2C067&color=blue&style=flat)](https://www.npmjs.com/package/dsh-scrape-webpage) | [![GitHub Star 10](https://img.shields.io/static/v1?label=&message=10&color=yellow&style=flat)](https://github.com/131CDA1/dsh-scrape-webpage) |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | [![npm 近30天下载 1,051](https://img.shields.io/static/v1?label=&message=1%2C051&color=blue&style=flat)](https://www.npmjs.com/package/dsh-usage-billing) | [![GitHub Star 9](https://img.shields.io/static/v1?label=&message=9&color=yellow&style=flat)](https://github.com/940842546/dsh-usage-billing) |
+| [Awesome DSH Plugin](#plugin-1333175049-root) | 维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。 | [![npm 近30天下载 1,048](https://img.shields.io/static/v1?label=&message=1%2C048&color=blue&style=flat)](https://www.npmjs.com/package/awesome-dsh-plugin) | [![GitHub Star 20,675](https://img.shields.io/static/v1?label=&message=20%2C675&color=yellow&style=flat)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) |
 | [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。 | [![npm 近30天下载 1,036](https://img.shields.io/static/v1?label=&message=1%2C036&color=blue&style=flat)](https://www.npmjs.com/package/dsh-usage-dashboard-plus) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/1HelloMan1/dsh-usage-dashboard-plus) |
 | [dock-images](#plugin-1340492378-root) | 在dock工作台打开本地图片，整文件经Host转base64给浏览器img显示，支持缩放/旋转/拖动。 | [![npm 近30天下载 1,028](https://img.shields.io/static/v1?label=&message=1%2C028&color=blue&style=flat)](https://www.npmjs.com/package/dock-images) | [![GitHub Star 4](https://img.shields.io/static/v1?label=&message=4&color=yellow&style=flat)](https://github.com/AKS1st/dock-images) |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。 | [![npm 近30天下载 1,017](https://img.shields.io/static/v1?label=&message=1%2C017&color=blue&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers) | - |
@@ -186,16 +195,17 @@
 | [dsh-pr-description](#plugin-1344714177-root) | 读取分支差异生成 PR 标题和五段描述，可选确认、保存与调用 gh 创建 PR。 | [![npm 近30天下载 368](https://img.shields.io/static/v1?label=&message=368&color=blue&style=flat)](https://www.npmjs.com/package/dsh-pr-description) | - |
 | [dsh-smart-prompt](#plugin-1419869951-root) | 发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。 | [![npm 近30天下载 363](https://img.shields.io/static/v1?label=&message=363&color=blue&style=flat)](https://www.npmjs.com/package/dsh-smart-prompt) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/Arrosam/dsh-smart-prompt) |
 | [dsh-backup-sync](#plugin-1418642133-root) | 按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。 | [![npm 近30天下载 361](https://img.shields.io/static/v1?label=&message=361&color=blue&style=flat)](https://www.npmjs.com/package/dsh-backup-sync) | - |
+| [orchd项目任务面板](#plugin-1422240642-root) | 在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。 | [![npm 近30天下载 359](https://img.shields.io/static/v1?label=&message=359&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) | - |
 | [dsh-study-coach](#plugin-1400498179-root) | 以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。 | [![npm 近30天下载 353](https://img.shields.io/static/v1?label=&message=353&color=blue&style=flat)](https://www.npmjs.com/package/dsh-study-coach) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/Ame-Choo/dsh-study-coach) |
 | [dsh-prompt-polish](#plugin-1336538202-root) | DSH Web 输入栏提示词重写 UI；经 Typert RPC 调用宿主已配置模型，先展示结果再人工采用。 | [![npm 近30天下载 347](https://img.shields.io/static/v1?label=&message=347&color=blue&style=flat)](https://www.npmjs.com/package/dsh-prompt-polish) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/1321928757/dsh-prompt-polish) |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | [![npm 近30天下载 320](https://img.shields.io/static/v1?label=&message=320&color=blue&style=flat)](https://www.npmjs.com/package/dsh-perlica-ding) | [![GitHub Star 7](https://img.shields.io/static/v1?label=&message=7&color=yellow&style=flat)](https://github.com/117BS/dsh-perlica-ding) |
 | [dsh-model-manager](#plugin-1349266980-root) | 在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。 | [![npm 近30天下载 311](https://img.shields.io/static/v1?label=&message=311&color=blue&style=flat)](https://www.npmjs.com/package/dsh-model-manager) | - |
 | [dsh-expert-mode](#plugin-1334811048-root) | 提供专家协调预设、领域委派工具、渐进式方法、文件消息总线和任务看板。 | [![npm 近30天下载 307](https://img.shields.io/static/v1?label=&message=307&color=blue&style=flat)](https://www.npmjs.com/package/dsh-expert-mode) | [![GitHub Star 14](https://img.shields.io/static/v1?label=&message=14&color=yellow&style=flat)](https://github.com/Asher-2000/dsh-expert-mode) |
-| [orchd项目任务面板](#plugin-1422240642-root) | 在DSH右侧栏显示会话项目的orchd任务、依赖图、想法和审查时间线，并提供接入指令。 | [![npm 近30天下载 301](https://img.shields.io/static/v1?label=&message=301&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) | - |
 | [dsh-ai-arcade](#plugin-1413897334-root) | DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。 | [![npm 近30天下载 299](https://img.shields.io/static/v1?label=&message=299&color=blue&style=flat)](https://www.npmjs.com/package/dsh-ai-arcade) | - |
 | [dsh-forget-session](#plugin-1413882487-root) | 永久删除会话多层状态并防止幽灵复活。 | [![npm 近30天下载 283](https://img.shields.io/static/v1?label=&message=283&color=blue&style=flat)](https://www.npmjs.com/package/dsh-forget-session) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/2026heshao/dsh-forget-session) |
 | [dsh-im-qq](#plugin-1335806472-root) | 将QQ私聊、群和频道文本接入DSH完整Agent，提供会话恢复、回复分段与审批桥。 | [![npm 近30天下载 280](https://img.shields.io/static/v1?label=&message=280&color=blue&style=flat)](https://www.npmjs.com/package/dsh-im-qq) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/988hj7tczd-oss/dsh-im-qq) |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | [![npm 近30天下载 239](https://img.shields.io/static/v1?label=&message=239&color=blue&style=flat)](https://www.npmjs.com/package/@vfvrpq/dsh-search) | - |
+| [CI Diet](#plugin-1426954291-root) | 发现 GitHub Actions 潜在浪费，保留证据并预览供人工审查的小幅工作流补丁。 | [![npm 近30天下载 208](https://img.shields.io/static/v1?label=&message=208&color=blue&style=flat)](https://www.npmjs.com/package/dsh-ci-diet) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/0disoft/dsh-ci-diet) |
 | [dsh-desktop-sidecar](#plugin-1428653439-root) | 为 DSH 提供 Windows 窗口、UIA、截图、离线 OCR、点击、剪贴板输入和按键工具。 | [![npm 近30天下载 205](https://img.shields.io/static/v1?label=&message=205&color=blue&style=flat)](https://www.npmjs.com/package/dsh-desktop-sidecar) | - |
 | [harness-memory](#plugin-1333716755-plugins-harness-memory) | 通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。 | [![npm 近30天下载 187](https://img.shields.io/static/v1?label=&message=187&color=blue&style=flat)](https://www.npmjs.com/package/harness-memory) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/988hj7tczd-oss/harness-desktop) |
 | [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | [![npm 近30天下载 157](https://img.shields.io/static/v1?label=&message=157&color=blue&style=flat)](https://www.npmjs.com/package/zcode-usage-stats) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/Amer-CN/zcode-usage-stats) |
@@ -206,7 +216,6 @@
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | [![npm 近30天下载 137](https://img.shields.io/static/v1?label=&message=137&color=blue&style=flat)](https://www.npmjs.com/package/dsh-local-memory) | - |
 | [dsh-obsidian-board](#plugin-1415116420-root) | 在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。 | [![npm 近30天下载 133](https://img.shields.io/static/v1?label=&message=133&color=blue&style=flat)](https://www.npmjs.com/package/dsh-obsidian-board) | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/2026heshao/dsh-obsidian-board) |
 | [dsh-starter-zh](#plugin-1336658798-root) | 在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。 | [![npm 近30天下载 128](https://img.shields.io/static/v1?label=&message=128&color=blue&style=flat)](https://www.npmjs.com/package/dsh-starter-zh) | - |
-| [dsh-plugin-quota](#plugin-1400927706-root) | 会话 token/估算花费仪表与趋势预测插件，提供系统提示、命令、Agent 工具及跨插件摘要。 | [![npm 近30天下载 126](https://img.shields.io/static/v1?label=&message=126&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/121212165/dsh-plugin-quota) |
 | [dsh-language-guard](#plugin-1424475406-root) | 用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。 | [![npm 近30天下载 126](https://img.shields.io/static/v1?label=&message=126&color=blue&style=flat)](https://www.npmjs.com/package/dsh-language-guard) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/58fly/dsh-language-guard) |
 | [dsh-recipe](#plugin-1336583700-root) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | [![npm 近30天下载 123](https://img.shields.io/static/v1?label=&message=123&color=blue&style=flat)](https://www.npmjs.com/package/dsh-recipe) | - |
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | [![npm 近30天下载 111](https://img.shields.io/static/v1?label=&message=111&color=blue&style=flat)](https://www.npmjs.com/package/dsh-trend-radar) | - |
@@ -215,6 +224,7 @@
 | [dsh-neo-skin](#plugin-1335557891-root) | 为 DSH Web UI 叠加两套新粗野主义配色和结构样式。 | [![npm 近30天下载 101](https://img.shields.io/static/v1?label=&message=101&color=blue&style=flat)](https://www.npmjs.com/package/dsh-neo-skin) | [![GitHub Star 5](https://img.shields.io/static/v1?label=&message=5&color=yellow&style=flat)](https://github.com/0nt-one/dsh-neo-skin) |
 | [dsh-dictation-hotkey](#plugin-1414017637-root) | 给 DSH Web 输入框增加按住或切换式语音热键，复用宿主转写并填入/可选发送。 | [![npm 近30天下载 97](https://img.shields.io/static/v1?label=&message=97&color=blue&style=flat)](https://www.npmjs.com/package/dsh-dictation-hotkey) | - |
 | [agent-clinic](#plugin-1417442557-root) | 只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。 | [![npm 近30天下载 95](https://img.shields.io/static/v1?label=&message=95&color=blue&style=flat)](https://www.npmjs.com/package/agent-clinic) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/1687210989/agent-clinic) |
+| [dsh-plugin-quota](#plugin-1400927706-root) | 追踪会话 token 与估算花费，提供仪表、下步用量及上下文窗口预测。 | [![npm 近30天下载 93](https://img.shields.io/static/v1?label=&message=93&color=blue&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) | [![GitHub Star 1](https://img.shields.io/static/v1?label=&message=1&color=yellow&style=flat)](https://github.com/121212165/dsh-plugin-quota) |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | [![npm 近30天下载 92](https://img.shields.io/static/v1?label=&message=92&color=blue&style=flat)](https://www.npmjs.com/package/dsh-feed) | - |
 | [dsh-roam-planner](#plugin-1427038024-root) | 在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。 | [![npm 近30天下载 88](https://img.shields.io/static/v1?label=&message=88&color=blue&style=flat)](https://www.npmjs.com/package/dsh-roam-planner) | - |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。 | [![npm 近30天下载 83](https://img.shields.io/static/v1?label=&message=83&color=blue&style=flat)](https://www.npmjs.com/package/dsh-a11y-scan) | - |
@@ -225,12 +235,98 @@
 | [dsh-voice-input-web](#plugin-1335558973-root) | 为 DSH Web 输入栏增加浏览器 Web Speech 麦克风转写按钮，把识别最终文本写入草稿。 | [![npm 近30天下载 60](https://img.shields.io/static/v1?label=&message=60&color=blue&style=flat)](https://www.npmjs.com/package/dsh-voice-input-web) | [![GitHub Star 5](https://img.shields.io/static/v1?label=&message=5&color=yellow&style=flat)](https://github.com/0nt-one/dsh-voice-input) |
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | [![npm 近30天下载 48](https://img.shields.io/static/v1?label=&message=48&color=blue&style=flat)](https://www.npmjs.com/package/hover-glossary) | - |
 | [dsh-codex-bridge](#plugin-1427331352-root) | 通过Codex CLI读取账号额度与模型建议，并以可选模型和推理强度委派独立任务。 | [![npm 近30天下载 47](https://img.shields.io/static/v1?label=&message=47&color=blue&style=flat)](https://www.npmjs.com/package/dsh-codex-bridge) | - |
+| [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | [![npm 近30天下载 45](https://img.shields.io/static/v1?label=&message=45&color=blue&style=flat)](https://www.npmjs.com/package/dsh-stl-preview) | - |
+| [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | [![npm 近30天下载 44](https://img.shields.io/static/v1?label=&message=44&color=blue&style=flat)](https://www.npmjs.com/package/dsh-blend-preview) | - |
 | [DSH Harness Switch](#plugin-1414577411-root) | 在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。 | [![npm 近30天下载 39](https://img.shields.io/static/v1?label=&message=39&color=blue&style=flat)](https://www.npmjs.com/package/dsh-harness-switch) | - |
 | [dsh-mysql](#plugin-1337916824-root) | 在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。 | [![npm 近30天下载 30](https://img.shields.io/static/v1?label=&message=30&color=blue&style=flat)](https://www.npmjs.com/package/dsh-mysql) | [![GitHub Star 7](https://img.shields.io/static/v1?label=&message=7&color=yellow&style=flat)](https://github.com/1321928757/dsh-mysql) |
 | [dsh-peak-runner](#plugin-1417227361-root) | 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。 | [![npm 近30天下载 24](https://img.shields.io/static/v1?label=&message=24&color=blue&style=flat)](https://www.npmjs.com/package/dsh-peak-runner) | - |
 | [dsh-draft-attachments](#plugin-1414492607-root) | 把DSH输入框未发送的图片和文件保存到IndexedDB，在会话输入区重新挂载时恢复附件。 | [![npm 近30天下载 23](https://img.shields.io/static/v1?label=&message=23&color=blue&style=flat)](https://www.npmjs.com/package/dsh-draft-attachments) | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=yellow&style=flat)](https://github.com/2026heshao/dsh-draft-attachments) |
-| [dsh-subagent](#plugin-1425006726-root) | 把多个已登录的外部编码 CLI 注册为 DSH 子代理并提供进度与恢复。 | [![npm 近30天下载 22](https://img.shields.io/static/v1?label=&message=22&color=blue&style=flat)](https://www.npmjs.com/package/dsh-subagent) | - |
+| [dsh-subagent](#plugin-1425006726-root) | 把外部CLI注册为DSH子代理提供方，提供动态委派工具、进度、调度和崩溃后跟踪。 | [![npm 近30天下载 21](https://img.shields.io/static/v1?label=&message=21&color=blue&style=flat)](https://www.npmjs.com/package/dsh-subagent) | - |
 | [dsh-taskswarm](#plugin-1333800488-root) | 为DSH按任务包依赖分波并行调度worker，以Git worktree、检查点、状态/邮箱和review/merge流程集成代码产出。 | - | [![GitHub Star 3](https://img.shields.io/static/v1?label=&message=3&color=yellow&style=flat)](https://github.com/february2015/dsh-taskswarm) |
+
+<a id="plugin-1209966933-root"></a>
+
+## [REA](../../plugins/morluto--rea/INSIGHT.md)
+
+[![GitHub ★ 383,061](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=383%2C061&color=yellow&logo=github&style=flat)](https://github.com/morluto/rea) [![npm 30d 634,260](https://img.shields.io/static/v1?label=npm+30d&message=634%2C260&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/rea-agents)
+
+**主要用途**：独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。
+
+**热度依据**：npm 近30天下载 634,260 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：有逆向经验者可在已知源码、非敏感的许可内JS/Electron样本做静态试用，先满足Node引擎并验证证据定位，不外推其他provider。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-1331636953-packages-dsh-skill-explorer"></a>
+
+## [dsh-skill-explorer](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 116,190](https://img.shields.io/static/v1?label=npm+30d&message=116%2C190&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer)
+
+**主要用途**：在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。
+
+**热度依据**：npm 近30天下载 116,190 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：需要频繁浏览和管理普通文件型 Skill 的用户，可在备份的测试目录试用导入、同名处理、编辑与回收站。先在目标会话核对真实 catalog；若目的是撤销插件提供的能力，应从 provider 配置处理，不能依赖面板关闭。需要全局权限治理或完整preset视图的场景先观察。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md#research-q05)
+
+[返回表格](#column-index)
+
+<a id="plugin-1331636953-packages-dsh-remote-web-ui"></a>
+
+## [dsh-remote-web-ui](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 101,443](https://img.shields.io/static/v1?label=npm+30d&message=101%2C443&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui)
+
+**主要用途**：通过扫码配对让自有手机或电脑访问同一 DSH Web 界面，并管理设备会话、LAN与可选隧道。
+
+**热度依据**：npm 近30天下载 101,443 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：确有跨设备操作需要、理解配对等同主机控制的用户，可先在无敏感数据的实例测试自有设备。保持loopback宿主、先试LAN，再测未配对拒绝、撤销、重启和浏览器恢复；公网relay需单独接受中转方流量可见性。需要只读共享、多租户或统一撤销所有宿主凭据的场景先观察。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md#research-q05)
+
+[返回表格](#column-index)
+
+<a id="plugin-1331636953-packages-dsh-git-graph"></a>
+
+## [dsh-git-graph](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 94,671](https://img.shields.io/static/v1?label=npm+30d&message=94%2C671&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph)
+
+**主要用途**：在 DSH 界面显示 Git 分支与提交图，并管理独立 worktree 和新会话工作区。
+
+**热度依据**：npm 近30天下载 94,671 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：多会话开发者可在临时仓库试用，先验证新会话确实进入独立 cwd，再测试脏目录删除被拒绝及禁用后的状态保留。已有终端 worktree 流程且不需图形入口者收益较小。若出现孤儿 checkout、注册失配或共享工作区被误切换，应先人工对账并暂停自动隔离。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q05)
+
+[返回表格](#column-index)
+
+<a id="plugin-1331636953-packages-dsh-ssh"></a>
+
+## [dsh-ssh](../../plugins/zhu1090093659--dsh-web--packages-dsh-ssh/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 85,040](https://img.shields.io/static/v1?label=npm+30d&message=85%2C040&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-ssh) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-ssh)
+
+**主要用途**：在 DSH 中管理 SSH 主机，提供远端命令、Web 终端、文件传输、隧道和集群工具。
+
+**热度依据**：npm 近30天下载 85,040 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：熟悉SSH权限与远端状态核对的用户，可在无重要凭据的测试主机先试只读命令和小文件传输。先验证断线、取消、目标选择及禁用后资源释放；生产变更和非幂等命令需有独立审批、备份与结果对账。若需要把工具限制在工作区沙箱或要求凭据加密存储，当前方案应先观察。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-ssh/INSIGHT.md#research-q05)
+
+[返回表格](#column-index)
+
+<a id="plugin-1331636953-packages-dsh-plugin-manager"></a>
+
+## [dsh-plugin-manager](../../plugins/zhu1090093659--dsh-web--packages-dsh-plugin-manager/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 78,704](https://img.shields.io/static/v1?label=npm+30d&message=78%2C704&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-plugin-manager) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-plugin-manager)
+
+**主要用途**：在 DSH 官方插件页检查更新与宿主兼容，并通过官方通道或本机网关管理插件生命周期。
+
+**热度依据**：npm 近30天下载 78,704 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：插件数量较多且愿意在每次重启后检查核心功能的本机用户，可在独立 profile 试用一项非关键扩展更新。先记录旧版本和可恢复来源，再验证更新、禁用与卸载；远程运维、关键生产 profile 或不能接受重启中断的场景先观察。若出现 profile 与加载版本不一致，停止批量操作并按实际状态恢复。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-plugin-manager/INSIGHT.md#research-q05)
+
+[返回表格](#column-index)
 
 <a id="plugin-1086419061-hindsight-integrations-coding-agents"></a>
 
@@ -242,7 +338,21 @@
 
 **热度依据**：npm 近30天下载 55,816 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先在非敏感项目配置独立bank，固定更新策略并确认禁用/清理路径；核对记忆检索和原任务验收，发现串项目、误导决策或成本上升时停止。Q04(#research-q04)
+**使用条件**：先在非敏感项目配置独立bank，固定更新策略并确认禁用/清理路径；核对记忆检索和原任务验收，发现串项目、误导决策或成本上升时停止。[Q04](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-995029641-root"></a>
+
+## [Ruflo](../../plugins/ruvnet--ruflo/INSIGHT.md)
+
+[![GitHub ★ 79,217](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=79%2C217&color=yellow&logo=github&style=flat)](https://github.com/ruvnet/ruflo) [![npm 30d 49,674](https://img.shields.io/static/v1?label=npm+30d&message=49%2C674&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/claude-flow)
+
+**主要用途**：面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。
+
+**热度依据**：npm 近30天下载 49,674 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：有明确多Agent需求者可在隔离项目以最小MCP工具试用，先对照单Agent预算验收产物；不把mission/state/API成功当完成。[Q04](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -256,7 +366,7 @@
 
 **热度依据**：npm 近30天下载 34,730 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：Q06(#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。
+**使用条件**：[Q06](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。
 
 [返回表格](#column-index)
 
@@ -270,7 +380,7 @@
 
 **热度依据**：npm 近30天下载 31,404 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先等待能核对默认Skill根修复的包；熟悉DSH者只在临时profile检查个人、项目和Archify Skill共存，失败就移除适配层。Q04(#research-q04)
+**使用条件**：先等待能核对默认Skill根修复的包；熟悉DSH者只在临时profile检查个人、项目和Archify Skill共存，失败就移除适配层。[Q04](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -284,7 +394,7 @@
 
 **热度依据**：npm 近30天下载 27,866 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：已用 DSH Web 的用户可从只读网页或测试表单试用，先核对 CLI 和扩展版本、技能显露、任务预览及结束清理，再扩展到实际工作流。Q04(#research-q04)
+**使用条件**：已用 DSH Web 的用户可从只读网页或测试表单试用，先核对 CLI 和扩展版本、技能显露、任务预览及结束清理，再扩展到实际工作流。[Q04](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -298,7 +408,7 @@
 
 **热度依据**：npm 近30天下载 10,948 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。Q08(#research-q08)
+**使用条件**：建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。[Q08](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md#research-q08)
 
 [返回表格](#column-index)
 
@@ -312,7 +422,7 @@
 
 **热度依据**：npm 近30天下载 9,207 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议先在独立profile试用，从静态文案开始逐项开启装饰；验收原生计时、读屏、配置保存和禁用恢复。人群和停止条件见 Q06(#research-q06)。
+**使用条件**：建议先在独立profile试用，从静态文案开始逐项开启装饰；验收原生计时、读屏、配置保存和禁用恢复。人群和停止条件见 [Q06](../../plugins/01virex--dsh-status-rotator/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -326,7 +436,7 @@
 
 **热度依据**：npm 近30天下载 7,106 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：当前不推荐日常安装，先修拒绝零副作用与阶段回执，再核隔离恢复；不在用户部署运行复现。详见Q07(#research-q07)。
+**使用条件**：当前不推荐日常安装，先修拒绝零副作用与阶段回执，再核隔离恢复；不在用户部署运行复现。详见[Q07](../../plugins/airmetro--dsh-update-checker/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -340,7 +450,7 @@
 
 **热度依据**：npm 近30天下载 6,432 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议备份自定义素材后个人试用网页端，先核对当前会话归属、穿透与声音，再观察长回合资源和禁用恢复；停止条件见 Q05(#research-q05)。
+**使用条件**：建议备份自定义素材后个人试用网页端，先核对当前会话归属、穿透与声音，再观察长回合资源和禁用恢复；停止条件见 [Q05](../../plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -354,7 +464,7 @@
 
 **热度依据**：npm 近30天下载 5,639 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：备份小vault中可先只读试用，再核对每次局部写回的整文件差异；存在频繁外部编辑或无恢复能力时先观察。Q04(#research-q04)
+**使用条件**：备份小vault中可先只读试用，再核对每次局部写回的整文件差异；存在频繁外部编辑或无恢复能力时先观察。[Q04](../../plugins/alonefu--dsh-calendar-plugin/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -368,7 +478,7 @@
 
 **热度依据**：npm 近30天下载 5,171 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先保留可重载的会话备份，验证回撤、分步恢复、中断和重载均一致，再考虑限定试用；涉及已执行工具的区间必须另外核对现实状态。Q06(#research-q06)
+**使用条件**：先保留可重载的会话备份，验证回撤、分步恢复、中断和重载均一致，再考虑限定试用；涉及已执行工具的区间必须另外核对现实状态。[Q06](../../plugins/240xu--dsh-message-ops/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -382,7 +492,7 @@
 
 **热度依据**：npm 近30天下载 4,785 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。Q04(#research-q04)
+**使用条件**：已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。[Q04](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -396,7 +506,7 @@
 
 **热度依据**：npm 近30天下载 4,731 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。详见Q07(#research-q07)。
+**使用条件**：非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。详见[Q07](../../plugins/240xu--dsh-websearch/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -410,7 +520,7 @@
 
 **热度依据**：npm 近30天下载 4,671 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议单人可备份工作树先试用，回退前冻结外写并核实际文件，保持测试/VCS验收。范围和停止条件见 Q05(#research-q05)。
+**使用条件**：建议单人可备份工作树先试用，回退前冻结外写并核实际文件，保持测试/VCS验收。范围和停止条件见 [Q05](../../plugins/9087--dsh-diff-approval/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -424,7 +534,7 @@
 
 **热度依据**：npm 近30天下载 4,574 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。先手工备份并覆盖新增/删除/二进制/符号链接样本，核对skip清单，再测试预览后改文件会拒绝、fork失败补偿和rescue可读。正式项目恢复前停掉其他写入者；外部部署和服务状态由用户单独处理。未做本版本安装与恢复演练，因此只支持可控试用，不代替备份制度。 Q09(#research-q09)
+**使用条件**：经常让Agent改本地项目且愿意审阅差异的开发者可在非关键副本试用。先手工备份并覆盖新增/删除/二进制/符号链接样本，核对skip清单，再测试预览后改文件会拒绝、fork失败补偿和rescue可读。正式项目恢复前停掉其他写入者；外部部署和服务状态由用户单独处理。未做本版本安装与恢复演练，因此只支持可控试用，不代替备份制度。 [Q09](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -438,7 +548,7 @@
 
 **热度依据**：npm 近30天下载 4,196 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。详见Q06(#research-q06)。
+**使用条件**：适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。详见[Q06](../../plugins/aks1st--dsh-mermaid/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -452,7 +562,7 @@
 
 **热度依据**：npm 近30天下载 4,168 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议多模型开发者在隔离小仓库试用只读流程，逐包盲评与核对全部支出；身份或权限不清、支出未知时暂停扩大使用。Q04(#research-q04)
+**使用条件**：建议多模型开发者在隔离小仓库试用只读流程，逐包盲评与核对全部支出；身份或权限不清、支出未知时暂停扩大使用。[Q04](../../plugins/alice-marx--dsh-model-router/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -466,7 +576,7 @@
 
 **热度依据**：npm 近30天下载 4,117 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。详见Q06(#research-q06)。
+**使用条件**：可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。详见[Q06](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -480,7 +590,7 @@
 
 **热度依据**：npm 近30天下载 3,686 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议单一非敏感工程小范围试用，先按需查询和回源，后逐步开启自动注入；串项目和未落盘等停止标准见 Q05(#research-q05)。
+**使用条件**：建议单一非敏感工程小范围试用，先按需查询和回源，后逐步开启自动注入；串项目和未落盘等停止标准见 [Q05](../../plugins/00080000--dsh-project-memory/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -494,7 +604,7 @@
 
 **热度依据**：npm 近30天下载 3,522 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，仅研究者可丢弃无秘密环境评估，先修元素TTL/会话/图像变换与效果状态，不直接启日常桌面全权。详见Q06(#research-q06)。
+**使用条件**：先观察，仅研究者可丢弃无秘密环境评估，先修元素TTL/会话/图像变换与效果状态，不直接启日常桌面全权。详见[Q06](../../plugins/988hj7tczd-oss--dsh-computer-use/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -508,7 +618,7 @@
 
 **热度依据**：npm 近30天下载 3,269 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 Q09(#research-q09)
+**使用条件**：有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 [Q09](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -522,7 +632,7 @@
 
 **热度依据**：npm 近30天下载 3,126 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先在可备份的V3非关键项目核对写入、授权、stage和压缩回读；定期人工比较记忆与实际工作区，出现审计或文本缺口即暂停自动依赖。Q06(#research-q06)
+**使用条件**：先在可备份的V3非关键项目核对写入、授权、stage和压缩回读；定期人工比较记忆与实际工作区，出现审计或文本缺口即暂停自动依赖。[Q06](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -536,7 +646,7 @@
 
 **热度依据**：npm 近30天下载 2,765 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议在临时发行版与非生产工程先试用，验收shell/fs身份、写入与恢复，不将作者兼容列表等同本轮通过。成功和停止判断见 Q05(#research-q05)。
+**使用条件**：建议在临时发行版与非生产工程先试用，验收shell/fs身份、写入与恢复，不将作者兼容列表等同本轮通过。成功和停止判断见 [Q05](../../plugins/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -550,7 +660,7 @@
 
 **热度依据**：npm 近30天下载 2,737 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议匹配任务时先手动试用领域Skill，再决定开启提醒；可回滚分支与实际编译/测试是验收基础，停止标准见 Q05(#research-q05)。
+**使用条件**：建议匹配任务时先手动试用领域Skill，再决定开启提醒；可回滚分支与实际编译/测试是验收基础，停止标准见 [Q05](../../plugins/amethystluna--embedded-workbench/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -564,7 +674,7 @@
 
 **热度依据**：npm 近30天下载 2,723 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：适合愿意人工检查模型的开发者在小型状态机上试用。先核对模型与源码关系，读取verdict、覆盖和未决，不把pass当上线许可。Q04(#research-q04)
+**使用条件**：适合愿意人工检查模型的开发者在小型状态机上试用。先核对模型与源码关系，读取verdict、覆盖和未决，不把pass当上线许可。[Q04](../../plugins/amethystluna--logicprobe/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -578,7 +688,7 @@
 
 **热度依据**：npm 近30天下载 2,714 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：熟悉DSH且已有代码验收流程的开发者可在独立分支试用。首次加载预设并确认安装所有权冲突、模型权限与删除模式；持续成本包括父子模型调用、上下文、压缩、检查和长期记忆维护，不能只看调用次数。可选storageDomain不可用会保留任务记忆但失去长期记忆。失败后检查pending持久化和旧binding，不盲重放写工具；以项目原测试、需求对照、总费用与人工时间共同验收。简单任务不应强建台账，未测到收益或出现未经确认的范围扩展就退回宿主原预设。 Q04(#research-q04)
+**使用条件**：熟悉DSH且已有代码验收流程的开发者可在独立分支试用。首次加载预设并确认安装所有权冲突、模型权限与删除模式；持续成本包括父子模型调用、上下文、压缩、检查和长期记忆维护，不能只看调用次数。可选storageDomain不可用会保留任务记忆但失去长期记忆。失败后检查pending持久化和旧binding，不盲重放写工具；以项目原测试、需求对照、总费用与人工时间共同验收。简单任务不应强建台账，未测到收益或出现未经确认的范围扩展就退回宿主原预设。 [Q04](../../plugins/artlexyoung--dsh-super-code/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -592,7 +702,7 @@
 
 **热度依据**：npm 近30天下载 2,693 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见Q09(#research-q09)。
+**使用条件**：建议先小范围试用。用非敏感短文本核对按钮、停止、自动播放和错误提示，再单独验证长文本；纯本地场景关闭外部回退，逐一加入所需音色。出现未经确认外发、重复漏读、取消不释放或宿主入口失效时停用。详见[Q09](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -606,7 +716,7 @@
 
 **热度依据**：npm 近30天下载 2,667 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：建议只在隔离 profile 条件试用。保持 `imageOffloadEnabled: false`、预批白名单为空和主插件 shadow，先验证所有挂点零状态变化与故障回到 stock；再对可逆、可重建工具逐项扩范围。任何 shadow 副作用、无遥测有效动作或 session-reference 缺失都应停止。详见Q09(#research-q09)。
+**使用条件**：建议只在隔离 profile 条件试用。保持 `imageOffloadEnabled: false`、预批白名单为空和主插件 shadow，先验证所有挂点零状态变化与故障回到 stock；再对可逆、可重建工具逐项扩范围。任何 shadow 副作用、无遥测有效动作或 session-reference 缺失都应停止。详见[Q09](../../plugins/asktheway--dsh-jev-interceptor/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -620,7 +730,7 @@
 
 **热度依据**：npm 近30天下载 2,587 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。详见Q09(#research-q09)。
+**使用条件**：适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。详见[Q09](../../plugins/2672243194--dsh-read-url/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -634,7 +744,7 @@
 
 **热度依据**：npm 近30天下载 2,574 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：适合已会维护SSH或Docker、单管理员、能用可丢弃工作区验收的开发者先试。首次需要管理端、目标节点、凭据、目录绑定及Docker引擎；持续承担云机、网络、镜像与连接心跳，模型仍在管理端计费。失败需分清控制端、通道和执行端，查远端文件和进程而不能盲重跑。用一个只写测试文件的任务验证fs、shell、PTY同节点和产物读回，模拟断线确认不会误落本机；若节点身份混淆、权限超预期或副作用无法解释，应停止。资源金额、延迟和恢复耗时未测。 Q04(#research-q04)
+**使用条件**：适合已会维护SSH或Docker、单管理员、能用可丢弃工作区验收的开发者先试。首次需要管理端、目标节点、凭据、目录绑定及Docker引擎；持续承担云机、网络、镜像与连接心跳，模型仍在管理端计费。失败需分清控制端、通道和执行端，查远端文件和进程而不能盲重跑。用一个只写测试文件的任务验证fs、shell、PTY同节点和产物读回，模拟断线确认不会误落本机；若节点身份混淆、权限超预期或副作用无法解释，应停止。资源金额、延迟和恢复耗时未测。 [Q04](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -648,7 +758,7 @@
 
 **热度依据**：npm 近30天下载 2,481 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先在非关键任务核对单来源工具/图像兼容，再加入能力相近的combo；检查流中断和卸载残余后限定试用。Q06(#research-q06)
+**使用条件**：先在非关键任务核对单来源工具/图像兼容，再加入能力相近的combo；检查流中断和卸载残余后限定试用。[Q06](../../plugins/aicivilization--dsh-model/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -662,7 +772,7 @@
 
 **热度依据**：npm 近30天下载 2,385 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议可信本地有限spec试用，故意缺陷应失败、合法实现应通过；空覆盖、新基线和ERROR不放行，host阻塞或范围不清时停止。详见Q05(#research-q05)。
+**使用条件**：建议可信本地有限spec试用，故意缺陷应失败、合法实现应通过；空覆盖、新基线和ERROR不放行，host阻塞或范围不清时停止。详见[Q05](../../plugins/263311487-ux--dsh-verify/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -676,7 +786,7 @@
 
 **热度依据**：npm 近30天下载 2,337 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 采用结论是试用，不是安装保证；成功与停止标准见Q09(#research-q09)。
+**使用条件**：频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -690,7 +800,7 @@
 
 **热度依据**：npm 近30天下载 2,291 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。核对实际上游费用和合格结果；长流不能只依赖totalBudgetMs作硬限额，必要时外加截止。Q03(#research-q03)
+**使用条件**：在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。核对实际上游费用和合格结果；长流不能只依赖totalBudgetMs作硬限额，必要时外加截止。[Q03](../../plugins/arcaneorion--dsh-model-channel-manager/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -704,7 +814,7 @@
 
 **热度依据**：npm 近30天下载 2,235 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见Q04(#research-q04)。
+**使用条件**：隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见[Q04](../../plugins/alexpeng07--dsh-custom-plugin/INSIGHT.md#research-q04)。
 
 [返回表格](#column-index)
 
@@ -718,7 +828,7 @@
 
 **热度依据**：npm 近30天下载 2,166 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。试验成功需在相同测试门槛下减少人工接管或返工，且取消后能从 journal/handoff 恢复；若委派调用和状态修复增加而合格率不升，应停用复杂模式。 Q09(#research-q09)
+**使用条件**：适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。试验成功需在相同测试门槛下减少人工接管或返工，且取消后能从 journal/handoff 恢复；若委派调用和状态修复增加而合格率不升，应停用复杂模式。 [Q09](../../plugins/1225sakura--oh-my-deepseekharness/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -732,7 +842,7 @@
 
 **热度依据**：npm 近30天下载 2,056 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：观察，继续从无碰撞稳定身份、store不落Agent写根及明确UI能力约束着手。详见Q07(#research-q07)。
+**使用条件**：观察，继续从无碰撞稳定身份、store不落Agent写根及明确UI能力约束着手。详见[Q07](../../plugins/angeloszou--dsh-multi-folder/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -746,7 +856,7 @@
 
 **热度依据**：npm 近30天下载 2,004 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议兼容环境下的复杂工程任务先单Agent试用，明确合作协议与真实门禁区别；简单任务先用原生工具，不据上游实验宣称收益。Q08(#research-q08)
+**使用条件**：建议兼容环境下的复杂工程任务先单Agent试用，明确合作协议与真实门禁区别；简单任务先用原生工具，不据上游实验宣称收益。[Q08](../../plugins/anonyjcy--dsh-j-space/INSIGHT.md#research-q08)
 
 [返回表格](#column-index)
 
@@ -760,7 +870,7 @@
 
 **热度依据**：npm 近30天下载 1,908 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：希望观察DSH调用趋势的个人用户可在备份数据后试用，先关闭不需要的云同步和账号功能，抽样核对usage与供应商账单。保留订阅等值和按量现金的区分，检查price source及estimated；高调用量团队应先验证明细截断和多进程冲突，再纳入团队成本管理。插件统计不适合直接用于结算或报销。 Q09(#research-q09)
+**使用条件**：希望观察DSH调用趋势的个人用户可在备份数据后试用，先关闭不需要的云同步和账号功能，抽样核对usage与供应商账单。保留订阅等值和按量现金的区分，检查price source及estimated；高调用量团队应先验证明细截断和多进程冲突，再纳入团队成本管理。插件统计不适合直接用于结算或报销。 [Q09](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -774,7 +884,7 @@
 
 **热度依据**：npm 近30天下载 1,892 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察。愿意继续研究者应先核清下载trusted变量与Doctor自动启动，再在可丢弃文献库核对身份、全文、写入目标和退出恢复，不把saved或回环称作完整保证。详见Q06(#research-q06)。
+**使用条件**：先观察。愿意继续研究者应先核清下载trusted变量与Doctor自动启动，再在可丢弃文献库核对身份、全文、写入目标和退出恢复，不把saved或回环称作完整保证。详见[Q06](../../plugins/aik358--dsh-literature/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -788,7 +898,7 @@
 
 **热度依据**：npm 近30天下载 1,810 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。详见Q06(#research-q06)。
+**使用条件**：先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。详见[Q06](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -802,7 +912,7 @@
 
 **热度依据**：npm 近30天下载 1,783 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见Q05(#research-q05)。
+**使用条件**：先小规模个人便签试用；任务派发用隔离工作区，定时执行须监控；删除后手动备份并验证远端。详见[Q05](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-notes/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -816,7 +926,7 @@
 
 **热度依据**：npm 近30天下载 1,752 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：单人非敏感本地范围试用，先验已知词与长消息尾部边界，命中后核原文；完整全文/多租户需求暂缓。参见Q04(#research-q04)。
+**使用条件**：单人非敏感本地范围试用，先验已知词与长消息尾部边界，命中后核原文；完整全文/多租户需求暂缓。参见[Q04](../../plugins/240xu--dsh-session-search/INSIGHT.md#research-q04)。
 
 [返回表格](#column-index)
 
@@ -830,7 +940,7 @@
 
 **热度依据**：npm 近30天下载 1,733 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，先修计数/无作者引用/TeX列等基础分支，只当草稿工具，不作学术或投稿验收。详见Q06(#research-q06)。
+**使用条件**：观察，先修计数/无作者引用/TeX列等基础分支，只当草稿工具，不作学术或投稿验收。详见[Q06](../../plugins/863683348--dsh-plugin-academic-writing/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -844,7 +954,7 @@
 
 **热度依据**：npm 近30天下载 1,727 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先将草稿放在可控位置并检查敏感内容，核对阈值与实际交接质量后试用；不要把自动草稿视为可直接续接的完整说明。Q06(#research-q06)
+**使用条件**：先将草稿放在可控位置并检查敏感内容，核对阈值与实际交接质量后试用；不要把自动草稿视为可直接续接的完整说明。[Q06](../../plugins/2jumpsina--dsh-context-guard/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -858,7 +968,7 @@
 
 **热度依据**：npm 近30天下载 1,715 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议观察。普通窄屏用户先确认宿主原生布局是否足够；确需评估时用非关键profile，测试设置、长会话、键盘和停用后全页刷新。需要可靠热卸载、无障碍焦点或与其他focus插件共存时暂缓。参见Q06(#research-q06)。
+**使用条件**：建议观察。普通窄屏用户先确认宿主原生布局是否足够；确需评估时用非关键profile，测试设置、长会话、键盘和停用后全页刷新。需要可靠热卸载、无障碍焦点或与其他focus插件共存时暂缓。参见[Q06](../../plugins/acidgr--dsh-web-mobile-fix/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -872,7 +982,7 @@
 
 **热度依据**：npm 近30天下载 1,689 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察，先核对core作用域和面板权限；显式target与工程、使用无真实数据设备，确认状态绑定后再决定受控试用。详见Q06(#research-q06)。
+**使用条件**：建议观察，先核对core作用域和面板权限；显式target与工程、使用无真实数据设备，确认状态绑定后再决定受控试用。详见[Q06](../../plugins/1na-ko--dsh-hdc-bridge/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -886,7 +996,7 @@
 
 **热度依据**：npm 近30天下载 1,635 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：观察。当前不把语音作为唯一审批或完成判断通道；修复自动开关及会话隔离后，以隔离profile验收播放、停止、设置持久和退出。Q09(#research-q09)
+**使用条件**：观察。当前不把语音作为唯一审批或完成判断通道；修复自动开关及会话隔离后，以隔离profile验收播放、停止、设置持久和退出。[Q09](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -900,7 +1010,7 @@
 
 **热度依据**：npm 近30天下载 1,602 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察；公共仓库单用户隔离环境可对照，私有多身份/共享存储先解决缓存与授权边界。详见Q07(#research-q07)。
+**使用条件**：先观察；公共仓库单用户隔离环境可对照，私有多身份/共享存储先解决缓存与授权边界。详见[Q07](../../plugins/angeloszou--dsh-github-router/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -914,7 +1024,7 @@
 
 **热度依据**：npm 近30天下载 1,593 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先观察，优先保留渠道截断/失败收据并加确认/安全导出，再以个人匿名语料核事实与漏项。详见Q07(#research-q07)。
+**使用条件**：先观察，优先保留渠道截断/失败收据并加确认/安全导出，再以个人匿名语料核事实与漏项。详见[Q07](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -928,7 +1038,7 @@
 
 **热度依据**：npm 近30天下载 1,591 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先在可恢复目录验证良性、危险及断网样本，再把它作为附加事故阀；降级时看status，保留原生沙箱和审批，不依赖单一判据。Q06(#research-q06)
+**使用条件**：先在可恢复目录验证良性、危险及断网样本，再把它作为附加事故阀；降级时看status，保留原生沙箱和审批，不依赖单一判据。[Q06](../../plugins/7starsseeker--dsh-jev-guard/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -942,7 +1052,21 @@
 
 **热度依据**：npm 近30天下载 1,570 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议2–3专家和非敏感方案小范围试用，另设真实供应商额度并独立验收；观点重复或预算无法解释时停止扩员。具体流程见 Q05(#research-q05)。
+**使用条件**：建议2–3专家和非敏感方案小范围试用，另设真实供应商额度并独立验收；观点重复或预算无法解释时停止扩员。具体流程见 [Q05](../../plugins/9931666--dsh-plugin-roundtable/INSIGHT.md#research-q05)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1069943001-root"></a>
+
+## [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md)
+
+[![GitHub ★ 20,463](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20%2C463&color=yellow&logo=github&style=flat)](https://github.com/voyager-crew/voyager) [![npm 30d 1,566](https://img.shields.io/static/v1?label=npm+30d&message=1%2C566&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/voyager) [![最新发布 2015-02-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2015-02-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/voyager)
+
+**主要用途**：浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。
+
+**热度依据**：npm 近30天下载 1,566 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：跨多个AI网页重复整理聊天的用户可先在一个非敏感站点试用单项功能，备份数据后再导入简单JSON，并测试启停、同页多插件和页面刷新。只需偶尔复制内容时原生搜索、书签或导出更简单。若页面改版导致错位或禁用后仍有影响，应停止该项功能并保留页面和插件版本供核查。[Q05](../../plugins/voyager-crew--voyager/INSIGHT.md#research-q05)
 
 [返回表格](#column-index)
 
@@ -956,7 +1080,7 @@
 
 **热度依据**：npm 近30天下载 1,565 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：保持观察；仅对明确喜欢听觉反馈的个人用户，在长会话和读屏环境先核 CPU、焦点、静音及 DOM 升级回退。 详见Q09(#research-q09)。
+**使用条件**：保持观察；仅对明确喜欢听觉反馈的个人用户，在长会话和读屏环境先核 CPU、焦点、静音及 DOM 升级回退。 详见[Q09](../../plugins/439436269-ctrl--dsh-scroll-piano/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -970,7 +1094,7 @@
 
 **热度依据**：npm 近30天下载 1,561 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察，先固定目标宿主完成可达面和状态恢复核查；互不信任用户还需独立系统权限边界，不能把登录页当隔离验收。详见Q07(#research-q07)。
+**使用条件**：建议观察，先固定目标宿主完成可达面和状态恢复核查；互不信任用户还需独立系统权限边界，不能把登录页当隔离验收。详见[Q07](../../plugins/0qwq0--dsh-ui-auth/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -984,7 +1108,7 @@
 
 **热度依据**：npm 近30天下载 1,532 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。详见Q05(#research-q05)。
+**使用条件**：有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。详见[Q05](../../plugins/aks1st--dock/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -998,7 +1122,7 @@
 
 **热度依据**：npm 近30天下载 1,532 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：可把它当候选搜索和数字比较工具试用；先核对日期与兼容，再读目标插件权限和源码。安装前自行确认，不能把健康分当安全或推荐结论。Q04(#research-q04)
+**使用条件**：可把它当候选搜索和数字比较工具试用；先核对日期与兼容，再读目标插件权限和源码。安装前自行确认，不能把健康分当安全或推荐结论。[Q04](../../plugins/aicivilization--dsh-pick/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -1012,7 +1136,7 @@
 
 **热度依据**：npm 近30天下载 1,529 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 采用结论是试用，不是安装保证；成功与停止标准见Q09(#research-q09)。
+**使用条件**：已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/agentconnect--dsh-awiki/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -1026,7 +1150,7 @@
 
 **热度依据**：npm 近30天下载 1,529 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：宿主授权明确的一人本地长会话可试用作导航摘要，远程/多用户先核会话授权。详见Q05(#research-q05)。
+**使用条件**：宿主授权明确的一人本地长会话可试用作导航摘要，远程/多用户先核会话授权。详见[Q05](../../plugins/andor-z--dsh-turn-outline/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1040,7 +1164,7 @@
 
 **热度依据**：npm 近30天下载 1,527 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：兼容Web/桌面Harness无工具路径可试用，Codex/TUI先核权限/回执，人工审稿并自己发送。详见Q06(#research-q06)。
+**使用条件**：兼容Web/桌面Harness无工具路径可试用，Codex/TUI先核权限/回执，人工审稿并自己发送。详见[Q06](../../plugins/alive114514awa--dsh-prompt-optimizer/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1054,7 +1178,7 @@
 
 **热度依据**：npm 近30天下载 1,514 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议观察；先仅对公开低敏感页面检查严格TLS、已知引擎版本与错误状态，再决定受控试用。生产登录凭据、强来源认证或共享Host延迟敏感任务应暂缓。参见Q06(#research-q06)。
+**使用条件**：建议观察；先仅对公开低敏感页面检查严格TLS、已知引擎版本与错误状态，再决定受控试用。生产登录凭据、强来源认证或共享Host延迟敏感任务应暂缓。参见[Q06](../../plugins/27painter--dsh-moli/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1068,7 +1192,7 @@
 
 **热度依据**：npm 近30天下载 1,504 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：可试用为人工复核开发任务辅助，先备份同名Skill并核自动覆盖；独立保存批准/验证与固定代码版本，不以标签或只读过滤代授权。详见Q05(#research-q05)。
+**使用条件**：可试用为人工复核开发任务辅助，先备份同名Skill并核自动覆盖；独立保存批准/验证与固定代码版本，不以标签或只读过滤代授权。详见[Q05](../../plugins/1264459640--dsh-trellis/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1082,7 +1206,7 @@
 
 **热度依据**：npm 近30天下载 1,494 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：只在明确源码版本上扫描，逐项审阅 hits、notes 和 filesScanned；对高权限插件增加人工/沙箱审查。详见Q02(#research-q02)。
+**使用条件**：只在明确源码版本上扫描，逐项审阅 hits、notes 和 filesScanned；对高权限插件增加人工/沙箱审查。详见[Q02](../../plugins/863683348--dsh-plugin-gate/INSIGHT.md#research-q02)。
 
 [返回表格](#column-index)
 
@@ -1096,7 +1220,7 @@
 
 **热度依据**：npm 近30天下载 1,485 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。详见Q07(#research-q07)。
+**使用条件**：能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。详见[Q07](../../plugins/1e0zj--dsh-plugin-mall/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -1110,7 +1234,7 @@
 
 **热度依据**：npm 近30天下载 1,475 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。详见Q06(#research-q06)。
+**使用条件**：先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。详见[Q06](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1124,7 +1248,7 @@
 
 **热度依据**：npm 近30天下载 1,470 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：默认不推荐。远程使用优先具体 IP 或认证代理；确需全接口时仅在隔离环境逐网段验收。详见Q03(#research-q03)、Q04(#research-q04)。
+**使用条件**：默认不推荐。远程使用优先具体 IP 或认证代理；确需全接口时仅在隔离环境逐网段验收。详见[Q03](../../plugins/acidgr--dsh-web-lan-access/INSIGHT.md#research-q03)、[Q04](../../plugins/acidgr--dsh-web-lan-access/INSIGHT.md#research-q04)。
 
 [返回表格](#column-index)
 
@@ -1138,7 +1262,7 @@
 
 **热度依据**：npm 近30天下载 1,454 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：建议观察；web profile 中可浏览目录，但点击安装/更新前须核来源、版本、目标，完成后重启检加载。详见Q06(#research-q06)。
+**使用条件**：建议观察；web profile 中可浏览目录，但点击安装/更新前须核来源、版本、目标，完成后重启检加载。详见[Q06](../../plugins/99galaxy--dsh-plugin-market/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1152,7 +1276,7 @@
 
 **热度依据**：npm 近30天下载 1,417 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先选可对照原始资料的事实点，确认正文链可用，再人工核对转载关系及每条引文后试用；不要把模型判据作为最终裁定。Q06(#research-q06)
+**使用条件**：先选可对照原始资料的事实点，确认正文链可用，再人工核对转载关系及每条引文后试用；不要把模型判据作为最终裁定。[Q06](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -1166,7 +1290,7 @@
 
 **热度依据**：npm 近30天下载 1,404 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：试用，备份/可信管理面/明确人工验收，completed按成员报告解读，不能当全自动业务验收。详见Q08(#research-q08)。
+**使用条件**：试用，备份/可信管理面/明确人工验收，completed按成员报告解读，不能当全自动业务验收。详见[Q08](../../plugins/2507483326--dsh-eteams/INSIGHT.md#research-q08)。
 
 [返回表格](#column-index)
 
@@ -1180,7 +1304,7 @@
 
 **热度依据**：npm 近30天下载 1,403 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：备份后单route试用，核实际请求及最后选择。详见Q05(#research-q05)。
+**使用条件**：备份后单route试用，核实际请求及最后选择。详见[Q05](../../plugins/2768651338--dsh-effort-slider/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1194,7 +1318,7 @@
 
 **热度依据**：npm 近30天下载 1,391 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：保持观察；不要以主 Chrome profile 或敏感截图试用，先用专用账号/临时 profile 固定一个通道，验证后再增加降级链。 详见Q09(#research-q09)。
+**使用条件**：保持观察；不要以主 Chrome profile 或敏感截图试用，先用专用账号/临时 profile 固定一个通道，验证后再增加降级链。 详见[Q09](../../plugins/54xkeee--dsh-vision/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -1208,7 +1332,7 @@
 
 **热度依据**：npm 近30天下载 1,359 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：适合本机维护者先用只读小范围试用，默认tail或fast统计；搜索未命中和统计异常必须回原件复核。远程共享服务、任意符号链接目录或需完整审计时暂缓。参见Q06(#research-q06)。
+**使用条件**：适合本机维护者先用只读小范围试用，默认tail或fast统计；搜索未命中和统计异常必须回原件复核。远程共享服务、任意符号链接目录或需完整审计时暂缓。参见[Q06](../../plugins/240xu--dsh-session-lazy-view/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1222,7 +1346,7 @@
 
 **热度依据**：npm 近30天下载 1,353 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：在不含敏感查询的固定任务集试用，先限制凭据数与调用预算，核对返回URL、网页状态和正文。全池失效时请求数或等待不可接受就停止；动态页面、需登录资料和精确正文引用应另用浏览器或人工核查。Q02(#research-q02)
+**使用条件**：在不含敏感查询的固定任务集试用，先限制凭据数与调用预算，核对返回URL、网页状态和正文。全池失效时请求数或等待不可接受就停止；动态页面、需登录资料和精确正文引用应另用浏览器或人工核查。[Q02](../../plugins/arcaneorion--dsh-tavily-web/INSIGHT.md#research-q02)
 
 [返回表格](#column-index)
 
@@ -1236,7 +1360,7 @@
 
 **热度依据**：npm 近30天下载 1,341 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先观察并补齐消息来源和提交确认，再以非敏感课程在隔离 profile 检查四工具、增量更新和截图反馈；成功需图片进入正确会话且不覆盖用户草稿。页面未挂载、截图失败或输入不一致时停止，回到手动截图上传。Q03(#research-q03)
+**使用条件**：先观察并补齐消息来源和提交确认，再以非敏感课程在隔离 profile 检查四工具、增量更新和截图反馈；成功需图片进入正确会话且不覆盖用户草稿。页面未挂载、截图失败或输入不一致时停止，回到手动截图上传。[Q03](../../plugins/arcaneorion--dsh-teaching-board/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -1250,7 +1374,7 @@
 
 **热度依据**：npm 近30天下载 1,337 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先观察，先核宿主敏感路由访问边界、缓存身份与凭据写入并发，再考虑可信单人环境只读单平台评估。详见Q09(#research-q09)。
+**使用条件**：先观察，先核宿主敏感路由访问边界、缓存身份与凭据写入并发，再考虑可信单人环境只读单平台评估。详见[Q09](../../plugins/162568316--dsh-tokenrhythm-bill/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -1264,7 +1388,7 @@
 
 **热度依据**：npm 近30天下载 1,336 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：当前建议观察，先确认本地访问边界和当前会话cwd。若要试验，只用可丢弃目录与文件副本，先核对缺失会话和路径越界行为，再考虑写操作。Q04(#research-q04)
+**使用条件**：当前建议观察，先确认本地访问边界和当前会话cwd。若要试验，只用可丢弃目录与文件副本，先核对缺失会话和路径越界行为，再考虑写操作。[Q04](../../plugins/aks1st--dock-files/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -1278,7 +1402,7 @@
 
 **热度依据**：npm 近30天下载 1,309 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察；单host可丢弃数据、独立备份、默认关自动清理可作对照。详见Q06(#research-q06)。
+**使用条件**：先观察；单host可丢弃数据、独立备份、默认关自动清理可作对照。详见[Q06](../../plugins/aeroscis--dsh-temptask/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1292,7 +1416,7 @@
 
 **热度依据**：npm 近30天下载 1,305 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先观察；只在公开脱敏图上比较原生视觉与两阶段路由，核字段/关系、选图、数据披露和总费用；失败仍自信回答或敏感误发即停。Q09(#research-q09)
+**使用条件**：先观察；只在公开脱敏图上比较原生视觉与两阶段路由，核字段/关系、选图、数据披露和总费用；失败仍自信回答或敏感误发即停。[Q09](../../plugins/314857493--dsh-vision--packages-vision-route/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -1306,7 +1430,7 @@
 
 **热度依据**：npm 近30天下载 1,245 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先禁自定义任意 URL，以假 key 试验并同官方账单对账；只把费用视为估算。详见Q05(#research-q05)。
+**使用条件**：先禁自定义任意 URL，以假 key 试验并同官方账单对账；只把费用视为估算。详见[Q05](../../plugins/andrew111888--dsh-plugin-balance/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1320,7 +1444,7 @@
 
 **热度依据**：npm 近30天下载 1,244 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。固定CLI版本、明确root与入口规则，再挑一个小模块查询，不自动删除动态入口；核对配置副作用、job取消及重新索引。不能把告警数量减少当业务交付，也不能把本插件推荐解释为其上游所有语言分析已通过验收。 Q09(#research-q09)
+**使用条件**：已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。固定CLI版本、明确root与入口规则，再挑一个小模块查询，不自动删除动态入口；核对配置副作用、job取消及重新索引。不能把告警数量减少当业务交付，也不能把本插件推荐解释为其上游所有语言分析已通过验收。 [Q09](../../plugins/angeloszou--graphlint--integrations-dsh/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -1334,7 +1458,7 @@
 
 **热度依据**：npm 近30天下载 1,242 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 详见Q09(#research-q09)。
+**使用条件**：保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 详见[Q09](../../plugins/439436269-ctrl--dsh-zspace/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -1348,7 +1472,7 @@
 
 **热度依据**：npm 近30天下载 1,237 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议仅对个人本地Web的非关键控件试用，先验证恢复与记录落盘；动态组件或多窗口重度使用先暂停扩展。Q08(#research-q08)
+**使用条件**：建议仅对个人本地Web的非关键控件试用，先验证恢复与记录落盘；动态组件或多窗口重度使用先暂停扩展。[Q08](../../plugins/anna-la--dsh-simplify/INSIGHT.md#research-q08)
 
 [返回表格](#column-index)
 
@@ -1362,7 +1486,7 @@
 
 **热度依据**：npm 近30天下载 1,224 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：个人匹配SDK长会话试用；单文本之外不保证完整卡片，重要上下文保留手工回看，切会话避免连点旧任务。详见Q05(#research-q05)。
+**使用条件**：个人匹配SDK长会话试用；单文本之外不保证完整卡片，重要上下文保留手工回看，切会话避免连点旧任务。详见[Q05](../../plugins/abelkeithsun--dsh-question-nav/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1376,7 +1500,7 @@
 
 **热度依据**：npm 近30天下载 1,220 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先用已知答案的非敏感图片核验问答、OCR、缓存和取消；确认外传可接受后限定试用，失败时检查错误再重试。Q06(#research-q06)
+**使用条件**：先用已知答案的非敏感图片核验问答、OCR、缓存和取消；确认外传可接受后限定试用，失败时检查错误再重试。[Q06](../../plugins/314857493--dsh-vision--packages-vision-tool/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -1390,7 +1514,7 @@
 
 **热度依据**：npm 近30天下载 1,212 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，优先核对活动路由授权与上游预览，明确边界后再评估个人本地小范围试用。详见Q06(#research-q06)。
+**使用条件**：先观察，优先核对活动路由授权与上游预览，明确边界后再评估个人本地小范围试用。详见[Q06](../../plugins/alexyin-tongji--dsh-ui-enhancer/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1404,7 +1528,7 @@
 
 **热度依据**：npm 近30天下载 1,164 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见Q02(#research-q02)、Q03(#research-q03)。
+**使用条件**：远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见[Q02](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q02)、[Q03](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -1418,7 +1542,7 @@
 
 **热度依据**：npm 近30天下载 1,162 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：已有遥测需求且可审计监听器顺序的维护者可小范围试用，先用合成凭据核对后端副本、canonical与拒绝记录；不能借此主动扩大共享，遇绕过或无法发现的误删就停止依赖。详见Q06(#research-q06)。
+**使用条件**：已有遥测需求且可审计监听器顺序的维护者可小范围试用，先用合成凭据核对后端副本、canonical与拒绝记录；不能借此主动扩大共享，遇绕过或无法发现的误删就停止依赖。详见[Q06](../../plugins/030611--dsh-telemetry-redactor/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1432,7 +1556,7 @@
 
 **热度依据**：npm 近30天下载 1,150 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 采用结论是试用，不是安装保证；成功与停止标准见Q09(#research-q09)。
+**使用条件**：需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -1446,7 +1570,7 @@
 
 **热度依据**：npm 近30天下载 1,149 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先在复制的非敏感日志上观察，关闭全局提示做基线，验证不同模式失败覆盖及文件写失败恢复。只有计数和文本一致、敏感样本被遮蔽且重复错误确有减少，再扩大试用；普通 shell 非零退出未标 isError 不在覆盖内。Q03(#research-q03)
+**使用条件**：先在复制的非敏感日志上观察，关闭全局提示做基线，验证不同模式失败覆盖及文件写失败恢复。只有计数和文本一致、敏感样本被遮蔽且重复错误确有减少，再扩大试用；普通 shell 非零退出未标 isError 不在覆盖内。[Q03](../../plugins/areium--dsh-fail-logger/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -1460,7 +1584,7 @@
 
 **热度依据**：npm 近30天下载 1,140 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先观察并核对 {ok:false} 返回路径，修正或确认记忆语义后再在隔离 profile 比较同组模型搜索与原生菜单。通过标准为查询选对模型、手动默认档位不被替换、拒绝不写偏好；失败时禁用并重载客户端。Q03(#research-q03)
+**使用条件**：先观察并核对 {ok:false} 返回路径，修正或确认记忆语义后再在隔离 profile 比较同组模型搜索与原生菜单。通过标准为查询选对模型、手动默认档位不被替换、拒绝不写偏好；失败时禁用并重载客户端。[Q03](../../plugins/arcaneorion--dsh-model-selector-search/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -1474,7 +1598,7 @@
 
 **热度依据**：npm 近30天下载 1,125 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议先观察发布源与运行产物同步、宿主范围；如自行评估，只在备份的小仓库试验文件/Git/PTY，不用它承担工作区隔离。Q04(#research-q04)
+**使用条件**：建议先观察发布源与运行产物同步、宿主范围；如自行评估，只在备份的小仓库试验文件/Git/PTY，不用它承担工作区隔离。[Q04](../../plugins/all3ncn--dsh-better-sidebar-n23/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -1488,7 +1612,7 @@
 
 **热度依据**：npm 近30天下载 1,121 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：可信代码仓库的开发者可在一次性工作区试用。先显式选venv、固定包版本与可信索引，检查只读模式拒绝变更，再核查导入、卸载、删除及失败后部分状态。需要不可信代码执行隔离的团队应先观察，不能依赖本插件的路径检查替代OS沙箱。本次未安装或验收宿主，不支持直接“值得安装”的结论。 Q09(#research-q09)
+**使用条件**：可信代码仓库的开发者可在一次性工作区试用。先显式选venv、固定包版本与可信索引，检查只读模式拒绝变更，再核查导入、卸载、删除及失败后部分状态。需要不可信代码执行隔离的团队应先观察，不能依赖本插件的路径检查替代OS沙箱。本次未安装或验收宿主，不支持直接“值得安装”的结论。 [Q09](../../plugins/angeloszou--dsh-python-env/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -1502,7 +1626,7 @@
 
 **热度依据**：npm 近30天下载 1,111 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见Q06(#research-q06)。
+**使用条件**：本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。详见[Q06](../../plugins/alexyin-tongji--dsh-plugin-console/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1516,7 +1640,7 @@
 
 **热度依据**：npm 近30天下载 1,109 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：经常摘录技术回答的人可先试，选取链接、公式和多行代码各一段，粘贴到常用编辑器并逐字核对URL、TeX和换行，再测试禁用后默认复制恢复。首次涉及客户端加载，持续在copy时遍历选区DOM，不调用模型；现金、延迟和人工复核时间没有实测值，不写为零。发布包和Git源码的构建路径不同，源码安装含prepare构建，需确认拿到可加载客户端。失败时可禁用并用原消息或手工复制；若静默丢掉代码符号、公式或链接目标，应停止自动依赖。它不适合要求逐字原始Markdown的归档流程。 Q04(#research-q04)
+**使用条件**：经常摘录技术回答的人可先试，选取链接、公式和多行代码各一段，粘贴到常用编辑器并逐字核对URL、TeX和换行，再测试禁用后默认复制恢复。首次涉及客户端加载，持续在copy时遍历选区DOM，不调用模型；现金、延迟和人工复核时间没有实测值，不写为零。发布包和Git源码的构建路径不同，源码安装含prepare构建，需确认拿到可加载客户端。失败时可禁用并用原消息或手工复制；若静默丢掉代码符号、公式或链接目标，应停止自动依赖。它不适合要求逐字原始Markdown的归档流程。 [Q04](../../plugins/asianfleet--dsh-message-copy-enhance/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -1530,7 +1654,7 @@
 
 **热度依据**：npm 近30天下载 1,096 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。详见Q05(#research-q05)。
+**使用条件**：建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。详见[Q05](../../plugins/54xkeee--dsh-youreyes/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1544,7 +1668,7 @@
 
 **热度依据**：npm 近30天下载 1,067 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 Q09(#research-q09)
+**使用条件**：适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。成功标准是关键段落召回、标题与链接保留达到预定样本门槛，且人工修正少于复制粘贴；连续出现空正文、错正文或反爬重试时应停止并切换浏览器。 [Q09](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -1558,7 +1682,21 @@
 
 **热度依据**：npm 近30天下载 1,051 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：只建议把它当预算观察工具，不用于报销或财务结算。单实例、主要使用已映射 DeepSeek 模型且愿意定期更新价格的人可观察；先用一周只读统计与官方账单对账，差额、重复回填或 unknown 模型超过门槛就停用告警和续航预测。 详见Q09(#research-q09)。
+**使用条件**：只建议把它当预算观察工具，不用于报销或财务结算。单实例、主要使用已映射 DeepSeek 模型且愿意定期更新价格的人可观察；先用一周只读统计与官方账单对账，差额、重复回填或 unknown 模型超过门槛就停用告警和续航预测。 详见[Q09](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q09)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1333175049-root"></a>
+
+## [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 20,675](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20%2C675&color=yellow&logo=github&style=flat)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) [![npm 30d 1,048](https://img.shields.io/static/v1?label=npm+30d&message=1%2C048&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/awesome-dsh-plugin) [![最新发布 2026-08-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/awesome-dsh-plugin)
+
+**主要用途**：维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。
+
+**热度依据**：npm 近30天下载 1,048 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：适合已有 DSH 环境、希望有组织地筛选扩展的用户试用索引；先确认候选包身份与目标插件自己的条件，再在不含敏感凭据的环境验收加载、核心功能和禁用。若只需要少量已知插件，直接查仓库更省维护；索引超时或版本缺项时退回人工目录，不据目录名誉免做源码核查。[Q05](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q05)
 
 [返回表格](#column-index)
 
@@ -1572,7 +1710,7 @@
 
 **热度依据**：npm 近30天下载 1,036 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，可信单用户只作趋势对照。详见Q05(#research-q05)。
+**使用条件**：先观察，可信单用户只作趋势对照。详见[Q05](../../plugins/1helloman1--dsh-usage-dashboard-plus/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1586,7 +1724,7 @@
 
 **热度依据**：npm 近30天下载 1,028 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，核原始API文件授权/非图片拒绝和资源/解码状态后再评估小图试用。详见Q05(#research-q05)。
+**使用条件**：先观察，核原始API文件授权/非图片拒绝和资源/解码状态后再评估小图试用。详见[Q05](../../plugins/aks1st--dock-images/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1600,7 +1738,7 @@
 
 **热度依据**：npm 近30天下载 1,017 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。详见Q06(#research-q06)。
+**使用条件**：先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。详见[Q06](../../plugins/1069137617--dsh-reasoning-tiers/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1614,7 +1752,7 @@
 
 **热度依据**：npm 近30天下载 1,011 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。详见Q05(#research-q05)。
+**使用条件**：建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。详见[Q05](../../plugins/863683348--dsh-plugin-translation/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1628,7 +1766,7 @@
 
 **热度依据**：npm 近30天下载 994 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。导入后必须逐文件与宿主可见性核对，缺资源或覆盖异常立即恢复备份。参见Q06(#research-q06)。
+**使用条件**：建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。导入后必须逐文件与宿主可见性核对，缺资源或覆盖异常立即恢复备份。参见[Q06](../../plugins/aks1st--dsh-skill-manager/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1642,7 +1780,7 @@
 
 **热度依据**：npm 近30天下载 977 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：当前建议观察。可先在复制profile使用只读列表与搜索，消息截断、编辑和批量整理应等代际与备份语义核对后再用；不要依赖插件state作为唯一备份。Q04(#research-q04)
+**使用条件**：当前建议观察。可先在复制profile使用只读列表与搜索，消息截断、编辑和批量整理应等代际与备份语义核对后再用；不要依赖插件state作为唯一备份。[Q04](../../plugins/abcdefgxw--dsh-toolbox-web/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -1656,7 +1794,7 @@
 
 **热度依据**：npm 近30天下载 973 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。详见Q05(#research-q05)。
+**使用条件**：仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。详见[Q05](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1670,7 +1808,7 @@
 
 **热度依据**：npm 近30天下载 972 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察。继续研究可先对照同日两个会话的人工总账，再核对余额baseUrl与凭据绑定和宿主路由认证，勿把估算或工具失败率当业务结果。详见Q06(#research-q06)。
+**使用条件**：先观察。继续研究可先对照同日两个会话的人工总账，再核对余额baseUrl与凭据绑定和宿主路由认证，勿把估算或工具失败率当业务结果。详见[Q06](../../plugins/aks1st--model-usage-plugin/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1684,7 +1822,7 @@
 
 **热度依据**：npm 近30天下载 969 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：有条件试用，长草稿/单composer用户先核Enter、IME、菜单与收起行为；不作为草稿备份。详见Q06(#research-q06)。
+**使用条件**：有条件试用，长草稿/单composer用户先核Enter、IME、菜单与收起行为；不作为草稿备份。详见[Q06](../../plugins/13071301808--dsh-composer-expand/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1698,7 +1836,7 @@
 
 **热度依据**：npm 近30天下载 956 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可信逐条分数可试用builtin，原replay固定环境，PASS不直接授权发布。详见Q06(#research-q06)。
+**使用条件**：可信逐条分数可试用builtin，原replay固定环境，PASS不直接授权发布。详见[Q06](../../plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1712,7 +1850,7 @@
 
 **热度依据**：npm 近30天下载 955 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，备份且独占的本地Git文件任务可继续探讨，勿将聊天消失当所有副作用撤销。详见Q06(#research-q06)。
+**使用条件**：观察，备份且独占的本地Git文件任务可继续探讨，勿将聊天消失当所有副作用撤销。详见[Q06](../../plugins/23swccp--dsh-undo--packages-bundle-rollback/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1726,7 +1864,7 @@
 
 **热度依据**：npm 近30天下载 940 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：教师审阅下试用模板/转换，数值与答案复核后使用。详见Q05(#research-q05)。
+**使用条件**：教师审阅下试用模板/转换，数值与答案复核后使用。详见[Q05](../../plugins/863683348--dsh-plugin-education/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1740,7 +1878,7 @@
 
 **热度依据**：npm 近30天下载 939 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先在 Web/桌面分开安装，检查 native 与多个第三方设置页、拖拽、重载和跨源 API；详见Q03(#research-q03)。
+**使用条件**：先在 Web/桌面分开安装，检查 native 与多个第三方设置页、拖拽、重载和跨源 API；详见[Q03](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -1754,7 +1892,7 @@
 
 **热度依据**：npm 近30天下载 923 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。详见Q05(#research-q05)。
+**使用条件**：建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。详见[Q05](../../plugins/2768651338--dsh-plugin-manager/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1768,7 +1906,7 @@
 
 **热度依据**：npm 近30天下载 920 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。详见Q05(#research-q05)。
+**使用条件**：可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。详见[Q05](../../plugins/ai-galaxy-gpu--dsh-sound/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1782,7 +1920,7 @@
 
 **热度依据**：npm 近30天下载 909 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：适合明确接受外部图片和上下文传输的人，以auto和非敏感单图试用，重要结论回图核对并管理本地观察日志；漏读、陈旧观察或退出失效时停用。详见Q07(#research-q07)。
+**使用条件**：适合明确接受外部图片和上下文传输的人，以auto和非敏感单图试用，重要结论回图核对并管理本地观察日志；漏读、陈旧观察或退出失效时停用。详见[Q07](../../plugins/1helloman1--dsh-vision-fallback/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -1796,7 +1934,7 @@
 
 **热度依据**：npm 近30天下载 899 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。详见Q07(#research-q07)。
+**使用条件**：先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。详见[Q07](../../plugins/1byteone--dsh-plugin-nlbi/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -1810,7 +1948,7 @@
 
 **热度依据**：npm 近30天下载 888 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：建议观察，单人本地可作为提醒和线索索引；关键事实须回查原始输出，不能依赖 verified 机器标签自动放行。详见Q06(#research-q06)。
+**使用条件**：建议观察，单人本地可作为提醒和线索索引；关键事实须回查原始输出，不能依赖 verified 机器标签自动放行。详见[Q06](../../plugins/aaronandwork--dsh-evidence-gate/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1824,7 +1962,7 @@
 
 **热度依据**：npm 近30天下载 886 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。详见Q06(#research-q06)。
+**使用条件**：可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。详见[Q06](../../plugins/aks1st--dock-editor/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1838,7 +1976,7 @@
 
 **热度依据**：npm 近30天下载 884 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。详见Q07(#research-q07)。
+**使用条件**：观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。详见[Q07](../../plugins/452926826--dsh-feishu-bot/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -1852,7 +1990,7 @@
 
 **热度依据**：npm 近30天下载 880 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：经常在超长会话停顿后返回、能核查供应商缓存计费的Web用户可在非关键会话试用。先确认正常idle才准备、恢复活动后失效、应用只回放相同请求，随后用同任务检查摘要遗漏与下一轮费用。以总尝试账单和合格接续共同验收，不能只看应用时零新请求。频繁废弃会话、缓存不可观测或严格保留全部历史的用户先观察；若净费用增加、摘要漏掉关键约束或宿主升级导致匹配失常，应停用。 Q06(#research-q06)
+**使用条件**：经常在超长会话停顿后返回、能核查供应商缓存计费的Web用户可在非关键会话试用。先确认正常idle才准备、恢复活动后失效、应用只回放相同请求，随后用同任务检查摘要遗漏与下一轮费用。以总尝试账单和合格接续共同验收，不能只看应用时零新请求。频繁废弃会话、缓存不可观测或严格保留全部历史的用户先观察；若净费用增加、摘要漏掉关键约束或宿主升级导致匹配失常，应停用。 [Q06](../../plugins/arrosam--dsh-idle-compact/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -1866,7 +2004,7 @@
 
 **热度依据**：npm 近30天下载 878 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。详见Q02(#research-q02)。
+**使用条件**：当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。详见[Q02](../../plugins/aks1st--dock-markdown/INSIGHT.md#research-q02)。
 
 [返回表格](#column-index)
 
@@ -1880,7 +2018,7 @@
 
 **热度依据**：npm 近30天下载 876 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议有独立备份的维护者在可丢弃目录受控试用常见删除缓冲；不以此替代权限隔离，准备长期阻断、语义不一致或需要动态程序全覆盖时停止。详见Q07(#research-q07)。
+**使用条件**：建议有独立备份的维护者在可丢弃目录受控试用常见删除缓冲；不以此替代权限隔离，准备长期阻断、语义不一致或需要动态程序全覆盖时停止。详见[Q07](../../plugins/ahyi8--dsh-agent-recycle-guard/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -1894,7 +2032,7 @@
 
 **热度依据**：npm 近30天下载 867 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察。继续探讨从maxEntries=1的连续新增、同工作区交错写入和无cwd调用，再查投影代际；少量笔记也需读回确认，不把标签当任务事实。详见Q06(#research-q06)。
+**使用条件**：先观察。继续探讨从maxEntries=1的连续新增、同工作区交错写入和无cwd调用，再查投影代际；少量笔记也需读回确认，不把标签当任务事实。详见[Q06](../../plugins/863683348--dsh-plugin-focus/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1908,7 +2046,7 @@
 
 **热度依据**：npm 近30天下载 866 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：建议观察，先在隔离仓库核对钩子策略、破坏操作确认和远端失败恢复；团队质量门禁另作明确安排。详见Q07(#research-q07)。
+**使用条件**：建议观察，先在隔离仓库核对钩子策略、破坏操作确认和远端失败恢复；团队质量门禁另作明确安排。详见[Q07](../../plugins/aks1st--dock-git/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -1922,7 +2060,7 @@
 
 **热度依据**：npm 近30天下载 860 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，继续研究从授权边界、可信图标和可恢复备份着手。详见Q05(#research-q05)。
+**使用条件**：先观察，继续研究从授权边界、可信图标和可恢复备份着手。详见[Q05](../../plugins/3tiga3--dsh-plugin-namecards/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1936,7 +2074,7 @@
 
 **热度依据**：npm 近30天下载 857 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：限个人娱乐试用；不能用稀有度评价模型。生产/演示场景先核异步串局和目标宿主兼容。详见Q05(#research-q05)。
+**使用条件**：限个人娱乐试用；不能用稀有度评价模型。生产/演示场景先核异步串局和目标宿主兼容。详见[Q05](../../plugins/aik358--dsh-draw-gacha/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1950,7 +2088,7 @@
 
 **热度依据**：npm 近30天下载 857 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：仅在低风险、同单位且人工复核的算术任务观察；跨单位比价和贷款勿直接用于资金决策。详见Q05(#research-q05)。
+**使用条件**：仅在低风险、同单位且人工复核的算术任务观察；跨单位比价和贷款勿直接用于资金决策。详见[Q05](../../plugins/863683348--dsh-plugin-local-life/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -1964,7 +2102,7 @@
 
 **热度依据**：npm 近30天下载 851 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见Q06(#research-q06)。
+**使用条件**：有条件试用，精确支持宿主+私有一进程一文件，将其当启发式观察摘要，不作验证通过/防篡改审计。详见[Q06](../../plugins/030611--dsh-verification-receipt/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1978,7 +2116,7 @@
 
 **热度依据**：npm 近30天下载 851 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。需要严格预算、敏感参考图或可靠跨会话通知时暂缓；不能把“审批超时未提交”扩为所有失败零扣费。参见Q06(#research-q06)。
+**使用条件**：建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。需要严格预算、敏感参考图或可靠跨会话通知时暂缓；不能把“审批超时未提交”扩为所有失败零扣费。参见[Q06](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -1992,7 +2130,7 @@
 
 **热度依据**：npm 近30天下载 847 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。详见Q05(#research-q05)。
+**使用条件**：先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。详见[Q05](../../plugins/aliengene--dsh-llm-balance-siderbar/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2006,7 +2144,7 @@
 
 **热度依据**：npm 近30天下载 841 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，先补真实描述/来源/版本与约束，作为探索入口而非可信安装名单或环境求解。详见Q06(#research-q06)。
+**使用条件**：观察，先补真实描述/来源/版本与约束，作为探索入口而非可信安装名单或环境求解。详见[Q06](../../plugins/863683348--dsh-need-finder/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2020,7 +2158,7 @@
 
 **热度依据**：npm 近30天下载 832 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：仅以“本地 DSH Web 端点可达”解释，并在固定版本上做故障矩阵。详见Q05(#research-q05)。
+**使用条件**：仅以“本地 DSH Web 端点可达”解释，并在固定版本上做故障矩阵。详见[Q05](../../plugins/aikenfra--dsh-alive/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2034,7 +2172,7 @@
 
 **热度依据**：npm 近30天下载 831 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。详见Q05(#research-q05)。
+**使用条件**：先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。详见[Q05](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2048,7 +2186,7 @@
 
 **热度依据**：npm 近30天下载 823 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。详见Q05(#research-q05)。
+**使用条件**：观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。详见[Q05](../../plugins/abnerai--dsh-monitor/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2062,7 +2200,7 @@
 
 **热度依据**：npm 近30天下载 821 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。只有在目标插件数据版本匹配、静态扫描范围明确、人工复核关键权限/副作用后，才可把 verdict 作为输入之一；任何目录不可读、规则未知或结果只给总分时都回到独立源码审查。 详见Q09(#research-q09)。
+**使用条件**：适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。只有在目标插件数据版本匹配、静态扫描范围明确、人工复核关键权限/副作用后，才可把 verdict 作为输入之一；任何目录不可读、规则未知或结果只给总分时都回到独立源码审查。 详见[Q09](../../plugins/863683348--dsh-insight/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2076,7 +2214,7 @@
 
 **热度依据**：npm 近30天下载 820 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。详见Q06(#research-q06)。
+**使用条件**：重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。详见[Q06](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2090,7 +2228,7 @@
 
 **热度依据**：npm 近30天下载 817 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：只把分数作线索，确认扫描文件覆盖/错误状态后再读固定 SHA 源码、验证安装；详见Q03(#research-q03)。
+**使用条件**：只把分数作线索，确认扫描文件覆盖/错误状态后再读固定 SHA 源码、验证安装；详见[Q03](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -2104,7 +2242,7 @@
 
 **热度依据**：npm 近30天下载 816 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：重要仓库不应仅依赖本插件；已有 Git/备份并能理解排除边界的开发者可先观察。试验要在临时工作区做新增/删除/改写、进程中断、链缺失、跨会话同cwd和撤销回滚，只有文件哈希与原会话保留全部符合预期才考虑常开。 详见Q09(#research-q09)。
+**使用条件**：重要仓库不应仅依赖本插件；已有 Git/备份并能理解排除边界的开发者可先观察。试验要在临时工作区做新增/删除/改写、进程中断、链缺失、跨会话同cwd和撤销回滚，只有文件哈希与原会话保留全部符合预期才考虑常开。 详见[Q09](../../plugins/985451842--dsh-snapshot-manager/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2118,7 +2256,7 @@
 
 **热度依据**：npm 近30天下载 809 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：已有可信自托管JARVIS看板的用户可在无敏感信息的会话先试。首次需要独立看板、agent标识和可选token，持续转发用户与助手文本摘录、工具名和错误，虽截断280字符也不代表脱敏。资源成本包括看板主机、存储、请求和故障重试，金额、延迟与人工审查时间未知。成功需三种turn结果正确映射并保留人工REVIEW，401或队列溢出必须可察觉；若用于合规审计或无法接受摘录外流则暂不采用。故障后手工对照源会话补记，不能把flush=true作为完整数据保证。 Q04(#research-q04)
+**使用条件**：已有可信自托管JARVIS看板的用户可在无敏感信息的会话先试。首次需要独立看板、agent标识和可选token，持续转发用户与助手文本摘录、工具名和错误，虽截断280字符也不代表脱敏。资源成本包括看板主机、存储、请求和故障重试，金额、延迟与人工审查时间未知。成功需三种turn结果正确映射并保留人工REVIEW，401或队列溢出必须可察觉；若用于合规审计或无法接受摘录外流则暂不采用。故障后手工对照源会话补记，不能把flush=true作为完整数据保证。 [Q04](../../plugins/asif2bd--jarvis-mission-control-deepseek--integrations-deepseek-harness-dsh-plugin-mission-control/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2132,7 +2270,7 @@
 
 **热度依据**：npm 近30天下载 804 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：熟悉原生压缩的开发者可单route试用，保留原生对照并检查摘要与关键约束；不要按pill猜有效覆盖，不把off当关闭宿主溢出恢复。任务质量变差或总成本上升时回默认。参见Q06(#research-q06)。
+**使用条件**：熟悉原生压缩的开发者可单route试用，保留原生对照并检查摘要与关键约束；不要按pill猜有效覆盖，不把off当关闭宿主溢出恢复。任务质量变差或总成本上升时回默认。参见[Q06](../../plugins/5aaee9--pi-agent-extensions--dsh-autocompact/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2146,7 +2284,7 @@
 
 **热度依据**：npm 近30天下载 804 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：本地HTTP单用户只读辨认可试用。详见Q05(#research-q05)。
+**使用条件**：本地HTTP单用户只读辨认可试用。详见[Q05](../../plugins/aks1st--dsh-archived-conversations/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2160,7 +2298,7 @@
 
 **热度依据**：npm 近30天下载 784 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察，先修明物理路径与取消契约，缩窄历史root，之后再考虑不敏感当前工作区轨迹；同模型自诊断不作为独立效果证明。详见Q06(#research-q06)。
+**使用条件**：建议观察，先修明物理路径与取消契约，缩窄历史root，之后再考虑不敏感当前工作区轨迹；同模型自诊断不作为独立效果证明。详见[Q06](../../plugins/agentdebugx--agentdebugx--integrations-dsh-agentdebugx/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2174,7 +2312,7 @@
 
 **热度依据**：npm 近30天下载 770 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。详见Q05(#research-q05)。
+**使用条件**：可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。详见[Q05](../../plugins/adonissheldon--dsh-openai-oauth/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2188,7 +2326,7 @@
 
 **热度依据**：npm 近30天下载 762 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：隔离 outputDir，先 dry-run 再人工核对 SKILL.md；文本技能再打包并解包核查文件，二进制资源不用当前打包路径。详见Q03(#research-q03)。
+**使用条件**：隔离 outputDir，先 dry-run 再人工核对 SKILL.md；文本技能再打包并解包核查文件，二进制资源不用当前打包路径。详见[Q03](../../plugins/988hj7tczd-oss--dsh-skill-creator/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -2202,7 +2340,7 @@
 
 **热度依据**：npm 近30天下载 748 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：固定宿主长文编辑可试用，先小草稿检查引用附件。详见Q05(#research-q05)。
+**使用条件**：固定宿主长文编辑可试用，先小草稿检查引用附件。详见[Q05](../../plugins/al-yichen--dsh-fullscreen-input/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2216,7 +2354,7 @@
 
 **热度依据**：npm 近30天下载 737 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：当前先观察；确认目标profile硬只读和Web访问边界后再对非关键成果试用，逐条复现缺陷并计实际模型与人工成本。Q06(#research-q06)
+**使用条件**：当前先观察；确认目标profile硬只读和Web访问边界后再对非关键成果试用，逐条复现缺陷并计实际模型与人工成本。[Q06](../../plugins/9931666--dsh-plugin-crossfire/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -2230,7 +2368,7 @@
 
 **热度依据**：npm 近30天下载 733 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，先加刷新来源/字段质量门，将结果当相关候选而非安全/安装推荐。详见Q06(#research-q06)。
+**使用条件**：观察，先加刷新来源/字段质量门，将结果当相关候选而非安全/安装推荐。详见[Q06](../../plugins/863683348--dsh-plugin-recommend/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2244,7 +2382,7 @@
 
 **热度依据**：npm 近30天下载 722 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。先选含双栏、公式、扫描页和同名文件的样本；核对页码、裁剪对应关系和关键数字，遇到缓存重合时给输入PDF不同basename，或顺序清理会话cwd下.dsh-pdf-reader后重读并立即核对；工具没有独立out-dir参数，单纯移动同名输入到不同目录不能隔离缓存。只有本文本路径存在、局部截图机制可核查，尚未证实跨论文准确率；需要精确合同、统计表或出版引用时始终回到原页。 Q09(#research-q09)
+**使用条件**：适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。先选含双栏、公式、扫描页和同名文件的样本；核对页码、裁剪对应关系和关键数字，遇到缓存重合时给输入PDF不同basename，或顺序清理会话cwd下.dsh-pdf-reader后重读并立即核对；工具没有独立out-dir参数，单纯移动同名输入到不同目录不能隔离缓存。只有本文本路径存在、局部截图机制可核查，尚未证实跨论文准确率；需要精确合同、统计表或出版引用时始终回到原页。 [Q09](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -2258,7 +2396,7 @@
 
 **热度依据**：npm 近30天下载 711 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：建议已有本机code-rag基础设施且能核对目标根的开发者试用；普通搜索需求先比较现有工具，setup和重建须按实际写入与算力操作处理。Q08(#research-q08)
+**使用条件**：建议已有本机code-rag基础设施且能核对目标根的开发者试用；普通搜索需求先比较现有工具，setup和重建须按实际写入与算力操作处理。[Q08](../../plugins/ankali-aylina--code-rag--plugins-dsh-code-rag-index-panel/INSIGHT.md#research-q08)
 
 [返回表格](#column-index)
 
@@ -2272,7 +2410,7 @@
 
 **热度依据**：npm 近30天下载 674 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：仅参考建议；优先本地 relay。若需 LAN 发布，手工审阅命令和防火墙；详见Q03(#research-q03)。
+**使用条件**：仅参考建议；优先本地 relay。若需 LAN 发布，手工审阅命令和防火墙；详见[Q03](../../plugins/173787247--dsh-wsl-expose/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -2286,7 +2424,7 @@
 
 **热度依据**：npm 近30天下载 667 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，继续核真实路径授权、导出完整性与JSONL最新语义，再对受控日志研究接续效果。详见Q06(#research-q06)。
+**使用条件**：先观察，继续核真实路径授权、导出完整性与JSONL最新语义，再对受控日志研究接续效果。详见[Q06](../../plugins/439436269-ctrl--dsh-session-path/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2300,7 +2438,7 @@
 
 **热度依据**：npm 近30天下载 655 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，先备份技能/lock/patch，受信本机可继续核展示与独立开关，避免唯一bundle直接改名升级。详见Q08(#research-q08)。
+**使用条件**：观察，先备份技能/lock/patch，受信本机可继续核展示与独立开关，避免唯一bundle直接改名升级。详见[Q08](../../plugins/6pofx--dsh-tool-explorer/INSIGHT.md#research-q08)。
 
 [返回表格](#column-index)
 
@@ -2314,7 +2452,7 @@
 
 **热度依据**：npm 近30天下载 640 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议试用。适合已经维护 CapMap 文档的小团队，只把图当导航并要求关键判断回到原文；先在单 workspace、小图验证 parse/watch/read 和错误展示。没有文档纪律的项目不应为了图而先引入整套格式。 参见Q04(#research-q04)、Q06(#research-q06)与Q09(#research-q09)。
+**使用条件**：建议试用。适合已经维护 CapMap 文档的小团队，只把图当导航并要求关键判断回到原文；先在单 workspace、小图验证 parse/watch/read 和错误展示。没有文档纪律的项目不应为了图而先引入整套格式。 参见[Q04](../../plugins/1741505640--capmap-skills--dsh-capmap-viz/INSIGHT.md#research-q04)、[Q06](../../plugins/1741505640--capmap-skills--dsh-capmap-viz/INSIGHT.md#research-q06)与[Q09](../../plugins/1741505640--capmap-skills--dsh-capmap-viz/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2328,7 +2466,7 @@
 
 **热度依据**：npm 近30天下载 631 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察。继续研究从完整制品清单、双会话切换、MD编辑传播和部分写入恢复入手，避免将共享提示词当会话私有设定。详见Q06(#research-q06)。
+**使用条件**：先观察。继续研究从完整制品清单、双会话切换、MD编辑传播和部分写入恢复入手，避免将共享提示词当会话私有设定。详见[Q06](../../plugins/609476965--dsh-lorebookmd/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2342,7 +2480,7 @@
 
 **热度依据**：npm 近30天下载 631 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。详见Q05(#research-q05)。
+**使用条件**：仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。详见[Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2356,7 +2494,7 @@
 
 **热度依据**：npm 近30天下载 599 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：兼容Web可有限试用，先备份/清空草稿并试无副作用导航，目标/回执未知就停止。详见Q05(#research-q05)。
+**使用条件**：兼容Web可有限试用，先备份/清空草稿并试无副作用导航，目标/回执未知就停止。详见[Q05](../../plugins/0xsline--dsh-spotlight/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2370,7 +2508,7 @@
 
 **热度依据**：npm 近30天下载 588 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见Q09(#research-q09)。
+**使用条件**：有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。把它当唯一安全边界、规则无人维护或工具大量通过 shell 二次解释的环境不适合。 详见[Q09](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2384,7 +2522,7 @@
 
 **热度依据**：npm 近30天下载 582 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 详见Q09(#research-q09)。
+**使用条件**：可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 详见[Q09](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2398,7 +2536,7 @@
 
 **热度依据**：npm 近30天下载 578 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议非敏感普通对话小范围试用，确认会话、真实引擎和停麦自动提交；误发、回退不透明或截断频繁时停止。详见Q05(#research-q05)。
+**使用条件**：建议非敏感普通对话小范围试用，确认会话、真实引擎和停麦自动提交；误发、回退不透明或截断频繁时停止。详见[Q05](../../plugins/3274375092--dsh-voice/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2412,7 +2550,7 @@
 
 **热度依据**：npm 近30天下载 577 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。详见Q06(#research-q06)。
+**使用条件**：建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。详见[Q06](../../plugins/2861292267--dsh-official-workbuddy-credit-proxy/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2426,7 +2564,7 @@
 
 **热度依据**：npm 近30天下载 519 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 Q04(#research-q04)
+**使用条件**：明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 [Q04](../../plugins/7gzgn--dsh-my-plugins/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2440,7 +2578,7 @@
 
 **热度依据**：npm 近30天下载 516 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。 参见Q04(#research-q04)、Q06(#research-q06)与Q09(#research-q09)。
+**使用条件**：建议观察。仅隔离账户做无破坏单应用，只读先行、写逐步审批；错窗、批准后漂移仍执行或日志泄密即停。 参见[Q04](../../plugins/1jiegejiayouxuewangan1--dsh-desktop-uia/INSIGHT.md#research-q04)、[Q06](../../plugins/1jiegejiayouxuewangan1--dsh-desktop-uia/INSIGHT.md#research-q06)与[Q09](../../plugins/1jiegejiayouxuewangan1--dsh-desktop-uia/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2454,7 +2592,7 @@
 
 **热度依据**：npm 近30天下载 479 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。详见Q05(#research-q05)。
+**使用条件**：建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。详见[Q05](../../plugins/439436269-ctrl--dsh-pinned-sessions/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2468,7 +2606,7 @@
 
 **热度依据**：npm 近30天下载 459 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议隔离profile先验证非关键组件的安装、更新、卸载和重启，保留配置及技能备份；不按零调用直接禁用应急能力。具体停止条件见 Q05(#research-q05)。
+**使用条件**：建议隔离profile先验证非关键组件的安装、更新、卸载和重启，保留配置及技能备份；不按零调用直接禁用应急能力。具体停止条件见 [Q05](../../plugins/2026heshao--dsh-armory/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2482,7 +2620,7 @@
 
 **热度依据**：npm 近30天下载 419 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。详见Q06(#research-q06)。
+**使用条件**：先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。详见[Q06](../../plugins/988hj7tczd-oss--dsh-invoice-tools/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2496,7 +2634,7 @@
 
 **热度依据**：npm 近30天下载 415 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：适合理解有限模型、愿意维护源码映射的工程师小范围试用；未决、跳过关键性质或无法映射实现时停止放行，不把它当自动程序正确性证明。Q04(#research-q04)
+**使用条件**：适合理解有限模型、愿意维护源码映射的工程师小范围试用；未决、跳过关键性质或无法映射实现时停止放行，不把它当自动程序正确性证明。[Q04](../../plugins/amethystluna--dsh-model-everything/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2510,7 +2648,7 @@
 
 **热度依据**：npm 近30天下载 413 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可信私有Host普通文件可条件试用，先核三方加载/路径权限、缓存与字符串排序；公开Host/恶意大书/验算不宜直接依赖。详见Q06(#research-q06)。
+**使用条件**：可信私有Host普通文件可条件试用，先核三方加载/路径权限、缓存与字符串排序；公开Host/恶意大书/验算不宜直接依赖。详见[Q06](../../plugins/aks1st--dock-spreadsheet/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2524,7 +2662,7 @@
 
 **热度依据**：npm 近30天下载 407 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：非关键 profile 先试，实机核启动/窗口恢复/减少动态/卸载；卡顿时先关闭动画。详见Q05(#research-q05)。
+**使用条件**：非关键 profile 先试，实机核启动/窗口恢复/减少动态/卸载；卡顿时先关闭动画。详见[Q05](../../plugins/4444hao--dsh-codefall/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2538,7 +2676,7 @@
 
 **热度依据**：npm 近30天下载 400 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。详见Q05(#research-q05)。
+**使用条件**：先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。详见[Q05](../../plugins/a42null--dsh-opencode-zen-plugin/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2552,7 +2690,7 @@
 
 **热度依据**：npm 近30天下载 398 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：先用测试按钮核凭据与服务，再逐类事件矩阵验证；关键告警不能仅依赖此尽力推送。详见Q05(#research-q05)。
+**使用条件**：先用测试按钮核凭据与服务，再逐类事件矩阵验证；关键告警不能仅依赖此尽力推送。详见[Q05](../../plugins/ahyi8--dsh-gotify-notify/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2566,7 +2704,7 @@
 
 **热度依据**：npm 近30天下载 385 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先 list/search，审模板代码及来源；补真实 args 和数据接入，只有明确需要多 Agent 时调用官方 workflow；详见Q03(#research-q03)。
+**使用条件**：先 list/search，审模板代码及来源；补真实 args 和数据接入，只有明确需要多 Agent 时调用官方 workflow；详见[Q03](../../plugins/988hj7tczd-oss--dsh-workflow-templates/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -2580,7 +2718,7 @@
 
 **热度依据**：npm 近30天下载 384 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，先修模板路径/时间与保存pending恢复，非秘密小样也须核采集/分享范围。详见Q07(#research-q07)。
+**使用条件**：观察，先修模板路径/时间与保存pending恢复，非秘密小样也须核采集/分享范围。详见[Q07](../../plugins/988hj7tczd-oss--dsh-asciinema/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -2594,7 +2732,7 @@
 
 **热度依据**：npm 近30天下载 378 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：适合要解释DSH DeepSeek调用构成、接受估算性质的用户小范围试用。首次加载Web插件，可选提供key看余额；持续需要维护节假日与调价版本，失败时回供应商后台核对。面板本身未额外调用模型，但有定时余额网络请求和事件折叠资源；金额和耗时未测，不能称零成本。试用取一段已知usage的会话分别跨峰谷和缓存命中核算，若币种、模型或冷会话估计误导即停止把它用于决策。没有账单对照时建议仅观察，不能正式采用为核算真相。 Q04(#research-q04)
+**使用条件**：适合要解释DSH DeepSeek调用构成、接受估算性质的用户小范围试用。首次加载Web插件，可选提供key看余额；持续需要维护节假日与调价版本，失败时回供应商后台核对。面板本身未额外调用模型，但有定时余额网络请求和事件折叠资源；金额和耗时未测，不能称零成本。试用取一段已知usage的会话分别跨峰谷和缓存命中核算，若币种、模型或冷会话估计误导即停止把它用于决策。没有账单对照时建议仅观察，不能正式采用为核算真相。 [Q04](../../plugins/arun1016--dsh-cost/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2608,7 +2746,7 @@
 
 **热度依据**：npm 近30天下载 377 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议观察。先用无外部写入的合成域消息核寻址/四级暂停/恢复和模型默认，逐条对真实消费；错域、重复、漏投、状态损坏或误认系统冻结即停。Q09(#research-q09)
+**使用条件**：建议观察。先用无外部写入的合成域消息核寻址/四级暂停/恢复和模型默认，逐条对真实消费；错域、重复、漏投、状态损坏或误认系统冻结即停。[Q09](../../plugins/1lany2a--dsh-domain-role--plugins-dsh-domain-bridge/INSIGHT.md#research-q09)
 
 [返回表格](#column-index)
 
@@ -2622,7 +2760,7 @@
 
 **热度依据**：npm 近30天下载 372 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：建议观察；当前尚不足以定义隔离且低负担的正式交付试用路径。先审阅封印提示与领域工具边界，再依据离线样本的出处相关性、重复执行和报告质量决定是否试用。适合人群与停止标准见 Q06(#research-q06)。
+**使用条件**：建议观察；当前尚不足以定义隔离且低负担的正式交付试用路径。先审阅封印提示与领域工具边界，再依据离线样本的出处相关性、重复执行和报告质量决定是否试用。适合人群与停止标准见 [Q06](../../plugins/adwmc--helm-d--packages-helmd/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2636,7 +2774,7 @@
 
 **热度依据**：npm 近30天下载 368 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先显式给 base 和安全输出路径，生成本地草稿并核对动机、测试、breaking；只有明确要发 PR 时才启用 openPr。详见Q05(#research-q05)。
+**使用条件**：先显式给 base 和安全输出路径，生成本地草稿并核对动机、测试、breaking；只有明确要发 PR 时才启用 openPr。详见[Q05](../../plugins/988hj7tczd-oss--dsh-pr-description/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2650,7 +2788,7 @@
 
 **热度依据**：npm 近30天下载 363 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：愿意审阅发送前文本、经常写模糊需求的人可从Light和非关键任务试用；先关闭不必要搜索，检查模型与附件发送范围，再对照原稿看约束、否定和权限。成功是相同任务更少来回且总费用和确认时间可接受；出现新增授权、改变验收、长代码丢失或猜测被误当事实时恢复原稿。无需预改写的精确命令直接保持原输入。当前只支持受控试用，不能称无需猜测或自动安全。 Q06(#research-q06)
+**使用条件**：愿意审阅发送前文本、经常写模糊需求的人可从Light和非关键任务试用；先关闭不必要搜索，检查模型与附件发送范围，再对照原稿看约束、否定和权限。成功是相同任务更少来回且总费用和确认时间可接受；出现新增授权、改变验收、长代码丢失或猜测被误当事实时恢复原稿。无需预改写的精确命令直接保持原输入。当前只支持受控试用，不能称无需猜测或自动安全。 [Q06](../../plugins/arrosam--dsh-smart-prompt/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -2664,7 +2802,21 @@
 
 **热度依据**：npm 近30天下载 361 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先从可丢弃技能目录创建包并异机导入，检查新增、本地修改和冲突各一项；确认未选模块不变，失败文件和基线可解释后扩大范围。遇到扫描后修改被覆盖、快照无法恢复或凭据误入包立即停止。Q06(#research-q06)
+**使用条件**：先从可丢弃技能目录创建包并异机导入，检查新增、本地修改和冲突各一项；确认未选模块不变，失败文件和基线可解释后扩大范围。遇到扫描后修改被覆盖、快照无法恢复或凭据误入包立即停止。[Q06](../../plugins/arlenman--dsh-backup-sync/INSIGHT.md#research-q06)
+
+[返回表格](#column-index)
+
+<a id="plugin-1422240642-root"></a>
+
+## [orchd项目任务面板](../../plugins/7bder--dsh-plugin-orchd/INSIGHT.md)
+
+[![npm 30d 359](https://img.shields.io/static/v1?label=npm+30d&message=359&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd)
+
+**主要用途**：在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。
+
+**热度依据**：npm 近30天下载 359 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：观察；先验收来源/会话权限和引擎零写，受信本地项目再决定试用。见 [Q05](../../plugins/7bder--dsh-plugin-orchd/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2678,7 +2830,7 @@
 
 **热度依据**：npm 近30天下载 353 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。详见Q07(#research-q07)。
+**使用条件**：先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。详见[Q07](../../plugins/ame-choo--dsh-study-coach/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 
@@ -2692,7 +2844,7 @@
 
 **热度依据**：npm 近30天下载 347 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先在隔离 Web profile 用非敏感草稿、关闭历史试用；再按需开上下文并确认 provider 与工作区路径。详见Q02(#research-q02)。
+**使用条件**：先在隔离 Web profile 用非敏感草稿、关闭历史试用；再按需开上下文并确认 provider 与工作区路径。详见[Q02](../../plugins/1321928757--dsh-prompt-polish/INSIGHT.md#research-q02)。
 
 [返回表格](#column-index)
 
@@ -2706,7 +2858,7 @@
 
 **热度依据**：npm 近30天下载 320 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：有条件试用，可信本机小PCM/低音量先核事件和设备；声音不是任务验收，远端和严格隔离提醒先观察。详见Q06(#research-q06)。
+**使用条件**：有条件试用，可信本机小PCM/低音量先核事件和设备；声音不是任务验收，远端和严格隔离提醒先观察。详见[Q06](../../plugins/117bs--dsh-perlica-ding/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2720,7 +2872,7 @@
 
 **热度依据**：npm 近30天下载 311 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先在隔离端口登记已有服务、保存参数并核对测速口径。停止前独立检查 PID 和端口当前占用者，关键共享推理服务先用原生运维流程。Q03(#research-q03)
+**使用条件**：先在隔离端口登记已有服务、保存参数并核对测速口径。停止前独立检查 PID 和端口当前占用者，关键共享推理服务先用原生运维流程。[Q03](../../plugins/ansonfishing--dsh-model-manager/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -2734,21 +2886,7 @@
 
 **热度依据**：npm 近30天下载 307 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：当前建议观察。潜在受益者是有复合需求且能核查多个输出的人，但首先必须解决部署树保留和分发完整性。首次要确认目标预设目录、模型与Python，持续每个专家、交叉评审和返工都会增加调用与人工整合；渐进披露的节token百分比是作者主张，本轮没有同条件证据。失败恢复要区分任务状态和实际文件副作用，done并不验证交付质量，也不能盲retry已经完成的外部动作。若未来受控试用，应使用独立targetDir、可丢弃任务和明确验收，任何重载清掉用户状态或两个worker同时认领就暂停。 Q04(#research-q04)
-
-[返回表格](#column-index)
-
-<a id="plugin-1422240642-root"></a>
-
-## [orchd项目任务面板](../../plugins/7bder--dsh-plugin-orchd/INSIGHT.md)
-
-[![npm 30d 301](https://img.shields.io/static/v1?label=npm+30d&message=301&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd)
-
-**主要用途**：在DSH右侧栏显示会话项目的orchd任务、依赖图、想法和审查时间线，并提供接入指令。
-
-**热度依据**：npm 近30天下载 301 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
-
-**使用条件**：观察，从可信引擎、受权session和检测接线边界继续研究。详见Q07(#research-q07)。
+**使用条件**：当前建议观察。潜在受益者是有复合需求且能核查多个输出的人，但首先必须解决部署树保留和分发完整性。首次要确认目标预设目录、模型与Python，持续每个专家、交叉评审和返工都会增加调用与人工整合；渐进披露的节token百分比是作者主张，本轮没有同条件证据。失败恢复要区分任务状态和实际文件副作用，done并不验证交付质量，也不能盲retry已经完成的外部动作。若未来受控试用，应使用独立targetDir、可丢弃任务和明确验收，任何重载清掉用户状态或两个worker同时认领就暂停。 [Q04](../../plugins/asher-2000--dsh-expert-mode/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2762,7 +2900,7 @@
 
 **热度依据**：npm 近30天下载 299 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。详见Q05(#research-q05)。
+**使用条件**：假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。详见[Q05](../../plugins/439436269-ctrl--dsh-ai-arcade/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2776,7 +2914,7 @@
 
 **热度依据**：npm 近30天下载 283 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察。只用有备份测试会话故障注入；任何残留、邻居误删、复活或无恢复清单即停。 参见Q04(#research-q04)、Q06(#research-q06)与Q09(#research-q09)。
+**使用条件**：建议观察。只用有备份测试会话故障注入；任何残留、邻居误删、复活或无恢复清单即停。 参见[Q04](../../plugins/2026heshao--dsh-forget-session/INSIGHT.md#research-q04)、[Q06](../../plugins/2026heshao--dsh-forget-session/INSIGHT.md#research-q06)与[Q09](../../plugins/2026heshao--dsh-forget-session/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -2790,7 +2928,7 @@
 
 **热度依据**：npm 近30天下载 280 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，继续从严格单人身份、最小Agent权限和可审计任务/回复入手。详见Q06(#research-q06)。
+**使用条件**：观察，继续从严格单人身份、最小Agent权限和可审计任务/回复入手。详见[Q06](../../plugins/988hj7tczd-oss--dsh-im-qq/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2804,7 +2942,21 @@
 
 **热度依据**：npm 近30天下载 239 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 详见Q09(#research-q09)。
+**使用条件**：可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 详见[Q09](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md#research-q09)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1426954291-root"></a>
+
+## [CI Diet](../../plugins/0disoft--dsh-ci-diet/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/0disoft/dsh-ci-diet) [![npm 30d 208](https://img.shields.io/static/v1?label=npm+30d&message=208&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ci-diet) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ci-diet)
+
+**主要用途**：发现 GitHub Actions 潜在浪费，保留证据并预览供人工审查的小幅工作流补丁。
+
+**热度依据**：npm 近30天下载 208 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：有限试用，离线scan后只审查一个受支持工作流；净收益或质量不达标即回退。见 [Q06](../../plugins/0disoft--dsh-ci-diet/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2818,7 +2970,7 @@
 
 **热度依据**：npm 近30天下载 205 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先在测试应用跑只读窗口、UIA和OCR，再检查输入结果与剪贴板变化。不要把ok或changed直接当业务成功；高影响动作单独确认，检查临时截图留存。Q04(#research-q04)
+**使用条件**：先在测试应用跑只读窗口、UIA和OCR，再检查输入结果与剪贴板变化。不要把ok或changed直接当业务成功；高影响动作单独确认，检查临时截图留存。[Q04](../../plugins/111xjyuan--dsh-desktop-sidecar/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2832,7 +2984,7 @@
 
 **热度依据**：npm 近30天下载 187 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：可在单项目或隔离profile保存少量非敏感偏好试用。不要依赖project标签隔离信息，约定变更时手工删除旧文本并检查新会话提示。Q04(#research-q04)
+**使用条件**：可在单项目或隔离profile保存少量非敏感偏好试用。不要依赖project标签隔离信息，约定变更时手工删除旧文本并检查新会话提示。[Q04](../../plugins/988hj7tczd-oss--harness-desktop--plugins-harness-memory/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2846,7 +2998,7 @@
 
 **热度依据**：npm 近30天下载 157 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。详见Q05(#research-q05)。
+**使用条件**：可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。详见[Q05](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2860,7 +3012,7 @@
 
 **热度依据**：npm 近30天下载 155 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：当前不推荐直接启为真实高信任记忆层。文件化与工具组合方向有用，但缺失emptyKnowledge、通用路径原型链、共享注入、非原子CAS与恢复冲突、无效fix晋升/脱敏未接线使README多项关键保证不成立。先修核心正确性，再单工作区无秘密数据评估；不因功能数量提高信任。详见Q06(#research-q06)。
+**使用条件**：当前不推荐直接启为真实高信任记忆层。文件化与工具组合方向有用，但缺失emptyKnowledge、通用路径原型链、共享注入、非原子CAS与恢复冲突、无效fix晋升/脱敏未接线使README多项关键保证不成立。先修核心正确性，再单工作区无秘密数据评估；不因功能数量提高信任。详见[Q06](../../plugins/863683348--dsh-memory-setup/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2874,7 +3026,7 @@
 
 **热度依据**：npm 近30天下载 148 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，暂不依赖当前审批边界做日常写操作。继续核查可从最小权限只读及本地/HTTP夹具入手，先解决审批前本地修改和未知结果重试。详见Q06(#research-q06)。
+**使用条件**：先观察，暂不依赖当前审批边界做日常写操作。继续核查可从最小权限只读及本地/HTTP夹具入手，先解决审批前本地修改和未知结果重试。详见[Q06](../../plugins/988hj7tczd-oss--harness-github/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2888,7 +3040,7 @@
 
 **热度依据**：npm 近30天下载 146 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。详见Q05(#research-q05)。
+**使用条件**：观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。详见[Q05](../../plugins/863683348--dsh-gov/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2902,7 +3054,7 @@
 
 **热度依据**：npm 近30天下载 146 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：只适合接受全局共享语义、愿意维护记忆库的单一可信工作域用户先观察，严格多项目隔离场景先暂缓。首次涉及数据库路径、宿主与Node sqlite支持；开启语义检索另需Python模型和常驻服务，不能按README的Node=18徽章推断node:sqlite可用。持续有每轮注入token、索引磁盘和周期LLM合并成本；失败后需备份DB、关闭注入并检查active/superseded关系。当前每轮注入不使用向量且隔离范围较宽，关键采用条件尚不足，推荐observe。 Q04(#research-q04)
+**使用条件**：只适合接受全局共享语义、愿意维护记忆库的单一可信工作域用户先观察，严格多项目隔离场景先暂缓。首次涉及数据库路径、宿主与Node sqlite支持；开启语义检索另需Python模型和常驻服务，不能按README的Node=18徽章推断node:sqlite可用。持续有每轮注入token、索引磁盘和周期LLM合并成本；失败后需备份DB、关闭注入并检查active/superseded关系。当前每轮注入不使用向量且隔离范围较宽，关键采用条件尚不足，推荐observe。 [Q04](../../plugins/asher-2000--dsh-memory-connect/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2916,7 +3068,7 @@
 
 **热度依据**：npm 近30天下载 137 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。Q04(#research-q04)
+**使用条件**：已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。[Q04](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -2930,7 +3082,7 @@
 
 **热度依据**：npm 近30天下载 133 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，非敏感可信个人库和限定模型通道对照。详见Q06(#research-q06)。
+**使用条件**：先观察，非敏感可信个人库和限定模型通道对照。详见[Q06](../../plugins/2026heshao--dsh-obsidian-board/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -2944,21 +3096,7 @@
 
 **热度依据**：npm 近30天下载 128 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，资料可读参考但先修profile断链和版本/推荐来源，再评估安装必要性。详见Q05(#research-q05)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1400927706-root"></a>
-
-## [dsh-plugin-quota](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) [![npm 30d 126](https://img.shields.io/static/v1?label=npm+30d&message=126&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
-
-**主要用途**：会话 token/估算花费仪表与趋势预测插件，提供系统提示、命令、Agent 工具及跨插件摘要。
-
-**热度依据**：npm 近30天下载 126 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
-
-**使用条件**：限定为会话用量趋势工具；需要逐项验证价格、投影、清零和写盘后再让其他插件消费 summary.json。详见Q05(#research-q05)。
+**使用条件**：先观察，资料可读参考但先修profile断链和版本/推荐来源，再评估安装必要性。详见[Q05](../../plugins/863683348--dsh-starter-zh/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -2972,7 +3110,7 @@
 
 **热度依据**：npm 近30天下载 126 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先与原生单句提示对照，从B/C检查可见答复和代码；只有长会话确有漂移才试D。多会话不要依赖/language隔离。Q06(#research-q06)
+**使用条件**：先与原生单句提示对照，从B/C检查可见答复和代码；只有长会话确有漂移才试D。多会话不要依赖/language隔离。[Q06](../../plugins/58fly--dsh-language-guard/INSIGHT.md#research-q06)
 
 [返回表格](#column-index)
 
@@ -2986,7 +3124,7 @@
 
 **热度依据**：npm 近30天下载 123 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：作为选型草案试用，补齐profile/版本/配置再执行。详见Q05(#research-q05)。
+**使用条件**：作为选型草案试用，补齐profile/版本/配置再执行。详见[Q05](../../plugins/863683348--dsh-recipe/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -3000,7 +3138,7 @@
 
 **热度依据**：npm 近30天下载 111 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。详见Q02(#research-q02)、Q03(#research-q03)。
+**使用条件**：先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。详见[Q02](../../plugins/863683348--dsh-trend-radar/INSIGHT.md#research-q02)、[Q03](../../plugins/863683348--dsh-trend-radar/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -3014,7 +3152,7 @@
 
 **热度依据**：npm 近30天下载 104 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见Q03(#research-q03)。
+**使用条件**：已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -3028,7 +3166,7 @@
 
 **热度依据**：npm 近30天下载 103 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察。继续探讨用固定双锁/多公告/失败语料核覆盖、来源和全部修复约束，再按真实生态审升级兼容，避免把报告当安全验收。详见Q06(#research-q06)。
+**使用条件**：先观察。继续探讨用固定双锁/多公告/失败语料核覆盖、来源和全部修复约束，再按真实生态审升级兼容，避免把报告当安全验收。详见[Q06](../../plugins/988hj7tczd-oss--dsh-dep-vuln-scan/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3042,7 +3180,7 @@
 
 **热度依据**：npm 近30天下载 101 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：个人隔离 profile 先做浅/深/系统、双方案与开关的视觉回归。详见Q05(#research-q05)。
+**使用条件**：个人隔离 profile 先做浅/深/系统、双方案与开关的视觉回归。详见[Q05](../../plugins/0nt-one--dsh-neo-skin/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -3056,7 +3194,7 @@
 
 **热度依据**：npm 近30天下载 97 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：建议观察，先关闭自动发送，在测试会话和慢转写场景核落点；敏感语音先核 provider 处理位置。详见Q06(#research-q06)。
+**使用条件**：建议观察，先关闭自动发送，在测试会话和慢转写场景核落点；敏感语音先核 provider 处理位置。详见[Q06](../../plugins/andyyang12345--dsh-dictation-hotkey/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3070,7 +3208,21 @@
 
 **热度依据**：npm 近30天下载 95 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察。愿意继续评估的维护者可从离线小范围会话逐条复核开始，先澄清E1真实判据和配置来源；未核对鉴权前不依赖web面板，任何处方均需回滚与任务对照。详见Q09(#research-q09)。
+**使用条件**：先观察。愿意继续评估的维护者可从离线小范围会话逐条复核开始，先澄清E1真实判据和配置来源；未核对鉴权前不依赖web面板，任何处方均需回滚与任务对照。详见[Q09](../../plugins/1687210989--agent-clinic/INSIGHT.md#research-q09)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1400927706-root"></a>
+
+## [dsh-plugin-quota](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-quota) [![npm 30d 93](https://img.shields.io/static/v1?label=npm+30d&message=93&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-quota)
+
+**主要用途**：追踪会话 token 与估算花费，提供仪表、下步用量及上下文窗口预测。
+
+**热度依据**：npm 近30天下载 93 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：观察；先验证 projection、重置、校准与四个读取入口一致，禁止当硬预算器使用。见 [Q06](../../plugins/121212165--dsh-plugin-quota/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3084,7 +3236,7 @@
 
 **热度依据**：npm 近30天下载 92 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见Q03(#research-q03)。
+**使用条件**：隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。
 
 [返回表格](#column-index)
 
@@ -3098,7 +3250,7 @@
 
 **热度依据**：npm 近30天下载 88 次，统计窗口为 2026-09-24 至 2026-10-23（UTC，含首尾日）。
 
-**使用条件**：先用非交易测试行程检查地点、路线、候选与重开草稿，人工确认最终内容。订票、开放时间和现场可行性回官方来源核对；需要严格审批时先明确宿主授权配置。Q03(#research-q03)
+**使用条件**：先用非交易测试行程检查地点、路线、候选与重开草稿，人工确认最终内容。订票、开放时间和现场可行性回官方来源核对；需要严格审批时先明确宿主授权配置。[Q03](../../plugins/antonylang--dsh-roam-planner/INSIGHT.md#research-q03)
 
 [返回表格](#column-index)
 
@@ -3112,7 +3264,7 @@
 
 **热度依据**：npm 近30天下载 83 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。详见Q06(#research-q06)。
+**使用条件**：可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。详见[Q06](../../plugins/988hj7tczd-oss--dsh-a11y-scan/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3126,7 +3278,7 @@
 
 **热度依据**：npm 近30天下载 80 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：可信单一管理者且允许失败回原出口可试用。详见Q05(#research-q05)。
+**使用条件**：可信单一管理者且允许失败回原出口可试用。详见[Q05](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -3140,7 +3292,7 @@
 
 **热度依据**：npm 近30天下载 77 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：建议观察，先复制日志并关闭 Git 核对，审阅原始会话与输出；对外分享须人工脱敏，不能把活动跨度或提交数当绩效证明。详见Q06(#research-q06)。
+**使用条件**：建议观察，先复制日志并关闭 Git 核对，审阅原始会话与输出；对外分享须人工脱敏，不能把活动跨度或提交数当绩效证明。详见[Q06](../../plugins/988hj7tczd-oss--dsh-receipts/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3154,7 +3306,7 @@
 
 **热度依据**：npm 近30天下载 74 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见Q03(#research-q03)、Q04(#research-q04)。
+**使用条件**：仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见[Q03](../../plugins/566001--dsh-wrapup-guard/INSIGHT.md#research-q03)、[Q04](../../plugins/566001--dsh-wrapup-guard/INSIGHT.md#research-q04)。
 
 [返回表格](#column-index)
 
@@ -3168,7 +3320,7 @@
 
 **热度依据**：npm 近30天下载 71 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：建议观察。最小 scopes 测试租户先只读，再单对象试写；用户 OAuth、消息、批量表和通用 API 暂缓。泄 token、串身份、重复写或不可补偿即停。 参见Q04(#research-q04)、Q06(#research-q06)与Q09(#research-q09)。
+**使用条件**：建议观察。最小 scopes 测试租户先只读，再单对象试写；用户 OAuth、消息、批量表和通用 API 暂缓。泄 token、串身份、重复写或不可补偿即停。 参见[Q04](../../plugins/2048lr--dsh-feishu/INSIGHT.md#research-q04)、[Q06](../../plugins/2048lr--dsh-feishu/INSIGHT.md#research-q06)与[Q09](../../plugins/2048lr--dsh-feishu/INSIGHT.md#research-q09)。
 
 [返回表格](#column-index)
 
@@ -3182,7 +3334,7 @@
 
 **热度依据**：npm 近30天下载 60 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：默认保持 autoSend 关闭，先用非敏感语音验证识别和草稿编辑；转写后人工检查再发送。详见Q02(#research-q02)。
+**使用条件**：默认保持 autoSend 关闭，先用非敏感语音验证识别和草稿编辑；转写后人工检查再发送。详见[Q02](../../plugins/0nt-one--dsh-voice-input/INSIGHT.md#research-q02)。
 
 [返回表格](#column-index)
 
@@ -3196,7 +3348,7 @@
 
 **热度依据**：npm 近30天下载 48 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。详见Q05(#research-q05)。
+**使用条件**：先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。详见[Q05](../../plugins/alycestocking--hover-glossary/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -3210,7 +3362,35 @@
 
 **热度依据**：npm 近30天下载 47 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：单人已有账号先只读短任务，核模型/额度/结果；写任务用可恢复工作树，超时先验产物，高价/低额需真实用户接受。参见Q04(#research-q04)。
+**使用条件**：单人已有账号先只读短任务，核模型/额度/结果；写任务用可恢复工作树，超时先验产物，高价/低额需真实用户接受。参见[Q04](../../plugins/ak-blank--dsh-codex-bridge/INSIGHT.md#research-q04)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1427978231-root"></a>
+
+## [dsh-stl-preview](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md)
+
+[![npm 30d 45](https://img.shields.io/static/v1?label=npm+30d&message=45&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-stl-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-stl-preview)
+
+**主要用途**：在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。
+
+**热度依据**：npm 近30天下载 45 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。[Q04](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-1427791087-root"></a>
+
+## [dsh-blend-preview](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md)
+
+[![npm 30d 44](https://img.shields.io/static/v1?label=npm+30d&message=44&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-blend-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-blend-preview)
+
+**主要用途**：在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。
+
+**热度依据**：npm 近30天下载 44 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
+
+**使用条件**：此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。[Q05](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q05)
 
 [返回表格](#column-index)
 
@@ -3224,7 +3404,7 @@
 
 **热度依据**：npm 近30天下载 39 次，统计窗口为 2026-09-23 至 2026-10-22（UTC，含首尾日）。
 
-**使用条件**：熟悉Kimi和DSH的开发者可在单进程隔离profile及副本工作区试用；出现pending未知结果先查日志与文件，不自动重试，要求无损迁移或完整计费者暂缓。Q04(#research-q04)
+**使用条件**：熟悉Kimi和DSH的开发者可在单进程隔离profile及副本工作区试用；出现pending未知结果先查日志与文件，不自动重试，要求无损迁移或完整计费者暂缓。[Q04](../../plugins/alycestocking--dsh-harness-switch/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -3238,7 +3418,7 @@
 
 **热度依据**：npm 近30天下载 30 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：先观察。继续探讨从最低权限可丢弃库、语法/跨库语料、取消和结果外发入手，再查网关session授权；不凭guarded连接重要库。详见Q06(#research-q06)。
+**使用条件**：先观察。继续探讨从最低权限可丢弃库、语法/跨库语料、取消和结果外发入手，再查网关session授权；不凭guarded连接重要库。详见[Q06](../../plugins/1321928757--dsh-mysql/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3252,7 +3432,7 @@
 
 **热度依据**：npm 近30天下载 24 次，统计窗口为 2026-09-21 至 2026-10-20（UTC，含首尾日）。
 
-**使用条件**：自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。详见Q06(#research-q06)。
+**使用条件**：自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。详见[Q06](../../plugins/439436269-ctrl--dsh-peak-runner/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3266,7 +3446,7 @@
 
 **热度依据**：npm 近30天下载 23 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，暂不把它当日常附件保护。愿意继续核查的读者可用非敏感且可重选的集合检查发送、切页和关闭时序，并明确清除IndexedDB的方式。详见Q06(#research-q06)。
+**使用条件**：先观察，暂不把它当日常附件保护。愿意继续核查的读者可用非敏感且可重选的集合检查发送、切页和关闭时序，并明确清除IndexedDB的方式。详见[Q06](../../plugins/2026heshao--dsh-draft-attachments/INSIGHT.md#research-q06)。
 
 [返回表格](#column-index)
 
@@ -3274,13 +3454,13 @@
 
 ## [dsh-subagent](../../plugins/1373700184--dsh-subagent/INSIGHT.md)
 
-[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
+[![npm 30d 21](https://img.shields.io/static/v1?label=npm+30d&message=21&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
 
-**主要用途**：把多个已登录的外部编码 CLI 注册为 DSH 子代理并提供进度与恢复。
+**主要用途**：把外部CLI注册为DSH子代理提供方，提供动态委派工具、进度、调度和崩溃后跟踪。
 
-**热度依据**：npm 近30天下载 22 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
+**热度依据**：npm 近30天下载 21 次，统计窗口为 2026-09-26 至 2026-10-25（UTC，含首尾日）。
 
-**使用条件**：适合已安装并信任多个 CLI、能写出自足任务并独立验收结果的开发者做受限试用；敏感仓库或无法授予 headless 权限的环境不应启用。成功标准是回退链在总预算内提高合格子任务数、重启接管不重复执行且父代理复核时间低于手工多终端；若上下文遗漏、权限暴露或迟到结果重复产生，应停止。 Q09(#research-q09)
+**使用条件**：观察；先在隔离仓库用最小权限和总预算验收每个后端的取消、重启与结果消费。见 [Q05](../../plugins/1373700184--dsh-subagent/INSIGHT.md#research-q05)。
 
 [返回表格](#column-index)
 
@@ -3294,7 +3474,7 @@
 
 **热度依据**：npm 近30天下载 0 次，统计窗口为 2026-09-22 至 2026-10-21（UTC，含首尾日）。
 
-**使用条件**：先观察，不将默认自主流程视可靠接受门；可丢弃仓库研究需独立强制CI/人工SHA验收及权限/预算/网络控制。详见Q07(#research-q07)。
+**使用条件**：先观察，不将默认自主流程视可靠接受门；可丢弃仓库研究需独立强制CI/人工SHA验收及权限/预算/网络控制。详见[Q07](../../plugins/february2015--dsh-taskswarm/INSIGHT.md#research-q07)。
 
 [返回表格](#column-index)
 

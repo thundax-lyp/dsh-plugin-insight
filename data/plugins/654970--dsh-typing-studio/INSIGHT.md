@@ -1,18 +1,18 @@
-# dsh-typing-studio
+# KeyFlow Typing Studio
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e23f470](https://github.com/654970/dsh-typing-studio/tree/e23f470b81461435804faf15380fcd104f0a46c9)
+分析版本：[0ba4187](https://github.com/654970/dsh-typing-studio/tree/0ba4187b5db26fa3351ae4d083a426305b440bbd)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 提供中英文计时打字练习、中文拼音、IME友好计分与本地记录。
+> **实现功能**：DSH内的中英文打字练习面板，提供拼音、计时、上屏计分和本地记录。
 
-> **核心亮点**：将中文拼音、IME提交感知和双语计时整合到DSH面板，减少切换且避免候选编辑直接误计。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **核心亮点**：相对独立打字网页，增量是DSH内双语主题集成、IME组合结束计分及本地短练习；没有证据表明改变学习方法或提高迁移成绩。[Q01](#research-q01)
 
-> **风险与缺陷**：best只来自最近16条且按JS位置计字，不能当永久纪录或任意Unicode一致测量；熟题变快也不证明陌生任务改善。参见[Q02](#research-q02)。
+> **风险与缺陷**：成绩按UTF-16码元计量，最佳只来自近期保留记录，存储写失败被忽略；显示成绩不等于跨文本公平或已持久保存。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -26,9 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要双语打字面板，它改变什么训练流程？](#detail-section-11)
-  - [Q02 · IME、准确率、计时与个人最佳的边界是什么？](#detail-section-12)
-  - [Q03 · 本地练习的采用成本与改进验证是什么？](#detail-section-13)
+  - [Q01 · 谁值得在DSH内练习，已有增量是什么？](#detail-section-11)
+  - [Q02 · IME与纠错计分是否可解释，有什么边界？](#detail-section-12)
+  - [Q03 · 训练数据是否可靠保存，成本与恢复如何？](#detail-section-13)
+  - [Q04 · 工程设计和采用结论是什么？](#detail-section-14)
+  - [Q05 · 如何使训练成绩更可信且可迁移？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -38,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合在工作间隙做本机双语自我练习；以清楚口径的练习记录验收，不作正式认证或健康/效率承诺。
+> **用途**：适合已有DSH并愿意短时练习中英文输入的用户；合格交付是一次可解释的练习反馈，不是正式能力认证。[Q01](#research-q01)
 
-独立打字网站或手工计时是参照；宿主内训练省切换但未证实比专用训练工具更有效。
+独立打字网页或本地文本练习是简单基线；本项比较集成与输入事件机制，没有同文本同输入法学习实验。
 
 <a id="detail-section-3"></a>
 
@@ -48,67 +50,69 @@
 
 #### 能力
 
-| 能力 | 主要用途 | 使用条件与边界 |
+|能力|主要用途|使用条件与边界|
 |---|---|---|
-| 双语计时 | 自我练习 | 固定文本，非认证 |
-| IME计分 | 避免候选误计 | 需目标IME核验 |
-| 本地记录 | 查看近期成绩 | 最近16条派生best，非永久 |
+|双语练习|定时与逐字反馈|内置拼音，自定义无推断读音|
+|IME计分|只评已提交文本|须实测本人输入法|
+|本地记录|近期成绩与偏好|不跨浏览器，近期最佳非永久最佳|
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|依赖或条件|是否必需|用途|缺失或不满足时|
 |---|---|---|---|
-| DSH Web slots/locale/React | 启动必需 | 面板与双语UI | 无面板，独立练习工具 |
-| IME正确事件 | 中文计分必需 | 只计提交文本 | 分数不可信，停止测评 |
-| localStorage | 记录必需 | 偏好与16条成绩 | 当次可练，持久未知 |
+|DSH slots/locale/React|必需|面板与多语言|入口无法挂载|
+|本人IME兼容|中文练习必需|组合上屏反馈|先验收再使用成绩|
+|localStorage可写|保存必需|偏好成绩文本|练习可继续但不能保证保留|
 
 #### 启动步骤
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|步骤|执行者与成功判据|失败处理|
 |---|---|---|
-| 1 | 用户启用并开侧栏面板 | 中英文与时长可选 |
-| 2 | 用户练习并回改 | IME候选不误计，原错误保留 |
-| 3 | 用户查成绩与重启 | 记录一致；失败不作进步证据 |
+|打开打字训练|用户确认面板和语言|核查宿主槽位|
+|选短文并测试IME|用户错字纠正后确认口径|停止使用不一致成绩|
+|完成再重开|用户确认记录持久化|检查存储和保留策略|
+
+**效果与成本**
 
 #### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|阶段|现金与资源|人工与时间|未知|
 |---|---|---|---|
-| 首次使用 | 客户端包/浏览器 | 安装、选择语言与时长 | 金额/兼容未测 |
-| 持续使用 | 渲染与本地存储 | 每轮30/60/120秒与复核 | 无强制外服，效果未测 |
-| 失败恢复 | 重载/重练 | 查IME/记录，重设偏好 | 保存失败旁路，恢复工时未知 |
+|首次|已有DSH与浏览器|安装、选择输入法和文本|配置耗时|
+|持续|localStorage及页面资源|每次训练30/60/120秒并看错字|学习迁移收益|
+|失败恢复|本地存储恢复|检查未保存数据、重练或迁移|恢复时间及丢失率|
 
 #### 效果
 
-| 效果项 | 当前证据支持 | 尚不能确定 |
+|效果项|当前支持|未知|
 |---|---|---|
-| 中文输入 | composition后计分 | 多IME一致性 |
-| 自我反馈 | 速度、准确率和逐字状态 | 陌生文本能力提升 |
-| 记录 | 最近16条派生best | 永久最佳/存储失败恢复 |
+|IME友好反馈|composition结束计分|各平台真实顺序|
+|局部练习记录|本地成绩及近期最佳|写失败及历史最佳保留|
+|输入能力提高|提供练习流程|未见文本迁移收益|
 
-> **思考**：best只来自最近16条且按JS位置计字，不能当永久纪录或任意Unicode一致测量；熟题变快也不证明陌生任务改善。参见[Q02](#research-q02)。
+> **思考**：成绩按UTF-16码元计量，最佳只来自近期保留记录，存储写失败被忽略；显示成绩不等于跨文本公平或已持久保存。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将中文拼音、IME提交感知和双语计时整合到DSH面板，减少切换且避免候选编辑直接误计。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：相对独立打字网页，增量是DSH内双语主题集成、IME组合结束计分及本地短练习；没有证据表明改变学习方法或提高迁移成绩。[Q01](#research-q01)
 
-将中文拼音、IME提交感知和双语计时整合到DSH面板，减少切换且避免候选编辑直接误计。参见[Q01](#research-q01)、[Q02](#research-q02)。
+相对独立打字网页，增量是DSH内双语主题集成、IME组合结束计分及本地短练习；没有证据表明改变学习方法或提高迁移成绩。[Q01](#research-q01)
 
-run token约束composition延迟回调、尝试累计不抹原错误值得借鉴；计量单位和历史窗口须显式，移植需逐IME与Unicode样例。
+阶段门与runToken使异步输入/卸载不易写入过期结果，适合输入面板复用；存储回执和长期最佳的语义需改进。[Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-best只来自最近16条且按JS位置计字，不能当永久纪录或任意Unicode一致测量；熟题变快也不证明陌生任务改善。参见[Q02](#research-q02)。
+成绩按UTF-16码元计量，最佳只来自近期保留记录，存储写失败被忽略；显示成绩不等于跨文本公平或已持久保存。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-本机自我练习可试用，先核IME回改与重启；长期纪录/认证需求改独立受控测评。参见[Q03](#research-q03)。
+已有DSH且需要短时双语练习者可控试用；先验证本人IME、纠错口径及本地保存，不将成绩作为正式考试或长期学习成效证明。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -116,18 +120,18 @@ best只来自最近16条且按JS位置计字，不能当永久纪录或任意Uni
 
 **核查状态**：已检查源码。
 
-练习与IME提交过滤有源码支持；多IME、持久化和训练迁移未验证；独立最佳/字素基准是假设。
+上屏计分及本地练习机制由源码支持；真实IME兼容和学习迁移效果未验证；未来设计假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 client.js、index.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 client.js、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查输入事件/计分/计时/存储/注册主链，未逐字核全部拼音或执行多IME/宿主。
-- 下一步：未运行目标。跨IME、回改、到时、16条淘汰与陌生短文验证计分/迁移。
+- 边界：源码级检查IME、计分、保存、历史最佳和槽位生命周期；未逐条校对段落拼音与视觉布局，未执行。
+- 下一步：授权后用不同IME、扩展汉字、纠错、定时结束中输入及存储禁用核查，并以未见文本对照学习迁移。
 
 **分析版本**
 
 - **仓库**：[654970/dsh-typing-studio](https://github.com/654970/dsh-typing-studio)
-- **版本号**：1.1.0（[固定提交 e23f470](https://github.com/654970/dsh-typing-studio/tree/e23f470b81461435804faf15380fcd104f0a46c9)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.2.0（[固定提交 0ba4187](https://github.com/654970/dsh-typing-studio/tree/0ba4187b5db26fa3351ae4d083a426305b440bbd)）
+- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -135,9 +139,9 @@ best只来自最近16条且按JS位置计字，不能当永久纪录或任意Uni
 
 <a id="innovation"></a>
 
-未验证假设是独立保存永久最佳、字素计量并用陌生文本基准区分背诵与迁移；需跨IME对照。参见[Q03](#research-q03)。
+未验证假设是显式字素口径、独立累计最佳和保存回执减少成绩误解；用扩展汉字、历史淘汰和配额失败对照，若解释和稳定性不改善则否定。[Q05](#research-q05)
 
-未运行目标。跨IME、回改、到时、16条淘汰与陌生短文验证计分/迁移。
+授权后用不同IME、扩展汉字、纠错、定时结束中输入及存储禁用核查，并以未见文本对照学习迁移。
 
 <a id="detail-section-9"></a>
 
@@ -148,47 +152,43 @@ best只来自最近16条且按JS位置计字，不能当永久纪录或任意Uni
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 2 | 2568 | 2488 | 10 | — |
-| .md | source | 1 | 48 | — | — | 431 |
+| .md | source | 5 | 178 | — | — | 1530 |
+| .js | source | 2 | 3006 | 2904 | 14 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/654970/dsh-typing-studio/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/654970/dsh-typing-studio/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：双语打字面板的计分、IME与训练收益边界是什么？
+**插件研究总目标**：双语练习是否提供可信IME反馈和持续训练价值，边界与采用条件是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要双语打字面板，它改变什么训练流程？
+### Q01 · 谁值得在DSH内练习，已有增量是什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-在DSH工作间隙练习中文输入法或英文键盘的用户可选择短文和30/60/120秒任务，以逐字正确率、速度和进度自我观察。合格交付是一轮有明确计量口径的本地练习记录，不是认证成绩，也不自动证明长期输入能力改善。
-
-相对独立打字网站，本项把双语、中文拼音注音、IME提交过滤与本地记录放入宿主侧栏/中央面板，无强制后端。贡献是适配中文输入和降低切换，计时/逐字对比本身属于常规训练设计；拼音来自pypinyin预生成和作者校对，不能归为新语言模型能力。
+适用对象是愿意在开发工作间隙进行短时中英文打字练习的DSH用户，合格结果是完成定时段落并得到可解释的速度、准确率和错误反馈。README给出12篇原始段落、30/60/120秒以及自定义文本，slots注册侧栏和中央面板支持入口集成。相对独立网页训练，增量是宿主语言/主题一致、无额外账号及中文IME上屏边界；不改变打字学习方法，也没有证明更高学习收益。拼音是预生成注释，作者称pypinyin并人工校对；自定义中文没有自动读音，不能外推通用汉字教学。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:5-18](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/README.md#L5-L18)
+**依据 1 · 作者声明**：[README.md:7-20](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/README.md#L7-L20)
 
-作者列双语/IME/本地能力。
+作者功能与适用范围
 
 <details>
 <summary>查看原文（14行）</summary>
 
 ```text
-Repository: [654970/dsh-typing-studio](https://github.com/654970/dsh-typing-studio)
-
 **中文**：中英文双语打字训练插件，带逐字拼音、计时短文、输入法友好的评分、逐字反馈和本地记录。
 
 ## Features
@@ -196,23 +196,40 @@ Repository: [654970/dsh-typing-studio](https://github.com/654970/dsh-typing-stud
 - **Chinese and English practice** with 12 original passages across everyday life, technology, and culture.
 - **Timed sessions** of 30, 60, or 120 seconds.
 - **Pinyin guides** above every Chinese character, with a toggle to hide them for unassisted speed practice.
+- **Custom passages** — paste your own Chinese or English text, keep up to 50 of them, and practise them next to the built-in set. Custom Chinese passages show without pinyin, because readings are not inferred.
 - **IME-aware Chinese input** — only committed text is scored, so pinyin candidate editing does not create false misses.
 - **Per-character feedback** with correct, incorrect, and current-character states. The passage follows your position automatically.
 - **Live statistics** for time left, speed, accuracy, and passage progress.
 - **Results and personal bests** in Chinese characters per minute or English net WPM, with the latest attempts kept locally.
 - **Bilingual interface** that follows the active Harness locale (`zh` / `en`).
+- **No backend, no network requests, no telemetry.** Practice preferences and records stay in the browser's `localStorage`.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[client.js:2539-2555](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L2539-L2555)
+**依据 2 · 源码核查**：[client.js:2962-2994](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L2962-L2994)
 
-宿主面板接线。
+语言和面板注册
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
+    return {
+      inject: ["slots", "locale"],
+      apply(ctx) {
+        ctx.effect(function () {
+          const disposeEn = ctx.locale.register(NS, "en", EN);
+          const disposeZh = ctx.locale.register(NS, "zh", ZH);
+          return function () {
+            disposeEn();
+            disposeZh();
+          };
+        }, "typing-studio: locale dictionaries");
+
+        const t = ctx.locale.bind(NS);
+        const Entry = makeEntry(ctx.locale, t);
+
         ctx.slots.inject("sidebar.panellist", function () {
           return ctx.slots.register(
             {
@@ -230,32 +247,37 @@ Repository: [654970/dsh-typing-studio](https://github.com/654970/dsh-typing-stud
 
         ctx.slots.inject("main", function () {
           return ctx.slots.register({ name: "main", key: MAIN_ID }, Entry);
+        });
 ```
 
 </details>
+
+#### 缺口
+
+- 缺少同任务基线的端到端收益结果
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · IME、准确率、计时与个人最佳的边界是什么？
+### Q02 · IME与纠错计分是否可解释，有什么边界？
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-composition期间onChange不计分，compositionEnd用run token保护延迟提交；commitValue通过公共前后缀识别变更字符，累计尝试与正确尝试，回改不会抹掉原错误。速度按最终位置相等字符计数，英文除5；因此速度和准确率分母不同，不能简单把速度乘准确率等同净产出。粘贴/拖放被UI阻止，但没有可信竞赛的输入证明。
-
-finish以Date.now计时并限时，10秒和最少正确字符才参与best，避免极短样本。但历史只保留最近16条，best从这些记录派生，故不是永久生涯纪录；老最佳会随窗口淘汰。比较使用JS字符串位置/length，不是Unicode字素，扩展汉字和组合字符不能当然按人感知一字计量。作者12篇固定材料可以练习，却不足以证明迁移到陌生文本。
+compositionStart设置标志使onChange不计分，compositionEnd异步提交最终value并用runToken防止过期任务写入；这是避免拼音候选输入被当错字的合理接线。commitValue按公共前后缀找修改区间，每次新提交字符累计尝试，纠错不会抹去已计错误；最终速度按当前正确字符/分钟，英文以5字符为词，与键击速度不同。文本使用JS字符串length及索引，是UTF-16码元而非用户感知字素；罕见汉字、emoji和组合字符可能占多个单位，不能声称所有语言字符计数一致。本轮未运行各平台IME，不能仅凭事件处理认定所有组合顺序正确。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[client.js:1890-1945](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L1890-L1945)
+**依据 1 · 源码核查**：[client.js:2307-2340](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L2307-L2340)
 
-累计提交与composition保护。
+计分及修改区间
 
 <details>
-<summary>查看原文（56行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
       function commitValue(rawValue) {
@@ -292,9 +314,18 @@ finish以Date.now计时并限时，10秒和最少正确字符才参与best，避
 
         if (value === targetText) {
           finishRef.current("complete", value, runTokenRef.current);
-        }
-      }
+```
 
+</details>
+
+**依据 2 · 源码核查**：[client.js:2344-2362](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L2344-L2362)
+
+IME事件和过期token
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
       function handleInputChange(event) {
         if (composingRef.current) return;
         commitValue(event.currentTarget.value);
@@ -318,9 +349,9 @@ finish以Date.now计时并限时，10秒和最少正确字符才参与best，避
 
 </details>
 
-**依据 2 · 源码核查**：[client.js:1384-1396](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L1384-L1396)
+**依据 3 · 源码核查**：[client.js:1637-1649](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1637-L1649)
 
-按字符串索引计正确/速度。
+正确字符与WPM公式
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -343,101 +374,23 @@ finish以Date.now计时并限时，10秒和最少正确字符才参与best，避
 
 </details>
 
-**依据 3 · 源码核查**：[client.js:1847-1883](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L1847-L1883)
-
-计时与滚动历史。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-        const finalText = typeof forcedValue === "string" ? forcedValue : typedRef.current;
-        const durationMs = duration * 1000;
-        const actualElapsed = Math.max(0, Math.min(durationMs, Date.now() - startedAtRef.current));
-        const elapsedMs = reason === "time" ? durationMs : Math.max(250, actualElapsed);
-        const correct = countCorrect(passage.text, finalText);
-        const attemptsMade = Math.max(attemptsRef.current, finalText.length);
-        const correctMade = Math.min(attemptsMade, Math.max(correctAttemptsRef.current, correct));
-        const accuracy = attemptsMade > 0 ? Math.round((correctMade / attemptsMade) * 100) : 0;
-        const speed = speedOf(lang, correct, elapsedMs);
-        const progress = targetLength > 0 ? finalText.length / targetLength : 0;
-        const progressPercent = Math.min(100, Math.round(progress * 100));
-        const ranked = finalText.length > 0 && elapsedMs >= 10000 && correct >= (lang === "en" ? 20 : 10);
-        const bestBefore = findBest(history, lang);
-        const newBest = ranked && (!bestBefore || speed > bestBefore.speed || (speed === bestBefore.speed && accuracy > bestBefore.accuracy));
-        const now = Date.now();
-        const record = {
-          id: String(now) + "-" + Math.random().toString(36).slice(2, 7),
-          at: now,
-          lang,
-          duration,
-          topic: passage.topic,
-          title: passage.title,
-          speed,
-          accuracy,
-          progress: progressPercent,
-          correct,
-          attempts: attemptsMade,
-          elapsedMs,
-          reason,
-          ranked
-        };
-
-        setRemainingMs(reason === "time" ? 0 : Math.max(0, durationMs - elapsedMs));
-        if (finalText.length > 0) {
-          const nextHistory = [record, ...history].slice(0, HISTORY_LIMIT);
-          setHistory(nextHistory);
-          writeStorageJSON(HISTORY_KEY, nextHistory);
-```
-
-</details>
-
-**依据 4 · 源码核查**：[client.js:2253-2267](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L2253-L2267)
-
-UI阻止粘贴/拖放。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-                            type: "text",
-                            lang: lang === "zh" ? "zh-CN" : "en",
-                            autoComplete: "off",
-                            autoCorrect: "off",
-                            autoCapitalize: "off",
-                            autoFocus: true,
-                            spellCheck: false,
-                            maxLength: targetLength,
-                            placeholder: tr("console.placeholder"),
-                            "aria-label": tr("console.inputLabel"),
-                            onChange: handleInputChange,
-                            onCompositionStart: handleCompositionStart,
-                            onCompositionEnd: handleCompositionEnd,
-                            onPaste: function (event) { event.preventDefault(); },
-                            onDrop: function (event) { event.preventDefault(); }
-```
-
-</details>
-
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 本地练习的采用成本与改进验证是什么？
+### Q03 · 训练数据是否可靠保存，成本与恢复如何？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-启动依赖DSH Web的locale/conversation和React模块表、slots扩展；host为空，不需服务账号。首次安装并选择语言/时长，持续投入主要是练习时间、浏览器渲染与本地记录存储；保存失败被吞，练习继续但记录可能不持久。没有费用数据，不能把本地等同零资源或保证不丢记录；退出/清浏览器数据会影响偏好和best。
-
-建议试用，适合自我练习且接受本机短历史的人，不适合竞赛认证或跨设备长期测评。先核自己的IME、回改、到时、重启记录；出现误计/记录丢失就停止用分数作进步依据。未验证假设是将历史滚动与持久最佳分离、增加陌生文本基准和字素计量。由滚动best与固定文本推导，可能区分熟练背诵和技能迁移，新增题库/版本校准成本。最小验证16条以上淘汰场景、不同IME和未练短文对照，记录计分一致与迁移正确率；若仅熟题变快则不支持训练迁移。
+运行依赖宿主React、slots、locale和浏览器localStorage，无Host业务逻辑或外部网络调用在已读客户端中被发现。偏好、最近成绩和自定义文本写本地，隔离/换浏览器不自动同步。writeStorageJSON吞掉配额或隐私模式异常，使练习能继续，但UI没有明确保存失败回执，不能把继续可用等同记录已保存。history按时间排序后截断，best从当前history遍历得出，README称personal best实际只对保留记录成立，历史最好可能被淘汰。首次是安装和选语言/文本的人工时间，持续成本主要是训练本身及本地资源；没有付费依赖不代表学习时间为零。失败恢复应保留原记录、验证写入，不能随意清空训练历史；具体耗时、存储丢失率及学习增益未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[client.js:1312-1327](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L1312-L1327)
+**依据 1 · 源码核查**：[client.js:1484-1499](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1484-L1499)
 
-本地存储错误旁路。
+读取降级与写失败被吞
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -463,14 +416,59 @@ UI阻止粘贴/拖放。
 
 </details>
 
-**依据 2 · 源码核查**：[client.js:1439-1449](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/client.js#L1439-L1449)
+**依据 2 · 源码核查**：[client.js:1513-1544](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1513-L1544)
 
-best由现有记录选择。
+成绩归一及截断
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
+    function sanitizeHistory(value) {
+      if (!Array.isArray(value)) return [];
+      const records = [];
+      for (let i = 0; i < value.length; i += 1) {
+        const raw = value[i];
+        if (!isRecord(raw)) continue;
+        const at = Number(raw.at);
+        if (!Number.isFinite(at) || at <= 0) continue;
+        const topic = raw.topic === "daily" || raw.topic === "tech" || raw.topic === "culture" || raw.topic === "custom" ? raw.topic : "daily";
+        records.push({
+          id: typeof raw.id === "string" ? raw.id : "record-" + at + "-" + i,
+          at,
+          lang: raw.lang,
+          duration: DURATIONS.indexOf(Number(raw.duration)) >= 0 ? Number(raw.duration) : 60,
+          topic,
+          title: typeof raw.title === "string" ? raw.title.slice(0, 120) : "",
+          speed: Math.max(0, Math.round(Number(raw.speed) || 0)),
+          accuracy: Math.min(100, Math.max(0, Math.round(Number(raw.accuracy) || 0))),
+          progress: Math.min(100, Math.max(0, Math.round(Number(raw.progress) || 0))),
+          correct: Math.max(0, Math.round(Number(raw.correct) || 0)),
+          attempts: Math.max(0, Math.round(Number(raw.attempts) || 0)),
+          elapsedMs: Math.max(0, Math.round(Number(raw.elapsedMs) || 0)),
+          reason: raw.reason === "complete" ? "complete" : "time",
+          ranked: raw.ranked === true
+        });
+      }
+      records.sort(function (left, right) { return right.at - left.at; });
+      return records.slice(0, HISTORY_LIMIT);
+    }
+
+    function loadHistory() {
+      return sanitizeHistory(readStorageJSON(HISTORY_KEY, []));
+```
+
+</details>
+
+**依据 3 · 源码核查**：[client.js:1691-1702](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1691-L1702)
+
+best只从保留history计算
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+    function findBest(history, lang) {
       let best = null;
       const minimumCorrect = lang === "en" ? 20 : 10;
       for (let i = 0; i < history.length; i += 1) {
@@ -486,34 +484,179 @@ best由现有记录选择。
 
 </details>
 
-**依据 3 · 源码核查**：[package.json:42-53](https://github.com/654970/dsh-typing-studio/blob/e23f470b81461435804faf15380fcd104f0a46c9/package.json#L42-L53)
+**依据 4 · 作者声明**：[README.md:43-45](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/README.md#L43-L45)
 
-客户端依赖声明。
+作者说明本地记录范围
+
+```text
+## Privacy
+
+The plugin writes three `localStorage` values: practice preferences, up to 16 practice records, and up to 50 custom passages (capped at 200 KB). Personal bests are derived from those records. Nothing is uploaded.
+```
+
+#### 缺口
+
+- 缺少实际资源峰值、失败恢复时间与单位合格任务成本
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 工程设计和采用结论是什么？
+
+**研究主题**：工程质量与复用、采用判断
+
+#### 完整回答
+
+runToken和phase防止结束或切换后旧回调写成绩，locale注册有effect释放，卸载时标记stopped并推进token，属于可复用的异步UI防旧结果设计。单文件把段落、翻译、CSS和业务混合，维护时须检查文本与评分一致；代码量不代表训练质量。建议对本来就在DSH内需要短练习的人做可控试用，不作教学成效或标准考试成绩来源。先以故意错字再纠正、不同IME、定时结束中组合输入及存储禁用做小样验收，确认口径可理解、卸载无残留入口；若丢分或保存提示误导则停止。训练效果应用相同未见文本在一周后对照独立练习基线，不以熟悉段落分数提高当迁移学习。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[client.js:2256-2275](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L2256-L2275)
+
+结束状态及时间/计分
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+      function finishRun(reason, forcedValue, token) {
+        if (token !== undefined && token !== runTokenRef.current) return;
+        if (phaseRef.current !== "running") return;
+        phaseRef.current = "done";
+        setPhase("done");
+        composingRef.current = false;
+        setComposing(false);
+
+        const finalText = typeof forcedValue === "string" ? forcedValue : typedRef.current;
+        const durationMs = duration * 1000;
+        const actualElapsed = Math.max(0, Math.min(durationMs, Date.now() - startedAtRef.current));
+        const elapsedMs = reason === "time" ? durationMs : Math.max(250, actualElapsed);
+        const correct = countCorrect(passage.text, finalText);
+        const attemptsMade = Math.max(attemptsRef.current, finalText.length);
+        const correctMade = Math.min(attemptsMade, Math.max(correctAttemptsRef.current, correct));
+        const accuracy = attemptsMade > 0 ? Math.round((correctMade / attemptsMade) * 100) : 0;
+        const speed = speedOf(lang, correct, elapsedMs);
+        const progress = targetLength > 0 ? finalText.length / targetLength : 0;
+        const progressPercent = Math.min(100, Math.round(progress * 100));
+        const ranked = finalText.length > 0 && elapsedMs >= 10000 && correct >= (lang === "en" ? 20 : 10);
+```
+
+</details>
+
+**依据 2 · 源码核查**：[client.js:2399-2406](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L2399-L2406)
+
+卸载令旧回调失效
+
+```text
+      React.useEffect(
+        function () {
+          return function () {
+            phaseRef.current = "stopped";
+            runTokenRef.current += 1;
+          };
+        },
+        []
+```
+
+**依据 3 · 源码核查**：[client.js:2964-2972](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L2964-L2972)
+
+语言注册释放
+
+```text
+      apply(ctx) {
+        ctx.effect(function () {
+          const disposeEn = ctx.locale.register(NS, "en", EN);
+          const disposeZh = ctx.locale.register(NS, "zh", ZH);
+          return function () {
+            disposeEn();
+            disposeZh();
+          };
+        }, "typing-studio: locale dictionaries");
+```
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何使训练成绩更可信且可迁移？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是将“保留记录中的最好”与独立持久累计最佳分开，并按字素分割提供明确计分口径，加上保存状态回执，降低跨输入法与数据淘汰造成的误解。推导来自UTF-16索引、16条近期历史和吞写异常三个已读机制；新增负担是迁移既有成绩口径、最佳重算和存储事务。最小实验保留一条早期最佳并生成超限记录、使用扩展汉字/组合字符、模拟写入配额失败，对照当前实现的计数、最佳保留与用户解释正确率。若仅增复杂性而不改善误解或稳定性，则否定；没有用户证据前不是独立产品机会。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[client.js:1637-1649](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1637-L1649)
+
+码元口径
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+    function countCorrect(target, typed) {
+      let correct = 0;
+      const limit = Math.min(target.length, typed.length);
+      for (let i = 0; i < limit; i += 1) {
+        if (target[i] === typed[i]) correct += 1;
+      }
+      return correct;
+    }
+
+    function speedOf(lang, correct, elapsedMs) {
+      if (!Number.isFinite(elapsedMs) || elapsedMs < 1200) return 0;
+      const units = lang === "en" ? correct / 5 : correct;
+      return Math.max(0, Math.round(units / (elapsedMs / 60000)));
+```
+
+</details>
+
+**依据 2 · 源码核查**：[client.js:1691-1702](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1691-L1702)
+
+保留历史最佳
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web",
-      "immediately": true,
-      "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-conversation"
-      ]
-    }
+    function findBest(history, lang) {
+      let best = null;
+      const minimumCorrect = lang === "en" ? 20 : 10;
+      for (let i = 0; i < history.length; i += 1) {
+        const record = history[i];
+        if (record.lang !== lang || record.attempts <= 0) continue;
+        if (record.elapsedMs < 10000 || record.correct < minimumCorrect) continue;
+        if (!best || record.speed > best.speed || (record.speed === best.speed && record.accuracy > best.accuracy)) {
+          best = record;
+        }
+      }
+      return best;
 ```
 
 </details>
 
+**依据 3 · 源码核查**：[client.js:1494-1499](https://github.com/654970/dsh-typing-studio/blob/0ba4187b5db26fa3351ae4d083a426305b440bbd/client.js#L1494-L1499)
+
+写入缺少可见结果
+
+```text
+    function writeStorageJSON(key, value) {
+      try {
+        window.localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        /* A private or full storage must never break practice. */
+      }
+```
+
 #### 缺口
 
-- 多IME、重启持久和陌生材料迁移未验证
-  **影响**：不能认定评分兼容或训练改善
-  **进一步探讨**：按目标IME、16条滚动和未练短文核计分/迁移
+- 未来设计假设的对照实验尚无结果
+  **影响**：无法确认收益、代价或假设优于简单替代
+  **进一步探讨**：按本题提出的对照记录正确率、总时间、资源与人工复核，保留失败样本
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

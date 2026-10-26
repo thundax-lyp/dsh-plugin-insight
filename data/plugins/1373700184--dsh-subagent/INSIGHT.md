@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[e30f1ce](https://github.com/1373700184/dsh-subagent/tree/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7)
+分析版本：[0b64f7b](https://github.com/1373700184/dsh-subagent/tree/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b)
 
 <!-- BEGIN META -->
-[![npm 30d 22](https://img.shields.io/static/v1?label=npm+30d&message=22&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
+[![npm 30d 21](https://img.shields.io/static/v1?label=npm+30d&message=21&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-subagent) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-subagent)
 <!-- END META -->
 
-> **实现功能**：把多个已登录的外部编码 CLI 注册为 DSH 子代理并提供进度与恢复。
+> **实现功能**：把外部CLI注册为DSH子代理提供方，提供动态委派工具、进度、调度和崩溃后跟踪。
 
-> **核心亮点**：相对手工开多个终端，它统一多种事件协议、模型回退、进度展示和崩溃接管，使外部额度成为 DSH 可调度的子代理资源。 [Q03](#research-q03)
+> **核心亮点**：集中CLI驱动、动态工具、并发槽和日志恢复，减少手工终端编排；模型与官方subagent契约为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：子代理不继承父上下文且默认无头权限较宽，任务说明、工作目录和验证责任全部回到父代理；多后端并不自动带来更好结果。 [Q04](#research-q04)
+> **风险与缺陷**：默认bypass权限可映射为跳过批准与沙箱，detached存活扩大操作责任；先发notice后标记不保证端到端只一次。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？](#detail-section-11)
-  - [Q02 · 能力如何从入口、注册、调用到状态变化实现？](#detail-section-12)
-  - [Q03 · 相对原生能力或简单替代，固定版本增加了什么？](#detail-section-13)
-  - [Q04 · 什么前提最可能使核心价值不成立？](#detail-section-14)
-  - [Q05 · 启动、持续生效和失败恢复分别依赖什么？](#detail-section-15)
-  - [Q06 · 首次、持续与失败恢复成本及效果证据如何？](#detail-section-16)
-  - [Q07 · 实现有哪些可靠性取舍和可复用设计？](#detail-section-17)
-  - [Q08 · 由贡献和限制能推导什么未验证方向？](#detail-section-18)
-  - [Q09 · 对什么人值得观察或试用，成功与停止条件是什么？](#detail-section-19)
+  - [Q01 · 多后端委派的实际增量是什么？](#detail-section-11)
+  - [Q02 · 运行和恢复如何串接？](#detail-section-12)
+  - [Q03 · 默认权限与通知保证可靠吗？](#detail-section-13)
+  - [Q04 · 前置与全任务成本是什么？](#detail-section-14)
+  - [Q05 · 可证伪改进与当前采用是什么？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向同时拥有多个编码代理订阅或 CLI 的开发者，把独立子任务分派到不同后端并从 DSH 汇总结果。 [Q01](#research-q01)
+> **用途**：多CLI使用者委派自包含独立任务，以正确产物和父agent独立验收为交付。
 
-基线是用户手工调用各 CLI 并复制结果；插件减少进程、事件和恢复接线，但新增权限、费用、上下文打包与独立核验负担。
+手动CLI终端/脚本与宿主原生子agent是替代；比较需同任务、后端和预算，不把并发数当收益。
 
 <a id="detail-section-3"></a>
 
@@ -56,67 +52,66 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 多 CLI 提供方 | 把 Qoder、Codex、Claude 等注册为子代理。 | 仅由固定版本源码确认；运行效果未验证 |
-| 模型回退 | 按有序模型链处理无输出或失败。 | 仅由固定版本源码确认；运行效果未验证 |
-| 进度与恢复 | 落盘事件并在重启后继续跟踪。 | 仅由固定版本源码确认；运行效果未验证 |
+| CLI委派 | 使用外部订阅/模型任务 | 子代理无父上下文，权限独立 |
+| 调度/进度 | 并发槽和状态查询 | 实际后端可因溢出改变 |
+| 崩溃后跟踪 | 重读日志与补notice | 不保证父消费只一次，需验收进程树 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| 至少一个外部 CLI 已安装登录 | 必需 | 真正执行子任务 | provider 启动前报 binary/account 错误 |
-| DSH subagents/tools/commands | 必需 | 注册 provider、委派工具和状态命令 | 无法从父会话调度 |
-| 可写 runs 目录 | 恢复必需 | 保存 detached stdout 与活动台账 | 宿主重启后无法接管或回放 |
-| 自足提示与受控权限模式 | 安全采用必需 | 子代理不继承父上下文且 headless 执行 | 上下文遗漏或未授权文件/命令副作用 |
+| DSH subagent/tools/agents等接口 | 启动必需 | provider和通知接线 | 不兼容需停止加载 |
+| 已安装登录的外部CLI | 对应后端必需 | 执行任务和消耗自身额度 | 不可用不得伪装成功 |
+| 隔离目录/最小权限/预算 | 可控使用必需 | 约束文件与外部副作用 | 默认bypass不适合直接生产 |
+| 日志/meta磁盘与平台进程支持 | 恢复必需 | 重接运行 | 重启/Windows需单独验收 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|---|
-| 探测 | 用户在设置页确认 CLI、版本、登录与模型 | 只启用可用且受信后端 |
-| 打包任务 | 父代理提交含 cwd、输入、约束和验收的自足提示 | 子代理无需父上下文也能执行 |
-| 运行与回退 | provider detached 启动并解析事件流 | 静默超时切模型，总预算耗尽后明确失败 |
-| 接管与验收 | 重启后恢复 run，父代理核对产物 | 完成通知只发一次，关键结论独立验证 |
+|---|---|---|
+| 1 | 用户核CLI版本/登录并配置最小权限 | 隔离任务不越范围 |
+| 2 | 父agent给自包含任务并记录实际后端 | 产物可独立核验 |
+| 3 | 用户取消/强杀宿主并恢复 | 无停止后写入或重复办结，否则停用 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 多个 CLI 订阅/API 与本地安装 | 登录、路径、权限、模型链配置 | 每后端准备分钟未知 |
-| 持续使用 | 子进程、事件日志、各模型额度 | 编写自足任务和复核结果 | 每个合格子任务费用/分钟未知 |
-| 失败恢复 | 回退模型可能重复消耗额度 | 查状态、重启接管、处理迟到结果 | 去重与重复副作用未实测 |
+| 首次使用 | 多CLI/账号及隔离资源未知 | 驱动、权限、目录和预算配置 | 默认bypass需明确调整 |
+| 持续使用 | 各订阅/API、失败尝试与日志 | 自包含上下文、汇总和独立验收 | 无合格任务单位成本 |
+| 失败恢复 | 存活进程、重试与重复结果资源未知 | 核对PID/日志/通知/真实写入 | 宿主退出不等于子进程停 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 后端统一 | 多驱动和动态 provider 注册存在 | 各 CLI 当前协议兼容率 |
-| 故障转移 | 静默阈值、模型链和总等待预算存在 | 是否提高合格率而不显著增费 |
-| 崩溃接管 | detached 输出和活动台账设计存在 | 重启时是否无重复通知/执行 |
+| 委派 | 多driver和动态provider存在 | 任务质量与成本优势 |
+| 恢复 | 日志与PID重接路径 | 正确进程、取消和父消费 |
+| 调度 | 并发槽与重启占位 | 总吞吐和预算放大 |
 
-> **思考**：子代理不继承父上下文且默认无头权限较宽，任务说明、工作目录和验证责任全部回到父代理；多后端并不自动带来更好结果。 [Q04](#research-q04)
+> **思考**：默认bypass权限可映射为跳过批准与沙箱，detached存活扩大操作责任；先发notice后标记不保证端到端只一次。见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对手工开多个终端，它统一多种事件协议、模型回退、进度展示和崩溃接管，使外部额度成为 DSH 可调度的子代理资源。 [Q03](#research-q03)
+> **亮点**：集中CLI驱动、动态工具、并发槽和日志恢复，减少手工终端编排；模型与官方subagent契约为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相对手工开多个终端，它统一多种事件协议、模型回退、进度展示和崩溃接管，使外部额度成为 DSH 可调度的子代理资源。 [Q03](#research-q03)
+集中CLI驱动、动态工具、并发槽和日志恢复，减少手工终端编排；模型与官方subagent契约为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-驱动层、活动台账、detached 输出与客户端展示形成完整链路，恢复设计可借鉴；高权限无头执行和协议适配面要求逐后端验证。
+文件日志脱离宿主管道、先读尾部再判失败值得借鉴；需为detached进程定义权限/退出与回执所有权。notified应表达投递尝试而非用户已消费，当前不能宣传严格只一次。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-子代理不继承父上下文且默认无头权限较宽，任务说明、工作目录和验证责任全部回到父代理；多后端并不自动带来更好结果。 [Q04](#research-q04)
+默认bypass权限可映射为跳过批准与沙箱，detached存活扩大操作责任；先发notice后标记不保证端到端只一次。见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合已安装并信任多个 CLI、能写出自足任务并独立验收结果的开发者做受限试用；敏感仓库或无法授予 headless 权限的环境不应启用。成功标准是回退链在总预算内提高合格子任务数、重启接管不重复执行且父代理复核时间低于手工多终端；若上下文遗漏、权限暴露或迟到结果重复产生，应停止。 [Q09](#research-q09)
+观察；先在隔离仓库用最小权限和总预算验收每个后端的取消、重启与结果消费。见 [Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -124,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。
+源码支持多后端与恢复编排；默认权限、取消和通知消费未验收；稳定回执为未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/hidden-runner.cjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。
-- 下一步：在隔离仓库给每个后端同一组自足任务，记录首输出、完成、验收、额度和父代理复核；故意让首模型静默并在运行中重启 DSH，核对模型切换、run 接管、通知恰一次和产物无重复修改。回退未提高合格数或重启产生重复副作用即否定采用。
+- 边界：固定源码抽查driver、spawn、recovery和注册，不运行外部CLI/目标代码，不访问账号或订阅，不把作者恢复说明当本轮实测。
+- 下一步：逐后端最小权限、静默、失败转移、取消、宿主强杀和通知消费矩阵，对账真实文件及全部费用。
 
 **分析版本**
 
 - **仓库**：[1373700184/dsh-subagent](https://github.com/1373700184/dsh-subagent)
-- **版本号**：1.0.1（[固定提交 e30f1ce](https://github.com/1373700184/dsh-subagent/tree/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.1.6（[固定提交 0b64f7b](https://github.com/1373700184/dsh-subagent/tree/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b)）
+- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -143,9 +138,9 @@
 
 <a id="innovation"></a>
 
-可在派发前生成最小上下文包并在返回后执行统一验收契约，只把失败证据和产物摘要回流，从而降低上下文遗漏与汇总偏差。 [Q08](#research-q08)
+未验证的稳定完成回执与父会话消费确认，可能减少崩溃窗口重复/遗漏；用五阶段强杀实验测净收益。见 [Q05](#research-q05)。
 
-在隔离仓库给每个后端同一组自足任务，记录首输出、完成、验收、额度和父代理复核；故意让首模型静默并在运行中重启 DSH，核对模型切换、run 接管、通知恰一次和产物无重复修改。回退未提高合格数或重启产生重复副作用即否定采用。
+逐后端最小权限、静默、失败转移、取消、宿主强杀和通知消费矩阵，对账真实文件及全部费用。
 
 <a id="detail-section-9"></a>
 
@@ -156,42 +151,43 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 2 | 177 | — | — | 2489 |
-| .js | source | 3 | 2731 | 2518 | 149 | — |
+| .md | source | 2 | 187 | — | — | 2942 |
+| .js | source | 3 | 3210 | 2964 | 177 | — |
+| .cjs | source | 1 | 21 | 18 | 2 | — |
 | .mjs | source | 1 | 40 | 35 | 2 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/1373700184/dsh-subagent/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/1373700184/dsh-subagent/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：研究 dsh-subagent 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。
+**插件研究总目标**：外部CLI子代理适配能否减少多后端委派负担，崩溃存活和权限默认值带来什么责任？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？
+### Q01 · 多后端委派的实际增量是什么？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向同时拥有多个编码代理订阅或 CLI 的开发者，把独立子任务分派到不同后端并从 DSH 汇总结果。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是用户手工调用各 CLI 并复制结果；插件减少进程、事件和恢复接线，但新增权限、费用、上下文打包与独立核验负担。
+面向已经使用多个外部编码CLI订阅、希望由DSH父agent分派独立任务的人。合格结果是子任务产物正确、可核验且与父目标一致，不是外部CLI进程退出0。相对手动开多个终端，插件将provider注册、协议事件折叠、进度、并发槽和恢复集中到DSH。父上下文不自动继承，任务必须自包含；因此它减少启动/查状态负担，同时把上下文准备和验收留给父agent。技术贡献为驱动与宿主编排，外部模型、CLI与官方subagent工具不是原创。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-20](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/README.md#L1-L20)
+**依据 1 · 作者声明**：[README.md:1-15](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/README.md#L1-L15)
 
-作者材料说明目标用户、安装方式、主要能力和已知边界。
+作者一次性CLI/上下文隔离定位
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（15行）</summary>
 
 ````text
 # dsh-subagent
@@ -208,78 +204,187 @@ dsh plugin --profile web add github:1373700184/dsh-subagent
 
 装好后插件的 `cordis.patch.yml` 会向 profile 树插入提供方 `dsh-subagent` 和 Agent 预设;委派工具、斜杠指令随**已启用的后端**动态挂载(启用几个后端就有几个工具/指令)。重启 dsh 生效。
 
-前置条件:对应 CLI 已安装且已登录——`qodercli`(`~/.qoder/bin/qodercli/`)、`qoderclicn`(`~/.qoder-cn/bin/qoderclicn/`)、`codex`(npm 全局)、`claude`(npm 全局,沿用 `~/.claude/settings.json` 的模型/网关配置)、`opencode`(`~/.opencode/bin/`)、`pi`(`~/.pi/agent/bin/`,通过 node + `pi-launcher.js` 启动)、`codebuddy`(npm 全局 `@tencent-ai/codebuddy-code`,通过 node 启动)。
-
-## 使用
-
-在 dsh 会话里让父 agent 调用工具即可,例如:
-
+前置条件:对应 CLI 已安装且已登录——`qodercli`(`~/.qoder/bin/qodercli/`)、`qoderclicn`(`~/.qoder-cn/bin/qoderclicn/`)、`codex`(npm 全局)、`claude`(npm 全局,沿用 `~/.claude/settings.json` 的模型/网关配置;设置页的模型列表也从这里读取)、`opencode`(`~/.opencode/bin/`)、`pi`(`~/.pi/agent/`,优先通过 node 直接启动受管安装的 CLI,避免 Windows 弹终端窗口)、`codebuddy`(npm 全局 `@tencent-ai/codebuddy-code`,通过 node 启动)。上述目录都找不到时,会按 PATH 搜索命令名(`qodercli` / `qoderclicn` / `opencode` / `pi` / `codebuddy` / `codex` / `claude`);CLI 路径里填裸命令名也会走 PATH。
 ````
 
 </details>
+
+**依据 2 · 源码核查**：[lib/index.js:1693-1711](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L1693-L1711)
+
+动态官方ToolSubagent/provider及可用命令接线
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+			if (!record.tool) {
+				const fiber = ctx.plugin(ToolSubagentPlugin, { provider: providerName, toolName: providerName, maxDepth: "provider-managed" });
+				record.tool = () => {
+					void fiber.dispose?.();
+				};
+			}
+			if (!record.provider) {
+				record.provider = ctx.subagents.registerProvider(new QoderJsonProvider(
+					providerName,
+					() => liveSpec(providerName),
+					(id) => ctx.get("agents")?.get?.(id),
+					schedule,
+				));
+			}
+			// 只有本机确实存在对应 CLI 时斜杠指令才有用;
+			// 否则跳过,避免指令菜单出现死路。
+			const commandBinary = resolveBinary(providerName, entry.binary);
+			const commandAvailable = Boolean(commandBinary && existsSync(commandBinary));
+			if (commandAvailable && !record.command) record.command = buildCommand(providerName);
+```
+
+</details>
+
+#### 缺口
+
+- 没有多CLI真实案件的质量与总成本对照
+  **影响**：无法确认并发等于效率提升
+  **进一步探讨**：固定同批独立任务比较终端与插件的合格率、人工验收和总费用
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 能力如何从入口、注册、调用到状态变化实现？
+### Q02 · 运行和恢复如何串接？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-每个 provider 把提示经 stdin 交给一次性 CLI，解析其事件流并落盘；detached 运行记录允许宿主重启后接管，工具行、状态工具和命令展示进度。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。
+每种driver映射参数与JSON事件，实际CLI以detached启动，stdin传任务，stdout/stderr写文件，run meta保存provider、PID和父会话。重启时先折叠日志，再看PID，运行中占并发槽继续跟踪，结束后补notice。可借鉴处是日志与进程寿命脱离宿主管道，并在重启先读尾部再判死，避免把停机期间正常完成误判失败。代价是宿主退出不等于子进程停止，需要明确取消/退出所有权；PID活着也不能单独证明仍是原进程，具体重接安全需真实平台验收。Windows额外隐藏runner改变进程树，不能用Unix结果代替。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
+**依据 1 · 源码核查**：[lib/index.js:980-1009](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L980-L1009)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+重启折叠日志、判死、补通知及恢复槽位
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
+		const entry = activityLedger.adopt(meta);
+		let offset = foldRunLog(meta, entry, 0);
+		if (entry.status === "running" && !pidAlive(meta.pid)) {
+			// CLI 可能在宿主停机期间已经完成:先折叠日志尾部,
+			// 只有仍未收敛的运行才判定为失败。
+			offset = foldRunLog(meta, entry, offset, true);
+			if (entry.status === "running") {
+				entry.status = "error";
+				entry.endedAt = Date.now();
+			}
+			upsertRunIndex({ id: meta.id, status: entry.status, endedAt: entry.endedAt ?? Date.now(), pid: null });
+		}
+		if (entry.status !== "running") {
+			cleanupRunFiles(meta.id);
+			upsertRunIndex({ id: meta.id, status: entry.status, endedAt: entry.endedAt ?? Date.now(), sessionId: entry.sessionId, credits: entry.credits, costUsd: entry.costUsd, pid: null });
+			if (!meta.notified) {
+				const agent = getAgent(meta.parentId);
+				if (agent && typeof agent.followup === "function") {
+					try {
+						agent.followup(createUserMessage({
+							content: [{ type: "text", text: lateNoticeText(meta, entry) }],
+							source: { kind: "subagent-settled", form: "notice", summary: boundContextSummary(`重启前发起的子代理已结束`), senderSessionId: meta.id },
+						}));
+						upsertRunIndex({ id: meta.id, notified: true });
+					} catch {}
+				}
+			}
+			continue;
+		}
+		const releaseSlot = providerGate.reserve(meta.provider ?? "unknown");
+```
 
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
+</details>
 
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
+**依据 2 · 源码核查**：[lib/index.js:1106-1153](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L1106-L1153)
+
+detached、文件日志、stdin与unref
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+		// 输出持久化:子进程直接写文件并以 detached 方式运行,
+		// 因此 dsh 崩溃既不会中断其 stdout,也不会丢失转录;宿主
+		// 跟踪日志,并在重启后继续跟踪。
+		ensureRunsDir();
+		this.#logPath = runLogPath(this.#id);
+		this.#errPath = runErrPath(this.#id);
+		const useHiddenRunner = platform === "win32" && existsSync(HIDDEN_RUNNER);
+		if (useHiddenRunner) {
+			// Windows 下经隐藏控制台包装启动:detached 保证崩溃后存活,
+			// 隐藏控制台避免 CLI 的 shell 子进程闪出黑框。
+			this.#promptPath = runPromptPath(this.#id);
+			this.#configPath = runConfigPath(this.#id);
+			this.#runnerErrPath = runRunnerErrPath(this.#id);
+			writeFileSync(this.#promptPath, opts.prompt);
+			writeFileSync(this.#configPath, JSON.stringify({
+				File: opts.command,
+				Arguments: opts.args.map(quoteWindowsArg).join(" "),
+				Stdin: this.#promptPath,
+				Stdout: this.#logPath,
+				Stderr: this.#errPath,
+				Env: opts.env ?? {},
+			}));
+			this.#child = spawn(process.execPath, [HIDDEN_RUNNER, this.#configPath, this.#runnerErrPath], {
+				cwd: opts.cwd,
+				stdio: "ignore",
+				windowsHide: true,
+				detached: true,
+			});
+		} else {
+			const outFd = openSync(this.#logPath, "a");
+			const errFd = openSync(this.#errPath, "a");
+			try {
+				this.#child = spawn(opts.command, opts.args, {
+					cwd: opts.cwd,
+					stdio: ["pipe", outFd, errFd],
+					windowsHide: true,
+					detached: true,
+					...(opts.env ? { env: { ...process.env, ...opts.env } } : {}),
+				});
+			} finally {
+				closeSync(outFd);
+				closeSync(errFd);
+			}
+			this.#child.stdin.on("error", () => {});
+			this.#child.stdin.write(opts.prompt);
+			this.#child.stdin.end();
+		}
+		this.#child.unref();
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/hidden-runner.cjs:5-19](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/hidden-runner.cjs#L5-L19)
+
+Windows隐藏进程包装
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+// 以隐藏控制台托管 CLI:本进程保持 detached 以便 dsh 崩溃后继续运行,
+// PowerShell 为 CLI 创建不可见控制台,避免其 shell 子进程弹黑框。
+const configPath = process.argv[2];
+const errPath = process.argv[3];
+if (!configPath) process.exit(2);
+let errFd = "ignore";
+try {
+	if (errPath) errFd = openSync(errPath, "a");
+} catch {}
+const child = spawn("powershell.exe", [
+	"-NoProfile",
+	"-ExecutionPolicy", "Bypass",
+	"-File", path.join(__dirname, "hidden-runner.ps1"),
+	"-ConfigPath", configPath,
+], { windowsHide: true, stdio: ["ignore", "ignore", errFd] });
 ```
 
 </details>
@@ -288,474 +393,299 @@ const KNOWN_BINARIES = {
 
 <a id="detail-section-13"></a>
 
-### Q03 · 相对原生能力或简单替代，固定版本增加了什么？
-
-**研究主题**：贡献与相对优势
-
-#### 完整回答
-
-相对手工开多个终端，它统一多种事件协议、模型回退、进度展示和崩溃接管，使外部额度成为 DSH 可调度的子代理资源。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
-```
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 什么前提最可能使核心价值不成立？
+### Q03 · 默认权限与通知保证可靠吗？
 
 **研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：子代理不继承父上下文且默认无头权限较宽，任务说明、工作目录和验证责任全部回到父代理；多后端并不自动带来更好结果。 这会直接收窄采用范围，而不是否定所有能力。
+默认permissionMode是bypass_permissions；Codex driver明确映射为跳过批准与沙箱参数。这不是只有“调用另一模型”，外部CLI会以其账户和机器权限操作工作区，并且父会话权限不会自动成为子CLI权限。故核心采用前提是隔离工作树、最小权限与完整任务范围。恢复通知“只一次”也需要收窄：先agent.followup再upsert notified，中间崩溃可能导致重复通知；标记成功不等于父agent已消费或验收结果。源码可说明存在去重意图，不能证明端到端exactly-once。模型故障转移与后端溢出也会改变实际执行者/额度，必须看状态记录，不凭工具入口名推断来源。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
+**依据 1 · 源码核查**：[lib/index.js:224-237](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L224-L237)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+权限默认与墙钟上限可选
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
+	/** 无头运行的 CLI 权限模式;无法弹窗询问,故默认放行。 */
+	permissionMode: z.string().default("bypass_permissions"),
+	/** 强制指定模型 id;省略则使用 CLI 自己的默认值(如免费额度)。 */
+	model: z.string(),
+	/** 有序的模型回退链;非空时覆盖 `model`。 */
+	models: z.array(z.string()).default([]),
+	/** 整条回退链共用的总等待预算,单位秒。 */
+	allowedWaitSeconds: z.number().min(1),
+	/** 传给 CLI 的思考程度:auto|none|low|medium|high|xhigh|max|ultracode。 */
+	reasoningEffort: z.string().default("auto"),
+	/** 显式上下文窗口(正整数 token);省略则使用 CLI 默认值。 */
+	contextWindow: z.number().min(1),
+	/** 单次委派的墙钟上限(秒),可选。 */
+	timeoutSeconds: z.number().min(1),
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[lib/index.js:599-610](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L599-L610)
+
+具体CLI权限参数映射
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+	"codex-json": {
+		buildArgs(spec, model) {
+			const sandbox = { accept_edits: ["--approve-for-me"], auto: ["-s", "workspace-write"], dont_ask: ["-s", "workspace-write"], default: ["-s", "read-only"], plan: ["-s", "read-only"] };
+			const access = spec.permissionMode === "bypass_permissions"
+				? ["--dangerously-bypass-approvals-and-sandbox"]
+				: sandbox[spec.permissionMode] ?? ["-s", "workspace-write"];
+			const args = ["exec", "--json", "--skip-git-repo-check", "--color", "never", ...access];
+			if (model) args.push("--model", model);
+			const effort = { low: "low", medium: "medium", high: "high", xhigh: "xhigh", max: "max", ultracode: "ultra" }[spec.reasoningEffort];
+			if (effort) args.push("-c", `model_reasoning_effort="${effort}"`);
+			if (spec.contextWindow) args.push("-c", `model_context_window=${spec.contextWindow}`);
+			args.push(...(spec.extraArgs ?? []));
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:995-1004](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L995-L1004)
+
+通知先于notified持久标记
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+			if (!meta.notified) {
+				const agent = getAgent(meta.parentId);
+				if (agent && typeof agent.followup === "function") {
+					try {
+						agent.followup(createUserMessage({
+							content: [{ type: "text", text: lateNoticeText(meta, entry) }],
+							source: { kind: "subagent-settled", form: "notice", summary: boundContextSummary(`重启前发起的子代理已结束`), senderSessionId: meta.id },
+						}));
+						upsertRunIndex({ id: meta.id, notified: true });
+					} catch {}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:1029-1038](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L1029-L1038)
+
+运行中恢复通知同样先发后记
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+				cleanupRunFiles(meta.id);
+				upsertRunIndex({ id: meta.id, status: entry.status, endedAt: entry.endedAt, sessionId: entry.sessionId, credits: entry.credits, costUsd: entry.costUsd, pid: null });
+				const agent = getAgent(meta.parentId);
+				if (agent && typeof agent.followup === "function") {
+					try {
+						agent.followup(createUserMessage({
+							content: [{ type: "text", text: lateNoticeText(meta, entry) }],
+							source: { kind: "subagent-settled", form: "notice", summary: boundContextSummary(`重启前发起的子代理已结束`), senderSessionId: meta.id },
+						}));
+						upsertRunIndex({ id: meta.id, notified: true });
+```
+
+</details>
+
+#### 缺口
+
+- 取消、权限隔离、重启窗口和通知重复未执行
+  **影响**：限制生产代码与不可逆操作采用
+  **进一步探讨**：故障注入通知前后并核对父事件、子进程树及文件写入
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 前置与全任务成本是什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+用户需安装登录各CLI、确保版本支持driver参数与事件格式，并有宿主subagents/tools/agents等服务。不同订阅/API额度各自扣费，插件不会统一免单。首次投入是驱动/路径、工作目录、权限、超时与并发配置；持续是任务上下文、子代理调用、日志存储、父agent汇总和独立验收。故障转移多尝试与输出静默等待都计入单位合格子任务成本，不能只算最后成功模型。默认timeout未设时不能假定全任务总时长有限，需显式配置相关预算。升级CLI或Windows runner后要重新验收。金额、工时和实际并发收益均未知。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:13-15](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/README.md#L13-L15)
+
+CLI安装登录前提
+
+```text
+装好后插件的 `cordis.patch.yml` 会向 profile 树插入提供方 `dsh-subagent` 和 Agent 预设;委派工具、斜杠指令随**已启用的后端**动态挂载(启用几个后端就有几个工具/指令)。重启 dsh 生效。
+
+前置条件:对应 CLI 已安装且已登录——`qodercli`(`~/.qoder/bin/qodercli/`)、`qoderclicn`(`~/.qoder-cn/bin/qoderclicn/`)、`codex`(npm 全局)、`claude`(npm 全局,沿用 `~/.claude/settings.json` 的模型/网关配置;设置页的模型列表也从这里读取)、`opencode`(`~/.opencode/bin/`)、`pi`(`~/.pi/agent/`,优先通过 node 直接启动受管安装的 CLI,避免 Windows 弹终端窗口)、`codebuddy`(npm 全局 `@tencent-ai/codebuddy-code`,通过 node 启动)。上述目录都找不到时,会按 PATH 搜索命令名(`qodercli` / `qoderclicn` / `opencode` / `pi` / `codebuddy` / `codex` / `claude`);CLI 路径里填裸命令名也会走 PATH。
+```
+
+**依据 2 · 源码核查**：[lib/index.js:228-243](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L228-L243)
+
+模型链预算、超时和并发配置
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+	/** 有序的模型回退链;非空时覆盖 `model`。 */
+	models: z.array(z.string()).default([]),
+	/** 整条回退链共用的总等待预算,单位秒。 */
+	allowedWaitSeconds: z.number().min(1),
+	/** 传给 CLI 的思考程度:auto|none|low|medium|high|xhigh|max|ultracode。 */
+	reasoningEffort: z.string().default("auto"),
+	/** 显式上下文窗口(正整数 token);省略则使用 CLI 默认值。 */
+	contextWindow: z.number().min(1),
+	/** 单次委派的墙钟上限(秒),可选。 */
+	timeoutSeconds: z.number().min(1),
+	/** CLI 连续无输出的秒数,达到后提醒父 agent;0 表示关闭。 */
+	stallWarnSeconds: z.number().min(0),
+	/** 原样追加的额外 CLI 参数(高级覆盖项)。 */
+	extraArgs: z.array(z.string()).default([]),
+	/** 同时最多执行几个该后端子代理;超出后排队。 */
+	maxConcurrency: z.number().min(1).default(2),
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:1135-1153](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L1135-L1153)
+
+日志、环境和子进程资源
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+			const outFd = openSync(this.#logPath, "a");
+			const errFd = openSync(this.#errPath, "a");
+			try {
+				this.#child = spawn(opts.command, opts.args, {
+					cwd: opts.cwd,
+					stdio: ["pipe", outFd, errFd],
+					windowsHide: true,
+					detached: true,
+					...(opts.env ? { env: { ...process.env, ...opts.env } } : {}),
+				});
+			} finally {
+				closeSync(outFd);
+				closeSync(errFd);
+			}
+			this.#child.stdin.on("error", () => {});
+			this.#child.stdin.write(opts.prompt);
+			this.#child.stdin.end();
+		}
+		this.#child.unref();
+```
+
+</details>
+
+#### 缺口
+
+- 各后端订阅/费用、失败率和验收工时未测
+  **影响**：总成本及可扩展性未知
+  **进一步探讨**：记录每次尝试真实后端、token/费用、时长和人工修正
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 启动、持续生效和失败恢复分别依赖什么？
+### Q05 · 可证伪改进与当前采用是什么？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-需要相应 CLI 已安装、登录且协议版本兼容；依赖 DSH subagents、tools、commands 与持久目录写权限，不同后端还受账号额度和网络影响。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。
+未验证假设是给每次run分配稳定完成回执ID，并让父会话持久确认消费后再标完成通知，能减少崩溃窗口重复汇总和漏办结。依据Q03通知与notified非事务，不应通过“再发新任务”恢复。最小实验在CLI结束、notice发前、发后落标前、父消费前后强杀宿主，对照当前实现，统计重复notice、遗漏结果、重复文件修改及恢复时间；若收益不能超过协议维护成本则否定。当前建议观察，尤其默认绕过沙箱/批准不适合直接用于真实生产仓库。具备隔离环境者可先最小权限、明确可回滚范围和总预算验收，再考虑试用；任何停止后仍写入或任务范围漂移都应停用。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
+**依据 1 · 源码核查**：[lib/index.js:995-1004](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L995-L1004)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+完成通知与持久去重窗口
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
+			if (!meta.notified) {
+				const agent = getAgent(meta.parentId);
+				if (agent && typeof agent.followup === "function") {
+					try {
+						agent.followup(createUserMessage({
+							content: [{ type: "text", text: lateNoticeText(meta, entry) }],
+							source: { kind: "subagent-settled", form: "notice", summary: boundContextSummary(`重启前发起的子代理已结束`), senderSessionId: meta.id },
+						}));
+						upsertRunIndex({ id: meta.id, notified: true });
+					} catch {}
 ```
 
 </details>
 
-<a id="research-q06"></a>
+**依据 2 · 源码核查**：[lib/index.js:1106-1153](https://github.com/1373700184/dsh-subagent/blob/0b64f7b9cc99daa2ad2f51d80c5ab16899f2db6b/lib/index.js#L1106-L1153)
 
-<a id="detail-section-16"></a>
-
-### Q06 · 首次、持续与失败恢复成本及效果证据如何？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次成本是逐个安装和登录外部 CLI、选择权限模式、模型链与可执行路径；持续成本由各 CLI 订阅/API、并行进程、事件日志磁盘和父代理汇总验证构成；失败恢复包括无输出 90 秒后的模型切换、总等待预算耗尽、宿主重启后接管 detached run，以及对迟到结果去重。合格单位是一个上下文自足的子任务在预算内产出可独立验收结果。当前缺各后端成功率、排队时间、每个合格子任务费用与父代理复核分钟。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+子进程可存活于宿主退出
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（48行）</summary>
 
 ```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
+		// 输出持久化:子进程直接写文件并以 detached 方式运行,
+		// 因此 dsh 崩溃既不会中断其 stdout,也不会丢失转录;宿主
+		// 跟踪日志,并在重启后继续跟踪。
+		ensureRunsDir();
+		this.#logPath = runLogPath(this.#id);
+		this.#errPath = runErrPath(this.#id);
+		const useHiddenRunner = platform === "win32" && existsSync(HIDDEN_RUNNER);
+		if (useHiddenRunner) {
+			// Windows 下经隐藏控制台包装启动:detached 保证崩溃后存活,
+			// 隐藏控制台避免 CLI 的 shell 子进程闪出黑框。
+			this.#promptPath = runPromptPath(this.#id);
+			this.#configPath = runConfigPath(this.#id);
+			this.#runnerErrPath = runRunnerErrPath(this.#id);
+			writeFileSync(this.#promptPath, opts.prompt);
+			writeFileSync(this.#configPath, JSON.stringify({
+				File: opts.command,
+				Arguments: opts.args.map(quoteWindowsArg).join(" "),
+				Stdin: this.#promptPath,
+				Stdout: this.#logPath,
+				Stderr: this.#errPath,
+				Env: opts.env ?? {},
+			}));
+			this.#child = spawn(process.execPath, [HIDDEN_RUNNER, this.#configPath, this.#runnerErrPath], {
+				cwd: opts.cwd,
+				stdio: "ignore",
+				windowsHide: true,
+				detached: true,
+			});
+		} else {
+			const outFd = openSync(this.#logPath, "a");
+			const errFd = openSync(this.#errPath, "a");
+			try {
+				this.#child = spawn(opts.command, opts.args, {
+					cwd: opts.cwd,
+					stdio: ["pipe", outFd, errFd],
+					windowsHide: true,
+					detached: true,
+					...(opts.env ? { env: { ...process.env, ...opts.env } } : {}),
+				});
+			} finally {
+				closeSync(outFd);
+				closeSync(errFd);
+			}
+			this.#child.stdin.on("error", () => {});
+			this.#child.stdin.write(opts.prompt);
+			this.#child.stdin.end();
+		}
+		this.#child.unref();
 ```
 
 </details>
-
-#### 缺口
-
-- 缺少各 CLI 在相同子任务上的成功率、首输出时间、总费用/额度、事件日志字节和父代理复核时间。
-  **影响**：无法判断多后端编排是否降低总成本，或只是消耗更多订阅并增加汇总工作。
-  **进一步探讨**：固定一组上下文自足的编码子任务，逐后端与回退链执行，记录首输出/完成秒数、失败切换、费用或额度、日志大小、验收通过和父代理复核分钟。
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 实现有哪些可靠性取舍和可复用设计？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-驱动层、活动台账、detached 输出与客户端展示形成完整链路，恢复设计可借鉴；高权限无头执行和协议适配面要求逐后端验证。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
-```
-
-</details>
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 由贡献和限制能推导什么未验证方向？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-从已确认机制与关键限制可推导：可在派发前生成最小上下文包并在返回后执行统一验收契约，只把失败证据和产物摘要回流，从而降低上下文遗漏与汇总偏差。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
-```
-
-</details>
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-适合已安装并信任多个 CLI、能写出自足任务并独立验收结果的开发者做受限试用；敏感仓库或无法授予 headless 权限的环境不应启用。成功标准是回退链在总预算内提高合格子任务数、重启接管不重复执行且父代理复核时间低于手工多终端；若上下文遗漏、权限暴露或迟到结果重复产生，应停止。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1-40](https://github.com/1373700184/dsh-subagent/blob/e30f1cef1988f040ea0a7a5f6b8a15b70f0e23a7/lib/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
-import { closeSync, existsSync, fstatSync, mkdirSync, openSync, readSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-import z from "@deepseek-ai/schemastery";
-import { defineTool } from "@deepseek-ai/dsh-tools";
-import { createUserMessage, boundContextSummary } from "@deepseek-ai/dsh-llm";
-import * as ToolSubagentPlugin from "@deepseek-ai/dsh-tool-subagent";
-import { SessionId } from "@deepseek-ai/dsh-session";
-import {
-	NO_START_CAPABILITIES,
-	assertUsableCwd,
-	settleRunResult,
-	subprocessRunHandle,
-} from "@deepseek-ai/dsh-subagent";
-
-//#region 元数据
-/**
-* 把外部订阅制 CLI 聚合为 dsh 子代理提供方。
-* 每个已配置后端都会在 `ctx.subagents` 上注册为具名 `SubagentProvider`;
-* 配套的 `@deepseek-ai/dsh-tool-subagent` 实例(见 cordis.patch.yml)
-* 把它暴露给模型。后端均一次性执行:启动 CLI 子进程,
-* 通过 stdin 送入提示词,再把 Claude 风格的 `stream-json` 事件流
-* 收敛为 `SubagentResult`。
-*/
-const name = "dsh-subagent";
-const inject = ["subagents", "tools", "commands"];
-//#endregion
-
-//#region CLI 路径探测
-const platform = process.platform;
-/** 每个内置后端的候选可执行文件路径,越具体的越靠前。 */
-const KNOWN_BINARIES = {
-	qoder: [
-		join(homedir(), ".qoder", "bin", "qodercli", platform === "win32" ? "qodercli.exe" : "qodercli"),
-	],
-	qodercn: [
-		join(homedir(), ".qoder-cn", "bin", "qoderclicn", platform === "win32" ? "qoderclicn.exe" : "qoderclicn"),
-	],
-```
-
-</details>
-
-#### 缺口
-
-- 未在同一任务集比较七类 CLI 驱动、模型回退和重启接管。
-  **影响**：推荐无法判断哪种后端组合真正提高交付，且默认无头权限扩大副作用风险。
-  **进一步探讨**：在隔离仓库用固定任务包执行各驱动，故意制造静默与宿主重启，核对一次性通知、进程终止、产物哈希和总预算。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

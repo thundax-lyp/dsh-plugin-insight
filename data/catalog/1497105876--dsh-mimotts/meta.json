@@ -1,10 +1,10 @@
 {
     "repository": "1497105876/dsh-mimotts",
     "repository_id": 1397477851,
-    "captured_at": "2026-10-22T15:13:21.296Z",
-    "window_start": "2026-09-22T15:13:21.296Z",
+    "captured_at": "2026-10-26T03:22:47.788Z",
+    "window_start": "2026-09-26T03:22:47.788Z",
     "stars": 0,
-    "pushed_at": "2026-10-01T13:22:02Z",
+    "pushed_at": "2026-10-23T08:12:52Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,36 +15,47 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 595A:10466D:9B09B8:A7531F:6ADA2813 and timestamp 2026-10-22 15:13:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7F6:2A29EB:1517767:1749C87:6ADECA06 and timestamp 2026-10-26 03:33:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5AAC:236DD8:981AD9:A464CC:6ADA2814 and timestamp 2026-10-22 15:13:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A83E:E5BBD:157F21E:17B2026:6ADECA06 and timestamp 2026-10-26 03:33:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A21.296Z..2026-10-22T15%3A13%3A21.296Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5BC4:254CC5:95F8F5:A23EA1:6ADA2815 and timestamp 2026-10-22 15:13:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A860:36C46F:1499240:16CC1F5:6ADECA07 and timestamp 2026-10-26 03:33:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A21.296Z..2026-10-22T15%3A13%3A21.296Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5CA2:3255F8:966B40:A2AEAD:6ADA2817 and timestamp 2026-10-22 15:13:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A89E:376BC0:19D6FE9:1C09C31:6ADECA08 and timestamp 2026-10-26 03:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A21.296Z..2026-10-22T15%3A13%3A21.296Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5DB2:1B7F18:9A2CE3:A67AD9:6ADA2818 and timestamp 2026-10-22 15:13:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-mimotts%20is%3Aissue%20updated%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A940:2A2CE3:146C046:169EA01:6ADECA0A and timestamp 2026-10-26 03:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T21:15:37.465Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b93e081fcea482acac8fe75a9012ef4bacfb52cf",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@gw/dsh-mimotts",
-        "captured_at": "2026-10-22T15:13:28.278Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
+        "captured_at": "2026-10-26T03:22:47.788Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40gw%2Fdsh-mimotts",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40gw%2Fdsh-mimotts",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-22T15:13:28.278Z",
+            "captured_at": "2026-10-26T03:22:47.788Z",
             "source_url": "https://registry.npmjs.org/%40gw%2Fdsh-mimotts",
             "error": "HTTP 404",
             "latest_version": null,

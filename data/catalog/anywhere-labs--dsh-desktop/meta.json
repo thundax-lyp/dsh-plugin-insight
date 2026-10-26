@@ -1,0 +1,48 @@
+{
+    "repository": "anywhere-labs/dsh-desktop",
+    "repository_id": 1333321333,
+    "captured_at": "2026-10-26T03:38:26.007Z",
+    "window_start": "2026-09-26T03:38:26.007Z",
+    "stars": 33082,
+    "pushed_at": "2026-10-24T11:10:40Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanywhere-labs%2Fdsh-desktop%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A75C:37737E:1CFD1F4:1F3055F:6ADECB36 and timestamp 2026-10-26 03:38:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanywhere-labs%2Fdsh-desktop%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A78C:38201D:14DBB96:170E8EA:6ADECB37 and timestamp 2026-10-26 03:38:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanywhere-labs%2Fdsh-desktop%20is%3Aissue%20created%3A2026-09-26T03%3A38%3A26.007Z..2026-10-26T03%3A38%3A26.007Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A79A:37E97B:147CA41:16B0C69:6ADECB38 and timestamp 2026-10-26 03:38:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanywhere-labs%2Fdsh-desktop%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T03%3A38%3A26.007Z..2026-10-26T03%3A38%3A26.007Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7BA:34406B:1582DF4:17B6045:6ADECB39 and timestamp 2026-10-26 03:38:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanywhere-labs%2Fdsh-desktop%20is%3Aissue%20updated%3A2026-09-26T03%3A38%3A26.007Z..2026-10-26T03%3A38%3A26.007Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BE86:37E747:1780E90:19B55A0:6ADECB3A and timestamp 2026-10-26 03:38:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T16:57:05.909Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b93e081fcea482acac8fe75a9012ef4bacfb52cf",
+        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    }
+}

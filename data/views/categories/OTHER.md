@@ -21,11 +21,11 @@
 
 > **用途**：面向管理模型交付偏好与既有宿主改动的操作者，各开关有不同作用域。
 
-> **亮点**：统一契约切换、独立普通偏好和旧磁盘改动诊断恢复，工程增量主要在开关接线与可观察性。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：统一契约切换、独立普通偏好和旧磁盘改动诊断恢复，工程增量主要在开关接线与可观察性。[Q01](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q01)、[Q02](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q02)
 
-> **思考**：主开关关闭不撤回显式权限、普通偏好或既有磁盘状态；清洗说明与当前禁用入口冲突，缺少交付改善对照。[Q03](#research-q03)、[Q05](#research-q05)
+> **思考**：主开关关闭不撤回显式权限、普通偏好或既有磁盘状态；清洗说明与当前禁用入口冲突，缺少交付改善对照。[Q03](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q03)、[Q05](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q05)
 
-> **建议**：未验证方向是窄偏好入口加逐agent权限租约/原快照收据，以异构权限和中断矩阵验证无损归还，失败则否定。[Q06](#research-q06)
+> **建议**：未验证方向是窄偏好入口加逐agent权限租约/原快照收据，以异构权限和中断矩阵验证无损归还，失败则否定。[Q06](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q06)
 
 <a id="plugin-1412161923-root"></a>
 
@@ -35,11 +35,11 @@
 
 > **用途**：希望在 DSH web 界面临时体验钢琴音效的个人用户。
 
-> **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md#research-q01)、[Q02](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md#research-q02)。
 
-> **思考**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](#research-q03)。
+> **思考**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md#research-q03)。
 
-> **建议**：可把样式、音频和按钮延迟 timer 绑定 overlay 生命周期，并以重复挂载/卸载对照资源残留与再进入首音成功率；当前未实现。详见[Q04](#research-q04)。
+> **建议**：可把样式、音频和按钮延迟 timer 绑定 overlay 生命周期，并以重复挂载/卸载对照资源残留与再进入首音成功率；当前未实现。详见[Q04](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md#research-q04)。
 
 ## 更新时间
 
