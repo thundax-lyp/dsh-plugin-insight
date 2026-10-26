@@ -97,6 +97,7 @@ Git 文件采用 evidence.git_refs 保存结构化定位，以[Git 引用 Schema
 
 - `decision` 为 unassessed（未评估）、not_recommended（不推荐）、observe（观察）、trial（试用）、install（值得安装）。不在推荐页不等于不推荐；不可从旧名单缺席推断结论。
 - `reason` 用一行说明适合谁、推荐或不推荐的理由及关键条件。已评估项保存 adoption-v1 的四项 criteria（score、rationale）、总分 score、固定 revision、独立 reviewed_at、evaluator、evidence_ids 和 dependencies。推荐复核时间独立于源码检查时间，不借此刷新研究截止时间。
+- 四项criteria.rationale复用已有问题回答，保存问题链接、具体材料支持、反证／未知及档位和相邻档取舍，细则见[问题到评分](../../dsh-plugin-insight/references/SCORING-STANDARD.md#从已有问题回答到分数)。使用现有字符串，不新增Schema字段；历史短理由仅兼容保留，不自动视为已按细化判据验收。
 - 未评估项 reason 说明缺口，score、criteria、revision、reviewed_at、evaluator 为 null，证据与依赖为空，status=current；null 不是0。已评估项必须有完整分项、数值总分和同版本源码证据。评分方法与结论含义见[研究规范](../../dsh-plugin-insight/references/SCORING-STANDARD.md#采用推荐评分adoption-v1)。
 - status=current／needs_review 表示结论有效性，不增加第六种推荐结论。当前推荐须匹配自身 code 指纹、固定分析版本与全部依赖；依赖变化保留原分和理由并置 needs_review，不自动升降级。脚本变化标记另由 META 控制暂停入榜。
 - install 的引用证据必须包含同版本、带 artifact 和 environment 的 host_acceptance；高分不能绕过验收。真实安装、核心功能与禁用／卸载内容仍须逐项审阅。
