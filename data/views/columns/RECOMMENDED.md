@@ -23,11 +23,15 @@
 | [dsh-nav-history](#plugin-1429464857-root) | 为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。 | 适合频繁跨会话面板的人先核对交错导航与持久化后试用，接受历史记录可能失效及不恢复滚动的边界。 |
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 频繁从 WSL 打开网页的用户可试用；把浏览器页面可见而非 PowerShell 返回作为验收。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 已稳定使用 khal 且只需只读日程的 WSL 用户可试用；必须验证时区和同步陈旧边界。 |
+| [EverOS](#plugin-1085086903-root) | 以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。 | 单用户非敏感memory root先关闭reflection建立基线，验收纠错/索引/取消和恢复后再决定扩展。 |
 | [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | 对知识密集团队有明确试用路径，但当前效果与运维成本需专项对照。 |
+| [REA](#plugin-1209966933-root) | 独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。 | 限定许可内已知JS样本的静态试用可控，先核运行时和证据准确，不启用所有动态工具。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04) |
 | [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 适合愿意核查来源的开发者在单一架构路径试用；自动门禁不替代语义审核。 |
+| [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 本地非敏感小项目可控试用，先核验DSH版本/预览/取消，协作与设计收益单独测。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04) |
 | [@indexyz/dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。 | 单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。 |
 | [LogicProbe](#plugin-1331586818-root) | 为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。 | 确定性模型检查有可控用途，但抽象忠实性与实际缺陷收益须由用户复核。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
+| [DeepSeek Harness](#plugin-1333065091-root) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | 隔离profile适合有扩展需求的开发者验证可替换契约，未证明生产安全或所有插件兼容。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04) |
 | [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 文本模型用户可用非敏感截图受控试用；先测真实图像请求和最终任务质量，核实外部服务政策、费用及宿主兼容。 |
 | [DSH Turn Rewind](#plugin-1333100390-root) | 按用户消息关联检查点恢复项目文件，并可独立或同时创建回退后的新会话。 | 在非关键项目副本演练覆盖、过期计划及rescue后可控试用，不代替外部副作用与备份管理。 |
 | [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。 | 明确原生应用需求可在单应用和可撤销任务上试用，先核对焦点策略及敏感动作确认。 |
@@ -58,10 +62,6 @@
 | [dsh-eteams](#plugin-1372993989-root) | 为DSH提供领队主导的多会话团队、任务执行链、成员对话与SQLite持久状态。 | 可在备份和明确人工验收的任务中试用真实多会话协作；先修正个人状态路径、限定Web管理面并处理近期重启对账缺口。 |
 | [3chat-customer-growth](#plugin-1374055714-root) | 连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。 | 适合已有3Chat组织团队用测试组织先只读再极小授权发送；动态契约、单次防重放和unknown收据具体，仍须核完整确认/权限和跨调用幂等。 |
 | [@240xu/dsh-session-lazy-view](#plugin-1377185339-root) | 以独立网页只读查看本地会话尾帧，提供时间线、搜索、统计及Markdown导出。 | 本机只读尾部排查有明确可控试用路径，全文资源与投影完整性限制必须保留。 |
-| [dsh-jev-guard](#plugin-1378138611-root) | 在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。 | 在可恢复任务作为附加事故阀试用，核对降级和日志，保留宿主原生权限/审批。 |
-| [dsh-fact-check](#plugin-1380181057-root) | 提供多源公开事实核查流程、来源路由和可选Jev判据，生成带原文定位的报告。 | 已有搜索和正文工具、能人工核对来源的研究者可试用，不能无人复核自动发布结论。 |
-| [dsh-jev-interceptor](#plugin-1382292535-root) | 为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。 | 适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。 |
-| [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | 可信来源与脱敏单车道有可控试用价值，多渠道供给和数据边界不能由统一UI保证。 |
 
 <a id="plugin-1334269686-root"></a>
 
@@ -217,6 +217,20 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1085086903-root"></a>
+
+## [EverOS](../../plugins/evermind-ai--everos/INSIGHT.md)
+
+[![GitHub ★ 13,600](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C600&color=yellow&logo=github&style=flat)](https://github.com/EverMind-AI/EverOS)
+
+**主要用途**：以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。
+
+**推荐理由**：单用户非敏感memory root先关闭reflection建立基线，验收纠错/索引/取消和恢复后再决定扩展。
+
+**使用条件**：有限试用单用户非敏感记忆，先关reflection测人工笔记基线，再验证纠错、删除、重建与断连；DSH适配单独验收。见 [Q05](../../plugins/evermind-ai--everos/INSIGHT.md#research-q05)。
+
+[返回表格](#column-index)
+
 <a id="plugin-1128123594-root"></a>
 
 ## [OpenViking](../../plugins/volcengine--openviking/INSIGHT.md)
@@ -231,6 +245,20 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1209966933-root"></a>
+
+## [REA](../../plugins/morluto--rea/INSIGHT.md)
+
+[![GitHub ★ 383,061](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=383%2C061&color=yellow&logo=github&style=flat)](https://github.com/morluto/rea) [![npm 30d 634,260](https://img.shields.io/static/v1?label=npm+30d&message=634%2C260&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/rea-agents)
+
+**主要用途**：独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。
+
+**推荐理由**：限定许可内已知JS样本的静态试用可控，先核运行时和证据准确，不启用所有动态工具。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)
+
+**使用条件**：有逆向经验者可在已知源码、非敏感的许可内JS/Electron样本做静态试用，先满足Node引擎并验证证据定位，不外推其他provider。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)
+
+[返回表格](#column-index)
+
 <a id="plugin-1211139949-root"></a>
 
 ## [Archify](../../plugins/tt-a1i--archify/INSIGHT.md)
@@ -242,6 +270,20 @@
 **推荐理由**：适合愿意核查来源的开发者在单一架构路径试用；自动门禁不替代语义审核。
 
 **使用条件**：先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。[Q04](../../plugins/tt-a1i--archify/INSIGHT.md#research-q04)
+
+[返回表格](#column-index)
+
+<a id="plugin-1223170290-root"></a>
+
+## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
+
+[![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=yellow&logo=github&style=flat)](https://github.com/nexu-io/open-design)
+
+**主要用途**：协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。
+
+**推荐理由**：本地非敏感小项目可控试用，先核验DSH版本/预览/取消，协作与设计收益单独测。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
+
+**使用条件**：熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -284,6 +326,20 @@
 **推荐理由**：适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。
 
 **使用条件**：资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。详见[Q06](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md#research-q06)。
+
+[返回表格](#column-index)
+
+<a id="plugin-1333065091-root"></a>
+
+## [DeepSeek Harness](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 261,276](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=261%2C276&color=yellow&logo=github&style=flat)](https://github.com/deepseek-ai/deepseek-harness)
+
+**主要用途**：基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。
+
+**推荐理由**：隔离profile适合有扩展需求的开发者验证可替换契约，未证明生产安全或所有插件兼容。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04)
+
+**使用条件**：有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04)
 
 [返回表格](#column-index)
 
@@ -704,62 +760,6 @@
 **推荐理由**：本机只读尾部排查有明确可控试用路径，全文资源与投影完整性限制必须保留。
 
 **使用条件**：适合本机维护者先用只读小范围试用，默认tail或fast统计；搜索未命中和统计异常必须回原件复核。远程共享服务、任意符号链接目录或需完整审计时暂缓。参见[Q06](../../plugins/240xu--dsh-session-lazy-view/INSIGHT.md#research-q06)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1378138611-root"></a>
-
-## [dsh-jev-guard](../../plugins/7starsseeker--dsh-jev-guard/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-jev-guard) [![npm 30d 1,591](https://img.shields.io/static/v1?label=npm+30d&message=1%2C591&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-guard) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-guard)
-
-**主要用途**：在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。
-
-**推荐理由**：在可恢复任务作为附加事故阀试用，核对降级和日志，保留宿主原生权限/审批。
-
-**使用条件**：先在可恢复目录验证良性、危险及断网样本，再把它作为附加事故阀；降级时看status，保留原生沙箱和审批，不依赖单一判据。[Q06](../../plugins/7starsseeker--dsh-jev-guard/INSIGHT.md#research-q06)
-
-[返回表格](#column-index)
-
-<a id="plugin-1380181057-root"></a>
-
-## [dsh-fact-check](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 1,417](https://img.shields.io/static/v1?label=npm+30d&message=1%2C417&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-fact-check)
-
-**主要用途**：提供多源公开事实核查流程、来源路由和可选Jev判据，生成带原文定位的报告。
-
-**推荐理由**：已有搜索和正文工具、能人工核对来源的研究者可试用，不能无人复核自动发布结论。
-
-**使用条件**：先选可对照原始资料的事实点，确认正文链可用，再人工核对转载关系及每条引文后试用；不要把模型判据作为最终裁定。[Q06](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q06)
-
-[返回表格](#column-index)
-
-<a id="plugin-1382292535-root"></a>
-
-## [dsh-jev-interceptor](../../plugins/asktheway--dsh-jev-interceptor/INSIGHT.md)
-
-[![GitHub ★ 31](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=31&color=yellow&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 2,667](https://img.shields.io/static/v1?label=npm+30d&message=2%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor)
-
-**主要用途**：为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。
-
-**推荐理由**：适合工具调用频繁且能在隔离 profile 审阅遥测的开发者试用；保持图像卸载关闭、预批白名单为空并先验证 shadow 零副作用。
-
-**使用条件**：建议只在隔离 profile 条件试用。保持 `imageOffloadEnabled: false`、预批白名单为空和主插件 shadow，先验证所有挂点零状态变化与故障回到 stock；再对可逆、可重建工具逐项扩范围。任何 shadow 副作用、无遥测有效动作或 session-reference 缺失都应停止。详见[Q09](../../plugins/asktheway--dsh-jev-interceptor/INSIGHT.md#research-q09)。
-
-[返回表格](#column-index)
-
-<a id="plugin-1385896447-root"></a>
-
-## [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md)
-
-[![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=yellow&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
-
-**主要用途**：为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。
-
-**推荐理由**：可信来源与脱敏单车道有可控试用价值，多渠道供给和数据边界不能由统一UI保证。
-
-**使用条件**：[Q06](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。
 
 [返回表格](#column-index)
 

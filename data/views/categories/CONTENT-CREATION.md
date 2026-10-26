@@ -11,6 +11,7 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
+| [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
 | [DSH Vision Toolkit](#plugin-1333100071-root) | 为DSH文本模型接入图片问答、OCR、定位和本地图像处理工具，并提供粘贴图片与产物预览。 | 建议文本模型用户在非敏感截图和可撤销任务中先试用，核对真实图片请求、定位框与OCR边界；敏感数据、自动GUI及持续预算需先确认服务和兼容条件。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
@@ -27,6 +28,8 @@
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
+| [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
+| [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -41,6 +44,20 @@
 > **思考**：审批不是持久预算账本。prompt在createApproval截到500字符后用截断值生成，批准时startGeneration读取当前渠道而非冻结创建时渠道；任务落盘和审批/通知内存又不对称。源码支持这些状态限制，未复现实际错图或错账。参见[Q03](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md#research-q03)。
 
 > **建议**：可将批准对象改为持久不可变请求摘要，绑定完整prompt、渠道标识、参数及价格上限，输出显式未知账单状态；重启与渠道切换对照中，若批准后实际提交参数不一致或重复计费未减少则否定。会增加状态迁移与上游幂等适配成本，假设未验证。参见[Q05](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md#research-q05)。
+
+<a id="plugin-1220744720-root"></a>
+
+## [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
+
+[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=yellow&logo=github&style=flat)](https://github.com/freestylefly/awesome-gpt-image-2)
+
+> **用途**：面向重复制作海报/产品图/信息图的用户与Agent；主要交付可复制提示词资源，实际成片另验。[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01)
+
+> **亮点**：相对散收藏提示词，将案例、模板和约束组织成可检索Skill参考；增量是表达与分发，未证明新图像算法或稳定生产收益。[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01)
+
+> **思考**：单次案例缺具体模型与原始条件，不能支持同条件版本排名；MIT不覆盖所有社区素材，安装默认all会覆盖同名技能目录。[Q02](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q02) [Q03](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是给模板绑定模型/参数/合格标准和失败卡，比美图目录更能选择生产方案；固定预算盲评合格率与总成本，无改善则否定。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
 
 <a id="plugin-1333100071-root"></a>
 
@@ -265,6 +282,34 @@
 > **思考**：词法flags和数字multiset不能证明语义等价；按钮只是提示插入，自动执行与宿主引用保护有具体契约条件。详见[Q03](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q03)。
 
 > **建议**：从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
+
+<a id="plugin-1223170290-root"></a>
+
+## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
+
+[![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=yellow&logo=github&style=flat)](https://github.com/nexu-io/open-design)
+
+> **用途**：面向从brief生成可预览原型并收集团队反馈的设计开发团队；独立应用，可连接DSH，非单插件。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
+
+> **亮点**：相对HTML生成后外发截图反馈，把设计资产、Agent、预览及评论放回同项目；具体增量是交接组织，非模型或全球首创证明。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
+
+> **思考**：协议completed、有限占位检测和完整评论回执不等于设计合格或反馈已落地；固定DSH适配版本范围不能外推所有宿主。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是评论绑定制品版本和验收项、Agent逐条给修订证据减少遗漏与返工；对照同brief同预算的截图聊天流程，无改善则否定。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
+
+<a id="plugin-113965016-root"></a>
+
+## [PicGo](../../plugins/molunerfinn--picgo/INSIGHT.md)
+
+[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=yellow&logo=github&style=flat)](https://github.com/Molunerfinn/PicGo)
+
+> **用途**：面向写博客、文档和笔记的创作者，将本地或剪贴板图片上传到已配置图床并返回可粘贴链接。该仓库是 Electron 桌面客户端，DSH 插件是 README 另行指向的独立项目，不能把两者的能力或验收合并。
+
+> **亮点**：相对浏览器逐次上传和复制链接，桌面入口把配置复用、上传上下文与链接交接集中到创作流程。源码中每次任务捕获调用窗口和 uploader 配置，再通过 PicGo Core 上传，避免全局配置切换造成相册归属混淆。上传协议和图床扩展主要来自独立 picgo 核心依赖，本仓库贡献是桌面编排与任务隔离。[Q02](../../plugins/molunerfinn--picgo/INSIGHT.md#research-q02)
+
+> **思考**：收到 imgUrl 仅证明核心返回了链接，不证明链接在发布环境可访问、权限合适或长期有效；本层还会过滤没有 imgUrl 的项，不能把非空结果视为整批全部成功。创作交付需要逐项检查实际可读性，失败重试还要考虑重复远端对象。这里未做上传实验，不把边界写成已复现事故。[Q03](../../plugins/molunerfinn--picgo/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是给每次上传保存本地输入摘要、目标配置 ID、远端返回和独立可读性检查的结果清单，将“已上传”与“发布可读”分开。由配置快照与 URL 过滤边界推导；对10组混合成功/失败图片，对比仅返回 URL 和清单复核的漏图、重复上传、人工修正时间。若多余检查延迟超过节省或错误访问了私密对象，应停止。[Q05](../../plugins/molunerfinn--picgo/INSIGHT.md#research-q05)
 
 ## 更新时间
 

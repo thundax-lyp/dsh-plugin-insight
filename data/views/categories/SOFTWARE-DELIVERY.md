@@ -61,6 +61,7 @@
 | [dsh-expert-mode](#plugin-1334811048-root) | 提供专家协调预设、领域委派工具、渐进式方法、文件消息总线和任务看板。 | 当前建议观察。 |
 | [dsh-fail-logger](#plugin-1333463381-root) | 从 DSH 会话事件采集工具失败，去重计数后写入本地 Skill，并可注入预防和恢复提示。 | 先在复制的非敏感日志上观察，关闭全局提示做基线，验证不同模式失败覆盖及文件写失败恢复。 |
 | [dsh-folderwatch](#plugin-1423215448-root) | 监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。 | 观察，先可信单profile窄目录queue核扫描/接收/恢复，不作为可靠生产触发或多用户隔离。 |
+| [dsh-git-graph](#plugin-1331636953-packages-dsh-git-graph) | 在 DSH 界面显示 Git 分支与提交图，并管理独立 worktree 和新会话工作区。 | 多会话开发者可在临时仓库试用，先验证新会话确实进入独立 cwd，再测试脏目录删除被拒绝及禁用后的状态保留。 |
 | [dsh-github-router](#plugin-1339462797-root) | 提供PR、Issue、文件及API只读工具，通过API、gh、Git、HTML与可选镜像在宿主内降级取数。 | 先观察；公共仓库单用户隔离环境可对照，私有多身份/共享存储先解决缓存与授权边界。 |
 | [dsh-hdc-bridge](#plugin-1333258432-root) | 为 DSH 集成鸿蒙设备调试、截图/UI操作、官方知识查询及可选 DevEco 构建签名流程。 | 建议观察，先核对core作用域和面板权限；显式target与工程、使用无真实数据设备，确认状态绑定后再决定受控试用。 |
 | [DSH-HoneyBee](#plugin-1355618827-packages-dshb) | 将 DSH 文件、命令和终端操作路由到本地、SSH 或 Docker 节点，并管理认证与工作区绑定。 | 适合已会维护SSH或Docker、单管理员、能用可丢弃工作区验收的开发者先试。 |
@@ -154,6 +155,9 @@
 | [oh-my-dsh](#plugin-1379204512-root) | 为 DSH 提供多智能体编排、角色资产、状态工具、团队运行时与恢复机制。 | 适合已经有长链路、多阶段或并行冲突任务，并愿意维护 `.omd` 状态的 DSH 团队先观察；普通单文件任务继续用原生 goal 或直接工具。 |
 | [orchd项目任务面板](#plugin-1422240642-root) | 在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。 | 观察；先验收来源/会话权限和引擎零写，受信本地项目再决定试用。 |
 | [Plan Lattice](#plugin-1334504487-root) | 在 DSH 历史替换后恢复原生任务依据，并可显式启用完整执行门禁。 | 先用作者公开稳定包/候选在相同 DSH 版本隔离试点，重点比较替换后权威保真和门禁对合法写入的影响；无需把 rc.8 或机制比例当生产收益，详见[Q03](../../plugins/1052326311--dsh-plan-lattice/INSIGHT.md#research-q03)。 |
+| [REA](#plugin-1209966933-root) | 独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。 | 有逆向经验者可在已知源码、非敏感的许可内JS/Electron样本做静态试用，先满足Node引擎并验证证据定位，不外推其他provider。 |
+| [Reasonix](#plugin-1216785679-root) | 独立开源编码Agent，提供终端、Studio、Web及ACP入口，可由DSH委派任务。 | 先以可丢弃项目和默认reject做只读研究/评审试用，核对真实tool委派、同版provider和模型home；不把正常结束或rewind当完整验收。 |
+| [Ruflo](#plugin-995029641-root) | 面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。 | 有明确多Agent需求者可在隔离项目以最小MCP工具试用，先对照单Agent预算验收产物；不把mission/state/API成功当完成。 |
 
 <a id="plugin-1377185339-root"></a>
 
@@ -868,6 +872,20 @@
 > **思考**：stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不区分成功写或会话，目标失效可fallback别Agent；批次先drain且送达Promise未await。详见[Q03](../../plugins/11111353535--dsh-folderwatch/INSIGHT.md#research-q03)至[Q05](../../plugins/11111353535--dsh-folderwatch/INSIGHT.md#research-q05)。
 
 > **建议**：可探索扫描质量/物理root与owner绑定、成功写echo和批次受理ack，比较误报/漏报/错收件和恢复成本；未实现。详见[Q06](../../plugins/11111353535--dsh-folderwatch/INSIGHT.md#research-q06)。
+
+<a id="plugin-1331636953-packages-dsh-git-graph"></a>
+
+## [dsh-git-graph](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 94,671](https://img.shields.io/static/v1?label=npm+30d&message=94%2C671&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph)
+
+> **用途**：为在 DSH Web 或官方桌面中操作 Git 仓库、并行开展多会话开发的用户，提供空会话分支选择、提交图和独立 worktree 管理。合格产物是正确仓库状态和可进入的新工作区；图形展示不代替合并验收。
+
+> **亮点**：它把原生 git worktree 能力与 DSH 工作区注册及空会话入口组合，创建独立 wt/ 分支后将路径交给新会话，而不是让现有会话静默换目录。宿主执行与浏览器展示分开，工作区 realpath 门禁与托管目录约束为集成提供边界；Git 隔离机制本身归属上游。[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q02)
+
+> **思考**：隔离只成立于实际进入新 worktree 的会话。当前会话 cwd 不变，分支切换仍作用于整个共享工作区；此外模型工具先创建磁盘 worktree、再注册 workspace，两步间没有在该入口看到补偿，注册失败可能留下需人工核对的部分状态。这是源码推断的恢复风险，未复现。[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是给“创建 worktree → 注册 workspace → 打开会话”加入可回读操作记录与阶段补偿，让中断后按真实 Git 和注册表对账再继续。由两种状态系统分开提交推导，增量在恢复语义而非再包装 Git。用故障注入分别在磁盘创建后、注册后中断，与当前流程对比孤儿 worktree、重复工作区和人工恢复时间；若同等负担下无改善，或误删用户状态，否定方案。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q05)
 
 <a id="plugin-1339462797-root"></a>
 
@@ -2170,6 +2188,48 @@
 > **思考**：默认 auto 不装写入门禁，显式模式也仅守护列名工具且外部副作用依赖 adapter；12/12 是手工设计机制样本，V17/V18/V20 不支持通用提升，详见[Q02](../../plugins/1052326311--dsh-plan-lattice/INSIGHT.md#research-q02)、[Q03](../../plugins/1052326311--dsh-plan-lattice/INSIGHT.md#research-q03)。
 
 > **建议**：已有实现已过滤隐藏来源、保成功计划/前台最近3项并按maxContextBytes降级；进一步可研究在合格候选内部按当前子任务需求提供来源引用/缺口、必要时回退原投影。若遗漏权威或增加错续写则反证。此方向尚未实现，详见[Q03](../../plugins/1052326311--dsh-plan-lattice/INSIGHT.md#research-q03)。
+
+<a id="plugin-1209966933-root"></a>
+
+## [REA](../../plugins/morluto--rea/INSIGHT.md)
+
+[![GitHub ★ 383,061](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=383%2C061&color=yellow&logo=github&style=flat)](https://github.com/morluto/rea) [![npm 30d 634,260](https://img.shields.io/static/v1?label=npm+30d&message=634%2C260&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/rea-agents)
+
+> **用途**：用于许可内本地应用功能理解和证据辅助重实现；本项重点是JavaScript/Electron静态路径，不是DSH专用插件。[Q01](../../plugins/morluto--rea/INSIGHT.md#research-q01)
+
+> **亮点**：相对直接调用分散分析器，贡献是统一契约、可取消会话及可追溯/带限制的证据交付；不能将上游反编译能力或工具数量计为原创算法。[Q01](../../plugins/morluto--rea/INSIGHT.md#research-q01)
+
+> **思考**：哈希、推断标签与结构化结果保证可追溯表达，不保证静态图和功能解释正确；可选提供者和变更操作也需要具体环境与权限。[Q02](../../plugins/morluto--rea/INSIGHT.md#research-q02) [Q03](../../plugins/morluto--rea/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是以证据覆盖和反证缺口约束下游重实现，减少错误复刻；对照已知源码构建物的直接工具人工分析，若错误或复核成本不降则否定。[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)
+
+<a id="plugin-1216785679-root"></a>
+
+## [Reasonix](../../plugins/esengine--deepseek-reasonix/INSIGHT.md)
+
+[![GitHub ★ 35,959](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C959&color=yellow&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix)
+
+> **用途**：面向需要本地编码Agent或DSH委派只读研究/评审的开发者；根项目是工具/应用，DSH bundle只是子目录配置。[Q01](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q01)
+
+> **亮点**：本体把编码引擎组织为多前端与权限接口；DSH集成复用ACP以配置完成委派，增量是可用接线而非新协议或宿主保证。[Q01](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q01)
+
+> **思考**：自动allow不是逐次人工审批，nil Approver与Ask语义需按前端核对；新进程不共享父会话，rewind不覆盖shell副作用。[Q02](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q02) [Q03](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是父子交换验证命令、修改范围及不可恢复副作用收据，减少正常结束被误当完成验收；对照错误/取消任务的父误判和恢复时间，无改善则否定。[Q04](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q04)
+
+<a id="plugin-995029641-root"></a>
+
+## [Ruflo](../../plugins/ruvnet--ruflo/INSIGHT.md)
+
+[![GitHub ★ 79,217](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=79%2C217&color=yellow&logo=github&style=flat)](https://github.com/ruvnet/ruflo) [![npm 30d 49,674](https://img.shields.io/static/v1?label=npm+30d&message=49%2C674&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/claude-flow)
+
+> **用途**：已有多Agent软件任务的开发者可用CLI/MCP组织分工与状态；独立元宿主，Claude专用mods不外推DSH。[Q01](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q01)
+
+> **亮点**：相对手工分配多个Agent，统一状态、模型执行和观察入口；增量是协调接线而非角色/工具数量或已证实自学习收益。[Q01](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q01)
+
+> **思考**：静态关键词confidence非成功概率，API无错误也非产物正确；多个JSON状态不构成端到端任务事务，需独立验收和恢复对账。[Q02](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q02) [Q03](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是将API成功与独立产物验收分通道，只让合格交付影响质量路由；同模型预算隐藏测试对照，若通过率与成本取舍不改善则否定。[Q04](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q04)
 
 ## 更新时间
 

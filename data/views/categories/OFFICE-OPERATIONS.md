@@ -28,6 +28,8 @@
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。 | 不按默认设置暴露真实 bot。 |
+| [NocoBase](#plugin-306829688-root) | AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。 | 有明确内部数据/审批场景及数据库治理能力的团队可在匿名隔离应用试用最小流程；先验两个角色所有入口权限及恢复，再接真实数据和外部写动作。 |
+| [Reactive Resume](#plugin-249995750-root) | 开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。 | 先以虚构/脱敏履历试用非AI编辑、导出和检查，验收权限与PDF再接模型；不用规则分替代事实或招聘效果判断。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
 <a id="plugin-1334428397-root"></a>
@@ -281,6 +283,34 @@
 > **思考**：requireAllowlist 默认关闭、空名单放行，Agent 默认 danger-full-access；权限设置失败仍继续。这使远程聊天可能驱动宿主工具。详见[Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02)。
 
 > **建议**：把白名单与最小权限设为默认 fail-closed，并验证各平台身份/附件/权限矩阵后再开放真实 bot；现版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q04)。
+
+<a id="plugin-306829688-root"></a>
+
+## [NocoBase](../../plugins/nocobase--nocobase/INSIGHT.md)
+
+[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=yellow&logo=github&style=flat)](https://github.com/nocobase/nocobase)
+
+> **用途**：面向反复构建内部CRUD/审批系统的业务团队；完整平台基础设施，非DSH插件。[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01)
+
+> **亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02)
+
+> **思考**：有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](../../plugins/nocobase--nocobase/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是绑定权限上下文版本、流程ID和外部收据并按权限变更失效缓存，减少陈旧授权和重复动作；跨角色/撤销/中断对照，无错误与恢复改善则否定。[Q05](../../plugins/nocobase--nocobase/INSIGHT.md#research-q05)
+
+<a id="plugin-249995750-root"></a>
+
+## [Reactive Resume](../../plugins/reactive-resume--reactive-resume/INSIGHT.md)
+
+[![GitHub ★ 44,843](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44%2C843&color=yellow&logo=github&style=flat)](https://github.com/reactive-resume/reactive-resume)
+
+> **用途**：面向反复按岗位调整履历、求职信及跟踪投递版本的用户；独立应用，MCP可供Agent连接。[Q01](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q01)
+
+> **亮点**：相对Word加独立岗位表，将结构化履历、设计/检查和投递文档组织在同流程，并以Schema/JSON Patch暴露Agent接口；不证明招聘结果改善。[Q01](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q01)
+
+> **思考**：规则分数/关键词匹配不等跨ATS兼容或录用概率，AI分隔符封装不保证事实与指令安全，保存接口存在也不等离线恢复已验收。[Q02](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q02) [Q03](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是用导出PDF文本顺序和履历事实差异作AI修改放行门，降低最终文档错误；同履历/岗位对照错误与修正时间，无改善则否定。[Q04](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q04)
 
 <a id="plugin-1335382133-root"></a>
 

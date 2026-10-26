@@ -15,6 +15,7 @@
 | [@y9931666/dsh-plugin-crossfire](#plugin-1399279897-root) | 按维度拉起红队评审成果，汇集候选缺陷，由用户逐条认定或驳回并保存复审历史。 | 当前先观察；确认目标profile硬只读和Web访问边界后再对非关键成果试用，逐条复现缺陷并计实际模型与人工成本。 |
 | [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 提供全局/项目记忆库、九工具、自动提炼与注入、原文审计、实体关系及可视化管理。 | 先观察；无敏感库关autoCapture/autoInject，手工条目与独立profile对照，重要约定保留原始指引。 |
 | [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。 |
+| [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
@@ -50,7 +51,10 @@
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。 | 建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。 |
 | [dsh-wsl-playwright](#plugin-1381860363-root) | 在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。 | 观察。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。 | 适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。 |
+| [EverOS](#plugin-1085086903-root) | 以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。 | 有限试用单用户非敏感记忆，先关reflection测人工笔记基线，再验证纠错、删除、重建与断连；DSH适配单独验收。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | 有条件试用lookup-only。 |
+| [Learn Harness Engineering](#plugin-1195243030-root) | 项目式编码 Agent 工程课程，提供状态、验证、范围与跨会话恢复教材、示例和脚手架 Skill。 | 适合已经遇到跨会话丢状态或提前报完成的开发者，先选一个真实失败，在项目副本上加入最少文件，并用相同任务比较前后。 |
+| [MemOS](#plugin-1014729376-root) | 面向 LLM 与 Agent 的记忆管理平台，提供云、自托管及本地插件，支持长期记忆存取与管理。 | 有重复跨会话记忆需求且能审核内容的开发者，可先在独立profile、非敏感数据和固定模型路由上试用。 |
 | [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | [Q06](../../plugins/volcengine--openviking/INSIGHT.md#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。 |
 | [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [Q06](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。 |
 | [WeKnora](#plugin-1024118326-root) | 面向企业文档理解、混合检索和推理的知识框架，提供问答、智能体与知识整理入口。 | 有持续知识维护与运维能力的团队可用代表性语料受控试用，先固定部署版本并核对权限、引用与恢复；少量临时文件先比较简单搜索方案。 |
@@ -125,6 +129,20 @@
 > **思考**：产物与收据一致不等于关系和结论正确；源码证据选择及异常流程覆盖仍由作者负责，自动可读性不能代替语义复核。[Q03](../../plugins/tt-a1i--archify/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是在保留重要关系的前提下增加逐关系事实性质和证据覆盖门禁，比较人工清单能否减少遗漏且不放大复核负担。[Q04](../../plugins/tt-a1i--archify/INSIGHT.md#research-q04)
+
+<a id="plugin-1195828337-root"></a>
+
+## [Distilly](../../plugins/titanwings--distilly/INSIGHT.md)
+
+[![GitHub ★ 26,004](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26%2C004&color=yellow&logo=github&style=flat)](https://github.com/titanwings/distilly)
+
+> **用途**：为需要保留同事工作方法、整理个人偏好或研究公众表达的人，把消息、文档和访谈材料提炼为可复用 Person Profile，并打包成 Agent Skill。合格产物是能回指材料、区分事实和推断且可纠正的行为规则，不是本人复制品。
+
+> **亮点**：相对手写“扮演某人”的提示，Distilly 将来源采集、Work 与 Persona 双轨分析、用户预览、统一 writer、版本备份及宿主安装拆成可复用流程。它改变知识交接的组织方式，而非训练出人的模型；主要执行仍依赖承载 Skill 的 Agent 判断。[Q02](../../plugins/titanwings--distilly/INSIGHT.md#research-q02)
+
+> **思考**：source-grounded 是目标，不是 writer 或质量脚本自动证明的语义属性。流程允许无文件时仅凭访谈生成；quality_check 的 URL 形状、来源标记和 PASS 文本检查不能证明判断忠实于本人或适合新问题。工作技能内明确不足就说明缺口，但提示规则能否被宿主稳定遵守仍未知。[Q03](../../plugins/titanwings--distilly/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是把每条行为规则绑定到具体材料片段、适用情境、反例及本人或授权审核者修正记录，让纠错有可定位的最小单元。由当前文档级质量标记与行为规则语义之间的距离推导；在20个留出工作问题上对比普通 persona 提示与规则证据版，观察事实错误、风格过拟合、拒答与修正时间。若只提高风格相似度而不改善任务忠实性，或复核负担过高，应否定。[Q05](../../plugins/titanwings--distilly/INSIGHT.md#research-q05)
 
 <a id="plugin-1390103795-root"></a>
 
@@ -616,6 +634,20 @@
 
 > **建议**：可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 [Q08](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q08)
 
+<a id="plugin-1085086903-root"></a>
+
+## [EverOS](../../plugins/evermind-ai--everos/INSIGHT.md)
+
+[![GitHub ★ 13,600](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C600&color=yellow&logo=github&style=flat)](https://github.com/EverMind-AI/EverOS)
+
+> **用途**：小团队开发者跨会话/应用保留并可修正事实与经验，以后续任务正确使用当前记忆为交付。
+
+> **亮点**：将Markdown原件、错误可定位的派生索引与用户/agent轨道组合成可审阅纠错路径；抽取/排名依赖everalgo与模型，不宣称新算法。见 [Q02](../../plugins/evermind-ai--everos/INSIGHT.md#research-q02)。
+
+> **思考**：有损抽取/合并和异步索引不保证下游事实正确；抽取非幂等且客户端取消后仍可能落写，盲重发风险需验收。见 [Q03](../../plugins/evermind-ai--everos/INSIGHT.md#research-q03)。
+
+> **建议**：未验证的修正版本/索引状态/原件引用门控可能减少陈旧和误合并错误；20个纠错任务控制模型预算比较，错误不降则否定。见 [Q05](../../plugins/evermind-ai--everos/INSIGHT.md#research-q05)。
+
 <a id="plugin-1341648244-root"></a>
 
 ## [KRouter](../../plugins/398894496-arch--krouter/INSIGHT.md)
@@ -629,6 +661,34 @@
 > **思考**：canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata缓存与followlinks不构成新鲜度/物理沙箱。DSH同步执行和可选writer lane权限需分开，未做越界复现。详见[Q03](../../plugins/398894496-arch--krouter/INSIGHT.md#research-q03)、[Q04](../../plugins/398894496-arch--krouter/INSIGHT.md#research-q04)。
 
 > **建议**：可探索来源版本/适用域/证据级别与冲突收据，区分词面lock和人工确认，比较跨项目错引、覆盖与维护开销；未实现。详见[Q07](../../plugins/398894496-arch--krouter/INSIGHT.md#research-q07)。
+
+<a id="plugin-1195243030-root"></a>
+
+## [Learn Harness Engineering](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md)
+
+[![GitHub ★ 21,413](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21%2C413&color=yellow&logo=github&style=flat)](https://github.com/walkinglabs/learn-harness-engineering)
+
+> **用途**：面向学习如何让编码 Agent 跨会话保持状态、范围和验证约束的开发者，提供项目式课程、示例及 harness-creator Skill。交付应是能在真实任务中遵守验证和恢复规则的项目环境；课程仓库本身不是 DSH 功能插件。
+
+> **亮点**：相对散落工程文章和手写约定，课程以 instructions、state、verification、scope、lifecycle 五部分组织问题，并把它落实为可生成、可结构检查的最小文件组。贡献在教学与工程启动流程；框架原理有明确外部来源，结构评分也不等于 Agent 效果评测。[Q02](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md#research-q02)
+
+> **思考**：结构评估主要检查文件、JSON字段及关键词是否出现，能发现缺少入口，却无法证明验证命令足以覆盖目标任务或 Agent 会执行它。Skill 本身承认 benchmark 是结构性的。README 中引述的外部成本案例还有预算和时间变化，本轮未独立复核，不能用它证明同预算可靠性提升。[Q03](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是在五部分结构检查外，为每条“完成”规则绑定一个代表性任务及失败注入，从静态约定转为可观察遵循度。固定同模型、仓库和预算，对比未改造、仅模板与任务证据三种环境，测漏跑验证、错误完成、跨会话恢复和人工介入。若结构分提高而任务指标不变，或维护验证任务的成本超过节省，则不继续加机制。[Q05](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md#research-q05)
+
+<a id="plugin-1014729376-root"></a>
+
+## [MemOS](../../plugins/memtensor--memos/INSIGHT.md)
+
+[![GitHub ★ 12,092](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C092&color=yellow&logo=github&style=flat)](https://github.com/MemTensor/MemOS)
+
+> **用途**：为需要跨会话保留项目经验与个人偏好的Agent用户提供记忆平台、云API、自托管服务及本地适配。本次源码研究重点核查DSH本地接入：每个直接用户轮次自动回忆、后台采集及显式查询；合格结果是任务使用正确且新鲜的记忆，并能追溯和纠正，不是召回条数增加。
+
+> **亮点**：相对手工维护笔记再粘贴，DSH适配将接受后的用户输入接入一次有期限的召回，将采集放入每会话串行后台队列，并通过async-local固定辅助模型路由，避免多会话共享可变路由。它为前台延迟、写入吞吐和宿主接入形成明确取舍；检索、数据库与模型算法不是由适配层独立发明。[Q02](../../plugins/memtensor--memos/INSIGHT.md#research-q02)
+
+> **思考**：后台采集不阻塞下一轮意味着紧接着的召回可读到旧提交状态，最新纠正不保证立即可见；三秒前台上限保护响应而不证明记忆正确或新鲜。另需区分“本地存储”与“不出机器”：默认辅助调用可委托宿主provider，若它是远程模型，相关材料仍会离开本机。根README的整体分数和纯本地表述不能替代这个版本、这个路由的实测。[Q03](../../plugins/memtensor--memos/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是为已提交记忆标注revision和捕获进度，仅对用户明确纠正的事实提供短期限read-your-correction门槛或临时覆盖；普通轮次继续不等待后台。由当前延迟/新鲜度取舍推导，增量不是全局强同步，而是让高风险纠错可检验。用连续“陈述→纠正→立即追问”与跨项目反例，对比默认队列、全等待和选择性纠错门槛，测陈旧回答、误跨项目召回、P95延迟及模型费用。无明确准确收益或超出延迟预算则否定。[Q05](../../plugins/memtensor--memos/INSIGHT.md#research-q05)
 
 <a id="plugin-1128123594-root"></a>
 

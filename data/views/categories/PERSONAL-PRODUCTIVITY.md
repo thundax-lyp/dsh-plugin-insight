@@ -122,6 +122,7 @@
 | [dsh-prompt-polish](#plugin-1336538202-root) | DSH Web 输入栏提示词重写 UI；经 Typert RPC 调用宿主已配置模型，先展示结果再人工采用。 | 先在隔离 Web profile 用非敏感草稿、关闭历史试用；再按需开上下文并确认 provider 与工作区路径。 |
 | [dsh-receipts](#plugin-1344714660-root) | 汇总本地 DSH 会话与工具痕迹，生成 Markdown 和离线 HTML 报告，可选本地 Git 提交核对。 | 建议观察，先复制日志并关闭 Git 核对，审阅原始会话与输出；对外分享须人工脱敏，不能把活动跨度或提交数当绩效证明。 |
 | [dsh-reedit](#plugin-1410181221-root) | 双击自己的消息进行文本改写，在原消息前分叉会话并重发，原对话保留。 | 先在纯文本、无不可逆副作用的会话试用，确认分支止于旧消息之前且新文本只发一次；附件消息需自行重附，涉及文件或外部发送的重跑先核对现实状态。 |
+| [dsh-remote-web-ui](#plugin-1331636953-packages-dsh-remote-web-ui) | 通过扫码配对让自有手机或电脑访问同一 DSH Web 界面，并管理设备会话、LAN与可选隧道。 | 确有跨设备操作需要、理解配对等同主机控制的用户，可先在无敏感数据的实例测试自有设备。 |
 | [dsh-right-click-menu](#plugin-1404720276-root) | 在 DSH Web 的文件树、聊天路径和链接上提供上下文菜单与文件操作。 | 建议观察，在隔离目录先做预览、复制和小文件保存；写入前核目标及覆盖，敏感/大文件暂不依赖菜单保证。 |
 | [dsh-roam-planner](#plugin-1427038024-root) | 在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。 | 先用非交易测试行程检查地点、路线、候选与重开草稿，人工确认最终内容。 |
 | [dsh-rtl-chat](#plugin-1410794267-root) | 给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。 | RTL读者本地试用，混排不合适随时切回。 |
@@ -132,6 +133,7 @@
 | [dsh-side-session](#plugin-1355639507-root) | 从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。 | 先观察，核/修创建ID关联、目录时序与恢复凭据后再评估试用。 |
 | [dsh-sidebar-panel-fold](#plugin-1426455774-root) | 把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。 | 可在面板很多的独立profile试用，先逐个核对浮层切换和展开恢复。 |
 | [dsh-simplify](#plugin-1349207533-root) | 清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。 | 建议仅对个人本地Web的非关键控件试用，先验证恢复与记录落盘；动态组件或多窗口重度使用先暂停扩展。 |
+| [dsh-skill-explorer](#plugin-1331636953-packages-dsh-skill-explorer) | 在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。 | 需要频繁浏览和管理普通文件型 Skill 的用户，可在备份的测试目录试用导入、同名处理、编辑与回收站。 |
 | [dsh-skill-manager](#plugin-1336106328-root) | 在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。 | 建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。 |
 | [dsh-smart-prompt](#plugin-1419869951-root) | 发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。 | 愿意审阅发送前文本、经常写模糊需求的人可从Light和非关键任务试用；先关闭不必要搜索，检查模型与附件发送范围，再对照原稿看约束、否定和权限。 |
 | [dsh-soul](#plugin-1352089397-root) | 为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。 | 频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 |
@@ -185,6 +187,7 @@
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。 | 先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。 |
 | [oil-dsh-title](#plugin-1374149009-root) | 按最近用户消息异步维护DSH会话标题，采用emoji与对象/持续目标格式并调用官方rename。 | 先观察；敏感/重要会话应先有人工命名保护与最小输入策略。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。 | 个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。 |
+| [Voyager](#plugin-1069943001-root) | 浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。 | 跨多个AI网页重复整理聊天的用户可先在一个非敏感站点试用单项功能，备份数据后再导入简单JSON，并测试启停、同页多插件和页面刷新。 |
 | [插件名片](#plugin-1424219088-root) | 为DSH插件换图标、中文备注和说明，支持文件夹、收藏、排序、导入导出及启停卸载。 | 先观察，继续研究从授权边界、可信图标和可恢复备份着手。 |
 
 <a id="plugin-1341946801-root"></a>
@@ -1755,6 +1758,20 @@
 
 > **建议**：未验证方向是结构化消息编辑，默认保留附件和标签、明确列出被替换文本，并把一次编辑操作绑定childId直到确认成功，避免重试重复分支。用文字、图文、文件和拒绝后重试矩阵对照，要求新消息语义不丢且一次操作最多一个分支；若附件权限不可迁移或重试仍重复，则否定其完整性主张。[Q03](../../plugins/arbeiter-bit--dsh-reedit/INSIGHT.md#research-q03)
 
+<a id="plugin-1331636953-packages-dsh-remote-web-ui"></a>
+
+## [dsh-remote-web-ui](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 101,443](https://img.shields.io/static/v1?label=npm+30d&message=101%2C443&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui)
+
+> **用途**：为希望用自己的手机或另一台电脑继续操作同一 DSH 实例的用户，提供扫码配对、设备会话和远程官方Web界面通道。合格结果是正确设备能访问预期主机、未配对设备被拒绝且撤销后不能继续新请求；不是多用户隔离或只读共享。
+
+> **亮点**：相对直接暴露宿主Web端口，它用独立 /remote 网关把设备凭据核验放在环回重发之前，复用官方界面并维护配对与持久设备生命周期。撤销写盘失败时尝试移除陈旧存储，避免重启恢复已撤销会话。贡献是受边界约束的远程控制交接，隧道、TLS和官方界面归属外部。[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md#research-q02)
+
+> **思考**：配对设备实质持有广泛主机控制能力，且撤销只约束插件自己的配对通道；直接 /api 是否可达依赖宿主fence，gate.ts明确某运行时没有api/gate发射者。此外QR token在有效期内可重复兑换设备，package的one-time措辞不能覆盖实际状态机。应按实际通道与凭据区分撤销语义，不声称统一收回所有权限。[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是将“设备已撤销”改为带通道覆盖的可回读结果：分别探测 /remote、原生 /api、WebSocket和在途请求，列明已切断、仍在途及宿主外凭据。由当前设备撤销与宿主认证分离推导，增量是可验证退出边界。用隔离实例对不同绑定、代理和已有浏览器凭据做矩阵实验；若无法可靠检测某路径就标未知，不用单个绿色状态替代。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md#research-q05)
+
 <a id="plugin-1404720276-root"></a>
 
 ## [dsh-right-click-menu](../../plugins/al1ghtm3ter--dsh-right-click-menu/INSIGHT.md)
@@ -1894,6 +1911,20 @@
 > **思考**：原节点收养支持交互保留，但HTML兜底不能恢复组件事件和状态，“原样恢复”须限定控件与宿主。[Q04](../../plugins/anna-la--dsh-simplify/INSIGHT.md#research-q04) 全量PUT也缺少跨窗口冲突控制。
 
 > **建议**：未验证假设是稳定语义锚点配合带版本撤销日志可兼顾动态页面匹配和多窗口一致性；须用误隐藏、恢复失败和人工维护次数证伪。[Q07](../../plugins/anna-la--dsh-simplify/INSIGHT.md#research-q07)
+
+<a id="plugin-1331636953-packages-dsh-skill-explorer"></a>
+
+## [dsh-skill-explorer](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md)
+
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 116,190](https://img.shields.io/static/v1?label=npm+30d&message=116%2C190&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer)
+
+> **用途**：面向在多个项目、用户目录和插件来源维护 Skill 的 DSH 用户，集中浏览、搜索、创建、编辑与导入文件。合格产物是准确区分来源与实际会话可用性的目录，以及写入到正确文件的变更；它不是统一的权限控制器。
+
+> **亮点**：相对文件管理器逐目录查找，它合并文件系统与 registry 元数据、用来源优先级解决同名项，并让写操作重新扫描匹配名称与路径，避免陈旧面板把变更写到同名的其他来源。导入只创建不覆盖，提供逐项跳过理由。这是管理工作流与身份边界的增量，Skill 解析和加载权威仍在宿主。[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md#research-q02)
+
+> **思考**：插件来源行的“关闭”仅改变面板本地显示，模型仍收到对应 Skill；preset 专属目录也不在完整覆盖内。因此不能把该面板的启用状态或缺项当作实际会话权限事实。README 已明确该限制，源码亦只在采集结果应用本地 toggle，没有看到 registry 策略写入。这直接限制其作为统一控制中心的价值。[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是把界面状态拆为“面板偏好”“文件声明”“会话有效策略”，对每个来源回读实际 skill catalog 后显示差异，避免一个开关表达三种含义。以同名多来源、preset独占、插件提供和链接文件样本比较误判断率及修正时间；若有效策略无法可靠查询，就只显示明确未知并停止制作全局开关。[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md#research-q05)
 
 <a id="plugin-1336106328-root"></a>
 
@@ -2636,6 +2667,20 @@
 > **思考**：sessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENTS；宿主授权未证实。详见[Q01](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md#research-q01)、[Q04](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md#research-q04)。
 
 > **建议**：按会话隔离状态并验证路由权限、采集流，可降低跨会话串扰和误采；尚未实现。详见[Q05](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md#research-q05)。
+
+<a id="plugin-1069943001-root"></a>
+
+## [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md)
+
+[![GitHub ★ 20,463](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20%2C463&color=yellow&logo=github&style=flat)](https://github.com/voyager-crew/voyager) [![npm 30d 1,566](https://img.shields.io/static/v1?label=npm+30d&message=1%2C566&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/voyager) [![最新发布 2015-02-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2015-02-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/voyager)
+
+> **用途**：为经常在多个AI网页中检索、组织和导出聊天的用户，提供浏览器扩展及声明式本地插件。合格结果是增强正确页面、保留聊天与提示数据并能完整禁用新增效果；这是浏览器客户端，不是DSH宿主bundle。
+
+> **亮点**：它把站点语义适配、内置能力原语和声明式插件分开，使同一JSON改动可在多个站点复用；副作用由宿主ledger集中回收，同一属性的多插件覆盖用有序层管理，避免禁用一个就破坏另一个。PluginScope明确借鉴Cordis并裁剪机制，不能将生命周期模式当全球原创。[Q02](../../plugins/voyager-crew--voyager/INSIGHT.md#research-q02)
+
+> **思考**：声明式插件“不运行自带JS”只约束插件输入，不等于整个扩展无网络或聊天读取能力；原语代码和浏览器权限仍是信任根。语义selector有匹配也不证明匹配了正确消息，当前health把“有用户轮次且目标为0”标异常，不能检出所有错位。因此跨站复用收益依赖真实页面兼容和禁用后状态检查。[Q03](../../plugins/voyager-crew--voyager/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是为每个站点适配器加一组版本化语义契约样本，检查“命中正确对象”而不只“命中非空”，并与ledger恢复样本一起作为目录更新门槛。对多站点DOM改版和双插件重叠构造回归集，比较漏检、错位和恢复时间；若维护样本成本高于修复收益，或样本无法代表真实页面，则保持有限站点支持。[Q05](../../plugins/voyager-crew--voyager/INSIGHT.md#research-q05)
 
 <a id="plugin-1424219088-root"></a>
 
