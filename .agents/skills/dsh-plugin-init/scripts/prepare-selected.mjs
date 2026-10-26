@@ -7,7 +7,7 @@ import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { read, atomicWrite, ROOT } from '../../_shared/scripts/plugin-data.mjs';
-import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
+import { pluginDirectory, researchDataDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { selectedItems } from './research-session.mjs';
 import {
     captureNpmDownloads,
@@ -80,7 +80,7 @@ export async function prepareSelected(
     for (const item of items)
         checkouts.set(item.repository, {
             item,
-            path: resolve(ROOT, `data/checkouts/${item.id.split(':')[1]}-${item.revision}`)
+            path: resolve(researchDataDirectory(ROOT), `checkouts/${item.id.split(':')[1]}-${item.revision}`)
         });
     await pool([...checkouts.values()], async ({ item, path }) => {
         try {

@@ -90,7 +90,8 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 | 本地原始材料 | `data/runs/<round>/<plugin-slug>/` | Git 忽略；保存来源、源码、版本、统计、META及失败材料 |
 | 分类索引与完整页 | `data/views/categories/INDEX.md`、`<CATEGORY>.md` | 分类按固定导航顺序展示，与 README 一起生成 |
 | 迁移审计 | `data/catalog/MIGRATION.json` | 既有路径迁移审计；原件位置可指向本地运行目录 |
-| 临时计划／缓存／源码检出 | 系统临时目录或 `data/tmp/`、`cache/`、`checkouts/` | 可重建且不提交，不放正式证据 |
+| 目录源与插件源码检出 | 工程同级 `../dsh-plugin-insight-data/sources/`、`../dsh-plugin-insight-data/checkouts/` | 可重建且不提交；不在工程内保留嵌套 Git 仓库，不放正式证据 |
+| 临时计划／缓存 | 系统临时目录或 `data/tmp/`、`data/cache/` | 可重建且不提交，不放正式证据；包含 Git 仓库的临时材料放工程外 |
 
 `plugin-slug` 首次由 owner、repo 组成 `owner--repo`，子组件追加稳定组件名；统一小写。
 首次分配写入组件完整记录的 registry 字段，仓库改名或组件移动后保持目录不变，不根据新名字再次创建目录。

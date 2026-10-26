@@ -61,8 +61,8 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    使用稳定输入构建器，保存本轮 INPUT 与问题记录；来源 checkout 必须干净，构建前后 HEAD 不变。
    ```sh
    npm run research:input -- \
-     --source-awesome data/tmp/sources/awesome-dsh-plugin \
-     --source-harness data/tmp/sources/awesome-deepseek-harness \
+     --source-awesome ../dsh-plugin-insight-data/sources/awesome-dsh-plugin \
+     --source-harness ../dsh-plugin-insight-data/sources/awesome-deepseek-harness \
      --id <session_id> --checked-at <ISO时间> \
      --out data/runs/<round>/INPUT.json \
      --problems data/runs/<round>/INPUT-PROBLEMS.json

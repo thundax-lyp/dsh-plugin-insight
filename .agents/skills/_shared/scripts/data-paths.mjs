@@ -5,6 +5,8 @@ export const CATALOG = 'data/catalog/PLUGINS.json';
 export const PUBLICATION = 'data/catalog/PUBLICATION.json';
 export const REGISTRY = 'data/catalog/PLUGIN-PATHS.json';
 export const MIGRATION = 'data/catalog/MIGRATION.json';
+// Rebuildable source repositories stay outside the project to avoid nested VCS discovery.
+export const researchDataDirectory = (root) => resolve(root, '../dsh-plugin-insight-data');
 export const slug = (text) =>
     text
         .toLowerCase()
