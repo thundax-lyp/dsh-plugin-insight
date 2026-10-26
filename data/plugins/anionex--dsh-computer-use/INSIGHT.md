@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1e9c886](https://github.com/Anionex/dsh-computer-use/tree/1e9c8862e99ee86519799b8f30e335d22c078ee7)
+分析版本：[de2bdec](https://github.com/Anionex/dsh-computer-use/tree/de2bdecf86515f206ac25e197417e2c0c73719ff)
 
 <!-- BEGIN META -->
-[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,269](https://img.shields.io/static/v1?label=npm+30d&message=3%2C269&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
+[![GitHub ★ 70](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=70&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,322](https://img.shields.io/static/v1?label=npm+30d&message=3%2C322&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
 <!-- END META -->
 
-> **实现功能**：为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。
+> **实现功能**：为DSH提供macOS原生应用观察、语义操作和定向输入能力。
 
-> **核心亮点**：将观察绑定、精确进程窗口输入、应用授权和动作后状态组织为原生动作层，较盲目桌面脚本有可解释控制边界。[Q03](#research-q03)
+> **核心亮点**：[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
 
-> **风险与缺陷**：默认键盘会激活应用，敏感确认依赖调用方正确设置sensitive；不能把定向路由当成全场景无干扰或自动识别高影响保证。[Q04](#research-q04)
+> **风险与缺陷**：[Q03](#research-q03)动作成功不是业务完成；应用AX支持和失败后的结果判定决定自动化价值，高影响任务不应盲重试。
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 什么任务需要原生应用动作层？](#detail-section-11)
-  - [Q02 · 如何从观察绑定到原生动作再返回新状态？](#detail-section-12)
-  - [Q03 · 比通用全桌面鼠标脚本的增量是什么？](#detail-section-13)
-  - [Q04 · “不干扰”和“高影响确认”的边界是什么？](#detail-section-14)
-  - [Q05 · 加载和权限依赖怎样影响可用性？](#detail-section-15)
-  - [Q06 · 原生动作的总成本包括什么？](#detail-section-16)
-  - [Q07 · 哪些设计值得借鉴？](#detail-section-17)
-  - [Q08 · 怎样降低漏标敏感动作与焦点歧义？](#detail-section-18)
-  - [Q09 · 谁应怎样小范围试用？](#detail-section-19)
+  - [Q01 · 哪些桌面任务需要原生操作层而非API或浏览器？](#detail-section-11)
+  - [Q02 · 如何减少盲点按并将动作限定于特定应用？](#detail-section-12)
+  - [Q03 · 观察失效和原生应用不支持时是否能安全继续？](#detail-section-13)
+  - [Q04 · 授权、监视与失败接管是否值得付出？](#detail-section-14)
+  - [Q05 · 怎样将动作执行成功提升为业务结果可核查？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +40,7 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：目标是必须跨入macOS原生应用、缺少更窄API的Agent任务，例如读取窗口、修改控件后核查状态。合格交付是目标应用内业务结果正确，且用户前台工作未受到非预期干扰。能用应用API、CLI或浏览器DOM完成时应先用它们；本插件不负责像素语义/OCR，也不把截图或点击成功当最终任务完成。
-
-基线为全局鼠标脚本和人工操作；有API/CLI/DOM的任务优先使用窄接口，本次未做速度排名。
+> **用途**：适用于macOS开发者需要让Agent操作没有现成API的原生应用，合格结果是观察到指定应用的实际状态、操作后重新观察并核对目标变化。原办法是人工点按或编写Accessibility/坐标脚本；浏览器任务和已有CLI任务应优先用专用接口，插件自己的说明也明确这一边界。这里不是替代所有接口的万能自动化，而是补足跨原生应用的最后一段操作。重复痛点在人工接管和脚本定位维护，但真实频率与收益仍无独立记录。
 
 <a id="detail-section-3"></a>
 
@@ -54,74 +48,66 @@
 
 #### 能力
 
-|能力|主要用途|使用条件与边界|
+| 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-|应用观察|读取AX树与可选截图|系统权限和read lease|
-|元素动作|点击/设值/AX动作|有效观察与目标handle|
-|键盘输入|输入文本与按键|默认可能激活前台|
-|定向指针|滚动、拖拽、坐标fallback|依赖窗口与私有系统符号|
-|确认|绑定一次敏感动作|需调用方正确标记sensitive|
-|等待与复查|返回新full/diff状态|不证明远程业务已完成|
-|诊断与Skill|配置权限和激活工具|工具暴露按Agent控制|
+| 观察应用 | 读AX树和截图 | macOS权限与目标应用支持 |
+| 语义与定向动作 | 点击输入拖动 | 绑定观察、租约和确认 |
+| 新状态反馈 | 动作后观察 | 不等于业务后置条件达成 |
 
 #### 启动与依赖
 
-|依赖或条件|是否必需|用途|缺失或不满足时|
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-|macOS14+、兼容DSH、Node ^22.19.0或>=24|启动必需|服务与原生helper|非macOS不暴露工具|
-|Accessibility|观察/动作必需|AX操作|需系统授权|
-|Screen Recording|截图时必需|保存画面|不能截图|
-|Skill激活与应用lease|执行必需|渐进暴露和读控范围|需激活/授权|
-|视觉语义工具|像素任务可选|解释截图|组件自身不做OCR|
+| macOS14+与原生helper | 必需 | 原生操作 | 非macOS不挂工具 |
+| Accessibility | 必需 | 读和控制 | 提示授权 |
+| Screen Recording | 截图必需 | 视觉观察 | 不提供截图 |
 
 #### 启动步骤
 
-|步骤|执行者与动作|成功判据或失败处理|
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-|准备|用户加载插件、权限并启用Skill|helper健康与工具出现|
-|观察|模型确定bundle/pid并观察|获得有效observationId|
-|操作|模型用handle且核对风险|需要时确认，拒绝则重观察|
-|验收|用户核对业务结果及焦点|新AX状态不代替远程提交证明|
+| 1 | 用户装入profile并授权 | provider就绪 |
+| 2 | Agent加载Skill、观察应用 | 得到当前观察 |
+| 3 | 确认后执行并复核状态 | 不明确则人工接管 |
 
 #### 成本
 
-|阶段|现金与资源成本|人工与时间投入|已知条件与未知项|
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-|首次使用|macOS与helper资源，金额未知|系统权限和单应用配置，耗时未知|截图另需录屏权限|
-|持续使用|观察/截图上下文和模型，金额未知|核对焦点、敏感行为与结果，耗时未知|每动作有新状态|
-|失败恢复|重观察和重试，金额未知|过期目标需重新选择，耗时未知|不可盲目重放|
+| 首次 | 原生helper与运行环境 | 权限设置 | 部署时间未知 |
+| 持续 | 模型与观察 | 确认、业务核对 | 调用量未知 |
+| 失败恢复 | 额外观察与重试 | 判定是否已发生动作 | 业务副作用不可由禁用撤回 |
 
 #### 效果
 
-|效果项|当前证据支持|尚不能确定|
+| 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-|目标路由|pid/window和状态hash链路|跨应用正确率|
-|低干扰|定向指针输入设计|真实键盘任务前台干扰|
-|确认|标记敏感时一次token绑定|模型分类漏判率|
+| 状态绑定操作 | 观察ID与stateHash | 实际任务成功率 |
+| 失效拒绝 | stale观察报错 | 应用覆盖与误拒绝 |
 
-> **思考**：默认键盘会激活应用，敏感确认依赖调用方正确设置sensitive；不能把定向路由当成全场景无干扰或自动识别高影响保证。[Q04](#research-q04)
+> **思考**：[Q03](#research-q03)动作成功不是业务完成；应用AX支持和失败后的结果判定决定自动化价值，高影响任务不应盲重试。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将观察绑定、精确进程窗口输入、应用授权和动作后状态组织为原生动作层，较盲目桌面脚本有可解释控制边界。[Q03](#research-q03)
+> **亮点**：[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
 
-将观察绑定、精确进程窗口输入、应用授权和动作后状态组织为原生动作层，较盲目桌面脚本有可解释控制边界。[Q03](#research-q03)
+[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
 
-可借鉴生命周期清理和渐进工具暴露、动作同进程串行、观察局部handle与敏感rebind重新确认。单次确认token绑定动作hash和观察，避免挪用到不同参数；这些机制需调用方正确标敏感。原生私有API以动态符号发现并显式失败，降低静默走全局fallback的风险，但维护仍需跨系统及应用验证。本轮只检查源码，不把作者release测试声明升级为独立验收。
+可借鉴generation绑定观察和敏感目标重绑定后重新确认；移植要同时维护原生helper、AX适配及宿主授权存储，不能只复制工具定义。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-默认键盘会激活应用，敏感确认依赖调用方正确设置sensitive；不能把定向路由当成全场景无干扰或自动识别高影响保证。[Q04](#research-q04)
+[Q03](#research-q03)动作成功不是业务完成；应用AX支持和失败后的结果判定决定自动化价值，高影响任务不应盲重试。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。 [Q09](#research-q09)
+需要操作无API原生应用的macOS开发者可先试可丢弃表单或编辑任务。相比临时坐标脚本，插件用观察、租约和确认约束动作，但办结率尚未实测。若应用状态无法可靠观察或操作不可逆，就停止自动重放并改用人工或专用接口。 依据 [Q01](#research-q01)、[Q03](#research-q03)、[Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -129,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-已检查TypeScript服务及Swift定向输入源码，未运行helper或真实应用；作者fixture声明未独立复现，设计假设未验证。
+已有实现为固定源码检查支持；用户收益未实测；未来设计假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 src/index.ts、src/service.ts、src/confirmations.ts、src/tools.ts、src/leases.ts、src/exposure.ts、native/macos/Sources/Helper/TargetedPointer.swift、native/macos/Sources/Helper/main.swift 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/service.ts、src/leases.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：抽读consumer、service、confirmations、leases、tools、exposure和Swift目标输入/键盘激活路径，未完整审计全部原生代码和二进制，不确认作者运行结论。
-- 下一步：在可撤销AppKit夹具和目标应用分别验证焦点策略、过期拒绝、敏感标记、窗口变动及人工接管成本。
+- 边界：本轮只读固定提交，未执行目标代码或宿主验收；效果、人工耗时及持续采用情况未知。
+- 下一步：以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
 
 **分析版本**
 
 - **仓库**：[Anionex/dsh-computer-use](https://github.com/Anionex/dsh-computer-use)
-- **版本号**：0.3.4（[固定提交 1e9c886](https://github.com/Anionex/dsh-computer-use/tree/1e9c8862e99ee86519799b8f30e335d22c078ee7)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.5（[固定提交 de2bdec](https://github.com/Anionex/dsh-computer-use/tree/de2bdecf86515f206ac25e197417e2c0c73719ff)）
+- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -148,9 +134,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是把动作风险声明与激活后输入目标摘要一起纳入确认计划，对发送、删除等明确应用语义加入可配置分类器，能减少仅依赖模型sensitive标记的漏判。推导自确认消费条件与键盘激活后焦点变化。最小验证在不真实提交的夹具中构造改标签、按钮重排和激活后焦点切换，比较漏确认率、误拒绝及人工次数；分类器若不能识别或授权负担高于收益，应只收缩可操作应用范围。 [Q08](#research-q08)
+[Q05](#research-q05)提出任务级后置条件验收的未验证假设，在延迟和重绘场景核对误报完成。
 
-在可撤销AppKit夹具和目标应用分别验证焦点策略、过期拒绝、敏感标记、窗口变动及人工接管成本。
+以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
 
 <a id="detail-section-9"></a>
 
@@ -161,42 +147,46 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 12 | 1355 | — | — | 18457 |
-| .js | source | 20 | 4022 | 3806 | 199 | — |
+| .md | source | 12 | 1377 | — | — | 19907 |
+| .js | source | 20 | 4154 | 3921 | 216 | — |
 | .mjs | source | 8 | 1006 | 928 | 13 | — |
-| .ts | source | 20 | 4730 | 4100 | 269 | — |
+| .ts | source | 20 | 4891 | 4232 | 295 | — |
 | .tsx | source | 1 | 578 | 544 | 5 | — |
-| .ts | test | 23 | 6744 | 6165 | 114 | — |
+| .ts | test | 24 | 7039 | 6437 | 117 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/Anionex/dsh-computer-use/issues) 查看。
+[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=grey&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 8](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=8&color=grey&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+
+
+
+统计日期：2026-10-26。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：macOS观察绑定与定向输入能否支持可核查的原生应用任务，同时保留焦点、权限及敏感动作边界？
+**插件研究总目标**：核查DSH Computer Use的具体任务增量、关键失败条件与可控采用路径。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 什么任务需要原生应用动作层？
+### Q01 · 哪些桌面任务需要原生操作层而非API或浏览器？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、采用判断
 
 #### 完整回答
 
-目标是必须跨入macOS原生应用、缺少更窄API的Agent任务，例如读取窗口、修改控件后核查状态。合格交付是目标应用内业务结果正确，且用户前台工作未受到非预期干扰。能用应用API、CLI或浏览器DOM完成时应先用它们；本插件不负责像素语义/OCR，也不把截图或点击成功当最终任务完成。
+适用于macOS开发者需要让Agent操作没有现成API的原生应用，合格结果是观察到指定应用的实际状态、操作后重新观察并核对目标变化。原办法是人工点按或编写Accessibility/坐标脚本；浏览器任务和已有CLI任务应优先用专用接口，插件自己的说明也明确这一边界。这里不是替代所有接口的万能自动化，而是补足跨原生应用的最后一段操作。重复痛点在人工接管和脚本定位维护，但真实频率与收益仍无独立记录。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:60-77](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/README.md#L60-L77)
+**依据 1 · 作者声明**：[README.md:60-77](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/README.md#L60-L77)
 
-作者界定action layer与可替代接口及权限。
+明确动作层范围、接口替代与权限条件
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -224,85 +214,56 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
 
 </details>
 
+#### 缺口
+
+- 真实用户重复任务及办结率未量化。
+  **影响**：没有目标人群反复人工接管的任务记录，需求强度只能有条件判断。
+  **进一步探讨**：收集无API原生应用的真实可匿名任务，并记录人工基线与使用频率。
+
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 如何从观察绑定到原生动作再返回新状态？
+### Q02 · 如何减少盲点按并将动作限定于特定应用？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、贡献与相对优势
 
 #### 完整回答
 
-服务按Agent保存观察，动作引用observationId和索引/opaque handle；同进程动作排队，校验元素、窗口、pointer策略与control lease。允许rebind时重新observe并只接受唯一匹配，敏感目标发生变化则撤销确认。动作带expectedStateHash进入backend，原生层优先AX语义操作，fallback定向pid/window，结束后再次观察。新状态只证明观察范围内变化，不证明远程业务已提交。
+Bundle先初始化macOS provider；非darwin只显示设置，不向模型暴露执行工具。Agent加载Skill后才得到操作工具。service按Agent保存观察，以observationId绑定动作；操作前取得控制租约并重新观察解析目标，敏感目标发生重绑定时使确认失效。执行把app、expectedStateHash和window传给backend，并消费一次性确认。因此相对无状态坐标脚本，增量是观察—授权—动作—新观察的连贯边界；语义动作优先与进程定向路由来自原生层，不等于任意应用都能后台操作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/service.ts:308-395](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/src/service.ts#L308-L395)
+**依据 1 · 源码核查**：[src/index.ts:63-72](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/index.ts#L63-L72)
 
-串行、目标校验、lease及敏感rebind拒绝。
+provider就绪和平台分流
 
 <details>
-<summary>查看原文（88行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-  /** Execute one observation-bound action and always return a fresh post-action observation. */
-  async act(action: ComputerActionRequest, context: ComputerUseContext): Promise<ComputerActionResult> {
-    const signal = AbortSignal.any([context.signal, this.lifecycle.signal])
-    const stored = this.requireObservation(action.observationId, context.agent)
-    if (action.kind === 'wait') return await this.wait(stored, action, context, signal)
-    return await this.enqueueAction(stored.backend.app, async () => {
-      signal.throwIfAborted()
-      return await this.actNow(action, context, signal)
-    })
-  }
+  /** Publish model-facing capabilities only after provider integrity and health pass. */
+  protected override async [Service.init](): Promise<void> {
+    await super[Service.init]()
+    if (process.platform !== 'darwin') {
+      // Non-macOS hosts keep the profile healthy and show the reason in Web Settings,
+      // but never expose Computer Use Tools or the Skill to the model.
+      installComputerUseWeb(this.ctx)
+      return
+    }
+    this.consumerDispose = installComputerUseConsumer(this.ctx)
+```
 
-  /** Keep this service's actions for one process ordered through post-action observation. */
-  private async actNow(
-    action: Exclude<ComputerActionRequest, { kind: 'wait' }>,
-    context: ComputerUseContext,
-    signal: AbortSignal,
-  ): Promise<ComputerActionResult> {
-    const stored = this.requireObservation(action.observationId, context.agent)
-    const index = targetIndex(action)
-    const handle = targetHandle(action)
-    const originalElement = index === undefined ? undefined : stored.backend.elements.find(candidate => candidate.index === index)
-    if (index !== undefined && originalElement === undefined) {
-      throw new ComputerUseError('COMPUTER_ELEMENT_UNAVAILABLE', `element ${index} is not part of observation ${String(action.observationId)}`)
-    }
-    if (allowsTargetRebind(action) && handle === undefined) {
-      throw new ComputerUseError('COMPUTER_TARGET_UNAVAILABLE', 'allowRebind requires a targetHandle from the referenced observation')
-    }
-    const descriptor = handle === undefined ? undefined : stored.targets.get(handle)
-    if (handle !== undefined && descriptor === undefined) {
-      throw new ComputerUseError('COMPUTER_TARGET_UNAVAILABLE', 'targetHandle is unknown or does not belong to the referenced observation')
-    }
-    if (descriptor !== undefined && index !== undefined && (descriptor.locator.length !== originalElement?.locator.length
-      || !descriptor.locator.every((part, position) => part === originalElement.locator[position]))) {
-      throw new ComputerUseError('COMPUTER_TARGET_UNAVAILABLE', 'elementIndex and targetHandle select different elements')
-    }
-    const selectedOriginalElement = originalElement ?? (descriptor === undefined
-      ? undefined
-      : stored.backend.elements.find(candidate => candidate.locator.length === descriptor.locator.length
-        && candidate.locator.every((part, position) => part === descriptor.locator[position])))
-    if (descriptor !== undefined && selectedOriginalElement === undefined) {
-      throw new ComputerUseError('COMPUTER_TARGET_UNAVAILABLE', 'targetHandle no longer has provider evidence in the referenced observation')
-    }
-    if (requiresElement(action) && selectedOriginalElement === undefined) {
-      throw new ComputerUseError('COMPUTER_ELEMENT_UNAVAILABLE', `${action.kind} requires elementIndex or targetHandle`)
-    }
-    if (requiresPointerInput(action, selectedOriginalElement) && this.config.interaction.pointerInputPolicy === 'deny') {
-      throw new ComputerUseError(
-        'COMPUTER_ACTION_BLOCKED',
-        `${action.kind} requires target-process pointer input, which interaction.pointerInputPolicy denies; use an Accessibility action or enable targeted pointer input in host Settings`,
-      )
-    }
-    if (requiresForegroundPermission(action) && this.config.interaction.focusPolicy === 'preserve') {
-      throw new ComputerUseError(
-        'COMPUTER_ACTION_BLOCKED',
-        'AXRaise may raise the target window, which interaction.focusPolicy preserve denies; enable explicit activation in host Settings before using this action',
-      )
-    }
+</details>
+
+**依据 2 · 源码核查**：[src/service.ts:492-520](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/service.ts#L492-L520)
+
+控制租约、重新定位与确认失效
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
     await this.leases.ensure(context.agent, stored.backend.app, 'control', `computer_${action.kind}`, context.callId, signal)
     const cursorRequested = this.config.interaction.cursorVisualization === 'visible'
       && (action.kind === 'click' || action.kind === 'scroll' || action.kind === 'drag')
@@ -332,8 +293,40 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
       throw new ComputerUseError(
         'COMPUTER_TARGET_REBIND_REQUIRES_CONFIRMATION',
         'the sensitive target rebound to a fresh element; observe the current UI and request a new one-use confirmation before acting',
-      )
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/service.ts:591-612](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/service.ts#L591-L612)
+
+状态指纹和确认消费
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+    let outcome: BackendActionResult
+    const request = {
+      action,
+      app: actionObservation.app,
+      expectedStateHash: actionObservation.stateHash,
+      interaction: this.config.interaction,
+      ...(element === undefined ? {} : { element }),
+      ...(actionObservation.window === undefined ? {} : { window: actionObservation.window }),
     }
+    try {
+      this.confirmations.consume(context.agent, stored.backend.app, action)
+      if (cursorStarted && visualization?.kind === 'drag') {
+        const tracked = await this.backend.actDragWithCursor(
+          request,
+          visualization as BackendCursorAction & { kind: 'drag' },
+          signal,
+        )
+        recordCursor(tracked.cursor)
+        outcome = tracked.action
+      } else {
+        outcome = await this.backend.act(request, signal)
+      }
 ```
 
 </details>
@@ -342,247 +335,162 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
 
 <a id="detail-section-13"></a>
 
-### Q03 · 比通用全桌面鼠标脚本的增量是什么？
+### Q03 · 观察失效和原生应用不支持时是否能安全继续？
 
-**研究主题**：贡献与相对优势
-
-#### 完整回答
-
-增量在观察绑定、精确pid/window输入、按应用读/控授权和动作后状态的组合。原生指针桥使用SkyLight定向投递而非简单全局鼠标流，意在让后台应用可控且不移动真实光标。底层AX与事件机制来自macOS，不能归为新系统能力。作者有fixture和监控声明，本次未独立运行，因此只能核查设计而不能确认所有应用都不干扰前台。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[native/macos/Sources/Helper/TargetedPointer.swift:26-82](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/native/macos/Sources/Helper/TargetedPointer.swift#L26-L82)
-
-私有框架符号解析和目标pid/window写入。
-
-<details>
-<summary>查看原文（57行）</summary>
-
-```text
-private final class SkyLightPointerBridge {
-    static let shared = SkyLightPointerBridge()
-
-    private let handle: UnsafeMutableRawPointer?
-    private let postToPid: PostToPidFunction?
-    private let setIntegerField: SetIntegerFieldFunction?
-    private let setWindowLocation: SetWindowLocationFunction?
-
-    private init() {
-        handle = dlopen(
-            "/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight",
-            RTLD_LAZY | RTLD_GLOBAL
-        )
-        postToPid = Self.resolve(handle, "SLEventPostToPid", as: PostToPidFunction.self)
-        setIntegerField = Self.resolve(handle, "SLEventSetIntegerValueField", as: SetIntegerFieldFunction.self)
-        setWindowLocation = Self.resolve(handle, "CGEventSetWindowLocation", as: SetWindowLocationFunction.self)
-    }
-
-    deinit {
-        if let handle { dlclose(handle) }
-    }
-
-    private static func resolve<T>(_ handle: UnsafeMutableRawPointer?, _ name: String, as type: T.Type) -> T? {
-        guard let handle, let symbol = dlsym(handle, name) else { return nil }
-        return unsafeBitCast(symbol, to: type)
-    }
-
-    var isAvailable: Bool {
-        postToPid != nil && setIntegerField != nil && setWindowLocation != nil
-    }
-
-    func post(
-        _ event: CGEvent,
-        target: TargetedPointerTarget,
-        localPoint: CGPoint,
-        clickState: Int64,
-        buttonNumber: Int64,
-        subtype: Int64,
-        gesturePhase: Int64,
-        clickGroup: Int64
-    ) throws {
-        guard let postToPid, let setIntegerField, let setWindowLocation else {
-            throw TargetedPointerError(message: "SkyLight target-process pointer routing is unavailable")
-        }
-        let pointer = Unmanaged.passUnretained(event).toOpaque()
-        setWindowLocation(pointer, localPoint.x, localPoint.y)
-        setIntegerField(pointer, 0, gesturePhase)
-        setIntegerField(pointer, 1, clickState)
-        setIntegerField(pointer, 3, buttonNumber)
-        setIntegerField(pointer, 7, subtype)
-        setIntegerField(pointer, 40, Int64(target.pid))
-        setIntegerField(pointer, 51, target.windowNumber)
-        setIntegerField(pointer, 58, clickGroup)
-        setIntegerField(pointer, 91, target.windowNumber)
-        setIntegerField(pointer, 92, target.windowNumber)
-
-        postToPid(target.pid, pointer)
-```
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · “不干扰”和“高影响确认”的边界是什么？
-
-**研究主题**：缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
-不能泛化为所有动作都不抢前台。默认keyboardPolicy为activate，原生代码在键盘动作时会覆盖preserve并激活应用；无元素目标时采用激活后焦点，用户需注意输入对象。另确认消费仅在action.sensitive===true时强制要求token，敏感分类由Skill/调用方提供，不是根据UI业务后果自动识别。私有SkyLight符号也有系统版本兼容风险，符号缺失会失败而非保证通用。
+service对未知、过期或其他generation观察报COMPUTER_STALE_OBSERVATION，禁止把旧状态直接用于动作；敏感目标重新绑定需重新确认。macOS Accessibility是必需权限，截图另需Screen Recording，观察租约和控制租约分开。关键限制是AX树完整性、应用响应和输入路由支持；业务是否完成还要看新观察而非仅动作返回成功。失败可能发生在副作用之后，不能盲目重放转账、发送等高影响操作。租约持久化记录会话身份与read grants/denials，但不替代操作事务回滚。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[native/macos/Sources/Helper/main.swift:836-869](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/native/macos/Sources/Helper/main.swift#L836-L869)
+**依据 1 · 源码核查**：[src/service.ts:714-720](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/service.ts#L714-L720)
 
-键盘激活与激活后焦点处理。
-
-<details>
-<summary>查看原文（34行）</summary>
+失效观察拒绝
 
 ```text
-    limits: [String: Any],
-    snapshot: ObservationSnapshot,
-    record: ElementRecord?,
-    focusPolicy: String,
-    keyboardPolicy: String,
-    actionKind: String,
-    timeoutMs: Int,
-) throws -> (snapshot: ObservationSnapshot, record: ElementRecord?, activation: String) {
-    let keyboardAction = actionKind == "type-text" || actionKind == "press-key"
-    let effectiveFocusPolicy = keyboardAction && keyboardPolicy == "activate" ? "activate" : focusPolicy
-    guard effectiveFocusPolicy == "activate" else {
-        return (snapshot, record, "not-requested")
+  private requireObservation(id: ComputerObservationId, agent: Agent): StoredObservation {
+    this.prune(agent)
+    const stored = this.state(agent).observations.get(id)
+    if (stored === undefined || stored.generation !== this.generation) {
+      throw new ComputerUseError('COMPUTER_STALE_OBSERVATION', `observation ${String(id)} is unknown, expired, or belongs to another provider generation`)
     }
-    if app.isActive {
-        return (snapshot, record, "already-frontmost")
-    }
-    try activate(app, timeoutMs: timeoutMs)
-    let refreshed = try observeSnapshot(app: app, limits: limits)
-    let refreshedRecord: ElementRecord?
-    if request["element"] != nil {
-        refreshedRecord = try validateTarget(request, snapshot: refreshed)
-    } else if keyboardAction {
-        // Activation may move focus to the app's default control; typing targets
-        // the refreshed focused element. The app identity is already revalidated
-        // by the fresh observation, so full pre-activation state equality would
-        // only make reliable keyboard input fail.
-        refreshedRecord = nil
-    } else {
-        guard activationStateMatches(snapshot, current: refreshed) else {
-            throw fail("COMPUTER_STALE_OBSERVATION", "the application UI changed while the target application was activated")
-        }
-        refreshedRecord = nil
-    }
-    return (refreshed, refreshedRecord, "activated")
+    return stored
 ```
 
-</details>
+**依据 2 · 源码核查**：[src/service.ts:516-520](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/service.ts#L516-L520)
 
-**依据 2 · 源码核查**：[src/confirmations.ts:88-97](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/src/confirmations.ts#L88-L97)
-
-未标记sensitive时不强制token；分类不由此函数独立识别。
-
-<details>
-<summary>查看原文（10行）</summary>
+敏感重绑定重新确认
 
 ```text
-  consume(agent: Agent, app: ComputerAppIdentity, action: ComputerActionRequest): void {
-    if (action.sensitive !== true) {
-      if (action.confirmationToken !== undefined) {
-        throw new ComputerUseError('COMPUTER_CONFIRMATION_REQUIRED', 'confirmationToken is valid only when sensitive is true')
-      }
-      return
+    if (action.sensitive === true && resolution?.targetChanged === true) {
+      this.confirmations.invalidate(context.agent, action.confirmationToken)
+      throw new ComputerUseError(
+        'COMPUTER_TARGET_REBIND_REQUIRES_CONFIRMATION',
+        'the sensitive target rebound to a fresh element; observe the current UI and request a new one-use confirmation before acting',
+```
+
+**依据 3 · 源码核查**：[src/leases.ts:35-77](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/leases.ts#L35-L77)
+
+会话绑定持久化授权
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+/** Runtime validation for the whole-Session Computer Use sidecar row. */
+export const computerUseSessionStateSchema = z.object({
+  session: sessionIdentitySchema,
+  readGrants: z.array(z.string().min(1)),
+  denied: z.array(deniedLeaseSchema),
+}).superRefine((row, ctx) => {
+  const readGrants = new Set<string>()
+  row.readGrants.forEach((bundleId, index) => {
+    if (readGrants.has(bundleId)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['readGrants', index],
+        message: `duplicate Computer Use read grant '${bundleId}'`,
+      })
     }
-    const token = action.confirmationToken
-    if (token === undefined) {
-      throw new ComputerUseError('COMPUTER_CONFIRMATION_REQUIRED', 'sensitive action requires a token from computer_confirm')
+    readGrants.add(bundleId)
+  })
+
+  const denials = new Set<string>()
+  row.denied.forEach((denial, index) => {
+    const key = `${denial.scope}\0${denial.bundleId}`
+    if (denials.has(key)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['denied', index],
+        message: `duplicate Computer Use ${denial.scope} denial '${denial.bundleId}'`,
+      })
+    }
+    denials.add(key)
+  })
+})
+
+/** Plugin-owned durable authorization state for one Session lifecycle. */
+export type ComputerUseSessionState = z.infer<typeof computerUseSessionStateSchema>
+
+/** One lifecycle-bound Computer Use sidecar record per Session id. */
+export const computerUseStateDomainSpec = defineDomain({
+  name: 'computer_use_state',
+  version: 0,
+  tables: {
+    sessions: domainTable<SessionId, ComputerUseSessionState>(computerUseSessionStateSchema),
+  },
+})
 ```
 
 </details>
 
 #### 缺口
 
-- 跨真实应用的焦点变化与模型敏感分类漏判率未知
-  **影响**：不能承诺无干扰或所有高影响操作必确认
-  **进一步探讨**：在无真实提交的应用夹具上分别测试键盘策略、敏感标记遗漏、窗口变化及后台输入
+- 应用兼容范围以及中途失败后的业务结果判定需要目标应用案例。
+  **影响**：应用AX和定向输入支持范围未完整核查，不能外推后台通用可用。
+  **进一步探讨**：选择目标应用及版本，检查观察完整性、过期目标、输入失败及未知结果后的人工接管。
 
-<a id="research-q05"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-14"></a>
 
-### Q05 · 加载和权限依赖怎样影响可用性？
+### Q04 · 授权、监视与失败接管是否值得付出？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-仅macOS目标环境暴露执行工具，非darwin只显示诊断。需要macOS14+、Accessibility权限、兼容DSH的subprocess/approval/settings/sessions/agents/tools/skills；请求截图另需Screen Recording。Node包要求^22.19.0或>=24，原生helper需正确版本与健康检查通过。模型先加载Skill才暴露执行工具，未激活时只有bootstrap；OCR需另选视觉能力，本组件不提供。
+首次要在macOS配置权限、加载正确profile和Skill；持续要承担模型推理、观察采集与人工确认，具体费用和耗时未测。失败恢复先检查应用当前状态，必要时人工完成并撤销租约或禁用插件，不能把退出插件视为撤销已完成的应用动作。对于无API的可丢弃编辑任务，有状态约束值得小范围试用；对于后台不能操作的应用、权限不允许或不可逆业务动作，人工或专用API通常更合适。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:48-73](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/src/index.ts#L48-L73)
+**依据 1 · 作者声明**：[README.md:71-91](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/README.md#L71-L91)
 
-平台判断、注入与provider初始化。
+权限和安装条件
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（21行）</summary>
 
-```text
-/** macOS provider plus the portable Skill, scoped Tools, and optional Web diagnostics. */
-export class ComputerUseBundle extends MacOSComputerUseProvider {
-  static override inject = ['subprocess', 'approval', 'settings', 'sessions', 'agents', 'tools', 'skills']
-  static override Config = Config
+````text
+### Prerequisites
 
-  private consumerDispose: (() => void) | undefined
+- macOS 14 or newer.
+- DeepSeek Harness with a Web or Headless Profile and the Skill Tool mounted.
+- macOS Accessibility permission for observation and native actions.
+- macOS Screen Recording permission only when a screenshot is requested.
+- Node.js `^22.19.0` or `>=24.0.0` when building this repository.
 
-  constructor(ctx: Context, config: ComputerUseConfig = {}) {
-    super(ctx, config)
-    ctx.effect(() => () => {
-      this.consumerDispose?.()
-      this.consumerDispose = undefined
-    }, 'dsh-computer-use: consumer lifecycle')
-  }
+Install the Web and Headless bundles directly from npm:
 
-  /** Publish model-facing capabilities only after provider integrity and health pass. */
-  protected override async [Service.init](): Promise<void> {
-    await super[Service.init]()
-    if (process.platform !== 'darwin') {
-      // Non-macOS hosts keep the profile healthy and show the reason in Web Settings,
-      // but never expose Computer Use Tools or the Skill to the model.
-      installComputerUseWeb(this.ctx)
-      return
-    }
-    this.consumerDispose = installComputerUseConsumer(this.ctx)
-  }
-```
+> [!IMPORTANT]
+> The published package name is `@anionex/dsh-computer-use`. The former
+> `@dsh-external/dsh-computer-use` name was never published to npm and is not
+> installable; update any old profile or manifest references before installing.
+
+```sh
+dsh plugin --profile web add @anionex/dsh-computer-use
+dsh plugin --profile headless add @anionex/dsh-computer-use
+
+dsh --profile web --dump-config | grep computer-use
+dsh --profile headless --dump-config | grep computer-use
+````
 
 </details>
 
-<a id="research-q06"></a>
+**依据 2 · 源码核查**：[src/service.ts:591-617](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/service.ts#L591-L617)
 
-<a id="detail-section-16"></a>
-
-### Q06 · 原生动作的总成本包括什么？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-以“目标应用任务成功且无非预期前台干扰”为合格单位。首次需授权、加载和核对helper；持续每步观察/模型决策/动作后复查增加token与等待。过期状态或不唯一匹配会拒绝，恢复需重新观察而非重放，可能增加轮数但减少误点风险。不能从定向路由直接推出端到端更快；没有真实任务合格率、授权频率和人工接管数据，现金及人时未知。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/service.ts:468-509](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/src/service.ts#L468-L509)
-
-动作执行及settle明确不提供像素/远程效果因果证明。
+动作调用和错误转换，未提供业务回滚
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
+    let outcome: BackendActionResult
+    const request = {
+      action,
+      app: actionObservation.app,
       expectedStateHash: actionObservation.stateHash,
       interaction: this.config.interaction,
       ...(element === undefined ? {} : { element }),
@@ -606,140 +514,61 @@ export class ComputerUseBundle extends MacOSComputerUseProvider {
       }
     } catch (error) {
       throw computerUseError(error, `Computer Use ${action.kind} failed`)
-    } finally {
-      if (cursorStarted && visualization !== undefined) {
-        try {
-          recordCursor(await this.backend.visualizeCursor(
-            visualization,
-            'after',
-            AbortSignal.timeout(1_500),
-          ))
-        } catch (error) {
-          recordCursor({
-            visible: false,
-            reason: `the agent cursor could not be validated after the action: ${error instanceof Error ? error.message : String(error)}`,
-          })
-        }
-      }
-    }
-    // The settle loop reports whether the bounded structural observation
-    // changed. It complements routing facts without claiming causal proof or
-    // visibility into pixel-only, transient, or remote effects.
 ```
 
 </details>
 
 #### 缺口
 
-- 没有与普通鼠标自动化/API的同任务对照
-  **影响**：无法量化节时和误操作减少幅度
-  **进一步探讨**：用可撤销表单任务计量成功率、误点、前台干扰、重观察轮次和人工接管
+- 每次任务的确认次数、误操作率和人工接管成本未知。
+  **影响**：一次办结所需确认、观察与人工接管量未知，尚不能量化总负担。
+  **进一步探讨**：在可丢弃表单任务记录观察量、确认次数、错误和接管耗时，并核对退出后权限与状态。
 
-<a id="research-q07"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-17"></a>
+<a id="detail-section-15"></a>
 
-### Q07 · 哪些设计值得借鉴？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-可借鉴生命周期清理和渐进工具暴露、动作同进程串行、观察局部handle与敏感rebind重新确认。单次确认token绑定动作hash和观察，避免挪用到不同参数；这些机制需调用方正确标敏感。原生私有API以动态符号发现并显式失败，降低静默走全局fallback的风险，但维护仍需跨系统及应用验证。本轮只检查源码，不把作者release测试声明升级为独立验收。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/confirmations.ts:18-34](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/src/confirmations.ts#L18-L34)
-
-确认记录含app/observation/hash/expiry的绑定结构。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-interface ConfirmationRecord {
-  app: ComputerAppIdentity
-  observationId: ComputerObservationId
-  actionHash: string
-  expiresAt: number
-}
-
-function stable(value: unknown): string {
-  if (value === null || typeof value !== 'object') return JSON.stringify(value)
-  if (Array.isArray(value)) return `[${value.map(stable).join(',')}]`
-  const record = value as Record<string, unknown>
-  return `{${Object.keys(record).sort().filter(key => record[key] !== undefined).map(key => `${JSON.stringify(key)}:${stable(record[key])}`).join(',')}}`
-}
-
-function actionHash(action: Omit<ComputerActionRequest, 'confirmationToken'> | ComputerActionRequest): string {
-  const { confirmationToken: _token, ...rest } = action as ComputerActionRequest
-  return createHash('sha256').update(stable(rest)).digest('hex')
-```
-
-</details>
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 怎样降低漏标敏感动作与焦点歧义？
+### Q05 · 怎样将动作执行成功提升为业务结果可核查？
 
 **研究主题**：新假设与验证
 
 #### 完整回答
 
-未验证假设是把动作风险声明与激活后输入目标摘要一起纳入确认计划，对发送、删除等明确应用语义加入可配置分类器，能减少仅依赖模型sensitive标记的漏判。推导自确认消费条件与键盘激活后焦点变化。最小验证在不真实提交的夹具中构造改标签、按钮重排和激活后焦点切换，比较漏确认率、误拒绝及人工次数；分类器若不能识别或授权负担高于收益，应只收缩可操作应用范围。
+状态hash和动作后观察提供了证据基础，由此推导未验证的任务级后置条件：用户事先定义“目标字段值/可见状态”，只有新观察匹配才报告完成，未知结果先停并请求接管。相对继续加通用工具，增量是对业务成功的明确验收。用可丢弃表单对比仅动作成功与后置条件验收，注入窗口重绘和延迟，记录误报完成与额外观察量；若误报不下降或者AX状态无法表达结果，则收窄或放弃。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/tools.ts:196-198](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/src/tools.ts#L196-L198)
+**依据 1 · 源码核查**：[src/service.ts:591-612](https://github.com/Anionex/dsh-computer-use/blob/de2bdecf86515f206ac25e197417e2c0c73719ff/src/service.ts#L591-L612)
 
-sensitive参数明确依赖Skill分类。
-
-```text
-const sensitiveParameters = {
-  sensitive: { type: 'boolean', description: 'Set true for an action classified by the Skill as high impact or sensitive.' },
-  confirmationToken: { type: 'string', description: 'One-use token from computer_confirm for this exact action.' },
-```
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 谁应怎样小范围试用？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-有明确原生应用任务的macOS用户可在可撤销夹具上试用。先给单一应用读权限，再给控制，检查keyboardPolicy并对键盘激活做好预期；观察后动作，遇过期或目标不明时重新观察。发送、付款、删除等由人确认并核对结果，不把敏感flag当独立业务风险识别。未做本版本安装、动作与退出验收，因此不建议直接扩展到所有应用。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:134-148](https://github.com/Anionex/dsh-computer-use/blob/1e9c8862e99ee86519799b8f30e335d22c078ee7/README.md#L134-L148)
-
-默认键盘activate及可选pointer deny边界。
+预期状态传入动作但不是任务级验收
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（22行）</summary>
 
-````text
-The default interaction policy is:
-
-```yaml
-interaction:
-  focusPolicy: preserve
-  keyboardPolicy: activate
-  pointerInputPolicy: targeted
-  cursorVisualization: visible
-  cursorSpeedPxPerSecond: 1600
-  cursorAccelerationPxPerSecondSquared: 6000
-  cursorClickDelayMs: 90
-  cursorAutoHideMs: 0
+```text
+    let outcome: BackendActionResult
+    const request = {
+      action,
+      app: actionObservation.app,
+      expectedStateHash: actionObservation.stateHash,
+      interaction: this.config.interaction,
+      ...(element === undefined ? {} : { element }),
+      ...(actionObservation.window === undefined ? {} : { window: actionObservation.window }),
+    }
+    try {
+      this.confirmations.consume(context.agent, stored.backend.app, action)
+      if (cursorStarted && visualization?.kind === 'drag') {
+        const tracked = await this.backend.actDragWithCursor(
+          request,
+          visualization as BackendCursorAction & { kind: 'drag' },
+          signal,
+        )
+        recordCursor(tracked.cursor)
+        outcome = tracked.action
+      } else {
+        outcome = await this.backend.act(request, signal)
+      }
 ```
-
-`cursorVisualization: visible` displays the Agent's own non-interactive cursor for click, scroll, and drag only while the selected application is frontmost. It never replaces or moves the macOS system cursor. Set it to `hidden` when visual feedback is unwanted. `pointerInputPolicy: deny` disables coordinate click/fallback, scroll, and drag. `keyboardPolicy: activate` (Bundle default) makes `type-text` keyboard fallback and `press-key` reliable by activating the target app first; `focusPolicy: activate` is the broader compatibility mode that also activates and freshly revalidates before pointer cursor movement and input.
-````
 
 </details>
 

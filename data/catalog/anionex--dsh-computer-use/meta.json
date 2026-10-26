@@ -1,54 +1,44 @@
 {
     "repository": "Anionex/dsh-computer-use",
     "repository_id": 1333116579,
-    "captured_at": "2026-10-23T07:58:53.894Z",
-    "window_start": "2026-09-23T07:58:53.894Z",
-    "stars": 67,
-    "pushed_at": "2026-10-18T02:28:54Z",
+    "captured_at": "2026-10-26T09:07:10.506Z",
+    "window_start": "2026-09-26T09:07:10.506Z",
+    "stars": 70,
+    "pushed_at": "2026-10-26T05:07:46Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 2,
+        "closed": 12,
+        "created_30d": 4,
+        "closed_30d": 8,
+        "updated_30d": 9
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAnionex%2Fdsh-computer-use%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 66A6:338C39:D60B3:E8DF6:6ADB13C0 and timestamp 2026-10-23 07:58:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAnionex%2Fdsh-computer-use%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 67A4:20246:E7A3A:FAF35:6ADB13C1 and timestamp 2026-10-23 07:58:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAnionex%2Fdsh-computer-use%20is%3Aissue%20created%3A2026-09-23T07%3A58%3A53.894Z..2026-10-23T07%3A58%3A53.894Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 68D0:2419A:EA834:FDDB7:6ADB13C3 and timestamp 2026-10-23 07:58:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAnionex%2Fdsh-computer-use%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T07%3A58%3A53.894Z..2026-10-23T07%3A58%3A53.894Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6A98:1C49A:F7C79:10B250:6ADB13C5 and timestamp 2026-10-23 07:59:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAnionex%2Fdsh-computer-use%20is%3Aissue%20updated%3A2026-09-23T07%3A58%3A53.894Z..2026-10-23T07%3A58%3A53.894Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B9A:276AD:E59C9:F8C99:6ADB13C7 and timestamp 2026-10-23 07:59:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T12:12:11.673Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
+        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@anionex/dsh-computer-use",
-        "captured_at": "2026-10-23T07:59:03.382Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 3269,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40anionex%2Fdsh-computer-use",
+        "captured_at": "2026-10-26T09:07:10.506Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 3322,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40anionex%2Fdsh-computer-use",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T12:52:39.072Z",
-            "captured_at": "2026-10-23T07:59:03.382Z",
+            "captured_at": "2026-10-26T09:07:10.506Z",
             "source_url": "https://registry.npmjs.org/%40anionex%2Fdsh-computer-use",
             "error": null,
-            "latest_version": "0.3.4",
-            "latest_published_at": "2026-10-18T02:28:10.513Z",
+            "latest_version": "0.3.5",
+            "latest_published_at": "2026-10-26T05:01:33.559Z",
             "latest_error": null
         }
     }

@@ -28,8 +28,10 @@
 | [dock-spreadsheet](#plugin-1400109121-root) | 在DSH dock-files中只读预览XLSX、XLS、ODS、CSV与TSV，支持切表、搜索筛选、坐标检查和显式链接导航。 | 可信私有Host普通文件可条件试用，先核三方加载/路径权限、缓存与字符串排序；公开Host/恶意大书/验算不宜直接依赖。 |
 | [DPH 任务看板](#plugin-1336994666-root) | 把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。 | 多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 |
 | [DSH Calendar](#plugin-1376880747-root) | 在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。 | 备份小vault中可先只读试用，再核对每次局部写回的整文件差异；存在频繁外部编辑或无恢复能力时先观察。 |
-| [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、元素操作、定向输入、截图与权限诊断。 | 有明确原生应用任务的macOS用户可在可撤销夹具上试用。 |
+| [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、语义操作和定向输入能力。 | 需要操作无API原生应用的macOS开发者可先试可丢弃表单或编辑任务。 |
+| [DSH Cost Tracker](#plugin-1338230382-root) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 只建议需要会话级费用线索且能准备可丢弃宿主副本的用户，先在该副本仅启本地账本，对正常、缓存、取消三类调用与厂商账单核对。 |
 | [DSH Douyin](#plugin-1332642596-root) | 在DSH WebUI侧栏或浮动面板播放第三方随机短视频，支持系列选择、直链历史与连播。 | 先观察；确有DSH内娱乐需求者可在隔离profile单源短时评估，确认收起停止与布局恢复，持续报错或干扰主任务则停用。 |
+| [DSH Weekly Panel](#plugin-1400385991-packages-dsh-weekly-panel) | 在DSH主面板显示插件周榜、模型可用性与赞助信息。 | 经常查看DSH周榜的本地用户可试用主面板入口。 |
 | [dsh-accountdisplayname-edit](#plugin-1424420835-root) | 在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。 | 经常分享界面的用户可先在非敏感截图中试用，检查保存、取消、恢复默认和重载；不要省略整图复核。 |
 | [dsh-ai-arcade](#plugin-1413897334-root) | DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。 | 假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。 |
 | [dsh-alive](#plugin-1335661970-root) | 在会话头部显示本地 DSH 插件端点的 15 秒轮询可达状态。 | 仅以“本地 DSH Web 端点可达”解释，并在固定版本上做故障矩阵。 |
@@ -103,6 +105,7 @@
 | [dsh-opencodego-status](#plugin-1426264117-root) | 在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。 | 当前建议保持观察。 |
 | [dsh-peak-runner](#plugin-1417227361-root) | 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。 | 自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | 有条件试用，可信本机小PCM/低音量先核事件和设备；声音不是任务验收，远端和严格隔离提醒先观察。 |
+| [dsh-pet 插件](#plugin-1333652151-dsh-pet) | 在DSH浏览器及可选桌面窗口中显示动画宠物，并联动会话状态、通知、余额与聊天。 | 明确想要动画陪伴且会配置DSH的个人用户，可在独立profile加载前设仅web、关闭whisper和不需的余额/通知，先核对一只宠物的状态与操作不遮挡。 |
 | [dsh-pet-live2d](#plugin-1378097401-dsh-live2d-pet) | 为DSH网页挂载Live2D桌宠，支持鼠标互动、换装和会话事件驱动的动作表情。 | 建议备份自定义素材后个人试用网页端，先核对当前会话归属、穿透与声音，再观察长回合资源和禁用恢复；停止条件见 [Q05](../../plugins/a8chann--dsh-pet-live2d--dsh-live2d-pet/INSIGHT.md#research-q05)。 |
 | [dsh-pick](#plugin-1423941835-root) | 从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。 | 可把它当候选搜索和数字比较工具试用；先核对日期与兼容，再读目标插件权限和源码。 |
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 为 DSH 侧栏提供跨工作区置顶会话分组，支持组内搜索、状态显示、打开与取消置顶。 | 建议多工作区少量重点会话用户试用，核对顺序、状态和取消置顶；DOM变更、双挂载或操作失败不清时停用，回到原生导航。 |
@@ -179,6 +182,7 @@
 | [dsh-wsl-wininput](#plugin-1391142149-root) | 让 WSL 中的 DSH 按窗口和 UI Automation 元素定向发送 Windows 输入。 | 建议观察。 |
 | [dsh-youreyes](#plugin-1335045545-root) | 将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。 | 建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。 |
 | [dsh-yukimi-theme](#plugin-1335281982-root) | DSH Web 佐城雪美主题与 Windows desktop profile 桌宠通知，素材从外部 wiki URL 加载。 | 先在隔离 Web 看可读性，再完整打包桌面副本、核通知/回滚和素材权利。 |
+| [DSH小鲸鱼记账挂件](#plugin-1337920628-root) | 在DSH界面显示余额、会话用量、可自定义气泡与交互提醒。 | 可给希望少切控制台的个人用户试用常驻余额和当轮提示，先确认账户范围与部分数据标签。 |
 | [feiyu-memory](#plugin-1415822787-root) | 为Harness保存人格内核、判断和情景日记，并在后续会话按相关性召回记忆。 | 建议观察，不用于正式工作、多人或敏感会话。 |
 | [harness-memory](#plugin-1333716755-plugins-harness-memory) | 通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。 | 可在单项目或隔离profile保存少量非敏感偏好试用。 |
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | 先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。 |
@@ -186,6 +190,7 @@
 | [KeyFlow Typing Studio](#plugin-1428515480-root) | DSH内的中英文打字练习面板，提供拼音、计时、上屏计分和本地记录。 | 已有DSH且需要短时双语练习者可控试用；先验证本人IME、纠错口径及本地保存，不将成绩作为正式考试或长期学习成效证明。 |
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。 | 先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。 |
 | [oil-dsh-title](#plugin-1374149009-root) | 按最近用户消息异步维护DSH会话标题，采用emoji与对象/持续目标格式并调用官方rename。 | 先观察；敏感/重要会话应先有人工命名保护与最小输入策略。 |
+| [Petdex](#plugin-1227102698-root) | 提供动画宠物画廊、安装CLI与响应编码Agent活动的独立桌面应用。 | 喜欢动画陪伴的编码用户可小范围试用桌面宠物与DSH桥。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。 | 个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。 |
 | [Voyager](#plugin-1069943001-root) | 浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。 | 跨多个AI网页重复整理聊天的用户可先在一个非敏感站点试用单项功能，备份数据后再导入简单JSON，并测试启停、同页多插件和页面刷新。 |
 | [插件名片](#plugin-1424219088-root) | 为DSH插件换图标、中文备注和说明，支持文件夹、收藏、排序、导入导出及启停卸载。 | 先观察，继续研究从授权边界、可信图标和可恢复备份着手。 |
@@ -446,15 +451,29 @@
 
 ## [DSH Computer Use](../../plugins/anionex--dsh-computer-use/INSIGHT.md)
 
-[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,269](https://img.shields.io/static/v1?label=npm+30d&message=3%2C269&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
+[![GitHub ★ 70](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=70&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,322](https://img.shields.io/static/v1?label=npm+30d&message=3%2C322&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
 
-> **用途**：目标是必须跨入macOS原生应用、缺少更窄API的Agent任务，例如读取窗口、修改控件后核查状态。合格交付是目标应用内业务结果正确，且用户前台工作未受到非预期干扰。能用应用API、CLI或浏览器DOM完成时应先用它们；本插件不负责像素语义/OCR，也不把截图或点击成功当最终任务完成。
+> **用途**：适用于macOS开发者需要让Agent操作没有现成API的原生应用，合格结果是观察到指定应用的实际状态、操作后重新观察并核对目标变化。原办法是人工点按或编写Accessibility/坐标脚本；浏览器任务和已有CLI任务应优先用专用接口，插件自己的说明也明确这一边界。这里不是替代所有接口的万能自动化，而是补足跨原生应用的最后一段操作。重复痛点在人工接管和脚本定位维护，但真实频率与收益仍无独立记录。
 
-> **亮点**：将观察绑定、精确进程窗口输入、应用授权和动作后状态组织为原生动作层，较盲目桌面脚本有可解释控制边界。[Q03](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q03)
+> **亮点**：[Q02](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
 
-> **思考**：默认键盘会激活应用，敏感确认依赖调用方正确设置sensitive；不能把定向路由当成全场景无干扰或自动识别高影响保证。[Q04](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q04)
+> **思考**：[Q03](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q03)动作成功不是业务完成；应用AX支持和失败后的结果判定决定自动化价值，高影响任务不应盲重试。
 
-> **建议**：未验证假设是把动作风险声明与激活后输入目标摘要一起纳入确认计划，对发送、删除等明确应用语义加入可配置分类器，能减少仅依赖模型sensitive标记的漏判。推导自确认消费条件与键盘激活后焦点变化。最小验证在不真实提交的夹具中构造改标签、按钮重排和激活后焦点切换，比较漏确认率、误拒绝及人工次数；分类器若不能识别或授权负担高于收益，应只收缩可操作应用范围。 [Q08](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q08)
+> **建议**：[Q05](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q05)提出任务级后置条件验收的未验证假设，在延迟和重绘场景核对误报完成。
+
+<a id="plugin-1338230382-root"></a>
+
+## [DSH Cost Tracker](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Angelyeye/dsh-cost-tracker) [![npm 30d 1,601](https://img.shields.io/static/v1?label=npm+30d&message=1%2C601&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@angelyeye/dsh-cost-tracker) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@angelyeye/dsh-cost-tracker)
+
+> **用途**：适合反复使用多个模型、希望把会话token与日/月支出分开的DSH Web用户。交付物是按模型和日期归集的估算账本、真实按量与订阅等值的不同口径，以及可导出的明细/汇总。原办法是分别查厂商账单并手工映射会话；插件弥补会话维度和本地联查，但不替代供应商结算单。作者描述多机汇总为可选自建服务，不应将本地持久化声明理解为所有模式均不联网。
+
+> **亮点**：[Q03](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q03)支持会话归属、计价时代与双轨口径的集成贡献；相对厂商账单增加会话解释，不将本地估算称为真实结算。
+
+> **思考**：[Q04](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q04)指出无usage与价格规则会造成账单差额，且启动无条件修补宿主UI产物。仅本地账本并不能隔离这一写入；若不能准备可丢弃宿主副本和原文件备份，应观察而非在日常宿主直接试用，停插件也不证明产物还原。
+
+> **建议**：[Q08](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q08)提出未验证的已计价/待对账双账簿，以差额定位率检验是否比单总额更可用。
 
 <a id="plugin-1332642596-root"></a>
 
@@ -469,6 +488,20 @@
 > **思考**：相同URL回放不等于永久同一视频。内存历史、第三方跳转/时效与浏览器策略限制可靠性，安装到DSH的净便利也尚无独立用户依据。[Q03](../../plugins/anacondakc--dsh-douyin/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是暴露媒体身份/时效和失败原因、采用主动续播，能比默认随机连播降低坏链重试及主任务打断；需和独立标签页及当前dock对照回放率、带宽和中断负担。[Q04](../../plugins/anacondakc--dsh-douyin/INSIGHT.md#research-q04)
+
+<a id="plugin-1400385991-packages-dsh-weekly-panel"></a>
+
+## [DSH Weekly Panel](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/514006234/dsh-weekly-check)
+
+> **用途**：目标是经常查看DSH生态周榜的用户，在宿主内读TOP10、模型可用性与赞助信息。合格结果是读到有更新时间和来源链接的公开榜单，不是装上推荐即获得收益。原办法直接打开GitHub Pages榜单即可，面板只减少切出宿主的操作；对偶尔查看者，浏览器书签通常足够。没有材料证明周榜热度预测插件适用性。
+
+> **亮点**：[Q02](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q02)只读缓存接入与主面板入口是可核查的集成便利，未识别出相对公开周榜本身的新研究能力。
+
+> **思考**：[Q01](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q01)、[Q03](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q03)网页已提供同样内容，缓存陈旧不能当最新；低频用户可能无需额外安装。
+
+> **建议**：[Q05](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q05)以同内容书签为对照检验主动拉取面板的价值，假设未验证。
 
 <a id="plugin-1424420835-root"></a>
 
@@ -1491,6 +1524,20 @@
 > **思考**：done仅事件启发式，缺起点0比较/失败结果与root降级可误响；试听无cwd、即回不等可听；大/畸形WAV与无界播放/缓存及桥认证边界需核。详见[Q03](../../plugins/117bs--dsh-perlica-ding/INSIGHT.md#research-q03)、[Q04](../../plugins/117bs--dsh-perlica-ding/INSIGHT.md#research-q04)。
 
 > **建议**：可探索agent-turn原因与音源一致、播放器阶段明确的有界通知收据，核误响/漏响/资源；进程成功仍非人已听到，未实现。详见[Q06](../../plugins/117bs--dsh-perlica-ding/INSIGHT.md#research-q06)。
+
+<a id="plugin-1333652151-dsh-pet"></a>
+
+## [dsh-pet 插件](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md)
+
+[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=yellow&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet) [![npm 30d 83,202](https://img.shields.io/static/v1?label=npm+30d&message=83%2C202&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pet) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pet)
+
+> **用途**：面向明确喜欢动画陪伴、希望在等Agent时看到状态提示的DSH个人用户。合格结果是动画正常播放、状态/通知与对应会话一致且不干扰操作；不是代码交付效率或任务质量提高。简单办法是静态桌宠、原生状态和通知，若只关心任务完成提示，原生功能可能已足够。该子目录是实际npm插件包，根仓库还含素材制作链，不能把它们算成同一安装入口。
+
+> **亮点**：[Q03](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q03)识别出动画池、共享双端交互和DSH事件结合的表现层贡献。相比静态桌宠多出会话联动，原生通知仍可替代任务提示，不能把娱乐偏好当生产力改善或把成功动画当验收。
+
+> **思考**：[Q04](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q04)核实默认both显示与周期碎碎念会带来Electron下载、Helper及模型调用；限制到浏览器也需加载前确认配置，而不是安装后再关窗口。路由准入、资源负担和许可还需按具体环境核对。
+
+> **建议**：[Q08](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q08)提出未验证的三种能力预算与“本轮结束”语义，将动画、状态、AI分开显式选择；以用户预测后台开销和退出行为的正确率对照，误判不下降则否定。
 
 <a id="plugin-1378097401-dsh-live2d-pet"></a>
 
@@ -2556,6 +2603,20 @@
 
 > **建议**：提供隐藏/泛化标题选项与离线可授权素材集，可改善隐私和稳定性；本版本未证。详见[Q03](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q03)。
 
+<a id="plugin-1337920628-root"></a>
+
+## [DSH小鲸鱼记账挂件](../../plugins/meteornox--deepseek-balance-whale-widget/INSIGHT.md)
+
+[![GitHub ★ 6,023](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C023&color=yellow&logo=github&style=flat)](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) [![npm 30d 196,943](https://img.shields.io/static/v1?label=npm+30d&message=196%2C943&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-whale-widget) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-whale-widget)
+
+> **用途**：面向长期开着DSH并希望随时看余额和当轮消耗的个人开发者。原办法是切到账户控制台、查看usage或自行记账；合格结果是明确区分账户观测、充值校正和本地费用估计的提示。它不承担财务报销或跨用户费用归因，喜欢挂件外观也不能证明成本控制需求。
+
+> **亮点**：相对手动切控制台，常驻余额和轮次提示把消费反馈放回工作界面；相对把余额差直接称花费，它显式拆分充值和消费并提供校正。增量是观察与解释的一体入口，不是新的计费真相源。泡泡、音效和角色定制主要是局部交互便利，不能作为节省API支出的证据。 依据[Q03](../../plugins/meteornox--deepseek-balance-whale-widget/INSIGHT.md#research-q03)。
+
+> **思考**：关键质疑是两次余额采样之间发生的消费与充值能否被唯一分解。账本只能看到净差，即使分别累计正负变化，同一间隔中的充值抵消扣费仍需人工校正。partialDay检查首末观测与午夜距离，不能证明中间没有长断点。多个设备或其他应用共用账户时，账户余额变化也不能归因本机本轮；README已区分本机模型估算与账户口径。 依据[Q04](../../plugins/meteornox--deepseek-balance-whale-widget/INSIGHT.md#research-q04)。
+
+> **建议**：未验证假设是保存相邻观测间最大缺口并显示“期间不可归因”，能减少用户把部分余额变化当完整日消费。用包含离线、跨午夜、充值与其他设备扣费的固定流水对比当前净差算法和带缺口说明版本；观察误认完整账单的比例及人工核对时间。若用户仍把账户估算当本机费用，或采样无法覆盖关键交易，不应升级为财务用途。 依据[Q08](../../plugins/meteornox--deepseek-balance-whale-widget/INSIGHT.md#research-q08)。
+
 <a id="plugin-1415822787-root"></a>
 
 ## [feiyu-memory](../../plugins/airpineapplea--feiyu-memory/INSIGHT.md)
@@ -2653,6 +2714,20 @@
 > **思考**：生成中缺用户seq和标题CAS，新意图可能被丢/覆盖；Windows hint与隐私校验仅有限模式。详见[Q03](../../plugins/598829314--oil-dsh-title/INSIGHT.md#research-q03)。
 
 > **建议**：从丢弃式互斥推导版本化最小上下文、最后意图单飞与人工让权，按具体竞争/隐私反例比较误改和成本；未验证。详见[Q05](../../plugins/598829314--oil-dsh-title/INSIGHT.md#research-q05)。
+
+<a id="plugin-1227102698-root"></a>
+
+## [Petdex](../../plugins/crafter-station--petdex/INSIGHT.md)
+
+[![GitHub ★ 4,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C283&color=yellow&logo=github&style=flat)](https://github.com/crafter-station/petdex)
+
+> **用途**：Petdex根项目包含宠物画廊、CLI和独立桌面应用，不是根包即可加载的DSH插件。目标是喜欢动画陪伴、希望离开聊天窗口时看到Agent活动的用户；合格结果是宠物显示工作或等待状态，不能用动画证明代码任务完成。原办法是原生状态栏或桌面通知，若用户只需要可靠完成提醒，新增桌宠未必必要。DSH桥位于独立integration子路径，本次根项目研究仅抽查该连通机制和作者分发结构。
+
+> **亮点**：[Q02](../../plugins/crafter-station--petdex/INSIGHT.md#research-q02)DSH桥把会话事件映射为宠物状态并隔离UI发送失败；事件归一化可借鉴，根项目是跨Agent宠物平台而非直接DSH插件。
+
+> **思考**：[Q03](../../plugins/crafter-station--petdex/INSIGHT.md#research-q03)尽力队列与吞掉发送失败使动画不能作为可靠完成记录；状态提示价值应与娱乐陪伴分开。
+
+> **建议**：[Q05](../../plugins/crafter-station--petdex/INSIGHT.md#research-q05)提出事件新鲜度与失联未知状态的未验证假设，用离线、溢出和重启对照误判。
 
 <a id="plugin-1418691015-root"></a>
 

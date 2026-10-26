@@ -1,10 +1,10 @@
 {
     "repository": "Alice-Marx/dsh-model-router",
     "repository_id": 1353534254,
-    "captured_at": "2026-10-23T07:58:16.196Z",
-    "window_start": "2026-09-23T07:58:16.196Z",
-    "stars": 281,
-    "pushed_at": "2026-10-22T07:58:55Z",
+    "captured_at": "2026-10-26T09:07:10.506Z",
+    "window_start": "2026-09-26T09:07:10.506Z",
+    "stars": 383,
+    "pushed_at": "2026-10-26T07:27:15Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -13,21 +13,32 @@
         "updated_30d": 0
     },
     "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-25T21:15:37.465Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
+        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
+        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@ljwei-stak/dsh-model-router",
-        "captured_at": "2026-10-23T07:58:30.251Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 4168,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/%40ljwei-stak%2Fdsh-model-router",
+        "captured_at": "2026-10-26T09:07:10.506Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 4234,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40ljwei-stak%2Fdsh-model-router",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-02T17:11:45.891Z",
-            "captured_at": "2026-10-23T07:58:30.251Z",
+            "captured_at": "2026-10-25T11:38:12.058Z",
             "source_url": "https://registry.npmjs.org/%40ljwei-stak%2Fdsh-model-router",
             "error": null,
-            "latest_version": "0.22.2",
-            "latest_published_at": "2026-10-19T09:04:31.452Z",
+            "latest_version": "0.25.1",
+            "latest_published_at": "2026-10-24T10:14:08.387Z",
             "latest_error": null
         }
     }

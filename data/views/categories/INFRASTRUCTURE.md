@@ -14,8 +14,8 @@
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。 | 适合已有 DSH 环境、希望有组织地筛选扩展的用户试用索引；先确认候选包身份与目标插件自己的条件，再在不含敏感凭据的环境验收加载、核心功能和禁用。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [DeepSeek Harness](#plugin-1333065091-root) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | 有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。 |
-| [DSH Cost Tracker](#plugin-1338230382-root) | 记录DSH模型调用用量和估算费用，提供仪表盘、查询工具及可选多机同步。 | 希望观察DSH调用趋势的个人用户可在备份数据后试用，先关闭不需要的云同步和账号功能，抽样核对usage与供应商账单。 |
 | [DSH Desktop](#plugin-1333321333-root) | 独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。 | 先在新用户数据目录/可恢复profile试用社区包，核channel/runtime及访问开关，验证启动/切换/禁用恢复后再接主数据。 |
+| [DSH Market](#plugin-1333807290-root) | 在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。 | 维护多个社区插件的DSH用户可先在克隆profile中试用安装和备份流程。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | 重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
@@ -96,9 +96,13 @@
 | [dsh-wsl-wslconfig](#plugin-1351854461-root) | 读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。 | 确定目标路径/原文安全后只作线索试用，空字段先核错误。 |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
+| [Mirage](#plugin-1231135337-root) | 通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。 | 构建跨数据源Agent的平台开发者可先用RAM和只读测试源试验Mirage。 |
+| [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 将DSH文件、Shell、子进程和溢出输出接口接到Mirage虚拟工作区。 | 需要让DSH仅访问受控挂载的平台开发者可在克隆profile里试用该适配。 |
 | [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | [Q06](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。 |
 | [plugin-usage-billing](#plugin-1363429979-plugin-usage-billing) | 从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。 | 先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
+| [Treg](#plugin-1301657572-root) | 提供统一Agent工具目录、服务端凭据注入、API中继和调用计费管理。 | 需要多供应商API或团队凭据共享的开发者可先用非敏感只读任务和明确小预算试用Treg。 |
+| [Yao Agents](#plugin-403559729-root) | 自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。 | 当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。 |
 | [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | 可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。 |
 | [元冰可 · 企业 AI 资源管理平台](#plugin-1416699252-root) | 以插件化控制平面统一管理企业 MCP、Skill、Agent、AI 应用、身份、审计与用量。 | 观察；有平台团队、真实匿名案件和恢复责任人后，从一种资源建立闭环，暂不全栈生产铺开。 |
 
@@ -158,20 +162,6 @@
 
 > **建议**：未验证假设是以作用域、持久事件、取消/清理的接缝验收预测插件互换成本，优于仅semver；同任务对照修改量与恢复，成本不降则否定。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04)
 
-<a id="plugin-1338230382-root"></a>
-
-## [DSH Cost Tracker](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Angelyeye/dsh-cost-tracker) [![npm 30d 1,908](https://img.shields.io/static/v1?label=npm+30d&message=1%2C908&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@angelyeye/dsh-cost-tracker) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@angelyeye/dsh-cost-tracker)
-
-> **用途**：经常切换模型、按量与订阅套餐的DSH Web用户需要知道调用量和估计费用的来源。合格结果是可与供应商账单核对的用量记录、价格口径及差异解释。简单替代为供应商用量页加电子表格；本插件提供会话内查询、统一仪表盘及可选多机汇总，不能因此视为供应商结算凭证。
-
-> **亮点**：按计费时代和订阅口径组织本地usage账本，统一会话查询与仪表盘，历史不被当前单价简单覆盖。[Q03](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q03)
-
-> **思考**：180天内明细超过200000条时直接截断未先汇总被删项，不能承诺全时段永远精确；实际影响未经运行复现。[Q04](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q04)
-
-> **建议**：未验证假设是每条记录携带供应商usage原文摘要、计价来源/版本、计费时点和完整性标记，并在任何淘汰前做守恒汇总，可降低误把估算当现金及高负载漏统计。推导自usage捕获、价格fallback和明细截断。最小验证覆盖无usage、跨时代边界、订阅、重启及超明细上限，逐项比较原始输入总量与明细+汇总；若差额仍不可解释或明显增加维护成本，应收缩为仅显示用量。 [Q08](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md#research-q08)
-
 <a id="plugin-1333321333-root"></a>
 
 ## [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md)
@@ -185,6 +175,20 @@
 > **思考**：generation局部安全边界和恢复按钮不保证所有路由、启动故障与插件组合；模式替换frame存在DOM兼容成本，真实安装/更新需单独验收。[Q02](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md#research-q02) [Q03](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是把profile/generation身份及恢复检查点变成用户诊断收据，减少串配置和更新故障排查；对照Web固定故障恢复时间与资源，无改善则否定。[Q04](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md#research-q04)
+
+<a id="plugin-1333807290-root"></a>
+
+## [DSH Market](../../plugins/dsh-market--dsh-market/INSIGHT.md)
+
+[![GitHub ★ 8,811](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C811&color=yellow&logo=github&style=flat)](https://github.com/dsh-market/dsh-market) [![npm 30d 538,384](https://img.shields.io/static/v1?label=npm+30d&message=538%2C384&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dshmarket)
+
+> **用途**：目标是维护多个社区插件的DSH用户，任务包括发现、装入、更新和恢复profile；合格结果不是下载成功，而是profile仍能启动且目标插件实际接线。原办法为原生Discover加CLI及手动备份；README已承认同一目录可直接加入原生Discover，因此纯搜索并非独占价值。分组、备注、备份与故障恢复把多步维护放到一处，反复维护工作量较大时才更有价值。
+
+> **亮点**：[Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02)相对单次CLI安装，将新增包加载校验、entry冲突与磁盘manifest对账整合到维护链；它改变安装办结条件，但不是第三方插件安全保证。
+
+> **思考**：[Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03)市场与宿主共处故障域，旧版鉴权及进程崩溃恢复需单独验证；单文件rename和catch回滚不能当跨文件事务。
+
+> **建议**：[Q05](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q05)以独立profile试装和变更计划前移恢复责任，故障注入比较可启动性和修复耗时，假设未验证。
 
 <a id="plugin-1387227102-root"></a>
 
@@ -1306,6 +1310,34 @@
 
 > **建议**：未验证改进为创建/授权事务化状态、图片 allowlist/限量、写操作幂等与连接路由鉴权加强。详见[Q05](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md#research-q05)。
 
+<a id="plugin-1231135337-root"></a>
+
+## [Mirage](../../plugins/strukto-ai--mirage/INSIGHT.md)
+
+[![GitHub ★ 3,724](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C724&color=yellow&logo=github&style=flat)](https://github.com/strukto-ai/mirage)
+
+> **用途**：目标是Agent平台开发者将多个数据源挂成一个受控工作区，让Agent用ls/grep等熟悉操作读取材料并写出结果。合格结果是在正确权限下找到来源、产生可核对交付物，不能把统一路径当所有服务语义等价。原办法是各服务SDK/MCP或本地同步脚本；跨源管道较多时统一接口有价值，单源任务则直接API更简单。根项目是Python/TypeScript SDK与虚拟终端平台，DSH可加载适配另在typescript/packages/dsh，不能将根目录直接当宿主插件。
+
+> **亮点**：[Q02](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q02)将命令生命周期、挂载权限和session上下文统一，适合跨数据源管道；相对多SDK有实质组合增量，但不宣称文件语义消除外部系统差异。
+
+> **思考**：[Q03](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q03)权限依赖VFS正确声明effect，跨源写入和runtime隔离也需分别核对；统一接口不能当通用事务或沙箱保证。
+
+> **建议**：[Q05](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q05)提出先只读、保留来源版本再逐步放行effect的未验证方向，与独立SDK对照合格交付和维护成本。
+
+<a id="plugin-1231135337-typescript-packages-dsh"></a>
+
+## [Mirage DSH Providers](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md)
+
+[![GitHub ★ 3,724](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C724&color=yellow&logo=github&style=flat)](https://github.com/strukto-ai/mirage) [![npm 30d 1,080](https://img.shields.io/static/v1?label=npm+30d&message=1%2C080&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@struktoai/mirage-dsh) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@struktoai/mirage-dsh)
+
+> **用途**：本组件@struktoai/mirage-dsh是可加载DSH bundle，负责把DSH文件和shell接口接到Mirage挂载工作区；根项目的虚拟终端、数据源和runtime由其他包提供。目标是需要让Agent只见一组受控数据源的平台开发者，合格结果是DSH文件工具、bash和溢出结果在同一个虚拟世界读取，而不是意外回到host磁盘。原办法保留DSH默认fs/bash加外部数据工具；仅做本地编码不需要替换整套provider。
+
+> **亮点**：[Q02](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md#research-q02)相对独立SDK工具，本组件保留DSH接口并统一fs、shell与spill世界，workspace所有权和session绑定有明确适配增量。
+
+> **思考**：[Q03](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md#research-q03)无版本backend让陈旧写保护降级，替换provider还改变host搜索/cwd语义；能加载不能等同完整兼容。
+
+> **建议**：[Q05](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md#research-q05)提出fs/shell/spill一致性探针的未验证假设，用版本缺失与并发任务检验预测价值。
+
 <a id="plugin-1385896447-root"></a>
 
 ## [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md)
@@ -1347,6 +1379,34 @@
 > **思考**：哈希链只能检测已记录内容的后续变更，不能证明事件未遗漏、主机可信或记录中的业务事实真实。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md#research-q04)。
 
 > **建议**：未来可探索：可将周期性链头锚定到独立存储，并给每类事件增加覆盖率计数，从而同时检测篡改和采集缺口。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md#research-q08)。
+
+<a id="plugin-1301657572-root"></a>
+
+## [Treg](../../plugins/superdesigndev--treg/INSIGHT.md)
+
+[![GitHub ★ 6,040](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C040&color=yellow&logo=github&style=flat)](https://github.com/superdesigndev/treg)
+
+> **用途**：Treg根项目是工具网关与凭据/计费平台，DSH子入口只提供Skill和MCP连接。目标是偶尔使用多供应商API、或团队需共享受控凭据的Agent开发者；合格结果是拿到目标provider实际响应并核清调用费用，原办法为逐家账号、密钥和工具接线。按需目录和服务端注入可降低接线摩擦，但作者宣传的价格、赠额与供应商订阅对比是固定README声明，不是本轮验证的现价或节省。单一已有API账户的用户，直连通常更简单。
+
+> **亮点**：[Q02](../../plugins/superdesigndev--treg/INSIGHT.md#research-q02)相对逐Agent分发供应商密钥，集中凭据binding与组织级幂等隔离有明确集成价值；DSH仅是Skill/MCP入口，不将全部平台贡献归于插件壳。
+
+> **思考**：[Q03](../../plugins/superdesigndev--treg/INSIGHT.md#research-q03)网关仍处理敏感数据与secret，调用失败也可能已计费；unknown outcome需对账，不能换key盲重试。
+
+> **建议**：[Q05](../../plugins/superdesigndev--treg/INSIGHT.md#research-q05)提出把候选价格、请求预览和失败对账纳入工具选择的未验证假设，对照直连API核对配置、费用和误重试。
+
+<a id="plugin-403559729-root"></a>
+
+## [Yao Agents](../../plugins/yaoapp--yao/INSIGHT.md)
+
+[![GitHub ★ 8,190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C190&color=yellow&logo=github&style=flat)](https://github.com/YaoApp/yao)
+
+> **用途**：Yao根项目是自托管Agent应用/运行平台，不是安装进DSH的一层插件。适合已有多台工作机器、需要把对话任务与各节点工作区统一管理的开发或运营负责人。合格结果是指定任务在预期节点处理正确工作区并产出可核查文件或业务结果；任务板显示completed不等于内容合格。简单办法是分别登录机器运行DSH/CLI并用人工任务板记录，单机用户可能无需承担平台部署。README的“越用越好”仅是作者主张，本轮未发现结果提升实验。
+
+> **亮点**：[Q03](../../plugins/yaoapp--yao/INSIGHT.md#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
+
+> **思考**：[Q04](../../plugins/yaoapp--yao/INSIGHT.md#research-q04)指出workspace组织隔离不等于所有模式的OS沙箱，completed/maxTokensAsSuccess不证明交付合格，准备材料写入失败还可能只warn继续。正常完成Cleanup有意保留子进程，离线节点回退又带来数据落位未知；这些核心生命周期边界尚未形成可验证的恢复与退出契约，应先观察而非以只读小任务掩盖整个平台的采用负担。
+
+> **建议**：[Q08](../../plugins/yaoapp--yao/INSIGHT.md#research-q08)提出未验证的节点/workspace、预期产物与独立验收三联收据，分离运行结束和业务办结；用掉线、token终止及产物缺失对照误办结率和人工成本，若身份无法可信绑定或负担抵消收益则否定。
 
 <a id="plugin-1368192539-root"></a>
 
