@@ -351,28 +351,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "定制等待区有明确且可逆的试用范围，先检查计时、读屏、持久化和资源影响，DOM耦合使其不宜直接宣称普遍兼容。",
+                "reason": "希望个性化DSH等待区且能接受主题兼容排查的个人用户，可先关闭远端词库与动画试用自定义短句。相比手改宿主或简单CSS，源码支持按阶段轮换并将个人配置保存在包外，便利是推断而非效率提升。若宿主计时或读屏受损、主题隐藏状态行或配置冲突，禁用插件并保留配置，退回原生状态显示。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "经常等待且希望定制的人群明确，需求普遍性未知。"
+                        "score": 8,
+                        "rationale": "[Q01](#research-q01)的README.md:3–11明确个人文案和动画，未改变任务质量或执行速度；lib/client.js:2959–3004是状态行接管而非业务进度。可定位喜好人群但主要是偶发装饰便利，缺少重复痛点和必须安装的采用必要性，不达15分；个人表达需求确实存在于功能目标，不记0分需求不成立。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "相对CSS多了词库、阶段与持久化，核心模型流程无增益。"
+                        "rationale": "[Q02](#research-q02)的lib/index.js:1382–1394分层词库，1195–1214包外原子配置，client.js:5200–5255响应宿主重渲染。相对CSS或改源能解释持久词库和阶段切换增量，超过6分局部入口便利；client.js:2966–2978明确其他主题未配合仍会隐藏，未证实等待体验改善，不足19分实质工作流改善。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "只检查源码，无真实宿主结果。"
+                        "rationale": "[Q02](#research-q02)至[Q05](#research-q05)的client.js:2959–3004能核对两代结构依赖，index.js:1785–1799能核对ETag自愿保护，client.js:6469–6508有卸载清理。核心显示、配置与边界有材料，超过6分；读屏、时间保留和第三方主题实际共存未执行，不能19分，源码多不表示兼容已证实。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "可关闭和保留包外配置，安装及外观排查仍有负担，性能未知。"
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)的index.js:90–95默认六小时拉main词库，1785–1799缺If-Match仍覆盖；client.js:2966–2978要求其他主题配合。冻结远端、备份个人配置、禁用回原生可行，使负担超过5分重要恢复缺口；仍需DOM兼容与配置维护，资源未测，不足15分轻负担。"
                     }
                 },
-                "score": 64,
+                "score": 44,
                 "revision": "ae83fc850c30e78b429a44865f5016b2ef26b08b",
-                "reviewed_at": "2026-10-26T02:06:39.850Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -405,7 +405,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "8438cd0642c0863425bf549ecf4bf982a603151149aab1d054208aea4c1c8d9c"
+            "analysis_sha256": "cfa9e701acac2e94ceb75a80a16f79bd92470698b473e6204e37e45cf382ee7b"
         },
         "publication.metadata": "data/catalog/01virex--dsh-status-rotator/meta.json",
         "publication.summaries": {

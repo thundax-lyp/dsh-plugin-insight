@@ -364,28 +364,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "小图就地阅读有可回退价值，可strict限额试用并优先复制报错；主线程和发送修复边界不支持无条件安装。详见[Q06](#research-q06)。",
+                "reason": "经常在DSH阅读流程图的用户可保持严格模式和大小限制试用小型Mermaid就地渲染。相比复制到独立渲染器，源码支持同页展示、放大并保留源码，理解效率未测。出现页面卡顿、源码与图不符或需要AI修复时，应保留草稿并退回复制源码到独立工具，不直接点击自动发送。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "经常读流程图人群明确，使用频率未独立测。"
+                        "rationale": "依据[Q01](#research-q01)、[Q04](#research-q04)，README第19—32行和src/client/dom.ts第61—85行将输入限定为已定格mermaid围栏，目标是读技术消息时同页看图及回查源码。反复复制到外部站点再返回会话的步骤具体，支持23分高于只有潜在便利的15分。需求限经常读图者，独立编辑和复杂图设计不是该任务；没有真实阅读频率和理解正确率材料，不到30分，渲染成功不能当业务设计正确，低频纯文本用户仍可不用。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "就地展示和主题/放大有增量，外部工具可替代。"
+                        "score": 19,
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)，src/client/dom.ts第206—225行视口队列和289—330行替换与失败回退，将同源Mermaid、放大及原文保留组合进阅读步骤。相对外部复制能直接减少切换，具有可解释的实质流程改善，取19分而非13分。解析布局和消毒是上游能力，一张同步重图仍可能占主线程，AI修复还会碰草稿，不能取25分或扩大为任意图安全阅读；本轮没有净节时与资源测量，仅确认路径可用的源码机制。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码与静态测试支撑机制，未运行浏览器。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q05](#research-q05)，实际核查src/client/dom.ts第428—446行，确认修复直接写全局首个输入并发Enter；protocol.ts第50—71行固定strict，dom.ts第321—330行保留错误原文。核心加载、调度、失败及危险可选动作有固定代码覆盖，取13分高于局部宣传的6分。未执行浏览器与宿主渲染，mock超时不能证明同步CPU可终止，宿主DOM兼容仍未知，因此不取19分；避用修复入口不是声称缺陷已修。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "默认无模型调用但有渲染资源和修复草稿副作用需管理。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，package.json第46—64行引入Mermaid和Node条件，dom.ts第206—225行调度不等强制中断，428—446行修复会覆盖输入。小图阅读可退源码、默认不付模型调用，负担及退路可识别，取10分超过重要恢复缺口主导的5分。但配置合理上限、核图和保护草稿仍交给用户，资源卡顿未测，不能凭纯客户端取15分；禁用刷新可退出展示，不保证已误发草稿可恢复，故推荐明确不使用自动发送。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48",
-                "reviewed_at": "2026-10-22T05:09:43.653Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -416,7 +416,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "08ec4f23d6cdb1686e7852d82ad71ccdd3ce2a95bd545267d861a4722d0bfc88"
+            "analysis_sha256": "336907f9ddf83dd33eaa298d40b1fe0ca999901bff2cc046909d215d0dac2368"
         },
         "publication.metadata": "data/catalog/aks1st--dsh-mermaid/meta.json",
         "publication.summaries": {

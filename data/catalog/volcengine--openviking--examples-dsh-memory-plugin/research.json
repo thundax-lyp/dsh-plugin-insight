@@ -370,28 +370,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有服务时有清晰脱敏试用路径，尚无当前宿主及记忆质量验收。",
+                "reason": "已有OpenViking服务且能配置独立身份的DSH用户，可在脱敏项目试用跨会话事实捕获与召回。相比每轮手选Markdown上下文，源码支持事件捕获、提交和后续注入，减少搬运尚未实测。若召回其他项目事实、事实无法纠正或pending持续失败，停止自动注入并退回人工维护项目说明，同时核对服务器与本地队列。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多会话项目记忆场景较明确"
+                        "rationale": "[Q01](#research-q01)与README.md:1–20描述同仓库多轮任务，runtime.mjs:130–175接召回和捕获；每轮人工选择历史、约束遗漏的流程摩擦具体，超过15分。是否有持续高频需求、Markdown不足的实际样本仍未知，不给30分，也不把记忆条数当业务结果。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "自动接线比手动搬运方便，但收益未测"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)的runtime.mjs:130–175、181–213把查询、捕获、轮末提交及压缩边界提交串联；pending-queue.mjs:1–20补离线重播。相比手搬上下文增加自动交接与有限故障缓冲，超过13分；抽取和检索归上游，错误事实会再注入，不能认定25分的稳定净优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "仅固定源码核查"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)可在runtime.mjs:130–175核对peer和session参数、181–213核对提交阈值和可重试失败，pending-queue.mjs:29–40明确3次、7天及权限。核心链与服务依赖有直接源码，超过6分；真实服务隔离、纠错和断网恢复均未执行，不足19分，不能沿用旧夹具兼容声明。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "仍需服务、模型、纠错及运维"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)涉及服务器、模型抽取与上下文费、队列核对及事实纠正，pending-queue.mjs:1–20说明有限重试TTL。限定已有服务和脱敏项目使首次部署负担降低，失败能停注入、核pending、回人工说明，较5分有可行退路；仍需显著运维与事实复核，不能15分或承诺免费。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "4ab22a4923452362b60aef2826c2083ce36168d2",
-                "reviewed_at": "2026-10-24T10:33:38.424Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -422,7 +422,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T10:26:37.690Z",
-            "analysis_sha256": "fc3edf125d83541db20d87dcaf701590e58d28cab88644063add97958d4de366"
+            "analysis_sha256": "a73484bce2e7ca5e79c74d8b9ccea3f261a5a7853670fd7b0e797162e5845f10"
         },
         "publication.metadata": "data/catalog/volcengine--openviking--examples-dsh-memory-plugin/meta.json",
         "publication.summaries": {

@@ -381,28 +381,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合熟悉SSH或Docker的单管理员在可丢弃节点与工作区先试，重点核对节点身份、断线副作用和远端权限。",
+                "reason": "已能维护SSH或Docker的单管理员，可在可丢弃工作区试用将同一DSH会话的文件与命令执行路由到指定节点。相对手开SSH并搬运目录和结果，源码分析支持保留管理端对话并统一远端执行，未实测延迟或任务成本。节点身份不符、断线后副作用不明或操作误落本机时立即停止派发，退回直接SSH核对文件和进程。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "远端开发资源与移动控制任务明确。"
+                        "rationale": "[Q01](#research-q01)给出从Web发任务但代码位于另一台机器的具体分工，README.md:22-33限定控制端与执行端及单管理员。合格任务是文件、shell、PTY都在指定节点完成并回读产物，不是认证通过。重复搬运终端和会话上下文的摩擦可解释为什么已有远端运维者值得试，取75%即23分而不是一般用途的15分。多用户权限和长期团队需求没有直接材料，节点集中化也未证明优于现成远程开发环境，因此不满足30分，不能从多节点数量推需求。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "工作区统一路由比手工会话交接有价值。"
+                        "rationale": "[Q02](#research-q02)的最长目录前缀绑定、fs/shell/PTY装饰和unrouted报错，组成相对手开SSH的执行位置一致性增量；复查packages/dshb/cordis.patch.yml:1-17确认这不是仅UI入口，而是bundle组合。指定节点的工具链可复用对话，改变了可解释的执行流程，取75%即19分，超过局部便利13分。SSH、Docker能力归上游；[Q03](#research-q03)说明通道恢复不保证命令状态可恢复，且未比较完整远程工作流效率，因此不足25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码可追踪但无远端验收。"
+                        "rationale": "[Q02](#research-q02)至[Q04](#research-q04)定位绑定、路由、认证和连接重试，auth/gate.ts:11-22复查确认loopback或有效Cookie放行只是管理入口而非远端文件授权。已有材料能说明错路由显式失败和单管理员测试任务，超过只读声明的6分，故50%即13分。没有真实fs/shell/PTY联调和断线故障记录，装饰与宿主其他插件组合也未知，不能升19分；认证分支存在更不能当多租户安全或全部副作用可恢复的证据。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "多服务、凭据、节点和兼容维护负担较高。"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)明确需维护管理端、凭据、SSH/Docker节点、目录绑定及心跳，README.md:37-42复查亦要求运行环境和Docker引擎。故采用负担不只是一次安装；断线后须分别查通道、远端进程和产物，不能盲重试，失败恢复有重要缺口，取25%即5分。熟悉运维者仍有直接SSH退路、可丢弃任务可控制损失，因此不是0分不可接受；但没有命令结果收据和多组件恢复验收，尚达不到10分所要求的清楚可行全流程恢复。"
                     }
                 },
                 "score": 60,
                 "revision": "ab3a9a4aad213dd6d2f9e773644583bde9180b29",
-                "reviewed_at": "2026-10-24T06:10:41.601Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -432,7 +432,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T05:52:04Z",
-            "analysis_sha256": "3b3c01aac2dc5f91286d9e0c5cd41ac9d7ddde47add9e381d80ba8af5831ad1c"
+            "analysis_sha256": "35b08d840bd6437c1bf08b107b0c2e25767930e4e2da9a85dfd88e55c6b92a1f"
         },
         "publication.metadata": "data/catalog/artenx--dsh-honeybee--packages-dshb/meta.json",
         "publication.summaries": {

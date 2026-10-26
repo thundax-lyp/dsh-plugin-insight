@@ -358,28 +358,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "Windows/WSL长期并用者有明确集成收益，可先在临时发行版核对双平面权限、非幂等重跑和固定宿主兼容。",
+                "reason": "必须使用Windows界面的WSL开发者可在临时发行版项目试用统一命令与文件入口。相比每次手写wsl包装，源码支持会话预设和WSL路径接线，但端到端效率与身份一致性未测。发现文件权限身份不符、命令疑似重复执行或持久shell状态丢失时，应停止自动恢复并退回WSL终端核查已发生效果。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "Windows界面与Linux工程并用是清晰重复需求。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)，README第34—38行说明Windows界面与WSL工具链分处两端，src/index.ts第1065—1098行生成会话预设。反复包装命令、路径与搜索的摩擦是具体流程问题，支持23分超过15分。合格交付须命令和读写都指向同一项目且身份可解释；直接Linux运行宿主或WSL终端可能更简单，没有目标用户持续需求和替代不足的直接使用材料，不取30分。该分不意味着跨平面天然一致或提供沙箱。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "相对手动前缀在会话工具层整合，直接Linux宿主仍是替代。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q05](#research-q05)，wsl-bash-tool.ts第411—434行构造发行版与用户参数，src/fs.ts第90—115行适配9P文件写入，组合shell、文件和预设比手工逐条wsl.exe有实质接线增量，取19分高于13分。宿主执行器与FS继承不能都算原创，Windows共享文件身份不跟随bash用户，自动TTY重跑也非事务恢复，故不到25分。未在Windows运行，不把兼容矩阵与作者耗时注释当独立效率证据。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "仅源码核查，作者矩阵未独立复现。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，实际核查src/host/wsl-bash-tool.ts第616—644行原命令会在饥饿后再次session.run，原题定位run-code-guard.ts第49—84行明确拒绝特定沙箱组合。核心执行、文件平面和重要失败边界可由固定代码连通，取13分而非只见宣传6分。没有本轮Windows/WSL环境执行、身份和禁用验收，不取19分；“WSL内无需安装”只指支撑组件，不扩为项目工具自动齐备。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "多平面兼容和恢复成本明显，可在隔离工程控制范围。"
+                        "score": 5,
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，wsl-bash-tool.ts第629—644行再次运行原命令，先前部分副作用可能保留；README第34—36行明确bash用户不改变文件共享身份。用户需维护Windows/WSL双平面并核shell、后台作业、权限和重复效果，恢复重要缺口尚在，取5分而非10分。临时项目、显式tty:false及人工终端能限制损失，未到所有目标不可接受的0分；不能借只读命令样例掩盖核心开发写入，也不把本地路由当进程隔离保证。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "3f3338d9e1a82578815074f87574ca2005977082",
-                "reviewed_at": "2026-10-26T02:08:59.649Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -410,7 +410,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "0a94815c70ac6874a3a253eb63d69bb34ec31687f7e6b8a4c6edf9896085be78"
+            "analysis_sha256": "9a7e44cacee78db3da9ff3006d25f114e39be23501f140d29f0ac5979ae25da6"
         },
         "publication.metadata": "data/catalog/dsh-wsl-workspace-maintainers--dsh-wsl-workspace/meta.json",
         "publication.summaries": {

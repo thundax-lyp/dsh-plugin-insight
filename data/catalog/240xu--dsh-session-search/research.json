@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "单人本地历史定位有可控试用价值，但仅前缀索引且可能保留陈旧缓存，命中须核原文。",
+                "reason": "知道历史关键词的个人本地DSH用户，可用它辅助定位会话并回读原始日志。相对手工解压和逐会话查找，源码分析支持可见消息索引与位置返回，但每条仅前500字符且坏日志可能保留旧缓存。无命中而目标可能位于长消息尾部、结果已被回滚或缓存状态不明时停止据此下结论，退回原始会话读取或重建缓存核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "历史关键词定位任务明确。"
+                        "rationale": "[Q01](#research-q01)明确知道词但忘记会话位置的重复查回任务，README.md:1-16给项目/session/seq定位，src/indexer.js:24-38处理压缩日志可见消息。直接rg压缩目录不能提供相同结果，逐会话定位摩擦具体，因此75%即23分超过15分仅知道用途。完整查回率和真实检索频次没有实证，500字符前缀对部分需求无效，不能给30分，也不能把全部本地历史都算已覆盖需求。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "相对rg压缩文件有解压/seq接线增量。"
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01)、[Q02](#research-q02)显示解压、遮蔽过滤、增量缓存与定位组合，相对手工查日志有可解释增量，取50%即13分超过6分入口便利。复查indexer.js:21-38明确TEXT_LIMIT=500，全文名称不代表完整正文检索；79-130中变更重扫失败保留旧记录，可能命中已遮蔽内容。核心查回仍须回读且no hits无排除力，主张受到实质限制，不升19分，也无充分查回质量数据给25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码，无本轮性能/宿主执行。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)覆盖消息取值、刷新、旧缓存、Node zstd依赖与HTTP围栏，复查indexer.js:24-38和package.json:28-34可核对范围。已有材料足以支持单人本地定位辅助，取50%即13分而非6分局部声明；前缀与陈旧失败已明示，未当成功结果真相。未跑损坏日志、遮蔽重建和大帧压力，缓存原子rename不等跨进程耐久，因此不能给19分，更没有宿主效果验收。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "无服务依赖但全量解压与缓存隐私/恢复有负担。"
+                        "rationale": "[Q03](#research-q03)列明首次全量解压、内存消息、线性搜索和每查询刷新，indexer.js:79-130的缓存更新失败需人工辨识，零运行依赖不等无资源投入。只读原日志、可删缓存重建且命中后能回原会话，恢复退路可解释，50%即10分超过5分关键状态难恢复。但大帧同步解压、峰值内存与每次原文复核不可忽略，失败保旧也没有调用方逐会话状态；未有耗时和资源测试，不能升15分轻负担。"
                     }
                 },
-                "score": 65,
+                "score": 59,
                 "revision": "a12bbb94f66829e092cd7e3b6431c8a23d357fe5",
-                "reviewed_at": "2026-10-23T01:59:09.350Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T01:41:11Z",
-            "analysis_sha256": "cb77f36f46cf0f16df7f179358e32934e6b60f23422a07a9c42d607fbf24bfaf"
+            "analysis_sha256": "bdc0ce93f096ea45371e73be77cf973a2620529ddfd951fb1f1ca5afa0c0eb77"
         },
         "publication.metadata": "data/catalog/240xu--dsh-session-search/meta.json",
         "publication.summaries": {

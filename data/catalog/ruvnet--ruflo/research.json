@@ -345,28 +345,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "只对明确多Agent需求做隔离最小MCP试用，并与单Agent同预算比较合格产物。[Q04](#research-q04)",
+                "reason": "确有多Agent分工需求且能独立验收代码的开发者，可在隔离项目试用Ruflo最小MCP任务编排。相比手工分配和汇总Agent状态，源码支持统一登记、执行和状态核对，质量及节时增益尚属推断。若任务状态与实际产物不符、路由错误或协调调用超过预算，停止扩展编排并退回单Agent与人工任务清单。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "多任务协作场景明确，用户频率未核"
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01)的README.md:98–109明确协调多Agent，但“100+”不是实际并行需求；148–158也说明控制台演示不证明任务完成。分工、状态汇总与代码验收对象清楚，足以超过8分偶发便利；缺少具体项目反复协调的直接任务材料，不能23分，不以工具数量填补需求强度。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "状态和工具组织有增量，正确率/节时未证"
+                        "rationale": "[Q02](#research-q02)的agent-execute-core.ts:615–687有真实模型执行接线，swarm-tools.ts:79–194有孤儿状态协调与原子保存，相对纯手工清单存在可解释增量。route-task.ts:62–76仅首个关键词匹配，api-success不是质量，跨JSON状态缺统一事务；关键产物收益仍未确定，因此取13分而非局部入口6分，也未达到19分实质结果改善。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "关键源码抽读，未运行"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的agent-execute-core.ts:800–823直接标记resolvedSource=api-success且解释不证明正确，controller.ts:39–76区分退出码和磁盘核对。执行、状态与弱反馈限制可追溯，不只是作者宣传，超过6分；各MCP客户端兼容和故障恢复未运行，不能19分，更不能把自学习主张算作实证。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "多Agent/记忆/客户端权限和恢复复杂"
+                        "rationale": "[Q04](#research-q04)的README.md:39–53说明mods使用账户权限且不同客户端接入不同；[Q02](#research-q02)多个JSON各自写入，需任务、Agent、swarm及实际文件对账。多Agent调用、重试和状态恢复投入均未测，重要恢复一致性尚缺直接保障，低于10分；隔离项目可停MCP退回单Agent，非0分不可退出。"
                     }
                 },
-                "score": 54,
+                "score": 46,
                 "revision": "631c1557b5f325163c4f9f029a397bb30a61c730",
-                "reviewed_at": "2026-10-26T03:46:30.859Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -396,7 +396,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "6eeb4524e26b16aaf82948b1490aef9b46d1d68821b838b6d68caacb66aa703b"
+            "analysis_sha256": "0546c1f2721d46018795d5b312d24cb966d5ccc99979dcea91160bd012bcea83"
         },
         "publication.metadata": "data/catalog/ruvnet--ruflo/meta.json",
         "publication.summaries": {

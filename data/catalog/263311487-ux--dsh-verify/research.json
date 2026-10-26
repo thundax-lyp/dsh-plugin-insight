@@ -358,28 +358,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合可信本地应用的有限浏览器验收试用；独立审读spec和批准基线，不把新基线或runner错误当交付通过。",
+                "reason": "能审读测试步骤的网页开发者，可在可信本地构建上试用浏览器交互断言与已批准截图基线。相对每次手写Playwright工程，源码分析支持统一动作描述和HTML记录，但PASS只覆盖已写断言且首次截图只是创建基线。必要断言未执行、基线未经批准或宿主被同步调用阻塞时停止自动放行，退回直接Playwright和人工需求验收。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "网页行为验收明确，需先界定需求和覆盖。"
+                        "rationale": "[Q01](#research-q01)明确Agent交付网页后核对交互的反复任务，README.md:3-7、40-44区分浏览器执行与完整验收；输入JSON步骤和固定构建、输出断言与截图的合格标准明确。逐次搭测试工程或人工操作产生具体摩擦，对已有验收能力者达到75%即23分，超过仅说明功能的15分。spec独立性和实际项目覆盖未验证，不能把所有Agent网页都视为需要该工具，也无持续需求对照，因而不是30分充分档。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "JSON/报告/多入口便利，Playwright本身是已有替代。"
+                        "rationale": "[Q02](#research-q02)的bin/verify.mjs:131-159把本地server、浏览器、顺序动作和步骤失败记录串起来，比手动点页或每次重搭Playwright提供可重复记录，取75%即19分而非13分的一般机制。浏览器能力仍归Playwright；[Q03](#research-q03)与复查225-245确认新建基线也pass，空spec不证明需求，说明它不能独立验收质量。已批准基线和人工审定spec能保留限定优势，但未实测维护收益，不能升25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定执行与视觉测试材料已读，无本轮执行。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)覆盖浏览器启动、动作执行、视觉比较和CLI/DSH依赖，bin/verify.mjs:225-245的创建/比较差别已直接核对。证据能支持有限断言而非营销里的全面独立验收，取50%即13分，超过入口片段6分。tests/visual源文件只表示作者预期，本次没有启动浏览器或执行测试；DSH spawnSync权限与UI合规亦未实测，不满足19分，不能用测试文件存在替代执行结果。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "浏览器安装、spec维护与同步host阻塞需承担，收益未测。"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)把浏览器安装、写spec、审定基线、截图资源和flaky维护算入成本；dsh/plugin.mjs:42-57的同步180秒调用还可能阻塞宿主。可信本地小任务可核报告并退回直接Playwright，不触发外部业务写入，负担有明确退路，取50%即10分而非5分。持续需求覆盖和基线审阅不可省，ERROR与断言FAIL还要人工区分；未证明总工时低，故达不到15分的轻持续负担，更不能把不需模型Key算零成本。"
                     }
                 },
                 "score": 65,
                 "revision": "d969899808e51dcccd261588f667b18633020fca",
-                "reviewed_at": "2026-10-22T09:35:28.832Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -410,7 +410,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "182fda4679c6f4c93cf2e2d3e3fa2789a20c65d32d9413332d8ae44e9a057bfb"
+            "analysis_sha256": "1746152559b6273595de3571e881fa97734573634dc3005574537c5c6630dedb"
         },
         "publication.metadata": "data/catalog/263311487-ux--dsh-verify/meta.json",
         "publication.summaries": {

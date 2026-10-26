@@ -411,28 +411,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "文献工作流集成值得关注，但固定版本下载候选未绑定变量和无关Doctor后台启动影响主闭环与范围；先观察，核清后再评受控试用。",
+                "reason": "希望在DSH内从文献标识完成全文归档的个人研究者，应先观察该固定版本而非直接日常启用。相对浏览器与外部文献库分步操作，其集成设计有便利，但固定源码的未绑定trusted变量会阻断普通全文候选构造，不能用手动导入代替核心闭环。出现fetch_failed或无法解释的Doctor后台进程时停止依赖此链，退回浏览器下载和成熟文献库并核对保存文件。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "研究写作的识别归档场景清楚，频率和收益未测。"
+                        "rationale": "[Q01](#research-q01)把输入定义为DOI、arXiv等标识，合格结果是正确版本全文已归档且可再读，README.md:33-44说明会话内识别、阅读和保存。研究者反复在浏览器、PDF阅读器和文献库搬运标识的摩擦具体，75%即23分超过15分一般用途。此需求不因当前实现失败而消失，但实际频率、用户放弃外部库意愿和净节省未测，不能取30分。标题命中和saved并非成功，需求标准没有放宽为仅建元数据卡片。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "会话内状态与内置库有价值，但下载缺陷和身份核验边界削弱实际优势。"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)列出标识到元数据、全文、笔记和保存的集成设计，相对外部工具有局部步骤便利，故25%即6分超过0分完全无增量。可是[Q03](#research-q03)的src/node/fetch/pdf.js:48-58直接读取未声明trusted，普通arXiv push即可能抛ReferenceError；发布lib/index.js:1435-1443同样保留该表达式。核心自动归档不能靠换源重试保障，因而不到13分核心收益部分成立档，更不能借手动导入子功能抬成19分。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "固定源码及lib对应关键缺陷已查，未执行目标或宿主，证据50%档。"
+                        "score": 0,
+                        "rationale": "[Q03](#research-q03)提供直接反证：复查src/node/fetch/pdf.js:48-58，push仅四形参而对象读取Boolean(trusted)，普通arXiv分支会调用；同题已固定发布产物lib/index.js:1435-1443保留缺陷。这并非资料缺失被补0，而是固定材料反驳本次全文自动闭环的关键可用性，因此取0%即0分，不满足6分对核心采用主张的有限正向支持。入口和状态机存在不能修复自由变量，更无运行证据推13或19分；未宣称本次已执行复现。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "网络、多保存目标、模型联动和额外进程增加核查/恢复负担，暂无可信全程成本。"
+                        "rationale": "[Q03](#research-q03)至[Q05](#research-q05)列明候选身份复核、外部API、自有库、部分写入和错误恢复；doctor-selfheal.js:76-92的延时detached supervisor又带来文献任务外后台副作用。取25%即5分，低于10分可识别完整退路，因为核心代码缺陷不能由普通网络重试解决，进程清理也未证明。用户可保留原PDF并回浏览器和外部库，尚未证实一切输入都无法退出，故不是0分不可接受负担；未测维护和恢复，更不支持15分。"
                     }
                 },
-                "score": 54,
+                "score": 34,
                 "revision": "fc6650ef12747de08512d99c2f9c8388572b7724",
-                "reviewed_at": "2026-10-22T05:02:47.349Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -462,7 +462,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "cb572c2e41293065c8cbf5fcb85034d076565b9f26d35d41469f70b9c18acf35"
+            "analysis_sha256": "e05a76db8f2f9fa6971dc02647879f9086342524e83e59ff0f5e0e90a541f6b3"
         },
         "publication.metadata": "data/catalog/aik358--dsh-literature/meta.json",
         "publication.summaries": {

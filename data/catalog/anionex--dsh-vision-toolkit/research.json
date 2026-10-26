@@ -424,28 +424,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "文本模型用户可用非敏感截图受控试用；先测真实图像请求和最终任务质量，核实外部服务政策、费用及宿主兼容。",
+                "reason": "仍需使用文本模型且有长截图提取任务的DSH用户，可在非敏感样图试用分块OCR并核对原图。相比手工转交视觉服务再搬回结果，源码支持在同一任务中切图、调用视觉服务并保留产物，减少交接尚属推断。若漏字、边界错位、外部服务政策不明或请求费用超预算，停止后续自动处理并退回原图人工摘录或已验证的原生视觉方案。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "截图和长图任务具体且重复，但独立用户需求未采样"
+                        "rationale": "[Q01](#research-q01)与[Q07](#research-q07)的assets/skill/SKILL.md:89–103明确长图整体缩小会损细字，提出切块核查；截图文字与边界是具体交付，不只是通用看图用途，超过15分。没有实际长图任务频率和重要性材料，不给30分；已有原生视觉就够用的用户不在主要推荐范围。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "相对手工转述有原生路径、处理和产物闭环，不能替代原生视觉质量对照"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的runtime.ts:1680–1685有长图处理入口与并发控制，image-input-variants.ts:361–388保存附件并返回明确unavailable，assets/skill/SKILL.md:89–103给出分块核对流程。比手工跨服务搬运增加可组合工具及产物路径，超过13分；核心Python与视觉能力归上游，OCR准确率和分块净收益未测，不足25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码覆盖核心适配与约束，未执行服务、测试或宿主"
+                        "rationale": "[Q04](#research-q04)至[Q06](#research-q06)的assets/skill/SKILL.md:40–44明确图像外送，runtime.ts:800–862区分排队和执行期限，runtime-manager.ts:198–210防旧配置覆盖。入口、远端边界、资源控制及兼容声明可核查，超过6分；未执行长图OCR、真实视觉请求或宿主，不能19分，也不将描述代理等同模型直接看像素。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "工具集成降低转交负担，但运行时下载、外传、复核和费用增加维护成本"
+                        "rationale": "[Q05](#research-q05)、[Q06](#research-q06)的runtime-install.ts说明隔离Python准备，package.json:99–115列离散兼容范围，SKILL.md:40–44说明外送服务。工具失败能停请求、保留原图退人工，但需安装、服务计费、逐块核对及产物治理，满足可识别且有退路的10分而非5分；费用、GPU/磁盘和时长未测，不足15分。"
                     }
                 },
                 "score": 65,
                 "revision": "2a1519c1909282dc05e21c2c26601349bc8fe923",
-                "reviewed_at": "2026-10-23T08:27:33.381Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -476,7 +476,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "d48f4d91a6f32ec43f9ad2bb17f2b5eb93574281117b782b33573ec90dd8c0f3"
+            "analysis_sha256": "51e4b5ab59e88903fd7cdd3c7f6e2ea17e08ed76951fd29fc414a72de30954a2"
         },
         "publication.metadata": "data/catalog/anionex--dsh-vision-toolkit/meta.json",
         "publication.summaries": {

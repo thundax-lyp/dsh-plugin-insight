@@ -373,28 +373,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "先个人隔离试用，删除后手动备份，定时任务加强监控。",
+                "reason": "需要把个人待办交给Agent执行的DSH用户，可在可丢弃工作区试用单次便签派发并人工确认产物。相对Markdown待办再手开会话，源码分析支持创建会话、租约和执行回写，但卡片完成不证明业务成功，备份也不完整捕获删除。派发报错后出现未知会话、产物不符或恢复快照不一致时停止再次派发，退回原生会话核对运行并手动备份便签。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "便签到任务需求明确。"
+                        "rationale": "[Q01](#research-q01)把个人记录与可执行待办连接，packages/plugin-notes/README.md:32-44、62-87给出工作区、工具和备份入口。合格任务是Agent产物可核，而非卡片完成；反复从便签复制任务、指定工作区再开会话确有具体摩擦，75%即23分高于15分一般场景。真实派发频率、长期调度需求和净时间未知，单纯记录者用Markdown足够，故不能给30分，也不把日期视图和工具数当需求。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "同一面板直接派发会话。"
+                        "rationale": "[Q02](#research-q02)的service.ts:428-474可见创建session、选模型、授lease再投递，agent/tools.ts:203-224限制任务工具归派发会话。相比手工转录待办，这把记录、执行与回写真正连成流程，75%即19分超过13分一般封装。但选模型、授租约或prompt失败可能遗留新session；[Q04](#research-q04)指出超时标失败不等底层已停。人工单次核产物可收窄试用，尚无全流程正确率对照，不能升25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码可核，目标运行未测。"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)覆盖派发顺序、授权、备份删除缺口和恢复覆盖；复查service.ts:428-474与webdav-backup.ts:262-301确认先安全备份、再整体恢复的具体边界。限定监督派发的核心机制和主要失败可定位，取50%即13分，高于6分仅入口；已知备份缺口明确限制而未伪装完整。没有真实宿主派发、WebDAV恢复或调度失败运行，不满足19分，不能以租约存在证明任务安全停止。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "模型会话/WebDAV 成本和故障恢复未知。"
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)、[Q06](#research-q06)指出删除可不推动自动备份水位、replaceAll非事务覆盖、派发失败留会话以及调度结束不取消运行。这不是可忽略的首次安装负担，25%即5分低于10分全流程恢复清楚档。已有手动backupNow及恢复前安全副本，用户可回原生会话逐项查产物，尚不至0分不可接受；但需要外部监控、手工核会话和快照，不能仅凭权限询问或可禁用给15分。"
                     }
                 },
-                "score": 65,
+                "score": 60,
                 "revision": "be18a392f0c5c60a5253eb267b2f622d3a0e6555",
-                "reviewed_at": "2026-10-26T02:07:19.905Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -424,7 +424,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "f4bb9604b945d84a151a8cd0aeda81d3566798a7bb05115609aafc205cf4eaad"
+            "analysis_sha256": "c818c6bc756d4d54d4c194c05d3962f60d6339059678e6bbbbcbeba0dc2191c8"
         },
         "publication.metadata": "data/catalog/0x7a7a6572--dsh-forge-studio--plugin-notes/meta.json",
         "publication.summaries": {

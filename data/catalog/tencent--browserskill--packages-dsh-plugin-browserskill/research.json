@@ -351,28 +351,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已用 DSH Web 的用户可从只读网页或测试表单试用，先核对 CLI 和扩展版本、技能显露、任务预览及结束清理，再扩展到实际工作流。",
+                "reason": "已有BrowserSkill CLI和已连接扩展的DSH用户，可在非敏感网页试用人工监督的读取与截图核对。相比在终端单独调用bsk再搬回结果，源码支持模型工具、任务预览和截图呈现，减少交接属于推断。若context失效、观察与页面不符或取消后任务不收敛，停止后续动作并退回浏览器人工检查，不把队列当业务回滚。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "已识别重复任务和合格交付物，需求强度因团队而异。"
+                        "rationale": "[Q01](#research-q01)的package.json:1–18及README.md:159–172定位DSH原生工具、预览和截图；已有bsk使用者反复把浏览器结果转交会话的摩擦具体，超过15分。没有实际任务频率与用户时间材料，不足30分；不将表单提交、登录和非破坏读取混成同一采用保证。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "六个域工具保留私有操作的取消、并发与呈现语义，配合技能按需显露和会话清理，使 DSH 原生接入比 shell 拼接更可管理；浏览器执行属于根产品。[Q02](#research-q02) [Q03](#research-q03)"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)中browser-tools.ts:66–139将动作映射至统一六域工具并传contextId/dependsOn，runner.ts:142–160数组spawn bsk --json；相对手工CLI结果搬运增加模型可调用及操作呈现，超过13分。浏览器引擎仍属根产品，观察约束不能证明意图或回滚，不取25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "本轮仅固定版本源码检查，没有执行或宿主效果证据。"
+                        "rationale": "[Q02](#research-q02)、[Q05](#research-q05)可由index.ts:86–166核对注册与清理，runner.ts:142–160核对CLI实际调用，queue.ts:14–55说明同key FIFO且取消不穿越前驱。核心调用与生命周期可追溯，超过片段6分；CLI/扩展/宿主三层未一起运行，无真实页面效果，不足19分。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "适合已经使用 DSH Web 的人，在非破坏网页读取或测试站点验证一条完整流程。先安装并核对 CLI 和扩展连接，再加载插件并调用技能，观察任务是否出现、结束后窗口是否释放。首次成本是三层安装和权限配置，持续成本为模型决策、浏览器资源及预览采集，失败恢复包括悬挂会话检查、命令取消与版本回退；没有金额或人时测量。源码存在预览和清理链路，但未完成同版本宿主验收，不能升级为持续安装建议。真实网页提交应另设人工确认步骤，因为队列控制不等于业务回滚。"
+                        "rationale": "[Q04](#research-q04)、[Q05](#research-q05)要求三层版本就绪，旧browser_*名称已迁移bsk_*；queue.ts:46–55保留收敛顺序，runner.ts:81–106设计取消宽限。已有CLI者可停动作、人工核网页并清会话，超过5分重要退路缺失；持续需版本协同、模型检查和资源回收核对，不足15分。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "b63f551209caba4d7debfc12215b2b7c118bad49",
-                "reviewed_at": "2026-10-24T10:35:23.953Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -402,7 +402,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T10:26:37.690Z",
-            "analysis_sha256": "6994b0ee83e44722065fc635c30b9304a13f5bd75fb2104690a90a24c6f72055"
+            "analysis_sha256": "81e849341052ef067532664a6bee72c892a76ca1d92d93adb343a420e4354cee"
         },
         "publication.metadata": "data/catalog/tencent--browserskill--packages-dsh-plugin-browserskill/meta.json",
         "publication.summaries": {

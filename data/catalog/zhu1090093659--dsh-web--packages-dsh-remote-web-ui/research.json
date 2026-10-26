@@ -351,28 +351,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "有跨设备需要的用户可在无敏感实例和自有设备先测LAN、拒绝与撤销；不适合只读共享或统一权限治理。",
+                "reason": "拥有受控个人设备且宿主保持loopback的用户，可在无敏感实例试用配对后的远程完整DSH界面。相比自行拼接代理和第二套客户端，源码支持复用官方界面并以设备会话把关请求，便利尚未实测。若发现未配对请求可访问、撤销后新请求仍通过或宿主已直接网络暴露，立即停止远程通道并退回本机访问，另核对宿主浏览器凭据。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "同实例跨设备场景明确，独立需求频率未核实。"
+                        "rationale": "[Q01](#research-q01)以手机等自有设备继续操作同一宿主为任务，README.md:18–26明确复用官方界面；独立代理、移动界面维护和配对交接是具体重复摩擦，超过15分的一般远程用途。用户实际频率、远程桌面为何不足仍无直接采用材料，故非30分；不外推多人共享或最小权限业务。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "比直接暴露端口增加设备门禁并复用界面，远程桌面等替代仍存在。"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的remote-api.ts:150–191、235–272在HTTP和WS转发前校验设备，将完整官方UI接到配对通道。相比裸代理新增逐请求身份门和局部撤销，超过13分。gate.ts:12–17明确原生api/gate在官方运行时不触发，不能声称全入口统一撤销，故不足25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持配对和代理，未运行设备与网络矩阵。"
+                        "rationale": "[Q02](#research-q02)与[Q03](#research-q03)的remote-api.ts:155–159、243–248直接拒绝无设备凭据，README.md:178–193说明内层凭据、在途请求及直接网络bind边界；gate.ts:12–17与声明一致而非隐瞒冲突。核心配对请求路径有源码依据，超过6分；HTTP、WS、代理与撤销组合均未运行，不能进入19分。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "全控制凭据、代理、存储和外部relay引入较高维护与信任负担。"
+                        "rationale": "[Q04](#research-q04)涉及设备、网络、代理及宿主认证多个生命周期。README.md:182–185指出直接网络bind可能保留30天宿主凭据，183明确配对为全控制权，191指出在途请求继续完成。虽可停通道退回本机，首次配置与持续凭据对账、退出边界仍重要，不满足10分的恢复范围清楚；个人无敏感试用尚可控制，不取负担不可接受0分。"
                     }
                 },
-                "score": 54,
+                "score": 60,
                 "revision": "6b984b10950f78f1f4a5b5adf4c16636b5e6113d",
-                "reviewed_at": "2026-10-26T03:52:02.700Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -402,7 +402,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "5bad6af878bf1c62dd8386f34a2599dd908c68ff275db67278709f1cc336506c"
+            "analysis_sha256": "ad1411e1dc788e2f37d849e54ea323b0ad97183bcee0318759aff50da2a3752e"
         },
         "publication.metadata": "data/catalog/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/meta.json",
         "publication.summaries": {

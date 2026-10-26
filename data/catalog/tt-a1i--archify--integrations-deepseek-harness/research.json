@@ -357,28 +357,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "等待默认Skill根修复的可核查发布及临时profile共存验收，再考虑常规安装。",
+                "reason": "需要在DSH中生成架构图的用户，应先观察该Archify分发适配器与已发布包的一致性。相比手工拷贝Skill，源码支持锚定包身份和不可变来源，但安装便利只是推断且固定版本README记载的npm 1.0.0包尚不包含默认根保留修复。若安装后个人或项目Skill消失，移除适配bundle并恢复原profile，暂退回手工放置经过审阅的Skill。",
                 "criteria": {
                     "scenario": {
-                        "score": 23,
-                        "rationale": "DSH用户加载Archify的任务明确"
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01)的README.md:3–13明确只是Skill-only分发，release.json:1–5固定宿主与Skill版本。要生成架构图的人群、文件交付及手工拷贝基线清楚，超过8分偶发便利；适配器本身没有原生渲染工具，缺少反复分发维护的具体痛点材料，不足23分。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "包分发相对手拷有价值但无原生渲染增量"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)的cordis.patch.yml:5–10用createRequire锚定profile包身份，release-source.mjs:63–93固定commit及Skill版本，有分发便利而非无增量0分。主要生成能力来自Archify本体，README.md:15–17又说明npm未含默认根修复；相对手工放Skill尚不足支持13分的稳定采用增量，不能把根项目渲染价值全部算适配器。"
                     },
                     "evidence": {
-                        "score": 13,
-                        "rationale": "源码检查支持接线，未执行真实宿主"
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)中patch:9为true，README.md:15–17却明确published1.0.0为false且未发新版本。源码修复与普通安装交付不是同一制品，缺少tarball重建及固定宿主共存核验，核心采用入口关键边界未闭合，因此只6分。已有打包路径和真实配置支持并非0分无依据，也不能13分覆盖完整交付。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "已发布默认根问题与精确宿主支持增加采用负担"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)指出唯一filesystem provider时已发布包可隐藏其他默认根；release.json固定0.1.2-rc.1，不能外推当前宿主。需手工核版本、根目录、重建制品并验退场，日常profile的恢复负担有重要缺口，低于10分。可移除bundle恢复配置、未证明不可逆损害，故非0分。"
                     }
                 },
-                "score": 54,
+                "score": 32,
                 "revision": "25cf37080fc8b1dbe758a4efc3935b55f3327083",
-                "reviewed_at": "2026-10-24T10:34:49.312Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -408,7 +408,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T10:26:37.690Z",
-            "analysis_sha256": "39b9b0f008ca14dde7072c1eca6972a8d23637569e68eca3bf181a8eb96a1f3e"
+            "analysis_sha256": "38534c99a377da0ec3f1b1fd99a975e5cf7231c238310c85bf91d8d6d9373db1"
         },
         "publication.metadata": "data/catalog/tt-a1i--archify--integrations-deepseek-harness/meta.json",
         "publication.summaries": {

@@ -351,28 +351,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "有备份的普通文件型Skill管理可小范围试用；provider关闭仅面板状态，不能用于模型权限撤销。",
+                "reason": "已有DSH且需要维护多个普通文件型Skill的用户，可在目录备份后试用集中创建、导入和编辑。相比逐个进入项目与用户目录，源码支持按来源集中定位并核对写入对象，节省切换属于推断。若来源不完整、目标路径不符或需要保证模型撤权，停止面板写入并恢复备份、改用文件编辑和目标会话官方Skill目录核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多来源文件维护清楚，统一治理则超出现有能力。"
+                        "rationale": "[Q01](#research-q01)与[Q02](#research-q02)描述跨项目、用户根和自定义目录找同名Skill的重复摩擦；collect.ts:500–508、530–549按来源扫描和优先级合并，README.md:61–67说明仍沿官方加载语义。具体来源与目标文件核对任务超过15分的一般用途；未有用户维护频率和净收益直接材料，不足30分，且不将面板当统一权限系统。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "比文件管理器增加来源汇总和导入反馈，但不等于实际会话策略。"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)的routes.ts:502–514在写入前重新解析名称和路径，拒绝链接文件并保留原调用声明；import.ts:11–25限定新建、不覆盖。相对文件管理器可减少分散定位与误改来源的步骤，超过13分；但collect.ts:556–559的provider开关只改变面板结果，preset覆盖仍有缺口，不能支持25分的完整管理优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码及作者限制一致，未运行宿主。"
+                        "rationale": "[Q02](#research-q02)至[Q04](#research-q04)可在collect.ts:530–560核对来源覆盖与complete=false，routes.ts:502–514核对写入口，collect.ts:592–603核对覆写与回收站。文件管理的核心路径与失败边界明确，足以超过局部声明6分；未验证目标宿主的重新加载和同名来源行为，不能给19分，也不把provider撤权作为已证实能力。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "需备份、区分来源和核对真实catalog，误读会增加管理成本。"
+                        "rationale": "[Q04](#research-q04)的collect.ts:592–594直接writeFile，没有编辑历史；598–603的trash只覆盖删除恢复。import.ts:35–45限制体量，但不能抵消编辑覆写风险。预先备份并核对目标路径使文件维护可恢复，超过退路缺失5分；持续仍需区分面板状态与真实会话调用状态、维护备份，故不满足15分的轻负担。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "6b984b10950f78f1f4a5b5adf4c16636b5e6113d",
-                "reviewed_at": "2026-10-26T03:47:06.375Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -402,7 +402,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T03:19:26Z",
-            "analysis_sha256": "ddcf52966a096433a150c534914ddd5b4d749ab865999d43b014fd4c939833b6"
+            "analysis_sha256": "cfe7ecf7fa2ede5fbbabdd0e34a06d2be16d9869ce3998bee558deee1128840e"
         },
         "publication.metadata": "data/catalog/zhu1090093659--dsh-web--packages-dsh-skill-explorer/meta.json",
         "publication.summaries": {

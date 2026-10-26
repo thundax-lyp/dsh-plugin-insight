@@ -327,28 +327,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "可在备份小vault先只读、再验证正常UI局部写回；高频外部并发写入应暂缓。",
+                "reason": "已有Obsidian日记习惯的个人DSH用户，可在备份vault副本且暂停其他编辑器写入时试用日历查看与任务勾选。相比切换Obsidian，源码支持在对话旁读取同一Markdown并局部修改，减少切换尚属推断。若出现stale、回读不符或非目标行改变，立即停止写回并从备份对照恢复，退回Obsidian编辑。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "个人日记与待办场景明确"
+                        "rationale": "[Q01](#research-q01)的README.md:1–13、lib/index.js:144–197明确已有Markdown任务用户及日期、时间、标签交付；边对话边查看勾选的重复切换具体，超过15分。没有真实采用频率或Obsidian切换损失数据，不给30分，不把30秒声明当测量；无此习惯者不属于高需求人群。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "单文件真源与同屏操作有可解释便利"
+                        "rationale": "[Q02](#research-q02)的index.js:578–611按日记文件日期归属，703–756保留源文件并做行转换与回读。相对另外建任务库可减少同步，有可解释增量，超过6分入口便利；但解析兼容与高频外部编辑可能覆盖非目标行，主要收益条件未确认，故13分而非19分实质改善充分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码支持主要链路，未真实宿主执行"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的index.js:703–756完整呈现路径、原行比较、变换、原子写和回读；723–725证明expect可选，647–654说明锁仅本进程。核心路径与反证均可定位，超过6分；未做格式、外部编辑竞态及真实宿主验收，不足19分，不能把rename当并发无损证明。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "无外部服务依赖但原文件并发和恢复需人工管理"
+                        "rationale": "[Q03](#research-q03)、[Q04](#research-q04)的index.js:723–741有条件stale保护但整文件rename，无法协调外部Obsidian写入。限定备份副本、暂停外部写入并核非目标行，使恢复路径可执行，超过5分；要求改变编辑习惯、复核和备份仍显著，实际耗时未知，故不15分轻负担。"
                     }
                 },
                 "score": 59,
                 "revision": "6ce4095ef800838f91abc162aa6d6646435f7605",
-                "reviewed_at": "2026-10-23T08:19:40.256Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -378,7 +378,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "7181f8c30e0dc3857616d95fb8d37005bc7d4a59dad8a6e407e2b09ef2272ee9"
+            "analysis_sha256": "3a60ce0e4858c9848604652c6912bac8a53e4c06e5fbbe9ddbf6a2d1e5cfdd7f"
         },
         "publication.metadata": "data/catalog/alonefu--dsh-calendar-plugin/meta.json",
         "publication.summaries": {

@@ -357,28 +357,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "已有多来源账号并能维护服务的人可在非关键任务试用，先核对流完整、能力兼容和退出残余。",
+                "reason": "已有多模型账号且能维护本地服务的用户，可在非关键纯文本任务中试用统一兼容端点和请求启动前的候选回退。相对逐个客户端维护来源，源码分析支持集中接线和来源管理，不能证明模型能力等价或流式交付完整。响应截断、候选不兼容或卸载留有服务凭据时停止依赖自动回退，退回供应商原客户端并逐项核对残余状态。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多账号接线需求清楚。"
+                        "rationale": "[Q01](#research-q01)把任务定义为多个既有账号供多个客户端复用而非获取免费模型，README.md:22-57与setup.ts:41-64可对应来源接线和状态步骤。重复维护连接、登录和模型映射有具体摩擦，对已具备多账号的人群取75%即23分，超过只有用途描述的15分。单一来源用户可能无需此层，签到规则不能代替持续需求材料；没有用户任务频率和配置维护对照，故不取30分，也不将账号数量或作者积分数字作需求强度。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "统一端点和管理流程有实际额外入口。"
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的combo.ts:70-115仅替换model并依次转发，复查97-110确认HTTP成功即pipe且return，中途error只结束当前响应。统一端点和启动前候选切换相对逐客户端接线有机制增量，取50%即13分，超过6分单入口便利。但无能力交集、工具完整性和SSE终止验收，不能把它推成普遍可靠的故障转移；这直接限制核心统一兼容主张，未达到19分的实质任务结果改善。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码主链可查，无本轮真实服务验收。"
+                        "rationale": "[Q02](#research-q02)、[Q04](#research-q04)覆盖校验下载、分步setup、Web-daemon桥接和卸载，复查src/commands/setup.ts:41-64与plugin/index.js:1-7可核对边界；combo.ts:97-110还提供明确反证，采用论证没有藏起流中失败。因此材料不仅是声明，能支持限定纯文本人工检查的试用，取50%即13分而非6分。未运行daemon、跨客户端协议和卸载，本地测试覆盖不成立，不能给19分；所谓兼容不能扩大为工具或图像全部可用。"
                     },
                     "cost": {
-                        "score": 10,
-                        "rationale": "常驻服务与账号/卸载需管理。"
+                        "score": 5,
+                        "rationale": "[Q04](#research-q04)、[Q05](#research-q05)列明引擎、daemon、来源登录、后台常驻、账单与重复转发成本；uninstall.ts:64-99中移除插件仅warn可能绕过汇总错误。多个状态的失败没有整轮回滚，退出要人工核残余凭据和服务，因此25%即5分，低于10分的可辨识完整恢复链。可在非关键任务回到原客户端且安装有hash校验、失败保留home，故不是0分。已有运维经验减轻首次成本，但不能消除持续账号漂移和失败候选费用，不能升15分。"
                     }
                 },
-                "score": 65,
+                "score": 54,
                 "revision": "44c466cbbf62769b91f0647469dc529ecdc125ee",
-                "reviewed_at": "2026-10-26T02:16:14.823Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -408,7 +408,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "140cc5802d989fa57e7828b2fd2536528bf8efc6ea8858b2e45e8c5b5a14927e"
+            "analysis_sha256": "371353280679347c6278f81ccb98141a0b21a10fe18aaceb3e5a89f228498046"
         },
         "publication.metadata": "data/catalog/aicivilization--dsh-model/meta.json",
         "publication.summaries": {

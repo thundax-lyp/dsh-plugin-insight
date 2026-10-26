@@ -346,28 +346,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "消息内朗读与可取消长读有明确试用价值；先用非敏感文本核对Edge外发、停止与错误恢复，再按需增加本地音色，源码级证据不足以持续安装。",
+                "reason": "需要听取助手回答的DSH Web用户可先用单一Edge后端试用非敏感消息朗读。相比复制到独立TTS工具，源码把消息归属、播放和停止接在同一界面，完整朗读率与节时未测。发生未经确认的文本外发、持续漏段或停止失效时，应停用插件并退回系统朗读或单一受信语音服务。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "无障碍和离屏听取场景明确，频率与真实人群反馈未核。"
+                        "rationale": "依据[Q01](#research-q01)、[Q05](#research-q05)，README第29—58行及lib/client.js第3384—3438行将已完成消息、选中文本和播放器关联。需要听取长回答或减少盯屏的用户反复复制文本并找回消息位置，摩擦具体支持23分高于15分。系统和浏览器朗读可能已足够，特殊无障碍需求也不能仅凭功能宣称满足；缺少实际用户使用频率、设备和合格朗读记录，不取30分，任务明确不等所有音色后端都值得接入。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "消息生命周期、分块播放与多后端比复制粘贴有实质额外价值。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，lib/index.mjs第2203—2245行与client.js第2270—2315行把合成、任务和失败交给宿主交互，README第43—106行展示消息级播放。相对外部TTS复制粘贴，保留消息归属、切块和停止是实质步骤改善，取19分超过13分。语音模型与Edge协议来自上游，实际完整率、时延、连续播放未知，不能取25分；多提供者不是自动加分，本任务单后端但仍保留外发和协议维护限制。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码支持接线和故障分支，未运行，取源码级上限。"
+                        "rationale": "依据[Q02](#research-q02)、[Q04](#research-q04)、[Q07](#research-q07)，实际核查lib/client.js第2285—2315行请求与取消处理，index.mjs第27—50行Edge协议及第802—825行提供者数据路径，核心合成、播放接线和故障边界有固定材料。支持有条件短文本试用，取13分高于只看UI声明6分。没有启动服务、播放音频或测停止释放，不取19分；README默认关闭本地回退说明风险被识别，不代表所有外发及凭据链已经审计，作者验证不当本轮执行。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "Edge起步简单，但外发、端点维护和本地模型资源使持续成本中等。"
+                        "rationale": "依据[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)，README第170—203行明确Edge/Cloud外发与本地回退取舍，client.js第2285—2304行可见超时失败处理。单Edge任务减少本地模型和GPU维护，界面停止并退系统朗读有路径，取10分超过多路径恢复缺口主导5分。但仍要核网络、浏览器播放策略、文本清洗和宿主入口，非公开协议可能失效，净负担未证明轻，不取15分；“免费”不等零数据成本或零人工，纯本地用户不适用该路径。"
                     }
                 },
                 "score": 65,
                 "revision": "5b094011dfba35a1d30d44a18d2b411654e8fff8",
-                "reviewed_at": "2026-10-22T15:31:23.218Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -398,7 +398,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T15:06:59Z",
-            "analysis_sha256": "e3cae301249592c4f204f874971724ac8bdd03ce61baf97428f430f62484769e"
+            "analysis_sha256": "02b423996a09dd1c2df288f2acc0c89bda0fe12ac47a1823d06557cb5c0b5ab9"
         },
         "publication.metadata": "data/catalog/1624318455--dsh-plugin-tts/meta.json",
         "publication.summaries": {

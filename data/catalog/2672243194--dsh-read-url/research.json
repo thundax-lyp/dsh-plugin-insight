@@ -358,28 +358,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "多格式正文读取有明确用途，可在网络策略明确且人工核对原来源的profile试用；覆盖与回退边界妨碍持续安装结论。详见[Q09](#research-q09)。",
+                "reason": "经常读取公开网页资料且能核对原文的DSH用户，可在网络权限明确的profile中试用批次正文提取。相对逐页fetch和手工清理HTML，源码分析支持统一去噪、分片续读与批次异常隔离，但未实测节时或信息完整率。出现关键事实缺失、分页不完整或网络回退不符合预期时停止使用该结果，退回原页面或受控浏览器核查。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "公开来源阅读场景明确，独立需求频率未知。"
+                        "rationale": "[Q01](#research-q01)与[Q06](#research-q06)把输入限定为指定公开来源集，结果必须保留关键信息和出处；index.js:2168-2216输出标题、来源及裁剪状态，使任务验收可操作。对经常让模型整理网页者，原始HTML噪声和逐页操作是可解释的重复摩擦，故达到75%即23分，超过仅描述潜在人群或一般用途的15分。并非所有研究者都有此负担，登录和动态站点也不适合；缺少持续任务量和原工具不足的直接对照，不能给30分，作者节省token主张不补作需求证据。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "比原始fetch多正文处理和任务组织，关键事实效果未比较。"
+                        "score": 19,
+                        "rationale": "[Q02](#research-q02)与[Q03](#research-q03)表明它相对单次fetch增加正文适配、缓存、续读和多来源组织；复查index.js:2380-2408可见URL去重、最多十条与逐页异常隔离。这改变了明确任务的准备步骤，达到75%即19分，超过仅统一入口的13分。Readability、浏览器及网络能力来自上游，不算本项独有收益；[Q04](#research-q04)指出启发式选区和分页中断可能漏关键内容，且无同网页事实保留率对照，因此不是25分的充分优势。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定版本源码与静态测试支撑机制，未执行。"
+                        "rationale": "[Q02](#research-q02)、[Q04](#research-q04)、[Q05](#research-q05)覆盖提供方优先、错误分类、精确origin例外、提取与可选浏览器依赖；定向复查index.js:358-409与58-101确认配置才能扩大直连边界。材料足以解释受控静态资料试用而非只证明入口，故50%即13分，超过6分。正文完整率、固定宿主web错误分类和缓存实例隔离仍未知，作者测试不是独立运行；本次未执行代码，因此不满足19分本地测试档，也不把源码覆盖当端到端验证。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "默认无必需付费API，浏览器/代理/复核及网络权限带来额外负担。"
+                        "rationale": "[Q05](#research-q05)与[Q06](#research-q06)列明Node、网络、可选Playwright/Chromium及代理curl，现金与人工都非零；index.js:2673-2678的清理使禁用退路可定位。指定静态网页时无需强制部署浏览器，失败可回到原页面，不至于只有难以恢复的复杂系统，故50%即10分而非5分。每份重要结果仍需人工抽查，分页失败、重抓与管理员网络预期要排查；没有单位任务成本数据和轻负担恢复验证，不能凭无API key给15分。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "57d9316770af0d12d932c616c2bf22386d0314dc",
-                "reviewed_at": "2026-10-22T04:46:41.933Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -410,7 +410,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-22T04:36:02.544Z",
-            "analysis_sha256": "79fa4f43d0a5b180f741227197f0a350fb4a3fca7be94ca6dced3e634a066ac4"
+            "analysis_sha256": "a7e87fccdb697f0ad0b53fe6c4e56324e083eaa32be34db89488cf24c3f42ceb"
         },
         "publication.metadata": "data/catalog/2672243194--dsh-read-url/meta.json",
         "publication.summaries": {

@@ -369,28 +369,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合可隔离非敏感项目和bank、愿意观察写回诊断的开发者小范围试用；DSH收益未实测。",
+                "reason": "可自管Hindsight服务和独立bank的开发者，可在脱敏项目试用跨会话项目决策召回。相比手工搜索并粘贴历史，源码支持按工作区检索注入并自动写回，减少搬运只是分析推断。若串bank、召回陈旧事实或诊断显示retain失败，停止依赖自动记忆并退回项目Markdown和历史搜索，另处理服务端数据。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨会话项目决策场景明确但无当前用户频次采样"
+                        "rationale": "[Q01](#research-q01)的README.md:3–14及dsh.ts:10–23把重复跨会话项目约束搬运接到生命周期，历史决策不总能从当前源码重建，摩擦与交付目标具体，超过15分。README.md:20–40实验不含DSH且原始数据未回溯，不能以别的宿主收益证明DSH需求强度充分，故不取30分。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "相对人工搬运上下文有生命周期和去重机制"
+                        "rationale": "[Q02](#research-q02)的dsh.ts:286–336按实际会话处理输入，141–157优先snapshotEvents并切分继承历史，transcript-dsh.ts:73–98过滤注入来源。相对手工粘贴有项目绑定及重复抑制的实质过程增量，超过13分；记忆质量依赖上游服务，未证明错误减少和全部fork组合，不足25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "只检查固定版本源码与测试文本，基准非DSH运行"
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)的runtime.ts:277–298、347–389可直接核对提前推进retainedTurns与异步失败仅诊断，dsh.ts:395–417说明启动目录影响工具注册。支持的是有条件、可查看诊断的召回路径，并未保证无损持久化；范围与反证均明确，超过6分片段材料，未执行测试故不能19分。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "服务、自动采集、更新和错误记忆治理负担较高"
+                        "rationale": "[Q03](#research-q03)的runtime.ts:296–298在服务确认前更新长度，380–386失败只diag；config.ts:600–638有默认Cloud与采集策略，卸载不等于清远端记忆。除服务和模型费用还需缺写对账及数据退出治理，存在重要恢复缺口，不能10分。脱敏独立bank允许停止并改Markdown，不认定目标条件下负担完全不可接受0分。"
                     }
                 },
                 "score": 60,
                 "revision": "b4a0da1e9fd2dfd052843e4f95fcf368301f6a73",
-                "reviewed_at": "2026-10-24T10:34:50.879Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -420,7 +420,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T10:26:37.690Z",
-            "analysis_sha256": "8fbc1d5fedf1d3128e211a7645ac989b4e87655a38b41699d9ca5b52338d2dc8"
+            "analysis_sha256": "437e9b4baf4c376b83c310c6cacbfc62cb70ea15821d7f5d6132f76c643c6824"
         },
         "publication.metadata": "data/catalog/vectorize-io--hindsight--hindsight-integrations-coding-agents/meta.json",
         "publication.summaries": {

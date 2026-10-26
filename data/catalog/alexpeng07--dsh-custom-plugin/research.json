@@ -375,28 +375,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "隔离 profile 与状态备份后按需试用；生产共享状态和外部计价需验证。",
+                "reason": "同时需要会话搜索导出、个性化和本地用量视图的个人DSH用户，可在单宿主隔离profile中试用该套件。相对分别拼装多插件，源码分析支持统一入口与状态备份，但用量仍是估算且未验证实际节时。发现状态被覆盖、备份导入不一致或账单口径不符时停止依赖套件，退回原生会话操作和供应商账单并恢复备份。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "多功能 Web 用户场景明确。"
+                        "rationale": "[Q01](#research-q01)、[Q04](#research-q04)限定同时需要多项会话操作和本地用量的人群，README.zh.md:15-35与src/index.ts:23-63对上host查询和客户端槽位。搜索、导出、外观及统计分散管理的重复接线有具体摩擦，达到75%即23分，超过只有潜在功能列表的15分。单一需求用户采用广权限套件未必合算，作者冷启动报告也不代表真实持续需求；没有独立使用频率与原生能力不足的充分材料，因此不取30分，功能多不额外加需求分。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "会话、外观、备份和用量整合广。"
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01)所列多功能聚合相对分别安装有可解释的配置便利；[Q02](#research-q02)中state.ts:292-345的写队列与PID临时文件提供比直接覆盖更好的状态组织。因此取50%即13分，超过只增加入口的6分。但它没有证明聚合后操作质量优于原生组合；349-386的外部变化检测无跨进程共同锁，快写或不可读时仍可能覆盖，且预算仅本地估算。单宿主限制可控制部分风险，未达19分的明确任务结果改善。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码与作者测试报告可核，但未独立宿主测试。"
+                        "rationale": "[Q01](#research-q01)至[Q03](#research-q03)覆盖host路由、状态保存、本地围栏和备份排除Key，复查state.ts:292-345与loopback.ts:43-65明确PID临时文件及socket/Host/Origin条件。核心限定用法与主要风险已有直接材料，50%即13分超过6分局部声明。README列的宿主测试、canary只作作者报告，未独立执行；开放engines下限不等未来宿主全部支持，实际视觉保真和跨进程竞争未知，因此不升19分。"
                     },
                     "cost": {
-                        "score": 5,
-                        "rationale": "广权限、状态迁移和兼容矩阵维护较重。"
+                        "score": 10,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)显示一次安装引入会话读取、持久状态、可选凭据和CDN，备份有投影与恢复副本有助回退。对单宿主多需求者，首次与失败负担可识别，备份后可退原生功能，取50%即10分而非5分难恢复档。但跨进程丢更新、宿主升级、价目漂移与导入审阅仍需人工，local/offline只在依赖确实到位时成立。未测总维护时间和恢复可靠性，达不到15分较轻全周期负担。"
                     }
                 },
-                "score": 60,
+                "score": 59,
                 "revision": "8016757784f5b94d3dfc55dcba02ef7ae239c4c5",
-                "reviewed_at": "2026-10-26T02:09:35.846Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -426,7 +426,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-26T01:55:28Z",
-            "analysis_sha256": "37fa99273aeff0df2ee705119394814f574328a7ef49048e5f9b97e5a31d21a9"
+            "analysis_sha256": "c51fb88b5c6bddfa284a26266788f2590121e2734047273f0d06184f2aeceb4c"
         },
         "publication.metadata": "data/catalog/alexpeng07--dsh-custom-plugin/meta.json",
         "publication.summaries": {

@@ -370,28 +370,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "明确原生应用需求可在单应用和可撤销任务上试用，先核对焦点策略及敏感动作确认。",
+                "reason": "有明确原生应用任务的macOS用户可在可撤销夹具中试用单应用观察后操作。相比直接坐标点击，源码支持绑定观察与目标窗口并在动作后复查，任务完成率和前台干扰未测。出现观察过期、目标重绑定不唯一或键盘激活对象不符时，应停止动作并重新观察或退回人工操作。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "原生应用缺窄接口的任务明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q05](#research-q05)，README第60—77行和src/index.ts第48—73行将任务限定macOS原生应用、无更窄API且需实际控件变化的用户。人工在应用间搬信息与裸坐标动作存在具体重复摩擦，合格结果含业务变化和前台无意外干扰，支持23分高于15分。已有API、CLI和DOM更简单时不推荐这条路径；没有应用任务持续频率及真实采用反馈，不取30分。只读观察不是本次评估替身，需保留真实控制和键盘激活代价。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "目标绑定和路由比全局鼠标更可控。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，src/service.ts第308—395行将动作与Agent观察、opaque handle、lease和expectedStateHash绑定，失败可重观察而非盲点，相比普通全局坐标输入有实质正确性接线增量，取19分高于13分。原生AX和SkyLight来自系统，键盘activate仍会切前台，敏感标记依赖调用者，故不到25分。未运行目标应用，不能把设计上的防陈旧与定向投递写成零干扰或更高完成率。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "源码检查，无独立fixture/宿主执行。"
+                        "rationale": "依据[Q02](#research-q02)、[Q04](#research-q04)、[Q07](#research-q07)，实际核查confirmations.ts第88—97行敏感令牌条件及原生main.swift第844—869行键盘激活与重观察，service.ts第308—395行覆盖观察到动作主链。既有防护和不能保证的范围都有固定提交依据，支持13分而非入口级6分。未执行helper健康检查、权限授权、真实动作及退出验收，不能取19分；作者fixture和发布监控声明不当成本轮证据，私有符号的系统兼容仍待目标环境核对。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "系统授权、应用兼容与模型复核有持续负担。"
+                        "rationale": "依据[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)，src/index.ts第48—73行要求macOS与多宿主服务，main.swift第844—869行键盘可能激活后选焦点，confirmations.ts第88—97行敏感性靠调用方。单应用可撤销夹具有重观察和人工接管退路，故取10分高于5分；但首次OS权限、helper版本、逐步模型观察和动作复核是显著负担，不能取15分。付款发送等仍须人确认，观察hash并不证明业务提交成功，实际人时和图片token成本未知。"
                     }
                 },
                 "score": 65,
                 "revision": "1e9c8862e99ee86519799b8f30e335d22c078ee7",
-                "reviewed_at": "2026-10-23T08:24:13.153Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -422,7 +422,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "9f3e0af7ab58ac3a1ef8a9548408c2c40376c4c014a049c9153f3bfafb315ea1"
+            "analysis_sha256": "76a236602de8fb51c27b08e1e04449787788b28eed13d1f7eadec9b93df044fc"
         },
         "publication.metadata": "data/catalog/anionex--dsh-computer-use/meta.json",
         "publication.summaries": {

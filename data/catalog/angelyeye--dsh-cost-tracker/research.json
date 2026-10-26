@@ -339,28 +339,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "个人趋势观察可备份后试用，高负载与结算场景先核对守恒及账单差异。",
+                "reason": "愿意对账的个人DSH用户，可在备份数据并关闭不需云同步后试用多模型用量与估计费用趋势。相对供应商页面加表格，源码分析支持会话内查询和按历史价格时代计算，但不是结算凭证且无usage请求可能缺记。发现账单差异无法解释、明细逼近上限或宿主文件补丁难恢复时停止依赖本账本，退回供应商用量页并核对原始记录。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "跨模型与订阅费用观察任务明确。"
+                        "rationale": "[Q01](#research-q01)、[Q06](#research-q06)定位经常切模型及按量/订阅的人群，交付要求是用量来源、口径与差异可解释，而非仪表盘漂亮。index.js:614-657在流结束收usage，明确它能处理何类重复记录。跨供应商和订阅等值整理有具体摩擦，75%即23分超过15分一般用途。供应商账单仍需核对，费用可见不证明省钱；真实调用量和历史对账困难未有充分直接数据，故不取30分，也不以下载量替代持续需求。"
                     },
                     "advantage": {
-                        "score": 19,
-                        "rationale": "会话、时代与口径组合较表格更便利。"
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)相对token乘现价，增加价格时代与订阅等值区分；复查price-sync.js:91-118仅完整合理价格块才构造新时代，避免随意覆盖。机制有价值，50%即13分高于6分入口便利。但[Q04](#research-q04)的store.js:425-441超过明细上限直接删除未汇总、无usage失败漏记，使完整账本优势受限；结束时间与计费时间也可能不同。趋势可用不代表正确总账，不能取19分实质合格交付改善。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码可见，无账单对照。"
+                        "rationale": "[Q02](#research-q02)、[Q04](#research-q04)、[Q05](#research-q05)定位采集、定价、淘汰和宿主补丁，复查index.js:614-657、price-sync.js:91-118、store.js:425-441确认保留边界而非依作者宣传。材料支持明确估算与容量限制的个人趋势试用，取50%即13分，超过6分局部声明。实际价格、供应商计费对齐和高负载总量守恒未执行；不以原子写证明不丢统计，也不把estimated标志当真实账单，不能升19分。"
                     },
                     "cost": {
                         "score": 5,
-                        "rationale": "定价维护、高负载截断及宿主补丁退出增加负担。"
+                        "rationale": "[Q05](#research-q05)、[Q07](#research-q07)中index.js:154-197启动修改宿主client.js并备份，退出必须额外核补丁；多机同步、凭据、坏文件恢复和多进程覆盖还增加责任。故25%即5分，低于10分可行且完整辨识恢复链；不能用禁用插件当移除全部副作用。用户可关闭云端、用副本和供应商账单维持退路，故不至0分已知不可接受。既需日常对账又有容量截断，未证实轻维护，不应给15分。"
                     }
                 },
-                "score": 60,
+                "score": 54,
                 "revision": "a0ddc943eadb41c292cb0fe1e8d2a6f939d24081",
-                "reviewed_at": "2026-10-23T08:17:43.167Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -390,7 +390,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "10ae456ea6aa1c2e6e847fa9a192a70c119cc575fe70058192ba29f5b5eec588"
+            "analysis_sha256": "528d9f73dacfaac58a0eca2ed8097031b53e904561ebfe6f6f635a2307e568d6"
         },
         "publication.metadata": "data/catalog/angelyeye--dsh-cost-tracker/meta.json",
         "publication.summaries": {

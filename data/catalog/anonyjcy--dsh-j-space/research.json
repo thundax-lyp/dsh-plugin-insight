@@ -375,28 +375,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "复杂工程任务可在兼容DSH先单Agent试用；没有可信事件接线时按合作协议验收，不宣称认知收益或强制门禁。",
+                "reason": "已用兼容DSH且愿意维护证据记录的开发者，可先在单Agent复杂工程任务中试用J-Space预设。相对原生todos加普通文档，源码分析支持来源hash、报告轮次和失效复核记录，但它是合作协议而非自动强制门禁。来源变更后结论未复核、控制器未被调用或账本状态无法解释时停止依赖其放行，退回原生任务板和人工证据审阅并保留账本。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "复杂长任务证据管理需求明确，简单任务不划算"
+                        "rationale": "[Q01](#research-q01)把任务限定为多阶段多文件、跨会话恢复和来源依赖，不是所有聊天；preset/skills/j-space/SKILL.md:78-98按复杂度分级，可核对为什么普通todos对该类任务缺复核关系。已明确源材料到结论与验收记录的交付物，重复追踪失效来源的摩擦支持75%即23分，超过15分用途档。简单改动原生工具足够，复杂任务真实频率与采用意愿未知，不能据认知工作空间名称推出30分充分需求。"
                     },
                     "advantage": {
-                        "score": 13,
-                        "rationale": "相对todo有来源与验收协议，增益尚无对照"
+                        "score": 19,
+                        "rationale": "[Q03](#research-q03)、[Q06](#research-q06)把证据hash、报告轮次、修改后复核与普通todos对比，control.py:105-149的持久锁和原子替换能保留协议记录，具体改变复核交接，取75%即19分而非13分一般包装。上游J-Space拥有方法贡献，本仓库仅适配；[Q04](#research-q04)及integration/dsh.md:79-99明确hash不证明结论且无自动hook。因此优势只针对合作式证据账本，不支持自动门禁或认知增强，缺任务对照，不能给25分。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "固定源码充分支持适配路径，作者安装报告未独立复现"
+                        "rationale": "[Q02](#research-q02)、[Q04](#research-q04)、[Q06](#research-q06)涵盖原生preset注册、包内技能、控制器和持久锁；复查cordis.patch.yml:29-46、integration/dsh.md:79-99明确旧CLI与新注册、可调用桥与自动hook的区别。限定合作协议的核心机制和限制已有直接证据，取50%即13分超过6分入口档。宿主安装和模型任务本次均未执行，上游实验及作者适配测试不等独立验证，不能支持19分，也没有真实团队对话验收。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "原生安装便利但全文重读和验收负担不可忽略"
+                        "rationale": "[Q05](#research-q05)、[Q06](#research-q06)要求固定宿主、Python3.10、可写.jspace、显式pulse和全文重注入；control.py:105-149的锁与fsync/replace降低部分状态风险，退出可换预设并保留证据。单Agent复杂项目负担可识别、有退路，取50%即10分，高于只有恢复缺口5分。旧覆盖文件迁移、源刷新、额外token与并行任务板负担不可忽略，压缩归档不等上下文省token；无实际工时和恢复验证，达不到15分较轻档。"
                     }
                 },
-                "score": 59,
+                "score": 65,
                 "revision": "a3212f57d78fcc1a55342afb261cef3dd38b6454",
-                "reviewed_at": "2026-10-23T08:21:19.186Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -426,7 +426,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-23T07:54:19Z",
-            "analysis_sha256": "a740a9b94b9f0d40ff08e9b0922b71bcf9e355341ec39b8cf6e5260364794074"
+            "analysis_sha256": "1b01b531e9112f900cffb1f1fc6bce5adb15924a525ac3316332043c6d54c9e3"
         },
         "publication.metadata": "data/catalog/anonyjcy--dsh-j-space/meta.json",
         "publication.summaries": {

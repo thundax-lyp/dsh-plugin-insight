@@ -381,28 +381,28 @@
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "trial",
-                "reason": "适合已有代码验收流程的DSH开发者在独立分支试复杂任务，确认预设预算和删除模式，并保留真实测试把关。",
+                "reason": "熟悉DSH且有项目验收流程的开发者可在独立分支试用需求绑定的跨文件任务委派。相比原生预设的松散交接，源码能拒绝旧版本或错owner的结果，合格补丁率和总费用改善未测。出现未经授权的范围扩展、pending状态不明或结果仅自报通过时，应停止委派并退回原预设及项目测试人工验收。",
                 "criteria": {
                     "scenario": {
                         "score": 23,
-                        "rationale": "复杂编码任务和需求交接明确。"
+                        "rationale": "依据[Q01](#research-q01)、[Q02](#research-q02)，README第85—105行及src/dsh/super-code.ts第76—94行聚焦跨文件调查、实现、验证的任务。需求在父子交接时改变、工作区版本不一致是具体流程摩擦，合格结果是通过原项目验收的补丁而非台账，支持23分高于15分。普通宿主已有子Agent，简单任务不需台账；缺少当前版本真实开发负担与持续采用材料，不取30分，历史评测不能直接证明本任务值得采用。"
                     },
                     "advantage": {
                         "score": 19,
-                        "rationale": "来源与版本绑定使协作更可审查。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)，src/core/delegation.ts第28—55行把session、需求修订、工作区、版本、owner和attempt绑定，过期交接不能进入reviewable，相比普通文字委派有明确实质改善，取19分高于13分。reviewable仍不证明artifacts与checks真实，maxTokens不认证账单，默认删除relaxed也不是通用阻断，故不取25分。宿主负责模型loop与子Agent执行，不能归本插件原创；历史56%和节费结论不继承到当前固定代码。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "本轮仅源码，历史作者评测不升级。"
+                        "rationale": "依据[Q02](#research-q02)、[Q03](#research-q03)、[Q04](#research-q04)，实际核查src/core/delegation.ts第28—55行，代码明确版本匹配只使可审阅且cost为model-reported，deletion-protection.ts第58—71行另定位有限命令保护。核心委派、结果校验及关键负面边界都有固定源码，取13分超过局部入口6分。未执行任务、存储恢复和项目测试，不能取19分；评测文档对应其他冻结候选，不能升级成当前真实宿主效果证据。"
                     },
                     "cost": {
                         "score": 10,
-                        "rationale": "复用宿主但多agent、预算和记忆需维护。"
+                        "rationale": "依据[Q03](#research-q03)、[Q04](#research-q04)，src/dsh/index.ts第20—30行与super-code.ts第102—121行显示预设和可选长期存储依赖，delegation.ts第50—55行账单自报不完整。操作者需维护预设所有权、权限、删除模式、父子上下文与pending状态，持续成本显著，但独立分支、原测试及退原预设有可行路径，取10分高于5分。未测总模型费用和人工校验量，不能取15分；Git分支只给版本退路，不是外部写入隔离。"
                     }
                 },
                 "score": 65,
                 "revision": "1dfa1736d82bf75f0c88fc26da712d2798c70c50",
-                "reviewed_at": "2026-10-24T06:12:17.885Z",
+                "reviewed_at": "2026-10-26T08:44:05.381Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
@@ -432,7 +432,7 @@
             ],
             "status": "complete",
             "checked_at": "2026-10-24T05:52:04Z",
-            "analysis_sha256": "0b14f7f868971834538082c10895956af5a8c776959257fdb26164fb8a593376"
+            "analysis_sha256": "658aac6c02d55919040f4486580d85006a33bf1b3282253772d1b165d9e816a6"
         },
         "publication.metadata": "data/catalog/artlexyoung--dsh-super-code/meta.json",
         "publication.summaries": {
