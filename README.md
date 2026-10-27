@@ -10,7 +10,7 @@
 
 > 看看插件能解决什么问题，以及试用前需要确认什么。
 
-- **[Answer me with HTML](data/plugins/qingyuna--answer-me-with-html/INSIGHT.md)**｜将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。
+- **[Answer me with HTML](data/plugins/qingyuna--answer-me-with-html/INSIGHT.md)** ｜ 将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。
 
     **推荐理由**：需要交付协议解释或多维比较页面的Agent用户可用已核实短稿试生成单文件HTML。相比手写HTML，源码支持将布局和图坐标交给CLI，作者节时结果尚未在当前任务复现。若图形误导、渲染反复失败或纠错慢于Markdown，应关闭自动附页并退回原草稿。
 
@@ -18,7 +18,7 @@
 
     [查看完整分析](data/plugins/qingyuna--answer-me-with-html/INSIGHT.md)
 
-- **[no-ai-style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)**｜提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
+- **[no-ai-style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)** ｜ 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
 
     **推荐理由**：适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。
 
@@ -26,7 +26,7 @@
 
     [查看完整分析](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
-- **[dsh-plugin-veriscope](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)**｜重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
+- **[dsh-plugin-veriscope](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)** ｜ 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
 
     **推荐理由**：已有可信逐条分数与显式策略可试用，先用builtin和独立状态备份；PASS限输入范围，replay需固定环境且发布另负责。
 
@@ -34,7 +34,7 @@
 
     [查看完整分析](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)
 
-- **[dsh-markdown-live](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)**｜在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
+- **[dsh-markdown-live](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)** ｜ 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
 
     **推荐理由**：Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。
 
@@ -42,7 +42,7 @@
 
     [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
 
-- **[dsh-nav-history](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md)**｜为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。
+- **[dsh-nav-history](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md)** ｜ 为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。
 
     **推荐理由**：适合频繁跨会话面板的人先核对交错导航与持久化后试用，接受历史记录可能失效及不恢复滚动的边界。
 

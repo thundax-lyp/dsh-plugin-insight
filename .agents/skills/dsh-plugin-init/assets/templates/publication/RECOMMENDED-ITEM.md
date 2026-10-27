@@ -1,4 +1,4 @@
-- **{{plugin}}**｜{{purpose}}
+- **{{plugin}}** ｜ {{purpose}}
 
     **推荐理由**：{{reason}}
 
