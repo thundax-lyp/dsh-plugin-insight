@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6ce4095](https://github.com/AloneFu/dsh-calendar-plugin/tree/6ce4095ef800838f91abc162aa6d6646435f7605)
+源码版本：[6ce4095](https://github.com/AloneFu/dsh-calendar-plugin/tree/6ce4095ef800838f91abc162aa6d6646435f7605)
 
 <!-- BEGIN META -->
 [![npm 30d 5,639](https://img.shields.io/static/v1?label=npm+30d&message=5%2C639&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-calendar) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-calendar)
 <!-- END META -->
 
-> **实现功能**：在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。
+> **功能**：在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。
 
-> **核心亮点**：相对另建日程库，增量是复用Markdown单一真源并把日记/待办交接放到DSH内；局部更新与原格式保留有源码依据，业务节时未测。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对另建日程库，增量是复用Markdown单一真源并把日记/待办交接放到DSH内；局部更新与原格式保留有源码依据，业务节时未测。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：服务端expect检查是可选条件，进程内队列也不能锁住Obsidian；原子替换不等于无外部并发覆盖。单文件真源价值必须与写入竞争风险一起判断。[Q03](#research-q03)
+> **主要限制**：服务端expect检查是可选条件，进程内队列也不能锁住Obsidian；原子替换不等于无外部并发覆盖。单文件真源价值必须与写入竞争风险一起判断。[Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相对另建日程库，增量是复用Markdown单一真源并把日记/待办交接放到DSH内；局部更新与原格式保留有源码依据，业务节时未测。[Q01](#research-q01) [Q02](#research-q02)
 
-相对另建日程库，增量是复用Markdown单一真源并把日记/待办交接放到DSH内；局部更新与原格式保留有源码依据，业务节时未测。[Q01](#research-q01) [Q02](#research-q02)
-
 路径realpath校验、保BOM/换行和回读目标行具有可借鉴性；expect非必填、进程内队列与吞掉审计失败须显式说明。移植文件真源交互要先定义跨编辑器一致性契约。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

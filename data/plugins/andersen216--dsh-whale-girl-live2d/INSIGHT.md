@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f977bef](https://github.com/Andersen216/dsh-whale-girl-live2d/tree/f977bef508690e75ba6535cd8f4ce18e7f6ba9b0)
+源码版本：[f977bef](https://github.com/Andersen216/dsh-whale-girl-live2d/tree/f977bef508690e75ba6535cd8f4ce18e7f6ba9b0)
 
 <!-- BEGIN META -->
 [![GitHub ★ 44](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Andersen216/dsh-whale-girl-live2d)
 <!-- END META -->
 
-> **实现功能**：将 Live2D 桌宠注入 DSH Web/桌面界面，借 SSE 展示会话事件并支持输入、控制和钱包 HUD。
+> **功能**：将 Live2D 桌宠注入 DSH Web/桌面界面，借 SSE 展示会话事件并支持输入、控制和钱包 HUD。
 
-> **核心亮点**：把 Live2D 动作、会话可见事件与输入控件合为一套桌宠界面；娱乐/UI 集成而非模型能力。详见[Q01](#research-q01)。
+> **亮点**：把 Live2D 动作、会话可见事件与输入控件合为一套桌宠界面；娱乐/UI 集成而非模型能力。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：信任栅栏缺失/异常时 fail-open 使 say/cancel/control/HUD 等路由失守；素材非商业许可与代码 MIT 分层。详见[Q03](#research-q03)及[Q05](#research-q05)。
+> **主要限制**：信任栅栏缺失/异常时 fail-open 使 say/cancel/control/HUD 等路由失守；素材非商业许可与代码 MIT 分层。详见[Q03](#research-q03)及[Q05](#research-q05)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把 Live2D 动作、会话可见事件与输入控件合为一套桌宠界面；娱乐/UI 集成而非模型能力。详见[Q01](#research-q01)。
 
-把 Live2D 动作、会话可见事件与输入控件合为一套桌宠界面；娱乐/UI 集成而非模型能力。详见[Q01](#research-q01)。
-
 会话流转与 SSE 桥接可借鉴，静态资源本地供应；信任栅栏 fail-open 与硬编码费率是关键工程债。详见[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

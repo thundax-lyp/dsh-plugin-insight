@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[4b162a3](https://github.com/AlyceStocking/dsh-yukimi-theme/tree/4b162a3572e894e71001f3cefd0105519d5c4461)
+源码版本：[4b162a3](https://github.com/AlyceStocking/dsh-yukimi-theme/tree/4b162a3572e894e71001f3cefd0105519d5c4461)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：DSH Web 佐城雪美主题与 Windows desktop profile 桌宠通知，素材从外部 wiki URL 加载。
+> **功能**：DSH Web 佐城雪美主题与 Windows desktop profile 桌宠通知，素材从外部 wiki URL 加载。
 
-> **核心亮点**：主题加桌宠把会话等待与本轮完成事项带到桌面。详见[Q01](#research-q01)。
+> **亮点**：主题加桌宠把会话等待与本轮完成事项带到桌面。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：桌宠通知虽不传聊天正文，仍使用会话标题并主动置顶；素材为第三方角色外链，公开/商用使用需另核。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：桌宠通知虽不传聊天正文，仍使用会话标题并主动置顶；素材为第三方角色外链，公开/商用使用需另核。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@ DSH 默认主题与其内建通知；插件增加角色视觉和桌面小人。
 
 > **亮点**：主题加桌宠把会话等待与本轮完成事项带到桌面。详见[Q01](#research-q01)。
 
-主题加桌宠把会话等待与本轮完成事项带到桌面。详见[Q01](#research-q01)。
-
 Web 主题外观与 Windows desktop helper 分路径，Host 将根会话状态压成通知并经命名管道发送。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ Web 主题外观与 Windows desktop helper 分路径，Host 将根会话状态�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

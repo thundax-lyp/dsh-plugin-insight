@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[5247dd6](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget/tree/5247dd6813d6e4430728f39ccc63d43cda046022)
+源码版本：[5247dd6](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget/tree/5247dd6813d6e4430728f39ccc63d43cda046022)
 
 <!-- BEGIN META -->
 [![GitHub ★ 6,023](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C023&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) [![npm 30d 196,943](https://img.shields.io/static/v1?label=npm+30d&message=196%2C943&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-whale-widget) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-whale-widget)
 <!-- END META -->
 
-> **实现功能**：在DSH界面显示余额、会话用量、可自定义气泡与交互提醒。
+> **功能**：在DSH界面显示余额、会话用量、可自定义气泡与交互提醒。
 
-> **核心亮点**：相对手动切控制台，常驻余额和轮次提示把消费反馈放回工作界面；相对把余额差直接称花费，它显式拆分充值和消费并提供校正。增量是观察与解释的一体入口，不是新的计费真相源。泡泡、音效和角色定制主要是局部交互便利，不能作为节省API支出的证据。 依据[Q03](#research-q03)。
+> **亮点**：相对手动切控制台，常驻余额和轮次提示把消费反馈放回工作界面；相对把余额差直接称花费，它显式拆分充值和消费并提供校正。增量是观察与解释的一体入口，不是新的计费真相源。泡泡、音效和角色定制主要是局部交互便利，不能作为节省API支出的证据。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：关键质疑是两次余额采样之间发生的消费与充值能否被唯一分解。账本只能看到净差，即使分别累计正负变化，同一间隔中的充值抵消扣费仍需人工校正。partialDay检查首末观测与午夜距离，不能证明中间没有长断点。多个设备或其他应用共用账户时，账户余额变化也不能归因本机本轮；README已区分本机模型估算与账户口径。 依据[Q04](#research-q04)。
+> **主要限制**：关键质疑是两次余额采样之间发生的消费与充值能否被唯一分解。账本只能看到净差，即使分别累计正负变化，同一间隔中的充值抵消扣费仍需人工校正。partialDay检查首末观测与午夜距离，不能证明中间没有长断点。多个设备或其他应用共用账户时，账户余额变化也不能归因本机本轮；README已区分本机模型估算与账户口径。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对手动切控制台，常驻余额和轮次提示把消费反馈放回工作界面；相对把余额差直接称花费，它显式拆分充值和消费并提供校正。增量是观察与解释的一体入口，不是新的计费真相源。泡泡、音效和角色定制主要是局部交互便利，不能作为节省API支出的证据。 依据[Q03](#research-q03)。
 
-相对手动切控制台，常驻余额和轮次提示把消费反馈放回工作界面；相对把余额差直接称花费，它显式拆分充值和消费并提供校正。增量是观察与解释的一体入口，不是新的计费真相源。泡泡、音效和角色定制主要是局部交互便利，不能作为节省API支出的证据。 依据[Q03](#research-q03)。
-
 可借鉴的是账户scope+币种隔离、整数货币单位、乱序样本拒绝与注入前置。它们减少常见显示与累计混淆；迁移要同时保留原始观测窗口、校正语义和UI标签。DNS全局ipv4first是进程级副作用，应在共享宿主内审慎评估；大入口将多种UI与厂商模板集中，兼容维护责任较重。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

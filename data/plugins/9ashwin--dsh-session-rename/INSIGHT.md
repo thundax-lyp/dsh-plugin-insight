@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f073bfa](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)
+源码版本：[f073bfa](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：向模型提供 rename_session 工具，显式设置当前或已加载会话标题。
+> **功能**：向模型提供 rename_session 工具，显式设置当前或已加载会话标题。
 
-> **核心亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
+> **亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
 
-> **风险与缺陷**：可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。
+> **主要限制**：可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -90,8 +90,6 @@
 
 > **亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
 
-用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
-
 tools.register 手写参数/结果 schema、执行校验；动态获取 sessionTitle 服务；isConcurrencySafe:false。
 
 <a id="detail-section-5"></a>
@@ -140,7 +138,7 @@ tools.register 手写参数/结果 schema、执行校验；动态获取 sessionT
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

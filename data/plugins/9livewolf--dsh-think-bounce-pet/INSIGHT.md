@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[3bfe9cb](https://github.com/9livewolf/dsh-think-bounce-pet/tree/3bfe9cb32afea176937379351af39dfd46f955f4)
+源码版本：[3bfe9cb](https://github.com/9livewolf/dsh-think-bounce-pet/tree/3bfe9cb32afea176937379351af39dfd46f955f4)
 
 <!-- BEGIN META -->
 [![GitHub ★ 18](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=18&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/9livewolf/dsh-think-bounce-pet)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。
+> **功能**：在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。
 
-> **核心亮点**：把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。
+> **亮点**：把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：reasoning 文本不等于真实推理生命周期，空块/切会话可错过或提前结束动画；默认常驻球无推理时也持续 rAF，性能/遮挡需实测。详见[Q03](#research-q03)。
+> **主要限制**：reasoning 文本不等于真实推理生命周期，空块/切会话可错过或提前结束动画；默认常驻球无推理时也持续 rAF，性能/遮挡需实测。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。
 
-把 DSH 可见推理文本变化映射为可交互的装饰弹球，配置和动画生命周期集中在客户端；贡献在趣味交互，不在模型能力。详见[Q01](#research-q01)。
-
 共用 rAF、dt 上限、设置与碰撞箱同步可借鉴；性能和真实事件对齐需单独验证。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ reasoning 文本不等于真实推理生命周期，空块/切会话可错过或
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

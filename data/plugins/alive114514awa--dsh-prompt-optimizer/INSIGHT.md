@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[0f6d8d4](https://github.com/ALIve114514awa/dsh-prompt-optimizer/tree/0f6d8d42bc3418c78153ad56968117f9c38c3d42)
+源码版本：[0f6d8d4](https://github.com/ALIve114514awa/dsh-prompt-optimizer/tree/0f6d8d42bc3418c78153ad56968117f9c38c3d42)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) [![npm 30d 1,527](https://img.shields.io/static/v1?label=npm+30d&message=1%2C527&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-prompt-optimizer) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-prompt-optimizer)
 <!-- END META -->
 
-> **实现功能**：先澄清需求再用Harness或Codex生成可编辑预览，确认后填入草稿并由读者自己发送。
+> **功能**：先澄清需求再用Harness或Codex生成可编辑预览，确认后填入草稿并由读者自己发送。
 
-> **核心亮点**：将问答/生成/预览/取消与Web草稿CAS接成显式流程，增量在用户控制与接线而非新改写算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：将问答/生成/预览/取消与Web草稿CAS接成显式流程，增量在用户控制与接线而非新改写算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：Codex继承provider权限不等Harness无工具只读，TUI无接收ACK/同等CAS；生成成功不证明最终任务更好。详见[Q02](#research-q02)。
+> **主要限制**：Codex继承provider权限不等Harness无工具只读，TUI无接收ACK/同等CAS；生成成功不证明最终任务更好。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：将问答/生成/预览/取消与Web草稿CAS接成显式流程，增量在用户控制与接线而非新改写算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-将问答/生成/预览/取消与Web草稿CAS接成显式流程，增量在用户控制与接线而非新改写算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用的是生成/应用分离、session+draftRev CAS、引用保护、取消早到记录与迟到结果丢弃、Host终止类型校验和Codex原生provider不自建CLI后门。请求错误不直接泄出原生诊断全文也是清晰边界。TUI与Codex公开接口限制应持续如实说明。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ Codex继承provider权限不等Harness无工具只读，TUI无接收ACK/同等CA
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

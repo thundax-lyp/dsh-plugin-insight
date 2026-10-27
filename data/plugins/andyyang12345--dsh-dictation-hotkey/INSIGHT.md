@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[8428219](https://github.com/AndyYang12345/dsh-dictation-hotkey/tree/8428219e3e23acd6387548ca7b5e900b081d160c)
+源码版本：[8428219](https://github.com/AndyYang12345/dsh-dictation-hotkey/tree/8428219e3e23acd6387548ca7b5e900b081d160c)
 
 <!-- BEGIN META -->
 [![npm 30d 97](https://img.shields.io/static/v1?label=npm+30d&message=97&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dictation-hotkey) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dictation-hotkey)
 <!-- END META -->
 
-> **实现功能**：给 DSH Web 输入框增加按住或切换式语音热键，复用宿主转写并填入/可选发送。
+> **功能**：给 DSH Web 输入框增加按住或切换式语音热键，复用宿主转写并填入/可选发送。
 
-> **核心亮点**：相对宿主麦克风按钮，增量是热键录音状态机、草稿原生插入与诊断；识别引擎归 DSH 语音 bundle，不能把识别性能算本包贡献。详见[Q01](#research-q01)。
+> **亮点**：相对宿主麦克风按钮，增量是热键录音状态机、草稿原生插入与诊断；识别引擎归 DSH 语音 bundle，不能把识别性能算本包贡献。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：转写前后多次取当前 active seat，旧 span 冲突会向当前 seat 重试；取消没有保存转写的 AbortController 或结果代次，可能跨会话插入/误发。详见[Q03](#research-q03)。
+> **主要限制**：转写前后多次取当前 active seat，旧 span 冲突会向当前 seat 重试；取消没有保存转写的 AbortController 或结果代次，可能跨会话插入/误发。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对宿主麦克风按钮，增量是热键录音状态机、草稿原生插入与诊断；识别引擎归 DSH 语音 bundle，不能把识别性能算本包贡献。详见[Q01](#research-q01)。
 
-相对宿主麦克风按钮，增量是热键录音状态机、草稿原生插入与诊断；识别引擎归 DSH 语音 bundle，不能把识别性能算本包贡献。详见[Q01](#research-q01)。
-
 键盘/录音/设置分层和原生草稿插入可借鉴；异步音频结果需绑定发起时身份与可取消代次。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

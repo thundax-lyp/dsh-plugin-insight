@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[d3df500](https://github.com/Asher-2000/dsh-memory-connect/tree/d3df500883597ecc26db61eeee246fc30a9165ae)
+源码版本：[d3df500](https://github.com/Asher-2000/dsh-memory-connect/tree/d3df500883597ecc26db61eeee246fc30a9165ae)
 
 <!-- BEGIN META -->
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asher-2000/dsh-memory-connect) [![npm 30d 146](https://img.shields.io/static/v1?label=npm+30d&message=146&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@asherliner/dsh-memory-connect) [![最新发布 2026-08-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@asherliner/dsh-memory-connect)
 <!-- END META -->
 
-> **实现功能**：跨会话提取和保存记忆，通过关键词召回注入提示，并提供时态纠错与可选向量检索。
+> **功能**：跨会话提取和保存记忆，通过关键词召回注入提示，并提供时态纠错与可选向量检索。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把跨会话存储连到每轮真实systemPrompt入口，并以旧记录保留的方式纠错。FTS、RRF和衰减为既有方法，不把可选异步语义检索算作同步注入能力。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把跨会话存储连到每轮真实systemPrompt入口，并以旧记录保留的方式纠错。FTS、RRF和衰减为既有方法，不把可选异步语义检索算作同步注入能力。
 
-> **风险与缺陷**：[Q03](#research-q03) 发现同步SQL没有workspace过滤，无命中会注入最近记录，且只见条数/字符限制未见token预算硬门。对严格隔离用户，这比一般召回质量未知更直接限制采用。
+> **主要限制**：[Q03](#research-q03) 发现同步SQL没有workspace过滤，无命中会注入最近记录，且只见条数/字符限制未见token预算硬门。对严格隔离用户，这比一般召回质量未知更直接限制采用。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把跨会话存储连到每轮真实systemPrompt入口，并以旧记录保留的方式纠错。FTS、RRF和衰减为既有方法，不把可选异步语义检索算作同步注入能力。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 支持把跨会话存储连到每轮真实systemPrompt入口，并以旧记录保留的方式纠错。FTS、RRF和衰减为既有方法，不把可选异步语义检索算作同步注入能力。
-
 真实实例化避免仅提供类而不启动，systemPrompt入口可追踪；同步与异步检索分开明确但易被功能文案混淆。软替代来源字段值得复用，移植应添加事务与作用域测试。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ FTS自动注入、SQLite存储和软替代源码可核查；项目隔离、预�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

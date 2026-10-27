@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[7baac21](https://github.com/AK-blank/dsh-plugin-offpeak-badge/tree/7baac218a3ac9a7a31964bda164284c4647cf308)
+源码版本：[7baac21](https://github.com/AK-blank/dsh-plugin-offpeak-badge/tree/7baac218a3ac9a7a31964bda164284c4647cf308)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AK-blank/dsh-plugin-offpeak-badge)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 显示 DeepSeek API 模型价格空闲/高峰时段徽章与切换提示。
+> **功能**：在 DSH Web 显示 DeepSeek API 模型价格空闲/高峰时段徽章与切换提示。
 
-> **核心亮点**：把公开计价规则放到 DSH 常驻 UI，使人工排程更快看到时段；不读取真实账单或调度请求。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把公开计价规则放到 DSH 常驻 UI，使人工排程更快看到时段；不读取真实账单或调度请求。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：硬编码年历仅到2026，未覆盖年退化为周一至五可高峰；slot 与 DOM 类名集成也可能随宿主变化。详见[Q03](#research-q03)。
+> **主要限制**：硬编码年历仅到2026，未覆盖年退化为周一至五可高峰；slot 与 DOM 类名集成也可能随宿主变化。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把公开计价规则放到 DSH 常驻 UI，使人工排程更快看到时段；不读取真实账单或调度请求。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把公开计价规则放到 DSH 常驻 UI，使人工排程更快看到时段；不读取真实账单或调度请求。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 客户端用 Intl 北京日历字段及固定节假日表、分钟刷新。宿主 apply 为空；品牌 slot 抢优先级，折叠栏色点依赖 DOM 类名和定时定位。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

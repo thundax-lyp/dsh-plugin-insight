@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[dfc0396](https://github.com/PC2005-cloud/dsh-pet/tree/dfc03961bdb4d26898838cb72c9c2ac09699b1e2/dsh-pet)
+源码版本：[dfc0396](https://github.com/PC2005-cloud/dsh-pet/tree/dfc03961bdb4d26898838cb72c9c2ac09699b1e2/dsh-pet)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) [![npm 30d 83,202](https://img.shields.io/static/v1?label=npm+30d&message=83%2C202&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet)
 <!-- END META -->
 
-> **实现功能**：在DSH浏览器及可选桌面窗口中显示动画宠物，并联动会话状态、通知、余额与聊天。
+> **功能**：在DSH浏览器及可选桌面窗口中显示动画宠物，并联动会话状态、通知、余额与聊天。
 
-> **核心亮点**：[Q03](#research-q03)识别出动画池、共享双端交互和DSH事件结合的表现层贡献。相比静态桌宠多出会话联动，原生通知仍可替代任务提示，不能把娱乐偏好当生产力改善或把成功动画当验收。
+> **亮点**：[Q03](#research-q03)识别出动画池、共享双端交互和DSH事件结合的表现层贡献。相比静态桌宠多出会话联动，原生通知仍可替代任务提示，不能把娱乐偏好当生产力改善或把成功动画当验收。
 
-> **风险与缺陷**：[Q04](#research-q04)核实默认both显示与周期碎碎念会带来Electron下载、Helper及模型调用；限制到浏览器也需加载前确认配置，而不是安装后再关窗口。路由准入、资源负担和许可还需按具体环境核对。
+> **主要限制**：[Q04](#research-q04)核实默认both显示与周期碎碎念会带来Electron下载、Helper及模型调用；限制到浏览器也需加载前确认配置，而不是安装后再关窗口。路由准入、资源负担和许可还需按具体环境核对。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：[Q03](#research-q03)识别出动画池、共享双端交互和DSH事件结合的表现层贡献。相比静态桌宠多出会话联动，原生通知仍可替代任务提示，不能把娱乐偏好当生产力改善或把成功动画当验收。
 
-[Q03](#research-q03)识别出动画池、共享双端交互和DSH事件结合的表现层贡献。相比静态桌宠多出会话联动，原生通知仍可替代任务提示，不能把娱乐偏好当生产力改善或把成功动画当验收。
-
 可借鉴将状态reducer、物理动画与业务路由从渲染端分离，桌面和浏览器复用，以及配置变更时等旧Helper退出再串行启动新进程。这样针对“双窗口重叠”有明确因果处理，而不是凭测试数量保证一致。维护代价是Host与shared配置部分因单文件约束存在副本，字段同步和多平台素材仍需人工；路径词法检查不能未经symlink核对即宣称完全沙箱。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

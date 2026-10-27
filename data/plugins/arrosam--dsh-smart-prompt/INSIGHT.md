@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[ebdd664](https://github.com/Arrosam/dsh-smart-prompt/tree/ebdd66439b20c50650288af8e91361f273c4aeeb)
+源码版本：[ebdd664](https://github.com/Arrosam/dsh-smart-prompt/tree/ebdd66439b20c50650288af8e91361f273c4aeeb)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Arrosam/dsh-smart-prompt) [![npm 30d 363](https://img.shields.io/static/v1?label=npm+30d&message=363&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-smart-prompt) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-smart-prompt)
 <!-- END META -->
 
-> **实现功能**：发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。
+> **功能**：发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持发送前可撤回澄清加确定性字面gate的具体组合。硬事实检查相对仅提示模型保留信息更可检查，但未对照其他产品源码，不接受作者生态独占主张。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持发送前可撤回澄清加确定性字面gate的具体组合。硬事实检查相对仅提示模型保留信息更可检查，但未对照其他产品源码，不接受作者生态独占主张。
 
-> **风险与缺陷**：[Q03](#research-q03) 说明anchor存在不等于否定、权限和关系语义不变，fenced代码亦不作anchor。最重要的采用条件仍是用户对照原稿审阅，不能把保留计数当语义合格率。
+> **主要限制**：[Q03](#research-q03) 说明anchor存在不等于否定、权限和关系语义不变，fenced代码亦不作anchor。最重要的采用条件仍是用户对照原稿审阅，不能把保留计数当语义合格率。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持发送前可撤回澄清加确定性字面gate的具体组合。硬事实检查相对仅提示模型保留信息更可检查，但未对照其他产品源码，不接受作者生态独占主张。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 支持发送前可撤回澄清加确定性字面gate的具体组合。硬事实检查相对仅提示模型保留信息更可检查，但未对照其他产品源码，不接受作者生态独占主张。
-
 orchestrator与Cordis隔离、gate纯函数化便于确定性核查。字面anchor数量上限、代码claim和事实优先长度是重要设计取舍，移植应保留这些边界并补语义对照；不从注释测试宣称实测通过。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ orchestrator与Cordis隔离、gate纯函数化便于确定性核查。字面anch
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

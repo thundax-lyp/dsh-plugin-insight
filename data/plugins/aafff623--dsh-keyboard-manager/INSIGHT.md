@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6e4d700](https://github.com/Aafff623/dsh-keyboard-manager/tree/6e4d700ca56445a11d6c185efe9332c3680ad4d7)
+源码版本：[6e4d700](https://github.com/Aafff623/dsh-keyboard-manager/tree/6e4d700ca56445a11d6c185efe9332c3680ad4d7)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aafff623/dsh-keyboard-manager)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 用可配置 Ctrl 快捷键切换左右栏与设置。
+> **功能**：在 DSH Web 用可配置 Ctrl 快捷键切换左右栏与设置。
 
-> **核心亮点**：把常用布局/设置动作合并成三个可配置快捷键，降低鼠标点击。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把常用布局/设置动作合并成三个可配置快捷键，降低鼠标点击。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：Ctrl+S 除 better-sidebar panelHost 外全局先 preventDefault，即便动作 no-op 也吞原有保存行为；模拟单测对此有确认。详见[Q03](#research-q03)。
+> **主要限制**：Ctrl+S 除 better-sidebar panelHost 外全局先 preventDefault，即便动作 no-op 也吞原有保存行为；模拟单测对此有确认。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把常用布局/设置动作合并成三个可配置快捷键，降低鼠标点击。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把常用布局/设置动作合并成三个可配置快捷键，降低鼠标点击。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 客户端捕获阶段全局监听，动作依赖 DOM 标记；host 提供配置快照。配置拉取失败默认键，不会停止 Ctrl+S 拦截。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Ctrl+S 除 better-sidebar panelHost 外全局先 preventDefault，即便动作 n
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

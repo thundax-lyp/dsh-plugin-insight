@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6fe1631](https://github.com/AhYi8/dsh-gotify-notify/tree/6fe16310caa4233bb09086cd76c8dfb4b3e871c7)
+源码版本：[6fe1631](https://github.com/AhYi8/dsh-gotify-notify/tree/6fe16310caa4233bb09086cd76c8dfb4b3e871c7)
 
 <!-- BEGIN META -->
 [![npm 30d 398](https://img.shields.io/static/v1?label=npm+30d&message=398&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gotify-notify) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gotify-notify)
 <!-- END META -->
 
-> **实现功能**：按 DSH 轮次结束和可选提问事件向自管 Gotify 推送通知，并提供设置页测试入口。
+> **功能**：按 DSH 轮次结束和可选提问事件向自管 Gotify 推送通知，并提供设置页测试入口。
 
-> **核心亮点**：将 DSH 回合状态/待答问题推给 Gotify，提供 UI 配置与测试。详见[Q01](#research-q01)。
+> **亮点**：将 DSH 回合状态/待答问题推给 Gotify，提供 UI 配置与测试。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：凭据换人但 URL 不变时缓存旧 token；提问推送失败后去重抑制再试；测试路由信同机进程。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：凭据换人但 URL 不变时缓存旧 token；提问推送失败后去重抑制再试；测试路由信同机进程。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将 DSH 回合状态/待答问题推给 Gotify，提供 UI 配置与测试。详见[Q01](#research-q01)。
 
-将 DSH 回合状态/待答问题推给 Gotify，提供 UI 配置与测试。详见[Q01](#research-q01)。
-
 配置 getter 每次求值、超时和一次鉴权重试设计明确；URL-only token cache 和内存去重牺牲轮换/可靠性。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[38b2d42](https://github.com/AirPineApplea/feiyu-memory/tree/38b2d42b5026d557bf69bb711d951055858b54e9)
+源码版本：[38b2d42](https://github.com/AirPineApplea/feiyu-memory/tree/38b2d42b5026d557bf69bb711d951055858b54e9)
 
 <!-- BEGIN META -->
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AirPineApplea/feiyu-memory)
 <!-- END META -->
 
-> **实现功能**：为Harness保存人格内核、判断和情景日记，并在后续会话按相关性召回记忆。
+> **功能**：为Harness保存人格内核、判断和情景日记，并在后续会话按相关性召回记忆。
 
-> **核心亮点**：将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：多处清洗仍未覆盖judge额外模型出站，面板同源门也不等身份认证；persist失败计数在catch后被无条件清零，不能据“三次降级”承诺判断落盘可靠。[Q03](#research-q03)、[Q07](#research-q07)
+> **主要限制**：多处清洗仍未覆盖judge额外模型出站，面板同源门也不等身份认证；persist失败计数在catch后被无条件清零，不能据“三次降级”承诺判断落盘可靠。[Q03](#research-q03)、[Q07](#research-q07)
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-将人格、主观判断与事件日记分层，并把近期常驻与旧事召回分池，以本地索引控制持续记忆注入；增量在叙事与可管理流程，不是事实真值或隐私保证。[Q01](#research-q01)、[Q02](#research-q02)
-
 可借鉴近期/旧事分池、墓碑读盘和月份文件清理的对应关系；持久化仍需耐久收据，失败计数和跨文件中断要单独核验。[Q07](#research-q07)
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

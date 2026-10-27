@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[cde1359](https://github.com/AliceLJY/dsh-thumb/tree/cde135922e5fdd8729b163c634dd811294555d36)
+源码版本：[cde1359](https://github.com/AliceLJY/dsh-thumb/tree/cde135922e5fdd8729b163c634dd811294555d36)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AliceLJY/dsh-thumb)
 <!-- END META -->
 
-> **实现功能**：将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。
+> **功能**：将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。
 
-> **核心亮点**：集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。
+> **亮点**：集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：定位只取首个匹配且逐节点打标，没有唯一性和整体健康门控；语义后缀会改名，热卸载清理还存在静态边界。未复现误匹配或残留，不能据此称升级安全。详见[Q03](#research-q03)。
+> **主要限制**：定位只取首个匹配且逐节点打标，没有唯一性和整体健康门控；语义后缀会改名，热卸载清理还存在静态边界。未复现误匹配或残留，不能据此称升级安全。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -111,8 +111,6 @@ smoke源码有具体布局断言及开关对照，但若没有现有会话会跳
 
 > **亮点**：集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。
 
-集中语义定位、自有样式标记和公共layout关闭接口，把成熟抽屉模式接到DSH；以未被自身CSS覆盖的上游意图判断展开是可借鉴处，免hash不等于免DOM耦合。详见[Q02](#research-q02)。
-
 免完整hash没有消除DOM契约风险。LOCATORS仍依赖class子串，stampFrame用querySelector取得第一个匹配，没有注释所说的唯一性判定，也没有歧义时停止或报警。缺少某个匹配只是不打标；若部分frame/sidebar匹配成功、其他列未匹配，可能只应用一部分布局规则。因此不能把“集中定位”提升成“升级失败会可靠暴露”的保证。作者已记录detailsCol变为rightbarCol的适配，说明语义后缀也会改名。
 
 设置定位每次遍历div/section/dialog，计算样式和几何，再选全视口fixed flex且含_nav的第一个容器。这个启发式比全局_nav更窄，但仍可能遇到另一个满足条件的叠层。观察器监听整个body的子树、style和class变化，rAF合并避免同帧重复调度，却不证明长对话下没有明显开销。
@@ -165,7 +163,7 @@ smoke源码有具体布局断言及开关对照，但若没有现有会话会跳
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

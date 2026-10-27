@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c0e59e6](https://github.com/AKS1st/ikun-theme-skin/tree/c0e59e61332a5e3317365848f73240308d9d9345)
+源码版本：[c0e59e6](https://github.com/AKS1st/ikun-theme-skin/tree/c0e59e61332a5e3317365848f73240308d9d9345)
 
 <!-- BEGIN META -->
 [![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/ikun-theme-skin)
 <!-- END META -->
 
-> **实现功能**：给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。
+> **功能**：给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。
 
-> **核心亮点**：把主题、媒体和互动彩蛋打包为 Web 主题体验，而非模型或工作流能力提升。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把主题、媒体和互动彩蛋打包为 Web 主题体验，而非模型或工作流能力提升。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：启用时主动 setTheme('ikun-day')，清理未恢复先前偏好；远程媒体部分追踪 main/master，长期可用性不固定。详见[Q03](#research-q03)。
+> **主要限制**：启用时主动 setTheme('ikun-day')，清理未恢复先前偏好；远程媒体部分追踪 main/master，长期可用性不固定。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把主题、媒体和互动彩蛋打包为 Web 主题体验，而非模型或工作流能力提升。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把主题、媒体和互动彩蛋打包为 Web 主题体验，而非模型或工作流能力提升。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 宿主端为空，浏览器端的 React、theme、slots、timer、styles 为关键依赖；异步音频拒绝有处理，外部素材仍影响离线和稳定性。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

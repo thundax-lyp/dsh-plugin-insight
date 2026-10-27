@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[2244393](https://github.com/A8Chann/dsh-pet-live2d/tree/22443935bc6a47c9476f4eeeca5e67a209ce43f7/dsh-live2d-pet)
+源码版本：[2244393](https://github.com/A8Chann/dsh-pet-live2d/tree/22443935bc6a47c9476f4eeeca5e67a209ce43f7/dsh-live2d-pet)
 
 <!-- BEGIN META -->
 [![GitHub ★ 54](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=54&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/A8Chann/dsh-pet-live2d) [![npm 30d 6,432](https://img.shields.io/static/v1?label=npm+30d&message=6%2C432&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet-live2d) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet-live2d)
 <!-- END META -->
 
-> **实现功能**：为DSH网页挂载Live2D桌宠，支持鼠标互动、换装和会话事件驱动的动作表情。
+> **功能**：为DSH网页挂载Live2D桌宠，支持鼠标互动、换装和会话事件驱动的动作表情。
 
-> **核心亮点**：相对独立桌宠，任务事件与角色表现的组合减少单纯看日志的需要，但未证明状态理解更准确；渲染与素材能力继承上游。见 [Q01](#research-q01)。
+> **亮点**：相对独立桌宠，任务事件与角色表现的组合减少单纯看日志的需要，但未证明状态理解更准确；渲染与素材能力继承上游。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：整目录同步以pet.json指纹判断所有权，不能保护只改了同名贴图/动作而清单不变的情况；Core内容检查也不是固定摘要验证。见 [Q03](#research-q03)。
+> **主要限制**：整目录同步以pet.json指纹判断所有权，不能保护只改了同名贴图/动作而清单不变的情况；Core内容检查也不是固定摘要验证。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：相对独立桌宠，任务事件与角色表现的组合减少单纯看日志的需要，但未证明状态理解更准确；渲染与素材能力继承上游。见 [Q01](#research-q01)。
 
-相对独立桌宠，任务事件与角色表现的组合减少单纯看日志的需要，但未证明状态理解更准确；渲染与素材能力继承上游。见 [Q01](#research-q01)。
-
 核心借鉴点是宿主事件适配和渲染生命周期的分离；素材所有权粒度与外部运行时可复现性是维护代价。见 [Q02](#research-q02) 与 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

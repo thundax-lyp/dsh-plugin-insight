@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1116ec7](https://github.com/Aeroscis/dsh-temptask/tree/1116ec7ff1af2dcf104dc34d883548c413064e25)
+源码版本：[1116ec7](https://github.com/Aeroscis/dsh-temptask/tree/1116ec7ff1af2dcf104dc34d883548c413064e25)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aeroscis/dsh-temptask) [![npm 30d 1,309](https://img.shields.io/static/v1?label=npm+30d&message=1%2C309&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@aeroscis/dsh-temptask) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@aeroscis/dsh-temptask)
 <!-- END META -->
 
-> **实现功能**：一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。
+> **功能**：一键创建临时目录、工作区与会话，支持清理和搬迁转正，并以已完成事件前缀复刻对话。
 
-> **核心亮点**：串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。
+> **亮点**：串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：目录未独占预留，实例队列不能防多进程覆盖，转正非事务且取消失败仍可删除。详见[Q04](#research-q04)。
+> **主要限制**：目录未独占预留，实例队列不能防多进程覆盖，转正非事务且取消失败仍可删除。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。
 
-串起临时到保留的目录/会话流程，少做手工接线。详见[Q01](#research-q01)。
-
 模块分层、能力降级和阶段回执可借鉴，顺序mock不能证明并发安全。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

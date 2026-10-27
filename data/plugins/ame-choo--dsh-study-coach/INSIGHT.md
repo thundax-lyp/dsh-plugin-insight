@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[7c2c2d3](https://github.com/Ame-Choo/dsh-study-coach/tree/7c2c2d3f71cb49508e567674882eddb1b3a689ba)
+源码版本：[7c2c2d3](https://github.com/Ame-Choo/dsh-study-coach/tree/7c2c2d3f71cb49508e567674882eddb1b3a689ba)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ame-Choo/dsh-study-coach) [![npm 30d 353](https://img.shields.io/static/v1?label=npm+30d&message=353&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-study-coach) [![最新发布 2026-10-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-study-coach)
 <!-- END META -->
 
-> **实现功能**：以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。
+> **功能**：以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。
 
-> **核心亮点**：把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。
+> **亮点**：把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：双HTTP入口本地无身份准入，坏JSON默认回落可被后写覆盖，无投影时学习会话筛选降级。详见[Q04](#research-q04)、[Q05](#research-q05)。
+> **主要限制**：双HTTP入口本地无身份准入，坏JSON默认回落可被后写覆盖，无投影时学习会话筛选降级。详见[Q04](#research-q04)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。
 
-把学习目标、材料页、做题证据与面板回访接合，减少重复整理。详见[Q01](#research-q01)。
-
 共用gate、结构化证据及作用域工具可借鉴；默认回落和多文件恢复需更强契约。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

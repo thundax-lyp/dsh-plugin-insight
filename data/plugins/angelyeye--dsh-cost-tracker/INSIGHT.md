@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[576f6e7](https://github.com/Angelyeye/dsh-cost-tracker/tree/576f6e756a1064481ec5e8ca4ef0c5ade1cc21b6)
+源码版本：[576f6e7](https://github.com/Angelyeye/dsh-cost-tracker/tree/576f6e756a1064481ec5e8ca4ef0c5ade1cc21b6)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Angelyeye/dsh-cost-tracker) [![npm 30d 1,601](https://img.shields.io/static/v1?label=npm+30d&message=1%2C601&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@angelyeye/dsh-cost-tracker) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@angelyeye/dsh-cost-tracker)
 <!-- END META -->
 
-> **实现功能**：在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。
+> **功能**：在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。
 
-> **核心亮点**：[Q03](#research-q03)支持会话归属、计价时代与双轨口径的集成贡献；相对厂商账单增加会话解释，不将本地估算称为真实结算。
+> **亮点**：[Q03](#research-q03)支持会话归属、计价时代与双轨口径的集成贡献；相对厂商账单增加会话解释，不将本地估算称为真实结算。
 
-> **风险与缺陷**：[Q04](#research-q04)指出无usage与价格规则会造成账单差额，且启动无条件修补宿主UI产物。仅本地账本并不能隔离这一写入；若不能准备可丢弃宿主副本和原文件备份，应观察而非在日常宿主直接试用，停插件也不证明产物还原。
+> **主要限制**：[Q04](#research-q04)指出无usage与价格规则会造成账单差额，且启动无条件修补宿主UI产物。仅本地账本并不能隔离这一写入；若不能准备可丢弃宿主副本和原文件备份，应观察而非在日常宿主直接试用，停插件也不证明产物还原。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：[Q03](#research-q03)支持会话归属、计价时代与双轨口径的集成贡献；相对厂商账单增加会话解释，不将本地估算称为真实结算。
 
-[Q03](#research-q03)支持会话归属、计价时代与双轨口径的集成贡献；相对厂商账单增加会话解释，不将本地估算称为真实结算。
-
 计价逻辑、存储、凭据和导入分别拆模块，有助于独立复用。存储采用PID临时文件、rename及瞬时失败退避，并明确拒绝失败后直接覆盖，减少半文件风险；但这不解决多个实例的账本合并，注释说明实例锁只提示不阻断。可借鉴的是将金钱口径与展示分离、标注estimated、保留明细来源；移植需对齐usage事件和价格来源。测试文件存在不能视为本轮执行通过。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a2080e0](https://github.com/AKUSH99/dsh-balance-chip/tree/a2080e0f5024f95d35439988107183f024ba034d)
+源码版本：[a2080e0](https://github.com/AKUSH99/dsh-balance-chip/tree/a2080e0f5024f95d35439988107183f024ba034d)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH web 侧栏与右下角显示经主机查询的 DeepSeek API 余额状态。
+> **功能**：在 DSH web 侧栏与右下角显示经主机查询的 DeepSeek API 余额状态。
 
-> **核心亮点**：把官方余额查询经宿主凭据与缓存 route 接入 DSH web 两处界面，减少用户跳转查账户余额的步骤；不增加会话级计价或消费控制。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把官方余额查询经宿主凭据与缓存 route 接入 DSH web 两处界面，减少用户跳转查账户余额的步骤；不增加会话级计价或消费控制。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：仅取首条余额、坏金额转 0、主显示固定 $；主机 timer 未随 route effect 清理且轮询不串行，可能导致误读或额外请求，均为源码风险而非本轮复现。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：仅取首条余额、坏金额转 0、主显示固定 $；主机 timer 未随 route effect 清理且轮询不串行，可能导致误读或额外请求，均为源码风险而非本轮复现。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把官方余额查询经宿主凭据与缓存 route 接入 DSH web 两处界面，减少用户跳转查账户余额的步骤；不增加会话级计价或消费控制。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把官方余额查询经宿主凭据与缓存 route 接入 DSH web 两处界面，减少用户跳转查账户余额的步骤；不增加会话级计价或消费控制。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 主机凭据不直接送到客户端，前端只读本地缓存 route；这降低直接暴露 Key 的路径。金额解析、币种、timer 生命周期和路由访问控制仍需核查；客户端两份轮询实现重复。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

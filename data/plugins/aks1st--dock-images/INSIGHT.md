@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[b98f391](https://github.com/AKS1st/dock-images/tree/b98f3910c59af6f30c742b0ddc001315c2c176ee)
+源码版本：[b98f391](https://github.com/AKS1st/dock-images/tree/b98f3910c59af6f30c742b0ddc001315c2c176ee)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/dock-images) [![npm 30d 1,028](https://img.shields.io/static/v1?label=npm+30d&message=1%2C028&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dock-images) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dock-images)
 <!-- END META -->
 
-> **实现功能**：在dock工作台打开本地图片，整文件经Host转base64给浏览器img显示，支持缩放/旋转/拖动。
+> **功能**：在dock工作台打开本地图片，整文件经Host转base64给浏览器img显示，支持缩放/旋转/拖动。
 
-> **核心亮点**：把成熟图片解码和视图操作接入dock，减少切应用；非新图像技术或通用文件授权。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：把成熟图片解码和视图操作接入dock，减少切应用；非新图像技术或通用文件授权。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：Host不限制图片类型/工作区，fence通过可取进程可读绝对文件；stat/read分离和像素/解码错误缺口使体积cap不足。详见[Q02](#research-q02)。
+> **主要限制**：Host不限制图片类型/工作区，fence通过可取进程可读绝对文件；stat/read分离和像素/解码错误缺口使体积cap不足。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把成熟图片解码和视图操作接入dock，减少切应用；非新图像技术或通用文件授权。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-把成熟图片解码和视图操作接入dock，减少切应用；非新图像技术或通用文件授权。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 effect登记Host路由和Client文件域/视图可统一清理；动态标题按React文本渲染，SVG仅img路径、缩放clamp、路径变化丢迟到避免常见串图，均可复用。绝对路径宽读和像素未限是独立边界。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ Host不限制图片类型/工作区，fence通过可取进程可读绝对文件�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

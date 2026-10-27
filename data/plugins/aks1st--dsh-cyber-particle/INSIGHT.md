@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e08111d](https://github.com/AKS1st/dsh-cyber-particle/tree/e08111d59df009454d9de6b8384907f697e038f6)
+源码版本：[e08111d](https://github.com/AKS1st/dsh-cyber-particle/tree/e08111d59df009454d9de6b8384907f697e038f6)
 
 <!-- BEGIN META -->
 [![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/dsh-cyber-particle)
 <!-- END META -->
 
-> **实现功能**：DSH Web Canvas 粒子网络背景，提供设置页与本地持久化。
+> **功能**：DSH Web Canvas 粒子网络背景，提供设置页与本地持久化。
 
-> **核心亮点**：无需 Host 路由即可提供双语可调的穿透式粒子背景。详见[Q01](#research-q01)。
+> **亮点**：无需 Host 路由即可提供双语可调的穿透式粒子背景。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：prefers-reduced-motion 命中后初次不启动，但页面可见性恢复无条件 start；损坏本地配置直接入计算。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：prefers-reduced-motion 命中后初次不启动，但页面可见性恢复无条件 start；损坏本地配置直接入计算。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：无需 Host 路由即可提供双语可调的穿透式粒子背景。详见[Q01](#research-q01)。
 
-无需 Host 路由即可提供双语可调的穿透式粒子背景。详见[Q01](#research-q01)。
-
 视口面积归一化与组件清理可复用；O(n²) 连线成本和减动效恢复缺口需测。详见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ prefers-reduced-motion 命中后初次不启动，但页面可见性恢复无条
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-skill-explorer)
+源码版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-skill-explorer)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 116,190](https://img.shields.io/static/v1?label=npm+30d&message=116%2C190&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer)
 <!-- END META -->
 
-> **实现功能**：在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。
+> **功能**：在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。
 
-> **核心亮点**：相对文件管理器逐目录查找，它合并文件系统与 registry 元数据、用来源优先级解决同名项，并让写操作重新扫描匹配名称与路径，避免陈旧面板把变更写到同名的其他来源。导入只创建不覆盖，提供逐项跳过理由。这是管理工作流与身份边界的增量，Skill 解析和加载权威仍在宿主。[Q02](#research-q02)
+> **亮点**：相对文件管理器逐目录查找，它合并文件系统与 registry 元数据、用来源优先级解决同名项，并让写操作重新扫描匹配名称与路径，避免陈旧面板把变更写到同名的其他来源。导入只创建不覆盖，提供逐项跳过理由。这是管理工作流与身份边界的增量，Skill 解析和加载权威仍在宿主。[Q02](#research-q02)
 
-> **风险与缺陷**：插件来源行的“关闭”仅改变面板本地显示，模型仍收到对应 Skill；preset 专属目录也不在完整覆盖内。因此不能把该面板的启用状态或缺项当作实际会话权限事实。README 已明确该限制，源码亦只在采集结果应用本地 toggle，没有看到 registry 策略写入。这直接限制其作为统一控制中心的价值。[Q03](#research-q03)
+> **主要限制**：插件来源行的“关闭”仅改变面板本地显示，模型仍收到对应 Skill；preset 专属目录也不在完整覆盖内。因此不能把该面板的启用状态或缺项当作实际会话权限事实。README 已明确该限制，源码亦只在采集结果应用本地 toggle，没有看到 registry 策略写入。这直接限制其作为统一控制中心的价值。[Q03](#research-q03)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：相对文件管理器逐目录查找，它合并文件系统与 registry 元数据、用来源优先级解决同名项，并让写操作重新扫描匹配名称与路径，避免陈旧面板把变更写到同名的其他来源。导入只创建不覆盖，提供逐项跳过理由。这是管理工作流与身份边界的增量，Skill 解析和加载权威仍在宿主。[Q02](#research-q02)
 
-相对文件管理器逐目录查找，它合并文件系统与 registry 元数据、用来源优先级解决同名项，并让写操作重新扫描匹配名称与路径，避免陈旧面板把变更写到同名的其他来源。导入只创建不覆盖，提供逐项跳过理由。这是管理工作流与身份边界的增量，Skill 解析和加载权威仍在宿主。[Q02](#research-q02)
-
 来源rank与fresh scan身份核对值得借鉴；导入有明确资源上限和不覆盖规则。编辑writeFile与回收站只覆盖不同恢复条件，不能称完整事务管理；面板本地策略必须明确标识。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：packages/dsh-skill-explorer；内容摘要：2e1b87925a454e82af80836a701212acf063a8eb7a6f5041407e2ebab0f81dad。sloc 0.3.2，TypeScript 5.9.3。
 

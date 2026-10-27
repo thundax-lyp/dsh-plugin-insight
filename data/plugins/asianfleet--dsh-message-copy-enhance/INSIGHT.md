@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[9d85955](https://github.com/Asianfleet/dsh-message-copy-enhance/tree/9d8595501224621db5942fadddcbdb0efceba686)
+源码版本：[9d85955](https://github.com/Asianfleet/dsh-message-copy-enhance/tree/9d8595501224621db5942fadddcbdb0efceba686)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asianfleet/dsh-message-copy-enhance) [![npm 30d 1,109](https://img.shields.io/static/v1?label=npm+30d&message=1%2C109&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-message-copy-enhance) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-message-copy-enhance)
 <!-- END META -->
 
-> **实现功能**：将助手消息选区复制为 Markdown，恢复链接、LaTeX 源码和代码围栏。
+> **功能**：将助手消息选区复制为 Markdown，恢复链接、LaTeX 源码和代码围栏。
 
-> **核心亮点**：[Q01](#research-q01) 的具体增量是部分选区的格式恢复，[Q02](#research-q02) 将plain code、Shiki与KaTeX分别处理以减少可见文本复制的损失。DOM到Markdown是成熟技术，此处主要是宿主数据形状适配。
+> **亮点**：[Q01](#research-q01) 的具体增量是部分选区的格式恢复，[Q02](#research-q02) 将plain code、Shiki与KaTeX分别处理以减少可见文本复制的损失。DOM到Markdown是成熟技术，此处主要是宿主数据形状适配。
 
-> **风险与缺陷**：[Q03](#research-q03) 的限制是渲染结果不唯一反推出原稿；起点消息门槛和部分公式扩展也使选区语义需验收。源码分支不等于复杂复制无损。
+> **主要限制**：[Q03](#research-q03) 的限制是渲染结果不唯一反推出原稿；起点消息门槛和部分公式扩展也使选区语义需验收。源码分支不等于复杂复制无损。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：[Q01](#research-q01) 的具体增量是部分选区的格式恢复，[Q02](#research-q02) 将plain code、Shiki与KaTeX分别处理以减少可见文本复制的损失。DOM到Markdown是成熟技术，此处主要是宿主数据形状适配。
 
-[Q01](#research-q01) 的具体增量是部分选区的格式恢复，[Q02](#research-q02) 将plain code、Shiki与KaTeX分别处理以减少可见文本复制的损失。DOM到Markdown是成熟技术，此处主要是宿主数据形状适配。
-
 转换器与事件入口分开，UI装饰过滤和code原样路径有明确用途，适合借鉴到相同渲染栈；移植需确认Markdown方言及DOM shape，不能从独立零依赖推断零维护。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ DOM转换和copy拦截有源码支持；复杂选区及目标编辑器效果未�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

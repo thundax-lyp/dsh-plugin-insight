@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[bc00ee4](https://github.com/OpenPetsHQ/openpets/tree/bc00ee4bfa47f4215c8a538862d0f8ab00174d89/packages/dsh)
+源码版本：[bc00ee4](https://github.com/OpenPetsHQ/openpets/tree/bc00ee4bfa47f4215c8a538862d0f8ab00174d89/packages/dsh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,333](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C333&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/OpenPetsHQ/openpets) [![npm 30d 556](https://img.shields.io/static/v1?label=npm+30d&message=556&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@open-pets/dsh) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@open-pets/dsh)
 <!-- END META -->
 
-> **实现功能**：把 DSH 状态、错误、审批和工具活动转为 OpenPets 桌面伴侣的反应与气泡。
+> **功能**：把 DSH 状态、错误、审批和工具活动转为 OpenPets 桌面伴侣的反应与气泡。
 
-> **核心亮点**：把DSH活动移到桌面伴侣并以尽力异步通知避免阻塞工作，增量在注意力提示而非执行能力。见[Q01](#research-q01)。
+> **亮点**：把DSH活动移到桌面伴侣并以尽力异步通知避免阻塞工作，增量在注意力提示而非执行能力。见[Q01](#research-q01)。
 
-> **风险与缺陷**：idle被写成success/Done且状态未按session隔离；规则过滤不能覆盖任意敏感正文，不能用宠物话术验收工作。见[Q03](#research-q03)。
+> **主要限制**：idle被写成success/Done且状态未按session隔离；规则过滤不能覆盖任意敏感正文，不能用宠物话术验收工作。见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@ DSH原生状态或普通桌面通知为基线；拟人表达不替代验收或�
 
 > **亮点**：把DSH活动移到桌面伴侣并以尽力异步通知避免阻塞工作，增量在注意力提示而非执行能力。见[Q01](#research-q01)。
 
-把DSH活动移到桌面伴侣并以尽力异步通知避免阻塞工作，增量在注意力提示而非执行能力。见[Q01](#research-q01)。
-
 异步尽力IPC、短超时、审批next透传值得复用；全局流缓冲和状态抑制不适合直接解释多会话成功，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ idle被写成success/Done且状态未按session隔离；规则过滤不能覆盖
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

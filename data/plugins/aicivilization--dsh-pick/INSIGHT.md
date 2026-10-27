@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[bbae391](https://github.com/AIcivilization/dsh-pick/tree/bbae391f560ccbf8438805d513abaf9142bc31d7)
+源码版本：[bbae391](https://github.com/AIcivilization/dsh-pick/tree/bbae391f560ccbf8438805d513abaf9142bc31d7)
 
 <!-- BEGIN META -->
 [![npm 30d 1,532](https://img.shields.io/static/v1?label=npm+30d&message=1%2C532&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick)
 <!-- END META -->
 
-> **实现功能**：从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。
+> **功能**：从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。
 
-> **核心亮点**：相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
+> **亮点**：相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
 
-> **风险与缺陷**：所谓健康分仍由下载与发版代理指标构成，频繁发版会同时影响去噪基线和节奏加分；被排除样本不足又回退原始中位数，不支持“最值得安装”的因果结论。[Q03](#research-q03)
+> **主要限制**：所谓健康分仍由下载与发版代理指标构成，频繁发版会同时影响去噪基线和节奏加分；被排除样本不足又回退原始中位数，不支持“最值得安装”的因果结论。[Q03](#research-q03)
 
 **本文目录**
 
@@ -97,8 +97,6 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 
 > **亮点**：相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
 
-相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
-
 引擎复用和更新原子写减少半目录风险，网络失败保留已有数据。validCatalog只检查最低包数与前50项字段，属于形状门槛而非全目录语义验收；移植时应增加数据来源和缺失状态审查。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

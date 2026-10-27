@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1b8cd7e](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/tree/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818)
+源码版本：[1b8cd7e](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/tree/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818)
 
 <!-- BEGIN META -->
 [![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)
 <!-- END META -->
 
-> **实现功能**：粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。
+> **功能**：粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。
 
-> **核心亮点**：将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：全局 seq 无会话/结果，当前 DOM 问号判提问；隐藏页没有提示音，README 与实现不一致。素材公开再分发需权利审查。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：全局 seq 无会话/结果，当前 DOM 问号判提问；隐藏页没有提示音，README 与实现不一致。素材公开再分发需权利审查。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@ DSH 原生界面/页面通知；本包增加粉色装饰与结束事件提示。
 
 > **亮点**：将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-将皮肤和轻量结束提醒打包；提醒无需外部服务。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 host route 只传 seq；客户端轮询与当前 DOM 关联，hidden 分支只通知无声音；安装器会改 profile patch。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ host route 只传 seq；客户端轮询与当前 DOM 关联，hidden 分支只�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

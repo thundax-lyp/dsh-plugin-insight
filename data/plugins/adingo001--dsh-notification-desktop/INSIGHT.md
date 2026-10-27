@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[33f5cbf](https://github.com/Adingo001/dsh-notification-desktop/tree/33f5cbf23e00219088fca630d83e876b61fd487a)
+源码版本：[33f5cbf](https://github.com/Adingo001/dsh-notification-desktop/tree/33f5cbf23e00219088fca630d83e876b61fd487a)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：适配DSH 0.2.x的任务完成通知，Windows桌面经Host发送WinRT提醒。
+> **功能**：适配DSH 0.2.x的任务完成通知，Windows桌面经Host发送WinRT提醒。
 
-> **核心亮点**：基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
+> **亮点**：基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
 
-> **风险与缺陷**：客户端投递即记录成功、非Windows Electron仍走会直接skip的Host路径；页面关闭停止判定，不能承诺可靠跨平台后台提醒。[Q03](#research-q03)
+> **主要限制**：客户端投递即记录成功、非Windows Electron仍走会直接skip的Host路径；页面关闭停止判定，不能承诺可靠跨平台后台提醒。[Q03](#research-q03)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
 
-基于上游通知投影做0.2.x会话与设置适配，并以Host PowerShell/WinRT处理Windows桌面通知，价值是减少完成轮询；不是新通知协议或任务验收机制。[Q01](#research-q01)
-
 投影折叠及重连水合基线可借鉴；记录投递成功的时机过早，平台回退与本地路由边界需先补验收。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

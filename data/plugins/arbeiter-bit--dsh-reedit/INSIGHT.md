@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[dddb974](https://github.com/Arbeiter-bit/dsh-reedit/tree/dddb9749cdf14358e535ab772e938102d104e9a6)
+源码版本：[dddb974](https://github.com/Arbeiter-bit/dsh-reedit/tree/dddb9749cdf14358e535ab772e938102d104e9a6)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Arbeiter-bit/dsh-reedit)
 <!-- END META -->
 
-> **实现功能**：双击自己的消息进行文本改写，在原消息前分叉会话并重发，原对话保留。
+> **功能**：双击自己的消息进行文本改写，在原消息前分叉会话并重发，原对话保留。
 
-> **核心亮点**：相对复制文字并手工找分叉点，插件把旧消息定位、编辑和fork/prompt/open串成一次操作，顺应追加日志约束而保留原会话。分叉能力归宿主，插件贡献是交互整合，不能把聊天分支等同于文件或外部系统回滚。[Q01](#research-q01)
+> **亮点**：相对复制文字并手工找分叉点，插件把旧消息定位、编辑和fork/prompt/open串成一次操作，顺应追加日志约束而保留原会话。分叉能力归宿主，插件贡献是交互整合，不能把聊天分支等同于文件或外部系统回滚。[Q01](#research-q01)
 
-> **风险与缺陷**：改写能否保留原请求语义决定适用范围。渲染层解析图片、文件和referenceLabels，但editResend只发送一个文本块；带附件消息的重发不再携带原附件。fork先于prompt成功，失败后重试会再fork且未见复用已有childId，可能留下多个分支。新分支重跑也不会自动撤销原会话已产生的文件或外部副作用。[Q02](#research-q02)
+> **主要限制**：改写能否保留原请求语义决定适用范围。渲染层解析图片、文件和referenceLabels，但editResend只发送一个文本块；带附件消息的重发不再携带原附件。fork先于prompt成功，失败后重试会再fork且未见复用已有childId，可能留下多个分支。新分支重跑也不会自动撤销原会话已产生的文件或外部副作用。[Q02](#research-q02)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相对复制文字并手工找分叉点，插件把旧消息定位、编辑和fork/prompt/open串成一次操作，顺应追加日志约束而保留原会话。分叉能力归宿主，插件贡献是交互整合，不能把聊天分支等同于文件或外部系统回滚。[Q01](#research-q01)
 
-相对复制文字并手工找分叉点，插件把旧消息定位、编辑和fork/prompt/open串成一次操作，顺应追加日志约束而保留原会话。分叉能力归宿主，插件贡献是交互整合，不能把聊天分支等同于文件或外部系统回滚。[Q01](#research-q01)
-
 复用宿主追加日志和会话接口比自造事件类型更容易保持兼容，effect管理slot注册，primitives guarded加载有降级。代价是复制原生消息渲染，文件卡片和未知块需要持续跟宿主变更；编辑状态与childId未形成恢复协议。可借鉴按事件前边界fork的思路，复用需结构化消息和幂等操作。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
