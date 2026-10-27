@@ -2,12 +2,14 @@
 
 ## {{plugin}}
 
-{{meta}}
-
 **主要用途**：{{purpose}}
 
 {{reason}}
 
-**使用条件**：{{conditions}}
+**{{conditions_label}}**：{{conditions}}
 
-[返回表格](#column-index)
+{{reading}}
+
+{{meta}}
+
+[返回索引](#column-index)

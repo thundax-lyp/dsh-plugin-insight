@@ -1,5 +1,5 @@
-## [推荐](data/views/columns/RECOMMENDED.md)
+## [推荐尝试](data/views/columns/RECOMMENDED.md)
 
-> 从这些值得尝试的插件开始，找到能帮你解决实际问题的工具。
+> 从用途、实际增量和试用条件中，找到值得继续了解的插件。
 
 {{items}}

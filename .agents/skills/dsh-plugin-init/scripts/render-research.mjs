@@ -13,7 +13,7 @@ import { renderDetailLayout, splitSections } from './publication/detail-layout.m
 import {
     categoryGroups,
     renderCategoryIndex,
-    renderHomeCategories,
+    renderCategoryStarBoards,
     renderHomeNavigation,
     categoryScope,
     renderUpdated,
@@ -360,6 +360,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             template('CATEGORY-PAGE', {
                 name: g.name,
                 home: link(g.path, 'README.md'),
+                index: link(g.path, input.catalog_page),
                 scope: categoryScope(g.key),
                 categories: renderCategories(g.entries, (e) => link(g.path, e.detailPath)),
                 updated: renderUpdated(updated)
@@ -368,7 +369,15 @@ export function renderPublication(input, root = ROOT, context = null) {
     const catalogPage =
         template('CATALOG', {
             updated: renderUpdated(updated),
-            categories: renderCategoryIndex(groups.map((g) => ({ ...g, href: link(input.catalog_page, g.path) })))
+            home: link(input.catalog_page, 'README.md'),
+            categories: renderCategoryIndex(groups.map((g) => ({ ...g, href: link(input.catalog_page, g.path) }))),
+            star_boards: renderCategoryStarBoards(
+                groups.map((g) => ({
+                    ...g,
+                    href: link(input.catalog_page, g.path)
+                })),
+                (e) => link(input.catalog_page, e.detailPath)
+            )
         }) + '\n';
     const homeGroups = groups.map((g) => ({ ...g, href: link('README.md', g.path) }));
     const homeItems = items.map((e) => ({ ...e, href: e.detailPath }));
@@ -382,7 +391,8 @@ export function renderPublication(input, root = ROOT, context = null) {
             content:
                 template('COLUMN-PAGE', {
                     home: link(path, 'README.md'),
-                    content,
+                    title: content.split('\n')[0],
+                    content: content.split('\n').slice(1).join('\n').trim(),
                     updated: renderUpdated(updated)
                 }) + '\n'
         };
@@ -411,7 +421,6 @@ export function renderPublication(input, root = ROOT, context = null) {
             latest: renderLatest(homeItems, updated),
             hot: renderHot(homeItems),
             recommended: renderRecommended(recommendations, homeById),
-            categories: renderHomeCategories(homeGroups, (e) => e.detailPath),
             sources: renderSources(sources)
         }) + '\n';
     const registry = context?.registry

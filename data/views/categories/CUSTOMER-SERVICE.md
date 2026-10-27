@@ -1,12 +1,14 @@
 # 客户服务
 
-[返回首页](../../../README.md)
+[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
 
 客户沟通、服务响应与支持流程。
 
-**快速比较**
+<a id="category-index"></a>
 
-> 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
+**同类比较**
+
+> 比较表与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
@@ -25,6 +27,10 @@
 > **思考**：宿主ask与Skill礼仪不等于插件内容hash确认；单次防重放不保证跨调用只发一次。地区选择/凭据按服务共享，批次归属仅内存；送达和成交仍需平台/业务记录。详见[Q03](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md#research-q03)、[Q04](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md#research-q04)。
 
 > **建议**：可探索绑定区域/组织/目标/正文附件hash和幂等键的持久确认/操作收据，unknown只追原记录，比较重复与留存成本；未实现。详见[Q07](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md#research-q07)。
+
+[查看完整分析](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md) · [返回比较表](#category-index)
+
+[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 

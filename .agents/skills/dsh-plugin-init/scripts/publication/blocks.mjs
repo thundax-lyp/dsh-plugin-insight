@@ -34,6 +34,8 @@ const categoryScopes = {
     other: '其他尚未归入上述场景的插件'
 };
 export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
+// Keep short Chinese status labels together when GitHub allocates table columns.
+const unbroken = (text) => [...text].join('&#8288;');
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
 export function renderCountBadge(label, value, { color, logo, url, compact = false }) {
     if (!Number.isSafeInteger(value) || value <= 0) return compact ? '-' : '';
@@ -126,6 +128,7 @@ export function renderWeeklyNew(items, date) {
                 template('LATEST-ITEM', {
                     plugin: nameLink(e),
                     summary: clean(e.summary),
+                    review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     metrics: e.listMetrics ? ` · ${e.listMetrics}` : ''
                 })
             )
@@ -148,7 +151,7 @@ function selectLatest(items, date, limit = 5) {
         .slice(0, limit);
     return selected;
 }
-export function renderLatest(items, date, limit = 5) {
+export function renderLatest(items, date, limit = 3) {
     const selected = selectLatest(items, date, limit);
     return template('LATEST', {
         items:
@@ -159,7 +162,6 @@ export function renderLatest(items, date, limit = 5) {
                         metrics:
                             ' · ' +
                             [
-                                e.baseMetrics,
                                 renderPublicationBadge(
                                     '最新发布',
                                     e.npmLatestPublished,
@@ -168,7 +170,8 @@ export function renderLatest(items, date, limit = 5) {
                             ]
                                 .filter(Boolean)
                                 .join(' '),
-                        summary: clean(e.summary)
+                        summary: clean(e.summary),
+                        review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : ''
                     })
                 )
                 .join('\n') || '最近30天暂无已核实的版本发布记录。'
@@ -197,7 +200,7 @@ function selectHot(items, limit = 5) {
         .slice(0, limit);
     return selected;
 }
-export function renderHot(items, limit = 5) {
+export function renderHot(items, limit = 3) {
     const selected = selectHot(items, limit);
     return template('HOT', {
         items:
@@ -206,7 +209,14 @@ export function renderHot(items, limit = 5) {
                     return template('HOT-ITEM', {
                         plugin: nameLink(e),
                         summary: clean(e.summary),
-                        metrics: e.listMetrics ? ` · ${e.listMetrics}` : ''
+                        review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
+                        metrics:
+                            ' · ' +
+                            renderCountBadge('npm 30d', e.npmDownloads.downloads_30d, {
+                                color: 'blue',
+                                logo: 'npm',
+                                url: `https://www.npmjs.com/package/${e.npmDownloads.package_name}`
+                            })
                     });
                 })
                 .join('\n') || '暂无已核实的近30天 npm 下载数据。'
@@ -228,14 +238,32 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                     const e = byId.get(r.plugin_id);
                     return template('RECOMMENDED-ITEM', {
                         plugin: nameLink(e),
-                        kind: r.kind === 'install' ? ' · 值得安装' : '',
-                        summary: `${clean(e.summary)} ${readerText(r.summary, e.href).replaceAll('条件试用', '试用')}`,
-                        metrics: e.listMetrics ? ` · ${e.listMetrics}` : '',
-                        review: ''
+                        kind: r.kind === 'install' ? '安装' : '试用',
+                        purpose: clean(e.summary),
+                        reason: readerText(r.summary, e.href).replaceAll('条件试用', '试用'),
+                        conditions: readerText(e.usageConditions, e.href),
+                        detail: e.href
                     });
                 })
-                .join('\n') || '暂无符合条件的推荐。'
+                .join('\n\n') || '暂无符合条件的推荐。'
     });
+}
+function recommendationEvidence(entry) {
+    const assessment = entry.plugin.recommendation;
+    const kinds = new Set(
+        entry.plugin.evidence
+            .filter((e) => assessment.evidence_ids.includes(e.id) && e.revision === assessment.revision)
+            .map((e) => e.kind)
+    );
+    return (
+        [
+            '固定版本源码核查',
+            kinds.has('local_test') ? '另有本地测试记录，测试范围见详情' : '',
+            kinds.has('host_acceptance') ? '另有宿主验收记录，环境与结果见详情' : '尚无支撑该建议的同版本宿主验收记录'
+        ]
+            .filter(Boolean)
+            .join('；') + '。'
+    );
 }
 // Standalone columns share the homepage's selection and ordering, with local comparison anchors.
 export function renderColumn(key, items, date, recommendations) {
@@ -259,11 +287,12 @@ export function renderColumn(key, items, date, recommendations) {
                 purpose: tableCell(entry.summary)
             };
             if (key === 'RECOMMENDED')
-                return template('COLUMN-ROW', {
+                return template('COLUMN-RECOMMENDED-ROW', {
                     ...common,
                     value: tableCell(
                         readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用')
-                    )
+                    ),
+                    kind: unbroken(entry.recommendation.kind === 'install' ? '建议安装' : '建议试用')
                 });
             if (key === 'HOT')
                 return template('COLUMN-HOT-ROW', {
@@ -279,8 +308,9 @@ export function renderColumn(key, items, date, recommendations) {
                         url: `https://github.com/${entry.plugin.repository}`
                     })
                 });
-            return template('COLUMN-ROW', {
+            return template('COLUMN-LATEST-ROW', {
                 ...common,
+                version: tableCell(entry.npmDownloads.publication.latest_version ?? '版本未知'),
                 value: renderPublicationBadge(
                     '最新发布',
                     entry.npmLatestPublished,
@@ -296,7 +326,11 @@ export function renderColumn(key, items, date, recommendations) {
                 key === 'RECOMMENDED'
                     ? template('COLUMN-RECOMMENDATION', {
                           reason: readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用'),
-                          kind: entry.recommendation.kind === 'install' ? ' · 值得安装' : ''
+                          kind:
+                              entry.recommendation.kind === 'install'
+                                  ? '建议安装（已有固定版本宿主验收，适用范围见详情）'
+                                  : '建议试用',
+                          evidence: recommendationEvidence(entry)
                       })
                     : key === 'HOT'
                       ? template('COLUMN-DOWNLOADS', {
@@ -309,7 +343,9 @@ export function renderColumn(key, items, date, recommendations) {
                             published: new Date(Date.parse(entry.npmLatestPublished) + 8 * 3600000)
                                 .toISOString()
                                 .slice(0, 10),
-                            package: `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`
+                            package: `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`,
+                            revision: entry.i.revision.slice(0, 8),
+                            commit: `https://github.com/${entry.plugin.repository}/commit/${entry.i.revision}`
                         });
             return template('COLUMN-DETAIL', {
                 anchor: entry.anchor,
@@ -317,7 +353,9 @@ export function renderColumn(key, items, date, recommendations) {
                 meta: entry.meta,
                 purpose: clean(entry.summary),
                 reason,
-                conditions: readerText(entry.usageConditions, entry.href)
+                conditions: readerText(entry.usageConditions, entry.href),
+                conditions_label: key === 'RECOMMENDED' ? '试用前提、限制与退出条件' : '使用条件与研究边界',
+                reading: key === 'RECOMMENDED' ? template('COLUMN-READING', { detail: entry.href }) : ''
             });
         })
         .join('\n\n');
@@ -349,30 +387,43 @@ export const alphabetical = (a, b) =>
 export function renderCategoryIndex(groups) {
     return template('CATEGORY-INDEX', {
         items: groups
-            .map((g) => template('CATEGORY-INDEX-ITEM', { name: g.name, count: g.entries.length, url: g.href }))
+            .map((g) =>
+                template('CATEGORY-INDEX-ITEM', {
+                    name: g.name,
+                    count: g.entries.length,
+                    url: g.href,
+                    scope: categoryScope(g.key)
+                })
+            )
             .join('\n')
     });
 }
-export function renderHomeCategories(groups, href, limit = 5) {
+export function renderCategoryStarBoards(groups, href, limit = 5) {
     const sections = groups.map((g) => {
         const selected = [...g.entries]
             .sort((a, b) => (b.stars ?? -Infinity) - (a.stars ?? -Infinity) || alphabetical(a, b))
             .slice(0, limit);
         const plugins = selected
             .map((e) =>
-                template('HOME-PLUGIN', {
+                template('CATEGORY-STAR-ROW', {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
-                    summary: clean(e.summary),
-                    meta: e.listMetrics ? ` ${e.listMetrics}` : '',
+                    summary: tableCell(e.summary),
+                    stars: e.starsBadge || '-',
                     review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     detail: href(e)
                 })
             )
             .join('\n\n');
-        return template('HOME-CATEGORY', { key: g.key, name: g.name, count: g.entries.length, plugins, more: g.href });
+        return template('CATEGORY-STAR-GROUP', {
+            key: g.key,
+            name: g.name,
+            count: g.entries.length,
+            plugins,
+            more: g.href
+        });
     });
-    return template('CATEGORIES', { groups: sections.join('\n\n') });
+    return template('CATEGORY-STAR-BOARDS', { groups: sections.join('\n\n') });
 }
 export function renderHomeNavigation(groups) {
     return template('HOME-NAVIGATION', {

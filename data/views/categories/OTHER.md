@@ -1,12 +1,14 @@
 # 其他
 
-[返回首页](../../../README.md)
+[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
 
 其他尚未归入上述场景的插件。
 
-**快速比较**
+<a id="category-index"></a>
 
-> 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
+**同类比较**
+
+> 比较表与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
@@ -28,6 +30,8 @@
 
 > **建议**：未验证方向是窄偏好入口加逐agent权限租约/原快照收据，以异构权限和中断矩阵验证无损归还，失败则否定。[Q06](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q06)
 
+[查看完整分析](../../plugins/571242--dsh-armor-switch/INSIGHT.md) · [返回比较表](#category-index)
+
 <a id="plugin-1412161923-root"></a>
 
 ## [dsh-piano](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md)
@@ -42,6 +46,8 @@
 
 > **建议**：可把样式、音频和按钮延迟 timer 绑定 overlay 生命周期，并以重复挂载/卸载对照资源残留与再进入首音成功率；当前未实现。详见[Q04](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md#research-q04)。
 
+[查看完整分析](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md) · [返回比较表](#category-index)
+
 <a id="plugin-1319484586-root"></a>
 
 ## [竹知了](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md)
@@ -55,6 +61,10 @@
 > **思考**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q03)。
 
 > **建议**：未验证假设是固定同一物理轨迹，比较纯音频、2D与3D模式的拟真感和卡顿；若3D无辨识增益且更耗资源则保留2D默认。见[Q04](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md) · [返回比较表](#category-index)
+
+[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
