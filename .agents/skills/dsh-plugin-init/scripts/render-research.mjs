@@ -11,6 +11,8 @@ import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugi
 import { template } from './publication/template.mjs';
 import { renderDetailLayout, splitSections } from './publication/detail-layout.mjs';
 import {
+    BADGE_STYLE,
+    BADGE_COLORS,
     categoryGroups,
     renderCategoryIndex,
     renderCategoryStarBoards,
@@ -275,7 +277,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 const downloads = m.npm?.error
                     ? ''
                     : renderCountBadge('npm 30d', npmDownloads?.downloads_30d, {
-                          color: 'blue',
+                          color: BADGE_COLORS.downloads,
                           logo: 'npm',
                           url: `https://www.npmjs.com/package/${npmDownloads?.package_name}`
                       });
@@ -293,7 +295,7 @@ export function renderPublication(input, root = ROOT, context = null) {
                 stars = m.stars;
                 pushedAt = m.pushed_at;
                 starsBadge = renderCountBadge('GitHub ★', m.stars, {
-                    color: 'yellow',
+                    color: BADGE_COLORS.stars,
                     logo: 'github',
                     url: `https://github.com/${m.repository}`
                 });
@@ -408,8 +410,8 @@ export function renderPublication(input, root = ROOT, context = null) {
             new URLSearchParams({
                 label: '已研究',
                 message: String(researchedIds.size),
-                color: 'blue',
-                style: 'flat'
+                color: BADGE_COLORS.coverage,
+                ...BADGE_STYLE
             }).toString(),
         url: link('README.md', input.catalog_page)
     });

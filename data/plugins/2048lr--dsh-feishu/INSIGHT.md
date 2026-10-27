@@ -5,7 +5,7 @@
 分析版本：[17ed9c0](https://github.com/2048lr/dsh-feishu/tree/17ed9c0dada4b40580dcf1e1b07918716a94f69d)
 
 <!-- BEGIN META -->
-[![npm 30d 71](https://img.shields.io/static/v1?label=npm+30d&message=71&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feishu) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feishu)
+[![npm 30d 71](https://img.shields.io/static/v1?label=npm+30d&message=71&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feishu) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feishu)
 <!-- END META -->
 
 > **实现功能**：以应用或用户身份把飞书主要办公 API 接入 DSH。

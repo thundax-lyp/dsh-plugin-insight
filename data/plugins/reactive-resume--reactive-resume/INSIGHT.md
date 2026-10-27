@@ -5,7 +5,7 @@
 分析版本：[5d247c5](https://github.com/reactive-resume/reactive-resume/tree/5d247c59de925b04e6e658300524812c7f544ec4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 44,843](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44%2C843&color=yellow&logo=github&style=flat)](https://github.com/reactive-resume/reactive-resume)
+[![GitHub ★ 44,843](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44%2C843&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/reactive-resume/reactive-resume)
 <!-- END META -->
 
 > **实现功能**：开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 15](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=15&color=grey&logo=github&style=flat)](https://github.com/reactive-resume/reactive-resume/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 44](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=44&color=grey&logo=github&style=flat)](https://github.com/reactive-resume/reactive-resume/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A15.707Z..2026-10-26T03%3A38%3A15.707Z) [![近30天关闭 75](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=75&color=grey&logo=github&style=flat)](https://github.com/reactive-resume/reactive-resume/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A15.707Z..2026-10-26T03%3A38%3A15.707Z)
+[![Issue 未关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/reactive-resume/reactive-resume/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 44](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=44&color=737b86&logo=github)](https://github.com/reactive-resume/reactive-resume/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A15.707Z..2026-10-26T03%3A38%3A15.707Z) [![近30天关闭 75](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=75&color=737b86&logo=github)](https://github.com/reactive-resume/reactive-resume/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A15.707Z..2026-10-26T03%3A38%3A15.707Z)
 
 
 

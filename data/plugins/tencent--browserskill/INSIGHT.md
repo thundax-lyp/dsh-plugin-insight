@@ -5,7 +5,7 @@
 分析版本：[b63f551](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9,474](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C474&color=yellow&logo=github&style=flat)](https://github.com/Tencent/BrowserSkill)
+[![GitHub ★ 9,474](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C474&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
 <!-- END META -->
 
 > **实现功能**：通过 CLI 和浏览器扩展，让智能体使用现有 Chrome 或 Edge 登录状态执行网页任务。

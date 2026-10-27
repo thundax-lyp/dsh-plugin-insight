@@ -5,7 +5,7 @@
 分析版本：[9d752bb](https://github.com/nocobase/nocobase/tree/9d752bb60d8eca5883e4357eefbff46d56c941d1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=yellow&logo=github&style=flat)](https://github.com/nocobase/nocobase)
+[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
 <!-- END META -->
 
 > **实现功能**：AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。

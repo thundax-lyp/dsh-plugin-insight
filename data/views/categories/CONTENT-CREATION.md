@@ -46,7 +46,7 @@
 
 ## [@a9i5k4/dsh-ark9canvas](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-ark9canvas) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aik358/dsh-ark9canvas) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
 
 > **用途**：供需要在Harness里反复生图/改图并人工控制付费请求的内容制作者使用。交付为保存的图片及参数记录；批准是一道调用前门，不是预算核算或图片质量验收。
 
@@ -62,7 +62,7 @@
 
 ## [AI Novel Writer DSH 插件预览](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md)
 
-[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=yellow&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
+[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
 
 > **用途**：现有DSH小说工作台用户逐章生成建议并人工确认保存到独立本地项目。
 
@@ -78,7 +78,7 @@
 
 ## [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
 
-[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=yellow&logo=github&style=flat)](https://github.com/freestylefly/awesome-gpt-image-2)
+[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
 
 > **用途**：面向重复制作海报/产品图/信息图的用户与Agent；主要交付可复制提示词资源，实际成片另验。[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01)
 
@@ -94,7 +94,7 @@
 
 ## [DeepSeek Design 分发与贡献入口](../../plugins/devin-axis--deepseek-design/INSIGHT.md)
 
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design)
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design)
 
 > **用途**：需要选择可编辑设计能力的创作者通过根入口了解独立包与工作区交接。
 
@@ -110,7 +110,7 @@
 
 ## [DeepSeek iDesign](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md)
 
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/deepseek-idesign)
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign)
 
 > **用途**：需要可继续编辑的原型、海报或信息卡的用户，在本地文件和视觉画布间迭代。
 
@@ -126,7 +126,7 @@
 
 ## [DeepSeek iVideo](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md)
 
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 994](https://img.shields.io/static/v1?label=npm+30d&message=994&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/deepseek-ivideo) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/deepseek-ivideo)
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 994](https://img.shields.io/static/v1?label=npm+30d&message=994&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo)
 
 > **用途**：能人工验收短视频的用户，在对话与时间线间迭代产品演示和动态信息项目。
 
@@ -142,7 +142,7 @@
 
 ## [DSH × Blender](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md)
 
-[![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=yellow&logo=github&style=flat)](https://github.com/sixtysevenlf/dsh-blender-plugin)
+[![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
 
 > **用途**：具备Blender验收能力的创作者在持久场景中迭代建模并核对视觉与几何交付。
 
@@ -158,7 +158,7 @@
 
 ## [dsh-blend-preview](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md)
 
-[![npm 30d 44](https://img.shields.io/static/v1?label=npm+30d&message=44&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-blend-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-blend-preview)
+[![npm 30d 44](https://img.shields.io/static/v1?label=npm+30d&message=44&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blend-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blend-preview)
 
 > **用途**：适合已有Blender环境、在DSH工作区反复检查静态几何和尺寸的人；纹理动画与最终渲染须回到Blender，旧包迁移需先核对。[Q01](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q01)
 
@@ -190,7 +190,7 @@
 
 ## [dsh-image2-plugin](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/544244857/dsh-image2-plugin) [![npm 30d 582](https://img.shields.io/static/v1?label=npm+30d&message=582&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-image2-tool) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-image2-tool)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/544244857/dsh-image2-plugin) [![npm 30d 582](https://img.shields.io/static/v1?label=npm+30d&message=582&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image2-tool) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image2-tool)
 
 > **用途**：适合从对话生成草图或编辑非敏感图片并直接预览；已有图像应用时可用其原生历史、费用和内容控制。 详见[Q01](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md#research-q01)。
 
@@ -206,7 +206,7 @@
 
 ## [dsh-LorebookMD](../../plugins/609476965--dsh-lorebookmd/INSIGHT.md)
 
-[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=yellow&logo=github&style=flat)](https://github.com/609476965/dsh-LorebookMD) [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-lorebookmd) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-lorebookmd)
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/609476965/dsh-LorebookMD) [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lorebookmd) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lorebookmd)
 
 > **用途**：面向已有Tavern/SillyTavern角色卡或世界书、希望在DSH中复用设定写小说或互动推演的用户。输入是自己提供的PNG/JSON和场景要求，输出是可查看的设定文档、可激活提示词以及模型生成的正文。插件不自带小说素材，也没有独立生成模型。
 
@@ -222,7 +222,7 @@
 
 ## [dsh-markdown-live](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/9426Haruka/dsh-markdown-live)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/9426Haruka/dsh-markdown-live)
 
 > **用途**：经常在 DSH 输入长 Markdown 的作者希望发送前看到标题、列表、引用和行内格式，同时提交原始文本不变；基线是纯文本输入后再看消息渲染。合格结果是输入、粘贴、中文 IME、撤销、光标和发送字节均正确，长草稿不阻塞，禁用后格式与监听清理。 详见[Q01](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q01)。
 
@@ -254,7 +254,7 @@
 
 ## [dsh-pet 素材制作工程](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md)
 
-[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=yellow&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet)
+[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet)
 
 > **用途**：根仓库除dsh-pet子包外，主要提供角色动作提示词、源视频到透明动画的制作链及发布说明。面向愿意自己生成新角色/动作的桌宠素材作者，合格交付是一组尺寸/脚底对齐、循环衔接和透明通道正确的播放素材及pet pack配置。简单替代是人工视频编辑再放进现有桌宠。普通只想显示宠物的人应看子包，不需要运行这套生成链；仓库根没有package.json，不能把root当另一份npm插件。
 
@@ -270,7 +270,7 @@
 
 ## [dsh-plugin-translation](../../plugins/863683348--dsh-plugin-translation/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-translation) [![npm 30d 1,011](https://img.shields.io/static/v1?label=npm+30d&message=1%2C011&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-translation) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-translation)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/863683348/dsh-plugin-translation) [![npm 30d 1,011](https://img.shields.io/static/v1?label=npm+30d&message=1%2C011&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-translation) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-translation)
 
 > **用途**：长文及技术翻译用户需要一致术语和形式核查，合格译文仍以独立语义正确为准。详见[Q01](../../plugins/863683348--dsh-plugin-translation/INSIGHT.md#research-q01)。
 
@@ -302,7 +302,7 @@
 
 ## [dsh-sticker-pack](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/5V1A-afk/dsh-sticker-pack)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/5V1A-afk/dsh-sticker-pack)
 
 > **用途**：让 DSH 回复按语境适度使用授权图像，并在目标渠道实际显示。
 
@@ -318,7 +318,7 @@
 
 ## [dsh-stl-preview](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md)
 
-[![npm 30d 45](https://img.shields.io/static/v1?label=npm+30d&message=45&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-stl-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-stl-preview)
+[![npm 30d 45](https://img.shields.io/static/v1?label=npm+30d&message=45&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-stl-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-stl-preview)
 
 > **用途**：适合在DSH内做STL打印前几何初筛的人；尺寸依赖明确单位，最终制造与切片仍需专业工具。[Q01](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q01)
 
@@ -334,7 +334,7 @@
 
 ## [dsh-tavern](../../plugins/flizzywine--dsh-tavern/INSIGHT.md)
 
-[![GitHub ★ 1,314](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C314&color=yellow&logo=github&style=flat)](https://github.com/flizzywine/dsh-tavern) [![npm 30d 1,273](https://img.shields.io/static/v1?label=npm+30d&message=1%2C273&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-profile-tavern) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-profile-tavern)
+[![GitHub ★ 1,314](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C314&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/flizzywine/dsh-tavern) [![npm 30d 1,273](https://img.shields.io/static/v1?label=npm+30d&message=1%2C273&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-tavern) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-tavern)
 
 > **用途**：面向用角色卡、世界书和变量设定进行连续剧情的人，合格结果同时包括可读正文、可回溯分支以及与剧情一致的角色/变量状态。普通提示词加手工记账或既有酒馆中的脚本是直接基线，不因界面或功能表更长就认定替代品不能完成任务。
 
@@ -350,7 +350,7 @@
 
 ## [dsh-video-pipeline](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/439436269-ctrl/dsh-video-pipeline)
 
 > **用途**：已有短视频/AI 短剧素材生产需求，希望把多工具环节、质量门与发布回写串成可发现技能。
 
@@ -366,7 +366,7 @@
 
 ## [dsh-wsl-media](../../plugins/173787247--dsh-wsl-media/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-media)
 
 > **用途**：面向在WSL/类Linux环境用DSH处理本地媒体和文档的人。九工具覆盖CLI状态、媒体信息、抽音轨、缩略图、PDF文本、Whisper转录、Pandoc转换、OCR与Exif，不提供远程素材下载、专业编辑时间线或模型自动理解全部媒体。
 
@@ -398,7 +398,7 @@
 
 ## [gzhflow](../../plugins/andiii208--gzhflow/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/Andiii208/gzhflow)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Andiii208/gzhflow)
 
 > **用途**：面向经常用Agent写微信公众号内容、希望保留素材/文风并减少排版和推草稿重复操作的个人作者。输入为主题、用户真实素材和风格/主题配置，输出从Markdown到排版HTML、图片和公众号草稿，再复盘回写个人知识库。它不是无人值守新闻真实性系统，也不直接完成读者可见的最终发布。
 
@@ -414,7 +414,7 @@
 
 ## [no-ai-style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/01NGVI-QINGYI/no-ai-style)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
 > **用途**：适合需保留学术事实、引用与不确定性的作者，在授权段落内审阅和轻改英中日文稿。验收对象是改写后的命题及证据边界，仍由作者复核。
 
@@ -430,7 +430,7 @@
 
 ## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
 
-[![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=yellow&logo=github&style=flat)](https://github.com/nexu-io/open-design)
+[![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
 
 > **用途**：面向从brief生成可预览原型并收集团队反馈的设计开发团队；独立应用，可连接DSH，非单插件。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
 
@@ -446,7 +446,7 @@
 
 ## [OpenPencil](../../plugins/zseven-w--openpencil/INSIGHT.md)
 
-[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=yellow&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil)
+[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
 
 > **用途**：适合希望Agent生成界面草稿后继续选择、修改和导出设计的开发者/设计者。合格结果是结构化可编辑.op文档且节点、页面和布局可核对，不是只得到一张截图。原办法是人工矢量编辑器、图片生成后重画或在代码中修改UI；编辑文档与Agent工具共享状态有机会减少重做。根项目是独立设计应用与MCP服务，不是DSH bundle，DSH通过MCP桥连接。作者“first”和多Agent更快不作为独立效果证据。
 
@@ -462,7 +462,7 @@
 
 ## [PicGo](../../plugins/molunerfinn--picgo/INSIGHT.md)
 
-[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=yellow&logo=github&style=flat)](https://github.com/Molunerfinn/PicGo)
+[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Molunerfinn/PicGo)
 
 > **用途**：面向写博客、文档和笔记的创作者，将本地或剪贴板图片上传到已配置图床并返回可粘贴链接。该仓库是 Electron 桌面客户端，DSH 插件是 README 另行指向的独立项目，不能把两者的能力或验收合并。
 
@@ -478,7 +478,7 @@
 
 ## [Vox Director](../../plugins/alisa0808--vox-director/INSIGHT.md)
 
-[![GitHub ★ 2,469](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C469&color=yellow&logo=github&style=flat)](https://github.com/Alisa0808/vox-director)
+[![GitHub ★ 2,469](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C469&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alisa0808/vox-director)
 
 > **用途**：有媒体制作经验的创作者研究短解说/广告的多阶段拼贴视频流水线。
 
@@ -494,7 +494,7 @@
 
 ## [书童 Pagekin 桌面写作应用](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md)
 
-[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=yellow&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer)
+[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer)
 
 > **用途**：长篇与连载作者在本地作品中组织章节、资料和人工审改，模型由自己配置。
 

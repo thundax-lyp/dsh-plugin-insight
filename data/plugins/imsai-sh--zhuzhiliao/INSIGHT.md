@@ -5,7 +5,7 @@
 分析版本：[199e203](https://github.com/imsai-sh/zhuzhiliao/tree/199e203b038ffb515f3a21189a29da4b4fb8518f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=yellow&logo=github&style=flat)](https://github.com/imsai-sh/zhuzhiliao)
+[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
 <!-- END META -->
 
 > **实现功能**：在浏览器中模拟竹知了玩具的甩动、发声与本机圈数记录。

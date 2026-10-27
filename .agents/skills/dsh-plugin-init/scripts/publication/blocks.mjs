@@ -37,6 +37,15 @@ export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.othe
 // Keep short Chinese status labels together when GitHub allocates table columns.
 const unbroken = (text) => [...text].join('&#8288;');
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
+// Shared badge appearance: neutral labels, metric-specific values, one flat style.
+export const BADGE_STYLE = Object.freeze({ style: 'flat', labelColor: '555555', logoColor: 'white' });
+export const BADGE_COLORS = Object.freeze({
+    stars: '9a742f',
+    downloads: '4f769b',
+    publication: '557c63',
+    coverage: '766494',
+    issues: '737b86'
+});
 export function renderCountBadge(label, value, { color, logo, url, compact = false }) {
     if (!Number.isSafeInteger(value) || value <= 0) return compact ? '-' : '';
     return template('BADGE', {
@@ -48,7 +57,7 @@ export function renderCountBadge(label, value, { color, logo, url, compact = fal
                 message: value.toLocaleString('en-US'),
                 color,
                 ...(compact ? {} : { logo }),
-                style: 'flat'
+                ...BADGE_STYLE
             }).toString(),
         url
     });
@@ -63,9 +72,8 @@ export function renderPublicationBadge(label, publishedAt, url, { compact = fals
             new URLSearchParams({
                 label: compact ? '' : label,
                 message: date,
-                ...(compact ? {} : { labelColor: '668a73' }),
-                color: 'grey',
-                style: 'flat'
+                color: BADGE_COLORS.publication,
+                ...BADGE_STYLE
             }).toString(),
         url
     });
@@ -94,7 +102,13 @@ export function renderIssueActivity(metadata, repository) {
             alt: `${label} ${message}`,
             image:
                 'https://img.shields.io/static/v1?' +
-                new URLSearchParams({ label, message, color: 'grey', logo: 'github', style: 'flat' }).toString(),
+                new URLSearchParams({
+                    ...BADGE_STYLE,
+                    label,
+                    message,
+                    color: BADGE_COLORS.issues,
+                    logo: 'github'
+                }).toString(),
             url: `https://github.com/${repository}/issues?` + new URLSearchParams({ q: query }).toString()
         });
     });
@@ -213,7 +227,7 @@ export function renderHot(items, limit = 3) {
                         metrics:
                             ' · ' +
                             renderCountBadge('npm 30d', e.npmDownloads.downloads_30d, {
-                                color: 'blue',
+                                color: BADGE_COLORS.downloads,
                                 logo: 'npm',
                                 url: `https://www.npmjs.com/package/${e.npmDownloads.package_name}`
                             })
@@ -298,12 +312,12 @@ export function renderColumn(key, items, date, recommendations) {
                 return template('COLUMN-HOT-ROW', {
                     ...common,
                     downloads: renderCountBadge('npm 近30天下载', entry.npmDownloads.downloads_30d, {
-                        color: 'blue',
+                        color: BADGE_COLORS.downloads,
                         compact: true,
                         url: `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`
                     }),
                     stars: renderCountBadge('GitHub Star', entry.stars, {
-                        color: 'yellow',
+                        color: BADGE_COLORS.stars,
                         compact: true,
                         url: `https://github.com/${entry.plugin.repository}`
                     })

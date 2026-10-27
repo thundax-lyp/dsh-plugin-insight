@@ -5,7 +5,7 @@
 分析版本：[75f7f4d](https://github.com/3361805598-gif/dsh-md-annotator/tree/75f7f4d7c7cad205ed7cda7b687774e0db8a4254)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3361805598-gif/dsh-md-annotator)
 <!-- END META -->
 
 > **实现功能**：在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。
@@ -166,7 +166,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+created%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+created%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z)
 
 
 

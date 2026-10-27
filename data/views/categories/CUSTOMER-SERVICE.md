@@ -18,7 +18,7 @@
 
 ## [3chat-customer-growth](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md)
 
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)
 
 > **用途**：面向已有3Chat组织、渠道和客户权限的运营人员。通过DSH查询客户/会话/群上下文，模型生成个性化跟进草稿，经确认上传附件/向单个或批量目标发送，再查批次结果。国内与海外渠道不同，服务跟随DSH语言选择，不能把插件当直接登录任意社交账号的机器人。
 

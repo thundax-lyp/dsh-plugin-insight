@@ -5,7 +5,7 @@
 分析版本：[7d5ffb5](https://github.com/571242/dsh-armor-switch/tree/7d5ffb5507450cd844227658e1a28a9a79676590)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/571242/dsh-armor-switch)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/571242/dsh-armor-switch)
 <!-- END META -->
 
 > **实现功能**：向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。
