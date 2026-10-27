@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[2e22c81](https://github.com/173787247/dsh-wsl-winctl/tree/2e22c81fb6375a17d387226f0dfe359ba5dc3954)
+源码版本：[2e22c81](https://github.com/173787247/dsh-wsl-winctl/tree/2e22c81fb6375a17d387226f0dfe359ba5dc3954)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-winctl)
 <!-- END META -->
 
-> **实现功能**：从 WSL 枚举并控制 Windows 顶层窗口的 Agent 工具，支持窗口状态与多种变更动作。
+> **功能**：从 WSL 枚举并控制 Windows 顶层窗口的 Agent 工具，支持窗口状态与多种变更动作。
 
-> **核心亮点**：把 Windows 窗口枚举和基础控制封装为 WSL Agent 工具。详见[Q01](#research-q01)。
+> **亮点**：把 Windows 窗口枚举和基础控制封装为 WSL Agent 工具。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：作者显式目标承诺与空目标首窗选择不符；activate/close 等返回值被忽略，成功状态不可直接信。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：作者显式目标承诺与空目标首窗选择不符；activate/close 等返回值被忽略，成功状态不可直接信。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@ Windows 原生窗口 UI/PowerShell 可手动选目标并观察结果；插件省
 
 > **亮点**：把 Windows 窗口枚举和基础控制封装为 WSL Agent 工具。详见[Q01](#research-q01)。
 
-把 Windows 窗口枚举和基础控制封装为 WSL Agent 工具。详见[Q01](#research-q01)。
-
 PowerShell/WIn32 桥与 move 参数校验有参考性，目标选择与返回状态需严格化。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ PowerShell/WIn32 桥与 move 参数校验有参考性，目标选择与返回状
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

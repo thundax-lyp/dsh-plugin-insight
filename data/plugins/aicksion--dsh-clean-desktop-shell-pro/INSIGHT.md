@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[03fdf5d](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/tree/03fdf5d8b0959c3738cdb3d887baa6d017443fe6)
+源码版本：[03fdf5d](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/tree/03fdf5d8b0959c3738cdb3d887baa6d017443fe6)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aicksion/dsh-clean-desktop-shell-pro)
 <!-- END META -->
 
-> **实现功能**：将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。
+> **功能**：将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。
 
-> **核心亮点**：相对原版增加自动后端生命周期、无浏览器启动和退出选择，源码路径可核。详见[Q01](#research-q01)。
+> **亮点**：相对原版增加自动后端生命周期、无浏览器启动和退出选择，源码路径可核。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：远程配置的本地隔离宣称与 earlyBackend 无条件 start 不一致；运行时下载校验为尽力而为。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：远程配置的本地隔离宣称与 earlyBackend 无条件 start 不一致；运行时下载校验为尽力而为。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：相对原版增加自动后端生命周期、无浏览器启动和退出选择，源码路径可核。详见[Q01](#research-q01)。
 
-相对原版增加自动后端生命周期、无浏览器启动和退出选择，源码路径可核。详见[Q01](#research-q01)。
-
 认证 URL 传递与生命周期 cause 区分有借鉴价值；远程目标早启及完整性降级需要修正。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

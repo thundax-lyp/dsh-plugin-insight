@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[486d6ff](https://github.com/173787247/dsh-wsl-wslconfig/tree/486d6ffce7530bf46320c859ad9d4df502243d0f)
+源码版本：[486d6ff](https://github.com/173787247/dsh-wsl-wslconfig/tree/486d6ffce7530bf46320c859ad9d4df502243d0f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-wslconfig)
 <!-- END META -->
 
-> **实现功能**：读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。
+> **功能**：读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。
 
-> **核心亮点**：把找配置和常见提示接入单工具，减少手工整理。详见[Q01](#research-q01)。
+> **亮点**：把找配置和常见提示接入单工具，减少手工整理。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：猜测/Public文件未必生效配置，后2000字符不参与解析，读取失败仍ok并按空模式建议。详见[Q03](#research-q03)。
+> **主要限制**：猜测/Public文件未必生效配置，后2000字符不参与解析，读取失败仍ok并按空模式建议。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把找配置和常见提示接入单工具，减少手工整理。详见[Q01](#research-q01)。
 
-把找配置和常见提示接入单工具，减少手工整理。详见[Q01](#research-q01)。
-
 依赖可注入而execute反例未覆盖，优先补来源和错误/截断状态。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

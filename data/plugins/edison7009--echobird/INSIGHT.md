@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[3dea068](https://github.com/edison7009/EchoBird/tree/3dea068c9950ef3e6327c2650ef0df5badcee37b)
+源码版本：[3dea068](https://github.com/edison7009/EchoBird/tree/3dea068c9950ef3e6327c2650ef0df5badcee37b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3,442](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C442&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/edison7009/EchoBird)
 <!-- END META -->
 
-> **实现功能**：桌面AI工具管理器，提供账号与模型配置、安装管理、本地模型和多候选路由入口。
+> **功能**：桌面AI工具管理器，提供账号与模型配置、安装管理、本地模型和多候选路由入口。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持的增量是将多provider候选与客户端入口分开，以桌面控制面、统一本地协议和健康状态减少手工改endpoint。它不是按任务质量选最佳模型，账号切换与API路由分开；本轮其他安装/账号功能仅作者范围，不据此加分。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持的增量是将多provider候选与客户端入口分开，以桌面控制面、统一本地协议和健康状态减少手工改endpoint。它不是按任务质量选最佳模型，账号切换与API路由分开；本轮其他安装/账号功能仅作者范围，不据此加分。
 
-> **风险与缺陷**：[Q03](#research-q03)表明previous_response_id续接绑定原候选和fingerprint，provider变化或过期需完整输入；background/conversation也被拒绝。自动failover不能概括为状态无损迁移或输出等价。文档与源码差异加重配置判断负担，实际发布二进制兼容未知，不照抄旧限制或宣称全支持。
+> **主要限制**：[Q03](#research-q03)表明previous_response_id续接绑定原候选和fingerprint，provider变化或过期需完整输入；background/conversation也被拒绝。自动failover不能概括为状态无损迁移或输出等价。文档与源码差异加重配置判断负担，实际发布二进制兼容未知，不照抄旧限制或宣称全支持。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持的增量是将多provider候选与客户端入口分开，以桌面控制面、统一本地协议和健康状态减少手工改endpoint。它不是按任务质量选最佳模型，账号切换与API路由分开；本轮其他安装/账号功能仅作者范围，不据此加分。
 
-[Q01](#research-q01)、[Q02](#research-q02)支持的增量是将多provider候选与客户端入口分开，以桌面控制面、统一本地协议和健康状态减少手工改endpoint。它不是按任务质量选最佳模型，账号切换与API路由分开；本轮其他安装/账号功能仅作者范围，不据此加分。
-
 [Q02](#research-q02)的公开配置/内部凭据及Tauri/Rust分层可复用，[Q03](#research-q03)的绑定续接避免把上游状态错误迁到别家；代价是大体量协议/流/健康状态逻辑。runtime把listener释放和在途drain分开，所有权清晰但退出不能等同已撤销请求。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

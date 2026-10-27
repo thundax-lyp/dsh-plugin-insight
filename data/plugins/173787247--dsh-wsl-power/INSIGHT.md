@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[7a37a8c](https://github.com/173787247/dsh-wsl-power/tree/7a37a8c91d47bf69e630ca59db4740a5d7451d77)
+源码版本：[7a37a8c](https://github.com/173787247/dsh-wsl-power/tree/7a37a8c91d47bf69e630ca59db4740a5d7451d77)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-power)
 <!-- END META -->
 
-> **实现功能**：从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。
+> **功能**：从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。
 
-> **核心亮点**：以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。
+> **亮点**：以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：英语字符串解析、休眠关键词匹配与数值失败归零可能把未知当事实。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：英语字符串解析、休眠关键词匹配与数值失败归零可能把未知当事实。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@ Windows 原生 powercfg 与控制面板可直接看到部分状态；插件做�
 
 > **亮点**：以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。
 
-以单工具聚合多个 Windows 电源状态指标。详见[Q01](#research-q01)。
-
 固定脚本降低参数风险，但本地化文本和吞错需改进。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ Windows 原生 powercfg 与控制面板可直接看到部分状态；插件做�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

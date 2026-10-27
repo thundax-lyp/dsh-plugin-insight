@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-ssh)
+源码版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-ssh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 85,040](https://img.shields.io/static/v1?label=npm+30d&message=85%2C040&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh)
 <!-- END META -->
 
-> **实现功能**：在 DSH 中管理 SSH 主机，提供远端命令、Web 终端、文件传输、隧道和集群工具。
+> **功能**：在 DSH 中管理 SSH 主机，提供远端命令、Web 终端、文件传输、隧道和集群工具。
 
-> **核心亮点**：相对另开SSH终端和重复填写主机配置，它让界面与6个模型工具共用受控主机清单、连接池和生命周期，配置变更时清理旧连接与隧道，集群调用要求非空选择器。SSH协议及SFTP来自ssh2；本插件贡献是DSH工作流接线与主机配置归属。[Q02](#research-q02)
+> **亮点**：相对另开SSH终端和重复填写主机配置，它让界面与6个模型工具共用受控主机清单、连接池和生命周期，配置变更时清理旧连接与隧道，集群调用要求非空选择器。SSH协议及SFTP来自ssh2；本插件贡献是DSH工作流接线与主机配置归属。[Q02](#research-q02)
 
-> **风险与缺陷**：连接断开且没有退出状态时会在预算内重连重放命令，因而非幂等操作可能已经在远端成功却再次执行；取消分支不重放只是局部保护。传输还使用宿主本机权限读写路径，密码可明文保存在私有文件。这些是明确设计边界，不能把loopback路由或默认提示当作远端业务副作用保证。[Q03](#research-q03)
+> **主要限制**：连接断开且没有退出状态时会在预算内重连重放命令，因而非幂等操作可能已经在远端成功却再次执行；取消分支不重放只是局部保护。传输还使用宿主本机权限读写路径，密码可明文保存在私有文件。这些是明确设计边界，不能把loopback路由或默认提示当作远端业务副作用保证。[Q03](#research-q03)
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：相对另开SSH终端和重复填写主机配置，它让界面与6个模型工具共用受控主机清单、连接池和生命周期，配置变更时清理旧连接与隧道，集群调用要求非空选择器。SSH协议及SFTP来自ssh2；本插件贡献是DSH工作流接线与主机配置归属。[Q02](#research-q02)
 
-相对另开SSH终端和重复填写主机配置，它让界面与6个模型工具共用受控主机清单、连接池和生命周期，配置变更时清理旧连接与隧道，集群调用要求非空选择器。SSH协议及SFTP来自ssh2；本插件贡献是DSH工作流接线与主机配置归属。[Q02](#research-q02)
-
 单一engine与配置变更清理避免旧凭据连接残留，取消与逻辑错误不重放值得复用。需要将连接恢复与业务操作恢复分开，宿主路径权限和明文凭据也必须明确呈现。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：packages/dsh-ssh；内容摘要：def05ce103df616ca425151067d78bcf334d49e3fb90ce7a35b66c67983cc493。sloc 0.3.2，TypeScript 5.9.3。
 

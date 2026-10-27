@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ef1675a](https://github.com/Ansonfishing/dsh-cap-profile/tree/ef1675acaf48e41297f94f24bd8f4ca13626827c)
+源码版本：[ef1675a](https://github.com/Ansonfishing/dsh-cap-profile/tree/ef1675acaf48e41297f94f24bd8f4ca13626827c)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ansonfishing/dsh-cap-profile)
 <!-- END META -->
 
-> **实现功能**：扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。
+> **功能**：扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。
 
-> **核心亮点**：把冷会话日志转换为模型、工具和错误签名的查阅入口，减少逐份查原日志的导航负担；不需要 live agent，但不能据工具错误率直接评模型质量。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：把冷会话日志转换为模型、工具和错误签名的查阅入口，减少逐份查原日志的导航负担；不需要 live agent，但不能据工具错误率直接评模型质量。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：结果错误归给到达时当前模型，callId 只保留工具名，跨模型延迟结果可能使错误分母错位；任务环境混杂也阻止能力排名。定时扫描卸载释放需另核查。[Q03](#research-q03)
+> **主要限制**：结果错误归给到达时当前模型，callId 只保留工具名，跨模型延迟结果可能使错误分母错位；任务环境混杂也阻止能力排名。定时扫描卸载释放需另核查。[Q03](#research-q03)
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：把冷会话日志转换为模型、工具和错误签名的查阅入口，减少逐份查原日志的导航负担；不需要 live agent，但不能据工具错误率直接评模型质量。[Q01](#research-q01) [Q02](#research-q02)
 
-把冷会话日志转换为模型、工具和错误签名的查阅入口，减少逐份查原日志的导航负担；不需要 live agent，但不能据工具错误率直接评模型质量。[Q01](#research-q01) [Q02](#research-q02)
-
 按文件缓存与只读路由降低冷会话分析耦合，live/mock 标识保留数据边界。源码评估须关注调用结果归因和扫描生命周期，不能只看面板完整度。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ec36b50](https://github.com/173787247/dsh-wsl-registry/tree/ec36b50ceab4f15549c2b2ac7f97033084a3eb56)
+源码版本：[ec36b50](https://github.com/173787247/dsh-wsl-registry/tree/ec36b50ceab4f15549c2b2ac7f97033084a3eb56)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-registry)
 <!-- END META -->
 
-> **实现功能**：为 WSL 内 DSH 提供受路径列表约束的 Windows 注册表读取工具。
+> **功能**：为 WSL 内 DSH 提供受路径列表约束的 Windows 注册表读取工具。
 
-> **核心亮点**：把 WSL 到 Windows PowerShell 的注册表读取封装为模型工具，提供常用前缀与 Run 段筛选；底层读取仍由 Windows 命令和 ACL 完成。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把 WSL 到 Windows PowerShell 的注册表读取封装为模型工具，提供常用前缀与 Run 段筛选；底层读取仍由 Windows 命令和 ACL 完成。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：路径白名单只用 startsWith，无段边界；具名值不受作者所称400字符裁剪。通配符/权限影响未实测，不把静态缺口说成已读取禁区。详见[Q03](#research-q03)。
+> **主要限制**：路径白名单只用 startsWith，无段边界；具名值不受作者所称400字符裁剪。通配符/权限影响未实测，不把静态缺口说成已读取禁区。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@ WSL 用户可手工调用 powershell.exe 读取 Windows registry；本包把常�
 
 > **亮点**：把 WSL 到 Windows PowerShell 的注册表读取封装为模型工具，提供常用前缀与 Run 段筛选；底层读取仍由 Windows 命令和 ACL 完成。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把 WSL 到 Windows PowerShell 的注册表读取封装为模型工具，提供常用前缀与 Run 段筛选；底层读取仍由 Windows 命令和 ACL 完成。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 固定 argv 的 execFile、引号转义和 WSL 检测减少直拼 shell 命令风险；路径规则是字符串前缀而非段语义，结构化具名值未裁剪。kit 公共 helper 归共享设计，不全计本包原创。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ WSL 用户可手工调用 powershell.exe 读取 Windows registry；本包把常�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

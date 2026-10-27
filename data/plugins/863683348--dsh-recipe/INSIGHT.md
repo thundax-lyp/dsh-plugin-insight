@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[67f2d4c](https://github.com/863683348/dsh-recipe/tree/67f2d4c662954ccd25c771fa0e0a99433cf3b530)
+源码版本：[67f2d4c](https://github.com/863683348/dsh-recipe/tree/67f2d4c662954ccd25c771fa0e0a99433cf3b530)
 
 <!-- BEGIN META -->
 [![npm 30d 123](https://img.shields.io/static/v1?label=npm+30d&message=123&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-recipe) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-recipe)
 <!-- END META -->
 
-> **实现功能**：把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。
+> **功能**：把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。
 
-> **核心亮点**：把固定场景清单接入模型工具，减少整理命令步骤。详见[Q01](#research-q01)。
+> **亮点**：把固定场景清单接入模型工具，减少整理命令步骤。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：config被输出剥离，合并不报冲突，命令缺profile/版本与失败恢复，不能等同可复现环境。详见[Q03](#research-q03)。
+> **主要限制**：config被输出剥离，合并不报冲突，命令缺profile/版本与失败恢复，不能等同可复现环境。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把固定场景清单接入模型工具，减少整理命令步骤。详见[Q01](#research-q01)。
 
-把固定场景清单接入模型工具，减少整理命令步骤。详见[Q01](#research-q01)。
-
 纯逻辑直接测试可复用，固定样例不能证明外部组件契约。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ config被输出剥离，合并不报冲突，命令缺profile/版本与失败恢
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[e320461](https://github.com/dsh-market/dsh-market/tree/e320461dba3a7e99845f83c7bd106a2f1889dc7f)
+源码版本：[e320461](https://github.com/dsh-market/dsh-market/tree/e320461dba3a7e99845f83c7bd106a2f1889dc7f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 8,811](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C811&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 538,384](https://img.shields.io/static/v1?label=npm+30d&message=538%2C384&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 <!-- END META -->
 
-> **实现功能**：在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。
+> **功能**：在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。
 
-> **核心亮点**：[Q02](#research-q02)相对单次CLI安装，将新增包加载校验、entry冲突与磁盘manifest对账整合到维护链；它改变安装办结条件，但不是第三方插件安全保证。
+> **亮点**：[Q02](#research-q02)相对单次CLI安装，将新增包加载校验、entry冲突与磁盘manifest对账整合到维护链；它改变安装办结条件，但不是第三方插件安全保证。
 
-> **风险与缺陷**：[Q03](#research-q03)市场与宿主共处故障域，旧版鉴权及进程崩溃恢复需单独验证；单文件rename和catch回滚不能当跨文件事务。
+> **主要限制**：[Q03](#research-q03)市场与宿主共处故障域，旧版鉴权及进程崩溃恢复需单独验证；单文件rename和catch回滚不能当跨文件事务。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：[Q02](#research-q02)相对单次CLI安装，将新增包加载校验、entry冲突与磁盘manifest对账整合到维护链；它改变安装办结条件，但不是第三方插件安全保证。
 
-[Q02](#research-q02)相对单次CLI安装，将新增包加载校验、entry冲突与磁盘manifest对账整合到维护链；它改变安装办结条件，但不是第三方插件安全保证。
-
 安装后以磁盘真相对账值得复用，host gate复用避免第二套登录；移植必须同时处理profile所有权、包管理副作用和宿主版本，不能只搬UI。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[a23020b](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)
+源码版本：[a23020b](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2021Heei/dsh-tts-flash)
 <!-- END META -->
 
-> **实现功能**：DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。
+> **功能**：DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。
 
-> **核心亮点**：把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。
+> **亮点**：把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：朗读音频不是完整覆盖；/engines 返回含 apiKey，探测把非401/403错误视可用，readJsonBody 异常分支引用未定义 res。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：朗读音频不是完整覆盖；/engines 返回含 apiKey，探测把非401/403错误视可用，readJsonBody 异常分支引用未定义 res。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。
 
-把桌面浮条、等待语音和可替换 TTS 引擎接入 DSH 文本流。详见[Q01](#research-q01)。
-
 分句与队列分层清楚，但音频背压有损且路由错误/凭据边界需收紧。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

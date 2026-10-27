@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[6133450](https://github.com/173787247/dsh-wsl-struct/tree/6133450a091e0fbb1f8d02a10f371e30e8d56f7b)
+源码版本：[6133450](https://github.com/173787247/dsh-wsl-struct/tree/6133450a091e0fbb1f8d02a10f371e30e8d56f7b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-struct)
 <!-- END META -->
 
-> **实现功能**：为DSH封装jq、yq与readonly SQLite查询，提供主文件allowRoots检查及输出截断标记。
+> **功能**：为DSH封装jq、yq与readonly SQLite查询，提供主文件allowRoots检查及输出截断标记。
 
-> **核心亮点**：将参数化CLI、主路径realpath、SQLite readonly和错误输出接到DSH，算法与表达式能力来自上游。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：将参数化CLI、主路径realpath、SQLite readonly和错误输出接到DSH，算法与表达式能力来自上游。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：主路径谓词在POSIX接受反斜杠前缀可误认兄弟目录，也不限制CLI全部能力；raw spawn无宿主沙箱且默认HOME/tmp过宽；which/取消/输出资源边界也不完整。详见[Q02](#research-q02)。
+> **主要限制**：主路径谓词在POSIX接受反斜杠前缀可误认兄弟目录，也不限制CLI全部能力；raw spawn无宿主沙箱且默认HOME/tmp过宽；which/取消/输出资源边界也不完整。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将参数化CLI、主路径realpath、SQLite readonly和错误输出接到DSH，算法与表达式能力来自上游。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-将参数化CLI、主路径realpath、SQLite readonly和错误输出接到DSH，算法与表达式能力来自上游。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用的是主文件和根的realpath、argv固定选项、SQLite底层readonly、inline输入与截断标记、工具错误值清楚。run/which分离也方便独立核对，但目前raw spawn不继承宿主治理；并发安全声明应包含资源而非仅不主动改主文件。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

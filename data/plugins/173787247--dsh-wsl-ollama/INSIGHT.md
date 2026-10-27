@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[90a0f51](https://github.com/173787247/dsh-wsl-ollama/tree/90a0f51bc8c9c16f41c99a4c17b84aa6df4ff1ea)
+源码版本：[90a0f51](https://github.com/173787247/dsh-wsl-ollama/tree/90a0f51bc8c9c16f41c99a4c17b84aa6df4ff1ea)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-ollama)
 <!-- END META -->
 
-> **实现功能**：为 DSH 在 WSL 或本机调用现有 Ollama 守护进程提供状态、模型列表、聊天和嵌入工具。
+> **功能**：为 DSH 在 WSL 或本机调用现有 Ollama 守护进程提供状态、模型列表、聊天和嵌入工具。
 
-> **核心亮点**：简化 Agent 对本地 Ollama 模型的自查、聊天与向量获取。详见[Q01](#research-q01)。
+> **亮点**：简化 Agent 对本地 Ollama 模型的自查、聊天与向量获取。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：只看 status.ok 会误判连通；maxPromptChars 不限制 messages 分支，且 baseUrl 并非保证本地。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：只看 status.ok 会误判连通；maxPromptChars 不限制 messages 分支，且 baseUrl 并非保证本地。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：简化 Agent 对本地 Ollama 模型的自查、聊天与向量获取。详见[Q01](#research-q01)。
 
-简化 Agent 对本地 Ollama 模型的自查、聊天与向量获取。详见[Q01](#research-q01)。
-
 轻量 HTTP 客户端便于借鉴；状态语义、两层超时和输入限制需对齐。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

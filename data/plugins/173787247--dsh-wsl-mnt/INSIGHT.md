@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[fd4dfd4](https://github.com/173787247/dsh-wsl-mnt/tree/fd4dfd42ed07ca3c1e78942252547b895970ff8f)
+源码版本：[fd4dfd4](https://github.com/173787247/dsh-wsl-mnt/tree/fd4dfd42ed07ca3c1e78942252547b895970ff8f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-mnt)
 <!-- END META -->
 
-> **实现功能**：按 WSL 路径规则判断 /mnt 工作区并给出 Linux home 迁移建议。
+> **功能**：按 WSL 路径规则判断 /mnt 工作区并给出 Linux home 迁移建议。
 
-> **核心亮点**：把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：所有 /mnt 路径统一判为不佳、非 /mnt 判为 ok，未核文件系统/符号链接或测速；建议路径可能与现有项目冲突。详见[Q03](#research-q03)。
+> **主要限制**：所有 /mnt 路径统一判为不佳、非 /mnt 判为 ok，未核文件系统/符号链接或测速；建议路径可能与现有项目冲突。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 没有执行 shell 或修改文件；只依赖路径和 .git 存在性。分类未做 realpath/mountinfo；结果 ok 实为不在 /mnt，非健康探针。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ WSL1/2 上对 DrvFs、Linux fs、自定义挂载、symlink 和同名仓库目标
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

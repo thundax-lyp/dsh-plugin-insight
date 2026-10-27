@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[a2e7fba](https://github.com/173787247/dsh-wsl-systemd/tree/a2e7fba0ac5ac273634697e1503fdb6676cc557f)
+源码版本：[a2e7fba](https://github.com/173787247/dsh-wsl-systemd/tree/a2e7fba0ac5ac273634697e1503fdb6676cc557f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-systemd)
 <!-- END META -->
 
-> **实现功能**：为DSH提供用户systemd可用性探测、服务列表、单位属性与近期日志的只读工具，不启动或停止服务。
+> **功能**：为DSH提供用户systemd可用性探测、服务列表、单位属性与近期日志的只读工具，不启动或停止服务。
 
-> **核心亮点**：把用户systemd手工list/show/journal整合为五入口四操作，提供单位约束、固定argv与结构化观察回执；不提供修复。详见[Q02](#research-q02)。
+> **亮点**：把用户systemd手工list/show/journal整合为五入口四操作，提供单位约束、固定argv与结构化观察回执；不提供修复。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：发现命令which没有error/timeout，执行取消未贯穿；stderr无界、成功render隐藏truncated，日志只读仍可能披露秘密。详见[Q03](#research-q03)。
+> **主要限制**：发现命令which没有error/timeout，执行取消未贯穿；stderr无界、成功render隐藏truncated，日志只读仍可能披露秘密。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：把用户systemd手工list/show/journal整合为五入口四操作，提供单位约束、固定argv与结构化观察回执；不提供修复。详见[Q02](#research-q02)。
 
-把用户systemd手工list/show/journal整合为五入口四操作，提供单位约束、固定argv与结构化观察回执；不提供修复。详见[Q02](#research-q02)。
-
 最明显的边界在命令发现。which只监听close，不监听spawn error，也没有timeout；bash缺失时error事件可能未处理，bash登录初始化卡住则Promise不结算。工具注册timeoutMs不等于底层进程必被取消，execute不接AbortSignal。run虽有SIGKILL定时器，但只kill直接child、不保证进程树，stderr无限累加；stdout超过200000才kill，单chunk可越限，不能称严格内存上限。
 
 list/journal只有run成功exit0才返回40000字符/truncated。200000超限kill通常code=null，被当命令失败，只剩stderr/code，非完整截断收据。render对成功只显示output，隐藏truncated字段，读者看到的文本可能以为完整；status ok=true表示探测回执生成，不代表systemctl存在/userbus可达，userAvailable接受0/1/3是启发式，不能当服务健康。
@@ -167,7 +165,7 @@ assertUnit允许起始短横线，show将它直接放在argv且未加--，可能
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

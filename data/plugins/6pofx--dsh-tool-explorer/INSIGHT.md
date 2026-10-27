@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[63ea4c8](https://github.com/6pofx/dsh-tool-explorer/tree/63ea4c8192f715c3157af69e71fef67915db8af1)
+源码版本：[63ea4c8](https://github.com/6pofx/dsh-tool-explorer/tree/63ea4c8192f715c3157af69e71fef67915db8af1)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/6pofx/dsh-tool-explorer) [![npm 30d 655](https://img.shields.io/static/v1?label=npm+30d&message=655&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tool-explorer) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tool-explorer)
 <!-- END META -->
 
-> **实现功能**：在DSH Web集中浏览、编辑、安装与切换技能，管理和探测MCP服务器。
+> **功能**：在DSH Web集中浏览、编辑、安装与切换技能，管理和探测MCP服务器。
 
-> **核心亮点**：将技能文件、共享lock/回收对象及MCP patch组织成可视管理交付，批选同仓一次下载省重复资源；承认作者所列社区参照。详见[Q01](#research-q01)。
+> **亮点**：将技能文件、共享lock/回收对象及MCP patch组织成可视管理交付，批选同仓一次下载省重复资源；承认作者所列社区参照。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：技能改名只写MD后删旧目录，表单userInvocable键不等平台键，升级不保ref；Origin不等认证，多文件恢复不能靠HTTP成功判断。详见[Q04](#research-q04)。
+> **主要限制**：技能改名只写MD后删旧目录，表单userInvocable键不等平台键，升级不保ref；Origin不等认证，多文件恢复不能靠HTTP成功判断。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -107,8 +107,6 @@
 
 > **亮点**：将技能文件、共享lock/回收对象及MCP patch组织成可视管理交付，批选同仓一次下载省重复资源；承认作者所列社区参照。详见[Q01](#research-q01)。
 
-将技能文件、共享lock/回收对象及MCP patch组织成可视管理交付，批选同仓一次下载省重复资源；承认作者所列社区参照。详见[Q01](#research-q01)。
-
 结构接口/lazy agent lookup、双轴开关、根外trash和局部patch文本手术可借鉴；原子单文件不等目录事务。详见[Q06](#research-q06)。
 
 <a id="detail-section-5"></a>
@@ -157,7 +155,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

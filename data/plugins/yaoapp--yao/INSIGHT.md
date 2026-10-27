@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[22a7a2c](https://github.com/YaoApp/yao/tree/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3)
+源码版本：[22a7a2c](https://github.com/YaoApp/yao/tree/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3)
 
 <!-- BEGIN META -->
 [![GitHub ★ 8,190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C190&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/YaoApp/yao)
 <!-- END META -->
 
-> **实现功能**：自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。
+> **功能**：自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。
 
-> **核心亮点**：[Q03](#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
+> **亮点**：[Q03](#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
 
-> **风险与缺陷**：[Q04](#research-q04)指出workspace组织隔离不等于所有模式的OS沙箱，completed/maxTokensAsSuccess不证明交付合格，准备材料写入失败还可能只warn继续。正常完成Cleanup有意保留子进程，离线节点回退又带来数据落位未知；这些核心生命周期边界尚未形成可验证的恢复与退出契约，应先观察而非以只读小任务掩盖整个平台的采用负担。
+> **主要限制**：[Q04](#research-q04)指出workspace组织隔离不等于所有模式的OS沙箱，completed/maxTokensAsSuccess不证明交付合格，准备材料写入失败还可能只warn继续。正常完成Cleanup有意保留子进程，离线节点回退又带来数据落位未知；这些核心生命周期边界尚未形成可验证的恢复与退出契约，应先观察而非以只读小任务掩盖整个平台的采用负担。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：[Q03](#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
 
-[Q03](#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
-
 可借鉴daemonRegistry的同chat执行去重、团队配额队列、workspace身份绑定和分层取消。DSH会话层区分completed事件、非零退出及零退出但stderr且不完整，避免仅由退出码决定成功；取消尽量先协议结束再强杀，仍需要验证取消后副作用。迁移要携带Computer抽象、chat身份和配置模板，并处理多个平台差异。本轮只抽读这些Go关键路径，inventory的JS/TS/Markdown统计不覆盖Go主体，也不是整个框架审计。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

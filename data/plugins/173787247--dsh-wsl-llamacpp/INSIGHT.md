@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[bc5454d](https://github.com/173787247/dsh-wsl-llamacpp/tree/bc5454d19624f5f7575e841c6d62d47cbbdb2411)
+源码版本：[bc5454d](https://github.com/173787247/dsh-wsl-llamacpp/tree/bc5454d19624f5f7575e841c6d62d47cbbdb2411)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-llamacpp)
 <!-- END META -->
 
-> **实现功能**：给 DSH Agent 提供 llama.cpp 兼容服务的模型列表状态与一次性非流式聊天工具。
+> **功能**：给 DSH Agent 提供 llama.cpp 兼容服务的模型列表状态与一次性非流式聊天工具。
 
-> **核心亮点**：降低 Agent 调用本地 OpenAI 兼容 GGUF 服务的接线成本。详见[Q01](#research-q01)。
+> **亮点**：降低 Agent 调用本地 OpenAI 兼容 GGUF 服务的接线成本。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：健康 ok:true 与可达性分离、状态超时不一致，最大 prompt 限制只对单 prompt 生效。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：健康 ok:true 与可达性分离、状态超时不一致，最大 prompt 限制只对单 prompt 生效。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：降低 Agent 调用本地 OpenAI 兼容 GGUF 服务的接线成本。详见[Q01](#research-q01)。
 
-降低 Agent 调用本地 OpenAI 兼容 GGUF 服务的接线成本。详见[Q01](#research-q01)。
-
 薄 HTTP 客户端易复用，健康语义、超时与上下文长度需严格化。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

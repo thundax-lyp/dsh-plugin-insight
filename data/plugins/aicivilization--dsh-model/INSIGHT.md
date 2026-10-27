@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[44c466c](https://github.com/AIcivilization/dsh-model/tree/44c466cbbf62769b91f0647469dc529ecdc125ee)
+源码版本：[44c466c](https://github.com/AIcivilization/dsh-model/tree/44c466cbbf62769b91f0647469dc529ecdc125ee)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AIcivilization/dsh-model) [![npm 30d 2,481](https://img.shields.io/static/v1?label=npm+30d&message=2%2C481&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-model) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-model)
 <!-- END META -->
 
-> **实现功能**：整合模型来源、统一API中转、组合切换和每日签到，并提供DSH管理界面与命令行。
+> **功能**：整合模型来源、统一API中转、组合切换和每日签到，并提供DSH管理界面与命令行。
 
-> **核心亮点**：在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；替换model不保证工具、图像和质量等价，单地址不等合格交付。[Q03](#research-q03)
+> **主要限制**：HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；替换model不保证工具、图像和质量等价，单地址不等合格交付。[Q03](#research-q03)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
 
-在成熟代理引擎之上整合来源与客户端接线、组合和管理流程，减少多套配置；模型推理和额度仍来自上游。[Q01](#research-q01)、[Q02](#research-q02)
-
 资产摘要、partial落位与状态锁可借鉴，禁止组合嵌套避免循环；分步清理保留恢复状态，但warn路径和流提交语义仍需独立验收。[Q04](#research-q04)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ HTTP成功一旦开始转流就退出fallback，流中失败仅结束响应；�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

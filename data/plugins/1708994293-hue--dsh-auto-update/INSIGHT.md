@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[22f7d60](https://github.com/1708994293-hue/dsh-auto-update/tree/22f7d60a000a2c6ad608b25944932a752b690465)
+源码版本：[22f7d60](https://github.com/1708994293-hue/dsh-auto-update/tree/22f7d60a000a2c6ad608b25944932a752b690465)
 
 <!-- BEGIN META -->
 [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@sueleven/dsh-auto-update)
 <!-- END META -->
 
-> **实现功能**：启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。
+> **功能**：启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。
 
-> **核心亮点**：整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。
+> **亮点**：整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。
 
-> **风险与缺陷**：runApply未把提示targets传给脚本，实际重新查latest/候选；可能安装用户未看到的版本，且apply处理器未见局部确认围栏。参见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：runApply未把提示targets传给脚本，实际重新查latest/候选；可能安装用户未看到的版本，且apply处理器未见局部确认围栏。参见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。
 
-整合启动延迟检查和官方安装通道，减少逐包手工发现，默认确认前不安装。参见[Q01](#research-q01)。
-
 参数数组、进程超时、wx锁和版本后验可借鉴；迁移需避免内部asar路径和确认漂移，原子状态文件也不能替代安装事务。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@ runApply未把提示targets传给脚本，实际重新查latest/候选；可能�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

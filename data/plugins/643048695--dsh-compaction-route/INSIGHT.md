@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[6039b26](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)
+源码版本：[6039b26](https://github.com/643048695/dsh-compaction-route/tree/6039b260d96652ce4af606f850cd1a179cd9d4f7)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。
+> **功能**：仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。
 
-> **核心亮点**：补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：缺finish被当无failure、无用摘要不备援、throw直抛且完整流缓存；备援重发历史并产生额外成本，窗口提示非成功保证。详见[Q02](#research-q02)。
+> **主要限制**：缺finish被当无failure、无用摘要不备援、throw直抛且完整流缓存；备援重发历史并产生额外成本，窗口提示非成功保证。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-补可编辑摘要主备与purpose窄路由，减少手工失败切换，非新压缩算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用的是purpose窄匹配、空配置透明、volatile每次取值、WeakSet避免自身递归及遵守abort不再备援。缓冲尝试避免失败内容污染最终摘要，但当前无界缓存/缺finish无错误和只给最终流需要明确。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

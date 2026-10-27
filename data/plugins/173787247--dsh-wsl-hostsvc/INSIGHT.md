@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ef261f7](https://github.com/173787247/dsh-wsl-hostsvc/tree/ef261f7a5d03f4beae08bd250f980941903e6304)
+源码版本：[ef261f7](https://github.com/173787247/dsh-wsl-hostsvc/tree/ef261f7a5d03f4beae08bd250f980941903e6304)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-hostsvc)
 <!-- END META -->
 
-> **实现功能**：从WSL探测Windows侧本地模型服务，输出可达地址、模型API状态、上下文提示和配置片段。
+> **功能**：从WSL探测Windows侧本地模型服务，输出可达地址、模型API状态、上下文提示和配置片段。
 
-> **核心亮点**：把WSL宿主发现、常见服务探测、HTTP模型状态和配置草稿合在DSH工具中，较手工nc/curl减少切换，并区分TCP开放与models API状态。集成价值不等于新探测算法。详见[Q02](#research-q02)。
+> **亮点**：把WSL宿主发现、常见服务探测、HTTP模型状态和配置草稿合在DSH工具中，较手工nc/curl减少切换，并区分TCP开放与models API状态。集成价值不等于新探测算法。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：主ok、建议URL和模板仍可由TCP开放触发，apiReady不代表生成可用；固定模板容量、元数据回退和未传播取消信号限制诊断可信度，均为静态判断未复现。详见[Q02](#research-q02)和[Q04](#research-q04)。
+> **主要限制**：主ok、建议URL和模板仍可由TCP开放触发，apiReady不代表生成可用；固定模板容量、元数据回退和未传播取消信号限制诊断可信度，均为静态判断未复现。详见[Q02](#research-q02)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -108,8 +108,6 @@
 
 > **亮点**：把WSL宿主发现、常见服务探测、HTTP模型状态和配置草稿合在DSH工具中，较手工nc/curl减少切换，并区分TCP开放与models API状态。集成价值不等于新探测算法。详见[Q02](#research-q02)。
 
-把WSL宿主发现、常见服务探测、HTTP模型状态和配置草稿合在DSH工具中，较手工nc/curl减少切换，并区分TCP开放与models API状态。集成价值不等于新探测算法。详见[Q02](#research-q02)。
-
 可复用的设计是把探测核心与DSH注册分开、HTTP helper支持注入fetchFn、对HTTP状态和模型ID形成结构结果，并把undefined显式转null以满足lossless JSON。测试对404分层和容量对照有具体断言，但本轮只读，不能称运行通过。共享wsl-host注明来自kit的同步副本，复用时应保留上游归属和同步责任。
 
 <a id="detail-section-5"></a>
@@ -158,7 +156,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

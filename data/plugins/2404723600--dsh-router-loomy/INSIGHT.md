@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ccabca3](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)
+源码版本：[ccabca3](https://github.com/2404723600/dsh-router-loomy/tree/ccabca348ca2194287f0770ce348283fdb8bf3d8)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：将 Loomy 云端 Chat Completions 通道接入 dsh-router，自动读本机客户端登录态。
+> **功能**：将 Loomy 云端 Chat Completions 通道接入 dsh-router，自动读本机客户端登录态。
 
-> **核心亮点**：将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。
+> **亮点**：将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：截断触发整段重试会消耗积分，且状态昵称原样带 phone，README 脱敏示例与代码不一致。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：截断触发整段重试会消耗积分，且状态昵称原样带 phone，README 脱敏示例与代码不一致。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。
 
-将客户端会话/追踪头和流式截断判据封装成 router 供应商。详见[Q02](#research-q02)。
-
 文件缓存读错时回退旧 session；缺尾判截断诱导核心重试，进程内次数限制；状态页 token 仅防 CSRF，号码未代码脱敏。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

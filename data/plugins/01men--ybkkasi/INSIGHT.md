@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ad1086e](https://github.com/01men/ybkkasi/tree/ad1086e5d77a93aa80c73f0e5e8e3e10fcf373d3)
+源码版本：[ad1086e](https://github.com/01men/ybkkasi/tree/ad1086e5d77a93aa80c73f0e5e8e3e10fcf373d3)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/01men/ybkkasi)
 <!-- END META -->
 
-> **实现功能**：以插件化控制平面统一管理企业 MCP、Skill、Agent、AI 应用、身份、审计与用量。
+> **功能**：以插件化控制平面统一管理企业 MCP、Skill、Agent、AI 应用、身份、审计与用量。
 
-> **核心亮点**：相比分散 IAM/网关/审计脚本，提供共享主体和调用状态的插件化治理面；具体支点是 permit 与步骤账本贯穿执行。不是独立的新治理算法。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：相比分散 IAM/网关/审计脚本，提供共享主体和调用状态的插件化治理面；具体支点是 permit 与步骤账本贯穿执行。不是独立的新治理算法。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：本地幂等账本无法独自保证外部动作一致；单进程、演示数据开放面及各适配器权限覆盖限制生产承诺。见 [Q03](#research-q03)。
+> **主要限制**：本地幂等账本无法独自保证外部动作一致；单进程、演示数据开放面及各适配器权限覆盖限制生产承诺。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相比分散 IAM/网关/审计脚本，提供共享主体和调用状态的插件化治理面；具体支点是 permit 与步骤账本贯穿执行。不是独立的新治理算法。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相比分散 IAM/网关/审计脚本，提供共享主体和调用状态的插件化治理面；具体支点是 permit 与步骤账本贯穿执行。不是独立的新治理算法。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 调用预留事务与网络执行分离、领域状态不等同HTTP状态，值得借鉴；需要外部回执与未知结果核验共同成立。启动顺序与依赖体检清晰，但多个业务域共享升级面，不能用源码规模或测试 badge 代替生产可靠性。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

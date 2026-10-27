@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[e7963e2](https://github.com/173787247/dsh-wsl-winshot/tree/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b)
+源码版本：[e7963e2](https://github.com/173787247/dsh-wsl-winshot/tree/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-winshot)
 <!-- END META -->
 
-> **实现功能**：从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。
+> **功能**：从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。
 
-> **核心亮点**：把 Windows 指定窗口画面转为 WSL PNG，支持元素名/坐标裁剪。详见[Q01](#research-q01)。
+> **亮点**：把 Windows 指定窗口画面转为 WSL PNG，支持元素名/坐标裁剪。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：CopyFromScreen 捕获屏幕可见像素并恢复最小化窗口；临时图位于 Public 且异常未保证清理，Agent 输出仅是文本路径。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：CopyFromScreen 捕获屏幕可见像素并恢复最小化窗口；临时图位于 Public 且异常未保证清理，Agent 输出仅是文本路径。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@ Windows 原生截图/录屏或手工截图能人工确定目标；插件跨 WSL 
 
 > **亮点**：把 Windows 指定窗口画面转为 WSL PNG，支持元素名/坐标裁剪。详见[Q01](#research-q01)。
 
-把 Windows 指定窗口画面转为 WSL PNG，支持元素名/坐标裁剪。详见[Q01](#research-q01)。
-
 UIA 裁剪和字符串转义有局部参考；目标选择、临时隐私与呈现需改进。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ CopyFromScreen 捕获屏幕可见像素并恢复最小化窗口；临时图位�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

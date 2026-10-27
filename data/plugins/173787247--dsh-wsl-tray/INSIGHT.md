@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[7ad45d3](https://github.com/173787247/dsh-wsl-tray/tree/7ad45d3db6672fb07ab909135c3c479ee5dee72a)
+源码版本：[7ad45d3](https://github.com/173787247/dsh-wsl-tray/tree/7ad45d3db6672fb07ab909135c3c479ee5dee72a)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-tray)
 <!-- END META -->
 
-> **实现功能**：生成Windows PowerShell快捷方式和可选AHK托盘入口，调用可信WSL kit启动/诊断并打开token URL。
+> **功能**：生成Windows PowerShell快捷方式和可选AHK托盘入口，调用可信WSL kit启动/诊断并打开token URL。
 
-> **核心亮点**：集中发行版、UNC、PowerShell/BOM和token URL互操作接线，核心启动与运行依赖kit/AHK而非本插件实现。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：集中发行版、UNC、PowerShell/BOM和token URL互操作接线，核心启动与运行依赖kit/AHK而非本插件实现。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：fallback使用未导入readdirSync，Bash路径引用、并发/取消与顺序超时存在静态边界，shortcut失败仍可ok:true；token来源只简单匹配。详见[Q02](#research-q02)。
+> **主要限制**：fallback使用未导入readdirSync，Bash路径引用、并发/取消与顺序超时存在静态边界，shortcut失败仍可ok:true；token来源只简单匹配。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：集中发行版、UNC、PowerShell/BOM和token URL互操作接线，核心启动与运行依赖kit/AHK而非本插件实现。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-集中发行版、UNC、PowerShell/BOM和token URL互操作接线，核心启动与运行依赖kit/AHK而非本插件实现。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用的是跨WSL/Windows路径转换、发行版从WSL环境或wslpath获取、PowerShell单引号处理、PS1 BOM与创建shortcut前Test-Path；这些是具体互操作经验。默认status和缺kit明确报错降低误写，但生成/快捷方式/启动各阶段结果仍混合。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ fallback使用未导入readdirSync，Bash路径引用、并发/取消与顺序�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

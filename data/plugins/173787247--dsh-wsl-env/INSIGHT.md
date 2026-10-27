@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[a674c70](https://github.com/173787247/dsh-wsl-env/tree/a674c704757b733503f224ce2e3cf6ac5d1b6c8a)
+源码版本：[a674c70](https://github.com/173787247/dsh-wsl-env/tree/a674c704757b733503f224ce2e3cf6ac5d1b6c8a)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-env)
 <!-- END META -->
 
-> **实现功能**：检测WSL并给系统提示补发行版、路径映射和跨Windows操作指导，减少环境背景重复说明。
+> **功能**：检测WSL并给系统提示补发行版、路径映射和跨Windows操作指导，减少环境背景重复说明。
 
-> **核心亮点**：把局部环境事实和常见WSL指导自动填入模型背景。详见[Q01](#research-q01)。
+> **亮点**：把局部环境事实和常见WSL指导自动填入模型背景。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：固定/mnt/c和always强制可误述环境，排障工具未核存在，工作区提示不等隔离。详见[Q03](#research-q03)。
+> **主要限制**：固定/mnt/c和always强制可误述环境，排障工具未核存在，工作区提示不等隔离。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把局部环境事实和常见WSL指导自动填入模型背景。详见[Q01](#research-q01)。
 
-把局部环境事实和常见WSL指导自动填入模型背景。详见[Q01](#research-q01)。
-
 依赖注入纯函数易审计，未接网络模式与apply生命周期需区分。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

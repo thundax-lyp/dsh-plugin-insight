@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[272a2ad](https://github.com/173787247/dsh-wsl-rclone/tree/272a2adaba5711ec6b5e7b45463bff5e0e04b6c9)
+源码版本：[272a2ad](https://github.com/173787247/dsh-wsl-rclone/tree/272a2adaba5711ec6b5e7b45463bff5e0e04b6c9)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-rclone)
 <!-- END META -->
 
-> **实现功能**：把 rclone 的 remote 列表、文件名枚举和配额查看暴露为 DSH 只读工具。
+> **功能**：把 rclone 的 remote 列表、文件名枚举和配额查看暴露为 DSH 只读工具。
 
-> **核心亮点**：把现有 rclone 配置的只读观察能力接入 Agent。详见[Q01](#research-q01)。
+> **亮点**：把现有 rclone 配置的只读观察能力接入 Agent。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：允许列表默认开放、lsf 先递归后切片可能带来远端访问与计费；健康 ok:true 易误判。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：允许列表默认开放、lsf 先递归后切片可能带来远端访问与计费；健康 ok:true 易误判。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把现有 rclone 配置的只读观察能力接入 Agent。详见[Q01](#research-q01)。
 
-把现有 rclone 配置的只读观察能力接入 Agent。详见[Q01](#research-q01)。
-
 argv 避免 shell 拼接；默认 remote 策略和上游枚举限额需部署控制。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ argv 避免 shell 拼接；默认 remote 策略和上游枚举限额需部署控
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

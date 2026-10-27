@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[bb06125](https://github.com/863683348/dsh-gov/tree/bb061250a1dcead15edc202b4666c7d54f36da4a)
+源码版本：[bb06125](https://github.com/863683348/dsh-gov/tree/bb061250a1dcead15edc202b4666c7d54f36da4a)
 
 <!-- BEGIN META -->
 [![npm 30d 146](https://img.shields.io/static/v1?label=npm+30d&message=146&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gov) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gov)
 <!-- END META -->
 
-> **实现功能**：为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。
+> **功能**：为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。
 
-> **核心亮点**：把工具策略解释、JSONL事件与预算提示用纯模块和一个工具整合，减少分散hook接线。详见[Q01](#research-q01)。
+> **亮点**：把工具策略解释、JSONL事件与预算提示用纯模块和一个工具整合，减少分散hook接线。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：被治理模型也能改全局策略/预算，quota不硬停且启动/global键与计量delta未闭合，持久失败和坏配置可静默失去治理。详见[Q02](#research-q02)。
+> **主要限制**：被治理模型也能改全局策略/预算，quota不硬停且启动/global键与计量delta未闭合，持久失败和坏配置可静默失去治理。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把工具策略解释、JSONL事件与预算提示用纯模块和一个工具整合，减少分散hook接线。详见[Q01](#research-q01)。
 
-把工具策略解释、JSONL事件与预算提示用纯模块和一个工具整合，减少分散hook接线。详见[Q01](#research-q01)。
-
 纯模型可读可测、日志少采参数降低部分敏感面；fail-open持久/计量与管理权混合需按实际治理目标判断。详见[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

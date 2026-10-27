@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[269ab86](https://github.com/Alnita-M/dsh-Almost_Full_Access/tree/269ab865fd02a4dded171eaecc40b1255f5df227)
+源码版本：[269ab86](https://github.com/Alnita-M/dsh-Almost_Full_Access/tree/269ab865fd02a4dded171eaecc40b1255f5df227)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 820](https://img.shields.io/static/v1?label=npm+30d&message=820&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access)
 <!-- END META -->
 
-> **实现功能**：为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。
+> **功能**：为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。
 
-> **核心亮点**：将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。
+> **亮点**：将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：几处条件未满足时直接 next，而 preset 底层是 danger-full-access/approval never；remembered/LLM 缓存仅按 32 位命令哈希，GET queue 和 POST decide 无独立登录绑定。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：几处条件未满足时直接 next，而 preset 底层是 danger-full-access/approval never；remembered/LLM 缓存仅按 32 位命令哈希，GET queue 和 POST decide 无独立登录绑定。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。
 
-将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](#research-q01)。
-
 确定性风险先于 LLM、工具禁用子代理及审批超时可借鉴；安全门控必须放在统一执行边界。详见[Q05](#research-q05)。
 
 固定版本跨插件比较保留为未验证设计推演。跨插件固定源码比较中，本项记住审批与LLM裁决仅用32位命令文本短哈希，未绑定会话、cwd和脚本版本；余额侧栏按probe缓存并取首匹配route凭据；zcode-usage-stats把磁盘缓存固定到HOME下web profile且模块缓存未按当前sessionPersistence分区；plugin-balance把请求给出的目标URL/path与header或服务端凭据组合，Bearer随目标发送。四者分别是权限决定、账户归属、历史范围及凭据目的地问题，不能用同一种缓存优化替代各自边界。zcode入口已有宿主requestRejection，不能把缓存范围问题扩写为匿名可访问。由此保留未验证假设，为操作声明必要上下文身份与版本（会话、规范工作区/脚本摘要、route与非秘密账户指纹、目标origin、采样范围和时间），缺身份拒复用，变化即使旧结论失效；凭据目的地还必须独立验证允许接收方。最小对照用两个工作区同名异内容脚本、双route账户切换、双profile同HOME缓存以及伪造custom目标，要求不误批、不混数、不误发秘密，同时测维护与恢复工时。若绑定后仍误归属/误授权，或维护成本超过收益则否定；本轮未执行这些对照。
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

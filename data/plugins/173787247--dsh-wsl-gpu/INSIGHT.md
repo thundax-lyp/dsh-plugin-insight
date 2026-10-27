@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[3a682db](https://github.com/173787247/dsh-wsl-gpu/tree/3a682db355d8d1b9063b975e7a18900a4ae4aa74)
+源码版本：[3a682db](https://github.com/173787247/dsh-wsl-gpu/tree/3a682db355d8d1b9063b975e7a18900a4ae4aa74)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-gpu)
 <!-- END META -->
 
-> **实现功能**：汇总WSL的nvidia-smi显存数据和常见本地推理端口线索，给出静态排障提示。
+> **功能**：汇总WSL的nvidia-smi显存数据和常见本地推理端口线索，给出静态排障提示。
 
-> **核心亮点**：把设备和端口线索放在同一报告，减少手工收集。详见[Q01](#research-q01)。
+> **亮点**：把设备和端口线索放在同一报告，减少手工收集。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：仅loopback探测可能漏Windows NAT，端口标签/争用及固定CUDA建议是启发，整体超时未向子任务传递。详见[Q03](#research-q03)。
+> **主要限制**：仅loopback探测可能漏Windows NAT，端口标签/争用及固定CUDA建议是启发，整体超时未向子任务传递。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@ nvidia-smi加TCP手动检查；当前是聚合报告，不是GPU资源控制。
 
 > **亮点**：把设备和端口线索放在同一报告，减少手工收集。详见[Q01](#research-q01)。
 
-把设备和端口线索放在同一报告，减少手工收集。详见[Q01](#research-q01)。
-
 依赖注入测试和JSON清洗可借鉴，需分层成功语义与统一deadline。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ nvidia-smi加TCP手动检查；当前是聚合报告，不是GPU资源控制。
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

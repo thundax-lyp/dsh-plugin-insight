@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-plugin-manager)
+源码版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-plugin-manager)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 78,704](https://img.shields.io/static/v1?label=npm+30d&message=78%2C704&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-plugin-manager) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-plugin-manager)
 <!-- END META -->
 
-> **实现功能**：在 DSH 官方插件页检查更新与宿主兼容，并通过官方通道或本机网关管理插件生命周期。
+> **功能**：在 DSH 官方插件页检查更新与宿主兼容，并通过官方通道或本机网关管理插件生命周期。
 
-> **核心亮点**：核心增量是把版本检查、宿主最低版本判断、官方写入通道与更新后的 profile 核对接成一个流程，按运行时选择官方通道、CLI 或应用内 manager，避免再造一个独立包写入器。串行变更和只处理本次新增重复挂载的防护值得借鉴，实际安装机制仍来自 DSH 与包管理器。[Q02](#research-q02)
+> **亮点**：核心增量是把版本检查、宿主最低版本判断、官方写入通道与更新后的 profile 核对接成一个流程，按运行时选择官方通道、CLI 或应用内 manager，避免再造一个独立包写入器。串行变更和只处理本次新增重复挂载的防护值得借鉴，实际安装机制仍来自 DSH 与包管理器。[Q02](#research-q02)
 
-> **风险与缺陷**：“安全回滚”不能解释为更新一定可用。兼容声明只覆盖包所写的版本要求，--dump-config 不导入插件，运行期 import/apply 失败仍在真实重启才暴露；网关队列只串行化本实例任务，也不能据此宣称阻止外部 CLI 并发。收益需按重启后功能与恢复结果判断。[Q03](#research-q03)
+> **主要限制**：“安全回滚”不能解释为更新一定可用。兼容声明只覆盖包所写的版本要求，--dump-config 不导入插件，运行期 import/apply 失败仍在真实重启才暴露；网关队列只串行化本实例任务，也不能据此宣称阻止外部 CLI 并发。收益需按重启后功能与恢复结果判断。[Q03](#research-q03)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：核心增量是把版本检查、宿主最低版本判断、官方写入通道与更新后的 profile 核对接成一个流程，按运行时选择官方通道、CLI 或应用内 manager，避免再造一个独立包写入器。串行变更和只处理本次新增重复挂载的防护值得借鉴，实际安装机制仍来自 DSH 与包管理器。[Q02](#research-q02)
 
-核心增量是把版本检查、宿主最低版本判断、官方写入通道与更新后的 profile 核对接成一个流程，按运行时选择官方通道、CLI 或应用内 manager，避免再造一个独立包写入器。串行变更和只处理本次新增重复挂载的防护值得借鉴，实际安装机制仍来自 DSH 与包管理器。[Q02](#research-q02)
-
 可借鉴单实例变更队列、官方写入器优先、变更前后回读及只处理新增重复项的守卫。代价是需要维护多个宿主通道与 profile 识别语义；组合预检仍需真实启动补足。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：packages/dsh-plugin-manager；内容摘要：f3dc9c694d00b3072d8e1c5972154fc94cff1267efc222f39d9c32c4b9c30d52。sloc 0.3.2，TypeScript 5.9.3。
 

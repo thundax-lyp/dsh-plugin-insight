@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[f3ecb7a](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/f3ecb7abcf5a0351645cfcbd638b9c7fbbcb3e97)
+源码版本：[f3ecb7a](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/f3ecb7abcf5a0351645cfcbd638b9c7fbbcb3e97)
 
 <!-- BEGIN META -->
 [![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
 <!-- END META -->
 
-> **实现功能**：为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。
+> **功能**：为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。
 
-> **核心亮点**：多车道目录与虚拟组合模型减少手工接线，视觉和窗口等元信息按成员约束。
+> **亮点**：多车道目录与虚拟组合模型减少手工接线，视觉和窗口等元信息按成员约束。
 
-> **风险与缺陷**：部分免费是作者对上游的声明；真实渠道、供给、成本和数据处理规则仍需分别核对。
+> **主要限制**：部分免费是作者对上游的声明；真实渠道、供给、成本和数据处理规则仍需分别核对。
 
 **本文目录**
 
@@ -173,7 +173,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 <details>
 <summary>查看辅助统计</summary>

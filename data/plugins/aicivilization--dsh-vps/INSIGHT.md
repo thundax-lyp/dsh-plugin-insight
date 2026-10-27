@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[d4223e0](https://github.com/AIcivilization/dsh-vps/tree/d4223e07717dce3832d0233a6a12edfceb3fde27)
+源码版本：[d4223e0](https://github.com/AIcivilization/dsh-vps/tree/d4223e07717dce3832d0233a6a12edfceb3fde27)
 
 <!-- BEGIN META -->
 [![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AIcivilization/dsh-vps)
 <!-- END META -->
 
-> **实现功能**：为自有 VPS 部署带登录网关、HTTPS 和服务管理的 DSH。
+> **功能**：为自有 VPS 部署带登录网关、HTTPS 和服务管理的 DSH。
 
-> **核心亮点**：把公网 DSH 部署、登录代理、受信任会话转译和服务器管理打包成连续流程；相对手工反代、认证、systemd 拼装有交付便利，具体增量与未验收边界见[Q01](#research-q01)及[Q02](#research-q02)。
+> **亮点**：把公网 DSH 部署、登录代理、受信任会话转译和服务器管理打包成连续流程；相对手工反代、认证、systemd 拼装有交付便利，具体增量与未验收边界见[Q01](#research-q01)及[Q02](#research-q02)。
 
-> **风险与缺陷**：辅助文件默认main漂移，setup.lock未建立且令牌缺失/不可读时向导退回开放；卸载tar失败但部分备份仍可chmod成功时可能继续删除，不保证备份可恢复。均为有条件静态核查，未作公网攻击或删除复现。详见[Q03](#research-q03)。
+> **主要限制**：辅助文件默认main漂移，setup.lock未建立且令牌缺失/不可读时向导退回开放；卸载tar失败但部分备份仍可chmod成功时可能继续删除，不保证备份可恢复。均为有条件静态核查，未作公网攻击或删除复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：把公网 DSH 部署、登录代理、受信任会话转译和服务器管理打包成连续流程；相对手工反代、认证、systemd 拼装有交付便利，具体增量与未验收边界见[Q01](#research-q01)及[Q02](#research-q02)。
 
-把公网 DSH 部署、登录代理、受信任会话转译和服务器管理打包成连续流程；相对手工反代、认证、systemd 拼装有交付便利，具体增量与未验收边界见[Q01](#research-q01)及[Q02](#research-q02)。
-
 gate 分离公网登录和 DSH 服务端 Cookie，HTTP/WS 代理、登录签名与进程监督有实装；但 setup.token 缺失默认开放，远端源文件未随提交固定，卸载不是备份成功后才删除。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ gate 分离公网登录和 DSH 服务端 Cookie，HTTP/WS 代理、登录签名�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

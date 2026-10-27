@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[7b322da](https://github.com/173787247/dsh-wsl-eventlog/tree/7b322dacb89aef7efb3e28b66cf92451178f5e65)
+源码版本：[7b322da](https://github.com/173787247/dsh-wsl-eventlog/tree/7b322dacb89aef7efb3e28b66cf92451178f5e65)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-eventlog)
 <!-- END META -->
 
-> **实现功能**：从 WSL 通过 PowerShell 只读查询 Windows 事件日志的 Agent 工具。
+> **功能**：从 WSL 通过 PowerShell 只读查询 Windows 事件日志的 Agent 工具。
 
-> **核心亮点**：把 Windows 事件日志的初步查询暴露给 WSL 中的 Agent，参数和结果结构较简洁。详见[Q01](#research-q01)。
+> **亮点**：把 Windows 事件日志的初步查询暴露给 WSL 中的 Agent，参数和结果结构较简洁。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：后置过滤的空结果不能证明无事件；full 的实际呈现长度与执行层不一致。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：后置过滤的空结果不能证明无事件；full 的实际呈现长度与执行层不一致。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@ Windows 事件查看器或手工 Get-WinEvent 可完整筛选；工具减少跨�
 
 > **亮点**：把 Windows 事件日志的初步查询暴露给 WSL 中的 Agent，参数和结果结构较简洁。详见[Q01](#research-q01)。
 
-把 Windows 事件日志的初步查询暴露给 WSL 中的 Agent，参数和结果结构较简洁。详见[Q01](#research-q01)。
-
 PowerShell 转义/结构化字段可复用；MaxEvents/后过滤顺序和 render 截断应调整。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ PowerShell 转义/结构化字段可复用；MaxEvents/后过滤顺序和 render
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

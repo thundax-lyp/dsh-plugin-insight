@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[0cd8861](https://github.com/173787247/dsh-wsl-picker/tree/0cd8861e4240635693cf152c9c7635433e5980c9)
+源码版本：[0cd8861](https://github.com/173787247/dsh-wsl-picker/tree/0cd8861e4240635693cf152c9c7635433e5980c9)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-picker)
 <!-- END META -->
 
-> **实现功能**：给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。
+> **功能**：给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。
 
-> **核心亮点**：将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。
+> **亮点**：将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：任意绝对路径和软链接可遍历目录名称；15 秒工具超时对同步文件系统调用的约束未经验证。详见[Q03](#research-q03)与[Q04](#research-q04)。
+> **主要限制**：任意绝对路径和软链接可遍历目录名称；15 秒工具超时对同步文件系统调用的约束未经验证。详见[Q03](#research-q03)与[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。
 
-将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](#research-q01)。
-
 参数优先级、错误结构和截断标志明确；同步枚举及无根限制是部署边界。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
