@@ -5,7 +5,7 @@
 分析版本：[aea4896](https://github.com/dsh-tauri/deepseek-harness-desktop/tree/aea4896abd505db93cbd988e308d0fbd9a3e4ae1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,294](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C294&color=yellow&logo=github&style=flat)](https://github.com/dsh-tauri/deepseek-harness-desktop)
+[![GitHub ★ 3,294](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C294&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-tauri/deepseek-harness-desktop)
 <!-- END META -->
 
 > **实现功能**：提供DSH桌面界面、托管运行时和内核、插件与档案管理、数据迁移及移动远程访问。

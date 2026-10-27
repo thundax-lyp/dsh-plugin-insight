@@ -5,7 +5,7 @@
 分析版本：[d4223e0](https://github.com/AIcivilization/dsh-vps/tree/d4223e07717dce3832d0233a6a12edfceb3fde27)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/AIcivilization/dsh-vps)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AIcivilization/dsh-vps)
 <!-- END META -->
 
 > **实现功能**：为自有 VPS 部署带登录网关、HTTPS 和服务管理的 DSH。
@@ -154,7 +154,7 @@ gate 分离公网登录和 DSH 服务端 Cookie，HTTP/WS 代理、登录签名�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-vps/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-vps/issues?q=is%3Aissue+created%3A2026-09-22T08%3A51%3A38.013Z..2026-10-22T08%3A51%3A38.013Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-vps/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A51%3A38.013Z..2026-10-22T08%3A51%3A38.013Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-vps/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-vps/issues?q=is%3Aissue+created%3A2026-09-22T08%3A51%3A38.013Z..2026-10-22T08%3A51%3A38.013Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-vps/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A51%3A38.013Z..2026-10-22T08%3A51%3A38.013Z)
 
 
 

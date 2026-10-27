@@ -5,7 +5,7 @@
 分析版本：[ef1675a](https://github.com/Ansonfishing/dsh-cap-profile/tree/ef1675acaf48e41297f94f24bd8f4ca13626827c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Ansonfishing/dsh-cap-profile)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ansonfishing/dsh-cap-profile)
 <!-- END META -->
 
 > **实现功能**：扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Ansonfishing/dsh-cap-profile/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Ansonfishing/dsh-cap-profile/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A43.696Z..2026-10-24T05%3A55%3A43.696Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Ansonfishing/dsh-cap-profile/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Ansonfishing/dsh-cap-profile/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A43.696Z..2026-10-24T05%3A55%3A43.696Z)
 
 暂未获取：近30天关闭。
 

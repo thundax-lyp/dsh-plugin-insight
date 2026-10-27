@@ -5,7 +5,7 @@
 分析版本：[bc5454d](https://github.com/173787247/dsh-wsl-llamacpp/tree/bc5454d19624f5f7575e841c6d62d47cbbdb2411)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-llamacpp)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-llamacpp)
 <!-- END META -->
 
 > **实现功能**：给 DSH Agent 提供 llama.cpp 兼容服务的模型列表状态与一次性非流式聊天工具。

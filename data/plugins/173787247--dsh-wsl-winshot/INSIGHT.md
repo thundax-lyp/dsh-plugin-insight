@@ -5,7 +5,7 @@
 分析版本：[e7963e2](https://github.com/173787247/dsh-wsl-winshot/tree/e7963e21a06611d7fdfb01e9d34c7a7f0d04d32b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-winshot)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-winshot)
 <!-- END META -->
 
 > **实现功能**：从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。

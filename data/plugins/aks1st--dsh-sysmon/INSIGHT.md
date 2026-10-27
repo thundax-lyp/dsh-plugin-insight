@@ -5,7 +5,7 @@
 分析版本：[4cb7a24](https://github.com/AKS1st/dsh-sysmon/tree/4cb7a241f0228329d12010b4846c1bd508271ec0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-sysmon)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/dsh-sysmon)
 <!-- END META -->
 
 > **实现功能**：DSH Web 悬浮显示宿主 CPU、内存与根文件系统使用率。
@@ -156,7 +156,7 @@ Linux 单宿主仅作辅助观察；正式容量/告警仍用现有监控，试�
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dsh-sysmon/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dsh-sysmon/issues?q=is%3Aissue+created%3A2026-09-22T05%3A38%3A36.172Z..2026-10-22T05%3A38%3A36.172Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dsh-sysmon/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A38%3A36.172Z..2026-10-22T05%3A38%3A36.172Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/AKS1st/dsh-sysmon/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/AKS1st/dsh-sysmon/issues?q=is%3Aissue+created%3A2026-09-22T05%3A38%3A36.172Z..2026-10-22T05%3A38%3A36.172Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dsh-sysmon/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A38%3A36.172Z..2026-10-22T05%3A38%3A36.172Z)
 
 
 

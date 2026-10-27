@@ -5,7 +5,7 @@
 分析版本：[a23020b](https://github.com/2021Heei/dsh-tts-flash/tree/a23020b72a5c403e3dc50527b3ef43c6e55c739a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2021Heei/dsh-tts-flash)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2021Heei/dsh-tts-flash)
 <!-- END META -->
 
 > **实现功能**：DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。

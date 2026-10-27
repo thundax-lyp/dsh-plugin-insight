@@ -5,7 +5,7 @@
 分析版本：[6dfdc4a](https://github.com/173787247/dsh-wsl-service/tree/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-service)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-service)
 <!-- END META -->
 
 > **实现功能**：给 WSL 中的 DSH Agent 提供 Windows 服务列表与单服务详情只读工具。

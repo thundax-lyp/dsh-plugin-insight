@@ -5,7 +5,7 @@
 分析版本：[22a7a2c](https://github.com/YaoApp/yao/tree/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8,190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C190&color=yellow&logo=github&style=flat)](https://github.com/YaoApp/yao)
+[![GitHub ★ 8,190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C190&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/YaoApp/yao)
 <!-- END META -->
 
 > **实现功能**：自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。

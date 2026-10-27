@@ -5,7 +5,7 @@
 分析版本：[90a0f51](https://github.com/173787247/dsh-wsl-ollama/tree/90a0f51bc8c9c16f41c99a4c17b84aa6df4ff1ea)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-ollama)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-ollama)
 <!-- END META -->
 
 > **实现功能**：为 DSH 在 WSL 或本机调用现有 Ollama 守护进程提供状态、模型列表、聊天和嵌入工具。

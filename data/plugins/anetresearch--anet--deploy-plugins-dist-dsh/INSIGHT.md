@@ -5,7 +5,7 @@
 分析版本：[5b931b2](https://github.com/ANetResearch/ANet/tree/5b931b2df227d7f5e3bb2c6c76dea1e647f28da9/deploy/plugins/dist/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ANetResearch/ANet)
 <!-- END META -->
 
 > **实现功能**：通过本地anet节点把DSH接入AgentNetwork，提供MCP及委派、状态与设置Skill入口。
@@ -159,7 +159,7 @@
 
 **活跃度**
 
-[![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
+[![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 暂未获取：Issue 未关闭、近30天新建。
 

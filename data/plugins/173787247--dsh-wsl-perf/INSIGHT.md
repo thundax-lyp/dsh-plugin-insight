@@ -5,7 +5,7 @@
 分析版本：[c6aac1e](https://github.com/173787247/dsh-wsl-perf/tree/c6aac1e77224a9a81a1103ba199bd6b5785e654c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-perf)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-perf)
 <!-- END META -->
 
 > **实现功能**：从 WSL 获取 Windows 宿主 CPU、内存、固定磁盘和按内存排序的进程快照。

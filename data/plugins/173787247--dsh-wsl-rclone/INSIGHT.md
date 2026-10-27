@@ -5,7 +5,7 @@
 分析版本：[272a2ad](https://github.com/173787247/dsh-wsl-rclone/tree/272a2adaba5711ec6b5e7b45463bff5e0e04b6c9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-rclone)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-rclone)
 <!-- END META -->
 
 > **实现功能**：把 rclone 的 remote 列表、文件名枚举和配额查看暴露为 DSH 只读工具。
@@ -163,7 +163,7 @@ argv 避免 shell 拼接；默认 remote 策略和上游枚举限额需部署控
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-rclone/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-rclone/issues?q=is%3Aissue+created%3A2026-09-20T09%3A42%3A25.824Z..2026-10-20T09%3A42%3A25.824Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-rclone/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-rclone/issues?q=is%3Aissue+created%3A2026-09-20T09%3A42%3A25.824Z..2026-10-20T09%3A42%3A25.824Z)
 
 暂未获取：近30天关闭。
 

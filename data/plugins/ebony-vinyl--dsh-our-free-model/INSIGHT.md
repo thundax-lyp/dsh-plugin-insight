@@ -5,7 +5,7 @@
 分析版本：[f3ecb7a](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/f3ecb7abcf5a0351645cfcbd638b9c7fbbcb3e97)
 
 <!-- BEGIN META -->
-[![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=yellow&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
+[![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
 <!-- END META -->
 
 > **实现功能**：为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。
@@ -192,7 +192,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 270](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=270&color=grey&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 394](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=394&color=grey&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues?q=is%3Aissue+created%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z) [![近30天关闭 124](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=124&color=grey&logo=github&style=flat)](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z)
+[![Issue 未关闭 270](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=270&color=737b86&logo=github)](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 394](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=394&color=737b86&logo=github)](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues?q=is%3Aissue+created%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z) [![近30天关闭 124](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=124&color=737b86&logo=github)](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z)
 
 
 

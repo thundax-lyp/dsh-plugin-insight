@@ -5,7 +5,7 @@
 分析版本：[fba619f](https://github.com/superdesigndev/treg/tree/fba619fd7bd63837d464214a1e22449b16bd83d4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,040](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C040&color=yellow&logo=github&style=flat)](https://github.com/superdesigndev/treg)
+[![GitHub ★ 6,040](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C040&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
 <!-- END META -->
 
 > **实现功能**：提供统一Agent工具目录、服务端凭据注入、API中继和调用计费管理。
@@ -162,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 21](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=21&color=grey&logo=github&style=flat)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 16](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=16&color=grey&logo=github&style=flat)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+created%3A2026-09-26T09%3A39%3A31.930Z..2026-10-26T09%3A39%3A31.930Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A39%3A31.930Z..2026-10-26T09%3A39%3A31.930Z)
+[![Issue 未关闭 21](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=21&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=16&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+created%3A2026-09-26T09%3A39%3A31.930Z..2026-10-26T09%3A39%3A31.930Z) [![近30天关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A39%3A31.930Z..2026-10-26T09%3A39%3A31.930Z)
 
 
 

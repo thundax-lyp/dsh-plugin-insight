@@ -5,7 +5,7 @@
 分析版本：[2230ae4](https://github.com/Asheblog/dsh-ollama-cloud/tree/2230ae4d77eeff2f8347993b62bd69f9c1e13916)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/Asheblog/dsh-ollama-cloud)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asheblog/dsh-ollama-cloud)
 <!-- END META -->
 
 > **实现功能**：接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。

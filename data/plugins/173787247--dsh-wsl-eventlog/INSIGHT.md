@@ -5,7 +5,7 @@
 分析版本：[7b322da](https://github.com/173787247/dsh-wsl-eventlog/tree/7b322dacb89aef7efb3e28b66cf92451178f5e65)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-eventlog)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-eventlog)
 <!-- END META -->
 
 > **实现功能**：从 WSL 通过 PowerShell 只读查询 Windows 事件日志的 Agent 工具。

@@ -5,7 +5,7 @@
 分析版本：[5de8214](https://github.com/1123762794/dsh-web-restart/tree/5de8214051b3245a8cfc825e7e907cf5e57f51d8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1123762794/dsh-web-restart)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1123762794/dsh-web-restart)
 <!-- END META -->
 
 > **实现功能**：Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。

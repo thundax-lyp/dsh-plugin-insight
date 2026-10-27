@@ -5,7 +5,7 @@
 分析版本：[f63ba08](https://github.com/173787247/dsh-wsl-helm/tree/f63ba0892507034e8d31c3969c2b5e1b277fbd60)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-helm)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-helm)
 <!-- END META -->
 
 > **实现功能**：将 Helm 的发布列表、状态和历史查询接入 DSH 模型工具。

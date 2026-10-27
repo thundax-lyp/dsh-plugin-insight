@@ -5,7 +5,7 @@
 分析版本：[3dea068](https://github.com/edison7009/EchoBird/tree/3dea068c9950ef3e6327c2650ef0df5badcee37b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,442](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C442&color=yellow&logo=github&style=flat)](https://github.com/edison7009/EchoBird)
+[![GitHub ★ 3,442](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C442&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/edison7009/EchoBird)
 <!-- END META -->
 
 > **实现功能**：桌面AI工具管理器，提供账号与模型配置、安装管理、本地模型和多候选路由入口。
@@ -169,7 +169,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 394](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=394&color=grey&logo=github&style=flat)](https://github.com/edison7009/EchoBird/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 26](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=26&color=grey&logo=github&style=flat)](https://github.com/edison7009/EchoBird/issues?q=is%3Aissue+created%3A2026-09-27T02%3A06%3A36.518Z..2026-10-27T02%3A06%3A36.518Z) [![近30天关闭 5](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=grey&logo=github&style=flat)](https://github.com/edison7009/EchoBird/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A06%3A36.518Z..2026-10-27T02%3A06%3A36.518Z)
+[![Issue 未关闭 394](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=394&color=737b86&logo=github)](https://github.com/edison7009/EchoBird/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=26&color=737b86&logo=github)](https://github.com/edison7009/EchoBird/issues?q=is%3Aissue+created%3A2026-09-27T02%3A06%3A36.518Z..2026-10-27T02%3A06%3A36.518Z) [![近30天关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/edison7009/EchoBird/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A06%3A36.518Z..2026-10-27T02%3A06%3A36.518Z)
 
 
 

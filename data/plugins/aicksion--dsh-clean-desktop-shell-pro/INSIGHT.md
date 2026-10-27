@@ -5,7 +5,7 @@
 分析版本：[03fdf5d](https://github.com/Aicksion/dsh-clean-desktop-shell-pro/tree/03fdf5d8b0959c3738cdb3d887baa6d017443fe6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aicksion/dsh-clean-desktop-shell-pro)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aicksion/dsh-clean-desktop-shell-pro)
 <!-- END META -->
 
 > **实现功能**：将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。

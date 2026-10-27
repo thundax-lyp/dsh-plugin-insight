@@ -5,7 +5,7 @@
 分析版本：[0cd8861](https://github.com/173787247/dsh-wsl-picker/tree/0cd8861e4240635693cf152c9c7635433e5980c9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-picker)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-picker)
 <!-- END META -->
 
 > **实现功能**：给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。

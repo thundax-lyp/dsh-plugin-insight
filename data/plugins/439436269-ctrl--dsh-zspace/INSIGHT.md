@@ -5,7 +5,7 @@
 分析版本：[7074390](https://github.com/439436269-ctrl/dsh-zspace/tree/70743909450191c09f3dcef15d46d8d0119200a9)
 
 <!-- BEGIN META -->
-[![npm 30d 1,242](https://img.shields.io/static/v1?label=npm+30d&message=1%2C242&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-zspace) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-zspace)
+[![npm 30d 1,242](https://img.shields.io/static/v1?label=npm+30d&message=1%2C242&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-zspace) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-zspace)
 <!-- END META -->
 
 > **实现功能**：用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。

@@ -5,7 +5,7 @@
 分析版本：[486d6ff](https://github.com/173787247/dsh-wsl-wslconfig/tree/486d6ffce7530bf46320c859ad9d4df502243d0f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-wslconfig)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-wslconfig)
 <!-- END META -->
 
 > **实现功能**：读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。
@@ -163,7 +163,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-wslconfig/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-wslconfig/issues?q=is%3Aissue+created%3A2026-09-22T07%3A20%3A50.258Z..2026-10-22T07%3A20%3A50.258Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-wslconfig/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A20%3A50.258Z..2026-10-22T07%3A20%3A50.258Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wslconfig/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wslconfig/issues?q=is%3Aissue+created%3A2026-09-22T07%3A20%3A50.258Z..2026-10-22T07%3A20%3A50.258Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wslconfig/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A20%3A50.258Z..2026-10-22T07%3A20%3A50.258Z)
 
 
 

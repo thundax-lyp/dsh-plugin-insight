@@ -5,7 +5,7 @@
 分析版本：[a2e7fba](https://github.com/173787247/dsh-wsl-systemd/tree/a2e7fba0ac5ac273634697e1503fdb6676cc557f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-systemd)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-systemd)
 <!-- END META -->
 
 > **实现功能**：为DSH提供用户systemd可用性探测、服务列表、单位属性与近期日志的只读工具，不启动或停止服务。
@@ -179,7 +179,7 @@ assertUnit允许起始短横线，show将它直接放在argv且未加--，可能
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-systemd/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-systemd/issues?q=is%3Aissue+created%3A2026-09-22T09%3A56%3A31.521Z..2026-10-22T09%3A56%3A31.521Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-systemd/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A56%3A31.521Z..2026-10-22T09%3A56%3A31.521Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-systemd/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-systemd/issues?q=is%3Aissue+created%3A2026-09-22T09%3A56%3A31.521Z..2026-10-22T09%3A56%3A31.521Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-systemd/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A56%3A31.521Z..2026-10-22T09%3A56%3A31.521Z)
 
 
 

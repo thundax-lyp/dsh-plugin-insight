@@ -5,7 +5,7 @@
 分析版本：[7ad45d3](https://github.com/173787247/dsh-wsl-tray/tree/7ad45d3db6672fb07ab909135c3c479ee5dee72a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tray)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-tray)
 <!-- END META -->
 
 > **实现功能**：生成Windows PowerShell快捷方式和可选AHK托盘入口，调用可信WSL kit启动/诊断并打开token URL。
@@ -164,7 +164,7 @@ fallback使用未导入readdirSync，Bash路径引用、并发/取消与顺序�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tray/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tray/issues?q=is%3Aissue+created%3A2026-09-22T05%3A43%3A05.977Z..2026-10-22T05%3A43%3A05.977Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tray/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A43%3A05.977Z..2026-10-22T05%3A43%3A05.977Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tray/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tray/issues?q=is%3Aissue+created%3A2026-09-22T05%3A43%3A05.977Z..2026-10-22T05%3A43%3A05.977Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tray/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A43%3A05.977Z..2026-10-22T05%3A43%3A05.977Z)
 
 
 

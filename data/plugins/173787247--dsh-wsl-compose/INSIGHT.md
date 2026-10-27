@@ -5,7 +5,7 @@
 分析版本：[bea57df](https://github.com/173787247/dsh-wsl-compose/tree/bea57df86854983d90c8ac9219d15db1235c1652)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-compose)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-compose)
 <!-- END META -->
 
 > **实现功能**：为 DSH 提供 Docker Compose 状态、容器列表、日志与可选 up/down 的本机运维工具。

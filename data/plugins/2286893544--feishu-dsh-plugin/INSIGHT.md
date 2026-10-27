@@ -5,7 +5,7 @@
 分析版本：[8cb7f88](https://github.com/2286893544/feishu-dsh-plugin/tree/8cb7f88b0eed0b8c59932e381f52f096c7e56df9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/2286893544/feishu-dsh-plugin)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2286893544/feishu-dsh-plugin)
 <!-- END META -->
 
 > **实现功能**：通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。

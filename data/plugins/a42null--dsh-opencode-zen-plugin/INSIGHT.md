@@ -5,7 +5,7 @@
 分析版本：[e1d0054](https://github.com/A42Null/dsh-opencode-zen-plugin/tree/e1d0054333d5f8185f3d6e55f563e5fe91e19b29)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/A42Null/dsh-opencode-zen-plugin) [![npm 30d 400](https://img.shields.io/static/v1?label=npm+30d&message=400&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a42null/dsh-opencode-zen-plugin)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/A42Null/dsh-opencode-zen-plugin) [![npm 30d 400](https://img.shields.io/static/v1?label=npm+30d&message=400&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a42null/dsh-opencode-zen-plugin)
 <!-- END META -->
 
 > **实现功能**：把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。
@@ -163,7 +163,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/A42Null/dsh-opencode-zen-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/A42Null/dsh-opencode-zen-plugin/issues?q=is%3Aissue+created%3A2026-09-21T04%3A11%3A32.944Z..2026-10-21T04%3A11%3A32.944Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/A42Null/dsh-opencode-zen-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T04%3A11%3A32.944Z..2026-10-21T04%3A11%3A32.944Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/A42Null/dsh-opencode-zen-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/A42Null/dsh-opencode-zen-plugin/issues?q=is%3Aissue+created%3A2026-09-21T04%3A11%3A32.944Z..2026-10-21T04%3A11%3A32.944Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/A42Null/dsh-opencode-zen-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T04%3A11%3A32.944Z..2026-10-21T04%3A11%3A32.944Z)
 
 
 

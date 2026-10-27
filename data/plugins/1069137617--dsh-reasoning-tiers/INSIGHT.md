@@ -5,7 +5,7 @@
 分析版本：[fe642c8](https://github.com/1069137617/dsh-reasoning-tiers/tree/fe642c8ec878b6ba46a7c1831fc6cea557083e5b)
 
 <!-- BEGIN META -->
-[![npm 30d 1,017](https://img.shields.io/static/v1?label=npm+30d&message=1%2C017&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers) [![最新发布 2026-09-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-reasoning-tiers)
+[![npm 30d 1,017](https://img.shields.io/static/v1?label=npm+30d&message=1%2C017&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-reasoning-tiers) [![最新发布 2026-09-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-reasoning-tiers)
 <!-- END META -->
 
 > **实现功能**：按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。
@@ -167,7 +167,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1069137617/dsh-reasoning-tiers/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1069137617/dsh-reasoning-tiers/issues?q=is%3Aissue+created%3A2026-09-22T05%3A57%3A26.118Z..2026-10-22T05%3A57%3A26.118Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1069137617/dsh-reasoning-tiers/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A57%3A26.118Z..2026-10-22T05%3A57%3A26.118Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1069137617/dsh-reasoning-tiers/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1069137617/dsh-reasoning-tiers/issues?q=is%3Aissue+created%3A2026-09-22T05%3A57%3A26.118Z..2026-10-22T05%3A57%3A26.118Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1069137617/dsh-reasoning-tiers/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A57%3A26.118Z..2026-10-22T05%3A57%3A26.118Z)
 
 
 

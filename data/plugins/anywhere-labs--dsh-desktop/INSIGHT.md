@@ -5,7 +5,7 @@
 分析版本：[092e2ec](https://github.com/anywhere-labs/dsh-desktop/tree/092e2ecef750d10db43cedbab8e81fd48c8de38e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 33,082](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33%2C082&color=yellow&logo=github&style=flat)](https://github.com/anywhere-labs/dsh-desktop)
+[![GitHub ★ 33,082](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33%2C082&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop)
 <!-- END META -->
 
 > **实现功能**：独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。

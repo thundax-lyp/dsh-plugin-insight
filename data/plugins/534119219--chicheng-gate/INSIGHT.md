@@ -5,7 +5,7 @@
 分析版本：[cfee329](https://github.com/534119219/chicheng-gate/tree/cfee329acf7f886749469779259a6a9147a2b190)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-gate)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-gate)
 <!-- END META -->
 
 > **实现功能**：以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。

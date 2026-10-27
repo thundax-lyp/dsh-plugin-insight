@@ -5,7 +5,7 @@
 分析版本：[3463d75](https://github.com/173787247/dsh-wsl-defender/tree/3463d756faa7318bb8c1597db9a1bc0b1072d413)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-defender)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-defender)
 <!-- END META -->
 
 > **实现功能**：从 WSL 查询 Windows Defender、防篡改、Firewall 与近期威胁状态。

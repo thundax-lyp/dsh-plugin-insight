@@ -5,7 +5,7 @@
 分析版本：[d294fe0](https://github.com/173787247/dsh-remote-ssh/tree/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-remote-ssh)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-remote-ssh)
 <!-- END META -->
 
 > **实现功能**：以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。

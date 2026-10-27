@@ -5,7 +5,7 @@
 分析版本：[e42e1dc](https://github.com/173787247/dsh-wsl-vllm/tree/e42e1dc23a89ea7cc87474dcd5d8c610b37c651b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-vllm)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-vllm)
 <!-- END META -->
 
 > **实现功能**：把已有本机/Docker vLLM OpenAI 兼容端点接入 DSH Agent 的状态与聊天工具。

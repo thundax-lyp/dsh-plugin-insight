@@ -5,7 +5,7 @@
 分析版本：[67f2d4c](https://github.com/863683348/dsh-recipe/tree/67f2d4c662954ccd25c771fa0e0a99433cf3b530)
 
 <!-- BEGIN META -->
-[![npm 30d 123](https://img.shields.io/static/v1?label=npm+30d&message=123&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-recipe) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-recipe)
+[![npm 30d 123](https://img.shields.io/static/v1?label=npm+30d&message=123&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-recipe) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-recipe)
 <!-- END META -->
 
 > **实现功能**：把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。
@@ -162,7 +162,7 @@ config被输出剥离，合并不报冲突，命令缺profile/版本与失败恢
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-recipe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-recipe/issues?q=is%3Aissue+created%3A2026-09-22T06%3A54%3A02.645Z..2026-10-22T06%3A54%3A02.645Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-recipe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A54%3A02.645Z..2026-10-22T06%3A54%3A02.645Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-recipe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-recipe/issues?q=is%3Aissue+created%3A2026-09-22T06%3A54%3A02.645Z..2026-10-22T06%3A54%3A02.645Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-recipe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A54%3A02.645Z..2026-10-22T06%3A54%3A02.645Z)
 
 
 

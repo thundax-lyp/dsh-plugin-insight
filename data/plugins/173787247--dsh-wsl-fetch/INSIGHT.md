@@ -5,7 +5,7 @@
 分析版本：[ef32d59](https://github.com/173787247/dsh-wsl-fetch/tree/ef32d59a6e95929aa18e86c5495d0f3f9d78185a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-fetch)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-fetch)
 <!-- END META -->
 
 > **实现功能**：为 DSH WSL 的官方 web_fetch 提供进程内 HTTP(S) 代理传输 provider。

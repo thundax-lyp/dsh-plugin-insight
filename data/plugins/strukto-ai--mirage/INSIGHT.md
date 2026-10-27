@@ -5,7 +5,7 @@
 分析版本：[62c160c](https://github.com/strukto-ai/mirage/tree/62c160c6f47d455cf1bb604ed55c419f8ed254c2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,724](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C724&color=yellow&logo=github&style=flat)](https://github.com/strukto-ai/mirage)
+[![GitHub ★ 3,724](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C724&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage)
 <!-- END META -->
 
 > **实现功能**：通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。
@@ -162,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 24](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=24&color=grey&logo=github&style=flat)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 73](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=73&color=grey&logo=github&style=flat)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 109](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=109&color=grey&logo=github&style=flat)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+[![Issue 未关闭 24](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=24&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 73](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=73&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 109](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=109&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
 
 
 

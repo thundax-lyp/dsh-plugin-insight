@@ -5,7 +5,7 @@
 分析版本：[25699df](https://github.com/173787247/dsh-device-bridge/tree/25699dfd31f32500e5016e90d271c8e6674c1945)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-device-bridge)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-device-bridge)
 <!-- END META -->
 
 > **实现功能**：DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。
