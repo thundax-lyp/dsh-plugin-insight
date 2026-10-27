@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title description">
+  <title id="title">DSH Plugin Insight</title>
+  <desc id="description">从源码与证据中识别插件贡献、使用边界与创新方向。三张卡片通过缓慢流动的连线依次连接，减少动态效果时保留完整静态画面。</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#101e2d"/>
+      <stop offset="1" stop-color="#07111b"/>
+    </linearGradient>
+    <radialGradient id="ambient">
+      <stop stop-color="#2a7281" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2a7281" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="link" x1="0" x2="1">
+      <stop stop-color="#65c9d3"/>
+      <stop offset=".5" stop-color="#a7a0de"/>
+      <stop offset="1" stop-color="#d1b87b"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".7" fill="#adc4d5" opacity=".1"/>
+    </pattern>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; }
+      .flow { animation: flow 6s linear infinite; }
+      .source { animation: emphasis 6s ease-in-out infinite; }
+      .evidence { animation: emphasis 6s ease-in-out 1.6s infinite; }
+      .insight { animation: emphasis 6s ease-in-out 3.2s infinite; }
+      @keyframes flow { to { stroke-dashoffset: -84; } }
+      @keyframes emphasis { 0%, 60%, 100% { opacity: .25; } 20%, 35% { opacity: .85; } }
+      @media (max-width: 600px) {
+        .subtitle, .principles, .detail { display: none; }
+        .brand { font-size: 52px; transform: translateY(18px); }
+        .stage-label { font-size: 30px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flow, .source, .evidence, .insight { animation: none; }
+        .source, .evidence, .insight { opacity: .45; }
+      }
+    </style>
+  </defs>
+
+  <rect x=".5" y=".5" width="1199" height="219" rx="18" fill="url(#background)" stroke="#263b4a"/>
+  <rect x="640" y="1" width="540" height="218" rx="18" fill="url(#grid)"/>
+  <ellipse cx="880" cy="110" rx="310" ry="160" fill="url(#ambient)"/>
+  <path d="M40 38H74" stroke="#6cc8d0" stroke-width="3" stroke-linecap="round"/>
+  <text class="brand" x="40" y="97" fill="#f1f5fa" font-size="43" font-weight="650" letter-spacing="-.8">DSH Plugin Insight</text>
+  <text class="subtitle" x="42" y="136" fill="#adbecf" font-size="20">从源码与证据，寻找插件创新方向</text>
+  <g class="principles" fill="#7e94a8" font-size="13" letter-spacing="1">
+    <text x="42" y="179">看清贡献</text>
+    <circle cx="119" cy="174" r="2" fill="#45606e"/>
+    <text x="137" y="179">核对限制</text>
+    <circle cx="214" cy="174" r="2" fill="#45606e"/>
+    <text x="232" y="179">验证假设</text>
+  </g>
+
+  <!-- The complete diagram is always visible; motion only emphasizes the links and borders. -->
+  <path d="M758 111H818M948 111H1008" fill="none" stroke="#365162" stroke-width="1.5"/>
+  <path class="flow" d="M758 111H818M948 111H1008" fill="none" stroke="url(#link)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 16"/>
+  <path d="m805 107 5 4-5 4m190-8 5 4-5 4" fill="none" stroke="#758ca0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g transform="translate(628 48)">
+    <rect width="130" height="126" rx="13" fill="#112331" stroke="#355363"/>
+    <rect class="source" x="-3" y="-3" width="136" height="132" rx="16" fill="none" stroke="#65c9d3" opacity=".25"/>
+    <g transform="translate(42 22)" fill="none" stroke="#79cdd5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m11 4-10 11 10 11m24-22 10 11-10 11M27 0l-8 30"/>
+    </g>
+    <text class="stage-label" x="65" y="87" text-anchor="middle" fill="#e4edf4" font-size="19" font-weight="550">源码</text>
+    <text class="detail" x="65" y="109" text-anchor="middle" fill="#819bae" font-size="11" letter-spacing="1.5">固定版本</text>
+  </g>
+  <g transform="translate(818 48)">
+    <rect width="130" height="126" rx="13" fill="#152333" stroke="#454b69"/>
+    <rect class="evidence" x="-3" y="-3" width="136" height="132" rx="16" fill="none" stroke="#a7a0de" opacity=".25"/>
+    <g transform="translate(49 18)" fill="none" stroke="#b4ade7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 0h22l8 8v29H2zM23 0v9h9M9 16h15M9 23h15M9 30h9"/>
+    </g>
+    <text class="stage-label" x="65" y="87" text-anchor="middle" fill="#e4edf4" font-size="19" font-weight="550">证据</text>
+    <text class="detail" x="65" y="109" text-anchor="middle" fill="#9199b4" font-size="11" letter-spacing="1.5">逐题核查</text>
+  </g>
+  <g transform="translate(1008 48)">
+    <rect width="130" height="126" rx="13" fill="#25292e" stroke="#5c5748"/>
+    <rect class="insight" x="-3" y="-3" width="136" height="132" rx="16" fill="none" stroke="#d1b87b" opacity=".25"/>
+    <g transform="translate(47 17)" fill="none" stroke="#d8c18c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 26C-6 11 3 0 18 0s24 11 9 26l-1 6H10zM12 38h12M15 43h6"/>
+      <path d="m13 17 4 4 7-8"/>
+    </g>
+    <text class="stage-label" x="65" y="87" text-anchor="middle" fill="#ece8df" font-size="19" font-weight="550">洞察</text>
+    <text class="detail" x="65" y="109" text-anchor="middle" fill="#a59c89" font-size="11" letter-spacing="1.5">贡献与方向</text>
+  </g>
+</svg>
