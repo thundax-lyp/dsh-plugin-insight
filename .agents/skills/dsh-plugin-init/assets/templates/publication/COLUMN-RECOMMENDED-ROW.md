@@ -1,1 +1,1 @@
-| {{plugin}} | {{purpose}} | {{value}} | {{kind}} |
+| {{plugin}} | {{purpose}} | {{value}} |
