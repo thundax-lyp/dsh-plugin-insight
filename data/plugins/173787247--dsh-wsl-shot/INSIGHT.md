@@ -5,7 +5,7 @@
 分析版本：[1b2a555](https://github.com/173787247/dsh-wsl-shot/tree/1b2a5552055384e72a914fc3ca5ecf406d8415a5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-shot)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-shot)
 <!-- END META -->
 
 > **实现功能**：将 Windows 剪贴板图片经 PowerShell 临时 PNG 复制为 WSL 文件，供后续多模态使用。
@@ -157,7 +157,7 @@ Public 临时图片在失败分支可能残留，时间戳命名与并发标记�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-shot/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-shot/issues?q=is%3Aissue+created%3A2026-09-22T08%3A08%3A39.337Z..2026-10-22T08%3A08%3A39.337Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-shot/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A08%3A39.337Z..2026-10-22T08%3A08%3A39.337Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-shot/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-shot/issues?q=is%3Aissue+created%3A2026-09-22T08%3A08%3A39.337Z..2026-10-22T08%3A08%3A39.337Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-shot/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A08%3A39.337Z..2026-10-22T08%3A08%3A39.337Z)
 
 
 

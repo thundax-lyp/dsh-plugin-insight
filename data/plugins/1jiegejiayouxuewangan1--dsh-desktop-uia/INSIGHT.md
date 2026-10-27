@@ -5,7 +5,7 @@
 分析版本：[8237631](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/tree/8237631e1dc7d1aaf37466e9682bf3299ad53cd0)
 
 <!-- BEGIN META -->
-[![npm 30d 516](https://img.shields.io/static/v1?label=npm+30d&message=516&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-desktop-uia) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-desktop-uia)
+[![npm 30d 516](https://img.shields.io/static/v1?label=npm+30d&message=516&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-uia) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-uia)
 <!-- END META -->
 
 > **实现功能**：通过 Windows UI Automation 暴露桌面观察、动作与审批。

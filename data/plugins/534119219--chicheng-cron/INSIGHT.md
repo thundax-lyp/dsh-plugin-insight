@@ -5,7 +5,7 @@
 分析版本：[99a223e](https://github.com/534119219/chicheng-cron/tree/99a223edfa090afa2f1f05c77526a53a0f277961)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-cron)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-cron)
 <!-- END META -->
 
 > **实现功能**：在DSH Web侧栏管理cron任务，定时执行脚本、Skill或Agent，保存输出并提供推送、会话分组和归档选项。
@@ -189,7 +189,7 @@ teardown停止wakeTimer并flush/prune，不跟踪或等待正在执行的childre
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-cron/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-cron/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A26.324Z..2026-10-22T05%3A28%3A26.324Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-cron/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A26.324Z..2026-10-22T05%3A28%3A26.324Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/534119219/chicheng-cron/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/534119219/chicheng-cron/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A26.324Z..2026-10-22T05%3A28%3A26.324Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/534119219/chicheng-cron/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A26.324Z..2026-10-22T05%3A28%3A26.324Z)
 
 
 

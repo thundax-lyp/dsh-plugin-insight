@@ -5,7 +5,7 @@
 分析版本：[ebc1ae1](https://github.com/988hj7tczd-oss/dsh-receipts/tree/ebc1ae1cc2a24da9ce8407bb02606db0438e83a7)
 
 <!-- BEGIN META -->
-[![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-receipts) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-receipts)
+[![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-receipts) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-receipts)
 <!-- END META -->
 
 > **实现功能**：汇总本地 DSH 会话与工具痕迹，生成 Markdown 和离线 HTML 报告，可选本地 Git 提交核对。

@@ -5,7 +5,7 @@
 分析版本：[8b1db94](https://github.com/173787247/dsh-wsl-download/tree/8b1db94ca8658004ebc304e9678bbdd54a491133)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-download)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-download)
 <!-- END META -->
 
 > **实现功能**：在 WSL 中列举或复制 Windows Downloads 单文件，并给出模型下载静态提示。
@@ -163,7 +163,7 @@ destDir 任意、默认覆盖同名文件，源 stat 跟随符号链接；详见
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-download/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-download/issues?q=is%3Aissue+created%3A2026-09-22T07%3A31%3A06.616Z..2026-10-22T07%3A31%3A06.616Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-download/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A31%3A06.616Z..2026-10-22T07%3A31%3A06.616Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-download/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-download/issues?q=is%3Aissue+created%3A2026-09-22T07%3A31%3A06.616Z..2026-10-22T07%3A31%3A06.616Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-download/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A31%3A06.616Z..2026-10-22T07%3A31%3A06.616Z)
 
 
 

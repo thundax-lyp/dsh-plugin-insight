@@ -5,7 +5,7 @@
 分析版本：[c180313](https://github.com/777-Zen/dsh-capability-index/tree/c1803133660c6bc30dbc2d3eda493724b801aad0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/777-Zen/dsh-capability-index)
 <!-- END META -->
 
 > **实现功能**：在每步系统上下文中注入候选工具提示，用规则、向量召回与 not_for 过滤预审插件库。
@@ -165,7 +165,7 @@ core 与 DSH adapter 分离，缓存按工具变化失效，异常路径刻意�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+created%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+created%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z)
 
 
 

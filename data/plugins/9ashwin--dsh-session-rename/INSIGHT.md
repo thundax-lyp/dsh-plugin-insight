@@ -152,7 +152,7 @@ tools.register 手写参数/结果 schema、执行校验；动态获取 sessionT
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+created%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+created%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z)
 
 
 

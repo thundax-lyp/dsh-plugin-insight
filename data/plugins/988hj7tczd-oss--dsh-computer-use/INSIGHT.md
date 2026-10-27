@@ -5,7 +5,7 @@
 分析版本：[3cf9bd8](https://github.com/988hj7tczd-oss/dsh-computer-use/tree/3cf9bd8ae60271512f263bfa75485cb242ca0892)
 
 <!-- BEGIN META -->
-[![GitHub ★ 60](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=60&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use) [![npm 30d 3,522](https://img.shields.io/static/v1?label=npm+30d&message=3%2C522&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-computer-use) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-computer-use)
+[![GitHub ★ 60](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=60&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-computer-use) [![npm 30d 3,522](https://img.shields.io/static/v1?label=npm+30d&message=3%2C522&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-computer-use) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-computer-use)
 <!-- END META -->
 
 > **实现功能**：为DSH接入cua-driver的AX/截图观察与桌面点击输入等十二工具，支持虚拟光标、图像附件和可选视觉观察者。
@@ -183,7 +183,7 @@ snapshot.js只有模块全局snapshot，CUA_SESSION默认固定字符串，未�
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z)
 
 
 

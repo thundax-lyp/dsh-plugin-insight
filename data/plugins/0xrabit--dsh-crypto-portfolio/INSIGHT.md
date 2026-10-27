@@ -5,7 +5,7 @@
 分析版本：[d3edb74](https://github.com/0xRabit/dsh-crypto-portfolio/tree/d3edb74bef1fcb779e899c26c37b19664ecf0a9f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0xRabit/dsh-crypto-portfolio)
 <!-- END META -->
 
 > **实现功能**：通过 DSH 启动 Python 本地资产仪表盘，聚合链上/CEX 余额、历史、来源和健康视图。
@@ -164,7 +164,7 @@ HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+created%3A2026-09-22T15%3A11%3A48.053Z..2026-10-22T15%3A11%3A48.053Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A11%3A48.053Z..2026-10-22T15%3A11%3A48.053Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+created%3A2026-09-22T15%3A11%3A48.053Z..2026-10-22T15%3A11%3A48.053Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/0xRabit/dsh-crypto-portfolio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A11%3A48.053Z..2026-10-22T15%3A11%3A48.053Z)
 
 
 

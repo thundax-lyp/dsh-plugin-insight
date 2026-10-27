@@ -5,7 +5,7 @@
 分析版本：[edc756f](https://github.com/456erddgr/dsh-boo550wt-animation/tree/edc756f37fa59ba10818a0f9aee489b7241e8005)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/456erddgr/dsh-boo550wt-animation)
 <!-- END META -->
 
 > **实现功能**：为DSH提供可配置开机遮罩，可播放视频、图片、网页和内置游戏，并支持预览与跳过。
@@ -159,7 +159,7 @@ Range与显式退出清理可借鉴；上传原子发布/去重来自已有设�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A09.834Z..2026-10-26T03%3A38%3A09.834Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A09.834Z..2026-10-26T03%3A38%3A09.834Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A09.834Z..2026-10-26T03%3A38%3A09.834Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/456erddgr/dsh-boo550wt-animation/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A09.834Z..2026-10-26T03%3A38%3A09.834Z)
 
 
 

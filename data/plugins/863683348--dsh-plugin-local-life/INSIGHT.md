@@ -5,7 +5,7 @@
 分析版本：[c7abe09](https://github.com/863683348/dsh-plugin-local-life/tree/c7abe0935ceab43d784019fb42caf600b3aaadc5)
 
 <!-- BEGIN META -->
-[![npm 30d 857](https://img.shields.io/static/v1?label=npm+30d&message=857&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-local-life) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-local-life)
+[![npm 30d 857](https://img.shields.io/static/v1?label=npm+30d&message=857&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-local-life) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-local-life)
 <!-- END META -->
 
 > **实现功能**：提供本地生活算术工具，含预算、分摊、比价、折扣、换算、贷款与清单。

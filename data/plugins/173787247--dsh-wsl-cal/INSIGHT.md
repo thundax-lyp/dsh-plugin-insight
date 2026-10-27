@@ -5,7 +5,7 @@
 分析版本：[675bc5c](https://github.com/173787247/dsh-wsl-cal/tree/675bc5cc7efaf79a171e205e4f570ac2b945bb13)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-cal)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-cal)
 <!-- END META -->
 
 > **实现功能**：把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。

@@ -5,7 +5,7 @@
 分析版本：[ceda7a3](https://github.com/1070296335-create/dph-taskboard/tree/ceda7a378b713afdfcae4d94b670b026f2e24100)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=yellow&logo=github&style=flat)](https://github.com/1070296335-create/dph-taskboard)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1070296335-create/dph-taskboard)
 <!-- END META -->
 
 > **实现功能**：把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。
@@ -162,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1070296335-create/dph-taskboard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1070296335-create/dph-taskboard/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A58.561Z..2026-10-22T15%3A12%3A58.561Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1070296335-create/dph-taskboard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A12%3A58.561Z..2026-10-22T15%3A12%3A58.561Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1070296335-create/dph-taskboard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1070296335-create/dph-taskboard/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A58.561Z..2026-10-22T15%3A12%3A58.561Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1070296335-create/dph-taskboard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A12%3A58.561Z..2026-10-22T15%3A12%3A58.561Z)
 
 
 

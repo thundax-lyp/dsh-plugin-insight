@@ -5,7 +5,7 @@
 分析版本：[52e1d55](https://github.com/535408248-oss/dsh-douyin-webview/tree/52e1d551a8ede5d7d3cbeb4157fca8655be2f401)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/535408248-oss/dsh-douyin-webview)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/535408248-oss/dsh-douyin-webview)
 <!-- END META -->
 
 > **实现功能**：在 DSH 桌面页脚打开可拖拽的抖音 Electron webview，使用桌面浏览器租约。

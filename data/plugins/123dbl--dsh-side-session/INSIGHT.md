@@ -5,7 +5,7 @@
 分析版本：[39443eb](https://github.com/123dbl/dsh-side-session/tree/39443eb1ea15fb080121a3a6474426980f346a6c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/123dbl/dsh-side-session)
 <!-- END META -->
 
 > **实现功能**：从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。
@@ -164,7 +164,7 @@ Host不返回childID，事后目录差集在目录先到、冷缓存和并发时
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+created%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+created%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z)
 
 
 

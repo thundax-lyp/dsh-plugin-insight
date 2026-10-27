@@ -5,7 +5,7 @@
 分析版本：[ac7c50b](https://github.com/534119219/chicheng-quickinput/tree/ac7c50b364bec5899a96628c5cbefb19b8dc6bea)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-quickinput)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-quickinput)
 <!-- END META -->
 
 > **实现功能**：在输入区管理加密私密片段、普通片段与 WebDAV 备份。

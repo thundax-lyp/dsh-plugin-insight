@@ -5,7 +5,7 @@
 分析版本：[fe646bc](https://github.com/439436269-ctrl/dsh-peak-runner/tree/fe646bc931b3853815a760d7eb6943d96e6cad8f)
 
 <!-- BEGIN META -->
-[![npm 30d 24](https://img.shields.io/static/v1?label=npm+30d&message=24&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-peak-runner) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-peak-runner)
+[![npm 30d 24](https://img.shields.io/static/v1?label=npm+30d&message=24&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-peak-runner) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-peak-runner)
 <!-- END META -->
 
 > **实现功能**：按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。

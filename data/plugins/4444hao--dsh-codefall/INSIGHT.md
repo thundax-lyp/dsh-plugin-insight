@@ -5,7 +5,7 @@
 分析版本：[68159fc](https://github.com/4444Hao/dsh-codefall/tree/68159fcced1d65c7ea356821859ea80d365c523a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/4444Hao/dsh-codefall) [![npm 30d 407](https://img.shields.io/static/v1?label=npm+30d&message=407&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-codefall) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-codefall)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/4444Hao/dsh-codefall) [![npm 30d 407](https://img.shields.io/static/v1?label=npm+30d&message=407&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codefall) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codefall)
 <!-- END META -->
 
 > **实现功能**：DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。
@@ -155,7 +155,7 @@ Host 双注入机制以 sentinel 去重并热读脚本；设置只归一化白�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/4444Hao/dsh-codefall/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/4444Hao/dsh-codefall/issues?q=is%3Aissue+created%3A2026-09-22T05%3A50%3A44.301Z..2026-10-22T05%3A50%3A44.301Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/4444Hao/dsh-codefall/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A50%3A44.301Z..2026-10-22T05%3A50%3A44.301Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/4444Hao/dsh-codefall/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/4444Hao/dsh-codefall/issues?q=is%3Aissue+created%3A2026-09-22T05%3A50%3A44.301Z..2026-10-22T05%3A50%3A44.301Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/4444Hao/dsh-codefall/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A50%3A44.301Z..2026-10-22T05%3A50%3A44.301Z)
 
 
 

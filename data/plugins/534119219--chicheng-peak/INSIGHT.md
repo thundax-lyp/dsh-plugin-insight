@@ -5,7 +5,7 @@
 分析版本：[b89dc9a](https://github.com/534119219/chicheng-peak/tree/b89dc9a63eb270736fae63e43445b421477c02ab)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-peak)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-peak)
 <!-- END META -->
 
 > **实现功能**：按配置峰谷时窗显示页面/输入框光效与角标，并由Host提前调度模板提醒到可选消息渠道。
@@ -165,7 +165,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-peak/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-peak/issues?q=is%3Aissue+created%3A2026-09-22T07%3A14%3A19.558Z..2026-10-22T07%3A14%3A19.558Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/534119219/chicheng-peak/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A14%3A19.558Z..2026-10-22T07%3A14%3A19.558Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/534119219/chicheng-peak/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/534119219/chicheng-peak/issues?q=is%3Aissue+created%3A2026-09-22T07%3A14%3A19.558Z..2026-10-22T07%3A14%3A19.558Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/534119219/chicheng-peak/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A14%3A19.558Z..2026-10-22T07%3A14%3A19.558Z)
 
 
 

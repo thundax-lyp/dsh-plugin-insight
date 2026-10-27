@@ -5,7 +5,7 @@
 分析版本：[9808ab7](https://github.com/988hj7tczd-oss/harness-desktop/tree/9808ab77392c7cd285f87de094daff1fcd322109/plugins/harness-memory)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/harness-desktop) [![npm 30d 187](https://img.shields.io/static/v1?label=npm+30d&message=187&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/harness-memory) [![最新发布 2026-04-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-04-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/harness-memory)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/harness-desktop) [![npm 30d 187](https://img.shields.io/static/v1?label=npm+30d&message=187&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/harness-memory) [![最新发布 2026-04-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-04-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/harness-memory)
 <!-- END META -->
 
 > **实现功能**：通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。

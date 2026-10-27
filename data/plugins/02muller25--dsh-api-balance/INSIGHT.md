@@ -5,7 +5,7 @@
 分析版本：[c27c8b6](https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance)
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/02Muller25/dsh-api-balance)
 <!-- END META -->
 
 > **实现功能**：在 DSH Web 输入框旁轮询显示 DeepSeek API 余额与可用状态。
@@ -161,7 +161,7 @@ Host 内部 HTTP、共享短缓存与响应序号可能减少凭证暴露和乱�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance/issues?q=is%3Aissue+created%3A2026-09-20T04%3A25%3A13.285Z..2026-10-20T04%3A25%3A13.285Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/02Muller25/dsh-api-balance/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T04%3A25%3A13.285Z..2026-10-20T04%3A25%3A13.285Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/02Muller25/dsh-api-balance/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/02Muller25/dsh-api-balance/issues?q=is%3Aissue+created%3A2026-09-20T04%3A25%3A13.285Z..2026-10-20T04%3A25%3A13.285Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/02Muller25/dsh-api-balance/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-20T04%3A25%3A13.285Z..2026-10-20T04%3A25%3A13.285Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[24d8fd4](https://github.com/173787247/dsh-wsl-browser/tree/24d8fd47f7566945fe697cb985df4f43e02dd3a7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-browser)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-browser)
 <!-- END META -->
 
 > **实现功能**：从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。

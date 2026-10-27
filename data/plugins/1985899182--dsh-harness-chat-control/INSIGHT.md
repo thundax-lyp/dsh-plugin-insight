@@ -5,7 +5,7 @@
 分析版本：[a6aee9c](https://github.com/1985899182/dsh-harness-chat-control/tree/a6aee9c6107d6e7438a449e31393d6a12fde563f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1985899182/dsh-harness-chat-control)
 <!-- END META -->
 
 > **实现功能**：为 DSH 对话提供原生引用胶囊、侧栏追问、原位编辑和侧栏标签批量关闭。
@@ -169,7 +169,7 @@ Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+created%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+created%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z)
 
 
 

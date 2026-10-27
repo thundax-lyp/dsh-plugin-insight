@@ -5,7 +5,7 @@
 分析版本：[756fa15](https://github.com/439436269-ctrl/dsh-scroll-piano/tree/756fa15ba689f2cb0af38f20f4270c21f44f703d)
 
 <!-- BEGIN META -->
-[![npm 30d 1,565](https://img.shields.io/static/v1?label=npm+30d&message=1%2C565&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano)
+[![npm 30d 1,565](https://img.shields.io/static/v1?label=npm+30d&message=1%2C565&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-scroll-piano) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-scroll-piano)
 <!-- END META -->
 
 > **实现功能**：把对话滚动位置映射为音高，并用消息刻度提供跳转导航。

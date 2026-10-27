@@ -5,7 +5,7 @@
 分析版本：[84f1be4](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/tree/84f1be429c04c5d426e54d02b993d8972d4d841d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker)
 <!-- END META -->
 
 > **实现功能**：在 DSH Web/Desktop 侧栏显示多源加密货币价格、24 小时涨跌与迷你走势。

@@ -5,7 +5,7 @@
 分析版本：[9ffc7b3](https://github.com/439436269-ctrl/dsh-session-path/tree/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607)
 
 <!-- BEGIN META -->
-[![npm 30d 667](https://img.shields.io/static/v1?label=npm+30d&message=667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-session-path) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-session-path)
+[![npm 30d 667](https://img.shields.io/static/v1?label=npm+30d&message=667&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-path) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-path)
 <!-- END META -->
 
 > **实现功能**：复制DSH会话日志位置，或把压缩日志导出为可读交接文件，便于另一个会话阅读接续。
@@ -165,7 +165,7 @@ ID未限制单路径组件/真实根，JSONL保留前缀而非最新尾部，裁
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+created%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+created%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z)
 
 
 

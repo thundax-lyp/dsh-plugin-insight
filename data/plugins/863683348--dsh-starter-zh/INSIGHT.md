@@ -5,7 +5,7 @@
 分析版本：[d97e7f9](https://github.com/863683348/dsh-starter-zh/tree/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe)
 
 <!-- BEGIN META -->
-[![npm 30d 128](https://img.shields.io/static/v1?label=npm+30d&message=128&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-starter-zh) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-starter-zh)
+[![npm 30d 128](https://img.shields.io/static/v1?label=npm+30d&message=128&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-starter-zh) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-starter-zh)
 <!-- END META -->
 
 > **实现功能**：在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。
@@ -164,7 +164,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-starter-zh/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-starter-zh/issues?q=is%3Aissue+created%3A2026-09-22T07%3A18%3A58.805Z..2026-10-22T07%3A18%3A58.805Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-starter-zh/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A18%3A58.805Z..2026-10-22T07%3A18%3A58.805Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-starter-zh/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-starter-zh/issues?q=is%3Aissue+created%3A2026-09-22T07%3A18%3A58.805Z..2026-10-22T07%3A18%3A58.805Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-starter-zh/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A18%3A58.805Z..2026-10-22T07%3A18%3A58.805Z)
 
 
 

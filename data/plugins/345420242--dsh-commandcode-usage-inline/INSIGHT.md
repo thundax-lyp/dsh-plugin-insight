@@ -5,7 +5,7 @@
 分析版本：[67ae018](https://github.com/345420242/dsh-commandcode-usage-inline/tree/67ae01891935472467cdf77562861062e91d9b5b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/345420242/dsh-commandcode-usage-inline)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/345420242/dsh-commandcode-usage-inline)
 <!-- END META -->
 
 > **实现功能**：在对话输入区旁显示 Command Code 五小时、周额度和 credits。

@@ -5,7 +5,7 @@
 分析版本：[fe5ef0e](https://github.com/0nt-one/dsh-neo-skin/tree/fe5ef0e671fab5ab8c8700013f3966eb9642455f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin) [![npm 30d 101](https://img.shields.io/static/v1?label=npm+30d&message=101&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-neo-skin) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-neo-skin)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0nt-one/dsh-neo-skin) [![npm 30d 101](https://img.shields.io/static/v1?label=npm+30d&message=101&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-neo-skin) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-neo-skin)
 <!-- END META -->
 
 > **实现功能**：为 DSH Web UI 叠加两套新粗野主义配色和结构样式。
@@ -152,7 +152,7 @@ Host no-op 挂载 Client；template/build 生成模块 bundle，theme/slots/loca
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin/issues?q=is%3Aissue+created%3A2026-09-22T06%3A28%3A08.447Z..2026-10-22T06%3A28%3A08.447Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0nt-one/dsh-neo-skin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A28%3A08.447Z..2026-10-22T06%3A28%3A08.447Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/0nt-one/dsh-neo-skin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/0nt-one/dsh-neo-skin/issues?q=is%3Aissue+created%3A2026-09-22T06%3A28%3A08.447Z..2026-10-22T06%3A28%3A08.447Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/0nt-one/dsh-neo-skin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A28%3A08.447Z..2026-10-22T06%3A28%3A08.447Z)
 
 
 

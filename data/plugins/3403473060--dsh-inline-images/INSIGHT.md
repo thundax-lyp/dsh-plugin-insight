@@ -5,7 +5,7 @@
 分析版本：[79f8ba7](https://github.com/3403473060/dsh-inline-images/tree/79f8ba778441c86738dedba574f5911fd2b5b2be)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/3403473060/dsh-inline-images)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3403473060/dsh-inline-images)
 <!-- END META -->
 
 > **实现功能**：将助手文本中的绝对图片路径改写成可加载的本地路由，并提供灯箱和尺寸设置。

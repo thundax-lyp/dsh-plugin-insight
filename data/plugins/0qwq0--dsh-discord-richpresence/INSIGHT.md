@@ -5,7 +5,7 @@
 分析版本：[bf8d34b](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0QwQ0/dsh-discord-richpresence)
 <!-- END META -->
 
 > **实现功能**：将 DSH 粗粒度活动经本地 Discord IPC 发布为 Rich Presence，丰富模式可附步骤/tokens/思考时长。
@@ -160,7 +160,7 @@ richMode 关只取消标量，不取消基础 Presence；全局 workflow/start �
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence/issues?q=is%3Aissue+created%3A2026-09-22T06%3A13%3A27.089Z..2026-10-22T06%3A13%3A27.089Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/0QwQ0/dsh-discord-richpresence/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A13%3A27.089Z..2026-10-22T06%3A13%3A27.089Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/0QwQ0/dsh-discord-richpresence/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/0QwQ0/dsh-discord-richpresence/issues?q=is%3Aissue+created%3A2026-09-22T06%3A13%3A27.089Z..2026-10-22T06%3A13%3A27.089Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/0QwQ0/dsh-discord-richpresence/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A13%3A27.089Z..2026-10-22T06%3A13%3A27.089Z)
 
 
 
