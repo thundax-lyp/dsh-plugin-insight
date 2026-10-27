@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-rust)
+源码版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-rust)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-> **实现功能**：以 rust-analyzer 为外部服务器的 Rust LSP 配置包，复用 DSH 共享基座。
+> **功能**：以 rust-analyzer 为外部服务器的 Rust LSP 配置包，复用 DSH 共享基座。
 
-> **核心亮点**：减少 Rust LSP 装配；不实现协议，详见[Q01](#research-q01)。
+> **亮点**：减少 Rust LSP 装配；不实现协议，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：宽 catch 可能误判故障，fallback 不保留自定义扩展；详见[Q02](#research-q02)。
+> **主要限制**：宽 catch 可能误判故障，fallback 不保留自定义扩展；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -94,8 +94,6 @@
 
 > **亮点**：减少 Rust LSP 装配；不实现协议，详见[Q01](#research-q01)。
 
-减少 Rust LSP 装配；不实现协议，详见[Q01](#research-q01)。
-
 配置覆盖合并；通过 LspStdio 启动；异常 fallback 用 LSP_UNAVAILABLE。
 
 <a id="detail-section-5"></a>
@@ -144,7 +142,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -156,7 +154,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs/issues?q=is%3Aissue+created%3A2026-09-22T07%3A16%3A49.999Z..2026-10-22T07%3A16%3A49.999Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-lsp-packs/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A16%3A49.999Z..2026-10-22T07%3A16%3A49.999Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-lsp-packs/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-lsp-packs/issues?q=is%3Aissue+created%3A2026-09-22T07%3A16%3A49.999Z..2026-10-22T07%3A16%3A49.999Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-lsp-packs/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A16%3A49.999Z..2026-10-22T07%3A16%3A49.999Z)
 
 
 

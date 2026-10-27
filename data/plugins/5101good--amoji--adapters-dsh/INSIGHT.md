@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a22c633](https://github.com/5101good/amoji/tree/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh)
+源码版本：[a22c633](https://github.com/5101good/amoji/tree/a22c633ad9ee14353a4110461641f3f2fbfa00d3/adapters/dsh)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：给 DSH 提供图形表情与固定文字语义，支持表达、搜索、精确版本解析和表情库管理。
+> **功能**：给 DSH 提供图形表情与固定文字语义，支持表达、搜索、精确版本解析和表情库管理。
 
-> **核心亮点**：相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：accepted不等于原生消息observed，文字送达也不等于图片rendered；未知结果重发可能重复。平台与模型支持范围受限。见 [Q03](#research-q03)。
+> **主要限制**：accepted不等于原生消息observed，文字送达也不等于图片rendered；未知结果重发可能重复。平台与模型支持范围受限。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相比普通emoji或自由图片，以精确资产revision绑定固定语义并保留原生消息与显示回执，属于协议和宿主适配贡献。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 会话/回合身份捕获与异步后复核值得借鉴；文字语义与图像meta分离降低模型视觉依赖。移植要实现宿主持久化、RPC与回执语义，源入口不含全部发布runtime，不能将其视作自足单文件插件。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ accepted不等于原生消息observed，文字送达也不等于图片rendered�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -158,7 +156,7 @@ accepted不等于原生消息observed，文字送达也不等于图片rendered�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/5101good/amoji/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5101good/amoji/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 
 

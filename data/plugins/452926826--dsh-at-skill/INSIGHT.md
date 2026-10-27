@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[7502c9b](https://github.com/452926826/dsh-at-skill/tree/7502c9bce1a65597188c12d4ab1e33e9365e3a22)
+源码版本：[7502c9b](https://github.com/452926826/dsh-at-skill/tree/7502c9bce1a65597188c12d4ab1e33e9365e3a22)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/452926826/dsh-at-skill)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/452926826/dsh-at-skill)
 <!-- END META -->
 
-> **实现功能**：给Web输入框增加@Skill候选，并在host模型步骤前加载匹配且可用户调用的Skill。
+> **功能**：给Web输入框增加@Skill候选，并在host模型步骤前加载匹配且可用户调用的Skill。
 
-> **核心亮点**：将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。
+> **亮点**：将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：普通文本不携带对象身份，示例/同名对象可触发，缓存没有更新事件与transport拒绝删除。详见[Q03](#research-q03)。
+> **主要限制**：普通文本不携带对象身份，示例/同名对象可触发，缓存没有更新事件与transport拒绝删除。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。
 
-将Skill菜单发现与host确定加载接合，省去模型自行决定读Skill。详见[Q01](#research-q01)。
-
 短链复用scope/renderer，业务测试与缓存更新/拒绝恢复缺口明确。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/452926826/dsh-at-skill/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/452926826/dsh-at-skill/issues?q=is%3Aissue+created%3A2026-09-22T07%3A08%3A25.798Z..2026-10-22T07%3A08%3A25.798Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/452926826/dsh-at-skill/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A08%3A25.798Z..2026-10-22T07%3A08%3A25.798Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/452926826/dsh-at-skill/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/452926826/dsh-at-skill/issues?q=is%3Aissue+created%3A2026-09-22T07%3A08%3A25.798Z..2026-10-22T07%3A08%3A25.798Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/452926826/dsh-at-skill/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A08%3A25.798Z..2026-10-22T07%3A08%3A25.798Z)
 
 
 

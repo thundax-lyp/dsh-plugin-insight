@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[5299b64](https://github.com/4444wjt/dsh-plugin-veriscope/tree/5299b64087bbfa5beef6ae2e336045468f1af01d)
+源码版本：[5299b64](https://github.com/4444wjt/dsh-plugin-veriscope/tree/5299b64087bbfa5beef6ae2e336045468f1af01d)
 
 <!-- BEGIN META -->
-[![npm 30d 956](https://img.shields.io/static/v1?label=npm+30d&message=956&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-veriscope) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-veriscope)
+[![npm 30d 956](https://img.shields.io/static/v1?label=npm+30d&message=956&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-veriscope) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-veriscope)
 <!-- END META -->
 
-> **实现功能**：重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
+> **功能**：重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
 
-> **核心亮点**：把阈值判定、缺证据保留和当前性回执接合，减少只看旧均值的误读。详见[Q01](#research-q01)。
+> **亮点**：把阈值判定、缺证据保留和当前性回执接合，减少只看旧均值的误读。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：门禁仅消费所提供分数，不证明样本总体/评分真实，本地摘要不抵抗整体重写，child kill不等进程树回收。详见[Q03](#research-q03)、[Q05](#research-q05)。
+> **主要限制**：门禁仅消费所提供分数，不证明样本总体/评分真实，本地摘要不抵抗整体重写，child kill不等进程树回收。详见[Q03](#research-q03)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把阈值判定、缺证据保留和当前性回执接合，减少只看旧均值的误读。详见[Q01](#research-q01)。
 
-把阈值判定、缺证据保留和当前性回执接合，减少只看旧均值的误读。详见[Q01](#research-q01)。
-
 保守三态、wx/硬链发布和两次受管重查可借鉴，进程回收与总体来源仍独立。详见[Q05](#research-q05)。
 
 固定源码下，task-monitor汇总会话活动并提供工作区Git commit/push及GitHub发布入口；dsh-verify把给定JSON步骤映射为Playwright动作/断言并汇总步骤PASS；VeriScope核评分回执当前绑定并限制自有managed完成记录，builtin不支持bind/complete。三者分别解决活动可见性、给定检查可重复执行与历史裁决追溯，没有把三种状态、最终产物版本和Git/GitHub副作用接成共同事务。task-monitor写入口未消费另两者结果，verify PASS不绑定提交哈希，VeriScope完成仅wx写完成文件，因此不能用任一面板/断言PASS/完成记录替代最终发布放行。保留未验证设计方向，由外部发布适配器以一次性令牌绑定最终产物哈希、目标远端和当前PASS范围，副作用前复核、之后记确定结果，未知结果不盲重试。最小反证用检查后改文件、切分支/远端、提交后推送失败及响应丢失，要求旧令牌拒用、同令牌不重复发且保留未知结果。若仍错放行或恢复工时不降则否定；本轮没有组合安装或执行效果证据。
@@ -156,7 +154,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -171,7 +169,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+created%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+created%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[ec56ac2](https://github.com/esengine/DeepSeek-Reasonix/tree/ec56ac27a34a47aa36f8748f93d08aaab21027fb)
+源码版本：[ec56ac2](https://github.com/esengine/DeepSeek-Reasonix/tree/ec56ac27a34a47aa36f8748f93d08aaab21027fb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 35,959](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C959&color=yellow&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix)
+[![GitHub ★ 35,959](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C959&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/esengine/DeepSeek-Reasonix)
 <!-- END META -->
 
-> **实现功能**：独立开源编码Agent，提供终端、Studio、Web及ACP入口，可由DSH委派任务。
+> **功能**：独立开源编码Agent，提供终端、Studio、Web及ACP入口，可由DSH委派任务。
 
-> **核心亮点**：本体把编码引擎组织为多前端与权限接口；DSH集成复用ACP以配置完成委派，增量是可用接线而非新协议或宿主保证。[Q01](#research-q01)
+> **亮点**：本体把编码引擎组织为多前端与权限接口；DSH集成复用ACP以配置完成委派，增量是可用接线而非新协议或宿主保证。[Q01](#research-q01)
 
-> **风险与缺陷**：自动allow不是逐次人工审批，nil Approver与Ask语义需按前端核对；新进程不共享父会话，rewind不覆盖shell副作用。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：自动allow不是逐次人工审批，nil Approver与Ask语义需按前端核对；新进程不共享父会话，rewind不覆盖shell副作用。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：本体把编码引擎组织为多前端与权限接口；DSH集成复用ACP以配置完成委派，增量是可用接线而非新协议或宿主保证。[Q01](#research-q01)
 
-本体把编码引擎组织为多前端与权限接口；DSH集成复用ACP以配置完成委派，增量是可用接线而非新协议或宿主保证。[Q01](#research-q01)
-
 纯Policy与Approver解耦、requestId独立取消值得复用；移植必须保留前端默认权限和副作用所有权，不能只复制工具名。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：5bd593c6c641d9a8735d8f7f11e15aab2bd92edf23241a4aaec9c081a4f14bee。sloc 0.3.2，TypeScript 5.9.3。
 
@@ -161,7 +159,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 482](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=482&color=grey&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,154](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C154&color=grey&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z) [![近30天关闭 1,877](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C877&color=grey&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z)
+[![Issue 未关闭 482](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=482&color=737b86&logo=github)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,154](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C154&color=737b86&logo=github)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z) [![近30天关闭 1,877](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C877&color=737b86&logo=github)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1961202](https://github.com/ArcaneOrion/dsh-model-selector-search/tree/1961202137a3a06b9512131ff502b074610ac5b3)
+源码版本：[1961202](https://github.com/ArcaneOrion/dsh-model-selector-search/tree/1961202137a3a06b9512131ff502b074610ac5b3)
 
 <!-- BEGIN META -->
-[![npm 30d 1,140](https://img.shields.io/static/v1?label=npm+30d&message=1%2C140&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search)
+[![npm 30d 1,140](https://img.shields.io/static/v1?label=npm+30d&message=1%2C140&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search)
 <!-- END META -->
 
-> **实现功能**：替换会话模型选择器，提供宽松搜索、供应商分组、推理档位选择和偏好记忆。
+> **功能**：替换会话模型选择器，提供宽松搜索、供应商分组、推理档位选择和偏好记忆。
 
-> **核心亮点**：相对原生平铺目录，新增多字段宽松搜索、路由 ID 消歧和推理档位入口，并通过共享目录服务统一 composer 与原生弹窗的档位策略。搜索是常规算法组合，价值在宿主工作流集成，不是新增模型能力；共享服务包装也扩大了影响范围。[Q01](#research-q01)
+> **亮点**：相对原生平铺目录，新增多字段宽松搜索、路由 ID 消歧和推理档位入口，并通过共享目录服务统一 composer 与原生弹窗的档位策略。搜索是常规算法组合，价值在宿主工作流集成，不是新增模型能力；共享服务包装也扩大了影响范围。[Q01](#research-q01)
 
-> **风险与缺陷**：档位记忆能否忠实保存用户选择比菜单是否方便更关键。包装层在 select Promise resolve 时写记忆，没有检查结果 ok；同文件注入层却显式检查 r.ok，说明 resolve 不等于接受。因此返回 {ok:false} 的正常拒绝可能污染记忆，尚未在宿主复现；同时非 max 的声明默认档位仍可能被当自动选择改写。[Q02](#research-q02)
+> **主要限制**：档位记忆能否忠实保存用户选择比菜单是否方便更关键。包装层在 select Promise resolve 时写记忆，没有检查结果 ok；同文件注入层却显式检查 r.ok，说明 resolve 不等于接受。因此返回 {ok:false} 的正常拒绝可能污染记忆，尚未在宿主复现；同时非 max 的声明默认档位仍可能被当自动选择改写。[Q02](#research-q02)
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：相对原生平铺目录，新增多字段宽松搜索、路由 ID 消歧和推理档位入口，并通过共享目录服务统一 composer 与原生弹窗的档位策略。搜索是常规算法组合，价值在宿主工作流集成，不是新增模型能力；共享服务包装也扩大了影响范围。[Q01](#research-q01)
 
-相对原生平铺目录，新增多字段宽松搜索、路由 ID 消歧和推理档位入口，并通过共享目录服务统一 composer 与原生弹窗的档位策略。搜索是常规算法组合，价值在宿主工作流集成，不是新增模型能力；共享服务包装也扩大了影响范围。[Q01](#research-q01)
-
 预归一化索引与弱集合避免重复包装值得借鉴，样式通过 effect 清理。关键代价是修改共享服务对象，未见恢复原方法；成功条件在包装与注入两层不一致。把选择结果归一化成一个函数并单独表达用户意图比值推断更可维护。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[ea4d4f7](https://github.com/1052326311/dsh-plan-lattice/tree/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3)
+源码版本：[ea4d4f7](https://github.com/1052326311/dsh-plan-lattice/tree/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1052326311/dsh-plan-lattice)
 <!-- END META -->
 
-> **实现功能**：在 DSH 历史替换后恢复原生任务依据，并可显式启用完整执行门禁。
+> **功能**：在 DSH 历史替换后恢复原生任务依据，并可显式启用完整执行门禁。
 
-> **核心亮点**：把 DSH 自有 Session/plan/委派事实在真实 surface 替换后有界回填，避免创建第二个自动计划器；显式模式把契约、目标事实与受保护变更绑定，详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把 DSH 自有 Session/plan/委派事实在真实 surface 替换后有界回填，避免创建第二个自动计划器；显式模式把契约、目标事实与受保护变更绑定，详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：默认 auto 不装写入门禁，显式模式也仅守护列名工具且外部副作用依赖 adapter；12/12 是手工设计机制样本，V17/V18/V20 不支持通用提升，详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：默认 auto 不装写入门禁，显式模式也仅守护列名工具且外部副作用依赖 adapter；12/12 是手工设计机制样本，V17/V18/V20 不支持通用提升，详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：把 DSH 自有 Session/plan/委派事实在真实 surface 替换后有界回填，避免创建第二个自动计划器；显式模式把契约、目标事实与受保护变更绑定，详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把 DSH 自有 Session/plan/委派事实在真实 surface 替换后有界回填，避免创建第二个自动计划器；显式模式把契约、目标事实与受保护变更绑定，详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 Session 事件锚定与投影模块隔离；完整模式用可观察前置条件、工具定义身份和二次执行校验收窄 TOCTOU。复杂度高，依赖 DSH 具体内部契约、可用 Hook 和适配器完整性；作者大量协议/负结果说明机制成熟度不能由单个绿色徽章推断。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ auto 源码层被动恢复明确；完整门禁覆盖配置的受保护工具。
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@ auto 源码层被动恢复明确；完整门禁覆盖配置的受保护工具。
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+created%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+created%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z)
 
 
 

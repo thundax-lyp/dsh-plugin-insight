@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[2f28338](https://github.com/AnacondaKC/dsh-douyin/tree/2f28338b29503f20d159b1f0123a985530134b6a)
+源码版本：[2f28338](https://github.com/AnacondaKC/dsh-douyin/tree/2f28338b29503f20d159b1f0123a985530134b6a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AnacondaKC/dsh-douyin)
 <!-- END META -->
 
-> **实现功能**：在DSH WebUI侧栏或浮动面板播放第三方随机短视频，支持系列选择、直链历史与连播。
+> **功能**：在DSH WebUI侧栏或浮动面板播放第三方随机短视频，支持系列选择、直链历史与连播。
 
-> **核心亮点**：相对直接打开随机源，增量是把随机入口解析为当前直链并保存短期历史，再适配侧栏/独立dock；它集成现成播放能力，不创造内容供给或研究能力。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对直接打开随机源，增量是把随机入口解析为当前直链并保存短期历史，再适配侧栏/独立dock；它集成现成播放能力，不创造内容供给或研究能力。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：相同URL回放不等于永久同一视频。内存历史、第三方跳转/时效与浏览器策略限制可靠性，安装到DSH的净便利也尚无独立用户依据。[Q03](#research-q03)
+> **主要限制**：相同URL回放不等于永久同一视频。内存历史、第三方跳转/时效与浏览器策略限制可靠性，安装到DSH的净便利也尚无独立用户依据。[Q03](#research-q03)
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：相对直接打开随机源，增量是把随机入口解析为当前直链并保存短期历史，再适配侧栏/独立dock；它集成现成播放能力，不创造内容供给或研究能力。[Q01](#research-q01) [Q02](#research-q02)
 
-相对直接打开随机源，增量是把随机入口解析为当前直链并保存短期历史，再适配侧栏/独立dock；它集成现成播放能力，不创造内容供给或研究能力。[Q01](#research-q01) [Q02](#research-q02)
-
 随机入口与已解析媒体身份分离、白名单、有限重试与关闭卸载值得借鉴。首跳DNS检查不覆盖后续媒体变化，有限内存历史也不是长期媒体存档；迁移需管理浏览器事件和宿主布局副作用。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -160,7 +158,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A30.336Z..2026-10-23T07%3A58%3A30.336Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A30.336Z..2026-10-23T07%3A58%3A30.336Z)
 
 暂未获取：近30天关闭。
 

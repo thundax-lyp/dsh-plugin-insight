@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1392730](https://github.com/314857493/dsh-vision/tree/139273049905f852f633c7641628212399ac83f5/packages/vision-tool)
+源码版本：[1392730](https://github.com/314857493/dsh-vision/tree/139273049905f852f633c7641628212399ac83f5/packages/vision-tool)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/314857493/dsh-vision) [![npm 30d 1,220](https://img.shields.io/static/v1?label=npm+30d&message=1%2C220&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-free-eyes) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-free-eyes)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/314857493/dsh-vision) [![npm 30d 1,220](https://img.shields.io/static/v1?label=npm+30d&message=1%2C220&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-free-eyes) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-free-eyes)
 <!-- END META -->
 
-> **实现功能**：通过智谱GLM视觉API分析已知本地单张图片，提供图像问答与OCR工具。
+> **功能**：通过智谱GLM视觉API分析已知本地单张图片，提供图像问答与OCR工具。
 
-> **核心亮点**：相对手写API脚本，把单图验证、问题参数和结果缓存装进宿主工具；视觉能力仍归属于外部模型。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：相对手写API脚本，把单图验证、问题参数和结果缓存装进宿主工具；视觉能力仍归属于外部模型。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：所有错误统一回退，包括取消和鉴权；绝对图片路径不等用户授权或项目围栏，视觉文本也没有事实验证。[Q03](#research-q03)
+> **主要限制**：所有错误统一回退，包括取消和鉴权；绝对图片路径不等用户授权或项目围栏，视觉文本也没有事实验证。[Q03](#research-q03)
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：相对手写API脚本，把单图验证、问题参数和结果缓存装进宿主工具；视觉能力仍归属于外部模型。[Q01](#research-q01)、[Q02](#research-q02)
 
-相对手写API脚本，把单图验证、问题参数和结果缓存装进宿主工具；视觉能力仍归属于外部模型。[Q01](#research-q01)、[Q02](#research-q02)
-
 参数及出站端点集中，魔数支持无后缀附件；内容+提示摘要比路径缓存稳健。Map淘汰并非严格LRU，先读文件再限大小，统一catch会放大无效回退。mock测试只支持参数/缓存性质。[Q02](#research-q02)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

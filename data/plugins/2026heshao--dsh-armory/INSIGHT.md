@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[eb954d0](https://github.com/2026heshao/dsh-armory/tree/eb954d0f46f5eae50742dbacf071aec768512c8d)
+源码版本：[eb954d0](https://github.com/2026heshao/dsh-armory/tree/eb954d0f46f5eae50742dbacf071aec768512c8d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 24](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory) [![npm 30d 459](https://img.shields.io/static/v1?label=npm+30d&message=459&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-armory)
+[![GitHub ★ 24](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2026heshao/dsh-armory) [![npm 30d 459](https://img.shields.io/static/v1?label=npm+30d&message=459&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-armory)
 <!-- END META -->
 
-> **实现功能**：整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。
+> **功能**：整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。
 
-> **核心亮点**：相对手改配置与分散市场，增加统一生命周期、来源识别和观测反馈；fork归属和上游管理能力须保留。见 [Q01](#research-q01)。
+> **亮点**：相对手改配置与分散市场，增加统一生命周期、来源识别和观测反馈；fork归属和上游管理能力须保留。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：清单摘要与零调用指标不能当可信放行；更新先删旧后换入、时间兜底和同名投影都有限制。见 [Q03](#research-q03)。
+> **主要限制**：清单摘要与零调用指标不能当可信放行；更新先删旧后换入、时间兜底和同名投影都有限制。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：相对手改配置与分散市场，增加统一生命周期、来源识别和观测反馈；fork归属和上游管理能力须保留。见 [Q01](#research-q01)。
 
-相对手改配置与分散市场，增加统一生命周期、来源识别和观测反馈；fork归属和上游管理能力须保留。见 [Q01](#research-q01)。
-
 可信源删除与日志缺失诊断值得复用；更新事务和身份粒度仍应谨慎检查，入口集中同时扩大了配置/删除权限面。见 [Q03](#research-q03) 与 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/2026heshao/dsh-armory/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

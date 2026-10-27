@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[029c5b6](https://github.com/173787247/dsh-wsl-encoding/tree/029c5b6d2b99b78444084383686a4da8ed87be50)
+源码版本：[029c5b6](https://github.com/173787247/dsh-wsl-encoding/tree/029c5b6d2b99b78444084383686a4da8ed87be50)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-encoding)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-encoding)
 <!-- END META -->
 
-> **实现功能**：WSL 编码诊断工具，读取 Windows PowerShell/chcp 状态并可选检查脚本开头的 CRLF。
+> **功能**：WSL 编码诊断工具，读取 Windows PowerShell/chcp 状态并可选检查脚本开头的 CRLF。
 
-> **核心亮点**：以一工具汇合 Windows/WSL 编码和 CRLF 初诊，给出修复提示。详见[Q01](#research-q01)。
+> **亮点**：以一工具汇合 Windows/WSL 编码和 CRLF 初诊，给出修复提示。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：所谓 8192 字节采样先完整读文件；任意路径/大文件成本和采样失败仍 ok=true 易误导。详见[Q02](#research-q02)。
+> **主要限制**：所谓 8192 字节采样先完整读文件；任意路径/大文件成本和采样失败仍 ok=true 易误导。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：以一工具汇合 Windows/WSL 编码和 CRLF 初诊，给出修复提示。详见[Q01](#research-q01)。
 
-以一工具汇合 Windows/WSL 编码和 CRLF 初诊，给出修复提示。详见[Q01](#research-q01)。
-
 Cordis 注册 encoding_doctor，WSL gating；execFile 固定命令；可选路径经 Node 读取。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ Cordis 注册 encoding_doctor，WSL gating；execFile 固定命令；可选路�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -159,7 +157,7 @@ Cordis 注册 encoding_doctor，WSL gating；execFile 固定命令；可选路�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-encoding/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-encoding/issues?q=is%3Aissue+created%3A2026-09-22T06%3A50%3A12.014Z..2026-10-22T06%3A50%3A12.014Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-encoding/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A50%3A12.014Z..2026-10-22T06%3A50%3A12.014Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-encoding/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-encoding/issues?q=is%3Aissue+created%3A2026-09-22T06%3A50%3A12.014Z..2026-10-22T06%3A50%3A12.014Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-encoding/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A50%3A12.014Z..2026-10-22T06%3A50%3A12.014Z)
 
 
 

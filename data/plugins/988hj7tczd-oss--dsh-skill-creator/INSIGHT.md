@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[f9ff567](https://github.com/988hj7tczd-oss/dsh-skill-creator/tree/f9ff56714decd8d604d97dced494206937c8f907)
+源码版本：[f9ff567](https://github.com/988hj7tczd-oss/dsh-skill-creator/tree/f9ff56714decd8d604d97dced494206937c8f907)
 
 <!-- BEGIN META -->
-[![npm 30d 762](https://img.shields.io/static/v1?label=npm+30d&message=762&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-skill-creator) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-skill-creator)
+[![npm 30d 762](https://img.shields.io/static/v1?label=npm+30d&message=762&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-skill-creator) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-skill-creator)
 <!-- END META -->
 
-> **实现功能**：DSH 内四个模型工具，用确定性规则草拟、校验、打包和改写技能描述，可挂载输出目录。
+> **功能**：DSH 内四个模型工具，用确定性规则草拟、校验、打包和改写技能描述，可挂载输出目录。
 
-> **核心亮点**：提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。
+> **亮点**：提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。
 
-> **风险与缺陷**：fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF-8 解码/重编码，二进制资源不保真。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF-8 解码/重编码，二进制资源不保真。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。
 
-提供从工作流描述到 SKILL.md、校验、ZIP 分发和目录挂载的一站式入口；详见[Q01](#research-q01)。
-
 插件注入 tools，ctx.skills 可用时挂载目录；HostFs 优先服务但二进制与目录操作回退 Node。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -158,7 +156,7 @@ fromSession 只改变 sessionNote，不改变草稿；ZIP 对所有文件做 UTF
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues?q=is%3Aissue+created%3A2026-09-22T06%3A39%3A39.587Z..2026-10-22T06%3A39%3A39.587Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A39%3A39.587Z..2026-10-22T06%3A39%3A39.587Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues?q=is%3Aissue+created%3A2026-09-22T06%3A39%3A39.587Z..2026-10-22T06%3A39%3A39.587Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-skill-creator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A39%3A39.587Z..2026-10-22T06%3A39%3A39.587Z)
 
 
 

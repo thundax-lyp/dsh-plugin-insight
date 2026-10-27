@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[f82dd6d](https://github.com/QingYunA/answer-me-with-html/tree/f82dd6dce3ca95b0e565f8cffaf5eba23f4c995f)
+源码版本：[f82dd6d](https://github.com/QingYunA/answer-me-with-html/tree/f82dd6dce3ca95b0e565f8cffaf5eba23f4c995f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,422](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C422&color=yellow&logo=github&style=flat)](https://github.com/QingYunA/answer-me-with-html)
+[![GitHub ★ 4,422](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C422&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
 <!-- END META -->
 
-> **实现功能**：将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。
+> **功能**：将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。
 
-> **核心亮点**：[Q03](#research-q03)识别出内容草稿与布局编译分离的组合贡献，相比模型手写HTML减少重复结构输出；成立条件是任务确需图表页面且内容完整，作者小样本不证明普遍节费。
+> **亮点**：[Q03](#research-q03)识别出内容草稿与布局编译分离的组合贡献，相比模型手写HTML减少重复结构输出；成立条件是任务确需图表页面且内容完整，作者小样本不证明普遍节费。
 
-> **风险与缺陷**：[Q04](#research-q04)说明结构渲染与CSP都不校验解释是否正确，1/8输出token也非1/8全轮成本；内容核对仍由作者承担。
+> **主要限制**：[Q04](#research-q04)说明结构渲染与CSP都不校验解释是否正确，1/8输出token也非1/8全轮成本；内容核对仍由作者承担。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：[Q03](#research-q03)识别出内容草稿与布局编译分离的组合贡献，相比模型手写HTML减少重复结构输出；成立条件是任务确需图表页面且内容完整，作者小样本不证明普遍节费。
 
-[Q03](#research-q03)识别出内容草稿与布局编译分离的组合贡献，相比模型手写HTML减少重复结构输出；成立条件是任务确需图表页面且内容完整，作者小样本不证明普遍节费。
-
 解析、lint、组件渲染、主题和CSP分层清楚，错误带行号并集中raiseAll，适合借鉴为模型只写内容的编译管线。脚本hash与live脚本共享常量避免漂移；移植需要重做组件语法、资源内联和浏览器兼容，不能仅搬模板。源码与大量测试定义提供可检查接口，本轮未执行其测试，不称跨浏览器通过。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

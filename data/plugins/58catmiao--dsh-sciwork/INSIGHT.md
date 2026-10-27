@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[7701370](https://github.com/58catmiao/dsh-sciwork/tree/770137004d78120acd5073a24eb62922fb674825)
+源码版本：[7701370](https://github.com/58catmiao/dsh-sciwork/tree/770137004d78120acd5073a24eb62922fb674825)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/58catmiao/dsh-sciwork)
 <!-- END META -->
 
-> **实现功能**：提供科研Agent、文件资料库、文献期刊档案、绘图适配和投稿工作台。
+> **功能**：提供科研Agent、文件资料库、文献期刊档案、绘图适配和投稿工作台。
 
-> **核心亮点**：普通文件真相与同一动作清单连接面板、agent和CLI，新动作有参数/root绑定确认；Origin能力归上游，不等科学正确认证。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：普通文件真相与同一动作清单连接面板、agent和CLI，新动作有参数/root绑定确认；Origin能力归上游，不等科学正确认证。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：legacy路径隐式代签；Promise.race超时不取消底层写，回执尽力落盘；格式fail仍可导出，先hash后重读不保证并发快照一致。[Q03](#research-q03)、[Q04](#research-q04)
+> **主要限制**：legacy路径隐式代签；Promise.race超时不取消底层写，回执尽力落盘；格式fail仍可导出，先hash后重读不保证并发快照一致。[Q03](#research-q03)、[Q04](#research-q04)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：普通文件真相与同一动作清单连接面板、agent和CLI，新动作有参数/root绑定确认；Origin能力归上游，不等科学正确认证。[Q01](#research-q01)、[Q02](#research-q02)
 
-普通文件真相与同一动作清单连接面板、agent和CLI，新动作有参数/root绑定确认；Origin能力归上游，不等科学正确认证。[Q01](#research-q01)、[Q02](#research-q02)
-
 精确Fetch路由避免抢/api，共享动作registry减少三入口漂移，计划绑定参数/root有用；race超时与尽力回执需升级为可回读未知结果，不能保证恰好一次。[Q02](#research-q02)、[Q04](#research-q04)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ legacy路径隐式代签；Promise.race超时不取消底层写，回执尽力�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,7 +159,7 @@ legacy路径隐式代签；Promise.race超时不取消底层写，回执尽力�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/58catmiao/dsh-sciwork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 
 

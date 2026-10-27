@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c795535](https://github.com/173787247/dsh-wsl-pkg/tree/c79553532eda43f86f3d056ad31e35d11710ad33)
+源码版本：[c795535](https://github.com/173787247/dsh-wsl-pkg/tree/c79553532eda43f86f3d056ad31e35d11710ad33)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-pkg)
 <!-- END META -->
 
-> **实现功能**：将 npm、pip、cargo 查询接为 DSH 工具，给出有限长度的依赖摘要。
+> **功能**：将 npm、pip、cargo 查询接为 DSH 工具，给出有限长度的依赖摘要。
 
-> **核心亮点**：把既有包管理器命令包成 DSH 工具与浅摘要，提供可选项目根限制；不增加依赖解析算法。详见[Q02](#research-q02)。
+> **亮点**：把既有包管理器命令包成 DSH 工具与浅摘要，提供可选项目根限制；不增加依赖解析算法。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项目；解析失败也可能 ok:true，须核项目、退出和截断。详见[Q03](#research-q03)。
+> **主要限制**：allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项目；解析失败也可能 ok:true，须核项目、退出和截断。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：把既有包管理器命令包成 DSH 工具与浅摘要，提供可选项目根限制；不增加依赖解析算法。详见[Q02](#research-q02)。
 
-把既有包管理器命令包成 DSH 工具与浅摘要，提供可选项目根限制；不增加依赖解析算法。详见[Q02](#research-q02)。
-
 spawn argv 数组避免把项目路径拼到 shell；resolveDir 对存在路径 realpath，allowRoots 空则不限制。npm ls/outdated 解析失败仍 ok:true；pip 无项目目录；stderr 收集无显式上限。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z)
 
 
 

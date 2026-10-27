@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[455e0ea](https://github.com/173787247/dsh-wsl-mail/tree/455e0eaa31a3aaca2f21b4b91ad588c1419a6abc)
+源码版本：[455e0ea](https://github.com/173787247/dsh-wsl-mail/tree/455e0eaa31a3aaca2f21b4b91ad588c1419a6abc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-mail)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-mail)
 <!-- END META -->
 
-> **实现功能**：通过本机 Himalaya 与 notmuch CLI 向 DSH 提供信封列表、未读概况和邮件搜索。
+> **功能**：通过本机 Himalaya 与 notmuch CLI 向 DSH 提供信封列表、未读概况和邮件搜索。
 
-> **核心亮点**：把本机邮件元数据和索引摘要以只读工具给 Agent，降低命令行检索步骤。详见[Q01](#research-q01)。
+> **亮点**：把本机邮件元数据和索引摘要以只读工具给 Agent，降低命令行检索步骤。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：notmuch 缺失时“未读”计数实际为近期信封数；长 JSON 输出截断后仍可能以 ok:true 文本呈现。详见[Q02](#research-q02)与[Q03](#research-q03)。
+> **主要限制**：notmuch 缺失时“未读”计数实际为近期信封数；长 JSON 输出截断后仍可能以 ok:true 文本呈现。详见[Q02](#research-q02)与[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把本机邮件元数据和索引摘要以只读工具给 Agent，降低命令行检索步骤。详见[Q01](#research-q01)。
 
-把本机邮件元数据和索引摘要以只读工具给 Agent，降低命令行检索步骤。详见[Q01](#research-q01)。
-
 spawn 参数数组与回退便于复用；未读后备语义/截断异常需显式标记。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ notmuch 缺失时“未读”计数实际为近期信封数；长 JSON 输出截
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

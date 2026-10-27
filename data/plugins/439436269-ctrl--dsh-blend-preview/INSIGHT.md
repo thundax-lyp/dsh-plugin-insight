@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[5623a61](https://github.com/439436269-ctrl/dsh-blend-preview/tree/5623a616f3d97051f04074862614ab6135e316f2)
+源码版本：[5623a61](https://github.com/439436269-ctrl/dsh-blend-preview/tree/5623a616f3d97051f04074862614ab6135e316f2)
 
 <!-- BEGIN META -->
-[![npm 30d 44](https://img.shields.io/static/v1?label=npm+30d&message=44&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-blend-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-blend-preview)
+[![npm 30d 44](https://img.shields.io/static/v1?label=npm+30d&message=44&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blend-preview) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blend-preview)
 <!-- END META -->
 
-> **实现功能**：在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。
+> **功能**：在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。
 
-> **核心亮点**：相对手工导出GLB或切换Blender，增量是工作区文件触发、本地转换缓存与侧栏检查的一体流程；Blender导出和glTF本身不是本项目原创。[Q01](#research-q01)
+> **亮点**：相对手工导出GLB或切换Blender，增量是工作区文件触发、本地转换缓存与侧栏检查的一体流程；Blender导出和glTF本身不是本项目原创。[Q01](#research-q01)
 
-> **风险与缺陷**：缓存以大小和mtime识别版本，且查看器省略纹理动画；显示成功不等于当前内容或最终视觉验收成立。认证也不等同项目文件沙箱。[Q02](#research-q02) [Q04](#research-q04)
+> **主要限制**：缓存以大小和mtime识别版本，且查看器省略纹理动画；显示成功不等于当前内容或最终视觉验收成立。认证也不等同项目文件沙箱。[Q02](#research-q02) [Q04](#research-q04)
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：相对手工导出GLB或切换Blender，增量是工作区文件触发、本地转换缓存与侧栏检查的一体流程；Blender导出和glTF本身不是本项目原创。[Q01](#research-q01)
 
-相对手工导出GLB或切换Blender，增量是工作区文件触发、本地转换缓存与侧栏检查的一体流程；Blender导出和glTF本身不是本项目原创。[Q01](#research-q01)
-
 Host与查看器分工、共享任务取消和生命周期清理值得借鉴；复用需接入宿主认证、文件权限及转换器失败回收。认证不能独立证明项目沙箱。[Q04](#research-q04)
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ Host与查看器分工、共享任务取消和生命周期清理值得借鉴；�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

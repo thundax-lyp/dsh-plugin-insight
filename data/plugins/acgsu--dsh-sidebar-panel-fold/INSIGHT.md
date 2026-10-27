@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[7353d02](https://github.com/ACGsu/dsh-sidebar-panel-fold/tree/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec)
+源码版本：[7353d02](https://github.com/ACGsu/dsh-sidebar-panel-fold/tree/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ACGsu/dsh-sidebar-panel-fold)
 <!-- END META -->
 
-> **实现功能**：把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。
+> **功能**：把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。
 
-> **核心亮点**：相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)
+> **亮点**：相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)
 
-> **风险与缺陷**：实现没有官方整列表包裹槽，因而依赖nav结构和DOM观察；上游侧栏变化可能让控件无法定位。动态导入schema仅缓解包解析，不能保证所有旧schemastery版本支持volatile。[Q03](#research-q03)
+> **主要限制**：实现没有官方整列表包裹槽，因而依赖nav结构和DOM观察；上游侧栏变化可能让控件无法定位。动态导入schema仅缓解包解析，不能保证所有旧schemastery版本支持volatile。[Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)
 
-相比修改内置文件或简单display:none，增量在保留面板切换、活动状态和跨重启偏好；这是局部界面便利，没有改变Agent或任务交付流程。[Q01](#research-q01)
-
 把新增控件放在nav前方而非React子列表中，减少与宿主渲染所有权冲突；注销观察器和全局事件体现生命周期意识。可复用外挂UI所有权原则，具体选择器和glyph复制仍需随宿主维护。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z)
 
 
 

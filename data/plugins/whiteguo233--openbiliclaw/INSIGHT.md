@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[23de203](https://github.com/whiteguo233/OpenBiliClaw/tree/23de203a72a9b59d2c555d66b9e70ab75583aa2c)
+源码版本：[23de203](https://github.com/whiteguo233/OpenBiliClaw/tree/23de203a72a9b59d2c555d66b9e70ab75583aa2c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,593](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C593&color=yellow&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw)
+[![GitHub ★ 3,593](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C593&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/whiteguo233/OpenBiliClaw)
 <!-- END META -->
 
-> **实现功能**：集中跨平台内容信号、个人画像和反馈，提供本地运行的个性化发现与推荐服务。
+> **功能**：集中跨平台内容信号、个人画像和反馈，提供本地运行的个性化发现与推荐服务。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把跨平台信号与显式纠正集中成个人可维护的推荐控制流程，贡献在控制权和反馈组织；外仓DSH桥能力不归根。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把跨平台信号与显式纠正集中成个人可维护的推荐控制流程，贡献在控制权和反馈组织；外仓DSH桥能力不归根。
 
-> **风险与缺陷**：[Q03](#research-q03) 本地存储不等于数据不出机，远程LLM配置会收到画像构造输入；精细心理描述和解释不证明更懂用户，需本人盲评。
+> **主要限制**：[Q03](#research-q03) 本地存储不等于数据不出机，远程LLM配置会收到画像构造输入；精细心理描述和解释不证明更懂用户，需本人盲评。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把跨平台信号与显式纠正集中成个人可维护的推荐控制流程，贡献在控制权和反馈组织；外仓DSH桥能力不归根。
 
-[Q01](#research-q01)、[Q02](#research-q02) 把跨平台信号与显式纠正集中成个人可维护的推荐控制流程，贡献在控制权和反馈组织；外仓DSH桥能力不归根。
-
 可借鉴先持久事件后可重试投影、显式request_id与非关键hook延期；移植需保留重复键和回读对账，不能把返回已记录理解为所有后续推理完成。
 
 <a id="detail-section-9"></a>
@@ -161,7 +159,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -177,7 +175,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 19](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=grey&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 11](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=11&color=grey&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+created%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z) [![近30天关闭 14](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=14&color=grey&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z)
+[![Issue 未关闭 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=737b86&logo=github)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 11](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=11&color=737b86&logo=github)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+created%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z) [![近30天关闭 14](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=14&color=737b86&logo=github)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z)
 
 
 

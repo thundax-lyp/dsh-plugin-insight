@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[31c0aee](https://github.com/crafter-station/petdex/tree/31c0aee7f4fb387774b87d40e8047dc0f9cea94b)
+源码版本：[31c0aee](https://github.com/crafter-station/petdex/tree/31c0aee7f4fb387774b87d40e8047dc0f9cea94b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C283&color=yellow&logo=github&style=flat)](https://github.com/crafter-station/petdex)
+[![GitHub ★ 4,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C283&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/crafter-station/petdex)
 <!-- END META -->
 
-> **实现功能**：提供动画宠物画廊、安装CLI与响应编码Agent活动的独立桌面应用。
+> **功能**：提供动画宠物画廊、安装CLI与响应编码Agent活动的独立桌面应用。
 
-> **核心亮点**：[Q02](#research-q02)DSH桥把会话事件映射为宠物状态并隔离UI发送失败；事件归一化可借鉴，根项目是跨Agent宠物平台而非直接DSH插件。
+> **亮点**：[Q02](#research-q02)DSH桥把会话事件映射为宠物状态并隔离UI发送失败；事件归一化可借鉴，根项目是跨Agent宠物平台而非直接DSH插件。
 
-> **风险与缺陷**：[Q03](#research-q03)尽力队列与吞掉发送失败使动画不能作为可靠完成记录；状态提示价值应与娱乐陪伴分开。
+> **主要限制**：[Q03](#research-q03)尽力队列与吞掉发送失败使动画不能作为可靠完成记录；状态提示价值应与娱乐陪伴分开。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：[Q02](#research-q02)DSH桥把会话事件映射为宠物状态并隔离UI发送失败；事件归一化可借鉴，根项目是跨Agent宠物平台而非直接DSH插件。
 
-[Q02](#research-q02)DSH桥把会话事件映射为宠物状态并隔离UI发送失败；事件归一化可借鉴，根项目是跨Agent宠物平台而非直接DSH插件。
-
 normalizer把事件类型、会话层级和序号去重集中管理，适合其他可选显示端借鉴；有损队列只适合容忍丢失的UI，不应移作审计或业务通知。Zig桌面实现未纳入JS/TS总LOC统计。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ normalizer把事件类型、会话层级和序号去重集中管理，适合其�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

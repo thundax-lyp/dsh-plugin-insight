@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[009e04d](https://github.com/Arrosam/dsh-idle-compact/tree/009e04d8016b7ce96eb88f316ddbb6280d2005fd)
+源码版本：[009e04d](https://github.com/Arrosam/dsh-idle-compact/tree/009e04d8016b7ce96eb88f316ddbb6280d2005fd)
 
 <!-- BEGIN META -->
-[![npm 30d 880](https://img.shields.io/static/v1?label=npm+30d&message=880&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-idle-compact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-idle-compact)
+[![npm 30d 880](https://img.shields.io/static/v1?label=npm+30d&message=880&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-idle-compact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-idle-compact)
 <!-- END META -->
 
-> **实现功能**：在长会话空闲时预生成压缩摘要，并由用户确认后应用到会话。
+> **功能**：在长会话空闲时预生成压缩摘要，并由用户确认后应用到会话。
 
-> **核心亮点**：[Q01](#research-q01) 的贡献是将摘要计算与会话提交分离，复用宿主compact而保留用户确认；[Q02](#research-q02) 的异步作用域使普通并发调用不误用准备结果。属于预计算与事务式确认的具体组合，未证明算法原创或净节费。
+> **亮点**：[Q01](#research-q01) 的贡献是将摘要计算与会话提交分离，复用宿主compact而保留用户确认；[Q02](#research-q02) 的异步作用域使普通并发调用不误用准备结果。属于预计算与事务式确认的具体组合，未证明算法原创或净节费。
 
-> **风险与缺陷**：[Q03](#research-q03) 说明缓存寿命只是延迟配置代理，摘要失效保护解决正确性的一部分，却不能证明预付请求比手动压缩更经济。供应商缓存与用户回访概率是核心限制。
+> **主要限制**：[Q03](#research-q03) 说明缓存寿命只是延迟配置代理，摘要失效保护解决正确性的一部分，却不能证明预付请求比手动压缩更经济。供应商缓存与用户回访概率是核心限制。
 
 **本文目录**
 
@@ -94,8 +94,6 @@
 
 > **亮点**：[Q01](#research-q01) 的贡献是将摘要计算与会话提交分离，复用宿主compact而保留用户确认；[Q02](#research-q02) 的异步作用域使普通并发调用不误用准备结果。属于预计算与事务式确认的具体组合，未证明算法原创或净节费。
 
-[Q01](#research-q01) 的贡献是将摘要计算与会话提交分离，复用宿主compact而保留用户确认；[Q02](#research-q02) 的异步作用域使普通并发调用不误用准备结果。属于预计算与事务式确认的具体组合，未证明算法原创或净节费。
-
 PreparedStore单一拥有准备状态，RequestReplay用AsyncLocalStorage隔离并发范围，调度器独立处理abort，值得借鉴。移植需要稳定会话surface版本和可在副本运行的压缩服务；这些宿主内部约定是维护成本。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ PreparedStore单一拥有准备状态，RequestReplay用AsyncLocalStorage隔离�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -160,7 +158,7 @@ PreparedStore单一拥有准备状态，RequestReplay用AsyncLocalStorage隔离�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z)
 
 
 

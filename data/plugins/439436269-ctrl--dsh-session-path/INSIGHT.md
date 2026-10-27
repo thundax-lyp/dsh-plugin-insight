@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[9ffc7b3](https://github.com/439436269-ctrl/dsh-session-path/tree/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607)
+源码版本：[9ffc7b3](https://github.com/439436269-ctrl/dsh-session-path/tree/9ffc7b3f1bfdeb67a7614ff23463c6844b47e607)
 
 <!-- BEGIN META -->
-[![npm 30d 667](https://img.shields.io/static/v1?label=npm+30d&message=667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-session-path) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-session-path)
+[![npm 30d 667](https://img.shields.io/static/v1?label=npm+30d&message=667&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-path) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-path)
 <!-- END META -->
 
-> **实现功能**：复制DSH会话日志位置，或把压缩日志导出为可读交接文件，便于另一个会话阅读接续。
+> **功能**：复制DSH会话日志位置，或把压缩日志导出为可读交接文件，便于另一个会话阅读接续。
 
-> **核心亮点**：集中日志定位、多帧解压和交接入口，减少手写接线；增量在流程整合而非新隔离或接续算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：集中日志定位、多帧解压和交接入口，减少手写接线；增量在流程整合而非新隔离或接续算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：ID未限制单路径组件/真实根，JSONL保留前缀而非最新尾部，裁剪与解码失败不足以说明完整性；同名明文可覆盖。详见[Q02](#research-q02)。
+> **主要限制**：ID未限制单路径组件/真实根，JSONL保留前缀而非最新尾部，裁剪与解码失败不足以说明完整性；同名明文可覆盖。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：集中日志定位、多帧解压和交接入口，减少手写接线；增量在流程整合而非新隔离或接续算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-集中日志定位、多帧解压和交接入口，减少手写接线；增量在流程整合而非新隔离或接续算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用点包括纯定位/解析/渲染分层、数值代际排序、旧新目录命名兼容、多帧结构扫描、finally关闭文件、UI复制拒绝反馈，以及将上下文注入区分于用户消息。损坏时保留前缀有可用性价值，但静默部分成功和缺来源收据会影响可信度，不能只列成容错亮点。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ ID未限制单路径组件/真实根，JSONL保留前缀而非最新尾部，裁
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@ ID未限制单路径组件/真实根，JSONL保留前缀而非最新尾部，裁
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+created%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+created%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-session-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A25%3A40.837Z..2026-10-22T06%3A25%3A40.837Z)
 
 
 

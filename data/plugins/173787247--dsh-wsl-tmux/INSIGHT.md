@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[f6f2372](https://github.com/173787247/dsh-wsl-tmux/tree/f6f23727c2959d69559ec26f474d2e871473c224)
+源码版本：[f6f2372](https://github.com/173787247/dsh-wsl-tmux/tree/f6f23727c2959d69559ec26f474d2e871473c224)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-tmux)
 <!-- END META -->
 
-> **实现功能**：提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。
+> **功能**：提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。
 
-> **核心亮点**：将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。
+> **亮点**：将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：默认socket不绑定agent工作区，code1一律空与文本隐藏截断可能误读任务，头部切片可漏最新尾部。详见[Q03](#research-q03)。
+> **主要限制**：默认socket不绑定agent工作区，code1一律空与文本隐藏截断可能误读任务，头部切片可漏最新尾部。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。
 
-将原生tmux查询包装为受限模型入口，减少手工复制输出。详见[Q01](#research-q01)。
-
 核心分层/固定argv可复用，补精确target、错误分层和显式部分结果比测试数量更关键。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+created%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+created%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z)
 
 
 

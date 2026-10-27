@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[60db12b](https://github.com/AgentConnect/dsh-awiki/tree/60db12b72181668b8ea1a270bddb279bb0f50ed7)
+源码版本：[60db12b](https://github.com/AgentConnect/dsh-awiki/tree/60db12b72181668b8ea1a270bddb279bb0f50ed7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@awiki/dsh-plugin)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AgentConnect/dsh-awiki) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@awiki/dsh-plugin) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@awiki/dsh-plugin)
 <!-- END META -->
 
-> **实现功能**：将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。
+> **功能**：将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。
 
-> **核心亮点**：整合独立身份和 IM Core、Host 公共 DTO、通信工具与界面，并增加会话/租户范围控制。它相对“在独立 AWiki 客户端收发消息，再人工复制给模型并把生成结果复制回去”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+> **亮点**：整合独立身份和 IM Core、Host 公共 DTO、通信工具与界面，并增加会话/租户范围控制。它相对“在独立 AWiki 客户端收发消息，再人工复制给模型并把生成结果复制回去”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：可选入站监听会把外部消息触发 Agent；效果发生后再失败可能导致重放，且底层密钥、网络和租户服务不由本插件证明。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+> **主要限制**：可选入站监听会把外部消息触发 Agent；效果发生后再失败可能导致重放，且底层密钥、网络和租户服务不由本插件证明。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：整合独立身份和 IM Core、Host 公共 DTO、通信工具与界面，并增加会话/租户范围控制。它相对“在独立 AWiki 客户端收发消息，再人工复制给模型并把生成结果复制回去”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
 
-整合独立身份和 IM Core、Host 公共 DTO、通信工具与界面，并增加会话/租户范围控制。它相对“在独立 AWiki 客户端收发消息，再人工复制给模型并把生成结果复制回去”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
-
 固定源码把关键职责收敛到 lib/index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“可选listener仅在白名单与故障演练后启用｜turn失败不提交水位，已发生工具效果有独立阶段记录”验证。详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -169,7 +167,7 @@
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A48.159Z..2026-10-22T15%3A12%3A48.159Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AgentConnect/dsh-awiki/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A12%3A48.159Z..2026-10-22T15%3A12%3A48.159Z)
+[![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AgentConnect/dsh-awiki/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A48.159Z..2026-10-22T15%3A12%3A48.159Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AgentConnect/dsh-awiki/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A12%3A48.159Z..2026-10-22T15%3A12%3A48.159Z)
 
 暂未获取：Issue 未关闭。
 

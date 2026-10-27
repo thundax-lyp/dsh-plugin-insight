@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[83faf70](https://github.com/omdsh-dev/DSH-better-sidebar/tree/83faf70940160e5cd4c5332f5400aa8f4dbbb6d6)
+源码版本：[83faf70](https://github.com/omdsh-dev/DSH-better-sidebar/tree/83faf70940160e5cd4c5332f5400aa8f4dbbb6d6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,528](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C528&color=yellow&logo=github&style=flat)](https://github.com/omdsh-dev/DSH-better-sidebar) [![npm 30d 182,354](https://img.shields.io/static/v1?label=npm+30d&message=182%2C354&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-better-sidebar) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-better-sidebar)
+[![GitHub ★ 4,528](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C528&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/DSH-better-sidebar) [![npm 30d 182,354](https://img.shields.io/static/v1?label=npm+30d&message=182%2C354&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar)
 <!-- END META -->
 
-> **实现功能**：为DSH提供文件编辑预览、Git、任务和侧聊工作台，并开放标签页与预览器扩展接口。
+> **功能**：为DSH提供文件编辑预览、Git、任务和侧聊工作台，并开放标签页与预览器扩展接口。
 
-> **核心亮点**：[Q03](#research-q03)识别出把会话目录、编辑和Git入口结合的工作流贡献，以及内外部页面共用的注册契约。相对IDE不是能力普遍领先，只有频繁在DSH会话中核对修改时同上下文整合才有增量。
+> **亮点**：[Q03](#research-q03)识别出把会话目录、编辑和Git入口结合的工作流贡献，以及内外部页面共用的注册契约。相对IDE不是能力普遍领先，只有频繁在DSH会话中核对修改时同上下文整合才有增量。
 
-> **风险与缺陷**：[Q04](#research-q04)核实workspace围栏已移除，路由准入不能收窄已准入用户的文件权限。当前版本又要求明确宿主版本，不能将会话作用域或latest安装命令理解成隔离或兼容保证。
+> **主要限制**：[Q04](#research-q04)核实workspace围栏已移除，路由准入不能收窄已准入用户的文件权限。当前版本又要求明确宿主版本，不能将会话作用域或latest安装命令理解成隔离或兼容保证。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：[Q03](#research-q03)识别出把会话目录、编辑和Git入口结合的工作流贡献，以及内外部页面共用的注册契约。相对IDE不是能力普遍领先，只有频繁在DSH会话中核对修改时同上下文整合才有增量。
 
-[Q03](#research-q03)识别出把会话目录、编辑和Git入口结合的工作流贡献，以及内外部页面共用的注册契约。相对IDE不是能力普遍领先，只有频繁在DSH会话中核对修改时同上下文整合才有增量。
-
 可借鉴同步快照注册表、HMR disposer、tab去重策略和独立文件上传流式提交。文件根删除保护通过dev+ino识别同一目录而非只比路径拼写，解决别名绕过；这只是保护当前root，不是整个文件权限策略。移植应重新建立路径与准入威胁模型，旧函数名ensureWorkspacePath容易误导调用者。测试覆盖定义多但本轮未执行，不用文件数证明可靠。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[9f56c82](https://github.com/173787247/dsh-wsl-jev/tree/9f56c8231b4a226ad1b396c38b6375fbdf3d83fb)
+源码版本：[9f56c82](https://github.com/173787247/dsh-wsl-jev/tree/9f56c8231b4a226ad1b396c38b6375fbdf3d83fb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-jev)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-jev)
 <!-- END META -->
 
-> **实现功能**：向 DSH 注册四个 Jev 工具，经 OpenRouter 或 TypeSafe System One 获取 typed 判断。
+> **功能**：向 DSH 注册四个 Jev 工具，经 OpenRouter 或 TypeSafe System One 获取 typed 判断。
 
-> **核心亮点**：把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
+> **亮点**：把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：缺 evidence 仍可问模型，有限清洗不能保证外发安全，未知 rank key 仍可 ok:true。详见[Q03](#research-q03)。
+> **主要限制**：缺 evidence 仍可问模型，有限清洗不能保证外发安全，未知 rank key 仍可 ok:true。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
 
-把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
-
 无 key 工具仍注册但调用失败；client 发 state/questions；rank 未识别 key 可 ok:true 且 text:null；错误响应片段可能进工具结果。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ mock 注入空证据/假密钥/异常返回；真实低敏有标签集对照直�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -154,7 +152,7 @@ mock 注入空证据/假密钥/异常返回；真实低敏有标签集对照直�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-jev/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-jev/issues?q=is%3Aissue+created%3A2026-09-22T05%3A41%3A55.471Z..2026-10-22T05%3A41%3A55.471Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-jev/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A41%3A55.471Z..2026-10-22T05%3A41%3A55.471Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-jev/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-jev/issues?q=is%3Aissue+created%3A2026-09-22T05%3A41%3A55.471Z..2026-10-22T05%3A41%3A55.471Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-jev/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A41%3A55.471Z..2026-10-22T05%3A41%3A55.471Z)
 
 
 

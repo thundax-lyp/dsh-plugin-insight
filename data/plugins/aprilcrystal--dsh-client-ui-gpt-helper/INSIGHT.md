@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[bc18b1a](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper/tree/bc18b1a14422f08ea36f7b0f57cf26da07807af0)
+源码版本：[bc18b1a](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper/tree/bc18b1a14422f08ea36f7b0f57cf26da07807af0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper)
 <!-- END META -->
 
-> **实现功能**：以桌面风格弹窗选择模型和思考级别，并提供配色与装饰性快速模式动画。
+> **功能**：以桌面风格弹窗选择模型和思考级别，并提供配色与装饰性快速模式动画。
 
-> **核心亮点**：将既有原型交互适配到 DSH 共享模型目录，用滑块表达模型广告的思考级别，避免 UI 自建第二套模型选择状态；增量为交互适配，非推理加速。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将既有原型交互适配到 DSH 共享模型目录，用滑块表达模型广告的思考级别，避免 UI 自建第二套模型选择状态；增量为交互适配，非推理加速。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：fast 是动画却使用速度语义，可能使用户误判实际能力；同时每控件的全局配色快捷键会翻转同一 store，多挂载条件下可能相互抵消，实际宿主可达性待核查。[Q03](#research-q03)
+> **主要限制**：fast 是动画却使用速度语义，可能使用户误判实际能力；同时每控件的全局配色快捷键会翻转同一 store，多挂载条件下可能相互抵消，实际宿主可达性待核查。[Q03](#research-q03)
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：将既有原型交互适配到 DSH 共享模型目录，用滑块表达模型广告的思考级别，避免 UI 自建第二套模型选择状态；增量为交互适配，非推理加速。[Q01](#research-q01) [Q02](#research-q02)
 
-将既有原型交互适配到 DSH 共享模型目录，用滑块表达模型广告的思考级别，避免 UI 自建第二套模型选择状态；增量为交互适配，非推理加速。[Q01](#research-q01) [Q02](#research-q02)
-
 共享目录的 pending/error 和成功才关闭菜单值得借鉴；single slot 的负优先级接线与间接服务注入也构成维护约束。全局快捷键所有权与每会话组件生命周期应分别设计。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ fast 是动画却使用速度语义，可能使用户误判实际能力；同时
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

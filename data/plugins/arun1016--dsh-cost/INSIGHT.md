@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[20be220](https://github.com/Arun1016/dsh-cost/tree/20be220d554feb5df6c2c71f8b59d8a198e17c8f)
+源码版本：[20be220](https://github.com/Arun1016/dsh-cost/tree/20be220d554feb5df6c2c71f8b59d8a198e17c8f)
 
 <!-- BEGIN META -->
-[![npm 30d 378](https://img.shields.io/static/v1?label=npm+30d&message=378&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-cost-pill) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-cost-pill)
+[![npm 30d 378](https://img.shields.io/static/v1?label=npm+30d&message=378&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cost-pill) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cost-pill)
 <!-- END META -->
 
-> **实现功能**：在会话输入框旁显示账户余额、计费时段及按模型拆分的会话费用。
+> **功能**：在会话输入框旁显示账户余额、计费时段及按模型拆分的会话费用。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 表明增量在会话内将余额和逐请求费用联系起来，按事件时间选价格而不是只用总token乘当下费率。价格本身继承外部计费规则，没有识别新计费方法。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 表明增量在会话内将余额和逐请求费用联系起来，按事件时间选价格而不是只用总token乘当下费率。价格本身继承外部计费规则，没有识别新计费方法。
 
-> **风险与缺陷**：[Q03](#research-q03) 的关键是读者是否把估算当实际账单。非北京时区、未知模型与缺usage都可改变结果，余额存在也不能证明本地费用准确。
+> **主要限制**：[Q03](#research-q03) 的关键是读者是否把估算当实际账单。非北京时区、未知模型与缺usage都可改变结果，余额存在也不能证明本地费用准确。
 
 **本文目录**
 
@@ -94,8 +94,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 表明增量在会话内将余额和逐请求费用联系起来，按事件时间选价格而不是只用总token乘当下费率。价格本身继承外部计费规则，没有识别新计费方法。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 表明增量在会话内将余额和逐请求费用联系起来，按事件时间选价格而不是只用总token乘当下费率。价格本身继承外部计费规则，没有识别新计费方法。
-
 纯函数化时段、价格与usage累积方便检查和移植；关键维护点是供应商规则、宿主事件结构与响应失败语义。不能据测试文件存在声称验证通过。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

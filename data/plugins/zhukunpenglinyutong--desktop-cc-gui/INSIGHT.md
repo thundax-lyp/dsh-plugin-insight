@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[af3537b](https://github.com/zhukunpenglinyutong/desktop-cc-gui/tree/af3537bee62d9f219c879353276f2d6c840e9e6c)
+源码版本：[af3537b](https://github.com/zhukunpenglinyutong/desktop-cc-gui/tree/af3537bee62d9f219c879353276f2d6c840e9e6c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,520](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C520&color=yellow&logo=github&style=flat)](https://github.com/zhukunpenglinyutong/desktop-cc-gui)
+[![GitHub ★ 4,520](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C520&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhukunpenglinyutong/desktop-cc-gui)
 <!-- END META -->
 
-> **实现功能**：用独立桌面界面接入DSH及多个编码CLI，管理会话、工具输出和项目。
+> **功能**：用独立桌面界面接入DSH及多个编码CLI，管理会话、工具输出和项目。
 
-> **核心亮点**：[Q02](#research-q02)DSH适配通过持久host session流而非终端抓屏，能保留结构化工具输出和恢复语义；多引擎统一界面有条件增量，不是DSH原生插件。
+> **亮点**：[Q02](#research-q02)DSH适配通过持久host session流而非终端抓屏，能保留结构化工具输出和恢复语义；多引擎统一界面有条件增量，不是DSH原生插件。
 
-> **风险与缺陷**：[Q03](#research-q03)DSH审批请求自动allowed-once，plan并非只读沙箱；对需要人工放行的用户，统一界面不能抹平权限差异。
+> **主要限制**：[Q03](#research-q03)DSH审批请求自动allowed-once，plan并非只读沙箱；对需要人工放行的用户，统一界面不能抹平权限差异。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：[Q02](#research-q02)DSH适配通过持久host session流而非终端抓屏，能保留结构化工具输出和恢复语义；多引擎统一界面有条件增量，不是DSH原生插件。
 
-[Q02](#research-q02)DSH适配通过持久host session流而非终端抓屏，能保留结构化工具输出和恢复语义；多引擎统一界面有条件增量，不是DSH原生插件。
-
 把每引擎协议放独立适配器有复用价值；DSH host ownership与流就绪屏障值得借鉴。Rust不在本工程JS/TS统计内，不能用inventory表代表原生后端总代码规模。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

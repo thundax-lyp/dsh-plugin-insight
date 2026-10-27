@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[e1c6158](https://github.com/7gzgn/dsh-file-handover/tree/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f)
+源码版本：[e1c6158](https://github.com/7gzgn/dsh-file-handover/tree/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。
+> **功能**：将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。
 
-> **核心亮点**：把原生文件选择框环节接进模型工具，给回读与候选记录。详见[Q01](#research-q01)。
+> **亮点**：把原生文件选择框环节接进模型工具，给回读与候选记录。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：默认首结构匹配无PID/HWND绑定，路径回读仅子串兜底，确认消息不等应用接收且取消未传播。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：默认首结构匹配无PID/HWND绑定，路径回读仅子串兜底，确认消息不等应用接收且取消未传播。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把原生文件选择框环节接进模型工具，给回读与候选记录。详见[Q01](#research-q01)。
 
-把原生文件选择框环节接进模型工具，给回读与候选记录。详见[Q01](#research-q01)。
-
 纯plan与动作拆分、失败现场/拒未回读确认可借鉴，需精确身份与取消。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+created%3A2026-09-22T06%3A24%3A33.147Z..2026-10-22T06%3A24%3A33.147Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A24%3A33.147Z..2026-10-22T06%3A24%3A33.147Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+created%3A2026-09-22T06%3A24%3A33.147Z..2026-10-22T06%3A24%3A33.147Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A24%3A33.147Z..2026-10-22T06%3A24%3A33.147Z)
 
 
 

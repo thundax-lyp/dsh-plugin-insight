@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[363e497](https://github.com/agentscope-ai/ReMe/tree/363e497ae96733271414ea4224e274e5de5e5253/integrations/dsh)
+源码版本：[363e497](https://github.com/agentscope-ai/ReMe/tree/363e497ae96733271414ea4224e274e5de5e5253/integrations/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,683](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C683&color=yellow&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe) [![npm 30d 1,949](https://img.shields.io/static/v1?label=npm+30d&message=1%2C949&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin)
+[![GitHub ★ 3,683](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C683&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/agentscope-ai/ReMe) [![npm 30d 1,949](https://img.shields.io/static/v1?label=npm+30d&message=1%2C949&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin)
 <!-- END META -->
 
-> **实现功能**：为DSH提供长期记忆检索、会话自动归档、每日整理与状态页面。
+> **功能**：为DSH提供长期记忆检索、会话自动归档、每日整理与状态页面。
 
-> **核心亮点**：相对每次手工粘贴历史，它把检索入口与完成轮次归档接入会话事件；相对整包记忆注入，只注入指引、按需search减少无关历史进入上下文的机会。durable outbox把暂时服务离线与会话交互分开，是桥接层具体增量；记忆质量主要仍属于ReMe服务和模型，不归功于适配器。 依据[Q03](#research-q03)。
+> **亮点**：相对每次手工粘贴历史，它把检索入口与完成轮次归档接入会话事件；相对整包记忆注入，只注入指引、按需search减少无关历史进入上下文的机会。durable outbox把暂时服务离线与会话交互分开，是桥接层具体增量；记忆质量主要仍属于ReMe服务和模型，不归功于适配器。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：关键质疑是自动归档会否把不完整回答长期化，以及未知网络结果会否重复写入。runtime允许max-tokens轮次入队。进一步核查同仓库服务端后确认，auto_memory按session_id与request_id哈希保存输入fingerprint及成功回执，已有同输入回执可重放、不同输入被拒绝；因此不能说服务端幂等全无材料。但执行顺序是先await _execute，再写成功回执，记忆写入与完成回执之间不是一个原子事务，进程在两者之间崩溃时仍需验证是否会再次执行。本轮只指出静态窗口，未复现重复事实。HTTP无API-key鉴权也要求可信网络。 依据[Q04](#research-q04)。
+> **主要限制**：关键质疑是自动归档会否把不完整回答长期化，以及未知网络结果会否重复写入。runtime允许max-tokens轮次入队。进一步核查同仓库服务端后确认，auto_memory按session_id与request_id哈希保存输入fingerprint及成功回执，已有同输入回执可重放、不同输入被拒绝；因此不能说服务端幂等全无材料。但执行顺序是先await _execute，再写成功回执，记忆写入与完成回执之间不是一个原子事务，进程在两者之间崩溃时仍需验证是否会再次执行。本轮只指出静态窗口，未复现重复事实。HTTP无API-key鉴权也要求可信网络。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：相对每次手工粘贴历史，它把检索入口与完成轮次归档接入会话事件；相对整包记忆注入，只注入指引、按需search减少无关历史进入上下文的机会。durable outbox把暂时服务离线与会话交互分开，是桥接层具体增量；记忆质量主要仍属于ReMe服务和模型，不归功于适配器。 依据[Q03](#research-q03)。
 
-相对每次手工粘贴历史，它把检索入口与完成轮次归档接入会话事件；相对整包记忆注入，只注入指引、按需search减少无关历史进入上下文的机会。durable outbox把暂时服务离线与会话交互分开，是桥接层具体增量；记忆质量主要仍属于ReMe服务和模型，不归功于适配器。 依据[Q03](#research-q03)。
-
 可复用设计是endpoint/session/day分批、fsync后rename、确认后删除及每Host私有锁。失败隔离按endpoint与session区分，能避免一份坏payload堵住所有来源；这仍需服务端配合。锁恢复中断fail-closed并提示停Host检查，可取但增加运维责任，不能称无配置自动恢复。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

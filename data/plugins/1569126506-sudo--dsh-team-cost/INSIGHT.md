@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[72f371c](https://github.com/1569126506-sudo/dsh-team-cost/tree/72f371c7cf45578791739c06b1d949e2868536dd)
+源码版本：[72f371c](https://github.com/1569126506-sudo/dsh-team-cost/tree/72f371c7cf45578791739c06b1d949e2868536dd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/1569126506-sudo/dsh-team-cost)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1569126506-sudo/dsh-team-cost)
 <!-- END META -->
 
-> **实现功能**：从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。
+> **功能**：从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。
 
-> **核心亮点**：把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。
+> **亮点**：把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：rollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串成员，未知模型费用为 0，CSV 按天导出丢成员/模型。见[Q02](#research-q02)、[Q03](#research-q03)。 正确价/无崩溃也只是事后计量，无并发在途预留；团队全量报表访问依宿主外层授权。
+> **主要限制**：rollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串成员，未知模型费用为 0，CSV 按天导出丢成员/模型。见[Q02](#research-q02)、[Q03](#research-q03)。 正确价/无崩溃也只是事后计量，无并发在途预留；团队全量报表访问依宿主外层授权。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。
 
-把会话事件的 token 桶汇入成员/模型/天账本并连接预算通知、工具报告和看板；较单会话用量视图形成团队管理入口。详见[Q01](#research-q01)。
-
 事件监听后异步 append JSONL 和更新 cells；每15秒写 rollup，启动只读缓存不重建；价格静态表及零价 fallback、cwd 前缀归因。
 
 即使价格正确、无崩溃且成员归因准确，计量仍发生在assistant/message已产生usage之后，store.record异步完成再evaluate。agent/request只检查现有汇总，没有为在途请求预留/锁定费用；并发请求可同时读到未超预算后放行，达到阈值后也只挡后续新请求，不停止已经发起的模型或提供全局费用硬顶。
@@ -146,7 +144,7 @@ rollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -160,7 +158,7 @@ rollup 不从 JSONL 重建，崩溃/缺缓存可少报；归因纯前缀可串�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1569126506-sudo/dsh-team-cost/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1569126506-sudo/dsh-team-cost/issues?q=is%3Aissue+created%3A2026-09-22T08%3A47%3A18.698Z..2026-10-22T08%3A47%3A18.698Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1569126506-sudo/dsh-team-cost/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A47%3A18.698Z..2026-10-22T08%3A47%3A18.698Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1569126506-sudo/dsh-team-cost/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1569126506-sudo/dsh-team-cost/issues?q=is%3Aissue+created%3A2026-09-22T08%3A47%3A18.698Z..2026-10-22T08%3A47%3A18.698Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1569126506-sudo/dsh-team-cost/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A47%3A18.698Z..2026-10-22T08%3A47%3A18.698Z)
 
 
 

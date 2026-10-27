@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[679a537](https://github.com/Anna-la/dsh-token-stat/tree/679a537f0c01be0b20f87677b173a1b7120c2b6b)
+源码版本：[679a537](https://github.com/Anna-la/dsh-token-stat/tree/679a537f0c01be0b20f87677b173a1b7120c2b6b)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：读取DSH会话日志累计token用量，按模型和日期展示，并保留报告及归档账本。
+> **功能**：读取DSH会话日志累计token用量，按模型和日期展示，并保留报告及归档账本。
 
-> **核心亮点**：独立归档让用量可跨日志删除保留，设置页和目录迁移降低长期维护门槛。[Q03](#research-q03) 主要贡献是生命周期组织，计量语义沿用既有usage。
+> **亮点**：独立归档让用量可跨日志删除保留，设置页和目录迁移降低长期维护门槛。[Q03](#research-q03) 主要贡献是生命周期组织，计量语义沿用既有usage。
 
-> **风险与缺陷**：模型工具只汇总当前folds，设置视图和报表合并归档；已删除会话可能造成入口口径不同。[Q04](#research-q04) 缓存字段和重试账单也不能由源码计数直接推断。
+> **主要限制**：模型工具只汇总当前folds，设置视图和报表合并归档；已删除会话可能造成入口口径不同。[Q04](#research-q04) 缓存字段和重试账单也不能由源码计数直接推断。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：独立归档让用量可跨日志删除保留，设置页和目录迁移降低长期维护门槛。[Q03](#research-q03) 主要贡献是生命周期组织，计量语义沿用既有usage。
 
-独立归档让用量可跨日志删除保留，设置页和目录迁移降低长期维护门槛。[Q03](#research-q03) 主要贡献是生命周期组织，计量语义沿用既有usage。
-
 纯折叠函数、按会话归档和实时缓冲易于测试与复用；独立存储隔离宿主清理。非事务多文件写入、损坏归档静默退化及多入口聚合分叉需要补强。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Anna-la/dsh-token-stat/issues?q=is%3Aissue+created%3A2026-09-23T07%3A59%3A08.760Z..2026-10-23T07%3A59%3A08.760Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Anna-la/dsh-token-stat/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A59%3A08.760Z..2026-10-23T07%3A59%3A08.760Z)
+[![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Anna-la/dsh-token-stat/issues?q=is%3Aissue+created%3A2026-09-23T07%3A59%3A08.760Z..2026-10-23T07%3A59%3A08.760Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Anna-la/dsh-token-stat/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A59%3A08.760Z..2026-10-23T07%3A59%3A08.760Z)
 
 暂未获取：Issue 未关闭。
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[6afcd57](https://github.com/1225Sakura/oh-my-deepseekharness/tree/6afcd572071d98896153492b9e7fecf18ea97352)
+源码版本：[6afcd57](https://github.com/1225Sakura/oh-my-deepseekharness/tree/6afcd572071d98896153492b9e7fecf18ea97352)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness) [![npm 30d 2,109](https://img.shields.io/static/v1?label=npm+30d&message=2%2C109&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness)
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1225Sakura/oh-my-deepseekharness) [![npm 30d 2,109](https://img.shields.io/static/v1?label=npm+30d&message=2%2C109&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@sakura12/oh-my-deepseekharness)
 <!-- END META -->
 
-> **实现功能**：为DSH提供角色技能、任务编排协议、团队状态与代码智能工具。
+> **功能**：为DSH提供角色技能、任务编排协议、团队状态与代码智能工具。
 
-> **核心亮点**：相对单纯提示词角色集合，可核查增量是结构化阶段迁移、队员身份、文件邮箱和终态守卫，为团队交接提供外部状态。相对宿主原生子代理，它增加编排约定及可查看的进度账本；角色和skills继承OMC/OMX理念，不应把移植数量当原创。恢复能力仍不等同自动续跑或主仓合并正确性。 依据[Q03](#research-q03)。
+> **亮点**：相对单纯提示词角色集合，可核查增量是结构化阶段迁移、队员身份、文件邮箱和终态守卫，为团队交接提供外部状态。相对宿主原生子代理，它增加编排约定及可查看的进度账本；角色和skills继承OMC/OMX理念，不应把移植数量当原创。恢复能力仍不等同自动续跑或主仓合并正确性。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：关键质疑是持久账本能否覆盖读写失败并约束真正执行。readPhaseState的JSON解析失败会抛错，但readFile包在未检查错误码的catch中，读权限或I/O错误也可能返回null；transitionPhasePersist会将null作为initialPhaseState继续，静态链路因此不能支持所有异常都保留阶段的强主张。本轮未制造文件故障，不能称已复现丢失；此外队员登记发生在spawn之后，两个动作不是同一事务。 依据[Q04](#research-q04)。
+> **主要限制**：关键质疑是持久账本能否覆盖读写失败并约束真正执行。readPhaseState的JSON解析失败会抛错，但readFile包在未检查错误码的catch中，读权限或I/O错误也可能返回null；transitionPhasePersist会将null作为initialPhaseState继续，静态链路因此不能支持所有异常都保留阶段的强主张。本轮未制造文件故障，不能称已复现丢失；此外队员登记发生在spawn之后，两个动作不是同一事务。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：相对单纯提示词角色集合，可核查增量是结构化阶段迁移、队员身份、文件邮箱和终态守卫，为团队交接提供外部状态。相对宿主原生子代理，它增加编排约定及可查看的进度账本；角色和skills继承OMC/OMX理念，不应把移植数量当原创。恢复能力仍不等同自动续跑或主仓合并正确性。 依据[Q03](#research-q03)。
 
-相对单纯提示词角色集合，可核查增量是结构化阶段迁移、队员身份、文件邮箱和终态守卫，为团队交接提供外部状态。相对宿主原生子代理，它增加编排约定及可查看的进度账本；角色和skills继承OMC/OMX理念，不应把移植数量当原创。恢复能力仍不等同自动续跑或主仓合并正确性。 依据[Q03](#research-q03)。
-
 可复用设计是runId隔离、终态不复活、registry文件锁与append-only邮箱，适合异步任务身份管理。移植须保留ID校验、原子写入和状态迁移，而非只搬协议文本。值得补强的是读文件错误分类与spawn登记之间的恢复协调；当前注释比可见catch的实际范围更强，维护者应以代码行为作为恢复边界。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -169,7 +167,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1225Sakura/oh-my-deepseekharness/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1225Sakura/oh-my-deepseekharness/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

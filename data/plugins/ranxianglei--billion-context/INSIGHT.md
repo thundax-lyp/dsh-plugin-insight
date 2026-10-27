@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[02bcdc4](https://github.com/ranxianglei/billion-context/tree/02bcdc4b7601c47a8965c4343032d9692748c975)
+源码版本：[02bcdc4](https://github.com/ranxianglei/billion-context/tree/02bcdc4b7601c47a8965c4343032d9692748c975)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,923](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C923&color=yellow&logo=github&style=flat)](https://github.com/ranxianglei/billion-context) [![npm 30d 2,010,311](https://img.shields.io/static/v1?label=npm+30d&message=2%2C010%2C311&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/billion-context) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/billion-context)
+[![GitHub ★ 2,923](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C923&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ranxianglei/billion-context) [![npm 30d 2,010,311](https://img.shields.io/static/v1?label=npm+30d&message=2%2C010%2C311&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
 <!-- END META -->
 
-> **实现功能**：为长会话提供模型驱动的增量分层压缩、原文恢复、上下文搜索及多客户端代理/原生通道。
+> **功能**：为长会话提供模型驱动的增量分层压缩、原文恢复、上下文搜索及多客户端代理/原生通道。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是让模型按范围增量折叠、按需恢复，而非只在达到阈值时全量总结；DSH工具准备与session归属控制把代理状态接到宿主请求。[Q03](#research-q03)支持状态可恢复，不证明所有摘要保真；kernel与vendored机制来源保留，不宣称全新原创。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是让模型按范围增量折叠、按需恢复，而非只在达到阈值时全量总结；DSH工具准备与session归属控制把代理状态接到宿主请求。[Q03](#research-q03)支持状态可恢复，不证明所有摘要保真；kernel与vendored机制来源保留，不宣称全新原创。
 
-> **风险与缺陷**：[Q03](#research-q03)指出summary长度/边界合格不等关键事实保留，可恢复也不等模型会知道何时恢复。若遗漏的否定或纠错不被意识到，窗口正常仍可任务失败；[Q04](#research-q04)还要求区分wire-mode、双压缩及原生compact恢复。不能以宣传token倍数覆盖这些条件。
+> **主要限制**：[Q03](#research-q03)指出summary长度/边界合格不等关键事实保留，可恢复也不等模型会知道何时恢复。若遗漏的否定或纠错不被意识到，窗口正常仍可任务失败；[Q04](#research-q04)还要求区分wire-mode、双压缩及原生compact恢复。不能以宣传token倍数覆盖这些条件。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是让模型按范围增量折叠、按需恢复，而非只在达到阈值时全量总结；DSH工具准备与session归属控制把代理状态接到宿主请求。[Q03](#research-q03)支持状态可恢复，不证明所有摘要保真；kernel与vendored机制来源保留，不宣称全新原创。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是让模型按范围增量折叠、按需恢复，而非只在达到阈值时全量总结；DSH工具准备与session归属控制把代理状态接到宿主请求。[Q03](#research-q03)支持状态可恢复，不证明所有摘要保真；kernel与vendored机制来源保留，不宣称全新原创。
-
 [Q02](#research-q02)工具准备和会话归属门控、[Q04](#research-q04)独立compaction gate及失败可见性值得借鉴。kernel纯状态接口与host I/O分开方便移植，但复杂fetch拦截、动态工具和preset替换要求维持精确接口；结构校验不能承担语义验收。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -175,7 +173,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 289](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=289&color=grey&logo=github&style=flat)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,677](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C677&color=grey&logo=github&style=flat)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A15.984Z..2026-10-27T02%3A07%3A15.984Z) [![近30天关闭 1,420](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C420&color=grey&logo=github&style=flat)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A15.984Z..2026-10-27T02%3A07%3A15.984Z)
+[![Issue 未关闭 289](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=289&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,677](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C677&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A15.984Z..2026-10-27T02%3A07%3A15.984Z) [![近30天关闭 1,420](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C420&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A15.984Z..2026-10-27T02%3A07%3A15.984Z)
 
 
 

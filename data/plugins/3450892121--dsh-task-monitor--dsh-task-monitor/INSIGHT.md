@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[e628e3e](https://github.com/3450892121/dsh-task-monitor/tree/e628e3ea76cf0f7f0a3489b93c9f00271daeb791/dsh-task-monitor)
+源码版本：[e628e3e](https://github.com/3450892121/dsh-task-monitor/tree/e628e3ea76cf0f7f0a3489b93c9f00271daeb791/dsh-task-monitor)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/3450892121/dsh-task-monitor)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3450892121/dsh-task-monitor)
 <!-- END META -->
 
-> **实现功能**：在侧边浮层汇总任务环境、Git、技能、MCP 与发布动作。
+> **功能**：在侧边浮层汇总任务环境、Git、技能、MCP 与发布动作。
 
-> **核心亮点**：把研究/开发上下文与交付动作放到同一面板，减少窗口切换；差异点是可操作监控而非单纯只读仪表盘。 详见[Q03](#research-q03)。
+> **亮点**：把研究/开发上下文与交付动作放到同一面板，减少窗口切换；差异点是可操作监控而非单纯只读仪表盘。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：提交、推送、切分支和发布会改变仓库或远端；根 README 与组件安全说明对写动作边界表述不一致，不能按只读工具信任。 详见[Q04](#research-q04)。
+> **主要限制**：提交、推送、切分支和发布会改变仓库或远端；根 README 与组件安全说明对写动作边界表述不一致，不能按只读工具信任。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：把研究/开发上下文与交付动作放到同一面板，减少窗口切换；差异点是可操作监控而非单纯只读仪表盘。 详见[Q03](#research-q03)。
 
-把研究/开发上下文与交付动作放到同一面板，减少窗口切换；差异点是可操作监控而非单纯只读仪表盘。 详见[Q03](#research-q03)。
-
 功能分层和对话框确认路径可见，但高权限操作应有命令预览、审计日志和原子恢复证据。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

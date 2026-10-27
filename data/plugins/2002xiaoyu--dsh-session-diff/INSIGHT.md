@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[f5b20d0](https://github.com/2002XiaoYu/dsh-session-diff/tree/f5b20d0001bb9955c4eebe0f2037507769e55197)
+源码版本：[f5b20d0](https://github.com/2002XiaoYu/dsh-session-diff/tree/f5b20d0001bb9955c4eebe0f2037507769e55197)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2002XiaoYu/dsh-session-diff)
 <!-- END META -->
 
-> **实现功能**：在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。
+> **功能**：在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。
 
-> **核心亮点**：把会话工具hunk、逆序还原与侧栏路由组合为会话级审查视图，并仅接管存在会话改动的文件。相对Git提供不同归因入口，Myers与宿主格式不属原创贡献；没有同条件审查收益对照。详见[Q03](#research-q03)。
+> **亮点**：把会话工具hunk、逆序还原与侧栏路由组合为会话级审查视图，并仅接管存在会话改动的文件。相对Git提供不同归因入口，Myers与宿主格式不属原创贡献；没有同条件审查收益对照。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：可信会话归因仍依赖启发式基线。后缀路径、重复片段和未校验跨页版本可能造成歧义，已发现的降级提示也不覆盖所有错配条件；均为源码推断，未复现。不能据此证明修改完整性。详见[Q04](#research-q04)。
+> **主要限制**：可信会话归因仍依赖启发式基线。后缀路径、重复片段和未校验跨页版本可能造成歧义，已发现的降级提示也不覆盖所有错配条件；均为源码推断，未复现。不能据此证明修改完整性。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -110,8 +110,6 @@ Git用于工作区相对基线的完整变更核查；原生查看器提供当�
 
 > **亮点**：把会话工具hunk、逆序还原与侧栏路由组合为会话级审查视图，并仅接管存在会话改动的文件。相对Git提供不同归因入口，Myers与宿主格式不属原创贡献；没有同条件审查收益对照。详见[Q03](#research-q03)。
 
-把会话工具hunk、逆序还原与侧栏路由组合为会话级审查视图，并仅接管存在会话改动的文件。相对Git提供不同归因入口，Myers与宿主格式不属原创贡献；没有同条件审查收益对照。详见[Q03](#research-q03)。
-
 可借鉴的是选择性路由、显式依赖声明、读请求取消与有界算法，分别处理插件共存、严格宿主上下文、过期异步回写与浏览器资源边界。store通过兼容多种snapshot访问方式降低接口形态差异的影响，但也增加了静默失败路径；以节点数和最后seq作memo键，在节点原地修订而长度和尾seq不变时存在失效遗漏的条件风险，未复现。
 
 构建器按src文件名排序拼接为宿主lazy-CJS，并核对包名、patch和关键导出标记，这是约束单文件客户端产物的轻量方法。它检查字符串契约不等于检查实际挂载。测试文件包含真实hunk构造、地址往返及基线还原断言，可作为设计证据；本轮未执行它们，不能声称通过。模块片段依赖拼接作用域，inventory对片段的解析报错也不能直接当语法失效。复用时需移植宿主事件格式、Remote和插槽契约，并补对应版本的一致性测试。
@@ -162,7 +160,7 @@ Git用于工作区相对基线的完整变更核查；原生查看器提供当�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -175,7 +173,7 @@ Git用于工作区相对基线的完整变更核查；原生查看器提供当�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z)
 
 
 

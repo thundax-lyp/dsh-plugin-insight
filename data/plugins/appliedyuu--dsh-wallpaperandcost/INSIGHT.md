@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[343cab5](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/343cab5881ef638e3d5453039726db9c9153038f)
+源码版本：[343cab5](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/343cab5881ef638e3d5453039726db9c9153038f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AppliedYuu/dsh-WallpaperAndCost)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AppliedYuu/dsh-WallpaperAndCost)
 <!-- END META -->
 
-> **实现功能**：为 DSH 添加图片视频壁纸、余额用量组件和 Wallpaper Engine 本地媒体提取入口。
+> **功能**：为 DSH 添加图片视频壁纸、余额用量组件和 Wallpaper Engine 本地媒体提取入口。
 
-> **核心亮点**：将媒体背景、会话头部用量与本地工坊提取集成到宿主，凭据解析留在Host且未定价模型不虚填金额；价值是操作集中，未证明整体效率收益。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将媒体背景、会话头部用量与本地工坊提取集成到宿主，凭据解析留在Host且未定价模型不虚填金额；价值是操作集中，未证明整体效率收益。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03)
+> **主要限制**：提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03)
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：将媒体背景、会话头部用量与本地工坊提取集成到宿主，凭据解析留在Host且未定价模型不虚填金额；价值是操作集中，未证明整体效率收益。[Q01](#research-q01) [Q02](#research-q02)
 
-将媒体背景、会话头部用量与本地工坊提取集成到宿主，凭据解析留在Host且未定价模型不虚填金额；价值是操作集中，未证明整体效率收益。[Q01](#research-q01) [Q02](#research-q02)
-
 媒体与设置分存、凭据不传浏览器值得借鉴；execFile参数数组避免shell拼接。但合并功能将装饰、外部查询和文件处理置于同包，需明确路由访问和能力生命周期。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

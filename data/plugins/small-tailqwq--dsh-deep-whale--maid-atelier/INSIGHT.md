@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[dc56112](https://github.com/Small-tailqwq/dsh-deep-whale/tree/dc561129f3bb3bc94c4a7c3e4007eaa274650d31/maid-atelier)
+源码版本：[dc56112](https://github.com/Small-tailqwq/dsh-deep-whale/tree/dc561129f3bb3bc94c4a7c3e4007eaa274650d31/maid-atelier)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,879](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C879&color=yellow&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale) [![npm 30d 59,613](https://img.shields.io/static/v1?label=npm+30d&message=59%2C613&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier)
+[![GitHub ★ 2,879](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C879&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Small-tailqwq/dsh-deep-whale) [![npm 30d 59,613](https://img.shields.io/static/v1?label=npm+30d&message=59%2C613&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier)
 <!-- END META -->
 
-> **实现功能**：为DSH Web加入鲸鱼娘女仆主题、亮暗背景、角色装饰和可配置侧栏展示。
+> **功能**：为DSH Web加入鲸鱼娘女仆主题、亮暗背景、角色装饰和可配置侧栏展示。
 
-> **核心亮点**：[Q02](#research-q02)、[Q03](#research-q03) 将美术、状态装饰、素材交付和释放归属集成为可逆主题，减少手写CSS接线；不改变模型或业务能力。
+> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 将美术、状态装饰、素材交付和释放归属集成为可逆主题，减少手写CSS接线；不改变模型或业务能力。
 
-> **风险与缺陷**：[Q03](#research-q03) DOM与宿主样式契约变化可能使主题失配或遮挡核心控件，版本声明和清理函数存在不等于交互与停用已验收。
+> **主要限制**：[Q03](#research-q03) DOM与宿主样式契约变化可能使主题失配或遮挡核心控件，版本声明和清理函数存在不等于交互与停用已验收。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 将美术、状态装饰、素材交付和释放归属集成为可逆主题，减少手写CSS接线；不改变模型或业务能力。
 
-[Q02](#research-q02)、[Q03](#research-q03) 将美术、状态装饰、素材交付和释放归属集成为可逆主题，减少手写CSS接线；不改变模型或业务能力。
-
 可借鉴原样式快照、自有节点/observer释放与hash图片allowlist；移植需重核DOM语义和素材授权，不能只复制全局选择器。
 
 <a id="detail-section-9"></a>
@@ -159,7 +157,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -172,7 +170,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 9](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=grey&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 38](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=38&color=grey&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A15.875Z..2026-10-27T02%3A07%3A15.875Z) [![近30天关闭 41](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=41&color=grey&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A15.875Z..2026-10-27T02%3A07%3A15.875Z)
+[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 38](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=38&color=737b86&logo=github)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A15.875Z..2026-10-27T02%3A07%3A15.875Z) [![近30天关闭 41](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=41&color=737b86&logo=github)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A15.875Z..2026-10-27T02%3A07%3A15.875Z)
 
 
 

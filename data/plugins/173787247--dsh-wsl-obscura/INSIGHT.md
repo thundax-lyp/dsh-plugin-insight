@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[f1dfad4](https://github.com/173787247/dsh-wsl-obscura/tree/f1dfad47dd78722babc61633805caade6557dc68)
+源码版本：[f1dfad4](https://github.com/173787247/dsh-wsl-obscura/tree/f1dfad47dd78722babc61633805caade6557dc68)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-obscura)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-obscura)
 <!-- END META -->
 
-> **实现功能**：从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。
+> **功能**：从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。
 
-> **核心亮点**：将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。
+> **亮点**：将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：isSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓冲区可能影响结果。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：isSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓冲区可能影响结果。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。
 
-将无头抓取接到 DSH Agent 工具面并明确 MCP/CDP 升级路径。详见[Q01](#research-q01)。
-
 argv 运行避免 shell 拼接、双层超时与输出限制；安全和可用性仍依赖外部二进制。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ isSafeHttpUrl 仅限协议，不能证明 SSRF 阻断；CLI 与外层超时/缓�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

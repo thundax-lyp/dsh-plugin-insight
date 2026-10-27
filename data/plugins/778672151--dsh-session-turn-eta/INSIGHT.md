@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[b5cdc8e](https://github.com/778672151/dsh-session-turn-eta/tree/b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11)
+源码版本：[b5cdc8e](https://github.com/778672151/dsh-session-turn-eta/tree/b5cdc8ec7f51a3c882598fc7bc073f7c629f4a11)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/778672151/dsh-session-turn-eta)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/778672151/dsh-session-turn-eta)
 <!-- END META -->
 
-> **实现功能**：按会话步长历史估计回合剩余时间，在输入框下显示时间型进度和中断状态。
+> **功能**：按会话步长历史估计回合剩余时间，在输入框下显示时间型进度和中断状态。
 
-> **核心亮点**：可重放事件预测与输入框时间提示接合，改善等待可见性。详见[Q01](#research-q01)。
+> **亮点**：可重放事件预测与输入框时间提示接合，改善等待可见性。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：finishing只是估计耗尽，事件空档/时钟/任务变化可偏差，interval未校准，全历史反复排序。详见[Q03](#research-q03)。
+> **主要限制**：finishing只是估计耗尽，事件空档/时钟/任务变化可偏差，interval未校准，全历史反复排序。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@ spinner/最近时长估计，等待提示不改变任务执行。
 
 > **亮点**：可重放事件预测与输入框时间提示接合，改善等待可见性。详见[Q01](#research-q01)。
 
-可重放事件预测与输入框时间提示接合，改善等待可见性。详见[Q01](#research-q01)。
-
 共享纯核心/严格projection与生产lib测试可复用，需真实回测和有界历史。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ finishing只是估计耗尽，事件空档/时钟/任务变化可偏差，interv
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@ finishing只是估计耗尽，事件空档/时钟/任务变化可偏差，interv
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/778672151/dsh-session-turn-eta/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/778672151/dsh-session-turn-eta/issues?q=is%3Aissue+created%3A2026-09-22T07%3A23%3A41.551Z..2026-10-22T07%3A23%3A41.551Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/778672151/dsh-session-turn-eta/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A23%3A41.551Z..2026-10-22T07%3A23%3A41.551Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/778672151/dsh-session-turn-eta/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/778672151/dsh-session-turn-eta/issues?q=is%3Aissue+created%3A2026-09-22T07%3A23%3A41.551Z..2026-10-22T07%3A23%3A41.551Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/778672151/dsh-session-turn-eta/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A23%3A41.551Z..2026-10-22T07%3A23%3A41.551Z)
 
 
 

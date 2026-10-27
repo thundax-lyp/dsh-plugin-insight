@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[39443eb](https://github.com/123dbl/dsh-side-session/tree/39443eb1ea15fb080121a3a6474426980f346a6c)
+源码版本：[39443eb](https://github.com/123dbl/dsh-side-session/tree/39443eb1ea15fb080121a3a6474426980f346a6c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/123dbl/dsh-side-session)
 <!-- END META -->
 
-> **实现功能**：从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。
+> **功能**：从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。
 
-> **核心亮点**：在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：Host不返回childID，事后目录差集在目录先到、冷缓存和并发时不能证明本次归属；错误跳转可能使问题错投。均为静态时序推演。详见[Q02](#research-q02)。
+> **主要限制**：Host不返回childID，事后目录差集在目录先到、冷缓存和并发时不能证明本次归属；错误跳转可能使问题错投。均为静态时序推演。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-在既有continuable spawn和官方会话视图上补一键菜单/跳转接线，不另造聊天系统；底层并行与持久化归上游。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 工程可借鉴处是把命令创建与官方聊天视图复用分开，Host透传signal，用ctx.effect托管命令和订阅，不引入自制聊天UI。发布src/lib双份且构建入口明确，便于审查实际装载逻辑；这种接线方式可迁移到其他“创建实体再跳转”场景，但当前目录猜测不是可复用的可靠关联协议。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Host不返回childID，事后目录差集在目录先到、冷缓存和并发时
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@ Host不返回childID，事后目录差集在目录先到、冷缓存和并发时
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+created%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+created%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/123dbl/dsh-side-session/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A04%3A31.143Z..2026-10-22T09%3A04%3A31.143Z)
 
 
 

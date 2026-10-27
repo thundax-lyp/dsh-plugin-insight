@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)
 
-分析版本：[199e203](https://github.com/imsai-sh/zhuzhiliao/tree/199e203b038ffb515f3a21189a29da4b4fb8518f)
+源码版本：[199e203](https://github.com/imsai-sh/zhuzhiliao/tree/199e203b038ffb515f3a21189a29da4b4fb8518f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=yellow&logo=github&style=flat)](https://github.com/imsai-sh/zhuzhiliao)
+[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
 <!-- END META -->
 
-> **实现功能**：在浏览器中模拟竹知了玩具的甩动、发声与本机圈数记录。
+> **功能**：在浏览器中模拟竹知了玩具的甩动、发声与本机圈数记录。
 
-> **核心亮点**：相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](#research-q01)。
+> **亮点**：相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](#research-q01)。
 
-> **风险与缺陷**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](#research-q03)。
+> **主要限制**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](#research-q01)。
 
-相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](#research-q01)。
-
 物理状态归主页面、渲染可选且初始化失败回退，是值得独立学习的分层；复用思想需自己实现或获得适用授权。SW的静态资源更新说明离线与联网生命周期要分开评价，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

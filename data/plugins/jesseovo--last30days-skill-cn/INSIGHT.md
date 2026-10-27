@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[af785c6](https://github.com/Jesseovo/last30days-skill-cn/tree/af785c682de2fb9192e495daf061308a7a6799ec)
+源码版本：[af785c6](https://github.com/Jesseovo/last30days-skill-cn/tree/af785c682de2fb9192e495daf061308a7a6799ec)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,967](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C967&color=yellow&logo=github&style=flat)](https://github.com/Jesseovo/last30days-skill-cn)
+[![GitHub ★ 1,967](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C967&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Jesseovo/last30days-skill-cn)
 <!-- END META -->
 
-> **实现功能**：检索近期中文平台讨论并聚合热榜，输出带来源的研究报告。
+> **功能**：检索近期中文平台讨论并聚合热榜，输出带来源的研究报告。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02) 在上游研究Skill基础上组织中文来源与质量状态，减少手工聚合步骤；成熟检索/去重框架和上游贡献不作本项目原创。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 在上游研究Skill基础上组织中文来源与质量状态，减少手工聚合步骤；成熟检索/去重框架和上游贡献不作本项目原创。
 
-> **风险与缺陷**：[Q03](#research-q03) 不同采集路径、日期缺失和转载使样本不可当全网观点比例，热度与相关性分数不验证事实；关键结论必须回原文。
+> **主要限制**：[Q03](#research-q03) 不同采集路径、日期缺失和转载使样本不可当全网观点比例，热度与相关性分数不验证事实；关键结论必须回原文。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 在上游研究Skill基础上组织中文来源与质量状态，减少手工聚合步骤；成熟检索/去重框架和上游贡献不作本项目原创。
 
-[Q01](#research-q01)、[Q02](#research-q02) 在上游研究Skill基础上组织中文来源与质量状态，减少手工聚合步骤；成熟检索/去重框架和上游贡献不作本项目原创。
-
 来源独立失败、统一处理与来源状态有复用价值；移植必须保留日期、via与错误语义，不能只复制评分而丢弃覆盖边界。
 
 <a id="detail-section-9"></a>
@@ -161,7 +159,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[6a85a7c](https://github.com/Alisa0808/vox-director/tree/6a85a7c341610442a6a5b1885e6e0217ab82a11f)
+源码版本：[6a85a7c](https://github.com/Alisa0808/vox-director/tree/6a85a7c341610442a6a5b1885e6e0217ab82a11f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,469](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C469&color=yellow&logo=github&style=flat)](https://github.com/Alisa0808/vox-director)
+[![GitHub ★ 2,469](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C469&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alisa0808/vox-director)
 <!-- END META -->
 
-> **实现功能**：以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。
+> **功能**：以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。
 
-> **核心亮点**：以beat/shot身份联接多模态阶段和本地音画组装，减少手工交接；生成模型贡献归服务提供方。见[Q01](#research-q01)。
+> **亮点**：以beat/shot身份联接多模态阶段和本地音画组装，减少手工交接；生成模型贡献归服务提供方。见[Q01](#research-q01)。
 
-> **风险与缺陷**：底层POST不重试但上层pending超时会submit新ID，且批末才落成品URL；未知任务不能当失败安全重跑。见[Q03](#research-q03)。
+> **主要限制**：底层POST不重试但上层pending超时会submit新ID，且批末才落成品URL；未知任务不能当失败安全重跑。见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：以beat/shot身份联接多模态阶段和本地音画组装，减少手工交接；生成模型贡献归服务提供方。见[Q01](#research-q01)。
 
-以beat/shot身份联接多模态阶段和本地音画组装，减少手工交接；生成模型贡献归服务提供方。见[Q01](#research-q01)。
-
 beat/shot显式身份和provider隔离值得借鉴；低层不重试POST与高层stall重提要同时审，移植需先补持久回执而非复制默认重试，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ beat/shot显式身份和provider隔离值得借鉴；低层不重试POST与高�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@ beat/shot显式身份和provider隔离值得借鉴；低层不重试POST与高�
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/Alisa0808/vox-director/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/Alisa0808/vox-director/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A29.764Z..2026-10-27T02%3A07%3A29.764Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Alisa0808/vox-director/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A29.764Z..2026-10-27T02%3A07%3A29.764Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/Alisa0808/vox-director/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Alisa0808/vox-director/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A29.764Z..2026-10-27T02%3A07%3A29.764Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Alisa0808/vox-director/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A29.764Z..2026-10-27T02%3A07%3A29.764Z)
 
 
 

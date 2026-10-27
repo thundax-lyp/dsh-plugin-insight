@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[620b85d](https://github.com/AlyceStocking/hover-glossary/tree/620b85d4291e6983cc2d1205ff76f4833978f38b)
+源码版本：[620b85d](https://github.com/AlyceStocking/hover-glossary/tree/620b85d4291e6983cc2d1205ff76f4833978f38b)
 
 <!-- BEGIN META -->
-[![npm 30d 48](https://img.shields.io/static/v1?label=npm+30d&message=48&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/hover-glossary) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/hover-glossary)
+[![npm 30d 48](https://img.shields.io/static/v1?label=npm+30d&message=48&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hover-glossary) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hover-glossary)
 <!-- END META -->
 
-> **实现功能**：在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。
+> **功能**：在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。
 
-> **核心亮点**：把本地多义词库、真实字形定位、消息/控件范围与归一化最长匹配组合到同屏浮层，减少手工查词切换；不做语境消歧。详见[Q02](#research-q02)。
+> **亮点**：把本地多义词库、真实字形定位、消息/控件范围与归一化最长匹配组合到同屏浮层，减少手工查词切换；不做语境消歧。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：启动自检先取Text并记录前24字符/完整token，再报告范围判定；无模型调用不能推出无内容诊断。鼠标单通道和长token候选预算也有限制。详见[Q03](#research-q03)。
+> **主要限制**：启动自检先取Text并记录前24字符/完整token，再报告范围判定；无模型调用不能推出无内容诊断。鼠标单通道和长token候选预算也有限制。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：把本地多义词库、真实字形定位、消息/控件范围与归一化最长匹配组合到同屏浮层，减少手工查词切换；不做语境消歧。详见[Q02](#research-q02)。
 
-把本地多义词库、真实字形定位、消息/控件范围与归一化最长匹配组合到同屏浮层，减少手工查词切换；不做语境消歧。详见[Q02](#research-q02)。
-
 没有模型请求/RPC并不等于完全没有内容诊断。apply自动selfCheck，对窗口中心附近取字，先保存Text前24字符与glyph/offset，再调用classify，且不论允许与否都继续tokenAt，把token与判定存全局并console.log。连续中文token可长于24字符。故即使坐标落在非聊天文字，诊断也可能含该处文本；代码不支持断言发送远端，控制台是否被宿主采集/留存未知。应缩减为无文本的API/计数诊断或显式选择后才探测。
 
 lookupAt的window默认16不是全文工作量硬上限。tokenAt可把连续中文当长token，起点枚举回溯至其开头，首起点stop至少到tokenEnd，再构建/归一化/排序候选。50ms只是事件间隔，不限制一次计算耗时；大会话长Text的成本没有测量。不要把已建索引等同恒定时间查词。
@@ -165,7 +163,7 @@ lookupAt的window默认16不是全文工作量硬上限。tokenAt可把连续中
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -178,7 +176,7 @@ lookupAt的window默认16不是全文工作量硬上限。tokenAt可把连续中
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+created%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+created%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z)
 
 
 

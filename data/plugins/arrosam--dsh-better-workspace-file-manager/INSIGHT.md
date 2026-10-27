@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[60b0534](https://github.com/Arrosam/dsh-better-workspace-file-manager/tree/60b0534ce70459a119762ad7fa10c64278204bc7)
+源码版本：[60b0534](https://github.com/Arrosam/dsh-better-workspace-file-manager/tree/60b0534ce70459a119762ad7fa10c64278204bc7)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。
+> **功能**：为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持将会话文件交接和版本保护编辑统一到Web界面，相对另开终端有流程便利。上传与移动同名保留体现实际使用条件，未识别新文件操作算法。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持将会话文件交接和版本保护编辑统一到Web界面，相对另开终端有流程便利。上传与移动同名保留体现实际使用条件，未识别新文件操作算法。
 
-> **风险与缺陷**：[Q03](#research-q03) 说明文本乐观锁不覆盖永久删除与多项移动的原子性，且预览文件下载允许沿用工作区外既有读权限。不能以“路径受限”一句话概括全部操作。
+> **主要限制**：[Q03](#research-q03) 说明文本乐观锁不覆盖永久删除与多项移动的原子性，且预览文件下载允许沿用工作区外既有读权限。不能以“路径受限”一句话概括全部操作。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持将会话文件交接和版本保护编辑统一到Web界面，相对另开终端有流程便利。上传与移动同名保留体现实际使用条件，未识别新文件操作算法。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 支持将会话文件交接和版本保护编辑统一到Web界面，相对另开终端有流程便利。上传与移动同名保留体现实际使用条件，未识别新文件操作算法。
-
 通过宿主fs做解析与文本版本写入、node:fs做字节流和rename是明确边界。票据下载时重验证值得借鉴，移植需重新审视后端权限和目录竞争。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -155,7 +153,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-better-workspace-file-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-better-workspace-file-manager/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A41.949Z..2026-10-24T05%3A56%3A41.949Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-better-workspace-file-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A41.949Z..2026-10-24T05%3A56%3A41.949Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-better-workspace-file-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-better-workspace-file-manager/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A41.949Z..2026-10-24T05%3A56%3A41.949Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-better-workspace-file-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A41.949Z..2026-10-24T05%3A56%3A41.949Z)
 
 
 

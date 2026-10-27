@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e816461](https://github.com/13071301808/dsh-composer-expand/tree/e816461115436f1cb084f868398e610396d00679)
+源码版本：[e816461](https://github.com/13071301808/dsh-composer-expand/tree/e816461115436f1cb084f868398e610396d00679)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand) [![npm 30d 969](https://img.shields.io/static/v1?label=npm+30d&message=969&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-composer-expand) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-composer-expand)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/13071301808/dsh-composer-expand) [![npm 30d 969](https://img.shields.io/static/v1?label=npm+30d&message=969&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-composer-expand) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-composer-expand)
 <!-- END META -->
 
-> **实现功能**：在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。
+> **功能**：在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。
 
-> **核心亮点**：借官方slot/data属性调整高度和Enter，并在DOM重建后恢复展开；只存布尔状态，host无功能/外部请求。详见[Q02](#research-q02)。
+> **亮点**：借官方slot/data属性调整高度和Enter，并在DOM重建后恢复展开；只存布尔状态，host无功能/外部请求。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：样式只第一root却键盘绑所有seat，菜单仅seat内检测；Lexical原生换行/撤销依宿主；全局observer与强Set旧seat可能累积。兼容表非操作验收。详见[Q03](#research-q03)。
+> **主要限制**：样式只第一root却键盘绑所有seat，菜单仅seat内检测；Lexical原生换行/撤销依宿主；全局observer与强Set旧seat可能累积。兼容表非操作验收。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -116,8 +116,6 @@
 
 > **亮点**：借官方slot/data属性调整高度和Enter，并在DOM重建后恢复展开；只存布尔状态，host无功能/外部请求。详见[Q02](#research-q02)。
 
-借官方slot/data属性调整高度和Enter，并在DOM重建后恢复展开；只存布尔状态，host无功能/外部请求。详见[Q02](#research-q02)。
-
 capture handler只对无修饰Enter且非isComposing、target属于seat内editable、seat内无listbox时stopPropagation，不preventDefault。这样试图避开宿主bubble发送并保原生换行，IME/修饰键主动让路是合理约束。但Lexical是否接纳原生编辑DOM/历史、是否丢光标或撤销边界依宿主实际事件链，不能仅凭stopPropagation证明所有编辑器正确。
 
 菜单检测只找seat内[role=listbox]，若宿主portal到seat外，可能错误拦截选候选；先前祖先capture发送也不受此监听影响。多root时仅第一root变高却所有seat拦Enter，样式与行为可不同步；README承认单composer假设，不能把props.sessionId当实际隔离。
@@ -174,7 +172,7 @@ observer对全document子树每次新增都查全root/seats，无debounce；boun
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -186,7 +184,7 @@ observer对全document子树每次新增都查全root/seats，无debounce；boun
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand/issues?q=is%3Aissue+created%3A2026-09-22T08%3A09%3A10.123Z..2026-10-22T08%3A09%3A10.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/13071301808/dsh-composer-expand/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A09%3A10.123Z..2026-10-22T08%3A09%3A10.123Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/13071301808/dsh-composer-expand/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/13071301808/dsh-composer-expand/issues?q=is%3Aissue+created%3A2026-09-22T08%3A09%3A10.123Z..2026-10-22T08%3A09%3A10.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/13071301808/dsh-composer-expand/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A09%3A10.123Z..2026-10-22T08%3A09%3A10.123Z)
 
 
 

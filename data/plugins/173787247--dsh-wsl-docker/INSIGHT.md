@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[89b19c3](https://github.com/173787247/dsh-wsl-docker/tree/89b19c3428df8dffa4c6771050e774bf1f1eb22b)
+源码版本：[89b19c3](https://github.com/173787247/dsh-wsl-docker/tree/89b19c3428df8dffa4c6771050e774bf1f1eb22b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-docker)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-docker)
 <!-- END META -->
 
-> **实现功能**：在WSL查询Docker CLI/context/daemon、推理相关容器与GPU线索，并探固定8000端口的models状态。
+> **功能**：在WSL查询Docker CLI/context/daemon、推理相关容器与GPU线索，并探固定8000端口的models状态。
 
-> **核心亮点**：集中Docker上下文与推理线索减少手工接线，不是GPU或API完整验收。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：集中Docker上下文与推理线索减少手工接线，不是GPU或API完整验收。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：404也health ok且遮蔽专门错误提示，空DeviceRequests可判GPU，内部8000暴露/远程context与固定本机探测错配。详见[Q02](#research-q02)。
+> **主要限制**：404也health ok且遮蔽专门错误提示，空DeviceRequests可判GPU，内部8000暴露/远程context与固定本机探测错配。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：集中Docker上下文与推理线索减少手工接线，不是GPU或API完整验收。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-集中Docker上下文与推理线索减少手工接线，不是GPU或API完整验收。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 纯core/Host注册分离、focus缩小读取、execFile固定参数、依赖注入run/fetch便于受控材料核查、只读建议分开，均可复用。问题在一组强命名布尔压平了错误与就绪层级。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+created%3A2026-09-22T07%3A59%3A44.342Z..2026-10-22T07%3A59%3A44.342Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A59%3A44.342Z..2026-10-22T07%3A59%3A44.342Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+created%3A2026-09-22T07%3A59%3A44.342Z..2026-10-22T07%3A59%3A44.342Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A59%3A44.342Z..2026-10-22T07%3A59%3A44.342Z)
 
 
 

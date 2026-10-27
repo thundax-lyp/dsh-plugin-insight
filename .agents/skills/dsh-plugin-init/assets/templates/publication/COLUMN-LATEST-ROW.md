@@ -1,0 +1,1 @@
+| {{plugin}} | {{purpose}} | {{version}} | {{value}} |

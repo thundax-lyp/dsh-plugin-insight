@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c3f0f1c](https://github.com/173787247/dsh-wsl-net/tree/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f)
+源码版本：[c3f0f1c](https://github.com/173787247/dsh-wsl-net/tree/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-net)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-net)
 <!-- END META -->
 
-> **实现功能**：诊断WSL与DSH代理环境、代理TCP端口及HTTP可达性，并生成修复提示和可选子进程代理注入。
+> **功能**：诊断WSL与DSH代理环境、代理TCP端口及HTTP可达性，并生成修复提示和可选子进程代理注入。
 
-> **核心亮点**：把环境、宿主PID、代理监听和服务响应集中为Agent诊断报告，减少手工信息拼接。详见[Q01](#research-q01)。
+> **亮点**：把环境、宿主PID、代理监听和服务响应集中为Agent诊断报告，减少手工信息拼接。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装也缺显式卸载还原。详见[Q03](#research-q03)。
+> **主要限制**：HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装也缺显式卸载还原。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把环境、宿主PID、代理监听和服务响应集中为Agent诊断报告，减少手工信息拼接。详见[Q01](#research-q01)。
 
-把环境、宿主PID、代理监听和服务响应集中为Agent诊断报告，减少手工信息拼接。详见[Q01](#research-q01)。
-
 函数分层且可注入测试依赖；需补修复输出脱敏和包装生命周期。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@ HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+created%3A2026-09-22T05%3A21%3A02.153Z..2026-10-22T05%3A21%3A02.153Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A21%3A02.153Z..2026-10-22T05%3A21%3A02.153Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+created%3A2026-09-22T05%3A21%3A02.153Z..2026-10-22T05%3A21%3A02.153Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A21%3A02.153Z..2026-10-22T05%3A21%3A02.153Z)
 
 
 

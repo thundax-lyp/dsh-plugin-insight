@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[dc56112](https://github.com/Small-tailqwq/dsh-deep-whale/tree/dc561129f3bb3bc94c4a7c3e4007eaa274650d31)
+源码版本：[dc56112](https://github.com/Small-tailqwq/dsh-deep-whale/tree/dc561129f3bb3bc94c4a7c3e4007eaa274650d31)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,879](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C879&color=yellow&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale)
+[![GitHub ★ 2,879](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C879&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Small-tailqwq/dsh-deep-whale)
 <!-- END META -->
 
-> **实现功能**：为DSH提供鲸鱼娘主题皮肤合集和已安装皮肤的切换管理器。
+> **功能**：为DSH提供鲸鱼娘主题皮肤合集和已安装皮肤的切换管理器。
 
-> **核心亮点**：[Q02](#research-q02)、[Q03](#research-q03) 以稳定wiring、互斥管理和官方退路减少手工主题冲突，贡献在主题治理；根不独立增加模型能力或第四个主题。
+> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 以稳定wiring、互斥管理和官方退路减少手工主题冲突，贡献在主题治理；根不独立增加模型能力或第四个主题。
 
-> **风险与缺陷**：[Q02](#research-q02)、[Q03](#research-q03) 配置写入补偿不等于视觉事务，兼容豁免不等于输入与布局已验；DOM变化和并发配置仍可能破坏切换。
+> **主要限制**：[Q02](#research-q02)、[Q03](#research-q03) 配置写入补偿不等于视觉事务，兼容豁免不等于输入与布局已验；DOM变化和并发配置仍可能破坏切换。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 以稳定wiring、互斥管理和官方退路减少手工主题冲突，贡献在主题治理；根不独立增加模型能力或第四个主题。
 
-[Q02](#research-q02)、[Q03](#research-q03) 以稳定wiring、互斥管理和官方退路减少手工主题冲突，贡献在主题治理；根不独立增加模型能力或第四个主题。
-
 可借鉴原件保存、逐写补偿和显式官方默认；移植需核对配置层优先级与外部并发，不能把rename当多文件事务。
 
 <a id="detail-section-9"></a>
@@ -159,7 +157,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -176,7 +174,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 9](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=grey&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 38](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=38&color=grey&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A28.705Z..2026-10-27T02%3A07%3A28.705Z) [![近30天关闭 41](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=41&color=grey&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A28.705Z..2026-10-27T02%3A07%3A28.705Z)
+[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 38](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=38&color=737b86&logo=github)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A28.705Z..2026-10-27T02%3A07%3A28.705Z) [![近30天关闭 41](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=41&color=737b86&logo=github)](https://github.com/Small-tailqwq/dsh-deep-whale/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A28.705Z..2026-10-27T02%3A07%3A28.705Z)
 
 
 

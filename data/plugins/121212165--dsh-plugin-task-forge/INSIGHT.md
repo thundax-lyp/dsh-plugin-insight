@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[3d35a8f](https://github.com/121212165/dsh-plugin-task-forge/tree/3d35a8f3c1ea1d7ac5c59574302c71511f4071d4)
+源码版本：[3d35a8f](https://github.com/121212165/dsh-plugin-task-forge/tree/3d35a8f3c1ea1d7ac5c59574302c71511f4071d4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-task-forge)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/121212165/dsh-plugin-task-forge)
 <!-- END META -->
 
-> **实现功能**：将需求写成版本任务书，导出跨窗口交接包，记录回读、缺口答案和任务台账。
+> **功能**：将需求写成版本任务书，导出跨窗口交接包，记录回读、缺口答案和任务台账。
 
-> **核心亮点**：把自由文本交接改成版本化任务和缺口闭环，便于指出谁读过哪版；READY自报仍不证明语义理解或字节一致。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：把自由文本交接改成版本化任务和缺口闭环，便于指出谁读过哪版；READY自报仍不证明语义理解或字节一致。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：缺口段问题不影响parse ok；NEED-INPUT且空gaps也可能passing；全局pending可干扰无关会话，定义的queue没有在主要写路径使用，任务/ledger非事务。[Q03](#research-q03)、[Q04](#research-q04)
+> **主要限制**：缺口段问题不影响parse ok；NEED-INPUT且空gaps也可能passing；全局pending可干扰无关会话，定义的queue没有在主要写路径使用，任务/ledger非事务。[Q03](#research-q03)、[Q04](#research-q04)
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把自由文本交接改成版本化任务和缺口闭环，便于指出谁读过哪版；READY自报仍不证明语义理解或字节一致。[Q01](#research-q01)、[Q02](#research-q02)
 
-把自由文本交接改成版本化任务和缺口闭环，便于指出谁读过哪版；READY自报仍不证明语义理解或字节一致。[Q01](#research-q01)、[Q02](#research-q02)
-
 任务ID围栏、版本显示、漂移告警和缺价不造钱可借鉴；主写/台账分离及未用queue应明确收窄并发保证。[Q04](#research-q04)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 5](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=grey&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-task-forge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=grey&logo=github&style=flat)](https://github.com/121212165/dsh-plugin-task-forge/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
+[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/121212165/dsh-plugin-task-forge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/121212165/dsh-plugin-task-forge/issues?q=is%3Aissue+created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 暂未获取：近30天关闭。
 

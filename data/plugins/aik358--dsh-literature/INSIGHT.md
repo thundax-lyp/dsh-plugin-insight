@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[fc6650e](https://github.com/Aik358/dsh-literature/tree/fc6650ef12747de08512d99c2f9c8388572b7724)
+源码版本：[fc6650e](https://github.com/Aik358/dsh-literature/tree/fc6650ef12747de08512d99c2f9c8388572b7724)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-literature) [![npm 30d 1,892](https://img.shields.io/static/v1?label=npm+30d&message=1%2C892&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature) [![最新发布 2026-09-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-08&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-literature)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aik358/dsh-literature) [![npm 30d 1,892](https://img.shields.io/static/v1?label=npm+30d&message=1%2C892&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-literature) [![最新发布 2026-09-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-literature)
 <!-- END META -->
 
-> **实现功能**：在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。
+> **功能**：在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。
 
-> **核心亮点**：把标识识别、元数据、PDF阅读、引用与多目标归档接成会话内状态机，并用阶段错误和同key下载去重组织恢复；底层学术API和PDF.js归属上游，当前下载缺陷限制兑现。详见[Q02](#research-q02)。
+> **亮点**：把标识识别、元数据、PDF阅读、引用与多目标归档接成会话内状态机，并用阶段错误和同key下载去重组织恢复；底层学术API和PDF.js归属上游，当前下载缺陷限制兑现。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：全文候选push读取未声明trusted，源码与lib产物相同，静态可见会在候选构造触发错误；启动还会尝试无关Doctor detached supervisor。均未运行复现，不能当作已验收闭环。详见[Q03](#research-q03)。
+> **主要限制**：全文候选push读取未声明trusted，源码与lib产物相同，静态可见会在候选构造触发错误；启动还会尝试无关Doctor detached supervisor。均未运行复现，不能当作已验收闭环。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -115,8 +115,6 @@ README说核心库不需外部应用并不涵盖所有工具。figure可检测Py
 
 > **亮点**：把标识识别、元数据、PDF阅读、引用与多目标归档接成会话内状态机，并用阶段错误和同key下载去重组织恢复；底层学术API和PDF.js归属上游，当前下载缺陷限制兑现。详见[Q02](#research-q02)。
 
-把标识识别、元数据、PDF阅读、引用与多目标归档接成会话内状态机，并用阶段错误和同key下载去重组织恢复；底层学术API和PDF.js归属上游，当前下载缺陷限制兑现。详见[Q02](#research-q02)。
-
 最影响核心全文流程的是固定源码中的未绑定变量。fetch/pdf的push只声明url/source/kind/headers四个形参，构造对象却使用Boolean(trusted)，本模块没有trusted声明；发布入口lib/index.js也保留同一表达式。普通arXiv、元数据PDF或自定义源候选调用push时都会走这个自由变量读取，在没有同名环境绑定的通常模块执行中会抛ReferenceError。它发生在实际PDF下载前，外围pipeline只会把它归入fetch_failed；不能把重试或换OA源当作已解决。这里静态确认代码缺陷，未执行运行复现。
 
 其他关键边界独立存在。标题选择首候选、PDF仅检查%PDF前缀，均不核对元数据与全文身份；网络私网保护只查字面量，代码明确不做DNS解析，不能声称完整SSRF隔离。HTTP围栏要求回环socket和Host，但写请求Origin只看是否为回环主机，不要求同端口同源，也不是用户鉴权。自定义源可携带用户头和allowPrivate许可，需视为明确扩展的信任边界。
@@ -169,7 +167,7 @@ README说核心库不需外部应用并不涵盖所有工具。figure可检测Py
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -182,7 +180,7 @@ README说核心库不需外部应用并不涵盖所有工具。figure可检测Py
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-literature/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-literature/issues?q=is%3Aissue+created%3A2026-09-22T04%3A59%3A41.387Z..2026-10-22T04%3A59%3A41.387Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-literature/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A59%3A41.387Z..2026-10-22T04%3A59%3A41.387Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Aik358/dsh-literature/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Aik358/dsh-literature/issues?q=is%3Aissue+created%3A2026-09-22T04%3A59%3A41.387Z..2026-10-22T04%3A59%3A41.387Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Aik358/dsh-literature/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A59%3A41.387Z..2026-10-22T04%3A59%3A41.387Z)
 
 
 

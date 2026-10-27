@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[756fa15](https://github.com/439436269-ctrl/dsh-scroll-piano/tree/756fa15ba689f2cb0af38f20f4270c21f44f703d)
+源码版本：[756fa15](https://github.com/439436269-ctrl/dsh-scroll-piano/tree/756fa15ba689f2cb0af38f20f4270c21f44f703d)
 
 <!-- BEGIN META -->
-[![npm 30d 1,565](https://img.shields.io/static/v1?label=npm+30d&message=1%2C565&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-scroll-piano)
+[![npm 30d 1,565](https://img.shields.io/static/v1?label=npm+30d&message=1%2C565&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-scroll-piano) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-scroll-piano)
 <!-- END META -->
 
-> **实现功能**：把对话滚动位置映射为音高，并用消息刻度提供跳转导航。
+> **功能**：把对话滚动位置映射为音高，并用消息刻度提供跳转导航。
 
-> **核心亮点**：把空间位置编码为声音并叠加导航刻度，是交互组合创新；它不改善模型回答或搜索语义。 详见[Q03](#research-q03)。
+> **亮点**：把空间位置编码为声音并叠加导航刻度，是交互组合创新；它不改善模型回答或搜索语义。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：依赖 data-chat-flow、直接子节点 key 和 overflow 父级等内部 DOM；自动播放需用户手势，声音也可能干扰读屏或共享办公。 详见[Q04](#research-q04)。
+> **主要限制**：依赖 data-chat-flow、直接子节点 key 和 overflow 父级等内部 DOM；自动播放需用户手势，声音也可能干扰读屏或共享办公。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：把空间位置编码为声音并叠加导航刻度，是交互组合创新；它不改善模型回答或搜索语义。 详见[Q03](#research-q03)。
 
-把空间位置编码为声音并叠加导航刻度，是交互组合创新；它不改善模型回答或搜索语义。 详见[Q03](#research-q03)。
-
 本地状态、观察器清理和音量/位置开关便于复用；应增加 reduced-motion/reduced-audio 与语义节点适配层。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

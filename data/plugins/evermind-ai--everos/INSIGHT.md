@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[5b0979b](https://github.com/EverMind-AI/EverOS/tree/5b0979b1b7f3a0cbe235756ff098515ec490753e)
+源码版本：[5b0979b](https://github.com/EverMind-AI/EverOS/tree/5b0979b1b7f3a0cbe235756ff098515ec490753e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 13,600](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C600&color=yellow&logo=github&style=flat)](https://github.com/EverMind-AI/EverOS)
+[![GitHub ★ 13,600](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C600&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EverMind-AI/EverOS)
 <!-- END META -->
 
-> **实现功能**：以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。
+> **功能**：以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。
 
-> **核心亮点**：将Markdown原件、错误可定位的派生索引与用户/agent轨道组合成可审阅纠错路径；抽取/排名依赖everalgo与模型，不宣称新算法。见 [Q02](#research-q02)。
+> **亮点**：将Markdown原件、错误可定位的派生索引与用户/agent轨道组合成可审阅纠错路径；抽取/排名依赖everalgo与模型，不宣称新算法。见 [Q02](#research-q02)。
 
-> **风险与缺陷**：有损抽取/合并和异步索引不保证下游事实正确；抽取非幂等且客户端取消后仍可能落写，盲重发风险需验收。见 [Q03](#research-q03)。
+> **主要限制**：有损抽取/合并和异步索引不保证下游事实正确；抽取非幂等且客户端取消后仍可能落写，盲重发风险需验收。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：将Markdown原件、错误可定位的派生索引与用户/agent轨道组合成可审阅纠错路径；抽取/排名依赖everalgo与模型，不宣称新算法。见 [Q02](#research-q02)。
 
-将Markdown原件、错误可定位的派生索引与用户/agent轨道组合成可审阅纠错路径；抽取/排名依赖everalgo与模型，不宣称新算法。见 [Q02](#research-q02)。
-
 单文件fsync/replace、session锁后supervisor抽取、有界cascade与错误分类值得借鉴；原件可重建索引不等于全局事务一致，恢复应区分写入、抽取和索引阶段。reflection保留再抽取成功门槛，但语义正确仍需任务对照。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -167,7 +165,7 @@
 
 **活跃度**
 
-[![近30天新建 17](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=grey&logo=github&style=flat)](https://github.com/EverMind-AI/EverOS/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 35](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=35&color=grey&logo=github&style=flat)](https://github.com/EverMind-AI/EverOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+[![近30天新建 17](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=737b86&logo=github)](https://github.com/EverMind-AI/EverOS/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 35](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=35&color=737b86&logo=github)](https://github.com/EverMind-AI/EverOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 暂未获取：Issue 未关闭。
 

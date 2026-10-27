@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[4eff126](https://github.com/AntaresCorn/dsh-auto-reviewer/tree/4eff126d8687c7a5cdf9273f7d9ca1b5e6b9a14e)
+源码版本：[4eff126](https://github.com/AntaresCorn/dsh-auto-reviewer/tree/4eff126d8687c7a5cdf9273f7d9ca1b5e6b9a14e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AntaresCorn/dsh-auto-reviewer)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AntaresCorn/dsh-auto-reviewer)
 <!-- END META -->
 
-> **实现功能**：为 DSH 增加 auto-review 权限预设，按规则与可选 LLM 裁决提权并显示通知。
+> **功能**：为 DSH 增加 auto-review 权限预设，按规则与可选 LLM 裁决提权并显示通知。
 
-> **核心亮点**：为DSH组合预设、逐次审批与可读通知，提供规则到LLM再到人工的路由；价值在减少打断的机制，未证明与任何官方产品保障等价。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：为DSH组合预设、逐次审批与可读通知，提供规则到LLM再到人工的路由；价值在减少打断的机制，未证明与任何官方产品保障等价。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：最近用户文本命中英语肯定词就标用户确认，没有绑定当前操作；参数缺失仍可能因未命中风险规则走默认自动放行。加载还会改宿主客户端文件，均需独立核查。[Q03](#research-q03) [Q04](#research-q04)
+> **主要限制**：最近用户文本命中英语肯定词就标用户确认，没有绑定当前操作；参数缺失仍可能因未命中风险规则走默认自动放行。加载还会改宿主客户端文件，均需独立核查。[Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：为DSH组合预设、逐次审批与可读通知，提供规则到LLM再到人工的路由；价值在减少打断的机制，未证明与任何官方产品保障等价。[Q01](#research-q01) [Q02](#research-q02)
 
-为DSH组合预设、逐次审批与可读通知，提供规则到LLM再到人工的路由；价值在减少打断的机制，未证明与任何官方产品保障等价。[Q01](#research-q01) [Q02](#research-q02)
-
 来源为user的消息过滤、单次结果与异常next有明确目的；但授权与风险被近似词规则混合，未知参数不阻止快路径，宿主bundle直接补丁扩大维护范围。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AntaresCorn/dsh-auto-reviewer/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AntaresCorn/dsh-auto-reviewer/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[db879fc](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/tree/db879fc01cd02b9f0821a87ba728a310ae08d9ac)
+源码版本：[db879fc](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/tree/db879fc01cd02b9f0821a87ba728a310ae08d9ac)
 
 <!-- BEGIN META -->
-[![npm 30d 103](https://img.shields.io/static/v1?label=npm+30d&message=103&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-dep-vuln-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-dep-vuln-scan)
+[![npm 30d 103](https://img.shields.io/static/v1?label=npm+30d&message=103&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dep-vuln-scan) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dep-vuln-scan)
 <!-- END META -->
 
-> **实现功能**：读取常见项目锁文件，向OSV批量查询依赖版本公告，展示漏洞、修复候选与命令建议，并保存可重放结构化报告。
+> **功能**：读取常见项目锁文件，向OSV批量查询依赖版本公告，展示漏洞、修复候选与命令建议，并保存可重放结构化报告。
 
-> **核心亮点**：把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。
+> **亮点**：把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：同生态多锁来源被最后路径覆盖，fixed未按包/区间完整约束且多漏洞仍取最小；扫描cap静默、错误时也可显示0受影响，不能据此clean，未运行真实公告对照。详见[Q03](#research-q03)。
+> **主要限制**：同生态多锁来源被最后路径覆盖，fixed未按包/区间完整约束且多漏洞仍取最小；扫描cap静默、错误时也可显示0受影响，不能据此clean，未运行真实公告对照。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -116,8 +116,6 @@ README开头说相邻dsh-src link开发依赖，但固定package声明为发布�
 
 > **亮点**：把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。
 
-把多生态锁输入、批量ID/共享详情查询与宿主可重放报告统一，减少手工切换；只读建议，不是新漏洞情报或可利用性验证。详见[Q02](#research-q02)。
-
 纯解析、传输和文件适配分离，transport可注入，批量去重与共享详情池、错误分类使失败可见，presentationMeta重放避免额外请求。这些是有意义的工程设计，但测试stub/作者live声明不是本轮执行结果，也不能从api.osv免费/无key推断数据不外发。
 
 POST发送每包name、ecosystem、version，不发送整锁文件或项目源码；这些仍可能暴露私有包命名/依赖构成。fs适配没有取exec.agent.session.cwd，只ctx.fs.resolve(path)，默认根与实际会话世界是否一致依宿主默认契约。读/列操作也没传exec.signal；signal主要接网络与发现循环，单次大read不一定随取消停止。
@@ -174,7 +172,7 @@ POST发送每包name、ecosystem、version，不发送整锁文件或项目源�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -186,7 +184,7 @@ POST发送每包name、ecosystem、version，不发送整锁文件或项目源�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/issues?q=is%3Aissue+created%3A2026-09-22T05%3A55%3A43.091Z..2026-10-22T05%3A55%3A43.091Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A55%3A43.091Z..2026-10-22T05%3A55%3A43.091Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/issues?q=is%3Aissue+created%3A2026-09-22T05%3A55%3A43.091Z..2026-10-22T05%3A55%3A43.091Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-dep-vuln-scan/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A55%3A43.091Z..2026-10-22T05%3A55%3A43.091Z)
 
 
 

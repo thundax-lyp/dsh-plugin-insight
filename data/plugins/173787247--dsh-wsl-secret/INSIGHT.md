@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[be996ef](https://github.com/173787247/dsh-wsl-secret/tree/be996ef420b165aebb759cda3957e65a966efe22)
+源码版本：[be996ef](https://github.com/173787247/dsh-wsl-secret/tree/be996ef420b165aebb759cda3957e65a966efe22)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-secret)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-secret)
 <!-- END META -->
 
-> **实现功能**：为 DSH 提供 pass/age 名单读取、预览和进程环境变量转交。
+> **功能**：为 DSH 提供 pass/age 名单读取、预览和进程环境变量转交。
 
-> **核心亮点**：把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](#research-q02)。
+> **亮点**：把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age 路径仅词法前缀判断、reveal 可给原始 value，不能当跨插件隔离。详见[Q03](#research-q03)。
+> **主要限制**：to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age 路径仅词法前缀判断、reveal 可给原始 value，不能当跨插件隔离。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](#research-q02)。
 
-把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](#research-q02)。
-
 spawn 使用 argv 数组避免一般命令拼接；stdout 有字符上限，stderr 无显式上限。pass 入口防 .. 和非法字符；age 使用词法 resolve 未见 realpath。to_env 使用进程全局变量，代码未见清理。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@ to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@ to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+created%3A2026-09-22T05%3A25%3A55.156Z..2026-10-22T05%3A25%3A55.156Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A25%3A55.156Z..2026-10-22T05%3A25%3A55.156Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+created%3A2026-09-22T05%3A25%3A55.156Z..2026-10-22T05%3A25%3A55.156Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A25%3A55.156Z..2026-10-22T05%3A25%3A55.156Z)
 
 
 

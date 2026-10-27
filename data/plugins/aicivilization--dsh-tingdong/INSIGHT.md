@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a2bf5ae](https://github.com/AIcivilization/dsh-tingdong/tree/a2bf5aecb0e6720c9d8a6810d06d31d5f139d0a4)
+源码版本：[a2bf5ae](https://github.com/AIcivilization/dsh-tingdong/tree/a2bf5aecb0e6720c9d8a6810d06d31d5f139d0a4)
 
 <!-- BEGIN META -->
-[![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tingdong)
+[![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tingdong)
 <!-- END META -->
 
-> **实现功能**：把英文音频或文档制成逐句听力课，提供翻译讲解、音轨、练习、间隔复习与导出。
+> **功能**：把英文音频或文档制成逐句听力课，提供翻译讲解、音轨、练习、间隔复习与导出。
 
-> **核心亮点**：将本地识别、逐句讲解、音轨和复习状态组织成可校订的自有材料听力课，贡献在制课到练习的流程衔接；ASR/TTS/LLM与莱特纳方法不是本项目原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将本地识别、逐句讲解、音轨和复习状态组织成可校订的自有材料听力课，贡献在制课到练习的流程衔接；ASR/TTS/LLM与莱特纳方法不是本项目原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：“原文一个字不改”主要是提示词与数量门，cleanup只要求英文词数至少60%，不能证明语义保持；“掌握”只是box>=4的自评状态。材料整理和练习活动都不能直接证明真实听力收益。参见[Q03](#research-q03)。
+> **主要限制**：“原文一个字不改”主要是提示词与数量门，cleanup只要求英文词数至少60%，不能证明语义保持；“掌握”只是box>=4的自评状态。材料整理和练习活动都不能直接证明真实听力收益。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：将本地识别、逐句讲解、音轨和复习状态组织成可校订的自有材料听力课，贡献在制课到练习的流程衔接；ASR/TTS/LLM与莱特纳方法不是本项目原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-将本地识别、逐句讲解、音轨和复习状态组织成可校订的自有材料听力课，贡献在制课到练习的流程衔接；ASR/TTS/LLM与莱特纳方法不是本项目原创。参见[Q01](#research-q01)、[Q02](#research-q02)。
-
 保留原件、分阶段持久化、缺句缩批重试和文档en回原句可借鉴；数量门无法替代语义保真，学习状态需独立评价校准。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -168,7 +166,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-tingdong/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-tingdong/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

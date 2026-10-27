@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[dfafddc](https://github.com/T-Auto/dsh-ops/tree/dfafddc941695090df2c6e2e323193785aec4eb6)
+源码版本：[dfafddc](https://github.com/T-Auto/dsh-ops/tree/dfafddc941695090df2c6e2e323193785aec4eb6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C272&color=yellow&logo=github&style=flat)](https://github.com/T-Auto/dsh-ops) [![npm 30d 31,257](https://img.shields.io/static/v1?label=npm+30d&message=31%2C257&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ops)
+[![GitHub ★ 4,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C272&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 31,257](https://img.shields.io/static/v1?label=npm+30d&message=31%2C257&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
 <!-- END META -->
 
-> **实现功能**：为DSH提供紧凑文件、文档与PTC工具，并按需加载能力和替换部分官方工具。
+> **功能**：为DSH提供紧凑文件、文档与PTC工具，并按需加载能力和替换部分官方工具。
 
-> **核心亮点**：相对把全部工具schema常驻，渐进发现让常用面较小；相对只有字符串截断，结构化结果与session生命周期提供更明确的使用边界。具体贡献是紧凑工具面和替代准备检查的组合，而非工具数量多。是否少调用还取决于模型能否正确发现能力及紧凑结果是否保留足够信息。 依据[Q03](#research-q03)。
+> **亮点**：相对把全部工具schema常驻，渐进发现让常用面较小；相对只有字符串截断，结构化结果与session生命周期提供更明确的使用边界。具体贡献是紧凑工具面和替代准备检查的组合，而非工具数量多。是否少调用还取决于模型能否正确发现能力及紧凑结果是否保留足够信息。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：核心质疑是减少工具描述与结果内容会否增加漏读、重试或错误修改。源码的readiness只证明替代定义与归属可见，不证明与每个官方工具语义等价；结果缓存物理清理失败会留下临时文件，源码仅警告且不自动重试。安装dry-run同样只作静态路径检查，不能替代实际宿主兼容。 依据[Q04](#research-q04)。
+> **主要限制**：核心质疑是减少工具描述与结果内容会否增加漏读、重试或错误修改。源码的readiness只证明替代定义与归属可见，不证明与每个官方工具语义等价；结果缓存物理清理失败会留下临时文件，源码仅警告且不自动重试。安装dry-run同样只作静态路径检查，不能替代实际宿主兼容。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：相对把全部工具schema常驻，渐进发现让常用面较小；相对只有字符串截断，结构化结果与session生命周期提供更明确的使用边界。具体贡献是紧凑工具面和替代准备检查的组合，而非工具数量多。是否少调用还取决于模型能否正确发现能力及紧凑结果是否保留足够信息。 依据[Q03](#research-q03)。
 
-相对把全部工具schema常驻，渐进发现让常用面较小；相对只有字符串截断，结构化结果与session生命周期提供更明确的使用边界。具体贡献是紧凑工具面和替代准备检查的组合，而非工具数量多。是否少调用还取决于模型能否正确发现能力及紧凑结果是否保留足够信息。 依据[Q03](#research-q03)。
-
 可借鉴的是替代工具准备检查不接受同名外部定义、失败不进行半套遮蔽，以及每次会话重开分配新nonce。它们能抑制能力失配和旧结果越界复用；移植需保留宿主scope和销毁顺序。具体官方工具语义兼容仍需独立任务验证，不能由registry归属检查推出。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

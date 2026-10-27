@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1933430](https://github.com/1032740078/dsh-web-url-view/tree/193343093186016080a81c5512c6936809daff25)
+源码版本：[1933430](https://github.com/1032740078/dsh-web-url-view/tree/193343093186016080a81c5512c6936809daff25)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：给 DSH Web GUI 展示一次性 URL，并以默认全接口绑定的固定端口代理提供跨设备入口。
+> **功能**：给 DSH Web GUI 展示一次性 URL，并以默认全接口绑定的固定端口代理提供跨设备入口。
 
-> **核心亮点**：以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。
+> **亮点**：以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：LAN 无密码即认证代理的核心代价；异常日志中 token URL 和有体请求 401 重放可能带来风险。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：LAN 无密码即认证代理的核心代价；异常日志中 token URL 和有体请求 401 重放可能带来风险。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@ DSH 原生一次性 token URL 可访问但每次启动变化；固定入口用�
 
 > **亮点**：以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。
 
-以稳定书签地址连接每次重启变化的 DSH Web 实例。详见[Q01](#research-q01)。
-
 进程内单飞握手与 HTTP/WS 转发；默认 LAN trust、异常日志和有体重放是部署关键。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ LAN 无密码即认证代理的核心代价；异常日志中 token URL 和有�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

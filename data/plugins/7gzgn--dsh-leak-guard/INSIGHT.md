@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[8b578f8](https://github.com/7gzgn/dsh-leak-guard/tree/8b578f80898b80acc77285f3f4c095b433dda0a4)
+源码版本：[8b578f8](https://github.com/7gzgn/dsh-leak-guard/tree/8b578f80898b80acc77285f3f4c095b433dda0a4)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：发布前本地遍历文本和敏感文件名，按凭据模式返回位置、级别与六字符预览，提供scan和rules工具动作。
+> **功能**：发布前本地遍历文本和敏感文件名，按凭据模式返回位置、级别与六字符预览，提供scan和rules工具动作。
 
-> **核心亮点**：把本地模式/文件名审计整合为DSH工具，按位置级别给克制预览，模块可独立复核；非有效凭据验证。详见[Q02](#research-q02)。
+> **亮点**：把本地模式/文件名审计整合为DSH工具，按位置级别给克制预览，模块可独立复核；非有效凭据验证。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：缺失根/权限失败/静默长行与限额可使未完整扫描仍ok=true，工具丢截断且小正数预算可round0；绿灯不能当发布安全证明。详见[Q03](#research-q03)。
+> **主要限制**：缺失根/权限失败/静默长行与限额可使未完整扫描仍ok=true，工具丢截断且小正数预算可round0；绿灯不能当发布安全证明。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：把本地模式/文件名审计整合为DSH工具，按位置级别给克制预览，模块可独立复核；非有效凭据验证。详见[Q02](#research-q02)。
 
-把本地模式/文件名审计整合为DSH工具，按位置级别给克制预览，模块可独立复核；非有效凭据验证。详见[Q02](#research-q02)。
-
 占位符匹配是整个raw是否包含example/sample/dummy/四个x等子串，真实形状凭据若恰包含这些也会丢弃；它不验证远端有效性，critical是启发式级别而非证明活钥。同行具体命中导致所有generic都跳，独立的另一密码也可能被一起漏掉，不只去同一个泄露重复。Azure regex末尾==后接word boundary要求后字符是word，在常见结束/引号位置反而可能不匹配；Gitee上下文形状也只是一种约定。
 
 六字符预览比回显整行克制，但路径/文件名不脱敏、前缀/长度仍是元数据，不保证完全无信息。敏感文件名提示恒写“未读取内容”，后续实际仍可能读取内容，文案容易让人误解访问范围。文件名规则loose-token-file含必需的点而只有扩展名组可选，裸token或.gh-token不一定命中，不能照README枚举推断全部覆盖。
@@ -167,7 +165,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -179,7 +177,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-leak-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-leak-guard/issues?q=is%3Aissue+created%3A2026-09-22T10%3A08%3A46.069Z..2026-10-22T10%3A08%3A46.069Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-leak-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A08%3A46.069Z..2026-10-22T10%3A08%3A46.069Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-leak-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-leak-guard/issues?q=is%3Aissue+created%3A2026-09-22T10%3A08%3A46.069Z..2026-10-22T10%3A08%3A46.069Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-leak-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A08%3A46.069Z..2026-10-22T10%3A08%3A46.069Z)
 
 
 

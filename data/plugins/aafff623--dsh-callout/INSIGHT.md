@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[0e92c13](https://github.com/Aafff623/dsh-callout/tree/0e92c135644be8d84601ea846098f2799ef4dcf7)
+源码版本：[0e92c13](https://github.com/Aafff623/dsh-callout/tree/0e92c135644be8d84601ea846098f2799ef4dcf7)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。
+> **功能**：在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。
 
-> **核心亮点**：结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。
+> **亮点**：结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析后转义歧义，属性恢复只核source，视觉/伪元素不等内容或可达认证。详见[Q03](#research-q03)。
+> **主要限制**：assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析后转义歧义，属性恢复只核source，视觉/伪元素不等内容或可达认证。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。
 
-结合规范Markdown/首Text保正文、own mutation与增量dirty树、条件卸载恢复，提供五类主题重点卡片而不改session存储。详见[Q02](#research-q02)。
-
 实现按data-chat-flow范围扫blockquote/p，不显式检查消息role=assistant；没有chat-flow时退整个document，blockquote分支也不核markdown根。因此“仅助手”依赖当前DSH把human当纯文本和DOM布局约定，未来渲染变化/别处同形blockquote可能被升级。裸P只看直接父class包含markdown，不是消息来源鉴别。
 
 DOM解析后真实marker与源码反斜线转义marker可能变相同Text，无法回推出原Markdown转义意图。它还原的是自己保存的DOM前缀，不是读session原文再编译；持久源不改是代码范围结论，不能说每次DOM回退精确恢复所有源码。未知/非首/代码等形状有明确拒绝路径，但零误判仍需按实际renderer核。
@@ -169,7 +167,7 @@ assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -183,7 +181,7 @@ assistant范围依chat-flow/markdown DOM而非role，无flow退document；解析
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aafff623/dsh-callout/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Aafff623/dsh-callout/issues?q=is%3Aissue+created%3A2026-09-22T09%3A43%3A43.184Z..2026-10-22T09%3A43%3A43.184Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aafff623/dsh-callout/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A43%3A43.184Z..2026-10-22T09%3A43%3A43.184Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aafff623/dsh-callout/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Aafff623/dsh-callout/issues?q=is%3Aissue+created%3A2026-09-22T09%3A43%3A43.184Z..2026-10-22T09%3A43%3A43.184Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aafff623/dsh-callout/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A43%3A43.184Z..2026-10-22T09%3A43%3A43.184Z)
 
 
 

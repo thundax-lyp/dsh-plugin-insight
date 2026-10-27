@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[29e7e48](https://github.com/AbelKeithsun/dsh-question-nav/tree/29e7e487235bdbcba13768f1a009ecd2089d6faa)
+源码版本：[29e7e48](https://github.com/AbelKeithsun/dsh-question-nav/tree/29e7e487235bdbcba13768f1a009ecd2089d6faa)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav) [![npm 30d 1,224](https://img.shields.io/static/v1?label=npm+30d&message=1%2C224&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AbelKeithsun/dsh-question-nav) [![npm 30d 1,224](https://img.shields.io/static/v1?label=npm+30d&message=1%2C224&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@luziyang2026/dsh-question-nav)
 <!-- END META -->
 
-> **实现功能**：在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。
+> **功能**：在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。
 
-> **核心亮点**：将完整问题投影与轻量条带、按需历史加载联结，减少长会话手工翻找。详见[Q01](#research-q01)。
+> **亮点**：将完整问题投影与轻量条带、按需历史加载联结，减少长会话手工翻找。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：只索引首内容块，异步分页没有取消/强制截止，所谓nearest回退实际取最早行，跨会话点击可能陈旧滚动。详见[Q03](#research-q03)。
+> **主要限制**：只索引首内容块，异步分页没有取消/强制截止，所谓nearest回退实际取最早行，跨会话点击可能陈旧滚动。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将完整问题投影与轻量条带、按需历史加载联结，减少长会话手工翻找。详见[Q01](#research-q01)。
 
-将完整问题投影与轻量条带、按需历史加载联结，减少长会话手工翻找。详见[Q01](#research-q01)。
-
 纯core与端口便于审阅，订阅/observer多有清理；测试分页名义不等真实分页覆盖，导航任务需会话代次。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav/issues?q=is%3Aissue+created%3A2026-09-22T05%3A29%3A53.287Z..2026-10-22T05%3A29%3A53.287Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AbelKeithsun/dsh-question-nav/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A29%3A53.287Z..2026-10-22T05%3A29%3A53.287Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AbelKeithsun/dsh-question-nav/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AbelKeithsun/dsh-question-nav/issues?q=is%3Aissue+created%3A2026-09-22T05%3A29%3A53.287Z..2026-10-22T05%3A29%3A53.287Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AbelKeithsun/dsh-question-nav/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A29%3A53.287Z..2026-10-22T05%3A29%3A53.287Z)
 
 
 

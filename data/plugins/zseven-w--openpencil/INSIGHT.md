@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[9a618ce](https://github.com/ZSeven-W/openpencil/tree/9a618ce90bf2b308217a43d763de0970fe7b3b77)
+源码版本：[9a618ce](https://github.com/ZSeven-W/openpencil/tree/9a618ce90bf2b308217a43d763de0970fe7b3b77)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=yellow&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil)
+[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
 <!-- END META -->
 
-> **实现功能**：提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。
+> **功能**：提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。
 
-> **核心亮点**：[Q02](#research-q02)Agent工具直接修改编辑器文档模型，较生成平面图片保留结构化编辑增量；根项目是独立应用和MCP服务，DSH只是接入端之一。
+> **亮点**：[Q02](#research-q02)Agent工具直接修改编辑器文档模型，较生成平面图片保留结构化编辑增量；根项目是独立应用和MCP服务，DSH只是接入端之一。
 
-> **风险与缺陷**：[Q03](#research-q03)DSH配置改动跨profile，且修改内存后保存失败存在需核对的状态窗口；可编辑草稿不等于生产设计合格。
+> **主要限制**：[Q03](#research-q03)DSH配置改动跨profile，且修改内存后保存失败存在需核对的状态窗口；可编辑草稿不等于生产设计合格。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：[Q02](#research-q02)Agent工具直接修改编辑器文档模型，较生成平面图片保留结构化编辑增量；根项目是独立应用和MCP服务，DSH只是接入端之一。
 
-[Q02](#research-q02)Agent工具直接修改编辑器文档模型，较生成平面图片保留结构化编辑增量；根项目是独立应用和MCP服务，DSH只是接入端之一。
-
 命令前验证、节点ID分配与managed配置块所有权有借鉴价值。Rust编辑核心不在JS/TS统计内；本轮抽读MCP编辑/保存链，不将作者多Agent并发主张当实际性能验证。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,7 +159,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 18](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=18&color=grey&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 6](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=6&color=grey&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z)
+[![Issue 未关闭 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=18&color=737b86&logo=github)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=6&color=737b86&logo=github)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z)
 
 
 

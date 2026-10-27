@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[64fad2e](https://github.com/Andor-Z/dsh-turn-outline/tree/64fad2e2ecb71af1b78031989ff01d20ad25807b)
+源码版本：[64fad2e](https://github.com/Andor-Z/dsh-turn-outline/tree/64fad2e2ecb71af1b78031989ff01d20ad25807b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-turn-outline) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-turn-outline)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Andor-Z/dsh-turn-outline) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-turn-outline) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-turn-outline)
 <!-- END META -->
 
-> **实现功能**：不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。
+> **功能**：不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。
 
-> **核心亮点**：复用结构化事件生成可追踪轨迹并跳回原文，省LLM接线且有live/冷路径优化，未证明秒开或零资源。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：复用结构化事件生成可追踪轨迹并跳回原文，省LLM接线且有live/冷路径优化，未证明秒开或零资源。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：Host围栏不是会话授权，任意非空sessionId进入读取链；摘要截断、lastSeq缓存及单大项预算例外也限制审计/性能承诺。详见[Q02](#research-q02)。
+> **主要限制**：Host围栏不是会话授权，任意非空sessionId进入读取链；摘要截断、lastSeq缓存及单大项预算例外也限制审计/性能承诺。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：复用结构化事件生成可追踪轨迹并跳回原文，省LLM接线且有live/冷路径优化，未证明秒开或零资源。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-复用结构化事件生成可追踪轨迹并跳回原文，省LLM接线且有live/冷路径优化，未证明秒开或零资源。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用的是wire数据最小化、活跃冻结快照与冷缓存分离、request generation防跨会话迟到响应、burst节流、分步drain及结构化锚点，而不是DOM文本匹配。剪裁数据减少带宽，但不构成脱敏或授权；seq是锚点，不是内容版本。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Host围栏不是会话授权，任意非空sessionId进入读取链；摘要截�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@ Host围栏不是会话授权，任意非空sessionId进入读取链；摘要截�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline/issues?q=is%3Aissue+created%3A2026-09-22T05%3A45%3A57.619Z..2026-10-22T05%3A45%3A57.619Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Andor-Z/dsh-turn-outline/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A45%3A57.619Z..2026-10-22T05%3A45%3A57.619Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Andor-Z/dsh-turn-outline/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Andor-Z/dsh-turn-outline/issues?q=is%3Aissue+created%3A2026-09-22T05%3A45%3A57.619Z..2026-10-22T05%3A45%3A57.619Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Andor-Z/dsh-turn-outline/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A45%3A57.619Z..2026-10-22T05%3A45%3A57.619Z)
 
 
 

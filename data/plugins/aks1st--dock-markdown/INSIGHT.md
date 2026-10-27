@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[64cbfd8](https://github.com/AKS1st/dock-markdown/tree/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54)
+源码版本：[64cbfd8](https://github.com/AKS1st/dock-markdown/tree/64cbfd89b2e008ca3bd2c42a8f167e46ee7b3b54)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown) [![npm 30d 878](https://img.shields.io/static/v1?label=npm+30d&message=878&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-markdown) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-markdown)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/dock-markdown) [![npm 30d 878](https://img.shields.io/static/v1?label=npm+30d&message=878&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dock-markdown) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dock-markdown)
 <!-- END META -->
 
-> **实现功能**：dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。
+> **功能**：dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。
 
-> **核心亮点**：在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。
+> **亮点**：在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：受信 Host/Origin 调用方可传任意 basePath+相对 ref，在宿主可读且≤20MiB时取回文件；路由缺文件级授权，详见[Q02](#research-q02)。
+> **主要限制**：受信 Host/Origin 调用方可传任意 basePath+相对 ref，在宿主可读且≤20MiB时取回文件；路由缺文件级授权，详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@ dock-editor 纯文本查看 Markdown；此包增加预览、大纲和资源解�
 
 > **亮点**：在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。
 
-在 dock 文件域提供一体化 Markdown 阅读、大纲、相对资源与编辑切换。详见[Q01](#research-q01)。
-
 Host 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 中解析资源；无模型工具。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@ Host 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@ Host 注册 POST resolve Web 路由，Client 从 editor API 读文档并在 DOM 
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown/issues?q=is%3Aissue+created%3A2026-09-22T07%3A05%3A54.280Z..2026-10-22T07%3A05%3A54.280Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dock-markdown/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A05%3A54.280Z..2026-10-22T07%3A05%3A54.280Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dock-markdown/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dock-markdown/issues?q=is%3Aissue+created%3A2026-09-22T07%3A05%3A54.280Z..2026-10-22T07%3A05%3A54.280Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dock-markdown/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A05%3A54.280Z..2026-10-22T07%3A05%3A54.280Z)
 
 
 

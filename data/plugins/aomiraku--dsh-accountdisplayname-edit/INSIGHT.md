@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[fb3c073](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92)
+源码版本：[fb3c073](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AomiRaku/dsh-accountDisplayName-edit)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AomiRaku/dsh-accountDisplayName-edit)
 <!-- END META -->
 
-> **实现功能**：在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。
+> **功能**：在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。
 
-> **核心亮点**：相对截图后逐次打码，它把侧栏名称头像脱敏前移到本地界面，并保留 React 原头像子树以便恢复。贡献是可复用的局部展示便利，未证明整图匿名或端到端节时。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对截图后逐次打码，它把侧栏名称头像脱敏前移到本地界面，并保留 React 原头像子树以便恢复。贡献是可复用的局部展示便利，未证明整图匿名或端到端节时。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：显示覆盖依赖宿主 DOM，而且保存并非整体事务。头像先写成功后别名写失败时，界面可能部分提交；静默选择器回退也不能告诉用户是否已覆盖。源码支持这些边界，尚未复现故障频率。[Q03](#research-q03)
+> **主要限制**：显示覆盖依赖宿主 DOM，而且保存并非整体事务。头像先写成功后别名写失败时，界面可能部分提交；静默选择器回退也不能告诉用户是否已覆盖。源码支持这些边界，尚未复现故障频率。[Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对截图后逐次打码，它把侧栏名称头像脱敏前移到本地界面，并保留 React 原头像子树以便恢复。贡献是可复用的局部展示便利，未证明整图匿名或端到端节时。[Q01](#research-q01) [Q02](#research-q02)
 
-相对截图后逐次打码，它把侧栏名称头像脱敏前移到本地界面，并保留 React 原头像子树以便恢复。贡献是可复用的局部展示便利，未证明整图匿名或端到端节时。[Q01](#research-q01) [Q02](#research-q02)
-
 保留 React 头像子树、缓存启动器和单字段写成功后再更新界面，是有明确维护目的的实现。DOM 后缀与位置回退仍需宿主升级复核；safe 降级避免抛错，却不能证明脱敏成功。跨字段保存应由更高层一致性逻辑负责，见 [Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

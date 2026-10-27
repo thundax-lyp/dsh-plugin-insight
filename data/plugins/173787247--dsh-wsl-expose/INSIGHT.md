@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[d731e52](https://github.com/173787247/dsh-wsl-expose/tree/d731e529bce9e050b4a7ef378e67e3cc497b563c)
+源码版本：[d731e52](https://github.com/173787247/dsh-wsl-expose/tree/d731e529bce9e050b4a7ef378e67e3cc497b563c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-expose) [![npm 30d 674](https://img.shields.io/static/v1?label=npm+30d&message=674&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wsl-expose) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wsl-expose)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-expose) [![npm 30d 674](https://img.shields.io/static/v1?label=npm+30d&message=674&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wsl-expose) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wsl-expose)
 <!-- END META -->
 
-> **实现功能**：为 WSL 服务给出 Windows portproxy 建议，并可经 PowerShell 实际增删转发。
+> **功能**：为 WSL 服务给出 Windows portproxy 建议，并可经 PowerShell 实际增删转发。
 
-> **核心亮点**：把 WSL 网络模式、建议命令与 portproxy 操作集中到工具，详见[Q01](#research-q01)。
+> **亮点**：把 WSL 网络模式、建议命令与 portproxy 操作集中到工具，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：安全说明的 allowApply/端口白名单未在执行路径强制，默认全接口监听；详见[Q02](#research-q02)。
+> **主要限制**：安全说明的 allowApply/端口白名单未在执行路径强制，默认全接口监听；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -79,8 +79,6 @@ WSL、Windows PowerShell、netsh 与管理员权限；套件 relay 是另一组�
 
 > **亮点**：把 WSL 网络模式、建议命令与 portproxy 操作集中到工具，详见[Q01](#research-q01)。
 
-把 WSL 网络模式、建议命令与 portproxy 操作集中到工具，详见[Q01](#research-q01)。
-
 PowerShell 执行 portproxy；实际不会创建展示的防火墙规则。
 
 <a id="detail-section-5"></a>
@@ -129,7 +127,7 @@ PowerShell 执行 portproxy；实际不会创建展示的防火墙规则。
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -141,7 +139,7 @@ PowerShell 执行 portproxy；实际不会创建展示的防火墙规则。
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-expose/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-expose/issues?q=is%3Aissue+created%3A2026-09-22T07%3A29%3A14.499Z..2026-10-22T07%3A29%3A14.499Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-expose/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A29%3A14.499Z..2026-10-22T07%3A29%3A14.499Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-expose/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-expose/issues?q=is%3Aissue+created%3A2026-09-22T07%3A29%3A14.499Z..2026-10-22T07%3A29%3A14.499Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-expose/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A29%3A14.499Z..2026-10-22T07%3A29%3A14.499Z)
 
 
 

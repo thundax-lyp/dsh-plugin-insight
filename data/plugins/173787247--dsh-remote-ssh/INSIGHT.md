@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[d294fe0](https://github.com/173787247/dsh-remote-ssh/tree/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd)
+源码版本：[d294fe0](https://github.com/173787247/dsh-remote-ssh/tree/d294fe0e1a8617900f1f3d7b83fa0f8809c29ddd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-remote-ssh)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-remote-ssh)
 <!-- END META -->
 
-> **实现功能**：以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。
+> **功能**：以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。
 
-> **核心亮点**：把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。
+> **亮点**：把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：远端命令参数解释和模型自填 confirm 不能替代安全 shell quoting/人工授权；只读依赖白名单与远端账号。详见[Q02](#research-q02)和[Q03](#research-q03)。
+> **主要限制**：远端命令参数解释和模型自填 confirm 不能替代安全 shell quoting/人工授权；只读依赖白名单与远端账号。详见[Q02](#research-q02)和[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。
 
-把跨平台旧主机诊断从 SSH CLI 接入 Agent 并附白名单与探测组。详见[Q01](#research-q01)。
-
 主机配置/OS probe 便于迁移；远端 shell 语义、有限 mutate 正则与外层 ok 需注意。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

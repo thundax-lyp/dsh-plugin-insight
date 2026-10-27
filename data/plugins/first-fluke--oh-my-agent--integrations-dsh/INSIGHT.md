@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[5f0c34a](https://github.com/first-fluke/oh-my-agent/tree/5f0c34a8e7d0ea871e3793c12b89e91bd5e0628a/integrations/dsh)
+源码版本：[5f0c34a](https://github.com/first-fluke/oh-my-agent/tree/5f0c34a8e7d0ea871e3793c12b89e91bd5e0628a/integrations/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,354](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C354&color=yellow&logo=github&style=flat)](https://github.com/first-fluke/oh-my-agent)
+[![GitHub ★ 1,354](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C354&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/first-fluke/oh-my-agent)
 <!-- END META -->
 
-> **实现功能**：将OMA项目Skill与验证钩子接入DSH，支持自动项目准备、工具前后检查及有限停止跟进。
+> **功能**：将OMA项目Skill与验证钩子接入DSH，支持自动项目准备、工具前后检查及有限停止跟进。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把原来仅靠Skill提醒和人工检查的OMA项目规则接到DSH执行前后，冻结参数不匹配时拒绝原调用。规则和CLI来自OMA上游；适配价值在准确转换宿主决策，不能宣称自动角色调度或全部交付质量门禁。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把原来仅靠Skill提醒和人工检查的OMA项目规则接到DSH执行前后，冻结参数不匹配时拒绝原调用。规则和CLI来自OMA上游；适配价值在准确转换宿主决策，不能宣称自动角色调度或全部交付质量门禁。
 
-> **风险与缺陷**：[Q02](#research-q02)表明Stop达到maxStopBlocks只警告并返回，post检查也不能撤销已执行工具。最影响贡献边界的是用户把结束误当验收通过；pre阻断仍有独立价值，严格交付流程需另管未解决状态。本轮未运行反例，不把有限继续设计称为故障复现。
+> **主要限制**：[Q02](#research-q02)表明Stop达到maxStopBlocks只警告并返回，post检查也不能撤销已执行工具。最影响贡献边界的是用户把结束误当验收通过；pre阻断仍有独立价值，严格交付流程需另管未解决状态。本轮未运行反例，不把有限继续设计称为故障复现。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把原来仅靠Skill提醒和人工检查的OMA项目规则接到DSH执行前后，冻结参数不匹配时拒绝原调用。规则和CLI来自OMA上游；适配价值在准确转换宿主决策，不能宣称自动角色调度或全部交付质量门禁。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把原来仅靠Skill提醒和人工检查的OMA项目规则接到DSH执行前后，冻结参数不匹配时拒绝原调用。规则和CLI来自OMA上游；适配价值在准确转换宿主决策，不能宣称自动角色调度或全部交付质量门禁。
-
 值得复用的现有工程是薄入口、protocol纯映射、runner进程所有权和setup最后激活各自分开。移植需宿主冻结参数、pre决策和continuation语义匹配，不能仅把hook名称换掉。当前采用限定为规则执行桥试用，不宣称完整质量门禁。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/first-fluke/oh-my-agent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/first-fluke/oh-my-agent/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A47.179Z..2026-10-27T02%3A08%3A47.179Z) [![近30天关闭 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=grey&logo=github&style=flat)](https://github.com/first-fluke/oh-my-agent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A47.179Z..2026-10-27T02%3A08%3A47.179Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/first-fluke/oh-my-agent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/first-fluke/oh-my-agent/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A47.179Z..2026-10-27T02%3A08%3A47.179Z) [![近30天关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/first-fluke/oh-my-agent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A47.179Z..2026-10-27T02%3A08%3A47.179Z)
 
 
 

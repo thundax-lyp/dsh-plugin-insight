@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6fa19b4](https://github.com/voyager-crew/voyager/tree/6fa19b4ae51391fe95f909fcdaf11aaa252f2913)
+源码版本：[6fa19b4](https://github.com/voyager-crew/voyager/tree/6fa19b4ae51391fe95f909fcdaf11aaa252f2913)
 
 <!-- BEGIN META -->
-[![GitHub ★ 20,463](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20%2C463&color=yellow&logo=github&style=flat)](https://github.com/voyager-crew/voyager) [![npm 30d 1,566](https://img.shields.io/static/v1?label=npm+30d&message=1%2C566&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/voyager) [![最新发布 2015-02-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2015-02-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/voyager)
+[![GitHub ★ 20,463](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20%2C463&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/voyager-crew/voyager) [![npm 30d 1,566](https://img.shields.io/static/v1?label=npm+30d&message=1%2C566&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/voyager) [![最新发布 2015-02-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2015-02-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/voyager)
 <!-- END META -->
 
-> **实现功能**：浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。
+> **功能**：浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。
 
-> **核心亮点**：它把站点语义适配、内置能力原语和声明式插件分开，使同一JSON改动可在多个站点复用；副作用由宿主ledger集中回收，同一属性的多插件覆盖用有序层管理，避免禁用一个就破坏另一个。PluginScope明确借鉴Cordis并裁剪机制，不能将生命周期模式当全球原创。[Q02](#research-q02)
+> **亮点**：它把站点语义适配、内置能力原语和声明式插件分开，使同一JSON改动可在多个站点复用；副作用由宿主ledger集中回收，同一属性的多插件覆盖用有序层管理，避免禁用一个就破坏另一个。PluginScope明确借鉴Cordis并裁剪机制，不能将生命周期模式当全球原创。[Q02](#research-q02)
 
-> **风险与缺陷**：声明式插件“不运行自带JS”只约束插件输入，不等于整个扩展无网络或聊天读取能力；原语代码和浏览器权限仍是信任根。语义selector有匹配也不证明匹配了正确消息，当前health把“有用户轮次且目标为0”标异常，不能检出所有错位。因此跨站复用收益依赖真实页面兼容和禁用后状态检查。[Q03](#research-q03)
+> **主要限制**：声明式插件“不运行自带JS”只约束插件输入，不等于整个扩展无网络或聊天读取能力；原语代码和浏览器权限仍是信任根。语义selector有匹配也不证明匹配了正确消息，当前health把“有用户轮次且目标为0”标异常，不能检出所有错位。因此跨站复用收益依赖真实页面兼容和禁用后状态检查。[Q03](#research-q03)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：它把站点语义适配、内置能力原语和声明式插件分开，使同一JSON改动可在多个站点复用；副作用由宿主ledger集中回收，同一属性的多插件覆盖用有序层管理，避免禁用一个就破坏另一个。PluginScope明确借鉴Cordis并裁剪机制，不能将生命周期模式当全球原创。[Q02](#research-q02)
 
-它把站点语义适配、内置能力原语和声明式插件分开，使同一JSON改动可在多个站点复用；副作用由宿主ledger集中回收，同一属性的多插件覆盖用有序层管理，避免禁用一个就破坏另一个。PluginScope明确借鉴Cordis并裁剪机制，不能将生命周期模式当全球原创。[Q02](#research-q02)
-
 共享ledger避免独立插件各存原值的恢复冲突，异步startup与dispose barrier有可复用价值。需保留Cordis来源与副作用注册契约；零目标健康检测不能替代语义正确性验收。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -172,7 +170,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 7](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=grey&logo=github&style=flat)](https://github.com/voyager-crew/voyager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 9](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=9&color=grey&logo=github&style=flat)](https://github.com/voyager-crew/voyager/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 17](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=17&color=grey&logo=github&style=flat)](https://github.com/voyager-crew/voyager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+[![Issue 未关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/voyager-crew/voyager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=9&color=737b86&logo=github)](https://github.com/voyager-crew/voyager/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 17](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=17&color=737b86&logo=github)](https://github.com/voyager-crew/voyager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[dfc0396](https://github.com/PC2005-cloud/dsh-pet/tree/dfc03961bdb4d26898838cb72c9c2ac09699b1e2)
+源码版本：[dfc0396](https://github.com/PC2005-cloud/dsh-pet/tree/dfc03961bdb4d26898838cb72c9c2ac09699b1e2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=yellow&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet)
+[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet)
 <!-- END META -->
 
-> **实现功能**：提供桌宠动作提示词、视频抠像、姿态归一化及透明播放素材转码流程，插件位于子目录。
+> **功能**：提供桌宠动作提示词、视频抠像、姿态归一化及透明播放素材转码流程，插件位于子目录。
 
-> **核心亮点**：[Q03](#research-q03)识别出提示约束、人工/自动统一中间格式、脚底对齐和播放变体的工程组合。相对逐片手工转码，它组织了可重做阶段；标准视频算法不视为原创，全部动作人工PR的作者说明限制了自动量产主张。
+> **亮点**：[Q03](#research-q03)识别出提示约束、人工/自动统一中间格式、脚底对齐和播放变体的工程组合。相对逐片手工转码，它组织了可重做阶段；标准视频算法不视为原创，全部动作人工PR的作者说明限制了自动量产主张。
 
-> **风险与缺陷**：[Q04](#research-q04)核实Windows工具硬路径与源片范围不一致，更发现alpha抽帧失败被return True并计入成功。当前检查绿灯不能承担素材放行，因而应观察根制作链，而不是把可安装子插件的演示当制作链验收。
+> **主要限制**：[Q04](#research-q04)核实Windows工具硬路径与源片范围不一致，更发现alpha抽帧失败被return True并计入成功。当前检查绿灯不能承担素材放行，因而应观察根制作链，而不是把可安装子插件的演示当制作链验收。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：[Q03](#research-q03)识别出提示约束、人工/自动统一中间格式、脚底对齐和播放变体的工程组合。相对逐片手工转码，它组织了可重做阶段；标准视频算法不视为原创，全部动作人工PR的作者说明限制了自动量产主张。
 
-[Q03](#research-q03)识别出提示约束、人工/自动统一中间格式、脚底对齐和播放变体的工程组合。相对逐片手工转码，它组织了可重做阶段；标准视频算法不视为原创，全部动作人工PR的作者说明限制了自动量产主张。
-
 正向设计是人工/自动路线共用step02、独立阶段方便重做单动作，以及转码显式保留alpha而不是依赖默认解码。恢复检查以文件大小、时间戳和ffprobe判断可复用输入，但不能替代透明/质量验证。check_alpha抽帧失败return True、encode注释仍写旧360x360而常量为640x360，提醒移植要以执行参数和fail-closed结果为准。本轮inventory不统计Python主体代码行，也不等于全素材审计。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -172,7 +170,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 6](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=grey&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 82](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=82&color=grey&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+created%3A2026-09-26T09%3A41%3A37.852Z..2026-10-26T09%3A41%3A37.852Z) [![近30天关闭 76](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=76&color=grey&logo=github&style=flat)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A41%3A37.852Z..2026-10-26T09%3A41%3A37.852Z)
+[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 82](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=82&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+created%3A2026-09-26T09%3A41%3A37.852Z..2026-10-26T09%3A41%3A37.852Z) [![近30天关闭 76](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=76&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A41%3A37.852Z..2026-10-26T09%3A41%3A37.852Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[d9c6b17](https://github.com/Ansonfishing/dsh-model-manager/tree/d9c6b17c2a71528bbdd3faf9b7eb506cb7854dff)
+源码版本：[d9c6b17](https://github.com/Ansonfishing/dsh-model-manager/tree/d9c6b17c2a71528bbdd3faf9b7eb506cb7854dff)
 
 <!-- BEGIN META -->
-[![npm 30d 311](https://img.shields.io/static/v1?label=npm+30d&message=311&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model-manager) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model-manager)
+[![npm 30d 311](https://img.shields.io/static/v1?label=npm+30d&message=311&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-model-manager) [![最新发布 2026-08-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-model-manager)
 <!-- END META -->
 
-> **实现功能**：在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。
+> **功能**：在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。
 
-> **核心亮点**：将终端参数、服务登记和测速聚合为 DSH 工作流，框架 adapter 与校验分层便于维护；贡献为操作集成，未证明降低 OOM 或提升推理吞吐。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将终端参数、服务登记和测速聚合为 DSH 工作流，框架 adapter 与校验分层便于维护；贡献为操作集成，未证明降低 OOM 或提升推理吞吐。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：托管停止只检查 PID 存活，死 PID 又退为端口 fuser，可能作用于复用进程或新占用者；11437 没有服务端硬保护。KV warning 也不包含权重和多卡完整预算。均是静态边界，未实测损害。[Q03](#research-q03)
+> **主要限制**：托管停止只检查 PID 存活，死 PID 又退为端口 fuser，可能作用于复用进程或新占用者；11437 没有服务端硬保护。KV warning 也不包含权重和多卡完整预算。均是静态边界，未实测损害。[Q03](#research-q03)
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：将终端参数、服务登记和测速聚合为 DSH 工作流，框架 adapter 与校验分层便于维护；贡献为操作集成，未证明降低 OOM 或提升推理吞吐。[Q01](#research-q01) [Q02](#research-q02)
 
-将终端参数、服务登记和测速聚合为 DSH 工作流，框架 adapter 与校验分层便于维护；贡献为操作集成，未证明降低 OOM 或提升推理吞吐。[Q01](#research-q01) [Q02](#research-q02)
-
 adapter、校验和执行依赖分离值得复用，持久化 Profile 能保留操作上下文。停止精度不能只由不使用 pkill 推出，必须补进程身份与各入口授权一致性；短测速也需标明总请求口径。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ adapter、校验和执行依赖分离值得复用，持久化 Profile 能保留�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@ adapter、校验和执行依赖分离值得复用，持久化 Profile 能保留�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Ansonfishing/dsh-model-manager/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Ansonfishing/dsh-model-manager/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

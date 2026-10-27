@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[9baff60](https://github.com/Arlenman/dsh-backup-sync/tree/9baff601ee5d086f2ee2e078227bb7617138abfd)
+源码版本：[9baff60](https://github.com/Arlenman/dsh-backup-sync/tree/9baff601ee5d086f2ee2e078227bb7617138abfd)
 
 <!-- BEGIN META -->
-[![npm 30d 361](https://img.shields.io/static/v1?label=npm+30d&message=361&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-backup-sync) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-backup-sync)
+[![npm 30d 361](https://img.shields.io/static/v1?label=npm+30d&message=361&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-backup-sync) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-backup-sync)
 <!-- END META -->
 
-> **实现功能**：按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。
+> **功能**：按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。
 
-> **核心亮点**：相对直接覆盖目录，主要增量是将外置技能与 DSH 资产统一成模块，并让冲突保留为人工裁决；模块缺席不被解释为删除。[Q01](#research-q01) 与 [Q02](#research-q02) 支持这一流程贡献。三方合并为成熟方法，本项价值在资产范围与恢复接线，未核查其他备份插件源码，不能据作者对照宣称全面优于竞品。
+> **亮点**：相对直接覆盖目录，主要增量是将外置技能与 DSH 资产统一成模块，并让冲突保留为人工裁决；模块缺席不被解释为删除。[Q01](#research-q01) 与 [Q02](#research-q02) 支持这一流程贡献。三方合并为成熟方法，本项价值在资产范围与恢复接线，未核查其他备份插件源码，不能据作者对照宣称全面优于竞品。
 
-> **风险与缺陷**：安全合并是否仍成立取决于扫描后目标有没有继续变化。执行器按既有计划直接 rename，读到的片段未显示在覆盖前重新比较 plan.ours；逐文件回滚也不同于整批事务。[Q03](#research-q03) 因而把保证收窄为静止目标下的保护，不能称永不覆盖新修改。
+> **主要限制**：安全合并是否仍成立取决于扫描后目标有没有继续变化。执行器按既有计划直接 rename，读到的片段未显示在覆盖前重新比较 plan.ours；逐文件回滚也不同于整批事务。[Q03](#research-q03) 因而把保证收窄为静止目标下的保护，不能称永不覆盖新修改。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相对直接覆盖目录，主要增量是将外置技能与 DSH 资产统一成模块，并让冲突保留为人工裁决；模块缺席不被解释为删除。[Q01](#research-q01) 与 [Q02](#research-q02) 支持这一流程贡献。三方合并为成熟方法，本项价值在资产范围与恢复接线，未核查其他备份插件源码，不能据作者对照宣称全面优于竞品。
 
-相对直接覆盖目录，主要增量是将外置技能与 DSH 资产统一成模块，并让冲突保留为人工裁决；模块缺席不被解释为删除。[Q01](#research-q01) 与 [Q02](#research-q02) 支持这一流程贡献。三方合并为成熟方法，本项价值在资产范围与恢复接线，未核查其他备份插件源码，不能据作者对照宣称全面优于竞品。
-
 差异纯函数与写入器分离，便于独立检查；外置模块白名单与保守冲突默认值得复用。applyPlan 的保留本地分支以归档哈希作共同祖先，避免下次错误覆盖，源码注释与代码需以后者为准。移植需要重做模块根、凭据规则与目标平台路径。当前未检查云端全链路，不能把测试文件存在写成通过。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z)
 
 
 

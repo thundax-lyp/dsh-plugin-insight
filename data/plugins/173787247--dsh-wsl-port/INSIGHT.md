@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[7846224](https://github.com/173787247/dsh-wsl-port/tree/7846224bc8959b5588011846142af8c8a9c308b1)
+源码版本：[7846224](https://github.com/173787247/dsh-wsl-port/tree/7846224bc8959b5588011846142af8c8a9c308b1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-port)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-port)
 <!-- END META -->
 
-> **实现功能**：读取WSL IP和ss监听文本，返回指定端口线索及3080/3081套件连接排查建议。
+> **功能**：读取WSL IP和ss监听文本，返回指定端口线索及3080/3081套件连接排查建议。
 
-> **核心亮点**：把常见命令/套件指引集中，减少接线，但不是进程归属或Windows端到端健康检查。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：把常见命令/套件指引集中，减少接线，但不是进程归属或Windows端到端健康检查。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：整表端口子串可混IPv6地址，未解析绑定地址/PID或探Windows；IP失败静默、静态relay指引未核部署。详见[Q02](#research-q02)。
+> **主要限制**：整表端口子串可混IPv6地址，未解析绑定地址/PID或探Windows；IP失败静默、静态relay指引未核部署。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把常见命令/套件指引集中，减少接线，但不是进程归属或Windows端到端健康检查。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-把常见命令/套件指引集中，减少接线，但不是进程归属或Windows端到端健康检查。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 纯建议/格式与execFile分离、端口整数范围校验、无shell参数拼接、5秒限制和ss错误保留值得复用。只读诊断不应该包装成更强的健康检查。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+created%3A2026-09-22T07%3A42%3A46.150Z..2026-10-22T07%3A42%3A46.150Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A42%3A46.150Z..2026-10-22T07%3A42%3A46.150Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+created%3A2026-09-22T07%3A42%3A46.150Z..2026-10-22T07%3A42%3A46.150Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A42%3A46.150Z..2026-10-22T07%3A42%3A46.150Z)
 
 
 

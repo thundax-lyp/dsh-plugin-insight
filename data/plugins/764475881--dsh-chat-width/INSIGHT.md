@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[5d61f65](https://github.com/764475881/dsh-chat-width/tree/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd)
+源码版本：[5d61f65](https://github.com/764475881/dsh-chat-width/tree/5d61f65224b1d811047d5eb1d9d4772dbf0e7bfd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/764475881/dsh-chat-width)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/764475881/dsh-chat-width)
 <!-- END META -->
 
-> **实现功能**：为旧版 DSH web 扩大聊天内容列并提供拖拽调宽，检测到新版原生把手时让位。
+> **功能**：为旧版 DSH web 扩大聊天内容列并提供拖拽调宽，检测到新版原生把手时让位。
 
-> **核心亮点**：旧版把一个宽度变量、右缘拖拽和持久化组成协调调宽路径；相对用户手工改 CSS 有便利。新版原生实现不属于插件增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：旧版把一个宽度变量、右缘拖拽和持久化组成协调调宽路径；相对用户手工改 CSS 有便利。新版原生实现不属于插件增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：原生检测依赖 DOM 特征；cleanup 移除 style 与把手，却未撤销旧版路径写在 root 上的内联变量，热禁用后可能残留宽度。未在本轮复现。详见[Q03](#research-q03)。
+> **主要限制**：原生检测依赖 DOM 特征；cleanup 移除 style 与把手，却未撤销旧版路径写在 root 上的内联变量，热禁用后可能残留宽度。未在本轮复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：旧版把一个宽度变量、右缘拖拽和持久化组成协调调宽路径；相对用户手工改 CSS 有便利。新版原生实现不属于插件增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-旧版把一个宽度变量、右缘拖拽和持久化组成协调调宽路径；相对用户手工改 CSS 有便利。新版原生实现不属于插件增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 共享 CSS 变量使多处宽度联动，2× 映射让右缘把手跟指针同步；MutationObserver 与 raf 合并挂载。自动让位基于 DOM 特征，而 root 内联变量未在 cleanup 撤回，设计说明的无残留主张需限缩。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/764475881/dsh-chat-width/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/764475881/dsh-chat-width/issues?q=is%3Aissue+created%3A2026-09-22T05%3A15%3A16.078Z..2026-10-22T05%3A15%3A16.078Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/764475881/dsh-chat-width/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A15%3A16.078Z..2026-10-22T05%3A15%3A16.078Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/764475881/dsh-chat-width/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/764475881/dsh-chat-width/issues?q=is%3Aissue+created%3A2026-09-22T05%3A15%3A16.078Z..2026-10-22T05%3A15%3A16.078Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/764475881/dsh-chat-width/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A15%3A16.078Z..2026-10-22T05%3A15%3A16.078Z)
 
 
 

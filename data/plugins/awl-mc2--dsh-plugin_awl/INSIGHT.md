@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[02b8cec](https://github.com/AWL-MC2/DSH-Plugin_awl/tree/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19)
+源码版本：[02b8cec](https://github.com/AWL-MC2/DSH-Plugin_awl/tree/02b8cec919d8857187eef74cf7bb6dc7fd7ddc19)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。
+> **功能**：为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。
 
-> **核心亮点**：把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：无认证状态 POST 接受无 Origin 请求；若 Web 暴露 LAN 可被网络客户端改写。写盘错误被吞、并发状态无版本保护。详见[Q03](#research-q03)。
+> **主要限制**：无认证状态 POST 接受无 Origin 请求；若 Web 暴露 LAN 可被网络客户端改写。写盘错误被吞、并发状态无版本保护。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把 CSS/字体调整集成到 DSH 设置与聊天命令，避免手工改主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 Host 扫字体、提供 manifest/state/font 路由和 /style 命令；客户端注入 CSS、预览、localStorage 与轮询。状态 .tmp 重命名但无 CAS，写失败静默。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Host 扫字体、提供 manifest/state/font 路由和 /style 命令；客户端�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@ Host 扫字体、提供 manifest/state/font 路由和 /style 命令；客户端�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AWL-MC2/DSH-Plugin_awl/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AWL-MC2/DSH-Plugin_awl/issues?q=is%3Aissue+created%3A2026-09-22T05%3A54%3A58.143Z..2026-10-22T05%3A54%3A58.143Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AWL-MC2/DSH-Plugin_awl/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A54%3A58.143Z..2026-10-22T05%3A54%3A58.143Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AWL-MC2/DSH-Plugin_awl/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AWL-MC2/DSH-Plugin_awl/issues?q=is%3Aissue+created%3A2026-09-22T05%3A54%3A58.143Z..2026-10-22T05%3A54%3A58.143Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AWL-MC2/DSH-Plugin_awl/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A54%3A58.143Z..2026-10-22T05%3A54%3A58.143Z)
 
 
 

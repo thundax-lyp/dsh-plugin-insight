@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[5b931b2](https://github.com/ANetResearch/ANet/tree/5b931b2df227d7f5e3bb2c6c76dea1e647f28da9/deploy/plugins/dist/dsh)
+源码版本：[5b931b2](https://github.com/ANetResearch/ANet/tree/5b931b2df227d7f5e3bb2c6c76dea1e647f28da9/deploy/plugins/dist/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=yellow&logo=github&style=flat)](https://github.com/ANetResearch/ANet)
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ANetResearch/ANet)
 <!-- END META -->
 
-> **实现功能**：通过本地anet节点把DSH接入AgentNetwork，提供MCP及委派、状态与设置Skill入口。
+> **功能**：通过本地anet节点把DSH接入AgentNetwork，提供MCP及委派、状态与设置Skill入口。
 
-> **核心亮点**：减少MCP/命令的身份和程序分歧，并避免复制运行指南；节点A2A/加密/结算贡献归节点而非bundle。见 [Q01](#research-q01)。
+> **亮点**：减少MCP/命令的身份和程序分歧，并避免复制运行指南；节点A2A/加密/结算贡献归节点而非bundle。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：固定bundle不固定自动下载的安装器与节点版本，提示规则不等底层支付/入站控制；公共hub加入和持久身份须单独核查。见 [Q03](#research-q03)。
+> **主要限制**：固定bundle不固定自动下载的安装器与节点版本，提示规则不等底层支付/入站控制；公共hub加入和持久身份须单独核查。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：减少MCP/命令的身份和程序分歧，并避免复制运行指南；节点A2A/加密/结算贡献归节点而非bundle。见 [Q01](#research-q01)。
 
-减少MCP/命令的身份和程序分歧，并避免复制运行指南；节点A2A/加密/结算贡献归节点而非bundle。见 [Q01](#research-q01)。
-
 薄适配与显式执行路径值得借鉴，但自动安装、进程环境与外部运行时把关键状态移到组件外；不能用薄代码规模推成低风险。见 [Q02](#research-q02) 与 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -159,7 +157,7 @@
 
 **活跃度**
 
-[![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
+[![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/ANetResearch/ANet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z)
 
 暂未获取：Issue 未关闭、近30天新建。
 

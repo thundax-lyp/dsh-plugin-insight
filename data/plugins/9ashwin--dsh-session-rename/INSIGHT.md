@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f073bfa](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)
+源码版本：[f073bfa](https://github.com/9Ashwin/dsh-session-rename/tree/f073bfa1fa7e59832df5efacb5b94ee44749326c)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：向模型提供 rename_session 工具，显式设置当前或已加载会话标题。
+> **功能**：向模型提供 rename_session 工具，显式设置当前或已加载会话标题。
 
-> **核心亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
+> **亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
 
-> **风险与缺陷**：可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。
+> **主要限制**：可指定任一已加载 session_id，而插件只校验非空，目标授权依赖未审宿主。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -90,8 +90,6 @@
 
 > **亮点**：用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
 
-用零运行时包依赖的 Host 工具把宿主改名 API 暴露给模型。详见[Q01](#research-q01)、[Q04](#research-q04)。
-
 tools.register 手写参数/结果 schema、执行校验；动态获取 sessionTitle 服务；isConcurrencySafe:false。
 
 <a id="detail-section-5"></a>
@@ -140,7 +138,7 @@ tools.register 手写参数/结果 schema、执行校验；动态获取 sessionT
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -152,7 +150,7 @@ tools.register 手写参数/结果 schema、执行校验；动态获取 sessionT
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+created%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+created%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/9Ashwin/dsh-session-rename/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A26%3A33.051Z..2026-10-22T06%3A26%3A33.051Z)
 
 
 

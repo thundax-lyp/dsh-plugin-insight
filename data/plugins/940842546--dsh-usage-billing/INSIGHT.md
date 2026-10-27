@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[d16e244](https://github.com/940842546/dsh-usage-billing/tree/d16e2445a8021814765fec14912507da6cafecae)
+源码版本：[d16e244](https://github.com/940842546/dsh-usage-billing/tree/d16e2445a8021814765fec14912507da6cafecae)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=yellow&logo=github&style=flat)](https://github.com/940842546/dsh-usage-billing) [![npm 30d 1,051](https://img.shields.io/static/v1?label=npm+30d&message=1%2C051&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-usage-billing) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-usage-billing)
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/940842546/dsh-usage-billing) [![npm 30d 1,051](https://img.shields.io/static/v1?label=npm+30d&message=1%2C051&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-billing) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-billing)
 <!-- END META -->
 
-> **实现功能**：监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。
+> **功能**：监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。
 
-> **核心亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
+> **亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](#research-q04)。
+> **主要限制**：核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
 
-相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](#research-q03)。
-
 Host 与 client 分面，temp 副本恢复、schema迁移和双实例心跳说明维护者关注持久化；但共享单文件没有多写者事务。可借鉴价格版本化与缓存命中拆分，复用时应把价格源/生效时间作为外部可审计数据。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@ Host 与 client 分面，temp 副本恢复、schema迁移和双实例心跳说�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[8f47356](https://github.com/All3nCN/dsh-qa-suite-N23/tree/8f473567166944bf9ea94afaad294ced49034691)
+源码版本：[8f47356](https://github.com/All3nCN/dsh-qa-suite-N23/tree/8f473567166944bf9ea94afaad294ced49034691)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：提供编辑后 TypeScript 诊断工具和本地多镜头代码审查命令。
+> **功能**：提供编辑后 TypeScript 诊断工具和本地多镜头代码审查命令。
 
-> **核心亮点**：吸收两份上游的 TS 诊断与模型审查流程，提供一个 host 包的工具和命令入口；未见诊断自动约束审查放行的共同机制。详见[Q02](#research-q02)。
+> **亮点**：吸收两份上游的 TS 诊断与模型审查流程，提供一个 host 包的工具和命令入口；未见诊断自动约束审查放行的共同机制。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：code_check 优先全局最近缓存项目而非调用会话 cwd，可能返回别的项目诊断；审查阈值只是 Agent 提示，不是校准准确率或程序验收。详见[Q03](#research-q03)。
+> **主要限制**：code_check 优先全局最近缓存项目而非调用会话 cwd，可能返回别的项目诊断；审查阈值只是 Agent 提示，不是校准准确率或程序验收。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：吸收两份上游的 TS 诊断与模型审查流程，提供一个 host 包的工具和命令入口；未见诊断自动约束审查放行的共同机制。详见[Q02](#research-q02)。
 
-吸收两份上游的 TS 诊断与模型审查流程，提供一个 host 包的工具和命令入口；未见诊断自动约束审查放行的共同机制。详见[Q02](#research-q02)。
-
 按项目防抖、dirty 重跑和 dispose abort 处理后台检查生命周期；纯逻辑/host 胶水边界便于审阅。直接 child_process 收集 stdout/stderr 没有显式字节上限，且工具取全局最近 root；审查命令只注入 prompt，不能代替执行证据。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@ code_check 优先全局最近缓存项目而非调用会话 cwd，可能返回�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@ code_check 优先全局最近缓存项目而非调用会话 cwd，可能返回�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+created%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+created%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z)
 
 
 

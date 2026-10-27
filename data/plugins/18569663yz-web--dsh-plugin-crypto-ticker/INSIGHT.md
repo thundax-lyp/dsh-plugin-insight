@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[84f1be4](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/tree/84f1be429c04c5d426e54d02b993d8972d4d841d)
+源码版本：[84f1be4](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker/tree/84f1be429c04c5d426e54d02b993d8972d4d841d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/18569663yz-web/dsh-plugin-crypto-ticker)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web/Desktop 侧栏显示多源加密货币价格、24 小时涨跌与迷你走势。
+> **功能**：在 DSH Web/Desktop 侧栏显示多源加密货币价格、24 小时涨跌与迷你走势。
 
-> **核心亮点**：将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。
+> **亮点**：将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：collect 只需一个币有价就选源，缺价币可沿用无逐币时间的 lastGood；updatedAt 却为当前，另 schedule 写 ref 不重建计时器，可能误示新鲜和实际刷新频率。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：collect 只需一个币有价就选源，缺价币可沿用无逐币时间的 lastGood；updatedAt 却为当前，另 schedule 写 ref 不重建计时器，可能误示新鲜和实际刷新频率。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。
 
-将公开行情源接入 DSH Web/Desktop GUI，整合代理、降级与宿主侧缓存，缩短离开工作台查看行情的操作；行情本身由交易所提供。详见[Q01](#research-q01)。
-
 宿主层解决 CORS/代理并限响应体可借鉴；同一缓存需补并发合并和逐币新鲜度契约。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ collect 只需一个币有价就选源，缺价币可沿用无逐币时间的 la
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

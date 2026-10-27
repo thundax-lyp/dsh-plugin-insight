@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b202312](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/tree/b2023124a1fa08278e3ee82aefa8ed9faeade995)
+源码版本：[b202312](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/tree/b2023124a1fa08278e3ee82aefa8ed9faeade995)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,960](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C960&color=yellow&logo=github&style=flat)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite)
+[![GitHub ★ 2,960](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C960&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite)
 <!-- END META -->
 
-> **实现功能**：用可选Skill模块与Python控制器维护长任务状态、源码映射和证据检查。
+> **功能**：用可选Skill模块与Python控制器维护长任务状态、源码映射和证据检查。
 
-> **核心亮点**：[Q02](#research-q02)、[Q03](#research-q03) 相对人工清单，脚本可机械拒绝过期读取、改变的证据和不匹配的任务契约，增量是证据失效治理，不是验证模型内部认知。
+> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 相对人工清单，脚本可机械拒绝过期读取、改变的证据和不匹配的任务契约，增量是证据失效治理，不是验证模型内部认知。
 
-> **风险与缺陷**：[Q03](#research-q03) 摘要一致不能证明验证文件真实，一份虚构而未变的日志仍需独立事实核对；门控exit 0不代表工程任务已正确完成。
+> **主要限制**：[Q03](#research-q03) 摘要一致不能证明验证文件真实，一份虚构而未变的日志仍需独立事实核对；门控exit 0不代表工程任务已正确完成。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 相对人工清单，脚本可机械拒绝过期读取、改变的证据和不匹配的任务契约，增量是证据失效治理，不是验证模型内部认知。
 
-[Q02](#research-q02)、[Q03](#research-q03) 相对人工清单，脚本可机械拒绝过期读取、改变的证据和不匹配的任务契约，增量是证据失效治理，不是验证模型内部认知。
-
 可借鉴规范JSON与Markdown投影分离、收据失效与契约绑定；迁移需对齐宿主读取/执行能力和真实证据记录，不能把脚本状态当不可绕过的宿主权限控制。
 
 <a id="detail-section-9"></a>
@@ -161,7 +159,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -171,7 +169,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

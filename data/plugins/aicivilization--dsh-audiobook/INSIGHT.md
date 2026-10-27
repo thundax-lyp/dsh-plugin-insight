@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[fad04c3](https://github.com/AIcivilization/dsh-audiobook/tree/fad04c389bc4dfa828267fb9fb31aaf756560a47)
+源码版本：[fad04c3](https://github.com/AIcivilization/dsh-audiobook/tree/fad04c389bc4dfa828267fb9fb31aaf756560a47)
 
 <!-- BEGIN META -->
-[![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-audiobook)
+[![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-audiobook)
 <!-- END META -->
 
-> **实现功能**：搜索或导入读物并分段朗读，保存收听进度、位置心得，支持语音记录和AI讨论。
+> **功能**：搜索或导入读物并分段朗读，保存收听进度、位置心得，支持语音记录和AI讨论。
 
-> **核心亮点**：把听书、断点、位置心得和可导出的读后感连成一个读书流程，原话与AI整理分离是可借鉴交接；TTS/ASR和书源能力来自上游。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把听书、断点、位置心得和可导出的读后感连成一个读书流程，原话与AI整理分离是可借鉴交接；TTS/ASR和书源能力来自上游。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：本地存储不等于全部本地处理，Edge文本和AI材料会外发；默认启动自动安装Edge组件。书源同ID重新导入会覆盖段落但保留进度，位置索引可能漂移；防剧透靠裁剪与提示，history/模型知识不能硬隔离。参见[Q03](#research-q03)。
+> **主要限制**：本地存储不等于全部本地处理，Edge文本和AI材料会外发；默认启动自动安装Edge组件。书源同ID重新导入会覆盖段落但保留进度，位置索引可能漂移；防剧透靠裁剪与提示，history/模型知识不能硬隔离。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -107,8 +107,6 @@
 
 > **亮点**：把听书、断点、位置心得和可导出的读后感连成一个读书流程，原话与AI整理分离是可借鉴交接；TTS/ASR和书源能力来自上游。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把听书、断点、位置心得和可导出的读后感连成一个读书流程，原话与AI整理分离是可借鉴交接；TTS/ASR和书源能力来自上游。参见[Q01](#research-q01)、[Q02](#research-q02)。
-
 原子JSON与队列、原话/整理分层便于复用；导入版本与锚点、跨进程写入和云服务边界需独立设计，不能把单文件原子性当整体事务。
 
 <a id="detail-section-5"></a>
@@ -157,7 +155,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -169,7 +167,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-audiobook/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-audiobook/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A33.084Z..2026-10-23T01%3A50%3A33.084Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-audiobook/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A33.084Z..2026-10-23T01%3A50%3A33.084Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-audiobook/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-audiobook/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A33.084Z..2026-10-23T01%3A50%3A33.084Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-audiobook/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A33.084Z..2026-10-23T01%3A50%3A33.084Z)
 
 
 

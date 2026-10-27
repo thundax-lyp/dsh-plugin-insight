@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[cfee329](https://github.com/534119219/chicheng-gate/tree/cfee329acf7f886749469779259a6a9147a2b190)
+源码版本：[cfee329](https://github.com/534119219/chicheng-gate/tree/cfee329acf7f886749469779259a6a9147a2b190)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-gate)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-gate)
 <!-- END META -->
 
-> **实现功能**：以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。
+> **功能**：以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。
 
-> **核心亮点**：把门禁、反代和隧道生命周期整合，降低远程接入步骤；同时也把宿主高权限能力置于新的网络边界。 详见[Q03](#research-q03)。
+> **亮点**：把门禁、反代和隧道生命周期整合，降低远程接入步骤；同时也把宿主高权限能力置于新的网络边界。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：远端认证成功后近似完整控制；源码补丁随宿主升级易漂移，下载运行 frpc 又增加二进制供应链与公网攻击面。 详见[Q04](#research-q04)。
+> **主要限制**：远端认证成功后近似完整控制；源码补丁随宿主升级易漂移，下载运行 frpc 又增加二进制供应链与公网攻击面。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -107,8 +107,6 @@
 
 > **亮点**：把门禁、反代和隧道生命周期整合，降低远程接入步骤；同时也把宿主高权限能力置于新的网络边界。 详见[Q03](#research-q03)。
 
-把门禁、反代和隧道生命周期整合，降低远程接入步骤；同时也把宿主高权限能力置于新的网络边界。 详见[Q03](#research-q03)。
-
 scrypt、cookie 和限速是必要控制，但不足以证明公网安全；缺少本轮渗透、补丁完整性和权限最小化证据。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -157,7 +155,7 @@ scrypt、cookie 和限速是必要控制，但不足以证明公网安全；缺�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

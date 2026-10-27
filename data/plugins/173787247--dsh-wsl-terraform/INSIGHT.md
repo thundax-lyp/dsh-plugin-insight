@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[549e4b8](https://github.com/173787247/dsh-wsl-terraform/tree/549e4b82570a4a13ab900ac03c5593421a8c16e4)
+源码版本：[549e4b8](https://github.com/173787247/dsh-wsl-terraform/tree/549e4b82570a4a13ab900ac03c5593421a8c16e4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-terraform)
 <!-- END META -->
 
-> **实现功能**：在DSH中检查Terraform/OpenTofu状态、验证配置、解析plan变更数量和列出state资源地址，不提供apply或destroy工具。
+> **功能**：在DSH中检查Terraform/OpenTofu状态、验证配置、解析plan变更数量和列出state资源地址，不提供apply或destroy工具。
 
-> **核心亮点**：把固定validate/plan/state命令与参数化目录、计数/错误结果接入DSH，限制模型可选IaC动作。详见[Q02](#research-q02)。
+> **亮点**：把固定validate/plan/state命令与参数化目录、计数/错误结果接入DSH，限制模型可选IaC动作。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：plan仅exit1拒绝，其他exit/null可ok:true；先截stdout可能丢Plan尾行，state500条截断未标，render隐藏部分状态。allowRoots默认空无限制且继承Host环境，不等价沙箱。详见[Q03](#research-q03)。
+> **主要限制**：plan仅exit1拒绝，其他exit/null可ok:true；先截stdout可能丢Plan尾行，state500条截断未标，render隐藏部分状态。allowRoots默认空无限制且继承Host环境，不等价沙箱。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -116,8 +116,6 @@
 
 > **亮点**：把固定validate/plan/state命令与参数化目录、计数/错误结果接入DSH，限制模型可选IaC动作。详见[Q02](#research-q02)。
 
-把固定validate/plan/state命令与参数化目录、计数/错误结果接入DSH，限制模型可选IaC动作。详见[Q02](#research-q02)。
-
 run有error监听和timeout kill，优于无异常分支；stdout长度到2×maxOut才kill、返回前再裁maxOut，有truncated标记。stderr无限拼字符串，末尾裁8000只限制返回，不限内存。maxOut字符长度也不等于字节或token配额。
 
 没有执行signal到run，没有进程组/后代管理；超时reject后child close可能再resolve但Promise已settled，不代表已杀远端provider事务。工具捕获异常只返error字符串，缺run ID/信号/是否因超限被杀的分类。which独立bash只有close监听，无error或超时，主run保护不覆盖二进制探测。
@@ -174,7 +172,7 @@ plan仅exit1拒绝，其他exit/null可ok:true；先截stdout可能丢Plan尾行
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -186,7 +184,7 @@ plan仅exit1拒绝，其他exit/null可ok:true；先截stdout可能丢Plan尾行
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform/issues?q=is%3Aissue+created%3A2026-09-22T06%3A36%3A22.478Z..2026-10-22T06%3A36%3A22.478Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-terraform/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A36%3A22.478Z..2026-10-22T06%3A36%3A22.478Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-terraform/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-terraform/issues?q=is%3Aissue+created%3A2026-09-22T06%3A36%3A22.478Z..2026-10-22T06%3A36%3A22.478Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-terraform/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A36%3A22.478Z..2026-10-22T06%3A36%3A22.478Z)
 
 
 

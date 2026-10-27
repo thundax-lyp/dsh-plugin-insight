@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[cb47d87](https://github.com/AdilAlmahmoud/dsh-RTL-chat/tree/cb47d8708ae0c95205926f03b6c7228c50de5e29)
+源码版本：[cb47d87](https://github.com/AdilAlmahmoud/dsh-RTL-chat/tree/cb47d8708ae0c95205926f03b6c7228c50de5e29)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AdilAlmahmoud/dsh-RTL-chat)
 <!-- END META -->
 
-> **实现功能**：给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。
+> **功能**：给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。
 
-> **核心亮点**：将局部RTL样式和可见开关封装，少反复改浏览器CSS。详见[Q01](#research-q01)。
+> **亮点**：将局部RTL样式和可见开关封装，少反复改浏览器CSS。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：统一消息区RTL影响混排，偏好共享origin且不同tab不实时同步，按钮样式disposer未保存。详见[Q03](#research-q03)。
+> **主要限制**：统一消息区RTL影响混排，偏好共享origin且不同tab不实时同步，按钮样式disposer未保存。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将局部RTL样式和可见开关封装，少反复改浏览器CSS。详见[Q01](#research-q01)。
 
-将局部RTL样式和可见开关封装，少反复改浏览器CSS。详见[Q01](#research-q01)。
-
 小实现/存储降级简明，清理所有style和辅助状态可改善。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ RTL读者本地试用，混排不合适随时切回。详见[Q05](#research-q05)
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@ RTL读者本地试用，混排不合适随时切回。详见[Q05](#research-q05)
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+created%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+created%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z)
 
 
 

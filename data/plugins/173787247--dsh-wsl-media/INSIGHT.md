@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[0ead0f6](https://github.com/173787247/dsh-wsl-media/tree/0ead0f6535a5f3b8bdbfb18927c66a5e7976b7fe)
+源码版本：[0ead0f6](https://github.com/173787247/dsh-wsl-media/tree/0ead0f6535a5f3b8bdbfb18927c66a5e7976b7fe)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-media)
 <!-- END META -->
 
-> **实现功能**：把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。
+> **功能**：把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。
 
-> **核心亮点**：将常用媒体/文档CLI封装成结构化参数、路径检查和统一错误/截断结果，减少手写命令。详见[Q02](#research-q02)。
+> **亮点**：将常用媒体/文档CLI封装成结构化参数、路径检查和统一错误/截断结果，减少手写命令。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：不存在输出不核父realpath，ffmpeg-y覆盖且写工具并发安全标记；Whisper写/tmp txt但返回stdout，stderr内存无上限、宿主取消未接child。默认roots较宽。详见[Q03](#research-q03)、[Q05](#research-q05)。
+> **主要限制**：不存在输出不核父realpath，ffmpeg-y覆盖且写工具并发安全标记；Whisper写/tmp txt但返回stdout，stderr内存无上限、宿主取消未接child。默认roots较宽。详见[Q03](#research-q03)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -117,8 +117,6 @@ kit可选，包无npm依赖自动装CLI；本轮不运行作者测试、转换�
 
 > **亮点**：将常用媒体/文档CLI封装成结构化参数、路径检查和统一错误/截断结果，减少手写命令。详见[Q02](#research-q02)。
 
-将常用媒体/文档CLI封装成结构化参数、路径检查和统一错误/截断结果，减少手写命令。详见[Q02](#research-q02)。
-
 runCmd stdout超maxOut只kill后由close返回code，没有专门输出超限状态；通常包装报CLI失败而不是正常partial。stderr一直Buffer.concat，返回时才slice4000，故显示裁剪不限制内存；大错误流可能在timeout前持续增长。PDF也先收stdout再按maxChars切，展示字符数和执行字节预算是两层。
 
 没有exec.signal传给子进程，宿主调用取消不自然连接到CLI kill；timeout仅杀直接child，不追踪进程树或清半成品。asr工具宿主timeout至少300秒，但opts传timeoutMs120秒，lib用传入值优先，因此默认子进程预算仍120秒，两个timeout并不等价。
@@ -175,7 +173,7 @@ which单独spawn bash，只监听close没有error/timeout，bash缺失或异常�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -187,7 +185,7 @@ which单独spawn bash，只监听close没有error/timeout，bash缺失或异常�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media/issues?q=is%3Aissue+created%3A2026-09-22T06%3A32%3A37.988Z..2026-10-22T06%3A32%3A37.988Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-media/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A32%3A37.988Z..2026-10-22T06%3A32%3A37.988Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-media/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-media/issues?q=is%3Aissue+created%3A2026-09-22T06%3A32%3A37.988Z..2026-10-22T06%3A32%3A37.988Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-media/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A32%3A37.988Z..2026-10-22T06%3A32%3A37.988Z)
 
 
 

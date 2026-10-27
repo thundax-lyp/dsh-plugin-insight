@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[64796c9](https://github.com/2026heshao/dsh-forget-session/tree/64796c9b1423972ae54d2cfa230acc6c4d546c0e)
+源码版本：[64796c9](https://github.com/2026heshao/dsh-forget-session/tree/64796c9b1423972ae54d2cfa230acc6c4d546c0e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-forget-session) [![npm 30d 283](https://img.shields.io/static/v1?label=npm+30d&message=283&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-forget-session) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-forget-session)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2026heshao/dsh-forget-session) [![npm 30d 283](https://img.shields.io/static/v1?label=npm+30d&message=283&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-forget-session) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-forget-session)
 <!-- END META -->
 
-> **实现功能**：永久删除会话多层状态并防止幽灵复活。
+> **功能**：永久删除会话多层状态并防止幽灵复活。
 
-> **核心亮点**：把持久文件、投影、侧栏元数据和内存 attachment 视为同一删除生命周期，并处理幽灵复活；不是介质级安全擦除。 参见[Q03](#research-q03)。
+> **亮点**：把持久文件、投影、侧栏元数据和内存 attachment 视为同一删除生命周期，并处理幽灵复活；不是介质级安全擦除。 参见[Q03](#research-q03)。
 
-> **风险与缺陷**：多层删除不原子，中途失败可留残片；搜索索引、备份、同步和外部数据未必覆盖。guard 可能只在进程内，删除文件也非安全擦除。 参见[Q04](#research-q04)。
+> **主要限制**：多层删除不原子，中途失败可留残片；搜索索引、备份、同步和外部数据未必覆盖。guard 可能只在进程内，删除文件也非安全擦除。 参见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把持久文件、投影、侧栏元数据和内存 attachment 视为同一删除生命周期，并处理幽灵复活；不是介质级安全擦除。 参见[Q03](#research-q03)。
 
-把持久文件、投影、侧栏元数据和内存 attachment 视为同一删除生命周期，并处理幽灵复活；不是介质级安全擦除。 参见[Q03](#research-q03)。
-
 flush、逐层清理、detach 和 guard 针对已知复活链，比 unlink 完整；但缺跨层事务和默认恢复窗口。 参见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@ flush、逐层清理、detach 和 guard 针对已知复活链，比 unlink 完�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

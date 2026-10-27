@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[3cf9bd8](https://github.com/988hj7tczd-oss/dsh-computer-use/tree/3cf9bd8ae60271512f263bfa75485cb242ca0892)
+源码版本：[3cf9bd8](https://github.com/988hj7tczd-oss/dsh-computer-use/tree/3cf9bd8ae60271512f263bfa75485cb242ca0892)
 
 <!-- BEGIN META -->
-[![GitHub ★ 60](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=60&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use) [![npm 30d 3,522](https://img.shields.io/static/v1?label=npm+30d&message=3%2C522&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-computer-use) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-computer-use)
+[![GitHub ★ 60](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=60&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-computer-use) [![npm 30d 3,522](https://img.shields.io/static/v1?label=npm+30d&message=3%2C522&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-computer-use) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-computer-use)
 <!-- END META -->
 
-> **实现功能**：为DSH接入cua-driver的AX/截图观察与桌面点击输入等十二工具，支持虚拟光标、图像附件和可选视觉观察者。
+> **功能**：为DSH接入cua-driver的AX/截图观察与桌面点击输入等十二工具，支持虚拟光标、图像附件和可选视觉观察者。
 
-> **核心亮点**：把原生driver接入DSH十二工具与附件/视觉路由，提供局部目标/时效/前台单次审批和可见轨迹；不是新桌面引擎。详见[Q01](#research-q01)。
+> **亮点**：把原生driver接入DSH十二工具与附件/视觉路由，提供局部目标/时效/前台单次审批和可见轨迹；不是新桌面引擎。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：元素click路径忽略ttlMs、snapshot与driver session全局共享，compact/zoom图像无完整变换绑定，密码/危险词仅有限element标签；ok不能当安全业务完成。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：元素click路径忽略ttlMs、snapshot与driver session全局共享，compact/zoom图像无完整变换绑定，密码/危险词仅有限element标签；ok不能当安全业务完成。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：把原生driver接入DSH十二工具与附件/视觉路由，提供局部目标/时效/前台单次审批和可见轨迹；不是新桌面引擎。详见[Q01](#research-q01)。
 
-把原生driver接入DSH十二工具与附件/视觉路由，提供局部目标/时效/前台单次审批和可见轨迹；不是新桌面引擎。详见[Q01](#research-q01)。
-
 snapshot.js只有模块全局snapshot，CUA_SESSION默认固定字符串，未按DSH Agent/session分区；多个Agent相继观察会覆盖彼此目标。guard基于当前snapshot.appName做allowedApps（默认空不限制），观察/启动不受白名单约束，app_launch含可选bring_to_front不被同一审批检查。共享快照不是会话安全边界。
 
 元素click/double/right走humanAction→resolveClickTarget(index,ttlMs)，该函数完全没用ttlMs，guard只核snapshot存在而不isFresh，所以本地30秒TTL在这些路径缺失；坐标click/type/key/scroll/drag通过resolveWindow/Token有时效检查。外部element_token可能由driver另判，但不由适配代码证明。另外snapshot.at在视觉处理完成后Date.now才记，不是捕获时刻，慢视觉可给旧画面重新计TTL。
@@ -170,7 +168,7 @@ snapshot.js只有模块全局snapshot，CUA_SESSION默认固定字符串，未�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -183,7 +181,7 @@ snapshot.js只有模块全局snapshot，CUA_SESSION默认固定字符串，未�
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A33%3A42.985Z..2026-10-22T10%3A33%3A42.985Z)
 
 
 

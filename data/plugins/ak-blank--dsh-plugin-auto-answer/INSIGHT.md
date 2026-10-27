@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[0147e9b](https://github.com/AK-blank/dsh-plugin-auto-answer/tree/0147e9b83cd100b4532024f8907799741ce87429)
+源码版本：[0147e9b](https://github.com/AK-blank/dsh-plugin-auto-answer/tree/0147e9b83cd100b4532024f8907799741ce87429)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。
+> **功能**：无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。
 
-> **核心亮点**：在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。
+> **亮点**：在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。
 
-> **风险与缺陷**：默认首项/空选项自动回答可能跨越真实用户决策边界，plan-review 保护只覆盖显式 intent；卡片状态可能滞后。详见[Q02](#research-q02)、[Q04](#research-q04)。
+> **主要限制**：默认首项/空选项自动回答可能跨越真实用户决策边界，plan-review 保护只覆盖显式 intent；卡片状态可能滞后。详见[Q02](#research-q02)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。
 
-在不改 Client 的 Host 插件中代理问答，并处理迟到拒绝、取消和重新 apply。详见[Q01](#research-q01)、[Q03](#research-q03)。
-
 global/prepend 事件注册，Promise.race 处理下游/计时/abort/停机，Symbol 防重复监听。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ global/prepend 事件注册，Promise.race 处理下游/计时/abort/停机，Sy
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -154,7 +152,7 @@ global/prepend 事件注册，Promise.race 处理下游/计时/abort/停机，Sy
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-auto-answer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-auto-answer/issues?q=is%3Aissue+created%3A2026-09-22T06%3A24%3A41.516Z..2026-10-22T06%3A24%3A41.516Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-auto-answer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A24%3A41.516Z..2026-10-22T06%3A24%3A41.516Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-auto-answer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-auto-answer/issues?q=is%3Aissue+created%3A2026-09-22T06%3A24%3A41.516Z..2026-10-22T06%3A24%3A41.516Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-auto-answer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A24%3A41.516Z..2026-10-22T06%3A24%3A41.516Z)
 
 
 

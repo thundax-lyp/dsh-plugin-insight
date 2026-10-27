@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f384454](https://github.com/598829314/oil-dsh-title/tree/f384454dfbed3ac3f263e7f09e1bc0c210c1abc4)
+源码版本：[f384454](https://github.com/598829314/oil-dsh-title/tree/f384454dfbed3ac3f263e7f09e1bc0c210c1abc4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/598829314/oil-dsh-title)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/598829314/oil-dsh-title)
 <!-- END META -->
 
-> **实现功能**：按最近用户消息异步维护DSH会话标题，采用emoji与对象/持续目标格式并调用官方rename。
+> **功能**：按最近用户消息异步维护DSH会话标题，采用emoji与对象/持续目标格式并调用官方rename。
 
-> **核心亮点**：继承oil-codex-title命名政策，新增DSH官方事件/rename适配和有界消息抽取。详见[Q01](#research-q01)。
+> **亮点**：继承oil-codex-title命名政策，新增DSH官方事件/rename适配和有界消息抽取。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：生成中缺用户seq和标题CAS，新意图可能被丢/覆盖；Windows hint与隐私校验仅有限模式。详见[Q03](#research-q03)。
+> **主要限制**：生成中缺用户seq和标题CAS，新意图可能被丢/覆盖；Windows hint与隐私校验仅有限模式。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：继承oil-codex-title命名政策，新增DSH官方事件/rename适配和有界消息抽取。详见[Q01](#research-q01)。
 
-继承oil-codex-title命名政策，新增DSH官方事件/rename适配和有界消息抽取。详见[Q01](#research-q01)。
-
 分离core/host、失败保旧与双流形态组装值得复用，需补并发当前性和隐私反例。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/598829314/oil-dsh-title/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/598829314/oil-dsh-title/issues?q=is%3Aissue+created%3A2026-09-22T09%3A21%3A39.761Z..2026-10-22T09%3A21%3A39.761Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/598829314/oil-dsh-title/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A21%3A39.761Z..2026-10-22T09%3A21%3A39.761Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/598829314/oil-dsh-title/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/598829314/oil-dsh-title/issues?q=is%3Aissue+created%3A2026-09-22T09%3A21%3A39.761Z..2026-10-22T09%3A21%3A39.761Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/598829314/oil-dsh-title/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A21%3A39.761Z..2026-10-22T09%3A21%3A39.761Z)
 
 
 

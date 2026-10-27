@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a6aee9c](https://github.com/1985899182/dsh-harness-chat-control/tree/a6aee9c6107d6e7438a449e31393d6a12fde563f)
+源码版本：[a6aee9c](https://github.com/1985899182/dsh-harness-chat-control/tree/a6aee9c6107d6e7438a449e31393d6a12fde563f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1985899182/dsh-harness-chat-control)
 <!-- END META -->
 
-> **实现功能**：为 DSH 对话提供原生引用胶囊、侧栏追问、原位编辑和侧栏标签批量关闭。
+> **功能**：为 DSH 对话提供原生引用胶囊、侧栏追问、原位编辑和侧栏标签批量关闭。
 
-> **核心亮点**：相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。 参见[Q03](#research-q03)。
+> **亮点**：相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。 参见[Q03](#research-q03)。
 
-> **风险与缺陷**：最关键前提是“侧栏独立”容易被误解为权限或数据隔离。源码仍复制父历史、cwd 与 options，自然语言边界不能限制工具；多条 Host 路由对目标身份的核验若不一致，知道会话 ID 的请求可能越过预期父子关系。内置 Sidebar 和多个内部 slot 还把兼容性绑定在精确宿主版本。 参见[Q04](#research-q04)。
+> **主要限制**：最关键前提是“侧栏独立”容易被误解为权限或数据隔离。源码仍复制父历史、cwd 与 options，自然语言边界不能限制工具；多条 Host 路由对目标身份的核验若不一致，知道会话 ID 的请求可能越过预期父子关系。内置 Sidebar 和多个内部 slot 还把兼容性绑定在精确宿主版本。 参见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。 参见[Q03](#research-q03)。
 
-相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。 参见[Q03](#research-q03)。
-
 Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己持有时恢复，体现了失败封闭。编辑链会校验 seq/文本并重算 surfaceRange，但关联仍缺贯穿 UI 意图与发送的 nonce；共享 definition.multiple 与内置私有实现增加升级维护面。可借鉴的是引用插入失败不降级成污染正文的 token，以及先建空侧会话、等用户确认再发送。 参见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -157,7 +155,7 @@ Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -169,7 +167,7 @@ Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+created%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+created%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z)
 
 
 

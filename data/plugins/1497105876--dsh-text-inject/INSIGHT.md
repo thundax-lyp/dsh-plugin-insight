@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[42c698e](https://github.com/1497105876/dsh-text-inject/tree/42c698eb9b0967afdf940f01809701f9274d1cf9)
+源码版本：[42c698e](https://github.com/1497105876/dsh-text-inject/tree/42c698eb9b0967afdf940f01809701f9274d1cf9)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在DSH设置页管理独立Markdown中的系统提示和上下文块，支持热加载与历史备份。
+> **功能**：在DSH设置页管理独立Markdown中的系统提示和上下文块，支持热加载与历史备份。
 
-> **核心亮点**：将常驻文本与宿主配置分离，提供文件/设置页双入口和历史恢复；注入能力继承官方接口。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将常驻文本与宿主配置分离，提供文件/设置页双入口和历史恢复；注入能力继承官方接口。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：README的trigger门控不在当前context注册中，用户可能误判注入范围；整组热替换与备份也无事务保证。见 [Q03](#research-q03)。
+> **主要限制**：README的trigger门控不在当前context注册中，用户可能误判注入范围；整组热替换与备份也无事务保证。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：将常驻文本与宿主配置分离，提供文件/设置页双入口和历史恢复；注入能力继承官方接口。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-将常驻文本与宿主配置分离，提供文件/设置页双入口和历史恢复；注入能力继承官方接口。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 目录监听兼容编辑器替换，disposer归一化值得复用；逐块注册与错误列表便于定位。应避免将兼容字段静默保留成虚假功能；直接文件写与整组重注册需要更明确的失败状态。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ README的trigger门控不在当前context注册中，用户可能误判注入范
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@ README的trigger门控不在当前context注册中，用户可能误判注入范
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1497105876/dsh-text-inject/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1497105876/dsh-text-inject/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1497105876/dsh-text-inject/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1497105876/dsh-text-inject/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1497105876/dsh-text-inject/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1497105876/dsh-text-inject/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 
 

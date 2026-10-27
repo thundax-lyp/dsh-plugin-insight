@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[4397b2d](https://github.com/111222cjyq/dsh-curate/tree/4397b2dfffb33f92e7f0225d976a5dd9e47232b4)
+源码版本：[4397b2d](https://github.com/111222cjyq/dsh-curate/tree/4397b2dfffb33f92e7f0225d976a5dd9e47232b4)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：按消息标重要性、改写模型可见文本，并以备份和区间摘要整理 DSH 会话上下文。
+> **功能**：按消息标重要性、改写模型可见文本，并以备份和区间摘要整理 DSH 会话上下文。
 
-> **核心亮点**：将逐消息重要性、工具对约束、文本纠正和区间摘要组合为人工工作台；基础surface及编辑投影明确改编自已有项目，增量是组织方式而非全新摘要算法。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将逐消息重要性、工具对约束、文本纠正和区间摘要组合为人工工作台；基础surface及编辑投影明确改编自已有项目，增量是组织方式而非全新摘要算法。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03)
+> **主要限制**：确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：将逐消息重要性、工具对约束、文本纠正和区间摘要组合为人工工作台；基础surface及编辑投影明确改编自已有项目，增量是组织方式而非全新摘要算法。[Q01](#research-q01) [Q02](#research-q02)
 
-将逐消息重要性、工具对约束、文本纠正和区间摘要组合为人工工作台；基础surface及编辑投影明确改编自已有项目，增量是组织方式而非全新摘要算法。[Q01](#research-q01) [Q02](#research-q02)
-
 纯函数surface与编辑规划、写前备份、明确partial结果值得借鉴；恢复方案诚实保留手工边界。审计失败不影响既有提交是可用性取舍，不能据此宣称每次修改都有完整成功审计。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.302Z..2026-10-24T05%3A55%3A33.302Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.302Z..2026-10-24T05%3A55%3A33.302Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.302Z..2026-10-24T05%3A55%3A33.302Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.302Z..2026-10-24T05%3A55%3A33.302Z)
 
 
 

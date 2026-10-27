@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[aeb605e](https://github.com/AdamPlatin123/dsh-plugin-radar/tree/aeb605ed0aa53ff30a3b5e42a1c222afd523cfac)
+源码版本：[aeb605e](https://github.com/AdamPlatin123/dsh-plugin-radar/tree/aeb605ed0aa53ff30a3b5e42a1c222afd523cfac)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C484&color=yellow&logo=github&style=flat)](https://github.com/AdamPlatin123/dsh-plugin-radar)
+[![GitHub ★ 1,484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C484&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AdamPlatin123/dsh-plugin-radar)
 <!-- END META -->
 
-> **实现功能**：收集DSH插件候选、归并兼容性记录，提供分类目录、静态JSON和可浏览站点。
+> **功能**：收集DSH插件候选、归并兼容性记录，提供分类目录、静态JSON和可浏览站点。
 
-> **核心亮点**：[Q02](#research-q02)识别的贡献是以canonical统一事实源替代Markdown反向解析，在身份归并和冲突政策后从最终输出行派生统计。相比手工社区清单，发现消费者得到可缓存分类与状态数据；内部一致性提高不证明运行判定正确，测试引擎仍属私有边界。
+> **亮点**：[Q02](#research-q02)识别的贡献是以canonical统一事实源替代Markdown反向解析，在身份归并和冲突政策后从最终输出行派生统计。相比手工社区清单，发现消费者得到可缓存分类与状态数据；内部一致性提高不证明运行判定正确，测试引擎仍属私有边界。
 
-> **风险与缺陷**：[Q03](#research-q03)指出最影响价值的是逐条状态无法普遍回指插件commit、宿主、环境与日志。项目明确披露这一限制，聚合器计数相等或成功退出不能认证当前兼容。适合发现，不能把历史可用当自动安装门槛。
+> **主要限制**：[Q03](#research-q03)指出最影响价值的是逐条状态无法普遍回指插件commit、宿主、环境与日志。项目明确披露这一限制，聚合器计数相等或成功退出不能认证当前兼容。适合发现，不能把历史可用当自动安装门槛。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：[Q02](#research-q02)识别的贡献是以canonical统一事实源替代Markdown反向解析，在身份归并和冲突政策后从最终输出行派生统计。相比手工社区清单，发现消费者得到可缓存分类与状态数据；内部一致性提高不证明运行判定正确，测试引擎仍属私有边界。
 
-[Q02](#research-q02)识别的贡献是以canonical统一事实源替代Markdown反向解析，在身份归并和冲突政策后从最终输出行派生统计。相比手工社区清单，发现消费者得到可缓存分类与状态数据；内部一致性提高不证明运行判定正确，测试引擎仍属私有边界。
-
 build_canonical把快照、历史基线、仓库映射和社区登记汇到canonical，再由渲染/导出消费。已有快照新到旧装载，以(name,url)保留先见记录，随后按真实仓库定位与改名身份再归并；这比从生成Markdown反向解析减少了展示格式对事实的影响。
 
 merge_entry对确定的可用/不兼容冲突降为待定，较弱状态与确定运行状态冲突时保留确定结论；这种仲裁是聚合政策，不是重新执行。它也能让较旧确定结论覆盖较新待定，使用者须看版本和条件而不能将最新快照编号当每条最新测试。新登记且无覆盖的条目以未测补入，不把登记当可用。
@@ -156,7 +154,7 @@ merge_entry对确定的可用/不兼容冲突降为待定，较弱状态与确�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -169,7 +167,7 @@ merge_entry对确定的可用/不兼容冲突降为待定，较弱状态与确�
 
 **活跃度**
 
-[![Issue 未关闭 4](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=grey&logo=github&style=flat)](https://github.com/AdamPlatin123/dsh-plugin-radar/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 10](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=10&color=grey&logo=github&style=flat)](https://github.com/AdamPlatin123/dsh-plugin-radar/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 8](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=8&color=grey&logo=github&style=flat)](https://github.com/AdamPlatin123/dsh-plugin-radar/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
+[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/AdamPlatin123/dsh-plugin-radar/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 10](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=10&color=737b86&logo=github)](https://github.com/AdamPlatin123/dsh-plugin-radar/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 8](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=8&color=737b86&logo=github)](https://github.com/AdamPlatin123/dsh-plugin-radar/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[092e2ec](https://github.com/anywhere-labs/dsh-desktop/tree/092e2ecef750d10db43cedbab8e81fd48c8de38e)
+源码版本：[092e2ec](https://github.com/anywhere-labs/dsh-desktop/tree/092e2ecef750d10db43cedbab8e81fd48c8de38e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 33,082](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33%2C082&color=yellow&logo=github&style=flat)](https://github.com/anywhere-labs/dsh-desktop)
+[![GitHub ★ 33,082](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33%2C082&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop)
 <!-- END META -->
 
-> **实现功能**：独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。
+> **功能**：独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。
 
-> **核心亮点**：相对上游dsh web，组织安装运行环境、窗口/托盘、profile与恢复/更新；核心Agent与Web归上游，不能将fork规模计为桌面原创。[Q01](#research-q01)
+> **亮点**：相对上游dsh web，组织安装运行环境、窗口/托盘、profile与恢复/更新；核心Agent与Web归上游，不能将fork规模计为桌面原创。[Q01](#research-q01)
 
-> **风险与缺陷**：generation局部安全边界和恢复按钮不保证所有路由、启动故障与插件组合；模式替换frame存在DOM兼容成本，真实安装/更新需单独验收。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：generation局部安全边界和恢复按钮不保证所有路由、启动故障与插件组合；模式替换frame存在DOM兼容成本，真实安装/更新需单独验收。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对上游dsh web，组织安装运行环境、窗口/托盘、profile与恢复/更新；核心Agent与Web归上游，不能将fork规模计为桌面原创。[Q01](#research-q01)
 
-相对上游dsh web，组织安装运行环境、窗口/托盘、profile与恢复/更新；核心Agent与Web归上游，不能将fork规模计为桌面原创。[Q01](#research-q01)
-
 将profile/包管理身份核对、renderer capability和数据owner锁显式化值得借鉴；复用需保证每个调用边都遵循生命周期，不只是拷贝接口。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ generation局部安全边界和恢复按钮不保证所有路由、启动故障�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：e7beab16ef0460e50b2da9cf1c5b2afd4ae5fe802cc0aa4c372ca117170bb80b。sloc 0.3.2，TypeScript 5.9.3。
 

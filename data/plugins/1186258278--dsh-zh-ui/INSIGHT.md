@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[4ddff4f](https://github.com/1186258278/dsh-zh-ui/tree/4ddff4f2e320285f003b0c7ca74a152440c5d255)
+源码版本：[4ddff4f](https://github.com/1186258278/dsh-zh-ui/tree/4ddff4f2e320285f003b0c7ca74a152440c5d255)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。
+> **功能**：提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。
 
-> **核心亮点**：把中文设计知识、项目级约束和可执行静态规则连成同一工作流，并明确静态与渲染边界。它相对“单独维护设计提示词、手工加载项目规范，再用通用 lint 与截图人工检查”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+> **亮点**：把中文设计知识、项目级约束和可执行静态规则连成同一工作流，并明确静态与渲染边界。它相对“单独维护设计提示词、手工加载项目规范，再用通用 lint 与截图人工检查”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：CSS 解析基于正则且不渲染，无法判断真实对比度、字号、布局、字体加载和交互可用性。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+> **主要限制**：CSS 解析基于正则且不渲染，无法判断真实对比度、字号、布局、字体加载和交互可用性。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把中文设计知识、项目级约束和可执行静态规则连成同一工作流，并明确静态与渲染边界。它相对“单独维护设计提示词、手工加载项目规范，再用通用 lint 与截图人工检查”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
 
-把中文设计知识、项目级约束和可执行静态规则连成同一工作流，并明确静态与渲染边界。它相对“单独维护设计提示词、手工加载项目规范，再用通用 lint 与截图人工检查”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
-
 固定源码把关键职责收敛到 src/index.ts 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“用真实渲染检查对比度、字体、布局和交互｜静态通过不当作视觉验收”验证。详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ CSS 解析基于正则且不渲染，无法判断真实对比度、字号、布�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@ CSS 解析基于正则且不渲染，无法判断真实对比度、字号、布�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1186258278/dsh-zh-ui/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1186258278/dsh-zh-ui/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A59.966Z..2026-10-22T15%3A12%3A59.966Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1186258278/dsh-zh-ui/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A12%3A59.966Z..2026-10-22T15%3A12%3A59.966Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1186258278/dsh-zh-ui/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1186258278/dsh-zh-ui/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A59.966Z..2026-10-22T15%3A12%3A59.966Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1186258278/dsh-zh-ui/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T15%3A12%3A59.966Z..2026-10-22T15%3A12%3A59.966Z)
 
 
 

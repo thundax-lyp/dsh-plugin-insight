@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[b1c8ee8](https://github.com/988hj7tczd-oss/dsh-invoice-tools/tree/b1c8ee8f6ce6573e1de06587d428d331a0cfd02a)
+源码版本：[b1c8ee8](https://github.com/988hj7tczd-oss/dsh-invoice-tools/tree/b1c8ee8f6ce6573e1de06587d428d331a0cfd02a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-invoice-tools) [![npm 30d 419](https://img.shields.io/static/v1?label=npm+30d&message=419&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-invoice-tools) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-invoice-tools)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-invoice-tools) [![npm 30d 419](https://img.shields.io/static/v1?label=npm+30d&message=419&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-invoice-tools) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-invoice-tools)
 <!-- END META -->
 
-> **实现功能**：本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。
+> **功能**：本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。
 
-> **核心亮点**：把本地票据字段抽取、缺失/算术提示与报销草稿输出接入DSH工具，减少人工搬运。详见[Q01](#research-q01)。
+> **亮点**：把本地票据字段抽取、缺失/算术提示与报销草稿输出接入DSH工具，减少人工搬运。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：旧缓存无TTL/版本失效，低置信及重复均入合计；XML高置信非验真，解压无显式输出预算。详见[Q03](#research-q03)。
+> **主要限制**：旧缓存无TTL/版本失效，低置信及重复均入合计；XML高置信非验真，解压无显式输出预算。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把本地票据字段抽取、缺失/算术提示与报销草稿输出接入DSH工具，减少人工搬运。详见[Q01](#research-q01)。
 
-把本地票据字段抽取、缺失/算术提示与报销草稿输出接入DSH工具，减少人工搬运。详见[Q01](#research-q01)。
-
 纯逻辑拆分和fixture可查；实际Map无manifest所称TTL，需处理旧票失效、解压预算与批次事务。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-invoice-tools/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-invoice-tools/issues?q=is%3Aissue+created%3A2026-09-22T05%3A32%3A30.074Z..2026-10-22T05%3A32%3A30.074Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-invoice-tools/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A32%3A30.074Z..2026-10-22T05%3A32%3A30.074Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-invoice-tools/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-invoice-tools/issues?q=is%3Aissue+created%3A2026-09-22T05%3A32%3A30.074Z..2026-10-22T05%3A32%3A30.074Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-invoice-tools/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A32%3A30.074Z..2026-10-22T05%3A32%3A30.074Z)
 
 
 

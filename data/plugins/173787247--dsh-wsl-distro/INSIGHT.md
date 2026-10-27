@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
+源码版本：[5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-distro)
 <!-- END META -->
 
-> **实现功能**：查询WSL宿主当前发行版与os-release，解析Windows默认/已安装发行版列表，并提示跨发行版路径身份差异。
+> **功能**：查询WSL宿主当前发行版与os-release，解析Windows默认/已安装发行版列表，并提示跨发行版路径身份差异。
 
-> **核心亮点**：把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](#research-q02)。
+> **亮点**：把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单token/英文状态可能漏；直接exec内10s不接外timeout/signal，ok不证明完整/路径可用。详见[Q03](#research-q03)。
+> **主要限制**：current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单token/英文状态可能漏；直接exec内10s不接外timeout/signal，ok不证明完整/路径可用。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](#research-q02)。
 
-把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](#research-q02)。
-
 parser只接受name/state各一个非空白token和数字version，未识别列本地化/多词状态/空格名称等结构；非匹配行静默忽略。Running提示只查英文/running/i，其他语言同等状态不出running摘要。stdout按utf8解码后删NUL能恢复部分ASCII形状，但不是完整UTF16解码，非ASCII发行版名称/状态不保证正确。部分行解析成功时render不再展示raw，漏行不显式标partial；空列表ok不证明无发行版。
 
 实际子进程是node child_process.execFile，不走宿主subprocess/sandboxPolicy；固定wsl.exe从PATH查找，依可信宿主环境，不自证明二进制身份。内层固定10s、工具timeoutMs配置默认15s但未传listDistros也不接exec.signal，所以改变外层不改变真实exec预算，取消未必立即停进程。无自定义maxBuffer依Node默认，超限走错误而非部分列表；并发安全标true会允许多个列表进程，非全局请求预算。
@@ -168,7 +166,7 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -180,7 +178,7 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+created%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+created%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z)
 
 
 

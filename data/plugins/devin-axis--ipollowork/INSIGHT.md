@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[0de1cc5](https://github.com/Devin-AXIS/iPolloWork/tree/0de1cc50c24395fed7cfbb21ff6d933cdce1f52e)
+源码版本：[0de1cc5](https://github.com/Devin-AXIS/iPolloWork/tree/0de1cc50c24395fed7cfbb21ff6d933cdce1f52e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7,286](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C286&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork)
+[![GitHub ★ 7,286](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C286&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/iPolloWork)
 <!-- END META -->
 
-> **实现功能**：独立桌面工作台，连接多种Agent运行时、项目任务与可编辑创作产物。
+> **功能**：独立桌面工作台，连接多种Agent运行时、项目任务与可编辑创作产物。
 
-> **核心亮点**：[Q02](#research-q02)DSH接入采用认证mux和显式pending交互回复，较终端嵌入有协议层增量；根工作台的可编辑产物闭环尚未由这段适配证明。
+> **亮点**：[Q02](#research-q02)DSH接入采用认证mux和显式pending交互回复，较终端嵌入有协议层增量；根工作台的可编辑产物闭环尚未由这段适配证明。
 
-> **风险与缺陷**：[Q03](#research-q03)流关闭不证明后台turn停止，统一界面也不能代替跨引擎权限和产物恢复验收；当前研究范围不足支撑迁移生产任务。
+> **主要限制**：[Q03](#research-q03)流关闭不证明后台turn停止，统一界面也不能代替跨引擎权限和产物恢复验收；当前研究范围不足支撑迁移生产任务。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：[Q02](#research-q02)DSH接入采用认证mux和显式pending交互回复，较终端嵌入有协议层增量；根工作台的可编辑产物闭环尚未由这段适配证明。
 
-[Q02](#research-q02)DSH接入采用认证mux和显式pending交互回复，较终端嵌入有协议层增量；根工作台的可编辑产物闭环尚未由这段适配证明。
-
 mux逻辑订阅与连接清理、审批pending响应校验有复用价值。当前只抽读DSH切面，未把vendor或全仓LOC当原创与全审计，也不以多个runtime数量证明生产价值。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ mux逻辑订阅与连接清理、审批pending响应校验有复用价值。当�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -167,7 +165,7 @@ mux逻辑订阅与连接清理、审批pending响应校验有复用价值。当�
 
 **活跃度**
 
-[![Issue 未关闭 60](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=60&color=grey&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z)
+[![Issue 未关闭 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=60&color=737b86&logo=github)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=737b86&logo=github)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z)
 
 
 

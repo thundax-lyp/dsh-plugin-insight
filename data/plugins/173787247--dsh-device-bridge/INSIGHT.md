@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[25699df](https://github.com/173787247/dsh-device-bridge/tree/25699dfd31f32500e5016e90d271c8e6674c1945)
+源码版本：[25699df](https://github.com/173787247/dsh-device-bridge/tree/25699dfd31f32500e5016e90d271c8e6674c1945)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-device-bridge)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-device-bridge)
 <!-- END META -->
 
-> **实现功能**：DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。
+> **功能**：DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。
 
-> **核心亮点**：为多个设备提供统一 Companion v1 工具入口，而具体动作和安全策略依赖共享库与设备端。详见[Q01](#research-q01)。
+> **亮点**：为多个设备提供统一 Companion v1 工具入口，而具体动作和安全策略依赖共享库与设备端。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：核心客户端仅再导出外部包，无法由本仓库证明白名单与确认；Termux 样例空 token 对局域网可达主机开放。详见[Q02](#research-q02)与[Q03](#research-q03)。
+> **主要限制**：核心客户端仅再导出外部包，无法由本仓库证明白名单与确认；Termux 样例空 token 对局域网可达主机开放。详见[Q02](#research-q02)与[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@ SSH/MCP 等方式已能操作远端设备；此方案需证明跨设备 HTTP 协
 
 > **亮点**：为多个设备提供统一 Companion v1 工具入口，而具体动作和安全策略依赖共享库与设备端。详见[Q01](#research-q01)。
 
-为多个设备提供统一 Companion v1 工具入口，而具体动作和安全策略依赖共享库与设备端。详见[Q01](#research-q01)。
-
 薄封装降低重复代码，但把关键安全语义放在外部 Git 依赖；列表泄露 baseUrl 与并发副作用需明确。详见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ SSH/MCP 等方式已能操作远端设备；此方案需证明跨设备 HTTP 协
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

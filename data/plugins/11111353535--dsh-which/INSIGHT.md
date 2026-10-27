@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[7894da8](https://github.com/11111353535/dsh-which/tree/7894da833582b46526b251348cd8993b70a5ce85)
+源码版本：[7894da8](https://github.com/11111353535/dsh-which/tree/7894da833582b46526b251348cd8993b70a5ce85)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为 DSH 提供命令路径、同名遮蔽、PATH环境及目录脚本诊断，并可选执行版本探测。
+> **功能**：为 DSH 提供命令路径、同名遮蔽、PATH环境及目录脚本诊断，并可选执行版本探测。
 
-> **核心亮点**：把胜出文件、遮蔽项和PATH异常组织成同一结构化诊断流程，并以可注入文件系统支持固定反例核查；增量是取证接线和解释，不是新的shell解析规则。详见[Q03](#research-q03)。
+> **亮点**：把胜出文件、遮蔽项和PATH异常组织成同一结构化诊断流程，并以可注入文件系统支持固定反例核查；增量是取证接线和解释，不是新的shell解析规则。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：报告是否对应实际shell仍受建模边界限制，Windows解析默认cmd表而环境可显示PowerShell；版本旗标也不能保证候选程序无副作用。这些为静态核查所得，未做运行复现。详见[Q04](#research-q04)。
+> **主要限制**：报告是否对应实际shell仍受建模边界限制，Windows解析默认cmd表而环境可显示PowerShell；版本旗标也不能保证候选程序无副作用。这些为静态核查所得，未做运行复现。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：把胜出文件、遮蔽项和PATH异常组织成同一结构化诊断流程，并以可注入文件系统支持固定反例核查；增量是取证接线和解释，不是新的shell解析规则。详见[Q03](#research-q03)。
 
-把胜出文件、遮蔽项和PATH异常组织成同一结构化诊断流程，并以可注入文件系统支持固定反例核查；增量是取证接线和解释，不是新的shell解析规则。详见[Q03](#research-q03)。
-
 host事实读取、纯解析器与render分层值得借鉴，fixture和Proxy stub便于反例及接线核查；移植主要成本在shell语义和宿主依赖。测试材料仅阅读。详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@ host事实读取、纯解析器与render分层值得借鉴，fixture和Proxy stu
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -169,7 +167,7 @@ host事实读取、纯解析器与render分层值得借鉴，fixture和Proxy stu
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+created%3A2026-09-22T04%3A40%3A44.438Z..2026-10-22T04%3A40%3A44.438Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A40%3A44.438Z..2026-10-22T04%3A40%3A44.438Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+created%3A2026-09-22T04%3A40%3A44.438Z..2026-10-22T04%3A40%3A44.438Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/11111353535/dsh-which/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A40%3A44.438Z..2026-10-22T04%3A40%3A44.438Z)
 
 
 

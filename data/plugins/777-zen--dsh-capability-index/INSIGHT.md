@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c180313](https://github.com/777-Zen/dsh-capability-index/tree/c1803133660c6bc30dbc2d3eda493724b801aad0)
+源码版本：[c180313](https://github.com/777-Zen/dsh-capability-index/tree/c1803133660c6bc30dbc2d3eda493724b801aad0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/777-Zen/dsh-capability-index)
 <!-- END META -->
 
-> **实现功能**：在每步系统上下文中注入候选工具提示，用规则、向量召回与 not_for 过滤预审插件库。
+> **功能**：在每步系统上下文中注入候选工具提示，用规则、向量召回与 not_for 过滤预审插件库。
 
-> **核心亮点**：贡献是把“是否值得展示工具”和“模型是否最终调用”分开，并将负向 not_for 守门放在 Top-K 截断前；相比简单列全量工具，减少无关上下文。但作者已明确归档，16 条样本不足以证明利用率收益，且官方同类能力可能消解独立价值。 详见[Q03](#research-q03)。
+> **亮点**：贡献是把“是否值得展示工具”和“模型是否最终调用”分开，并将负向 not_for 守门放在 Top-K 截断前；相比简单列全量工具，减少无关上下文。但作者已明确归档，16 条样本不足以证明利用率收益，且官方同类能力可能消解独立价值。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：核心质疑是提示本身是否比原生 schema 更有净收益。启发式触发表可能漏掉隐含任务或把普通请求判成复杂任务，向量模型也会引入延迟；若仅提高工具曝光却增加错误调用和 token，则贡献不成立。项目归档意味着未来 DSH 接口漂移无人维护。 详见[Q04](#research-q04)。
+> **主要限制**：核心质疑是提示本身是否比原生 schema 更有净收益。启发式触发表可能漏掉隐含任务或把普通请求判成复杂任务，向量模型也会引入延迟；若仅提高工具曝光却增加错误调用和 token，则贡献不成立。项目归档意味着未来 DSH 接口漂移无人维护。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：贡献是把“是否值得展示工具”和“模型是否最终调用”分开，并将负向 not_for 守门放在 Top-K 截断前；相比简单列全量工具，减少无关上下文。但作者已明确归档，16 条样本不足以证明利用率收益，且官方同类能力可能消解独立价值。 详见[Q03](#research-q03)。
 
-贡献是把“是否值得展示工具”和“模型是否最终调用”分开，并将负向 not_for 守门放在 Top-K 截断前；相比简单列全量工具，减少无关上下文。但作者已明确归档，16 条样本不足以证明利用率收益，且官方同类能力可能消解独立价值。 详见[Q03](#research-q03)。
-
 core 与 DSH adapter 分离，缓存按工具变化失效，异常路径刻意不打断事件分发，适合作为提示层设计参考；但归档、缺真实用户反馈和小样本评估使可靠性结论很弱。移植应先复用纯逻辑评测框架而非直接挂到生产 prompt。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ core 与 DSH adapter 分离，缓存按工具变化失效，异常路径刻意�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@ core 与 DSH adapter 分离，缓存按工具变化失效，异常路径刻意�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+created%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+created%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/777-Zen/dsh-capability-index/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A03%3A22.086Z..2026-10-22T16%3A03%3A22.086Z)
 
 
 

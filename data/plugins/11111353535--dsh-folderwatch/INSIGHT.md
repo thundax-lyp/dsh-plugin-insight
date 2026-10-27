@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c11125d](https://github.com/11111353535/dsh-folderwatch/tree/c11125d12738945d291b6067fb5fa03ea48c1c08)
+源码版本：[c11125d](https://github.com/11111353535/dsh-folderwatch/tree/c11125d12738945d291b6067fb5fa03ea48c1c08)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。
+> **功能**：监控目录元数据快照变化，经批处理与路径回声过滤后唤醒或排队通知DSH Agent，提供挂载、检查、触发和移除工具。
 
-> **核心亮点**：以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。
+> **亮点**：以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不区分成功写或会话，目标失效可fallback别Agent；批次先drain且送达Promise未await。详见[Q03](#research-q03)至[Q05](#research-q05)。
+> **主要限制**：stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不区分成功写或会话，目标失效可fallback别Agent；批次先drain且送达Promise未await。详见[Q03](#research-q03)至[Q05](#research-q05)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。
 
-以快照差分为主、fs.watch提示为辅，结合quiet/上限/冷却与Agent消息入口减少主动查目录。详见[Q02](#research-q02)。
-
 snapshot注释声称不跟随symlink，实际statEntry调用stat而非lstat，然后只按info.kind=directory递归，未检查dirent.isSymbolicLink或物理路径。链接到根外目录时可能继续采集外部文件名/元数据；深度12限制防无限走，但不等于不跟随链接。这里只检查元数据，不称读取了外部文件内容或已复现越界。
 
 maxEntries置truncated可报告，但深度达到maxDepth停止未置truncated。readdir失败记录unreadable后返回空子树，stat失败直接略过；tick仍将partial作为新快照并对旧完整快照差分，可能把不可读/容量边界移动误当删除或新增。status保截断/不可读，通知正文只带batch.truncated，不绑定本轮扫描质量，因此不能把收到的删除清单当完整可靠事实。
@@ -174,7 +172,7 @@ stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -187,7 +185,7 @@ stat递归会跟随目录链接，partial/不可读仍作差分；共享echo不�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-folderwatch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-folderwatch/issues?q=is%3Aissue+created%3A2026-09-22T07%3A45%3A50.365Z..2026-10-22T07%3A45%3A50.365Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/11111353535/dsh-folderwatch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A45%3A50.365Z..2026-10-22T07%3A45%3A50.365Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/11111353535/dsh-folderwatch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/11111353535/dsh-folderwatch/issues?q=is%3Aissue+created%3A2026-09-22T07%3A45%3A50.365Z..2026-10-22T07%3A45%3A50.365Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/11111353535/dsh-folderwatch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A45%3A50.365Z..2026-10-22T07%3A45%3A50.365Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[7ab206d](https://github.com/19north/dsh-redstone-music/tree/7ab206d8b7befe321603cd8b046bdae5be5f66ef)
+源码版本：[7ab206d](https://github.com/19north/dsh-redstone-music/tree/7ab206d8b7befe321603cd8b046bdae5be5f66ef)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。
+> **功能**：把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。
 
-> **核心亮点**：它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。
+> **亮点**：它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。
 
-> **风险与缺陷**：生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。 参见[Q04](#research-q04)。
+> **主要限制**：生成成功不等于听感正确：tick 量化、lane 和同 tick 命令预算会改变密集段，SoundFont onset 与游戏衰减会改变音色。RCON 又扩大为服务器写操作，reload 失败可能留下半部署。 参见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。
 
-它把成熟的 MIDI、SoundFont 与 Minecraft 命令收束成带陷阱提示和中间工件的 DSH 流水线。独立增量是领域约束编排，不是新合成器；相对手写命令减少音符到 tick、样本和 lane 的重复转换。 参见[Q03](#research-q03)。
-
 render/build 分开并输出计划，有利于写服务器前审阅；注册 disposer 与 RCON error/close 处理限制资源泄漏。仍需验证输出原子发布、同名覆盖及 reload 失败补偿。 参见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@ render/build 分开并输出计划，有利于写服务器前审阅；注册 dis
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -168,7 +166,7 @@ render/build 分开并输出计划，有利于写服务器前审阅；注册 dis
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/19north/dsh-redstone-music/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/19north/dsh-redstone-music/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

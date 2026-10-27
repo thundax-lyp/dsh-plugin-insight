@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b0f3e0c](https://github.com/2384418321/dsh-integration-settings/tree/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4)
+源码版本：[b0f3e0c](https://github.com/2384418321/dsh-integration-settings/tree/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在DSH设置中管理MCP，并预览同步兼容网关的模型清单与思考档位。
+> **功能**：在DSH设置中管理MCP，并预览同步兼容网关的模型清单与思考档位。
 
-> **核心亮点**：相对手改YAML与上游混合开关，分叉提供模型同步/思考档位职责分离、增删预览和MCP JSON导入，降低操作复杂性的路径明确，收益未测。[Q01](#research-q01)
+> **亮点**：相对手改YAML与上游混合开关，分叉提供模型同步/思考档位职责分离、增删预览和MCP JSON导入，降低操作复杂性的路径明确，收益未测。[Q01](#research-q01)
 
-> **风险与缺陷**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对手改YAML与上游混合开关，分叉提供模型同步/思考档位职责分离、增删预览和MCP JSON导入，降低操作复杂性的路径明确，收益未测。[Q01](#research-q01)
 
-相对手改YAML与上游混合开关，分叉提供模型同步/思考档位职责分离、增删预览和MCP JSON导入，降低操作复杂性的路径明确，收益未测。[Q01](#research-q01)
-
 备份与rename、Host/Origin和写头验证可复用；复用前须补整个文件基线检查、多文件中断策略及真实调用验收，不能把打包库体积计为创新。[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

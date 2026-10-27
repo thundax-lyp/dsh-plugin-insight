@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[0fd11c3](https://github.com/AbcdefgXW/dsh-msg-hub/tree/0fd11c38fa21d5639ea53f067a221d8ff7d8675c)
+源码版本：[0fd11c3](https://github.com/AbcdefgXW/dsh-msg-hub/tree/0fd11c38fa21d5639ea53f067a221d8ff7d8675c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub) [![npm 30d 1,164](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-msg-hub) [![最新发布 2026-09-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-msg-hub)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AbcdefgXW/dsh-msg-hub) [![npm 30d 1,164](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-msg-hub) [![最新发布 2026-09-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-msg-hub)
 <!-- END META -->
 
-> **实现功能**：把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。
+> **功能**：把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。
 
-> **核心亮点**：将三渠道收发、媒体、主动推送和远程监控整合到 DSH；详见[Q01](#research-q01)。
+> **亮点**：将三渠道收发、媒体、主动推送和远程监控整合到 DSH；详见[Q01](#research-q01)。
 
-> **风险与缺陷**：全局 pending 第一项可由任意经桥进入的 peer 的“批准”应答，/bind 也缺会话授权核对；详见[Q02](#research-q02)。 回传失败仍可返回ok，入站无全链deadline，处理完成不能当送达回执。
+> **主要限制**：全局 pending 第一项可由任意经桥进入的 peer 的“批准”应答，/bind 也缺会话授权核对；详见[Q02](#research-q02)。 回传失败仍可返回ok，入站无全链deadline，处理完成不能当送达回执。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：将三渠道收发、媒体、主动推送和远程监控整合到 DSH；详见[Q01](#research-q01)。
 
-将三渠道收发、媒体、主动推送和远程监控整合到 DSH；详见[Q01](#research-q01)。
-
 渠道适配器注册表、会话绑定持久化、状态/审批事件、媒体和日志生命周期。
 
 runTurn先等Agent idle、followup后再次whenIdle并flush，未见本层总deadline或调用方AbortSignal；远程审批5分钟timer仅在逐peer通知完成后建立，不能限制整个Agent回合、平台发送或入站锁等待。inbound回传outcome.text失败只记日志，随后仍返回ok:true，因此桥处理成功不证明平台受理/送达。未知外部结果不能直接整包重发，否则可能重复执行Agent工具副作用。
@@ -149,7 +147,7 @@ runTurn先等Agent idle、followup后再次whenIdle并flush，未见本层总dea
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@ runTurn先等Agent idle、followup后再次whenIdle并flush，未见本层总dea
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub/issues?q=is%3Aissue+created%3A2026-09-22T08%3A11%3A16.485Z..2026-10-22T08%3A11%3A16.485Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AbcdefgXW/dsh-msg-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A11%3A16.485Z..2026-10-22T08%3A11%3A16.485Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AbcdefgXW/dsh-msg-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AbcdefgXW/dsh-msg-hub/issues?q=is%3Aissue+created%3A2026-09-22T08%3A11%3A16.485Z..2026-10-22T08%3A11%3A16.485Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AbcdefgXW/dsh-msg-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A11%3A16.485Z..2026-10-22T08%3A11%3A16.485Z)
 
 
 

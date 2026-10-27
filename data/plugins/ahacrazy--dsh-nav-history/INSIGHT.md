@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c73b5f6](https://github.com/AhaCrazy/dsh-nav-history/tree/c73b5f62bbfec0479a10b0e553d615e90d532830)
+源码版本：[c73b5f6](https://github.com/AhaCrazy/dsh-nav-history/tree/c73b5f62bbfec0479a10b0e553d615e90d532830)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。
+> **功能**：为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。
 
-> **核心亮点**：独立于 URL 构建跨会话与面板的访问顺序入口，恢复标记和落点就地重写避免产生虚假前进分支。这是具体的导航适配增量，未证明找回耗时下降。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：独立于 URL 构建跨会话与面板的访问顺序入口，恢复标记和落点就地重写避免产生虚假前进分支。这是具体的导航适配增量，未证明找回耗时下降。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：统一异常删除历史条目会把临时故障与目标消失混在一起，静默导航无操作还可能重写落点。边界影响记录可靠性，未发现会删除会话内容。[Q03](#research-q03)
+> **主要限制**：统一异常删除历史条目会把临时故障与目标消失混在一起，静默导航无操作还可能重写落点。边界影响记录可靠性，未发现会删除会话内容。[Q03](#research-q03)
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：独立于 URL 构建跨会话与面板的访问顺序入口，恢复标记和落点就地重写避免产生虚假前进分支。这是具体的导航适配增量，未证明找回耗时下降。[Q01](#research-q01) [Q02](#research-q02)
 
-独立于 URL 构建跨会话与面板的访问顺序入口，恢复标记和落点就地重写避免产生虚假前进分支。这是具体的导航适配增量，未证明找回耗时下降。[Q01](#research-q01) [Q02](#research-q02)
-
 UI 无关控制器便于定位分支和恢复语义，effect 清理订阅值得借鉴。持久化错误降为内存状态是可用性取舍，统一异常删条目和同步落点假设则需使用者知晓。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ UI 无关控制器便于定位分支和恢复语义，effect 清理订阅值得�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -159,7 +157,7 @@ UI 无关控制器便于定位分支和恢复语义，effect 清理订阅值得�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AhaCrazy/dsh-nav-history/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AhaCrazy/dsh-nav-history/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A43.646Z..2026-10-24T05%3A55%3A43.646Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AhaCrazy/dsh-nav-history/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AhaCrazy/dsh-nav-history/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A43.646Z..2026-10-24T05%3A55%3A43.646Z)
 
 暂未获取：近30天关闭。
 

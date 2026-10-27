@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[4dfefb3](https://github.com/AFunDog/dsh-sidebar-git-graph/tree/4dfefb3cc465be189fa1806f0bc9a33d30006a95)
+源码版本：[4dfefb3](https://github.com/AFunDog/dsh-sidebar-git-graph/tree/4dfefb3cc465be189fa1806f0bc9a33d30006a95)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AFunDog/dsh-sidebar-git-graph)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AFunDog/dsh-sidebar-git-graph)
 <!-- END META -->
 
-> **实现功能**：在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。
+> **功能**：在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。
 
-> **核心亮点**：把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。
+> **亮点**：把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：只读不能保证授权隔离或快照一致性。无工作区候选时存在claimed-unfenced退路，图谱与改动独立读取可能跨时点；这些是静态边界，未作越权或竞态复现。详见[Q04](#research-q04)。
+> **主要限制**：只读不能保证授权隔离或快照一致性。无工作区候选时存在claimed-unfenced退路，图谱与改动独立读取可能跨时点；这些是静态边界，未作越权或竞态复现。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -111,8 +111,6 @@ Git CLI 分别读取log/status/diff或外部图形客户端能完成信息查询
 
 > **亮点**：把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。
 
-把Git图谱、工作树与差异接到DSH会话，在手选、标签和历史提示间明确优先级并显示回退原因；贡献属于可解释的接线与信息组织，不是新的Git机制。详见[Q03](#research-q03)。
-
 值得复用的是宿主 IO 与纯解析层分离。git-read、changes、commit-files 构造固定 argv 并解析 NUL 分隔记录，宿主集中执行进程、处理超时及响应。changes 统一输出路径安全 flags，commit-files 复用这些属性，降低分叉实现逐渐漂移的可能。迁移时仍要保留 Git 特定的比较语义，例如暂存区相对 HEAD、未暂存相对索引、冲突用普通 unified 格式，以及 no-index 返回码的特殊处理。
 
 另一处值得借鉴的是对“不知道”和“没有”的区分。计数命令失败用 countsAvailable，而不是直接画成零；扫描和 patch 超限分别带标记；选择失败原因进入响应。工作树请求还做 pending 去重，减少同一次刷新重复执行。客户端请求序号抑制晚到响应，但不会提供全链路事务一致性。
@@ -165,7 +163,7 @@ Git CLI 分别读取log/status/diff或外部图形客户端能完成信息查询
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -178,7 +176,7 @@ Git CLI 分别读取log/status/diff或外部图形客户端能完成信息查询
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AFunDog/dsh-sidebar-git-graph/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AFunDog/dsh-sidebar-git-graph/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A45.612Z..2026-10-22T04%3A37%3A45.612Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AFunDog/dsh-sidebar-git-graph/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A45.612Z..2026-10-22T04%3A37%3A45.612Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AFunDog/dsh-sidebar-git-graph/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AFunDog/dsh-sidebar-git-graph/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A45.612Z..2026-10-22T04%3A37%3A45.612Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AFunDog/dsh-sidebar-git-graph/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A45.612Z..2026-10-22T04%3A37%3A45.612Z)
 
 
 

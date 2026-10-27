@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a449dd1](https://github.com/AntonyLang/dsh-roam-planner/tree/a449dd11442dbd4550209668f20873d561b08875)
+源码版本：[a449dd1](https://github.com/AntonyLang/dsh-roam-planner/tree/a449dd11442dbd4550209668f20873d561b08875)
 
 <!-- BEGIN META -->
-[![npm 30d 88](https://img.shields.io/static/v1?label=npm+30d&message=88&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-roam-planner) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-roam-planner)
+[![npm 30d 88](https://img.shields.io/static/v1?label=npm+30d&message=88&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-roam-planner) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-roam-planner)
 <!-- END META -->
 
-> **实现功能**：在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。
+> **功能**：在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。
 
-> **核心亮点**：把对话转为地图可审阅的有状态行程，草稿、候选和最后采用基线分离，减少手工复制。流程明确借鉴上游，DSH适配是本次识别的增量。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：把对话转为地图可审阅的有状态行程，草稿、候选和最后采用基线分离，减少手工复制。流程明确借鉴上游，DSH适配是本次识别的增量。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：模型可通过roam_adopt直接采用，当前接口仅检查candidate状态，没有绑定用户已审阅版本的凭据。冻结不等于人工授权，也不证明路线事实正确。[Q03](#research-q03)
+> **主要限制**：模型可通过roam_adopt直接采用，当前接口仅检查candidate状态，没有绑定用户已审阅版本的凭据。冻结不等于人工授权，也不证明路线事实正确。[Q03](#research-q03)
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把对话转为地图可审阅的有状态行程，草稿、候选和最后采用基线分离，减少手工复制。流程明确借鉴上游，DSH适配是本次识别的增量。[Q01](#research-q01) [Q02](#research-q02)
 
-把对话转为地图可审阅的有状态行程，草稿、候选和最后采用基线分离，减少手工复制。流程明确借鉴上游，DSH适配是本次识别的增量。[Q01](#research-q01) [Q02](#research-q02)
-
 统一effect清理技能、工具、路由、MCP和store具有明确生命周期边界；克隆候选与保留baseline可复用。采用控制仍需区分业务状态、内容版本和用户授权。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

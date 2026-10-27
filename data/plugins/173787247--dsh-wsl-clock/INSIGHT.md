@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[111cc4c](https://github.com/173787247/dsh-wsl-clock/tree/111cc4c013ef17a495c8790fbfa6373d7abbdebc)
+源码版本：[111cc4c](https://github.com/173787247/dsh-wsl-clock/tree/111cc4c013ef17a495c8790fbfa6373d7abbdebc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clock)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-clock)
 <!-- END META -->
 
-> **实现功能**：提供 clock_doctor 工具，诊断 WSL 与 Windows UTC 时间偏移。
+> **功能**：提供 clock_doctor 工具，诊断 WSL 与 Windows UTC 时间偏移。
 
-> **核心亮点**：把 WSL/Windows 双时钟排查封装为只读模型工具，并提示睡眠后使用；实现简单，适合故障定位而非自动修复。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把 WSL/Windows 双时钟排查封装为只读模型工具，并提示睡眠后使用；实现简单，适合故障定位而非自动修复。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：顺序采样的耗时会误记为时钟偏移，空输出经 Number 转换为 0 也未识别为无效时间；应避免将一次读数当成精确诊断。详见[Q03](#research-q03)。
+> **主要限制**：顺序采样的耗时会误记为时钟偏移，空输出经 Number 转换为 0 也未识别为无效时间；应避免将一次读数当成精确诊断。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -90,8 +90,6 @@
 
 > **亮点**：把 WSL/Windows 双时钟排查封装为只读模型工具，并提示睡眠后使用；实现简单，适合故障定位而非自动修复。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把 WSL/Windows 双时钟排查封装为只读模型工具，并提示睡眠后使用；实现简单，适合故障定位而非自动修复。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 ctx.tools 注册无参、可并发调用的工具；PowerShell 读 UTC，按纯函数分级，错误返回 fail。
 
 入口execute未接调用方exec.signal，core固定10秒子进程预算与工具注册timeout独立；不能把外层期限或取消当所有等待/目标系统已停止的证明。工具只执行固定时间读取，不执行建议中的重启/同步。
@@ -142,7 +140,7 @@ ctx.tools 注册无参、可并发调用的工具；PowerShell 读 UTC，按纯�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -154,7 +152,7 @@ ctx.tools 注册无参、可并发调用的工具；PowerShell 读 UTC，按纯�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clock/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clock/issues?q=is%3Aissue+created%3A2026-09-22T06%3A58%3A24.421Z..2026-10-22T06%3A58%3A24.421Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-clock/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A58%3A24.421Z..2026-10-22T06%3A58%3A24.421Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-clock/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-clock/issues?q=is%3Aissue+created%3A2026-09-22T06%3A58%3A24.421Z..2026-10-22T06%3A58%3A24.421Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-clock/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A58%3A24.421Z..2026-10-22T06%3A58%3A24.421Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[3413d53](https://github.com/7gzgn/dsh-douyin-publish/tree/3413d538e2b4a3384092c456c56f97862f787fed)
+源码版本：[3413d53](https://github.com/7gzgn/dsh-douyin-publish/tree/3413d538e2b4a3384092c456c56f97862f787fed)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。
+> **功能**：把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。
 
-> **核心亮点**：把文件递交、页面推进和字段准备接成步骤回执，减少桌面对话框依赖；非新上传/浏览器技术。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：把文件递交、页面推进和字段准备接成步骤回执，减少桌面对话框依赖；非新上传/浏览器技术。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：cfg可默认publish，字段warning仍继续；published只证明点击，不核平台受理，固定browser键和取消传播也需明确。详见[Q02](#research-q02)。
+> **主要限制**：cfg可默认publish，字段warning仍继续；published只证明点击，不核平台受理，固定browser键和取消传播也需明确。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：把文件递交、页面推进和字段准备接成步骤回执，减少桌面对话框依赖；非新上传/浏览器技术。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-把文件递交、页面推进和字段准备接成步骤回执，减少桌面对话框依赖；非新上传/浏览器技术。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 声明式平台档案、纯参数校验、可见性unsupported拒绝、single-file token服务、DataTransfer交文件、界面推进后才判交接、对话框回读与步骤回执值得复用。作者把曲库搜索实验性和真机历史说清楚是证据分级价值，但作者verified不能永久覆盖网站改版。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -167,7 +165,7 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+created%3A2026-09-22T06%3A35%3A38.976Z..2026-10-22T06%3A35%3A38.976Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A35%3A38.976Z..2026-10-22T06%3A35%3A38.976Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+created%3A2026-09-22T06%3A35%3A38.976Z..2026-10-22T06%3A35%3A38.976Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A35%3A38.976Z..2026-10-22T06%3A35%3A38.976Z)
 
 
 

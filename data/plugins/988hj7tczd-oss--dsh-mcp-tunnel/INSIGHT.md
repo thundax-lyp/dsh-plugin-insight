@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ecd7d8e](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/tree/ecd7d8e555423123960009f9f8ab878246f0132f)
+源码版本：[ecd7d8e](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/tree/ecd7d8e555423123960009f9f8ab878246f0132f)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。
+> **功能**：将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。
 
-> **核心亮点**：把 HTTP MCP 的代理、隧道和客户端片段组合到 DSH 工具流程；减少手工配置但不自动接入 profile。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把 HTTP MCP 的代理、隧道和客户端片段组合到 DSH 工具流程；减少手工配置但不自动接入 profile。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：含 Bearer 的 pending YAML 默认权限未收紧，且自定义 deployDir 创建后 status/stop 按默认路径寻址；公开隧道真实鉴权依赖未固定镜像。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：含 Bearer 的 pending YAML 默认权限未收紧，且自定义 deployDir 创建后 status/stop 按默认路径寻址；公开隧道真实鉴权依赖未固定镜像。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把 HTTP MCP 的代理、隧道和客户端片段组合到 DSH 工具流程；减少手工配置但不自动接入 profile。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把 HTTP MCP 的代理、隧道和客户端片段组合到 DSH 工具流程；减少手工配置但不自动接入 profile。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 Host 三工具与 jobs 降级；token 存 .env 0600，但同 token 写入默认权限 pending YAML。Compose 绑定回环并使用 latest 镜像；命名隧道配置仅为注释。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Host 三工具与 jobs 降级；token 存 .env 0600，但同 token 写入默认�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@ Host 三工具与 jobs 降级；token 存 .env 0600，但同 token 写入默认�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+created%3A2026-09-22T05%3A44%3A45.667Z..2026-10-22T05%3A44%3A45.667Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A44%3A45.667Z..2026-10-22T05%3A44%3A45.667Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+created%3A2026-09-22T05%3A44%3A45.667Z..2026-10-22T05%3A44%3A45.667Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-mcp-tunnel/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A44%3A45.667Z..2026-10-22T05%3A44%3A45.667Z)
 
 
 

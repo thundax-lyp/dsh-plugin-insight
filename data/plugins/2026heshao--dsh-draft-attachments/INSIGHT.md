@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f285e67](https://github.com/2026heshao/dsh-draft-attachments/tree/f285e67bab926ee3083ee7b3858aa28a6092ec8a)
+源码版本：[f285e67](https://github.com/2026heshao/dsh-draft-attachments/tree/f285e67bab926ee3083ee7b3858aa28a6092ec8a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/2026heshao/dsh-draft-attachments) [![npm 30d 23](https://img.shields.io/static/v1?label=npm+30d&message=23&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-draft-attachments) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-draft-attachments)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2026heshao/dsh-draft-attachments) [![npm 30d 23](https://img.shields.io/static/v1?label=npm+30d&message=23&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-draft-attachments) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-draft-attachments)
 <!-- END META -->
 
-> **实现功能**：把DSH输入框未发送的图片和文件保存到IndexedDB，在会话输入区重新挂载时恢复附件。
+> **功能**：把DSH输入框未发送的图片和文件保存到IndexedDB，在会话输入区重新挂载时恢复附件。
 
-> **核心亮点**：用会话级slot观察输入并经官方附件intake恢复，减少切页后手工重选且不patch官方函数；持久化技术本身成熟，收益依赖正确保存时序。详见[Q02](#research-q02)。
+> **亮点**：用会话级slot观察输入并经官方附件intake恢复，减少切页后手工重选且不patch官方函数；持久化技术本身成熟，收益依赖正确保存时序。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：核心持久化缺少提交序号和明确失败状态，旧异步捕获可能覆盖新删除；单会话120MB常量未执行，超限单附件还可能使整集合不更新。均为源码条件风险，未复现。详见[Q02](#research-q02)。
+> **主要限制**：核心持久化缺少提交序号和明确失败状态，旧异步捕获可能覆盖新删除；单会话120MB常量未执行，超限单附件还可能使整集合不更新。均为源码条件风险，未复现。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -107,8 +107,6 @@
 
 > **亮点**：用会话级slot观察输入并经官方附件intake恢复，减少切页后手工重选且不patch官方函数；持久化技术本身成熟，收益依赖正确保存时序。详见[Q02](#research-q02)。
 
-用会话级slot观察输入并经官方附件intake恢复，减少切页后手工重选且不patch官方函数；持久化技术本身成熟，收益依赖正确保存时序。详见[Q02](#research-q02)。
-
 可借鉴的是不改官方函数而通过会话级slot观察输入，恢复调用官方intake，拒绝回填时释放新草稿，并在异步读回后重新检查当前输入避免直接覆盖用户新选择。这些减少宿主patch耦合，但仍依赖公开服务和slot的版本契约。存储封装把失败吞掉、捕获没有串行与代际所有权，使简洁实现付出可诊断性和一致性代价。
 
 <a id="detail-section-5"></a>
@@ -157,7 +155,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -168,7 +166,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-draft-attachments/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-draft-attachments/issues?q=is%3Aissue+created%3A2026-09-22T04%3A53%3A10.788Z..2026-10-22T04%3A53%3A10.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2026heshao/dsh-draft-attachments/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A53%3A10.788Z..2026-10-22T04%3A53%3A10.788Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2026heshao/dsh-draft-attachments/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/2026heshao/dsh-draft-attachments/issues?q=is%3Aissue+created%3A2026-09-22T04%3A53%3A10.788Z..2026-10-22T04%3A53%3A10.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2026heshao/dsh-draft-attachments/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A53%3A10.788Z..2026-10-22T04%3A53%3A10.788Z)
 
 
 

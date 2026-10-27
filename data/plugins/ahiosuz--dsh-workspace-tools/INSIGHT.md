@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[d370852](https://github.com/AHIOSUZ/dsh-workspace-tools/tree/d370852671425f09909862a7d220f7b0538f2f3c)
+源码版本：[d370852](https://github.com/AHIOSUZ/dsh-workspace-tools/tree/d370852671425f09909862a7d220f7b0538f2f3c)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：按已注册工作区为新根会话自动选择 Agent 与权限预设的设置页和事件监听器。
+> **功能**：按已注册工作区为新根会话自动选择 Agent 与权限预设的设置页和事件监听器。
 
-> **核心亮点**：在官方扩展点上提供工作区级默认规则与设置 UI，避免每次新建根会话手动重选。详见[Q01](#research-q01)。
+> **亮点**：在官方扩展点上提供工作区级默认规则与设置 UI，避免每次新建根会话手动重选。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：权限可能在异步 Agent 预设选择之后才更新，首 turn 时序未知；旧/大小写路径回退可能误匹配。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：权限可能在异步 Agent 预设选择之后才更新，首 turn 时序未知；旧/大小写路径回退可能误匹配。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：在官方扩展点上提供工作区级默认规则与设置 UI，避免每次新建根会话手动重选。详见[Q01](#research-q01)。
 
-在官方扩展点上提供工作区级默认规则与设置 UI，避免每次新建根会话手动重选。详见[Q01](#research-q01)。
-
 官方事件/设置服务集成和 ID 优先可借鉴；void 异步事件和 path case-fold 是重点边界。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

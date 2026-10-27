@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[0f64e0c](https://github.com/AndyYang12345/dsh-butler-memory/tree/0f64e0cf0420d0461fef2d49c2d6752faebc0562)
+源码版本：[0f64e0c](https://github.com/AndyYang12345/dsh-butler-memory/tree/0f64e0cf0420d0461fef2d49c2d6752faebc0562)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：历史 DSH Bundle：接 Butler Memory MCP agent 工具及 Web 用户记忆审阅面板，作者已停止维护。
+> **功能**：历史 DSH Bundle：接 Butler Memory MCP agent 工具及 Web 用户记忆审阅面板，作者已停止维护。
 
-> **核心亮点**：相对仅模型工具示例，增加 DSH Web 记忆/候选可视界面和 RPC 桥；记忆存储与策略归上游。详见[Q02](#research-q02)。
+> **亮点**：相对仅模型工具示例，增加 DSH Web 记忆/候选可视界面和 RPC 桥；记忆存储与策略归上游。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：桥 Promise.race 超时不清 pending，dispose 回调未绑定 this，候选操作无显式 owner/revision；真实影响需宿主验证。详见[Q03](#research-q03)。
+> **主要限制**：桥 Promise.race 超时不清 pending，dispose 回调未绑定 this，候选操作无显式 owner/revision；真实影响需宿主验证。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：相对仅模型工具示例，增加 DSH Web 记忆/候选可视界面和 RPC 桥；记忆存储与策略归上游。详见[Q02](#research-q02)。
 
-相对仅模型工具示例，增加 DSH Web 记忆/候选可视界面和 RPC 桥；记忆存储与策略归上游。详见[Q02](#research-q02)。
-
 Host 双通道与懒启动桥；Promise.race 超时未删 pending；生命周期 effect 返回未绑定 dispose。候选接受/拒绝仅传 ID，约束委托上游。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@ Host 双通道与懒启动桥；Promise.race 超时未删 pending；生命周期
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -157,7 +155,7 @@ Host 双通道与懒启动桥；Promise.race 超时未删 pending；生命周期
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AndyYang12345/dsh-butler-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AndyYang12345/dsh-butler-memory/issues?q=is%3Aissue+created%3A2026-09-22T05%3A45%3A09.540Z..2026-10-22T05%3A45%3A09.540Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AndyYang12345/dsh-butler-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A45%3A09.540Z..2026-10-22T05%3A45%3A09.540Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AndyYang12345/dsh-butler-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AndyYang12345/dsh-butler-memory/issues?q=is%3Aissue+created%3A2026-09-22T05%3A45%3A09.540Z..2026-10-22T05%3A45%3A09.540Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AndyYang12345/dsh-butler-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A45%3A09.540Z..2026-10-22T05%3A45%3A09.540Z)
 
 
 

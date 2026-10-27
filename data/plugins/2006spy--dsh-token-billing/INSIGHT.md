@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[098b9e8](https://github.com/2006spy/dsh-token-billing/tree/098b9e8164bd66a6f2bdbc204ece186c6ca52060)
+源码版本：[098b9e8](https://github.com/2006spy/dsh-token-billing/tree/098b9e8164bd66a6f2bdbc204ece186c6ca52060)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/2006spy/dsh-token-billing)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2006spy/dsh-token-billing)
 <!-- END META -->
 
-> **实现功能**：在DSH会话中显示实时token费用，结合路由价目与政策时间线，保存跨会话账本并提供统计、余额及CSV/JSON导出。
+> **功能**：在DSH会话中显示实时token费用，结合路由价目与政策时间线，保存跨会话账本并提供统计、余额及CSV/JSON导出。
 
-> **核心亮点**：把估算到usage修正、provider价优先和事件时间政策接入会话投影，再提供步骤账本与导出，减少手工整理；不是正式账单或新tokenizer。详见[Q02](#research-q02)。
+> **亮点**：把估算到usage修正、provider价优先和事件时间政策接入会话投影，再提供步骤账本与导出，减少手工整理；不是正式账单或新tokenizer。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：投影可撤销估算，但账本仅追加且同key不更新；宿主发布中间状态时退款可能留下持久条目。“节省”还涉及累计actual和跨币种口径，未运行复现。详见[Q03](#research-q03)。
+> **主要限制**：投影可撤销估算，但账本仅追加且同key不更新；宿主发布中间状态时退款可能留下持久条目。“节省”还涉及累计actual和跨币种口径，未运行复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -117,8 +117,6 @@
 
 > **亮点**：把估算到usage修正、provider价优先和事件时间政策接入会话投影，再提供步骤账本与导出，减少手工整理；不是正式账单或新tokenizer。详见[Q02](#research-q02)。
 
-把估算到usage修正、provider价优先和事件时间政策接入会话投影，再提供步骤账本与导出，减少手工整理；不是正式账单或新tokenizer。详见[Q02](#research-q02)。
-
 状态机将精确usage与估算清楚区分，价目解析与模型归一化共用接口，policy按事件时刻而不是当前时间解释历史；投影wire和旧字段并存处理宿主代际。配置保存把expectedRevision传settings.replace，避免无条件覆盖配置。这些是可借鉴的工程做法，但并不弥补账本已见键只追加的语义。
 
 HTTP注册多条stats/export/providers/config/余额端点。config/save检查POST和256KiB正文，交给settings做revision替换；所读处理器没有Host/Origin/认证判断，读取端不少也不限制method。上层webServer的授权未核查，因此不能断言远程泄露，但导出包含sessionId、模型、provider和时间，应该依据实际宿主访问控制判断数据边界。自定义价URL只要求http(s)，可请求内网或明文端点；这是配置权限所支配的网络能力，不声称已验证SSRF链。
@@ -175,7 +173,7 @@ HTTP注册多条stats/export/providers/config/余额端点。config/save检查PO
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -189,7 +187,7 @@ HTTP注册多条stats/export/providers/config/余额端点。config/save检查PO
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/2006spy/dsh-token-billing/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2006spy/dsh-token-billing/issues?q=is%3Aissue+created%3A2026-09-22T05%3A23%3A22.740Z..2026-10-22T05%3A23%3A22.740Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2006spy/dsh-token-billing/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A23%3A22.740Z..2026-10-22T05%3A23%3A22.740Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/2006spy/dsh-token-billing/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/2006spy/dsh-token-billing/issues?q=is%3Aissue+created%3A2026-09-22T05%3A23%3A22.740Z..2026-10-22T05%3A23%3A22.740Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2006spy/dsh-token-billing/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A23%3A22.740Z..2026-10-22T05%3A23%3A22.740Z)
 
 
 

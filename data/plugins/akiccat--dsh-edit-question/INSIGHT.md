@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[52ec799](https://github.com/Akiccat/dsh-edit-question/tree/52ec799b4ad59f9060647738dfaa092480cd1ca1)
+源码版本：[52ec799](https://github.com/Akiccat/dsh-edit-question/tree/52ec799b4ad59f9060647738dfaa092480cd1ca1)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在DSH用户提问旁编辑文本与图片，以官方fork复制前缀并在新会话重发。
+> **功能**：在DSH用户提问旁编辑文本与图片，以官方fork复制前缀并在新会话重发。
 
-> **核心亮点**：将官方fork与原附件读取组织成编辑重问流程，减少人工复制前缀；不改追加日志，宿主fork为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将官方fork与原附件读取组织成编辑重问流程，减少人工复制前缀；不改追加日志，宿主fork为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：prompt失败后childId未入状态，重试可能再fork；归档失败仍切换，整个操作非原子，且不撤销后续真实动作。见 [Q03](#research-q03)。
+> **主要限制**：prompt失败后childId未入状态，重试可能再fork；归档失败仍切换，整个操作非原子，且不撤销后续真实动作。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：将官方fork与原附件读取组织成编辑重问流程，减少人工复制前缀；不改追加日志，宿主fork为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-将官方fork与原附件读取组织成编辑重问流程，减少人工复制前缀；不改追加日志，宿主fork为继承能力。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 官方fork避免直接破坏日志，原会话先读附件合理；分阶段失败需要把childId和投递事实保存在可恢复状态。DOM portal只是入口适配，不应决定核心会话正确性。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ prompt失败后childId未入状态，重试可能再fork；归档失败仍切换
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

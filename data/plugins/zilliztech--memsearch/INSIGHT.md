@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[926ba5b](https://github.com/zilliztech/memsearch/tree/926ba5b7c3d53ae0f424fba9029c29e88718b687)
+源码版本：[926ba5b](https://github.com/zilliztech/memsearch/tree/926ba5b7c3d53ae0f424fba9029c29e88718b687)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=yellow&logo=github&style=flat)](https://github.com/zilliztech/memsearch)
+[![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zilliztech/memsearch)
 <!-- END META -->
 
-> **实现功能**：面向Markdown知识库提供语义检索、混合搜索、增量索引、文件监听与多Agent接入。
+> **功能**：面向Markdown知识库提供语义检索、混合搜索、增量索引、文件监听与多Agent接入。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是以Markdown保持用户可编辑事实、让向量库成为可重建派生物，并用内容/位置/模型身份和有范围的清理组织增量索引。相比rg增加语义候选，成熟embedding、BM25和RRF来自已有方法，组合贡献不等于原创算法或任务胜出。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是以Markdown保持用户可编辑事实、让向量库成为可重建派生物，并用内容/位置/模型身份和有范围的清理组织增量索引。相比rg增加语义候选，成熟embedding、BM25和RRF来自已有方法，组合贡献不等于原创算法或任务胜出。
 
-> **风险与缺陷**：[Q03](#research-q03)显示旧块删除先于新块embedding；provider失败时来源原文件仍在，但索引可能暂缺内容。可重建解释恢复依据，不能保证每次查询完整或恢复免费；IndexReport应成为使用完整覆盖结论的门槛。本轮未运行复现，不称永久原件丢失。
+> **主要限制**：[Q03](#research-q03)显示旧块删除先于新块embedding；provider失败时来源原文件仍在，但索引可能暂缺内容。可重建解释恢复依据，不能保证每次查询完整或恢复免费；IndexReport应成为使用完整覆盖结论的门槛。本轮未运行复现，不称永久原件丢失。
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是以Markdown保持用户可编辑事实、让向量库成为可重建派生物，并用内容/位置/模型身份和有范围的清理组织增量索引。相比rg增加语义候选，成熟embedding、BM25和RRF来自已有方法，组合贡献不等于原创算法或任务胜出。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是以Markdown保持用户可编辑事实、让向量库成为可重建派生物，并用内容/位置/模型身份和有范围的清理组织增量索引。相比rg增加语义候选，成熟embedding、BM25和RRF来自已有方法，组合贡献不等于原创算法或任务胜出。
-
 可借鉴的是单文件更新与目录清理分离、结构化失败报告和内容/模型身份绑定。移植需同样维护路径规范、embedding模型维度、Milvus schema与调用方重排约定，不能只复制ID算法。 不保证。_index_file先计算新ID，再删除不在新集合中的旧块，最后才对新块调用embedding与upsert。如果该来源已经变更且后续embedding失败，旧块已被删、新块未全部写入，索引可暂时缺少这份来源的内容。index_with_report会捕获并记录失败后继续其他文件，这提高批次可推进性，却不提供每个来源的新旧索引原子切换。此为源码顺序可解释的失败窗口，本轮没有注入故障运行，不能宣称发生了数据永久丢失。
 
 Markdown原件不因这条索引路径被删除，所以重试或重建仍有恢复依据；但是恢复需要provider、计算和人工关注，且在恢复前的查询可能无结果或不完整。可重建是恢复能力，不能当作“不会漏检”“更新成功”或“零恢复成本”的证明。
@@ -159,7 +157,7 @@ Markdown原件不因这条索引路径被删除，所以重试或重建仍有恢
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

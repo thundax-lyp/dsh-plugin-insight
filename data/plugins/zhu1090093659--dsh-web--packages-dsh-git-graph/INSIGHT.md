@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-git-graph)
+源码版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-git-graph)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 94,671](https://img.shields.io/static/v1?label=npm+30d&message=94%2C671&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph)
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 94,671](https://img.shields.io/static/v1?label=npm+30d&message=94%2C671&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph)
 <!-- END META -->
 
-> **实现功能**：在 DSH 界面显示 Git 分支与提交图，并管理独立 worktree 和新会话工作区。
+> **功能**：在 DSH 界面显示 Git 分支与提交图，并管理独立 worktree 和新会话工作区。
 
-> **核心亮点**：它把原生 git worktree 能力与 DSH 工作区注册及空会话入口组合，创建独立 wt/ 分支后将路径交给新会话，而不是让现有会话静默换目录。宿主执行与浏览器展示分开，工作区 realpath 门禁与托管目录约束为集成提供边界；Git 隔离机制本身归属上游。[Q02](#research-q02)
+> **亮点**：它把原生 git worktree 能力与 DSH 工作区注册及空会话入口组合，创建独立 wt/ 分支后将路径交给新会话，而不是让现有会话静默换目录。宿主执行与浏览器展示分开，工作区 realpath 门禁与托管目录约束为集成提供边界；Git 隔离机制本身归属上游。[Q02](#research-q02)
 
-> **风险与缺陷**：隔离只成立于实际进入新 worktree 的会话。当前会话 cwd 不变，分支切换仍作用于整个共享工作区；此外模型工具先创建磁盘 worktree、再注册 workspace，两步间没有在该入口看到补偿，注册失败可能留下需人工核对的部分状态。这是源码推断的恢复风险，未复现。[Q03](#research-q03)
+> **主要限制**：隔离只成立于实际进入新 worktree 的会话。当前会话 cwd 不变，分支切换仍作用于整个共享工作区；此外模型工具先创建磁盘 worktree、再注册 workspace，两步间没有在该入口看到补偿，注册失败可能留下需人工核对的部分状态。这是源码推断的恢复风险，未复现。[Q03](#research-q03)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：它把原生 git worktree 能力与 DSH 工作区注册及空会话入口组合，创建独立 wt/ 分支后将路径交给新会话，而不是让现有会话静默换目录。宿主执行与浏览器展示分开，工作区 realpath 门禁与托管目录约束为集成提供边界；Git 隔离机制本身归属上游。[Q02](#research-q02)
 
-它把原生 git worktree 能力与 DSH 工作区注册及空会话入口组合，创建独立 wt/ 分支后将路径交给新会话，而不是让现有会话静默换目录。宿主执行与浏览器展示分开，工作区 realpath 门禁与托管目录约束为集成提供边界；Git 隔离机制本身归属上游。[Q02](#research-q02)
-
 GitService 集中 Git 业务规则，路由负责 envelope 与 SSE 生命周期；可借鉴 realpath 工作区限定、托管路径约束和按设置注册模型工具。移植依赖宿主注册表、subprocess 与 Git 错误语义，应补测双状态创建的恢复。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ GitService 集中 Git 业务规则，路由负责 envelope 与 SSE 生命周期�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：packages/dsh-git-graph；内容摘要：ff7b73e3e498baad97968e1f97d0b19e520a9f87a686b2e3f7434ed2e0ac85d5。sloc 0.3.2，TypeScript 5.9.3。
 

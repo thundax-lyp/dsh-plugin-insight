@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[de2bdec](https://github.com/Anionex/dsh-computer-use/tree/de2bdecf86515f206ac25e197417e2c0c73719ff)
+源码版本：[de2bdec](https://github.com/Anionex/dsh-computer-use/tree/de2bdecf86515f206ac25e197417e2c0c73719ff)
 
 <!-- BEGIN META -->
-[![GitHub ★ 70](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=70&color=yellow&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,322](https://img.shields.io/static/v1?label=npm+30d&message=3%2C322&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
+[![GitHub ★ 70](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=70&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Anionex/dsh-computer-use) [![npm 30d 3,322](https://img.shields.io/static/v1?label=npm+30d&message=3%2C322&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anionex/dsh-computer-use) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anionex/dsh-computer-use)
 <!-- END META -->
 
-> **实现功能**：为DSH提供macOS原生应用观察、语义操作和定向输入能力。
+> **功能**：为DSH提供macOS原生应用观察、语义操作和定向输入能力。
 
-> **核心亮点**：[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
+> **亮点**：[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
 
-> **风险与缺陷**：[Q03](#research-q03)动作成功不是业务完成；应用AX支持和失败后的结果判定决定自动化价值，高影响任务不应盲重试。
+> **主要限制**：[Q03](#research-q03)动作成功不是业务完成；应用AX支持和失败后的结果判定决定自动化价值，高影响任务不应盲重试。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
 
-[Q02](#research-q02)把按需工具、观察绑定、精确应用租约和一次性确认连成动作层，减少无状态坐标脚本的盲重放条件。
-
 可借鉴generation绑定观察和敏感目标重绑定后重新确认；移植要同时维护原生helper、AX适配及宿主授权存储，不能只复制工具定义。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -158,7 +156,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=grey&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 8](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=8&color=grey&logo=github&style=flat)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=737b86&logo=github)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 8](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=8&color=737b86&logo=github)](https://github.com/Anionex/dsh-computer-use/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
 
 
 

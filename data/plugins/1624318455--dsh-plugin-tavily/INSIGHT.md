@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[d15e6da](https://github.com/1624318455/dsh-plugin-tavily/tree/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3)
+源码版本：[d15e6da](https://github.com/1624318455/dsh-plugin-tavily/tree/d15e6da5a72c7ae3e69524b4e77cd86c67fd13a3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tavily)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1624318455/dsh-plugin-tavily) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memef1f1y/dsh-plugin-tavily)
 <!-- END META -->
 
-> **实现功能**：接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。
+> **功能**：接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。
 
-> **核心亮点**：整合搜索、提取、参数配置、多键轮换与回退，详见[Q01](#research-q01)。
+> **亮点**：整合搜索、提取、参数配置、多键轮换与回退，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：无 key search 在 HTTP 前抛缺凭据；符合持久缓存写入条件时原始 API key 会作为 JSON 键落盘；详见[Q02](#research-q02)。
+> **主要限制**：无 key search 在 HTTP 前抛缺凭据；符合持久缓存写入条件时原始 API key 会作为 JSON 键落盘；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@ bundle patch 将 web.searchProvider 设为 tavily；插件注册 Tavily 搜索�
 
 > **亮点**：整合搜索、提取、参数配置、多键轮换与回退，详见[Q01](#research-q01)。
 
-整合搜索、提取、参数配置、多键轮换与回退，详见[Q01](#research-q01)。
-
 搜索 key ring、429 重试、按故障分类回退；缓存可落盘且键含敏感数据。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ bundle patch 将 web.searchProvider 设为 tavily；插件注册 Tavily 搜索�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,7 +160,7 @@ bundle patch 将 web.searchProvider 设为 tavily；插件注册 Tavily 搜索�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-tavily/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1624318455/dsh-plugin-tavily/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

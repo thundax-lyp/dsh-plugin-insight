@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e553b1a](https://github.com/863683348/dsh-plugin-recommend/tree/e553b1a6b6da777694bf6094e5c9b5ba5f51cd8b)
+源码版本：[e553b1a](https://github.com/863683348/dsh-plugin-recommend/tree/e553b1a6b6da777694bf6094e5c9b5ba5f51cd8b)
 
 <!-- BEGIN META -->
-[![npm 30d 733](https://img.shields.io/static/v1?label=npm+30d&message=733&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-recommend)
+[![npm 30d 733](https://img.shields.io/static/v1?label=npm+30d&message=733&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-recommend) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-recommend)
 <!-- END META -->
 
-> **实现功能**：从内置市场目录做需求词法排序、分类详情与相似候选搜索，可显式从固定HTTPS README刷新目录。
+> **功能**：从内置市场目录做需求词法排序、分类详情与相似候选搜索，可显式从固定HTTPS README刷新目录。
 
-> **核心亮点**：将1135条描述/tag目录的解释性词法、分类与相似探索接到模型工具，并提供显式固定源刷新。详见[Q02](#research-q02)。
+> **亮点**：将1135条描述/tag目录的解释性词法、分类与相似探索接到模型工具，并提供显式固定源刷新。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：live非空即全替换且无tag/版本，失败仍保旧live却提示embedded；解析类别子串/格式漂移可不完整，去重先保首项，分数不代表安全/值得安装。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：live非空即全替换且无tag/版本，失败仍保旧live却提示embedded；解析类别子串/格式漂移可不完整，去重先保首项，分数不代表安全/值得安装。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -114,8 +114,6 @@
 
 > **亮点**：将1135条描述/tag目录的解释性词法、分类与相似探索接到模型工具，并提供显式固定源刷新。详见[Q02](#research-q02)。
 
-将1135条描述/tag目录的解释性词法、分类与相似探索接到模型工具，并提供显式固定源刷新。详见[Q02](#research-q02)。
-
 只读catalog.json解析得到count/实际1135、1135个归一URL、描述全非空、945条有tag，generatedAt2026-08-17。统计保DATA-AUDIT；它比只有名字的目录更有检索素材，但描述由上游文本截取/自动tag，不是每项源码研究。gen脚本regex解析本地yml，描述取en或zh截140字符、tag按词典至多6，跳坏文件；没有保逐项上游commit/文件指纹与选择/未知状态。
 
 refresh只请求固定HTTPS raw README，AbortSignal30秒覆盖fetch/text链，HTTP非成功拒绝，parsed非空就替换模块级liveCatalog。parser只识###及CATEGORIES英文子串、特定GitHub列表行，描述截200，不生成t/tag。刷新后名称/描述仍可用，但tag相关权重/相似分丢失，不能把刷新当等质量增量。标题子串如含ui片段可能先命中ui，格式漂移/局部解析仅一条仍会全量替换，条数大跌不被拒绝。
@@ -176,7 +174,7 @@ live非空即全替换且无tag/版本，失败仍保旧live却提示embedded；
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -189,7 +187,7 @@ live非空即全替换且无tag/版本，失败仍保旧live却提示embedded；
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-recommend/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-recommend/issues?q=is%3Aissue+created%3A2026-09-22T09%3A14%3A37.113Z..2026-10-22T09%3A14%3A37.113Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-recommend/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A14%3A37.113Z..2026-10-22T09%3A14%3A37.113Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-recommend/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-recommend/issues?q=is%3Aissue+created%3A2026-09-22T09%3A14%3A37.113Z..2026-10-22T09%3A14%3A37.113Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-recommend/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A14%3A37.113Z..2026-10-22T09%3A14%3A37.113Z)
 
 
 

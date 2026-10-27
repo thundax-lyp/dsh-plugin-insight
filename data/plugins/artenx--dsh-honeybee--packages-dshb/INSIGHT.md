@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[ab3a9a4](https://github.com/Artenx/dsh-honeybee/tree/ab3a9a4aad213dd6d2f9e773644583bde9180b29/packages/dshb)
+源码版本：[ab3a9a4](https://github.com/Artenx/dsh-honeybee/tree/ab3a9a4aad213dd6d2f9e773644583bde9180b29/packages/dshb)
 
 <!-- BEGIN META -->
-[![npm 30d 2,574](https://img.shields.io/static/v1?label=npm+30d&message=2%2C574&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@artenx/dshb) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@artenx/dshb)
+[![npm 30d 2,574](https://img.shields.io/static/v1?label=npm+30d&message=2%2C574&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@artenx/dshb) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@artenx/dshb)
 <!-- END META -->
 
-> **实现功能**：将 DSH 文件、命令和终端操作路由到本地、SSH 或 Docker 节点，并管理认证与工作区绑定。
+> **功能**：将 DSH 文件、命令和终端操作路由到本地、SSH 或 Docker 节点，并管理认证与工作区绑定。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持控制端保持会话、执行面按工作区映射到节点的资源组织变化。最长前缀binding和unrouted显式失败减少误本机执行风险；SSH、Docker及Cookie本身继承成熟技术。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持控制端保持会话、执行面按工作区映射到节点的资源组织变化。最长前缀binding和unrouted显式失败减少误本机执行风险；SSH、Docker及Cookie本身继承成熟技术。
 
-> **风险与缺陷**：[Q03](#research-q03) 表明连接重试不能解决有副作用命令的结果未知，认证入口也不是多租户隔离。它把用户SSH终端负担转为管理端运维，须把这部分算入采用成本。
+> **主要限制**：[Q03](#research-q03) 表明连接重试不能解决有副作用命令的结果未知，认证入口也不是多租户隔离。它把用户SSH终端负担转为管理端运维，须把这部分算入采用成本。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持控制端保持会话、执行面按工作区映射到节点的资源组织变化。最长前缀binding和unrouted显式失败减少误本机执行风险；SSH、Docker及Cookie本身继承成熟技术。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 支持控制端保持会话、执行面按工作区映射到节点的资源组织变化。最长前缀binding和unrouted显式失败减少误本机执行风险；SSH、Docker及Cookie本身继承成熟技术。
-
 WorldResolver使文件与进程共享节点选择，可复用为多后端路由；最长前缀匹配与不可路由显式错误值得保留。直接装饰宿主服务带来加载顺序和升级耦合，移植须逐个验证fs、shell、subprocess及PTY契约。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ bundle接线、binding和工具路由有源码支持；远端全链安全、断�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@ bundle接线、binding和工具路由有源码支持；远端全链安全、断�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Artenx/dsh-honeybee/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Artenx/dsh-honeybee/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[270ccee](https://github.com/361533652/dsh-token-bi/tree/270cceef087f17fde08645099af1aefd63c2f0f4)
+源码版本：[270ccee](https://github.com/361533652/dsh-token-bi/tree/270cceef087f17fde08645099af1aefd63c2f0f4)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：汇总 DSH 本机会话 token，用日期、模型、工作目录、调用树和逐轮明细查看用量。
+> **功能**：汇总 DSH 本机会话 token，用日期、模型、工作目录、调用树和逐轮明细查看用量。
 
-> **核心亮点**：将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：搜索和标题事件使用启发式估算并混入普通总量，不能无条件称只统计上报；冷会话按createdAt缓存，外层强刷不必失效内层，可能继续陈旧。[Q03](#research-q03)
+> **主要限制**：搜索和标题事件使用启发式估算并混入普通总量，不能无条件称只统计上报；冷会话按createdAt缓存，外层强刷不必失效内层，可能继续陈旧。[Q03](#research-q03)
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](#research-q01) [Q02](#research-q02)
 
-将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](#research-q01) [Q02](#research-q02)
-
 usage纯函数、观察finally释放及同键构建合并有明确可复用性；文档承诺需跟实现来源一致，缓存修订必须覆盖实际可变对象。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.130Z..2026-10-24T05%3A55%3A33.130Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.130Z..2026-10-24T05%3A55%3A33.130Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.130Z..2026-10-24T05%3A55%3A33.130Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.130Z..2026-10-24T05%3A55%3A33.130Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b976645](https://github.com/99galaxy/dsh-plugin-market/tree/b97664510aafd55a74f17e304e271956f1c07659)
+源码版本：[b976645](https://github.com/99galaxy/dsh-plugin-market/tree/b97664510aafd55a74f17e304e271956f1c07659)
 
 <!-- BEGIN META -->
-[![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
+[![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
 <!-- END META -->
 
-> **实现功能**：在 DSH 设置页展示社区目录、已安装与可更新项，并触发插件安装。
+> **功能**：在 DSH 设置页展示社区目录、已安装与可更新项，并触发插件安装。
 
-> **核心亮点**：把手工查目录、比版本、复制命令整合到一页；上游目录和 pnpm 是依赖，本插件的增量是 UI/host/helper 接线及状态整理。效果取决于 profile 与来源是否符合预期。详见[Q01](#research-q01)。
+> **亮点**：把手工查目录、比版本、复制命令整合到一页；上游目录和 pnpm 是依赖，本插件的增量是 UI/host/helper 接线及状态整理。效果取决于 profile 与来源是否符合预期。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：host 把读取和安装目标固定为 web，更新又执行目录命令，可能把固定 Git 来源替换为 npm；目录多源回退未核同一性，pnpm 成功未验证重启加载。详见[Q03](#research-q03)。
+> **主要限制**：host 把读取和安装目标固定为 web，更新又执行目录命令，可能把固定 Git 来源替换为 npm；目录多源回退未核同一性，pnpm 成功未验证重启加载。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：把手工查目录、比版本、复制命令整合到一页；上游目录和 pnpm 是依赖，本插件的增量是 UI/host/helper 接线及状态整理。效果取决于 profile 与来源是否符合预期。详见[Q01](#research-q01)。
 
-把手工查目录、比版本、复制命令整合到一页；上游目录和 pnpm 是依赖，本插件的增量是 UI/host/helper 接线及状态整理。效果取决于 profile 与来源是否符合预期。详见[Q01](#research-q01)。
-
 单 argv、拒选项、同源/JSON 检查及 unknown 版本状态可借鉴；profile 与目录来源仍需端到端固定和验收。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ host 把读取和安装目标固定为 web，更新又执行目录命令，可�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

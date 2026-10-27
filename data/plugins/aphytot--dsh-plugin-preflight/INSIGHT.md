@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[ae10f46](https://github.com/AphyTOT/dsh-plugin-preflight/tree/ae10f46bcf65258d61fe54d966e8bdcc0daf60f6)
+源码版本：[ae10f46](https://github.com/AphyTOT/dsh-plugin-preflight/tree/ae10f46bcf65258d61fe54d966e8bdcc0daf60f6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AphyTOT/dsh-plugin-preflight)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AphyTOT/dsh-plugin-preflight)
 <!-- END META -->
 
-> **实现功能**：以 CLI 和模型工具预检 DSH 插件清单、patch、客户端包和预发布 peer 范围。
+> **功能**：以 CLI 和模型工具预检 DSH 插件清单、patch、客户端包和预发布 peer 范围。
 
-> **核心亮点**：把DSH特有组合与预发布peer约束变成可重复结构报告，并在不知道宿主版本时限制判断，避免猜测兼容；增量是提交前诊断而非功能验收。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：把DSH特有组合与预发布peer约束变成可重复结构报告，并在不知道宿主版本时限制判断，避免猜测兼容；增量是提交前诊断而非功能验收。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：正则外形检查和简化semver不能证明宿主组合正确；宿主版本无法解析时部分规则静默，工具注册失败也静默，用户可能误读无错误为完整通过。[Q03](#research-q03)
+> **主要限制**：正则外形检查和简化semver不能证明宿主组合正确；宿主版本无法解析时部分规则静默，工具注册失败也静默，用户可能误读无错误为完整通过。[Q03](#research-q03)
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：把DSH特有组合与预发布peer约束变成可重复结构报告，并在不知道宿主版本时限制判断，避免猜测兼容；增量是提交前诊断而非功能验收。[Q01](#research-q01) [Q02](#research-q02)
 
-把DSH特有组合与预发布peer约束变成可重复结构报告，并在不知道宿主版本时限制判断，避免猜测兼容；增量是提交前诊断而非功能验收。[Q01](#research-q01) [Q02](#research-q02)
-
 共享check减少CLI与模型工具语义漂移，延迟导入避免运行时解析失败阻断整个宿主；但吞错降低可观测性，简化解析器需要差分验证。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

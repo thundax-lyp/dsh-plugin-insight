@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[6dfdc4a](https://github.com/173787247/dsh-wsl-service/tree/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727)
+源码版本：[6dfdc4a](https://github.com/173787247/dsh-wsl-service/tree/6dfdc4a18e7155fe0c4bb0bcb75283b879bc3727)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-service)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-service)
 <!-- END META -->
 
-> **实现功能**：给 WSL 中的 DSH Agent 提供 Windows 服务列表与单服务详情只读工具。
+> **功能**：给 WSL 中的 DSH Agent 提供 Windows 服务列表与单服务详情只读工具。
 
-> **核心亮点**：把 Windows 服务元数据带进 WSL Agent 对话，省手工跨系统查询。详见[Q01](#research-q01)。
+> **亮点**：把 Windows 服务元数据带进 WSL Agent 对话，省手工跨系统查询。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：详情包含系统账户/路径，权限由宿主决定；全量枚举可能在服务多时变慢。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：详情包含系统账户/路径，权限由宿主决定；全量枚举可能在服务多时变慢。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把 Windows 服务元数据带进 WSL Agent 对话，省手工跨系统查询。详见[Q01](#research-q01)。
 
-把 Windows 服务元数据带进 WSL Agent 对话，省手工跨系统查询。详见[Q01](#research-q01)。
-
 输入单引号转义和结构化输出可借鉴；全量查询成本与详情敏感字段需控。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

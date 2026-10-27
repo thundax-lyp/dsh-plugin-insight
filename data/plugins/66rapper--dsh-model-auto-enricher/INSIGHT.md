@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[4c18dc2](https://github.com/66rapper/dsh-model-auto-enricher/tree/4c18dc2a231f336a31d49dccfff9606edc6456c9)
+源码版本：[4c18dc2](https://github.com/66rapper/dsh-model-auto-enricher/tree/4c18dc2a231f336a31d49dccfff9606edc6456c9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/66rapper/dsh-model-auto-enricher)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/66rapper/dsh-model-auto-enricher)
 <!-- END META -->
 
-> **实现功能**：按模型名称规则批量补齐 DSH 上下文、输出、图片与推理配置并默认自动写盘。
+> **功能**：按模型名称规则批量补齐 DSH 上下文、输出、图片与推理配置并默认自动写盘。
 
-> **核心亮点**：把重复模型字段配置和状态展示集中化，减少人工点击；仅改变本地配置，不扩展供应商实际能力。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把重复模型字段配置和状态展示集中化，减少人工点击；仅改变本地配置，不扩展供应商实际能力。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：未知模型默认1M/图片/思考，且启动自动巡检会直接备份并覆盖 YAML；只升不降不等于安全，备份也不保护并发写。详见[Q03](#research-q03)。
+> **主要限制**：未知模型默认1M/图片/思考，且启动自动巡检会直接备份并覆盖 YAML；只升不降不等于安全，备份也不保护并发写。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：把重复模型字段配置和状态展示集中化，减少人工点击；仅改变本地配置，不扩展供应商实际能力。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把重复模型字段配置和状态展示集中化，减少人工点击；仅改变本地配置，不扩展供应商实际能力。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 Host 端回环/同源门控、YAML 解析与规则表；预览零写。真实写直接覆盖、无 hash/CAS，保留顶部注释但重排主体；自动与手动写不共用锁。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@ Host 端回环/同源门控、YAML 解析与规则表；预览零写。真实写
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@ Host 端回环/同源门控、YAML 解析与规则表；预览零写。真实写
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/66rapper/dsh-model-auto-enricher/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/66rapper/dsh-model-auto-enricher/issues?q=is%3Aissue+created%3A2026-09-22T05%3A40%3A59.052Z..2026-10-22T05%3A40%3A59.052Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/66rapper/dsh-model-auto-enricher/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A40%3A59.052Z..2026-10-22T05%3A40%3A59.052Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/66rapper/dsh-model-auto-enricher/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/66rapper/dsh-model-auto-enricher/issues?q=is%3Aissue+created%3A2026-09-22T05%3A40%3A59.052Z..2026-10-22T05%3A40%3A59.052Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/66rapper/dsh-model-auto-enricher/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A40%3A59.052Z..2026-10-22T05%3A40%3A59.052Z)
 
 
 

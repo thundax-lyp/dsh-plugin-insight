@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[87f3fb0](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
+源码版本：[87f3fb0](https://github.com/030611/dsh-verification-receipt/tree/87f3fb0198090f0f26a37a52840db150609db748)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-verification-receipt)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/030611/dsh-verification-receipt) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verification-receipt) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verification-receipt)
 <!-- END META -->
 
-> **实现功能**：被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。
+> **功能**：被动读取DSH每轮持久事件，输出不含对话/参数/结果正文的工具计数与词法验证信号JSONL摘要。
 
-> **核心亮点**：把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。
+> **亮点**：把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。
 
-> **风险与缺陷**：词法信号有误报/漏报且信任宿主结果；无keyhash可重算/关联，队列无界、写失败仅warning，无rotation/锁，路径需可信管理员。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：词法信号有误报/漏报且信任宿主结果；无keyhash可重算/关联，队列无界、写失败仅warning，无rotation/锁，路径需可信管理员。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -114,8 +114,6 @@
 
 > **亮点**：把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。
 
-把持久事件投影成隐私减量的每轮工具状态/词法摘要，显式不冒充测试通过，并用关闭接收/注销/drain管理卸载。详见[Q02](#research-q02)、[Q04](#research-q04)。
-
 输出字面构造限定工具计数/类别和时序，不包含参数/原始ID/工具输出或消息文本；投影在内存仍会读取原始参数/结果做判断，不能说从不接触。sessionIdHash加domain但无key，可跨文件关联、低熵ID可猜，不是匿名。receiptHash是固定字段JSON的SHA256，任意能改文件者可重算，不发现删除/插入/回滚/重排；作者SECURITY一致承认。
 
 writer用Promise链顺序append，mkdir0700/append0600仅请求创建模式，无chmod/realpath/lstat/锁，预存文件权限/路径链接及跨进程写均在可信本地路径边界。写失败warning后队列继续，不向宿主turn反馈“receipt已持久”。排队无容量/背压与rotation，慢盘可积压内存，崩溃丢已接受未写完项/尾行不完整。
@@ -172,7 +170,7 @@ writer用Promise链顺序append，mkdir0700/append0600仅请求创建模式，�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -185,7 +183,7 @@ writer用Promise链顺序append，mkdir0700/append0600仅请求创建模式，�
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+created%3A2026-09-22T07%3A59%3A01.907Z..2026-10-22T07%3A59%3A01.907Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A59%3A01.907Z..2026-10-22T07%3A59%3A01.907Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+created%3A2026-09-22T07%3A59%3A01.907Z..2026-10-22T07%3A59%3A01.907Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/030611/dsh-verification-receipt/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A59%3A01.907Z..2026-10-22T07%3A59%3A01.907Z)
 
 
 

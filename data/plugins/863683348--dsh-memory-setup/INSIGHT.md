@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[989e8a5](https://github.com/863683348/dsh-memory-setup/tree/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43)
+源码版本：[989e8a5](https://github.com/863683348/dsh-memory-setup/tree/989e8a5e7ac32b0864f5a7c2167ca5e242d55f43)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup) [![npm 30d 155](https://img.shields.io/static/v1?label=npm+30d&message=155&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-memory-setup) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-memory-setup)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/863683348/dsh-memory-setup) [![npm 30d 155](https://img.shields.io/static/v1?label=npm+30d&message=155&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-memory-setup) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-memory-setup)
 <!-- END META -->
 
-> **实现功能**：提供工作区JSON偏好、规范、工作流与教训记忆，含DSH工具、提示注入、知识检索及备份恢复接口。
+> **功能**：提供工作区JSON偏好、规范、工作流与教训记忆，含DSH工具、提示注入、知识检索及备份恢复接口。
 
-> **核心亮点**：把可读工作区记忆、工具/提示注入、规则提取和检索/快照组合，减少每次重述的接线；Jaccard/BM25/cosine非新算法。详见[Q01](#research-q01)。
+> **亮点**：把可读工作区记忆、工具/提示注入、规则提取和检索/快照组合，减少每次重述的接线；Jaccard/BM25/cosine非新算法。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：冷KB调用未定义emptyKnowledge，通用更新可沿原型链；注入全局共享、分离revision非原子CAS，错误fix可晋升、脱敏/冷层未接线，限制高信任记忆主张。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：冷KB调用未定义emptyKnowledge，通用更新可沿原型链；注入全局共享、分离revision非原子CAS，错误fix可晋升、脱敏/冷层未接线，限制高信任记忆主张。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -108,8 +108,6 @@
 
 > **亮点**：把可读工作区记忆、工具/提示注入、规则提取和检索/快照组合，减少每次重述的接线；Jaccard/BM25/cosine非新算法。详见[Q01](#research-q01)。
 
-把可读工作区记忆、工具/提示注入、规则提取和检索/快照组合，减少每次重述的接线；Jaccard/BM25/cosine非新算法。详见[Q01](#research-q01)。
-
 revision检查是分离read→compare→backup→write，不是文件系统原子CAS/锁；两个会话都读同revision并同时比较成功仍能各写revision+1覆盖。KB无revision检查，search命中还写hits，读取式检索也参与丢更新风险。Host writeText是否原子不由插件证明，跨memory/KB/index更无事务。
 
 snapshot payload包含doc/KB，但保留N只裁snapshots.json列表，不删除旧snapshot文件，因此不是物理存储上限。restore把历史doc的旧revision交saveDoc，当前revision已增长时触发conflict，正常回滚反可能被乐观检查拒；import/merge也需按其revision语义核，不能绕过冲突就声称安全。完整bundle导出只给snapshots索引，迁移后索引文件可能不存在；import_all先memory再KB再index，失败可部分恢复而无回滚。args.id拼快照相对路径未按索引/ID格式严格检查，物理越界仍取决Host fs。
@@ -164,7 +162,7 @@ backup写失败被吞，JSON parse失败当null，loadDoc可回空初始状态�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -177,7 +175,7 @@ backup写失败被吞，JSON parse失败当null，loadDoc可回空初始状态�
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup/issues?q=is%3Aissue+created%3A2026-09-22T10%3A47%3A05.357Z..2026-10-22T10%3A47%3A05.357Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-memory-setup/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A47%3A05.357Z..2026-10-22T10%3A47%3A05.357Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/863683348/dsh-memory-setup/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-memory-setup/issues?q=is%3Aissue+created%3A2026-09-22T10%3A47%3A05.357Z..2026-10-22T10%3A47%3A05.357Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-memory-setup/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A47%3A05.357Z..2026-10-22T10%3A47%3A05.357Z)
 
 
 

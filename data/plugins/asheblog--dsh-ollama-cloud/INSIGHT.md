@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[2230ae4](https://github.com/Asheblog/dsh-ollama-cloud/tree/2230ae4d77eeff2f8347993b62bd69f9c1e13916)
+源码版本：[2230ae4](https://github.com/Asheblog/dsh-ollama-cloud/tree/2230ae4d77eeff2f8347993b62bd69f9c1e13916)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/Asheblog/dsh-ollama-cloud)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asheblog/dsh-ollama-cloud)
 <!-- END META -->
 
-> **实现功能**：接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。
+> **功能**：接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。
 
-> **核心亮点**：[Q01](#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
+> **亮点**：[Q01](#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
 
-> **风险与缺陷**：[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。
+> **主要限制**：[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：[Q01](#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
 
-[Q01](#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
-
 把官方聊天adapter与供应商目录/凭据事实分开有利于复用。缺凭据主动失败、发现未知不误删和同代prepared调用是可借鉴点；复制到其他服务需重新定义retired语义、缓存身份和错误分类，不能只换baseURL。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

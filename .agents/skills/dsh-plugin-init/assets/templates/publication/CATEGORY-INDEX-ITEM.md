@@ -1,1 +1,1 @@
-- [{{name}}（{{count}}）]({{url}})
+| [{{name}}]({{url}}) | {{scope}} | {{count}} |

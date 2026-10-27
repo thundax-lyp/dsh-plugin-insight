@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[7d98ee7](https://github.com/AskTheWay/dsh-jev-interceptor/tree/7d98ee78ca2e9417894ceb2a00903d67f8f84b12)
+源码版本：[7d98ee7](https://github.com/AskTheWay/dsh-jev-interceptor/tree/7d98ee78ca2e9417894ceb2a00903d67f8f84b12)
 
 <!-- BEGIN META -->
-[![GitHub ★ 31](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=31&color=yellow&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 2,667](https://img.shields.io/static/v1?label=npm+30d&message=2%2C667&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-jev-interceptor)
+[![GitHub ★ 31](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=31&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 2,667](https://img.shields.io/static/v1?label=npm+30d&message=2%2C667&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-interceptor)
 <!-- END META -->
 
-> **实现功能**：为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。
+> **功能**：为 DSH 工具调用提供 Jev 风险判断、审批辅助、语义会话保留与决策遥测。
 
-> **核心亮点**：核心贡献是把 typed decision fan-out 接入 DSH 多个决策点，并用 delegate、同会话 callId 证据绑定、空白名单和按价值保留限制权限与信息损失；贡献在宿主编排而非 Jev 模型原创，效果优势尚未实测。详见[Q03](#research-q03)。
+> **亮点**：核心贡献是把 typed decision fan-out 接入 DSH 多个决策点，并用 delegate、同会话 callId 证据绑定、空白名单和按价值保留限制权限与信息损失；贡献在宿主编排而非 Jev 模型原创，效果优势尚未实测。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：确认缺陷是图像卸载 listener 在 shadow 模式也可能直接追加磁盘不可逆的 `image/offload` 事件；该能力虽默认关闭，但开启后会违反“shadow 只记录”的核心承诺。详见[Q04](#research-q04)。
+> **主要限制**：确认缺陷是图像卸载 listener 在 shadow 模式也可能直接追加磁盘不可逆的 `image/offload` 事件；该能力虽默认关闭，但开启后会违反“shadow 只记录”的核心承诺。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：核心贡献是把 typed decision fan-out 接入 DSH 多个决策点，并用 delegate、同会话 callId 证据绑定、空白名单和按价值保留限制权限与信息损失；贡献在宿主编排而非 Jev 模型原创，效果优势尚未实测。详见[Q03](#research-q03)。
 
-核心贡献是把 typed decision fan-out 接入 DSH 多个决策点，并用 delegate、同会话 callId 证据绑定、空白名单和按价值保留限制权限与信息损失；贡献在宿主编排而非 Jev 模型原创，效果优势尚未实测。详见[Q03](#research-q03)。
-
 纯决策矩阵、fail-delegate、PendingAsks 的 session/call/tool/新鲜度绑定、集中式重试/冷却/并发/LRU，以及串行 best-effort 遥测值得复用。主要代价是对多项 DSH alpha API 和私有 resolver renderer 的耦合，且分散的 mode 门已在图像卸载形成确认遗漏。移植时应优先建立统一 effect gate 和跨模式契约测试。详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -164,7 +162,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -179,7 +177,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=grey&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+created%3A2026-09-24T08%3A19%3A16.810Z..2026-10-24T08%3A19%3A16.810Z) [![近30天关闭 4](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=grey&logo=github&style=flat)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T08%3A19%3A16.810Z..2026-10-24T08%3A19%3A16.810Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+created%3A2026-09-24T08%3A19%3A16.810Z..2026-10-24T08%3A19%3A16.810Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T08%3A19%3A16.810Z..2026-10-24T08%3A19%3A16.810Z)
 
 
 

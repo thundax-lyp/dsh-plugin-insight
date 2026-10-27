@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[838ddf0](https://github.com/6mt/dsh-plugin-loopback-trust/tree/838ddf0d79fb977be896c6cb5dcd0bba68015832)
+源码版本：[838ddf0](https://github.com/6mt/dsh-plugin-loopback-trust/tree/838ddf0d79fb977be896c6cb5dcd0bba68015832)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。
+> **功能**：在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。
 
-> **核心亮点**：用短客户端补丁绕过反代域名的本地分类，恢复作者所述设置持久化路径；依赖 DSH 私有时序和字段。详见[Q02](#research-q02)。
+> **亮点**：用短客户端补丁绕过反代域名的本地分类，恢复作者所述设置持久化路径；依赖 DSH 私有时序和字段。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：它对所有非 loopback、无既存 transport 的网页统一标记 host-owning，插件无 origin 白名单或身份校验；服务端 fence 保留仅作者声称，不能替代代理授权。详见[Q03](#research-q03)。
+> **主要限制**：它对所有非 loopback、无既存 transport 的网页统一标记 host-owning，插件无 origin 白名单或身份校验；服务端 fence 保留仅作者声称，不能替代代理授权。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：用短客户端补丁绕过反代域名的本地分类，恢复作者所述设置持久化路径；依赖 DSH 私有时序和字段。详见[Q02](#research-q02)。
 
-用短客户端补丁绕过反代域名的本地分类，恢复作者所述设置持久化路径；依赖 DSH 私有时序和字段。详见[Q02](#research-q02)。
-
 没有 host 行为；immediate 客户端全局赋值依赖加载顺序，晚到使用 defineProperty 并清缓存。对全部非 loopback origin 适用，没有内部白名单；兼容性依赖宿主私有 API。
 
 #### 反代入口与身份边界比较
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -160,7 +158,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/6mt/dsh-plugin-loopback-trust/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/6mt/dsh-plugin-loopback-trust/issues?q=is%3Aissue+created%3A2026-09-22T05%3A29%3A48.982Z..2026-10-22T05%3A29%3A48.982Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/6mt/dsh-plugin-loopback-trust/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A29%3A48.982Z..2026-10-22T05%3A29%3A48.982Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/6mt/dsh-plugin-loopback-trust/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/6mt/dsh-plugin-loopback-trust/issues?q=is%3Aissue+created%3A2026-09-22T05%3A29%3A48.982Z..2026-10-22T05%3A29%3A48.982Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/6mt/dsh-plugin-loopback-trust/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A29%3A48.982Z..2026-10-22T05%3A29%3A48.982Z)
 
 
 

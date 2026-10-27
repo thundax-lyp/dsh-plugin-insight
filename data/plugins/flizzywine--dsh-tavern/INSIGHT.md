@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[ac0e298](https://github.com/flizzywine/dsh-tavern/tree/ac0e298ac29f76fd45f09fa7c28af12916832a55)
+源码版本：[ac0e298](https://github.com/flizzywine/dsh-tavern/tree/ac0e298ac29f76fd45f09fa7c28af12916832a55)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,314](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C314&color=yellow&logo=github&style=flat)](https://github.com/flizzywine/dsh-tavern) [![npm 30d 1,273](https://img.shields.io/static/v1?label=npm+30d&message=1%2C273&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-profile-tavern) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-profile-tavern)
+[![GitHub ★ 1,314](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C314&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/flizzywine/dsh-tavern) [![npm 30d 1,273](https://img.shields.io/static/v1?label=npm+30d&message=1%2C273&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-tavern) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-tavern)
 <!-- END META -->
 
-> **实现功能**：高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。
+> **功能**：高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的具体贡献是把正文成功与派生结算成功解耦：后台失败保留正文，旧revision结果被拒绝。[Q05](#research-q05)的隔离effect与身份守卫降低直接旧草稿覆盖当前状态的风险。角色卡、脚本和酒馆基本形态有既有基线，不将全部生态包装成原创；正文可用性收益尚需实际任务度量。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的具体贡献是把正文成功与派生结算成功解耦：后台失败保留正文，旧revision结果被拒绝。[Q05](#research-q05)的隔离effect与身份守卫降低直接旧草稿覆盖当前状态的风险。角色卡、脚本和酒馆基本形态有既有基线，不将全部生态包装成原创；正文可用性收益尚需实际任务度量。
 
-> **风险与缺陷**：[Q03](#research-q03)指出正文先提交且下一轮不阻塞会让变量落后剧情。版本守卫拒绝旧结果，却不证明新变量语义正确，也不能回滚脚本外部动作；外部副作用后的禁重试正说明边界。若状态密集任务持续用旧值决策，保住正文不足以认定合格交付。
+> **主要限制**：[Q03](#research-q03)指出正文先提交且下一轮不阻塞会让变量落后剧情。版本守卫拒绝旧结果，却不证明新变量语义正确，也不能回滚脚本外部动作；外部副作用后的禁重试正说明边界。若状态密集任务持续用旧值决策，保住正文不足以认定合格交付。
 
 **本文目录**
 
@@ -113,8 +113,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的具体贡献是把正文成功与派生结算成功解耦：后台失败保留正文，旧revision结果被拒绝。[Q05](#research-q05)的隔离effect与身份守卫降低直接旧草稿覆盖当前状态的风险。角色卡、脚本和酒馆基本形态有既有基线，不将全部生态包装成原创；正文可用性收益尚需实际任务度量。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的具体贡献是把正文成功与派生结算成功解耦：后台失败保留正文，旧revision结果被拒绝。[Q05](#research-q05)的隔离effect与身份守卫降低直接旧草稿覆盖当前状态的风险。角色卡、脚本和酒馆基本形态有既有基线，不将全部生态包装成原创；正文可用性收益尚需实际任务度量。
-
 值得复用的是把模型生成的派生修改先制成可序列化、operation-scoped effect，再用当前版本的守卫发布。effect只允许messages/variables/mvu/tavernScriptPrompts，带chat/session与分支版本；expected value防止覆盖自草稿创建后已变的值。对于有范围的消息修改，先准备所有行再发布，避免校验到一半时已经部分写入。
 
 这优于直接保存整份旧聊天对象，但原子范围是当前effect的发布步骤；ADR明确不是正文和后台状态的同一存储事务。transaction隔离还禁止真实跨chat global差异，只允许特定runtime标记；不代表任意用户脚本都被安全沙箱隔离。移植需宿主具有稳定分支/revision、swipe/lifecycle身份和明确的副作用接口，否则照搬操作ID字段不会自动获得这些保证。
@@ -173,7 +171,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -193,7 +191,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/flizzywine/dsh-tavern/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 100](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=100&color=grey&logo=github&style=flat)](https://github.com/flizzywine/dsh-tavern/issues?q=is%3Aissue+created%3A2026-09-27T02%3A10%3A23.554Z..2026-10-27T02%3A10%3A23.554Z) [![近30天关闭 99](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=99&color=grey&logo=github&style=flat)](https://github.com/flizzywine/dsh-tavern/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A10%3A23.554Z..2026-10-27T02%3A10%3A23.554Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/flizzywine/dsh-tavern/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 100](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=100&color=737b86&logo=github)](https://github.com/flizzywine/dsh-tavern/issues?q=is%3Aissue+created%3A2026-09-27T02%3A10%3A23.554Z..2026-10-27T02%3A10%3A23.554Z) [![近30天关闭 99](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=99&color=737b86&logo=github)](https://github.com/flizzywine/dsh-tavern/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A10%3A23.554Z..2026-10-27T02%3A10%3A23.554Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[ef32d59](https://github.com/173787247/dsh-wsl-fetch/tree/ef32d59a6e95929aa18e86c5495d0f3f9d78185a)
+源码版本：[ef32d59](https://github.com/173787247/dsh-wsl-fetch/tree/ef32d59a6e95929aa18e86c5495d0f3f9d78185a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-fetch)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-fetch)
 <!-- END META -->
 
-> **实现功能**：为 DSH WSL 的官方 web_fetch 提供进程内 HTTP(S) 代理传输 provider。
+> **功能**：为 DSH WSL 的官方 web_fetch 提供进程内 HTTP(S) 代理传输 provider。
 
-> **核心亮点**：将代理放入官方 web_fetch 进程内调用链，并在无代理/已有其他 provider 时避免强行覆盖。详见[Q01](#research-q01)。
+> **亮点**：将代理放入官方 web_fetch 进程内调用链，并在无代理/已有其他 provider 时避免强行覆盖。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：公有域名解析到私网的路径不受此插件代码校验，普通 sleep 不响应 deadline；宿主与代理外层控制未知。详见[Q03](#research-q03)和[Q04](#research-q04)。
+> **主要限制**：公有域名解析到私网的路径不受此插件代码校验，普通 sleep 不响应 deadline；宿主与代理外层控制未知。详见[Q03](#research-q03)和[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将代理放入官方 web_fetch 进程内调用链，并在无代理/已有其他 provider 时避免强行覆盖。详见[Q01](#research-q01)。
 
-将代理放入官方 web_fetch 进程内调用链，并在无代理/已有其他 provider 时避免强行覆盖。详见[Q01](#research-q01)。
-
 同站跳转和流读取限额可借鉴；代理侧私网解析、退避取消和配置上限需补。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

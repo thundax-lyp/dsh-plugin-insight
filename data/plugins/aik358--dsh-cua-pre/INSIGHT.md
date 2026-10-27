@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6b64708](https://github.com/Aik358/dsh-cua-pre/tree/6b64708e2514ef4a1b9cb6004adb4838d4b114bb)
+源码版本：[6b64708](https://github.com/Aik358/dsh-cua-pre/tree/6b64708e2514ef4a1b9cb6004adb4838d4b114bb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aik358/dsh-cua-pre)
 <!-- END META -->
 
-> **实现功能**：Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。
+> **功能**：Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。
 
-> **核心亮点**：把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：作者强调完整安全治理，但默认 allowedPids 空、审计落盘失败静默、急停写盘失败不保证重启后持续；真实安全性须在配置与故障下验收。详见[Q03](#research-q03)。
+> **主要限制**：作者强调完整安全治理，但默认 allowedPids 空、审计落盘失败静默、急停写盘失败不保证重启后持续；真实安全性须在配置与故障下验收。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把UIA元素目标/坐标后备、状态失效及部分未知效果提示封装为DSH工具，并附可视面板；未知效果提示不等统一收据或硬重放阻断。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 Host注入工具并管理Python sidecar，动作按state_id/PID预检，先发帧后立即作废旧状态；timeout文字提示可能已发生，但无统一可见ambiguous字段，timer/noop不取消原生动作。日志异步追加失败静默。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@ Windows 隔离环境以等任务比较坐标基线与 UIA 策略的成功/误操
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -155,7 +153,7 @@ Windows 隔离环境以等任务比较坐标基线与 UIA 策略的成功/误操
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+created%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+created%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[af8976a](https://github.com/AprilCrystal/dsh-client-ui-font-scale/tree/af8976a87137a21cbe6fb527e5a38e19ffc4c596)
+源码版本：[af8976a](https://github.com/AprilCrystal/dsh-client-ui-font-scale/tree/af8976a87137a21cbe6fb527e5a38e19ffc4c596)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。
+> **功能**：为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。
 
-> **核心亮点**：原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：全页 Ctrl 滚轮先阻止默认行为，再检查冷却和调用主题服务，会改变整页缩放语义；对依赖原生缩放的人可能抵消便利。该次序已核查，设备影响未实测。[Q03](#research-q03)
+> **主要限制**：全页 Ctrl 滚轮先阻止默认行为，再检查冷却和调用主题服务，会改变整页缩放语义；对依赖原生缩放的人可能抵消便利。该次序已核查，设备影响未实测。[Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)
 
-原生字号能力之上增加就地入口，并将 theme 保留为唯一状态所有者，避免创建第二份持久化设置；便利来自减少导航，非新排版算法。[Q01](#research-q01) [Q02](#research-q02)
-
 按调用取服务与 inject 等待注册避免捕获早期缺失值；effect 清理监听体现生命周期意识。复制主题范围常量仍有版本同步负担，window 手势副作用须被用户知晓。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

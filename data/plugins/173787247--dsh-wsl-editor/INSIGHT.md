@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[0bc7619](https://github.com/173787247/dsh-wsl-editor/tree/0bc7619da7b473a622ae9e498d19fd0360162261)
+源码版本：[0bc7619](https://github.com/173787247/dsh-wsl-editor/tree/0bc7619da7b473a622ae9e498d19fd0360162261)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-editor)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-editor)
 <!-- END META -->
 
-> **实现功能**：将WSL路径转换后在Windows编辑器打开，支持Code/Cursor行列定位和命令存在查询。
+> **功能**：将WSL路径转换后在Windows编辑器打开，支持Code/Cursor行列定位和命令存在查询。
 
-> **核心亮点**：减少跨系统路径转换和编辑器goto命令步骤。详见[Q01](#research-q01)。
+> **亮点**：减少跨系统路径转换和编辑器goto命令步骤。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：启动完成不等文档验收，相对路径非session cwd，逐重试超时未与宿主取消联动。详见[Q03](#research-q03)。
+> **主要限制**：启动完成不等文档验收，相对路径非session cwd，逐重试超时未与宿主取消联动。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：减少跨系统路径转换和编辑器goto命令步骤。详见[Q01](#research-q01)。
 
-减少跨系统路径转换和编辑器goto命令步骤。详见[Q01](#research-q01)。
-
 固定参数与单引号处理可查，测试仅格式，需最终argv/取消和错误分层。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+created%3A2026-09-22T07%3A17%3A46.963Z..2026-10-22T07%3A17%3A46.963Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A17%3A46.963Z..2026-10-22T07%3A17%3A46.963Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+created%3A2026-09-22T07%3A17%3A46.963Z..2026-10-22T07%3A17%3A46.963Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A17%3A46.963Z..2026-10-22T07%3A17%3A46.963Z)
 
 
 

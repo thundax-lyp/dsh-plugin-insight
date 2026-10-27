@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c478634](https://github.com/988hj7tczd-oss/dsh-asciinema/tree/c47863413886ffac9b66ee13a9ab276ab195d5d9)
+源码版本：[c478634](https://github.com/988hj7tczd-oss/dsh-asciinema/tree/c47863413886ffac9b66ee13a9ab276ab195d5d9)
 
 <!-- BEGIN META -->
-[![npm 30d 384](https://img.shields.io/static/v1?label=npm+30d&message=384&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-asciinema) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-asciinema)
+[![npm 30d 384](https://img.shields.io/static/v1?label=npm+30d&message=384&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-asciinema) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-asciinema)
 <!-- END META -->
 
-> **实现功能**：把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。
+> **功能**：把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。
 
-> **核心亮点**：结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。
+> **亮点**：结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：模板../../定位错误、帧间隔max再求和导致计时偏差，stop先移除再保存无重试句柄/卸载drain；输出含秘密/内容替换与导入上限需核，非官方互通。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：模板../../定位错误、帧间隔max再求和导致计时偏差，stop先移除再保存无重试句柄/卸载drain；输出含秘密/内容替换与导入上限需核，非官方互通。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -120,8 +120,6 @@ docs/store-evidence既保留“真实宿主待执行”旧说明又追加作者C
 
 > **亮点**：结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。
 
-结合Session对象/ID隔离、单writer事件字节护栏及cast/HTML/文本三入口，减少手工保存工具文字。详见[Q02](#research-q02)。
-
 nextDelay每次算now-lastMs的单帧间隔，又取max(该间隔,上次delay)强制不减；castDuration和播放器按各delay求和。于是1/2/1秒三个间隔被表示为1/2/2，和5秒而非4秒，是内部时序算法就可推导的偏差，未执行目标。elapsed却用lastMs-startMs，总时间与文件duration也可分歧。不能把单调不减校验通过当真实时间轴保真。
 
 默认timestamp在toCast/停止时生成，而非保存startTime的开始epoch；env来自宿主process.SHELL/TERM非实际工具shell。宽高是配置默认100x40，未订阅终端resize，所以不是捕获真实终端几何。工具结果本身通常已有截断/包装，此处只录可见字符串，不能恢复上游未记录字节。
@@ -186,7 +184,7 @@ stop先registry.take移除并停止，再await saveCastFile；写失败时活动
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -198,7 +196,7 @@ stop先registry.take移除并停止，再await saveCastFile；写失败时活动
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-asciinema/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-asciinema/issues?q=is%3Aissue+created%3A2026-09-22T09%3A19%3A14.555Z..2026-10-22T09%3A19%3A14.555Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/988hj7tczd-oss/dsh-asciinema/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A19%3A14.555Z..2026-10-22T09%3A19%3A14.555Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-asciinema/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-asciinema/issues?q=is%3Aissue+created%3A2026-09-22T09%3A19%3A14.555Z..2026-10-22T09%3A19%3A14.555Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/988hj7tczd-oss/dsh-asciinema/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A19%3A14.555Z..2026-10-22T09%3A19%3A14.555Z)
 
 
 

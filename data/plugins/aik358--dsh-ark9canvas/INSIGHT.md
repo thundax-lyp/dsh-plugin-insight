@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[adc7072](https://github.com/Aik358/dsh-ark9canvas/tree/adc7072ad4d76ba2c57a81a8cdec85a0d42afdc1)
+源码版本：[adc7072](https://github.com/Aik358/dsh-ark9canvas/tree/adc7072ad4d76ba2c57a81a8cdec85a0d42afdc1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-ark9canvas) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aik358/dsh-ark9canvas) [![npm 30d 851](https://img.shields.io/static/v1?label=npm+30d&message=851&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-ark9canvas)
 <!-- END META -->
 
-> **实现功能**：提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。
+> **功能**：提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。
 
-> **核心亮点**：把图片生成的Agent意图与实际付费提交拆开，用面板批准再生成，辅以路径式改图和部分成功批次，改变人机交接位置；图片模型与API能力来自外部渠道。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把图片生成的Agent意图与实际付费提交拆开，用面板批准再生成，辅以路径式改图和部分成功批次，改变人机交接位置；图片模型与API能力来自外部渠道。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：审批不是持久预算账本。prompt在createApproval截到500字符后用截断值生成，批准时startGeneration读取当前渠道而非冻结创建时渠道；任务落盘和审批/通知内存又不对称。源码支持这些状态限制，未复现实际错图或错账。参见[Q03](#research-q03)。
+> **主要限制**：审批不是持久预算账本。prompt在createApproval截到500字符后用截断值生成，批准时startGeneration读取当前渠道而非冻结创建时渠道；任务落盘和审批/通知内存又不对称。源码支持这些状态限制，未复现实际错图或错账。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把图片生成的Agent意图与实际付费提交拆开，用面板批准再生成，辅以路径式改图和部分成功批次，改变人机交接位置；图片模型与API能力来自外部渠道。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把图片生成的Agent意图与实际付费提交拆开，用面板批准再生成，辅以路径式改图和部分成功批次，改变人机交接位置；图片模型与API能力来自外部渠道。参见[Q01](#research-q01)、[Q02](#research-q02)。
-
 独立图片子任务和路径返回可借鉴；持久化需要原子写与失败确认，授权对象须冻结渠道和完整prompt。复用时还需会话所有权、幂等与账单unknown状态。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

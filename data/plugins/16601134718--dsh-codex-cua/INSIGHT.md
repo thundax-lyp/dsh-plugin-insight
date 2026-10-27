@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[45f14f4](https://github.com/16601134718/dsh-codex-cua/tree/45f14f45dbb1b0c964a34cb2ab1088f6515e445d)
+源码版本：[45f14f4](https://github.com/16601134718/dsh-codex-cua/tree/45f14f45dbb1b0c964a34cb2ab1088f6515e445d)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：把 Codex 桌面端的本地 computer-use 运行时以 DSH Skill 形式安装并复用。
+> **功能**：把 Codex 桌面端的本地 computer-use 运行时以 DSH Skill 形式安装并复用。
 
-> **核心亮点**：相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)
+> **亮点**：相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)
 
-> **风险与缺陷**：它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 [Q04](#research-q04)
+> **主要限制**：它依赖未随插件交付的桌面运行时、Chrome 扩展和 macOS AX 权限，且卸载不移除写入的 Skill；本轮未验证这些外部组件的当前协议和安全边界。 [Q04](#research-q04)
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)
 
-相对每次启动 CUA 进程，它用常驻会话显著减少握手并保留变量，同时把操作规范随 Skill 分发；增量集中在运行时桥接与安装封装。 [Q03](#research-q03)
-
 内容相同跳过写入且挂载失败不破坏 profile，安装器较克制；真正复杂性在随包复制的 Python daemon 和外部运行时，本轮没有执行验证。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

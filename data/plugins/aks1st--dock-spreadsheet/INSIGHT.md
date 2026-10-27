@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[8ad1eea](https://github.com/AKS1st/dock-spreadsheet/tree/8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7)
+源码版本：[8ad1eea](https://github.com/AKS1st/dock-spreadsheet/tree/8ad1eeadf9ed7e6d8b27373a76c20b08964efeb7)
 
 <!-- BEGIN META -->
-[![npm 30d 413](https://img.shields.io/static/v1?label=npm+30d&message=413&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dock-spreadsheet) [![最新发布 2026-10-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dock-spreadsheet)
+[![npm 30d 413](https://img.shields.io/static/v1?label=npm+30d&message=413&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dock-spreadsheet) [![最新发布 2026-10-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dock-spreadsheet)
 <!-- END META -->
 
-> **实现功能**：在DSH dock-files中只读预览XLSX、XLS、ODS、CSV与TSV，支持切表、搜索筛选、坐标检查和显式链接导航。
+> **功能**：在DSH dock-files中只读预览XLSX、XLS、ODS、CSV与TSV，支持切表、搜索筛选、坐标检查和显式链接导航。
 
-> **核心亮点**：整合成熟解析/网格库到dock文件查看协议，保偏移行列坐标、预览受限标记与安全文本/生命周期，减少外开表格切换。详见[Q02](#research-q02)。
+> **亮点**：整合成熟解析/网格库到dock文件查看协议，保偏移行列坐标、预览受限标记与安全文本/生命周期，减少外开表格切换。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：只读和同源不等授权隔离，允许工作区外绝对路径；20MiB/5000行256列不限制全书主线程解析，显示字符串排序也非数值计算。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：只读和同源不等授权隔离，允许工作区外绝对路径；20MiB/5000行256列不限制全书主线程解析，显示字符串排序也非数值计算。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -111,8 +111,6 @@ MIT v0.1.0，Git/lib可消费，不需安装时postinstall构建；开发改变s
 
 > **亮点**：整合成熟解析/网格库到dock文件查看协议，保偏移行列坐标、预览受限标记与安全文本/生命周期，减少外开表格切换。详见[Q02](#research-q02)。
 
-整合成熟解析/网格库到dock文件查看协议，保偏移行列坐标、预览受限标记与安全文本/生命周期，减少外开表格切换。详见[Q02](#research-q02)。
-
 5000行/256列限制在完整parseWorkbook之后gridSheet投影；XLSX压缩文件上限20MiB不等解压/整书内存或解析时间上限。解析/CSV转换同步跑主线程，AbortController只取消网络，不能中断已开始同步解析；虚拟滚动减少DOM，不减少前置全书解析。工作表数也未限，恶意复杂文件不能仅靠预览上限判安全。
 
 gridSheet raw=false取格式化/缓存显示值再转字符串，列sorter固定string。数值/日期排序因此是显示文本词典序，非数值/时间语义；搜索只作用当前已预览表，不能说完整工作簿搜索。第一行保数据不猜表头，偏移坐标被保留，truncated明确展示，是可借鉴处；公式不会被插件重算，缓存过期仍可能显示旧值。
@@ -169,7 +167,7 @@ gridSheet raw=false取格式化/缓存显示值再转字符串，列sorter固定
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -184,7 +182,7 @@ gridSheet raw=false取格式化/缓存显示值再转字符串，列sorter固定
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dock-spreadsheet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dock-spreadsheet/issues?q=is%3Aissue+created%3A2026-09-22T10%3A02%3A59.944Z..2026-10-22T10%3A02%3A59.944Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKS1st/dock-spreadsheet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A02%3A59.944Z..2026-10-22T10%3A02%3A59.944Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dock-spreadsheet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dock-spreadsheet/issues?q=is%3Aissue+created%3A2026-09-22T10%3A02%3A59.944Z..2026-10-22T10%3A02%3A59.944Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKS1st/dock-spreadsheet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A02%3A59.944Z..2026-10-22T10%3A02%3A59.944Z)
 
 
 

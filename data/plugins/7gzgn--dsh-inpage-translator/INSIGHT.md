@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[4a57cad](https://github.com/7gzgn/dsh-inpage-translator/tree/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190)
+源码版本：[4a57cad](https://github.com/7gzgn/dsh-inpage-translator/tree/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在DSH浏览器页面注入翻译按钮，按文本去重分块调用宿主模型，缓存译文并提供翻译、还原与状态工具。
+> **功能**：在DSH浏览器页面注入翻译按钮，按文本去重分块调用宿主模型，缓存译文并提供翻译、还原与状态工具。
 
-> **核心亮点**：将页面按钮、宿主模型、原文去重缓存和预算/部分失败回执接在一起，减少复制接线。详见[Q02](#research-q02)。
+> **亮点**：将页面按钮、宿主模型、原文去重缓存和预算/部分失败回执接在一起，减少复制接线。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：父元素textContent覆盖会丢子结构，restore只返扁平文本；未严格过滤可见内容，页面DOM请求不是可信人工许可，异步回填缺文档版本。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：父元素textContent覆盖会丢子结构，restore只返扁平文本；未严格过滤可见内容，页面DOM请求不是可信人工许可，异步回填缺文档版本。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -117,8 +117,6 @@
 
 > **亮点**：将页面按钮、宿主模型、原文去重缓存和预算/部分失败回执接在一起，减少复制接线。详见[Q02](#research-q02)。
 
-将页面按钮、宿主模型、原文去重缓存和预算/部分失败回执接在一起，减少复制接线。详见[Q02](#research-q02)。
-
 源码用TreeWalker找文本，但实际标记的是父元素，orig保存父元素整个textContent，回填和restore都写父元素textContent。只要父元素还含链接、强调或交互子节点，写入就会替换其整个子树；restore只能恢复扁平文本，不能恢复原元素及绑定。这个静态语义足以否定无条件“原网页完整可还原”，不需要把它表述为已经做了浏览器复现。
 
 收集跳过指定标签/skip祖先，但只查直接父的contenteditable/aria-hidden，没有computedStyle/布局可见性过滤。隐藏祖先里的文本或父元素包含的其他文字可能进入候选，不能把这批数据当严格可见文本。iframe只统计不进入，README已承认同源也不翻。
@@ -175,7 +173,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -186,7 +184,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+created%3A2026-09-22T07%3A38%3A53.554Z..2026-10-22T07%3A38%3A53.554Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A38%3A53.554Z..2026-10-22T07%3A38%3A53.554Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+created%3A2026-09-22T07%3A38%3A53.554Z..2026-10-22T07%3A38%3A53.554Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A38%3A53.554Z..2026-10-22T07%3A38%3A53.554Z)
 
 
 

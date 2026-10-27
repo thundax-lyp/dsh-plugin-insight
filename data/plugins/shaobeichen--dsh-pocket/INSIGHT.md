@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[aee3ae7](https://github.com/shaobeichen/dsh-pocket/tree/aee3ae7e97516206049394c7a37dc38778ffb6da)
+源码版本：[aee3ae7](https://github.com/shaobeichen/dsh-pocket/tree/aee3ae7e97516206049394c7a37dc38778ffb6da)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,415](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C415&color=yellow&logo=github&style=flat)](https://github.com/shaobeichen/dsh-pocket) [![npm 30d 16,044](https://img.shields.io/static/v1?label=npm+30d&message=16%2C044&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pocket) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pocket)
+[![GitHub ★ 2,415](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C415&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shaobeichen/dsh-pocket) [![npm 30d 16,044](https://img.shields.io/static/v1?label=npm+30d&message=16%2C044&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pocket) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pocket)
 <!-- END META -->
 
-> **实现功能**：通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。
+> **功能**：通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是将宿主兼容代理、扫码、移动布局和隧道管理收敛为设置页，减少个人远程访问的配置交接。移动布局来自dsh-web-mobile，公网由cloudflared提供，贡献为集成而非新协议。无同条件任务对照证明净节时。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是将宿主兼容代理、扫码、移动布局和隧道管理收敛为设置页，减少个人远程访问的配置交接。移动布局来自dsh-web-mobile，公网由cloudflared提供，贡献为集成而非新协议。无同条件任务对照证明净节时。
 
-> **风险与缺陷**：[Q03](#research-q03)指出同屏意味着PIN登录后进入广泛本机控制面，查看与写入没有已确认的独立角色。主动开隧道需要确认，但重启可按标记自动恢复，重启并非可靠撤销。对只想看状态的人，这个权限/持续授权取舍会改变采用判断；未运行复现，不把设计取舍称为认证绕过。
+> **主要限制**：[Q03](#research-q03)指出同屏意味着PIN登录后进入广泛本机控制面，查看与写入没有已确认的独立角色。主动开隧道需要确认，但重启可按标记自动恢复，重启并非可靠撤销。对只想看状态的人，这个权限/持续授权取舍会改变采用判断；未运行复现，不把设计取舍称为认证绕过。
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是将宿主兼容代理、扫码、移动布局和隧道管理收敛为设置页，减少个人远程访问的配置交接。移动布局来自dsh-web-mobile，公网由cloudflared提供，贡献为集成而非新协议。无同条件任务对照证明净节时。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的增量是将宿主兼容代理、扫码、移动布局和隧道管理收敛为设置页，减少个人远程访问的配置交接。移动布局来自dsh-web-mobile，公网由cloudflared提供，贡献为集成而非新协议。无同条件任务对照证明净节时。
-
 可借鉴的是service把代理和隧道生命周期分开：startTunnel复用进行中的Promise避免多次并发spawn，AbortController供停止取消，finally只清理自己的Promise引用以免旧启动覆盖新启动；进程退出回调更新error状态，主动停止与被动退出明确区分自动恢复标记。入口在ctx.effect中集中释放RPC及service，属于可解释的资源所有权。移植需要对齐子进程结束、宿主端口和恢复标记，不能只复制扫码页面。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

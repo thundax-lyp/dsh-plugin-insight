@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[c252d58](https://github.com/2333hutao/dsh-ls125-uv-probe/tree/c252d589d1d021bc08a386cd110e96cd011cb4a2)
+源码版本：[c252d58](https://github.com/2333hutao/dsh-ls125-uv-probe/tree/c252d589d1d021bc08a386cd110e96cd011cb4a2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2333hutao/dsh-ls125-uv-probe)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2333hutao/dsh-ls125-uv-probe)
 <!-- END META -->
 
-> **实现功能**：把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。
+> **功能**：把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。
 
-> **核心亮点**：针对单一探头整理命令、字段、CRC、参考固件和抓取路线，比通用串口教程更具可操作性。详见[Q02](#research-q02)。
+> **亮点**：针对单一探头整理命令、字段、CRC、参考固件和抓取路线，比通用串口教程更具可操作性。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：“完全逆向/全部测量证据”范围超出本包可见材料：原始案例在另仓，列出的三份样本只见一份，部分字节和命令仍未定。详见[Q03](#research-q03)。
+> **主要限制**：“完全逆向/全部测量证据”范围超出本包可见材料：原始案例在另仓，列出的三份样本只见一份，部分字节和命令仍未定。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：针对单一探头整理命令、字段、CRC、参考固件和抓取路线，比通用串口教程更具可操作性。详见[Q02](#research-q02)。
 
-针对单一探头整理命令、字段、CRC、参考固件和抓取路线，比通用串口教程更具可操作性。详见[Q02](#research-q02)。
-
 包运行时不直接读串口。前置元数据窄解析，资源路径交 skills 服务；测量工具和 MCU 固件是供人工后续使用的资源。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -154,7 +152,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2333hutao/dsh-ls125-uv-probe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2333hutao/dsh-ls125-uv-probe/issues?q=is%3Aissue+created%3A2026-09-22T05%3A40%3A15.869Z..2026-10-22T05%3A40%3A15.869Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2333hutao/dsh-ls125-uv-probe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A40%3A15.869Z..2026-10-22T05%3A40%3A15.869Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2333hutao/dsh-ls125-uv-probe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/2333hutao/dsh-ls125-uv-probe/issues?q=is%3Aissue+created%3A2026-09-22T05%3A40%3A15.869Z..2026-10-22T05%3A40%3A15.869Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2333hutao/dsh-ls125-uv-probe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A40%3A15.869Z..2026-10-22T05%3A40%3A15.869Z)
 
 
 

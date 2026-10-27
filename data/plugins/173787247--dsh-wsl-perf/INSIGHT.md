@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[c6aac1e](https://github.com/173787247/dsh-wsl-perf/tree/c6aac1e77224a9a81a1103ba199bd6b5785e654c)
+源码版本：[c6aac1e](https://github.com/173787247/dsh-wsl-perf/tree/c6aac1e77224a9a81a1103ba199bd6b5785e654c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-perf)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-perf)
 <!-- END META -->
 
-> **实现功能**：从 WSL 获取 Windows 宿主 CPU、内存、固定磁盘和按内存排序的进程快照。
+> **功能**：从 WSL 获取 Windows 宿主 CPU、内存、固定磁盘和按内存排序的进程快照。
 
-> **核心亮点**：把 Windows 宿主多个指标一次聚合给 WSL 中的 Agent。详见[Q01](#research-q01)。
+> **亮点**：把 Windows 宿主多个指标一次聚合给 WSL 中的 Agent。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：缺失数据归零与单次 CPU/进程 CPU 混用会误导瓶颈归因；top 只限输出不限制枚举。详见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：缺失数据归零与单次 CPU/进程 CPU 混用会误导瓶颈归因；top 只限输出不限制枚举。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@ Windows 任务管理器/PerfMon 提供更完整性能视图；插件提供 Agent
 
 > **亮点**：把 Windows 宿主多个指标一次聚合给 WSL 中的 Agent。详见[Q01](#research-q01)。
 
-把 Windows 宿主多个指标一次聚合给 WSL 中的 Agent。详见[Q01](#research-q01)。
-
 固定脚本和 top 夹取降低参数风险，但异常数据归零/并发采样需谨慎。详见[Q02](#research-q02)至[Q04](#research-q04)。 原生执行不接调用方signal，top控制返回而非全量枚举成本，内外timeout不同不构成统一取消保证。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ Windows 任务管理器/PerfMon 提供更完整性能视图；插件提供 Agent
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

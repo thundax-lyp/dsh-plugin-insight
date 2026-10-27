@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1392730](https://github.com/314857493/dsh-vision/tree/139273049905f852f633c7641628212399ac83f5/packages/vision-route)
+源码版本：[1392730](https://github.com/314857493/dsh-vision/tree/139273049905f852f633c7641628212399ac83f5/packages/vision-route)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/314857493/dsh-vision) [![npm 30d 1,305](https://img.shields.io/static/v1?label=npm+30d&message=1%2C305&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-vision-proxy-route)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/314857493/dsh-vision) [![npm 30d 1,305](https://img.shields.io/static/v1?label=npm+30d&message=1%2C305&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-proxy-route) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-proxy-route)
 <!-- END META -->
 
-> **实现功能**：把图片先交给智谱视觉转写，再把文本证据送入目标文本模型。
+> **功能**：把图片先交给智谱视觉转写，再把文本证据送入目标文本模型。
 
-> **核心亮点**：相对一次性OCR粘贴，增量在可配置provider包装、问题感知历史图片重转写和成功缓存，不是新的视觉模型或事实验证器。[Q02](#research-q02)、[Q03](#research-q03)
+> **亮点**：相对一次性OCR粘贴，增量在可配置provider包装、问题感知历史图片重转写和成功缓存，不是新的视觉模型或事实验证器。[Q02](#research-q02)、[Q03](#research-q03)
 
-> **风险与缺陷**：原图与问题先外发GLM，描述再交目标模型；JSON展平和自然语言描述可能丢关系，可信标签不保证正确或注入防御。目标adapter热替换也非始终监听。[Q04](#research-q04)、[Q07](#research-q07)
+> **主要限制**：原图与问题先外发GLM，描述再交目标模型；JSON展平和自然语言描述可能丢关系，可信标签不保证正确或注入防御。目标adapter热替换也非始终监听。[Q04](#research-q04)、[Q07](#research-q07)
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：相对一次性OCR粘贴，增量在可配置provider包装、问题感知历史图片重转写和成功缓存，不是新的视觉模型或事实验证器。[Q02](#research-q02)、[Q03](#research-q03)
 
-相对一次性OCR粘贴，增量在可配置provider包装、问题感知历史图片重转写和成功缓存，不是新的视觉模型或事实验证器。[Q02](#research-q02)、[Q03](#research-q03)
-
 失败不缓存、大小检查与来源包装可借鉴；进程缓存没有单飞，注册后未持续监听目标替换，错误转文本继续需产品显式验收。[Q07](#research-q07)
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

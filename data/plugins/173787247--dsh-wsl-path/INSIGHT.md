@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[e82233f](https://github.com/173787247/dsh-wsl-path/tree/e82233f94e1d77c35657e06bfd032a03e353e3ba)
+源码版本：[e82233f](https://github.com/173787247/dsh-wsl-path/tree/e82233f94e1d77c35657e06bfd032a03e353e3ba)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-path)
 <!-- END META -->
 
-> **实现功能**：在WSL中的DSH提供Linux盘符挂载和Windows/WSL UNC路径文本转换，并附文件系统使用提示。
+> **功能**：在WSL中的DSH提供Linux盘符挂载和Windows/WSL UNC路径文本转换，并附文件系统使用提示。
 
-> **核心亮点**：将盘符/WSL UNC文字映射、WSL识别和词法FS提示接到并发安全的小工具，减少手改分隔符。详见[Q02](#research-q02)。
+> **亮点**：将盘符/WSL UNC文字映射、WSL识别和词法FS提示接到并发安全的小工具，减少手改分隔符。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：UNC发行版被helper解析后在工具输出丢弃，默认/mnt与字面WSL假设/盘符相对路径和特殊名不保真；ok非存在/权限保证，raw注册需核宿主。详见[Q03](#research-q03)。
+> **主要限制**：UNC发行版被helper解析后在工具输出丢弃，默认/mnt与字面WSL假设/盘符相对路径和特殊名不保真；ok非存在/权限保证，raw注册需核宿主。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：将盘符/WSL UNC文字映射、WSL识别和词法FS提示接到并发安全的小工具，减少手改分隔符。详见[Q02](#research-q02)。
 
-将盘符/WSL UNC文字映射、WSL识别和词法FS提示接到并发安全的小工具，减少手改分隔符。详见[Q02](#research-q02)。
-
 toLinuxPath解析UNC得到r.distro，但不与当前distro比较；index返回仅r.linux/kind，丢发行版字段。从当前Ubuntu转换`\\wsl$\Debian\home\a`，输出`/home/a`看似当前Ubuntu路径，可能指另一文件。它没有真的跨发行版访问，问题是文本身份被压扁。env缺失而仅内核判WSL时toWindows用字面WSL，也不保证对应可用发行版。
 
 盘符正则允许斜线缺失，所以显式toLinux的C:foo被当/mnt/c/foo，未区分Windows盘符相对路径；auto对同串又走toWindows失败，方向行为不一致。默认/mnt映射未读wsl.conf/挂载表，定制automount或非Windows挂载处不保证正确。函数trim输入会丢合法首尾空格，Linux路径中的反斜线被换为分隔符，不保所有合法文件名。相对路径和常规网络共享UNC不支持，点段/符号链接不realpath，成功只代表规则接受。
@@ -168,7 +166,7 @@ UNC发行版被helper解析后在工具输出丢弃，默认/mnt与字面WSL假�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -180,7 +178,7 @@ UNC发行版被helper解析后在工具输出丢弃，默认/mnt与字面WSL假�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+created%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+created%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z)
 
 
 

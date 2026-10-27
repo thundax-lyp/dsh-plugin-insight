@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[5200420](https://github.com/foryourhealth111-pixel/Vibe-Skills/tree/5200420c1992508a2d69952b9f02babf232a21ac)
+源码版本：[5200420](https://github.com/foryourhealth111-pixel/Vibe-Skills/tree/5200420c1992508a2d69952b9f02babf232a21ac)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,768](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C768&color=yellow&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills)
+[![GitHub ★ 3,768](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C768&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/foryourhealth111-pixel/Vibe-Skills)
 <!-- END META -->
 
-> **实现功能**：通过本地Skill发现、任务分解、阶段控制和验收组织复杂工作流。
+> **功能**：通过本地Skill发现、任务分解、阶段控制和验收组织复杂工作流。
 
-> **核心亮点**：[Q02](#research-q02)相对只写计划，把原任务、模块选择、阶段重入和验收记录接入可核查runtime；贡献在组织与治理，bundled第三方Skills本身不计原创。
+> **亮点**：[Q02](#research-q02)相对只写计划，把原任务、模块选择、阶段重入和验收记录接入可核查runtime；贡献在组织与治理，bundled第三方Skills本身不计原创。
 
-> **风险与缺陷**：[Q03](#research-q03)、[Q04](#research-q04)proof链不能替代专业交付验收，作者OpenHands评测也不能直接证明当前DSH收益；部署和多次确认负担必须计入。
+> **主要限制**：[Q03](#research-q03)、[Q04](#research-q04)proof链不能替代专业交付验收，作者OpenHands评测也不能直接证明当前DSH收益；部署和多次确认负担必须计入。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：[Q02](#research-q02)相对只写计划，把原任务、模块选择、阶段重入和验收记录接入可核查runtime；贡献在组织与治理，bundled第三方Skills本身不计原创。
 
-[Q02](#research-q02)相对只写计划，把原任务、模块选择、阶段重入和验收记录接入可核查runtime；贡献在组织与治理，bundled第三方Skills本身不计原创。
-
 宿主中立入口与core契约分离可借鉴，但Python核心与PowerShell桥接也增加维护面。JS/TS统计不能代表Python治理runtime总代码量，bundled第三方Skill不作原创。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -156,7 +154,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 36](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=36&color=grey&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 17](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=grey&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 18](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=18&color=grey&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+[![Issue 未关闭 36](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=36&color=737b86&logo=github)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 17](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=737b86&logo=github)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=18&color=737b86&logo=github)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
 
 
 

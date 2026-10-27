@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[f63ba08](https://github.com/173787247/dsh-wsl-helm/tree/f63ba0892507034e8d31c3969c2b5e1b277fbd60)
+源码版本：[f63ba08](https://github.com/173787247/dsh-wsl-helm/tree/f63ba0892507034e8d31c3969c2b5e1b277fbd60)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-helm)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-helm)
 <!-- END META -->
 
-> **实现功能**：将 Helm 的发布列表、状态和历史查询接入 DSH 模型工具。
+> **功能**：将 Helm 的发布列表、状态和历史查询接入 DSH 模型工具。
 
-> **核心亮点**：把 Helm CLI 的常用只读操作封装成 Agent 工具，控制动词并标识输出截断；增量是调用边界与呈现，发布语义仍属 Helm。详见[Q01](#research-q01)。
+> **亮点**：把 Helm CLI 的常用只读操作封装成 Agent 工具，控制动词并标识输出截断；增量是调用边界与呈现，发布语义仍属 Helm。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：guardContext 对空值直接放行，配置白名单不约束 Helm 默认上下文；此外 stderr 只在返回时裁剪而非累计限量。不能把“只读”误解为目标正确或无敏感信息。详见[Q03](#research-q03)。
+> **主要限制**：guardContext 对空值直接放行，配置白名单不约束 Helm 默认上下文；此外 stderr 只在返回时裁剪而非累计限量。不能把“只读”误解为目标正确或无敏感信息。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：把 Helm CLI 的常用只读操作封装成 Agent 工具，控制动词并标识输出截断；增量是调用边界与呈现，发布语义仍属 Helm。详见[Q01](#research-q01)。
 
-把 Helm CLI 的常用只读操作封装成 Agent 工具，控制动词并标识输出截断；增量是调用边界与呈现，发布语义仍属 Helm。详见[Q01](#research-q01)。
-
 结构化只读工具与 argv spawn 可借鉴；白名单必须约束实际默认目标，输出限量须覆盖累计缓冲。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ guardContext 对空值直接放行，配置白名单不约束 Helm 默认上下�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

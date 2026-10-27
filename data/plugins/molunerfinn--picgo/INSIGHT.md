@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[25104f6](https://github.com/Molunerfinn/PicGo/tree/25104f65c97e58799486c8c47317367f6e0d1913)
+源码版本：[25104f6](https://github.com/Molunerfinn/PicGo/tree/25104f65c97e58799486c8c47317367f6e0d1913)
 
 <!-- BEGIN META -->
-[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=yellow&logo=github&style=flat)](https://github.com/Molunerfinn/PicGo)
+[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Molunerfinn/PicGo)
 <!-- END META -->
 
-> **实现功能**：桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。
+> **功能**：桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。
 
-> **核心亮点**：相对浏览器逐次上传和复制链接，桌面入口把配置复用、上传上下文与链接交接集中到创作流程。源码中每次任务捕获调用窗口和 uploader 配置，再通过 PicGo Core 上传，避免全局配置切换造成相册归属混淆。上传协议和图床扩展主要来自独立 picgo 核心依赖，本仓库贡献是桌面编排与任务隔离。[Q02](#research-q02)
+> **亮点**：相对浏览器逐次上传和复制链接，桌面入口把配置复用、上传上下文与链接交接集中到创作流程。源码中每次任务捕获调用窗口和 uploader 配置，再通过 PicGo Core 上传，避免全局配置切换造成相册归属混淆。上传协议和图床扩展主要来自独立 picgo 核心依赖，本仓库贡献是桌面编排与任务隔离。[Q02](#research-q02)
 
-> **风险与缺陷**：收到 imgUrl 仅证明核心返回了链接，不证明链接在发布环境可访问、权限合适或长期有效；本层还会过滤没有 imgUrl 的项，不能把非空结果视为整批全部成功。创作交付需要逐项检查实际可读性，失败重试还要考虑重复远端对象。这里未做上传实验，不把边界写成已复现事故。[Q03](#research-q03)
+> **主要限制**：收到 imgUrl 仅证明核心返回了链接，不证明链接在发布环境可访问、权限合适或长期有效；本层还会过滤没有 imgUrl 的项，不能把非空结果视为整批全部成功。创作交付需要逐项检查实际可读性，失败重试还要考虑重复远端对象。这里未做上传实验，不把边界写成已复现事故。[Q03](#research-q03)
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：相对浏览器逐次上传和复制链接，桌面入口把配置复用、上传上下文与链接交接集中到创作流程。源码中每次任务捕获调用窗口和 uploader 配置，再通过 PicGo Core 上传，避免全局配置切换造成相册归属混淆。上传协议和图床扩展主要来自独立 picgo 核心依赖，本仓库贡献是桌面编排与任务隔离。[Q02](#research-q02)
 
-相对浏览器逐次上传和复制链接，桌面入口把配置复用、上传上下文与链接交接集中到创作流程。源码中每次任务捕获调用窗口和 uploader 配置，再通过 PicGo Core 上传，避免全局配置切换造成相册归属混淆。上传协议和图床扩展主要来自独立 picgo 核心依赖，本仓库贡献是桌面编排与任务隔离。[Q02](#research-q02)
-
 可借鉴在 await 前固定任务值、AsyncLocalStorage 归属、上传配置快照及 HTTP adapter 复用；这些设计需与 Core 的事件和异步行为共同验收。finally 清理监听器降低悬挂，但不能等同远端写入回滚。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

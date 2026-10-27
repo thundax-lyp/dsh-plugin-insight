@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[99734eb](https://github.com/566001/dsh-wrapup-guard/tree/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2)
+源码版本：[99734eb](https://github.com/566001/dsh-wrapup-guard/tree/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard) [![npm 30d 74](https://img.shields.io/static/v1?label=npm+30d&message=74&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/566001/dsh-wrapup-guard) [![npm 30d 74](https://img.shields.io/static/v1?label=npm+30d&message=74&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wrapup-guard) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wrapup-guard)
 <!-- END META -->
 
-> **实现功能**：用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。
+> **功能**：用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。
 
-> **核心亮点**：把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 problems 可绕开所谓全面检查；状态落盘失败也被吞掉。详见[Q03](#research-q03)。
+> **主要限制**：check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 problems 可绕开所谓全面检查；状态落盘失败也被吞掉。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把收尾过程显式化为检查工具、轮次状态和通知，降低遗漏提醒成本，但保证依赖如实调用/上报。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 脚本名称白名单只限制发现集合，不限制脚本自身副作用。输出在完成时裁剪，收集中无界；saveState 吞错，每次调用仍读盘；report 不核同轮 check 结果。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 pro
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,7 +163,7 @@ check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 pro
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+created%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+created%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z)
 
 
 

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[531f16a](https://github.com/5V1A-afk/dsh-sticker-pack/tree/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781)
+源码版本：[531f16a](https://github.com/5V1A-afk/dsh-sticker-pack/tree/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/5V1A-afk/dsh-sticker-pack)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/5V1A-afk/dsh-sticker-pack)
 <!-- END META -->
 
-> **实现功能**：订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。
+> **功能**：订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。
 
-> **核心亮点**：把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](#research-q02)。
+> **亮点**：把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](#research-q03)。
+> **主要限制**：设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](#research-q02)。
 
-把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](#research-q02)。
-
 设置路由 GET/POST 都可持久化概率与无上限 deadline；远端清单有限制但不是内容来源认证；微信文件副本和提示词不等于发送成功。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -155,7 +153,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+created%3A2026-09-22T05%3A43%3A29.137Z..2026-10-22T05%3A43%3A29.137Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A43%3A29.137Z..2026-10-22T05%3A43%3A29.137Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+created%3A2026-09-22T05%3A43%3A29.137Z..2026-10-22T05%3A43%3A29.137Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A43%3A29.137Z..2026-10-22T05%3A43%3A29.137Z)
 
 
 

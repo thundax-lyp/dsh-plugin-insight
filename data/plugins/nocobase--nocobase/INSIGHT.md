@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[9d752bb](https://github.com/nocobase/nocobase/tree/9d752bb60d8eca5883e4357eefbff46d56c941d1)
+源码版本：[9d752bb](https://github.com/nocobase/nocobase/tree/9d752bb60d8eca5883e4357eefbff46d56c941d1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=yellow&logo=github&style=flat)](https://github.com/nocobase/nocobase)
+[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
 <!-- END META -->
 
-> **实现功能**：AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。
+> **功能**：AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。
 
-> **核心亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](#research-q02)
+> **亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](#research-q02)
 
-> **风险与缺陷**：有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](#research-q03)
+> **主要限制**：有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](#research-q03)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](#research-q02)
 
-相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](#research-q02)
-
 分离AI管理器、审批/状态middleware与工作流工具桥，并对用户MCP连接设TTL/容量值得借鉴；复用必须补具体ACL链、撤销失效和外部副作用收据。[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：c4d20cd10f1b083dc611f916724998e21cfb1b8ddbdad200f5fd22903def5388。sloc 0.3.2，TypeScript 5.9.3。
 

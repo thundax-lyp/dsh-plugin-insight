@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[5acef7c](https://github.com/Anna-la/dsh-simplify/tree/5acef7c1be296276af0db5a071b61db3bac1b14d)
+源码版本：[5acef7c](https://github.com/Anna-la/dsh-simplify/tree/5acef7c1be296276af0db5a071b61db3bac1b14d)
 
 <!-- BEGIN META -->
-[![npm 30d 1,237](https://img.shields.io/static/v1?label=npm+30d&message=1%2C237&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-simplify) [![最新发布 2026-10-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-04&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-simplify)
+[![npm 30d 1,237](https://img.shields.io/static/v1?label=npm+30d&message=1%2C237&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-simplify) [![最新发布 2026-10-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-simplify)
 <!-- END META -->
 
-> **实现功能**：清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。
+> **功能**：清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。
 
-> **核心亮点**：相对临时DOM编辑，提供无需写选择器的隐藏—预览—撤销流程，并补足随机端口下的持久化。[Q03](#research-q03) 该增量是成熟DOM机制的实用组合。
+> **亮点**：相对临时DOM编辑，提供无需写选择器的隐藏—预览—撤销流程，并补足随机端口下的持久化。[Q03](#research-q03) 该增量是成熟DOM机制的实用组合。
 
-> **风险与缺陷**：原节点收养支持交互保留，但HTML兜底不能恢复组件事件和状态，“原样恢复”须限定控件与宿主。[Q04](#research-q04) 全量PUT也缺少跨窗口冲突控制。
+> **主要限制**：原节点收养支持交互保留，但HTML兜底不能恢复组件事件和状态，“原样恢复”须限定控件与宿主。[Q04](#research-q04) 全量PUT也缺少跨窗口冲突控制。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对临时DOM编辑，提供无需写选择器的隐藏—预览—撤销流程，并补足随机端口下的持久化。[Q03](#research-q03) 该增量是成熟DOM机制的实用组合。
 
-相对临时DOM编辑，提供无需写选择器的隐藏—预览—撤销流程，并补足随机端口下的持久化。[Q03](#research-q03) 该增量是成熟DOM机制的实用组合。
-
 原节点与持久化数据分离、严格指纹防误删和监听释放可借鉴。直接整表writeFile及未检查PUT状态削弱持久化可信度；移植需重新适配DOM结构和slots。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,7 +159,7 @@
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+created%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z)
+[![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+created%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z)
 
 暂未获取：Issue 未关闭。
 

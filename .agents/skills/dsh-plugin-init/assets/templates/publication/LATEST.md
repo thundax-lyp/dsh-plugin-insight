@@ -1,5 +1,5 @@
-## [最新](data/views/columns/LATEST.md)
+## [最近发布](data/views/columns/LATEST.md)
 
-> 发现最近发布或更新的插件，看看有没有你需要的。
+> 查看最近发布的版本，了解用途和使用条件。
 
 {{items}}

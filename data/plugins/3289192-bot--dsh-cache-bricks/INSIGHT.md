@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[2e52b91](https://github.com/3289192-bot/dsh-cache-bricks/tree/2e52b914eaea5a02e5937c323160cf2fd2b8de1b)
+源码版本：[2e52b91](https://github.com/3289192-bot/dsh-cache-bricks/tree/2e52b914eaea5a02e5937c323160cf2fd2b8de1b)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。
+> **功能**：用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。
 
-> **核心亮点**：把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。
+> **亮点**：把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：缓存颜色不能独立解释原因，公式依赖宿主分桶口径；记录会淘汰且敏感blob需要明确访问边界，历史重建也不等于原始请求完整恢复。详见[Q03](#research-q03)。
+> **主要限制**：缓存颜色不能独立解释原因，公式依赖宿主分桶口径；记录会淘汰且敏感blob需要明确访问边界，历史重建也不等于原始请求完整恢复。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。
 
-把attempt级请求、缓存指标和对话位置组织成可视诊断流程，保留重试和缺字段区别；增量是观察证据与阅读操作的组合，不会自动优化缓存。详见[Q01](#research-q01)。
-
 纯指标、内容寻址去重和失败隔离可借鉴，导航检查真实窗口而非仅await；迁移需核对attempt身份、usage和宿主DOM契约。详见[Q06](#research-q06)。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -170,7 +168,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/3289192-bot/dsh-cache-bricks/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/3289192-bot/dsh-cache-bricks/issues?q=is%3Aissue+created%3A2026-09-22T04%3A50%3A05.404Z..2026-10-22T04%3A50%3A05.404Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/3289192-bot/dsh-cache-bricks/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A50%3A05.404Z..2026-10-22T04%3A50%3A05.404Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/3289192-bot/dsh-cache-bricks/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/3289192-bot/dsh-cache-bricks/issues?q=is%3Aissue+created%3A2026-09-22T04%3A50%3A05.404Z..2026-10-22T04%3A50%3A05.404Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/3289192-bot/dsh-cache-bricks/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A50%3A05.404Z..2026-10-22T04%3A50%3A05.404Z)
 
 
 

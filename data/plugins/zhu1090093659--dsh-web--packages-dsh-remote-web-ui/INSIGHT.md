@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-remote-web-ui)
+源码版本：[6b984b1](https://github.com/zhu1090093659/dsh-web/tree/6b984b10950f78f1f4a5b5adf4c16636b5e6113d/packages/dsh-remote-web-ui)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 101,443](https://img.shields.io/static/v1?label=npm+30d&message=101%2C443&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui)
+[![GitHub ★ 9,494](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C494&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 101,443](https://img.shields.io/static/v1?label=npm+30d&message=101%2C443&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui)
 <!-- END META -->
 
-> **实现功能**：通过扫码配对让自有手机或电脑访问同一 DSH Web 界面，并管理设备会话、LAN与可选隧道。
+> **功能**：通过扫码配对让自有手机或电脑访问同一 DSH Web 界面，并管理设备会话、LAN与可选隧道。
 
-> **核心亮点**：相对直接暴露宿主Web端口，它用独立 /remote 网关把设备凭据核验放在环回重发之前，复用官方界面并维护配对与持久设备生命周期。撤销写盘失败时尝试移除陈旧存储，避免重启恢复已撤销会话。贡献是受边界约束的远程控制交接，隧道、TLS和官方界面归属外部。[Q02](#research-q02)
+> **亮点**：相对直接暴露宿主Web端口，它用独立 /remote 网关把设备凭据核验放在环回重发之前，复用官方界面并维护配对与持久设备生命周期。撤销写盘失败时尝试移除陈旧存储，避免重启恢复已撤销会话。贡献是受边界约束的远程控制交接，隧道、TLS和官方界面归属外部。[Q02](#research-q02)
 
-> **风险与缺陷**：配对设备实质持有广泛主机控制能力，且撤销只约束插件自己的配对通道；直接 /api 是否可达依赖宿主fence，gate.ts明确某运行时没有api/gate发射者。此外QR token在有效期内可重复兑换设备，package的one-time措辞不能覆盖实际状态机。应按实际通道与凭据区分撤销语义，不声称统一收回所有权限。[Q03](#research-q03)
+> **主要限制**：配对设备实质持有广泛主机控制能力，且撤销只约束插件自己的配对通道；直接 /api 是否可达依赖宿主fence，gate.ts明确某运行时没有api/gate发射者。此外QR token在有效期内可重复兑换设备，package的one-time措辞不能覆盖实际状态机。应按实际通道与凭据区分撤销语义，不声称统一收回所有权限。[Q03](#research-q03)
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：相对直接暴露宿主Web端口，它用独立 /remote 网关把设备凭据核验放在环回重发之前，复用官方界面并维护配对与持久设备生命周期。撤销写盘失败时尝试移除陈旧存储，避免重启恢复已撤销会话。贡献是受边界约束的远程控制交接，隧道、TLS和官方界面归属外部。[Q02](#research-q02)
 
-相对直接暴露宿主Web端口，它用独立 /remote 网关把设备凭据核验放在环回重发之前，复用官方界面并维护配对与持久设备生命周期。撤销写盘失败时尝试移除陈旧存储，避免重启恢复已撤销会话。贡献是受边界约束的远程控制交接，隧道、TLS和官方界面归属外部。[Q02](#research-q02)
-
 先门禁再代理、区分loopback upstream与真实本机以及撤销持久失败时尝试移除旧store值得借鉴。需要保留本组件与宿主认证不同所有权，不能由局部fail-closed推断全部访问撤销。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：packages/dsh-remote-web-ui；内容摘要：953f6a47307be8f8fb456198df8390c6402a60ea4ad6d7b51e89eb1f46f13df9。sloc 0.3.2，TypeScript 5.9.3。
 

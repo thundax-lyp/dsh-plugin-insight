@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[79f8ba7](https://github.com/3403473060/dsh-inline-images/tree/79f8ba778441c86738dedba574f5911fd2b5b2be)
+源码版本：[79f8ba7](https://github.com/3403473060/dsh-inline-images/tree/79f8ba778441c86738dedba574f5911fd2b5b2be)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/3403473060/dsh-inline-images)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3403473060/dsh-inline-images)
 <!-- END META -->
 
-> **实现功能**：将助手文本中的绝对图片路径改写成可加载的本地路由，并提供灯箱和尺寸设置。
+> **功能**：将助手文本中的绝对图片路径改写成可加载的本地路由，并提供灯箱和尺寸设置。
 
-> **核心亮点**：对话正文图片、尺寸面板和灯箱一体化。详见[Q01](#research-q01)。
+> **亮点**：对话正文图片、尺寸面板和灯箱一体化。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：URL 中 token 可见且请求 p 未绑定已确认文件；回环地址对异机浏览器可能失效。详见[Q02](#research-q02)和[Q03](#research-q03)。
+> **主要限制**：URL 中 token 可见且请求 p 未绑定已确认文件；回环地址对异机浏览器可能失效。详见[Q02](#research-q02)和[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：对话正文图片、尺寸面板和灯箱一体化。详见[Q01](#research-q01)。
 
-对话正文图片、尺寸面板和灯箱一体化。详见[Q01](#research-q01)。
-
 宿主扫描、路由、Typert 设置和客户端 UI 贯通；授权边界只靠可见全局 token，且路径按请求参数重新读。详见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ URL 中 token 可见且请求 p 未绑定已确认文件；回环地址对异机
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

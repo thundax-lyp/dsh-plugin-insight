@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[c092a92](https://github.com/173787247/dsh-wsl-vecmem/tree/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29)
+源码版本：[c092a92](https://github.com/173787247/dsh-wsl-vecmem/tree/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-vecmem)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-vecmem)
 <!-- END META -->
 
-> **实现功能**：用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。
+> **功能**：用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。
 
-> **核心亮点**：相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)
+> **亮点**：相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)
 
-> **风险与缺陷**：双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 [Q04](#research-q04)
+> **主要限制**：双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 [Q04](#research-q04)
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)
 
-相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](#research-q03)
-
 Float32 sidecar 和尺寸一致性检查直接回应大 JSON 的扩展瓶颈，设计可借鉴；写入顺序只能暴露不一致，尚缺恢复、锁与并发事务。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ Float32 sidecar 和尺寸一致性检查直接回应大 JSON 的扩展瓶颈，�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

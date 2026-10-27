@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[445b0fd](https://github.com/173787247/dsh-wsl-search/tree/445b0fd89b128696f447f28ff6dd3b0c0964885e)
+源码版本：[445b0fd](https://github.com/173787247/dsh-wsl-search/tree/445b0fd89b128696f447f28ff6dd3b0c0964885e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-search)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-search)
 <!-- END META -->
 
-> **实现功能**：把ripgrep、fd与ast-grep接成DSH模型搜索工具，检查起始根白名单并限制返回条目和文本长度。
+> **功能**：把ripgrep、fd与ast-grep接成DSH模型搜索工具，检查起始根白名单并限制返回条目和文本长度。
 
-> **核心亮点**：统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。
+> **亮点**：统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：默认HOME范围宽，先缓冲后全局截断且无截断标志，AST坐标和长度与rg未统一。详见[Q03](#research-q03)。
+> **主要限制**：默认HOME范围宽，先缓冲后全局截断且无截断标志，AST坐标和长度与rg未统一。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。
 
-统一现成搜索器、模型参数及根检查，减少手写shell。详见[Q01](#research-q01)。
-
 小型实现与realpath目录边界可借鉴，测试集中入口，需流式限额和明确回执。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-search/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-search/issues?q=is%3Aissue+created%3A2026-09-22T05%3A58%3A26.256Z..2026-10-22T05%3A58%3A26.256Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-search/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A58%3A26.256Z..2026-10-22T05%3A58%3A26.256Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-search/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-search/issues?q=is%3Aissue+created%3A2026-09-22T05%3A58%3A26.256Z..2026-10-22T05%3A58%3A26.256Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-search/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A58%3A26.256Z..2026-10-22T05%3A58%3A26.256Z)
 
 
 

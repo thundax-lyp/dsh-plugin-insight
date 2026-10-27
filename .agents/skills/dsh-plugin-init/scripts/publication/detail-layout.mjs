@@ -198,11 +198,17 @@ export function renderDetailLayout(report, item, { meta, issues, advice, capabil
         tableSections(cost, '效果与成本'),
         review ? template('SHORT-ITEM', { label: '思考', text: review }) : ''
     ]);
+    // The quoted highlight already carries this exact paragraph; leave all other prose intact.
+    const withoutRepeatedHighlight = (body) =>
+        body
+            .split(/\n\s*\n/)
+            .filter((paragraph) => paragraph.trim() !== label('亮点'))
+            .join('\n\n');
     const technical = join([
         canonicalTechnical,
         label('亮点') ? template('SHORT-ITEM', { label: '亮点', text: label('亮点') }) : '',
-        contribution,
-        engineering,
+        withoutRepeatedHighlight(contribution),
+        withoutRepeatedHighlight(engineering),
         materialEngineering
     ]);
     const checks = join([validation, status, verification, materialIntro, fragment('分析版本', version)]);

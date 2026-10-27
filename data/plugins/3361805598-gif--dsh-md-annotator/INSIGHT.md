@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[75f7f4d](https://github.com/3361805598-gif/dsh-md-annotator/tree/75f7f4d7c7cad205ed7cda7b687774e0db8a4254)
+源码版本：[75f7f4d](https://github.com/3361805598-gif/dsh-md-annotator/tree/75f7f4d7c7cad205ed7cda7b687774e0db8a4254)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3361805598-gif/dsh-md-annotator)
 <!-- END META -->
 
-> **实现功能**：在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。
+> **功能**：在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。
 
-> **核心亮点**：将文件预览、块/选区批注、源码编辑与模型草稿连接，保留人对发送控制；增量是审稿交接而非新的Markdown标准。详见[Q01](#research-q01)。
+> **亮点**：将文件预览、块/选区批注、源码编辑与模型草稿连接，保留人对发送控制；增量是审稿交接而非新的Markdown标准。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：原文件冲突保护不等批注永久保存，刷新/重启会失运行期草稿；复杂语法和无法唯一重锚只保留stale，需读者主动导出核对。详见[Q03](#research-q03)。
+> **主要限制**：原文件冲突保护不等批注永久保存，刷新/重启会失运行期草稿；复杂语法和无法唯一重锚只保留stale，需读者主动导出核对。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：将文件预览、块/选区批注、源码编辑与模型草稿连接，保留人对发送控制；增量是审稿交接而非新的Markdown标准。详见[Q01](#research-q01)。
 
-将文件预览、块/选区批注、源码编辑与模型草稿连接，保留人对发送控制；增量是审稿交接而非新的Markdown标准。详见[Q01](#research-q01)。
-
 完整读与版本校验、未知保存结果先回读和保守stale值得借鉴；宿主fs/Sidebar兼容和UI布局仍需核对。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+created%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+created%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/3361805598-gif/dsh-md-annotator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A11%3A18.756Z..2026-10-22T05%3A11%3A18.756Z)
 
 
 

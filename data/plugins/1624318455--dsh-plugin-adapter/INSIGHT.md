@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[478a132](https://github.com/1624318455/dsh-plugin-adapter/tree/478a132e79c14e7a125b5bdb7571bbda300a5411)
+源码版本：[478a132](https://github.com/1624318455/dsh-plugin-adapter/tree/478a132e79c14e7a125b5bdb7571bbda300a5411)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1624318455/dsh-plugin-adapter)
 <!-- END META -->
 
-> **实现功能**：在 DSH 注册原生 LlmAdapter，接入 OpenCode Zen 匿名模型并维护模型目录。
+> **功能**：在 DSH 注册原生 LlmAdapter，接入 OpenCode Zen 匿名模型并维护模型目录。
 
-> **核心亮点**：相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：默认路径可能启动 Bun 子进程和回环端口，与无额外进程的作者描述不一致；代理失败还可能直连。缺 Bun 的可用性需要验证。见 [Q03](#research-q03)。
+> **主要限制**：默认路径可能启动 Bun 子进程和回环端口，与无额外进程的作者描述不一致；代理失败还可能直连。缺 Bun 的可用性需要验证。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-相对手填兼容 provider，增加目录过滤、事件转换与上下文/输出预算协调；协议能力继承 pi-ai，仓库注明 fork。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 结构化宿主接口降低编译依赖，目录与 adapter 分离便于移植；上游协议交给 pi-ai。预算协调值得借鉴，但移植必须复核宿主压缩器预留语义。relay 自动直连属于应明确配置的取舍，不将源码注释中的作者实测当独立验证。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1624318455/dsh-plugin-adapter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 
 

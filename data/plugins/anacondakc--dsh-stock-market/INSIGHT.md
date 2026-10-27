@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[02278af](https://github.com/AnacondaKC/dsh-stock-market/tree/02278af12330102c534c843a668d1c8407dbde1b)
+源码版本：[02278af](https://github.com/AnacondaKC/dsh-stock-market/tree/02278af12330102c534c843a668d1c8407dbde1b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AnacondaKC/dsh-stock-market)
 <!-- END META -->
 
-> **实现功能**：在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。
+> **功能**：在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。
 
-> **核心亮点**：把底层公开源收敛成9个业务工具，保留来源/回退/降级原因，并把会话工具目录限制与最终拒绝结合，减少任意URL拼接和只隐藏按钮的漏洞面。详见[Q02](#research-q02)。
+> **亮点**：把底层公开源收敛成9个业务工具，保留来源/回退/降级原因，并把会话工具目录限制与最终拒绝结合，减少任意URL拼接和只隐藏按钮的漏洞面。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：回退成功不是多源核验，fetched_at不是行情时间，degraded也不证明口径可比；会话guard依赖真实Agent和宿主契约，公开源无稳定服务保证。详见[Q03](#research-q03)。
+> **主要限制**：回退成功不是多源核验，fetched_at不是行情时间，degraded也不证明口径可比；会话guard依赖真实Agent和宿主契约，公开源无稳定服务保证。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：把底层公开源收敛成9个业务工具，保留来源/回退/降级原因，并把会话工具目录限制与最终拒绝结合，减少任意URL拼接和只隐藏按钮的漏洞面。详见[Q02](#research-q02)。
 
-把底层公开源收敛成9个业务工具，保留来源/回退/降级原因，并把会话工具目录限制与最终拒绝结合，减少任意URL拼接和只隐藏按钮的漏洞面。详见[Q02](#research-q02)。
-
 会话级关闭有多层支持。最近一条stock-market/tool-access日志决定状态；禁用先安装agent.ctx.tools.restrict，再append事件，append失败会撤回新限制。执行前middleware和最终guard再次检查，能阻止旧请求里仍带的工具名称；恢复/新Agent创建时重建限制，销毁时释放。这比只隐藏按钮或只从下一次工具目录移除更完整，是可借鉴的策略分层。
 
 边界是guard只对9个固定工具名且exec.agent存在的执行做会话判断，它不是整个进程或RPC的网络总开关。宿主需要正确提供Agent、tools.restrict和事件持久化语义，未核查实际固定宿主就不能写成已通过的权限保证。侧栏独立RPC与模型工具开关的范围也不同，用户关工具不意味着侧栏停止查行情。
@@ -166,7 +164,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -181,7 +179,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+created%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+created%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z)
 
 
 

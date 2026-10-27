@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a9ef943](https://github.com/AK-blank/dsh-plugin-mac-notify/tree/a9ef9439a1e8f7957a402c742bc639919ab1d1c8)
+源码版本：[a9ef943](https://github.com/AK-blank/dsh-plugin-mac-notify/tree/a9ef9439a1e8f7957a402c742bc639919ab1d1c8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AK-blank/dsh-plugin-mac-notify)
 <!-- END META -->
 
-> **实现功能**：在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。
+> **功能**：在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。
 
-> **核心亮点**：把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。
+> **亮点**：把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：去重key不含会话，紧急事件也先受同正文去重；点击按URL前缀只保证尝试返回页面。默认正文及trace含任务内容，均需隐私和多会话判断，未做漏报或误聚焦复现。详见[Q03](#research-q03)。
+> **主要限制**：去重key不含会话，紧急事件也先受同正文去重；点击按URL前缀只保证尝试返回页面。默认正文及trace含任务内容，均需隐私和多会话判断，未做漏报或误聚焦复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。
 
-把回合、问题、批准和错误转成可配置Mac通知，并用argv传正文、公开可注入runtime及可选点击返回形成完整接线；贡献属于成熟系统能力的事件集成。详见[Q02](#research-q02)。
-
 最关键的可靠性限制在跨会话去重。key只由title与body构成，未包含sessionId或subtitle；5秒内不同会话发相同问题或批准内容可被当重复跳过。紧急类型绕过的是pacing，不绕过更早的duplicate检查，因此作者“问题或批准总能通过”不是无条件成立。lastSentAt在真正发送成功前更新，发送失败后的相同通知也可能暂时被去重。本次为源码推导，未执行漏报复现。
 
 点击只匹配URL字符串前缀，不按origin与端口边界解析，也不携带目标会话路由。目标http://127.0.0.1:3080可与30800前缀重叠，先找到的页签未必就是预期实例；即便实例正确，也只保证返回DSH页面而非本次发通知的会话。浏览器权限拒绝会降级新开标签，不提供已聚焦或用户已读确认。
@@ -166,7 +164,7 @@ Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -178,7 +176,7 @@ Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+created%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+created%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z)
 
 
 

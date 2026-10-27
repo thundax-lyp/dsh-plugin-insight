@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[363e497](https://github.com/agentscope-ai/ReMe/tree/363e497ae96733271414ea4224e274e5de5e5253)
+源码版本：[363e497](https://github.com/agentscope-ai/ReMe/tree/363e497ae96733271414ea4224e274e5de5e5253)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,683](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C683&color=yellow&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe)
+[![GitHub ★ 3,683](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C683&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/agentscope-ai/ReMe)
 <!-- END META -->
 
-> **实现功能**：以可编辑Markdown保存Agent长期记忆，提供自动提炼、混合检索和多种运行时接入。
+> **功能**：以可编辑Markdown保存Agent长期记忆，提供自动提炼、混合检索和多种运行时接入。
 
-> **核心亮点**：相对手工笔记，增量是自动提炼、分块检索与关系扩展接入Agent流程；相对不透明数据库，Markdown让内容可读、编辑和迁出。RRF、BM25、embedding及文件图是成熟技术组合，贡献在文件真相源与多接入方式的协调，不据此宣称新的检索算法。是否优于grep和人工精选，要看误召回、纠错与总维护负担。 依据[Q03](#research-q03)。
+> **亮点**：相对手工笔记，增量是自动提炼、分块检索与关系扩展接入Agent流程；相对不透明数据库，Markdown让内容可读、编辑和迁出。RRF、BM25、embedding及文件图是成熟技术组合，贡献在文件真相源与多接入方式的协调，不据此宣称新的检索算法。是否优于grep和人工精选，要看误召回、纠错与总维护负担。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：核心质疑是自动提炼和演化会否把错误事实扩散为稳定知识。检索融合只按排名积分，不判事实真伪；有来源文件与模型输出也不能证明事实正确。auto_memory先执行再写成功回执，完成记录之前崩溃可能留下需协调的修改。LocalFileStore部分索引延期持久，关闭时落盘与原始Markdown不是同一事务，重建能力重要但不代表所有缓存状态无损恢复。 依据[Q04](#research-q04)。
+> **主要限制**：核心质疑是自动提炼和演化会否把错误事实扩散为稳定知识。检索融合只按排名积分，不判事实真伪；有来源文件与模型输出也不能证明事实正确。auto_memory先执行再写成功回执，完成记录之前崩溃可能留下需协调的修改。LocalFileStore部分索引延期持久，关闭时落盘与原始Markdown不是同一事务，重建能力重要但不代表所有缓存状态无损恢复。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：相对手工笔记，增量是自动提炼、分块检索与关系扩展接入Agent流程；相对不透明数据库，Markdown让内容可读、编辑和迁出。RRF、BM25、embedding及文件图是成熟技术组合，贡献在文件真相源与多接入方式的协调，不据此宣称新的检索算法。是否优于grep和人工精选，要看误召回、纠错与总维护负担。 依据[Q03](#research-q03)。
 
-相对手工笔记，增量是自动提炼、分块检索与关系扩展接入Agent流程；相对不透明数据库，Markdown让内容可读、编辑和迁出。RRF、BM25、embedding及文件图是成熟技术组合，贡献在文件真相源与多接入方式的协调，不据此宣称新的检索算法。是否优于grep和人工精选，要看误召回、纠错与总维护负担。 依据[Q03](#research-q03)。
-
 可复用设计是组件注册和workspace目录分离、关键词与embedding可替换、RRF保留分支分数以及输入fingerprint约束请求回放。移植需保留文件路径权限、来源行定位和索引重建契约。框架不是越多后端越可靠，尤其自动知识演化仍要用户能看懂并纠正，结构化接口不能替代事实验收。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -171,7 +169,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 31](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=31&color=grey&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 25](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=25&color=grey&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 15](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=grey&logo=github&style=flat)](https://github.com/agentscope-ai/ReMe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+[![Issue 未关闭 31](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=31&color=737b86&logo=github)](https://github.com/agentscope-ai/ReMe/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 25](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=25&color=737b86&logo=github)](https://github.com/agentscope-ai/ReMe/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/agentscope-ai/ReMe/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
 
 
 

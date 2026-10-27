@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[aea4896](https://github.com/dsh-tauri/deepseek-harness-desktop/tree/aea4896abd505db93cbd988e308d0fbd9a3e4ae1)
+源码版本：[aea4896](https://github.com/dsh-tauri/deepseek-harness-desktop/tree/aea4896abd505db93cbd988e308d0fbd9a3e4ae1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,294](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C294&color=yellow&logo=github&style=flat)](https://github.com/dsh-tauri/deepseek-harness-desktop)
+[![GitHub ★ 3,294](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C294&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-tauri/deepseek-harness-desktop)
 <!-- END META -->
 
-> **实现功能**：提供DSH桌面界面、托管运行时和内核、插件与档案管理、数据迁移及移动远程访问。
+> **功能**：提供DSH桌面界面、托管运行时和内核、插件与档案管理、数据迁移及移动远程访问。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是将CLI运行时与内核维护转为清单驱动的桌面管理，并用ABI探测和只缓存Ready避免仅按semver判断。迁移保留源、最后切环境的编排见[Q03](#research-q03)，是具体恢复设计；内置插件数量、桌面截图不是用户收益证据。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是将CLI运行时与内核维护转为清单驱动的桌面管理，并用ABI探测和只缓存Ready避免仅按semver判断。迁移保留源、最后切环境的编排见[Q03](#research-q03)，是具体恢复设计；内置插件数量、桌面截图不是用户收益证据。
 
-> **风险与缺陷**：[Q03](#research-q03)表明迁移covers只检查聚合文件数/字节不少于源，链接重建失败可仅warning。done不能概括为逐文件完整或全部插件恢复；[Q02](#research-q02)的Unknown也允许启动。最影响采用的是用户把这几层就绪当成会话可恢复，本轮无数据损坏复现。
+> **主要限制**：[Q03](#research-q03)表明迁移covers只检查聚合文件数/字节不少于源，链接重建失败可仅warning。done不能概括为逐文件完整或全部插件恢复；[Q02](#research-q02)的Unknown也允许启动。最影响采用的是用户把这几层就绪当成会话可恢复，本轮无数据损坏复现。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是将CLI运行时与内核维护转为清单驱动的桌面管理，并用ABI探测和只缓存Ready避免仅按semver判断。迁移保留源、最后切环境的编排见[Q03](#research-q03)，是具体恢复设计；内置插件数量、桌面截图不是用户收益证据。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的贡献是将CLI运行时与内核维护转为清单驱动的桌面管理，并用ABI探测和只缓存Ready避免仅按semver判断。迁移保留源、最后切环境的编排见[Q03](#research-q03)，是具体恢复设计；内置插件数量、桌面截图不是用户收益证据。
-
 重要取舍是Unknown不阻断启动，交由日志兜底。这允许不确定情况下尝试运行，却不应把窗口可开或探测没有明确失败解释成全部原生依赖已验证。可借鉴处是环境声明、探测结论和健康缓存分开；迁移时需维护ABI、可执行身份和缓存失效，而不是只看版本字符串。 迁移路径先检查Harness停止，再复制、扫描目标、验证covers，最后把源改名备份、记原位置、写用户DSH_HOME并刷新shim。环境写失败会尝试把源目录改回，回滚不直接删除当前目录；这些安排让用户可以找到旧数据，明显优于先改环境再移动。
 
 但covers只比较目标文件数和总字节不少于预期，不逐路径比较内容哈希，也不把链接数纳入覆盖条件。复制链接是best-effort，创建失败warning不阻断，理由是依赖链接可重装、数据不能重来。因此“迁移done”支持流程已按这个校验口径走完，不证明每个文件字节相同、所有链接有效或全部插件可加载。
@@ -158,7 +156,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

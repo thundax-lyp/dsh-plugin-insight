@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[e109837](https://github.com/Asif2BD/JARVIS-Mission-Control-DeepSeek/tree/e1098371bee137a5676ddd8e7b82b9b222a55bb8/integrations/deepseek-harness/dsh-plugin-mission-control)
+源码版本：[e109837](https://github.com/Asif2BD/JARVIS-Mission-Control-DeepSeek/tree/e1098371bee137a5676ddd8e7b82b9b222a55bb8/integrations/deepseek-harness/dsh-plugin-mission-control)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/Asif2BD/JARVIS-Mission-Control-DeepSeek) [![npm 30d 809](https://img.shields.io/static/v1?label=npm+30d&message=809&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-mission-control) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-mission-control)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asif2BD/JARVIS-Mission-Control-DeepSeek) [![npm 30d 809](https://img.shields.io/static/v1?label=npm+30d&message=809&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-mission-control) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-mission-control)
 <!-- END META -->
 
-> **实现功能**：将 DSH 会话、消息与工具活动镜像到 JARVIS 看板，并把结束回合送入人工审查。
+> **功能**：将 DSH 会话、消息与工具活动镜像到 JARVIS 看板，并把结束回合送入人工审查。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的贡献是把会话状态转成独立看板可审阅的工作流，并保留REVIEW到DONE的人类责任。真实调度和质量验证仍不属于这个镜像组件。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的贡献是把会话状态转成独立看板可审阅的工作流，并保留REVIEW到DONE的人类责任。真实调度和质量验证仍不属于这个镜像组件。
 
-> **风险与缺陷**：[Q03](#research-q03) 表明队列清空可包含失败丢弃，flush不证明送达；未知reason会默认REVIEW，重启跨日还可能重复任务。因此核心价值应限定best-effort可见性，不能宣传完整审计。
+> **主要限制**：[Q03](#research-q03) 表明队列清空可包含失败丢弃，flush不证明送达；未知reason会默认REVIEW，重启跨日还可能重复任务。因此核心价值应限定best-effort可见性，不能宣传完整审计。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的贡献是把会话状态转成独立看板可审阅的工作流，并保留REVIEW到DONE的人类责任。真实调度和质量验证仍不属于这个镜像组件。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 的贡献是把会话状态转成独立看板可审阅的工作流，并保留REVIEW到DONE的人类责任。真实调度和质量验证仍不属于这个镜像组件。
-
 事件映射与HTTP队列分离易于移植，超时和4xx不反复重试控制负担；更关键的是清空语义与送达语义应分开。移植要重新核对源事件状态和接收端幂等，不应只替换URL。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[003a48d](https://github.com/173787247/dsh-wsl-k8s/tree/003a48d9e45841b4f0869d9e3eaad2275bab485b)
+源码版本：[003a48d](https://github.com/173787247/dsh-wsl-k8s/tree/003a48d9e45841b4f0869d9e3eaad2275bab485b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-k8s)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-k8s)
 <!-- END META -->
 
-> **实现功能**：将 kubectl 状态、上下文、get、describe 与日志读取封装为 DSH 工具。
+> **功能**：将 kubectl 状态、上下文、get、describe 与日志读取封装为 DSH 工具。
 
-> **核心亮点**：将常用 kubectl 只读查询做成模型工具并限制动词与输出，减少手工复制诊断信息；集群权限和语义仍由 kubectl/RBAC 提供。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将常用 kubectl 只读查询做成模型工具并限制动词与输出，减少手工复制诊断信息；集群权限和语义仍由 kubectl/RBAC 提供。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeconfig 当前集群；contexts 过滤仅影响显示，status 也不门控。不能将该配置当生产隔离。详见[Q03](#research-q03)。
+> **主要限制**：allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeconfig 当前集群；contexts 过滤仅影响显示，status 也不门控。不能将该配置当生产隔离。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：将常用 kubectl 只读查询做成模型工具并限制动词与输出，减少手工复制诊断信息；集群权限和语义仍由 kubectl/RBAC 提供。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-将常用 kubectl 只读查询做成模型工具并限制动词与输出，减少手工复制诊断信息；集群权限和语义仍由 kubectl/RBAC 提供。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 spawn 独立 argv 且只暴露固定工具，避免任意 shell 命令；只读动词与输出裁剪降低一般副作用。允许清单只检查显式 context，且资源名称/输出格式未作完整参数语义验证。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,7 +159,7 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+created%3A2026-09-22T05%3A22%3A13.264Z..2026-10-22T05%3A22%3A13.264Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A22%3A13.264Z..2026-10-22T05%3A22%3A13.264Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+created%3A2026-09-22T05%3A22%3A13.264Z..2026-10-22T05%3A22%3A13.264Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A22%3A13.264Z..2026-10-22T05%3A22%3A13.264Z)
 
 
 

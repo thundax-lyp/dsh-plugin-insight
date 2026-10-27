@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[b1a2d09](https://github.com/Assidefok/dsh-opencodego-status/tree/b1a2d09dcf975be0284230c9ce8e27982b8d752c)
+源码版本：[b1a2d09](https://github.com/Assidefok/dsh-opencodego-status/tree/b1a2d09dcf975be0284230c9ce8e27982b8d752c)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。
+> **功能**：在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。
 
-> **核心亮点**：研究者识别的贡献是把 OpenCode Console 的三档额度嵌入 DSH 工作表面，并把 token 留在 Host；相对直接打开 Console，增量是减少查看路径而非改变计量能力，节时尚无对照。详见[Q03](#research-q03)。
+> **亮点**：研究者识别的贡献是把 OpenCode Console 的三档额度嵌入 DSH 工作表面，并把 token 留在 Host；相对直接打开 Console，增量是减少查看路径而非改变计量能力，节时尚无对照。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：最影响价值成立的限制是响应结构缺少校验：未公开 API 若以 2xx 返回缺失字段，源码会把 meter 归零并仍标为成功，可能把“不可确定”误呈现为“低用量”；这是静态可见缺口，不是已复现事故。详见[Q04](#research-q04)。
+> **主要限制**：最影响价值成立的限制是响应结构缺少校验：未公开 API 若以 2xx 返回缺失字段，源码会把 meter 归零并仍标为成功，可能把“不可确定”误呈现为“低用量”；这是静态可见缺口，不是已复现事故。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：研究者识别的贡献是把 OpenCode Console 的三档额度嵌入 DSH 工作表面，并把 token 留在 Host；相对直接打开 Console，增量是减少查看路径而非改变计量能力，节时尚无对照。详见[Q03](#research-q03)。
 
-研究者识别的贡献是把 OpenCode Console 的三档额度嵌入 DSH 工作表面，并把 token 留在 Host；相对直接打开 Console，增量是减少查看路径而非改变计量能力，节时尚无对照。详见[Q03](#research-q03)。
-
 Host/Client 分层、超时、请求体上限、成功缓存、临时文件 rename 与 effect disposer值得借鉴；但响应无 schema 守卫、同进程写状态共用 PID 临时名、slow_down 未更新 Client 调度间隔，插件自身也未显示前缀路由的鉴权、CSRF 或来源校验。宿主可能统一保护，须针对性验证而不能据此宣称漏洞。详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@ Host/Client 分层、超时、请求体上限、成功缓存、临时文件 rena
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -167,7 +165,7 @@ Host/Client 分层、超时、请求体上限、成功缓存、临时文件 rena
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+created%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+created%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z)
 
 
 

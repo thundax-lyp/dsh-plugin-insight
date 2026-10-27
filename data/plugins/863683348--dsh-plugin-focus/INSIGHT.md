@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[6aabf70](https://github.com/863683348/dsh-plugin-focus/tree/6aabf70615a191a14c7a1e25141b4d15560f3a47)
+源码版本：[6aabf70](https://github.com/863683348/dsh-plugin-focus/tree/6aabf70615a191a14c7a1e25141b4d15560f3a47)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-focus) [![npm 30d 867](https://img.shields.io/static/v1?label=npm+30d&message=867&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-focus)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/863683348/dsh-plugin-focus) [![npm 30d 867](https://img.shields.io/static/v1?label=npm+30d&message=867&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-focus) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-focus)
 <!-- END META -->
 
-> **实现功能**：为DSH提供工作区内的持久焦点板，模型可记录目标、约束和决定，按标签汇总，并在每轮或内容变化时自动注入上下文。
+> **功能**：为DSH提供工作区内的持久焦点板，模型可记录目标、约束和决定，按标签汇总，并在每轮或内容变化时自动注入上下文。
 
-> **核心亮点**：以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。
+> **亮点**：以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：新增后裁剪到同条数，changed=false便跳过保存，默认60条满额后新增不持久化；无版本写入、无cwd跳过contains也限制承诺，未运行复现。详见[Q03](#research-q03)。
+> **主要限制**：新增后裁剪到同条数，changed=false便跳过保存，默认60条满额后新增不持久化；无版本写入、无cwd跳过contains也限制承诺，未运行复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -115,8 +115,6 @@
 
 > **亮点**：以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。
 
-以透明MD和标签把工作区笔记接到focus工具、会话投影及pre-step快照，减少压缩后手工提醒；不提供真相判断或新检索算法。详见[Q02](#research-q02)。
-
 纯board模块没有宿主依赖，解析/序列化/归档/标签可独立理解，工具与pre-step共用loadBoard，归档先于clear避免先清空再备份。这些接线比较简单透明。但没有内容版本或事务，写工具日志和板文件也分两步；归档无限累积，maxEntries只约束当前条目数，不限制单条note长度或读取文件字节。
 
 renderBoard按最新优先，某条过长时直接停止并报告遗漏，不部分截取，因此最大一条也可能让可用板只有标题和遗漏脚注。maxChars不是严格最终长度上限，附加标题/遗漏说明可超预算。每轮首步重新注入、变化时再注入，会增加token；本地网络请求为零不等于模型服务看不到板内容。读取失败被autoInject catch静默跳过，模型可能在未看到约束时继续。
@@ -171,7 +169,7 @@ renderBoard按最新优先，某条过长时直接停止并报告遗漏，不部
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -184,7 +182,7 @@ renderBoard按最新优先，某条过长时直接停止并报告遗漏，不部
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-focus/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-focus/issues?q=is%3Aissue+created%3A2026-09-22T05%3A31%3A43.494Z..2026-10-22T05%3A31%3A43.494Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-focus/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A31%3A43.494Z..2026-10-22T05%3A31%3A43.494Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-focus/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-focus/issues?q=is%3Aissue+created%3A2026-09-22T05%3A31%3A43.494Z..2026-10-22T05%3A31%3A43.494Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-focus/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A31%3A43.494Z..2026-10-22T05%3A31%3A43.494Z)
 
 
 

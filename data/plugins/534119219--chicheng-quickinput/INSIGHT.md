@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[ac7c50b](https://github.com/534119219/chicheng-quickinput/tree/ac7c50b364bec5899a96628c5cbefb19b8dc6bea)
+源码版本：[ac7c50b](https://github.com/534119219/chicheng-quickinput/tree/ac7c50b364bec5899a96628c5cbefb19b8dc6bea)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/534119219/chicheng-quickinput)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-quickinput)
 <!-- END META -->
 
-> **实现功能**：在输入区管理加密私密片段、普通片段与 WebDAV 备份。
+> **功能**：在输入区管理加密私密片段、普通片段与 WebDAV 备份。
 
-> **核心亮点**：私密/非私密分层、自动锁定、模式建议和 WebDAV 备份形成完整输入工作流；创新不等于适合把秘密交给模型。 详见[Q03](#research-q03)。
+> **亮点**：私密/非私密分层、自动锁定、模式建议和 WebDAV 备份形成完整输入工作流；创新不等于适合把秘密交给模型。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：Ctrl 点击可直接发送，解锁后明文位于浏览器内存；安全短语相当于第二凭据，XSS、同 profile 插件和 WebDAV 恢复链均需考虑。 详见[Q04](#research-q04)。
+> **主要限制**：Ctrl 点击可直接发送，解锁后明文位于浏览器内存；安全短语相当于第二凭据，XSS、同 profile 插件和 WebDAV 恢复链均需考虑。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -108,8 +108,6 @@
 
 > **亮点**：私密/非私密分层、自动锁定、模式建议和 WebDAV 备份形成完整输入工作流；创新不等于适合把秘密交给模型。 详见[Q03](#research-q03)。
 
-私密/非私密分层、自动锁定、模式建议和 WebDAV 备份形成完整输入工作流；创新不等于适合把秘密交给模型。 详见[Q03](#research-q03)。
-
 标准原语、随机数据钥匙和自动锁定方向正确；需要禁用默认直接发送、来源隔离及可验证导出恢复。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -158,7 +156,7 @@ Ctrl 点击可直接发送，解锁后明文位于浏览器内存；安全短语
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

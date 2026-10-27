@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes)
+源码版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-notes)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=yellow&logo=github&style=flat)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,783](https://img.shields.io/static/v1?label=npm+30d&message=1%2C783&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,783](https://img.shields.io/static/v1?label=npm+30d&message=1%2C783&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-notes)
 <!-- END META -->
 
-> **实现功能**：提供纸卡、看板和日历便签，支持截止日期、AI任务派发、有效期日程和WebDAV备份。
+> **功能**：提供纸卡、看板和日历便签，支持截止日期、AI任务派发、有效期日程和WebDAV备份。
 
-> **核心亮点**：把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
+> **亮点**：把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
 
-> **风险与缺陷**：备份以存活便签的最大 updatedAt 判变，删除不一定触发远端新快照；派发与恢复存在多步骤部分副作用。dueAt 是展示属性，endAt 也不取消已运行会话。[Q02](#research-q02)、[Q03](#research-q03)、[Q06](#research-q06)
+> **主要限制**：备份以存活便签的最大 updatedAt 判变，删除不一定触发远端新快照；派发与恢复存在多步骤部分副作用。dueAt 是展示属性，endAt 也不取消已运行会话。[Q02](#research-q02)、[Q03](#research-q03)、[Q06](#research-q06)
 
 **本文目录**
 
@@ -104,8 +104,6 @@ Markdown 待办或普通便签加人工创建会话是直接替代。比较同�
 
 > **亮点**：把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
 
-把个人记录、时间安排与 AI 新会话执行回写组合为一个工作流，并用租约限定任务结果写回；截止日历提高可见性，日程有效期限制后续派发。[Q01](#research-q01)、[Q06](#research-q06)
-
 租约限定 Agent 任务工具会话、独立 userQuestions 同意；WebDAV 删除水位与恢复事务、会话失败清理需改进。详见[Q02](#research-q02)至[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@ Markdown 待办或普通便签加人工创建会话是直接替代。比较同�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

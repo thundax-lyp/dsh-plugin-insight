@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c0e2fbf](https://github.com/AIR-pixel/air-pixel-liquid-glass/tree/c0e2fbff0cbfeb5416e6d3542e5863ccb7360cbc)
+源码版本：[c0e2fbf](https://github.com/AIR-pixel/air-pixel-liquid-glass/tree/c0e2fbff0cbfeb5416e6d3542e5863ccb7360cbc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AIR-pixel/air-pixel-liquid-glass)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AIR-pixel/air-pixel-liquid-glass)
 <!-- END META -->
 
-> **实现功能**：为DSH提供可配置的液态玻璃主题、壁纸、桌面透明、光标与点击涟漪。
+> **功能**：为DSH提供可配置的液态玻璃主题、壁纸、桌面透明、光标与点击涟漪。
 
-> **核心亮点**：把完整视觉主题、配置持久化和宿主 UI 插槽封装成插件，降低重复手工改样式的负担。它相对“手工注入 CSS、浏览器用户样式或直接修改宿主前端资源”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
+> **亮点**：把完整视觉主题、配置持久化和宿主 UI 插槽封装成插件，降低重复手工改样式的负担。它相对“手工注入 CSS、浏览器用户样式或直接修改宿主前端资源”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：视觉效果依赖宿主 DOM、CSS 层叠与桌面透明能力，源码和截图不能证明不同屏幕、主题与可访问性条件都成立。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
+> **主要限制**：视觉效果依赖宿主 DOM、CSS 层叠与桌面透明能力，源码和截图不能证明不同屏幕、主题与可访问性条件都成立。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把完整视觉主题、配置持久化和宿主 UI 插槽封装成插件，降低重复手工改样式的负担。它相对“手工注入 CSS、浏览器用户样式或直接修改宿主前端资源”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
 
-把完整视觉主题、配置持久化和宿主 UI 插槽封装成插件，降低重复手工改样式的负担。它相对“手工注入 CSS、浏览器用户样式或直接修改宿主前端资源”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](#research-q03)。
-
 固定源码把关键职责收敛到 index.js 及其相邻模块，便于追踪入口与状态。可借鉴的是显式宿主接线与配置边界；移植仍需重做 API 兼容、权限、持久化和“用设置恢复默认并重启宿主｜无残留样式、配置或资源路由”验证。详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

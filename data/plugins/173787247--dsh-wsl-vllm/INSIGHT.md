@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-分析版本：[e42e1dc](https://github.com/173787247/dsh-wsl-vllm/tree/e42e1dc23a89ea7cc87474dcd5d8c610b37c651b)
+源码版本：[e42e1dc](https://github.com/173787247/dsh-wsl-vllm/tree/e42e1dc23a89ea7cc87474dcd5d8c610b37c651b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-vllm)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-vllm)
 <!-- END META -->
 
-> **实现功能**：把已有本机/Docker vLLM OpenAI 兼容端点接入 DSH Agent 的状态与聊天工具。
+> **功能**：把已有本机/Docker vLLM OpenAI 兼容端点接入 DSH Agent 的状态与聊天工具。
 
-> **核心亮点**：为现有 vLLM 提供轻量按需工具，包含状态探测和补全返回 usage。详见[Q01](#research-q01)。
+> **亮点**：为现有 vLLM 提供轻量按需工具，包含状态探测和补全返回 usage。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：总输入不受 maxPromptChars 保证，reachable:false 仍 ok:true；服务资源和取消语义未知。详见[Q03](#research-q03)与[Q04](#research-q04)。
+> **主要限制**：总输入不受 maxPromptChars 保证，reachable:false 仍 ok:true；服务资源和取消语义未知。详见[Q03](#research-q03)与[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：为现有 vLLM 提供轻量按需工具，包含状态探测和补全返回 usage。详见[Q01](#research-q01)。
 
-为现有 vLLM 提供轻量按需工具，包含状态探测和补全返回 usage。详见[Q01](#research-q01)。
-
 OpenAI 兼容端点包装简单；组合输入长度与宿主取消应补。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ OpenAI 兼容端点包装简单；组合输入长度与宿主取消应补。详�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

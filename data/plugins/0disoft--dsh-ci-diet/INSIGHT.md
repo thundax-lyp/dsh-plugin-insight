@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[bfb57ab](https://github.com/0disoft/dsh-ci-diet/tree/bfb57ab7f07333a0a88c50e35f348bb3dac6d290)
+源码版本：[bfb57ab](https://github.com/0disoft/dsh-ci-diet/tree/bfb57ab7f07333a0a88c50e35f348bb3dac6d290)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/0disoft/dsh-ci-diet) [![npm 30d 208](https://img.shields.io/static/v1?label=npm+30d&message=208&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-ci-diet) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-ci-diet)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0disoft/dsh-ci-diet) [![npm 30d 208](https://img.shields.io/static/v1?label=npm+30d&message=208&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ci-diet) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ci-diet)
 <!-- END META -->
 
-> **实现功能**：发现 GitHub Actions 潜在浪费，保留证据并预览供人工审查的小幅工作流补丁。
+> **功能**：发现 GitHub Actions 潜在浪费，保留证据并预览供人工审查的小幅工作流补丁。
 
-> **核心亮点**：把规则证据、覆盖、局部diff、人工批准和恢复材料串成可追溯流程，减少手工对照工作；不将缓存机制算原创。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把规则证据、覆盖、局部diff、人工批准和恢复材料串成可追溯流程，减少手工对照工作；不将缓存机制算原创。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：规则命中、缓存或取消不保证净节省，可能转移到缓存开销、重跑或交付损失；预检不是强制优化门禁。见 [Q03](#research-q03)。
+> **主要限制**：规则命中、缓存或取消不保证净节省，可能转移到缓存开销、重跑或交付损失；预检不是强制优化门禁。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：把规则证据、覆盖、局部diff、人工批准和恢复材料串成可追溯流程，减少手工对照工作；不将缓存机制算原创。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-把规则证据、覆盖、局部diff、人工批准和恢复材料串成可追溯流程，减少手工对照工作；不将缓存机制算原创。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 写前证据/依赖hash绑定、nonce与备份回读值得复用；文件替换前重读减少并发覆盖。预检故障放行是可用性取舍，适合作提示，不适合当发布安全保证。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -164,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/0disoft/dsh-ci-diet/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/0disoft/dsh-ci-diet/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

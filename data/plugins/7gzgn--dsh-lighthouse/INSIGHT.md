@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[d72f8ac](https://github.com/7gzgn/dsh-lighthouse/tree/d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb)
+源码版本：[d72f8ac](https://github.com/7gzgn/dsh-lighthouse/tree/d72f8acf3009712bd1a9d536a4d2f9ccd13ac1cb)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：按显式名册汇总作品本地、GitHub、市场、npm和PR等待，提供面板/工具/CLI及落盘卡片。
+> **功能**：按显式名册汇总作品本地、GitHub、市场、npm和PR等待，提供面板/工具/CLI及落盘卡片。
 
-> **核心亮点**：显式作品名册结合多源状态与可点击看板，少手工切平台。详见[Q01](#research-q01)。
+> **亮点**：显式作品名册结合多源状态与可点击看板，少手工切平台。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：PR首50标题匹配/失败空、无来源HTTP放行可能暴露PAT可见私有信息，无预算遍历与直接覆盖写需补。详见[Q03](#research-q03)。
+> **主要限制**：PR首50标题匹配/失败空、无来源HTTP放行可能暴露PAT可见私有信息，无预算遍历与直接覆盖写需补。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：显式作品名册结合多源状态与可点击看板，少手工切平台。详见[Q01](#research-q01)。
 
-显式作品名册结合多源状态与可点击看板，少手工切平台。详见[Q01](#research-q01)。
-
 多源可注入/缓存可借鉴，需精确身份/准入/预算与原子持久化。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@ PR首50标题匹配/失败空、无来源HTTP放行可能暴露PAT可见私有�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,7 +164,7 @@ PR首50标题匹配/失败空、无来源HTTP放行可能暴露PAT可见私有�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-lighthouse/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-lighthouse/issues?q=is%3Aissue+created%3A2026-09-22T07%3A35%3A53.691Z..2026-10-22T07%3A35%3A53.691Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7gzgn/dsh-lighthouse/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A35%3A53.691Z..2026-10-22T07%3A35%3A53.691Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-lighthouse/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-lighthouse/issues?q=is%3Aissue+created%3A2026-09-22T07%3A35%3A53.691Z..2026-10-22T07%3A35%3A53.691Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-lighthouse/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A35%3A53.691Z..2026-10-22T07%3A35%3A53.691Z)
 
 
 

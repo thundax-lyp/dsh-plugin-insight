@@ -1,12 +1,14 @@
 # 其他
 
-[返回首页](../../../README.md)
+[全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 其他尚未归入上述场景的插件。
 
-**快速比较**
+<a id="category-index"></a>
 
-> 索引与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
+**同类比较**
+
+> 比较表与下方短评均按插件名字母顺序排列；点击插件名跳转到本页短评。
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
@@ -18,7 +20,7 @@
 
 ## [dsh-armor-switch](../../plugins/571242--dsh-armor-switch/INSIGHT.md)
 
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/571242/dsh-armor-switch)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/571242/dsh-armor-switch)
 
 > **用途**：面向管理模型交付偏好与既有宿主改动的操作者，各开关有不同作用域。
 
@@ -27,6 +29,8 @@
 > **思考**：主开关关闭不撤回显式权限、普通偏好或既有磁盘状态；清洗说明与当前禁用入口冲突，缺少交付改善对照。[Q03](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q03)、[Q05](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q05)
 
 > **建议**：未验证方向是窄偏好入口加逐agent权限租约/原快照收据，以异构权限和中断矩阵验证无损归还，失败则否定。[Q06](../../plugins/571242--dsh-armor-switch/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/571242--dsh-armor-switch/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1412161923-root"></a>
 
@@ -42,11 +46,13 @@
 
 > **建议**：可把样式、音频和按钮延迟 timer 绑定 overlay 生命周期，并以重复挂载/卸载对照资源残留与再进入首音成功率；当前未实现。详见[Q04](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md#research-q04)。
 
+[查看完整分析](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1319484586-root"></a>
 
 ## [竹知了](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md)
 
-[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=yellow&logo=github&style=flat)](https://github.com/imsai-sh/zhuzhiliao)
+[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
 
 > **用途**：传统玩具爱好者在手机浏览器通过画圈或传感器体验竹知了；它是独立Web项目。
 
@@ -55,6 +61,10 @@
 > **思考**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q03)。
 
 > **建议**：未验证假设是固定同一物理轨迹，比较纯音频、2D与3D模式的拟真感和卡顿；若3D无辨识增益且更耗资源则保留2D默认。见[Q04](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md) · [返回表格](#category-index)
+
+[全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 

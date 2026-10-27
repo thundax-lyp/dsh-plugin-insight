@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[1c1a6c5](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2/tree/1c1a6c5ad59d78ef5e3c5a3fe88613f6a9601377/plugins/dsh-orchestrator2)
+源码版本：[1c1a6c5](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2/tree/1c1a6c5ad59d78ef5e3c5a3fe88613f6a9601377/plugins/dsh-orchestrator2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2)
 <!-- END META -->
 
-> **实现功能**：提供自动开发调度预设，以任务包组织设计、开发、审查、预算与人工验收。
+> **功能**：提供自动开发调度预设，以任务包组织设计、开发、审查、预算与人工验收。
 
-> **核心亮点**：将任务包、预算预登记、设计冻结和持久角色路由组合为可追溯协作流程，先绑定再启动减少路由竞争窗口。[Q03](#research-q03)
+> **亮点**：将任务包、预算预登记、设计冻结和持久角色路由组合为可追溯协作流程，先绑定再启动减少路由竞争窗口。[Q03](#research-q03)
 
-> **风险与缺陷**：派工成功回执要求后台参数false，但角色工具明确拒绝false；同时旧目录同步的实际副作用与移除声明冲突，需先核对。[Q04](#research-q04)
+> **主要限制**：派工成功回执要求后台参数false，但角色工具明确拒绝false；同时旧目录同步的实际副作用与移除声明冲突，需先核对。[Q04](#research-q04)
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：将任务包、预算预登记、设计冻结和持久角色路由组合为可追溯协作流程，先绑定再启动减少路由竞争窗口。[Q03](#research-q03)
 
-将任务包、预算预登记、设计冻结和持久角色路由组合为可追溯协作流程，先绑定再启动减少路由竞争窗口。[Q03](#research-q03)
-
 可借鉴派工前身份和预算检查、先bindChild再启动及主子会话角色权限分离。dispatch_begin按先锁后台账并在写账失败时清锁处理局部失败，但用existsSync再普通writeFileSync，不是跨进程排他锁，不能外推强事务。固定树部分文档与实际执行矛盾，维护需要把回执、persona、生成patch和工具参数契约一起校验；作者报告的测试数没有在本轮复现。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

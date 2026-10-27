@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[60345a0](https://github.com/173787247/dsh-wsl-github/tree/60345a0269abaa476131fc06b9e1e8eb6409c724)
+源码版本：[60345a0](https://github.com/173787247/dsh-wsl-github/tree/60345a0269abaa476131fc06b9e1e8eb6409c724)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-github)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-github)
 <!-- END META -->
 
-> **实现功能**：WSL 场景下用 GitHub App 或 token 回退查询当前仓库的 open PR 与最近 Actions run，另提供配置提示。
+> **功能**：WSL 场景下用 GitHub App 或 token 回退查询当前仓库的 open PR 与最近 Actions run，另提供配置提示。
 
-> **核心亮点**：把 GitHub App 最小只读状态查询封装为两模型工具，并区分 API 与推送凭据。详见[Q01](#research-q01)。
+> **亮点**：把 GitHub App 最小只读状态查询封装为两模型工具，并区分 API 与推送凭据。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：installation token 缓存未按仓库/owner 隔离，跨账号查询可复用错误 token；子请求失败仍 ok=true。详见[Q02](#research-q02)。
+> **主要限制**：installation token 缓存未按仓库/owner 隔离，跨账号查询可复用错误 token；子请求失败仍 ok=true。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把 GitHub App 最小只读状态查询封装为两模型工具，并区分 API 与推送凭据。详见[Q01](#research-q01)。
 
-把 GitHub App 最小只读状态查询封装为两模型工具，并区分 API 与推送凭据。详见[Q01](#research-q01)。
-
 Cordis 注册两工具和提示段；JWT 签名、installation token 交换，API 查询仓库/PR/Actions。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ installation token 缓存未按仓库/owner 隔离，跨账号查询可复用错
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,7 +159,7 @@ installation token 缓存未按仓库/owner 隔离，跨账号查询可复用错
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-github/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-github/issues?q=is%3Aissue+created%3A2026-09-22T06%3A43%3A23.129Z..2026-10-22T06%3A43%3A23.129Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-github/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A43%3A23.129Z..2026-10-22T06%3A43%3A23.129Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-github/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-github/issues?q=is%3Aissue+created%3A2026-09-22T06%3A43%3A23.129Z..2026-10-22T06%3A43%3A23.129Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-github/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A43%3A23.129Z..2026-10-22T06%3A43%3A23.129Z)
 
 
 

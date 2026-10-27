@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)
 
-分析版本：[6d04df3](https://github.com/439436269-ctrl/dsh-piano/tree/6d04df38659655b3c71136bfe0172d0d14439d64)
+源码版本：[6d04df3](https://github.com/439436269-ctrl/dsh-piano/tree/6d04df38659655b3c71136bfe0172d0d14439d64)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。
+> **功能**：在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。
 
-> **核心亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](#research-q03)。
+> **主要限制**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 共享音频输出链与缓存噪声 buffer 减少逐音分配；跨键变化才触发并用24ms限速。样式在模块顶层插入，音频上下文未显式 close；结构自测不等于听觉或资源验收。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ style 在模块加载时插入、AudioContext 在模块作用域缓存，没有�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -160,7 +158,7 @@ style 在模块加载时插入、AudioContext 在模块作用域缓存，没有�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-piano/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-piano/issues?q=is%3Aissue+created%3A2026-09-22T05%3A17%3A56.340Z..2026-10-22T05%3A17%3A56.340Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-piano/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A17%3A56.340Z..2026-10-22T05%3A17%3A56.340Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-piano/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-piano/issues?q=is%3Aissue+created%3A2026-09-22T05%3A17%3A56.340Z..2026-10-22T05%3A17%3A56.340Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-piano/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A17%3A56.340Z..2026-10-22T05%3A17%3A56.340Z)
 
 
 
