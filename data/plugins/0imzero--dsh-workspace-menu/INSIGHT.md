@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[afd5551](https://github.com/0imzero/dsh-workspace-menu/tree/afd55510f82821cde60a8364e42f752e244b5b31)
+源码版本：[afd5551](https://github.com/0imzero/dsh-workspace-menu/tree/afd55510f82821cde60a8364e42f752e244b5b31)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0imzero/dsh-workspace-menu)
 <!-- END META -->
 
-> **实现功能**：为DSH工作区和会话行增加右键/双击菜单，集中置顶、复制、归档及目录打开/删除操作。
+> **功能**：为DSH工作区和会话行增加右键/双击菜单，集中置顶、复制、归档及目录打开/删除操作。
 
-> **核心亮点**：集中常见行操作并提供跨平台文件管理器接线，依赖宿主与archive-manager完成多数业务动作。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：集中常见行操作并提供跨平台文件管理器接线，依赖宿主与archive-manager完成多数业务动作。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：Host递归删除接受绝对path而不绑定注册workspace/确认计划，UI双确认与功能开关不能约束接口；会话清理失败还会继续删目录。详见[Q02](#research-q02)。
+> **主要限制**：Host递归删除接受绝对path而不绑定注册workspace/确认计划，UI双确认与功能开关不能约束接口；会话清理失败还会继续删目录。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：集中常见行操作并提供跨平台文件管理器接线，依赖宿主与archive-manager完成多数业务动作。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-集中常见行操作并提供跨平台文件管理器接线，依赖宿主与archive-manager完成多数业务动作。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 可复用的是路由按WebServer WeakMap共享引用计数，避免热重载重复注册；UI observer/事件/RAF/effect清理以及按平台用参数数组调用文件管理器，也减少资源残留。它们不能代替目录授权或恢复。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ Host递归删除接受绝对path而不绑定注册workspace/确认计划，UI双
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

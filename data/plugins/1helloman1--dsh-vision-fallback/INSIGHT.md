@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e94fffb](https://github.com/1HelloMan1/dsh-vision-fallback/tree/e94fffbfd1297881e80a1a02304e116541d01368)
+源码版本：[e94fffb](https://github.com/1HelloMan1/dsh-vision-fallback/tree/e94fffbfd1297881e80a1a02304e116541d01368)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1HelloMan1/dsh-vision-fallback) [![npm 30d 909](https://img.shields.io/static/v1?label=npm+30d&message=909&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-fallback) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-fallback)
 <!-- END META -->
 
-> **实现功能**：保持原主模型选择，把聊天与工具图片交给固定视觉模型转成文字观察，并保留界面原图。
+> **功能**：保持原主模型选择，把聊天与工具图片交给固定视觉模型转成文字观察，并保留界面原图。
 
-> **核心亮点**：把聊天/工具持久图片接入固定视觉模型再给原主模型文字观察，保留UI原图并减少手工转存；视觉推理由外部模型提供，不是给文本模型原生视觉。详见[Q03](#research-q03)。
+> **亮点**：把聊天/工具持久图片接入固定视觉模型再给原主模型文字观察，保留UI原图并减少手工转存；视觉推理由外部模型提供，不是给文本模型原生视觉。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：隐藏观察可能漏掉图像细节，默认还会把问题和近期对话发往另一endpoint；持久缓存未绑定prompt、超时未覆盖后续body解析，均为源码条件边界未复现。详见[Q03](#research-q03)。
+> **主要限制**：隐藏观察可能漏掉图像细节，默认还会把问题和近期对话发往另一endpoint；持久缓存未绑定prompt、超时未覆盖后续body解析，均为源码条件边界未复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：把聊天/工具持久图片接入固定视觉模型再给原主模型文字观察，保留UI原图并减少手工转存；视觉推理由外部模型提供，不是给文本模型原生视觉。详见[Q03](#research-q03)。
 
-把聊天/工具持久图片接入固定视觉模型再给原主模型文字观察，保留UI原图并减少手工转存；视觉推理由外部模型提供，不是给文本模型原生视觉。详见[Q03](#research-q03)。
-
 可借鉴的是将用户可见原图与模型专用观察分开、对递归工具结果保留顺序、用持久附件ID避免临时文件路径，以及复制深冻结压缩请求并用WeakSet限定重入。这些依赖宿主surface和llm流生命周期，移植时必须核对多个插件包装函数的所有权；恢复仅在当前函数仍是自己wrapper时赋回，体现共存意识，但多实例全局rawResolveModelInfo仍需另查。测试包含surface、递归PTC和缓存位置案例，本轮只读未执行。
 
 <a id="detail-section-5"></a>
@@ -160,7 +158,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

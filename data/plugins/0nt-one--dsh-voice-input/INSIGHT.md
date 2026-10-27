@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c2fceee](https://github.com/0nt-one/dsh-voice-input/tree/c2fceee6a865a8466f3909d3896172f0f2fad2fa)
+源码版本：[c2fceee](https://github.com/0nt-one/dsh-voice-input/tree/c2fceee6a865a8466f3909d3896172f0f2fad2fa)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0nt-one/dsh-voice-input) [![npm 30d 60](https://img.shields.io/static/v1?label=npm+30d&message=60&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-voice-input-web) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-voice-input-web)
 <!-- END META -->
 
-> **实现功能**：为 DSH Web 输入栏增加浏览器 Web Speech 麦克风转写按钮，把识别最终文本写入草稿。
+> **功能**：为 DSH Web 输入栏增加浏览器 Web Speech 麦克风转写按钮，把识别最终文本写入草稿。
 
-> **核心亮点**：无需额外 ASR key 即可把浏览器语音识别接入 DSH 草稿。详见[Q01](#research-q01)。
+> **亮点**：无需额外 ASR key 即可把浏览器语音识别接入 DSH 草稿。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：听写期间手工编辑可被后续 final 覆写，autoSend 在识别结束时无草稿确认；音频可能经浏览器网络服务处理。详见[Q02](#research-q02)。
+> **主要限制**：听写期间手工编辑可被后续 final 覆写，autoSend 在识别结束时无草稿确认；音频可能经浏览器网络服务处理。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：无需额外 ASR key 即可把浏览器语音识别接入 DSH 草稿。详见[Q01](#research-q01)。
 
-无需额外 ASR key 即可把浏览器语音识别接入 DSH 草稿。详见[Q01](#research-q01)。
-
 自包含客户端 bundle 注入输入栏 slot，localStorage 保存语言/autoSend；Host 为空 apply。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

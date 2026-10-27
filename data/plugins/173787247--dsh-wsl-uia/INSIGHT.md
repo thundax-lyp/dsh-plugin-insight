@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[43e5b42](https://github.com/173787247/dsh-wsl-uia/tree/43e5b42c013a3170c318217889eb1c9504d9f6c4)
+源码版本：[43e5b42](https://github.com/173787247/dsh-wsl-uia/tree/43e5b42c013a3170c318217889eb1c9504d9f6c4)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-uia)
 <!-- END META -->
 
-> **实现功能**：从WSL读取Windows顶层窗口和UI Automation控件树，提供过滤查找、按名等待和祖先路径，并给元素标注观测内句柄。
+> **功能**：从WSL读取Windows顶层窗口和UI Automation控件树，提供过滤查找、按名等待和祖先路径，并给元素标注观测内句柄。
 
-> **核心亮点**：将Windows UIA语义、PowerShell互操作、按名等待/path与DSH观察工具连接，减少纯视觉定位负担。详见[Q02](#research-q02)。
+> **亮点**：将Windows UIA语义、PowerShell互操作、按名等待/path与DSH观察工具连接，减少纯视觉定位负担。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：windowHandle声明未用，pid取首窗、tree默认前台而wait/path默认首窗；epoch.index未持久绑定窗口或动作。tree限返回数非visited，Name/title无秘密过滤，总wait预算/取消未贯穿。详见[Q03](#research-q03)、[Q05](#research-q05)。
+> **主要限制**：windowHandle声明未用，pid取首窗、tree默认前台而wait/path默认首窗；epoch.index未持久绑定窗口或动作。tree限返回数非visited，Name/title无秘密过滤，总wait预算/取消未贯穿。详见[Q03](#research-q03)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -114,8 +114,6 @@
 
 > **亮点**：将Windows UIA语义、PowerShell互操作、按名等待/path与DSH观察工具连接，减少纯视觉定位负担。详见[Q02](#research-q02)。
 
-将Windows UIA语义、PowerShell互操作、按名等待/path与DSH观察工具连接，减少纯视觉定位负担。详见[Q02](#research-q02)。
-
 tree while用out.Count<maxElements限制返回匹配节点，队列visited没有独立计数。过滤窄或大量匿名/不匹配节点时，虽然depth上限，访问/入队量可远超maxElements，UIA调用成本未严格受该字段约束；truncated仅elements.length>=maxElements，深度截断/过滤/属性异常跳过没有独立收据。刚好等于预算也不证明确有遗漏。
 
 wait/path的locate用seen限制访问，较tree有明确节点预算。wait每轮可占config timeout（最高120秒），waitMs在轮后才检查，故waitMs100ms不保证100ms返回；主工具默认30秒可能先超时。等待循环sleep与PowerShell执行未绑定exec.signal，宿主取消不自动停止后续轮询。
@@ -172,7 +170,7 @@ windowHandle声明未用，pid取首窗、tree默认前台而wait/path默认首�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

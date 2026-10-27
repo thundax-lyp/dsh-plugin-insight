@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[edc756f](https://github.com/456erddgr/dsh-boo550wt-animation/tree/edc756f37fa59ba10818a0f9aee489b7241e8005)
+源码版本：[edc756f](https://github.com/456erddgr/dsh-boo550wt-animation/tree/edc756f37fa59ba10818a0f9aee489b7241e8005)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/456erddgr/dsh-boo550wt-animation)
 <!-- END META -->
 
-> **实现功能**：为DSH提供可配置开机遮罩，可播放视频、图片、网页和内置游戏，并支持预览与跳过。
+> **功能**：为DSH提供可配置开机遮罩，可播放视频、图片、网页和内置游戏，并支持预览与跳过。
 
-> **核心亮点**：通过插件扩展点组织可预览、可跳过启动内容，不修改安装包；3D底座与资产继承上游。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：通过插件扩展点组织可预览、可跳过启动内容，不修改安装包；3D底座与资产继承上游。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：同源HTML配allow-scripts/allow-same-origin且写路由未见局部信任校验，装饰扩大宿主能力；资源与启动代价未测。见 [Q03](#research-q03)。
+> **主要限制**：同源HTML配allow-scripts/allow-same-origin且写路由未见局部信任校验，装饰扩大宿主能力；资源与启动代价未测。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：通过插件扩展点组织可预览、可跳过启动内容，不修改安装包；3D底座与资产继承上游。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-通过插件扩展点组织可预览、可跳过启动内容，不修改安装包；3D底座与资产继承上游。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 Range与显式退出清理可借鉴；上传原子发布/去重来自已有设计。需把不可信HTML与宿主分源、写路由显式信任校验；大vendor不应代表原创工程量。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ Range与显式退出清理可借鉴；上传原子发布/去重来自已有设�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：3359ccbf29bf0dccd6822e3bae0922829a8a9bd3812516d28e20a661d2d3adf7。sloc 0.3.2，TypeScript 5.9.3。
 

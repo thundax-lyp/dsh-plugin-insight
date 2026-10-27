@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[9d5719c](https://github.com/2JumpSinA/dsh-context-guard/tree/9d5719c94fe9fdf7385800ba40d3a213fdc24e17)
+源码版本：[9d5719c](https://github.com/2JumpSinA/dsh-context-guard/tree/9d5719c94fe9fdf7385800ba40d3a213fdc24e17)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2JumpSinA/dsh-context-guard) [![npm 30d 1,727](https://img.shields.io/static/v1?label=npm+30d&message=1%2C727&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@2jumpsina/dsh-context-guard)
 <!-- END META -->
 
-> **实现功能**：读取上下文压力，在轮后提醒换会话，生成机器事实交接草稿并记录压缩读数。
+> **功能**：读取上下文压力，在轮后提醒换会话，生成机器事实交接草稿并记录压缩读数。
 
-> **核心亮点**：把上下文水位提示接到实际交接文件，并复用宿主投影避免额外模型请求；机器事实收集不等语义交接完成。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：把上下文水位提示接到实际交接文件，并复用宿主投影避免额外模型请求；机器事实收集不等语义交接完成。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：默认草稿含路径与问答片段，关草稿仍可能写压缩台账；估计水位与进程内队列不能证明最佳阈值或完整审计。[Q03](#research-q03)
+> **主要限制**：默认草稿含路径与问答片段，关草稿仍可能写压缩台账；估计水位与进程内队列不能证明最佳阈值或完整审计。[Q03](#research-q03)
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：把上下文水位提示接到实际交接文件，并复用宿主投影避免额外模型请求；机器事实收集不等语义交接完成。[Q01](#research-q01)、[Q02](#research-q02)
 
-把上下文水位提示接到实际交接文件，并复用宿主投影避免额外模型请求；机器事实收集不等语义交接完成。[Q01](#research-q01)、[Q02](#research-q02)
-
 volatile解引用与共源公式减少显示/判断漂移；唯一临时名、坏块拒写和队列失败隔离有明确价值，仍需跨进程与路径环境验证。[Q02](#research-q02)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@ volatile解引用与共源公式减少显示/判断漂移；唯一临时名、�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

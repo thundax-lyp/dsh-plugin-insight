@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[d82f6de](https://github.com/240xu/dsh-message-ops/tree/d82f6de21683162ac7e83483536490a647f88ab5)
+源码版本：[d82f6de](https://github.com/240xu/dsh-message-ops/tree/d82f6de21683162ac7e83483536490a647f88ab5)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/240xu/dsh-message-ops) [![npm 30d 5,171](https://img.shields.io/static/v1?label=npm+30d&message=5%2C171&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-message-ops) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-message-ops)
 <!-- END META -->
 
-> **实现功能**：为DSH Web提供消息回撤、单条遮蔽、文本恢复和会话回收站操作。
+> **功能**：为DSH Web提供消息回撤、单条遮蔽、文本恢复和会话回收站操作。
 
-> **核心亮点**：在append-only会话上提供按seq控制上下文和渐进恢复的用户流程，避免重复实现原生分支；恢复不是解除遮蔽。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：在append-only会话上提供按seq控制上下文和渐进恢复的用户流程，避免重复实现原生分支；恢复不是解除遮蔽。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：回撤不撤销现实副作用；live路径先记录全部恢复seq再逐条append，异常时可能出现进度与实际文本不一致，尚未故障注入复现。[Q03](#research-q03)
+> **主要限制**：回撤不撤销现实副作用；live路径先记录全部恢复seq再逐条append，异常时可能出现进度与实际文本不一致，尚未故障注入复现。[Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：在append-only会话上提供按seq控制上下文和渐进恢复的用户流程，避免重复实现原生分支；恢复不是解除遮蔽。[Q01](#research-q01)、[Q02](#research-q02)
 
-在append-only会话上提供按seq控制上下文和渐进恢复的用户流程，避免重复实现原生分支；恢复不是解除遮蔽。[Q01](#research-q01)、[Q02](#research-q02)
-
 原seq集合比单一恢复开关更可审计，live日志补算减少落盘窗口漂移；notice先写与逐条append仍非事务，失败闭合窗口不能代替状态回滚。[Q02](#research-q02)、[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

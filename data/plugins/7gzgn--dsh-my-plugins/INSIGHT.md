@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[a6ac5e7](https://github.com/7gzgn/dsh-my-plugins/tree/a6ac5e79e9f246c322060163bc794dba9648bff4)
+源码版本：[a6ac5e7](https://github.com/7gzgn/dsh-my-plugins/tree/a6ac5e79e9f246c322060163bc794dba9648bff4)
 
 <!-- BEGIN META -->
 [![npm 30d 519](https://img.shields.io/static/v1?label=npm+30d&message=519&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-my-plugins) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-my-plugins)
 <!-- END META -->
 
-> **实现功能**：在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。
+> **功能**：在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。
 
-> **风险与缺陷**：[Q03](#research-q03) 发现清单来自声明/依赖而不是运行注册表，profile还能按mtime猜选；README的无请求、仅作者描述与市场fetch/缓存写、notes优先不一致。读者应知道当前真边界，避免以数量排障。
+> **主要限制**：[Q03](#research-q03) 发现清单来自声明/依赖而不是运行注册表，profile还能按mtime猜选；README的无请求、仅作者描述与市场fetch/缓存写、notes优先不一致。读者应知道当前真边界，避免以数量排障。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 支持把散落的profile声明、实装版本和说明变成可搜索入口，适合日常辨认包。该增量是信息组织便利，未建立运行时激活或能力正确性的观测链。
-
 scan与客户端分离便于复用，包不可读时降级不会让整份清单失败。代价是宽松fallback隐藏不确定性；profile选择、hasTools和版本应显式标启发式，市场缓存需要同步文档。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ profile包清单与overlay可核查；运行激活未采集，文档的不联网
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[877d80c](https://github.com/439436269-ctrl/dsh-ai-arcade/tree/877d80ccce081eb76343ddacfb591f6c404b8ddd)
+源码版本：[877d80c](https://github.com/439436269-ctrl/dsh-ai-arcade/tree/877d80ccce081eb76343ddacfb591f6c404b8ddd)
 
 <!-- BEGIN META -->
 [![npm 30d 299](https://img.shields.io/static/v1?label=npm+30d&message=299&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ai-arcade) [![最新发布 2026-10-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ai-arcade)
 <!-- END META -->
 
-> **实现功能**：DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。
+> **功能**：DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。
 
-> **核心亮点**：用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：模型付费路由仅 Host/Origin 栅栏，接受 GET 和自定义 system，未见独立鉴权或频控；README 推理 effort 说明与默认代码不符。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：模型付费路由仅 Host/Origin 栅栏，接受 GET 和自定义 system，未见独立鉴权或频控；README 推理 effort 说明与默认代码不符。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-用本地规则兜底并仅让模型做高层意图，游戏页与长期缓存壳分开。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 模型在宿主，游戏在浏览器；付费路由 GET/POST 均可触发，信任栅栏缺账户鉴权与频控；默认 low。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

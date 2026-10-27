@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[fe5ef0e](https://github.com/0nt-one/dsh-neo-skin/tree/fe5ef0e671fab5ab8c8700013f3966eb9642455f)
+源码版本：[fe5ef0e](https://github.com/0nt-one/dsh-neo-skin/tree/fe5ef0e671fab5ab8c8700013f3966eb9642455f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0nt-one/dsh-neo-skin) [![npm 30d 101](https://img.shields.io/static/v1?label=npm+30d&message=101&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-neo-skin) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-neo-skin)
 <!-- END META -->
 
-> **实现功能**：为 DSH Web UI 叠加两套新粗野主义配色和结构样式。
+> **功能**：为 DSH Web UI 叠加两套新粗野主义配色和结构样式。
 
-> **核心亮点**：复用主题 token 服务与设置插槽，而非覆盖整个原生主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：复用主题 token 服务与设置插槽，而非覆盖整个原生主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：大量 !important 与后缀类名选择器易随宿主结构变化或其他插件样式冲突；缺本轮视觉验收。详见[Q03](#research-q03)。
+> **主要限制**：大量 !important 与后缀类名选择器易随宿主结构变化或其他插件样式冲突；缺本轮视觉验收。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -90,8 +90,6 @@ DSH 原生浅/深/系统主题；插件叠加样式与额外方案。
 
 > **亮点**：复用主题 token 服务与设置插槽，而非覆盖整个原生主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-复用主题 token 服务与设置插槽，而非覆盖整个原生主题。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 Host no-op 挂载 Client；template/build 生成模块 bundle，theme/slots/locale 服务与 DOM style 配合。
 
 <a id="detail-section-5"></a>
@@ -140,7 +138,7 @@ Host no-op 挂载 Client；template/build 生成模块 bundle，theme/slots/loca
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

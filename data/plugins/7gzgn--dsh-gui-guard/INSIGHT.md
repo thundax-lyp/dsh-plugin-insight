@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[dd118db](https://github.com/7gzgn/dsh-gui-guard/tree/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd)
+源码版本：[dd118db](https://github.com/7gzgn/dsh-gui-guard/tree/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：为 Windows 窗口提供状态检查、前台准备及带坐标口径的点击与输入工具。
+> **功能**：为 Windows 窗口提供状态检查、前台准备及带坐标口径的点击与输入工具。
 
-> **核心亮点**：把窗口探测、还原、坐标口径换算和输入前激活集中在一个工具，并回显请求与应用坐标；减少调用方分别处理 Windows 状态的步骤。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把窗口探测、还原、坐标口径换算和输入前激活集中在一个工具，并回显请求与应用坐标；减少调用方分别处理 Windows 状态的步骤。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 与 cursorMatches 也不能证明事件进了目标窗口；失败时仍发全局事件是源码可见的误操作风险。详见[Q03](#research-q03)。
+> **主要限制**：Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 与 cursorMatches 也不能证明事件进了目标窗口；失败时仍发全局事件是源码可见的误操作风险。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把窗口探测、还原、坐标口径换算和输入前激活集中在一个工具，并回显请求与应用坐标；减少调用方分别处理 Windows 状态的步骤。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把窗口探测、还原、坐标口径换算和输入前激活集中在一个工具，并回显请求与应用坐标；减少调用方分别处理 Windows 状态的步骤。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 base64 JSON 配合 execFile 避免把模型输入拼接到 shell；动作结果保留原始 JSON 和可读文本。窗口匹配可用 PID，但模糊标题首匹配和前台失败不门控是主要边界。cursorMatches 只证明光标大致到点，不证明事件命中目标。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

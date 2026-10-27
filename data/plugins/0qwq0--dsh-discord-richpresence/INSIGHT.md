@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[bf8d34b](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266)
+源码版本：[bf8d34b](https://github.com/0QwQ0/dsh-discord-richpresence/tree/bf8d34b4a4c52e9128a44ca7abf6a7de52880266)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0QwQ0/dsh-discord-richpresence)
 <!-- END META -->
 
-> **实现功能**：将 DSH 粗粒度活动经本地 Discord IPC 发布为 Rich Presence，丰富模式可附步骤/tokens/思考时长。
+> **功能**：将 DSH 粗粒度活动经本地 Discord IPC 发布为 Rich Presence，丰富模式可附步骤/tokens/思考时长。
 
-> **核心亮点**：把 DSH 生命周期映射到可自定义的 Discord 状态，减少手工更新资料。详见[Q01](#research-q01)。
+> **亮点**：把 DSH 生命周期映射到可自定义的 Discord 状态，减少手工更新资料。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：richMode 关只取消标量，不取消基础 Presence；全局 workflow/start 与未设活跃会话时工具事件可能让阶段文案不精确。详见[Q02](#research-q02)。
+> **主要限制**：richMode 关只取消标量，不取消基础 Presence；全局 workflow/start 与未设活跃会话时工具事件可能让阶段文案不精确。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把 DSH 生命周期映射到可自定义的 Discord 状态，减少手工更新资料。详见[Q01](#research-q01)。
 
-把 DSH 生命周期映射到可自定义的 Discord 状态，减少手工更新资料。详见[Q01](#research-q01)。
-
 Host 事件监听、定时去抖/重连、Rich Presence 帧；客户端设置只开关 richMode。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ richMode 关只取消标量，不取消基础 Presence；全局 workflow/start �
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

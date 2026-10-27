@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[b5310e7](https://github.com/111xjyuan/dsh-desktop-sidecar/tree/b5310e7f8b6848dd6aab62aaccd6429187d983db)
+源码版本：[b5310e7](https://github.com/111xjyuan/dsh-desktop-sidecar/tree/b5310e7f8b6848dd6aab62aaccd6429187d983db)
 
 <!-- BEGIN META -->
 [![npm 30d 205](https://img.shields.io/static/v1?label=npm+30d&message=205&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-sidecar) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-sidecar)
 <!-- END META -->
 
-> **实现功能**：为 DSH 提供 Windows 窗口、UIA、截图、离线 OCR、点击、剪贴板输入和按键工具。
+> **功能**：为 DSH 提供 Windows 窗口、UIA、截图、离线 OCR、点击、剪贴板输入和按键工具。
 
-> **核心亮点**：组合UIA的结构操作与OCR文字坐标，减少单一路径不覆盖自绘界面的限制，并提供统一DSH工具入口；采用既有Windows能力，未证明竞品排名或token收益。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：组合UIA的结构操作与OCR文字坐标，减少单一路径不覆盖自绘界面的限制，并提供统一DSH工具入口；采用既有Windows能力，未证明竞品排名或token收益。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：无变化会自动重复点击，且客户区内重试后即使changed=false仍可ok=true；画面差异不能证明业务动作完成。OCR模糊匹配、剪贴板覆盖和额外临时图像还增加复核责任。[Q03](#research-q03) [Q04](#research-q04)
+> **主要限制**：无变化会自动重复点击，且客户区内重试后即使changed=false仍可ok=true；画面差异不能证明业务动作完成。OCR模糊匹配、剪贴板覆盖和额外临时图像还增加复核责任。[Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -107,8 +107,6 @@
 
 > **亮点**：组合UIA的结构操作与OCR文字坐标，减少单一路径不覆盖自绘界面的限制，并提供统一DSH工具入口；采用既有Windows能力，未证明竞品排名或token收益。[Q01](#research-q01) [Q02](#research-q02)
 
-组合UIA的结构操作与OCR文字坐标，减少单一路径不覆盖自绘界面的限制，并提供统一DSH工具入口；采用既有Windows能力，未证明竞品排名或token收益。[Q01](#research-q01) [Q02](#research-q02)
-
 FFI与UIA/OCR模块分离便于定位平台问题，缩放坐标回算明确。同步桥调用、模糊匹配以及ok含义必须公开；清理范围和剪贴板生命周期尚需更完整管理。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -157,7 +155,7 @@ Windows受控窗口核对缩放、重复标签、焦点、非幂等重试、临�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

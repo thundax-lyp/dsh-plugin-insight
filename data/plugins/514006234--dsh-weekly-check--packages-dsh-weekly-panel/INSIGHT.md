@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[97df76a](https://github.com/514006234/dsh-weekly-check/tree/97df76aaa7fe6d2c9abd4fd9c721e3b4c4ff46fa/packages/dsh-weekly-panel)
+源码版本：[97df76a](https://github.com/514006234/dsh-weekly-check/tree/97df76aaa7fe6d2c9abd4fd9c721e3b4c4ff46fa/packages/dsh-weekly-panel)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/514006234/dsh-weekly-check)
 <!-- END META -->
 
-> **实现功能**：在DSH主面板显示插件周榜、模型可用性与赞助信息。
+> **功能**：在DSH主面板显示插件周榜、模型可用性与赞助信息。
 
-> **核心亮点**：[Q02](#research-q02)只读缓存接入与主面板入口是可核查的集成便利，未识别出相对公开周榜本身的新研究能力。
+> **亮点**：[Q02](#research-q02)只读缓存接入与主面板入口是可核查的集成便利，未识别出相对公开周榜本身的新研究能力。
 
-> **风险与缺陷**：[Q01](#research-q01)、[Q03](#research-q03)网页已提供同样内容，缓存陈旧不能当最新；低频用户可能无需额外安装。
+> **主要限制**：[Q01](#research-q01)、[Q03](#research-q03)网页已提供同样内容，缓存陈旧不能当最新；低频用户可能无需额外安装。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：[Q02](#research-q02)只读缓存接入与主面板入口是可核查的集成便利，未识别出相对公开周榜本身的新研究能力。
 
-[Q02](#research-q02)只读缓存接入与主面板入口是可核查的集成便利，未识别出相对公开周榜本身的新研究能力。
-
 可注入fetch/时钟的store、单飞和陈旧缓存适合复用。读取全文后限长不是流式限流，移植时要保持同源边界和显式陈旧提示。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

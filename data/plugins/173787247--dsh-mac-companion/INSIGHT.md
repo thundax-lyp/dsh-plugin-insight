@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[80c0f61](https://github.com/173787247/dsh-mac-companion/tree/80c0f61cedd985b19178bd45b2618f64a4eb96fc)
+源码版本：[80c0f61](https://github.com/173787247/dsh-mac-companion/tree/80c0f61cedd985b19178bd45b2618f64a4eb96fc)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-mac-companion)
 <!-- END META -->
 
-> **实现功能**：DSH 经 HTTP 调用 macOS Companion 的通知、Shortcuts 和剪贴板工具。
+> **功能**：DSH 经 HTTP 调用 macOS Companion 的通知、Shortcuts 和剪贴板工具。
 
-> **核心亮点**：将共享设备协议包装为 DSH 工具并附轻量 Mac 服务，省去手工命令。详见[Q02](#research-q02)。
+> **亮点**：将共享设备协议包装为 DSH 工具并附轻量 Mac 服务，省去手工命令。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：Mac 服务空 token 即免鉴权、跨机示例为明文 HTTP，confirm 不等于人在场审批；剪贴板读无 confirm。详见[Q03](#research-q03)。
+> **主要限制**：Mac 服务空 token 即免鉴权、跨机示例为明文 HTTP，confirm 不等于人在场审批；剪贴板读无 confirm。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：将共享设备协议包装为 DSH 工具并附轻量 Mac 服务，省去手工命令。详见[Q02](#research-q02)。
 
-将共享设备协议包装为 DSH 工具并附轻量 Mac 服务，省去手工命令。详见[Q02](#research-q02)。
-
 服务默认环回、空 token 放行，HTTP 明文；确认仅 JSON 字段；Shortcuts 子进程无 timeout，剪贴板读直接返回文本。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@ Mac 服务空 token 即免鉴权、跨机示例为明文 HTTP，confirm 不等�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

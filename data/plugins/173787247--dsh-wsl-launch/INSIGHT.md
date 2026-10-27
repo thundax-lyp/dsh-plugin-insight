@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[2090dc0](https://github.com/173787247/dsh-wsl-launch/tree/2090dc095654c22ccf93b26d0a2ff0050bc4e380)
+源码版本：[2090dc0](https://github.com/173787247/dsh-wsl-launch/tree/2090dc095654c22ccf93b26d0a2ff0050bc4e380)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-launch)
 <!-- END META -->
 
-> **实现功能**：从 WSL 通过受配置名单约束的 win_launch 工具启动 Windows 应用。
+> **功能**：从 WSL 通过受配置名单约束的 win_launch 工具启动 Windows 应用。
 
-> **核心亮点**：把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](#research-q01)。
+> **亮点**：把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](#research-q01)。
 
-> **风险与缺陷**：allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通配扩大范围；详见[Q02](#research-q02)。
+> **主要限制**：allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通配扩大范围；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](#research-q01)。
 
-把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](#research-q01)。
-
 execFile 不经 shell 调 powershell.exe；单引号转义及 JSON 参数列表；工具调用标记非并发安全。 包装器只等待PowerShell，无exec.signal或目标PID/GUI就绪回执，目标进程生命周期不由局部超时统一管理。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

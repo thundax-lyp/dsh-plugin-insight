@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[68159fc](https://github.com/4444Hao/dsh-codefall/tree/68159fcced1d65c7ea356821859ea80d365c523a)
+源码版本：[68159fc](https://github.com/4444Hao/dsh-codefall/tree/68159fcced1d65c7ea356821859ea80d365c523a)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/4444Hao/dsh-codefall) [![npm 30d 407](https://img.shields.io/static/v1?label=npm+30d&message=407&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codefall) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codefall)
 <!-- END META -->
 
-> **实现功能**：DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。
+> **功能**：DSH Web/桌面首帧数字雨与绿色主题插件，支持光门、画质和播放时机设置。
 
-> **核心亮点**：将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。
+> **亮点**：将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：恢复重播/跨平台实机未验，主题只覆盖宿主 token；loopback 诊断路由返回本机路径，外层代理访问边界待核。详见[Q03](#research-q03)。
+> **主要限制**：恢复重播/跨平台实机未验，主题只覆盖宿主 token；loopback 诊断路由返回本机路径，外层代理访问边界待核。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。
 
-将视觉动画嵌进 DSH 首帧并避免重复注入，提供设置与主题映射。详见[Q02](#research-q02)。
-
 Host 双注入机制以 sentinel 去重并热读脚本；设置只归一化白名单字段，但 loopback 地址判断受反代拓扑影响，diag 返回绝对路径。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@ Host 双注入机制以 sentinel 去重并热读脚本；设置只归一化白�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

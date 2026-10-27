@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[d0f5113](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors/tree/d0f51131aef40e6bc3f60b560342e22551a972cd)
+源码版本：[d0f5113](https://github.com/7vw58n3ftvq7cn89v/dsh-plugin-session-colors/tree/d0f51131aef40e6bc3f60b560342e22551a972cd)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：通过侧栏悬停palette为会话设置颜色，host保存id颜色映射并以浏览器镜像加快显示。
+> **功能**：通过侧栏悬停palette为会话设置颜色，host保存id颜色映射并以浏览器镜像加快显示。
 
-> **核心亮点**：把ID持久颜色、即时镜像与不打开会话的picker组合，减少手动标题/CSS整理。详见[Q01](#research-q01)。
+> **亮点**：把ID持久颜色、即时镜像与不打开会话的picker组合，减少手动标题/CSS整理。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：DOM同名顺序误配可不只错画还写错ID，离线/持久失败只warn，HTTP写入无本层身份校验。详见[Q03](#research-q03)。
+> **主要限制**：DOM同名顺序误配可不只错画还写错ID，离线/持久失败只warn，HTTP写入无本层身份校验。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把ID持久颜色、即时镜像与不打开会话的picker组合，减少手动标题/CSS整理。详见[Q01](#research-q01)。
 
-把ID持久颜色、即时镜像与不打开会话的picker组合，减少手动标题/CSS整理。详见[Q01](#research-q01)。
-
 队列/原子替换和DOM mock可借鉴，坏文件覆盖和即时镜像不等持久恢复。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ DOM同名顺序误配可不只错画还写错ID，离线/持久失败只warn，H
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

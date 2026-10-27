@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[67ae018](https://github.com/345420242/dsh-commandcode-usage-inline/tree/67ae01891935472467cdf77562861062e91d9b5b)
+源码版本：[67ae018](https://github.com/345420242/dsh-commandcode-usage-inline/tree/67ae01891935472467cdf77562861062e91d9b5b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/345420242/dsh-commandcode-usage-inline)
 <!-- END META -->
 
-> **实现功能**：在对话输入区旁显示 Command Code 五小时、周额度和 credits。
+> **功能**：在对话输入区旁显示 Command Code 五小时、周额度和 credits。
 
-> **核心亮点**：把额度决策放到发送动作旁，优势是位置和一眼可见，不改变 provider 的计量、刷新或账户语义。 详见[Q03](#research-q03)。
+> **亮点**：把额度决策放到发送动作旁，优势是位置和一眼可见，不改变 provider 的计量、刷新或账户语义。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：完全依赖另一插件的 Remote 契约；一分钟轮询可能显示旧值，账户切换、返回字段漂移和离线恢复未证实。 详见[Q04](#research-q04)。
+> **主要限制**：完全依赖另一插件的 Remote 契约；一分钟轮询可能显示旧值，账户切换、返回字段漂移和离线恢复未证实。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：把额度决策放到发送动作旁，优势是位置和一眼可见，不改变 provider 的计量、刷新或账户语义。 详见[Q03](#research-q03)。
 
-把额度决策放到发送动作旁，优势是位置和一眼可见，不改变 provider 的计量、刷新或账户语义。 详见[Q03](#research-q03)。
-
 错误态与紧凑/展开层次清楚，适合做薄客户端；应对响应 schema 做版本协商并在徽标标注采样时间。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

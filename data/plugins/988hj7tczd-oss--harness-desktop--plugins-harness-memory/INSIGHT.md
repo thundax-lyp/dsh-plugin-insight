@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[9808ab7](https://github.com/988hj7tczd-oss/harness-desktop/tree/9808ab77392c7cd285f87de094daff1fcd322109/plugins/harness-memory)
+源码版本：[9808ab7](https://github.com/988hj7tczd-oss/harness-desktop/tree/9808ab77392c7cd285f87de094daff1fcd322109/plugins/harness-memory)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/harness-desktop) [![npm 30d 187](https://img.shields.io/static/v1?label=npm+30d&message=187&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/harness-memory) [![最新发布 2026-04-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-04-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/harness-memory)
 <!-- END META -->
 
-> **实现功能**：通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。
+> **功能**：通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。
 
-> **核心亮点**：相比每次复制个人偏好，增量是宿主存储域与系统提示的轻量闭环；采用全表近期选择而非检索，适合少量资料，不应归为语义记忆系统。[Q01](#research-q01)
+> **亮点**：相比每次复制个人偏好，增量是宿主存储域与系统提示的轻量闭环；采用全表近期选择而非检索，适合少量资料，不应归为语义记忆系统。[Q01](#research-q01)
 
-> **风险与缺陷**：表记录没有项目字段，注入函数也没有会话过滤，project标签只负责显示分类；多项目混用可能交叉污染。按文本完全相等去重不能处理改写、矛盾和过期事实。[Q03](#research-q03)
+> **主要限制**：表记录没有项目字段，注入函数也没有会话过滤，project标签只负责显示分类；多项目混用可能交叉污染。按文本完全相等去重不能处理改写、矛盾和过期事实。[Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相比每次复制个人偏好，增量是宿主存储域与系统提示的轻量闭环；采用全表近期选择而非检索，适合少量资料，不应归为语义记忆系统。[Q01](#research-q01)
 
-相比每次复制个人偏好，增量是宿主存储域与系统提示的轻量闭环；采用全表近期选择而非检索，适合少量资料，不应归为语义记忆系统。[Q01](#research-q01)
-
 依托宿主domain存储避免额外数据库服务，失败就绪状态明确，生命周期关闭句柄。实现短且易移植，但全表排序、无文本长度预算、无作用域和版本修订机制限制规模。可借鉴小型配置记忆闭环，不能直接复用成多租户知识库。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

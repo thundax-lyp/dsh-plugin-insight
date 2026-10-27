@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c7d92ef](https://github.com/3Tiga3/dsh-plugin-namecards/tree/c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e)
+源码版本：[c7d92ef](https://github.com/3Tiga3/dsh-plugin-namecards/tree/c7d92efb00e61c2062afe2a1aa6e67a4a7edc85e)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3Tiga3/dsh-plugin-namecards) [![npm 30d 860](https://img.shields.io/static/v1?label=npm+30d&message=860&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-namecards) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-namecards)
 <!-- END META -->
 
-> **实现功能**：为DSH插件换图标、中文备注和说明，支持文件夹、收藏、排序、导入导出及启停卸载。
+> **功能**：为DSH插件换图标、中文备注和说明，支持文件夹、收藏、排序、导入导出及启停卸载。
 
-> **核心亮点**：以稳定包/子行键把本地显示覆盖、整理与可搬运名片交付接入官方页和独立管理页，减少手改元数据。详见[Q01](#research-q01)。
+> **亮点**：以稳定包/子行键把本地显示覆盖、整理与可搬运名片交付接入官方页和独立管理页，减少手改元数据。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：只显示的定位遗漏真实卸载路由；回环peer不等用户授权，图标内容和整包恢复边界尚不闭合。详见[Q02](#research-q02)。
+> **主要限制**：只显示的定位遗漏真实卸载路由；回环peer不等用户授权，图标内容和整包恢复边界尚不闭合。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：以稳定包/子行键把本地显示覆盖、整理与可搬运名片交付接入官方页和独立管理页，减少手改元数据。详见[Q01](#research-q01)。
 
-以稳定包/子行键把本地显示覆盖、整理与可搬运名片交付接入官方页和独立管理页，减少手改元数据。详见[Q01](#research-q01)。
-
 safe键/路径、有限正文、原子rename及条件恢复wrapper可借鉴；身份认证、活动SVG、事务导入与生命周期清理各有具体限制。详见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ safe键/路径、有限正文、原子rename及条件恢复wrapper可借鉴；�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

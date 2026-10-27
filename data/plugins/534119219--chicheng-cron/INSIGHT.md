@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[99a223e](https://github.com/534119219/chicheng-cron/tree/99a223edfa090afa2f1f05c77526a53a0f277961)
+源码版本：[99a223e](https://github.com/534119219/chicheng-cron/tree/99a223edfa090afa2f1f05c77526a53a0f277961)
 
 <!-- BEGIN META -->
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-cron)
 <!-- END META -->
 
-> **实现功能**：在DSH Web侧栏管理cron任务，定时执行脚本、Skill或Agent，保存输出并提供推送、会话分组和归档选项。
+> **功能**：在DSH Web侧栏管理cron任务，定时执行脚本、Skill或Agent，保存输出并提供推送、会话分组和归档选项。
 
-> **核心亮点**：将脚本、headless Agent/Skill、运行历史和多渠道通知汇入同一Web任务管理界面，减少手工接线；不是新调度算法或隔离执行器。详见[Q02](#research-q02)。
+> **亮点**：将脚本、headless Agent/Skill、运行历史和多渠道通知汇入同一Web任务管理界面，减少手工接线；不是新调度算法或隔离执行器。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：每次唤醒回看一分钟而不记录occurrence，高频任务可让已触发任务重复due；会话按mtime猜测再归档，timeout只杀直接child，均未运行复现。详见[Q03](#research-q03)、[Q05](#research-q05)。
+> **主要限制**：每次唤醒回看一分钟而不记录occurrence，高频任务可让已触发任务重复due；会话按mtime猜测再归档，timeout只杀直接child，均未运行复现。详见[Q03](#research-q03)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -119,8 +119,6 @@
 
 > **亮点**：将脚本、headless Agent/Skill、运行历史和多渠道通知汇入同一Web任务管理界面，减少手工接线；不是新调度算法或隔离执行器。详见[Q02](#research-q02)。
 
-将脚本、headless Agent/Skill、运行历史和多渠道通知汇入同一Web任务管理界面，减少手工接线；不是新调度算法或隔离执行器。详见[Q02](#research-q02)。
-
 API限定POST、有1MiB JSON上限，fence检查回环或trustedHosts、拒绝sec-fetch-site=cross-site，有Origin时比较host含端口。这是具体来源防线，但Origin缺失允许、比较不含scheme，不构成用户身份认证。任务正文就是任意脚本或Agent提示词，cwd不是权限围栏，子进程继承宿主环境；修改调度的权限实质是执行宿主动作的权限。
 
 任务/历史以临时文件rename持久化，150ms去抖，读损坏直接空store，保存失败仅日志。各次flush未串行锁，同一tmp文件可被并发写或重命名；运行历史保留200条，但目录清理只在卸载时保留100份，长期运行输出目录可积累。超时只child.kill(SIGKILL)，未见进程组/后代树清理；脚本派生的子进程和外部副作用不因父进程杀死撤销。
@@ -177,7 +175,7 @@ teardown停止wakeTimer并flush/prune，不跟踪或等待正在执行的childre
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

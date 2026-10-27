@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[4ba131d](https://github.com/283Gawin/dsh-heatmap/tree/4ba131df0980c8c8af72901ca9fa0f31accb9a6d)
+源码版本：[4ba131d](https://github.com/283Gawin/dsh-heatmap/tree/4ba131df0980c8c8af72901ca9fa0f31accb9a6d)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/283Gawin/dsh-heatmap)
 <!-- END META -->
 
-> **实现功能**：从全部DSH会话usage和工作区Git历史生成侧栏热力图、今日token/cache及模型费用估值。
+> **功能**：从全部DSH会话usage和工作区Git历史生成侧栏热力图、今日token/cache及模型费用估值。
 
-> **核心亮点**：统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：未知模型默认估价且后缀override可能失效，失败/重复仓库缺覆盖说明；enabled不停止路由/扫描，估值非账单。详见[Q02](#research-q02)。
+> **主要限制**：未知模型默认估价且后缀override可能失效，失败/重复仓库缺覆盖说明；enabled不停止路由/扫描，估值非账单。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-统一usage/model、Git和常驻趋势入口，纯聚合可核，增量在可见性/接线而非计费或生产力算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 纯fold和price函数、SDK seam、TTL在途合流、四路读取、删除会话状态清理、HTTP错误通用化及Client定时/监听清理值得复用；它们不弥补统计口径/缺失和路由生命周期。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

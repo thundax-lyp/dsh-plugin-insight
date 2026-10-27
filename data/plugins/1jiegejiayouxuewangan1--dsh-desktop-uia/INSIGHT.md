@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[8237631](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/tree/8237631e1dc7d1aaf37466e9682bf3299ad53cd0)
+源码版本：[8237631](https://github.com/1jiegejiayouxuewangan1/dsh-desktop-uia/tree/8237631e1dc7d1aaf37466e9682bf3299ad53cd0)
 
 <!-- BEGIN META -->
 [![npm 30d 516](https://img.shields.io/static/v1?label=npm+30d&message=516&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-uia) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-uia)
 <!-- END META -->
 
-> **实现功能**：通过 Windows UI Automation 暴露桌面观察、动作与审批。
+> **功能**：通过 Windows UI Automation 暴露桌面观察、动作与审批。
 
-> **核心亮点**：把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。
+> **亮点**：把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。
 
-> **风险与缺陷**：自绘控件、焦点、DPI、多屏、UIPI 和选择器漂移会错目标。审批后目标仍可变化；剪贴板/发送/删除有不可逆副作用，后置快照不能撤销。 参见[Q04](#research-q04)。
+> **主要限制**：自绘控件、焦点、DPI、多屏、UIPI 和选择器漂移会错目标。审批后目标仍可变化；剪贴板/发送/删除有不可逆副作用，后置快照不能撤销。 参见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。
 
-把 UIA 的观察、选择、审批、执行和反馈接入 DSH，而非裸坐标点击；增量是工具契约、风险分类和日志，平台 UIA 非原创。 参见[Q03](#research-q03)。
-
 authorize 集中绑定工具、动作、窗口、理由和执行，后置观察比直接点击可审计。仍需验证 fail closed、批准绑定与日志脱敏。 参见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@ authorize 集中绑定工具、动作、窗口、理由和执行，后置观察�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

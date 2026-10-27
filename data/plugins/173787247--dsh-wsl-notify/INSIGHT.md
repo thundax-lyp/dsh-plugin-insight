@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[3c83e89](https://github.com/173787247/dsh-wsl-notify/tree/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9)
+源码版本：[3c83e89](https://github.com/173787247/dsh-wsl-notify/tree/3c83e8964ff6a639b58d4a36bbbb5b784c4453b9)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-notify)
 <!-- END META -->
 
-> **实现功能**：从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。
+> **功能**：从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。
 
-> **核心亮点**：把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：进程ok非实际显示，非终止错误可能不fallback；默认阻塞与分支总等待/取消未统一，裁剪不明且argv不保密。详见[Q02](#research-q02)。
+> **主要限制**：进程ok非实际显示，非终止错误可能不fallback；默认阻塞与分支总等待/取消未统一，裁剪不明且argv不保密。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 纯编码/脚本/格式函数与Host注册分开、execFile固定argv、子进程timeout和气泡dispose可复用；编码防语法混入不等argv保密，脚本结束也不等可靠通知收据。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

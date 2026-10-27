@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[52e1d55](https://github.com/535408248-oss/dsh-douyin-webview/tree/52e1d551a8ede5d7d3cbeb4157fca8655be2f401)
+源码版本：[52e1d55](https://github.com/535408248-oss/dsh-douyin-webview/tree/52e1d551a8ede5d7d3cbeb4157fca8655be2f401)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/535408248-oss/dsh-douyin-webview)
 <!-- END META -->
 
-> **实现功能**：在 DSH 桌面页脚打开可拖拽的抖音 Electron webview，使用桌面浏览器租约。
+> **功能**：在 DSH 桌面页脚打开可拖拽的抖音 Electron webview，使用桌面浏览器租约。
 
-> **核心亮点**：把桌面浏览器租约接成可常驻拖动的站点窗口，而 Host 半无服务逻辑；价值在娱乐便利。详见[Q01](#research-q01)。
+> **亮点**：把桌面浏览器租约接成可常驻拖动的站点窗口，而 Host 半无服务逻辑；价值在娱乐便利。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：失败提示称可点“⟳ 重试”，标题栏没有该按钮；main/preload 安全契约由作者描述而本仓库未提供，不能独立确认。详见[Q04](#research-q04)与[Q02](#research-q02)。
+> **主要限制**：失败提示称可点“⟳ 重试”，标题栏没有该按钮；main/preload 安全契约由作者描述而本仓库未提供，不能独立确认。详见[Q04](#research-q04)与[Q02](#research-q02)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把桌面浏览器租约接成可常驻拖动的站点窗口，而 Host 半无服务逻辑；价值在娱乐便利。详见[Q01](#research-q01)。
 
-把桌面浏览器租约接成可常驻拖动的站点窗口，而 Host 半无服务逻辑；价值在娱乐便利。详见[Q01](#research-q01)。
-
 raw DOM 避免侧栏 transform 截断，租约清理集中；guest 内 Fullscreen API 重写侵入性高且依赖宿主/站点版本。详见[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ raw DOM 避免侧栏 transform 截断，租约清理集中；guest 内 Fullscree
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

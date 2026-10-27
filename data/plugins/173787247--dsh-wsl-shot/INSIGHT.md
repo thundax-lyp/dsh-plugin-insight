@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[1b2a555](https://github.com/173787247/dsh-wsl-shot/tree/1b2a5552055384e72a914fc3ca5ecf406d8415a5)
+源码版本：[1b2a555](https://github.com/173787247/dsh-wsl-shot/tree/1b2a5552055384e72a914fc3ca5ecf406d8415a5)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-shot)
 <!-- END META -->
 
-> **实现功能**：将 Windows 剪贴板图片经 PowerShell 临时 PNG 复制为 WSL 文件，供后续多模态使用。
+> **功能**：将 Windows 剪贴板图片经 PowerShell 临时 PNG 复制为 WSL 文件，供后续多模态使用。
 
-> **核心亮点**：提供 win_shot 工具完成跨 Windows/WSL 剪贴板图片落盘；详见[Q01](#research-q01)。
+> **亮点**：提供 win_shot 工具完成跨 Windows/WSL 剪贴板图片落盘；详见[Q01](#research-q01)。
 
-> **风险与缺陷**：Public 临时图片在失败分支可能残留，时间戳命名与并发标记有碰撞风险；详见[Q02](#research-q02)。
+> **主要限制**：Public 临时图片在失败分支可能残留，时间戳命名与并发标记有碰撞风险；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：提供 win_shot 工具完成跨 Windows/WSL 剪贴板图片落盘；详见[Q01](#research-q01)。
 
-提供 win_shot 工具完成跨 Windows/WSL 剪贴板图片落盘；详见[Q01](#research-q01)。
-
 PowerShell/WinForms、wslpath、copyFileSync；无图提示，成功复制后尝试删除临时文件。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@ Public 临时图片在失败分支可能残留，时间戳命名与并发标记�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

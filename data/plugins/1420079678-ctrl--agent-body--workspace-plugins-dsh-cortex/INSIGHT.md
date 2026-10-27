@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[9403444](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex)
+源码版本：[9403444](https://github.com/1420079678-ctrl/agent-body/tree/9403444d87d5e962f9a4f0c4c10fdb48f37f7d66/workspace/plugins/dsh-cortex)
 
 <!-- BEGIN META -->
 [![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1420079678-ctrl/agent-body)
 <!-- END META -->
 
-> **实现功能**：按会话静默相位巩固工具经历成长期记忆卡，跨会话召回并对重复告警降噪。
+> **功能**：按会话静默相位巩固工具经历成长期记忆卡，跨会话召回并对重复告警降噪。
 
-> **核心亮点**：将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：统一 DSH_HOME 记忆库无项目/会话作用域，错误文本可持久化；写失败静默且非原子，全局召回可能跨任务误导。详见[Q03](#research-q03)。
+> **主要限制**：统一 DSH_HOME 记忆库无项目/会话作用域，错误文本可持久化；写失败静默且非原子，全局召回可能跨任务误导。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-将会话间的工具事件压缩为可复用提示，且无巩固模型调用。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 计时器、事件钩子与三工具由 ctx.effect 管理；JSONL 全量覆盖、错误静默。相同 DSH_HOME 的所有会话共享记忆，卡片不含作用域。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[eaa10e6](https://github.com/173787247/dsh-wsl-wininput/tree/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41)
+源码版本：[eaa10e6](https://github.com/173787247/dsh-wsl-wininput/tree/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-wininput)
 <!-- END META -->
 
-> **实现功能**：让 WSL 中的 DSH 按窗口和 UI Automation 元素定向发送 Windows 输入。
+> **功能**：让 WSL 中的 DSH 按窗口和 UI Automation 元素定向发送 Windows 输入。
 
-> **核心亮点**：相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。 参见[Q03](#research-q03)。
+> **亮点**：相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。 参见[Q03](#research-q03)。
 
-> **风险与缺陷**：最关键风险是目标解析错误后仍产生真实输入。窗口标题可能重复，元素树会变化，坐标受 DPI/多屏影响；非前台输入并非所有应用都支持，管理员窗口还受权限边界。源码级参数检查不能证明真实应用收到动作，也未看到统一的用户审批或动作后结构差异验证。 参见[Q04](#research-q04)。
+> **主要限制**：最关键风险是目标解析错误后仍产生真实输入。窗口标题可能重复，元素树会变化，坐标受 DPI/多屏影响；非前台输入并非所有应用都支持，管理员窗口还受权限边界。源码级参数检查不能证明真实应用收到动作，也未看到统一的用户审批或动作后结构差异验证。 参见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。 参见[Q03](#research-q03)。
 
-相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。 参见[Q03](#research-q03)。
-
 模块把 WSL 检测、宿主进程、参数/格式与具体执行分离，工具面较窄，便于审计。可借鉴的是元素模式优先于坐标，但执行脚本仍承担大量 Windows 特例；没有长期缓存可减少陈旧句柄，却增加每次启动成本。源码测试存在，本轮未运行，不能把兼容声明写成已验证。 参见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

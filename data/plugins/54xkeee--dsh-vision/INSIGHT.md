@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f8b2619](https://github.com/54xkeee/dsh-vision/tree/f8b26198aff85bc72c3bb12a2e843ebec68c04d1)
+源码版本：[f8b2619](https://github.com/54xkeee/dsh-vision/tree/f8b26198aff85bc72c3bb12a2e843ebec68c04d1)
 
 <!-- BEGIN META -->
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/54xkeee/dsh-vision) [![npm 30d 1,391](https://img.shields.io/static/v1?label=npm+30d&message=1%2C391&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-web) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-web)
 <!-- END META -->
 
-> **实现功能**：以豆包网页桥接、多类 API/CLI 通道为纯文本模型提供结构化视觉证据。
+> **功能**：以豆包网页桥接、多类 API/CLI 通道为纯文本模型提供结构化视觉证据。
 
-> **核心亮点**：多通道降级、证据记忆和任务模式组合完整，尤其豆包网页队列把已登录浏览器额度接入 Host。 详见[Q03](#research-q03)。
+> **亮点**：多通道降级、证据记忆和任务模式组合完整，尤其豆包网页队列把已登录浏览器额度接入 Host。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：默认零 API key 不等于零成本或低风险：需 Windows bridge、调试 Chrome 和豆包登录，网页 DOM 自动化及第三方留存都可能变化。 详见[Q04](#research-q04)。
+> **主要限制**：默认零 API key 不等于零成本或低风险：需 Windows bridge、调试 Chrome 和豆包登录，网页 DOM 自动化及第三方留存都可能变化。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：多通道降级、证据记忆和任务模式组合完整，尤其豆包网页队列把已登录浏览器额度接入 Host。 详见[Q03](#research-q03)。
 
-多通道降级、证据记忆和任务模式组合完整，尤其豆包网页队列把已登录浏览器额度接入 Host。 详见[Q03](#research-q03)。
-
 内容哈希、结构化不确定性、允许图片目录和证据恢复值得借鉴；通道众多也扩大配置、凭据与故障矩阵。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -159,7 +157,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

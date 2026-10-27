@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f1c3399](https://github.com/534119219/dsh-messaging/tree/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core)
+源码版本：[f1c3399](https://github.com/534119219/dsh-messaging/tree/f1c3399ef40e3f419161d153e997d6f30576a627/packages/messaging-core)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/dsh-messaging)
 <!-- END META -->
 
-> **实现功能**：把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。
+> **功能**：把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。
 
-> **核心亮点**：统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。
+> **亮点**：统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：入站白名单不等出站授权，send_message可直接指定已连接平台/chat，status列全部聊天；平台workspace共享且map非原子写，不能承诺多用户隔离与恰好一次投递。为静态核查未真实发送。详见[Q02](#research-q02)。
+> **主要限制**：入站白名单不等出站授权，send_message可直接指定已连接平台/chat，status列全部聊天；平台workspace共享且map非原子写，不能承诺多用户隔离与恰好一次投递。为静态核查未真实发送。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。
 
-统一平台adapter、DSH会话/命令和事件驱动出站，减少逐平台机器人重复接线；上游hermes/SDK/DSH能力不属原创，注册数量不代表效果。详见[Q02](#research-q02)。
-
 可复用的是adapter注册和统一capabilities输出、会话创建single-flight、使用持久session/event驱动发送以及按chat保留历史generation，减少多个入口并发创建同一agent。每平台workspace清楚标明工作产物归属，但不是安全隔离。发送工具和状态工具是全局面，需在移植时明确谁可查看/发送；日志/映射也应有留存治理。
 
 <a id="detail-section-5"></a>
@@ -159,7 +157,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c7abe09](https://github.com/863683348/dsh-plugin-local-life/tree/c7abe0935ceab43d784019fb42caf600b3aaadc5)
+源码版本：[c7abe09](https://github.com/863683348/dsh-plugin-local-life/tree/c7abe0935ceab43d784019fb42caf600b3aaadc5)
 
 <!-- BEGIN META -->
 [![npm 30d 857](https://img.shields.io/static/v1?label=npm+30d&message=857&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-local-life) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-local-life)
 <!-- END META -->
 
-> **实现功能**：提供本地生活算术工具，含预算、分摊、比价、折扣、换算、贷款与清单。
+> **功能**：提供本地生活算术工具，含预算、分摊、比价、折扣、换算、贷款与清单。
 
-> **核心亮点**：把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。
+> **亮点**：把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：loan 执行读取 schema 未声明的本金/利率/期限；compareUnitPrices 用数值数量直接比较 kg/g 等不同单位，可能错误标出最低价。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：loan 执行读取 schema 未声明的本金/利率/期限；compareUnitPrices 用数值数量直接比较 kg/g 等不同单位，可能错误标出最低价。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。
 
-把常见日常算术的确定性 helper 接入 Agent，减少口算并统一提示假设；增量主要在工具化和工作流组合，非新算法。详见[Q01](#research-q01)。
-
 纯函数与薄壳分离、独立测试可借鉴；参数 schema 和单位契约需一同校验，不能只测纯函数。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ loan 执行读取 schema 未声明的本金/利率/期限；compareUnitPrices �
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

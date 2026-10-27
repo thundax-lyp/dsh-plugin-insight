@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log)
+源码版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-daily-log)
 
 <!-- BEGIN META -->
 [![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,593](https://img.shields.io/static/v1?label=npm+30d&message=1%2C593&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
 <!-- END META -->
 
-> **实现功能**：聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。
+> **功能**：聚合Git提交和本地Claude、Codex、DSH对话，按项目与时间下钻活动，由会话模型按模板撰写并保存或导出工作报告。
 
-> **核心亮点**：将Git和三类本地日志归一为项目活动，按agent启用工具并用组索引下钻，再由模型按模板成文。详见[Q02](#research-q02)。
+> **亮点**：将Git和三类本地日志归一为项目活动，按agent启用工具并用组索引下钻，再由模型按模板成文。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：Git超过500条无截断收据，agent scan丢service partial/错误；提示确认没有状态token，approval缺失/never放行，任意输出目录可同名覆盖。活动不等于业务完成。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：Git超过500条无截断收据，agent scan丢service partial/错误；提示确认没有状态token，approval缺失/never放行，任意输出目录可同名覆盖。活动不等于业务完成。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：将Git和三类本地日志归一为项目活动，按agent启用工具并用组索引下钻，再由模型按模板成文。详见[Q02](#research-q02)。
 
-将Git和三类本地日志归一为项目活动，按agent启用工具并用组索引下钻，再由模型按模板成文。详见[Q02](#research-q02)。
-
 按 Agent 限定按需工具作用域与组索引下钻值得借鉴，减少常态上下文负担；但注册中途失败缺局部回滚、采集无全链覆盖收据，影响恢复和完整性，详见 [Q06](#research-q06)。
 
 <a id="detail-section-5"></a>
@@ -162,7 +160,7 @@ Git超过500条无截断收据，agent scan丢service partial/错误；提示确
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

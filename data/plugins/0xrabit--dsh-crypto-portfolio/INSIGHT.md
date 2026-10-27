@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[d3edb74](https://github.com/0xRabit/dsh-crypto-portfolio/tree/d3edb74bef1fcb779e899c26c37b19664ecf0a9f)
+源码版本：[d3edb74](https://github.com/0xRabit/dsh-crypto-portfolio/tree/d3edb74bef1fcb779e899c26c37b19664ecf0a9f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0xRabit/dsh-crypto-portfolio)
 <!-- END META -->
 
-> **实现功能**：通过 DSH 启动 Python 本地资产仪表盘，聚合链上/CEX 余额、历史、来源和健康视图。
+> **功能**：通过 DSH 启动 Python 本地资产仪表盘，聚合链上/CEX 余额、历史、来源和健康视图。
 
-> **核心亮点**：把多链、CEX 与历史视图接入一个自托管 DSH 插件，支持 profile 和来源切换；具体准确性仍受上游数据影响。详见[Q01](#research-q01)。
+> **亮点**：把多链、CEX 与历史视图接入一个自托管 DSH 插件，支持 profile 和来源切换；具体准确性仍受上游数据影响。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤后的 tokens 与 raw total 求值来源不同。详见[Q03](#research-q03)与[Q04](#research-q04)。
+> **主要限制**：HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤后的 tokens 与 raw total 求值来源不同。详见[Q03](#research-q03)与[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把多链、CEX 与历史视图接入一个自托管 DSH 插件，支持 profile 和来源切换；具体准确性仍受上游数据影响。详见[Q01](#research-q01)。
 
-把多链、CEX 与历史视图接入一个自托管 DSH 插件，支持 profile 和来源切换；具体准确性仍受上游数据影响。详见[Q01](#research-q01)。
-
 分层 Profile 存储、刷新锁、失败状态与历史重算可借鉴；敏感 GET 与 CEX 原始总额需修正。详见[Q02](#research-q02)及[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ HTTP 敏感 GET 未鉴权，非回环绑定可扩大暴露；CEX 黑名单过滤
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

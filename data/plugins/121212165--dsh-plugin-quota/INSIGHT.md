@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[f9a0f0f](https://github.com/121212165/dsh-plugin-quota/tree/f9a0f0fffbb9254da65a1a0925c73ba169c143c0)
+源码版本：[f9a0f0f](https://github.com/121212165/dsh-plugin-quota/tree/f9a0f0fffbb9254da65a1a0925c73ba169c143c0)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/121212165/dsh-plugin-quota) [![npm 30d 93](https://img.shields.io/static/v1?label=npm+30d&message=93&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-quota) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-quota)
 <!-- END META -->
 
-> **实现功能**：追踪会话 token 与估算花费，提供仪表、下步用量及上下文窗口预测。
+> **功能**：追踪会话 token 与估算花费，提供仪表、下步用量及上下文窗口预测。
 
-> **核心亮点**：将事后 usage 组织成模型可读提示和用户可查的下一步预估，属于会话决策集成增量；不是强制预算控制。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将事后 usage 组织成模型可读提示和用户可查的下一步预估，属于会话决策集成增量；不是强制预算控制。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：软提示无法保证预算刹车；reset 未同步已提交事件 projection，且校准价格与累计价格路径不同，需验证账本一致性。见 [Q03](#research-q03)。
+> **主要限制**：软提示无法保证预算刹车；reset 未同步已提交事件 projection，且校准价格与累计价格路径不同，需验证账本一致性。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：将事后 usage 组织成模型可读提示和用户可查的下一步预估，属于会话决策集成增量；不是强制预算控制。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-将事后 usage 组织成模型可读提示和用户可查的下一步预估，属于会话决策集成增量；不是强制预算控制。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 meter 与 projection 纯函数适合复用；接线模块同时维护本地和事件投影，需为清零与价格更新定义统一语义。每文件原子替换不等于跨文件事务；异常回空应在读者预算界面明确标记。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ meter 与 projection 纯函数适合复用；接线模块同时维护本地和�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

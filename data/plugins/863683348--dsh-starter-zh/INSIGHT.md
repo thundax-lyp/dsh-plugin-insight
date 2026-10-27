@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[d97e7f9](https://github.com/863683348/dsh-starter-zh/tree/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe)
+源码版本：[d97e7f9](https://github.com/863683348/dsh-starter-zh/tree/d97e7f9d2a5d64ac8bbbb239e83e6a22070509fe)
 
 <!-- BEGIN META -->
 [![npm 30d 128](https://img.shields.io/static/v1?label=npm+30d&message=128&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-starter-zh) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-starter-zh)
 <!-- END META -->
 
-> **实现功能**：在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。
+> **功能**：在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。
 
-> **核心亮点**：统一中文资料入口降低重复组织路径，非自动诊断或有证据的动态推荐。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：统一中文资料入口降低重复组织路径，非自动诊断或有证据的动态推荐。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：欢迎引导未实现profile action，固定推荐无版本/评分/核查来源，自查不验证或保存完成状态。详见[Q02](#research-q02)。
+> **主要限制**：欢迎引导未实现profile action，固定推荐无版本/评分/核查来源，自查不验证或保存完成状态。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：统一中文资料入口降低重复组织路径，非自动诊断或有证据的动态推荐。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-统一中文资料入口降低重复组织路径，非自动诊断或有证据的动态推荐。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 纯数据/渲染与宿主注册分离、action枚举与结构化输出让内容易核，且不自动执行示例降低查询副作用；不足是欢迎/契约不同步和静态推荐无证据链。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

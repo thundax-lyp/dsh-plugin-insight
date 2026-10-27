@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e53f63e](https://github.com/12we21/cute-fat-fish-pet/tree/e53f63e67227671aca092e3334c8611e29b880b6/src)
+源码版本：[e53f63e](https://github.com/12we21/cute-fat-fish-pet/tree/e53f63e67227671aca092e3334c8611e29b880b6/src)
 
 <!-- BEGIN META -->
 [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/12we21/cute-fat-fish-pet)
 <!-- END META -->
 
-> **实现功能**：DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。
+> **功能**：DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。
 
-> **核心亮点**：把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。
+> **亮点**：把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)。
+> **主要限制**：发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](#research-q04)、[Q05](#research-q05)、[Q06](#research-q06)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@ DSH 原生状态展示或独立 Windows 桌宠；本组件嵌入 DSH，并非独
 
 > **亮点**：把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。
 
-把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](#research-q01)。
-
 Host 路由、记忆/LLM 与 Electron helper 通过 bridge 共用配置；helper 缺 Electron 时自动下载。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Host 路由、记忆/LLM 与 Electron helper 通过 bridge 共用配置；helper
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

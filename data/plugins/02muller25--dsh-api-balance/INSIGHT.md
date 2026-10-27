@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[c27c8b6](https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e)
+源码版本：[c27c8b6](https://github.com/02Muller25/dsh-api-balance/tree/c27c8b61acf97714ab08d99f97b7be3a9007e52e)
 
 <!-- BEGIN META -->
 [![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/02Muller25/dsh-api-balance)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 输入框旁轮询显示 DeepSeek API 余额与可用状态。
+> **功能**：在 DSH Web 输入框旁轮询显示 DeepSeek API 余额与可用状态。
 
-> **核心亮点**：把账户余额置于会话输入附近并可配置刷新频率。详见[Q01](#research-q01)。
+> **亮点**：把账户余额置于会话输入附近并可配置刷新频率。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：凭证作为外部命令字符串参数、无路由内身份检查及重叠轮询可能影响安全/新鲜度；外围与真实利用待测。详见[Q02](#research-q02)和[Q03](#research-q03)。
+> **主要限制**：凭证作为外部命令字符串参数、无路由内身份检查及重叠轮询可能影响安全/新鲜度；外围与真实利用待测。详见[Q02](#research-q02)和[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：把账户余额置于会话输入附近并可配置刷新频率。详见[Q01](#research-q01)。
 
-把账户余额置于会话输入附近并可配置刷新频率。详见[Q01](#research-q01)。
-
 前后端功能明晰，但外部命令携带 bearer 和并发轮询缺序号/缓存控制是明显审查点。详见[Q02](#research-q02)至[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ Host 内部 HTTP、共享短缓存与响应序号可能减少凭证暴露和乱�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

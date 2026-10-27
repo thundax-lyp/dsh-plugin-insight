@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[8b1db94](https://github.com/173787247/dsh-wsl-download/tree/8b1db94ca8658004ebc304e9678bbdd54a491133)
+源码版本：[8b1db94](https://github.com/173787247/dsh-wsl-download/tree/8b1db94ca8658004ebc304e9678bbdd54a491133)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-download)
 <!-- END META -->
 
-> **实现功能**：在 WSL 中列举或复制 Windows Downloads 单文件，并给出模型下载静态提示。
+> **功能**：在 WSL 中列举或复制 Windows Downloads 单文件，并给出模型下载静态提示。
 
-> **核心亮点**：提供 Windows Downloads 到 WSL 的简单模型工具入口，详见[Q01](#research-q01)。
+> **亮点**：提供 Windows Downloads 到 WSL 的简单模型工具入口，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：destDir 任意、默认覆盖同名文件，源 stat 跟随符号链接；详见[Q02](#research-q02)。 copy前先stat整目录且同步不接signal，30/15秒不等总IO或取消保证。
+> **主要限制**：destDir 任意、默认覆盖同名文件，源 stat 跟随符号链接；详见[Q02](#research-q02)。 copy前先stat整目录且同步不接signal，30/15秒不等总IO或取消保证。
 
 **本文目录**
 
@@ -101,8 +101,6 @@ WSL shell 中 ls/cp Windows Downloads。
 
 > **亮点**：提供 Windows Downloads 到 WSL 的简单模型工具入口，详见[Q01](#research-q01)。
 
-提供 Windows Downloads 到 WSL 的简单模型工具入口，详见[Q01](#research-q01)。
-
 原生同步readdir/stat/copy不经宿主管理的fs/sandbox，dest默认process.cwd；完整目录访问后才取30展示，默认覆盖/跟随源链接，无目标hash/组清单/总期限。固定提示与formatter测试不证明复制可靠性。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ destDir 任意、默认覆盖同名文件，源 stat 跟随符号链接；详见
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

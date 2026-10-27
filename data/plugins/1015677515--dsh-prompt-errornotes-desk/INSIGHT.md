@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[fab9373](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/tree/fab9373ac396e430316b09693b654051583e9713)
+源码版本：[fab9373](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk/tree/fab9373ac396e430316b09693b654051583e9713)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1015677515/dsh-prompt-ErrorNotes-desk)
 <!-- END META -->
 
-> **实现功能**：在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。
+> **功能**：在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。
 
-> **核心亮点**：把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：sessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENTS；宿主授权未证实。详见[Q01](#research-q01)、[Q04](#research-q04)。
+> **主要限制**：sessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENTS；宿主授权未证实。详见[Q01](#research-q01)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把提示编辑、教训条目、注入预览和自述草稿审核整合到对话标题栏。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 动态 systemPrompt.section；可选 webServer 暴露 state/pending；状态 JSON 临时写改名；assistant-stream 最佳努力订阅。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ sessionPrompt 存于单个全局状态文件，且 POST 路由可改全局 AGENT
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[ae83fc8](https://github.com/01Virex/dsh-status-rotator/tree/ae83fc850c30e78b429a44865f5016b2ef26b08b)
+源码版本：[ae83fc8](https://github.com/01Virex/dsh-status-rotator/tree/ae83fc850c30e78b429a44865f5016b2ef26b08b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 208](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=208&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/01Virex/dsh-status-rotator) [![npm 30d 9,207](https://img.shields.io/static/v1?label=npm+30d&message=9%2C207&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-status-rotator) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-status-rotator)
 <!-- END META -->
 
-> **实现功能**：定制DSH运行状态文案、主题、弹幕与鲸尾动画，并提供设置和词库更新。
+> **功能**：定制DSH运行状态文案、主题、弹幕与鲸尾动画，并提供设置和词库更新。
 
-> **核心亮点**：将可编辑内容、阶段呈现和包外保存组合成等待区定制流程，相对一次性CSS更易调整；没有证据表明提升任务质量。见 [Q01](#research-q01)。
+> **亮点**：将可编辑内容、阶段呈现和包外保存组合成等待区定制流程，相对一次性CSS更易调整；没有证据表明提升任务质量。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：核心取舍在定制收益与宿主DOM/其他主题耦合之间，公开白名单不能强制第三方配合；并发保存保护也有明确条件。见 [Q03](#research-q03)。
+> **主要限制**：核心取舍在定制收益与宿主DOM/其他主题耦合之间，公开白名单不能强制第三方配合；并发保存保护也有明确条件。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：将可编辑内容、阶段呈现和包外保存组合成等待区定制流程，相对一次性CSS更易调整；没有证据表明提升任务质量。见 [Q01](#research-q01)。
 
-将可编辑内容、阶段呈现和包外保存组合成等待区定制流程，相对一次性CSS更易调整；没有证据表明提升任务质量。见 [Q01](#research-q01)。
-
 分层所有权、保存前提与生命周期清理有借鉴价值；隐含代价是多状态来源与大规模客户端接线的维护。具体机制与适配假设见 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

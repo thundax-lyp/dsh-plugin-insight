@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[fe4f23b](https://github.com/137/dsh-chatgpt-style/tree/fe4f23bed4bec14ad01577050eaacdc0893f57d9)
+源码版本：[fe4f23b](https://github.com/137/dsh-chatgpt-style/tree/fe4f23bed4bec14ad01577050eaacdc0893f57d9)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：调整 DSH 对话与侧栏样式、标注语义文字，并添加思考/快速模型档位切换。
+> **功能**：调整 DSH 对话与侧栏样式、标注语义文字，并添加思考/快速模型档位切换。
 
-> **核心亮点**：组合 CSS 视觉层级、语义标记和宿主模型目录快捷入口，使阅读及选档操作更集中；底层模型档位仍属宿主/provider。详见[Q01](#research-q01)。
+> **亮点**：组合 CSS 视觉层级、语义标记和宿主模型目录快捷入口，使阅读及选档操作更集中；底层模型档位仍属宿主/provider。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：标注会替换文本节点并移除标记/表情，但 dispose 不恢复；模型档位按 id 匹配未限制 provider，作者“关闭即原样”与快捷选择精度均有边界。详见[Q03](#research-q03)。
+> **主要限制**：标注会替换文本节点并移除标记/表情，但 dispose 不恢复；模型档位按 id 匹配未限制 provider，作者“关闭即原样”与快捷选择精度均有边界。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：组合 CSS 视觉层级、语义标记和宿主模型目录快捷入口，使阅读及选档操作更集中；底层模型档位仍属宿主/provider。详见[Q01](#research-q01)。
 
-组合 CSS 视觉层级、语义标记和宿主模型目录快捷入口，使阅读及选档操作更集中；底层模型档位仍属宿主/provider。详见[Q01](#research-q01)。
-
 流式 data-streaming 保护、textContent 安全插入和帧合并值得借鉴；应补 DOM 可逆性与准确路由。详见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[e88d6ec](https://github.com/1687210989/agent-clinic/tree/e88d6ec63d7a67277bf3c6c86f38a43ee97527c4)
+源码版本：[e88d6ec](https://github.com/1687210989/agent-clinic/tree/e88d6ec63d7a67277bf3c6c86f38a43ee97527c4)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1687210989/agent-clinic) [![npm 30d 95](https://img.shields.io/static/v1?label=npm+30d&message=95&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/agent-clinic) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/agent-clinic)
 <!-- END META -->
 
-> **实现功能**：只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。
+> **功能**：只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。
 
-> **核心亮点**：把本地事件定位、真实profile当前值和可执行处方联结，撤掉已不弱于建议的动作并保留实例证据，比泛化优化建议更具体；仍属启发式调查流程。详见[Q03](#research-q03)。
+> **亮点**：把本地事件定位、真实profile当前值和可执行处方联结，撤掉已不弱于建议的动作并保留实例证据，比泛化优化建议更具体；仍属启发式调查流程。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：E1按整会话同参数组筛布尔错误，没有比较错误内容或连续性，却输出连续同错；高输出和跨会话复问也不证明浪费或失忆。web访问控制和默认抄录需独立核对。详见[Q04](#research-q04)。
+> **主要限制**：E1按整会话同参数组筛布尔错误，没有比较错误内容或连续性，却输出连续同错；高输出和跨会话复问也不证明浪费或失忆。web访问控制和默认抄录需独立核对。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -116,8 +116,6 @@ Skill文案要求显式联网，模型工具与默认report本地分析；但web
 
 > **亮点**：把本地事件定位、真实profile当前值和可执行处方联结，撤掉已不弱于建议的动作并保留实例证据，比泛化优化建议更具体；仍属启发式调查流程。详见[Q03](#research-q03)。
 
-把本地事件定位、真实profile当前值和可执行处方联结，撤掉已不弱于建议的动作并保留实例证据，比泛化优化建议更具体；仍属启发式调查流程。详见[Q03](#research-q03)。
-
 可借鉴的组织是适配层、诊断层、证据展开和处方分离，统一结构化analyze再供Markdown与面板渲染。区间locator解析转发到同一个基础实现，解码后行号口径一致；同类型卡片合并保留instances，避免仅留下不可复核摘要。配置来源和被撤处方显式列出也能让用户知道“没建议”与“没评估”的差别。
 
 维护责任来自多份外部契约。YAML仅支持项目定义子集，随附默认和包默认是手工抄录，不会自动随宿主升级更新；目录元数据、事件格式和web服务接口也需要复核。多帧解码按magic扫描切片，不是完整zstd帧语法解析，坏帧计数能暴露一部分损失，不能单凭存在error字段认定完全保真。
@@ -170,7 +168,7 @@ E1按整会话同参数组筛布尔错误，没有比较错误内容或连续性
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[38411eb](https://github.com/58fly/dsh-language-guard/tree/38411ebd24d29f02c10f319f56c1a6110a7daff7)
+源码版本：[38411eb](https://github.com/58fly/dsh-language-guard/tree/38411ebd24d29f02c10f319f56c1a6110a7daff7)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/58fly/dsh-language-guard) [![npm 30d 126](https://img.shields.io/static/v1?label=npm+30d&message=126&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-language-guard) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-language-guard)
 <!-- END META -->
 
-> **实现功能**：用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。
+> **功能**：用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。
 
-> **核心亮点**：比单句提示多出工具说明后与尾部复述、可选周期和明确语言来源配置，属于宿主提示适配，不是强制语言约束。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：比单句提示多出工具说明后与尾部复述、可选周期和明确语言来源配置，属于宿主提示适配，不是强制语言约束。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：不能改API tools schema或保证服从；/language实际模块级覆盖并非严格会话隔离，自动zh映射统一简体，多插件重复注入有上下文负担。[Q03](#research-q03)
+> **主要限制**：不能改API tools schema或保证服从；/language实际模块级覆盖并非严格会话隔离，自动zh映射统一简体，多插件重复注入有上下文负担。[Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：比单句提示多出工具说明后与尾部复述、可选周期和明确语言来源配置，属于宿主提示适配，不是强制语言约束。[Q01](#research-q01)、[Q02](#research-q02)
 
-比单句提示多出工具说明后与尾部复述、可选周期和明确语言来源配置，属于宿主提示适配，不是强制语言约束。[Q01](#research-q01)、[Q02](#research-q02)
-
 显式section顺序、保留decision字段、source幂等标记与三态迁移可借鉴；常数依赖宿主契约，验证提示命中不能替代输出质量测试。[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

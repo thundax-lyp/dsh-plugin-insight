@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-分析版本：[ebc1ae1](https://github.com/988hj7tczd-oss/dsh-receipts/tree/ebc1ae1cc2a24da9ce8407bb02606db0438e83a7)
+源码版本：[ebc1ae1](https://github.com/988hj7tczd-oss/dsh-receipts/tree/ebc1ae1cc2a24da9ce8407bb02606db0438e83a7)
 
 <!-- BEGIN META -->
 [![npm 30d 77](https://img.shields.io/static/v1?label=npm+30d&message=77&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-receipts) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-receipts)
 <!-- END META -->
 
-> **实现功能**：汇总本地 DSH 会话与工具痕迹，生成 Markdown 和离线 HTML 报告，可选本地 Git 提交核对。
+> **功能**：汇总本地 DSH 会话与工具痕迹，生成 Markdown 和离线 HTML 报告，可选本地 Git 提交核对。
 
-> **核心亮点**：把会话、工具、跳过日志和本地 Git 痕迹组织成可离线复核的个人报告，比手动翻日志易查；活动指标与业务成果之间没有因果证明。详见[Q01](#research-q01)。
+> **亮点**：把会话、工具、跳过日志和本地 Git 痕迹组织成可离线复核的个人报告，比手动翻日志易查；活动指标与业务成果之间没有因果证明。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：Git 核对会忽略预标记的越界状态、未继承报告时间窗；开启路径脱敏又先改写 cwd。默认不脱敏的 HTML 还可能含会话敏感内容，不能把报告称作可信计费依据。详见[Q03](#research-q03)。
+> **主要限制**：Git 核对会忽略预标记的越界状态、未继承报告时间窗；开启路径脱敏又先改写 cwd。默认不脱敏的 HTML 还可能含会话敏感内容，不能把报告称作可信计费依据。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：把会话、工具、跳过日志和本地 Git 痕迹组织成可离线复核的个人报告，比手动翻日志易查；活动指标与业务成果之间没有因果证明。详见[Q01](#research-q01)。
 
-把会话、工具、跳过日志和本地 Git 痕迹组织成可离线复核的个人报告，比手动翻日志易查；活动指标与业务成果之间没有因果证明。详见[Q01](#research-q01)。
-
 日志 IO 经 ctx.fs、跳过日志显式计入、报告字段转义值得借鉴；Git 子进程独立通道未保存拒绝状态和时间窗，需端到端核查。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ Git 核对会忽略预标记的越界状态、未继承报告时间窗；开启�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
