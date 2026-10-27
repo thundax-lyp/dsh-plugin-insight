@@ -14,8 +14,10 @@
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。 | 适合已有 DSH 环境、希望有组织地筛选扩展的用户试用索引；先确认候选包身份与目标插件自己的条件，再在不含敏感凭据的环境验收加载、核心功能和禁用。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [DeepSeek Harness](#plugin-1333065091-root) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | 有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。 |
+| [DeepSeek Harness Tauri Desktop](#plugin-1333718792-root) | 提供DSH桌面界面、托管运行时和内核、插件与档案管理、数据迁移及移动远程访问。 | [Q04](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q04)、[Q05](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q05)建议有备份的独立profile用户先固定推荐内核，以非关键会话试托管启动与回退。 |
 | [DSH Desktop](#plugin-1333321333-root) | 独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。 | 先在新用户数据目录/可恢复profile试用社区包，核channel/runtime及访问开关，验证启动/切换/禁用恢复后再接主数据。 |
 | [DSH Market](#plugin-1333807290-root) | 在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。 | 维护多个社区插件的DSH用户可先在克隆profile中试用安装和备份流程。 |
+| [DSH Plugin Radar](#plugin-1323404274-root) | 收集DSH插件候选、归并兼容性记录，提供分类目录、静态JSON和可浏览站点。 | [Q05](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q05)建议目录维护者先作为只读发现数据试用，固定完整提交读取并校验，缓存失败保留旧版本日期。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | 重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
@@ -36,7 +38,7 @@
 | [dsh-model-manager](#plugin-1349266980-root) | 在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。 | 先在隔离端口登记已有服务、保存参数并核对测速口径。 |
 | [dsh-ollama-cloud](#plugin-1394197658-root) | 接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。 | 适合已有Ollama凭据且可锁宿主版本的用户，以短文本和一个可丢弃工具任务试接入。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。 | 先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。 |
-| [dsh-openviking-enhance](#plugin-1401255267-root) | 把本地 OpenViking Studio、会话提交状态与记忆召回详情接入 DSH 的只读观察插件。 | 仅在可信单机试用；核服务、身份、会话与原生 API 一致性，配置保存后重查实际连接。 |
+| [dsh-openviking-enhance](#plugin-1401255267-root) | 把 OpenViking Studio、会话记忆提交状态与当前召回详情接入 DSH 界面。 | 在可信个人单机和非敏感会话受控试用，先把一份归档差异与直接API核对；身份或连接不符立即退回直接查询。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。 | 仅受控反代部署且双层授权明确时试用；先查官方 trusted-host，验未授权浏览器被拒。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。 |
@@ -59,6 +61,8 @@
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供账户登录、用户管理、TOTP/Passkey、会话授权及按用户模型配置。 | 建议观察，先固定目标宿主完成可达面和状态恢复核查；互不信任用户还需独立系统权限边界，不能把登录页当隔离验收。 |
 | [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。 | 先观察，可信单用户只作趋势对照。 |
 | [dsh-vps](#plugin-1377159975-root) | 为自有 VPS 部署带登录网关、HTTPS 和服务管理的 DSH。 | 先在隔离 VPS 钉所有文件来源、演练令牌缺失/备份失败/回滚，并对照原生隧道或手工部署；正式公网持续采用需独立安全及恢复验收。 |
+| [dsh-web 根工程](#plugin-1331636953-root) | 维护 dsh-web 家族的多包工程，并通过根 bundle 入口转接聚合插件安装。 | 普通使用先选明确身份的聚合/单包，根保留为源码贡献和来源研究入口。 |
+| [dsh-web-all](#plugin-1331636953-packages-dsh-web-all) | 聚合安装 dsh-web 家族功能插件，并提供可选的界面兼容与响应式补丁层。 | 临时profile只启明确需要的模块，记录实际依赖和退出结果；无多模块需求优先独立包。 |
 | [dsh-web-lan-access](#plugin-1334255288-root) | 通过替换 WebServer 让 DSH Web 监听所有接口、自动信任接口 IP 并给远程浏览器 Host 能力。 | 默认不推荐。 |
 | [dsh-web-restart](#plugin-1335060007-root) | Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。 | 暂不直接采用；只在隔离 Windows 复核脚本、授权和失败状态后考虑。 |
 | [dsh-workspace-tools](#plugin-1363511446-root) | 按已注册工作区为新根会话自动选择 Agent 与权限预设的设置页和事件监听器。 | 先在低权限工作区限定试用；全权限规则和大小写敏感环境先验证匹配及首 turn 顺序。 |
@@ -95,6 +99,7 @@
 | [dsh-wsl-winshot](#plugin-1391140767-root) | 从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。 | 只在隔离桌面试用，指定私有输出目录并手工核 PNG/残留；敏感窗口需额外授权。 |
 | [dsh-wsl-wslconfig](#plugin-1351854461-root) | 读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。 | 确定目标路径/原文安全后只作线索试用，空字段先核错误。 |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
+| [EchoBird](#plugin-1158472225-root) | 桌面AI工具管理器，提供账号与模型配置、安装管理、本地模型和多候选路由入口。 | [Q04](../../plugins/edison7009--echobird/INSIGHT.md#research-q04)、[Q05](../../plugins/edison7009--echobird/INSIGHT.md#research-q05)建议能恢复配置的用户只用少量已知provider在非关键任务试路由，先核对协议和有状态续接。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
 | [Mirage](#plugin-1231135337-root) | 通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。 | 构建跨数据源Agent的平台开发者可先用RAM和只读测试源试验Mirage。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 将DSH文件、Shell、子进程和溢出输出接口接到Mirage虚拟工作区。 | 需要让DSH仅访问受控挂载的平台开发者可在克隆profile里试用该适配。 |
@@ -162,6 +167,20 @@
 
 > **建议**：未验证假设是以作用域、持久事件、取消/清理的接缝验收预测插件互换成本，优于仅semver；同任务对照修改量与恢复，成本不降则否定。[Q04](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md#research-q04)
 
+<a id="plugin-1333718792-root"></a>
+
+## [DeepSeek Harness Tauri Desktop](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md)
+
+[![GitHub ★ 3,294](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C294&color=yellow&logo=github&style=flat)](https://github.com/dsh-tauri/deepseek-harness-desktop)
+
+> **用途**：这是DSH的第三方Tauri桌面应用与托管环境，不是单一npm插件。面向希望在本机用Harness而不愿手工安装Node/pnpm、管理profile和内核的人。合格结果是能在选定profile启动可用内核、执行预期任务，并在更新/搬迁后找到会话与配置；仅窗口打开或插件数量不能证明任务交付。
+
+> **亮点**：[Q01](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q01)、[Q02](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q02)识别的贡献是将CLI运行时与内核维护转为清单驱动的桌面管理，并用ABI探测和只缓存Ready避免仅按semver判断。迁移保留源、最后切环境的编排见[Q03](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q03)，是具体恢复设计；内置插件数量、桌面截图不是用户收益证据。
+
+> **思考**：[Q03](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q03)表明迁移covers只检查聚合文件数/字节不少于源，链接重建失败可仅warning。done不能概括为逐文件完整或全部插件恢复；[Q02](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q02)的Unknown也允许启动。最影响采用的是用户把这几层就绪当成会话可恢复，本轮无数据损坏复现。
+
+> **建议**：[Q05](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q05)提出未验证的分层就绪与关键路径迁移清单。对会话等关键文件核对路径/哈希/链接，区分运行时、内核、插件、会话结果；用同体积变更/链接失败/未知探测/磁盘满对照误读和定位耗时，无增益或开销过大则停止。
+
 <a id="plugin-1333321333-root"></a>
 
 ## [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md)
@@ -189,6 +208,20 @@
 > **思考**：[Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03)市场与宿主共处故障域，旧版鉴权及进程崩溃恢复需单独验证；单文件rename和catch回滚不能当跨文件事务。
 
 > **建议**：[Q05](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q05)以独立profile试装和变更计划前移恢复责任，故障注入比较可启动性和修复耗时，假设未验证。
+
+<a id="plugin-1323404274-root"></a>
+
+## [DSH Plugin Radar](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md)
+
+[![GitHub ★ 1,484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C484&color=yellow&logo=github&style=flat)](https://github.com/AdamPlatin123/dsh-plugin-radar)
+
+> **用途**：这是目录、兼容性记录聚合器和静态数据服务，不是给DSH新增运行能力的可安装插件。适合需要从大量候选中初筛、维护社区目录或接入插件市场的读者和开发者。合格结果是得到有明确出处与数据日期的候选，再回上游检查安装、权限、当前版本及退出，不是凭“可用”状态跳过验收。
+
+> **亮点**：[Q02](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q02)识别的贡献是以canonical统一事实源替代Markdown反向解析，在身份归并和冲突政策后从最终输出行派生统计。相比手工社区清单，发现消费者得到可缓存分类与状态数据；内部一致性提高不证明运行判定正确，测试引擎仍属私有边界。
+
+> **思考**：[Q03](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q03)指出最影响价值的是逐条状态无法普遍回指插件commit、宿主、环境与日志。项目明确披露这一限制，聚合器计数相等或成功退出不能认证当前兼容。适合发现，不能把历史可用当自动安装门槛。
+
+> **建议**：[Q05](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q05)推导未验证的逐条最小证据接口。按实际生产者保存版本/环境/结果/日志元组，缺项不进入本条件已测试筛选；用20个候选对照误判、定位时间和保全成本，不优于发现清单则停止。它尚未实现，也不是已确认插件商业机会。
 
 <a id="plugin-1387227102-root"></a>
 
@@ -474,15 +507,15 @@
 
 ## [dsh-openviking-enhance](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/A2chitect/dsh-openviking-enhance) [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=yellow&logo=github&style=flat)](https://github.com/A2chitect/dsh-openviking-enhance) [![npm 30d 969](https://img.shields.io/static/v1?label=npm+30d&message=969&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-openviking-enhance)
 
-> **用途**：适合可信单机的 OpenViking 记忆调试与会话解释。详见[Q01](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q01)。
+> **用途**：已部署 DSH 与本地 OpenViking 的维护者可核对一次会话的记忆归档与当前召回。
 
-> **亮点**：在 DSH UI 直接追踪 commit 进度、archive diff 和当前召回证据，减少跨应用诊断。详见[Q01](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q01)。
+> **亮点**：把分散的Studio、归档差异和检索查询组织到DSH同会话观察流程，增量在诊断集成而非检索算法。详见[Q01](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q01)。
 
-> **思考**：当前召回不是历史注入记录；HTTP 防线是 loopback 而非用户身份授权；volatile 保存后的 host 重构需验证。详见[Q02](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q02)至[Q04](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q04)。
+> **思考**：当前重检索不能证明历史模型注入；loopback来源防线也不构成用户或会话授权，仅适合可信单机边界。详见[Q03](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q03)。
 
-> **建议**：未验证改进是路由授权/会话绑定、历史注入痕迹与配置热重建。详见[Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05)。
+> **建议**：未验证假设是在注入边界保存轮次命中快照，与当前重检索并列解释；须以修改记忆后的前后对照证明差异，同时核对敏感数据保留代价。详见[Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05)。
 
 <a id="plugin-1335349535-root"></a>
 
@@ -791,6 +824,34 @@
 > **思考**：辅助文件默认main漂移，setup.lock未建立且令牌缺失/不可读时向导退回开放；卸载tar失败但部分备份仍可chmod成功时可能继续删除，不保证备份可恢复。均为有条件静态核查，未作公网攻击或删除复现。详见[Q03](../../plugins/aicivilization--dsh-vps/INSIGHT.md#research-q03)。
 
 > **建议**：基于网关交付增量和令牌/供应链/备份反例，提出未验证的可验证部署清单、封闭首次注册和恢复闸门组合；相对现版增加哈希钉住及失败拒绝，也增加维护和救援负担。故障注入对照与否定条件见[Q05](../../plugins/aicivilization--dsh-vps/INSIGHT.md#research-q05)。
+
+<a id="plugin-1331636953-root"></a>
+
+## [dsh-web 根工程](../../plugins/zhu1090093659--dsh-web/INSIGHT.md)
+
+[![GitHub ★ 9,562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C562&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web)
+
+> **用途**：贡献者维护多包和生成规则，用户通过载具转接聚合安装。
+
+> **亮点**：根工程集中维护聚合生成和多包一致性，Git入口转接而不另实现子功能；相对直接聚合安装仅局部来源便利。见[Q01](../../plugins/zhu1090093659--dsh-web/INSIGHT.md#research-q01)。
+
+> **思考**：根Git SHA不等于所有加载包的版本，^范围和registry解析需另存实际锁；全仓能力不能重复归为根插件。见[Q03](../../plugins/zhu1090093659--dsh-web/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是只读输出Git/npm/子包/启用行的来源闭包证明；若现有lock已足够且无真实维护收益则不另建。见[Q04](../../plugins/zhu1090093659--dsh-web/INSIGHT.md#research-q04)。
+
+<a id="plugin-1331636953-packages-dsh-web-all"></a>
+
+## [dsh-web-all](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md)
+
+[![GitHub ★ 9,562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C562&color=yellow&logo=github&style=flat)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 91,620](https://img.shields.io/static/v1?label=npm+30d&message=91%2C620&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-web-all) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@linxin666/dsh-web-all)
+
+> **用途**：已需要多个家族模块的DSH维护者可集中安装并按行管理。
+
+> **亮点**：统一家族依赖、行名和默认配置，当前真实子包拥有各自客户端与生命周期；不重复计算子包功能贡献。见[Q01](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md#research-q01)。
+
+> **思考**：当前patch直挂真实子包，旧故障隔离注释不构成现行保证；一键安装仍有多版本、DOM和状态维护负担。见[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md#research-q02)。
+
+> **建议**：未验证方向是任务驱动的最小模块依赖/权限预览；若版本组合维护超过安装恢复收益就保留现有全包/单包。见[Q04](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md#research-q04)。
 
 <a id="plugin-1334255288-root"></a>
 
@@ -1296,6 +1357,20 @@
 
 > **建议**：把读写工具拆成不同权限，并要求重启/删除通过 Host 侧一次性批准令牌，可显著降低模型误触发半径。 详见[Q08](../../plugins/439436269-ctrl--dsh-zspace/INSIGHT.md#research-q08)。
 
+<a id="plugin-1158472225-root"></a>
+
+## [EchoBird](../../plugins/edison7009--echobird/INSIGHT.md)
+
+[![GitHub ★ 3,442](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C442&color=yellow&logo=github&style=flat)](https://github.com/edison7009/EchoBird)
+
+> **用途**：根项目是Tauri/Rust加React的桌面AI工具管理应用，不是可安装到DSH profile的单一插件。作者覆盖工具安装、模型配置、账号切换和本地模型等场景；本轮深入Smart Router，其合格结果是兼容客户端发到本地入口后由明确候选响应，出错能说明哪个provider失败和如何退回直接调用。
+
+> **亮点**：[Q01](../../plugins/edison7009--echobird/INSIGHT.md#research-q01)、[Q02](../../plugins/edison7009--echobird/INSIGHT.md#research-q02)支持的增量是将多provider候选与客户端入口分开，以桌面控制面、统一本地协议和健康状态减少手工改endpoint。它不是按任务质量选最佳模型，账号切换与API路由分开；本轮其他安装/账号功能仅作者范围，不据此加分。
+
+> **思考**：[Q03](../../plugins/edison7009--echobird/INSIGHT.md#research-q03)表明previous_response_id续接绑定原候选和fingerprint，provider变化或过期需完整输入；background/conversation也被拒绝。自动failover不能概括为状态无损迁移或输出等价。文档与源码差异加重配置判断负担，实际发布二进制兼容未知，不照抄旧限制或宣称全支持。
+
+> **建议**：[Q05](../../plugins/edison7009--echobird/INSIGHT.md#research-q05)提出未验证的协议/续接能力探针，显示固定provider任务验收而非只看延迟；用合成工具/结构化/续接任务对照优先级路由，若误选不降或探针费用维护过大就停止。该设想不计已有贡献。
+
 <a id="plugin-1364766828-root"></a>
 
 ## [feishu-dsh-plugin](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md)
@@ -1438,4 +1513,4 @@
 
 ## 更新时间
 
-2026-10-26
+2026-10-27

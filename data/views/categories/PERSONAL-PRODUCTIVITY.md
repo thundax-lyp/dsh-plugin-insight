@@ -31,6 +31,8 @@
 | [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、语义操作和定向输入能力。 | 需要操作无API原生应用的macOS开发者可先试可丢弃表单或编辑任务。 |
 | [DSH Cost Tracker](#plugin-1338230382-root) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 只建议需要会话级费用线索且能准备可丢弃宿主副本的用户，先在该副本仅启本地账本，对正常、缓存、取消三类调用与厂商账单核对。 |
 | [DSH Douyin](#plugin-1332642596-root) | 在DSH WebUI侧栏或浮动面板播放第三方随机短视频，支持系列选择、直链历史与连播。 | 先观察；确有DSH内娱乐需求者可在隔离profile单源短时评估，确认收起停止与布局恢复，持续报错或干扰主任务则停用。 |
+| [DSH Pocket](#plugin-1334962266-root) | 通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。 | [Q04](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q04)、[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)建议有常驻DSH Web的个人先在可信LAN保留密码试少量任务，核对同会话与主动关闭。 |
+| [DSH Wallpaper Engine](#plugin-1336114531-root) | 把本地图片、视频及 Wallpaper Engine 场景和网页壁纸接入 DSH Web 界面。 | 有profile恢复经验的个人用户可在临时环境从可信静态图和小视频开始；复杂动态内容和发布集需先核对。 |
 | [DSH Weekly Panel](#plugin-1400385991-packages-dsh-weekly-panel) | 在DSH主面板显示插件周榜、模型可用性与赞助信息。 | 经常查看DSH周榜的本地用户可试用主面板入口。 |
 | [dsh-accountdisplayname-edit](#plugin-1424420835-root) | 在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。 | 经常分享界面的用户可先在非敏感截图中试用，检查保存、取消、恢复默认和重载；不要省略整图复核。 |
 | [dsh-ai-arcade](#plugin-1413897334-root) | DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。 | 假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。 |
@@ -65,6 +67,7 @@
 | [dsh-curate](#plugin-1428582868-root) | 按消息标重要性、改写模型可见文本，并以备份和区间摘要整理 DSH 会话上下文。 | 先复制非关键会话，标明必须保留事实，少量应用与压缩后检查下一请求。 |
 | [dsh-custom-plugin](#plugin-1342948215-root) | DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。 | 隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。 |
 | [dsh-cyber-particle](#plugin-1334274281-root) | DSH Web Canvas 粒子网络背景，提供设置页与本地持久化。 | 作为个人装饰观察；减动效用户和低性能设备建议先关闭或等修复/性能验证。 |
+| [dsh-deep-whale 皮肤合集](#plugin-1333123776-root) | 为DSH提供鲸鱼娘主题皮肤合集和已安装皮肤的切换管理器。 | [Q03](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q03) 根观察用于选包，单皮肤从最小配置试；多皮肤保持管理器启用，出问题优先官方默认，不默认跨版本放行。 |
 | [dsh-desktop-sidecar](#plugin-1428653439-root) | 为 DSH 提供 Windows 窗口、UIA、截图、离线 OCR、点击、剪贴板输入和按键工具。 | 先在测试应用跑只读窗口、UIA和OCR，再检查输入结果与剪贴板变化。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 暴露桌面观察、动作与审批。 | 建议观察。 |
 | [dsh-dictation-hotkey](#plugin-1414017637-root) | 给 DSH Web 输入框增加按住或切换式语音热键，复用宿主转写并填入/可选发送。 | 建议观察，先关闭自动发送，在测试会话和慢转写场景核落点；敏感语音先核 provider 处理位置。 |
@@ -188,8 +191,11 @@
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | 先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。 |
 | [ikun-theme-skin](#plugin-1335144603-root) | 给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。 | 个人隔离试用，需能关闭音效并核原外观偏好；共享环境先经用户选择。 |
 | [KeyFlow Typing Studio](#plugin-1428515480-root) | DSH内的中英文打字练习面板，提供拼音、计时、上屏计分和本地记录。 | 已有DSH且需要短时双语练习者可控试用；先验证本人IME、纠错口径及本地保存，不将成绩作为正式考试或长期学习成效证明。 |
+| [maid-atelier 深海女仆工坊](#plugin-1333123776-maid-atelier) | 为DSH Web加入鲸鱼娘女仆主题、亮暗背景、角色装饰和可配置侧栏展示。 | [Q03](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md#research-q03) 仅凭风格偏好试用，先确认核心控件不遮挡；单皮肤最小配置，多皮肤按合集管理器规则处理，不叠装dsh-web适配版。 |
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。 | 先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。 |
 | [oil-dsh-title](#plugin-1374149009-root) | 按最近用户消息异步维护DSH会话标题，采用emoji与对象/持续目标格式并调用官方rename。 | 先观察；敏感/重要会话应先有人工命名保护与最小输入策略。 |
+| [OpenBiliClaw 本地内容发现后端](#plugin-1175278883-root) | 集中跨平台内容信号、个人画像和反馈，提供本地运行的个性化发现与推荐服务。 | [Q04](../../plugins/whiteguo233--openbiliclaw/INSIGHT.md#research-q04) 当前观察，先一个公开来源和非敏感偏好；未核清远程模型和删除前不批量导入真实历史，不把心理画像当准确测量。 |
+| [OpenPets DSH adapter](#plugin-1229168545-packages-dsh) | 把 DSH 状态、错误、审批和工具活动转为 OpenPets 桌面伴侣的反应与气泡。 | 非敏感单会话、已有桌宠用户受控试用；保留宿主真实终态与审批流程。 |
 | [Petdex](#plugin-1227102698-root) | 提供动画宠物画廊、安装CLI与响应编码Agent活动的独立桌面应用。 | 喜欢动画陪伴的编码用户可小范围试用桌面宠物与DSH桥。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。 | 个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。 |
 | [Voyager](#plugin-1069943001-root) | 浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。 | 跨多个AI网页重复整理聊天的用户可先在一个非敏感站点试用单项功能，备份数据后再导入简单JSON，并测试启停、同页多插件和页面刷新。 |
@@ -488,6 +494,34 @@
 > **思考**：相同URL回放不等于永久同一视频。内存历史、第三方跳转/时效与浏览器策略限制可靠性，安装到DSH的净便利也尚无独立用户依据。[Q03](../../plugins/anacondakc--dsh-douyin/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是暴露媒体身份/时效和失败原因、采用主动续播，能比默认随机连播降低坏链重试及主任务打断；需和独立标签页及当前dock对照回放率、带宽和中断负担。[Q04](../../plugins/anacondakc--dsh-douyin/INSIGHT.md#research-q04)
+
+<a id="plugin-1334962266-root"></a>
+
+## [DSH Pocket](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md)
+
+[![GitHub ★ 2,415](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C415&color=yellow&logo=github&style=flat)](https://github.com/shaobeichen/dsh-pocket) [![npm 30d 16,044](https://img.shields.io/static/v1?label=npm+30d&message=16%2C044&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pocket) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pocket)
+
+> **用途**：它面向已有电脑端DSH Web、离开电脑后想查看输出或继续提交任务的人。手机扫码进入同一套Web界面，代理HTTP与WebSocket而不是迁移Agent、重建另一会话或在手机端执行模型。合格结果是手机看到并操作预期会话、确认需要的人为审批，再回电脑仍是同一状态。
+
+> **亮点**：[Q01](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q01)、[Q02](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q02)识别的增量是将宿主兼容代理、扫码、移动布局和隧道管理收敛为设置页，减少个人远程访问的配置交接。移动布局来自dsh-web-mobile，公网由cloudflared提供，贡献为集成而非新协议。无同条件任务对照证明净节时。
+
+> **思考**：[Q03](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q03)指出同屏意味着PIN登录后进入广泛本机控制面，查看与写入没有已确认的独立角色。主动开隧道需要确认，但重启可按标记自动恢复，重启并非可靠撤销。对只想看状态的人，这个权限/持续授权取舍会改变采用判断；未运行复现，不把设计取舍称为认证绕过。
+
+> **建议**：[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)推导未验证的只读手机入口：服务端及WS白名单配独立限时token，写操作临时升权并限制会话。比较查看、审批、提交与重连/过期/重启，若减少误授权且负担可接受才继续；稳定白名单无法成立或额外操作抵消便利则停止。
+
+<a id="plugin-1336114531-root"></a>
+
+## [DSH Wallpaper Engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md)
+
+[![GitHub ★ 3,022](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C022&color=yellow&logo=github&style=flat)](https://github.com/elysia395/dsh-wallpaper-engine) [![npm 30d 81,334](https://img.shields.io/static/v1?label=npm+30d&message=81%2C334&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine)
+
+> **用途**：已有本地壁纸资源的个人DSH用户，可把可信内容作为聊天背景并管理切换。
+
+> **亮点**：相对单张CSS背景，把本地Scene/Web/Video组织为DSH内可配置和切换的背景流程；WebWallGL与七子包贡献归各自实现。见[Q01](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q01)。
+
+> **思考**：源码根包不等于完整八包发行集，复杂壁纸的播放成功也不证明前台可读性与资源开销可接受。见[Q03](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是以输入延迟和可读性预算放行动态背景，超预算回退静态图；同任务多档对照无改善则停止。见[Q05](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q05)。
 
 <a id="plugin-1400385991-packages-dsh-weekly-panel"></a>
 
@@ -964,6 +998,20 @@
 > **思考**：prefers-reduced-motion 命中后初次不启动，但页面可见性恢复无条件 start；损坏本地配置直接入计算。详见[Q03](../../plugins/aks1st--dsh-cyber-particle/INSIGHT.md#research-q03)和[Q04](../../plugins/aks1st--dsh-cyber-particle/INSIGHT.md#research-q04)。
 
 > **建议**：未验证方向是持续减动效监听、恢复配置校验和低帧率/静态模式，以真实帧耗和后台恢复验收。详见[Q05](../../plugins/aks1st--dsh-cyber-particle/INSIGHT.md#research-q05)。
+
+<a id="plugin-1333123776-root"></a>
+
+## [dsh-deep-whale 皮肤合集](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md)
+
+[![GitHub ★ 2,879](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C879&color=yellow&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale)
+
+> **用途**：喜欢角色主题、需要按场景切换多套DSH皮肤的人从合集选择独立包。
+
+> **亮点**：[Q02](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q02)、[Q03](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q03) 以稳定wiring、互斥管理和官方退路减少手工主题冲突，贡献在主题治理；根不独立增加模型能力或第四个主题。
+
+> **思考**：[Q02](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q02)、[Q03](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q03) 配置写入补偿不等于视觉事务，兼容豁免不等于输入与布局已验；DOM变化和并发配置仍可能破坏切换。
+
+> **建议**：[Q04](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q04) 未验证假设是对皮肤/宿主版本绑定核心交互验收，以遮挡注入比较放行漏检和回退时间；负担过高或无改善即停止。
 
 <a id="plugin-1428653439-root"></a>
 
@@ -2687,6 +2735,20 @@
 
 > **建议**：未验证假设是显式字素口径、独立累计最佳和保存回执减少成绩误解；用扩展汉字、历史淘汰和配额失败对照，若解释和稳定性不改善则否定。[Q05](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q05)
 
+<a id="plugin-1333123776-maid-atelier"></a>
+
+## [maid-atelier 深海女仆工坊](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md)
+
+[![GitHub ★ 2,879](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C879&color=yellow&logo=github&style=flat)](https://github.com/Small-tailqwq/dsh-deep-whale) [![npm 30d 59,613](https://img.shields.io/static/v1?label=npm+30d&message=59%2C613&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier)
+
+> **用途**：偏好角色主题的DSH用户个性化界面，同时保持输入与阅读可用。
+
+> **亮点**：[Q02](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md#research-q02)、[Q03](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md#research-q03) 将美术、状态装饰、素材交付和释放归属集成为可逆主题，减少手写CSS接线；不改变模型或业务能力。
+
+> **思考**：[Q03](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md#research-q03) DOM与宿主样式契约变化可能使主题失配或遮挡核心控件，版本声明和清理函数存在不等于交互与停用已验收。
+
+> **建议**：[Q04](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md#research-q04) 未验证假设是跨主题/宽度的核心可点击区域回归并绑定宿主版本，以遮挡注入比较漏检和维护成本；无改善即停止。
+
 <a id="plugin-1335798113-packages-messaging-core"></a>
 
 ## [messaging-core](../../plugins/534119219--dsh-messaging--packages-messaging-core/INSIGHT.md)
@@ -2714,6 +2776,34 @@
 > **思考**：生成中缺用户seq和标题CAS，新意图可能被丢/覆盖；Windows hint与隐私校验仅有限模式。详见[Q03](../../plugins/598829314--oil-dsh-title/INSIGHT.md#research-q03)。
 
 > **建议**：从丢弃式互斥推导版本化最小上下文、最后意图单飞与人工让权，按具体竞争/隐私反例比较误改和成本；未验证。详见[Q05](../../plugins/598829314--oil-dsh-title/INSIGHT.md#research-q05)。
+
+<a id="plugin-1175278883-root"></a>
+
+## [OpenBiliClaw 本地内容发现后端](../../plugins/whiteguo233--openbiliclaw/INSIGHT.md)
+
+[![GitHub ★ 3,593](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C593&color=yellow&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw)
+
+> **用途**：愿维护来源与反馈的个人在自己管理的候选库里发现跨平台内容。
+
+> **亮点**：[Q01](../../plugins/whiteguo233--openbiliclaw/INSIGHT.md#research-q01)、[Q02](../../plugins/whiteguo233--openbiliclaw/INSIGHT.md#research-q02) 把跨平台信号与显式纠正集中成个人可维护的推荐控制流程，贡献在控制权和反馈组织；外仓DSH桥能力不归根。
+
+> **思考**：[Q03](../../plugins/whiteguo233--openbiliclaw/INSIGHT.md#research-q03) 本地存储不等于数据不出机，远程LLM配置会收到画像构造输入；精细心理描述和解释不证明更懂用户，需本人盲评。
+
+> **建议**：[Q05](../../plugins/whiteguo233--openbiliclaw/INSIGHT.md#research-q05) 未验证假设是固定候选集与留出偏好，对照关键词基线的前10有用率、负反馈违背和纠正成本；无改善或成本更高就停止。
+
+<a id="plugin-1229168545-packages-dsh"></a>
+
+## [OpenPets DSH adapter](../../plugins/openpetshq--openpets--packages-dsh/INSIGHT.md)
+
+[![GitHub ★ 1,333](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C333&color=yellow&logo=github&style=flat)](https://github.com/OpenPetsHQ/openpets) [![npm 30d 556](https://img.shields.io/static/v1?label=npm+30d&message=556&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@open-pets/dsh) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@open-pets/dsh)
+
+> **用途**：已有OpenPets的个人用户可在切出DSH时接收可选工作/审批提示。
+
+> **亮点**：把DSH活动移到桌面伴侣并以尽力异步通知避免阻塞工作，增量在注意力提示而非执行能力。见[Q01](../../plugins/openpetshq--openpets--packages-dsh/INSIGHT.md#research-q01)。
+
+> **思考**：idle被写成success/Done且状态未按session隔离；规则过滤不能覆盖任意敏感正文，不能用宠物话术验收工作。见[Q03](../../plugins/openpetshq--openpets--packages-dsh/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是idle只表达等待，为成功绑定真实终态和会话，并聚合需人工动作；两会话理解测试无改善则不加复杂度。见[Q04](../../plugins/openpetshq--openpets--packages-dsh/INSIGHT.md#research-q04)。
 
 <a id="plugin-1227102698-root"></a>
 
@@ -2773,4 +2863,4 @@
 
 ## 更新时间
 
-2026-10-26
+2026-10-27

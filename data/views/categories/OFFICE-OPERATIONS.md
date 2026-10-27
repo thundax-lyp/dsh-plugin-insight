@@ -17,6 +17,7 @@
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
+| [dsh-im](#plugin-1334561781-root) | 把微信、飞书等 IM 渠道与多机器人接入 DSH，并提供会话同步和主动投递。 | 一个非敏感私聊、一个固定工作区、明确收件目标可受控试用；不将Matrix实验加密用于敏感内容。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。 |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。 | 远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见[Q02](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q02)、[Q03](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q03)。 |
@@ -129,6 +130,20 @@
 > **思考**：默认首结构匹配无PID/HWND绑定，路径回读仅子串兜底，确认消息不等应用接收且取消未传播。详见[Q03](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md#research-q03)、[Q04](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md#research-q04)。
 
 > **建议**：研究目标租约、精确路径集合与应用回执，拒多候选并限制全局输入，比较误投/重复确认。当前未验证。详见[Q05](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md#research-q05)。
+
+<a id="plugin-1334561781-root"></a>
+
+## [dsh-im](../../plugins/xmanrui--dsh-im/INSIGHT.md)
+
+[![GitHub ★ 2,599](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C599&color=yellow&logo=github&style=flat)](https://github.com/xmanrui/dsh-im) [![npm 30d 66,600](https://img.shields.io/static/v1?label=npm+30d&message=66%2C600&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@xmanrui/dsh-im) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@xmanrui/dsh-im)
+
+> **用途**：有机器人维护经验的用户可在IM私聊调用固定DSH工作区并接收结果。
+
+> **亮点**：相对独立机器人脚本，把多渠道身份、DSH会话和主动投递组织到同Host服务；增量在交付编排与共享路由。见[Q01](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q01)。
+
+> **思考**：unknown停止重试有明确保护，但发送成功到pending删除之间仍有崩溃窗口；多渠道权限与宿主认证不能由统一UI代替。见[Q02](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q02)。
+
+> **建议**：未验证方向是将延迟交付attempt与已有receipt关联，重启先按幂等键和平台messageId对账；断响应/杀进程对照无改善则停止。见[Q05](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q05)。
 
 <a id="plugin-1344714819-root"></a>
 
@@ -328,4 +343,4 @@
 
 ## 更新时间
 
-2026-10-26
+2026-10-27

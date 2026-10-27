@@ -53,8 +53,13 @@
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。 | 适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。 |
 | [EverOS](#plugin-1085086903-root) | 以Markdown为真相源的本地优先记忆运行时，同步SQLite/LanceDB索引并支持用户与Agent记忆。 | 有限试用单用户非敏感记忆，先关reflection测人工笔记基线，再验证纠错、删除、重建与断连；DSH适配单独验收。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | 有条件试用lookup-only。 |
+| [last30days-cn](#plugin-1196982492-root) | 检索近期中文平台讨论并聚合热榜，输出带来源的研究报告。 | [Q04](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q04) 适合可接受非完整样本的线索研究，先核查每源状态与抽样链接；不适合未经补证的总体舆论比例或事实定论。 |
 | [Learn Harness Engineering](#plugin-1195243030-root) | 项目式编码 Agent 工程课程，提供状态、验证、范围与跨会话恢复教材、示例和脚手架 Skill。 | 适合已经遇到跨会话丢状态或提前报完成的开发者，先选一个真实失败，在项目副本上加入最少文件，并用相同任务比较前后。 |
+| [Memmy Agent](#plugin-1302496224-root) | 提供本地优先的跨 Agent 记忆服务、桌面与 CLI 入口，并通过适配接力项目上下文。 | 先观察并画清具体配置的数据流/退出方案，非敏感小样本核来源与纠错后再决定接入。 |
 | [MemOS](#plugin-1014729376-root) | 面向 LLM 与 Agent 的记忆管理平台，提供云、自托管及本地插件，支持长期记忆存取与管理。 | 有重复跨会话记忆需求且能审核内容的开发者，可先在独立profile、非敏感数据和固定模型路由上试用。 |
+| [MemOS Local Memory](#plugin-1014729376-apps-memos-local-plugin) | 为DSH、OpenClaw和Hermes提供本地记忆、后台采集、分层检索及可选经验演化。 | [Q08](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q08)建议已有稳定DSH和可备份本地状态的开发者先试轻量跨轮召回。 |
+| [MemSearch](#plugin-1153190876-root) | 面向Markdown知识库提供语义检索、混合搜索、增量索引、文件监听与多Agent接入。 | [Q05](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q05)建议已有Markdown且能管理Python/provider和索引的开发者，在独立collection用小语料比较语义与精确问题，打开原文核对并检查failed_files。 |
+| [MemSearch DSH](#plugin-1153190876-plugins-dsh) | 为DSH接入共享Markdown记忆、会话摘要、检索注入、记忆Skill及候选评审面板。 | 采用结论为有界试用。 |
 | [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | [Q06](../../plugins/volcengine--openviking/INSIGHT.md#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。 |
 | [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [Q06](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。 |
 | [ReMe](#plugin-849121458-root) | 以可编辑Markdown保存Agent长期记忆，提供自动提炼、混合检索和多种运行时接入。 | 可供愿意维护本地知识目录和模型服务的开发者在独立workspace试用文件记忆。 |
@@ -664,6 +669,20 @@
 
 > **建议**：可探索来源版本/适用域/证据级别与冲突收据，区分词面lock和人工确认，比较跨项目错引、覆盖与维护开销；未实现。详见[Q07](../../plugins/398894496-arch--krouter/INSIGHT.md#research-q07)。
 
+<a id="plugin-1196982492-root"></a>
+
+## [last30days-cn](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md)
+
+[![GitHub ★ 1,967](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C967&color=yellow&logo=github&style=flat)](https://github.com/Jesseovo/last30days-skill-cn)
+
+> **用途**：中文研究与内容人员以时间窗主题检索发现线索，再核查原始出处。
+
+> **亮点**：[Q01](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q01)、[Q02](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q02) 在上游研究Skill基础上组织中文来源与质量状态，减少手工聚合步骤；成熟检索/去重框架和上游贡献不作本项目原创。
+
+> **思考**：[Q03](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q03) 不同采集路径、日期缺失和转载使样本不可当全网观点比例，热度与相关性分数不验证事实；关键结论必须回原文。
+
+> **建议**：[Q05](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q05) 未验证假设是用来源路径和日期/转载覆盖矩阵约束比较资格，五份报告对照误读与阅读时间；没有改善就停止。
+
 <a id="plugin-1195243030-root"></a>
 
 ## [Learn Harness Engineering](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md)
@@ -678,6 +697,20 @@
 
 > **建议**：未验证假设是在五部分结构检查外，为每条“完成”规则绑定一个代表性任务及失败注入，从静态约定转为可观察遵循度。固定同模型、仓库和预算，对比未改造、仅模板与任务证据三种环境，测漏跑验证、错误完成、跨会话恢复和人工介入。若结构分提高而任务指标不变，或维护验证任务的成本超过节省，则不继续加机制。[Q05](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md#research-q05)
 
+<a id="plugin-1302496224-root"></a>
+
+## [Memmy Agent](../../plugins/memtensor--memmy-agent/INSIGHT.md)
+
+[![GitHub ★ 2,144](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C144&color=yellow&logo=github&style=flat)](https://github.com/MemTensor/memmy-agent)
+
+> **用途**：跨DSH及其他Agent切换的用户希望保留背景、偏好与进度；根是独立应用/服务工程。
+
+> **亮点**：把跨Agent历史组织为服务化结构记忆并提供DSH自动捕获/召回接缝，增量在连续性与共享状态，而非单纯聊天摘要。见[Q01](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q01)。
+
+> **思考**：local-first不等于离线，远程embedding/LLM会接收文本；后台服务与记忆库不会随关窗口或卸载DSH adapter自动消失。见[Q03](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是沿sourceMemoryIds核纠错/撤回传播，区分未来召回与历史已注入；若现有链已足够或无净收益不另建账本。见[Q04](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q04)。
+
 <a id="plugin-1014729376-root"></a>
 
 ## [MemOS](../../plugins/memtensor--memos/INSIGHT.md)
@@ -691,6 +724,48 @@
 > **思考**：后台采集不阻塞下一轮意味着紧接着的召回可读到旧提交状态，最新纠正不保证立即可见；三秒前台上限保护响应而不证明记忆正确或新鲜。另需区分“本地存储”与“不出机器”：默认辅助调用可委托宿主provider，若它是远程模型，相关材料仍会离开本机。根README的整体分数和纯本地表述不能替代这个版本、这个路由的实测。[Q03](../../plugins/memtensor--memos/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是为已提交记忆标注revision和捕获进度，仅对用户明确纠正的事实提供短期限read-your-correction门槛或临时覆盖；普通轮次继续不等待后台。由当前延迟/新鲜度取舍推导，增量不是全局强同步，而是让高风险纠错可检验。用连续“陈述→纠正→立即追问”与跨项目反例，对比默认队列、全等待和选择性纠错门槛，测陈旧回答、误跨项目召回、P95延迟及模型费用。无明确准确收益或超出延迟预算则否定。[Q05](../../plugins/memtensor--memos/INSIGHT.md#research-q05)
+
+<a id="plugin-1014729376-apps-memos-local-plugin"></a>
+
+## [MemOS Local Memory](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md)
+
+[![GitHub ★ 12,110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C110&color=yellow&logo=github&style=flat)](https://github.com/MemTensor/MemOS) [![npm 30d 8,367](https://img.shields.io/static/v1?label=npm+30d&message=8%2C367&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
+
+> **用途**：它服务已使用DSH、反复处理相近任务且愿意保留历史状态的开发者。合格结果是下一任务找回与当前项目有关的先前事实和行动依据，不能将旧的错误策略当作新指令。README把trace、policy、world model及Skill列为合作层级；这是整个本地组件的设计范围，不是MemOS仓库根服务的全部能力，也不是默认配置每次都会执行四层演化的证据。
+
+> **亮点**：[Q01](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q01)与[Q02](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q02)支持的具体贡献是把跨宿主记忆核心接入DSH接受输入后的生命周期，以同轮去重、三秒上限和fail-open保护前台，并把采集留在后台。相比人工维护笔记后每次复制，自动采集与召回减少手工挑选步骤；没有同任务结果证明净节时或正确率提升。四层演化属于本地组件可选完整模式，默认轻量配置不能作为自动产出策略和Skill的证明。
+
+> **思考**：[Q03](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q03)表明默认轻量反馈写入不等于完整演化；[Q02](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q02)表明下一轮不等待后台提交。最影响贡献的是“跨轮记忆”可能在紧接着的纠错任务中读到旧状态，这是一项可解释的时延取舍，并非本轮复现的错误。若错误历史不能被可靠识别和纠正，自动召回的便利会被复核负担抵消。
+
+> **建议**：[Q07](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q07)推导未验证的纠错水位方案。显式纠错后展示记忆来源与提交水位，只对这些轮次短暂等待或排除旧水位结果，可能减少错误回流；需要保持同一延迟预算。用20个连续纠错任务对比当前方案与人工笔记，若错误引用不降或人工时间增加则停止，不计入已有贡献。
+
+<a id="plugin-1153190876-root"></a>
+
+## [MemSearch](../../plugins/zilliztech--memsearch/INSIGHT.md)
+
+[![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=yellow&logo=github&style=flat)](https://github.com/zilliztech/memsearch)
+
+> **用途**：根项目是Python语义记忆检索基础库与CLI，不是直接注册DSH生命周期的单个npm适配器。面向已有Markdown知识、项目历史和Agent记忆的开发者，合格结果是给自然语言问题返回相关片段及来源，可继续打开原文核对。调用者可以集成Python API或CLI，具体Agent自动捕获由各平台组件另行实现。
+
+> **亮点**：[Q01](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q01)、[Q02](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q02)识别的贡献是以Markdown保持用户可编辑事实、让向量库成为可重建派生物，并用内容/位置/模型身份和有范围的清理组织增量索引。相比rg增加语义候选，成熟embedding、BM25和RRF来自已有方法，组合贡献不等于原创算法或任务胜出。
+
+> **思考**：[Q03](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q03)显示旧块删除先于新块embedding；provider失败时来源原文件仍在，但索引可能暂缺内容。可重建解释恢复依据，不能保证每次查询完整或恢复免费；IndexReport应成为使用完整覆盖结论的门槛。本轮未运行复现，不称永久原件丢失。
+
+> **建议**：[Q06](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q06)提出未验证的来源版本准备后切换方案。先准备新嵌入再切换可见版本，失败保留最后成功版本并提示陈旧；需要处理重复、查询过滤和清理成本。按阶段注入失败，对比简单重试，不能减少空窗或维护代价过大则停止。
+
+<a id="plugin-1153190876-plugins-dsh"></a>
+
+## [MemSearch DSH](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md)
+
+[![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=yellow&logo=github&style=flat)](https://github.com/zilliztech/memsearch) [![npm 30d 3,358](https://img.shields.io/static/v1?label=npm+30d&message=3%2C358&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@zilliz/memsearch-dsh) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@zilliz/memsearch-dsh)
+
+> **用途**：它面向在同一项目中交替使用DSH和其他编码Agent、需要找回既有决策的开发者。合格交付是从历史中找出正确的项目决策并能下钻到原会话，而非仅搜索到相似文字。DSH组件将完成轮次摘要成共享Markdown，借助外部MemSearch CLI索引和检索，再把候选接到DSH模型步骤；Python检索核心和Milvus能力属于其依赖，不算DSH适配器独创。
+
+> **亮点**：[Q01](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q01)、[Q02](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q02)识别的增量是把DSH事件转换成跨Agent共同Markdown与原会话锚点，并通过原生Skill和pre-step候选注入减去手工复制环节。检索算法来自外部MemSearch核心，适配器贡献是数据和流程接线。候选评审与主动安装分开，但不是强制审批门禁。
+
+> **思考**：[Q03](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q03)显示摘要失败写入unavailable占位后仍带捕获锚点，事件重放先按锚点去重而不会重新摘要。幂等只能保证这一条记录不重复，不能保证里面已有可用知识；原会话可追溯也不等于已自动恢复。该源码限制尚未运行复现，试用应检查占位而非只检查日记存在。
+
+> **建议**：[Q06](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q06)推导未验证的分状态捕获方案。保留原会话锚点，单列摘要失败/完成，并允许原位重试与索引更新；用摘要超时、退出和索引故障对照人工笔记。若出现重复、旧内容或人工时间未减少则停止，新增并发和版本维护成本必须计入。
 
 <a id="plugin-1128123594-root"></a>
 
@@ -778,4 +853,4 @@
 
 ## 更新时间
 
-2026-10-26
+2026-10-27

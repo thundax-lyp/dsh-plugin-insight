@@ -1,0 +1,45 @@
+{
+    "repository": "vshulcz/deja-vu",
+    "repository_id": 1300173275,
+    "captured_at": "2026-10-27T02:11:15.718Z",
+    "window_start": "2026-09-27T02:11:15.718Z",
+    "stars": 1310,
+    "pushed_at": "2026-10-26T23:27:21Z",
+    "issues": {
+        "open": 29,
+        "closed": 2561,
+        "created_30d": 935,
+        "closed_30d": 917,
+        "updated_30d": 985
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-deja",
+        "captured_at": "2026-10-27T02:11:15.718Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 5274,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-deja",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T00:58:42.731Z",
+            "captured_at": "2026-10-26T13:10:34.281Z",
+            "source_url": "https://registry.npmjs.org/dsh-deja",
+            "error": null,
+            "latest_version": "0.23.1",
+            "latest_published_at": "2026-10-24T21:47:20.564Z",
+            "latest_error": null
+        }
+    }
+}
