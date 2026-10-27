@@ -1,37 +1,27 @@
 {
     "repository": "AppliedYuu/dsh-WallpaperAndCost",
     "repository_id": 1338425616,
-    "captured_at": "2026-10-24T05:55:54.312Z",
-    "window_start": "2026-09-24T05:55:54.312Z",
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
     "stars": 4,
-    "pushed_at": "2026-10-17T11:38:25Z",
+    "pushed_at": "2026-10-27T08:20:48Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 1,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26E8:889B0:85ABCC:8FE082:6ADC486E and timestamp 2026-10-24 05:55:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2772:248351:83D1DC:8E0886:6ADC486F and timestamp 2026-10-24 05:55:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20created%3A2026-09-24T05%3A55%3A54.312Z..2026-10-24T05%3A55%3A54.312Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 282E:2489D8:7B9912:85CE3F:6ADC4870 and timestamp 2026-10-24 05:56:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A55%3A54.312Z..2026-10-24T05%3A55%3A54.312Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 28EE:2E91EC:7B705C:85A738:6ADC4871 and timestamp 2026-10-24 05:56:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20updated%3A2026-09-24T05%3A55%3A54.312Z..2026-10-24T05%3A55%3A54.312Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 29CA:879BB:814C7F:8B846A:6ADC4872 and timestamp 2026-10-24 05:56:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ]
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
 }

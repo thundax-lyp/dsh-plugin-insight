@@ -16,6 +16,7 @@
 | [BrowserSkill](#plugin-1276665883-root) | 通过 CLI 和浏览器扩展，让智能体使用现有 Chrome 或 Edge 登录状态执行网页任务。 | 需要利用既有网页登录态的用户可先在专用 profile 做读取任务，确认会话停止和借用页归还，再考虑有写入的工作；已有可靠 API 时先比较 API 路径。 |
 | [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。 | 已用 DSH Web 的用户可从只读网页或测试表单试用，先核对 CLI 和扩展版本、技能显露、任务预览及结束清理，再扩展到实际工作流。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
+| [DSH × Univer Office](#plugin-1335241492-root) | 在 DSH 中创建、编辑和审阅多种办公内容，并以隔离草稿管理变更与导出 | [Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04) 单人简单文件副本有限试用，审核后才合并并在原Office程序核对；复杂格式和不互信多用户部署不包含在建议内。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
@@ -99,6 +100,22 @@
 > **建议**：以稳定会话复合键和持久去重索引提升准确度，并将 token 导入限定到明确授权流程且不向浏览器返回原值；待验证，详见[Q02](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q02)、[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。
 
 [查看完整分析](../../plugins/534119219--chicheng-stats/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335241492-root"></a>
+
+## [DSH × Univer Office](../../plugins/dream-num--dsh-univer-office/INSIGHT.md)
+
+[![GitHub ★ 612](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=612&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dream-num/dsh-univer-office) [![npm 30d 44,919](https://img.shields.io/static/v1?label=npm+30d&message=44%2C919&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office)
+
+> **用途**：可信单人环境下，希望在覆盖正式办公结果前预览、确认或丢弃AI变更的DSH用户。
+
+> **亮点**：[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01) 将Univer内容运行时接入DSH审阅流程；[Q02](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q02) 草稿状态、merge审批与ready revision材料约束提供可审核变更增量。办公计算/渲染归Univer，审批执行归宿主。
+
+> **思考**：[Q03](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q03) 草稿并非租户隔离，认证浏览器后的/uf请求不重复workspace范围校验；结构和截图不代表公式语义及Office保真。
+
+> **建议**：可以提出未验证的审核收据，把readyDraftHeadRevision、人工确认的关键公式/文本断言、截图或lint结果和导出文件摘要绑定到同一版本；任何后续改动使旧结果显式过期。相对只有ready或局部渲染检查，增量是让用户知道“审核的是哪版、导出的又是哪版”，而非再增加Office功能数量。
+
+[查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1418842530-root"></a>
 

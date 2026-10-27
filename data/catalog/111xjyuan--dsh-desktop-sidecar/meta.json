@@ -1,33 +1,55 @@
 {
     "repository": "111xjyuan/dsh-desktop-sidecar",
     "repository_id": 1428653439,
-    "captured_at": "2026-10-24T05:55:33.035Z",
-    "window_start": "2026-09-24T05:55:33.035Z",
-    "stars": 0,
-    "pushed_at": "2026-10-23T13:52:52Z",
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 1,
+    "pushed_at": "2026-10-26T14:23:42Z",
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A111xjyuan%2Fdsh-desktop-sidecar%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6D2:2F19F4:1BCCB8:1E661A:6AE0623B and timestamp 2026-10-27 08:35:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A111xjyuan%2Fdsh-desktop-sidecar%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6DC:B0A29:1AD4F4:1D72A7:6AE0623D and timestamp 2026-10-27 08:35:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A111xjyuan%2Fdsh-desktop-sidecar%20is%3Aissue%20created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6E6:2F531E:1C27AE:1EC44D:6AE0623E and timestamp 2026-10-27 08:35:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A111xjyuan%2Fdsh-desktop-sidecar%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6EC:18D427:1BDEDA:1E7BD6:6AE0623F and timestamp 2026-10-27 08:35:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A111xjyuan%2Fdsh-desktop-sidecar%20is%3Aissue%20updated%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E6F2:17EFCF:1EBEF4:215DE8:6AE06241 and timestamp 2026-10-27 08:35:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
     "npm": {
         "package_name": "dsh-desktop-sidecar",
-        "captured_at": "2026-10-24T05:55:40.719Z",
-        "window_start": "2026-09-24",
-        "window_end": "2026-10-23",
-        "downloads_30d": 205,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-desktop-sidecar",
-        "error": null,
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-desktop-sidecar",
+        "error": "fetch failed",
         "publication": {
             "first_published_at": "2026-10-21T16:50:52.497Z",
-            "captured_at": "2026-10-24T05:55:40.719Z",
+            "captured_at": "2026-10-27T08:34:14.025Z",
             "source_url": "https://registry.npmjs.org/dsh-desktop-sidecar",
             "error": null,
-            "latest_version": "0.4.5",
-            "latest_published_at": "2026-10-22T03:37:32.468Z",
+            "latest_version": "0.5.2",
+            "latest_published_at": "2026-10-26T15:49:16.380Z",
             "latest_error": null
         }
     }

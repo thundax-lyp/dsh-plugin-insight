@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[270ccee](https://github.com/361533652/dsh-token-bi/tree/270cceef087f17fde08645099af1aefd63c2f0f4)
+源码版本：[6db82de](https://github.com/361533652/dsh-token-bi/tree/6db82deac21dca3e39fcece698ed6adecbcdee8e)
 
 <!-- BEGIN META -->
 
@@ -12,7 +12,7 @@
 
 > **亮点**：将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：搜索和标题事件使用启发式估算并混入普通总量，不能无条件称只统计上报；冷会话按createdAt缓存，外层强刷不必失效内层，可能继续陈旧。[Q03](#research-q03)
+> **主要限制**：[Q03](#research-q03) 搜索/标题估算混入总量；磁盘缓存已增加日志摘要，但createdAt内存命中在前，强刷重建不能保证发现外部追加。报告显式先返stale并后台更新是首屏取舍，不能当实时计量。
 
 **本文目录**
 
@@ -48,16 +48,10 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 跨会话总览 | 看本机用量变化 | 含特定估算，非现金账单 |
-| 日期模型cwd筛选 | 定位消耗来源 | 事件来源和时区口径一致 |
-| 父子调用树 | 分清自身与子会话 | 子会话独立统计 |
-| 逐轮下钻 | 核对turn-step用量 | 明细展示截断，原数据另查 |
-| CSV导出 | 外部复核会话数据 | 保留当前窗口与计量边界 |
-| 缓存报告接口 | 复用聚合 | 冷日志键与强刷边界需注意 |
+- **界面**：跨会话token总览、交叉筛选、调用树与逐轮下钻
+- **Host 路由**：报告和单会话明细读取
 
 #### 启动与依赖
 
@@ -82,8 +76,10 @@
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
 | 首次使用 | Host内存和历史读取，费用未知 | 安装重启与样本核对 | 需sessionQuery和Web |
-| 持续使用 | 缓存、汇总渲染资源未测 | 解释估算、未知和父子口径 | token不等于现金 |
+| 持续使用 | 多层缓存、zstd压缩与汇总资源未测 | 解释估算、未知和父子口径 | token不等于现金 |
 | 失败恢复 | 重读与重载资源未知 | 回原日志核对、检查缓存 | 强刷不保证冷缓存失效 |
+
+
 
 #### 效果
 
@@ -94,7 +90,7 @@
 | 总量 | 含上报及特定估算 | 精确对账与误差 |
 | 新鲜度 | 活跃seq与外层TTL | 冷日志变化识别 |
 
-> **思考**：搜索和标题事件使用启发式估算并混入普通总量，不能无条件称只统计上报；冷会话按createdAt缓存，外层强刷不必失效内层，可能继续陈旧。[Q03](#research-q03)
+> **思考**：[Q03](#research-q03) 搜索/标题估算混入总量；磁盘缓存已增加日志摘要，但createdAt内存命中在前，强刷重建不能保证发现外部追加。报告显式先返stale并后台更新是首屏取舍，不能当实时计量。
 
 <a id="detail-section-4"></a>
 
@@ -102,13 +98,13 @@
 
 > **亮点**：将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](#research-q01) [Q02](#research-q02)
 
-usage纯函数、观察finally释放及同键构建合并有明确可复用性；文档承诺需跟实现来源一致，缓存修订必须覆盖实际可变对象。[Q02](#research-q02)
+usage纯函数、观察finally释放及同键构建合并有明确可复用性；文档承诺需跟实现来源一致，缓存修订必须覆盖实际可变对象。[Q02](#research-q02) [Q02](#research-q02)、[Q03](#research-q03) 显式陈旧首屏与增量尾读可借鉴，但内存与磁盘的失效顺序必须对齐；缓存文件包含整形会话数据，应纳入访问和退出清理。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-搜索和标题事件使用启发式估算并混入普通总量，不能无条件称只统计上报；冷会话按createdAt缓存，外层强刷不必失效内层，可能继续陈旧。[Q03](#research-q03)
+[Q03](#research-q03) 搜索/标题估算混入总量；磁盘缓存已增加日志摘要，但createdAt内存命中在前，强刷重建不能保证发现外部追加。报告显式先返stale并后台更新是首屏取舍，不能当实时计量。
 
 <a id="detail-section-6"></a>
 
@@ -124,7 +120,7 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 
 跨会话汇总有源码支持；总量含特定估算事件且冷缓存新鲜度有限，尚未对照Host实际计量。来源分账方案为假设。
 
-- 已检查：作者 README、包清单、源码路径 lib/usage.mjs、lib/collector.mjs、index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/usage.mjs、lib/collector.mjs、index.js、lib/client.js、lib/cache.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定用量折叠、collector、Host路由与面板入口源码；未读用户日志、执行测试或真实宿主。
 - 下一步：固定事件集对照官方投影、估算分桶、冷日志追加强刷、父子和时区窗口、服务访问策略，未执行。
@@ -132,8 +128,8 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 **分析版本**
 
 - **仓库**：[361533652/dsh-token-bi](https://github.com/361533652/dsh-token-bi)
-- **版本号**：0.1.0（[固定提交 270ccee](https://github.com/361533652/dsh-token-bi/tree/270cceef087f17fde08645099af1aefd63c2f0f4)）
-- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 6db82de](https://github.com/361533652/dsh-token-bi/tree/6db82deac21dca3e39fcece698ed6adecbcdee8e)）
+- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,7 +137,7 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 
 <a id="innovation"></a>
 
-可将上报、估算、未知分账并绑定持久日志修订，强刷两层缓存；以官方投影差分与冷日志追加验证，检测成本过高或用户仍混淆则否定。未实现。[Q05](#research-q05)
+可提出未验证的计量来源分账，保留provider_reported与estimated两个平行桶，缺usage另列unknown，不把估算合并到可对账总量；同时把已有磁盘摘要检查前置到内存命中之前，或统一绑定宿主持久修订令牌，强刷显式失效各层缓存。推导来自Q03的两个独立缺口，新增代价是报告Schema、CSV兼容和宿主修订获取成本。最小验证以固定事件集逐桶对照官方投影，再追加冷会话事件要求强刷可见；若修订检测需完整读日志而抵消缓存收益，或使用者仍混淆估算总量，就不能认为方案完整成立。当前未实现，不计入现有贡献。 [Q05](#research-q05)
 
 固定事件集对照官方投影、估算分桶、冷日志追加强刷、父子和时区窗口、服务访问策略，未执行。
 
@@ -154,21 +150,21 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 2 | 2138 | 1939 | 112 | — |
-| .mjs | source | 2 | 851 | 713 | 70 | — |
+| .js | source | 2 | 2492 | 2149 | 236 | — |
+| .mjs | source | 4 | 1476 | 1151 | 220 | — |
 | .md | source | 2 | 596 | — | — | 5490 |
-| .mjs | test | 9 | 1055 | 846 | 123 | — |
+| .mjs | test | 12 | 1452 | 1154 | 173 | — |
 | .cjs | test | 1 | 72 | 48 | 15 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.130Z..2026-10-24T05%3A55%3A33.130Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.130Z..2026-10-24T05%3A55%3A33.130Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/361533652/dsh-token-bi/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
 
 
 
-统计日期：2026-10-24。
+统计日期：2026-10-27。
 
 <a id="detail-section-10"></a>
 
@@ -190,7 +186,7 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-5](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/README.md#L3-L5)
+**依据 1 · 作者声明**：[README.md:3-5](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/README.md#L3-L5)
 
 作者定位跨会话补充层，明确其参照。
 
@@ -200,7 +196,7 @@ usage纯函数、观察finally释放及同键构建合并有明确可复用性�
 DSH 自带单会话的 token 统计，但没有跨会话的视图。这个插件补上这一层，并对齐 Host 自己的计量口径，不会出现"插件显示的数字和会话里对不上"。
 ```
 
-**依据 2 · 源码核查**：[lib/client.js:1973-1990](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/client.js#L1973-L1990)
+**依据 2 · 源码核查**：[lib/client.js:2038-2055](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/client.js#L2038-L2055)
 
 全局main和侧栏注册说明汇总界面实际入口。
 
@@ -240,11 +236,11 @@ DSH 自带单会话的 token 统计，但没有跨会话的视图。这个插件
 
 #### 完整回答
 
-collector合并内存sessions与sessionQuery持久记录，同ID活跃优先；活跃缓存以seq和时区偏移构成修订。usage读取assistant/message或assistant/attempt的usage，对同turn-step后到样本先减旧桶再加新桶，并调整模型与日期归属。它能避免把一个step的多次结算样本重复累加，但这个投影口径不必等于供应商对所有失败尝试的收费。路由报告缓存以时区和窗口为键，10秒过期并合并同键构建请求；单会话下钻按需读取，冷观察结果在finally释放。纯折叠与IO分离值得复用，需宿主事件schema、sessionQuery与Web slots兼容。没有执行官方tokenUsage对照，因此源码注释的“对齐Host”仍是待独立验证主张。
+collector合并内存sessions与sessionQuery持久记录，同ID活跃优先；活跃缓存以seq和时区偏移构成修订。usage读取assistant/message或assistant/attempt的usage，对同turn-step后到样本先减旧桶再加新桶，并调整模型与日期归属。它能避免把一个step的多次结算样本重复累加，但这个投影口径不必等于供应商对所有失败尝试的收费。路由报告缓存以时区和窗口为键，10秒过期并合并同键构建请求；单会话下钻按需读取，冷观察结果在finally释放。纯折叠与IO分离值得复用，需宿主事件schema、sessionQuery与Web slots兼容。没有执行官方tokenUsage对照，因此源码注释的“对齐Host”仍是待独立验证主张。 当前还新增.token-bi-cache中的zstd会话与报告缓存，单会话磁盘摘要取日志名、size和mtime，并可从stored.seq+1读取尾部事件。报告可先返回fromCache、cacheSavedAt和stale，再安排后台重建；这是有意优先首屏速度，不是保证每次读取实时。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/usage.mjs:197-233](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/usage.mjs#L197-L233)
+**依据 1 · 源码核查**：[lib/usage.mjs:197-233](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/usage.mjs#L197-L233)
 
 turn-step替换和模型日期桶调整形成计量机制。
 
@@ -293,14 +289,19 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/collector.mjs:188-231](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/collector.mjs#L188-L231)
+**依据 2 · 源码核查**：[lib/collector.mjs:191-250](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/collector.mjs#L191-L250)
 
-活跃优先、缓存与冷观察释放体现来源整合。
+活跃seq缓存与冷会话createdAt内存缓存，后接磁盘指纹缓存。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（60行）</summary>
 
 ```text
+    const liveSessions = typeof sessions?.list === 'function' ? sessions.list() : [];
+    const liveIds = new Set();
+    const records = [];
+    const errors = [];
+
     for (const session of liveSessions) {
       const header = headerOf(session);
       if (header.id.length === 0) continue;
@@ -337,43 +338,131 @@ turn-step替换和模型日期桶调整形成计量机制。
         const revision = `${header.createdAt}:${offsetMinutes}`;
         const cached = this.cache.get(header.id);
         if (cached !== undefined && !cached.live && cached.revision === revision) return cached.record;
-        try {
-          const observation = await query.observeSession(header.id, { projectionMode: 'none' });
+
+        // Durable cache: a session whose own logs have not moved is served from
+        // disk, so a restart only re-reads the few sessions that changed.
+        const store = this.sessionStore;
+        let digest;
+        if (store !== undefined) {
           try {
-            const record = summarizeSession(header, observation.events, offsetMinutes, false);
-            this.cache.set(header.id, { revision, live: false, record });
-            return record;
-          } finally {
-            observation[Symbol.dispose]?.();
+            const dir = store.dirFor(header.id);
+            digest = dir === undefined ? undefined : store.digestFor(dir);
+            const persisted = store.lookup(header.id, digest, offsetMinutes);
+            if (persisted !== undefined) {
+              this.cache.set(header.id, { revision, live: false, record: persisted });
+              return persisted;
+            }
+          } catch {
+            // Any cache trouble just falls back to reading the log.
+            digest = undefined;
+          }
+        }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:42-58](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/index.js#L42-L58)
+**依据 3 · 源码核查**：[index.js:155-180](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/index.js#L155-L180)
 
-报告TTL与同键构建合并支持缓存设计判断。
+10秒报告缓存与同键构建共享，构建关联持久sessionStore。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-  const readReport = (offsetMinutes, rangeDays, force) => {
-    const key = cacheKey(offsetMinutes, rangeDays);
-    if (!force && cached !== undefined && cached.key === key && Date.now() - cached.at < REPORT_TTL_MS) {
-      return Promise.resolve(cached.report);
     }
     if (building !== undefined && building.key === key) return building.promise;
-    const promise = collector
-      .collect({ offsetMinutes, rangeDays })
-      .then((report) => {
-        cached = { at: Date.now(), key, report };
-        return report;
-      })
-      .finally(() => {
-        if (building?.promise === promise) building = undefined;
-      });
-    building = { key, promise };
-    return promise;
+
+    const startBuild = () => {
+      if (building !== undefined && building.key === key) return building.promise;
+      const options = { offsetMinutes, rangeDays };
+      const storeRoot = resolveStoreRoot(ctx);
+      const sessionStore = storeRoot === undefined ? undefined : createSessionStore(storeRoot, options);
+      collector.sessionStore = sessionStore;
+
+      const promise = collector
+        .collect(options)
+        .then((report) => {
+          cached = { at: Date.now(), key, report };
+          try {
+            sessionStore?.flush();
+            // Persist the finished report too. It is tens of KB against the
+            // session cache's megabytes, so the next cold start can serve a
+            // complete report without touching either.
+            if (storeRoot !== undefined) {
+              const fingerprint = storeFingerprint(storeRoot);
+              saveReportCache(storeRoot, options, report, fingerprint);
+              // The calendar needs a full year and asks for it separately. The
+              // sessions are already folded, and the durable cache holds the
+              // complete record for each (rows included) — so the annual series
+              // is one aggregation away instead of a second full build.
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/cache.mjs:35-55](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/cache.mjs#L35-L55)
+
+持久缓存以单会话日志文件路径、大小、mtime构成指纹。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+function sessionDigest(dir) {
+  const parts = [];
+  let entries;
+  try {
+    entries = readdirSync(dir, { withFileTypes: true });
+  } catch {
+    return undefined;
+  }
+  for (const entry of entries) {
+    if (!entry.isFile() || !LOG_PATTERN.test(entry.name)) continue;
+    try {
+      const stat = statSync(join(dir, entry.name));
+      parts.push(`${entry.name}:${stat.size}:${Math.round(stat.mtimeMs)}`);
+    } catch {
+      // Vanished mid-walk: treat as absent.
+    }
+  }
+  if (parts.length === 0) return undefined;
+  parts.sort();
+  return createHash('sha1').update(parts.join('|')).digest('hex');
+}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/cache.mjs:287-309](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/cache.mjs#L287-L309)
+
+zstd缓存先写临时文件再rename，失败仅返回false。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+/** Persist the per-session cache; write-then-rename keeps it crash-safe. */
+export function saveSessionCache(root, cache) {
+  try {
+    const dir = cacheDir(root);
+    mkdirSync(dir, { recursive: true });
+    const payload = zstdCompressSync(
+      Buffer.from(
+        JSON.stringify({
+          version: CACHE_VERSION,
+          savedAt: Date.now(),
+          records: Object.fromEntries(cache.records),
+        }),
+        'utf8',
+      ),
+    );
+    const temp = join(dir, `${ENTRY_FILE}.${process.pid}.tmp`);
+    writeFileSync(temp, payload);
+    renameSync(temp, join(dir, ENTRY_FILE));
+    return true;
+  } catch {
+    return false;
+  }
+}
 ```
 
 </details>
@@ -388,11 +477,11 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 #### 完整回答
 
-实现并非所有总量只来自provider上报。web/deepseek-search-llm-request按query长度估输入并固定输出180，session/title-llm-request同样估输入并固定输出20，两者直接加进totals、models和days，行上才标estimated=true。因此含这些事件时README的“不估算、全对齐Host”不能无条件成立；明细标估算不等于顶部总量已分账。另一个边界是冷会话revision仅取header.createdAt和offset，日志被别进程追加但创建时间不变时会复用旧记录。refresh=1绕过的是外层报告缓存，collect仍调用readAll并复用冷缓存，不能保证强刷得到新冷日志。实际日志是否出现估算事件及多进程追加未验证，应按条件描述。
+实现并非所有总量只来自provider上报。web/deepseek-search-llm-request按query长度估输入并固定输出180，session/title-llm-request同样估输入并固定输出20，两者直接加进totals、models和days，行上才标estimated=true。因此含这些事件时README的“不估算、全对齐Host”不能无条件成立；明细标估算不等于顶部总量已分账。另一个边界是冷会话revision仅取header.createdAt和offset，日志被别进程追加但创建时间不变时会复用旧记录。refresh=1绕过的是外层报告缓存，collect仍调用readAll并复用冷缓存，不能保证强刷得到新冷日志。实际日志是否出现估算事件及多进程追加未验证，应按条件描述。 虽然磁盘层增加日志摘要，内存冷缓存命中仍位于磁盘摘要之前，所以外部追加的条件性陈旧风险仍存在；另一方面报告主动先返陈旧缓存且带时间/标记是可见取舍，不应把全部旧数都描述为隐藏缺陷。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/usage.mjs:266-302](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/usage.mjs#L266-L302)
+**依据 1 · 源码核查**：[lib/usage.mjs:266-302](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/usage.mjs#L266-L302)
 
 搜索事件的长度估算和固定输出直接加总。
 
@@ -441,7 +530,7 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/usage.mjs:305-340](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/usage.mjs#L305-L340)
+**依据 2 · 源码核查**：[lib/usage.mjs:305-340](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/usage.mjs#L305-L340)
 
 标题请求估算也加入总量并只在行标estimated。
 
@@ -489,12 +578,12 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/collector.mjs:219-228](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/collector.mjs#L219-L228)
+**依据 3 · 源码核查**：[lib/collector.mjs:227-244](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/collector.mjs#L227-L244)
 
-冷缓存键没有日志尾序号或更新时间。
+内存createdAt命中发生在磁盘digest检查之前，已有冷缓存仍可遮蔽外部追加。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
       const results = await mapLimit(cold, this.readConcurrency, async (entry) => {
@@ -502,30 +591,62 @@ turn-step替换和模型日期桶调整形成计量机制。
         const revision = `${header.createdAt}:${offsetMinutes}`;
         const cached = this.cache.get(header.id);
         if (cached !== undefined && !cached.live && cached.revision === revision) return cached.record;
-        try {
-          const observation = await query.observeSession(header.id, { projectionMode: 'none' });
+
+        // Durable cache: a session whose own logs have not moved is served from
+        // disk, so a restart only re-reads the few sessions that changed.
+        const store = this.sessionStore;
+        let digest;
+        if (store !== undefined) {
           try {
-            const record = summarizeSession(header, observation.events, offsetMinutes, false);
-            this.cache.set(header.id, { revision, live: false, record });
+            const dir = store.dirFor(header.id);
+            digest = dir === undefined ? undefined : store.digestFor(dir);
+            const persisted = store.lookup(header.id, digest, offsetMinutes);
+            if (persisted !== undefined) {
+              this.cache.set(header.id, { revision, live: false, record: persisted });
+              return persisted;
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[index.js:42-50](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/index.js#L42-L50)
+**依据 4 · 源码核查**：[index.js:213-240](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/index.js#L213-L240)
 
-强制刷新只绕外层cached，继续调用collector。
+force触发重建，但重建继续用collector内存；非force显式允许陈旧报告并后台刷新。
+
+<details>
+<summary>查看原文（28行）</summary>
 
 ```text
-  const readReport = (offsetMinutes, rangeDays, force) => {
-    const key = cacheKey(offsetMinutes, rangeDays);
-    if (!force && cached !== undefined && cached.key === key && Date.now() - cached.at < REPORT_TTL_MS) {
-      return Promise.resolve(cached.report);
+
+    // Cheapest path: a finished report for this window. A perfect fingerprint
+    // match means it is exactly current; otherwise it is still the right shape
+    // and only a few seconds stale, which is what makes a restart feel instant.
+    //
+    // Serving it when the store has moved is deliberate. The store changes on
+    // essentially every turn of the conversation you are in, so requiring an
+    // exact match would disable this path permanently. The page refetches on its
+    // own and the rebuild below lands within a second or two.
+    const storeRoot = resolveStoreRoot(ctx);
+    if (storeRoot !== undefined) {
+      try {
+        // One read, not two: `allowStale` accepts the entry regardless of the
+        // fingerprint, and the returned `stale` flag says which it was.
+        const hit = loadReportCache(storeRoot, { offsetMinutes, rangeDays }, storeFingerprint(storeRoot), true);
+        if (hit !== undefined) {
+          scheduleWarm(startBuild);
+          return { ...hit.report, fromCache: true, cacheSavedAt: hit.savedAt, stale: hit.stale === true };
+        }
+      } catch {
+        // Fall through to the per-session path below.
+      }
     }
-    if (building !== undefined && building.key === key) return building.promise;
-    const promise = collector
-      .collect({ offsetMinutes, rangeDays })
-      .then((report) => {
+
+    // Otherwise assemble from the per-session records, but only when the cache
+    // covers every session — serving an incomplete set would read as wrong
+    // numbers rather than old ones.
+    if (await cacheIsComplete(offsetMinutes, rangeDays)) {
 ```
+
+</details>
 
 #### 缺口
 
@@ -543,20 +664,18 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 #### 完整回答
 
-成本单位是一次可解释并定位到原会话的用量异常排查。首次安装重启、确认所有本机历史可见，持续读日志和渲染多维汇总、人工解释缓存与估算，失败后核对原日志或重载清缓存都要计入。没有自己的持久数据库降低迁移负担，但不等于不消耗Host内存与读取资源；费用和规模耗时未知。路由返回标题、cwd、会话ID和错误详情，实际谁能访问由宿主访问控制决定，本次未核查，不宜默认所有本地报告都可外露。考虑到主张与总量来源差距及冷缓存限制，先观察并核对样本，未区分上报和估算前不建议用顶部总量作精确核算或预算优化依据。
+成本单位是一次可解释并定位到原会话的用量异常排查。首次安装重启、确认所有本机历史可见，持续读日志和渲染多维汇总、人工解释缓存与估算，失败后核对原日志或检查并重载或按文档清缓存都要计入。不依赖独立数据库服务但已有持久zstd缓存，增加磁盘、压缩与缓存清理负担，但不等于不消耗Host内存与读取资源；费用和规模耗时未知。路由返回标题、cwd、会话ID和错误详情，实际谁能访问由宿主访问控制决定，本次未核查，不宜默认所有本地报告都可外露。考虑到主张与总量来源差距及冷缓存限制，先观察并核对样本，未区分上报和估算前不建议用顶部总量作精确核算或预算优化依据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/collector.mjs:181-244](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/collector.mjs#L181-L244)
+**依据 1 · 源码核查**：[lib/collector.mjs:191-250](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/collector.mjs#L191-L250)
 
-读多个来源、缓存与错误聚合解释资源和复核成本。
+多来源枚举与内存/磁盘缓存解释读取和排查成本。
 
 <details>
-<summary>查看原文（64行）</summary>
+<summary>查看原文（60行）</summary>
 
 ```text
-  async readAll(offsetMinutes) {
-    const sessions = service(this.ctx, 'sessions');
     const liveSessions = typeof sessions?.list === 'function' ? sessions.list() : [];
     const liveIds = new Set();
     const records = [];
@@ -598,47 +717,41 @@ turn-step替换和模型日期桶调整形成计量机制。
         const revision = `${header.createdAt}:${offsetMinutes}`;
         const cached = this.cache.get(header.id);
         if (cached !== undefined && !cached.live && cached.revision === revision) return cached.record;
-        try {
-          const observation = await query.observeSession(header.id, { projectionMode: 'none' });
+
+        // Durable cache: a session whose own logs have not moved is served from
+        // disk, so a restart only re-reads the few sessions that changed.
+        const store = this.sessionStore;
+        let digest;
+        if (store !== undefined) {
           try {
-            const record = summarizeSession(header, observation.events, offsetMinutes, false);
-            this.cache.set(header.id, { revision, live: false, record });
-            return record;
-          } finally {
-            observation[Symbol.dispose]?.();
+            const dir = store.dirFor(header.id);
+            digest = dir === undefined ? undefined : store.digestFor(dir);
+            const persisted = store.lookup(header.id, digest, offsetMinutes);
+            if (persisted !== undefined) {
+              this.cache.set(header.id, { revision, live: false, record: persisted });
+              return persisted;
+            }
+          } catch {
+            // Any cache trouble just falls back to reading the log.
+            digest = undefined;
           }
-        } catch (error) {
-          errors.push({ id: header.id, message: messageOf(error) });
-          return undefined;
         }
-      });
-      for (const record of results) if (record !== undefined) records.push(record);
-    }
-
-    const present = new Set(records.map((record) => record.id));
-    for (const id of [...this.cache.keys()]) if (!present.has(id)) this.cache.delete(id);
-
-    return { records, errors };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:62-83](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/index.js#L62-L83)
+**依据 2 · 源码核查**：[index.js:327-356](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/index.js#L327-L356)
 
-路由按参数返回报告和会话详情，函数内无独立访问授权检查。
+报告与单会话路由返回工作区/标题等，授权仍归宿主。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-  const serve = async (req, res) => {
-    const url = new URL(req.url ?? '/', 'http://localhost');
-    const path = url.pathname.replace(/\/+$/, '');
-    const offsetMinutes = parseOffset(url.searchParams.get('offset'));
-    const rangeDays = parseRange(url.searchParams.get('days'));
-    try {
-      if (path === `${ROUTE}/report`) {
-        sendJson(res, 200, await readReport(offsetMinutes, rangeDays, url.searchParams.get('refresh') === '1'));
+        return;
+      }
+      if (path === `${ROUTE}/days`) {
+        sendJson(res, 200, await readDaily(offsetMinutes));
         return;
       }
       if (path === `${ROUTE}/session`) {
@@ -653,6 +766,53 @@ turn-step替换和模型日期桶调整形成计量机制。
       sendJson(res, 404, { error: `unknown route ${path}` });
     } catch (error) {
       sendJson(res, 500, { error: error instanceof Error ? error.message : String(error) });
+    }
+  };
+
+  ctx.effect(() => {
+    const holder = (globalThis[ROUTE_SLOT] ??= { current: undefined, dispose: undefined });
+    // A superseded instance keeps serving until the newer one takes over, so a
+    // reload never leaves the route pointing at a disposed collector.
+    holder.current = serve;
+    if (holder.dispose === undefined) {
+      holder.dispose = ctx.webServer.register({
+        kind: 'prefix',
+        path: ROUTE,
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/cache.mjs:287-309](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/cache.mjs#L287-L309)
+
+实际持久缓存副作用，不能声称完全无本地状态。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+/** Persist the per-session cache; write-then-rename keeps it crash-safe. */
+export function saveSessionCache(root, cache) {
+  try {
+    const dir = cacheDir(root);
+    mkdirSync(dir, { recursive: true });
+    const payload = zstdCompressSync(
+      Buffer.from(
+        JSON.stringify({
+          version: CACHE_VERSION,
+          savedAt: Date.now(),
+          records: Object.fromEntries(cache.records),
+        }),
+        'utf8',
+      ),
+    );
+    const temp = join(dir, `${ENTRY_FILE}.${process.pid}.tmp`);
+    writeFileSync(temp, payload);
+    renameSync(temp, join(dir, ENTRY_FILE));
+    return true;
+  } catch {
+    return false;
+  }
+}
 ```
 
 </details>
@@ -673,11 +833,11 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 #### 完整回答
 
-可提出未验证的计量来源分账，保留provider_reported与estimated两个平行桶，缺usage另列unknown，不把估算合并到可对账总量；同时冷缓存绑定持久日志尾序号或宿主修订令牌，强刷显式失效两层缓存。推导来自Q03的两个独立缺口，新增代价是报告Schema、CSV兼容和宿主修订获取成本。最小验证以固定事件集逐桶对照官方投影，再追加冷会话事件要求强刷可见；若修订检测需完整读日志而抵消缓存收益，或使用者仍混淆估算总量，就不能认为方案完整成立。当前未实现，不计入现有贡献。
+可提出未验证的计量来源分账，保留provider_reported与estimated两个平行桶，缺usage另列unknown，不把估算合并到可对账总量；同时把已有磁盘摘要检查前置到内存命中之前，或统一绑定宿主持久修订令牌，强刷显式失效各层缓存。推导来自Q03的两个独立缺口，新增代价是报告Schema、CSV兼容和宿主修订获取成本。最小验证以固定事件集逐桶对照官方投影，再追加冷会话事件要求强刷可见；若修订检测需完整读日志而抵消缓存收益，或使用者仍混淆估算总量，就不能认为方案完整成立。当前未实现，不计入现有贡献。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/usage.mjs:273-284](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/usage.mjs#L273-L284)
+**依据 1 · 源码核查**：[lib/usage.mjs:273-284](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/usage.mjs#L273-L284)
 
 估算加到普通桶是来源分账的推导依据。
 
@@ -701,12 +861,12 @@ turn-step替换和模型日期桶调整形成计量机制。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/collector.mjs:219-228](https://github.com/361533652/dsh-token-bi/blob/270cceef087f17fde08645099af1aefd63c2f0f4/lib/collector.mjs#L219-L228)
+**依据 2 · 源码核查**：[lib/collector.mjs:227-244](https://github.com/361533652/dsh-token-bi/blob/6db82deac21dca3e39fcece698ed6adecbcdee8e/lib/collector.mjs#L227-L244)
 
-创建时间缓存键是日志修订令牌的推导依据。
+新的磁盘摘要仍在内存命中之后，为统一修订失效推导提供依据。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
       const results = await mapLimit(cold, this.readConcurrency, async (entry) => {
@@ -714,11 +874,19 @@ turn-step替换和模型日期桶调整形成计量机制。
         const revision = `${header.createdAt}:${offsetMinutes}`;
         const cached = this.cache.get(header.id);
         if (cached !== undefined && !cached.live && cached.revision === revision) return cached.record;
-        try {
-          const observation = await query.observeSession(header.id, { projectionMode: 'none' });
+
+        // Durable cache: a session whose own logs have not moved is served from
+        // disk, so a restart only re-reads the few sessions that changed.
+        const store = this.sessionStore;
+        let digest;
+        if (store !== undefined) {
           try {
-            const record = summarizeSession(header, observation.events, offsetMinutes, false);
-            this.cache.set(header.id, { revision, live: false, record });
+            const dir = store.dirFor(header.id);
+            digest = dir === undefined ? undefined : store.digestFor(dir);
+            const persisted = store.lookup(header.id, digest, offsetMinutes);
+            if (persisted !== undefined) {
+              this.cache.set(header.id, { revision, live: false, record: persisted });
+              return persisted;
 ```
 
 </details>

@@ -13,12 +13,16 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
+| [ANOLISA](#plugin-1195873793-root) | 基于既有操作系统，为 Agent 提供上下文、技能、工作区恢复、安全与观测组件的软件栈。 | [Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 限Tokenless隔离试用，完整恢复与任务费用都合格才继续，不据status启用全栈治理。 |
 | [API Relay Audit](#plugin-1195794651-root) | 在本地检查 AI API 中转行为，生成逐步证据和风险报告，并提供 DSH 命令入口。 | [Q04](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q04) 建议有技术能力的线路使用者先做连通性检查，再在不含真实业务秘密的有限请求上试用，逐项读原因而非只看评级。 |
+| [Avernet BCN channel](#plugin-1290565606-apps-bcs-crates-plugins-deepseek-harness-channel-bcn) | 将 DSH Bot 接入 Avernet BCN，映射消息、会话、工具事件和审批交互 | [Q03](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q03) 有BCN运维能力者先观察，注册409与任务身份不符即停止重试，按既有身份人工对账。 |
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。 | 适合已有 DSH 环境、希望有组织地筛选扩展的用户试用索引；先确认候选包身份与目标插件自己的条件，再在不含敏感凭据的环境验收加载、核心功能和禁用。 |
 | [Browser4](#plugin-124882400-root) | 以 Rust CLI、MCP 与 Kotlin/CDP 后端提供浏览器交互、确定性提取和批量网页自动化。 | 建议有自动化经验者在公开测试站用CLI限定试用，先确定性只读提取并与脚本对照；会话错位或重复副作用立即停并回原流程。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [DeepSeek Harness](#plugin-1333065091-root) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | 有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。 |
+| [DeepSeek Harness Studio](#plugin-1334747723-root) | 将 Harness 打包为桌面工作区，提供插件需求检索、确定版本安装和事务恢复界面。 | 首次要安装完整Studio、配置模型和选择profile，迁移既有插件时需记录原版本与数据；候选自然语言搜索另产生模型与npm网络成本。 |
 | [DeepSeek Harness Tauri Desktop](#plugin-1333718792-root) | 提供DSH桌面界面、托管运行时和内核、插件与档案管理、数据迁移及移动远程访问。 | [Q04](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q04)、[Q05](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q05)建议有备份的独立profile用户先固定推荐内核，以非关键会话试托管启动与回退。 |
+| [DSH Connect WorkBuddy](#plugin-1349641014-root) | 把本机 WorkBuddy 账号模型接入 DSH，管理双区域模型、账号池与积分读数。 | [Q04](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q04) 先给非关键任务明确额度上限，比较手工换号和池的合格回答及消耗；被拒或费用不清回官方客户端。 |
 | [DSH Desktop](#plugin-1333321333-root) | 独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。 | 先在新用户数据目录/可恢复profile试用社区包，核channel/runtime及访问开关，验证启动/切换/禁用恢复后再接主数据。 |
 | [DSH Market](#plugin-1333807290-root) | 在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。 | 维护多个社区插件的DSH用户可先在克隆profile中试用安装和备份流程。 |
 | [DSH Plugin Radar](#plugin-1323404274-root) | 收集DSH插件候选、归并兼容性记录，提供分类目录、静态JSON和可浏览站点。 | [Q05](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q05)建议目录维护者先作为只读发现数据试用，固定完整提交读取并校验，缓存失败保留旧版本日期。 |
@@ -31,6 +35,7 @@
 | [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。 |
 | [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。 | 隔离桌面 profile 分别验本地/远程、离线下载、托盘退出与升级后再替换原版。 |
 | [dsh-compaction-route](#plugin-1391040578-root) | 仅对DSH压缩摘要调用选择主模型，并在终止error时用备援路线重试相同历史。 | 明确主备provider/原历史恢复的维护者可限范围试用，先核失败分类、全部成本和摘要保真。 |
+| [dsh-cost-meter](#plugin-1333235870-root) | 为 DSH 提供按会话和模型的用量、费用、预算与账户额度展示 | [Q04](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md#research-q04) 有限试用以几笔可核对调用、取消和未知价格为验收；显示金额与供应商记录不符时停止依赖，保全账本回原日志。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。 | 仅隔离网络、低风险动作且设备端认证明确时观察；危险动作须先审共享库及设备实现。 |
 | [dsh-gov](#plugin-1336647931-root) | 为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。 | 观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。 |
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
@@ -112,6 +117,7 @@
 | [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | [Q06](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。 |
 | [plugin-usage-billing](#plugin-1363429979-plugin-usage-billing) | 从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。 | 先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
+| [SandBase Harness](#plugin-1297278222-root) | 本地优先的 Agent 运行时，管理持久会话、工具、记忆、凭据、审计与控制台 | [Q04](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q04) 建议先观察，只用可信只读输入评估会话回收与产物接口；报告不绑定固定提交或结果未知时停止并回到单次脚本加人工验收。 |
 | [Treg](#plugin-1301657572-root) | 提供统一Agent工具目录、服务端凭据注入、API中继和调用计费管理。 | 需要多供应商API或团队凭据共享的开发者可先用非敏感只读任务和明确小预算试用Treg。 |
 | [Yao Agents](#plugin-403559729-root) | 自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。 | 当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。 |
 | [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | 可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。 |
@@ -133,6 +139,22 @@
 
 [查看完整分析](../../plugins/1708994293-hue--dsh-auto-update/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1195873793-root"></a>
+
+## [ANOLISA](../../plugins/agentic-os-org--anolisa/INSIGHT.md)
+
+[![GitHub ★ 641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/agentic-os-org/ANOLISA)
+
+> **用途**：Agent平台开发者希望在保留现有宿主时接入底层输出优化等能力，本轮以DSH工具输出为具体任务。
+
+> **亮点**：[Q01](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q01) 与 [Q02](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q02) 支持把选择性压缩、恢复能力和宿主工具结果生命周期接合，给系统优化明确失败退路；不将根栈全部主张算成已核实现。
+
+> **思考**：[Q03](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q03) 压缩率不能代替合格任务净费用，marker恢复依赖同一CLI与状态；所查AgentSight仅status，不能据active声称完整轨迹或安全约束已启用。
+
+> **建议**：[Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 提出任务敏感字段和恢复可用性的压缩回执，未验证；如果不能保持正确性与净费用，则否定相应压缩策略。
+
+[查看完整分析](../../plugins/agentic-os-org--anolisa/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1195794651-root"></a>
 
 ## [API Relay Audit](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md)
@@ -148,6 +170,22 @@
 > **建议**：[Q05](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q05) 推导出未验证的“完成覆盖与异常证据分列”假设。用透明、故障和篡改代理同样本盲评归因；正确率不改善或审阅负担上升则停止。
 
 [查看完整分析](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1290565606-apps-bcs-crates-plugins-deepseek-harness-channel-bcn"></a>
+
+## [Avernet BCN channel](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md)
+
+[![GitHub ★ 593](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=593&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/inclusionAI/Avernet) [![npm 30d 1,463](https://img.shields.io/static/v1?label=npm+30d&message=1%2C463&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@avernet-plugin/deepseek-harness-channel-bcn) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@avernet-plugin/deepseek-harness-channel-bcn)
+
+> **用途**：已有BCN的团队可用DSH作为协作节点，由canonical会话承接远端任务。
+
+> **亮点**：[Q01](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q01)将canonical会话、runId和DSH Agent关联；[Q02](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q02)先持久pending注册身份避免重试静默建新Bot，是明确恢复设计增量。
+
+> **思考**：[Q02](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q02)成功注册响应丢失不自动重放凭据，运行去重也仅内存；[Q03](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q03)本地scope解析与descriptor配置不能证明服务器授权或按技能发现。
+
+> **建议**：可以把注册pending身份的先写后请求思想推广为任务收据，但保持注册身份和业务执行状态独立。按runId记录任务输入摘要、canonical session、尝试和终态证据，重启先查询原收据再决定是否发送。相对内存Map，增量是解释“已排队/已执行/结果未知”，不能仅有终态字符串就认定报告合格。
+
+[查看完整分析](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333175049-root"></a>
 
@@ -213,6 +251,22 @@
 
 [查看完整分析](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334747723-root"></a>
+
+## [DeepSeek Harness Studio](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md)
+
+[![GitHub ★ 695](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=695&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fufankeji/deepseek-harness-studio)
+
+> **用途**：DeepSeek Harness Studio是独立Electron客户端/宿主分发，不是可直接安装进原DSH的一项插件。它面向想从需求发现候选、看权限兼容、确认安装到生命周期维护都在图形界面完成的人。相对手工搜npm/GitHub、装包和排查profile，它把发现、确定版本检查、安装及恢复串起来；LLM、子Agent、Skill和多数核心工作流继承Harness，不能把整仓内置能力都算Studio原创。合格结果不是候选多或安装按钮变绿，而是用户选到匹配任务的包、准确版本被激活、出错能回到可解释的原状态且实际任务可完成。固定桌面包0.1.0-rc.19与上游版本分开，README的真实Electron验收属于作者报告，本轮未复现。
+
+> **亮点**：[Q02](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md#research-q02)、[Q03](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md#research-q03)把自然语言候选、可信版本预检查、真实包验证和host重启后清单对照接成产品链；贡献在流程与证据交接，原代理能力继承Harness。
+
+> **思考**：[Q03](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md#research-q03)元数据可信、哈希一致、loader active都不证明业务功能或插件最小权限；恢复profile也不撤销外部写入。[Q02](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md#research-q02)新会话和单一key检查仍有交接负担。
+
+> **建议**：未验证方向是在已有候选检索和安装事务之后，增加用户任务的最小可撤销验收配方：说明输入样例、预期输出、必要权限和停止条件，安装成功后只在用户确认的隔离profile执行并回传可核对证据。推导来自推荐元数据与runtime激活不等于业务有效的缺口；它相对当前链新增的是需求到验证的交接，不是再次做目录、评分或安装按钮。配方会带来隔离环境、版本绑定和失败清理成本，不能自动执行陌生插件任意样例。先找五个真正需要选插件的用户，以目录推荐和有配方推荐比较选错率、首次合格任务时间与愿意继续比例；若配方只转移人工、测试不能代表任务或现有手工方案已足够，则否定独立机会。当前未实现且无付费意愿证据。 [Q05](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333718792-root"></a>
 
 ## [DeepSeek Harness Tauri Desktop](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md)
@@ -228,6 +282,22 @@
 > **建议**：[Q05](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q05)提出未验证的分层就绪与关键路径迁移清单。对会话等关键文件核对路径/哈希/链接，区分运行时、内核、插件、会话结果；用同体积变更/链接失败/未知探测/磁盘满对照误读和定位耗时，无增益或开销过大则停止。
 
 [查看完整分析](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1349641014-root"></a>
+
+## [DSH Connect WorkBuddy](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md)
+
+[![GitHub ★ 671](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=671&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dingminhua/dsh-connect-workbuddy) [![npm 30d 37,263](https://img.shields.io/static/v1?label=npm+30d&message=37%2C263&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy)
+
+> **用途**：已有 WorkBuddy 账号的 DSH 用户，希望在当前编码环境调用其模型而不切客户端。
+
+> **亮点**：[Q01](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q01) 与 [Q02](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q02) 证明账号模型接线及受限换号确实落在请求链中，减少界面切换和手工重选；实际吞吐与费用改善未测。
+
+> **思考**：[Q03](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q03) 非公开接口与上游账号限制会直接击穿持续可用性；失败重试与探测仍会消耗资源，账号池不能提供稳定额度或恰好一次保证。
+
+> **建议**：[Q04](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q04) 提出将已消费积分与换号原因一起供用户决策，未验证；若不能减少无效重试或辨识消费仍困难则否定。
+
+[查看完整分析](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333321333-root"></a>
 
@@ -421,6 +491,22 @@
 
 [查看完整分析](../../plugins/643048695--dsh-compaction-route/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333235870-root"></a>
+
+## [dsh-cost-meter](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md)
+
+[![GitHub ★ 539](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=539&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Han-1413141/dsh-cost-meter) [![npm 30d 112,534](https://img.shields.io/static/v1?label=npm+30d&message=112%2C534&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cost-meter) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cost-meter)
+
+> **用途**：多会话、多模型的DSH用户希望按任务定位消耗，而不是只看账户剩余余额。
+
+> **亮点**：[Q01](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md#research-q01) 按会话聚合五桶用量，并将Plan等值与API现金分开。[Q02](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md#research-q02) 处理包装流重复计费和取消传播，贡献在可观察性集成与归因。
+
+> **思考**：[Q03](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md#research-q03) 同量包装调用可能在窗口内合并，价格未知可显示零，缺usage不证明免费；高并发worker总账不能只凭这条观察链验收。
+
+> **建议**：可以推导未验证的任务计量收据，优先使用服务端request_id、父任务ID、worker实例和尝试号做身份，usage只是计量值而非去重身份。对子调用和包装转发显式记录父子关系，缺失usage或未知价格保存unknown状态；按通过验收的报告聚合全部父端、worker、失败与补查成本。相对同量指纹，增量是可区别两个等量的真实调用，并解释主端下降是否只是转移到worker。
+
+[查看完整分析](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1384810806-root"></a>
 
 ## [dsh-device-bridge](../../plugins/173787247--dsh-device-bridge/INSIGHT.md)
@@ -575,7 +661,7 @@
 
 > **亮点**：[Q01](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
 
-> **思考**：[Q03](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。
+> **思考**：[Q03](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。 [Q02](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q02) 的normalizeContext是实际缓冲机制，不能因警告非阻断就否定全部适配；但包已提高宿主下限，旧宿主不能凭shim宣称受支持。
 
 > **建议**：[Q05](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q05) 提出统一端点时效和验证状态的未验证设计，用误选与过期额度判断实验检验，而非把更多状态展示自动视为收益。
 
@@ -847,9 +933,9 @@
 
 > **亮点**：将公开会话服务的用量整理为交叉筛选和下钻入口，纯折叠与IO分离、活跃优先减少手工汇总；效益在排查便利，未证明精确账单或节费。[Q01](../../plugins/361533652--dsh-token-bi/INSIGHT.md#research-q01) [Q02](../../plugins/361533652--dsh-token-bi/INSIGHT.md#research-q02)
 
-> **思考**：搜索和标题事件使用启发式估算并混入普通总量，不能无条件称只统计上报；冷会话按createdAt缓存，外层强刷不必失效内层，可能继续陈旧。[Q03](../../plugins/361533652--dsh-token-bi/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/361533652--dsh-token-bi/INSIGHT.md#research-q03) 搜索/标题估算混入总量；磁盘缓存已增加日志摘要，但createdAt内存命中在前，强刷重建不能保证发现外部追加。报告显式先返stale并后台更新是首屏取舍，不能当实时计量。
 
-> **建议**：可将上报、估算、未知分账并绑定持久日志修订，强刷两层缓存；以官方投影差分与冷日志追加验证，检测成本过高或用户仍混淆则否定。未实现。[Q05](../../plugins/361533652--dsh-token-bi/INSIGHT.md#research-q05)
+> **建议**：可提出未验证的计量来源分账，保留provider_reported与estimated两个平行桶，缺usage另列unknown，不把估算合并到可对账总量；同时把已有磁盘摘要检查前置到内存命中之前，或统一绑定宿主持久修订令牌，强刷显式失效各层缓存。推导来自Q03的两个独立缺口，新增代价是报告Schema、CSV兼容和宿主修订获取成本。最小验证以固定事件集逐桶对照官方投影，再追加冷会话事件要求强刷可见；若修订检测需完整读日志而抵消缓存收益，或使用者仍混淆估算总量，就不能认为方案完整成立。当前未实现，不计入现有贡献。 [Q05](../../plugins/361533652--dsh-token-bi/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/361533652--dsh-token-bi/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1716,6 +1802,22 @@
 > **建议**：未来可探索：可将周期性链头锚定到独立存储，并给每类事件增加覆盖率计数，从而同时检测篡改和采集缺口。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1297278222-root"></a>
+
+## [SandBase Harness](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md)
+
+[![GitHub ★ 636](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=636&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sandbaseai/sandbase-harness)
+
+> **用途**：需要持久会话、产物查询与停止接口的Agent开发者，可以用它替代自行拼装脚本worker管理层；DSH通过示例MCP桥连接独立运行时。
+
+> **亮点**：[Q01](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q01) 将会话和产物管理集中到独立运行时；[Q02](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q02) 提供真实MCP到会话API桥接。其贡献是资源管理和接入组织，模型推理与MCP协议不是本项目原创。
+
+> **思考**：[Q02](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q02) 的idle和文本回传不等于研究报告验收。[Q03](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q03) 本地provider非强隔离且路径写入有末端悬空链接边界，不应对任意仓库开放执行。
+
+> **建议**：可以推导未验证的研究交付适配层。保留现有会话管理，在结果里增加固定仓库提交、问题/答案/证据、材料摘要与报告位置，并将父端逐题决定和交付摘要绑定。相对现在只返回文本和最后事件，增量是让脚本预查版本、文件和覆盖关系，父模型只检查逐题语义与关键依赖，而不重做材料整理。
+
+[查看完整分析](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1301657572-root"></a>
 

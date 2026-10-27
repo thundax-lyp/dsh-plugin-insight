@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[2230ae4](https://github.com/Asheblog/dsh-ollama-cloud/tree/2230ae4d77eeff2f8347993b62bd69f9c1e13916)
+源码版本：[27605b9](https://github.com/Asheblog/dsh-ollama-cloud/tree/27605b91d11ee6bd2204796961a3102a7da5341d)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asheblog/dsh-ollama-cloud)
@@ -12,7 +12,7 @@
 
 > **亮点**：[Q01](#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
 
-> **主要限制**：[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。
+> **主要限制**：[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。 [Q02](#research-q02) 的normalizeContext是实际缓冲机制，不能因警告非阻断就否定全部适配；但包已提高宿主下限，旧宿主不能凭shim宣称受支持。
 
 **本文目录**
 
@@ -48,14 +48,10 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| Ollama聊天route | 通过兼容接口用模型 | 委托官方PiAiAdapter，云端需key |
-| 原生目录发现 | 获取模型和元信息 | show失败会保留未知能力条目 |
-| 推理档位 | 将模型档位交给宿主 | 依赖端点声明与配置 |
-| 配额读取 | 看窗口额度与重置 | balance不支持或暂态错误需区分 |
+- **Host 路由**：ollama-cloud模型适配与原生目录发现
+- **界面**：通过RPC提供云端用量数据供客户端展示
 
 #### 启动与依赖
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
@@ -65,6 +61,7 @@
 | 凭据引用 | 云端必需 | 认证 | 明确MISSING_CREDENTIAL |
 | connection注入webServer | 用量UI必需 | 配额RPC | 聊天可独立，UI说明需重启 |
 | web服务 | 搜索可选 | 搜索抓取 | 不影响纯聊天 |
+| DSH >=0.2.1-rc.1，Node ^22.19或>=24 | 包约束必需 | 0.5.0运行契约 | 旧宿主不能仅凭shim假定支持 |
 
 #### 启动步骤
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -81,6 +78,8 @@
 | 持续使用 | 模型费用、目录与配额网络 | 跟踪宿主/pi-ai和端点元信息 | 套餐和调用量未知 |
 | 失败恢复 | 重试与潜在重复调用 | 查诊断、切模型、核对旧缓存 | 真实故障成本未测 |
 
+
+
 #### 效果
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
@@ -88,7 +87,7 @@
 | 请求一致性 | prepareCall绑定快照 | 跨代际宿主兼容 |
 | 配额可见 | remaining转换与时间字段 | 端点实时读数和界面理解 |
 
-> **思考**：[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。
+> **思考**：[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。 [Q02](#research-q02) 的normalizeContext是实际缓冲机制，不能因警告非阻断就否定全部适配；但包已提高宿主下限，旧宿主不能凭shim宣称受支持。
 
 <a id="detail-section-4"></a>
 
@@ -102,7 +101,7 @@
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。
+[Q03](#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。 [Q02](#research-q02) 的normalizeContext是实际缓冲机制，不能因警告非阻断就否定全部适配；但包已提高宿主下限，旧宿主不能凭shim宣称受支持。
 
 <a id="detail-section-6"></a>
 
@@ -118,7 +117,7 @@
 
 适配委托、目录发现与配额解析有源码依据；真实端点能力及宿主契约未验收；统一时效标记是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、README.zh.md、src/index.ts、src/adapter.ts、src/discovery.ts、src/alignment.ts、src/usage.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、README.zh.md、src/index.ts、src/adapter.ts、src/discovery.ts、src/alignment.ts、src/usage.ts、src/profile.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定README、adapter、index、discovery、alignment及usage关键路径。
 - 下一步：- 已检查固定源码与作者材料。
@@ -128,8 +127,8 @@
 **分析版本**
 
 - **仓库**：[Asheblog/dsh-ollama-cloud](https://github.com/Asheblog/dsh-ollama-cloud)
-- **版本号**：0.4.2（[固定提交 2230ae4](https://github.com/Asheblog/dsh-ollama-cloud/tree/2230ae4d77eeff2f8347993b62bd69f9c1e13916)）
-- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.0（[固定提交 27605b9](https://github.com/Asheblog/dsh-ollama-cloud/tree/27605b91d11ee6bd2204796961a3102a7da5341d)）
+- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -152,17 +151,21 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 17 | 1640 | — | — | 21748 |
-| .js | source | 17 | 4542 | 3099 | 1366 | — |
-| .mjs | source | 4 | 320 | 210 | 84 | — |
-| .ts | source | 16 | 3762 | 2155 | 1342 | — |
-| .ts | test | 18 | 3337 | 2795 | 246 | — |
+| .md | source | 19 | 1820 | — | — | 24730 |
+| .js | source | 17 | 4563 | 3102 | 1384 | — |
+| .mjs | source | 4 | 342 | 226 | 90 | — |
+| .ts | source | 16 | 3784 | 2158 | 1360 | — |
+| .ts | test | 21 | 3725 | 3024 | 375 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [GitHub Issues](https://github.com/Asheblog/dsh-ollama-cloud/issues) 查看。
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Asheblog/dsh-ollama-cloud/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/Asheblog/dsh-ollama-cloud/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Asheblog/dsh-ollama-cloud/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
+
+
+
+统计日期：2026-10-27。
 
 <a id="detail-section-10"></a>
 
@@ -184,7 +187,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:5-9](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/README.zh.md#L5-L9)
+**依据 1 · 作者声明**：[README.zh.md:5-9](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/README.zh.md#L5-L9)
 
 列明兼容聊天、原生发现及动态目录目标。
 
@@ -196,7 +199,7 @@ DeepSeek Harness 的 Ollama Cloud 供应商插件：装完即用，并且**每�
 模型目录同样不随插件版本冻结：**每次装载时插件都会问配置的端点当前提供哪些模型，并把答案用在本次会话里**，同时缓存给下次启动；长时间运行的会话还会按间隔再刷。于是 Ollama 新增、下架或改了档位的模型，都不需要等插件更新。
 ```
 
-**依据 2 · 源码核查**：[src/adapter.ts:97-115](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/adapter.ts#L97-L115)
+**依据 2 · 源码核查**：[src/adapter.ts:97-115](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/adapter.ts#L97-L115)
 
 聊天构造官方PiAiAdapter，明确归属。
 
@@ -237,11 +240,11 @@ DeepSeek Harness 的 Ollama Cloud 供应商插件：装完即用，并且**每�
 
 #### 完整回答
 
-宿主注册ollama-cloud适配器，adapter以当前connection对象构造快照；prepareCall将模型信息和stream绑定同一代，避免配置改动让飞行请求混用。缺指定凭据时明确抛MISSING_CREDENTIAL，未指定引用才允许无认证本地服务。发现按tags列模型并分批show读取能力，404/410删除，其他暂时失败保留只含id条目。配额从remaining_percent转成usedFraction供RPC，账户key由宿主解析。依赖llm及共享PiAiAdapter，配额UI另需connection通道，搜索另需web服务。
+宿主注册ollama-cloud适配器，adapter以当前connection对象构造快照；prepareCall将模型信息和stream绑定同一代，避免配置改动让飞行请求混用。缺指定凭据时明确抛MISSING_CREDENTIAL，未指定引用才允许无认证本地服务。发现按tags列模型并分批show读取能力，404/410删除，其他暂时失败保留只含id条目。配额从remaining_percent转成usedFraction供RPC，账户key由宿主解析。依赖llm及共享PiAiAdapter，配额UI另需connection通道，搜索另需web服务。 0.5.0 的包约束为 DSH >=0.2.1-rc.1，Node ^22.19.0 或>=24；配额RPC额外注入webStartup和webServer。适配流通过插件自带pi-ai协议，contextTolerantStreams在stream/streamSimple入口做normalizeContext，保持可选fetch/cancel能力；这是显式兼容适配，不是版本警告代替兼容。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/adapter.ts:145-160](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/adapter.ts#L145-L160)
+**依据 1 · 源码核查**：[src/adapter.ts:145-160](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/adapter.ts#L145-L160)
 
 同代prepare与委托stream。
 
@@ -269,7 +272,7 @@ DeepSeek Harness 的 Ollama Cloud 供应商插件：装完即用，并且**每�
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:134-147](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/index.ts#L134-L147)
+**依据 2 · 源码核查**：[src/index.ts:154-167](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/index.ts#L154-L167)
 
 明确凭据缺失错误。
 
@@ -295,7 +298,7 @@ export function createRouteApiKeyResolver(
 
 </details>
 
-**依据 3 · 源码核查**：[src/discovery.ts:288-325](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/discovery.ts#L288-L325)
+**依据 3 · 源码核查**：[src/discovery.ts:288-325](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/discovery.ts#L288-L325)
 
 发现列表及缺失/暂态区分。
 
@@ -345,7 +348,7 @@ export function createRouteApiKeyResolver(
 
 </details>
 
-**依据 4 · 源码核查**：[src/usage.ts:117-160](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/usage.ts#L117-L160)
+**依据 4 · 源码核查**：[src/usage.ts:117-160](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/usage.ts#L117-L160)
 
 remaining和used互补映射。
 
@@ -401,6 +404,59 @@ function decodeWindow(id: UsageWindowId, value: unknown): OllamaUsageWindow | un
 
 </details>
 
+**依据 5 · 源码核查**：[src/profile.ts:163-170](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/profile.ts#L163-L170)
+
+两种stream入口规范化上下文且保留其他协议能力。
+
+```text
+export function contextTolerantStreams(streams: ProviderStreams): ProviderStreams {
+  return {
+    // Spread first so optional capabilities (deferred fetch/cancel) survive the
+    // wrap; a protocol that gains one must not lose it to this shim.
+    ...streams,
+    stream: (model, context, options) => streams.stream(model, normalizeContext(context), options),
+    streamSimple: (model, context, options) => streams.streamSimple(model, normalizeContext(context), options),
+  }
+```
+
+**依据 6 · 源码核查**：[src/index.ts:124-138](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/index.ts#L124-L138)
+
+用量通道要求连接行的webStartup与webServer。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+ * `connection.rpc.handle()` registers the channel through the connection
+ * service's own `webServer`, so the requirement sits on *that* row: a caller
+ * that injects `webServer` itself still throws `cannot get property "webServer"
+ * without inject` (reproduced against `@deepseek-ai/cordis` 4.0.5). The first
+ * entry is that row's own startup dependency — the web-runtime service the
+ * `0.2.1` line injects as `webStartup` (`webRuntime` before it) — restated
+ * because a patch replaces the row's `inject` array wholesale.
+ *
+ * The list is written twice on purpose: here, so this diagnostic can name it,
+ * and in the bundle patch, which is what the loader actually reads.
+ * `tests/composition.test.ts` compares this constant, that patch, and the
+ * installed `@deepseek-ai/dsh-web-app` composition, so the next upstream move
+ * fails `pnpm test` instead of a user's boot.
+ */
+export const USAGE_CHANNEL_ROW_INJECT = ['webStartup', 'webServer'] as const
+```
+
+</details>
+
+**依据 7 · 源码核查**：[package.json:25-28](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/package.json#L25-L28)
+
+实际发布运行时与宿主最低版本约束。
+
+```text
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.1-rc.1"
+  },
+  "packageManager": "pnpm@11.7.0",
+```
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -411,11 +467,11 @@ function decodeWindow(id: UsageWindowId, value: unknown): OllamaUsageWindow | un
 
 #### 完整回答
 
-tags存在不代表show完整回答，暂态失败条目仍会保留；能力元信息表达供应商声明，未证明工具调用、视觉或推理档位都在真实任务中生效。官方共享adapter与插件自带pi-ai可能版本漂移，alignment尽力读取manifest并警告，读不到会静默，因而无警告不等于契约兼容。配置快照和失败不删真模型是合理可靠性取舍，但可能暂时显示能力不明条目。README的具体内置模型表仅是固定作者快照，不当作本轮实时可用目录。
+tags存在不代表show完整回答，暂态失败条目仍会保留；能力元信息表达供应商声明，未证明工具调用、视觉或推理档位都在真实任务中生效。插件以normalizeContext兼容上下文形状，但宿主共享adapter与自带pi-ai仍有契约边界；alignment尽力读取manifest并警告，读不到会静默，因而无警告不等于契约兼容。配置快照和失败不删真模型是合理可靠性取舍，但可能暂时显示能力不明条目。README的具体内置模型表仅是固定作者快照，不当作本轮实时可用目录。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/discovery.ts:315-325](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/discovery.ts#L315-L325)
+**依据 1 · 源码核查**：[src/discovery.ts:315-325](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/discovery.ts#L315-L325)
 
 show失败保留id但未声明能力。
 
@@ -438,7 +494,7 @@ show失败保留id但未声明能力。
 
 </details>
 
-**依据 2 · 源码核查**：[src/alignment.ts:16-31](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/alignment.ts#L16-L31)
+**依据 2 · 源码核查**：[src/alignment.ts:16-31](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/alignment.ts#L16-L31)
 
 best-effort诊断的非阻塞边界。
 
@@ -486,7 +542,7 @@ best-effort诊断的非阻塞边界。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:22-37](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/README.zh.md#L22-L37)
+**依据 1 · 作者声明**：[README.zh.md:22-37](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/README.zh.md#L22-L37)
 
 凭据、route冲突及按会话档位。
 
@@ -514,7 +570,7 @@ Key 在 <https://ollama.com/settings/keys> 申请。模型目录与元数据接�
 
 </details>
 
-**依据 2 · 源码核查**：[src/usage.ts:50-60](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/usage.ts#L50-L60)
+**依据 2 · 源码核查**：[src/usage.ts:50-60](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/usage.ts#L50-L60)
 
 配额读取有超时及一次暂态重试延迟。
 
@@ -551,7 +607,7 @@ export const RETRY_DELAY_MS = 500
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/discovery.ts:257-268](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/discovery.ts#L257-L268)
+**依据 1 · 源码核查**：[src/discovery.ts:257-268](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/discovery.ts#L257-L268)
 
 发现明确区分暂态与退役，为时效状态提供依据。
 
@@ -575,7 +631,7 @@ export const RETRY_DELAY_MS = 500
 
 </details>
 
-**依据 2 · 源码核查**：[src/usage.ts:78-84](https://github.com/Asheblog/dsh-ollama-cloud/blob/2230ae4d77eeff2f8347993b62bd69f9c1e13916/src/usage.ts#L78-L84)
+**依据 2 · 源码核查**：[src/usage.ts:78-84](https://github.com/Asheblog/dsh-ollama-cloud/blob/27605b91d11ee6bd2204796961a3102a7da5341d/src/usage.ts#L78-L84)
 
 配额快照已有fetchedAt可用。
 

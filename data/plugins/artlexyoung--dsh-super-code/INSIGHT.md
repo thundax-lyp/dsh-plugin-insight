@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[1dfa173](https://github.com/ArtlexYoung/dsh-super-code/tree/1dfa1736d82bf75f0c88fc26da712d2798c70c50)
+源码版本：[cf793e2](https://github.com/ArtlexYoung/dsh-super-code/tree/cf793e267bbe081717945891e133de1b4f615f03)
 
 <!-- BEGIN META -->
-[![GitHub ★ 16](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=16&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ArtlexYoung/dsh-super-code) [![npm 30d 2,714](https://img.shields.io/static/v1?label=npm+30d&message=2%2C714&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-code) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-code)
+[![GitHub ★ 16](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=16&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ArtlexYoung/dsh-super-code) [![npm 30d 2,783](https://img.shields.io/static/v1?label=npm+30d&message=2%2C783&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-code) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-code)
 <!-- END META -->
 
-> **功能**：提供编码 Agent 预设、任务与委派台账、专业方法、分层记忆和可配置运行预算。
+> **功能**：提供编码 Agent 预设、需求绑定任务台账、分层记忆与本机 MCP 委派连接。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。 [Q06](#research-q06) 的本机 MCP 以请求去重、目录白名单和可观测会话把 DSH 接为外部执行 worker；这增加跨客户端交接路径，模型执行仍归宿主。
 
-> **主要限制**：[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.7和新宿主。默认宽松删除提示不是全面删除防线。
+> **主要限制**：[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.8和新宿主。默认宽松删除提示不是全面删除防线。 [Q06](#research-q06) 进一步说明服务级 Bearer 不是多用户隔离，finished 不是报告验收，单工作树排他也限制并发。
 
 **本文目录**
 
@@ -31,6 +31,7 @@
   - [Q03 · 结构验收和公开评测能证明多大收益？](#detail-section-13)
   - [Q04 · 多agent与记忆负担是否支持采用？](#detail-section-14)
   - [Q05 · 可否用任务证据而非模型自报驱动预算？](#detail-section-15)
+  - [Q06 · 外部 MCP 委派是否已接到真实 DSH 会话，断线和并发边界是什么？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,7 +41,7 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向需要跨多文件调查、实现和验证的DSH开发任务，合格交付仍是满足用户需求且通过项目验收的补丁，任务台账和Agent树只是辅助。普通宿主agent也有工具和子agent，此插件增加按需方法、带来源需求的台账、版本绑定成员交接及工作区长期经验。它明确不另建agent loop，模型、权限、持久化和子agent执行归宿主；贡献应归于任务组织与证据交接而非声称新模型或自动正确性。
+> **用途**：面向需要跨多文件调查、实现和验证的DSH开发任务，合格交付仍是满足用户需求且通过项目验收的补丁，任务台账和Agent树只是辅助。普通宿主agent也有工具和子agent，此插件增加按需方法、带来源需求的台账、版本绑定成员交接及工作区长期经验。它明确不另建agent loop，模型、权限、持久化和子agent执行归宿主；贡献应归于任务组织与证据交接而非声称新模型或自动正确性。 外部 MCP 客户端还可把明确工作目录的任务交给 DSH，但这不是预置 INSIGHT 报告服务。
 
 参照宿主普通编码预设和已有子agent；历史作者评测仅说明特定候选/宿主/模型组合。
 
@@ -48,15 +49,11 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| Super Code预设 | 组织复杂编码流程 | 模型、权限和loop归宿主 |
-| 任务台账 | 保存需求来源与验收条件 | quote需对应直接用户消息 |
-| 委派绑定 | 拒绝陈旧子任务结果 | reviewable不证明正确或预算达标 |
-| 分层记忆 | 按任务、项目、全局提供上下文 | 长期库可降级，需来源复核 |
-| 删除模式 | 提示可恢复删除或strict确认 | strict门限bash/pwsh识别范围 |
+- **Agent/Preset**：提供Super Code编码预设并复用宿主spawn
+- **模型工具**：super_code_method与super_code_task用于方法读取和任务台账
+- **后台**：注册任务、反馈和用量投影及长期记忆
 
 #### 启动与依赖
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
@@ -66,6 +63,8 @@
 | storageDomain | 长期记忆必需 | topic持久库 | 降级任务记忆 |
 | approval通道 | strict删除确认必需 | 单次放行 | strict识别命令拒绝执行 |
 | 项目验收 | 交付必需 | 判补丁正确 | 结构可审查不代替验收 |
+| 持久化 profile 与 sessionController/query/subagents | MCP 必需 | 真实委派和任务树观测 | 连接服务不启动或返回 unavailable |
+| 本机端口、Bearer 与目录授权 | MCP 必需 | 连接认证与工作目录范围 | 拒绝请求；同一 token 不提供多用户隔离 |
 
 #### 启动步骤
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -75,6 +74,7 @@
 | 委派 | 模型按需分工 | owner/attempt/binding一致 |
 | 回收 | 模型读结果，用户/测试验收 | 不以自报completed代替测试 |
 | 恢复 | 检查pending或旧任务 | 重新确认现行代码和需求 |
+| 外部委派 | 用户启用连接并授权目录，客户端先查 dsh_sessions 再明确复用或新建 | 保留 requestId，等待后按真实文件验收；断线不重派 |
 
 #### 成本
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
@@ -82,6 +82,7 @@
 | 首次使用 | 已有宿主与模型资源 | 确认预设所有权、预算与权限 | 配置耗时未知 |
 | 持续使用 | 父子调用、压缩、存储 | 委派回收、真实测试和经验清理 | 总账单需含失败 |
 | 失败恢复 | 重试和旧任务读取 | pending持久化、过期binding排查 | 不盲重放写操作 |
+| 外部 MCP 接入 | DSH 模型与原调用方验收的双边用量 | 客户端配置、token 管理、目录授权和产物回读 | 不可只统计 Codex 侧 token；同一工作树排他 |
 
 #### 效果
 | 效果项 | 当前证据支持 | 尚不能确定 |
@@ -90,22 +91,23 @@
 | 交接防陈旧 | binding含修订版本 | 子任务正确性 |
 | 分层记忆 | 工作区topic读取 | 长期增效和费用 |
 | 作者评测 | 有条件和修正规则文档 | 当前提交同条件效果 |
+| 跨客户端执行 | 本机六工具接真实宿主会话 | 尚未证明指定研究协议、报告质量或全链 token 节省 |
 
-> **思考**：[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.7和新宿主。默认宽松删除提示不是全面删除防线。
+> **思考**：[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.8和新宿主。默认宽松删除提示不是全面删除防线。 [Q06](#research-q06) 进一步说明服务级 Bearer 不是多用户隔离，finished 不是报告验收，单工作树排他也限制并发。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。 [Q06](#research-q06) 的本机 MCP 以请求去重、目录白名单和可观测会话把 DSH 接为外部执行 worker；这增加跨客户端交接路径，模型执行仍归宿主。
 
-将execution归宿主、任务binding和源码引用验证写成独立模块是可借鉴点。安装器先存意图与所有权检查减少重启反复写风险；预算bridge依赖宿主compaction契约，升级需专项核查。
+将execution归宿主、任务binding和源码引用验证写成独立模块是可借鉴点。安装器先存意图与所有权检查减少重启反复写风险；预算bridge依赖宿主compaction契约，升级需专项核查。 [Q06](#research-q06) 可借鉴先持久化派发意图、稳定请求去重、rpcId 对应观测以及执行结束与验收分离；移植须重建宿主事件适配与权限范围。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.7和新宿主。默认宽松删除提示不是全面删除防线。
+[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.8和新宿主。默认宽松删除提示不是全面删除防线。 [Q06](#research-q06) 进一步说明服务级 Bearer 不是多用户隔离，finished 不是报告验收，单工作树排他也限制并发。
 
 <a id="detail-section-6"></a>
 
@@ -119,20 +121,20 @@
 
 **核查状态**：已检查源码。
 
-任务来源、交接绑定及宿主预设接线有源码支持；当前版本收益与严格放行未验收；事件预算反馈是假设。
+需求来源、交接绑定和本机 MCP 到宿主会话的接线有源码支持；当前版本效果、外部客户端兼容与完整计费未执行验收；证据驱动预算仍是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、docs/EvaluationResults.md、src/index.ts、src/dsh/index.ts、src/dsh/super-code.ts、src/core/delegation.ts、src/dsh/preset-installation.ts、src/dsh/deletion-protection.ts、src/dsh/official-budgets.ts、src/dsh/budgets.ts、presets/super-code/agent.cordis.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、docs/EvaluationResults.md、src/index.ts、src/dsh/index.ts、src/dsh/super-code.ts、src/core/delegation.ts、src/dsh/preset-installation.ts、src/dsh/deletion-protection.ts、src/dsh/official-budgets.ts、src/dsh/budgets.ts、presets/super-code/agent.cordis.yml、src/connection/http.ts、src/connection/tasks.ts、src/dsh/connection-host.ts、src/dsh/connection.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定入口、预设composition、任务来源及delegation、预算安装和删除模式；评测文档作为作者材料。
+- 边界：固定入口、预设composition、任务来源及delegation、预算安装和删除模式；评测文档作为作者材料。 新增核查本机 MCP 工具、HTTP 鉴权、任务排他与会话控制，不执行目标代码或客户端连接。
 - 下一步：- 已检查固定源码、composition和作者评测口径。
 - 未执行插件、benchmark、测试或宿主安装。
-- 当前版本效益、完整计费及用户仓库验收未知。
+- 当前版本效益、完整计费及用户仓库验收未知。 对 MCP 单独验证连接、批准目录、同 requestId 重试、等待断线和重启；真实结束后仍比对需求、证据与工作区改动。
 
 **分析版本**
 
 - **仓库**：[ArtlexYoung/dsh-super-code](https://github.com/ArtlexYoung/dsh-super-code)
-- **版本号**：0.3.7（[固定提交 1dfa173](https://github.com/ArtlexYoung/dsh-super-code/tree/1dfa1736d82bf75f0c88fc26da712d2798c70c50)）
-- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.8（[固定提交 cf793e2](https://github.com/ArtlexYoung/dsh-super-code/tree/cf793e267bbe081717945891e133de1b4f615f03)）
+- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -144,7 +146,7 @@
 
 - 已检查固定源码、composition和作者评测口径。
 - 未执行插件、benchmark、测试或宿主安装。
-- 当前版本效益、完整计费及用户仓库验收未知。
+- 当前版本效益、完整计费及用户仓库验收未知。 对 MCP 单独验证连接、批准目录、同 requestId 重试、等待断线和重启；真实结束后仍比对需求、证据与工作区改动。
 
 <a id="detail-section-9"></a>
 
@@ -155,17 +157,21 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 35 | 6898 | 6566 | 274 | — |
-| .md | source | 12 | 1474 | — | — | 40742 |
+| .js | source | 44 | 8806 | 8444 | 300 | — |
+| .md | source | 12 | 1577 | — | — | 46668 |
 | .mjs | source | 12 | 1292 | 1187 | 38 | — |
-| .ts | source | 35 | 4404 | 3941 | 207 | — |
-| .ts | test | 29 | 5201 | 4908 | 40 | — |
+| .ts | source | 44 | 5401 | 4916 | 221 | — |
+| .ts | test | 31 | 5760 | 5440 | 41 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [GitHub Issues](https://github.com/ArtlexYoung/dsh-super-code/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ArtlexYoung/dsh-super-code/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/ArtlexYoung/dsh-super-code/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ArtlexYoung/dsh-super-code/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
+
+
+
+统计日期：2026-10-27。
 
 <a id="detail-section-10"></a>
 
@@ -187,7 +193,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:85-105](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/README.md#L85-L105)
+**依据 1 · 作者声明**：[README.md:89-109](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/README.md#L89-L109)
 
 预设使用与UI只读边界。
 
@@ -220,7 +226,7 @@ The **Super Code** sidebar contains Task status, Agent execution, and Memory lib
 
 </details>
 
-**依据 2 · 源码核查**：[src/dsh/super-code.ts:76-94](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/super-code.ts#L76-L94)
+**依据 2 · 源码核查**：[src/dsh/super-code.ts:76-94](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/super-code.ts#L76-L94)
 
 插件装工具与提示，非新agent loop。
 
@@ -265,7 +271,7 @@ export function apply(ctx: Context, config: Config = {}): void {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/dsh/index.ts:34-48](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/index.ts#L34-L48)
+**依据 1 · 源码核查**：[src/dsh/index.ts:34-48](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/index.ts#L34-L48)
 
 宿主注册及长期记忆装配。
 
@@ -273,11 +279,13 @@ export function apply(ctx: Context, config: Config = {}): void {
 <summary>查看原文（15行）</summary>
 
 ```text
+
 export async function apply(ctx: Context, config: Configuration = {}): Promise<void> {
   applyBudgetSettings(ctx, config)
   applyOfficialBudgets(ctx)
   applyDeletionProtection(ctx)
   applyPresetInstallation(ctx)
+  applyConnection(ctx)
   ctx.inject(['superCodeLongMemory', 'sessions'], owner => {
     new SuperCodeMemory(owner, owner.get('superCodeLongMemory') as LongMemoryStore)
   })
@@ -286,13 +294,11 @@ export async function apply(ctx: Context, config: Configuration = {}): Promise<v
     projectionCtx.sessionProjections.register(taskMemoryProjection)
     projectionCtx.sessionProjections.register(taskFeedbackProjection)
     projectionCtx.sessionProjections.register(memoryUsageProjection)
-  })
-  await installLongMemory(ctx)
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/dsh/super-code.ts:39-43](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/super-code.ts#L39-L43)
+**依据 2 · 源码核查**：[src/dsh/super-code.ts:39-43](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/super-code.ts#L39-L43)
 
 需求来源验证。
 
@@ -304,7 +310,7 @@ function assertSource(session: Session, source: TaskSource): void {
   if (!original.includes(source.quote)) throw new Error('Requirement quote is not present in its original user message')
 ```
 
-**依据 3 · 源码核查**：[src/core/delegation.ts:28-55](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/core/delegation.ts#L28-L55)
+**依据 3 · 源码核查**：[src/core/delegation.ts:28-55](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/core/delegation.ts#L28-L55)
 
 交接绑定与可审查判据。
 
@@ -344,7 +350,7 @@ export function validateMemberResult(task: TaskMemory, sessionId: string, assign
 
 </details>
 
-**依据 4 · 源码核查**：[presets/super-code/agent.cordis.yml:40-48](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/presets/super-code/agent.cordis.yml#L40-L48)
+**依据 4 · 源码核查**：[presets/super-code/agent.cordis.yml:40-48](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/presets/super-code/agent.cordis.yml#L40-L48)
 
 实际子agent由宿主提供。
 
@@ -370,11 +376,11 @@ export function validateMemberResult(task: TaskMemory, sessionId: string, assign
 
 #### 完整回答
 
-validateMemberResult只证明绑定、owner、attempt和completed状态匹配，artifacts/checks仍可为模型自报，代码注释明确reviewable不是工作正确。maxTokens预算同样不认证真实账单。默认删除为relaxed提示，只有strict在bash/pwsh且识别到命令时请求确认，不能称全面阻止任意永久删除。作者评测有丰富口径和修正材料，但主要对应历史冻结候选和其他插件版本；不同宿主、模型及预算改变结果，固定0.3.7源码不能继承56%或节费结论。源码设计可借鉴，效果需在本地任务验证。
+validateMemberResult只证明绑定、owner、attempt和completed状态匹配，artifacts/checks仍可为模型自报，代码注释明确reviewable不是工作正确。maxTokens预算同样不认证真实账单。默认删除为relaxed提示，只有strict在bash/pwsh且识别到命令时请求确认，不能称全面阻止任意永久删除。作者评测有丰富口径和修正材料，但主要对应历史冻结候选和其他插件版本；不同宿主、模型及预算改变结果，固定0.3.8源码不能继承56%或节费结论。源码设计可借鉴，效果需在本地任务验证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core/delegation.ts:38-55](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/core/delegation.ts#L38-L55)
+**依据 1 · 源码核查**：[src/core/delegation.ts:38-55](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/core/delegation.ts#L38-L55)
 
 reviewable和模型自报账单边界。
 
@@ -404,7 +410,7 @@ export function validateMemberResult(task: TaskMemory, sessionId: string, assign
 
 </details>
 
-**依据 2 · 源码核查**：[src/dsh/deletion-protection.ts:58-71](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/deletion-protection.ts#L58-L71)
+**依据 2 · 源码核查**：[src/dsh/deletion-protection.ts:58-71](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/deletion-protection.ts#L58-L71)
 
 严格模式仅对应命令门。
 
@@ -430,7 +436,7 @@ export function validateMemberResult(task: TaskMemory, sessionId: string, assign
 
 </details>
 
-**依据 3 · 作者声明**：[docs/EvaluationResults.md:64-70](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/docs/EvaluationResults.md#L64-L70)
+**依据 3 · 作者声明**：[docs/EvaluationResults.md:64-70](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/docs/EvaluationResults.md#L64-L70)
 
 作者明确净耗时、缺usage和历史基线限制。
 
@@ -446,7 +452,7 @@ Creative retains the official preset and tools; evaluation isolation blocks host
 
 #### 缺口
 
-- 固定0.3.7与用户宿主模型组合的任务质量和全费用未知。
+- 固定0.3.8与用户宿主模型组合的任务质量和全费用未知。
   **影响**：不能把旧候选评测百分比或结构通过当当前收益。
   **进一步探讨**：固定当前版本、宿主、模型和预算，对同项目任务盲验补丁与完整账单，含失败和人工复核。
 
@@ -464,7 +470,7 @@ Creative retains the official preset and tools; evaluation isolation blocks host
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/dsh/index.ts:20-30](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/index.ts#L20-L30)
+**依据 1 · 源码核查**：[src/dsh/index.ts:20-30](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/index.ts#L20-L30)
 
 长期存储失败降级。
 
@@ -472,6 +478,7 @@ Creative retains the official preset and tools; evaluation isolation blocks host
 <summary>查看原文（11行）</summary>
 
 ```text
+
 async function installLongMemory(ctx: Context): Promise<void> {
   await ctx.inject(['storageDomain'], async owner => {
     try {
@@ -482,12 +489,11 @@ async function installLongMemory(ctx: Context): Promise<void> {
       owner.effect(() => remove)
     } catch {
       owner.logger.warn('Super Code long memory storage is unavailable; task memory remains available.')
-    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/dsh/super-code.ts:102-121](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/super-code.ts#L102-L121)
+**依据 2 · 源码核查**：[src/dsh/super-code.ts:102-121](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/super-code.ts#L102-L121)
 
 pending检查点与工作区记忆门。
 
@@ -519,7 +525,7 @@ pending检查点与工作区记忆门。
 
 </details>
 
-**依据 3 · 源码核查**：[src/dsh/preset-installation.ts:78-85](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/dsh/preset-installation.ts#L78-L85)
+**依据 3 · 源码核查**：[src/dsh/preset-installation.ts:78-85](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/preset-installation.ts#L78-L85)
 
 安装意图先持久化、避免反复写。
 
@@ -548,7 +554,7 @@ pending检查点与工作区记忆门。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core/delegation.ts:16-20](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/core/delegation.ts#L16-L20)
+**依据 1 · 源码核查**：[src/core/delegation.ts:16-20](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/core/delegation.ts#L16-L20)
 
 当前账目为非认证模型自报。
 
@@ -560,7 +566,7 @@ export type MemberAccounting = { kind: 'unavailable'; budget: 'unknown' }
   | { kind: 'model-reported'; budget: 'unknown'; reportedBudget: 'within' | 'exceeded' | 'incomplete' | 'invalid' }
 ```
 
-**依据 2 · 源码核查**：[src/core/delegation.ts:28-35](https://github.com/ArtlexYoung/dsh-super-code/blob/1dfa1736d82bf75f0c88fc26da712d2798c70c50/src/core/delegation.ts#L28-L35)
+**依据 2 · 源码核查**：[src/core/delegation.ts:28-35](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/core/delegation.ts#L28-L35)
 
 任务与attempt绑定可作为归属基础。
 
@@ -574,5 +580,310 @@ export function createMemberBrief(task: TaskMemory, sessionId: string, input: Me
     workspace: task.workspace, sourceVersion: task.sourceVersion, constraints: task.requirements.map(item => item.text) }
   return { ...fields, binding: createHash('sha256').update(JSON.stringify(fields)).digest('hex') }
 ```
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 外部 MCP 委派是否已接到真实 DSH 会话，断线和并发边界是什么？
+
+**研究主题**：功能与机制、依赖、兼容与流程、缺陷与关键质疑、效果与总成本、工程质量与复用、采用判断
+
+#### 完整回答
+
+固定源码已提供默认关闭的本机 Streamable HTTP MCP：dsh_sessions 查询允许目录的服务管理会话，dsh_run 可复用明确 taskId 或新建根会话，dsh_wait 按游标读取，dsh_send 显式续问，dsh_cancel 请求取消，dsh_request_directory 提交待用户批准的目录申请。HTTP 仅监听 127.0.0.1，先检查 Host、Origin、Bearer token，再解析请求；凭据是服务级共享授权，连接 ID 用于关联而不是每用户权限隔离，不能视作多租户服务。任务层 canonical realpath 验目录白名单，稳定 requestId 与输入指纹防同请求重复派发；同目录、父子目录和同 Git 工作树冲突会被拒绝，连接容量不等于能在同一仓库并行写入。真实执行通过 sessionController.create/prompt，观测当前 rpcId 对应的 user/message 与 turn/end，并检查托管后代；finished 只说明执行结束，acceptance 固定为 not-verified。重启把活跃记录标为 interrupted，不自动重放；MCP 等待超时和断线不取消任务，取消也不能撤销已发生的外部副作用。该链可作为另一模型的执行入口，但不是现成接受仓库并产出指定 META/报告的 INSIGHT 协议，调用方仍须给研究约束、读取完整产物并独立语义验收，且调用方沙箱不会自动传递给 DSH。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:49-55](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/README.md#L49-L55)
+
+作者说明启用、目录授权及对话复用流程。
+
+```text
+支持 Harness `0.1.5-alpha.1` 至 `0.2.1-rc.2`，按所用客户端选择安装方式；[各版本与客户端的验证范围](docs/Compatibility.md)。
+
+Supports Harness `0.1.5-alpha.1` through `0.2.1-rc.2`. Choose the installation method for your client; see [validation coverage by version and client](docs/Compatibility.md).
+
+正式版提供默认关闭的 **MCP 连接**：首页集中显示预设、保护、连接及在线/历史对话数量，客户端与关联会话详情在“连接”页；在“连接”中勾选工作目录并启用，通过连接 Prompt 配置 MCP 客户端。连接后先用 `dsh_sessions` 查看目录最近对话和连接额度，由调用方选择复用或新建，避免无意创建过多会话。外部会话新增目录需在 DSH 弹窗中同意，委派沿用宿主模型与权限。[连接配置、工具和恢复说明](docs/UsageGuide.md#mcp-连接--mcp-connection)
+
+The release provides an opt-in **MCP connection** with a Home overview for presets, protection, connections and connected/past conversation counts; client and linked-session details are in Connection. Select directories and enable it under Connection, then configure an MCP client using the connection prompt. After connecting, call `dsh_sessions` to see recent conversations and connection capacity, then explicitly choose reuse or a new root. Additional directories require consent in a DSH dialog. Delegation uses the host model and permissions. [Setup, tools and recovery](docs/UsageGuide.md#mcp-连接--mcp-connection)
+```
+
+**依据 2 · 源码核查**：[src/connection/http.ts:26-55](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/connection/http.ts#L26-L55)
+
+六工具实际注册及 finished、断线、权限语义。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  server.registerTool('dsh_sessions', { description: 'List recent DSH conversations for an allowed working directory before choosing dsh_run. Each entry includes taskId, status, reuse availability and linked connection count; the response also includes current/max/available MCP connections and active/available task slots. Pass a listed taskId to dsh_run to reuse that conversation, or set newConversation=true to create a new root.',
+    inputSchema: z.object({ cwd: z.string().min(1).max(4096), limit: z.number().int().min(1).max(25).default(10) }).strict(),
+    annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  }, input => result(() => tasks.sessions(input.cwd, input.limit, connectionStatus())))
+  server.registerTool('dsh_run', { description: 'Delegate to DSH Super Code. Call dsh_sessions first and let the user choose a history entry. Pass taskId to reuse an exact conversation, or set newConversation=true to explicitly create a new root session. If neither is provided, a new root is created for backward compatibility. Use a stable requestId for retries; conflicts do not dispatch. DSH permissions apply independently of the caller sandbox. A finished turn is not verified acceptance.',
+    inputSchema: z.object({ requestId: identity, cwd: z.string().min(1).max(4096), prompt, client: z.string().min(1).max(80).optional(), taskId: identity.optional(), newConversation: z.boolean().optional() }).strict(),
+    annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: true },
+  }, input => result(() => {
+    if (input.taskId) {
+      if (input.newConversation) throw new ConnectionError('conflicting-session-options')
+      return tasks.send({ taskId: input.taskId, requestId: input.requestId, cwd: input.cwd, prompt: input.prompt, connectionId })
+    }
+    return tasks.run({ requestId: input.requestId, cwd: input.cwd, prompt: input.prompt, client: input.client ?? clientName(), connectionId })
+  }))
+  server.registerTool('dsh_wait', { description: 'Omit taskId to list service-owned tasks (cursor is a list offset). With taskId, read bounded output, workspace observations and events after cursor. Long-poll up to 30 seconds; timeout/disconnect never cancels execution. waiting_confirmation must be resolved in DSH. finished means execution ended, not acceptance verified.',
+    inputSchema: z.object({ taskId: identity.optional(), cursor, waitMs }).strict(),
+    annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
+  }, (input, extra) => result(() => input.taskId ? tasks.wait(input.taskId, input.cursor, input.waitMs, signal(extra.requestId)) : tasks.list(input.cursor)))
+  server.registerTool('dsh_send', { description: 'Explicitly queue a follow-up in a service-owned root session, including after an interruption. Use a new stable requestId for each follow-up. An ambiguous admission is never automatically resent. Does not approve host permissions.',
+    inputSchema: z.object({ taskId: identity, requestId: identity, prompt }).strict(),
+    annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: true },
+  }, input => result(() => tasks.send({ ...input, connectionId })))
+  server.registerTool('dsh_cancel', { description: 'Request cancellation of a service-owned root and its managed descendants. Check the returned status; cancelling/unavailable do not confirm that all execution stopped. Already accepted external side effects cannot be undone.',
+    inputSchema: z.object({ taskId: identity }).strict(),
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+  }, input => result(() => tasks.cancel(input.taskId)))
+  server.registerTool('dsh_request_directory', { description: 'Request access to an existing absolute directory (including its descendants). DSH displays a consent dialog; only the user can approve. Repeat the same requestId, path and reason to poll. Pending requests expire after 5 minutes and are discarded on host restart. Rejection is final for that requestId. Never assume access before approved.',
+    inputSchema: z.object({ requestId: identity, path: z.string().min(1).max(4096), reason: z.string().trim().min(1).max(1000) }).strict(),
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+  }, input => result(() => { if (!requestDirectory) throw new ConnectionError('unavailable'); return requestDirectory(input) }))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/connection/http.ts:92-129](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/connection/http.ts#L92-L129)
+
+本机监听与请求鉴权先于解析；MCP 会话连接上限。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+  async start(port: number, token: string, maxConnections = 3): Promise<void> {
+    if (this.server) throw new ConnectionError('already-listening')
+    const server = createServer((req, res) => { void this.handle(req, res, port, token, maxConnections).catch(() => { if (!res.headersSent) reply(res, 500, 'Request failed'); else res.end() }) })
+    server.requestTimeout = 15000; server.headersTimeout = 10000; server.keepAliveTimeout = 1000
+    server.maxHeadersCount = 40
+    await new Promise<void>((resolve, reject) => {
+      server.once('error', reject)
+      server.listen(port, '127.0.0.1', () => { server.removeListener('error', reject); resolve() })
+    }).catch(() => { server.close(); throw new ConnectionError('port-unavailable') })
+    this.server = server
+    this.timer = setInterval(() => { void this.prune().catch(() => {}) }, 5000); this.timer.unref()
+  }
+  private async admit(body: unknown, maxConnections: number): Promise<ClientConnection | false> {
+    if (!body || typeof body !== 'object' || (body as { method?: string }).method !== 'initialize') return false
+    await this.prune()
+    if (this.clients.size >= maxConnections) throw new ConnectionError('connection-limit')
+    const id = randomUUID(), now = Date.now(), lifetime = new AbortController(), calls = new Map<string | number, AbortController>()
+    const mcp = delegationMcpServer(this.tasks, requestId => calls.get(requestId)?.signal ?? lifetime.signal, id,
+      input => { if (!this.requestDirectory) throw new ConnectionError('unavailable'); return this.requestDirectory(input, this.clients.get(id)?.name ?? 'MCP client') },
+      () => this.clients.get(id)?.name ?? 'mcp',
+      () => ({ connections: this.clients.size, maxConnections, ids: [...this.clients.keys()] }))
+    const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: () => id, enableJsonResponse: true,
+      onsessionclosed: () => { void this.disconnect(id) } })
+    const client: ClientConnection = { id, name: 'MCP client', version: '', connectedAt: now, lastSeen: now, mcp, transport, lifetime, calls, active: 0 }
+    this.clients.set(id, client)
+    mcp.server.oninitialized = () => {
+      const info = mcp.server.getClientVersion()
+      client.name = (info?.name ?? 'MCP client').slice(0, 80); client.version = (info?.version ?? '').slice(0, 80)
+    }
+    try { await mcp.connect(transport) } catch (error) { await this.disconnect(id); throw error }
+    return client
+  }
+  private async handle(req: IncomingMessage, res: ServerResponse, port: number, token: string, maxConnections: number): Promise<void> {
+    const address = '127.0.0.1:' + port
+    if (req.headers.host !== address && req.headers.host !== 'localhost:' + port) { reply(res, 403, 'Invalid Host'); return }
+    if (req.headers.origin !== undefined) { reply(res, 403, 'Origin not allowed'); return }
+    if (req.url !== '/mcp') { reply(res, 404, 'Not found'); return }
+    if (!authorized(req, token)) { res.setHeader('WWW-Authenticate', 'Bearer'); reply(res, 401, 'Bearer token required'); return }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/connection/tasks.ts:45-87](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/connection/tasks.ts#L45-L87)
+
+规范化白名单、同工作树排他、请求去重及派发意图持久化。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+  private async directory(cwd: string): Promise<string> {
+    if (!isAbsolute(cwd)) throw new ConnectionError('absolute-directory-required')
+    let canonical: string
+    try { canonical = await realpath(cwd); if (!(await stat(canonical)).isDirectory()) throw new Error() }
+    catch { throw new ConnectionError('directory-unavailable') }
+    const roots = await Promise.all(this.configuration().allowedDirectories.map(path => realpath(path)))
+    if (!roots.some(root => withinDirectory(root, canonical))) throw new ConnectionError('directory-not-allowed')
+    return canonical
+  }
+  private async capacity(cwd: string, except = ''): Promise<void> {
+    const pending = this.records.filter(row => row.id !== except && (activeTask(row.status) || row.status === 'interrupted'))
+    if (pending.length >= this.configuration().maxConnections) throw new ConnectionError('concurrency-limit')
+    const root = await gitWorktreeRoot(cwd)
+    const roots = await Promise.all(pending.map(row => gitWorktreeRoot(row.cwd)))
+    if (pending.some((row, index) => withinDirectory(row.cwd, cwd) || withinDirectory(cwd, row.cwd)
+      || root !== false && root === roots[index])) throw new ConnectionError('workspace-busy')
+  }
+  async run(input: { requestId: string; cwd: string; prompt: string; client?: string; connectionId?: string }): Promise<TaskView> {
+    const task = await this.exclusive(async () => {
+      this.enabled()
+      const cwd = await this.directory(input.cwd)
+      const fingerprint = digest({ cwd, prompt: input.prompt, client: input.client ?? 'mcp' })
+      const prior = this.records.find(row => row.requestId === input.requestId)
+      if (prior) {
+        if (prior.fingerprint !== fingerprint) throw new ConnectionError('request-conflict')
+        if (input.connectionId && prior.connectionId !== input.connectionId) { prior.connectionId = input.connectionId; await this.persist() }
+        return prior
+      }
+      if (this.records.length >= 200) throw new ConnectionError('task-history-full')
+      await this.capacity(cwd)
+      const preset = await this.host.preset(), id = `sc-${randomUUID()}`, now = Date.now()
+      const row: DelegatedTask = { id, sessionId: id, requestId: input.requestId, fingerprint, cwd, preset,
+        client: input.client ?? 'mcp', status: 'starting', cancellationRequested: false, createdAt: now, updatedAt: now, currentRequest: randomUUID(),
+        output: '', sequence: 0, events: [], operations: {}, baseline: await gitSnapshot(cwd), ...(input.connectionId ? { connectionId: input.connectionId } : {}) }
+      this.event(row, 'starting', 'Dispatch intent saved. A DSH turn ending does not verify task acceptance.')
+      this.records.push(row); await this.persist()
+      try { await this.host.create(row.sessionId, cwd, preset) }
+      catch { this.event(row, 'failed', 'Session creation failed. No prompt was sent.'); await this.persist(); return row }
+      try {
+        await this.host.prompt(row.sessionId, row.currentRequest, input.prompt)
+        this.event(row, 'running', 'Prompt accepted by DSH.')
+      } catch { this.event(row, 'interrupted', 'Prompt admission could not be confirmed. No automatic retry; inspect the DSH session before continuing.') }
+      await this.persist()
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/connection/tasks.ts:158-164](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/connection/tasks.ts#L158-L164)
+
+返回验收状态恒为 not-verified，不能自动 stage。
+
+```text
+  async view(id: string, cursor: number): Promise<TaskView> {
+    const task = await this.exclusive(async () => { const row = this.owned(id); await this.refresh(row); return structuredClone(row) })
+    return { taskId: task.id, sessionId: task.sessionId, cwd: task.cwd, preset: task.preset, client: task.client,
+      status: task.status, createdAt: task.createdAt, updatedAt: task.updatedAt, output: task.output,
+      events: task.events.filter(event => event.cursor > cursor), cursor: task.sequence,
+      eventsTruncated: cursor < (task.events[0]?.cursor ?? 1) - 1, acceptance: 'not-verified',
+      workspace: await workspaceChanges(task.cwd, task.baseline) }
+```
+
+**依据 6 · 源码核查**：[src/dsh/connection-host.ts:24-51](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/connection-host.ts#L24-L51)
+
+通过本次请求和结束原因判断执行结果，并非只看 idle。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+export function connectionSessionFacts(events: readonly SessionEvent[], agentStatus: string, requestId: string, cancelling = false): SessionFacts {
+  let admitted = requestId === '', requestSeq = -1, endSeq = -1, reason = '', output = ''
+  const approvals = new Set<string>(), external = new Set<string>()
+  for (const event of events) {
+    const data = record(event.data), type: string = event.type
+    if (type === 'user/message' && data.source?.rpcId === requestId) { admitted = true; requestSeq = event.seq; output = '' }
+    if (type === 'turn/start') { reason = ''; approvals.clear() }
+    if (type === 'turn/end') { endSeq = event.seq; reason = data.reason?.kind ?? ''; approvals.clear() }
+    if (type === 'approval/asked' && typeof data.id === 'string') approvals.add(data.id)
+    if (type === 'approval/decided') approvals.delete(data.id)
+    if (type === 'subagent/start' && data.runId) external.add(data.runId)
+    if (type === 'subagent/end') external.delete(data.runId)
+    if (type === 'assistant/message' && admitted && event.seq > requestSeq) {
+      const content = data.message?.content ?? data.content
+      if (Array.isArray(content)) {
+        const text = content.filter(block => block?.type === 'text' && typeof block.text === 'string').map(block => block.text).join('\n')
+        if (text) output = text.slice(-12000)
+      }
+    }
+  }
+  if (approvals.size) return { status: 'waiting_confirmation', output }
+  if (agentStatus === 'running' || external.size) return { status: agentStatus === 'missing' ? 'unavailable' : 'running', output }
+  if (cancelling && agentStatus === 'idle') return { status: 'interrupted', output }
+  if (!admitted || endSeq <= requestSeq || !reason) return { status: agentStatus === 'missing' ? 'unavailable' : 'running', output }
+  if (reason === 'error' || reason === 'max-tokens') return { status: 'failed', output }
+  if (['aborted', 'interrupted', 'forked'].includes(reason)) return { status: 'interrupted', output }
+  if (reason === 'blocked') return { status: 'waiting_confirmation', output }
+  return { status: reason === 'completed' ? 'finished' : 'unavailable', output }
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/dsh/connection-host.ts:60-87](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/connection-host.ts#L60-L87)
+
+真实会话创建、队列 prompt 与后代观测接线。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+  async create(sessionId: string, cwd: string, preset: string): Promise<void> {
+    const created = await this.services.controller.create({ sessionId, cwd, agentPreset: preset })
+    if (created.sessionId !== sessionId || created.agentPreset !== undefined && created.agentPreset !== preset) throw new ConnectionError('session-identity-mismatch')
+  }
+  async prompt(sessionId: string, requestId: string, prompt: string): Promise<void> {
+    await this.services.controller.prompt({ sessionId, requestId, mode: 'queue', content: [{ type: 'text', text: prompt }] }, new AbortController().signal)
+  }
+  private async facts(id: string, requestId: string, cancelling = false): Promise<SessionFacts> {
+    const cut = await this.services.query.observeSession(id, { projectionMode: 'none', signal: AbortSignal.timeout(5000) })
+    try { return connectionSessionFacts(cut.events.slice(cut.inheritedEventCount), this.services.agents.get(id)?.status ?? 'missing', requestId, cancelling) }
+    finally { cut[Symbol.dispose]() }
+  }
+  async observe(sessionId: string, requestId: string, cancelling = false): Promise<HostObservation> {
+    try {
+      const root = await this.facts(sessionId, requestId, cancelling)
+      const children = await this.services.subagents.listDescendants(sessionId, AbortSignal.timeout(5000))
+      let status = root.status
+      for (const child of children) {
+        if (child.kind === 'diagnostic') { status = 'unavailable'; break }
+        if (child.mode === 'external') continue // Root start/end run facts track these activations.
+        const facts = await this.facts(child.id, '', cancelling)
+        if (facts.status === 'waiting_confirmation') { status = 'waiting_confirmation'; break }
+        if (facts.status === 'unavailable') { status = 'unavailable'; break }
+        if (facts.status === 'running' && status !== 'waiting_confirmation') status = 'running'
+      }
+      return { status, output: root.output, detail: status === 'finished' ? 'Root and managed descendants settled. Acceptance has not been verified.'
+        : status === 'waiting_confirmation' ? 'Resolve the pending permission or blocked turn in DSH.' : `DSH task tree: ${status}.` }
+    } catch { return { status: 'unavailable', output: '', detail: 'Could not observe the complete DSH task tree. No request was replayed.' } }
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/dsh/connection.ts:79-102](https://github.com/ArtlexYoung/dsh-super-code/blob/cf793e267bbe081717945891e133de1b4f615f03/src/dsh/connection.ts#L79-L102)
+
+连接依赖持久宿主 profile、controller/query/subagents 等，缺失则不启动端点。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  const profileServices = 'profileContext' in ctx ? ['profileContext'] : []
+  ctx.inject([...profileServices, 'sessionController', 'agents', 'sessionQuery', 'subagents', 'superCodePresets'], async owner => {
+    let directory: string
+    try {
+      if (profileServices.length) {
+        const profile = owner.get('profileContext') as { patchPath: string }
+        directory = dirname(profile.patchPath)
+      } else {
+        // Early hosts expose the profile only as the boot context base URL. Verify its manifest.
+        const baseUrl = owner.root.baseUrl
+        if (!baseUrl) throw new Error('Profile base URL unavailable')
+        directory = fileURLToPath(baseUrl)
+        const manifest = JSON.parse(await readFile(join(directory, 'package.json'), 'utf8'))
+        if (!Array.isArray(manifest.dsh?.profile?.bundles)) throw new Error('Not a profile')
+      }
+    } catch { owner.logger.warn('Super Code connection requires a persistent host profile.'); return }
+    const host = new ConnectionHost({ presets: owner.get('superCodePresets'), controller: owner.get('sessionController'),
+      agents: owner.get('agents'), query: owner.get('sessionQuery'), subagents: owner.get('subagents') } as ConnectionHostServices)
+    const connection = new ConnectionService(new ConnectionStore(join(directory, 'super-code-connection')), host)
+    try {
+      await connection.initialize()
+      service = connection
+      owner.effect(() => () => { service = false; return connection.close() })
+    } catch { owner.logger.warn('Super Code connection storage is unavailable or already owned by another host. No endpoint was started.') }
+```
+
+</details>
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

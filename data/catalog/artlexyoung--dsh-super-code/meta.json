@@ -1,54 +1,44 @@
 {
     "repository": "ArtlexYoung/dsh-super-code",
     "repository_id": 1367482095,
-    "captured_at": "2026-10-24T05:56:51.180Z",
-    "window_start": "2026-09-24T05:56:51.180Z",
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
     "stars": 16,
-    "pushed_at": "2026-10-23T16:53:40Z",
+    "pushed_at": "2026-10-26T11:22:32Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AArtlexYoung%2Fdsh-super-code%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4A8C:24302F:79DE2A:841B94:6ADC48A7 and timestamp 2026-10-24 05:56:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AArtlexYoung%2Fdsh-super-code%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4B66:3D4527:7ED482:890CAA:6ADC48A8 and timestamp 2026-10-24 05:56:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AArtlexYoung%2Fdsh-super-code%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A51.180Z..2026-10-24T05%3A56%3A51.180Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4C0A:84132:79DE0B:8410C5:6ADC48A9 and timestamp 2026-10-24 05:56:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AArtlexYoung%2Fdsh-super-code%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A51.180Z..2026-10-24T05%3A56%3A51.180Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4CAE:249B5F:7857E5:829516:6ADC48AA and timestamp 2026-10-24 05:56:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AArtlexYoung%2Fdsh-super-code%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A51.180Z..2026-10-24T05%3A56%3A51.180Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4D60:24C48F:7C7267:86AC6F:6ADC48AB and timestamp 2026-10-24 05:57:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T00:51:31.108Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-super-code",
-        "captured_at": "2026-10-24T05:56:58.025Z",
-        "window_start": "2026-09-24",
-        "window_end": "2026-10-23",
-        "downloads_30d": 2714,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-super-code",
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 2783,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-super-code",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-20T16:10:57.888Z",
-            "captured_at": "2026-10-24T05:56:58.025Z",
+            "captured_at": "2026-10-27T08:34:14.025Z",
             "source_url": "https://registry.npmjs.org/dsh-super-code",
             "error": null,
-            "latest_version": "0.3.7",
-            "latest_published_at": "2026-10-23T17:03:00.073Z",
+            "latest_version": "0.3.8",
+            "latest_published_at": "2026-10-26T11:33:37.755Z",
             "latest_error": null
         }
     }

@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[343cab5](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/343cab5881ef638e3d5453039726db9c9153038f)
+源码版本：[72f6c05](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AppliedYuu/dsh-WallpaperAndCost)
@@ -12,7 +12,7 @@
 
 > **亮点**：将媒体背景、会话头部用量与本地工坊提取集成到宿主，凭据解析留在Host且未定价模型不虚填金额；价值是操作集中，未证明整体效率收益。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03)
+> **主要限制**：提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03) 当前价表可重算历史，缺单价字段会按0、坏表回退默认 flash 价，计价来源与版本必须另核查。[Q03](#research-q03)
 
 **本文目录**
 
@@ -47,16 +47,11 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 图片视频壁纸 | 自定义背景 | 浏览器媒体和存储，资源未测 |
-| 分区透明度 | 调整侧栏与会话外观 | 依赖宿主DOM与样式 |
-| DeepSeek余额与会话估算 | 就地看支出 | 凭据与规则适配，估算非账单 |
-| OpenCode Go用量 | 看窗口和重置时间 | 上游非文档化接口可能变化 |
-| 工坊服务器提取 | 从本地目录取得媒体 | Python与目录权限，路由边界待核查 |
-| 提取媒体预览下载 | 查看产物 | 文件服务词法路径约束 |
+- **界面**：壁纸设置、余额和OpenCode Go用量组件
+- **Host 路由**：余额、会话估算、用量和工坊提取预览接口
+- **事件监听**：会话事件驱动用量与费用更新
 
 #### 启动与依赖
 
@@ -84,6 +79,8 @@
 | 持续使用 | 视频解码、轮询与存储资源未测 | 核对来源、缓存和价目表 | 估算不等于账单 |
 | 失败恢复 | 重试提取与查询资源未知 | 清理媒体、输出、排查访问权限 | 未见完整退出清理证据 |
 
+
+
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
@@ -92,7 +89,7 @@
 | 费用查看 | Host凭据代理与估算规则 | 上游可用性和账单差异 |
 | 工坊提取 | Python子进程与媒体路由 | 格式覆盖、权限与清理 |
 
-> **思考**：提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03)
+> **思考**：提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03) 当前价表可重算历史，缺单价字段会按0、坏表回退默认 flash 价，计价来源与版本必须另核查。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
@@ -100,13 +97,13 @@
 
 > **亮点**：将媒体背景、会话头部用量与本地工坊提取集成到宿主，凭据解析留在Host且未定价模型不虚填金额；价值是操作集中，未证明整体效率收益。[Q01](#research-q01) [Q02](#research-q02)
 
-媒体与设置分存、凭据不传浏览器值得借鉴；execFile参数数组避免shell拼接。但合并功能将装饰、外部查询和文件处理置于同包，需明确路由访问和能力生命周期。[Q02](#research-q02)
+媒体与设置分存、凭据不传浏览器值得借鉴；execFile参数数组避免shell拼接。但合并功能将装饰、外部查询和文件处理置于同包，需明确路由访问和能力生命周期。[Q02](#research-q02) [Q02](#research-q02) 的价表文件与计价缓存指纹减少修改代码，但宿主存储保存与重放没有冻结历史价表，不能承担不可变审计账。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03)
+提取函数自身未检查方法、来源或目录授权，实际访问控制依赖未核查的宿主；本地价格表按模型名估算也不能直接对账。合包用户须同时承担文件与凭据边界。[Q03](#research-q03) 当前价表可重算历史，缺单价字段会按0、坏表回退默认 flash 价，计价来源与版本必须另核查。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
@@ -122,7 +119,7 @@
 
 存储、凭据代理和提取接线有源码支持；宿主访问控制、上游可用性与账单准确性未验证。权限分层为假设。
 
-- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、pricing.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定JS存储、代理和提取路由核查；未执行Python、读取工坊目录、运行媒体或请求上游。
 - 下一步：核查宿主全局鉴权、路由方法、目录授权、代表格式、媒体资源与账单差异，未执行。
@@ -130,8 +127,8 @@
 **分析版本**
 
 - **仓库**：[AppliedYuu/dsh-WallpaperAndCost](https://github.com/AppliedYuu/dsh-WallpaperAndCost)
-- **版本号**：1.1.0（[固定提交 343cab5](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/343cab5881ef638e3d5453039726db9c9153038f)）
-- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.1.0（[固定提交 72f6c05](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -152,14 +149,18 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 2 | 3718 | 3199 | 342 | — |
-| .md | source | 1 | 69 | — | — | 1153 |
+| .js | source | 2 | 4050 | 3473 | 386 | — |
+| .md | source | 1 | 106 | — | — | 1540 |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [GitHub Issues](https://github.com/AppliedYuu/dsh-WallpaperAndCost/issues) 查看。
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AppliedYuu/dsh-WallpaperAndCost/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/AppliedYuu/dsh-WallpaperAndCost/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AppliedYuu/dsh-WallpaperAndCost/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
+
+
+
+统计日期：2026-10-27。
 
 <a id="detail-section-10"></a>
 
@@ -181,12 +182,12 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-43](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/README.md#L3-L43)
+**依据 1 · 作者声明**：[README.md:3-38](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/README.md#L3-L38)
 
 作者列出壁纸、提取与用量各自功能，不能据组合推断共同收益。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（36行）</summary>
 
 ````text
 A merged DSH web plugin combining **wallpaper customization** and the **DeepSeek balance & usage widget**.
@@ -216,25 +217,20 @@ A merged DSH web plugin combining **wallpaper customization** and the **DeepSeek
 
 ### 💰 Balance & usage (余额与用量)
 - Balance button in the conversation header: balance, today's consumption, this session's token usage & estimated cost
-- Official DeepSeek CNY price table with peak/valley windows, per-model and per-window breakdown
+- Prices come from **`pricing.json`** (data, not code): regex model ids, an optional peak/off-peak split, CNY per million tokens — see [Model pricing](#model-pricing-pricingjson)
+- Per-model and per-window (peak/off-peak) breakdown in the popover
+- The per-session ledger is **durable**: a host restart no longer zeroes the token meter. It is written to `$DSH_HOME/storages/dsh-wallpaper-cost-sessions.json` and dropped only once that conversation is archived/deleted
 - Platform consumption (`DEEPSEEK_PLATFORM_TOKEN`) is read from DSH's credential store by the host (`ctx.credentials.resolve`), the same way `DEEPSEEK_API_KEY` and `OPENCODE_GO_API_KEY` are — no in-widget token capture
 - The DeepSeek API key never leaves the host (host-side routes only)
 
-### 🟢 OpenCode Go 用量 (rolling / weekly / monthly)
-- 会话头部新增一个 `Go` 按钮（与余额按钮并列于顶端）：默认只显示**滚动 / 周 / 月**三个用量的百分比
-- 点开后用**进度条**展示每个窗口用量，并显示各自的**重置时间**，以及上次刷新时间与实际使用的密钥名
-- **刷新时机跟随两条 Go 路由的请求**：`opencodego`（自建供应商）与 `opencode-go`（DSH 官方供应商）任一发出请求（会话事件里的 `assistant/message` 或 `request/header` 带 `provider`），宿主就把用量版本号 +1，前端下次轮询才去上游拉一次；没有请求时前端每 5 秒问的只是本地宿主，宿主直接回缓存（不一定打上游）。点开面板会强刷一次（`?force=1`）
-- 快照缓存 5 分钟保质、4 秒内合并连发的刷新；上游临时取不到时继续显示上次结果并给出提醒，不会把面板清空
-- 数据来自 OpenCode Go 官方用量接口 `GET https://opencode.ai/zen/go/v1/usage`（Bearer 鉴权），由 host 端代理，key 通过 `ctx.credentials.resolve` 按 `OPENCODEGO_API_KEY` → `OPENCODE_GO_API_KEY` 顺序解析（前者 401/403 时自动退回后者），**从不入源码/浏览器**
-- 该接口为社区发现的非官方文档化接口，响应结构可能随 OpenCode 变动；窗口解析做了兼容（`usage.` 前缀或裸窗口、`resetsAt` 或 `resetsInSeconds`）
+### 🏷 Model pricing (`pricing.json`)
 
-## Install
-
+The price table is one JSON file at the package root — editing it needs no code change and no rebuild; the host reloads it as soon as its mtime changes, and history is re-priced on the next replay.
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:2376-2396](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/client.js#L2376-L2396)
+**依据 2 · 源码核查**：[lib/client.js:2492-2512](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/client.js#L2492-L2512)
 
 设置页与两个头部动作分别注册，支持独立任务界限。
 
@@ -277,11 +273,11 @@ A merged DSH web plugin combining **wallpaper customization** and the **DeepSeek
 
 #### 完整回答
 
-客户端把显示设置留在 localStorage，把上传媒体留在 IndexedDB，再应用背景和透明度。费用路由在 Host 解析凭据并请求上游，浏览器接收结果而不是 API key；会话费用根据事件 token 与本地价格规则聚合，未知模型保留未定价。提取路由接收服务器绝对目录，创建输出目录，再用 execFile 启动内置 Python 脚本，读产物列表并提供文件预览。execFile 参数数组避免 shell 拼接，但操作仍会读取本地目录、消耗解压资源并写服务器输出。因此纯客户端壁纸与需要服务端权限的提取应分别评估。Python 路径尝试 python 再 py，跨平台是否具备该命令须核对。
+客户端把显示设置留在 localStorage，把上传媒体留在 IndexedDB，再应用背景和透明度。费用路由在 Host 解析凭据并请求上游，浏览器接收结果而不是 API key；会话费用根据事件 token 与本地价格规则聚合，未知模型保留未定价。提取路由接收服务器绝对目录，创建输出目录，再用 execFile 启动内置 Python 脚本，读产物列表并提供文件预览。execFile 参数数组避免 shell 拼接，但操作仍会读取本地目录、消耗解压资源并写服务器输出。因此纯客户端壁纸与需要服务端权限的提取应分别评估。Python 路径尝试 python 再 py，跨平台是否具备该命令须核对。 当前计价数据来自随包 pricing.json，按 mtime 热重载并使重放缓存失效；会话 ledger 保存到宿主存储并在启动恢复，写盘使用临时文件后 rename。持久账本不是官方账单，当前表变化后历史重放会重算费用。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/client.js:385-424](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/client.js#L385-L424)
+**依据 1 · 源码核查**：[lib/client.js:385-424](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/client.js#L385-L424)
 
 IndexedDB 与localStorage分别保存媒体和设置。
 
@@ -333,7 +329,7 @@ IndexedDB 与localStorage分别保存媒体和设置。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:957-973](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L957-L973)
+**依据 2 · 源码核查**：[lib/index.js:1173-1189](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L1173-L1189)
 
 凭据只在Host解析并加入上游请求。
 
@@ -362,7 +358,7 @@ IndexedDB 与localStorage分别保存媒体和设置。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:664-693](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L664-L693)
+**依据 3 · 源码核查**：[lib/index.js:824-853](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L824-L853)
 
 提取以参数数组启动Python，包含超时与缓冲限制。
 
@@ -404,7 +400,7 @@ async function runExtractScript(args) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1177-1188](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L1177-L1188)
+**依据 4 · 源码核查**：[lib/index.js:1393-1404](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L1393-L1404)
 
 提取写输出目录并返回产物，确定副作用边界。
 
@@ -428,6 +424,107 @@ async function runExtractScript(args) {
 
 </details>
 
+**依据 5 · 源码核查**：[lib/index.js:196-232](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L196-L232)
+
+文件修改时间缓存和内容指纹决定价表刷新。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+let pricingState = { table: FALLBACK_PRICING, fingerprint: fingerprintOf(FALLBACK_PRICING), fileMtime: -1 };
+
+/**
+ * 读取/热重载 pricing.json。
+ * mtime 未变 → 直接返回缓存；变了 → 重新解析编译；读不到或全表非法 → 用内置兜底价。
+ * @returns {{ peakWindows: Array<{startHour:number,endHour:number}>, models: Array<object> }} 编译后的计价表
+ */
+export function pricingTable() {
+  let mtime = -1;
+  try {
+    mtime = statSync(PRICING_PATH).mtimeMs;
+  } catch {
+    mtime = -1; // 文件不存在
+  }
+  if (mtime !== -1 && mtime === pricingState.fileMtime) return pricingState.table;
+  if (mtime === -1) {
+    if (pricingState.fileMtime !== -1 || pricingState.table !== FALLBACK_PRICING) {
+      console.warn(`dsh-WallpaperAndCost: 找不到 ${PRICING_FILE}，已回退到内置 flash 价`);
+    }
+    pricingState = { table: FALLBACK_PRICING, fingerprint: fingerprintOf(FALLBACK_PRICING), fileMtime: -1 };
+    return pricingState.table;
+  }
+  try {
+    const compiled = compilePricing(JSON.parse(readFileSync(PRICING_PATH, "utf8")));
+    if (compiled === null) throw new Error("no usable model rule");
+    pricingState = { table: compiled, fingerprint: fingerprintOf(compiled), fileMtime: mtime };
+  } catch (error) {
+    console.warn(`dsh-WallpaperAndCost: ${PRICING_FILE} 解析失败，已回退到内置 flash 价`, error instanceof Error ? error.message : error);
+    pricingState = { table: FALLBACK_PRICING, fingerprint: fingerprintOf(FALLBACK_PRICING), fileMtime: mtime };
+  }
+  return pricingState.table;
+}
+
+/** 当前计价表的指纹（重放缓存据此失效）。 */
+export function pricingFingerprint() {
+  pricingTable();
+  return pricingState.fingerprint;
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/index.js:1081-1120](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L1081-L1120)
+
+启动恢复与延迟写盘、退出补写的实际接线。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+export function apply(ctx) {
+  // 分会话账本：启动时把上次存盘的账本读回来(重启不清零)，之后随消息实时累加。
+  // 落盘是防抖的：来消息只标脏并排一次 2 秒后的写盘。
+  const ledger = loadSessionLedger();
+  const bySession = new Map();
+  const touchedAt = new Map();
+  for (const [id, entry] of ledger) {
+    bySession.set(id, entry.record);
+    touchedAt.set(id, entry.updatedAt);
+  }
+  ledger.clear();
+  let ledgerDirty = false;
+  let ledgerTimer = null;
+
+  const flushLedger = () => {
+    if (!ledgerDirty) return;
+    ledgerDirty = false;
+    const out = new Map();
+    for (const [id, record] of bySession) out.set(id, { record, updatedAt: touchedAt.get(id) ?? Date.now() });
+    saveSessionLedger(out);
+  };
+
+  const scheduleLedgerSave = () => {
+    ledgerDirty = true;
+    if (ledgerTimer !== null) return;
+    ledgerTimer = setTimeout(() => {
+      ledgerTimer = null;
+      flushLedger();
+    }, LEDGER_SAVE_DEBOUNCE_MS);
+    if (typeof ledgerTimer.unref === "function") ledgerTimer.unref();
+  };
+
+  // 插件卸载/宿主关闭时把没落盘的账本补写一次
+  ctx.effect(() => () => {
+    if (ledgerTimer !== null) {
+      clearTimeout(ledgerTimer);
+      ledgerTimer = null;
+    }
+    flushLedger();
+  }, "dsh-WallpaperAndCost: ledger flush on teardown");
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -438,51 +535,48 @@ async function runExtractScript(args) {
 
 #### 完整回答
 
-价格规则按裸模型名匹配，规则从 effectiveFrom=0 开始并有固定参考汇率；它表示该实现采用的估算，不证明任意供应商、历史合同和当前账单都相同，不能把页面估算称为财务对账。提取 handler 直接读 folder 参数并运行脚本，本函数未检查方法、Origin或逐目录授权，文件服务只作词法目录约束；实际远程可达性和全局鉴权由宿主决定，本次未核查，不能宣称已存在可利用的跨源漏洞，也不能假定有额外防护。原图视频不压缩增加浏览器存储、解码与磁盘成本。首次配置凭据和媒体、持续观察过期缓存与价目表、失败时清理媒体及提取输出均需人工。金额与耗时未知。由于合包带有本地目录处理和外部凭据通路，普通个性化用户宜先观察，待明确路由访问边界再试。
+价格规则按裸模型正则匹配，规则从 effectiveFrom=0 开始并有固定参考汇率；它表示该实现采用的估算，不证明任意供应商、历史合同和当前账单都相同，不能把页面估算称为财务对账。提取 handler 直接读 folder 参数并运行脚本，本函数未检查方法、Origin或逐目录授权，文件服务只作词法目录约束；实际远程可达性和全局鉴权由宿主决定，本次未核查，不能宣称已存在可利用的跨源漏洞，也不能假定有额外防护。原图视频不压缩增加浏览器存储、解码与磁盘成本。首次配置凭据和媒体、持续观察过期缓存与价目表、失败时清理媒体及提取输出均需人工。金额与耗时未知。由于合包带有本地目录处理和外部凭据通路，普通个性化用户宜先观察，待明确路由访问边界再试。 此版本把单价抽成 JSON 并支持峰谷，改善维护但没有生效时间轴；坏表会回退内置 flash 价，缺失价格字段会告警后按0，故“显示非零”也不是对账正确的保证。历史费用随当前价表重算，记录数持久化不代表历史金额不可变。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:98-125](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L98-L125)
+**依据 1 · 源码核查**：[lib/index.js:245-269](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L245-L269)
 
-全历史规则起点、模型归一化与参考汇率限定估算。
+当前表按裸模型正则、消息时段和effectiveFrom=0估价，没有历史价表版本。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-export const PRICE_RULES = Object.freeze([
-  Object.freeze({
-    effectiveFrom: 0,
-    peakWindows: Object.freeze([
-      Object.freeze({ startHour: 9, endHour: 12 }),
-      Object.freeze({ startHour: 14, endHour: 18 })
-    ]),
-    models: Object.freeze({
-      // 官方合并后的模型名（api.deepseek.com / deepseek-official 路由）
-      "deepseek-flash": Object.freeze({ peak: FLASH_PEAK, offPeak: FLASH_OFF_PEAK }),
-      // opencode-go 路由仍在使用旧名，按相同 flash 价计费
-      "deepseek-v4-flash": Object.freeze({ peak: FLASH_PEAK, offPeak: FLASH_OFF_PEAK }),
-      "deepseek-v4-flash-vision-exp": Object.freeze({ peak: FLASH_PEAK, offPeak: FLASH_OFF_PEAK }),
-      "deepseek-v4-pro": Object.freeze({ peak: PRO_PEAK, offPeak: PRO_OFF_PEAK })
-    })
-  })
-]);
-/**
- * 参考汇率：仅用于把 CNY 费用折算成 USD 展示值（costUsd 字段）。
- * 所有价目表均直接以 CNY 计价，不再做 USD→CNY 换算。
+ * 查价：给定"模型名 + 消息时间"，按正则匹配计价表，返回当时的单价。
+ * 表里没有匹配的模型 → null（只计 tokens 不计费）。
+ * @param model - 原始模型 id（可带 `provider/` 前缀）
+ * @param timeMs - 该条消息发生的时间戳
  */
-const REFERENCE_USD_CNY = 7.25;
-
-// 模型名归一化：去掉 "提供方/模型名" 里的提供方前缀，只留模型名(价格表只认裸名)
-function normalizeModel(model) {
-  const text = String(model);
-  const slash = text.lastIndexOf("/");
-  return slash >= 0 ? text.slice(slash + 1) : text;
+export function priceAt(model, timeMs) {
+  const id = normalizeModel(model);
+  const table = pricingTable();
+  for (const entry of table.models) {
+    // 正则全部非 /g，但保险起见重置 lastIndex
+    entry.re.lastIndex = 0;
+    if (!entry.re.test(id)) continue;
+    const peak = entry.peak ? isPeak(table.peakWindows, timeMs) : false;
+    const p = entry.peak ? (peak ? entry.peakPrice : entry.offPeakPrice) : entry.flatPrice;
+    return {
+      input: p.cacheMiss,
+      cacheRead: p.cacheHit,
+      output: p.output,
+      peak,
+      effectiveFrom: 0,
+      label: entry.label
+    };
+  }
+  return null;
+}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1125-1145](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L1125-L1145)
+**依据 2 · 源码核查**：[lib/index.js:1341-1361](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L1341-L1361)
 
 提取入口直接处理参数，函数内未见方法与来源检查。
 
@@ -515,7 +609,7 @@ function normalizeModel(model) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1233-1252](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L1233-L1252)
+**依据 3 · 源码核查**：[lib/index.js:1449-1468](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L1449-L1468)
 
 文件预览仅作词法路径约束，实际宿主访问控制需单独检查。
 
@@ -547,6 +641,58 @@ function normalizeModel(model) {
 
 </details>
 
+**依据 4 · 源码核查**：[lib/index.js:139-154](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L139-L154)
+
+单价字段无效被记0；不能把缺价静默看成免费。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+/** 三价组：命中 / 未命中 / 输出。任意一项缺失按 0 处理并记一条告警。 */
+function priceGroupOf(raw, where) {
+  const src = raw !== null && typeof raw === "object" ? raw : {};
+  const pick = (key) => {
+    const n = toFinite(src[key]);
+    if (!Number.isFinite(n)) {
+      console.warn(`dsh-WallpaperAndCost: 计价表 ${where}.${key} 不是数字，按 0 处理`);
+      return 0;
+    }
+    return n;
+  };
+  return { cacheHit: pick("cacheHit"), cacheMiss: pick("cacheMiss"), output: pick("output") };
+}
+
+// 把一份 pricing.json 的原始 JSON 编译成内部结构(正则只编译一次)
+function compilePricing(raw) {
+```
+
+</details>
+
+**依据 5 · 源码核查**：[pricing.json:1-12](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/pricing.json#L1-L12)
+
+价表自述当前表热更新会重算历史，未提供有效期分段。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+{
+  "$comment": "dsh-WallpaperAndCost 模型计价表（唯一数据源，代码里不再写死价格）。改完保存即可热生效：宿主按 mtime 重载，历史费用会按新表重算。",
+  "$fields": {
+    "peakWindows": "高峰时段（北京时，整点，[startHour, endHour)），周末全天按低谷计算；这段逻辑在代码里，窗口在这里配。",
+    "models[].match": "模型 id 的正则（JS RegExp）。*** 不锚定首尾：只要 id 里包含 匹配子串 就算命中，所以不需要写 .* 包裹（写了也不会改变结果）。先按 '/' 切掉厂商前缀（deepseek-official/deepseek-v4-flash -> deepseek-v4-flash）再匹配。",
+    "models[].flags": "正则标志，省略时默认 \"i\"（忽略大小写）；写成 \"\" 会变成大小写敏感。",
+    "models[].label": "仅用于界面/日志展示。",
+    "models[].peak": "是否区分峰谷。false = 只给 price 一组三个单价；true = 给 price.peak + price.offPeak 两组共六个单价。",
+    "models[].price": "单价，单位 CNY / 百万 tokens。字段含义：cacheHit = 缓存命中输入，cacheMiss = 缓存未命中输入，output = 输出。",
+    "models[].note": "备注，可省略。",
+    "order": "规则按本文件顺序匹配，先命中先得；flash 在前、pro 在后（两种 id 不会互相误命中）。"
+  },
+```
+
+</details>
+
 #### 缺口
 
 - 宿主全局鉴权、路由暴露范围与真实账单差异未知。
@@ -570,7 +716,7 @@ function normalizeModel(model) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1125-1145](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L1125-L1145)
+**依据 1 · 源码核查**：[lib/index.js:1341-1361](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L1341-L1361)
 
 目录处理入口是令牌授权的推导基础。
 
@@ -603,42 +749,39 @@ function normalizeModel(model) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:98-125](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/343cab5881ef638e3d5453039726db9c9153038f/lib/index.js#L98-L125)
+**依据 2 · 源码核查**：[lib/index.js:245-269](https://github.com/AppliedYuu/dsh-WallpaperAndCost/blob/72f6c05fc1eb348848d9ef5700ee68e7fcc5adae/lib/index.js#L245-L269)
 
-规则和模型归一化为计价来源追踪提供推导。
+当前表按裸模型正则、消息时段和effectiveFrom=0估价，没有历史价表版本。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-export const PRICE_RULES = Object.freeze([
-  Object.freeze({
-    effectiveFrom: 0,
-    peakWindows: Object.freeze([
-      Object.freeze({ startHour: 9, endHour: 12 }),
-      Object.freeze({ startHour: 14, endHour: 18 })
-    ]),
-    models: Object.freeze({
-      // 官方合并后的模型名（api.deepseek.com / deepseek-official 路由）
-      "deepseek-flash": Object.freeze({ peak: FLASH_PEAK, offPeak: FLASH_OFF_PEAK }),
-      // opencode-go 路由仍在使用旧名，按相同 flash 价计费
-      "deepseek-v4-flash": Object.freeze({ peak: FLASH_PEAK, offPeak: FLASH_OFF_PEAK }),
-      "deepseek-v4-flash-vision-exp": Object.freeze({ peak: FLASH_PEAK, offPeak: FLASH_OFF_PEAK }),
-      "deepseek-v4-pro": Object.freeze({ peak: PRO_PEAK, offPeak: PRO_OFF_PEAK })
-    })
-  })
-]);
-/**
- * 参考汇率：仅用于把 CNY 费用折算成 USD 展示值（costUsd 字段）。
- * 所有价目表均直接以 CNY 计价，不再做 USD→CNY 换算。
+ * 查价：给定"模型名 + 消息时间"，按正则匹配计价表，返回当时的单价。
+ * 表里没有匹配的模型 → null（只计 tokens 不计费）。
+ * @param model - 原始模型 id（可带 `provider/` 前缀）
+ * @param timeMs - 该条消息发生的时间戳
  */
-const REFERENCE_USD_CNY = 7.25;
-
-// 模型名归一化：去掉 "提供方/模型名" 里的提供方前缀，只留模型名(价格表只认裸名)
-function normalizeModel(model) {
-  const text = String(model);
-  const slash = text.lastIndexOf("/");
-  return slash >= 0 ? text.slice(slash + 1) : text;
+export function priceAt(model, timeMs) {
+  const id = normalizeModel(model);
+  const table = pricingTable();
+  for (const entry of table.models) {
+    // 正则全部非 /g，但保险起见重置 lastIndex
+    entry.re.lastIndex = 0;
+    if (!entry.re.test(id)) continue;
+    const peak = entry.peak ? isPeak(table.peakWindows, timeMs) : false;
+    const p = entry.peak ? (peak ? entry.peakPrice : entry.offPeakPrice) : entry.flatPrice;
+    return {
+      input: p.cacheMiss,
+      cacheRead: p.cacheHit,
+      output: p.output,
+      peak,
+      effectiveFrom: 0,
+      label: entry.label
+    };
+  }
+  return null;
+}
 ```
 
 </details>

@@ -1,50 +1,30 @@
 {
     "repository": "985451842/dsh-snapshot-manager",
     "repository_id": 1412896722,
-    "captured_at": "2026-10-22T16:03:48.110Z",
-    "window_start": "2026-09-22T16:03:48.110Z",
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
     "stars": 0,
-    "pushed_at": "2026-10-21T08:05:14Z",
+    "pushed_at": "2026-10-27T06:50:02Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A985451842%2Fdsh-snapshot-manager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1BC0:1C3985:B04F6C:BD4E48:6ADA33E6 and timestamp 2026-10-22 16:03:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A985451842%2Fdsh-snapshot-manager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1C7C:327DCF:A1F6BC:AEE936:6ADA33E7 and timestamp 2026-10-22 16:03:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A985451842%2Fdsh-snapshot-manager%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A48.110Z..2026-10-22T16%3A03%3A48.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D50:1C34B9:9D136E:AA0467:6ADA33E8 and timestamp 2026-10-22 16:03:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A985451842%2Fdsh-snapshot-manager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A48.110Z..2026-10-22T16%3A03%3A48.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1E48:32EB8E:A0F1C9:ADE94D:6ADA33E9 and timestamp 2026-10-22 16:03:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A985451842%2Fdsh-snapshot-manager%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A48.110Z..2026-10-22T16%3A03%3A48.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1F56:32EB8E:A0F3B0:ADEB32:6ADA33EA and timestamp 2026-10-22 16:03:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
+    "archived": false,
     "npm": {
         "package_name": "dsh-snapshot-manager",
-        "captured_at": "2026-10-22T16:03:55.326Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 816,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-snapshot-manager",
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 1088,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-snapshot-manager",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-10T09:02:27.759Z",
-            "captured_at": "2026-10-22T16:03:55.326Z",
+            "captured_at": "2026-10-26T20:32:35.909Z",
             "source_url": "https://registry.npmjs.org/dsh-snapshot-manager",
             "error": null,
             "latest_version": "0.3.0",
