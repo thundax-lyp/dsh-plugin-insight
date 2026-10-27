@@ -1,0 +1,45 @@
+{
+    "repository": "adoresever/graph-memory",
+    "repository_id": 1178312395,
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 663,
+    "pushed_at": "2026-10-01T00:45:49Z",
+    "issues": {
+        "open": 18,
+        "closed": 68,
+        "created_30d": 6,
+        "closed_30d": 2,
+        "updated_30d": 8
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "graph-memory",
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 346,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/graph-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-03-11T03:37:56.457Z",
+            "captured_at": "2026-10-27T08:34:14.025Z",
+            "source_url": "https://registry.npmjs.org/graph-memory",
+            "error": null,
+            "latest_version": "1.5.8",
+            "latest_published_at": "2026-04-07T08:26:00.589Z",
+            "latest_error": null
+        }
+    }
+}

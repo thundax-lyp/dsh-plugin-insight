@@ -1,0 +1,50 @@
+{
+    "repository": "chenxiachan/thoughtdag",
+    "repository_id": 1160354976,
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 701,
+    "pushed_at": "2026-10-25T16:59:24Z",
+    "issues": {
+        "open": null,
+        "closed": 48,
+        "created_30d": 24,
+        "closed_30d": 26,
+        "updated_30d": 30
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Achenxiachan%2Fthoughtdag%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9018:1841D4:1BF58E:1E91FB:6AE06250 and timestamp 2026-10-27 08:35:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-thoughtdag",
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 6907,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-thoughtdag",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-05T05:33:44.581Z",
+            "captured_at": "2026-10-26T20:32:35.909Z",
+            "source_url": "https://registry.npmjs.org/dsh-thoughtdag",
+            "error": null,
+            "latest_version": "0.5.26",
+            "latest_published_at": "2026-10-25T17:03:15.003Z",
+            "latest_error": null
+        }
+    }
+}

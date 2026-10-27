@@ -1,0 +1,45 @@
+{
+    "repository": "DDDMUC/dsh-free-search",
+    "repository_id": 1334384058,
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 642,
+    "pushed_at": "2026-10-27T06:26:13Z",
+    "issues": {
+        "open": 6,
+        "closed": 60,
+        "created_30d": 30,
+        "closed_30d": 25,
+        "updated_30d": 32
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-free-search",
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 58071,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-free-search",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T20:30:58.085Z",
+            "captured_at": "2026-10-27T08:34:14.025Z",
+            "source_url": "https://registry.npmjs.org/dsh-free-search",
+            "error": null,
+            "latest_version": "0.9.17",
+            "latest_published_at": "2026-10-27T06:25:35.792Z",
+            "latest_error": null
+        }
+    }
+}
