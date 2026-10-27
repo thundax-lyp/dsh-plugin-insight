@@ -1,35 +1,42 @@
 ---
 name: dsh-plugin-init
-description: 显式调用时编排整轮 DSH 插件研究：以唯一当前快照为基线，生成本轮增量、管理断点，验证后合并并生成读者成果。也可在用户明确要求时，仅从当前快照重新发布读者页面，不启动新研究。
+description: 显式编排一轮 DSH 插件研究：固定来源与队列、分派单插件洞察、验收暂存、事务合并并生成页面。也用于明确要求的同轮恢复或仅重生成读者页面；普通排版讨论不启动研究。
 ---
 
 # 插件列表与研究编排
 
-由父 Agent 在工程根目录执行，插件分析交由子 Agent 执行单插件洞察 Skill。开始前阅读[数据契约](../_shared/references/DATA-CONTRACT.md)、[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)、[输出标准](references/OUTPUT-STANDARD.md)。
-Git 协作遵循根 `AGENTS.md`；Node 遵循 `.node-version`，依赖缺失时执行 `npm ci --ignore-scripts`。
-GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认证工具，不执行目标插件代码。
+父 Agent 管理来源、基线、选择、验收与最终合并，子 Agent 逐项执行洞察。完成是当前快照可独立校验和生成、双清单回读无差异；准备成功、子 Agent 回报或 stage 成功均不是完成标志。
+
+## 先选择执行模式
+
+| 用户请求 | 执行方式 | 不做的事 |
+| --- | --- | --- |
+| `$dsh-plugin-init [N]`／新一轮研究 | 新建未占用轮次，默认总额度40；N须为正整数 | 不因同日已有已合并轮次而复用旧任务 |
+| 明确恢复未合并轮次 | 用共享读取器加载该轮 WORK，校验引用摘要后继续 | 不重选、不重置额度、不补位、不刷新已固定的时间或热度 |
+| 仅改布局／写作并重生成 | 只执行[读者页面重新生成](references/HOW-TO-REGENERATE-PAGES.md) | 不扫描目录、不创建轮次、不调用洞察、不改原研究证据 |
+
+## 按任务读取
+
+- **新轮／恢复必读**：[数据契约](../_shared/references/DATA-CONTRACT.md)中的快照、身份、证据、会话、受阻与清理；[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)；[输出标准](references/OUTPUT-STANDARD.md)的产物位置、逐题交付与验收。
+- **暂存、恢复、迁移、下载或清理**：按需读[会话与合并恢复](references/SESSION-OPERATIONS.md)。迁移只在任务确实涉及旧格式时执行。
+- **验收研究与推荐**：读[逐题流程](../dsh-plugin-insight/references/QUESTION-WORKFLOW.md)、[评分标准](../dsh-plugin-insight/references/SCORING-STANDARD.md)及[推荐理由](../dsh-plugin-insight/references/QUESTION-ADOPTION.md#最值得推荐的具体用法)。
+- **字段、META、依赖或清单回写**：读数据契约对应章节；不要用整个文档的重复副本作第二真相源。
+
+命令在工程根执行，Node 遵循 `.node-version`；依赖缺失才 `npm ci --ignore-scripts`。Git 协作由根 AGENTS 路由。不执行目标插件代码。GitHub 访问使用当前可用插件或已认证工具，不假设特定外部 Skill 名称。
 
 ## 当前快照与本轮增量
 
-正式研究真相只有一份：当前档案及其引用的当前分析、证据和来源状态。发布输入只组织展示，README、分类页和详情展示页由当前快照生成。
-`data/runs/<round>/` 只承载尚在处理的增量、检查点与失败材料，不是必须永久保存的第二套档案。
-新一轮与当前快照比较，不要求上一轮 SESSION、manifest 链或 runs 归档；历史版本需要时从 Git 查阅。
-具体合并、证据落位及清理条件以[数据契约](../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)为准。
+正式真相是 `data/catalog/<slug>/research.json`、独立 `meta.json`、`index.jsonl` 和 `state.json`，由共享存储器读取；README、分类与详情是生成物。`data/runs/<round>/WORK.json` 是尚未合并增量的入口，使用共享过程读取器，不手工拼接拆分文件。旧 SESSION、runs 或 manifest 缺失不阻止新研究，当前缺少比较依据时标 unknown。
 
-正式成果位于 `data/catalog/<plugin-slug>/research.json` 与同目录 `meta.json`，slug 与 plugins 详情目录一致。研究原稿、结论、评分、展示输入和必要证据完整嵌入 research.json；META 独立刷新。索引 `index.jsonl` 与全局 `state.json` 由共享存储器管理，不能据索引内嵌完整数据。扫描与研究过程只存本轮 `data/runs/<round>/<plugin-slug>/`，不新增 snapshots／insights／questions／observations 中间目录。工作入口为本轮 WORK.json，读取使用共享过程读取器。
-使用 `npm run snapshot --` 完成 start／next／stage／block／plan／apply／render／validate／reindex／migrate-work／clean。档案、路径、META 和发布数据集中在组件完整记录；不再生成旧聚合 JSON 或独立展示 META。页面是可重建输出，不单独人工写入。
-首次迁移才使用 `snapshot bootstrap`；它保留现有分析，明确列出缺失历史原件，不把迁移当成本轮研究。已有快照时不得重做 bootstrap。
-旧 research／publication 的正式写入不再用于新流程；命令及恢复语义见[会话与合并恢复](references/SESSION-OPERATIONS.md)。
+新流程使用 `npm run snapshot -- ...`；已有快照不执行 bootstrap，不单独 apply 旧 research／publication 派生档案。不手改检查点、固定选择或摘要来通过验证。数据与事务语义以数据契约为准。
 
-## 调用参数
+## 选择与额度
 
-`$dsh-plugin-init [本轮新增与更新总额度]`，例如 `$dsh-plugin-init 30`。省略时默认40；提供时必须为正整数。
-每次未指定恢复轮次的调用启动新一轮；已有同日已合并轮次不代表本次请求已完成。
-先核对当前快照中已有研究成果的条目（例如前轮已完成的40项，后续随档案增长），源码变化或需要复核的项优先占用额度；确认未变的项保留原成果，不占额度。
-若本轮额度为40，已有项中有 n 项需要更新，则再从尚无当前研究成果的条目中按本轮热度顺序选择40−n项；n≥40时只选择前40个更新项，其余留待后轮。
-“新项”指尚未完成研究，不限于本轮首次在目录发现。完整列表仍保留；新增不足时不凑数。
-正式快照中已登记的同版本受阻项默认跳过，不准备、不研究、不占额度；版本变化才恢复候选资格。用户明确要求重试时，将指定稳定ID通过 `snapshot start --retry-plugin <id>` 传入（可重复），优先占正常额度；不自行清除标记。本轮首次选中后受阻或未知的项仍占名额，不补位。具体选择不变量见数据契约。
-同轮恢复使用已固定的选择、跳过集合和上限，不重置计数；未选项不冒充已研究。用户要求重试尚未合并的已选受阻项时，先执行 `snapshot retry --work ... --plugin <id>`，再准备该项；已合并轮次用新轮显式重试。
+先核对全部已有成果，再选择需更新项，新研究项补足总额度。比较基线是该项最后成功完成的研究，不是后来只发现的新版本。源码／位置未知、迁移、依赖失效或 needs_review 按契约复核；仅目录／维护变化且相关依赖未失效时是轻量项，保留原研究，不占额度、不准备源码材料。
+
+正式同版本受阻项在选前跳过，不占额度；用户明确重试才传 `start --retry-plugin <id>`（可重复）。选中后首次受阻仍占名额，不补位。同轮重试先 `snapshot retry`，保留失败材料；已合并轮次用新轮显式重试。
+
+综合热度只决定研究排期。`start` 在截断额度前按[heat-v1](../_shared/references/DATA-CONTRACT.md#综合热度与固定队列)固定缓存、截止、来源和顺序：显式重试→已有更新→新项；后两组内按热度降序，同分按稳定 ID。缺失不填0，不猜 npm 身份；报告缓存错误及未知覆盖。恢复／合并不重取热度，不改变创新、采用或读者热榜口径。
 
 ## 频繁更新过滤
 
@@ -42,104 +49,107 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
 
 本轮窗口判断及跳过 ID 固定在 selection.cooldown_ids，合并时按原基线与本轮 checked_at 复算；同轮恢复不随墙上时间重排。历史会话缺少该字段时维持原选择。单列频繁更新跳过数量，不算本轮完成或受阻。
 
-## 热度优先选择
-
-每次新轮 `snapshot start` 在形成固定选择前读取 npm 与 Git 指标缓存，以本轮 `checked_at` 为截止时间，按[数据契约的综合热度规则](../_shared/references/DATA-CONTRACT.md#综合热度与固定队列)计算 `heat-v1`。新鲜指标优先使用外部缓存，缺失时可使用同样新鲜的正式 META；没有包名时不猜测 npm 身份。两项都未知排后，未知不当作0，真实0保留。
-
-显式重试仍优先；原有冷却期、同版本受阻、轻量更新与额度规则不变。已有更新项先于新项，每组内部按综合热度降序入选，同分按稳定 ID 字节序；新项只补足余下额度。选择在截断额度前排序，`selected_ids` 决定准备与研究顺序，不只是输出时排序。热度及缓存来源冻结于 WORK 的 `selection.heat`，同轮恢复和最终合并不重新获取热度或改变选择；旧 WORK 无热度字段时保留旧顺序。
-
-热度仅决定研究排期，不修改创新、采用推荐或读者最热榜的现有口径。`snapshot start` 输出本轮缓存错误、未知数量及所选项分数；缺数据时报告覆盖不足，不宣称全量综合热度覆盖。
-
 ## 执行流程
 
-用户只要求改写作方式、布局并重新生成文档时，走下方“读者页面重新生成”，不创建轮次、队列或观察记录；整轮研究继续执行以下步骤。
+### 1. 读取基线并固定来源
 
-1. **读取基线并确定本轮。** 检查工作区和当前快照，记录其摘要并读取正式 `research_blocks`；当前快照不存在才视为首次初始化。
-   新轮次分配未占用的 `data/runs/YYYY-MM-DD-NN/`；继续任务时通过过程读取器恢复本轮会话和已完成的暂存记录，逐一验证引用摘要。旧过程需要拆分时先预览 `snapshot migrate-work --work ...`，再加 `--apply` 显式迁移，保留原件并核对语义摘要；不重建已清理轮次。
-   旧 runs 缺失不阻止新研究。当前快照缺少某项比较依据时，将该维度标为 unknown，不从历史清单拼造事实。
-2. **固定来源与生成列表。** 默认核查两个研究目录，固定 checkout 提交、检查时间和覆盖范围。
-   使用稳定输入构建器，保存本轮 INPUT 与问题记录；来源 checkout 必须干净，构建前后 HEAD 不变。
-   ```sh
-   npm run research:input -- \
-     --source-awesome ../dsh-plugin-insight-data/sources/awesome-dsh-plugin \
-     --source-harness ../dsh-plugin-insight-data/sources/awesome-deepseek-harness \
-     --id <session_id> --checked-at <ISO时间> \
-     --out data/runs/<round>/INPUT.json \
-     --problems data/runs/<round>/INPUT-PROBLEMS.json
-   ```
-   只有完整读取并核对来源后才增加相应 `--complete-awesome`／`--complete-harness`；解析、身份或默认分支问题使来源不完整。
-   按仓库数字 ID 与已分配组件路径去重，保留重定向、组件碰撞和身份失败的具体记录，不编造 ID。
-3. **形成固定队列。** 先核对所有已有研究成果，再用新项补足额度。已有项以其最后完成研究的版本为比较基线，不能被后续仅发现未研究的版本覆盖；比较位置／内容／来源变化、未变及未知，依赖失效也需复核。只有相关来源完整核查才可推断目录移除。新会话按数据契约固定 metadata_only_ids：源码及位置不变、仅目录／维护或来源成员变化且没有相关结论依赖失效时不进入完整研究队列；保留原证据与报告。
-   按上方“频繁更新过滤”排除窗口内版本更新项，再排除已知同版本受阻，固定跳过与显式重试集合，再固定本轮候选、来源、指纹、选择、上限和基线摘要，写入本轮会话；后续不反向改写它们以通过检查。
-   ```sh
-   npm run snapshot -- start --input data/runs/<round>/INPUT.json --work data/runs/<round>/WORK.json --limit <N>
-   npm run snapshot -- next --work data/runs/<round>/WORK.json
-   npm run prepare:selected -- --work data/runs/<round>/WORK.json
-   ```
-   Skill 未提供参数时使用40；`snapshot start` 省略 `--limit` 时同样默认40。prepare:selected 只读取固定提交、统计和采集材料/META，不运行目标代码，不生成观察或研究结论。它在任何选中项 META 采集前固定读取一次 `NPM-META.jsonl`，并从同一远端提交固定读取 Git 的 `GIT-META.jsonl` 与 `GIT-ERRORS.jsonl`；npm 按下载量和发布信息字段组分别复用，Git 按稳定仓库 ID 复用24小时内的 Star 与归档状态，保留各字段原始时间和 commit/blob 来源；缓存过期、下载窗口不匹配或字段组不完整时才回源 npm，对应来源与 blob SHA 写入 `PREPARATION.json` 供父 Agent 验收。
-   下载按仓库就绪即准备，不等待全轮下载；失败日志、材料摘要检查点、固定缓存和同轮重试见[下载失败与材料准备恢复](references/SESSION-OPERATIONS.md#下载失败与材料准备恢复)。失败后重跑同一 prepare:selected 命令，仅完整且摘要一致的材料可复用；不重选、不补位、不自动持久化网络受阻。
-   选中的更新项和新项均完整分析；未变的已有项只核对后保留，不调用洞察、不伪造本轮完成记录。同轮恢复跳过已完成且材料校验一致的项。
-4. **分派单插件洞察。** 父 Agent 将所选插件分配给子 Agent 执行[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入单插件研究总目标、稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮独占的 `<plugin-slug>` 目录。
-   多个子 Agent 可同时分析互不重叠的插件，由父 Agent 回收、验收与汇总；具体边界见下方“多 Agent 协作”。每项独立保存 inventory、证据、详细分析、观察批次及人工确认的摘要／能力／建议。
-   按研究规范和输出标准核对贡献识别、关键质疑、新假设及验证；场景、替代办法、依赖、流程和成本支撑贡献判断，不得用静态候选批量生成通用结论。
-5. **校验并暂存完成记录。** 先对照该插件的问题计划，按稳定问题ID逐题验收完整回答、证据、未知项和状态，确认综合结论可回指具体问题且最终报告保留完整逐题正文；不得以摘要或过程文件链接替代。再核对身份、版本、来源指纹、完整 findings 复核、证据引用、报告及材料摘要。核对本轮两轴创新评分及理由已写入JSON，按数据契约校验版本、分项和依赖，不在读者Markdown中展示评分。
-   计划与应用先针对本轮暂存的候选快照，不逐项写入正式档案；检查点代表本轮记录完整，不代表已合并或已通过宿主验收。
-   每项 DISPLAY.json 只含 metadata 对象和单项 summaries／capabilities／advice 对象；组件推荐结论和评分写入观察的 recommendation，不提交独立名单。stage核对本轮结论、四项理由、总分、版本和证据，未评估项不能作为新完成研究暂存。
-   ```sh
-   npm run snapshot -- stage --work data/runs/<round>/WORK.json --plugin <id> --observations <observations.json> --report <insight.md> --display <DISPLAY.json>
-   ```
-   同一固定基线的多个已验收条目可用 `snapshot stage-batch --work <WORK.json> --input <entries.json>` 批量暂存；输入为含 id、observations、report、display 文件路径的数组。批内复用候选目录，全部条目及最终候选校验通过后才保存检查点；任何失败不保存该批。
-   失败保存部分材料与 reason JSON（稳定 `reason_code`、可读 `reason` 和自包含问题详情，结构见数据契约），再用 `snapshot block --work ... --plugin ... --input <reason.json>` 登记；block先写本轮、最终合并进正式 `research_blocks`。继续其余所选项，不补位、不重复应用。
-6. **形成合并候选。** 从已完成的贡献、质疑及假设论证归纳四标签短评；有共同问题时比较跨插件机制与业务取舍、尝试推导新假设，论证保存在现有报告中。每项研究由执行AI按研究规范的adoption-v1明确推荐结论、理由及四项评分，写入组件档案；不以创新分、Star或下载量推断。父Agent核对全部当前有效研究的推荐有效性，保留有效旧结论；从全量有效组件按采用分排序生成推荐，不限于本轮，不单独维护名单。结论、证据门槛与输出上限分别遵循数据契约、研究规范和输出标准，不为数量凑推荐。
-   推荐验收复用本组件已有问题回答，逐项按[采用评分判据](../dsh-plugin-insight/references/SCORING-STANDARD.md#从已有问题回答到分数)核对问题链接、具体支持材料、反证和相邻档取舍；不增加统一十题或默认评分向量。已有评分的定向复核只更新已实际复核对象，使用snapshot assess-recommendations，不伪造新研究或刷新原问题／研究时间。
-   推荐理由按[三句具体用法](../dsh-plugin-insight/references/QUESTION-ADOPTION.md#最值得推荐的具体用法)验收人群任务、相对增量及停止／退路是否可执行并有回答依据；复核先独立形成结论再对照旧分，热度只用于已明确的范围选择。用户指定最热前N项时固定当前最热榜口径、包去重和排名后再复核，不随过程中指标变化换样本，不将低Star或指标未知当低活跃跳过。
-   使用 META 采集器保存本轮采集结果，npm 包名必须由源码核实；未知值不填0。采集器在同次运行开始先从私有 `thundax-lyp/dsh-plugin-meta` 回读并固定一份 `main:data/NPM-META.jsonl`：不超过24小时且下载窗口匹配的完整 npm 字段组直接复用并保留其真实采集时间，过期、窗口不匹配或缺少所需字段组才回源 npm；Git 仓库指标从独立 `GIT-META.jsonl`／`GIT-ERRORS.jsonl` 按数据契约复用 Star 与归档状态；推送时间、Issue 和代码更新检查仍按需访问 GitHub，不把缓存命中表述为完全免回源。缓存不可用时报告原因并回源，不把缓存缺失当成指标为零。
-   将支撑当前结论的分析原文和必要证据落入正式快照引用的位置；发布输入只引用合并候选中的当前材料，不引用待清理的 runs 文件。
-   未选、失败或未完成项保留正式快照的有效记录，不因本轮 pending／blocked 将旧成果移出发布；新证据足以使旧结论失效时，单独校验并标记待复核，调整推荐，不伪装成完成。
-7. **最后合并与生成。** 汇总审阅本轮候选；检查正式基线摘要和依赖是否变化，冲突时重做合并计划，不覆盖并发修改。
-   通过结构、身份、证据、依赖和语义校验后，再以一致的发布事务合并已完成组件的当前档案、分析／证据及展示输入；提交点前读者仍看到旧快照。
-   从合并后的全部当前有效研究生成推荐：README前5项，推荐页前50项；同时生成分类页和详情展示页。旧 SESSION、runs 和历史 manifest 不参与当前发布有效性判断。 首页主标题后的“已研究”Badge 由当前快照自动计数并链接分类索引；分类导航、分类 Star 榜与分类索引共用输出标准规定的固定顺序。计数范围和展示规则统一引用[输出标准](references/OUTPUT-STANDARD.md)，不手填数量。
-   ```sh
-   npm run snapshot -- plan --work data/runs/<round>/WORK.json --out /tmp/dsh-snapshot-plan.json
-   npm run snapshot -- apply --plan /tmp/dsh-snapshot-plan.json
-   npm run check
-   ```
-   目录／维护轻量项只保留在本轮过程，不更新正式研究文件；按需用 `npm run refresh:meta -- --plugin <稳定ID>` 定向刷新 META（可重复指定）；不调用单插件洞察，不替换源码证据，不刷新研究检查时间。META 与源码证据的兼容及依赖边界见数据契约的“目录与维护信息的轻量更新”。
-   检查 plan 的基线、合并范围与保留项后才 apply；再按输出标准人工核对贡献、质疑和假设论证、引用、成立条件和覆盖范围。
-批量登记受阻原因可用 `snapshot block-batch --work <WORK.json> --input <entries.json>`，输入为 `{ id, input }` 数组，input 与单项 block 相同；整批校验后保存，不写正式快照。
+检查工作区、正式快照摘要及 `research_blocks`。新轮分配 `data/runs/YYYY-MM-DD-NN/`；恢复按[恢复规则](references/SESSION-OPERATIONS.md#新轮次与同轮恢复)校验旧材料，只重做受影响的未合并项。
 
-仅在用户明确要求丢弃研究、重新作为未研究组件处理时，使用 `snapshot forget --input <input.json>` 预览，确认对象后加 `--apply`。输入绑定 base_digest 和 plugin_ids；清除这些对象的研究、发布、身份映射和发现条目，以及依赖这些对象的交叉 finding，再校验并事务写入。保留组件的原文证据不作推断性改写；独立评分若仍依赖被删对象则校验失败，不自动重评分。生成后删除预览清单中对应的详情目录，原目录来源可由后续 Skill 重新扫描。此命令不因 pending/blocked 自动触发。
+核查两个目录，固定干净 checkout 的完整提交、检查时间和读取范围。构建前后 HEAD 不变：
 
-8. **确认、回写清单与清理。** 回读合并结果，确认本轮成功记录已落位、引用可解析、页面可由当前快照独立生成。`npm run check` 通过后，先运行
-   `npm run export:meta-manifests -- --work data/runs/<round>/WORK.json`，从同一固定远端提交读取 `NPM-MANIFEST.jsonl` 与 `GIT-MANIFEST.jsonl`，分别形成追加合并候选。npm 包名仍只采用已核实身份；Git 仓库从整轮固定 INPUT 提取，不限于已研究项，按 `repository_id` 去重并保存 `npm_packages` 关联。核对两份清单的已有、新增、保留历史、最终输出及删除数为0，同时说明完整组件数、唯一仓库数、npm 已核实与缺失范围；具体字段和身份规则见[数据契约](../_shared/references/DATA-CONTRACT.md#外部-meta-双清单回写)。
-   再运行同一命令增加 `--apply`，以单个远端提交更新两份清单，命令必须完成远端内容回读；最后再次运行只读命令，确认两份清单均为 `changed: false`。内容无变化时不制造提交。目标尚未部署新文件、身份解析、并发保护、任一写入或回读失败时保留 WORK 并报告受阻，不能宣称完成，不回退旧文件名或清理本轮材料。普通 INIT 不删除远端包或仓库，错误、迁移或退役走独立显式清理。以上是 Skill 完成条件。
-   回写确认后才使用 `snapshot clean --work ...` 预览，明确执行时加 `--apply`。仅清理已确认合并且全部完成的已知材料；受阻、未完成和未知文件保留，不删除活动锁。
-   来源准备失败或仍有 blocked 时如实报告，并单列正式同版本受阻跳过数；不把跳过算完成或本轮失败。所选上限内完成只代表所选范围完成，不代表全生态研究完成。
+```sh
+npm run research:input -- \
+  --source-awesome ../dsh-plugin-insight-data/sources/awesome-dsh-plugin \
+  --source-harness ../dsh-plugin-insight-data/sources/awesome-deepseek-harness \
+  --id <session_id> --checked-at <ISO时间> \
+  --out data/runs/<round>/INPUT.json \
+  --problems data/runs/<round>/INPUT-PROBLEMS.json
+```
+
+只有完整读取且身份／默认分支无问题才加对应 `--complete-awesome`／`--complete-harness`。保留解析、重定向、身份和组件碰撞问题；来源不完整时不能推断目录移除。目录条目、去重组件、仓库分开计数。
+
+### 2. 固定队列并准备材料
+
+```sh
+npm run snapshot -- start --input data/runs/<round>/INPUT.json --work data/runs/<round>/WORK.json --limit <N>
+npm run snapshot -- next --work data/runs/<round>/WORK.json
+npm run prepare:selected -- --work data/runs/<round>/WORK.json
+```
+
+使用固定 selected_ids、跳过集合、基线及额度，不反向改写它们。准备器只取源码、统计与 META，不形成结论；每仓库就绪即准备，单仓库失败不阻塞其他项。重跑原命令只复用提交、干净状态及四份材料摘要均正确的项。下载时限、日志与断点见[下载失败与材料准备恢复](references/SESSION-OPERATIONS.md#下载失败与材料准备恢复)。
+
+准备器首次固定同一远端提交的 npm／Git 缓存，同轮重试复用；只复用契约允许的新鲜字段，保留真实采集时间与 commit/blob。缓存失败按规则回源并报告，不填0。失败不自动持久 block；确认具体受阻后由父 Agent 登记，继续其余已选项。
+
+### 3. 分派单插件洞察
+
+按下方[多 Agent 协作](#多-agent-协作)，将每项稳定 ID、固定提交、检查时间、深度、独占目录和当前相关分析／证据交给子 Agent，执行[洞察 Skill](../dsh-plugin-insight/SKILL.md)。所选更新项和新项均完整分析；未变项只保留，不伪造完成。同轮已完成且摘要正确的项跳过。
+
+### 4. 验收并暂存
+
+对照每项 PLAN，按问题 ID 读完整回答、证据、未知项与状态，检查贡献、质疑、假设和建议的推导。核对真实条目类型、身份、固定版本、材料摘要、findings 复核及两轴创新和四项采用评分；不能只核字段、题数和总分。确认完整问题对象与必要原件已自包含保存。
+
+验收通过才 stage；父 Agent 串行写 WORK，正式快照保持不变：
+
+```sh
+npm run snapshot -- stage --work <WORK.json> --plugin <id> \
+  --observations <OBSERVATIONS.json> --report <INSIGHT.md> --display <DISPLAY.json>
+```
+
+多个已验收项可 `stage-batch --work <WORK.json> --input <entries.json>`，输入为 `{ id, observations, report, display }` 数组，整批校验后才保存。DISPLAY 为单项 metadata、summaries、capabilities、advice，不维护独立推荐名单。
+
+受阻项保存稳定 `reason_code`、可读 reason、自包含问题详情，再 `block --work ... --plugin ... --input <reason.json>`；批量用 `block-batch` 的 `{ id, input }` 数组。保留有效旧成果，不用本轮 pending／blocked 将旧记录移出展示。
+
+### 5. 汇总候选与采用结论
+
+跨插件比较必须有实际依据并登记依赖；共性机制只形成有推导的假设，不从多个相似介绍推断需求。推荐评分复用已有问题，各项说明材料、反证与相邻档取舍；三句理由需能回答谁做什么、比原办法好在哪、何时退出。
+
+核对全部当前有效研究的推荐有效性，保留未失效旧结论；不声称未实际复核对象已按新判据重评。仅定向复核推荐由 `snapshot assess-recommendations` 事务处理，不伪造新研究或刷新研究时间。META 按需独立刷新，不能在本轮合并前改写正式基线。
+
+### 6. 计划、合并并生成
+
+所有已选项 complete 或有具体持久 block 后，形成 plan，检查基线、合并范围、保留项与依赖，再 apply：
+
+```sh
+npm run snapshot -- plan --work <WORK.json> --out /tmp/dsh-snapshot-plan.json
+npm run snapshot -- apply --plan /tmp/dsh-snapshot-plan.json
+npm run check
+```
+
+基线漂移时重新读并处理冲突，不覆盖并发修改。提交点前保留旧快照；提交后回读事务标识和摘要。生成失败按恢复规则单独 render，不重复研究或追加观察。原件与引用必须落入当前快照，不能依赖待清理 runs。
+
+### 7. 检查实际成果
+
+从合并后全部有效组件生成 README 前5项、推荐页前50项、分类和详情；不为凑数升级推荐。按输出标准回读首页、三栏列表、分类和长短详情样例，核对数量、分类固定顺序、源码版本、完整回答、链接、条件与未验证状态。生成一致性通过不证明目标插件可用。
+
+### 8. 回写双清单，确认后清理
+
+`npm run check` 通过并回读正式成果后，依次执行：
+
+```sh
+npm run export:meta-manifests -- --work <WORK.json>
+npm run export:meta-manifests -- --work <WORK.json> --apply
+npm run export:meta-manifests -- --work <WORK.json>
+```
+
+预览须确认 npm／Git 已有、新增、保留历史、输出及删除数0，并报告输入组件、唯一仓库、已核实与缺失 npm 身份范围。Git 覆盖整轮固定 INPUT，不限已研究项；npm 只用核实包名。两份清单固定同一远端提交、以单个提交更新并回读；内容未变不制造提交。最后只读结果必须两份均 `changed: false`。
+
+目标为私有 `thundax-lyp/dsh-plugin-meta` 的 `NPM-MANIFEST.jsonl` 与 `GIT-MANIFEST.jsonl`；身份、并发、文件未部署或任一回读失败均保留 WORK 并报告，不能回退旧文件名、扩大写入或清理本轮材料。详见[双清单契约](../_shared/references/DATA-CONTRACT.md#外部-meta-双清单回写)。
+
+确认后 `snapshot clean --work ...` 预览，再加 `--apply` 只删已合并且全部完成的已知材料；失败、未知文件及活动锁保留。当前快照须能独立校验和生成。另行报告完成／本轮受阻、冷却跳过、正式同版本受阻跳过和来源缺口；所选范围完成不表示全生态研究完成。
 
 ## 多 Agent 协作
 
-职责固定为：`dsh-plugin-init` 在父 Agent 执行，`dsh-plugin-insight` 在子 Agent 执行。父 Agent 负责来源、基线、队列、额度、交付验收及最终汇总；子 Agent 负责所分配插件的逐项研究。并发数按可用资源与任务独立性安排，单项也由子 Agent 执行洞察。子 Agent 自行扩展选择或父 Agent 用通用段落代替逐项洞察均不符合此分工。
+| 角色 | 写入范围 | 完成判据 |
+| --- | --- | --- |
+| 父 Agent | 来源、固定队列、WORK、正式快照与发布页面 | 逐题验收后串行 stage，统一 plan／apply、生成检查、清单回读 |
+| 子 Agent | 分配组件的独占本轮材料、问题、分析、观察与展示输入 | 完整可核对交付；受阻保留材料、原因和下一步 |
 
-- **分配与输入：** 父 Agent 为每个子 Agent 明确互不重叠的稳定组件 ID、固定提交、截止时间、目标深度和独占输出路径，提供当前相关原稿、证据与依赖。子 Agent 使用同一固定基线；读取 WORK／SESSION 仍通过过程读取器，不提供并发认领语义。
-- **子 Agent 交付：** 按单插件洞察 Skill 逐项形成有依据的贡献、质疑、假设、评分与完整材料，可接收多个互不重叠的插件。只写分配的本轮材料／分析／观察和展示输入，不写他项材料或共享 WORK、SESSION、正式快照及发布页面，不执行 stage／plan／apply 或 Git 提交、推送。阻塞时保留材料、原因和下一步，不自行补位。
-- **父 Agent 汇总：** 回读每项报告与证据，核对身份、版本、来源范围、原稿与字段、评分理由和依赖，再串行 stage，防止重复完成与共享状态竞争。子 Agent 的“完成”回报不直接等于通过验收；材料不全或语义不成立时退回修正，不继承其自报结论。
-- **跨插件判断与合并：** 父 Agent 统一检查跨插件比较、术语和证据边界，形成分类与推荐；比较结论显式记录相关依赖。所有所选项已完成或有具体受阻记录后（仅受阻也可合并原因），由父 Agent 统一 plan／apply、生成页面并执行验收。正式基线漂移时按既有冲突流程处理，不用子 Agent 的旧结果覆盖新状态。
-
-子 Agent 不再自行委派；确需再次拆分时由父 Agent 重新分配，保持任务与输出所有权明确。仅重新生成页面时通常无需按插件并行研究，不为排版制造新观察。
+单项也由子 Agent 执行。分派互不重叠的稳定 ID 与目录，提供同一固定基线的相关原稿、证据和依赖；WORK 读取器没有并发认领语义。子 Agent 不扩展候选、不 stage／plan／apply、不改共享或正式文件、不提交、不再委派。父 Agent 不用通用段落替代逐项研究；发现问题退回修正，不直接继承自报结论。基线漂移按冲突流程处理。
 
 ## 职责与授权
 
-仅在用户点名本 Skill 或明确要求整轮研究时使用。父 Agent 执行本 Skill，拥有队列、增量暂存、合并和本地成果生成；子 Agent 执行单插件洞察并返回单项记录。
-本 Skill 不自动安装第三方插件、安排周期任务、提交或推送本工程、创建 PR 或对外发布；唯一例外是完成时按第8步通过 GitHub API 以单个提交同步目标仓库的 npm 与 Git 两份清单。更新规范不授权删除既有历史材料或迁移正式数据。
+本 Skill 不自动安装、安排周期任务、提交或推送本工程、创建 PR 或对外发布；唯一例外是第8步限定目标的两份清单 API 同步。不删除远端历史包／仓库，不因规范更新迁移正式数据。只有用户明确要求丢弃研究时才走数据契约的 `snapshot forget` 预览／apply，不以受阻状态触发。
 
 ## 读者页面重新生成
 
-仅在用户明确要求更新本 Skill 或重新生成读者页面时执行；catalog 内研究原稿、证据与分析版本作为只读输入；不读取旧 runs、manifest 或 checkout，不为排版重做研究或制造新结论。
-
-1. **先更新生成要求。** 将用户确认的阅读目标落实到 Skill 的写作与发布步骤，核对输出标准中的相关约定。已有确认要求优先，不把“改 Skill”替换成直接编辑生成的 Markdown；生成要求与既有标准有冲突时按用户当前要求处理并明确同步范围。
-2. **组织三个阅读层次。** 首页顺序为定位、快捷入口、小横幅、推荐尝试、最近发布、下载热门、按场景查找，末尾保留出处、许可与更新时间。推荐最多5项，最近发布与下载热门各最多3项；推荐分行保留用途、推荐理由、试用／安装条件，正文不混排指标；最近发布只突出日期，下载热门只突出下载量。所有徽章复用统一灰色标签与按指标区分的数值色，最新发布为灰标签／绿日期；紧凑表格同色。标题、入口及比较布局统一按[输出标准](references/OUTPUT-STANDARD.md)实施。
-   分类索引先展示分类／任务／数量导航表，再承接每类最多5项的分类 Star 榜；不在README重复展开，不把Star排序称为研究精选。完整分类页保留范围、同类比较表与四标签短评，补齐返回索引／首页及返回比较表入口。
-   三个完整栏目先给比较索引，再同序逐项说明；推荐明确试用／安装建议、核查情况和完整使用条件，试用步骤与成本缺少结构化输入时链接完整分析，不编造填充。最近发布新增版本列及研究固定提交，未核实 npm 发版对应关系时提示；下载热门保留下载窗口与研究边界。原有推荐／热度／发版筛选、排序和包去重规则不变，未知指标不填0，不改正式研究原稿或升级验收结论。
-3. **应用详情写作要求。** 使用单插件洞察 Skill 的读者组织步骤；顶部用引用块依次给出功能、亮点和主要限制，复用已有摘要和短评并保留证据边界，长篇“插件分析”从“用途与适用场景”开始，再展示能力与流程、效果与成本、工程分析及限制；使用建议放后，核查状态归核查说明，最后保留辅助统计。已有目录时不叠加孤立创新跳转。完整提交链接保留可追溯目标，显示短 SHA；顶部 META 按输出标准展示已核实的“最新发布”日期 Badge；不显示历史对照或“最后更新”徽章，不安排真实宿主验证。
-4. **通过生成资源实施。** 检查现有模板与脚本是否支持上述生成要求；需要时修改本 Skill 的生成模板／脚本，而非直接修补 README、分类页或 INSIGHT。已有报告没有逐题材料时不反向编造问题回答或宣称已通过新研究验收。保持数据语义和版本绑定，不从统计、热度或格式推断采用结论；无法安全归类的正文保留原文，不能静默删除或强凑结构。
-5. **生成并检查。** 按[成品语言与排版](references/OUTPUT-STANDARD.md#成品语言与排版)先回读实际生成页面的上下文，检查日常用词、重复标签、术语解释、完整句预览及表格行连续性；不以模板文本检查代替成品检查。执行 `npm run render:research`，回读首页、三栏列表页、分类页及长短详情代表样例；核对主标题“已研究”Badge 的数量、分类索引链接及分类导航、Star 榜和分类索引的固定顺序；检查章节顺序、标题层级、锚点与返回链接、表格宽度、既有证据和假设状态。执行 `npm run check`。生成不代表安装、运行或宿主验收通过；只报告实际结果，未经授权不提交或推送。
+明确要求重排或重新生成时，执行[专用流程](references/HOW-TO-REGENERATE-PAGES.md)。只读当前档案，以输出标准和模板组织三层阅读入口、成品语言和详情；`render:research` 后运行 `check` 并回读代表样例，不制造研究观察或改变证据等级。
