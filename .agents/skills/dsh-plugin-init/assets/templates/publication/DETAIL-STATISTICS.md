@@ -1,5 +1,5 @@
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 {{body}}
 

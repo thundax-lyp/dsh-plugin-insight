@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)
 
-分析版本：[7d5ffb5](https://github.com/571242/dsh-armor-switch/tree/7d5ffb5507450cd844227658e1a28a9a79676590)
+源码版本：[7d5ffb5](https://github.com/571242/dsh-armor-switch/tree/7d5ffb5507450cd844227658e1a28a9a79676590)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/571242/dsh-armor-switch)
 <!-- END META -->
 
-> **实现功能**：向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。
+> **功能**：向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。
 
-> **核心亮点**：统一契约切换、独立普通偏好和旧磁盘改动诊断恢复，工程增量主要在开关接线与可观察性。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：统一契约切换、独立普通偏好和旧磁盘改动诊断恢复，工程增量主要在开关接线与可观察性。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：主开关关闭不撤回显式权限、普通偏好或既有磁盘状态；清洗说明与当前禁用入口冲突，缺少交付改善对照。[Q03](#research-q03)、[Q05](#research-q05)
+> **主要限制**：主开关关闭不撤回显式权限、普通偏好或既有磁盘状态；清洗说明与当前禁用入口冲突，缺少交付改善对照。[Q03](#research-q03)、[Q05](#research-q05)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：统一契约切换、独立普通偏好和旧磁盘改动诊断恢复，工程增量主要在开关接线与可观察性。[Q01](#research-q01)、[Q02](#research-q02)
 
-统一契约切换、独立普通偏好和旧磁盘改动诊断恢复，工程增量主要在开关接线与可观察性。[Q01](#research-q01)、[Q02](#research-q02)
-
 热读注册与权限分离可复用，恢复逐表面汇总结果避免单一成功掩盖部分失败；普通偏好有摘要冲突和独占临时写。跨进程一致性与权限原状恢复仍需设计。[Q04](#research-q04)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[b63f551](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill)
+源码版本：[b63f551](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,474](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C474&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 27,866](https://img.shields.io/static/v1?label=npm+30d&message=27%2C866&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
 <!-- END META -->
 
-> **实现功能**：为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。
+> **功能**：为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。
 
-> **核心亮点**：六个域工具保留私有操作的取消、并发与呈现语义，配合技能按需显露和会话清理，使 DSH 原生接入比 shell 拼接更可管理；浏览器执行属于根产品。[Q02](#research-q02) [Q03](#research-q03)
+> **亮点**：六个域工具保留私有操作的取消、并发与呈现语义，配合技能按需显露和会话清理，使 DSH 原生接入比 shell 拼接更可管理；浏览器执行属于根产品。[Q02](#research-q02) [Q03](#research-q03)
 
-> **风险与缺陷**：CLI、扩展与插件需要协同升级；共享标签页的上下文协议不能代替用户对网页业务操作的授权，也不提供业务回滚。[Q03](#research-q03)
+> **主要限制**：CLI、扩展与插件需要协同升级；共享标签页的上下文协议不能代替用户对网页业务操作的授权，也不提供业务回滚。[Q03](#research-q03)
 
 **本文目录**
 
@@ -133,7 +133,7 @@ KeyedExecutor 将同会话操作和观察采集排成 FIFO，失败尾链不拒�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

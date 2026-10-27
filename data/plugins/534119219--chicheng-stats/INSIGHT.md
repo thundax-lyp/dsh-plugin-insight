@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[53ee7d9](https://github.com/534119219/chicheng-stats/tree/53ee7d9bc356b16f7f461caeb89b85bd79c9a608)
+源码版本：[53ee7d9](https://github.com/534119219/chicheng-stats/tree/53ee7d9bc356b16f7f461caeb89b85bd79c9a608)
 
 <!-- BEGIN META -->
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/534119219/chicheng-stats)
 <!-- END META -->
 
-> **实现功能**：DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。
+> **功能**：DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。
 
-> **核心亮点**：把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。
+> **亮点**：把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：桌面 zstd 历史默认跳过、水位淘汰可重计，自动导入平台 token 经同源 API 返回给浏览器；详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：桌面 zstd 历史默认跳过、水位淘汰可重计，自动导入平台 token 经同源 API 返回给浏览器；详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -80,8 +80,6 @@ DSH session/event、webServer/webRuntime/credentials、Node zstd、leveldown；�
 
 > **亮点**：把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。
 
-把实时/历史用量与 Web 面板结合，详见[Q01](#research-q01)。
-
 seq 水位、(turn,step) last-wins、zstd 多帧解码、定时扫描和 JSON 持久化。
 
 <a id="detail-section-5"></a>
@@ -130,7 +128,7 @@ seq 水位、(turn,step) last-wins、zstd 多帧解码、定时扫描和 JSON �
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

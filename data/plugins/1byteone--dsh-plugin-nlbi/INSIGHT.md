@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[232f924](https://github.com/1byteone/dsh-plugin-nlbi/tree/232f9243029add39dd18a368de45d8326aca178f)
+源码版本：[232f924](https://github.com/1byteone/dsh-plugin-nlbi/tree/232f9243029add39dd18a368de45d8326aca178f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1byteone/dsh-plugin-nlbi) [![npm 30d 899](https://img.shields.io/static/v1?label=npm+30d&message=899&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-nlbi) [![最新发布 2026-08-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-nlbi)
 <!-- END META -->
 
-> **实现功能**：把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。
+> **功能**：把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。
 
-> **核心亮点**：在dsh-mysql底座上连接Schema、模型生成、校验执行与BI展示，贡献在流程接线而非新SQL/图表算法。详见[Q02](#research-q02)。
+> **亮点**：在dsh-mysql底座上连接Schema、模型生成、校验执行与BI展示，贡献在流程接线而非新SQL/图表算法。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：生成链校验后直接查库并非待确认草稿，行列权限配置未在主query/Text2SQL/rerun执行链强制，不能视为数据隔离。详见[Q03](#research-q03)。
+> **主要限制**：生成链校验后直接查库并非待确认草稿，行列权限配置未在主query/Text2SQL/rerun执行链强制，不能视为数据隔离。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：在dsh-mysql底座上连接Schema、模型生成、校验执行与BI展示，贡献在流程接线而非新SQL/图表算法。详见[Q02](#research-q02)。
 
-在dsh-mysql底座上连接Schema、模型生成、校验执行与BI展示，贡献在流程接线而非新SQL/图表算法。详见[Q02](#research-q02)。
-
 可复用的是Schema白名单过滤、结构化模型输出、AST fail-closed拒绝不可解析输入、SQL改写与结果JSON安全清洗，以及连接缓存/会话选择和图表建议分层。多入口若绕过统一策略仍会使UI权限失去意义；固定.tmp与内存先更新后rename也不能保证多实例并发配置事务。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

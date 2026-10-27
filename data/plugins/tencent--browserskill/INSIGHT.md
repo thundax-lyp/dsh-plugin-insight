@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[b63f551](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49)
+源码版本：[b63f551](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,474](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C474&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
 <!-- END META -->
 
-> **实现功能**：通过 CLI 和浏览器扩展，让智能体使用现有 Chrome 或 Edge 登录状态执行网页任务。
+> **功能**：通过 CLI 和浏览器扩展，让智能体使用现有 Chrome 或 Edge 登录状态执行网页任务。
 
-> **核心亮点**：根产品将现有 profile 的网页操作变成带会话所有权、可见任务窗口与归还语义的跨宿主连接层，增量是人机交接与资源组织；DSH 工具呈现属于可选适配层。[Q01](#research-q01) [Q03](#research-q03)
+> **亮点**：根产品将现有 profile 的网页操作变成带会话所有权、可见任务窗口与归还语义的跨宿主连接层，增量是人机交接与资源组织；DSH 工具呈现属于可选适配层。[Q01](#research-q01) [Q03](#research-q03)
 
-> **风险与缺陷**：Agent Window 共享普通 profile 的权限，不能视为账号沙箱；原生弹窗仍可激活，取消不回滚已发生的网页业务写入。[Q03](#research-q03)
+> **主要限制**：Agent Window 共享普通 profile 的权限，不能视为账号沙箱；原生弹窗仍可激活，取消不回滚已发生的网页业务写入。[Q03](#research-q03)
 
 **本文目录**
 
@@ -133,7 +133,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

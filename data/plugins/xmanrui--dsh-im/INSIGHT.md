@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[7e78d77](https://github.com/xmanrui/dsh-im/tree/7e78d771e33ff655a91f127fdd04e90440403e71)
+源码版本：[7e78d77](https://github.com/xmanrui/dsh-im/tree/7e78d771e33ff655a91f127fdd04e90440403e71)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2,599](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C599&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xmanrui/dsh-im) [![npm 30d 66,600](https://img.shields.io/static/v1?label=npm+30d&message=66%2C600&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im)
 <!-- END META -->
 
-> **实现功能**：把微信、飞书等 IM 渠道与多机器人接入 DSH，并提供会话同步和主动投递。
+> **功能**：把微信、飞书等 IM 渠道与多机器人接入 DSH，并提供会话同步和主动投递。
 
-> **核心亮点**：相对独立机器人脚本，把多渠道身份、DSH会话和主动投递组织到同Host服务；增量在交付编排与共享路由。见[Q01](#research-q01)。
+> **亮点**：相对独立机器人脚本，把多渠道身份、DSH会话和主动投递组织到同Host服务；增量在交付编排与共享路由。见[Q01](#research-q01)。
 
-> **风险与缺陷**：unknown停止重试有明确保护，但发送成功到pending删除之间仍有崩溃窗口；多渠道权限与宿主认证不能由统一UI代替。见[Q02](#research-q02)。
+> **主要限制**：unknown停止重试有明确保护，但发送成功到pending删除之间仍有崩溃窗口；多渠道权限与宿主认证不能由统一UI代替。见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对独立机器人脚本，把多渠道身份、DSH会话和主动投递组织到同Host服务；增量在交付编排与共享路由。见[Q01](#research-q01)。
 
-相对独立机器人脚本，把多渠道身份、DSH会话和主动投递组织到同Host服务；增量在交付编排与共享路由。见[Q01](#research-q01)。
-
 入口提供显式版本的dshIm服务、adapter隔离以及unknown不同于failed的恢复分类值得借鉴；移植需平台回执与宿主持久事件语义。源码去重不能替代外部发送对账，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@ unknown停止重试有明确保护，但发送成功到pending删除之间仍有
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

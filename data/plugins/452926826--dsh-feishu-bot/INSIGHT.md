@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[f4d5216](https://github.com/452926826/dsh-feishu-bot/tree/f4d521615a9ca7ff7cbe2953a2a84074a7768091)
+源码版本：[f4d5216](https://github.com/452926826/dsh-feishu-bot/tree/f4d521615a9ca7ff7cbe2953a2a84074a7768091)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/452926826/dsh-feishu-bot) [![npm 30d 884](https://img.shields.io/static/v1?label=npm+30d&message=884&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feishu-bot) [![最新发布 2026-08-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feishu-bot)
 <!-- END META -->
 
-> **实现功能**：通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。
+> **功能**：通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。
 
-> **核心亮点**：把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。
+> **亮点**：把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：授权与审批按chat共享、空ACL放行，晚批准不绑定请求；内存去重、广播与失败写队列不能保证任务/收件人一致。详见[Q04](#research-q04)。
+> **主要限制**：授权与审批按chat共享、空ACL放行，晚批准不绑定请求；内存去重、广播与失败写队列不能保证任务/收件人一致。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -106,8 +106,6 @@ DSH本地Web或手写飞书/DSH桥接；本项把设备绑定、远程选择、�
 
 > **亮点**：把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。
 
-把扫码创建应用、WebSocket、项目/会话选择和一次审批接到DSH，省手接远程入口；交付仍为原Agent文本。详见[Q01](#research-q01)。
-
 coordinator/bridge/store职责分开和会话队列有价值；连接重连不等任务正好一次。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -156,7 +154,7 @@ coordinator/bridge/store职责分开和会话队列有价值；连接重连不�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

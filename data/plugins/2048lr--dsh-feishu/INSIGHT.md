@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[17ed9c0](https://github.com/2048lr/dsh-feishu/tree/17ed9c0dada4b40580dcf1e1b07918716a94f69d)
+源码版本：[17ed9c0](https://github.com/2048lr/dsh-feishu/tree/17ed9c0dada4b40580dcf1e1b07918716a94f69d)
 
 <!-- BEGIN META -->
 [![npm 30d 71](https://img.shields.io/static/v1?label=npm+30d&message=71&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feishu) [![最新发布 2026-08-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feishu)
 <!-- END META -->
 
-> **实现功能**：以应用或用户身份把飞书主要办公 API 接入 DSH。
+> **功能**：以应用或用户身份把飞书主要办公 API 接入 DSH。
 
-> **核心亮点**：提供 DSH 原生身份、授权 UI、十领域工具和两代 Bitable 兼容；相对通用 MCP，token 留在 Host。飞书平台能力非插件贡献。 参见[Q03](#research-q03)。
+> **亮点**：提供 DSH 原生身份、授权 UI、十领域工具和两代 Bitable 兼容；相对通用 MCP，token 留在 Host。飞书平台能力非插件贡献。 参见[Q03](#research-q03)。
 
-> **风险与缺陷**：宽 scopes 和身份差异会越权/空结果；两代 API、分页、限流和 token 类型分叉。消息、文档、表格和上传都有协作可见副作用。 参见[Q04](#research-q04)。
+> **主要限制**：宽 scopes 和身份差异会越权/空结果；两代 API、分页、限流和 token 类型分叉。消息、文档、表格和上传都有协作可见副作用。 参见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：提供 DSH 原生身份、授权 UI、十领域工具和两代 Bitable 兼容；相对通用 MCP，token 留在 Host。飞书平台能力非插件贡献。 参见[Q03](#research-q03)。
 
-提供 DSH 原生身份、授权 UI、十领域工具和两代 Bitable 兼容；相对通用 MCP，token 留在 Host。飞书平台能力非插件贡献。 参见[Q03](#research-q03)。
-
 identity 分离 app/user，Host 托管 token，领域工具比万能 API 易约束。feishu_api 和宽 scope 可绕边界，需验证日志脱敏、刷新并发和部分写。 参见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@ identity 分离 app/user，Host 托管 token，领域工具比万能 API 易约�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

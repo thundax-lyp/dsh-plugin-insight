@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)
 
-分析版本：[6d04df3](https://github.com/439436269-ctrl/dsh-piano/tree/6d04df38659655b3c71136bfe0172d0d14439d64)
+源码版本：[6d04df3](https://github.com/439436269-ctrl/dsh-piano/tree/6d04df38659655b3c71136bfe0172d0d14439d64)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。
+> **功能**：在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。
 
-> **核心亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](#research-q03)。
+> **主要限制**：style 在模块加载时插入、AudioContext 在模块作用域缓存，没有显式卸载移除/关闭；热卸载后的资源状态未知，不能把零采样等于零成本。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把钢琴键盘、24ms 跨键限速、Web Audio 合成与可拖浮钮接入 DSH overlay；增量主要是宿主内就近娱乐交互，非音乐算法突破。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 共享音频输出链与缓存噪声 buffer 减少逐音分配；跨键变化才触发并用24ms限速。样式在模块顶层插入，音频上下文未显式 close；结构自测不等于听觉或资源验收。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ style 在模块加载时插入、AudioContext 在模块作用域缓存，没有�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

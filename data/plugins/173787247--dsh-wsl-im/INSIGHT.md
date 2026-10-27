@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[c36e7cc](https://github.com/173787247/dsh-wsl-im/tree/c36e7cc4ae651756c7d81ff100401de10c10440a)
+源码版本：[c36e7cc](https://github.com/173787247/dsh-wsl-im/tree/c36e7cc4ae651756c7d81ff100401de10c10440a)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-im)
 <!-- END META -->
 
-> **实现功能**：把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。
+> **功能**：把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。
 
-> **核心亮点**：把现有 DSH Agent 工具能力带到多个聊天入口，支持工作区与多媒体转接。详见[Q01](#research-q01)。
+> **亮点**：把现有 DSH Agent 工具能力带到多个聊天入口，支持工作区与多媒体转接。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：requireAllowlist 默认关闭、空名单放行，Agent 默认 danger-full-access；权限设置失败仍继续。这使远程聊天可能驱动宿主工具。详见[Q02](#research-q02)。
+> **主要限制**：requireAllowlist 默认关闭、空名单放行，Agent 默认 danger-full-access；权限设置失败仍继续。这使远程聊天可能驱动宿主工具。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把现有 DSH Agent 工具能力带到多个聊天入口，支持工作区与多媒体转接。详见[Q01](#research-q01)。
 
-把现有 DSH Agent 工具能力带到多个聊天入口，支持工作区与多媒体转接。详见[Q01](#research-q01)。
-
 适配器按平台接入、Bridge 串行每聊天的 turn；session/event 汇集回复。入口默认允许空名单且 Agent 预设为 standard/danger-full-access；设置失败继续。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ requireAllowlist 默认关闭、空名单放行，Agent 默认 danger-full-acces
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

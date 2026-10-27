@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CUSTOMER-SERVICE.md) · [返回首页](../../../README.md)
 
-分析版本：[d741956](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/tree/d741956969f0adcd523c13d682e9ca8d7b313cb0)
+源码版本：[d741956](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin/tree/d741956969f0adcd523c13d682e9ca8d7b313cb0)
 
 <!-- BEGIN META -->
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3ChatAI-NCT/3chatai-deepseek-harness-plugin)
 <!-- END META -->
 
-> **实现功能**：连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。
+> **功能**：连接3Chat组织的客户、会话和群数据，在DSH中拟稿并经确认上传/发送消息，查询批次结果，国内外连接器按语言分流。
 
-> **核心亮点**：将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。
+> **亮点**：将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。
 
-> **风险与缺陷**：宿主ask与Skill礼仪不等于插件内容hash确认；单次防重放不保证跨调用只发一次。地区选择/凭据按服务共享，批次归属仅内存；送达和成交仍需平台/业务记录。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：宿主ask与Skill礼仪不等于插件内容hash确认；单次防重放不保证跨调用只发一次。地区选择/凭据按服务共享，批次归属仅内存；送达和成交仍需平台/业务记录。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -118,8 +118,6 @@
 
 > **亮点**：将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。
 
-将OAuth组织授权、动态十二工具契约和明确触达礼仪接到DSH，保留unknown受理与单执行不重放，减少裸工具误用。详见[Q02](#research-q02)、[Q04](#research-q04)。
-
 每connection serial队列把操作/刷新授权按序执行，withSession用AbortController合并调用signal与每request timeout，结束close transport并移除signal监听。dispose使generation失效、abort所有请求、关闭授权listener并等清理，这些是可核的资源退出路径。
 
 工具目录更新先验证新catalog再清旧注册；新注册失败回滚旧definitions，每代注册也局部清理已成功项。但回滚本身失败仍会抛，外部服务突然变更时不能保证总有可用目录。远端工具description和客户内容是模型输入，Skill引导和schema不自动消除提示注入；写门禁/完整确认仍要有效。
@@ -178,7 +176,7 @@ readNames在宿主标isConcurrencySafe，实际connection serial将同连接读�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

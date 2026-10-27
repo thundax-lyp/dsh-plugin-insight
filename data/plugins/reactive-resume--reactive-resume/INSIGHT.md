@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-分析版本：[5d247c5](https://github.com/reactive-resume/reactive-resume/tree/5d247c59de925b04e6e658300524812c7f544ec4)
+源码版本：[5d247c5](https://github.com/reactive-resume/reactive-resume/tree/5d247c59de925b04e6e658300524812c7f544ec4)
 
 <!-- BEGIN META -->
 [![GitHub ★ 44,843](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44%2C843&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/reactive-resume/reactive-resume)
 <!-- END META -->
 
-> **实现功能**：开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。
+> **功能**：开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。
 
-> **核心亮点**：相对Word加独立岗位表，将结构化履历、设计/检查和投递文档组织在同流程，并以Schema/JSON Patch暴露Agent接口；不证明招聘结果改善。[Q01](#research-q01)
+> **亮点**：相对Word加独立岗位表，将结构化履历、设计/检查和投递文档组织在同流程，并以Schema/JSON Patch暴露Agent接口；不证明招聘结果改善。[Q01](#research-q01)
 
-> **风险与缺陷**：规则分数/关键词匹配不等跨ATS兼容或录用概率，AI分隔符封装不保证事实与指令安全，保存接口存在也不等离线恢复已验收。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：规则分数/关键词匹配不等跨ATS兼容或录用概率，AI分隔符封装不保证事实与指令安全，保存接口存在也不等离线恢复已验收。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对Word加独立岗位表，将结构化履历、设计/检查和投递文档组织在同流程，并以Schema/JSON Patch暴露Agent接口；不证明招聘结果改善。[Q01](#research-q01)
 
-相对Word加独立岗位表，将结构化履历、设计/检查和投递文档组织在同流程，并以Schema/JSON Patch暴露Agent接口；不证明招聘结果改善。[Q01](#research-q01)
-
 明确未保存状态、私有短期下载和MCP去cookie身份边界值得复用；移植须保留用户归属、导出一致性与最终文件验收。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：85e0a56ed0c409e362b4620ca7a3e5f93219ace2c30320f06fe3d77540e05165。sloc 0.3.2，TypeScript 5.9.3。
 
