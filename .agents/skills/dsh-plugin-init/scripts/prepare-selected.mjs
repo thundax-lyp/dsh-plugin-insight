@@ -1,12 +1,20 @@
 #!/usr/bin/env node
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { spawn } from 'node:child_process';
+import {
+    existsSync,
+    mkdirSync,
+    readFileSync,
+    writeFileSync,
+    appendFileSync,
+    openSync,
+    closeSync,
+    unlinkSync
+} from 'node:fs';
 import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { read, atomicWrite, ROOT } from '../../_shared/scripts/plugin-data.mjs';
+import { read, atomicWrite, digest, ROOT } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory, researchDataDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { selectedItems } from './research-session.mjs';
 import {
@@ -16,10 +24,69 @@ import {
 } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
 import { readNpmMetaCache, resolveNpmMetadata } from '../../_shared/scripts/npm-meta-cache.mjs';
 import { readGitMetaCache, gitCacheSnapshot } from '../../_shared/scripts/git-meta-cache.mjs';
-const execute = promisify(execFile);
-const run = async (command, args, options = {}) =>
-    (await execute(command, args, { encoding: 'utf8', timeout: 180_000, maxBuffer: 32 * 1024 * 1024, ...options }))
-        .stdout;
+// Kill the whole process group: a material subprocess can itself be waiting on Git.
+export function runPreparationCommand(command, args, { timeout = 180_000, ...options } = {}) {
+    return new Promise((accept, reject) => {
+        let timedOut = false,
+            overflow = false,
+            size = 0;
+        const stdout = [],
+            stderr = [];
+        const child = spawn(command, args, {
+            detached: process.platform !== 'win32',
+            stdio: ['ignore', 'pipe', 'pipe'],
+            ...options
+        });
+        const stop = () => {
+            try {
+                if (process.platform !== 'win32') process.kill(-child.pid, 'SIGKILL');
+                else child.kill('SIGKILL');
+            } catch (error) {
+                if (error.code !== 'ESRCH') child.kill('SIGKILL');
+            }
+        };
+        const collect = (chunks) => (chunk) => {
+            size += chunk.length;
+            if (size > 32 * 1024 * 1024) {
+                overflow = true;
+                stop();
+            } else chunks.push(chunk);
+        };
+        child.stdout.on('data', collect(stdout));
+        child.stderr.on('data', collect(stderr));
+        const timer = setTimeout(() => {
+            timedOut = true;
+            stop();
+        }, timeout);
+        child.on('error', (error) => {
+            clearTimeout(timer);
+            reject(error);
+        });
+        child.on('close', (code, signal) => {
+            clearTimeout(timer);
+            const out = Buffer.concat(stdout).toString('utf8'),
+                err = Buffer.concat(stderr).toString('utf8');
+            if (code === 0 && !timedOut && !overflow) accept(out);
+            else
+                reject(
+                    Object.assign(
+                        Error(
+                            `Command failed: ${command} ${args.join(' ')}${timedOut ? ' (timeout)' : overflow ? ' (output limit)' : ''}\n${err}`
+                        ),
+                        {
+                            code,
+                            signal,
+                            killed: timedOut || overflow,
+                            timed_out: timedOut,
+                            stdout: out,
+                            stderr: err
+                        }
+                    )
+                );
+        });
+    });
+}
+const run = runPreparationCommand;
 const succeeds = async (command, args, options = {}) => {
     try {
         await run(command, args, options);
@@ -28,7 +95,6 @@ const succeeds = async (command, args, options = {}) => {
         return false;
     }
 };
-const node = (script, args) => run(process.execPath, [resolve(ROOT, script), ...args]);
 const pool = async (items, fn) => {
     let cursor = 0;
     await Promise.all(
@@ -48,9 +114,21 @@ export async function restoreEolOnlyCheckout(path) {
     await run('git', ['-C', path, 'restore', '--source', 'HEAD', '--worktree', '--', '.']);
     return true;
 }
-export async function prepareSelected(
+export async function prepareSelected(workPath, options = {}) {
+    const lock = resolve(workPath, '..', 'PREPARATION.lock');
+    const fd = openSync(lock, 'wx');
+    try {
+        writeFileSync(fd, JSON.stringify({ pid: process.pid, started_at: new Date().toISOString() }));
+        return await prepareSelectedUnlocked(workPath, options);
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
+async function prepareSelectedUnlocked(
     workPath,
     {
+        executeCommand = runPreparationCommand,
         downloads = captureNpmDownloads,
         publication = captureNpmPublication,
         metaCache = readNpmMetaCache,
@@ -58,14 +136,72 @@ export async function prepareSelected(
         at = new Date().toISOString()
     } = {}
 ) {
+    const run = executeCommand;
     const work = readWork(resolve(workPath)),
         folder = resolve(workPath, '..');
-    const items = selectedItems(work.session).filter((i) => i.status === 'pending');
+    const selected = selectedItems(work.session);
+    const binding = digest({
+        session: work.session.id,
+        checked_at: work.session.checked_at,
+        input_digest: work.input_digest,
+        selected: selected.map(({ id, revision, repository, path }) => ({ id, revision, repository, path }))
+    });
+    const statePath = resolve(folder, 'PREPARATION-STATE.json');
+    const state = existsSync(statePath) ? read(statePath) : { binding, completed: {}, meta_sources: {} };
+    if (state.binding !== binding) throw Error('preparation selection changed; use the original WORK');
+    const items = selected.filter((i) => i.status === 'pending');
     const checkouts = new Map(),
         errors = [];
+    const logPath = resolve(folder, 'PREPARATION-ATTEMPTS.jsonl');
+    const log = (entry) => appendFileSync(logPath, JSON.stringify({ at: new Date().toISOString(), ...entry }) + '\n');
+    const previousSummary = resolve(folder, 'PREPARATION.json');
+    if (!existsSync(logPath) && existsSync(previousSummary))
+        log({ event: 'legacy_summary', summary: read(previousSummary) });
+    const save = () => atomicWrite(statePath, state);
+    const command = async (repository, phase, executable, args) => {
+        const started = Date.now();
+        log({ repository, phase, event: 'started', command: executable, args });
+        try {
+            const output = await run(executable, args, { env: { ...process.env, GIT_TERMINAL_PROMPT: '0' } });
+            log({ repository, phase, event: 'completed', elapsed_ms: Date.now() - started });
+            return output;
+        } catch (e) {
+            log({
+                repository,
+                phase,
+                event: 'failed',
+                elapsed_ms: Date.now() - started,
+                command: executable,
+                args,
+                message: e.message,
+                code: e.code ?? null,
+                signal: e.signal ?? null,
+                killed: e.killed ?? false,
+                timed_out: e.timed_out ?? false,
+                stdout: e.stdout ?? '',
+                stderr: e.stderr ?? ''
+            });
+            throw e;
+        }
+    };
+    const cachesPath = resolve(folder, 'PREPARATION-CACHES.json');
+    const frozen = existsSync(cachesPath) ? read(cachesPath) : null;
+    if (frozen && frozen.binding !== binding) throw Error('preparation cache selection changed');
+    const thaw = (entry) =>
+        entry
+            ? { ...entry, records: new Map(entry.records), ...(entry.errors ? { errors: new Map(entry.errors) } : {}) }
+            : null;
     const [npmResult, gitResult] = await Promise.allSettled([
-        Promise.resolve().then(metaCache),
-        Promise.resolve().then(gitMetaCache)
+        frozen
+            ? frozen.npm_error
+                ? Promise.reject(Error(frozen.npm_error))
+                : Promise.resolve(thaw(frozen.npm))
+            : Promise.resolve().then(metaCache),
+        frozen
+            ? frozen.git_error
+                ? Promise.reject(Error(frozen.git_error))
+                : Promise.resolve(thaw(frozen.git))
+            : Promise.resolve().then(gitMetaCache)
     ]);
     const metaCacheError = npmResult.status === 'rejected' ? npmResult.reason.message : null;
     const cache =
@@ -74,20 +210,39 @@ export async function prepareSelected(
             : { records: new Map(), repository: null, branch: null, path: null, blob_sha: null };
     const gitCacheError = gitResult.status === 'rejected' ? gitResult.reason.message : null;
     const gitCache = gitResult.status === 'fulfilled' ? gitResult.value : null;
+    const freeze = (entry) =>
+        entry
+            ? {
+                  ...entry,
+                  records: [...entry.records],
+                  ...(entry.errors instanceof Map ? { errors: [...entry.errors] } : {})
+              }
+            : null;
+    if (!frozen)
+        atomicWrite(cachesPath, {
+            binding,
+            at,
+            npm: freeze(cache),
+            git: freeze(gitCache),
+            npm_error: metaCacheError,
+            git_error: gitCacheError
+        });
+    at = frozen?.at ?? at;
     const gitCacheFile = resolve(folder, 'GIT-META-CACHE.json');
     if (gitCache) atomicWrite(gitCacheFile, gitCacheSnapshot(gitCache));
     const metaSources = [];
     for (const item of items)
-        checkouts.set(item.repository, {
+        checkouts.set(`${item.repository}@${item.revision}`, {
             item,
             path: resolve(researchDataDirectory(ROOT), `checkouts/${item.id.split(':')[1]}-${item.revision}`)
         });
-    await pool([...checkouts.values()], async ({ item, path }) => {
+    const prepareCheckout = async ({ item, path }) => {
+        const git = (args) => command(item.repository, 'checkout', 'git', ['-C', path, ...args]);
         try {
             if (!item.revision) throw Error('no pinned revision');
             if (!existsSync(resolve(path, '.git'))) {
                 mkdirSync(path, { recursive: true });
-                await run('git', ['init', path]);
+                await command(item.repository, 'init', 'git', ['init', path]);
                 await run('git', ['-C', path, 'remote', 'add', 'origin', `https://github.com/${item.repository}.git`]);
             }
             // Material checkouts must expose the exact committed bytes. Repository attributes such as
@@ -99,22 +254,96 @@ export async function prepareSelected(
             try {
                 head = (await run('git', ['-C', path, 'rev-parse', 'HEAD'])).trim();
             } catch {}
+            if (head && (await run('git', ['-C', path, 'status', '--porcelain'])).trim()) {
+                if (!(await restoreEolOnlyCheckout(path))) throw Error('checkout is dirty; refusing to overwrite');
+            }
+            await git(['config', 'http.version', 'HTTP/1.1']);
+            await git(['config', 'http.lowSpeedLimit', '1024']);
+            await git(['config', 'http.lowSpeedTime', '30']);
             if (head !== item.revision) {
-                await run('git', ['-C', path, 'fetch', '--depth', '1', 'origin', item.revision]);
-                await run('git', ['-C', path, 'checkout', '--detach', item.revision]);
+                let failure;
+                for (let attempt = 1; attempt <= 2; attempt++) {
+                    try {
+                        await git(['fetch', '--filter=blob:none', '--depth', '1', 'origin', item.revision]);
+                        await git([
+                            'sparse-checkout',
+                            'set',
+                            '--no-cone',
+                            '*.md',
+                            '*.json',
+                            '*.js',
+                            '*.mjs',
+                            '*.cjs',
+                            '*.ts',
+                            '*.mts',
+                            '*.cts',
+                            '*.tsx',
+                            '*.jsx',
+                            '*.vue',
+                            '*.css',
+                            '*.html',
+                            '*.yml',
+                            '*.yaml',
+                            '*.toml',
+                            '*.sh',
+                            '*.py',
+                            '*.rs',
+                            'LICENSE*'
+                        ]);
+                        await git(['checkout', '--detach', item.revision]);
+                        failure = null;
+                        break;
+                    } catch (e) {
+                        failure = e;
+                    }
+                }
+                if (failure) throw failure;
             } else await restoreEolOnlyCheckout(path);
+            if ((await git(['rev-parse', 'HEAD'])).trim() !== item.revision) throw Error('checkout revision mismatch');
             if ((await run('git', ['-C', path, 'status', '--porcelain'])).trim()) throw Error('checkout is dirty');
         } catch (e) {
-            errors.push({ repository: item.repository, phase: 'checkout', message: e.message });
+            errors.push({
+                repository: item.repository,
+                revision: item.revision,
+                phase: 'checkout',
+                message: e.message
+            });
+            log({
+                repository: item.repository,
+                phase: 'checkout',
+                event: 'failed',
+                message: e.message,
+                code: e.code ?? null,
+                signal: e.signal ?? null,
+                timed_out: e.timed_out ?? false,
+                stdout: e.stdout ?? '',
+                stderr: e.stderr ?? ''
+            });
+            return false;
         }
-    });
-    await pool(items, async (item) => {
-        const checkout = checkouts.get(item.repository).path;
+        return true;
+    };
+    const prepareItem = async (item, checkout) => {
         const slug = basename(pluginDirectory({ ...item, component_id: item.id.split(':')[2] }, ROOT));
         const directory = resolve(folder, slug);
         mkdirSync(directory, { recursive: true });
         try {
-            if (errors.some((e) => e.repository === item.repository && e.phase === 'checkout')) return;
+            const outputs = ['INVENTORY.json', 'MATERIALS.json', 'META.json', 'SOURCE.json'];
+            const hashes = () =>
+                Object.fromEntries(
+                    outputs.map((name) => [name, digest(readFileSync(resolve(directory, name), 'utf8'))])
+                );
+            if (
+                state.completed[item.id] &&
+                outputs.every((name) => existsSync(resolve(directory, name))) &&
+                digest(hashes()) === digest(state.completed[item.id])
+            ) {
+                if (state.meta_sources[item.id]) metaSources.push(state.meta_sources[item.id]);
+                console.log(`Reused ${item.id}`);
+                return;
+            }
+            const node = (script, args) =>
+                command(item.repository, 'materials', process.execPath, [resolve(ROOT, script), ...args]);
             const inventoryPath = resolve(directory, 'INVENTORY.json');
             await node('.agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs', [
                 '--root',
@@ -189,6 +418,7 @@ export async function prepareSelected(
             }
             validateMetadata(pluginMetadata);
             atomicWrite(metadataPath, pluginMetadata);
+            state.meta_sources[item.id] = sources;
             metaSources.push(sources);
             const inventory = read(inventoryPath);
             const files = [];
@@ -226,15 +456,41 @@ export async function prepareSelected(
                 coverage: 'bounded source material; see included paths and INVENTORY.json for full static scope',
                 files
             });
+            state.completed[item.id] = hashes();
+            save();
             console.log(`Prepared ${item.id} ${item.repository} ${item.path}`);
         } catch (e) {
             errors.push({ plugin_id: item.id, repository: item.repository, phase: 'materials', message: e.message });
+            delete state.completed[item.id];
+            save();
+            log({
+                plugin_id: item.id,
+                repository: item.repository,
+                phase: 'materials',
+                event: 'failed',
+                message: e.message,
+                code: e.code ?? null,
+                signal: e.signal ?? null,
+                timed_out: e.timed_out ?? false,
+                stdout: e.stdout ?? '',
+                stderr: e.stderr ?? ''
+            });
             console.error(`Preparation failed ${item.id}: ${e.message}`);
         }
+    };
+    // A ready repository produces materials immediately, without a round-wide download barrier.
+    await pool([...checkouts.values()], async (entry) => {
+        if (!(await prepareCheckout(entry))) return;
+        for (const item of items.filter(
+            (i) => i.repository === entry.item.repository && i.revision === entry.item.revision
+        ))
+            await prepareItem(item, entry.path);
     });
     atomicWrite(resolve(folder, 'PREPARATION.json'), {
         checked_at: at,
         selected: items.length,
+        attempts_log: relative(folder, logPath),
+        checkpoint: relative(folder, statePath),
         meta_cache: {
             repository: cache.repository,
             branch: cache.branch,

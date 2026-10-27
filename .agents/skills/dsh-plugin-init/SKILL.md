@@ -77,6 +77,7 @@ GitHub 来源与固定版本读取使用当前可用的 GitHub 插件或已认�
    npm run prepare:selected -- --work data/runs/<round>/WORK.json
    ```
    Skill 未提供参数时使用40；`snapshot start` 省略 `--limit` 时同样默认40。prepare:selected 只读取固定提交、统计和采集材料/META，不运行目标代码，不生成观察或研究结论。它在任何选中项 META 采集前固定读取一次 `NPM-META.jsonl`，并从同一远端提交固定读取 Git 的 `GIT-META.jsonl` 与 `GIT-ERRORS.jsonl`；npm 按下载量和发布信息字段组分别复用，Git 按稳定仓库 ID 复用24小时内的 Star 与归档状态，保留各字段原始时间和 commit/blob 来源；缓存过期、下载窗口不匹配或字段组不完整时才回源 npm，对应来源与 blob SHA 写入 `PREPARATION.json` 供父 Agent 验收。
+   下载按仓库就绪即准备，不等待全轮下载；失败日志、材料摘要检查点、固定缓存和同轮重试见[下载失败与材料准备恢复](references/SESSION-OPERATIONS.md#下载失败与材料准备恢复)。失败后重跑同一 prepare:selected 命令，仅完整且摘要一致的材料可复用；不重选、不补位、不自动持久化网络受阻。
    选中的更新项和新项均完整分析；未变的已有项只核对后保留，不调用洞察、不伪造本轮完成记录。同轮恢复跳过已完成且材料校验一致的项。
 4. **分派单插件洞察。** 父 Agent 将所选插件分配给子 Agent 执行[单插件洞察 Skill](../dsh-plugin-insight/SKILL.md)，传入单插件研究总目标、稳定 ID、固定版本、截止时间、当前快照中的分析和证据、目标深度及本轮独占的 `<plugin-slug>` 目录。
    多个子 Agent 可同时分析互不重叠的插件，由父 Agent 回收、验收与汇总；具体边界见下方“多 Agent 协作”。每项独立保存 inventory、证据、详细分析、观察批次及人工确认的摘要／能力／建议。
