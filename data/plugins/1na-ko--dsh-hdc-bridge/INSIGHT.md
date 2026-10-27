@@ -5,7 +5,7 @@
 分析版本：[51868ae](https://github.com/1na-ko/dsh-hdc-bridge/tree/51868ae19c9114ea1f7d148f708928c0c0d00e59)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/1na-ko/dsh-hdc-bridge) [![npm 30d 1,689](https://img.shields.io/static/v1?label=npm+30d&message=1%2C689&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-hdc-bridge) [![最新发布 2026-10-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-12&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-hdc-bridge)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1na-ko/dsh-hdc-bridge) [![npm 30d 1,689](https://img.shields.io/static/v1?label=npm+30d&message=1%2C689&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hdc-bridge) [![最新发布 2026-10-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hdc-bridge)
 <!-- END META -->
 
 > **实现功能**：为 DSH 集成鸿蒙设备调试、截图/UI操作、官方知识查询及可选 DevEco 构建签名流程。
@@ -166,7 +166,7 @@ core抽离、业务失败、保留输出状态可借鉴；面板直接进程与�
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=grey&logo=github&style=flat)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+created%3A2026-09-22T05%3A01%3A00.154Z..2026-10-22T05%3A01%3A00.154Z) [![近30天关闭 6](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=6&color=grey&logo=github&style=flat)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A01%3A00.154Z..2026-10-22T05%3A01%3A00.154Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+created%3A2026-09-22T05%3A01%3A00.154Z..2026-10-22T05%3A01%3A00.154Z) [![近30天关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A01%3A00.154Z..2026-10-22T05%3A01%3A00.154Z)
 
 
 

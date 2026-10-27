@@ -5,7 +5,7 @@
 分析版本：[f5b20d0](https://github.com/2002XiaoYu/dsh-session-diff/tree/f5b20d0001bb9955c4eebe0f2037507769e55197)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2002XiaoYu/dsh-session-diff)
 <!-- END META -->
 
 > **实现功能**：在 DSH 右侧栏显示当前会话修改文件的行级差异和变更列表。
@@ -175,7 +175,7 @@ Git用于工作区相对基线的完整变更核查；原生查看器提供当�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/2002XiaoYu/dsh-session-diff/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A21.029Z..2026-10-22T04%3A37%3A21.029Z)
 
 
 

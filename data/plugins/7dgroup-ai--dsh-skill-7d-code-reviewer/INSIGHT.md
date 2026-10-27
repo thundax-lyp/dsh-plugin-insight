@@ -5,7 +5,7 @@
 分析版本：[bd0069f](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/tree/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057)
 
 <!-- BEGIN META -->
-[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=yellow&logo=github&style=flat)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer)
+[![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer)
 <!-- END META -->
 
 > **实现功能**：一个注册到 DSH skills 的模板驱动代码审查 Skill，要求模型输出分级问题、评分与文字/HTML 报告。
@@ -155,7 +155,7 @@ Skill 注册与资源可核；审查准确率、评分校准和 HTML 转义仅�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/issues?q=is%3Aissue+created%3A2026-09-22T06%3A55%3A46.053Z..2026-10-22T06%3A55%3A46.053Z) [![近30天关闭 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A55%3A46.053Z..2026-10-22T06%3A55%3A46.053Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/issues?q=is%3Aissue+created%3A2026-09-22T06%3A55%3A46.053Z..2026-10-22T06%3A55%3A46.053Z) [![近30天关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A55%3A46.053Z..2026-10-22T06%3A55%3A46.053Z)
 
 
 

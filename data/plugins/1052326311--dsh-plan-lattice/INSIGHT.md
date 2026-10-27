@@ -5,7 +5,7 @@
 分析版本：[ea4d4f7](https://github.com/1052326311/dsh-plan-lattice/tree/ea4d4f7d726681466e86d11f93e4cc38a6c0d3f3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1052326311/dsh-plan-lattice)
 <!-- END META -->
 
 > **实现功能**：在 DSH 历史替换后恢复原生任务依据，并可显式启用完整执行门禁。
@@ -166,7 +166,7 @@ auto 源码层被动恢复明确；完整门禁覆盖配置的受保护工具。
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+created%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+created%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1052326311/dsh-plan-lattice/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A59%3A39.048Z..2026-10-22T08%3A59%3A39.048Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[840ff04](https://github.com/1344738825/ai-look-up/tree/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/1344738825/ai-look-up)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1344738825/ai-look-up)
 <!-- END META -->
 
 > **实现功能**：监测代理重复调用、失败循环和目标漂移，并在触发时注入自检提示。

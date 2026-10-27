@@ -5,7 +5,7 @@
 分析版本：[9971638](https://github.com/173787247/dsh-wsl-ssh-agent/tree/99716388c9fa204b53bb6e931a239810d4524a0b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-ssh-agent)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-ssh-agent)
 <!-- END META -->
 
 > **实现功能**：检查WSL宿主SSH_AUTH_SOCK路径、ssh-add身份数量与常见密钥文件名/npiperelay存在，提供转发和认证排查提示。
@@ -181,7 +181,7 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+created%3A2026-09-22T09%3A34%3A55.208Z..2026-10-22T09%3A34%3A55.208Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A34%3A55.208Z..2026-10-22T09%3A34%3A55.208Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+created%3A2026-09-22T09%3A34%3A55.208Z..2026-10-22T09%3A34%3A55.208Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A34%3A55.208Z..2026-10-22T09%3A34%3A55.208Z)
 
 
 

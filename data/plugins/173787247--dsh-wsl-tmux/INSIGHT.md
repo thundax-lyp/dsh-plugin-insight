@@ -5,7 +5,7 @@
 分析版本：[f6f2372](https://github.com/173787247/dsh-wsl-tmux/tree/f6f23727c2959d69559ec26f474d2e871473c224)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-tmux)
 <!-- END META -->
 
 > **实现功能**：提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。
@@ -164,7 +164,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+created%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+created%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-tmux/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A25%3A11.295Z..2026-10-22T09%3A25%3A11.295Z)
 
 
 

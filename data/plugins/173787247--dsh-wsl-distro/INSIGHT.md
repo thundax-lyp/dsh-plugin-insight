@@ -5,7 +5,7 @@
 分析版本：[5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-distro)
 <!-- END META -->
 
 > **实现功能**：查询WSL宿主当前发行版与os-release，解析Windows默认/已安装发行版列表，并提示跨发行版路径身份差异。
@@ -180,7 +180,7 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+created%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+created%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z)
 
 
 

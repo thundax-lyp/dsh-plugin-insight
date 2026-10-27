@@ -5,7 +5,7 @@
 分析版本：[6224eb1](https://github.com/240xu/dsh-session-lazy-view/tree/6224eb1e41b9408de1a9aec2749a21a4e0c8f31d)
 
 <!-- BEGIN META -->
-[![npm 30d 1,359](https://img.shields.io/static/v1?label=npm+30d&message=1%2C359&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@240xu/dsh-session-lazy-view) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@240xu/dsh-session-lazy-view)
+[![npm 30d 1,359](https://img.shields.io/static/v1?label=npm+30d&message=1%2C359&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-session-lazy-view) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-session-lazy-view)
 <!-- END META -->
 
 > **实现功能**：以独立网页只读查看本地会话尾帧，提供时间线、搜索、统计及Markdown导出。

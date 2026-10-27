@@ -5,7 +5,7 @@
 分析版本：[5299b64](https://github.com/4444wjt/dsh-plugin-veriscope/tree/5299b64087bbfa5beef6ae2e336045468f1af01d)
 
 <!-- BEGIN META -->
-[![npm 30d 956](https://img.shields.io/static/v1?label=npm+30d&message=956&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-veriscope) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-veriscope)
+[![npm 30d 956](https://img.shields.io/static/v1?label=npm+30d&message=956&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-veriscope) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-veriscope)
 <!-- END META -->
 
 > **实现功能**：重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
@@ -171,7 +171,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+created%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+created%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/4444wjt/dsh-plugin-veriscope/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A27%3A18.814Z..2026-10-22T06%3A27%3A18.814Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[e628e3e](https://github.com/3450892121/dsh-task-monitor/tree/e628e3ea76cf0f7f0a3489b93c9f00271daeb791/dsh-task-monitor)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/3450892121/dsh-task-monitor)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/3450892121/dsh-task-monitor)
 <!-- END META -->
 
 > **实现功能**：在侧边浮层汇总任务环境、Git、技能、MCP 与发布动作。

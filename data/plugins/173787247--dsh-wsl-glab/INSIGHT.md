@@ -5,7 +5,7 @@
 分析版本：[305794f](https://github.com/173787247/dsh-wsl-glab/tree/305794fc429ad5fa43be6e6e6f3fb9abd80c135f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-glab)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-glab)
 <!-- END META -->
 
 > **实现功能**：将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。
@@ -164,7 +164,7 @@ auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-glab/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-glab/issues?q=is%3Aissue+created%3A2026-09-22T07%3A29%3A09.128Z..2026-10-22T07%3A29%3A09.128Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-glab/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A29%3A09.128Z..2026-10-22T07%3A29%3A09.128Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-glab/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-glab/issues?q=is%3Aissue+created%3A2026-09-22T07%3A29%3A09.128Z..2026-10-22T07%3A29%3A09.128Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-glab/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A29%3A09.128Z..2026-10-22T07%3A29%3A09.128Z)
 
 
 

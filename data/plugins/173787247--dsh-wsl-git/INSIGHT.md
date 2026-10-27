@@ -5,7 +5,7 @@
 分析版本：[79fa248](https://github.com/173787247/dsh-wsl-git/tree/79fa248103904f63b552e92c9655be0d3c6e4981)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-git)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-git)
 <!-- END META -->
 
 > **实现功能**：提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。
@@ -164,7 +164,7 @@ porcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-git/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-git/issues?q=is%3Aissue+created%3A2026-09-22T07%3A26%3A46.081Z..2026-10-22T07%3A26%3A46.081Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-git/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A26%3A46.081Z..2026-10-22T07%3A26%3A46.081Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-git/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-git/issues?q=is%3Aissue+created%3A2026-09-22T07%3A26%3A46.081Z..2026-10-22T07%3A26%3A46.081Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-git/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A26%3A46.081Z..2026-10-22T07%3A26%3A46.081Z)
 
 
 

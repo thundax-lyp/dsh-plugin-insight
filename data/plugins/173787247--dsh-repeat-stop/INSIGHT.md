@@ -5,7 +5,7 @@
 分析版本：[cb1ed9f](https://github.com/173787247/dsh-repeat-stop/tree/cb1ed9fb558072adf80e2068b3bc7c50ff736fb9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-repeat-stop)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-repeat-stop)
 <!-- END META -->
 
 > **实现功能**：在 DSH 中按 Agent 拦截超过阈值的连续同工具同参数调用，支持过滤与用户消息重置。
@@ -166,7 +166,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-repeat-stop/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-repeat-stop/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A07.159Z..2026-10-22T04%3A37%3A07.159Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-repeat-stop/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A07.159Z..2026-10-22T04%3A37%3A07.159Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-repeat-stop/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-repeat-stop/issues?q=is%3Aissue+created%3A2026-09-22T04%3A37%3A07.159Z..2026-10-22T04%3A37%3A07.159Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-repeat-stop/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A37%3A07.159Z..2026-10-22T04%3A37%3A07.159Z)
 
 
 

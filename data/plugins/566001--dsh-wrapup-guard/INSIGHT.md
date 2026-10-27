@@ -5,7 +5,7 @@
 分析版本：[99734eb](https://github.com/566001/dsh-wrapup-guard/tree/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard) [![npm 30d 74](https://img.shields.io/static/v1?label=npm+30d&message=74&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-wrapup-guard)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/566001/dsh-wrapup-guard) [![npm 30d 74](https://img.shields.io/static/v1?label=npm+30d&message=74&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wrapup-guard) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wrapup-guard)
 <!-- END META -->
 
 > **实现功能**：用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。
@@ -165,7 +165,7 @@ check 未与 report 门槛绑定，缺人工 checks 只是提醒，三次空 pro
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+created%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+created%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/566001/dsh-wrapup-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A24%3A59.181Z..2026-10-22T05%3A24%3A59.181Z)
 
 
 

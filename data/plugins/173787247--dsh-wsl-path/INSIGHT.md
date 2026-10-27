@@ -5,7 +5,7 @@
 分析版本：[e82233f](https://github.com/173787247/dsh-wsl-path/tree/e82233f94e1d77c35657e06bfd032a03e353e3ba)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-path)
 <!-- END META -->
 
 > **实现功能**：在WSL中的DSH提供Linux盘符挂载和Windows/WSL UNC路径文本转换，并附文件系统使用提示。
@@ -180,7 +180,7 @@ UNC发行版被helper解析后在工具输出丢弃，默认/mnt与字面WSL假�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+created%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+created%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-path/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A23%3A22.394Z..2026-10-22T09%3A23%3A22.394Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[557e05f](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/tree/557e05f51f85fb4d4b9f6ed8cedfce02350e7bd6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit)
 <!-- END META -->
 
 > **实现功能**：把 7DGroup Git 提交规范作为低优先级内嵌 Skill 注册到 DSH，并允许本地同名 Skill 覆盖。
@@ -162,7 +162,7 @@ provider 将元数据、locator 和延迟 readFile 分开，rank 注释明确解
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7dgroup-ai/dsh-skill-7d-git-commit/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

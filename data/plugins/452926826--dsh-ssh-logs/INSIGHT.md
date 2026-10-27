@@ -5,7 +5,7 @@
 分析版本：[4dbc65c](https://github.com/452926826/dsh-ssh-logs/tree/4dbc65c4bb250f72388edfd42b3d3e4d0103699c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/452926826/dsh-ssh-logs)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/452926826/dsh-ssh-logs)
 <!-- END META -->
 
 > **实现功能**：通过DSH内置MCP桥提供服务器列表、限量日志读取和固定字符串搜索，使用预设SSH主机与日志根别名返回来源片段。
@@ -189,7 +189,7 @@ root只词法normalize，符号链接目标未核；child env不继承SSH_AUTH_S
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/452926826/dsh-ssh-logs/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/452926826/dsh-ssh-logs/issues?q=is%3Aissue+created%3A2026-09-22T05%3A59%3A32.154Z..2026-10-22T05%3A59%3A32.154Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/452926826/dsh-ssh-logs/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A59%3A32.154Z..2026-10-22T05%3A59%3A32.154Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/452926826/dsh-ssh-logs/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/452926826/dsh-ssh-logs/issues?q=is%3Aissue+created%3A2026-09-22T05%3A59%3A32.154Z..2026-10-22T05%3A59%3A32.154Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/452926826/dsh-ssh-logs/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A59%3A32.154Z..2026-10-22T05%3A59%3A32.154Z)
 
 
 

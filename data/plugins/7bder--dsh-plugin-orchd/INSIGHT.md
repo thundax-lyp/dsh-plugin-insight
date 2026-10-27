@@ -5,7 +5,7 @@
 分析版本：[1d01737](https://github.com/7bder/dsh-plugin-orchd/tree/1d01737c5656cfc01d74be30ba6e1ffd2a8114e8)
 
 <!-- BEGIN META -->
-[![npm 30d 359](https://img.shields.io/static/v1?label=npm+30d&message=359&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-orchd)
+[![npm 30d 359](https://img.shields.io/static/v1?label=npm+30d&message=359&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-orchd) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-orchd)
 <!-- END META -->
 
 > **实现功能**：在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。

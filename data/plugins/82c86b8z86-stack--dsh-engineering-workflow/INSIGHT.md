@@ -5,7 +5,7 @@
 分析版本：[3e251eb](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/tree/3e251eb78002625bcc238a42d9926d87c3a38bfe)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow)
 <!-- END META -->
 
 > **实现功能**：可选工程 preset 与六个方法 Skill，以五阶段文字门禁引导 DSH Agent；Host 自动同步本地预设并公告。
@@ -163,7 +163,7 @@ preset 与 Skill 结构可核；自动同步会覆盖同名自改并删除额外
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/issues?q=is%3Aissue+created%3A2026-09-22T06%3A28%3A17.787Z..2026-10-22T06%3A28%3A17.787Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A28%3A17.787Z..2026-10-22T06%3A28%3A17.787Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/issues?q=is%3Aissue+created%3A2026-09-22T06%3A28%3A17.787Z..2026-10-22T06%3A28%3A17.787Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A28%3A17.787Z..2026-10-22T06%3A28%3A17.787Z)
 
 
 

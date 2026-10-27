@@ -5,7 +5,7 @@
 分析版本：[c795535](https://github.com/173787247/dsh-wsl-pkg/tree/c79553532eda43f86f3d056ad31e35d11710ad33)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-pkg)
 <!-- END META -->
 
 > **实现功能**：将 npm、pip、cargo 查询接为 DSH 工具，给出有限长度的依赖摘要。
@@ -157,7 +157,7 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z)
 
 
 

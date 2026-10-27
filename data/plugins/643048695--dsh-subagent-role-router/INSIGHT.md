@@ -5,7 +5,7 @@
 分析版本：[e606490](https://github.com/643048695/dsh-subagent-role-router/tree/e6064904e116910c4c1aa403d40505304653ee23)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/643048695/dsh-subagent-role-router)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/643048695/dsh-subagent-role-router)
 <!-- END META -->
 
 > **实现功能**：按探索、规划、修补角色为子代理分配模型候补池，并处理故障转移与 fork 窗口切片。
@@ -165,7 +165,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/643048695/dsh-subagent-role-router/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/643048695/dsh-subagent-role-router/issues?q=is%3Aissue+created%3A2026-09-22T16%3A03%3A15.556Z..2026-10-22T16%3A03%3A15.556Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/643048695/dsh-subagent-role-router/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A03%3A15.556Z..2026-10-22T16%3A03%3A15.556Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/643048695/dsh-subagent-role-router/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/643048695/dsh-subagent-role-router/issues?q=is%3Aissue+created%3A2026-09-22T16%3A03%3A15.556Z..2026-10-22T16%3A03%3A15.556Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/643048695/dsh-subagent-role-router/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A03%3A15.556Z..2026-10-22T16%3A03%3A15.556Z)
 
 
 
