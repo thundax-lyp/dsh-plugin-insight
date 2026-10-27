@@ -1,0 +1,27 @@
+{
+    "repository": "Clarklevis1995/dsh-mobile",
+    "repository_id": 1337347330,
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 658,
+    "pushed_at": "2026-10-27T05:28:54Z",
+    "issues": {
+        "open": 9,
+        "closed": 21,
+        "created_30d": 20,
+        "closed_30d": 20,
+        "updated_30d": 27
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "Ikalus1988/MisakaNet",
+    "repository_id": 1224734286,
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 543,
+    "pushed_at": "2026-10-27T08:41:10Z",
+    "issues": {
+        "open": 281,
+        "closed": 1127,
+        "created_30d": 587,
+        "closed_30d": 414,
+        "updated_30d": 687
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "misakanet",
+        "captured_at": "2026-10-27T08:34:14.025Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 7216,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/misakanet",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-01T08:30:40.160Z",
+            "captured_at": "2026-10-26T20:32:35.909Z",
+            "source_url": "https://registry.npmjs.org/misakanet",
+            "error": null,
+            "latest_version": "2.50.1",
+            "latest_published_at": "2026-10-25T04:29:04.032Z",
+            "latest_error": null
+        }
+    }
+}

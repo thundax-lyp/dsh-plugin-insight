@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[fb3c073](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92)
+源码版本：[ece7aab](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AomiRaku/dsh-accountDisplayName-edit)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AomiRaku/dsh-accountDisplayName-edit) [![npm 30d 354](https://img.shields.io/static/v1?label=npm+30d&message=354&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-accountdisplayname-edit) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-accountdisplayname-edit)
 <!-- END META -->
 
 > **功能**：在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。
@@ -48,13 +48,9 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 自定义侧栏名称 | 用化名覆盖账号标签 | 仅本浏览器显示，依赖启动器 DOM |
-| 自定义侧栏头像 | 用本地图片覆盖原头像 | 图片重编码和 localStorage 受限，原节点保留 |
-| 名称头像编辑对话框 | 保存、取消和恢复默认 | shell.overlay 可用；两字段保存不具整体事务 |
+- **界面**：账号菜单编辑对话框与本地名称头像覆盖
 
 #### 启动与依赖
 
@@ -81,6 +77,8 @@
 | 首次使用 | 宿主设备与浏览器存储，金额未知 | 安装、设置名称头像、检查截图，耗时未知 | 图片上限10MB，重编码目标128×128 |
 | 持续使用 | 无独立服务调用机制，总费用未知 | 每图检查其他信息，升级后复核覆盖 | 未测重复截图节时 |
 | 失败恢复 | 本地存储与排查资源，金额未知 | 恢复默认、清键、核对部分保存 | 两字段保存不具整体事务 |
+
+
 
 #### 效果
 
@@ -120,7 +118,7 @@
 
 本地显示覆盖有固定源码支持；兼容与实际截图收益未做宿主验证。双阶段保存与状态确认属于未验证设计假设。
 
-- 已检查：作者 README、包清单、源码路径 lib/client.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/client.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定提交的浏览器接线、存储和保存路径源码核查；没有安装、运行测试或真实宿主验收。
 - 下一步：在匹配宿主中核对保存、取消、默认恢复与重载，再注入头像成功而别名写失败和 DOM 变化；以同批截图比较总耗时和遗漏，未执行。
@@ -128,8 +126,8 @@
 **分析版本**
 
 - **仓库**：[AomiRaku/dsh-accountDisplayName-edit](https://github.com/AomiRaku/dsh-accountDisplayName-edit)
-- **版本号**：0.2.1（[固定提交 fb3c073](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92)）
-- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.1（[固定提交 ece7aab](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -151,14 +149,18 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .js | source | 2 | 1301 | 969 | 253 | — |
-| .md | source | 2 | 449 | — | — | 4231 |
+| .md | source | 2 | 453 | — | — | 4271 |
 | .mjs | test | 4 | 1324 | 1082 | 116 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [GitHub Issues](https://github.com/AomiRaku/dsh-accountDisplayName-edit/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AomiRaku/dsh-accountDisplayName-edit/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AomiRaku/dsh-accountDisplayName-edit/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AomiRaku/dsh-accountDisplayName-edit/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
+
+
+
+统计日期：2026-10-27。
 
 <a id="detail-section-10"></a>
 
@@ -180,7 +182,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-30](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/README.md#L3-L30)
+**依据 1 · 作者声明**：[README.md:3-30](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/README.md#L3-L30)
 
 作者列明截图场景、名称头像覆盖和本地存储，明确承诺边界为显示层。
 
@@ -220,7 +222,7 @@ Built and verified against DSH `0.2.0-rc.2`. The account launcher and `Menu` DOM
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:277-305](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L277-L305)
+**依据 2 · 源码核查**：[lib/client.js:277-305](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L277-L305)
 
 applyLabel 将用户 alias 写入启动器标签，并保留原显示文本以恢复，支持重复展示覆盖的机制判断。
 
@@ -271,11 +273,11 @@ applyLabel 将用户 alias 写入启动器标签，并保留原显示文本以�
 
 #### 完整回答
 
-入口通过 package 的立即加载浏览器配置进入模块图，宿主半部只承担 Loader 身份且不申请宿主服务。浏览器使用宿主提供的 React；触发器通过 data-signed-out 与 data-collapsed 属性定位，标签通过类名后缀与位置回退定位。别名和头像读取浏览器 localStorage，头像用背景图覆盖并隐藏原节点的子元素，避免直接替换 React 的头像树。菜单项依赖已有菜单 DOM，编辑器则挂到 shell.overlay。因此无额外账号并不等于没有依赖，宿主模块加载约定、slots 和指定 DOM 结构都是效果条件。safe 包装将探测异常转换为回退值，主要换来不向宿主抛错的退化方式；它不能保证未来 DOM 变化后仍能覆盖，也无法成为隐私保护成功的确认信号。
+入口通过 package 的立即加载浏览器配置进入模块图，宿主半部只承担 Loader 身份且不申请宿主服务。浏览器使用宿主提供的 React；触发器通过 data-signed-out 与 data-collapsed 属性定位，标签通过类名后缀与位置回退定位。别名和头像读取浏览器 localStorage，头像用背景图覆盖并隐藏原节点的子元素，避免直接替换 React 的头像树。菜单项依赖已有菜单 DOM，编辑器则挂到 shell.overlay。因此无额外账号并不等于没有依赖，宿主模块加载约定、slots 和指定 DOM 结构都是效果条件。safe 包装将探测异常转换为回退值，主要换来不向宿主抛错的退化方式；它不能保证未来 DOM 变化后仍能覆盖，也无法成为隐私保护成功的确认信号。 作者在README中声称0.2.1-rc.2的DOM仍兼容，本轮仅核对该固定声明和实际选择器，不继承为独立宿主验收；当前包0.2.1的Node约束是^22.19.0或>=24。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:16-30](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/index.js#L16-L30)
+**依据 1 · 源码核查**：[lib/index.js:16-30](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/index.js#L16-L30)
 
 宿主入口声明空 inject 且 apply 无行为，解释其服务依赖范围。
 
@@ -302,7 +304,7 @@ export function apply() {}
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:244-267](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L244-L267)
+**依据 2 · 源码核查**：[lib/client.js:244-267](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L244-L267)
 
 DOM 选择器和回退实际决定兼容范围。
 
@@ -338,7 +340,7 @@ DOM 选择器和回退实际决定兼容范围。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/client.js:329-347](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L329-L347)
+**依据 3 · 源码核查**：[lib/client.js:329-347](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L329-L347)
 
 头像以背景图和属性覆盖，原 React 节点仍保留。
 
@@ -369,7 +371,7 @@ DOM 选择器和回退实际决定兼容范围。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/client.js:1220-1244](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L1220-L1244)
+**依据 4 · 源码核查**：[lib/client.js:1220-1244](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L1220-L1244)
 
 apply 将编辑器接入 shell.overlay，支持接线判断。
 
@@ -406,6 +408,28 @@ apply 将编辑器接入 shell.overlay，支持接线判断。
 
 </details>
 
+**依据 5 · 作者声明**：[README.md:28-37](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/README.md#L28-L37)
+
+作者版本验证声明，不能替代本轮运行。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+## Requirements
+
+Built and verified against DSH `0.2.0-rc.2`. The account launcher and `Menu` DOM it
+targets — `data-signed-out`, the `_avatar` / `_label` spans, the portaled
+`div[role="menu"]` with its `role="presentation"` viewport and `itemIcon` /
+`itemLabel` rows — is unchanged in `0.2.1-rc.2`, which this package was checked
+against. The host half imports nothing and the browser half fails soft, so a build
+whose DOM has moved on degrades to "no override, no extra row" rather than an error —
+see [Compatibility](#compatibility).
+
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -420,7 +444,7 @@ apply 将编辑器接入 shell.overlay，支持接线判断。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/client.js:177-208](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L177-L208)
+**依据 1 · 源码核查**：[lib/client.js:177-208](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L177-L208)
 
 每个 setter 独立持久化和更新界面，没有共享事务。
 
@@ -464,7 +488,7 @@ apply 将编辑器接入 shell.overlay，支持接线判断。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:1101-1122](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L1101-L1122)
+**依据 2 · 源码核查**：[lib/client.js:1101-1122](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L1101-L1122)
 
 commit 和 reset 顺序调用两个 setter，解释部分提交及错误处理边界。
 
@@ -518,7 +542,7 @@ commit 和 reset 顺序调用两个 setter，解释部分提交及错误处理�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:73-101](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/README.md#L73-L101)
+**依据 1 · 作者声明**：[README.md:75-103](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/README.md#L75-L103)
 
 使用和卸载步骤明确把设置与 localStorage 清理交给用户。
 
@@ -559,7 +583,7 @@ A dual-face plugin whose host half does almost nothing.
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:37-49](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L37-L49)
+**依据 2 · 源码核查**：[lib/client.js:37-49](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L37-L49)
 
 固定存储键与头像尺寸限制说明本地状态及资源边界。
 
@@ -604,7 +628,7 @@ A dual-face plugin whose host half does almost nothing.
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/client.js:1101-1122](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L1101-L1122)
+**依据 1 · 源码核查**：[lib/client.js:1101-1122](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L1101-L1122)
 
 分离保存是统一记录设计的推导依据，不证明新设计有效。
 
@@ -638,7 +662,7 @@ A dual-face plugin whose host half does almost nothing.
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:244-267](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92/lib/client.js#L244-L267)
+**依据 2 · 源码核查**：[lib/client.js:244-267](https://github.com/AomiRaku/dsh-accountDisplayName-edit/blob/ece7aabaa3bfe577208e1735bbeeb1bce78fa5a5/lib/client.js#L244-L267)
 
 选择器回退是覆盖状态确认需求的推导依据。
 

@@ -1,0 +1,325 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "file": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "path",
+                "sha256"
+            ],
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            }
+        },
+        "delivery": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "revision",
+                "observations",
+                "report",
+                "display",
+                "question_artifact",
+                "questions",
+                "supplements",
+                "files",
+                "record_digest",
+                "delivery_digest"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "revision": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "observations": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "report": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "display": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "question_artifact": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "questions": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "supplements": {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "files": {
+                    "type": "array",
+                    "minItems": 3,
+                    "items": {
+                        "$ref": "#/$defs/file"
+                    }
+                },
+                "record_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "delivery_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                }
+            }
+        },
+        "bundle": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "schema_version",
+                "work",
+                "base_digest",
+                "input_digest",
+                "deliveries"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": 1
+                },
+                "work": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "base_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "input_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "deliveries": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/delivery"
+                    }
+                }
+            }
+        },
+        "question": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "decision",
+                "reason"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "decision": {
+                    "enum": [
+                        "accept",
+                        "revise"
+                    ]
+                },
+                "reason": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            }
+        },
+        "supplement": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "path",
+                "decision",
+                "reason"
+            ],
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "decision": {
+                    "enum": [
+                        "accept",
+                        "revise"
+                    ]
+                },
+                "reason": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            }
+        },
+        "dependency": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "target",
+                "evidence",
+                "conclusion"
+            ],
+            "properties": {
+                "target": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "conclusion": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            }
+        },
+        "dependencies": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "decision",
+                "reason",
+                "checks",
+                "supplements"
+            ],
+            "properties": {
+                "decision": {
+                    "enum": [
+                        "sufficient",
+                        "needs_supplement"
+                    ]
+                },
+                "reason": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "checks": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/dependency"
+                    }
+                },
+                "supplements": {
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                        "$ref": "#/$defs/supplement"
+                    }
+                }
+            }
+        },
+        "review": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "delivery_digest",
+                "decision",
+                "reason",
+                "questions",
+                "dependencies"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "delivery_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "decision": {
+                    "enum": [
+                        "accept",
+                        "revise"
+                    ]
+                },
+                "reason": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "questions": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/question"
+                    }
+                },
+                "dependencies": {
+                    "$ref": "#/$defs/dependencies"
+                }
+            }
+        },
+        "reviews": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "reviewer",
+                "items"
+            ],
+            "properties": {
+                "reviewer": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/review"
+                    }
+                }
+            }
+        },
+        "submission": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "schema_version",
+                "bundle_digest",
+                "reviews"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": 1
+                },
+                "bundle_digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                },
+                "reviews": {
+                    "$ref": "#/$defs/reviews"
+                }
+            }
+        }
+    }
+}

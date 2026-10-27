@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[4397b2d](https://github.com/111222cjyq/dsh-curate/tree/4397b2dfffb33f92e7f0225d976a5dd9e47232b4)
+源码版本：[d3f8fc1](https://github.com/111222cjyq/dsh-curate/tree/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97)
 
 <!-- BEGIN META -->
 
@@ -12,7 +12,7 @@
 
 > **亮点**：将逐消息重要性、工具对约束、文本纠正和区间摘要组合为人工工作台；基础surface及编辑投影明确改编自已有项目，增量是组织方式而非全新摘要算法。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03)
+> **主要限制**：确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03) [Q02](#research-q02)次要区间直接丢弃、textOnly排除工具证据，节省输入不能替代保留关键事实；[Q03](#research-q03)不同provider历史兼容是单独门槛。
 
 **本文目录**
 
@@ -48,16 +48,10 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 消息重要性标注 | 选择原文保留或摘要 | 工具对联动，尾节点固定 |
-| 用户消息改写 | 纠正提示文本 | surface replacement，不追加新输入 |
-| 助手工具与上下文编辑 | 修改模型可见文本 | 需消息投影，参数结构只读 |
-| 区间摘要 | 缩短选择范围 | 额外模型调用，无逐段摘要复核 |
-| 官方compact入口 | 调用宿主压缩 | 不按工作台区间语气 |
-| 写前本地备份 | 保全原文供人工恢复 | 默认20份，非自动撤销 |
+- **界面**：人工消息标注、编辑与区间压缩工作台
+- **Host 路由**：上下文读取、应用编辑和压缩接口
 
 #### 启动与依赖
 
@@ -86,6 +80,8 @@
 | 持续使用 | 每区间分块摘要调用与备份资源未知 | 筛选、纠错、检查后续质量 | token减少不等于总成本下降 |
 | 失败恢复 | 重试模型与数据资源未知 | 查看partial、手工恢复备份 | 默认20份，无自动会话撤销 |
 
+
+
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
@@ -95,7 +91,7 @@
 | 信息保留 | 重要原文与备份机制 | 摘要丢失率和后续质量 |
 | 成本节约 | 缩短后续可见文本 | 净费用、人工与失败恢复 |
 
-> **思考**：确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03)
+> **思考**：确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03) [Q02](#research-q02)次要区间直接丢弃、textOnly排除工具证据，节省输入不能替代保留关键事实；[Q03](#research-q03)不同provider历史兼容是单独门槛。
 
 <a id="detail-section-4"></a>
 
@@ -109,7 +105,7 @@
 
 ### 1.4 主要限制
 
-确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03)
+确认后模型摘要直接写可见历史，没有逐段内容复核；格式配对和备份不保证语义保留。多区间异常可部分提交，备份只支撑手工恢复，不能等同自动撤销或事务隔离。[Q03](#research-q03) [Q02](#research-q02)次要区间直接丢弃、textOnly排除工具证据，节省输入不能替代保留关键事实；[Q03](#research-q03)不同provider历史兼容是单独门槛。
 
 <a id="detail-section-6"></a>
 
@@ -125,7 +121,7 @@
 
 人工控制和写入护栏有固定源码支持；信息保留、并发事务与恢复效果未运行验证。候选摘要与不变量方案为假设。
 
-- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/surface.js、lib/backup.js、lib/edits.js、NOTICE.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/surface.js、lib/backup.js、lib/edits.js、NOTICE.md、src/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定编辑、区间摘要、计划校验、备份和来源声明源码；未执行目标代码、测试、真实会话写入或模型调用。
 - 下一步：核查投影后下一请求、关键约束保留、备份权限和恢复、多区间失败及并发增长，未执行。
@@ -133,8 +129,8 @@
 **分析版本**
 
 - **仓库**：[111222cjyq/dsh-curate](https://github.com/111222cjyq/dsh-curate)
-- **版本号**：0.5.2（[固定提交 4397b2d](https://github.com/111222cjyq/dsh-curate/tree/4397b2dfffb33f92e7f0225d976a5dd9e47232b4)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.7.6（[固定提交 d3f8fc1](https://github.com/111222cjyq/dsh-curate/tree/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97)）
+- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -155,20 +151,16 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 6 | 1225 | — | — | 11882 |
-| .mjs | source | 5 | 1567 | 1344 | 133 | — |
-| .js | source | 8 | 9987 | 8807 | 773 | — |
-| .mjs | test | 7 | 2717 | 2509 | 46 | — |
+| .md | source | 9 | 1670 | — | — | 14513 |
+| .mjs | source | 5 | 1568 | 1345 | 133 | — |
+| .js | source | 8 | 12867 | 11477 | 944 | — |
+| .mjs | test | 9 | 3574 | 3298 | 62 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.302Z..2026-10-24T05%3A55%3A33.302Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/111222cjyq/dsh-curate/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.302Z..2026-10-24T05%3A55%3A33.302Z)
-
-
-
-统计日期：2026-10-24。
+Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [GitHub Issues](https://github.com/111222cjyq/dsh-curate/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -190,39 +182,35 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:13-32](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/README.md#L13-L32)
+**依据 1 · 作者声明**：[README.md:17-32](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/README.md#L17-L32)
 
 作者定义人工筛选、编辑、压缩与原日志保留。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-为 DeepSeek Harness（DSH）提供一个人工主导的上下文整理插件。它不替用户决定“什么重要”，而是把决定权交给人：
+## 为什么需要它
 
-1. 在会话头部点「整理上下文」，右侧栏打开工作台；
-2. 工作台按“轮”把当前模型可见的对话切成卡片，最后一条消息固定保留；每张卡片先显示每条消息的预览，点「查看完整原文」可看渲染后的完整内容；
-3. 人可以**直接改写消息**：用户消息、助手正文/思维链、工具结果、注入上下文（含摘要消息）都能进「源码 / 渲染」编辑器；保存只是暂存，点「应用到上下文」才写入会话，**不调用模型**；
-4. 人给每条消息标 **重要 / 一般 / 次要**（组头三个按钮是整轮批量预设）：重要=该条原文保留，一般=压缩时写常规摘要，次要=压缩时写更短摘要；一轮里可以出现“保留回答 + 压缩工具噪音”的混合结果；
-5. 点底部「压缩上下文」时，模型才为选中的区间写替代摘要；不再需要逐段手动生成和复核摘要；
-6. 底部按钮：
-   - **修改并应用到上下文**：只写入暂存的消息修改，不压缩；
-   - **压缩上下文**：先选压缩对象——**直接压缩上下文**（不应用暂存修改）或**压缩修改后的上下文**（先应用修改再压），再选压缩方式——**按整理结果压缩**或**官方 /compact**；
-   - **保存当前内容**：立即保存本地草稿（不写会话）；**撤销**：回退最近一次语气/编辑/拆分改动。
-   压缩完成后工作台会重新读取会话，直接显示压缩后的内容；
-7. 下一条模型请求立即只看到整理后的上下文。
+长对话里最贵的不只是 token，还有**判断力**：
 
-原始消息不会被删除：它们仍在 append-only 会话日志里，只是被 surface replacement 阴影掉；每次写入前都会写一份本地 JSON 备份。
+- 工具输出、运行日志、重复解释会挤占真正重要的上下文；
+- 自动压缩不知道哪一句是需求、哪一句是过期草稿，容易把决定压掉；
+- 只靠“再问一遍”无法纠正已经写进历史的错误措辞。
 
-## 为什么不是自动压缩
+dsh-curate 不替人做自动摘要，而是把**模型可见的 surface** 摊开给人看：人可以精确保留、精确改写、按区间压缩，并清楚知道最后写进上下文的是什么。
 
-DSH 自带的 `compaction-basic` 是“到阈值自动压”。这个插件的定位是**人工可控的压缩**：先备份、可编辑消息、可保留关键段落为原文、可先把消息改对再压；它不替代自动压缩，也不修改其他插件或 profile 的配置。
+## 功能
 
+- **按轮整理**：把当前模型可见消息切成轮卡片，最后一条消息固定保留；支持最近 N 轮不压缩。
+- **重要 / 默认 / 次要**：重要=原文保留；默认=压缩时生成常规摘要；次要=直接丢弃并只留一条省略标记。支持整轮批量设置，也支持单条覆盖。
+- **原地改消息**：用户消息、助手正文/思维链、工具结果、注入上下文都能编辑；保存只是暂存，点「修改并应用到上下文」才写入，**不调用模型**。
+- **真实 Chat 回显**：写入后 Chat 直接显示实际上下文里的文本；标题旁可在「修改后 / 原文」间切换。
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[NOTICE.md:3-23](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/NOTICE.md#L3-L23)
+**依据 2 · 作者声明**：[NOTICE.md:3-23](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/NOTICE.md#L3-L23)
 
 改编归属明确，限制原创贡献判断。
 
@@ -265,11 +253,11 @@ projects and keep their original attribution:
 
 #### 完整回答
 
-写入要求会话在当前进程打开且空闲、confirm为true和expectedLastSeq匹配。区间计划由validatePlan核对，摘要调用使用已投影的文本而非过时原事件，按一般或次要目标生成替代文本；之后以user/message surfaceOp replace替换可见区间，原日志仍追加保存。用户提示编辑走surface replacement，助手及工具结果等非提示编辑走插件记录与消息投影，工具参数保持原有结构。工具调用与结果边界、最后节点和重叠限制有源码校验，避免常见格式破坏。依赖宿主Session与投影API、Web路由、当前模型及本地备份权限；不能将保留原日志解读为模型仍看到原文。
+写入要求会话在当前进程打开且空闲、confirm为true和expectedLastSeq匹配。区间计划由validatePlan核对，摘要调用使用已投影的文本而非过时原事件，默认区间调用摘要模型，次要区间则直接丢弃并保留省略标记；之后以user/message surfaceOp replace替换可见区间，原日志仍追加保存。用户提示编辑走surface replacement，助手及工具结果等非提示编辑走插件记录与消息投影，工具参数保持原有结构。工具调用与结果边界、最后节点和重叠限制有源码校验，避免常见格式破坏。依赖宿主Session与投影API、Web路由、当前模型及本地备份权限；不能将保留原日志解读为模型仍看到原文。 0.7.6还可选只总结用户与助手正文的textOnly模式，工具结果、注入上下文、思维和工具声明不作为摘要源；这缩小输入，也会改变证据保留范围。不能把“只读文字视图”和“已修改模型上下文”混为一谈。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:726-762](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L726-L762)
+**依据 1 · 源码核查**：[lib/index.js:887-923](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L887-L923)
 
 活跃空闲、确认和序号检查以及摘要后重检的具体顺序。
 
@@ -318,7 +306,7 @@ async function applyCuration(ctx, config, sessionId, body) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:691-721](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L691-L721)
+**依据 2 · 源码核查**：[lib/index.js:852-882](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L852-L882)
 
 摘要读取有效投影文本并按块调用模型。
 
@@ -361,7 +349,7 @@ async function summarizeOperation(ctx, config, live, events, op, options = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1107-1150](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L1107-L1150)
+**依据 3 · 源码核查**：[lib/index.js:1268-1311](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L1268-L1311)
 
 用户提示替换与非提示patch的两条写路径。
 
@@ -417,7 +405,7 @@ async function summarizeOperation(ctx, config, live, events, op, options = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/surface.js:372-410](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/surface.js#L372-L410)
+**依据 4 · 源码核查**：[lib/surface.js:372-410](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/surface.js#L372-L410)
 
 尾节点与工具配对约束限制可压缩范围。
 
@@ -468,6 +456,72 @@ async function summarizeOperation(ctx, config, live, events, op, options = {}) {
 
 </details>
 
+**依据 5 · 源码核查**：[src/client.js:3683-3697](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/src/client.js#L3683-L3697)
+
+客户端将次要区间构成drop，仅默认区间要求模型summary。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+          } else {
+            // Minor segments are dropped by the host (it writes only the
+            // omission marker); only Default segments get a model summary.
+            const ops = opsSegments.map((segment) => ({
+              kind: segment.tone === 'minor' ? 'drop' : 'summary',
+              startSeq: segment.startSeq,
+              endSeq: segment.endSeq,
+              tone: segment.tone,
+            }))
+            let result
+            try {
+              result = await applyPlan(sessionId, lastSeq, ops, '', {
+                autoSummarize: true,
+                textOnly: summaryTextOnly,
+              })
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/index.js:715-741](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L715-L741)
+
+textOnly摘要源明确省略工具、注入与思维，仍读取投影后文本。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+function sourceTextFor(events, bySeq, turns, shadowed, patches, textOnly) {
+  const parts = []
+  for (const seq of shadowed) {
+    const event = bySeq.get(seq)
+    if (!event) continue
+    const effective = projectEvent(event, patches)
+    const heading = nodeHeading(effective, turnOfEvent(turns, effective))
+    if (textOnly === true) {
+      // Conversation-only summaries: user prompts and assistant text blocks,
+      // without tool results, injected context, reasoning or tool calls.
+      const role = roleOf(effective)
+      if (role !== 'user' && role !== 'assistant') continue
+      const text = readMessageBlocks(effective)
+        .filter((block) => isTextBlock(block))
+        .map((block) => block.text)
+        .join('\n')
+      if (text.trim() === '') continue
+      parts.push(`${heading}\n${clampText(text, NODE_TEXT_CAP)}`)
+      continue
+    }
+    const body = clampText(eventText(effective), NODE_TEXT_CAP)
+    parts.push(`${heading}\n${body}`)
+  }
+  return parts.join('\n\n')
+}
+
+function chunkSource(source, size) {
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -478,11 +532,11 @@ async function summarizeOperation(ctx, config, live, events, op, options = {}) {
 
 #### 完整回答
 
-备份是写入前的自包含JSON，默认每会话保留20份，目录0700与文件0600，并非会话内撤销或事务回滚。多区间逐次append，异常返回已应用和剩余列表，代码明确允许部分提交；审计追加失败也不会回滚已经改变的surface。expectedLastSeq可拒绝打开后增长和摘要期间增长，但备份为异步I/O，后续append前没有本函数内的最终原子CAS；实际并发是否被宿主串行化需核查，不能把局部序号检查称为全局事务隔离。更影响核心价值的是确认后模型直接生成摘要，无逐段摘要人工复核，工具对保持只保证格式，不保证关键语义未丢失。备份保留原件也不能使模型自动恢复遗失信息。
+备份是写入前的自包含JSON，默认每会话保留20份，目录0700与文件0600，并非会话内撤销或事务回滚。多区间逐次append，异常返回已应用和剩余列表，代码明确允许部分提交；审计追加失败也不会回滚已经改变的surface。expectedLastSeq可拒绝打开后增长和摘要期间增长，但备份为异步I/O，后续append前没有本函数内的最终原子CAS；实际并发是否被宿主串行化需核查，不能把局部序号检查称为全局事务隔离。更影响核心价值的是确认后模型直接生成摘要，无逐段摘要人工复核，工具对保持只保证格式，不保证关键语义未丢失。备份保留原件也不能使模型自动恢复遗失信息。 作者还单列非DeepSeek模型可能不接受改写历史的边界，本地投影成功不能证明供应商接受历史或思维签名；需对目标模型单独验证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/backup.js:17-49](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/backup.js#L17-L49)
+**依据 1 · 源码核查**：[lib/backup.js:17-49](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/backup.js#L17-L49)
 
 保留上限与清理机制限制历史恢复窗口。
 
@@ -527,7 +581,7 @@ async function pruneBackups(dir) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:783-832](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L783-L832)
+**依据 2 · 源码核查**：[lib/index.js:944-993](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L944-L993)
 
 异步备份后逐区间append，不是单个原子多区间操作。
 
@@ -589,7 +643,7 @@ async function pruneBackups(dir) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:841-874](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L841-L874)
+**依据 3 · 源码核查**：[lib/index.js:1002-1035](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L1002-L1035)
 
 审计失败保留提交，写入失败返回partial而非回滚。
 
@@ -635,6 +689,22 @@ async function pruneBackups(dir) {
 
 </details>
 
+**依据 4 · 作者声明**：[README.md:118-126](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/README.md#L118-L126)
+
+作者明确供应商历史接受范围，属需验证外部边界。
+
+```text
+
+- **推理签名 / thinking blocks**：部分模型要求 reasoning 内容带服务端签名，改写历史后签名与文本不一致，provider 可能拒绝请求；
+- **不可变历史 / 服务端会话状态**：部分模型把历史保存在服务端，或要求严格的角色/消息顺序，客户端改写历史可能被忽略或报错；
+- **缓存前缀**：修改历史会改变 prompt 前缀，依赖前缀缓存的模型会降低缓存命中；
+- **消息格式约束**：不同 provider 对 tool 调用、注入上下文和 assistant 文本块的校验不同。
+
+dsh-curate 的投影和显示层在 DSH 本地是正确的，但“本地投影成功”不等于“所有 provider 都接受改写后的历史”。**在非 DeepSeek 模型上请先做小规模验证，不要直接用于生产上下文。** 如果 provider 拒绝修改后的历史，回退到原文并从备份恢复。
+
+## 上下文缓存与成本
+```
+
 #### 缺口
 
 - 宿主并发串行化与故障后的人工重建可行性未验证。
@@ -655,7 +725,7 @@ async function pruneBackups(dir) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:703-721](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L703-L721)
+**依据 1 · 源码核查**：[lib/index.js:864-882](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L864-L882)
 
 按源块调用摘要模型说明额外模型成本来源。
 
@@ -686,7 +756,7 @@ async function pruneBackups(dir) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/backup.js:58-73](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/backup.js#L58-L73)
+**依据 2 · 源码核查**：[lib/backup.js:58-73](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/backup.js#L58-L73)
 
 完整JSON写盘及权限与裁剪带来磁盘和隐私责任。
 
@@ -714,28 +784,25 @@ export async function writeBackup(sessionId, payload, suffix = 'apply') {
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:147-159](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/README.md#L147-L159)
+**依据 3 · 作者声明**：[README.md:147-156](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/README.md#L147-L156)
 
 作者说明不可撤销、备份、审计及空闲条件，需与源码一起理解。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（10行）</summary>
 
-````text
-    model: deepseek-v4-flash
+```text
+## 安全与可恢复性
+
+- 修改和压缩前写本地 JSON 备份，默认目录 `~/.local/share/dsh-curate/backups/<sessionId>/`，目录 `0700`、文件 `0600`；
+- 会话日志 append-only；原文被 surface 替换阴影，但不会从日志消失；
+- 应用前校验 `expectedLastSeq`，会话增长返回 `409 stale`；忙会话拒绝写入；
+- 路由只监听 loopback，并校验 `Host` / `Origin`；
+- 编辑不调用模型；只有「按整理结果压缩」会在确认后调用模型生成摘要；
+- 每次写入产生 `edit-plan` / `edit-applied` / `plan` / `applied` / `compact` 审计记录。
+
+备份路径、保留上限、provider/model 配置等细节见 [`docs/USAGE.md`](docs/USAGE.md)。
 ```
-
-若都不存在，摘要接口返回 503，按整理结果压缩无法继续。官方 `/compact` 使用当前 agent 预设里的官方压缩命令，不受这里的 provider/model 配置影响。
-
-## 开发
-
-```bash
-npm ci
-npm run build      # vendor（marked/turndown/DOMPurify）+ client bundle（注入 package.json 版本号）
-npm run check      # node --check 五个发布文件
-npm test           # node --test：surface / edits / backup / host 路由 / client
-```
-````
 
 </details>
 
@@ -759,7 +826,7 @@ npm test           # node --test：surface / edits / backup / host 路由 / clie
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:748-762](https://github.com/111222cjyq/dsh-curate/blob/4397b2dfffb33f92e7f0225d976a5dd9e47232b4/lib/index.js#L748-L762)
+**依据 1 · 源码核查**：[lib/index.js:909-923](https://github.com/111222cjyq/dsh-curate/blob/d3f8fc1af3935e62becf7fe4a15b92f9a78e7f97/lib/index.js#L909-L923)
 
 确认后即生成摘要，只有序号重检，为候选复核设计提供推导。
 

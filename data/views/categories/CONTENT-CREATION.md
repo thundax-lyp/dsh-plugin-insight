@@ -28,6 +28,7 @@
 | [dsh-media-studio](#plugin-1399694663-root) | 在DSH对话生成图片和视频或发送本地媒体，提供后台任务、自动保存及富媒体展示。 | 观察；先验收远端提交后断连与job失败的可追溯恢复，再决定后台试用。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠动作提示词、视频抠像、姿态归一化及透明播放素材转码流程，插件位于子目录。 | 当前建议有透明视频制作经验的素材作者先观察并核对工具路径和质量检查，避免按“全流程可复现”直接批量生成。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
+| [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 通过 Postiz MCP 在 DSH 中连接社交账号、读取平台规则并准备草稿或安排发布 | [Q03](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q03) 先观察并以只读账号规则查验为入口；草稿与发布必须回读远端，无法确认时停止DSH写操作回Postiz界面。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
@@ -37,7 +38,9 @@
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
+| [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
+| [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 中提供小说、短剧、游戏改编与视频解说的创作 Skills 和文件工作台 | [Q04](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q04) 先用已有文本项目试用一次改稿和冲突恢复；不将未核查付费媒体链纳入推荐。 |
 | [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
 | [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
 | [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
@@ -304,6 +307,22 @@
 
 [查看完整分析](../../plugins/863683348--dsh-plugin-translation/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1157659618-plugins-dsh-postiz"></a>
+
+## [dsh-postiz](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md)
+
+[![GitHub ★ 550](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=550&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/gitroomhq/postiz-agent) [![npm 30d 963](https://img.shields.io/static/v1?label=npm+30d&message=963&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-postiz) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-postiz)
+
+> **用途**：已使用Postiz的运营人员希望在DSH编写内容并查账号/平台规则；本地组件负责接入和工作流提示。
+
+> **亮点**：[Q01](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q01) 将环境凭据、MCP连接与平台工作流Skill包装为bundle，减少手工接线；不是自己实现社交平台发布引擎。
+
+> **思考**：[Q02](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q02) Skill中的draft/now要求不是硬门禁，连接重试不保证业务幂等；本地未保存发布收据，未知结果必须回远端对账。
+
+> **建议**：可推导未验证的发布收据适配层。先把内容、账号、时间和附件摘要作为待确认对象，确认后绑定远端草稿/任务ID；超时先查该ID，内容变化则要求新的决定。这比Skill中的“明确要求now”多了可核对的状态绑定，且重连不再被误当自动重提依据。
+
+[查看完整分析](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1401037852-root"></a>
 
 ## [dsh-redstone-music](../../plugins/19north--dsh-redstone-music/INSIGHT.md)
@@ -448,6 +467,22 @@
 
 [查看完整分析](../../plugins/andiii208--gzhflow/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1200521020-root"></a>
+
+## [MuseAI](../../plugins/yejiming--museai/INSIGHT.md)
+
+[![GitHub ★ 674](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=674&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yejiming/MuseAI)
+
+> **用途**：角色互动创作者跨会话维护世界书、角色关系与关键事件，合格结果应是与原对话一致且可恢复的记忆。
+
+> **亮点**：[Q01](../../plugins/yejiming--museai/INSIGHT.md#research-q01) 和 [Q02](../../plugins/yejiming--museai/INSIGHT.md#research-q02) 支持将模型建议、用户编辑与角色归档组织为一个流程，减少资料分散；不能把自动抽取视作正确记忆。
+
+> **思考**：[Q02](../../plugins/yejiming--museai/INSIGHT.md#research-q02) 的角色和归档更新早于会话保存，失败分支未见补偿；后端分析实现仍有定位缺口，核心可靠性尚不足以建议迁移真实档案。
+
+> **建议**：[Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 提出可回退差异与会话共同提交的封存方式，尚未实现验证；若不能减少错误记忆和恢复投入则否定。
+
+[查看完整分析](../../plugins/yejiming--museai/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1418493685-root"></a>
 
 ## [no-ai-style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
@@ -463,6 +498,22 @@
 > **建议**：从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339737707-root"></a>
+
+## [Oh Story DSH](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md)
+
+[![GitHub ★ 615](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=615&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zenstory-ai/oh-story-dsh)
+
+> **用途**：已有DSH和文件创作习惯的作者，可在同一会话编辑项目、调用上游创作Skill并查看工作台投影。
+
+> **亮点**：[Q01](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q01) 将上游Skills的脚本资源与DSH原生服务接通；[Q02](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q02) 用版本条件写和冲突选择连接人工编辑与Agent写入。贡献在适配和交互，创作方法及模型运行分别归上游与DSH。
+
+> **思考**：[Q03](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q03) 的生产工具只产生界面意图，不生成媒体也不算确认；本轮未审全付费适配器，不能把任务板状态或提示词当作计费安全保证。
+
+> **建议**：可以提出未验证的文件版本收据。把当前编辑器baseVersion思想推广到剧本、分镜、提示词和最终媒体，产物保存来源文件摘要；源文件改变时先展示哪些后续产物基于旧输入，而不直接再次调用付费生成。这比单看任务板“有文件”更能区分当前可用与过时结果，且保留文件为事实、不引入平行数据库。
+
+[查看完整分析](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1223170290-root"></a>
 

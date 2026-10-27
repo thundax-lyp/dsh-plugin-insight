@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[b5310e7](https://github.com/111xjyuan/dsh-desktop-sidecar/tree/b5310e7f8b6848dd6aab62aaccd6429187d983db)
+源码版本：[ccb0b0c](https://github.com/111xjyuan/dsh-desktop-sidecar/tree/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe)
 
 <!-- BEGIN META -->
-[![npm 30d 205](https://img.shields.io/static/v1?label=npm+30d&message=205&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-sidecar) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-sidecar)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/111xjyuan/dsh-desktop-sidecar) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-desktop-sidecar)
 <!-- END META -->
 
 > **功能**：为 DSH 提供 Windows 窗口、UIA、截图、离线 OCR、点击、剪贴板输入和按键工具。
 
 > **亮点**：组合UIA的结构操作与OCR文字坐标，减少单一路径不覆盖自绘界面的限制，并提供统一DSH工具入口；采用既有Windows能力，未证明竞品排名或token收益。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：无变化会自动重复点击，且客户区内重试后即使changed=false仍可ok=true；画面差异不能证明业务动作完成。OCR模糊匹配、剪贴板覆盖和额外临时图像还增加复核责任。[Q03](#research-q03) [Q04](#research-q04)
+> **主要限制**：不能。点击后比较局部截图哈希，画面变化可能来自动画、光标或无关内容，而实际动作可能失败；无变化也可能已完成无视觉反馈的操作。实现会在无变化时自动再点一次，随后只要坐标在客户区且发生重试就返回ok=true，即使changed=false，因此工具ok不等于像素验证成功，更不等于业务完成。二次点击还可能重复提交或触发双击语义。OCR findLine允许包含和0.6字符集合相似度，重复标签或形近字可能命中不期望条目；没有唯一候选确认门。它适合提示下一步复核，不能作为严格放行条件。这些是源码机制与反例分析，未复现误操作。 批量dryRun只返回文字描述并逐步标ok，没有证明控件仍存在或参数可执行；stopOnError只基于工具ok，也不等于业务后置条件。Esc在步骤之间检查，无法保证中断同步子进程或撤销已经点击。 [Q03](#research-q03)
 
 **本文目录**
 
@@ -48,20 +48,9 @@
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| desktop_windows | 枚举目标窗口 | Windows交互桌面 |
-| desktop_tree | 读UIA控件 | PowerShell/UIA，空树可提示OCR |
-| desktop_invoke | 触发控件动作 | 控件支持对应pattern |
-| desktop_read | 离线OCR与坐标 | 语言包、图像清晰，模糊匹配非唯一 |
-| desktop_capture | 取得截图 | 焦点与GDI可用，敏感图像需管理 |
-| desktop_click | 文字或坐标点击 | 自动重试，ok不证明业务完成 |
-| desktop_type | 剪贴板输入 | 覆盖剪贴板，依赖焦点和粘贴权限 |
-| desktop_key | 发送组合键 | 目标焦点与权限 |
-| desktop_doctor | 检查平台OCR焦点 | 自检不替代具体任务验收 |
-| desktop_course | 播放观察和下一节辅助 | 课程控件与帧差条件，未运行 |
+- **模型工具**：窗口枚举、UIA、截图OCR、点击输入按键、自检与课程控制
 
 #### 启动与依赖
 
@@ -88,7 +77,9 @@
 |---|---|---|---|
 | 首次使用 | Windows设备与FFI环境，金额未知 | 语言包、自检和测试窗口 | 当前环境未验平台 |
 | 持续使用 | 模型、截图、OCR资源未知 | 判断焦点与操作结果 | PowerShell同步调用可阻塞 |
-| 失败恢复 | 重试与临时图像资源未知 | 恢复窗口、剪贴板及业务状态 | 重复动作可能非幂等 |
+| 失败恢复 | 重试、附件和输出图像资源未知 | 恢复窗口、剪贴板及业务状态 | 重复动作可能非幂等 |
+
+
 
 #### 效果
 
@@ -99,7 +90,7 @@
 | 中文输入 | 剪贴板与粘贴 | 焦点、禁粘贴和恢复 |
 | 效率 | 减少纯视觉依赖机制 | token、延迟与合格率 |
 
-> **思考**：无变化会自动重复点击，且客户区内重试后即使changed=false仍可ok=true；画面差异不能证明业务动作完成。OCR模糊匹配、剪贴板覆盖和额外临时图像还增加复核责任。[Q03](#research-q03) [Q04](#research-q04)
+> **思考**：不能。点击后比较局部截图哈希，画面变化可能来自动画、光标或无关内容，而实际动作可能失败；无变化也可能已完成无视觉反馈的操作。实现会在无变化时自动再点一次，随后只要坐标在客户区且发生重试就返回ok=true，即使changed=false，因此工具ok不等于像素验证成功，更不等于业务完成。二次点击还可能重复提交或触发双击语义。OCR findLine允许包含和0.6字符集合相似度，重复标签或形近字可能命中不期望条目；没有唯一候选确认门。它适合提示下一步复核，不能作为严格放行条件。这些是源码机制与反例分析，未复现误操作。 批量dryRun只返回文字描述并逐步标ok，没有证明控件仍存在或参数可执行；stopOnError只基于工具ok，也不等于业务后置条件。Esc在步骤之间检查，无法保证中断同步子进程或撤销已经点击。 [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
@@ -107,19 +98,19 @@
 
 > **亮点**：组合UIA的结构操作与OCR文字坐标，减少单一路径不覆盖自绘界面的限制，并提供统一DSH工具入口；采用既有Windows能力，未证明竞品排名或token收益。[Q01](#research-q01) [Q02](#research-q02)
 
-FFI与UIA/OCR模块分离便于定位平台问题，缩放坐标回算明确。同步桥调用、模糊匹配以及ok含义必须公开；清理范围和剪贴板生命周期尚需更完整管理。[Q02](#research-q02)
+FFI、UIA/OCR与批量执行器分离，OCR两级finally清理和启动扫旧文件有实际资源治理价值。输入仍覆盖全局剪贴板，同步PowerShell可能阻塞；可选expect、按字符相似度匹配和步骤ok不能组成业务正确性保证。复用批量器须额外加入独立后置条件、候选身份和非幂等重试策略。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-无变化会自动重复点击，且客户区内重试后即使changed=false仍可ok=true；画面差异不能证明业务动作完成。OCR模糊匹配、剪贴板覆盖和额外临时图像还增加复核责任。[Q03](#research-q03) [Q04](#research-q04)
+不能。点击后比较局部截图哈希，画面变化可能来自动画、光标或无关内容，而实际动作可能失败；无变化也可能已完成无视觉反馈的操作。实现会在无变化时自动再点一次，随后只要坐标在客户区且发生重试就返回ok=true，即使changed=false，因此工具ok不等于像素验证成功，更不等于业务完成。二次点击还可能重复提交或触发双击语义。OCR findLine允许包含和0.6字符集合相似度，重复标签或形近字可能命中不期望条目；没有唯一候选确认门。它适合提示下一步复核，不能作为严格放行条件。这些是源码机制与反例分析，未复现误操作。 批量dryRun只返回文字描述并逐步标ok，没有证明控件仍存在或参数可执行；stopOnError只基于工具ok，也不等于业务后置条件。Esc在步骤之间检查，无法保证中断同步子进程或撤销已经点击。 [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先在测试应用跑只读窗口、UIA和OCR，再检查输入结果与剪贴板变化。不要把ok或changed直接当业务成功；高影响动作单独确认，检查临时截图留存。[Q04](#research-q04)
+先在无敏感数据的测试应用做只读窗口、UIA和OCR，再核查输入与剪贴板；编号点击传expect并复核实际控件，批量先少量观察。不要把dryRun、ok或changed当业务完成。OCR临时图尽力清理，但持久截图/附件另查生命周期。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -129,7 +120,7 @@ FFI与UIA/OCR模块分离便于定位平台问题，缩放坐标回算明确。�
 
 Windows工具接线有固定源码支持；平台与业务效果未运行验证，像素反馈不保证成功。语义动作契约为假设。
 
-- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/uia.mjs、lib/ocr.mjs、lib/win32.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/uia.mjs、lib/ocr.mjs、lib/win32.mjs、lib/sequence.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定工具、UIA/OCR桥、点击和剪贴板源码；未执行目标代码、Windows工具、课程动作或真实宿主。
 - 下一步：Windows受控窗口核对缩放、重复标签、焦点、非幂等重试、临时文件和剪贴板，未执行。
@@ -137,8 +128,8 @@ Windows工具接线有固定源码支持；平台与业务效果未运行验证�
 **分析版本**
 
 - **仓库**：[111xjyuan/dsh-desktop-sidecar](https://github.com/111xjyuan/dsh-desktop-sidecar)
-- **版本号**：0.4.5（[固定提交 b5310e7](https://github.com/111xjyuan/dsh-desktop-sidecar/tree/b5310e7f8b6848dd6aab62aaccd6429187d983db)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.2（[固定提交 ccb0b0c](https://github.com/111xjyuan/dsh-desktop-sidecar/tree/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe)）
+- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -159,19 +150,15 @@ Windows受控窗口核对缩放、重复标签、焦点、非幂等重试、临�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .mjs | source | 6 | 825 | 743 | 33 | — |
-| .js | source | 1 | 452 | 414 | 17 | — |
-| .md | source | 1 | 111 | — | — | 1070 |
+| .mjs | source | 11 | 1243 | 1091 | 72 | — |
+| .js | source | 1 | 702 | 653 | 23 | — |
+| .md | source | 1 | 123 | — | — | 1426 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/111xjyuan/dsh-desktop-sidecar/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/111xjyuan/dsh-desktop-sidecar/issues?q=is%3Aissue+created%3A2026-09-24T05%3A55%3A33.035Z..2026-10-24T05%3A55%3A33.035Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/111xjyuan/dsh-desktop-sidecar/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A55%3A33.035Z..2026-10-24T05%3A55%3A33.035Z)
-
-
-
-统计日期：2026-10-24。
+Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [GitHub Issues](https://github.com/111xjyuan/dsh-desktop-sidecar/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -193,9 +180,9 @@ Windows受控窗口核对缩放、重复标签、焦点、非幂等重试、临�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-38](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/README.md#L3-L38)
+**依据 1 · 作者声明**：[README.md:3-38](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/README.md#L3-L38)
 
-作者提出Windows跨应用和UIA/OCR组合场景，竞品比较保留为主张。
+多路径及批量/去重目标属于作者声明，竞品比较不继承为实证。
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -218,43 +205,41 @@ Windows受控窗口核对缩放、重复标签、焦点、非幂等重试、临�
 
 一句话：**有 UIA 用 UIA（精确、后台、省 token），没有就自动降级到 OCR + 坐标点击**——不用你判断。
 
+> **不需要视觉模型也能用。** 截图会作为图片返回给支持看图的模型，但每一条能力都有纯文本路径（UIA 控件树 / 离线 OCR / 坐标），所以文本模型照样能跑完整流程——这是本项目和「截图转视觉模型」类方案的根本区别。
+
 ```
-desktop_windows → 现在有哪些窗口
-desktop_tree    → 这个窗口有哪些控件（UIA，含名字/角色/能力）
-desktop_invoke  → 直接触发控件（不移动鼠标、不需要窗口在前台）
-desktop_read    → 窗口里写了什么（离线 OCR，带坐标）
-desktop_capture → 截图（可直接喂给模型看）
-desktop_click   → 按文字或坐标点击（点击后像素校验）
-desktop_type    → 输入中文（剪贴板 + 真 Ctrl+V，稳）
-desktop_key     → 按键 / 组合键
-desktop_course  → 网课自动播放（帧差判播放 + 自动下一节）
-desktop_doctor  → 环境自检，出问题先跑这个
+desktop_windows  → 现在有哪些窗口
+desktop_tree     → 这个窗口有哪些控件（UIA，带编号索引，可直接点）
+desktop_invoke   → 直接触发控件（不移动鼠标、不需要窗口在前台）
+desktop_read     → 窗口里写了什么（离线 OCR，带坐标）
+desktop_capture  → 截图：直接作为图片返回，带坐标尺 + 缩放契约，画面没变就不重复发
+desktop_click    → 点控件编号（带身份校验）/ 点文字 / 点坐标（点后像素校验）
+desktop_sequence → 批量：一次调用跑多步（dryRun / stopOnError / Esc 中止）
+desktop_type     → 输入中文（剪贴板 + 真 Ctrl+V，稳）
+desktop_key      → 按键 / 组合键
+desktop_course   → 网课自动播放（帧差判播放 + 自动下一节）
+desktop_doctor   → 环境自检（平台 / DPI / 多屏 / OCR / 前台锁 / 输入控件）
 ```
 
-## 3 分钟上手
+### 0.5.0 更新（对标 dsh-pilot 后补齐）
 
-1. 安装，任选一种：
-
-   ```
-   # A. npm（已发布，推荐）
+- **DPI 感知**：启动即声明 per-monitor v2，并在 `desktop_doctor` 里体检——125%/150% 缩放下坐标不再偏。
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:212-220](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/index.js#L212-L220)
+**依据 2 · 源码核查**：[lib/index.js:329-335](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/index.js#L329-L335)
 
-OCR失败时提供UIA候选，支持多路径而非纯视觉判断。
+OCR失配时给出UIA替代候选。
 
 ```text
-      const cap = captureWindow(w, 1400);
-      const rect = cap.rect;
-      let cx, cy, hitText = null;
-      if (text) {
+      } else if (text) {
         const res = ocrBuffer(cap.png, { scale: 1.5, prep: true });
         const hit = findLine(res, text);
         if (!hit) {
-          const uia = (() => { try { const t = uiaTree(w.hwnd, { depth: 5, max: 60 }); return (t.elements || []).filter((e) => e.pats && e.pats.length && e.name); } catch { return []; } })();
-          return { ok: false, error: 'text not found', tried: text, lines: (res.lines || []).slice(0, 14).map((l) => l.text), uiaCandidates: uia.slice(0, 10).map((e) => e.role + ':' + e.name), hint: uia.length ? 'OCR 没找到这段文字，但这个窗口有 UIA 控件：改用 desktop_invoke（更准）或从 uiaCandidates 里挑名字' : 'OCR 与 UIA 都没找到，先用 desktop_read 看窗口里到底有什么' };
+          const uia = (() => { try { const t = uiaTree(w.hwnd, { depth: 5, max: 80 }); return (t.elements || []).filter((e) => e.pats && e.pats.length && e.name).map((e, i) => i + ':' + e.role + ':' + e.name); } catch { return []; } })();
+          return { ok: false, error: 'text not found', tried: text, lines: (res.lines || []).slice(0, 14).map((l) => l.text), uiaCandidates: uia.slice(0, 12), hint: uia.length ? 'OCR missed it, but this window exposes UIA controls: use desktop_tree + desktop_click{control,expect} instead.' : 'Neither OCR nor UIA found it: run desktop_read to see what the window actually shows.' };
+        }
 ```
 
 <a id="research-q02"></a>
@@ -267,11 +252,11 @@ OCR失败时提供UIA候选，支持多路径而非纯视觉判断。
 
 #### 完整回答
 
-Host注册desktop_*工具，窗口枚举和输入经koffi调用Win32，截图经GDI；UIA并非全部在Node进程内，它spawnSync系统PowerShell运行uia.ps1。OCR同样运行PowerShell的Windows.Media.Ocr，并将截图解码缩放后写临时PNG，坐标按真实缩放比换回。文字输入先清空并设置系统剪贴板再Ctrl+V。无需Python和独立驱动是可见设计，但“零外部依赖”须收窄为无需另装某些服务，仍依赖koffi、Windows原生库、PowerShell、OCR语言包及交互桌面权限。同步子进程有15/20秒超时，调用期间可能阻塞Host线程；未测宿主影响。OCR源码声明复用dsh-screenshot-xn脚本，不能归为新OCR实现。
+Host注册desktop_*工具，窗口枚举和输入经koffi调用Win32，截图经GDI；UIA并非全部在Node进程内，它spawnSync系统PowerShell运行uia.ps1。OCR同样运行PowerShell的Windows.Media.Ocr，并将截图解码缩放后写临时PNG，坐标按真实缩放比换回。文字输入先清空并设置系统剪贴板再Ctrl+V。无需Python和独立驱动是可见设计，但“零外部依赖”须收窄为无需另装某些服务，仍依赖koffi、Windows原生库、PowerShell、OCR语言包及交互桌面权限。同步子进程有15/20秒超时，调用期间可能阻塞Host线程；未测宿主影响。OCR源码声明复用dsh-screenshot-xn脚本，不能归为新OCR实现。 当前还提供帧哈希去重和desktop_sequence批量动作，减少重复图像与模型往返的机制可见，不能推算实测token节省；批量最多24步、逐步检查Esc，非多步事务。UIA索引点击会重读树，但expect可选，不传时并无旧对象身份对照；传expect也主要是name包含与role匹配，不能保证同名控件唯一。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/uia.mjs:1-20](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/uia.mjs#L1-L20)
+**依据 1 · 源码核查**：[lib/uia.mjs:1-20](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/uia.mjs#L1-L20)
 
 UIA明确经PowerShell同步子进程桥接。
 
@@ -303,45 +288,7 @@ function run(args) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/ocr.mjs:35-60](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/ocr.mjs#L35-L60)
-
-OCR写临时缩放图并调用PowerShell，决定依赖与资源。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-export function ocrFile(path, { language = 'zh-Hans', timeout = 20000, scale = 1, prep = true } = {}) {
-  // 总是 decode → 放大(可选) → 重编码到 %TEMP% 再 OCR：
-  //  ① WinRT BitmapDecoder 对某些目录下的原图会报 "image could not be decoded"（实测 D:\ 工作区），
-  //     统一走 TEMP 可绕开；② 坐标反算比例必须用"实际"放大比（整数取整/四舍五入后与 scale 不同）。
-  const img = decodePng(readFileSync(path));
-  const s = Number(scale) > 1 ? Number(scale) : 1;
-  const up = scaleNear(img, s);
-  const dir = mkdtempSync(join(tmpdir(), 'cue-ocr-up-'));
-  const src = join(dir, 'up.png');
-  writeFileSync(src, encodePng(up.width, up.height, up.rgb));
-  const kx = img.width / up.width;
-  const ky = img.height / up.height;
-  const res = ocrFileRaw(src, { language, timeout });
-  for (const l of res.lines) { l.x *= kx; l.y *= ky; l.w *= kx; l.h *= ky; }
-  res.ocrImage = { width: up.width, height: up.height };
-  res.image = { width: img.width, height: img.height };
-  return res;
-}
-
-function ocrFileRaw(path, { language = 'zh-Hans', timeout = 20000 } = {}) {
-  const started = Date.now();
-  const r = spawnSync(resolvePs(), ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', OCR_PS1, '-Path', path, '-Language', language], {
-    encoding: 'utf8',
-    timeout,
-    windowsHide: true,
-  });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/win32.mjs:247-264](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/win32.mjs#L247-L264)
+**依据 2 · 源码核查**：[lib/win32.mjs:247-264](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/win32.mjs#L247-L264)
 
 剪贴板被清空并写新文本，没有保存旧内容的路径。
 
@@ -371,6 +318,122 @@ export function setClipboardText(text) {
 
 </details>
 
+**依据 3 · 源码核查**：[lib/ocr.mjs:35-59](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/ocr.mjs#L35-L59)
+
+OCR同步桥在finally清理缩放临时目录。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+export function ocrFile(path, { language = 'zh-Hans', timeout = 20000, scale = 1, prep = true } = {}) {
+  // 总是 decode → 放大(可选) → 重编码到 %TEMP% 再 OCR：
+  //  ① WinRT BitmapDecoder 对某些目录下的原图会报 "image could not be decoded"（实测 D:\ 工作区），
+  //     统一走 TEMP 可绕开；② 坐标反算比例必须用"实际"放大比（整数取整/四舍五入后与 scale 不同）。
+  const img = decodePng(readFileSync(path));
+  const s = Number(scale) > 1 ? Number(scale) : 1;
+  const up = scaleNear(img, s);
+  const dir = mkdtempSync(join(tmpdir(), 'cue-ocr-up-'));
+  try {
+    const src = join(dir, 'up.png');
+    writeFileSync(src, encodePng(up.width, up.height, up.rgb));
+    const kx = img.width / up.width;
+    const ky = img.height / up.height;
+    const res = ocrFileRaw(src, { language, timeout });
+    for (const l of res.lines) { l.x *= kx; l.y *= ky; l.w *= kx; l.h *= ky; }
+    res.ocrImage = { width: up.width, height: up.height };
+    res.image = { width: img.width, height: img.height };
+    return res;
+  } finally {
+    // 立即删除：临时目录里是整屏截图，留着既有磁盘泄漏也有隐私风险（issue #2）
+    try { rmSync(dir, { recursive: true, force: true }); } catch {}
+  }
+}
+
+function ocrFileRaw(path, { language = 'zh-Hans', timeout = 20000 } = {}) {
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:304-323](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/index.js#L304-L323)
+
+UIA编号点击重读树，只有提供expect时进一步核名字/角色。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+      await sleep(120);
+      const cap = captureWindow(w, 1400);
+      const rect = cap.rect;
+      let cx, cy, hitText = null, via = 'coords', uiaInfo = null;
+
+      if (control !== undefined && control !== null) {
+        const tree = uiaTree(w.hwnd, { depth: 6, max: 600 });
+        const els = (tree.elements || []).map((e, i) => ({ index: i, role: e.role, name: e.name, rect: { x: e.x, y: e.y, w: e.w, h: e.h } }));
+        const el = els[Number(control)];
+        if (!el) return { ok: false, error: 'control index out of range', controlCount: els.length, hint: 'Run desktop_tree again for fresh indices.' };
+        if (expect) {
+          const wantName = typeof expect === 'string' ? expect : String(expect.name || '');
+          const wantRole = typeof expect === 'object' && expect ? String(expect.role || '') : '';
+          const nameOk = !wantName || String(el.name || '').toLowerCase().includes(wantName.toLowerCase());
+          const roleOk = !wantRole || String(el.role || '') === wantRole;
+          if (!nameOk || !roleOk) {
+            return { ok: false, error: 'control identity mismatch', expected: (wantRole || '?') + ' "' + wantName + '"', actual: el.role + ' "' + el.name + '"', controlCount: els.length, hint: 'The layout changed since desktop_tree: re-read the tree, then click the new index.' };
+          }
+        }
+        if (!(el.rect.w > 0 && el.rect.h > 0)) return { ok: false, error: 'control has no clickable rect', control: el };
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/sequence.mjs:6-40](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/sequence.mjs#L6-L40)
+
+批量上限24、逐步Esc检查和失败停止；不提供回滚。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+export async function runSequence({ steps, dryRun = false, stopOnError = true, maxSteps = DEFAULT_MAX, primitives }) {
+  const list = Array.isArray(steps) ? steps : [];
+  if (list.length === 0) throw new Error('steps must be a non-empty array');
+  const limit = Math.max(1, Math.min(Number(maxSteps) || DEFAULT_MAX, DEFAULT_MAX));
+  if (list.length > limit) throw new Error(`too many steps: ${list.length} > maxSteps ${limit}`);
+
+  const log = [];
+  let cancelled = false;
+  const t0 = Date.now();
+
+  for (let i = 0; i < list.length; i++) {
+    const step = list[i] || {};
+    const action = String(step.action || '').toLowerCase();
+    const rec = { i, action, ok: false };
+    try {
+      if (primitives.cancelled && primitives.cancelled()) {
+        cancelled = true;
+        rec.ok = false; rec.error = 'cancelled by Esc';
+        log.push(rec);
+        break;
+      }
+      if (dryRun) {
+        rec.ok = true; rec.dryRun = true;
+        rec.would = describe(action, step);
+        log.push(rec);
+        continue;
+      }
+      const t = Date.now();
+      const res = await primitives.exec(action, step, { index: i, total: list.length });
+      rec.ok = !(res && res.ok === false);
+      rec.ms = Date.now() - t;
+      if (res && typeof res === 'object') {
+        for (const k of ['changed', 'changedPx', 'via', 'text', 'at', 'matched', 'control', 'error', 'lines', 'path', 'note']) {
+          if (res[k] !== undefined) rec[k] = res[k];
+        }
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -381,20 +444,18 @@ export function setClipboardText(text) {
 
 #### 完整回答
 
-不能。点击后比较局部截图哈希，画面变化可能来自动画、光标或无关内容，而实际动作可能失败；无变化也可能已完成无视觉反馈的操作。实现会在无变化时自动再点一次，随后只要坐标在客户区且发生重试就返回ok=true，即使changed=false，因此工具ok不等于像素验证成功，更不等于业务完成。二次点击还可能重复提交或触发双击语义。OCR findLine允许包含和0.6字符集合相似度，重复标签或形近字可能命中不期望条目；没有唯一候选确认门。它适合提示下一步复核，不能作为严格放行条件。这些是源码机制与反例分析，未复现误操作。
+不能。点击后比较局部截图哈希，画面变化可能来自动画、光标或无关内容，而实际动作可能失败；无变化也可能已完成无视觉反馈的操作。实现会在无变化时自动再点一次，随后只要坐标在客户区且发生重试就返回ok=true，即使changed=false，因此工具ok不等于像素验证成功，更不等于业务完成。二次点击还可能重复提交或触发双击语义。OCR findLine允许包含和0.6字符集合相似度，重复标签或形近字可能命中不期望条目；没有唯一候选确认门。它适合提示下一步复核，不能作为严格放行条件。这些是源码机制与反例分析，未复现误操作。 批量dryRun只返回文字描述并逐步标ok，没有证明控件仍存在或参数可执行；stopOnError只基于工具ok，也不等于业务后置条件。Esc在步骤之间检查，无法保证中断同步子进程或撤销已经点击。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:243-257](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/index.js#L243-L257)
+**依据 1 · 源码核查**：[lib/index.js:359-371](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/index.js#L359-L371)
 
-重试与ok表达式明确允许changed=false仍成功。
+客户区内重试即ok，像素无变化并不失败。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-      const probe = { x: Math.max(0, cx - 60), y: Math.max(0, cy - 40), w: Math.min(520, rect.x + rect.w - cx + 60), h: Math.min(420, rect.y + rect.h - cy + 40) };
-      const before = hash(grabPng(probe.x, probe.y, probe.w, probe.h).png);
       win32.screenClick(cx, cy);
       await sleep(450);
       let after = hash(grabPng(probe.x, probe.y, probe.w, probe.h).png);
@@ -407,14 +468,14 @@ export function setClipboardText(text) {
       }
       const changed = before !== after;
       const inClient = cx >= rect.x && cx <= rect.x + rect.w && cy >= rect.y && cy <= rect.y + rect.h;
-      return { ok: changed || force === true || (inClient && retried), window: w.hwnd, title: w.title, text: hitText, at: { x: cx, y: cy }, changed, retried, inClient, hint: changed ? undefined : (inClient ? '界面无变化：坐标在窗口内，通常是文本区点击（光标已移动即视为成功）；若是按钮/菜单请改用 desktop_key 或加 force' : '坐标落在窗口外或被遮挡，检查 window 与坐标') };
+      return { ok: changed || force === true || (inClient && retried), window: w.hwnd, title: w.title, text: hitText, control: uiaInfo, at: { x: cx, y: cy }, changed, retried, inClient, via, hint: changed ? undefined : (inClient ? 'No visual change: the coordinate is inside the window, which usually means a text-area click (caret moved = success). For a button or menu use desktop_click{control} or desktop_key.' : 'The coordinate fell outside the window or was covered - check window and coordinates.') };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/ocr.mjs:100-111](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/ocr.mjs#L100-L111)
+**依据 2 · 源码核查**：[lib/ocr.mjs:141-152](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/ocr.mjs#L141-L152)
 
-模糊文字候选选择不要求唯一性，限定文字点击精度。
+OCR先首个精确再包含或字符集合相似度，不要求唯一。
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -436,6 +497,30 @@ export function findLine(result, needle, opts = {}) {
 
 </details>
 
+**依据 3 · 源码核查**：[lib/sequence.mjs:21-32](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/sequence.mjs#L21-L32)
+
+dryRun只describe并标ok，未对每步参数/业务可行性全面验证。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+      if (primitives.cancelled && primitives.cancelled()) {
+        cancelled = true;
+        rec.ok = false; rec.error = 'cancelled by Esc';
+        log.push(rec);
+        break;
+      }
+      if (dryRun) {
+        rec.ok = true; rec.dryRun = true;
+        rec.would = describe(action, step);
+        log.push(rec);
+        continue;
+      }
+```
+
+</details>
+
 #### 缺口
 
 - 重复点击、误匹配和业务成功率未测。
@@ -452,13 +537,13 @@ export function findLine(result, needle, opts = {}) {
 
 #### 完整回答
 
-成本单位是一项正确执行且副作用可核查的桌面任务。首次要Windows交互会话、OCR语言包和FFI可用；持续需模型理解、截图/OCR处理与人工确认高影响动作；错误后需恢复窗口、剪贴板和业务状态，不能假设重试无害。清理代码仅在模块加载时删dsh-sidecar目录中超过一小时的文件，不是持续定时清理；OCR另建cue-ocr和cue-ocr-up目录，所读模块未见清理。这些图像可能含敏感桌面数据，离线OCR不代表不留本地副本，也不意味着DSH上层不会把截图发给模型。费用和耗时未知。适合有监督地用无敏感测试窗口试用，先用UIA与只读OCR，再验证输入；支付、发布、删除等动作仍需独立确认与业务后置检查。
+成本单位是一项正确执行且副作用可核查的桌面任务。首次需要Windows交互桌面、koffi、PowerShell、OCR语言及目标权限；持续需模型读取结果和人工核查高影响动作，失败后要恢复窗口、系统剪贴板及业务状态。OCR临时原图和缩放图现在都在finally尽力删除，启动还清理超过一小时的cue-ocr目录；但删除异常被忽略，dsh-sidecar截图仍仅加载时按年龄清理，用户指定输出或宿主附件另有生命周期，不能称所有截图即用即销。截图若交给远程模型仍可能离开本机，离线OCR不改变上层数据流。批量和去重能减少某些往返/附图，但现金、延迟和合格率没有同任务测量。只支持有监督非敏感测试窗口小范围试用，支付、发布和删除必须独立确认并核对业务状态；出现目标不唯一或预期外重试就停止，回人工操作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:24-33](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/index.js#L24-L33)
+**依据 1 · 源码核查**：[lib/index.js:27-36](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/index.js#L27-L36)
 
-清理仅在加载时且只覆盖dsh-sidecar目录。
+截图目录仅模块加载时清理超时文件。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -478,46 +563,62 @@ try {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/ocr.mjs:35-51](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/ocr.mjs#L35-L51)
+**依据 2 · 源码核查**：[lib/index.js:130-136](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/index.js#L130-L136)
 
-额外OCR缩放临时目录写入不在上述清理范围。
-
-<details>
-<summary>查看原文（17行）</summary>
+启动DPI设置与历史OCR清理实际挂载。
 
 ```text
-export function ocrFile(path, { language = 'zh-Hans', timeout = 20000, scale = 1, prep = true } = {}) {
-  // 总是 decode → 放大(可选) → 重编码到 %TEMP% 再 OCR：
-  //  ① WinRT BitmapDecoder 对某些目录下的原图会报 "image could not be decoded"（实测 D:\ 工作区），
-  //     统一走 TEMP 可绕开；② 坐标反算比例必须用"实际"放大比（整数取整/四舍五入后与 scale 不同）。
-  const img = decodePng(readFileSync(path));
-  const s = Number(scale) > 1 ? Number(scale) : 1;
-  const up = scaleNear(img, s);
-  const dir = mkdtempSync(join(tmpdir(), 'cue-ocr-up-'));
-  const src = join(dir, 'up.png');
-  writeFileSync(src, encodePng(up.width, up.height, up.rgb));
-  const kx = img.width / up.width;
-  const ky = img.height / up.height;
-  const res = ocrFileRaw(src, { language, timeout });
-  for (const l of res.lines) { l.x *= kx; l.y *= ky; l.w *= kx; l.h *= ky; }
-  res.ocrImage = { width: up.width, height: up.height };
-  res.image = { width: img.width, height: img.height };
-  return res;
+  };
+  const reg = (t) => ctx.tools.register({ ...t, parameters: compileParameters(t.parameters || {}), output: t.output || textOutput, execute: async (...args) => plain(await t.execute(...args)) });
+
+  // DPI 感知必须在任何截图 / 坐标计算之前执行，否则 125%/150% 缩放下坐标全偏
+  const dpiState = initDpi();
+  // 启动时清掉旧版本泄漏的 OCR 临时目录（issue #2），只删 1 小时前的
+  try { sweepOcrTemps(3600_000); } catch {}
 ```
 
-</details>
+**依据 3 · 源码核查**：[lib/ocr.mjs:99-129](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/ocr.mjs#L99-L129)
 
-**依据 3 · 源码核查**：[lib/ocr.mjs:84-88](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/ocr.mjs#L84-L88)
+原截图finally删除与旧目录超时清理，异常均忽略。
 
-ocrBuffer另存原截图临时PNG。
+<details>
+<summary>查看原文（31行）</summary>
 
 ```text
 export function ocrBuffer(png, opts) {
   const dir = mkdtempSync(join(tmpdir(), 'cue-ocr-'));
-  const f = join(dir, 'shot.png');
-  writeFileSync(f, png);
-  return ocrFile(f, opts);
+  try {
+    const f = join(dir, 'shot.png');
+    writeFileSync(f, png);
+    return ocrFile(f, opts);
+  } finally {
+    try { rmSync(dir, { recursive: true, force: true }); } catch {}
+  }
+}
+
+/**
+ * 清理历史遗留的 OCR 临时目录（旧版本泄漏的 cue-ocr-* / cue-ocr-up-*）。
+ * 只删超过 maxAgeMs 的，避免误删别的进程正在用的目录。
+ */
+export function sweepOcrTemps(maxAgeMs = 3600_000) {
+  let removed = 0;
+  try {
+    for (const name of readdirSync(tmpdir())) {
+      if (!name.startsWith('cue-ocr-')) continue;
+      const p = join(tmpdir(), name);
+      try {
+        const st = statSync(p);
+        if (!st.isDirectory()) continue;
+        if (Date.now() - st.mtimeMs < maxAgeMs) continue;
+        rmSync(p, { recursive: true, force: true });
+        removed += 1;
+      } catch {}
+    }
+  } catch {}
+  return removed;
 ```
+
+</details>
 
 #### 缺口
 
@@ -539,16 +640,14 @@ export function ocrBuffer(png, opts) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:243-257](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/b5310e7f8b6848dd6aab62aaccd6429187d983db/lib/index.js#L243-L257)
+**依据 1 · 源码核查**：[lib/index.js:359-371](https://github.com/111xjyuan/dsh-desktop-sidecar/blob/ccb0b0ca44fdec60d9f9d6187c570b305ae8fabe/lib/index.js#L359-L371)
 
-仅像素反馈与自动重试为语义契约推导依据。
+像素反馈和自动重试仍需语义后置条件。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-      const probe = { x: Math.max(0, cx - 60), y: Math.max(0, cy - 40), w: Math.min(520, rect.x + rect.w - cx + 60), h: Math.min(420, rect.y + rect.h - cy + 40) };
-      const before = hash(grabPng(probe.x, probe.y, probe.w, probe.h).png);
       win32.screenClick(cx, cy);
       await sleep(450);
       let after = hash(grabPng(probe.x, probe.y, probe.w, probe.h).png);
@@ -561,7 +660,7 @@ export function ocrBuffer(png, opts) {
       }
       const changed = before !== after;
       const inClient = cx >= rect.x && cx <= rect.x + rect.w && cy >= rect.y && cy <= rect.y + rect.h;
-      return { ok: changed || force === true || (inClient && retried), window: w.hwnd, title: w.title, text: hitText, at: { x: cx, y: cy }, changed, retried, inClient, hint: changed ? undefined : (inClient ? '界面无变化：坐标在窗口内，通常是文本区点击（光标已移动即视为成功）；若是按钮/菜单请改用 desktop_key 或加 force' : '坐标落在窗口外或被遮挡，检查 window 与坐标') };
+      return { ok: changed || force === true || (inClient && retried), window: w.hwnd, title: w.title, text: hitText, control: uiaInfo, at: { x: cx, y: cy }, changed, retried, inClient, via, hint: changed ? undefined : (inClient ? 'No visual change: the coordinate is inside the window, which usually means a text-area click (caret moved = success). For a button or menu use desktop_click{control} or desktop_key.' : 'The coordinate fell outside the window or was covered - check window and coordinates.') };
 ```
 
 </details>

@@ -20,6 +20,7 @@ description: 显式编排一轮 DSH 插件研究：固定来源与队列、分�
 - **新轮／恢复必读**：[数据契约](../_shared/references/DATA-CONTRACT.md)中的快照、身份、证据、会话、受阻与清理；[研究规范](../dsh-plugin-insight/references/RESEARCH-STANDARD.md)；[输出标准](references/OUTPUT-STANDARD.md)的产物位置、逐题交付与验收。
 - **暂存、恢复、迁移、下载或清理**：按需读[会话与合并恢复](references/SESSION-OPERATIONS.md)。迁移只在任务确实涉及旧格式时执行。
 - **验收研究与推荐**：读[逐题流程](../dsh-plugin-insight/references/QUESTION-WORKFLOW.md)、[评分标准](../dsh-plugin-insight/references/SCORING-STANDARD.md)及[推荐理由](../dsh-plugin-insight/references/QUESTION-ADOPTION.md#最值得推荐的具体用法)。
+- **收到洞察交付**：使用[验收链操作](references/HOW-TO-ACCEPT-RESEARCH.md)，固定交付后逐题语义验收，再通过同一入口批量暂存。
 - **字段、META、依赖或清单回写**：读数据契约对应章节；不要用整个文档的重复副本作第二真相源。
 
 命令在工程根执行，Node 遵循 `.node-version`；依赖缺失才 `npm ci --ignore-scripts`。Git 协作由根 AGENTS 路由。不执行目标插件代码。GitHub 访问使用当前可用插件或已认证工具，不假设特定外部 Skill 名称。
@@ -88,14 +89,22 @@ npm run prepare:selected -- --work data/runs/<round>/WORK.json
 
 对照每项 PLAN，按问题 ID 读完整回答、证据、未知项与状态，检查贡献、质疑、假设和建议的推导。核对真实条目类型、身份、固定版本、材料摘要、findings 复核及两轴创新和四项采用评分；不能只核字段、题数和总分。确认完整问题对象与必要原件已自包含保存。
 
-验收通过才 stage；父 Agent 串行写 WORK，正式快照保持不变：
+收到交付后将 `{ id, observations, report, display }` 数组保存为本轮 `DELIVERIES.json`，先预检查并绑定完整交付：
 
 ```sh
-npm run snapshot -- stage --work <WORK.json> --plugin <id> \
-  --observations <OBSERVATIONS.json> --report <INSIGHT.md> --display <DISPLAY.json>
+npm run acceptance -- prepare --work <WORK.json> --input <DELIVERIES.json> --out <BUNDLE.json>
+npm run acceptance -- read --bundle <BUNDLE.json> --plugin <id>
+npm run acceptance -- read --bundle <BUNDLE.json> --plugin <id> --question Q01
 ```
 
-多个已验收项可 `stage-batch --work <WORK.json> --input <entries.json>`，输入为 `{ id, observations, report, display }` 数组，整批校验后才保存。DISPLAY 为单项 metadata、summaries、capabilities、advice，不维护独立推荐名单。
+读取总览、计划和全部问题；不能将预检查通过、行号合法或模型自报作为语义验收。关键依赖仍需定向补查；补充原件必须独立读取和记录，不能只检查通常的源码问题数组。按[验收决定结构](references/HOW-TO-ACCEPT-RESEARCH.md#提交验收决定)撰写逐题决定、整体理由和依赖核查，发现缺口退回 worker。材料修订后用新文件名重新 prepare 和验收，旧决定不得复用。
+
+```sh
+npm run acceptance -- submit --bundle <BUNDLE.json> --input <REVIEWS.json> --out <DECISIONS.json>
+npm run acceptance -- stage --bundle <BUNDLE.json> --decisions <DECISIONS.json>
+```
+
+验收入口复用现有 `stage-batch` 的 `stageRecords`，父 Agent 串行写 WORK；任何 revise、漏题、未核查补充材料或交付变化都拒绝暂存，正式快照保持不变。可将已就绪的一项或多项组成独立批次，不等待整轮。DISPLAY 仍为单项 metadata、summaries、capabilities、advice，不维护独立推荐名单。旧 `snapshot stage`／`stage-batch` 保留兼容，不能作为本流程跳过语义决定的退路。
 
 受阻项保存稳定 `reason_code`、可读 reason、自包含问题详情，再 `block --work ... --plugin ... --input <reason.json>`；批量用 `block-batch` 的 `{ id, input }` 数组。保留有效旧成果，不用本轮 pending／blocked 将旧记录移出展示。
 
