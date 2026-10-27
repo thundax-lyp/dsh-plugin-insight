@@ -5,7 +5,7 @@
 分析版本：[1bbafc2](https://github.com/ArcaneOrion/dsh-teaching-board/tree/1bbafc235fc8113cf5a1c3b190f009057c1964c7)
 
 <!-- BEGIN META -->
-[![npm 30d 1,341](https://img.shields.io/static/v1?label=npm+30d&message=1%2C341&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@arcaneorion/dsh-teaching-board) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@arcaneorion/dsh-teaching-board)
+[![npm 30d 1,341](https://img.shields.io/static/v1?label=npm+30d&message=1%2C341&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@arcaneorion/dsh-teaching-board) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@arcaneorion/dsh-teaching-board)
 <!-- END META -->
 
 > **实现功能**：在 DSH 会话中展示 HTML 板书，支持圈画、方向选择及把截图作为图片消息回传。

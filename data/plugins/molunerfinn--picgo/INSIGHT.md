@@ -5,7 +5,7 @@
 分析版本：[25104f6](https://github.com/Molunerfinn/PicGo/tree/25104f65c97e58799486c8c47317367f6e0d1913)
 
 <!-- BEGIN META -->
-[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=yellow&logo=github&style=flat)](https://github.com/Molunerfinn/PicGo)
+[![GitHub ★ 27,409](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=27%2C409&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Molunerfinn/PicGo)
 <!-- END META -->
 
 > **实现功能**：桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。

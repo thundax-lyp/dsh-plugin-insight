@@ -5,7 +5,7 @@
 分析版本：[af785c6](https://github.com/Jesseovo/last30days-skill-cn/tree/af785c682de2fb9192e495daf061308a7a6799ec)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,967](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C967&color=yellow&logo=github&style=flat)](https://github.com/Jesseovo/last30days-skill-cn)
+[![GitHub ★ 1,967](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C967&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Jesseovo/last30days-skill-cn)
 <!-- END META -->
 
 > **实现功能**：检索近期中文平台讨论并聚合热榜，输出带来源的研究报告。

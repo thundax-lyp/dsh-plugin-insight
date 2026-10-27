@@ -5,7 +5,7 @@
 分析版本：[f82dd6d](https://github.com/QingYunA/answer-me-with-html/tree/f82dd6dce3ca95b0e565f8cffaf5eba23f4c995f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,422](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C422&color=yellow&logo=github&style=flat)](https://github.com/QingYunA/answer-me-with-html)
+[![GitHub ★ 4,422](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C422&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
 <!-- END META -->
 
 > **实现功能**：将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。

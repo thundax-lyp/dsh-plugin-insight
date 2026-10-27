@@ -5,7 +5,7 @@
 分析版本：[0afc45c](https://github.com/titanwings/distilly/tree/0afc45c29c360ba7bc8260f1bb0bf34e9155f4fa)
 
 <!-- BEGIN META -->
-[![GitHub ★ 26,004](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26%2C004&color=yellow&logo=github&style=flat)](https://github.com/titanwings/distilly)
+[![GitHub ★ 26,004](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=26%2C004&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/titanwings/distilly)
 <!-- END META -->
 
 > **实现功能**：从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。

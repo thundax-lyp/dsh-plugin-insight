@@ -5,7 +5,7 @@
 分析版本：[14dcb88](https://github.com/1014029855/dsh-codevault/tree/14dcb88d65f7d9fcf30b3e6adac5764f705ffae9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1014029855/dsh-codevault)
 <!-- END META -->
 
 > **实现功能**：把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。
@@ -165,7 +165,7 @@ vault仅词法守卫且stat递归跟链接、全文读后裁剪；expand/delete�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault/issues?q=is%3Aissue+created%3A2026-09-22T05%3A49%3A06.961Z..2026-10-22T05%3A49%3A06.961Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/1014029855/dsh-codevault/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A49%3A06.961Z..2026-10-22T05%3A49%3A06.961Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1014029855/dsh-codevault/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1014029855/dsh-codevault/issues?q=is%3Aissue+created%3A2026-09-22T05%3A49%3A06.961Z..2026-10-22T05%3A49%3A06.961Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1014029855/dsh-codevault/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A49%3A06.961Z..2026-10-22T05%3A49%3A06.961Z)
 
 
 

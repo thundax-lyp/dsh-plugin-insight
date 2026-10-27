@@ -5,7 +5,7 @@
 分析版本：[4ab22a4](https://github.com/volcengine/OpenViking/tree/4ab22a4923452362b60aef2826c2083ce36168d2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=yellow&logo=github&style=flat)](https://github.com/volcengine/OpenViking)
+[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
 <!-- END META -->
 
 > **实现功能**：以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。

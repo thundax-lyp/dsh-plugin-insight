@@ -5,7 +5,7 @@
 分析版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b/packages/deepseek-idesign)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/deepseek-idesign)
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign)
 <!-- END META -->
 
 > **实现功能**：在DSH中加入可视化Design视图，编辑本地HTML/CSS并把选区修改交给AI草稿。

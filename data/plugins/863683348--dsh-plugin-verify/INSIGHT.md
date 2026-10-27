@@ -5,7 +5,7 @@
 分析版本：[5a70cbd](https://github.com/863683348/dsh-plugin-verify/tree/5a70cbdc230ee19bb4578e52440e18cc93153ee8)
 
 <!-- BEGIN META -->
-[![npm 30d 831](https://img.shields.io/static/v1?label=npm+30d&message=831&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-verify)
+[![npm 30d 831](https://img.shields.io/static/v1?label=npm+30d&message=831&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-verify) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-verify)
 <!-- END META -->
 
 > **实现功能**：通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。
@@ -165,7 +165,7 @@ rg+标准JSON/YAML解析器和直接API可替代；整合也引入统一OK语义
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-verify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-verify/issues?q=is%3Aissue+created%3A2026-09-22T07%3A24%3A59.900Z..2026-10-22T07%3A24%3A59.900Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-plugin-verify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A24%3A59.900Z..2026-10-22T07%3A24%3A59.900Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-verify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-verify/issues?q=is%3Aissue+created%3A2026-09-22T07%3A24%3A59.900Z..2026-10-22T07%3A24%3A59.900Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-plugin-verify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A24%3A59.900Z..2026-10-22T07%3A24%3A59.900Z)
 
 
 

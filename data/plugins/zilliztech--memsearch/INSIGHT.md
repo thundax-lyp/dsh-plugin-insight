@@ -5,7 +5,7 @@
 分析版本：[926ba5b](https://github.com/zilliztech/memsearch/tree/926ba5b7c3d53ae0f424fba9029c29e88718b687)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=yellow&logo=github&style=flat)](https://github.com/zilliztech/memsearch)
+[![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zilliztech/memsearch)
 <!-- END META -->
 
 > **实现功能**：面向Markdown知识库提供语义检索、混合搜索、增量索引、文件监听与多Agent接入。

@@ -5,7 +5,7 @@
 分析版本：[adcb9f2](https://github.com/MemTensor/MemOS/tree/adcb9f270c982f2b9ff8db9714792829d3bd6ab8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12,092](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C092&color=yellow&logo=github&style=flat)](https://github.com/MemTensor/MemOS)
+[![GitHub ★ 12,092](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C092&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/MemOS)
 <!-- END META -->
 
 > **实现功能**：面向 LLM 与 Agent 的记忆管理平台，提供云、自托管及本地插件，支持长期记忆存取与管理。
@@ -178,7 +178,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 65](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=65&color=grey&logo=github&style=flat)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 47](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=grey&logo=github&style=flat)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 29](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=29&color=grey&logo=github&style=flat)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
+[![Issue 未关闭 65](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=65&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 47](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z) [![近30天关闭 29](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=29&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z)
 
 
 

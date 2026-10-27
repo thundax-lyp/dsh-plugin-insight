@@ -5,7 +5,7 @@
 分析版本：[62880d6](https://github.com/EthanYoQ/AI-Novel-Writer/tree/62880d629af7bbfaf968c0cda5ae76816e917915/plugins/dsh-ai-novel-writer)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=yellow&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
+[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
 <!-- END META -->
 
 > **实现功能**：为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。
@@ -176,7 +176,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 9](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=grey&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 118](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=118&color=grey&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+created%3A2026-09-27T02%3A11%3A17.154Z..2026-10-27T02%3A11%3A17.154Z) [![近30天关闭 127](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=127&color=grey&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A11%3A17.154Z..2026-10-27T02%3A11%3A17.154Z)
+[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 118](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=118&color=737b86&logo=github)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+created%3A2026-09-27T02%3A11%3A17.154Z..2026-10-27T02%3A11%3A17.154Z) [![近30天关闭 127](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=127&color=737b86&logo=github)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A11%3A17.154Z..2026-10-27T02%3A11%3A17.154Z)
 
 
 

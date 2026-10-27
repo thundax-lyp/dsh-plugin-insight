@@ -5,7 +5,7 @@
 分析版本：[63e6176](https://github.com/freestylefly/awesome-gpt-image-2/tree/63e6176fa01be51c000108dacd72716d3e46784b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=yellow&logo=github&style=flat)](https://github.com/freestylefly/awesome-gpt-image-2)
+[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
 <!-- END META -->
 
 > **实现功能**：社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。

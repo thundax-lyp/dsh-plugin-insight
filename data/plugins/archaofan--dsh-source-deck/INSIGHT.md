@@ -5,7 +5,7 @@
 分析版本：[e989f44](https://github.com/Archaofan/dsh-source-deck/tree/e989f44d233a348665f8558793647fd8b02f3103)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Archaofan/dsh-source-deck)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Archaofan/dsh-source-deck)
 <!-- END META -->
 
 > **实现功能**：在会话侧栏后台查找资料，筛选和对比候选，并把保留项的不可变快照引用到当前草稿。

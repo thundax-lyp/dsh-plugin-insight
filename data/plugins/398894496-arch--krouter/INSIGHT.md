@@ -5,7 +5,7 @@
 分析版本：[e934696](https://github.com/398894496-arch/KRouter/tree/e9346963eca848a5012406ea5cb2f0cacc55fbb6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=yellow&logo=github&style=flat)](https://github.com/398894496-arch/KRouter)
+[![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/398894496-arch/KRouter)
 <!-- END META -->
 
 > **实现功能**：让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。
@@ -195,7 +195,7 @@ canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata�
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/398894496-arch/KRouter/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/398894496-arch/KRouter/issues?q=is%3Aissue+created%3A2026-09-22T05%3A50%3A45.974Z..2026-10-22T05%3A50%3A45.974Z) [![近30天关闭 7](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=7&color=grey&logo=github&style=flat)](https://github.com/398894496-arch/KRouter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A50%3A45.974Z..2026-10-22T05%3A50%3A45.974Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/398894496-arch/KRouter/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=737b86&logo=github)](https://github.com/398894496-arch/KRouter/issues?q=is%3Aissue+created%3A2026-09-22T05%3A50%3A45.974Z..2026-10-22T05%3A50%3A45.974Z) [![近30天关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/398894496-arch/KRouter/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A50%3A45.974Z..2026-10-22T05%3A50%3A45.974Z)
 
 
 

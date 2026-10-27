@@ -5,7 +5,7 @@
 分析版本：[02278af](https://github.com/AnacondaKC/dsh-stock-market/tree/02278af12330102c534c843a668d1c8407dbde1b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AnacondaKC/dsh-stock-market)
 <!-- END META -->
 
 > **实现功能**：在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。
@@ -181,7 +181,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+created%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+created%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-stock-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A03%3A17.682Z..2026-10-22T05%3A03%3A17.682Z)
 
 
 

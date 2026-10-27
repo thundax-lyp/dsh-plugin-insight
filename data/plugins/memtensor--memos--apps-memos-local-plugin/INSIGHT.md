@@ -5,7 +5,7 @@
 分析版本：[adcb9f2](https://github.com/MemTensor/MemOS/tree/adcb9f270c982f2b9ff8db9714792829d3bd6ab8/apps/memos-local-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12,110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C110&color=yellow&logo=github&style=flat)](https://github.com/MemTensor/MemOS) [![npm 30d 8,367](https://img.shields.io/static/v1?label=npm+30d&message=8%2C367&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
+[![GitHub ★ 12,110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/MemOS) [![npm 30d 8,367](https://img.shields.io/static/v1?label=npm+30d&message=8%2C367&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
 <!-- END META -->
 
 > **实现功能**：为DSH、OpenClaw和Hermes提供本地记忆、后台采集、分层检索及可选经验演化。
@@ -180,7 +180,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 65](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=65&color=grey&logo=github&style=flat)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 47](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=grey&logo=github&style=flat)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 29](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=29&color=grey&logo=github&style=flat)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
+[![Issue 未关闭 65](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=65&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 47](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 29](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=29&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
 
 
 

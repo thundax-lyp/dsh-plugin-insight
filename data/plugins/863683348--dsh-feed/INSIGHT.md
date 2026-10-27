@@ -5,7 +5,7 @@
 分析版本：[bc59214](https://github.com/863683348/dsh-feed/tree/bc592147401c7697749390eb6a2a6cddd42af747)
 
 <!-- BEGIN META -->
-[![npm 30d 92](https://img.shields.io/static/v1?label=npm+30d&message=92&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-feed) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-feed)
+[![npm 30d 92](https://img.shields.io/static/v1?label=npm+30d&message=92&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feed) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feed)
 <!-- END META -->
 
 > **实现功能**：聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。
@@ -142,7 +142,7 @@ feed_sync→本地 JSON→feed_search/feed_stats 或 CLI/MCP 消费。
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-feed/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-feed/issues?q=is%3Aissue+created%3A2026-09-22T07%3A45%3A00.459Z..2026-10-22T07%3A45%3A00.459Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/863683348/dsh-feed/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A45%3A00.459Z..2026-10-22T07%3A45%3A00.459Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-feed/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-feed/issues?q=is%3Aissue+created%3A2026-09-22T07%3A45%3A00.459Z..2026-10-22T07%3A45%3A00.459Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/863683348/dsh-feed/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A45%3A00.459Z..2026-10-22T07%3A45%3A00.459Z)
 
 
 

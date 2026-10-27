@@ -5,7 +5,7 @@
 分析版本：[f9f115f](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/f9f115f86b3c40fbe8d3dba811283acf71df03f9)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=yellow&logo=github&style=flat)](https://github.com/sixtysevenlf/dsh-blender-plugin)
+[![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
 <!-- END META -->
 
 > **实现功能**：将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。
@@ -177,7 +177,7 @@ gate空包不通过、取消signal传递值得复用；但客户端取消网络�
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 19](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=19&color=grey&logo=github&style=flat)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 20](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=20&color=grey&logo=github&style=flat)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=19&color=737b86&logo=github)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 20](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=20&color=737b86&logo=github)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
 
 
 

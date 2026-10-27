@@ -5,7 +5,7 @@
 分析版本：[37d95b1](https://github.com/Andiii208/dsh-ultramath/tree/37d95b1820bb77e97a3efc8fe3cbbeb2e5c7a0d1)
 
 <!-- BEGIN META -->
-[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=yellow&logo=github&style=flat)](https://github.com/Andiii208/dsh-ultramath)
+[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Andiii208/dsh-ultramath)
 <!-- END META -->
 
 > **实现功能**：同步数模竞赛主控/角色预设、模型库与论文模板。
@@ -154,7 +154,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Andiii208/dsh-ultramath/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Andiii208/dsh-ultramath/issues?q=is%3Aissue+created%3A2026-09-22T07%3A51%3A42.000Z..2026-10-22T07%3A51%3A42.000Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Andiii208/dsh-ultramath/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A51%3A42.000Z..2026-10-22T07%3A51%3A42.000Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Andiii208/dsh-ultramath/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Andiii208/dsh-ultramath/issues?q=is%3Aissue+created%3A2026-09-22T07%3A51%3A42.000Z..2026-10-22T07%3A51%3A42.000Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Andiii208/dsh-ultramath/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A51%3A42.000Z..2026-10-22T07%3A51%3A42.000Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[9a618ce](https://github.com/ZSeven-W/openpencil/tree/9a618ce90bf2b308217a43d763de0970fe7b3b77)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=yellow&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil)
+[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
 <!-- END META -->
 
 > **实现功能**：提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 18](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=18&color=grey&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 6](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=6&color=grey&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z)
+[![Issue 未关闭 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=18&color=737b86&logo=github)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=6&color=737b86&logo=github)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ZSeven-W/openpencil/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A52.339Z..2026-10-26T09%3A32%3A52.339Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[c092a92](https://github.com/173787247/dsh-wsl-vecmem/tree/c092a92892fa63aab5e4a18f0cd2cd4b1eb81d29)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-vecmem)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-vecmem)
 <!-- END META -->
 
 > **实现功能**：用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。

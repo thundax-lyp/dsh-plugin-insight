@@ -5,7 +5,7 @@
 分析版本：[f1dfad4](https://github.com/173787247/dsh-wsl-obscura/tree/f1dfad47dd78722babc61633805caade6557dc68)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/173787247/dsh-wsl-obscura)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-obscura)
 <!-- END META -->
 
 > **实现功能**：从 WSL 调用 Obscura 无头浏览器的 status/fetch 工具，并提供 MCP 接线提示。

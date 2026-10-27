@@ -5,7 +5,7 @@
 分析版本：[82a85d2](https://github.com/439436269-ctrl/dsh-video-pipeline/tree/82a85d20b67d1d398d49009462d61a741f5a8d51)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/439436269-ctrl/dsh-video-pipeline)
 <!-- END META -->
 
 > **实现功能**：以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。
@@ -165,7 +165,7 @@ provider 一层扫描技能目录、frontmatter 校验、rank 600 与 enabledSki
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline/issues?q=is%3Aissue+created%3A2026-09-22T05%3A57%3A13.473Z..2026-10-22T05%3A57%3A13.473Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/439436269-ctrl/dsh-video-pipeline/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A57%3A13.473Z..2026-10-22T05%3A57%3A13.473Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-video-pipeline/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-video-pipeline/issues?q=is%3Aissue+created%3A2026-09-22T05%3A57%3A13.473Z..2026-10-22T05%3A57%3A13.473Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/439436269-ctrl/dsh-video-pipeline/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A57%3A13.473Z..2026-10-22T05%3A57%3A13.473Z)
 
 
 
