@@ -34,8 +34,6 @@ const categoryScopes = {
     other: '其他尚未归入上述场景的插件'
 };
 export const categoryScope = (key) => categoryScopes[key] ?? categoryScopes.other;
-// Keep short Chinese status labels together when GitHub allocates table columns.
-const unbroken = (text) => [...text].join('&#8288;');
 const nameLink = (e) => template('LINK', { label: clean(e.plugin.name), url: e.href ?? `#${e.anchor}` });
 // Shared badge appearance: neutral labels, metric-specific values, one flat style.
 export const BADGE_STYLE = Object.freeze({ style: 'flat', labelColor: '555555', logoColor: 'white' });
@@ -315,8 +313,7 @@ export function renderColumn(key, items, date, recommendations) {
                         indexSentence(
                             readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用')
                         )
-                    ),
-                    kind: unbroken(entry.recommendation.kind === 'install' ? '安装' : '试用')
+                    )
                 });
             if (key === 'HOT')
                 return template('COLUMN-HOT-ROW', {
@@ -335,12 +332,13 @@ export function renderColumn(key, items, date, recommendations) {
             return template('COLUMN-LATEST-ROW', {
                 ...common,
                 version: tableCell(entry.npmDownloads.publication.latest_version ?? '版本未知'),
-                value: renderPublicationBadge(
-                    '最新发布',
-                    entry.npmLatestPublished,
-                    `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`,
-                    { compact: true }
-                )
+                value: template('LINK', {
+                    label: new Date(Date.parse(entry.npmLatestPublished) + 8 * 3600000)
+                        .toISOString()
+                        .slice(0, 10)
+                        .replaceAll('-', '&#8288;-&#8288;'),
+                    url: `https://www.npmjs.com/package/${entry.npmDownloads.package_name}`
+                })
             });
         })
         .join('\n');
