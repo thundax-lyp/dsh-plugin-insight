@@ -262,6 +262,14 @@ export function renderRecommended(recommendations, byId, limit = 5) {
                 .join('\n\n') || '暂无符合条件的推荐。'
     });
 }
+function indexSentence(text) {
+    const first = text.match(/^[\s\S]*?[。！？](?=\s|$|[^。！？])/u)?.[0];
+    if (!first) return text;
+    const balanced = (open, close) =>
+        [...first].filter((c) => c === open).length === [...first].filter((c) => c === close).length;
+    if (!balanced('[', ']') || !balanced('(', ')') || (first.match(/`/g)?.length ?? 0) % 2) return text;
+    return first;
+}
 function recommendationEvidence(entry) {
     const assessment = entry.plugin.recommendation;
     const kinds = new Set(
@@ -271,9 +279,9 @@ function recommendationEvidence(entry) {
     );
     return (
         [
-            '固定版本源码核查',
-            kinds.has('local_test') ? '另有本地测试记录，测试范围见详情' : '',
-            kinds.has('host_acceptance') ? '另有宿主验收记录，环境与结果见详情' : '尚无支撑该建议的同版本宿主验收记录'
+            '已核查固定版本源码',
+            kinds.has('local_test') ? '有本地测试记录，范围见详情' : '',
+            kinds.has('host_acceptance') ? '有宿主验收记录，环境与结果见详情' : '无同版本宿主验收记录'
         ]
             .filter(Boolean)
             .join('；') + '。'
@@ -304,9 +312,11 @@ export function renderColumn(key, items, date, recommendations) {
                 return template('COLUMN-RECOMMENDED-ROW', {
                     ...common,
                     value: tableCell(
-                        readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用')
+                        indexSentence(
+                            readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用')
+                        )
                     ),
-                    kind: unbroken(entry.recommendation.kind === 'install' ? '建议安装' : '建议试用')
+                    kind: unbroken(entry.recommendation.kind === 'install' ? '安装' : '试用')
                 });
             if (key === 'HOT')
                 return template('COLUMN-HOT-ROW', {
@@ -342,8 +352,8 @@ export function renderColumn(key, items, date, recommendations) {
                           reason: readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用'),
                           kind:
                               entry.recommendation.kind === 'install'
-                                  ? '建议安装（已有固定版本宿主验收，适用范围见详情）'
-                                  : '建议试用',
+                                  ? '安装（已有固定版本宿主验收，适用范围见详情）'
+                                  : '试用',
                           evidence: recommendationEvidence(entry)
                       })
                     : key === 'HOT'
@@ -368,8 +378,13 @@ export function renderColumn(key, items, date, recommendations) {
                 purpose: clean(entry.summary),
                 reason,
                 conditions: readerText(entry.usageConditions, entry.href),
-                conditions_label: key === 'RECOMMENDED' ? '试用前提、限制与退出条件' : '使用条件与研究边界',
-                reading: key === 'RECOMMENDED' ? template('COLUMN-READING', { detail: entry.href }) : ''
+                conditions_label:
+                    key === 'RECOMMENDED'
+                        ? entry.recommendation.kind === 'install'
+                            ? '安装条件'
+                            : '试用条件'
+                        : '使用条件',
+                reading: template('COLUMN-READING', { detail: entry.href })
             });
         })
         .join('\n\n');
@@ -423,12 +438,16 @@ export function renderCategoryStarBoards(groups, href, limit = 5) {
                     anchor: e.anchor,
                     name: clean(e.plugin.name),
                     summary: tableCell(e.summary),
-                    stars: e.starsBadge || '-',
+                    stars: renderCountBadge('GitHub Star', e.stars, {
+                        color: BADGE_COLORS.stars,
+                        compact: true,
+                        url: `https://github.com/${e.plugin.repository}`
+                    }),
                     review: e.needsReview ? ' · **脚本有更新，待重新洞察**' : '',
                     detail: href(e)
                 })
             )
-            .join('\n\n');
+            .join('\n');
         return template('CATEGORY-STAR-GROUP', {
             key: g.key,
             name: g.name,

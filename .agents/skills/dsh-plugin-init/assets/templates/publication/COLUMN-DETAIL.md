@@ -12,4 +12,4 @@
 
 {{meta}}
 
-[返回索引](#column-index)
+[返回表格](#column-index)

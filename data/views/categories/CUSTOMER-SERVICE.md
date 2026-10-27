@@ -1,6 +1,6 @@
 # 客户服务
 
-[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
+[全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 客户沟通、服务响应与支持流程。
 
@@ -28,9 +28,9 @@
 
 > **建议**：可探索绑定区域/组织/目标/正文附件hash和幂等键的持久确认/操作收据，unknown只追原记录，比较重复与留存成本；未实现。详见[Q07](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md#research-q07)。
 
-[查看完整分析](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/3chatai-nct--3chatai-deepseek-harness-plugin/INSIGHT.md) · [返回表格](#category-index)
 
-[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
+[全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 

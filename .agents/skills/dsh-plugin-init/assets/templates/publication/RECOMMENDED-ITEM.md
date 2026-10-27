@@ -1,7 +1,7 @@
 - **{{plugin}}**｜{{purpose}}
 
-    **适用与增量**：{{reason}}
+    **推荐理由**：{{reason}}
 
-    **{{kind}}前提与边界**：{{conditions}}
+    **{{kind}}条件**：{{conditions}}
 
     [查看完整分析]({{detail}})

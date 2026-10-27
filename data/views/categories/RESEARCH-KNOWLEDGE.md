@@ -1,6 +1,6 @@
 # 研究与知识
 
-[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
+[全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 信息检索、网页读取、笔记与长期知识。
 
@@ -83,7 +83,7 @@
 
 > **建议**：未验证假设是全文分块与查询可见新鲜度，默认排除陈旧项；以尾部词/撕裂日志对照覆盖与资源。参见[Q04](../../plugins/240xu--dsh-session-search/INSIGHT.md#research-q04)。
 
-[查看完整分析](../../plugins/240xu--dsh-session-search/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/240xu--dsh-session-search/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1340340493-root"></a>
 
@@ -99,7 +99,7 @@
 
 > **建议**：可研究完整策略指纹、合并来源链及总预算约束扇出，用固定反例比较误合并、召回与总成本。当前未验证。详见[Q07](../../plugins/240xu--dsh-websearch/INSIGHT.md#research-q07)。
 
-[查看完整分析](../../plugins/240xu--dsh-websearch/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/240xu--dsh-websearch/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1399279897-root"></a>
 
@@ -115,7 +115,7 @@
 
 > **建议**：未验证方向是成果摘要+复现收据分层裁决、已验只读preset和连接身份能力授权，用真假缺陷/可写工具/故障矩阵检验误认定与总成本。[Q06](../../plugins/9931666--dsh-plugin-crossfire/INSIGHT.md#research-q06)
 
-[查看完整分析](../../plugins/9931666--dsh-plugin-crossfire/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/9931666--dsh-plugin-crossfire/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1363429979-plugin-memory"></a>
 
@@ -131,7 +131,7 @@
 
 > **建议**：可研究待确认候选、身份/来源版本合并及全副本遗忘收据，以串项目和并发反例比较错召回与恢复。当前未验证。详见[Q06](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md#research-q06)。
 
-[查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1401476500-root"></a>
 
@@ -147,7 +147,7 @@
 
 > **建议**：[Q08](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q08)提出未验证的图关系来源绑定，按错误关系发现率与审核负担对照，而非继续增加模板数量。
 
-[查看完整分析](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1211139949-root"></a>
 
@@ -163,7 +163,7 @@
 
 > **建议**：未验证假设是在保留重要关系的前提下增加逐关系事实性质和证据覆盖门禁，比较人工清单能否减少遗漏且不放大复核负担。[Q04](../../plugins/tt-a1i--archify/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/tt-a1i--archify/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/tt-a1i--archify/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1195828337-root"></a>
 
@@ -179,7 +179,7 @@
 
 > **建议**：未验证假设是把每条行为规则绑定到具体材料片段、适用情境、反例及本人或授权审核者修正记录，让纠错有可定位的最小单元。由当前文档级质量标记与行为规则语义之间的距离推导；在20个留出工作问题上对比普通 persona 提示与规则证据版，观察事实错误、风格过拟合、拒答与修正时间。若只提高风格相似度而不改善任务忠实性，或复核负担过高，应否定。[Q05](../../plugins/titanwings--distilly/INSIGHT.md#research-q05)
 
-[查看完整分析](../../plugins/titanwings--distilly/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/titanwings--distilly/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1390103795-root"></a>
 
@@ -195,7 +195,7 @@
 
 > **建议**：未验证假设是增加稳定项目身份映射和同名碰撞预警，在不破坏上游库命名兼容的条件下改善归属可信度；用同名、worktree和重命名矩阵比较误归属与维护负担。[Q04](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1346064150-root"></a>
 
@@ -211,7 +211,7 @@
 
 > **建议**：未验证假设是用PDF内容摘要、页码、完整bbox及DPI作为缓存键，并让每个问题共享总图像预算，能减少误用旧图与过量裁剪。它从当前缓存冲突及逐区域独立预算推导，不是本版已有能力。最小验证用同basename两PDF、同起点不同bbox及图表密集页，对比现版和新缓存策略，检查路径唯一性、读图正确率、总图像token和人工复核；若只有磁盘增量而无错误或总成本改善，否定其采用优势。 [Q08](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md#research-q08)
 
-[查看完整分析](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1337467566-root"></a>
 
@@ -227,7 +227,7 @@
 
 > **建议**：默认只读、受保护的统计摘要和人工批准干预能降低误打断；尚未实现。详见[Q05](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1359423472-root"></a>
 
@@ -243,7 +243,7 @@
 
 > **建议**：可探讨修订/tombstone日志与最小vault入口，固定source ref并加realpath/扫描预算；涉及迁移、擦除与日志增长取舍，未验证。详见[Q04](../../plugins/1014029855--dsh-codevault/INSIGHT.md#research-q04)。
 
-[查看完整分析](../../plugins/1014029855--dsh-codevault/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/1014029855--dsh-codevault/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1380181057-root"></a>
 
@@ -259,7 +259,7 @@
 
 > **建议**：未验证假设是固定来源快照并建立断言—摘录—源头图，以复核成功率和人工耗时检验其相对纯URL报告的价值。[Q06](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q06)
 
-[查看完整分析](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336585522-root"></a>
 
@@ -275,7 +275,7 @@
 
 > **建议**：以仓库/包关联身份与显式分页/失败状态减少双计和假新鲜，反证及代价见[Q05](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q05)；真实路径写入仍需独立约束。
 
-[查看完整分析](../../plugins/863683348--dsh-feed/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-feed/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336649545-root"></a>
 
@@ -291,7 +291,7 @@
 
 > **建议**：未验证假设是把 verdict 改成可追溯证据图，并在数据过期或扫描未覆盖时拒绝给出 install，可降低误导。最小实验让两名审查者对 30 个插件做盲审，与现 verdict/证据图 verdict 比较一致率、严重漏报和复核时间；若可追溯版不降低高风险误判则否定。 详见[Q08](../../plugins/863683348--dsh-insight/INSIGHT.md#research-q08)。
 
-[查看完整分析](../../plugins/863683348--dsh-insight/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-insight/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1412857520-root"></a>
 
@@ -307,7 +307,7 @@
 
 > **建议**：未验证方向是绑定root/内容/版本的授权与多资产写入收据，借故障矩阵检验错写、部分审计和可恢复性，不能把新假设当已实现保证。[Q06](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md#research-q06)
 
-[查看完整分析](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1351375738-root"></a>
 
@@ -323,7 +323,7 @@
 
 > **建议**：可探索分开“文件已存”与“文献身份已确认”的归档收据，用标识/版本、PDF哈希及用户核对减少同名和预印本错归档；尚未实现和验证。详见[Q06](../../plugins/aik358--dsh-literature/INSIGHT.md#research-q06)。
 
-[查看完整分析](../../plugins/aik358--dsh-literature/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/aik358--dsh-literature/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381989584-root"></a>
 
@@ -339,7 +339,7 @@
 
 > **建议**：逐项结论绑定可重放采样偏移与硬件版本，清零加单独确认/前后快照，可降低工程误用；尚未实现。详见[Q05](../../plugins/2333hutao--dsh-ls125-uv-probe/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/2333hutao--dsh-ls125-uv-probe/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/2333hutao--dsh-ls125-uv-probe/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1344714964-root"></a>
 
@@ -355,7 +355,7 @@
 
 > **建议**：若真实独立验证器仅接证明正文，错误证明通过率或可下降；需盲测并核入参，详见[Q03](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md#research-q03)。
 
-[查看完整分析](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1415767842-root"></a>
 
@@ -371,7 +371,7 @@
 
 > **建议**：可将引擎/安装脚本锁为可审版本并验证受信摘要，抓取改为可取消异步进程，同时返回页面状态与选择器覆盖收据。用故意错误证书、安装器变更及慢页面对照，若不拒绝未授权字节或Host仍阻塞则否定；假设未验证，维护版本矩阵有额外成本。参见[Q05](../../plugins/27painter--dsh-moli/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/27painter--dsh-moli/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/27painter--dsh-moli/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1415116420-root"></a>
 
@@ -387,7 +387,7 @@
 
 > **建议**：研究统一索引/读源物理限额、取消预算与provider白名单、独占保存和历史CAS，比较召回/停止/恢复。当前未验证。详见[Q06](../../plugins/2026heshao--dsh-obsidian-board/INSIGHT.md#research-q06)。
 
-[查看完整分析](../../plugins/2026heshao--dsh-obsidian-board/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/2026heshao--dsh-obsidian-board/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336663456-root"></a>
 
@@ -403,7 +403,7 @@
 
 > **建议**：可探索带位置/范围/未知的规则收据和有版本规范样例/格式前置校验，比较错误与人工纠错；未实现。详见[Q06](../../plugins/863683348--dsh-plugin-academic-writing/INSIGHT.md#research-q06)。
 
-[查看完整分析](../../plugins/863683348--dsh-plugin-academic-writing/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-plugin-academic-writing/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336223158-root"></a>
 
@@ -419,7 +419,7 @@
 
 > **建议**：区分抓取失败与有效扫描，保留旧结果并展示覆盖范围；反证条件及代价见[Q05](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336663504-root"></a>
 
@@ -435,7 +435,7 @@
 
 > **建议**：统一单位契约并分离最终计算与表格采样，配黄金样本可提高可靠性；修复效果尚未验。详见[Q04](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md#research-q04)。
 
-[查看完整分析](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334654243-root"></a>
 
@@ -451,7 +451,7 @@
 
 > **建议**：对缓存 key 使用不可逆标识、明确无 key 搜索路径并以正式扩展机制显示 GUI，可改善可用性和凭据边界；待验证，详见[Q02](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md#research-q02)。
 
-[查看完整分析](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336684054-root"></a>
 
@@ -467,7 +467,7 @@
 
 > **建议**：可探讨分级检查/覆盖收据，batch保完整来源/反证，语法/Schema/加载分开并核网络策略，资源/人工成本未验证。详见[Q05](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335047324-root"></a>
 
@@ -483,7 +483,7 @@
 
 > **建议**：可探索可核对压缩阅读收据，将每页来源、通道、原文哈希和停止原因附在提取结果中，检验是否减少遗漏误判；新增存储与token负担，尚未验证。详见[Q08](../../plugins/2672243194--dsh-read-url/INSIGHT.md#research-q08)。
 
-[查看完整分析](../../plugins/2672243194--dsh-read-url/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/2672243194--dsh-read-url/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1416950630-root"></a>
 
@@ -499,7 +499,7 @@
 
 > **建议**：未验证方向是冻结导出字节、分离机械与语义放行，以及operationId回读未知结果后重试；故障矩阵检验一致摘要和不重复执行。[Q06](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q06)
 
-[查看完整分析](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334269686-root"></a>
 
@@ -515,7 +515,7 @@
 
 > **建议**：可增加“证据保真模式”，同时返回正文、关键 DOM 定位和被删除区块摘要，让研究任务在压缩上下文时仍能回查来源。 [Q08](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md#research-q08)
 
-[查看完整分析](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1423253220-root"></a>
 
@@ -531,7 +531,7 @@
 
 > **建议**：给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。 详见[Q08](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md#research-q08)。
 
-[查看完整分析](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1422910686-root"></a>
 
@@ -547,7 +547,7 @@
 
 > **建议**：由不可变选择与未核实元数据的落差，可推导未验证的候选证据账本：每个判断保留获取URL、时间、版本和原始片段，区分模型推断与已核事实，引用时携带证据缺口。对同组真实与伪造候选比较用户选型准确率、复核时间和模型预算；若只是加表单但不能降低错误选择或负担过高，则否定其价值。[Q04](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/archaofan--dsh-source-deck/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/archaofan--dsh-source-deck/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1331846104-root"></a>
 
@@ -563,7 +563,7 @@
 
 > **建议**：可探索按原问题时效/口径需求生成数据适用性收据，以固定陈旧、缺时间及跨复权样本比较误用与解释成本；未实现。详见[Q06](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md#research-q06)。
 
-[查看完整分析](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1369301269-root"></a>
 
@@ -579,7 +579,7 @@
 
 > **建议**：未验证方向是每次检索设置总预算，对冷却钥只给一个并发探测租约，401钥仅在指纹变化后重试。用全部429、混合成功、重复401和并发查询对照现版，若合格来源返回率不降低而请求量/尾延迟下降则支持；若错过已恢复钥或延迟无改善则否定。[Q03](../../plugins/arcaneorion--dsh-tavily-web/INSIGHT.md#research-q03)
 
-[查看完整分析](../../plugins/arcaneorion--dsh-tavily-web/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/arcaneorion--dsh-tavily-web/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1358319839-root"></a>
 
@@ -595,7 +595,7 @@
 
 > **建议**：由截图请求与用户输入权限之间的缺口，可提出未验证协议：父层只接收当前 iframe 的消息，为每次截图绑定一次性 requestId，反馈先进入可确认草稿；另对 self-contained 板面施加明确 CSP。用其他 iframe 伪造 capture/panel_input、过期请求和带外链 HTML 对照，要求全部拒绝且合法反馈保留。若破坏正常附件回传或仍允许未授权提交，则方案不成立。[Q04](../../plugins/arcaneorion--dsh-teaching-board/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/arcaneorion--dsh-teaching-board/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/arcaneorion--dsh-teaching-board/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336582509-root"></a>
 
@@ -611,7 +611,7 @@
 
 > **建议**：修复空目录初始化、稳定 cohort/分页及类别映射和 watch 游标，才能形成可靠趋势雷达；待验证。详见[Q02](../../plugins/863683348--dsh-trend-radar/INSIGHT.md#research-q02)、[Q03](../../plugins/863683348--dsh-trend-radar/INSIGHT.md#research-q03)。
 
-[查看完整分析](../../plugins/863683348--dsh-trend-radar/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/863683348--dsh-trend-radar/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1337487779-root"></a>
 
@@ -627,7 +627,7 @@
 
 > **建议**：从已有阶段提示/同模型评审出发，若每席受强制异方法和可重放数字证据约束，可能降低相关错误漏检；需等预算公开题目对照漏检率与总成本，若无改善或成本超预注册阈值即证伪。条件、代价与比较详见[Q05](../../plugins/andiii208--dsh-ultramath/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/andiii208--dsh-ultramath/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/andiii208--dsh-ultramath/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335219884-root"></a>
 
@@ -643,7 +643,7 @@
 
 > **建议**：未验证假设是输出约束执行、覆盖和降级来源证明，帮助减少可用性与完整性混淆；对照及否定条件见 [Q05](../../plugins/a3boy--dsh-web-tools/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/a3boy--dsh-web-tools/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/a3boy--dsh-web-tools/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1412897932-root"></a>
 
@@ -659,7 +659,7 @@
 
 > **建议**：未来可探索：可在上传前增加可复核的字段级隐私清单与内容寻址回执，让删除、重放和来源追踪成为归档协议的一部分。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q08)。
 
-[查看完整分析](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1358313559-root"></a>
 
@@ -675,7 +675,7 @@
 
 > **建议**：未验证改进为固定二进制版本的私网回归矩阵、显式默认 stealth 与输出流式处理。详见[Q05](../../plugins/173787247--dsh-wsl-obscura/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/173787247--dsh-wsl-obscura/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/173787247--dsh-wsl-obscura/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1380817560-root"></a>
 
@@ -691,7 +691,7 @@
 
 > **建议**：未验证方向是以 realpath 约束目标，写入携带已读内容哈希并进行比较、备份和原子替换；用 symlink/双端竞争/中断夹具比较丢失与误拒绝。详见[Q05](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381860363-root"></a>
 
@@ -707,7 +707,7 @@
 
 > **建议**：固定可解析的 Playwright 环境并添加目标地址门控、最终 URL/状态审计；在隔离站点矩阵比较成功率/延迟/误访问后再采用，本版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04)。
 
-[查看完整分析](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381726438-root"></a>
 
@@ -723,7 +723,7 @@
 
 > **建议**：可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 [Q08](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q08)
 
-[查看完整分析](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1085086903-root"></a>
 
@@ -739,7 +739,7 @@
 
 > **建议**：未验证的修正版本/索引状态/原件引用门控可能减少陈旧和误合并错误；20个纠错任务控制模型预算比较，错误不降则否定。见 [Q05](../../plugins/evermind-ai--everos/INSIGHT.md#research-q05)。
 
-[查看完整分析](../../plugins/evermind-ai--everos/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/evermind-ai--everos/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1341648244-root"></a>
 
@@ -755,7 +755,7 @@
 
 > **建议**：可探索来源版本/适用域/证据级别与冲突收据，区分词面lock和人工确认，比较跨项目错引、覆盖与维护开销；未实现。详见[Q07](../../plugins/398894496-arch--krouter/INSIGHT.md#research-q07)。
 
-[查看完整分析](../../plugins/398894496-arch--krouter/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/398894496-arch--krouter/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1196982492-root"></a>
 
@@ -771,7 +771,7 @@
 
 > **建议**：[Q05](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q05) 未验证假设是用来源路径和日期/转载覆盖矩阵约束比较资格，五份报告对照误读与阅读时间；没有改善就停止。
 
-[查看完整分析](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1195243030-root"></a>
 
@@ -787,7 +787,7 @@
 
 > **建议**：未验证假设是在五部分结构检查外，为每条“完成”规则绑定一个代表性任务及失败注入，从静态约定转为可观察遵循度。固定同模型、仓库和预算，对比未改造、仅模板与任务证据三种环境，测漏跑验证、错误完成、跨会话恢复和人工介入。若结构分提高而任务指标不变，或维护验证任务的成本超过节省，则不继续加机制。[Q05](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md#research-q05)
 
-[查看完整分析](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1302496224-root"></a>
 
@@ -803,7 +803,7 @@
 
 > **建议**：未验证方向是沿sourceMemoryIds核纠错/撤回传播，区分未来召回与历史已注入；若现有链已足够或无净收益不另建账本。见[Q04](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q04)。
 
-[查看完整分析](../../plugins/memtensor--memmy-agent/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/memtensor--memmy-agent/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1014729376-root"></a>
 
@@ -819,7 +819,7 @@
 
 > **建议**：未验证假设是为已提交记忆标注revision和捕获进度，仅对用户明确纠正的事实提供短期限read-your-correction门槛或临时覆盖；普通轮次继续不等待后台。由当前延迟/新鲜度取舍推导，增量不是全局强同步，而是让高风险纠错可检验。用连续“陈述→纠正→立即追问”与跨项目反例，对比默认队列、全等待和选择性纠错门槛，测陈旧回答、误跨项目召回、P95延迟及模型费用。无明确准确收益或超出延迟预算则否定。[Q05](../../plugins/memtensor--memos/INSIGHT.md#research-q05)
 
-[查看完整分析](../../plugins/memtensor--memos/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/memtensor--memos/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1014729376-apps-memos-local-plugin"></a>
 
@@ -835,7 +835,7 @@
 
 > **建议**：[Q07](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q07)推导未验证的纠错水位方案。显式纠错后展示记忆来源与提交水位，只对这些轮次短暂等待或排除旧水位结果，可能减少错误回流；需要保持同一延迟预算。用20个连续纠错任务对比当前方案与人工笔记，若错误引用不降或人工时间增加则停止，不计入已有贡献。
 
-[查看完整分析](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1153190876-root"></a>
 
@@ -851,7 +851,7 @@
 
 > **建议**：[Q06](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q06)提出未验证的来源版本准备后切换方案。先准备新嵌入再切换可见版本，失败保留最后成功版本并提示陈旧；需要处理重复、查询过滤和清理成本。按阶段注入失败，对比简单重试，不能减少空窗或维护代价过大则停止。
 
-[查看完整分析](../../plugins/zilliztech--memsearch/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/zilliztech--memsearch/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1153190876-plugins-dsh"></a>
 
@@ -867,7 +867,7 @@
 
 > **建议**：[Q06](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q06)推导未验证的分状态捕获方案。保留原会话锚点，单列摘要失败/完成，并允许原位重试与索引更新；用摘要超时、退出和索引故障对照人工笔记。若出现重复、旧内容或人工时间未减少则停止，新增并发和版本维护成本必须计入。
 
-[查看完整分析](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1128123594-root"></a>
 
@@ -883,7 +883,7 @@
 
 > **建议**：先用脱敏语料对照简单文件搜索，检查原文追溯、事实反转和总维护负担。
 
-[查看完整分析](../../plugins/volcengine--openviking/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/volcengine--openviking/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
 
@@ -899,7 +899,7 @@
 
 > **建议**：先在脱敏项目试用写入、纠错、重开召回和断网恢复，再决定是否持续使用。
 
-[查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-849121458-root"></a>
 
@@ -915,7 +915,7 @@
 
 > **建议**：未验证假设是对自动提炼的新知识实行轻量冲突暂存，召回时保留原事实与更新来源，能减少“最后写入者覆盖”的错误。用包含同名项目、过期偏好、明确纠正与重复请求的固定会话集，对比手工Markdown、现有ReMe和冲突暂存；记录任务正确率、错误记忆复用、人工纠错和总费用。若检索分数提高但任务答案更差，或纠错成本更大，应否定采用增益。 依据[Q08](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q08)。
 
-[查看完整分析](../../plugins/agentscope-ai--reme/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/agentscope-ai--reme/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-849121458-integrations-dsh"></a>
 
@@ -931,7 +931,7 @@
 
 > **建议**：未验证假设是给每条自动记忆保留来源轮次与“未完成回答”标记，并让检索返回时突出冲突，可以减少截断回答污染长期知识。固定含纠正、截断和重复请求的会话集，对比默认归档和带标记归档的错误召回率、用户修正时间及费用；若标记不能阻止后续模型采信错误，不扩大自动写入。 依据[Q08](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q08)。
 
-[查看完整分析](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1024118326-root"></a>
 
@@ -947,7 +947,7 @@
 
 > **建议**：有持续知识维护与运维能力的团队可用代表性语料受控试用，先固定部署版本并核对权限、引用与恢复；少量临时文件先比较简单搜索方案。[Q04](../../plugins/tencent--weknora/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/tencent--weknora/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/tencent--weknora/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1024118326-packages-dsh-weknora"></a>
 
@@ -963,9 +963,9 @@
 
 > **建议**：已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。[Q04](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) · [返回比较表](#category-index)
+[查看完整分析](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) · [返回表格](#category-index)
 
-[返回分类索引](INDEX.md) · [返回首页](../../../README.md)
+[全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 

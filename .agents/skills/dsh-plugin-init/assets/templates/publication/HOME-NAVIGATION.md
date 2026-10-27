@@ -4,4 +4,4 @@
 | --- | --- | ---: |
 {{items}}
 
-[查看分类索引与各类 Star 榜](data/views/categories/INDEX.md)
+[浏览全部分类](data/views/categories/INDEX.md)

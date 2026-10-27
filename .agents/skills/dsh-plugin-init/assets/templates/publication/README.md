@@ -1,6 +1,6 @@
 # DSH Plugin Insight {{research_count}}
 
-按使用场景整理 DSH 插件，提供源码分析、使用建议与证据边界。
+按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
 [推荐尝试](data/views/columns/RECOMMENDED.md) · [最近发布](data/views/columns/LATEST.md) · [下载热门](data/views/columns/HOT.md) · [按场景查找](data/views/categories/INDEX.md)
 
