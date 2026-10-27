@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b4a0da1](https://github.com/vectorize-io/hindsight/tree/b4a0da1e9fd2dfd052843e4f95fcf368301f6a73/hindsight-integrations/coding-agents)
+源码版本：[b4a0da1](https://github.com/vectorize-io/hindsight/tree/b4a0da1e9fd2dfd052843e4f95fcf368301f6a73/hindsight-integrations/coding-agents)
 
 <!-- BEGIN META -->
 [![GitHub ★ 53,255](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=53%2C255&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vectorize-io/hindsight) [![npm 30d 55,816](https://img.shields.io/static/v1?label=npm+30d&message=55%2C816&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents)
 <!-- END META -->
 
-> **实现功能**：为编码 Agent 提供跨会话项目记忆、知识页工具和后台历史及对话摄取。
+> **功能**：为编码 Agent 提供跨会话项目记忆、知识页工具和后台历史及对话摄取。
 
-> **核心亮点**：相对手动粘贴历史，组件将跨宿主生命周期统一到记忆core，并为DSH按workspace绑定、fork切片和注入来源过滤；服务记忆算法不归为适配层原创。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对手动粘贴历史，组件将跨宿主生命周期统一到记忆core，并为DSH按workspace绑定、fork切片和注入来源过滤；服务记忆算法不归为适配层原创。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：Agent任务停止并不保证异步retain完成；失败诊断与提前推进长度游标可能使静态会话不补写，且启动bank禁用会使后续workspace缺工具。上述源码风险未运行复现。[Q03](#research-q03)
+> **主要限制**：Agent任务停止并不保证异步retain完成；失败诊断与提前推进长度游标可能使静态会话不补写，且启动bank禁用会使后续workspace缺工具。上述源码风险未运行复现。[Q03](#research-q03)
 
 **本文目录**
 
@@ -88,8 +88,6 @@
 
 > **亮点**：相对手动粘贴历史，组件将跨宿主生命周期统一到记忆core，并为DSH按workspace绑定、fork切片和注入来源过滤；服务记忆算法不归为适配层原创。[Q01](#research-q01) [Q02](#research-q02)
 
-相对手动粘贴历史，组件将跨宿主生命周期统一到记忆core，并为DSH按workspace绑定、fork切片和注入来源过滤；服务记忆算法不归为适配层原创。[Q01](#research-q01) [Q02](#research-q02)
-
 DSH entry apply 注册session-start、pre-step、turn-stopping和disposed，并按session.header.cwd创建RuntimeCore缓存，而非只用进程cwd。调用工具时再绑定实际调用Agent的workspace；子Agent直接跳过记忆注入和写回。session-start启动一次冷种子；pre-step先取得宿主decision，只在人类输入存在且未取消时调用onPrompt，再把producer-owned来源的记忆消息追加到输入。
 
 去重使用持久会话历史中的lastInjectedText，而不只依赖内存sessionId，因而可以识别fork继承的相同注入。写回读取snapshotEvents优先、legacy events兜底，按inheritedEventCount切掉fork继承前缀，再规范化对话。normalizer只接纳source.kind=user的人类提示，保留assistant正文和简化tool/call，跳过tool/result；这减少插件自己的注入再进入记忆导致循环放大。
@@ -144,7 +142,7 @@ Agent任务停止并不保证异步retain完成；失败诊断与提前推进长
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

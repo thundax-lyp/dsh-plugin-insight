@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[1173c0a](https://github.com/morluto/rea/tree/1173c0a9dc1b352a60943a491462294db8f353ae)
+源码版本：[1173c0a](https://github.com/morluto/rea/tree/1173c0a9dc1b352a60943a491462294db8f353ae)
 
 <!-- BEGIN META -->
 [![GitHub ★ 383,061](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=383%2C061&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) [![npm 30d 634,260](https://img.shields.io/static/v1?label=npm+30d&message=634%2C260&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
 <!-- END META -->
 
-> **实现功能**：独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。
+> **功能**：独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。
 
-> **核心亮点**：相对直接调用分散分析器，贡献是统一契约、可取消会话及可追溯/带限制的证据交付；不能将上游反编译能力或工具数量计为原创算法。[Q01](#research-q01)
+> **亮点**：相对直接调用分散分析器，贡献是统一契约、可取消会话及可追溯/带限制的证据交付；不能将上游反编译能力或工具数量计为原创算法。[Q01](#research-q01)
 
-> **风险与缺陷**：哈希、推断标签与结构化结果保证可追溯表达，不保证静态图和功能解释正确；可选提供者和变更操作也需要具体环境与权限。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：哈希、推断标签与结构化结果保证可追溯表达，不保证静态图和功能解释正确；可选提供者和变更操作也需要具体环境与权限。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对直接调用分散分析器，贡献是统一契约、可取消会话及可追溯/带限制的证据交付；不能将上游反编译能力或工具数量计为原创算法。[Q01](#research-q01)
 
-相对直接调用分散分析器，贡献是统一契约、可取消会话及可追溯/带限制的证据交付；不能将上游反编译能力或工具数量计为原创算法。[Q01](#research-q01)
-
 输入契约、scope、派生推断标签及目标内容不可信标记值得复用；移植成本是工件身份、图语义、提供者失败和调用Agent约束，不能只复用JSON外形。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

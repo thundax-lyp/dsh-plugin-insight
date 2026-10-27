@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[71baf74](https://github.com/kenryu42/cc-safety-net/tree/71baf747e2a5246bdf613a2894f2d6e7a5ad80bf)
+源码版本：[71baf74](https://github.com/kenryu42/cc-safety-net/tree/71baf747e2a5246bdf613a2894f2d6e7a5ad80bf)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,792](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C792&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kenryu42/cc-safety-net) [![npm 30d 67,218](https://img.shields.io/static/v1?label=npm+30d&message=67%2C218&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net)
 <!-- END META -->
 
-> **实现功能**：在编码 Agent 工具执行前检查破坏性命令和秘密文件访问，支持 DSH 等多个宿主。
+> **功能**：在编码 Agent 工具执行前检查破坏性命令和秘密文件访问，支持 DSH 等多个宿主。
 
-> **核心亮点**：相对提示词约束，DSH工具guard形成执行前拒绝；多CLI复用裁决而分别提取输入，增量属于策略适配。见[Q01](#research-q01)。
+> **亮点**：相对提示词约束，DSH工具guard形成执行前拒绝；多CLI复用裁决而分别提取输入，增量属于策略适配。见[Q01](#research-q01)。
 
-> **风险与缺陷**：未声明自定义命令工具可能先执行再收到未检查提示，且它不隔离进程或网络；不能当唯一安全边界。见[Q03](#research-q03)。
+> **主要限制**：未声明自定义命令工具可能先执行再收到未检查提示，且它不隔离进程或网络；不能当唯一安全边界。见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对提示词约束，DSH工具guard形成执行前拒绝；多CLI复用裁决而分别提取输入，增量属于策略适配。见[Q01](#research-q01)。
 
-相对提示词约束，DSH工具guard形成执行前拒绝；多CLI复用裁决而分别提取输入，增量属于策略适配。见[Q01](#research-q01)。
-
 宿主提取、共享裁决和结果投影分层可复用；结构预算与异常fail-closed值得借鉴。代价是工具身份、cwd和远端执行语义必须逐宿主核对，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ DSH接入与共享裁决可核查；误报/漏报及真实宿主兼容未验，�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

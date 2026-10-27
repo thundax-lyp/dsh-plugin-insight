@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[224e539](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)
+源码版本：[224e539](https://github.com/AlexYin-Tongji/dsh-plugin-console/tree/224e53959c1b03f83993b80f8438b49b17d820d6)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AlexYin-Tongji/dsh-plugin-console) [![npm 30d 1,111](https://img.shields.io/static/v1?label=npm+30d&message=1%2C111&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-console) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-console)
 <!-- END META -->
 
-> **实现功能**：在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。
+> **功能**：在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。
 
-> **核心亮点**：把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-> **风险与缺陷**：canary改临时HOME但仍普通用户进程并继承多项环境变量，不是OS沙箱；真实profile变更与外部初始化副作用也非原子回滚。详见[Q02](#research-q02)。
+> **主要限制**：canary改临时HOME但仍普通用户进程并继承多项环境变量，不是OS沙箱；真实profile变更与外部初始化副作用也非原子回滚。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
 
-把来源核验、明确确认、精确安装、完整profile兼容检查及恢复串为管理闭环，增量在流程而非新包管理算法。详见[Q01](#research-q01)与[Q02](#research-q02)。
-
 工程亮点是先plan后execute、短TTL/一次消费/指纹重检、来源和integrity绑定、profile锁目录的nonce拥有权与原子改名回收，及安装结果/进程清理/回滚分别报告。命令使用参数数组shell:false，避免把目标直接拼shell；但普通执行本身继承父环境，不能凭此称安全沙箱。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@ canary改临时HOME但仍普通用户进程并继承多项环境变量，不是O
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

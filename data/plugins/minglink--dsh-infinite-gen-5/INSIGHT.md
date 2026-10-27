@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[914a989](https://github.com/Minglink/dsh-infinite-gen-5/tree/914a98990cada44fa7105cb31f085a8fbc5ac68c)
+源码版本：[914a989](https://github.com/Minglink/dsh-infinite-gen-5/tree/914a98990cada44fa7105cb31f085a8fbc5ac68c)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3,459](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C459&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Minglink/dsh-infinite-gen-5)
 <!-- END META -->
 
-> **实现功能**：在DSH中整合二进制静态分析、原生调试、网络采集与证据工作台。
+> **功能**：在DSH中整合二进制静态分析、原生调试、网络采集与证据工作台。
 
-> **核心亮点**：[Q02](#research-q02)把样本稳定身份、多引擎worker、宿主审批与报告归属连成流程，减少地址/样本错配；底层反编译和调试能力归属原引擎。
+> **亮点**：[Q02](#research-q02)把样本稳定身份、多引擎worker、宿主审批与报告归属连成流程，减少地址/样本错配；底层反编译和调试能力归属原引擎。
 
-> **风险与缺陷**：[Q03](#research-q03)审批不等于sandbox或完全Undo，事后审计写失败还可能无日志；静态推断不能替代真实执行证据。
+> **主要限制**：[Q03](#research-q03)审批不等于sandbox或完全Undo，事后审计写失败还可能无日志；静态推断不能替代真实执行证据。
 
 **本文目录**
 
@@ -94,8 +94,6 @@
 
 > **亮点**：[Q02](#research-q02)把样本稳定身份、多引擎worker、宿主审批与报告归属连成流程，减少地址/样本错配；底层反编译和调试能力归属原引擎。
 
-[Q02](#research-q02)把样本稳定身份、多引擎worker、宿主审批与报告归属连成流程，减少地址/样本错配；底层反编译和调试能力归属原引擎。
-
 稳定fd指纹与引擎中立有界JSONL有借鉴价值；事后审计吞错是保持结果链与可追溯性之间的取舍。移植需保留样本身份、数据库修订、原生进程清理，不能只复制工具定义。
 
 <a id="detail-section-5"></a>
@@ -144,7 +142,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

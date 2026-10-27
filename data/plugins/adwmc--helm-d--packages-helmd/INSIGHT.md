@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c0820c7](https://github.com/ADWMC/helm-d/tree/c0820c76202cde0dde952706381cd7921a68fe14/packages/helmd)
+源码版本：[c0820c7](https://github.com/ADWMC/helm-d/tree/c0820c76202cde0dde952706381cd7921a68fe14/packages/helmd)
 
 <!-- BEGIN META -->
 [![GitHub ★ 616](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=616&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ADWMC/helm-d) [![npm 30d 372](https://img.shields.io/static/v1?label=npm+30d&message=372&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adwmc/helm-d) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adwmc/helm-d)
 <!-- END META -->
 
-> **实现功能**：为安全分析提供案例证据记录、参考路由与多领域分析工具。
+> **功能**：为安全分析提供案例证据记录、参考路由与多领域分析工具。
 
-> **核心亮点**：相对手工脚本和聊天记录，增量在集中持久化、案例恢复和结论引用校验的组合，改善可追溯组织而非证明无幻觉。见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：相对手工脚本和聊天记录，增量在集中持久化、案例恢复和结论引用校验的组合，改善可追溯组织而非证明无幻觉。见 [Q01](#research-q01) 与 [Q02](#research-q02)。
 
-> **风险与缺陷**：真实证据编号不保证证据支持结论，软持久化和关案例外进一步限制承诺；封印提示也增加审阅负担。见 [Q03](#research-q03)。
+> **主要限制**：真实证据编号不保证证据支持结论，软持久化和关案例外进一步限制承诺；封印提示也增加审阅负担。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：相对手工脚本和聊天记录，增量在集中持久化、案例恢复和结论引用校验的组合，改善可追溯组织而非证明无幻觉。见 [Q01](#research-q01) 与 [Q02](#research-q02)。
 
-相对手工脚本和聊天记录，增量在集中持久化、案例恢复和结论引用校验的组合，改善可追溯组织而非证明无幻觉。见 [Q01](#research-q01) 与 [Q02](#research-q02)。
-
 横切持久化把一致的记录逻辑放在工具注册边界，移植时必须保持注册生命周期、会话标识和返回类型契约；磁盘 resume 段可作为可检查交接对象。设计细节与验证取舍见 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

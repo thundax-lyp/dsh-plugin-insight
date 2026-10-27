@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[9aa1f4e](https://github.com/chuspeeism/dashi-taskboard/tree/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness)
+源码版本：[9aa1f4e](https://github.com/chuspeeism/dashi-taskboard/tree/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3,401](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C401&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chuspeeism/dashi-taskboard)
 <!-- END META -->
 
-> **实现功能**：在DeepSeek Harness侧栏嵌入已启动的Codex Taskboard本地看板。
+> **功能**：在DeepSeek Harness侧栏嵌入已启动的Codex Taskboard本地看板。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。
 
-> **风险与缺陷**：[Q02](#research-q02) 统一503会把描述符格式、权限和服务未运行混为一类，动态发现不等于健康验证；读取者依赖启动器维护正确可信的URL。
+> **主要限制**：[Q02](#research-q02) 统一503会把描述符格式、权限和服务未运行混为一类，动态发现不等于健康验证；读取者依赖启动器维护正确可信的URL。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。
 
-[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。
-
 前后端职责较清晰，路由只解析描述符，界面只嵌入；可借鉴运行时所有权与no-store，但复制时要明确URL信任边界和错误分类，不能当通用服务发现方案。
 
 <a id="detail-section-9"></a>
@@ -159,7 +157,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

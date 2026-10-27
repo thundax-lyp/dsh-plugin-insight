@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[dbf0248](https://github.com/zhu1090093659/dsh-web/tree/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board)
+源码版本：[dbf0248](https://github.com/zhu1090093659/dsh-web/tree/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C562&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 110,197](https://img.shields.io/static/v1?label=npm+30d&message=110%2C197&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 界面管理任务，由 Host 执行真实会话、定时调度并记录验证与执行状态。
+> **功能**：在 DSH Web 界面管理任务，由 Host 执行真实会话、定时调度并记录验证与执行状态。
 
-> **核心亮点**：把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](#research-q01)。
+> **亮点**：把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](#research-q01)。
 
-> **风险与缺陷**：卡片列可人工声明，gate只拦识别的goal完成；裁判仍可能语义误判，不能将Done或No False Completion当通用验收。见[Q02](#research-q02)。
+> **主要限制**：卡片列可人工声明，gate只拦识别的goal完成；裁判仍可能语义误判，不能将Done或No False Completion当通用验收。见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](#research-q01)。
 
-把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](#research-q01)。
-
 权威ledger、fsync/rename与请求指纹，以及质量/异常/无效验收分预算值得复用；移植需持久会话、工具生命周期和权限服务，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

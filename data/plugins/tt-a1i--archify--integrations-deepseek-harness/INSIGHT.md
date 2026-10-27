@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[25cf370](https://github.com/tt-a1i/archify/tree/25cf37080fc8b1dbe758a4efc3935b55f3327083/integrations/deepseek-harness)
+源码版本：[25cf370](https://github.com/tt-a1i/archify/tree/25cf37080fc8b1dbe758a4efc3935b55f3327083/integrations/deepseek-harness)
 
 <!-- BEGIN META -->
 [![GitHub ★ 88,446](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=88%2C446&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) [![npm 30d 31,404](https://img.shields.io/static/v1?label=npm+30d&message=31%2C404&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) [![最新发布 2026-10-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh)
 <!-- END META -->
 
-> **实现功能**：将固定版本 Archify Skill 作为文件系统 Skill provider 接入 DeepSeek Harness。
+> **功能**：将固定版本 Archify Skill 作为文件系统 Skill provider 接入 DeepSeek Harness。
 
-> **核心亮点**：相对手拷Skill，适配器提供profile包身份解析、显式bundle与不可变Skill来源；核心图形能力归于固定上游Skill，不能继承仓库根当前全部能力。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对手拷Skill，适配器提供profile包身份解析、显式bundle与不可变Skill来源；核心图形能力归于固定上游Skill，不能继承仓库根当前全部能力。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：published1.0.0仍可能隐藏默认个人与项目Skill；本提交已改true并不证明安装命令拿到修复，更不证明所有新宿主兼容。[Q03](#research-q03)
+> **主要限制**：published1.0.0仍可能隐藏默认个人与项目Skill；本提交已改true并不证明安装命令拿到修复，更不证明所有新宿主兼容。[Q03](#research-q03)
 
 **本文目录**
 
@@ -79,8 +79,6 @@
 
 > **亮点**：相对手拷Skill，适配器提供profile包身份解析、显式bundle与不可变Skill来源；核心图形能力归于固定上游Skill，不能继承仓库根当前全部能力。[Q01](#research-q01) [Q02](#research-q02)
 
-相对手拷Skill，适配器提供profile包身份解析、显式bundle与不可变Skill来源；核心图形能力归于固定上游Skill，不能继承仓库根当前全部能力。[Q01](#research-q01) [Q02](#research-q02)
-
 cordis.patch.yml 插入 @deepseek-ai/dsh-skill-filesystem，providerName为archify-plugin，bundledSkillDir通过createRequire(baseUrl)解析安装包package.json，再定位skills；这避免把profile URL当文件目录拼接。lib/index.js的辅助解析器同样锚定profile包解析，缺baseUrl或无法resolve时抛带原因的错误。实际挂载来自patch表达式，不能把辅助函数存在当作它必然被宿主调用。
 
 pack.mjs先stageAdapter，再releaseSnapshot到独立目录，以canonical clean-Skill stager生成skills/archify。release-source直接读HEAD Git blob和regular-file mode，拒绝符号链接，再核对release中的完整commit、精确SemVer和Skill版本。相对把当前工作区直接npm pack，这减少未提交内容或源码漂移混入发布物的机会。其收益依赖stager和包发布链实际执行，本轮只核查实现，不声称tarball已重建。
@@ -131,7 +129,7 @@ published1.0.0仍可能隐藏默认个人与项目Skill；本提交已改true并
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

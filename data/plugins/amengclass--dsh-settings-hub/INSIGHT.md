@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[2c89559](https://github.com/Amengclass/dsh-settings-hub/tree/2c89559685a14375dcc6cc318ffc1c7c728a14c6)
+源码版本：[2c89559](https://github.com/Amengclass/dsh-settings-hub/tree/2c89559685a14375dcc6cc318ffc1c7c728a14c6)
 
 <!-- BEGIN META -->
 [![npm 30d 939](https://img.shields.io/static/v1?label=npm+30d&message=939&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub)
 <!-- END META -->
 
-> **实现功能**：接管 DSH 设置侧边栏，将第三方 settings.section 聚合、分组并持久化排序。
+> **功能**：接管 DSH 设置侧边栏，将第三方 settings.section 聚合、分组并持久化排序。
 
-> **核心亮点**：提供可拖拽第三方设置分组，详见[Q01](#research-q01)。
+> **亮点**：提供可拖拽第三方设置分组，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：依赖源码字符串正则识别和一次性定时重扫，可能漏检/错误归属；完整 shadow 带来兼容成本，详见[Q02](#research-q02)。
+> **主要限制**：依赖源码字符串正则识别和一次性定时重扫，可能漏检/错误归属；完整 shadow 带来兼容成本，详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -80,8 +80,6 @@ DSH webServer、slots、modules；浏览器 localStorage 和 profile package/nod
 
 > **亮点**：提供可拖拽第三方设置分组，详见[Q01](#research-q01)。
 
-提供可拖拽第三方设置分组，详见[Q01](#research-q01)。
-
 依赖图递归、字符串扫描模块 apply、slot shadow 与复制 renderer。
 
 <a id="detail-section-5"></a>
@@ -130,7 +128,7 @@ DSH webServer、slots、modules；浏览器 localStorage 和 profile package/nod
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

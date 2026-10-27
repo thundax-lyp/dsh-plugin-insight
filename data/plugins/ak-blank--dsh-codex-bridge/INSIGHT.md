@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[a1983e4](https://github.com/AK-blank/dsh-codex-bridge/tree/a1983e49aed212c87cc82e06bccd1f4e1760c4d2)
+源码版本：[a1983e4](https://github.com/AK-blank/dsh-codex-bridge/tree/a1983e49aed212c87cc82e06bccd1f4e1760c4d2)
 
 <!-- BEGIN META -->
 [![npm 30d 47](https://img.shields.io/static/v1?label=npm+30d&message=47&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codex-bridge) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codex-bridge)
 <!-- END META -->
 
-> **实现功能**：通过Codex CLI读取账号额度与模型建议，并以可选模型和推理强度委派独立任务。
+> **功能**：通过Codex CLI读取账号额度与模型建议，并以可选模型和推理强度委派独立任务。
 
-> **核心亮点**：把只读额度、委派执行、模型/effort护栏和结构化结果连成DSH双工具，减少手工终端接线。参见[Q01](#research-q01)。
+> **亮点**：把只读额度、委派执行、模型/effort护栏和结构化结果连成DSH双工具，减少手工终端接线。参见[Q01](#research-q01)。
 
-> **风险与缺陷**：缓存百分比与进程内锁不是额度预留；超时/取消并不回滚已写产物，布尔开关也不能独立证明用户授权。参见[Q03](#research-q03)。
+> **主要限制**：缓存百分比与进程内锁不是额度预留；超时/取消并不回滚已写产物，布尔开关也不能独立证明用户授权。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：把只读额度、委派执行、模型/effort护栏和结构化结果连成DSH双工具，减少手工终端接线。参见[Q01](#research-q01)。
 
-把只读额度、委派执行、模型/effort护栏和结构化结果连成DSH双工具，减少手工终端接线。参见[Q01](#research-q01)。
-
 额度策略/子进程适配分离与显式错误字段值得复用；注意进程内锁、秒参数命名及输出截断，移植需RPC契约和产物核查。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

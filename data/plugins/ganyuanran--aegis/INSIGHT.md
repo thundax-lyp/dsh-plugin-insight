@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[0461c21](https://github.com/GanyuanRan/Aegis/tree/0461c211e4d812f0b215fab240a68a25c1e22424)
+源码版本：[0461c21](https://github.com/GanyuanRan/Aegis/tree/0461c211e4d812f0b215fab240a68a25c1e22424)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GanyuanRan/Aegis)
 <!-- END META -->
 
-> **实现功能**：为编码 Agent 提供按需技能路由、基线读取、变更治理与完成证据流程，含 DSH 适配。
+> **功能**：为编码 Agent 提供按需技能路由、基线读取、变更治理与完成证据流程，含 DSH 适配。
 
-> **核心亮点**：把基线、风险路由与完成证据原则组织为按需Skill，并适配DSH生命周期，减少反复提醒属于有条件推断。见[Q01](#research-q01)。
+> **亮点**：把基线、风险路由与完成证据原则组织为按需Skill，并适配DSH生命周期，减少反复提醒属于有条件推断。见[Q01](#research-q01)。
 
-> **风险与缺陷**：自动bootstrap在首个durable活动后才投递，依赖模型遵守；作者旧Codex基准不能当本版DSH的安全/完成保证。见[Q02](#research-q02)。
+> **主要限制**：自动bootstrap在首个durable活动后才投递，依赖模型遵守；作者旧Codex基准不能当本版DSH的安全/完成保证。见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：把基线、风险路由与完成证据原则组织为按需Skill，并适配DSH生命周期，减少反复提醒属于有条件推断。见[Q01](#research-q01)。
 
-把基线、风险路由与完成证据原则组织为按需Skill，并适配DSH生命周期，减少反复提醒属于有条件推断。见[Q01](#research-q01)。
-
 薄适配复用宿主filesystem provider、epoch校验和卸载清理值得借鉴；路由合同是提示而非外部权限，迁移需实核事件顺序与消息source格式，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

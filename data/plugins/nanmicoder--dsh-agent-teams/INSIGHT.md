@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c059636](https://github.com/NanmiCoder/dsh-agent-teams/tree/c059636e541f9af644bded8a5e46cca0420c7451)
+源码版本：[c059636](https://github.com/NanmiCoder/dsh-agent-teams/tree/c059636e541f9af644bded8a5e46cca0420c7451)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2,455](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C455&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/NanmiCoder/dsh-agent-teams) [![npm 30d 46,019](https://img.shields.io/static/v1?label=npm+30d&message=46%2C019&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams)
 <!-- END META -->
 
-> **实现功能**：让当前DSH会话组织持久子Agent团队、依赖任务、消息和协作界面。
+> **功能**：让当前DSH会话组织持久子Agent团队、依赖任务、消息和协作界面。
 
-> **核心亮点**：[Q02](#research-q02)、[Q03](#research-q03) 可靠性增量在持久任务图、attempt归属与区分idle/冷恢复的调度，而非角色数量；清空旧结果避免重试直接继承已失效证据。
+> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 可靠性增量在持久任务图、attempt归属与区分idle/冷恢复的调度，而非角色数量；清空旧结果避免重试直接继承已失效证据。
 
-> **风险与缺陷**：[Q03](#research-q03) 旧attempt状态更新被撤销不代表外部文件副作用已撤销，质量gate是完成审计而非写入拦截；调度记录不能替代产物与验证的独立复核。
+> **主要限制**：[Q03](#research-q03) 旧attempt状态更新被撤销不代表外部文件副作用已撤销，质量gate是完成审计而非写入拦截；调度记录不能替代产物与验证的独立复核。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 可靠性增量在持久任务图、attempt归属与区分idle/冷恢复的调度，而非角色数量；清空旧结果避免重试直接继承已失效证据。
 
-[Q02](#research-q02)、[Q03](#research-q03) 可靠性增量在持久任务图、attempt归属与区分idle/冷恢复的调度，而非角色数量；清空旧结果避免重试直接继承已失效证据。
-
 可借鉴任务代数、每次尝试结果清空和锁内重读；移植需对齐宿主空闲/销毁生命周期和持久化语义，不能将状态锁当工作区写隔离。
 
 <a id="detail-section-9"></a>
@@ -162,7 +160,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

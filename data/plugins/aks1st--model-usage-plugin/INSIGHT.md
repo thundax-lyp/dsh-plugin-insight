@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[a8d1a44](https://github.com/AKS1st/model-usage-plugin/tree/a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57)
+源码版本：[a8d1a44](https://github.com/AKS1st/model-usage-plugin/tree/a8d1a444ffb02faa2818d12d6f0f1a1c22df1e57)
 
 <!-- BEGIN META -->
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/model-usage-plugin) [![npm 30d 972](https://img.shields.io/static/v1?label=npm+30d&message=972&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/model-usage-plugin) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/model-usage-plugin)
 <!-- END META -->
 
-> **实现功能**：在DSH Web设置中展示模型token、估算费用、工具指标、使用趋势与DeepSeek账户余额，并从会话日志补充历史日账。
+> **功能**：在DSH Web设置中展示模型token、估算费用、工具指标、使用趋势与DeepSeek账户余额，并从会话日志补充历史日账。
 
-> **核心亮点**：把流usage、工具事件、去继承历史与显式套餐/价表/汇率控制接到同一设置页，减少手工整理；金额和工具指标不证明业务价值。详见[Q02](#research-q02)。
+> **亮点**：把流usage、工具事件、去继承历史与显式套餐/价表/汇率控制接到同一设置页，减少手工整理；金额和工具指标不证明业务价值。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：历史扫描在首个会话写日键后跳过同日其它会话，自动补齐不能据此视为完整；自定义余额地址会携带回退到的key，来源检查也只比hostname。未运行漏计或越权复现。详见[Q03](#research-q03)。
+> **主要限制**：历史扫描在首个会话写日键后跳过同日其它会话，自动补齐不能据此视为完整；自定义余额地址会携带回退到的key，来源检查也只比hostname。未运行漏计或越权复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -117,8 +117,6 @@
 
 > **亮点**：把流usage、工具事件、去继承历史与显式套餐/价表/汇率控制接到同一设置页，减少手工整理；金额和工具指标不证明业务价值。详见[Q02](#research-q02)。
 
-把流usage、工具事件、去继承历史与显式套餐/价表/汇率控制接到同一设置页，减少手工整理；金额和工具指标不证明业务价值。详见[Q02](#research-q02)。
-
 状态将累计、日/小时、热力图、价表、汇率和余额分开保存，写盘先折叠小时差额，再tmp/rename发布；dirty写失败重新武装重试，dispose主动flush并回收路由。流结束后schedulePersist检查disposed，减少卸载后悬空写盘计时器。这些对长期仪表盘比只在内存加计数更完整，但单文件rename不是事件级收据，也不能恢复掉电前尚未写盘的增量。
 
 回填用版本标记区分旧完成状态、list超时、总时间预算、失败重试和最多保留窗口；fork去继承与小时差值是值得借鉴的防重复思路。不过“日期已经存在”被用作整日完成证明，粒度不足，导致同日多会话遗漏；不能以幂等名义牺牲完整性。readSession没有withTimeout，预算只在读取前循环检查，单个永不返回的read可能越过总预算挂住，STALE_RUN又允许新一轮启动，withTimeout本身也没有取消底层操作。
@@ -175,7 +173,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

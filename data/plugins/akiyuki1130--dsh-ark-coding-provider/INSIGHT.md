@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c7a0240](https://github.com/Akiyuki1130/dsh-ark-coding-provider/tree/c7a02400397b15a8418736366d942e0382972246)
+源码版本：[c7a0240](https://github.com/Akiyuki1130/dsh-ark-coding-provider/tree/c7a02400397b15a8418736366d942e0382972246)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Akiyuki1130/dsh-ark-coding-provider)
 <!-- END META -->
 
-> **实现功能**：为DSH注册Ark Coding Plan模型路由，适配流式和工具消息，管理API Key/CLI多账户，并展示官方目录与套餐额度。
+> **功能**：为DSH注册Ark Coding Plan模型路由，适配流式和工具消息，管理API Key/CLI多账户，并展示官方目录与套餐额度。
 
-> **核心亮点**：把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
+> **亮点**：把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
 
-> **风险与缺陷**：静态能力表与额度不是本轮模型或账单实测；HOME约束为词法，冷却为排序；直接下载的实际字节限额在完整缓冲后判断，不能当流式内存硬上限。[Q03](#research-q03)、[Q04](#research-q04)、[Q08](#research-q08)
+> **主要限制**：静态能力表与额度不是本轮模型或账单实测；HOME约束为词法，冷却为排序；直接下载的实际字节限额在完整缓冲后判断，不能当流式内存硬上限。[Q03](#research-q03)、[Q04](#research-q04)、[Q08](#research-q08)
 
 **本文目录**
 
@@ -117,8 +117,6 @@
 
 > **亮点**：把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
 
-把Coding Plan专用流式、错误轮换、账户HOME/凭据和控制面额度接成宿主provider，并在已yield后拒绝混账户续接；固定二进制安装降低桌面外部npm依赖。[Q02](#research-q02)、[Q08](#research-q08)
-
 明确已yield后禁止跨账号续接、配置身份绑定缓存、最小子进程环境值得借鉴；当前Windows USERPROFILE和进程树处理及哈希后rename改善接线，但物理目录和下载内存边界仍需核。[Q03](#research-q03)、[Q08](#research-q08)
 
 <a id="detail-section-5"></a>
@@ -169,7 +167,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

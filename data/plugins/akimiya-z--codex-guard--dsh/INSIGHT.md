@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[87e138c](https://github.com/Akimiya-z/codex-guard/tree/87e138cdcca2e2929073bb913212dc06769087fc/dsh)
+源码版本：[87e138c](https://github.com/Akimiya-z/codex-guard/tree/87e138cdcca2e2929073bb913212dc06769087fc/dsh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 133](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=133&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Akimiya-z/codex-guard)
 <!-- END META -->
 
-> **实现功能**：在 DSH 中调用 codex-guard，对 Git 变更进行提交前卫生检查。
+> **功能**：在 DSH 中调用 codex-guard，对 Git 变更进行提交前卫生检查。
 
-> **核心亮点**：将既有 CLI 接入 DSH 工具链，并在 Windows 绕过 cmd shell 传参。增量是接线便利和平台适配，扫描算法归属原 CLI。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将既有 CLI 接入 DSH 工具链，并在 Windows 绕过 cmd shell 传参。增量是接线便利和平台适配，扫描算法归属原 CLI。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：工具描述包含提交主题检查，但调用未传 --commits；同时将执行状态折叠成字符串，不能承担可靠放行。参见[Q03](#research-q03)。
+> **主要限制**：工具描述包含提交主题检查，但调用未传 --commits；同时将执行状态折叠成字符串，不能承担可靠放行。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：将既有 CLI 接入 DSH 工具链，并在 Windows 绕过 cmd shell 传参。增量是接线便利和平台适配，扫描算法归属原 CLI。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-将既有 CLI 接入 DSH 工具链，并在 Windows 绕过 cmd shell 传参。增量是接线便利和平台适配，扫描算法归属原 CLI。参见[Q01](#research-q01)、[Q02](#research-q02)。
-
 参数数组和Windows直接调用npm JavaScript入口值得同类CLI接线借鉴；移植前须核npm布局。同步执行、未锁发布CLI及非结构化错误提高恢复负担，不能因execute为async就认定不阻塞。详见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

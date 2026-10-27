@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[a773ae4](https://github.com/Ansonfishing/dsh-ca-ref/tree/a773ae460e90a0d4711c85b5e81b1c641ff3094b)
+源码版本：[a773ae4](https://github.com/Ansonfishing/dsh-ca-ref/tree/a773ae460e90a0d4711c85b5e81b1c641ff3094b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ansonfishing/dsh-ca-ref)
 <!-- END META -->
 
-> **实现功能**：为Clean Architecture审查提供本地参考仓全文检索、基线清单、审查留账和观察面板。
+> **功能**：为Clean Architecture审查提供本地参考仓全文检索、基线清单、审查留账和观察面板。
 
-> **核心亮点**：把参考检索、路径引用、基线和审查留账组织成可复用流程，减少散落材料查找的重复步骤。[Q03](#research-q03) 不等于自动验证架构或提供普适标准答案。
+> **亮点**：把参考检索、路径引用、基线和审查留账组织成可复用流程，减少散落材料查找的重复步骤。[Q03](#research-q03) 不等于自动验证架构或提供普适标准答案。
 
-> **风险与缺陷**：索引读取当前工作树且重建把缺失与漂移仓都标ok，健康标记不代表内容完整；混合查询OR与AND过滤也可能越过语言边界。[Q04](#research-q04)
+> **主要限制**：索引读取当前工作树且重建把缺失与漂移仓都标ok，健康标记不代表内容完整；混合查询OR与AND过滤也可能越过语言边界。[Q04](#research-q04)
 
 **本文目录**
 
@@ -104,8 +104,6 @@
 
 > **亮点**：把参考检索、路径引用、基线和审查留账组织成可复用流程，减少散落材料查找的重复步骤。[Q03](#research-q03) 不等于自动验证架构或提供普适标准答案。
 
-把参考检索、路径引用、基线和审查留账组织成可复用流程，减少散落材料查找的重复步骤。[Q03](#research-q03) 不等于自动验证架构或提供普适标准答案。
-
 工具与命令复用数据、路径化引用、本地FTS和有限留账值得借鉴；混合查询括号、重建事务、实际版本绑定及生命周期连接清理需要补强。
 
 <a id="detail-section-5"></a>
@@ -154,7 +152,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

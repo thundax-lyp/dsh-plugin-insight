@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[de82df4](https://github.com/Alice-Marx/dsh-model-router/tree/de82df4e737954ba0458d597ea82f9a6666c1a9b)
+源码版本：[de82df4](https://github.com/Alice-Marx/dsh-model-router/tree/de82df4e737954ba0458d597ea82f9a6666c1a9b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 383](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=383&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alice-Marx/dsh-model-router) [![npm 30d 4,234](https://img.shields.io/static/v1?label=npm+30d&message=4%2C234&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ljwei-stak/dsh-model-router) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ljwei-stak/dsh-model-router)
 <!-- END META -->
 
-> **实现功能**：在DSH中规划任务、比较模型路由，并通过模型API或厂商CLI执行依赖工作包。
+> **功能**：在DSH中规划任务、比较模型路由，并通过模型API或厂商CLI执行依赖工作包。
 
-> **核心亮点**：相对手动选择一个模型，实质增量是把依赖工作包、候选路由和预算准入组成可回查的执行契约；相对纯最低价格排序，它把质量下限和路由交接成本纳入选择。小空间精确与大空间有界搜索是组合优化的工程适配，并非全局质量最优或实测省钱。作者主动限定历史厂商运行属于0.20.0，当前0.25.5没有新端到端厂商验收，故贡献只落在可见控制机制。 依据[Q03](#research-q03)。
+> **亮点**：相对手动选择一个模型，实质增量是把依赖工作包、候选路由和预算准入组成可回查的执行契约；相对纯最低价格排序，它把质量下限和路由交接成本纳入选择。小空间精确与大空间有界搜索是组合优化的工程适配，并非全局质量最优或实测省钱。作者主动限定历史厂商运行属于0.20.0，当前0.25.5没有新端到端厂商验收，故贡献只落在可见控制机制。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：最关键的质疑是路由效用的质量与价格输入是否足够代表真实任务。分配器以数值qualityShortfall/score比较候选，有限预算排除未知价，却无法自行证明输入评分可靠；README明确公共LiveBench为聚合表，没有逐题质量成本矩阵。另一个影响持续采用的边界是中断后预留仍占额度，当前没有手工核销入口，不能为了恢复容量删除状态。它可防重复花费，但也把异常对账交给用户。 依据[Q04](#research-q04)。
+> **主要限制**：最关键的质疑是路由效用的质量与价格输入是否足够代表真实任务。分配器以数值qualityShortfall/score比较候选，有限预算排除未知价，却无法自行证明输入评分可靠；README明确公共LiveBench为聚合表，没有逐题质量成本矩阵。另一个影响持续采用的边界是中断后预留仍占额度，当前没有手工核销入口，不能为了恢复容量删除状态。它可防重复花费，但也把异常对账交给用户。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：相对手动选择一个模型，实质增量是把依赖工作包、候选路由和预算准入组成可回查的执行契约；相对纯最低价格排序，它把质量下限和路由交接成本纳入选择。小空间精确与大空间有界搜索是组合优化的工程适配，并非全局质量最优或实测省钱。作者主动限定历史厂商运行属于0.20.0，当前0.25.5没有新端到端厂商验收，故贡献只落在可见控制机制。 依据[Q03](#research-q03)。
 
-相对手动选择一个模型，实质增量是把依赖工作包、候选路由和预算准入组成可回查的执行契约；相对纯最低价格排序，它把质量下限和路由交接成本纳入选择。小空间精确与大空间有界搜索是组合优化的工程适配，并非全局质量最优或实测省钱。作者主动限定历史厂商运行属于0.20.0，当前0.25.5没有新端到端厂商验收，故贡献只落在可见控制机制。 依据[Q03](#research-q03)。
-
 值得借鉴的是将预算保留独立于UI作业、在同一状态事务内校验ownerToken，以及对依赖拓扑和未知价格显式拒绝。这些设计可移植到需要防止并发超支的执行器，但须一起移植状态锁、检查点和恢复语义。不能只复制搜索器就声称实现费用可靠性；收益仍受模型质量先验和账单回报完整性限制。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

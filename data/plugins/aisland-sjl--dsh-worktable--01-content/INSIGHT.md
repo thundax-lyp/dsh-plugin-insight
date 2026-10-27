@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[6cb86b6](https://github.com/Aisland-SJL/dsh-worktable/tree/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content)
+源码版本：[6cb86b6](https://github.com/Aisland-SJL/dsh-worktable/tree/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content)
 
 <!-- BEGIN META -->
 [![GitHub ★ 781](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=781&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aisland-SJL/dsh-worktable)
 <!-- END META -->
 
-> **实现功能**：在Harness侧栏提供项目容器、分栏窗口、会话绑定与控制室，挂载文件、终端和任务产物。
+> **功能**：在Harness侧栏提供项目容器、分栏窗口、会话绑定与控制室，挂载文件、终端和任务产物。
 
-> **核心亮点**：以显式项目/窗格/绑定所有权代替“文件夹相同即项目相同”，并把宿主会话状态与多窗工作区相连，减少旧结果串挂；贡献是组织与生命周期边界，不是文件系统隔离。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：以显式项目/窗格/绑定所有权代替“文件夹相同即项目相同”，并把宿主会话状态与多窗工作区相连，减少旧结果串挂；贡献是组织与生命周期边界，不是文件系统隔离。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：客户端所有权校验不约束Host文件权限，文件读取/写入使用用户或产物路径，PTY继承process.env；多个项目改同一真实文件仍互相影响。撤销持久化失败只在内存生效，刷新后状态需核对；作者也未完成全部审批/子代理/挂载业务验收。参见[Q03](#research-q03)。
+> **主要限制**：客户端所有权校验不约束Host文件权限，文件读取/写入使用用户或产物路径，PTY继承process.env；多个项目改同一真实文件仍互相影响。撤销持久化失败只在内存生效，刷新后状态需核对；作者也未完成全部审批/子代理/挂载业务验收。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -108,8 +108,6 @@
 
 > **亮点**：以显式项目/窗格/绑定所有权代替“文件夹相同即项目相同”，并把宿主会话状态与多窗工作区相连，减少旧结果串挂；贡献是组织与生命周期边界，不是文件系统隔离。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-以显式项目/窗格/绑定所有权代替“文件夹相同即项目相同”，并把宿主会话状态与多窗工作区相连，减少旧结果串挂；贡献是组织与生命周期边界，不是文件系统隔离。参见[Q01](#research-q01)、[Q02](#research-q02)。
-
 显式project/pane/binding与session/folder一致性、创建持久失败回滚值得复用；撤销失败可见性、内容版本和业务验收需另外设计，实际文件不是自动隔离。
 
 <a id="detail-section-5"></a>
@@ -158,7 +156,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

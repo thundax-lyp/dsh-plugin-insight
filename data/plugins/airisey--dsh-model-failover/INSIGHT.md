@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b762ec0](https://github.com/Airisey/dsh-model-failover/tree/b762ec038fc2d47a0504ae55af0fdab3162367ee)
+源码版本：[b762ec0](https://github.com/Airisey/dsh-model-failover/tree/b762ec038fc2d47a0504ae55af0fdab3162367ee)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Airisey/dsh-model-failover)
 <!-- END META -->
 
-> **实现功能**：把已接入 DSH 的模型组成队列，提供失败重试、切换、会话隔离与自动继续。
+> **功能**：把已接入 DSH 的模型组成队列，提供失败重试、切换、会话隔离与自动继续。
 
-> **核心亮点**：以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：可见输出提交不等于业务事务完成，轮级自动继续可能重做非幂等动作；有限重试也扩大总预算。没有复现重复写入，保留风险性质。见 [Q03](#research-q03)。
+> **主要限制**：可见输出提交不等于业务事务完成，轮级自动继续可能重做非幂等动作；有限重试也扩大总预算。没有复现重复写入，保留风险性质。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-以可见输出提交点控制切换，并将会话×模板隔离纳入恢复队列，相比手工 provider 切换有明确流程增量。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 commitsAnswer 将 reasoning 与用户可见结果区分，是可复用的流提交边界；外层 retry 关闭避免双重重试。移植必须对齐宿主事件与工具 delta 语义，轮级继续需要额外事务约束，不能只复制错误码表。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ commitsAnswer 将 reasoning 与用户可见结果区分，是可复用的流提�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

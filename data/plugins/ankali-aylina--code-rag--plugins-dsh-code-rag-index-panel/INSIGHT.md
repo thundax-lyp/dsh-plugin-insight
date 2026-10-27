@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[5c8ddfb](https://github.com/Ankali-Aylina/code-rag/tree/5c8ddfbde8a6dd0fff6d1292595064ea647edd83/plugins/dsh-code-rag-index-panel)
+源码版本：[5c8ddfb](https://github.com/Ankali-Aylina/code-rag/tree/5c8ddfbde8a6dd0fff6d1292595064ea647edd83/plugins/dsh-code-rag-index-panel)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ankali-Aylina/code-rag) [![npm 30d 711](https://img.shields.io/static/v1?label=npm+30d&message=711&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-code-rag-index-panel) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-code-rag-index-panel)
 <!-- END META -->
 
-> **实现功能**：在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。
+> **功能**：在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。
 
-> **核心亮点**：把索引状态、进度、依赖诊断与手动动作放入编码现场，并分离选模式与资源触发。[Q03](#research-q03) 贡献属于控制流程，不是新检索算法。
+> **亮点**：把索引状态、进度、依赖诊断与手动动作放入编码现场，并分离选模式与资源触发。[Q03](#research-q03) 贡献属于控制流程，不是新检索算法。
 
-> **风险与缺陷**：端口在线与诊断绿灯并不证明当前根和索引新鲜度；多实例选最新、集合404判不可达及setup执行脚本须明确。[Q04](#research-q04)
+> **主要限制**：端口在线与诊断绿灯并不证明当前根和索引新鲜度；多实例选最新、集合404判不可达及setup执行脚本须明确。[Q04](#research-q04)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：把索引状态、进度、依赖诊断与手动动作放入编码现场，并分离选模式与资源触发。[Q03](#research-q03) 贡献属于控制流程，不是新检索算法。
 
-把索引状态、进度、依赖诊断与手动动作放入编码现场，并分离选模式与资源触发。[Q03](#research-q03) 贡献属于控制流程，不是新检索算法。
-
 回环守卫、超时、白名单原子配置写入和路由清理可复用；预设正则解析、双份默认值和客户端未读取动作错误体增加维护风险。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

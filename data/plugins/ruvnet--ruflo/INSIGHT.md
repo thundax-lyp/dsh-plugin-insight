@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[631c155](https://github.com/ruvnet/ruflo/tree/631c1557b5f325163c4f9f029a397bb30a61c730)
+源码版本：[631c155](https://github.com/ruvnet/ruflo/tree/631c1557b5f325163c4f9f029a397bb30a61c730)
 
 <!-- BEGIN META -->
 [![GitHub ★ 79,217](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=79%2C217&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) [![npm 30d 49,674](https://img.shields.io/static/v1?label=npm+30d&message=49%2C674&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
 <!-- END META -->
 
-> **实现功能**：面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。
+> **功能**：面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。
 
-> **核心亮点**：相对手工分配多个Agent，统一状态、模型执行和观察入口；增量是协调接线而非角色/工具数量或已证实自学习收益。[Q01](#research-q01)
+> **亮点**：相对手工分配多个Agent，统一状态、模型执行和观察入口；增量是协调接线而非角色/工具数量或已证实自学习收益。[Q01](#research-q01)
 
-> **风险与缺陷**：静态关键词confidence非成功概率，API无错误也非产物正确；多个JSON状态不构成端到端任务事务，需独立验收和恢复对账。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：静态关键词confidence非成功概率，API无错误也非产物正确；多个JSON状态不构成端到端任务事务，需独立验收和恢复对账。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对手工分配多个Agent，统一状态、模型执行和观察入口；增量是协调接线而非角色/工具数量或已证实自学习收益。[Q01](#research-q01)
 
-相对手工分配多个Agent，统一状态、模型执行和观察入口；增量是协调接线而非角色/工具数量或已证实自学习收益。[Q01](#research-q01)
-
 将UI退出成功与磁盘verify分开、在执行完成后重读Agent注册表保护新修改值得借鉴；仍需跨文件任务身份和业务验收，不能只复用状态看板。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：d9b95ddd9214ac4be97bc98aeb726fde74bd82442844ccdd4a36a212abe983dc。sloc 0.3.2，TypeScript 5.9.3。
 

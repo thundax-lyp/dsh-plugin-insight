@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[845ddf4](https://github.com/AaronandWork/dsh-evidence-gate/tree/845ddf415e045eb6b2a014bca97a9c63aee1befa)
+源码版本：[845ddf4](https://github.com/AaronandWork/dsh-evidence-gate/tree/845ddf415e045eb6b2a014bca97a9c63aee1befa)
 
 <!-- BEGIN META -->
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AaronandWork/dsh-evidence-gate) [![npm 30d 888](https://img.shields.io/static/v1?label=npm+30d&message=888&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate) [![最新发布 2026-09-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@aaronandwork/dsh-evidence-gate)
 <!-- END META -->
 
-> **实现功能**：为 DSH 会话提供可切换的证据提示、主张裁定工具及持久活动索引。
+> **功能**：为 DSH 会话提供可切换的证据提示、主张裁定工具及持久活动索引。
 
-> **核心亮点**：相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。
+> **亮点**：相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：“已实证”可由同名、子串、单词、跨会话活动或仅存在路径触发，且未核对工具成功、内容、时间和主张语义；弱命中仍返回 verified。这使裁定标签可能超过证据强度。详见[Q03](#research-q03)。
+> **主要限制**：“已实证”可由同名、子串、单词、跨会话活动或仅存在路径触发，且未核对工具成功、内容、时间和主张语义；弱命中仍返回 verified。这使裁定标签可能超过证据强度。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。
 
-相较单纯提醒或静态提示，插件把工具活动做成持久、按会话可查的核验线索，并记录亲测/引用/猜测的处理结果；其辅助复核价值取决于模型调用和人工回查，不能称为强制事实门。详见[Q01](#research-q01)。
-
 有容量限制的索引与明示依据类型值得借鉴；把字符串关联或路径存在提升为已实证需收紧，并保留人工复核通道。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

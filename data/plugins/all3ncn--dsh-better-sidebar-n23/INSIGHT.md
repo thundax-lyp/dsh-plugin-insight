@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[ca9694b](https://github.com/All3nCN/dsh-better-sidebar-N23/tree/ca9694b4d232ff47eefec07e395b23eef0766831)
+源码版本：[ca9694b](https://github.com/All3nCN/dsh-better-sidebar-N23/tree/ca9694b4d232ff47eefec07e395b23eef0766831)
 
 <!-- BEGIN META -->
 [![npm 30d 1,125](https://img.shields.io/static/v1?label=npm+30d&message=1%2C125&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23)
 <!-- END META -->
 
-> **实现功能**：为DSH提供文件编辑预览、真实终端、Git、浏览器与可扩展双面板工作台。
+> **功能**：为DSH提供文件编辑预览、真实终端、Git、浏览器与可扩展双面板工作台。
 
-> **核心亮点**：现有工作台把文件、终端和Git交接集中到DSH旁；fork可识别增量是布局提交策略、外壳与模块兼容，整体设计归上游，不能全部计为原创。[Q01](#research-q01)
+> **亮点**：现有工作台把文件、终端和Git交接集中到DSH旁；fork可识别增量是布局提交策略、外壳与模块兼容，整体设计归上游，不能全部计为原创。[Q01](#research-q01)
 
-> **风险与缺陷**：src/lib刻意分轨意味着“源码有修复”不能证明发布包具有同一修复；发布fs.write也没有版本比较或cwd写入边界。兼容与编辑可靠性应先于功能广度判断。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：src/lib刻意分轨意味着“源码有修复”不能证明发布包具有同一修复；发布fs.write也没有版本比较或cwd写入边界。兼容与编辑可靠性应先于功能广度判断。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：现有工作台把文件、终端和Git交接集中到DSH旁；fork可识别增量是布局提交策略、外壳与模块兼容，整体设计归上游，不能全部计为原创。[Q01](#research-q01)
 
-现有工作台把文件、终端和Git交接集中到DSH旁；fork可识别增量是布局提交策略、外壳与模块兼容，整体设计归上游，不能全部计为原创。[Q01](#research-q01)
-
 服务化tab/viewer接口便于扩展；实际lib具来源检查、PTY限额与原子替换，但宽路径权限、无保存版本比较及双轨重建是重要取舍。需保留上游MIT归属，并验证编译产物与源码同步。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@ src/lib刻意分轨意味着“源码有修复”不能证明发布包具有同�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

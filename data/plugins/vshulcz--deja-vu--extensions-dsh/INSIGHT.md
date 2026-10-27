@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c0239d4](https://github.com/vshulcz/deja-vu/tree/c0239d42f2f4017f1f78c24ada76884d8de7c316/extensions/dsh)
+源码版本：[c0239d4](https://github.com/vshulcz/deja-vu/tree/c0239d42f2f4017f1f78c24ada76884d8de7c316/extensions/dsh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,310](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C310&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vshulcz/deja-vu) [![npm 30d 5,274](https://img.shields.io/static/v1?label=npm+30d&message=5%2C274&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deja) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deja)
 <!-- END META -->
 
-> **实现功能**：在 DSH 中搜索同机其他编码 Agent 的历史，并通过工具、命令和可选自动召回提供上下文。
+> **功能**：在 DSH 中搜索同机其他编码 Agent 的历史，并通过工具、命令和可选自动召回提供上下文。
 
-> **核心亮点**：把DSH原生历史范围之外的同机Agent日志接成统一检索与上下文入口；核心索引机制归deja CLI，不重复当适配器原创。见[Q01](#research-q01)。
+> **亮点**：把DSH原生历史范围之外的同机Agent日志接成统一检索与上下文入口；核心索引机制归deja CLI，不重复当适配器原创。见[Q01](#research-q01)。
 
-> **风险与缺陷**：本地无LLM索引不等于召回不发模型，旧结论可污染当前任务；同步CLI失败转空串也会混淆无匹配。见[Q03](#research-q03)。
+> **主要限制**：本地无LLM索引不等于召回不发模型，旧结论可污染当前任务；同步CLI失败转空串也会混淆无匹配。见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@ DSH原生session-query负责自身会话，跨Agent用原日志grep为简单对�
 
 > **亮点**：把DSH原生历史范围之外的同机Agent日志接成统一检索与上下文入口；核心索引机制归deja CLI，不重复当适配器原创。见[Q01](#research-q01)。
 
-把DSH原生历史范围之外的同机Agent日志接成统一检索与上下文入口；核心索引机制归deja CLI，不重复当适配器原创。见[Q01](#research-q01)。
-
 参数数组、明确子命令和前导--、分页及模板惰化值得借鉴；同步20秒与广泛吞异常牺牲可诊断性，应区分可选服务失败和确无历史，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ DSH原生session-query负责自身会话，跨Agent用原日志grep为简单对�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[21b3c73](https://github.com/AdenXie/dsh-vercel/tree/21b3c7372284ab53d10e61f2c717d44f752d9567)
+源码版本：[21b3c73](https://github.com/AdenXie/dsh-vercel/tree/21b3c7372284ab53d10e61f2c717d44f752d9567)
 
 <!-- BEGIN META -->
 [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adenxie/dsh-vercel)
 <!-- END META -->
 
-> **实现功能**：通过OAuth接入Vercel官方MCP，在DSH按Agent搜索加载工具、分页长结果并按需读取随包指南。
+> **功能**：通过OAuth接入Vercel官方MCP，在DSH按Agent搜索加载工具、分页长结果并按需读取随包指南。
 
-> **核心亮点**：把OAuth、Agent工具面预算与结果分页接合，减少整目录上下文和接线。详见[Q01](#research-q01)。
+> **亮点**：把OAuth、Agent工具面预算与结果分页接合，减少整目录上下文和接线。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：单机全profile共享token，整份保存无CAS，clear未阻止已在途exchange后commit，投影可能截断单项。详见[Q04](#research-q04)。
+> **主要限制**：单机全profile共享token，整份保存无CAS，clear未阻止已在途exchange后commit，投影可能截断单项。详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把OAuth、Agent工具面预算与结果分页接合，减少整目录上下文和接线。详见[Q01](#research-q01)。
 
-把OAuth、Agent工具面预算与结果分页接合，减少整目录上下文和接线。详见[Q01](#research-q01)。
-
 作用域mask/guard与generation、PKCE保旧和窄scope重试可借鉴，需凭据epoch/CAS。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

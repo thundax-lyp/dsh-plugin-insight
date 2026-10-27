@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[89b7991](https://github.com/iflytek/skillhub/tree/89b7991e411733e3ec893acaad4b8f6ffb0c2908/plugins/dsh)
+源码版本：[89b7991](https://github.com/iflytek/skillhub/tree/89b7991e411733e3ec893acaad4b8f6ffb0c2908/plugins/dsh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5,292](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C292&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/iflytek/skillhub) [![npm 30d 257](https://img.shields.io/static/v1?label=npm+30d&message=257&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@astron-team/skillhub-dsh) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@astron-team/skillhub-dsh)
 <!-- END META -->
 
-> **实现功能**：在DSH搜索和查看SkillHub技能，管理用户或项目级安装、升级、卸载及当前可用性。
+> **功能**：在DSH搜索和查看SkillHub技能，管理用户或项目级安装、升级、卸载及当前可用性。
 
-> **核心亮点**：相对网页下载加手工复制，增量是精确版本与指纹、用户/项目位置、来源和会话范围绑定，以及结果未知时查原操作。它把“安装成功”的多个阶段拆开，避免同名目录认领其他来源或把accepted当完成。业务仍是技能分发维护，不是自动证明技能安全或更好完成用户任务；匿名市场审核不可访问不能当通过。 依据[Q03](#research-q03)。
+> **亮点**：相对网页下载加手工复制，增量是精确版本与指纹、用户/项目位置、来源和会话范围绑定，以及结果未知时查原操作。它把“安装成功”的多个阶段拆开，避免同名目录认领其他来源或把accepted当完成。业务仍是技能分发维护，不是自动证明技能安全或更好完成用户任务；匿名市场审核不可访问不能当通过。 依据[Q03](#research-q03)。
 
-> **风险与缺陷**：关键质疑是安装文件到模型真正可用之间存在多层状态。Host已经把discovery confirmed/unconfirmed分开，README明确本地文件存在不代表DSH启用、历史完成不代表当前安装。兼容门禁严格到Host/Client发行版和Cordis组合，普通profile隔离也不隔离共享inventory。旧CLI与v2库存混写、或只恢复旧inventory而不恢复技能文件，会破坏管理假设。 依据[Q04](#research-q04)。
+> **主要限制**：关键质疑是安装文件到模型真正可用之间存在多层状态。Host已经把discovery confirmed/unconfirmed分开，README明确本地文件存在不代表DSH启用、历史完成不代表当前安装。兼容门禁严格到Host/Client发行版和Cordis组合，普通profile隔离也不隔离共享inventory。旧CLI与v2库存混写、或只恢复旧inventory而不恢复技能文件，会破坏管理假设。 依据[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：相对网页下载加手工复制，增量是精确版本与指纹、用户/项目位置、来源和会话范围绑定，以及结果未知时查原操作。它把“安装成功”的多个阶段拆开，避免同名目录认领其他来源或把accepted当完成。业务仍是技能分发维护，不是自动证明技能安全或更好完成用户任务；匿名市场审核不可访问不能当通过。 依据[Q03](#research-q03)。
 
-相对网页下载加手工复制，增量是精确版本与指纹、用户/项目位置、来源和会话范围绑定，以及结果未知时查原操作。它把“安装成功”的多个阶段拆开，避免同名目录认领其他来源或把accepted当完成。业务仍是技能分发维护，不是自动证明技能安全或更好完成用户任务；匿名市场审核不可访问不能当通过。 依据[Q03](#research-q03)。
-
 值得借鉴的是Host-only selection scope、accepted与完成分离、旧journal转unknown、受理后独立生命周期，以及操作前重新检查路径/策略。移植需连同本地安装核心、指纹与日志契约，不能仅复用UI。归档指纹和来源核验不判断技能指令是否可信；审核和模型真实运行要作为独立验收。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[46f407f](https://github.com/AAAlenwow/dsh-spring-admin-kit/tree/46f407f29a9cc22f733962a8c56c00b65ef0e9d8)
+源码版本：[46f407f](https://github.com/AAAlenwow/dsh-spring-admin-kit/tree/46f407f29a9cc22f733962a8c56c00b65ef0e9d8)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：注册Excel批量导入导出及Thymeleaf/LayUI模板规范两个DSH技能。
+> **功能**：注册Excel批量导入导出及Thymeleaf/LayUI模板规范两个DSH技能。
 
-> **核心亮点**：把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。
+> **亮点**：把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。
 
-> **风险与缺陷**：导入示例catch异常返回字符串且插入不更新已有键map，事务注解不能保证整批回滚；提示式守卫也不强制拦截。参见[Q02](#research-q02)。
+> **主要限制**：导入示例catch异常返回字符串且插入不更新已有键map，事务注解不能保证整批回滚；提示式守卫也不强制拦截。参见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。
 
-把Excel三件套与模板冲突经验变成可发现技能，减少临时提示与拷贝遗漏；不是运行时代码生成服务。参见[Q01](#research-q01)。
-
 小型注册器易维护，但简化YAML仅适合当前单行字段；可借鉴前置信息/检查单，复制代码前要修数据事务语义与并发状态。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

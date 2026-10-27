@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[2957277](https://github.com/ccch1mneyyy/dsh-TUI/tree/29572774890a4a89ae1fa562dd15a1ae21bb3593)
+源码版本：[2957277](https://github.com/ccch1mneyyy/dsh-TUI/tree/29572774890a4a89ae1fa562dd15a1ae21bb3593)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5,735](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C735&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ccch1mneyyy/dsh-TUI) [![npm 30d 44,529](https://img.shields.io/static/v1?label=npm+30d&message=44%2C529&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui)
 <!-- END META -->
 
-> **实现功能**：为DSH提供交互终端界面，显示流式回答、工具、审批与会话状态。
+> **功能**：为DSH提供交互终端界面，显示流式回答、工具、审批与会话状态。
 
-> **核心亮点**：[Q02](#research-q02)将宿主适配、共享事件投影与终端显示分离，live/replay同路和生命周期接线比日志抓取更可核对；不是提升模型能力。
+> **亮点**：[Q02](#research-q02)将宿主适配、共享事件投影与终端显示分离，live/replay同路和生命周期接线比日志抓取更可核对；不是提升模型能力。
 
-> **风险与缺陷**：[Q03](#research-q03)全局与profile副本、终端协议及shared home会影响兼容和恢复；safe profile不代表与当前环境完全隔离。
+> **主要限制**：[Q03](#research-q03)全局与profile副本、终端协议及shared home会影响兼容和恢复；safe profile不代表与当前环境完全隔离。
 
 **本文目录**
 
@@ -94,8 +94,6 @@
 
 > **亮点**：[Q02](#research-q02)将宿主适配、共享事件投影与终端显示分离，live/replay同路和生命周期接线比日志抓取更可核对；不是提升模型能力。
 
-[Q02](#research-q02)将宿主适配、共享事件投影与终端显示分离，live/replay同路和生命周期接线比日志抓取更可核对；不是提升模型能力。
-
 适配器到共享projector的翻译层值得复用，可减少多后端UI重复；依赖顺序放在runtime而非阻塞loader也是明确设计。复用时要保留session生命周期、replay语义与宿主权限事实，不只搬状态动画。
 
 <a id="detail-section-5"></a>
@@ -144,7 +142,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[1dfa173](https://github.com/ArtlexYoung/dsh-super-code/tree/1dfa1736d82bf75f0c88fc26da712d2798c70c50)
+源码版本：[1dfa173](https://github.com/ArtlexYoung/dsh-super-code/tree/1dfa1736d82bf75f0c88fc26da712d2798c70c50)
 
 <!-- BEGIN META -->
 [![GitHub ★ 16](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=16&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ArtlexYoung/dsh-super-code) [![npm 30d 2,714](https://img.shields.io/static/v1?label=npm+30d&message=2%2C714&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-code) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-code)
 <!-- END META -->
 
-> **实现功能**：提供编码 Agent 预设、任务与委派台账、专业方法、分层记忆和可配置运行预算。
+> **功能**：提供编码 Agent 预设、任务与委派台账、专业方法、分层记忆和可配置运行预算。
 
-> **核心亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。
 
-> **风险与缺陷**：[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.7和新宿主。默认宽松删除提示不是全面删除防线。
+> **主要限制**：[Q03](#research-q03) 指出成员checks与cost仍可自报，结构一致不证明完成验收；历史冻结候选评测亦不能直接套到固定0.3.7和新宿主。默认宽松删除提示不是全面删除防线。
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 的主要增量在需求来源可核查、任务修订绑定与分层上下文，而执行loop和spawn继承宿主。它改善协作材料的可审查性，不能把reviewable直接当补丁正确。
-
 将execution归宿主、任务binding和源码引用验证写成独立模块是可借鉴点。安装器先存意图与所有权检查减少重启反复写风险；预算bridge依赖宿主compaction契约，升级需专项核查。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

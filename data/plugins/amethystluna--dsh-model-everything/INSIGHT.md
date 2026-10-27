@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[29b0bae](https://github.com/AmethystLuna/dsh-model-everything/tree/29b0bae2bf4b355243a0ca757512dc489440d659)
+源码版本：[29b0bae](https://github.com/AmethystLuna/dsh-model-everything/tree/29b0bae2bf4b355243a0ca757512dc489440d659)
 
 <!-- BEGIN META -->
 [![npm 30d 1,186](https://img.shields.io/static/v1?label=npm+30d&message=1%2C186&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-model-everything) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-model-everything)
 <!-- END META -->
 
-> **实现功能**：把设计和代码断言建成模型，执行验证、图审查和前后报告比较。
+> **功能**：把设计和代码断言建成模型，执行验证、图审查和前后报告比较。
 
-> **核心亮点**：[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
+> **亮点**：[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
 
-> **风险与缺陷**：[Q03](#research-q03) 模型通过能否说明实际代码通过？引擎明确不建立抽象，漏抽一个实现事件便能使模型结论失去代表性；应把报告当抽象范围内的证据，不能替代实现验收。
+> **主要限制**：[Q03](#research-q03) 模型通过能否说明实际代码通过？引擎明确不建立抽象，漏抽一个实现事件便能使模型结论失去代表性；应把报告当抽象范围内的证据，不能替代实现验收。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
 
-[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
-
 统一hash与选项拒绝值得复用，但必须连同规范版本和判定语义迁移；src/index.ts批量注册中途失败后的effect与重试关系尚需宿主检验，不能当已确认故障。详见[Q02](#research-q02)、[Q04](#research-q04)。
 
 <a id="detail-section-9"></a>
@@ -162,7 +160,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[d957dd5](https://github.com/bowenliang123/dsh-context/tree/d957dd56045958e7c72c214d9e94450f19f5fcf8)
+源码版本：[d957dd5](https://github.com/bowenliang123/dsh-context/tree/d957dd56045958e7c72c214d9e94450f19f5fcf8)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3,566](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C566&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 145,261](https://img.shields.io/static/v1?label=npm+30d&message=145%2C261&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
 <!-- END META -->
 
-> **实现功能**：展示DSH上下文组成、请求趋势、事件与会话网络，提供诊断视图和提示前后缀配置。
+> **功能**：展示DSH上下文组成、请求趋势、事件与会话网络，提供诊断视图和提示前后缀配置。
 
-> **核心亮点**：[Q03](#research-q03)识别出从总量环到逐请求来源定位的可观察性贡献，头/明细分离把重集合按需读取。相对手查日志改善定位组织，不把宿主投影或估算规则当原创，也不宣称自动提高模型效果。
+> **亮点**：[Q03](#research-q03)识别出从总量环到逐请求来源定位的可观察性贡献，头/明细分离把重集合按需读取。相对手查日志改善定位组织，不把宿主投影或估算规则当原创，也不宣称自动提高模型效果。
 
-> **风险与缺陷**：[Q04](#research-q04)说明密度估算、有界保留与冷读跳过会收窄“完整”含义，全局prompt设置又可改变被观察对象；诊断试用应先保持空前后缀并明确数据来源。
+> **主要限制**：[Q04](#research-q04)说明密度估算、有界保留与冷读跳过会收窄“完整”含义，全局prompt设置又可改变被观察对象；诊断试用应先保持空前后缀并明确数据来源。
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：[Q03](#research-q03)识别出从总量环到逐请求来源定位的可观察性贡献，头/明细分离把重集合按需读取。相对手查日志改善定位组织，不把宿主投影或估算规则当原创，也不宣称自动提高模型效果。
 
-[Q03](#research-q03)识别出从总量环到逐请求来源定位的可观察性贡献，头/明细分离把重集合按需读取。相对手查日志改善定位组织，不把宿主投影或估算规则当原创，也不宣称自动提高模型效果。
-
 轻头部/按需明细、缓存绑定持久revision、单主机冷读取队列是可借鉴的重状态观测设计。请求错误返回typed failure，不把缺数据伪装为空历史；缓存随config remount重建，避免不同bounds混用。移植需要目标宿主提供投影、不可变revision和准入服务，估算规则还要与上游口径同步，不能复制UI就保持一致。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[bce6c99](https://github.com/Areium/dsh-fail-logger/tree/bce6c992d67485475caeed00b8997704b3657d93)
+源码版本：[bce6c99](https://github.com/Areium/dsh-fail-logger/tree/bce6c992d67485475caeed00b8997704b3657d93)
 
 <!-- BEGIN META -->
 [![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Areium/dsh-fail-logger) [![npm 30d 1,149](https://img.shields.io/static/v1?label=npm+30d&message=1%2C149&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fail-logger) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fail-logger)
 <!-- END META -->
 
-> **实现功能**：从 DSH 会话事件采集工具失败，去重计数后写入本地 Skill，并可注入预防和恢复提示。
+> **功能**：从 DSH 会话事件采集工具失败，去重计数后写入本地 Skill，并可注入预防和恢复提示。
 
-> **核心亮点**：相对人工翻查会话日志，插件把明确标记的工具失败变成按原因计数和分类的本地 Skill，并可在后续步骤提供预防提示。它没有模型修复器或自动纠错保证，贡献是把运行事实组织成可复用恢复资料；规则注入的行为影响应单独评估。[Q01](#research-q01)
+> **亮点**：相对人工翻查会话日志，插件把明确标记的工具失败变成按原因计数和分类的本地 Skill，并可在后续步骤提供预防提示。它没有模型修复器或自动纠错保证，贡献是把运行事实组织成可复用恢复资料；规则注入的行为影响应单独评估。[Q01](#research-q01)
 
-> **风险与缺陷**：能否可靠保存失败记录决定后续记忆价值。flush 在 writeAtomic 状态文件之前就 dirty=false，而 catch 只安排再次调用 flush，没有恢复 dirty；下一次回调可能直接被开头 guard 忽略。因此写失败不必然如注释所说保持重试，Skill 写失败时还可能出现账本已提交而文本未更新。该路径来自源码顺序，未执行故障复现。[Q02](#research-q02)
+> **主要限制**：能否可靠保存失败记录决定后续记忆价值。flush 在 writeAtomic 状态文件之前就 dirty=false，而 catch 只安排再次调用 flush，没有恢复 dirty；下一次回调可能直接被开头 guard 忽略。因此写失败不必然如注释所说保持重试，Skill 写失败时还可能出现账本已提交而文本未更新。该路径来自源码顺序，未执行故障复现。[Q02](#research-q02)
 
 **本文目录**
 
@@ -97,8 +97,6 @@
 
 > **亮点**：相对人工翻查会话日志，插件把明确标记的工具失败变成按原因计数和分类的本地 Skill，并可在后续步骤提供预防提示。它没有模型修复器或自动纠错保证，贡献是把运行事实组织成可复用恢复资料；规则注入的行为影响应单独评估。[Q01](#research-q01)
 
-相对人工翻查会话日志，插件把明确标记的工具失败变成按原因计数和分类的本地 Skill，并可在后续步骤提供预防提示。它没有模型修复器或自动纠错保证，贡献是把运行事实组织成可复用恢复资料；规则注入的行为影响应单独评估。[Q01](#research-q01)
-
 增量账本与磁盘锁合并避免简单覆盖，事件关联表有容量和时间界限，模板提示区与用户 Skill 其他部分分离，值得借鉴。写入状态与文本分两步且 dirty 提前清零削弱恢复；正则脱敏能减小风险，无法证明完整隐私或指令隔离。复用应带故障注入和投影一致性验收。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -147,7 +145,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

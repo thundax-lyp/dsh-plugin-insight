@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[d9b20e1](https://github.com/Airmetro/dsh-update-checker/tree/d9b20e1de7298f43a8bd50d0e3565685bb17eeb8)
+源码版本：[d9b20e1](https://github.com/Airmetro/dsh-update-checker/tree/d9b20e1de7298f43a8bd50d0e3565685bb17eeb8)
 
 <!-- BEGIN META -->
 [![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Airmetro/dsh-update-checker) [![npm 30d 7,106](https://img.shields.io/static/v1?label=npm+30d&message=7%2C106&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-update-checker) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-update-checker)
 <!-- END META -->
 
-> **实现功能**：在DSH GUI检查主程序和第三方插件版本，提供备份更新回退与Web重启流程，Desktop主程序转原生更新。
+> **功能**：在DSH GUI检查主程序和第三方插件版本，提供备份更新回退与Web重启流程，Desktop主程序转原生更新。
 
-> **核心亮点**：将多源版本/频道判断、staging/备份/锁目录原地同步、声明回执与平台更新委托整合到GUI，工程增量在维护编排而非新包管理算法。详见[Q03](#research-q03)。
+> **亮点**：将多源版本/频道判断、staging/备份/锁目录原地同步、声明回执与平台更新委托整合到GUI，工程增量在维护编排而非新包管理算法。详见[Q03](#research-q03)。
 
-> **风险与缺陷**：writeGate拒绝返回err=json(...)而json无返回值，if(g.err)无法退出；多条写路由拒绝后仍可继续副作用，且全局ok可能包持久化失败/身份未知。未运行复现。详见[Q04](#research-q04)、[Q05](#research-q05)。
+> **主要限制**：writeGate拒绝返回err=json(...)而json无返回值，if(g.err)无法退出；多条写路由拒绝后仍可继续副作用，且全局ok可能包持久化失败/身份未知。未运行复现。详见[Q04](#research-q04)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@
 
 > **亮点**：将多源版本/频道判断、staging/备份/锁目录原地同步、声明回执与平台更新委托整合到GUI，工程增量在维护编排而非新包管理算法。详见[Q03](#research-q03)。
 
-将多源版本/频道判断、staging/备份/锁目录原地同步、声明回执与平台更新委托整合到GUI，工程增量在维护编排而非新包管理算法。详见[Q03](#research-q03)。
-
 后台main worker在安装/树校验失败尝试rollbackFromBackup，先还原main-snapshot的@deepseek-ai子树，缺失/不匹配再npm重装；该快照不是整部署和全部第三方依赖/状态/锁的原子快照。Host公开rollbackMain则直接npm安装备份版本再sync，并不使用worker的离线snapshot分支，故“回滚都离线”不成立。
 
 worker health检查首页200或401/403/407，探本插件instanceId拒绝同一旧实例；若instanceId不可用，只写note后仍可ok=true，auth-gated分支直接跳前端资产检查，非要求必须新身份。首页200最多看30个assets/plugins引用，不能证明插件全部加载或业务可用。重启等待后仍不健康记录E_RESTART/restartPending、installed新版本并再次尝试startService，区分安装完成与恢复失败值得保留，文案不应让用户以为可直接使用。
@@ -168,7 +166,7 @@ writeGate拒绝返回err=json(...)而json无返回值，if(g.err)无法退出；
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

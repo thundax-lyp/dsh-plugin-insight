@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[ba29660](https://github.com/AdonisSheldon/dsh-openai-oauth/tree/ba29660530fe05779b06f129a0c0ed5c2237b73f)
+源码版本：[ba29660](https://github.com/AdonisSheldon/dsh-openai-oauth/tree/ba29660530fe05779b06f129a0c0ed5c2237b73f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AdonisSheldon/dsh-openai-oauth) [![npm 30d 770](https://img.shields.io/static/v1?label=npm+30d&message=770&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openai-oauth) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openai-oauth)
 <!-- END META -->
 
-> **实现功能**：为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。
+> **功能**：为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。
 
-> **核心亮点**：在DSH原生LLM路由内整合双方式OAuth、本机凭据与流/replay适配，不启动外部Agent；派生Harness转换归属上游，不是新OAuth协议。详见[Q01](#research-q01)。
+> **亮点**：在DSH原生LLM路由内整合双方式OAuth、本机凭据与流/replay适配，不启动外部Agent；派生Harness转换归属上游，不是新OAuth协议。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：静态模型表/零cost不证明资格或免费；明文凭据与本机账户信任、退出/持久化交错、无总deadline和非法参数退{}限制无损/可靠性主张。详见[Q03](#research-q03)。
+> **主要限制**：静态模型表/零cost不证明资格或免费；明文凭据与本机账户信任、退出/持久化交错、无总deadline和非法参数退{}限制无损/可靠性主张。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：在DSH原生LLM路由内整合双方式OAuth、本机凭据与流/replay适配，不启动外部Agent；派生Harness转换归属上游，不是新OAuth协议。详见[Q01](#research-q01)。
 
-在DSH原生LLM路由内整合双方式OAuth、本机凭据与流/replay适配，不启动外部Agent；派生Harness转换归属上游，不是新OAuth协议。详见[Q01](#research-q01)。
-
 凭据以未加密JSON保存于DSH_HOME/plugins/dsh-openai-oauth，文件0600/目录0700、lstat拒绝最终目录/文件符号链接，严格envelope/字段，proper-lockfile串行写删；临时wx文件、fsync、rename再目录sync降低半写风险。刷新先读快路径，临近60秒过期在锁内重读，避免两个刷新直接争同一旧token。并非密钥库加密，DSH_HOME上级/同账户竞态或恶意进程不被这些操作完全隔离。read不取锁但rename保证通常读旧或新完整文件，不声称所有路径TOCTOU已解决。
 
 run把winner设complete后才await modify；logout不走exclusive，winner已complete则不等done，直接delete。若持久化与delete获取锁顺序反转，有迟到保存可能；现源码缺logout epoch/完成栅栏，本轮未执行该交错，不宣称稳定复现/远程攻击。退出删除本地凭据，不调用远端token撤销；已取得credential的在途模型请求不会由logout自动取消。
@@ -168,7 +166,7 @@ run把winner设complete后才await modify；logout不走exclusive，winner已com
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

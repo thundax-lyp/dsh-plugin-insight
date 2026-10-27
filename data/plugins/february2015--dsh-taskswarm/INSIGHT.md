@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[032e2c9](https://github.com/february2015/dsh-taskswarm/tree/032e2c9d228c20cab65fe0ea061d78a7c753ab8c)
+源码版本：[032e2c9](https://github.com/february2015/dsh-taskswarm/tree/032e2c9d228c20cab65fe0ea061d78a7c753ab8c)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/february2015/dsh-taskswarm)
 <!-- END META -->
 
-> **实现功能**：为DSH按任务包依赖分波并行调度worker，以Git worktree、检查点、状态/邮箱和review/merge流程集成代码产出。
+> **功能**：为DSH按任务包依赖分波并行调度worker，以Git worktree、检查点、状态/邮箱和review/merge流程集成代码产出。
 
-> **核心亮点**：把TaskPlane式外置任务、wave/worktree/checkpoint与DSH内部agent/supervisor/恢复接线，支持代码现场持续推进；总管理负担减少仍是推断。详见[Q01](#research-q01)、[Q03](#research-q03)。
+> **亮点**：把TaskPlane式外置任务、wave/worktree/checkpoint与DSH内部agent/supervisor/恢复接线，支持代码现场持续推进；总管理负担减少仍是推断。详见[Q01](#research-q01)、[Q03](#research-q03)。
 
-> **风险与缺陷**：默认PASS/none与blocked可合并、首review缺.seq抛错、普通merge不统一check；worktree非权限沙箱且dashboard非显式loopback绑定，merged不能当accepted。详见[Q04](#research-q04)、[Q05](#research-q05)。
+> **主要限制**：默认PASS/none与blocked可合并、首review缺.seq抛错、普通merge不统一check；worktree非权限沙箱且dashboard非显式loopback绑定，merged不能当accepted。详见[Q04](#research-q04)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -112,8 +112,6 @@ TaskPlane是明确MIT移植参照，wave/worktree/git/mailbox并非本项目新�
 
 > **亮点**：把TaskPlane式外置任务、wave/worktree/checkpoint与DSH内部agent/supervisor/恢复接线，支持代码现场持续推进；总管理负担减少仍是推断。详见[Q01](#research-q01)、[Q03](#research-q03)。
 
-把TaskPlane式外置任务、wave/worktree/checkpoint与DSH内部agent/supervisor/恢复接线，支持代码现场持续推进；总管理负担减少仍是推断。详见[Q01](#research-q01)、[Q03](#research-q03)。
-
 task_runner advance/done会修改STATUS并git add -A/commit lane工作树，worker退出再checkpoint；能保存代码进度，但add -A也会纳入lane内所有未忽略改动，且runLane未检查退出checkpoint的ok。外部网络/数据库/文件副作用不随Git回滚，不能宣传崩溃绝不丢任何工作。
 
 批次落盘wavePlan和lane状态，updateLane重新读单lane写、拒绝aborted/complete再写；operator暂停来源限制自主恢复，是具体防护。恢复复用wavePlan ID布局却重新从当前磁盘读任务，缺失任务被filter，任务正文/依赖/代码没有按启动hash绑定。状态writeFileSync直接覆盖而非临时rename/fsync，损坏JSON读null，不能当断电事务日志；邮箱单消息temp+rename更谨慎，但drain先ack再由调用者处理不等业务确认交付。
@@ -168,7 +166,7 @@ TaskPlane是明确MIT移植参照，wave/worktree/git/mailbox并非本项目新�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

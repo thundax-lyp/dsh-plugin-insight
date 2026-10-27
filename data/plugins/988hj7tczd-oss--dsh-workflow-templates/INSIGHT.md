@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[26755f7](https://github.com/988hj7tczd-oss/dsh-workflow-templates/tree/26755f75a043418eeb3f59fa0a57a60542740abc)
+源码版本：[26755f7](https://github.com/988hj7tczd-oss/dsh-workflow-templates/tree/26755f75a043418eeb3f59fa0a57a60542740abc)
 
 <!-- BEGIN META -->
 [![npm 30d 385](https://img.shields.io/static/v1?label=npm+30d&message=385&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-workflow-templates) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-workflow-templates)
 <!-- END META -->
 
-> **实现功能**：12 个预置 JS workflow 编排脚本目录，提供列出、搜索、渲染调用起点和静态校验四工具。
+> **功能**：12 个预置 JS workflow 编排脚本目录，提供列出、搜索、渲染调用起点和静态校验四工具。
 
-> **核心亮点**：提供可检索的编排脚本起点和轻量格式诊断，减少空白起草。详见[Q01](#research-q01)。
+> **亮点**：提供可检索的编排脚本起点和轻量格式诊断，减少空白起草。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：invalid 模板仍可 run，缺参仅文字提醒；部分模板返回与描述不符，不能把格式校验当业务验收。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：invalid 模板仍可 run，缺参仅文字提醒；部分模板返回与描述不符，不能把格式校验当业务验收。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：提供可检索的编排脚本起点和轻量格式诊断，减少空白起草。详见[Q01](#research-q01)。
 
-提供可检索的编排脚本起点和轻量格式诊断，减少空白起草。详见[Q01](#research-q01)。
-
 Cordis 插件同步读取模板、静态检查后注册四工具；run 渲染 Markdown 而不调用 workflow。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ invalid 模板仍可 run，缺参仅文字提醒；部分模板返回与描述�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

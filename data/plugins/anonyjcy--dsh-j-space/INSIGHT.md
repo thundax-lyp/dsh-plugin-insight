@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[a3212f5](https://github.com/AnonyJcy/dsh-j-space/tree/a3212f57d78fcc1a55342afb261cef3dd38b6454)
+源码版本：[a3212f5](https://github.com/AnonyJcy/dsh-j-space/tree/a3212f57d78fcc1a55342afb261cef3dd38b6454)
 
 <!-- BEGIN META -->
 [![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AnonyJcy/dsh-j-space) [![npm 30d 2,004](https://img.shields.io/static/v1?label=npm+30d&message=2%2C004&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space)
 <!-- END META -->
 
-> **实现功能**：将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。
+> **功能**：将J-Space问题拆解、持久控制器和工作区账本作为DSH Agent预设接入。
 
-> **核心亮点**：适配增量是原生预设、包内技能定位与DSH权限映射；上游认知模块和控制器明确归上游，不计为适配原创。[Q03](#research-q03)
+> **亮点**：适配增量是原生预设、包内技能定位与DSH权限映射；上游认知模块和控制器明确归上游，不计为适配原创。[Q03](#research-q03)
 
-> **风险与缺陷**：结构、hash和轮次能约束记录，却不能证明结论正确；没有可信hook时只属合作控制，不能视作自动强制门禁。[Q04](#research-q04)
+> **主要限制**：结构、hash和轮次能约束记录，却不能证明结论正确；没有可信hook时只属合作控制，不能视作自动强制门禁。[Q04](#research-q04)
 
 **本文目录**
 
@@ -103,8 +103,6 @@
 
 > **亮点**：适配增量是原生预设、包内技能定位与DSH权限映射；上游认知模块和控制器明确归上游，不计为适配原创。[Q03](#research-q03)
 
-适配增量是原生预设、包内技能定位与DSH权限映射；上游认知模块和控制器明确归上游，不计为适配原创。[Q03](#research-q03)
-
 上游来源固定、可移除适配和有界归档校验有复用价值；控制器锁与fsync/replace减少状态损坏。移植仍需宿主身份、事件及失败关闭策略，保真不等于语义验收。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

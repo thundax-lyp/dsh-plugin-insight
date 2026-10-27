@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[fd84079](https://github.com/AhYi8/dsh-agent-recycle-guard/tree/fd84079f98170d5066547c087c58c824b4e59d07)
+源码版本：[fd84079](https://github.com/AhYi8/dsh-agent-recycle-guard/tree/fd84079f98170d5066547c087c58c824b4e59d07)
 
 <!-- BEGIN META -->
 [![npm 30d 876](https://img.shields.io/static/v1?label=npm+30d&message=876&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-agent-recycle-guard) [![最新发布 2026-10-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-agent-recycle-guard)
 <!-- END META -->
 
-> **实现功能**：将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。
+> **功能**：将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。
 
-> **核心亮点**：将有限删除识别、真实Shell参数展开和系统回收接入DSH原工具权限链，并在分析失败时拒绝，而非宿主插件直接越过工具执行回收；增量是边界清楚的机制组合。详见[Q01](#research-q01)。
+> **亮点**：将有限删除识别、真实Shell参数展开和系统回收接入DSH原工具权限链，并在分析失败时拒绝，而非宿主插件直接越过工具执行回收；增量是边界清楚的机制组合。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：有限脚本检查并不证明任意代码安全，超大、未知编码和深层加载可能放行，路径复核也非原子隔离；这些静态边界必须限制其作为删除缓冲的用途。详见[Q03](#research-q03)。
+> **主要限制**：有限脚本检查并不证明任意代码安全，超大、未知编码和深层加载可能放行，路径复核也非原子隔离；这些静态边界必须限制其作为删除缓冲的用途。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -105,8 +105,6 @@
 
 > **亮点**：将有限删除识别、真实Shell参数展开和系统回收接入DSH原工具权限链，并在分析失败时拒绝，而非宿主插件直接越过工具执行回收；增量是边界清楚的机制组合。详见[Q01](#research-q01)。
 
-将有限删除识别、真实Shell参数展开和系统回收接入DSH原工具权限链，并在分析失败时拒绝，而非宿主插件直接越过工具执行回收；增量是边界清楚的机制组合。详见[Q01](#research-q01)。
-
 allow/deny/rewrite协议与宿主重入、环境校验及失败闭锁值得借鉴；迁移需重新确认事件顺序、Shell语义和平台回收，不能只复制正则。详见[Q06](#research-q06)。
 
 <a id="detail-section-5"></a>
@@ -155,7 +153,7 @@ allow/deny/rewrite协议与宿主重入、环境校验及失败闭锁值得借�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

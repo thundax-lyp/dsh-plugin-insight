@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[678b5a2](https://github.com/AlyceStocking/dsh-harness-switch/tree/678b5a218f750c61c055bb113a4ff003948aa774)
+源码版本：[678b5a2](https://github.com/AlyceStocking/dsh-harness-switch/tree/678b5a218f750c61c055bb113a4ff003948aa774)
 
 <!-- BEGIN META -->
 [![npm 30d 39](https://img.shields.io/static/v1?label=npm+30d&message=39&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-harness-switch) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-harness-switch)
 <!-- END META -->
 
-> **实现功能**：在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。
+> **功能**：在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。
 
-> **核心亮点**：相对提示词替换，已实现增量是完整执行核心与DSH原生入口的桥接，以及显式审批/会话映射；核心能力归固定上游Kimi，不计为插件原创。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对提示词替换，已实现增量是完整执行核心与DSH原生入口的桥接，以及显式审批/会话映射；核心能力归固定上游Kimi，不计为插件原创。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：“同一会话”不等于两边状态无损一致。pending避免未知结果重复执行，但用户承担多存储备份与人工恢复，外层token统计也不完整；这些限制直接约束持续采用。[Q03](#research-q03)
+> **主要限制**：“同一会话”不等于两边状态无损一致。pending避免未知结果重复执行，但用户承担多存储备份与人工恢复，外层token统计也不完整；这些限制直接约束持续采用。[Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相对提示词替换，已实现增量是完整执行核心与DSH原生入口的桥接，以及显式审批/会话映射；核心能力归固定上游Kimi，不计为插件原创。[Q01](#research-q01) [Q02](#research-q02)
 
-相对提示词替换，已实现增量是完整执行核心与DSH原生入口的桥接，以及显式审批/会话映射；核心能力归固定上游Kimi，不计为插件原创。[Q01](#research-q01) [Q02](#research-q02)
-
 会话上下文绑定、显式拒绝未知结果重放、审批拒绝默认和宿主附件读取值得借鉴；SDK vendor与双状态版本兼容是主要维护成本。必须保留上游provenance与MIT，不把构建产物规模当原创。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

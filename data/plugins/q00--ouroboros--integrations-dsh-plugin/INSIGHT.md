@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[05d2718](https://github.com/Q00/ouroboros/tree/05d2718de3edf7ba25de920c78652f646b7a9704/integrations/dsh-plugin)
+源码版本：[05d2718](https://github.com/Q00/ouroboros/tree/05d2718de3edf7ba25de920c78652f646b7a9704/integrations/dsh-plugin)
 
 <!-- BEGIN META -->
 [![GitHub ★ 6,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C272&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
 <!-- END META -->
 
-> **实现功能**：通过DSH的MCP客户端挂载Ouroboros访谈、规格、执行与评估工具。
+> **功能**：通过DSH的MCP客户端挂载Ouroboros访谈、规格、执行与评估工具。
 
-> **核心亮点**：[Q03](#research-q03)说明这是可安装的MCP配置桥，增量是合理默认值与显式凭据边界，核心规格/执行算法归上游。相对手写等效配置便利有限，不能把整套引擎能力当此组件原创。
+> **亮点**：[Q03](#research-q03)说明这是可安装的MCP配置桥，增量是合理默认值与显式凭据边界，核心规格/执行算法归上游。相对手写等效配置便利有限，不能把整套引擎能力当此组件原创。
 
-> **风险与缺陷**：[Q04](#research-q04)揭示工具列出不等于访谈可用，且uvx不固定引擎版本，使本轮固定配置证据无法完整约束实际执行。应先解决版本锁与后端可调用性，再讨论长任务采用。
+> **主要限制**：[Q04](#research-q04)揭示工具列出不等于访谈可用，且uvx不固定引擎版本，使本轮固定配置证据无法完整约束实际执行。应先解决版本锁与后端可调用性，再讨论长任务采用。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：[Q03](#research-q03)说明这是可安装的MCP配置桥，增量是合理默认值与显式凭据边界，核心规格/执行算法归上游。相对手写等效配置便利有限，不能把整套引擎能力当此组件原创。
 
-[Q03](#research-q03)说明这是可安装的MCP配置桥，增量是合理默认值与显式凭据边界，核心规格/执行算法归上游。相对手写等效配置便利有限，不能把整套引擎能力当此组件原创。
-
 可复用的部分是显式短凭据清单、对长任务放宽超时和soft-fail隔离。默认host避免误设不可用CLI，README诚实记录注册/执行分离与重连限制。长期维护仍要跟踪宿主MCP版本、工具签名和上游引擎包；这些由外部服务实现，不把注释中的承诺当桥自己的恢复机制。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
