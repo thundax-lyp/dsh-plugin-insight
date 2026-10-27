@@ -1,0 +1,45 @@
+{
+    "repository": "paean-ai/deeptide",
+    "repository_id": 1230068255,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 1105,
+    "pushed_at": "2026-08-22T08:56:10Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "deeptide",
+        "captured_at": "2026-10-27T04:59:15.812Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 100,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/deeptide",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-05-05T16:45:43.534Z",
+            "captured_at": "2026-10-27T04:59:15.812Z",
+            "source_url": "https://registry.npmjs.org/deeptide",
+            "error": null,
+            "latest_version": "0.11.8",
+            "latest_published_at": "2026-05-05T17:26:41.620Z",
+            "latest_error": null
+        }
+    }
+}

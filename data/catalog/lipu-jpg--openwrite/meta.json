@@ -1,0 +1,50 @@
+{
+    "repository": "LiPu-jpg/Openwrite",
+    "repository_id": 1171186947,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 884,
+    "pushed_at": "2026-10-27T05:01:35Z",
+    "issues": {
+        "open": null,
+        "closed": 62,
+        "created_30d": 53,
+        "closed_30d": 52,
+        "updated_30d": 53
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD68:2C38D4:486CD3:4E736C:6AE03076 and timestamp 2026-10-27 05:02:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-openwrite",
+        "captured_at": "2026-10-27T04:59:15.812Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 6332,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-openwrite",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-10T20:30:54.335Z",
+            "captured_at": "2026-10-26T20:32:35.909Z",
+            "source_url": "https://registry.npmjs.org/dsh-openwrite",
+            "error": null,
+            "latest_version": "0.2.27",
+            "latest_published_at": "2026-10-26T17:15:01.231Z",
+            "latest_error": null
+        }
+    }
+}

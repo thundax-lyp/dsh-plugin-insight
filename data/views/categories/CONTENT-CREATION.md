@@ -21,6 +21,7 @@
 | [DSH × Blender](#plugin-1368569221-root) | 将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 当前观察；先用一次性.blend场景验证GUI连接、暂停、headless和响应中断后状态，未核清前不直接接生产资产。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
+| [dsh-image-gen](#plugin-1336998801-root) | 为DSH提供对话生图、编辑、画布、批量生成和图库，并接入云端Provider与本地ComfyUI。 | 已有DSH图像任务者可先用单Provider、非敏感图片和小预算试用；核对附件、落盘和分项失败，保存故障不重新生成；不能管理通道差异与账单时退回供应商界面或固定ComfyUI。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
@@ -31,6 +32,7 @@
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tavern](#plugin-1335944000-root) | 高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。 | [Q04](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q04)仅建议能管理备份和变量的角色卡用户用独立档案试用，固定卡片与模型先验收状态再看速度。 |
+| [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将TongFlow媒体工作流、项目树和画布接入DSH会话，支持资产生成与审阅。 | 有多轮媒体资产任务的DSH用户可在副本项目限制额度试用；先核对宿主版本、Python与外部插件权限，人工审阅每轮产物；若需要强预算隔离或只偶发出图，退回供应商界面或简单脚本。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
@@ -38,7 +40,11 @@
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 | [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
 | [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
+| [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
+| [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
+| [Superdesign Skill](#plugin-1139329853-root) | 为编码Agent提供UI、演示稿和图形设计流程，并通过CLI连接Superdesign画布。 | 有设计迭代需求者可先用可公开UI片段试用，核对发送文件、费用和目标草稿后再生成；私密源码或确定性小修优先本地直接修改，不把缓存状态当持续上传许可。 |
+| [TongFlow](#plugin-1204369117-root) | 以模态和能力组织多媒体节点，提供可视化工作流及多种模型插件的执行入口。 | 已有多阶段媒体任务者可在本地副本先试一个slot和最少插件，限制账户额度并记录远端任务状态；若单次生成已足够，或不能承担持久卷和失败对账，继续现有供应商界面。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin 桌面写作应用](#plugin-1275436512-root) | 本地优先小说桌面软件，将设定、蓝图、写稿、审改与定稿组织成逐章流程。 | [Q04](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q04) 用短篇副本试一章，先明确合格稿标准、费用和人工预算；定稿响应未知先查committed及finalizationId，不重新创建提交。 |
 
@@ -185,6 +191,22 @@
 > **建议**：可探讨账号/素材/字段绑定和发布受理收据，逐次授权、页锁及unknown查询恢复，平台维护成本未验证。详见[Q05](../../plugins/7gzgn--dsh-douyin-publish/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/7gzgn--dsh-douyin-publish/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1336998801-root"></a>
+
+## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
+
+[![GitHub ★ 716](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=716&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 32,724](https://img.shields.io/static/v1?label=npm+30d&message=32%2C724&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
+
+> **用途**：供已用DSH且持续制作与编辑内容配图的创作者使用。
+
+> **亮点**：把对话、画布、Studio与图库中的图像生成和资产复用接到宿主，贡献在流程及Provider适配而非图像模型原创。[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01)
+
+> **思考**：远端生成、附件与工作区保存是不同成功阶段；批量部分失败或saveError不能用整批重跑处理，订阅免Key也不等于无费用或所有模型等价。[Q02](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q02) [Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03)
+
+> **建议**：用请求ID、附件ID和完整摘要跟踪分阶段状态，保存失败仅重试落盘，结果未知先对账；以故障点比较重复计费和旧资产影响，尚未验证。[Q04](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1422216012-root"></a>
 
@@ -346,6 +368,22 @@
 
 [查看完整分析](../../plugins/flizzywine--dsh-tavern/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1204369117-packages-dsh-tongflow"></a>
+
+## [dsh-tongflow](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md)
+
+[![GitHub ★ 1,046](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C046&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow) [![npm 30d 2,027](https://img.shields.io/static/v1?label=npm+30d&message=2%2C027&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow)
+
+> **用途**：适合需要反复制作角色图、配音和分镜的DSH用户，以工作流、产物及生成记录作为交付物。
+
+> **亮点**：将DSH会话、附件和后台任务接入共用媒体工作流，让人和Agent编辑同一资产生成文件；增益在多轮协作与追溯，核心引擎贡献归TongFlow而非适配层。[Q01](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q01) [Q04](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q04)
+
+> **思考**：付费确认依赖Agent提交布尔值，未见绑定用户交互与工作流摘要的许可校验，因此不能作为强预算隔离；首次自动下载及外部插件权限也需用户承担。[Q02](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q02) [Q03](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q03)
+
+> **建议**：可尝试一次性许可绑定工作流摘要、模型和预算，比较换参及重放的误执行率与确认负担；当前尚未实现或验证。[Q05](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1414936636-root"></a>
 
 ## [dsh-video-pipeline](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md)
@@ -458,6 +496,22 @@
 
 [查看完整分析](../../plugins/zseven-w--openpencil/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1171186947-root"></a>
+
+## [OpenWrite](../../plugins/lipu-jpg--openwrite/INSIGHT.md)
+
+[![GitHub ★ 884](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=884&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 6,332](https://img.shields.io/static/v1?label=npm+30d&message=6%2C332&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
+
+> **用途**：需要持续管理设定、大纲和正文的长篇作者，可在作品副本上试做完整章节流程。
+
+> **亮点**：[Q01](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q01) 与 [Q02](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q02) 显示贡献在于把本地小说领域后端、可信作品上下文和DSH对话/工作台组织为持续创作流程。桥层不把上游Core与DSH能力算为自身算法原创；相对手工文件管理有机制上的交接改善，写作质量与节时未知。
+
+> **思考**：[Q03](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q03) 补查Core确认已有项目锁、revision校验、恢复前checkpoint和drafted run续接，不能再把恢复能力写成缺失。关键质疑收窄为模型响应、正文替换和任务结算之间的跨步骤中断一致性；源码可见保护不等于全故障点无重复或无丢稿保证。
+
+> **建议**：[Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 将未来假设收窄为权威续接状态的一致性预览，复用Core已有drafted run和completed清单，不把续接本身当新功能。先排除现有界面已等价展示，再比较作者在故障场景下的错误重试及额外确认；无改善则否定。
+
+[查看完整分析](../../plugins/lipu-jpg--openwrite/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-113965016-root"></a>
 
 ## [PicGo](../../plugins/molunerfinn--picgo/INSIGHT.md)
@@ -473,6 +527,54 @@
 > **建议**：未验证假设是给每次上传保存本地输入摘要、目标配置 ID、远端返回和独立可读性检查的结果清单，将“已上传”与“发布可读”分开。由配置快照与 URL 过滤边界推导；对10组混合成功/失败图片，对比仅返回 URL 和清单复核的漏图、重复上传、人工修正时间。若多余检查延迟超过节省或错误访问了私密对象，应停止。[Q05](../../plugins/molunerfinn--picgo/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/molunerfinn--picgo/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-149085734-root"></a>
+
+## [PicGo-Core](../../plugins/picgo--picgo-core/INSIGHT.md)
+
+[![GitHub ★ 992](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=992&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PicGo/PicGo-Core) [![npm 30d 3,192](https://img.shields.io/static/v1?label=npm+30d&message=3%2C192&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/picgo) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/picgo)
+
+> **用途**：供持续写文档与Markdown的用户，把本地或剪贴板图片转成可引用URL。
+
+> **亮点**：把路径与剪贴板输入、图床目标配置和URL输出组成可嵌入编辑器与脚本的上传管道，贡献在流程集成而非新存储算法。[Q01](../../plugins/picgo--picgo-core/INSIGHT.md#research-q01)
+
+> **思考**：GitHub uploader把422直接按重名生成链接，未核对远端内容；普通生命周期捕获后返回也不代表整批全部成功，发布调用方必须逐项核验。[Q02](../../plugins/picgo--picgo-core/INSIGHT.md#research-q02)
+
+> **建议**：为每资产绑定内容摘要与远端标识，在重复提交前对账，同摘要复用、不同摘要报冲突；用同名差异与中断批次检验误链接和处理成本，尚未验证。[Q04](../../plugins/picgo--picgo-core/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/picgo--picgo-core/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1139329853-root"></a>
+
+## [Superdesign Skill](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md)
+
+[![GitHub ★ 904](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=904&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/superdesign-skill)
+
+> **用途**：面向在已有代码库持续迭代UI与视觉草稿的开发者和设计者。
+
+> **亮点**：把现状、设计系统、目标草稿和预算化上下文接到可继续的设计流程，贡献在方法与包装，不能算外部设计模型原创。[Q01](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md#research-q01) [Q02](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md#research-q02)
+
+> **思考**：缓存路径检查与上传限制是文本协议，未见本仓库强制验证器；CLI和云端实现不在此处，不能把要求写成已实现隔离或效果保证。[Q02](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md#research-q02)
+
+> **建议**：比较依赖感知的定向刷新与全量发现，检查共享视觉依赖变化时陈旧草稿和人工修正；先核对现有规则，尚未验证。[Q04](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1204369117-root"></a>
+
+## [TongFlow](../../plugins/tong-io--tongflow/INSIGHT.md)
+
+[![GitHub ★ 1,046](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C046&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow)
+
+> **用途**：适合把图像、音频和视频分阶段组合的创作者，交付可编辑工作流及媒体资产。
+
+> **亮点**：将材料、能力与供应商分开，使周围工作流有机会在替换插件后继续使用，并统一资产落位；属于多模态工作流集成贡献，未证首创。[Q01](../../plugins/tong-io--tongflow/INSIGHT.md#research-q01) [Q04](../../plugins/tong-io--tongflow/INSIGHT.md#research-q04)
+
+> **思考**：合法图不代表外部任务可成功或可撤销；本地取消未证明远端终止，重复重跑可能增加费用。[Q02](../../plugins/tong-io--tongflow/INSIGHT.md#research-q02)
+
+> **建议**：在slot选择中加入同输入的凭据、报价与恢复能力预检，检验是否降低配置失败和重复账单；尚未实现或验证。[Q05](../../plugins/tong-io--tongflow/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/tong-io--tongflow/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1296647613-root"></a>
 
