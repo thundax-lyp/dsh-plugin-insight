@@ -1,0 +1,420 @@
+{
+    "schema_version": 4,
+    "id": "c377efef52bacfd891c446a7c5e63a9b",
+    "identity": "github:1333258936:root",
+    "slug": "electricitysheep--dsh-handbook",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333258936:root",
+            "repository_id": 1333258936,
+            "component_id": "root",
+            "repository": "Electricitysheep/dsh-handbook",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-handbook",
+            "entry_type": "resource",
+            "technical_category": "other",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "af4b65fd5afec01562792e86e6c932448718a143184054fb32aee316f1f6d222",
+                "code": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                "maintenance": "de52b9cffe1c32bede99675cf56b6b6a1a8213d47e9feb585d78daaa63607728"
+            },
+            "sources": [
+                {
+                    "id": "init-20261027-02-github-1333258936-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-27T05:18:05.345Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "init-20261027-02-github-1333258936-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Electricitysheep/dsh-handbook",
+                            "commit": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                            "path": "README.md",
+                            "content_sha256": "82a651ba5d58f3a1e284bcbc64abc4a2aa7303c7d4ab0bbb265061144373bd8d"
+                        }
+                    ],
+                    "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                    "captured_at": "2026-10-27T05:18:05.345Z",
+                    "summary": "提供DeepSeek Harness中文学习路径、配置示例、插件开发案例与生态观察材料。",
+                    "artifact": "data/runs/2026-10-27-02/electricitysheep--dsh-handbook/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "init-20261027-02-github-1333258936-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Electricitysheep/dsh-handbook",
+                            "commit": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                            "path": "README.md",
+                            "content_sha256": "82a651ba5d58f3a1e284bcbc64abc4a2aa7303c7d4ab0bbb265061144373bd8d"
+                        },
+                        {
+                            "repository_url": "https://github.com/Electricitysheep/dsh-handbook",
+                            "commit": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                            "path": "docs/benchmark.md",
+                            "content_sha256": "1301f9c929bd41ec2e8ee1d1e8dbbdef4604f6d2e3fff1b3c92bc89f8cff0e72"
+                        },
+                        {
+                            "repository_url": "https://github.com/Electricitysheep/dsh-handbook",
+                            "commit": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                            "path": "docs/roadmap.md",
+                            "content_sha256": "cbb40de96cc61de004c07abd9d6423673240a9b47a912e1ea28e6ca6649734fa"
+                        },
+                        {
+                            "repository_url": "https://github.com/Electricitysheep/dsh-handbook",
+                            "commit": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                            "path": "docs/research/feedback-pipeline.md",
+                            "content_sha256": "bc78ef7f15f7eca0b6fb3de1ad6f8de18615c099cb5eeaf5c243c313987e51a1"
+                        }
+                    ],
+                    "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                    "captured_at": "2026-10-27T05:18:05.345Z",
+                    "summary": "核查 README.md、docs/benchmark.md、docs/roadmap.md、docs/research/feedback-pipeline.md；按阶段把目标、命令与验收相邻呈现，人工反馈流程将讨论问题归入章节。",
+                    "artifact": "data/runs/2026-10-27-02/electricitysheep--dsh-handbook/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅核查文档资源和作者报告的历史实验材料，不执行安装/示例，不将外部当前产品事实视为已核验。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "为初学DSH、配置profile或开发首个插件的中文开发者组织阅读和动手顺序。",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "按阶段把目标、命令与验收相邻呈现，人工反馈流程将讨论问题归入章节。",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅核查文档资源和作者报告的历史实验材料，不执行安装/示例，不将外部当前产品事实视为已核验。",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "内容和示例分别声明CC BY-NC-SA与MIT；这是学习资源，不是可加载DSH插件。",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 阅读资源和可选模型调用 | 版本核对与环境配置 | 三天计划非独立节时实测 |\n| 持续使用 | 练习的模型费用 | 对照官方更新命令 | 当前价格与命令兼容未验证 |\n| 失败恢复 | 重试模型任务可能付费 | 还原副本、查配置及来源 | 旧版本workaround不一定适用 |\n| 退出 | 保留读书笔记 | 删除练习环境、撤销测试凭据 | 文档阅读本身不需安装 |",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "初学者可作为中文导航阅读，选一个小目标在独立目录练习；版本、权限和配置与对应官方资料交叉核对；需要当前产品比较或生产安全结论时不要只依赖本手册。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 学习导航 | 每天目标、任务与验收 | 实际学习时间及成功率 |\n| 历史基准 | 作者给三轮耗时 | 公开输入与正确率分母 |\n| 当前操作指导 | 文档有版本说明 | 每条命令当前兼容 |",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "学习路径先运行、再插件、后案例与调优；每段给出可观察验收，例如headless有回复和插件日志出现决策。相比只给章节列表，行动和检查相邻更利于发现是安装失败还是理解未完成。\n\n反馈流程规定扫描讨论、分类入FAQ/章节、标注推断与记录落位。这是人工编辑工作流，不是本次确认持续执行的自动服务；每周节奏和预计工时只是维护计划。可借鉴的是把社区问题绑定到具体章节及状态，但帖子数、互链和Star不能证明内容有效或学习效果。",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "将架构资料组织为有目标、动作与验收的中文学习路径，贡献是教学与编辑组织，不是新增宿主能力。[Q01](#research-q01) [Q02](#research-q02)",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "实测依赖旧版环境且完整基准输入产物未公开；五任务三轮与每Agent45/45分母不直接相符，不能据此作当前通用排名。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "business_innovation",
+                    "basis": "unverified",
+                    "text": "每段练习绑定宿主固定版本、公开输入与机器验收，用同背景新手对照求助次数和定位时间；未验证。[Q04](#research-q04)",
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333258936:root",
+                            "area": "code",
+                            "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T05:18:05.345Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-27T05:18:05.345Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                "reviewed_at": "2026-10-27T05:18:05.345Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333258936:root",
+                        "area": "code",
+                        "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 0,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "Q01、Q02为成熟文档组织，小幅新意25%，没有新的执行机制贡献0；模板可迁移25%、组织简化25%。0表示资源性质经核查无该技术增量，而非未研究。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "Q01行动/验收组织相对散文档改变学习流程50%；交付仍教程25%；中文路径拓展50%；Q03无已确认成本结构改变economics0，非把未知费用补零。",
+                    "basis": "interpretation",
+                    "score": 36,
+                    "evidence_ids": [
+                        "init-20261027-02-github-1333258936-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "刚接触DSH的中文开发者可先按手册选择一个小目标阅读练习。相比零散架构资料，它把命令、常见问题和验收动作组织到同一路径。若命令版本对不上或需要当前产品与生产安全结论，就回到对应官方资料并停止照抄旧示例。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "[Q01](#research-q01)与[Q02](#research-q02)新手路径和验收具体，75%超泛阅读50%；缺独立学习反馈不取100%。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01)导航与动作对接超入口便利25%，取50%；未证学习效果和当前兼容，不取75%。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q03](#research-q03)文档和历史测量可定位但当前执行/公开fixture缺失，仅25%，不足50%。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q03](#research-q03)与[Q04](#research-q04)阅读可随时退出、独立练习易回退，75%超显著配置50%；版本核对负担仍在，不取100%。"
+                    }
+                },
+                "score": 57,
+                "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                "reviewed_at": "2026-10-27T05:18:05.345Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "init-20261027-02-github-1333258936-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333258936:root",
+                        "area": "code",
+                        "fingerprint": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333258936:root",
+            "repository": "Electricitysheep/dsh-handbook",
+            "path": "",
+            "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+            "fingerprints": {
+                "directory": "af4b65fd5afec01562792e86e6c932448718a143184054fb32aee316f1f6d222",
+                "code": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+                "maintenance": "de52b9cffe1c32bede99675cf56b6b6a1a8213d47e9feb585d78daaa63607728"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-27T04:55:32Z",
+            "analysis_sha256": "68ab8325a2fdc32d78f0bcc81147d2a8589ce91dadd938c6674491aeaf812e28"
+        },
+        "publication.metadata": "data/catalog/electricitysheep--dsh-handbook/meta.json",
+        "publication.summaries": {
+            "text": "提供DeepSeek Harness中文学习路径、配置示例、插件开发案例与生态观察材料。",
+            "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+            "source_url": "https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+            "items": {},
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 中文学习路径 | 按目标进入DSH实践 | 对应版本需核对 |\n| 历史案例与基准说明 | 了解验证和比较方法 | 作者报告，输入与分母仍有缺口 |\n| 配置与FAQ导航 | 查找故障线索 | 不等于当前官方事实 |"
+        },
+        "publication.advice": {
+            "revision": "ebfb3e91da840b94eacd4f52ca8fa2690accd4b7",
+            "text": "初学者可作为中文导航阅读，选一个小目标在独立目录练习；版本、权限和配置与对应官方资料交叉核对；需要当前产品比较或生产安全结论时不要只依赖本手册。[Q04](#research-q04)"
+        },
+        "registry": "data/plugins/electricitysheep--dsh-handbook",
+        "reports": "# dsh-handbook\n\n> 提供DeepSeek Harness中文学习路径、配置示例、插件开发案例与生态观察材料。\n\n## 研究范围\n\n- **仓库**：[Electricitysheep/dsh-handbook](https://github.com/Electricitysheep/dsh-handbook)\n- **版本号**：未声明（[固定提交 ebfb3e91da840b94eacd4f52ca8fa2690accd4b7](https://github.com/Electricitysheep/dsh-handbook/tree/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7)）\n- **版本日期**：2026-10-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n文档路径和作者历史测量已核查；当前命令兼容和学习效果未实测；基准分母与公开fixture存在缺口。\n\n## 洞察短评\n\n- **用途**：为初学DSH、配置profile或开发首个插件的中文开发者组织阅读和动手顺序。\n- **亮点**：将架构资料组织为有目标、动作与验收的中文学习路径，贡献是教学与编辑组织，不是新增宿主能力。[Q01](#research-q01) [Q02](#research-q02)\n- **思考**：实测依赖旧版环境且完整基准输入产物未公开；五任务三轮与每Agent45/45分母不直接相符，不能据此作当前通用排名。[Q03](#research-q03)\n- **建议**：每段练习绑定宿主固定版本、公开输入与机器验收，用同背景新手对照求助次数和定位时间；未验证。[Q04](#research-q04)\n\n采用建议：初学者可作为中文导航阅读，选一个小目标在独立目录练习；版本、权限和配置与对应官方资料交叉核对；需要当前产品比较或生产安全结论时不要只依赖本手册。[Q04](#research-q04)\n\n## 核心贡献\n\n将架构资料组织为有目标、动作与验收的中文学习路径，贡献是教学与编辑组织，不是新增宿主能力。[Q01](#research-q01) [Q02](#research-q02)\n\n## 关键质疑\n\n实测依赖旧版环境且完整基准输入产物未公开；五任务三轮与每Agent45/45分母不直接相符，不能据此作当前通用排名。[Q03](#research-q03)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n每段练习绑定宿主固定版本、公开输入与机器验收，用同背景新手对照求助次数和定位时间；未验证。[Q04](#research-q04)\n\n固定宿主和练习fixture，记录读者失败定位时间与最终独立完成率；先解释历史benchmark分母。\n\n## 场景与替代办法\n\n为初学DSH、配置profile或开发首个插件的中文开发者组织阅读和动手顺序。\n\n直接官方文档加自行整理笔记。手册价值在路径与中文组织，不能由章节数量推断学习效率。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Markdown阅读与固定版本识别 | 阅读必需 | 学习和核对上下文 | 不照抄未匹配版本命令 |\n| Node、DSH及模型凭据 | 动手练习必需 | 执行文中示例 | 需以当前宿主官方说明确认 |\n| 独立测试目录 | 练习建议 | 保护真实工程 | 不在生产仓库直接练习 |\n\n\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 读者选择学习目标并核对版本 | 明确参考材料时间 |\n| 2 | 在独立目录执行最小练习 | 对照章节和官方资料定位失败 |\n| 3 | 以产物与解释验收 | 不把命令跑完当全部理解 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 阅读资源和可选模型调用 | 版本核对与环境配置 | 三天计划非独立节时实测 |\n| 持续使用 | 练习的模型费用 | 对照官方更新命令 | 当前价格与命令兼容未验证 |\n| 失败恢复 | 重试模型任务可能付费 | 还原副本、查配置及来源 | 旧版本workaround不一定适用 |\n| 退出 | 保留读书笔记 | 删除练习环境、撤销测试凭据 | 文档阅读本身不需安装 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 学习导航 | 每天目标、任务与验收 | 实际学习时间及成功率 |\n| 历史基准 | 作者给三轮耗时 | 公开输入与正确率分母 |\n| 当前操作指导 | 文档有版本说明 | 每条命令当前兼容 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：中文教程能否支持可核验的DSH学习实践，其版本与基准边界是什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 手册比零散架构材料增加什么学习交付？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n资源面向首次接触DSH、想写第一个插件或理解配置的中文开发者。它将安装、profile、插件开发、案例与安全成本排成路径，学习结果应是独立启动一个会话、在副本环境加载小插件并解释依据，而不是读完章节或收藏链接。\n\n相对直接查官方架构文档，手册增加按天目标、动作和验收的组织便利，值得作为导航；官方文档缺中文或其他工具能力受限等比较只是本报告作者主张，本文不将其当当前外部事实。手册不是DSH插件，也不提供新的宿主执行能力。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:47-75](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/README.md#L47-L75)\n\n作者定位新手路径与不同读者交付。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n## 🎯 这是什么\n\n**DeepSeek Harness（`dsh`）**是 DeepSeek 官方 2026-08-13 开源的 Agent 运行时——一个\"一切皆插件\"（everything is a plugin）的框架。\n\n<img width=\"614\" height=\"230\" alt=\"image\" src=\"https://github.com/user-attachments/assets/19482c24-2208-468e-ad38-9096d9270f8d\" />\n\n但官方文档以架构说明为主，**缺少一条从零上手的路径**。\n\n**这本白皮书补上这条路**：从\"什么是 Agent 运行时\"讲起，到安装、使用、开发插件、性能调优——每一章都有可复制、可运行的命令，全部在本机实测验证。**目标是：任何一个开发者，跟着这本书都能从 0 到 1 用起来、写起来。**\n\n### 为什么值得读（而不是只看官方文档）\n\n| 官方文档 | 本白皮书|\n|---|---|\n| 架构视角（AGENTS.md / architecture.md） | **新手视角**：一条从 0 到 1 的路径|\n| 零散示例 | **每章可运行**，命令全部实测|\n| 无中文教程 | **中文优先**，英文同步|\n| 无生态实操 | **真实插件/PR 拆解**（含踩坑与安全约束）|\n\n## 🎁 这本能给你什么\n\n\n| 如果你是… | 你会得到 |\n|---|---|\n| 🆕 **第一次接触 dsh** | 3 天从 0 到 1 学习路径（每天有目标+验收） |\n| 🛠 **开发者** | 可克隆的插件模板 + 配置参考大全（照抄能跑） |\n| ⚖️ **正在选型** | 6 个主流 Agent 对比（表格+文字）+ 同模型实测 benchmark |\n| ⚡ **要调优** | 推理档位策略 + 缓存命中率专题（实测 97%） |\n| 📚 **要案例** | 5 个真实复杂案例（含耗时/产物/验证） |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[docs/roadmap.md:5-38](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/roadmap.md#L5-L38)\n\n三天学习任务分别有明确验收。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n## Day 1：理解 + 跑起来（第 1-2 章）\n\n**目标**：理解 dsh 是什么，能独立启动、对话、配置。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 30 分钟 | 读第 1 章（三个直觉 + 能力矩阵） | 能向别人解释\"dsh 和 Claude Code 的区别\" |\n| 30 分钟 | 第 2 章动手：`dsh web` 对话 + headless | 能启动 UI 完成一次对话；能跑一条 headless 命令 |\n| 30 分钟 | 配置模型/推理档位 + 排障速查 | 能改 settings.yaml；能解决端口占用 |\n\n**验收**：`dsh --profile headless \"你好\"` 有回复。\n\n## Day 2：理解骨架 + 第一个插件（第 3-4 章）\n\n**目标**：理解 profile/插件机制，写出第一个能跑的插件。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 1 小时 | 第 3 章（profile、挂载、host/client、扩展点、坑） | 能挂载社区插件（Git 面板） |\n| 1.5 小时 | 第 4 章抄写示例提速插件：纯函数 + agent/request 注入 | 插件加载无错，日志出现决策输出 |\n\n**验收**：自己的插件在 dsh 里生效（日志证明注入发生）。\n\n## Day 3：实战 + 调优（第 5-6 章）\n\n**目标**：能评估插件质量、调优性能、理解生态玩法。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 1 小时 | 第 5 章三个真实 PR（安全红线、沙箱约束、测试方法） | 能说出\"写一个 PR 的完整闭环\" |\n| 1 小时 | 第 6 章性能模型（思考占 90%）+ 档位策略 + 坑 | 能给一个任务选档位、预估瓶颈 |\n| 30 分钟 | 第 8-9 章扫读（工具/上下文、MCP/子代理/工作流）+ 术语表 | 知道 dsh 的能力全貌与扩展方向 |\n\n**验收**：能给 dsh 生态贡献一个小改进或写一篇使用心得。\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 学习和反馈维护是否形成可借鉴机制？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n学习路径先运行、再插件、后案例与调优；每段给出可观察验收，例如headless有回复和插件日志出现决策。相比只给章节列表，行动和检查相邻更利于发现是安装失败还是理解未完成。\n\n反馈流程规定扫描讨论、分类入FAQ/章节、标注推断与记录落位。这是人工编辑工作流，不是本次确认持续执行的自动服务；每周节奏和预计工时只是维护计划。可借鉴的是把社区问题绑定到具体章节及状态，但帖子数、互链和Star不能证明内容有效或学习效果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[docs/roadmap.md:5-38](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/roadmap.md#L5-L38)\n\n阶段动作与验收在同一表内。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n## Day 1：理解 + 跑起来（第 1-2 章）\n\n**目标**：理解 dsh 是什么，能独立启动、对话、配置。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 30 分钟 | 读第 1 章（三个直觉 + 能力矩阵） | 能向别人解释\"dsh 和 Claude Code 的区别\" |\n| 30 分钟 | 第 2 章动手：`dsh web` 对话 + headless | 能启动 UI 完成一次对话；能跑一条 headless 命令 |\n| 30 分钟 | 配置模型/推理档位 + 排障速查 | 能改 settings.yaml；能解决端口占用 |\n\n**验收**：`dsh --profile headless \"你好\"` 有回复。\n\n## Day 2：理解骨架 + 第一个插件（第 3-4 章）\n\n**目标**：理解 profile/插件机制，写出第一个能跑的插件。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 1 小时 | 第 3 章（profile、挂载、host/client、扩展点、坑） | 能挂载社区插件（Git 面板） |\n| 1.5 小时 | 第 4 章抄写示例提速插件：纯函数 + agent/request 注入 | 插件加载无错，日志出现决策输出 |\n\n**验收**：自己的插件在 dsh 里生效（日志证明注入发生）。\n\n## Day 3：实战 + 调优（第 5-6 章）\n\n**目标**：能评估插件质量、调优性能、理解生态玩法。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 1 小时 | 第 5 章三个真实 PR（安全红线、沙箱约束、测试方法） | 能说出\"写一个 PR 的完整闭环\" |\n| 1 小时 | 第 6 章性能模型（思考占 90%）+ 档位策略 + 坑 | 能给一个任务选档位、预估瓶颈 |\n| 30 分钟 | 第 8-9 章扫读（工具/上下文、MCP/子代理/工作流）+ 术语表 | 知道 dsh 的能力全貌与扩展方向 |\n\n**验收**：能给 dsh 生态贡献一个小改进或写一篇使用心得。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[docs/roadmap.md:51-56](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/roadmap.md#L51-L56)\n\n单测、实机与配置检查的学习原则。\n\n```text\n## 学习原则（白皮书全程）\n\n1. **动手 > 阅读**：每章命令都跑一遍，不看会后悔\n2. **先复制后理解**：第 4 章完整代码先跑通，再改参数理解机制\n3. **单测 + 实机双证据**：开发插件时两个都要过\n4. **善用 --dump-config**：疑惑时看合成配置，比猜快\n```\n\n**依据 3 · 源码核查**：[docs/research/feedback-pipeline.md:11-50](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/research/feedback-pipeline.md#L11-L50)\n\n反馈分类、引用与记录落位机制。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n````text\n## 四步流程\n\n### ① 扫描（5 分钟）\n\n```bash\n# 拉取官方库新帖（本周新增 + 我们未响应的高互动帖）\ngh api graphql -f query='query { repository(owner: \"deepseek-ai\", name: \"deepseek-harness\") { discussions(first: 30) { nodes { number title category { name } comments { totalCount } } } } }'\n```\n\n筛选标准：本周新增帖 / comments 增长明显 / 我们响应过的帖中他人回复含新信息。\n\n### ② 评估（10 分钟）\n\n新知识分类：\n\n| 类别 | 判据 | 沉淀目标 |\n|---|---|---|\n| **FAQ 候选** | 高频问题 / 有明确 workaround | docs/faq.md |\n| **章节补充** | 深度踩坑 / 新边界 / 根因分析 | 对应章（2-14） |\n| **生态收录** | 社区项目 / 插件 / 工具 | docs/07-ecosystem.md |\n| **成本/安全** | token 消耗 / 安全边界 | 第 13/14 章 |\n| **无需收录** | 闲聊 / 过时 / 重复已有内容 | —（忽略） |\n\n### ③ 沉淀（20-40 分钟）\n\n- 按类别更新对应文件（保持手册\"实测 + 诚实\"风格）\n- 引用真实帖号（`#xxx` 链接）\n- 标注推断内容（\"（推断，待实测）\"）\n- 已收录内容的帖子响应中**回贴告知**（\"已收录进手册 X 处\"——激励社区贡献）\n\n### ④ 记录（5 分钟）\n\n更新 `docs/research/feedback-log.md`：\n\n```markdown\n## 2026-08-21 轮\n| 来源帖 | 分类 | 沉淀位置 | 状态 |\n|---|---|---|---|\n| #xxxx | FAQ 候选 | faq.md 第 4 节 | ✅ 已沉淀 |\n| #xxxx | 章节补充 | 03-profiles.md 3.4 | ✅ 已沉淀 |\n````\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 基准、版本和阅读成本能支持什么程度的判断？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n固定材料明确实测基于2026-08-13的旧DSH/模型环境，README版本标注与正文实测线并不相同，不能直接视为本轮最新操作指南。基准给出Windows、同网关同key、五任务三轮与原始耗时，但完整输入产物仍指向作者本机~/agent-bench目录，仓库benchmark目录标为规划，复现材料不完整。\n\n五任务乘三轮应为每Agent十五次任务；表中每Agent写45/45，与展示的试次数量不直接相符，可能是把三Agent总数混入分母，必须由作者解释，不能据表宣称每Agent四十五次全对。小样本同模型结果也不能证明一般能力排名。\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Markdown阅读与固定版本识别 | 阅读必需 | 学习和核对上下文 | 不照抄未匹配版本命令 |\n| Node、DSH及模型凭据 | 动手练习必需 | 执行文中示例 | 需以当前宿主官方说明确认 |\n| 独立测试目录 | 练习建议 | 保护真实工程 | 不在生产仓库直接练习 |\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 阅读资源和可选模型调用 | 版本核对与环境配置 | 三天计划非独立节时实测 |\n| 持续使用 | 练习的模型费用 | 对照官方更新命令 | 当前价格与命令兼容未验证 |\n| 失败恢复 | 重试模型任务可能付费 | 还原副本、查配置及来源 | 旧版本workaround不一定适用 |\n| 退出 | 保留读书笔记 | 删除练习环境、撤销测试凭据 | 文档阅读本身不需安装 |\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:470-473](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/README.md#L470-L473)\n\n标注正文实测旧版本及示例环境。\n\n```text\n## ℹ️ 版本说明\n\n- 正文实测基于 dsh `0.1.0-rc.6` / DeepSeek-V4-Flash-0731（2026-08-13 开源）；版本线已同步至 `v0.1.3-alpha.1`（npm 已发布线 `0.1.2-rc.1`）\n- 示例环境：Windows 11 + Node 24\n```\n\n**依据 2 · 作者声明**：[docs/benchmark.md:9-32](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/benchmark.md#L9-L32)\n\n任务范围与45/45分母同表。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n| 项 | 说明 |\n|---|---|\n| 模型 | `deepseek-v4-flash`（三 agent 均走 opencode-go 网关 + 同一 key，公平对照） |\n| Agent | dsh（headless profile）、opencode（`opencode run`）、omp（`--print` 非交互） |\n| 任务 | T1 创建文件 / T2 搜索统计 / T3 修复 bug + 验证 / T4 读数据生成报告 + 自复核 / T5 多文件重构 + 测试通过 |\n| 环境 | Windows 11 + Node 24，独立工作目录，无预置上下文 |\n| 度量 | 耗时（秒）+ 正确性（人工核对产物/输出） |\n\n任务说明（T4/T5 为合成数据，无隐私风险）：\n\n| 任务 | 输入 | 要求 | 人工核对标准 |\n|---|---|---|---|\n| T4 生成报告 | `data.json`（4 条合成销售记录） | 生成 `report.md`：数据表格 + 汇总（总销量/总营收/最畅销），自复核 | 汇总数字与数据一致（397 / 130853 / 耳机） |\n| T5 多文件重构 | `mathops.py` + 依赖它的 `main.py`（含断言） | 把 `multiply` 的乘法逻辑提取为 `_multiply` 辅助函数，不改 `main.py`，`python main.py` 通过 | 出现 `_multiply` 且 multiply 委托调用、断言全过 |\n\n## 结果（3 轮采样，取中位数）\n\n| Agent | T1 创建文件 | T2 搜索统计 | T3 修 bug+验证 | T4 生成报告 | T5 多文件重构 | 总计（中位） | 正确率 |\n|---|---|---|---|---|---|---|---|\n| **omp** | 10s ✅ | 11s ✅ | 15s ✅ | 21s ✅ | 13s ✅ | **70s** | 45/45 |\n| **dsh** | 22s ✅ | 15s ✅ | 48s ✅ | 26s ✅ | 19s ✅ | **130s** | 45/45 |\n| **opencode** | 35s ✅ | 37s ✅ | 42s ✅ | 30s ✅ | 28s ✅ | **172s** | 45/45 |\n\n> 总计 = 5 任务中位数相加；扩展前（仅 T1-T3）为 omp 36s / dsh 85s / opencode 114s。\n```\n\n</details>\n\n**依据 3 · 作者声明**：[docs/benchmark.md:36-42](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/benchmark.md#L36-L42)\n\n提供三轮原始耗时。\n\n```text\n原始 3 轮（秒）：\n\n| Agent | 轮次 | T1 | T2 | T3 | T4 | T5 |\n|---|---|---|---|---|---|---|\n| dsh | 1 / 2 / 3 | 11 / 27 / 22 | 11 / 15 / 22 | 27 / 48 / 74 | 30 / 26 / 25 | 19 / 25 / 18 |\n| opencode | 1 / 2 / 3 | 18 / 35 / 35 | 19 / 37 / 37 | 50 / 41 / 42 | 30 / 49 / 30 | 28 / 28 / 32 |\n| omp | 1 / 2 / 3 | 9 / 10 / 12 | 9 / 11 / 12 | 13 / 33 / 15 | 23 / 21 / 17 | 16 / 12 / 13 |\n```\n\n**依据 4 · 作者声明**：[docs/benchmark.md:58-75](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/benchmark.md#L58-L75)\n\n命令和任务文本可查，但完整数据位于作者本机。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n## 可复现\n\n```bash\n# 三个 agent 的命令（独立目录）\ndsh --profile headless \"任务\"\nopencode run \"任务\" --model opencode-go/deepseek-v4-flash\nomp \"任务\" --model deepseek-v4-flash --print\n```\n\nT4/T5 任务原文（T1-T3 见上一版本记录）：\n\n<!-- [style] 任务原文代码块统一补 text 语言标签 -->\n```text\nT4: 读取当前目录 data.json 中的数据，生成 markdown 报告 report.md：包含每行数据的表格（产品/销量/单价三列）和汇总（总销量、总营收、最畅销产品），生成后自己复核汇总数字与 data.json 一致，完成后回复 已生成\nT5: 重构 mathops.py：把 multiply 函数内的乘法逻辑提取为私有辅助函数 _multiply(a, b)，multiply 改为调用 _multiply；main.py 依赖 mathops.py 并包含断言测试，不得改动 main.py；重构后运行 python main.py 验证所有断言通过，完成后回复 已重构\n```\n\n> 完整任务定义、合成数据与产物：`~/agent-bench/bench-ext/`（T4/T5 每 agent 独立目录）；T1-T3 见 `~/agent-bench/`。白皮书仓库内 `benchmark/` 目录规划中。\n````\n\n</details>\n\n#### 缺口\n\n- 完整benchmark输入产物与每Agent正确率分母未能对应。\n  **影响**：不能独立复现正确性和耗时排名。\n  **进一步探讨**：公开按Agent/任务/轮次编号的输入、输出、日志与验收清单，解释45/45分母。\n- 章节命令未逐一对应当前宿主版本执行。\n  **影响**：读者可能遇到预发布API与配置漂移。\n  **进一步探讨**：对照固定宿主版本维护章节适用范围，先在副本验证一个最小示例。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 读者怎样使用它，怎样验证学习路径确实有帮助？\n\n**研究主题**：采用判断、新假设与验证\n\n#### 完整回答\n\n建议新手把它作为中文导航和问题清单，先选择一个最小目标，只在独立目录练习；关键命令与权限以对应版本的官方资料交叉核对。需要当前选型或生产安全结论的人，不应只引用手册的历史能力矩阵和小样本成绩。\n\n未验证假设是给每段练习绑定宿主完整版本、输入fixture与可机器检查结果，比更新整篇概括更能减少新手卡住。最小对照让同背景读者分别用现有章节与版本化练习完成同一个插件挂载，记录失败定位时间、求助次数和最终解释正确性。若额外版本维护不能降低卡点，保留简洁导航而不扩展教程自动化。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[docs/roadmap.md:11-26](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/roadmap.md#L11-L26)\n\n最小练习动作与验收可作为对照任务。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n| 30 分钟 | 读第 1 章（三个直觉 + 能力矩阵） | 能向别人解释\"dsh 和 Claude Code 的区别\" |\n| 30 分钟 | 第 2 章动手：`dsh web` 对话 + headless | 能启动 UI 完成一次对话；能跑一条 headless 命令 |\n| 30 分钟 | 配置模型/推理档位 + 排障速查 | 能改 settings.yaml；能解决端口占用 |\n\n**验收**：`dsh --profile headless \"你好\"` 有回复。\n\n## Day 2：理解骨架 + 第一个插件（第 3-4 章）\n\n**目标**：理解 profile/插件机制，写出第一个能跑的插件。\n\n| 时间 | 任务 | 验收 |\n|---|---|---|\n| 1 小时 | 第 3 章（profile、挂载、host/client、扩展点、坑） | 能挂载社区插件（Git 面板） |\n| 1.5 小时 | 第 4 章抄写示例提速插件：纯函数 + agent/request 注入 | 插件加载无错，日志出现决策输出 |\n\n**验收**：自己的插件在 dsh 里生效（日志证明注入发生）。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[docs/benchmark.md:75-75](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/docs/benchmark.md#L75-L75)\n\n缺公开输入产物是版本化练习的切入点。\n\n```text\n> 完整任务定义、合成数据与产物：`~/agent-bench/bench-ext/`（T4/T5 每 agent 独立目录）；T1-T3 见 `~/agent-bench/`。白皮书仓库内 `benchmark/` 目录规划中。\n```\n\n**依据 3 · 作者声明**：[README.md:467-473](https://github.com/Electricitysheep/dsh-handbook/blob/ebfb3e91da840b94eacd4f52ca8fa2690accd4b7/README.md#L467-L473)\n\n作者承认预发布命令变化。\n\n```text\n- 章节/命令失效？rc 版本迭代所致，欢迎 issue 指正\n- 想参与？见 [🤝 贡献指南（CONTRIBUTING）](./CONTRIBUTING.md) · 想看计划？[🗺️ 路线图（ROADMAP）](./ROADMAP.md) · 生态参与见 [第 7 章](./docs/07-ecosystem.md)\n\n## ℹ️ 版本说明\n\n- 正文实测基于 dsh `0.1.0-rc.6` / DeepSeek-V4-Flash-0731（2026-08-13 开源）；版本线已同步至 `v0.1.3-alpha.1`（npm 已发布线 `0.1.2-rc.1`）\n- 示例环境：Windows 11 + Node 24\n```\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f5a1cb3f9da1b8f16e96603bf136ac56a68056b907a9e6e78fa1a8eb1a06f0a9。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 57 | 9937 | — | — | 132412 |\n| .md | example | 1 | 75 | — | — | 508 |\n| .ts | example | 4 | 185 | 147 | 12 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 中文学习路径 | 按目标进入DSH实践 | 对应版本需核对 |\n| 历史案例与基准说明 | 了解验证和比较方法 | 作者报告，输入与分母仍有缺口 |\n| 配置与FAQ导航 | 查找故障线索 | 不等于当前官方事实 |\n\n## 工程亮点\n\n学习路径先运行、再插件、后案例与调优；每段给出可观察验收，例如headless有回复和插件日志出现决策。相比只给章节列表，行动和检查相邻更利于发现是安装失败还是理解未完成。\n\n反馈流程规定扫描讨论、分类入FAQ/章节、标注推断与记录落位。这是人工编辑工作流，不是本次确认持续执行的自动服务；每周节奏和预计工时只是维护计划。可借鉴的是把社区问题绑定到具体章节及状态，但帖子数、互链和Star不能证明内容有效或学习效果。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、docs/benchmark.md、docs/roadmap.md、docs/research/feedback-pipeline.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅核查文档资源和作者报告的历史实验材料，不执行安装/示例，不将外部当前产品事实视为已核验。\n- 下一步：固定宿主和练习fixture，记录读者失败定位时间与最终独立完成率；先解释历史benchmark分母。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-27-02/electricitysheep--dsh-handbook/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"Electricitysheep/dsh-handbook\",\n  \"revision\": \"ebfb3e91da840b94eacd4f52ca8fa2690accd4b7\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"docs/benchmark.md\",\n    \"docs/roadmap.md\",\n    \"docs/research/feedback-pipeline.md\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"中文教程能否支持可核验的DSH学习实践，其版本与基准边界是什么？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"手册比零散架构材料增加什么学习交付？\",\n        \"answer\": \"资源面向首次接触DSH、想写第一个插件或理解配置的中文开发者。它将安装、profile、插件开发、案例与安全成本排成路径，学习结果应是独立启动一个会话、在副本环境加载小插件并解释依据，而不是读完章节或收藏链接。\\n\\n相对直接查官方架构文档，手册增加按天目标、动作和验收的组织便利，值得作为导航；官方文档缺中文或其他工具能力受限等比较只是本报告作者主张，本文不将其当当前外部事实。手册不是DSH插件，也不提供新的宿主执行能力。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 47,\n            \"line_end\": 75,\n            \"observation\": \"作者定位新手路径与不同读者交付。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/roadmap.md\",\n            \"line_start\": 5,\n            \"line_end\": 38,\n            \"observation\": \"三天学习任务分别有明确验收。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"学习和反馈维护是否形成可借鉴机制？\",\n        \"answer\": \"学习路径先运行、再插件、后案例与调优；每段给出可观察验收，例如headless有回复和插件日志出现决策。相比只给章节列表，行动和检查相邻更利于发现是安装失败还是理解未完成。\\n\\n反馈流程规定扫描讨论、分类入FAQ/章节、标注推断与记录落位。这是人工编辑工作流，不是本次确认持续执行的自动服务；每周节奏和预计工时只是维护计划。可借鉴的是把社区问题绑定到具体章节及状态，但帖子数、互链和Star不能证明内容有效或学习效果。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/roadmap.md\",\n            \"line_start\": 5,\n            \"line_end\": 38,\n            \"observation\": \"阶段动作与验收在同一表内。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/roadmap.md\",\n            \"line_start\": 51,\n            \"line_end\": 56,\n            \"observation\": \"单测、实机与配置检查的学习原则。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/research/feedback-pipeline.md\",\n            \"line_start\": 11,\n            \"line_end\": 50,\n            \"observation\": \"反馈分类、引用与记录落位机制。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\",\n          \"cost\"\n        ],\n        \"question\": \"基准、版本和阅读成本能支持什么程度的判断？\",\n        \"answer\": \"固定材料明确实测基于2026-08-13的旧DSH/模型环境，README版本标注与正文实测线并不相同，不能直接视为本轮最新操作指南。基准给出Windows、同网关同key、五任务三轮与原始耗时，但完整输入产物仍指向作者本机~/agent-bench目录，仓库benchmark目录标为规划，复现材料不完整。\\n\\n五任务乘三轮应为每Agent十五次任务；表中每Agent写45/45，与展示的试次数量不直接相符，可能是把三Agent总数混入分母，必须由作者解释，不能据表宣称每Agent四十五次全对。小样本同模型结果也不能证明一般能力排名。\\n\\n#### 启动与依赖\\n\\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\\n|---|---|---|---|\\n| Markdown阅读与固定版本识别 | 阅读必需 | 学习和核对上下文 | 不照抄未匹配版本命令 |\\n| Node、DSH及模型凭据 | 动手练习必需 | 执行文中示例 | 需以当前宿主官方说明确认 |\\n| 独立测试目录 | 练习建议 | 保护真实工程 | 不在生产仓库直接练习 |\\n\\n#### 成本\\n\\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\\n|---|---|---|---|\\n| 首次使用 | 阅读资源和可选模型调用 | 版本核对与环境配置 | 三天计划非独立节时实测 |\\n| 持续使用 | 练习的模型费用 | 对照官方更新命令 | 当前价格与命令兼容未验证 |\\n| 失败恢复 | 重试模型任务可能付费 | 还原副本、查配置及来源 | 旧版本workaround不一定适用 |\\n| 退出 | 保留读书笔记 | 删除练习环境、撤销测试凭据 | 文档阅读本身不需安装 |\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 470,\n            \"line_end\": 473,\n            \"observation\": \"标注正文实测旧版本及示例环境。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"docs/benchmark.md\",\n            \"line_start\": 9,\n            \"line_end\": 32,\n            \"observation\": \"任务范围与45/45分母同表。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"docs/benchmark.md\",\n            \"line_start\": 36,\n            \"line_end\": 42,\n            \"observation\": \"提供三轮原始耗时。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"docs/benchmark.md\",\n            \"line_start\": 58,\n            \"line_end\": 75,\n            \"observation\": \"命令和任务文本可查，但完整数据位于作者本机。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"完整benchmark输入产物与每Agent正确率分母未能对应。\",\n            \"impact\": \"不能独立复现正确性和耗时排名。\",\n            \"next_step\": \"公开按Agent/任务/轮次编号的输入、输出、日志与验收清单，解释45/45分母。\"\n          },\n          {\n            \"issue\": \"章节命令未逐一对应当前宿主版本执行。\",\n            \"impact\": \"读者可能遇到预发布API与配置漂移。\",\n            \"next_step\": \"对照固定宿主版本维护章节适用范围，先在副本验证一个最小示例。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"读者怎样使用它，怎样验证学习路径确实有帮助？\",\n        \"answer\": \"建议新手把它作为中文导航和问题清单，先选择一个最小目标，只在独立目录练习；关键命令与权限以对应版本的官方资料交叉核对。需要当前选型或生产安全结论的人，不应只引用手册的历史能力矩阵和小样本成绩。\\n\\n未验证假设是给每段练习绑定宿主完整版本、输入fixture与可机器检查结果，比更新整篇概括更能减少新手卡住。最小对照让同背景读者分别用现有章节与版本化练习完成同一个插件挂载，记录失败定位时间、求助次数和最终解释正确性。若额外版本维护不能降低卡点，保留简洁导航而不扩展教程自动化。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/roadmap.md\",\n            \"line_start\": 11,\n            \"line_end\": 26,\n            \"observation\": \"最小练习动作与验收可作为对照任务。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"docs/benchmark.md\",\n            \"line_start\": 75,\n            \"line_end\": 75,\n            \"observation\": \"缺公开输入产物是版本化练习的切入点。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 467,\n            \"line_end\": 473,\n            \"observation\": \"作者承认预发布命令变化。\"\n          }\n        ],\n        \"unknowns\": []\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# DeepSeek Harness 白皮书 · dsh-handbook\\n\\n> **DeepSeek Harness 中文手册 × 生态观察中心**——从 0 到 1 玩转 dsh，跟着 780 帖讨论区看懂生态 · 中文 · [English](./README.en.md)\\n\\n**📖 [在线阅读](https://electricitysheep.github.io/dsh-handbook/) · 📄 [下载 PDF](https://github.com/Electricitysheep/dsh-handbook/releases) · ⭐ [点 Star 支持](https://github.com/Electricitysheep/dsh-handbook/stargazers)**\\n\\n*· 15 章手册 · 195 帖社区响应 · 280+ Stars**\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"./docs/assets/banner.svg\\\" alt=\\\"dsh-handbook banner\\\" width=\\\"720\\\"/>\\n</p>\\n\\n<div align=\\\"center\\\">\\n\\n![GitHub stars](https://img.shields.io/github/stars/Electricitysheep/dsh-handbook?style=flat&color=yellow)\\n![GitHub release](https://img.shields.io/github/v/tag/Electricitysheep/dsh-handbook?label=release&color=success)\\n![dsh-handbook](https://img.shields.io/badge/dsh--handbook-白皮书-blue)\\n![chapters](https://img.shields.io/badge/章节-15-green)\\n![pdf](https://img.shields.io/badge/PDF-5.5MB-orange)\\n![license](https://img.shields.io/badge/license-CC--BY--NC--SA--4.0-lightgrey)\\n![dsh](https://img.shields.io/badge/dsh-v0.1.3--alpha.1-8A2BE2)\\n\\n</div>\\n\\n> [!WARNING]\\n> dsh 当前 GitHub 版本为 `v0.1.3-alpha.1`（预发布 tag；npm 已发布线 `0.1.2-rc.1`），生产环境请谨慎评估，详见 [ℹ️ 版本说明](#ℹ️-版本说明)。\\n\\n## 🚀 快速体验（30 秒）\\n\\n```bash\\n# 1. 安装（需要 Node.js ≥ 22）\\nnpx -y @deepseek-ai/dsh web\\n\\n# 2. 浏览器打开 http://127.0.0.1:3080，开始对话\\n# 3. 或跑一次性任务（适合脚本/CI）\\ndsh --profile headless \\\"你好，请用一句话介绍自己\\\"\\n```\\n\\n> 想系统学？看 [🗺 学习路径（3 天计划）](./docs/roadmap.md)；想先跑？[第 2 章：五分钟快速上手](./docs/02-quickstart.md)；想速查？[📇 一页速查卡](./docs/cheatsheet.md)\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"./docs/assets/demo-webui.gif\\\" alt=\\\"dsh Web UI 实测演示\\\" width=\\\"720\\\"/>\\n  <br/>\\n  <sub><b>30 秒看懂 dsh Web UI</b>：新建会话 → 输入任务 → 模型选择 → 发送 → AI 回复</sub>\\n</p>\\n\\n## 🎯 这是什么\\n\\n**DeepSeek Harness（`dsh`）**是 DeepSeek 官方 2026-08-13 开源的 Agent 运行时——一个\\\"一切皆插件\\\"（everything is a plugin）的框架。\\n\\n<img width=\\\"614\\\" height=\\\"230\\\" alt=\\\"image\\\" src=\\\"https://github.com/user-attachments/assets/19482c24-2208-468e-ad38-9096d9270f8d\\\" />\\n\\n但官方文档以架构说明为主，**缺少一条从零上手的路径**。\\n\\n**这本白皮书补上这条路**：从\\\"什么是 Agent 运行时\\\"讲起，到安装、使用、开发插件、性能调优——每一章都有可复制、可运行的命令，全部在本机实测验证。**目标是：任何一个开发者，跟着这本书都能从 0 到 1 用起来、写起来。**\\n\\n### 为什么值得读（而不是只看官方文档）\\n\\n| 官方文档 | 本白皮书|\\n|---|---|\\n| 架构视角（AGENTS.md / architecture.md） | **新手视角**：一条从 0 到 1 的路径|\\n| 零散示例 | **每章可运行**，命令全部实测|\\n| 无中文教程 | **中文优先**，英文同步|\\n| 无生态实操 | **真实插件/PR 拆解**（含踩坑与安全约束）|\\n\\n## 🎁 这本能给你什么\\n\\n\\n| 如果你是… | 你会得到 |\\n|---|---|\\n| 🆕 **第一次接触 dsh** | 3 天从 0 到 1 学习路径（每天有目标+验收） |\\n| 🛠 **开发者** | 可克隆的插件模板 + 配置参考大全（照抄能跑） |\\n| ⚖️ **正在选型** | 6 个主流 Agent 对比（表格+文字）+ 同模型实测 benchmark |\\n| ⚡ **要调优** | 推理档位策略 + 缓存命中率专题（实测 97%） |\\n| 📚 **要案例** | 5 个真实复杂案例（含耗时/产物/验证） |\\n\\n## 🌟 感谢与社区\\n\\n首先要感谢每一位 Star、回复和投稿——这本手册不是一个人的作品，是 dsh 社区一起\\\"长\\\"出来的。\\n\\n发布两天，很幸运得到了这些反馈：\\n\\n- ⭐ **280+ Stars**——对一份刚发布的教程来说远超预期，感谢大家认可\\n- 💬 **官方库 195 帖回应**——我们持续在[讨论区](https://github.com/deepseek-ai/deepseek-harness/discussions)和大家一起踩坑、排障、交流\\n- 🧠 **FAQ 里的 39 条问题大多来自真实提问**——社区问什么，我们沉淀什么（#380/#817/#1052…）\\n- 📦 已向 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 提交收录 PR（[#33](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/33)，待合并）；阮一峰周刊自荐已提交\\n- 🤝 与 30+ 社区项目互链（dsh-usage / dsh-sgme / AgentSoul / dsh-vault / egress-guard / agentmemory…）\\n\\n> 内容随讨论区持续更新（[沉淀流水线](./docs/research/feedback-pipeline.md)，19 项可追踪）。如果你觉得有用，Star 是对我们最大的支持。\\n\\n## 🔭 生态观察（第 15 章·全景报告）\\n\\n> 把 **1804 个插件仓库**的数据盘点 × **780 帖讨论区**定性观察交叉验证，5 个关键结论：\\n\\n| 结论 | 一句话 |\\n|---|---|\\n| 🪟 **Windows 是第一痛点** | 中文路径（15+ 帖同根因）/ koffi / 端口 / 子进程——数据讨论双证实 |\\n| 🧩 **\\\"官方没做，社区全做\\\"** | 桌面壳 140+ / TUI / 记忆 77 / 视觉 132——健康互补 |\\n| 🛡️ **安全审计活跃，工具稀缺** | sandbox 分类仅 9 个插件——**供给缺口** |\\n| 🐛 **序列化 bug 家族** | unknown tool / reasoning 省略 / run_code 丢弃——rc 期主战场 |\\n| 💰 **成本透明化是刚需** | 缓存命中 97% 实测 + 成本工具雨后春笋 |\\n\\n**6 个能力缝**（官方可优先建）：视觉通道 · 记忆 seam · 桌面 TUI 协议 · 评测闭环 · Windows 一等支持 · 插件 registry\\n> 完整报告（含对开发者/选型者/观望者的建议）：[第 15 章](./docs/15-ecosystem-report.md)\\n\\n## 📚 目录（从 0 到 1）\\n\\n<div align=\\\"center\\\">\\n\\n| 🗺️ **[学习路径（3 天计划）](./docs/roadmap.md)** | 从 0 到 1：每天目标 + 验收标准 + 学习原则 |\\n|---|---|\\n\\n</div>\\n\\n### 🟢 阶段 1 · 入门：认知与上手\\n\\n<div align=\\\"center\\\">\\n\\n| 📖 **[第 1 章 · 认识 Harness](./docs/01-intro.md)** | ⚡ **[第 2 章 · 五分钟上手](./docs/02-quickstart.md)** |\\n|---|---|\\n| 与主流 Agent 全面对比 · FAQ · [EN](./docs/01-intro.en.md) | 安装 · web/headless 双模式 · 推理档位 · [EN](./docs/02-quickstart.en.md) |\\n\\n</div>\\n\\n### 🔵 阶段 2 · 开发：骨架与插件\\n\\n<div align=\\\"center\\\">\\n\\n| 🧩 **[第 3 章 · profile 与插件系统](./docs/03-profiles.md)** | 🛠️ **[第 4 章 · 插件开发实战](./docs/04-plugin-dev.md)** |\\n|---|---|\\n| 可定制骨架 · 插件挂载 · 扩展点 · 真实坑 | 从零写第一个插件（完整代码 + 测试 + 实机验证） |\\n\\n</div>\\n\\n### 🟠 阶段 3 · 实战：场景与调优\\n\\n<div align=\\\"center\\\">\\n\\n| 📦 **[第 5 章 · dsh 应用场景](./docs/05-cases.md)** | 🚀 **[第 6 章 · 进阶与性能调优](./docs/06-advanced.md)** |\\n|---|---|\\n| 5 大场景 · 高缓存命中率专题 · 5 行业视角 | 推理档位策略 · 耗时分析 · 踩坑清单 |\\n\\n</div>\\n\\n### 🟣 阶段 4 · 生态：能力与编排\\n\\n<div align=\\\"center\\\">\\n\\n| 🌐 **[第 7 章 · 生态与资源](./docs/07-ecosystem.md)** | 🧰 **[第 8 章 · 工具与上下文系统](./docs/08-tools-context.md)** | 🔗 **[第 9 章 · MCP 子代理与工作流](./docs/09-mcp-subagent-workflow.md)** |\\n|---|---|---|\\n| 官方入口 · 参与路径 · 阅读建议 | 60+ 能力包地图 · 内置工具 · compaction | 外部工具接入 · 并行子代理 · 多步编排 |\\n\\n</div>\\n\\n### 🔴 阶段 5 · 进阶：复杂案例与展望\\n\\n<div align=\\\"center\\\">\\n\\n| 🧪 **[第 10 章 · 复杂实战案例](./docs/10-complex-cases.md)** | 🔮 **[第 11 章 · 未来展望](./docs/11-future.md)** | ⚠️ **[第 12 章 · 已知不足与边界](./docs/12-limitations.md)** |\\n|---|---|---|\\n| dsh 真实跑出：数据清洗管线 186s · 5-bug 修复 94s | 技术/生态/竞争/机会/风险 预测 + 时间线 | rc 版诚实版：不稳定性 · 生态早期 · 跨平台短板 |\\n\\n</div>\\n\\n<div align=\\\"center\\\">\\n\\n| 🛡️ **[第 13 章 · 安全与沙箱](./docs/13-security.md)** | 💰 **[第 14 章 · 缓存与成本](./docs/14-cost.md)** |\\n|---|---|\\n| 沙箱机制 · 权限模型 · 审批流 · 插件安全审计清单 | 缓存命中率实测 97% · 成本模型 · 推理档位联动 · 预算实战 |\\n\\n</div>\\n\\n| 📊 **[第 15 章 · 生态全景报告](./docs/15-ecosystem-report.md)** | |\\n|---|---|\\n| 1804 插件 × 780 帖交叉验证：5 大洞察 + 6 个能力缝 + 生态参与者建议 |\\n\\n### 📎 附录\\n\\n<div align=\\\"center\\\">\\n\\n| 📚 **[附录 A·术语表](./docs/appendix-glossary.md)** · 📦 **[附录 B·官方包速查](./docs/appendix-packages.md)** · 📊 **[附录 C·Benchmark](./docs/benchmark.md)** |\\n|---|\\n| 30+ 术语 · 命令速查 · 官方 @deepseek-ai/* 包清单 · 同模型 3 Agent 实测 |\\n\\n</div>\\n\\n## 💎 内容精华速览（点开即看，不止链接）\\n\\n<details>\\n<summary><b>📖 第 1 章：认识 DeepSeek Harness —— 三个直觉 + 能力矩阵</b></summary>\\n\\n- **三个直觉**：dsh = Agent 的乐高底座；harness = 套在模型外的工程层；2026 = Agent 可编程时代\\n- **核心事实**：MIT 开源 · TypeScript · \\\"一切皆插件\\\" · 2026-08-13 发布\\n- **dsh vs 5 个主流 Agent 能力矩阵**（Claude Code / Codex / OpenCode / Gemini / Kimi）：开源✅、模型无关✅、**官方级插件体系**（独有）、自定义界面✅、headless CI✅\\n- **选型决策**：深度定制+生态 → dsh；开箱即用 → Claude Code\\n</details>\\n\\n<details>\\n<summary><b>⚡ 第 2 章：五分钟快速上手 —— 30 秒跑起来</b></summary>\\n\\n- **一条命令启动**：`npx -y @deepseek-ai/dsh web` → http://127.0.0.1:3080\\n- **双模式**：web（对话 UI）/ headless（`dsh --profile headless \\\"任务\\\"`，CI 友好）\\n\\n- **推理档位三档**：`low`（最快/简单任务）· `high`（默认）· `max`（最强/复杂推理）——**性能关键：思考占工具链 90% 时间**。>注：`low` 为本白皮书实测网关（pi-ai/opencode-go）档位；**DeepSeek 官方适配器为 `off`（关闭思考/最快）/ `high` / `max`**（见 02-quickstart 2.3 注）\\n- **第一个插件**：Git 面板 4 步挂载\\n</details>\\n\\n<details>\\n<summary><b>🧩 第 3 章：profile 与插件系统 —— 可定制骨架</b></summary>\\n\\n- **profile** = bundle 栈 + 你的 patch 层（`package.json` + `cordis.patch.yml`）\\n- **挂载插件只需 2 处改动**（加依赖 + 加 insert 行）\\n- **host/client 双半**：一个 npm 包 = Node 侧工具/服务 + 浏览器侧 UI\\n- **5 大扩展点**：`agent/request` waterfall、`conversationEvents`、`ctx.slots`、`settings`、`ctx.provide`\\n- **6 个真实踩坑**：rc.1 依赖断裂、插件缺 main、`next()` 忘 await、类型不识别、ModuleLoader、端口占用\\n</details>\\n\\n<details>\\n<summary><b>🛠 第 4 章：插件开发实战 —— 完整可运行代码</b></summary>\\n\\n- **从零写提速插件**（完整拆解）：纯函数决策 + `agent/request` waterfall 注入\\n- **核心技巧**：决策逻辑抽纯函数（单测毫秒级）→ 实机只验证\\\"注入是否发生\\\"\\n- **3 条开发纪律**：先找扩展点 / 逻辑抽纯函数 / 实机验证不能省\\n- **实机日志证据**：`calls=[{name:\\\"write\\\"}] => reasoningEffort=low`\\n</details>\\n\\n<details>\\n<summary><b>📦 第 5 章：实战案例 —— 三个真实开源 PR 的完整闭环</b></summary>\\n\\n- **Git 面板 push/pull/fetch**（PR #10）：`--force-with-lease` 安全红线 + 本地 bare-repo 集成测试 + Playwright 实机验证\\n- **HTML 草稿预览**（PR #11）：沙箱安全约束下的 srcdoc 决策纯函数\\n- **提速插件示例**：长工具链每步思考降档\\n</details>\\n\\n<details>\\n<summary><b>🚀 第 6 章：进阶与性能调优 —— 时间花在哪</b></summary>\\n\\n- **性能模型**：工具链任务 90% 时间在模型思考（每次工具调用前）\\n- **档位策略**：简单轮次 low / 日常 high / 复杂 max——降档是最高杠杆提速\\n- **7 个真实坑**：含\\\"简单任务突然变快 = 缓存命中\\\"的评测陷阱\\n- **看成绩单三问**：谁测的 / 什么 harness / 验证器多严\\n</details>\\n\\n<details>\\n<summary><b>🌐 第 7 章：生态与资源 —— 加入 dsh 生态的地图</b></summary>\\n\\n- **官方入口**：仓库 / API 文档 / Discord / Discussions\\n- **当前状态**：官方暂不收外部 PR → **做 dsh-plugin 生态项目是官方点名的贡献方式**\\n- **新手路径**：用起来 → 小 PR → 发插件 → 写内容\\n</details>\\n\\n<details>\\n<summary><b>🧰 第 8 章：工具与上下文系统 —— 能力引擎</b></summary>\\n\\n- **60+ 官方能力包地图**：工具/上下文/会话/子代理/MCP/工作流/安全\\n- **内置工具（实测）**：read/write/grep/glob/edit/bash/todo/skill\\n- **产物追踪**：工具返回 locations → 对话末尾可打开产物\\n- **上下文注入**：系统提示分层 + 技能目录\\n- **长对话自动压缩**（compaction）+ 沙箱/权限/审批安全层\\n</details>\\n\\n<details>\\n<summary><b>🔗 第 9 章：MCP、子代理与工作流 —— Agent 系统化</b></summary>\\n\\n- **MCP**：接入外部工具服务器（社区已有 token 追踪插件）\\n- **子代理**：并行委派任务（大仓库调研/长任务分解）\\n- **工作流**：确定性多步编排（拉取→清洗→报表→校验）\\n- **四阶段新手路径**：单 Agent → +MCP → +子代理 → +工作流\\n</details>\\n\\n<details>\\n<summary><b>🧪 第 10 章：复杂实战案例 —— dsh 真实跑出来的</b></summary>\\n\\n- **案例 A**：数据质量分析→清洗→可视化（186s，52→35 行归零，chart.png，含权衡说明）\\n- **案例 B**：5-bug 修复 + 49 测试（94s，pytest 49 passed，覆盖除零/负数/精度边界）\\n- **画像**：多步工具链自动编排 + 有判断力 + 产物可追踪\\n- 隐私声明：全部合成数据/自造代码\\n</details>\\n\\n<details>\\n<summary><b>📚 附录：术语表 + 命令速查</b></summary>\\n\\n- **30+ 术语**：harness/profile/bundle/cordis/扩展点/waterfall/compaction…\\n- **命令速查**：dsh 核心 / 环境 / 排障 / 插件开发\\n- **Benchmark**：同模型 3 Agent 实测（3 轮中位数）\\n</details>\\n\\n<details>\\n<summary><b>🔮 第 11 章：未来展望 —— 五个维度的预测</b></summary>\\n\\n- **技术/生态/竞争/机会/风险** 五维度预测 + 时间线\\n- **机会点**：官方生态早期，做 dsh-plugin 项目是入场红利\\n</details>\\n\\n<details>\\n<summary><b>⚠️ 第 12 章：已知不足与边界 —— rc 版诚实说</b></summary>\\n\\n- **不稳定性**：rc 迭代快、破坏性变更频繁\\n- **生态早期**：官方包 60+ 但插件生态刚起步\\n- **跨平台短板**：Windows 家族踩坑记录（含 Node 版本红线）\\n</details>\\n\\n<details>\\n<summary><b>🛡️ 第 13 章：安全与沙箱模型 —— 敢上生产的关键</b></summary>\\n\\n- **沙箱机制**：进程隔离（bwrap/Landlock/Seatbelt）+ 权限分级 + 审批流\\n- **社区审计边界**：node:vm 非安全边界、approval 回环、workspace-write 递归删除等真实逃逸面\\n- **插件安全审计清单**：第三方审计方法论（[#454](https://github.com/deepseek-ai/deepseek-harness/discussions/454)）\\n</details>\\n\\n<details>\\n<summary><b>💰 第 14 章：缓存与成本工程 —— 把\\\"便宜\\\"变工程</b></summary>\\n\\n- **缓存机制**：上下文缓存 + 命中率实测 97%（Flash 折扣 98% / Pro 99%+）\\n- **成本模型**：token 花在哪 + 推理档位联动 + 真实任务预算\\n- **可视化**：session log / 余额插件看每笔成本\\n</details>\\n\\n## 🖥 演示（Demo）—— 直接看效果\\n\\n### ① Web UI 对话（`dsh web`）\\n\\n```bash\\ndsh web    # → http://127.0.0.1:3080\\n```\\n\\n![dsh Web UI 对话](./docs/assets/demo-web-chat.png)\\n\\n### ② Headless CLI（一次性任务，适合脚本/CI）\\n\\n运行 `dsh --profile headless \\\"你好，请用一句话介绍你自己\\\"`（命令见 [🚀 快速体验](#-快速体验30-秒)）：\\n\\n```bash\\n# → 你好！我是 DeepSeek 驱动的 AI 编程助手，可以帮你写代码、调试问题、\\n#    处理文件、搜索资料，以及完成各种开发和办公任务。\\n```\\n\\n### ③ 插件生态（Git 面板，`dsh-better-sidebar`）\\n\\n![dsh Git 面板（better-sidebar 插件）](./docs/assets/demo-git-panel.png)\\n\\n> 完整图文演示见 [📺 30 秒看懂 dsh](./docs/demo.md)。\\n\\n## 🧰 快速上手资产（精华直接看）\\n\\n<details>\\n<summary><b>📇 一页速查卡</b> —— 安装 · 命令 · 推理档位 · 排障</summary>\\n\\n```bash\\nnpx -y @deepseek-ai/dsh web          # 安装即启动 Web UI\\ndsh --profile headless \\\"任务\\\"        # 一次性任务（脚本/CI）\\n```\\n\\n推理档位：`low`（最快/简单轮次）· `high`（默认）· `max`（最强/复杂推理）——`low` 为实测网关（pi-ai）档位，**官方适配器用 `off`/`high`/`max`**\\n> 工具链任务 90% 时间在思考——降档是最高杠杆提速\\n> 完整卡：[docs/cheatsheet.md](./docs/cheatsheet.md)\\n</details>\\n\\n<details>\\n<summary><b>🔧 插件模板</b> —— 挂载只需 2 步</summary>\\n\\n```yaml\\n# ① package.json 加依赖\\n\\\"my-plugin\\\": \\\"link:C:\\\\\\\\path\\\\\\\\to\\\\\\\\my-plugin\\\"\\n# ② cordis.patch.yml 加挂载\\n- insert:\\n    - id: my-plugin\\n      name: my-plugin\\n```\\n```bash\\ncd ~/.dsh/profiles/web && pnpm install && dsh web\\n```\\n> 可克隆模板（含纯函数+waterfall+测试）：[examples/plugin-template/](./examples/plugin-template/README.md)\\n</details>\\n\\n<details>\\n<summary><b>⚙️ 配置参考</b> —— settings.yaml 核心</summary>\\n\\n```yaml\\nagent-default-model:\\n  model: deepseek-v4-flash    # 或 deepseek-v4-pro\\n  reasoningEffort: high       # off（关闭思考/最快）/ high（默认）/ max（最强）\\n```\\n> 全字段（profile/cordis.patch.yml/常用场景）：[docs/config-reference.md](./docs/config-reference.md)\\n</details>\\n\\n<details>\\n<summary><b>❓ FAQ Top 5</b></summary>\\n\\n1. **dsh 是模型吗？** 不是——是运行时，模型通过 llm 插件接入\\n2. **和 Claude Code 区别？** Claude Code 是\\\"整车\\\"，dsh 是\\\"乐高底座\\\"（开源可定制）\\n3. **要花钱吗？** dsh 免费开源；对话按量付费（缓存折扣：Flash 档 98% / Pro 档 99%+，实测会话缓存命中率 97%）\\n4. **插件装不上 404？** rc.1 依赖断裂——依赖线用 `>=0.1.2-rc.1 <0.2.0`\\n5. **能进生产吗？** rc 阶段有破坏性变更；生态玩法现在可入\\n> 完整 FAQ（六类）：[docs/faq.md](./docs/faq.md)\\n</details>\\n\\n## ⚖️ DSH vs 主流 Agent（能力矩阵）\\n\\n| 维度 | **dsh** | Claude Code | OpenAI Codex | OpenCode | Gemini CLI | Kimi CLI |\\n|---|---|---|---|---|---|---|\\n| 开源 | ✅ MIT | ❌ | ✅ Apache-2.0（CLI/harness） | ✅ MIT | ❌ | ❌ |\\n| 模型绑定 | 模型无关 | Claude 系 | GPT 系 | 任意 | Gemini 系 | Kimi 系 |\\n| **插件体系** | **官方级：一切皆插件，60+ 官方包** | 配置/钩子 | 配置 | 配置 | 无 | 无 |\\n| 自定义界面 | ✅（client 半） | ❌ | ❌ | 部分 | ❌ | ❌ |\\n| 自动化/CI | ✅ headless | ✅ | ✅ | ✅ | ✅ | ✅ |\\n| TUI | 插件可做 | ✅ 内置 | ✅ 内置 | ✅ 内置 | ✅ | ✅ |\\n| 生态阶段 | 零日（2026-08-13） | 成熟 | 成熟 | 成熟 | 成熟 | 早期 |\\n| 适合谁 | 深度定制+生态 | 开箱即用 | 开箱即用 | OpenCode 用户 | Google | Kimi |\\n\\n> 实测案例、同模型多 Agent 对比数据见 [第 1 章](./docs/01-intro.md) 与 benchmark 章节。\\n\\n## 📊 同模型 × 不同 Agent 实测（2026-08-13）\\n\\n> 模型统一 `deepseek-v4-flash`（同一网关、同一 key），只对比 Agent 工程层。5 任务全部正确完成，差异在效率：\\n\\n| Agent | 总耗时 | 正确率|\\n|---|---|---|\\n| **omp** | **70s** | 45/45 ✅|\\n| **dsh** | **130s** | 45/45 ✅|\\n| **opencode** | 172s | 45/45 ✅|\\n\\n> 5 任务 × 3 轮采样中位数（T1 创建文件 → T5 多文件重构），45/45 全对。完整方法/解读见 [📊 Benchmark 附录](./docs/benchmark.md)。\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"./docs/assets/benchmark-bar.svg\\\" alt=\\\"benchmark 柱状图：omp 70s / dsh 130s / opencode 172s\\\" width=\\\"720\\\"/>\\n</p>\\n\\n\\n## 📄 白皮书 PDF\\n\\n- **中文完整版**：[DeepSeek-Harness-白皮书.pdf](https://github.com/Electricitysheep/dsh-handbook/releases/download/v1.8.0/DeepSeek-Harness-.pdf)（15 章 + 附录 ABC，~130k+ 字符，5.5MB）\\n- **英文完整版**：[DeepSeek-Harness-Handbook.pdf](https://github.com/Electricitysheep/dsh-handbook/releases/download/v1.8.0/DeepSeek-Harness-Handbook.pdf)（15 章 + 附录，83 页，约 160k 字符，1.7MB）\\n\\n## 🌐 与生态联动\\n\\n本白皮书的方法论来自真实开源实践：\\n- [DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) —— 社区侧边栏插件（第 5 章案例）\\n\\n### 🧩 社区插件推荐（来自官方讨论区 / [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 精选）\\n\\n| 插件 | 用途 |\\n|---|---|\\n| [dsh-specflow](https://github.com/lonelymoon87/dsh-specflow) | 规格驱动开发：技能+命令+目标实现+进度上下文 |\\n| [dsh-gitflow](https://github.com/lonelymoon87/dsh-gitflow) | 审批门控的 Git 工作流（status/diff/commit/branch） |\\n| [dsh-guardian](https://github.com/lonelymoon87/dsh-guardian) | 危险操作策略检查 + 输出脱敏 + 安全审查 |\\n| [dsh-code-intel](https://github.com/lonelymoon87/dsh-code-intel) | Tree-sitter 符号索引 + 混合搜索 |\\n| [dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui) | 终端 UI（TUI） |\\n| [dsh-computer-use](https://github.com/Anionex/dsh-computer-use) | 无障碍优先的 macOS 电脑控制 |\\n| [dsh-data-agent](https://github.com/omdsh-dev/dsh-data-agent) | 连数据库写 SQL 的数据 Agent |\\n| [dsh-balance-meter](https://github.com/Ghost011118/dsh-balance-meter) | 余额 + 会话成本实时显示 |\\n| [dsh-usage](https://github.com/kestiany/dsh-usage) | Token 用量 + 费用估算 + 52 周热力图（#1169） |\\n| [dsh-sgme](https://github.com/freehul/sgme) | 记忆引擎：按场景注入 + 自动剪枝（省 65-96% 会话，#1052） |\\n| [AgentSoul](https://github.com/yuhui-sama/dsh-agentsoul) | 本地人格 + 长期记忆 + 记忆蒸馏（#1478） |\\n| [dsh-vault](https://github.com/Ox0400/dsh-vault) | 加密凭据保险库：TOTP/API Key/SSH 加密存储（#1457） |\\n\\n> 完整列表见 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)（122+ 插件）。想被收录？[社区案例征集](https://github.com/Electricitysheep/dsh-handbook/discussions/12)\\n\\n### 📣 官方讨论区活跃响应\\n\\n已在 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) Discussions 持续活跃响应（100+ 帖）：插件踩坑 #380 / 安全审计 #817 / 缓存成本 #1052/#1234 / 生态洞察帖 #839 等（[沉淀流水线](./docs/research/feedback-pipeline.md) 持续收录反馈）\\n\\n## 🙏 贡献与反馈\\n\\n- ⭐ 觉得有帮助？点个 Star 支持持续更新\\n- 📝 **跑过真实案例？** 投稿收录进白皮书（署名 + 季度精选 PDF）：[社区案例征集](https://github.com/Electricitysheep/dsh-handbook/discussions/12) ← 直接回帖，模板已备好\\n- 章节/命令失效？rc 版本迭代所致，欢迎 issue 指正\\n- 想参与？见 [🤝 贡献指南（CONTRIBUTING）](./CONTRIBUTING.md) · 想看计划？[🗺️ 路线图（ROADMAP）](./ROADMAP.md) · 生态参与见 [第 7 章](./docs/07-ecosystem.md)\\n\\n## ℹ️ 版本说明\\n\\n- 正文实测基于 dsh `0.1.0-rc.6` / DeepSeek-V4-Flash-0731（2026-08-13 开源）；版本线已同步至 `v0.1.3-alpha.1`（npm 已发布线 `0.1.2-rc.1`）\\n- 示例环境：Windows 11 + Node 24\\n\\n### 🔄 最近更新\\n\\n- **15 章完整版**（第 13 安全沙箱 / 第 14 缓存成本 / 第 15 生态全景报告）+ 附录 A/B/C\\n- 讨论区反馈持续沉淀：FAQ 39 条 / KVCache 规则 / 内置 Agent 预设 / run_code 异步坑（[沉淀流水线](./docs/research/feedback-pipeline.md)）\\n\\n## 📜 许可\\n\\n内容 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) · 示例代码 MIT\\n\"\n    },\n    {\n      \"path\": \"docs/benchmark.md\",\n      \"content\": \"# 附录 C：同模型 × 不同 Agent 实测对比（Benchmark）\\n\\n> 实测日期：2026-08-13 ｜ 模型：deepseek-v4-flash（同一 opencode-go 网关，同一 API key）｜ Agent：dsh / opencode / omp\\n> 目的：**控制模型变量，对比 Agent 工程层的差异**（提示词、工具链、轮次管理）。\\n> 扩展：2026-08-13 追加 T4（生成 markdown 报告）/ T5（多文件小重构），样本 3 轮 → 5 任务 × 3 轮。\\n\\n## 方法\\n\\n| 项 | 说明 |\\n|---|---|\\n| 模型 | `deepseek-v4-flash`（三 agent 均走 opencode-go 网关 + 同一 key，公平对照） |\\n| Agent | dsh（headless profile）、opencode（`opencode run`）、omp（`--print` 非交互） |\\n| 任务 | T1 创建文件 / T2 搜索统计 / T3 修复 bug + 验证 / T4 读数据生成报告 + 自复核 / T5 多文件重构 + 测试通过 |\\n| 环境 | Windows 11 + Node 24，独立工作目录，无预置上下文 |\\n| 度量 | 耗时（秒）+ 正确性（人工核对产物/输出） |\\n\\n任务说明（T4/T5 为合成数据，无隐私风险）：\\n\\n| 任务 | 输入 | 要求 | 人工核对标准 |\\n|---|---|---|---|\\n| T4 生成报告 | `data.json`（4 条合成销售记录） | 生成 `report.md`：数据表格 + 汇总（总销量/总营收/最畅销），自复核 | 汇总数字与数据一致（397 / 130853 / 耳机） |\\n| T5 多文件重构 | `mathops.py` + 依赖它的 `main.py`（含断言） | 把 `multiply` 的乘法逻辑提取为 `_multiply` 辅助函数，不改 `main.py`，`python main.py` 通过 | 出现 `_multiply` 且 multiply 委托调用、断言全过 |\\n\\n## 结果（3 轮采样，取中位数）\\n\\n| Agent | T1 创建文件 | T2 搜索统计 | T3 修 bug+验证 | T4 生成报告 | T5 多文件重构 | 总计（中位） | 正确率 |\\n|---|---|---|---|---|---|---|---|\\n| **omp** | 10s ✅ | 11s ✅ | 15s ✅ | 21s ✅ | 13s ✅ | **70s** | 45/45 |\\n| **dsh** | 22s ✅ | 15s ✅ | 48s ✅ | 26s ✅ | 19s ✅ | **130s** | 45/45 |\\n| **opencode** | 35s ✅ | 37s ✅ | 42s ✅ | 30s ✅ | 28s ✅ | **172s** | 45/45 |\\n\\n> 总计 = 5 任务中位数相加；扩展前（仅 T1-T3）为 omp 36s / dsh 85s / opencode 114s。\\n\\n![benchmark 柱状图](./assets/benchmark-bar.svg)\\n\\n原始 3 轮（秒）：\\n\\n| Agent | 轮次 | T1 | T2 | T3 | T4 | T5 |\\n|---|---|---|---|---|---|---|\\n| dsh | 1 / 2 / 3 | 11 / 27 / 22 | 11 / 15 / 22 | 27 / 48 / 74 | 30 / 26 / 25 | 19 / 25 / 18 |\\n| opencode | 1 / 2 / 3 | 18 / 35 / 35 | 19 / 37 / 37 | 50 / 41 / 42 | 30 / 49 / 30 | 28 / 28 / 32 |\\n| omp | 1 / 2 / 3 | 9 / 10 / 12 | 9 / 11 / 12 | 13 / 33 / 15 | 23 / 21 / 17 | 16 / 12 / 13 |\\n\\n## 解读\\n\\n1. **正确率三家持平（45/45）**——5 任务 × 3 轮全部正确。同模型下，Agent 工程层的差异主要体现在**效率**而非**能力上限**；即便引入文档生成与多文件重构两类新任务，正确性差异仍未出现。\\n2. **总耗时稳定排序**：omp < dsh < opencode（3 轮一致，中位数相加 70s / 130s / 172s）。\\n3. **任务类型对效率差异的影响**（本次扩展的核心发现）——按耗时画像，5 个任务可归为三类：\\n   - **单步轻量**（T1 创建文件 / T2 搜索统计）：agent 间差距**最大**。opencode 35/37s vs omp 10/11s（约 **3.4×**）。任务越简单，越接近纯\\\"启动 + 一次工具调用\\\"开销，opencode 的启动/框架开销占比越高。\\n   - **多步执行 + 验证**（T3 修 bug + 跑验证 / T5 多文件重构 + 测试）：dsh 与 opencode 在此类任务上差距**显著收窄**（T5：19s vs 28s；T3：48s vs 42s 甚至反超）。多工具链场景下，双方都要多次读文件/改文件/跑命令，框架层\\\"每步思考\\\"成本拉平了启动开销差异；dsh 的优势在 T5 上最明显（19s，接近 omp 的 13s），而 T3 的 bug 定位仍让 dsh 偏慢。\\n   - **文档生成**（T4 读数据 → 写报告 → 自复核）：agent 间差距**最小**（omp 21s / dsh 26s / opencode 30s，约 1.4×）。报告生成是\\\"读一次 + 写一次长文本\\\"的回路，耗时主要由模型**输出 token 数**主导，Agent 工程层能优化的工具往返很少，故三家趋同。\\n4. **反直觉点：T5（重构+测试）普遍比 T4（写报告）更快**（dsh 19s<26s、omp 13s<21s；仅 opencode 28s≈30s）。原因：重构是\\\"短文本代码编辑 + 秒级 `python main.py` 验证\\\"的回路，每步模型思考短；而写 markdown 报告需要一次较长文本生成，输出时间占比高——与第 6 章\\\"工具链任务 90% 时间在模型思考/生成\\\"的性能模型一致。\\n5. **omp 的领先幅度随任务类型变化**：搜索统计类最大（T2 为 opencode 的 3.4×），文档生成类最小（T4 仅 1.4×）。说明 omp 的优势主要在**轮次少、工具调用快**，而非模型本身；当任务由长文本生成主导时，任何 agent 的工程层都难再压缩模型输出时间。\\n6. **波动性提示**：opencode 在 T4 第 2 轮出现 49s 离群（其余两轮 30s），dsh 在 T3 波动最大（27→74s）。多轮中位数能吸收这类网络/工具链抖动，单轮比较需谨慎。\\n7. **dsh 定位**：dsh 居中，且 headless 是\\\"运行时 + 插件生态\\\"——**同样的模型，通过插件（如提速插件降推理档）可进一步优化耗时**（见第 6 章）；T5 实测已接近 omp，说明多文件重构类任务是其相对强项。\\n8. **样本警示**：3 轮 × 5 任务，同网关同 key，含网络抖动——方向可信，绝对值会随环境波动。\\n\\n## 可复现\\n\\n```bash\\n# 三个 agent 的命令（独立目录）\\ndsh --profile headless \\\"任务\\\"\\nopencode run \\\"任务\\\" --model opencode-go/deepseek-v4-flash\\nomp \\\"任务\\\" --model deepseek-v4-flash --print\\n```\\n\\nT4/T5 任务原文（T1-T3 见上一版本记录）：\\n\\n<!-- [style] 任务原文代码块统一补 text 语言标签 -->\\n```text\\nT4: 读取当前目录 data.json 中的数据，生成 markdown 报告 report.md：包含每行数据的表格（产品/销量/单价三列）和汇总（总销量、总营收、最畅销产品），生成后自己复核汇总数字与 data.json 一致，完成后回复 已生成\\nT5: 重构 mathops.py：把 multiply 函数内的乘法逻辑提取为私有辅助函数 _multiply(a, b)，multiply 改为调用 _multiply；main.py 依赖 mathops.py 并包含断言测试，不得改动 main.py；重构后运行 python main.py 验证所有断言通过，完成后回复 已重构\\n```\\n\\n> 完整任务定义、合成数据与产物：`~/agent-bench/bench-ext/`（T4/T5 每 agent 独立目录）；T1-T3 见 `~/agent-bench/`。白皮书仓库内 `benchmark/` 目录规划中。\\n\"\n    },\n    {\n      \"path\": \"docs/roadmap.md\",\n      \"content\": \"# 学习路径：从 0 到 1 的 3 天计划\\n\\n> 承诺兑现：**任何开发者，3 天从零到能开发插件。** 本路径把 9 章拆成 3 天，每天有明确目标与验收标准。\\n\\n## Day 1：理解 + 跑起来（第 1-2 章）\\n\\n**目标**：理解 dsh 是什么，能独立启动、对话、配置。\\n\\n| 时间 | 任务 | 验收 |\\n|---|---|---|\\n| 30 分钟 | 读第 1 章（三个直觉 + 能力矩阵） | 能向别人解释\\\"dsh 和 Claude Code 的区别\\\" |\\n| 30 分钟 | 第 2 章动手：`dsh web` 对话 + headless | 能启动 UI 完成一次对话；能跑一条 headless 命令 |\\n| 30 分钟 | 配置模型/推理档位 + 排障速查 | 能改 settings.yaml；能解决端口占用 |\\n\\n**验收**：`dsh --profile headless \\\"你好\\\"` 有回复。\\n\\n## Day 2：理解骨架 + 第一个插件（第 3-4 章）\\n\\n**目标**：理解 profile/插件机制，写出第一个能跑的插件。\\n\\n| 时间 | 任务 | 验收 |\\n|---|---|---|\\n| 1 小时 | 第 3 章（profile、挂载、host/client、扩展点、坑） | 能挂载社区插件（Git 面板） |\\n| 1.5 小时 | 第 4 章抄写示例提速插件：纯函数 + agent/request 注入 | 插件加载无错，日志出现决策输出 |\\n\\n**验收**：自己的插件在 dsh 里生效（日志证明注入发生）。\\n\\n## Day 3：实战 + 调优（第 5-6 章）\\n\\n**目标**：能评估插件质量、调优性能、理解生态玩法。\\n\\n| 时间 | 任务 | 验收 |\\n|---|---|---|\\n| 1 小时 | 第 5 章三个真实 PR（安全红线、沙箱约束、测试方法） | 能说出\\\"写一个 PR 的完整闭环\\\" |\\n| 1 小时 | 第 6 章性能模型（思考占 90%）+ 档位策略 + 坑 | 能给一个任务选档位、预估瓶颈 |\\n| 30 分钟 | 第 8-9 章扫读（工具/上下文、MCP/子代理/工作流）+ 术语表 | 知道 dsh 的能力全貌与扩展方向 |\\n\\n**验收**：能给 dsh 生态贡献一个小改进或写一篇使用心得。\\n\\n## 之后：按需深入\\n\\n| 想做什么 | 去读 |\\n|---|---|\\n| 接外部工具 | 第 9 章 MCP + 官方 mcp 包文档 |\\n| 并行任务 | 第 9 章子代理 |\\n| 确定性流程 | 第 9 章工作流 + 官方 examples |\\n| 生产部署 | 官方架构文档 + 安全模型（sandbox/权限） |\\n| 性能极致 | 第 6 章 + 第 4 章示例源码 |\\n| 生态变现 | 第 7 章 + dsh-plugin topic |\\n\\n## 学习原则（白皮书全程）\\n\\n1. **动手 > 阅读**：每章命令都跑一遍，不看会后悔\\n2. **先复制后理解**：第 4 章完整代码先跑通，再改参数理解机制\\n3. **单测 + 实机双证据**：开发插件时两个都要过\\n4. **善用 --dump-config**：疑惑时看合成配置，比猜快\\n\"\n    },\n    {\n      \"path\": \"docs/research/feedback-pipeline.md\",\n      \"content\": \"# 反馈沉淀流水线（Feedback Pipeline）\\n\\n> 目的：把官方库讨论区（deepseek-ai/deepseek-harness）的新反馈**持续、低成本、可追踪**地沉淀进白皮书。\\n> 机制：每周固定节奏执行一次\\\"扫描 → 评估 → 沉淀 → 记录\\\"四步循环。\\n\\n## 节奏\\n\\n- **每周五**：执行一轮沉淀（约 30-60 分钟，可委派 worktree）\\n- **触发补充**：响应讨论区帖子时若发现新知识，顺手记录到\\\"待沉淀\\\"（反馈日志）\\n\\n## 四步流程\\n\\n### ① 扫描（5 分钟）\\n\\n```bash\\n# 拉取官方库新帖（本周新增 + 我们未响应的高互动帖）\\ngh api graphql -f query='query { repository(owner: \\\"deepseek-ai\\\", name: \\\"deepseek-harness\\\") { discussions(first: 30) { nodes { number title category { name } comments { totalCount } } } } }'\\n```\\n\\n筛选标准：本周新增帖 / comments 增长明显 / 我们响应过的帖中他人回复含新信息。\\n\\n### ② 评估（10 分钟）\\n\\n新知识分类：\\n\\n| 类别 | 判据 | 沉淀目标 |\\n|---|---|---|\\n| **FAQ 候选** | 高频问题 / 有明确 workaround | docs/faq.md |\\n| **章节补充** | 深度踩坑 / 新边界 / 根因分析 | 对应章（2-14） |\\n| **生态收录** | 社区项目 / 插件 / 工具 | docs/07-ecosystem.md |\\n| **成本/安全** | token 消耗 / 安全边界 | 第 13/14 章 |\\n| **无需收录** | 闲聊 / 过时 / 重复已有内容 | —（忽略） |\\n\\n### ③ 沉淀（20-40 分钟）\\n\\n- 按类别更新对应文件（保持手册\\\"实测 + 诚实\\\"风格）\\n- 引用真实帖号（`#xxx` 链接）\\n- 标注推断内容（\\\"（推断，待实测）\\\"）\\n- 已收录内容的帖子响应中**回贴告知**（\\\"已收录进手册 X 处\\\"——激励社区贡献）\\n\\n### ④ 记录（5 分钟）\\n\\n更新 `docs/research/feedback-log.md`：\\n\\n```markdown\\n## 2026-08-21 轮\\n| 来源帖 | 分类 | 沉淀位置 | 状态 |\\n|---|---|---|---|\\n| #xxxx | FAQ 候选 | faq.md 第 4 节 | ✅ 已沉淀 |\\n| #xxxx | 章节补充 | 03-profiles.md 3.4 | ✅ 已沉淀 |\\n```\\n\\n## 沉淀优先级\\n\\n1. **作者授权的**（如 #380 六坑收录）——最高优先，标注致谢\\n2. **高频复现的**（同问题 3+ 帖）——FAQ/对应章\\n3. **根因清晰的**（带源码定位/修复分支）——章节深入\\n4. **生态资产**（插件/工具/教程）——生态章节 + 社区案例征集\\n\\n## 透明度\\n\\n- 每次沉淀后，在**我们的 Discussion**（案例征集帖/进展帖）发一条\\\"本周沉淀摘要\\\"\\n- 让社区知道\\\"反馈会被收录\\\"——这是持续获取优质反馈的激励\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"ebfb3e91da840b94eacd4f52ca8fa2690accd4b7\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"f5a1cb3f9da1b8f16e96603bf136ac56a68056b907a9e6e78fa1a8eb1a06f0a9\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 57,\n        \"lines\": 9937,\n        \"words\": 132412\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"example\",\n        \"files\": 1,\n        \"lines\": 75,\n        \"words\": 508\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"example\",\n        \"files\": 4,\n        \"lines\": 185,\n        \"code\": 147,\n        \"comments\": 12,\n        \"blank\": 27\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "df41d9b41aab7a00d432af7aabd070815f57014a2c608750a855e6a1a2063f9a"
+        }
+    },
+    "unavailable_artifacts": []
+}

@@ -1,0 +1,27 @@
+{
+    "repository": "0xsline/awesome-deepseek-harness",
+    "repository_id": 1330942675,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 1260,
+    "pushed_at": "2026-10-16T12:16:30Z",
+    "issues": {
+        "open": 1,
+        "closed": 19,
+        "created_30d": 2,
+        "closed_30d": 2,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}
