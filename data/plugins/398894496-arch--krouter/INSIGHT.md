@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[e934696](https://github.com/398894496-arch/KRouter/tree/e9346963eca848a5012406ea5cb2f0cacc55fbb6)
+源码版本：[e934696](https://github.com/398894496-arch/KRouter/tree/e9346963eca848a5012406ea5cb2f0cacc55fbb6)
 
 <!-- BEGIN META -->
 [![GitHub ★ 46](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/398894496-arch/KRouter)
 <!-- END META -->
 
-> **实现功能**：让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。
+> **功能**：让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。
 
-> **核心亮点**：将canonical有效状态、ranked分层权重、弱近邻拒绝与来源hash设为默认，跨Agent共用可编辑Markdown；相同两规则BM25基线并未被证明显著超越。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **亮点**：将canonical有效状态、ranked分层权重、弱近邻拒绝与来源hash设为默认，跨Agent共用可编辑Markdown；相同两规则BM25基线并未被证明显著超越。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
-> **风险与缺陷**：canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata缓存与followlinks不构成新鲜度/物理沙箱。DSH同步执行和可选writer lane权限需分开，未做越界复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata缓存与followlinks不构成新鲜度/物理沙箱。DSH同步执行和可选writer lane权限需分开，未做越界复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -122,8 +122,6 @@ lookup本身没有模型调用，日志/缓存仍写本地；结果随后作为�
 
 > **亮点**：将canonical有效状态、ranked分层权重、弱近邻拒绝与来源hash设为默认，跨Agent共用可编辑Markdown；相同两规则BM25基线并未被证明显著超越。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
-将canonical有效状态、ranked分层权重、弱近邻拒绝与来源hash设为默认，跨Agent共用可编辑Markdown；相同两规则BM25基线并未被证明显著超越。详见[Q02](#research-q02)、[Q03](#research-q03)。
-
 夜间run.sh先执行writer，再按配置nightly步骤，dry-run走offline状态和各步发送量估计。DSH工具与nightly分开，插件卸载不自动删除vault，也不能据此认为外部系统timer已停止。导入、写手和备份要按实际安装路径判断，不能从包里存在代码推断用户已经授权或启用。
 
 llm gate将Codex视可读整个账户的lane，只有点名或KROUTER_ALLOW_CODEX允许；其它不能约束CLI需ALLOW_UNCONFINED。writer_invoke为grok配置沙箱、Claude设dontAsk和带vault路径的工具白名单，Codex workspace-write+cwd vault。API文本lane不启本地Agent，但仍会把选定文本发模型。这里是程序参数/门控检查，不是本轮对第三方CLI强制约束的验收。
@@ -182,7 +180,7 @@ canonical过滤无效页，但ranked对旧页仅乘0.25仍可召回；metadata�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

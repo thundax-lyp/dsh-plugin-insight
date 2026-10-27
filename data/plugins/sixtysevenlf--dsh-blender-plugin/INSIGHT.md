@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[f9f115f](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/f9f115f86b3c40fbe8d3dba811283acf71df03f9)
+源码版本：[f9f115f](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/f9f115f86b3c40fbe8d3dba811283acf71df03f9)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
 <!-- END META -->
 
-> **实现功能**：将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。
+> **功能**：将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。
 
-> **核心亮点**：[Q01](#research-q01)、[Q03](#research-q03) 将持久Python、实时取帧与不把skipped/degraded当pass的验收语义连接，增量是可见迭代和明确交付边界，未证明任务质量或速度胜出。
+> **亮点**：[Q01](#research-q01)、[Q03](#research-q03) 将持久Python、实时取帧与不把skipped/degraded当pass的验收语义连接，增量是可见迭代和明确交付边界，未证明任务质量或速度胜出。
 
-> **风险与缺陷**：[Q02](#research-q02) /act请求异常后的worker fallback不能证明GUI未执行，也不能保证两个场景等价；在响应未知时必须先对账，持久修改可能已发生。
+> **主要限制**：[Q02](#research-q02) /act请求异常后的worker fallback不能证明GUI未执行，也不能保证两个场景等价；在响应未知时必须先对账，持久修改可能已发生。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q03](#research-q03) 将持久Python、实时取帧与不把skipped/degraded当pass的验收语义连接，增量是可见迭代和明确交付边界，未证明任务质量或速度胜出。
 
-[Q01](#research-q01)、[Q03](#research-q03) 将持久Python、实时取帧与不把skipped/degraded当pass的验收语义连接，增量是可见迭代和明确交付边界，未证明任务质量或速度胜出。
-
 gate空包不通过、取消signal传递值得复用；但客户端取消网络不等于撤销Blender修改，迁移必须设计请求对账而非盲目fallback。
 
 <a id="detail-section-9"></a>
@@ -161,7 +159,7 @@ gate空包不通过、取消signal传递值得复用；但客户端取消网络�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

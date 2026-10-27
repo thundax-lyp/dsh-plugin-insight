@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[25cf370](https://github.com/tt-a1i/archify/tree/25cf37080fc8b1dbe758a4efc3935b55f3327083)
+源码版本：[25cf370](https://github.com/tt-a1i/archify/tree/25cf37080fc8b1dbe758a4efc3935b55f3327083)
 
 <!-- BEGIN META -->
 [![GitHub ★ 88,446](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=88%2C446&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify)
 <!-- END META -->
 
-> **实现功能**：将需求、代码关系和解释内容组织成交互式图表及单页 HTML。
+> **功能**：将需求、代码关系和解释内容组织成交互式图表及单页 HTML。
 
-> **核心亮点**：相对直接让模型绘图，贡献是把结构化创作、交互产物和绑定实际文件的阶段验收串成流程；它提高交付可追溯性，不证明模型理解正确。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对直接让模型绘图，贡献是把结构化创作、交互产物和绑定实际文件的阶段验收串成流程；它提高交付可追溯性，不证明模型理解正确。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：产物与收据一致不等于关系和结论正确；源码证据选择及异常流程覆盖仍由作者负责，自动可读性不能代替语义复核。[Q03](#research-q03)
+> **主要限制**：产物与收据一致不等于关系和结论正确；源码证据选择及异常流程覆盖仍由作者负责，自动可读性不能代替语义复核。[Q03](#research-q03)
 
 **本文目录**
 
@@ -80,8 +80,6 @@
 
 > **亮点**：相对直接让模型绘图，贡献是把结构化创作、交互产物和绑定实际文件的阶段验收串成流程；它提高交付可追溯性，不证明模型理解正确。[Q01](#research-q01) [Q02](#research-q02)
 
-相对直接让模型绘图，贡献是把结构化创作、交互产物和绑定实际文件的阶段验收串成流程；它提高交付可追溯性，不证明模型理解正确。[Q01](#research-q01) [Q02](#research-q02)
-
 入口 CLI 动态加载 finalize；其阶段明确为 validate、deliver、check、browser-check。收据不仅检查成功布尔值，还校验候选和产物的 SHA-256、字节数、receiptId、provenance 与所需视口覆盖。写收据时先创建独占临时文件，捕获普通文件绑定，在提交前重新核对，再经共享发布函数写入；这使“某文件曾通过”与“当前字节已通过”之间有具体防串线机制。
 
 这个贡献是证据一致性和交付协议。它并不将错误业务描述变为正确关系，也不等于所有写入竞态已被本次证明消除。浏览器自动门禁验证容纳、可读性、主题等条件，Skill同时明确通过收据不包含人工感知审查。可借鉴的是阶段收据与实际字节绑定、拒绝不完整证据；迁移时需一起移植路径、普通文件身份和原子发布约束，单独拷贝一个哈希字段不等价。
@@ -132,7 +130,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：608858fba6677f92cf3cd959e82342b28024e6d365f5cfb9ef63795e0840d455。sloc 0.3.2，TypeScript 5.9.3。
 

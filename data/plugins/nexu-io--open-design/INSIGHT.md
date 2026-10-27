@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[411162c](https://github.com/nexu-io/open-design/tree/411162cb1b97ada701a498a1f34b4366cc9898f5)
+源码版本：[411162c](https://github.com/nexu-io/open-design/tree/411162cb1b97ada701a498a1f34b4366cc9898f5)
 
 <!-- BEGIN META -->
 [![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
 <!-- END META -->
 
-> **实现功能**：协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。
+> **功能**：协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。
 
-> **核心亮点**：相对HTML生成后外发截图反馈，把设计资产、Agent、预览及评论放回同项目；具体增量是交接组织，非模型或全球首创证明。[Q01](#research-q01)
+> **亮点**：相对HTML生成后外发截图反馈，把设计资产、Agent、预览及评论放回同项目；具体增量是交接组织，非模型或全球首创证明。[Q01](#research-q01)
 
-> **风险与缺陷**：协议completed、有限占位检测和完整评论回执不等于设计合格或反馈已落地；固定DSH适配版本范围不能外推所有宿主。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：协议completed、有限占位检测和完整评论回执不等于设计合格或反馈已落地；固定DSH适配版本范围不能外推所有宿主。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对HTML生成后外发截图反馈，把设计资产、Agent、预览及评论放回同项目；具体增量是交接组织，非模型或全球首创证明。[Q01](#research-q01)
 
-相对HTML生成后外发截图反馈，把设计资产、Agent、预览及评论放回同项目；具体增量是交接组织，非模型或全球首创证明。[Q01](#research-q01)
-
 会话身份/缺终态失败与全批回执验收值得复用；移植须包含制品版本、云端幂等及业务验收，而非只解析成功帧。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：9db8c148059872cee901c3e46654d7d48e2bbd41f9019f3075862e7f9011b410。sloc 0.3.2，TypeScript 5.9.3。
 

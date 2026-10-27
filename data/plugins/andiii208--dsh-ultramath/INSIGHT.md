@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[37d95b1](https://github.com/Andiii208/dsh-ultramath/tree/37d95b1820bb77e97a3efc8fe3cbbeb2e5c7a0d1)
+源码版本：[37d95b1](https://github.com/Andiii208/dsh-ultramath/tree/37d95b1820bb77e97a3efc8fe3cbbeb2e5c7a0d1)
 
 <!-- BEGIN META -->
 [![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Andiii208/dsh-ultramath)
 <!-- END META -->
 
-> **实现功能**：同步数模竞赛主控/角色预设、模型库与论文模板。
+> **功能**：同步数模竞赛主控/角色预设、模型库与论文模板。
 
-> **核心亮点**：把分阶段数模资产、五角色预设、模型库、模板和审稿脚本打包为可发现入口，降低流程搭建成本；核心流程执行依赖模型与上游工具。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把分阶段数模资产、五角色预设、模型库、模板和审稿脚本打包为可发现入口，降低流程搭建成本；核心流程执行依赖模型与上游工具。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：“全自动/独立验算/盲评”多为提示文本，不能保证模型正确或真正独立；同步还会清理同名目标目录额外文件，安装前须核所有权和备份。详见[Q03](#research-q03)。
+> **主要限制**：“全自动/独立验算/盲评”多为提示文本，不能保证模型正确或真正独立；同步还会清理同名目标目录额外文件，安装前须核所有权和备份。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：把分阶段数模资产、五角色预设、模型库、模板和审稿脚本打包为可发现入口，降低流程搭建成本；核心流程执行依赖模型与上游工具。详见[Q01](#research-q01)、[Q02](#research-q02)。
 
-把分阶段数模资产、五角色预设、模型库、模板和审稿脚本打包为可发现入口，降低流程搭建成本；核心流程执行依赖模型与上游工具。详见[Q01](#research-q01)、[Q02](#research-q02)。
-
 同步采用字节/mtime 比较、结构校验，Windows 逐文件复制；dirty 同名目录会 prune extras，非事务且失败告警。Host 不注册数学工具，预设调用 DSH 上游工具。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

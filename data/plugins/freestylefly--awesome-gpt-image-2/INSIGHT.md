@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[63e6176](https://github.com/freestylefly/awesome-gpt-image-2/tree/63e6176fa01be51c000108dacd72716d3e46784b)
+源码版本：[63e6176](https://github.com/freestylefly/awesome-gpt-image-2/tree/63e6176fa01be51c000108dacd72716d3e46784b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
 <!-- END META -->
 
-> **实现功能**：社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。
+> **功能**：社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。
 
-> **核心亮点**：相对散收藏提示词，将案例、模板和约束组织成可检索Skill参考；增量是表达与分发，未证明新图像算法或稳定生产收益。[Q01](#research-q01)
+> **亮点**：相对散收藏提示词，将案例、模板和约束组织成可检索Skill参考；增量是表达与分发，未证明新图像算法或稳定生产收益。[Q01](#research-q01)
 
-> **风险与缺陷**：单次案例缺具体模型与原始条件，不能支持同条件版本排名；MIT不覆盖所有社区素材，安装默认all会覆盖同名技能目录。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：单次案例缺具体模型与原始条件，不能支持同条件版本排名；MIT不覆盖所有社区素材，安装默认all会覆盖同名技能目录。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：相对散收藏提示词，将案例、模板和约束组织成可检索Skill参考；增量是表达与分发，未证明新图像算法或稳定生产收益。[Q01](#research-q01)
 
-相对散收藏提示词，将案例、模板和约束组织成可检索Skill参考；增量是表达与分发，未证明新图像算法或稳定生产收益。[Q01](#research-q01)
-
 从单一结构数据生成Skill参考并校验断链值得借鉴；复用需保留固定版本、许可和失败样本，安装应控制覆盖范围。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：7f756228c052e2c4d12e740a5372198b25cfa9a47c3c2bfb57b3683ed15dbb0a。sloc 0.3.2，TypeScript 5.9.3。
 

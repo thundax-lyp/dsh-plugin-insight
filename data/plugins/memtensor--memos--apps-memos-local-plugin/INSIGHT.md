@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[adcb9f2](https://github.com/MemTensor/MemOS/tree/adcb9f270c982f2b9ff8db9714792829d3bd6ab8/apps/memos-local-plugin)
+源码版本：[adcb9f2](https://github.com/MemTensor/MemOS/tree/adcb9f270c982f2b9ff8db9714792829d3bd6ab8/apps/memos-local-plugin)
 
 <!-- BEGIN META -->
 [![GitHub ★ 12,110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/MemOS) [![npm 30d 8,367](https://img.shields.io/static/v1?label=npm+30d&message=8%2C367&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
 <!-- END META -->
 
-> **实现功能**：为DSH、OpenClaw和Hermes提供本地记忆、后台采集、分层检索及可选经验演化。
+> **功能**：为DSH、OpenClaw和Hermes提供本地记忆、后台采集、分层检索及可选经验演化。
 
-> **核心亮点**：[Q01](#research-q01)与[Q02](#research-q02)支持的具体贡献是把跨宿主记忆核心接入DSH接受输入后的生命周期，以同轮去重、三秒上限和fail-open保护前台，并把采集留在后台。相比人工维护笔记后每次复制，自动采集与召回减少手工挑选步骤；没有同任务结果证明净节时或正确率提升。四层演化属于本地组件可选完整模式，默认轻量配置不能作为自动产出策略和Skill的证明。
+> **亮点**：[Q01](#research-q01)与[Q02](#research-q02)支持的具体贡献是把跨宿主记忆核心接入DSH接受输入后的生命周期，以同轮去重、三秒上限和fail-open保护前台，并把采集留在后台。相比人工维护笔记后每次复制，自动采集与召回减少手工挑选步骤；没有同任务结果证明净节时或正确率提升。四层演化属于本地组件可选完整模式，默认轻量配置不能作为自动产出策略和Skill的证明。
 
-> **风险与缺陷**：[Q03](#research-q03)表明默认轻量反馈写入不等于完整演化；[Q02](#research-q02)表明下一轮不等待后台提交。最影响贡献的是“跨轮记忆”可能在紧接着的纠错任务中读到旧状态，这是一项可解释的时延取舍，并非本轮复现的错误。若错误历史不能被可靠识别和纠正，自动召回的便利会被复核负担抵消。
+> **主要限制**：[Q03](#research-q03)表明默认轻量反馈写入不等于完整演化；[Q02](#research-q02)表明下一轮不等待后台提交。最影响贡献的是“跨轮记忆”可能在紧接着的纠错任务中读到旧状态，这是一项可解释的时延取舍，并非本轮复现的错误。若错误历史不能被可靠识别和纠正，自动召回的便利会被复核负担抵消。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：[Q01](#research-q01)与[Q02](#research-q02)支持的具体贡献是把跨宿主记忆核心接入DSH接受输入后的生命周期，以同轮去重、三秒上限和fail-open保护前台，并把采集留在后台。相比人工维护笔记后每次复制，自动采集与召回减少手工挑选步骤；没有同任务结果证明净节时或正确率提升。四层演化属于本地组件可选完整模式，默认轻量配置不能作为自动产出策略和Skill的证明。
 
-[Q01](#research-q01)与[Q02](#research-q02)支持的具体贡献是把跨宿主记忆核心接入DSH接受输入后的生命周期，以同轮去重、三秒上限和fail-open保护前台，并把采集留在后台。相比人工维护笔记后每次复制，自动采集与召回减少手工挑选步骤；没有同任务结果证明净节时或正确率提升。四层演化属于本地组件可选完整模式，默认轻量配置不能作为自动产出策略和Skill的证明。
-
 最可借鉴的是把宿主绑定入口与结构化生命周期桥分开。index负责Cordis服务、模型桥、Viewer及注册回收，bridge只依赖MemoryCore契约和结构化宿主形状。这样把状态关联、队列和召回决策从具体宿主导入中隔离，适合需要跨宿主复用同一记忆核心的项目；不是把MemOS全部算法贡献归给DSH适配器。
 
 另一个具体取舍是注册操作收集disposer并逆序回收。启动异常会注销已注册钩子、停止Viewer重试，关闭Viewer并关闭bridge或core；正常退出也先注销，再处理资源。有限端口重试与取消后迟到listener关闭逻辑，表明作者把“可选UI失败不能阻断记忆”和资源生命周期放在同一入口治理。
@@ -163,7 +161,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

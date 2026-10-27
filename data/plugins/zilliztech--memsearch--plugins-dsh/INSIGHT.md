@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[926ba5b](https://github.com/zilliztech/memsearch/tree/926ba5b7c3d53ae0f424fba9029c29e88718b687/plugins/dsh)
+源码版本：[926ba5b](https://github.com/zilliztech/memsearch/tree/926ba5b7c3d53ae0f424fba9029c29e88718b687/plugins/dsh)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2,797](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C797&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zilliztech/memsearch) [![npm 30d 3,358](https://img.shields.io/static/v1?label=npm+30d&message=3%2C358&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zilliz/memsearch-dsh) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zilliz/memsearch-dsh)
 <!-- END META -->
 
-> **实现功能**：为DSH接入共享Markdown记忆、会话摘要、检索注入、记忆Skill及候选评审面板。
+> **功能**：为DSH接入共享Markdown记忆、会话摘要、检索注入、记忆Skill及候选评审面板。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把DSH事件转换成跨Agent共同Markdown与原会话锚点，并通过原生Skill和pre-step候选注入减去手工复制环节。检索算法来自外部MemSearch核心，适配器贡献是数据和流程接线。候选评审与主动安装分开，但不是强制审批门禁。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把DSH事件转换成跨Agent共同Markdown与原会话锚点，并通过原生Skill和pre-step候选注入减去手工复制环节。检索算法来自外部MemSearch核心，适配器贡献是数据和流程接线。候选评审与主动安装分开，但不是强制审批门禁。
 
-> **风险与缺陷**：[Q03](#research-q03)显示摘要失败写入unavailable占位后仍带捕获锚点，事件重放先按锚点去重而不会重新摘要。幂等只能保证这一条记录不重复，不能保证里面已有可用知识；原会话可追溯也不等于已自动恢复。该源码限制尚未运行复现，试用应检查占位而非只检查日记存在。
+> **主要限制**：[Q03](#research-q03)显示摘要失败写入unavailable占位后仍带捕获锚点，事件重放先按锚点去重而不会重新摘要。幂等只能保证这一条记录不重复，不能保证里面已有可用知识；原会话可追溯也不等于已自动恢复。该源码限制尚未运行复现，试用应检查占位而非只检查日记存在。
 
 **本文目录**
 
@@ -106,8 +106,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把DSH事件转换成跨Agent共同Markdown与原会话锚点，并通过原生Skill和pre-step候选注入减去手工复制环节。检索算法来自外部MemSearch核心，适配器贡献是数据和流程接线。候选评审与主动安装分开，但不是强制审批门禁。
 
-[Q01](#research-q01)、[Q02](#research-q02)识别的增量是把DSH事件转换成跨Agent共同Markdown与原会话锚点，并通过原生Skill和pre-step候选注入减去手工复制环节。检索算法来自外部MemSearch核心，适配器贡献是数据和流程接线。候选评审与主动安装分开，但不是强制审批门禁。
-
 不是。review动作把来源标记消息排入活跃Agent的next-turn inbox；install动作独立启动memsearch skills install并立即返回started。代码没有要求该候选先通过review，也没有把后台进程完成等同HTTP成功。用户可以主动安装，但“有评审面板”不代表存在强制安全放行或已完成验收。
 
 路由在每次请求解析connection.requestRejection，复用宿主的认证与Host/Origin策略，认证服务不可用时返回503。这一设计优于直接开放写入接口，但不证明候选内容可信，也不代替安装后检查。默认安装目标可落在~/.agents/skills，由filesystem provider加载；这会扩大到当前聊天以外的环境。
@@ -160,7 +158,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

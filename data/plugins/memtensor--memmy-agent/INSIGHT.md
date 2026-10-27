@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[74b26fc](https://github.com/MemTensor/memmy-agent/tree/74b26fc78ebd14a784981ba8e83bebf878c20865)
+源码版本：[74b26fc](https://github.com/MemTensor/memmy-agent/tree/74b26fc78ebd14a784981ba8e83bebf878c20865)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2,144](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C144&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/memmy-agent)
 <!-- END META -->
 
-> **实现功能**：提供本地优先的跨 Agent 记忆服务、桌面与 CLI 入口，并通过适配接力项目上下文。
+> **功能**：提供本地优先的跨 Agent 记忆服务、桌面与 CLI 入口，并通过适配接力项目上下文。
 
-> **核心亮点**：把跨Agent历史组织为服务化结构记忆并提供DSH自动捕获/召回接缝，增量在连续性与共享状态，而非单纯聊天摘要。见[Q01](#research-q01)。
+> **亮点**：把跨Agent历史组织为服务化结构记忆并提供DSH自动捕获/召回接缝，增量在连续性与共享状态，而非单纯聊天摘要。见[Q01](#research-q01)。
 
-> **风险与缺陷**：local-first不等于离线，远程embedding/LLM会接收文本；后台服务与记忆库不会随关窗口或卸载DSH adapter自动消失。见[Q03](#research-q03)。
+> **主要限制**：local-first不等于离线，远程embedding/LLM会接收文本；后台服务与记忆库不会随关窗口或卸载DSH adapter自动消失。见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把跨Agent历史组织为服务化结构记忆并提供DSH自动捕获/召回接缝，增量在连续性与共享状态，而非单纯聊天摘要。见[Q01](#research-q01)。
 
-把跨Agent历史组织为服务化结构记忆并提供DSH自动捕获/召回接缝，增量在连续性与共享状态，而非单纯聊天摘要。见[Q01](#research-q01)。
-
 来源scan与运行时bridge分离、同session捕获串行和sourceMemoryIds值得借鉴；模板完整性与原子写入不等于运行兼容/隐私，迁移须核宿主消息/事件契约，见[Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ local-first不等于离线，远程embedding/LLM会接收文本；后台服务�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[086bd05](https://github.com/Aik358/dsh-anchored-monitor/tree/086bd05e1e3035ddf23133f3a0ee479291a4b237)
+源码版本：[086bd05](https://github.com/Aik358/dsh-anchored-monitor/tree/086bd05e1e3035ddf23133f3a0ee479291a4b237)
 
 <!-- BEGIN META -->
 [![GitHub ★ 13](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aik358/dsh-anchored-monitor) [![npm 30d 973](https://img.shields.io/static/v1?label=npm+30d&message=973&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@a9i5k4/dsh-anchored-monitor)
 <!-- END META -->
 
-> **实现功能**：对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。
+> **功能**：对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。
 
-> **核心亮点**：将流式推理指纹、窗口和实验日志做成实时仪表与可配置状态机。详见[Q02](#research-q02)。
+> **亮点**：将流式推理指纹、窗口和实验日志做成实时仪表与可配置状态机。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：默认启用会话打断/自动续跑，README 却称默认仅监测；HTTP CORS:* 无鉴权且配置可改 monitorUrl。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：默认启用会话打断/自动续跑，README 却称默认仅监测；HTTP CORS:* 无鉴权且配置可改 monitorUrl。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：将流式推理指纹、窗口和实验日志做成实时仪表与可配置状态机。详见[Q02](#research-q02)。
 
-将流式推理指纹、窗口和实验日志做成实时仪表与可配置状态机。详见[Q02](#research-q02)。
-
 host 自动拉 monitor，流/日志推送；默认 intervention true，HTTP CORS 通配且无鉴权；设置允许任意 http(s) monitorUrl。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ host 自动拉 monitor，流/日志推送；默认 intervention true，HTTP CORS
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

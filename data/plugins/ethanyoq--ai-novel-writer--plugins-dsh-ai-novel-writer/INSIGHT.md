@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[62880d6](https://github.com/EthanYoQ/AI-Novel-Writer/tree/62880d629af7bbfaf968c0cda5ae76816e917915/plugins/dsh-ai-novel-writer)
+源码版本：[62880d6](https://github.com/EthanYoQ/AI-Novel-Writer/tree/62880d629af7bbfaf968c0cda5ae76816e917915/plugins/dsh-ai-novel-writer)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
 <!-- END META -->
 
-> **实现功能**：为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。
+> **功能**：为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。
 
-> **核心亮点**：[Q02](#research-q02) 用Host身份、持久proposal与逐项receipt把生成和权威保存分开，相对聊天复制增加可追踪交接；不证明文学质量。
+> **亮点**：[Q02](#research-q02) 用Host身份、持久proposal与逐项receipt把生成和权威保存分开，相对聊天复制增加可追踪交接；不证明文学质量。
 
-> **风险与缺陷**：[Q03](#research-q03) 一项成功不代表整包保存，数据库又不随Git备份；维护冻结和不互通桌面限制新采用，部分失败必须先回读状态。
+> **主要限制**：[Q03](#research-q03) 一项成功不代表整包保存，数据库又不随Git备份；维护冻结和不互通桌面限制新采用，部分失败必须先回读状态。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：[Q02](#research-q02) 用Host身份、持久proposal与逐项receipt把生成和权威保存分开，相对聊天复制增加可追踪交接；不证明文学质量。
 
-[Q02](#research-q02) 用Host身份、持久proposal与逐项receipt把生成和权威保存分开，相对聊天复制增加可追踪交接；不证明文学质量。
-
 非权威建议与权威事务分离值得复用；移植必须保留Host身份和逐项状态，不能把bundle说成单事务或忽略数据库备份。
 
 <a id="detail-section-9"></a>
@@ -160,7 +158,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

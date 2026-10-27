@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[45045e4](https://github.com/AllenWES365/dsh-local-memory/tree/45045e44ffebecceca4f68ab4351895148bbc696)
+源码版本：[45045e4](https://github.com/AllenWES365/dsh-local-memory/tree/45045e44ffebecceca4f68ab4351895148bbc696)
 
 <!-- BEGIN META -->
 [![npm 30d 137](https://img.shields.io/static/v1?label=npm+30d&message=137&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-local-memory) [![最新发布 2026-09-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-local-memory)
 <!-- END META -->
 
-> **实现功能**：保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。
+> **功能**：保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。
 
-> **核心亮点**：相对Hindsight平级分库，增量是读取时跨库视图与“发现缺失→播种→核对状态”闭环；不复制总库，不将上游抽取引擎算作自身创新。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：相对Hindsight平级分库，增量是读取时跨库视图与“发现缺失→播种→核对状态”闭环；不复制总库，不将上游抽取引擎算作自身创新。[Q01](#research-q01) [Q02](#research-q02)
 
-> **风险与缺陷**：项目隔离能否成立取决于库身份。源码只用目录basename，同名仓库会映射到同库；分库不是访问控制，本地daemon也不自动代表离线LLM处理。[Q03](#research-q03)
+> **主要限制**：项目隔离能否成立取决于库身份。源码只用目录basename，同名仓库会映射到同库；分库不是访问控制，本地daemon也不自动代表离线LLM处理。[Q03](#research-q03)
 
 **本文目录**
 
@@ -95,8 +95,6 @@
 
 > **亮点**：相对Hindsight平级分库，增量是读取时跨库视图与“发现缺失→播种→核对状态”闭环；不复制总库，不将上游抽取引擎算作自身创新。[Q01](#research-q01) [Q02](#research-q02)
 
-相对Hindsight平级分库，增量是读取时跨库视图与“发现缺失→播种→核对状态”闭环；不复制总库，不将上游抽取引擎算作自身创新。[Q01](#research-q01) [Q02](#research-q02)
-
 单库失败局部化、结果截断说明与播种进度看证据值得借鉴；basename身份、文档列表limit=200与有界扫描限制完整性。移植需对齐后端身份/播种协议和错误语义，不能只复用HTTP并发。
 
 <a id="detail-section-5"></a>
@@ -145,7 +143,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

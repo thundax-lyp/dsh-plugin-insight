@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[b04fadf](https://github.com/988hj7tczd-oss/dsh-math-olympiad/tree/b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0)
+源码版本：[b04fadf](https://github.com/988hj7tczd-oss/dsh-math-olympiad/tree/b04fadfeaf88f8f98ba09ab57e9379eb36f05ea0)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-math-olympiad) [![npm 30d 104](https://img.shields.io/static/v1?label=npm+30d&message=104&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-math-olympiad) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-math-olympiad)
 <!-- END META -->
 
-> **实现功能**：挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。
+> **功能**：挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。
 
-> **核心亮点**：把求解、对抗验证、最多两轮修复和弃权写成可加载流程；详见[Q01](#research-q01)。
+> **亮点**：把求解、对抗验证、最多两轮修复和弃权写成可加载流程；详见[Q01](#research-q01)。
 
-> **风险与缺陷**：验证器隔离只由 Skill 文本纪律和模拟测试示例体现，生产期未见执行性保证；详见[Q02](#research-q02)。
+> **主要限制**：验证器隔离只由 Skill 文本纪律和模拟测试示例体现，生产期未见执行性保证；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：把求解、对抗验证、最多两轮修复和弃权写成可加载流程；详见[Q01](#research-q01)。
 
-把求解、对抗验证、最多两轮修复和弃权写成可加载流程；详见[Q01](#research-q01)。
-
 locator 仅供路径，测试用本地 stub 模拟协议；TeX 脚本有引擎白名单和退出码。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ locator 仅供路径，测试用本地 stub 模拟协议；TeX 脚本有引擎�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

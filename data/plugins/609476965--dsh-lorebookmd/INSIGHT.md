@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[4bc4110](https://github.com/609476965/dsh-LorebookMD/tree/4bc4110efbfb4888286b81aaf53191705dade9dd)
+源码版本：[4bc4110](https://github.com/609476965/dsh-LorebookMD/tree/4bc4110efbfb4888286b81aaf53191705dade9dd)
 
 <!-- BEGIN META -->
 [![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/609476965/dsh-LorebookMD) [![npm 30d 631](https://img.shields.io/static/v1?label=npm+30d&message=631&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lorebookmd) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lorebookmd)
 <!-- END META -->
 
-> **实现功能**：将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。
+> **功能**：将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。
 
-> **核心亮点**：将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。
+> **亮点**：将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：实例共享active可影响其它会话；MD编辑不回流，全文与关键词状态可分叉。固定Git缺声明的host入口，发行包内容仍需核对，未做故障复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：实例共享active可影响其它会话；MD编辑不回流，全文与关键词状态可分叉。固定Git缺声明的host入口，发行包内容仍需核对，未做故障复现。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -116,8 +116,6 @@ README称发布包内置lib，本轮固定Git的lib树没有声明的lib/index.j
 
 > **亮点**：将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。
 
-将角色卡和世界书解析接入共享预设管理，生成世界书/创作两种提示词及本地MD，减少手工迁移和重复切换；不是完整Tavern引擎或新生成模型。详见[Q02](#research-q02)。
-
 PresetRepo把纯状态逻辑和文件IO端口分开，简化复用和故障注入；保存JSON用临时文件rename，坏预设JSON尝试改名留存，watcher与防抖计时器有scope清理。这些是可借鉴的基础结构，不等于跨多文件事务或严格崩溃一致性。
 
 use/off/upsert/remove先替换内存state再io.save，保存抛错不会回滚内存。世界书导入又顺序保存两个预设、worldbooks.json和MD，任一步失败都可能留下前半部分；删除同理。每个JSON自己的rename无法让这组文件原子提交。启动遇损坏presets.json尝试rename，备份失败被忽略后仍从空仓库启动，后续保存可能覆盖原文件；不应把注释所说避免丢失当所有IO失败下的保证。
@@ -174,7 +172,7 @@ safeFileName仅替换保留字符，两个不同名字可能映射到同一个MD
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

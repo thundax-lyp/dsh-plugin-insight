@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b/packages/deepseek-ivideo)
+源码版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b/packages/deepseek-ivideo)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 994](https://img.shields.io/static/v1?label=npm+30d&message=994&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo)
 <!-- END META -->
 
-> **实现功能**：在DSH中加入HyperFrames视频时间线，编辑本地项目、预览并提供受限自动校验。
+> **功能**：在DSH中加入HyperFrames视频时间线，编辑本地项目、预览并提供受限自动校验。
 
-> **核心亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将上游HyperFrames作为同会话本地视频工作流，增加预览资源归属与受限校验交接；编辑器引擎贡献归上游。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将上游HyperFrames作为同会话本地视频工作流，增加预览资源归属与受限校验交接；编辑器引擎贡献归上游。
 
-> **风险与缺陷**：[Q03](#research-q03) validate采用5样本并限40问题，退出码0不等于整段视频和业务内容验收；短时缺陷与最终导出仍需检查。
+> **主要限制**：[Q03](#research-q03) validate采用5样本并限40问题，退出码0不等于整段视频和业务内容验收；短时缺陷与最终导出仍需检查。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将上游HyperFrames作为同会话本地视频工作流，增加预览资源归属与受限校验交接；编辑器引擎贡献归上游。
 
-[Q01](#research-q01)、[Q02](#research-q02) 将上游HyperFrames作为同会话本地视频工作流，增加预览资源归属与受限校验交接；编辑器引擎贡献归上游。
-
 复用starts去重、view lease与owned进程清理可减少资源误关；移植需绑定项目真实路径并说明借用服务的所有权，不能复制kill逻辑而丢掉owned。
 
 <a id="detail-section-9"></a>
@@ -160,7 +158,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

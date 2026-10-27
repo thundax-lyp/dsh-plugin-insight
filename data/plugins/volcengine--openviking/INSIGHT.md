@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[4ab22a4](https://github.com/volcengine/OpenViking/tree/4ab22a4923452362b60aef2826c2083ce36168d2)
+源码版本：[4ab22a4](https://github.com/volcengine/OpenViking/tree/4ab22a4923452362b60aef2826c2083ce36168d2)
 
 <!-- BEGIN META -->
 [![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
 <!-- END META -->
 
-> **实现功能**：以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。
+> **功能**：以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。
 
-> **核心亮点**：将虚拟URI、目录摘要和会话检索组合成可检查的上下文入口。
+> **亮点**：将虚拟URI、目录摘要和会话检索组合成可检查的上下文入口。
 
-> **风险与缺陷**：摘要正确性和更新一致性尚无当前任务对照，根平台不等于已验收DSH插件。
+> **主要限制**：摘要正确性和更新一致性尚无当前任务对照，根平台不等于已验收DSH插件。
 
 **本文目录**
 
@@ -169,7 +169,7 @@ search与find的上下文差异、摘要读取及权限检查见 [Q02](#research
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 <details>
 <summary>查看辅助统计</summary>

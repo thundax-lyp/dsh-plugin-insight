@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[1f47a60](https://github.com/9426Haruka/dsh-markdown-live/tree/1f47a60954fde04b71cf404e8e42124a5d07959e)
+源码版本：[1f47a60](https://github.com/9426Haruka/dsh-markdown-live/tree/1f47a60954fde04b71cf404e8e42124a5d07959e)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/9426Haruka/dsh-markdown-live)
 <!-- END META -->
 
-> **实现功能**：在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
+> **功能**：在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
 
-> **核心亮点**：相对纯文本 composer，它在不改变提交字符串的前提下提供接近 WYSIWYG 的输入反馈，并保留 mention/skill等非文本节点。贡献主要是 Lexical 适配与交互细节；表格、图片预览和代码语法高亮未覆盖，且依赖宿主内部节点结构。 详见[Q03](#research-q03)。
+> **亮点**：相对纯文本 composer，它在不改变提交字符串的前提下提供接近 WYSIWYG 的输入反馈，并保留 mention/skill等非文本节点。贡献主要是 Lexical 适配与交互细节；表格、图片预览和代码语法高亮未覆盖，且依赖宿主内部节点结构。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：关键质疑是“显示层不改文本”能否在所有编辑操作成立。节点切分、格式位、软换行归一、IME 与粘贴互相作用可能造成光标跳动、撤销历史异常或隐藏标记误导；覆盖宿主 text renderer 的 priority 约定升级后可能失效。长文暂停也造成体验不一致。 详见[Q04](#research-q04)。
+> **主要限制**：关键质疑是“显示层不改文本”能否在所有编辑操作成立。节点切分、格式位、软换行归一、IME 与粘贴互相作用可能造成光标跳动、撤销历史异常或隐藏标记误导；覆盖宿主 text renderer 的 priority 约定升级后可能失效。长文暂停也造成体验不一致。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：相对纯文本 composer，它在不改变提交字符串的前提下提供接近 WYSIWYG 的输入反馈，并保留 mention/skill等非文本节点。贡献主要是 Lexical 适配与交互细节；表格、图片预览和代码语法高亮未覆盖，且依赖宿主内部节点结构。 详见[Q03](#research-q03)。
 
-相对纯文本 composer，它在不改变提交字符串的前提下提供接近 WYSIWYG 的输入反馈，并保留 mention/skill等非文本节点。贡献主要是 Lexical 适配与交互细节；表格、图片预览和代码语法高亮未覆盖，且依赖宿主内部节点结构。 详见[Q03](#research-q03)。
-
 扫描、Lexical成形、DOM表现和消息渲染集中在单个大 client.js，部署简单但维护耦合高。逐块缓存、帧合并、IME保护和卸载 disposer 可借鉴；复用需建立编辑器属性测试，不能只依赖截图。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

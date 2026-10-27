@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b)
+源码版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design)
 <!-- END META -->
 
-> **实现功能**：面向DSH分发Design、PPT和Video三个独立可编辑Studio插件。
+> **功能**：面向DSH分发Design、PPT和Video三个独立可编辑Studio插件。
 
-> **核心亮点**：[Q01](#research-q01)、[Q03](#research-q03) 贡献在同一上游契约的独立任务分发与本地可编辑交付，而非根再提供一个引擎；不重复计子包模板与工具数量。
+> **亮点**：[Q01](#research-q01)、[Q03](#research-q03) 贡献在同一上游契约的独立任务分发与本地可编辑交付，而非根再提供一个引擎；不重复计子包模板与工具数量。
 
-> **风险与缺陷**：[Q02](#research-q02)、[Q03](#research-q03) 文件可编辑、保存原子性和有限校验不等于业务成果合格，根镜像可读也不能证明全部构建对应；需选定子包和实际验收范围。
+> **主要限制**：[Q02](#research-q02)、[Q03](#research-q03) 文件可编辑、保存原子性和有限校验不等于业务成果合格，根镜像可读也不能证明全部构建对应；需选定子包和实际验收范围。
 
 **本文目录**
 
@@ -109,8 +109,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q03](#research-q03) 贡献在同一上游契约的独立任务分发与本地可编辑交付，而非根再提供一个引擎；不重复计子包模板与工具数量。
 
-[Q01](#research-q01)、[Q03](#research-q03) 贡献在同一上游契约的独立任务分发与本地可编辑交付，而非根再提供一个引擎；不重复计子包模板与工具数量。
-
 可借鉴分发与贡献回上游的单一代码源治理，但必须保留SOURCE_COMMIT和构建映射；代码量包含分发bundle不能当原创开发量。
 
 <a id="detail-section-9"></a>
@@ -159,7 +157,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

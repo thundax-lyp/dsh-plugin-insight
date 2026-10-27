@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-分析版本：[5f8744f](https://github.com/2026heshao/dsh-obsidian-board/tree/5f8744f5347caeaa5001ebd68754d0c1f25563ec)
+源码版本：[5f8744f](https://github.com/2026heshao/dsh-obsidian-board/tree/5f8744f5347caeaa5001ebd68754d0c1f25563ec)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2026heshao/dsh-obsidian-board) [![npm 30d 133](https://img.shields.io/static/v1?label=npm+30d&message=133&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-obsidian-board) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-obsidian-board)
 <!-- END META -->
 
-> **实现功能**：在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。
+> **功能**：在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。
 
-> **核心亮点**：把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。
+> **亮点**：把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：索引直接读可含外链md而读源另有realpath，自动回退可能更换资料接收者，同名保存非独占。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@ README“no data leaves your machine”只能收窄到本地索引/检索计算�
 
 > **亮点**：把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。
 
-把搜索、来源阅读、流式问答与保存放进同页闭环。详见[Q01](#research-q01)。
-
 attempt隔离、思考分流与统一契约有价值，源码正则测试不能代替阻塞资源行为。详见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ attempt隔离、思考分流与统一契约有价值，源码正则测试不能�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

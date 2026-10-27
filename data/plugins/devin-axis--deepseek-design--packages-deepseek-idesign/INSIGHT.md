@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b/packages/deepseek-idesign)
+源码版本：[62ee529](https://github.com/Devin-AXIS/deepseek-design/tree/62ee529e84423ba63e823b23860293a43b6eb03b/packages/deepseek-idesign)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign)
 <!-- END META -->
 
-> **实现功能**：在DSH中加入可视化Design视图，编辑本地HTML/CSS并把选区修改交给AI草稿。
+> **功能**：在DSH中加入可视化Design视图，编辑本地HTML/CSS并把选区修改交给AI草稿。
 
-> **核心亮点**：[Q01](#research-q01)、[Q03](#research-q03) iPolloWork Studio适配把真实文件、手动精调和选区草稿接入同一会话，减少定位转述；不是另创设计引擎。
+> **亮点**：[Q01](#research-q01)、[Q03](#research-q03) iPolloWork Studio适配把真实文件、手动精调和选区草稿接入同一会话，减少定位转述；不是另创设计引擎。
 
-> **风险与缺陷**：[Q02](#research-q02)、[Q03](#research-q03) mtime冲突仅在带基线且非force时检查，原子替换不保证多编辑者事务；旧选区草稿也可能在文件变动后误指对象。
+> **主要限制**：[Q02](#research-q02)、[Q03](#research-q03) mtime冲突仅在带基线且非force时检查，原子替换不保证多编辑者事务；旧选区草稿也可能在文件变动后误指对象。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：[Q01](#research-q01)、[Q03](#research-q03) iPolloWork Studio适配把真实文件、手动精调和选区草稿接入同一会话，减少定位转述；不是另创设计引擎。
 
-[Q01](#research-q01)、[Q03](#research-q03) iPolloWork Studio适配把真实文件、手动精调和选区草稿接入同一会话，减少定位转述；不是另创设计引擎。
-
 复用同源/source双校验与setDraft确认边界；移植需保留workspace作用域与条件写入语义，不把原子rename当版本事务。
 
 <a id="detail-section-9"></a>
@@ -160,7 +158,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[3702335](https://github.com/Andiii208/gzhflow/tree/3702335770e30ebccc3790556d53aa14c30046f2)
+源码版本：[3702335](https://github.com/Andiii208/gzhflow/tree/3702335770e30ebccc3790556d53aa14c30046f2)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Andiii208/gzhflow)
 <!-- END META -->
 
-> **实现功能**：把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。
+> **功能**：把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。
 
-> **核心亮点**：结合可替换风格/主题、静态脚本门、LLM清单与人工停靠点，并以七工具和一个bundled Skill接入DSH，减少重复流程说明；方法借鉴归属以NOTICE作者说明为界。详见[Q02](#research-q02)。
+> **亮点**：结合可替换风格/主题、静态脚本门、LLM清单与人工停靠点，并以七工具和一个bundled Skill接入DSH，减少重复流程说明；方法借鉴归属以NOTICE作者说明为界。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：reader先trim再用非空首字符判顶层，图生子键无法读入；check_env接受env而publish只读credentials。dry-run不连官方接口，前门/审阅未由发布工具强制，未运行复现。详见[Q03](#research-q03)。
+> **主要限制**：reader先trim再用非空首字符判顶层，图生子键无法读入；check_env接受env而publish只读credentials。dry-run不连官方接口，前门/审阅未由发布工具强制，未运行复现。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -118,8 +118,6 @@
 
 > **亮点**：结合可替换风格/主题、静态脚本门、LLM清单与人工停靠点，并以七工具和一个bundled Skill接入DSH，减少重复流程说明；方法借鉴归属以NOTICE作者说明为界。详见[Q02](#research-q02)。
 
-结合可替换风格/主题、静态脚本门、LLM清单与人工停靠点，并以七工具和一个bundled Skill接入DSH，减少重复流程说明；方法借鉴归属以NOTICE作者说明为界。详见[Q02](#research-q02)。
-
 包装器以argv数组而非拼shell命令执行，凭据作为子进程增量env传入，不放发布命令行参数，这是可借鉴接线。stdout/stderr各2MB收集与graceMs是局部参数，不是整个流程deadline或图片/文章大小保证；runScript await handle.done没有自己的timeout/cancel绑定，具体策略依宿主subprocess。所有脚本cwd固定包根，用户稿件相对路径也相对包根，需明确输出位置；工具没有独立工作区realpath围栏，不能把“经subprocess”自动等同沙箱已验收。
 
 真实推送依次取token、上传正文本地图片、封面，再draft/add。HTML相对图路径以HTML目录解析，缺图只是warn保留原路径，dry-run没扫所有本地图片。上传成功后最终草稿失败会留下远端素材，重跑可重复上传/建草稿；没有事务、幂等key或断点收据文件。网络超时不能断言远端未创建，media_id只在成功stdout显示，读者需要后台核对后再决定重试。
@@ -176,7 +174,7 @@ reader先trim再用非空首字符判顶层，图生子键无法读入；check_e
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

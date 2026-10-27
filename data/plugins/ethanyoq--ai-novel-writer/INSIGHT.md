@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-分析版本：[62880d6](https://github.com/EthanYoQ/AI-Novel-Writer/tree/62880d629af7bbfaf968c0cda5ae76816e917915)
+源码版本：[62880d6](https://github.com/EthanYoQ/AI-Novel-Writer/tree/62880d629af7bbfaf968c0cda5ae76816e917915)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer)
 <!-- END META -->
 
-> **实现功能**：本地优先小说桌面软件，将设定、蓝图、写稿、审改与定稿组织成逐章流程。
+> **功能**：本地优先小说桌面软件，将设定、蓝图、写稿、审改与定稿组织成逐章流程。
 
-> **核心亮点**：[Q02](#research-q02)、[Q03](#research-q03) 用版本绑定和committed/pending分离把聊天起草转为可追溯、可恢复的章节交付；不把流程完整当文学质量保证。
+> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 用版本绑定和committed/pending分离把聊天起草转为可追溯、可恢复的章节交付；不把流程完整当文学质量保证。
 
-> **风险与缺陷**：[Q03](#research-q03) 上下文快照固定了选择但不保证充分，早期设定被省略时生成与自审可共同漏检，需原定稿对照而非只信摘要。
+> **主要限制**：[Q03](#research-q03) 上下文快照固定了选择但不保证充分，早期设定被省略时生成与自审可共同漏检，需原定稿对照而非只信摘要。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 用版本绑定和committed/pending分离把聊天起草转为可追溯、可恢复的章节交付；不把流程完整当文学质量保证。
 
-[Q02](#research-q02)、[Q03](#research-q03) 用版本绑定和committed/pending分离把聊天起草转为可追溯、可恢复的章节交付；不把流程完整当文学质量保证。
-
 可借鉴未知结果复用ID、数据库事实源与实体稿投影分离，以及included/omissions共同摘要；迁移需保留提交/发布两态，不能把文件失败误说未提交。
 
 <a id="detail-section-9"></a>
@@ -161,7 +159,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
