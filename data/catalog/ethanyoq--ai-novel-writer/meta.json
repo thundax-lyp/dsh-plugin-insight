@@ -1,0 +1,27 @@
+{
+    "repository": "EthanYoQ/AI-Novel-Writer",
+    "repository_id": 1275436512,
+    "captured_at": "2026-10-27T02:11:50.268Z",
+    "window_start": "2026-09-27T02:11:50.268Z",
+    "stars": 1859,
+    "pushed_at": "2026-10-26T06:08:32Z",
+    "issues": {
+        "open": 9,
+        "closed": 319,
+        "created_30d": 118,
+        "closed_30d": 127,
+        "updated_30d": 136
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}

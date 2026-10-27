@@ -1,0 +1,429 @@
+{
+    "schema_version": 4,
+    "id": "4b0f274001f2a17bc507ec24a52a0f8f",
+    "identity": "github:1311108439:integrations-deepseek-harness",
+    "slug": "chuspeeism--dashi-taskboard--integrations-deepseek-harness",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1311108439:integrations-deepseek-harness",
+            "repository_id": 1311108439,
+            "component_id": "integrations-deepseek-harness",
+            "repository": "chuspeeism/dashi-taskboard",
+            "path": "integrations/deepseek-harness",
+            "aliases": [],
+            "name": "DSH Codex Taskboard 侧栏集成",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e38d4963f27ea9d84294a10a8f8cec59b21f8fed8851844846320a11a64272e3",
+                "code": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                "maintenance": "03bb48b69de5ff602ea0844a6f9a15b2ec10c339c50968131802231efa7835f4"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-27-01-github-1311108439-integrations-deepseek-harness-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "02fbf478334167ceb72ae5b93b25ae9d1a8e2865",
+                    "retrieved_at": "2026-10-27T02:10:28.340Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-27-01-github-1311108439-integrations-deepseek-harness-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/chuspeeism/dashi-taskboard",
+                            "commit": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                            "path": "integrations/deepseek-harness/README.md",
+                            "content_sha256": "0a70ecd20f434b47d9726cf9fab08753b58efc956f881beec52ce6210d33d234"
+                        }
+                    ],
+                    "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                    "captured_at": "2026-10-27T02:10:28.340Z",
+                    "summary": "在DeepSeek Harness侧栏嵌入已启动的Codex Taskboard本地看板。",
+                    "artifact": "data/runs/2026-10-27-01/chuspeeism--dashi-taskboard--integrations-deepseek-harness/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/chuspeeism/dashi-taskboard",
+                            "commit": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                            "path": "integrations/deepseek-harness/README.md",
+                            "content_sha256": "0a70ecd20f434b47d9726cf9fab08753b58efc956f881beec52ce6210d33d234"
+                        },
+                        {
+                            "repository_url": "https://github.com/chuspeeism/dashi-taskboard",
+                            "commit": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                            "path": "integrations/deepseek-harness/package.json",
+                            "content_sha256": "5785fab6631d1afd7d0f490f10da53fd8cbff42024bd58c1a42187a1a6cf02fa"
+                        },
+                        {
+                            "repository_url": "https://github.com/chuspeeism/dashi-taskboard",
+                            "commit": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                            "path": "integrations/deepseek-harness/index.js",
+                            "content_sha256": "a8ad47dd33d390b0278e30173053e3d76026ffb51309fa21d6c73313a56352aa"
+                        },
+                        {
+                            "repository_url": "https://github.com/chuspeeism/dashi-taskboard",
+                            "commit": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                            "path": "integrations/deepseek-harness/client.js",
+                            "content_sha256": "9afaad13c3856d65915c49a14c7b983366ed7dbf0e20a17c21a888cc6d4235b0"
+                        },
+                        {
+                            "repository_url": "https://github.com/chuspeeism/dashi-taskboard",
+                            "commit": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                            "path": "integrations/deepseek-harness/cordis.patch.yml",
+                            "content_sha256": "71f5931779d202be0fd71c4a3280c6ad34dfc6fccc2c50cfc3569d1110974b62"
+                        }
+                    ],
+                    "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                    "captured_at": "2026-10-27T02:10:28.340Z",
+                    "summary": "核查 integrations/deepseek-harness/README.md、integrations/deepseek-harness/package.json、integrations/deepseek-harness/index.js、integrations/deepseek-harness/client.js、integrations/deepseek-harness/cordis.patch.yml；slots侧栏打开iframe，宿主路由读取启动器描述符并307重定向到活跃看板。",
+                    "artifact": "data/runs/2026-10-27-01/chuspeeism--dashi-taskboard--integrations-deepseek-harness/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查DSH integration组件及其根工程依赖声明；没有执行看板、目标测试、CDP注入或宿主安装。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已运行Taskboard的DSH Web使用者在工作界面查看与管理原有任务。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "slots侧栏打开iframe，宿主路由读取启动器描述符并307重定向到活跃看板。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查DSH integration组件及其根工程依赖声明；没有执行看板、目标测试、CDP注入或宿主安装。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件package.json标private；可以按README作为本地bundle接入，不据npm目录收录推断公开包发布。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "### 成本\n\n| 阶段 | 现金／资源 | 人工／时间 |\n|---|---|---|\n| 首次 | 已有Taskboard与DSH资源，费用未知 | 启动服务、加组件、核对路径，时长未知 |\n| 持续 | 外部服务运行资源，未知 | 维护启动器与宿主兼容，未知 |\n| 失败恢复 | 重载与服务排障资源，未知 | 区分文件/格式/服务错误并直开，未知 |",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 仅建议已有Taskboard服务的人试用这一薄入口；首次接触者先确认独立浏览器看板工作，再接DSH。503或嵌入异常先回独立页面，不能用反复刷新替代诊断。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "### 效果\n\n| 任务 | 支持 | 缺口 |\n|---|---|---|\n| 工作界面打开看板 | 侧栏、iframe、动态重定向 | 未验证嵌入兼容与登录 |\n| 跟随活跃端口 | 每次路由读取描述符 | 未做重启与旧文件实验 |",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "前后端职责较清晰，路由只解析描述符，界面只嵌入；可借鉴运行时所有权与no-store，但复制时要明确URL信任边界和错误分类，不能当通用服务发现方案。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "[Q02](#research-q02) 统一503会把描述符格式、权限和服务未运行混为一类，动态发现不等于健康验证；读取者依赖启动器维护正确可信的URL。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 未验证假设是在受限本地健康探测下区分描述符故障，以故障注入比较定位时间；无改善或出现额外误报即停止。",
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                            "area": "code",
+                            "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-27T02:10:28.340Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-27T02:10:28.340Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                "reviewed_at": "2026-10-27T02:10:28.340Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                        "area": "code",
+                        "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty/mechanism/transferability/simplification均25%档，动态描述符和标准侧栏组合是小幅接入增量；未见新协议或关键约束突破，不能取50%。Q01—Q03支持，诊断假设不计分。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow/delivery/reach/economics均25%档，只减少界面切换和地址维护，交付仍是原看板任务，未测节时与新用户触达，不能取50%。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已启动Taskboard且能核对本地描述符的DSH Web用户可试用侧栏查看原有任务。相对手工打开服务URL，它把动态端口入口放回工作界面，节时未测。若显示503、嵌入失败或目标地址不符，应关闭面板并直接打开已知看板地址排查服务与描述符。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 目标人群、重复查看与合格入口明确，50%超过偶发潜在便利；任务摩擦主要推断，缺少足以75%的实际持续流程依据。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) index的动态URL和no-store只改善入口维护，25%超过完全无增量；原浏览器通常足够，不能取50%。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01)、[Q02](#research-q02) client iframe、路由与错误链完整，50%超过片段；没有执行测试和宿主嵌入，不足75%。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) 有关闭面板及直开URL退路，50%超过恢复缺口很大的25%；外部服务、路径配置和统一错误仍需人工维护，不能取75%。"
+                    }
+                },
+                "score": 44,
+                "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                "reviewed_at": "2026-10-27T02:10:28.340Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-27-01-github-1311108439-integrations-deepseek-harness-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1311108439:integrations-deepseek-harness",
+                        "area": "code",
+                        "fingerprint": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1311108439:integrations-deepseek-harness",
+            "repository": "chuspeeism/dashi-taskboard",
+            "path": "integrations/deepseek-harness",
+            "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+            "fingerprints": {
+                "directory": "e38d4963f27ea9d84294a10a8f8cec59b21f8fed8851844846320a11a64272e3",
+                "code": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+                "maintenance": "03bb48b69de5ff602ea0844a6f9a15b2ec10c339c50968131802231efa7835f4"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-27T01:45:12Z",
+            "analysis_sha256": "bb8418333079bdd1e0234fb123a60e1a8c5755b07889d7d06004f0e273539763"
+        },
+        "publication.metadata": "data/catalog/chuspeeism--dashi-taskboard--integrations-deepseek-harness/meta.json",
+        "publication.summaries": {
+            "text": "在DeepSeek Harness侧栏嵌入已启动的Codex Taskboard本地看板。",
+            "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+            "source_url": "https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+            "items": {
+                "界面": "在DSH侧栏注册看板入口并显示iframe面板。",
+                "Host 路由": "注册读取活跃运行描述符的307跳转路由。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 侧栏面板 | 查看已有Taskboard | 外部服务预先运行 |\n| 动态运行地址 | 跟随启动器描述符 | 只校验描述符，不证明健康与认证 |"
+        },
+        "publication.advice": {
+            "revision": "9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc",
+            "text": "[Q03](#research-q03) 仅建议已有Taskboard服务的人试用这一薄入口；首次接触者先确认独立浏览器看板工作，再接DSH。503或嵌入异常先回独立页面，不能用反复刷新替代诊断。"
+        },
+        "registry": "data/plugins/chuspeeism--dashi-taskboard--integrations-deepseek-harness",
+        "reports": "# DSH Codex Taskboard 侧栏集成\n\n> 在DeepSeek Harness侧栏嵌入已启动的Codex Taskboard本地看板。\n\n## 研究范围\n\n- **仓库**：[chuspeeism/dashi-taskboard](https://github.com/chuspeeism/dashi-taskboard)\n- **版本号**：1.0.0（[固定提交 9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc](https://github.com/chuspeeism/dashi-taskboard/tree/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc)）\n- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已核查侧栏与动态重定向；未运行宿主，诊断分流是未验证假设。\n\n## 洞察短评\n\n- **用途**：已运行Taskboard的DSH Web使用者在工作界面查看与管理原有任务。\n- **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。\n- **思考**：[Q02](#research-q02) 统一503会把描述符格式、权限和服务未运行混为一类，动态发现不等于健康验证；读取者依赖启动器维护正确可信的URL。\n- **建议**：[Q04](#research-q04) 未验证假设是在受限本地健康探测下区分描述符故障，以故障注入比较定位时间；无改善或出现额外误报即停止。\n\n采用建议：[Q03](#research-q03) 仅建议已有Taskboard服务的人试用这一薄入口；首次接触者先确认独立浏览器看板工作，再接DSH。503或嵌入异常先回独立页面，不能用反复刷新替代诊断。\n\n## 核心贡献\n\n[Q01](#research-q01)、[Q02](#research-q02) 把启动器拥有的运行时描述符接到DSH入口，相对写死端口或手工打开URL减少地址维护；不包含独立看板引擎或自动启动能力。\n\n## 关键质疑\n\n[Q02](#research-q02) 统一503会把描述符格式、权限和服务未运行混为一类，动态发现不等于健康验证；读取者依赖启动器维护正确可信的URL。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 未验证假设是在受限本地健康探测下区分描述符故障，以故障注入比较定位时间；无改善或出现额外误报即停止。\n\n隔离服务下检查正常、描述符缺失、损坏和服务停止；再检查宿主停用时样式、入口和路由清理。尚未执行。\n\n## 场景与替代办法\n\n已运行Taskboard的DSH Web使用者在工作界面查看与管理原有任务。\n\n简单替代是浏览器打开Taskboard运行地址；侧栏只减少切换，不能据此声称任务完成更可靠。\n\n## 依赖与流程\n\n### 启动与依赖\n\n| 条件 | 用途 | 失败处理 |\n|---|---|---|\n| Taskboard启动器与服务 | 提供实际看板和描述符 | 先验证独立页面 |\n| DSH Web/sidebar与webServer | 挂侧栏及路由 | 核对组件加载 |\n| 可读运行描述符 | 解析活跃地址 | 非macOS配置路径，检查格式 |\n\n### 启动步骤\n\n| 步骤 | 执行者与成功判据 | 失败退路 |\n|---|---|---|\n| 启动根看板 | 用户直接URL可开 | 排查服务 |\n| 接本地bundle | 用户看到侧栏入口 | 检查宿主依赖 |\n| 点击入口 | iframe显示同一看板 | 关闭并直开已知URL |\n\n## 成本与效果\n\n### 成本\n\n| 阶段 | 现金／资源 | 人工／时间 |\n|---|---|---|\n| 首次 | 已有Taskboard与DSH资源，费用未知 | 启动服务、加组件、核对路径，时长未知 |\n| 持续 | 外部服务运行资源，未知 | 维护启动器与宿主兼容，未知 |\n| 失败恢复 | 重载与服务排障资源，未知 | 区分文件/格式/服务错误并直开，未知 |\n\n### 效果\n\n| 任务 | 支持 | 缺口 |\n|---|---|---|\n| 工作界面打开看板 | 侧栏、iframe、动态重定向 | 未验证嵌入兼容与登录 |\n| 跟随活跃端口 | 每次路由读取描述符 | 未做重启与旧文件实验 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查DSH薄入口的动态运行时绑定与故障边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 侧栏集成实际提供什么能力？\n\n**研究主题**：场景与需求、功能与机制\n\n#### 完整回答\n\n这是已有Codex Taskboard服务的DSH Web侧栏入口，适合同时在DSH工作与查看本地任务的人。它没有自己的任务数据库、任务工具或服务启动逻辑。client用slots挂入口，点击后显示iframe，iframe访问固定的宿主路由；服务端每次读launcher-runtime.json，校验version与url后补host=deepseek-harness，返回307到实际运行地址。合格结果是打开原有看板并能按既有方式查看任务。简单替代是直接在浏览器打开看板URL；插件增量是减少切换和记端口，而非新增任务管理引擎。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/deepseek-harness/client.js:73-112](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/client.js#L73-L112)\n\niframe和刷新按钮是真实页面链路，未运行确认。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n    function TaskboardPanel({ onClose }) {\n      const box = useCenterColumnBox();\n      const [generation, setGeneration] = useState(0);\n      return React.createElement(\n        \"aside\",\n        {\n          id: PANEL_ID,\n          className: \"dsh-codex-taskboard-panel\",\n          style: box,\n          \"aria-label\": \"任务面板\",\n        },\n        React.createElement(\n          \"div\",\n          { className: \"dsh-codex-taskboard-header\" },\n          React.createElement(\"strong\", null, \"任务面板\"),\n          React.createElement(\n            \"div\",\n            { className: \"dsh-codex-taskboard-actions\" },\n            React.createElement(\n              \"button\",\n              {\n                type: \"button\",\n                className: \"dsh-codex-taskboard-action\",\n                onClick: () => setGeneration((value) => value + 1),\n              },\n              \"刷新\",\n            ),\n            React.createElement(\n              \"button\",\n              { type: \"button\", className: \"dsh-codex-taskboard-action\", onClick: onClose },\n              \"关闭\",\n            ),\n          ),\n        ),\n        React.createElement(\"iframe\", {\n          key: generation,\n          className: \"dsh-codex-taskboard-frame\",\n          src: `${ROUTE}?refresh=${generation}`,\n          title: \"Codex Taskboard\",\n        }),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[integrations/deepseek-harness/index.js:9-39](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/index.js#L9-L39)\n\n运行描述符与307/503路径。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nconst RUNTIME_FILE = process.env.CODEX_TASKBOARD_RUNTIME_FILE\n  ?? path.join(os.homedir(), \"Library/Application Support/Codex Taskboard/launcher-runtime.json\");\n\nasync function activeTaskboardUrl() {\n  const descriptor = JSON.parse(await readFile(RUNTIME_FILE, \"utf8\"));\n  if (descriptor?.version !== 1 || typeof descriptor.url !== \"string\") {\n    throw new Error(\"The active Codex Taskboard runtime is invalid\");\n  }\n  const url = new URL(`${descriptor.url.replace(/\\/$/, \"\")}/`);\n  url.searchParams.set(\"host\", \"deepseek-harness\");\n  return url.href;\n}\n\nexport function apply(ctx) {\n  ctx.effect(\n    () => ctx.webServer.register({\n      kind: \"exact\",\n      path: ROUTE,\n      handler: async (_request, response) => {\n        try {\n          response.writeHead(307, {\n            location: await activeTaskboardUrl(),\n            \"cache-control\": \"no-store\",\n          });\n          response.end();\n        } catch {\n          response.writeHead(503, {\n            \"content-type\": \"text/plain; charset=utf-8\",\n            \"cache-control\": \"no-store\",\n          });\n          response.end(\"Codex Taskboard is not running.\");\n```\n\n</details>\n\n**依据 3 · 作者声明**：[integrations/deepseek-harness/README.md:1-11](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/README.md#L1-L11)\n\n作者把它限定为已安装运行时的入口。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\n# DeepSeek Harness plugin\n\nThis directory is an installable DeepSeek Harness bundle. It adds a Taskboard entry to the Harness sidebar and opens the active installed Codex Taskboard runtime.\n\nFrom a DeepSeek Harness source checkout, install it into the Web profile:\n\n```sh\npnpm dsh plugin --profile web add /absolute/path/to/codex-taskboard/integrations/deepseek-harness\n```\n\nStart Codex Taskboard before opening the entry. The plugin reads the launcher-owned runtime file, so it does not depend on a fixed port.\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 动态地址与统一异常的便利和边界是什么？\n\n**研究主题**：贡献与相对优势、缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n相对写死端口的iframe，读启动器拥有的描述符可以随活跃服务变更而改变跳转目标，no-store减少浏览器沿用旧目标的机会。这是常规但可解释的接入便利，不代表插件会发现所有进程或验证服务健康。运行描述符默认位于macOS Application Support；其他系统需设置环境变量指向正确文件。解析失败、版本或URL不合法等异常统一被catch转成503和not running，因此用户看见未运行提示时，真实原因也可能是文件不可读或格式错误，不能据提示断言进程已退出。代码只检查URL可解析，没有在所查函数限制loopback或HTTP协议；安全边界由描述符写入者和本地环境承担。该设计风险没有被本轮运行复现。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/deepseek-harness/index.js:9-39](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/index.js#L9-L39)\n\n动态描述符、URL解析、no-store及统一503可直接定位。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nconst RUNTIME_FILE = process.env.CODEX_TASKBOARD_RUNTIME_FILE\n  ?? path.join(os.homedir(), \"Library/Application Support/Codex Taskboard/launcher-runtime.json\");\n\nasync function activeTaskboardUrl() {\n  const descriptor = JSON.parse(await readFile(RUNTIME_FILE, \"utf8\"));\n  if (descriptor?.version !== 1 || typeof descriptor.url !== \"string\") {\n    throw new Error(\"The active Codex Taskboard runtime is invalid\");\n  }\n  const url = new URL(`${descriptor.url.replace(/\\/$/, \"\")}/`);\n  url.searchParams.set(\"host\", \"deepseek-harness\");\n  return url.href;\n}\n\nexport function apply(ctx) {\n  ctx.effect(\n    () => ctx.webServer.register({\n      kind: \"exact\",\n      path: ROUTE,\n      handler: async (_request, response) => {\n        try {\n          response.writeHead(307, {\n            location: await activeTaskboardUrl(),\n            \"cache-control\": \"no-store\",\n          });\n          response.end();\n        } catch {\n          response.writeHead(503, {\n            \"content-type\": \"text/plain; charset=utf-8\",\n            \"cache-control\": \"no-store\",\n          });\n          response.end(\"Codex Taskboard is not running.\");\n```\n\n</details>\n\n#### 缺口\n\n- 没有真实宿主的iframe、服务存活与身份验证链路记录\n  **影响**：不能确认登录、嵌入策略或不同平台完整兼容\n  **进一步探讨**：先用隔离服务检查正常、文件缺失、JSON损坏和停止服务四种路径\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 薄入口的全周期负担与退出是否支持试用？\n\n**研究主题**：效果与总成本、工程质量与复用、采用判断\n\n#### 完整回答\n\n已有Taskboard且能管理本地配置的人可以隔离试用，原因是组件自身只添加路由和侧栏，不承担额外数据库迁移。但首次仍需安装根Taskboard服务、DSH Web组件并确认描述符路径，持续需启动器与服务保持可用；外部看板的依赖、状态和运维成本不能被薄入口的代码量掩盖。刷新只重建iframe，并不修复描述符或重启服务。effect为注册和样式提供清理钩子值得借鉴，但卸载与slots清理的实际行为还需宿主验收。失败时可关闭面板直接打开已知服务地址；描述符异常应先核对文件而非反复重装插件。费用、配置耗时和失败排查时长没有本轮实测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/deepseek-harness/client.js:91-112](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/client.js#L91-L112)\n\n刷新键仅改变generation并重建iframe。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n            React.createElement(\n              \"button\",\n              {\n                type: \"button\",\n                className: \"dsh-codex-taskboard-action\",\n                onClick: () => setGeneration((value) => value + 1),\n              },\n              \"刷新\",\n            ),\n            React.createElement(\n              \"button\",\n              { type: \"button\", className: \"dsh-codex-taskboard-action\", onClick: onClose },\n              \"关闭\",\n            ),\n          ),\n        ),\n        React.createElement(\"iframe\", {\n          key: generation,\n          className: \"dsh-codex-taskboard-frame\",\n          src: `${ROUTE}?refresh=${generation}`,\n          title: \"Codex Taskboard\",\n        }),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[integrations/deepseek-harness/client.js:141-148](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/client.js#L141-L148)\n\n样式effect返回remove清理。\n\n```text\n    function apply(ctx) {\n      ctx.effect(() => {\n        const style = document.createElement(\"style\");\n        style.id = STYLE_ID;\n        style.dataset.plugin = \"dsh-codex-taskboard\";\n        style.textContent = CSS;\n        document.head.appendChild(style);\n        return () => style.remove();\n```\n\n**依据 3 · 作者声明**：[integrations/deepseek-harness/README.md:5-11](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/README.md#L5-L11)\n\n启动前置与组件安装说明。\n\n````text\nFrom a DeepSeek Harness source checkout, install it into the Web profile:\n\n```sh\npnpm dsh plugin --profile web add /absolute/path/to/codex-taskboard/integrations/deepseek-harness\n```\n\nStart Codex Taskboard before opening the entry. The plugin reads the launcher-owned runtime file, so it does not depend on a fixed port.\n````\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 区分描述符错误能否减少排障？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设是将文件缺失、JSON无效、描述符版本不符与服务不可达分开呈现，并在客户端给出直接浏览器退路，可减少把配置错误当服务未启动的排障反复。推导依据是Q02的统一catch以及Q03的刷新仅重载iframe。新增探测会产生超时与本地网络边界，应由宿主端执行限时健康检查，避免读取任意描述符URL造成额外访问范围。最小验证以四类注入故障比较现有503与细分诊断，让三位已有服务的使用者定位原因，记录正确定位率和分钟；如果没有改善或引入误报便停止，不将设想计入已有贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[integrations/deepseek-harness/index.js:27-39](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/integrations/deepseek-harness/index.js#L27-L39)\n\ncatch将不同故障压成同一提示，为假设提供具体缺口。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n      handler: async (_request, response) => {\n        try {\n          response.writeHead(307, {\n            location: await activeTaskboardUrl(),\n            \"cache-control\": \"no-store\",\n          });\n          response.end();\n        } catch {\n          response.writeHead(503, {\n            \"content-type\": \"text/plain; charset=utf-8\",\n            \"cache-control\": \"no-store\",\n          });\n          response.end(\"Codex Taskboard is not running.\");\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：integrations/deepseek-harness；内容摘要：3cd43d664175a04084aa7fd6135b135efa94bf33d23f3b06e973fecae5e6b0a7。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 207 | 193 | 0 | — |\n| .md | source | 1 | 11 | — | — | 76 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 侧栏面板 | 查看已有Taskboard | 外部服务预先运行 |\n| 动态运行地址 | 跟随启动器描述符 | 只校验描述符，不证明健康与认证 |\n\n## 工程亮点\n\n前后端职责较清晰，路由只解析描述符，界面只嵌入；可借鉴运行时所有权与no-store，但复制时要明确URL信任边界和错误分类，不能当通用服务发现方案。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 integrations/deepseek-harness/README.md、integrations/deepseek-harness/package.json、integrations/deepseek-harness/index.js、integrations/deepseek-harness/client.js、integrations/deepseek-harness/cordis.patch.yml 及固定范围 inventory；组件：integrations/deepseek-harness。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查DSH integration组件及其根工程依赖声明；没有执行看板、目标测试、CDP注入或宿主安装。\n- 下一步：隔离服务下检查正常、描述符缺失、损坏和服务停止；再检查宿主停用时样式、入口和路由清理。尚未执行。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-27-01/chuspeeism--dashi-taskboard--integrations-deepseek-harness/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"chuspeeism/dashi-taskboard\",\n  \"revision\": \"9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc\",\n  \"component\": \"integrations/deepseek-harness\",\n  \"inspected_paths\": [\n    \"integrations/deepseek-harness/README.md\",\n    \"integrations/deepseek-harness/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"integrations/deepseek-harness/index.js\",\n    \"integrations/deepseek-harness/client.js\",\n    \"integrations/deepseek-harness/cordis.patch.yml\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查DSH薄入口的动态运行时绑定与故障边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\"\n        ],\n        \"question\": \"侧栏集成实际提供什么能力？\",\n        \"answer\": \"这是已有Codex Taskboard服务的DSH Web侧栏入口，适合同时在DSH工作与查看本地任务的人。它没有自己的任务数据库、任务工具或服务启动逻辑。client用slots挂入口，点击后显示iframe，iframe访问固定的宿主路由；服务端每次读launcher-runtime.json，校验version与url后补host=deepseek-harness，返回307到实际运行地址。合格结果是打开原有看板并能按既有方式查看任务。简单替代是直接在浏览器打开看板URL；插件增量是减少切换和记端口，而非新增任务管理引擎。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"integrations/deepseek-harness/client.js\",\n            \"line_start\": 73,\n            \"line_end\": 112,\n            \"observation\": \"iframe和刷新按钮是真实页面链路，未运行确认。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"integrations/deepseek-harness/index.js\",\n            \"line_start\": 9,\n            \"line_end\": 39,\n            \"observation\": \"运行描述符与307/503路径。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"integrations/deepseek-harness/README.md\",\n            \"line_start\": 1,\n            \"line_end\": 11,\n            \"observation\": \"作者把它限定为已安装运行时的入口。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"contribution\",\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"动态地址与统一异常的便利和边界是什么？\",\n        \"answer\": \"相对写死端口的iframe，读启动器拥有的描述符可以随活跃服务变更而改变跳转目标，no-store减少浏览器沿用旧目标的机会。这是常规但可解释的接入便利，不代表插件会发现所有进程或验证服务健康。运行描述符默认位于macOS Application Support；其他系统需设置环境变量指向正确文件。解析失败、版本或URL不合法等异常统一被catch转成503和not running，因此用户看见未运行提示时，真实原因也可能是文件不可读或格式错误，不能据提示断言进程已退出。代码只检查URL可解析，没有在所查函数限制loopback或HTTP协议；安全边界由描述符写入者和本地环境承担。该设计风险没有被本轮运行复现。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"integrations/deepseek-harness/index.js\",\n            \"line_start\": 9,\n            \"line_end\": 39,\n            \"observation\": \"动态描述符、URL解析、no-store及统一503可直接定位。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有真实宿主的iframe、服务存活与身份验证链路记录\",\n            \"impact\": \"不能确认登录、嵌入策略或不同平台完整兼容\",\n            \"next_step\": \"先用隔离服务检查正常、文件缺失、JSON损坏和停止服务四种路径\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"engineering\",\n          \"adoption\"\n        ],\n        \"question\": \"薄入口的全周期负担与退出是否支持试用？\",\n        \"answer\": \"已有Taskboard且能管理本地配置的人可以隔离试用，原因是组件自身只添加路由和侧栏，不承担额外数据库迁移。但首次仍需安装根Taskboard服务、DSH Web组件并确认描述符路径，持续需启动器与服务保持可用；外部看板的依赖、状态和运维成本不能被薄入口的代码量掩盖。刷新只重建iframe，并不修复描述符或重启服务。effect为注册和样式提供清理钩子值得借鉴，但卸载与slots清理的实际行为还需宿主验收。失败时可关闭面板直接打开已知服务地址；描述符异常应先核对文件而非反复重装插件。费用、配置耗时和失败排查时长没有本轮实测。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"integrations/deepseek-harness/client.js\",\n            \"line_start\": 91,\n            \"line_end\": 112,\n            \"observation\": \"刷新键仅改变generation并重建iframe。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"integrations/deepseek-harness/client.js\",\n            \"line_start\": 141,\n            \"line_end\": 148,\n            \"observation\": \"样式effect返回remove清理。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"integrations/deepseek-harness/README.md\",\n            \"line_start\": 5,\n            \"line_end\": 11,\n            \"observation\": \"启动前置与组件安装说明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"接入、重启和卸载未实际执行\",\n            \"impact\": \"不能声称低维护或已经安装可用\",\n            \"next_step\": \"记录接入分钟、服务重启后重新定位以及停用后入口路由清理\",\n            \"kind\": \"scope_boundary\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"区分描述符错误能否减少排障？\",\n        \"answer\": \"未验证假设是将文件缺失、JSON无效、描述符版本不符与服务不可达分开呈现，并在客户端给出直接浏览器退路，可减少把配置错误当服务未启动的排障反复。推导依据是Q02的统一catch以及Q03的刷新仅重载iframe。新增探测会产生超时与本地网络边界，应由宿主端执行限时健康检查，避免读取任意描述符URL造成额外访问范围。最小验证以四类注入故障比较现有503与细分诊断，让三位已有服务的使用者定位原因，记录正确定位率和分钟；如果没有改善或引入误报便停止，不将设想计入已有贡献。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"integrations/deepseek-harness/index.js\",\n            \"line_start\": 27,\n            \"line_end\": 39,\n            \"observation\": \"catch将不同故障压成同一提示，为假设提供具体缺口。\"\n          }\n        ],\n        \"unknowns\": []\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"integrations/deepseek-harness/README.md\",\n      \"content\": \"# DeepSeek Harness plugin\\n\\nThis directory is an installable DeepSeek Harness bundle. It adds a Taskboard entry to the Harness sidebar and opens the active installed Codex Taskboard runtime.\\n\\nFrom a DeepSeek Harness source checkout, install it into the Web profile:\\n\\n```sh\\npnpm dsh plugin --profile web add /absolute/path/to/codex-taskboard/integrations/deepseek-harness\\n```\\n\\nStart Codex Taskboard before opening the entry. The plugin reads the launcher-owned runtime file, so it does not depend on a fixed port.\\n\"\n    },\n    {\n      \"path\": \"integrations/deepseek-harness/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-codex-taskboard\\\",\\n  \\\"version\\\": \\\"1.0.0\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"./index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./index.js\\\",\\n    \\\"./client\\\": \\\"./client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"client.js\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-client-ui-sidebar\\\"\\n      ]\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"[English](README.md) | [简体中文](README.zh-CN.md)\\n\\n# Codex Taskboard\\n\\nA local-first issue board that runs in a browser and can be embedded in Codex through the standalone CDP launcher or its injection script. The same HTTP API powers the React UI and the `taskctl` CLI used by the bundled Codex Skill.\\n\\n![Codex Taskboard product screenshot](docs/assets/codex-taskboard.png)\\n\\n## Requirements\\n\\n- Node.js 22.5 or newer\\n- macOS App and DMG builds: Xcode Command Line Tools and Rust 1.88 or newer with the `aarch64-apple-darwin` and `x86_64-apple-darwin` targets. `npm install` installs the Tauri CLI used by this project.\\n- Windows NSIS builds: the Microsoft Store Codex App, Rust 1.88 or newer, and Visual Studio Build Tools with the C++ workload and Windows SDK.\\n\\n## Run locally\\n\\n```bash\\nnpm install\\nnpm run build\\nnpm start\\n```\\n\\nOpen <http://127.0.0.1:47823>. The SQLite database is stored at `.data/taskboard.sqlite`.\\n\\nFor development with live frontend reload:\\n\\n```bash\\nnpm run dev\\n```\\n\\nThe Vite UI runs at <http://127.0.0.1:5173> and proxies API requests to the local service.\\n\\n## Use the CLI\\n\\nRun it from the project:\\n\\n```bash\\nnpm run taskctl -- project create \\\\\\n  --id my-project \\\\\\n  --name \\\"My project\\\" \\\\\\n  --workspace-path /absolute/path/to/repository\\n\\nnpm run taskctl -- issue create \\\\\\n  --project my-project \\\\\\n  --title \\\"Implement the next slice\\\" \\\\\\n  --status todo \\\\\\n  --priority high \\\\\\n  --labels product,mvp\\n```\\n\\nUse `npm link` if you want `taskctl` on your shell path. Set `CODEX_TASKBOARD_URL` to point the CLI at another local or LAN service. Cloud deployments are configured through the **loopback companion** (device-local loopback service for auth and path mapping—not a chat persona) with `taskctl cloud login`.\\n\\n## Install the Codex Skill\\n\\nCopy or symlink `skills/manage-taskboard` into the Codex skills directory, then start a new Codex task:\\n\\n```bash\\nln -s /absolute/path/to/codex-taskboard/skills/manage-taskboard \\\\\\n  ~/.agents/skills/manage-taskboard\\n```\\n\\nThe desktop app keeps this same directory synchronized with its bundled Skill. The Skill teaches Codex to inspect an issue, move it to `in_progress`, use optimistic versions, verify the work, and then move it to `in_review`; it moves the issue to `done` only after the user explicitly confirms acceptance or asks to mark it complete.\\n\\n## Embed in Codex\\n\\n### Manual: use a dedicated CDP port\\n\\nKeep the existing Codex window open. From the Taskboard repository, start a second Codex instance with a dedicated CDP port:\\n\\n```bash\\nopen -n -a /Applications/ChatGPT.app --args \\\\\\n  --remote-debugging-port=9231 \\\\\\n  --remote-allow-origins=http://127.0.0.1:9231\\n```\\n\\nAfter the new Codex window appears, run the injector in another terminal:\\n\\n```bash\\nCODEX_TASKBOARD_HOST=127.0.0.1 \\\\\\nnpm run codex:inject -- --port 9231 --open\\n```\\n\\nKeep the injector terminal running while using the embedded panel. The original Codex window remains unchanged, and the new window receives the Taskboard sidebar entry. If port `9231` is occupied, use another port in both commands.\\n\\n### Recommended: launch an independent Taskboard window with one command\\n\\nKeep existing Codex windows open and run:\\n\\n```bash\\nCODEX_TASKBOARD_HOST=127.0.0.1 npm run codex\\n```\\n\\nThis starts the local Taskboard service when needed. It reuses an open Codex with a reachable CDP renderer, opens Taskboard in the native browser panel of an ordinary Codex without CDP, or launches the official macOS Codex app with an independent profile and loopback-only port `9231` when no Codex is open. It injects a native-looking Taskboard entry after Plugins when CDP is available and keeps watching both the service and replacement renderers. Keep this command running while using the embedded panel. The launcher does not modify `ChatGPT.app` or its `app.asar`.\\n\\nThe source launcher writes its authenticated endpoint to `.data/launcher-runtime.json`. A `taskctl` command installed with `npm link` reads this file by default, so a normal shell and a Codex task opened from the panel use the same Taskboard service without an extra environment variable.\\n\\n### macOS App: open and inject without a terminal\\n\\nFor Tauri development, run:\\n\\n```bash\\nnpm run app:dev\\n```\\n\\nTo build the local App and DMG, install the two Rust targets once, then run the build:\\n\\n```bash\\nrustup target add aarch64-apple-darwin x86_64-apple-darwin\\nnpm run app:build\\n```\\n\\nOpen `src-tauri/target/universal-apple-darwin/release/bundle/macos/Codex Taskboard.app` from Finder. The DMG is in `src-tauri/target/universal-apple-darwin/release/bundle/dmg/`. If you only want the stable App, download the current DMG from [GitHub Releases](https://github.com/chuspeeism/dashi-taskboard/releases/latest).\\n\\nThe App contains its own Node runtime, Taskboard service, built web UI, Skill, CLI wrapper, and injection script. It starts the service, reuses an open Codex with a reachable CDP renderer, opens Taskboard in the native browser panel of an ordinary Codex without CDP, or launches the official Codex app when no Codex is open. It waits for the renderer, injects the sidebar entry when CDP is available, and opens the panel without showing a terminal window. The App can be copied away from this checkout; the target Mac only needs the official Codex app and does not need this repository, a system Node installation, or a separate Codex CLI installation. Taskboard data is stored in `~/Library/Application Support/Codex Taskboard`, and launcher output is written to `~/Library/Logs/Codex Taskboard/codex-taskboard-launcher.log`.\\n\\n### Linux App: Ubuntu 24.04 x64 packages\\n\\nThe first Linux desktop release supports Ubuntu 24.04 LTS on x64 only. Install the official ChatGPT desktop `.deb` first and confirm that `chatgpt` opens it. Then download either the Codex Taskboard `.deb` or `.AppImage` from [GitHub Releases](https://github.com/chuspeeism/dashi-taskboard/releases/latest). Replace `<file>` below with the downloaded filename.\\n\\nInstall the `.deb` package:\\n\\n```bash\\nsudo apt install ./<file>.deb\\n```\\n\\nOr run the AppImage:\\n\\n```bash\\nchmod +x ./<file>.AppImage\\n./<file>.AppImage\\n```\\n\\nTo build both packages on Ubuntu 24.04 x64, run:\\n\\n```bash\\nnpm ci\\nnpm run app:build:linux:x64\\n```\\n\\nThis first release does not support ARM64, Fedora, RPM packages, or other Linux distributions.\\n\\n### Windows code signing\\n\\nFor official Windows releases after the application is approved: **Free code signing provided by [SignPath.io](https://signpath.io/), certificate by [SignPath Foundation](https://signpath.org/).** Current Windows CI artifacts remain unsigned until that approval. See the [Code signing policy](docs/code-signing-policy.md), [Privacy policy](PRIVACY.md), and [Windows uninstall instructions](docs/windows-uninstall.md).\\n\\nThe local build uses ad-hoc code signing for direct verification. A public macOS download still needs Developer ID signing and Apple notarization.\\n\\n### Windows App: tray launcher and bundled Taskboard\\n\\nInstall the official Codex App from the Microsoft Store. To build the current-user NSIS installer on Windows x64, run:\\n\\n```powershell\\nnpm ci\\nnpm run app:build:windows\\n```\\n\\nThe installer is written to `src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/`. It installs a tray launcher, bundled Node runtime, local service, built web UI, Skill, `taskctl.cmd`, and injection script. Taskboard data is stored in `%APPDATA%\\\\Codex Taskboard`; logs are stored in `%LOCALAPPDATA%\\\\Codex Taskboard\\\\Logs`; the Skill is copied to `%USERPROFILE%\\\\.agents\\\\skills\\\\manage-taskboard`.\\n\\nWindows CI artifacts are intentionally unsigned and do not auto-update. Review [the code-signing policy](docs/code-signing-policy.md) before distributing a build. See [Windows uninstall](docs/windows-uninstall.md) for retained-data behavior.\\n\\nCodex 26.715.52143 ships a renderer CSP that blocks arbitrary HTTP iframes. The launcher therefore enables CDP CSP bypass, reloads that renderer once, installs the document-start script, and waits until the Taskboard OOPIF is actually loaded. CDP is unauthenticated to other processes on the same machine, so only run trusted local code while the launcher is active.\\n\\nTo inject into a Codex instance that was already launched with CDP by another method, run:\\n\\n```bash\\nnpm run codex:inject -- --port 9229 --open\\n```\\n\\nThis command also stays resident so the injected tab can restart Taskboard after a service exit. Stop it with `Ctrl-C`.\\n\\nThe script adds a Taskboard entry to the Codex sidebar and renders the iframe across Codex's complete main workspace, including the contextual titlebar area so Taskboard's own header does not leave an empty strip. That full rectangular header is placed above Electron's draggable layer and marked `no-drag`; because the native contextual actions are suppressed while Taskboard is active, its own actions use their normal edge padding without an artificial right-side gap. The native sidebar stays mounted, while the previous page selection and contextual header are temporarily suppressed; choosing another Codex page restores them.\\n\\n“在对话中打开” selects the corresponding native Codex project when one is available and opens an unsent native composer with an `e-taskboard` instruction and the issue's actual identifier. The installed Skill is selected implicitly from that instruction, so the composer does not add a `$manage-taskboard` mention. A conversation is attributed only after it actually processes the issue: `taskctl` reads Codex's `CODEX_THREAD_ID` and records that ID on the issue or comment mutation. Recorded IDs are clickable through Codex's native route bridge. Each issue can bind either one Git branch or one worktree; the options are scanned from the selected Codex project's repository instead of being typed by hand. The integration uses Codex's existing project, composer, and route markers; it does not patch React, replace `fetch`, load private chunks, or edit Codex data files.\\n\\nTo use a different UI origin, set `window.__CODEX_TASKBOARD_URL__` before the user script runs.\\n\\n## Configuration\\n\\n| Variable | Default | Purpose |\\n| --- | --- | --- |\\n| `CODEX_TASKBOARD_HOST` | `0.0.0.0` | HTTP bind address; use `127.0.0.1` to disable LAN access |\\n| `CODEX_TASKBOARD_PORT` | `47823` | Local HTTP port |\\n| `CODEX_TASKBOARD_TRUSTED_ORIGINS` | unset | Comma-separated exact HTTPS origins allowed through a loopback reverse tunnel |\\n| `CODEX_TASKBOARD_DATA_DIR` | `.data` | SQLite data directory |\\n| `CODEX_TASKBOARD_URL` | `http://127.0.0.1:47823` | CLI API origin |\\n\\n`npm start` prints both the local URL and the available LAN URLs. Teammates on the same trusted network can open one of those LAN URLs and use the same taskboard service. Task, comment, and attachment changes are broadcast to every open client through server-sent events; reconnecting clients perform a full refresh so changes made while disconnected are not missed. A teammate using `taskctl` can point it at the shared service with `CODEX_TASKBOARD_URL=http://<host-ip>:47823`.\\n\\nLAN mode has no account authentication: anyone on the trusted local network who can reach the URL can read and write the taskboard. Public internet and cloud deployment require an authenticated deployment boundary.\\n\\nFor a reverse tunnel that connects to the local listener, set `CODEX_TASKBOARD_TRUSTED_ORIGINS` to the tunnel's public HTTPS origin, for example `https://board.example.test`. Multiple origins are comma-separated. The variable cannot be empty, and duplicate origins (including normalized forms such as a trailing slash or default HTTPS port) are rejected at startup. Entries must otherwise be exact HTTPS origins; paths, queries, fragments, credentials, and wildcards are rejected. A reverse proxy or tunnel can preserve that public `Host`: Taskboard derives its canonical HTTPS origin and requires an exact configured match. If the browser supplies an `Origin`, that header is validated independently; the proxy must preserve it rather than fabricate one. Forwarded headers are not used for either decision. Configured public hosts and trusted origins can use ordinary Taskboard HTTP and realtime endpoints, but device-local capability routes remain unavailable even though the tunnel socket is loopback. Requests using only direct local or private-LAN hosts and origins keep their existing behavior.\\n\\n## Share through Cloudflare\\n\\nFor two trusted collaborators, the taskboard can run on Cloudflare with Worker Static Assets and API routes, D1 as the authoritative business database, and a private R2 bucket for attachments. The deployment uses HTTPS Basic Authentication with a shared password and refreshes open boards after a global revision changes.\\n\\nEach device keeps its own project checkout mapping and continues to use a local companion for Codex, Git/worktree, Skill, and MCP capabilities. Cloud mode never falls back to or double-writes the local SQLite database.\\n\\nSee [Cloud collaboration](docs/cloud-collaboration.md) for owner deployment, existing GitHub installation setup, password rotation, local path mapping, and the one-time local-data migration flow.\\n\\n## Verify\\n\\n```bash\\nnpm run check\\n```\\n\\nThis runs TypeScript checking, a production frontend build, the component tests, and the server/CLI/injection test suite.\\n\\n## Task Markdown\\n\\nTask descriptions and comments support GFM, including tables and task lists. Fenced `mermaid` blocks are rendered as read-only diagrams after the viewer loads; the diagram source remains available when rendering fails. Markdown HTML comments, such as `<!-- trace-analysis:v1 ... -->`, are hidden from the rendered document. Raw HTML is not enabled.\\n\\n## Acknowledgements\\n\\nThanks to [Lingshan21](https://github.com/Lingshan21) for:\\n\\n- The parent-based project completion proposal and initial implementation in [#371](https://github.com/chuspeeism/dashi-taskboard/pull/371), which weighted top-level parent issues equally regardless of how many children each had.\\n- The priority organization proposal and initial implementation in [#372](https://github.com/chuspeeism/dashi-taskboard/pull/372). The final board sorting controls were adapted to the maintainer's requirements instead of adopting the proposed priority swimlanes.\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"codex-taskboard\\\",\\n  \\\"version\\\": \\\"1.1.27\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22.5\\\"\\n  },\\n  \\\"bin\\\": {\\n    \\\"taskctl\\\": \\\"./cli/taskctl.mjs\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"codex\\\": \\\"node scripts/codex-injector.mjs --launch --watch --open --port 9231\\\",\\n    \\\"codex:inject\\\": \\\"node scripts/codex-injector.mjs --watch\\\",\\n    \\\"codex:daemon\\\": \\\"node scripts/codex-injector.mjs --daemon --open\\\",\\n    \\\"codex:refresh\\\": \\\"node scripts/codex-injector.mjs --refresh\\\",\\n    \\\"app:prepare\\\": \\\"npm run build:web && node scripts/prepare-tauri-app.mjs\\\",\\n    \\\"app:dev\\\": \\\"npm run app:prepare && tauri dev\\\",\\n    \\\"app:build\\\": \\\"npm run app:prepare -- --target universal-apple-darwin && CI=true node scripts/tauri-build.mjs --target universal-apple-darwin --bundles app,dmg --config '{\\\\\\\"bundle\\\\\\\":{\\\\\\\"createUpdaterArtifacts\\\\\\\":false}}'\\\",\\n    \\\"app:build:linux:x64\\\": \\\"npm run app:prepare -- --target x86_64-unknown-linux-gnu && node scripts/tauri-build.mjs --target x86_64-unknown-linux-gnu --bundles deb,appimage --ci --config src-tauri/tauri.linux.conf.json\\\",\\n    \\\"app:build:windows\\\": \\\"npm run app:prepare -- --target x86_64-pc-windows-msvc && node scripts/tauri-build.mjs --target x86_64-pc-windows-msvc --bundles nsis --no-sign --ci --config src-tauri/tauri.windows.conf.json\\\",\\n    \\\"app:preflight\\\": \\\"node scripts/preflight-macos-app.mjs\\\",\\n    \\\"app:verify-packaged-taskctl\\\": \\\"node scripts/verify-packaged-taskctl.mjs\\\",\\n    \\\"app:verify-release\\\": \\\"node scripts/verify-macos-release.mjs\\\",\\n    \\\"tauri\\\": \\\"tauri\\\",\\n    \\\"dev\\\": \\\"node scripts/dev.mjs\\\",\\n    \\\"dev:server\\\": \\\"node --watch server/index.mjs --dev\\\",\\n    \\\"dev:web\\\": \\\"vite --config web/vite.config.ts\\\",\\n    \\\"dev:cloud\\\": \\\"npm run build:web && wrangler dev --local\\\",\\n    \\\"build\\\": \\\"vite build --config web/vite.config.ts && node scripts/codex-injector.mjs --refresh-if-running\\\",\\n    \\\"build:web\\\": \\\"vite build --config web/vite.config.ts\\\",\\n    \\\"typecheck\\\": \\\"tsc -p web/tsconfig.json --noEmit\\\",\\n    \\\"start\\\": \\\"node server/index.mjs\\\",\\n    \\\"taskctl\\\": \\\"node cli/taskctl.mjs\\\",\\n    \\\"test\\\": \\\"node --test && npm run test:components\\\",\\n    \\\"test:components\\\": \\\"vitest run web/src/components/MarkdownDocument.test.tsx --environment jsdom\\\",\\n    \\\"test:cloud\\\": \\\"node --test test/cloud-shared-worker.test.mjs\\\",\\n    \\\"cloud:migrate:local\\\": \\\"wrangler d1 migrations apply codex-taskboard-db --local\\\",\\n    \\\"cloud:migrate\\\": \\\"wrangler d1 migrations apply codex-taskboard-db --remote\\\",\\n    \\\"cloud:deploy:dry-run\\\": \\\"npm run build:web && wrangler deploy --dry-run\\\",\\n    \\\"cloud:deploy\\\": \\\"npm run build:web && wrangler deploy\\\",\\n    \\\"cloud:data\\\": \\\"node scripts/migrate-to-cloud.mjs\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm run build:web && npm test\\\"\\n  },\\n  \\\"dependencies\\\": {\\n    \\\"dhtmlx-gantt\\\": \\\"^10.0.0\\\",\\n    \\\"dompurify\\\": \\\"^3.4.13\\\",\\n    \\\"js-yaml\\\": \\\"4.3.1\\\",\\n    \\\"mdast-util-definitions\\\": \\\"^6.0.0\\\",\\n    \\\"markdown-it\\\": \\\"^14.3.0\\\",\\n    \\\"mermaid\\\": \\\"^11.16.1\\\",\\n    \\\"micromark-util-decode-string\\\": \\\"^2.0.1\\\",\\n    \\\"prosemirror-example-setup\\\": \\\"^1.2.3\\\",\\n    \\\"prosemirror-inputrules\\\": \\\"^1.5.1\\\",\\n    \\\"prosemirror-markdown\\\": \\\"^1.13.6\\\",\\n    \\\"prosemirror-model\\\": \\\"^1.25.11\\\",\\n    \\\"prosemirror-schema-list\\\": \\\"^1.5.1\\\",\\n    \\\"prosemirror-state\\\": \\\"^1.4.4\\\",\\n    \\\"prosemirror-view\\\": \\\"^1.42.3\\\",\\n    \\\"react\\\": \\\"^19.2.7\\\",\\n    \\\"react-dom\\\": \\\"^19.2.7\\\",\\n    \\\"react-markdown\\\": \\\"^10.1.0\\\",\\n    \\\"remark-breaks\\\": \\\"^4.0.0\\\",\\n    \\\"remark-gfm\\\": \\\"^4.0.1\\\",\\n    \\\"remark-parse\\\": \\\"^11.0.0\\\",\\n    \\\"smol-toml\\\": \\\"^1.8.0\\\",\\n    \\\"unified\\\": \\\"^11.0.5\\\",\\n    \\\"ws\\\": \\\"^8.21.3\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@tauri-apps/cli\\\": \\\"2.11.4\\\",\\n    \\\"@types/js-yaml\\\": \\\"4.0.9\\\",\\n    \\\"@types/react\\\": \\\"^19.2.17\\\",\\n    \\\"@types/react-dom\\\": \\\"^19.2.3\\\",\\n    \\\"@vitejs/plugin-react\\\": \\\"^6.0.3\\\",\\n    \\\"@testing-library/react\\\": \\\"^16.3.2\\\",\\n    \\\"jsdom\\\": \\\"^27.4.0\\\",\\n    \\\"miniflare\\\": \\\"^4.20260722.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vite\\\": \\\"^8.1.5\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"wrangler\\\": \\\"^4.120.0\\\"\\n  },\\n  \\\"overrides\\\": {\\n    \\\"undici\\\": \\\"7.29.0\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"integrations/deepseek-harness/index.js\",\n      \"content\": \"import { readFile } from \\\"node:fs/promises\\\";\\nimport os from \\\"node:os\\\";\\nimport path from \\\"node:path\\\";\\n\\nexport const name = \\\"codex-taskboard\\\";\\nexport const inject = [\\\"webServer\\\"];\\n\\nconst ROUTE = \\\"/integrations/codex-taskboard\\\";\\nconst RUNTIME_FILE = process.env.CODEX_TASKBOARD_RUNTIME_FILE\\n  ?? path.join(os.homedir(), \\\"Library/Application Support/Codex Taskboard/launcher-runtime.json\\\");\\n\\nasync function activeTaskboardUrl() {\\n  const descriptor = JSON.parse(await readFile(RUNTIME_FILE, \\\"utf8\\\"));\\n  if (descriptor?.version !== 1 || typeof descriptor.url !== \\\"string\\\") {\\n    throw new Error(\\\"The active Codex Taskboard runtime is invalid\\\");\\n  }\\n  const url = new URL(`${descriptor.url.replace(/\\\\/$/, \\\"\\\")}/`);\\n  url.searchParams.set(\\\"host\\\", \\\"deepseek-harness\\\");\\n  return url.href;\\n}\\n\\nexport function apply(ctx) {\\n  ctx.effect(\\n    () => ctx.webServer.register({\\n      kind: \\\"exact\\\",\\n      path: ROUTE,\\n      handler: async (_request, response) => {\\n        try {\\n          response.writeHead(307, {\\n            location: await activeTaskboardUrl(),\\n            \\\"cache-control\\\": \\\"no-store\\\",\\n          });\\n          response.end();\\n        } catch {\\n          response.writeHead(503, {\\n            \\\"content-type\\\": \\\"text/plain; charset=utf-8\\\",\\n            \\\"cache-control\\\": \\\"no-store\\\",\\n          });\\n          response.end(\\\"Codex Taskboard is not running.\\\");\\n        }\\n      },\\n    }),\\n    \\\"codex-taskboard: active runtime route\\\",\\n  );\\n}\\n\"\n    },\n    {\n      \"path\": \"integrations/deepseek-harness/client.js\",\n      \"content\": \"window.__ModuleLoader__.load({\\n  id: \\\"dsh-codex-taskboard\\\",\\n  factory: (require) => {\\n    const module = { exports: {} };\\n    const exports = module.exports;\\n    const React = require(\\\"react\\\");\\n    const { useEffect, useState } = React;\\n\\n    const ROUTE = \\\"/integrations/codex-taskboard\\\";\\n    const PANEL_ID = \\\"dsh-codex-taskboard-panel\\\";\\n    const STYLE_ID = \\\"dsh-codex-taskboard-style\\\";\\n    const CSS = `\\n.dsh-codex-taskboard-trigger{box-sizing:border-box;display:flex;align-items:center;gap:8px;width:calc(100% + 8px);height:34px;margin:4px -4px;padding:6px 2px 6px 10px;border:0;border-radius:12px;background:transparent;color:var(--dsw-alias-label-primary);cursor:pointer;font:inherit;overflow:hidden}\\n.dsh-codex-taskboard-trigger:hover{background:var(--dsw-alias-interactive-bg-hover)}\\n.dsh-codex-taskboard-trigger.rail{justify-content:center;width:36px;height:36px;margin:8px 0 10px;padding:0;border-radius:50%}\\n.dsh-codex-taskboard-label{white-space:nowrap;overflow:hidden}\\n.dsh-codex-taskboard-panel{position:fixed;z-index:900;display:flex;flex-direction:column;box-sizing:border-box;border-left:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-2);box-shadow:var(--dsw-shadow-lv3)}\\n.dsh-codex-taskboard-header{display:flex;flex:none;align-items:center;justify-content:space-between;height:48px;padding:8px 14px 8px 18px;box-sizing:border-box;color:var(--dsw-alias-label-primary)}\\n.dsh-codex-taskboard-actions{display:flex;gap:8px}\\n.dsh-codex-taskboard-action{border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer;padding:5px 9px;font:inherit}\\n.dsh-codex-taskboard-action:hover{background:var(--dsw-alias-interactive-bg-hover)}\\n.dsh-codex-taskboard-frame{flex:1;min-height:0;border:0;background:#fff}\\n`;\\n\\n    function centerColumnBox() {\\n      for (const element of document.querySelectorAll(\\\"*\\\")) {\\n        for (const className of element.classList) {\\n          if (!className.endsWith(\\\"_centerCol\\\")) continue;\\n          const rect = element.getBoundingClientRect();\\n          return {\\n            left: rect.left,\\n            top: rect.top,\\n            right: window.innerWidth - rect.right,\\n            bottom: window.innerHeight - rect.bottom,\\n          };\\n        }\\n      }\\n      return { left: 0, top: 0, right: 0, bottom: 0 };\\n    }\\n\\n    function useCenterColumnBox() {\\n      const [box, setBox] = useState(centerColumnBox);\\n      useEffect(() => {\\n        const measure = () => setBox(centerColumnBox());\\n        const observer = new ResizeObserver(measure);\\n        const column = [...document.querySelectorAll(\\\"*\\\")].find((element) =>\\n          [...element.classList].some((className) => className.endsWith(\\\"_centerCol\\\")),\\n        );\\n        if (column) observer.observe(column);\\n        window.addEventListener(\\\"resize\\\", measure);\\n        return () => {\\n          observer.disconnect();\\n          window.removeEventListener(\\\"resize\\\", measure);\\n        };\\n      }, []);\\n      return box;\\n    }\\n\\n    function ChecklistIcon() {\\n      return React.createElement(\\n        \\\"svg\\\",\\n        { width: 18, height: 18, viewBox: \\\"0 0 18 18\\\", fill: \\\"none\\\", \\\"aria-hidden\\\": true },\\n        React.createElement(\\\"path\\\", {\\n          d: \\\"M3.5 4.5h1.2l.8.9 1.7-2M8 4.5h6.5M3.5 9h1.2l.8.9 1.7-2M8 9h6.5M3.5 13.5h1.2l.8.9 1.7-2M8 13.5h6.5\\\",\\n          stroke: \\\"currentColor\\\",\\n          strokeWidth: 1.35,\\n          strokeLinecap: \\\"round\\\",\\n          strokeLinejoin: \\\"round\\\",\\n        }),\\n      );\\n    }\\n\\n    function TaskboardPanel({ onClose }) {\\n      const box = useCenterColumnBox();\\n      const [generation, setGeneration] = useState(0);\\n      return React.createElement(\\n        \\\"aside\\\",\\n        {\\n          id: PANEL_ID,\\n          className: \\\"dsh-codex-taskboard-panel\\\",\\n          style: box,\\n          \\\"aria-label\\\": \\\"任务面板\\\",\\n        },\\n        React.createElement(\\n          \\\"div\\\",\\n          { className: \\\"dsh-codex-taskboard-header\\\" },\\n          React.createElement(\\\"strong\\\", null, \\\"任务面板\\\"),\\n          React.createElement(\\n            \\\"div\\\",\\n            { className: \\\"dsh-codex-taskboard-actions\\\" },\\n            React.createElement(\\n              \\\"button\\\",\\n              {\\n                type: \\\"button\\\",\\n                className: \\\"dsh-codex-taskboard-action\\\",\\n                onClick: () => setGeneration((value) => value + 1),\\n              },\\n              \\\"刷新\\\",\\n            ),\\n            React.createElement(\\n              \\\"button\\\",\\n              { type: \\\"button\\\", className: \\\"dsh-codex-taskboard-action\\\", onClick: onClose },\\n              \\\"关闭\\\",\\n            ),\\n          ),\\n        ),\\n        React.createElement(\\\"iframe\\\", {\\n          key: generation,\\n          className: \\\"dsh-codex-taskboard-frame\\\",\\n          src: `${ROUTE}?refresh=${generation}`,\\n          title: \\\"Codex Taskboard\\\",\\n        }),\\n      );\\n    }\\n\\n    function TaskboardEntry({ wide }) {\\n      const [open, setOpen] = useState(false);\\n      return React.createElement(\\n        React.Fragment,\\n        null,\\n        React.createElement(\\n          \\\"button\\\",\\n          {\\n            type: \\\"button\\\",\\n            className: `dsh-codex-taskboard-trigger${wide ? \\\"\\\" : \\\" rail\\\"}`,\\n            title: \\\"任务面板\\\",\\n            \\\"aria-label\\\": \\\"任务面板\\\",\\n            \\\"aria-expanded\\\": open,\\n            \\\"aria-controls\\\": PANEL_ID,\\n            onClick: () => setOpen((value) => !value),\\n          },\\n          React.createElement(ChecklistIcon),\\n          wide && React.createElement(\\\"span\\\", { className: \\\"dsh-codex-taskboard-label\\\" }, \\\"任务面板\\\"),\\n        ),\\n        open && React.createElement(TaskboardPanel, { onClose: () => setOpen(false) }),\\n      );\\n    }\\n\\n    const inject = [\\\"slots\\\"];\\n\\n    function apply(ctx) {\\n      ctx.effect(() => {\\n        const style = document.createElement(\\\"style\\\");\\n        style.id = STYLE_ID;\\n        style.dataset.plugin = \\\"dsh-codex-taskboard\\\";\\n        style.textContent = CSS;\\n        document.head.appendChild(style);\\n        return () => style.remove();\\n      }, \\\"codex-taskboard: styles\\\");\\n\\n      ctx.slots.inject(\\\"sidebar.footer.action\\\", () => ctx.slots.register({\\n        name: \\\"sidebar.footer.action\\\",\\n        id: \\\"codex-taskboard\\\",\\n        order: 0,\\n      }, TaskboardEntry));\\n    }\\n\\n    exports.apply = apply;\\n    exports.inject = inject;\\n    return module.exports;\\n  },\\n});\\n\"\n    },\n    {\n      \"path\": \"integrations/deepseek-harness/cordis.patch.yml\",\n      \"content\": \"- insert:\\n    - id: codex-taskboard\\n      name: dsh-codex-taskboard\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc\",\n    \"component\": \"integrations/deepseek-harness\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"3cd43d664175a04084aa7fd6135b135efa94bf33d23f3b06e973fecae5e6b0a7\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 207,\n        \"code\": 193,\n        \"comments\": 0,\n        \"blank\": 14\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 11,\n        \"words\": 76\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": [\n        {\n          \"path\": \"integrations/deepseek-harness/client.js\",\n          \"line\": 151,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"sidebar.footer.action\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"sidebar.footer.action\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "adc8aceb6ef1c8c9e6ac0391ac8fcab41fbec8e1f3a77bc0672abfc1c26c0b65"
+        }
+    },
+    "unavailable_artifacts": []
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "MemTensor/MemOS",
+    "repository_id": 1014729376,
+    "captured_at": "2026-10-27T01:50:27.819Z",
+    "window_start": "2026-09-27T01:50:27.819Z",
+    "stars": 12110,
+    "pushed_at": "2026-10-26T14:41:43Z",
+    "issues": {
+        "open": 65,
+        "closed": 497,
+        "created_30d": 47,
+        "closed_30d": 29,
+        "updated_30d": 93
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@memtensor/memos-local-plugin",
+        "captured_at": "2026-10-27T01:50:27.819Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 8367,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40memtensor%2Fmemos-local-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-04-27T11:33:26.672Z",
+            "captured_at": "2026-10-27T01:50:27.819Z",
+            "source_url": "https://registry.npmjs.org/%40memtensor%2Fmemos-local-plugin",
+            "error": null,
+            "latest_version": "2.0.20",
+            "latest_published_at": "2026-09-21T11:34:42.779Z",
+            "latest_error": null
+        }
+    }
+}

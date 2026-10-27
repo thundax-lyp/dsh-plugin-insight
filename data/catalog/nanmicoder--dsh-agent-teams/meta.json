@@ -1,0 +1,66 @@
+{
+    "repository": "NanmiCoder/dsh-agent-teams",
+    "repository_id": 1332073142,
+    "captured_at": "2026-10-27T01:50:27.819Z",
+    "window_start": "2026-09-27T01:50:27.819Z",
+    "stars": 2455,
+    "pushed_at": "2026-10-26T09:46:30Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ANanmiCoder%2Fdsh-agent-teams%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A590:DBA84:AF4950:F9D2E3:6AE00663 and timestamp 2026-10-27 02:03:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ANanmiCoder%2Fdsh-agent-teams%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AE42:14F8C0:2E9F31:32441F:6AE00664 and timestamp 2026-10-27 02:03:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANanmiCoder%2Fdsh-agent-teams%20is%3Aissue%20created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AE44:11EE01:2E10A0:31B186:6AE00665 and timestamp 2026-10-27 02:03:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANanmiCoder%2Fdsh-agent-teams%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AE64:2B7A46:2ED44D:327656:6AE00667 and timestamp 2026-10-27 02:03:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANanmiCoder%2Fdsh-agent-teams%20is%3Aissue%20updated%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AE7C:7EA4F:2EB6B1:325BF0:6AE00668 and timestamp 2026-10-27 02:03:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@nanmicoder/dsh-agent-teams",
+        "captured_at": "2026-10-27T01:50:27.819Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 46019,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40nanmicoder%2Fdsh-agent-teams",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T10:27:18.824Z",
+            "captured_at": "2026-10-26T13:10:34.281Z",
+            "source_url": "https://registry.npmjs.org/%40nanmicoder%2Fdsh-agent-teams",
+            "error": null,
+            "latest_version": "0.1.27",
+            "latest_published_at": "2026-10-26T04:15:43.108Z",
+            "latest_error": null
+        }
+    }
+}

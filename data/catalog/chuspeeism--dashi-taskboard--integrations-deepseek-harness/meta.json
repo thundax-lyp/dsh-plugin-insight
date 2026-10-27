@@ -1,0 +1,27 @@
+{
+    "repository": "chuspeeism/dashi-taskboard",
+    "repository_id": 1311108439,
+    "captured_at": "2026-10-27T01:50:27.819Z",
+    "window_start": "2026-09-27T01:50:27.819Z",
+    "stars": 3401,
+    "pushed_at": "2026-10-21T06:35:21Z",
+    "issues": {
+        "open": 20,
+        "closed": 77,
+        "created_30d": 6,
+        "closed_30d": 3,
+        "updated_30d": 6
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}
